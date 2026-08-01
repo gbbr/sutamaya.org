@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EDEAE2;font-family:"IBM Plex Sans",system-ui,sans-serif}
+a{color:#4B5F72}a:hover{color:#23201B}
+.dv-turn{padding:44px 48px 36px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 22px}
+.dv-tid{font:600 10px "IBM Plex Mono",monospace;padding:3px 7px;background:#23201B;color:#F6F3EC;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 13px/1.2 "IBM Plex Sans",sans-serif;color:#23201B}
+.dv-opts{display:flex;flex-wrap:wrap;gap:34px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px "IBM Plex Mono",monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#23201B;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11.5px/1.3 "IBM Plex Sans",sans-serif;color:rgba(0,0,0,.55);max-width:402px}
+.dv-card{max-width:100%;background:#FFFDF7;border:1px solid rgba(0,0,0,.09);border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}
+.dv-opt:target .dv-oid{background:#4B5F72;color:#fff}
+.dv-next{margin:26px 0 0;font:12px/1.6 "IBM Plex Sans",sans-serif;color:rgba(0,0,0,.5)}
+.dv-note{margin:0 0 22px;max-width:760px;font:13px/1.65 "IBM Plex Sans",sans-serif;color:rgba(0,0,0,.6)}
+</style></helmet>
+
+<section class="dv-turn" id="t1" style="--pali: {{ paliColor }}">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Sutamaya — first pass</span></div>
+<p class="dv-note">Quiet and scholarly: warm paper, Gentium Book Plus for anything in Pali or sutta prose, IBM Plex Sans for chrome, IBM Plex Mono for sutta IDs. One accent (slate blue) for interactive state; everything else is ink on paper. No icons where a word does the job. Mobile is the reference size; <a class="dv-oid" href="#1e">1e</a> shows how the same system scales.</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Core mobile screens — Home, Sutta Browser, List Viewer, Reader</div>
+<div style="display:flex;gap:26px;flex-wrap:wrap">
+
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+<div style="height:100%;display:flex;flex-direction:column;background:#F6F3EC;font-family:'IBM Plex Sans',sans-serif;color:#23201B">
+  <div style="padding:60px 20px 12px;display:flex;align-items:baseline;justify-content:space-between">
+    <span style="font-family:'Gentium Book Plus',serif;font-size:23px;letter-spacing:.01em">sutamaya</span>
+    <span style="font-size:11.5px;color:#6B6459;letter-spacing:.06em;text-transform:uppercase">Settings</span>
+  </div>
+  <div style="padding:6px 20px 16px">
+    <div style="display:flex;align-items:center;gap:10px;height:44px;padding:0 14px;background:#FFFDF7;border:1px solid #E5E0D4;border-radius:12px">
+      <svg width="14" height="14" viewBox="0 0 14 14" style="flex:none"><circle cx="6" cy="6" r="4.6" fill="none" stroke="#9A9287" stroke-width="1.4"/><line x1="9.4" y1="9.4" x2="13" y2="13" stroke="#9A9287" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <span style="flex:1;font-size:15px;color:#9A9287">Suttas, lists, notes…</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#B3ABA0;border:1px solid #E5E0D4;border-radius:4px;padding:1px 5px">/</span>
+    </div>
+  </div>
+  <div style="flex:1;overflow:hidden;padding:0 20px">
+    <div style="font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#9A9287;margin-bottom:10px">Continue</div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+
+      <div style="background:#FFFDF7;border:1px solid #E5E0D4;border-radius:12px;padding:14px 15px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6459;letter-spacing:.03em">MN 10</span>
+        </div>
+        <div style="font-family:'Gentium Book Plus',serif;font-size:19px;line-height:1.25;margin-top:5px">Mindfulness Meditation</div>
+        <div style="font-family:'Gentium Book Plus',serif;font-size:14.5px;color:var(--pali,#8A6B47);margin-top:2px">Satipaṭṭhānasutta</div>
+      </div>
+
+      <div style="background:#FFFDF7;border:1px solid #E5E0D4;border-radius:12px;padding:14px 15px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6459;letter-spacing:.03em">SN 56.11</span>
+        </div>
+        <div style="font-family:'Gentium Book Plus',serif;font-size:19px;line-height:1.25;margin-top:5px">Rolling Forth the Wheel of Dhamma</div>
+        <div style="font-family:'Gentium Book Plus',serif;font-size:14.5px;color:var(--pali,#8A6B47);margin-top:2px">Dhammacakkappavattanasutta</div>
+      </div>
+
+      <div style="background:#FFFDF7;border:1px solid #E5E0D4;border-radius:12px;padding:14px 15px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6459;letter-spacing:.03em">AN 4.10</span>
+        </div>
+        <div style="font-family:'Gentium Book Plus',serif;font-size:19px;line-height:1.25;margin-top:5px">Yokes</div>
+        <div style="font-family:'Gentium Book Plus',serif;font-size:14.5px;color:var(--pali,#8A6B47);margin-top:2px">Yogasutta</div>
+      </div>
+    </div>
+
+    <div style="font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#9A9287;margin:22px 0 10px">Lists</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <span style="display:flex;align-items:center;gap:6px;padding:7px 12px;background:#FFFDF7;border:1px solid #E5E0D4;border-radius:9px;font-size:13.5px">🪷 Daily<span style="color:#B3ABA0;font-family:'IBM Plex Mono',monospace;font-size:11px">12</span></span>
+      <span style="display:flex;align-items:center;gap:6px;padding:7px 12px;background:#FFFDF7;border:1px solid #E5E0D4;border-radius:9px;font-size:13.5px">📁 Jhāna<span style="color:#B3ABA0;font-family:'IBM Plex Mono',monospace;font-size:11px">28</span></span>
+      <span style="display:flex;align-items:center;gap:6px;padding:7px 12px;background:#FFFDF7;border:1px solid #E5E0D4;border-radius:9px;font-size:13.5px">📁 Study group<span style="color:#B3ABA0;font-family:'IBM Plex Mono',monospace;font-size:11px">6</span></span>
+    </div>
+  </div>
+  <div style="flex:none;display:flex;padding:12px 20px 30px;gap:30px;border-top:1px solid #E5E0D4;background:#F1EDE4">
+    <span style="font-size:13.5px;font-weight:500;color:#23201B;border-bottom:1.5px solid #23201B;padding-bottom:2px">Home</span>
+    <span style="font-size:13.5px;color:#8A8378">Browse</span>
+    <span style="font-size:13.5px;color:#8A8378">Lists</span>
+  </div>
+</div>
+</x-import>
+
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+<div style="height:100%;display:flex;flex-direction:column;background:#F6F3EC;font-family:'IBM Plex Sans',sans-serif;color:#23201B">
+  <div style="padding:60px 20px 10px;display:flex;align-items:baseline;justify-content:space-between">
+    <span style="font-size:20px;font-weight:600">Browse</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6459">Sujato ▾</span>
+  </div>
+  <div style="padding:6px 20px 10px">
+    <div style="display:flex;align-items:center;gap:10px;height:40px;padding:0 13px;background:#FFFDF7;border:1px solid #E5E0D4;border-radius:11px">
+      <svg width="14" height="14" viewBox="0 0 14 14" style="flex:none"><circle cx="6" cy="6" r="4.6" fill="none" stroke="#9A9287" stroke-width="1.4"/><line x1="9.4" y1="9.4" x2="13" y2="13" stroke="#9A9287" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <span style="flex:1;font-size:14.5px;color:#9A9287">Filter by ID, title, or note</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#B3ABA0;border:1px solid #E5E0D4;border-radius:4px;padding:1px 5px">/</span>
+    </div>
+  </div>
+  <div style="flex:1;overflow:hidden">
+    <div style="display:flex;align-items:center;gap:12px;padding:15px 20px;border-bottom:1px solid #EBE6DB">
+      <span style="width:20px;height:16px;border-radius:3px;background:#DCD5C7;flex:none"></span>
+      <div style="flex:1"><div style="font-size:15.5px;font-weight:600">Dīgha Nikāya</div><div style="font-family:'Gentium Book Plus',serif;font-size:13.5px;color:var(--pali,#8A6B47);margin-top:1px">Long Discourses</div></div>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">34</span>
+      <svg width="7" height="12" viewBox="0 0 7 12" style="flex:none"><path d="M1 1l5 5-5 5" fill="none" stroke="#B3ABA0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:15px 20px;border-bottom:1px solid #EBE6DB;background:#FFFDF7">
+      <span style="width:20px;height:16px;border-radius:3px;background:#DCD5C7;flex:none"></span>
+      <div style="flex:1"><div style="font-size:15.5px;font-weight:600">Majjhima Nikāya</div><div style="font-family:'Gentium Book Plus',serif;font-size:13.5px;color:var(--pali,#8A6B47);margin-top:1px">Middle Discourses</div></div>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">152</span>
+      <svg width="7" height="12" viewBox="0 0 7 12" style="flex:none"><path d="M1 1l5 5-5 5" fill="none" stroke="#B3ABA0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:15px 20px;border-bottom:1px solid #EBE6DB">
+      <span style="width:20px;height:16px;border-radius:3px;background:#DCD5C7;flex:none"></span>
+      <div style="flex:1"><div style="font-size:15.5px;font-weight:600">Saṁyutta Nikāya</div><div style="font-family:'Gentium Book Plus',serif;font-size:13.5px;color:var(--pali,#8A6B47);margin-top:1px">Linked Discourses</div></div>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">56</span>
+      <svg width="7" height="12" viewBox="0 0 7 12" style="flex:none"><path d="M1 1l5 5-5 5" fill="none" stroke="#B3ABA0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:15px 20px;border-bottom:1px solid #EBE6DB">
+      <span style="width:20px;height:16px;border-radius:3px;background:#DCD5C7;flex:none"></span>
+      <div style="flex:1"><div style="font-size:15.5px;font-weight:600">Aṅguttara Nikāya</div><div style="font-family:'Gentium Book Plus',serif;font-size:13.5px;color:var(--pali,#8A6B47);margin-top:1px">Numbered Discourses</div></div>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">11</span>
+      <svg width="7" height="12" viewBox="0 0 7 12" style="flex:none"><path d="M1 1l5 5-5 5" fill="none" stroke="#B3ABA0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:15px 20px;border-bottom:1px solid #EBE6DB">
+      <span style="width:20px;height:16px;border-radius:3px;background:#DCD5C7;flex:none"></span>
+      <div style="flex:1"><div style="font-size:15.5px;font-weight:600">Khuddaka Nikāya</div><div style="font-family:'Gentium Book Plus',serif;font-size:13.5px;color:var(--pali,#8A6B47);margin-top:1px">Minor Collection</div></div>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">18</span>
+      <svg width="7" height="12" viewBox="0 0 7 12" style="flex:none"><path d="M1 1l5 5-5 5" fill="none" stroke="#B3ABA0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+  <div style="flex:none;display:flex;padding:12px 20px 30px;gap:30px;border-top:1px solid #E5E0D4;background:#F1EDE4">
+    <span style="font-size:13.5px;color:#8A8378">Home</span>
+    <span style="font-size:13.5px;font-weight:500;color:#23201B;border-bottom:1.5px solid #23201B;padding-bottom:2px">Browse</span>
+    <span style="font-size:13.5px;color:#8A8378">Lists</span>
+  </div>
+</div>
+</x-import>
+
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+<div style="height:100%;display:flex;flex-direction:column;background:#F6F3EC;font-family:'IBM Plex Sans',sans-serif;color:#23201B">
+  <div style="padding:58px 20px 2px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+    <span style="display:flex;align-items:center;gap:6px;font-size:14px;color:#4B5F72;margin-left:-4px">
+      <svg width="8" height="13" viewBox="0 0 8 13" style="flex:none"><path d="M6.6 1L1.4 6.5 6.6 12" fill="none" stroke="#4B5F72" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Majjhima Nikāya
+    </span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6459">Sujato ▾</span>
+  </div>
+  <div style="padding:2px 20px 8px;display:flex;align-items:baseline;gap:9px">
+    <span style="font-size:20px;font-weight:600">Mūlapariyāyavagga</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">MN 1–10</span>
+  </div>
+  <div style="padding:6px 20px 10px">
+    <div style="display:flex;align-items:center;gap:10px;height:40px;padding:0 13px;background:#FFFDF7;border:1px solid #E5E0D4;border-radius:11px">
+      <svg width="14" height="14" viewBox="0 0 14 14" style="flex:none"><circle cx="6" cy="6" r="4.6" fill="none" stroke="#9A9287" stroke-width="1.4"/><line x1="9.4" y1="9.4" x2="13" y2="13" stroke="#9A9287" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <span style="flex:1;font-size:14.5px;color:#9A9287">Filter by ID, title, or note</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#B3ABA0;border:1px solid #E5E0D4;border-radius:4px;padding:1px 5px">/</span>
+    </div>
+  </div>
+  <div style="flex:1;overflow:hidden">
+    <div style="padding:13px 20px;border-bottom:1px solid #EBE6DB">
+      <div style="font-family:'Gentium Book Plus',serif;font-size:17px;line-height:1.3"><span style="color:#6B6459">MN 7</span> The Simile of the Cloth</div>
+      <div style="font-family:'Gentium Book Plus',serif;font-size:14px;color:var(--pali,#8A6B47);margin-top:1px">Vatthasutta</div>
+      <div style="font-size:13.5px;line-height:1.5;color:#57514A;margin-top:5px">Sixteen corruptions of the mind, and the dyer’s cloth that will not take the dye.</div>
+    </div>
+
+    <div style="padding:13px 20px;border-bottom:1px solid #EBE6DB">
+      <div style="display:flex;align-items:baseline;gap:9px">
+        <span style="font-family:'Gentium Book Plus',serif;font-size:17px;line-height:1.3;flex:1"><span style="color:#6B6459">MN 8</span> Self-Effacement</span>
+        <svg width="11" height="9" viewBox="0 0 11 9" style="flex:none;opacity:.34"><path d="M1 4.6l3 3L10 1" fill="none" stroke="#23201B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div style="font-family:'Gentium Book Plus',serif;font-size:14px;color:var(--pali,#8A6B47);margin-top:1px">Sallekhasutta</div>
+      <div style="font-size:13.5px;line-height:1.5;color:#57514A;margin-top:5px">Forty-four ways of effacing oneself, and the difference between attaining a meditation and being freed.</div>
+    </div>
+
+    <div style="padding:13px 20px;border-bottom:1px solid #EBE6DB">
+      <div style="display:flex;align-items:baseline;gap:9px">
+        <span style="font-family:'Gentium Book Plus',serif;font-size:17px;line-height:1.3;flex:1"><span style="color:#6B6459">MN 9</span> Right View</span>
+        <svg width="11" height="9" viewBox="0 0 11 9" style="flex:none;opacity:.34"><path d="M1 4.6l3 3L10 1" fill="none" stroke="#23201B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div style="font-family:'Gentium Book Plus',serif;font-size:14px;color:var(--pali,#8A6B47);margin-top:1px">Sammādiṭṭhisutta</div>
+      <div style="font-size:13.5px;line-height:1.5;color:#57514A;margin-top:5px">Sāriputta gives a long discourse on how a noble disciple comes to have right view, covering the unwholesome, nutriment, and dependent origination.</div>
+      <div style="display:flex;gap:6px;margin-top:8px">
+        <span style="font-size:11px;color:#4B5F72;background:#E7EBEF;border-radius:5px;padding:2px 7px">Study group</span>
+      </div>
+    </div>
+
+    <div style="padding:13px 20px;border-bottom:1px solid #EBE6DB;background:#FFFDF7">
+      <div style="display:flex;align-items:baseline;gap:9px">
+        <span style="font-family:'Gentium Book Plus',serif;font-size:17px;line-height:1.3;flex:1"><span style="color:#6B6459">MN 10</span> Mindfulness Meditation</span>
+        <svg width="11" height="9" viewBox="0 0 11 9" style="flex:none;opacity:.34"><path d="M1 4.6l3 3L10 1" fill="none" stroke="#23201B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div style="font-family:'Gentium Book Plus',serif;font-size:14px;color:var(--pali,#8A6B47);margin-top:1px">Satipaṭṭhānasutta</div>
+      <div style="font-size:13.5px;line-height:1.5;color:#23201B;margin-top:6px;padding-left:9px;border-left:2px solid #D8CFA8">Come back to §14–16 — the charnel ground section is the hinge of the whole body contemplation.</div>
+      <div style="display:flex;gap:6px;margin-top:8px">
+        <span style="font-size:11px;color:#4B5F72;background:#E7EBEF;border-radius:5px;padding:2px 7px">Daily</span>
+        <span style="font-size:11px;color:#4B5F72;background:#E7EBEF;border-radius:5px;padding:2px 7px">Satipaṭṭhāna</span>
+      </div>
+    </div>
+
+  </div>
+  <div style="flex:none;display:flex;padding:12px 20px 30px;gap:30px;border-top:1px solid #E5E0D4;background:#F1EDE4">
+    <span style="font-size:13.5px;color:#8A8378">Home</span>
+    <span style="font-size:13.5px;font-weight:500;color:#23201B;border-bottom:1.5px solid #23201B;padding-bottom:2px">Browse</span>
+    <span style="font-size:13.5px;color:#8A8378">Lists</span>
+  </div>
+</div>
+</x-import>
+
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+<div style="height:100%;display:flex;flex-direction:column;background:#F6F3EC;font-family:'IBM Plex Sans',sans-serif;color:#23201B">
+  <div style="padding:60px 20px 12px;display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid #E5E0D4">
+    <span style="font-size:20px;font-weight:600">Lists</span>
+    <span style="font-size:12.5px;color:#4B5F72">New list</span>
+  </div>
+  <div style="flex:1;overflow:hidden">
+    <div style="display:flex;align-items:center;gap:9px;padding:11px 20px;background:#F1EDE4;border-bottom:1px solid #E5E0D4">
+      <span style="width:18px;height:18px;border-radius:5px;background:#E3DDCF;color:#57514A;font-size:9px;display:flex;align-items:center;justify-content:center">{{ mOpen }}</span>
+      <span style="font-size:16px">🪷</span>
+      <span style="flex:1;font-size:15px;font-weight:600">Daily</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">12</span>
+    </div>
+
+    <div style="padding:12px 20px 12px 42px;border-bottom:1px solid #EBE6DB;background:linear-gradient(#DCD5C7,#DCD5C7) 29px 0/1px 100% no-repeat,#FFFDF7">
+      <div style="display:flex;align-items:baseline;gap:9px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6459;min-width:46px">Snp 1.8</span>
+        <span style="font-family:'Gentium Book Plus',serif;font-size:16.5px;flex:1">Loving-Kindness</span>
+        <svg width="11" height="9" viewBox="0 0 11 9" style="flex:none;opacity:.34"><path d="M1 4.6l3 3L10 1" fill="none" stroke="#23201B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div style="font-family:'Gentium Book Plus',serif;font-size:13px;color:var(--pali,#8A6B47);margin-left:55px">Mettasutta</div>
+      <div style="font-size:13px;line-height:1.5;color:#23201B;margin:6px 0 0 55px;padding-left:9px;border-left:2px solid #D8CFA8">Recite before sitting. The “as a mother” simile still lands hardest.</div>
+      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:8px 0 0 55px">
+        <span style="font-size:10.5px;color:#9A9287;letter-spacing:.05em;text-transform:uppercase">Also in</span>
+        <span style="font-size:11px;color:#4B5F72;background:#E7EBEF;border-radius:5px;padding:2px 7px">🌿 Similes</span>
+        <span style="font-size:11px;color:#4B5F72;background:#E7EBEF;border-radius:5px;padding:2px 7px">📁 Study group</span>
+      </div>
+    </div>
+
+    <div style="display:flex;border-bottom:1px solid #EBE6DB;background:linear-gradient(#DCD5C7,#DCD5C7) 29px 0/1px 100% no-repeat,#FFFDF7">
+      <div style="flex:1;padding:12px 8px 12px 42px;min-width:0">
+        <div style="display:flex;align-items:baseline;gap:9px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6459;min-width:46px">Ud 1.1</span>
+          <span style="font-family:'Gentium Book Plus',serif;font-size:16.5px;flex:1">Dependent Origination</span>
+        </div>
+        <div style="font-family:'Gentium Book Plus',serif;font-size:13px;color:var(--pali,#8A6B47);margin-left:55px">Bodhisutta</div>
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:8px 0 0 55px">
+          <span style="font-size:10.5px;color:#9A9287;letter-spacing:.05em;text-transform:uppercase">Also in</span>
+          <span style="font-size:11px;color:#4B5F72;background:#E7EBEF;border-radius:5px;padding:2px 7px">📁 Jhāna</span>
+        </div>
+      </div>
+      <div style="flex:none;display:flex">
+        <span style="width:64px;display:flex;align-items:center;justify-content:center;background:#5E6B57;color:#fff;font-size:12.5px">Edit</span>
+        <span style="width:64px;display:flex;align-items:center;justify-content:center;background:#A3453C;color:#fff;font-size:12.5px">Delete</span>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:9px;padding:11px 20px;background:#F1EDE4;border-bottom:1px solid #E5E0D4">
+      <span style="width:18px;height:18px;border-radius:5px;background:#E3DDCF;color:#57514A;font-size:9px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span>
+      <span style="font-size:16px">📁</span>
+      <span style="flex:1;font-size:15px;font-weight:600">Jhāna</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">28</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:9px;padding:11px 20px 11px 42px;background:linear-gradient(#DCD5C7,#DCD5C7) 29px 0/1px 100% no-repeat,#F5F1E8;border-bottom:1px solid #E5E0D4">
+      <span style="width:18px;height:18px;border-radius:5px;background:#E3DDCF;color:#57514A;font-size:9px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span>
+      <span style="font-size:16px">🌿</span>
+      <span style="flex:1;font-size:14.5px;font-weight:600">Similes</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">9</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:9px;padding:11px 20px;background:#F1EDE4;border-bottom:1px solid #E5E0D4">
+      <span style="width:18px;height:18px;border-radius:5px;background:#E3DDCF;color:#57514A;font-size:9px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span>
+      <span style="font-size:16px">📁</span>
+      <span style="flex:1;font-size:15px;font-weight:600">Study group</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">6</span>
+    </div>
+    <div style="padding:14px 20px;font-size:12.5px;color:#9A9287">Drag a row to reorder · swipe for edit &amp; delete</div>
+  </div>
+  <div style="flex:none;display:flex;padding:12px 20px 30px;gap:30px;border-top:1px solid #E5E0D4;background:#F1EDE4">
+    <span style="font-size:13.5px;color:#8A8378">Home</span>
+    <span style="font-size:13.5px;color:#8A8378">Browse</span>
+    <span style="font-size:13.5px;font-weight:500;color:#23201B;border-bottom:1.5px solid #23201B;padding-bottom:2px">Lists</span>
+  </div>
+</div>
+</x-import>
+
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+<div style="height:100%;position:relative;background:#F6F3EC;font-family:'Gentium Book Plus',serif;color:#23201B">
+  <div style="padding:66px 26px 120px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:#9A9287;text-transform:uppercase">Majjhima Nikāya · Mūlapaṇṇāsa</div>
+    <div style="font-size:29px;line-height:1.18;margin-top:10px">Mindfulness Meditation</div>
+    <div style="font-size:19px;color:var(--pali,#8A6B47);margin-top:4px">Satipaṭṭhānasutta</div>
+    <div style="font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#9A9287;margin-top:10px">MN 10 · 18 min · trans. Sujato</div>
+    <div style="height:1px;background:#E5E0D4;margin:20px 0 18px"></div>
+    <p style="font-size:18px;line-height:1.72;margin:0 0 16px">So I have heard. At one time the Buddha was staying in the land of the Kurus, near the town of Kammāsadhamma.</p>
+    <div style="margin:0 0 16px">
+      <p style="font-size:18px;line-height:1.72;margin:0">There the Buddha addressed the mendicants: <span style="background:#F2E7B3;box-decoration-break:clone;-webkit-box-decoration-break:clone">“This is the path to convergence, mendicants, for the purification of beings.”</span></p>
+      <p style="font-size:17px;line-height:1.72;color:var(--pali,#8A6B47);margin:2px 0 0">Ekāyano ayaṁ, bhikkhave, maggo sattānaṁ visuddhiyā.</p>
+    </div>
+    <p style="font-size:18px;line-height:1.72;margin:0 0 16px">“For overcoming sorrow and lamentation, for ending pain and sadness, for realizing the method, for witnessing extinguishment.</p>
+    <p style="font-size:18px;line-height:1.72;margin:0"><span style="border-bottom:1.5px solid #B4423A">That is, the four kinds of mindfulness meditation.</span> What four? It’s when a mendicant meditates by observing an aspect of the body — keen, aware, and mindful.</p>
+  </div>
+  <div style="position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(to top,#F6F3EC 42%,rgba(246,243,236,0))"></div>
+  <div style="position:absolute;left:50%;transform:translateX(-50%);bottom:44px;display:flex;align-items:center;gap:2px;height:48px;padding:0 6px;background:rgba(255,253,247,.86);backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);border:1px solid rgba(0,0,0,.07);border-radius:24px;box-shadow:0 6px 20px rgba(0,0,0,.1);font-family:'IBM Plex Sans',sans-serif">
+    <span style="display:flex;align-items:center;justify-content:center;width:46px;height:36px;font-size:16px;color:#23201B">✕</span>
+    <span style="width:1px;height:20px;background:#E5E0D4"></span>
+    <span style="display:flex;align-items:center;justify-content:center;width:52px;height:36px;font-family:'Gentium Book Plus',serif;font-size:19px">aA</span>
+    <span style="display:flex;align-items:center;justify-content:center;width:46px;height:36px"><svg width="17" height="12" viewBox="0 0 17 12"><rect y="0" width="17" height="1.6" rx=".8" fill="#23201B"/><rect y="5.2" width="17" height="1.6" rx=".8" fill="#23201B"/><rect y="10.4" width="17" height="1.6" rx=".8" fill="#23201B"/></svg></span>
+    <span style="width:1px;height:20px;background:#E5E0D4"></span>
+    <span style="display:flex;align-items:center;padding:0 14px 0 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6459">38%</span>
+  </div>
+</div>
+</x-import>
+
+</div>
+</div>
+
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Reader overlays — Pali + dictionary, Typography, Highlights &amp; Notes, Lists</div>
+<div style="display:flex;gap:26px;flex-wrap:wrap">
+
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+<div style="height:100%;position:relative;background:#F6F3EC;font-family:'Gentium Book Plus',serif;color:#23201B">
+  <div style="padding:66px 26px 40px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:#9A9287;text-transform:uppercase">MN 10 · §4</div>
+    <p style="font-size:18px;line-height:1.72;margin:14px 0 0">And how does a mendicant meditate observing an aspect of the body?</p>
+    <div style="margin:14px 0 0">
+      <p style="font-size:18px;line-height:1.72;margin:0">It’s when a mendicant — gone to a wilderness, or to the root of a tree, or to an empty hut — sits down cross-legged, sets their body straight, and establishes mindfulness in front of them.</p>
+      <p style="font-size:17px;line-height:1.72;color:var(--pali,#8A6B47);margin:2px 0 0">Idha, bhikkhave, bhikkhu araññagato vā rukkhamūlagato vā suññāgāragato vā nisīdati pallaṅkaṁ ābhujitvā ujuṁ kāyaṁ paṇidhāya <span style="background:#EDE7DA;border-radius:3px;padding:0 2px;box-shadow:0 0 0 1px #DDD3C0">parimukhaṁ</span> satiṁ upaṭṭhapetvā.</p>
+    </div>
+    <p style="font-size:18px;line-height:1.72;margin:14px 0 0;color:#B3ABA0">Just mindful, they breathe in. Just mindful, they breathe out.</p>
+  </div>
+
+  <div style="position:absolute;left:18px;right:18px;top:430px;background:#FFFDF7;border:1px solid #E0D9CA;border-radius:14px;box-shadow:0 12px 34px rgba(0,0,0,.14);overflow:hidden">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;padding:14px 16px 8px">
+      <div>
+        <div style="font-size:21px;color:var(--pali,#8A6B47)">parimukhaṁ</div>
+        <div style="font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#9A9287;margin-top:2px">adv. · pari + mukha</div>
+      </div>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#B3ABA0;border:1px solid #E5E0D4;border-radius:4px;padding:1px 5px">esc</span>
+    </div>
+    <div style="height:1px;background:#EBE6DB"></div>
+    <div style="padding:12px 16px 16px;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;line-height:1.6;color:#3C372F;display:flex;flex-direction:column;gap:9px">
+      <div><span style="color:#9A9287;font-family:'IBM Plex Mono',monospace;font-size:11px;margin-right:7px">PTS</span>in front, before, in the front of; on the tip of the tongue.</div>
+      <div><span style="color:#9A9287;font-family:'IBM Plex Mono',monospace;font-size:11px;margin-right:7px">DPD</span>around the mouth; at the front — idiomatically, “to the fore”, i.e. making mindfulness one’s foremost concern.</div>
+      <div><span style="color:#9A9287;font-family:'IBM Plex Mono',monospace;font-size:11px;margin-right:7px">CPD</span>facing; opposite to.</div>
+    </div>
+  </div>
+
+  <div style="position:absolute;left:50%;transform:translateX(-50%);bottom:44px;display:flex;align-items:center;gap:2px;height:48px;padding:0 6px;background:rgba(255,253,247,.86);backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);border:1px solid rgba(0,0,0,.07);border-radius:24px;box-shadow:0 6px 20px rgba(0,0,0,.1);font-family:'IBM Plex Sans',sans-serif">
+    <span style="display:flex;align-items:center;justify-content:center;width:46px;height:36px;font-size:16px;color:#23201B">✕</span>
+    <span style="width:1px;height:20px;background:#E5E0D4"></span>
+    <span style="display:flex;align-items:center;justify-content:center;width:52px;height:36px;font-family:'Gentium Book Plus',serif;font-size:19px">aA</span>
+    <span style="display:flex;align-items:center;justify-content:center;width:46px;height:36px"><svg width="17" height="12" viewBox="0 0 17 12"><rect y="0" width="17" height="1.6" rx=".8" fill="#23201B"/><rect y="5.2" width="17" height="1.6" rx=".8" fill="#23201B"/><rect y="10.4" width="17" height="1.6" rx=".8" fill="#23201B"/></svg></span>
+    <span style="width:1px;height:20px;background:#E5E0D4"></span>
+    <span style="display:flex;align-items:center;padding:0 14px 0 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6459">41%</span>
+  </div>
+</div>
+</x-import>
+
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+<div style="height:100%;position:relative;background:#16150F;font-family:'Gentium Book Plus',serif;color:#DED8CB">
+  <div style="padding:66px 26px 40px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:#6E685C;text-transform:uppercase">MN 10 · §6</div>
+    <p style="font-size:18px;line-height:1.72;margin:14px 0 0">Furthermore, when a mendicant is walking they know: “I am walking.” When standing they know: “I am standing.”</p>
+    <p style="font-size:18px;line-height:1.72;margin:16px 0 0;color:#6E685C">Whatever posture the body is in, they know it.</p>
+  </div>
+
+  <div style="position:absolute;left:0;right:0;bottom:0;background:#1F1D16;border-top:1px solid #302D24;border-radius:20px 20px 0 0;padding:16px 20px 34px;font-family:'IBM Plex Sans',sans-serif">
+    <div style="width:38px;height:4px;border-radius:2px;background:#413D33;margin:0 auto 16px"></div>
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px">
+      <span style="font-size:15px;font-weight:600;color:#EFE9DC">Typography</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6E685C">Done</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:14px">
+      <span style="flex:1;text-align:center;padding:10px 0;border-radius:9px;background:#2A2720;border:1px solid #3A362C;font-family:'Gentium Book Plus',serif;font-size:16px;color:#EFE9DC">Gentium</span>
+      <span style="flex:1;text-align:center;padding:10px 0;border-radius:9px;border:1px solid #302D24;font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#8B8578">Plex Sans</span>
+      <span style="flex:1;text-align:center;padding:10px 0;border-radius:9px;border:1px solid #302D24;font-family:Georgia,serif;font-size:15px;color:#8B8578">Georgia</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+      <span style="font-size:12px;color:#8B8578;width:74px">Text size</span>
+      <div style="flex:1;display:flex;border:1px solid #302D24;border-radius:9px;overflow:hidden">
+        <span style="flex:1;text-align:center;padding:9px 0;font-family:'Gentium Book Plus',serif;font-size:14px;color:#8B8578;border-right:1px solid #302D24">A</span>
+        <span style="flex:1;text-align:center;padding:9px 0;font-family:'Gentium Book Plus',serif;font-size:20px;color:#EFE9DC;background:#2A2720">A</span>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+      <span style="font-size:12px;color:#8B8578;width:74px">Line height</span>
+      <div style="flex:1;display:flex;gap:6px">
+        <span style="flex:1;text-align:center;padding:8px 0;border-radius:8px;border:1px solid #302D24;font-size:12px;color:#8B8578">1.5</span>
+        <span style="flex:1;text-align:center;padding:8px 0;border-radius:8px;background:#2A2720;border:1px solid #3A362C;font-size:12px;color:#EFE9DC">1.7</span>
+        <span style="flex:1;text-align:center;padding:8px 0;border-radius:8px;border:1px solid #302D24;font-size:12px;color:#8B8578">2.0</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px">
+      <span style="flex:1;height:46px;border-radius:10px;background:#FFFDF7;border:1px solid #3A362C;display:flex;align-items:center;justify-content:center;font-size:12px;color:#23201B">Light</span>
+      <span style="flex:1;height:46px;border-radius:10px;background:#F0E4CB;border:1px solid #3A362C;display:flex;align-items:center;justify-content:center;font-size:12px;color:#4A3B27">Sepia</span>
+      <span style="flex:1;height:46px;border-radius:10px;background:#16150F;border:2px solid #C8BFA8;display:flex;align-items:center;justify-content:center;font-size:12px;color:#DED8CB">Dark</span>
+    </div>
+  </div>
+</div>
+</x-import>
+
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+<div style="height:100%;position:relative;background:#EDE9E0;font-family:'IBM Plex Sans',sans-serif;color:#23201B">
+  <div style="position:absolute;inset:0;background:#F6F3EC;opacity:.5"></div>
+  <div style="position:absolute;left:0;right:0;top:96px;bottom:0;background:#FFFDF7;border-radius:20px 20px 0 0;box-shadow:0 -8px 30px rgba(0,0,0,.1);display:flex;flex-direction:column">
+    <div style="padding:14px 20px 12px;border-bottom:1px solid #EBE6DB">
+      <div style="width:38px;height:4px;border-radius:2px;background:#E0D9CA;margin:0 auto 14px"></div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between">
+        <span style="font-size:15px;font-weight:600">Highlights &amp; Notes</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#B3ABA0;border:1px solid #E5E0D4;border-radius:4px;padding:1px 5px">H</span>
+      </div>
+    </div>
+    <div style="flex:1;overflow:hidden">
+      <div style="padding:14px 20px;background:#FBF7EC;border-bottom:1px solid #EBE6DB">
+        <div style="font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#9A9287;margin-bottom:6px">Note on this sutta</div>
+        <div style="font-family:'Gentium Book Plus',serif;font-size:16px;line-height:1.6;color:#23201B">Come back to §14–16 — the charnel ground section is the hinge of the whole body contemplation.<span style="display:inline-block;width:1.5px;height:17px;background:#4B5F72;vertical-align:-3px;margin-left:2px"></span></div>
+      </div>
+      <div style="padding:13px 20px;border-bottom:1px solid #EBE6DB;display:flex;gap:12px">
+        <span style="flex:none;width:3px;border-radius:2px;background:#E3D383"></span>
+        <div style="flex:1">
+          <div style="font-family:'Gentium Book Plus',serif;font-size:16px;line-height:1.55">“This is the path to convergence, mendicants, for the purification of beings.”</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#B3ABA0;margin-top:5px">§2 · 6 Mar</div>
+        </div>
+      </div>
+      <div style="padding:13px 20px;border-bottom:1px solid #EBE6DB;display:flex;gap:12px">
+        <span style="flex:none;width:3px;border-radius:2px;background:#A9C4B2"></span>
+        <div style="flex:1">
+          <div style="font-family:'Gentium Book Plus',serif;font-size:16px;line-height:1.55">“Sits down cross-legged, sets their body straight, and establishes mindfulness in front of them.”</div>
+          <div style="font-size:12.5px;color:#57514A;margin-top:5px;padding-left:9px;border-left:2px solid #E0D9CA">cf. Ānāpānassati MN 118 §17</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#B3ABA0;margin-top:5px">§4 · 6 Mar</div>
+        </div>
+      </div>
+      <div style="padding:13px 20px;border-bottom:1px solid #EBE6DB;display:flex;gap:12px">
+        <span style="flex:none;width:3px;border-radius:2px;background:#B4423A"></span>
+        <div style="flex:1">
+          <div style="font-family:'Gentium Book Plus',serif;font-size:16px;line-height:1.55">“That is, the four kinds of mindfulness meditation.”</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#B3ABA0;margin-top:5px">§2 · 4 Mar</div>
+        </div>
+      </div>
+    </div>
+    <div style="flex:none;display:flex;align-items:center;gap:10px;padding:14px 20px 30px;border-top:1px solid #EBE6DB;background:#FBF9F2">
+      <span style="font-size:11px;color:#9A9287;letter-spacing:.06em;text-transform:uppercase;margin-right:2px">Colors</span>
+      <span style="width:26px;height:26px;border-radius:13px;background:#F2E7B3;border:1px solid #DFD2A0"></span>
+      <span style="width:26px;height:26px;border-radius:13px;background:#CFE3D6;border:1px solid #B7CFC1"></span>
+      <span style="width:26px;height:26px;border-radius:13px;background:#E0DAF0;border:1px solid #C9C2DE"></span>
+      <span style="width:26px;height:26px;border-radius:13px;border:1px solid #E0D9CA;display:flex;align-items:end;justify-content:center;padding-bottom:5px"><span style="width:13px;height:1.6px;background:#B4423A"></span></span>
+    </div>
+  </div>
+</div>
+</x-import>
+
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" keyboard="{{ true }}" hint-size="402px,874px">
+<div style="height:100%;position:relative;background:#F6F3EC;font-family:'IBM Plex Sans',sans-serif;color:#23201B">
+  <div style="position:absolute;left:0;right:0;top:70px;bottom:0;background:#FFFDF7;border-radius:20px 20px 0 0;box-shadow:0 -8px 30px rgba(0,0,0,.1)">
+    <div style="padding:14px 20px 12px;border-bottom:1px solid #EBE6DB">
+      <div style="width:38px;height:4px;border-radius:2px;background:#E0D9CA;margin:0 auto 14px"></div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between">
+        <span style="font-size:15px;font-weight:600">Add to list</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#B3ABA0;border:1px solid #E5E0D4;border-radius:4px;padding:1px 5px">L</span>
+      </div>
+      <div style="font-family:'Gentium Book Plus',serif;font-size:14.5px;color:#8A6B47;margin-top:6px">MN 10 · Satipaṭṭhānasutta</div>
+    </div>
+    <div style="padding:14px 20px 10px">
+      <div style="display:flex;align-items:center;height:44px;padding:0 14px;background:#FBF9F2;border:1.5px solid #4B5F72;border-radius:11px">
+        <span style="font-size:15px;color:#23201B">Body contempl</span>
+        <span style="display:inline-block;width:1.5px;height:19px;background:#4B5F72;margin-left:1px"></span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:9px;font-size:12.5px;color:#4B5F72">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid #D5DDE4;background:#EDF1F4;border-radius:4px;padding:1px 5px">↵</span>
+        <span>Create “Body contemplation” and add</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px">
+        <span style="display:flex;align-items:center;gap:6px;padding:5px 10px;background:#E7EBEF;border-radius:7px;font-size:12.5px;color:#33475A">Daily <span style="color:#93A3B0">✕</span></span>
+        <span style="display:flex;align-items:center;gap:6px;padding:5px 10px;background:#E7EBEF;border-radius:7px;font-size:12.5px;color:#33475A">Satipaṭṭhāna <span style="color:#93A3B0">✕</span></span>
+      </div>
+    </div>
+    <div style="height:1px;background:#EBE6DB;margin:6px 0 0"></div>
+    <div style="padding:6px 0">
+      <div style="display:flex;align-items:center;gap:9px;padding:10px 20px;background:#F4F0E7"><span style="width:18px;height:18px;border-radius:5px;background:#E3DDCF;color:#57514A;font-size:9px;display:flex;align-items:center;justify-content:center">{{ mOpen }}</span><span>🪷</span><span style="flex:1;font-size:14.5px;font-weight:600">Daily</span><span style="color:#4B5F72;font-size:13px">✓</span></div>
+      <div style="display:flex;align-items:center;gap:9px;padding:10px 20px 10px 42px;background:linear-gradient(#DCD5C7,#DCD5C7) 29px 0/1px 100% no-repeat,#F4F0E7"><span style="width:18px;height:18px;border-radius:5px;background:#E3DDCF;color:#57514A;font-size:9px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span><span>📁</span><span style="flex:1;font-size:14px;font-weight:600">Jhāna</span></div>
+      <div style="display:flex;align-items:center;gap:9px;padding:10px 20px 10px 42px;background:linear-gradient(#DCD5C7,#DCD5C7) 29px 0/1px 100% no-repeat,#F4F0E7"><span style="width:18px;height:18px;border-radius:5px;background:#E3DDCF;color:#57514A;font-size:9px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span><span>🌿</span><span style="flex:1;font-size:14px;font-weight:600">Similes</span></div>
+      <div style="display:flex;align-items:center;gap:10px;padding:11px 20px;color:#4B5F72"><span style="width:12px"></span><span style="font-size:14.5px">+ New list here</span></div>
+    </div>
+  </div>
+</div>
+</x-import>
+
+</div>
+</div>
+
+</div>
+
+<div class="dv-opts" style="margin-top:40px">
+
+<div class="dv-opt" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Navigation models — three ways to get around on mobile</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap">
+
+  <div style="width:300px;background:#FFFDF7;border:1px solid #E0D9CA;border-radius:12px;overflow:hidden">
+    <div style="padding:12px 15px;border-bottom:1px solid #EBE6DB"><div style="font-size:13px;font-weight:600">i. Word tab bar</div><div style="font-size:11.5px;color:#8A8378;line-height:1.5;margin-top:3px">Three destinations, no icons. Fastest to learn; costs 60px of reading height on every non-reader screen.</div></div>
+    <div style="background:#F6F3EC;padding:14px">
+      <div style="height:112px;border-radius:8px;background:#FFFDF7;border:1px solid #E5E0D4;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden">
+        <div style="padding:10px 12px;font-family:'Gentium Book Plus',serif;font-size:15px;color:#B3ABA0">Continue · Lists · Search</div>
+        <div style="display:flex;gap:22px;padding:9px 12px;border-top:1px solid #E5E0D4;background:#F1EDE4">
+          <span style="font-size:12px;font-weight:500;border-bottom:1.5px solid #23201B;padding-bottom:2px">Home</span>
+          <span style="font-size:12px;color:#8A8378">Browse</span>
+          <span style="font-size:12px;color:#8A8378">Lists</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="width:300px;background:#FFFDF7;border:1px solid #E0D9CA;border-radius:12px;overflow:hidden">
+    <div style="padding:12px 15px;border-bottom:1px solid #EBE6DB"><div style="font-size:13px;font-weight:600">ii. Search-first, sheets over home</div><div style="font-size:11.5px;color:#8A8378;line-height:1.5;margin-top:3px">One screen. Browse and Lists arrive as full-height sheets; “/” is the primary verb. Most screen for the text, steepest learning curve.</div></div>
+    <div style="background:#F6F3EC;padding:14px">
+      <div style="height:112px;border-radius:8px;background:#FFFDF7;border:1px solid #E5E0D4;position:relative;overflow:hidden">
+        <div style="padding:10px 12px;font-family:'Gentium Book Plus',serif;font-size:15px;color:#B3ABA0">Continue</div>
+        <div style="position:absolute;left:12px;right:12px;bottom:10px;height:34px;border-radius:17px;background:#F1EDE4;border:1px solid #E5E0D4;display:flex;align-items:center;padding:0 12px;gap:8px">
+          <svg width="12" height="12" viewBox="0 0 14 14"><circle cx="6" cy="6" r="4.6" fill="none" stroke="#9A9287" stroke-width="1.4"/><line x1="9.4" y1="9.4" x2="13" y2="13" stroke="#9A9287" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <span style="font-size:12px;color:#9A9287;flex:1">Search or jump to…</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#B3ABA0">/</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="width:300px;background:#FFFDF7;border:1px solid #E0D9CA;border-radius:12px;overflow:hidden">
+    <div style="padding:12px 15px;border-bottom:1px solid #EBE6DB"><div style="font-size:13px;font-weight:600">iii. One Library, segmented</div><div style="font-size:11.5px;color:#8A8378;line-height:1.5;margin-top:3px">Canon and your lists are two views of one library. Scales cleanly to the iPad sidebar in <a class="dv-oid" href="#1e">1e</a>.</div></div>
+    <div style="background:#F6F3EC;padding:14px">
+      <div style="height:112px;border-radius:8px;background:#FFFDF7;border:1px solid #E5E0D4;overflow:hidden">
+        <div style="padding:10px 12px 8px;font-size:14px;font-weight:600">Library</div>
+        <div style="display:flex;margin:0 12px;padding:2px;background:#EDE9E0;border-radius:8px">
+          <span style="flex:1;text-align:center;padding:5px 0;border-radius:6px;background:#FFFDF7;font-size:11.5px;font-weight:500;box-shadow:0 1px 2px rgba(0,0,0,.07)">Canon</span>
+          <span style="flex:1;text-align:center;padding:5px 0;font-size:11.5px;color:#8A8378">My lists</span>
+        </div>
+        <div style="padding:10px 12px;font-family:'Gentium Book Plus',serif;font-size:14px;color:#B3ABA0">DN · MN · SN · AN · KN</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="dv-opt" id="1d">
+<div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>Row anatomy — ID, English title, Pali title, blob-or-note, list tags, visited mark</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap">
+
+  <div style="width:372px">
+    <div style="font-size:11.5px;color:#8A8378;margin-bottom:7px">i. <b style="color:#23201B;font-weight:600">Mono rail</b> — ID in a fixed left column; everything hangs off one indent. Scannable by ID, costs 55px of width.</div>
+    <div class="dv-card" style="padding:14px 16px">
+      <div style="display:flex;align-items:baseline;gap:9px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6459;min-width:46px">SN 12.2</span>
+        <span style="font-family:'Gentium Book Plus',serif;font-size:17px;line-height:1.25;flex:1">Analysis</span>
+        <svg width="11" height="9" viewBox="0 0 11 9" style="opacity:.34"><path d="M1 4.6l3 3L10 1" fill="none" stroke="#23201B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div style="font-family:'Gentium Book Plus',serif;font-size:13.5px;color:var(--pali,#8A6B47);margin:1px 0 0 55px">Vibhaṅgasutta</div>
+      <div style="font-size:13.5px;line-height:1.5;color:#57514A;margin:6px 0 0 55px">The twelve links, each defined in turn — the standard formula, spelled out.</div>
+      <div style="display:flex;gap:6px;margin:9px 0 0 55px"><span style="font-size:11px;color:#4B5F72;background:#E7EBEF;border-radius:5px;padding:2px 7px">Dependent origination</span></div>
+    </div>
+  </div>
+
+  <div style="width:372px">
+    <div style="font-size:11.5px;color:#8A8378;margin-bottom:7px">ii. <b style="color:#23201B;font-weight:600">Stacked eyebrow</b> — ID and tags share one thin line above the title; full width for the text. Denser, less scannable by ID.</div>
+    <div class="dv-card" style="padding:14px 16px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.05em;color:#8A8378">SN 12.2</span>
+        <span style="width:2px;height:2px;border-radius:1px;background:#C9C1B4"></span>
+        <span style="font-size:11px;color:#4B5F72">Dependent origination</span>
+        <span style="flex:1"></span>
+        <svg width="11" height="9" viewBox="0 0 11 9" style="opacity:.34"><path d="M1 4.6l3 3L10 1" fill="none" stroke="#23201B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div style="font-family:'Gentium Book Plus',serif;font-size:18px;line-height:1.25">Analysis <span style="font-size:14.5px;color:var(--pali,#8A6B47)">· Vibhaṅgasutta</span></div>
+      <div style="font-size:13.5px;line-height:1.5;color:#57514A;margin-top:5px">The twelve links, each defined in turn — the standard formula, spelled out.</div>
+    </div>
+  </div>
+
+  <div style="width:372px">
+    <div style="font-size:11.5px;color:#8A8378;margin-bottom:7px">iii. <b style="color:#23201B;font-weight:600">Note-forward</b> — when a sutta has your note, the note replaces the blob and gets the marginal rule; the blob drops to one faded line.</div>
+    <div class="dv-card" style="padding:14px 16px;background:#FBF9F2">
+      <div style="display:flex;align-items:baseline;gap:9px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6459;min-width:46px">SN 12.2</span>
+        <span style="font-family:'Gentium Book Plus',serif;font-size:17px;line-height:1.25;flex:1">Analysis <span style="font-size:14px;color:var(--pali,#8A6B47)">Vibhaṅgasutta</span></span>
+      </div>
+      <div style="font-family:'Gentium Book Plus',serif;font-size:15.5px;line-height:1.55;color:#23201B;margin:7px 0 0 55px;padding-left:10px;border-left:2px solid #D8CFA8">Best single definition list. Use this one when someone asks what paṭiccasamuppāda actually says.</div>
+      <div style="font-size:12.5px;line-height:1.45;color:#B3ABA0;margin:6px 0 0 55px">The twelve links, each defined in turn…</div>
+      <div style="display:flex;gap:6px;margin:9px 0 0 55px"><span style="font-size:11px;color:#4B5F72;background:#E7EBEF;border-radius:5px;padding:2px 7px">Dependent origination</span><span style="font-size:11px;color:#4B5F72;background:#E7EBEF;border-radius:5px;padding:2px 7px">Study group</span></div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+</div>
+
+<div class="dv-opts" style="margin-top:40px">
+<div class="dv-opt" id="1e">
+<div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a>Scaling up — iPad and desktop share one layout: a resizable side pane for the canon tree, and My lists as an overlay panel (opened from the pane footer or <span style="font-family:'IBM Plex Mono',monospace">L</span>) so a deeply expanded canon never buries it. Click the scrim or ✕ to dismiss.</div>
+<div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+<div style="width:1024px;height:740px;border-radius:22px;background:#1a1a1a;padding:12px;box-shadow:0 30px 70px rgba(0,0,0,.2)">
+  <div style="width:100%;height:100%;border-radius:12px;overflow:hidden;display:flex;position:relative;background:#F6F3EC;font-family:'IBM Plex Sans',sans-serif;color:#23201B">
+    <sc-if value="{{ railShown }}" hint-placeholder-val="{{ false }}">
+    <div style="width:56px;flex:none;background:#F1EDE4;border-right:1px solid #E5E0D4;display:flex;flex-direction:column;align-items:center;padding:16px 0;gap:14px">
+      <span onClick="{{ toggleSidebar }}" style="width:30px;height:30px;border-radius:8px;background:#E4DFD3;color:#57514A;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer">»</span>
+      <span style="width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="14" height="14" viewBox="0 0 14 14"><circle cx="6" cy="6" r="4.6" fill="none" stroke="#6B6459" stroke-width="1.4"/><line x1="9.4" y1="9.4" x2="13" y2="13" stroke="#6B6459" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+      <span style="width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-size:15px">🪷</span>
+    </div>
+    </sc-if>
+    <sc-if value="{{ sidebarShown }}" hint-placeholder-val="{{ true }}">
+    <div style="width:{{ sidebarW }};flex:none;position:relative;background:#F1EDE4;border-right:1px solid #E5E0D4;display:flex;flex-direction:column">
+      <div onMouseDown="{{ startResize }}" title="Drag to resize" style="position:absolute;top:0;bottom:0;right:-3px;width:7px;cursor:col-resize;z-index:5;display:flex;align-items:center;justify-content:center">
+        <span style="width:3px;height:34px;border-radius:2px;background:#D3CCBD"></span>
+      </div>
+      <div style="padding:18px 14px 12px 18px;display:flex;align-items:center;gap:10px">
+        <span style="flex:1;font-family:'Gentium Book Plus',serif;font-size:20px">sutamaya</span>
+        <span onClick="{{ toggleSidebar }}" style="width:26px;height:26px;border-radius:7px;background:#E4DFD3;color:#57514A;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer">«</span>
+      </div>
+      <div style="padding:0 14px 12px">
+        <div style="display:flex;align-items:center;gap:9px;height:36px;padding:0 11px;background:#FFFDF7;border:1px solid #E5E0D4;border-radius:9px">
+          <svg width="13" height="13" viewBox="0 0 14 14"><circle cx="6" cy="6" r="4.6" fill="none" stroke="#9A9287" stroke-width="1.4"/><line x1="9.4" y1="9.4" x2="13" y2="13" stroke="#9A9287" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <span style="flex:1;font-size:13px;color:#9A9287">Search</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#B3ABA0;border:1px solid #E5E0D4;border-radius:4px;padding:0 4px">/</span>
+        </div>
+      </div>
+      <div style="flex:1;overflow:hidden;padding:0 8px">
+        <div style="font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#9A9287;padding:8px 10px 6px">Canon</div>
+        <div style="padding:6px 10px;font-size:13.5px;color:#57514A;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:4px;background:#E3DDCF;color:#57514A;font-size:8px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span><span style="flex:1;font-weight:600">Dīgha Nikāya</span></div>
+        <div style="padding:6px 10px;font-size:13.5px;background:#E4DFD3;border-radius:7px;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:4px;background:#D3CCBD;color:#3C372F;font-size:8px;display:flex;align-items:center;justify-content:center">{{ mOpen }}</span><span style="flex:1;font-weight:600">Majjhima Nikāya</span></div>
+        <div style="margin-left:18px;background:linear-gradient(#DCD5C7,#DCD5C7) 0 0/1px 100% no-repeat">
+          <div style="padding:5px 10px 5px 14px;font-size:13px;color:#57514A;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:4px;background:#E3DDCF;color:#57514A;font-size:8px;display:flex;align-items:center;justify-content:center">{{ mOpen }}</span><span style="flex:1;font-weight:600">Mūlapaṇṇāsa</span></div>
+          <div style="padding:4px 10px 4px 38px;font-size:12.5px;color:#57514A;display:flex;gap:8px;background:linear-gradient(#DCD5C7,#DCD5C7) 22px 0/1px 100% no-repeat"><span style="flex:1"><span style="color:#9A9287">MN 10</span> Mindfulness Meditation</span></div>
+          <div style="padding:4px 10px 4px 38px;font-size:12.5px;color:#57514A;display:flex;gap:8px;background:linear-gradient(#DCD5C7,#DCD5C7) 22px 0/1px 100% no-repeat"><span style="flex:1"><span style="color:#9A9287">MN 11</span> Lion’s Roar (shorter)</span></div>
+          <div style="padding:5px 10px 5px 14px;font-size:13px;color:#57514A;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:4px;background:#E3DDCF;color:#57514A;font-size:8px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span><span style="flex:1;font-weight:600">Majjhimapaṇṇāsa</span></div>
+        </div>
+        <div style="padding:6px 10px;font-size:13.5px;color:#57514A;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:4px;background:#E3DDCF;color:#57514A;font-size:8px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span><span style="flex:1;font-weight:600">Saṁyutta Nikāya</span></div>
+        <div style="padding:6px 10px;font-size:13.5px;color:#57514A;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:4px;background:#E3DDCF;color:#57514A;font-size:8px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span><span style="flex:1;font-weight:600">Aṅguttara Nikāya</span></div>
+        <div style="padding:6px 10px;font-size:13.5px;color:#57514A;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:4px;background:#E3DDCF;color:#57514A;font-size:8px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span><span style="flex:1;font-weight:600">Khuddaka Nikāya</span></div>
+      </div>
+      <div onClick="{{ toggleLists }}" style="margin:0 12px 10px;padding:9px 12px;display:flex;align-items:center;gap:9px;background:#E4DFD3;border-radius:9px;cursor:pointer">
+        <span style="font-size:15px">🪷</span>
+        <span style="flex:1;font-size:13.5px;font-weight:600">My lists</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6459;border:1px solid #D3CCBD;border-radius:4px;padding:0 4px">L</span>
+      </div>
+      <div style="padding:12px 18px;border-top:1px solid #E5E0D4;display:flex;align-items:center;gap:9px">
+        <span style="width:22px;height:22px;border-radius:11px;background:#D3CCBD"></span>
+        <span style="flex:1;font-size:12.5px;color:#57514A">a.hermit@gmail.com</span>
+        <span style="font-size:11.5px;color:#9A9287">Settings</span>
+      </div>
+    </div>
+    </sc-if>
+
+    <div style="flex:1;position:relative;display:flex;justify-content:center;overflow:hidden">
+      <div style="width:620px;padding:78px 30px 0;font-family:'Gentium Book Plus',serif">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:#9A9287;text-transform:uppercase">Majjhima Nikāya · Mūlapaṇṇāsa</div>
+        <div style="font-size:34px;line-height:1.15;margin-top:10px">Mindfulness Meditation</div>
+        <div style="font-size:21px;color:var(--pali,#8A6B47);margin-top:4px">Satipaṭṭhānasutta</div>
+        <div style="font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#9A9287;margin-top:10px">MN 10 · 18 min · trans. Sujato</div>
+        <div style="height:1px;background:#E5E0D4;margin:22px 0 20px"></div>
+        <p style="font-size:19px;line-height:1.75;margin:0 0 18px">So I have heard. At one time the Buddha was staying in the land of the Kurus, near the town of Kammāsadhamma.</p>
+        <div style="margin:0 0 18px">
+          <p style="font-size:19px;line-height:1.75;margin:0">There the Buddha addressed the mendicants: <span style="background:#F2E7B3">“This is the path to convergence, mendicants, for the purification of beings.”</span></p>
+          <p style="font-size:18px;line-height:1.75;color:var(--pali,#8A6B47);margin:2px 0 0">Ekāyano ayaṁ, bhikkhave, maggo sattānaṁ visuddhiyā.</p>
+        </div>
+        <p style="font-size:19px;line-height:1.75;margin:0 0 18px">“For overcoming sorrow and lamentation, for ending pain and sadness, for realizing the method, for witnessing extinguishment.</p>
+        <p style="font-size:19px;line-height:1.75;margin:0 0 18px"><span style="border-bottom:1.5px solid #B4423A">That is, the four kinds of mindfulness meditation.</span> What four?</p>
+        <p style="font-size:19px;line-height:1.75;margin:0 0 18px">“It’s when a mendicant meditates by observing an aspect of the body — keen, aware, and mindful, rid of covetousness and displeasure for the world.</p>
+        <p style="font-size:19px;line-height:1.75;margin:0">They meditate observing an aspect of feelings… an aspect of the mind… an aspect of principles — keen, aware, and mindful.</p>
+      </div>
+      <div style="position:absolute;top:20px;right:22px;display:flex;align-items:center;gap:2px;height:38px;padding:0 5px;background:rgba(255,253,247,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(0,0,0,.07);border-radius:19px;box-shadow:0 4px 14px rgba(0,0,0,.08);font-family:'IBM Plex Sans',sans-serif">
+        <span style="display:flex;align-items:center;justify-content:center;width:42px;height:30px;font-family:'Gentium Book Plus',serif;font-size:17px">aA</span>
+        <span style="display:flex;align-items:center;justify-content:center;width:40px;height:30px;font-size:13px">H</span>
+        <span style="display:flex;align-items:center;justify-content:center;width:40px;height:30px;font-size:13px">L</span>
+        <span style="width:1px;height:17px;background:#E5E0D4"></span>
+        <span style="display:flex;align-items:center;padding:0 12px 0 10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6459">38%</span>
+      </div>
+      <div style="position:absolute;left:0;right:0;bottom:0;height:26px;background:linear-gradient(to top,#F6F3EC,rgba(246,243,236,0))"></div>
+    <sc-if value="{{ listsShown }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;inset:0;z-index:20">
+      <div onClick="{{ toggleLists }}" style="position:absolute;inset:0;background:rgba(35,32,27,.32)"></div>
+      <div style="position:absolute;left:22px;top:22px;bottom:22px;width:344px;background:#FFFDF7;border:1px solid #E0D9CA;border-radius:14px;box-shadow:0 26px 64px rgba(0,0,0,.3);display:flex;flex-direction:column;overflow:hidden;font-family:'IBM Plex Sans',sans-serif;color:#23201B">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 16px 12px">
+          <span style="flex:1;font-size:16px;font-weight:600">My lists</span>
+          <span style="font-size:12.5px;color:#4B5F72;cursor:pointer">New list</span>
+          <span onClick="{{ toggleLists }}" style="width:26px;height:26px;border-radius:7px;background:#F1EDE4;color:#57514A;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer">✕</span>
+        </div>
+        <div style="padding:0 16px 12px">
+          <div style="display:flex;align-items:center;gap:9px;height:34px;padding:0 11px;background:#F6F3EC;border:1px solid #E5E0D4;border-radius:9px">
+            <svg width="13" height="13" viewBox="0 0 14 14"><circle cx="6" cy="6" r="4.6" fill="none" stroke="#9A9287" stroke-width="1.4"/><line x1="9.4" y1="9.4" x2="13" y2="13" stroke="#9A9287" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <span style="flex:1;font-size:13px;color:#9A9287">Filter lists</span>
+          </div>
+        </div>
+        <div style="flex:1;overflow:hidden;border-top:1px solid #EBE6DB">
+          <div style="display:flex;align-items:center;gap:9px;padding:10px 16px;background:#F4F0E7;border-bottom:1px solid #EBE6DB"><span style="width:18px;height:18px;border-radius:5px;background:#E3DDCF;color:#57514A;font-size:9px;display:flex;align-items:center;justify-content:center">{{ mOpen }}</span><span style="font-size:15px">🪷</span><span style="flex:1;font-size:14.5px;font-weight:600">Daily</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">12</span></div>
+          <div style="padding:8px 16px 8px 40px;font-family:'Gentium Book Plus',serif;font-size:14.5px;background:linear-gradient(#DCD5C7,#DCD5C7) 25px 0/1px 100% no-repeat;border-bottom:1px solid #EBE6DB"><span style="color:#9A9287">Snp 1.8</span> Loving-Kindness</div>
+          <div style="padding:8px 16px 8px 40px;font-family:'Gentium Book Plus',serif;font-size:14.5px;background:linear-gradient(#DCD5C7,#DCD5C7) 25px 0/1px 100% no-repeat;border-bottom:1px solid #EBE6DB"><span style="color:#9A9287">MN 10</span> Mindfulness Meditation</div>
+          <div style="display:flex;align-items:center;gap:9px;padding:10px 16px;background:#F4F0E7;border-bottom:1px solid #EBE6DB"><span style="width:18px;height:18px;border-radius:5px;background:#D3CCBD;color:#3C372F;font-size:9px;display:flex;align-items:center;justify-content:center">{{ mOpen }}</span><span style="font-size:15px">📁</span><span style="flex:1;font-size:14.5px;font-weight:600">Jhāna</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">28</span></div>
+          <div style="display:flex;align-items:center;gap:9px;padding:10px 16px 10px 40px;background:linear-gradient(#DCD5C7,#DCD5C7) 25px 0/1px 100% no-repeat,#F7F3EA;border-bottom:1px solid #EBE6DB"><span style="width:18px;height:18px;border-radius:5px;background:#E3DDCF;color:#57514A;font-size:9px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span><span style="font-size:15px">🌿</span><span style="flex:1;font-size:14px;font-weight:600">Similes</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">9</span></div>
+          <div style="display:flex;align-items:center;gap:9px;padding:10px 16px;background:#F4F0E7;border-bottom:1px solid #EBE6DB"><span style="width:18px;height:18px;border-radius:5px;background:#E3DDCF;color:#57514A;font-size:9px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span><span style="font-size:15px">📁</span><span style="flex:1;font-size:14.5px;font-weight:600">Study group</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">6</span></div>
+          <div style="padding:12px 16px;font-size:12px;color:#9A9287">Drag to reorder or nest · right-click a list to change its emoji</div>
+        </div>
+      </div>
+    </div>
+    </sc-if>
+    </div>
+  </div>
+</div>
+
+<x-import component-from-global-scope="ChromeWindow" from="./browser-window.jsx" width="{{ w }}" height="{{ h }}" url="{{ url }}" hint-size="1180px,760px">
+<div style="height:100%;display:flex;position:relative;overflow:hidden;background:#F6F3EC;font-family:'IBM Plex Sans',sans-serif;color:#23201B">
+  <div style="width:{{ sidebarW }};flex:none;position:relative;background:#F1EDE4;border-right:1px solid #E5E0D4;display:flex;flex-direction:column">
+    <div onMouseDown="{{ startResize }}" title="Drag to resize" style="position:absolute;top:0;bottom:0;right:-3px;width:7px;cursor:col-resize;z-index:5;display:flex;align-items:center;justify-content:center"><span style="width:3px;height:34px;border-radius:2px;background:#D3CCBD"></span></div>
+    <div style="padding:16px 14px 10px 18px;display:flex;align-items:center;gap:10px">
+      <span style="flex:1;font-family:'Gentium Book Plus',serif;font-size:20px">sutamaya</span>
+      <span onClick="{{ toggleSidebar }}" style="width:26px;height:26px;border-radius:7px;background:#E4DFD3;color:#57514A;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer">«</span>
+    </div>
+    <div style="padding:0 14px 12px">
+      <div style="display:flex;align-items:center;gap:9px;height:36px;padding:0 11px;background:#FFFDF7;border:1px solid #E5E0D4;border-radius:9px">
+        <svg width="13" height="13" viewBox="0 0 14 14"><circle cx="6" cy="6" r="4.6" fill="none" stroke="#9A9287" stroke-width="1.4"/><line x1="9.4" y1="9.4" x2="13" y2="13" stroke="#9A9287" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <span style="flex:1;font-size:13px;color:#9A9287">Search</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#B3ABA0;border:1px solid #E5E0D4;border-radius:4px;padding:0 4px">/</span>
+      </div>
+    </div>
+    <div style="flex:1;overflow:hidden;padding:0 8px">
+      <div style="font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#9A9287;padding:4px 10px 6px">Canon</div>
+      <div style="padding:6px 10px;font-size:13.5px;color:#57514A;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:4px;background:#E3DDCF;color:#57514A;font-size:8px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span><span style="flex:1;font-weight:600">Dīgha Nikāya</span></div>
+      <div style="padding:6px 10px;font-size:13.5px;background:#E4DFD3;border-radius:7px;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:4px;background:#D3CCBD;color:#3C372F;font-size:8px;display:flex;align-items:center;justify-content:center">{{ mOpen }}</span><span style="flex:1;font-weight:600">Majjhima Nikāya</span></div>
+      <div style="margin-left:18px;background:linear-gradient(#DCD5C7,#DCD5C7) 0 0/1px 100% no-repeat">
+        <div style="padding:5px 10px 5px 14px;font-size:13px;color:#57514A;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:4px;background:#E3DDCF;color:#57514A;font-size:8px;display:flex;align-items:center;justify-content:center">{{ mOpen }}</span><span style="flex:1;font-weight:600">Mūlapaṇṇāsa</span></div>
+        <div style="padding:4px 10px 4px 38px;font-size:12.5px;color:#57514A;background:linear-gradient(#DCD5C7,#DCD5C7) 22px 0/1px 100% no-repeat"><span style="color:#9A9287">MN 9</span> Right View</div>
+        <div style="padding:4px 10px 4px 38px;font-size:12.5px;color:#23201B;background:linear-gradient(#DCD5C7,#DCD5C7) 22px 0/1px 100% no-repeat"><span style="color:#9A9287">MN 10</span> Mindfulness Meditation</div>
+        <div style="padding:4px 10px 4px 38px;font-size:12.5px;color:#57514A;background:linear-gradient(#DCD5C7,#DCD5C7) 22px 0/1px 100% no-repeat"><span style="color:#9A9287">MN 11</span> Lion’s Roar (shorter)</div>
+        <div style="padding:5px 10px 5px 14px;font-size:13px;color:#57514A;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:4px;background:#E3DDCF;color:#57514A;font-size:8px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span><span style="flex:1;font-weight:600">Majjhimapaṇṇāsa</span></div>
+      </div>
+      <div style="padding:6px 10px;font-size:13.5px;color:#57514A;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:4px;background:#E3DDCF;color:#57514A;font-size:8px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span><span style="flex:1;font-weight:600">Saṁyutta Nikāya</span></div>
+      <div style="padding:6px 10px;font-size:13.5px;color:#57514A;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:4px;background:#E3DDCF;color:#57514A;font-size:8px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span><span style="flex:1;font-weight:600">Aṅguttara Nikāya</span></div>
+      <div style="padding:6px 10px;font-size:13.5px;color:#57514A;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:4px;background:#E3DDCF;color:#57514A;font-size:8px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span><span style="flex:1;font-weight:600">Khuddaka Nikāya</span></div>
+    </div>
+    <div onClick="{{ toggleLists }}" style="margin:0 12px 10px;padding:9px 12px;display:flex;align-items:center;gap:9px;background:#E4DFD3;border-radius:9px;cursor:pointer">
+      <span style="font-size:15px">🪷</span>
+      <span style="flex:1;font-size:13.5px;font-weight:600">My lists</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6459;border:1px solid #D3CCBD;border-radius:4px;padding:0 4px">L</span>
+    </div>
+    <div style="padding:12px 18px;border-top:1px solid #E5E0D4;display:flex;align-items:center;gap:9px">
+      <span style="width:22px;height:22px;border-radius:11px;background:#D3CCBD"></span>
+      <span style="flex:1;font-size:12.5px;color:#57514A">a.hermit@gmail.com</span>
+      <span style="font-size:11.5px;color:#9A9287">Settings</span>
+    </div>
+  </div>
+
+  <div style="flex:1;position:relative;display:flex;justify-content:center;overflow:hidden">
+    <div style="width:680px;padding:78px 30px 0;font-family:'Gentium Book Plus',serif">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:#9A9287;text-transform:uppercase">Majjhima Nikāya · Mūlapaṇṇāsa</div>
+      <div style="font-size:36px;line-height:1.14;margin-top:10px">Mindfulness Meditation</div>
+      <div style="font-size:22px;color:var(--pali,#8A6B47);margin-top:4px">Satipaṭṭhānasutta</div>
+      <div style="font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#9A9287;margin-top:10px">MN 10 · 18 min · trans. Sujato</div>
+      <div style="height:1px;background:#E5E0D4;margin:22px 0 20px"></div>
+      <p style="font-size:19px;line-height:1.75;margin:0 0 18px">So I have heard. At one time the Buddha was staying in the land of the Kurus, near the town of Kammāsadhamma.</p>
+      <div style="margin:0 0 18px">
+        <p style="font-size:19px;line-height:1.75;margin:0">There the Buddha addressed the mendicants: <span style="background:#F2E7B3">“This is the path to convergence, mendicants, for the purification of beings.”</span></p>
+        <p style="font-size:18px;line-height:1.75;color:var(--pali,#8A6B47);margin:2px 0 0">Ekāyano ayaṁ, bhikkhave, maggo sattānaṁ visuddhiyā.</p>
+      </div>
+      <p style="font-size:19px;line-height:1.75;margin:0 0 18px">“For overcoming sorrow and lamentation, for ending pain and sadness, for realizing the method, for witnessing extinguishment.</p>
+      <p style="font-size:19px;line-height:1.75;margin:0 0 18px"><span style="border-bottom:1.5px solid #B4423A">That is, the four kinds of mindfulness meditation.</span> What four?</p>
+      <p style="font-size:19px;line-height:1.75;margin:0">“It’s when a mendicant meditates by observing an aspect of the body — keen, aware, and mindful, rid of covetousness and displeasure for the world.</p>
+    </div>
+    <div style="position:absolute;top:20px;right:22px;display:flex;align-items:center;gap:2px;height:38px;padding:0 5px;background:rgba(255,253,247,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(0,0,0,.07);border-radius:19px;box-shadow:0 4px 14px rgba(0,0,0,.08)">
+      <span style="display:flex;align-items:center;justify-content:center;width:42px;height:30px;font-family:'Gentium Book Plus',serif;font-size:17px">aA</span>
+      <span style="display:flex;align-items:center;justify-content:center;width:40px;height:30px;font-size:13px">H</span>
+      <span style="display:flex;align-items:center;justify-content:center;width:40px;height:30px;font-size:13px">L</span>
+      <span style="width:1px;height:17px;background:#E5E0D4"></span>
+      <span style="display:flex;align-items:center;padding:0 12px 0 10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6459">38%</span>
+    </div>
+    <div style="position:absolute;left:0;right:0;bottom:0;height:26px;background:linear-gradient(to top,#F6F3EC,rgba(246,243,236,0))"></div>
+  </div>
+
+    <sc-if value="{{ listsShown }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;inset:0;z-index:20">
+      <div onClick="{{ toggleLists }}" style="position:absolute;inset:0;background:rgba(35,32,27,.32)"></div>
+      <div style="position:absolute;left:40px;top:40px;bottom:40px;width:380px;background:#FFFDF7;border:1px solid #E0D9CA;border-radius:14px;box-shadow:0 26px 64px rgba(0,0,0,.3);display:flex;flex-direction:column;overflow:hidden;font-family:'IBM Plex Sans',sans-serif;color:#23201B">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 16px 12px">
+          <span style="flex:1;font-size:16px;font-weight:600">My lists</span>
+          <span style="font-size:12.5px;color:#4B5F72;cursor:pointer">New list</span>
+          <span onClick="{{ toggleLists }}" style="width:26px;height:26px;border-radius:7px;background:#F1EDE4;color:#57514A;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer">✕</span>
+        </div>
+        <div style="padding:0 16px 12px">
+          <div style="display:flex;align-items:center;gap:9px;height:34px;padding:0 11px;background:#F6F3EC;border:1px solid #E5E0D4;border-radius:9px">
+            <svg width="13" height="13" viewBox="0 0 14 14"><circle cx="6" cy="6" r="4.6" fill="none" stroke="#9A9287" stroke-width="1.4"/><line x1="9.4" y1="9.4" x2="13" y2="13" stroke="#9A9287" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <span style="flex:1;font-size:13px;color:#9A9287">Filter lists</span>
+          </div>
+        </div>
+        <div style="flex:1;overflow:hidden;border-top:1px solid #EBE6DB">
+          <div style="display:flex;align-items:center;gap:9px;padding:10px 16px;background:#F4F0E7;border-bottom:1px solid #EBE6DB"><span style="width:18px;height:18px;border-radius:5px;background:#E3DDCF;color:#57514A;font-size:9px;display:flex;align-items:center;justify-content:center">{{ mOpen }}</span><span style="font-size:15px">🪷</span><span style="flex:1;font-size:14.5px;font-weight:600">Daily</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">12</span></div>
+          <div style="padding:8px 16px 8px 40px;font-family:'Gentium Book Plus',serif;font-size:14.5px;background:linear-gradient(#DCD5C7,#DCD5C7) 25px 0/1px 100% no-repeat;border-bottom:1px solid #EBE6DB"><span style="color:#9A9287">Snp 1.8</span> Loving-Kindness</div>
+          <div style="padding:8px 16px 8px 40px;font-family:'Gentium Book Plus',serif;font-size:14.5px;background:linear-gradient(#DCD5C7,#DCD5C7) 25px 0/1px 100% no-repeat;border-bottom:1px solid #EBE6DB"><span style="color:#9A9287">MN 10</span> Mindfulness Meditation</div>
+          <div style="display:flex;align-items:center;gap:9px;padding:10px 16px;background:#F4F0E7;border-bottom:1px solid #EBE6DB"><span style="width:18px;height:18px;border-radius:5px;background:#D3CCBD;color:#3C372F;font-size:9px;display:flex;align-items:center;justify-content:center">{{ mOpen }}</span><span style="font-size:15px">📁</span><span style="flex:1;font-size:14.5px;font-weight:600">Jhāna</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">28</span></div>
+          <div style="display:flex;align-items:center;gap:9px;padding:10px 16px 10px 40px;background:linear-gradient(#DCD5C7,#DCD5C7) 25px 0/1px 100% no-repeat,#F7F3EA;border-bottom:1px solid #EBE6DB"><span style="width:18px;height:18px;border-radius:5px;background:#E3DDCF;color:#57514A;font-size:9px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span><span style="font-size:15px">🌿</span><span style="flex:1;font-size:14px;font-weight:600">Similes</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">9</span></div>
+          <div style="display:flex;align-items:center;gap:9px;padding:10px 16px;background:#F4F0E7;border-bottom:1px solid #EBE6DB"><span style="width:18px;height:18px;border-radius:5px;background:#E3DDCF;color:#57514A;font-size:9px;display:flex;align-items:center;justify-content:center">{{ mClosed }}</span><span style="font-size:15px">📁</span><span style="flex:1;font-size:14.5px;font-weight:600">Study group</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A9287">6</span></div>
+          <div style="padding:12px 16px;font-size:12px;color:#9A9287">Drag to reorder or nest · right-click a list to change its emoji</div>
+        </div>
+      </div>
+    </div>
+    </sc-if>
+</div>
+</x-import>
+
+</div>
+</div>
+</div>
+
+<p class="dv-next">Try next: “commit to <a class="dv-oid" href="#1c">1c</a>-iii and rebuild <a class="dv-oid" href="#1a">1a</a> around it” · “row anatomy <a class="dv-oid" href="#1d">1d</a>-iii everywhere” · “show the sepia reader and the search history state” · “new directions for the reader chrome”</p>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;paliColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#8A6B47&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#8A6B47&quot;,&quot;#7A6A88&quot;,&quot;#4B5F72&quot;,&quot;#93857A&quot;],&quot;section&quot;:&quot;Pali text&quot;},&quot;treeMarker&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;triangle&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;triangle&quot;,&quot;chevron&quot;,&quot;plus / minus&quot;],&quot;section&quot;:&quot;Tree&quot;},&quot;sidebarCollapsed&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Large screens&quot;},&quot;sidebarWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:268,&quot;min&quot;:200,&quot;max&quot;:520,&quot;step&quot;:4,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Large screens&quot;},&quot;listsOpen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Large screens&quot;}}">
+class Component extends DCLogic {
+  state = { collapsed: null, sidebarW: null, lists: null };
+
+  startResize = (e) => {
+    e.preventDefault();
+    const startX = e.clientX;
+    const startW = this.state.sidebarW ?? (this.props.sidebarWidth ?? 268);
+    const move = (ev) => {
+      const w = Math.max(200, Math.min(520, startW + ev.clientX - startX));
+      this.setState({ sidebarW: w });
+    };
+    const up = () => {
+      window.removeEventListener('mousemove', move);
+      window.removeEventListener('mouseup', up);
+    };
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', up);
+  };
+
+  get collapsed() {
+    return this.state.collapsed === null
+      ? (this.props.sidebarCollapsed ?? false)
+      : this.state.collapsed;
+  }
+
+  renderVals() {
+    const marks = {
+      chevron: { open: '⌄', closed: '›' },
+      triangle: { open: '▾', closed: '▸' },
+      'plus / minus': { open: '−', closed: '+' },
+    };
+    const m = marks[this.props.treeMarker] || marks.triangle;
+    const collapsed = this.collapsed;
+    return {
+      w: 1180, h: 760, url: 'sutamaya.app/mn10',
+      paliColor: this.props.paliColor ?? '#8A6B47',
+      sidebarW: (this.state.sidebarW ?? (this.props.sidebarWidth ?? 268)) + 'px',
+      startResize: this.startResize,
+      mOpen: m.open,
+      mClosed: m.closed,
+      sidebarShown: !collapsed,
+      railShown: collapsed,
+      toggleSidebar: () => this.setState({ collapsed: !collapsed }),
+      listsShown: this.state.lists === null ? (this.props.listsOpen ?? true) : this.state.lists,
+      toggleLists: () => this.setState({
+        lists: !(this.state.lists === null ? (this.props.listsOpen ?? true) : this.state.lists),
+      }),
+    };
+  }
+}
+</script>
+</body>
+</html>
