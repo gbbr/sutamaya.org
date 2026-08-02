@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overscroll-behavior: none;
+  background: #f7f5f1;
+  color: #1b1917;
+  font-family: 'Newsreader', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #8a6a3b;
+}
+a:hover {
+  color: #6b5230;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: #eadfc6;
+}
+
+.sc {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(27, 25, 23, 0.2) transparent;
+}
+
+.pw {
+  cursor: pointer;
+  border-radius: 2px;
+}
+.pw:hover {
+  background: #eadfc6;
+}

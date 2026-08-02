@@ -1,0 +1,54 @@
+[
+  {
+    "sutta": [
+      {
+        "long": [
+          "dn",
+        ]
+      },
+      {
+        "middle": [
+          "mn",
+        ]
+      },
+      {
+        "linked": [
+          "sn",
+        ]
+      },
+      {
+        "numbered": [
+          "an",
+        ]
+      },
+      {
+        "minor": [
+          {
+            "kn": [
+              "kp",
+              "dhp",
+              "ud",
+              "iti",
+              "snp",
+              "vv",
+              "pv",
+              "thag",
+              "thig",
+              "tha-ap",
+              "thi-ap",
+              "bv",
+              "cp",
+              "ja",
+              "mnd",
+              "cnd",
+              "ps",
+              "ne",
+              "pe",
+              "mil"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

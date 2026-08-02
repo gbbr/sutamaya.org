@@ -1,0 +1,14 @@
+node_modules
+**/node_modules
+web/dist
+web/dev-dist
+web/public/data
+server/data
+design
+.git
+.claude
+*.md
+.DS_Store
+.env
+*.local
+*.tsbuildinfo
