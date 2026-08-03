@@ -5,7 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { NIKAYA_META, AN_BOOK_NAMES, KN_BOOKS, formatRef, flattenLeaves, findChapterNodes } from './lib/collections.js';
+import { NIKAYA_META, AN_BOOK_NAMES, KN_BOOKS, REF_ABBR, formatRef, stripTitlePrefix, flattenLeaves, findChapterNodes } from './lib/collections.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -138,7 +138,7 @@ function buildLeaf(uid, nodeId, collection) {
   suttas[uid] = {
     ref: formatRef(uid),
     node: nodeId,
-    en: headerTitle(sujatoMap, uid) || names.en.get(uid) || formatRef(uid),
+    en: headerTitle(sujatoMap, uid) || stripTitlePrefix(names.en.get(uid)) || formatRef(uid),
     pali: headerTitle(paliMap, uid) || names.pali.get(uid) || uid,
     blurb: blurbs.get(uid) || '',
     min,
@@ -166,8 +166,9 @@ for (const id of ['dn', 'mn']) {
   const names = nameIndexFor('sn');
   const chapterRows = chapters.map(({ key, leaves }) => {
     leaves.forEach((uid) => buildLeaf(uid, key, 'sn'));
+    const ref = formatRef(key);
     const paliName = names.pali.get(key);
-    return { id: key, label: `${formatRef(key)}${paliName ? ' · ' + paliName : ''}`, count: leaves.length };
+    return { id: key, ref, label: stripTitlePrefix(names.en.get(key)) || paliName || ref, sub: paliName, count: leaves.length };
   });
   nikayas.push({ id: 'sn', label: NIKAYA_META.sn.label, sub: NIKAYA_META.sn.sub, count: chapterRows.length, chapters: chapterRows });
   console.log(`  sn: ${chapterRows.length} chapters, ${chapterRows.reduce((n, c) => n + c.count, 0)} suttas`);
@@ -180,10 +181,11 @@ for (const id of ['dn', 'mn']) {
     const na = +a.key.slice(2), nb = +b.key.slice(2);
     return na - nb;
   });
+  const names = nameIndexFor('an');
   const chapterRows = chapters.map(({ key, leaves }, i) => {
     leaves.forEach((uid) => buildLeaf(uid, key, 'an'));
     const bookName = AN_BOOK_NAMES[i] || `Book ${i + 1}`;
-    return { id: key, label: `${formatRef(key)} · Book of ${bookName}`, count: leaves.length };
+    return { id: key, ref: formatRef(key), label: `Book of ${bookName}`, sub: names.pali.get(key), count: leaves.length };
   });
   nikayas.push({ id: 'an', label: NIKAYA_META.an.label, sub: NIKAYA_META.an.sub, count: chapterRows.length, chapters: chapterRows });
   console.log(`  an: ${chapterRows.length} chapters, ${chapterRows.reduce((n, c) => n + c.count, 0)} suttas`);
@@ -194,7 +196,8 @@ for (const id of ['dn', 'mn']) {
   const chapterRows = KN_BOOKS.map((book) => {
     const leaves = flattenLeaves(loadTree(book.id));
     leaves.forEach((uid) => buildLeaf(uid, book.id, book.id));
-    return { id: book.id, label: book.label, sub: book.pali, count: leaves.length };
+    const ref = REF_ABBR[book.id] || book.id.toUpperCase();
+    return { id: book.id, ref, label: book.label, sub: book.pali, count: leaves.length };
   });
   nikayas.push({ id: 'kn', label: NIKAYA_META.kn.label, sub: NIKAYA_META.kn.sub, count: chapterRows.length, chapters: chapterRows });
   console.log(`  kn: ${chapterRows.length} books, ${chapterRows.reduce((n, c) => n + c.count, 0)} leaf documents`);

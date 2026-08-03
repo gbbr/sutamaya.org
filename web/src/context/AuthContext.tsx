@@ -1,12 +1,14 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { authApi } from '../lib/api';
 import type { User } from '../lib/types';
+
+const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
 interface AuthState {
   user: User | null;
   loading: boolean;
-  login: (email: string, password: string) => Promise<void>;
-  register: (email: string, password: string) => Promise<void>;
+  loginWithGoogle: (credential: string) => Promise<void>;
+  promptGoogleSignIn: () => void;
   logout: () => Promise<void>;
 }
 
@@ -15,6 +17,7 @@ const AuthContext = createContext<AuthState | null>(null);
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const googleReady = useRef(false);
 
   useEffect(() => {
     authApi
@@ -24,20 +27,53 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       .finally(() => setLoading(false));
   }, []);
 
-  const login = useCallback(async (email: string, password: string) => {
-    const { user } = await authApi.login(email, password);
+  const loginWithGoogle = useCallback(async (credential: string) => {
+    const { user } = await authApi.google(credential);
     setUser(user);
   }, []);
-  const register = useCallback(async (email: string, password: string) => {
-    const { user } = await authApi.register(email, password);
-    setUser(user);
+
+  useEffect(() => {
+    if (!GOOGLE_CLIENT_ID) return;
+    let cancelled = false;
+    function init() {
+      if (cancelled || !window.google) return;
+      window.google.accounts.id.initialize({
+        client_id: GOOGLE_CLIENT_ID!,
+        callback: ({ credential }) => {
+          loginWithGoogle(credential).catch((err) => console.error('Google sign-in failed:', err));
+        },
+      });
+      googleReady.current = true;
+    }
+    if (window.google) init();
+    else {
+      const id = window.setInterval(() => {
+        if (window.google) {
+          window.clearInterval(id);
+          init();
+        }
+      }, 100);
+      return () => window.clearInterval(id);
+    }
+    return () => {
+      cancelled = true;
+    };
+  }, [loginWithGoogle]);
+
+  const promptGoogleSignIn = useCallback(() => {
+    if (!googleReady.current || !window.google) return;
+    window.google.accounts.id.prompt();
   }, []);
+
   const logout = useCallback(async () => {
     await authApi.logout();
     setUser(null);
   }, []);
 
-  const value = useMemo(() => ({ user, loading, login, register, logout }), [user, loading, login, register, logout]);
+  const value = useMemo(
+    () => ({ user, loading, loginWithGoogle, promptGoogleSignIn, logout }),
+    [user, loading, loginWithGoogle, promptGoogleSignIn, logout]
+  );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 

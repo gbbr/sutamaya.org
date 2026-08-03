@@ -1,5 +1,4 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
-import { navigate } from '@reach/router';
 import { dataApi, highlightsApi, listsApi, notesApi, visitedApi } from '../lib/api';
 import type { Highlight, HighlightsMap, ListDef, Membership, NotesMap, VisitedMap } from '../lib/types';
 import { useAuth } from './AuthContext';
@@ -43,7 +42,7 @@ const EMPTY: UserDataState = {
 };
 
 export function UserDataProvider({ children }: { children: ReactNode }) {
-  const { user } = useAuth();
+  const { user, promptGoogleSignIn } = useAuth();
   const [ready, setReady] = useState(false);
   const [lists, setLists] = useState<ListDef[]>([]);
   const [membership, setMembership] = useState<Membership>({});
@@ -84,7 +83,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
 
   const createList = useCallback(async (label: string) => {
     if (!user) {
-      navigate('/login');
+      promptGoogleSignIn();
       throw new Error('not_authenticated');
     }
     const existing = lists.find((l) => l.label === label);
@@ -93,7 +92,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     const def: ListDef = { id: list.id, label: list.label };
     setLists((ls) => [...ls, def]);
     return def;
-  }, [lists, user]);
+  }, [lists, user, promptGoogleSignIn]);
 
   const removeList = useCallback(async (id: string, label: string) => {
     setLists((ls) => ls.filter((l) => l.id !== id));
@@ -107,7 +106,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
 
   const toggleMembership = useCallback(
     async (suttaId: string, label: string) => {
-      if (!user) return navigate('/login');
+      if (!user) return promptGoogleSignIn();
       const list = lists.find((l) => l.label === label);
       if (!list) return;
       const current = membership[suttaId] || [];
@@ -116,18 +115,18 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       if (on) await listsApi.removeItem(list.id, suttaId);
       else await listsApi.addItem(list.id, suttaId);
     },
-    [lists, membership, user]
+    [lists, membership, user, promptGoogleSignIn]
   );
 
   const setNote = useCallback((suttaId: string, text: string) => {
-    if (!user) return navigate('/login');
+    if (!user) return promptGoogleSignIn();
     setNotes((n) => ({ ...n, [suttaId]: text }));
     notesApi.set(suttaId, text).catch((e) => console.error('note save failed', e));
-  }, [user]);
+  }, [user, promptGoogleSignIn]);
 
   const setHighlightRange = useCallback(
     async (suttaId: string, i: number, s: number, e: number, color: string | null) => {
-      if (!user) return navigate('/login');
+      if (!user) return promptGoogleSignIn();
       const current = highlights[suttaId] || [];
       const kept = current.filter((h) => !(h.i === i && h.s < e && h.e > s));
       const next = color ? [...kept, { id: `temp-${Date.now()}`, i, s, e, c: color }] : kept;
@@ -136,7 +135,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       const fresh = await dataApi.all();
       setHighlights(fresh.highlights);
     },
-    [highlights, user]
+    [highlights, user, promptGoogleSignIn]
   );
 
   const removeHighlight = useCallback(async (suttaId: string, id: string) => {

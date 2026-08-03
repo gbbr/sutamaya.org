@@ -1,3 +1,4 @@
+import { X } from 'lucide-react';
 import type { ThemeColors } from '../lib/types';
 
 interface DictionaryDockProps {
@@ -18,12 +19,13 @@ export function DictionaryDock({ word, gloss, body, theme, onClose }: Dictionary
         <div className="text-[20px] font-semibold font-serif">{word}</div>
         <div className="font-sans flex-1 text-[12.5px] opacity-55">{gloss}</div>
         <button
-          className="font-sans text-[12.5px] opacity-60"
+          className="flex items-center gap-1 font-sans text-[12.5px] opacity-60"
           onClick={(e) => {
             e.stopPropagation();
             onClose();
           }}
         >
+          <X size={13} strokeWidth={1.75} />
           Close · esc
         </button>
       </div>

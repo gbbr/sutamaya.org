@@ -3,7 +3,6 @@ import { AppProviders } from './context/AppProviders';
 import { useCorpus } from './context/CorpusContext';
 import { LibraryPage } from './pages/LibraryPage';
 import { ReaderPage } from './pages/ReaderPage';
-import { AuthPage } from './pages/AuthPage';
 import { SettingsPage } from './pages/SettingsPage';
 
 function Splash() {
@@ -23,8 +22,6 @@ function Routes() {
       <LibraryPage path="/browse/:nodeId" />
       <LibraryPage path="/browse/:nodeId/:suttaId" />
       <ReaderPage path="/read/:suttaId" />
-      <AuthPage path="/login" mode="login" />
-      <AuthPage path="/register" mode="register" />
       <SettingsPage path="/settings" />
     </Router>
   );

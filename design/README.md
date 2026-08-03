@@ -60,20 +60,22 @@ tree `#F0ECE4` · list `#F8F6F2` · preview/app `#FDFCFA`.
 - `MY LISTS` heading carries a discreet dashed `+` button; it opens an inline input, Return creates.
 
 ### 2. Sutta list (middle)
-- Header: back affordance on mobile, node title 19px/600, meta line ("N suttas · M read"),
-  a sort toggle (`Order` ⇄ `A–Z`), and — only while the preview is closed — a bordered `Preview` button
-  that restores the third pane.
+- Header: back affordance on mobile, node title 19px/600, meta line ("N suttas · M read"), and — only
+  while the preview is closed — a bordered `Preview` button (eye icon) that restores the third pane.
+  **Deviation:** no sort toggle — suttas are always in ID order, never re-sortable.
 - Rows (15px/20px padding, 1px bottom border): ID 11.5px/700 `rgba(27,25,23,.6)` · English title 16px/600 ·
   Pali title 13.5px italic `#8A6A3B` · then **the user's note if present, else the blurb** (note = 14.5px
   italic with a 2px left rule; blurb = 14px at `rgba(27,25,23,.72)`) · then list-membership chips
   (11px, 10px radius, 1px border). Read state is the low-contrast word `read` at 11px — never an icon.
-- Selected row (desktop, preview open) inverts to `#1B1917` / `#FBFAF7`.
+- **Deviation:** selected row (desktop, preview open) inverts to the warm accent `#8A6A3B` / `#FBFAF7`,
+  not near-black `#1B1917` — product direction is to avoid black backgrounds anywhere in the UI.
 - Search: typing anywhere in the field replaces the tree and the list with inline results across ID, title,
   Pali, blurb, notes, and segment text; clearing restores the browse tree.
 
 ### 3. Preview pane (right, ≥ 880px)
-- Header bar: sutta meta on the left; `Full screen` (opens the immersive reader) and `Close` (hides the
-  pane) as 12.5px text buttons.
+- Header bar: sutta meta on the left; `Read` (opens the immersive reader, book icon) and `Close`
+  (hides the pane, panel icon) as 12.5px text+icon buttons. **Deviation:** originally labelled
+  `Full screen`.
 - Body: title 27px/600, Pali 16px italic `#8A6A3B`, blurb, rule, then **the sutta text itself**, rendered
   with the reader's current face/size/line-height (one step smaller). Selecting text highlights exactly as
   in the reader. Below the text: note field and list chips.
@@ -102,15 +104,15 @@ tree `#F0ECE4` · list `#F8F6F2` · preview/app `#FDFCFA`.
 
 ### 5. Highlighting (reader and preview)
 - Select any run of text inside one segment. On mouseup a **popup floats above the selection**: three
-  colour swatches (20px circles, `#F0E3A8` · `#CBE0C2` · `#CFDCEE`), `Remove` (only over an existing
-  highlight), and `Note`. 11px radius, panel fill, 1px rule border, `0 8px 24px rgba(0,0,0,.18)` shadow,
+  colour swatches (20px circles, `#F0E3A8` · `#CBE0C2` · `#CFDCEE`) and `Remove` (only over an existing
+  highlight). 11px radius, panel fill, 1px rule border, `0 8px 24px rgba(0,0,0,.18)` shadow,
   120ms opacity fade. It measures itself after render and nudges inside the viewport, flipping below the
-  selection when it would clip the top.
+  selection when it would clip the top. **Deviation:** no `Note` control in this popup — notes are global
+  to the sutta, not per-highlight, so they don't belong here; use the Notes tab / note field instead.
 - Picking a colour highlights **exactly the selected characters** (background + 2px box-shadow spread,
   2px radius, ink forced to `#1B1917` so colours stay legible in dark mode). Overlapping highlights in the
   same segment are replaced.
 - Clicking an existing highlight reopens the popup anchored to it, to recolour or remove.
-- `Note` opens the Menu panel in the reader; in the preview it focuses the note field.
 
 ## State
 

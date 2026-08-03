@@ -22,10 +22,8 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 
 export const authApi = {
   me: () => request<{ user: User | null }>('/auth/me'),
-  register: (email: string, password: string) =>
-    request<{ user: User }>('/auth/register', { method: 'POST', body: JSON.stringify({ email, password }) }),
-  login: (email: string, password: string) =>
-    request<{ user: User }>('/auth/login', { method: 'POST', body: JSON.stringify({ email, password }) }),
+  google: (credential: string) =>
+    request<{ user: User }>('/auth/google', { method: 'POST', body: JSON.stringify({ credential }) }),
   logout: () => request<{ ok: true }>('/auth/logout', { method: 'POST' }),
 };
 

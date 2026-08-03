@@ -54,7 +54,42 @@ export function formatRef(uid) {
   if (!m) return uid;
   const [, prefix, digits] = m;
   const abbr = REF_ABBR[prefix] || prefix.toUpperCase();
-  return `${abbr} ${digits.replace(/-/g, '–')}`;
+  return `${abbr}${digits.replace(/-/g, '–')}`;
+}
+
+// Sujato's English chapter/vagga names are full sentences ("Linked Discourses With Deities",
+// "The Chapter on a Reed") where the browse tree just wants the distinguishing part ("Deities",
+// "A Reed"). Sorted longest-first so e.g. "The Chapter with the " is tried before the shorter
+// "The Chapter with " it would otherwise be shadowed by.
+const TITLE_PREFIXES = [
+  'The Group of Linked Discourses With ',
+  'The Group of Linked Discourses Beginning With ',
+  'The Linked Discourses on the ',
+  'The Linked Discourses on ',
+  'The Linked Discourses With ',
+  'The Linked Discourses with ',
+  'The Linked Discourses ',
+  'Linked Discourses on the ',
+  'Linked Discourses on ',
+  'Linked Discourses With ',
+  'Linked Discourses with ',
+  'Linked Discourses ',
+  'The Chapter on a ',
+  'The Chapter on the ',
+  'The Chapter on ',
+  'The Chapter of ',
+  'The Chapter with ',
+  'The Chapter with the ',
+  'The Chapter Beginning With ',
+  'The Chapter Beginning with ',
+].sort((a, b) => b.length - a.length);
+
+export function stripTitlePrefix(name) {
+  if (!name) return name;
+  const prefix = TITLE_PREFIXES.find((p) => name.startsWith(p));
+  if (!prefix) return name;
+  const rest = name.slice(prefix.length);
+  return rest.charAt(0).toUpperCase() + rest.slice(1);
 }
 
 export function flattenLeaves(node, out = []) {

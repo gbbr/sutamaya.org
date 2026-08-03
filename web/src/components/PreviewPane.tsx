@@ -1,11 +1,13 @@
 import { useRef } from 'react';
 import { navigate } from '@reach/router';
+import { BookOpen, PanelRightClose } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { useSuttaText } from '../hooks/useSuttaText';
 import { useHighlightPopup } from '../hooks/useHighlightPopup';
+import { useScrollMemory } from '../hooks/useScrollMemory';
 import { SegmentedText } from './SegmentedText';
 import { HighlightPopup } from './HighlightPopup';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
@@ -22,8 +24,9 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
   const segments = useSuttaText(selectedId);
   const sutta = corpus && selectedId ? corpus.suttas[selectedId] : undefined;
   const hlForSutta = (selectedId && highlights[selectedId]) || [];
-  const { pop, onTextUp, pick, close, popStop, openPop } = useHighlightPopup(selectedId, hlForSutta);
+  const { pop, onTextUp, pick, popStop, openPop } = useHighlightPopup(selectedId, hlForSutta);
   const noteRef = useRef<HTMLTextAreaElement>(null);
+  const scrollRef = useScrollMemory<HTMLDivElement>(selectedId ? `preview:${selectedId}` : null);
 
   if (!desktop || previewHidden) return null;
 
@@ -47,18 +50,20 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
           {sutta.ref} · {sutta.min} min{visited[selectedId] ? ' · read' : ''}
         </span>
         <button
-          className="text-[12.5px] font-medium text-ink/65"
+          className="flex items-center gap-1.5 text-[12.5px] font-medium text-ink/65"
           onClick={() => {
             navigate(`/read/${encodeURIComponent(selectedId)}`);
           }}
         >
-          Full screen
+          <BookOpen size={14} strokeWidth={1.75} />
+          Read
         </button>
-        <button className="text-[12.5px] font-medium text-ink/65" onClick={hidePreview}>
+        <button className="flex items-center gap-1.5 text-[12.5px] font-medium text-ink/65" title="Close preview" onClick={hidePreview}>
+          <PanelRightClose size={15} strokeWidth={1.75} />
           Close
         </button>
       </header>
-      <div className="sc flex-1 px-[34px] pt-[30px] pb-[60px]">
+      <div ref={scrollRef} className="sc flex-1 px-[34px] pt-[30px] pb-[60px]">
         <div className="text-[27px] font-semibold leading-[1.15] tracking-[-.015em] font-serif">{sutta.en}</div>
         <div className="text-[16px] mt-1 italic font-serif" style={{ color: '#8A6A3B' }}>
           {sutta.pali}
@@ -99,7 +104,7 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
           {chips.map((label) => (
             <button
               key={label}
-              className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px] border border-ink bg-ink text-[#FBFAF7]"
+              className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px] border border-accent bg-accent text-[#FBFAF7]"
               onClick={() => toggleMembership(selectedId, label)}
             >
               {label} ×
@@ -113,19 +118,7 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
           </button>
         </div>
       </div>
-      {pop && (
-        <HighlightPopup
-          pop={pop}
-          theme={theme}
-          onPick={pick}
-          onRemove={() => pick(null)}
-          onNote={() => {
-            close();
-            setTimeout(() => noteRef.current?.focus(), 20);
-          }}
-          onStop={popStop}
-        />
-      )}
+      {pop && <HighlightPopup pop={pop} theme={theme} onPick={pick} onRemove={() => pick(null)} onStop={popStop} />}
     </aside>
   );
 }

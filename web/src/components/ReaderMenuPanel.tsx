@@ -1,4 +1,5 @@
 import { useRef, useState, type KeyboardEvent } from 'react';
+import { Trash2 } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import type { SegmentFile } from '../lib/corpus';
@@ -66,9 +67,13 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
   async function submitDraft() {
     const name = draft.trim();
     if (!name) return;
-    const list = await createList(name);
-    setDraft('');
-    if (!suttaLists.includes(list.label)) toggleMembership(suttaId, list.label);
+    try {
+      const list = await createList(name);
+      setDraft('');
+      if (!suttaLists.includes(list.label)) toggleMembership(suttaId, list.label);
+    } catch {
+      // Signed out: createList() already triggered the Google sign-in prompt.
+    }
   }
   function onDraftKey(e: KeyboardEvent<HTMLInputElement>) {
     if (e.key === 'Enter') {
@@ -130,7 +135,8 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
               <div key={h.id} className="flex gap-2.5 items-start py-2.5" style={{ borderBottom: `1px solid ${theme.rule}` }}>
                 <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: h.c }} />
                 <span className="flex-1 text-sm leading-[1.45]">{(segments?.[h.i]?.en || '').slice(h.s, h.e).slice(0, 92) || `Segment ${h.i + 1}`}</span>
-                <button className="font-sans text-[11.5px] opacity-45" onClick={() => removeHighlight(suttaId, h.id)}>
+                <button className="flex items-center gap-1 font-sans text-[11.5px] opacity-45" onClick={() => removeHighlight(suttaId, h.id)}>
+                  <Trash2 size={12} strokeWidth={1.75} />
                   Remove
                 </button>
               </div>

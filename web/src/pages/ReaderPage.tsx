@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
+import { X, ChevronLeft, ChevronRight, Menu as MenuIcon } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { useSuttaText } from '../hooks/useSuttaText';
 import { useHighlightPopup } from '../hooks/useHighlightPopup';
+import { useScrollMemory } from '../hooks/useScrollMemory';
 import { suttasFor } from '../lib/corpus';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { lookupWord } from '../lib/dictionary';
@@ -36,6 +38,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   const sutta = corpus && suttaId ? corpus.suttas[suttaId] : undefined;
   const hlForSutta = (suttaId && highlights[suttaId]) || [];
   const { pop, onTextUp, pick, close: closePop, popStop, openPop } = useHighlightPopup(suttaId, hlForSutta);
+  const scrollRef = useScrollMemory<HTMLDivElement>(suttaId ? `reader:${suttaId}` : null);
 
   const theme = READER_THEMES[themeId];
 
@@ -98,7 +101,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     setDict({
       word,
       gloss: def ? `${def.length} sense${def.length > 1 ? 's' : ''} · DPD` : 'Pali',
-      body: def ? def.join('<br/><br/>') : 'No entry in the offline dictionary for this form. Try the stem, or search the full lexicon.',
+      body: def ? def.join('<br/>') : 'No entry in the offline dictionary for this form. Try the stem, or search the full lexicon.',
     });
   }
 
@@ -135,28 +138,35 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       onPointerUp={onReaderPointerUp}
     >
       <header className="font-sans flex-none flex items-center gap-4 px-5 py-3 text-[13px]" style={{ borderBottom: `1px solid ${theme.rule}` }}>
-        <button onClick={closeReader}>Close</button>
+        <button className="flex items-center gap-1.5" onClick={closeReader}>
+          <X size={15} strokeWidth={1.75} />
+          Close
+        </button>
         <span className="flex-1 text-center opacity-75 font-serif">
           {sutta.ref} · {sutta.pali}
         </span>
-        <button style={{ opacity: 0.75 }} onClick={(e) => { e.stopPropagation(); step(-1); }}>
+        <button className="flex items-center gap-1.5" style={{ opacity: 0.75 }} onClick={(e) => { e.stopPropagation(); step(-1); }}>
+          <ChevronLeft size={15} strokeWidth={1.75} />
           Prev
         </button>
-        <button style={{ opacity: 0.75 }} onClick={(e) => { e.stopPropagation(); step(1); }}>
+        <button className="flex items-center gap-1.5" style={{ opacity: 0.75 }} onClick={(e) => { e.stopPropagation(); step(1); }}>
           Next
+          <ChevronRight size={15} strokeWidth={1.75} />
         </button>
         <button
+          className="flex items-center gap-1.5"
           onClick={(e) => {
             e.stopPropagation();
             setTab('notes');
             setPanel(true);
           }}
         >
+          <MenuIcon size={15} strokeWidth={1.75} />
           Menu
         </button>
       </header>
 
-      <div className="sc flex-1" style={{ padding: '44px 22px 120px' }}>
+      <div ref={scrollRef} className="sc flex-1" style={{ padding: '44px 22px 120px' }}>
         <div style={{ maxWidth: measureWidth, margin: '0 auto' }}>
           <h1 className="font-serif" style={{ margin: 0, fontSize: Math.round(fs * 1.72), fontWeight: 600, lineHeight: 1.12, letterSpacing: '-.015em' }}>
             {sutta.en}
@@ -207,7 +217,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
         />
       )}
 
-      {pop && <HighlightPopup pop={pop} theme={theme} onPick={pick} onRemove={() => pick(null)} onNote={() => { closePop(); setTab('notes'); setPanel(true); }} onStop={popStop} />}
+      {pop && <HighlightPopup pop={pop} theme={theme} onPick={pick} onRemove={() => pick(null)} onStop={popStop} />}
     </div>
   );
 }

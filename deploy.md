@@ -3,10 +3,11 @@
 Sutamaya deploys as **one Cloud Run service**: the container built from the root `Dockerfile`
 runs the Express API and also serves the built React SPA (`web/dist`) — see `CLAUDE.md` for why
 (same-origin cookies, one thing to deploy). User data (lists/notes/highlights/visited) lives in
-**Firestore**, not the SQLite file `server/src/db.js` used to use — Cloud Run's container
-filesystem is ephemeral, and Firestore's Always Free tier is generous enough that a personal-use
-deployment of this app shouldn't need to pay anything. See "Staying in the free tier" below for
-the numbers.
+**Firestore**, since Cloud Run's container filesystem is ephemeral — and Firestore's Always Free
+tier is generous enough that a personal-use deployment of this app shouldn't need to pay
+anything. See "Staying in the free tier" below for the numbers.
+
+Once the one-time setup below is done, redeploying is just `npm run deploy`.
 
 This whole guide uses the `gcloud` CLI — no console clicking. Run every command from the repo
 root unless noted.
@@ -24,7 +25,7 @@ Pick your project and a region once, and reuse them in every command below:
 
 ```bash
 export PROJECT_ID=your-project-id
-export REGION=us-central1   # check the Cloud Run/Firestore pricing pages for current
+export REGION=europe-west1  # check the Cloud Run/Firestore pricing pages for current
                              # Always-Free-eligible regions before picking a different one
 
 gcloud config set project "$PROJECT_ID"
@@ -83,7 +84,22 @@ gcloud secrets add-iam-policy-binding sutamaya-session-secret \
   --role="roles/secretmanager.secretAccessor"
 ```
 
-## 5. Deploy
+## 5. Set up Google sign-in
+
+Sign-in is Google-only (see CLAUDE.md), so both the frontend and the server need the same OAuth
+Web Client ID:
+
+1. Google Cloud Console → **APIs & Services → OAuth consent screen** — External, add
+   `sutamaya.org` (or your domain) as an authorized domain, publish.
+2. **Credentials → Create Credentials → OAuth client ID → Web application** — authorized
+   JavaScript origins: your local dev URL (`http://localhost:5173`), your custom domain if any,
+   and the Cloud Run service URL. No redirect URI is needed.
+3. Put the resulting Client ID in `VITE_GOOGLE_CLIENT_ID` in `web/.env.production` (and
+   `web/.env.development` for local dev) — it's a public identifier, safe to commit.
+   `npm run deploy` reads it from `web/.env.production` automatically and passes it to the
+   server, so it only needs to be set once here — not pasted in on every deploy.
+
+## 6. Deploy
 
 From the repo root (where `Dockerfile` lives):
 
@@ -96,15 +112,27 @@ gcloud run deploy sutamaya \
   --set-env-vars="NODE_ENV=production" \
   --allow-unauthenticated \
   --min-instances=0 \
-  --max-instances=2 \
-  --memory=512Mi
+  --max-instances=1 \
+  --memory=512Mi \
+  --timeout=30
 ```
 
 This uploads the repo to Cloud Build, builds the image from `Dockerfile`, pushes it to Artifact
 Registry, and deploys it. First run takes a few minutes (mostly the corpus-build + npm install
 steps inside the build); later deploys are faster since layers are cached. `--allow-unauthenticated`
 is what makes it reachable as a normal public web app — drop it if you want to gate access behind
-IAM/IAP instead.
+IAM/IAP instead. `--timeout=30` bounds worst-case GB-seconds if a request ever hangs (raise it if
+you have a route that legitimately needs longer).
+
+Once the one-time setup above is done, `npm run deploy` (root `scripts/deploy.sh`) wraps this
+same command: it checks `gcloud auth list` for an active account and errors out (no auto-login)
+if you're not authenticated, resolves `PROJECT_ID` from the env or `gcloud config get-value
+project`, and defaults `REGION` to `europe-west1` — override either with `PROJECT_ID=... REGION=...
+npm run deploy`. It also pre-creates the `cloud-run-source-deploy` Artifact Registry repo and
+attaches `scripts/artifact-cleanup-policy.json` to it (keep the 5 most recent image versions,
+delete anything older than 30 days) before deploying — see "Staying in the free tier" below.
+Pre-creating the repo also means `gcloud run deploy` never hits its interactive "create this repo?"
+prompt, which is otherwise unsafe to run from a non-interactive script.
 
 `GOOGLE_CLOUD_PROJECT` (which `server/src/firestore.js` uses to talk to the right Firestore
 database) is set automatically by Cloud Run — you don't need to pass it.
@@ -115,14 +143,15 @@ database) is set automatically by Cloud Run — you don't need to pass it.
 gcloud run services describe sutamaya --region="$REGION" --format='value(status.url)'
 ```
 
-Open it, register an account, and confirm lists/notes/highlights save and survive a refresh —
+Open it, sign in with Google, and confirm lists/notes/highlights save and survive a refresh —
 that round-trips through Firestore, so it's the real end-to-end check.
 
 ## Redeploying
 
-Same command as step 5, every time. Cloud Build rebuilds the image fresh from your current
-working tree (uncommitted changes included, since `--source .` uploads the local directory, not
-a git ref — commit first if you want the deployed image to match a specific commit).
+`npm run deploy`, every time — no arguments needed. Cloud Build rebuilds the image fresh from
+your current working tree (uncommitted changes included, since `--source .` uploads the local
+directory, not a git ref — commit first if you want the deployed image to match a specific
+commit).
 
 ## Staying in the free tier
 
@@ -141,13 +170,14 @@ For a personal/low-traffic deployment of this app, Cloud Run and Firestore usage
 to their ceilings. The two things actually worth watching:
 
 - **Artifact Registry's 0.5GB is the tightest limit** — each `gcloud run deploy` pushes a new
-  image (~500MB uncompressed, less as compressed layers, but they accumulate). Clean up old
-  images periodically:
+  image (~500MB uncompressed, less as compressed layers, but they accumulate). `npm run deploy`
+  attaches a native cleanup policy (`scripts/artifact-cleanup-policy.json`) to the repo that keeps
+  the 5 most recent image versions and deletes anything older than 30 days automatically, so this
+  doesn't need a manual step. To apply/update it by hand instead:
   ```bash
-  gcloud artifacts docker images list "$REGION-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy" \
-    --format='value(IMAGE)' | tail -n +6 | xargs -I{} gcloud artifacts docker images delete {} --quiet
+  gcloud artifacts repositories set-cleanup-policies cloud-run-source-deploy \
+    --project="$PROJECT_ID" --location="$REGION" --policy=scripts/artifact-cleanup-policy.json
   ```
-  (keeps the 5 most recent, deletes the rest — adjust as you like).
 - **Set a budget alert** as a safety net regardless — it won't stop spending, but it emails you
   before anything surprising shows up:
   ```bash
@@ -184,13 +214,23 @@ terminates real HTTPS and forwards an `X-Forwarded-Proto: https` header that `tr
 up, so it works normally once actually deployed. To reproduce that locally with curl, add
 `-H 'X-Forwarded-Proto: https'` to your requests.
 
+## Custom domain
+
+```bash
+gcloud beta run domain-mappings create --service=sutamaya --domain=your-domain.com --region="$REGION"
+gcloud beta run domain-mappings describe --domain=your-domain.com --region="$REGION" \
+  --format="yaml(status.resourceRecords)"
+```
+
+Add the printed A/AAAA records at your domain's DNS provider (root/apex, DNS-only — not
+proxied, if using Cloudflare or similar, so Google can issue the TLS certificate). Certificate
+provisioning is automatic once the records resolve, usually within an hour. Also add the domain
+to the OAuth client's authorized JavaScript origins (see step 5) — `VITE_GOOGLE_CLIENT_ID`
+itself doesn't need to change.
+
 ## Notes / gaps
 
-- No custom domain wiring in this guide — `gcloud run domain-mappings create` if you want one.
-- No CI — every deploy above is a manual `gcloud run deploy --source .`. Wire it into a GitHub
-  Actions workflow with `google-github-actions/deploy-cloudrun` later if you want deploys on
-  push.
-- `--max-instances=2` is just a sane default for a personal app (bounds worst-case cost); raise
-  it if you expect real concurrent traffic. Firestore itself has no concurrency caveat the way
-  the old SQLite-on-a-mounted-volume approach would have — this is one of the reasons Firestore
-  was worth migrating to instead.
+- No CI — every deploy above is a manual `npm run deploy`. Wire it into a GitHub Actions
+  workflow with `google-github-actions/deploy-cloudrun` later if you want deploys on push.
+- `--max-instances=1` is a sane default for a personal app (bounds worst-case cost); raise it in
+  `scripts/deploy.sh` if you expect real concurrent traffic.

@@ -1,4 +1,4 @@
-import type { Corpus, Dictionary, ListDef, Sutta } from './types';
+import type { Corpus, Dictionary, ListDef, Membership, Sutta } from './types';
 
 export async function loadCorpus(): Promise<Corpus> {
   const res = await fetch('/data/corpus.json');
@@ -35,6 +35,30 @@ export function suttasFor(corpus: Corpus, nodeId: string): Array<[string, Sutta]
   return suttaEntries(corpus).filter(([, s]) => s.node === nodeId);
 }
 
+// Natural sort: splits an id into digit/non-digit runs and compares digit runs
+// numerically, so "mn10" sorts after "mn9" instead of before it.
+const ID_TOKEN = /(\d+)|(\D+)/g;
+
+export function compareIds(a: string, b: string): number {
+  const ta = a.match(ID_TOKEN) || [];
+  const tb = b.match(ID_TOKEN) || [];
+  const len = Math.max(ta.length, tb.length);
+  for (let i = 0; i < len; i++) {
+    const x = ta[i] ?? '';
+    const y = tb[i] ?? '';
+    if (x === y) continue;
+    const nx = /^\d+$/.test(x) ? Number(x) : NaN;
+    const ny = /^\d+$/.test(y) ? Number(y) : NaN;
+    if (!Number.isNaN(nx) && !Number.isNaN(ny)) return nx - ny;
+    return x < y ? -1 : 1;
+  }
+  return 0;
+}
+
+export function sortByIdAsc(entries: Array<[string, Sutta]>): Array<[string, Sutta]> {
+  return [...entries].sort((a, b) => compareIds(a[0], b[0]));
+}
+
 // Every browsable id: nikaya ids, chapter ids, and (for search) sutta ids.
 export function findNode(corpus: Corpus, id: string) {
   for (const n of corpus.nikayas) {
@@ -47,7 +71,10 @@ export function findNode(corpus: Corpus, id: string) {
 
 export function nodeLabel(corpus: Corpus, id: string, lists: ListDef[]): string {
   const found = findNode(corpus, id);
-  if (found) return found.node.label;
+  if (found) {
+    if (found.kind === 'chapter') return `${found.node.ref} · ${found.node.label}`;
+    return found.node.label;
+  }
   const list = lists.find((l) => String(l.id) === id);
   return list ? list.label : '';
 }
@@ -74,4 +101,25 @@ export function searchCorpus(corpus: Corpus, query: string, notes: Record<string
     if (haystack.includes(q)) hits.push({ id, sutta: s });
   }
   return hits;
+}
+
+// The exact list of rows ListPane renders for a given browse/search state, factored out so
+// LibraryPage can compute the same ordered list independently for keyboard nav.
+export function listItemsFor(
+  corpus: Corpus,
+  nodeId: string | undefined,
+  query: string,
+  notes: Record<string, string>,
+  lists: ListDef[],
+  membership: Membership
+): Array<[string, Sutta]> {
+  const searching = query.trim().length > 0;
+  if (searching) return searchCorpus(corpus, query, notes).map((h) => [h.id, h.sutta] as [string, Sutta]);
+  if (!nodeId) return [];
+  const list = lists.find((l) => String(l.id) === nodeId);
+  if (list) {
+    const memberIds = new Set(Object.entries(membership).filter(([, ls]) => ls.includes(list.label)).map(([id]) => id));
+    return sortByIdAsc(suttaEntries(corpus).filter(([id]) => memberIds.has(id)));
+  }
+  return sortByIdAsc(suttasFor(corpus, nodeId));
 }

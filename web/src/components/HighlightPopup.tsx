@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef } from 'react';
+import { Trash2 } from 'lucide-react';
 import { HIGHLIGHT_COLORS } from '../lib/theme';
 import type { ThemeColors } from '../lib/types';
 import type { PopState } from '../hooks/useHighlightPopup';
@@ -8,11 +9,10 @@ interface HighlightPopupProps {
   theme: ThemeColors;
   onPick: (color: string | null) => void;
   onRemove: () => void;
-  onNote: () => void;
   onStop: (e: React.SyntheticEvent) => void;
 }
 
-export function HighlightPopup({ pop, theme, onPick, onRemove, onNote, onStop }: HighlightPopupProps) {
+export function HighlightPopup({ pop, theme, onPick, onRemove, onStop }: HighlightPopupProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -54,24 +54,16 @@ export function HighlightPopup({ pop, theme, onPick, onRemove, onNote, onStop }:
       ))}
       {pop.on && (
         <button
-          className="font-sans text-xs opacity-65 px-[3px]"
+          className="flex items-center gap-1 font-sans text-xs opacity-65 px-[3px]"
           onClick={(e) => {
             e.stopPropagation();
             onRemove();
           }}
         >
+          <Trash2 size={13} strokeWidth={1.75} />
           Remove
         </button>
       )}
-      <button
-        className="font-sans text-xs opacity-65 px-[3px]"
-        onClick={(e) => {
-          e.stopPropagation();
-          onNote();
-        }}
-      >
-        Note
-      </button>
     </div>
   );
 }

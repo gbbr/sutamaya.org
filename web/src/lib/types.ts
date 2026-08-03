@@ -11,6 +11,7 @@ export type SuttaMap = Record<string, Sutta>;
 
 export interface ChapterRow {
   id: string;
+  ref: string;
   label: string;
   sub?: string;
   count: number;
@@ -58,6 +59,8 @@ export type VisitedMap = Record<string, string>;
 export interface User {
   id: string;
   email: string;
+  name?: string | null;
+  picture?: string | null;
 }
 
 export type ReaderTheme = 'light' | 'sepia' | 'dark';

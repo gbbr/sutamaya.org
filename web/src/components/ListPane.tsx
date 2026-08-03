@@ -1,9 +1,10 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
+import { Eye } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
-import { nodeLabel, searchCorpus, suttasFor } from '../lib/corpus';
-import type { Sutta } from '../lib/types';
+import { useScrollMemory } from '../hooks/useScrollMemory';
+import { listItemsFor, nodeLabel } from '../lib/corpus';
 
 interface ListPaneProps {
   nodeId?: string;
@@ -11,31 +12,27 @@ interface ListPaneProps {
   query: string;
   onBack: () => void;
   onOpen: (id: string) => void;
+  onOpenReader: (id: string) => void;
+  activeIndex: number;
 }
 
-export function ListPane({ nodeId, selectedId, query, onBack, onOpen }: ListPaneProps) {
+export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenReader, activeIndex }: ListPaneProps) {
   const { corpus } = useCorpus();
   const { lists, membership, notes, visited } = useUserData();
   const { mobile, desktop, twoPane, previewHidden, showPreview, paneW } = useLayout();
-  const [sortAlpha, setSortAlpha] = useState(false);
+  const scrollRef = useScrollMemory<HTMLDivElement>(`list:${query.trim() ? 'search' : nodeId || 'none'}`);
+  const rowRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   const searching = query.trim().length > 0;
 
-  const items = useMemo<Array<[string, Sutta]>>(() => {
-    if (!corpus) return [];
-    if (searching) return searchCorpus(corpus, query, notes).map((h) => [h.id, h.sutta] as [string, Sutta]);
-    if (!nodeId) return [];
-    const list = lists.find((l) => String(l.id) === nodeId);
-    let base: Array<[string, Sutta]>;
-    if (list) {
-      const memberIds = new Set(Object.entries(membership).filter(([, ls]) => ls.includes(list.label)).map(([id]) => id));
-      base = Object.entries(corpus.suttas).filter(([id]) => memberIds.has(id));
-    } else {
-      base = suttasFor(corpus, nodeId);
-    }
-    if (sortAlpha) base = [...base].sort((a, b) => a[1].en.localeCompare(b[1].en));
-    return base;
-  }, [corpus, searching, query, notes, nodeId, lists, membership, sortAlpha]);
+  const items = useMemo(
+    () => (corpus ? listItemsFor(corpus, nodeId, query, notes, lists, membership) : []),
+    [corpus, nodeId, query, notes, lists, membership]
+  );
+
+  useEffect(() => {
+    if (activeIndex >= 0) rowRefs.current[activeIndex]?.scrollIntoView({ block: 'nearest' });
+  }, [activeIndex]);
 
   if (!corpus) return null;
 
@@ -61,30 +58,32 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen }: ListPane
           <div className="text-[19px] font-semibold tracking-[-.01em] truncate">{title}</div>
           <div className="font-sans text-xs text-ink/[.42] mt-[2px]">{meta}</div>
         </div>
-        {!searching && (
-          <button className="font-sans text-[12.5px] font-medium text-ink/[.55]" onClick={() => setSortAlpha((s) => !s)}>
-            {sortAlpha ? 'A–Z' : 'Order'}
-          </button>
-        )}
         {desktop && previewHidden && (
           <button
-            className="font-sans text-[12.5px] font-medium text-ink/[.55] border border-ink/[.22] rounded-lg px-[9px] py-[3px]"
+            className="flex items-center gap-1.5 font-sans text-[12.5px] font-medium text-ink/[.55] border border-ink/[.22] rounded-lg px-[9px] py-[3px]"
             onClick={showPreview}
           >
+            <Eye size={13} strokeWidth={1.75} />
             Preview
           </button>
         )}
       </header>
-      <div className="sc flex-1">
-        {items.map(([id, s]) => {
+      <div ref={scrollRef} className="sc flex-1">
+        {items.map(([id, s], i) => {
           const on = desktop && !previewHidden && !twoPane && id === selectedId;
+          const focused = i === activeIndex;
           const note = notes[id];
           const chips = membership[id] || [];
           return (
             <button
               key={id}
-              className={`block w-full text-left px-5 py-[15px] border-b border-ink/[.08] ${on ? 'bg-ink text-[#FBFAF7]' : ''}`}
+              ref={(el) => {
+                rowRefs.current[i] = el;
+              }}
+              className={`block w-full text-left px-5 py-[15px] border-b border-ink/[.08] ${on ? 'bg-accent text-[#FBFAF7]' : ''} ${focused && !on ? 'bg-ink/[.05]' : ''}`}
+              style={focused ? { boxShadow: `inset 2px 0 0 ${on ? 'rgba(251,250,247,.6)' : '#8A6A3B'}` } : undefined}
               onClick={() => onOpen(id)}
+              onDoubleClick={() => onOpenReader(id)}
             >
               <span className="flex items-baseline gap-2.5">
                 <span className={`font-sans text-[11.5px] font-bold tracking-[.02em] ${on ? 'opacity-65' : 'text-ink/60'}`}>{s.ref}</span>
