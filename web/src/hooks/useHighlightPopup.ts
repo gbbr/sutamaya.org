@@ -1,5 +1,7 @@
 import { useCallback, useState } from 'react';
 import { useUserData } from '../context/UserDataContext';
+import { groupHighlights } from '../lib/highlights';
+import type { SegmentFile } from '../lib/corpus';
 import type { Highlight } from '../lib/types';
 
 export interface HlRange {
@@ -31,13 +33,22 @@ function offsetWithin(seg: HTMLElement, container: Node, containerOffset: number
   return pre.toString().length;
 }
 
-export function useHighlightPopup(suttaId: string | undefined, highlights: Highlight[]) {
+export function useHighlightPopup(suttaId: string | undefined, highlights: Highlight[], segments: SegmentFile[] | null = null) {
   const { setHighlightRange, syncUserData } = useUserData();
   const [pop, setPop] = useState<PopState | null>(null);
 
-  const openPop = useCallback((i: number, s: number, e: number, rect: DOMRect, on: string | null) => {
-    setPop({ ranges: [{ i, s, e }], x: rect.left + rect.width / 2, y: rect.bottom, on });
-  }, []);
+  // Clicking directly on an already-highlighted span (as opposed to dragging a fresh selection)
+  // means "act on this highlight" — for a cross-segment one, that has to be every segment it
+  // spans, not just the one clicked, or "remove"/recolor would only touch that one piece and
+  // leave the rest behind as a separate, now-shorter highlight.
+  const openPop = useCallback(
+    (i: number, s: number, e: number, rect: DOMRect, on: string | null) => {
+      const group = groupHighlights(highlights, segments).find((g) => g.items.some((h) => h.i === i && h.s === s && h.e === e));
+      const ranges: HlRange[] = group ? group.items.map((h) => ({ i: h.i, s: h.s, e: h.e })) : [{ i, s, e }];
+      setPop({ ranges, x: rect.left + rect.width / 2, y: rect.bottom, on });
+    },
+    [highlights, segments]
+  );
 
   const onTextUp = useCallback(() => {
     setTimeout(() => {

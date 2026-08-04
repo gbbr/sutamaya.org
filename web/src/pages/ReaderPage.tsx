@@ -24,7 +24,7 @@ interface DictState {
 
 export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus, dictionary } = useCorpus();
-  const { notes, membership, markVisited } = useUserData();
+  const { notes, membership, lists, markVisited } = useUserData();
   const { theme: themeId, fs, lh, face, allPali } = useReaderPrefs();
 
   const initialPanelTab = new URLSearchParams(location?.search).get('panel') as 'highlights' | 'lists' | 'text' | null;
@@ -216,15 +216,19 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           )}
           {(suttaLists.length > 0) && (
             <div className="flex flex-wrap items-center gap-[6px]" style={{ marginTop: 11 }}>
-              {suttaLists.map((label) => (
-                <span
-                  key={label}
-                  className="inline-flex items-center h-5 whitespace-nowrap rounded-full px-[10px] font-sans text-[11px]"
-                  style={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
-                >
-                  {label}
-                </span>
-              ))}
+              {suttaLists.map((label) => {
+                const list = lists.find((l) => l.label === label);
+                return (
+                  <button
+                    key={label}
+                    className="inline-flex items-center h-5 whitespace-nowrap rounded-full px-[10px] font-sans text-[11px] hover:opacity-70"
+                    style={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
+                    onClick={() => list && navigate(`/browse/${list.id}`)}
+                  >
+                    {label}
+                  </button>
+                );
+              })}
             </div>
           )}
           <div className="font-sans" style={{ fontSize: 12, marginTop: 9, color: theme.dim }}>

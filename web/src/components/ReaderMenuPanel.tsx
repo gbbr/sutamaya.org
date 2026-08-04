@@ -20,7 +20,7 @@ interface ReaderMenuPanelProps {
 const THEME_SWATCHES: Array<{ id: ReaderTheme; label: string; bg: string; fg: string }> = [
   { id: 'light', label: 'Light', bg: '#FBFAF7', fg: '#1B1917' },
   { id: 'sepia', label: 'Sepia', bg: '#F3E7D3', fg: '#3A2E1E' },
-  { id: 'dark', label: 'Dark', bg: '#191A1C', fg: '#E7E3DC' },
+  { id: 'dark', label: 'Dark', bg: '#2A241E', fg: '#EDE6D9' },
 ];
 const FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
   { id: 'serif', label: 'Newsreader' },
