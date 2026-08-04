@@ -1,21 +1,80 @@
 import { navigate, type RouteComponentProps } from '@reach/router';
 import { ArrowLeft, LogOut } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { useUiPrefs } from '../context/UiPrefsContext';
+import { GoogleSignInButton } from '../components/GoogleSignInButton';
 import { dataApi } from '../lib/api';
+import type { ReaderFace } from '../lib/types';
+
+const UI_SCALE_MIN = 0.85;
+const UI_SCALE_MAX = 1.4;
+const UI_SCALE_STEP = 0.05;
+
+const UI_FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
+  { id: 'serif', label: 'Newsreader' },
+  { id: 'georgia', label: 'Georgia' },
+  { id: 'sans', label: 'Sans' },
+];
 
 export function SettingsPage(_props: RouteComponentProps) {
-  const { user, promptGoogleSignIn, logout, loading } = useAuth();
+  const { user, logout, loading } = useAuth();
+  const { uiScale, uiFace, setUiScale, setUiFace } = useUiPrefs();
 
   if (loading) return null;
 
   return (
-    <div className="min-h-screen bg-paper px-5 py-10 flex justify-center">
+    <div className="min-h-full bg-paper px-5 py-10 flex justify-center">
       <div className="w-full max-w-[420px]">
         <button className="flex items-center gap-1.5 font-sans text-[13px] text-ink/50 mb-6" onClick={() => navigate('/')}>
           <ArrowLeft size={14} strokeWidth={1.75} />
           Back
         </button>
         <div className="text-[22px] font-semibold tracking-[-.01em] mb-6">Settings</div>
+
+        <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3">Display</div>
+
+        <div className="mb-3">
+          <div className="flex items-baseline justify-between mb-2">
+            <label htmlFor="ui-scale" className="font-sans text-[14px]">
+              UI scale
+            </label>
+            <span className="font-sans text-[13px] text-ink/50">{Math.round(uiScale * 100)}%</span>
+          </div>
+          <input
+            id="ui-scale"
+            type="range"
+            min={UI_SCALE_MIN}
+            max={UI_SCALE_MAX}
+            step={UI_SCALE_STEP}
+            value={uiScale}
+            onChange={(e) => setUiScale(Number(e.target.value))}
+            className="w-full accent-accent"
+          />
+          <div className="flex justify-between font-sans text-[11px] text-ink/40 mt-1">
+            <span>{Math.round(UI_SCALE_MIN * 100)}%</span>
+            <button className="underline decoration-ink/25 underline-offset-2" onClick={() => setUiScale(1)}>
+              Reset
+            </button>
+            <span>{Math.round(UI_SCALE_MAX * 100)}%</span>
+          </div>
+        </div>
+
+        <div className="mb-6">
+          <div className="font-sans text-[14px] mb-2">UI font</div>
+          <div className="flex gap-2">
+            {UI_FACE_OPTIONS.map((f) => (
+              <button
+                key={f.id}
+                className={`flex-1 h-9 rounded-field border font-sans text-[13px] ${
+                  uiFace === f.id ? 'border-accent bg-accent text-[#FBFAF7]' : 'border-ink/[.22] text-ink/70'
+                }`}
+                onClick={() => setUiFace(f.id)}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+        </div>
 
         {user ? (
           <>
@@ -43,12 +102,7 @@ export function SettingsPage(_props: RouteComponentProps) {
             <div className="font-sans text-[14px] text-ink/60 mb-4">
               Sign in with Google to sync your lists, notes and highlights across devices.
             </div>
-            <button
-              className="w-full h-11 rounded-field bg-accent text-[#FBFAF7] font-sans text-[14px] font-medium"
-              onClick={promptGoogleSignIn}
-            >
-              Sign in with Google
-            </button>
+            <GoogleSignInButton variant="standard" />
           </>
         )}
       </div>

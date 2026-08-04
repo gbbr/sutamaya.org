@@ -15,6 +15,10 @@ export interface ChapterRow {
   label: string;
   sub?: string;
   count: number;
+  // Recursive: SN nests groups > chapters > vagga categories, AN nests chapters > vagga
+  // categories, MN nests categories directly — a row with `chapters` expands further, one
+  // without is where suttas live (see isExpandable() in lib/corpus.ts).
+  chapters?: ChapterRow[];
 }
 
 export interface Nikaya {

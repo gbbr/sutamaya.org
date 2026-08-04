@@ -48,7 +48,12 @@ gcloud artifacts repositories set-cleanup-policies "$REPO" \
 # (--set-env-vars below replaces the full env var set every deploy, not just adds to it).
 GOOGLE_CLIENT_ID="${GOOGLE_CLIENT_ID:-$(sed -n 's/^VITE_GOOGLE_CLIENT_ID=//p' "$(dirname "$0")/../web/.env.production" 2>/dev/null || true)}"
 
-ENV_VARS="NODE_ENV=production"
+# Cloud Run does *not* inject GOOGLE_CLOUD_PROJECT automatically (despite what an earlier
+# version of deploy.md claimed) — without it, server/src/firestore.js falls back to its
+# 'sutamaya-local' local-dev default and every Firestore call 500s with a "permission denied on
+# resource project sutamaya-local" error, which only surfaces once a request actually reaches
+# Firestore (e.g. the first successful sign-in).
+ENV_VARS="NODE_ENV=production,GOOGLE_CLOUD_PROJECT=$PROJECT_ID"
 if [ -n "$GOOGLE_CLIENT_ID" ]; then
   ENV_VARS="$ENV_VARS,GOOGLE_CLIENT_ID=$GOOGLE_CLIENT_ID"
 else

@@ -53,6 +53,11 @@ export default defineConfig({
   ],
   server: {
     port: 5173,
+    // Listen on all interfaces (not just localhost) so the dev server is reachable from a
+    // phone on the same LAN — Vite prints the LAN URL itself (as "Network:") once host is
+    // enabled, no extra logging needed. /api/* is still proxied to the Express server on this
+    // same machine (see below), so a phone's API calls work exactly the same way.
+    host: true,
     proxy: {
       '/api': {
         target: process.env.API_ORIGIN || 'http://localhost:8787',

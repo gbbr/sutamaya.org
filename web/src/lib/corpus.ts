@@ -1,4 +1,4 @@
-import type { Corpus, Dictionary, ListDef, Membership, Sutta } from './types';
+import type { ChapterRow, Corpus, Dictionary, ListDef, Membership, Nikaya, Sutta } from './types';
 
 export async function loadCorpus(): Promise<Corpus> {
   const res = await fetch('/data/corpus.json');
@@ -59,12 +59,30 @@ export function sortByIdAsc(entries: Array<[string, Sutta]>): Array<[string, Sut
   return [...entries].sort((a, b) => compareIds(a[0], b[0]));
 }
 
-// Every browsable id: nikaya ids, chapter ids, and (for search) sutta ids.
+// Every browsable id: nikaya ids, chapter/group/category ids (arbitrarily nested — SN goes
+// nikaya > group > chapter > category, AN goes nikaya > chapter > category, MN goes nikaya >
+// category), and (for search) sutta ids. `ancestors` is the top-down chain from the nikaya
+// down to (but not including) the found node itself — used to expand every level of TreePane
+// on deep-link/search-driven navigation.
 export function findNode(corpus: Corpus, id: string) {
   for (const n of corpus.nikayas) {
-    if (n.id === id) return { kind: 'nikaya' as const, node: n };
-    const c = n.chapters?.find((c) => c.id === id);
-    if (c) return { kind: 'chapter' as const, node: c, parent: n };
+    if (n.id === id) return { kind: 'nikaya' as const, node: n, ancestors: [] as Array<Nikaya | ChapterRow> };
+    const found = findInChapters(n.chapters, id, [n]);
+    if (found) return found;
+  }
+  return null;
+}
+
+function findInChapters(
+  chapters: ChapterRow[] | undefined,
+  id: string,
+  ancestors: Array<Nikaya | ChapterRow>
+): { kind: 'chapter'; node: ChapterRow; ancestors: Array<Nikaya | ChapterRow> } | null {
+  if (!chapters) return null;
+  for (const c of chapters) {
+    if (c.id === id) return { kind: 'chapter' as const, node: c, ancestors };
+    const found = findInChapters(c.chapters, id, [...ancestors, c]);
+    if (found) return found;
   }
   return null;
 }

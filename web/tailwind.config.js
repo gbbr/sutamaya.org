@@ -17,7 +17,10 @@ export default {
         'hl-blue': '#CFDCEE',
       },
       fontFamily: {
-        serif: ['Newsreader', 'Georgia', 'serif'],
+        // Routed through --ui-serif (set from Settings > UI font, see lib/uiPrefs.ts) so the
+        // app-wide "UI font" preference can override every use of `font-serif` at once; the
+        // var()'s own fallback is today's default, so nothing changes until it's actually set.
+        serif: ['var(--ui-serif, Newsreader)', 'Georgia', 'serif'],
         georgia: ['Georgia', 'Times New Roman', 'serif'],
         sans: ['IBM Plex Sans', 'system-ui', 'sans-serif'],
       },

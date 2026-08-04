@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react';
 import { navigate } from '@reach/router';
-import { PanelLeftClose, Settings, ChevronRight, ChevronDown, LogIn } from 'lucide-react';
+import { PanelLeftClose, Settings, ChevronRight, ChevronDown } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
@@ -8,6 +8,64 @@ import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { SEARCH_INPUT_ID } from '../hooks/useListNav';
 import { findNode, isExpandable, searchCorpus } from '../lib/corpus';
+import type { ChapterRow, Corpus } from '../lib/types';
+
+// One row of the nested chapter/group/category tree under a nikaya — recurses arbitrarily
+// deep (SN: group > chapter > category; AN: chapter > category; MN: category directly).
+function TreeRow({
+  node,
+  depth,
+  nodeId,
+  expanded,
+  onToggle,
+  onSelect,
+}: {
+  node: ChapterRow;
+  depth: number;
+  nodeId?: string;
+  expanded: Record<string, boolean>;
+  onToggle: (id: string) => void;
+  onSelect: (id: string) => void;
+}) {
+  const expandable = isExpandable(node);
+  const open = !!expanded[node.id];
+  return (
+    <div>
+      <button
+        className={`row flex items-start gap-[9px] w-full text-left pr-[18px] py-[9px] border-b border-ink/[.07] ${nodeId === node.id ? 'bg-ink/[.06]' : ''}`}
+        style={{ paddingLeft: 18 + depth * 14 }}
+        onClick={() => (expandable ? onToggle(node.id) : onSelect(node.id))}
+      >
+        <span className="w-[11px] flex-none flex items-center justify-center text-ink/40 mt-[4px]">
+          {expandable ? (
+            open ? (
+              <ChevronDown size={12} strokeWidth={2} />
+            ) : (
+              <ChevronRight size={12} strokeWidth={2} />
+            )
+          ) : (
+            <ChevronRight size={12} strokeWidth={2} className="text-ink/35" />
+          )}
+        </span>
+        <span className="flex-1 min-w-0">
+          <span className="flex items-baseline gap-2">
+            <span className="font-sans text-[13px] font-bold text-ink/45">{node.ref}</span>
+            <span className="flex-1 text-[15px] font-semibold leading-[1.3]">{node.label}</span>
+          </span>
+          {node.sub && <span className="block font-serif text-[13px] italic text-accent mt-[1px]">{node.sub}</span>}
+          <span className="block font-sans text-[13px] text-ink/45 mt-[2px]">
+            {node.count} sutta{node.count === 1 ? '' : 's'}
+          </span>
+        </span>
+      </button>
+      {expandable &&
+        open &&
+        node.chapters!.map((c) => (
+          <TreeRow key={c.id} node={c} depth={depth + 1} nodeId={nodeId} expanded={expanded} onToggle={onToggle} onSelect={onSelect} />
+        ))}
+    </div>
+  );
+}
 
 interface TreePaneProps {
   nodeId?: string;
@@ -16,22 +74,60 @@ interface TreePaneProps {
   onSearch: (query: string) => void;
   query: string;
   activeIndex: number;
+  // Whether this pane is currently the visible one (LibraryPage keeps both TreePane and
+  // ListPane mounted on mobile and toggles `display:none` instead of unmounting — see
+  // useScrollMemory for why scroll restoration needs to know this).
+  visible?: boolean;
 }
 
-export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activeIndex }: TreePaneProps) {
+// The set of ancestor ids (nikaya > group > chapter > category, as deep as it goes) that need
+// to be open for `nodeId` to be visible in the tree.
+function ancestorsOf(corpus: Corpus | null, nodeId: string | undefined): Record<string, boolean> {
+  if (!corpus || !nodeId) return {};
+  const found = findNode(corpus, nodeId);
+  if (found?.kind !== 'chapter' || !found.ancestors.length) return {};
+  const init: Record<string, boolean> = {};
+  for (const a of found.ancestors) init[a.id] = true;
+  return init;
+}
+
+export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activeIndex, visible = true }: TreePaneProps) {
   const { corpus } = useCorpus();
   const { lists, notes, createList } = useUserData();
   const { user, promptGoogleSignIn } = useAuth();
   const { mobile, desktop, paneW, hideTree } = useLayout();
-  const scrollRef = useScrollMemory<HTMLDivElement>('tree');
-  const [expanded, setExpanded] = useState<Record<string, boolean>>(() => {
-    const init: Record<string, boolean> = {};
-    if (corpus && nodeId) {
-      const found = findNode(corpus, nodeId);
-      if (found?.kind === 'chapter') init[found.parent.id] = true;
-    }
-    return init;
-  });
+  const scrollRef = useScrollMemory<HTMLDivElement>('tree', visible);
+  // Computed synchronously on mount (not via an effect) so the tree is *already* expanded to
+  // nodeId by the very first render — otherwise useScrollMemory's restore (a layout effect,
+  // which always runs before any passive effect) would fire against a still-collapsed tree
+  // whenever TreePane mounts fresh already pointed at a deep node (e.g. LibraryPage remounting
+  // after the reader closes, on desktop where it's always "visible" so that restore-on-visible
+  // fallback never kicks in either), silently clamping the restored scroll offset back to 0.
+  const [expanded, setExpanded] = useState<Record<string, boolean>>(() => ancestorsOf(corpus, nodeId));
+  const [libraryOpen, setLibraryOpen] = useState(true);
+
+  // Expands every ancestor level of the current node whenever nodeId *changes* after mount —
+  // covers deep links and search-driven navigation within an already-mounted TreePane, without
+  // collapsing anything the user already had open.
+  useEffect(() => {
+    const toOpen = ancestorsOf(corpus, nodeId);
+    if (!Object.keys(toOpen).length) return;
+    setExpanded((x) => {
+      let changed = false;
+      const next = { ...x };
+      for (const id of Object.keys(toOpen)) {
+        if (!next[id]) {
+          next[id] = true;
+          changed = true;
+        }
+      }
+      return changed ? next : x;
+    });
+  }, [corpus, nodeId]);
+
+  function toggleExpanded(id: string) {
+    setExpanded((x) => ({ ...x, [id]: !x[id] }));
+  }
   const [creating, setCreating] = useState(false);
   const [draft, setDraft] = useState('');
   const [searchFocused, setSearchFocused] = useState(false);
@@ -101,17 +197,28 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
       )}
     </button>
   ) : (
+    // Google's own rendered "icon" button (google.accounts.id.renderButton with type: 'icon')
+    // has an unpredictable natural size that doesn't fit cleanly into a 22px badge — at small
+    // sizes it clips down to what reads as a blank white circle. This is deliberately just a
+    // plain button showing Google's "G" mark, wired to `promptGoogleSignIn` (which navigates to
+    // Settings — see the comment on it in AuthContext.tsx for why sign-in itself has to happen
+    // from a real, full-size rendered button there rather than inline here).
     <button
-      className="flex-none w-[22px] h-[22px] rounded-full border border-ink/[.18] flex items-center justify-center text-ink/45 hover:bg-ink/[.06]"
+      className="flex-none w-[22px] h-[22px] rounded-full border border-ink/[.18] flex items-center justify-center hover:bg-ink/[.06]"
       title="Sign in with Google"
       onClick={promptGoogleSignIn}
     >
-      <LogIn size={12} strokeWidth={1.75} />
+      <svg width="13" height="13" viewBox="0 0 18 18">
+        <path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" />
+        <path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z" />
+        <path fill="#FBBC05" d="M3.964 10.71A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" />
+        <path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" />
+      </svg>
     </button>
   );
 
   return (
-    <aside className="flex flex-col h-full min-w-0 border-r border-ink/10" style={style}>
+    <aside className="flex flex-col h-full min-w-0 overflow-hidden border-r border-ink/10" style={style}>
       <header className="flex-none px-[18px] pt-4 pb-3.5 border-b border-ink/10">
         <div className="flex items-baseline gap-2.5 mb-3">
           <div className="text-[22px] font-semibold tracking-[-.01em] flex-1">Sutamaya</div>
@@ -127,12 +234,9 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
           {mobile && (
             <div className="flex items-center gap-3.5">
               {signedInBadge}
-              <div className="font-sans flex gap-3.5 text-[13px] font-medium text-ink/[.62]">
-                <button className="flex items-center gap-1.5" onClick={() => navigate('/settings')}>
-                  <Settings size={14} strokeWidth={1.75} />
-                  Settings
-                </button>
-              </div>
+              <button className="flex items-center text-ink/[.62]" title="Settings" onClick={() => navigate('/settings')}>
+                <Settings size={16} strokeWidth={1.75} />
+              </button>
             </div>
           )}
         </div>
@@ -183,47 +287,39 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
           </div>
         ) : (
           <div>
-            <div className="px-[18px] pt-2 pb-1 font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">Browse</div>
-            {corpus.nikayas.map((n) => {
-              const open = !!expanded[n.id];
-              const expandableNode = isExpandable(n);
-              return (
-                <div key={n.id}>
-                  <button
-                    className={`row flex items-center gap-[11px] w-full text-left px-[18px] py-[11px] border-b border-ink/[.07] ${nodeId === n.id ? 'bg-ink/[.06]' : ''}`}
-                    onClick={() => (expandableNode ? setExpanded((x) => ({ ...x, [n.id]: !open })) : onSelect(n.id))}
-                  >
-                    <span className="w-[11px] flex-none flex items-center justify-center text-ink/40">
-                      {expandableNode ? open ? <ChevronDown size={13} strokeWidth={2} /> : <ChevronRight size={13} strokeWidth={2} /> : ''}
-                    </span>
-                    <span className="flex-1 min-w-0">
-                      <span className="block text-[16px] font-semibold leading-[1.3]">{n.label}</span>
-                      <span className="block font-sans text-[12.5px] font-medium text-ink/60 mt-[1px]">{n.sub}</span>
-                    </span>
-                    <span className="font-sans text-[11.5px] font-medium text-ink/50">{n.count}</span>
-                  </button>
-                  {expandableNode && open && n.chapters!.map((c) => (
+            <button
+              className="flex items-center gap-1 px-[18px] pt-2 pb-1 font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]"
+              onClick={() => setLibraryOpen((o) => !o)}
+            >
+              Library {libraryOpen ? '−' : '+'}
+            </button>
+            {libraryOpen &&
+              corpus.nikayas.map((n) => {
+                const open = !!expanded[n.id];
+                const expandableNode = isExpandable(n);
+                return (
+                  <div key={n.id}>
                     <button
-                      key={c.id}
-                      className={`row flex items-start gap-[9px] w-full text-left pl-8 pr-[18px] py-[11px] border-b border-ink/[.07] ${nodeId === c.id ? 'bg-ink/[.06]' : ''}`}
-                      onClick={() => onSelect(c.id)}
+                      className={`row flex items-center gap-[11px] w-full text-left px-[18px] py-[9px] border-b border-ink/[.07] ${nodeId === n.id ? 'bg-ink/[.06]' : ''}`}
+                      onClick={() => (expandableNode ? toggleExpanded(n.id) : onSelect(n.id))}
                     >
-                      <ChevronRight size={12} strokeWidth={2} className="flex-none mt-[4px] text-ink/35" />
-                      <span className="flex-1 min-w-0">
-                        <span className="flex items-baseline gap-2">
-                          <span className="font-sans text-[11px] font-bold text-ink/45">{c.ref}</span>
-                          <span className="flex-1 text-[15px] font-semibold leading-[1.3]">{c.label}</span>
-                        </span>
-                        {c.sub && <span className="block font-serif text-[13px] italic text-accent mt-[1px]">{c.sub}</span>}
-                        <span className="block font-sans text-[11px] text-ink/45 mt-[2px]">
-                          {c.count} sutta{c.count === 1 ? '' : 's'}
-                        </span>
+                      <span className="w-[11px] flex-none flex items-center justify-center text-ink/40">
+                        {expandableNode ? open ? <ChevronDown size={13} strokeWidth={2} /> : <ChevronRight size={13} strokeWidth={2} /> : ''}
                       </span>
+                      <span className="flex-1 min-w-0">
+                        <span className="block text-[16px] font-semibold leading-[1.3]">{n.label}</span>
+                        <span className="block font-sans text-[12.5px] font-medium text-ink/60 mt-[1px]">{n.sub}</span>
+                      </span>
+                      <span className="font-sans text-[11.5px] font-medium text-ink/50">{n.count}</span>
                     </button>
-                  ))}
-                </div>
-              );
-            })}
+                    {expandableNode &&
+                      open &&
+                      n.chapters!.map((c) => (
+                        <TreeRow key={c.id} node={c} depth={1} nodeId={nodeId} expanded={expanded} onToggle={toggleExpanded} onSelect={onSelect} />
+                      ))}
+                  </div>
+                );
+              })}
 
             <div className="flex items-center justify-between px-[18px] pt-[22px] pb-1">
               <span className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">My lists</span>
@@ -254,7 +350,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
             {lists.map((l) => (
               <button
                 key={l.id}
-                className={`row flex items-center gap-[11px] w-full text-left px-[18px] py-[11px] border-b border-ink/[.07] ${nodeId === String(l.id) ? 'bg-ink/[.06]' : ''}`}
+                className={`row flex items-center gap-[11px] w-full text-left px-[18px] py-[9px] border-b border-ink/[.07] ${nodeId === String(l.id) ? 'bg-ink/[.06]' : ''}`}
                 onClick={() => onSelect(String(l.id))}
               >
                 <span className="w-[11px] flex-none" />
@@ -267,9 +363,8 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
 
       {desktop && (
         <footer className="font-sans flex-none flex justify-between px-[18px] py-[13px] border-t border-ink/10 text-[13px] text-ink/50">
-          <button className="flex items-center gap-1.5" onClick={() => navigate('/settings')}>
-            <Settings size={14} strokeWidth={1.75} />
-            Settings
+          <button className="flex items-center" title="Settings" onClick={() => navigate('/settings')}>
+            <Settings size={16} strokeWidth={1.75} />
           </button>
           {signedInBadge}
         </footer>

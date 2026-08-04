@@ -3,6 +3,7 @@ import { AuthProvider } from './AuthContext';
 import { CorpusProvider } from './CorpusContext';
 import { UserDataProvider } from './UserDataContext';
 import { ReaderPrefsProvider } from './ReaderPrefsContext';
+import { UiPrefsProvider } from './UiPrefsContext';
 import { LayoutProvider } from './LayoutContext';
 
 export function AppProviders({ children }: { children: ReactNode }) {
@@ -11,7 +12,9 @@ export function AppProviders({ children }: { children: ReactNode }) {
       <CorpusProvider>
         <UserDataProvider>
           <ReaderPrefsProvider>
-            <LayoutProvider>{children}</LayoutProvider>
+            <UiPrefsProvider>
+              <LayoutProvider>{children}</LayoutProvider>
+            </UiPrefsProvider>
           </ReaderPrefsProvider>
         </UserDataProvider>
       </CorpusProvider>

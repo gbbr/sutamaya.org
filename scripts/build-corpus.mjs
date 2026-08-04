@@ -5,7 +5,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { NIKAYA_META, AN_BOOK_NAMES, KN_BOOKS, REF_ABBR, formatRef, stripTitlePrefix, flattenLeaves, findChapterNodes } from './lib/collections.js';
+import {
+  NIKAYA_META, AN_BOOK_NAMES, KN_BOOKS, SN_GROUPS, REF_ABBR,
+  formatRef, stripTitlePrefix, flattenLeaves, findChapterNodes, findNodeByKey, findLeafGroups, rangeNote, chapterSpanNote,
+} from './lib/collections.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -146,46 +149,103 @@ function buildLeaf(uid, nodeId, collection) {
   leafCount += 1;
 }
 
+// Builds category rows (vagga-level) from findLeafGroups() output: one row per category, with
+// its member leaves built and its `ref` set to the sutta-range note ("SN35.1–12", "MN1–10")
+// rather than a plain ref, since a vagga has no canonical short ref of its own — the range is
+// the most useful thing to show. `dotted` selects "{ref}.{n}" (sn/an) vs "{ref}{n}" (mn).
+//
+// Exception: if there's exactly one category and its label is identical to the *chapter's*
+// own label (e.g. SN13 "Comprehension" containing only a single "Comprehension" vagga — the
+// vagga name is a pointless restatement of the chapter it's the whole of), that extra nesting
+// level is redundant, so it's skipped: returns `undefined` (no `chapters` array, meaning the
+// chapter itself becomes the leaf) and tags the leaves with `chapterKey` directly instead of
+// the otherwise-identical category key.
+function buildCategoryRows(categories, collection, chapterKey, chapterLabel, chapterRef, dotted) {
+  const names = nameIndexFor(collection);
+  const meta = categories.map(({ key, leaves }) => {
+    const paliName = names.pali.get(key);
+    return { key, leaves, paliName, label: stripTitlePrefix(names.en.get(key)) || paliName || key };
+  });
+  if (meta.length === 1 && meta[0].label === chapterLabel) {
+    meta[0].leaves.forEach((uid) => buildLeaf(uid, chapterKey, collection));
+    return undefined;
+  }
+  return meta.map(({ key, leaves, label, paliName }) => {
+    leaves.forEach((uid) => buildLeaf(uid, key, collection));
+    return { id: key, ref: rangeNote(chapterRef, leaves, dotted), label, sub: paliName, count: leaves.length };
+  });
+}
+
 const nikayas = [];
 
-// --- DN, MN: flatten straight to leaf suttas, no chapters ---
-for (const id of ['dn', 'mn']) {
-  const leaves = flattenLeaves(loadTree(id));
-  leaves.forEach((uid) => buildLeaf(uid, id, id));
-  nikayas.push({ id, label: NIKAYA_META[id].label, sub: NIKAYA_META[id].sub, count: leaves.length });
-  console.log(`  ${id}: ${leaves.length} suttas`);
-}
-
-// --- SN: chapters (sn1, sn2, …) only, flattened straight to suttas within each ---
+// --- DN: flatten straight to leaf suttas, no chapters ---
 {
-  const chapters = findChapterNodes(loadTree('sn'), /^sn\d+$/);
-  chapters.sort((a, b) => {
-    const na = +a.key.slice(2), nb = +b.key.slice(2);
-    return na - nb;
-  });
-  const names = nameIndexFor('sn');
-  const chapterRows = chapters.map(({ key, leaves }) => {
-    leaves.forEach((uid) => buildLeaf(uid, key, 'sn'));
-    const ref = formatRef(key);
-    const paliName = names.pali.get(key);
-    return { id: key, ref, label: stripTitlePrefix(names.en.get(key)) || paliName || ref, sub: paliName, count: leaves.length };
-  });
-  nikayas.push({ id: 'sn', label: NIKAYA_META.sn.label, sub: NIKAYA_META.sn.sub, count: chapterRows.length, chapters: chapterRows });
-  console.log(`  sn: ${chapterRows.length} chapters, ${chapterRows.reduce((n, c) => n + c.count, 0)} suttas`);
+  const leaves = flattenLeaves(loadTree('dn'));
+  leaves.forEach((uid) => buildLeaf(uid, 'dn', 'dn'));
+  nikayas.push({ id: 'dn', label: NIKAYA_META.dn.label, sub: NIKAYA_META.dn.sub, count: leaves.length });
+  console.log(`  dn: ${leaves.length} suttas`);
 }
 
-// --- AN: nipātas (an1 "Book of Ones", …) only, flattened straight to suttas within each ---
+// --- MN: vagga-level categories directly (MN has no numbered-chapter layer of its own), with
+// its 3 "fifty" (pannasa) wrapper groups flattened away structurally ---
+{
+  const categoryRows = buildCategoryRows(findLeafGroups(loadTree('mn')), 'mn', 'mn', NIKAYA_META.mn.label, 'MN', false);
+  nikayas.push({ id: 'mn', label: NIKAYA_META.mn.label, sub: NIKAYA_META.mn.sub, count: categoryRows.length, chapters: categoryRows });
+  console.log(`  mn: ${categoryRows.length} categories, ${categoryRows.reduce((n, c) => n + c.count, 0)} suttas`);
+}
+
+// --- SN: 5 super-vagga groups (Verses, Causation, …), each wrapping its sn1..sn56 chapters;
+// each chapter further split into vagga-level categories, with any "fifty" (pannasaka)
+// wrapper layer flattened away structurally (see findLeafGroups) rather than shown as a row.
+{
+  const tree = loadTree('sn');
+  const names = nameIndexFor('sn');
+  const groupRows = SN_GROUPS.map((group) => {
+    const groupNode = findNodeByKey(tree, group.id);
+    const chapterNodes = findChapterNodes(groupNode, /^sn\d+$/);
+    chapterNodes.sort((a, b) => +a.key.slice(2) - +b.key.slice(2));
+    const chapterRows = chapterNodes.map(({ key: chapterKey, node: chapterNode, leaves: allLeaves }) => {
+      const chapterRef = formatRef(chapterKey);
+      const paliName = names.pali.get(chapterKey);
+      const chapterLabel = stripTitlePrefix(names.en.get(chapterKey)) || paliName || chapterRef;
+      const categoryRows = buildCategoryRows(findLeafGroups(chapterNode), 'sn', chapterKey, chapterLabel, chapterRef, true);
+      return {
+        id: chapterKey,
+        ref: chapterRef,
+        label: chapterLabel,
+        sub: paliName,
+        count: allLeaves.length,
+        chapters: categoryRows,
+      };
+    });
+    const totalSuttas = chapterRows.reduce((n, c) => n + c.count, 0);
+    return {
+      id: group.id,
+      ref: chapterSpanNote('SN', chapterRows[0].id, chapterRows[chapterRows.length - 1].id),
+      label: group.label,
+      sub: names.pali.get(group.id),
+      count: totalSuttas,
+      chapters: chapterRows,
+    };
+  });
+  const totalChapters = groupRows.reduce((n, g) => n + g.chapters.length, 0);
+  const totalSuttas = groupRows.reduce((n, g) => n + g.count, 0);
+  nikayas.push({ id: 'sn', label: NIKAYA_META.sn.label, sub: NIKAYA_META.sn.sub, count: groupRows.length, chapters: groupRows });
+  console.log(`  sn: ${groupRows.length} groups, ${totalChapters} chapters, ${totalSuttas} suttas`);
+}
+
+// --- AN: nipātas (an1 "Book of Ones", …), each split into vagga-level categories, with any
+// "fifty" (pannasaka) wrapper layer flattened away structurally ---
 {
   const chapters = findChapterNodes(loadTree('an'), /^an\d+$/);
-  chapters.sort((a, b) => {
-    const na = +a.key.slice(2), nb = +b.key.slice(2);
-    return na - nb;
-  });
+  chapters.sort((a, b) => +a.key.slice(2) - +b.key.slice(2));
   const names = nameIndexFor('an');
-  const chapterRows = chapters.map(({ key, leaves }, i) => {
-    leaves.forEach((uid) => buildLeaf(uid, key, 'an'));
+  const chapterRows = chapters.map(({ key, node, leaves: allLeaves }, i) => {
+    const chapterRef = formatRef(key);
     const bookName = AN_BOOK_NAMES[i] || `Book ${i + 1}`;
-    return { id: key, ref: formatRef(key), label: `Book of ${bookName}`, sub: names.pali.get(key), count: leaves.length };
+    const chapterLabel = `Book of ${bookName}`;
+    const categoryRows = buildCategoryRows(findLeafGroups(node), 'an', key, chapterLabel, chapterRef, true);
+    return { id: key, ref: chapterRef, label: chapterLabel, sub: names.pali.get(key), count: allLeaves.length, chapters: categoryRows };
   });
   nikayas.push({ id: 'an', label: NIKAYA_META.an.label, sub: NIKAYA_META.an.sub, count: chapterRows.length, chapters: chapterRows });
   console.log(`  an: ${chapterRows.length} chapters, ${chapterRows.reduce((n, c) => n + c.count, 0)} suttas`);

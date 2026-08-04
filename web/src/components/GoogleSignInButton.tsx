@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 
 interface GoogleSignInButtonProps {
@@ -15,17 +15,31 @@ interface GoogleSignInButtonProps {
 export function GoogleSignInButton({ variant, width }: GoogleSignInButtonProps) {
   const { googleReady } = useAuth();
   const ref = useRef<HTMLDivElement>(null);
+  // Google's rendered button has a fixed pixel width baked into its iframe (no "100%" option),
+  // so for the standard variant — used full-width on the Settings page — measure the container
+  // instead of hardcoding a value that'd either overflow a narrow phone or leave a gap on a
+  // wide one.
+  const [measuredWidth, setMeasuredWidth] = useState<number | undefined>(width);
+
+  useEffect(() => {
+    if (variant !== 'standard' || width != null || !ref.current) return;
+    const el = ref.current;
+    const observer = new ResizeObserver(([entry]) => setMeasuredWidth(Math.round(entry.contentRect.width)));
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [variant, width]);
 
   useEffect(() => {
     if (!googleReady || !ref.current || !window.google) return;
+    if (variant === 'standard' && width == null && !measuredWidth) return; // wait for the first measurement
     ref.current.innerHTML = '';
     window.google.accounts.id.renderButton(
       ref.current,
       variant === 'icon'
         ? { type: 'icon', shape: 'circle', theme: 'outline', size: 'small' }
-        : { type: 'standard', theme: 'filled_blue', size: 'large', shape: 'pill', text: 'signin_with', width }
+        : { type: 'standard', theme: 'filled_blue', size: 'large', shape: 'pill', text: 'signin_with', width: measuredWidth }
     );
-  }, [googleReady, variant, width]);
+  }, [googleReady, variant, measuredWidth]);
 
-  return <div ref={ref} className="flex-none" />;
+  return <div ref={ref} className={variant === 'standard' ? 'w-full' : 'flex-none'} />;
 }

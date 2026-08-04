@@ -7,7 +7,7 @@ import { SettingsPage } from './pages/SettingsPage';
 
 function Splash() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-paper">
+    <div className="flex items-center justify-center h-full bg-paper">
       <div className="font-serif text-[20px] text-ink/70">sutamaya</div>
     </div>
   );
@@ -19,8 +19,12 @@ function Routes() {
   return (
     <Router style={{ height: '100%' }}>
       <Redirect from="/" to="/browse/mn" noThrow />
-      <LibraryPage path="/browse/:nodeId" />
-      <LibraryPage path="/browse/:nodeId/:suttaId" />
+      {/* One route element (not two) so /browse/:nodeId and /browse/:nodeId/:suttaId share the
+          same LibraryPage instance — see the comment on `suttaId` in LibraryPage.tsx for why:
+          two separate route elements here would remount LibraryPage (and every pane's scroll
+          position with it) every time a preview sutta is selected/deselected. `*suttaId` is a
+          splat, giving '' (not undefined) when the segment is absent. */}
+      <LibraryPage path="/browse/:nodeId/*suttaId" />
       <ReaderPage path="/read/:suttaId" />
       <SettingsPage path="/settings" />
     </Router>

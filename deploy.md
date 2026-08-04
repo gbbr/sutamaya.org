@@ -135,7 +135,12 @@ Pre-creating the repo also means `gcloud run deploy` never hits its interactive 
 prompt, which is otherwise unsafe to run from a non-interactive script.
 
 `GOOGLE_CLOUD_PROJECT` (which `server/src/firestore.js` uses to talk to the right Firestore
-database) is set automatically by Cloud Run — you don't need to pass it.
+database) is **not** set automatically by Cloud Run, despite an earlier version of this doc
+claiming otherwise — `scripts/deploy.sh` passes it explicitly (`--set-env-vars`) alongside
+`NODE_ENV`. Without it, `firestore.js` falls back to its local-dev default project id
+(`sutamaya-local`) and every Firestore call fails with a "permission denied on resource project
+sutamaya-local" error — which only actually surfaces once a request reaches Firestore (e.g. the
+first successful sign-in), so it's easy to deploy, see the app *load* fine, and not notice.
 
 `gcloud run deploy` prints the service URL when it finishes:
 

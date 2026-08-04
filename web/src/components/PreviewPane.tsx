@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { navigate } from '@reach/router';
-import { BookOpen, PanelRightClose } from 'lucide-react';
+import { BookOpen, Eye, PanelRightClose } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -46,18 +46,13 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
   return (
     <aside className="flex flex-col h-full" style={style}>
       <header className="font-sans flex-none flex items-center gap-4 pl-[34px] pr-[22px] py-[13px] border-b border-ink/10">
-        <span className="flex-1 text-xs font-semibold tracking-[.02em] text-ink/60">
+        <span className="flex-1 flex items-baseline gap-2 text-xs font-semibold tracking-[.16em] uppercase text-ink/40">
+          <Eye size={12} strokeWidth={2} />
+          Preview
+        </span>
+        <span className="text-xs font-semibold tracking-[.02em] text-ink/60">
           {sutta.ref} · {sutta.min} min{visited[selectedId] ? ' · read' : ''}
         </span>
-        <button
-          className="flex items-center gap-1.5 text-[12.5px] font-medium text-ink/65"
-          onClick={() => {
-            navigate(`/read/${encodeURIComponent(selectedId)}`);
-          }}
-        >
-          <BookOpen size={14} strokeWidth={1.75} />
-          Read
-        </button>
         <button className="flex items-center gap-1.5 text-[12.5px] font-medium text-ink/65" title="Close preview" onClick={hidePreview}>
           <PanelRightClose size={15} strokeWidth={1.75} />
           Close
@@ -68,8 +63,17 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
         <div className="text-[16px] mt-1 italic font-serif" style={{ color: '#8A6A3B' }}>
           {sutta.pali}
         </div>
-        <div className="text-[15.5px] leading-[1.6] text-ink/[.72] mt-3">{sutta.blurb}</div>
-        <div className="h-px bg-ink/[.14] my-[24px]" />
+        <div className="italic text-[15.5px] leading-[1.6] text-ink/[.72] mt-3">{sutta.blurb}</div>
+        <button
+          className="font-sans flex items-center gap-2.5 mt-[22px] px-6 py-[14px] rounded-full bg-accent text-[#FBFAF7] text-[15.5px] font-semibold shadow-[0_1px_2px_rgba(27,25,23,.15)] hover:brightness-110 active:brightness-95"
+          onClick={() => {
+            navigate(`/read/${encodeURIComponent(selectedId)}`);
+          }}
+        >
+          <BookOpen size={19} strokeWidth={2} />
+          Read {sutta.ref} in full
+        </button>
+        <div className="h-px bg-ink/[.14] mt-[28px] mb-[24px]" />
         {segments ? (
           <SegmentedText
             segments={segments}

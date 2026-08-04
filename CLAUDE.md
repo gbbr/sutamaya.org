@@ -51,8 +51,9 @@ develop with the Google button hidden.
 
 Reads `data/tree/*.json`, `data/pali/`, `data/sujato/`, `data/pli2en_dpd.json` and writes:
 
-- `web/public/data/corpus.json` — the browse tree (`nikayas[]`, each optionally with
-  `chapters[]`) plus a flat `suttas` map (`uid -> {ref, node, en, pali, blurb, min}`).
+- `web/public/data/corpus.json` — the browse tree (`nikayas[]`, each optionally with a
+  **recursively-nested** `chapters[]` — a row with `chapters` expands further, one without is
+  where suttas live) plus a flat `suttas` map (`uid -> {ref, node, en, pali, blurb, min}`).
 - `web/public/data/text/{uid}.json` — one file per leaf document: an ordered array of
   `{key, pali, en}` segments (structural "0.*" header lines are stripped; that's where
   titles/blurbs come from instead — see `headerTitle()` in the script).
@@ -62,19 +63,30 @@ Reads `data/tree/*.json`, `data/pali/`, `data/sujato/`, `data/pli2en_dpd.json` a
 
 **Browse-tree depth rules** (per explicit product decision, not derived from the raw data):
 
-| Collection | Top level shows | One level in shows |
-|---|---|---|
-| DN, MN | — | suttas directly (all vagga grouping flattened) |
-| SN | chapters `SN 1`, `SN 2`, … `SN 56` | that saṁyutta's suttas (vagga layer flattened) |
-| AN | nipātas `AN 1 · Book of Ones` … `AN 11 · Book of Elevens` | that nipāta's suttas (vagga layer flattened) |
+| Collection | Top level shows | One level in shows | Two levels in shows |
+|---|---|---|---|
+| DN | — | suttas directly (all vagga grouping flattened) | — |
+| MN | — | vagga-level categories (its 3 "fifty"/pannasa wrappers flattened) | that vagga's suttas |
+| SN | 5 super-vagga groups (`SN1–11 · Verses`, … `SN45–56 · The Great Chapter`) | that group's chapters `SN1`, `SN2`, … `SN56` | that saṁyutta's vagga-level categories (any "fifty"/pannasaka wrapper flattened) |
+| AN | nipātas `AN 1 · Book of Ones` … `AN 11 · Book of Elevens` | that nipāta's vagga-level categories (any "fifty"/pannasaka wrapper flattened) | — |
 | KN | all 20 books (`kp`, `dhp`, `ud`, …) | that book's leaf documents, one level down, whatever that level actually is (vagga for most books, nipāta+vagga flattened for others) — see `flattenLeaves()` |
 
 `findChapterNodes()` locates `sn\d+`/`an\d+` keys at whatever depth they occur in the tree
-(SN nests them under 5 super-vaggas, AN doesn't nest them at all) and `flattenLeaves()`
-recursively collects every leaf uid beneath a node regardless of depth. AN's nipāta English
-names and the KN book list are hardcoded in `scripts/lib/collections.js` (stable, canonical,
-not worth deriving); SN chapter Pali names and all leaf titles/blurbs are looked up from the
-data files.
+(SN nests them under 5 super-vaggas, AN doesn't nest them at all); `findNodeByKey()` pulls out
+a specific named group's subtree (used for SN's 5 hardcoded super-vagga ids); `flattenLeaves()`
+recursively collects every leaf uid beneath a node regardless of depth; `findLeafGroups()`
+recursively finds every *terminal* named group (a group whose value is directly an array of
+leaf uids, no further nesting) — this is what turns into the vagga-level "category" rows for
+SN/AN/MN, and it's why the "fifty" (pannasaka/pannasa) super-vagga wrapper nodes that group
+vaggas into chunks of ~50 suttas never show up as their own row: they aren't terminal, so the
+walk passes straight through them to the real vaggas underneath, regardless of what they're
+named. Each category/chapter/group's `ref` is a sutta-range note computed by `rangeNote()` /
+`chapterSpanNote()` in `scripts/lib/collections.js` (e.g. `MN1–10`, `SN35.1–12`, `AN8.1–10`,
+`SN1–11`) — since a vagga has no canonical short ref of its own, the range is the most useful
+thing to show. AN's nipāta English names, the KN book list, and SN's 5 super-vagga English
+labels are hardcoded in `scripts/lib/collections.js` (stable, canonical, not worth deriving);
+SN/AN/MN chapter and vagga Pali names and all leaf titles/blurbs are looked up from the data
+files.
 
 Leaf **title** resolution (`headerTitle()` in the script): for a single-sutta document the
 highest `"0.N"` segment under that exact uid is the sutta's own title (Pali/English name-index
@@ -116,7 +128,11 @@ Auth is Google sign-in only (`server/src/auth.js`, `routes/auth.js`): the fronte
 token credential from Google Identity Services (see `AuthContext.tsx`), and
 `POST /api/auth/google` verifies it server-side (`google-auth-library`) before finding-or-creating
 the Firestore user and setting the session cookie (`cookie-session`, no JWT/refresh flow).
-Requires `GOOGLE_CLIENT_ID` in the server's environment — see `deploy.md`. `requireAuth`
+Requires `GOOGLE_CLIENT_ID` in the server's environment — set explicitly for the deployed
+service (`scripts/deploy.sh`, see `deploy.md`), or auto-loaded for local dev from
+`web/.env.development`'s `VITE_GOOGLE_CLIENT_ID` (`server/src/env.js`, imported first in
+`index.js` since it has to run before `auth.js` reads `process.env.GOOGLE_CLIENT_ID` at module
+load time) — so `npm run dev:server` needs no server-side env setup of its own. `requireAuth`
 middleware gates every route in `routes/lists.js`, `routes/annotations.js`, `routes/data.js`;
 `routes/auth.js` is open. All Firestore calls are async, so every route is wrapped in
 `asyncHandler.js` (forwards rejections to Express's error middleware instead of hanging as

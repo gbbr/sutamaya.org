@@ -1,4 +1,5 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { navigate } from '@reach/router';
 import { authApi } from '../lib/api';
 import type { User } from '../lib/types';
 
@@ -7,6 +8,7 @@ const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 interface AuthState {
   user: User | null;
   loading: boolean;
+  googleReady: boolean;
   loginWithGoogle: (credential: string) => Promise<void>;
   promptGoogleSignIn: () => void;
   logout: () => Promise<void>;
@@ -17,7 +19,9 @@ const AuthContext = createContext<AuthState | null>(null);
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const googleReady = useRef(false);
+  // True once google.accounts.id.initialize() has run — gates GoogleSignInButton's
+  // renderButton() call, which needs that config to already exist (see GoogleSignInButton.tsx).
+  const [googleReady, setGoogleReady] = useState(false);
 
   useEffect(() => {
     authApi
@@ -43,7 +47,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           loginWithGoogle(credential).catch((err) => console.error('Google sign-in failed:', err));
         },
       });
-      googleReady.current = true;
+      setGoogleReady(true);
     }
     if (window.google) init();
     else {
@@ -60,9 +64,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
   }, [loginWithGoogle]);
 
+  // Used to *not* be a real button — this fired Google's silent "One Tap" prompt
+  // (google.accounts.id.prompt()), which Google is deprecating in favor of FedCM and which, in
+  // practice, fails completely silently (no popup, no error, no callback) for a long list of
+  // ordinary reasons: FedCM disabled for the site, third-party cookies blocked, the browser's
+  // One Tap cooldown after a previous dismissal, etc. — exactly what showed up in testing.
+  // google.accounts.id.renderButton() is the reliable alternative (a real, user-clicked element
+  // that reliably opens a popup, since browsers require a genuine click — not a programmatic
+  // API call — to permit that), but it has to render into on-page DOM, so it can't be fired
+  // imperatively from arbitrary call sites (list/note/highlight actions in UserDataContext).
+  // Routing all of those to the Settings page, which renders the actual button, is the fix.
   const promptGoogleSignIn = useCallback(() => {
-    if (!googleReady.current || !window.google) return;
-    window.google.accounts.id.prompt();
+    navigate('/settings');
   }, []);
 
   const logout = useCallback(async () => {
@@ -71,8 +84,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const value = useMemo(
-    () => ({ user, loading, loginWithGoogle, promptGoogleSignIn, logout }),
-    [user, loading, loginWithGoogle, promptGoogleSignIn, logout]
+    () => ({ user, loading, googleReady, loginWithGoogle, promptGoogleSignIn, logout }),
+    [user, loading, googleReady, loginWithGoogle, promptGoogleSignIn, logout]
   );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

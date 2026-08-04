@@ -2,7 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+/* --ui-scale (set from Settings > UI scale, see lib/uiPrefs.ts) is applied via CSS `zoom` on
+   <html> where supported. `zoom` only magnifies rendering — it doesn't redefine the viewport,
+   so `vh`/`dvh` elsewhere in the app (LibraryPage's `100dvh`, `min-h-screen`, ...) still resolve
+   against the *true*, unscaled viewport and then get magnified on top of that, ending up taller
+   than the actual screen (page-wide scroll, content cut off below the fold — e.g. the Settings
+   button). Compensating once here — sizing <html> itself to 100dvh/scale, so it renders back to
+   exactly 100dvh after zoom — means everything below it can just use ordinary 100%/h-full
+   sizing (cascades structurally, isn't magnified a second time) instead of querying the
+   viewport directly. The viewport-meta fallback (iOS Safari, which *does* redefine the layout
+   viewport itself) sets --ui-scale back to 1, so this is a no-op there — dvh is already correct
+   on that path. */
+html {
+  height: calc(100dvh / var(--ui-scale, 1));
+}
 body,
 #root {
   height: 100%;
@@ -13,7 +26,7 @@ body {
   overscroll-behavior: none;
   background: #f7f5f1;
   color: #1b1917;
-  font-family: 'Newsreader', Georgia, serif;
+  font-family: var(--ui-serif, 'Newsreader'), Georgia, serif;
   -webkit-font-smoothing: antialiased;
 }
 

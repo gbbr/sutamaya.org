@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { X, ChevronLeft, ChevronRight, Menu as MenuIcon } from 'lucide-react';
+import { X, Menu as MenuIcon } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
@@ -14,6 +14,7 @@ import { SegmentedText } from '../components/SegmentedText';
 import { HighlightPopup } from '../components/HighlightPopup';
 import { DictionaryDock } from '../components/DictionaryDock';
 import { ReaderMenuPanel } from '../components/ReaderMenuPanel';
+import { ReaderSearchOverlay } from '../components/ReaderSearchOverlay';
 
 interface DictState {
   word: string;
@@ -31,6 +32,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   const [dict, setDict] = useState<DictState | null>(null);
   const [panel, setPanel] = useState(!!initialPanelTab);
   const [tab, setTab] = useState<'notes' | 'lists' | 'text'>(initialPanelTab || 'notes');
+  const [searchOpen, setSearchOpen] = useState(false);
   const [mobile, setMobile] = useState(() => window.innerWidth < 860);
   const tapRef = useRef<{ x: number; y: number } | null>(null);
 
@@ -68,9 +70,16 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
+      // While the search overlay is open, it owns every key itself (see its own onKeyDown) —
+      // bail out before even the input/textarea tag check below, since a click on a result row
+      // (not the input) would otherwise let these fall through to the reader's own shortcuts.
+      if (searchOpen) return;
       const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
       if (tag === 'input' || tag === 'textarea') return;
-      if (e.key === 'Escape') {
+      if (e.key === '/') {
+        e.preventDefault();
+        setSearchOpen(true);
+      } else if (e.key === 'Escape') {
         if (dict) setDict(null);
         else if (panel) setPanel(false);
         else closeReader();
@@ -87,11 +96,16 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dict, panel, siblingIds, suttaId]);
+  }, [dict, panel, searchOpen, siblingIds, suttaId]);
 
   function closeReader() {
     if (sutta) navigate(`/browse/${sutta.node}/${suttaId}`);
     else navigate('/');
+  }
+
+  function onSearchOpenSutta(id: string) {
+    setSearchOpen(false);
+    navigate(`/read/${encodeURIComponent(id)}`);
   }
 
   function onWordClick(raw: string) {
@@ -138,21 +152,10 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       onPointerUp={onReaderPointerUp}
     >
       <header className="font-sans flex-none flex items-center gap-4 px-5 py-3 text-[13px]" style={{ borderBottom: `1px solid ${theme.rule}` }}>
-        <button className="flex items-center gap-1.5" onClick={closeReader}>
+        <button className="flex items-center" title="Close" onClick={closeReader}>
           <X size={15} strokeWidth={1.75} />
-          Close
         </button>
-        <span className="flex-1 text-center opacity-75 font-serif">
-          {sutta.ref} · {sutta.pali}
-        </span>
-        <button className="flex items-center gap-1.5" style={{ opacity: 0.75 }} onClick={(e) => { e.stopPropagation(); step(-1); }}>
-          <ChevronLeft size={15} strokeWidth={1.75} />
-          Prev
-        </button>
-        <button className="flex items-center gap-1.5" style={{ opacity: 0.75 }} onClick={(e) => { e.stopPropagation(); step(1); }}>
-          Next
-          <ChevronRight size={15} strokeWidth={1.75} />
-        </button>
+        <span className="flex-1 text-center opacity-75 font-serif">{mobile ? sutta.ref : `${sutta.ref} · ${sutta.pali}`}</span>
         <button
           className="flex items-center gap-1.5"
           onClick={(e) => {
@@ -174,8 +177,13 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           <div className="font-serif italic" style={{ fontSize: fs - 2, marginTop: 5, color: theme.dim }}>
             {sutta.pali}
           </div>
+          {sutta.blurb && (
+            <div className="italic" style={{ fontSize: fs - 4, lineHeight: 1.6, marginTop: 11, color: theme.fg, opacity: 0.72 }}>
+              {sutta.blurb}
+            </div>
+          )}
           <div className="font-sans" style={{ fontSize: 12, marginTop: 9, color: theme.dim }}>
-            {sutta.ref} · {sutta.min} min · tap a line for Pali · select text to highlight
+            {sutta.ref} · {sutta.min} min
           </div>
           <div style={{ height: 1, background: theme.rule, margin: '20px 0 22px' }} />
 
@@ -218,6 +226,8 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       )}
 
       {pop && <HighlightPopup pop={pop} theme={theme} onPick={pick} onRemove={() => pick(null)} onStop={popStop} />}
+
+      {searchOpen && <ReaderSearchOverlay theme={theme} onOpenSutta={onSearchOpenSutta} onClose={() => setSearchOpen(false)} />}
     </div>
   );
 }
