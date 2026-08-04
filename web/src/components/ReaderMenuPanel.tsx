@@ -1,11 +1,12 @@
-import { useMemo, useRef, useState, type KeyboardEvent } from 'react';
-import { ChevronDown, ChevronUp, MoreHorizontal, Pencil, Trash2 } from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { Trash2 } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { NoteEditor } from './NoteEditor';
+import { ListMembershipPicker } from './ListMembershipPicker';
 import type { SegmentFile } from '../lib/corpus';
 import { groupHighlights, highlightGroupText } from '../lib/highlights';
-import type { ListDef, ReaderFace, ReaderTheme, ThemeColors } from '../lib/types';
+import type { ReaderFace, ReaderTheme, ThemeColors } from '../lib/types';
 
 interface ReaderMenuPanelProps {
   suttaId: string;
@@ -30,45 +31,11 @@ const FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
 
 export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, onClose, onJumpToHighlight }: ReaderMenuPanelProps) {
   const [tab, setTab] = useState(initialTab);
-  const {
-    notes,
-    submitNote,
-    highlights,
-    removeHighlights,
-    lists,
-    membership,
-    toggleMembership,
-    addToList,
-    createList,
-    renameList,
-    removeList,
-    reorderLists,
-  } = useUserData();
+  const { notes, submitNote, highlights, removeHighlights } = useUserData();
   const { theme: currentTheme, setTheme, fs, setFs, lh, setLh, face, setFace, allPali, toggleAllPali } = useReaderPrefs();
-  const [draft, setDraft] = useState('');
-  const [activeFilterIndex, setActiveFilterIndex] = useState(0);
-  const [menuOpenListId, setMenuOpenListId] = useState<string | null>(null);
-  const [editingListId, setEditingListId] = useState<string | null>(null);
-  const [editDraft, setEditDraft] = useState('');
-  const [confirmDeleteListId, setConfirmDeleteListId] = useState<string | null>(null);
-  const listInput = useRef<HTMLInputElement>(null);
 
   const suttaHighlights = highlights[suttaId] || [];
-  const suttaLists = membership[suttaId] || [];
   const highlightGroups = useMemo(() => groupHighlights(suttaHighlights, segments), [suttaHighlights, segments]);
-  // Labels of the two auto-managed lists (see server/src/routes/data.js's buildUserData), used
-  // below to recognize them among `suttaLists`, which — unlike `lists` — only carries labels,
-  // not the ListDef.auto flag.
-  const autoLabels = useMemo(() => new Set(lists.filter((l) => l.auto).map((l) => l.label)), [lists]);
-  // The picker below the input: every non-auto list, narrowed to those matching what's typed so
-  // far — Enter selects whichever one is highlighted (even mid-typed), Up/Down moves the
-  // highlight, and an empty result falls through to creating `draft` as a new list instead.
-  const filteredLists = useMemo(() => {
-    const q = draft.trim().toLowerCase();
-    const pool = lists.filter((l) => !l.auto);
-    return q ? pool.filter((l) => l.label.toLowerCase().includes(q)) : pool;
-  }, [lists, draft]);
-  const activeIndex = Math.min(activeFilterIndex, filteredLists.length - 1);
 
   const panelStyle = mobile
     ? {
@@ -98,78 +65,6 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
         borderLeft: `2px solid ${theme.fg}`,
         padding: '18px 20px 22px',
       };
-
-  async function submitDraft() {
-    const name = draft.trim();
-    if (!name) return;
-    try {
-      const list = await createList(name);
-      setDraft('');
-      setActiveFilterIndex(0);
-      await addToList(suttaId, list);
-    } catch {
-      // Signed out: createList() already triggered the Google sign-in prompt.
-    }
-  }
-  function selectList(label: string) {
-    if (!suttaLists.includes(label)) toggleMembership(suttaId, label);
-    setDraft('');
-    setActiveFilterIndex(0);
-  }
-  function onDraftChange(v: string) {
-    setDraft(v);
-    setActiveFilterIndex(0);
-  }
-  function onDraftKey(e: KeyboardEvent<HTMLInputElement>) {
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      setActiveFilterIndex((i) => Math.min(filteredLists.length - 1, i + 1));
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      setActiveFilterIndex((i) => Math.max(0, i - 1));
-    } else if (e.key === 'Enter') {
-      e.preventDefault();
-      const match = filteredLists[activeIndex];
-      if (match) selectList(match.label);
-      else submitDraft();
-    }
-  }
-
-  // Editing (rename/delete/reorder) mirrors TreePane's ListRow, scoped to the flat top-level
-  // list — the reader's picker isn't a tree browser, so there's no sub-list nesting here.
-  function startEditList(l: ListDef) {
-    setMenuOpenListId(null);
-    setEditingListId(l.id);
-    setEditDraft(l.label);
-  }
-  function commitEditList() {
-    const id = editingListId;
-    const text = editDraft.trim();
-    setEditingListId(null);
-    if (!id) return;
-    if (text) renameList(id, text);
-  }
-  function cancelEditList() {
-    setEditingListId(null);
-  }
-  function armDeleteList(l: ListDef) {
-    setMenuOpenListId(null);
-    setConfirmDeleteListId(l.id);
-  }
-  function deleteList(l: ListDef) {
-    setConfirmDeleteListId(null);
-    removeList(l.id, l.label);
-  }
-  // Only meaningful against the full, unfiltered order — disabled while a search narrows
-  // `filteredLists`, since the visible subset's order doesn't reflect true sibling positions.
-  function moveList(l: ListDef, dir: -1 | 1) {
-    const idx = filteredLists.findIndex((s) => s.id === l.id);
-    const swapWith = idx + dir;
-    if (idx < 0 || swapWith < 0 || swapWith >= filteredLists.length) return;
-    const order = filteredLists.map((s) => s.id);
-    [order[idx], order[swapWith]] = [order[swapWith], order[idx]];
-    reorderLists(null, order);
-  }
 
   const tabBtn = (id: 'highlights' | 'lists' | 'text', label: string) => (
     <button
@@ -253,143 +148,7 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
 
         {tab === 'lists' && (
           <div className="sc flex-1 min-h-0">
-            <input
-              ref={listInput}
-              value={draft}
-              onChange={(e) => onDraftChange(e.target.value)}
-              onKeyDown={onDraftKey}
-              placeholder="List name — return to create & add"
-              className="w-full h-11 rounded-[10px] px-3 bg-transparent text-base outline-none"
-              style={{ border: `1px solid #8A6A3B`, color: theme.fg }}
-            />
-            <div className="flex flex-wrap gap-1.5 my-3.5">
-              {suttaLists.map((label) =>
-                autoLabels.has(label) ? (
-                  <span
-                    key={label}
-                    className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px]"
-                    style={{ border: `1px solid ${theme.rule}`, color: theme.fg, opacity: 0.6 }}
-                  >
-                    {label}
-                  </span>
-                ) : (
-                  <button
-                    key={label}
-                    className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px]"
-                    style={{ background: theme.fg, color: theme.bg }}
-                    onClick={() => toggleMembership(suttaId, label)}
-                  >
-                    {label} ×
-                  </button>
-                )
-              )}
-            </div>
-            <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase opacity-60 mb-1">
-              {filteredLists.length === 0 && draft.trim() ? 'No matches — return to create' : 'Or pick from your lists'}
-            </div>
-            {filteredLists.map((l, idx) => (
-              <div key={l.id}>
-                <div
-                  className="flex items-center gap-2 w-full py-[11px] px-2 rounded-[8px]"
-                  style={{ borderBottom: `1px solid ${theme.rule}`, background: idx === activeIndex ? theme.rule : 'transparent' }}
-                  onMouseEnter={() => setActiveFilterIndex(idx)}
-                >
-                  {editingListId === l.id ? (
-                    <input
-                      autoFocus
-                      value={editDraft}
-                      onChange={(e) => setEditDraft(e.target.value)}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                          e.preventDefault();
-                          commitEditList();
-                        } else if (e.key === 'Escape') cancelEditList();
-                      }}
-                      onBlur={commitEditList}
-                      className="flex-1 min-w-0 h-8 rounded-[6px] px-2 text-[14.5px] outline-none"
-                      style={{ border: `1px solid ${theme.fg}`, background: 'transparent', color: theme.fg }}
-                    />
-                  ) : (
-                    <button className="flex-1 min-w-0 text-left text-[15.5px] truncate" onClick={() => selectList(l.label)}>
-                      {l.label}
-                    </button>
-                  )}
-                  {editingListId !== l.id && (
-                    <>
-                      <span className="text-[13px]">{suttaLists.includes(l.label) ? '✓' : ''}</span>
-                      <button
-                        className="flex-none w-6 h-6 flex items-center justify-center rounded opacity-60"
-                        title="List options"
-                        onClick={() => setMenuOpenListId((m) => (m === l.id ? null : l.id))}
-                      >
-                        <MoreHorizontal size={14} strokeWidth={2} />
-                      </button>
-                    </>
-                  )}
-                </div>
-                {confirmDeleteListId === l.id ? (
-                  <div className="flex items-center gap-2 px-2 pb-2">
-                    <span className="font-sans text-[12px] opacity-70">Delete "{l.label}"?</span>
-                    <button
-                      onClick={() => deleteList(l)}
-                      className="font-sans text-[12px] font-semibold px-2 py-[3px] rounded border border-red-500/50 text-red-500"
-                    >
-                      Delete
-                    </button>
-                    <button
-                      onClick={() => setConfirmDeleteListId(null)}
-                      className="font-sans text-[12px] px-2 py-[3px] rounded"
-                      style={{ border: `1px solid ${theme.rule}`, opacity: 0.7 }}
-                    >
-                      Cancel
-                    </button>
-                  </div>
-                ) : (
-                  menuOpenListId === l.id && (
-                    <div className="flex items-center gap-[6px] px-2 pb-2">
-                      {!draft.trim() && (
-                        <>
-                          <button
-                            title="Move up"
-                            disabled={idx === 0}
-                            onClick={() => moveList(l, -1)}
-                            className="w-6 h-[22px] flex items-center justify-center rounded disabled:opacity-25"
-                            style={{ border: `1px solid ${theme.rule}` }}
-                          >
-                            <ChevronUp size={13} strokeWidth={2} />
-                          </button>
-                          <button
-                            title="Move down"
-                            disabled={idx === filteredLists.length - 1}
-                            onClick={() => moveList(l, 1)}
-                            className="w-6 h-[22px] flex items-center justify-center rounded disabled:opacity-25"
-                            style={{ border: `1px solid ${theme.rule}` }}
-                          >
-                            <ChevronDown size={13} strokeWidth={2} />
-                          </button>
-                        </>
-                      )}
-                      <button
-                        title="Rename"
-                        onClick={() => startEditList(l)}
-                        className="w-6 h-[22px] flex items-center justify-center rounded"
-                        style={{ border: `1px solid ${theme.rule}` }}
-                      >
-                        <Pencil size={12} strokeWidth={2} />
-                      </button>
-                      <button
-                        title="Delete"
-                        onClick={() => armDeleteList(l)}
-                        className="w-6 h-[22px] flex items-center justify-center rounded text-red-500"
-                        style={{ border: `1px solid ${theme.rule}` }}
-                      >
-                        <Trash2 size={12} strokeWidth={2} />
-                      </button>
-                    </div>
-                  )
-                )}
-              </div>
-            ))}
+            <ListMembershipPicker suttaId={suttaId} theme={theme} autoFocus onRequestClose={onClose} />
           </div>
         )}
 

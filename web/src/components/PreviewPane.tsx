@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { navigate } from '@reach/router';
 import { BookOpen, Eye, PanelRightClose } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
@@ -10,6 +11,7 @@ import { SegmentedText } from './SegmentedText';
 import { HighlightPopup } from './HighlightPopup';
 import { HighlightGutter } from './HighlightGutter';
 import { NoteEditor } from './NoteEditor';
+import { ListMembershipPicker } from './ListMembershipPicker';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 
 interface PreviewPaneProps {
@@ -19,8 +21,10 @@ interface PreviewPaneProps {
 export function PreviewPane({ selectedId }: PreviewPaneProps) {
   const { corpus } = useCorpus();
   const { desktop, previewHidden, hidePreview } = useLayout();
-  const { notes, submitNote, membership, toggleMembership, visited } = useUserData();
+  const { notes, submitNote, membership, visited } = useUserData();
   const { fs, lh, face, allPali } = useReaderPrefs();
+  const [showListPicker, setShowListPicker] = useState(false);
+  useEffect(() => setShowListPicker(false), [selectedId]);
   const sutta = corpus && selectedId ? corpus.suttas[selectedId] : undefined;
   const {
     segments,
@@ -133,33 +137,32 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
           textareaClassName="w-full border border-ink/[.22] rounded-field px-3 py-2.5 bg-field text-[15.5px] resize-y outline-none font-serif"
           saveButtonClassName="mt-1.5 font-sans text-[11.5px] font-semibold px-2 py-[3px] rounded border border-ink/[.22] text-ink/70"
         />
-        <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mt-[22px] mb-2">In lists</div>
-        <div className="flex flex-wrap gap-1.5">
-          {chips.map((label) =>
-            autoLabels.has(label) ? (
+        <div className="flex items-center justify-between mt-[22px] mb-2">
+          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">In lists</div>
+          <button
+            className="font-sans text-[11.5px] text-ink/50 hover:text-ink/70"
+            onClick={() => setShowListPicker((v) => !v)}
+          >
+            {showListPicker ? 'Done' : '+ add'}
+          </button>
+        </div>
+        {showListPicker ? (
+          <ListMembershipPicker suttaId={selectedId} theme={theme} autoFocus onRequestClose={() => setShowListPicker(false)} />
+        ) : (
+          <div className="flex flex-wrap gap-1.5">
+            {chips.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px] border border-ink/[.3] text-ink/60"
+                className={`inline-flex items-center h-5 whitespace-nowrap rounded-[11px] px-[10px] font-sans text-[11.5px] border border-ink/[.25] ${
+                  autoLabels.has(label) ? 'italic text-ink/40' : 'text-ink/70'
+                }`}
               >
                 {label}
               </span>
-            ) : (
-              <button
-                key={label}
-                className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px] border border-accent bg-accent text-[#FBFAF7]"
-                onClick={() => toggleMembership(selectedId, label)}
-              >
-                {label} ×
-              </button>
-            )
-          )}
-          <button
-            className="inline-flex items-center whitespace-nowrap border border-dashed border-ink/[.35] rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px] text-ink/50"
-            onClick={() => navigate(`/read/${encodeURIComponent(selectedId)}?panel=lists`)}
-          >
-            + add
-          </button>
-        </div>
+            ))}
+            {chips.length === 0 && <div className="font-sans text-[13px] text-ink/40">Not in any lists yet.</div>}
+          </div>
+        )}
       </div>
       {pop && <HighlightPopup pop={pop} theme={theme} onPick={pick} onRemove={() => pick(null)} onStop={popStop} />}
       <HighlightGutter
