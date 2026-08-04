@@ -6,6 +6,13 @@ import { asyncHandler } from '../asyncHandler.js';
 export const dataRouter = Router();
 dataRouter.use(requireAuth);
 
+// Fixed, non-persisted ids for the two auto-managed lists below — never written to the `lists`
+// collection, so they can't drift from the highlights/notes they're derived from (unlike a
+// stored list, which needs its own explicit add/remove call kept in sync with every highlight
+// or note change) and can't be renamed, deleted, or manually reordered.
+const HIGHLIGHTS_AUTO_LIST_ID = 'auto-highlights';
+const NOTES_AUTO_LIST_ID = 'auto-notes';
+
 // Aggregates everything the client needs for one user into the same shape the reader's
 // client-side state uses: lists, membership, notes, highlights, visited.
 async function buildUserData(userId) {
@@ -45,6 +52,33 @@ async function buildUserData(userId) {
   visitedSnap.docs.forEach((doc) => {
     visited[doc.id] = doc.data().visitedAt;
   });
+
+  // Every suttaId with at least one highlight, most-recently-highlighted first (there's no
+  // stored order to preserve the way a real list has, so recency is the most useful default).
+  const highlightRecency = new Map();
+  highlightsSnap.docs.forEach((doc) => {
+    const h = doc.data();
+    const prev = highlightRecency.get(h.suttaId);
+    if (!prev || h.createdAt > prev) highlightRecency.set(h.suttaId, h.createdAt);
+  });
+  const highlightedIds = [...highlightRecency.entries()].sort((a, b) => (a[1] < b[1] ? 1 : -1)).map(([id]) => id);
+
+  // notesCol doc ids *are* sutta ids, and a note doc only exists while its text is non-empty
+  // (see PUT /notes/:suttaId, which deletes on blank) — so "doc exists" already means "has a
+  // note", no extra filtering needed.
+  const notedIds = notesSnap.docs
+    .map((doc) => ({ id: doc.id, updatedAt: doc.data().updatedAt || '' }))
+    .sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : -1))
+    .map((x) => x.id);
+
+  if (highlightedIds.length) {
+    lists.push({ id: HIGHLIGHTS_AUTO_LIST_ID, label: 'Highlights', parentId: null, items: highlightedIds, auto: true });
+    highlightedIds.forEach((id) => (membership[id] = [...(membership[id] || []), 'Highlights']));
+  }
+  if (notedIds.length) {
+    lists.push({ id: NOTES_AUTO_LIST_ID, label: 'Notes', parentId: null, items: notedIds, auto: true });
+    notedIds.forEach((id) => (membership[id] = [...(membership[id] || []), 'Notes']));
+  }
 
   return { lists, membership, notes, highlights, visited };
 }

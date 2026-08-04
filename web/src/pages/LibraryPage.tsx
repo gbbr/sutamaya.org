@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { PanelLeftOpen } from 'lucide-react';
 import { useLayout } from '../context/LayoutContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
@@ -18,7 +17,7 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
   // full remount+state-loss that two separate <LibraryPage> route elements caused (reach-router
   // auto-keys route children by position, so switching which one matched was a key change).
   const suttaId = rawSuttaId || undefined;
-  const { mobile, desktop, treeHidden, previewHidden, showTree, dragTree, resetTree, dragList, resetList } = useLayout();
+  const { mobile, desktop, previewHidden, dragTree, resetTree, dragList, resetList } = useLayout();
   const { corpus } = useCorpus();
   const { lists, membership, notes } = useUserData();
   // `/read/:suttaId` is a genuinely separate route (full-screen reader, not one of this page's
@@ -93,17 +92,7 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
         />
       </div>
 
-      {!mobile && treeHidden && (
-        <button
-          className="flex-none w-3 flex items-center justify-center cursor-[e-resize] border-r border-ink/10 text-ink/35 hover:text-ink/60 hover:bg-ink/[.04]"
-          style={{ background: '#F0ECE4' }}
-          title="Show browse pane"
-          onClick={showTree}
-        >
-          <PanelLeftOpen size={13} strokeWidth={1.75} />
-        </button>
-      )}
-      {!mobile && !treeHidden && (
+      {!mobile && (
         <div className="flex-none w-[7px] -ml-[7px] cursor-col-resize touch-none" onPointerDown={dragTree} onDoubleClick={resetTree} />
       )}
 

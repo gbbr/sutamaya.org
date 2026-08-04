@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react';
+import { useMemo } from 'react';
 import { navigate } from '@reach/router';
 import { BookOpen, Eye, PanelRightClose } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
@@ -11,8 +11,8 @@ import { useScrollMemory } from '../hooks/useScrollMemory';
 import { SegmentedText } from './SegmentedText';
 import { HighlightPopup } from './HighlightPopup';
 import { HighlightGutter } from './HighlightGutter';
-import { AUTO_LIST_LABELS } from '../lib/autoLists';
-import { groupHighlights } from '../lib/highlights';
+import { NoteEditor } from './NoteEditor';
+import { groupHighlights, highlightCountsByColor } from '../lib/highlights';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 
 interface PreviewPaneProps {
@@ -22,15 +22,16 @@ interface PreviewPaneProps {
 export function PreviewPane({ selectedId }: PreviewPaneProps) {
   const { corpus } = useCorpus();
   const { desktop, previewHidden, hidePreview } = useLayout();
-  const { notes, setNote, highlights, membership, toggleMembership, visited } = useUserData();
+  const { notes, submitNote, highlights, lists, membership, toggleMembership, visited } = useUserData();
   const { fs, lh, face, allPali } = useReaderPrefs();
   const segments = useSuttaText(selectedId);
   const sutta = corpus && selectedId ? corpus.suttas[selectedId] : undefined;
   const hlForSutta = (selectedId && highlights[selectedId]) || [];
   const { pop, onTextUp, pick, popStop, openPop } = useHighlightPopup(selectedId, hlForSutta);
-  const noteRef = useRef<HTMLTextAreaElement>(null);
   const scrollRef = useScrollMemory<HTMLDivElement>(selectedId ? `preview:${selectedId}` : null);
   const highlightGroups = useMemo(() => groupHighlights(hlForSutta, segments), [hlForSutta, segments]);
+  const hlCounts = useMemo(() => highlightCountsByColor(hlForSutta), [hlForSutta]);
+  const autoLabels = useMemo(() => new Set(lists.filter((l) => l.auto).map((l) => l.label)), [lists]);
 
   function jumpToHighlight(segIndex: number) {
     scrollRef.current?.querySelector(`[data-seg="${segIndex}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -76,11 +77,31 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
         <div className="text-[16px] mt-1 italic font-serif" style={{ color: '#8A6A3B' }}>
           {sutta.pali}
         </div>
-        <div
-          className={`text-[15.5px] leading-[1.6] text-ink/[.72] mt-3 ${notes[selectedId] ? 'pl-[10px] border-l-2 border-ink/30' : 'italic'}`}
-        >
-          {notes[selectedId] || sutta.blurb}
-        </div>
+        {sutta.blurb && <div className="italic text-[15.5px] leading-[1.6] text-ink/[.72] mt-3">{sutta.blurb}</div>}
+        {notes[selectedId] && (
+          <div className="text-[15.5px] leading-[1.6] text-ink/[.72] mt-2 pl-[10px] border-l-2 border-ink/30">{notes[selectedId]}</div>
+        )}
+        {(hlCounts.length > 0 || chips.length > 0) && (
+          <div className="flex flex-wrap items-center gap-[6px] mt-3">
+            {hlCounts.map(({ c, count }) => (
+              <span
+                key={c}
+                className="inline-flex items-center justify-center h-5 rounded-full font-sans text-[11px] font-extrabold"
+                style={{ background: c, color: '#000', minWidth: 20, padding: '0 5px' }}
+              >
+                {count}
+              </span>
+            ))}
+            {chips.map((label) => (
+              <span
+                key={label}
+                className="inline-flex items-center h-5 whitespace-nowrap rounded-full px-[10px] font-sans text-[11px] border border-ink/[.25] text-ink/70"
+              >
+                {label}
+              </span>
+            ))}
+          </div>
+        )}
         <div className="h-px bg-ink/[.14] mt-[28px] mb-[24px]" />
         {segments ? (
           <SegmentedText
@@ -103,18 +124,17 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
         <div className="font-sans text-center text-[12.5px] text-ink/40 my-[26px]">— end of excerpt —</div>
         <div className="h-px bg-ink/[.14] mb-[22px]" />
         <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-[7px]">Note</div>
-        <textarea
-          ref={noteRef}
+        <NoteEditor
           value={notes[selectedId] || ''}
-          onChange={(e) => setNote(selectedId, e.target.value)}
-          placeholder="Add a note"
-          rows={2}
-          className="w-full border border-ink/[.22] rounded-field px-3 py-2.5 bg-field text-[15.5px] resize-y outline-none font-serif"
+          onSubmit={(text) => submitNote(selectedId, text)}
+          placeholder="Add a note — return to save, shift+return for a new line"
+          textareaClassName="w-full border border-ink/[.22] rounded-field px-3 py-2.5 bg-field text-[15.5px] resize-y outline-none font-serif"
+          saveButtonClassName="mt-1.5 font-sans text-[11.5px] font-semibold px-2 py-[3px] rounded border border-ink/[.22] text-ink/70"
         />
         <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mt-[22px] mb-2">In lists</div>
         <div className="flex flex-wrap gap-1.5">
           {chips.map((label) =>
-            AUTO_LIST_LABELS.includes(label) ? (
+            autoLabels.has(label) ? (
               <span
                 key={label}
                 className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px] border border-ink/[.3] text-ink/60"

@@ -2,7 +2,7 @@ import { useMemo, useRef, useState, type KeyboardEvent } from 'react';
 import { ChevronDown, ChevronUp, MoreHorizontal, Pencil, Trash2 } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
-import { AUTO_LIST_LABELS } from '../lib/autoLists';
+import { NoteEditor } from './NoteEditor';
 import type { SegmentFile } from '../lib/corpus';
 import { groupHighlights, highlightGroupText } from '../lib/highlights';
 import type { ListDef, ReaderFace, ReaderTheme, ThemeColors } from '../lib/types';
@@ -32,7 +32,7 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
   const [tab, setTab] = useState(initialTab);
   const {
     notes,
-    setNote,
+    submitNote,
     highlights,
     removeHighlights,
     lists,
@@ -56,12 +56,16 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
   const suttaHighlights = highlights[suttaId] || [];
   const suttaLists = membership[suttaId] || [];
   const highlightGroups = useMemo(() => groupHighlights(suttaHighlights, segments), [suttaHighlights, segments]);
+  // Labels of the two auto-managed lists (see server/src/routes/data.js's buildUserData), used
+  // below to recognize them among `suttaLists`, which — unlike `lists` — only carries labels,
+  // not the ListDef.auto flag.
+  const autoLabels = useMemo(() => new Set(lists.filter((l) => l.auto).map((l) => l.label)), [lists]);
   // The picker below the input: every non-auto list, narrowed to those matching what's typed so
   // far — Enter selects whichever one is highlighted (even mid-typed), Up/Down moves the
   // highlight, and an empty result falls through to creating `draft` as a new list instead.
   const filteredLists = useMemo(() => {
     const q = draft.trim().toLowerCase();
-    const pool = lists.filter((l) => !AUTO_LIST_LABELS.includes(l.label));
+    const pool = lists.filter((l) => !l.auto);
     return q ? pool.filter((l) => l.label.toLowerCase().includes(q)) : pool;
   }, [lists, draft]);
   const activeIndex = Math.min(activeFilterIndex, filteredLists.length - 1);
@@ -207,13 +211,14 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
           <div className="sc flex-1 min-h-0">
             <div className="rounded-field mb-3.5 p-[11px_13px]" style={{ border: `1px solid ${theme.rule}`, padding: '11px 13px' }}>
               <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase opacity-60 mb-[5px]">Sutta note</div>
-              <textarea
+              <NoteEditor
                 value={notes[suttaId] || ''}
-                onChange={(e) => setNote(suttaId, e.target.value)}
-                rows={2}
-                placeholder="Add a note"
-                className="w-full bg-transparent text-[16px] resize-none outline-none font-serif"
-                style={{ border: 0, color: theme.fg }}
+                onSubmit={(text) => submitNote(suttaId, text)}
+                placeholder="Add a note — return to save, shift+return for a new line"
+                textareaClassName="w-full bg-transparent text-[16px] resize-none outline-none font-serif"
+                textareaStyle={{ border: 0, color: theme.fg }}
+                saveButtonClassName="mt-1.5 font-sans text-[11.5px] font-semibold px-2 py-[3px] rounded"
+                saveButtonStyle={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
               />
             </div>
             {highlightGroups.map((g) => (
@@ -259,7 +264,7 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
             />
             <div className="flex flex-wrap gap-1.5 my-3.5">
               {suttaLists.map((label) =>
-                AUTO_LIST_LABELS.includes(label) ? (
+                autoLabels.has(label) ? (
                   <span
                     key={label}
                     className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px]"

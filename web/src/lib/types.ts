@@ -58,6 +58,10 @@ export interface ListDef {
   // (or reordered them to). See lib/corpus.ts's listItemsFor, which uses this order instead of
   // re-sorting a list's contents by sutta id the way browsing a nikaya/category does.
   items: string[];
+  // True for the two auto-managed lists ("Highlights", "Notes") synthesized server-side in
+  // buildUserData() from the highlights/notes collections — not a real Firestore doc, so it
+  // can't be renamed, deleted, reparented, or have its own items reordered.
+  auto?: boolean;
 }
 
 export type Membership = Record<string, string[]>;

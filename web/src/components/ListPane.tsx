@@ -1,11 +1,12 @@
-import { useEffect, useMemo, useRef } from 'react';
-import { Check, ChevronDown, ChevronUp, Eye } from 'lucide-react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { Check, Eye, GripVertical } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { listItemsFor, nodeLabel } from '../lib/corpus';
 import { highlightCountsByColor } from '../lib/highlights';
+import type { Sutta } from '../lib/types';
 
 interface ListPaneProps {
   nodeId?: string;
@@ -27,6 +28,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
   const { mobile, desktop, twoPane, previewHidden, showPreview, paneW } = useLayout();
   const scrollRef = useScrollMemory<HTMLDivElement>(`list:${query.trim() ? 'search' : nodeId || 'none'}`, visible);
   const rowRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const itemRowRefs = useRef<Map<string, HTMLDivElement>>(new Map());
 
   const searching = query.trim().length > 0;
   const currentList = !searching ? lists.find((l) => String(l.id) === nodeId) : undefined;
@@ -36,15 +38,109 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
     [corpus, nodeId, query, notes, lists, membership]
   );
 
-  function moveItem(id: string, dir: -1 | 1) {
-    if (!currentList) return;
-    const order = [...currentList.items];
-    const idx = order.indexOf(id);
-    const swapWith = idx + dir;
-    if (idx < 0 || swapWith < 0 || swapWith >= order.length) return;
-    [order[idx], order[swapWith]] = [order[swapWith], order[idx]];
-    reorderListItems(currentList.id, order);
+  // Pointer Events (not HTML5 drag-and-drop, which touch browsers largely don't fire) drive a
+  // single-list drag-reorder: the dragged item's id and a live working copy of the order live in
+  // refs/state here, `dragOrder` (rendered instead of `items` while set) shifts live as the
+  // pointer crosses row midpoints, and a rAF loop auto-scrolls the list — and keeps re-evaluating
+  // the drop target — whenever the pointer sits inside the top/bottom edge band, so it also
+  // reorders correctly if content scrolls under a stationary finger.
+  const [dragOrder, setDragOrder] = useState<string[] | null>(null);
+  const dragIdRef = useRef<string | null>(null);
+  const pointerYRef = useRef(0);
+  const rafRef = useRef<number | null>(null);
+
+  const displayItems: Array<[string, Sutta]> =
+    dragOrder && corpus
+      ? dragOrder.flatMap((id) => (corpus.suttas[id] ? [[id, corpus.suttas[id]] as [string, Sutta]] : []))
+      : items;
+
+  function updateDragTarget() {
+    const id = dragIdRef.current;
+    if (!id) return;
+    const y = pointerYRef.current;
+    setDragOrder((order) => {
+      if (!order) return order;
+      const mids = order
+        .map((itemId) => {
+          const el = itemRowRefs.current.get(itemId);
+          return el ? { itemId, mid: el.getBoundingClientRect().top + el.getBoundingClientRect().height / 2 } : null;
+        })
+        .filter((x): x is { itemId: string; mid: number } => !!x);
+      let targetIndex = mids.length;
+      for (let i = 0; i < mids.length; i++) {
+        if (y < mids[i].mid) {
+          targetIndex = i;
+          break;
+        }
+      }
+      const currentIndex = order.indexOf(id);
+      if (currentIndex === -1) return order;
+      const insertAt = currentIndex < targetIndex ? targetIndex - 1 : targetIndex;
+      if (insertAt === currentIndex) return order;
+      const next = order.filter((x) => x !== id);
+      next.splice(insertAt, 0, id);
+      return next;
+    });
   }
+
+  function runDragLoop() {
+    const EDGE = 56;
+    const MAX_SPEED = 16;
+    function tick() {
+      if (!dragIdRef.current) {
+        rafRef.current = null;
+        return;
+      }
+      const container = scrollRef.current;
+      if (container) {
+        const rect = container.getBoundingClientRect();
+        const y = pointerYRef.current;
+        if (y < rect.top + EDGE) container.scrollTop -= MAX_SPEED * Math.min(1, (rect.top + EDGE - y) / EDGE);
+        else if (y > rect.bottom - EDGE) container.scrollTop += MAX_SPEED * Math.min(1, (y - (rect.bottom - EDGE)) / EDGE);
+      }
+      updateDragTarget();
+      rafRef.current = requestAnimationFrame(tick);
+    }
+    rafRef.current = requestAnimationFrame(tick);
+  }
+
+  function onHandlePointerDown(e: React.PointerEvent, id: string) {
+    if (!currentList) return;
+    e.preventDefault();
+    e.stopPropagation();
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+    dragIdRef.current = id;
+    pointerYRef.current = e.clientY;
+    setDragOrder(currentList.items.slice());
+    runDragLoop();
+  }
+  function onHandlePointerMove(e: React.PointerEvent) {
+    if (!dragIdRef.current) return;
+    pointerYRef.current = e.clientY;
+  }
+  function endDrag() {
+    dragIdRef.current = null;
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    rafRef.current = null;
+    // Read the live value directly rather than committing inside setDragOrder's updater — an
+    // updater must be pure, and reorderListItems triggers a *different* component's setState
+    // (UserDataContext's), which React flags as an invalid render-phase update if done there.
+    const order = dragOrder;
+    setDragOrder(null);
+    if (order && currentList) reorderListItems(currentList.id, order);
+  }
+  function onHandlePointerUp(e: React.PointerEvent) {
+    if (!dragIdRef.current) return;
+    (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
+    endDrag();
+  }
+
+  // Bails out of an in-flight drag if the list itself changes out from under it (e.g. a deep
+  // link or Prev/Next navigation while dragging), rather than leaving stale refs/rAF running.
+  useEffect(() => {
+    if (dragIdRef.current) endDrag();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [nodeId]);
 
   useEffect(() => {
     if (activeIndex >= 0) rowRefs.current[activeIndex]?.scrollIntoView({ block: 'nearest' });
@@ -85,19 +181,28 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
         )}
       </header>
       <div ref={scrollRef} className="sc flex-1">
-        {items.map(([id, s], i) => {
+        {displayItems.map(([id, s], i) => {
           const on = desktop && !previewHidden && !twoPane && id === selectedId;
           const focused = i === activeIndex;
           const note = notes[id];
           const chips = membership[id] || [];
           const hlCounts = highlightCountsByColor(highlights[id] || []);
+          const dragging = dragIdRef.current === id;
           return (
-            <div key={id} className={`relative border-b border-ink/[.08] ${on ? 'bg-accent' : ''}`}>
+            <div
+              key={id}
+              ref={(el) => {
+                if (el) itemRowRefs.current.set(id, el);
+                else itemRowRefs.current.delete(id);
+              }}
+              className={`relative border-b border-ink/[.08] ${on ? 'bg-accent' : ''}`}
+              style={dragging ? { opacity: 0.5 } : undefined}
+            >
               <button
                 ref={(el) => {
                   rowRefs.current[i] = el;
                 }}
-                className={`block w-full text-left px-5 py-[13px] ${currentList ? 'pr-11' : ''} ${on ? 'text-[#FBFAF7]' : ''} ${focused && !on ? 'bg-ink/[.05]' : ''}`}
+                className={`block w-full text-left px-5 py-[13px] ${currentList && !currentList.auto ? 'pr-11' : ''} ${on ? 'text-[#FBFAF7]' : ''} ${focused && !on ? 'bg-ink/[.05]' : ''}`}
                 style={focused ? { boxShadow: `inset 2px 0 0 ${on ? 'rgba(251,250,247,.6)' : '#8A6A3B'}` } : undefined}
                 onClick={() => onOpen(id)}
                 onDoubleClick={() => onOpenReader(id)}
@@ -113,8 +218,8 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
                   {hlCounts.map(({ c, count }) => (
                     <span
                       key={c}
-                      className="inline-flex items-center justify-center align-middle ml-1.5 rounded-full font-sans text-[10px] font-bold"
-                      style={{ background: c, color: '#1B1917', minWidth: 16, height: 16, padding: '0 4px' }}
+                      className="inline-flex items-center justify-center align-middle ml-1.5 rounded-full font-sans text-[11.5px] font-extrabold"
+                      style={{ background: c, color: '#000', minWidth: 20, height: 20, padding: '0 5px' }}
                     >
                       {count}
                     </span>
@@ -145,30 +250,16 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
                   </span>
                 )}
               </button>
-              {currentList && (
-                <span className="absolute right-3 top-[13px] flex flex-col gap-[2px]">
-                  <button
-                    title="Move up"
-                    disabled={i === 0}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      moveItem(id, -1);
-                    }}
-                    className={`w-6 h-5 flex items-center justify-center rounded disabled:opacity-20 ${on ? 'text-[#FBFAF7]/70 hover:bg-white/10' : 'text-ink/45 hover:bg-ink/[.08]'}`}
-                  >
-                    <ChevronUp size={13} strokeWidth={2} />
-                  </button>
-                  <button
-                    title="Move down"
-                    disabled={i === items.length - 1}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      moveItem(id, 1);
-                    }}
-                    className={`w-6 h-5 flex items-center justify-center rounded disabled:opacity-20 ${on ? 'text-[#FBFAF7]/70 hover:bg-white/10' : 'text-ink/45 hover:bg-ink/[.08]'}`}
-                  >
-                    <ChevronDown size={13} strokeWidth={2} />
-                  </button>
+              {currentList && !currentList.auto && (
+                <span
+                  className={`absolute right-3 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center rounded ${on ? 'text-[#FBFAF7]/70' : 'text-ink/40'}`}
+                  style={{ touchAction: 'none', cursor: 'grab' }}
+                  onPointerDown={(e) => onHandlePointerDown(e, id)}
+                  onPointerMove={onHandlePointerMove}
+                  onPointerUp={onHandlePointerUp}
+                  onPointerCancel={onHandlePointerUp}
+                >
+                  <GripVertical size={16} strokeWidth={2} />
                 </span>
               )}
             </div>

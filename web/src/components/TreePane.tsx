@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react';
 import { navigate } from '@reach/router';
 import {
-  PanelLeftClose,
   Settings,
   ChevronRight,
   ChevronDown,
@@ -14,6 +13,8 @@ import {
   StickyNote,
   GripVertical,
   ArrowUpDown,
+  Library,
+  List,
 } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
@@ -22,7 +23,7 @@ import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { SEARCH_INPUT_ID } from '../hooks/useListNav';
 import { findNode, isExpandable, searchCorpus } from '../lib/corpus';
-import { AUTO_LIST_LABELS, HIGHLIGHTS_LIST_LABEL, NOTES_LIST_LABEL } from '../lib/autoLists';
+import { HIGHLIGHTS_LIST_LABEL, NOTES_LIST_LABEL } from '../lib/autoLists';
 import type { ChapterRow, Corpus, ListDef } from '../lib/types';
 
 // One row of the nested chapter/group/category tree under a nikaya — recurses arbitrarily
@@ -386,7 +387,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
   const { corpus } = useCorpus();
   const { lists, notes, createList, renameList, removeList, reorderLists, setListParent } = useUserData();
   const { user, promptGoogleSignIn } = useAuth();
-  const { mobile, desktop, paneW, hideTree } = useLayout();
+  const { mobile, desktop, paneW } = useLayout();
   const scrollRef = useScrollMemory<HTMLDivElement>('tree', visible);
   // Computed synchronously on mount (not via an effect) so the tree is *already* expanded to
   // nodeId by the very first render — otherwise useScrollMemory's restore (a layout effect,
@@ -395,7 +396,26 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
   // after the reader closes, on desktop where it's always "visible" so that restore-on-visible
   // fallback never kicks in either), silently clamping the restored scroll offset back to 0.
   const [expanded, setExpanded] = useState<Record<string, boolean>>(() => ancestorsOf(corpus, nodeId));
-  const [libraryOpen, setLibraryOpen] = useState(true);
+  // Library and My Lists used to share one scrolling column, with My Lists always below the
+  // (often long) nikaya tree — effectively inaccessible without a lot of scrolling for anyone
+  // who mainly lives in one or the other. This switches the pane between full views of each
+  // instead, persisted like the rest of this pane's layout prefs. Signed-out users have no lists
+  // to switch to, so they're pinned to 'library' regardless of what's stored.
+  const [paneView, setPaneView] = useState<'library' | 'lists'>(() => {
+    try {
+      return localStorage.getItem('sutamaya.treeView') === 'lists' ? 'lists' : 'library';
+    } catch {
+      return 'library';
+    }
+  });
+  useEffect(() => {
+    try {
+      localStorage.setItem('sutamaya.treeView', paneView);
+    } catch {
+      // storage unavailable — ignore
+    }
+  }, [paneView]);
+  const effectiveView = user ? paneView : 'library';
 
   // Expands every ancestor level of the current node whenever nodeId *changes* after mount —
   // covers deep links and search-driven navigation within an already-mounted TreePane, without
@@ -433,7 +453,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
   const [dragId, setDragId] = useState<string | null>(null);
   const [overId, setOverId] = useState<string | null>(null);
   const [overZone, setOverZone] = useState<DropZone | null>(null);
-  const listInput = useRef<HTMLInputElement>(null);
+  const listInput = useRef<HTMLInputElement | null>(null);
   const searchInput = useRef<HTMLInputElement>(null);
   const hitRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
@@ -446,7 +466,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
     }
     return (parentId: string) => byParent.get(parentId) || [];
   }, [lists]);
-  const topLevelLists = useMemo(() => lists.filter((l) => !l.parentId && !AUTO_LIST_LABELS.includes(l.label)), [lists]);
+  const topLevelLists = useMemo(() => lists.filter((l) => !l.parentId && !l.auto), [lists]);
   const autoLists = useMemo(
     () =>
       [
@@ -660,19 +680,29 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
   return (
     <aside className="flex flex-col h-full min-w-0 overflow-hidden border-r border-ink/10" style={style}>
       <header className="flex-none px-[18px] pt-4 pb-3.5 border-b border-ink/10">
-        <div className="flex items-baseline gap-2.5 mb-3">
-          <div className="text-[22px] font-semibold tracking-[-.01em] flex-1">Sutamaya</div>
-          {desktop && (
+        <div className="flex items-center gap-2 mb-3">
+          <div className="text-[22px] font-semibold tracking-[-.01em] flex-1 truncate">Sutamaya</div>
+          {user && (
             <button
-              className="flex-none w-7 h-7 flex items-center justify-center rounded-md text-ink/55 hover:bg-ink/[.06]"
-              title="Hide browse pane"
-              onClick={() => hideTree()}
+              className="relative flex flex-none items-center rounded-full p-[2px]"
+              style={{ background: 'rgba(27,25,23,.09)' }}
+              title={paneView === 'library' ? 'Switch to My Lists' : 'Switch to Library'}
+              onClick={() => setPaneView((v) => (v === 'library' ? 'lists' : 'library'))}
             >
-              <PanelLeftClose size={16} strokeWidth={1.75} />
+              <div
+                className="absolute top-[2px] bottom-[2px] rounded-full bg-white shadow-[0_1px_2px_rgba(27,25,23,.18)] transition-[left] duration-200 ease-out"
+                style={{ left: paneView === 'library' ? 2 : '50%', width: 'calc(50% - 2px)' }}
+              />
+              <span className={`relative z-10 flex items-center justify-center w-6 h-6 rounded-full transition-colors ${paneView === 'library' ? 'text-ink' : 'text-ink/45'}`}>
+                <Library size={13} strokeWidth={2} />
+              </span>
+              <span className={`relative z-10 flex items-center justify-center w-6 h-6 rounded-full transition-colors ${paneView === 'lists' ? 'text-ink' : 'text-ink/45'}`}>
+                <List size={13} strokeWidth={2} />
+              </span>
             </button>
           )}
           {mobile && (
-            <div className="flex items-center gap-3.5">
+            <div className="flex items-center gap-3.5 flex-none">
               {signedInBadge}
               <button className="flex items-center text-ink/[.62]" title="Settings" onClick={() => navigate('/settings')}>
                 <Settings size={16} strokeWidth={1.75} />
@@ -725,16 +755,9 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
               <div className="font-sans text-center text-[13px] text-ink/40 py-[30px] px-5">No matches.</div>
             )}
           </div>
-        ) : (
+        ) : effectiveView === 'library' ? (
           <div>
-            <button
-              className="flex items-center gap-1 px-[18px] pt-2 pb-1 font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]"
-              onClick={() => setLibraryOpen((o) => !o)}
-            >
-              Library {libraryOpen ? '−' : '+'}
-            </button>
-            {libraryOpen &&
-              corpus.nikayas.map((n) => {
+            {corpus.nikayas.map((n) => {
                 const open = !!expanded[n.id];
                 const expandableNode = isExpandable(n);
                 return (
@@ -760,8 +783,10 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
                   </div>
                 );
               })}
-
-            <div className="flex items-center justify-between pl-[18px] pr-[10px] pt-[22px] pb-1">
+          </div>
+        ) : (
+          <div>
+            <div className="flex items-center justify-between pl-[18px] pr-[10px] pt-2 pb-1">
               <span className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">My lists</span>
               <div className="flex items-center gap-[7px]">
                 <button

@@ -1,7 +1,9 @@
-// Labels of the auto-managed, top-level lists a sutta is kept in for as long as it has
-// highlights / a note (see UserDataContext's syncAutoList) — each is created on first use and
-// deleted again once empty, and both are excluded from the user-editable "My lists" tree,
-// rendered instead in TreePane's own "Automatic" section since they aren't user lists.
+// The two auto-managed lists ("Highlights", "Notes") are synthesized server-side in
+// buildUserData() (server/src/routes/data.js) from the highlights/notes collections — never
+// stored as real `lists` docs, so a ListDef for one always carries `auto: true` and one of
+// these fixed ids. Excluded from the user-editable "My lists" tree, rendered instead in
+// TreePane's own "Automatic" section since they aren't user lists.
+export const HIGHLIGHTS_AUTO_LIST_ID = 'auto-highlights';
+export const NOTES_AUTO_LIST_ID = 'auto-notes';
 export const HIGHLIGHTS_LIST_LABEL = 'Highlights';
 export const NOTES_LIST_LABEL = 'Notes';
-export const AUTO_LIST_LABELS: readonly string[] = [HIGHLIGHTS_LIST_LABEL, NOTES_LIST_LABEL];

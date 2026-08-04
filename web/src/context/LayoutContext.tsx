@@ -4,7 +4,6 @@ import { usePersistedState } from '../hooks/usePersistedState';
 interface LayoutPrefs {
   treeW: number;
   listW: number;
-  treeHidden: boolean;
   previewHidden: boolean;
 }
 
@@ -21,8 +20,6 @@ interface LayoutState extends LayoutPrefs {
   twoPane: boolean;
   desktop: boolean;
   paneW: PaneWidths;
-  hideTree: () => void;
-  showTree: () => void;
   hidePreview: () => void;
   showPreview: () => void;
   resetTree: () => void;
@@ -31,7 +28,7 @@ interface LayoutState extends LayoutPrefs {
   dragList: (e: ReactPointerEvent) => void;
 }
 
-const DEFAULTS: LayoutPrefs = { treeW: 264, listW: 404, treeHidden: false, previewHidden: false };
+const DEFAULTS: LayoutPrefs = { treeW: 264, listW: 404, previewHidden: false };
 
 const LayoutContext = createContext<LayoutState | null>(null);
 
@@ -69,7 +66,7 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
   const paneW = useMemo<PaneWidths>(() => {
     const three = desktop && !prefs.previewHidden;
     const treeMax = Math.max(210, three ? w - 280 - 330 : w - 320);
-    const tree = prefs.treeHidden ? 0 : Math.min(prefs.treeW, treeMax);
+    const tree = Math.min(prefs.treeW, treeMax);
     const listMax = three ? Math.max(280, w - tree - 330) : w;
     const list = Math.max(280, Math.min(prefs.listW, listMax));
     return { tree, list, treeMax, listMax };
@@ -83,8 +80,6 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
       twoPane,
       desktop,
       paneW,
-      hideTree: () => setPrefs((p) => ({ ...p, treeHidden: true })),
-      showTree: () => setPrefs((p) => ({ ...p, treeHidden: false })),
       hidePreview: () => setPrefs((p) => ({ ...p, previewHidden: true })),
       showPreview: () => setPrefs((p) => ({ ...p, previewHidden: false })),
       resetTree: () => setPrefs((p) => ({ ...p, treeW: 264 })),
