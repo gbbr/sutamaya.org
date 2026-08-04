@@ -50,7 +50,7 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
     );
   }
 
-  const chips = membership[selectedId] || [];
+  const chips = [...(membership[selectedId] || [])].sort((a, b) => Number(autoLabels.has(a)) - Number(autoLabels.has(b)));
 
   return (
     <aside className="flex flex-col h-full" style={style}>
@@ -95,7 +95,9 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
             {chips.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center h-5 whitespace-nowrap rounded-full px-[10px] font-sans text-[11px] border border-ink/[.25] text-ink/70"
+                className={`inline-flex items-center h-5 whitespace-nowrap rounded-full px-[10px] font-sans text-[11px] border border-ink/[.25] ${
+                  autoLabels.has(label) ? 'italic text-ink/40' : 'text-ink/70'
+                }`}
               >
                 {label}
               </span>

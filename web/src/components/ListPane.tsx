@@ -32,6 +32,9 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
 
   const searching = query.trim().length > 0;
   const currentList = !searching ? lists.find((l) => String(l.id) === nodeId) : undefined;
+  // "Highlights"/"Notes" membership is redundant here — a row already shows note text and
+  // highlight-count circles directly, so the auto lists never appear as chips.
+  const autoLabels = useMemo(() => new Set(lists.filter((l) => l.auto).map((l) => l.label)), [lists]);
 
   const items = useMemo(
     () => (corpus ? listItemsFor(corpus, nodeId, query, notes, lists, membership) : []),
@@ -185,7 +188,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
           const on = desktop && !previewHidden && !twoPane && id === selectedId;
           const focused = i === activeIndex;
           const note = notes[id];
-          const chips = membership[id] || [];
+          const chips = (membership[id] || []).filter((c) => !autoLabels.has(c));
           const hlCounts = highlightCountsByColor(highlights[id] || []);
           const dragging = dragIdRef.current === id;
           return (

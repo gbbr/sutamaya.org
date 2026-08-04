@@ -8,7 +8,7 @@ import { useSuttaText } from '../hooks/useSuttaText';
 import { useHighlightPopup } from '../hooks/useHighlightPopup';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { flatSuttaOrder } from '../lib/corpus';
-import { groupHighlights, highlightCountsByColor } from '../lib/highlights';
+import { groupHighlights } from '../lib/highlights';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { lookupWord } from '../lib/dictionary';
 import { SegmentedText } from '../components/SegmentedText';
@@ -26,7 +26,7 @@ interface DictState {
 
 export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus, dictionary } = useCorpus();
-  const { highlights, notes, membership, markVisited } = useUserData();
+  const { highlights, notes, membership, lists, markVisited } = useUserData();
   const { theme: themeId, fs, lh, face, allPali } = useReaderPrefs();
 
   const initialPanelTab = new URLSearchParams(location?.search).get('panel') as 'highlights' | 'lists' | 'text' | null;
@@ -44,8 +44,15 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   const { pop, onTextUp, pick, close: closePop, popStop, openPop } = useHighlightPopup(suttaId, hlForSutta);
   const scrollRef = useScrollMemory<HTMLDivElement>(suttaId ? `reader:${suttaId}` : null);
   const highlightGroups = useMemo(() => groupHighlights(hlForSutta, segments), [hlForSutta, segments]);
-  const hlCounts = useMemo(() => highlightCountsByColor(hlForSutta), [hlForSutta]);
-  const suttaLists = (suttaId && membership[suttaId]) || [];
+  // "Highlights"/"Notes" membership (see server/src/routes/data.js's buildUserData) is redundant
+  // here — the highlight gutter and the note preview above already say as much — so they're
+  // filtered out of the chip row entirely; unlike `lists`, `membership` only carries labels, not
+  // the ListDef.auto flag.
+  const autoLabels = useMemo(() => new Set(lists.filter((l) => l.auto).map((l) => l.label)), [lists]);
+  const suttaLists = useMemo(() => {
+    const raw = (suttaId && membership[suttaId]) || [];
+    return raw.filter((label) => !autoLabels.has(label));
+  }, [suttaId, membership, autoLabels]);
 
   const theme = READER_THEMES[themeId];
 
@@ -203,17 +210,8 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
               {notes[suttaId]}
             </div>
           )}
-          {(hlCounts.length > 0 || suttaLists.length > 0) && (
+          {(suttaLists.length > 0) && (
             <div className="flex flex-wrap items-center gap-[6px]" style={{ marginTop: 11 }}>
-              {hlCounts.map(({ c, count }) => (
-                <span
-                  key={c}
-                  className="inline-flex items-center justify-center h-5 rounded-full font-sans text-[11px] font-extrabold"
-                  style={{ background: c, color: '#000', minWidth: 20, padding: '0 5px' }}
-                >
-                  {count}
-                </span>
-              ))}
               {suttaLists.map((label) => (
                 <span
                   key={label}
