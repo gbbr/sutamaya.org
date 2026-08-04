@@ -8,4 +8,6 @@ server/data/*.sqlite-*
 .env
 *.local
 *.tsbuildinfo
+firebase-debug.log
+firestore-debug.log
 

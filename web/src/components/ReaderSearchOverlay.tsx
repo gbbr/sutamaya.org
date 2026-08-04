@@ -91,11 +91,11 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
               onMouseEnter={() => setActiveIndex(i)}
               onClick={() => onOpenSutta(h.id)}
             >
-              <span className="flex items-baseline gap-2.5">
-                <span className="font-sans text-[11.5px] font-bold" style={{ color: theme.dim }}>
+              <span>
+                <span className="font-sans text-[11.5px] font-bold mr-2.5" style={{ color: theme.dim }}>
                   {h.sutta.ref}
                 </span>
-                <span className="flex-1 text-[15.5px] font-semibold leading-[1.3]">{h.sutta.en}</span>
+                <span className="text-[15.5px] font-semibold leading-[1.3]">{h.sutta.en}</span>
               </span>
               <span className="font-serif text-[13px] italic" style={{ color: theme.pali }}>
                 {h.sutta.pali}

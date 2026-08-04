@@ -19,10 +19,15 @@ async function buildUserData(userId) {
   const membership = {};
   const lists = listsSnap.docs.map((doc) => {
     const data = doc.data();
-    (data.items || []).forEach((suttaId) => {
+    const items = data.items || [];
+    items.forEach((suttaId) => {
       (membership[suttaId] = membership[suttaId] || []).push(data.label);
     });
-    return { id: doc.id, label: data.label };
+    // `parentId`/`items` (in stored order) let the client render lists as a tree (sub-lists
+    // nested under their parent) and show/reorder each list's own suttas in the order the user
+    // put them in, instead of re-deriving both from the flatter `membership` map, which only
+    // tells you *which* lists a sutta belongs to, not their relative order within one list.
+    return { id: doc.id, label: data.label, parentId: data.parentId ?? null, items };
   });
 
   const notes = {};

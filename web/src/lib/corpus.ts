@@ -136,8 +136,11 @@ export function listItemsFor(
   if (!nodeId) return [];
   const list = lists.find((l) => String(l.id) === nodeId);
   if (list) {
-    const memberIds = new Set(Object.entries(membership).filter(([, ls]) => ls.includes(list.label)).map(([id]) => id));
-    return sortByIdAsc(suttaEntries(corpus).filter(([id]) => memberIds.has(id)));
+    // Stored order (user-arranged, see reorderListItems), not id order — a list is the one
+    // place in the corpus tree where the user's own sequencing wins over natural sutta order.
+    return list.items
+      .map((id) => (corpus.suttas[id] ? ([id, corpus.suttas[id]] as [string, Sutta]) : null))
+      .filter((x): x is [string, Sutta] => x !== null);
   }
   return sortByIdAsc(suttasFor(corpus, nodeId));
 }

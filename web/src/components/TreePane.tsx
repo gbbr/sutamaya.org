@@ -1,6 +1,16 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react';
 import { navigate } from '@reach/router';
-import { PanelLeftClose, Settings, ChevronRight, ChevronDown } from 'lucide-react';
+import {
+  PanelLeftClose,
+  Settings,
+  ChevronRight,
+  ChevronDown,
+  ChevronUp,
+  MoreHorizontal,
+  Plus,
+  Pencil,
+  Trash2,
+} from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
@@ -8,7 +18,7 @@ import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { SEARCH_INPUT_ID } from '../hooks/useListNav';
 import { findNode, isExpandable, searchCorpus } from '../lib/corpus';
-import type { ChapterRow, Corpus } from '../lib/types';
+import type { ChapterRow, Corpus, ListDef } from '../lib/types';
 
 // One row of the nested chapter/group/category tree under a nikaya — recurses arbitrarily
 // deep (SN: group > chapter > category; AN: chapter > category; MN: category directly).
@@ -48,9 +58,9 @@ function TreeRow({
           )}
         </span>
         <span className="flex-1 min-w-0">
-          <span className="flex items-baseline gap-2">
-            <span className="font-sans text-[13px] font-bold text-ink/45">{node.ref}</span>
-            <span className="flex-1 text-[15px] font-semibold leading-[1.3]">{node.label}</span>
+          <span>
+            <span className="font-sans text-[13px] font-bold text-ink/45 mr-2">{node.ref}</span>
+            <span className="text-[15px] font-semibold leading-[1.3]">{node.label}</span>
           </span>
           {node.sub && <span className="block font-serif text-[13px] italic text-accent mt-[1px]">{node.sub}</span>}
           <span className="block font-sans text-[13px] text-ink/45 mt-[2px]">
@@ -63,6 +73,224 @@ function TreeRow({
         node.chapters!.map((c) => (
           <TreeRow key={c.id} node={c} depth={depth + 1} nodeId={nodeId} expanded={expanded} onToggle={onToggle} onSelect={onSelect} />
         ))}
+    </div>
+  );
+}
+
+// One row of the "My lists" tree — a list can nest other lists as children (folder-like),
+// with button-based rename/reorder/delete/nest controls instead of drag-and-drop, so every
+// action works the same on touch as it does with a mouse.
+function ListRow({
+  list,
+  depth,
+  nodeId,
+  childrenOf,
+  listExpanded,
+  onToggle,
+  onSelect,
+  menuOpenId,
+  onToggleMenu,
+  editingId,
+  editDraft,
+  onEditDraftChange,
+  onStartEdit,
+  onCommitEdit,
+  onCancelEdit,
+  onDelete,
+  onArmDelete,
+  confirmDeleteId,
+  onCancelDelete,
+  onMove,
+  onAddChild,
+  creatingParentId,
+  draft,
+  onDraftChange,
+  onDraftKey,
+  draftInputRef,
+  siblingIndex,
+  siblingCount,
+}: {
+  list: ListDef;
+  depth: number;
+  nodeId?: string;
+  childrenOf: (parentId: string) => ListDef[];
+  listExpanded: Record<string, boolean>;
+  onToggle: (id: string) => void;
+  onSelect: (id: string) => void;
+  menuOpenId: string | null;
+  onToggleMenu: (id: string) => void;
+  editingId: string | null;
+  editDraft: string;
+  onEditDraftChange: (v: string) => void;
+  onStartEdit: (l: ListDef) => void;
+  onCommitEdit: () => void;
+  onCancelEdit: () => void;
+  onDelete: (l: ListDef) => void;
+  onArmDelete: (l: ListDef) => void;
+  confirmDeleteId: string | null;
+  onCancelDelete: () => void;
+  onMove: (l: ListDef, dir: -1 | 1) => void;
+  onAddChild: (parentId: string) => void;
+  creatingParentId: string | null | undefined;
+  draft: string;
+  onDraftChange: (v: string) => void;
+  onDraftKey: (e: KeyboardEvent<HTMLInputElement>) => void;
+  draftInputRef: (el: HTMLInputElement | null) => void;
+  siblingIndex: number;
+  siblingCount: number;
+}) {
+  const kids = childrenOf(list.id);
+  const hasKids = kids.length > 0;
+  const open = !!listExpanded[list.id];
+  const editing = editingId === list.id;
+  const menuOpen = menuOpenId === list.id;
+
+  return (
+    <div>
+      <div
+        className={`row flex items-center gap-[7px] w-full text-left pr-[10px] py-[7px] border-b border-ink/[.07] ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
+        style={{ paddingLeft: 18 + depth * 14 }}
+      >
+        <button
+          className="w-[11px] flex-none flex items-center justify-center text-ink/40"
+          onClick={() => hasKids && onToggle(list.id)}
+        >
+          {hasKids ? open ? <ChevronDown size={12} strokeWidth={2} /> : <ChevronRight size={12} strokeWidth={2} /> : null}
+        </button>
+        {editing ? (
+          <input
+            autoFocus
+            value={editDraft}
+            onChange={(e) => onEditDraftChange(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                onCommitEdit();
+              } else if (e.key === 'Escape') onCancelEdit();
+            }}
+            onBlur={onCommitEdit}
+            className="flex-1 min-w-0 h-[26px] border border-accent rounded px-1.5 bg-field text-[14.5px] outline-none"
+          />
+        ) : (
+          <button className="flex-1 min-w-0 text-left text-[15px] font-semibold truncate py-[2px]" onClick={() => onSelect(String(list.id))}>
+            {list.label}
+          </button>
+        )}
+        {!editing && (
+          <button
+            className="flex-none w-[20px] h-[20px] flex items-center justify-center rounded text-ink/40 hover:bg-ink/[.08] hover:text-ink"
+            title="List options"
+            onClick={() => onToggleMenu(list.id)}
+          >
+            <MoreHorizontal size={14} strokeWidth={2} />
+          </button>
+        )}
+      </div>
+      {confirmDeleteId === list.id ? (
+        <div className="flex items-center gap-2 pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: 18 + depth * 14 + 11 }}>
+          <span className="font-sans text-[12px] text-ink/60">Delete "{list.label}"?</span>
+          <button
+            onClick={() => onDelete(list)}
+            className="font-sans text-[12px] font-semibold px-2 py-[3px] rounded border border-red-600/40 text-red-600 hover:bg-red-600/10"
+          >
+            Delete
+          </button>
+          <button onClick={onCancelDelete} className="font-sans text-[12px] px-2 py-[3px] rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]">
+            Cancel
+          </button>
+        </div>
+      ) : (
+        menuOpen &&
+        !editing && (
+          <div className="flex items-center gap-[6px] pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: 18 + depth * 14 + 11 }}>
+            <button
+              title="Move up"
+              disabled={siblingIndex === 0}
+              onClick={() => onMove(list, -1)}
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08] disabled:opacity-25"
+            >
+              <ChevronUp size={13} strokeWidth={2} />
+            </button>
+            <button
+              title="Move down"
+              disabled={siblingIndex === siblingCount - 1}
+              onClick={() => onMove(list, 1)}
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08] disabled:opacity-25"
+            >
+              <ChevronDown size={13} strokeWidth={2} />
+            </button>
+            <button
+              title="New sub-list"
+              onClick={() => onAddChild(list.id)}
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]"
+            >
+              <Plus size={14} strokeWidth={2} />
+            </button>
+            <button
+              title="Rename"
+              onClick={() => onStartEdit(list)}
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]"
+            >
+              <Pencil size={12} strokeWidth={2} />
+            </button>
+            <button
+              title="Delete"
+              onClick={() => onArmDelete(list)}
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-red-600/10 hover:text-red-600"
+            >
+              <Trash2 size={12} strokeWidth={2} />
+            </button>
+          </div>
+        )
+      )}
+      {hasKids &&
+        open &&
+        kids.map((k, idx) => (
+          <ListRow
+            key={k.id}
+            list={k}
+            depth={depth + 1}
+            nodeId={nodeId}
+            childrenOf={childrenOf}
+            listExpanded={listExpanded}
+            onToggle={onToggle}
+            onSelect={onSelect}
+            menuOpenId={menuOpenId}
+            onToggleMenu={onToggleMenu}
+            editingId={editingId}
+            editDraft={editDraft}
+            onEditDraftChange={onEditDraftChange}
+            onStartEdit={onStartEdit}
+            onCommitEdit={onCommitEdit}
+            onCancelEdit={onCancelEdit}
+            onDelete={onDelete}
+            onArmDelete={onArmDelete}
+            confirmDeleteId={confirmDeleteId}
+            onCancelDelete={onCancelDelete}
+            onMove={onMove}
+            onAddChild={onAddChild}
+            creatingParentId={creatingParentId}
+            draft={draft}
+            onDraftChange={onDraftChange}
+            onDraftKey={onDraftKey}
+            draftInputRef={draftInputRef}
+            siblingIndex={idx}
+            siblingCount={kids.length}
+          />
+        ))}
+      {creatingParentId === list.id && (
+        <div className="pr-[18px] pt-1 pb-2" style={{ paddingLeft: 18 + (depth + 1) * 14 }}>
+          <input
+            ref={draftInputRef}
+            value={draft}
+            onChange={(e) => onDraftChange(e.target.value)}
+            onKeyDown={onDraftKey}
+            onBlur={() => onDraftKey({ key: 'Escape' } as KeyboardEvent<HTMLInputElement>)}
+            placeholder="Sub-list name — return to create"
+            className="w-full h-[32px] border border-accent rounded-lg px-2.5 bg-field text-[14px] outline-none"
+          />
+        </div>
+      )}
     </div>
   );
 }
@@ -93,7 +321,7 @@ function ancestorsOf(corpus: Corpus | null, nodeId: string | undefined): Record<
 
 export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activeIndex, visible = true }: TreePaneProps) {
   const { corpus } = useCorpus();
-  const { lists, notes, createList } = useUserData();
+  const { lists, notes, createList, renameList, removeList, reorderLists } = useUserData();
   const { user, promptGoogleSignIn } = useAuth();
   const { mobile, desktop, paneW, hideTree } = useLayout();
   const scrollRef = useScrollMemory<HTMLDivElement>('tree', visible);
@@ -128,12 +356,88 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
   function toggleExpanded(id: string) {
     setExpanded((x) => ({ ...x, [id]: !x[id] }));
   }
-  const [creating, setCreating] = useState(false);
+  // `undefined` = no draft input open; `null` = creating a top-level list; a list id = creating
+  // a sub-list under that list.
+  const [creatingParentId, setCreatingParentId] = useState<string | null | undefined>(undefined);
   const [draft, setDraft] = useState('');
+  const [listExpanded, setListExpanded] = useState<Record<string, boolean>>({});
+  const [menuOpenId, setMenuOpenId] = useState<string | null>(null);
+  const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editDraft, setEditDraft] = useState('');
   const [searchFocused, setSearchFocused] = useState(false);
   const listInput = useRef<HTMLInputElement>(null);
   const searchInput = useRef<HTMLInputElement>(null);
   const hitRefs = useRef<Array<HTMLButtonElement | null>>([]);
+
+  const listChildrenOf = useMemo(() => {
+    const byParent = new Map<string | null, ListDef[]>();
+    for (const l of lists) {
+      const key = l.parentId ?? null;
+      if (!byParent.has(key)) byParent.set(key, []);
+      byParent.get(key)!.push(l);
+    }
+    return (parentId: string) => byParent.get(parentId) || [];
+  }, [lists]);
+  const topLevelLists = useMemo(() => lists.filter((l) => !l.parentId), [lists]);
+
+  function toggleListExpanded(id: string) {
+    setListExpanded((x) => ({ ...x, [id]: !x[id] }));
+  }
+
+  function toggleListMenu(id: string) {
+    setMenuOpenId((m) => (m === id ? null : id));
+  }
+
+  function startEditList(l: ListDef) {
+    setMenuOpenId(null);
+    setEditingId(l.id);
+    setEditDraft(l.label);
+  }
+
+  function commitEditList() {
+    const id = editingId;
+    const text = editDraft.trim();
+    setEditingId(null);
+    if (!id) return;
+    if (text) renameList(id, text);
+  }
+
+  function cancelEditList() {
+    setEditingId(null);
+  }
+
+  function armDeleteList(l: ListDef) {
+    setMenuOpenId(null);
+    setConfirmDeleteId(l.id);
+  }
+
+  function cancelDeleteList() {
+    setConfirmDeleteId(null);
+  }
+
+  function deleteList(l: ListDef) {
+    setConfirmDeleteId(null);
+    removeList(l.id, l.label);
+  }
+
+  function addChildList(parentId: string) {
+    setMenuOpenId(null);
+    setListExpanded((x) => ({ ...x, [parentId]: true }));
+    setCreatingParentId(parentId);
+    setDraft('');
+    setTimeout(() => listInput.current?.focus(), 30);
+  }
+
+  function moveList(l: ListDef, dir: -1 | 1) {
+    const scoped = l.parentId ? listChildrenOf(l.parentId) : topLevelLists;
+    const idx = scoped.findIndex((s) => s.id === l.id);
+    const swapWith = idx + dir;
+    if (idx < 0 || swapWith < 0 || swapWith >= scoped.length) return;
+    const order = scoped.map((s) => s.id);
+    [order[idx], order[swapWith]] = [order[swapWith], order[idx]];
+    reorderLists(l.parentId ?? null, order);
+  }
 
   const searching = query.trim().length > 0;
   const hits = useMemo(() => (corpus && searching ? searchCorpus(corpus, query, notes) : []), [corpus, query, searching, notes]);
@@ -163,11 +467,12 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
 
   async function submitDraft() {
     const name = draft.trim();
-    setCreating(false);
+    const parentId = creatingParentId ?? null;
+    setCreatingParentId(undefined);
     setDraft('');
     if (!name) return;
     try {
-      const list = await createList(name);
+      const list = await createList(name, parentId);
       navigate(`/browse/${list.id}`);
     } catch {
       // Signed out: createList() already triggered the Google sign-in prompt.
@@ -179,7 +484,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
       e.preventDefault();
       submitDraft();
     } else if (e.key === 'Escape') {
-      setCreating(false);
+      setCreatingParentId(undefined);
       setDraft('');
     }
   }
@@ -274,9 +579,9 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
                 className={`row flex flex-col w-full text-left gap-[1px] px-[18px] py-[11px] border-b border-ink/[.07] ${i === activeIndex ? 'bg-ink/[.06]' : ''}`}
                 onClick={() => onOpenSutta(id)}
               >
-                <span className="flex items-baseline gap-2.5">
-                  <span className="font-sans text-[11.5px] font-bold text-ink/60">{sutta.ref}</span>
-                  <span className="flex-1 text-[16px] font-semibold leading-[1.3]">{sutta.en}</span>
+                <span>
+                  <span className="font-sans text-[11.5px] font-bold text-ink/60 mr-2.5">{sutta.ref}</span>
+                  <span className="text-[16px] font-semibold leading-[1.3]">{sutta.en}</span>
                 </span>
                 <span className="font-serif text-[13.5px] italic text-accent">{sutta.pali}</span>
               </button>
@@ -326,7 +631,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
               <button
                 className="plus w-[22px] h-[22px] border border-ink/[.28] rounded-md flex items-center justify-center text-[15px] leading-none text-ink/50"
                 onClick={() => {
-                  setCreating((c) => !c);
+                  setCreatingParentId((c) => (c === undefined ? null : undefined));
                   setDraft('');
                   setTimeout(() => listInput.current?.focus(), 30);
                 }}
@@ -334,28 +639,53 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
                 +
               </button>
             </div>
-            {creating && (
+            {creatingParentId === null && (
               <div className="px-[18px] pt-1.5 pb-2">
                 <input
                   ref={listInput}
                   value={draft}
                   onChange={(e) => setDraft(e.target.value)}
                   onKeyDown={onDraftKey}
-                  onBlur={() => setCreating(false)}
+                  onBlur={() => setCreatingParentId(undefined)}
                   placeholder="List name — return to create"
                   className="w-full h-[34px] border border-accent rounded-lg px-2.5 bg-field text-[14.5px] outline-none"
                 />
               </div>
             )}
-            {lists.map((l) => (
-              <button
+            {topLevelLists.map((l, idx) => (
+              <ListRow
                 key={l.id}
-                className={`row flex items-center gap-[11px] w-full text-left px-[18px] py-[9px] border-b border-ink/[.07] ${nodeId === String(l.id) ? 'bg-ink/[.06]' : ''}`}
-                onClick={() => onSelect(String(l.id))}
-              >
-                <span className="w-[11px] flex-none" />
-                <span className="flex-1 min-w-0 text-[16px] font-semibold">{l.label}</span>
-              </button>
+                list={l}
+                depth={0}
+                nodeId={nodeId}
+                childrenOf={listChildrenOf}
+                listExpanded={listExpanded}
+                onToggle={toggleListExpanded}
+                onSelect={onSelect}
+                menuOpenId={menuOpenId}
+                onToggleMenu={toggleListMenu}
+                editingId={editingId}
+                editDraft={editDraft}
+                onEditDraftChange={setEditDraft}
+                onStartEdit={startEditList}
+                onCommitEdit={commitEditList}
+                onCancelEdit={cancelEditList}
+                onDelete={deleteList}
+                onArmDelete={armDeleteList}
+                confirmDeleteId={confirmDeleteId}
+                onCancelDelete={cancelDeleteList}
+                onMove={moveList}
+                onAddChild={addChildList}
+                creatingParentId={creatingParentId}
+                draft={draft}
+                onDraftChange={setDraft}
+                onDraftKey={onDraftKey}
+                draftInputRef={(el) => {
+                  listInput.current = el;
+                }}
+                siblingIndex={idx}
+                siblingCount={topLevelLists.length}
+              />
             ))}
           </div>
         )}

@@ -53,6 +53,11 @@ export interface Highlight {
 export interface ListDef {
   id: string;
   label: string;
+  parentId: string | null;
+  // Ordered array of sutta uids — this list's own contents, in the order the user put them in
+  // (or reordered them to). See lib/corpus.ts's listItemsFor, which uses this order instead of
+  // re-sorting a list's contents by sutta id the way browsing a nikaya/category does.
+  items: string[];
 }
 
 export type Membership = Record<string, string[]>;

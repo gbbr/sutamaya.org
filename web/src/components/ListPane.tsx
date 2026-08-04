@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { Eye } from 'lucide-react';
+import { ChevronDown, ChevronUp, Eye } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -22,17 +22,28 @@ interface ListPaneProps {
 
 export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenReader, activeIndex, visible = true }: ListPaneProps) {
   const { corpus } = useCorpus();
-  const { lists, membership, notes, visited } = useUserData();
+  const { lists, membership, notes, visited, reorderListItems } = useUserData();
   const { mobile, desktop, twoPane, previewHidden, showPreview, paneW } = useLayout();
   const scrollRef = useScrollMemory<HTMLDivElement>(`list:${query.trim() ? 'search' : nodeId || 'none'}`, visible);
   const rowRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   const searching = query.trim().length > 0;
+  const currentList = !searching ? lists.find((l) => String(l.id) === nodeId) : undefined;
 
   const items = useMemo(
     () => (corpus ? listItemsFor(corpus, nodeId, query, notes, lists, membership) : []),
     [corpus, nodeId, query, notes, lists, membership]
   );
+
+  function moveItem(id: string, dir: -1 | 1) {
+    if (!currentList) return;
+    const order = [...currentList.items];
+    const idx = order.indexOf(id);
+    const swapWith = idx + dir;
+    if (idx < 0 || swapWith < 0 || swapWith >= order.length) return;
+    [order[idx], order[swapWith]] = [order[swapWith], order[idx]];
+    reorderListItems(currentList.id, order);
+  }
 
   useEffect(() => {
     if (activeIndex >= 0) rowRefs.current[activeIndex]?.scrollIntoView({ block: 'nearest' });
@@ -79,46 +90,75 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
           const note = notes[id];
           const chips = membership[id] || [];
           return (
-            <button
-              key={id}
-              ref={(el) => {
-                rowRefs.current[i] = el;
-              }}
-              className={`block w-full text-left px-5 py-[13px] border-b border-ink/[.08] ${on ? 'bg-accent text-[#FBFAF7]' : ''} ${focused && !on ? 'bg-ink/[.05]' : ''}`}
-              style={focused ? { boxShadow: `inset 2px 0 0 ${on ? 'rgba(251,250,247,.6)' : '#8A6A3B'}` } : undefined}
-              onClick={() => onOpen(id)}
-              onDoubleClick={() => onOpenReader(id)}
-            >
-              <span className="flex items-baseline gap-2.5">
-                <span className={`font-sans text-[14.5px] font-bold tracking-[.02em] ${on ? 'opacity-65' : 'text-ink/60'}`}>{s.ref}</span>
-                <span className="flex-1 text-[16.5px] leading-[1.3] font-serif">{s.en}</span>
-                {visited[id] && <span className={`font-sans text-[11px] ${on ? 'opacity-45' : 'text-ink/[.28]'}`}>read</span>}
-              </span>
-              <span className={`block font-serif text-[13.5px] italic mt-[1px] ${on ? 'opacity-75' : 'text-accent'}`}>{s.pali}</span>
-              {note ? (
-                <span
-                  className="block font-serif text-[14.5px] italic leading-[1.45] mt-[7px] pl-[10px] border-l-2"
-                  style={{ borderColor: on ? 'rgba(251,250,247,.5)' : 'rgba(27,25,23,.3)' }}
-                >
-                  {note}
+            <div key={id} className={`relative border-b border-ink/[.08] ${on ? 'bg-accent' : ''}`}>
+              <button
+                ref={(el) => {
+                  rowRefs.current[i] = el;
+                }}
+                className={`block w-full text-left px-5 py-[13px] ${currentList ? 'pr-11' : ''} ${on ? 'text-[#FBFAF7]' : ''} ${focused && !on ? 'bg-ink/[.05]' : ''}`}
+                style={focused ? { boxShadow: `inset 2px 0 0 ${on ? 'rgba(251,250,247,.6)' : '#8A6A3B'}` } : undefined}
+                onClick={() => onOpen(id)}
+                onDoubleClick={() => onOpenReader(id)}
+              >
+                <span>
+                  <span className={`font-sans text-[14.5px] font-bold tracking-[.02em] mr-2.5 ${on ? 'opacity-65' : 'text-ink/60'}`}>{s.ref}</span>
+                  <span className="text-[16.5px] leading-[1.3] font-serif">{s.en}</span>
+                  {visited[id] && (
+                    <span className={`font-sans text-[11px] ml-2.5 ${on ? 'opacity-45' : 'text-ink/[.28]'}`}>read</span>
+                  )}
                 </span>
-              ) : (
-                <span className={`block text-[14px] leading-[1.5] mt-1.5 ${on ? 'opacity-80' : 'text-ink/[.72]'}`}>{s.blurb}</span>
-              )}
-              {chips.length > 0 && (
-                <span className="flex flex-wrap gap-1.5 mt-2">
-                  {chips.map((c) => (
-                    <span
-                      key={c}
-                      className="inline-flex items-center whitespace-nowrap leading-[1.4] rounded-[10px] px-[9px] py-[2px] font-sans text-[11px] border"
-                      style={{ borderColor: on ? 'rgba(251,250,247,.45)' : 'rgba(27,25,23,.25)' }}
-                    >
-                      {c}
-                    </span>
-                  ))}
+                <span className={`block font-serif text-[13.5px] italic mt-[1px] ${on ? 'opacity-75' : 'text-accent'}`}>{s.pali}</span>
+                {note ? (
+                  <span
+                    className="block font-serif text-[14.5px] italic leading-[1.45] mt-[7px] pl-[10px] border-l-2"
+                    style={{ borderColor: on ? 'rgba(251,250,247,.5)' : 'rgba(27,25,23,.3)' }}
+                  >
+                    {note}
+                  </span>
+                ) : (
+                  <span className={`block text-[14px] leading-[1.5] mt-1.5 ${on ? 'opacity-80' : 'text-ink/[.72]'}`}>{s.blurb}</span>
+                )}
+                {chips.length > 0 && (
+                  <span className="flex flex-wrap gap-1.5 mt-2">
+                    {chips.map((c) => (
+                      <span
+                        key={c}
+                        className="inline-flex items-center whitespace-nowrap leading-[1.4] rounded-[10px] px-[9px] py-[2px] font-sans text-[11px] border"
+                        style={{ borderColor: on ? 'rgba(251,250,247,.45)' : 'rgba(27,25,23,.25)' }}
+                      >
+                        {c}
+                      </span>
+                    ))}
+                  </span>
+                )}
+              </button>
+              {currentList && (
+                <span className="absolute right-3 top-[13px] flex flex-col gap-[2px]">
+                  <button
+                    title="Move up"
+                    disabled={i === 0}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      moveItem(id, -1);
+                    }}
+                    className={`w-6 h-5 flex items-center justify-center rounded disabled:opacity-20 ${on ? 'text-[#FBFAF7]/70 hover:bg-white/10' : 'text-ink/45 hover:bg-ink/[.08]'}`}
+                  >
+                    <ChevronUp size={13} strokeWidth={2} />
+                  </button>
+                  <button
+                    title="Move down"
+                    disabled={i === items.length - 1}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      moveItem(id, 1);
+                    }}
+                    className={`w-6 h-5 flex items-center justify-center rounded disabled:opacity-20 ${on ? 'text-[#FBFAF7]/70 hover:bg-white/10' : 'text-ink/45 hover:bg-ink/[.08]'}`}
+                  >
+                    <ChevronDown size={13} strokeWidth={2} />
+                  </button>
                 </span>
               )}
-            </button>
+            </div>
           );
         })}
         {items.length === 0 && (

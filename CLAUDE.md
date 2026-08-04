@@ -106,10 +106,25 @@ translation).
 
 ```
 users/{uid}                          { email, googleId, name, picture, createdAt }
-users/{uid}/lists/{listId}           { label, position, items: string[] }   — items is an
-                                                                                ordered array of
-                                                                                sutta uids, not a
-                                                                                subcollection
+users/{uid}/lists/{listId}           { label, parentId, position, items: string[] }   — items is
+                                                                                an ordered array
+                                                                                of sutta uids, not
+                                                                                a subcollection;
+                                                                                parentId is null
+                                                                                for a top-level
+                                                                                list, otherwise
+                                                                                another list's id
+                                                                                (one level of
+                                                                                nesting isn't
+                                                                                enforced — the
+                                                                                client just
+                                                                                renders whatever
+                                                                                depth exists);
+                                                                                position orders
+                                                                                siblings (lists
+                                                                                sharing the same
+                                                                                parentId), not the
+                                                                                whole collection
 users/{uid}/notes/{suttaId}          { text, updatedAt }        — doc ID *is* the sutta uid
 users/{uid}/highlights/{highlightId} { suttaId, i, s, e, color, createdAt }
 users/{uid}/visited/{suttaId}        { visitedAt }              — doc ID *is* the sutta uid
@@ -117,8 +132,14 @@ users/{uid}/visited/{suttaId}        { visitedAt }              — doc ID *is* 
 
 `membership` (sutta → list labels, what the frontend actually renders as chips) isn't stored —
 it's derived at read time from each list's `items` array in `buildUserData()`
-(`routes/data.js`). List add/remove uses `FieldValue.arrayUnion`/`arrayRemove` (atomic, no
-read-modify-write race). `PUT /api/highlights/range` fetches a sutta's highlights (single
+(`routes/data.js`), which also returns each list's `parentId` and its own `items` (in stored
+order) so the client can render lists as a tree and show/reorder a list's contents without a
+second round trip. List add/remove uses `FieldValue.arrayUnion`/`arrayRemove` (atomic, no
+read-modify-write race); reordering (`PUT /api/lists/order` for sibling lists, `PUT
+/api/lists/:id/items/order` for one list's suttas) replaces `position`/`items` outright instead,
+since a full reorder isn't expressible as a single atomic array op the way add/remove is.
+Deleting a list re-parents its own children to its parent (`routes/lists.js`) rather than
+orphaning or cascade-deleting them. `PUT /api/highlights/range` fetches a sutta's highlights (single
 equality `where`, no composite index needed), filters overlaps of the given `[s,e)` range in
 segment `i` in memory, and deletes+inserts in one `batch()` — a direct port of the prototype's
 `setRangeHl`, just async. Firestore's Always Free tier (1GiB, 50K reads/20K writes/20K deletes
@@ -192,5 +213,8 @@ cached within seconds regardless). `/api/*` is `NetworkOnly` — user data is ne
 - The reader's "change translation source" control is a static label ("Sujato (2018)") —
   explicitly out of scope per `design/README.md` ("Fidelity"), since this dataset only has one
   English translation per collection.
-- No drag-to-reorder for lists/list items yet (`PUT /api/lists/:id/items/order` exists
-  server-side; nothing calls it yet).
+- Lists support nesting (folder-like, via `parentId`), rename, delete (children re-parent up
+  one level rather than being orphaned), and reordering — both of sibling lists and of a list's
+  own suttas — but all through button controls (move up/down) in `TreePane`'s `ListRow` and
+  `ListPane`'s row controls, not drag-and-drop, so every action works the same on touch as with
+  a mouse.

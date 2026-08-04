@@ -51,7 +51,7 @@ export function SegmentedText({
   onSpanClick,
 }: SegmentedTextProps) {
   return (
-    <div onMouseUp={onTextUp} onTouchEnd={onTextUp}>
+    <div data-segroot onMouseUp={onTextUp} onTouchEnd={onTextUp}>
       {segments.map((seg, i) => {
         const open = allPali || !!openSegs[i];
         const hlForSeg = highlights.filter((h) => h.i === i);

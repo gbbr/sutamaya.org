@@ -41,11 +41,18 @@ export const dataApi = {
 };
 
 export const listsApi = {
-  create: (label: string) => request<{ list: ListDef & { items: string[] } }>('/lists', { method: 'POST', body: JSON.stringify({ label }) }),
+  create: (label: string, parentId: string | null = null) =>
+    request<{ list: ListDef }>('/lists', { method: 'POST', body: JSON.stringify({ label, parentId }) }),
   rename: (id: string, label: string) => request<{ ok: true }>(`/lists/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify({ label }) }),
+  setParent: (id: string, parentId: string | null) =>
+    request<{ ok: true }>(`/lists/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify({ parentId }) }),
   remove: (id: string) => request<{ ok: true }>(`/lists/${encodeURIComponent(id)}`, { method: 'DELETE' }),
+  reorder: (parentId: string | null, order: string[]) =>
+    request<{ ok: true }>('/lists/order', { method: 'PUT', body: JSON.stringify({ parentId, order }) }),
   addItem: (id: string, suttaId: string) => request<{ ok: true }>(`/lists/${encodeURIComponent(id)}/items`, { method: 'POST', body: JSON.stringify({ suttaId }) }),
   removeItem: (id: string, suttaId: string) => request<{ ok: true }>(`/lists/${encodeURIComponent(id)}/items/${encodeURIComponent(suttaId)}`, { method: 'DELETE' }),
+  reorderItems: (id: string, order: string[]) =>
+    request<{ ok: true }>(`/lists/${encodeURIComponent(id)}/items/order`, { method: 'PUT', body: JSON.stringify({ order }) }),
 };
 
 export const notesApi = {
