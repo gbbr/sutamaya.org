@@ -10,6 +10,10 @@ import {
   Plus,
   Pencil,
   Trash2,
+  Highlighter,
+  StickyNote,
+  GripVertical,
+  ArrowUpDown,
 } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
@@ -18,6 +22,7 @@ import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { SEARCH_INPUT_ID } from '../hooks/useListNav';
 import { findNode, isExpandable, searchCorpus } from '../lib/corpus';
+import { AUTO_LIST_LABELS, HIGHLIGHTS_LIST_LABEL, NOTES_LIST_LABEL } from '../lib/autoLists';
 import type { ChapterRow, Corpus, ListDef } from '../lib/types';
 
 // One row of the nested chapter/group/category tree under a nikaya — recurses arbitrarily
@@ -77,9 +82,13 @@ function TreeRow({
   );
 }
 
-// One row of the "My lists" tree — a list can nest other lists as children (folder-like),
-// with button-based rename/reorder/delete/nest controls instead of drag-and-drop, so every
-// action works the same on touch as it does with a mouse.
+type DropZone = 'before' | 'after' | 'inside';
+
+// One row of the "My lists" tree — a list can nest other lists as children (folder-like), with
+// button-based rename/delete/move controls that always work (touch included), plus HTML5
+// drag-and-drop reordering/nesting when "reorder mode" (see the toggle by "My lists") is on —
+// dropping on the top/bottom third of a row reorders as a sibling, the middle third nests it as
+// a child (see TreePane's dragOverRow for the zone math).
 function ListRow({
   list,
   depth,
@@ -109,6 +118,15 @@ function ListRow({
   draftInputRef,
   siblingIndex,
   siblingCount,
+  reorderMode,
+  dragId,
+  overId,
+  overZone,
+  onRowDragStart,
+  onRowDragOver,
+  onRowDragLeave,
+  onRowDrop,
+  onRowDragEnd,
 }: {
   list: ListDef;
   depth: number;
@@ -138,19 +156,55 @@ function ListRow({
   draftInputRef: (el: HTMLInputElement | null) => void;
   siblingIndex: number;
   siblingCount: number;
+  reorderMode: boolean;
+  dragId: string | null;
+  overId: string | null;
+  overZone: DropZone | null;
+  onRowDragStart: (id: string) => void;
+  onRowDragOver: (e: React.DragEvent, l: ListDef) => void;
+  onRowDragLeave: (id: string) => void;
+  onRowDrop: (e: React.DragEvent, l: ListDef) => void;
+  onRowDragEnd: () => void;
 }) {
   const kids = childrenOf(list.id);
   const hasKids = kids.length > 0;
   const open = !!listExpanded[list.id];
   const editing = editingId === list.id;
   const menuOpen = menuOpenId === list.id;
+  const dragging = dragId === list.id;
+  const isOver = overId === list.id && dragId !== list.id;
 
   return (
     <div>
       <div
         className={`row flex items-center gap-[7px] w-full text-left pr-[10px] py-[7px] border-b border-ink/[.07] ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
-        style={{ paddingLeft: 18 + depth * 14 }}
+        style={{
+          paddingLeft: 18 + depth * 14,
+          opacity: dragging ? 0.4 : 1,
+          background: isOver && overZone === 'inside' ? 'rgba(138,106,59,.16)' : undefined,
+          boxShadow: isOver && overZone === 'before' ? 'inset 0 2px 0 #8A6A3B' : isOver && overZone === 'after' ? 'inset 0 -2px 0 #8A6A3B' : undefined,
+        }}
+        draggable={reorderMode}
+        onDragStart={(e) => {
+          e.stopPropagation();
+          onRowDragStart(list.id);
+        }}
+        onDragOver={(e) => {
+          e.stopPropagation();
+          onRowDragOver(e, list);
+        }}
+        onDragLeave={() => onRowDragLeave(list.id)}
+        onDrop={(e) => {
+          e.stopPropagation();
+          onRowDrop(e, list);
+        }}
+        onDragEnd={onRowDragEnd}
       >
+        {reorderMode && (
+          <span className="w-[13px] flex-none flex items-center justify-center text-ink/35" style={{ cursor: 'grab' }}>
+            <GripVertical size={13} strokeWidth={2} />
+          </span>
+        )}
         <button
           className="w-[11px] flex-none flex items-center justify-center text-ink/40"
           onClick={() => hasKids && onToggle(list.id)}
@@ -276,6 +330,15 @@ function ListRow({
             draftInputRef={draftInputRef}
             siblingIndex={idx}
             siblingCount={kids.length}
+            reorderMode={reorderMode}
+            dragId={dragId}
+            overId={overId}
+            overZone={overZone}
+            onRowDragStart={onRowDragStart}
+            onRowDragOver={onRowDragOver}
+            onRowDragLeave={onRowDragLeave}
+            onRowDrop={onRowDrop}
+            onRowDragEnd={onRowDragEnd}
           />
         ))}
       {creatingParentId === list.id && (
@@ -321,7 +384,7 @@ function ancestorsOf(corpus: Corpus | null, nodeId: string | undefined): Record<
 
 export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activeIndex, visible = true }: TreePaneProps) {
   const { corpus } = useCorpus();
-  const { lists, notes, createList, renameList, removeList, reorderLists } = useUserData();
+  const { lists, notes, createList, renameList, removeList, reorderLists, setListParent } = useUserData();
   const { user, promptGoogleSignIn } = useAuth();
   const { mobile, desktop, paneW, hideTree } = useLayout();
   const scrollRef = useScrollMemory<HTMLDivElement>('tree', visible);
@@ -366,6 +429,10 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editDraft, setEditDraft] = useState('');
   const [searchFocused, setSearchFocused] = useState(false);
+  const [reorderMode, setReorderMode] = useState(false);
+  const [dragId, setDragId] = useState<string | null>(null);
+  const [overId, setOverId] = useState<string | null>(null);
+  const [overZone, setOverZone] = useState<DropZone | null>(null);
   const listInput = useRef<HTMLInputElement>(null);
   const searchInput = useRef<HTMLInputElement>(null);
   const hitRefs = useRef<Array<HTMLButtonElement | null>>([]);
@@ -379,7 +446,15 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
     }
     return (parentId: string) => byParent.get(parentId) || [];
   }, [lists]);
-  const topLevelLists = useMemo(() => lists.filter((l) => !l.parentId), [lists]);
+  const topLevelLists = useMemo(() => lists.filter((l) => !l.parentId && !AUTO_LIST_LABELS.includes(l.label)), [lists]);
+  const autoLists = useMemo(
+    () =>
+      [
+        { list: lists.find((l) => !l.parentId && l.label === HIGHLIGHTS_LIST_LABEL), sub: 'Every sutta with a highlight', Icon: Highlighter },
+        { list: lists.find((l) => !l.parentId && l.label === NOTES_LIST_LABEL), sub: 'Every sutta with a note', Icon: StickyNote },
+      ].filter((x): x is { list: ListDef; sub: string; Icon: typeof Highlighter } => !!x.list),
+    [lists]
+  );
 
   function toggleListExpanded(id: string) {
     setListExpanded((x) => ({ ...x, [id]: !x[id] }));
@@ -437,6 +512,66 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
     const order = scoped.map((s) => s.id);
     [order[idx], order[swapWith]] = [order[swapWith], order[idx]];
     reorderLists(l.parentId ?? null, order);
+  }
+
+  // True if `candidateId` sits somewhere underneath `ofId` in the list tree — dropping `ofId`
+  // onto (or as a new sibling within) a descendant of itself would create a cycle, so every drop
+  // handler checks this first regardless of zone.
+  function isDescendant(candidateId: string, ofId: string): boolean {
+    let cur = lists.find((l) => l.id === candidateId);
+    while (cur?.parentId) {
+      if (cur.parentId === ofId) return true;
+      cur = lists.find((l) => l.id === cur!.parentId);
+    }
+    return false;
+  }
+
+  function siblingIdsWithInsert(parentId: string | null, insertId: string, targetId: string, after: boolean): string[] {
+    const scoped = (parentId ? listChildrenOf(parentId) : topLevelLists).map((s) => s.id).filter((id) => id !== insertId);
+    const targetIdx = scoped.indexOf(targetId);
+    scoped.splice(after ? targetIdx + 1 : targetIdx, 0, insertId);
+    return scoped;
+  }
+
+  function onRowDragStart(id: string) {
+    setDragId(id);
+  }
+  function onRowDragOver(e: React.DragEvent, l: ListDef) {
+    if (!dragId || dragId === l.id) return;
+    e.preventDefault();
+    const rect = e.currentTarget.getBoundingClientRect();
+    const ratio = (e.clientY - rect.top) / rect.height;
+    setOverId(l.id);
+    setOverZone(ratio < 0.25 ? 'before' : ratio > 0.75 ? 'after' : 'inside');
+  }
+  function onRowDragLeave(id: string) {
+    setOverId((cur) => (cur === id ? null : cur));
+  }
+  async function onRowDrop(e: React.DragEvent, target: ListDef) {
+    e.preventDefault();
+    const draggedId = dragId;
+    const zone = overZone;
+    setDragId(null);
+    setOverId(null);
+    setOverZone(null);
+    if (!draggedId || draggedId === target.id || !zone) return;
+    const dragged = lists.find((l) => l.id === draggedId);
+    if (!dragged || isDescendant(target.id, draggedId)) return;
+
+    if (zone === 'inside') {
+      if (dragged.parentId !== target.id) await setListParent(draggedId, target.id);
+      setListExpanded((x) => ({ ...x, [target.id]: true }));
+      return;
+    }
+    const newParentId = target.parentId ?? null;
+    if (dragged.parentId !== newParentId) await setListParent(draggedId, newParentId);
+    const order = siblingIdsWithInsert(newParentId, draggedId, target.id, zone === 'after');
+    await reorderLists(newParentId, order);
+  }
+  function onRowDragEnd() {
+    setDragId(null);
+    setOverId(null);
+    setOverZone(null);
   }
 
   const searching = query.trim().length > 0;
@@ -626,19 +761,39 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
                 );
               })}
 
-            <div className="flex items-center justify-between px-[18px] pt-[22px] pb-1">
+            <div className="flex items-center justify-between pl-[18px] pr-[10px] pt-[22px] pb-1">
               <span className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">My lists</span>
-              <button
-                className="plus w-[22px] h-[22px] border border-ink/[.28] rounded-md flex items-center justify-center text-[15px] leading-none text-ink/50"
-                onClick={() => {
-                  setCreatingParentId((c) => (c === undefined ? null : undefined));
-                  setDraft('');
-                  setTimeout(() => listInput.current?.focus(), 30);
-                }}
-              >
-                +
-              </button>
+              <div className="flex items-center gap-[7px]">
+                <button
+                  title={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
+                  className="w-[22px] h-[22px] border rounded-md flex items-center justify-center"
+                  style={{
+                    borderColor: reorderMode ? '#8A6A3B' : 'rgba(27,25,23,.28)',
+                    background: reorderMode ? '#8A6A3B' : 'transparent',
+                    color: reorderMode ? '#FBFAF7' : 'rgba(27,25,23,.5)',
+                  }}
+                  onClick={() => {
+                    setReorderMode((m) => !m);
+                    setMenuOpenId(null);
+                  }}
+                >
+                  <ArrowUpDown size={12} strokeWidth={2} />
+                </button>
+                <button
+                  className="plus w-[22px] h-[22px] border border-ink/[.28] rounded-md flex items-center justify-center text-[15px] leading-none text-ink/50"
+                  onClick={() => {
+                    setCreatingParentId((c) => (c === undefined ? null : undefined));
+                    setDraft('');
+                    setTimeout(() => listInput.current?.focus(), 30);
+                  }}
+                >
+                  +
+                </button>
+              </div>
             </div>
+            {reorderMode && (
+              <div className="px-[18px] pb-1.5 font-sans text-[11.5px] text-ink/45">Drag a list onto another to nest it, or to the top/bottom edge of a row to reorder.</div>
+            )}
             {creatingParentId === null && (
               <div className="px-[18px] pt-1.5 pb-2">
                 <input
@@ -685,8 +840,42 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
                 }}
                 siblingIndex={idx}
                 siblingCount={topLevelLists.length}
+                reorderMode={reorderMode}
+                dragId={dragId}
+                overId={overId}
+                overZone={overZone}
+                onRowDragStart={onRowDragStart}
+                onRowDragOver={onRowDragOver}
+                onRowDragLeave={onRowDragLeave}
+                onRowDrop={onRowDrop}
+                onRowDragEnd={onRowDragEnd}
               />
             ))}
+            {autoLists.length > 0 && (
+              <div>
+                <div className="px-[18px] pt-[22px] pb-1">
+                  <span className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">Automatic</span>
+                </div>
+                {autoLists.map(({ list, sub, Icon }) => (
+                  <button
+                    key={list.id}
+                    className={`row flex items-center gap-[11px] w-full text-left px-[18px] py-[9px] border-b border-ink/[.07] ${
+                      nodeId === String(list.id) ? 'bg-ink/[.06]' : ''
+                    }`}
+                    onClick={() => onSelect(String(list.id))}
+                  >
+                    <span className="w-[11px] flex-none flex items-center justify-center text-ink/40">
+                      <Icon size={13} strokeWidth={2} />
+                    </span>
+                    <span className="flex-1 min-w-0">
+                      <span className="block text-[16px] font-semibold leading-[1.3]">{list.label}</span>
+                      <span className="block font-sans text-[12.5px] font-medium text-ink/60 mt-[1px]">{sub}</span>
+                    </span>
+                    <span className="font-sans text-[11.5px] font-medium text-ink/50">{list.items.length}</span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         )}
       </div>

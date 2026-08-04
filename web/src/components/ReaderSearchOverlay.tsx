@@ -10,9 +10,9 @@ interface ReaderSearchOverlayProps {
   onClose: () => void;
 }
 
-// Alfred/Spotlight-style: a floating input with results directly underneath, no per-row blurb
-// ("no blob") — just enough (ref, title, Pali) to pick the right sutta and jump straight to it,
-// triggered by "/" from anywhere in the reader (see the keydown handler in ReaderPage.tsx).
+// Alfred/Spotlight-style: a floating input with results directly underneath, triggered by "/"
+// from anywhere in the reader (see the keydown handler in ReaderPage.tsx). Each row shows the
+// same blurb/note as ListPane, so results are identifiable without opening them.
 export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearchOverlayProps) {
   const { corpus } = useCorpus();
   const { notes } = useUserData();
@@ -100,6 +100,14 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
               <span className="font-serif text-[13px] italic" style={{ color: theme.pali }}>
                 {h.sutta.pali}
               </span>
+              {(notes[h.id] || h.sutta.blurb) && (
+                <span
+                  className={`text-[13px] leading-[1.45] mt-[3px] ${notes[h.id] ? 'pl-[8px] border-l-2' : 'italic'}`}
+                  style={{ color: theme.dim, borderColor: notes[h.id] ? theme.rule : undefined }}
+                >
+                  {notes[h.id] || h.sutta.blurb}
+                </span>
+              )}
             </button>
           ))}
           {query.trim() && hits.length === 0 && (

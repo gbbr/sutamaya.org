@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { navigate } from '@reach/router';
 import { BookOpen, Eye, PanelRightClose } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
@@ -10,6 +10,9 @@ import { useHighlightPopup } from '../hooks/useHighlightPopup';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { SegmentedText } from './SegmentedText';
 import { HighlightPopup } from './HighlightPopup';
+import { HighlightGutter } from './HighlightGutter';
+import { AUTO_LIST_LABELS } from '../lib/autoLists';
+import { groupHighlights } from '../lib/highlights';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 
 interface PreviewPaneProps {
@@ -27,6 +30,11 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
   const { pop, onTextUp, pick, popStop, openPop } = useHighlightPopup(selectedId, hlForSutta);
   const noteRef = useRef<HTMLTextAreaElement>(null);
   const scrollRef = useScrollMemory<HTMLDivElement>(selectedId ? `preview:${selectedId}` : null);
+  const highlightGroups = useMemo(() => groupHighlights(hlForSutta, segments), [hlForSutta, segments]);
+
+  function jumpToHighlight(segIndex: number) {
+    scrollRef.current?.querySelector(`[data-seg="${segIndex}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 
   if (!desktop || previewHidden) return null;
 
@@ -68,7 +76,11 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
         <div className="text-[16px] mt-1 italic font-serif" style={{ color: '#8A6A3B' }}>
           {sutta.pali}
         </div>
-        <div className="italic text-[15.5px] leading-[1.6] text-ink/[.72] mt-3">{sutta.blurb}</div>
+        <div
+          className={`text-[15.5px] leading-[1.6] text-ink/[.72] mt-3 ${notes[selectedId] ? 'pl-[10px] border-l-2 border-ink/30' : 'italic'}`}
+        >
+          {notes[selectedId] || sutta.blurb}
+        </div>
         <div className="h-px bg-ink/[.14] mt-[28px] mb-[24px]" />
         {segments ? (
           <SegmentedText
@@ -97,19 +109,28 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
           onChange={(e) => setNote(selectedId, e.target.value)}
           placeholder="Add a note"
           rows={2}
-          className="w-full border border-ink/[.22] rounded-field px-3 py-2.5 bg-field text-[15.5px] italic resize-y outline-none font-serif"
+          className="w-full border border-ink/[.22] rounded-field px-3 py-2.5 bg-field text-[15.5px] resize-y outline-none font-serif"
         />
         <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mt-[22px] mb-2">In lists</div>
         <div className="flex flex-wrap gap-1.5">
-          {chips.map((label) => (
-            <button
-              key={label}
-              className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px] border border-accent bg-accent text-[#FBFAF7]"
-              onClick={() => toggleMembership(selectedId, label)}
-            >
-              {label} ×
-            </button>
-          ))}
+          {chips.map((label) =>
+            AUTO_LIST_LABELS.includes(label) ? (
+              <span
+                key={label}
+                className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px] border border-ink/[.3] text-ink/60"
+              >
+                {label}
+              </span>
+            ) : (
+              <button
+                key={label}
+                className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px] border border-accent bg-accent text-[#FBFAF7]"
+                onClick={() => toggleMembership(selectedId, label)}
+              >
+                {label} ×
+              </button>
+            )
+          )}
           <button
             className="inline-flex items-center whitespace-nowrap border border-dashed border-ink/[.35] rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px] text-ink/50"
             onClick={() => navigate(`/read/${encodeURIComponent(selectedId)}?panel=lists`)}
@@ -119,6 +140,12 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
         </div>
       </div>
       {pop && <HighlightPopup pop={pop} theme={theme} onPick={pick} onRemove={() => pick(null)} onStop={popStop} />}
+      <HighlightGutter
+        scrollRef={scrollRef}
+        highlightGroups={highlightGroups}
+        onJump={jumpToHighlight}
+        layoutKey={`${fs}-${lh}-${face}-${allPali}`}
+      />
     </aside>
   );
 }

@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { ChevronDown, ChevronUp, Eye } from 'lucide-react';
+import { Check, ChevronDown, ChevronUp, Eye } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { listItemsFor, nodeLabel } from '../lib/corpus';
+import { highlightCountsByColor } from '../lib/highlights';
 
 interface ListPaneProps {
   nodeId?: string;
@@ -22,7 +23,7 @@ interface ListPaneProps {
 
 export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenReader, activeIndex, visible = true }: ListPaneProps) {
   const { corpus } = useCorpus();
-  const { lists, membership, notes, visited, reorderListItems } = useUserData();
+  const { lists, membership, notes, highlights, visited, reorderListItems } = useUserData();
   const { mobile, desktop, twoPane, previewHidden, showPreview, paneW } = useLayout();
   const scrollRef = useScrollMemory<HTMLDivElement>(`list:${query.trim() ? 'search' : nodeId || 'none'}`, visible);
   const rowRefs = useRef<Array<HTMLButtonElement | null>>([]);
@@ -89,6 +90,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
           const focused = i === activeIndex;
           const note = notes[id];
           const chips = membership[id] || [];
+          const hlCounts = highlightCountsByColor(highlights[id] || []);
           return (
             <div key={id} className={`relative border-b border-ink/[.08] ${on ? 'bg-accent' : ''}`}>
               <button
@@ -104,13 +106,24 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
                   <span className={`font-sans text-[14.5px] font-bold tracking-[.02em] mr-2.5 ${on ? 'opacity-65' : 'text-ink/60'}`}>{s.ref}</span>
                   <span className="text-[16.5px] leading-[1.3] font-serif">{s.en}</span>
                   {visited[id] && (
-                    <span className={`font-sans text-[11px] ml-2.5 ${on ? 'opacity-45' : 'text-ink/[.28]'}`}>read</span>
+                    <span className={`inline-flex align-middle ml-2.5 ${on ? 'opacity-45' : 'text-ink/[.28]'}`}>
+                      <Check size={13} strokeWidth={2.25} />
+                    </span>
                   )}
+                  {hlCounts.map(({ c, count }) => (
+                    <span
+                      key={c}
+                      className="inline-flex items-center justify-center align-middle ml-1.5 rounded-full font-sans text-[10px] font-bold"
+                      style={{ background: c, color: '#1B1917', minWidth: 16, height: 16, padding: '0 4px' }}
+                    >
+                      {count}
+                    </span>
+                  ))}
                 </span>
                 <span className={`block font-serif text-[13.5px] italic mt-[1px] ${on ? 'opacity-75' : 'text-accent'}`}>{s.pali}</span>
                 {note ? (
                   <span
-                    className="block font-serif text-[14.5px] italic leading-[1.45] mt-[7px] pl-[10px] border-l-2"
+                    className="block font-serif text-[14.5px] leading-[1.45] mt-[7px] pl-[10px] border-l-2"
                     style={{ borderColor: on ? 'rgba(251,250,247,.5)' : 'rgba(27,25,23,.3)' }}
                   >
                     {note}

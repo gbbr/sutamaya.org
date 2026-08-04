@@ -7,11 +7,13 @@ import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { useSuttaText } from '../hooks/useSuttaText';
 import { useHighlightPopup } from '../hooks/useHighlightPopup';
 import { useScrollMemory } from '../hooks/useScrollMemory';
-import { suttasFor } from '../lib/corpus';
+import { flatSuttaOrder } from '../lib/corpus';
+import { groupHighlights } from '../lib/highlights';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { lookupWord } from '../lib/dictionary';
 import { SegmentedText } from '../components/SegmentedText';
 import { HighlightPopup } from '../components/HighlightPopup';
+import { HighlightGutter } from '../components/HighlightGutter';
 import { DictionaryDock } from '../components/DictionaryDock';
 import { ReaderMenuPanel } from '../components/ReaderMenuPanel';
 import { ReaderSearchOverlay } from '../components/ReaderSearchOverlay';
@@ -24,14 +26,14 @@ interface DictState {
 
 export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus, dictionary } = useCorpus();
-  const { highlights, markVisited } = useUserData();
+  const { highlights, notes, markVisited } = useUserData();
   const { theme: themeId, fs, lh, face, allPali } = useReaderPrefs();
 
-  const initialPanelTab = new URLSearchParams(location?.search).get('panel') as 'notes' | 'lists' | 'text' | null;
+  const initialPanelTab = new URLSearchParams(location?.search).get('panel') as 'highlights' | 'lists' | 'text' | null;
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
   const [dict, setDict] = useState<DictState | null>(null);
   const [panel, setPanel] = useState(!!initialPanelTab);
-  const [tab, setTab] = useState<'notes' | 'lists' | 'text'>(initialPanelTab || 'notes');
+  const [tab, setTab] = useState<'highlights' | 'lists' | 'text'>(initialPanelTab || 'highlights');
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobile, setMobile] = useState(() => window.innerWidth < 860);
   const tapRef = useRef<{ x: number; y: number } | null>(null);
@@ -41,6 +43,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   const hlForSutta = (suttaId && highlights[suttaId]) || [];
   const { pop, onTextUp, pick, close: closePop, popStop, openPop } = useHighlightPopup(suttaId, hlForSutta);
   const scrollRef = useScrollMemory<HTMLDivElement>(suttaId ? `reader:${suttaId}` : null);
+  const highlightGroups = useMemo(() => groupHighlights(hlForSutta, segments), [hlForSutta, segments]);
 
   const theme = READER_THEMES[themeId];
 
@@ -56,10 +59,11 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  const siblingIds = useMemo(() => {
-    if (!corpus || !sutta) return [];
-    return suttasFor(corpus, sutta.node).map(([id]) => id);
-  }, [corpus, sutta]);
+  // The whole corpus in canonical browse order, not just the current category's siblings — so
+  // Prev/Next carries on into the next/previous category once the current one runs out, rather
+  // than stopping at its edge. Depends only on `corpus` (not `sutta`), so it's correct whether
+  // the reader was entered from browsing, a search result, or a deep link.
+  const siblingIds = useMemo(() => (corpus ? flatSuttaOrder(corpus) : []), [corpus]);
 
   function step(dir: 1 | -1) {
     if (!suttaId) return;
@@ -86,7 +90,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       } else if (e.key === 'ArrowLeft') step(-1);
       else if (e.key === 'ArrowRight') step(1);
       else if (e.key.toLowerCase() === 'h') {
-        setTab('notes');
+        setTab('highlights');
         setPanel(true);
       } else if (e.key.toLowerCase() === 'l') {
         setTab('lists');
@@ -97,6 +101,13 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     return () => window.removeEventListener('keydown', onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dict, panel, searchOpen, siblingIds, suttaId]);
+
+  function jumpToHighlight(segIndex: number) {
+    setPanel(false);
+    requestAnimationFrame(() => {
+      scrollRef.current?.querySelector(`[data-seg="${segIndex}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
 
   function closeReader() {
     if (sutta) navigate(`/browse/${sutta.node}/${suttaId}`);
@@ -160,7 +171,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           className="flex items-center gap-1.5"
           onClick={(e) => {
             e.stopPropagation();
-            setTab('notes');
+            setTab('highlights');
             setPanel(true);
           }}
         >
@@ -177,9 +188,19 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           <div className="font-serif italic" style={{ fontSize: fs - 2, marginTop: 5, color: theme.dim }}>
             {sutta.pali}
           </div>
-          {sutta.blurb && (
-            <div className="italic" style={{ fontSize: fs - 4, lineHeight: 1.6, marginTop: 11, color: theme.fg, opacity: 0.72 }}>
-              {sutta.blurb}
+          {(notes[suttaId] || sutta.blurb) && (
+            <div
+              className={notes[suttaId] ? 'pl-[10px]' : 'italic'}
+              style={{
+                fontSize: fs - 4,
+                lineHeight: 1.6,
+                marginTop: 11,
+                color: theme.fg,
+                opacity: 0.72,
+                borderLeft: notes[suttaId] ? `2px solid ${theme.rule}` : undefined,
+              }}
+            >
+              {notes[suttaId] || sutta.blurb}
             </div>
           )}
           <div className="font-sans" style={{ fontSize: 12, marginTop: 9, color: theme.dim }}>
@@ -222,10 +243,20 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           initialTab={tab}
           segments={segments}
           onClose={() => setPanel(false)}
+          onJumpToHighlight={jumpToHighlight}
         />
       )}
 
       {pop && <HighlightPopup pop={pop} theme={theme} onPick={pick} onRemove={() => pick(null)} onStop={popStop} />}
+
+      {!panel && (
+        <HighlightGutter
+          scrollRef={scrollRef}
+          highlightGroups={highlightGroups}
+          onJump={jumpToHighlight}
+          layoutKey={`${fs}-${lh}-${face}-${allPali}`}
+        />
+      )}
 
       {searchOpen && <ReaderSearchOverlay theme={theme} onOpenSutta={onSearchOpenSutta} onClose={() => setSearchOpen(false)} />}
     </div>

@@ -59,6 +59,27 @@ export function sortByIdAsc(entries: Array<[string, Sutta]>): Array<[string, Sut
   return [...entries].sort((a, b) => compareIds(a[0], b[0]));
 }
 
+function collectLeafGroupIds(node: { id: string; chapters?: ChapterRow[] }, acc: string[]): void {
+  if (isExpandable(node)) {
+    for (const c of node.chapters!) collectLeafGroupIds(c, acc);
+  } else {
+    acc.push(node.id);
+  }
+}
+
+// Every sutta in the whole corpus, in canonical browse order (nikaya by nikaya, leaf group by
+// leaf group, sutta id ascending within each) — lets the reader's Prev/Next walk across a
+// category boundary once the current one runs out, instead of stopping at its edge.
+export function flatSuttaOrder(corpus: Corpus): string[] {
+  const leafGroupIds: string[] = [];
+  for (const n of corpus.nikayas) collectLeafGroupIds(n, leafGroupIds);
+  const ids: string[] = [];
+  for (const groupId of leafGroupIds) {
+    for (const [id] of sortByIdAsc(suttasFor(corpus, groupId))) ids.push(id);
+  }
+  return ids;
+}
+
 // Every browsable id: nikaya ids, chapter/group/category ids (arbitrarily nested — SN goes
 // nikaya > group > chapter > category, AN goes nikaya > chapter > category, MN goes nikaya >
 // category), and (for search) sutta ids. `ancestors` is the top-down chain from the nikaya

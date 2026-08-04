@@ -4,11 +4,6 @@ An offline-first reader for the Early Buddhist Texts. Three surfaces: a **Librar
 tree + user lists + search), a **Preview pane** on wide screens, and an **Immersive reader**
 (inline Pali, docked dictionary, text-range highlighting, notes, lists, typography controls).
 
-The product spec is `design/README.md` (+ the interactive prototype `design/Sutamaya.dc.html`)
-— colours, typography, spacing, and interaction behaviour are all specified there and this
-implementation follows it closely. Read it before changing UI. The corpus data model is
-documented in `data/BRIEF.md` — read it before changing the data pipeline.
-
 ## Stack
 
 - **`web/`** — React + TypeScript + Tailwind CSS + Vite, routed with `@reach/router`, packaged

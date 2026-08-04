@@ -1,5 +1,6 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { dataApi, highlightsApi, listsApi, notesApi, visitedApi } from '../lib/api';
+import { HIGHLIGHTS_LIST_LABEL, NOTES_LIST_LABEL } from '../lib/autoLists';
 import type { Highlight, HighlightsMap, ListDef, Membership, NotesMap, VisitedMap } from '../lib/types';
 import { useAuth } from './AuthContext';
 
@@ -18,9 +19,10 @@ interface UserDataState {
   reorderLists: (parentId: string | null, order: string[]) => Promise<void>;
   reorderListItems: (id: string, order: string[]) => Promise<void>;
   toggleMembership: (suttaId: string, label: string) => Promise<void>;
+  addToList: (suttaId: string, list: ListDef) => Promise<void>;
   setNote: (suttaId: string, text: string) => void;
   setHighlightRange: (suttaId: string, i: number, s: number, e: number, color: string | null) => Promise<void>;
-  removeHighlight: (suttaId: string, id: string) => Promise<void>;
+  removeHighlights: (suttaId: string, ids: string[]) => Promise<void>;
   markVisited: (suttaId: string) => void;
 }
 
@@ -43,9 +45,10 @@ const EMPTY: UserDataState = {
   reorderLists: async () => {},
   reorderListItems: async () => {},
   toggleMembership: async () => {},
+  addToList: async () => {},
   setNote: () => {},
   setHighlightRange: async () => {},
-  removeHighlight: async () => {},
+  removeHighlights: async () => {},
   markVisited: () => {},
 };
 
@@ -57,6 +60,11 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   const [notes, setNotes] = useState<NotesMap>({});
   const [highlights, setHighlights] = useState<HighlightsMap>({});
   const [visited, setVisited] = useState<VisitedMap>({});
+  // Tracks which suttas currently have a non-empty note, updated synchronously (not via React
+  // state) so setNote — called on every keystroke — can tell a real empty↔non-empty transition
+  // from a same-state keystroke without racing React's batching: state updates from rapid-fire
+  // calls in the same tick don't see each other's writes, but this ref always does.
+  const notesWithContent = useRef<Set<string>>(new Set());
 
   useEffect(() => {
     if (!user) {
@@ -66,6 +74,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       setNotes({});
       setHighlights({});
       setVisited({});
+      notesWithContent.current = new Set();
       return;
     }
     let cancelled = false;
@@ -77,6 +86,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       setNotes(d.notes);
       setHighlights(d.highlights);
       setVisited(d.visited);
+      notesWithContent.current = new Set(Object.keys(d.notes).filter((id) => d.notes[id].length > 0));
       setReady(true);
     });
     return () => {
@@ -179,11 +189,72 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     [lists, membership, user, promptGoogleSignIn]
   );
 
-  const setNote = useCallback((suttaId: string, text: string) => {
-    if (!user) return promptGoogleSignIn();
-    setNotes((n) => ({ ...n, [suttaId]: text }));
-    notesApi.set(suttaId, text).catch((e) => console.error('note save failed', e));
-  }, [user, promptGoogleSignIn]);
+  // Like toggleMembership's "add" branch, but takes the list directly instead of looking it up
+  // by label in `lists` — for adding to a list a caller just created: createList's own setLists
+  // call won't be reflected in this component's `lists` closure until the next render, so
+  // looking it up by label right after creating it would silently find nothing.
+  const addToList = useCallback(
+    async (suttaId: string, list: ListDef) => {
+      if (!user) return promptGoogleSignIn();
+      if ((membership[suttaId] || []).includes(list.label)) return;
+      setMembership((m) => ({ ...m, [suttaId]: [...(m[suttaId] || []), list.label] }));
+      setLists((ls) => ls.map((l) => (l.id === list.id ? { ...l, items: [...l.items, suttaId] } : l)));
+      await listsApi.addItem(list.id, suttaId);
+    },
+    [membership, user, promptGoogleSignIn]
+  );
+
+  // Keeps `suttaId` in (or out of) the auto-managed list named `label` (HIGHLIGHTS_LIST_LABEL or
+  // NOTES_LIST_LABEL) to match `shouldBeIn`, creating the list on first use and deleting it
+  // again once it has no suttas left (rather than leaving an empty list sitting around) — so,
+  // unlike every other list, it only exists while it has something in it. Takes the resulting
+  // membership rather than recomputing it, since callers already know it from their own state
+  // update and recomputing here would race across a batch of sibling calls (see
+  // removeHighlights).
+  const syncAutoList = useCallback(
+    async (label: string, suttaId: string, shouldBeIn: boolean) => {
+      let list = lists.find((l) => l.label === label && l.parentId === null);
+      const alreadyIn = list ? (membership[suttaId] || []).includes(label) : false;
+      if (shouldBeIn === alreadyIn) return;
+      if (!list) {
+        if (!shouldBeIn) return;
+        list = await createList(label);
+      }
+      const listId = list.id;
+      const willBeEmpty = !shouldBeIn && list.items.filter((s) => s !== suttaId).length === 0;
+      setMembership((m) => {
+        const current = m[suttaId] || [];
+        const next = shouldBeIn ? [...current, label] : current.filter((l) => l !== label);
+        return { ...m, [suttaId]: next };
+      });
+      if (willBeEmpty) {
+        setLists((ls) => ls.filter((l) => l.id !== listId));
+        await listsApi.remove(listId);
+        return;
+      }
+      setLists((ls) =>
+        ls.map((l) => (l.id === listId ? { ...l, items: shouldBeIn ? [...l.items, suttaId] : l.items.filter((s) => s !== suttaId) } : l))
+      );
+      if (shouldBeIn) await listsApi.addItem(listId, suttaId);
+      else await listsApi.removeItem(listId, suttaId);
+    },
+    [lists, membership, createList]
+  );
+
+  const setNote = useCallback(
+    (suttaId: string, text: string) => {
+      if (!user) return promptGoogleSignIn();
+      setNotes((n) => ({ ...n, [suttaId]: text }));
+      notesApi.set(suttaId, text).catch((e) => console.error('note save failed', e));
+      const hasNote = text.length > 0;
+      if (hasNote !== notesWithContent.current.has(suttaId)) {
+        if (hasNote) notesWithContent.current.add(suttaId);
+        else notesWithContent.current.delete(suttaId);
+        syncAutoList(NOTES_LIST_LABEL, suttaId, hasNote).catch((e) => console.error('notes list sync failed', e));
+      }
+    },
+    [user, promptGoogleSignIn, syncAutoList]
+  );
 
   const setHighlightRange = useCallback(
     async (suttaId: string, i: number, s: number, e: number, color: string | null) => {
@@ -201,14 +272,25 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       await highlightsApi.setRange(suttaId, i, s, e, color);
       const fresh = await dataApi.all();
       setHighlights(fresh.highlights);
+      await syncAutoList(HIGHLIGHTS_LIST_LABEL, suttaId, (fresh.highlights[suttaId] || []).length > 0);
     },
-    [user, promptGoogleSignIn]
+    [user, promptGoogleSignIn, syncAutoList]
   );
 
-  const removeHighlight = useCallback(async (suttaId: string, id: string) => {
-    setHighlights((hs) => ({ ...hs, [suttaId]: (hs[suttaId] || []).filter((h) => h.id !== id) }));
-    await highlightsApi.remove(id);
-  }, []);
+  const removeHighlights = useCallback(
+    async (suttaId: string, ids: string[]) => {
+      const idSet = new Set(ids);
+      let remaining = 0;
+      setHighlights((hs) => {
+        const next = (hs[suttaId] || []).filter((h) => !idSet.has(h.id));
+        remaining = next.length;
+        return { ...hs, [suttaId]: next };
+      });
+      await Promise.all(ids.map((id) => highlightsApi.remove(id)));
+      await syncAutoList(HIGHLIGHTS_LIST_LABEL, suttaId, remaining > 0);
+    },
+    [syncAutoList]
+  );
 
   const markVisited = useCallback((suttaId: string) => {
     if (!user) return;
@@ -232,9 +314,10 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       reorderLists,
       reorderListItems,
       toggleMembership,
+      addToList,
       setNote,
       setHighlightRange,
-      removeHighlight,
+      removeHighlights,
       markVisited,
     }),
     [
@@ -252,9 +335,10 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       reorderLists,
       reorderListItems,
       toggleMembership,
+      addToList,
       setNote,
       setHighlightRange,
-      removeHighlight,
+      removeHighlights,
       markVisited,
     ]
   );

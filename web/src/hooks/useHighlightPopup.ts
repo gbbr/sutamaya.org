@@ -36,7 +36,7 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
   const [pop, setPop] = useState<PopState | null>(null);
 
   const openPop = useCallback((i: number, s: number, e: number, rect: DOMRect, on: string | null) => {
-    setPop({ ranges: [{ i, s, e }], x: rect.left + rect.width / 2, y: rect.top, on });
+    setPop({ ranges: [{ i, s, e }], x: rect.left + rect.width / 2, y: rect.bottom, on });
   }, []);
 
   const onTextUp = useCallback(() => {
@@ -50,7 +50,13 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
       const a = closestSeg(range.startContainer);
       const b = closestSeg(range.endContainer);
       if (!a || !b) return;
-      const rect = range.getBoundingClientRect();
+      // Anchor at the end of the selection, not its horizontal center — the tail of the last
+      // visual line (getClientRects()' last entry covers wrapped multi-line selections too, not
+      // just the bounding box getBoundingClientRect() would give), so the colour picker lands
+      // right where the user's cursor/finger lifted off and appears below that line, since above
+      // is where the OS selection menu already sits on mobile.
+      const rects = range.getClientRects();
+      const endRect = rects[rects.length - 1] || range.getBoundingClientRect();
 
       if (a === b) {
         const st = offsetWithin(a, range.startContainer, range.startOffset);
@@ -58,7 +64,7 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
         if (en <= st) return;
         const i = Number(a.dataset.seg);
         const cur = highlights.filter((h) => h.i === i).find((h) => h.s < en && h.e > st);
-        setPop({ ranges: [{ i, s: st, e: en }], x: rect.left + rect.width / 2, y: rect.top, on: cur ? cur.c : null });
+        setPop({ ranges: [{ i, s: st, e: en }], x: endRect.right, y: endRect.bottom, on: cur ? cur.c : null });
         return;
       }
 
@@ -92,7 +98,7 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
       // A fresh multi-segment selection is always a new highlight, never an edit of an
       // existing one (unlike the single-segment case, which can land inside one) — the color
       // swatches just start unselected.
-      setPop({ ranges, x: rect.left + rect.width / 2, y: rect.top, on: null });
+      setPop({ ranges, x: endRect.right, y: endRect.bottom, on: null });
     }, 0);
   }, [highlights]);
 

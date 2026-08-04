@@ -18,17 +18,20 @@ export function HighlightPopup({ pop, theme, onPick, onRemove, onStop }: Highlig
   useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
-    el.style.transform = 'translate(-50%,-100%)';
-    el.style.marginTop = '-10px';
+    // Below by default — `pop.y` is the bottom edge of the line the selection ends on, and
+    // showing the picker above it would sit under (or fight with) the OS's own selection menu
+    // on mobile. Only flips back above if there's no room below the viewport.
+    el.style.transform = 'translate(-50%,0)';
+    el.style.marginTop = '10px';
     el.style.left = `${pop.x}px`;
     const r = el.getBoundingClientRect();
     let dx = 0;
     if (r.right > window.innerWidth - 10) dx = window.innerWidth - 10 - r.right;
     if (r.left + dx < 10) dx = 10 - (r.left + dx);
     if (dx) el.style.left = `${pop.x + dx}px`;
-    if (r.top < 10) {
-      el.style.transform = 'translate(-50%,0)';
-      el.style.marginTop = '10px';
+    if (r.bottom > window.innerHeight - 10) {
+      el.style.transform = 'translate(-50%,-100%)';
+      el.style.marginTop = '-10px';
     }
   }, [pop]);
 

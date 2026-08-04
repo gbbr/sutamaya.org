@@ -1,17 +1,20 @@
-import { useRef, useState, type KeyboardEvent } from 'react';
-import { Trash2 } from 'lucide-react';
+import { useMemo, useRef, useState, type KeyboardEvent } from 'react';
+import { ChevronDown, ChevronUp, MoreHorizontal, Pencil, Trash2 } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
+import { AUTO_LIST_LABELS } from '../lib/autoLists';
 import type { SegmentFile } from '../lib/corpus';
-import type { ReaderFace, ReaderTheme, ThemeColors } from '../lib/types';
+import { groupHighlights, highlightGroupText } from '../lib/highlights';
+import type { ListDef, ReaderFace, ReaderTheme, ThemeColors } from '../lib/types';
 
 interface ReaderMenuPanelProps {
   suttaId: string;
   mobile: boolean;
   theme: ThemeColors;
-  initialTab: 'notes' | 'lists' | 'text';
+  initialTab: 'highlights' | 'lists' | 'text';
   segments: SegmentFile[] | null;
   onClose: () => void;
+  onJumpToHighlight: (segIndex: number) => void;
 }
 
 const THEME_SWATCHES: Array<{ id: ReaderTheme; label: string; bg: string; fg: string }> = [
@@ -25,15 +28,43 @@ const FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
   { id: 'sans', label: 'Sans' },
 ];
 
-export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, onClose }: ReaderMenuPanelProps) {
+export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, onClose, onJumpToHighlight }: ReaderMenuPanelProps) {
   const [tab, setTab] = useState(initialTab);
-  const { notes, setNote, highlights, removeHighlight, lists, membership, toggleMembership, createList } = useUserData();
+  const {
+    notes,
+    setNote,
+    highlights,
+    removeHighlights,
+    lists,
+    membership,
+    toggleMembership,
+    addToList,
+    createList,
+    renameList,
+    removeList,
+    reorderLists,
+  } = useUserData();
   const { theme: currentTheme, setTheme, fs, setFs, lh, setLh, face, setFace, allPali, toggleAllPali } = useReaderPrefs();
   const [draft, setDraft] = useState('');
+  const [activeFilterIndex, setActiveFilterIndex] = useState(0);
+  const [menuOpenListId, setMenuOpenListId] = useState<string | null>(null);
+  const [editingListId, setEditingListId] = useState<string | null>(null);
+  const [editDraft, setEditDraft] = useState('');
+  const [confirmDeleteListId, setConfirmDeleteListId] = useState<string | null>(null);
   const listInput = useRef<HTMLInputElement>(null);
 
   const suttaHighlights = highlights[suttaId] || [];
   const suttaLists = membership[suttaId] || [];
+  const highlightGroups = useMemo(() => groupHighlights(suttaHighlights, segments), [suttaHighlights, segments]);
+  // The picker below the input: every non-auto list, narrowed to those matching what's typed so
+  // far — Enter selects whichever one is highlighted (even mid-typed), Up/Down moves the
+  // highlight, and an empty result falls through to creating `draft` as a new list instead.
+  const filteredLists = useMemo(() => {
+    const q = draft.trim().toLowerCase();
+    const pool = lists.filter((l) => !AUTO_LIST_LABELS.includes(l.label));
+    return q ? pool.filter((l) => l.label.toLowerCase().includes(q)) : pool;
+  }, [lists, draft]);
+  const activeIndex = Math.min(activeFilterIndex, filteredLists.length - 1);
 
   const panelStyle = mobile
     ? {
@@ -70,19 +101,73 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
     try {
       const list = await createList(name);
       setDraft('');
-      if (!suttaLists.includes(list.label)) toggleMembership(suttaId, list.label);
+      setActiveFilterIndex(0);
+      await addToList(suttaId, list);
     } catch {
       // Signed out: createList() already triggered the Google sign-in prompt.
     }
   }
+  function selectList(label: string) {
+    if (!suttaLists.includes(label)) toggleMembership(suttaId, label);
+    setDraft('');
+    setActiveFilterIndex(0);
+  }
+  function onDraftChange(v: string) {
+    setDraft(v);
+    setActiveFilterIndex(0);
+  }
   function onDraftKey(e: KeyboardEvent<HTMLInputElement>) {
-    if (e.key === 'Enter') {
+    if (e.key === 'ArrowDown') {
       e.preventDefault();
-      submitDraft();
+      setActiveFilterIndex((i) => Math.min(filteredLists.length - 1, i + 1));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setActiveFilterIndex((i) => Math.max(0, i - 1));
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      const match = filteredLists[activeIndex];
+      if (match) selectList(match.label);
+      else submitDraft();
     }
   }
 
-  const tabBtn = (id: 'notes' | 'lists' | 'text', label: string) => (
+  // Editing (rename/delete/reorder) mirrors TreePane's ListRow, scoped to the flat top-level
+  // list — the reader's picker isn't a tree browser, so there's no sub-list nesting here.
+  function startEditList(l: ListDef) {
+    setMenuOpenListId(null);
+    setEditingListId(l.id);
+    setEditDraft(l.label);
+  }
+  function commitEditList() {
+    const id = editingListId;
+    const text = editDraft.trim();
+    setEditingListId(null);
+    if (!id) return;
+    if (text) renameList(id, text);
+  }
+  function cancelEditList() {
+    setEditingListId(null);
+  }
+  function armDeleteList(l: ListDef) {
+    setMenuOpenListId(null);
+    setConfirmDeleteListId(l.id);
+  }
+  function deleteList(l: ListDef) {
+    setConfirmDeleteListId(null);
+    removeList(l.id, l.label);
+  }
+  // Only meaningful against the full, unfiltered order — disabled while a search narrows
+  // `filteredLists`, since the visible subset's order doesn't reflect true sibling positions.
+  function moveList(l: ListDef, dir: -1 | 1) {
+    const idx = filteredLists.findIndex((s) => s.id === l.id);
+    const swapWith = idx + dir;
+    if (idx < 0 || swapWith < 0 || swapWith >= filteredLists.length) return;
+    const order = filteredLists.map((s) => s.id);
+    [order[idx], order[swapWith]] = [order[swapWith], order[idx]];
+    reorderLists(null, order);
+  }
+
+  const tabBtn = (id: 'highlights' | 'lists' | 'text', label: string) => (
     <button
       key={id}
       className="flex-1 text-center py-[9px] rounded-field font-sans text-[13.5px] border"
@@ -113,12 +198,12 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
       <div style={panelStyle} className={mobile ? 'animate-sheetUp' : 'animate-fadeIn'}>
         {mobile && <div className="w-11 h-1 rounded-full mx-auto mb-3.5" style={{ background: theme.rule }} />}
         <div className="flex gap-2 mb-4">
-          {tabBtn('notes', 'Notes')}
+          {tabBtn('highlights', 'Highlights')}
           {tabBtn('lists', 'Lists')}
           {tabBtn('text', 'Text')}
         </div>
 
-        {tab === 'notes' && (
+        {tab === 'highlights' && (
           <div className="sc flex-1 min-h-0">
             <div className="rounded-field mb-3.5 p-[11px_13px]" style={{ border: `1px solid ${theme.rule}`, padding: '11px 13px' }}>
               <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase opacity-60 mb-[5px]">Sutta note</div>
@@ -127,21 +212,35 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
                 onChange={(e) => setNote(suttaId, e.target.value)}
                 rows={2}
                 placeholder="Add a note"
-                className="w-full bg-transparent text-[16px] italic resize-none outline-none font-serif"
+                className="w-full bg-transparent text-[16px] resize-none outline-none font-serif"
                 style={{ border: 0, color: theme.fg }}
               />
             </div>
-            {suttaHighlights.map((h) => (
-              <div key={h.id} className="flex gap-2.5 items-start py-2.5" style={{ borderBottom: `1px solid ${theme.rule}` }}>
-                <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: h.c }} />
-                <span className="flex-1 text-sm leading-[1.45]">{(segments?.[h.i]?.en || '').slice(h.s, h.e).slice(0, 92) || `Segment ${h.i + 1}`}</span>
-                <button className="flex items-center gap-1 font-sans text-[11.5px] opacity-45" onClick={() => removeHighlight(suttaId, h.id)}>
+            {highlightGroups.map((g) => (
+              <button
+                key={g.key}
+                className="flex w-full gap-2.5 items-start py-2.5 text-left"
+                style={{ borderBottom: `1px solid ${theme.rule}` }}
+                onClick={() => onJumpToHighlight(g.i)}
+              >
+                <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: g.c }} />
+                <span className="flex-1 text-sm leading-[1.45]">{highlightGroupText(g, segments).slice(0, 92) || `Segment ${g.i + 1}`}</span>
+                <span
+                  className="flex items-center gap-1 font-sans text-[11.5px] opacity-45"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    removeHighlights(
+                      suttaId,
+                      g.items.map((h) => h.id)
+                    );
+                  }}
+                >
                   <Trash2 size={12} strokeWidth={1.75} />
                   Remove
-                </button>
-              </div>
+                </span>
+              </button>
             ))}
-            {suttaHighlights.length === 0 && (
+            {highlightGroups.length === 0 && (
               <div className="font-sans text-[12.5px] opacity-40 py-1.5">Select text in the reading, then pick a colour.</div>
             )}
           </div>
@@ -152,35 +251,139 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
             <input
               ref={listInput}
               value={draft}
-              onChange={(e) => setDraft(e.target.value)}
+              onChange={(e) => onDraftChange(e.target.value)}
               onKeyDown={onDraftKey}
               placeholder="List name — return to create & add"
               className="w-full h-11 rounded-[10px] px-3 bg-transparent text-base outline-none"
               style={{ border: `1px solid #8A6A3B`, color: theme.fg }}
             />
             <div className="flex flex-wrap gap-1.5 my-3.5">
-              {suttaLists.map((label) => (
-                <button
-                  key={label}
-                  className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px]"
-                  style={{ background: theme.fg, color: theme.bg }}
-                  onClick={() => toggleMembership(suttaId, label)}
-                >
-                  {label} ×
-                </button>
-              ))}
+              {suttaLists.map((label) =>
+                AUTO_LIST_LABELS.includes(label) ? (
+                  <span
+                    key={label}
+                    className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px]"
+                    style={{ border: `1px solid ${theme.rule}`, color: theme.fg, opacity: 0.6 }}
+                  >
+                    {label}
+                  </span>
+                ) : (
+                  <button
+                    key={label}
+                    className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px]"
+                    style={{ background: theme.fg, color: theme.bg }}
+                    onClick={() => toggleMembership(suttaId, label)}
+                  >
+                    {label} ×
+                  </button>
+                )
+              )}
             </div>
-            <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase opacity-60 mb-1">Or pick from your lists</div>
-            {lists.map((l) => (
-              <button
-                key={l.id}
-                className="flex items-center gap-2.5 w-full text-left py-[11px]"
-                style={{ borderBottom: `1px solid ${theme.rule}` }}
-                onClick={() => toggleMembership(suttaId, l.label)}
-              >
-                <span className="flex-1 text-[15.5px]">{l.label}</span>
-                <span className="text-[13px]">{suttaLists.includes(l.label) ? '✓' : ''}</span>
-              </button>
+            <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase opacity-60 mb-1">
+              {filteredLists.length === 0 && draft.trim() ? 'No matches — return to create' : 'Or pick from your lists'}
+            </div>
+            {filteredLists.map((l, idx) => (
+              <div key={l.id}>
+                <div
+                  className="flex items-center gap-2 w-full py-[11px] px-2 rounded-[8px]"
+                  style={{ borderBottom: `1px solid ${theme.rule}`, background: idx === activeIndex ? theme.rule : 'transparent' }}
+                  onMouseEnter={() => setActiveFilterIndex(idx)}
+                >
+                  {editingListId === l.id ? (
+                    <input
+                      autoFocus
+                      value={editDraft}
+                      onChange={(e) => setEditDraft(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          e.preventDefault();
+                          commitEditList();
+                        } else if (e.key === 'Escape') cancelEditList();
+                      }}
+                      onBlur={commitEditList}
+                      className="flex-1 min-w-0 h-8 rounded-[6px] px-2 text-[14.5px] outline-none"
+                      style={{ border: `1px solid ${theme.fg}`, background: 'transparent', color: theme.fg }}
+                    />
+                  ) : (
+                    <button className="flex-1 min-w-0 text-left text-[15.5px] truncate" onClick={() => selectList(l.label)}>
+                      {l.label}
+                    </button>
+                  )}
+                  {editingListId !== l.id && (
+                    <>
+                      <span className="text-[13px]">{suttaLists.includes(l.label) ? '✓' : ''}</span>
+                      <button
+                        className="flex-none w-6 h-6 flex items-center justify-center rounded opacity-60"
+                        title="List options"
+                        onClick={() => setMenuOpenListId((m) => (m === l.id ? null : l.id))}
+                      >
+                        <MoreHorizontal size={14} strokeWidth={2} />
+                      </button>
+                    </>
+                  )}
+                </div>
+                {confirmDeleteListId === l.id ? (
+                  <div className="flex items-center gap-2 px-2 pb-2">
+                    <span className="font-sans text-[12px] opacity-70">Delete "{l.label}"?</span>
+                    <button
+                      onClick={() => deleteList(l)}
+                      className="font-sans text-[12px] font-semibold px-2 py-[3px] rounded border border-red-500/50 text-red-500"
+                    >
+                      Delete
+                    </button>
+                    <button
+                      onClick={() => setConfirmDeleteListId(null)}
+                      className="font-sans text-[12px] px-2 py-[3px] rounded"
+                      style={{ border: `1px solid ${theme.rule}`, opacity: 0.7 }}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                ) : (
+                  menuOpenListId === l.id && (
+                    <div className="flex items-center gap-[6px] px-2 pb-2">
+                      {!draft.trim() && (
+                        <>
+                          <button
+                            title="Move up"
+                            disabled={idx === 0}
+                            onClick={() => moveList(l, -1)}
+                            className="w-6 h-[22px] flex items-center justify-center rounded disabled:opacity-25"
+                            style={{ border: `1px solid ${theme.rule}` }}
+                          >
+                            <ChevronUp size={13} strokeWidth={2} />
+                          </button>
+                          <button
+                            title="Move down"
+                            disabled={idx === filteredLists.length - 1}
+                            onClick={() => moveList(l, 1)}
+                            className="w-6 h-[22px] flex items-center justify-center rounded disabled:opacity-25"
+                            style={{ border: `1px solid ${theme.rule}` }}
+                          >
+                            <ChevronDown size={13} strokeWidth={2} />
+                          </button>
+                        </>
+                      )}
+                      <button
+                        title="Rename"
+                        onClick={() => startEditList(l)}
+                        className="w-6 h-[22px] flex items-center justify-center rounded"
+                        style={{ border: `1px solid ${theme.rule}` }}
+                      >
+                        <Pencil size={12} strokeWidth={2} />
+                      </button>
+                      <button
+                        title="Delete"
+                        onClick={() => armDeleteList(l)}
+                        className="w-6 h-[22px] flex items-center justify-center rounded text-red-500"
+                        style={{ border: `1px solid ${theme.rule}` }}
+                      >
+                        <Trash2 size={12} strokeWidth={2} />
+                      </button>
+                    </div>
+                  )
+                )}
+              </div>
             ))}
           </div>
         )}
