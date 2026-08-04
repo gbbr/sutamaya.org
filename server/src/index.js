@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import express from 'express';
 import cors from 'cors';
 import cookieSession from 'cookie-session';
+import rateLimit from 'express-rate-limit';
 import { authRouter } from './routes/auth.js';
 import { listsRouter } from './routes/lists.js';
 import { annotationsRouter } from './routes/annotations.js';
@@ -24,6 +25,29 @@ const app = express();
 // Cloud Run sits behind a TLS-terminating proxy; this makes `secure` cookies and
 // req.protocol reflect the original HTTPS request instead of the proxy's plain HTTP hop.
 app.set('trust proxy', 1);
+
+// Covers the static SPA/data files and general API traffic — generous enough for
+// real browsing (including repeat dictionary/text fetches), tight enough to bound
+// what a single IP can pull from the uncached-by-bots public assets.
+const generalLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 300,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+// /api/auth does real work (verifies the Google ID token against Google's servers)
+// and is the one open route besides static files — worth its own tighter cap.
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+app.use(generalLimiter);
+app.use('/api/auth', authLimiter);
+
 app.use(cors({ origin: WEB_ORIGIN, credentials: true }));
 app.use(express.json());
 app.use(
