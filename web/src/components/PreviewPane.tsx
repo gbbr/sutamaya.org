@@ -1,18 +1,15 @@
-import { useMemo } from 'react';
 import { navigate } from '@reach/router';
 import { BookOpen, Eye, PanelRightClose } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
-import { useSuttaText } from '../hooks/useSuttaText';
-import { useHighlightPopup } from '../hooks/useHighlightPopup';
-import { useScrollMemory } from '../hooks/useScrollMemory';
+import { useSuttaReading } from '../hooks/useSuttaReading';
+import { useAutoListLabels } from '../hooks/useAutoListLabels';
 import { SegmentedText } from './SegmentedText';
 import { HighlightPopup } from './HighlightPopup';
 import { HighlightGutter } from './HighlightGutter';
 import { NoteEditor } from './NoteEditor';
-import { groupHighlights, highlightCountsByColor } from '../lib/highlights';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 
 interface PreviewPaneProps {
@@ -22,20 +19,23 @@ interface PreviewPaneProps {
 export function PreviewPane({ selectedId }: PreviewPaneProps) {
   const { corpus } = useCorpus();
   const { desktop, previewHidden, hidePreview } = useLayout();
-  const { notes, submitNote, highlights, lists, membership, toggleMembership, visited } = useUserData();
+  const { notes, submitNote, membership, toggleMembership, visited } = useUserData();
   const { fs, lh, face, allPali } = useReaderPrefs();
-  const segments = useSuttaText(selectedId);
   const sutta = corpus && selectedId ? corpus.suttas[selectedId] : undefined;
-  const hlForSutta = (selectedId && highlights[selectedId]) || [];
-  const { pop, onTextUp, pick, popStop, openPop } = useHighlightPopup(selectedId, hlForSutta);
-  const scrollRef = useScrollMemory<HTMLDivElement>(selectedId ? `preview:${selectedId}` : null);
-  const highlightGroups = useMemo(() => groupHighlights(hlForSutta, segments), [hlForSutta, segments]);
-  const hlCounts = useMemo(() => highlightCountsByColor(hlForSutta), [hlForSutta]);
-  const autoLabels = useMemo(() => new Set(lists.filter((l) => l.auto).map((l) => l.label)), [lists]);
-
-  function jumpToHighlight(segIndex: number) {
-    scrollRef.current?.querySelector(`[data-seg="${segIndex}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
+  const {
+    segments,
+    hlForSutta,
+    highlightGroups,
+    hlCounts,
+    scrollRef,
+    scrollToSegment: jumpToHighlight,
+    pop,
+    onTextUp,
+    pick,
+    popStop,
+    openPop,
+  } = useSuttaReading(selectedId, 'preview');
+  const autoLabels = useAutoListLabels();
 
   if (!desktop || previewHidden) return null;
 

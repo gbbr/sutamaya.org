@@ -32,7 +32,7 @@ function offsetWithin(seg: HTMLElement, container: Node, containerOffset: number
 }
 
 export function useHighlightPopup(suttaId: string | undefined, highlights: Highlight[]) {
-  const { setHighlightRange } = useUserData();
+  const { setHighlightRange, syncUserData } = useUserData();
   const [pop, setPop] = useState<PopState | null>(null);
 
   const openPop = useCallback((i: number, s: number, e: number, rect: DOMRect, on: string | null) => {
@@ -106,18 +106,26 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
     async (color: string | null) => {
       if (!pop || !suttaId) return;
       // Sequential, not Promise.all: setHighlightRange does an optimistic read-modify-write of
-      // local highlight state plus a full server refetch per call, so overlapping calls for
-      // the same suttaId (different segments of the same selection) could race and clobber
-      // each other's optimistic update. Awaiting them one at a time keeps every call working
-      // off the previous one's already-settled state.
-      for (const r of pop.ranges) {
-        await setHighlightRange(suttaId, r.i, r.s, r.e, color);
+      // local highlight state, so overlapping calls for the same suttaId (different segments of
+      // the same selection) could race and clobber each other's optimistic update. Awaiting
+      // them one at a time keeps every call working off the previous one's already-settled
+      // state. Each call passes `sync: false` so a multi-segment selection triggers one server
+      // sync after the whole batch instead of one per segment (setHighlightRange already syncs
+      // on its own if one of these calls fails, so a failure here just needs logging, not a
+      // second sync).
+      try {
+        for (const r of pop.ranges) {
+          await setHighlightRange(suttaId, r.i, r.s, r.e, color, false);
+        }
+        await syncUserData();
+      } catch (e) {
+        console.error('highlight range save failed', e);
       }
       setPop(null);
       const sel = window.getSelection();
       if (sel) sel.removeAllRanges();
     },
-    [pop, suttaId, setHighlightRange]
+    [pop, suttaId, setHighlightRange, syncUserData]
   );
 
   const close = useCallback(() => setPop(null), []);

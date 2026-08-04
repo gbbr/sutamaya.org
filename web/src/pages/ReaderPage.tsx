@@ -4,11 +4,9 @@ import { X, Menu as MenuIcon } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
-import { useSuttaText } from '../hooks/useSuttaText';
-import { useHighlightPopup } from '../hooks/useHighlightPopup';
-import { useScrollMemory } from '../hooks/useScrollMemory';
+import { useSuttaReading } from '../hooks/useSuttaReading';
+import { useAutoListLabels } from '../hooks/useAutoListLabels';
 import { flatSuttaOrder } from '../lib/corpus';
-import { groupHighlights } from '../lib/highlights';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { lookupWord } from '../lib/dictionary';
 import { SegmentedText } from '../components/SegmentedText';
@@ -26,7 +24,7 @@ interface DictState {
 
 export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus, dictionary } = useCorpus();
-  const { highlights, notes, membership, lists, markVisited } = useUserData();
+  const { notes, membership, markVisited } = useUserData();
   const { theme: themeId, fs, lh, face, allPali } = useReaderPrefs();
 
   const initialPanelTab = new URLSearchParams(location?.search).get('panel') as 'highlights' | 'lists' | 'text' | null;
@@ -38,17 +36,25 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   const [mobile, setMobile] = useState(() => window.innerWidth < 860);
   const tapRef = useRef<{ x: number; y: number } | null>(null);
 
-  const segments = useSuttaText(suttaId);
   const sutta = corpus && suttaId ? corpus.suttas[suttaId] : undefined;
-  const hlForSutta = (suttaId && highlights[suttaId]) || [];
-  const { pop, onTextUp, pick, close: closePop, popStop, openPop } = useHighlightPopup(suttaId, hlForSutta);
-  const scrollRef = useScrollMemory<HTMLDivElement>(suttaId ? `reader:${suttaId}` : null);
-  const highlightGroups = useMemo(() => groupHighlights(hlForSutta, segments), [hlForSutta, segments]);
+  const {
+    segments,
+    hlForSutta,
+    highlightGroups,
+    scrollRef,
+    scrollToSegment,
+    pop,
+    onTextUp,
+    pick,
+    close: closePop,
+    popStop,
+    openPop,
+  } = useSuttaReading(suttaId, 'reader');
   // "Highlights"/"Notes" membership (see server/src/routes/data.js's buildUserData) is redundant
   // here — the highlight gutter and the note preview above already say as much — so they're
   // filtered out of the chip row entirely; unlike `lists`, `membership` only carries labels, not
   // the ListDef.auto flag.
-  const autoLabels = useMemo(() => new Set(lists.filter((l) => l.auto).map((l) => l.label)), [lists]);
+  const autoLabels = useAutoListLabels();
   const suttaLists = useMemo(() => {
     const raw = (suttaId && membership[suttaId]) || [];
     return raw.filter((label) => !autoLabels.has(label));
@@ -113,9 +119,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
 
   function jumpToHighlight(segIndex: number) {
     setPanel(false);
-    requestAnimationFrame(() => {
-      scrollRef.current?.querySelector(`[data-seg="${segIndex}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    });
+    requestAnimationFrame(() => scrollToSegment(segIndex));
   }
 
   function closeReader() {

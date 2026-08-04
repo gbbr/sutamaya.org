@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { db, listsCol, FieldValue } from '../firestore.js';
 import { requireAuth } from '../auth.js';
 import { asyncHandler } from '../asyncHandler.js';
+import { nextPosition } from '../lib/listPositions.js';
 
 export const listsRouter = Router();
 listsRouter.use(requireAuth);
@@ -25,9 +26,17 @@ listsRouter.post(
     const label = ((req.body && req.body.label) || '').trim();
     if (!label) return res.status(400).json({ error: 'List name is required.' });
     const parentId = typeof req.body?.parentId === 'string' ? req.body.parentId : null;
-    const last = await listsCol(req.user.id).orderBy('position', 'desc').limit(1).get();
-    const position = last.empty ? 0 : (last.docs[0].data().position ?? 0) + 1;
-    const ref = await listsCol(req.user.id).add({ label, parentId, position, items: [], createdAt: new Date().toISOString() });
+    const col = listsCol(req.user.id);
+    const ref = col.doc();
+    // Reading the current max position and writing the new doc in one transaction (instead of
+    // two separate calls) keeps two near-simultaneous creates from both computing the same
+    // `max + 1` and landing on colliding positions — Firestore retries the loser once the
+    // winner's write is visible.
+    await db.runTransaction(async (tx) => {
+      const last = await tx.get(col.orderBy('position', 'desc').limit(1));
+      const position = nextPosition(last.docs.map((d) => d.data().position));
+      tx.set(ref, { label, parentId, position, items: [], createdAt: new Date().toISOString() });
+    });
     res.status(201).json({ list: { id: ref.id, label, parentId, items: [] } });
   })
 );
@@ -78,9 +87,18 @@ listsRouter.delete(
     // orphaning them (dangling parentId pointing at a deleted doc) or cascade-deleting them,
     // which would silently destroy list membership data the user didn't ask to remove.
     const parentId = doc.data().parentId ?? null;
-    const children = await listsCol(req.user.id).where('parentId', '==', req.params.id).get();
+    const [children, newSiblings] = await Promise.all([
+      listsCol(req.user.id).where('parentId', '==', req.params.id).get(),
+      // Equality-only, no orderBy, so this doesn't need a composite index — max position is
+      // just computed in memory below, same pattern as the highlight-overlap filter.
+      listsCol(req.user.id).where('parentId', '==', parentId).get(),
+    ]);
+    // Re-parented children keep arriving at their own old positions otherwise, which can
+    // collide with the new parent's existing children (both starting at 0) and leave their
+    // relative order undefined — append them after the new parent's current siblings instead.
+    let position = nextPosition(newSiblings.docs.map((d) => d.data().position));
     const batch = db.batch();
-    children.docs.forEach((child) => batch.update(child.ref, { parentId }));
+    children.docs.forEach((child) => batch.update(child.ref, { parentId, position: position++ }));
     batch.delete(ref);
     await batch.commit();
     res.json({ ok: true });
@@ -118,7 +136,18 @@ listsRouter.put(
     const doc = await ref.get();
     if (!doc.exists) return res.status(404).json({ error: 'not_found' });
     const order = Array.isArray(req.body?.order) ? req.body.order : [];
-    await ref.update({ items: order });
+    // Reconcile against the current stored items instead of blind-replacing: if a sutta was
+    // added (arrayUnion, e.g. from another tab) after the client snapshotted `order`, it won't
+    // be in `order` — append it rather than silently dropping it. Anything removed the same way
+    // is dropped from `order` rather than resurrected.
+    const current = doc.data().items || [];
+    const currentSet = new Set(current);
+    const reconciled = order.filter((id) => currentSet.has(id));
+    const reconciledSet = new Set(reconciled);
+    current.forEach((id) => {
+      if (!reconciledSet.has(id)) reconciled.push(id);
+    });
+    await ref.update({ items: reconciled });
     res.json({ ok: true });
   })
 );

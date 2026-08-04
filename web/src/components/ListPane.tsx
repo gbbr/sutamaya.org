@@ -4,8 +4,10 @@ import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
+import { useAutoListLabels } from '../hooks/useAutoListLabels';
 import { listItemsFor, nodeLabel } from '../lib/corpus';
 import { highlightCountsByColor } from '../lib/highlights';
+import { autoScrollEdge } from '../lib/dragAutoScroll';
 import type { Sutta } from '../lib/types';
 
 interface ListPaneProps {
@@ -34,7 +36,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
   const currentList = !searching ? lists.find((l) => String(l.id) === nodeId) : undefined;
   // "Highlights"/"Notes" membership is redundant here — a row already shows note text and
   // highlight-count circles directly, so the auto lists never appear as chips.
-  const autoLabels = useMemo(() => new Set(lists.filter((l) => l.auto).map((l) => l.label)), [lists]);
+  const autoLabels = useAutoListLabels();
 
   const items = useMemo(
     () => (corpus ? listItemsFor(corpus, nodeId, query, notes, lists, membership) : []),
@@ -51,6 +53,17 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
   const dragIdRef = useRef<string | null>(null);
   const pointerYRef = useRef(0);
   const rafRef = useRef<number | null>(null);
+  // Tracks the window-level pointermove/pointerup/pointercancel listeners registered per-drag
+  // (see onHandlePointerDown) so endDrag can always remove them — set/capture-based tracking
+  // (setPointerCapture) turned out to throw NotFoundError on some mobile browsers even for a
+  // real, active touch pointer, silently aborting the drag before it engaged at all; window
+  // listeners sidestep that failure mode entirely (same approach as TreePane's list-tree drag).
+  const activeDragCleanupRef = useRef<(() => void) | null>(null);
+  // Mirrors `dragOrder` so endDrag can read the live value. The window-level `onUp` listener
+  // that calls endDrag is registered once, at drag-start, so the `endDrag` closure it holds is
+  // fixed to that render — reading the `dragOrder` *state* there would see whatever it was back
+  // at drag-start (null), not the live in-progress order; a ref isn't tied to any one render.
+  const dragOrderRef = useRef<string[] | null>(null);
 
   const displayItems: Array<[string, Sutta]> =
     dragOrder && corpus
@@ -82,60 +95,68 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
       if (insertAt === currentIndex) return order;
       const next = order.filter((x) => x !== id);
       next.splice(insertAt, 0, id);
+      dragOrderRef.current = next;
       return next;
     });
   }
 
   function runDragLoop() {
-    const EDGE = 56;
-    const MAX_SPEED = 16;
     function tick() {
       if (!dragIdRef.current) {
         rafRef.current = null;
         return;
       }
-      const container = scrollRef.current;
-      if (container) {
-        const rect = container.getBoundingClientRect();
-        const y = pointerYRef.current;
-        if (y < rect.top + EDGE) container.scrollTop -= MAX_SPEED * Math.min(1, (rect.top + EDGE - y) / EDGE);
-        else if (y > rect.bottom - EDGE) container.scrollTop += MAX_SPEED * Math.min(1, (y - (rect.bottom - EDGE)) / EDGE);
-      }
+      autoScrollEdge(scrollRef.current, pointerYRef.current);
       updateDragTarget();
       rafRef.current = requestAnimationFrame(tick);
     }
     rafRef.current = requestAnimationFrame(tick);
   }
 
+  function endDrag() {
+    dragIdRef.current = null;
+    activeDragCleanupRef.current?.();
+    activeDragCleanupRef.current = null;
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    rafRef.current = null;
+    // Read the live value via the ref (see dragOrderRef's comment above) rather than committing
+    // inside setDragOrder's updater — an updater must be pure, and reorderListItems triggers a
+    // *different* component's setState (UserDataContext's), which React flags as an invalid
+    // render-phase update if done there.
+    const order = dragOrderRef.current;
+    dragOrderRef.current = null;
+    setDragOrder(null);
+    if (order && currentList) reorderListItems(currentList.id, order);
+  }
+
   function onHandlePointerDown(e: React.PointerEvent, id: string) {
     if (!currentList) return;
     e.preventDefault();
     e.stopPropagation();
-    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+    const pointerId = e.pointerId;
     dragIdRef.current = id;
     pointerYRef.current = e.clientY;
-    setDragOrder(currentList.items.slice());
+    const initialOrder = currentList.items.slice();
+    dragOrderRef.current = initialOrder;
+    setDragOrder(initialOrder);
     runDragLoop();
-  }
-  function onHandlePointerMove(e: React.PointerEvent) {
-    if (!dragIdRef.current) return;
-    pointerYRef.current = e.clientY;
-  }
-  function endDrag() {
-    dragIdRef.current = null;
-    if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    rafRef.current = null;
-    // Read the live value directly rather than committing inside setDragOrder's updater — an
-    // updater must be pure, and reorderListItems triggers a *different* component's setState
-    // (UserDataContext's), which React flags as an invalid render-phase update if done there.
-    const order = dragOrder;
-    setDragOrder(null);
-    if (order && currentList) reorderListItems(currentList.id, order);
-  }
-  function onHandlePointerUp(e: React.PointerEvent) {
-    if (!dragIdRef.current) return;
-    (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
-    endDrag();
+
+    function onMove(ev: PointerEvent) {
+      if (ev.pointerId !== pointerId) return;
+      pointerYRef.current = ev.clientY;
+    }
+    function onUp(ev: PointerEvent) {
+      if (ev.pointerId !== pointerId) return;
+      endDrag();
+    }
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+    window.addEventListener('pointercancel', onUp);
+    activeDragCleanupRef.current = () => {
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+      window.removeEventListener('pointercancel', onUp);
+    };
   }
 
   // Bails out of an in-flight drag if the list itself changes out from under it (e.g. a deep
@@ -144,6 +165,17 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
     if (dragIdRef.current) endDrag();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nodeId]);
+
+  // Same, but for the whole component unmounting mid-drag (e.g. a route change fires while a
+  // pointer is still down) — the effect above only fires on a `nodeId` change, not on unmount,
+  // so without this the rAF loop's only exit condition (`!dragIdRef.current`) never fires and it
+  // runs forever against a detached pane.
+  useEffect(() => {
+    return () => {
+      if (dragIdRef.current) endDrag();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (activeIndex >= 0) rowRefs.current[activeIndex]?.scrollIntoView({ block: 'nearest' });
@@ -258,9 +290,6 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
                   className={`absolute right-3 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center rounded ${on ? 'text-[#FBFAF7]/70' : 'text-ink/40'}`}
                   style={{ touchAction: 'none', cursor: 'grab' }}
                   onPointerDown={(e) => onHandlePointerDown(e, id)}
-                  onPointerMove={onHandlePointerMove}
-                  onPointerUp={onHandlePointerUp}
-                  onPointerCancel={onHandlePointerUp}
                 >
                   <GripVertical size={16} strokeWidth={2} />
                 </span>
