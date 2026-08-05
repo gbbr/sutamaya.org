@@ -103,28 +103,56 @@ translation).
 
 ```
 users/{uid}                          { email, googleId, name, picture, createdAt }
-users/{uid}/lists/{listId}           { label, parentId, position, items: string[] }   — items is
-                                                                                an ordered array
-                                                                                of sutta uids, not
-                                                                                a subcollection;
+users/{uid}/lists/{listId}           { label, parentId, kind, position, items: string[] }   —
+                                                                                `kind` is
+                                                                                'list' (holds
+                                                                                suttas, can't
+                                                                                have children) or
+                                                                                'group'
+                                                                                ("ListGroup": can
+                                                                                hold other
+                                                                                lists/groups,
+                                                                                `items` always []);
+                                                                                a doc with no
+                                                                                `kind` field
+                                                                                defaults to 'list'
+                                                                                (`serializeList` in
+                                                                                routes/lists.js);
+                                                                                items is an
+                                                                                ordered array of
+                                                                                sutta uids, not a
+                                                                                subcollection;
                                                                                 parentId is null
                                                                                 for a top-level
-                                                                                list, otherwise
-                                                                                another list's id
-                                                                                (one level of
-                                                                                nesting isn't
-                                                                                enforced — the
-                                                                                client just
+                                                                                entry, otherwise
+                                                                                another doc's id —
+                                                                                and if non-null,
+                                                                                that doc must be a
+                                                                                group, enforced
+                                                                                server-side
+                                                                                (`invalidParentReason`
+                                                                                in
+                                                                                routes/lists.js) on
+                                                                                every create/
+                                                                                reparent/reorder;
+                                                                                nesting depth
+                                                                                itself isn't capped
+                                                                                — the client just
                                                                                 renders whatever
-                                                                                depth exists);
+                                                                                depth exists;
                                                                                 position orders
-                                                                                siblings (lists
+                                                                                siblings (docs
                                                                                 sharing the same
                                                                                 parentId), not the
                                                                                 whole collection
 users/{uid}/notes/{suttaId}          { text, updatedAt }        — doc ID *is* the sutta uid
 users/{uid}/highlights/{highlightId} { suttaId, i, s, e, color, createdAt }
-users/{uid}/visited/{suttaId}        { visitedAt }              — doc ID *is* the sutta uid
+users/{uid}/visited/{suttaId}        { visitedAt }              — doc ID *is* the sutta uid;
+                                                                   written once the reader has
+                                                                   stayed open on that sutta for
+                                                                   at least 5% of its estimated
+                                                                   reading time (`sutta.min`,
+                                                                   ReaderPage's dwell-timer effect)
 ```
 
 `membership` (sutta → list labels, what the frontend actually renders as chips) isn't stored —
@@ -212,9 +240,44 @@ that header will look like broken auth (cookie silently not persisted) — it is
   entered, so it's correct from a search result or a deep link too.
 - **`<StrictMode>` is deliberately not used** (see `main.tsx`) — `@reach/router`'s `<Redirect>`
   relies on class-lifecycle timing (`componentDidMount` → `Promise.resolve().then(navigate)`)
-  that React 18's dev-mode double-invoking breaks, so `/` → `/browse/mn` silently never fired
+  that React 18's dev-mode double-invoking breaks, so `/` → `/browse/dn` silently never fired
   under StrictMode. Confirmed by bisecting with headless Chrome + CDP screenshots during
   development. If you re-enable StrictMode, re-test every `navigate()`-on-mount path.
+- Keyboard nav in `LibraryPage`: Space toggles the preview pane (only once `desktop` — see
+  `LayoutContext`, `w >= 880` is the same breakpoint `PreviewPane` itself mounts at); once a
+  preview is open, Left/Right step the *whole corpus's* canonical order (`flatSuttaOrder`, same
+  as the reader's own Prev/Next) and Enter opens the previewed sutta into the full reader —
+  Left/Right/Enter all act on the previewed sutta (`suttaId`, the route's own selection), the only
+  keyboard-addressable "current" item in this pane. Stepping past a category boundary re-derives
+  `nodeId` from the landed-on sutta's own corpus node every time (`corpus.suttas[id].node`), the
+  same as clicking it in the tree would — that's what makes the tree pane (and the list pane's
+  contents) follow along and expand/scroll to the right place on the jump, including away from a
+  list into the browse tree if that's where the stepped-to sutta actually lives.
+- Closing the reader (the X button or Escape) returns to the exact pane/nodeId/scroll position it
+  was opened from, not just the sutta's bare corpus location — `LibraryPage`'s `onOpen`/
+  `onOpenReader` and `PreviewPane`'s "Open" button pass the current `/browse/...` URL as router
+  `state: { from }` on `navigate()`; `ReaderPage` reads `location.state.from` and re-passes it
+  through its own `navigate()` calls (Prev/Next, its search overlay) so it survives however many
+  suttas the reader visits before closing. Falls back to `/browse/{sutta.node}/{suttaId}` for a
+  direct/bookmarked link to `/read/:suttaId`, which has no such origin.
+- Search — both `TreePane`'s own (the `/` shortcut) and the reader's `ReaderSearchOverlay` — goes
+  through the same `searchCorpus()` (`lib/corpus.ts`), which is diacritic- and case-insensitive
+  (NFD-normalizes then strips combining marks, i.e. `̀`–`ͯ`, before lowercasing both
+  query and haystack) so typing plain "a"/"n" matches Pali "ā"/"ñ" etc.
+- `components/Tooltip.tsx` — a small custom tooltip (hover/focus, ~350ms delay) used in place of
+  the native `title` attribute on TreePane/ListPane/PreviewPane's icon-only buttons, since `title`
+  renders as inconsistent OS chrome that can't be styled. Portaled to `<body>` and positioned from
+  the trigger's own `getBoundingClientRect()` (not CSS `position:absolute` against a wrapper) so
+  it isn't clipped by a pane's own scroll `overflow`. Every button converted this way also picked
+  up an `aria-label` in place of the removed `title`, so the accessible name isn't lost.
+- Escape closes the nearest thing there is to close — the reader's word-lookup dock, then its side
+  panel, then the reader itself (`ReaderPage`); the Settings page (`navigate(-1)`, same as its
+  "Back" button). Reader Escape handling runs *before* the usual input/textarea bail (unlike every
+  other reader shortcut) so it still works while a text field inside the panel has focus — e.g.
+  the note textarea, which has no Escape handling of its own; a field that *does* handle Escape
+  itself first (`ListMembershipPicker`'s search/create input, which clears nesting-mode/draft
+  before actually closing) calls `stopPropagation()` so the reader's own handler doesn't also fire
+  on the same keypress and skip past that first step.
 
 ## Offline strategy
 
@@ -233,10 +296,20 @@ cached within seconds regardless). `/api/*` is `NetworkOnly` — user data is ne
 - The reader's "change translation source" control is a static label ("Sujato (2018)") —
   explicitly out of scope for "Fidelity" (see git history for `design/README.md`, since removed
   from the working tree), since this dataset only has one English translation per collection.
-- Lists support nesting (folder-like, via `parentId`), rename, delete (children re-parent up
-  one level rather than being orphaned), and reordering — both of sibling lists and of a list's
-  own suttas. `ListPane` (a list's own suttas) and `TreePane`'s `ListRow` (the list tree itself,
-  reorder/nest) both drive this via the same native Pointer Events approach (touch and mouse
-  alike, with live reordering and edge auto-scroll) — not HTML5 drag-and-drop, which doesn't
-  fire reliably on touch; `TreePane` additionally offers button controls (rename/delete/move) as
-  an always-works alternative to dragging.
+- "My lists" is two kinds of entry, both `ListDef`s distinguished by `kind` (see the Firestore
+  schema above): a plain **list** holds suttas (`items`) and can't have children; a **group**
+  ("ListGroup") is the reverse — it can only contain other lists/groups and can never hold items
+  itself, enforced both server-side (`invalidParentReason` in `routes/lists.js`) and client-side
+  (`TreePane`'s drag-and-drop only offers the "nest inside" drop zone over a group row, and only
+  a group row gets a child-creating "+"; see `isValidDrop`). The "+" next to "My lists" itself
+  only ever creates a top-level group — the sole way to create a plain list is the "+" on a
+  group's own row (or, in the reader's `ListMembershipPicker`, typing a name that doesn't exist
+  yet offers creating either a list or a group directly, list creation there is the one path that
+  can still land a list at the top level). Rename (double-click a row's name, or the pencil
+  button), delete (children re-parent up one level rather than being orphaned), and reordering
+  (both of siblings and of a list's own suttas) all work the same regardless of kind. `ListPane`
+  (a list's own suttas) and `TreePane`'s `ListRow` (the list tree itself, reorder/nest) both drive
+  reordering via the same native Pointer Events approach (touch and mouse alike, with live
+  reordering and edge auto-scroll) — not HTML5 drag-and-drop, which doesn't fire reliably on
+  touch; `TreePane` additionally offers button controls (rename/delete/move) as an always-works
+  alternative to dragging.

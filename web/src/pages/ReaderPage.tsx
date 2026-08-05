@@ -29,10 +29,16 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   const { theme: themeId, fs, lh, face, allPali } = useReaderPrefs();
 
   const initialPanelTab = new URLSearchParams(location?.search).get('panel') as 'highlights' | 'lists' | 'text' | null;
+  // Where to return to on close — the exact pane/nodeId/scroll position the reader was opened
+  // from (see LibraryPage's onOpen/onOpenReader and PreviewPane's "Open" button), not just the
+  // sutta's bare corpus location. Falls back to that bare location for a direct/bookmarked link
+  // to /read/:suttaId, which has no such origin.
+  const from = (location?.state as { from?: string } | undefined)?.from;
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
   const [dict, setDict] = useState<DictState | null>(null);
   const [panel, setPanel] = useState(!!initialPanelTab);
   const [tab, setTab] = useState<'highlights' | 'lists' | 'text'>(initialPanelTab || 'highlights');
+  const [noteFocusSignal, setNoteFocusSignal] = useState(0);
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobile, setMobile] = useState(() => window.innerWidth < 860);
   const tapRef = useRef<{ x: number; y: number } | null>(null);
@@ -73,10 +79,21 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   const theme = READER_THEMES[themeId];
 
   useEffect(() => {
-    if (suttaId) markVisited(suttaId);
     setOpenSegs({});
     setDict(null);
-  }, [suttaId, markVisited]);
+  }, [suttaId]);
+
+  // A sutta only counts as "visited" once the reader has actually stayed open on it for a
+  // meaningful fraction of its estimated reading time — marking it the instant it opens (the old
+  // behavior) meant a single Prev/Next flick-through marked everything it passed as read, making
+  // the "read" checkmark (ListPane, PreviewPane) not mean much. Cancelled (never marked) if the
+  // sutta changes — Prev/Next, closing, a deep link elsewhere — before the dwell time elapses.
+  useEffect(() => {
+    if (!suttaId || !sutta) return;
+    const dwellMs = Math.max(1000, sutta.min * 60 * 1000 * 0.05);
+    const timer = window.setTimeout(() => markVisited(suttaId), dwellMs);
+    return () => window.clearTimeout(timer);
+  }, [suttaId, sutta, markVisited]);
 
   useEffect(() => {
     const onResize = () => setMobile(window.innerWidth < 860);
@@ -94,7 +111,9 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     if (!suttaId) return;
     const i = siblingIds.indexOf(suttaId);
     const next = siblingIds[Math.min(siblingIds.length - 1, Math.max(0, i + dir))];
-    if (next && next !== suttaId) navigate(`/read/${encodeURIComponent(next)}`);
+    // Carries `from` forward so closing after stepping through several suttas still returns to
+    // wherever the reader was originally opened from, not the last-stepped sutta's own location.
+    if (next && next !== suttaId) navigate(`/read/${encodeURIComponent(next)}`, { state: { from } });
   }
 
   // Swipe-left/right to go to the next/prev sutta on mobile. This has to bypass React's own
@@ -162,15 +181,23 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       // bail out before even the input/textarea tag check below, since a click on a result row
       // (not the input) would otherwise let these fall through to the reader's own shortcuts.
       if (searchOpen) return;
+      // Escape is handled before the input/textarea bail below (unlike every other shortcut
+      // here) — it's the "leave this" key even mid-edit (e.g. the highlights panel's own note
+      // textarea, which has no Escape handling of its own), not a text-insertion key like '/' or
+      // 'h'/'l'/'n' that would otherwise land in whatever's focused. A field with its own
+      // graduated Escape behavior (see ListMembershipPicker) calls stopPropagation() so this
+      // doesn't also fire on the same keypress and skip past its first step.
+      if (e.key === 'Escape') {
+        if (dict) setDict(null);
+        else if (panel) setPanel(false);
+        else closeReader();
+        return;
+      }
       const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
       if (tag === 'input' || tag === 'textarea') return;
       if (e.key === '/') {
         e.preventDefault();
         setSearchOpen(true);
-      } else if (e.key === 'Escape') {
-        if (dict) setDict(null);
-        else if (panel) setPanel(false);
-        else closeReader();
       } else if (e.key === 'ArrowLeft') step(-1);
       else if (e.key === 'ArrowRight') step(1);
       else if (e.key.toLowerCase() === 'h') {
@@ -184,6 +211,11 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
         e.preventDefault();
         setTab('lists');
         setPanel(true);
+      } else if (e.key.toLowerCase() === 'n') {
+        e.preventDefault();
+        setTab('highlights');
+        setPanel(true);
+        setNoteFocusSignal((s) => s + 1);
       }
     }
     window.addEventListener('keydown', onKey);
@@ -197,13 +229,14 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   }
 
   function closeReader() {
-    if (sutta) navigate(`/browse/${sutta.node}/${suttaId}`);
+    if (from) navigate(from);
+    else if (sutta) navigate(`/browse/${sutta.node}/${suttaId}`);
     else navigate('/');
   }
 
   function onSearchOpenSutta(id: string) {
     setSearchOpen(false);
-    navigate(`/read/${encodeURIComponent(id)}`);
+    navigate(`/read/${encodeURIComponent(id)}`, { state: { from } });
   }
 
   function onWordClick(raw: string) {
@@ -355,6 +388,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           segments={segments}
           onClose={() => setPanel(false)}
           onJumpToHighlight={jumpToHighlight}
+          noteFocusSignal={noteFocusSignal}
         />
       )}
 

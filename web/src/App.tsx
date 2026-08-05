@@ -18,7 +18,7 @@ function Routes() {
   if (loading) return <Splash />;
   return (
     <Router style={{ height: '100%' }}>
-      <Redirect from="/" to="/browse/mn" noThrow />
+      <Redirect from="/" to="/browse/dn" noThrow />
       {/* One route element (not two) so /browse/:nodeId and /browse/:nodeId/:suttaId share the
           same LibraryPage instance — see the comment on `suttaId` in LibraryPage.tsx for why:
           two separate route elements here would remount LibraryPage (and every pane's scroll
