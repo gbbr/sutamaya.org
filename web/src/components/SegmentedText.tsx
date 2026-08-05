@@ -201,7 +201,7 @@ export function SegmentedText({
             {showNotes && seg.note && openNotes[i] && (
               <p
                 className="animate-fadeUp"
-                style={{ margin: '6px 0 0', fontSize: Math.max(11, fontSize - 3), lineHeight: 1.5, fontFamily: face, color: theme.dim }}
+                style={{ margin: '0 0 6px', fontSize: Math.max(11, fontSize - 3), lineHeight: 1.5, fontFamily: face, color: theme.dim }}
                 // Notes are static, build-time-controlled data (see build-corpus.mjs's
                 // cleanNote()) carrying inline `<i>`/`<em>`/`<b>`/`<span>` formatting — not
                 // user/runtime content, so rendering the markup here is the same trust level as
