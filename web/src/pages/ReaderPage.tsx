@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { X, Menu as MenuIcon } from 'lucide-react';
+import { X, Menu as MenuIcon, ChevronRight } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { useSuttaReading } from '../hooks/useSuttaReading';
-import { flatSuttaOrder } from '../lib/corpus';
+import { flatSuttaOrder, breadcrumbFor } from '../lib/corpus';
 import { flattenListTree, resolveListById } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
@@ -64,6 +64,10 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
         return { id, list, breadcrumb };
       });
   }, [suttaId, membership, flatLists]);
+  // Where this sutta lives in the browse tree (nikaya, any intermediate groups, down to its own
+  // leaf group) — shown above the title, each segment navigating via /browse/{id}, which already
+  // expands every ancestor and scrolls to it (see TreePane's useScrollToNode).
+  const breadcrumb = useMemo(() => (corpus && sutta ? breadcrumbFor(corpus, sutta.node) : []), [corpus, sutta]);
 
   const theme = READER_THEMES[themeId];
 
@@ -206,6 +210,18 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
 
       <div ref={scrollRef} className="sc flex-1" style={{ padding: '44px 22px 120px' }}>
         <div style={{ maxWidth: measureWidth, margin: '0 auto' }}>
+          {breadcrumb.length > 0 && (
+            <nav className="font-sans flex flex-wrap items-center gap-1" style={{ fontSize: 12, marginBottom: 7, color: theme.dim }}>
+              {breadcrumb.map((b, i) => (
+                <span key={b.id} className="flex items-center gap-1">
+                  {i > 0 && <ChevronRight size={11} strokeWidth={2} />}
+                  <button className="hover:underline" onClick={() => navigate(`/browse/${encodeURIComponent(b.id)}`)}>
+                    {b.label}
+                  </button>
+                </span>
+              ))}
+            </nav>
+          )}
           <h1 className="font-serif" style={{ margin: 0, fontSize: Math.round(fs * 1.72), fontWeight: 600, lineHeight: 1.12, letterSpacing: '-.015em' }}>
             {sutta.en}
           </h1>

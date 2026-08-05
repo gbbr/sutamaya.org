@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { navigate } from '@reach/router';
-import { BookOpen, Eye, PanelRightClose } from 'lucide-react';
+import { BookOpen, Eye, PanelRightClose, ChevronRight } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { useSuttaReading } from '../hooks/useSuttaReading';
+import { breadcrumbFor } from '../lib/corpus';
 import { SegmentedText } from './SegmentedText';
 import { HighlightPopup } from './HighlightPopup';
 import { HighlightGutter } from './HighlightGutter';
@@ -56,6 +57,9 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
 
   const flatLists = flattenListTree(lists);
   const breadcrumbForId = (id: string) => resolveListById(id, flatLists).breadcrumb;
+  // Where this sutta lives in the browse tree, shown above the title — see the matching
+  // comment in ReaderPage.tsx.
+  const corpusBreadcrumb = corpus ? breadcrumbFor(corpus, sutta.node) : [];
   // "Highlights"/"Notes" membership is redundant here — the highlight-count circles and note
   // text above already say as much — so, like ListPane and the reader, the auto lists are
   // excluded from the chip row entirely.
@@ -81,6 +85,18 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
         </button>
       </header>
       <div ref={scrollRef} className="sc flex-1 px-[34px] pt-[30px] pb-[60px]">
+        {corpusBreadcrumb.length > 0 && (
+          <nav className="font-sans flex flex-wrap items-center gap-1 text-[11.5px] text-ink/45 mb-2">
+            {corpusBreadcrumb.map((b, i) => (
+              <span key={b.id} className="flex items-center gap-1">
+                {i > 0 && <ChevronRight size={10} strokeWidth={2} />}
+                <button className="hover:underline hover:text-ink/70" onClick={() => navigate(`/browse/${encodeURIComponent(b.id)}`)}>
+                  {b.label}
+                </button>
+              </span>
+            ))}
+          </nav>
+        )}
         <div className="text-[27px] font-semibold leading-[1.15] tracking-[-.015em] font-serif">{sutta.en}</div>
         <div className="text-[16px] mt-1 italic font-serif" style={{ color: '#8A6A3B' }}>
           {sutta.pali}
