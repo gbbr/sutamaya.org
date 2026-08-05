@@ -28,7 +28,7 @@ interface ListPaneProps {
 export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenReader, visible = true }: ListPaneProps) {
   const { corpus } = useCorpus();
   const { lists, membership, notes, highlights, visited, reorderListItems } = useUserData();
-  const { mobile, desktop, twoPane, previewHidden, showPreview, paneW } = useLayout();
+  const { mobile, desktop, previewHidden, showPreview, paneW } = useLayout();
   const scrollRef = useScrollMemory<HTMLDivElement>(`list:${query.trim() ? 'search' : nodeId || 'none'}`, visible);
   const itemRowRefs = useRef<Map<string, HTMLDivElement>>(new Map());
 
@@ -236,11 +236,11 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
         }
       >
         {displayItems.map(([id, s]) => {
-          // The open preview/mobile selection gets a subtle tint + left accent stripe — replaced
-          // the old strong solid-orange fill (see git history), now the only row-highlight state
-          // left now that keyboard up/down row navigation is gone (Left/Right steps the preview
-          // itself instead — see LibraryPage).
-          const on = (mobile || (desktop && !previewHidden && !twoPane)) && id === selectedId;
+          // Highlighted (subtle tint + left accent stripe) whenever this row is the sutta the
+          // current URL ends in (`/browse/:nodeId/:suttaId`), regardless of whether a preview
+          // widget happens to be showing it — matches LibraryPage's Left/Right/Enter, which key
+          // off the same `suttaId` rather than the preview pane's visibility.
+          const on = id === selectedId;
           const note = notes[id];
           const chips = (membership[id] || [])
             .filter((c) => !AUTO_LIST_IDS.has(c))

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
 import { useLayout } from '../context/LayoutContext';
 import { useCorpus } from '../context/CorpusContext';
+import { useUserData } from '../context/UserDataContext';
 import { flatSuttaOrder } from '../lib/corpus';
 import { TreePane } from '../components/TreePane';
 import { ListPane } from '../components/ListPane';
@@ -14,9 +15,25 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
   // pane's scroll position) across selecting/deselecting a preview sutta, instead of the
   // full remount+state-loss that two separate <LibraryPage> route elements caused (reach-router
   // auto-keys route children by position, so switching which one matched was a key change).
-  const suttaId = rawSuttaId || undefined;
   const { mobile, desktop, previewHidden, showPreview, hidePreview, dragTree, resetTree, dragList, resetList } = useLayout();
   const { corpus } = useCorpus();
+  const { lists } = useUserData();
+  // @reach/router defers the actual route-param update by a microtask + rAF after navigate()
+  // (see LocationProvider.componentDidMount in @reach/router/lib/history.js), so reading
+  // `rawSuttaId`/`routeNodeId` straight from route props here would render one frame with
+  // whatever *new* local UI state a navigation handler flips synchronously (`view`, or
+  // Left/Right's `nodeId` below) paired with the *stale* id from props — on mobile that's a
+  // visible flash of the previous/empty list before the correct one appears (the "flickers,
+  // needs a second tap" bug); for Left/Right specifically it read as the step not "continuing"
+  // from wherever you already were, since the highlighted row would revert to the old sutta for
+  // a frame before catching up. Mirroring both ids into local state, set synchronously alongside
+  // whatever else a given navigation changes, keeps every render consistent; the effects below
+  // just keep them truthful for back/forward/deep-link navigation that doesn't go through one of
+  // this page's own handlers.
+  const [suttaId, setSuttaId] = useState(rawSuttaId || undefined);
+  useEffect(() => {
+    setSuttaId(rawSuttaId || undefined);
+  }, [rawSuttaId]);
   // `/read/:suttaId` is a genuinely separate route (full-screen reader, not one of this page's
   // panes), so closing it back to `/browse/:nodeId/:suttaId` fully remounts LibraryPage — `view`
   // can't just default to 'tree' here, or mobile would show the browse tree instead of the sutta
@@ -26,14 +43,6 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
   const [view, setView] = useState<'tree' | 'list'>(suttaId ? 'list' : 'tree');
   const [query, setQuery] = useState('');
 
-  // @reach/router defers the actual route-param update by a microtask + rAF after navigate()
-  // (see LocationProvider.componentDidMount in @reach/router/lib/history.js), so reading
-  // `routeNodeId` straight from route props here would render one frame with the *new* `view`
-  // ('list', flipped synchronously below) paired with the *stale* nodeId — on mobile that's a
-  // visible flash of the previous/empty list before the correct one appears, which is the
-  // "flickers, needs a second tap" bug. Mirroring the target id into local state synchronously
-  // alongside `view` keeps that render consistent; the effect just keeps it truthful for
-  // back/forward/deep-link navigation that doesn't go through onSelectNode.
   const [nodeId, setNodeId] = useState(routeNodeId);
   useEffect(() => {
     setNodeId(routeNodeId);
@@ -43,11 +52,13 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
     setQuery('');
     setView('list');
     setNodeId(id);
+    setSuttaId(undefined);
     navigate(`/browse/${encodeURIComponent(id)}`);
   }
 
   function onOpen(id: string) {
     if (desktop && !previewHidden) {
+      setSuttaId(id);
       navigate(`/browse/${encodeURIComponent(nodeId || '')}/${encodeURIComponent(id)}`);
     } else {
       // `from` round-trips through the reader's own navigate() calls (Prev/Next, its search
@@ -70,49 +81,69 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
   // rather than stopping at its edge.
   const suttaOrder = useMemo(() => (corpus ? flatSuttaOrder(corpus) : []), [corpus]);
 
-  // Space toggles the preview pane, and Left/Right/Enter only act once one is actually open (see
-  // `desktop && !previewHidden` throughout) — there's no more keyboard row-highlighting to drive
-  // them otherwise (see the removed useListNav), so the previewed sutta (`suttaId`, the route's
-  // own selection) is the only well-defined "current" item left to step from or open.
+  // Space toggles the preview pane (still desktop-only — it's the only thing that ever mounts
+  // one). Left/Right/Enter key off `suttaId` itself (whether the URL ends in a sutta, i.e.
+  // `/browse/:nodeId/:suttaId`) rather than the preview pane's visibility — a sutta can be
+  // "selected" this way with the preview hidden too (e.g. it was hidden after selecting one, or
+  // the reader closed back to a mobile/two-pane view via its `from` state — see ReaderPage), and
+  // that URL sutta is the only well-defined "current" item to step from or open regardless of
+  // whether a preview widget happens to be showing it (see ListPane's matching `on` highlight).
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      if (!desktop) return;
       const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
       if (tag === 'input' || tag === 'textarea') return;
       if (e.key === ' ') {
+        if (!desktop) return;
         e.preventDefault();
         if (previewHidden) showPreview();
         else hidePreview();
         return;
       }
-      if (previewHidden || !suttaId || !corpus) return;
+      if (!suttaId || !corpus) return;
       if (e.key === 'Enter') {
         e.preventDefault();
         onOpenReader(suttaId);
         return;
       }
       if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      const dir = e.key === 'ArrowLeft' ? -1 : 1;
+      // Browsing a user list, Left/Right stays inside it — stepping through *that* list's own
+      // items in its own stored order, never touching `nodeId`, and stopping dead at either end
+      // rather than spilling into the canonical corpus order. Jumping away to wherever a sutta
+      // happens to live in the tree would defeat the point of viewing a curated list at all (its
+      // whole reason to exist is a different order/subset than the corpus's own).
+      const currentList = lists.find((l) => l.id === nodeId);
+      if (currentList) {
+        const items = currentList.items;
+        const i = items.indexOf(suttaId);
+        if (i === -1) return;
+        const next = items[i + dir];
+        if (!next) return;
+        e.preventDefault();
+        setSuttaId(next);
+        navigate(`/browse/${encodeURIComponent(nodeId || '')}/${encodeURIComponent(next)}`);
+        return;
+      }
+      // Otherwise (browsing the corpus tree itself), step through the whole corpus's canonical
+      // order instead, which can land on a sutta outside whatever's currently browsed (a
+      // different category) — always re-deriving `nodeId` from the landed-on sutta's own corpus
+      // node, the same way clicking it in the tree would, is what makes the tree pane (and the
+      // list pane's contents) follow along and expand/scroll to the right place on that jump.
       const i = suttaOrder.indexOf(suttaId);
       if (i === -1) return;
-      const dir = e.key === 'ArrowLeft' ? -1 : 1;
       const next = suttaOrder[Math.min(suttaOrder.length - 1, Math.max(0, i + dir))];
       if (!next || next === suttaId) return;
       e.preventDefault();
-      // Stepping through the canonical order (not the current pane's own item order) can land on
-      // a sutta outside whatever's currently browsed (a different category, or not in the list
-      // being viewed at all) — always re-deriving `nodeId` from the landed-on sutta's own corpus
-      // node, the same way clicking it in the tree would, is what makes the tree pane (and the
-      // list pane's contents) follow along and expand/scroll to the right place on a category
-      // jump, instead of leaving them pointed at wherever browsing started.
       const newNodeId = corpus.suttas[next].node;
       setQuery('');
       setNodeId(newNodeId);
+      setSuttaId(next);
       navigate(`/browse/${encodeURIComponent(newNodeId)}/${encodeURIComponent(next)}`);
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [desktop, previewHidden, suttaId, suttaOrder, corpus]);
+  }, [desktop, previewHidden, suttaId, suttaOrder, corpus, lists, nodeId]);
 
   return (
     <div data-component="LibraryPage" className="flex overflow-hidden bg-paper h-full">

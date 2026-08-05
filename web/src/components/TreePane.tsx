@@ -553,6 +553,13 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
   const [overZone, setOverZone] = useState<DropZone | null>(null);
   const listInput = useRef<HTMLInputElement | null>(null);
   const searchInput = useRef<HTMLInputElement>(null);
+  // Up/down (and Enter to open) over the search results list only — see the keydown effect
+  // below. `searchActiveIndexRef` mirrors the state so the effect's Enter branch always reads
+  // the live index without needing to resubscribe its listener on every arrow keypress.
+  const [searchActiveIndex, setSearchActiveIndex] = useState(-1);
+  const searchActiveIndexRef = useRef(-1);
+  searchActiveIndexRef.current = searchActiveIndex;
+  const hitRefs = useRef<Array<HTMLButtonElement | null>>([]);
   // Pointer Events drive the list-tree drag (mirrors ListPane's sutta-reorder drag, so touch
   // works the same way here too — HTML5 drag-and-drop doesn't fire reliably on touch browsers).
   // These all need to be refs, not just state: onRowPointerDown registers its window-level
@@ -849,8 +856,38 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
   const hits = useMemo(() => (corpus && searching ? searchCorpus(corpus, query, notes) : []), [corpus, query, searching, notes]);
 
   useEffect(() => {
+    setSearchActiveIndex(-1);
+  }, [query]);
+
+  useEffect(() => {
+    if (searchActiveIndex >= 0) hitRefs.current[searchActiveIndex]?.scrollIntoView({ block: 'nearest' });
+  }, [searchActiveIndex]);
+
+  useEffect(() => {
     function onKey(e: globalThis.KeyboardEvent) {
       const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
+      // Up/down/Enter over the search hits work while the search input itself has focus (the
+      // normal state while results are showing) — but not while some *other* input/textarea has
+      // focus. '/' and 'x' below are unrelated shortcuts and keep the plain bail: typing either
+      // character into the search box (or any input) must never re-trigger them.
+      const isSearchInput = e.target === searchInput.current;
+      if (searching && hits.length > 0 && !(tag === 'textarea' || (tag === 'input' && !isSearchInput))) {
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          setSearchActiveIndex((i) => Math.min(hits.length - 1, i + 1));
+          return;
+        }
+        if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          setSearchActiveIndex((i) => Math.max(0, i - 1));
+          return;
+        }
+        if (e.key === 'Enter' && searchActiveIndexRef.current >= 0 && searchActiveIndexRef.current < hits.length) {
+          e.preventDefault();
+          onOpenSutta(hits[searchActiveIndexRef.current].id);
+          return;
+        }
+      }
       if (tag === 'input' || tag === 'textarea') return;
       if (e.key === '/') {
         e.preventDefault();
@@ -863,7 +900,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [user]);
+  }, [user, searching, hits, onOpenSutta]);
 
   // The target row (corpus chapter or list) often isn't in the DOM yet on the same render
   // nodeId changed on — the ancestor-expand effects above (and, for a list, the paneView switch
@@ -1028,10 +1065,13 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
             <div className="px-[18px] pt-2 pb-1 font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">
               {hits.length} {hits.length === 1 ? 'result' : 'results'}
             </div>
-            {hits.map(({ id, sutta }) => (
+            {hits.map(({ id, sutta }, i) => (
               <button
                 key={id}
-                className="row flex flex-col w-full text-left gap-[1px] px-[18px] py-[11px] border-b border-ink/[.07]"
+                ref={(el) => {
+                  hitRefs.current[i] = el;
+                }}
+                className={`row flex flex-col w-full text-left gap-[1px] px-[18px] py-[11px] border-b border-ink/[.07] ${i === searchActiveIndex ? 'bg-ink/[.06]' : ''}`}
                 onClick={() => onOpenSutta(id)}
               >
                 <span>
