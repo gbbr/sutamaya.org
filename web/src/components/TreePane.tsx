@@ -91,11 +91,17 @@ type DropZone = 'before' | 'after' | 'inside';
 // One row of the "My lists" tree — a list can nest other lists as children (folder-like), with
 // button-based rename/delete/move controls that always work (touch included), plus Pointer
 // Events drag-and-drop reordering/nesting when "reorder mode" (see the toggle by "My lists") is
-// on — the whole row is the drag surface (not just a handle), so a press-and-drag from anywhere
-// on it engages once it clears a small movement threshold (a plain tap still reaches the row's
-// own button clicks normally). Dropping on the top/bottom quarter of a row reorders as a
-// sibling, the middle half nests it as a child (see TreePane's updateDropTarget for the zone
-// math) — mirrors ListPane's sutta-reorder drag, so touch works the same way in both.
+// on. The drag surface is a dedicated handle on the row's left edge (icon + generous invisible
+// padding, ~44px touch target), not the whole row — an earlier version made the entire row
+// touchAction:none while in reorder mode, which also blocked vertical scrolling of the list
+// pane itself (you couldn't scroll past a row without dragging it) and needed userSelect:none
+// smeared across the whole row to stop text selection. Confining touchAction/userSelect to the
+// handle keeps the rest of the row (title, member count, options button) scrollable and
+// selectable as normal, matching ListPane's sutta-reorder grip. A press-and-drag on the handle
+// engages once it clears a small movement threshold (a plain tap still reaches the handle's
+// no-op — nothing else lives there — harmlessly). Dropping on the top/bottom quarter of a row
+// reorders as a sibling, the middle half nests it as a child (see TreePane's updateDropTarget
+// for the zone math).
 function ListRow({
   list,
   depth,
@@ -191,19 +197,26 @@ function ListRow({
           opacity: dragging ? 0.4 : 1,
           background: isOver && overZone === 'inside' ? 'rgba(138,106,59,.16)' : undefined,
           boxShadow: isOver && overZone === 'before' ? 'inset 0 2px 0 #8A6A3B' : isOver && overZone === 'after' ? 'inset 0 -2px 0 #8A6A3B' : undefined,
-          // The whole row (not just the grip icon) is the drag surface in reorder mode, so a
-          // touch press-and-drag anywhere on it works — touchAction/userSelect/webkitTouchCallout
-          // keep the browser's own scroll/text-selection/long-press-callout gestures from
-          // hijacking that same press before our own threshold-based drag detection engages.
-          touchAction: reorderMode ? 'none' : undefined,
-          userSelect: reorderMode ? 'none' : undefined,
-          WebkitUserSelect: reorderMode ? 'none' : undefined,
-          WebkitTouchCallout: reorderMode ? 'none' : undefined,
         }}
-        onPointerDown={(e) => reorderMode && onRowPointerDown(e, list.id)}
       >
         {reorderMode && (
-          <span className="w-[13px] flex-none flex items-center justify-center text-ink/35" style={{ cursor: 'grab' }}>
+          <span
+            className="flex-none flex items-center justify-center text-ink/35 -my-[7px] -ml-1.5"
+            style={{
+              width: 40,
+              alignSelf: 'stretch',
+              cursor: 'grab',
+              // Scoped to just this handle (not the whole row, see the comment above) — blocks
+              // the browser's own scroll/text-selection/long-press-callout gestures from
+              // hijacking a press here before our own threshold-based drag detection engages,
+              // without affecting touch/scroll/selection anywhere else on the row.
+              touchAction: 'none',
+              userSelect: 'none',
+              WebkitUserSelect: 'none',
+              WebkitTouchCallout: 'none',
+            }}
+            onPointerDown={(e) => onRowPointerDown(e, list.id)}
+          >
             <GripVertical size={13} strokeWidth={2} />
           </span>
         )}
