@@ -98,7 +98,15 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
       const ranges: HlRange[] = between
         .map((seg, idx) => {
           const i = Number(seg.dataset.seg);
-          const fullLen = seg.textContent?.length ?? 0;
+          // The segment's *data* length, not its rendered DOM textContent length — the `<p
+          // data-seg>` can contain extra rendered characters beyond seg.en itself (e.g. the
+          // translator-note asterisk, see SegmentedText), which would otherwise inflate a
+          // middle/first segment's stored `e` past the real text length. That mismatch breaks
+          // groupHighlights' boundary check (`prev.e === segments[prev.i].en.length`), so the
+          // run never merges past that segment — clicking a highlight to remove it then only
+          // finds part of the group, leaving the rest stranded. Falls back to textContent only
+          // if segment data isn't available to this hook.
+          const fullLen = segments?.[i]?.en.length ?? seg.textContent?.length ?? 0;
           const s = idx === 0 ? aStart : 0;
           const e = idx === between.length - 1 ? bEnd : fullLen;
           return { i, s, e };
@@ -111,7 +119,7 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
       // swatches just start unselected.
       setPop({ ranges, x: endRect.right, y: endRect.bottom, on: null });
     }, 0);
-  }, [highlights]);
+  }, [highlights, segments]);
 
   const pick = useCallback(
     async (color: string | null) => {
