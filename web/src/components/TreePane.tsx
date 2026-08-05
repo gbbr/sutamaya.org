@@ -223,7 +223,13 @@ function ListRow({
             className="flex-1 min-w-0 h-[26px] border border-accent rounded px-1.5 bg-field text-[14.5px] outline-none"
           />
         ) : (
-          <button className="flex-1 min-w-0 text-left text-[15px] font-semibold truncate py-[2px]" onClick={() => onSelect(String(list.id))}>
+          <button
+            className="flex-1 min-w-0 text-left text-[15px] font-semibold truncate py-[2px]"
+            onClick={() => {
+              onSelect(String(list.id));
+              if (hasKids && !open) onToggle(list.id);
+            }}
+          >
             {list.label}
           </button>
         )}
@@ -378,11 +384,13 @@ function ancestorsOf(corpus: Corpus | null, nodeId: string | undefined): Record<
 
 // Same idea as ancestorsOf, for the "My lists" tree: every ancestor list id (by `parentId`
 // chain) that needs to be open for `nodeId` — a list itself, e.g. from a membership chip's
-// /browse/{list_id} navigation — to be visible.
+// /browse/{list_id} navigation — to be visible, plus `nodeId` itself so a list deep-linked (or
+// selected) directly shows its own children rather than just being highlighted shut.
 function ancestorsOfList(lists: ListDef[], nodeId: string | undefined): Record<string, boolean> {
   if (!nodeId) return {};
   const init: Record<string, boolean> = {};
   let cur = lists.find((l) => l.id === nodeId);
+  if (cur) init[cur.id] = true;
   while (cur?.parentId) {
     init[cur.parentId] = true;
     cur = lists.find((l) => l.id === cur!.parentId);
