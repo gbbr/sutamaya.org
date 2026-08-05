@@ -36,6 +36,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobile, setMobile] = useState(() => window.innerWidth < 860);
   const tapRef = useRef<{ x: number; y: number } | null>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
 
   const sutta = corpus && suttaId ? corpus.suttas[suttaId] : undefined;
   const {
@@ -95,6 +96,65 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     const next = siblingIds[Math.min(siblingIds.length - 1, Math.max(0, i + dir))];
     if (next && next !== suttaId) navigate(`/read/${encodeURIComponent(next)}`);
   }
+
+  // Swipe-left/right to go to the next/prev sutta on mobile. This has to bypass React's own
+  // Pointer Events (what the tap-to-dismiss-popup handlers below use) because the reading pane
+  // (`scrollRef`, below) is vertically scrollable, and browsers commit to a native vertical-scroll
+  // gesture as soon as a touch shows *any* vertical drift — once that happens they stop
+  // delivering pointermove/pointerup for that touch (a pointercancel fires instead), so a
+  // pointerup-only swipe check silently never fires for anything but a perfectly horizontal
+  // drag. Raw touchmove listeners, registered non-passive (React's own onTouchMove is passive by
+  // default and can't preventDefault), let this call preventDefault the moment a gesture reveals
+  // itself as horizontal-dominant — before the browser has committed to scrolling — locking that
+  // touch into a swipe for the rest of its length; a vertical-dominant gesture is left alone and
+  // scrolls normally.
+  useEffect(() => {
+    const el = rootRef.current;
+    if (!el) return;
+    let start: { x: number; y: number } | null = null;
+    let lock: 'h' | 'v' | null = null;
+
+    function onTouchStart(e: TouchEvent) {
+      if (e.touches.length !== 1) {
+        start = null;
+        lock = null;
+        return;
+      }
+      start = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      lock = null;
+    }
+    function onTouchMove(e: TouchEvent) {
+      if (!start || e.touches.length !== 1) return;
+      const dx = e.touches[0].clientX - start.x;
+      const dy = e.touches[0].clientY - start.y;
+      if (!lock) {
+        if (Math.hypot(dx, dy) < 10) return;
+        lock = Math.abs(dx) > Math.abs(dy) ? 'h' : 'v';
+      }
+      if (lock === 'h') e.preventDefault();
+    }
+    function onTouchEnd(e: TouchEvent) {
+      if (start && lock === 'h') {
+        const t = e.changedTouches[0];
+        const dx = t.clientX - start.x;
+        const dy = t.clientY - start.y;
+        if (Math.abs(dx) > 70 && Math.abs(dy) < 60) step(dx < 0 ? 1 : -1);
+      }
+      start = null;
+      lock = null;
+    }
+    el.addEventListener('touchstart', onTouchStart, { passive: true });
+    el.addEventListener('touchmove', onTouchMove, { passive: false });
+    el.addEventListener('touchend', onTouchEnd, { passive: true });
+    el.addEventListener('touchcancel', onTouchEnd, { passive: true });
+    return () => {
+      el.removeEventListener('touchstart', onTouchStart);
+      el.removeEventListener('touchmove', onTouchMove);
+      el.removeEventListener('touchend', onTouchEnd);
+      el.removeEventListener('touchcancel', onTouchEnd);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [siblingIds, suttaId]);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -164,10 +224,6 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     const start = tapRef.current;
     if (!start) return;
     const moved = Math.hypot(e.clientX - start.x, e.clientY - start.y);
-    if (e.pointerType === 'touch' && moved > 70 && Math.abs(e.clientY - start.y) < 60) {
-      step(e.clientX < start.x ? 1 : -1);
-      return;
-    }
     if (moved < 10 && !String(window.getSelection()) && pop) closePop();
   }
 
@@ -184,6 +240,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
 
   return (
     <div
+      ref={rootRef}
       data-component="ReaderPage"
       className="fixed inset-0 z-40 flex flex-col animate-fadeIn"
       style={{ background: theme.bg, color: theme.fg }}
