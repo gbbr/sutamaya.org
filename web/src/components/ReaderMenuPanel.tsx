@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Trash2 } from 'lucide-react';
+import { Trash2, X } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { NoteEditor } from './NoteEditor';
@@ -37,20 +37,23 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
   const suttaHighlights = highlights[suttaId] || [];
   const highlightGroups = useMemo(() => groupHighlights(suttaHighlights, segments), [suttaHighlights, segments]);
 
+  // Full-screen and top-anchored on mobile (not a bottom sheet) so that when the on-screen
+  // keyboard opens (typing a note, or the Lists tab's auto-focused search/create input), the
+  // input stays above where the keyboard eats into the viewport instead of being covered by it —
+  // this container is `position: absolute` inside ReaderPage's `fixed inset-0` root, which stays
+  // pinned to the full layout-viewport height and doesn't shrink for the keyboard, so anything
+  // anchored to its *bottom* (the old `bottom: 0; maxHeight: 74%` sheet) ends up hidden beneath
+  // the keyboard rather than pushed up above it.
   const panelStyle = mobile
     ? {
         position: 'absolute' as const,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        maxHeight: '74%',
+        inset: 0,
         display: 'flex',
         flexDirection: 'column' as const,
         background: theme.panel,
         color: theme.fg,
-        borderTop: `2px solid ${theme.fg}`,
-        borderRadius: '16px 16px 0 0',
-        padding: '12px 20px 22px',
+        padding: '18px 20px 22px',
+        paddingTop: 'calc(18px + env(safe-area-inset-top, 0px))',
       }
     : {
         position: 'absolute' as const,
@@ -93,13 +96,21 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
 
   return (
     <>
-      <div className="absolute inset-0" style={{ background: mobile ? 'rgba(0,0,0,.28)' : 'rgba(0,0,0,.12)' }} onClick={onClose} />
-      <div data-component="ReaderMenuPanel" style={panelStyle} className={mobile ? 'animate-sheetUp' : 'animate-fadeIn'}>
-        {mobile && <div className="w-11 h-1 rounded-full mx-auto mb-3.5" style={{ background: theme.rule }} />}
-        <div className="flex gap-2 mb-4">
-          {tabBtn('highlights', 'Highlights')}
-          {tabBtn('lists', 'Lists')}
-          {tabBtn('text', 'Text')}
+      {/* Full-screen on mobile leaves no backdrop to tap-to-close, so it's desktop-only there —
+          mobile gets an explicit close button in the header row instead (below). */}
+      {!mobile && <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,.12)' }} onClick={onClose} />}
+      <div data-component="ReaderMenuPanel" style={panelStyle} className="animate-fadeIn">
+        <div className="flex items-center gap-2 mb-4">
+          {mobile && (
+            <button className="flex-none flex items-center -ml-1 mr-1" title="Close" onClick={onClose}>
+              <X size={17} strokeWidth={1.75} />
+            </button>
+          )}
+          <div className="flex flex-1 gap-2">
+            {tabBtn('highlights', 'Highlights')}
+            {tabBtn('lists', 'Lists')}
+            {tabBtn('text', 'Text')}
+          </div>
         </div>
 
         {tab === 'highlights' && (
