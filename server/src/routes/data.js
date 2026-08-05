@@ -10,6 +10,8 @@ dataRouter.use(requireAuth);
 // collection, so they can't drift from the highlights/notes they're derived from (unlike a
 // stored list, which needs its own explicit add/remove call kept in sync with every highlight
 // or note change) and can't be renamed, deleted, or manually reordered.
+// These string literals are duplicated in web/src/lib/autoLists.ts (no module shared between
+// the two npm workspaces) — keep both in sync if either ever changes.
 const HIGHLIGHTS_AUTO_LIST_ID = 'auto-highlights';
 const NOTES_AUTO_LIST_ID = 'auto-notes';
 

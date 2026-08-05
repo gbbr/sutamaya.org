@@ -20,9 +20,10 @@ interface UserDataState {
   toggleMembership: (suttaId: string, label: string) => Promise<void>;
   addToList: (suttaId: string, list: ListDef) => Promise<void>;
   submitNote: (suttaId: string, text: string) => Promise<void>;
-  setHighlightRange: (suttaId: string, i: number, s: number, e: number, color: string | null) => Promise<void>;
+  setHighlightRange: (suttaId: string, i: number, s: number, e: number, color: string | null, sync?: boolean) => Promise<void>;
   removeHighlights: (suttaId: string, ids: string[]) => Promise<void>;
   markVisited: (suttaId: string) => void;
+  syncUserData: () => Promise<void>;
 }
 
 const UserDataContext = createContext<UserDataState | null>(null);
@@ -49,6 +50,7 @@ const EMPTY: UserDataState = {
   setHighlightRange: async () => {},
   removeHighlights: async () => {},
   markVisited: () => {},
+  syncUserData: async () => {},
 };
 
 export function UserDataProvider({ children }: { children: ReactNode }) {
@@ -91,6 +93,35 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     [membership]
   );
 
+  // Re-fetches everything from the server and applies it verbatim — the single source of truth
+  // every mutator below reconciles against, both on success (to pick up server-derived state an
+  // optimistic local edit can't express, e.g. the auto "Highlights"/"Notes" lists) and on
+  // failure (to discard an optimistic edit that never actually made it to the server).
+  const syncUserData = useCallback(async () => {
+    const fresh = await dataApi.all();
+    setLists(fresh.lists);
+    setMembership(fresh.membership);
+    setNotes(fresh.notes);
+    setHighlights(fresh.highlights);
+  }, []);
+
+  // Every mutator applies its change optimistically before the network call settles, then
+  // relies on this to correct course if the call fails — since there's no offline write queue
+  // (see CLAUDE.md), a rejected request otherwise leaves the optimistic edit stranded with no
+  // indication it was never saved. Logs unconditionally so a failure is never silent even when
+  // the caller doesn't await/catch the mutator itself (most UI call sites don't).
+  const resyncAfterFailure = useCallback(
+    async (context: string, error: unknown) => {
+      console.error(`${context} failed`, error);
+      try {
+        await syncUserData();
+      } catch (e) {
+        console.error('resync after failure also failed', e);
+      }
+    },
+    [syncUserData]
+  );
+
   const createList = useCallback(
     async (label: string, parentId: string | null = null) => {
       if (!user) {
@@ -99,10 +130,15 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       }
       const existing = lists.find((l) => l.label === label && l.parentId === parentId);
       if (existing) return existing;
-      const { list } = await listsApi.create(label, parentId);
-      const def: ListDef = { id: list.id, label: list.label, parentId: list.parentId, items: list.items };
-      setLists((ls) => [...ls, def]);
-      return def;
+      try {
+        const { list } = await listsApi.create(label, parentId);
+        const def: ListDef = { id: list.id, label: list.label, parentId: list.parentId, items: list.items };
+        setLists((ls) => [...ls, def]);
+        return def;
+      } catch (e) {
+        console.error('create list failed', e);
+        throw e;
+      }
     },
     [lists, user, promptGoogleSignIn]
   );
@@ -124,45 +160,76 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
         }
         return next;
       });
-      await listsApi.rename(id, trimmed);
+      try {
+        await listsApi.rename(id, trimmed);
+      } catch (e) {
+        await resyncAfterFailure('rename list', e);
+      }
     },
-    [lists]
+    [lists, resyncAfterFailure]
   );
 
-  const removeList = useCallback(async (id: string, label: string) => {
-    setLists((ls) => ls.filter((l) => l.id !== id));
-    setMembership((m) => {
-      const next: Membership = {};
-      for (const [suttaId, labels] of Object.entries(m)) next[suttaId] = labels.filter((l) => l !== label);
-      return next;
-    });
-    await listsApi.remove(id);
-    // The server re-parents any sub-lists of the deleted list to its own parent (see
-    // routes/lists.js) instead of orphaning them — refetch to pick that up, since it can't be
-    // expressed as a local optimistic edit without duplicating that logic here.
-    const fresh = await dataApi.all();
-    setLists(fresh.lists);
-  }, []);
+  const removeList = useCallback(
+    async (id: string, label: string) => {
+      setLists((ls) => ls.filter((l) => l.id !== id));
+      setMembership((m) => {
+        const next: Membership = {};
+        for (const [suttaId, labels] of Object.entries(m)) next[suttaId] = labels.filter((l) => l !== label);
+        return next;
+      });
+      try {
+        await listsApi.remove(id);
+        // The server re-parents any sub-lists of the deleted list to its own parent (see
+        // routes/lists.js) instead of orphaning them — sync to pick that up, since it can't be
+        // expressed as a local optimistic edit without duplicating that logic here.
+        await syncUserData();
+      } catch (e) {
+        await resyncAfterFailure('remove list', e);
+      }
+    },
+    [syncUserData, resyncAfterFailure]
+  );
 
-  const setListParent = useCallback(async (id: string, parentId: string | null) => {
-    setLists((ls) => ls.map((l) => (l.id === id ? { ...l, parentId } : l)));
-    await listsApi.setParent(id, parentId);
-  }, []);
+  const setListParent = useCallback(
+    async (id: string, parentId: string | null) => {
+      setLists((ls) => ls.map((l) => (l.id === id ? { ...l, parentId } : l)));
+      try {
+        await listsApi.setParent(id, parentId);
+      } catch (e) {
+        await resyncAfterFailure('set list parent', e);
+      }
+    },
+    [resyncAfterFailure]
+  );
 
-  const reorderLists = useCallback(async (parentId: string | null, order: string[]) => {
-    setLists((ls) => {
-      const orderIndex = new Map(order.map((id, idx) => [id, idx]));
-      const siblings = ls.filter((l) => l.parentId === parentId).sort((a, b) => (orderIndex.get(a.id) ?? 0) - (orderIndex.get(b.id) ?? 0));
-      const others = ls.filter((l) => l.parentId !== parentId);
-      return [...others, ...siblings];
-    });
-    await listsApi.reorder(parentId, order);
-  }, []);
+  const reorderLists = useCallback(
+    async (parentId: string | null, order: string[]) => {
+      setLists((ls) => {
+        const orderIndex = new Map(order.map((id, idx) => [id, idx]));
+        const siblings = ls.filter((l) => l.parentId === parentId).sort((a, b) => (orderIndex.get(a.id) ?? 0) - (orderIndex.get(b.id) ?? 0));
+        const others = ls.filter((l) => l.parentId !== parentId);
+        return [...others, ...siblings];
+      });
+      try {
+        await listsApi.reorder(parentId, order);
+      } catch (e) {
+        await resyncAfterFailure('reorder lists', e);
+      }
+    },
+    [resyncAfterFailure]
+  );
 
-  const reorderListItems = useCallback(async (id: string, order: string[]) => {
-    setLists((ls) => ls.map((l) => (l.id === id ? { ...l, items: order } : l)));
-    await listsApi.reorderItems(id, order);
-  }, []);
+  const reorderListItems = useCallback(
+    async (id: string, order: string[]) => {
+      setLists((ls) => ls.map((l) => (l.id === id ? { ...l, items: order } : l)));
+      try {
+        await listsApi.reorderItems(id, order);
+      } catch (e) {
+        await resyncAfterFailure('reorder list items', e);
+      }
+    },
+    [resyncAfterFailure]
+  );
 
   const toggleMembership = useCallback(
     async (suttaId: string, label: string) => {
@@ -175,10 +242,14 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       setLists((ls) =>
         ls.map((l) => (l.id === list.id ? { ...l, items: on ? l.items.filter((s) => s !== suttaId) : [...l.items, suttaId] } : l))
       );
-      if (on) await listsApi.removeItem(list.id, suttaId);
-      else await listsApi.addItem(list.id, suttaId);
+      try {
+        if (on) await listsApi.removeItem(list.id, suttaId);
+        else await listsApi.addItem(list.id, suttaId);
+      } catch (e) {
+        await resyncAfterFailure('toggle list membership', e);
+      }
     },
-    [lists, membership, user, promptGoogleSignIn]
+    [lists, membership, user, promptGoogleSignIn, resyncAfterFailure]
   );
 
   // Like toggleMembership's "add" branch, but takes the list directly instead of looking it up
@@ -191,31 +262,37 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       if ((membership[suttaId] || []).includes(list.label)) return;
       setMembership((m) => ({ ...m, [suttaId]: [...(m[suttaId] || []), list.label] }));
       setLists((ls) => ls.map((l) => (l.id === list.id ? { ...l, items: [...l.items, suttaId] } : l)));
-      await listsApi.addItem(list.id, suttaId);
+      try {
+        await listsApi.addItem(list.id, suttaId);
+      } catch (e) {
+        await resyncAfterFailure('add to list', e);
+        throw e;
+      }
     },
-    [membership, user, promptGoogleSignIn]
+    [membership, user, promptGoogleSignIn, resyncAfterFailure]
   );
 
   // Notes are a discrete, infrequent action (submit on Enter/blur/button — see NoteEditor), not
-  // a per-keystroke stream, so — like highlights below — this can afford a full refetch after
+  // a per-keystroke stream, so — like highlights below — this can afford a full sync after
   // every call instead of an optimistic local sync: `lists`/`membership` include the derived
   // "Highlights"/"Notes" auto-lists computed server-side in buildUserData() (see
-  // server/src/routes/data.js), and a refetch is the only way to pick up that derived state.
+  // server/src/routes/data.js), and a sync is the only way to pick up that derived state.
   const submitNote = useCallback(
     async (suttaId: string, text: string) => {
       if (!user) return promptGoogleSignIn();
       setNotes((n) => ({ ...n, [suttaId]: text }));
-      await notesApi.set(suttaId, text);
-      const fresh = await dataApi.all();
-      setLists(fresh.lists);
-      setMembership(fresh.membership);
-      setNotes(fresh.notes);
+      try {
+        await notesApi.set(suttaId, text);
+        await syncUserData();
+      } catch (e) {
+        await resyncAfterFailure('submit note', e);
+      }
     },
-    [user, promptGoogleSignIn]
+    [user, promptGoogleSignIn, syncUserData, resyncAfterFailure]
   );
 
   const setHighlightRange = useCallback(
-    async (suttaId: string, i: number, s: number, e: number, color: string | null) => {
+    async (suttaId: string, i: number, s: number, e: number, color: string | null, sync = true) => {
       if (!user) return promptGoogleSignIn();
       // Functional update (not `highlights[suttaId]` from the outer closure) — a cross-segment
       // highlight calls this once per segment in a row (see useHighlightPopup's `pick`), and
@@ -227,30 +304,41 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
         const next = color ? [...kept, { id: `temp-${Date.now()}-${i}`, i, s, e, c: color }] : kept;
         return { ...hs, [suttaId]: next };
       });
-      await highlightsApi.setRange(suttaId, i, s, e, color);
-      const fresh = await dataApi.all();
-      setLists(fresh.lists);
-      setMembership(fresh.membership);
-      setHighlights(fresh.highlights);
+      try {
+        await highlightsApi.setRange(suttaId, i, s, e, color);
+        // `sync` is false when the caller is applying several ranges in a row (a cross-segment
+        // highlight) and will sync once itself after the whole batch, instead of once per range.
+        if (sync) await syncUserData();
+      } catch (err) {
+        await resyncAfterFailure('set highlight range', err);
+        throw err;
+      }
     },
-    [user, promptGoogleSignIn]
+    [user, promptGoogleSignIn, syncUserData, resyncAfterFailure]
   );
 
-  const removeHighlights = useCallback(async (suttaId: string, ids: string[]) => {
-    const idSet = new Set(ids);
-    setHighlights((hs) => ({ ...hs, [suttaId]: (hs[suttaId] || []).filter((h) => !idSet.has(h.id)) }));
-    await Promise.all(ids.map((id) => highlightsApi.remove(id)));
-    const fresh = await dataApi.all();
-    setLists(fresh.lists);
-    setMembership(fresh.membership);
-    setHighlights(fresh.highlights);
-  }, []);
+  const removeHighlights = useCallback(
+    async (suttaId: string, ids: string[]) => {
+      const idSet = new Set(ids);
+      setHighlights((hs) => ({ ...hs, [suttaId]: (hs[suttaId] || []).filter((h) => !idSet.has(h.id)) }));
+      try {
+        await Promise.all(ids.map((id) => highlightsApi.remove(id)));
+        await syncUserData();
+      } catch (e) {
+        await resyncAfterFailure('remove highlights', e);
+      }
+    },
+    [syncUserData, resyncAfterFailure]
+  );
 
-  const markVisited = useCallback((suttaId: string) => {
-    if (!user) return;
-    setVisited((v) => (v[suttaId] ? v : { ...v, [suttaId]: new Date().toISOString() }));
-    visitedApi.mark(suttaId).catch((e) => console.error('visited save failed', e));
-  }, [user]);
+  const markVisited = useCallback(
+    (suttaId: string) => {
+      if (!user) return;
+      setVisited((v) => (v[suttaId] ? v : { ...v, [suttaId]: new Date().toISOString() }));
+      visitedApi.mark(suttaId).catch((e) => console.error('visited save failed', e));
+    },
+    [user]
+  );
 
   const value = useMemo<UserDataState>(
     () => ({
@@ -273,6 +361,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       setHighlightRange,
       removeHighlights,
       markVisited,
+      syncUserData,
     }),
     [
       ready,
@@ -294,6 +383,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       setHighlightRange,
       removeHighlights,
       markVisited,
+      syncUserData,
     ]
   );
 

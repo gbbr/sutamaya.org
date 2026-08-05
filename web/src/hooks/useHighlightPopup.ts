@@ -1,5 +1,7 @@
 import { useCallback, useState } from 'react';
 import { useUserData } from '../context/UserDataContext';
+import { groupHighlights } from '../lib/highlights';
+import type { SegmentFile } from '../lib/corpus';
 import type { Highlight } from '../lib/types';
 
 export interface HlRange {
@@ -31,13 +33,22 @@ function offsetWithin(seg: HTMLElement, container: Node, containerOffset: number
   return pre.toString().length;
 }
 
-export function useHighlightPopup(suttaId: string | undefined, highlights: Highlight[]) {
-  const { setHighlightRange } = useUserData();
+export function useHighlightPopup(suttaId: string | undefined, highlights: Highlight[], segments: SegmentFile[] | null = null) {
+  const { setHighlightRange, syncUserData } = useUserData();
   const [pop, setPop] = useState<PopState | null>(null);
 
-  const openPop = useCallback((i: number, s: number, e: number, rect: DOMRect, on: string | null) => {
-    setPop({ ranges: [{ i, s, e }], x: rect.left + rect.width / 2, y: rect.bottom, on });
-  }, []);
+  // Clicking directly on an already-highlighted span (as opposed to dragging a fresh selection)
+  // means "act on this highlight" — for a cross-segment one, that has to be every segment it
+  // spans, not just the one clicked, or "remove"/recolor would only touch that one piece and
+  // leave the rest behind as a separate, now-shorter highlight.
+  const openPop = useCallback(
+    (i: number, s: number, e: number, rect: DOMRect, on: string | null) => {
+      const group = groupHighlights(highlights, segments).find((g) => g.items.some((h) => h.i === i && h.s === s && h.e === e));
+      const ranges: HlRange[] = group ? group.items.map((h) => ({ i: h.i, s: h.s, e: h.e })) : [{ i, s, e }];
+      setPop({ ranges, x: rect.left + rect.width / 2, y: rect.bottom, on });
+    },
+    [highlights, segments]
+  );
 
   const onTextUp = useCallback(() => {
     setTimeout(() => {
@@ -106,18 +117,26 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
     async (color: string | null) => {
       if (!pop || !suttaId) return;
       // Sequential, not Promise.all: setHighlightRange does an optimistic read-modify-write of
-      // local highlight state plus a full server refetch per call, so overlapping calls for
-      // the same suttaId (different segments of the same selection) could race and clobber
-      // each other's optimistic update. Awaiting them one at a time keeps every call working
-      // off the previous one's already-settled state.
-      for (const r of pop.ranges) {
-        await setHighlightRange(suttaId, r.i, r.s, r.e, color);
+      // local highlight state, so overlapping calls for the same suttaId (different segments of
+      // the same selection) could race and clobber each other's optimistic update. Awaiting
+      // them one at a time keeps every call working off the previous one's already-settled
+      // state. Each call passes `sync: false` so a multi-segment selection triggers one server
+      // sync after the whole batch instead of one per segment (setHighlightRange already syncs
+      // on its own if one of these calls fails, so a failure here just needs logging, not a
+      // second sync).
+      try {
+        for (const r of pop.ranges) {
+          await setHighlightRange(suttaId, r.i, r.s, r.e, color, false);
+        }
+        await syncUserData();
+      } catch (e) {
+        console.error('highlight range save failed', e);
       }
       setPop(null);
       const sel = window.getSelection();
       if (sel) sel.removeAllRanges();
     },
-    [pop, suttaId, setHighlightRange]
+    [pop, suttaId, setHighlightRange, syncUserData]
   );
 
   const close = useCallback(() => setPop(null), []);

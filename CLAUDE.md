@@ -22,7 +22,9 @@ npm install              # installs all three workspaces (root, server, web)
 npm run dev               # builds the corpus bundle, then runs server + web concurrently
 npm run build:corpus      # regenerate web/public/data/ from data/ (run after editing data/)
 npm run build              # production build (corpus + web/dist)
-npm run deploy             # deploy to Cloud Run — see deploy.md
+npm test                   # runs the (deliberately small) Vitest suite — see below
+npm run deploy             # deploy to Cloud Run — see deploy.md; runs `npm test` first and
+                            # refuses to deploy on a red suite unless you pass --skip-tests
 ```
 
 Run individually with `npm run dev:server` / `npm run dev:web`. The web dev server proxies
@@ -156,7 +158,19 @@ unhandled rejections).
 
 `GET /api/data` returns everything a signed-in user needs in one shot, shaped to match the
 frontend's state (`lists`, `membership`, `notes`, `highlights`, `visited`) — see
-`buildUserData()` in `routes/data.js`.
+`buildUserData()` in `routes/data.js`. `GET /api/data/export` returns the same payload plus
+`email`/`exportedAt`, as a downloadable attachment (`Content-Disposition`), for a full personal
+data export.
+
+`buildUserData()` also synthesizes two **non-persisted** entries into the `lists` array it
+returns — `{id: 'auto-highlights', label: 'Highlights', auto: true, items: [...]}` and the
+`Notes` equivalent, ids/labels duplicated in `web/src/lib/autoLists.ts` — so the client can
+render "every highlighted/noted sutta" through the same `ListDef` shape and `membership` chips
+as a real list, without them being real `users/{uid}/lists/{listId}` docs: they're recomputed
+fresh on every fetch (most-recently-highlighted/noted first, since there's no stored order the
+way a real list has), can't be renamed/deleted/reordered, and the client keeps them out of the
+user-editable "My lists" tree via their `auto: true` flag, rendering them in `TreePane`'s own
+"Automatic" section instead.
 
 In production (`NODE_ENV=production`, set by the Dockerfile) `index.js` also serves the built
 SPA (`web-dist/`, copied in at image build time) and sets `trust proxy` + `secure` cookies —
@@ -169,14 +183,25 @@ that header will look like broken auth (cookie silently not persisted) — it is
 
 - `context/` — one provider per concern: `AuthContext` (session user), `CorpusContext` (static
   corpus + dictionary, fetched once), `UserDataContext` (lists/notes/highlights/visited, backed
-  by the API with optimistic local updates), `ReaderPrefsContext` and `LayoutContext`
-  (theme/font/pane-width prefs, persisted to `localStorage`, not synced to the server).
+  by the API with optimistic local updates — every mutator applies its change locally first,
+  then either syncs fresh server state on success or, on failure, logs and re-syncs from the
+  server to discard the stale optimistic edit, since there's no offline write queue), `ReaderPrefsContext`,
+  `LayoutContext`, and `UiPrefsContext` (theme/font/pane-width/UI-scale prefs, persisted to
+  `localStorage`, not synced to the server).
 - `lib/corpus.ts`, `lib/dictionary.ts`, `lib/theme.ts`, `lib/api.ts` — pure data/fetch helpers,
   no React.
 - `components/SegmentedText.tsx` — the shared paragraph renderer (tap-to-reveal Pali, word-tap
   dictionary, highlighted-range spans) used by both the reader and the desktop preview pane.
 - `hooks/useHighlightPopup.ts` — selection → floating colour-picker popup logic (segment-relative
   character offsets via `Range`, ported from the prototype's `onTextUp`), shared the same way.
+  A selection spanning multiple segments produces one highlight range per segment, written
+  sequentially (`UserDataContext.setHighlightRange`, one server call per segment, only the last
+  syncing fresh state) and then re-merged for display/counting by `lib/highlights.ts`'s
+  `groupHighlights()`, which treats same-colour highlights in consecutive segments as one
+  highlight rather than disjoint pieces.
+- `TreePane`'s Library/My Lists toggle — a compact icon-based segmented control on the title row
+  (not a separate pane-collapse control, which this replaced) switches between the corpus browse
+  tree and the user's list tree; state persists across reloads via `localStorage`.
 - Routing is URL-driven (not just client state, unlike the original prototype): `/browse/:nodeId`
   and `/browse/:nodeId/:suttaId` render `LibraryPage` (tree/list/preview, responsive to viewport
   width — see `LayoutContext.mobile/twoPane/desktop`); `/read/:suttaId` renders `ReaderPage`
@@ -206,10 +231,11 @@ cached within seconds regardless). `/api/*` is `NetworkOnly` — user data is ne
   `console.error`-logged). Fine for local dev; a real offline-first sync layer (the original
   design specs Firebase) would need a queue + conflict resolution.
 - The reader's "change translation source" control is a static label ("Sujato (2018)") —
-  explicitly out of scope per `design/README.md` ("Fidelity"), since this dataset only has one
-  English translation per collection.
+  explicitly out of scope for "Fidelity" (see git history for `design/README.md`, since removed
+  from the working tree), since this dataset only has one English translation per collection.
 - Lists support nesting (folder-like, via `parentId`), rename, delete (children re-parent up
   one level rather than being orphaned), and reordering — both of sibling lists and of a list's
-  own suttas — but all through button controls (move up/down) in `TreePane`'s `ListRow` and
-  `ListPane`'s row controls, not drag-and-drop, so every action works the same on touch as with
-  a mouse.
+  own suttas. `ListPane` reorders a list's own suttas via native Pointer Events (touch and mouse
+  alike, with live reordering and edge auto-scroll); `TreePane`'s `ListRow` still reorders/nests
+  the list tree itself via the older HTML5 drag-and-drop API, which doesn't fire reliably on
+  touch — button controls (move up/down) remain the touch-safe fallback for that one case.

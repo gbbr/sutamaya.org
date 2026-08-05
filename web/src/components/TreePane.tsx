@@ -24,6 +24,7 @@ import { useScrollMemory } from '../hooks/useScrollMemory';
 import { SEARCH_INPUT_ID } from '../hooks/useListNav';
 import { findNode, isExpandable, searchCorpus } from '../lib/corpus';
 import { HIGHLIGHTS_LIST_LABEL, NOTES_LIST_LABEL } from '../lib/autoLists';
+import { autoScrollEdge } from '../lib/dragAutoScroll';
 import type { ChapterRow, Corpus, ListDef } from '../lib/types';
 
 // One row of the nested chapter/group/category tree under a nikaya — recurses arbitrarily
@@ -86,10 +87,13 @@ function TreeRow({
 type DropZone = 'before' | 'after' | 'inside';
 
 // One row of the "My lists" tree — a list can nest other lists as children (folder-like), with
-// button-based rename/delete/move controls that always work (touch included), plus HTML5
-// drag-and-drop reordering/nesting when "reorder mode" (see the toggle by "My lists") is on —
-// dropping on the top/bottom third of a row reorders as a sibling, the middle third nests it as
-// a child (see TreePane's dragOverRow for the zone math).
+// button-based rename/delete/move controls that always work (touch included), plus Pointer
+// Events drag-and-drop reordering/nesting when "reorder mode" (see the toggle by "My lists") is
+// on — the whole row is the drag surface (not just a handle), so a press-and-drag from anywhere
+// on it engages once it clears a small movement threshold (a plain tap still reaches the row's
+// own button clicks normally). Dropping on the top/bottom quarter of a row reorders as a
+// sibling, the middle half nests it as a child (see TreePane's updateDropTarget for the zone
+// math) — mirrors ListPane's sutta-reorder drag, so touch works the same way in both.
 function ListRow({
   list,
   depth,
@@ -123,11 +127,8 @@ function ListRow({
   dragId,
   overId,
   overZone,
-  onRowDragStart,
-  onRowDragOver,
-  onRowDragLeave,
-  onRowDrop,
-  onRowDragEnd,
+  onRowPointerDown,
+  registerRowEl,
 }: {
   list: ListDef;
   depth: number;
@@ -161,11 +162,8 @@ function ListRow({
   dragId: string | null;
   overId: string | null;
   overZone: DropZone | null;
-  onRowDragStart: (id: string) => void;
-  onRowDragOver: (e: React.DragEvent, l: ListDef) => void;
-  onRowDragLeave: (id: string) => void;
-  onRowDrop: (e: React.DragEvent, l: ListDef) => void;
-  onRowDragEnd: () => void;
+  onRowPointerDown: (e: React.PointerEvent, id: string) => void;
+  registerRowEl: (id: string, el: HTMLElement | null) => void;
 }) {
   const kids = childrenOf(list.id);
   const hasKids = kids.length > 0;
@@ -178,28 +176,23 @@ function ListRow({
   return (
     <div>
       <div
+        ref={(el) => registerRowEl(list.id, el)}
         className={`row flex items-center gap-[7px] w-full text-left pr-[10px] py-[7px] border-b border-ink/[.07] ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
         style={{
           paddingLeft: 18 + depth * 14,
           opacity: dragging ? 0.4 : 1,
           background: isOver && overZone === 'inside' ? 'rgba(138,106,59,.16)' : undefined,
           boxShadow: isOver && overZone === 'before' ? 'inset 0 2px 0 #8A6A3B' : isOver && overZone === 'after' ? 'inset 0 -2px 0 #8A6A3B' : undefined,
+          // The whole row (not just the grip icon) is the drag surface in reorder mode, so a
+          // touch press-and-drag anywhere on it works — touchAction/userSelect/webkitTouchCallout
+          // keep the browser's own scroll/text-selection/long-press-callout gestures from
+          // hijacking that same press before our own threshold-based drag detection engages.
+          touchAction: reorderMode ? 'none' : undefined,
+          userSelect: reorderMode ? 'none' : undefined,
+          WebkitUserSelect: reorderMode ? 'none' : undefined,
+          WebkitTouchCallout: reorderMode ? 'none' : undefined,
         }}
-        draggable={reorderMode}
-        onDragStart={(e) => {
-          e.stopPropagation();
-          onRowDragStart(list.id);
-        }}
-        onDragOver={(e) => {
-          e.stopPropagation();
-          onRowDragOver(e, list);
-        }}
-        onDragLeave={() => onRowDragLeave(list.id)}
-        onDrop={(e) => {
-          e.stopPropagation();
-          onRowDrop(e, list);
-        }}
-        onDragEnd={onRowDragEnd}
+        onPointerDown={(e) => reorderMode && onRowPointerDown(e, list.id)}
       >
         {reorderMode && (
           <span className="w-[13px] flex-none flex items-center justify-center text-ink/35" style={{ cursor: 'grab' }}>
@@ -335,11 +328,8 @@ function ListRow({
             dragId={dragId}
             overId={overId}
             overZone={overZone}
-            onRowDragStart={onRowDragStart}
-            onRowDragOver={onRowDragOver}
-            onRowDragLeave={onRowDragLeave}
-            onRowDrop={onRowDrop}
-            onRowDragEnd={onRowDragEnd}
+            onRowPointerDown={onRowPointerDown}
+            registerRowEl={registerRowEl}
           />
         ))}
       {creatingParentId === list.id && (
@@ -456,6 +446,24 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
   const listInput = useRef<HTMLInputElement | null>(null);
   const searchInput = useRef<HTMLInputElement>(null);
   const hitRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  // Pointer Events drive the list-tree drag (mirrors ListPane's sutta-reorder drag, so touch
+  // works the same way here too — HTML5 drag-and-drop doesn't fire reliably on touch browsers).
+  // These all need to be refs, not just state: onRowPointerDown registers its window-level
+  // pointermove/pointerup listeners once, at drag-start — unlike a JSX-bound handler (re-bound
+  // fresh every render), that one listener keeps calling the *same* closure for the rest of the
+  // drag, so anything it reads via a plain state variable would see whatever that variable's
+  // value was back at drag-start, not later updates. `overIdRef`/`overZoneRef` mirror the
+  // `overId`/`overZone` state (kept only for rendering the drop-target highlight) so
+  // finishTreeDrag reads the live values instead of a stale snapshot.
+  const rowElRefs = useRef<Map<string, HTMLElement>>(new Map());
+  const dragIdRef = useRef<string | null>(null);
+  const overIdRef = useRef<string | null>(null);
+  const overZoneRef = useRef<DropZone | null>(null);
+  const pointerYRef = useRef(0);
+  const rafRef = useRef<number | null>(null);
+  // Set for the duration of a candidate/active drag so an unmount mid-drag can tear down the
+  // window-level listeners it registered — see the effect below.
+  const activeDragCleanupRef = useRef<(() => void) | null>(null);
 
   const listChildrenOf = useMemo(() => {
     const byParent = new Map<string | null, ListDef[]>();
@@ -553,31 +561,50 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
     return scoped;
   }
 
-  function onRowDragStart(id: string) {
-    setDragId(id);
+  function registerRowEl(id: string, el: HTMLElement | null) {
+    if (el) rowElRefs.current.set(id, el);
+    else rowElRefs.current.delete(id);
   }
-  function onRowDragOver(e: React.DragEvent, l: ListDef) {
-    if (!dragId || dragId === l.id) return;
-    e.preventDefault();
-    const rect = e.currentTarget.getBoundingClientRect();
-    const ratio = (e.clientY - rect.top) / rect.height;
-    setOverId(l.id);
-    setOverZone(ratio < 0.25 ? 'before' : ratio > 0.75 ? 'after' : 'inside');
+
+  // Which row (if any) the pointer currently sits vertically over, and which third of it —
+  // top/bottom quarter reorders as a sibling, the middle half nests as a child. Hit-tests by
+  // rect instead of relying on native dragover targeting, since a window-level pointermove
+  // listener (see onRowPointerDown) doesn't know which row DOM-wise the pointer is above.
+  function updateDropTarget() {
+    const draggedId = dragIdRef.current;
+    if (!draggedId) return;
+    const y = pointerYRef.current;
+    const candidates: { id: string; zone: DropZone }[] = [];
+    rowElRefs.current.forEach((el, rowId) => {
+      if (rowId === draggedId) return;
+      const rect = el.getBoundingClientRect();
+      if (y < rect.top || y > rect.bottom) return;
+      const ratio = (y - rect.top) / rect.height;
+      candidates.push({ id: rowId, zone: ratio < 0.25 ? 'before' : ratio > 0.75 ? 'after' : 'inside' });
+    });
+    const next = candidates[0] ?? null;
+    overIdRef.current = next?.id ?? null;
+    overZoneRef.current = next?.zone ?? null;
+    setOverId(next?.id ?? null);
+    setOverZone(next?.zone ?? null);
   }
-  function onRowDragLeave(id: string) {
-    setOverId((cur) => (cur === id ? null : cur));
+
+  function runTreeDragLoop() {
+    function tick() {
+      if (!dragIdRef.current) {
+        rafRef.current = null;
+        return;
+      }
+      autoScrollEdge(scrollRef.current, pointerYRef.current);
+      updateDropTarget();
+      rafRef.current = requestAnimationFrame(tick);
+    }
+    rafRef.current = requestAnimationFrame(tick);
   }
-  async function onRowDrop(e: React.DragEvent, target: ListDef) {
-    e.preventDefault();
-    const draggedId = dragId;
-    const zone = overZone;
-    setDragId(null);
-    setOverId(null);
-    setOverZone(null);
-    if (!draggedId || draggedId === target.id || !zone) return;
+
+  async function commitDrop(draggedId: string, target: ListDef, zone: DropZone) {
     const dragged = lists.find((l) => l.id === draggedId);
     if (!dragged || isDescendant(target.id, draggedId)) return;
-
     if (zone === 'inside') {
       if (dragged.parentId !== target.id) await setListParent(draggedId, target.id);
       setListExpanded((x) => ({ ...x, [target.id]: true }));
@@ -588,11 +615,69 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
     const order = siblingIdsWithInsert(newParentId, draggedId, target.id, zone === 'after');
     await reorderLists(newParentId, order);
   }
-  function onRowDragEnd() {
+
+  function finishTreeDrag() {
+    const draggedId = dragIdRef.current;
+    const targetId = overIdRef.current;
+    const zone = overZoneRef.current;
+    dragIdRef.current = null;
+    overIdRef.current = null;
+    overZoneRef.current = null;
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    rafRef.current = null;
     setDragId(null);
     setOverId(null);
     setOverZone(null);
+    if (!draggedId || !targetId || draggedId === targetId || !zone) return;
+    const target = lists.find((l) => l.id === targetId);
+    if (!target) return;
+    void commitDrop(draggedId, target, zone);
   }
+
+  // Only engages a drag once the pointer clears a small movement threshold — a plain tap (no
+  // movement) reaches the row's own button clicks (select/rename/delete/menu) normally, since
+  // nothing here calls preventDefault or pointer-capture until a real drag is underway. Tracked
+  // via window-level listeners (not this row's own onPointerMove) so a fast initial move that
+  // carries the pointer off the starting row before the threshold trips still keeps tracking it.
+  function onRowPointerDown(e: React.PointerEvent, id: string) {
+    const pointerId = e.pointerId;
+    const startX = e.clientX;
+    const startY = e.clientY;
+    let engaged = false;
+
+    function onMove(ev: PointerEvent) {
+      if (ev.pointerId !== pointerId) return;
+      if (!engaged) {
+        if (Math.hypot(ev.clientX - startX, ev.clientY - startY) < 6) return;
+        engaged = true;
+        dragIdRef.current = id;
+        setDragId(id);
+        runTreeDragLoop();
+      }
+      pointerYRef.current = ev.clientY;
+    }
+    function onUp() {
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+      window.removeEventListener('pointercancel', onUp);
+      activeDragCleanupRef.current = null;
+      if (engaged) finishTreeDrag();
+    }
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+    window.addEventListener('pointercancel', onUp);
+    activeDragCleanupRef.current = onUp;
+  }
+
+  // Tears down a still-active drag's window listeners (and any live rAF loop) if TreePane
+  // unmounts mid-drag (e.g. navigating to Settings while dragging) — without this the listeners
+  // added in onRowPointerDown above would never be removed.
+  useEffect(() => {
+    return () => {
+      activeDragCleanupRef.current?.();
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
 
   const searching = query.trim().length > 0;
   const hits = useMemo(() => (corpus && searching ? searchCorpus(corpus, query, notes) : []), [corpus, query, searching, notes]);
@@ -869,11 +954,8 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
                 dragId={dragId}
                 overId={overId}
                 overZone={overZone}
-                onRowDragStart={onRowDragStart}
-                onRowDragOver={onRowDragOver}
-                onRowDragLeave={onRowDragLeave}
-                onRowDrop={onRowDrop}
-                onRowDragEnd={onRowDragEnd}
+                onRowPointerDown={onRowPointerDown}
+                registerRowEl={registerRowEl}
               />
             ))}
             {autoLists.length > 0 && (

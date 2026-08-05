@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { db, notesCol, highlightsCol, visitedCol } from '../firestore.js';
 import { requireAuth } from '../auth.js';
 import { asyncHandler } from '../asyncHandler.js';
+import { rangesOverlap } from '../lib/highlightOverlap.js';
 
 export const annotationsRouter = Router();
 annotationsRouter.use(requireAuth);
@@ -21,6 +22,9 @@ annotationsRouter.put(
 // (color === null just removes the overlap). Mirrors the prototype's setRangeHl. Fetches by
 // suttaId alone (single equality filter, no composite index needed) and filters/overlaps
 // in memory — a sutta has at most a handful of highlights, so this is cheap either way.
+// Runs as a transaction (not a plain batch) so two overlapping writes for the same sutta
+// racing each other (e.g. two open tabs) can't both read the same pre-write snapshot and
+// produce a lost update — Firestore retries the loser against the winner's fresh state.
 annotationsRouter.put(
   '/highlights/range',
   asyncHandler(async (req, res) => {
@@ -29,15 +33,12 @@ annotationsRouter.put(
       return res.status(400).json({ error: 'suttaId, i, s, e are required.' });
     }
     const col = highlightsCol(req.user.id);
-    const snap = await col.where('suttaId', '==', suttaId).get();
-    const overlapping = snap.docs.filter((doc) => {
-      const h = doc.data();
-      return h.i === i && h.s < e && h.e > s;
+    await db.runTransaction(async (tx) => {
+      const snap = await tx.get(col.where('suttaId', '==', suttaId));
+      const overlapping = snap.docs.filter((doc) => rangesOverlap(doc.data(), i, s, e));
+      overlapping.forEach((doc) => tx.delete(doc.ref));
+      if (color) tx.set(col.doc(), { suttaId, i, s, e, color, createdAt: new Date().toISOString() });
     });
-    const batch = db.batch();
-    overlapping.forEach((doc) => batch.delete(doc.ref));
-    if (color) batch.set(col.doc(), { suttaId, i, s, e, color, createdAt: new Date().toISOString() });
-    await batch.commit();
     res.json({ ok: true });
   })
 );

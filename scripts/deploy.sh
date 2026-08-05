@@ -3,6 +3,21 @@
 # (APIs enabled, Firestore database, sutamaya-run service account, session secret).
 set -euo pipefail
 
+SKIP_TESTS=0
+for arg in "$@"; do
+  if [ "$arg" = "--skip-tests" ]; then SKIP_TESTS=1; fi
+done
+
+if [ "$SKIP_TESTS" = "1" ]; then
+  echo "Skipping tests (--skip-tests passed) — deploying without a green test run."
+else
+  echo "Running tests before deploy (pass --skip-tests to override)…"
+  if ! npm test --silent; then
+    echo "error: tests failed. Fix them, or re-run with --skip-tests to deploy anyway." >&2
+    exit 1
+  fi
+fi
+
 if ! command -v gcloud >/dev/null 2>&1; then
   echo "error: gcloud CLI not found. Install it: https://cloud.google.com/sdk/docs/install" >&2
   exit 1
