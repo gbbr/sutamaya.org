@@ -9,7 +9,7 @@ export default {
         treepane: '#F0ECE4',
         listpane: '#F8F6F2',
         field: '#FFFDFA',
-        accent: '#8A6A3B',
+        accent: '#927243',
         'accent-hover': '#6B5230',
         selection: '#EADFC6',
         'hl-amber': '#F0E3A8',
