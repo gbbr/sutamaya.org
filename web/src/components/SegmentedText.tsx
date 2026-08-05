@@ -43,17 +43,27 @@ function paragraphOf(key: string): string {
 //   - verse: italic, and gets a quoted-block left rule (on the wrapping div, not here — see
 //     lastInParagraph below, which the rule reuses to span a whole stanza in one line).
 //   - heading: bold and a size up, for a sutta's own internal sub-headings (e.g. DN9's numbered
-//     sections) — these already fall on their own paragraph boundary, so no extra margin needed.
+//     sections). A heading's key shares its paragraph number with the body text right after it
+//     (e.g. "6.0" the heading, "6.1"/"6.2"/… its paragraph), so the wrapping div's own "no gap
+//     within a paragraph" margin never fires for it — the heading element gets its own top/bottom
+//     margin instead (below, in the JSX), more above than below like a normal heading.
+//     An <h3> (nested under an <h2> — see SegmentFile.headingLevel) steps down from the <h2>
+//     size rather than matching it, so the two actually read as a hierarchy.
 //   - end: a closing colophon note ("The Tevijja Sutta is finished") — centered, muted, and a
 //     size down, read as a trailing note rather than more body text.
 //   - speaker: an inline dialogue attribution embedded mid-verse ("said the Buddha,") — muted,
 //     a size down, and deliberately *not* italic, so it stands apart from the verse around it.
-function roleStyle(role: SegmentRole | undefined, fontSize: number, theme: ThemeColors): CSSProperties {
+function roleStyle(
+  role: SegmentRole | undefined,
+  fontSize: number,
+  theme: ThemeColors,
+  headingLevel?: 2 | 3
+): CSSProperties {
   switch (role) {
     case 'verse':
       return { fontStyle: 'italic' };
     case 'heading':
-      return { fontWeight: 700, fontSize: fontSize + 3 };
+      return { fontWeight: 700, fontSize: fontSize + (headingLevel === 3 ? 1 : 3) };
     case 'end':
       return { fontSize: Math.max(11, fontSize - 2), color: theme.dim, fontStyle: 'italic', textAlign: 'center' };
     case 'speaker':
@@ -121,6 +131,11 @@ export function SegmentedText({
         // sit flush against each other (0 gap, same as prose within a paragraph — see above) so
         // the rule reads as one continuous line down the whole stanza, only breaking at a real
         // stanza/paragraph gap.
+        // A structural sub-heading (SuttaCentral's own <h2>/<h3> nesting — see
+        // build-corpus.mjs's roleFor()) renders as a real heading element, not a styled <p>, and
+        // picks up the UI's sans font (like the reader's chrome) rather than the reading face —
+        // it's document structure, not body prose.
+        const HeadingTag: 'h2' | 'h3' | 'p' = seg.role === 'heading' ? (seg.headingLevel === 3 ? 'h3' : 'h2') : 'p';
         return (
           <div
             key={seg.key}
@@ -130,8 +145,9 @@ export function SegmentedText({
               ...(seg.role === 'verse' ? { paddingLeft: 14, borderLeft: `2px solid ${theme.rule}` } : null),
             }}
           >
-            <p
+            <HeadingTag
               data-seg={i}
+              className={seg.role === 'heading' ? 'font-sans' : undefined}
               onClick={() => {
                 if (String(window.getSelection())) return;
                 onToggleSeg(i);
@@ -142,8 +158,9 @@ export function SegmentedText({
                 fontSize,
                 lineHeight: lineHeight / 100,
                 color: theme.fg,
-                fontFamily: face,
-                ...roleStyle(seg.role, fontSize, theme),
+                ...(seg.role === 'heading' ? null : { fontFamily: face }),
+                ...roleStyle(seg.role, fontSize, theme, seg.headingLevel),
+                ...(seg.role === 'heading' ? { marginTop: paragraphGap, marginBottom: Math.round(paragraphGap / 2) } : null),
               }}
             >
               {parts.map((p, j) =>
@@ -174,7 +191,7 @@ export function SegmentedText({
                   *
                 </sup>
               )}
-            </p>
+            </HeadingTag>
             {open && (
               <p
                 className="animate-fadeUp"

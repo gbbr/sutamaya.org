@@ -12,6 +12,10 @@ export const READER_FACES: Record<ReaderFace, string> = {
   serif: "'Newsreader',Georgia,serif",
   georgia: "Georgia,'Times New Roman',serif",
   sans: "'IBM Plex Sans',system-ui,sans-serif",
+  // These two round the picker out to 5 without pulling in any new webfont — both are
+  // system-installed everywhere, which matters for an offline-first PWA.
+  system: "-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif",
+  times: "'Times New Roman',Times,serif",
 };
 
 export const HIGHLIGHT_COLORS = ['#F0E3A8', '#CBE0C2', '#CFDCEE'];
