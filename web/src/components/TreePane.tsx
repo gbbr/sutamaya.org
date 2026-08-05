@@ -21,6 +21,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
 import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
+import { useScrollToNode } from '../hooks/useScrollToNode';
 import { SEARCH_INPUT_ID } from '../hooks/useListNav';
 import { findNode, isExpandable, searchCorpus } from '../lib/corpus';
 import { HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
@@ -49,6 +50,7 @@ function TreeRow({
   return (
     <div>
       <button
+        data-node-id={node.id}
         className={`row flex items-start gap-[9px] w-full text-left pr-[18px] py-[9px] border-b border-ink/[.07] ${nodeId === node.id ? 'bg-ink/[.06]' : ''}`}
         style={{ paddingLeft: 18 + depth * 14 }}
         onClick={() => (expandable ? onToggle(node.id) : onSelect(node.id))}
@@ -177,6 +179,7 @@ function ListRow({
     <div>
       <div
         ref={(el) => registerRowEl(list.id, el)}
+        data-node-id={list.id}
         className={`row flex items-center gap-[7px] w-full text-left pr-[10px] py-[7px] border-b border-ink/[.07] ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
         style={{
           paddingLeft: 18 + depth * 14,
@@ -373,6 +376,20 @@ function ancestorsOf(corpus: Corpus | null, nodeId: string | undefined): Record<
   return init;
 }
 
+// Same idea as ancestorsOf, for the "My lists" tree: every ancestor list id (by `parentId`
+// chain) that needs to be open for `nodeId` — a list itself, e.g. from a membership chip's
+// /browse/{list_id} navigation — to be visible.
+function ancestorsOfList(lists: ListDef[], nodeId: string | undefined): Record<string, boolean> {
+  if (!nodeId) return {};
+  const init: Record<string, boolean> = {};
+  let cur = lists.find((l) => l.id === nodeId);
+  while (cur?.parentId) {
+    init[cur.parentId] = true;
+    cur = lists.find((l) => l.id === cur!.parentId);
+  }
+  return init;
+}
+
 export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activeIndex, visible = true }: TreePaneProps) {
   const { corpus } = useCorpus();
   const { lists, notes, createList, renameList, removeList, reorderLists, setListParent } = useUserData();
@@ -407,6 +424,13 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
   }, [paneView]);
   const effectiveView = user ? paneView : 'library';
 
+  // A membership chip's /browse/{list_id} navigation (or any other deep link to a list) needs
+  // the "My lists" tree actually showing for that row to be visible at all — flip the toggle for
+  // the user rather than landing them on a Library view with nothing selected.
+  useEffect(() => {
+    if (user && nodeId && lists.some((l) => l.id === nodeId)) setPaneView('lists');
+  }, [user, nodeId, lists]);
+
   // Expands every ancestor level of the current node whenever nodeId *changes* after mount —
   // covers deep links and search-driven navigation within an already-mounted TreePane, without
   // collapsing anything the user already had open.
@@ -426,6 +450,23 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
     });
   }, [corpus, nodeId]);
 
+  // Same as above, for the "My lists" tree.
+  useEffect(() => {
+    const toOpen = ancestorsOfList(lists, nodeId);
+    if (!Object.keys(toOpen).length) return;
+    setListExpanded((x) => {
+      let changed = false;
+      const next = { ...x };
+      for (const id of Object.keys(toOpen)) {
+        if (!next[id]) {
+          next[id] = true;
+          changed = true;
+        }
+      }
+      return changed ? next : x;
+    });
+  }, [lists, nodeId]);
+
   function toggleExpanded(id: string) {
     setExpanded((x) => ({ ...x, [id]: !x[id] }));
   }
@@ -433,7 +474,10 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
   // a sub-list under that list.
   const [creatingParentId, setCreatingParentId] = useState<string | null | undefined>(undefined);
   const [draft, setDraft] = useState('');
-  const [listExpanded, setListExpanded] = useState<Record<string, boolean>>({});
+  // Synchronous initial state for the same reason `expanded` above is: so the tree is already
+  // expanded to nodeId on the very first render if TreePane mounts fresh already pointed at a
+  // nested list.
+  const [listExpanded, setListExpanded] = useState<Record<string, boolean>>(() => ancestorsOfList(lists, nodeId));
   const [menuOpenId, setMenuOpenId] = useState<string | null>(null);
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -688,16 +732,26 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
 
   useEffect(() => {
     function onKey(e: globalThis.KeyboardEvent) {
-      if (e.key !== '/') return;
       const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
       if (tag === 'input' || tag === 'textarea') return;
-      e.preventDefault();
-      searchInput.current?.focus();
-      searchInput.current?.select();
+      if (e.key === '/') {
+        e.preventDefault();
+        searchInput.current?.focus();
+        searchInput.current?.select();
+      } else if (e.key.toLowerCase() === 'x' && user) {
+        e.preventDefault();
+        setPaneView((v) => (v === 'library' ? 'lists' : 'library'));
+      }
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, []);
+  }, [user]);
+
+  // The target row (corpus chapter or list) often isn't in the DOM yet on the same render
+  // nodeId changed on — the ancestor-expand effects above (and, for a list, the paneView switch
+  // above) still need to run and re-render first — so this retries on each of their state
+  // changes until the row is actually findable, not just once.
+  useScrollToNode(scrollRef, nodeId, [effectiveView, expanded, listExpanded, corpus, lists]);
 
   if (!corpus) return null;
 
@@ -763,7 +817,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
   );
 
   return (
-    <aside className="flex flex-col h-full min-w-0 overflow-hidden border-r border-ink/10" style={style}>
+    <aside data-component="TreePane" className="flex flex-col h-full min-w-0 overflow-hidden border-r border-ink/10" style={style}>
       <header className="flex-none px-[18px] pt-4 pb-3.5 border-b border-ink/10">
         <div className="flex items-center gap-2 mb-3">
           <div className="text-[22px] font-semibold tracking-[-.01em] flex-1 truncate">Sutamaya</div>
@@ -771,7 +825,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
             <button
               className="relative flex flex-none items-center rounded-full p-[2px]"
               style={{ background: 'rgba(27,25,23,.09)' }}
-              title={paneView === 'library' ? 'Switch to My Lists' : 'Switch to Library'}
+              title={paneView === 'library' ? 'Switch to My Lists (x)' : 'Switch to Library (x)'}
               onClick={() => setPaneView((v) => (v === 'library' ? 'lists' : 'library'))}
             >
               <div
@@ -848,6 +902,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
                 return (
                   <div key={n.id}>
                     <button
+                      data-node-id={n.id}
                       className={`row flex items-center gap-[11px] w-full text-left px-[18px] py-[9px] border-b border-ink/[.07] ${nodeId === n.id ? 'bg-ink/[.06]' : ''}`}
                       onClick={() => (expandableNode ? toggleExpanded(n.id) : onSelect(n.id))}
                     >
@@ -966,6 +1021,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
                 {autoLists.map(({ list, sub, Icon }) => (
                   <button
                     key={list.id}
+                    data-node-id={list.id}
                     className={`row flex items-center gap-[11px] w-full text-left px-[18px] py-[9px] border-b border-ink/[.07] ${
                       nodeId === String(list.id) ? 'bg-ink/[.06]' : ''
                     }`}

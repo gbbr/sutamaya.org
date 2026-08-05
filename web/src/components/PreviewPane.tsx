@@ -48,7 +48,7 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
 
   if (!sutta || !selectedId) {
     return (
-      <aside className="flex flex-col h-full" style={style}>
+      <aside data-component="PreviewPane" className="flex flex-col h-full" style={style}>
         <div className="font-sans flex-1 flex items-center justify-center text-[13.5px] text-ink/45">Select a sutta</div>
       </aside>
     );
@@ -56,26 +56,28 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
 
   const flatLists = flattenListTree(lists);
   const breadcrumbForId = (id: string) => resolveListById(id, flatLists).breadcrumb;
-  const chips = [...(membership[selectedId] || [])].sort((a, b) => Number(AUTO_LIST_IDS.has(a)) - Number(AUTO_LIST_IDS.has(b)));
+  // "Highlights"/"Notes" membership is redundant here — the highlight-count circles and note
+  // text above already say as much — so, like ListPane and the reader, the auto lists are
+  // excluded from the chip row entirely.
+  const chips = (membership[selectedId] || []).filter((id) => !AUTO_LIST_IDS.has(id));
 
   return (
     <aside className="flex flex-col h-full" style={style}>
       <header className="font-sans flex-none flex items-center gap-4 pl-[34px] pr-[22px] py-[13px] border-b border-ink/10">
+        <button className="flex items-center text-ink/65" title="Close preview" onClick={hidePreview}>
+          <PanelRightClose size={15} strokeWidth={1.75} />
+        </button>
+        <span className="text-xs font-semibold tracking-[.02em] text-ink/60">
+          {sutta.ref} · {sutta.min} min{visited[selectedId] ? ' · read' : ''}
+        </span>
         <button
-          className="font-sans flex items-center gap-2.5 px-6 py-[14px] rounded-full bg-accent text-[#FBFAF7] text-[15.5px] font-semibold shadow-[0_1px_2px_rgba(27,25,23,.15)] hover:brightness-110 active:brightness-95"
+          className="ml-auto font-sans flex items-center gap-2 px-[18px] py-[11px] rounded-full bg-accent text-[#FBFAF7] text-[14px] font-semibold shadow-[0_1px_2px_rgba(27,25,23,.15)] hover:brightness-110 active:brightness-95"
           onClick={() => {
             navigate(`/read/${encodeURIComponent(selectedId)}`);
           }}
         >
-          <BookOpen size={19} strokeWidth={2} />
-          Open in Reader
-        </button>
-        <span className="ml-auto text-xs font-semibold tracking-[.02em] text-ink/60">
-          {sutta.ref} · {sutta.min} min{visited[selectedId] ? ' · read' : ''}
-        </span>
-        <button className="flex items-center gap-1.5 text-[12.5px] font-medium text-ink/65" title="Close preview" onClick={hidePreview}>
-          <PanelRightClose size={15} strokeWidth={1.75} />
-          Close
+          <BookOpen size={16} strokeWidth={2} />
+          Open
         </button>
       </header>
       <div ref={scrollRef} className="sc flex-1 px-[34px] pt-[30px] pb-[60px]">
@@ -101,9 +103,7 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
             {chips.map((id) => (
               <span
                 key={id}
-                className={`inline-flex items-center h-5 whitespace-nowrap rounded-full px-[10px] font-sans text-[11px] border border-ink/[.25] ${
-                  AUTO_LIST_IDS.has(id) ? 'italic text-ink/40' : 'text-ink/70'
-                }`}
+                className="inline-flex items-center h-5 whitespace-nowrap rounded-full px-[10px] font-sans text-[11px] border border-ink/[.25] text-ink/70"
               >
                 {breadcrumbForId(id)}
               </span>
@@ -155,9 +155,7 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
             {chips.map((id) => (
               <span
                 key={id}
-                className={`inline-flex items-center h-5 whitespace-nowrap rounded-[11px] px-[10px] font-sans text-[11.5px] border border-ink/[.25] ${
-                  AUTO_LIST_IDS.has(id) ? 'italic text-ink/40' : 'text-ink/70'
-                }`}
+                className="inline-flex items-center h-5 whitespace-nowrap rounded-[11px] px-[10px] font-sans text-[11.5px] border border-ink/[.25] text-ink/70"
               >
                 {breadcrumbForId(id)}
               </span>

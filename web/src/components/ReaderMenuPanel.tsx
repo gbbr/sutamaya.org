@@ -94,7 +94,7 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
   return (
     <>
       <div className="absolute inset-0" style={{ background: mobile ? 'rgba(0,0,0,.28)' : 'rgba(0,0,0,.12)' }} onClick={onClose} />
-      <div style={panelStyle} className={mobile ? 'animate-sheetUp' : 'animate-fadeIn'}>
+      <div data-component="ReaderMenuPanel" style={panelStyle} className={mobile ? 'animate-sheetUp' : 'animate-fadeIn'}>
         {mobile && <div className="w-11 h-1 rounded-full mx-auto mb-3.5" style={{ background: theme.rule }} />}
         <div className="flex gap-2 mb-4">
           {tabBtn('highlights', 'Highlights')}

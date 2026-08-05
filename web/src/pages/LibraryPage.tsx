@@ -71,7 +71,7 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
   const showListPane = !mobile || view === 'list';
 
   return (
-    <div className="flex overflow-hidden bg-paper h-full">
+    <div data-component="LibraryPage" className="flex overflow-hidden bg-paper h-full">
       {/* Always mounted (never conditionally rendered) on mobile — a mounted-but-hidden pane
           keeps its scroll position and `expanded` tree state across a tree<->list toggle
           instead of losing them to a remount. `display:contents` when shown keeps this wrapper

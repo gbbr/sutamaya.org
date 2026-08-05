@@ -23,7 +23,7 @@ export function SettingsPage(_props: RouteComponentProps) {
   if (loading) return null;
 
   return (
-    <div className="min-h-full bg-paper px-5 py-10 flex justify-center">
+    <div data-component="SettingsPage" className="min-h-full bg-paper px-5 py-10 flex justify-center">
       <div className="w-full max-w-[420px]">
         {/* Genuine history-back (not navigate('/')) — `/` always redirects to /browse/mn (see
             App.tsx), which would silently discard whatever nodeId/list/scroll state the user

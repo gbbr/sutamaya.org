@@ -58,6 +58,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
       onClick={onClose}
     >
       <div
+        data-component="ReaderSearchOverlay"
         className="w-full mx-4 flex flex-col overflow-hidden rounded-2xl shadow-popup"
         style={{ background: theme.panel, maxWidth: 560, maxHeight: '70vh' }}
         onClick={(e) => e.stopPropagation()}

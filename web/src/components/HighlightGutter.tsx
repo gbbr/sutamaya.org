@@ -67,7 +67,11 @@ export function HighlightGutter({ scrollRef, highlightGroups, onJump, layoutKey 
   if (!track || marks.length === 0) return null;
 
   return (
-    <div className="fixed z-40" style={{ top: track.top, height: track.height, right: 4, width: 24, pointerEvents: 'none' }}>
+    <div
+      data-component="HighlightGutter"
+      className="fixed z-40"
+      style={{ top: track.top, height: track.height, right: 4, width: 24, pointerEvents: 'none' }}
+    >
       {marks.map((m) => (
         <button
           key={m.key}
