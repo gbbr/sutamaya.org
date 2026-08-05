@@ -25,7 +25,10 @@ export function SettingsPage(_props: RouteComponentProps) {
   return (
     <div className="min-h-full bg-paper px-5 py-10 flex justify-center">
       <div className="w-full max-w-[420px]">
-        <button className="flex items-center gap-1.5 font-sans text-[13px] text-ink/50 mb-6" onClick={() => navigate('/')}>
+        {/* Genuine history-back (not navigate('/')) — `/` always redirects to /browse/mn (see
+            App.tsx), which would silently discard whatever nodeId/list/scroll state the user
+            had before opening Settings. */}
+        <button className="flex items-center gap-1.5 font-sans text-[13px] text-ink/50 mb-6" onClick={() => navigate(-1)}>
           <ArrowLeft size={14} strokeWidth={1.75} />
           Back
         </button>

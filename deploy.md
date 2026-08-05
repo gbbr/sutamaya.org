@@ -158,6 +158,10 @@ your current working tree (uncommitted changes included, since `--source .` uplo
 directory, not a git ref — commit first if you want the deployed image to match a specific
 commit).
 
+`scripts/deploy.sh` runs `npm test` first and refuses to deploy if it fails. To deploy anyway
+(e.g. a known-flaky test, or a deliberate hotfix), pass `--skip-tests`:
+`npm run deploy -- --skip-tests`.
+
 ## Staying in the free tier
 
 Numbers as of writing — re-check the Cloud Run, Firestore, Artifact Registry, and Cloud Build
