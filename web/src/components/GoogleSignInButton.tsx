@@ -41,5 +41,5 @@ export function GoogleSignInButton({ variant, width }: GoogleSignInButtonProps) 
     );
   }, [googleReady, variant, measuredWidth]);
 
-  return <div ref={ref} className={variant === 'standard' ? 'w-full' : 'flex-none'} />;
+  return <div ref={ref} data-component="GoogleSignInButton" className={variant === 'standard' ? 'w-full' : 'flex-none'} />;
 }

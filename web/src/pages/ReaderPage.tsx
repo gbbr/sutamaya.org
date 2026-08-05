@@ -110,9 +110,14 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       } else if (e.key === 'ArrowLeft') step(-1);
       else if (e.key === 'ArrowRight') step(1);
       else if (e.key.toLowerCase() === 'h') {
+        e.preventDefault();
         setTab('highlights');
         setPanel(true);
       } else if (e.key.toLowerCase() === 'l') {
+        // Without this, the same keypress that opens the panel also lands in the Lists tab's
+        // now-focused filter input (it autoFocuses — see ListMembershipPicker) since nothing
+        // stopped the browser's own default text-insertion behavior for this key.
+        e.preventDefault();
         setTab('lists');
         setPanel(true);
       }
@@ -175,6 +180,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
 
   return (
     <div
+      data-component="ReaderPage"
       className="fixed inset-0 z-40 flex flex-col animate-fadeIn"
       style={{ background: theme.bg, color: theme.fg }}
       onPointerDown={onReaderPointerDown}

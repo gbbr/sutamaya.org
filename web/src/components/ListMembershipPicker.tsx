@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react';
 import { Check, Plus } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
+import { useAuth } from '../context/AuthContext';
 import { flattenListTree, resolveListById, type ListPathOption } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import type { ListDef, ThemeColors } from '../lib/types';
@@ -23,6 +24,7 @@ type Row =
 // Shared by the reader's Lists tab and (eventually) the preview pane's "In lists" editor, so both
 // get the same fast add-to-multiple-lists flow instead of two hand-rolled pickers.
 export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose }: ListMembershipPickerProps) {
+  const { user, promptGoogleSignIn } = useAuth();
   const { lists, membership, toggleMembership, addToList, createList } = useUserData();
   const [draft, setDraft] = useState('');
   const [activeIndex, setActiveIndex] = useState(0);
@@ -153,13 +155,33 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
     }
   }
 
+  // Signed out, `lists`/`membership` are always empty (see UserDataContext) — rather than show a
+  // search box with nothing to search and a "Create list" row that silently just re-prompts sign
+  // in the moment it's used, show the prompt directly.
+  if (!user) {
+    return (
+      <div data-component="ListMembershipPicker" className="flex flex-col items-center gap-3 py-6 text-center">
+        <p className="font-sans text-[13.5px]" style={{ color: theme.fg, opacity: 0.6 }}>
+          Sign in to add this sutta to a list.
+        </p>
+        <button
+          className="font-sans text-[13px] font-semibold px-4 py-[9px] rounded-full"
+          style={{ background: theme.fg, color: theme.bg }}
+          onClick={promptGoogleSignIn}
+        >
+          Sign in
+        </button>
+      </div>
+    );
+  }
+
   const rowStyle = (active: boolean) => ({
     borderRadius: 8,
     background: active ? theme.rule : 'transparent',
   });
 
   return (
-    <div>
+    <div data-component="ListMembershipPicker">
       {suttaListIds.length > 0 && (
         <div className="flex flex-wrap gap-1.5 mb-2.5">
           {/* Display only — removal already lives on each row below (unchecking), so these

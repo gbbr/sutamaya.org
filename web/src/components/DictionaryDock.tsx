@@ -12,6 +12,7 @@ interface DictionaryDockProps {
 export function DictionaryDock({ word, gloss, body, theme, onClose }: DictionaryDockProps) {
   return (
     <section
+      data-component="DictionaryDock"
       className="flex-none animate-sheetUp"
       style={{ borderTop: `2px solid ${theme.fg}`, background: theme.panel, padding: '14px 22px 18px' }}
     >

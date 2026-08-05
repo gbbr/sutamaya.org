@@ -46,7 +46,7 @@ export function NoteEditor({
   }
 
   return (
-    <div>
+    <div data-component="NoteEditor">
       <textarea
         value={draft}
         onChange={(e) => setDraft(e.target.value)}

@@ -195,7 +195,11 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
       : { flex: 1, background: '#F8F6F2' };
 
   return (
-    <section className={`flex flex-col h-full min-w-0 ${!mobile && desktop && !previewHidden ? 'border-r border-ink/10' : ''}`} style={style}>
+    <section
+      data-component="ListPane"
+      className={`flex flex-col h-full min-w-0 ${!mobile && desktop && !previewHidden ? 'border-r border-ink/10' : ''}`}
+      style={style}
+    >
       <header className="flex-none flex items-baseline gap-3 px-5 pt-4 pb-3.5 border-b border-ink/10">
         {mobile && (
           <button className="font-sans text-[13px] text-ink/50" onClick={onBack}>

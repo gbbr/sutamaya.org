@@ -38,6 +38,7 @@ export function HighlightPopup({ pop, theme, onPick, onRemove, onStop }: Highlig
   return (
     <div
       ref={ref}
+      data-component="HighlightPopup"
       className="fixed z-[60] flex items-center gap-[9px] px-[11px] py-[7px] rounded-chip shadow-popup animate-popIn"
       style={{ left: pop.x, top: pop.y, background: theme.panel, border: `1px solid ${theme.rule}` }}
       onPointerDown={onStop}
