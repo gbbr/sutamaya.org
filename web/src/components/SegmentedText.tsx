@@ -181,7 +181,7 @@ export function SegmentedText({
               )}
               {seg.note && showNotes && (
                 <sup
-                  style={{ marginLeft: 2, color: theme.dim, fontStyle: 'normal', fontWeight: 700, cursor: 'pointer' }}
+                  style={{ marginLeft: 2, color: theme.pali, fontStyle: 'normal', fontWeight: 700, cursor: 'pointer' }}
                   title={stripTags(seg.note)}
                   onClick={(e) => {
                     e.stopPropagation();
