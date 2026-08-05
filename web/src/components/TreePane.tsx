@@ -101,6 +101,7 @@ function ListRow({
   depth,
   nodeId,
   childrenOf,
+  totalMembers,
   listExpanded,
   onToggle,
   onSelect,
@@ -136,6 +137,10 @@ function ListRow({
   depth: number;
   nodeId?: string;
   childrenOf: (parentId: string) => ListDef[];
+  // Distinct sutta count across a list's own `items` plus every descendant sub-list's `items`,
+  // deduped (the same sutta can independently belong to a parent and a child list) — see
+  // `listMemberSets` below for how it's computed.
+  totalMembers: (id: string) => number;
   listExpanded: Record<string, boolean>;
   onToggle: (id: string) => void;
   onSelect: (id: string) => void;
@@ -234,6 +239,9 @@ function ListRow({
           </button>
         )}
         {!editing && (
+          <span className="flex-none font-sans text-[11.5px] font-medium text-ink/50">{totalMembers(list.id)}</span>
+        )}
+        {!editing && (
           <button
             className="flex-none w-[20px] h-[20px] flex items-center justify-center rounded text-ink/40 hover:bg-ink/[.08] hover:text-ink"
             title="List options"
@@ -309,6 +317,7 @@ function ListRow({
             depth={depth + 1}
             nodeId={nodeId}
             childrenOf={childrenOf}
+            totalMembers={totalMembers}
             listExpanded={listExpanded}
             onToggle={onToggle}
             onSelect={onSelect}
@@ -537,6 +546,30 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
     }
     return (parentId: string) => byParent.get(parentId) || [];
   }, [lists]);
+  // Total distinct sutta count for a list, "just like the library entries" (ChapterRow's
+  // `node.count`) but computed here at render time rather than baked into corpus.json, since a
+  // user list's `items` (and its sub-lists') can change at any moment. Recurses through
+  // `listChildrenOf` and unions each level's `items` into a Set — the same sutta can
+  // independently belong to a parent list and one of its sub-lists (or two sibling sub-lists),
+  // so a plain sum across levels would double-count; a dedup'd Set is the "how many distinct
+  // suttas" the badge is meant to show.
+  const listMemberSets = useMemo(() => {
+    const byId = new Map(lists.map((l) => [l.id, l] as const));
+    const cache = new Map<string, Set<string>>();
+    function collect(id: string): Set<string> {
+      const cached = cache.get(id);
+      if (cached) return cached;
+      const set = new Set<string>(byId.get(id)?.items || []);
+      cache.set(id, set);
+      for (const child of listChildrenOf(id)) {
+        for (const memberId of collect(child.id)) set.add(memberId);
+      }
+      return set;
+    }
+    for (const l of lists) collect(l.id);
+    return cache;
+  }, [lists, listChildrenOf]);
+  const listTotalMembers = (id: string) => listMemberSets.get(id)?.size ?? 0;
   const topLevelLists = useMemo(() => lists.filter((l) => !l.parentId && !l.auto), [lists]);
   const autoLists = useMemo(
     () =>
@@ -998,6 +1031,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
                 depth={0}
                 nodeId={nodeId}
                 childrenOf={listChildrenOf}
+                totalMembers={listTotalMembers}
                 listExpanded={listExpanded}
                 onToggle={toggleListExpanded}
                 onSelect={onSelect}
