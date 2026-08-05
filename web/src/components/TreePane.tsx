@@ -23,7 +23,7 @@ import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { SEARCH_INPUT_ID } from '../hooks/useListNav';
 import { findNode, isExpandable, searchCorpus } from '../lib/corpus';
-import { HIGHLIGHTS_LIST_LABEL, NOTES_LIST_LABEL } from '../lib/autoLists';
+import { HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
 import { autoScrollEdge } from '../lib/dragAutoScroll';
 import type { ChapterRow, Corpus, ListDef } from '../lib/types';
 
@@ -478,8 +478,8 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
   const autoLists = useMemo(
     () =>
       [
-        { list: lists.find((l) => !l.parentId && l.label === HIGHLIGHTS_LIST_LABEL), sub: 'Every sutta with a highlight', Icon: Highlighter },
-        { list: lists.find((l) => !l.parentId && l.label === NOTES_LIST_LABEL), sub: 'Every sutta with a note', Icon: StickyNote },
+        { list: lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID), sub: 'Every sutta with a highlight', Icon: Highlighter },
+        { list: lists.find((l) => l.id === NOTES_AUTO_LIST_ID), sub: 'Every sutta with a note', Icon: StickyNote },
       ].filter((x): x is { list: ListDef; sub: string; Icon: typeof Highlighter } => !!x.list),
     [lists]
   );
@@ -521,7 +521,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
 
   function deleteList(l: ListDef) {
     setConfirmDeleteId(null);
-    removeList(l.id, l.label);
+    removeList(l.id);
   }
 
   function addChildList(parentId: string) {

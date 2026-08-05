@@ -10,14 +10,14 @@ interface UserDataState {
   notes: NotesMap;
   highlights: HighlightsMap;
   visited: VisitedMap;
-  listMembers: (label: string) => string[];
+  listMembers: (listId: string) => string[];
   createList: (label: string, parentId?: string | null) => Promise<ListDef>;
   renameList: (id: string, label: string) => Promise<void>;
-  removeList: (id: string, label: string) => Promise<void>;
+  removeList: (id: string) => Promise<void>;
   setListParent: (id: string, parentId: string | null) => Promise<void>;
   reorderLists: (parentId: string | null, order: string[]) => Promise<void>;
   reorderListItems: (id: string, order: string[]) => Promise<void>;
-  toggleMembership: (suttaId: string, label: string) => Promise<void>;
+  toggleMembership: (suttaId: string, listId: string) => Promise<void>;
   addToList: (suttaId: string, list: ListDef) => Promise<void>;
   submitNote: (suttaId: string, text: string) => Promise<void>;
   setHighlightRange: (suttaId: string, i: number, s: number, e: number, color: string | null, sync?: boolean) => Promise<void>;
@@ -89,7 +89,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   }, [user]);
 
   const listMembers = useCallback(
-    (label: string) => Object.entries(membership).filter(([, labels]) => labels.includes(label)).map(([id]) => id),
+    (listId: string) => Object.entries(membership).filter(([, ids]) => ids.includes(listId)).map(([id]) => id),
     [membership]
   );
 
@@ -150,16 +150,8 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       const old = lists.find((l) => l.id === id);
       if (!old || old.label === trimmed) return;
       setLists((ls) => ls.map((l) => (l.id === id ? { ...l, label: trimmed } : l)));
-      // Membership chips are keyed by label, not list id (see routes/data.js) — rewrite them
-      // everywhere they appear so the sidebar and any "in lists" chips stay correct without
-      // waiting on a refetch.
-      setMembership((m) => {
-        const next: Membership = {};
-        for (const [suttaId, labels] of Object.entries(m)) {
-          next[suttaId] = labels.map((l) => (l === old.label ? trimmed : l));
-        }
-        return next;
-      });
+      // membership is keyed by list id (see routes/data.js), which doesn't change on rename, so
+      // there's nothing to rewrite there.
       try {
         await listsApi.rename(id, trimmed);
       } catch (e) {
@@ -170,11 +162,11 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   );
 
   const removeList = useCallback(
-    async (id: string, label: string) => {
+    async (id: string) => {
       setLists((ls) => ls.filter((l) => l.id !== id));
       setMembership((m) => {
         const next: Membership = {};
-        for (const [suttaId, labels] of Object.entries(m)) next[suttaId] = labels.filter((l) => l !== label);
+        for (const [suttaId, ids] of Object.entries(m)) next[suttaId] = ids.filter((x) => x !== id);
         return next;
       });
       try {
@@ -232,19 +224,19 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   );
 
   const toggleMembership = useCallback(
-    async (suttaId: string, label: string) => {
+    async (suttaId: string, listId: string) => {
       if (!user) return promptGoogleSignIn();
-      const list = lists.find((l) => l.label === label);
+      const list = lists.find((l) => l.id === listId);
       if (!list) return;
       const current = membership[suttaId] || [];
-      const on = current.includes(label);
-      setMembership((m) => ({ ...m, [suttaId]: on ? current.filter((l) => l !== label) : [...current, label] }));
+      const on = current.includes(listId);
+      setMembership((m) => ({ ...m, [suttaId]: on ? current.filter((id) => id !== listId) : [...current, listId] }));
       setLists((ls) =>
-        ls.map((l) => (l.id === list.id ? { ...l, items: on ? l.items.filter((s) => s !== suttaId) : [...l.items, suttaId] } : l))
+        ls.map((l) => (l.id === listId ? { ...l, items: on ? l.items.filter((s) => s !== suttaId) : [...l.items, suttaId] } : l))
       );
       try {
-        if (on) await listsApi.removeItem(list.id, suttaId);
-        else await listsApi.addItem(list.id, suttaId);
+        if (on) await listsApi.removeItem(listId, suttaId);
+        else await listsApi.addItem(listId, suttaId);
       } catch (e) {
         await resyncAfterFailure('toggle list membership', e);
       }
@@ -253,14 +245,14 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   );
 
   // Like toggleMembership's "add" branch, but takes the list directly instead of looking it up
-  // by label in `lists` — for adding to a list a caller just created: createList's own setLists
-  // call won't be reflected in this component's `lists` closure until the next render, so
-  // looking it up by label right after creating it would silently find nothing.
+  // in `lists` — for adding to a list a caller just created: createList's own setLists call
+  // won't be reflected in this component's `lists` closure until the next render, so looking it
+  // up by id right after creating it would silently find nothing.
   const addToList = useCallback(
     async (suttaId: string, list: ListDef) => {
       if (!user) return promptGoogleSignIn();
-      if ((membership[suttaId] || []).includes(list.label)) return;
-      setMembership((m) => ({ ...m, [suttaId]: [...(m[suttaId] || []), list.label] }));
+      if ((membership[suttaId] || []).includes(list.id)) return;
+      setMembership((m) => ({ ...m, [suttaId]: [...(m[suttaId] || []), list.id] }));
       setLists((ls) => ls.map((l) => (l.id === list.id ? { ...l, items: [...l.items, suttaId] } : l)));
       try {
         await listsApi.addItem(list.id, suttaId);

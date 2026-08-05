@@ -4,10 +4,11 @@ import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
-import { useAutoListLabels } from '../hooks/useAutoListLabels';
 import { listItemsFor, nodeLabel } from '../lib/corpus';
 import { highlightCountsByColor } from '../lib/highlights';
 import { autoScrollEdge } from '../lib/dragAutoScroll';
+import { flattenListTree, resolveListById } from '../lib/lists';
+import { AUTO_LIST_IDS } from '../lib/autoLists';
 import type { Sutta } from '../lib/types';
 
 interface ListPaneProps {
@@ -36,7 +37,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
   const currentList = !searching ? lists.find((l) => String(l.id) === nodeId) : undefined;
   // "Highlights"/"Notes" membership is redundant here — a row already shows note text and
   // highlight-count circles directly, so the auto lists never appear as chips.
-  const autoLabels = useAutoListLabels();
+  const flatLists = useMemo(() => flattenListTree(lists), [lists]);
 
   const items = useMemo(
     () => (corpus ? listItemsFor(corpus, nodeId, query, notes, lists, membership) : []),
@@ -220,7 +221,9 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
           const on = desktop && !previewHidden && !twoPane && id === selectedId;
           const focused = i === activeIndex;
           const note = notes[id];
-          const chips = (membership[id] || []).filter((c) => !autoLabels.has(c));
+          const chips = (membership[id] || [])
+            .filter((c) => !AUTO_LIST_IDS.has(c))
+            .map((c) => ({ id: c, breadcrumb: resolveListById(c, flatLists).breadcrumb }));
           const hlCounts = highlightCountsByColor(highlights[id] || []);
           const dragging = dragIdRef.current === id;
           return (
@@ -275,11 +278,11 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
                   <span className="flex flex-wrap gap-1.5 mt-2">
                     {chips.map((c) => (
                       <span
-                        key={c}
+                        key={c.id}
                         className="inline-flex items-center whitespace-nowrap leading-[1.4] rounded-[10px] px-[9px] py-[2px] font-sans text-[11px] border"
                         style={{ borderColor: on ? 'rgba(251,250,247,.45)' : 'rgba(27,25,23,.25)' }}
                       >
-                        {c}
+                        {c.breadcrumb}
                       </span>
                     ))}
                   </span>

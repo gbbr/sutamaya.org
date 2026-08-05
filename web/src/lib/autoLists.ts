@@ -7,5 +7,8 @@
 // the two npm workspaces) — keep both in sync if either ever changes.
 export const HIGHLIGHTS_AUTO_LIST_ID = 'auto-highlights';
 export const NOTES_AUTO_LIST_ID = 'auto-notes';
-export const HIGHLIGHTS_LIST_LABEL = 'Highlights';
-export const NOTES_LIST_LABEL = 'Notes';
+
+// membership[suttaId] entries (see server/src/routes/data.js's buildUserData) are list ids, so
+// telling an auto list apart from a real one is a plain id check against these two fixed
+// constants — no need to look anything up in `lists` first.
+export const AUTO_LIST_IDS: ReadonlySet<string> = new Set([HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID]);

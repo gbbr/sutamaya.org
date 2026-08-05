@@ -6,12 +6,13 @@ import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { useSuttaReading } from '../hooks/useSuttaReading';
-import { useAutoListLabels } from '../hooks/useAutoListLabels';
 import { SegmentedText } from './SegmentedText';
 import { HighlightPopup } from './HighlightPopup';
 import { HighlightGutter } from './HighlightGutter';
 import { NoteEditor } from './NoteEditor';
 import { ListMembershipPicker } from './ListMembershipPicker';
+import { flattenListTree, resolveListById } from '../lib/lists';
+import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 
 interface PreviewPaneProps {
@@ -21,7 +22,7 @@ interface PreviewPaneProps {
 export function PreviewPane({ selectedId }: PreviewPaneProps) {
   const { corpus } = useCorpus();
   const { desktop, previewHidden, hidePreview } = useLayout();
-  const { notes, submitNote, membership, visited } = useUserData();
+  const { notes, submitNote, membership, lists, visited } = useUserData();
   const { fs, lh, face, allPali } = useReaderPrefs();
   const [showListPicker, setShowListPicker] = useState(false);
   useEffect(() => setShowListPicker(false), [selectedId]);
@@ -39,7 +40,6 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
     popStop,
     openPop,
   } = useSuttaReading(selectedId, 'preview');
-  const autoLabels = useAutoListLabels();
 
   if (!desktop || previewHidden) return null;
 
@@ -54,7 +54,9 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
     );
   }
 
-  const chips = [...(membership[selectedId] || [])].sort((a, b) => Number(autoLabels.has(a)) - Number(autoLabels.has(b)));
+  const flatLists = flattenListTree(lists);
+  const breadcrumbForId = (id: string) => resolveListById(id, flatLists).breadcrumb;
+  const chips = [...(membership[selectedId] || [])].sort((a, b) => Number(AUTO_LIST_IDS.has(a)) - Number(AUTO_LIST_IDS.has(b)));
 
   return (
     <aside className="flex flex-col h-full" style={style}>
@@ -96,14 +98,14 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
                 {count}
               </span>
             ))}
-            {chips.map((label) => (
+            {chips.map((id) => (
               <span
-                key={label}
+                key={id}
                 className={`inline-flex items-center h-5 whitespace-nowrap rounded-full px-[10px] font-sans text-[11px] border border-ink/[.25] ${
-                  autoLabels.has(label) ? 'italic text-ink/40' : 'text-ink/70'
+                  AUTO_LIST_IDS.has(id) ? 'italic text-ink/40' : 'text-ink/70'
                 }`}
               >
-                {label}
+                {breadcrumbForId(id)}
               </span>
             ))}
           </div>
@@ -150,14 +152,14 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
           <ListMembershipPicker suttaId={selectedId} theme={theme} autoFocus onRequestClose={() => setShowListPicker(false)} />
         ) : (
           <div className="flex flex-wrap gap-1.5">
-            {chips.map((label) => (
+            {chips.map((id) => (
               <span
-                key={label}
+                key={id}
                 className={`inline-flex items-center h-5 whitespace-nowrap rounded-[11px] px-[10px] font-sans text-[11.5px] border border-ink/[.25] ${
-                  autoLabels.has(label) ? 'italic text-ink/40' : 'text-ink/70'
+                  AUTO_LIST_IDS.has(id) ? 'italic text-ink/40' : 'text-ink/70'
                 }`}
               >
-                {label}
+                {breadcrumbForId(id)}
               </span>
             ))}
             {chips.length === 0 && <div className="font-sans text-[13px] text-ink/40">Not in any lists yet.</div>}

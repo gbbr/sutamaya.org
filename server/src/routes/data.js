@@ -25,12 +25,14 @@ async function buildUserData(userId) {
     visitedCol(userId).get(),
   ]);
 
+  // Keyed by list id, not label — two lists can share a label (e.g. same-named lists nested
+  // under different parents), and an id is the only thing that identifies one unambiguously.
   const membership = {};
   const lists = listsSnap.docs.map((doc) => {
     const data = doc.data();
     const items = data.items || [];
     items.forEach((suttaId) => {
-      (membership[suttaId] = membership[suttaId] || []).push(data.label);
+      (membership[suttaId] = membership[suttaId] || []).push(doc.id);
     });
     // `parentId`/`items` (in stored order) let the client render lists as a tree (sub-lists
     // nested under their parent) and show/reorder each list's own suttas in the order the user
@@ -75,11 +77,11 @@ async function buildUserData(userId) {
 
   if (highlightedIds.length) {
     lists.push({ id: HIGHLIGHTS_AUTO_LIST_ID, label: 'Highlights', parentId: null, items: highlightedIds, auto: true });
-    highlightedIds.forEach((id) => (membership[id] = [...(membership[id] || []), 'Highlights']));
+    highlightedIds.forEach((id) => (membership[id] = [...(membership[id] || []), HIGHLIGHTS_AUTO_LIST_ID]));
   }
   if (notedIds.length) {
     lists.push({ id: NOTES_AUTO_LIST_ID, label: 'Notes', parentId: null, items: notedIds, auto: true });
-    notedIds.forEach((id) => (membership[id] = [...(membership[id] || []), 'Notes']));
+    notedIds.forEach((id) => (membership[id] = [...(membership[id] || []), NOTES_AUTO_LIST_ID]));
   }
 
   return { lists, membership, notes, highlights, visited };
