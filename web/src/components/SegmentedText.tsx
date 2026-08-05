@@ -1,4 +1,5 @@
-import type { SegmentFile } from '../lib/corpus';
+import type { CSSProperties } from 'react';
+import type { SegmentFile, SegmentRole } from '../lib/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
 
 interface SegmentedTextProps {
@@ -28,6 +29,32 @@ interface Part {
 // segment within it, regardless of how deep the rest of the key nests.
 function paragraphOf(key: string): string {
   return key.split(':').pop()!.split('.')[0];
+}
+
+// Per-role style on top of the base English `<p>` style (see SegmentFile.role) — a light,
+// legible-but-distinct treatment for each of SuttaCentral's own structural roles, rather than
+// every segment reading as identical body prose:
+//   - verse: italic, and gets a quoted-block left rule (on the wrapping div, not here — see
+//     lastInParagraph below, which the rule reuses to span a whole stanza in one line).
+//   - heading: bold and a size up, for a sutta's own internal sub-headings (e.g. DN9's numbered
+//     sections) — these already fall on their own paragraph boundary, so no extra margin needed.
+//   - end: a closing colophon note ("The Tevijja Sutta is finished") — centered, muted, and a
+//     size down, read as a trailing note rather than more body text.
+//   - speaker: an inline dialogue attribution embedded mid-verse ("said the Buddha,") — muted,
+//     a size down, and deliberately *not* italic, so it stands apart from the verse around it.
+function roleStyle(role: SegmentRole | undefined, fontSize: number, theme: ThemeColors): CSSProperties {
+  switch (role) {
+    case 'verse':
+      return { fontStyle: 'italic' };
+    case 'heading':
+      return { fontWeight: 700, fontSize: fontSize + 3 };
+    case 'end':
+      return { fontSize: Math.max(11, fontSize - 2), color: theme.dim, fontStyle: 'italic', textAlign: 'center' };
+    case 'speaker':
+      return { fontSize: Math.max(11, fontSize - 3), color: theme.dim };
+    default:
+      return {};
+  }
 }
 
 function buildParts(text: string, hlForSeg: Highlight[]): Part[] {
@@ -74,15 +101,34 @@ export function SegmentedText({
         // one's) gets space, so same-paragraph segments read as one continuous block of text.
         const next = segments[i + 1];
         const lastInParagraph = !next || paragraphOf(next.key) !== paragraphOf(seg.key);
+        // Verse lines get a quoted-block left rule; consecutive verse lines within one stanza
+        // sit flush against each other (0 gap, same as prose within a paragraph — see above) so
+        // the rule reads as one continuous line down the whole stanza, only breaking at a real
+        // stanza/paragraph gap.
         return (
-          <div key={seg.key} id={seg.key} style={{ marginBottom: lastInParagraph ? paragraphGap : 0 }}>
+          <div
+            key={seg.key}
+            id={seg.key}
+            style={{
+              marginBottom: lastInParagraph ? paragraphGap : 0,
+              ...(seg.role === 'verse' ? { paddingLeft: 14, borderLeft: `2px solid ${theme.rule}` } : null),
+            }}
+          >
             <p
               data-seg={i}
               onClick={() => {
                 if (String(window.getSelection())) return;
                 onToggleSeg(i);
               }}
-              style={{ margin: 0, cursor: 'pointer', fontSize, lineHeight: lineHeight / 100, color: theme.fg, fontFamily: face }}
+              style={{
+                margin: 0,
+                cursor: 'pointer',
+                fontSize,
+                lineHeight: lineHeight / 100,
+                color: theme.fg,
+                fontFamily: face,
+                ...roleStyle(seg.role, fontSize, theme),
+              }}
             >
               {parts.map((p, j) =>
                 p.c ? (

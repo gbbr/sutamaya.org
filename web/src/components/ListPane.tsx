@@ -9,7 +9,6 @@ import { highlightCountsByColor } from '../lib/highlights';
 import { autoScrollEdge } from '../lib/dragAutoScroll';
 import { flattenListTree, resolveListById } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
-import { Tooltip } from './Tooltip';
 import type { Sutta } from '../lib/types';
 
 interface ListPaneProps {
@@ -215,15 +214,14 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
           <div className="font-sans text-xs text-ink/[.42] mt-[2px]">{meta}</div>
         </div>
         {desktop && previewHidden && (
-          <Tooltip label="Preview" side="left">
-            <button
-              className="flex items-center justify-center text-ink/[.55] border border-ink/[.22] rounded-lg w-7 h-7"
-              aria-label="Preview"
-              onClick={showPreview}
-            >
-              <Eye size={14} strokeWidth={1.75} />
-            </button>
-          </Tooltip>
+          <button
+            className="flex items-center justify-center text-ink/[.55] border border-ink/[.22] rounded-lg w-7 h-7"
+            aria-label="Preview"
+            title="Preview"
+            onClick={showPreview}
+          >
+            <Eye size={14} strokeWidth={1.75} />
+          </button>
         )}
       </header>
       <div

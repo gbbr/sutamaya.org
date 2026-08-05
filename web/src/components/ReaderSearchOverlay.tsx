@@ -36,6 +36,10 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
   }, [activeIndex]);
 
   function onKeyDown(e: React.KeyboardEvent) {
+    // Stops here — the reader's own window-level keydown handler already bails while this
+    // overlay is open (see ReaderPage), but stopping propagation outright means that doesn't
+    // depend on state/timing at all: this modal owns every key while it's up, full stop.
+    e.stopPropagation();
     if (e.key === 'Escape') {
       e.preventDefault();
       onClose();

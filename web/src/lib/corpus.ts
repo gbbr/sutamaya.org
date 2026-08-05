@@ -10,10 +10,15 @@ export async function loadDictionary(): Promise<Dictionary> {
   return res.json();
 }
 
+// SuttaCentral's own structural role for this segment (see scripts/fetch-html-structure.mjs and
+// build-corpus.mjs's roleFor()) — omitted for the common "plain prose" case.
+export type SegmentRole = 'verse' | 'heading' | 'end' | 'speaker';
+
 export interface SegmentFile {
   key: string;
   pali: string;
   en: string;
+  role?: SegmentRole;
 }
 
 const textCache = new Map<string, Promise<SegmentFile[]>>();

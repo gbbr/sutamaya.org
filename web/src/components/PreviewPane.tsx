@@ -15,7 +15,6 @@ import { ListMembershipPicker } from './ListMembershipPicker';
 import { flattenListTree, resolveListById } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
-import { Tooltip } from './Tooltip';
 
 interface PreviewPaneProps {
   selectedId?: string;
@@ -69,11 +68,9 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
   return (
     <aside className="flex flex-col h-full" style={style}>
       <header className="font-sans flex-none flex items-center gap-4 pl-[34px] pr-[22px] py-[13px] border-b border-ink/10">
-        <Tooltip label="Collapse preview">
-          <button className="flex items-center text-ink/65" aria-label="Collapse preview" onClick={hidePreview}>
-            <PanelRightClose size={15} strokeWidth={1.75} />
-          </button>
-        </Tooltip>
+        <button className="flex items-center text-ink/65" aria-label="Collapse preview" title="Collapse preview" onClick={hidePreview}>
+          <PanelRightClose size={15} strokeWidth={1.75} />
+        </button>
         <span className="text-xs font-semibold tracking-[.02em] text-ink/60">
           {sutta.ref} · {sutta.min} min{visited[selectedId] ? ' · read' : ''}
         </span>
