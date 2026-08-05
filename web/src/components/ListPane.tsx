@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Check, Eye, GripVertical } from 'lucide-react';
+import { ArrowLeft, Check, Eye, GripVertical } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -203,9 +203,14 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
       className={`flex flex-col h-full min-w-0 ${!mobile && desktop && !previewHidden ? 'border-r border-ink/10' : ''}`}
       style={style}
     >
-      <header className="flex-none flex items-baseline gap-3 px-5 pt-4 pb-3.5 border-b border-ink/10">
+      <header className="flex-none flex items-center gap-3 px-5 pt-4 pb-3.5 border-b border-ink/10">
         {mobile && (
-          <button className="font-sans text-[13px] text-ink/50" onClick={onBack}>
+          <button
+            className="flex-none flex flex-col items-center gap-0.5 font-sans text-[11px] text-ink/50"
+            aria-label="Back"
+            onClick={onBack}
+          >
+            <ArrowLeft size={15} strokeWidth={1.75} />
             Back
           </button>
         )}
