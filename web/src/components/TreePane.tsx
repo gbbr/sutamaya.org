@@ -447,7 +447,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
   const { corpus } = useCorpus();
   const { lists, notes, createList, renameList, removeList, reorderLists, setListParent } = useUserData();
   const { user, promptGoogleSignIn } = useAuth();
-  const { mobile, desktop, paneW } = useLayout();
+  const { mobile, paneW } = useLayout();
   const scrollRef = useScrollMemory<HTMLDivElement>('tree', visible);
   // Computed synchronously on mount (not via an effect) so the tree is *already* expanded to
   // nodeId by the very first render — otherwise useScrollMemory's restore (a layout effect,
@@ -995,7 +995,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
         <div className="flex items-center gap-2 mb-3">
           <div className="text-[22px] font-semibold tracking-[-.01em] flex-1 truncate">sutamaya</div>
           {user && (
-            <Tooltip label={paneView === 'library' ? 'Switch to My Lists (x)' : 'Switch to Library (x)'}>
+            <Tooltip label={paneView === 'library' ? 'Switch to My Lists (x)' : 'Switch to Library (x)'} side="left">
               <button
                 className="relative flex flex-none items-center rounded-full p-[2px]"
                 style={{ background: 'rgba(27,25,23,.09)' }}
@@ -1008,7 +1008,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
                 />
                 {/* Mobile-sized to roughly match the "sutamaya" title's own height — this and the
                     account badge next to it are the two touch targets in this row people actually
-                    reach for repeatedly, unlike the desktop footer's more occasional gear/badge. */}
+                    reach for repeatedly. */}
                 <span
                   className={`relative z-10 flex items-center justify-center rounded-full transition-colors ${paneView === 'library' ? 'text-ink' : 'text-ink/45'}`}
                   style={mobile ? { width: 38, height: 38 } : { width: 24, height: 24 }}
@@ -1024,22 +1024,23 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
               </button>
             </Tooltip>
           )}
-          {mobile && (
-            <div className="flex items-center gap-3.5 flex-none">
-              {accountBadge(36)}
-              {/* The badge above already goes to Settings regardless of sign-in state (see
-                  accountBadge) — once signed in it's the one obvious account affordance, so the
-                  separate gear (redundant with it) drops out; signed out, the badge alone reads
-                  as "sign in", not "settings", so the gear stays as the explicit way in. */}
-              {!user && (
-                <Tooltip label="Settings">
-                  <button className="flex items-center text-ink/[.62]" aria-label="Settings" onClick={() => navigate('/settings')}>
-                    <Settings size={20} strokeWidth={1.75} />
-                  </button>
-                </Tooltip>
-              )}
-            </div>
-          )}
+          {/* Account entry point, right of the toggle on every viewport (this used to be a
+              separate desktop-only footer at the bottom of the pane, with nothing else on it —
+              not worth a whole row of its own when it fits right here). */}
+          <div className={`flex items-center flex-none ${mobile ? 'gap-3.5' : 'gap-2.5'}`}>
+            {accountBadge(mobile ? 36 : 26)}
+            {/* The badge above already goes to Settings regardless of sign-in state (see
+                accountBadge) — once signed in it's the one obvious account affordance, so the
+                separate gear (redundant with it) drops out; signed out, the badge alone reads
+                as "sign in", not "settings", so the gear stays as the explicit way in. */}
+            {!user && (
+              <Tooltip label="Settings">
+                <button className="flex items-center text-ink/[.62]" aria-label="Settings" onClick={() => navigate('/settings')}>
+                  <Settings size={mobile ? 20 : 16} strokeWidth={1.75} />
+                </button>
+              </Tooltip>
+            )}
+          </div>
         </div>
         <div className="relative">
           <input
@@ -1048,6 +1049,16 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
             onChange={(e) => onSearch(e.target.value)}
             onFocus={() => setSearchFocused(true)}
             onBlur={() => setSearchFocused(false)}
+            onKeyDown={(e) => {
+              if (e.key !== 'Escape') return;
+              e.preventDefault();
+              // Stops here rather than bubbling to any other Escape handler — clearing and
+              // defocusing the search box is a complete, self-contained action for this key
+              // while it has focus, not one step of some other component's own Escape handling.
+              e.stopPropagation();
+              onSearch('');
+              searchInput.current?.blur();
+            }}
             placeholder="Search ID, title, blurb, note, text"
             className="w-full h-[38px] border border-ink/[.22] rounded-field pl-3 pr-8 bg-field text-[14.5px] outline-none"
           />
@@ -1239,24 +1250,6 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
           </div>
         )}
       </div>
-
-      {desktop && (
-        <footer className="font-sans flex-none flex items-center px-[18px] py-[13px] border-t border-ink/10 text-[13px] text-ink/50">
-          {/* Signed in, the avatar is the account entry point and already goes to Settings (see
-              accountBadge) — the gear would just be the same destination a second time, so it
-              drops out here too, the same as the mobile header above. `ml-auto` on the badge
-              (rather than `justify-between` on the row) keeps it pinned to the right edge either
-              way, instead of drifting to the left once it's the row's only child. */}
-          {!user && (
-            <Tooltip label="Settings">
-              <button className="flex items-center" aria-label="Settings" onClick={() => navigate('/settings')}>
-                <Settings size={20} strokeWidth={1.75} />
-              </button>
-            </Tooltip>
-          )}
-          <div className="ml-auto">{accountBadge(30)}</div>
-        </footer>
-      )}
 
     </aside>
   );

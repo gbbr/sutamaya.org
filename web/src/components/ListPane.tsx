@@ -215,7 +215,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
           <div className="font-sans text-xs text-ink/[.42] mt-[2px]">{meta}</div>
         </div>
         {desktop && previewHidden && (
-          <Tooltip label="Preview">
+          <Tooltip label="Preview" side="left">
             <button
               className="flex items-center justify-center text-ink/[.55] border border-ink/[.22] rounded-lg w-7 h-7"
               aria-label="Preview"
