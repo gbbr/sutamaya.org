@@ -145,13 +145,23 @@ export interface SearchHit {
   sutta: Sutta;
 }
 
+// Case- and diacritic-insensitive comparison key — Pali romanization leans heavily on combining
+// marks (ā, ī, ū, ñ, ṭ, ḍ, ṇ, ḷ, ṁ, …) that most people don't bother typing, so a search for
+// plain "a"/"n" should still match "ā"/"ñ". NFD splits each accented letter into its base letter
+// plus a separate combining-mark codepoint (all of which fall in the U+0300–U+036F "combining
+// diacritical marks" block), which stripping then discards — cheaper and more general than
+// hand-listing every Pali special character.
+function searchKey(s: string): string {
+  return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
+
 export function searchCorpus(corpus: Corpus, query: string, notes: Record<string, string>): SearchHit[] {
-  const q = query.trim().toLowerCase();
+  const q = searchKey(query.trim());
   if (!q) return [];
   const hits: SearchHit[] = [];
   for (const [id, s] of suttaEntries(corpus)) {
-    const note = (notes[id] || '').toLowerCase();
-    const haystack = [s.ref, s.en, s.pali, s.blurb, note].join(' ').toLowerCase();
+    const note = notes[id] || '';
+    const haystack = searchKey([s.ref, s.en, s.pali, s.blurb, note].join(' '));
     if (haystack.includes(q)) hits.push({ id, sutta: s });
   }
   return hits;

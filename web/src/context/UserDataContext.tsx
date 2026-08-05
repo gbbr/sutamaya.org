@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { dataApi, highlightsApi, listsApi, notesApi, visitedApi } from '../lib/api';
-import type { Highlight, HighlightsMap, ListDef, Membership, NotesMap, VisitedMap } from '../lib/types';
+import type { Highlight, HighlightsMap, ListDef, ListKind, Membership, NotesMap, VisitedMap } from '../lib/types';
 import { useAuth } from './AuthContext';
 
 interface UserDataState {
@@ -11,7 +11,7 @@ interface UserDataState {
   highlights: HighlightsMap;
   visited: VisitedMap;
   listMembers: (listId: string) => string[];
-  createList: (label: string, parentId?: string | null) => Promise<ListDef>;
+  createList: (label: string, parentId?: string | null, kind?: ListKind) => Promise<ListDef>;
   renameList: (id: string, label: string) => Promise<void>;
   removeList: (id: string) => Promise<void>;
   setListParent: (id: string, parentId: string | null) => Promise<void>;
@@ -123,16 +123,16 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   );
 
   const createList = useCallback(
-    async (label: string, parentId: string | null = null) => {
+    async (label: string, parentId: string | null = null, kind: ListKind = 'list') => {
       if (!user) {
         promptGoogleSignIn();
         throw new Error('not_authenticated');
       }
-      const existing = lists.find((l) => l.label === label && l.parentId === parentId);
+      const existing = lists.find((l) => l.label === label && l.parentId === parentId && l.kind === kind);
       if (existing) return existing;
       try {
-        const { list } = await listsApi.create(label, parentId);
-        const def: ListDef = { id: list.id, label: list.label, parentId: list.parentId, items: list.items };
+        const { list } = await listsApi.create(label, parentId, kind);
+        const def: ListDef = { id: list.id, label: list.label, parentId: list.parentId, kind: list.kind, items: list.items };
         setLists((ls) => [...ls, def]);
         return def;
       } catch (e) {

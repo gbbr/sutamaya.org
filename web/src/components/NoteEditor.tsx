@@ -1,4 +1,4 @@
-import { useEffect, useState, type CSSProperties, type KeyboardEvent } from 'react';
+import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react';
 
 interface NoteEditorProps {
   value: string;
@@ -9,6 +9,10 @@ interface NoteEditorProps {
   textareaStyle?: CSSProperties;
   saveButtonClassName: string;
   saveButtonStyle?: CSSProperties;
+  // Bumped by a caller (see ReaderPage's "n" shortcut) to imperatively focus+select the
+  // textarea on demand — a plain `autoFocus` only fires once, on mount, which misses the case
+  // where this editor is already mounted (panel already open) and the shortcut fires again.
+  focusSignal?: number;
 }
 
 // A note is a discrete edit, not a live stream — Enter commits it (Shift+Enter for a literal
@@ -25,12 +29,20 @@ export function NoteEditor({
   textareaStyle,
   saveButtonClassName,
   saveButtonStyle,
+  focusSignal,
 }: NoteEditorProps) {
   const [draft, setDraft] = useState(value);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     setDraft(value);
   }, [value]);
+
+  useEffect(() => {
+    if (!focusSignal) return;
+    textareaRef.current?.focus();
+    textareaRef.current?.select();
+  }, [focusSignal]);
 
   const dirty = draft !== value;
 
@@ -48,6 +60,7 @@ export function NoteEditor({
   return (
     <div data-component="NoteEditor">
       <textarea
+        ref={textareaRef}
         value={draft}
         onChange={(e) => setDraft(e.target.value)}
         onKeyDown={onKeyDown}

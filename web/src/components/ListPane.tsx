@@ -9,6 +9,7 @@ import { highlightCountsByColor } from '../lib/highlights';
 import { autoScrollEdge } from '../lib/dragAutoScroll';
 import { flattenListTree, resolveListById } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
+import { Tooltip } from './Tooltip';
 import type { Sutta } from '../lib/types';
 
 interface ListPaneProps {
@@ -18,19 +19,17 @@ interface ListPaneProps {
   onBack: () => void;
   onOpen: (id: string) => void;
   onOpenReader: (id: string) => void;
-  activeIndex: number;
   // Whether this pane is currently the visible one (LibraryPage keeps both TreePane and
   // ListPane mounted on mobile and toggles `display:none` instead of unmounting — see
   // useScrollMemory for why scroll restoration needs to know this).
   visible?: boolean;
 }
 
-export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenReader, activeIndex, visible = true }: ListPaneProps) {
+export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenReader, visible = true }: ListPaneProps) {
   const { corpus } = useCorpus();
   const { lists, membership, notes, highlights, visited, reorderListItems } = useUserData();
   const { mobile, desktop, twoPane, previewHidden, showPreview, paneW } = useLayout();
   const scrollRef = useScrollMemory<HTMLDivElement>(`list:${query.trim() ? 'search' : nodeId || 'none'}`, visible);
-  const rowRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const itemRowRefs = useRef<Map<string, HTMLDivElement>>(new Map());
 
   const searching = query.trim().length > 0;
@@ -178,10 +177,6 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    if (activeIndex >= 0) rowRefs.current[activeIndex]?.scrollIntoView({ block: 'nearest' });
-  }, [activeIndex]);
-
   // Reveals the sutta the user just came from — e.g. tapping a list-membership chip in the
   // Reader now opens this pane with `selectedId` set (see ReaderPage's chip onClick) rather than
   // just the tree row for the list itself. `block: 'nearest'` makes this a no-op if the row's
@@ -220,13 +215,15 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
           <div className="font-sans text-xs text-ink/[.42] mt-[2px]">{meta}</div>
         </div>
         {desktop && previewHidden && (
-          <button
-            className="flex items-center justify-center text-ink/[.55] border border-ink/[.22] rounded-lg w-7 h-7"
-            title="Preview"
-            onClick={showPreview}
-          >
-            <Eye size={14} strokeWidth={1.75} />
-          </button>
+          <Tooltip label="Preview">
+            <button
+              className="flex items-center justify-center text-ink/[.55] border border-ink/[.22] rounded-lg w-7 h-7"
+              aria-label="Preview"
+              onClick={showPreview}
+            >
+              <Eye size={14} strokeWidth={1.75} />
+            </button>
+          </Tooltip>
         )}
       </header>
       <div
@@ -238,9 +235,12 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
             : undefined
         }
       >
-        {displayItems.map(([id, s], i) => {
+        {displayItems.map(([id, s]) => {
+          // The open preview/mobile selection gets a subtle tint + left accent stripe — replaced
+          // the old strong solid-orange fill (see git history), now the only row-highlight state
+          // left now that keyboard up/down row navigation is gone (Left/Right steps the preview
+          // itself instead — see LibraryPage).
           const on = (mobile || (desktop && !previewHidden && !twoPane)) && id === selectedId;
-          const focused = i === activeIndex;
           const note = notes[id];
           const chips = (membership[id] || [])
             .filter((c) => !AUTO_LIST_IDS.has(c))
@@ -254,23 +254,20 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
                 if (el) itemRowRefs.current.set(id, el);
                 else itemRowRefs.current.delete(id);
               }}
-              className={`relative border-b border-ink/[.08] ${on ? 'bg-accent' : ''}`}
+              className="relative border-b border-ink/[.08]"
               style={dragging ? { opacity: 0.5 } : undefined}
             >
               <button
-                ref={(el) => {
-                  rowRefs.current[i] = el;
-                }}
-                className={`block w-full text-left px-5 py-[13px] ${currentList && !currentList.auto ? 'pr-12' : ''} ${on ? 'text-[#FBFAF7]' : ''} ${focused && !on ? 'bg-ink/[.05]' : ''}`}
-                style={focused ? { boxShadow: `inset 2px 0 0 ${on ? 'rgba(251,250,247,.6)' : '#8A6A3B'}` } : undefined}
+                className={`block w-full text-left px-5 py-[13px] ${currentList && !currentList.auto ? 'pr-12' : ''} ${on ? 'bg-ink/[.05]' : ''}`}
+                style={on ? { boxShadow: 'inset 2px 0 0 #8A6A3B' } : undefined}
                 onClick={() => onOpen(id)}
                 onDoubleClick={() => onOpenReader(id)}
               >
                 <span>
-                  <span className={`font-sans text-[14.5px] font-bold tracking-[.02em] mr-2.5 ${on ? 'opacity-65' : 'text-ink/60'}`}>{s.ref}</span>
+                  <span className="font-sans text-[14.5px] font-bold tracking-[.02em] mr-2.5 text-ink/60">{s.ref}</span>
                   <span className="text-[16.5px] leading-[1.3] font-serif">{s.en}</span>
                   {visited[id] && (
-                    <span className={`inline-flex align-middle ml-2.5 ${on ? 'opacity-45' : 'text-ink/[.28]'}`}>
+                    <span className="inline-flex align-middle ml-2.5 text-ink/[.28]">
                       <Check size={13} strokeWidth={2.25} />
                     </span>
                   )}
@@ -284,16 +281,16 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
                     </span>
                   ))}
                 </span>
-                <span className={`block font-serif text-[13.5px] italic mt-[1px] ${on ? 'opacity-75' : 'text-accent'}`}>{s.pali}</span>
+                <span className="block font-serif text-[13.5px] italic mt-[1px] text-accent">{s.pali}</span>
                 {note ? (
                   <span
                     className="block font-serif text-[14.5px] leading-[1.45] mt-[7px] pl-[10px] border-l-2"
-                    style={{ borderColor: on ? 'rgba(251,250,247,.5)' : 'rgba(27,25,23,.3)' }}
+                    style={{ borderColor: 'rgba(27,25,23,.3)' }}
                   >
                     {note}
                   </span>
                 ) : (
-                  <span className={`block text-[14px] leading-[1.5] mt-1.5 ${on ? 'opacity-80' : 'text-ink/[.72]'}`}>{s.blurb}</span>
+                  <span className="block text-[14px] leading-[1.5] mt-1.5 text-ink/[.72]">{s.blurb}</span>
                 )}
                 {chips.length > 0 && (
                   <span className="flex flex-wrap gap-1.5 mt-2">
@@ -301,7 +298,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
                       <span
                         key={c.id}
                         className="inline-flex items-center whitespace-nowrap leading-[1.4] rounded-[10px] px-[9px] py-[2px] font-sans text-[11px] border"
-                        style={{ borderColor: on ? 'rgba(251,250,247,.45)' : 'rgba(27,25,23,.25)' }}
+                        style={{ borderColor: 'rgba(27,25,23,.25)' }}
                       >
                         {c.breadcrumb}
                       </span>
@@ -311,7 +308,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
               </button>
               {currentList && !currentList.auto && (
                 <span
-                  className={`absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded ${on ? 'text-[#FBFAF7]/70' : 'text-ink/40'}`}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded text-ink/40"
                   style={{
                     touchAction: 'none',
                     cursor: 'grab',

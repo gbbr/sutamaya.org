@@ -1,4 +1,4 @@
-import type { Highlight, ListDef, Membership, NotesMap, HighlightsMap, VisitedMap, User } from './types';
+import type { Highlight, ListDef, ListKind, Membership, NotesMap, HighlightsMap, VisitedMap, User } from './types';
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`/api${path}`, {
@@ -41,8 +41,8 @@ export const dataApi = {
 };
 
 export const listsApi = {
-  create: (label: string, parentId: string | null = null) =>
-    request<{ list: ListDef }>('/lists', { method: 'POST', body: JSON.stringify({ label, parentId }) }),
+  create: (label: string, parentId: string | null = null, kind: ListKind = 'list') =>
+    request<{ list: ListDef }>('/lists', { method: 'POST', body: JSON.stringify({ label, parentId, kind }) }),
   rename: (id: string, label: string) => request<{ ok: true }>(`/lists/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify({ label }) }),
   setParent: (id: string, parentId: string | null) =>
     request<{ ok: true }>(`/lists/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify({ parentId }) }),

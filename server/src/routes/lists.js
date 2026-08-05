@@ -9,7 +9,18 @@ listsRouter.use(requireAuth);
 
 function serializeList(doc) {
   const data = doc.data();
-  return { id: doc.id, label: data.label, parentId: data.parentId ?? null, items: data.items || [] };
+  return { id: doc.id, label: data.label, parentId: data.parentId ?? null, kind: data.kind === 'group' ? 'group' : 'list', items: data.items || [] };
+}
+
+// A ListGroup can hold other lists/groups; a plain list can't hold anything — so any non-null
+// parentId, for either kind of doc, must point at an existing group. Returns an error message
+// string if invalid, or null if the parent checks out (including the top-level `null` case).
+async function invalidParentReason(userId, parentId) {
+  if (!parentId) return null;
+  const doc = await listsCol(userId).doc(parentId).get();
+  if (!doc.exists) return 'Parent not found.';
+  if (doc.data().kind !== 'group') return 'Only a group can contain other lists.';
+  return null;
 }
 
 listsRouter.get(
@@ -25,7 +36,10 @@ listsRouter.post(
   asyncHandler(async (req, res) => {
     const label = ((req.body && req.body.label) || '').trim();
     if (!label) return res.status(400).json({ error: 'List name is required.' });
+    const kind = req.body?.kind === 'group' ? 'group' : 'list';
     const parentId = typeof req.body?.parentId === 'string' ? req.body.parentId : null;
+    const parentError = await invalidParentReason(req.user.id, parentId);
+    if (parentError) return res.status(400).json({ error: parentError });
     const col = listsCol(req.user.id);
     const ref = col.doc();
     // Reading the current max position and writing the new doc in one transaction (instead of
@@ -35,9 +49,9 @@ listsRouter.post(
     await db.runTransaction(async (tx) => {
       const last = await tx.get(col.orderBy('position', 'desc').limit(1));
       const position = nextPosition(last.docs.map((d) => d.data().position));
-      tx.set(ref, { label, parentId, position, items: [], createdAt: new Date().toISOString() });
+      tx.set(ref, { label, parentId, kind, position, items: [], createdAt: new Date().toISOString() });
     });
-    res.status(201).json({ list: { id: ref.id, label, parentId, items: [] } });
+    res.status(201).json({ list: { id: ref.id, label, parentId, kind, items: [] } });
   })
 );
 
@@ -53,7 +67,10 @@ listsRouter.patch(
     // `parentId` is a legitimate value to explicitly set to null (move to top level), so check
     // for the key's presence rather than truthiness.
     if (req.body && 'parentId' in req.body) {
-      update.parentId = typeof req.body.parentId === 'string' ? req.body.parentId : null;
+      const parentId = typeof req.body.parentId === 'string' ? req.body.parentId : null;
+      const parentError = await invalidParentReason(req.user.id, parentId);
+      if (parentError) return res.status(400).json({ error: parentError });
+      update.parentId = parentId;
     }
     if (Object.keys(update).length) await ref.update(update);
     res.json({ ok: true });
@@ -69,6 +86,8 @@ listsRouter.put(
   '/order',
   asyncHandler(async (req, res) => {
     const parentId = typeof req.body?.parentId === 'string' ? req.body.parentId : null;
+    const parentError = await invalidParentReason(req.user.id, parentId);
+    if (parentError) return res.status(400).json({ error: parentError });
     const order = Array.isArray(req.body?.order) ? req.body.order : [];
     const batch = db.batch();
     order.forEach((id, position) => batch.update(listsCol(req.user.id).doc(id), { position, parentId }));
@@ -113,6 +132,7 @@ listsRouter.post(
     const ref = listsCol(req.user.id).doc(req.params.id);
     const doc = await ref.get();
     if (!doc.exists) return res.status(404).json({ error: 'not_found' });
+    if (doc.data().kind === 'group') return res.status(400).json({ error: 'A group cannot hold suttas.' });
     await ref.update({ items: FieldValue.arrayUnion(suttaId) });
     res.status(201).json({ ok: true });
   })
@@ -135,6 +155,7 @@ listsRouter.put(
     const ref = listsCol(req.user.id).doc(req.params.id);
     const doc = await ref.get();
     if (!doc.exists) return res.status(404).json({ error: 'not_found' });
+    if (doc.data().kind === 'group') return res.status(400).json({ error: 'A group cannot hold suttas.' });
     const order = Array.isArray(req.body?.order) ? req.body.order : [];
     // Reconcile against the current stored items instead of blind-replacing: if a sutta was
     // added (arrayUnion, e.g. from another tab) after the client snapshotted `order`, it won't

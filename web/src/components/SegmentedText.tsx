@@ -57,7 +57,7 @@ export function SegmentedText({
         const hlForSeg = highlights.filter((h) => h.i === i);
         const parts = buildParts(seg.en, hlForSeg);
         return (
-          <div key={seg.key} className="mb-1.5">
+          <div key={seg.key} className="mb-4">
             <p
               data-seg={i}
               onClick={() => {

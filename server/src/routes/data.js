@@ -34,11 +34,13 @@ async function buildUserData(userId) {
     items.forEach((suttaId) => {
       (membership[suttaId] = membership[suttaId] || []).push(doc.id);
     });
-    // `parentId`/`items` (in stored order) let the client render lists as a tree (sub-lists
+    // `parentId`/`items` (in stored order) let the client render lists as a tree (groups
     // nested under their parent) and show/reorder each list's own suttas in the order the user
     // put them in, instead of re-deriving both from the flatter `membership` map, which only
     // tells you *which* lists a sutta belongs to, not their relative order within one list.
-    return { id: doc.id, label: data.label, parentId: data.parentId ?? null, items };
+    // `kind` distinguishes a plain list (holds suttas) from a ListGroup (holds only other
+    // lists/groups, never items — see routes/lists.js's invalidParentReason).
+    return { id: doc.id, label: data.label, parentId: data.parentId ?? null, kind: data.kind === 'group' ? 'group' : 'list', items };
   });
 
   const notes = {};
@@ -76,11 +78,11 @@ async function buildUserData(userId) {
     .map((x) => x.id);
 
   if (highlightedIds.length) {
-    lists.push({ id: HIGHLIGHTS_AUTO_LIST_ID, label: 'Highlights', parentId: null, items: highlightedIds, auto: true });
+    lists.push({ id: HIGHLIGHTS_AUTO_LIST_ID, label: 'Highlights', parentId: null, kind: 'list', items: highlightedIds, auto: true });
     highlightedIds.forEach((id) => (membership[id] = [...(membership[id] || []), HIGHLIGHTS_AUTO_LIST_ID]));
   }
   if (notedIds.length) {
-    lists.push({ id: NOTES_AUTO_LIST_ID, label: 'Notes', parentId: null, items: notedIds, auto: true });
+    lists.push({ id: NOTES_AUTO_LIST_ID, label: 'Notes', parentId: null, kind: 'list', items: notedIds, auto: true });
     notedIds.forEach((id) => (membership[id] = [...(membership[id] || []), NOTES_AUTO_LIST_ID]));
   }
 

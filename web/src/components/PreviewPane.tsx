@@ -15,6 +15,7 @@ import { ListMembershipPicker } from './ListMembershipPicker';
 import { flattenListTree, resolveListById } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
+import { Tooltip } from './Tooltip';
 
 interface PreviewPaneProps {
   selectedId?: string;
@@ -68,16 +69,21 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
   return (
     <aside className="flex flex-col h-full" style={style}>
       <header className="font-sans flex-none flex items-center gap-4 pl-[34px] pr-[22px] py-[13px] border-b border-ink/10">
-        <button className="flex items-center text-ink/65" title="Close preview" onClick={hidePreview}>
-          <PanelRightClose size={15} strokeWidth={1.75} />
-        </button>
+        <Tooltip label="Collapse preview">
+          <button className="flex items-center text-ink/65" aria-label="Collapse preview" onClick={hidePreview}>
+            <PanelRightClose size={15} strokeWidth={1.75} />
+          </button>
+        </Tooltip>
         <span className="text-xs font-semibold tracking-[.02em] text-ink/60">
           {sutta.ref} · {sutta.min} min{visited[selectedId] ? ' · read' : ''}
         </span>
         <button
           className="ml-auto font-sans flex items-center gap-2 px-[18px] py-[11px] rounded-full bg-accent text-[#FBFAF7] text-[14px] font-semibold shadow-[0_1px_2px_rgba(27,25,23,.15)] hover:brightness-110 active:brightness-95"
           onClick={() => {
-            navigate(`/read/${encodeURIComponent(selectedId)}`);
+            // The current URL already *is* this pane/nodeId/selection (that's what makes the
+            // preview pane show at all) — reusing it as `from` sends the reader's close button
+            // back to exactly this spot instead of the sutta's bare corpus location.
+            navigate(`/read/${encodeURIComponent(selectedId)}`, { state: { from: window.location.pathname } });
           }}
         >
           <BookOpen size={16} strokeWidth={2} />

@@ -16,6 +16,9 @@ interface ReaderMenuPanelProps {
   segments: SegmentFile[] | null;
   onClose: () => void;
   onJumpToHighlight: (segIndex: number) => void;
+  // See NoteEditor's `focusSignal` — bumped by ReaderPage's "n" shortcut to focus the note box
+  // even if this panel (and its highlights tab) is already open.
+  noteFocusSignal?: number;
 }
 
 const THEME_SWATCHES: Array<{ id: ReaderTheme; label: string; bg: string; fg: string }> = [
@@ -29,7 +32,7 @@ const FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
   { id: 'sans', label: 'Sans' },
 ];
 
-export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, onClose, onJumpToHighlight }: ReaderMenuPanelProps) {
+export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, onClose, onJumpToHighlight, noteFocusSignal }: ReaderMenuPanelProps) {
   const [tab, setTab] = useState(initialTab);
   const { notes, submitNote, highlights, removeHighlights } = useUserData();
   const { theme: currentTheme, setTheme, fs, setFs, lh, setLh, face, setFace, allPali, toggleAllPali } = useReaderPrefs();
@@ -120,6 +123,7 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
               <NoteEditor
                 value={notes[suttaId] || ''}
                 onSubmit={(text) => submitNote(suttaId, text)}
+                focusSignal={noteFocusSignal}
                 placeholder="Add a note — return to save, shift+return for a new line"
                 textareaClassName="w-full bg-transparent text-[16px] resize-none outline-none font-serif"
                 textareaStyle={{ border: 0, color: theme.fg }}

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
 import { ArrowLeft, LogOut } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
@@ -19,6 +20,17 @@ const UI_FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
 export function SettingsPage(_props: RouteComponentProps) {
   const { user, logout, loading } = useAuth();
   const { uiScale, uiFace, setUiScale, setUiFace } = useUiPrefs();
+
+  // Same genuine history-back as the "Back" button above (see its own comment) — Escape is the
+  // conventional "leave this screen" key, and there's no free-text field here whose own Escape
+  // handling would need to take priority over it.
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') navigate(-1);
+    }
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
 
   if (loading) return null;
 

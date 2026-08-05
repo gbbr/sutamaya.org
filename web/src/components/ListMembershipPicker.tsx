@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react';
-import { Check, Plus } from 'lucide-react';
+import { Check, ChevronDown, Folder, Plus } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
 import { flattenListTree, resolveListById, type ListPathOption } from '../lib/lists';
@@ -15,14 +15,21 @@ interface ListMembershipPickerProps {
 
 type Row =
   | { type: 'list'; option: ListPathOption }
-  | { type: 'create-top'; name: string }
-  | { type: 'create-nested'; name: string; parentId: string; parentLabel: string };
+  | { type: 'create-top-list'; name: string }
+  | { type: 'create-top-group'; name: string }
+  | { type: 'create-nested-list'; name: string; parentId: string; parentLabel: string }
+  | { type: 'create-nested-group'; name: string; parentId: string; parentLabel: string };
 
 // A single-input, multi-select "add to lists" widget: type to filter, Enter toggles membership
-// on the highlighted row without closing, Shift+Enter/Tab on a highlighted list nests a new list
-// inside it, and "Parent / New name" typed directly does the same without needing the shortcut.
-// Shared by the reader's Lists tab and (eventually) the preview pane's "In lists" editor, so both
-// get the same fast add-to-multiple-lists flow instead of two hand-rolled pickers.
+// on the highlighted row without closing, Shift+Enter/Tab on a highlighted *group* row nests a
+// new list/group inside it, and "Group / New name" typed directly does the same without needing
+// the shortcut. Only a group can contain anything (see ListDef.kind in lib/types.ts), so a group
+// row never shows a membership checkmark (it can't hold this sutta itself) and a plain list row
+// never shows the nesting "+" (it can't hold anything either) — and any typed name that isn't an
+// exact existing match offers creating either a list or a group with it, since which one the
+// user wants isn't inferrable from the text alone. Shared by the reader's Lists tab and
+// (eventually) the preview pane's "In lists" editor, so both get the same fast add-to-multiple-
+// lists flow instead of two hand-rolled pickers.
 export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose }: ListMembershipPickerProps) {
   const { user, promptGoogleSignIn } = useAuth();
   const { lists, membership, toggleMembership, addToList, createList } = useUserData();
@@ -45,7 +52,12 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
   const rows: Row[] = useMemo(() => {
     if (nestingParent) {
       const name = draft.trim();
-      return name ? [{ type: 'create-nested', name, parentId: nestingParent.id, parentLabel: nestingParent.label }] : [];
+      return name
+        ? [
+            { type: 'create-nested-list', name, parentId: nestingParent.id, parentLabel: nestingParent.label },
+            { type: 'create-nested-group', name, parentId: nestingParent.id, parentLabel: nestingParent.label },
+          ]
+        : [];
     }
     const q = draft.trim();
     if (!q) {
@@ -73,31 +85,38 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       });
       return sorted.map((option) => ({ type: 'list' as const, option }));
     }
-    // "Parent / New name" — an explicit typed path to creating a nested list, an alternative to
-    // the Shift+Enter/Tab gesture (which has no reliable touch equivalent).
+    // "Group / New name" — an explicit typed path to creating something nested, an alternative
+    // to the Shift+Enter/Tab gesture (which has no reliable touch equivalent). Only a group can
+    // be nested into, so the exact-match lookup is scoped to group rows — an exact match against
+    // a plain list's name still shows up in `listRows` below (for toggling its membership), it
+    // just doesn't offer a "create nested under it" row.
     const slashIdx = q.lastIndexOf('/');
     if (slashIdx !== -1) {
       const parentQuery = q.slice(0, slashIdx).trim().toLowerCase();
       const nameQuery = q.slice(slashIdx + 1).trim();
       if (parentQuery) {
         const parentCandidates = flatAll.filter((f) => f.list.label.toLowerCase().includes(parentQuery));
-        const exactParent = flatAll.find((f) => f.list.label.toLowerCase() === parentQuery) ?? parentCandidates[0];
+        const exactParent = flatAll.find((f) => f.list.kind === 'group' && f.list.label.toLowerCase() === parentQuery);
         const listRows: Row[] = parentCandidates.map((option) => ({ type: 'list' as const, option }));
         if (exactParent && nameQuery) {
-          return [{ type: 'create-nested', name: nameQuery, parentId: exactParent.list.id, parentLabel: exactParent.list.label }, ...listRows];
+          return [
+            { type: 'create-nested-list', name: nameQuery, parentId: exactParent.list.id, parentLabel: exactParent.list.label },
+            { type: 'create-nested-group', name: nameQuery, parentId: exactParent.list.id, parentLabel: exactParent.list.label },
+            ...listRows,
+          ];
         }
         return listRows;
       }
     }
-    // Both existing matches AND the option to create a new list with this exact name are always
-    // shown together — a new list can legitimately be a substring (or superstring) of an
-    // existing one's name (e.g. typing "Te" when "Temp" already exists), so zero-vs-nonzero
-    // matches was the wrong signal for whether to offer creating one. createList() itself already
-    // dedupes an exact same-label-same-parent create against the existing list.
+    // Both existing matches AND the option to create a new list/group with this exact name are
+    // always shown together — a new one can legitimately be a substring (or superstring) of an
+    // existing name (e.g. typing "Te" when "Temp" already exists), so zero-vs-nonzero matches was
+    // the wrong signal for whether to offer creating one. createList() itself already dedupes an
+    // exact same-label-same-parent-same-kind create against an existing list/group.
     const ql = q.toLowerCase();
     const matches = flatAll.filter((f) => f.breadcrumb.toLowerCase().includes(ql));
     const listRows: Row[] = matches.map((option) => ({ type: 'list' as const, option }));
-    return [...listRows, { type: 'create-top', name: q }];
+    return [...listRows, { type: 'create-top-list', name: q }, { type: 'create-top-group', name: q }];
   }, [draft, flatAll, suttaListIds, nestingParent]);
 
   useEffect(() => {
@@ -108,13 +127,21 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
 
   async function activateRow(row: Row) {
     if (row.type === 'list') {
+      // A group can't hold this sutta itself — the only useful click on a group row is drilling
+      // into it to create something inside, same as its own "+" button.
+      if (row.option.list.kind === 'group') {
+        enterNestingMode(row.option.list);
+        return;
+      }
       toggleMembership(suttaId, row.option.list.id);
       return;
     }
+    const isGroup = row.type === 'create-top-group' || row.type === 'create-nested-group';
+    const parentId = row.type === 'create-nested-list' || row.type === 'create-nested-group' ? row.parentId : null;
     try {
-      const parentId = row.type === 'create-nested' ? row.parentId : null;
-      const list = await createList(row.name, parentId);
-      await addToList(suttaId, list);
+      const list = await createList(row.name, parentId, isGroup ? 'group' : 'list');
+      // A freshly created group can't hold the sutta — nothing to add it to.
+      if (!isGroup) await addToList(suttaId, list);
     } catch {
       // Signed out: createList() already triggered the Google sign-in prompt.
     }
@@ -137,7 +164,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       setActiveIndex((i) => Math.max(0, i - 1));
     } else if (e.key === 'Tab' || (e.key === 'Enter' && e.shiftKey)) {
       const row = rows[activeIdx];
-      if (row && row.type === 'list' && !nestingParent) {
+      if (row && row.type === 'list' && row.option.list.kind === 'group' && !nestingParent) {
         e.preventDefault();
         enterNestingMode(row.option.list);
       }
@@ -149,6 +176,10 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       e.preventDefault();
       setNestingParent(null);
     } else if (e.key === 'Escape') {
+      // Stops here (doesn't bubble to the reader's own window-level Escape handler — see
+      // ReaderPage) so a first Escape clearing nesting/draft doesn't also skip straight to
+      // closing the whole panel in the same keypress.
+      e.stopPropagation();
       if (nestingParent) setNestingParent(null);
       else if (draft) setDraft('');
       else onRequestClose?.();
@@ -204,7 +235,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       {nestingParent && (
         <div className="flex items-center gap-1.5 mb-1.5 font-sans text-[11.5px]" style={{ color: theme.fg, opacity: 0.65 }}>
           <span>
-            New list inside <strong>{nestingParent.label}</strong>
+            New list or group inside <strong>{nestingParent.label}</strong>
           </span>
           <button className="opacity-70 hover:opacity-100" title="Cancel" onClick={() => setNestingParent(null)}>
             ×
@@ -216,41 +247,45 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
         value={draft}
         onChange={(e) => setDraft(e.target.value)}
         onKeyDown={onKeyDown}
-        placeholder={nestingParent ? 'New sub-list name — return to create' : 'Search or create — "Parent / New" to nest'}
+        placeholder={nestingParent ? 'Name — return to create' : 'Search or create — "Group / New" to nest'}
         className="w-full h-11 rounded-[10px] px-3 bg-transparent text-base outline-none"
         style={{ border: `1px solid ${theme.pali}`, color: theme.fg }}
       />
       <div className="mt-1.5">
         {rows.map((row, idx) => {
           const active = idx === activeIdx;
-          if (row.type === 'create-top') {
+          if (row.type === 'create-top-list' || row.type === 'create-nested-list') {
+            const label = row.type === 'create-nested-list' ? `Create list "${row.name}" inside ${row.parentLabel}` : `Create list "${row.name}"`;
             return (
               <button
-                key="create-top"
+                key={row.type}
                 className="flex w-full items-center gap-2 px-2 py-[11px] text-left text-[15px]"
                 style={rowStyle(active)}
                 onMouseEnter={() => setActiveIndex(idx)}
                 onClick={() => activateRow(row)}
               >
-                Create list "{row.name}"
+                {label}
               </button>
             );
           }
-          if (row.type === 'create-nested') {
+          if (row.type === 'create-top-group' || row.type === 'create-nested-group') {
+            const label = row.type === 'create-nested-group' ? `Create group "${row.name}" inside ${row.parentLabel}` : `Create group "${row.name}"`;
             return (
               <button
-                key="create-nested"
+                key={row.type}
                 className="flex w-full items-center gap-2 px-2 py-[11px] text-left text-[15px]"
                 style={rowStyle(active)}
                 onMouseEnter={() => setActiveIndex(idx)}
                 onClick={() => activateRow(row)}
               >
-                Create "{row.name}" inside {row.parentLabel}
+                <Folder size={13} strokeWidth={2} className="flex-none opacity-60" />
+                {label}
               </button>
             );
           }
           const { list, depth, breadcrumb } = row.option;
-          const checked = suttaListIds.includes(list.id);
+          const isGroup = list.kind === 'group';
+          const checked = !isGroup && suttaListIds.includes(list.id);
           return (
             <div
               key={list.id}
@@ -259,24 +294,34 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
               onMouseEnter={() => setActiveIndex(idx)}
             >
               <button className="flex flex-1 min-w-0 items-center gap-2 py-[11px] pr-2 text-left" onClick={() => activateRow(row)}>
-                <span
-                  className="flex-none w-[16px] h-[16px] rounded-[4px] flex items-center justify-center"
-                  style={{ border: `1px solid ${theme.fg}`, background: checked ? theme.fg : 'transparent' }}
-                >
-                  {checked && <Check size={11} strokeWidth={3} color={theme.bg} />}
-                </span>
+                {isGroup ? (
+                  // Rows here are always flattened/already "expanded" (see flattenListTree) —
+                  // this chevron is a static, non-interactive indicator that the row is a group
+                  // (matching the tree pane's own groups, which show a chevron instead of a
+                  // folder icon), not an actual expand/collapse toggle.
+                  <ChevronDown size={14} strokeWidth={2} className="flex-none opacity-50" style={{ color: theme.fg }} />
+                ) : (
+                  <span
+                    className="flex-none w-[16px] h-[16px] rounded-[4px] flex items-center justify-center"
+                    style={{ border: `1px solid ${theme.fg}`, background: checked ? theme.fg : 'transparent' }}
+                  >
+                    {checked && <Check size={11} strokeWidth={3} color={theme.bg} />}
+                  </span>
+                )}
                 <span className="min-w-0 truncate text-[15px]">{breadcrumb}</span>
               </button>
-              <button
-                className="flex-none w-6 h-6 mr-1 flex items-center justify-center rounded opacity-0 group-hover:opacity-70 hover:!opacity-100 [@media(hover:none)]:opacity-70 transition-opacity"
-                title={`New list inside ${list.label}`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  enterNestingMode(list);
-                }}
-              >
-                <Plus size={13} strokeWidth={2} />
-              </button>
+              {isGroup && (
+                <button
+                  className="flex-none w-6 h-6 mr-1 flex items-center justify-center rounded opacity-0 group-hover:opacity-70 hover:!opacity-100 [@media(hover:none)]:opacity-70 transition-opacity"
+                  title={`New list or group inside ${list.label}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    enterNestingMode(list);
+                  }}
+                >
+                  <Plus size={13} strokeWidth={2} />
+                </button>
+              )}
             </div>
           );
         })}

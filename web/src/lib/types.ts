@@ -50,13 +50,20 @@ export interface Highlight {
   c: string;
 }
 
+// 'list' holds suttas (`items`) and can't have children. 'group' ("ListGroup") is the reverse:
+// it can only contain other lists/groups and can never hold items itself — see
+// server/src/routes/lists.js's invalidParentReason, which enforces this server-side too.
+export type ListKind = 'list' | 'group';
+
 export interface ListDef {
   id: string;
   label: string;
   parentId: string | null;
+  kind: ListKind;
   // Ordered array of sutta uids — this list's own contents, in the order the user put them in
   // (or reordered them to). See lib/corpus.ts's listItemsFor, which uses this order instead of
-  // re-sorting a list's contents by sutta id the way browsing a nikaya/category does.
+  // re-sorting a list's contents by sutta id the way browsing a nikaya/category does. Always
+  // empty for a `kind: 'group'` entry.
   items: string[];
   // True for the two auto-managed lists ("Highlights", "Notes") synthesized server-side in
   // buildUserData() from the highlights/notes collections — not a real Firestore doc, so it
