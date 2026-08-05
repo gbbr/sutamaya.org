@@ -58,6 +58,11 @@ export default defineConfig({
     // enabled, no extra logging needed. /api/* is still proxied to the Express server on this
     // same machine (see below), so a phone's API calls work exactly the same way.
     host: true,
+    // `host: true` only controls which interfaces Vite listens on — separately, Vite 5.4+
+    // rejects requests by their Host header (a DNS-rebinding guard) unless it's localhost, a
+    // raw IP, or explicitly allowed here. A phone on the LAN reaches this machine by its mDNS
+    // name (e.g. "gbbr.local"), not an IP, so that name needs to be listed explicitly.
+    allowedHosts: ['gbbr.local'],
     proxy: {
       '/api': {
         target: process.env.API_ORIGIN || 'http://localhost:8787',
