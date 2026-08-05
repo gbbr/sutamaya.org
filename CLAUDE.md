@@ -46,17 +46,46 @@ develop with the Google button hidden.
 
 ## Data pipeline (`scripts/build-corpus.mjs`)
 
-Reads `data/tree/*.json`, `data/pali/`, `data/sujato/`, `data/pli2en_dpd.json` and writes:
+Reads `data/tree/*.json`, `data/pali/`, `data/sujato/`, `data/html/`, `data/pli2en_dpd.json` and
+writes:
 
 - `web/public/data/corpus.json` — the browse tree (`nikayas[]`, each optionally with a
   **recursively-nested** `chapters[]` — a row with `chapters` expands further, one without is
   where suttas live) plus a flat `suttas` map (`uid -> {ref, node, en, pali, blurb, min}`).
 - `web/public/data/text/{uid}.json` — one file per leaf document: an ordered array of
-  `{key, pali, en}` segments (structural "0.*" header lines are stripped; that's where
-  titles/blurbs come from instead — see `headerTitle()` in the script).
+  `{key, pali, en, role?}` segments (structural "0.*" header lines are stripped; that's where
+  titles/blurbs come from instead — see `headerTitle()` in the script). `role` (omitted for the
+  common plain-prose case) is one of `'verse' | 'heading' | 'end' | 'speaker'`, set from
+  SuttaCentral's own structural markup — see below and `SegmentedText.tsx`'s `roleStyle()`, which
+  is what actually renders each one distinctly.
 - `web/public/data/dictionary.json` and **`data/pli2en_dpd_map.json`** — the DPD dictionary
   reshaped from a `[{entry, definition}]` array into a `{entry: definition[]}` object for O(1)
   lookup. The `data/` copy is kept as a reusable artifact alongside the source list.
+
+**`data/html/pli/ms/sutta/`** mirrors upstream bilara-data's `html/pli/ms/sutta/` tree (same
+range-batched files, same relative paths as `data/pali/sutta/`, just `_html.json` instead of
+`_root-pli-ms.json`) — SuttaCentral's per-segment HTML template, e.g. plain `<p>{}</p>` for prose,
+`<span class='verse-line'>{}</span>` (inside `<blockquote class='gatha'>`) for a line of verse —
+also covers the `uddanagatha`/`vagguddanagatha` mnemonic verses at a chapter's end, which nest
+`verse-line` the same way, `<h2>`/`<h3>` for a sub-heading inside a longer document (e.g. DN9's
+own internal sections — distinct from the "0.*" title lines already stripped), a closing colophon
+note (`class='endsutta'`/`'endvagga'`/`'endsection'`/`'endbook'`/`'endkanda'`/bare `'end'`, or
+`'uddana-intro'` — "Their mnemonic:"), or `class='speaker'` for an inline dialogue attribution
+embedded mid-verse ("said the Buddha,"). This is language-independent structure (a verse is a
+verse regardless of translation), so one `html/` file covers both the Pali and English text for
+the same segment keys. Unlike `data/pali/`/`data/sujato/`, it isn't part of the original dataset
+this project started from — `scripts/fetch-html-structure.mjs` is a one-time (not part of
+`npm run build`) script that downloads it from bilara-data on GitHub, skipping files that already
+exist locally unless `--force`; re-run it (`node scripts/fetch-html-structure.mjs`) if
+`data/pali/sutta/` ever gains files it doesn't have a mirror for yet. `build-corpus.mjs` reads it
+only to set each segment's `role` (`roleFor()`, matched in heading → verse → end → speaker order)
+— the `<p>`/`<blockquote>` wrapper structure itself isn't otherwise used; `SegmentedText.tsx`
+derives its own paragraph/stanza grouping straight from segment key numbering (see its
+`paragraphOf()`), which happens to already line up with `html/`'s `<p>` boundaries for both prose
+paragraphs and verse stanzas. A colophon note (`role: 'end'`) is frequently Pali-only — Sujato's
+translation skips scribal markers like "Tevijjasuttaṁ niṭṭhitaṁ terasamaṁ." ("The Tevijja Sutta is
+finished") — so `buildBodySegments` falls back to Pali for `en` in that one case, rather than
+leaving a blank paragraph the tap-to-reveal-Pali interaction would otherwise never make visible.
 
 **Browse-tree depth rules** (per explicit product decision, not derived from the raw data):
 

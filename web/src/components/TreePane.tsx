@@ -26,7 +26,6 @@ import { findNode, isExpandable, searchCorpus } from '../lib/corpus';
 import { HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
 import { autoScrollEdge } from '../lib/dragAutoScroll';
 import type { ChapterRow, Corpus, ListDef } from '../lib/types';
-import { Tooltip } from './Tooltip';
 
 // One row of the nested chapter/group/category tree under a nikaya — recurses arbitrarily
 // deep (SN: group > chapter > category; AN: chapter > category; MN: category directly).
@@ -56,15 +55,7 @@ function TreeRow({
         onClick={() => (expandable ? onToggle(node.id) : onSelect(node.id))}
       >
         <span className="w-[11px] flex-none flex items-center justify-center text-ink/40 mt-[4px]">
-          {expandable ? (
-            open ? (
-              <ChevronDown size={12} strokeWidth={2} />
-            ) : (
-              <ChevronRight size={12} strokeWidth={2} />
-            )
-          ) : (
-            <ChevronRight size={12} strokeWidth={2} className="text-ink/35" />
-          )}
+          {expandable && (open ? <ChevronDown size={12} strokeWidth={2} /> : <ChevronRight size={12} strokeWidth={2} />)}
         </span>
         <span className="flex-1 min-w-0">
           <span>
@@ -265,15 +256,14 @@ function ListRow({
           <span className="flex-none font-sans text-[11.5px] font-medium text-ink/50">{countFor(list)}</span>
         )}
         {!editing && (
-          <Tooltip label="List options">
-            <button
-              className="flex-none w-[20px] h-[20px] flex items-center justify-center rounded text-ink/40 hover:bg-ink/[.08] hover:text-ink"
-              aria-label="List options"
-              onClick={() => onToggleMenu(list.id)}
-            >
-              <MoreHorizontal size={14} strokeWidth={2} />
-            </button>
-          </Tooltip>
+          <button
+            className="flex-none w-[20px] h-[20px] flex items-center justify-center rounded text-ink/40 hover:bg-ink/[.08] hover:text-ink"
+            aria-label="List options"
+            title="List options"
+            onClick={() => onToggleMenu(list.id)}
+          >
+            <MoreHorizontal size={14} strokeWidth={2} />
+          </button>
         )}
       </div>
       {confirmDeleteId === list.id ? (
@@ -293,55 +283,50 @@ function ListRow({
         menuOpen &&
         !editing && (
           <div className="flex items-center gap-[6px] pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: 18 + depth * 14 + 11 }}>
-            <Tooltip label="Move up" disabled={siblingIndex === 0}>
-              <button
-                aria-label="Move up"
-                disabled={siblingIndex === 0}
-                onClick={() => onMove(list, -1)}
-                className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08] disabled:opacity-25"
-              >
-                <ChevronUp size={13} strokeWidth={2} />
-              </button>
-            </Tooltip>
-            <Tooltip label="Move down" disabled={siblingIndex === siblingCount - 1}>
-              <button
-                aria-label="Move down"
-                disabled={siblingIndex === siblingCount - 1}
-                onClick={() => onMove(list, 1)}
-                className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08] disabled:opacity-25"
-              >
-                <ChevronDown size={13} strokeWidth={2} />
-              </button>
-            </Tooltip>
+            <button
+              aria-label="Move up"
+              title="Move up"
+              disabled={siblingIndex === 0}
+              onClick={() => onMove(list, -1)}
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08] disabled:opacity-25"
+            >
+              <ChevronUp size={13} strokeWidth={2} />
+            </button>
+            <button
+              aria-label="Move down"
+              title="Move down"
+              disabled={siblingIndex === siblingCount - 1}
+              onClick={() => onMove(list, 1)}
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08] disabled:opacity-25"
+            >
+              <ChevronDown size={13} strokeWidth={2} />
+            </button>
             {list.kind === 'group' && (
-              <Tooltip label="New list in this group">
-                <button
-                  aria-label="New list in this group"
-                  onClick={() => onAddChild(list.id)}
-                  className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]"
-                >
-                  <Plus size={14} strokeWidth={2} />
-                </button>
-              </Tooltip>
-            )}
-            <Tooltip label="Rename">
               <button
-                aria-label="Rename"
-                onClick={() => onStartEdit(list)}
+                aria-label="New list in this group"
+                title="New list in this group"
+                onClick={() => onAddChild(list.id)}
                 className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]"
               >
-                <Pencil size={12} strokeWidth={2} />
+                <Plus size={14} strokeWidth={2} />
               </button>
-            </Tooltip>
-            <Tooltip label="Delete">
-              <button
-                aria-label="Delete"
-                onClick={() => onArmDelete(list)}
-                className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-red-600/10 hover:text-red-600"
-              >
-                <Trash2 size={12} strokeWidth={2} />
-              </button>
-            </Tooltip>
+            )}
+            <button
+              aria-label="Rename"
+              title="Rename"
+              onClick={() => onStartEdit(list)}
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]"
+            >
+              <Pencil size={12} strokeWidth={2} />
+            </button>
+            <button
+              aria-label="Delete"
+              title="Delete"
+              onClick={() => onArmDelete(list)}
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-red-600/10 hover:text-red-600"
+            >
+              <Trash2 size={12} strokeWidth={2} />
+            </button>
           </div>
         )
       )}
@@ -950,20 +935,19 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
   function accountBadge(size: number) {
     const dim = { width: size, height: size };
     return user ? (
-      <Tooltip label={`Signed in as ${user.email}`}>
-        <button
-          className="flex-none rounded-full overflow-hidden border-2 border-ink/25 flex items-center justify-center bg-accent/15 font-sans font-semibold text-accent"
-          style={{ ...dim, fontSize: Math.round(size * 0.42) }}
-          aria-label={`Signed in as ${user.email}`}
-          onClick={() => navigate('/settings')}
-        >
-          {user.picture ? (
-            <img src={user.picture} alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-          ) : (
-            user.email[0]?.toUpperCase()
-          )}
-        </button>
-      </Tooltip>
+      <button
+        className="flex-none rounded-full overflow-hidden border-2 border-ink/25 flex items-center justify-center bg-accent/15 font-sans font-semibold text-accent"
+        style={{ ...dim, fontSize: Math.round(size * 0.42) }}
+        aria-label={`Signed in as ${user.email}`}
+        title={`Signed in as ${user.email}`}
+        onClick={() => navigate('/settings')}
+      >
+        {user.picture ? (
+          <img src={user.picture} alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+        ) : (
+          user.email[0]?.toUpperCase()
+        )}
+      </button>
     ) : (
       // Google's own rendered "icon" button (google.accounts.id.renderButton with type: 'icon')
       // has an unpredictable natural size that doesn't fit cleanly into a small badge — at small
@@ -971,21 +955,20 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
       // plain button showing Google's "G" mark, wired to `promptGoogleSignIn` (which navigates to
       // Settings — see the comment on it in AuthContext.tsx for why sign-in itself has to happen
       // from a real, full-size rendered button there rather than inline here).
-      <Tooltip label="Sign in with Google">
-        <button
-          className="flex-none rounded-full border-2 border-ink/25 flex items-center justify-center hover:bg-ink/[.06]"
-          style={dim}
-          aria-label="Sign in with Google"
-          onClick={promptGoogleSignIn}
-        >
-          <svg width={Math.round(size * 0.6)} height={Math.round(size * 0.6)} viewBox="0 0 18 18">
-            <path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" />
-            <path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z" />
-            <path fill="#FBBC05" d="M3.964 10.71A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" />
-            <path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" />
-          </svg>
-        </button>
-      </Tooltip>
+      <button
+        className="flex-none rounded-full border-2 border-ink/25 flex items-center justify-center hover:bg-ink/[.06]"
+        style={dim}
+        aria-label="Sign in with Google"
+        title="Sign in with Google"
+        onClick={promptGoogleSignIn}
+      >
+        <svg width={Math.round(size * 0.6)} height={Math.round(size * 0.6)} viewBox="0 0 18 18">
+          <path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" />
+          <path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z" />
+          <path fill="#FBBC05" d="M3.964 10.71A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" />
+          <path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" />
+        </svg>
+      </button>
     );
   }
 
@@ -995,34 +978,33 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
         <div className="flex items-center gap-2 mb-3">
           <div className="text-[22px] font-semibold tracking-[-.01em] flex-1 truncate">sutamaya</div>
           {user && (
-            <Tooltip label={paneView === 'library' ? 'Switch to My Lists (x)' : 'Switch to Library (x)'} side="left">
-              <button
-                className="relative flex flex-none items-center rounded-full p-[2px]"
-                style={{ background: 'rgba(27,25,23,.09)' }}
-                aria-label={paneView === 'library' ? 'Switch to My Lists' : 'Switch to Library'}
-                onClick={() => setPaneView((v) => (v === 'library' ? 'lists' : 'library'))}
+            <button
+              className="relative flex flex-none items-center rounded-full p-[2px]"
+              style={{ background: 'rgba(27,25,23,.09)' }}
+              aria-label={paneView === 'library' ? 'Switch to My Lists' : 'Switch to Library'}
+              title={paneView === 'library' ? 'Switch to My Lists (x)' : 'Switch to Library (x)'}
+              onClick={() => setPaneView((v) => (v === 'library' ? 'lists' : 'library'))}
+            >
+              <div
+                className="absolute top-[2px] bottom-[2px] rounded-full bg-white shadow-[0_1px_2px_rgba(27,25,23,.18)] transition-[left] duration-200 ease-out"
+                style={{ left: paneView === 'library' ? 2 : '50%', width: 'calc(50% - 2px)' }}
+              />
+              {/* Mobile-sized to roughly match the "sutamaya" title's own height — this and the
+                  account badge next to it are the two touch targets in this row people actually
+                  reach for repeatedly. */}
+              <span
+                className={`relative z-10 flex items-center justify-center rounded-full transition-colors ${paneView === 'library' ? 'text-ink' : 'text-ink/45'}`}
+                style={mobile ? { width: 38, height: 38 } : { width: 24, height: 24 }}
               >
-                <div
-                  className="absolute top-[2px] bottom-[2px] rounded-full bg-white shadow-[0_1px_2px_rgba(27,25,23,.18)] transition-[left] duration-200 ease-out"
-                  style={{ left: paneView === 'library' ? 2 : '50%', width: 'calc(50% - 2px)' }}
-                />
-                {/* Mobile-sized to roughly match the "sutamaya" title's own height — this and the
-                    account badge next to it are the two touch targets in this row people actually
-                    reach for repeatedly. */}
-                <span
-                  className={`relative z-10 flex items-center justify-center rounded-full transition-colors ${paneView === 'library' ? 'text-ink' : 'text-ink/45'}`}
-                  style={mobile ? { width: 38, height: 38 } : { width: 24, height: 24 }}
-                >
-                  <Library size={mobile ? 17 : 13} strokeWidth={2} />
-                </span>
-                <span
-                  className={`relative z-10 flex items-center justify-center rounded-full transition-colors ${paneView === 'lists' ? 'text-ink' : 'text-ink/45'}`}
-                  style={mobile ? { width: 38, height: 38 } : { width: 24, height: 24 }}
-                >
-                  <List size={mobile ? 17 : 13} strokeWidth={2} />
-                </span>
-              </button>
-            </Tooltip>
+                <Library size={mobile ? 17 : 13} strokeWidth={2} />
+              </span>
+              <span
+                className={`relative z-10 flex items-center justify-center rounded-full transition-colors ${paneView === 'lists' ? 'text-ink' : 'text-ink/45'}`}
+                style={mobile ? { width: 38, height: 38 } : { width: 24, height: 24 }}
+              >
+                <List size={mobile ? 17 : 13} strokeWidth={2} />
+              </span>
+            </button>
           )}
           {/* Account entry point, right of the toggle on every viewport (this used to be a
               separate desktop-only footer at the bottom of the pane, with nothing else on it —
@@ -1034,11 +1016,9 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
                 separate gear (redundant with it) drops out; signed out, the badge alone reads
                 as "sign in", not "settings", so the gear stays as the explicit way in. */}
             {!user && (
-              <Tooltip label="Settings">
-                <button className="flex items-center text-ink/[.62]" aria-label="Settings" onClick={() => navigate('/settings')}>
-                  <Settings size={mobile ? 20 : 16} strokeWidth={1.75} />
-                </button>
-              </Tooltip>
+              <button className="flex items-center text-ink/[.62]" aria-label="Settings" title="Settings" onClick={() => navigate('/settings')}>
+                <Settings size={mobile ? 20 : 16} strokeWidth={1.75} />
+              </button>
             )}
           </div>
         </div>
@@ -1131,36 +1111,34 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
             <div className="flex items-center justify-between pl-[18px] pr-[10px] pt-2 pb-1">
               <span className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">My lists</span>
               <div className="flex items-center gap-[7px]">
-                <Tooltip label={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}>
-                  <button
-                    aria-label={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
-                    className="w-[22px] h-[22px] border rounded-md flex items-center justify-center"
-                    style={{
-                      borderColor: reorderMode ? '#8A6A3B' : 'rgba(27,25,23,.28)',
-                      background: reorderMode ? '#8A6A3B' : 'transparent',
-                      color: reorderMode ? '#FBFAF7' : 'rgba(27,25,23,.5)',
-                    }}
-                    onClick={() => {
-                      setReorderMode((m) => !m);
-                      setMenuOpenId(null);
-                    }}
-                  >
-                    <ArrowUpDown size={12} strokeWidth={2} />
-                  </button>
-                </Tooltip>
-                <Tooltip label="Add group">
-                  <button
-                    aria-label="Add group"
-                    className="plus w-[22px] h-[22px] border border-ink/[.28] rounded-md flex items-center justify-center text-[15px] leading-none text-ink/50"
-                    onClick={() => {
-                      setCreatingParentId((c) => (c === undefined ? null : undefined));
-                      setDraft('');
-                      setTimeout(() => listInput.current?.focus(), 30);
-                    }}
-                  >
-                    +
-                  </button>
-                </Tooltip>
+                <button
+                  aria-label={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
+                  title={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
+                  className="w-[22px] h-[22px] border rounded-md flex items-center justify-center"
+                  style={{
+                    borderColor: reorderMode ? '#8A6A3B' : 'rgba(27,25,23,.28)',
+                    background: reorderMode ? '#8A6A3B' : 'transparent',
+                    color: reorderMode ? '#FBFAF7' : 'rgba(27,25,23,.5)',
+                  }}
+                  onClick={() => {
+                    setReorderMode((m) => !m);
+                    setMenuOpenId(null);
+                  }}
+                >
+                  <ArrowUpDown size={12} strokeWidth={2} />
+                </button>
+                <button
+                  aria-label="Add group"
+                  title="Add group"
+                  className="plus w-[22px] h-[22px] border border-ink/[.28] rounded-md flex items-center justify-center text-[15px] leading-none text-ink/50"
+                  onClick={() => {
+                    setCreatingParentId((c) => (c === undefined ? null : undefined));
+                    setDraft('');
+                    setTimeout(() => listInput.current?.focus(), 30);
+                  }}
+                >
+                  +
+                </button>
               </div>
             </div>
             {reorderMode && (

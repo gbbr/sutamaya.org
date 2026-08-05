@@ -63,16 +63,54 @@ function loadSegMap(filePath) {
   return new Map(Object.entries(readJSON(filePath)));
 }
 
-function buildBodySegments(paliMap, sujatoMap) {
+// SuttaCentral's own structural markup (see data/html/pli/ms/sutta/, fetched by
+// scripts/fetch-html-structure.mjs from bilara-data's `html/` tree) gives a per-segment HTML
+// template — this is language-independent structure (a verse is a verse regardless of
+// translation), so one `html/` file covers both the Pali and English text for the same segment
+// keys. Checked in this order (a segment matches at most one, based on inspecting a broad sample
+// of the actual data — see that script's own comment):
+//   - `heading`: a `<h2>`/`<h3>` sub-heading inside a longer document (e.g. DN9's internal
+//     sections), not to be confused with the "0.*" title lines already stripped above.
+//   - `verse`: `<span class='verse-line'>` inside a `<blockquote class='gatha'>` — a line of
+//     poetry, vs. plain `<p>` for prose. Also covers the `uddanagatha`/`vagguddanagatha` mnemonic
+//     verses at a chapter's end, which nest `verse-line` the same way.
+//   - `end`: a closing colophon note (`endsutta`, `endvagga`, `endsection`, `endbook`, `endkanda`,
+//     bare `end`, and `uddana-intro` — "Their mnemonic:") — often Pali-only (see buildLeaf, which
+//     falls back to Pali for these when there's no English at all, rather than leaving a blank
+//     paragraph the tap-to-reveal interaction would otherwise never make visible).
+//   - `speaker`: an inline dialogue attribution embedded mid-verse (e.g. "said the Buddha,").
+const HEADING_RE = /^<h[23]>/;
+const VERSE_LINE_RE = /class=['"]verse-line['"]/;
+const END_RE = /class=['"](?:end\w*|uddana-intro)['"]/;
+const SPEAKER_RE = /class=['"]speaker['"]/;
+
+function roleFor(template) {
+  if (!template) return undefined;
+  if (HEADING_RE.test(template)) return 'heading';
+  if (VERSE_LINE_RE.test(template)) return 'verse';
+  if (END_RE.test(template)) return 'end';
+  if (SPEAKER_RE.test(template)) return 'speaker';
+  return undefined;
+}
+
+function buildBodySegments(paliMap, sujatoMap, htmlMap) {
   const orderedKeys = paliMap.size ? [...paliMap.keys()] : [...sujatoMap.keys()];
   const segs = [];
   for (const key of orderedKeys) {
     const segId = key.slice(key.indexOf(':') + 1);
     if (segId === '0' || segId.startsWith('0.')) continue; // nikaya/book/vagga/sutta title lines
     const pali = (paliMap.get(key) || '').trim();
-    const en = (sujatoMap.get(key) || '').trim();
+    let en = (sujatoMap.get(key) || '').trim();
     if (!pali && !en) continue;
-    segs.push({ key, pali, en });
+    const role = roleFor(htmlMap.get(key));
+    // A colophon note ("Tevijjasuttaṁ niṭṭhitaṁ terasamaṁ." — "The Tevijja Sutta is finished")
+    // is frequently Pali-only, since it's a scribal marker rather than teaching content Sujato
+    // translated — falling back to Pali here (only for this role) means the reader always has
+    // *something* to show for it, instead of a blank paragraph with nothing to tap-reveal.
+    if (role === 'end' && !en) en = pali;
+    const seg = { key, pali, en };
+    if (role) seg.role = role;
+    segs.push(seg);
   }
   return segs;
 }
@@ -80,7 +118,8 @@ function buildBodySegments(paliMap, sujatoMap) {
 console.log('Indexing source files…');
 const paliFiles = buildFileIndex(path.join(DATA, 'pali', 'sutta'));
 const sujatoFiles = buildFileIndex(path.join(DATA, 'sujato', 'sutta'));
-console.log(`  ${paliFiles.size} pali files, ${sujatoFiles.size} sujato files`);
+const htmlFiles = buildFileIndex(path.join(DATA, 'html', 'pli', 'ms', 'sutta'));
+console.log(`  ${paliFiles.size} pali files, ${sujatoFiles.size} sujato files, ${htmlFiles.size} html structure files`);
 
 const nameIndexCache = new Map();
 function nameIndexFor(collection) {
@@ -132,11 +171,15 @@ function buildLeaf(uid, nodeId, collection) {
   const sujatoPath = sujatoFiles.get(uid);
   const paliMap = loadSegMap(paliPath);
   const sujatoMap = loadSegMap(sujatoPath);
-  const segs = buildBodySegments(paliMap, sujatoMap);
+  const htmlMap = loadSegMap(htmlFiles.get(uid));
+  const segs = buildBodySegments(paliMap, sujatoMap, htmlMap);
   const words = segs.reduce((n, s) => n + (s.en ? s.en.split(/\s+/).filter(Boolean).length : 0), 0);
   const min = Math.max(1, Math.round(words / 200));
 
-  fs.writeFileSync(path.join(OUT_TEXT, `${uid}.json`), JSON.stringify(segs.map(({ key, pali, en }) => ({ key, pali, en }))));
+  fs.writeFileSync(
+    path.join(OUT_TEXT, `${uid}.json`),
+    JSON.stringify(segs.map(({ key, pali, en, role }) => (role ? { key, pali, en, role } : { key, pali, en })))
+  );
 
   suttas[uid] = {
     ref: formatRef(uid),
