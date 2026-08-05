@@ -426,10 +426,15 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
 
   // A membership chip's /browse/{list_id} navigation (or any other deep link to a list) needs
   // the "My lists" tree actually showing for that row to be visible at all — flip the toggle for
-  // the user rather than landing them on a Library view with nothing selected.
+  // the user rather than landing them on a Library view with nothing selected. Symmetrically, a
+  // breadcrumb segment's /browse/{corpus_node_id} navigation (or any other deep link into the
+  // browse tree) needs to flip back to 'library' — otherwise a user who navigates there while
+  // "My lists" is showing ends up on a list view with nothing selected instead.
   useEffect(() => {
-    if (user && nodeId && lists.some((l) => l.id === nodeId)) setPaneView('lists');
-  }, [user, nodeId, lists]);
+    if (!user || !nodeId) return;
+    if (lists.some((l) => l.id === nodeId)) setPaneView('lists');
+    else if (corpus && findNode(corpus, nodeId)) setPaneView('library');
+  }, [user, nodeId, lists, corpus]);
 
   // Expands every ancestor level of the current node whenever nodeId *changes* after mount —
   // covers deep links and search-driven navigation within an already-mounted TreePane, without
