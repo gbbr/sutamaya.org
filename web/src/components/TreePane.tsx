@@ -221,10 +221,10 @@ function ListRow({
           </span>
         )}
         <button
-          className="w-[11px] flex-none flex items-center justify-center text-ink/40"
+          className="w-[19px] -ml-1 flex-none flex items-center justify-center text-ink/70 hover:text-ink"
           onClick={() => hasKids && onToggle(list.id)}
         >
-          {hasKids ? open ? <ChevronDown size={12} strokeWidth={2} /> : <ChevronRight size={12} strokeWidth={2} /> : null}
+          {hasKids ? open ? <ChevronDown size={14} strokeWidth={2.25} /> : <ChevronRight size={14} strokeWidth={2.25} /> : null}
         </button>
         {editing ? (
           <input
