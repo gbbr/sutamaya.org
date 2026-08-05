@@ -5,8 +5,9 @@ import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { useSuttaReading } from '../hooks/useSuttaReading';
-import { useAutoListLabels } from '../hooks/useAutoListLabels';
 import { flatSuttaOrder } from '../lib/corpus';
+import { flattenListTree, resolveListById } from '../lib/lists';
+import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { lookupWord } from '../lib/dictionary';
 import { SegmentedText } from '../components/SegmentedText';
@@ -52,13 +53,17 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   } = useSuttaReading(suttaId, 'reader');
   // "Highlights"/"Notes" membership (see server/src/routes/data.js's buildUserData) is redundant
   // here — the highlight gutter and the note preview above already say as much — so they're
-  // filtered out of the chip row entirely; unlike `lists`, `membership` only carries labels, not
-  // the ListDef.auto flag.
-  const autoLabels = useAutoListLabels();
+  // filtered out of the chip row entirely.
+  const flatLists = useMemo(() => flattenListTree(lists), [lists]);
   const suttaLists = useMemo(() => {
     const raw = (suttaId && membership[suttaId]) || [];
-    return raw.filter((label) => !autoLabels.has(label));
-  }, [suttaId, membership, autoLabels]);
+    return raw
+      .filter((id) => !AUTO_LIST_IDS.has(id))
+      .map((id) => {
+        const { list, breadcrumb } = resolveListById(id, flatLists);
+        return { id, list, breadcrumb };
+      });
+  }, [suttaId, membership, flatLists]);
 
   const theme = READER_THEMES[themeId];
 
@@ -216,16 +221,15 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           )}
           {(suttaLists.length > 0) && (
             <div className="flex flex-wrap items-center gap-[6px]" style={{ marginTop: 11 }}>
-              {suttaLists.map((label) => {
-                const list = lists.find((l) => l.label === label);
+              {suttaLists.map(({ id, list, breadcrumb }) => {
                 return (
                   <button
-                    key={label}
+                    key={id}
                     className="inline-flex items-center h-5 whitespace-nowrap rounded-full px-[10px] font-sans text-[11px] hover:opacity-70"
                     style={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
                     onClick={() => list && navigate(`/browse/${list.id}`)}
                   >
-                    {label}
+                    {breadcrumb}
                   </button>
                 );
               })}

@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react';
 import { Check, Plus } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
+import { flattenListTree, resolveListById, type ListPathOption } from '../lib/lists';
+import { AUTO_LIST_IDS } from '../lib/autoLists';
 import type { ListDef, ThemeColors } from '../lib/types';
 
 interface ListMembershipPickerProps {
@@ -10,38 +12,8 @@ interface ListMembershipPickerProps {
   onRequestClose?: () => void;
 }
 
-interface FlatOption {
-  list: ListDef;
-  depth: number;
-  breadcrumb: string;
-}
-
-// Depth-first flatten of the list tree (excluding the two auto-managed lists — they can't be
-// nested under, added to, or created inside), each carrying its full "Parent / Child" breadcrumb
-// so a deeply-nested list is still identifiable at a glance in a flat dropdown.
-function flattenLists(lists: ListDef[]): FlatOption[] {
-  const byParent = new Map<string | null, ListDef[]>();
-  for (const l of lists) {
-    if (l.auto) continue;
-    const key = l.parentId ?? null;
-    const siblings = byParent.get(key);
-    if (siblings) siblings.push(l);
-    else byParent.set(key, [l]);
-  }
-  const out: FlatOption[] = [];
-  function walk(parentId: string | null, prefix: string, depth: number) {
-    for (const l of byParent.get(parentId) ?? []) {
-      const breadcrumb = prefix ? `${prefix} / ${l.label}` : l.label;
-      out.push({ list: l, depth, breadcrumb });
-      walk(l.id, breadcrumb, depth + 1);
-    }
-  }
-  walk(null, '', 0);
-  return out;
-}
-
 type Row =
-  | { type: 'list'; option: FlatOption }
+  | { type: 'list'; option: ListPathOption }
   | { type: 'create-top'; name: string }
   | { type: 'create-nested'; name: string; parentId: string; parentLabel: string };
 
@@ -61,13 +33,12 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
     if (autoFocus) inputRef.current?.focus();
   }, [autoFocus]);
 
-  // membership[suttaId] includes the "Highlights"/"Notes" auto-list labels (see
+  // membership[suttaId] includes the "Highlights"/"Notes" auto-list ids (see
   // server/src/routes/data.js's buildUserData) — those aren't real lists (no Firestore doc, no
   // id to add/remove items against), so they're excluded here rather than rendered as a
   // toggleable chip that would 404 against the server.
-  const autoLabels = useMemo(() => new Set(lists.filter((l) => l.auto).map((l) => l.label)), [lists]);
-  const suttaListLabels = (membership[suttaId] || []).filter((label) => !autoLabels.has(label));
-  const flatAll = useMemo(() => flattenLists(lists), [lists]);
+  const suttaListIds = (membership[suttaId] || []).filter((id) => !AUTO_LIST_IDS.has(id));
+  const flatAll = useMemo(() => flattenListTree(lists), [lists]);
 
   const rows: Row[] = useMemo(() => {
     if (nestingParent) {
@@ -90,7 +61,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       }
       const rootHasMember = new Set<string>();
       for (const f of flatAll) {
-        if (suttaListLabels.includes(f.list.label)) rootHasMember.add(rootOf.get(f.list.id)!);
+        if (suttaListIds.includes(f.list.id)) rootHasMember.add(rootOf.get(f.list.id)!);
       }
       const sorted = [...flatAll].sort((a, b) => {
         const aRoot = rootOf.get(a.list.id)!;
@@ -125,7 +96,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
     const matches = flatAll.filter((f) => f.breadcrumb.toLowerCase().includes(ql));
     const listRows: Row[] = matches.map((option) => ({ type: 'list' as const, option }));
     return [...listRows, { type: 'create-top', name: q }];
-  }, [draft, flatAll, suttaListLabels, nestingParent]);
+  }, [draft, flatAll, suttaListIds, nestingParent]);
 
   useEffect(() => {
     setActiveIndex(0);
@@ -135,7 +106,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
 
   async function activateRow(row: Row) {
     if (row.type === 'list') {
-      toggleMembership(suttaId, row.option.list.label);
+      toggleMembership(suttaId, row.option.list.id);
       return;
     }
     try {
@@ -189,18 +160,23 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
 
   return (
     <div>
-      {suttaListLabels.length > 0 && (
+      {suttaListIds.length > 0 && (
         <div className="flex flex-wrap gap-1.5 mb-2.5">
-          {suttaListLabels.map((label) => (
-            <button
-              key={label}
-              className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px]"
-              style={{ background: theme.fg, color: theme.bg }}
-              onClick={() => toggleMembership(suttaId, label)}
-            >
-              {label} ×
-            </button>
-          ))}
+          {/* Display only — removal already lives on each row below (unchecking), so these
+              aren't clickable, and they use the reader's own surface colours (border + fg text)
+              rather than a solid dark fill, matching every other membership chip in the app. */}
+          {suttaListIds.map((id) => {
+            const breadcrumb = resolveListById(id, flatAll).breadcrumb;
+            return (
+              <span
+                key={id}
+                className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px]"
+                style={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
+              >
+                {breadcrumb}
+              </span>
+            );
+          })}
         </div>
       )}
       {nestingParent && (
@@ -252,7 +228,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
             );
           }
           const { list, depth, breadcrumb } = row.option;
-          const checked = suttaListLabels.includes(list.label);
+          const checked = suttaListIds.includes(list.id);
           return (
             <div
               key={list.id}
