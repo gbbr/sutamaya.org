@@ -19,6 +19,10 @@ export interface SegmentFile {
   pali: string;
   en: string;
   role?: SegmentRole;
+  // Sujato's own translator note for this segment (data/sujato/notes/), if any — may contain
+  // inline HTML (`<i>`/`<em>`/`<b>`/`<span>`); cross-reference links have already been stripped
+  // to plain text at build time (see build-corpus.mjs's cleanNote()).
+  note?: string;
 }
 
 const textCache = new Map<string, Promise<SegmentFile[]>>();

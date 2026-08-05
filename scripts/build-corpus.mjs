@@ -93,7 +93,18 @@ function roleFor(template) {
   return undefined;
 }
 
-function buildBodySegments(paliMap, sujatoMap, htmlMap) {
+// Sujato's own translator notes (data/sujato/notes/, same uid/segment-keyed, range-batched files
+// as everything else — see data/BRIEF.md) carry inline HTML (`<i>`/`<em>`/<b>`/`<span>`, kept
+// as-is) and cross-reference links to other suttas on suttacentral.net (`<a href='https://
+// suttacentral.net/...'>`) — stripped down to their plain text here rather than kept as live
+// links, since a link off to the actual live website doesn't belong in an offline-first reader
+// (and may point at a sutta this dataset doesn't even have translated).
+const NOTE_LINK_RE = /<a\b[^>]*>(.*?)<\/a>/gis;
+function cleanNote(text) {
+  return text.replace(NOTE_LINK_RE, '$1').trim();
+}
+
+function buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap) {
   const orderedKeys = paliMap.size ? [...paliMap.keys()] : [...sujatoMap.keys()];
   const segs = [];
   for (const key of orderedKeys) {
@@ -110,6 +121,8 @@ function buildBodySegments(paliMap, sujatoMap, htmlMap) {
     if (role === 'end' && !en) en = pali;
     const seg = { key, pali, en };
     if (role) seg.role = role;
+    const rawNote = notesMap.get(key);
+    if (rawNote && rawNote.trim()) seg.note = cleanNote(rawNote);
     segs.push(seg);
   }
   return segs;
@@ -119,7 +132,10 @@ console.log('Indexing source files…');
 const paliFiles = buildFileIndex(path.join(DATA, 'pali', 'sutta'));
 const sujatoFiles = buildFileIndex(path.join(DATA, 'sujato', 'sutta'));
 const htmlFiles = buildFileIndex(path.join(DATA, 'html', 'pli', 'ms', 'sutta'));
-console.log(`  ${paliFiles.size} pali files, ${sujatoFiles.size} sujato files, ${htmlFiles.size} html structure files`);
+const notesFiles = buildFileIndex(path.join(DATA, 'sujato', 'notes'));
+console.log(
+  `  ${paliFiles.size} pali files, ${sujatoFiles.size} sujato files, ${htmlFiles.size} html structure files, ${notesFiles.size} note files`
+);
 
 const nameIndexCache = new Map();
 function nameIndexFor(collection) {
@@ -172,13 +188,16 @@ function buildLeaf(uid, nodeId, collection) {
   const paliMap = loadSegMap(paliPath);
   const sujatoMap = loadSegMap(sujatoPath);
   const htmlMap = loadSegMap(htmlFiles.get(uid));
-  const segs = buildBodySegments(paliMap, sujatoMap, htmlMap);
+  const notesMap = loadSegMap(notesFiles.get(uid));
+  const segs = buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap);
   const words = segs.reduce((n, s) => n + (s.en ? s.en.split(/\s+/).filter(Boolean).length : 0), 0);
   const min = Math.max(1, Math.round(words / 200));
 
   fs.writeFileSync(
     path.join(OUT_TEXT, `${uid}.json`),
-    JSON.stringify(segs.map(({ key, pali, en, role }) => (role ? { key, pali, en, role } : { key, pali, en })))
+    JSON.stringify(
+      segs.map(({ key, pali, en, role, note }) => ({ key, pali, en, ...(role ? { role } : null), ...(note ? { note } : null) }))
+    )
   );
 
   suttas[uid] = {

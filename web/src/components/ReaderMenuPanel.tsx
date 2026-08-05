@@ -35,7 +35,8 @@ const FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
 export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, onClose, onJumpToHighlight, noteFocusSignal }: ReaderMenuPanelProps) {
   const [tab, setTab] = useState(initialTab);
   const { notes, submitNote, highlights, removeHighlights } = useUserData();
-  const { theme: currentTheme, setTheme, fs, setFs, lh, setLh, face, setFace, allPali, toggleAllPali } = useReaderPrefs();
+  const { theme: currentTheme, setTheme, fs, setFs, lh, setLh, face, setFace, allPali, toggleAllPali, showNotes, toggleShowNotes } =
+    useReaderPrefs();
 
   const suttaHighlights = highlights[suttaId] || [];
   const highlightGroups = useMemo(() => groupHighlights(suttaHighlights, segments), [suttaHighlights, segments]);
@@ -112,7 +113,7 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
           <div className="flex flex-1 gap-2">
             {tabBtn('highlights', 'Highlights')}
             {tabBtn('lists', 'Lists')}
-            {tabBtn('text', 'Text')}
+            {tabBtn('text', 'Theme')}
           </div>
         </div>
 
@@ -212,6 +213,18 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
               <button style={pill(allPali)} onClick={toggleAllPali}>
                 {allPali ? 'Always shown' : 'On tap'}
               </button>
+            </div>
+            <div style={ctlRowStyle}>
+              <label className="flex items-center gap-2 font-sans text-[12.5px]" style={{ width: 86 }}>
+                <input
+                  type="checkbox"
+                  checked={showNotes}
+                  onChange={toggleShowNotes}
+                  style={{ accentColor: '#8A6A3B', width: 15, height: 15 }}
+                />
+                Notes
+              </label>
+              <span className="flex-1 text-[12.5px] opacity-55">Translator's notes (also "c")</span>
             </div>
             <div style={ctlRowStyle}>
               <span className="font-sans text-[12.5px] opacity-55" style={{ width: 86 }}>

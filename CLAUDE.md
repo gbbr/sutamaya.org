@@ -53,11 +53,19 @@ writes:
   **recursively-nested** `chapters[]` — a row with `chapters` expands further, one without is
   where suttas live) plus a flat `suttas` map (`uid -> {ref, node, en, pali, blurb, min}`).
 - `web/public/data/text/{uid}.json` — one file per leaf document: an ordered array of
-  `{key, pali, en, role?}` segments (structural "0.*" header lines are stripped; that's where
-  titles/blurbs come from instead — see `headerTitle()` in the script). `role` (omitted for the
-  common plain-prose case) is one of `'verse' | 'heading' | 'end' | 'speaker'`, set from
+  `{key, pali, en, role?, note?}` segments (structural "0.*" header lines are stripped; that's
+  where titles/blurbs come from instead — see `headerTitle()` in the script). `role` (omitted for
+  the common plain-prose case) is one of `'verse' | 'heading' | 'end' | 'speaker'`, set from
   SuttaCentral's own structural markup — see below and `SegmentedText.tsx`'s `roleStyle()`, which
-  is what actually renders each one distinctly.
+  is what actually renders each one distinctly. `note` (also omitted when absent) is Sujato's own
+  translator footnote for that segment, from `data/sujato/notes/{collection}/...` (same uid/
+  segment-keyed, range-batched files as everything else) — rendered as a small clickable asterisk
+  at the end of the segment (`SegmentedText.tsx`), which the reader can hide entirely with "c" or
+  the Theme tab's checkbox (`ReaderPrefsContext`'s `showNotes`). May contain inline HTML
+  (`<i>`/`<em>`/`<b>`/`<span>`, rendered as-is); a note's own cross-reference links to other
+  suttas on suttacentral.net (`<a href='https://suttacentral.net/...'>`) are stripped down to
+  their plain text at build time (`cleanNote()`) rather than kept live, since a link off to the
+  actual website doesn't belong in an offline-first reader.
 - `web/public/data/dictionary.json` and **`data/pli2en_dpd_map.json`** — the DPD dictionary
   reshaped from a `[{entry, definition}]` array into a `{entry: definition[]}` object for O(1)
   lookup. The `data/` copy is kept as a reusable artifact alongside the source list.
@@ -131,7 +139,34 @@ translation).
 **Firestore**, one document tree per user (`server/src/firestore.js`):
 
 ```
-users/{uid}                          { email, googleId, name, picture, createdAt }
+users/{uid}                          { email, googleId, name, picture, createdAt, prefs? }   —
+                                                                                `prefs`, if
+                                                                                present, is
+                                                                                `{ reader?, ui? }`
+                                                                                — a signed-in
+                                                                                user's reader/UI
+                                                                                settings, synced
+                                                                                from
+                                                                                localStorage (see
+                                                                                Frontend below and
+                                                                                routes/prefs.js's
+                                                                                `PUT /api/prefs`,
+                                                                                which updates
+                                                                                `prefs.reader`/
+                                                                                `prefs.ui`
+                                                                                independently via
+                                                                                Firestore dot-path
+                                                                                `.update()` so
+                                                                                saving one never
+                                                                                clobbers the
+                                                                                other); returned
+                                                                                from `/api/auth/me`
+                                                                                and
+                                                                                `/api/auth/google`
+                                                                                (`publicUser()`) so
+                                                                                the client can
+                                                                                restore it on
+                                                                                sign-in
 users/{uid}/lists/{listId}           { label, parentId, kind, position, items: string[] }   —
                                                                                 `kind` is
                                                                                 'list' (holds
@@ -242,13 +277,28 @@ that header will look like broken auth (cookie silently not persisted) — it is
   corpus + dictionary, fetched once), `UserDataContext` (lists/notes/highlights/visited, backed
   by the API with optimistic local updates — every mutator applies its change locally first,
   then either syncs fresh server state on success or, on failure, logs and re-syncs from the
-  server to discard the stale optimistic edit, since there's no offline write queue), `ReaderPrefsContext`,
-  `LayoutContext`, and `UiPrefsContext` (theme/font/pane-width/UI-scale prefs, persisted to
-  `localStorage`, not synced to the server).
+  server to discard the stale optimistic edit, since there's no offline write queue),
+  `ReaderPrefsContext` (theme/font/line-height/Pali/notes-visibility), and `UiPrefsContext`
+  (pane-width/UI-scale/UI-font). Both prefs contexts are `localStorage`-backed
+  (`usePersistedState`) first and foremost — signed out, or before the initial `/api/auth/me`
+  round trip resolves, that's the only source of truth, so a setting change always takes effect
+  immediately regardless of auth state. `hooks/useProfileSyncedPrefs.ts` (shared by both
+  contexts) layers a signed-in-only sync on top: a debounced `PUT /api/prefs` on every local
+  change (so a slider drag doesn't fire one request per tick), and a one-time merge of the
+  server's saved values over local state on sign-in (or already-signed-in page load) — see
+  `server/src/routes/prefs.js` and the `prefs` field on `users/{uid}` above.
 - `lib/corpus.ts`, `lib/dictionary.ts`, `lib/theme.ts`, `lib/api.ts` — pure data/fetch helpers,
   no React.
 - `components/SegmentedText.tsx` — the shared paragraph renderer (tap-to-reveal Pali, word-tap
-  dictionary, highlighted-range spans) used by both the reader and the desktop preview pane.
+  dictionary, highlighted-range spans) used by both the reader and the desktop preview pane. A
+  segment with a translator note (`SegmentFile.note`) gets a small clickable asterisk at the end
+  of its English text (`stopPropagation()`s so it doesn't also trigger the tap-to-reveal-Pali
+  click on the paragraph around it) — hover shows the plain-text note via the native `title`
+  attribute, click toggles an inline expansion below the segment (rendered via
+  `dangerouslySetInnerHTML`, safe here since a note's HTML is fixed build-time content, not
+  runtime/user input — see build-corpus.mjs's `cleanNote()`). The markers themselves are gated
+  on `ReaderPrefsContext`'s `showNotes`, flipped by "c" in the reader or a checkbox in the side
+  panel's Theme tab (renamed from "Text" — same tab, still theme/font/Pali controls plus this).
 - `hooks/useHighlightPopup.ts` — selection → floating colour-picker popup logic (segment-relative
   character offsets via `Range`, ported from the prototype's `onTextUp`), shared the same way.
   A selection spanning multiple segments produces one highlight range per segment, written
