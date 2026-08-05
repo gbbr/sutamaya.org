@@ -438,11 +438,17 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, activ
   // breadcrumb segment's /browse/{corpus_node_id} navigation (or any other deep link into the
   // browse tree) needs to flip back to 'library' — otherwise a user who navigates there while
   // "My lists" is showing ends up on a list view with nothing selected instead.
+  // Depend on whether nodeId *is* a list id, not on the `lists` array itself — reordering or
+  // re-parenting a list (drag-and-drop in ListRow) gives `lists` a new reference without adding
+  // or removing any id, and re-running this on that reference change alone snapped the pane back
+  // to 'library' immediately after every mobile drag-drop (nodeId, still a corpus node id from
+  // whatever the user was last browsing, would hit the `else if` branch below).
+  const nodeIsListId = lists.some((l) => l.id === nodeId);
   useEffect(() => {
     if (!user || !nodeId) return;
-    if (lists.some((l) => l.id === nodeId)) setPaneView('lists');
+    if (nodeIsListId) setPaneView('lists');
     else if (corpus && findNode(corpus, nodeId)) setPaneView('library');
-  }, [user, nodeId, lists, corpus]);
+  }, [user, nodeId, nodeIsListId, corpus]);
 
   // Expands every ancestor level of the current node whenever nodeId *changes* after mount —
   // covers deep links and search-driven navigation within an already-mounted TreePane, without

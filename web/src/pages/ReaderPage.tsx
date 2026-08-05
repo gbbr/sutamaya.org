@@ -249,7 +249,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
                     key={id}
                     className="inline-flex items-center h-5 whitespace-nowrap rounded-full px-[10px] font-sans text-[11px] hover:opacity-70"
                     style={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
-                    onClick={() => list && navigate(`/browse/${list.id}`)}
+                    onClick={() => list && navigate(`/browse/${list.id}/${suttaId}`)}
                   >
                     {breadcrumb}
                   </button>

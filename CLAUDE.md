@@ -235,7 +235,8 @@ cached within seconds regardless). `/api/*` is `NetworkOnly` — user data is ne
   from the working tree), since this dataset only has one English translation per collection.
 - Lists support nesting (folder-like, via `parentId`), rename, delete (children re-parent up
   one level rather than being orphaned), and reordering — both of sibling lists and of a list's
-  own suttas. `ListPane` reorders a list's own suttas via native Pointer Events (touch and mouse
-  alike, with live reordering and edge auto-scroll); `TreePane`'s `ListRow` still reorders/nests
-  the list tree itself via the older HTML5 drag-and-drop API, which doesn't fire reliably on
-  touch — button controls (move up/down) remain the touch-safe fallback for that one case.
+  own suttas. `ListPane` (a list's own suttas) and `TreePane`'s `ListRow` (the list tree itself,
+  reorder/nest) both drive this via the same native Pointer Events approach (touch and mouse
+  alike, with live reordering and edge auto-scroll) — not HTML5 drag-and-drop, which doesn't
+  fire reliably on touch; `TreePane` additionally offers button controls (rename/delete/move) as
+  an always-works alternative to dragging.

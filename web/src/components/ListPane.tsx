@@ -182,6 +182,15 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
     if (activeIndex >= 0) rowRefs.current[activeIndex]?.scrollIntoView({ block: 'nearest' });
   }, [activeIndex]);
 
+  // Reveals the sutta the user just came from — e.g. tapping a list-membership chip in the
+  // Reader now opens this pane with `selectedId` set (see ReaderPage's chip onClick) rather than
+  // just the tree row for the list itself. `block: 'nearest'` makes this a no-op if the row's
+  // already in view, so it doesn't fight normal in-list browsing.
+  useEffect(() => {
+    if (!selectedId) return;
+    itemRowRefs.current.get(selectedId)?.scrollIntoView({ block: 'nearest' });
+  }, [selectedId, nodeId]);
+
   if (!corpus) return null;
 
   const title = searching ? 'Search' : nodeLabel(corpus, nodeId || '', lists);
@@ -220,9 +229,17 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
           </button>
         )}
       </header>
-      <div ref={scrollRef} className="sc flex-1">
+      <div
+        ref={scrollRef}
+        className="sc flex-1"
+        style={
+          dragOrder
+            ? { userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none' }
+            : undefined
+        }
+      >
         {displayItems.map(([id, s], i) => {
-          const on = desktop && !previewHidden && !twoPane && id === selectedId;
+          const on = (mobile || (desktop && !previewHidden && !twoPane)) && id === selectedId;
           const focused = i === activeIndex;
           const note = notes[id];
           const chips = (membership[id] || [])
@@ -244,7 +261,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
                 ref={(el) => {
                   rowRefs.current[i] = el;
                 }}
-                className={`block w-full text-left px-5 py-[13px] ${currentList && !currentList.auto ? 'pr-11' : ''} ${on ? 'text-[#FBFAF7]' : ''} ${focused && !on ? 'bg-ink/[.05]' : ''}`}
+                className={`block w-full text-left px-5 py-[13px] ${currentList && !currentList.auto ? 'pr-12' : ''} ${on ? 'text-[#FBFAF7]' : ''} ${focused && !on ? 'bg-ink/[.05]' : ''}`}
                 style={focused ? { boxShadow: `inset 2px 0 0 ${on ? 'rgba(251,250,247,.6)' : '#8A6A3B'}` } : undefined}
                 onClick={() => onOpen(id)}
                 onDoubleClick={() => onOpenReader(id)}
@@ -294,8 +311,14 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
               </button>
               {currentList && !currentList.auto && (
                 <span
-                  className={`absolute right-3 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center rounded ${on ? 'text-[#FBFAF7]/70' : 'text-ink/40'}`}
-                  style={{ touchAction: 'none', cursor: 'grab' }}
+                  className={`absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded ${on ? 'text-[#FBFAF7]/70' : 'text-ink/40'}`}
+                  style={{
+                    touchAction: 'none',
+                    cursor: 'grab',
+                    userSelect: 'none',
+                    WebkitUserSelect: 'none',
+                    WebkitTouchCallout: 'none',
+                  }}
                   onPointerDown={(e) => onHandlePointerDown(e, id)}
                 >
                   <GripVertical size={16} strokeWidth={2} />
