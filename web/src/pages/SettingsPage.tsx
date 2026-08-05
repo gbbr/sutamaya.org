@@ -15,6 +15,8 @@ const UI_FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
   { id: 'serif', label: 'Newsreader' },
   { id: 'georgia', label: 'Georgia' },
   { id: 'sans', label: 'Sans' },
+  { id: 'times', label: 'Times' },
+  { id: 'system', label: 'System' },
 ];
 
 export function SettingsPage(_props: RouteComponentProps) {
@@ -76,11 +78,11 @@ export function SettingsPage(_props: RouteComponentProps) {
 
         <div className="mb-6">
           <div className="font-sans text-[14px] mb-2">UI font</div>
-          <div className="flex gap-2">
+          <div className="grid grid-cols-3 gap-2">
             {UI_FACE_OPTIONS.map((f) => (
               <button
                 key={f.id}
-                className={`flex-1 h-9 rounded-field border font-sans text-[13px] ${
+                className={`h-9 rounded-field border font-sans text-[13px] ${
                   uiFace === f.id ? 'border-accent bg-accent text-[#FBFAF7]' : 'border-ink/[.22] text-ink/70'
                 }`}
                 onClick={() => setUiFace(f.id)}

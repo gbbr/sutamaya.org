@@ -19,6 +19,10 @@ export interface SegmentFile {
   pali: string;
   en: string;
   role?: SegmentRole;
+  // Only set when role === 'heading' — SuttaCentral's own <h2>/<h3> nesting for this sub-heading
+  // (e.g. DN9's internal sections genuinely nest h3s under an h2), preserved so the reader can
+  // render real <h2>/<h3> elements instead of collapsing them to one visual weight.
+  headingLevel?: 2 | 3;
   // Sujato's own translator note for this segment (data/sujato/notes/), if any — may contain
   // inline HTML (`<i>`/`<em>`/`<b>`/`<span>`); cross-reference links have already been stripped
   // to plain text at build time (see build-corpus.mjs's cleanNote()).

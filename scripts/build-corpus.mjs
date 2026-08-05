@@ -79,17 +79,18 @@ function loadSegMap(filePath) {
 //     falls back to Pali for these when there's no English at all, rather than leaving a blank
 //     paragraph the tap-to-reveal interaction would otherwise never make visible).
 //   - `speaker`: an inline dialogue attribution embedded mid-verse (e.g. "said the Buddha,").
-const HEADING_RE = /^<h[23]>/;
+const HEADING_RE = /^<h([23])>/;
 const VERSE_LINE_RE = /class=['"]verse-line['"]/;
 const END_RE = /class=['"](?:end\w*|uddana-intro)['"]/;
 const SPEAKER_RE = /class=['"]speaker['"]/;
 
 function roleFor(template) {
   if (!template) return undefined;
-  if (HEADING_RE.test(template)) return 'heading';
-  if (VERSE_LINE_RE.test(template)) return 'verse';
-  if (END_RE.test(template)) return 'end';
-  if (SPEAKER_RE.test(template)) return 'speaker';
+  const heading = HEADING_RE.exec(template);
+  if (heading) return { role: 'heading', headingLevel: Number(heading[1]) };
+  if (VERSE_LINE_RE.test(template)) return { role: 'verse' };
+  if (END_RE.test(template)) return { role: 'end' };
+  if (SPEAKER_RE.test(template)) return { role: 'speaker' };
   return undefined;
 }
 
@@ -113,14 +114,17 @@ function buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap) {
     const pali = (paliMap.get(key) || '').trim();
     let en = (sujatoMap.get(key) || '').trim();
     if (!pali && !en) continue;
-    const role = roleFor(htmlMap.get(key));
+    const roleInfo = roleFor(htmlMap.get(key));
     // A colophon note ("Tevijjasuttaṁ niṭṭhitaṁ terasamaṁ." — "The Tevijja Sutta is finished")
     // is frequently Pali-only, since it's a scribal marker rather than teaching content Sujato
     // translated — falling back to Pali here (only for this role) means the reader always has
     // *something* to show for it, instead of a blank paragraph with nothing to tap-reveal.
-    if (role === 'end' && !en) en = pali;
+    if (roleInfo?.role === 'end' && !en) en = pali;
     const seg = { key, pali, en };
-    if (role) seg.role = role;
+    if (roleInfo) {
+      seg.role = roleInfo.role;
+      if (roleInfo.headingLevel) seg.headingLevel = roleInfo.headingLevel;
+    }
     const rawNote = notesMap.get(key);
     if (rawNote && rawNote.trim()) seg.note = cleanNote(rawNote);
     segs.push(seg);
@@ -196,7 +200,14 @@ function buildLeaf(uid, nodeId, collection) {
   fs.writeFileSync(
     path.join(OUT_TEXT, `${uid}.json`),
     JSON.stringify(
-      segs.map(({ key, pali, en, role, note }) => ({ key, pali, en, ...(role ? { role } : null), ...(note ? { note } : null) }))
+      segs.map(({ key, pali, en, role, headingLevel, note }) => ({
+        key,
+        pali,
+        en,
+        ...(role ? { role } : null),
+        ...(headingLevel ? { headingLevel } : null),
+        ...(note ? { note } : null),
+      }))
     )
   );
 

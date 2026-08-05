@@ -30,6 +30,8 @@ const FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
   { id: 'serif', label: 'Newsreader' },
   { id: 'georgia', label: 'Georgia' },
   { id: 'sans', label: 'Sans' },
+  { id: 'times', label: 'Times' },
+  { id: 'system', label: 'System' },
 ];
 
 export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, onClose, onJumpToHighlight, noteFocusSignal }: ReaderMenuPanelProps) {
@@ -194,13 +196,15 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
               </span>
               <input type="range" min={140} max={200} step={5} value={lh} onChange={(e) => setLh(+e.target.value)} className="flex-1" style={{ accentColor: '#8A6A3B' }} />
             </div>
-            <div style={ctlRowStyle}>
-              <span className="font-sans text-[12.5px] opacity-55" style={{ width: 86 }}>
-                Face
-              </span>
-              <div className="flex gap-2">
+            <div style={{ padding: '12px 0', borderTop: `1px solid ${theme.rule}` }}>
+              <span className="font-sans text-[12.5px] opacity-55 block mb-2">Face</span>
+              <div className="grid grid-cols-3 gap-2">
                 {FACE_OPTIONS.map((f) => (
-                  <button key={f.id} style={{ ...pill(face === f.id), fontSize: 12, padding: '5px 10px' }} onClick={() => setFace(f.id)}>
+                  <button
+                    key={f.id}
+                    style={{ ...pill(face === f.id), fontSize: 12, padding: '5px 10px', textAlign: 'center' }}
+                    onClick={() => setFace(f.id)}
+                  >
                     {f.label}
                   </button>
                 ))}

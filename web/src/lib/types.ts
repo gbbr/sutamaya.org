@@ -88,7 +88,7 @@ export interface User {
 }
 
 export type ReaderTheme = 'light' | 'sepia' | 'dark';
-export type ReaderFace = 'serif' | 'georgia' | 'sans';
+export type ReaderFace = 'serif' | 'georgia' | 'sans' | 'system' | 'times';
 
 export interface ThemeColors {
   bg: string;
