@@ -26,7 +26,7 @@ interface DictState {
 export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus, dictionary } = useCorpus();
   const { notes, membership, lists, markVisited } = useUserData();
-  const { theme: themeId, fs, lh, face, allPali } = useReaderPrefs();
+  const { theme: themeId, fs, lh, face, allPali, showNotes, toggleShowNotes } = useReaderPrefs();
 
   const initialPanelTab = new URLSearchParams(location?.search).get('panel') as 'highlights' | 'lists' | 'text' | null;
   // Where to return to on close — the exact pane/nodeId/scroll position the reader was opened
@@ -35,6 +35,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   // to /read/:suttaId, which has no such origin.
   const from = (location?.state as { from?: string } | undefined)?.from;
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
+  const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
   const [dict, setDict] = useState<DictState | null>(null);
   const [panel, setPanel] = useState(!!initialPanelTab);
   const [tab, setTab] = useState<'highlights' | 'lists' | 'text'>(initialPanelTab || 'highlights');
@@ -80,6 +81,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
 
   useEffect(() => {
     setOpenSegs({});
+    setOpenNotes({});
     setDict(null);
   }, [suttaId]);
 
@@ -216,6 +218,9 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
         setTab('highlights');
         setPanel(true);
         setNoteFocusSignal((s) => s + 1);
+      } else if (e.key.toLowerCase() === 'c') {
+        e.preventDefault();
+        toggleShowNotes();
       }
     }
     window.addEventListener('keydown', onKey);
@@ -366,6 +371,9 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
               onWordClick={onWordClick}
               onTextUp={onTextUp}
               onSpanClick={(i, s, e, rect, color) => openPop(i, s, e, rect, color)}
+              showNotes={showNotes}
+              openNotes={openNotes}
+              onToggleNote={(i) => setOpenNotes((s) => ({ ...s, [i]: !s[i] }))}
             />
           ) : (
             <div className="font-sans text-sm opacity-50">Loading…</div>

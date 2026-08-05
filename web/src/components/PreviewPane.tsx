@@ -24,9 +24,11 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
   const { corpus } = useCorpus();
   const { desktop, previewHidden, hidePreview } = useLayout();
   const { notes, submitNote, membership, lists, visited } = useUserData();
-  const { fs, lh, face, allPali } = useReaderPrefs();
+  const { fs, lh, face, allPali, showNotes } = useReaderPrefs();
   const [showListPicker, setShowListPicker] = useState(false);
+  const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
   useEffect(() => setShowListPicker(false), [selectedId]);
+  useEffect(() => setOpenNotes({}), [selectedId]);
   const sutta = corpus && selectedId ? corpus.suttas[selectedId] : undefined;
   const {
     segments,
@@ -144,6 +146,9 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
             onWordClick={() => {}}
             onTextUp={onTextUp}
             onSpanClick={(i, s, e, rect, color) => openPop(i, s, e, rect, color)}
+            showNotes={showNotes}
+            openNotes={openNotes}
+            onToggleNote={(i) => setOpenNotes((s) => ({ ...s, [i]: !s[i] }))}
           />
         ) : (
           <div className="font-sans text-[13px] text-ink/40">Loading…</div>

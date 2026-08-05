@@ -3,7 +3,16 @@ import { findUserById, verifyGoogleCredential, findOrCreateGoogleUser } from '..
 import { asyncHandler } from '../asyncHandler.js';
 
 function publicUser(user) {
-  return { id: user.id, email: user.email, name: user.name || null, picture: user.picture || null };
+  // `prefs` (reader/UI settings — see routes/prefs.js) is only present once the user has saved
+  // at least one of the two slots; omitted rather than `null` when there's nothing saved yet, so
+  // the client's own merge-over-defaults logic (useProfileSyncedPrefs) has nothing to do.
+  return {
+    id: user.id,
+    email: user.email,
+    name: user.name || null,
+    picture: user.picture || null,
+    ...(user.prefs ? { prefs: user.prefs } : {}),
+  };
 }
 
 export const authRouter = Router();

@@ -15,6 +15,12 @@ interface SegmentedTextProps {
   onWordClick: (word: string) => void;
   onTextUp: () => void;
   onSpanClick: (i: number, s: number, e: number, rect: DOMRect, color: string) => void;
+  // Sujato's own translator notes (SegmentFile.note) — whether the asterisk markers show at all
+  // ("c" in the reader, or the Theme tab's checkbox — see ReaderPage/ReaderMenuPanel), and which
+  // ones are expanded inline (mirrors openSegs/onToggleSeg's per-segment-index shape).
+  showNotes: boolean;
+  openNotes: Record<number, boolean>;
+  onToggleNote: (i: number) => void;
 }
 
 interface Part {
@@ -57,6 +63,13 @@ function roleStyle(role: SegmentRole | undefined, fontSize: number, theme: Theme
   }
 }
 
+// Plain-text version of a note for the native `title` attribute (hover) — titles can't render
+// the inline HTML (`<i>`/`<em>`/`<b>`/`<span>`) a note may contain, which the click-to-expand
+// view below renders properly instead.
+function stripTags(html: string): string {
+  return html.replace(/<[^>]+>/g, '');
+}
+
 function buildParts(text: string, hlForSeg: Highlight[]): Part[] {
   const ranges = [...hlForSeg].sort((a, b) => a.s - b.s);
   const parts: Part[] = [];
@@ -83,6 +96,9 @@ export function SegmentedText({
   onWordClick,
   onTextUp,
   onSpanClick,
+  showNotes,
+  openNotes,
+  onToggleNote,
 }: SegmentedTextProps) {
   // Space between paragraphs — scales with both the Size and Line height reader controls (not a
   // fixed pixel value), so turning either up also opens up more room between paragraphs instead
@@ -146,6 +162,18 @@ export function SegmentedText({
                   <span key={j}>{p.text}</span>
                 )
               )}
+              {seg.note && showNotes && (
+                <sup
+                  style={{ marginLeft: 2, color: theme.dim, fontStyle: 'normal', fontWeight: 700, cursor: 'pointer' }}
+                  title={stripTags(seg.note)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onToggleNote(i);
+                  }}
+                >
+                  *
+                </sup>
+              )}
             </p>
             {open && (
               <p
@@ -169,6 +197,17 @@ export function SegmentedText({
                   )
                 )}
               </p>
+            )}
+            {showNotes && seg.note && openNotes[i] && (
+              <p
+                className="animate-fadeUp"
+                style={{ margin: '6px 0 0', fontSize: Math.max(11, fontSize - 3), lineHeight: 1.5, fontFamily: face, color: theme.dim }}
+                // Notes are static, build-time-controlled data (see build-corpus.mjs's
+                // cleanNote()) carrying inline `<i>`/`<em>`/`<b>`/`<span>` formatting — not
+                // user/runtime content, so rendering the markup here is the same trust level as
+                // rendering the sutta text itself.
+                dangerouslySetInnerHTML={{ __html: seg.note }}
+              />
             )}
           </div>
         );

@@ -81,6 +81,10 @@ export interface User {
   email: string;
   name?: string | null;
   picture?: string | null;
+  // Reader/UI settings saved to this account (see server/src/routes/prefs.js) — loosely typed
+  // here to avoid a circular import with ReaderPrefsContext/lib/uiPrefs.ts, which own the actual
+  // shapes and merge these over their own local defaults (see useProfileSyncedPrefs).
+  prefs?: { reader?: Record<string, unknown>; ui?: Record<string, unknown> };
 }
 
 export type ReaderTheme = 'light' | 'sepia' | 'dark';
