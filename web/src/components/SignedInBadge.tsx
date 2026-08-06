@@ -10,7 +10,7 @@ export function SignedInBadge({ user, size, promptGoogleSignIn }: { user: User |
   const dim = { width: size, height: size };
   return user ? (
     <button
-      className="flex-none rounded-full overflow-hidden border-2 border-ink/25 flex items-center justify-center bg-accent/15 font-sans font-semibold text-accent"
+      className="flex-none rounded-full overflow-hidden border border-ink/25 flex items-center justify-center bg-accent/15 font-sans font-semibold text-accent"
       style={{ ...dim, fontSize: Math.round(size * 0.42) }}
       aria-label={`Signed in as ${user.email}`}
       title={`Signed in as ${user.email}`}
@@ -30,7 +30,7 @@ export function SignedInBadge({ user, size, promptGoogleSignIn }: { user: User |
     // Settings — see the comment on it in AuthContext.tsx for why sign-in itself has to happen
     // from a real, full-size rendered button there rather than inline here).
     <button
-      className="flex-none rounded-full border-2 border-ink/25 flex items-center justify-center hover:bg-ink/[.06]"
+      className="flex-none rounded-full border border-ink/25 flex items-center justify-center hover:bg-ink/[.06]"
       style={dim}
       aria-label="Sign in with Google"
       title="Sign in with Google"

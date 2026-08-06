@@ -2,6 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme tokens, as "R G B" triples (no commas — that's what Tailwind's rgb(var(--x) / <alpha-
+   value>) color functions in tailwind.config.js expect). Toggled by adding/removing a `dark`
+   class on <html> — see lib/uiPrefs.ts's applyTheme(), driven by Settings > Theme
+   (light/dark/system). This covers the Library/Settings shell; the immersive reader has its own
+   separate light/sepia/dark theme system (ReaderPrefsContext, lib/theme.ts) and is unaffected —
+   PreviewPane's own reading-content sub-area intentionally follows *that* setting instead (see
+   its own comment), while its surrounding chrome (header, notes, chips) uses these tokens like
+   the rest of the app shell.
+
+   `accent`/`accent2` are deliberately the *same* value in both themes: both are used as solid
+   button/chip fill colors with light (#FBFAF7-ish) text painted directly on top elsewhere in the
+   app (see SettingsPage.tsx, TreePane.tsx's reorder toggle) — that combination's contrast was
+   tuned once, against these exact values, and brightening the accent for "dark mode" would weaken
+   it (a brighter brown needs *darker* text on top, not the same light text) without fixing
+   anything, since a solid-colored button doesn't sit "in" the page background either way. */
+:root {
+  --ink: 27 25 23;
+  --paper: 253 252 250;
+  --treepane: 240 236 228;
+  --listpane: 248 246 242;
+  --field: 255 253 250;
+  --chip: 255 255 255;
+  --accent: 146 114 67;
+  --accent2: 138 106 59;
+  --selection: 234 223 198;
+}
+
+:root.dark {
+  --ink: 228 223 216;
+  --paper: 23 21 19;
+  /* Elevated *above* --paper (lighter, not darker) — the usual dark-theme convention for a panel
+     that sits on top of the page background, the reverse of light mode's own relationship (there
+     treepane/listpane read slightly *muted* against a near-white page) since "muted below" and
+     "elevated above" both read as "not the bare page" on their own end of the brightness scale. */
+  --treepane: 30 27 23;
+  --listpane: 26 24 20;
+  --field: 36 33 28;
+  --chip: 54 49 42;
+  --accent: 146 114 67;
+  --accent2: 138 106 59;
+  --selection: 74 62 40;
+}
+
 /* --ui-scale (set from Settings > UI scale, see lib/uiPrefs.ts) is applied via CSS `zoom` on
    <html> where supported. `zoom` only magnifies rendering — it doesn't redefine the viewport,
    so `vh`/`dvh` elsewhere in the app (LibraryPage's `100dvh`, `min-h-screen`, ...) still resolve
@@ -29,16 +72,18 @@ body,
 body {
   margin: 0;
   overscroll-behavior: none;
-  background: #f7f5f1;
-  color: #1b1917;
+  background: rgb(var(--paper));
+  color: rgb(var(--ink));
   font-family: var(--ui-serif, 'Newsreader'), Georgia, serif;
   -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: #8a6a3b;
+  color: rgb(var(--accent2));
 }
 a:hover {
+  /* Not theme-var-backed — a hover state, not a light/dark swap; same accent2-adjacent brown in
+     both themes today, same as accent2 itself (see the comment on :root above). */
   color: #6b5230;
 }
 
@@ -46,7 +91,13 @@ button {
   font: inherit;
   color: inherit;
   background: none;
-  border: 0;
+  /* border-width only (not the `border` shorthand) — the shorthand also resets border-style to
+     `none`, which silently wins over Tailwind's own border-{width}/border-{color} utilities
+     (neither sets border-style, both rely on Tailwind's preflight default of `solid` on `*`) with
+     higher specificity than that `*` selector — so any button with e.g. `border-2 border-ink/25`
+     rendered zero visible border despite width/color being applied correctly. Plain buttons still
+     end up borderless either way, since border-width:0 alone already draws nothing. */
+  border-width: 0;
   padding: 0;
   cursor: pointer;
 }
@@ -58,14 +109,14 @@ textarea {
 }
 
 ::selection {
-  background: #eadfc6;
+  background: rgb(var(--selection));
 }
 
 .sc {
   overflow-y: auto;
   overscroll-behavior-x: none;
   scrollbar-width: thin;
-  scrollbar-color: rgba(27, 25, 23, 0.2) transparent;
+  scrollbar-color: rgb(var(--ink) / 0.2) transparent;
 }
 
 .pw {

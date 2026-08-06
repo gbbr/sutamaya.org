@@ -1,5 +1,6 @@
 import { ChevronDown, ChevronRight, ChevronUp, GripVertical, MoreHorizontal, Pencil, Plus, Trash2 } from 'lucide-react';
 import type { KeyboardEvent } from 'react';
+import type { BlockedDelete } from '../hooks/useListCrud';
 import type { DropZone, ListDef } from '../lib/types';
 
 export interface ListRowMenuProps {
@@ -23,6 +24,9 @@ export interface ListRowDeleteProps {
   confirmDeleteId: string | null;
   onDelete: (l: ListDef) => void;
   onCancelDelete: () => void;
+  // Set instead of `confirmDeleteId` when the row isn't empty — see useListCrud's armDeleteList.
+  // Auto-dismisses itself (armDeleteList's own timer); no manual dismiss control here.
+  blockedDelete: BlockedDelete | null;
 }
 
 export interface ListRowDraftProps {
@@ -101,7 +105,7 @@ export function ListRow({
 }) {
   const { menuOpenId, onToggleMenu, onMove, onAddChild, onStartEdit, onArmDelete } = menu;
   const { editingId, editDraft, onEditDraftChange, onCommitEdit, onCancelEdit } = edit;
-  const { confirmDeleteId, onDelete, onCancelDelete } = del;
+  const { confirmDeleteId, onDelete, onCancelDelete, blockedDelete } = del;
   const { creatingParentId, draft, onDraftChange, onDraftKey, draftInputRef } = draftProps;
 
   const kids = childrenOf(list.id);
@@ -122,8 +126,13 @@ export function ListRow({
         style={{
           paddingLeft: 18 + depth * 14,
           opacity: dragging ? 0.4 : 1,
-          background: isOver && overZone === 'inside' ? 'rgba(138,106,59,.16)' : undefined,
-          boxShadow: isOver && overZone === 'before' ? 'inset 0 2px 0 #8A6A3B' : isOver && overZone === 'after' ? 'inset 0 -2px 0 #8A6A3B' : undefined,
+          background: isOver && overZone === 'inside' ? 'rgb(var(--accent2) / .16)' : undefined,
+          boxShadow:
+            isOver && overZone === 'before'
+              ? 'inset 0 2px 0 rgb(var(--accent2))'
+              : isOver && overZone === 'after'
+                ? 'inset 0 -2px 0 rgb(var(--accent2))'
+                : undefined,
         }}
       >
         {reorderMode && (
@@ -213,6 +222,13 @@ export function ListRow({
             Cancel
           </button>
         </div>
+      ) : blockedDelete?.id === list.id ? (
+        <div className="pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: 18 + depth * 14 + 11 }}>
+          <span className="font-sans text-[12px] text-ink/60">
+            "{list.label}" has {blockedDelete.count} {blockedDelete.kind === 'items' ? (blockedDelete.count === 1 ? 'sutta' : 'suttas') : blockedDelete.count === 1 ? 'list' : 'lists'} —{' '}
+            {blockedDelete.kind === 'items' ? 'remove them first' : 'move them out first'}.
+          </span>
+        </div>
       ) : (
         menuOpen &&
         !editing && (
@@ -295,6 +311,7 @@ export function ListRow({
         <div className="pr-[18px] pt-1 pb-2" style={{ paddingLeft: 18 + (depth + 1) * 14 }}>
           <input
             ref={draftInputRef}
+            autoFocus
             value={draft}
             onChange={(e) => onDraftChange(e.target.value)}
             onKeyDown={onDraftKey}

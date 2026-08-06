@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { navigate } from '@reach/router';
-import { Settings, ChevronRight, ChevronDown, Highlighter, StickyNote, ArrowUpDown, Library, List } from 'lucide-react';
+import { Settings, ChevronRight, ChevronDown, Highlighter, StickyNote, ArrowUpDown, Library, List, Folder, Search, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
@@ -125,7 +125,10 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
   // expanded to nodeId on the very first render if TreePane mounts fresh already pointed at a
   // nested list.
   const [listExpanded, setListExpanded] = useState<Record<string, boolean>>(() => ancestorsOfList(lists, nodeId));
-  const [searchFocused, setSearchFocused] = useState(false);
+  // Closed by default — see the search icon button in the header. Initialized from whether a
+  // query is already present (rather than always `false`) so a pre-populated `query` prop can't
+  // leave the pane showing search results with no visible way to see/edit what's being searched.
+  const [searchOpen, setSearchOpen] = useState(() => query.trim().length > 0);
   const searchInput = useRef<HTMLInputElement>(null);
   // Up/down (and Enter to open) over the search results list only — see the keydown effect
   // below. `searchActiveIndexRef` mirrors the state so the effect's Enter branch always reads
@@ -153,6 +156,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
     menuOpenId,
     setMenuOpenId,
     confirmDeleteId,
+    blockedDelete,
     editingId,
     editDraft,
     setEditDraft,
@@ -160,6 +164,8 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
     setCreatingParentId,
     draft,
     setDraft,
+    draftKind,
+    setDraftKind,
     listInput,
     toggleListMenu,
     startEditList,
@@ -169,6 +175,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
     cancelDeleteList,
     deleteList,
     addChildList,
+    toggleTopLevelDraft,
     moveList,
     onDraftKey,
   } = useListCrud({
@@ -203,6 +210,22 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
     if (searchActiveIndex >= 0) hitRefs.current[searchActiveIndex]?.scrollIntoView({ block: 'nearest' });
   }, [searchActiveIndex]);
 
+  // Hides the search input and clears its query — on Escape, the inline "x", or opening a hit
+  // (see openHit below). Always resets `query` even though closing while empty is a no-op there,
+  // so every call site can just call this rather than deciding whether a reset is also needed.
+  function closeSearch() {
+    setSearchOpen(false);
+    onSearch('');
+  }
+
+  // Opening a search hit is a "navigate away" from the search UI itself — closing it here (rather
+  // than leaving it open behind whatever the hit navigated to) means coming back to this pane
+  // doesn't show a stale query and result list.
+  function openHit(id: string) {
+    closeSearch();
+    onOpenSutta(id);
+  }
+
   useEffect(() => {
     function onKey(e: globalThis.KeyboardEvent) {
       const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
@@ -224,15 +247,19 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
         }
         if (e.key === 'Enter' && searchActiveIndexRef.current >= 0 && searchActiveIndexRef.current < hits.length) {
           e.preventDefault();
-          onOpenSutta(hits[searchActiveIndexRef.current].id);
+          openHit(hits[searchActiveIndexRef.current].id);
           return;
         }
       }
       if (tag === 'input' || tag === 'textarea') return;
       if (e.key === '/') {
         e.preventDefault();
-        searchInput.current?.focus();
-        searchInput.current?.select();
+        if (searchOpen) {
+          searchInput.current?.focus();
+          searchInput.current?.select();
+        } else {
+          setSearchOpen(true);
+        }
       } else if (e.key.toLowerCase() === 'x' && user) {
         e.preventDefault();
         setPaneView((v) => (v === 'library' ? 'lists' : 'library'));
@@ -240,7 +267,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [user, searching, hits, onOpenSutta]);
+  }, [user, searching, hits, searchOpen, onOpenSutta]);
 
   // The target row (corpus chapter or list) often isn't in the DOM yet on the same render
   // nodeId changed on — the ancestor-expand effects above (and, for a list, the paneView switch
@@ -250,9 +277,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
 
   if (!corpus) return null;
 
-  const style = mobile
-    ? { flex: 1 }
-    : { flex: 'none', width: paneW.tree, background: '#F0ECE4' };
+  const style = mobile ? { flex: 1 } : { flex: 'none', width: paneW.tree };
 
   // ListRow's props are grouped by concern (see ListRow.tsx) — built once here rather than at
   // each of its (potentially deeply nested) call sites.
@@ -275,6 +300,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
     confirmDeleteId,
     onDelete: deleteList,
     onCancelDelete: cancelDeleteList,
+    blockedDelete,
   };
   const listRowDraft: ListRowDraftProps = {
     creatingParentId,
@@ -287,20 +313,23 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
   };
 
   return (
-    <aside data-component="TreePane" className="flex flex-col h-full min-w-0 overflow-hidden border-r border-ink/10" style={style}>
+    <aside
+      data-component="TreePane"
+      className={`flex flex-col h-full min-w-0 overflow-hidden border-r border-ink/10 ${mobile ? '' : 'bg-treepane'}`}
+      style={style}
+    >
       <header className="flex-none px-[18px] pt-4 pb-3.5 border-b border-ink/10">
         <div className="flex items-center gap-2 mb-3">
           <div className="text-[22px] font-semibold tracking-[-.01em] flex-1 truncate">sutamaya</div>
           {user && (
             <button
-              className="relative flex flex-none items-center rounded-full p-[2px]"
-              style={{ background: 'rgba(27,25,23,.09)' }}
+              className="relative flex flex-none items-center rounded-full p-[2px] bg-ink/[.09]"
               aria-label={paneView === 'library' ? 'Switch to My Lists' : 'Switch to Library'}
               title={paneView === 'library' ? 'Switch to My Lists (x)' : 'Switch to Library (x)'}
               onClick={() => setPaneView((v) => (v === 'library' ? 'lists' : 'library'))}
             >
               <div
-                className="absolute top-[2px] bottom-[2px] rounded-full bg-white shadow-[0_1px_2px_rgba(27,25,23,.18)] transition-[left] duration-200 ease-out"
+                className="absolute top-[2px] bottom-[2px] rounded-full bg-chip shadow-[0_1px_2px_rgba(27,25,23,.18)] transition-[left] duration-200 ease-out"
                 style={{ left: paneView === 'library' ? 2 : '50%', width: 'calc(50% - 2px)' }}
               />
               {/* Mobile-sized to roughly match the "sutamaya" title's own height — this and the
@@ -308,23 +337,37 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
                   reach for repeatedly. */}
               <span
                 className={`relative z-10 flex items-center justify-center rounded-full transition-colors ${paneView === 'library' ? 'text-ink' : 'text-ink/45'}`}
-                style={mobile ? { width: 38, height: 38 } : { width: 24, height: 24 }}
+                style={mobile ? { width: 28, height: 28 } : { width: 24, height: 24 }}
               >
-                <Library size={mobile ? 17 : 13} strokeWidth={2} />
+                <Library size={mobile ? 14 : 13} strokeWidth={2} />
               </span>
               <span
                 className={`relative z-10 flex items-center justify-center rounded-full transition-colors ${paneView === 'lists' ? 'text-ink' : 'text-ink/45'}`}
-                style={mobile ? { width: 38, height: 38 } : { width: 24, height: 24 }}
+                style={mobile ? { width: 28, height: 28 } : { width: 24, height: 24 }}
               >
-                <List size={mobile ? 17 : 13} strokeWidth={2} />
+                <List size={mobile ? 14 : 13} strokeWidth={2} />
               </span>
             </button>
           )}
+          {/* Same outer height as the pane toggle to its left (24px icon + 2px padding on each
+              side = 28/32) and the account badge to its right, so all three sit flush along the
+              same vertical center instead of each keying off its own inner content size —
+              clicking toggles the search row below open/closed (see closeSearch/searchOpen);
+              '/' from anywhere does the same (see the keydown effect above). */}
+          <button
+            className="flex-none rounded-full flex items-center justify-center text-ink/[.62] hover:bg-ink/[.06]"
+            style={mobile ? { width: 32, height: 32 } : { width: 28, height: 28 }}
+            aria-label={searchOpen ? 'Close search' : 'Search'}
+            title={searchOpen ? 'Close search (Esc)' : 'Search (/)'}
+            onClick={() => (searchOpen ? closeSearch() : setSearchOpen(true))}
+          >
+            <Search size={mobile ? 16 : 15} strokeWidth={2} />
+          </button>
           {/* Account entry point, right of the toggle on every viewport (this used to be a
               separate desktop-only footer at the bottom of the pane, with nothing else on it —
               not worth a whole row of its own when it fits right here). */}
           <div className={`flex items-center flex-none ${mobile ? 'gap-3.5' : 'gap-2.5'}`}>
-            <SignedInBadge user={user} size={mobile ? 36 : 26} promptGoogleSignIn={promptGoogleSignIn} />
+            <SignedInBadge user={user} size={mobile ? 32 : 28} promptGoogleSignIn={promptGoogleSignIn} />
             {/* The badge above already goes to Settings regardless of sign-in state (see
                 SignedInBadge) — once signed in it's the one obvious account affordance, so the
                 separate gear (redundant with it) drops out; signed out, the badge alone reads
@@ -336,32 +379,41 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
             )}
           </div>
         </div>
-        <div className="relative">
-          <input
-            ref={searchInput}
-            value={query}
-            onChange={(e) => onSearch(e.target.value)}
-            onFocus={() => setSearchFocused(true)}
-            onBlur={() => setSearchFocused(false)}
-            onKeyDown={(e) => {
-              if (e.key !== 'Escape') return;
-              e.preventDefault();
-              // Stops here rather than bubbling to any other Escape handler — clearing and
-              // defocusing the search box is a complete, self-contained action for this key
-              // while it has focus, not one step of some other component's own Escape handling.
-              e.stopPropagation();
-              onSearch('');
-              searchInput.current?.blur();
-            }}
-            placeholder="Search ID, title, blurb, note, text"
-            className="w-full h-[38px] border border-ink/[.22] rounded-field pl-3 pr-8 bg-field text-[14.5px] outline-none"
-          />
-          {!searchFocused && !query && (
-            <kbd className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 font-sans text-[11px] text-ink/35 border border-ink/20 rounded px-[5px] leading-[16px]">
-              /
-            </kbd>
-          )}
-        </div>
+        {searchOpen && (
+          <div className="relative">
+            <input
+              ref={searchInput}
+              autoFocus
+              value={query}
+              onChange={(e) => onSearch(e.target.value)}
+              onKeyDown={(e) => {
+                // Stops here rather than bubbling to any other Escape handler — closing the
+                // search box is a complete, self-contained action for this key while it has
+                // focus, not one step of some other component's own Escape handling.
+                if (e.key === 'Escape') {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  closeSearch();
+                } else if (e.key === 'Enter' && !query.trim()) {
+                  // "Submitting" an empty query — there's nothing to search for, so treat it the
+                  // same as Escape rather than leaving an empty, focused box sitting open.
+                  e.preventDefault();
+                  closeSearch();
+                }
+              }}
+              placeholder="Search ID, title, blurb, note, text"
+              className="w-full h-[38px] border border-ink/[.22] rounded-field pl-3 pr-8 bg-field text-[14.5px] outline-none"
+            />
+            <button
+              className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-full text-ink/40 hover:bg-ink/[.08] hover:text-ink"
+              aria-label="Clear search"
+              title="Clear search"
+              onClick={closeSearch}
+            >
+              <X size={13} strokeWidth={2} />
+            </button>
+          </div>
+        )}
       </header>
 
       <div ref={scrollRef} className="sc flex-1 py-2.5 pb-6">
@@ -377,7 +429,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
                   hitRefs.current[i] = el;
                 }}
                 className={`row flex flex-col w-full text-left gap-[1px] px-[18px] py-[11px] border-b border-ink/[.07] ${i === searchActiveIndex ? 'bg-ink/[.06]' : ''}`}
-                onClick={() => onOpenSutta(id)}
+                onClick={() => openHit(id)}
               >
                 <span>
                   <span className="font-sans text-[11.5px] font-bold text-ink/60 mr-2.5">{sutta.ref}</span>
@@ -428,12 +480,9 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
                 <button
                   aria-label={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
                   title={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
-                  className="w-[22px] h-[22px] border rounded-md flex items-center justify-center"
-                  style={{
-                    borderColor: reorderMode ? '#8A6A3B' : 'rgba(27,25,23,.28)',
-                    background: reorderMode ? '#8A6A3B' : 'transparent',
-                    color: reorderMode ? '#FBFAF7' : 'rgba(27,25,23,.5)',
-                  }}
+                  className={`w-[22px] h-[22px] border rounded-md flex items-center justify-center ${
+                    reorderMode ? 'border-accent2 bg-accent2 text-[#FBFAF7]' : 'border-ink/[.28] bg-transparent text-ink/50'
+                  }`}
                   onClick={() => {
                     setReorderMode((m) => !m);
                     setMenuOpenId(null);
@@ -442,14 +491,10 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
                   <ArrowUpDown size={12} strokeWidth={2} />
                 </button>
                 <button
-                  aria-label="Add group"
-                  title="Add group"
+                  aria-label="New list or group"
+                  title="New list or group"
                   className="plus w-[22px] h-[22px] border border-ink/[.28] rounded-md flex items-center justify-center text-[15px] leading-none text-ink/50"
-                  onClick={() => {
-                    setCreatingParentId((c) => (c === undefined ? null : undefined));
-                    setDraft('');
-                    setTimeout(() => listInput.current?.focus(), 30);
-                  }}
+                  onClick={toggleTopLevelDraft}
                 >
                   +
                 </button>
@@ -459,16 +504,42 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
               <div className="px-[18px] pb-1.5 font-sans text-[11.5px] text-ink/45">Drag a list onto a group to nest it, or to the top/bottom edge of a row to reorder.</div>
             )}
             {creatingParentId === null && (
-              <div className="px-[18px] pt-1.5 pb-2">
+              <div className="flex items-center gap-[6px] pl-[18px] pr-[10px] pt-1.5 pb-2">
                 <input
                   ref={listInput}
+                  autoFocus
                   value={draft}
                   onChange={(e) => setDraft(e.target.value)}
                   onKeyDown={onDraftKey}
                   onBlur={() => setCreatingParentId(undefined)}
-                  placeholder="Group name — return to create"
-                  className="w-full h-[34px] border border-accent rounded-lg px-2.5 bg-field text-[14.5px] outline-none"
+                  placeholder={draftKind === 'group' ? 'Group name — return to create' : 'List name — return to create'}
+                  className="flex-1 min-w-0 h-[34px] border border-accent rounded-lg px-2.5 bg-field text-[14.5px] outline-none"
                 />
+                {/* Icon-only List/Group toggle (no text labels — the input's own placeholder
+                    already says which one is picked) — a single button spanning both icons, so
+                    a click anywhere on it flips draftKind, not just on whichever side happens to
+                    be inactive. onMouseDown preventDefault keeps focus on the input instead of
+                    shifting it here, so flipping kind mid-type doesn't trigger the input's own
+                    onBlur (which cancels the whole draft). */}
+                <button
+                  type="button"
+                  aria-label={draftKind === 'list' ? 'Switch to Group' : 'Switch to List'}
+                  title={draftKind === 'list' ? 'Switch to Group' : 'Switch to List'}
+                  onMouseDown={(e) => e.preventDefault()}
+                  onClick={() => setDraftKind((k) => (k === 'list' ? 'group' : 'list'))}
+                  className="relative flex-none flex items-center p-[2px] rounded-full bg-ink/[.09]"
+                >
+                  <div
+                    className="absolute top-[2px] bottom-[2px] rounded-full bg-chip shadow-[0_1px_2px_rgba(27,25,23,.15)] transition-[left] duration-150 ease-out"
+                    style={{ left: draftKind === 'list' ? 2 : '50%', width: 'calc(50% - 2px)' }}
+                  />
+                  <span className={`relative z-10 w-[26px] h-[26px] flex items-center justify-center transition-colors ${draftKind === 'list' ? 'text-ink' : 'text-ink/50'}`}>
+                    <List size={13} strokeWidth={2} />
+                  </span>
+                  <span className={`relative z-10 w-[26px] h-[26px] flex items-center justify-center transition-colors ${draftKind === 'group' ? 'text-ink' : 'text-ink/50'}`}>
+                    <Folder size={13} strokeWidth={2} />
+                  </span>
+                </button>
               </div>
             )}
             {topLevelLists.map((l, idx) => (

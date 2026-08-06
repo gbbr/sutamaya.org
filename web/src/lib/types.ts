@@ -96,6 +96,11 @@ export interface User {
 export type ReaderTheme = 'light' | 'sepia' | 'dark';
 export type ReaderFace = 'serif' | 'georgia' | 'sans' | 'system' | 'times';
 
+// The app shell's own light/dark mode (Settings > Theme) — distinct from ReaderTheme, which is
+// the immersive reader's separate light/sepia/dark preference and unaffected by this. 'system'
+// follows the OS's prefers-color-scheme; see lib/uiPrefs.ts's applyTheme().
+export type AppTheme = 'light' | 'dark' | 'system';
+
 export interface ThemeColors {
   bg: string;
   fg: string;

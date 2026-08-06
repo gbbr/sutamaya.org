@@ -1,17 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  // Toggled by adding/removing a `dark` class on <html> — see lib/uiPrefs.ts's applyTheme().
+  // Not 'media': the app has its own explicit Settings > Theme control (light/dark/system), and
+  // 'system' resolves to the OS preference itself rather than relying on Tailwind's built-in
+  // media-query variant, so the toggle needs to be class-driven either way.
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        ink: 'rgb(27 25 23 / <alpha-value>)',
-        paper: '#FDFCFA',
-        treepane: '#F0ECE4',
-        listpane: '#F8F6F2',
-        field: '#FFFDFA',
-        accent: '#927243',
+        // rgb(var(--x) / <alpha-value>) (rather than a plain hex/rgb literal) is what makes every
+        // existing bg-ink/text-ink/[.NN]/border-ink-style utility class across the app respond to
+        // the `dark` class with zero component changes — see index.css for the light/dark value
+        // pairs. `accent`/`accent2` are deliberately the *same* value in both themes (see the
+        // comment on --accent in index.css for why) but still var-backed for consistency.
+        ink: 'rgb(var(--ink) / <alpha-value>)',
+        paper: 'rgb(var(--paper) / <alpha-value>)',
+        treepane: 'rgb(var(--treepane) / <alpha-value>)',
+        listpane: 'rgb(var(--listpane) / <alpha-value>)',
+        field: 'rgb(var(--field) / <alpha-value>)',
+        chip: 'rgb(var(--chip) / <alpha-value>)',
+        accent: 'rgb(var(--accent) / <alpha-value>)',
+        accent2: 'rgb(var(--accent2) / <alpha-value>)',
         'accent-hover': '#6B5230',
-        selection: '#EADFC6',
+        selection: 'rgb(var(--selection) / <alpha-value>)',
         'hl-amber': '#F0E3A8',
         'hl-green': '#CBE0C2',
         'hl-blue': '#CFDCEE',

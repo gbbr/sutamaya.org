@@ -1,5 +1,5 @@
 import { READER_FACES } from './theme';
-import type { ReaderFace } from './types';
+import type { AppTheme, ReaderFace } from './types';
 import { MOBILE_BREAKPOINT } from '../context/LayoutContext';
 
 // The UI is noticeably smaller by default on a phone than on desktop at the same nominal scale,
@@ -15,10 +15,14 @@ function isMobileViewport(): boolean {
 export interface UiPrefs {
   uiScale: number;
   uiFace: ReaderFace;
+  theme: AppTheme;
 }
 
 export const UI_PREFS_KEY = 'sutamaya.uiPrefs';
-export const UI_PREFS_DEFAULTS: UiPrefs = { uiScale: 1, uiFace: 'serif' };
+// 'light' rather than 'system' — the app has only ever rendered light until now, so an existing
+// user whose OS happens to be in dark mode shouldn't see it flip the first time this ships; they
+// opt into 'dark' or 'system' explicitly from here on.
+export const UI_PREFS_DEFAULTS: UiPrefs = { uiScale: 1, uiFace: 'serif', theme: 'light' };
 
 export function loadUiPrefs(): UiPrefs {
   try {
@@ -79,4 +83,17 @@ export function applyUiScale(scale: number) {
 // per-surface one.
 export function applyUiFace(face: ReaderFace) {
   document.documentElement.style.setProperty('--ui-serif', READER_FACES[face]);
+}
+
+function systemPrefersDark(): boolean {
+  return typeof window !== 'undefined' && window.matchMedia?.('(prefers-color-scheme: dark)').matches;
+}
+
+// Toggles the `dark` class Tailwind's darkMode:'class' (tailwind.config.js) and index.css's
+// `:root.dark` var overrides both key off. 'system' resolves against the OS preference at the
+// moment this runs — UiPrefsContext re-runs it on a matchMedia change event so a 'system'
+// selection keeps tracking the OS live, not just at load/selection time.
+export function applyTheme(theme: AppTheme) {
+  const dark = theme === 'dark' || (theme === 'system' && systemPrefersDark());
+  document.documentElement.classList.toggle('dark', dark);
 }

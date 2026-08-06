@@ -5,11 +5,17 @@ import { useAuth } from '../context/AuthContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { GoogleSignInButton } from '../components/GoogleSignInButton';
 import { dataApi } from '../lib/api';
-import type { ReaderFace } from '../lib/types';
+import type { AppTheme, ReaderFace } from '../lib/types';
 
 const UI_SCALE_MIN = 0.85;
 const UI_SCALE_MAX = 1.4;
 const UI_SCALE_STEP = 0.05;
+
+const THEME_OPTIONS: Array<{ id: AppTheme; label: string }> = [
+  { id: 'light', label: 'Light' },
+  { id: 'dark', label: 'Dark' },
+  { id: 'system', label: 'System' },
+];
 
 const UI_FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
   { id: 'serif', label: 'Newsreader' },
@@ -21,7 +27,7 @@ const UI_FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
 
 export function SettingsPage(_props: RouteComponentProps) {
   const { user, logout, loading } = useAuth();
-  const { uiScale, uiFace, setUiScale, setUiFace } = useUiPrefs();
+  const { uiScale, uiFace, theme, setUiScale, setUiFace, setTheme } = useUiPrefs();
 
   // Same genuine history-back as the "Back" button above (see its own comment) — Escape is the
   // conventional "leave this screen" key, and there's no free-text field here whose own Escape
@@ -49,6 +55,23 @@ export function SettingsPage(_props: RouteComponentProps) {
         <div className="text-[22px] font-semibold tracking-[-.01em] mb-6">Settings</div>
 
         <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3">Display</div>
+
+        <div className="mb-6">
+          <div className="font-sans text-[14px] mb-2">Theme</div>
+          <div className="grid grid-cols-3 gap-2">
+            {THEME_OPTIONS.map((t) => (
+              <button
+                key={t.id}
+                className={`h-9 rounded-field border font-sans text-[13px] ${
+                  theme === t.id ? 'border-accent bg-accent text-[#FBFAF7]' : 'border-ink/[.22] text-ink/70'
+                }`}
+                onClick={() => setTheme(t.id)}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
+        </div>
 
         <div className="mb-3">
           <div className="flex items-baseline justify-between mb-2">
