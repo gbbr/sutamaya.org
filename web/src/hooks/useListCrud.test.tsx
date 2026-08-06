@@ -95,6 +95,59 @@ describe('useListCrud', () => {
     expect(removeList).not.toHaveBeenCalled();
   });
 
+  it('armDeleteList blocks a non-empty list instead of arming confirmation', () => {
+    const { result } = setup();
+    act(() => result.current.armDeleteList({ id: 'x1', label: 'Nonempty', parentId: null, kind: 'list', items: ['a', 'b'] }));
+    expect(result.current.blockedDelete).toEqual({ id: 'x1', count: 2, kind: 'items' });
+    expect(result.current.confirmDeleteId).toBeNull();
+  });
+
+  it('armDeleteList blocks a non-empty group (by nested list/group count, not items)', () => {
+    const { result } = setup();
+    // l1 has one child in the fixture list tree (l3, parentId: 'l1') — reused here as a group.
+    act(() => result.current.armDeleteList({ ...lists[0], kind: 'group' }));
+    expect(result.current.blockedDelete).toEqual({ id: 'l1', count: 1, kind: 'children' });
+    expect(result.current.confirmDeleteId).toBeNull();
+  });
+
+  it('armDeleteList arms normal confirmation for an empty list/group', () => {
+    const { result } = setup();
+    act(() => result.current.armDeleteList(lists[1])); // l2: empty list, no children
+    expect(result.current.confirmDeleteId).toBe('l2');
+    expect(result.current.blockedDelete).toBeNull();
+  });
+
+  it('blockedDelete auto-dismisses after its timeout, with no manual dismiss control', () => {
+    vi.useFakeTimers();
+    try {
+      const { result } = setup();
+      act(() => result.current.armDeleteList({ id: 'x1', label: 'Nonempty', parentId: null, kind: 'list', items: ['a'] }));
+      expect(result.current.blockedDelete).not.toBeNull();
+      act(() => vi.advanceTimersByTime(3999));
+      expect(result.current.blockedDelete).not.toBeNull();
+      act(() => vi.advanceTimersByTime(1));
+      expect(result.current.blockedDelete).toBeNull();
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it('re-arming a blocked delete resets its own timeout rather than stacking', () => {
+    vi.useFakeTimers();
+    try {
+      const { result } = setup();
+      act(() => result.current.armDeleteList({ id: 'x1', label: 'A', parentId: null, kind: 'list', items: ['a'] }));
+      act(() => vi.advanceTimersByTime(3000));
+      act(() => result.current.armDeleteList({ id: 'x2', label: 'B', parentId: null, kind: 'list', items: ['b'] }));
+      act(() => vi.advanceTimersByTime(3000)); // 3000+3000 > 4000, but the second arm restarted the clock
+      expect(result.current.blockedDelete).toEqual({ id: 'x2', count: 1, kind: 'items' });
+      act(() => vi.advanceTimersByTime(1000));
+      expect(result.current.blockedDelete).toBeNull();
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
   it('addChildList expands the parent, opens a draft input scoped to it, and closes the menu', () => {
     const { result, setListExpanded } = setup();
     act(() => result.current.toggleListMenu('l1'));
@@ -119,19 +172,39 @@ describe('useListCrud', () => {
     expect(reorderLists).not.toHaveBeenCalled();
   });
 
-  it('submitDraft creates a group at the top level, a list under a parent, and reports the result', async () => {
+  it('submitDraft at the top level defaults to list, or creates a group once picked', async () => {
     const { result, createList, onCreated } = setup();
-    act(() => result.current.setDraft('New Group'));
+    act(() => result.current.setDraft('New List'));
     await act(async () => result.current.submitDraft());
-    expect(createList).toHaveBeenCalledWith('New Group', null, 'group');
-    expect(onCreated).toHaveBeenCalledWith(expect.objectContaining({ id: 'new1', label: 'New Group' }));
+    expect(createList).toHaveBeenCalledWith('New List', null, 'list');
+    expect(onCreated).toHaveBeenCalledWith(expect.objectContaining({ id: 'new1', label: 'New List' }));
     expect(result.current.draft).toBe('');
     expect(result.current.creatingParentId).toBeUndefined();
 
+    act(() => result.current.setCreatingParentId(null));
+    act(() => result.current.setDraftKind('group'));
+    act(() => result.current.setDraft('New Group'));
+    await act(async () => result.current.submitDraft());
+    expect(createList).toHaveBeenCalledWith('New Group', null, 'group');
+  });
+
+  it('submitDraft under a parent always creates a list, ignoring draftKind', async () => {
+    const { result, createList } = setup();
     act(() => result.current.setCreatingParentId('l1'));
+    act(() => result.current.setDraftKind('group')); // no picker shown there, but confirm it's ignored regardless
     act(() => result.current.setDraft('Sub-list'));
     await act(async () => result.current.submitDraft());
     expect(createList).toHaveBeenCalledWith('Sub-list', 'l1', 'list');
+  });
+
+  it('toggleTopLevelDraft opens/closes the top-level draft and resets draftKind to list', () => {
+    const { result } = setup();
+    act(() => result.current.setDraftKind('group'));
+    act(() => result.current.toggleTopLevelDraft());
+    expect(result.current.creatingParentId).toBeNull();
+    expect(result.current.draftKind).toBe('list');
+    act(() => result.current.toggleTopLevelDraft());
+    expect(result.current.creatingParentId).toBeUndefined();
   });
 
   it('submitDraft does nothing for an empty name, still closing the draft input', async () => {
@@ -148,7 +221,7 @@ describe('useListCrud', () => {
     act(() => result.current.setCreatingParentId(null));
     act(() => result.current.setDraft('Via Enter'));
     await act(async () => result.current.onDraftKey({ key: 'Enter', preventDefault: () => {} } as never));
-    expect(createList).toHaveBeenCalledWith('Via Enter', null, 'group');
+    expect(createList).toHaveBeenCalledWith('Via Enter', null, 'list');
 
     act(() => result.current.setCreatingParentId(null));
     act(() => result.current.setDraft('Discarded'));

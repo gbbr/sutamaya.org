@@ -25,7 +25,7 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
   const { corpus } = useCorpus();
   const { desktop, previewHidden, hidePreview } = useLayout();
   const { notes, submitNote, membership, lists, visited } = useUserData();
-  const { fs, lh, face, allPali, showNotes } = useReaderPrefs();
+  const { theme: themeId, fs, lh, face, allPali, showNotes } = useReaderPrefs();
   const [showListPicker, setShowListPicker] = useState(false);
   const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
   useEffect(() => setShowListPicker(false), [selectedId]);
@@ -48,7 +48,11 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
   if (!desktop || previewHidden) return null;
 
   const style = { flex: 1, minWidth: 300 };
-  const theme = READER_THEMES.light;
+  // Follows whatever theme the reader itself is set to (light/sepia/dark — ReaderPrefsContext),
+  // not the app shell's own light/dark toggle: this only affects the reading-content sub-area
+  // rendered via SegmentedText/ListMembershipPicker below, so it should match the same theme the
+  // full reader would show for this sutta, independent of Settings > Theme.
+  const theme = READER_THEMES[themeId];
 
   if (!sutta || !selectedId) {
     return (

@@ -195,13 +195,13 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
   const style = mobile
     ? { flex: 1 }
     : desktop && !previewHidden
-      ? { flex: 'none' as const, width: paneW.list, background: '#F8F6F2' }
-      : { flex: 1, background: '#F8F6F2' };
+      ? { flex: 'none' as const, width: paneW.list }
+      : { flex: 1 };
 
   return (
     <section
       data-component="ListPane"
-      className={`flex flex-col h-full min-w-0 ${!mobile && desktop && !previewHidden ? 'border-r border-ink/10' : ''}`}
+      className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'} ${!mobile && desktop && !previewHidden ? 'border-r border-ink/10' : ''}`}
       style={style}
     >
       <header className="flex-none flex items-center gap-3 px-5 pt-4 pb-3.5 border-b border-ink/10">
@@ -263,7 +263,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
             >
               <button
                 className={`block w-full text-left px-5 py-[13px] ${currentList && !currentList.auto ? 'pr-12' : ''} ${on ? 'bg-ink/[.05]' : ''}`}
-                style={on ? { boxShadow: 'inset 2px 0 0 #8A6A3B' } : undefined}
+                style={on ? { boxShadow: 'inset 2px 0 0 rgb(var(--accent2))' } : undefined}
                 onClick={() => onOpen(id)}
                 onDoubleClick={() => onOpenReader(id)}
               >
@@ -278,10 +278,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
                 </span>
                 <span className="block font-serif text-[13.5px] italic mt-[1px] text-accent">{s.pali}</span>
                 {note ? (
-                  <span
-                    className="block font-serif text-[14.5px] leading-[1.45] mt-[7px] pl-[10px] border-l-2"
-                    style={{ borderColor: 'rgba(27,25,23,.3)' }}
-                  >
+                  <span className="block font-serif text-[14.5px] leading-[1.45] mt-[7px] pl-[10px] border-l-2 border-ink/30">
                     {note}
                   </span>
                 ) : (
@@ -292,8 +289,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
                     {chips.map((c) => (
                       <span
                         key={c.id}
-                        className="inline-flex items-center h-5 whitespace-nowrap rounded-[10px] px-[9px] font-sans text-[11px] border"
-                        style={{ borderColor: 'rgba(27,25,23,.25)' }}
+                        className="inline-flex items-center h-5 whitespace-nowrap rounded-[10px] px-[9px] font-sans text-[11px] border border-ink/25"
                       >
                         {c.breadcrumb}
                       </span>

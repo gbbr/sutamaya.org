@@ -273,34 +273,134 @@ describe('My Lists tree', () => {
     expect(userData.removeList).not.toHaveBeenCalled();
     expect(screen.getByText('Read later')).toBeInTheDocument();
   });
+
+  it('blocks deleting a non-empty list, showing a message instead of the confirm row', async () => {
+    renderHarness();
+    await switchToMyLists();
+    await userEvent.click(screen.getByText('Suttas to study')); // expand the group to reach Favorites
+    const row = screen.getByText('Favorites').closest('[data-node-id]') as HTMLElement;
+    await userEvent.click(within(row).getByLabelText('List options'));
+    await userEvent.click(screen.getByLabelText('Delete'));
+    expect(screen.getByText('"Favorites" has 1 sutta — remove them first.')).toBeInTheDocument();
+    expect(screen.queryByText('Delete "Favorites"?')).not.toBeInTheDocument();
+    expect(userData.removeList).not.toHaveBeenCalled();
+    // Auto-dismiss timing itself is covered at the hook level (useListCrud.test.tsx) — combining
+    // fake timers with user-event's own internal delays here isn't worth the added flakiness risk.
+  });
+
+  it('blocks deleting a non-empty group, showing a message instead of the confirm row', async () => {
+    renderHarness();
+    await switchToMyLists();
+    const row = screen.getByText('Suttas to study').closest('[data-node-id]') as HTMLElement;
+    await userEvent.click(within(row).getByLabelText('List options'));
+    await userEvent.click(screen.getByLabelText('Delete'));
+    expect(screen.getByText('"Suttas to study" has 1 list — move them out first.')).toBeInTheDocument();
+    expect(userData.removeList).not.toHaveBeenCalled();
+  });
+
+  it('the top-level "+" opens a List/Group picker defaulting to List, with the input autofocused', async () => {
+    renderHarness();
+    await switchToMyLists();
+    await userEvent.click(screen.getByLabelText('New list or group'));
+    const input = screen.getByPlaceholderText('List name — return to create');
+    expect(input).toHaveFocus();
+    expect(screen.getByLabelText('Switch to Group')).toBeInTheDocument();
+
+    await userEvent.type(input, 'New List{Enter}');
+    expect(userData.createList).toHaveBeenCalledWith('New List', null, 'list');
+  });
+
+  it('the picker is a single toggle: clicking it flips List/Group regardless of which side is "active"', async () => {
+    renderHarness();
+    await switchToMyLists();
+    await userEvent.click(screen.getByLabelText('New list or group'));
+    const input = screen.getByPlaceholderText('List name — return to create');
+
+    // First click (currently on List) flips to Group.
+    await userEvent.click(screen.getByLabelText('Switch to Group'));
+    // The picker click must not blur (and thereby cancel) the draft input — onBlur closes it.
+    expect(screen.getByPlaceholderText('Group name — return to create')).toBe(input);
+    expect(input).toHaveFocus();
+
+    // Clicking the *same* toggle again (now labeled for the opposite direction) flips back to
+    // List — proving the whole control toggles on any click, not just a specific side's button.
+    await userEvent.click(screen.getByLabelText('Switch to List'));
+    expect(screen.getByPlaceholderText('List name — return to create')).toBe(input);
+
+    await userEvent.click(screen.getByLabelText('Switch to Group'));
+    await userEvent.type(input, 'New Group{Enter}');
+    expect(userData.createList).toHaveBeenCalledWith('New Group', null, 'group');
+  });
 });
 
 describe('search', () => {
-  it('filters to matching results and opens one on click', async () => {
+  it('is hidden until the search icon is clicked, then autofocuses', async () => {
+    renderHarness();
+    expect(screen.queryByPlaceholderText('Search ID, title, blurb, note, text')).not.toBeInTheDocument();
+    await userEvent.click(screen.getByLabelText('Search'));
+    expect(screen.getByPlaceholderText('Search ID, title, blurb, note, text')).toHaveFocus();
+  });
+
+  it('filters to matching results and opens one on click, closing search afterward', async () => {
     const { onOpenSutta } = renderHarness();
+    await userEvent.click(screen.getByLabelText('Search'));
     const input = screen.getByPlaceholderText('Search ID, title, blurb, note, text');
     await userEvent.type(input, 'hindrance');
     expect(screen.getByText('Overcoming the Hindrances')).toBeInTheDocument();
     await userEvent.click(screen.getByText('Overcoming the Hindrances'));
     expect(onOpenSutta).toHaveBeenCalledWith('an1.1-10');
+    expect(screen.queryByPlaceholderText('Search ID, title, blurb, note, text')).not.toBeInTheDocument();
   });
 
   it('shows a no-matches state for a query with no hits', async () => {
     renderHarness();
+    await userEvent.click(screen.getByLabelText('Search'));
     const input = screen.getByPlaceholderText('Search ID, title, blurb, note, text');
     await userEvent.type(input, 'nonexistentquery');
     expect(screen.getByText('No matches.')).toBeInTheDocument();
   });
 
-  it('"/" focuses the search box; Escape clears it', async () => {
+  it('typing without opening search first reaches nothing (no hidden input to type into)', async () => {
     renderHarness();
-    const input = screen.getByPlaceholderText('Search ID, title, blurb, note, text') as HTMLInputElement;
+    await userEvent.keyboard('hindrance');
+    expect(screen.queryByPlaceholderText('Search ID, title, blurb, note, text')).not.toBeInTheDocument();
+    expect(screen.queryByText('Overcoming the Hindrances')).not.toBeInTheDocument();
+  });
+
+  it('"/" opens and focuses the search box from anywhere; Escape closes and clears it', async () => {
+    renderHarness();
     fireEvent.keyDown(window, { key: '/' });
+    const input = screen.getByPlaceholderText('Search ID, title, blurb, note, text') as HTMLInputElement;
     expect(input).toHaveFocus();
     await userEvent.type(input, 'hindrance');
     expect(screen.queryByText('No matches.')).not.toBeInTheDocument();
     fireEvent.keyDown(input, { key: 'Escape' });
-    expect(input).toHaveValue('');
+    expect(screen.queryByPlaceholderText('Search ID, title, blurb, note, text')).not.toBeInTheDocument();
+  });
+
+  it('the inline "x" clears and closes the search box', async () => {
+    renderHarness();
+    await userEvent.click(screen.getByLabelText('Search'));
+    const input = screen.getByPlaceholderText('Search ID, title, blurb, note, text');
+    await userEvent.type(input, 'hindrance');
+    await userEvent.click(screen.getByLabelText('Clear search'));
+    expect(screen.queryByPlaceholderText('Search ID, title, blurb, note, text')).not.toBeInTheDocument();
+  });
+
+  it('submitting an empty query (Enter) closes the search box', async () => {
+    renderHarness();
+    await userEvent.click(screen.getByLabelText('Search'));
+    const input = screen.getByPlaceholderText('Search ID, title, blurb, note, text');
+    fireEvent.keyDown(input, { key: 'Enter' });
+    expect(screen.queryByPlaceholderText('Search ID, title, blurb, note, text')).not.toBeInTheDocument();
+  });
+
+  it('clicking the search icon again while open closes it (same as "x"/Escape)', async () => {
+    renderHarness();
+    await userEvent.click(screen.getByLabelText('Search'));
+    expect(screen.getByPlaceholderText('Search ID, title, blurb, note, text')).toBeInTheDocument();
+    await userEvent.click(screen.getByLabelText('Close search'));
+    expect(screen.queryByPlaceholderText('Search ID, title, blurb, note, text')).not.toBeInTheDocument();
   });
 });
 
