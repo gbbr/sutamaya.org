@@ -15,6 +15,11 @@
    on that path. */
 html {
   height: calc(100dvh / var(--ui-scale, 1));
+  /* Stops the standalone PWA's edge-swipe left/right from being interpreted as a browser
+     back/forward navigation gesture (there's no browser chrome to go back/forward *in*, so it
+     just looks like the page glitching). Must be set here, not just on body, since this is the
+     actual top-level scroller WebKit checks for standalone web apps. */
+  overscroll-behavior-x: none;
 }
 body,
 #root {
@@ -58,6 +63,7 @@ textarea {
 
 .sc {
   overflow-y: auto;
+  overscroll-behavior-x: none;
   scrollbar-width: thin;
   scrollbar-color: rgba(27, 25, 23, 0.2) transparent;
 }

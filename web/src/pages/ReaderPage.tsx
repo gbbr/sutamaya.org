@@ -76,6 +76,17 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   // leaf group) — shown above the title, each segment navigating via /browse/{id}, which already
   // expands every ancestor and scrolls to it (see TreePane's useScrollToNode).
   const breadcrumb = useMemo(() => (corpus && sutta ? breadcrumbFor(corpus, sutta.node) : []), [corpus, sutta]);
+  // Only DN9-style suttas with internal `<h2>`/`<h3>` structure (see build-corpus.mjs's
+  // `roleFor()`) have any of these — empty for most suttas, which is why the block that renders
+  // this is conditional on it below.
+  const headings = useMemo(
+    () =>
+      (segments || []).reduce<Array<{ i: number; text: string; level: 2 | 3 }>>((acc, s, i) => {
+        if (s.role === 'heading') acc.push({ i, text: s.en, level: s.headingLevel ?? 2 });
+        return acc;
+      }, []),
+    [segments]
+  );
 
   const theme = READER_THEMES[themeId];
 
@@ -289,7 +300,21 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
         <button className="flex items-center" title="Close" onClick={closeReader}>
           <X size={15} strokeWidth={1.75} />
         </button>
-        <span className="flex-1 text-center opacity-75 font-serif">{mobile ? sutta.ref : `${sutta.ref} · ${sutta.pali}`}</span>
+        {/* Tapping the title bar scrolls back to the top of the sutta — the same "tap the top of
+            the screen" convention most native iOS apps use. That convention is normally free
+            (UIScrollView's own scrollsToTop, wired to a tap on the physical status bar), but it
+            only ever applies to a page's own document-level scroll; this reader's actual
+            scrolling happens in `scrollRef`'s nested div (`.fixed inset-0` root, `html`/`body`
+            themselves never scroll — see index.css), which that native behavior never reaches,
+            so it has to be done by hand here instead. */}
+        <button
+          className="flex-1 text-center opacity-75 font-serif cursor-pointer"
+          aria-label="Scroll to top"
+          title="Scroll to top"
+          onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          {mobile ? sutta.ref : `${sutta.ref} · ${sutta.pali}`}
+        </button>
         <button
           className="flex items-center gap-1.5"
           onClick={(e) => {
@@ -356,6 +381,31 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
             {sutta.ref} · {sutta.min} min
           </div>
           <div style={{ height: 1, background: theme.rule, margin: '20px 0 22px' }} />
+
+          {headings.length > 0 && (
+            <nav className="font-sans" style={{ marginBottom: 42 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: theme.dim, marginBottom: 8 }}>
+                Contents
+              </div>
+              {headings.map((h) => (
+                <button
+                  key={h.i}
+                  className="block text-left hover:underline"
+                  style={{
+                    paddingLeft: h.level === 3 ? 16 : 0,
+                    marginTop: 6,
+                    fontSize: h.level === 3 ? 15 : 16,
+                    fontWeight: h.level === 3 ? 400 : 600,
+                    color: theme.fg,
+                    opacity: h.level === 3 ? 0.72 : 0.9,
+                  }}
+                  onClick={() => scrollToSegment(h.i)}
+                >
+                  {h.text}
+                </button>
+              ))}
+            </nav>
+          )}
 
           {segments ? (
             <SegmentedText

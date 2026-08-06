@@ -1,5 +1,16 @@
 import { READER_FACES } from './theme';
 import type { ReaderFace } from './types';
+import { MOBILE_BREAKPOINT } from '../context/LayoutContext';
+
+// The UI is noticeably smaller by default on a phone than on desktop at the same nominal scale,
+// so mobile gets this baked into every applied scale on top of whatever the user's own slider
+// says — the slider itself (Settings > UI scale) still shows and controls only the raw
+// preference value; this multiplier is never persisted or reflected there.
+const MOBILE_UI_SCALE_BOOST = 1.15;
+
+function isMobileViewport(): boolean {
+  return window.innerWidth < MOBILE_BREAKPOINT;
+}
 
 export interface UiPrefs {
   uiScale: number;
@@ -42,10 +53,11 @@ function supportsZoom(): boolean {
 }
 
 export function applyUiScale(scale: number) {
+  const effectiveScale = isMobileViewport() ? scale * MOBILE_UI_SCALE_BOOST : scale;
   const root = document.documentElement.style;
   if (supportsZoom()) {
-    root.setProperty('zoom', String(scale));
-    root.setProperty('--ui-scale', String(scale));
+    root.setProperty('zoom', String(effectiveScale));
+    root.setProperty('--ui-scale', String(effectiveScale));
   } else {
     // The viewport-meta path already redefines the layout viewport itself, so `100dvh` etc.
     // stay correct without any further compensation — --ui-scale must stay at 1 here, or
@@ -54,7 +66,9 @@ export function applyUiScale(scale: number) {
     const viewport = document.querySelector('meta[name="viewport"]');
     viewport?.setAttribute(
       'content',
-      scale === 1 ? 'width=device-width, initial-scale=1, viewport-fit=cover' : `initial-scale=${scale}, viewport-fit=cover`
+      effectiveScale === 1
+        ? 'width=device-width, initial-scale=1, viewport-fit=cover'
+        : `initial-scale=${effectiveScale}, viewport-fit=cover`
     );
   }
 }

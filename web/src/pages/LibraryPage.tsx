@@ -34,13 +34,31 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
   useEffect(() => {
     setSuttaId(rawSuttaId || undefined);
   }, [rawSuttaId]);
-  // `/read/:suttaId` is a genuinely separate route (full-screen reader, not one of this page's
-  // panes), so closing it back to `/browse/:nodeId/:suttaId` fully remounts LibraryPage — `view`
-  // can't just default to 'tree' here, or mobile would show the browse tree instead of the sutta
-  // list the user was just reading from, which reads as "my scroll position (and place) got
-  // reset". If a suttaId is already present on mount, we came from exactly that round trip (or a
-  // deep link to a preview), so start on 'list' instead.
-  const [view, setView] = useState<'tree' | 'list'>(suttaId ? 'list' : 'tree');
+  // `/read/:suttaId` and `/settings` are both genuinely separate routes (full-screen, not one of
+  // this page's panes), so navigating to either fully unmounts LibraryPage — `view` can't just
+  // default to 'tree' here, or mobile would show the browse tree instead of the sutta list the
+  // user was just looking at, which reads as "my place got reset". If a suttaId is already
+  // present on mount, we came from exactly a reader round trip (or a deep link to a preview), so
+  // start on 'list'; otherwise fall back to whichever pane was last shown, persisted the same way
+  // as TreePane's own Library/My Lists toggle (`sutamaya.treeView`), since a plain in-memory
+  // default can't survive the remount either.
+  const [view, setView] = useState<'tree' | 'list'>(() => {
+    if (suttaId) return 'list';
+    try {
+      const stored = localStorage.getItem('sutamaya.libraryView');
+      if (stored === 'list' || stored === 'tree') return stored;
+    } catch {
+      // storage unavailable — ignore
+    }
+    return 'tree';
+  });
+  useEffect(() => {
+    try {
+      localStorage.setItem('sutamaya.libraryView', view);
+    } catch {
+      // storage unavailable — ignore
+    }
+  }, [view]);
   const [query, setQuery] = useState('');
 
   const [nodeId, setNodeId] = useState(routeNodeId);

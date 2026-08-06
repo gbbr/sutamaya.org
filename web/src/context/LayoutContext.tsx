@@ -30,6 +30,10 @@ interface LayoutState extends LayoutPrefs {
 
 const DEFAULTS: LayoutPrefs = { treeW: 264, listW: 404, previewHidden: false };
 
+// Also read by lib/uiPrefs.ts (mobile gets a baked-in UI scale boost) — kept as one exported
+// constant rather than two literals so the two can't drift apart.
+export const MOBILE_BREAKPOINT = 860;
+
 const LayoutContext = createContext<LayoutState | null>(null);
 
 export function LayoutProvider({ children }: { children: ReactNode }) {
@@ -59,8 +63,8 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
     };
   }, [setPrefs]);
 
-  const mobile = w < 860;
-  const twoPane = w >= 860 && w < 880;
+  const mobile = w < MOBILE_BREAKPOINT;
+  const twoPane = w >= MOBILE_BREAKPOINT && w < 880;
   const desktop = w >= 880;
 
   const paneW = useMemo<PaneWidths>(() => {
