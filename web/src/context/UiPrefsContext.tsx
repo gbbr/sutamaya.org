@@ -19,9 +19,15 @@ export function UiPrefsProvider({ children }: { children: ReactNode }) {
 
   // main.tsx already applies the persisted values once, synchronously, before React mounts (so
   // there's no flash of the default scale/font on load) — these effects just keep the DOM in
-  // sync whenever the user actually changes a setting from here on.
+  // sync whenever the user actually changes a setting from here on. applyUiScale itself bakes in
+  // a mobile-only boost read straight off window.innerWidth (see lib/uiPrefs.ts), so it also
+  // needs re-running on resize — not just when the preference value changes — to pick up
+  // crossing the mobile breakpoint (e.g. rotating a tablet, resizing a window).
   useEffect(() => {
     applyUiScale(prefs.uiScale);
+    const onResize = () => applyUiScale(prefs.uiScale);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
   }, [prefs.uiScale]);
   useEffect(() => {
     applyUiFace(prefs.uiFace);
