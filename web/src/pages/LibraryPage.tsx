@@ -3,7 +3,7 @@ import { navigate, type RouteComponentProps } from '@reach/router';
 import { useLayout } from '../context/LayoutContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
-import { flatSuttaOrder } from '../lib/corpus';
+import { flatSuttaOrder, sortByIdAsc, suttasFor } from '../lib/corpus';
 import { SHORTCUTS, shortcutsForScope, isShortcut } from '../lib/shortcuts';
 import { TreePane } from '../components/TreePane';
 import { ListPane } from '../components/ListPane';
@@ -129,8 +129,9 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
         setShortcutsOpen(true);
         return;
       }
-      if (!suttaId || !corpus) return;
+      if (!corpus) return;
       if (isShortcut(e, SHORTCUTS.librarySelectOpen)) {
+        if (!suttaId) return;
         e.preventDefault();
         onOpen(suttaId);
         return;
@@ -145,6 +146,16 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
       const currentList = lists.find((l) => l.id === nodeId);
       if (currentList) {
         const items = currentList.items;
+        // Nothing selected yet (Up/Down pressed with the list pane not "active") — start from
+        // its first item rather than doing nothing, regardless of which direction was pressed.
+        if (!suttaId) {
+          const first = items[0];
+          if (!first) return;
+          e.preventDefault();
+          setSuttaId(first);
+          navigate(`/browse/${encodeURIComponent(nodeId || '')}/${encodeURIComponent(first)}`);
+          return;
+        }
         const i = items.indexOf(suttaId);
         if (i === -1) return;
         const next = items[i + dir];
@@ -159,6 +170,20 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
       // different category) — always re-deriving `nodeId` from the landed-on sutta's own corpus
       // node, the same way clicking it in the tree would, is what makes the tree pane (and the
       // list pane's contents) follow along and expand/scroll to the right place on that jump.
+      if (!suttaId) {
+        // Start from whatever category is already browsed (ListPane's own first row), not the
+        // canonical corpus order's first sutta overall — that'd jump away from wherever the tree
+        // pane already has nodeId pointed, which reads as teleporting rather than "starting".
+        const first = (nodeId && sortByIdAsc(suttasFor(corpus, nodeId))[0]?.[0]) || suttaOrder[0];
+        if (!first) return;
+        e.preventDefault();
+        const newNodeId = corpus.suttas[first].node;
+        setQuery('');
+        setNodeId(newNodeId);
+        setSuttaId(first);
+        navigate(`/browse/${encodeURIComponent(newNodeId)}/${encodeURIComponent(first)}`);
+        return;
+      }
       const i = suttaOrder.indexOf(suttaId);
       if (i === -1) return;
       const next = suttaOrder[Math.min(suttaOrder.length - 1, Math.max(0, i + dir))];

@@ -104,6 +104,13 @@ button {
   padding: 0;
   cursor: pointer;
 }
+/* Every row/button in this app already shows its own "current" state (background tint, chip
+   fill, left accent stripe, ...) — the OS's default focus ring just doubles up on top of that,
+   most noticeably as a stray blue box on Library/Reader rows after a click focuses one (WebKit in
+   particular draws it on plain click-focus, not just Tab-key focus). */
+button:focus {
+  outline: none;
+}
 
 input,
 textarea {
