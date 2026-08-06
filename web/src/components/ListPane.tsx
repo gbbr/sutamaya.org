@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, Check, Eye, GripVertical } from 'lucide-react';
+import { ArrowLeft, Check, GripVertical } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -18,17 +18,16 @@ interface ListPaneProps {
   query: string;
   onBack: () => void;
   onOpen: (id: string) => void;
-  onOpenReader: (id: string) => void;
   // Whether this pane is currently the visible one (LibraryPage keeps both TreePane and
   // ListPane mounted on mobile and toggles `display:none` instead of unmounting — see
   // useScrollMemory for why scroll restoration needs to know this).
   visible?: boolean;
 }
 
-export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenReader, visible = true }: ListPaneProps) {
+export function ListPane({ nodeId, selectedId, query, onBack, onOpen, visible = true }: ListPaneProps) {
   const { corpus } = useCorpus();
   const { lists, membership, notes, highlights, visited, reorderListItems } = useUserData();
-  const { mobile, desktop, previewHidden, showPreview, paneW } = useLayout();
+  const { mobile } = useLayout();
   const scrollRef = useScrollMemory<HTMLDivElement>(`list:${query.trim() ? 'search' : nodeId || 'none'}`, visible);
   const itemRowRefs = useRef<Map<string, HTMLDivElement>>(new Map());
 
@@ -192,18 +191,8 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
   const readCount = items.filter(([id]) => visited[id]).length;
   const meta = searching ? `${items.length} results` : `${items.length} suttas · ${readCount} read`;
 
-  const style = mobile
-    ? { flex: 1 }
-    : desktop && !previewHidden
-      ? { flex: 'none' as const, width: paneW.list }
-      : { flex: 1 };
-
   return (
-    <section
-      data-component="ListPane"
-      className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'} ${!mobile && desktop && !previewHidden ? 'border-r border-ink/10' : ''}`}
-      style={style}
-    >
+    <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
       <header className="flex-none flex items-center gap-3 px-5 pt-4 pb-3.5 border-b border-ink/10">
         {mobile && (
           <button
@@ -219,16 +208,6 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
           <div className="font-sans text-[19px] font-semibold tracking-[-.01em] truncate">{title}</div>
           <div className="font-sans text-xs text-ink/[.42] mt-[2px]">{meta}</div>
         </div>
-        {desktop && previewHidden && (
-          <button
-            className="flex items-center justify-center text-ink/[.55] border border-ink/[.22] rounded-lg w-7 h-7"
-            aria-label="Preview"
-            title="Preview"
-            onClick={showPreview}
-          >
-            <Eye size={14} strokeWidth={1.75} />
-          </button>
-        )}
       </header>
       <div
         ref={scrollRef}
@@ -241,9 +220,8 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
       >
         {displayItems.map(([id, s]) => {
           // Highlighted (subtle tint + left accent stripe) whenever this row is the sutta the
-          // current URL ends in (`/browse/:nodeId/:suttaId`), regardless of whether a preview
-          // widget happens to be showing it — matches LibraryPage's Left/Right/Enter, which key
-          // off the same `suttaId` rather than the preview pane's visibility.
+          // current URL ends in (`/browse/:nodeId/:suttaId`) — matches LibraryPage's
+          // Up/Down/Enter, which key off the same `suttaId`.
           const on = id === selectedId;
           const note = notes[id];
           const chips = (membership[id] || [])
@@ -265,7 +243,6 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
                 className={`block w-full text-left px-5 py-[13px] ${currentList && !currentList.auto ? 'pr-12' : ''} ${on ? 'bg-ink/[.05]' : ''}`}
                 style={on ? { boxShadow: 'inset 2px 0 0 rgb(var(--accent2))' } : undefined}
                 onClick={() => onOpen(id)}
-                onDoubleClick={() => onOpenReader(id)}
               >
                 <span>
                   <span className="font-sans text-[14.5px] font-bold tracking-[.02em] mr-2.5 text-ink/60">{s.ref}</span>
@@ -276,7 +253,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
                     </span>
                   )}
                 </span>
-                <span className="block font-serif text-[13.5px] italic mt-[1px] text-accent">{s.pali}</span>
+                <span className="block font-serif text-[13.5px] italic mt-[1px] text-accent-text">{s.pali}</span>
                 {note ? (
                   <span className="block font-serif text-[14.5px] leading-[1.45] mt-[7px] pl-[10px] border-l-2 border-ink/30">
                     {note}

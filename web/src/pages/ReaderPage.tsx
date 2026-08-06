@@ -31,9 +31,8 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
 
   const initialPanelTab = new URLSearchParams(location?.search).get('panel') as 'highlights' | 'lists' | 'text' | null;
   // Where to return to on close — the exact pane/nodeId/scroll position the reader was opened
-  // from (see LibraryPage's onOpen/onOpenReader and PreviewPane's "Open" button), not just the
-  // sutta's bare corpus location. Falls back to that bare location for a direct/bookmarked link
-  // to /read/:suttaId, which has no such origin.
+  // from (see LibraryPage's onOpen), not just the sutta's bare corpus location. Falls back to
+  // that bare location for a direct/bookmarked link to /read/:suttaId, which has no such origin.
   const from = (location?.state as { from?: string } | undefined)?.from;
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
   const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
@@ -101,7 +100,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   // A sutta only counts as "visited" once the reader has actually stayed open on it for a
   // meaningful fraction of its estimated reading time — marking it the instant it opens (the old
   // behavior) meant a single Prev/Next flick-through marked everything it passed as read, making
-  // the "read" checkmark (ListPane, PreviewPane) not mean much. Cancelled (never marked) if the
+  // the "read" checkmark (ListPane) not mean much. Cancelled (never marked) if the
   // sutta changes — Prev/Next, closing, a deep link elsewhere — before the dwell time elapses.
   useEffect(() => {
     if (!suttaId || !sutta) return;

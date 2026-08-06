@@ -5,11 +5,10 @@ import { useHighlightPopup } from './useHighlightPopup';
 import { useScrollMemory } from './useScrollMemory';
 import { groupHighlights, highlightCountsByColor } from '../lib/highlights';
 
-// The "load a sutta's reading state" boilerplate shared by ReaderPage (full-screen) and
-// PreviewPane (desktop split view) — both render the same segments/highlights through
-// SegmentedText and need the same selection-popup, scroll-restoration, and highlight-grouping
-// plumbing around it. `scrollKeyPrefix` keeps each surface's remembered scroll position
-// separate (`reader:{id}` vs `preview:{id}`) even for the same sutta.
+// The "load a sutta's reading state" boilerplate for ReaderPage (full-screen) — renders segments/
+// highlights through SegmentedText and needs the selection-popup, scroll-restoration, and
+// highlight-grouping plumbing around it. `scrollKeyPrefix` keeps the remembered scroll position
+// namespaced (`reader:{id}`) per sutta.
 export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(suttaId: string | undefined, scrollKeyPrefix: string) {
   const { highlights } = useUserData();
   const segments = useSuttaText(suttaId);

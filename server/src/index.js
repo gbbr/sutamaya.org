@@ -9,7 +9,6 @@ import { authRouter } from './routes/auth.js';
 import { listsRouter } from './routes/lists.js';
 import { annotationsRouter } from './routes/annotations.js';
 import { dataRouter } from './routes/data.js';
-import { prefsRouter } from './routes/prefs.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProd = process.env.NODE_ENV === 'production';
@@ -66,7 +65,6 @@ app.use('/api/auth', authRouter);
 app.use('/api/lists', listsRouter);
 app.use('/api', annotationsRouter);
 app.use('/api/data', dataRouter);
-app.use('/api/prefs', prefsRouter);
 
 // In production the built SPA ships inside this same container/service (see Dockerfile) —
 // simplest possible deploy (one Cloud Run service) and avoids cross-origin cookies entirely.

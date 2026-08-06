@@ -20,7 +20,7 @@ interface UserDataState {
   toggleMembership: (suttaId: string, listId: string) => Promise<void>;
   addToList: (suttaId: string, list: ListDef) => Promise<void>;
   submitNote: (suttaId: string, text: string) => Promise<void>;
-  setHighlightRange: (suttaId: string, i: number, s: number, e: number, color: string | null, sync?: boolean) => Promise<void>;
+  setHighlightRanges: (suttaId: string, ranges: { i: number; s: number; e: number }[], color: string | null) => Promise<void>;
   removeHighlights: (suttaId: string, ids: string[]) => Promise<void>;
   markVisited: (suttaId: string) => void;
   syncUserData: () => Promise<void>;
@@ -47,7 +47,7 @@ const EMPTY: UserDataState = {
   toggleMembership: async () => {},
   addToList: async () => {},
   submitNote: async () => {},
-  setHighlightRange: async () => {},
+  setHighlightRanges: async () => {},
   removeHighlights: async () => {},
   markVisited: () => {},
   syncUserData: async () => {},
@@ -283,26 +283,21 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     [user, promptGoogleSignIn, syncUserData, resyncAfterFailure]
   );
 
-  const setHighlightRange = useCallback(
-    async (suttaId: string, i: number, s: number, e: number, color: string | null, sync = true) => {
+  const setHighlightRanges = useCallback(
+    async (suttaId: string, ranges: { i: number; s: number; e: number }[], color: string | null) => {
       if (!user) return promptGoogleSignIn();
-      // Functional update (not `highlights[suttaId]` from the outer closure) — a cross-segment
-      // highlight calls this once per segment in a row (see useHighlightPopup's `pick`), and
-      // each call needs to see the previous call's optimistic write, not the state from when
-      // this whole batch started.
+      if (!ranges.length) return;
       setHighlights((hs) => {
         const current = hs[suttaId] || [];
-        const kept = current.filter((h) => !(h.i === i && h.s < e && h.e > s));
-        const next = color ? [...kept, { id: `temp-${Date.now()}-${i}`, i, s, e, c: color }] : kept;
-        return { ...hs, [suttaId]: next };
+        const kept = current.filter((h) => !ranges.some((r) => h.i === r.i && h.s < r.e && h.e > r.s));
+        const added = color ? ranges.map((r) => ({ id: `temp-${Date.now()}-${r.i}`, i: r.i, s: r.s, e: r.e, c: color })) : [];
+        return { ...hs, [suttaId]: [...kept, ...added] };
       });
       try {
-        await highlightsApi.setRange(suttaId, i, s, e, color);
-        // `sync` is false when the caller is applying several ranges in a row (a cross-segment
-        // highlight) and will sync once itself after the whole batch, instead of once per range.
-        if (sync) await syncUserData();
+        await highlightsApi.setRanges(suttaId, ranges, color);
+        await syncUserData();
       } catch (err) {
-        await resyncAfterFailure('set highlight range', err);
+        await resyncAfterFailure('set highlight ranges', err);
         throw err;
       }
     },
@@ -350,7 +345,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       toggleMembership,
       addToList,
       submitNote,
-      setHighlightRange,
+      setHighlightRanges,
       removeHighlights,
       markVisited,
       syncUserData,
@@ -372,7 +367,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       toggleMembership,
       addToList,
       submitNote,
-      setHighlightRange,
+      setHighlightRanges,
       removeHighlights,
       markVisited,
       syncUserData,

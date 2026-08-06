@@ -27,9 +27,7 @@ type Row =
 // row never shows a membership checkmark (it can't hold this sutta itself) and a plain list row
 // never shows the nesting "+" (it can't hold anything either) — and any typed name that isn't an
 // exact existing match offers creating either a list or a group with it, since which one the
-// user wants isn't inferrable from the text alone. Shared by the reader's Lists tab and
-// (eventually) the preview pane's "In lists" editor, so both get the same fast add-to-multiple-
-// lists flow instead of two hand-rolled pickers.
+// user wants isn't inferrable from the text alone. Used by the reader's Lists tab.
 export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose }: ListMembershipPickerProps) {
   const { user, promptGoogleSignIn } = useAuth();
   const { lists, membership, toggleMembership, addToList, createList } = useUserData();

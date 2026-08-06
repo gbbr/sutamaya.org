@@ -435,7 +435,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
                   <span className="font-sans text-[11.5px] font-bold text-ink/60 mr-2.5">{sutta.ref}</span>
                   <span className="text-[16px] font-semibold leading-[1.3]">{sutta.en}</span>
                 </span>
-                <span className="font-serif text-[13.5px] italic text-accent">{sutta.pali}</span>
+                <span className="font-serif text-[13.5px] italic text-accent-text">{sutta.pali}</span>
               </button>
             ))}
             {hits.length === 0 && (

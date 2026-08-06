@@ -3,15 +3,11 @@ import { usePersistedState } from '../hooks/usePersistedState';
 
 interface LayoutPrefs {
   treeW: number;
-  listW: number;
-  previewHidden: boolean;
 }
 
 interface PaneWidths {
   tree: number;
-  list: number;
   treeMax: number;
-  listMax: number;
 }
 
 interface LayoutState extends LayoutPrefs {
@@ -20,15 +16,11 @@ interface LayoutState extends LayoutPrefs {
   twoPane: boolean;
   desktop: boolean;
   paneW: PaneWidths;
-  hidePreview: () => void;
-  showPreview: () => void;
   resetTree: () => void;
-  resetList: () => void;
   dragTree: (e: ReactPointerEvent) => void;
-  dragList: (e: ReactPointerEvent) => void;
 }
 
-const DEFAULTS: LayoutPrefs = { treeW: 264, listW: 404, previewHidden: false };
+const DEFAULTS: LayoutPrefs = { treeW: 264 };
 
 // Also read by lib/uiPrefs.ts (mobile gets a baked-in UI scale boost) — kept as one exported
 // constant rather than two literals so the two can't drift apart.
@@ -39,7 +31,7 @@ const LayoutContext = createContext<LayoutState | null>(null);
 export function LayoutProvider({ children }: { children: ReactNode }) {
   const [prefs, setPrefs] = usePersistedState<LayoutPrefs>('sutamaya.layout', DEFAULTS);
   const [w, setW] = useState(() => (typeof window !== 'undefined' ? window.innerWidth : 1440));
-  const drag = useRef<{ key: 'treeW' | 'listW'; x0: number; w0: number; min: number; max: number } | null>(null);
+  const drag = useRef<{ key: 'treeW'; x0: number; w0: number; min: number; max: number } | null>(null);
 
   useEffect(() => {
     const onResize = () => setW(window.innerWidth);
@@ -68,13 +60,10 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
   const desktop = w >= 880;
 
   const paneW = useMemo<PaneWidths>(() => {
-    const three = desktop && !prefs.previewHidden;
-    const treeMax = Math.max(210, three ? w - 280 - 330 : w - 320);
+    const treeMax = Math.max(210, w - 320);
     const tree = Math.min(prefs.treeW, treeMax);
-    const listMax = three ? Math.max(280, w - tree - 330) : w;
-    const list = Math.max(280, Math.min(prefs.listW, listMax));
-    return { tree, list, treeMax, listMax };
-  }, [w, desktop, prefs]);
+    return { tree, treeMax };
+  }, [w, prefs]);
 
   const value = useMemo<LayoutState>(
     () => ({
@@ -84,16 +73,9 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
       twoPane,
       desktop,
       paneW,
-      hidePreview: () => setPrefs((p) => ({ ...p, previewHidden: true })),
-      showPreview: () => setPrefs((p) => ({ ...p, previewHidden: false })),
       resetTree: () => setPrefs((p) => ({ ...p, treeW: 264 })),
-      resetList: () => setPrefs((p) => ({ ...p, listW: 404 })),
       dragTree: (e) => {
         drag.current = { key: 'treeW', x0: e.clientX, w0: paneW.tree, min: 210, max: paneW.treeMax };
-        document.body.style.userSelect = 'none';
-      },
-      dragList: (e) => {
-        drag.current = { key: 'listW', x0: e.clientX, w0: paneW.list, min: 280, max: paneW.listMax };
         document.body.style.userSelect = 'none';
       },
     }),

@@ -6,10 +6,7 @@
    value>) color functions in tailwind.config.js expect). Toggled by adding/removing a `dark`
    class on <html> — see lib/uiPrefs.ts's applyTheme(), driven by Settings > Theme
    (light/dark/system). This covers the Library/Settings shell; the immersive reader has its own
-   separate light/sepia/dark theme system (ReaderPrefsContext, lib/theme.ts) and is unaffected —
-   PreviewPane's own reading-content sub-area intentionally follows *that* setting instead (see
-   its own comment), while its surrounding chrome (header, notes, chips) uses these tokens like
-   the rest of the app shell.
+   separate light/sepia/dark theme system (ReaderPrefsContext, lib/theme.ts) and is unaffected.
 
    `accent`/`accent2` are deliberately the *same* value in both themes: both are used as solid
    button/chip fill colors with light (#FBFAF7-ish) text painted directly on top elsewhere in the
@@ -26,6 +23,11 @@
   --chip: 255 255 255;
   --accent: 146 114 67;
   --accent2: 138 106 59;
+  /* Same brown as --accent, used where the accent color sits directly on the page as small
+     italic Pali-subtitle text (TreePane/TreeRow/ListPane) rather than as a solid button fill —
+     see the --accent comment above for why button fills stay theme-invariant while this doesn't:
+     unlike a filled button, text-on-background contrast actually needs to respond to the theme. */
+  --accent-text: 146 114 67;
   --selection: 234 223 198;
 }
 
@@ -42,6 +44,7 @@
   --chip: 54 49 42;
   --accent: 146 114 67;
   --accent2: 138 106 59;
+  --accent-text: 196 154 97;
   --selection: 74 62 40;
 }
 
