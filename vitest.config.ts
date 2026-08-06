@@ -1,10 +1,28 @@
 import { defineConfig } from 'vitest/config';
 
-// Deliberately minimal: a handful of tests against pure, stable functions (highlight overlap
-// math, list position math, highlight grouping, corpus tree flattening) rather than broad
-// coverage — see CLAUDE.md. Plain Node environment is enough; nothing here touches the DOM.
+// Most of the suite is pure, stable functions (highlight overlap math, list position math,
+// corpus tree flattening) — plain Node environment, no DOM needed, so `.test.ts` files (and
+// hook-only tests that don't render JSX, e.g. renderHook over a pure derivation) stay on Node
+// for speed. `.test.tsx` files render actual components, so those run under jsdom instead —
+// scoped via environmentMatchGlobs rather than flipping the whole suite to jsdom.
 export default defineConfig({
   test: {
-    include: ['server/src/**/*.test.js', 'web/src/**/*.test.ts', 'scripts/**/*.test.js'],
+    projects: [
+      {
+        test: {
+          name: 'node',
+          include: ['server/src/**/*.test.js', 'web/src/**/*.test.ts', 'scripts/**/*.test.js'],
+          environment: 'node',
+        },
+      },
+      {
+        test: {
+          name: 'jsdom',
+          include: ['web/src/**/*.test.tsx'],
+          environment: 'jsdom',
+          setupFiles: ['web/src/setupTests.ts'],
+        },
+      },
+    ],
   },
 });
