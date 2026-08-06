@@ -71,6 +71,12 @@ export interface ListDef {
   auto?: boolean;
 }
 
+// A dragged list row's position relative to a drop-target row in TreePane's "My lists" tree —
+// 'before'/'after' reorders it as a sibling, 'inside' nests it as a child (target must be a
+// group). Shared between ListRow.tsx (rendering the drop-target highlight) and
+// useListTreeDrag.ts (computing it), so it lives here rather than in either.
+export type DropZone = 'before' | 'after' | 'inside';
+
 export type Membership = Record<string, string[]>;
 export type NotesMap = Record<string, string>;
 export type HighlightsMap = Record<string, Highlight[]>;
