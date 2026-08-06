@@ -1,393 +1,22 @@
-import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { navigate } from '@reach/router';
-import {
-  Settings,
-  ChevronRight,
-  ChevronDown,
-  ChevronUp,
-  MoreHorizontal,
-  Plus,
-  Pencil,
-  Trash2,
-  Highlighter,
-  StickyNote,
-  GripVertical,
-  ArrowUpDown,
-  Library,
-  List,
-} from 'lucide-react';
+import { Settings, ChevronRight, ChevronDown, Highlighter, StickyNote, ArrowUpDown, Library, List } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
 import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { useScrollToNode } from '../hooks/useScrollToNode';
-import { findNode, isExpandable, searchCorpus } from '../lib/corpus';
+import { useListTreeIndex } from '../hooks/useListTreeIndex';
+import { useListCrud } from '../hooks/useListCrud';
+import { useListTreeDrag } from '../hooks/useListTreeDrag';
+import { ancestorsOf, findNode, isExpandable, searchCorpus } from '../lib/corpus';
+import { ancestorsOfList } from '../lib/lists';
 import { HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
-import { autoScrollEdge } from '../lib/dragAutoScroll';
-import type { ChapterRow, Corpus, ListDef } from '../lib/types';
-
-// One row of the nested chapter/group/category tree under a nikaya — recurses arbitrarily
-// deep (SN: group > chapter > category; AN: chapter > category; MN: category directly).
-function TreeRow({
-  node,
-  depth,
-  nodeId,
-  expanded,
-  onToggle,
-  onSelect,
-}: {
-  node: ChapterRow;
-  depth: number;
-  nodeId?: string;
-  expanded: Record<string, boolean>;
-  onToggle: (id: string) => void;
-  onSelect: (id: string) => void;
-}) {
-  const expandable = isExpandable(node);
-  const open = !!expanded[node.id];
-  return (
-    <div>
-      <button
-        data-node-id={node.id}
-        className={`row flex items-start gap-[9px] w-full text-left pr-[18px] py-[9px] border-b border-ink/[.07] ${nodeId === node.id ? 'bg-ink/[.06]' : ''}`}
-        style={{ paddingLeft: 18 + depth * 14 }}
-        onClick={() => (expandable ? onToggle(node.id) : onSelect(node.id))}
-      >
-        <span className="w-[11px] flex-none flex items-center justify-center text-ink/40 mt-[4px]">
-          {expandable && (open ? <ChevronDown size={12} strokeWidth={2} /> : <ChevronRight size={12} strokeWidth={2} />)}
-        </span>
-        <span className="flex-1 min-w-0">
-          <span>
-            <span className="font-sans text-[13px] font-bold text-ink/45 mr-2">{node.ref}</span>
-            <span className="text-[15px] font-semibold leading-[1.3]">{node.label}</span>
-          </span>
-          {node.sub && <span className="block font-serif text-[13px] italic text-accent mt-[1px]">{node.sub}</span>}
-          <span className="block font-sans text-[13px] text-ink/45 mt-[2px]">
-            {node.count} sutta{node.count === 1 ? '' : 's'}
-          </span>
-        </span>
-      </button>
-      {expandable &&
-        open &&
-        node.chapters!.map((c) => (
-          <TreeRow key={c.id} node={c} depth={depth + 1} nodeId={nodeId} expanded={expanded} onToggle={onToggle} onSelect={onSelect} />
-        ))}
-    </div>
-  );
-}
-
-type DropZone = 'before' | 'after' | 'inside';
-
-// One row of the "My lists" tree — a list can nest other lists as children (folder-like), with
-// button-based rename/delete/move controls that always work (touch included), plus Pointer
-// Events drag-and-drop reordering/nesting when "reorder mode" (see the toggle by "My lists") is
-// on. The drag surface is a dedicated handle on the row's left edge (icon + generous invisible
-// padding, ~44px touch target), not the whole row — an earlier version made the entire row
-// touchAction:none while in reorder mode, which also blocked vertical scrolling of the list
-// pane itself (you couldn't scroll past a row without dragging it) and needed userSelect:none
-// smeared across the whole row to stop text selection. Confining touchAction/userSelect to the
-// handle keeps the rest of the row (title, member count, options button) scrollable and
-// selectable as normal, matching ListPane's sutta-reorder grip. A press-and-drag on the handle
-// engages once it clears a small movement threshold (a plain tap still reaches the handle's
-// no-op — nothing else lives there — harmlessly). Dropping on the top/bottom quarter of a row
-// reorders as a sibling, the middle half nests it as a child (see TreePane's updateDropTarget
-// for the zone math).
-function ListRow({
-  list,
-  depth,
-  nodeId,
-  childrenOf,
-  countFor,
-  listExpanded,
-  onToggle,
-  onSelect,
-  menuOpenId,
-  onToggleMenu,
-  editingId,
-  editDraft,
-  onEditDraftChange,
-  onStartEdit,
-  onCommitEdit,
-  onCancelEdit,
-  onDelete,
-  onArmDelete,
-  confirmDeleteId,
-  onCancelDelete,
-  onMove,
-  onAddChild,
-  creatingParentId,
-  draft,
-  onDraftChange,
-  onDraftKey,
-  draftInputRef,
-  siblingIndex,
-  siblingCount,
-  reorderMode,
-  dragId,
-  overId,
-  overZone,
-  onRowPointerDown,
-  registerRowEl,
-}: {
-  list: ListDef;
-  depth: number;
-  nodeId?: string;
-  childrenOf: (parentId: string) => ListDef[];
-  // The row's right-edge count badge: distinct sutta count for a `kind: 'list'` row (see
-  // `listMemberSets`), or the number of lists/groups nested underneath for a `kind: 'group'` row
-  // (see `listGroupCounts`) — a group holds no suttas of its own, so its own badge would always
-  // read 0 if it used the same sutta-count logic.
-  countFor: (l: ListDef) => number;
-  listExpanded: Record<string, boolean>;
-  onToggle: (id: string) => void;
-  onSelect: (id: string) => void;
-  menuOpenId: string | null;
-  onToggleMenu: (id: string) => void;
-  editingId: string | null;
-  editDraft: string;
-  onEditDraftChange: (v: string) => void;
-  onStartEdit: (l: ListDef) => void;
-  onCommitEdit: () => void;
-  onCancelEdit: () => void;
-  onDelete: (l: ListDef) => void;
-  onArmDelete: (l: ListDef) => void;
-  confirmDeleteId: string | null;
-  onCancelDelete: () => void;
-  onMove: (l: ListDef, dir: -1 | 1) => void;
-  onAddChild: (parentId: string) => void;
-  creatingParentId: string | null | undefined;
-  draft: string;
-  onDraftChange: (v: string) => void;
-  onDraftKey: (e: KeyboardEvent<HTMLInputElement>) => void;
-  draftInputRef: (el: HTMLInputElement | null) => void;
-  siblingIndex: number;
-  siblingCount: number;
-  reorderMode: boolean;
-  dragId: string | null;
-  overId: string | null;
-  overZone: DropZone | null;
-  onRowPointerDown: (e: React.PointerEvent, id: string) => void;
-  registerRowEl: (id: string, el: HTMLElement | null) => void;
-}) {
-  const kids = childrenOf(list.id);
-  const hasKids = kids.length > 0;
-  const isGroup = list.kind === 'group';
-  const open = !!listExpanded[list.id];
-  const editing = editingId === list.id;
-  const menuOpen = menuOpenId === list.id;
-  const dragging = dragId === list.id;
-  const isOver = overId === list.id && dragId !== list.id;
-
-  return (
-    <div>
-      <div
-        ref={(el) => registerRowEl(list.id, el)}
-        data-node-id={list.id}
-        className={`row flex items-center gap-[7px] w-full text-left pr-[10px] py-[7px] border-b border-ink/[.07] ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
-        style={{
-          paddingLeft: 18 + depth * 14,
-          opacity: dragging ? 0.4 : 1,
-          background: isOver && overZone === 'inside' ? 'rgba(138,106,59,.16)' : undefined,
-          boxShadow: isOver && overZone === 'before' ? 'inset 0 2px 0 #8A6A3B' : isOver && overZone === 'after' ? 'inset 0 -2px 0 #8A6A3B' : undefined,
-        }}
-      >
-        {reorderMode && (
-          <span
-            className="flex-none flex items-center justify-center text-ink/35 -my-[7px] -ml-1.5"
-            style={{
-              width: 40,
-              alignSelf: 'stretch',
-              cursor: 'grab',
-              // Scoped to just this handle (not the whole row, see the comment above) — blocks
-              // the browser's own scroll/text-selection/long-press-callout gestures from
-              // hijacking a press here before our own threshold-based drag detection engages,
-              // without affecting touch/scroll/selection anywhere else on the row.
-              touchAction: 'none',
-              userSelect: 'none',
-              WebkitUserSelect: 'none',
-              WebkitTouchCallout: 'none',
-            }}
-            onPointerDown={(e) => onRowPointerDown(e, list.id)}
-          >
-            <GripVertical size={13} strokeWidth={2} />
-          </span>
-        )}
-        <button
-          className="w-[19px] -ml-1 flex-none flex items-center justify-center text-ink/70 hover:text-ink"
-          onClick={() => isGroup && onToggle(list.id)}
-        >
-          {/* A group always shows its chevron — even empty, before it has any children — since
-              the chevron is the only thing distinguishing a group row from a list row (no
-              separate folder icon; see the comment on ListRow above). A list never shows one:
-              it can't hold anything to expand into. */}
-          {isGroup ? open ? <ChevronDown size={14} strokeWidth={2.25} /> : <ChevronRight size={14} strokeWidth={2.25} /> : null}
-        </button>
-        {editing ? (
-          <input
-            autoFocus
-            value={editDraft}
-            onChange={(e) => onEditDraftChange(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                e.preventDefault();
-                onCommitEdit();
-              } else if (e.key === 'Escape') onCancelEdit();
-            }}
-            onBlur={onCommitEdit}
-            className="flex-1 min-w-0 h-[26px] border border-accent rounded px-1.5 bg-field text-[14.5px] outline-none"
-          />
-        ) : (
-          <button
-            className="flex-1 min-w-0 text-left text-[15px] font-semibold truncate py-[2px]"
-            onClick={() => {
-              // A group can't hold suttas itself, so clicking one has nothing to show in the
-              // list pane — same as the corpus browse tree's own chapter rows (see TreeRow
-              // above), it just expands/collapses in place instead.
-              if (isGroup) onToggle(list.id);
-              else onSelect(String(list.id));
-            }}
-            onDoubleClick={() => onStartEdit(list)}
-          >
-            {list.label}
-          </button>
-        )}
-        {!editing && (
-          <span className="flex-none font-sans text-[11.5px] font-medium text-ink/50">{countFor(list)}</span>
-        )}
-        {!editing && (
-          <button
-            className="flex-none w-[20px] h-[20px] flex items-center justify-center rounded text-ink/40 hover:bg-ink/[.08] hover:text-ink"
-            aria-label="List options"
-            title="List options"
-            onClick={() => onToggleMenu(list.id)}
-          >
-            <MoreHorizontal size={14} strokeWidth={2} />
-          </button>
-        )}
-      </div>
-      {confirmDeleteId === list.id ? (
-        <div className="flex items-center gap-2 pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: 18 + depth * 14 + 11 }}>
-          <span className="font-sans text-[12px] text-ink/60">Delete "{list.label}"?</span>
-          <button
-            onClick={() => onDelete(list)}
-            className="font-sans text-[12px] font-semibold px-2 py-[3px] rounded border border-red-600/40 text-red-600 hover:bg-red-600/10"
-          >
-            Delete
-          </button>
-          <button onClick={onCancelDelete} className="font-sans text-[12px] px-2 py-[3px] rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]">
-            Cancel
-          </button>
-        </div>
-      ) : (
-        menuOpen &&
-        !editing && (
-          <div className="flex items-center gap-[6px] pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: 18 + depth * 14 + 11 }}>
-            <button
-              aria-label="Move up"
-              title="Move up"
-              disabled={siblingIndex === 0}
-              onClick={() => onMove(list, -1)}
-              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08] disabled:opacity-25"
-            >
-              <ChevronUp size={13} strokeWidth={2} />
-            </button>
-            <button
-              aria-label="Move down"
-              title="Move down"
-              disabled={siblingIndex === siblingCount - 1}
-              onClick={() => onMove(list, 1)}
-              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08] disabled:opacity-25"
-            >
-              <ChevronDown size={13} strokeWidth={2} />
-            </button>
-            {list.kind === 'group' && (
-              <button
-                aria-label="New list in this group"
-                title="New list in this group"
-                onClick={() => onAddChild(list.id)}
-                className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]"
-              >
-                <Plus size={14} strokeWidth={2} />
-              </button>
-            )}
-            <button
-              aria-label="Rename"
-              title="Rename"
-              onClick={() => onStartEdit(list)}
-              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]"
-            >
-              <Pencil size={12} strokeWidth={2} />
-            </button>
-            <button
-              aria-label="Delete"
-              title="Delete"
-              onClick={() => onArmDelete(list)}
-              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-red-600/10 hover:text-red-600"
-            >
-              <Trash2 size={12} strokeWidth={2} />
-            </button>
-          </div>
-        )
-      )}
-      {hasKids &&
-        open &&
-        kids.map((k, idx) => (
-          <ListRow
-            key={k.id}
-            list={k}
-            depth={depth + 1}
-            nodeId={nodeId}
-            childrenOf={childrenOf}
-            countFor={countFor}
-            listExpanded={listExpanded}
-            onToggle={onToggle}
-            onSelect={onSelect}
-            menuOpenId={menuOpenId}
-            onToggleMenu={onToggleMenu}
-            editingId={editingId}
-            editDraft={editDraft}
-            onEditDraftChange={onEditDraftChange}
-            onStartEdit={onStartEdit}
-            onCommitEdit={onCommitEdit}
-            onCancelEdit={onCancelEdit}
-            onDelete={onDelete}
-            onArmDelete={onArmDelete}
-            confirmDeleteId={confirmDeleteId}
-            onCancelDelete={onCancelDelete}
-            onMove={onMove}
-            onAddChild={onAddChild}
-            creatingParentId={creatingParentId}
-            draft={draft}
-            onDraftChange={onDraftChange}
-            onDraftKey={onDraftKey}
-            draftInputRef={draftInputRef}
-            siblingIndex={idx}
-            siblingCount={kids.length}
-            reorderMode={reorderMode}
-            dragId={dragId}
-            overId={overId}
-            overZone={overZone}
-            onRowPointerDown={onRowPointerDown}
-            registerRowEl={registerRowEl}
-          />
-        ))}
-      {creatingParentId === list.id && (
-        <div className="pr-[18px] pt-1 pb-2" style={{ paddingLeft: 18 + (depth + 1) * 14 }}>
-          <input
-            ref={draftInputRef}
-            value={draft}
-            onChange={(e) => onDraftChange(e.target.value)}
-            onKeyDown={onDraftKey}
-            onBlur={() => onDraftKey({ key: 'Escape' } as KeyboardEvent<HTMLInputElement>)}
-            placeholder="List name — return to create"
-            className="w-full h-[32px] border border-accent rounded-lg px-2.5 bg-field text-[14px] outline-none"
-          />
-        </div>
-      )}
-    </div>
-  );
-}
+import type { ListDef } from '../lib/types';
+import { TreeRow } from './TreeRow';
+import { SignedInBadge } from './SignedInBadge';
+import { ListRow, type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
 
 interface TreePaneProps {
   nodeId?: string;
@@ -399,33 +28,6 @@ interface TreePaneProps {
   // ListPane mounted on mobile and toggles `display:none` instead of unmounting — see
   // useScrollMemory for why scroll restoration needs to know this).
   visible?: boolean;
-}
-
-// The set of ancestor ids (nikaya > group > chapter > category, as deep as it goes) that need
-// to be open for `nodeId` to be visible in the tree.
-function ancestorsOf(corpus: Corpus | null, nodeId: string | undefined): Record<string, boolean> {
-  if (!corpus || !nodeId) return {};
-  const found = findNode(corpus, nodeId);
-  if (found?.kind !== 'chapter' || !found.ancestors.length) return {};
-  const init: Record<string, boolean> = {};
-  for (const a of found.ancestors) init[a.id] = true;
-  return init;
-}
-
-// Same idea as ancestorsOf, for the "My lists" tree: every ancestor list id (by `parentId`
-// chain) that needs to be open for `nodeId` — a list itself, e.g. from a membership chip's
-// /browse/{list_id} navigation — to be visible, plus `nodeId` itself so a list deep-linked (or
-// selected) directly shows its own children rather than just being highlighted shut.
-function ancestorsOfList(lists: ListDef[], nodeId: string | undefined): Record<string, boolean> {
-  if (!nodeId) return {};
-  const init: Record<string, boolean> = {};
-  let cur = lists.find((l) => l.id === nodeId);
-  if (cur) init[cur.id] = true;
-  while (cur?.parentId) {
-    init[cur.parentId] = true;
-    cur = lists.find((l) => l.id === cur!.parentId);
-  }
-  return init;
 }
 
 export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visible = true }: TreePaneProps) {
@@ -519,24 +121,11 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
   function toggleExpanded(id: string) {
     setExpanded((x) => ({ ...x, [id]: !x[id] }));
   }
-  // `undefined` = no draft input open; `null` = creating a top-level list; a list id = creating
-  // a sub-list under that list.
-  const [creatingParentId, setCreatingParentId] = useState<string | null | undefined>(undefined);
-  const [draft, setDraft] = useState('');
   // Synchronous initial state for the same reason `expanded` above is: so the tree is already
   // expanded to nodeId on the very first render if TreePane mounts fresh already pointed at a
   // nested list.
   const [listExpanded, setListExpanded] = useState<Record<string, boolean>>(() => ancestorsOfList(lists, nodeId));
-  const [menuOpenId, setMenuOpenId] = useState<string | null>(null);
-  const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
-  const [editingId, setEditingId] = useState<string | null>(null);
-  const [editDraft, setEditDraft] = useState('');
   const [searchFocused, setSearchFocused] = useState(false);
-  const [reorderMode, setReorderMode] = useState(false);
-  const [dragId, setDragId] = useState<string | null>(null);
-  const [overId, setOverId] = useState<string | null>(null);
-  const [overZone, setOverZone] = useState<DropZone | null>(null);
-  const listInput = useRef<HTMLInputElement | null>(null);
   const searchInput = useRef<HTMLInputElement>(null);
   // Up/down (and Enter to open) over the search results list only — see the keydown effect
   // below. `searchActiveIndexRef` mirrors the state so the effect's Enter branch always reads
@@ -545,79 +134,8 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
   const searchActiveIndexRef = useRef(-1);
   searchActiveIndexRef.current = searchActiveIndex;
   const hitRefs = useRef<Array<HTMLButtonElement | null>>([]);
-  // Pointer Events drive the list-tree drag (mirrors ListPane's sutta-reorder drag, so touch
-  // works the same way here too — HTML5 drag-and-drop doesn't fire reliably on touch browsers).
-  // These all need to be refs, not just state: onRowPointerDown registers its window-level
-  // pointermove/pointerup listeners once, at drag-start — unlike a JSX-bound handler (re-bound
-  // fresh every render), that one listener keeps calling the *same* closure for the rest of the
-  // drag, so anything it reads via a plain state variable would see whatever that variable's
-  // value was back at drag-start, not later updates. `overIdRef`/`overZoneRef` mirror the
-  // `overId`/`overZone` state (kept only for rendering the drop-target highlight) so
-  // finishTreeDrag reads the live values instead of a stale snapshot.
-  const rowElRefs = useRef<Map<string, HTMLElement>>(new Map());
-  const dragIdRef = useRef<string | null>(null);
-  const overIdRef = useRef<string | null>(null);
-  const overZoneRef = useRef<DropZone | null>(null);
-  const pointerYRef = useRef(0);
-  const rafRef = useRef<number | null>(null);
-  // Set for the duration of a candidate/active drag so an unmount mid-drag can tear down the
-  // window-level listeners it registered — see the effect below.
-  const activeDragCleanupRef = useRef<(() => void) | null>(null);
 
-  const listChildrenOf = useMemo(() => {
-    const byParent = new Map<string | null, ListDef[]>();
-    for (const l of lists) {
-      const key = l.parentId ?? null;
-      if (!byParent.has(key)) byParent.set(key, []);
-      byParent.get(key)!.push(l);
-    }
-    return (parentId: string) => byParent.get(parentId) || [];
-  }, [lists]);
-  // Total distinct sutta count for a list, "just like the library entries" (ChapterRow's
-  // `node.count`) but computed here at render time rather than baked into corpus.json, since a
-  // user list's `items` (and its sub-lists') can change at any moment. Recurses through
-  // `listChildrenOf` and unions each level's `items` into a Set — the same sutta can
-  // independently belong to a parent list and one of its sub-lists (or two sibling sub-lists),
-  // so a plain sum across levels would double-count; a dedup'd Set is the "how many distinct
-  // suttas" the badge is meant to show.
-  const listMemberSets = useMemo(() => {
-    const byId = new Map(lists.map((l) => [l.id, l] as const));
-    const cache = new Map<string, Set<string>>();
-    function collect(id: string): Set<string> {
-      const cached = cache.get(id);
-      if (cached) return cached;
-      const set = new Set<string>(byId.get(id)?.items || []);
-      cache.set(id, set);
-      for (const child of listChildrenOf(id)) {
-        for (const memberId of collect(child.id)) set.add(memberId);
-      }
-      return set;
-    }
-    for (const l of lists) collect(l.id);
-    return cache;
-  }, [lists, listChildrenOf]);
-  const listTotalMembers = (id: string) => listMemberSets.get(id)?.size ?? 0;
-  // A group's own badge can't use listTotalMembers (a group holds no items) — it counts how many
-  // lists/groups sit anywhere underneath it instead, recursing through `listChildrenOf` the same
-  // way listMemberSets does.
-  const listGroupCounts = useMemo(() => {
-    const cache = new Map<string, number>();
-    function collect(id: string): number {
-      const cached = cache.get(id);
-      if (cached !== undefined) return cached;
-      let count = 0;
-      for (const child of listChildrenOf(id)) {
-        count += 1 + collect(child.id);
-      }
-      cache.set(id, count);
-      return count;
-    }
-    for (const l of lists) collect(l.id);
-    return cache;
-  }, [lists, listChildrenOf]);
-  const groupTotalLists = (id: string) => listGroupCounts.get(id) ?? 0;
-  const countFor = (l: ListDef) => (l.kind === 'group' ? groupTotalLists(l.id) : listTotalMembers(l.id));
-  const topLevelLists = useMemo(() => lists.filter((l) => !l.parentId && !l.auto), [lists]);
+  const { listChildrenOf, countFor, topLevelLists } = useListTreeIndex(lists);
   const autoLists = useMemo(
     () =>
       [
@@ -631,211 +149,48 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
     setListExpanded((x) => ({ ...x, [id]: !x[id] }));
   }
 
-  function toggleListMenu(id: string) {
-    setMenuOpenId((m) => (m === id ? null : id));
-  }
+  const {
+    menuOpenId,
+    setMenuOpenId,
+    confirmDeleteId,
+    editingId,
+    editDraft,
+    setEditDraft,
+    creatingParentId,
+    setCreatingParentId,
+    draft,
+    setDraft,
+    listInput,
+    toggleListMenu,
+    startEditList,
+    commitEditList,
+    cancelEditList,
+    armDeleteList,
+    cancelDeleteList,
+    deleteList,
+    addChildList,
+    moveList,
+    onDraftKey,
+  } = useListCrud({
+    listChildrenOf,
+    topLevelLists,
+    setListExpanded,
+    createList,
+    renameList,
+    removeList,
+    reorderLists,
+    onCreated: (list) => navigate(`/browse/${list.id}`),
+  });
 
-  function startEditList(l: ListDef) {
-    setMenuOpenId(null);
-    setEditingId(l.id);
-    setEditDraft(l.label);
-  }
-
-  function commitEditList() {
-    const id = editingId;
-    const text = editDraft.trim();
-    setEditingId(null);
-    if (!id) return;
-    if (text) renameList(id, text);
-  }
-
-  function cancelEditList() {
-    setEditingId(null);
-  }
-
-  function armDeleteList(l: ListDef) {
-    setMenuOpenId(null);
-    setConfirmDeleteId(l.id);
-  }
-
-  function cancelDeleteList() {
-    setConfirmDeleteId(null);
-  }
-
-  function deleteList(l: ListDef) {
-    setConfirmDeleteId(null);
-    removeList(l.id);
-  }
-
-  function addChildList(parentId: string) {
-    setMenuOpenId(null);
-    setListExpanded((x) => ({ ...x, [parentId]: true }));
-    setCreatingParentId(parentId);
-    setDraft('');
-    setTimeout(() => listInput.current?.focus(), 30);
-  }
-
-  function moveList(l: ListDef, dir: -1 | 1) {
-    const scoped = l.parentId ? listChildrenOf(l.parentId) : topLevelLists;
-    const idx = scoped.findIndex((s) => s.id === l.id);
-    const swapWith = idx + dir;
-    if (idx < 0 || swapWith < 0 || swapWith >= scoped.length) return;
-    const order = scoped.map((s) => s.id);
-    [order[idx], order[swapWith]] = [order[swapWith], order[idx]];
-    reorderLists(l.parentId ?? null, order);
-  }
-
-  // True if `candidateId` sits somewhere underneath `ofId` in the list tree — dropping `ofId`
-  // onto (or as a new sibling within) a descendant of itself would create a cycle, so every drop
-  // handler checks this first regardless of zone.
-  function isDescendant(candidateId: string, ofId: string): boolean {
-    let cur = lists.find((l) => l.id === candidateId);
-    while (cur?.parentId) {
-      if (cur.parentId === ofId) return true;
-      cur = lists.find((l) => l.id === cur!.parentId);
-    }
-    return false;
-  }
-
-  // A list can't hold anything (no sub-lists, no sub-groups), so it's only ever a valid drop
-  // target for the 'inside' zone when it's a group — true for both a dragged list and a dragged
-  // group. The 'before'/'after' sibling zones just reorder-and-inherit the target's own parent,
-  // which is always valid regardless of kind: both a list and a group are allowed to rest at the
-  // top level (a list can get there by being dragged next to another top-level row, same as a
-  // group can — the "+" next to My Lists just doesn't happen to create one there directly).
-  function isValidDrop(draggedId: string, targetId: string, zone: DropZone): boolean {
-    const dragged = lists.find((l) => l.id === draggedId);
-    const target = lists.find((l) => l.id === targetId);
-    if (!dragged || !target || isDescendant(target.id, draggedId)) return false;
-    if (zone === 'inside') return target.kind === 'group';
-    return true;
-  }
-
-  function siblingIdsWithInsert(parentId: string | null, insertId: string, targetId: string, after: boolean): string[] {
-    const scoped = (parentId ? listChildrenOf(parentId) : topLevelLists).map((s) => s.id).filter((id) => id !== insertId);
-    const targetIdx = scoped.indexOf(targetId);
-    scoped.splice(after ? targetIdx + 1 : targetIdx, 0, insertId);
-    return scoped;
-  }
-
-  function registerRowEl(id: string, el: HTMLElement | null) {
-    if (el) rowElRefs.current.set(id, el);
-    else rowElRefs.current.delete(id);
-  }
-
-  // Which row (if any) the pointer currently sits vertically over, and which third of it —
-  // top/bottom quarter reorders as a sibling, the middle half nests as a child. Hit-tests by
-  // rect instead of relying on native dragover targeting, since a window-level pointermove
-  // listener (see onRowPointerDown) doesn't know which row DOM-wise the pointer is above.
-  function updateDropTarget() {
-    const draggedId = dragIdRef.current;
-    if (!draggedId) return;
-    const y = pointerYRef.current;
-    const candidates: { id: string; zone: DropZone }[] = [];
-    rowElRefs.current.forEach((el, rowId) => {
-      if (rowId === draggedId) return;
-      const rect = el.getBoundingClientRect();
-      if (y < rect.top || y > rect.bottom) return;
-      const ratio = (y - rect.top) / rect.height;
-      const zone: DropZone = ratio < 0.25 ? 'before' : ratio > 0.75 ? 'after' : 'inside';
-      if (isValidDrop(draggedId, rowId, zone)) candidates.push({ id: rowId, zone });
-    });
-    const next = candidates[0] ?? null;
-    overIdRef.current = next?.id ?? null;
-    overZoneRef.current = next?.zone ?? null;
-    setOverId(next?.id ?? null);
-    setOverZone(next?.zone ?? null);
-  }
-
-  function runTreeDragLoop() {
-    function tick() {
-      if (!dragIdRef.current) {
-        rafRef.current = null;
-        return;
-      }
-      autoScrollEdge(scrollRef.current, pointerYRef.current);
-      updateDropTarget();
-      rafRef.current = requestAnimationFrame(tick);
-    }
-    rafRef.current = requestAnimationFrame(tick);
-  }
-
-  async function commitDrop(draggedId: string, target: ListDef, zone: DropZone) {
-    const dragged = lists.find((l) => l.id === draggedId);
-    if (!dragged || !isValidDrop(draggedId, target.id, zone)) return;
-    if (zone === 'inside') {
-      if (dragged.parentId !== target.id) await setListParent(draggedId, target.id);
-      setListExpanded((x) => ({ ...x, [target.id]: true }));
-      return;
-    }
-    const newParentId = target.parentId ?? null;
-    if (dragged.parentId !== newParentId) await setListParent(draggedId, newParentId);
-    const order = siblingIdsWithInsert(newParentId, draggedId, target.id, zone === 'after');
-    await reorderLists(newParentId, order);
-  }
-
-  function finishTreeDrag() {
-    const draggedId = dragIdRef.current;
-    const targetId = overIdRef.current;
-    const zone = overZoneRef.current;
-    dragIdRef.current = null;
-    overIdRef.current = null;
-    overZoneRef.current = null;
-    if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    rafRef.current = null;
-    setDragId(null);
-    setOverId(null);
-    setOverZone(null);
-    if (!draggedId || !targetId || draggedId === targetId || !zone) return;
-    const target = lists.find((l) => l.id === targetId);
-    if (!target) return;
-    void commitDrop(draggedId, target, zone);
-  }
-
-  // Only engages a drag once the pointer clears a small movement threshold — a plain tap (no
-  // movement) reaches the row's own button clicks (select/rename/delete/menu) normally, since
-  // nothing here calls preventDefault or pointer-capture until a real drag is underway. Tracked
-  // via window-level listeners (not this row's own onPointerMove) so a fast initial move that
-  // carries the pointer off the starting row before the threshold trips still keeps tracking it.
-  function onRowPointerDown(e: React.PointerEvent, id: string) {
-    const pointerId = e.pointerId;
-    const startX = e.clientX;
-    const startY = e.clientY;
-    let engaged = false;
-
-    function onMove(ev: PointerEvent) {
-      if (ev.pointerId !== pointerId) return;
-      if (!engaged) {
-        if (Math.hypot(ev.clientX - startX, ev.clientY - startY) < 6) return;
-        engaged = true;
-        dragIdRef.current = id;
-        setDragId(id);
-        runTreeDragLoop();
-      }
-      pointerYRef.current = ev.clientY;
-    }
-    function onUp() {
-      window.removeEventListener('pointermove', onMove);
-      window.removeEventListener('pointerup', onUp);
-      window.removeEventListener('pointercancel', onUp);
-      activeDragCleanupRef.current = null;
-      if (engaged) finishTreeDrag();
-    }
-    window.addEventListener('pointermove', onMove);
-    window.addEventListener('pointerup', onUp);
-    window.addEventListener('pointercancel', onUp);
-    activeDragCleanupRef.current = onUp;
-  }
-
-  // Tears down a still-active drag's window listeners (and any live rAF loop) if TreePane
-  // unmounts mid-drag (e.g. navigating to Settings while dragging) — without this the listeners
-  // added in onRowPointerDown above would never be removed.
-  useEffect(() => {
-    return () => {
-      activeDragCleanupRef.current?.();
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, []);
+  const { reorderMode, setReorderMode, dragId, overId, overZone, onRowPointerDown, registerRowEl } = useListTreeDrag({
+    lists,
+    listChildrenOf,
+    topLevelLists,
+    scrollRef,
+    setListExpanded,
+    setListParent,
+    reorderLists,
+  });
 
   const searching = query.trim().length > 0;
   const hits = useMemo(() => (corpus && searching ? searchCorpus(corpus, query, notes) : []), [corpus, query, searching, notes]);
@@ -899,78 +254,37 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
     ? { flex: 1 }
     : { flex: 'none', width: paneW.tree, background: '#F0ECE4' };
 
-  async function submitDraft() {
-    const name = draft.trim();
-    const parentId = creatingParentId ?? null;
-    // The header's own "+" (parentId null, top level) always makes a group — "My lists" is a
-    // tree of groups holding lists, not a flat bag of lists — while every per-row "+" only ever
-    // appears on a group row (see ListRow) and adds a plain list inside it.
-    const kind = parentId === null ? 'group' : 'list';
-    setCreatingParentId(undefined);
-    setDraft('');
-    if (!name) return;
-    try {
-      const list = await createList(name, parentId, kind);
-      navigate(`/browse/${list.id}`);
-    } catch {
-      // Signed out: createList() already triggered the Google sign-in prompt.
-    }
-  }
-
-  function onDraftKey(e: KeyboardEvent<HTMLInputElement>) {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      submitDraft();
-    } else if (e.key === 'Escape') {
-      setCreatingParentId(undefined);
-      setDraft('');
-    }
-  }
-
-  // Both branches navigate to /settings either way (see promptGoogleSignIn in AuthContext.tsx)
-  // — this badge and the Settings gear are always redundant, but only actually removed for the
-  // signed-in case below (the "G" sign-in badge is offered alongside the gear, not instead of
-  // it). Parameterized on size so mobile's header and desktop's footer can each size it to match
-  // their own surrounding chrome (mobile much bigger — see the header below).
-  function accountBadge(size: number) {
-    const dim = { width: size, height: size };
-    return user ? (
-      <button
-        className="flex-none rounded-full overflow-hidden border-2 border-ink/25 flex items-center justify-center bg-accent/15 font-sans font-semibold text-accent"
-        style={{ ...dim, fontSize: Math.round(size * 0.42) }}
-        aria-label={`Signed in as ${user.email}`}
-        title={`Signed in as ${user.email}`}
-        onClick={() => navigate('/settings')}
-      >
-        {user.picture ? (
-          <img src={user.picture} alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-        ) : (
-          user.email[0]?.toUpperCase()
-        )}
-      </button>
-    ) : (
-      // Google's own rendered "icon" button (google.accounts.id.renderButton with type: 'icon')
-      // has an unpredictable natural size that doesn't fit cleanly into a small badge — at small
-      // sizes it clips down to what reads as a blank white circle. This is deliberately just a
-      // plain button showing Google's "G" mark, wired to `promptGoogleSignIn` (which navigates to
-      // Settings — see the comment on it in AuthContext.tsx for why sign-in itself has to happen
-      // from a real, full-size rendered button there rather than inline here).
-      <button
-        className="flex-none rounded-full border-2 border-ink/25 flex items-center justify-center hover:bg-ink/[.06]"
-        style={dim}
-        aria-label="Sign in with Google"
-        title="Sign in with Google"
-        onClick={promptGoogleSignIn}
-      >
-        <svg width={Math.round(size * 0.6)} height={Math.round(size * 0.6)} viewBox="0 0 18 18">
-          <path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" />
-          <path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z" />
-          <path fill="#FBBC05" d="M3.964 10.71A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" />
-          <path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" />
-        </svg>
-      </button>
-    );
-  }
+  // ListRow's props are grouped by concern (see ListRow.tsx) — built once here rather than at
+  // each of its (potentially deeply nested) call sites.
+  const listRowMenu: ListRowMenuProps = {
+    menuOpenId,
+    onToggleMenu: toggleListMenu,
+    onMove: moveList,
+    onAddChild: addChildList,
+    onStartEdit: startEditList,
+    onArmDelete: armDeleteList,
+  };
+  const listRowEdit: ListRowEditProps = {
+    editingId,
+    editDraft,
+    onEditDraftChange: setEditDraft,
+    onCommitEdit: commitEditList,
+    onCancelEdit: cancelEditList,
+  };
+  const listRowDelete: ListRowDeleteProps = {
+    confirmDeleteId,
+    onDelete: deleteList,
+    onCancelDelete: cancelDeleteList,
+  };
+  const listRowDraft: ListRowDraftProps = {
+    creatingParentId,
+    draft,
+    onDraftChange: setDraft,
+    onDraftKey,
+    draftInputRef: (el) => {
+      listInput.current = el;
+    },
+  };
 
   return (
     <aside data-component="TreePane" className="flex flex-col h-full min-w-0 overflow-hidden border-r border-ink/10" style={style}>
@@ -1010,9 +324,9 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
               separate desktop-only footer at the bottom of the pane, with nothing else on it —
               not worth a whole row of its own when it fits right here). */}
           <div className={`flex items-center flex-none ${mobile ? 'gap-3.5' : 'gap-2.5'}`}>
-            {accountBadge(mobile ? 36 : 26)}
+            <SignedInBadge user={user} size={mobile ? 36 : 26} promptGoogleSignIn={promptGoogleSignIn} />
             {/* The badge above already goes to Settings regardless of sign-in state (see
-                accountBadge) — once signed in it's the one obvious account affordance, so the
+                SignedInBadge) — once signed in it's the one obvious account affordance, so the
                 separate gear (redundant with it) drops out; signed out, the badge alone reads
                 as "sign in", not "settings", so the gear stays as the explicit way in. */}
             {!user && (
@@ -1168,27 +482,10 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
                 listExpanded={listExpanded}
                 onToggle={toggleListExpanded}
                 onSelect={onSelect}
-                menuOpenId={menuOpenId}
-                onToggleMenu={toggleListMenu}
-                editingId={editingId}
-                editDraft={editDraft}
-                onEditDraftChange={setEditDraft}
-                onStartEdit={startEditList}
-                onCommitEdit={commitEditList}
-                onCancelEdit={cancelEditList}
-                onDelete={deleteList}
-                onArmDelete={armDeleteList}
-                confirmDeleteId={confirmDeleteId}
-                onCancelDelete={cancelDeleteList}
-                onMove={moveList}
-                onAddChild={addChildList}
-                creatingParentId={creatingParentId}
-                draft={draft}
-                onDraftChange={setDraft}
-                onDraftKey={onDraftKey}
-                draftInputRef={(el) => {
-                  listInput.current = el;
-                }}
+                menu={listRowMenu}
+                edit={listRowEdit}
+                del={listRowDelete}
+                draft={listRowDraft}
                 siblingIndex={idx}
                 siblingCount={topLevelLists.length}
                 reorderMode={reorderMode}

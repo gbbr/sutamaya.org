@@ -1,0 +1,309 @@
+import { ChevronDown, ChevronRight, ChevronUp, GripVertical, MoreHorizontal, Pencil, Plus, Trash2 } from 'lucide-react';
+import type { KeyboardEvent } from 'react';
+import type { DropZone, ListDef } from '../lib/types';
+
+export interface ListRowMenuProps {
+  menuOpenId: string | null;
+  onToggleMenu: (id: string) => void;
+  onMove: (l: ListDef, dir: -1 | 1) => void;
+  onAddChild: (parentId: string) => void;
+  onStartEdit: (l: ListDef) => void;
+  onArmDelete: (l: ListDef) => void;
+}
+
+export interface ListRowEditProps {
+  editingId: string | null;
+  editDraft: string;
+  onEditDraftChange: (v: string) => void;
+  onCommitEdit: () => void;
+  onCancelEdit: () => void;
+}
+
+export interface ListRowDeleteProps {
+  confirmDeleteId: string | null;
+  onDelete: (l: ListDef) => void;
+  onCancelDelete: () => void;
+}
+
+export interface ListRowDraftProps {
+  creatingParentId: string | null | undefined;
+  draft: string;
+  onDraftChange: (v: string) => void;
+  onDraftKey: (e: KeyboardEvent<HTMLInputElement>) => void;
+  draftInputRef: (el: HTMLInputElement | null) => void;
+}
+
+// One row of the "My lists" tree — a list can nest other lists as children (folder-like), with
+// button-based rename/delete/move controls that always work (touch included), plus Pointer
+// Events drag-and-drop reordering/nesting when "reorder mode" (see the toggle by "My lists") is
+// on. The drag surface is a dedicated handle on the row's left edge (icon + generous invisible
+// padding, ~44px touch target), not the whole row — an earlier version made the entire row
+// touchAction:none while in reorder mode, which also blocked vertical scrolling of the list
+// pane itself (you couldn't scroll past a row without dragging it) and needed userSelect:none
+// smeared across the whole row to stop text selection. Confining touchAction/userSelect to the
+// handle keeps the rest of the row (title, member count, options button) scrollable and
+// selectable as normal, matching ListPane's sutta-reorder grip. A press-and-drag on the handle
+// engages once it clears a small movement threshold (a plain tap still reaches the handle's
+// no-op — nothing else lives there — harmlessly). Dropping on the top/bottom quarter of a row
+// reorders as a sibling, the middle half nests it as a child (see TreePane's updateDropTarget
+// for the zone math).
+//
+// Props are grouped by concern (menu/edit/del/draft) rather than flat — keeps this at ~15
+// top-level props instead of 35. The drag props stay flat for now (reorderMode/dragId/overId/
+// overZone/onRowPointerDown/registerRowEl) since they're still owned directly by TreePane; once
+// they move to their own hook they'll get the same bundling treatment.
+export function ListRow({
+  list,
+  depth,
+  nodeId,
+  childrenOf,
+  // The row's right-edge count badge: distinct sutta count for a `kind: 'list'` row (see
+  // `listMemberSets`), or the number of lists/groups nested underneath for a `kind: 'group'` row
+  // (see `listGroupCounts`) — a group holds no suttas of its own, so its own badge would always
+  // read 0 if it used the same sutta-count logic.
+  countFor,
+  listExpanded,
+  onToggle,
+  onSelect,
+  menu,
+  edit,
+  del,
+  draft: draftProps,
+  siblingIndex,
+  siblingCount,
+  reorderMode,
+  dragId,
+  overId,
+  overZone,
+  onRowPointerDown,
+  registerRowEl,
+}: {
+  list: ListDef;
+  depth: number;
+  nodeId?: string;
+  childrenOf: (parentId: string) => ListDef[];
+  countFor: (l: ListDef) => number;
+  listExpanded: Record<string, boolean>;
+  onToggle: (id: string) => void;
+  onSelect: (id: string) => void;
+  menu: ListRowMenuProps;
+  edit: ListRowEditProps;
+  del: ListRowDeleteProps;
+  draft: ListRowDraftProps;
+  siblingIndex: number;
+  siblingCount: number;
+  reorderMode: boolean;
+  dragId: string | null;
+  overId: string | null;
+  overZone: DropZone | null;
+  onRowPointerDown: (e: React.PointerEvent, id: string) => void;
+  registerRowEl: (id: string, el: HTMLElement | null) => void;
+}) {
+  const { menuOpenId, onToggleMenu, onMove, onAddChild, onStartEdit, onArmDelete } = menu;
+  const { editingId, editDraft, onEditDraftChange, onCommitEdit, onCancelEdit } = edit;
+  const { confirmDeleteId, onDelete, onCancelDelete } = del;
+  const { creatingParentId, draft, onDraftChange, onDraftKey, draftInputRef } = draftProps;
+
+  const kids = childrenOf(list.id);
+  const hasKids = kids.length > 0;
+  const isGroup = list.kind === 'group';
+  const open = !!listExpanded[list.id];
+  const editing = editingId === list.id;
+  const menuOpen = menuOpenId === list.id;
+  const dragging = dragId === list.id;
+  const isOver = overId === list.id && dragId !== list.id;
+
+  return (
+    <div>
+      <div
+        ref={(el) => registerRowEl(list.id, el)}
+        data-node-id={list.id}
+        className={`row flex items-center gap-[7px] w-full text-left pr-[10px] py-[7px] border-b border-ink/[.07] ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
+        style={{
+          paddingLeft: 18 + depth * 14,
+          opacity: dragging ? 0.4 : 1,
+          background: isOver && overZone === 'inside' ? 'rgba(138,106,59,.16)' : undefined,
+          boxShadow: isOver && overZone === 'before' ? 'inset 0 2px 0 #8A6A3B' : isOver && overZone === 'after' ? 'inset 0 -2px 0 #8A6A3B' : undefined,
+        }}
+      >
+        {reorderMode && (
+          <span
+            className="flex-none flex items-center justify-center text-ink/35 -my-[7px] -ml-1.5"
+            style={{
+              width: 40,
+              alignSelf: 'stretch',
+              cursor: 'grab',
+              // Scoped to just this handle (not the whole row, see the comment above) — blocks
+              // the browser's own scroll/text-selection/long-press-callout gestures from
+              // hijacking a press here before our own threshold-based drag detection engages,
+              // without affecting touch/scroll/selection anywhere else on the row.
+              touchAction: 'none',
+              userSelect: 'none',
+              WebkitUserSelect: 'none',
+              WebkitTouchCallout: 'none',
+            }}
+            onPointerDown={(e) => onRowPointerDown(e, list.id)}
+          >
+            <GripVertical size={13} strokeWidth={2} />
+          </span>
+        )}
+        <button
+          className="w-[19px] -ml-1 flex-none flex items-center justify-center text-ink/70 hover:text-ink"
+          onClick={() => isGroup && onToggle(list.id)}
+        >
+          {/* A group always shows its chevron — even empty, before it has any children — since
+              the chevron is the only thing distinguishing a group row from a list row (no
+              separate folder icon; see the comment on ListRow above). A list never shows one:
+              it can't hold anything to expand into. */}
+          {isGroup ? open ? <ChevronDown size={14} strokeWidth={2.25} /> : <ChevronRight size={14} strokeWidth={2.25} /> : null}
+        </button>
+        {editing ? (
+          <input
+            autoFocus
+            value={editDraft}
+            onChange={(e) => onEditDraftChange(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                onCommitEdit();
+              } else if (e.key === 'Escape') onCancelEdit();
+            }}
+            onBlur={onCommitEdit}
+            className="flex-1 min-w-0 h-[26px] border border-accent rounded px-1.5 bg-field text-[14.5px] outline-none"
+          />
+        ) : (
+          <button
+            className="flex-1 min-w-0 text-left text-[15px] font-semibold truncate py-[2px]"
+            onClick={() => {
+              // A group can't hold suttas itself, so clicking one has nothing to show in the
+              // list pane — same as the corpus browse tree's own chapter rows (see TreeRow),
+              // it just expands/collapses in place instead.
+              if (isGroup) onToggle(list.id);
+              else onSelect(String(list.id));
+            }}
+            onDoubleClick={() => onStartEdit(list)}
+          >
+            {list.label}
+          </button>
+        )}
+        {!editing && (
+          <span className="flex-none font-sans text-[11.5px] font-medium text-ink/50">{countFor(list)}</span>
+        )}
+        {!editing && (
+          <button
+            className="flex-none w-[20px] h-[20px] flex items-center justify-center rounded text-ink/40 hover:bg-ink/[.08] hover:text-ink"
+            aria-label="List options"
+            title="List options"
+            onClick={() => onToggleMenu(list.id)}
+          >
+            <MoreHorizontal size={14} strokeWidth={2} />
+          </button>
+        )}
+      </div>
+      {confirmDeleteId === list.id ? (
+        <div className="flex items-center gap-2 pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: 18 + depth * 14 + 11 }}>
+          <span className="font-sans text-[12px] text-ink/60">Delete "{list.label}"?</span>
+          <button
+            onClick={() => onDelete(list)}
+            className="font-sans text-[12px] font-semibold px-2 py-[3px] rounded border border-red-600/40 text-red-600 hover:bg-red-600/10"
+          >
+            Delete
+          </button>
+          <button onClick={onCancelDelete} className="font-sans text-[12px] px-2 py-[3px] rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]">
+            Cancel
+          </button>
+        </div>
+      ) : (
+        menuOpen &&
+        !editing && (
+          <div className="flex items-center gap-[6px] pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: 18 + depth * 14 + 11 }}>
+            <button
+              aria-label="Move up"
+              title="Move up"
+              disabled={siblingIndex === 0}
+              onClick={() => onMove(list, -1)}
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08] disabled:opacity-25"
+            >
+              <ChevronUp size={13} strokeWidth={2} />
+            </button>
+            <button
+              aria-label="Move down"
+              title="Move down"
+              disabled={siblingIndex === siblingCount - 1}
+              onClick={() => onMove(list, 1)}
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08] disabled:opacity-25"
+            >
+              <ChevronDown size={13} strokeWidth={2} />
+            </button>
+            {list.kind === 'group' && (
+              <button
+                aria-label="New list in this group"
+                title="New list in this group"
+                onClick={() => onAddChild(list.id)}
+                className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]"
+              >
+                <Plus size={14} strokeWidth={2} />
+              </button>
+            )}
+            <button
+              aria-label="Rename"
+              title="Rename"
+              onClick={() => onStartEdit(list)}
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]"
+            >
+              <Pencil size={12} strokeWidth={2} />
+            </button>
+            <button
+              aria-label="Delete"
+              title="Delete"
+              onClick={() => onArmDelete(list)}
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-red-600/10 hover:text-red-600"
+            >
+              <Trash2 size={12} strokeWidth={2} />
+            </button>
+          </div>
+        )
+      )}
+      {hasKids &&
+        open &&
+        kids.map((k, idx) => (
+          <ListRow
+            key={k.id}
+            list={k}
+            depth={depth + 1}
+            nodeId={nodeId}
+            childrenOf={childrenOf}
+            countFor={countFor}
+            listExpanded={listExpanded}
+            onToggle={onToggle}
+            onSelect={onSelect}
+            menu={menu}
+            edit={edit}
+            del={del}
+            draft={draftProps}
+            siblingIndex={idx}
+            siblingCount={kids.length}
+            reorderMode={reorderMode}
+            dragId={dragId}
+            overId={overId}
+            overZone={overZone}
+            onRowPointerDown={onRowPointerDown}
+            registerRowEl={registerRowEl}
+          />
+        ))}
+      {creatingParentId === list.id && (
+        <div className="pr-[18px] pt-1 pb-2" style={{ paddingLeft: 18 + (depth + 1) * 14 }}>
+          <input
+            ref={draftInputRef}
+            value={draft}
+            onChange={(e) => onDraftChange(e.target.value)}
+            onKeyDown={onDraftKey}
+            onBlur={() => onDraftKey({ key: 'Escape' } as KeyboardEvent<HTMLInputElement>)}
+            placeholder="List name — return to create"
+            className="w-full h-[32px] border border-accent rounded-lg px-2.5 bg-field text-[14px] outline-none"
+          />
+        </div>
+      )}
+    </div>
+  );
+}

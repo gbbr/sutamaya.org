@@ -153,6 +153,17 @@ export function isExpandable(node: { chapters?: unknown }): boolean {
   return Array.isArray(node.chapters) && node.chapters.length > 0;
 }
 
+// The set of ancestor ids (nikaya > group > chapter > category, as deep as it goes) that need
+// to be open for `nodeId` to be visible in TreePane's corpus browse tree.
+export function ancestorsOf(corpus: Corpus | null, nodeId: string | undefined): Record<string, boolean> {
+  if (!corpus || !nodeId) return {};
+  const found = findNode(corpus, nodeId);
+  if (found?.kind !== 'chapter' || !found.ancestors.length) return {};
+  const init: Record<string, boolean> = {};
+  for (const a of found.ancestors) init[a.id] = true;
+  return init;
+}
+
 export interface SearchHit {
   id: string;
   sutta: Sutta;
