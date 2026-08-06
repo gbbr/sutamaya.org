@@ -319,7 +319,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
       style={style}
     >
       <header className="flex-none px-[18px] pt-4 pb-3.5 border-b border-ink/10">
-        <div className="flex items-center gap-2 mb-3">
+        <div className="flex items-center gap-2">
           <div className="text-[22px] font-semibold tracking-[-.01em] flex-1 truncate">sutamaya</div>
           {user && (
             <button
@@ -367,20 +367,20 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
               separate desktop-only footer at the bottom of the pane, with nothing else on it —
               not worth a whole row of its own when it fits right here). */}
           <div className={`flex items-center flex-none ${mobile ? 'gap-3.5' : 'gap-2.5'}`}>
-            <SignedInBadge user={user} size={mobile ? 32 : 28} promptGoogleSignIn={promptGoogleSignIn} />
-            {/* The badge above already goes to Settings regardless of sign-in state (see
-                SignedInBadge) — once signed in it's the one obvious account affordance, so the
-                separate gear (redundant with it) drops out; signed out, the badge alone reads
-                as "sign in", not "settings", so the gear stays as the explicit way in. */}
             {!user && (
               <button className="flex items-center text-ink/[.62]" aria-label="Settings" title="Settings" onClick={() => navigate('/settings')}>
                 <Settings size={mobile ? 20 : 16} strokeWidth={1.75} />
               </button>
             )}
+            <SignedInBadge user={user} size={mobile ? 32 : 28} promptGoogleSignIn={promptGoogleSignIn} />
+            {/* The badge above already goes to Settings regardless of sign-in state (see
+                SignedInBadge) — once signed in it's the one obvious account affordance, so the
+                separate gear (redundant with it) drops out; signed out, the badge alone reads
+                as "sign in", not "settings", so the gear stays as the explicit way in. */}
           </div>
         </div>
         {searchOpen && (
-          <div className="relative">
+          <div className="mt-4 relative">
             <input
               ref={searchInput}
               autoFocus

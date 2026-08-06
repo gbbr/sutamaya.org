@@ -243,7 +243,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
 
   function jumpToHighlight(segIndex: number) {
     setPanel(false);
-    requestAnimationFrame(() => scrollToSegment(segIndex));
+    requestAnimationFrame(() => scrollToSegment(segIndex, 'center'));
   }
 
   function closeReader() {
@@ -350,6 +350,9 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           <div className="font-serif italic" style={{ fontSize: fs - 2, marginTop: 5, color: theme.dim }}>
             {sutta.pali}
           </div>
+          <div className="font-sans" style={{ fontSize: 12, marginTop: 9, color: theme.dim }}>
+            {sutta.min} min read
+          </div>
           {sutta.blurb && (
             <div className="italic" style={{ fontSize: fs - 4, lineHeight: 1.6, marginTop: 11, color: theme.fg, opacity: 0.72 }}>
               {sutta.blurb}
@@ -391,34 +394,34 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
               ))}
             </div>
           )}
-          <div className="font-sans" style={{ fontSize: 12, marginTop: 9, color: theme.dim }}>
-            {sutta.ref} · {sutta.min} min
-          </div>
           <div style={{ height: 1, background: theme.rule, margin: '20px 0 22px' }} />
 
           {headings.length > 0 && (
-            <nav className="font-sans" style={{ marginBottom: 42 }}>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: theme.dim, marginBottom: 8 }}>
-                Contents
-              </div>
-              {headings.map((h) => (
-                <button
-                  key={h.i}
-                  className="block text-left hover:underline"
-                  style={{
-                    paddingLeft: h.level === 3 ? 16 : 0,
-                    marginTop: 6,
-                    fontSize: h.level === 3 ? 15 : 16,
-                    fontWeight: h.level === 3 ? 400 : 600,
-                    color: theme.fg,
-                    opacity: h.level === 3 ? 0.72 : 0.9,
-                  }}
-                  onClick={() => scrollToSegment(h.i)}
-                >
-                  {h.text}
-                </button>
-              ))}
-            </nav>
+            <div>
+              <nav className="font-sans" style={{ marginBottom: 22 }}>
+                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: theme.dim, marginBottom: 8 }}>
+                  Contents
+                </div>
+                {headings.map((h) => (
+                  <button
+                    key={h.i}
+                    className="block text-left hover:underline"
+                    style={{
+                      paddingLeft: h.level === 3 ? 16 : 0,
+                      marginTop: 6,
+                      fontSize: h.level === 3 ? 16 : 17,
+                      fontWeight: h.level === 3 ? 400 : 600,
+                      color: theme.fg,
+                      opacity: h.level === 3 ? 0.72 : 0.9,
+                    }}
+                    onClick={() => scrollToSegment(h.i)}
+                  >
+                    {h.text}
+                  </button>
+                ))}
+              </nav>
+              <div style={{ height: 1, background: theme.rule, margin: '20px 0 22px' }} />
+            </div>
           )}
 
           {segments ? (

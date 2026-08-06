@@ -226,7 +226,7 @@ export function ListRow({
         <div className="pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: 18 + depth * 14 + 11 }}>
           <span className="font-sans text-[12px] text-ink/60">
             "{list.label}" has {blockedDelete.count} {blockedDelete.kind === 'items' ? (blockedDelete.count === 1 ? 'sutta' : 'suttas') : blockedDelete.count === 1 ? 'list' : 'lists'} —{' '}
-            {blockedDelete.kind === 'items' ? 'remove them first' : 'move them out first'}.
+            {blockedDelete.kind === 'items' ? 'remove ' + (blockedDelete.count == 1 ? 'it' : 'them') + ' first' : 'move ' + (blockedDelete.count == 1 ? 'it' : 'them') + ' out first'}.
           </span>
         </div>
       ) : (
