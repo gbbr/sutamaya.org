@@ -30,7 +30,7 @@ export function DictionaryDock({ word, gloss, body, theme, fontSize, onClose }: 
           }}
         >
           <X size={13} strokeWidth={1.75} />
-          Close · esc
+          Close
         </button>
       </div>
       <div

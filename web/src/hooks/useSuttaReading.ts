@@ -19,11 +19,11 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(suttaId:
   const highlightGroups = useMemo(() => groupHighlights(hlForSutta, segments), [hlForSutta, segments]);
   const hlCounts = useMemo(() => highlightCountsByColor(hlForSutta), [hlForSutta]);
 
-  function scrollToSegment(segIndex: number) {
+  function scrollToSegment(segIndex: number, block?: string = 'start') {
     // 'start' rather than 'center' — a jump (TOC heading, highlight) reads as "go to this point
     // and read on from there", so the target belongs near the top of the reading pane with the
     // following text visible below it, not centered with half the context above it wasted.
-    scrollRef.current?.querySelector(`[data-seg="${segIndex}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    scrollRef.current?.querySelector(`[data-seg="${segIndex}"]`)?.scrollIntoView({ behavior: 'smooth', block });
   }
 
   return { segments, hlForSutta, highlightGroups, hlCounts, scrollRef, scrollToSegment, ...popup };

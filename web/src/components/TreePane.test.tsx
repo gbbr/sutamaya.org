@@ -281,7 +281,7 @@ describe('My Lists tree', () => {
     const row = screen.getByText('Favorites').closest('[data-node-id]') as HTMLElement;
     await userEvent.click(within(row).getByLabelText('List options'));
     await userEvent.click(screen.getByLabelText('Delete'));
-    expect(screen.getByText('"Favorites" has 1 sutta — remove them first.')).toBeInTheDocument();
+    expect(screen.getByText('"Favorites" has 1 sutta — remove it first.')).toBeInTheDocument();
     expect(screen.queryByText('Delete "Favorites"?')).not.toBeInTheDocument();
     expect(userData.removeList).not.toHaveBeenCalled();
     // Auto-dismiss timing itself is covered at the hook level (useListCrud.test.tsx) — combining
@@ -294,7 +294,7 @@ describe('My Lists tree', () => {
     const row = screen.getByText('Suttas to study').closest('[data-node-id]') as HTMLElement;
     await userEvent.click(within(row).getByLabelText('List options'));
     await userEvent.click(screen.getByLabelText('Delete'));
-    expect(screen.getByText('"Suttas to study" has 1 list — move them out first.')).toBeInTheDocument();
+    expect(screen.getByText('"Suttas to study" has 1 list — move it out first.')).toBeInTheDocument();
     expect(userData.removeList).not.toHaveBeenCalled();
   });
 
