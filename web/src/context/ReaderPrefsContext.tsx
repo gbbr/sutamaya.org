@@ -1,7 +1,5 @@
 import { createContext, useContext, useMemo, type ReactNode } from 'react';
 import { usePersistedState } from '../hooks/usePersistedState';
-import { useProfileSyncedPrefs } from '../hooks/useProfileSyncedPrefs';
-import { useAuth } from './AuthContext';
 import type { ReaderFace, ReaderTheme } from '../lib/types';
 
 export interface ReaderPrefs {
@@ -30,9 +28,7 @@ const DEFAULTS: ReaderPrefs = { theme: 'light', fs: 18, lh: 165, face: 'serif', 
 const ReaderPrefsContext = createContext<ReaderPrefsState | null>(null);
 
 export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
-  const { user } = useAuth();
   const [prefs, setPrefs] = usePersistedState<ReaderPrefs>('sutamaya.readerPrefs', DEFAULTS);
-  useProfileSyncedPrefs('reader', user?.id, user?.prefs?.reader as Partial<ReaderPrefs> | undefined, prefs, setPrefs);
 
   const value = useMemo<ReaderPrefsState>(
     () => ({

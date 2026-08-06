@@ -1,8 +1,8 @@
 # Sutamaya
 
-An offline-first reader for the Early Buddhist Texts. Three surfaces: a **Library** (corpus
-tree + user lists + search), a **Preview pane** on wide screens, and an **Immersive reader**
-(inline Pali, docked dictionary, text-range highlighting, notes, lists, typography controls).
+An offline-first reader for the Early Buddhist Texts. Two surfaces: a **Library** (corpus
+tree + user lists + search) and an **Immersive reader** (inline Pali, docked dictionary,
+text-range highlighting, notes, lists, typography controls).
 
 ## Stack
 
@@ -139,34 +139,7 @@ translation).
 **Firestore**, one document tree per user (`server/src/firestore.js`):
 
 ```
-users/{uid}                          { email, googleId, name, picture, createdAt, prefs? }   —
-                                                                                `prefs`, if
-                                                                                present, is
-                                                                                `{ reader?, ui? }`
-                                                                                — a signed-in
-                                                                                user's reader/UI
-                                                                                settings, synced
-                                                                                from
-                                                                                localStorage (see
-                                                                                Frontend below and
-                                                                                routes/prefs.js's
-                                                                                `PUT /api/prefs`,
-                                                                                which updates
-                                                                                `prefs.reader`/
-                                                                                `prefs.ui`
-                                                                                independently via
-                                                                                Firestore dot-path
-                                                                                `.update()` so
-                                                                                saving one never
-                                                                                clobbers the
-                                                                                other); returned
-                                                                                from `/api/auth/me`
-                                                                                and
-                                                                                `/api/auth/google`
-                                                                                (`publicUser()`) so
-                                                                                the client can
-                                                                                restore it on
-                                                                                sign-in
+users/{uid}                          { email, googleId, name, picture, createdAt }
 users/{uid}/lists/{listId}           { label, parentId, kind, position, items: string[] }   —
                                                                                 `kind` is
                                                                                 'list' (holds
@@ -228,11 +201,14 @@ read-modify-write race); reordering (`PUT /api/lists/order` for sibling lists, `
 /api/lists/:id/items/order` for one list's suttas) replaces `position`/`items` outright instead,
 since a full reorder isn't expressible as a single atomic array op the way add/remove is.
 Deleting a list re-parents its own children to its parent (`routes/lists.js`) rather than
-orphaning or cascade-deleting them. `PUT /api/highlights/range` fetches a sutta's highlights (single
-equality `where`, no composite index needed), filters overlaps of the given `[s,e)` range in
-segment `i` in memory, and deletes+inserts in one `batch()` — a direct port of the prototype's
-`setRangeHl`, just async. Firestore's Always Free tier (1GiB, 50K reads/20K writes/20K deletes
-*per day*, no time limit) comfortably covers personal-scale use; see `deploy.md`.
+orphaning or cascade-deleting them. `PUT /api/highlights/ranges` fetches a sutta's highlights
+(single equality `where`, no composite index needed), filters overlaps of the given `[s,e)`
+ranges (one or more, each in its own segment `i` — a cross-segment selection passes every
+segment's range in one request) in memory, and deletes+inserts in a single `runTransaction()` —
+a direct descendant of the prototype's `setRangeHl`, extended to cover a whole cross-segment
+selection atomically instead of one call per segment. Firestore's Always Free tier (1GiB, 50K
+reads/20K writes/20K deletes *per day*, no time limit) comfortably covers personal-scale use; see
+`deploy.md`.
 
 Auth is Google sign-in only (`server/src/auth.js`, `routes/auth.js`): the frontend gets an ID
 token credential from Google Identity Services (see `AuthContext.tsx`), and
@@ -280,18 +256,14 @@ that header will look like broken auth (cookie silently not persisted) — it is
   server to discard the stale optimistic edit, since there's no offline write queue),
   `ReaderPrefsContext` (theme/font/line-height/Pali/notes-visibility), and `UiPrefsContext`
   (pane-width/UI-scale/UI-font). Both prefs contexts are `localStorage`-backed
-  (`usePersistedState`) first and foremost — signed out, or before the initial `/api/auth/me`
-  round trip resolves, that's the only source of truth, so a setting change always takes effect
-  immediately regardless of auth state. `hooks/useProfileSyncedPrefs.ts` (shared by both
-  contexts) layers a signed-in-only sync on top: a debounced `PUT /api/prefs` on every local
-  change (so a slider drag doesn't fire one request per tick), and a one-time merge of the
-  server's saved values over local state on sign-in (or already-signed-in page load) — see
-  `server/src/routes/prefs.js` and the `prefs` field on `users/{uid}` above.
+  (`usePersistedState`) only — deliberately per-device, not synced to the account, since theme
+  and font/size preferences are display settings a user may reasonably want to differ by device
+  (screen size, ambient lighting).
 - `lib/corpus.ts`, `lib/dictionary.ts`, `lib/theme.ts`, `lib/api.ts` — pure data/fetch helpers,
   no React.
-- `components/SegmentedText.tsx` — the shared paragraph renderer (tap-to-reveal Pali, word-tap
-  dictionary, highlighted-range spans) used by both the reader and the desktop preview pane. A
-  segment with a translator note (`SegmentFile.note`) gets a small clickable asterisk at the end
+- `components/SegmentedText.tsx` — the reader's paragraph renderer (tap-to-reveal Pali, word-tap
+  dictionary, highlighted-range spans). A segment with a translator note (`SegmentFile.note`)
+  gets a small clickable asterisk at the end
   of its English text (`stopPropagation()`s so it doesn't also trigger the tap-to-reveal-Pali
   click on the paragraph around it) — hover shows the plain-text note via the native `title`
   attribute, click toggles an inline expansion below the segment (rendered via
@@ -301,16 +273,17 @@ that header will look like broken auth (cookie silently not persisted) — it is
   panel's Theme tab (renamed from "Text" — same tab, still theme/font/Pali controls plus this).
 - `hooks/useHighlightPopup.ts` — selection → floating colour-picker popup logic (segment-relative
   character offsets via `Range`, ported from the prototype's `onTextUp`), shared the same way.
-  A selection spanning multiple segments produces one highlight range per segment, written
-  sequentially (`UserDataContext.setHighlightRange`, one server call per segment, only the last
-  syncing fresh state) and then re-merged for display/counting by `lib/highlights.ts`'s
+  A selection spanning multiple segments produces one highlight range per segment, written in a
+  single batched call (`UserDataContext.setHighlightRanges`, one `PUT /api/highlights/ranges`
+  request covering every segment's range in one atomic transaction — see Backend above) and then
+  re-merged for display/counting by `lib/highlights.ts`'s
   `groupHighlights()`, which treats same-colour highlights in consecutive segments as one
   highlight rather than disjoint pieces.
 - `TreePane`'s Library/My Lists toggle — a compact icon-based segmented control on the title row
   (not a separate pane-collapse control, which this replaced) switches between the corpus browse
   tree and the user's list tree; state persists across reloads via `localStorage`.
 - Routing is URL-driven (not just client state, unlike the original prototype): `/browse/:nodeId`
-  and `/browse/:nodeId/:suttaId` render `LibraryPage` (tree/list/preview, responsive to viewport
+  and `/browse/:nodeId/:suttaId` render `LibraryPage` (tree/list, responsive to viewport
   width — see `LayoutContext.mobile/twoPane/desktop`); `/read/:suttaId` renders `ReaderPage`
   full-screen; `/settings` is a separate route. There's no login/register route — Google
   sign-in is triggered in place (the account badge in `TreePane`, or `promptGoogleSignIn()`
@@ -322,21 +295,20 @@ that header will look like broken auth (cookie silently not persisted) — it is
   that React 18's dev-mode double-invoking breaks, so `/` → `/browse/dn` silently never fired
   under StrictMode. Confirmed by bisecting with headless Chrome + CDP screenshots during
   development. If you re-enable StrictMode, re-test every `navigate()`-on-mount path.
-- Keyboard nav in `LibraryPage`: Space toggles the preview pane (only once `desktop` — see
-  `LayoutContext`, `w >= 880` is the same breakpoint `PreviewPane` itself mounts at); once a
-  preview is open, Left/Right step the *whole corpus's* canonical order (`flatSuttaOrder`, same
-  as the reader's own Prev/Next) and Enter opens the previewed sutta into the full reader —
-  Left/Right/Enter all act on the previewed sutta (`suttaId`, the route's own selection), the only
-  keyboard-addressable "current" item in this pane. Stepping past a category boundary re-derives
-  `nodeId` from the landed-on sutta's own corpus node every time (`corpus.suttas[id].node`), the
-  same as clicking it in the tree would — that's what makes the tree pane (and the list pane's
-  contents) follow along and expand/scroll to the right place on the jump, including away from a
-  list into the browse tree if that's where the stepped-to sutta actually lives.
+- Keyboard nav in `LibraryPage`: Up/Down step the *whole corpus's* canonical order
+  (`flatSuttaOrder`, same as the reader's own Prev/Next) through the list, highlighting a row
+  without opening it, and Enter opens the highlighted sutta into the full reader — Up/Down/Enter
+  all act on `suttaId` (the route's own selection), the only keyboard-addressable "current" item
+  in this pane. Stepping past a category boundary re-derives `nodeId` from the landed-on sutta's
+  own corpus node every time (`corpus.suttas[id].node`), the same as clicking it in the tree
+  would — that's what makes the tree pane (and the list pane's contents) follow along and
+  expand/scroll to the right place on the jump, including away from a list into the browse tree
+  if that's where the stepped-to sutta actually lives.
 - Closing the reader (the X button or Escape) returns to the exact pane/nodeId/scroll position it
-  was opened from, not just the sutta's bare corpus location — `LibraryPage`'s `onOpen`/
-  `onOpenReader` and `PreviewPane`'s "Open" button pass the current `/browse/...` URL as router
-  `state: { from }` on `navigate()`; `ReaderPage` reads `location.state.from` and re-passes it
-  through its own `navigate()` calls (Prev/Next, its search overlay) so it survives however many
+  was opened from, not just the sutta's bare corpus location — `LibraryPage`'s `onOpen` passes the
+  current `/browse/...` URL as router `state: { from }` on `navigate()`; `ReaderPage` reads
+  `location.state.from` and re-passes it through its own `navigate()` calls (Prev/Next, its
+  search overlay) so it survives however many
   suttas the reader visits before closing. Falls back to `/browse/{sutta.node}/{suttaId}` for a
   direct/bookmarked link to `/read/:suttaId`, which has no such origin.
 - Search — both `TreePane`'s own (the `/` shortcut) and the reader's `ReaderSearchOverlay` — goes
@@ -344,7 +316,7 @@ that header will look like broken auth (cookie silently not persisted) — it is
   (NFD-normalizes then strips combining marks, i.e. `̀`–`ͯ`, before lowercasing both
   query and haystack) so typing plain "a"/"n" matches Pali "ā"/"ñ" etc.
 - `components/Tooltip.tsx` — a small custom tooltip (hover/focus, ~350ms delay) used in place of
-  the native `title` attribute on TreePane/ListPane/PreviewPane's icon-only buttons, since `title`
+  the native `title` attribute on TreePane/ListPane's icon-only buttons, since `title`
   renders as inconsistent OS chrome that can't be styled. Portaled to `<body>` and positioned from
   the trigger's own `getBoundingClientRect()` (not CSS `position:absolute` against a wrapper) so
   it isn't clipped by a pane's own scroll `overflow`. Every button converted this way also picked

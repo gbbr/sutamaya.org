@@ -22,6 +22,7 @@ export default {
         chip: 'rgb(var(--chip) / <alpha-value>)',
         accent: 'rgb(var(--accent) / <alpha-value>)',
         accent2: 'rgb(var(--accent2) / <alpha-value>)',
+        'accent-text': 'rgb(var(--accent-text) / <alpha-value>)',
         'accent-hover': '#6B5230',
         selection: 'rgb(var(--selection) / <alpha-value>)',
         'hl-amber': '#F0E3A8',

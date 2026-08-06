@@ -34,7 +34,7 @@ function offsetWithin(seg: HTMLElement, container: Node, containerOffset: number
 }
 
 export function useHighlightPopup(suttaId: string | undefined, highlights: Highlight[], segments: SegmentFile[] | null = null) {
-  const { setHighlightRange, syncUserData } = useUserData();
+  const { setHighlightRanges } = useUserData();
   const [pop, setPop] = useState<PopState | null>(null);
 
   // Clicking directly on an already-highlighted span (as opposed to dragging a fresh selection)
@@ -124,19 +124,8 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
   const pick = useCallback(
     async (color: string | null) => {
       if (!pop || !suttaId) return;
-      // Sequential, not Promise.all: setHighlightRange does an optimistic read-modify-write of
-      // local highlight state, so overlapping calls for the same suttaId (different segments of
-      // the same selection) could race and clobber each other's optimistic update. Awaiting
-      // them one at a time keeps every call working off the previous one's already-settled
-      // state. Each call passes `sync: false` so a multi-segment selection triggers one server
-      // sync after the whole batch instead of one per segment (setHighlightRange already syncs
-      // on its own if one of these calls fails, so a failure here just needs logging, not a
-      // second sync).
       try {
-        for (const r of pop.ranges) {
-          await setHighlightRange(suttaId, r.i, r.s, r.e, color, false);
-        }
-        await syncUserData();
+        await setHighlightRanges(suttaId, pop.ranges, color);
       } catch (e) {
         console.error('highlight range save failed', e);
       }
@@ -144,7 +133,7 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
       const sel = window.getSelection();
       if (sel) sel.removeAllRanges();
     },
-    [pop, suttaId, setHighlightRange, syncUserData]
+    [pop, suttaId, setHighlightRanges]
   );
 
   const close = useCallback(() => setPop(null), []);

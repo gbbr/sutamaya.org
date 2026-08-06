@@ -37,7 +37,7 @@ export function TreeRow({
             <span className="font-sans text-[13px] font-bold text-ink/45 mr-2">{node.ref}</span>
             <span className="text-[15px] font-semibold leading-[1.3]">{node.label}</span>
           </span>
-          {node.sub && <span className="block font-serif text-[13px] italic text-accent mt-[1px]">{node.sub}</span>}
+          {node.sub && <span className="block font-serif text-[13px] italic text-accent-text mt-[1px]">{node.sub}</span>}
           <span className="block font-sans text-[13px] text-ink/45 mt-[2px]">
             {node.count} sutta{node.count === 1 ? '' : 's'}
           </span>

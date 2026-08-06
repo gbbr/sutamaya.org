@@ -22,7 +22,7 @@ function Routes() {
       {/* One route element (not two) so /browse/:nodeId and /browse/:nodeId/:suttaId share the
           same LibraryPage instance — see the comment on `suttaId` in LibraryPage.tsx for why:
           two separate route elements here would remount LibraryPage (and every pane's scroll
-          position with it) every time a preview sutta is selected/deselected. `*suttaId` is a
+          position with it) every time a highlighted row is selected/deselected. `*suttaId` is a
           splat, giving '' (not undefined) when the segment is absent. */}
       <LibraryPage path="/browse/:nodeId/*suttaId" />
       <ReaderPage path="/read/:suttaId" />

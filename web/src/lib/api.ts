@@ -60,18 +60,13 @@ export const notesApi = {
 };
 
 export const highlightsApi = {
-  setRange: (suttaId: string, i: number, s: number, e: number, color: string | null) =>
-    request<{ ok: true }>('/highlights/range', { method: 'PUT', body: JSON.stringify({ suttaId, i, s, e, color }) }),
+  setRanges: (suttaId: string, ranges: { i: number; s: number; e: number }[], color: string | null) =>
+    request<{ ok: true }>('/highlights/ranges', { method: 'PUT', body: JSON.stringify({ suttaId, ranges, color }) }),
   remove: (id: string) => request<{ ok: true }>(`/highlights/${encodeURIComponent(id)}`, { method: 'DELETE' }),
 };
 
 export const visitedApi = {
   mark: (suttaId: string) => request<{ ok: true }>(`/visited/${encodeURIComponent(suttaId)}`, { method: 'POST' }),
-};
-
-export const prefsApi = {
-  save: (body: { reader?: Record<string, unknown>; ui?: Record<string, unknown> }) =>
-    request<{ ok: true }>('/prefs', { method: 'PUT', body: JSON.stringify(body) }),
 };
 
 export type { Highlight };

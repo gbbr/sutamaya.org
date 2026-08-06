@@ -92,7 +92,7 @@ function mockUserData(overrides: Partial<ReturnType<typeof useUserData>> = {}): 
     toggleMembership: vi.fn(async () => {}),
     addToList: vi.fn(async () => {}),
     submitNote: vi.fn(async () => {}),
-    setHighlightRange: vi.fn(async () => {}),
+    setHighlightRanges: vi.fn(async () => {}),
     removeHighlights: vi.fn(async () => {}),
     markVisited: vi.fn(),
     syncUserData: vi.fn(async () => {}),
@@ -103,19 +103,13 @@ function mockUserData(overrides: Partial<ReturnType<typeof useUserData>> = {}): 
 function mockLayout(overrides: Partial<ReturnType<typeof useLayout>> = {}): ReturnType<typeof useLayout> {
   return {
     treeW: 264,
-    listW: 404,
-    previewHidden: false,
     w: 1200,
     mobile: false,
     twoPane: false,
     desktop: true,
-    paneW: { tree: 264, list: 404, treeMax: 600, listMax: 600 },
-    hidePreview: vi.fn(),
-    showPreview: vi.fn(),
+    paneW: { tree: 264, treeMax: 600 },
     resetTree: vi.fn(),
-    resetList: vi.fn(),
     dragTree: vi.fn(),
-    dragList: vi.fn(),
     ...overrides,
   };
 }

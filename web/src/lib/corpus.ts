@@ -127,8 +127,8 @@ export interface BreadcrumbEntry {
 }
 
 // The path from nikaya down to (and including) a sutta's own leaf group — e.g. "Saṁyutta
-// Nikāya > The Group on Feeling > SN36.1–11" — for a location breadcrumb above the reader/
-// preview title. Each entry is directly browsable via /browse/{id}.
+// Nikāya > The Group on Feeling > SN36.1–11" — for a location breadcrumb above the reader's
+// title. Each entry is directly browsable via /browse/{id}.
 export function breadcrumbFor(corpus: Corpus, nodeId: string): BreadcrumbEntry[] {
   const found = findNode(corpus, nodeId);
   if (!found) return [];

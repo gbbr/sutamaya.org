@@ -18,26 +18,37 @@ annotationsRouter.put(
   })
 );
 
-// Atomically replace any highlight overlapping [s,e) in segment i of suttaId with `color`
-// (color === null just removes the overlap). Mirrors the prototype's setRangeHl. Fetches by
-// suttaId alone (single equality filter, no composite index needed) and filters/overlaps
-// in memory — a sutta has at most a handful of highlights, so this is cheap either way.
-// Runs as a transaction (not a plain batch) so two overlapping writes for the same sutta
-// racing each other (e.g. two open tabs) can't both read the same pre-write snapshot and
-// produce a lost update — Firestore retries the loser against the winner's fresh state.
+// Atomically replace any highlight overlapping any of the given [s,e) ranges (each in its own
+// segment i) of suttaId with `color` (color === null just removes the overlap) — a single-range
+// array covers the common single-segment selection, a multi-entry one covers a cross-segment
+// selection (see useHighlightPopup), so one request always maps to one atomic write regardless
+// of how many segments it spans. Mirrors the prototype's setRangeHl. Fetches by suttaId alone
+// (single equality filter, no composite index needed) and filters/overlaps in memory — a sutta
+// has at most a handful of highlights, so this is cheap either way. Runs as a transaction (not a
+// plain batch) so two overlapping writes for the same sutta racing each other (e.g. two open
+// tabs) can't both read the same pre-write snapshot and produce a lost update — Firestore retries
+// the loser against the winner's fresh state.
 annotationsRouter.put(
-  '/highlights/range',
+  '/highlights/ranges',
   asyncHandler(async (req, res) => {
-    const { suttaId, i, s, e, color } = req.body || {};
-    if (!suttaId || !Number.isInteger(i) || !Number.isInteger(s) || !Number.isInteger(e)) {
-      return res.status(400).json({ error: 'suttaId, i, s, e are required.' });
+    const { suttaId, ranges, color } = req.body || {};
+    if (!suttaId || !Array.isArray(ranges) || !ranges.length) {
+      return res.status(400).json({ error: 'suttaId and a non-empty ranges array are required.' });
+    }
+    for (const r of ranges) {
+      if (!Number.isInteger(r.i) || !Number.isInteger(r.s) || !Number.isInteger(r.e)) {
+        return res.status(400).json({ error: 'each range needs integer i, s, e.' });
+      }
     }
     const col = highlightsCol(req.user.id);
     await db.runTransaction(async (tx) => {
       const snap = await tx.get(col.where('suttaId', '==', suttaId));
-      const overlapping = snap.docs.filter((doc) => rangesOverlap(doc.data(), i, s, e));
+      const overlapping = snap.docs.filter((doc) => ranges.some((r) => rangesOverlap(doc.data(), r.i, r.s, r.e)));
       overlapping.forEach((doc) => tx.delete(doc.ref));
-      if (color) tx.set(col.doc(), { suttaId, i, s, e, color, createdAt: new Date().toISOString() });
+      if (color) {
+        const createdAt = new Date().toISOString();
+        ranges.forEach((r) => tx.set(col.doc(), { suttaId, i: r.i, s: r.s, e: r.e, color, createdAt }));
+      }
     });
     res.json({ ok: true });
   })
