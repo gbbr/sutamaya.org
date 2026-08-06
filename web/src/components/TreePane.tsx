@@ -13,6 +13,7 @@ import { useListTreeDrag } from '../hooks/useListTreeDrag';
 import { ancestorsOf, findNode, isExpandable, searchCorpus } from '../lib/corpus';
 import { ancestorsOfList } from '../lib/lists';
 import { HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
+import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
 import type { ListDef } from '../lib/types';
 import { TreeRow } from './TreeRow';
 import { SignedInBadge } from './SignedInBadge';
@@ -235,24 +236,20 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
       // character into the search box (or any input) must never re-trigger them.
       const isSearchInput = e.target === searchInput.current;
       if (searching && hits.length > 0 && !(tag === 'textarea' || (tag === 'input' && !isSearchInput))) {
-        if (e.key === 'ArrowDown') {
+        if (isShortcut(e, SHORTCUTS.librarySelectMove)) {
           e.preventDefault();
-          setSearchActiveIndex((i) => Math.min(hits.length - 1, i + 1));
+          if (e.key === 'ArrowDown') setSearchActiveIndex((i) => Math.min(hits.length - 1, i + 1));
+          else setSearchActiveIndex((i) => Math.max(0, i - 1));
           return;
         }
-        if (e.key === 'ArrowUp') {
-          e.preventDefault();
-          setSearchActiveIndex((i) => Math.max(0, i - 1));
-          return;
-        }
-        if (e.key === 'Enter' && searchActiveIndexRef.current >= 0 && searchActiveIndexRef.current < hits.length) {
+        if (isShortcut(e, SHORTCUTS.librarySelectOpen) && searchActiveIndexRef.current >= 0 && searchActiveIndexRef.current < hits.length) {
           e.preventDefault();
           openHit(hits[searchActiveIndexRef.current].id);
           return;
         }
       }
       if (tag === 'input' || tag === 'textarea') return;
-      if (e.key === '/') {
+      if (isShortcut(e, SHORTCUTS.librarySearch)) {
         e.preventDefault();
         if (searchOpen) {
           searchInput.current?.focus();
@@ -260,7 +257,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
         } else {
           setSearchOpen(true);
         }
-      } else if (e.key.toLowerCase() === 'x' && user) {
+      } else if (isShortcut(e, SHORTCUTS.libraryToggleLists) && user) {
         e.preventDefault();
         setPaneView((v) => (v === 'library' ? 'lists' : 'library'));
       }

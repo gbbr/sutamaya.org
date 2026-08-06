@@ -4,8 +4,10 @@ import { useLayout } from '../context/LayoutContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { flatSuttaOrder } from '../lib/corpus';
+import { SHORTCUTS, shortcutsForScope, isShortcut } from '../lib/shortcuts';
 import { TreePane } from '../components/TreePane';
 import { ListPane } from '../components/ListPane';
+import { ShortcutsModal } from '../components/ShortcutsModal';
 
 // Tree/list divider hit area — split asymmetrically around the boundary rather than centered on
 // it, since a naive symmetric widening runs into two different edges' content:
@@ -72,6 +74,7 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
     }
   }, [view]);
   const [query, setQuery] = useState('');
+  const [shortcutsOpen, setShortcutsOpen] = useState(false);
 
   const [nodeId, setNodeId] = useState(routeNodeId);
   useEffect(() => {
@@ -110,15 +113,29 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
   // (see ListPane's matching `on` highlight).
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
+      // While open, the help modal owns every key itself — Esc or '?' again both close it,
+      // mirroring how every other overlay in this app closes.
+      if (shortcutsOpen) {
+        if (e.key === 'Escape' || isShortcut(e, SHORTCUTS.libraryHelp)) {
+          e.preventDefault();
+          setShortcutsOpen(false);
+        }
+        return;
+      }
       const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
       if (tag === 'input' || tag === 'textarea') return;
+      if (isShortcut(e, SHORTCUTS.libraryHelp)) {
+        e.preventDefault();
+        setShortcutsOpen(true);
+        return;
+      }
       if (!suttaId || !corpus) return;
-      if (e.key === 'Enter') {
+      if (isShortcut(e, SHORTCUTS.librarySelectOpen)) {
         e.preventDefault();
         onOpen(suttaId);
         return;
       }
-      if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return;
+      if (!isShortcut(e, SHORTCUTS.librarySelectMove)) return;
       const dir = e.key === 'ArrowUp' ? -1 : 1;
       // Browsing a user list, Up/Down stays inside it — stepping through *that* list's own
       // items in its own stored order, never touching `nodeId`, and stopping dead at either end
@@ -156,7 +173,7 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [suttaId, suttaOrder, corpus, lists, nodeId]);
+  }, [shortcutsOpen, suttaId, suttaOrder, corpus, lists, nodeId]);
 
   return (
     <div data-component="LibraryPage" className="relative flex overflow-hidden bg-paper h-full">
@@ -202,6 +219,8 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
           visible={showListPane}
         />
       </div>
+
+      {shortcutsOpen && <ShortcutsModal shortcuts={shortcutsForScope('library')} onClose={() => setShortcutsOpen(false)} />}
     </div>
   );
 }
