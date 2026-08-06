@@ -8,6 +8,23 @@ import { TreePane } from '../components/TreePane';
 import { ListPane } from '../components/ListPane';
 import { PreviewPane } from '../components/PreviewPane';
 
+// Tree/list divider hit area — split asymmetrically around the boundary rather than centered on
+// it, since a naive symmetric widening runs into two different edges' content:
+//  - TreePane's "List options" row button sits flush against the pane's right edge (pr-[10px],
+//    20px button — see TreePane.tsx's ListRow), so the reach backward (into the tree pane) stays
+//    inside that 10px padding buffer.
+//  - ListPane's own rows are `px-5` (20px) with the row itself being the full-width tap target
+//    (TreePane.tsx's counterpart, ListPane.tsx ~L264), so the reach forward (into the list pane)
+//    is kept well short of where the row's visible text actually starts, rather than visually
+//    bleeding into it.
+// Nothing is drawn here — only the cursor and drag behavior live in this strip.
+const TREE_LIST_HIT_BEFORE = 8;
+const TREE_LIST_HIT_AFTER = 14;
+
+// List/preview divider hit area — centered on the boundary (no edge content on either side close
+// enough to require the tree/list divider's asymmetric treatment above).
+const LIST_PREVIEW_HIT_HALF = 18;
+
 export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteComponentProps<{ nodeId: string; suttaId?: string }>) {
   // `suttaId` is a splat segment (see App.tsx) so both /browse/:nodeId and
   // /browse/:nodeId/:suttaId are the *same* route element — giving it '' rather than undefined
@@ -15,7 +32,7 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
   // pane's scroll position) across selecting/deselecting a preview sutta, instead of the
   // full remount+state-loss that two separate <LibraryPage> route elements caused (reach-router
   // auto-keys route children by position, so switching which one matched was a key change).
-  const { mobile, desktop, previewHidden, showPreview, hidePreview, dragTree, resetTree, dragList, resetList } = useLayout();
+  const { mobile, desktop, previewHidden, showPreview, hidePreview, dragTree, resetTree, dragList, resetList, paneW } = useLayout();
   const { corpus } = useCorpus();
   const { lists } = useUserData();
   // @reach/router defers the actual route-param update by a microtask + rAF after navigate()
@@ -164,7 +181,7 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
   }, [desktop, previewHidden, suttaId, suttaOrder, corpus, lists, nodeId]);
 
   return (
-    <div data-component="LibraryPage" className="flex overflow-hidden bg-paper h-full">
+    <div data-component="LibraryPage" className="relative flex overflow-hidden bg-paper h-full">
       {/* Always mounted (never conditionally rendered) on mobile — a mounted-but-hidden pane
           keeps its scroll position and `expanded` tree state across a tree<->list toggle
           instead of losing them to a remount. `display:contents` when shown keeps this wrapper
@@ -184,8 +201,17 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
         />
       </div>
 
+      {/* Positioned absolutely (rather than the zero-footprint negative-margin overlay this
+          replaced) so the touch-friendly hit area can extend past the pane boundary on both
+          sides without shifting either pane's width or fighting DOM paint order for which pane
+          "wins" the overlap — z-10 keeps it grabbable above both panes' own content regardless. */}
       {!mobile && (
-        <div className="flex-none w-[7px] -ml-[7px] cursor-col-resize touch-none" onPointerDown={dragTree} onDoubleClick={resetTree} />
+        <div
+          className="absolute top-0 bottom-0 z-10 cursor-col-resize touch-none"
+          style={{ left: paneW.tree - TREE_LIST_HIT_BEFORE, width: TREE_LIST_HIT_BEFORE + TREE_LIST_HIT_AFTER }}
+          onPointerDown={dragTree}
+          onDoubleClick={resetTree}
+        />
       )}
 
       <div style={{ display: showListPane ? 'contents' : 'none' }}>
@@ -201,7 +227,12 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
       </div>
 
       {desktop && !previewHidden && (
-        <div className="flex-none w-[7px] -ml-[7px] cursor-col-resize touch-none" onPointerDown={dragList} onDoubleClick={resetList} />
+        <div
+          className="absolute top-0 bottom-0 z-10 cursor-col-resize touch-none"
+          style={{ left: paneW.tree + paneW.list - LIST_PREVIEW_HIT_HALF, width: LIST_PREVIEW_HIT_HALF * 2 }}
+          onPointerDown={dragList}
+          onDoubleClick={resetList}
+        />
       )}
 
       {desktop && <PreviewPane selectedId={suttaId} />}

@@ -6,10 +6,12 @@ interface DictionaryDockProps {
   gloss: string;
   body: string;
   theme: ThemeColors;
+  fontSize: number;
   onClose: () => void;
 }
 
-export function DictionaryDock({ word, gloss, body, theme, onClose }: DictionaryDockProps) {
+export function DictionaryDock({ word, gloss, body, theme, fontSize, onClose }: DictionaryDockProps) {
+  const glossSize = Math.max(11, fontSize - 5.5);
   return (
     <section
       data-component="DictionaryDock"
@@ -17,10 +19,11 @@ export function DictionaryDock({ word, gloss, body, theme, onClose }: Dictionary
       style={{ borderTop: `2px solid ${theme.fg}`, background: theme.panel, padding: '14px 22px 18px' }}
     >
       <div className="flex items-baseline gap-3">
-        <div className="text-[20px] font-semibold font-serif">{word}</div>
-        <div className="font-sans flex-1 text-[12.5px] opacity-55">{gloss}</div>
+        <div className="font-semibold font-serif" style={{ fontSize: fontSize + 2 }}>{word}</div>
+        <div className="font-sans flex-1 opacity-55" style={{ fontSize: glossSize }}>{gloss}</div>
         <button
-          className="flex items-center gap-1 font-sans text-[12.5px] opacity-60"
+          className="flex items-center gap-1 font-sans opacity-60"
+          style={{ fontSize: glossSize }}
           onClick={(e) => {
             e.stopPropagation();
             onClose();
@@ -30,7 +33,11 @@ export function DictionaryDock({ word, gloss, body, theme, onClose }: Dictionary
           Close · esc
         </button>
       </div>
-      <div className="text-[14.5px] leading-[1.55] mt-[7px] opacity-[.82]" dangerouslySetInnerHTML={{ __html: body }} />
+      <div
+        className="leading-[1.55] mt-[7px] opacity-[.82]"
+        style={{ fontSize: Math.max(12, fontSize - 3.5) }}
+        dangerouslySetInnerHTML={{ __html: body }}
+      />
     </section>
   );
 }

@@ -15,6 +15,7 @@ import { ListMembershipPicker } from './ListMembershipPicker';
 import { flattenListTree, resolveListById } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
+import { HighlightCountBadge } from './HighlightCountBadge';
 
 interface PreviewPaneProps {
   selectedId?: string;
@@ -112,15 +113,6 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
         )}
         {(hlCounts.length > 0 || chips.length > 0) && (
           <div className="flex flex-wrap items-center gap-[6px] mt-3">
-            {hlCounts.map(({ c, count }) => (
-              <span
-                key={c}
-                className="inline-flex items-center justify-center h-5 rounded-full font-sans text-[11px] font-extrabold"
-                style={{ background: c, color: '#000', minWidth: 20, padding: '0 5px' }}
-              >
-                {count}
-              </span>
-            ))}
             {chips.map((id) => (
               <span
                 key={id}
@@ -128,6 +120,9 @@ export function PreviewPane({ selectedId }: PreviewPaneProps) {
               >
                 {breadcrumbForId(id)}
               </span>
+            ))}
+            {hlCounts.map(({ c, count }) => (
+              <HighlightCountBadge key={c} color={c} count={count} />
             ))}
           </div>
         )}
