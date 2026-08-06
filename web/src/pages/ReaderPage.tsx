@@ -16,6 +16,7 @@ import { HighlightGutter } from '../components/HighlightGutter';
 import { DictionaryDock } from '../components/DictionaryDock';
 import { ReaderMenuPanel } from '../components/ReaderMenuPanel';
 import { ReaderSearchOverlay } from '../components/ReaderSearchOverlay';
+import { HighlightCountBadge } from '../components/HighlightCountBadge';
 
 interface DictState {
   word: string;
@@ -50,6 +51,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     segments,
     hlForSutta,
     highlightGroups,
+    hlCounts,
     scrollRef,
     scrollToSegment,
     pop,
@@ -361,7 +363,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
               {notes[suttaId]}
             </div>
           )}
-          {(suttaLists.length > 0) && (
+          {(suttaLists.length > 0 || hlCounts.length > 0) && (
             <div className="flex flex-wrap items-center gap-[6px]" style={{ marginTop: 11 }}>
               {suttaLists.map(({ id, list, breadcrumb }) => {
                 return (
@@ -375,6 +377,18 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
                   </button>
                 );
               })}
+              {hlCounts.map(({ c, count }) => (
+                <HighlightCountBadge
+                  key={c}
+                  color={c}
+                  count={count}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setTab('highlights');
+                    setPanel(true);
+                  }}
+                />
+              ))}
             </div>
           )}
           <div className="font-sans" style={{ fontSize: 12, marginTop: 9, color: theme.dim }}>
@@ -435,7 +449,9 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
         </div>
       </div>
 
-      {dict && <DictionaryDock word={dict.word} gloss={dict.gloss} body={dict.body} theme={theme} onClose={() => setDict(null)} />}
+      {dict && (
+        <DictionaryDock word={dict.word} gloss={dict.gloss} body={dict.body} theme={theme} fontSize={fs} onClose={() => setDict(null)} />
+      )}
 
       {panel && (
         <ReaderMenuPanel

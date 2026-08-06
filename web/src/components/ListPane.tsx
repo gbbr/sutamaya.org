@@ -9,6 +9,7 @@ import { highlightCountsByColor } from '../lib/highlights';
 import { autoScrollEdge } from '../lib/dragAutoScroll';
 import { flattenListTree, resolveListById } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
+import { HighlightCountBadge } from './HighlightCountBadge';
 import type { Sutta } from '../lib/types';
 
 interface ListPaneProps {
@@ -274,15 +275,6 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
                       <Check size={13} strokeWidth={2.25} />
                     </span>
                   )}
-                  {hlCounts.map(({ c, count }) => (
-                    <span
-                      key={c}
-                      className="inline-flex items-center justify-center align-middle ml-1.5 rounded-full font-sans text-[11.5px] font-extrabold"
-                      style={{ background: c, color: '#000', minWidth: 20, height: 20, padding: '0 5px' }}
-                    >
-                      {count}
-                    </span>
-                  ))}
                 </span>
                 <span className="block font-serif text-[13.5px] italic mt-[1px] text-accent">{s.pali}</span>
                 {note ? (
@@ -295,16 +287,19 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, onOpenRead
                 ) : (
                   <span className="block text-[14px] leading-[1.5] mt-1.5 text-ink/[.72]">{s.blurb}</span>
                 )}
-                {chips.length > 0 && (
-                  <span className="flex flex-wrap gap-1.5 mt-2">
+                {(chips.length > 0 || hlCounts.length > 0) && (
+                  <span className="flex flex-wrap items-center gap-1.5 mt-2">
                     {chips.map((c) => (
                       <span
                         key={c.id}
-                        className="inline-flex items-center whitespace-nowrap leading-[1.4] rounded-[10px] px-[9px] py-[2px] font-sans text-[11px] border"
+                        className="inline-flex items-center h-5 whitespace-nowrap rounded-[10px] px-[9px] font-sans text-[11px] border"
                         style={{ borderColor: 'rgba(27,25,23,.25)' }}
                       >
                         {c.breadcrumb}
                       </span>
+                    ))}
+                    {hlCounts.map(({ c, count }) => (
+                      <HighlightCountBadge key={c} color={c} count={count} />
                     ))}
                   </span>
                 )}
