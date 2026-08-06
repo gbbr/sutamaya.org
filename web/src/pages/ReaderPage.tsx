@@ -10,12 +10,14 @@ import { flattenListTree, resolveListById } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { lookupWord } from '../lib/dictionary';
+import { SHORTCUTS, shortcutsForScope, isShortcut } from '../lib/shortcuts';
 import { SegmentedText } from '../components/SegmentedText';
 import { HighlightPopup } from '../components/HighlightPopup';
 import { HighlightGutter } from '../components/HighlightGutter';
 import { DictionaryDock } from '../components/DictionaryDock';
 import { ReaderMenuPanel } from '../components/ReaderMenuPanel';
 import { ReaderSearchOverlay } from '../components/ReaderSearchOverlay';
+import { ReaderShortcutsModal } from '../components/ReaderShortcutsModal';
 import { HighlightCountBadge } from '../components/HighlightCountBadge';
 
 interface DictState {
@@ -41,6 +43,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   const [tab, setTab] = useState<'highlights' | 'lists' | 'text'>(initialPanelTab || 'highlights');
   const [noteFocusSignal, setNoteFocusSignal] = useState(0);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [shortcutsOpen, setShortcutsOpen] = useState(false);
   const [mobile, setMobile] = useState(() => window.innerWidth < 860);
   const tapRef = useRef<{ x: number; y: number } | null>(null);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -191,6 +194,15 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
+      // While open, the help modal owns every key itself — Esc or '?' again both close it,
+      // mirroring how every other overlay in this app closes.
+      if (shortcutsOpen) {
+        if (e.key === 'Escape' || isShortcut(e, SHORTCUTS.readerHelp)) {
+          e.preventDefault();
+          setShortcutsOpen(false);
+        }
+        return;
+      }
       // While the search overlay is open, it owns every key itself (see its own onKeyDown) —
       // bail out before even the input/textarea tag check below, since a click on a result row
       // (not the input) would otherwise let these fall through to the reader's own shortcuts.
@@ -201,7 +213,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       // 'h'/'l'/'n' that would otherwise land in whatever's focused. A field with its own
       // graduated Escape behavior (see ListMembershipPicker) calls stopPropagation() so this
       // doesn't also fire on the same keypress and skip past its first step.
-      if (e.key === 'Escape') {
+      if (isShortcut(e, SHORTCUTS.readerClose)) {
         if (dict) setDict(null);
         else if (panel) setPanel(false);
         else closeReader();
@@ -209,28 +221,30 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       }
       const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
       if (tag === 'input' || tag === 'textarea') return;
-      if (e.key === '/') {
+      if (isShortcut(e, SHORTCUTS.readerHelp)) {
+        e.preventDefault();
+        setShortcutsOpen(true);
+      } else if (isShortcut(e, SHORTCUTS.readerSearch)) {
         e.preventDefault();
         setSearchOpen(true);
-      } else if (e.key === 'ArrowLeft') step(-1);
-      else if (e.key === 'ArrowRight') step(1);
-      else if (e.key.toLowerCase() === 'h') {
+      } else if (isShortcut(e, SHORTCUTS.readerNav)) step(e.key === 'ArrowLeft' ? -1 : 1);
+      else if (isShortcut(e, SHORTCUTS.readerHighlights)) {
         e.preventDefault();
         setTab('highlights');
         setPanel(true);
-      } else if (e.key.toLowerCase() === 'l') {
+      } else if (isShortcut(e, SHORTCUTS.readerLists)) {
         // Without this, the same keypress that opens the panel also lands in the Lists tab's
         // now-focused filter input (it autoFocuses — see ListMembershipPicker) since nothing
         // stopped the browser's own default text-insertion behavior for this key.
         e.preventDefault();
         setTab('lists');
         setPanel(true);
-      } else if (e.key.toLowerCase() === 'n') {
+      } else if (isShortcut(e, SHORTCUTS.readerNote)) {
         e.preventDefault();
         setTab('highlights');
         setPanel(true);
         setNoteFocusSignal((s) => s + 1);
-      } else if (e.key.toLowerCase() === 'c') {
+      } else if (isShortcut(e, SHORTCUTS.readerNotesToggle)) {
         e.preventDefault();
         toggleShowNotes();
       }
@@ -238,7 +252,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dict, panel, searchOpen, siblingIds, suttaId]);
+  }, [shortcutsOpen, dict, panel, searchOpen, siblingIds, suttaId]);
 
   function jumpToHighlight(segIndex: number) {
     setPanel(false);
@@ -480,6 +494,10 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       )}
 
       {searchOpen && <ReaderSearchOverlay theme={theme} onOpenSutta={onSearchOpenSutta} onClose={() => setSearchOpen(false)} />}
+
+      {shortcutsOpen && (
+        <ReaderShortcutsModal shortcuts={shortcutsForScope('reader')} theme={theme} onClose={() => setShortcutsOpen(false)} />
+      )}
     </div>
   );
 }
