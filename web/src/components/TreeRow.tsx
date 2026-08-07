@@ -29,7 +29,7 @@ export function TreeRow({
         style={{ paddingLeft: 18 + depth * 14 }}
         onClick={() => (expandable ? onToggle(node.id) : onSelect(node.id))}
       >
-        <span className="w-[11px] flex-none flex items-center justify-center text-ink/40 mt-[4px]">
+        <span className="w-[11px] flex-none flex items-center justify-center text-ink/40 mt-[7px]">
           {expandable && (open ? <ChevronDown size={12} strokeWidth={2} /> : <ChevronRight size={12} strokeWidth={2} />)}
         </span>
         <span className="flex-1 min-w-0">
