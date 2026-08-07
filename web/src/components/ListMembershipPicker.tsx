@@ -262,6 +262,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
                 onMouseEnter={() => setActiveIndex(idx)}
                 onClick={() => activateRow(row)}
               >
+                <Plus size={13} strokeWidth={2} className="flex-none opacity-60" />
                 {label}
               </button>
             );

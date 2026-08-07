@@ -56,6 +56,18 @@ function supportsZoom(): boolean {
   return zoomSupported;
 }
 
+// The `--ui-scale` custom property `applyUiScale` sets on `<html>` — read this back wherever
+// screen-space pixel values (getBoundingClientRect, getClientRects, pointer events) need
+// converting into a CSS length assigned *inside* the zoomed subtree, since `zoom` scales any
+// such length again at paint time (see index.css's `100dvh` compensation for the same reason).
+// Always 1 outside the `zoom`-support path (see applyUiScale) since nothing needs correcting
+// there.
+export function getUiScale(): number {
+  if (typeof document === 'undefined') return 1;
+  const v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--ui-scale'));
+  return v > 0 ? v : 1;
+}
+
 export function applyUiScale(scale: number) {
   const effectiveScale = isMobileViewport() ? scale * MOBILE_UI_SCALE_BOOST : scale;
   const root = document.documentElement.style;
