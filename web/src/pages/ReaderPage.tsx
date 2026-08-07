@@ -151,7 +151,12 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     let lock: 'h' | 'v' | null = null;
 
     function onTouchStart(e: TouchEvent) {
-      if (e.touches.length !== 1) {
+      // The side panel (including its own font-size/line-height range inputs) is a full-height
+      // overlay rendered inside this same root, so without this guard a touch drag started over
+      // it — including a horizontal one on a slider thumb — would still bubble up here, get read
+      // as a horizontal-dominant gesture, and have its default action (the slider's own touch
+      // handling) preempted by this handler's preventDefault().
+      if (panel || e.touches.length !== 1) {
         start = null;
         lock = null;
         return;
@@ -160,7 +165,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       lock = null;
     }
     function onTouchMove(e: TouchEvent) {
-      if (!start || e.touches.length !== 1) return;
+      if (panel || !start || e.touches.length !== 1) return;
       const dx = e.touches[0].clientX - start.x;
       const dy = e.touches[0].clientY - start.y;
       if (!lock) {
@@ -170,7 +175,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       if (lock === 'h') e.preventDefault();
     }
     function onTouchEnd(e: TouchEvent) {
-      if (start && lock === 'h') {
+      if (!panel && start && lock === 'h') {
         const t = e.changedTouches[0];
         const dx = t.clientX - start.x;
         const dy = t.clientY - start.y;
@@ -190,7 +195,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       el.removeEventListener('touchcancel', onTouchEnd);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [siblingIds, suttaId]);
+  }, [siblingIds, suttaId, panel]);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
