@@ -223,6 +223,64 @@ terminates real HTTPS and forwards an `X-Forwarded-Proto: https` header that `tr
 up, so it works normally once actually deployed. To reproduce that locally with curl, add
 `-H 'X-Forwarded-Proto: https'` to your requests.
 
+## Testing on mobile (local dev)
+
+The dev server already listens on all interfaces (`host: true` in `web/vite.config.ts`) and a
+phone on the same LAN can reach it by this machine's mDNS name (`gbbr.local`, already in
+`allowedHosts`). That's enough for browsing, but **Google sign-in won't work over it**: GSI
+validates the page's origin client-side against the OAuth client's authorized origins, and
+Google rejects that origin outright unless its host ends in a real, public top-level domain —
+so neither a LAN IP nor a `.local` mDNS name will ever be accepted, no matter what's serving it.
+Deploying just to test a login-gated feature isn't practical for day-to-day iteration.
+
+The fix used here: a real subdomain of `sutamaya.org` — `local.sutamaya.org` — pointed at this
+machine's LAN IP, served locally by [Caddy](https://caddyserver.com) with a genuine Let's
+Encrypt certificate obtained via a DNS-01 challenge against Cloudflare (sutamaya.org's DNS
+provider). DNS-01 only needs the ability to create a TXT record — the machine doesn't need to be
+reachable from the public internet — so this stays LAN-only the whole time, and nothing (no
+VPN, no tunnel, no relay) sits in front of your other traffic; Caddy is just a local reverse
+proxy in front of Vite, the same role nginx would play, only running when you start it.
+
+**One-time setup:**
+
+1. Cloudflare dashboard → My Profile → API Tokens → Create Token → "Edit zone DNS" template,
+   scoped to the `sutamaya.org` zone only. Save the token somewhere local (not in the repo).
+2. Cloudflare dashboard → DNS → add an **A record**: `local` → this machine's current LAN IP
+   (e.g. `192.168.1.50`), proxy status **DNS only** (grey cloud — a proxied/orange-cloud record
+   would route through Cloudflare's edge, which can't reach a private IP). A DHCP reservation
+   for this machine on your router keeps that IP from changing later; otherwise update the
+   record if it does.
+3. Standard `brew install caddy` does **not** include DNS provider plugins — download a build
+   with the Cloudflare module from
+   [caddyserver.com/download](https://caddyserver.com/download?package=github.com%2Fcaddy-dns%2Fcloudflare)
+   (select `github.com/caddy-dns/cloudflare`), or build one with `xcaddy build --with
+   github.com/caddy-dns/cloudflare`.
+4. Create a `Caddyfile` **outside the repo** (it's machine-specific, not shared config —
+   e.g. `~/caddy/sutamaya-local/Caddyfile`):
+   ```
+   local.sutamaya.org {
+       reverse_proxy localhost:5173
+       tls {
+           dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+       }
+   }
+   ```
+
+**Each time you want to test on mobile:** with `npm run dev` running (Vite on `:5173`), start
+Caddy from that directory —
+```bash
+CLOUDFLARE_API_TOKEN=your-token sudo --preserve-env=CLOUDFLARE_API_TOKEN caddy run
+```
+(`sudo` is needed to bind port 443; `--preserve-env` carries the token through). Caddy requests
+the cert on first run and renews automatically on later runs — no local CA, no cert warnings, no
+per-device trust step, since it's a real publicly-trusted certificate. `/api/*` keeps going
+through Vite's own proxy to the Express server on `:8787` unchanged. Add
+`https://local.sutamaya.org` to the OAuth client's authorized JavaScript origins once (see step
+5 above) — additive, so `http://localhost:5173` and the production origin are unaffected. Then
+open `https://local.sutamaya.org` on the phone (same LAN) — sign-in should complete normally;
+the dev session cookie is `secure: false` when `NODE_ENV` isn't `production`, so it isn't
+affected by the "Local Docker testing" caveat above.
+
 ## Custom domain
 
 ```bash

@@ -2,6 +2,15 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
+// Extra hostnames the dev server's Host-header guard accepts beyond localhost/LAN IPs (see
+// `allowedHosts` below), paired with how to actually reach the app through each one — printed
+// on `npm run dev` startup so it doesn't have to be remembered/looked up each time.
+const devHosts: Record<string, string> = {
+  'gbbr.local': 'http://gbbr.local:5173',
+  'local.sutamaya.org':
+    'https://local.sutamaya.org  (needs `caddy run` in a separate terminal — see deploy.md "Testing on mobile")',
+};
+
 export default defineConfig({
   plugins: [
     react(),
@@ -50,6 +59,19 @@ export default defineConfig({
         ],
       },
     }),
+    {
+      name: 'log-dev-hosts',
+      apply: 'serve',
+      configureServer(server) {
+        server.httpServer?.once('listening', () => {
+          console.log(
+            `\n  Also reachable via:\n${Object.values(devHosts)
+              .map((url) => `    ${url}`)
+              .join('\n')}\n`
+          );
+        });
+      },
+    },
   ],
   server: {
     port: 5173,
@@ -62,7 +84,11 @@ export default defineConfig({
     // rejects requests by their Host header (a DNS-rebinding guard) unless it's localhost, a
     // raw IP, or explicitly allowed here. A phone on the LAN reaches this machine by its mDNS
     // name (e.g. "gbbr.local"), not an IP, so that name needs to be listed explicitly.
-    allowedHosts: ['gbbr.local'],
+    // "local.sutamaya.org" is a real public-DNS name (Cloudflare A record pointed at this
+    // machine's LAN IP) fronted locally by Caddy on :443 — see deploy.md "Testing on mobile" —
+    // used only when a feature needs Google sign-in to work on a phone, which a bare LAN
+    // IP/mDNS name can't do (Google rejects both as OAuth origins).
+    allowedHosts: Object.keys(devHosts),
     proxy: {
       '/api': {
         target: process.env.API_ORIGIN || 'http://localhost:8787',
