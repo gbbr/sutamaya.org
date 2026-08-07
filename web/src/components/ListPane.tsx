@@ -5,7 +5,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { listItemsFor, nodeLabel } from '../lib/corpus';
-import { highlightCountsByColor } from '../lib/highlights';
+import { highlightCount } from '../lib/highlights';
 import { autoScrollEdge } from '../lib/dragAutoScroll';
 import { flattenListTree, resolveListById } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
@@ -227,7 +227,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, visible = 
           const chips = (membership[id] || [])
             .filter((c) => !AUTO_LIST_IDS.has(c))
             .map((c) => ({ id: c, breadcrumb: resolveListById(c, flatLists).breadcrumb }));
-          const hlCounts = highlightCountsByColor(highlights[id] || []);
+          const hlCount = highlightCount(highlights[id] || []);
           const dragging = dragIdRef.current === id;
           return (
             <div
@@ -261,7 +261,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, visible = 
                 ) : (
                   <span className="block text-[14px] leading-[1.5] mt-1.5 text-ink/[.72]">{s.blurb}</span>
                 )}
-                {(chips.length > 0 || hlCounts.length > 0) && (
+                {(chips.length > 0 || hlCount > 0) && (
                   <span className="flex flex-wrap items-center gap-1.5 mt-2">
                     {chips.map((c) => (
                       <span
@@ -271,9 +271,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, visible = 
                         {c.breadcrumb}
                       </span>
                     ))}
-                    {hlCounts.map(({ c, count }) => (
-                      <HighlightCountBadge key={c} color={c} count={count} />
-                    ))}
+                    {hlCount > 0 && <HighlightCountBadge count={hlCount} />}
                   </span>
                 )}
               </button>

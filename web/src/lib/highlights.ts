@@ -24,18 +24,10 @@ export function groupHighlights(highlights: Highlight[]): HighlightGroup[] {
   return groups.map((items) => ({ key: items[0].id, c: items[0].c, i: items[0].i, items }));
 }
 
-export interface HighlightColorCount {
-  c: string;
-  count: number;
-}
-
-// One badge per distinct colour used on a sutta, each counting that colour's merged highlights
-// (see groupHighlights) — for ListPane's per-row highlight-count indicator.
-export function highlightCountsByColor(highlights: Highlight[]): HighlightColorCount[] {
-  const groups = groupHighlights(highlights);
-  const byColor = new Map<string, number>();
-  for (const g of groups) byColor.set(g.c, (byColor.get(g.c) ?? 0) + 1);
-  return [...byColor.entries()].map(([c, count]) => ({ c, count }));
+// Total number of merged highlights on a sutta (see groupHighlights), across every colour — for
+// ListPane's and ReaderPage's single icon+count highlight indicator.
+export function highlightCount(highlights: Highlight[]): number {
+  return groupHighlights(highlights).length;
 }
 
 export function highlightGroupText(group: HighlightGroup, segments: SegmentFile[] | null): string {
