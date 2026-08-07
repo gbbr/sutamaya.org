@@ -145,11 +145,25 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   // gesture as soon as a touch shows *any* vertical drift — once that happens they stop
   // delivering pointermove/pointerup for that touch (a pointercancel fires instead), so a
   // pointerup-only swipe check silently never fires for anything but a perfectly horizontal
-  // drag. Raw touchmove listeners, registered non-passive (React's own onTouchMove is passive by
-  // default and can't preventDefault), let this call preventDefault the moment a gesture reveals
-  // itself as horizontal-dominant — before the browser has committed to scrolling — locking that
-  // touch into a swipe for the rest of its length; a vertical-dominant gesture is left alone and
-  // scrolls normally.
+  // drag.
+  //
+  // The root's own `touch-action: pan-y` (JSX below) is what actually keeps this from
+  // conflicting with normal vertical scrolling: it tells the browser upfront, from CSS alone,
+  // that only vertical panning is ever handled natively here, so it can start compositor-thread
+  // scrolling immediately on any vertical-ish touch without waiting on this effect's own
+  // `touchmove` listener at all. Without it (an earlier version of this effect registered
+  // `touchmove` as `{ passive: false }` specifically so it could call `preventDefault()` once a
+  // gesture revealed itself as horizontal-dominant), *every* touch-driven scroll in the reader —
+  // not just actual swipes — had to synchronously wait for this handler to run before the browser
+  // would commit to scrolling at all, since a non-passive listener means the browser can't know
+  // in advance whether a given gesture will end up preventDefault()-ed. That's harmless when the
+  // main thread is free, but on a slow device/first load — heavy initial `SegmentedText`
+  // rendering, corpus/text JSON parsing — it reads as "can't scroll for a few seconds": the
+  // browser is just waiting on a main thread that's busy with something else entirely. With
+  // `touch-action: pan-y` declared, the listener below only ever needs to *read* touch deltas for
+  // the horizontal-swipe threshold — it no longer blocks or has to preventDefault anything itself
+  // (the browser already won't hand horizontal motion to native scroll/pull-to-refresh), so it can
+  // stay fully passive.
   useEffect(() => {
     const el = rootRef.current;
     if (!el) return;
@@ -159,9 +173,8 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     function onTouchStart(e: TouchEvent) {
       // The side panel (including its own font-size/line-height range inputs) is a full-height
       // overlay rendered inside this same root, so without this guard a touch drag started over
-      // it — including a horizontal one on a slider thumb — would still bubble up here, get read
-      // as a horizontal-dominant gesture, and have its default action (the slider's own touch
-      // handling) preempted by this handler's preventDefault().
+      // it — including a horizontal one on a slider thumb — would still bubble up here and get
+      // read as a swipe once released.
       if (panel || e.touches.length !== 1) {
         start = null;
         lock = null;
@@ -178,7 +191,6 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
         if (Math.hypot(dx, dy) < 10) return;
         lock = Math.abs(dx) > Math.abs(dy) ? 'h' : 'v';
       }
-      if (lock === 'h') e.preventDefault();
     }
     function onTouchEnd(e: TouchEvent) {
       if (!panel && start && lock === 'h') {
@@ -191,7 +203,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       lock = null;
     }
     el.addEventListener('touchstart', onTouchStart, { passive: true });
-    el.addEventListener('touchmove', onTouchMove, { passive: false });
+    el.addEventListener('touchmove', onTouchMove, { passive: true });
     el.addEventListener('touchend', onTouchEnd, { passive: true });
     el.addEventListener('touchcancel', onTouchEnd, { passive: true });
     return () => {
@@ -275,7 +287,11 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   }
 
   function closeReader() {
-    if (from) navigate(from, fromView ? { state: { fromView } } : undefined);
+    // `restoreOrigin: true` marks this as a return-to-origin round trip (as opposed to a fresh
+    // deep link) — see TreePane's own `restoreOrigin` prop for why its Library/My-lists toggle
+    // needs to tell the two apart. Only meaningful alongside `from` itself: the no-`from`
+    // fallback below is a bare corpus location, not a return to anywhere the user actually was.
+    if (from) navigate(from, { state: { fromView, restoreOrigin: true } });
     else if (sutta) navigate(`/browse/${sutta.node}/${suttaId}`);
     else navigate('/');
   }
@@ -330,7 +346,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       ref={rootRef}
       data-component="ReaderPage"
       className="fixed inset-0 z-40 flex flex-col animate-fadeIn"
-      style={{ background: theme.bg, color: theme.fg }}
+      style={{ background: theme.bg, color: theme.fg, touchAction: 'pan-y' }}
       onPointerDown={onReaderPointerDown}
       onPointerUp={onReaderPointerUp}
     >
@@ -373,7 +389,18 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
               {breadcrumb.map((b, i) => (
                 <span key={b.id} className="flex items-center gap-1">
                   {i > 0 && <ChevronRight size={11} strokeWidth={2} />}
-                  <button className="hover:underline" onClick={() => navigate(`/browse/${encodeURIComponent(b.id)}`)}>
+                  <button
+                    className="hover:underline"
+                    onClick={() =>
+                      // An expandable entry (a category, not a leaf group) has no suttas
+                      // directly assigned to it — ListPane would render its empty state for it
+                      // on mobile — so it needs the tree pane, expanded to that node, instead of
+                      // LibraryPage's usual last-used-pane default (see LibraryPage's `view`
+                      // init). A leaf group still lands on 'list' the same as any other sutta
+                      // location would.
+                      navigate(`/browse/${encodeURIComponent(b.id)}`, { state: { fromView: b.expandable ? 'tree' : 'list' } })
+                    }
+                  >
                     {b.label}
                   </button>
                 </span>

@@ -38,9 +38,28 @@ interface TreePaneProps {
   // ListPane mounted on mobile and toggles `display:none` instead of unmounting — see
   // useScrollMemory for why scroll restoration needs to know this).
   visible?: boolean;
+  // True when this mount is a reader-close round trip landing back on wherever the reader was
+  // opened from (see LibraryPage's `view` init and ReaderPage's closeReader), as opposed to an
+  // explicit chip/breadcrumb click or a fresh deep link. The Library/My-lists toggle below
+  // (`paneView`) needs to tell these apart: a chip/breadcrumb click is a deliberate "go to this
+  // list/category" that should flip the toggle to match; a reader-close round trip is not — its
+  // `nodeId` can easily be a corpus node (a sutta's own `node`, unrelated to what was actually
+  // browsed) even though the user had "My lists" open the whole time, and forcing the toggle
+  // back to 'library' in that case would discard their pane choice for no reason.
+  restoreOrigin?: boolean;
 }
 
-export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, hits, onActiveHitChange, visible = true }: TreePaneProps) {
+export function TreePane({
+  nodeId,
+  onSelect,
+  onOpenSutta,
+  onSearch,
+  query,
+  hits,
+  onActiveHitChange,
+  visible = true,
+  restoreOrigin = false,
+}: TreePaneProps) {
   const { corpus } = useCorpus();
   const { lists, createList, renameList, removeList, reorderLists, setListParent } = useUserData();
   const { user, promptGoogleSignIn } = useAuth();
@@ -85,11 +104,22 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, hits,
   // or removing any id, and re-running this on that reference change alone snapped the pane back
   // to 'library' immediately after every mobile drag-drop (nodeId, still a corpus node id from
   // whatever the user was last browsing, would hit the `else if` branch below).
+  //
+  // Skipped on the very first run (mount) whenever `restoreOrigin` says so — see its own prop
+  // comment for why a reader-close round trip needs this sync suppressed exactly once, while a
+  // breadcrumb/chip click or a fresh deep link (no `restoreOrigin`) still wants it to run on
+  // mount as before, since those *are* what this effect exists for in the first place.
   const nodeIsListId = lists.some((l) => l.id === nodeId);
+  const mountedRef = useRef(false);
   useEffect(() => {
+    if (!mountedRef.current) {
+      mountedRef.current = true;
+      if (restoreOrigin) return;
+    }
     if (!user || !nodeId) return;
     if (nodeIsListId) setPaneView('lists');
     else if (corpus && findNode(corpus, nodeId)) setPaneView('library');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, nodeId, nodeIsListId, corpus]);
 
   // Expands every ancestor level of the current node whenever nodeId *changes* after mount —
