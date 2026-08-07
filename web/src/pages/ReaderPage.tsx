@@ -35,7 +35,12 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   // Where to return to on close — the exact pane/nodeId/scroll position the reader was opened
   // from (see LibraryPage's onOpen), not just the sutta's bare corpus location. Falls back to
   // that bare location for a direct/bookmarked link to /read/:suttaId, which has no such origin.
-  const from = (location?.state as { from?: string } | undefined)?.from;
+  // `fromView` rides alongside it (mobile only — LibraryPage shows one pane at a time there) so
+  // closing lands back on the actual tree/list pane the reader was opened from, not whichever one
+  // LibraryPage's own suttaId-present-on-mount default would otherwise guess.
+  const readerLocationState = location?.state as { from?: string; fromView?: 'tree' | 'list' } | undefined;
+  const from = readerLocationState?.from;
+  const fromView = readerLocationState?.fromView;
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
   const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
   const [dict, setDict] = useState<DictState | null>(null);
@@ -128,9 +133,10 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     if (!suttaId) return;
     const i = siblingIds.indexOf(suttaId);
     const next = siblingIds[Math.min(siblingIds.length - 1, Math.max(0, i + dir))];
-    // Carries `from` forward so closing after stepping through several suttas still returns to
-    // wherever the reader was originally opened from, not the last-stepped sutta's own location.
-    if (next && next !== suttaId) navigate(`/read/${encodeURIComponent(next)}`, { state: { from } });
+    // Carries `from`/`fromView` forward so closing after stepping through several suttas still
+    // returns to wherever the reader was originally opened from, not the last-stepped sutta's own
+    // location.
+    if (next && next !== suttaId) navigate(`/read/${encodeURIComponent(next)}`, { state: { from, fromView } });
   }
 
   // Swipe-left/right to go to the next/prev sutta on mobile. This has to bypass React's own
@@ -269,14 +275,14 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   }
 
   function closeReader() {
-    if (from) navigate(from);
+    if (from) navigate(from, fromView ? { state: { fromView } } : undefined);
     else if (sutta) navigate(`/browse/${sutta.node}/${suttaId}`);
     else navigate('/');
   }
 
   function onSearchOpenSutta(id: string) {
     setSearchOpen(false);
-    navigate(`/read/${encodeURIComponent(id)}`, { state: { from } });
+    navigate(`/read/${encodeURIComponent(id)}`, { state: { from, fromView } });
   }
 
   // Wrapped in useCallback (as are onToggleSeg/onToggleNote below) so SegmentedText's own

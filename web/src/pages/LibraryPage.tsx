@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
 import { useLayout } from '../context/LayoutContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
-import { flatSuttaOrder, sortByIdAsc, suttasFor } from '../lib/corpus';
+import { flatSuttaOrder, searchCorpus, sortByIdAsc, suttasFor } from '../lib/corpus';
 import { SHORTCUTS, shortcutsForScope, isShortcut } from '../lib/shortcuts';
 import { TreePane } from '../components/TreePane';
 import { ListPane } from '../components/ListPane';
@@ -22,7 +22,11 @@ import { ShortcutsModal } from '../components/ShortcutsModal';
 const TREE_LIST_HIT_BEFORE = 8;
 const TREE_LIST_HIT_AFTER = 14;
 
-export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteComponentProps<{ nodeId: string; suttaId?: string }>) {
+export function LibraryPage({
+  nodeId: routeNodeId,
+  suttaId: rawSuttaId,
+  location,
+}: RouteComponentProps<{ nodeId: string; suttaId?: string }>) {
   // `suttaId` is a splat segment (see App.tsx) so both /browse/:nodeId and
   // /browse/:nodeId/:suttaId are the *same* route element — giving it '' rather than undefined
   // when absent, and keeping LibraryPage mounted (with all its local state, including every
@@ -31,7 +35,7 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
   // auto-keys route children by position, so switching which one matched was a key change).
   const { mobile, dragTree, resetTree, paneW } = useLayout();
   const { corpus } = useCorpus();
-  const { lists } = useUserData();
+  const { lists, notes } = useUserData();
   // @reach/router defers the actual route-param update by a microtask + rAF after navigate()
   // (see LocationProvider.componentDidMount in @reach/router/lib/history.js), so reading
   // `rawSuttaId`/`routeNodeId` straight from route props here would render one frame with
@@ -51,12 +55,18 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
   // `/read/:suttaId` and `/settings` are both genuinely separate routes (full-screen, not one of
   // this page's panes), so navigating to either fully unmounts LibraryPage — `view` can't just
   // default to 'tree' here, or mobile would show the browse tree instead of the sutta list the
-  // user was just looking at, which reads as "my place got reset". If a suttaId is already
-  // present on mount, we came from exactly a reader round trip (or a deep link to a selected
-  // row), so start on 'list'; otherwise fall back to whichever pane was last shown, persisted the same way
-  // as TreePane's own Library/My Lists toggle (`sutamaya.treeView`), since a plain in-memory
-  // default can't survive the remount either.
+  // user was just looking at, which reads as "my place got reset". A reader round trip carries
+  // the pane it was opened from back in `location.state.fromView` (see onOpen below and
+  // ReaderPage's own `from`/`fromView`), so that takes priority when present — it's the only way
+  // to know the user was actually on 'tree' (e.g. searched and opened a hit straight from there)
+  // rather than 'list'. Absent that (a fresh deep link to a specific sutta, e.g. tapping a
+  // list-membership chip in the Reader), a suttaId in the URL still means start on 'list' so the
+  // highlighted row is actually visible; otherwise fall back to whichever pane was last shown,
+  // persisted the same way as TreePane's own Library/My Lists toggle (`sutamaya.treeView`), since
+  // a plain in-memory default can't survive the remount either.
   const [view, setView] = useState<'tree' | 'list'>(() => {
+    const fromView = (location?.state as { fromView?: 'tree' | 'list' } | undefined)?.fromView;
+    if (fromView === 'tree' || fromView === 'list') return fromView;
     if (suttaId) return 'list';
     try {
       const stored = localStorage.getItem('sutamaya.libraryView');
@@ -75,6 +85,23 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
   }, [view]);
   const [query, setQuery] = useState('');
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
+
+  // Computed once here (not independently by TreePane and ListPane, which used to each run their
+  // own searchCorpus scan on every keystroke) and handed down to both, so they render one
+  // consistent result set instead of two — TreePane keeps its own input/keyboard nav, ListPane
+  // does the actual row rendering; see both components for how they split it. Deferred rather
+  // than tied straight to `query` so the input itself (and the `query.trim()`-driven "searching"
+  // branch below) stays instantly responsive even while a slower device is still catching up on
+  // the scan — same rationale as ReaderSearchOverlay's own deferred search.
+  const deferredQuery = useDeferredValue(query);
+  const hits = useMemo(
+    () => (corpus && deferredQuery.trim() ? searchCorpus(corpus, deferredQuery, notes) : []),
+    [corpus, deferredQuery, notes]
+  );
+  // The hit TreePane's own arrow-key nav currently has highlighted, mirrored here so ListPane
+  // (which renders the actual rows on desktop) can show that same highlight — see TreePane's
+  // onActiveHitChange and ListPane's activeId.
+  const [activeSearchId, setActiveSearchId] = useState<string | undefined>(undefined);
 
   const [nodeId, setNodeId] = useState(routeNodeId);
   useEffect(() => {
@@ -96,13 +123,16 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
 
   const onOpen = useCallback(
     (id: string) => {
-      // `from` round-trips through the reader's own navigate() calls (Prev/Next, its search
-      // overlay) so that whenever it's closed — however many suttas later — it lands back on
-      // exactly this pane/nodeId/scroll position instead of falling back to the sutta's bare
-      // corpus location (see ReaderPage's closeReader).
-      navigate(`/read/${encodeURIComponent(id)}`, { state: { from: `/browse/${encodeURIComponent(nodeId || '')}/${encodeURIComponent(id)}` } });
+      // `from`/`fromView` round-trip through the reader's own navigate() calls (Prev/Next, its
+      // search overlay) so that whenever it's closed — however many suttas later — it lands back
+      // on exactly this pane/nodeId/scroll position instead of falling back to the sutta's bare
+      // corpus location (see ReaderPage's closeReader, and this page's own `view` init above for
+      // why `fromView` specifically is needed on top of the URL alone).
+      navigate(`/read/${encodeURIComponent(id)}`, {
+        state: { from: `/browse/${encodeURIComponent(nodeId || '')}/${encodeURIComponent(id)}`, fromView: view },
+      });
     },
-    [nodeId]
+    [nodeId, view]
   );
 
   const showTreePane = !mobile || view === 'tree';
@@ -225,6 +255,8 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
           onOpenSutta={onOpen}
           onSearch={setQuery}
           query={query}
+          hits={hits}
+          onActiveHitChange={setActiveSearchId}
           visible={showTreePane}
         />
       </div>
@@ -247,6 +279,8 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
           nodeId={nodeId}
           selectedId={suttaId}
           query={query}
+          hits={hits}
+          activeId={activeSearchId}
           onBack={() => setView('tree')}
           onOpen={onOpen}
           visible={showListPane}

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ancestorsOf, compareIds, sortByIdAsc } from './corpus';
+import { ancestorsOf, compareIds, searchCorpus, sortByIdAsc } from './corpus';
 import type { Corpus, Sutta } from './types';
 
 // Only the fields compareIds/sortByIdAsc actually touch (the id key) matter here; the rest
@@ -82,5 +82,33 @@ describe('ancestorsOf', () => {
 
   it('returns an empty object for an id not found in the corpus', () => {
     expect(ancestorsOf(corpus, 'sn1')).toEqual({});
+  });
+});
+
+describe('searchCorpus', () => {
+  const corpus: Corpus = {
+    nikayas: [],
+    suttas: {
+      'mn1': { ref: 'MN 1', node: 'x', en: 'The Root of All Things', pali: 'Mūlapariyāyasutta', blurb: 'The Buddha analyzes how the mind relates to experience.', min: 30 },
+      'mn10': { ref: 'MN 10', node: 'x', en: 'The Establishment of Mindfulness', pali: 'Satipaṭṭhānasutta', blurb: 'On the four kinds of mindfulness meditation.', min: 20 },
+    },
+  };
+
+  it('is case- and diacritic-insensitive', () => {
+    expect(searchCorpus(corpus, 'MULAPARIYAYA', {}).map((h) => h.id)).toEqual(['mn1']);
+  });
+
+  it('ranks a ref/title/Pali match above a blurb-only match', () => {
+    // "mindfulness" is in mn10's own title, but only in mn1's blurb ("mind" appears in both,
+    // so use a query that's a title match for one and a blurb-only match for the other).
+    expect(searchCorpus(corpus, 'mind', {}).map((h) => h.id)).toEqual(['mn10', 'mn1']);
+  });
+
+  it('matches the user\'s own note on a sutta even when nothing else does', () => {
+    expect(searchCorpus(corpus, 'apple', { mn1: 'tastes like an apple' }).map((h) => h.id)).toEqual(['mn1']);
+  });
+
+  it('returns nothing for a blank query', () => {
+    expect(searchCorpus(corpus, '   ', {})).toEqual([]);
   });
 });

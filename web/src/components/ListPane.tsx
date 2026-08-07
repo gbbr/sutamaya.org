@@ -4,7 +4,7 @@ import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
-import { listItemsFor, nodeLabel } from '../lib/corpus';
+import { listItemsFor, nodeLabel, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
 import { highlightCount } from '../lib/highlights';
 import { autoScrollEdge } from '../lib/dragAutoScroll';
 import { flattenListTree, resolveListById } from '../lib/lists';
@@ -16,6 +16,14 @@ interface ListPaneProps {
   nodeId?: string;
   selectedId?: string;
   query: string;
+  // Search hits, computed once by LibraryPage and shared with TreePane — see TreePane for why
+  // (avoids both panes independently running the same scan, and is what lets this pane be the
+  // one place results actually render on desktop).
+  hits: SearchHit[];
+  // The hit TreePane's own arrow-key nav currently has highlighted, while searching — mirrored
+  // onto that same row here so the keyboard-driven highlight is visible even though this pane
+  // (not TreePane) is the one showing the row on desktop.
+  activeId?: string;
   onBack: () => void;
   onOpen: (id: string) => void;
   // Whether this pane is currently the visible one (LibraryPage keeps both TreePane and
@@ -24,7 +32,7 @@ interface ListPaneProps {
   visible?: boolean;
 }
 
-export function ListPane({ nodeId, selectedId, query, onBack, onOpen, visible = true }: ListPaneProps) {
+export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, onOpen, visible = true }: ListPaneProps) {
   const { corpus } = useCorpus();
   const { lists, membership, notes, highlights, visited, reorderListItems } = useUserData();
   const { mobile } = useLayout();
@@ -37,9 +45,17 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, visible = 
   // highlight-count circles directly, so the auto lists never appear as chips.
   const flatLists = useMemo(() => flattenListTree(lists), [lists]);
 
+  // A short/common query can match hundreds of suttas (see SEARCH_RESULTS_CAP's own comment) —
+  // rendered rows are capped the same way TreePane's own search list is, while `hits.length`
+  // (uncapped) still drives the "N results" count below so it stays honest.
   const items = useMemo(
-    () => (corpus ? listItemsFor(corpus, nodeId, query, notes, lists, membership) : []),
-    [corpus, nodeId, query, notes, lists, membership]
+    () =>
+      corpus
+        ? searching
+          ? hits.slice(0, SEARCH_RESULTS_CAP).map(({ id, sutta }) => [id, sutta] as [string, Sutta])
+          : listItemsFor(corpus, nodeId, lists)
+        : [],
+    [corpus, nodeId, lists, searching, hits]
   );
 
   // Chips/highlight-count per row, keyed off `items` rather than the reorder-drag's own
@@ -200,11 +216,21 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, visible = 
     itemRowRefs.current.get(selectedId)?.scrollIntoView({ block: 'nearest' });
   }, [selectedId, nodeId]);
 
+  // Mirrors TreePane's own keyboard-highlighted hit onto its row here (see activeId's own
+  // comment) — `block: 'nearest'` keeps this a no-op once the row's already in view, matching the
+  // `selectedId` effect above.
+  useEffect(() => {
+    if (!searching || !activeId) return;
+    itemRowRefs.current.get(activeId)?.scrollIntoView({ block: 'nearest' });
+  }, [searching, activeId]);
+
   if (!corpus) return null;
 
   const title = searching ? 'Search' : nodeLabel(corpus, nodeId || '', lists);
   const readCount = items.filter(([id]) => visited[id]).length;
-  const meta = searching ? `${items.length} results` : `${items.length} suttas · ${readCount} read`;
+  const meta = searching
+    ? hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ results` : `${hits.length} ${hits.length === 1 ? 'result' : 'results'}`
+    : `${items.length} suttas · ${readCount} read`;
 
   return (
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
@@ -235,9 +261,10 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, visible = 
       >
         {displayItems.map(([id, s]) => {
           // Highlighted (subtle tint + left accent stripe) whenever this row is the sutta the
-          // current URL ends in (`/browse/:nodeId/:suttaId`) — matches LibraryPage's
-          // Up/Down/Enter, which key off the same `suttaId`.
-          const on = id === selectedId;
+          // current URL ends in (`/browse/:nodeId/:suttaId` — matches LibraryPage's Up/Down/
+          // Enter, which key off the same `suttaId`) or, while searching, the one TreePane's own
+          // arrow-key nav currently has active (see activeId's own comment).
+          const on = id === selectedId || (searching && id === activeId);
           const note = notes[id];
           const { chips, hlCount } = rowMeta.get(id) ?? { chips: [], hlCount: 0 };
           const dragging = dragIdRef.current === id;
