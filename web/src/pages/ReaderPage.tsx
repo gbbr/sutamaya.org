@@ -498,7 +498,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           scrollRef={scrollRef}
           highlightGroups={highlightGroups}
           onJump={jumpToHighlight}
-          layoutKey={`${fs}-${lh}-${face}-${allPali}`}
+          layoutKey={`${fs}-${lh}-${face}-${allPali}-${segments ? segments.length : 'loading'}`}
         />
       )}
 

@@ -15,8 +15,9 @@ interface HighlightGutterProps {
   onJump: (segIndex: number) => void;
   // Recomputed whenever this changes, in addition to on mount/highlight-change/resize — pass
   // anything that can reflow the text without resizing the scroll container itself (font size,
-  // line height, face, Pali-always-shown), since a ResizeObserver on the container won't catch
-  // that on its own.
+  // line height, face, Pali-always-shown, or the sutta's segments going from not-yet-loaded to
+  // loaded — the container's own box, fixed by the surrounding flex layout, doesn't change size
+  // either way), since a ResizeObserver on the container won't catch that on its own.
   layoutKey?: string | number;
 }
 
