@@ -405,7 +405,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
               {hlCount > 0 && (
                 <HighlightCountBadge
                   count={hlCount}
-                  style={{ background: theme.rule, color: theme.fg }}
+                  theme={theme}
                   onClick={(e) => {
                     e.stopPropagation();
                     setTab('highlights');

@@ -105,4 +105,7 @@ export interface ThemeColors {
   rule: string;
   panel: string;
   pali: string;
+  // A lighter, lower-alpha fill than `rule` — for a filled pill/badge background (e.g.
+  // HighlightCountBadge) that needs to read as a subtle tint rather than a visible border tone.
+  tint: string;
 }
