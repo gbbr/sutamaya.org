@@ -61,7 +61,7 @@ function roleStyle(
 ): CSSProperties {
   switch (role) {
     case 'verse':
-      return { fontStyle: 'italic' };
+      return { fontStyle: 'normal' };
     case 'heading':
       return { fontWeight: 700, fontSize: fontSize + (headingLevel === 3 ? 1 : 3) };
     case 'end':
