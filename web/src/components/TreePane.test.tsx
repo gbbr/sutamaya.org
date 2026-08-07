@@ -349,7 +349,7 @@ describe('search', () => {
     expect(screen.getByPlaceholderText('Search ID, title, blurb, note, text')).toHaveFocus();
   });
 
-  it('filters to matching results and opens one on click, closing search afterward', async () => {
+  it('filters to matching results and opens one on click, leaving the search UI as-is', async () => {
     const { onOpenSutta } = renderHarness();
     await userEvent.click(screen.getByLabelText('Search'));
     const input = screen.getByPlaceholderText('Search ID, title, blurb, note, text');
@@ -357,7 +357,10 @@ describe('search', () => {
     expect(screen.getByText('Overcoming the Hindrances')).toBeInTheDocument();
     await userEvent.click(screen.getByText('Overcoming the Hindrances'));
     expect(onOpenSutta).toHaveBeenCalledWith('an1.1-10');
-    expect(screen.queryByPlaceholderText('Search ID, title, blurb, note, text')).not.toBeInTheDocument();
+    // Deliberately *not* cleared here — clearing it synchronously would flash the bare tree for
+    // a frame before the (deferred) navigation actually replaces this page with the reader. It's
+    // left for the real component to unmount along with the rest of this page once that happens.
+    expect(screen.getByPlaceholderText('Search ID, title, blurb, note, text')).toHaveValue('hindrance');
   });
 
   it('shows a no-matches state for a query with no hits', async () => {
