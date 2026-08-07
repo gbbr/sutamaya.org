@@ -3,7 +3,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useSuttaText } from './useSuttaText';
 import { useHighlightPopup } from './useHighlightPopup';
 import { useScrollMemory } from './useScrollMemory';
-import { groupHighlights, highlightCountsByColor } from '../lib/highlights';
+import { groupHighlights, highlightCount } from '../lib/highlights';
 
 // The "load a sutta's reading state" boilerplate for ReaderPage (full-screen) — renders segments/
 // highlights through SegmentedText and needs the selection-popup, scroll-restoration, and
@@ -16,7 +16,7 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(suttaId:
   const popup = useHighlightPopup(suttaId, hlForSutta, segments);
   const scrollRef = useScrollMemory<T>(suttaId ? `${scrollKeyPrefix}:${suttaId}` : null);
   const highlightGroups = useMemo(() => groupHighlights(hlForSutta), [hlForSutta]);
-  const hlCounts = useMemo(() => highlightCountsByColor(hlForSutta), [hlForSutta]);
+  const hlCount = useMemo(() => highlightCount(hlForSutta), [hlForSutta]);
 
   function scrollToSegment(segIndex: number, block?: string = 'start') {
     // 'start' rather than 'center' — a jump (TOC heading, highlight) reads as "go to this point
@@ -25,5 +25,5 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(suttaId:
     scrollRef.current?.querySelector(`[data-seg="${segIndex}"]`)?.scrollIntoView({ behavior: 'smooth', block });
   }
 
-  return { segments, hlForSutta, highlightGroups, hlCounts, scrollRef, scrollToSegment, ...popup };
+  return { segments, hlForSutta, highlightGroups, hlCount, scrollRef, scrollToSegment, ...popup };
 }

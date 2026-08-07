@@ -53,7 +53,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     segments,
     hlForSutta,
     highlightGroups,
-    hlCounts,
+    hlCount,
     scrollRef,
     scrollToSegment,
     pop,
@@ -388,7 +388,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
               {notes[suttaId]}
             </div>
           )}
-          {(suttaLists.length > 0 || hlCounts.length > 0) && (
+          {(suttaLists.length > 0 || hlCount > 0) && (
             <div className="flex flex-wrap items-center gap-[6px]" style={{ marginTop: 11 }}>
               {suttaLists.map(({ id, list, breadcrumb }) => {
                 return (
@@ -402,18 +402,17 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
                   </button>
                 );
               })}
-              {hlCounts.map(({ c, count }) => (
+              {hlCount > 0 && (
                 <HighlightCountBadge
-                  key={c}
-                  color={c}
-                  count={count}
+                  count={hlCount}
+                  style={{ background: theme.rule, color: theme.fg }}
                   onClick={(e) => {
                     e.stopPropagation();
                     setTab('highlights');
                     setPanel(true);
                   }}
                 />
-              ))}
+              )}
             </div>
           )}
           <div style={{ height: 1, background: theme.rule, margin: '20px 0 22px' }} />
