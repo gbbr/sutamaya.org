@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { navigate } from '@reach/router';
-import { Settings, ChevronRight, ChevronDown, Highlighter, StickyNote, ArrowUpDown, Library, List, Folder, Search, X } from 'lucide-react';
+import { Settings, ChevronRight, ChevronDown, Highlighter, StickyNote, History, ArrowUpDown, Library, List, Folder, Search, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
@@ -12,7 +12,7 @@ import { useListCrud } from '../hooks/useListCrud';
 import { useListTreeDrag } from '../hooks/useListTreeDrag';
 import { ancestorsOf, findNode, isExpandable, searchCorpus } from '../lib/corpus';
 import { ancestorsOfList } from '../lib/lists';
-import { HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
+import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
 import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
 import type { ListDef } from '../lib/types';
 import { TreeRow } from './TreeRow';
@@ -143,6 +143,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
   const autoLists = useMemo(
     () =>
       [
+        { list: lists.find((l) => l.id === RECENT_AUTO_LIST_ID), sub: 'Last 20 suttas visited', Icon: History },
         { list: lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID), sub: 'Every sutta with a highlight', Icon: Highlighter },
         { list: lists.find((l) => l.id === NOTES_AUTO_LIST_ID), sub: 'Every sutta with a note', Icon: StickyNote },
       ].filter((x): x is { list: ListDef; sub: string; Icon: typeof Highlighter } => !!x.list),

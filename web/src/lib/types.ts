@@ -66,9 +66,9 @@ export interface ListDef {
   // re-sorting a list's contents by sutta id the way browsing a nikaya/category does. Always
   // empty for a `kind: 'group'` entry.
   items: string[];
-  // True for the two auto-managed lists ("Highlights", "Notes") synthesized server-side in
-  // buildUserData() from the highlights/notes collections — not a real Firestore doc, so it
-  // can't be renamed, deleted, reparented, or have its own items reordered.
+  // True for the auto-managed lists ("Recent", "Highlights", "Notes") synthesized server-side in
+  // buildUserData() from the visited/highlights/notes collections — not a real Firestore doc, so
+  // it can't be renamed, deleted, reparented, or have its own items reordered.
   auto?: boolean;
 }
 
