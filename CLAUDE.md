@@ -384,3 +384,10 @@ cached within seconds regardless). `/api/*` is `NetworkOnly` — user data is ne
   reordering and edge auto-scroll) — not HTML5 drag-and-drop, which doesn't fire reliably on
   touch; `TreePane` additionally offers button controls (rename/delete/move) as an always-works
   alternative to dragging.
+- Cache staleness has no revalidation path for anything keyed by an unversioned URL: `dictionary.json`,
+  `data/text/{uid}.json`, and (since the performance audit) `/fonts/*.woff2` are all `CacheFirst`
+  with a 1-year expiration (`vite.config.ts`), so a data/font fix shipped after a user has already
+  cached that exact path won't reach them until the TTL lapses, the `sutta-text` cache's 8000-entry
+  cap evicts it, or they clear site data — there's no cache-busting query/hash on these URLs.
+  `/assets/*` is safe from this only because Vite content-hashes those filenames; anything that
+  overwrites a hashed file's content in place without renaming it would hit the same problem.
