@@ -23,7 +23,7 @@ import { HighlightCountBadge } from '../components/HighlightCountBadge';
 interface DictState {
   word: string;
   gloss: string;
-  body: string;
+  defs: string[] | null;
 }
 
 export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId: string }>) {
@@ -286,7 +286,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     setDict({
       word,
       gloss: def ? `${def.length}` : 'Pali',
-      body: def ? def.join('<br/>') : 'No entry in the offline dictionary for this form. Try the stem, or search the full lexicon.',
+      defs: def,
     });
   }
 
@@ -475,7 +475,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       </div>
 
       {dict && (
-        <DictionaryDock word={dict.word} gloss={dict.gloss} body={dict.body} theme={theme} fontSize={fs} onClose={() => setDict(null)} />
+        <DictionaryDock word={dict.word} gloss={dict.gloss} defs={dict.defs} theme={theme} fontSize={fs} onClose={() => setDict(null)} />
       )}
 
       {panel && (
