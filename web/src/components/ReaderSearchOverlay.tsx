@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
-import { searchCorpus } from '../lib/corpus';
+import { searchCorpus, SEARCH_RESULTS_CAP } from '../lib/corpus';
 import type { ThemeColors } from '../lib/types';
 
 interface ReaderSearchOverlayProps {
@@ -21,7 +21,18 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
   const inputRef = useRef<HTMLInputElement>(null);
   const rowRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
-  const hits = corpus && query.trim() ? searchCorpus(corpus, query, notes) : [];
+  // Deferred rather than run on `query` directly — searchCorpus scans every sutta in the corpus
+  // on each call, so tying it straight to the input would risk a dropped keystroke on a slower
+  // device; useDeferredValue keeps typing itself always-urgent and lets React interrupt/restart
+  // a stale search if the user keeps typing, without a hand-rolled debounce timer.
+  const deferredQuery = useDeferredValue(query);
+  const hits = useMemo(
+    () => (corpus && deferredQuery.trim() ? searchCorpus(corpus, deferredQuery, notes) : []),
+    [corpus, deferredQuery, notes]
+  );
+  // Only render/keyboard-navigate the first SEARCH_RESULTS_CAP — a short/common query can match
+  // hundreds of suttas, and every hit is an unvirtualized row in a small scroll panel.
+  const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -45,13 +56,13 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
       onClose();
     } else if (e.key === 'ArrowDown') {
       e.preventDefault();
-      setActiveIndex((i) => Math.min(hits.length - 1, i + 1));
+      setActiveIndex((i) => Math.min(displayHits.length - 1, i + 1));
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       setActiveIndex((i) => Math.max(0, i - 1));
-    } else if (e.key === 'Enter' && hits[activeIndex]) {
+    } else if (e.key === 'Enter' && displayHits[activeIndex]) {
       e.preventDefault();
-      onOpenSutta(hits[activeIndex].id);
+      onOpenSutta(displayHits[activeIndex].id);
     }
   }
 
@@ -82,7 +93,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
           style={{ color: theme.fg, borderBottom: `1px solid ${theme.rule}` }}
         />
         <div className="sc flex-1 overflow-y-auto">
-          {hits.map((h, i) => (
+          {displayHits.map((h, i) => (
             <button
               key={h.id}
               ref={(el) => {

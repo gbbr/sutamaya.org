@@ -36,7 +36,11 @@ export default defineConfig({
         // (~58MB across the whole canon) are cached on first use instead of forced into
         // every install — CorpusProvider fetches the dictionary on boot, so in practice it's
         // cached within seconds of the first visit anyway. See CLAUDE.md "Offline strategy".
-        globPatterns: ['**/*.{js,css,html,svg,woff2}', 'data/corpus.json'],
+        // Self-hosted fonts (index.css) follow the same split: only the latin/latin-ext subsets
+        // (what Pali/English text actually uses) are precached; the cyrillic/greek/vietnamese
+        // subsets — vendored only for parity with what Google Fonts was already serving — are
+        // cached on first use like everything else below, not forced into every install.
+        globPatterns: ['**/*.{js,css,html,svg}', '**/*-latin.woff2', '**/*-latin-ext.woff2', 'data/corpus.json'],
         navigateFallbackDenylist: [/^\/api\//],
         runtimeCaching: [
           {
@@ -51,6 +55,11 @@ export default defineConfig({
               cacheName: 'sutta-text',
               expiration: { maxEntries: 8000, maxAgeSeconds: 60 * 60 * 24 * 365 },
             },
+          },
+          {
+            urlPattern: /\/fonts\/.*\.woff2$/,
+            handler: 'CacheFirst',
+            options: { cacheName: 'fonts', expiration: { maxEntries: 20, maxAgeSeconds: 60 * 60 * 24 * 365 } },
           },
           {
             urlPattern: /\/api\/.*/,

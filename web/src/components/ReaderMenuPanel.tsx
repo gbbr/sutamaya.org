@@ -1,11 +1,11 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Trash2, X } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { NoteEditor } from './NoteEditor';
 import { ListMembershipPicker } from './ListMembershipPicker';
 import type { SegmentFile } from '../lib/corpus';
-import { groupHighlights, highlightGroupText } from '../lib/highlights';
+import { highlightGroupText, type HighlightGroup } from '../lib/highlights';
 import type { ReaderFace, ReaderTheme, ThemeColors } from '../lib/types';
 
 interface ReaderMenuPanelProps {
@@ -14,6 +14,9 @@ interface ReaderMenuPanelProps {
   theme: ThemeColors;
   initialTab: 'highlights' | 'lists' | 'text';
   segments: SegmentFile[] | null;
+  // ReaderPage/useSuttaReading already group this sutta's highlights once via groupHighlights —
+  // passed down rather than re-derived here so the same computation isn't done twice per render.
+  highlightGroups: HighlightGroup[];
   onClose: () => void;
   onJumpToHighlight: (segIndex: number) => void;
   // See NoteEditor's `focusSignal` — bumped by ReaderPage's "n" shortcut to focus the note box
@@ -34,14 +37,21 @@ const FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
   { id: 'system', label: 'System' },
 ];
 
-export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, onClose, onJumpToHighlight, noteFocusSignal }: ReaderMenuPanelProps) {
+export function ReaderMenuPanel({
+  suttaId,
+  mobile,
+  theme,
+  initialTab,
+  segments,
+  highlightGroups,
+  onClose,
+  onJumpToHighlight,
+  noteFocusSignal,
+}: ReaderMenuPanelProps) {
   const [tab, setTab] = useState(initialTab);
-  const { notes, submitNote, highlights, removeHighlights } = useUserData();
+  const { notes, submitNote, removeHighlights } = useUserData();
   const { theme: currentTheme, setTheme, fs, setFs, lh, setLh, face, setFace, allPali, toggleAllPali, showNotes, toggleShowNotes } =
     useReaderPrefs();
-
-  const suttaHighlights = highlights[suttaId] || [];
-  const highlightGroups = useMemo(() => groupHighlights(suttaHighlights), [suttaHighlights]);
 
   // Full-screen and top-anchored on mobile (not a bottom sheet) so that when the on-screen
   // keyboard opens (typing a note, or the Lists tab's auto-focused search/create input), the

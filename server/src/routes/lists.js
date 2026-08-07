@@ -55,12 +55,18 @@ listsRouter.post(
   })
 );
 
+// `update()` against a doc id that doesn't exist rejects with a NOT_FOUND (gRPC code 5) error —
+// used below (and by the item-removal route further down) to fold the "does this list exist"
+// check into the write itself instead of a separate `.get()` beforehand. Anything else just
+// rethrows, so a real failure still surfaces as a 500 via asyncHandler rather than a false 404.
+function isNotFound(err) {
+  return err && err.code === 5;
+}
+
 listsRouter.patch(
   '/:id',
   asyncHandler(async (req, res) => {
     const ref = listsCol(req.user.id).doc(req.params.id);
-    const doc = await ref.get();
-    if (!doc.exists) return res.status(404).json({ error: 'not_found' });
     const update = {};
     if (typeof req.body?.label === 'string' && req.body.label.trim()) update.label = req.body.label.trim();
     if (Number.isInteger(req.body?.position)) update.position = req.body.position;
@@ -72,7 +78,19 @@ listsRouter.patch(
       if (parentError) return res.status(400).json({ error: parentError });
       update.parentId = parentId;
     }
-    if (Object.keys(update).length) await ref.update(update);
+    if (Object.keys(update).length) {
+      try {
+        await ref.update(update);
+      } catch (err) {
+        if (isNotFound(err)) return res.status(404).json({ error: 'not_found' });
+        throw err;
+      }
+    } else {
+      // Nothing to write — fall back to a plain existence check so a PATCH with no recognized
+      // fields still 404s for a bogus id instead of silently succeeding.
+      const doc = await ref.get();
+      if (!doc.exists) return res.status(404).json({ error: 'not_found' });
+    }
     res.json({ ok: true });
   })
 );
@@ -142,9 +160,12 @@ listsRouter.delete(
   '/:id/items/:suttaId',
   asyncHandler(async (req, res) => {
     const ref = listsCol(req.user.id).doc(req.params.id);
-    const doc = await ref.get();
-    if (!doc.exists) return res.status(404).json({ error: 'not_found' });
-    await ref.update({ items: FieldValue.arrayRemove(req.params.suttaId) });
+    try {
+      await ref.update({ items: FieldValue.arrayRemove(req.params.suttaId) });
+    } catch (err) {
+      if (isNotFound(err)) return res.status(404).json({ error: 'not_found' });
+      throw err;
+    }
     res.json({ ok: true });
   })
 );

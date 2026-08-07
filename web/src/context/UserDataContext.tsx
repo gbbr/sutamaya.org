@@ -122,6 +122,23 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     [syncUserData]
   );
 
+  // Shared shape for the mutators below that need a full server resync on success (not just an
+  // optimistic local edit) — see submitNote's comment on why. `rethrow` defaults to off since
+  // most call sites (per CLAUDE.md) don't await/catch the mutator themselves; setHighlightRanges
+  // opts in because its own caller (useHighlightPopup's `pick`) does catch it.
+  const mutateThenSync = useCallback(
+    async (context: string, apiCall: () => Promise<unknown>, options: { rethrow?: boolean } = {}) => {
+      try {
+        await apiCall();
+        await syncUserData();
+      } catch (e) {
+        await resyncAfterFailure(context, e);
+        if (options.rethrow) throw e;
+      }
+    },
+    [syncUserData, resyncAfterFailure]
+  );
+
   const createList = useCallback(
     async (label: string, parentId: string | null = null, kind: ListKind = 'list') => {
       if (!user) {
@@ -273,14 +290,9 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     async (suttaId: string, text: string) => {
       if (!user) return promptGoogleSignIn();
       setNotes((n) => ({ ...n, [suttaId]: text }));
-      try {
-        await notesApi.set(suttaId, text);
-        await syncUserData();
-      } catch (e) {
-        await resyncAfterFailure('submit note', e);
-      }
+      await mutateThenSync('submit note', () => notesApi.set(suttaId, text));
     },
-    [user, promptGoogleSignIn, syncUserData, resyncAfterFailure]
+    [user, promptGoogleSignIn, mutateThenSync]
   );
 
   const setHighlightRanges = useCallback(
@@ -296,29 +308,18 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
           : [];
         return { ...hs, [suttaId]: [...kept, ...added] };
       });
-      try {
-        await highlightsApi.setRanges(suttaId, ranges, color);
-        await syncUserData();
-      } catch (err) {
-        await resyncAfterFailure('set highlight ranges', err);
-        throw err;
-      }
+      await mutateThenSync('set highlight ranges', () => highlightsApi.setRanges(suttaId, ranges, color), { rethrow: true });
     },
-    [user, promptGoogleSignIn, syncUserData, resyncAfterFailure]
+    [user, promptGoogleSignIn, mutateThenSync]
   );
 
   const removeHighlights = useCallback(
     async (suttaId: string, ids: string[]) => {
       const idSet = new Set(ids);
       setHighlights((hs) => ({ ...hs, [suttaId]: (hs[suttaId] || []).filter((h) => !idSet.has(h.id)) }));
-      try {
-        await Promise.all(ids.map((id) => highlightsApi.remove(id)));
-        await syncUserData();
-      } catch (e) {
-        await resyncAfterFailure('remove highlights', e);
-      }
+      await mutateThenSync('remove highlights', () => Promise.all(ids.map((id) => highlightsApi.remove(id))));
     },
-    [syncUserData, resyncAfterFailure]
+    [mutateThenSync]
   );
 
   const markVisited = useCallback(
