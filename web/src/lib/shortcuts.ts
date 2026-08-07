@@ -40,7 +40,11 @@ export function shortcutsForScope(scope: ShortcutScope): Shortcut[] {
 
 // True if `e` triggers `shortcut` — checks `e.key` both as-is and lowercased, so call sites never
 // need to know (or repeat) whether a given shortcut is a case-insensitive letter ('h', 'x', ...)
-// or an exact key that must not be lowercased ('Enter', 'Escape', 'ArrowUp', '/', '?').
-export function isShortcut(e: Pick<KeyboardEvent, 'key'>, shortcut: Shortcut): boolean {
+// or an exact key that must not be lowercased ('Enter', 'Escape', 'ArrowUp', '/', '?'). Ignores
+// Ctrl/Cmd/Alt combos (e.g. Cmd+L for the browser's own address-bar focus) so none of our
+// single-key shortcuts hijack a browser/OS chord that happens to share a letter; Shift is exempt
+// since '?' is only reachable as Shift+/.
+export function isShortcut(e: Pick<KeyboardEvent, 'key' | 'ctrlKey' | 'metaKey' | 'altKey'>, shortcut: Shortcut): boolean {
+  if (e.ctrlKey || e.metaKey || e.altKey) return false;
   return shortcut.match.includes(e.key) || shortcut.match.includes(e.key.toLowerCase());
 }
