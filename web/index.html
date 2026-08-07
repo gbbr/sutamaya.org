@@ -30,9 +30,39 @@
     <link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
     <title>Sutamaya</title>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!--
+      A blank #root is otherwise what paints first, for however long the JS bundle takes to
+      download/parse/execute on a cold, mobile-network PWA launch — index.css's own
+      `:root.dark` overrides can't apply until main.tsx's `applyTheme()` runs, so the static
+      markup below (mirroring App.tsx's <Splash>) would flash light-then-dark instead of
+      showing correctly themed from the very first paint. This tiny inline, non-deferred script
+      runs before body parsing continues — before any paint — and applies the same 'dark' class
+      main.tsx's own applyTheme(loadUiPrefs().theme) would, just early enough to matter; that
+      later call is a harmless no-op repeat of the same class once React actually takes over.
+    -->
+    <script>
+      (function () {
+        try {
+          var raw = localStorage.getItem('sutamaya.uiPrefs');
+          var theme = (raw && JSON.parse(raw).theme) || 'light';
+          var dark = theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {
+          // storage unavailable/corrupt — falls through to the light-theme default, same as
+          // loadUiPrefs() itself does
+        }
+      })();
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Replaced wholesale the moment React mounts (main.tsx's createRoot(...).render call) —
+         kept visually identical to App.tsx's own <Splash> (same classes/text) so that swap is
+         seamless rather than a second, different-looking flash of its own. -->
+    <div id="root">
+      <div class="flex items-center justify-center h-full bg-paper">
+        <div class="font-serif text-[20px] text-ink/70">sutamaya</div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

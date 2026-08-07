@@ -64,6 +64,10 @@ export function LibraryPage({
   // highlighted row is actually visible; otherwise fall back to whichever pane was last shown,
   // persisted the same way as TreePane's own Library/My Lists toggle (`sutamaya.treeView`), since
   // a plain in-memory default can't survive the remount either.
+  // Whether this mount is a reader-close round trip (as opposed to an explicit chip/breadcrumb
+  // click or a fresh deep link) — see TreePane's own `restoreOrigin` prop for why its Library/My
+  // lists toggle needs to know this on top of `fromView` above.
+  const restoreOrigin = !!(location?.state as { restoreOrigin?: boolean } | undefined)?.restoreOrigin;
   const [view, setView] = useState<'tree' | 'list'>(() => {
     const fromView = (location?.state as { fromView?: 'tree' | 'list' } | undefined)?.fromView;
     if (fromView === 'tree' || fromView === 'list') return fromView;
@@ -128,11 +132,21 @@ export function LibraryPage({
       // on exactly this pane/nodeId/scroll position instead of falling back to the sutta's bare
       // corpus location (see ReaderPage's closeReader, and this page's own `view` init above for
       // why `fromView` specifically is needed on top of the URL alone).
+      //
+      // A *search* hit is the one case where the opened id isn't actually a member of whatever
+      // `nodeId` currently is — search spans the whole corpus regardless of what's browsed, so a
+      // hit found while browsing category A can easily live in category B. Browsing straight
+      // (tapping a row in the tree/a list) never has this mismatch: the clicked row is always
+      // already a member of `nodeId`'s own contents. Returning to A afterward would show the
+      // tree/list pane on a category the reopened sutta doesn't even belong to (on mobile, the
+      // "wrong tree pane" bug) — using the sutta's own node instead lands back on where it
+      // actually lives, the same place a bare deep link to it would.
+      const returnNodeId = query.trim() && corpus?.suttas[id] ? corpus.suttas[id].node : nodeId;
       navigate(`/read/${encodeURIComponent(id)}`, {
-        state: { from: `/browse/${encodeURIComponent(nodeId || '')}/${encodeURIComponent(id)}`, fromView: view },
+        state: { from: `/browse/${encodeURIComponent(returnNodeId || '')}/${encodeURIComponent(id)}`, fromView: view },
       });
     },
-    [nodeId, view]
+    [nodeId, view, query, corpus]
   );
 
   const showTreePane = !mobile || view === 'tree';
@@ -258,6 +272,7 @@ export function LibraryPage({
           hits={hits}
           onActiveHitChange={setActiveSearchId}
           visible={showTreePane}
+          restoreOrigin={restoreOrigin}
         />
       </div>
 

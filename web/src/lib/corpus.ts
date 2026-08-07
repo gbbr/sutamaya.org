@@ -137,6 +137,13 @@ function findInChapters(
 export interface BreadcrumbEntry {
   id: string;
   label: string;
+  // Whether this entry itself holds further sub-categories (`chapters`) rather than suttas
+  // directly — i.e. the same test TreeRow uses to decide whether a row expands vs. opens. A
+  // breadcrumb navigation needs this to know which pane to land on: an expandable entry has no
+  // suttas of its own (`suttasFor` only matches leaf-group nodes), so ListPane would render
+  // empty for it on mobile — it should land on the tree pane instead. See ReaderPage's
+  // breadcrumb onClick.
+  expandable: boolean;
 }
 
 // The path from nikaya down to (and including) a sutta's own leaf group — e.g. "Saṁyutta
@@ -146,7 +153,7 @@ export function breadcrumbFor(corpus: Corpus, nodeId: string): BreadcrumbEntry[]
   const found = findNode(corpus, nodeId);
   if (!found) return [];
   const chain = found.kind === 'chapter' ? [...found.ancestors, found.node] : [found.node];
-  return chain.map((n) => ({ id: n.id, label: n.label }));
+  return chain.map((n) => ({ id: n.id, label: n.label, expandable: isExpandable(n) }));
 }
 
 export function nodeLabel(corpus: Corpus, id: string, lists: ListDef[]): string {
