@@ -269,11 +269,16 @@ export function TreePane({
     onSearch('');
   }
 
-  // Opening a search hit is a "navigate away" from the search UI itself — closing it here (rather
-  // than leaving it open behind whatever the hit navigated to) means coming back to this pane
-  // doesn't show a stale query and result list.
+  // Opening a search hit navigates to `/read/:id` — a different route than this one, so
+  // LibraryPage (and this pane's search UI with it) unmounts once the reader takes over; a
+  // return trip remounts it fresh, with no stale query/result list to clean up. Deliberately
+  // *not* calling closeSearch() first: `navigate()` only takes effect a microtask+rAF later (see
+  // LibraryPage's own comment on this), so clearing the search UI synchronously here would paint
+  // a frame of the bare tree underneath before the reader actually replaces it — the "search
+  // hides, tree flashes, then the reader shows" bug. Leaving the search UI exactly as the user
+  // left it until the swap happens keeps the transition looking like search result → reader,
+  // with nothing in between.
   function openHit(id: string) {
-    closeSearch();
     onOpenSutta(id);
   }
 
