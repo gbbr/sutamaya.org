@@ -183,7 +183,23 @@ users/{uid}/lists/{listId}           { label, parentId, kind, position, items: s
                                                                                 parentId), not the
                                                                                 whole collection
 users/{uid}/notes/{suttaId}          { text, updatedAt }        — doc ID *is* the sutta uid
-users/{uid}/highlights/{highlightId} { suttaId, i, s, e, color, createdAt }
+users/{uid}/highlights/{highlightId} { suttaId, i, s, e, color, g, createdAt }  — `g` is a
+                                                                                groupId shared by
+                                                                                every doc written
+                                                                                by one
+                                                                                PUT /highlights/
+                                                                                ranges call, so a
+                                                                                cross-segment
+                                                                                highlight
+                                                                                (multiple docs, one
+                                                                                per segment) can be
+                                                                                recombined by
+                                                                                `groupHighlights()`
+                                                                                (web/src/lib/
+                                                                                highlights.ts)
+                                                                                without inferring
+                                                                                it from segment
+                                                                                adjacency
 users/{uid}/visited/{suttaId}        { visitedAt }              — doc ID *is* the sutta uid;
                                                                    written once the reader has
                                                                    stayed open on that sutta for
@@ -206,7 +222,9 @@ orphaning or cascade-deleting them. `PUT /api/highlights/ranges` fetches a sutta
 ranges (one or more, each in its own segment `i` — a cross-segment selection passes every
 segment's range in one request) in memory, and deletes+inserts in a single `runTransaction()` —
 a direct descendant of the prototype's `setRangeHl`, extended to cover a whole cross-segment
-selection atomically instead of one call per segment. Firestore's Always Free tier (1GiB, 50K
+selection atomically instead of one call per segment, all docs in that call sharing one `g`
+(groupId) so the selection can be recombined for display without inferring it from segment
+adjacency (see the highlights doc shape above). Firestore's Always Free tier (1GiB, 50K
 reads/20K writes/20K deletes *per day*, no time limit) comfortably covers personal-scale use; see
 `deploy.md`.
 
@@ -275,10 +293,9 @@ that header will look like broken auth (cookie silently not persisted) — it is
   character offsets via `Range`, ported from the prototype's `onTextUp`), shared the same way.
   A selection spanning multiple segments produces one highlight range per segment, written in a
   single batched call (`UserDataContext.setHighlightRanges`, one `PUT /api/highlights/ranges`
-  request covering every segment's range in one atomic transaction — see Backend above) and then
-  re-merged for display/counting by `lib/highlights.ts`'s
-  `groupHighlights()`, which treats same-colour highlights in consecutive segments as one
-  highlight rather than disjoint pieces.
+  request covering every segment's range in one atomic transaction, all sharing one server-
+  assigned `g` — see Backend above) and then re-merged for display/counting by `lib/highlights.ts`'s
+  `groupHighlights()`, which groups by that shared `g` rather than disjoint pieces.
 - `TreePane`'s Library/My Lists toggle — a compact icon-based segmented control on the title row
   (not a separate pane-collapse control, which this replaced) switches between the corpus browse
   tree and the user's list tree; state persists across reloads via `localStorage`.

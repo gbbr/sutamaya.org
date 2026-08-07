@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { randomUUID } from 'node:crypto';
 import { db, notesCol, highlightsCol, visitedCol } from '../firestore.js';
 import { requireAuth } from '../auth.js';
 import { asyncHandler } from '../asyncHandler.js';
@@ -22,12 +23,14 @@ annotationsRouter.put(
 // segment i) of suttaId with `color` (color === null just removes the overlap) — a single-range
 // array covers the common single-segment selection, a multi-entry one covers a cross-segment
 // selection (see useHighlightPopup), so one request always maps to one atomic write regardless
-// of how many segments it spans. Mirrors the prototype's setRangeHl. Fetches by suttaId alone
-// (single equality filter, no composite index needed) and filters/overlaps in memory — a sutta
-// has at most a handful of highlights, so this is cheap either way. Runs as a transaction (not a
-// plain batch) so two overlapping writes for the same sutta racing each other (e.g. two open
-// tabs) can't both read the same pre-write snapshot and produce a lost update — Firestore retries
-// the loser against the winner's fresh state.
+// of how many segments it spans. Mirrors the prototype's setRangeHl. All docs written by one
+// call share a `g` (groupId) so a cross-segment highlight can be grouped back together
+// (lib/highlights.ts's groupHighlights) without inferring it from segment adjacency. Fetches by
+// suttaId alone (single equality filter, no composite index needed) and filters/overlaps in
+// memory — a sutta has at most a handful of highlights, so this is cheap either way. Runs as a
+// transaction (not a plain batch) so two overlapping writes for the same sutta racing each other
+// (e.g. two open tabs) can't both read the same pre-write snapshot and produce a lost update —
+// Firestore retries the loser against the winner's fresh state.
 annotationsRouter.put(
   '/highlights/ranges',
   asyncHandler(async (req, res) => {
@@ -47,7 +50,8 @@ annotationsRouter.put(
       overlapping.forEach((doc) => tx.delete(doc.ref));
       if (color) {
         const createdAt = new Date().toISOString();
-        ranges.forEach((r) => tx.set(col.doc(), { suttaId, i: r.i, s: r.s, e: r.e, color, createdAt }));
+        const g = randomUUID();
+        ranges.forEach((r) => tx.set(col.doc(), { suttaId, i: r.i, s: r.s, e: r.e, color, g, createdAt }));
       }
     });
     res.json({ ok: true });

@@ -51,7 +51,7 @@ async function buildUserData(userId) {
   const highlights = {};
   highlightsSnap.docs.forEach((doc) => {
     const h = doc.data();
-    (highlights[h.suttaId] = highlights[h.suttaId] || []).push({ id: doc.id, i: h.i, s: h.s, e: h.e, c: h.color });
+    (highlights[h.suttaId] = highlights[h.suttaId] || []).push({ id: doc.id, i: h.i, s: h.s, e: h.e, c: h.color, g: h.g });
   });
 
   const visited = {};

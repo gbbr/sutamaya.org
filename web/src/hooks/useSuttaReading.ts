@@ -15,7 +15,7 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(suttaId:
   const hlForSutta = (suttaId && highlights[suttaId]) || [];
   const popup = useHighlightPopup(suttaId, hlForSutta, segments);
   const scrollRef = useScrollMemory<T>(suttaId ? `${scrollKeyPrefix}:${suttaId}` : null);
-  const highlightGroups = useMemo(() => groupHighlights(hlForSutta, segments), [hlForSutta, segments]);
+  const highlightGroups = useMemo(() => groupHighlights(hlForSutta), [hlForSutta]);
   const hlCounts = useMemo(() => highlightCountsByColor(hlForSutta), [hlForSutta]);
 
   function scrollToSegment(segIndex: number, block?: string = 'start') {
