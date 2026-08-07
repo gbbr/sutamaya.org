@@ -150,7 +150,13 @@
   --treepane: 30 27 23;
   --listpane: 26 24 20;
   --field: 36 33 28;
-  --chip: 54 49 42;
+  /* Deliberately much brighter than the --paper/--treepane/--listpane/--field elevation ladder
+     above — this is the only surface color that has to read as a distinct "active" mark sitting
+     on top of a translucent --ink track (TreePane.tsx's two toggle knobs), not just as "elevated
+     panel". A value that merely continued the ladder (~54 49 42) landed almost on top of that
+     track's own composited color, since the track itself lightens toward --ink; it needs to be
+     as far from the track as light mode's white knob is from its own (much lighter) track. */
+  --chip: 84 77 65;
   --accent: 146 114 67;
   --accent2: 138 106 59;
   --accent-text: 196 154 97;
