@@ -41,7 +41,7 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
     useReaderPrefs();
 
   const suttaHighlights = highlights[suttaId] || [];
-  const highlightGroups = useMemo(() => groupHighlights(suttaHighlights, segments), [suttaHighlights, segments]);
+  const highlightGroups = useMemo(() => groupHighlights(suttaHighlights), [suttaHighlights]);
 
   // Full-screen and top-anchored on mobile (not a bottom sheet) so that when the on-screen
   // keyboard opens (typing a note, or the Lists tab's auto-focused search/create input), the

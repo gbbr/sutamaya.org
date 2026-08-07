@@ -290,7 +290,10 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       setHighlights((hs) => {
         const current = hs[suttaId] || [];
         const kept = current.filter((h) => !ranges.some((r) => h.i === r.i && h.s < r.e && h.e > r.s));
-        const added = color ? ranges.map((r) => ({ id: `temp-${Date.now()}-${r.i}`, i: r.i, s: r.s, e: r.e, c: color })) : [];
+        const tempGroupId = `temp-${Date.now()}`;
+        const added = color
+          ? ranges.map((r) => ({ id: `${tempGroupId}-${r.i}`, i: r.i, s: r.s, e: r.e, c: color, g: tempGroupId }))
+          : [];
         return { ...hs, [suttaId]: [...kept, ...added] };
       });
       try {

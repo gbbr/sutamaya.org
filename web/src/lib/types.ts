@@ -48,6 +48,7 @@ export interface Highlight {
   s: number;
   e: number;
   c: string;
+  g: string;
 }
 
 // 'list' holds suttas (`items`) and can't have children. 'group' ("ListGroup") is the reverse:

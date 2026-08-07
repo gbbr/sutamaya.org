@@ -43,7 +43,7 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
   // leave the rest behind as a separate, now-shorter highlight.
   const openPop = useCallback(
     (i: number, s: number, e: number, rect: DOMRect, on: string | null) => {
-      const group = groupHighlights(highlights, segments).find((g) => g.items.some((h) => h.i === i && h.s === s && h.e === e));
+      const group = groupHighlights(highlights).find((g) => g.items.some((h) => h.i === i && h.s === s && h.e === e));
       const ranges: HlRange[] = group ? group.items.map((h) => ({ i: h.i, s: h.s, e: h.e })) : [{ i, s, e }];
       setPop({ ranges, x: rect.left + rect.width / 2, y: rect.bottom, on });
     },
