@@ -31,11 +31,17 @@ export async function findUserById(id) {
   return { id: doc.id, ...doc.data() };
 }
 
+// `req.session.userId` is only ever set by POST /api/auth/google after Google's own credential
+// verification (routes/auth.js), and the session cookie itself is signed (cookie-session) — so
+// it's already trustworthy without a Firestore round trip to confirm the user still exists.
+// Every route gated by this middleware (lists.js, data.js, annotations.js) only ever reads
+// `req.user.id`; routes that need the full profile (email/name/picture) — GET /me,
+// GET /api/data/export — fetch it themselves via findUserById instead of paying for it here on
+// every single authenticated request, including the GET /api/data call fired on every app load
+// and after every optimistic-update resync.
 export const requireAuth = asyncHandler(async (req, res, next) => {
   const userId = req.session && req.session.userId;
   if (!userId) return res.status(401).json({ error: 'not_authenticated' });
-  const user = await findUserById(userId);
-  if (!user) return res.status(401).json({ error: 'not_authenticated' });
-  req.user = user;
+  req.user = { id: userId };
   next();
 });

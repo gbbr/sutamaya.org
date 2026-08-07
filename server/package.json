@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@google-cloud/firestore": "^8.7.1",
+    "compression": "^1.8.1",
     "cookie-session": "^2.1.0",
     "cors": "^2.8.5",
     "express": "^4.21.0",

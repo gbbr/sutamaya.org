@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { listsCol, notesCol, highlightsCol, visitedCol } from '../firestore.js';
-import { requireAuth } from '../auth.js';
+import { requireAuth, findUserById } from '../auth.js';
 import { asyncHandler } from '../asyncHandler.js';
 import { latestIds } from '../lib/autoListRecency.js';
 
@@ -119,7 +119,10 @@ dataRouter.get(
 dataRouter.get(
   '/export',
   asyncHandler(async (req, res) => {
-    const payload = { email: req.user.email, exportedAt: new Date().toISOString(), ...(await buildUserData(req.user.id)) };
+    // requireAuth no longer fetches the full profile (see auth.js) — this is the one route under
+    // it that actually needs the email, so it fetches its own.
+    const user = await findUserById(req.user.id);
+    const payload = { email: user?.email, exportedAt: new Date().toISOString(), ...(await buildUserData(req.user.id)) };
     res.setHeader('Content-Disposition', 'attachment; filename="sutamaya-export.json"');
     res.json(payload);
   })

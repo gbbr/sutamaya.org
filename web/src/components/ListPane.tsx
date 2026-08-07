@@ -42,6 +42,21 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, visible = 
     [corpus, nodeId, query, notes, lists, membership]
   );
 
+  // Chips/highlight-count per row, keyed off `items` rather than the reorder-drag's own
+  // `displayItems` — `items` (and therefore this map) doesn't change while a drag reshuffles
+  // display order, so dragging a list no longer recomputes every visible row's chip/highlight
+  // lookups on every rAF tick, just the moved row's position.
+  const rowMeta = useMemo(() => {
+    const map = new Map<string, { chips: Array<{ id: string; breadcrumb: string }>; hlCount: number }>();
+    for (const [id] of items) {
+      const chips = (membership[id] || [])
+        .filter((c) => !AUTO_LIST_IDS.has(c))
+        .map((c) => ({ id: c, breadcrumb: resolveListById(c, flatLists).breadcrumb }));
+      map.set(id, { chips, hlCount: highlightCount(highlights[id] || []) });
+    }
+    return map;
+  }, [items, membership, flatLists, highlights]);
+
   // Pointer Events (not HTML5 drag-and-drop, which touch browsers largely don't fire) drive a
   // single-list drag-reorder: the dragged item's id and a live working copy of the order live in
   // refs/state here, `dragOrder` (rendered instead of `items` while set) shifts live as the
@@ -224,10 +239,7 @@ export function ListPane({ nodeId, selectedId, query, onBack, onOpen, visible = 
           // Up/Down/Enter, which key off the same `suttaId`.
           const on = id === selectedId;
           const note = notes[id];
-          const chips = (membership[id] || [])
-            .filter((c) => !AUTO_LIST_IDS.has(c))
-            .map((c) => ({ id: c, breadcrumb: resolveListById(c, flatLists).breadcrumb }));
-          const hlCount = highlightCount(highlights[id] || []);
+          const { chips, hlCount } = rowMeta.get(id) ?? { chips: [], hlCount: 0 };
           const dragging = dragIdRef.current === id;
           return (
             <div

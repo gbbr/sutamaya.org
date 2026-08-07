@@ -47,7 +47,7 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
       const ranges: HlRange[] = group ? group.items.map((h) => ({ i: h.i, s: h.s, e: h.e })) : [{ i, s, e }];
       setPop({ ranges, x: rect.left + rect.width / 2, y: rect.bottom, on });
     },
-    [highlights, segments]
+    [highlights]
   );
 
   const onTextUp = useCallback(() => {

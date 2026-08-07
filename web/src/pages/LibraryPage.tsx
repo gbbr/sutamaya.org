@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
 import { useLayout } from '../context/LayoutContext';
 import { useCorpus } from '../context/CorpusContext';
@@ -81,21 +81,29 @@ export function LibraryPage({ nodeId: routeNodeId, suttaId: rawSuttaId }: RouteC
     setNodeId(routeNodeId);
   }, [routeNodeId]);
 
-  function onSelectNode(id: string) {
+  // useCallback-wrapped (not inline arrows at the JSX call sites below) so these stay
+  // referentially stable across renders that don't actually change what they'd do — e.g.
+  // TreePane's keydown effect depends on `onOpenSutta`, so a fresh function identity on every
+  // LibraryPage render (typing in the search box re-renders this page on every keystroke) would
+  // otherwise tear down and re-add that window-level listener once per keystroke.
+  const onSelectNode = useCallback((id: string) => {
     setQuery('');
     setView('list');
     setNodeId(id);
     setSuttaId(undefined);
     navigate(`/browse/${encodeURIComponent(id)}`);
-  }
+  }, []);
 
-  function onOpen(id: string) {
-    // `from` round-trips through the reader's own navigate() calls (Prev/Next, its search
-    // overlay) so that whenever it's closed — however many suttas later — it lands back on
-    // exactly this pane/nodeId/scroll position instead of falling back to the sutta's bare
-    // corpus location (see ReaderPage's closeReader).
-    navigate(`/read/${encodeURIComponent(id)}`, { state: { from: `/browse/${encodeURIComponent(nodeId || '')}/${encodeURIComponent(id)}` } });
-  }
+  const onOpen = useCallback(
+    (id: string) => {
+      // `from` round-trips through the reader's own navigate() calls (Prev/Next, its search
+      // overlay) so that whenever it's closed — however many suttas later — it lands back on
+      // exactly this pane/nodeId/scroll position instead of falling back to the sutta's bare
+      // corpus location (see ReaderPage's closeReader).
+      navigate(`/read/${encodeURIComponent(id)}`, { state: { from: `/browse/${encodeURIComponent(nodeId || '')}/${encodeURIComponent(id)}` } });
+    },
+    [nodeId]
+  );
 
   const showTreePane = !mobile || view === 'tree';
   const showListPane = !mobile || view === 'list';

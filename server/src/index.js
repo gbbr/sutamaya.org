@@ -2,6 +2,7 @@ import './env.js';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import express from 'express';
+import compression from 'compression';
 import cors from 'cors';
 import cookieSession from 'cookie-session';
 import rateLimit from 'express-rate-limit';
@@ -25,6 +26,10 @@ const app = express();
 // Cloud Run sits behind a TLS-terminating proxy; this makes `secure` cookies and
 // req.protocol reflect the original HTTPS request instead of the proxy's plain HTTP hop.
 app.set('trust proxy', 1);
+// gzip everything below — the biggest win is corpus.json/dictionary.json/text/{uid}.json (all
+// large JSON, served either via the API in dev or express.static below in production) and
+// GET /api/data's response, both of which compress ~70-90% as JSON/text.
+app.use(compression());
 
 // Covers the static SPA/data files and general API traffic — generous enough for
 // real browsing (including repeat dictionary/text fetches), tight enough to bound
@@ -70,6 +75,13 @@ app.use('/api/data', dataRouter);
 // simplest possible deploy (one Cloud Run service) and avoids cross-origin cookies entirely.
 if (isProd) {
   const webDist = path.join(__dirname, '..', 'web-dist');
+  // Vite content-hashes everything under `assets/` (dist/assets/*-[hash].js/css) — a given
+  // filename's content never changes, so it's safe to tell the browser to skip revalidation
+  // entirely for a year. Everything else served below (index.html, sw.js, workbox-*.js,
+  // manifest.webmanifest, icons) is NOT content-hashed and must keep the default short/
+  // must-revalidate caching, or a deploy updating index.html's references to a new hashed
+  // bundle would go unnoticed by browsers still serving the old index.html from cache.
+  app.use('/assets', express.static(path.join(webDist, 'assets'), { maxAge: '1y', immutable: true }));
   app.use(express.static(webDist));
   app.get(/^(?!\/api\/).*/, (_req, res) => {
     res.sendFile(path.join(webDist, 'index.html'));

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
 import { X, Menu as MenuIcon, ChevronRight } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
@@ -279,16 +279,24 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     navigate(`/read/${encodeURIComponent(id)}`, { state: { from } });
   }
 
-  function onWordClick(raw: string) {
-    if (!dictionary) return;
-    const word = raw.replace(/[.,;:""''"'?!—]/g, '');
-    const def = lookupWord(dictionary, raw);
-    setDict({
-      word,
-      gloss: def ? `${def.length}` : 'Pali',
-      defs: def,
-    });
-  }
+  // Wrapped in useCallback (as are onToggleSeg/onToggleNote below) so SegmentedText's own
+  // per-segment memoization isn't defeated by a freshly-allocated function on every ReaderPage
+  // render — see SegmentedText.tsx's perf note.
+  const onWordClick = useCallback(
+    (raw: string) => {
+      if (!dictionary) return;
+      const word = raw.replace(/[.,;:""''"'?!—]/g, '');
+      const def = lookupWord(dictionary, raw);
+      setDict({
+        word,
+        gloss: def ? `${def.length}` : 'Pali',
+        defs: def,
+      });
+    },
+    [dictionary]
+  );
+  const onToggleSeg = useCallback((i: number) => setOpenSegs((s) => ({ ...s, [i]: !s[i] })), []);
+  const onToggleNote = useCallback((i: number) => setOpenNotes((s) => ({ ...s, [i]: !s[i] })), []);
 
   function onReaderPointerDown(e: React.PointerEvent) {
     tapRef.current = { x: e.clientX, y: e.clientY };
@@ -455,13 +463,13 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
               face={faceFamily}
               openSegs={openSegs}
               allPali={allPali}
-              onToggleSeg={(i) => setOpenSegs((s) => ({ ...s, [i]: !s[i] }))}
+              onToggleSeg={onToggleSeg}
               onWordClick={onWordClick}
               onTextUp={onTextUp}
-              onSpanClick={(i, s, e, rect, color) => openPop(i, s, e, rect, color)}
+              onSpanClick={openPop}
               showNotes={showNotes}
               openNotes={openNotes}
-              onToggleNote={(i) => setOpenNotes((s) => ({ ...s, [i]: !s[i] }))}
+              onToggleNote={onToggleNote}
             />
           ) : (
             <div className="font-sans text-sm opacity-50">Loading…</div>
@@ -484,6 +492,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           theme={theme}
           initialTab={tab}
           segments={segments}
+          highlightGroups={highlightGroups}
           onClose={() => setPanel(false)}
           onJumpToHighlight={jumpToHighlight}
           noteFocusSignal={noteFocusSignal}

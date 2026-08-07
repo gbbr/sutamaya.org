@@ -5,9 +5,22 @@ export async function loadCorpus(): Promise<Corpus> {
   return res.json();
 }
 
-export async function loadDictionary(): Promise<Dictionary> {
-  const res = await fetch('/data/dictionary.json');
-  return res.json();
+// Runs the fetch + ~20MB JSON.parse in a Web Worker (see workers/dictionaryWorker.ts) instead of
+// blocking the main thread at app boot.
+export function loadDictionary(): Promise<Dictionary> {
+  return new Promise((resolve, reject) => {
+    const worker = new Worker(new URL('../workers/dictionaryWorker.ts', import.meta.url), { type: 'module' });
+    worker.onmessage = (e: MessageEvent<{ ok: boolean; dictionary?: Dictionary; error?: string }>) => {
+      worker.terminate();
+      if (e.data.ok && e.data.dictionary) resolve(e.data.dictionary);
+      else reject(new Error(e.data.error || 'dictionary worker failed'));
+    };
+    worker.onerror = (event) => {
+      worker.terminate();
+      reject(event.error instanceof Error ? event.error : new Error('dictionary worker failed'));
+    };
+    worker.postMessage('load');
+  });
 }
 
 // SuttaCentral's own structural role for this segment (see scripts/fetch-html-structure.mjs and
@@ -169,6 +182,13 @@ export interface SearchHit {
   sutta: Sutta;
 }
 
+// A short/common query (a single letter, "the") can realistically match hundreds of suttas — both
+// searchCorpus consumers (TreePane's own search, ReaderSearchOverlay) render hits as unvirtualized
+// DOM rows in a small scroll panel, so each caps how many it actually renders to this (same
+// AUTO_LIST_CAP pattern as server/src/routes/data.js's auto-lists) — searchCorpus itself still
+// returns every match so a caller can show an accurate total count.
+export const SEARCH_RESULTS_CAP = 80;
+
 // Case- and diacritic-insensitive comparison key — Pali romanization leans heavily on combining
 // marks (ā, ī, ū, ñ, ṭ, ḍ, ṇ, ḷ, ṁ, …) that most people don't bother typing, so a search for
 // plain "a"/"n" should still match "ā"/"ñ". NFD splits each accented letter into its base letter
@@ -179,13 +199,34 @@ function searchKey(s: string): string {
   return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 }
 
+// Each sutta's normalized (searchKey'd) "static" haystack — everything except the user's own
+// note, which can change independently — cached per Corpus object. searchCorpus runs on every
+// keystroke in both TreePane's own search and the reader's search overlay; without this, it
+// would re-run NFD-normalize + diacritic-strip + lowercase over all ~4000 suttas' ref/title/
+// Pali/blurb text on every single keystroke. corpus.json is fetched once and never mutated after
+// load, so a WeakMap keyed on the Corpus reference is safe for the app's lifetime.
+const staticHaystackCache = new WeakMap<Corpus, Map<string, string>>();
+
+function staticHaystacksFor(corpus: Corpus): Map<string, string> {
+  let cache = staticHaystackCache.get(corpus);
+  if (!cache) {
+    cache = new Map();
+    for (const [id, s] of suttaEntries(corpus)) {
+      cache.set(id, searchKey([s.ref, s.en, s.pali, s.blurb].join(' ')));
+    }
+    staticHaystackCache.set(corpus, cache);
+  }
+  return cache;
+}
+
 export function searchCorpus(corpus: Corpus, query: string, notes: Record<string, string>): SearchHit[] {
   const q = searchKey(query.trim());
   if (!q) return [];
+  const staticHaystacks = staticHaystacksFor(corpus);
   const hits: SearchHit[] = [];
   for (const [id, s] of suttaEntries(corpus)) {
-    const note = notes[id] || '';
-    const haystack = searchKey([s.ref, s.en, s.pali, s.blurb, note].join(' '));
+    const note = notes[id];
+    const haystack = note ? `${staticHaystacks.get(id)} ${searchKey(note)}` : staticHaystacks.get(id)!;
     if (haystack.includes(q)) hits.push({ id, sutta: s });
   }
   return hits;

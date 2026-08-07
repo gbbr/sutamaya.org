@@ -10,7 +10,7 @@ import { useScrollToNode } from '../hooks/useScrollToNode';
 import { useListTreeIndex } from '../hooks/useListTreeIndex';
 import { useListCrud } from '../hooks/useListCrud';
 import { useListTreeDrag } from '../hooks/useListTreeDrag';
-import { ancestorsOf, findNode, isExpandable, searchCorpus } from '../lib/corpus';
+import { ancestorsOf, findNode, isExpandable, searchCorpus, SEARCH_RESULTS_CAP } from '../lib/corpus';
 import { ancestorsOfList } from '../lib/lists';
 import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
 import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
@@ -203,6 +203,10 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
 
   const searching = query.trim().length > 0;
   const hits = useMemo(() => (corpus && searching ? searchCorpus(corpus, query, notes) : []), [corpus, query, searching, notes]);
+  // A short/common query can match hundreds of suttas — only render/keyboard-navigate the first
+  // SEARCH_RESULTS_CAP (see its own comment); `hits.length` (uncapped) still drives the "N
+  // results" label below so that count stays honest.
+  const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);
 
   useEffect(() => {
     setSearchActiveIndex(-1);
@@ -236,16 +240,16 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
       // focus. '/' and 'x' below are unrelated shortcuts and keep the plain bail: typing either
       // character into the search box (or any input) must never re-trigger them.
       const isSearchInput = e.target === searchInput.current;
-      if (searching && hits.length > 0 && !(tag === 'textarea' || (tag === 'input' && !isSearchInput))) {
+      if (searching && displayHits.length > 0 && !(tag === 'textarea' || (tag === 'input' && !isSearchInput))) {
         if (isShortcut(e, SHORTCUTS.librarySelectMove)) {
           e.preventDefault();
-          if (e.key === 'ArrowDown') setSearchActiveIndex((i) => Math.min(hits.length - 1, i + 1));
+          if (e.key === 'ArrowDown') setSearchActiveIndex((i) => Math.min(displayHits.length - 1, i + 1));
           else setSearchActiveIndex((i) => Math.max(0, i - 1));
           return;
         }
-        if (isShortcut(e, SHORTCUTS.librarySelectOpen) && searchActiveIndexRef.current >= 0 && searchActiveIndexRef.current < hits.length) {
+        if (isShortcut(e, SHORTCUTS.librarySelectOpen) && searchActiveIndexRef.current >= 0 && searchActiveIndexRef.current < displayHits.length) {
           e.preventDefault();
-          openHit(hits[searchActiveIndexRef.current].id);
+          openHit(displayHits[searchActiveIndexRef.current].id);
           return;
         }
       }
@@ -265,7 +269,7 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [user, searching, hits, searchOpen, onOpenSutta]);
+  }, [user, searching, displayHits, searchOpen, onOpenSutta]);
 
   // The target row (corpus chapter or list) often isn't in the DOM yet on the same render
   // nodeId changed on — the ancestor-expand effects above (and, for a list, the paneView switch
@@ -418,9 +422,9 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
         {searching ? (
           <div>
             <div className="px-[18px] pt-2 pb-1 font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">
-              {hits.length} {hits.length === 1 ? 'result' : 'results'}
+              {hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ results` : `${hits.length} ${hits.length === 1 ? 'result' : 'results'}`}
             </div>
-            {hits.map(({ id, sutta }, i) => (
+            {displayHits.map(({ id, sutta }, i) => (
               <button
                 key={id}
                 ref={(el) => {
