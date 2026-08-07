@@ -81,8 +81,8 @@ note (`class='endsutta'`/`'endvagga'`/`'endsection'`/`'endbook'`/`'endkanda'`/ba
 `'uddana-intro'` — "Their mnemonic:"), or `class='speaker'` for an inline dialogue attribution
 embedded mid-verse ("said the Buddha,"). This is language-independent structure (a verse is a
 verse regardless of translation), so one `html/` file covers both the Pali and English text for
-the same segment keys. Unlike `data/pali/`/`data/sujato/`, it isn't part of the original dataset
-this project started from — `scripts/fetch-html-structure.mjs` is a one-time (not part of
+the same segment keys. Unlike `data/pali/`/`data/sujato/`, it isn't part of the primary dataset —
+`scripts/fetch-html-structure.mjs` is a one-time (not part of
 `npm run build`) script that downloads it from bilara-data on GitHub, skipping files that already
 exist locally unless `--force`; re-run it (`node scripts/fetch-html-structure.mjs`) if
 `data/pali/sutta/` ever gains files it doesn't have a mirror for yet. `build-corpus.mjs` reads it
@@ -220,11 +220,10 @@ Deleting a list re-parents its own children to its parent (`routes/lists.js`) ra
 orphaning or cascade-deleting them. `PUT /api/highlights/ranges` fetches a sutta's highlights
 (single equality `where`, no composite index needed), filters overlaps of the given `[s,e)`
 ranges (one or more, each in its own segment `i` — a cross-segment selection passes every
-segment's range in one request) in memory, and deletes+inserts in a single `runTransaction()` —
-a direct descendant of the prototype's `setRangeHl`, extended to cover a whole cross-segment
-selection atomically instead of one call per segment, all docs in that call sharing one `g`
-(groupId) so the selection can be recombined for display without inferring it from segment
-adjacency (see the highlights doc shape above). Firestore's Always Free tier (1GiB, 50K
+segment's range in one request) in memory, and deletes+inserts in a single `runTransaction()`,
+all docs in that call sharing one `g` (groupId) so the selection can be recombined for display
+without inferring it from segment adjacency (see the highlights doc shape above). Firestore's
+Always Free tier (1GiB, 50K
 reads/20K writes/20K deletes *per day*, no time limit) comfortably covers personal-scale use; see
 `deploy.md`.
 
@@ -291,18 +290,17 @@ that header will look like broken auth (cookie silently not persisted) — it is
   `dangerouslySetInnerHTML`, safe here since a note's HTML is fixed build-time content, not
   runtime/user input — see build-corpus.mjs's `cleanNote()`). The markers themselves are gated
   on `ReaderPrefsContext`'s `showNotes`, flipped by "c" in the reader or a checkbox in the side
-  panel's Theme tab (renamed from "Text" — same tab, still theme/font/Pali controls plus this).
+  panel's Theme tab.
 - `hooks/useHighlightPopup.ts` — selection → floating colour-picker popup logic (segment-relative
-  character offsets via `Range`, ported from the prototype's `onTextUp`), shared the same way.
-  A selection spanning multiple segments produces one highlight range per segment, written in a
+  character offsets via `Range`). A selection spanning multiple segments produces one highlight range per segment, written in a
   single batched call (`UserDataContext.setHighlightRanges`, one `PUT /api/highlights/ranges`
   request covering every segment's range in one atomic transaction, all sharing one server-
   assigned `g` — see Backend above) and then re-merged for display/counting by `lib/highlights.ts`'s
   `groupHighlights()`, which groups by that shared `g` rather than disjoint pieces.
 - `TreePane`'s Library/My Lists toggle — a compact icon-based segmented control on the title row
-  (not a separate pane-collapse control, which this replaced) switches between the corpus browse
-  tree and the user's list tree; state persists across reloads via `localStorage`.
-- Routing is URL-driven (not just client state, unlike the original prototype): `/browse/:nodeId`
+  switches between the corpus browse tree and the user's list tree; state persists across reloads
+  via `localStorage`.
+- Routing is URL-driven: `/browse/:nodeId`
   and `/browse/:nodeId/:suttaId` render `LibraryPage` (tree/list, responsive to viewport
   width — see `LayoutContext.mobile/twoPane/desktop`); `/read/:suttaId` renders `ReaderPage`
   full-screen; `/settings` is a separate route. There's no login/register route — Google
@@ -312,9 +310,8 @@ that header will look like broken auth (cookie silently not persisted) — it is
   entered, so it's correct from a search result or a deep link too.
 - **`<StrictMode>` is deliberately not used** (see `main.tsx`) — `@reach/router`'s `<Redirect>`
   relies on class-lifecycle timing (`componentDidMount` → `Promise.resolve().then(navigate)`)
-  that React 18's dev-mode double-invoking breaks, so `/` → `/browse/dn` silently never fired
-  under StrictMode. Confirmed by bisecting with headless Chrome + CDP screenshots during
-  development. If you re-enable StrictMode, re-test every `navigate()`-on-mount path.
+  that React 18's dev-mode double-invoking breaks, so `/` → `/browse/dn` silently never fires
+  under StrictMode. If you re-enable StrictMode, re-test every `navigate()`-on-mount path.
 - Keyboard nav in `LibraryPage`: Up/Down step the *whole corpus's* canonical order
   (`flatSuttaOrder`, same as the reader's own Prev/Next) through the list, highlighting a row
   without opening it, and Enter opens the highlighted sutta into the full reader — Up/Down/Enter
@@ -331,16 +328,12 @@ that header will look like broken auth (cookie silently not persisted) — it is
   search overlay) so it survives however many
   suttas the reader visits before closing. Falls back to `/browse/{sutta.node}/{suttaId}` for a
   direct/bookmarked link to `/read/:suttaId`, which has no such origin.
-- Search — both `TreePane`'s own (the `/` shortcut) and the reader's `ReaderSearchOverlay` — goes
-  through the same `searchCorpus()` (`lib/corpus.ts`), which is diacritic- and case-insensitive
-  (NFD-normalizes then strips combining marks, i.e. `̀`–`ͯ`, before lowercasing both
-  query and haystack) so typing plain "a"/"n" matches Pali "ā"/"ñ" etc.
-- `components/Tooltip.tsx` — a small custom tooltip (hover/focus, ~350ms delay) used in place of
-  the native `title` attribute on TreePane/ListPane's icon-only buttons, since `title`
-  renders as inconsistent OS chrome that can't be styled. Portaled to `<body>` and positioned from
-  the trigger's own `getBoundingClientRect()` (not CSS `position:absolute` against a wrapper) so
-  it isn't clipped by a pane's own scroll `overflow`. Every button converted this way also picked
-  up an `aria-label` in place of the removed `title`, so the accessible name isn't lost.
+- Search — `LibraryPage`'s own (the `/` shortcut, backing both `TreePane`'s input and
+  `ListPane`'s result list) and the reader's `ReaderSearchOverlay` — goes through the same
+  `searchCorpus()` (`lib/corpus.ts`), which is diacritic- and case-insensitive (NFD-normalizes
+  then strips combining marks, i.e. `̀`–`ͯ`, before lowercasing both query and haystack) so
+  typing plain "a"/"n" matches Pali "ā"/"ñ" etc. Ranks a ref/title/Pali match above a
+  blurb-or-note-only match, and caps every surface at `SEARCH_RESULTS_CAP` (80) results.
 - Escape closes the nearest thing there is to close — the reader's word-lookup dock, then its side
   panel, then the reader itself (`ReaderPage`); the Settings page (`navigate(-1)`, same as its
   "Back" button). Reader Escape handling runs *before* the usual input/textarea bail (unlike every
@@ -352,21 +345,23 @@ that header will look like broken auth (cookie silently not persisted) — it is
 
 ## Offline strategy
 
-`corpus.json` (nav tree + titles/blurbs, a few MB) is precached with the app shell, so browsing
-works offline immediately. The dictionary (~20MB) and per-sutta text (~58MB across the whole
+`corpus.json` (nav tree + titles/blurbs, a few MB) and the self-hosted latin/latin-ext font
+subsets are precached with the app shell, so browsing and reading work offline immediately. The
+dictionary (~20MB, fetched and parsed in a Web Worker — `workers/dictionaryWorker.ts` — so it
+never blocks the main thread or gates first paint) and per-sutta text (~58MB across the whole
 canon) are **not** forced into the install — `vite.config.ts`'s `runtimeCaching` caches them
 `CacheFirst` on first request instead (the dictionary gets fetched on app boot anyway, so it's
-cached within seconds regardless). `/api/*` is `NetworkOnly` — user data is never served stale.
+cached within seconds regardless). Non-latin font subsets follow the same cache-on-first-use
+pattern. `/api/*` is `NetworkOnly` — user data is never served stale.
 
 ## Known gaps / deliberate simplifications
 
 - No offline write queue: list/note/highlight mutations fire immediately against the API: if
   the network is down the optimistic local update stands but the write is lost (only
-  `console.error`-logged). Fine for local dev; a real offline-first sync layer (the original
-  design specs Firebase) would need a queue + conflict resolution.
-- The reader's "change translation source" control is a static label ("Sujato (2018)") —
-  explicitly out of scope for "Fidelity" (see git history for `design/README.md`, since removed
-  from the working tree), since this dataset only has one English translation per collection.
+  `console.error`-logged). A real offline-first sync layer would need a queue + conflict
+  resolution.
+- The reader's "change translation source" control is a static label ("Sujato (2018)") — this
+  dataset only has one English translation per collection, so there's nothing to switch to.
 - "My lists" is two kinds of entry, both `ListDef`s distinguished by `kind` (see the Firestore
   schema above): a plain **list** holds suttas (`items`) and can't have children; a **group**
   ("ListGroup") is the reverse — it can only contain other lists/groups and can never hold items
@@ -384,8 +379,8 @@ cached within seconds regardless). `/api/*` is `NetworkOnly` — user data is ne
   reordering and edge auto-scroll) — not HTML5 drag-and-drop, which doesn't fire reliably on
   touch; `TreePane` additionally offers button controls (rename/delete/move) as an always-works
   alternative to dragging.
-- Cache staleness has no revalidation path for anything keyed by an unversioned URL: `dictionary.json`,
-  `data/text/{uid}.json`, and (since the performance audit) `/fonts/*.woff2` are all `CacheFirst`
+- Cache staleness has no revalidation path for anything keyed by an unversioned URL:
+  `dictionary.json`, `data/text/{uid}.json`, and `/fonts/*.woff2` are all `CacheFirst`
   with a 1-year expiration (`vite.config.ts`), so a data/font fix shipped after a user has already
   cached that exact path won't reach them until the TTL lapses, the `sutta-text` cache's 8000-entry
   cap evicts it, or they clear site data — there's no cache-busting query/hash on these URLs.
