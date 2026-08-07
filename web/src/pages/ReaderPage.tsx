@@ -107,7 +107,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   // sutta changes — Prev/Next, closing, a deep link elsewhere — before the dwell time elapses.
   useEffect(() => {
     if (!suttaId || !sutta) return;
-    const dwellMs = Math.max(1000, sutta.min * 60 * 1000 * 0.05);
+    const dwellMs = Math.max(1000, sutta.min * 60 * 1000 * 0.3);
     const timer = window.setTimeout(() => markVisited(suttaId), dwellMs);
     return () => window.clearTimeout(timer);
   }, [suttaId, sutta, markVisited]);
@@ -285,7 +285,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     const def = lookupWord(dictionary, raw);
     setDict({
       word,
-      gloss: def ? `${def.length} sense${def.length > 1 ? 's' : ''} · DPD` : 'Pali',
+      gloss: def ? `${def.length}` : 'Pali',
       body: def ? def.join('<br/>') : 'No entry in the offline dictionary for this form. Try the stem, or search the full lexicon.',
     });
   }
