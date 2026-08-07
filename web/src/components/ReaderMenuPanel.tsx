@@ -117,9 +117,14 @@ export function ReaderMenuPanel({
           mobile gets an explicit close button in the header row instead (below). */}
       {!mobile && <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,.12)' }} onClick={onClose} />}
       <div data-component="ReaderMenuPanel" style={panelStyle} className="animate-fadeIn">
-        <div className="flex items-center gap-2 mb-4">
+        <div className="flex items-end gap-2 mb-4">
           {mobile && (
-            <button className="flex-none flex items-center -ml-1 mr-1" title="Close" onClick={onClose}>
+            <button
+              className="flex-none flex items-center justify-center pb-2.5"
+              style={{ borderBottom: '2px solid transparent', marginBottom: -1 }}
+              title="Close"
+              onClick={onClose}
+            >
               <X size={17} strokeWidth={1.75} />
             </button>
           )}
