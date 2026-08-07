@@ -136,7 +136,11 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
     [pop, suttaId, setHighlightRanges]
   );
 
-  const close = useCallback(() => setPop(null), []);
+  const close = useCallback(() => {
+    setPop(null);
+    const sel = window.getSelection();
+    if (sel) sel.removeAllRanges();
+  }, []);
   const popStop = useCallback((e: { stopPropagation: () => void }) => e.stopPropagation(), []);
 
   return { pop, openPop, onTextUp, pick, close, popStop };

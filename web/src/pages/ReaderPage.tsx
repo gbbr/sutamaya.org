@@ -214,7 +214,11 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       // graduated Escape behavior (see ListMembershipPicker) calls stopPropagation() so this
       // doesn't also fire on the same keypress and skip past its first step.
       if (isShortcut(e, SHORTCUTS.readerClose)) {
-        if (dict) setDict(null);
+        // A live selection/highlight-color popup is the innermost thing to back out of — it
+        // takes priority even over the dictionary dock, since a word tap can't happen without
+        // first releasing whatever text was selected.
+        if (pop) closePop();
+        else if (dict) setDict(null);
         else if (panel) setPanel(false);
         else closeReader();
         return;
@@ -252,7 +256,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [shortcutsOpen, dict, panel, searchOpen, siblingIds, suttaId]);
+  }, [shortcutsOpen, dict, panel, pop, closePop, searchOpen, siblingIds, suttaId]);
 
   function jumpToHighlight(segIndex: number) {
     setPanel(false);
@@ -334,7 +338,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           className="flex items-center gap-1.5"
           onClick={(e) => {
             e.stopPropagation();
-            setTab('highlights');
+            setTab('text');
             setPanel(true);
           }}
         >
