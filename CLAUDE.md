@@ -248,15 +248,18 @@ frontend's state (`lists`, `membership`, `notes`, `highlights`, `visited`) — s
 `email`/`exportedAt`, as a downloadable attachment (`Content-Disposition`), for a full personal
 data export.
 
-`buildUserData()` also synthesizes two **non-persisted** entries into the `lists` array it
-returns — `{id: 'auto-highlights', label: 'Highlights', auto: true, items: [...]}` and the
-`Notes` equivalent, ids/labels duplicated in `web/src/lib/autoLists.ts` — so the client can
-render "every highlighted/noted sutta" through the same `ListDef` shape and `membership` chips
-as a real list, without them being real `users/{uid}/lists/{listId}` docs: they're recomputed
-fresh on every fetch (most-recently-highlighted/noted first, since there's no stored order the
-way a real list has), can't be renamed/deleted/reordered, and the client keeps them out of the
+`buildUserData()` also synthesizes three **non-persisted** entries into the `lists` array it
+returns — `{id: 'auto-recent', label: 'Recent', auto: true, items: [...]}` (last 20 visited) and
+the `Highlights`/`Notes` equivalents (up to `AUTO_LIST_CAP` = 100 each), ids/labels duplicated in
+`web/src/lib/autoLists.ts` — so the client can render "recently visited"/"every
+highlighted/noted sutta" through the same `ListDef` shape and `membership` chips as a real list,
+without them being real `users/{uid}/lists/{listId}` docs: they're recomputed fresh on every
+fetch (most-recent first — visited/highlighted/noted respectively — since there's no stored
+order the way a real list has, and capped since `ListPane` renders every item as an
+unvirtualized DOM row), can't be renamed/deleted/reordered, and the client keeps them out of the
 user-editable "My lists" tree via their `auto: true` flag, rendering them in `TreePane`'s own
-"Automatic" section instead.
+"Automatic" section instead (`Recent` first, then `Highlights`, then `Notes` — a fixed order set
+in `TreePane.tsx`, not the `lists` array's own order).
 
 In production (`NODE_ENV=production`, set by the Dockerfile) `index.js` also serves the built
 SPA (`web-dist/`, copied in at image build time) and sets `trust proxy` + `secure` cookies —
