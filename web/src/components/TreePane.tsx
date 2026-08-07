@@ -10,7 +10,7 @@ import { useScrollToNode } from '../hooks/useScrollToNode';
 import { useListTreeIndex } from '../hooks/useListTreeIndex';
 import { useListCrud } from '../hooks/useListCrud';
 import { useListTreeDrag } from '../hooks/useListTreeDrag';
-import { ancestorsOf, findNode, isExpandable, searchCorpus, SEARCH_RESULTS_CAP } from '../lib/corpus';
+import { ancestorsOf, findNode, isExpandable, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
 import { ancestorsOfList } from '../lib/lists';
 import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
 import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
@@ -25,15 +25,24 @@ interface TreePaneProps {
   onOpenSutta: (suttaId: string) => void;
   onSearch: (query: string) => void;
   query: string;
+  // Computed once by LibraryPage (not independently here) and shared with ListPane, so the two
+  // panes show one consistent result set instead of each running its own searchCorpus scan — see
+  // ListPane, which does the actual row rendering on desktop while this pane just keeps its input
+  // and keyboard nav.
+  hits: SearchHit[];
+  // Reports the row this pane's own arrow-key nav currently has highlighted (or undefined when
+  // not searching / nothing highlighted yet), so ListPane can mirror that highlight onto its own
+  // rows on desktop, where this pane no longer renders them itself.
+  onActiveHitChange?: (id: string | undefined) => void;
   // Whether this pane is currently the visible one (LibraryPage keeps both TreePane and
   // ListPane mounted on mobile and toggles `display:none` instead of unmounting — see
   // useScrollMemory for why scroll restoration needs to know this).
   visible?: boolean;
 }
 
-export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visible = true }: TreePaneProps) {
+export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, hits, onActiveHitChange, visible = true }: TreePaneProps) {
   const { corpus } = useCorpus();
-  const { lists, notes, createList, renameList, removeList, reorderLists, setListParent } = useUserData();
+  const { lists, createList, renameList, removeList, reorderLists, setListParent } = useUserData();
   const { user, promptGoogleSignIn } = useAuth();
   const { mobile, paneW } = useLayout();
   const scrollRef = useScrollMemory<HTMLDivElement>('tree', visible);
@@ -202,7 +211,6 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
   });
 
   const searching = query.trim().length > 0;
-  const hits = useMemo(() => (corpus && searching ? searchCorpus(corpus, query, notes) : []), [corpus, query, searching, notes]);
   // A short/common query can match hundreds of suttas — only render/keyboard-navigate the first
   // SEARCH_RESULTS_CAP (see its own comment); `hits.length` (uncapped) still drives the "N
   // results" label below so that count stays honest.
@@ -215,6 +223,13 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
   useEffect(() => {
     if (searchActiveIndex >= 0) hitRefs.current[searchActiveIndex]?.scrollIntoView({ block: 'nearest' });
   }, [searchActiveIndex]);
+
+  // Mirrors the currently keyboard-highlighted hit up to LibraryPage so it can show the same
+  // highlight on ListPane's own row for it (see this pane's own render below, which stops
+  // rendering hit rows itself once ListPane is also visible).
+  useEffect(() => {
+    onActiveHitChange?.(searching && searchActiveIndex >= 0 ? displayHits[searchActiveIndex]?.id : undefined);
+  }, [searching, searchActiveIndex, displayHits, onActiveHitChange]);
 
   // Hides the search input and clears its query — on Escape, the inline "x", or opening a hit
   // (see openHit below). Always resets `query` even though closing while empty is a no-op there,
@@ -424,24 +439,34 @@ export function TreePane({ nodeId, onSelect, onOpenSutta, onSearch, query, visib
             <div className="px-[18px] pt-2 pb-1 font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">
               {hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ results` : `${hits.length} ${hits.length === 1 ? 'result' : 'results'}`}
             </div>
-            {displayHits.map(({ id, sutta }, i) => (
-              <button
-                key={id}
-                ref={(el) => {
-                  hitRefs.current[i] = el;
-                }}
-                className={`row flex flex-col w-full text-left gap-[1px] px-[18px] py-[11px] border-b border-ink/[.07] ${i === searchActiveIndex ? 'bg-ink/[.06]' : ''}`}
-                onClick={() => openHit(id)}
-              >
-                <span>
-                  <span className="font-sans text-[11.5px] font-bold text-ink/60 mr-2.5">{sutta.ref}</span>
-                  <span className="text-[16px] font-semibold leading-[1.3]">{sutta.en}</span>
-                </span>
-                <span className="font-serif text-[13.5px] italic text-accent-text">{sutta.pali}</span>
-              </button>
-            ))}
-            {hits.length === 0 && (
-              <div className="font-sans text-center text-[13px] text-ink/40 py-[30px] px-5">No matches.</div>
+            {/* On desktop, ListPane is visible right next to this pane and renders the same hits
+                with more detail (blurb/note, list chips, highlight count) — showing them again
+                here too was pure duplication. This pane still owns the input and keyboard nav
+                (see the keydown effect above, and onActiveHitChange mirroring the highlight into
+                ListPane); on mobile, where ListPane isn't shown at all, it's still the only place
+                results can appear, so it keeps rendering them itself. */}
+            {mobile && (
+              <>
+                {displayHits.map(({ id, sutta }, i) => (
+                  <button
+                    key={id}
+                    ref={(el) => {
+                      hitRefs.current[i] = el;
+                    }}
+                    className={`row flex flex-col w-full text-left gap-[1px] px-[18px] py-[11px] border-b border-ink/[.07] ${i === searchActiveIndex ? 'bg-ink/[.06]' : ''}`}
+                    onClick={() => openHit(id)}
+                  >
+                    <span>
+                      <span className="font-sans text-[11.5px] font-bold text-ink/60 mr-2.5">{sutta.ref}</span>
+                      <span className="text-[16px] font-semibold leading-[1.3]">{sutta.en}</span>
+                    </span>
+                    <span className="font-serif text-[13.5px] italic text-accent-text">{sutta.pali}</span>
+                  </button>
+                ))}
+                {hits.length === 0 && (
+                  <div className="font-sans text-center text-[13px] text-ink/40 py-[30px] px-5">No matches.</div>
+                )}
+              </>
             )}
           </div>
         ) : effectiveView === 'library' ? (

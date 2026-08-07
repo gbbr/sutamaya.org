@@ -1,4 +1,4 @@
-import type { ChapterRow, Corpus, Dictionary, ListDef, Membership, Nikaya, Sutta } from './types';
+import type { ChapterRow, Corpus, Dictionary, ListDef, Nikaya, Sutta } from './types';
 
 export async function loadCorpus(): Promise<Corpus> {
   const res = await fetch('/data/corpus.json');
@@ -182,9 +182,9 @@ export interface SearchHit {
   sutta: Sutta;
 }
 
-// A short/common query (a single letter, "the") can realistically match hundreds of suttas — both
-// searchCorpus consumers (TreePane's own search, ReaderSearchOverlay) render hits as unvirtualized
-// DOM rows in a small scroll panel, so each caps how many it actually renders to this (same
+// A short/common query (a single letter, "the") can realistically match hundreds of suttas — every
+// searchCorpus consumer (TreePane's own search, ListPane, ReaderSearchOverlay) renders hits as
+// unvirtualized DOM rows in a scroll panel, so each caps how many it actually renders to this (same
 // AUTO_LIST_CAP pattern as server/src/routes/data.js's auto-lists) — searchCorpus itself still
 // returns every match so a caller can show an accurate total count.
 export const SEARCH_RESULTS_CAP = 80;
@@ -201,49 +201,51 @@ function searchKey(s: string): string {
 
 // Each sutta's normalized (searchKey'd) "static" haystack — everything except the user's own
 // note, which can change independently — cached per Corpus object. searchCorpus runs on every
-// keystroke in both TreePane's own search and the reader's search overlay; without this, it
+// keystroke in TreePane's own search, ListPane, and the reader's search overlay; without this, it
 // would re-run NFD-normalize + diacritic-strip + lowercase over all ~4000 suttas' ref/title/
 // Pali/blurb text on every single keystroke. corpus.json is fetched once and never mutated after
-// load, so a WeakMap keyed on the Corpus reference is safe for the app's lifetime.
-const staticHaystackCache = new WeakMap<Corpus, Map<string, string>>();
+// load, so a WeakMap keyed on the Corpus reference is safe for the app's lifetime. Kept as two
+// separate strings, not one joined haystack, so a hit can be ranked by *where* it matched (see
+// searchCorpus's `rank`) without re-deriving that from the combined string.
+const staticHaystackCache = new WeakMap<Corpus, Map<string, { title: string; blurb: string }>>();
 
-function staticHaystacksFor(corpus: Corpus): Map<string, string> {
+function staticHaystacksFor(corpus: Corpus): Map<string, { title: string; blurb: string }> {
   let cache = staticHaystackCache.get(corpus);
   if (!cache) {
     cache = new Map();
     for (const [id, s] of suttaEntries(corpus)) {
-      cache.set(id, searchKey([s.ref, s.en, s.pali, s.blurb].join(' ')));
+      cache.set(id, { title: searchKey([s.ref, s.en, s.pali].join(' ')), blurb: searchKey(s.blurb) });
     }
     staticHaystackCache.set(corpus, cache);
   }
   return cache;
 }
 
+// Ranks a ref/title/Pali match above a blurb-or-note-only match (e.g. searching "mind" should
+// surface a sutta titled "The Mind" before one that merely mentions "mind" in its blurb) — ties
+// (same rank) keep the corpus's own build order, since `Array.prototype.sort` is a stable sort in
+// every engine this app targets.
 export function searchCorpus(corpus: Corpus, query: string, notes: Record<string, string>): SearchHit[] {
   const q = searchKey(query.trim());
   if (!q) return [];
   const staticHaystacks = staticHaystacksFor(corpus);
-  const hits: SearchHit[] = [];
+  const hits: Array<SearchHit & { rank: number }> = [];
   for (const [id, s] of suttaEntries(corpus)) {
+    const { title, blurb } = staticHaystacks.get(id)!;
     const note = notes[id];
-    const haystack = note ? `${staticHaystacks.get(id)} ${searchKey(note)}` : staticHaystacks.get(id)!;
-    if (haystack.includes(q)) hits.push({ id, sutta: s });
+    const inTitle = title.includes(q);
+    const inRest = blurb.includes(q) || (!!note && searchKey(note).includes(q));
+    if (!inTitle && !inRest) continue;
+    hits.push({ id, sutta: s, rank: inTitle ? 0 : 1 });
   }
+  hits.sort((a, b) => a.rank - b.rank);
   return hits;
 }
 
-// The exact list of rows ListPane renders for a given browse/search state, factored out so
-// LibraryPage can compute the same ordered list independently for keyboard nav.
-export function listItemsFor(
-  corpus: Corpus,
-  nodeId: string | undefined,
-  query: string,
-  notes: Record<string, string>,
-  lists: ListDef[],
-  membership: Membership
-): Array<[string, Sutta]> {
-  const searching = query.trim().length > 0;
-  if (searching) return searchCorpus(corpus, query, notes).map((h) => [h.id, h.sutta] as [string, Sutta]);
+// The exact list of rows ListPane renders while browsing (not searching — see LibraryPage, which
+// computes search hits itself and hands them to both TreePane and ListPane so they show one
+// consistent result set instead of each re-running searchCorpus independently).
+export function listItemsFor(corpus: Corpus, nodeId: string | undefined, lists: ListDef[]): Array<[string, Sutta]> {
   if (!nodeId) return [];
   const list = lists.find((l) => String(l.id) === nodeId);
   if (list) {

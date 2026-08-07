@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { render, screen, within, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -27,6 +27,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
 import { useLayout } from '../context/LayoutContext';
 import { TreePane } from './TreePane';
+import { searchCorpus } from '../lib/corpus';
 import type { Corpus, ListDef, User } from '../lib/types';
 
 function buildCorpus(): Corpus {
@@ -115,9 +116,10 @@ function mockLayout(overrides: Partial<ReturnType<typeof useLayout>> = {}): Retu
 }
 
 // Mirrors how LibraryPage actually drives TreePane: nodeId/query are controlled from outside,
-// updated via the onSelect/onSearch callbacks TreePane calls — a Harness makes typing/clicking
-// in the rendered tree behave the same way it does in the real app instead of needing a manual
-// rerender() after every interaction.
+// updated via the onSelect/onSearch callbacks TreePane calls, and `hits` is computed from `query`
+// the same way LibraryPage computes it (once, outside TreePane) and hands it down — a Harness
+// makes typing/clicking in the rendered tree behave the same way it does in the real app instead
+// of needing a manual rerender() after every interaction.
 function Harness({
   initialNodeId,
   onSelect,
@@ -129,6 +131,9 @@ function Harness({
 }) {
   const [query, setQuery] = useState('');
   const [nodeId, setNodeId] = useState(initialNodeId);
+  const { corpus } = useCorpus();
+  const { notes } = useUserData();
+  const hits = useMemo(() => (corpus && query.trim() ? searchCorpus(corpus, query, notes) : []), [corpus, query, notes]);
   return (
     <TreePane
       nodeId={nodeId}
@@ -139,6 +144,7 @@ function Harness({
       onOpenSutta={onOpenSutta}
       onSearch={setQuery}
       query={query}
+      hits={hits}
     />
   );
 }
@@ -328,6 +334,14 @@ describe('My Lists tree', () => {
 });
 
 describe('search', () => {
+  // On desktop, ListPane sits right next to this pane and renders the same hits with more detail
+  // — TreePane no longer duplicates the row list there, only on mobile (where ListPane isn't
+  // shown at all). These tests exercise the "does the row list actually work" behavior, which
+  // needs the mobile case; the desktop (count-only) case has its own test below.
+  beforeEach(() => {
+    vi.mocked(useLayout).mockReturnValue(mockLayout({ mobile: true }));
+  });
+
   it('is hidden until the search icon is clicked, then autofocuses', async () => {
     renderHarness();
     expect(screen.queryByPlaceholderText('Search ID, title, blurb, note, text')).not.toBeInTheDocument();
@@ -395,6 +409,16 @@ describe('search', () => {
     expect(screen.getByPlaceholderText('Search ID, title, blurb, note, text')).toBeInTheDocument();
     await userEvent.click(screen.getByLabelText('Close search'));
     expect(screen.queryByPlaceholderText('Search ID, title, blurb, note, text')).not.toBeInTheDocument();
+  });
+
+  it('on desktop, shows only the result count — not the row list (ListPane renders results there)', async () => {
+    vi.mocked(useLayout).mockReturnValue(mockLayout({ mobile: false }));
+    renderHarness();
+    await userEvent.click(screen.getByLabelText('Search'));
+    const input = screen.getByPlaceholderText('Search ID, title, blurb, note, text');
+    await userEvent.type(input, 'hindrance');
+    expect(screen.getByText('1 result')).toBeInTheDocument();
+    expect(screen.queryByText('Overcoming the Hindrances')).not.toBeInTheDocument();
   });
 });
 
