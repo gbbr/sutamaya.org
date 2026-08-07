@@ -15,10 +15,10 @@ export function DictionaryDock({ word, gloss, body, theme, fontSize, onClose }: 
   return (
     <section
       data-component="DictionaryDock"
-      className="flex-none animate-sheetUp"
-      style={{ borderTop: `2px solid ${theme.fg}`, background: theme.panel, padding: '14px 22px 18px' }}
+      className="flex-none flex flex-col animate-sheetUp"
+      style={{ borderTop: `2px solid ${theme.fg}`, background: theme.panel, padding: '14px 22px 18px', maxHeight: '45vh' }}
     >
-      <div className="flex items-baseline gap-3">
+      <div className="flex-none flex items-baseline gap-3">
         <div className="font-semibold font-serif" style={{ fontSize: fontSize + 2 }}>{word}</div>
         <div className="font-sans flex-1 opacity-55" style={{ fontSize: glossSize }}>{gloss}</div>
         <button
@@ -34,7 +34,7 @@ export function DictionaryDock({ word, gloss, body, theme, fontSize, onClose }: 
         </button>
       </div>
       <div
-        className="leading-[1.55] mt-[7px] opacity-[.82]"
+        className="flex-1 min-h-0 overflow-y-auto leading-[1.55] mt-[7px] opacity-[.82]"
         style={{ fontSize: Math.max(12, fontSize - 3.5) }}
         dangerouslySetInnerHTML={{ __html: body }}
       />
