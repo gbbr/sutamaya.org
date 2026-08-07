@@ -78,11 +78,12 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
   const tabBtn = (id: 'highlights' | 'lists' | 'text', label: string) => (
     <button
       key={id}
-      className="flex-1 text-center py-[9px] rounded-field font-sans text-[13.5px] border"
+      className="flex-1 text-center pb-2.5 font-sans text-[11px] font-bold tracking-[.1em] uppercase"
       style={{
-        borderColor: theme.rule,
-        background: tab === id ? theme.fg : 'transparent',
-        color: tab === id ? theme.bg : theme.fg,
+        color: theme.fg,
+        opacity: tab === id ? 1 : 0.5,
+        borderBottom: `2px solid ${tab === id ? theme.fg : 'transparent'}`,
+        marginBottom: -1,
       }}
       onClick={() => setTab(id)}
     >
@@ -112,7 +113,7 @@ export function ReaderMenuPanel({ suttaId, mobile, theme, initialTab, segments, 
               <X size={17} strokeWidth={1.75} />
             </button>
           )}
-          <div className="flex flex-1 gap-2">
+          <div className="flex flex-1 gap-1" style={{ borderBottom: `1px solid ${theme.rule}` }}>
             {tabBtn('highlights', 'Highlights')}
             {tabBtn('lists', 'Lists')}
             {tabBtn('text', 'Theme')}
