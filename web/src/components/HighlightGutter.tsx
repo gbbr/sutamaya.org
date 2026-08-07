@@ -1,5 +1,6 @@
 import { useEffect, useState, type RefObject } from 'react';
 import type { HighlightGroup } from '../lib/highlights';
+import { getUiScale } from '../lib/uiPrefs';
 
 interface Mark {
   key: string;
@@ -37,18 +38,27 @@ export function HighlightGutter({ scrollRef, highlightGroups, onJump, layoutKey 
 
     function recompute() {
       if (!container) return;
+      // getBoundingClientRect() reports real, post-`zoom` screen coordinates, but scrollTop/
+      // scrollHeight are local (pre-zoom) layout units — same distinction index.css's 100dvh
+      // compensation deals with (see applyUiScale). Converting the rect values to local units
+      // right away keeps everything below in one consistent frame, and means `track`/`marks`
+      // are already the right numbers to assign directly as this component's own CSS lengths
+      // (which get magnified by `zoom` back up to the real values at paint time).
+      const scale = getUiScale();
       const rect = container.getBoundingClientRect();
+      const top = rect.top / scale;
+      const height = rect.height / scale;
       const scrollHeight = container.scrollHeight;
-      setTrack({ top: rect.top, height: rect.height });
+      setTrack({ top, height });
       setMarks(
         highlightGroups.map((g) => {
           const el = container.querySelector<HTMLElement>(`[data-seg="${g.i}"]`);
           // Distance from the top of the scrollable content, independent of current scroll
           // position (getBoundingClientRect().top moves as you scroll; adding scrollTop back
           // cancels that out) and of any non-positioned wrapper divs between here and there.
-          const contentTop = el ? el.getBoundingClientRect().top - rect.top + container.scrollTop : 0;
+          const contentTop = el ? el.getBoundingClientRect().top / scale - top + container.scrollTop : 0;
           const ratio = scrollHeight > 0 ? Math.min(1, Math.max(0, contentTop / scrollHeight)) : 0;
-          return { key: g.key, i: g.i, c: g.c, top: ratio * rect.height };
+          return { key: g.key, i: g.i, c: g.c, top: ratio * height };
         })
       );
     }
