@@ -1,6 +1,7 @@
 import { READER_FACES } from './theme';
 import type { AppTheme, ReaderFace } from './types';
 import { MOBILE_BREAKPOINT } from '../context/LayoutContext';
+import { UI_PREFS_KEY } from './storageKeys';
 
 // The UI is noticeably smaller by default on a phone than on desktop at the same nominal scale,
 // so mobile gets this baked into every applied scale on top of whatever the user's own slider
@@ -18,7 +19,7 @@ export interface UiPrefs {
   theme: AppTheme;
 }
 
-export const UI_PREFS_KEY = 'sutamaya.uiPrefs';
+export { UI_PREFS_KEY };
 // 'light' rather than 'system' — the app has only ever rendered light until now, so an existing
 // user whose OS happens to be in dark mode shouldn't see it flip the first time this ships; they
 // opt into 'dark' or 'system' explicitly from here on.

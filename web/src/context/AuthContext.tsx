@@ -51,10 +51,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
     if (window.google) init();
     else {
+      // Bounded rather than polling forever — if the Google Identity Services script never
+      // loads at all (ad-blocker, network failure, script restructured), this gives up after
+      // ~15s and leaves googleReady false instead of running an interval for the tab's whole
+      // lifetime with no error surfaced anywhere.
+      let attempts = 0;
+      const MAX_ATTEMPTS = 150;
       const id = window.setInterval(() => {
         if (window.google) {
           window.clearInterval(id);
           init();
+          return;
+        }
+        attempts += 1;
+        if (attempts >= MAX_ATTEMPTS) {
+          window.clearInterval(id);
+          console.error('Google Identity Services script did not load in time.');
         }
       }, 100);
       return () => window.clearInterval(id);

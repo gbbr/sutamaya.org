@@ -13,6 +13,7 @@ import { useListTreeDrag } from '../hooks/useListTreeDrag';
 import { ancestorsOf, findNode, isExpandable, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
 import { ancestorsOfList } from '../lib/lists';
 import { derivePaneViewSync } from '../lib/paneView';
+import { TREE_VIEW_KEY } from '../lib/storageKeys';
 import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
 import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
 import type { ListDef } from '../lib/types';
@@ -85,14 +86,14 @@ export function TreePane({
   // to switch to, so they're pinned to 'library' regardless of what's stored.
   const [paneView, setPaneView] = useState<'library' | 'lists'>(() => {
     try {
-      return localStorage.getItem('sutamaya.treeView') === 'lists' ? 'lists' : 'library';
+      return localStorage.getItem(TREE_VIEW_KEY) === 'lists' ? 'lists' : 'library';
     } catch {
       return 'library';
     }
   });
   useEffect(() => {
     try {
-      localStorage.setItem('sutamaya.treeView', paneView);
+      localStorage.setItem(TREE_VIEW_KEY, paneView);
     } catch {
       // storage unavailable — ignore
     }
@@ -183,7 +184,7 @@ export function TreePane({
   const autoLists = useMemo(
     () =>
       [
-        { list: lists.find((l) => l.id === RECENT_AUTO_LIST_ID), sub: 'Last 20 suttas visited', Icon: History },
+        { list: lists.find((l) => l.id === RECENT_AUTO_LIST_ID), sub: 'Last 20 suttas read', Icon: History },
         { list: lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID), sub: 'Last 100 suttas highlighted', Icon: Highlighter },
         { list: lists.find((l) => l.id === NOTES_AUTO_LIST_ID), sub: 'Last 100 suttas noted', Icon: StickyNote },
       ].filter((x): x is { list: ListDef; sub: string; Icon: typeof Highlighter } => !!x.list),

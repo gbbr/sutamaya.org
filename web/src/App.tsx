@@ -15,6 +15,17 @@ function Splash() {
   );
 }
 
+function LoadFailed({ onRetry }: { onRetry: () => void }) {
+  return (
+    <div data-component="LoadFailed" className="flex flex-col items-center justify-center gap-4 h-full bg-paper px-6 text-center">
+      <div className="font-serif text-[17px] text-ink/70">Couldn't load the library. Check your connection and try again.</div>
+      <button className="font-sans text-[14px] px-4 py-2 rounded-md border border-ink/25 hover:bg-ink/[.06]" onClick={onRetry}>
+        Retry
+      </button>
+    </div>
+  );
+}
+
 // Replaces a plain `<Redirect to="/browse/dn">` at "/" — the bare origin is what both a fresh
 // tab and a PWA relaunched from the home-screen icon land on (vite-plugin-pwa's manifest
 // start_url defaults to "/"), so restoring here is what makes "close and reopen" return to
@@ -29,7 +40,8 @@ function RestoreLastLocation(_props: RouteComponentProps) {
 }
 
 function Routes() {
-  const { loading } = useCorpus();
+  const { loading, error, retry } = useCorpus();
+  if (error) return <LoadFailed onRetry={retry} />;
   if (loading) return <Splash />;
   return (
     <Router style={{ height: '100%' }}>

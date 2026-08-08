@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef } from 'react';
+import { SCROLL_POSITIONS_KEY } from '../lib/storageKeys';
 
 // Module-level so positions survive component unmount/remount within the same SPA session
 // (e.g. LibraryPage remounting when the route pattern changes) without needing extra state —
@@ -8,7 +9,7 @@ import { useLayoutEffect, useRef } from 'react';
 // other plain-localStorage key in this app (sutamaya.treeView, sutamaya.libraryView, the prefs
 // contexts) — two tabs open on different suttas at once will clobber each other's entries on
 // close, which is accepted here the same way it already is for those.
-const STORAGE_KEY = 'sutamaya.scrollPositions';
+const STORAGE_KEY = SCROLL_POSITIONS_KEY;
 
 function loadPositions(): Map<string, number> {
   try {

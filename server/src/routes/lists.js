@@ -3,7 +3,7 @@ import { db, listsCol, FieldValue } from '../firestore.js';
 import { requireAuth } from '../auth.js';
 import { asyncHandler } from '../asyncHandler.js';
 import { nextPosition } from '../lib/listPositions.js';
-import { invalidParentReasonForDoc } from '../lib/listParent.js';
+import { invalidParentReasonForDoc, wouldCreateCycle } from '../lib/listParent.js';
 
 export const listsRouter = Router();
 listsRouter.use(requireAuth);
@@ -15,11 +15,28 @@ function serializeList(doc) {
 
 // Fetches the candidate parent and checks it via invalidParentReasonForDoc (see that function's
 // own comment for the actual validity rule) — the top-level `null` case short-circuits before
-// ever hitting Firestore.
+// ever hitting Firestore. Used for creating a new list, which can never be its own ancestor, so
+// no cycle check is needed here — see invalidReparentReason below for moving an *existing* list.
 async function invalidParentReason(userId, parentId) {
   if (!parentId) return null;
   const doc = await listsCol(userId).doc(parentId).get();
   return invalidParentReasonForDoc(doc);
+}
+
+// Same parent-existence/kind check as invalidParentReason, plus a cycle check for each id in
+// `movingIds` being reparented to `parentId` (see wouldCreateCycle's own comment) — used
+// wherever an *existing* list's parentId is being changed, unlike a fresh create.
+async function invalidReparentReason(userId, parentId, movingIds) {
+  if (!parentId) return null;
+  const doc = await listsCol(userId).doc(parentId).get();
+  const kindError = invalidParentReasonForDoc(doc);
+  if (kindError) return kindError;
+  const snap = await listsCol(userId).get();
+  const allLists = snap.docs.map((d) => ({ id: d.id, parentId: d.data().parentId ?? null }));
+  for (const movingId of movingIds) {
+    if (wouldCreateCycle(movingId, parentId, allLists)) return 'Cannot move a list into its own descendant.';
+  }
+  return null;
 }
 
 listsRouter.get(
@@ -73,7 +90,7 @@ listsRouter.patch(
     // for the key's presence rather than truthiness.
     if (req.body && 'parentId' in req.body) {
       const parentId = typeof req.body.parentId === 'string' ? req.body.parentId : null;
-      const parentError = await invalidParentReason(req.user.id, parentId);
+      const parentError = await invalidReparentReason(req.user.id, parentId, [req.params.id]);
       if (parentError) return res.status(400).json({ error: parentError });
       update.parentId = parentId;
     }
@@ -103,9 +120,9 @@ listsRouter.put(
   '/order',
   asyncHandler(async (req, res) => {
     const parentId = typeof req.body?.parentId === 'string' ? req.body.parentId : null;
-    const parentError = await invalidParentReason(req.user.id, parentId);
-    if (parentError) return res.status(400).json({ error: parentError });
     const order = Array.isArray(req.body?.order) ? req.body.order : [];
+    const parentError = await invalidReparentReason(req.user.id, parentId, order);
+    if (parentError) return res.status(400).json({ error: parentError });
     const batch = db.batch();
     order.forEach((id, position) => batch.update(listsCol(req.user.id).doc(id), { position, parentId }));
     await batch.commit();
@@ -117,26 +134,31 @@ listsRouter.delete(
   '/:id',
   asyncHandler(async (req, res) => {
     const ref = listsCol(req.user.id).doc(req.params.id);
-    const doc = await ref.get();
-    if (!doc.exists) return res.status(404).json({ error: 'not_found' });
-    // Re-parent any sub-lists to this list's own parent (bubble them up a level) instead of
-    // orphaning them (dangling parentId pointing at a deleted doc) or cascade-deleting them,
-    // which would silently destroy list membership data the user didn't ask to remove.
-    const parentId = doc.data().parentId ?? null;
-    const [children, newSiblings] = await Promise.all([
-      listsCol(req.user.id).where('parentId', '==', req.params.id).get(),
-      // Equality-only, no orderBy, so this doesn't need a composite index — max position is
-      // just computed in memory below, same pattern as the highlight-overlap filter.
-      listsCol(req.user.id).where('parentId', '==', parentId).get(),
-    ]);
-    // Re-parented children keep arriving at their own old positions otherwise, which can
-    // collide with the new parent's existing children (both starting at 0) and leave their
-    // relative order undefined — append them after the new parent's current siblings instead.
-    let position = nextPosition(newSiblings.docs.map((d) => d.data().position));
-    const batch = db.batch();
-    children.docs.forEach((child) => batch.update(child.ref, { parentId, position: position++ }));
-    batch.delete(ref);
-    await batch.commit();
+    // Runs as a transaction (not a plain batch) so the re-parent position computation below can't
+    // race a concurrent create/reorder under the same new parent between the reads and the write
+    // — a batch reads and writes as two separate steps, which left a window for that collision.
+    const found = await db.runTransaction(async (tx) => {
+      const doc = await tx.get(ref);
+      if (!doc.exists) return false;
+      // Re-parent any sub-lists to this list's own parent (bubble them up a level) instead of
+      // orphaning them (dangling parentId pointing at a deleted doc) or cascade-deleting them,
+      // which would silently destroy list membership data the user didn't ask to remove.
+      const parentId = doc.data().parentId ?? null;
+      const [children, newSiblings] = await Promise.all([
+        tx.get(listsCol(req.user.id).where('parentId', '==', req.params.id)),
+        // Equality-only, no orderBy, so this doesn't need a composite index — max position is
+        // just computed in memory below, same pattern as the highlight-overlap filter.
+        tx.get(listsCol(req.user.id).where('parentId', '==', parentId)),
+      ]);
+      // Re-parented children keep arriving at their own old positions otherwise, which can
+      // collide with the new parent's existing children (both starting at 0) and leave their
+      // relative order undefined — append them after the new parent's current siblings instead.
+      let position = nextPosition(newSiblings.docs.map((d) => d.data().position));
+      children.docs.forEach((child) => tx.update(child.ref, { parentId, position: position++ }));
+      tx.delete(ref);
+      return true;
+    });
+    if (!found) return res.status(404).json({ error: 'not_found' });
     res.json({ ok: true });
   })
 );

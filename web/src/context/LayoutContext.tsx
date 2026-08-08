@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react';
 import { usePersistedState } from '../hooks/usePersistedState';
+import { LAYOUT_PREFS_KEY } from '../lib/storageKeys';
 
 interface LayoutPrefs {
   treeW: number;
@@ -29,7 +30,7 @@ export const MOBILE_BREAKPOINT = 860;
 const LayoutContext = createContext<LayoutState | null>(null);
 
 export function LayoutProvider({ children }: { children: ReactNode }) {
-  const [prefs, setPrefs] = usePersistedState<LayoutPrefs>('sutamaya.layout', DEFAULTS);
+  const [prefs, setPrefs] = usePersistedState<LayoutPrefs>(LAYOUT_PREFS_KEY, DEFAULTS);
   const [w, setW] = useState(() => (typeof window !== 'undefined' ? window.innerWidth : 1440));
   const drag = useRef<{ key: 'treeW'; x0: number; w0: number; min: number; max: number } | null>(null);
 

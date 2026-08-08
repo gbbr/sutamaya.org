@@ -2,6 +2,7 @@ import type { ChapterRow, Corpus, Dictionary, ListDef, Nikaya, Sutta } from './t
 
 export async function loadCorpus(): Promise<Corpus> {
   const res = await fetch('/data/corpus.json');
+  if (!res.ok) throw new Error(`Failed to load corpus.json (${res.status})`);
   return res.json();
 }
 
