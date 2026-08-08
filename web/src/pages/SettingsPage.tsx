@@ -42,9 +42,13 @@ export function SettingsPage(_props: RouteComponentProps) {
 
   if (loading) return null;
 
+  // items-start, not the flex default (stretch) — stretch caps this column at the container's own
+  // height, so its content overflows past its box (and past its own pb-10, which then sits inside
+  // that capped box instead of after the real, overflowing end of the content) rather than growing
+  // the column to its natural (taller) content height the way scrolling needs.
   return (
-    <div data-component="SettingsPage" className="min-h-full bg-paper px-5 py-10 flex justify-center">
-      <div className="w-full max-w-[420px]">
+    <div data-component="SettingsPage" className="sc h-full bg-paper px-5 pt-10 flex justify-center items-start">
+      <div className="w-full max-w-[420px] pb-10">
         {/* Genuine history-back (not navigate('/')) — `/` always redirects to /browse/mn (see
             App.tsx), which would silently discard whatever nodeId/list/scroll state the user
             had before opening Settings. */}
