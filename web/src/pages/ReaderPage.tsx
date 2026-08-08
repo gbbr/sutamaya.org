@@ -375,6 +375,11 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           title="Menu"
           onClick={(e) => {
             e.stopPropagation();
+            // Opening straight onto the Theme tab's mobile bottom sheet shouldn't leave an open
+            // DictionaryDock sitting underneath it wasting space — desktop's drawer never
+            // overlaps the dock, so this is mobile-only (see ReaderMenuPanel's `onTabChange` for
+            // the other path into the same state).
+            if (mobile) setDict(null);
             setTab('text');
             setPanel(true);
           }}
@@ -532,6 +537,9 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           onClose={() => setPanel(false)}
           onJumpToHighlight={jumpToHighlight}
           noteFocusSignal={noteFocusSignal}
+          onTabChange={(t) => {
+            if (mobile && t === 'text') setDict(null);
+          }}
         />
       )}
 
