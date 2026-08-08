@@ -88,6 +88,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
           placeholder="Search ID, title, blurb, note, text"
           autoComplete="off"
           autoCorrect="off"
+          autoCapitalize="off"
           spellCheck={false}
           className="font-sans flex-none w-full px-5 py-4 text-[16px] outline-none bg-transparent"
           style={{ color: theme.fg, borderBottom: `1px solid ${theme.rule}` }}

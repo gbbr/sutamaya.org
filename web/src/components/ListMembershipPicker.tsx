@@ -229,6 +229,10 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
         placeholder={nestingParent ? 'Name — return to create' : 'Search or create — "Group / New" to nest'}
         className="w-full h-11 rounded-[10px] px-3 bg-transparent text-base outline-none"
         style={{ border: `1px solid ${theme.pali}`, color: theme.fg }}
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        spellCheck={false}
       />
       <div className="mt-1.5">
         {rows.map((row, idx) => {
