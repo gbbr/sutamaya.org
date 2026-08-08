@@ -12,7 +12,7 @@
     "dev:web": "npm run dev --workspace web",
     "dev": "npm run build:corpus && concurrently -k -n server,web -c blue,green \"npm run dev:server\" \"npm run dev:web\"",
     "build": "npm run build:corpus && npm run build --workspace web",
-    "test": "vitest run",
+    "test": "NODE_OPTIONS=--disable-warning=ExperimentalWarning vitest run",
     "deploy": "bash scripts/deploy.sh"
   },
   "devDependencies": {
