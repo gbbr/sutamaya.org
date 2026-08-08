@@ -33,6 +33,14 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
   const [prefs, setPrefs] = usePersistedState<LayoutPrefs>(LAYOUT_PREFS_KEY, DEFAULTS);
   const [w, setW] = useState(() => (typeof window !== 'undefined' ? window.innerWidth : 1440));
   const drag = useRef<{ key: 'treeW'; x0: number; w0: number; min: number; max: number } | null>(null);
+  // Live width while actively dragging the tree-pane divider, kept out of `prefs` (and so out of
+  // usePersistedState's un-debounced `localStorage.setItem`) until the drag actually ends —
+  // committing on every `pointermove` tick meant a synchronous storage write on every one of
+  // them, the one place in the app where persistence was wired to a high-frequency event. Ref
+  // mirror so `onUp` (a stable closure registered once, below) always reads the latest value
+  // rather than whatever `liveTreeW` was at effect-setup time.
+  const [liveTreeW, setLiveTreeW] = useState<number | null>(null);
+  const liveTreeWRef = useRef<number | null>(null);
 
   useEffect(() => {
     const onResize = () => setW(window.innerWidth);
@@ -41,10 +49,17 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
       const d = drag.current;
       if (!d) return;
       const next = Math.min(d.max, Math.max(d.min, d.w0 + e.clientX - d.x0));
-      setPrefs((p) => ({ ...p, [d.key]: next }));
+      liveTreeWRef.current = next;
+      setLiveTreeW(next);
     };
     const onUp = () => {
+      if (drag.current && liveTreeWRef.current != null) {
+        const committed = liveTreeWRef.current;
+        setPrefs((p) => ({ ...p, treeW: committed }));
+      }
       drag.current = null;
+      liveTreeWRef.current = null;
+      setLiveTreeW(null);
       document.body.style.userSelect = '';
     };
     window.addEventListener('pointermove', onMove);
@@ -62,9 +77,9 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
 
   const paneW = useMemo<PaneWidths>(() => {
     const treeMax = Math.max(210, w - 320);
-    const tree = Math.min(prefs.treeW, treeMax);
+    const tree = Math.min(liveTreeW ?? prefs.treeW, treeMax);
     return { tree, treeMax };
-  }, [w, prefs]);
+  }, [w, prefs, liveTreeW]);
 
   const value = useMemo<LayoutState>(
     () => ({

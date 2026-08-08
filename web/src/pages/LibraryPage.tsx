@@ -5,7 +5,8 @@ import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { flatSuttaOrder, searchCorpus, sortByIdAsc, suttasFor } from '../lib/corpus';
 import { SHORTCUTS, shortcutsForScope, isShortcut } from '../lib/shortcuts';
-import { LIBRARY_VIEW_KEY } from '../lib/storageKeys';
+import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
+import { consumeIntent, type RouteIntent } from '../lib/routeIntent';
 import { TreePane } from '../components/TreePane';
 import { ListPane } from '../components/ListPane';
 import { ShortcutsModal } from '../components/ShortcutsModal';
@@ -68,14 +69,32 @@ export function LibraryPage({
   // Whether this mount is a reader-close round trip (as opposed to an explicit chip/breadcrumb
   // click or a fresh deep link) — see TreePane's own `restoreOrigin` prop for why its Library/My
   // lists toggle needs to know this on top of `fromView` above.
+  // `restoreOrigin` only ever *suppresses* TreePane's own corrective sync (see its own prop
+  // comment) — trusting a stale, refresh-resurrected `true` here is harmless (worst case: skips a
+  // sync that would've been a no-op), so it's read straight off location.state on every render,
+  // unlike the one-shot values below.
   const restoreOrigin = !!(location?.state as { restoreOrigin?: boolean } | undefined)?.restoreOrigin;
+  // `fromView`/`flashNodeId`, by contrast, are values meant to apply to exactly one arrival (a
+  // reader-close round trip, a breadcrumb click) — location.state set by navigate() survives a
+  // same-tab refresh (the browser keeps history.state for the current entry across a reload), so
+  // trusting them unconditionally let a refresh resurrect a stale value and silently override a
+  // pane switch made by hand since (the single most-patched bug in this component's history — see
+  // lib/routeIntent.ts). Consumed exactly once via a lazy initializer, the same one-shot guarantee
+  // `view`'s own initializer below relies on, so a stale resurrection reads as "no intent" and
+  // falls through to persisted preference instead.
+  const [consumedIntent] = useState(() =>
+    consumeIntent(
+      location?.state as ({ fromView?: 'tree' | 'list'; flashNodeId?: string } & RouteIntent) | null | undefined,
+      ROUTE_INTENT_KEY
+    )
+  );
   // A breadcrumb click in the reader (see ReaderPage) always lands here on the sutta's own leaf
   // group — that part doesn't change — but also names which specific ancestor segment was
   // actually clicked, so the tree pane can briefly scroll to and highlight that exact row (which
   // may be higher up the chain than the leaf group itself) without disturbing anything else this
   // page already does. Cleared on a timer rather than left to linger, since it's a "here's where
   // that was" pointer, not a real selection.
-  const locationFlashNodeId = (location?.state as { flashNodeId?: string } | undefined)?.flashNodeId;
+  const locationFlashNodeId = consumedIntent?.flashNodeId as string | undefined;
   const [flashNodeId, setFlashNodeId] = useState<string | undefined>(undefined);
   useEffect(() => {
     if (!locationFlashNodeId) return;
@@ -84,9 +103,17 @@ export function LibraryPage({
     return () => window.clearTimeout(t);
   }, [locationFlashNodeId]);
   const [view, setView] = useState<'tree' | 'list'>(() => {
-    const fromView = (location?.state as { fromView?: 'tree' | 'list' } | undefined)?.fromView;
+    const fromView = consumedIntent?.fromView;
     if (fromView === 'tree' || fromView === 'list') return fromView;
-    if (suttaId) return 'list';
+    // A bare suttaId in the URL with *no* router state at all means a genuinely fresh arrival
+    // that never went through one of this app's own navigate() calls — a bookmark, a typed URL,
+    // or a list-membership chip tap in the Reader (which sets no state) — where 'list' is the
+    // only way to actually reveal the highlighted row. A mount that *did* carry state (even once
+    // the one-shot intent above is stale/already-consumed — e.g. refreshing after a manual pane
+    // switch made without navigating, like ListPane's Back button) came from an in-app
+    // navigation, so persisted preference is the more trustworthy signal there instead of this
+    // generic fallback.
+    if (suttaId && !location?.state) return 'list';
     try {
       const stored = localStorage.getItem(LIBRARY_VIEW_KEY);
       if (stored === 'list' || stored === 'tree') return stored;
@@ -101,21 +128,6 @@ export function LibraryPage({
     } catch {
       // storage unavailable — ignore
     }
-  }, [view]);
-  // Keep this history entry's own `fromView` in sync with `view` even when it changes locally
-  // without a fresh navigate() — e.g. ListPane's mobile "Back" button (onBack below) just flips
-  // `view` in place. Without this, a `fromView` baked into state at mount time (e.g. carried back
-  // from closing the reader — see ReaderPage's closeReader) goes stale the moment the user
-  // switches panes by hand, and reasserts itself as authoritative on refresh (the init logic
-  // above checks location.state.fromView before anything else), silently undoing the switch.
-  // Replacing (not pushing) so this doesn't grow history.
-  useEffect(() => {
-    if (!location) return;
-    navigate(location.pathname + location.search, {
-      replace: true,
-      state: { ...(location.state as object | undefined), fromView: view },
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [view]);
   const [query, setQuery] = useState('');
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
@@ -172,9 +184,17 @@ export function LibraryPage({
       // "wrong tree pane" bug) — using the sutta's own node instead lands back on where it
       // actually lives, the same place a bare deep link to it would.
       const returnNodeId = query.trim() && corpus?.suttas[id] ? corpus.suttas[id].node : nodeId;
-      navigate(`/read/${encodeURIComponent(id)}`, {
-        state: { from: `/browse/${encodeURIComponent(returnNodeId || '')}/${encodeURIComponent(id)}`, fromView: view },
-      });
+      const from = `/browse/${encodeURIComponent(returnNodeId || '')}/${encodeURIComponent(id)}`;
+      // Also persisted (not just carried in router state) so ReaderPage's own close can still
+      // return to this pane/location after a hard refresh, which drops location.state entirely
+      // (browser-native — a fresh navigation's history entry has none) — see ReaderPage's
+      // closeReader for the fallback that reads this back.
+      try {
+        localStorage.setItem(READER_ORIGIN_KEY, JSON.stringify({ suttaId: id, from, fromView: view }));
+      } catch {
+        // storage unavailable — ignore
+      }
+      navigate(`/read/${encodeURIComponent(id)}`, { state: { from, fromView: view } });
     },
     [nodeId, view, query, corpus]
   );

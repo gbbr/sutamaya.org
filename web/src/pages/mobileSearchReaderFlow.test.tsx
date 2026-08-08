@@ -203,4 +203,102 @@ describe('mobile search -> reader -> close flow', () => {
     await screen.findByText('sutamaya');
     expect(tree().getByText('Favorites')).toBeTruthy();
   });
+
+  // TreePane and ListPane are both *always* mounted on mobile (LibraryPage toggles `display:none`
+  // on the inactive one rather than unmounting it — see LibraryPage.tsx), so which one is
+  // "showing" has to be read off that wrapper's inline style, not off either pane's mere presence
+  // in the DOM.
+  function isPaneVisible(container: HTMLElement, component: 'TreePane' | 'ListPane') {
+    const el = container.querySelector(`[data-component="${component}"]`);
+    return (el?.parentElement as HTMLElement | null)?.style.display !== 'none';
+  }
+
+  // Regression test for 729d0be9 ("Fix mobile library refresh reverting tree->list toggle"): a
+  // reader-close round trip carries `fromView` back in router state; ListPane's mobile "Back"
+  // button then flips the pane locally *without* navigating, so that state is left stale relative
+  // to the manual switch. A same-tab refresh preserves history.state (unlike a fresh
+  // navigation), so simulating one here means unmounting and re-rendering a fresh <Router> against
+  // the *same*, unchanged location — no navigate() call in between — the same way a real F5
+  // leaves the URL and its history.state exactly as they were.
+  it('a manual pane switch after closing the reader survives a simulated refresh', async () => {
+    navigate('/browse/dn');
+    const { container, unmount } = render(
+      <Router style={{ height: '100%' }}>
+        <LibraryPage path="/browse/:nodeId/*suttaId" />
+        <ReaderPage path="/read/:suttaId" />
+      </Router>
+    );
+    const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
+
+    // Browse into DN (-> list pane), open its sutta, then close the reader — round trips back
+    // with fromView: 'list' baked into this history entry's state.
+    fireEvent.click(tree().getByRole('button', { name: /Long Discourses/ }));
+    fireEvent.click(await screen.findByText('Brahmajala'));
+    // Not `getByText(/DN 1/)` — the list row just clicked already shows that same ref text, so
+    // that assertion would pass without ever waiting for the reader to actually open.
+    await waitFor(() => expect(container.querySelector('[data-component="ReaderPage"]')).toBeTruthy());
+    fireEvent.click(screen.getByTitle('Close'));
+    await screen.findByText('sutamaya');
+    expect(isPaneVisible(container, 'ListPane')).toBe(true); // back on the list pane
+
+    // Manual switch, purely local (no navigate()) — this is exactly what leaves the state above
+    // stale.
+    fireEvent.click(screen.getByRole('button', { name: 'Back' }));
+    expect(isPaneVisible(container, 'TreePane')).toBe(true);
+    expect(isPaneVisible(container, 'ListPane')).toBe(false);
+
+    // Simulated refresh: fresh mount, same (now-stale) location/history.state, no navigate().
+    unmount();
+    const remounted = render(
+      <Router style={{ height: '100%' }}>
+        <LibraryPage path="/browse/:nodeId/*suttaId" />
+        <ReaderPage path="/read/:suttaId" />
+      </Router>
+    );
+    await remounted.findByText('sutamaya');
+
+    // Must still show the tree pane — a revert back to 'list' here is exactly the bug.
+    expect(isPaneVisible(remounted.container, 'TreePane')).toBe(true);
+    expect(isPaneVisible(remounted.container, 'ListPane')).toBe(false);
+  });
+
+  // A hard refresh while the reader is open drops location.state entirely (browser-native — a
+  // fresh navigation's history entry starts with none), losing the `from`/`fromView` that
+  // closeReader would normally use to return to the exact pane it was opened from — see
+  // ReaderPage's readPersistedReaderOrigin fallback, which LibraryPage.onOpen persists alongside
+  // the router state it also sets.
+  it("closing the reader falls back to the persisted origin when location.state was lost (refresh)", async () => {
+    navigate('/browse/dn');
+    const { container, unmount } = render(
+      <Router style={{ height: '100%' }}>
+        <LibraryPage path="/browse/:nodeId/*suttaId" />
+        <ReaderPage path="/read/:suttaId" />
+      </Router>
+    );
+    const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
+
+    fireEvent.click(tree().getByRole('button', { name: /Long Discourses/ }));
+    fireEvent.click(await screen.findByText('Brahmajala'));
+    await waitFor(() => expect(container.querySelector('[data-component="ReaderPage"]')).toBeTruthy());
+
+    // Simulated refresh while still on /read/dn1: unmount, then re-navigate to the same path with
+    // no `state` at all (mirroring what a real hard refresh leaves behind), and remount fresh.
+    unmount();
+    navigate('/read/dn1', { replace: true });
+    const remounted = render(
+      <Router style={{ height: '100%' }}>
+        <LibraryPage path="/browse/:nodeId/*suttaId" />
+        <ReaderPage path="/read/:suttaId" />
+      </Router>
+    );
+    await waitFor(() => expect(remounted.container.querySelector('[data-component="ReaderPage"]')).toBeTruthy());
+
+    fireEvent.click(remounted.getByTitle('Close'));
+
+    // Falls back to the persisted origin (list pane, dn1's own row) rather than the coarser
+    // /browse/{node}/{suttaId} default.
+    await remounted.findByText('sutamaya');
+    expect(isPaneVisible(remounted.container, 'ListPane')).toBe(true);
+    expect(remounted.getByText('Brahmajala')).toBeTruthy();
+  });
 });

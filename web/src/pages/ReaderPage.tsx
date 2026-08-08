@@ -11,6 +11,8 @@ import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { lookupWord } from '../lib/dictionary';
 import { SHORTCUTS, shortcutsForScope, isShortcut } from '../lib/shortcuts';
+import { tagIntent } from '../lib/routeIntent';
+import { READER_ORIGIN_KEY } from '../lib/storageKeys';
 import { SegmentedText } from '../components/SegmentedText';
 import { HighlightPopup } from '../components/HighlightPopup';
 import { HighlightGutter } from '../components/HighlightGutter';
@@ -24,6 +26,43 @@ interface DictState {
   word: string;
   gloss: string;
   defs: string[] | null;
+}
+
+interface PersistedReaderOrigin {
+  suttaId: string;
+  from: string;
+  fromView?: 'tree' | 'list';
+}
+
+// A hard refresh drops location.state entirely (browser-native — a fresh navigation's history
+// entry starts with none), losing `from`/`fromView` even for a reader opened moments earlier via
+// LibraryPage.onOpen (which persists this alongside the router-state it also sets — see there).
+// Scoped by `suttaId` so a direct/bookmarked link to a *different* /read/:id can't resurrect a
+// stale origin left over from an unrelated earlier reading session.
+function readPersistedReaderOrigin(suttaId: string | undefined): PersistedReaderOrigin | null {
+  if (!suttaId) return null;
+  try {
+    const raw = localStorage.getItem(READER_ORIGIN_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as PersistedReaderOrigin;
+    return parsed.suttaId === suttaId ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
+// Re-keys the persisted origin to whichever sutta is now being read, carrying the same
+// `from`/`fromView` forward the same way router state already does (see step()/
+// onSearchOpenSutta below) — otherwise a refresh partway through a Prev/Next run would find the
+// persisted entry still scoped to the *original* sutta and fall back to the bare corpus location
+// instead of the actual origin pane.
+function persistReaderOrigin(suttaId: string, from: string | undefined, fromView: 'tree' | 'list' | undefined) {
+  if (!from) return;
+  try {
+    localStorage.setItem(READER_ORIGIN_KEY, JSON.stringify({ suttaId, from, fromView }));
+  } catch {
+    // storage unavailable — ignore
+  }
 }
 
 export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId: string }>) {
@@ -136,7 +175,10 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     // Carries `from`/`fromView` forward so closing after stepping through several suttas still
     // returns to wherever the reader was originally opened from, not the last-stepped sutta's own
     // location.
-    if (next && next !== suttaId) navigate(`/read/${encodeURIComponent(next)}`, { state: { from, fromView } });
+    if (next && next !== suttaId) {
+      persistReaderOrigin(next, from, fromView);
+      navigate(`/read/${encodeURIComponent(next)}`, { state: { from, fromView } });
+    }
   }
 
   // Swipe-left/right to go to the next/prev sutta on mobile. This has to bypass React's own
@@ -291,13 +333,24 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     // deep link) — see TreePane's own `restoreOrigin` prop for why its Library/My-lists toggle
     // needs to tell the two apart. Only meaningful alongside `from` itself: the no-`from`
     // fallback below is a bare corpus location, not a return to anywhere the user actually was.
-    if (from) navigate(from, { state: { fromView, restoreOrigin: true } });
-    else if (sutta) navigate(`/browse/${sutta.node}/${suttaId}`);
+    // Tagged (see lib/routeIntent.ts) so LibraryPage consumes `fromView` exactly once, rather
+    // than a later refresh of the same URL resurrecting it over a manual pane switch made since.
+    if (from) {
+      navigate(from, { state: tagIntent({ fromView, restoreOrigin: true }) });
+      return;
+    }
+    const persistedOrigin = readPersistedReaderOrigin(suttaId);
+    if (persistedOrigin) {
+      navigate(persistedOrigin.from, { state: tagIntent({ fromView: persistedOrigin.fromView, restoreOrigin: true }) });
+      return;
+    }
+    if (sutta) navigate(`/browse/${sutta.node}/${suttaId}`);
     else navigate('/');
   }
 
   function onSearchOpenSutta(id: string) {
     setSearchOpen(false);
+    persistReaderOrigin(id, from, fromView);
     navigate(`/read/${encodeURIComponent(id)}`, { state: { from, fromView } });
   }
 
@@ -409,7 +462,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
                       // before, but clicking any ancestor above that opens the tree pane instead —
                       // otherwise the flash would land on a pane that isn't shown.
                       navigate(`/browse/${encodeURIComponent(sutta.node)}/${encodeURIComponent(suttaId)}`, {
-                        state: { fromView: b.id === sutta.node ? 'list' : 'tree', flashNodeId: b.id },
+                        state: tagIntent({ fromView: b.id === sutta.node ? 'list' : 'tree', flashNodeId: b.id }),
                       })
                     }
                   >
