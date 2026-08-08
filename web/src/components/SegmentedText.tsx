@@ -149,6 +149,10 @@ const SegmentRow = memo(function SegmentRow({
           p.c ? (
             <span
               key={j}
+              // Deliberately no user-select:none here, unlike `.pw`/the note asterisk below —
+              // this span sits inside the same selectable English prose the highlight-selection
+              // feature drags across (including dragging *through* an existing highlight to
+              // extend/merge it), so suppressing selection on it would break that drag mid-gesture.
               style={{ background: p.c, borderRadius: 2, boxShadow: `0 0 0 2px ${p.c}`, color: '#1B1917' }}
               onClick={(e) => {
                 e.stopPropagation();
@@ -163,7 +167,16 @@ const SegmentRow = memo(function SegmentRow({
         )}
         {seg.note && showNotes && (
           <sup
-            style={{ marginLeft: 2, color: theme.pali, fontStyle: 'normal', fontWeight: 700, cursor: 'pointer' }}
+            style={{
+              marginLeft: 2,
+              color: theme.pali,
+              fontStyle: 'normal',
+              fontWeight: 700,
+              cursor: 'pointer',
+              userSelect: 'none',
+              WebkitUserSelect: 'none',
+              WebkitTouchCallout: 'none',
+            }}
             title={stripTags(seg.note)}
             onClick={(e) => {
               e.stopPropagation();
