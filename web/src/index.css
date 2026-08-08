@@ -181,10 +181,20 @@ html {
      just looks like the page glitching). Must be set here, not just on body, since this is the
      actual top-level scroller WebKit checks for standalone web apps. */
   overscroll-behavior-x: none;
+  /* Every page manages its own internal scroll region (TreePane/ListPane/ReaderPage are all
+     `h-full overflow-hidden` or `fixed inset-0`) — the document itself is never meant to scroll.
+     Without this, a single transient frame where content briefly exceeds the viewport (e.g. the
+     tree's `.sc` growing when a top-level node expands) can make mobile Chrome/Safari treat the
+     page as newly scrollable right as the tap lands, triggering their address-bar hide animation
+     — a visible up/then-down nudge of everything near the top edge — even though layout settles
+     back to non-overflowing a moment later. `overflow: hidden` here rules that out entirely;
+     desktop never showed this since desktop browser chrome doesn't auto-hide on scroll. */
+  overflow: hidden;
 }
 body,
 #root {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
