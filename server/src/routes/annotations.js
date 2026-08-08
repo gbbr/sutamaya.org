@@ -3,7 +3,7 @@ import { randomUUID } from 'node:crypto';
 import { db, notesCol, highlightsCol, visitedCol } from '../firestore.js';
 import { requireAuth } from '../auth.js';
 import { asyncHandler } from '../asyncHandler.js';
-import { rangesOverlap } from '../lib/highlightOverlap.js';
+import { planHighlightRangeUpdate } from '../lib/highlightRangePlan.js';
 
 export const annotationsRouter = Router();
 annotationsRouter.use(requireAuth);
@@ -46,13 +46,15 @@ annotationsRouter.put(
     const col = highlightsCol(req.user.id);
     await db.runTransaction(async (tx) => {
       const snap = await tx.get(col.where('suttaId', '==', suttaId));
-      const overlapping = snap.docs.filter((doc) => ranges.some((r) => rangesOverlap(doc.data(), r.i, r.s, r.e)));
-      overlapping.forEach((doc) => tx.delete(doc.ref));
-      if (color) {
-        const createdAt = new Date().toISOString();
-        const g = randomUUID();
-        ranges.forEach((r) => tx.set(col.doc(), { suttaId, i: r.i, s: r.s, e: r.e, color, g, createdAt }));
-      }
+      const existing = snap.docs.map((doc) => ({ id: doc.id, ref: doc.ref, data: doc.data() }));
+      const { deleteIds, inserts } = planHighlightRangeUpdate(existing, ranges, color, {
+        suttaId,
+        createdAt: new Date().toISOString(),
+        groupId: randomUUID(),
+      });
+      const refById = new Map(existing.map(({ id, ref }) => [id, ref]));
+      deleteIds.forEach((id) => tx.delete(refById.get(id)));
+      inserts.forEach((doc) => tx.set(col.doc(), doc));
     });
     res.json({ ok: true });
   })

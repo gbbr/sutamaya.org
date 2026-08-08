@@ -12,6 +12,7 @@ import { useListCrud } from '../hooks/useListCrud';
 import { useListTreeDrag } from '../hooks/useListTreeDrag';
 import { ancestorsOf, findNode, isExpandable, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
 import { ancestorsOfList } from '../lib/lists';
+import { derivePaneViewSync } from '../lib/paneView';
 import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
 import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
 import type { ListDef } from '../lib/types';
@@ -117,23 +118,27 @@ export function TreePane({
   const nodeIsListId = lists.some((l) => l.id === nodeId);
   const mountedRef = useRef(false);
   useEffect(() => {
-    if (!mountedRef.current) {
-      mountedRef.current = true;
-      if (restoreOrigin) return;
-    }
-    if (!user || !nodeId) return;
-    if (nodeIsListId) setPaneView('lists');
-    else if (corpus && findNode(corpus, nodeId)) setPaneView('library');
+    const isFirstRun = !mountedRef.current;
+    mountedRef.current = true;
+    const next = derivePaneViewSync({
+      isFirstRun,
+      restoreOrigin,
+      signedIn: !!user,
+      nodeId,
+      nodeIsListId,
+      nodeIsCorpusNode: !!(corpus && nodeId && findNode(corpus, nodeId)),
+    });
+    if (next) setPaneView(next);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, nodeId, nodeIsListId, corpus]);
 
   // Expands every ancestor level of the current node whenever nodeId *changes* after mount —
   // covers deep links and search-driven navigation within an already-mounted TreePane, without
-  // collapsing anything the user already had open.
-  useEffect(() => {
-    const toOpen = ancestorsOf(corpus, nodeId);
+  // collapsing anything the user already had open. Shared by both the corpus tree and the "My
+  // lists" tree, which each keep their own independent expanded-state map.
+  function expandIds(setter: (updater: (x: Record<string, boolean>) => Record<string, boolean>) => void, toOpen: Record<string, boolean>) {
     if (!Object.keys(toOpen).length) return;
-    setExpanded((x) => {
+    setter((x) => {
       let changed = false;
       const next = { ...x };
       for (const id of Object.keys(toOpen)) {
@@ -144,23 +149,14 @@ export function TreePane({
       }
       return changed ? next : x;
     });
+  }
+
+  useEffect(() => {
+    expandIds(setExpanded, ancestorsOf(corpus, nodeId));
   }, [corpus, nodeId]);
 
-  // Same as above, for the "My lists" tree.
   useEffect(() => {
-    const toOpen = ancestorsOfList(lists, nodeId);
-    if (!Object.keys(toOpen).length) return;
-    setListExpanded((x) => {
-      let changed = false;
-      const next = { ...x };
-      for (const id of Object.keys(toOpen)) {
-        if (!next[id]) {
-          next[id] = true;
-          changed = true;
-        }
-      }
-      return changed ? next : x;
-    });
+    expandIds(setListExpanded, ancestorsOfList(lists, nodeId));
   }, [lists, nodeId]);
 
   function toggleExpanded(id: string) {
