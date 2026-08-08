@@ -29,11 +29,36 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [authError, setAuthError] = useState<string | null>(null);
 
   useEffect(() => {
-    authApi
-      .me()
-      .then((r) => setUser(r.user))
-      .catch(() => setUser(null))
-      .finally(() => setLoading(false));
+    // GET /auth/me returns 200 with { user: null } for a genuinely signed-out session — it
+    // never throws for that case (see routes/auth.js). So a thrown error here is always a
+    // transient problem (offline, a 429, a 5xx during e.g. a PWA relaunch right after airplane
+    // mode toggles back on) rather than a real "you're logged out" signal, and shouldn't wipe
+    // an otherwise-valid session cookie's user out of the UI on the first blip — retry with
+    // backoff before giving up.
+    let cancelled = false;
+    const RETRY_DELAYS_MS = [500, 1500, 3000];
+    async function loadUser() {
+      for (let attempt = 0; ; attempt += 1) {
+        try {
+          const r = await authApi.me();
+          if (!cancelled) setUser(r.user);
+          return;
+        } catch (err) {
+          if (attempt >= RETRY_DELAYS_MS.length) {
+            console.error('Failed to load session after retries:', err);
+            if (!cancelled) setUser(null);
+            return;
+          }
+          await new Promise((resolve) => setTimeout(resolve, RETRY_DELAYS_MS[attempt]));
+        }
+      }
+    }
+    loadUser().finally(() => {
+      if (!cancelled) setLoading(false);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const loginWithGoogle = useCallback(async (credential: string) => {
