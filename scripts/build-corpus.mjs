@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import {
   NIKAYA_META, AN_BOOK_NAMES, KN_BOOKS, SN_GROUPS, REF_ABBR,
   formatRef, stripTitlePrefix, flattenLeaves, findChapterNodes, findNodeByKey, findLeafGroups, rangeNote, chapterSpanNote,
+  headerTitle, roleFor,
 } from './lib/collections.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -61,37 +62,6 @@ function buildBlurbIndex(filePath) {
 function loadSegMap(filePath) {
   if (!filePath || !fs.existsSync(filePath)) return new Map();
   return new Map(Object.entries(readJSON(filePath)));
-}
-
-// SuttaCentral's own structural markup (see data/html/pli/ms/sutta/, fetched by
-// scripts/fetch-html-structure.mjs from bilara-data's `html/` tree) gives a per-segment HTML
-// template — this is language-independent structure (a verse is a verse regardless of
-// translation), so one `html/` file covers both the Pali and English text for the same segment
-// keys. Checked in this order (a segment matches at most one, based on inspecting a broad sample
-// of the actual data — see that script's own comment):
-//   - `heading`: a `<h2>`/`<h3>` sub-heading inside a longer document (e.g. DN9's internal
-//     sections), not to be confused with the "0.*" title lines already stripped above.
-//   - `verse`: `<span class='verse-line'>` inside a `<blockquote class='gatha'>` — a line of
-//     poetry, vs. plain `<p>` for prose. Also covers the `uddanagatha`/`vagguddanagatha` mnemonic
-//     verses at a chapter's end, which nest `verse-line` the same way.
-//   - `end`: a closing colophon note (`endsutta`, `endvagga`, `endsection`, `endbook`, `endkanda`,
-//     bare `end`, and `uddana-intro` — "Their mnemonic:") — often Pali-only (see buildLeaf, which
-//     falls back to Pali for these when there's no English at all, rather than leaving a blank
-//     paragraph the tap-to-reveal interaction would otherwise never make visible).
-//   - `speaker`: an inline dialogue attribution embedded mid-verse (e.g. "said the Buddha,").
-const HEADING_RE = /^<h([23])>/;
-const VERSE_LINE_RE = /class=['"]verse-line['"]/;
-const END_RE = /class=['"](?:end\w*|uddana-intro)['"]/;
-const SPEAKER_RE = /class=['"]speaker['"]/;
-
-function roleFor(template) {
-  if (!template) return undefined;
-  const heading = HEADING_RE.exec(template);
-  if (heading) return { role: 'heading', headingLevel: Number(heading[1]) };
-  if (VERSE_LINE_RE.test(template)) return { role: 'verse' };
-  if (END_RE.test(template)) return { role: 'end' };
-  if (SPEAKER_RE.test(template)) return { role: 'speaker' };
-  return undefined;
 }
 
 // Sujato's own translator notes (data/sujato/notes/, same uid/segment-keyed, range-batched files
@@ -165,25 +135,6 @@ fs.mkdirSync(OUT_TEXT, { recursive: true });
 const suttas = {};
 let leafCount = 0;
 
-// For a leaf that is exactly one segmented document (not a batch/range of several, like
-// "an1.1-10"), the title lives *inside* that document as the last header line before the
-// body — "0.1" is always the nikaya/book label, an optional "0.2" the vagga name, and
-// (only when the sutta has its own title, as most do) the highest "0.N" is the sutta title
-// itself. Batches don't have this — their segment keys are prefixed by the inner sutta uids
-// (an1.1, an1.2, ...), never by the batch id — so this naturally only fires for true 1:1 docs.
-function headerTitle(map, uid) {
-  let best = null;
-  let bestN = 1;
-  for (const key of map.keys()) {
-    const m = key.match(new RegExp(`^${uid.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}:0\\.(\\d+)$`));
-    if (m && +m[1] > bestN) {
-      bestN = +m[1];
-      best = map.get(key);
-    }
-  }
-  return best ? best.trim() : null;
-}
-
 function buildLeaf(uid, nodeId, collection) {
   const names = nameIndexFor(collection);
   const blurbs = blurbIndexFor(collection);
@@ -249,6 +200,22 @@ function buildCategoryRows(categories, collection, chapterKey, chapterLabel, cha
   });
 }
 
+// Builds one chapter row (sn1, an3, …) from a findChapterNodes() entry: its own ref/label/sub,
+// its leaf count, and its vagga-level category rows underneath (buildCategoryRows, with any
+// "fifty"/pannasaka wrapper already flattened away by findLeafGroups). Shared by AN (chapters
+// sit directly under the nikaya) and SN (chapters sit one level down, under a super-vagga group)
+// — the only thing SN's caller does differently is wrap the result in its own group row.
+// `labelOverride` covers AN, whose chapter label ("Book of Ones") comes from a hardcoded name
+// list rather than the corpus name-index SN's chapters resolve their label from.
+function buildChapterRow({ key, node, leaves }, collection, dotted, labelOverride) {
+  const names = nameIndexFor(collection);
+  const chapterRef = formatRef(key);
+  const paliName = names.pali.get(key);
+  const chapterLabel = labelOverride ?? (stripTitlePrefix(names.en.get(key)) || paliName || chapterRef);
+  const categoryRows = buildCategoryRows(findLeafGroups(node), collection, key, chapterLabel, chapterRef, dotted);
+  return { id: key, ref: chapterRef, label: chapterLabel, sub: paliName, count: leaves.length, chapters: categoryRows };
+}
+
 const nikayas = [];
 
 // --- DN: flatten straight to leaf suttas, no chapters ---
@@ -277,20 +244,7 @@ const nikayas = [];
     const groupNode = findNodeByKey(tree, group.id);
     const chapterNodes = findChapterNodes(groupNode, /^sn\d+$/);
     chapterNodes.sort((a, b) => +a.key.slice(2) - +b.key.slice(2));
-    const chapterRows = chapterNodes.map(({ key: chapterKey, node: chapterNode, leaves: allLeaves }) => {
-      const chapterRef = formatRef(chapterKey);
-      const paliName = names.pali.get(chapterKey);
-      const chapterLabel = stripTitlePrefix(names.en.get(chapterKey)) || paliName || chapterRef;
-      const categoryRows = buildCategoryRows(findLeafGroups(chapterNode), 'sn', chapterKey, chapterLabel, chapterRef, true);
-      return {
-        id: chapterKey,
-        ref: chapterRef,
-        label: chapterLabel,
-        sub: paliName,
-        count: allLeaves.length,
-        chapters: categoryRows,
-      };
-    });
+    const chapterRows = chapterNodes.map((c) => buildChapterRow(c, 'sn', true));
     const totalSuttas = chapterRows.reduce((n, c) => n + c.count, 0);
     return {
       id: group.id,
@@ -312,14 +266,7 @@ const nikayas = [];
 {
   const chapters = findChapterNodes(loadTree('an'), /^an\d+$/);
   chapters.sort((a, b) => +a.key.slice(2) - +b.key.slice(2));
-  const names = nameIndexFor('an');
-  const chapterRows = chapters.map(({ key, node, leaves: allLeaves }, i) => {
-    const chapterRef = formatRef(key);
-    const bookName = AN_BOOK_NAMES[i] || `Book ${i + 1}`;
-    const chapterLabel = `Book of ${bookName}`;
-    const categoryRows = buildCategoryRows(findLeafGroups(node), 'an', key, chapterLabel, chapterRef, true);
-    return { id: key, ref: chapterRef, label: chapterLabel, sub: names.pali.get(key), count: allLeaves.length, chapters: categoryRows };
-  });
+  const chapterRows = chapters.map((c, i) => buildChapterRow(c, 'an', true, `Book of ${AN_BOOK_NAMES[i] || `Book ${i + 1}`}`));
   nikayas.push({ id: 'an', label: NIKAYA_META.an.label, sub: NIKAYA_META.an.sub, count: chapterRows.length, chapters: chapterRows });
   console.log(`  an: ${chapterRows.length} chapters, ${chapterRows.reduce((n, c) => n + c.count, 0)} suttas`);
 }

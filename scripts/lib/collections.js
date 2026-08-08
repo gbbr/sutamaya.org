@@ -180,3 +180,54 @@ export function chapterSpanNote(ref, firstChapterKey, lastChapterKey) {
   const b = +lastChapterKey.match(/\d+$/)[0];
   return a === b ? `${ref}${a}` : `${ref}${a}–${b}`;
 }
+
+// For a leaf that is exactly one segmented document (not a batch/range of several, like
+// "an1.1-10"), the title lives *inside* that document as the last header line before the
+// body — "0.1" is always the nikaya/book label, an optional "0.2" the vagga name, and
+// (only when the sutta has its own title, as most do) the highest "0.N" is the sutta title
+// itself. Batches don't have this — their segment keys are prefixed by the inner sutta uids
+// (an1.1, an1.2, ...), never by the batch id — so this naturally only fires for true 1:1 docs.
+export function headerTitle(map, uid) {
+  let best = null;
+  let bestN = 1;
+  for (const key of map.keys()) {
+    const m = key.match(new RegExp(`^${uid.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}:0\\.(\\d+)$`));
+    if (m && +m[1] > bestN) {
+      bestN = +m[1];
+      best = map.get(key);
+    }
+  }
+  return best ? best.trim() : null;
+}
+
+// SuttaCentral's own structural markup (see data/html/pli/ms/sutta/, fetched by
+// scripts/fetch-html-structure.mjs from bilara-data's `html/` tree) gives a per-segment HTML
+// template — this is language-independent structure (a verse is a verse regardless of
+// translation), so one `html/` file covers both the Pali and English text for the same segment
+// keys. Checked in this order (a segment matches at most one, based on inspecting a broad sample
+// of the actual data — see that script's own comment):
+//   - `heading`: a `<h2>`/`<h3>` sub-heading inside a longer document (e.g. DN9's internal
+//     sections), not to be confused with the "0.*" title lines already stripped elsewhere.
+//   - `verse`: `<span class='verse-line'>` inside a `<blockquote class='gatha'>` — a line of
+//     poetry, vs. plain `<p>` for prose. Also covers the `uddanagatha`/`vagguddanagatha` mnemonic
+//     verses at a chapter's end, which nest `verse-line` the same way.
+//   - `end`: a closing colophon note (`endsutta`, `endvagga`, `endsection`, `endbook`, `endkanda`,
+//     bare `end`, and `uddana-intro` — "Their mnemonic:") — often Pali-only (see
+//     build-corpus.mjs's buildBodySegments, which falls back to Pali for these when there's no
+//     English at all, rather than leaving a blank paragraph the tap-to-reveal interaction would
+//     otherwise never make visible).
+//   - `speaker`: an inline dialogue attribution embedded mid-verse (e.g. "said the Buddha,").
+const HEADING_RE = /^<h([23])>/;
+const VERSE_LINE_RE = /class=['"]verse-line['"]/;
+const END_RE = /class=['"](?:end\w*|uddana-intro)['"]/;
+const SPEAKER_RE = /class=['"]speaker['"]/;
+
+export function roleFor(template) {
+  if (!template) return undefined;
+  const heading = HEADING_RE.exec(template);
+  if (heading) return { role: 'heading', headingLevel: Number(heading[1]) };
+  if (VERSE_LINE_RE.test(template)) return { role: 'verse' };
+  if (END_RE.test(template)) return { role: 'end' };
+  if (SPEAKER_RE.test(template)) return { role: 'speaker' };
+  return undefined;
+}

@@ -3,6 +3,7 @@ import { db, listsCol, FieldValue } from '../firestore.js';
 import { requireAuth } from '../auth.js';
 import { asyncHandler } from '../asyncHandler.js';
 import { nextPosition } from '../lib/listPositions.js';
+import { invalidParentReasonForDoc } from '../lib/listParent.js';
 
 export const listsRouter = Router();
 listsRouter.use(requireAuth);
@@ -12,15 +13,13 @@ function serializeList(doc) {
   return { id: doc.id, label: data.label, parentId: data.parentId ?? null, kind: data.kind === 'group' ? 'group' : 'list', items: data.items || [] };
 }
 
-// A ListGroup can hold other lists/groups; a plain list can't hold anything — so any non-null
-// parentId, for either kind of doc, must point at an existing group. Returns an error message
-// string if invalid, or null if the parent checks out (including the top-level `null` case).
+// Fetches the candidate parent and checks it via invalidParentReasonForDoc (see that function's
+// own comment for the actual validity rule) — the top-level `null` case short-circuits before
+// ever hitting Firestore.
 async function invalidParentReason(userId, parentId) {
   if (!parentId) return null;
   const doc = await listsCol(userId).doc(parentId).get();
-  if (!doc.exists) return 'Parent not found.';
-  if (doc.data().kind !== 'group') return 'Only a group can contain other lists.';
-  return null;
+  return invalidParentReasonForDoc(doc);
 }
 
 listsRouter.get(

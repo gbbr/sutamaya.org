@@ -7,6 +7,8 @@ import {
   suttaNumRange,
   rangeNote,
   chapterSpanNote,
+  headerTitle,
+  roleFor,
 } from './collections.js';
 
 // A miniature stand-in for SN's shape: chapters (sn1, sn2) nested under a super-vagga, each
@@ -113,5 +115,61 @@ describe('chapterSpanNote', () => {
 
   it('formats a multi-chapter span by chapter number, not sutta number', () => {
     expect(chapterSpanNote('SN', 'sn1', 'sn11')).toBe('SN1–11');
+  });
+});
+
+describe('headerTitle', () => {
+  it('returns the highest "0.N" segment for a single-document uid', () => {
+    const map = new Map([
+      ['dn1:0.1', 'Long Discourses '],
+      ['dn1:0.2', ' The Root Sequence '],
+    ]);
+    expect(headerTitle(map, 'dn1')).toBe('The Root Sequence');
+  });
+
+  it('returns null when the uid has no "0.N" segments at all', () => {
+    const map = new Map([['dn1:1.1', 'Some body text']]);
+    expect(headerTitle(map, 'dn1')).toBeNull();
+  });
+
+  it('does not match a batched-range document, whose keys are prefixed by inner sub-uids', () => {
+    // "an1.1-10" batches an1.1..an1.10 — its segment keys are prefixed by the inner uids
+    // (an1.1:0.1), never by the batch id itself, so headerTitle('an1.1-10') must find nothing.
+    const map = new Map([['an1.1:0.1', 'The First'], ['an1.2:0.1', 'The Second']]);
+    expect(headerTitle(map, 'an1.1-10')).toBeNull();
+  });
+
+  it('does not match a different uid that merely shares a numeric prefix', () => {
+    const map = new Map([['dn10:0.1', 'Wrong sutta']]);
+    expect(headerTitle(map, 'dn1')).toBeNull();
+  });
+});
+
+describe('roleFor', () => {
+  it('returns undefined for an empty/missing template', () => {
+    expect(roleFor(undefined)).toBeUndefined();
+    expect(roleFor('')).toBeUndefined();
+  });
+
+  it('detects a heading and its level', () => {
+    expect(roleFor('<h2>{}</h2>')).toEqual({ role: 'heading', headingLevel: 2 });
+    expect(roleFor('<h3>{}</h3>')).toEqual({ role: 'heading', headingLevel: 3 });
+  });
+
+  it('detects a verse line', () => {
+    expect(roleFor("<span class='verse-line'>{}</span>")).toEqual({ role: 'verse' });
+  });
+
+  it('detects a colophon end marker, including the uddana-intro variant', () => {
+    expect(roleFor("<p class='endsutta'>{}</p>")).toEqual({ role: 'end' });
+    expect(roleFor("<p class='uddana-intro'>{}</p>")).toEqual({ role: 'end' });
+  });
+
+  it('detects a speaker attribution', () => {
+    expect(roleFor("<span class='speaker'>{}</span>")).toEqual({ role: 'speaker' });
+  });
+
+  it('returns undefined for plain prose', () => {
+    expect(roleFor('<p>{}</p>')).toBeUndefined();
   });
 });
