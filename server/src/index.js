@@ -41,16 +41,32 @@ const generalLimiter = rateLimit({
   legacyHeaders: false,
 });
 
-// /api/auth does real work (verifies the Google ID token against Google's servers)
-// and is the one open route besides static files — worth its own tighter cap.
+// POST /api/auth/google does real work (verifies the Google ID token against Google's
+// servers) and is the one open route besides static files — worth its own tighter cap.
+// `skip` excludes /me: it's still mounted under this same '/api/auth' prefix below (Express
+// matches it as a substring), but it has its own looser meLimiter and shouldn't also eat
+// into this budget.
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   limit: 20,
   standardHeaders: true,
   legacyHeaders: false,
+  skip: (req) => req.path === '/me',
+});
+
+// GET /api/auth/me is just a session-cookie check, fired once on every page load/PWA
+// relaunch (AuthContext.tsx) — sharing authLimiter's 20/15min budget with real Google
+// verification meant routine reloads (or a PWA relaunch after reconnecting) could burn
+// through it and 429 a *subsequent genuine* sign-in attempt. Its own much looser cap.
+const meLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 120,
+  standardHeaders: true,
+  legacyHeaders: false,
 });
 
 app.use(generalLimiter);
+app.use('/api/auth/me', meLimiter);
 app.use('/api/auth', authLimiter);
 
 app.use(cors({ origin: WEB_ORIGIN, credentials: true }));
