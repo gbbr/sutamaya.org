@@ -26,7 +26,7 @@ const UI_FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
 ];
 
 export function SettingsPage(_props: RouteComponentProps) {
-  const { user, logout, loading } = useAuth();
+  const { user, logout, loading, authError } = useAuth();
   const { uiScale, uiFace, theme, setUiScale, setUiFace, setTheme } = useUiPrefs();
 
   // Same genuine history-back as the "Back" button above (see its own comment) — Escape is the
@@ -143,6 +143,7 @@ export function SettingsPage(_props: RouteComponentProps) {
               Sign in with Google to sync your lists, notes and highlights across devices.
             </div>
             <GoogleSignInButton variant="standard" />
+            {authError && <div className="font-sans text-[13px] text-red-600 mt-2">{authError}</div>}
           </>
         )}
       </div>

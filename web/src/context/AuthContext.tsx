@@ -9,6 +9,7 @@ interface AuthState {
   user: User | null;
   loading: boolean;
   googleReady: boolean;
+  authError: string | null;
   loginWithGoogle: (credential: string) => Promise<void>;
   promptGoogleSignIn: () => void;
   logout: () => Promise<void>;
@@ -22,6 +23,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // True once google.accounts.id.initialize() has run — gates GoogleSignInButton's
   // renderButton() call, which needs that config to already exist (see GoogleSignInButton.tsx).
   const [googleReady, setGoogleReady] = useState(false);
+  // Set only from the GIS callback below — a failure that never reaches our JS at all (Chrome's
+  // FedCM handshake dying before `callback` fires) can't be surfaced here, but a credential that
+  // *is* obtained and then fails verification/network can be, and previously wasn't (console-only).
+  const [authError, setAuthError] = useState<string | null>(null);
 
   useEffect(() => {
     authApi
@@ -44,7 +49,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       window.google.accounts.id.initialize({
         client_id: GOOGLE_CLIENT_ID!,
         callback: ({ credential }) => {
-          loginWithGoogle(credential).catch((err) => console.error('Google sign-in failed:', err));
+          setAuthError(null);
+          loginWithGoogle(credential).catch((err) => {
+            console.error('Google sign-in failed:', err);
+            setAuthError(err instanceof Error ? err.message : 'Sign-in failed. Please try again.');
+          });
         },
       });
       setGoogleReady(true);
@@ -96,8 +105,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const value = useMemo(
-    () => ({ user, loading, googleReady, loginWithGoogle, promptGoogleSignIn, logout }),
-    [user, loading, googleReady, loginWithGoogle, promptGoogleSignIn, logout]
+    () => ({ user, loading, googleReady, authError, loginWithGoogle, promptGoogleSignIn, logout }),
+    [user, loading, googleReady, authError, loginWithGoogle, promptGoogleSignIn, logout]
   );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
