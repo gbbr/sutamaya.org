@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { dataApi, highlightsApi, listsApi, notesApi, visitedApi } from '../lib/api';
 import type { Highlight, HighlightsMap, ListDef, ListKind, Membership, NotesMap, VisitedMap } from '../lib/types';
+import { RECENT_AUTO_LIST_CAP, RECENT_AUTO_LIST_ID } from '../lib/autoLists';
 import { useAuth } from './AuthContext';
 
 interface UserDataState {
@@ -322,10 +323,25 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     [mutateThenSync]
   );
 
+  // The server bumps visitedAt (and so "Recent"'s order) on every call, not just the first visit
+  // (see PUT /api/visited/:suttaId), so the optimistic update mirrors that here too — otherwise
+  // "Recent" only reflects a mark taken this session after the next unrelated syncUserData call,
+  // rather than immediately, and a page that never triggers one (e.g. reading straight through
+  // Prev/Next and back out) would show it stale until a manual refresh.
   const markVisited = useCallback(
     (suttaId: string) => {
       if (!user) return;
       setVisited((v) => (v[suttaId] ? v : { ...v, [suttaId]: new Date().toISOString() }));
+      setLists((ls) => {
+        const recent = ls.find((l) => l.id === RECENT_AUTO_LIST_ID);
+        const items = [suttaId, ...(recent?.items || []).filter((id) => id !== suttaId)].slice(0, RECENT_AUTO_LIST_CAP);
+        return recent
+          ? ls.map((l) => (l.id === RECENT_AUTO_LIST_ID ? { ...l, items } : l))
+          : [...ls, { id: RECENT_AUTO_LIST_ID, label: 'Recent', parentId: null, kind: 'list', items, auto: true }];
+      });
+      setMembership((m) =>
+        (m[suttaId] || []).includes(RECENT_AUTO_LIST_ID) ? m : { ...m, [suttaId]: [...(m[suttaId] || []), RECENT_AUTO_LIST_ID] }
+      );
       visitedApi.mark(suttaId).catch((e) => console.error('visited save failed', e));
     },
     [user]
