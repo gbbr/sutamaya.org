@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react'
 import { Check, ChevronDown, Folder, Plus } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
-import { flattenListTree, resolveListById, type ListPathOption } from '../lib/lists';
+import { flattenListTree, type ListPathOption } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import type { ListDef, ThemeColors } from '../lib/types';
 
@@ -211,25 +211,6 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
 
   return (
     <div data-component="ListMembershipPicker">
-      {suttaListIds.length > 0 && (
-        <div className="flex flex-wrap gap-1.5 mb-2.5">
-          {/* Display only — removal already lives on each row below (unchecking), so these
-              aren't clickable, and they use the reader's own surface colours (border + fg text)
-              rather than a solid dark fill, matching every other membership chip in the app. */}
-          {suttaListIds.map((id) => {
-            const breadcrumb = resolveListById(id, flatAll).breadcrumb;
-            return (
-              <span
-                key={id}
-                className="inline-flex items-center whitespace-nowrap rounded-[11px] px-[10px] py-[3px] font-sans text-[11.5px]"
-                style={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
-              >
-                {breadcrumb}
-              </span>
-            );
-          })}
-        </div>
-      )}
       {nestingParent && (
         <div className="flex items-center gap-1.5 mb-1.5 font-sans text-[11.5px]" style={{ color: theme.fg, opacity: 0.65 }}>
           <span>
