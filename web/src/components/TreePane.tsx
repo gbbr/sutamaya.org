@@ -464,6 +464,10 @@ export function TreePane({
               }}
               placeholder="Search ID, title, blurb, note, text"
               className="w-full h-[38px] border border-ink/[.22] rounded-field pl-3 pr-8 bg-field text-[14.5px] outline-none"
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="off"
+              spellCheck={false}
             />
             <button
               className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-full text-ink/40 hover:bg-ink/[.08] hover:text-ink"
@@ -596,6 +600,10 @@ export function TreePane({
                   onBlur={() => setCreatingParentId(undefined)}
                   placeholder={draftKind === 'group' ? 'Group name — return to create' : 'List name — return to create'}
                   className="flex-1 min-w-0 h-[34px] border border-accent rounded-lg px-2.5 bg-field text-[14.5px] outline-none"
+                  autoComplete="off"
+                  autoCorrect="off"
+                  autoCapitalize="off"
+                  spellCheck={false}
                 />
                 {/* Icon-only List/Group toggle (no text labels — the input's own placeholder
                     already says which one is picked) — a single button spanning both icons, so
