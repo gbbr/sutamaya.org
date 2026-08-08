@@ -596,7 +596,7 @@ export function TreePane({
                   onKeyDown={onDraftKey}
                   onBlur={() => setCreatingParentId(undefined)}
                   placeholder={draftKind === 'group' ? 'Group name — return to create' : 'List name — return to create'}
-                  className="flex-1 min-w-0 h-[34px] border border-accent rounded-lg px-2.5 bg-field text-[14.5px] outline-none"
+                  className="font-serif flex-1 min-w-0 h-[34px] border border-accent rounded-lg px-2.5 bg-field text-[14.5px] outline-none"
                   autoComplete="off"
                   autoCorrect="off"
                   autoCapitalize="off"

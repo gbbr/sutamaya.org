@@ -179,7 +179,7 @@ export function ListRow({
               } else if (e.key === 'Escape') onCancelEdit();
             }}
             onBlur={onCommitEdit}
-            className="flex-1 min-w-0 h-[26px] border border-accent rounded px-1.5 bg-field text-[14.5px] outline-none"
+            className="font-serif flex-1 min-w-0 h-[26px] border border-accent rounded px-1.5 bg-field text-[14.5px] outline-none"
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
@@ -187,7 +187,7 @@ export function ListRow({
           />
         ) : (
           <button
-            className="flex-1 min-w-0 text-left text-[15px] font-semibold truncate py-[2px]"
+            className="font-serif flex-1 min-w-0 text-left text-[15px] font-semibold truncate py-[2px]"
             onClick={() => {
               // A group can't hold suttas itself, so clicking one has nothing to show in the
               // list pane — same as the corpus browse tree's own chapter rows (see TreeRow),
@@ -322,7 +322,7 @@ export function ListRow({
             onKeyDown={onDraftKey}
             onBlur={() => onDraftKey({ key: 'Escape' } as KeyboardEvent<HTMLInputElement>)}
             placeholder="List name — return to create"
-            className="w-full h-[32px] border border-accent rounded-lg px-2.5 bg-field text-[14px] outline-none"
+            className="font-serif w-full h-[32px] border border-accent rounded-lg px-2.5 bg-field text-[14px] outline-none"
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
