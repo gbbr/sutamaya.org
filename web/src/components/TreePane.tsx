@@ -13,13 +13,43 @@ import { useListTreeDrag } from '../hooks/useListTreeDrag';
 import { ancestorsOf, findNode, isExpandable, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
 import { ancestorsOfList } from '../lib/lists';
 import { derivePaneViewSync } from '../lib/paneView';
-import { TREE_VIEW_KEY } from '../lib/storageKeys';
+import { TREE_VIEW_KEY, TREE_EXPANDED_KEY } from '../lib/storageKeys';
 import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
 import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
 import type { ListDef } from '../lib/types';
 import { TreeRow } from './TreeRow';
 import { SignedInBadge } from './SignedInBadge';
 import { ListRow, type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
+
+interface PersistedExpansion {
+  corpus: string[];
+  lists: string[];
+}
+
+// Only the ancestor chain of whatever's currently selected used to survive a remount — anything
+// else the user expanded by hand (browsing around without selecting a leaf in it) silently
+// collapsed on refresh/relaunch. Persisted here as a plain id list per tree (corpus vs. My
+// lists), read once at mount and unioned with the always-force-expanded ancestor chain (see
+// `expanded`/`listExpanded` below) so a deep link's own ancestors still open regardless of what
+// was previously expanded.
+function loadPersistedExpansion(): PersistedExpansion {
+  try {
+    const raw = localStorage.getItem(TREE_EXPANDED_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw) as Partial<PersistedExpansion>;
+      return { corpus: Array.isArray(parsed.corpus) ? parsed.corpus : [], lists: Array.isArray(parsed.lists) ? parsed.lists : [] };
+    }
+  } catch {
+    // storage unavailable/corrupt — ignore
+  }
+  return { corpus: [], lists: [] };
+}
+
+function toRecord(ids: string[]): Record<string, boolean> {
+  const record: Record<string, boolean> = {};
+  for (const id of ids) record[id] = true;
+  return record;
+}
 
 interface TreePaneProps {
   nodeId?: string;
@@ -78,7 +108,13 @@ export function TreePane({
   // whenever TreePane mounts fresh already pointed at a deep node (e.g. LibraryPage remounting
   // after the reader closes, on desktop where it's always "visible" so that restore-on-visible
   // fallback never kicks in either), silently clamping the restored scroll offset back to 0.
-  const [expanded, setExpanded] = useState<Record<string, boolean>>(() => ancestorsOf(corpus, nodeId));
+  // Read once at mount (see loadPersistedExpansion) — the lazy-initializer form guarantees the
+  // localStorage read itself only happens once, not on every render.
+  const [persistedExpansion] = useState(loadPersistedExpansion);
+  const [expanded, setExpanded] = useState<Record<string, boolean>>(() => ({
+    ...toRecord(persistedExpansion.corpus),
+    ...ancestorsOf(corpus, nodeId),
+  }));
   // Library and My Lists used to share one scrolling column, with My Lists always below the
   // (often long) nikaya tree — effectively inaccessible without a lot of scrolling for anyone
   // who mainly lives in one or the other. This switches the pane between full views of each
@@ -169,7 +205,26 @@ export function TreePane({
   // Synchronous initial state for the same reason `expanded` above is: so the tree is already
   // expanded to nodeId on the very first render if TreePane mounts fresh already pointed at a
   // nested list.
-  const [listExpanded, setListExpanded] = useState<Record<string, boolean>>(() => ancestorsOfList(lists, nodeId));
+  const [listExpanded, setListExpanded] = useState<Record<string, boolean>>(() => ({
+    ...toRecord(persistedExpansion.lists),
+    ...ancestorsOfList(lists, nodeId),
+  }));
+  // Persists both trees' expansion together under one key — low-frequency (click-driven, or the
+  // ancestor-follow effects above firing on a nodeId change), so an un-debounced write here is
+  // negligible, unlike a continuous/animation-driven event (see LayoutContext's drag handler).
+  useEffect(() => {
+    try {
+      localStorage.setItem(
+        TREE_EXPANDED_KEY,
+        JSON.stringify({
+          corpus: Object.keys(expanded).filter((id) => expanded[id]),
+          lists: Object.keys(listExpanded).filter((id) => listExpanded[id]),
+        })
+      );
+    } catch {
+      // storage unavailable — ignore
+    }
+  }, [expanded, listExpanded]);
   // Closed by default — see the search icon button in the header. Initialized from whether a
   // query is already present (rather than always `false`) so a pre-populated `query` prop can't
   // leave the pane showing search results with no visible way to see/edit what's being searched.

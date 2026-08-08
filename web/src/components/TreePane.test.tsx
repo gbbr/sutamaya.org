@@ -159,6 +159,17 @@ function renderHarness(initialNodeId?: string) {
 let userData: ReturnType<typeof useUserData>;
 
 beforeEach(() => {
+  // Tree-expansion state (and paneView) persist to localStorage across mounts (see TreePane's
+  // loadPersistedExpansion) — Node's own built-in `localStorage` global shadows jsdom's here in a
+  // way that leaves it `undefined` rather than a working store (see the same workaround in
+  // pages/mobileSearchReaderFlow.test.tsx), so stub a plain in-memory one, fresh per test.
+  const store = new Map<string, string>();
+  vi.stubGlobal('localStorage', {
+    getItem: (k: string) => store.get(k) ?? null,
+    setItem: (k: string, v: string) => void store.set(k, String(v)),
+    removeItem: (k: string) => void store.delete(k),
+    clear: () => store.clear(),
+  });
   vi.mocked(useCorpus).mockReturnValue({ corpus: buildCorpus(), dictionary: null, loading: false, error: false, retry: vi.fn() });
   userData = mockUserData();
   vi.mocked(useUserData).mockImplementation(() => userData);
@@ -422,6 +433,27 @@ describe('search', () => {
     await userEvent.type(input, 'hindrance');
     expect(screen.getByText('1 result')).toBeInTheDocument();
     expect(screen.queryByText('Overcoming the Hindrances')).not.toBeInTheDocument();
+  });
+});
+
+describe('tree expansion persistence', () => {
+  it('an expansion made by hand survives a fresh mount, on top of whatever the new mount itself force-expands', async () => {
+    const { unmount } = renderHarness();
+    await userEvent.click(screen.getByText('Numbered Discourses'));
+    expect(screen.getByText('Book of Ones')).toBeInTheDocument();
+    unmount();
+
+    // Fresh mount (simulating a remount/refresh), no nodeId this time — nothing left to
+    // force-expand via the current node's own ancestors alone, so this only passes if the
+    // earlier manual expansion was actually persisted and re-applied.
+    renderHarness();
+    expect(screen.getByText('Book of Ones')).toBeInTheDocument();
+  });
+
+  it('a deep-linked node still force-expands its own ancestors regardless of what was persisted', () => {
+    renderHarness('an1-v1');
+    expect(screen.getByText('Book of Ones')).toBeInTheDocument();
+    expect(screen.getByText('Vagga One')).toBeInTheDocument();
   });
 });
 
