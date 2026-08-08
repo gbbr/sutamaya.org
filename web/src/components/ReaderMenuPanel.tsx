@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Trash2, X } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
@@ -22,6 +22,9 @@ interface ReaderMenuPanelProps {
   // See NoteEditor's `focusSignal` — bumped by ReaderPage's "n" shortcut to focus the note box
   // even if this panel (and its highlights tab) is already open.
   noteFocusSignal?: number;
+  // Lets ReaderPage react when the user switches tab from inside the already-open panel (e.g. to
+  // dismiss an open DictionaryDock when landing on the Theme tab's mobile sheet — see ReaderPage).
+  onTabChange?: (tab: 'highlights' | 'lists' | 'text') => void;
 }
 
 const THEME_SWATCHES: Array<{ id: ReaderTheme; label: string; bg: string; fg: string }> = [
@@ -47,20 +50,46 @@ export function ReaderMenuPanel({
   onClose,
   onJumpToHighlight,
   noteFocusSignal,
+  onTabChange,
 }: ReaderMenuPanelProps) {
   const [tab, setTab] = useState(initialTab);
   const { notes, submitNote, removeHighlights } = useUserData();
   const { theme: currentTheme, setTheme, fs, setFs, lh, setLh, face, setFace, allPali, toggleAllPali, showNotes, toggleShowNotes } =
     useReaderPrefs();
 
-  // Full-screen and top-anchored on mobile (not a bottom sheet) so that when the on-screen
-  // keyboard opens (typing a note, or the Lists tab's auto-focused search/create input), the
-  // input stays above where the keyboard eats into the viewport instead of being covered by it —
-  // this container is `position: absolute` inside ReaderPage's `fixed inset-0` root, which stays
-  // pinned to the full layout-viewport height and doesn't shrink for the keyboard, so anything
-  // anchored to its *bottom* (the old `bottom: 0; maxHeight: 74%` sheet) ends up hidden beneath
+  // The Theme tab has no text inputs, so on mobile it renders as a short bottom sheet instead of
+  // going full-screen — leaving the reader visible above it so font/line-height/theme changes can
+  // be seen live while adjusting them (see below). Highlights and Lists stay full-screen and
+  // top-anchored (not a bottom sheet): their inputs (Lists' auto-focused search/create field;
+  // Highlights' note textarea) need to stay above the on-screen keyboard, and this container is
+  // `position: absolute` inside ReaderPage's `fixed inset-0` root, which stays pinned to the full
+  // layout-viewport height and doesn't shrink for the keyboard, so anything anchored to its
+  // *bottom* (the old `bottom: 0; maxHeight: 74%` sheet this used to be) ends up hidden beneath
   // the keyboard rather than pushed up above it.
-  const panelStyle = mobile
+  const isThemeSheet = mobile && tab === 'text';
+  // Only the initial mount should play an entrance animation — once mounted, switching tabs
+  // changes `panelStyle`/shape live (see below) and should snap instantly, not replay a
+  // slide-up/fade-in on every tab tap.
+  const hasEnteredRef = useRef(false);
+  useEffect(() => {
+    hasEnteredRef.current = true;
+  }, []);
+
+  const panelStyle = isThemeSheet
+    ? {
+        position: 'absolute' as const,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        maxHeight: '62vh',
+        display: 'flex',
+        flexDirection: 'column' as const,
+        background: theme.panel,
+        color: theme.fg,
+        padding: '14px 20px 18px',
+        paddingBottom: 'calc(18px + env(safe-area-inset-bottom, 0px))',
+      }
+    : mobile
     ? {
         position: 'absolute' as const,
         inset: 0,
@@ -85,6 +114,9 @@ export function ReaderMenuPanel({
         padding: '18px 20px 22px',
       };
 
+  const entranceClass = hasEnteredRef.current ? '' : isThemeSheet ? 'animate-sheetUp' : 'animate-fadeIn';
+  const panelClassName = `${isThemeSheet ? 'rounded-t-sheet shadow-sheet' : ''} ${entranceClass}`.trim();
+
   const tabBtn = (id: 'highlights' | 'lists' | 'text', label: string) => (
     <button
       key={id}
@@ -95,7 +127,10 @@ export function ReaderMenuPanel({
         borderBottom: `2px solid ${tab === id ? theme.fg : 'transparent'}`,
         marginBottom: -1,
       }}
-      onClick={() => setTab(id)}
+      onClick={() => {
+        setTab(id);
+        onTabChange?.(id);
+      }}
     >
       {label}
     </button>
@@ -113,10 +148,11 @@ export function ReaderMenuPanel({
 
   return (
     <>
-      {/* Full-screen on mobile leaves no backdrop to tap-to-close, so it's desktop-only there —
-          mobile gets an explicit close button in the header row instead (below). */}
-      {!mobile && <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,.12)' }} onClick={onClose} />}
-      <div data-component="ReaderMenuPanel" style={panelStyle} className="animate-fadeIn">
+      {/* Full-screen (Highlights/Lists on mobile) leaves no backdrop to tap-to-close — mobile gets
+          an explicit close button in the header row instead (below). The Theme sheet is partial-
+          height, so it gets a backdrop too: tapping the dimmed reader text above it closes it. */}
+      {(!mobile || isThemeSheet) && <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,.12)' }} onClick={onClose} />}
+      <div data-component="ReaderMenuPanel" style={panelStyle} className={panelClassName}>
         <div className="flex items-end gap-2 mb-4">
           {mobile && (
             <button
