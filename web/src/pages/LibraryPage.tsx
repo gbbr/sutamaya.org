@@ -68,6 +68,20 @@ export function LibraryPage({
   // click or a fresh deep link) — see TreePane's own `restoreOrigin` prop for why its Library/My
   // lists toggle needs to know this on top of `fromView` above.
   const restoreOrigin = !!(location?.state as { restoreOrigin?: boolean } | undefined)?.restoreOrigin;
+  // A breadcrumb click in the reader (see ReaderPage) always lands here on the sutta's own leaf
+  // group — that part doesn't change — but also names which specific ancestor segment was
+  // actually clicked, so the tree pane can briefly scroll to and highlight that exact row (which
+  // may be higher up the chain than the leaf group itself) without disturbing anything else this
+  // page already does. Cleared on a timer rather than left to linger, since it's a "here's where
+  // that was" pointer, not a real selection.
+  const locationFlashNodeId = (location?.state as { flashNodeId?: string } | undefined)?.flashNodeId;
+  const [flashNodeId, setFlashNodeId] = useState<string | undefined>(undefined);
+  useEffect(() => {
+    if (!locationFlashNodeId) return;
+    setFlashNodeId(locationFlashNodeId);
+    const t = window.setTimeout(() => setFlashNodeId(undefined), 1600);
+    return () => window.clearTimeout(t);
+  }, [locationFlashNodeId]);
   const [view, setView] = useState<'tree' | 'list'>(() => {
     const fromView = (location?.state as { fromView?: 'tree' | 'list' } | undefined)?.fromView;
     if (fromView === 'tree' || fromView === 'list') return fromView;
@@ -273,6 +287,7 @@ export function LibraryPage({
           onActiveHitChange={setActiveSearchId}
           visible={showTreePane}
           restoreOrigin={restoreOrigin}
+          flashNodeId={flashNodeId}
         />
       </div>
 

@@ -47,6 +47,10 @@ interface TreePaneProps {
   // browsed) even though the user had "My lists" open the whole time, and forcing the toggle
   // back to 'library' in that case would discard their pane choice for no reason.
   restoreOrigin?: boolean;
+  // The specific breadcrumb segment last clicked in the reader (see LibraryPage/ReaderPage) —
+  // may be an ancestor above `nodeId` itself. Briefly scrolled to and highlighted, then cleared
+  // by LibraryPage's own timer; doesn't otherwise affect what's browsed.
+  flashNodeId?: string;
 }
 
 export function TreePane({
@@ -59,6 +63,7 @@ export function TreePane({
   onActiveHitChange,
   visible = true,
   restoreOrigin = false,
+  flashNodeId,
 }: TreePaneProps) {
   const { corpus } = useCorpus();
   const { lists, createList, renameList, removeList, reorderLists, setListParent } = useUserData();
@@ -326,6 +331,10 @@ export function TreePane({
   // above) still need to run and re-render first — so this retries on each of their state
   // changes until the row is actually findable, not just once.
   useScrollToNode(scrollRef, nodeId, [effectiveView, expanded, listExpanded, corpus, lists]);
+  // A breadcrumb click's specific segment (see LibraryPage) — may be an ancestor above `nodeId`
+  // itself, so it gets its own scroll rather than assuming `nodeId`'s scroll above already
+  // reached it; called second, so it wins the final scroll position when both are set.
+  useScrollToNode(scrollRef, flashNodeId, [effectiveView, expanded, listExpanded, corpus, lists]);
 
   if (!corpus) return null;
 
@@ -513,7 +522,9 @@ export function TreePane({
                   <div key={n.id}>
                     <button
                       data-node-id={n.id}
-                      className={`row flex items-center gap-[11px] w-full text-left px-[18px] py-[9px] border-b border-ink/[.07] ${nodeId === n.id ? 'bg-ink/[.06]' : ''}`}
+                      className={`row flex items-center gap-[11px] w-full text-left px-[18px] py-[9px] border-b border-ink/[.07] transition-colors duration-500 ${
+                        nodeId === n.id || flashNodeId === n.id ? 'bg-ink/[.06]' : ''
+                      }`}
                       onClick={() => (expandableNode ? toggleExpanded(n.id) : onSelect(n.id))}
                     >
                       <span className="w-[11px] flex-none flex items-center justify-center text-ink/55">
@@ -528,7 +539,16 @@ export function TreePane({
                     {expandableNode &&
                       open &&
                       n.chapters!.map((c) => (
-                        <TreeRow key={c.id} node={c} depth={1} nodeId={nodeId} expanded={expanded} onToggle={toggleExpanded} onSelect={onSelect} />
+                        <TreeRow
+                          key={c.id}
+                          node={c}
+                          depth={1}
+                          nodeId={nodeId}
+                          flashNodeId={flashNodeId}
+                          expanded={expanded}
+                          onToggle={toggleExpanded}
+                          onSelect={onSelect}
+                        />
                       ))}
                   </div>
                 );

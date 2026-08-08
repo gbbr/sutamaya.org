@@ -393,13 +393,15 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
                   <button
                     className="hover:underline"
                     onClick={() =>
-                      // An expandable entry (a category, not a leaf group) has no suttas
-                      // directly assigned to it — ListPane would render its empty state for it
-                      // on mobile — so it needs the tree pane, expanded to that node, instead of
-                      // LibraryPage's usual last-used-pane default (see LibraryPage's `view`
-                      // init). A leaf group still lands on 'list' the same as any other sutta
-                      // location would.
-                      navigate(`/browse/${encodeURIComponent(b.id)}`, { state: { fromView: b.expandable ? 'tree' : 'list' } })
+                      // Every segment lands the same place — the sutta's own enclosing leaf
+                      // group, list pane, with the sutta itself highlighted/scrolled-to there —
+                      // regardless of which ancestor in the chain was actually clicked.
+                      // `flashNodeId` carries which segment was actually clicked through to the
+                      // tree pane, which briefly scrolls to and highlights that exact row (it may
+                      // be an ancestor above the sutta's own leaf group) — see LibraryPage/TreePane.
+                      navigate(`/browse/${encodeURIComponent(sutta.node)}/${encodeURIComponent(suttaId)}`, {
+                        state: { fromView: 'list', flashNodeId: b.id },
+                      })
                     }
                   >
                     {b.label}

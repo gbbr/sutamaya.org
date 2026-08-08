@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, Check, GripVertical } from 'lucide-react';
+import { ArrowLeft, ArrowUpDown, Check, GripVertical } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -80,6 +80,10 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
   // the drop target — whenever the pointer sits inside the top/bottom edge band, so it also
   // reorders correctly if content scrolls under a stationary finger.
   const [dragOrder, setDragOrder] = useState<string[] | null>(null);
+  // Off by default — the drag handles take up space every row would otherwise get, so they only
+  // show once explicitly requested via the header toggle (mirrors TreePane's own reorder-mode
+  // toggle for the list tree).
+  const [reorderMode, setReorderMode] = useState(false);
   const dragIdRef = useRef<string | null>(null);
   const pointerYRef = useRef(0);
   const rafRef = useRef<number | null>(null);
@@ -249,6 +253,18 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
           <div className="font-sans text-[19px] font-semibold tracking-[-.01em] truncate">{title}</div>
           <div className="font-sans text-xs text-ink/[.42] mt-[2px]">{meta}</div>
         </div>
+        {currentList && !currentList.auto && (
+          <button
+            className={`flex-none w-[26px] h-[26px] border rounded-md flex items-center justify-center ${
+              reorderMode ? 'border-accent2 bg-accent2 text-[#FBFAF7]' : 'border-ink/[.20] bg-transparent text-ink/50 hover:bg-ink/[.06]'
+            }`}
+            aria-label={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
+            title={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
+            onClick={() => setReorderMode((m) => !m)}
+          >
+            <ArrowUpDown size={13} strokeWidth={2} />
+          </button>
+        )}
       </header>
       <div
         ref={scrollRef}
@@ -279,7 +295,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
               style={dragging ? { opacity: 0.5 } : undefined}
             >
               <button
-                className={`block w-full text-left px-5 py-[13px] ${currentList && !currentList.auto ? 'pr-12' : ''} ${on ? 'bg-ink/[.05]' : ''}`}
+                className={`block w-full text-left px-5 py-[13px] ${currentList && !currentList.auto && reorderMode ? 'pr-12' : ''} ${on ? 'bg-ink/[.05]' : ''}`}
                 style={on ? { boxShadow: 'inset 2px 0 0 rgb(var(--accent2))' } : undefined}
                 onClick={() => onOpen(id)}
               >
@@ -314,7 +330,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   </span>
                 )}
               </button>
-              {currentList && !currentList.auto && (
+              {currentList && !currentList.auto && reorderMode && (
                 <span
                   className="absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded text-ink/40"
                   style={{
