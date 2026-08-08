@@ -521,7 +521,16 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
                     key={id}
                     className="inline-flex items-center h-5 whitespace-nowrap rounded-full px-[10px] font-sans text-[11px] hover:opacity-70"
                     style={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
-                    onClick={() => list && navigate(`/browse/${list.id}/${suttaId}`)}
+                    onClick={() =>
+                      // Must explicitly tag `fromView: 'list'` rather than relying on LibraryPage's
+                      // own "no router state at all -> fresh arrival" fallback (see its `view` init)
+                      // — @reach/router's navigate() always stamps a `{key}` onto location.state even
+                      // when no state is passed, so that fallback never actually fires for this (or
+                      // any other) in-app navigate() call; without this, the pane shown depended on
+                      // whatever view happened to be persisted from last time (works by accident when
+                      // that was already 'list', shows the tree instead when it wasn't).
+                      list && navigate(`/browse/${list.id}/${suttaId}`, { state: tagIntent({ fromView: 'list' }) })
+                    }
                   >
                     {breadcrumb}
                   </button>
