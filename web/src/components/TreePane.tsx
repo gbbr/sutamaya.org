@@ -235,7 +235,7 @@ export function TreePane({
     onCreated: (list) => navigate(`/browse/${list.id}`),
   });
 
-  const { reorderMode, setReorderMode, dragId, overId, overZone, onRowPointerDown, registerRowEl } = useListTreeDrag({
+  const { reorderMode, setReorderMode, dragId, overId, overZone, onRowPointerDown, getRowRef } = useListTreeDrag({
     lists,
     listChildrenOf,
     topLevelLists,
@@ -654,7 +654,7 @@ export function TreePane({
                 overId={overId}
                 overZone={overZone}
                 onRowPointerDown={onRowPointerDown}
-                registerRowEl={registerRowEl}
+                getRowRef={getRowRef}
               />
             ))}
             {autoLists.length > 0 && (

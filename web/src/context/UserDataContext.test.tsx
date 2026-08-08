@@ -2,6 +2,7 @@ import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { act, renderHook, waitFor } from '@testing-library/react';
 import { UserDataProvider, useUserData } from './UserDataContext';
 import type { UserData } from '../lib/api';
+import { RECENT_AUTO_LIST_ID } from '../lib/autoLists';
 
 // UserDataProvider reads `useAuth()` straight from AuthContext (not injected), so a signed-in
 // user is stubbed here rather than wrapping every test in a real AuthProvider (which would need
@@ -31,7 +32,7 @@ vi.mock('../lib/api', () => ({
   },
   notesApi: { set: (...args: unknown[]) => notesApiSet(...args) },
   highlightsApi: { setRanges: (...args: unknown[]) => highlightsApiSetRanges(...args), remove: vi.fn() },
-  visitedApi: { mark: vi.fn() },
+  visitedApi: { mark: vi.fn(() => Promise.resolve()) },
 }));
 
 const baseData: UserData = {
@@ -129,5 +130,26 @@ describe('UserDataProvider', () => {
     // Mount fetch + resync-after-failure.
     expect(dataApiAll).toHaveBeenCalledTimes(2);
     errorSpy.mockRestore();
+  });
+
+  it('markVisited is a no-op on `lists` when the sutta is already at the front of Recent', async () => {
+    dataApiAll.mockResolvedValue({
+      ...structuredClone(baseData),
+      lists: [...structuredClone(baseData.lists), { id: RECENT_AUTO_LIST_ID, label: 'Recent', parentId: null, kind: 'list', items: ['dn1'], auto: true }],
+      visited: { dn1: '2024-01-01T00:00:00.000Z' },
+    });
+    const { result } = setup();
+    await waitFor(() => expect(result.current.ready).toBe(true));
+
+    const listsBefore = result.current.lists;
+    act(() => {
+      result.current.markVisited('dn1');
+    });
+
+    // `visited[dn1]` is already set, so that bail-out is exercised too — but the point of this
+    // test is that `lists` (already correctly ordered) keeps the same reference, not just the
+    // same content, so consumers keyed on it (useListTreeIndex, ListPane's flatLists) don't
+    // rebuild for nothing.
+    expect(result.current.lists).toBe(listsBefore);
   });
 });
