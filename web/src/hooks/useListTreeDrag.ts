@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState, type RefObject } from 'react';
-import { autoScrollEdge } from '../lib/dragAutoScroll';
+import { useRef, useState, type RefObject } from 'react';
+import { usePointerDragSession } from './usePointerDragSession';
 import type { DropZone, ListDef } from '../lib/types';
 
 interface UseListTreeDragParams {
@@ -13,31 +13,27 @@ interface UseListTreeDragParams {
 }
 
 // Pointer Events drive the list-tree drag (mirrors ListPane's sutta-reorder drag, so touch works
-// the same way here too — HTML5 drag-and-drop doesn't fire reliably on touch browsers). A list
-// can nest other lists as children (folder-like) as well as reorder among siblings — dropping on
-// the top/bottom quarter of a row reorders as a sibling, the middle half nests it as a child (see
+// the same way here too — HTML5 drag-and-drop doesn't fire reliably on touch browsers; the shared
+// window-listener/rAF/auto-scroll plumbing lives in usePointerDragSession). A list can nest other
+// lists as children (folder-like) as well as reorder among siblings — dropping on the top/bottom
+// quarter of a row reorders as a sibling, the middle half nests it as a child (see
 // updateDropTarget's zone math below).
 export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRef, setListExpanded, setListParent, reorderLists }: UseListTreeDragParams) {
   const [reorderMode, setReorderMode] = useState(false);
   const [dragId, setDragId] = useState<string | null>(null);
   const [overId, setOverId] = useState<string | null>(null);
   const [overZone, setOverZone] = useState<DropZone | null>(null);
-  // These all need to be refs, not just state: onRowPointerDown registers its window-level
-  // pointermove/pointerup listeners once, at drag-start — unlike a JSX-bound handler (re-bound
-  // fresh every render), that one listener keeps calling the *same* closure for the rest of the
-  // drag, so anything it reads via a plain state variable would see whatever that variable's
-  // value was back at drag-start, not later updates. `overIdRef`/`overZoneRef` mirror the
-  // `overId`/`overZone` state (kept only for rendering the drop-target highlight) so
-  // finishTreeDrag reads the live values instead of a stale snapshot.
+  // These all need to be refs, not just state: the drag session's window-level pointermove
+  // listener registers once, at drag-start — unlike a JSX-bound handler (re-bound fresh every
+  // render), that one listener keeps calling the *same* closure for the rest of the drag, so
+  // anything it reads via a plain state variable would see whatever that variable's value was
+  // back at drag-start, not later updates. `overIdRef`/`overZoneRef` mirror the `overId`/`overZone`
+  // state (kept only for rendering the drop-target highlight) so finishTreeDrag reads the live
+  // values instead of a stale snapshot.
   const rowElRefs = useRef<Map<string, HTMLElement>>(new Map());
   const dragIdRef = useRef<string | null>(null);
   const overIdRef = useRef<string | null>(null);
   const overZoneRef = useRef<DropZone | null>(null);
-  const pointerYRef = useRef(0);
-  const rafRef = useRef<number | null>(null);
-  // Set for the duration of a candidate/active drag so an unmount mid-drag can tear down the
-  // window-level listeners it registered — see the effect below.
-  const activeDragCleanupRef = useRef<(() => void) | null>(null);
 
   // True if `candidateId` sits somewhere underneath `ofId` in the list tree — dropping `ofId`
   // onto (or as a new sibling within) a descendant of itself would create a cycle, so every drop
@@ -79,12 +75,11 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
 
   // Which row (if any) the pointer currently sits vertically over, and which third of it —
   // top/bottom quarter reorders as a sibling, the middle half nests as a child. Hit-tests by
-  // rect instead of relying on native dragover targeting, since a window-level pointermove
-  // listener (see onRowPointerDown) doesn't know which row DOM-wise the pointer is above.
-  function updateDropTarget() {
+  // rect instead of relying on native dragover targeting, since the drag session's window-level
+  // pointermove listener doesn't know which row DOM-wise the pointer is above.
+  function updateDropTarget(y: number) {
     const draggedId = dragIdRef.current;
     if (!draggedId) return;
-    const y = pointerYRef.current;
     const candidates: { id: string; zone: DropZone }[] = [];
     rowElRefs.current.forEach((el, rowId) => {
       if (rowId === draggedId) return;
@@ -99,19 +94,6 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
     overZoneRef.current = next?.zone ?? null;
     setOverId(next?.id ?? null);
     setOverZone(next?.zone ?? null);
-  }
-
-  function runTreeDragLoop() {
-    function tick() {
-      if (!dragIdRef.current) {
-        rafRef.current = null;
-        return;
-      }
-      autoScrollEdge(scrollRef.current, pointerYRef.current);
-      updateDropTarget();
-      rafRef.current = requestAnimationFrame(tick);
-    }
-    rafRef.current = requestAnimationFrame(tick);
   }
 
   async function commitDrop(draggedId: string, target: ListDef, zone: DropZone) {
@@ -135,8 +117,6 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
     dragIdRef.current = null;
     overIdRef.current = null;
     overZoneRef.current = null;
-    if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    rafRef.current = null;
     setDragId(null);
     setOverId(null);
     setOverZone(null);
@@ -146,50 +126,21 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
     void commitDrop(draggedId, target, zone);
   }
 
+  const dragSession = usePointerDragSession({ scrollRef, onFrame: updateDropTarget });
+
   // Only engages a drag once the pointer clears a small movement threshold — a plain tap (no
   // movement) reaches the row's own button clicks (select/rename/delete/menu) normally, since
-  // nothing here calls preventDefault or pointer-capture until a real drag is underway. Tracked
-  // via window-level listeners (not this row's own onPointerMove) so a fast initial move that
-  // carries the pointer off the starting row before the threshold trips still keeps tracking it.
+  // nothing here calls preventDefault or pointer-capture until a real drag is underway.
   function onRowPointerDown(e: React.PointerEvent, id: string) {
-    const pointerId = e.pointerId;
-    const startX = e.clientX;
-    const startY = e.clientY;
-    let engaged = false;
-
-    function onMove(ev: PointerEvent) {
-      if (ev.pointerId !== pointerId) return;
-      if (!engaged) {
-        if (Math.hypot(ev.clientX - startX, ev.clientY - startY) < 6) return;
-        engaged = true;
+    dragSession.start(e, {
+      threshold: 6,
+      onEngage: () => {
         dragIdRef.current = id;
         setDragId(id);
-        runTreeDragLoop();
-      }
-      pointerYRef.current = ev.clientY;
-    }
-    function onUp() {
-      window.removeEventListener('pointermove', onMove);
-      window.removeEventListener('pointerup', onUp);
-      window.removeEventListener('pointercancel', onUp);
-      activeDragCleanupRef.current = null;
-      if (engaged) finishTreeDrag();
-    }
-    window.addEventListener('pointermove', onMove);
-    window.addEventListener('pointerup', onUp);
-    window.addEventListener('pointercancel', onUp);
-    activeDragCleanupRef.current = onUp;
+      },
+      onEnd: finishTreeDrag,
+    });
   }
-
-  // Tears down a still-active drag's window listeners (and any live rAF loop) if the pane
-  // unmounts mid-drag (e.g. navigating to Settings while dragging) — without this the listeners
-  // added in onRowPointerDown above would never be removed.
-  useEffect(() => {
-    return () => {
-      activeDragCleanupRef.current?.();
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, []);
 
   return { reorderMode, setReorderMode, dragId, overId, overZone, onRowPointerDown, registerRowEl };
 }
