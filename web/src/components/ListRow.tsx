@@ -54,7 +54,7 @@ export interface ListRowDraftProps {
 //
 // Props are grouped by concern (menu/edit/del/draft) rather than flat — keeps this at ~15
 // top-level props instead of 35. The drag props (reorderMode/dragId/overId/overZone/
-// onRowPointerDown/registerRowEl) stay flat, passed straight through from TreePane's own
+// onRowPointerDown/getRowRef) stay flat, passed straight through from TreePane's own
 // useListTreeDrag() (itself built on the shared usePointerDragSession) — they're a single
 // cohesive concern already, so bundling them wouldn't reduce the prop count in a meaningful way.
 export function ListRow({
@@ -81,7 +81,7 @@ export function ListRow({
   overId,
   overZone,
   onRowPointerDown,
-  registerRowEl,
+  getRowRef,
 }: {
   list: ListDef;
   depth: number;
@@ -102,7 +102,7 @@ export function ListRow({
   overId: string | null;
   overZone: DropZone | null;
   onRowPointerDown: (e: React.PointerEvent, id: string) => void;
-  registerRowEl: (id: string, el: HTMLElement | null) => void;
+  getRowRef: (id: string) => (el: HTMLElement | null) => void;
 }) {
   const { menuOpenId, onToggleMenu, onMove, onAddChild, onStartEdit, onArmDelete } = menu;
   const { editingId, editDraft, onEditDraftChange, onCommitEdit, onCancelEdit } = edit;
@@ -121,7 +121,7 @@ export function ListRow({
   return (
     <div>
       <div
-        ref={(el) => registerRowEl(list.id, el)}
+        ref={getRowRef(list.id)}
         data-node-id={list.id}
         className={`row flex items-center gap-[7px] w-full text-left pr-[10px] py-[7px] border-b border-ink/[.07] ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
         style={{
@@ -309,7 +309,7 @@ export function ListRow({
             overId={overId}
             overZone={overZone}
             onRowPointerDown={onRowPointerDown}
-            registerRowEl={registerRowEl}
+            getRowRef={getRowRef}
           />
         ))}
       {creatingParentId === list.id && (

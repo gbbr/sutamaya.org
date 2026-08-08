@@ -334,6 +334,10 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       setVisited((v) => (v[suttaId] ? v : { ...v, [suttaId]: new Date().toISOString() }));
       setLists((ls) => {
         const recent = ls.find((l) => l.id === RECENT_AUTO_LIST_ID);
+        // Already at the front — no-op, so a revisit of the same (already most-recent) sutta
+        // doesn't churn `lists`' reference and force every consumer keyed on it (the My Lists
+        // tree's own lookup tables, ListPane's flatLists) to rebuild for nothing.
+        if (recent && recent.items[0] === suttaId) return ls;
         const items = [suttaId, ...(recent?.items || []).filter((id) => id !== suttaId)].slice(0, RECENT_AUTO_LIST_CAP);
         return recent
           ? ls.map((l) => (l.id === RECENT_AUTO_LIST_ID ? { ...l, items } : l))

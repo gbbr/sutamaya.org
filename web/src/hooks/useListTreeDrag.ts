@@ -1,4 +1,4 @@
-import { useRef, useState, type RefObject } from 'react';
+import { useCallback, useRef, useState, type RefObject } from 'react';
 import { usePointerDragSession } from './usePointerDragSession';
 import type { DropZone, ListDef } from '../lib/types';
 
@@ -31,6 +31,13 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
   // state (kept only for rendering the drop-target highlight) so finishTreeDrag reads the live
   // values instead of a stale snapshot.
   const rowElRefs = useRef<Map<string, HTMLElement>>(new Map());
+  // One stable ref-callback per row id, cached here — so ListRow's `ref={...}` never sees a new
+  // function identity across renders it's otherwise unaffected by. An inline `(el) =>
+  // registerRowEl(id, el)` at the JSX call site would be a fresh closure every render, making
+  // React detach+reattach the DOM ref for every visible row on every TreePane re-render (not
+  // just during drag). Never evicted on list deletion — a stale cached closure for a deleted id
+  // is simply never invoked again, which costs nothing worth the complexity of pruning it.
+  const rowRefCallbacks = useRef<Map<string, (el: HTMLElement | null) => void>>(new Map());
   const dragIdRef = useRef<string | null>(null);
   const overIdRef = useRef<string | null>(null);
   const overZoneRef = useRef<DropZone | null>(null);
@@ -68,10 +75,17 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
     return scoped;
   }
 
-  function registerRowEl(id: string, el: HTMLElement | null) {
-    if (el) rowElRefs.current.set(id, el);
-    else rowElRefs.current.delete(id);
-  }
+  const getRowRef = useCallback((id: string) => {
+    let cb = rowRefCallbacks.current.get(id);
+    if (!cb) {
+      cb = (el) => {
+        if (el) rowElRefs.current.set(id, el);
+        else rowElRefs.current.delete(id);
+      };
+      rowRefCallbacks.current.set(id, cb);
+    }
+    return cb;
+  }, []);
 
   // Which row (if any) the pointer currently sits vertically over, and which third of it —
   // top/bottom quarter reorders as a sibling, the middle half nests as a child. Hit-tests by
@@ -142,5 +156,5 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
     });
   }
 
-  return { reorderMode, setReorderMode, dragId, overId, overZone, onRowPointerDown, registerRowEl };
+  return { reorderMode, setReorderMode, dragId, overId, overZone, onRowPointerDown, getRowRef };
 }
