@@ -188,8 +188,8 @@ export function TreePane({
     () =>
       [
         { list: lists.find((l) => l.id === RECENT_AUTO_LIST_ID), sub: 'Last 20 suttas visited', Icon: History },
-        { list: lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID), sub: 'Up to 100 most recently highlighted', Icon: Highlighter },
-        { list: lists.find((l) => l.id === NOTES_AUTO_LIST_ID), sub: 'Up to 100 most recently noted', Icon: StickyNote },
+        { list: lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID), sub: 'Last 100 suttas highlighted', Icon: Highlighter },
+        { list: lists.find((l) => l.id === NOTES_AUTO_LIST_ID), sub: 'Last 100 suttas noted', Icon: StickyNote },
       ].filter((x): x is { list: ListDef; sub: string; Icon: typeof Highlighter } => !!x.list),
     [lists]
   );
