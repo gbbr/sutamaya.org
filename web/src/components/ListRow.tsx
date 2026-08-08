@@ -157,14 +157,14 @@ export function ListRow({
           </span>
         )}
         <button
-          className="w-[19px] -ml-1 flex-none flex items-center justify-center text-ink/70 hover:text-ink"
+          className="w-[19px] -ml-1 flex-none flex items-center justify-center text-ink/55 hover:text-ink"
           onClick={() => isGroup && onToggle(list.id)}
         >
           {/* A group always shows its chevron — even empty, before it has any children — since
               the chevron is the only thing distinguishing a group row from a list row (no
               separate folder icon; see the comment on ListRow above). A list never shows one:
               it can't hold anything to expand into. */}
-          {isGroup ? open ? <ChevronDown size={14} strokeWidth={2.25} /> : <ChevronRight size={14} strokeWidth={2.25} /> : null}
+          {isGroup ? open ? <ChevronDown size={14} strokeWidth={2} /> : <ChevronRight size={14} strokeWidth={2} /> : null}
         </button>
         {editing ? (
           <input
@@ -238,7 +238,7 @@ export function ListRow({
               title="Move up"
               disabled={siblingIndex === 0}
               onClick={() => onMove(list, -1)}
-              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08] disabled:opacity-25"
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.13] text-ink/55 hover:bg-ink/[.05] disabled:opacity-25"
             >
               <ChevronUp size={13} strokeWidth={2} />
             </button>
@@ -247,7 +247,7 @@ export function ListRow({
               title="Move down"
               disabled={siblingIndex === siblingCount - 1}
               onClick={() => onMove(list, 1)}
-              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08] disabled:opacity-25"
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.13] text-ink/55 hover:bg-ink/[.05] disabled:opacity-25"
             >
               <ChevronDown size={13} strokeWidth={2} />
             </button>
@@ -256,7 +256,7 @@ export function ListRow({
                 aria-label="New list in this group"
                 title="New list in this group"
                 onClick={() => onAddChild(list.id)}
-                className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]"
+                className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.13] text-ink/55 hover:bg-ink/[.05]"
               >
                 <Plus size={14} strokeWidth={2} />
               </button>
@@ -265,7 +265,7 @@ export function ListRow({
               aria-label="Rename"
               title="Rename"
               onClick={() => onStartEdit(list)}
-              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]"
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.13] text-ink/55 hover:bg-ink/[.05]"
             >
               <Pencil size={12} strokeWidth={2} />
             </button>
@@ -273,7 +273,7 @@ export function ListRow({
               aria-label="Delete"
               title="Delete"
               onClick={() => onArmDelete(list)}
-              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.18] text-ink/55 hover:bg-red-600/10 hover:text-red-600"
+              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.13] text-ink/55 hover:bg-red-600/[.07] hover:text-red-600"
             >
               <Trash2 size={12} strokeWidth={2} />
             </button>

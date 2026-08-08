@@ -370,7 +370,9 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           {mobile ? sutta.ref : `${sutta.ref} · ${sutta.pali}`}
         </button>
         <button
-          className="flex items-center gap-1.5"
+          className="flex items-center"
+          aria-label="Menu"
+          title="Menu"
           onClick={(e) => {
             e.stopPropagation();
             setTab('text');
@@ -378,7 +380,6 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           }}
         >
           <MenuIcon size={15} strokeWidth={1.75} />
-          Menu
         </button>
       </header>
 
