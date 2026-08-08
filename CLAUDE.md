@@ -203,7 +203,7 @@ users/{uid}/highlights/{highlightId} { suttaId, i, s, e, color, g, createdAt }  
 users/{uid}/visited/{suttaId}        { visitedAt }              — doc ID *is* the sutta uid;
                                                                    written once the reader has
                                                                    stayed open on that sutta for
-                                                                   at least 5% of its estimated
+                                                                   at least 30% of its estimated
                                                                    reading time (`sutta.min`,
                                                                    ReaderPage's dwell-timer effect)
 ```

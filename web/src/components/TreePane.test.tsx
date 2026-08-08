@@ -159,7 +159,7 @@ function renderHarness(initialNodeId?: string) {
 let userData: ReturnType<typeof useUserData>;
 
 beforeEach(() => {
-  vi.mocked(useCorpus).mockReturnValue({ corpus: buildCorpus(), dictionary: null, loading: false });
+  vi.mocked(useCorpus).mockReturnValue({ corpus: buildCorpus(), dictionary: null, loading: false, error: false, retry: vi.fn() });
   userData = mockUserData();
   vi.mocked(useUserData).mockImplementation(() => userData);
   vi.mocked(useAuth).mockReturnValue({

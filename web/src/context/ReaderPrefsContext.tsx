@@ -1,6 +1,7 @@
 import { createContext, useContext, useMemo, type ReactNode } from 'react';
 import { usePersistedState } from '../hooks/usePersistedState';
 import type { ReaderFace, ReaderTheme } from '../lib/types';
+import { READER_PREFS_KEY } from '../lib/storageKeys';
 
 export interface ReaderPrefs {
   theme: ReaderTheme;
@@ -28,7 +29,7 @@ const DEFAULTS: ReaderPrefs = { theme: 'light', fs: 18, lh: 165, face: 'serif', 
 const ReaderPrefsContext = createContext<ReaderPrefsState | null>(null);
 
 export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
-  const [prefs, setPrefs] = usePersistedState<ReaderPrefs>('sutamaya.readerPrefs', DEFAULTS);
+  const [prefs, setPrefs] = usePersistedState<ReaderPrefs>(READER_PREFS_KEY, DEFAULTS);
 
   const value = useMemo<ReaderPrefsState>(
     () => ({

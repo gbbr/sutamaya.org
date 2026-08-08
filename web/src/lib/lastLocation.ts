@@ -1,10 +1,10 @@
 import { globalHistory } from '@reach/router';
+import { LAST_LOCATION_KEY } from './storageKeys';
 
 // Lets `/` (a fresh tab, or a PWA relaunched from the home-screen icon — both land on the bare
 // origin) restore whatever screen the user was last on, instead of always bouncing to
 // /browse/dn. `globalHistory.listen` sees every navigate() call anywhere in the app for free
 // (they all funnel through this same shared history object), so this needs no per-page wiring.
-const LAST_LOCATION_KEY = 'sutamaya.lastLocation';
 
 const VALID_PATH = /^\/browse\/[^/]+(\/[^/]*)?$|^\/read\/[^/]+$/;
 

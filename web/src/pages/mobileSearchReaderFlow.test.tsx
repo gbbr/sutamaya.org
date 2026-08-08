@@ -79,10 +79,17 @@ describe('mobile search -> reader -> close flow', () => {
     });
     vi.stubGlobal('fetch', vi.fn(() => new Promise(() => {})));
 
-    (useCorpus as unknown as ReturnType<typeof vi.fn>).mockReturnValue({ corpus: buildCorpus(), dictionary: null, loading: false });
-    (useUserData as unknown as ReturnType<typeof vi.fn>).mockReturnValue(userDataDefaults);
-    (useAuth as unknown as ReturnType<typeof vi.fn>).mockReturnValue({ user: null, promptGoogleSignIn: vi.fn() });
-    (useLayout as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+    vi.mocked(useCorpus).mockReturnValue({ corpus: buildCorpus(), dictionary: null, loading: false, error: false, retry: vi.fn() });
+    vi.mocked(useUserData).mockReturnValue(userDataDefaults);
+    vi.mocked(useAuth).mockReturnValue({
+      user: null,
+      loading: false,
+      googleReady: true,
+      loginWithGoogle: vi.fn(async () => {}),
+      promptGoogleSignIn: vi.fn(),
+      logout: vi.fn(async () => {}),
+    });
+    vi.mocked(useLayout).mockReturnValue({
       mobile: true,
       twoPane: false,
       desktop: false,
@@ -92,7 +99,7 @@ describe('mobile search -> reader -> close flow', () => {
       resetTree: vi.fn(),
       dragTree: vi.fn(),
     });
-    (useReaderPrefs as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+    vi.mocked(useReaderPrefs).mockReturnValue({
       theme: 'light',
       fs: 18,
       lh: 165,
@@ -154,11 +161,15 @@ describe('mobile search -> reader -> close flow', () => {
   });
 
   it("keeps TreePane on 'My lists' after a search result is opened and the reader is closed", async () => {
-    (useAuth as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+    vi.mocked(useAuth).mockReturnValue({
       user: { id: 'u1', email: 'reader@example.com', name: 'Reader', picture: null },
+      loading: false,
+      googleReady: true,
+      loginWithGoogle: vi.fn(async () => {}),
       promptGoogleSignIn: vi.fn(),
+      logout: vi.fn(async () => {}),
     });
-    (useUserData as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+    vi.mocked(useUserData).mockReturnValue({
       ...userDataDefaults,
       lists: [{ id: 'l1', label: 'Favorites', parentId: null, kind: 'list', items: [] }],
     });

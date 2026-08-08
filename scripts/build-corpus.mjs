@@ -20,8 +20,16 @@ const OUT_TEXT = path.join(OUT, 'text');
 function readJSON(p) {
   return JSON.parse(fs.readFileSync(p, 'utf8'));
 }
+// Names the collection and expected path on failure — a bare ENOENT/JSON-parse stack trace here
+// otherwise doesn't say which of the 25+ loadTree() calls (one per nikaya/KN book) actually
+// failed.
 function loadTree(id) {
-  return readJSON(path.join(DATA, 'tree', `${id}-tree.json`))[id];
+  const treePath = path.join(DATA, 'tree', `${id}-tree.json`);
+  try {
+    return readJSON(treePath)[id];
+  } catch (err) {
+    throw new Error(`Failed to load tree for collection "${id}" from ${treePath}: ${err.message}`);
+  }
 }
 
 function walk(dir, out) {
@@ -31,7 +39,14 @@ function walk(dir, out) {
     else if (entry.name.endsWith('.json')) out.push(full);
   }
 }
-function buildFileIndex(dir) {
+// `hint` covers the one case with an actual fix (data/html/ never fetched at all — see
+// fetch-html-structure.mjs) — a merely-incomplete directory (some but not all files present)
+// already degrades gracefully per-file elsewhere (see roleFor's own comment), this is only about
+// the directory not existing at all.
+function buildFileIndex(dir, hint) {
+  if (!fs.existsSync(dir)) {
+    throw new Error(`Missing data directory: ${dir}${hint ? ` — ${hint}` : ''}`);
+  }
   const files = [];
   walk(dir, files);
   const index = new Map();
@@ -105,7 +120,7 @@ function buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap) {
 console.log('Indexing source files…');
 const paliFiles = buildFileIndex(path.join(DATA, 'pali', 'sutta'));
 const sujatoFiles = buildFileIndex(path.join(DATA, 'sujato', 'sutta'));
-const htmlFiles = buildFileIndex(path.join(DATA, 'html', 'pli', 'ms', 'sutta'));
+const htmlFiles = buildFileIndex(path.join(DATA, 'html', 'pli', 'ms', 'sutta'), 'run `node scripts/fetch-html-structure.mjs` first');
 const notesFiles = buildFileIndex(path.join(DATA, 'sujato', 'notes'));
 console.log(
   `  ${paliFiles.size} pali files, ${sujatoFiles.size} sujato files, ${htmlFiles.size} html structure files, ${notesFiles.size} note files`

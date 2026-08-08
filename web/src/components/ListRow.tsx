@@ -53,9 +53,10 @@ export interface ListRowDraftProps {
 // for the zone math).
 //
 // Props are grouped by concern (menu/edit/del/draft) rather than flat — keeps this at ~15
-// top-level props instead of 35. The drag props stay flat for now (reorderMode/dragId/overId/
-// overZone/onRowPointerDown/registerRowEl) since they're still owned directly by TreePane; once
-// they move to their own hook they'll get the same bundling treatment.
+// top-level props instead of 35. The drag props (reorderMode/dragId/overId/overZone/
+// onRowPointerDown/registerRowEl) stay flat, passed straight through from TreePane's own
+// useListTreeDrag() (itself built on the shared usePointerDragSession) — they're a single
+// cohesive concern already, so bundling them wouldn't reduce the prop count in a meaningful way.
 export function ListRow({
   list,
   depth,

@@ -5,6 +5,7 @@ import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { flatSuttaOrder, searchCorpus, sortByIdAsc, suttasFor } from '../lib/corpus';
 import { SHORTCUTS, shortcutsForScope, isShortcut } from '../lib/shortcuts';
+import { LIBRARY_VIEW_KEY } from '../lib/storageKeys';
 import { TreePane } from '../components/TreePane';
 import { ListPane } from '../components/ListPane';
 import { ShortcutsModal } from '../components/ShortcutsModal';
@@ -87,7 +88,7 @@ export function LibraryPage({
     if (fromView === 'tree' || fromView === 'list') return fromView;
     if (suttaId) return 'list';
     try {
-      const stored = localStorage.getItem('sutamaya.libraryView');
+      const stored = localStorage.getItem(LIBRARY_VIEW_KEY);
       if (stored === 'list' || stored === 'tree') return stored;
     } catch {
       // storage unavailable — ignore
@@ -96,7 +97,7 @@ export function LibraryPage({
   });
   useEffect(() => {
     try {
-      localStorage.setItem('sutamaya.libraryView', view);
+      localStorage.setItem(LIBRARY_VIEW_KEY, view);
     } catch {
       // storage unavailable — ignore
     }

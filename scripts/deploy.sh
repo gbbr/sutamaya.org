@@ -68,7 +68,14 @@ GOOGLE_CLIENT_ID="${GOOGLE_CLIENT_ID:-$(sed -n 's/^VITE_GOOGLE_CLIENT_ID=//p' "$
 # 'sutamaya-local' local-dev default and every Firestore call 500s with a "permission denied on
 # resource project sutamaya-local" error, which only surfaces once a request actually reaches
 # Firestore (e.g. the first successful sign-in).
-ENV_VARS="NODE_ENV=production,GOOGLE_CLOUD_PROJECT=$PROJECT_ID"
+# Same-origin in production (index.js serves the built SPA itself — see CLAUDE.md), so this
+# mostly guards a hypothetical cross-origin request rather than anything hit in normal use — but
+# left unset it silently falls back to index.js's dev default (http://localhost:5173) in the
+# deployed container, which is simply wrong there. Defaults to the project's real domain;
+# override with WEB_ORIGIN=... if deploying under a different one.
+WEB_ORIGIN="${WEB_ORIGIN:-https://sutamaya.org}"
+
+ENV_VARS="NODE_ENV=production,GOOGLE_CLOUD_PROJECT=$PROJECT_ID,WEB_ORIGIN=$WEB_ORIGIN"
 if [ -n "$GOOGLE_CLIENT_ID" ]; then
   ENV_VARS="$ENV_VARS,GOOGLE_CLIENT_ID=$GOOGLE_CLIENT_ID"
 else
