@@ -21,12 +21,27 @@ export function GoogleSignInButton({ variant, width }: GoogleSignInButtonProps) 
   // wide one.
   const [measuredWidth, setMeasuredWidth] = useState<number | undefined>(width);
 
+  // Measured once (plus on a genuine window resize, debounced) rather than via a live
+  // ResizeObserver — the button below is destroyed and recreated every time `measuredWidth`
+  // changes (Google's iframe has no resize API), and a ResizeObserver fires on any incidental
+  // content shift (a scrollbar toggling, a web font swapping in), not just real viewport resizes.
+  // That was tearing out and rebuilding the live button, with a real window where a click lands on
+  // an empty/mid-replacement container and is silently lost.
   useEffect(() => {
     if (variant !== 'standard' || width != null || !ref.current) return;
     const el = ref.current;
-    const observer = new ResizeObserver(([entry]) => setMeasuredWidth(Math.round(entry.contentRect.width)));
-    observer.observe(el);
-    return () => observer.disconnect();
+    const measure = () => setMeasuredWidth(Math.round(el.getBoundingClientRect().width));
+    measure();
+    let timeout: number | undefined;
+    const onResize = () => {
+      window.clearTimeout(timeout);
+      timeout = window.setTimeout(measure, 250);
+    };
+    window.addEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('resize', onResize);
+      window.clearTimeout(timeout);
+    };
   }, [variant, width]);
 
   useEffect(() => {
