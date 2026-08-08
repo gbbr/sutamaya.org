@@ -101,6 +101,21 @@ export function LibraryPage({
       // storage unavailable — ignore
     }
   }, [view]);
+  // Keep this history entry's own `fromView` in sync with `view` even when it changes locally
+  // without a fresh navigate() — e.g. ListPane's mobile "Back" button (onBack below) just flips
+  // `view` in place. Without this, a `fromView` baked into state at mount time (e.g. carried back
+  // from closing the reader — see ReaderPage's closeReader) goes stale the moment the user
+  // switches panes by hand, and reasserts itself as authoritative on refresh (the init logic
+  // above checks location.state.fromView before anything else), silently undoing the switch.
+  // Replacing (not pushing) so this doesn't grow history.
+  useEffect(() => {
+    if (!location) return;
+    navigate(location.pathname + location.search, {
+      replace: true,
+      state: { ...(location.state as object | undefined), fromView: view },
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [view]);
   const [query, setQuery] = useState('');
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
 
