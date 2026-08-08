@@ -88,3 +88,8 @@ gcloud run deploy sutamaya \
   --max-instances=1 \
   --memory=512Mi \
   --timeout=30
+
+# Audible confirmation once the whole deploy (tests + gcloud run deploy) has actually
+# succeeded — `set -e` means we never reach here on failure. macOS-only; silently skipped
+# elsewhere since deploys can also run from CI/Linux.
+command -v afplay >/dev/null 2>&1 && afplay /System/Library/Sounds/Glass.aiff 2>/dev/null || true
