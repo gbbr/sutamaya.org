@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { navigate } from '@reach/router';
 import { Settings, ChevronRight, ChevronDown, Highlighter, StickyNote, History, ArrowUpDown, Library, List, Folder, Search, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
@@ -160,9 +160,12 @@ export function TreePane({
     expandIds(setListExpanded, ancestorsOfList(lists, nodeId));
   }, [lists, nodeId]);
 
-  function toggleExpanded(id: string) {
+  // useCallback'd (only reading the setState function itself, which React guarantees is stable)
+  // so TreeRow's own memoization isn't defeated by a freshly-allocated handler on every TreePane
+  // render — see TreeRow.tsx's perf note.
+  const toggleExpanded = useCallback((id: string) => {
     setExpanded((x) => ({ ...x, [id]: !x[id] }));
-  }
+  }, []);
   // Synchronous initial state for the same reason `expanded` above is: so the tree is already
   // expanded to nodeId on the very first render if TreePane mounts fresh already pointed at a
   // nested list.

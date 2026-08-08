@@ -105,7 +105,9 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
       const mids = order
         .map((itemId) => {
           const el = itemRowRefs.current.get(itemId);
-          return el ? { itemId, mid: el.getBoundingClientRect().top + el.getBoundingClientRect().height / 2 } : null;
+          if (!el) return null;
+          const rect = el.getBoundingClientRect();
+          return { itemId, mid: rect.top + rect.height / 2 };
         })
         .filter((x): x is { itemId: string; mid: number } => !!x);
       let targetIndex = mids.length;
