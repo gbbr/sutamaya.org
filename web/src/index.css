@@ -257,6 +257,16 @@ textarea {
 .pw {
   cursor: pointer;
   border-radius: 2px;
+  /* A tap here is a single-shot dictionary lookup, never a selection — without this, iOS Safari
+     can read the tap as the start of its native text-selection gesture (word gets selected,
+     magnifier/callout appears) as often as it reads it as a plain click. When that happens the
+     selection UI outlives the click (and the DictionaryDock it opened), and a subsequent
+     touch-drag over/near that word gets eaten by the selection handles instead of scrolling the
+     reader — which is what shows up as "scroll is blocked" right after using the dictionary.
+     `-webkit-touch-callout: none` additionally suppresses the long-press callout menu itself. */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 .pw:hover {
   background: #eadfc6;

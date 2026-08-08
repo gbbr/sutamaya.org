@@ -142,6 +142,10 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     setOpenSegs({});
     setOpenNotes({});
     setDict(null);
+    // A stray native selection can outlive the tap that opened this sutta (e.g. the list-row tap
+    // that navigated here) — clearing it on every fresh mount stops it from carrying over and
+    // blocking the first touch-scroll in the newly-opened reader.
+    window.getSelection()?.removeAllRanges();
   }, [suttaId]);
 
   // A sutta only counts as "visited" once the reader has actually stayed open on it for a
@@ -283,7 +287,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
         // takes priority even over the dictionary dock, since a word tap can't happen without
         // first releasing whatever text was selected.
         if (pop) closePop();
-        else if (dict) setDict(null);
+        else if (dict) closeDict();
         else if (panel) setPanel(false);
         else closeReader();
         return;
@@ -357,6 +361,19 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   // Wrapped in useCallback (as are onToggleSeg/onToggleNote below) so SegmentedText's own
   // per-segment memoization isn't defeated by a freshly-allocated function on every ReaderPage
   // render — see SegmentedText.tsx's perf note.
+  // A word/note/highlight tap is a single-shot click, not a selection (see the matching
+  // `user-select: none` on those tap targets in SegmentedText/index.css) — but iOS Safari can
+  // still occasionally win the race and start its own native text-selection gesture on the same
+  // touch that fired this click, leaving a stray selection (and its handles/callout) sitting
+  // over the text after the dock closes. That stray selection is what then intercepts the next
+  // touch-drag as a selection-handle drag instead of a scroll, reading as "scroll is blocked".
+  // Clearing on every open/close, mirroring `pick()`/`close()` in useHighlightPopup.ts, forces
+  // that state to release regardless of which side won.
+  const closeDict = useCallback(() => {
+    setDict(null);
+    const sel = window.getSelection();
+    if (sel) sel.removeAllRanges();
+  }, []);
   const onWordClick = useCallback(
     (raw: string) => {
       if (!dictionary) return;
@@ -367,6 +384,8 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
         gloss: def ? `${def.length}` : 'Pali',
         defs: def,
       });
+      const sel = window.getSelection();
+      if (sel) sel.removeAllRanges();
     },
     [dictionary]
   );
@@ -432,7 +451,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
             // DictionaryDock sitting underneath it wasting space — desktop's drawer never
             // overlaps the dock, so this is mobile-only (see ReaderMenuPanel's `onTabChange` for
             // the other path into the same state).
-            if (mobile) setDict(null);
+            if (mobile) closeDict();
             setTab('text');
             setPanel(true);
           }}
@@ -580,7 +599,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       </div>
 
       {dict && (
-        <DictionaryDock word={dict.word} gloss={dict.gloss} defs={dict.defs} theme={theme} fontSize={fs} onClose={() => setDict(null)} />
+        <DictionaryDock word={dict.word} gloss={dict.gloss} defs={dict.defs} theme={theme} fontSize={fs} onClose={closeDict} />
       )}
 
       {panel && (
@@ -595,7 +614,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           onJumpToHighlight={jumpToHighlight}
           noteFocusSignal={noteFocusSignal}
           onTabChange={(t) => {
-            if (mobile && t === 'text') setDict(null);
+            if (mobile && t === 'text') closeDict();
           }}
         />
       )}
