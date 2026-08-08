@@ -8,6 +8,7 @@ export function TreeRow({
   node,
   depth,
   nodeId,
+  flashNodeId,
   expanded,
   onToggle,
   onSelect,
@@ -15,6 +16,9 @@ export function TreeRow({
   node: ChapterRow;
   depth: number;
   nodeId?: string;
+  // A breadcrumb segment last clicked in the reader (see TreePane) — may be an ancestor above
+  // `nodeId` itself, briefly highlighted the same way `nodeId`'s own row is.
+  flashNodeId?: string;
   expanded: Record<string, boolean>;
   onToggle: (id: string) => void;
   onSelect: (id: string) => void;
@@ -25,8 +29,13 @@ export function TreeRow({
     <div>
       <button
         data-node-id={node.id}
-        className={`row flex items-start gap-[9px] w-full text-left pr-[18px] py-[9px] border-b border-ink/[.07] ${nodeId === node.id ? 'bg-ink/[.06]' : ''}`}
-        style={{ paddingLeft: 18 + depth * 14 }}
+        className={`row flex items-start gap-[9px] w-full text-left pr-[18px] py-[9px] border-b border-ink/[.07] transition-colors duration-500 ${
+          nodeId === node.id || flashNodeId === node.id ? 'bg-ink/[.06]' : ''
+        }`}
+        // The first level isn't indented — the nikaya headings above are already visually
+        // distinct (bolder, their own row style, plus a chevron), so the extra 14px here bought
+        // nothing but cramped text width. Deeper levels still step in from there normally.
+        style={{ paddingLeft: 18 + Math.max(0, depth - 1) * 14 }}
         onClick={() => (expandable ? onToggle(node.id) : onSelect(node.id))}
       >
         <span className="w-[11px] flex-none flex items-center justify-center text-ink/40 mt-[7px]">
@@ -46,7 +55,16 @@ export function TreeRow({
       {expandable &&
         open &&
         node.chapters!.map((c) => (
-          <TreeRow key={c.id} node={c} depth={depth + 1} nodeId={nodeId} expanded={expanded} onToggle={onToggle} onSelect={onSelect} />
+          <TreeRow
+            key={c.id}
+            node={c}
+            depth={depth + 1}
+            nodeId={nodeId}
+            flashNodeId={flashNodeId}
+            expanded={expanded}
+            onToggle={onToggle}
+            onSelect={onSelect}
+          />
         ))}
     </div>
   );

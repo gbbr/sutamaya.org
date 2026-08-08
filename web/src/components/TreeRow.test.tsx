@@ -14,10 +14,16 @@ const expandable: ChapterRow = {
 };
 
 describe('TreeRow', () => {
-  it('indents deeper rows by 14px per depth level, offset from the 18px base', () => {
+  it('does not indent the first level beyond the 18px base', () => {
+    render(<TreeRow node={leaf} depth={1} expanded={{}} onToggle={vi.fn()} onSelect={vi.fn()} />);
+    const row = screen.getByText('Book of Ones').closest('button') as HTMLButtonElement;
+    expect(row.style.paddingLeft).toBe('18px');
+  });
+
+  it('indents deeper rows by 14px per depth level past the first, offset from the 18px base', () => {
     render(<TreeRow node={leaf} depth={2} expanded={{}} onToggle={vi.fn()} onSelect={vi.fn()} />);
     const row = screen.getByText('Book of Ones').closest('button') as HTMLButtonElement;
-    expect(row.style.paddingLeft).toBe('46px'); // 18 + 2*14
+    expect(row.style.paddingLeft).toBe('32px'); // 18 + (2-1)*14
   });
 
   it('shows a chevron only when the row has children to expand', () => {
