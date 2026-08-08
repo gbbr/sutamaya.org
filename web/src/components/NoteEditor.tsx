@@ -15,8 +15,8 @@ interface NoteEditorProps {
   focusSignal?: number;
 }
 
-// A note is a discrete edit, not a live stream — Enter commits it (Shift+Enter for a literal
-// newline), leaving the field also commits, and the Save button is there for anyone who'd
+// A note is a discrete edit, not a live stream — Enter commits it (no newline key at all),
+// leaving the field also commits, and the Save button is there for anyone who'd
 // rather not remember either shortcut. Keeps its own draft state so nothing round-trips to the
 // server per keystroke; only resyncs from `value` when it changes out from under the draft
 // (switching suttas, or a fresh fetch), not while the user is actively mid-edit.
@@ -51,7 +51,7 @@ export function NoteEditor({
   }
 
   function onKeyDown(e: KeyboardEvent<HTMLTextAreaElement>) {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === 'Enter') {
       e.preventDefault();
       submit();
     }
