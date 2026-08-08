@@ -183,8 +183,8 @@ export function TreePane({
     () =>
       [
         { list: lists.find((l) => l.id === RECENT_AUTO_LIST_ID), sub: 'Last 20 suttas visited', Icon: History },
-        { list: lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID), sub: 'Every sutta with a highlight', Icon: Highlighter },
-        { list: lists.find((l) => l.id === NOTES_AUTO_LIST_ID), sub: 'Every sutta with a note', Icon: StickyNote },
+        { list: lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID), sub: 'Up to 100 most recently highlighted', Icon: Highlighter },
+        { list: lists.find((l) => l.id === NOTES_AUTO_LIST_ID), sub: 'Up to 100 most recently noted', Icon: StickyNote },
       ].filter((x): x is { list: ListDef; sub: string; Icon: typeof Highlighter } => !!x.list),
     [lists]
   );
@@ -516,8 +516,8 @@ export function TreePane({
                       className={`row flex items-center gap-[11px] w-full text-left px-[18px] py-[9px] border-b border-ink/[.07] ${nodeId === n.id ? 'bg-ink/[.06]' : ''}`}
                       onClick={() => (expandableNode ? toggleExpanded(n.id) : onSelect(n.id))}
                     >
-                      <span className="w-[11px] flex-none flex items-center justify-center text-ink/40">
-                        {expandableNode ? open ? <ChevronDown size={13} strokeWidth={2} /> : <ChevronRight size={13} strokeWidth={2} /> : ''}
+                      <span className="w-[11px] flex-none flex items-center justify-center text-ink/55">
+                        {expandableNode ? open ? <ChevronDown size={14} strokeWidth={2} /> : <ChevronRight size={14} strokeWidth={2} /> : ''}
                       </span>
                       <span className="flex-1 min-w-0">
                         <span className="block text-[16px] font-semibold leading-[1.3]">{n.label}</span>
@@ -543,7 +543,7 @@ export function TreePane({
                   aria-label={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
                   title={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
                   className={`w-[22px] h-[22px] border rounded-md flex items-center justify-center ${
-                    reorderMode ? 'border-accent2 bg-accent2 text-[#FBFAF7]' : 'border-ink/[.28] bg-transparent text-ink/50'
+                    reorderMode ? 'border-accent2 bg-accent2 text-[#FBFAF7]' : 'border-ink/[.20] bg-transparent text-ink/50 hover:bg-ink/[.06]'
                   }`}
                   onClick={() => {
                     setReorderMode((m) => !m);
@@ -555,7 +555,7 @@ export function TreePane({
                 <button
                   aria-label="New list or group"
                   title="New list or group"
-                  className="plus w-[22px] h-[22px] border border-ink/[.28] rounded-md flex items-center justify-center text-[15px] leading-none text-ink/50"
+                  className="plus w-[22px] h-[22px] border border-ink/[.20] rounded-md flex items-center justify-center text-[15px] leading-none text-ink/50 hover:bg-ink/[.06]"
                   onClick={toggleTopLevelDraft}
                 >
                   +

@@ -234,7 +234,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
 
   return (
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
-      <header className="flex-none flex items-center gap-3 px-5 pt-4 pb-3.5 border-b border-ink/10">
+      <header className="flex-none flex items-center gap-5 px-5 pt-4 pb-3.5 border-b border-ink/10">
         {mobile && (
           <button
             className="flex-none flex flex-col items-center gap-0.5 font-sans text-[11px] text-ink/50"
