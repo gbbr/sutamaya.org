@@ -399,13 +399,17 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
                     className="hover:underline"
                     onClick={() =>
                       // Every segment lands the same place — the sutta's own enclosing leaf
-                      // group, list pane, with the sutta itself highlighted/scrolled-to there —
-                      // regardless of which ancestor in the chain was actually clicked.
-                      // `flashNodeId` carries which segment was actually clicked through to the
-                      // tree pane, which briefly scrolls to and highlights that exact row (it may
-                      // be an ancestor above the sutta's own leaf group) — see LibraryPage/TreePane.
+                      // group, with the sutta itself highlighted/scrolled-to there — regardless of
+                      // which ancestor in the chain was actually clicked. `flashNodeId` carries
+                      // which segment was actually clicked through to the tree pane, which briefly
+                      // scrolls to and highlights that exact row (it may be an ancestor above the
+                      // sutta's own leaf group) — see LibraryPage/TreePane. On mobile (single pane
+                      // at a time), the flash only lives in the tree pane, so clicking the sutta's
+                      // own leaf category (already the list pane's contents) opens the list as
+                      // before, but clicking any ancestor above that opens the tree pane instead —
+                      // otherwise the flash would land on a pane that isn't shown.
                       navigate(`/browse/${encodeURIComponent(sutta.node)}/${encodeURIComponent(suttaId)}`, {
-                        state: { fromView: 'list', flashNodeId: b.id },
+                        state: { fromView: b.id === sutta.node ? 'list' : 'tree', flashNodeId: b.id },
                       })
                     }
                   >
