@@ -28,6 +28,13 @@ const UI_FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
   { id: 'system', label: 'System' },
 ];
 
+// Delegates to '/', which RestoreLastLocation (App.tsx) already resolves to
+// getLastLocation() ?? '/browse/dn' — reusing that instead of duplicating the same fallback
+// chain here.
+function backToLastLocation() {
+  navigate('/');
+}
+
 export function SettingsPage(_props: RouteComponentProps) {
   const { user, logout, loading, authError } = useAuth();
   const { uiScale, uiFace, theme, setUiScale, setUiFace, setTheme } = useUiPrefs();
@@ -117,12 +124,12 @@ export function SettingsPage(_props: RouteComponentProps) {
     abortRef.current?.abort();
   }
 
-  // Same genuine history-back as the "Back" button above (see its own comment) — Escape is the
-  // conventional "leave this screen" key, and there's no free-text field here whose own Escape
-  // handling would need to take priority over it.
+  // Same "return to wherever the user actually was" as the "Back" button above (see its own
+  // comment) — Escape is the conventional "leave this screen" key, and there's no free-text
+  // field here whose own Escape handling would need to take priority over it.
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') navigate(-1);
+      if (e.key === 'Escape') backToLastLocation();
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
@@ -135,10 +142,12 @@ export function SettingsPage(_props: RouteComponentProps) {
   return (
     <div data-component="SettingsPage" className="sc h-full bg-paper px-5 pt-10 flex justify-center items-start">
       <div className="w-full max-w-[420px] pb-10">
-        {/* Genuine history-back (not navigate('/')) — `/` always redirects to /browse/mn (see
-            App.tsx), which would silently discard whatever nodeId/list/scroll state the user
-            had before opening Settings. */}
-        <button className="flex items-center gap-1.5 font-sans text-[13px] text-ink/50 mb-6" onClick={() => navigate(-1)}>
+        {/* Goes to '/', which restores wherever the user actually was (see RestoreLastLocation
+            in App.tsx) rather than a fixed default — and, since it doesn't rely on genuine
+            browser history the way navigate(-1) would, also works when there's no in-app
+            history to go back to: a fresh tab/PWA relaunch landing straight on /settings, or a
+            hard refresh while on this page. */}
+        <button className="flex items-center gap-1.5 font-sans text-[13px] text-ink/50 mb-6" onClick={backToLastLocation}>
           <ArrowLeft size={14} strokeWidth={1.75} />
           Back
         </button>
