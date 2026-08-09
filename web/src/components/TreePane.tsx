@@ -290,7 +290,7 @@ export function TreePane({
     onCreated: (list) => navigate(`/browse/${list.id}`),
   });
 
-  const { reorderMode, setReorderMode, dragId, overId, overZone, onRowPointerDown, getRowRef } = useListTreeDrag({
+  const { reorderMode, setReorderMode, dragId, indicator, onRowPointerDown, getRowRef } = useListTreeDrag({
     lists,
     listChildrenOf,
     topLevelLists,
@@ -706,8 +706,7 @@ export function TreePane({
                 siblingCount={topLevelLists.length}
                 reorderMode={reorderMode}
                 dragId={dragId}
-                overId={overId}
-                overZone={overZone}
+                indicator={indicator}
                 onRowPointerDown={onRowPointerDown}
                 getRowRef={getRowRef}
               />
