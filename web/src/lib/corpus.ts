@@ -48,7 +48,13 @@ const textCache = new Map<string, Promise<SegmentFile[]>>();
 export function loadSuttaText(uid: string): Promise<SegmentFile[]> {
   let p = textCache.get(uid);
   if (!p) {
-    p = fetch(`/data/text/${encodeURIComponent(uid)}.json`).then((r) => r.json());
+    p = fetch(`/data/text/${encodeURIComponent(uid)}.json`).then((r) => {
+      if (!r.ok) throw new Error(`Failed to load ${uid}.json (${r.status})`);
+      return r.json();
+    });
+    // A failed fetch shouldn't stay cached forever — evict it so a later call (e.g. a retry)
+    // re-fetches instead of replaying the same rejection.
+    p.catch(() => textCache.delete(uid));
     textCache.set(uid, p);
   }
   return p;
