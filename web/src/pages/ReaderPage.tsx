@@ -291,6 +291,39 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [siblingIds, suttaId, panel]);
 
+  // Only scrolls if the given word's DOM rect actually falls outside the reading pane's own
+  // visible bounds — above its top (stepped/jumped to a spot scrolled past already) or below its
+  // bottom (the DictionaryDock is a flex sibling of the scroll pane, not an overlay — see its
+  // render below — so when it mounts, grows, or shrinks with a new word's definition list, the
+  // scroll pane's own measured height already reflects however much room it's taking up, with no
+  // separate dock-height lookup needed). The check itself is strict (no padding) — padding a
+  // *trigger* zone around the edges just fires extra scrolls for words that are already fully
+  // visible; the "leave some breathing room" ask instead belongs on the destination below.
+  const scrollToWordIfCovered = useCallback(
+    (segIndex: number, wordIndex: number) => {
+      const container = scrollRef.current;
+      if (!container) return;
+      const word = container.querySelector(`[data-word-seg="${segIndex}"][data-word="${wordIndex}"]`);
+      if (!word) {
+        // Segment not rendered yet for some reason (shouldn't normally happen once its reveal is
+        // open) — fall back to the old segment-level scroll rather than silently doing nothing.
+        scrollToSegment(segIndex, 'center');
+        return;
+      }
+      const wordRect = word.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      if (wordRect.top < containerRect.top || wordRect.bottom > containerRect.bottom) {
+        // Center the *word itself*, not the segment's heading (scrollToSegment's target) — a long
+        // paragraph or verse block can otherwise leave the actual word still covered (or still
+        // off-screen) even after "centering" its segment. Centering the word's own element also
+        // naturally leaves generous clearance above and below it, well past the "at least a line"
+        // ask, without needing a separate padded destination.
+        word.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    },
+    [scrollRef, scrollToSegment]
+  );
+
   // Walks forward/backward from the currently-open dict word to the next Pali token, crossing
   // into the next/previous segment (skipping any with no Pali tokens at all) once the current
   // one runs out — used by DictionaryDock's own prev/next arrows and the reader's Shift+Arrow
@@ -309,21 +342,21 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
           const raw = words[wi];
           const def = lookupWord(dictionary, raw);
           setDict({ word: stripPunct(raw), gloss: def ? `${def.length}` : 'Pali', defs: def, segIndex: si, wordIndex: wi });
-          // Reveal + scroll only on an actual segment change — every word within an already-open
-          // segment is already on screen at once (unlike a highlight jump, there's no per-word
-          // position to scroll to within it), so re-centering the page on every single step would
-          // just be distracting churn. See onWordClick's own comment for the dock-opens-fresh case.
-          if (si !== dict.segIndex) {
-            setOpenSegs((s) => (s[si] ? s : { ...s, [si]: true }));
-            requestAnimationFrame(() => scrollToSegment(si, 'center'));
-          }
+          // Reveal on an actual segment change — an already-open segment's words are all already
+          // rendered. Whether to scroll is then left entirely to scrollToWordIfCovered, which
+          // checks the *word's* own visibility rather than assuming a segment change always needs
+          // one (a short next segment can easily land fully in view on its own) or that staying
+          // within one never does (a taller definition list can still push the current word under
+          // the dock without the segment changing at all).
+          if (si !== dict.segIndex) setOpenSegs((s) => (s[si] ? s : { ...s, [si]: true }));
+          requestAnimationFrame(() => scrollToWordIfCovered(si, wi));
           return;
         }
         si += dir;
         wi = dir === 1 ? 0 : (segWords[si]?.length ?? 1) - 1;
       }
     },
-    [dict, dictionary, segWords, scrollToSegment]
+    [dict, dictionary, segWords, scrollToWordIfCovered]
   );
 
   useEffect(() => {
@@ -463,15 +496,11 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       });
       const sel = window.getSelection();
       if (sel) sel.removeAllRanges();
-      // The dock is a fixed-height panel docked at the bottom (see DictionaryDock's own
-      // maxHeight) — it can cover a word tapped near the bottom of the viewport the instant it
-      // opens, so this re-centers the segment above it. goToAdjacentWord below deliberately does
-      // *not* repeat this on every word step — only when a step actually crosses into a different
-      // segment — since stepping within an already-open, already-visible segment has nothing new
-      // to scroll to.
-      requestAnimationFrame(() => scrollToSegment(segIndex, 'center'));
+      // The dock opening can cover the just-tapped word if it's near the bottom of the reading
+      // pane — scrollToWordIfCovered re-centers only when that's actually true, not on every tap.
+      requestAnimationFrame(() => scrollToWordIfCovered(segIndex, wordIndex));
     },
-    [dictionary, scrollToSegment]
+    [dictionary, scrollToWordIfCovered]
   );
   const onToggleSeg = useCallback((i: number) => setOpenSegs((s) => ({ ...s, [i]: !s[i] })), []);
   const onToggleNote = useCallback((i: number) => setOpenNotes((s) => ({ ...s, [i]: !s[i] })), []);
