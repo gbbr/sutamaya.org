@@ -16,6 +16,7 @@ const ROOT = path.join(__dirname, '..');
 const DATA = path.join(ROOT, 'data');
 const OUT = path.join(ROOT, 'web', 'public', 'data');
 const OUT_TEXT = path.join(OUT, 'text');
+const OUT_SHARDS = path.join(OUT, 'text-shards');
 
 function readJSON(p) {
   return JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -146,9 +147,34 @@ function blurbIndexFor(collection) {
 
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(OUT_TEXT, { recursive: true });
+fs.mkdirSync(OUT_SHARDS, { recursive: true });
 
 const suttas = {};
 let leafCount = 0;
+
+// Bulk offline download (Settings' "Download all suttas for offline") fetches these shard
+// bundles instead of one request per sutta (~4000 across the whole canon) — see
+// web/src/lib/offline.ts. Each shard is a hand-built JSON object literal (uid -> that uid's
+// already-serialized segment array, string-concatenated rather than re-parsed/re-stringified)
+// so building it costs no more than the per-uid file write already does. Flushed once the
+// accumulated shard reaches SHARD_TARGET_BYTES, so shard count scales with corpus size rather
+// than being fixed.
+const SHARD_TARGET_BYTES = 1_000_000;
+let shardBuf = [];
+let shardBufBytes = 0;
+let shardIndex = 0;
+const shardManifest = [];
+
+function flushShard() {
+  if (shardBuf.length === 0) return;
+  const file = `text-shards/${String(shardIndex).padStart(3, '0')}.json`;
+  const body = `{${shardBuf.map(([uid, json]) => `${JSON.stringify(uid)}:${json}`).join(',')}}`;
+  fs.writeFileSync(path.join(OUT, file), body);
+  shardManifest.push({ file, bytes: Buffer.byteLength(body), uids: shardBuf.map(([uid]) => uid) });
+  shardIndex += 1;
+  shardBuf = [];
+  shardBufBytes = 0;
+}
 
 function buildLeaf(uid, nodeId, collection) {
   const names = nameIndexFor(collection);
@@ -163,19 +189,21 @@ function buildLeaf(uid, nodeId, collection) {
   const words = segs.reduce((n, s) => n + (s.en ? s.en.split(/\s+/).filter(Boolean).length : 0), 0);
   const min = Math.max(1, Math.round(words / 200));
 
-  fs.writeFileSync(
-    path.join(OUT_TEXT, `${uid}.json`),
-    JSON.stringify(
-      segs.map(({ key, pali, en, role, headingLevel, note }) => ({
-        key,
-        pali,
-        en,
-        ...(role ? { role } : null),
-        ...(headingLevel ? { headingLevel } : null),
-        ...(note ? { note } : null),
-      }))
-    )
+  const segsJson = JSON.stringify(
+    segs.map(({ key, pali, en, role, headingLevel, note }) => ({
+      key,
+      pali,
+      en,
+      ...(role ? { role } : null),
+      ...(headingLevel ? { headingLevel } : null),
+      ...(note ? { note } : null),
+    }))
   );
+  fs.writeFileSync(path.join(OUT_TEXT, `${uid}.json`), segsJson);
+
+  shardBuf.push([uid, segsJson]);
+  shardBufBytes += Buffer.byteLength(segsJson);
+  if (shardBufBytes >= SHARD_TARGET_BYTES) flushShard();
 
   suttas[uid] = {
     ref: formatRef(uid),
@@ -300,6 +328,14 @@ const nikayas = [];
 
 fs.writeFileSync(path.join(OUT, 'corpus.json'), JSON.stringify({ nikayas, suttas }));
 console.log(`Wrote corpus.json (${leafCount} leaf documents, ${nikayas.length} nikāyas)`);
+
+flushShard();
+const totalShardBytes = shardManifest.reduce((n, s) => n + s.bytes, 0);
+fs.writeFileSync(
+  path.join(OUT_SHARDS, 'manifest.json'),
+  JSON.stringify({ totalBytes: totalShardBytes, totalUids: leafCount, shards: shardManifest })
+);
+console.log(`Wrote ${shardManifest.length} text shards (${(totalShardBytes / 1e6).toFixed(1)} MB) for offline bulk download`);
 
 // --- Dictionary: flatten [{entry, definition:[...]}] into a headword-keyed object for O(1) lookup ---
 console.log('Building dictionary map…');

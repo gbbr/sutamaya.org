@@ -32,17 +32,18 @@ app.set('trust proxy', 1);
 app.use(compression());
 
 // Static corpus/dictionary/per-sutta text under /data/ is public, non-sensitive, and the target
-// of Settings' "Download all suttas for offline" feature — a deliberate, single-user bulk pull of
-// one /data/text/{uid}.json request per sutta (~4000 across the whole canon; see
-// scripts/build-corpus.mjs's output). generalLimiter's budget below is tuned for ordinary
-// API+browsing traffic and was blowing through almost immediately once that download started,
-// 429ing the rest of it — which reads as the download hanging (each 429 itself resolves fast, but
-// the circuit breaker in web/src/lib/offline.ts trips after ~18 of them and gives up early). This
-// is a separate, much looser budget sized for a full offline download plus real headroom, while
-// still bounding a truly abusive scraping bot.
+// of Settings' "Download all suttas for offline" feature. That feature used to be a deliberate,
+// single-user bulk pull of one /data/text/{uid}.json request per sutta (~4000 across the whole
+// canon), which is why this budget used to need to be so much looser than generalLimiter's below
+// — otherwise the download would blow through it almost immediately, 429ing the rest (each 429
+// itself resolves fast, but the circuit breaker in web/src/lib/offline.ts trips after ~18 of them
+// and gives up early, which reads as the download hanging). It now instead fetches ~30 shard
+// bundles (scripts/build-corpus.mjs's SHARD_TARGET_BYTES) plus one manifest request, so a full
+// download plus real headroom (retries, concurrent tabs/devices) is comfortably inside even a
+// fairly tight budget — this is sized for that, not for thousands of individual requests.
 const dataLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  limit: 8000,
+  limit: 400,
   standardHeaders: true,
   legacyHeaders: false,
 });

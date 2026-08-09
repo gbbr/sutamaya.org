@@ -34,6 +34,9 @@ export function SettingsPage(_props: RouteComponentProps) {
   const { corpus } = useCorpus();
 
   const [offlineStatus, setOfflineStatus] = useState<'idle' | 'downloading'>('idle');
+  // done/total are bytes across the shard bundles being downloaded (see lib/offline.ts), not
+  // sutta counts — a shard-count-of-4000+ progress readout doesn't mean much to a reader, a
+  // percentage does.
   const [progress, setProgress] = useState({ done: 0, total: 0 });
   const [cachedStatus, setCachedStatus] = useState<{ cached: number; total: number } | null>(null);
   const [failedCount, setFailedCount] = useState(0);
@@ -215,9 +218,7 @@ export function SettingsPage(_props: RouteComponentProps) {
                 />
               </div>
               <div className="flex items-center justify-between font-sans text-[13px] text-ink/50">
-                <span>
-                  {progress.done} of {progress.total}
-                </span>
+                <span>{progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%</span>
                 <button className="underline decoration-ink/25 underline-offset-2" onClick={handleCancelOfflineDownload}>
                   Cancel
                 </button>
@@ -229,7 +230,7 @@ export function SettingsPage(_props: RouteComponentProps) {
                 {cachedStatus
                   ? cachedStatus.cached >= cachedStatus.total
                     ? 'All suttas available offline.'
-                    : `${cachedStatus.cached.toLocaleString()} of ${cachedStatus.total.toLocaleString()} suttas available offline.`
+                    : `${Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% available offline.`
                   : 'Checking offline availability…'}
               </div>
               <button

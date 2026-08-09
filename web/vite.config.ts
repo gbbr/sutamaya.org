@@ -40,7 +40,18 @@ export default defineConfig({
         // (what Pali/English text actually uses) are precached; the cyrillic/greek/vietnamese
         // subsets — vendored only for parity with what Google Fonts was already serving — are
         // cached on first use like everything else below, not forced into every install.
-        globPatterns: ['**/*.{js,css,html,svg}', '**/*-latin.woff2', '**/*-latin-ext.woff2', 'data/corpus.json'],
+        globPatterns: [
+          '**/*.{js,css,html,svg}',
+          '**/*-latin.woff2',
+          '**/*-latin-ext.woff2',
+          'data/corpus.json',
+          // Small (tens of KB) shard index for Settings' bulk offline download — see
+          // web/src/lib/offline.ts. Precached alongside corpus.json so "X% available offline" can
+          // be computed on first load without a network round trip, same reasoning as corpus.json
+          // itself. The shard bundle files it points to are NOT precached — CacheFirst on first
+          // request, same as everything else in data/text/.
+          'data/text-shards/manifest.json',
+        ],
         navigateFallbackDenylist: [/^\/api\//],
         runtimeCaching: [
           {
