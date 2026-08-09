@@ -1,7 +1,8 @@
 import { ChevronDown, ChevronRight, ChevronUp, GripVertical, MoreHorizontal, Pencil, Plus, Trash2 } from 'lucide-react';
 import type { KeyboardEvent } from 'react';
 import type { BlockedDelete } from '../hooks/useListCrud';
-import type { DropZone, ListDef } from '../lib/types';
+import type { DropIndicator } from '../lib/listTreeDrop';
+import type { ListDef } from '../lib/types';
 
 export interface ListRowMenuProps {
   menuOpenId: string | null;
@@ -40,20 +41,20 @@ export interface ListRowDraftProps {
 // One row of the "My lists" tree — a list can nest other lists as children (folder-like), with
 // button-based rename/delete/move controls that always work (touch included), plus Pointer
 // Events drag-and-drop reordering/nesting when "reorder mode" (see the toggle by "My lists") is
-// on. The drag surface is a dedicated handle on the row's left edge (icon + generous invisible
-// padding, ~44px touch target), not the whole row — an earlier version made the entire row
+// on. The drag surface is a dedicated handle on the row's left edge (icon + a 30px-wide, full
+// row height touch target), not the whole row — an earlier version made the entire row
 // touchAction:none while in reorder mode, which also blocked vertical scrolling of the list
 // pane itself (you couldn't scroll past a row without dragging it) and needed userSelect:none
 // smeared across the whole row to stop text selection. Confining touchAction/userSelect to the
 // handle keeps the rest of the row (title, member count, options button) scrollable and
 // selectable as normal, matching ListPane's sutta-reorder grip. A press-and-drag on the handle
 // engages once it clears a small movement threshold (a plain tap still reaches the handle's
-// no-op — nothing else lives there — harmlessly). Dropping on the top/bottom quarter of a row
-// reorders as a sibling, the middle half nests it as a child (see TreePane's updateDropTarget
-// for the zone math).
+// no-op — nothing else lives there — harmlessly). Dropping on the inner half of a group's row
+// nests it as a child, anywhere else resolves to a sibling position (see useListTreeDrag's
+// updateDropTarget for the zone math).
 //
 // Props are grouped by concern (menu/edit/del/draft) rather than flat — keeps this at ~15
-// top-level props instead of 35. The drag props (reorderMode/dragId/overId/overZone/
+// top-level props instead of 35. The drag props (reorderMode/dragId/indicator/
 // onRowPointerDown/getRowRef) stay flat, passed straight through from TreePane's own
 // useListTreeDrag() (itself built on the shared usePointerDragSession) — they're a single
 // cohesive concern already, so bundling them wouldn't reduce the prop count in a meaningful way.
@@ -78,8 +79,7 @@ export function ListRow({
   siblingCount,
   reorderMode,
   dragId,
-  overId,
-  overZone,
+  indicator,
   onRowPointerDown,
   getRowRef,
 }: {
@@ -99,8 +99,7 @@ export function ListRow({
   siblingCount: number;
   reorderMode: boolean;
   dragId: string | null;
-  overId: string | null;
-  overZone: DropZone | null;
+  indicator: DropIndicator | null;
   onRowPointerDown: (e: React.PointerEvent, id: string) => void;
   getRowRef: (id: string) => (el: HTMLElement | null) => void;
 }) {
@@ -116,7 +115,7 @@ export function ListRow({
   const editing = editingId === list.id;
   const menuOpen = menuOpenId === list.id;
   const dragging = dragId === list.id;
-  const isOver = overId === list.id && dragId !== list.id;
+  const myEdge = indicator?.id === list.id ? indicator.edge : null;
 
   return (
     <div>
@@ -127,20 +126,24 @@ export function ListRow({
         style={{
           paddingLeft: 18 + depth * 14,
           opacity: dragging ? 0.4 : 1,
-          background: isOver && overZone === 'inside' ? 'rgb(var(--accent2) / .16)' : undefined,
-          boxShadow:
-            isOver && overZone === 'before'
-              ? 'inset 0 2px 0 rgb(var(--accent2))'
-              : isOver && overZone === 'after'
-                ? 'inset 0 -2px 0 rgb(var(--accent2))'
-                : undefined,
+          background: myEdge === 'inside' ? 'rgb(var(--accent2) / .16)' : undefined,
+          // 'bottom' recolors (and thickens) this row's own permanent border-bottom rather than
+          // layering a second line next to it — see resolveDropIndicator for why a 'before'
+          // target already gets normalized to the *previous* row's bottom edge before it ever
+          // reaches here, so this row only ever needs to handle its own edge. 'top' is the one
+          // remaining case that still needs a drawn-on-top line (the box-shadow) — it only occurs
+          // for the very first row in the whole tree, where there's no row above to recolor
+          // instead, so there's nothing for it to double up with.
+          borderBottomColor: myEdge === 'bottom' ? 'rgb(var(--accent2))' : undefined,
+          borderBottomWidth: myEdge === 'bottom' ? 2 : undefined,
+          boxShadow: myEdge === 'top' ? 'inset 0 2px 0 rgb(var(--accent2))' : undefined,
         }}
       >
         {reorderMode && (
           <span
             className="flex-none flex items-center justify-center text-ink/35 -my-[7px] -ml-1.5"
             style={{
-              width: 40,
+              width: 30,
               alignSelf: 'stretch',
               cursor: 'grab',
               // Scoped to just this handle (not the whole row, see the comment above) — blocks
@@ -306,8 +309,7 @@ export function ListRow({
             siblingCount={kids.length}
             reorderMode={reorderMode}
             dragId={dragId}
-            overId={overId}
-            overZone={overZone}
+            indicator={indicator}
             onRowPointerDown={onRowPointerDown}
             getRowRef={getRowRef}
           />
