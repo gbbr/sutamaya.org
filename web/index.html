@@ -46,7 +46,13 @@
           var raw = localStorage.getItem('sutamaya.uiPrefs');
           var theme = (raw && JSON.parse(raw).theme) || 'light';
           var dark = theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
-          if (dark) document.documentElement.classList.add('dark');
+          if (dark) {
+            document.documentElement.classList.add('dark');
+            // Mirrors lib/themeColor.ts's dark shell color — avoids the title bar/status bar
+            // flashing light-then-dark for the same reason the 'dark' class itself is set early.
+            var meta = document.querySelector('meta[name="theme-color"]');
+            if (meta) meta.setAttribute('content', '#171513');
+          }
         } catch (e) {
           // storage unavailable/corrupt — falls through to the light-theme default, same as
           // loadUiPrefs() itself does

@@ -2,6 +2,7 @@ import { READER_FACES } from './theme';
 import type { AppTheme, ReaderFace } from './types';
 import { MOBILE_BREAKPOINT } from '../context/LayoutContext';
 import { UI_PREFS_KEY } from './storageKeys';
+import { setShellThemeColor } from './themeColor';
 
 // The UI is noticeably smaller by default on a phone than on desktop at the same nominal scale,
 // so mobile gets this baked into every applied scale on top of whatever the user's own slider
@@ -108,4 +109,8 @@ export function systemPrefersDark(): boolean {
 export function applyTheme(theme: AppTheme) {
   const dark = theme === 'dark' || (theme === 'system' && systemPrefersDark());
   document.documentElement.classList.toggle('dark', dark);
+  // Keeps the desktop PWA title bar / mobile status bar (see lib/themeColor.ts) in sync with the
+  // shell theme — the reader's own, separately-themed background takes over this same meta tag
+  // while it's open (ReaderPage) and hands it back on close.
+  setShellThemeColor(dark);
 }
