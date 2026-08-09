@@ -1,8 +1,9 @@
 import { Firestore, FieldValue } from '@google-cloud/firestore';
 
 // Local dev talks to the Firestore emulator by default (no GCP credentials or cost involved).
-// `npm run dev:emulator` starts it; NODE_ENV=production (set in the Cloud Run image) skips this
-// so the deployed service always talks to real Firestore via the attached service account.
+// `firebase-tools emulators:start --only firestore --project sutamaya-local` starts it (see
+// CLAUDE.md); NODE_ENV=production (set in the Cloud Run image) skips this so the deployed
+// service always talks to real Firestore via the attached service account.
 if (process.env.NODE_ENV !== 'production' && !process.env.FIRESTORE_EMULATOR_HOST) {
   process.env.FIRESTORE_EMULATOR_HOST = 'localhost:8081';
 }

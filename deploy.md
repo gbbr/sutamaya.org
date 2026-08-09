@@ -109,7 +109,7 @@ gcloud run deploy sutamaya \
   --region="$REGION" \
   --service-account="sutamaya-run@${PROJECT_ID}.iam.gserviceaccount.com" \
   --set-secrets="SESSION_SECRET=sutamaya-session-secret:latest" \
-  --set-env-vars="NODE_ENV=production" \
+  --set-env-vars="NODE_ENV=production,GOOGLE_CLOUD_PROJECT=${PROJECT_ID},WEB_ORIGIN=https://your-domain.com" \
   --allow-unauthenticated \
   --min-instances=0 \
   --max-instances=1 \
@@ -122,7 +122,8 @@ Registry, and deploys it. First run takes a few minutes (mostly the corpus-build
 steps inside the build); later deploys are faster since layers are cached. `--allow-unauthenticated`
 is what makes it reachable as a normal public web app — drop it if you want to gate access behind
 IAM/IAP instead. `--timeout=30` bounds worst-case GB-seconds if a request ever hangs (raise it if
-you have a route that legitimately needs longer).
+you have a route that legitimately needs longer). `GOOGLE_CLOUD_PROJECT` and `WEB_ORIGIN` matter
+here too — see the note right after this command.
 
 Once the one-time setup above is done, `npm run deploy` (root `scripts/deploy.sh`) wraps this
 same command: it checks `gcloud auth list` for an active account and errors out (no auto-login)
@@ -141,6 +142,11 @@ claiming otherwise — `scripts/deploy.sh` passes it explicitly (`--set-env-vars
 (`sutamaya-local`) and every Firestore call fails with a "permission denied on resource project
 sutamaya-local" error — which only actually surfaces once a request reaches Firestore (e.g. the
 first successful sign-in), so it's easy to deploy, see the app *load* fine, and not notice.
+`scripts/deploy.sh` also sets `WEB_ORIGIN` (defaulting to `https://sutamaya.org`, override with
+`WEB_ORIGIN=... npm run deploy` if deploying under a different domain) — `server/src/index.js`
+uses it for the CORS `origin` check; harmless to get wrong for the normal same-origin SPA+API
+deploy this guide describes, but worth setting correctly if anything ever calls the API
+cross-origin.
 
 `gcloud run deploy` prints the service URL when it finishes:
 
