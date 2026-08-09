@@ -3,13 +3,7 @@ import type { HighlightGroup } from '../lib/highlights';
 import { getUiScale } from '../lib/uiPrefs';
 import { highlightPaint } from '../lib/theme';
 import type { ThemeColors } from '../lib/types';
-
-interface Mark {
-  key: string;
-  i: number;
-  c: string;
-  top: number;
-}
+import { computeGutterLayout, type GutterMark, type GutterTrack } from '../lib/highlightGutterLayout';
 
 interface HighlightGutterProps {
   scrollRef: RefObject<HTMLElement>;
@@ -29,8 +23,8 @@ interface HighlightGutterProps {
 // — so a mark's position is where the scrollbar thumb would be if that highlight were on
 // screen. Clicking one jumps straight to it.
 export function HighlightGutter({ scrollRef, highlightGroups, theme, onJump, layoutKey }: HighlightGutterProps) {
-  const [marks, setMarks] = useState<Mark[]>([]);
-  const [track, setTrack] = useState<{ top: number; height: number } | null>(null);
+  const [marks, setMarks] = useState<GutterMark[]>([]);
+  const [track, setTrack] = useState<GutterTrack | null>(null);
 
   useEffect(() => {
     const container = scrollRef.current;
@@ -44,27 +38,18 @@ export function HighlightGutter({ scrollRef, highlightGroups, theme, onJump, lay
       if (!container) return;
       // getBoundingClientRect() reports real, post-`zoom` screen coordinates, but scrollTop/
       // scrollHeight are local (pre-zoom) layout units — same distinction index.css's 100dvh
-      // compensation deals with (see applyUiScale). Converting the rect values to local units
-      // right away keeps everything below in one consistent frame, and means `track`/`marks`
-      // are already the right numbers to assign directly as this component's own CSS lengths
-      // (which get magnified by `zoom` back up to the real values at paint time).
-      const scale = getUiScale();
-      const rect = container.getBoundingClientRect();
-      const top = rect.top / scale;
-      const height = rect.height / scale;
-      const scrollHeight = container.scrollHeight;
-      setTrack({ top, height });
-      setMarks(
-        highlightGroups.map((g) => {
-          const el = container.querySelector<HTMLElement>(`[data-seg="${g.i}"]`);
-          // Distance from the top of the scrollable content, independent of current scroll
-          // position (getBoundingClientRect().top moves as you scroll; adding scrollTop back
-          // cancels that out) and of any non-positioned wrapper divs between here and there.
-          const contentTop = el ? el.getBoundingClientRect().top / scale - top + container.scrollTop : 0;
-          const ratio = scrollHeight > 0 ? Math.min(1, Math.max(0, contentTop / scrollHeight)) : 0;
-          return { key: g.key, i: g.i, c: g.c, top: ratio * height };
-        })
+      // compensation deals with (see applyUiScale). computeGutterLayout converts the rect values
+      // to local units before mixing them with scroll units — see its own comment.
+      const { track, marks } = computeGutterLayout(
+        highlightGroups,
+        container.getBoundingClientRect(),
+        container.scrollHeight,
+        container.scrollTop,
+        getUiScale(),
+        (i) => container.querySelector<HTMLElement>(`[data-seg="${i}"]`)?.getBoundingClientRect().top
       );
+      setTrack(track);
+      setMarks(marks);
     }
 
     recompute();

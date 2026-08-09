@@ -31,8 +31,21 @@ Run individually with `npm run dev:server` / `npm run dev:web`. The web dev serv
 `/api/*` to `http://localhost:8787` (override with `API_ORIGIN`).
 
 `server/src/firestore.js` points local dev at a **Firestore emulator** on `localhost:8081` by
-default (skipped when `NODE_ENV=production`, i.e. in the deployed container). Start one before
-`npm run dev:server`:
+default (skipped when `NODE_ENV=production`, i.e. in the deployed container). `npm run dev:server`
+needs one already running (start it yourself, below) — `npm test`/`npm run deploy` don't: `npm
+test` runs vitest through `scripts/with-emulator.mjs`, which starts a throwaway emulator instance
+first if nothing's already listening on its port and stops that instance again afterward (an
+emulator you already had running, e.g. from `dev:server`, is detected and left alone instead).
+This is what lets `server/src/routes/*.test.js` run real route/integration tests (create/
+reparent/delete-with-children, the highlights-ranges overlap transaction, `buildUserData`'s
+shape) against a real Firestore instance via `server/src/testUtils/testApp.js` (a minimal Express
+app wired to the real routers, with a header-driven fake session in place of real cookie-session
+— see that file's own comment) without a manually-started emulator as a precondition — each
+test cleans up its own `users/{id}` subtree afterward regardless of whether the instance is
+throwaway or shared, since a shared one persists across runs.
+
+To start one yourself (only needed for `npm run dev:server`, or to inspect emulator data during a
+`npm test` run — `with-emulator.mjs` reuses whatever's already up):
 
 ```
 npm install -g firebase-tools   # or just `npx firebase-tools ...`, once

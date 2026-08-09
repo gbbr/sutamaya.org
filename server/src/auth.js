@@ -2,12 +2,13 @@ import { OAuth2Client } from 'google-auth-library';
 import { usersCol } from './firestore.js';
 import { asyncHandler } from './asyncHandler.js';
 
-const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
-const googleClient = GOOGLE_CLIENT_ID ? new OAuth2Client(GOOGLE_CLIENT_ID) : null;
-
 export async function verifyGoogleCredential(credential) {
-  if (!googleClient) throw new Error('GOOGLE_CLIENT_ID is not configured on the server.');
-  const ticket = await googleClient.verifyIdToken({ idToken: credential, audience: GOOGLE_CLIENT_ID });
+  // Read lazily (not at module-load time) so this doesn't depend on import order relative to
+  // env.js, which populates process.env.GOOGLE_CLIENT_ID for local dev — see env.js's own comment.
+  const clientId = process.env.GOOGLE_CLIENT_ID;
+  if (!clientId) throw new Error('GOOGLE_CLIENT_ID is not configured on the server.');
+  const client = new OAuth2Client(clientId);
+  const ticket = await client.verifyIdToken({ idToken: credential, audience: clientId });
   const payload = ticket.getPayload();
   if (!payload || !payload.email_verified) throw new Error('Google account email is not verified.');
   return { googleId: payload.sub, email: payload.email, name: payload.name || null, picture: payload.picture || null };

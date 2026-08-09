@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import {
   NIKAYA_META, AN_BOOK_NAMES, KN_BOOKS, SN_GROUPS, REF_ABBR,
   formatRef, stripTitlePrefix, flattenLeaves, findChapterNodes, findNodeByKey, findLeafGroups, rangeNote, chapterSpanNote,
-  headerTitle, roleFor,
+  headerTitle, buildBodySegments,
 } from './lib/collections.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -78,44 +78,6 @@ function buildBlurbIndex(filePath) {
 function loadSegMap(filePath) {
   if (!filePath || !fs.existsSync(filePath)) return new Map();
   return new Map(Object.entries(readJSON(filePath)));
-}
-
-// Sujato's own translator notes (data/sujato/notes/, same uid/segment-keyed, range-batched files
-// as everything else — see data/BRIEF.md) carry inline HTML (`<i>`/`<em>`/<b>`/`<span>`, kept
-// as-is) and cross-reference links to other suttas on suttacentral.net (`<a href='https://
-// suttacentral.net/...'>`) — stripped down to their plain text here rather than kept as live
-// links, since a link off to the actual live website doesn't belong in an offline-first reader
-// (and may point at a sutta this dataset doesn't even have translated).
-const NOTE_LINK_RE = /<a\b[^>]*>(.*?)<\/a>/gis;
-function cleanNote(text) {
-  return text.replace(NOTE_LINK_RE, '$1').trim();
-}
-
-function buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap) {
-  const orderedKeys = paliMap.size ? [...paliMap.keys()] : [...sujatoMap.keys()];
-  const segs = [];
-  for (const key of orderedKeys) {
-    const segId = key.slice(key.indexOf(':') + 1);
-    if (segId === '0' || segId.startsWith('0.')) continue; // nikaya/book/vagga/sutta title lines
-    const pali = (paliMap.get(key) || '').trim();
-    let en = (sujatoMap.get(key) || '').trim();
-    if (!pali && !en) continue;
-    const roleInfo = roleFor(htmlMap.get(key));
-    // A colophon note ("Tevijjasuttaṁ niṭṭhitaṁ terasamaṁ." — "The Tevijja Sutta is finished")
-    // is frequently Pali-only, since it's a scribal marker rather than teaching content Sujato
-    // translated — falling back to Pali here (only for this role) means the reader always has
-    // *something* to show for it, instead of a blank paragraph with nothing to tap-reveal.
-    if (roleInfo?.role === 'end' && !en) en = pali;
-    const seg = { key, pali, en };
-    if (roleInfo) {
-      seg.role = roleInfo.role;
-      if (roleInfo.headingLevel) seg.headingLevel = roleInfo.headingLevel;
-    }
-    const rawNote = notesMap.get(key);
-    if (rawNote && rawNote.trim()) seg.note = cleanNote(rawNote);
-    segs.push(seg);
-  }
-  return segs;
 }
 
 console.log('Indexing source files…');

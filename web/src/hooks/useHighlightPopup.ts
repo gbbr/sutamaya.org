@@ -1,14 +1,10 @@
 import { useCallback, useState } from 'react';
 import { useUserData } from '../context/UserDataContext';
-import { groupHighlights } from '../lib/highlights';
+import { groupHighlights, buildCrossSegmentRanges, type HlRange } from '../lib/highlights';
 import type { SegmentFile } from '../lib/corpus';
 import type { Highlight } from '../lib/types';
 
-export interface HlRange {
-  i: number;
-  s: number;
-  e: number;
-}
+export type { HlRange };
 
 export interface PopState {
   ranges: HlRange[];
@@ -95,23 +91,19 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
       const aStart = offsetWithin(a, range.startContainer, range.startOffset);
       const bEnd = offsetWithin(b, range.endContainer, range.endOffset);
 
-      const ranges: HlRange[] = between
-        .map((seg, idx) => {
-          const i = Number(seg.dataset.seg);
-          // The segment's *data* length, not its rendered DOM textContent length — the `<p
-          // data-seg>` can contain extra rendered characters beyond seg.en itself (e.g. the
-          // translator-note asterisk, see SegmentedText), which would otherwise inflate a
-          // middle/first segment's stored `e` past the real text length. That mismatch breaks
-          // groupHighlights' boundary check (`prev.e === segments[prev.i].en.length`), so the
-          // run never merges past that segment — clicking a highlight to remove it then only
-          // finds part of the group, leaving the rest stranded. Falls back to textContent only
-          // if segment data isn't available to this hook.
-          const fullLen = segments?.[i]?.en.length ?? seg.textContent?.length ?? 0;
-          const s = idx === 0 ? aStart : 0;
-          const e = idx === between.length - 1 ? bEnd : fullLen;
-          return { i, s, e };
-        })
-        .filter((r) => r.e > r.s);
+      // The segment's *data* length, not its rendered DOM textContent length — the `<p
+      // data-seg>` can contain extra rendered characters beyond seg.en itself (e.g. the
+      // translator-note asterisk, see SegmentedText), which would otherwise inflate a
+      // middle/first segment's stored `e` past the real text length. That mismatch breaks
+      // groupHighlights' boundary check (`prev.e === segments[prev.i].en.length`), so the run
+      // never merges past that segment — clicking a highlight to remove it then only finds part
+      // of the group, leaving the rest stranded. Falls back to textContent only if segment data
+      // isn't available to this hook.
+      const segLengths = between.map((seg) => {
+        const i = Number(seg.dataset.seg);
+        return { i, fullLen: segments?.[i]?.en.length ?? seg.textContent?.length ?? 0 };
+      });
+      const ranges = buildCrossSegmentRanges(segLengths, aStart, bEnd);
       if (!ranges.length) return;
 
       // A fresh multi-segment selection is always a new highlight, never an edit of an

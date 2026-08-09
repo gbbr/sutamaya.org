@@ -8,6 +8,34 @@ export interface HighlightGroup {
   items: Highlight[];
 }
 
+export interface HlRange {
+  i: number;
+  s: number;
+  e: number;
+}
+
+// Pure range-building math for a cross-segment selection (useHighlightPopup's onTextUp): the
+// first segment gets the tail from the selection start to its own end, each segment strictly in
+// between gets its full length, and the last segment gets the head from its own start to the
+// selection end. `segs` must already be in document order. Split out from useHighlightPopup so
+// this — the part that previously caused a real bug (a middle segment's length has to come from
+// stored segment data, not rendered DOM textContent, which can include extra characters like a
+// translator-note asterisk — see useHighlightPopup's own `fullLen` comment) — is unit-testable
+// without a DOM.
+export function buildCrossSegmentRanges(
+  segs: { i: number; fullLen: number }[],
+  startOffset: number,
+  endOffset: number
+): HlRange[] {
+  return segs
+    .map(({ i, fullLen }, idx) => {
+      const s = idx === 0 ? startOffset : 0;
+      const e = idx === segs.length - 1 ? endOffset : fullLen;
+      return { i, s, e };
+    })
+    .filter((r) => r.e > r.s);
+}
+
 // A cross-segment highlight is stored as one Highlight document per segment (see
 // useHighlightPopup's `pick`), all sharing the same `g` (groupId, assigned server-side by the
 // PUT /highlights/ranges call that wrote them) — recombine by that field rather than inferring

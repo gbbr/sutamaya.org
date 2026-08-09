@@ -177,6 +177,7 @@ beforeEach(() => {
     user: buildUser(),
     loading: false,
     googleReady: true,
+    authError: null,
     loginWithGoogle: vi.fn(async () => {}),
     promptGoogleSignIn: vi.fn(),
     logout: vi.fn(async () => {}),

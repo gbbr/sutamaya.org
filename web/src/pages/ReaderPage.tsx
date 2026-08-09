@@ -5,6 +5,7 @@ import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { useSuttaReading } from '../hooks/useSuttaReading';
+import { useReaderOrigin } from '../hooks/useReaderOrigin';
 import { flatSuttaOrder, breadcrumbFor } from '../lib/corpus';
 import { flattenListTree, resolveListById } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
@@ -13,7 +14,6 @@ import { setReaderThemeColor } from '../lib/themeColor';
 import { lookupWord, splitPaliWords, stripPunct } from '../lib/dictionary';
 import { SHORTCUTS, shortcutsForScope, isShortcut } from '../lib/shortcuts';
 import { tagIntent } from '../lib/routeIntent';
-import { READER_ORIGIN_KEY } from '../lib/storageKeys';
 import { SegmentedText } from '../components/SegmentedText';
 import { HighlightPopup } from '../components/HighlightPopup';
 import { HighlightGutter } from '../components/HighlightGutter';
@@ -34,43 +34,6 @@ interface DictState {
   wordIndex: number;
 }
 
-interface PersistedReaderOrigin {
-  suttaId: string;
-  from: string;
-  fromView?: 'tree' | 'list';
-}
-
-// A hard refresh drops location.state entirely (browser-native — a fresh navigation's history
-// entry starts with none), losing `from`/`fromView` even for a reader opened moments earlier via
-// LibraryPage.onOpen (which persists this alongside the router-state it also sets — see there).
-// Scoped by `suttaId` so a direct/bookmarked link to a *different* /read/:id can't resurrect a
-// stale origin left over from an unrelated earlier reading session.
-function readPersistedReaderOrigin(suttaId: string | undefined): PersistedReaderOrigin | null {
-  if (!suttaId) return null;
-  try {
-    const raw = localStorage.getItem(READER_ORIGIN_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw) as PersistedReaderOrigin;
-    return parsed.suttaId === suttaId ? parsed : null;
-  } catch {
-    return null;
-  }
-}
-
-// Re-keys the persisted origin to whichever sutta is now being read, carrying the same
-// `from`/`fromView` forward the same way router state already does (see step()/
-// onSearchOpenSutta below) — otherwise a refresh partway through a Prev/Next run would find the
-// persisted entry still scoped to the *original* sutta and fall back to the bare corpus location
-// instead of the actual origin pane.
-function persistReaderOrigin(suttaId: string, from: string | undefined, fromView: 'tree' | 'list' | undefined) {
-  if (!from) return;
-  try {
-    localStorage.setItem(READER_ORIGIN_KEY, JSON.stringify({ suttaId, from, fromView }));
-  } catch {
-    // storage unavailable — ignore
-  }
-}
-
 export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus, dictionary } = useCorpus();
   const { notes, membership, lists, markVisited } = useUserData();
@@ -84,8 +47,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   // closing lands back on the actual tree/list pane the reader was opened from, not whichever one
   // LibraryPage's own suttaId-present-on-mount default would otherwise guess.
   const readerLocationState = location?.state as { from?: string; fromView?: 'tree' | 'list' } | undefined;
-  const from = readerLocationState?.from;
-  const fromView = readerLocationState?.fromView;
+  const { from, fromView, navigateToSutta, closeToOrigin } = useReaderOrigin(readerLocationState);
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
   const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
   const [dict, setDict] = useState<DictState | null>(null);
@@ -206,13 +168,10 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     if (!suttaId) return;
     const i = siblingIds.indexOf(suttaId);
     const next = siblingIds[Math.min(siblingIds.length - 1, Math.max(0, i + dir))];
-    // Carries `from`/`fromView` forward so closing after stepping through several suttas still
-    // returns to wherever the reader was originally opened from, not the last-stepped sutta's own
-    // location.
-    if (next && next !== suttaId) {
-      persistReaderOrigin(next, from, fromView);
-      navigate(`/read/${encodeURIComponent(next)}`, { state: { from, fromView } });
-    }
+    // navigateToSutta carries `from`/`fromView` forward so closing after stepping through
+    // several suttas still returns to wherever the reader was originally opened from, not the
+    // last-stepped sutta's own location.
+    if (next && next !== suttaId) navigateToSutta(next);
   }
 
   // Swipe-left/right to go to the next/prev sutta on mobile. This has to bypass React's own
@@ -442,29 +401,12 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   }
 
   function closeReader() {
-    // `restoreOrigin: true` marks this as a return-to-origin round trip (as opposed to a fresh
-    // deep link) — see TreePane's own `restoreOrigin` prop for why its Library/My-lists toggle
-    // needs to tell the two apart. Only meaningful alongside `from` itself: the no-`from`
-    // fallback below is a bare corpus location, not a return to anywhere the user actually was.
-    // Tagged (see lib/routeIntent.ts) so LibraryPage consumes `fromView` exactly once, rather
-    // than a later refresh of the same URL resurrecting it over a manual pane switch made since.
-    if (from) {
-      navigate(from, { state: tagIntent({ fromView, restoreOrigin: true }) });
-      return;
-    }
-    const persistedOrigin = readPersistedReaderOrigin(suttaId);
-    if (persistedOrigin) {
-      navigate(persistedOrigin.from, { state: tagIntent({ fromView: persistedOrigin.fromView, restoreOrigin: true }) });
-      return;
-    }
-    if (sutta) navigate(`/browse/${sutta.node}/${suttaId}`);
-    else navigate('/');
+    closeToOrigin(suttaId, sutta ? `/browse/${sutta.node}/${suttaId}` : '/');
   }
 
   function onSearchOpenSutta(id: string) {
     setSearchOpen(false);
-    persistReaderOrigin(id, from, fromView);
-    navigate(`/read/${encodeURIComponent(id)}`, { state: { from, fromView } });
+    navigateToSutta(id);
   }
 
   // Wrapped in useCallback (as are onToggleSeg/onToggleNote below) so SegmentedText's own
