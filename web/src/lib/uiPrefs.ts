@@ -20,10 +20,7 @@ export interface UiPrefs {
 }
 
 export { UI_PREFS_KEY };
-// 'light' rather than 'system' — the app has only ever rendered light until now, so an existing
-// user whose OS happens to be in dark mode shouldn't see it flip the first time this ships; they
-// opt into 'dark' or 'system' explicitly from here on.
-export const UI_PREFS_DEFAULTS: UiPrefs = { uiScale: 1, uiFace: 'serif', theme: 'light' };
+export const UI_PREFS_DEFAULTS: UiPrefs = { uiScale: 1, uiFace: 'system', theme: 'system' };
 
 export function loadUiPrefs(): UiPrefs {
   try {
@@ -98,7 +95,9 @@ export function applyUiFace(face: ReaderFace) {
   document.documentElement.style.setProperty('--ui-serif', READER_FACES[face]);
 }
 
-function systemPrefersDark(): boolean {
+// Also used by ReaderPrefsContext, which tracks the same OS preference for the reader's own
+// (separately-persisted) 'system' theme option.
+export function systemPrefersDark(): boolean {
   return typeof window !== 'undefined' && window.matchMedia?.('(prefers-color-scheme: dark)').matches;
 }
 

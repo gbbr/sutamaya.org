@@ -1,6 +1,8 @@
 import { useEffect, useState, type RefObject } from 'react';
 import type { HighlightGroup } from '../lib/highlights';
 import { getUiScale } from '../lib/uiPrefs';
+import { highlightPaint } from '../lib/theme';
+import type { ThemeColors } from '../lib/types';
 
 interface Mark {
   key: string;
@@ -12,6 +14,7 @@ interface Mark {
 interface HighlightGutterProps {
   scrollRef: RefObject<HTMLElement>;
   highlightGroups: HighlightGroup[];
+  theme: ThemeColors;
   onJump: (segIndex: number) => void;
   // Recomputed whenever this changes, in addition to on mount/highlight-change/resize — pass
   // anything that can reflow the text without resizing the scroll container itself (font size,
@@ -25,7 +28,7 @@ interface HighlightGutterProps {
 // highlight, positioned at the same relative height its text sits at in the scrollable content
 // — so a mark's position is where the scrollbar thumb would be if that highlight were on
 // screen. Clicking one jumps straight to it.
-export function HighlightGutter({ scrollRef, highlightGroups, onJump, layoutKey }: HighlightGutterProps) {
+export function HighlightGutter({ scrollRef, highlightGroups, theme, onJump, layoutKey }: HighlightGutterProps) {
   const [marks, setMarks] = useState<Mark[]>([]);
   const [track, setTrack] = useState<{ top: number; height: number } | null>(null);
 
@@ -87,7 +90,7 @@ export function HighlightGutter({ scrollRef, highlightGroups, onJump, layoutKey 
         <button
           key={m.key}
           className="absolute w-[11px] hover:w-[20px] rounded-[2px] shadow-sm transition-[width] duration-150 ease-out"
-          style={{ background: m.c, height: 6, top: m.top - 3, right: 0, pointerEvents: 'auto' }}
+          style={{ background: highlightPaint(m.c, theme), height: 6, top: m.top - 3, right: 0, pointerEvents: 'auto' }}
           title="Jump to highlight"
           onClick={() => onJump(m.i)}
         />

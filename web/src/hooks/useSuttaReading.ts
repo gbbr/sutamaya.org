@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useUserData } from '../context/UserDataContext';
 import { useSuttaText } from './useSuttaText';
 import { useHighlightPopup } from './useHighlightPopup';
@@ -18,12 +18,17 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(suttaId:
   const highlightGroups = useMemo(() => groupHighlights(hlForSutta), [hlForSutta]);
   const hlCount = useMemo(() => highlightCount(hlForSutta), [hlForSutta]);
 
-  function scrollToSegment(segIndex: number, block: ScrollLogicalPosition = 'start') {
+  // useCallback (not a plain function, unlike this hook's other return values) since ReaderPage's
+  // goToAdjacentWord wraps this in its own useCallback, which its keydown effect depends on —
+  // without a stable reference here, that effect would tear down and re-attach its `window`
+  // listener on every render. scrollRef is a plain useRef, so it never changes identity, which
+  // means this callback itself now stays stable for the component's whole lifetime.
+  const scrollToSegment = useCallback((segIndex: number, block: ScrollLogicalPosition = 'start') => {
     // 'start' rather than 'center' — a jump (TOC heading, highlight) reads as "go to this point
     // and read on from there", so the target belongs near the top of the reading pane with the
     // following text visible below it, not centered with half the context above it wasted.
     scrollRef.current?.querySelector(`[data-seg="${segIndex}"]`)?.scrollIntoView({ behavior: 'smooth', block });
-  }
+  }, [scrollRef]);
 
   return { segments, hlForSutta, highlightGroups, hlCount, scrollRef, scrollToSegment, ...popup };
 }

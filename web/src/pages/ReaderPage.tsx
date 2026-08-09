@@ -9,7 +9,7 @@ import { flatSuttaOrder, breadcrumbFor } from '../lib/corpus';
 import { flattenListTree, resolveListById } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
-import { lookupWord } from '../lib/dictionary';
+import { lookupWord, splitPaliWords, stripPunct } from '../lib/dictionary';
 import { SHORTCUTS, shortcutsForScope, isShortcut } from '../lib/shortcuts';
 import { tagIntent } from '../lib/routeIntent';
 import { READER_ORIGIN_KEY } from '../lib/storageKeys';
@@ -26,6 +26,11 @@ interface DictState {
   word: string;
   gloss: string;
   defs: string[] | null;
+  // Where this lookup's word sits in the sutta's own Pali — lets the DictionaryDock's prev/next
+  // arrows step to the adjacent word (see goToAdjacentWord below) without re-deriving position
+  // from the (not-unique-within-a-segment) word text itself.
+  segIndex: number;
+  wordIndex: number;
 }
 
 interface PersistedReaderOrigin {
@@ -68,7 +73,7 @@ function persistReaderOrigin(suttaId: string, from: string | undefined, fromView
 export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus, dictionary } = useCorpus();
   const { notes, membership, lists, markVisited } = useUserData();
-  const { theme: themeId, fs, lh, face, allPali, showNotes, toggleShowNotes } = useReaderPrefs();
+  const { resolvedTheme, fs, lh, face, allPali, showNotes, toggleShowNotes } = useReaderPrefs();
 
   const initialPanelTab = new URLSearchParams(location?.search).get('panel') as 'highlights' | 'lists' | 'text' | null;
   // Where to return to on close — the exact pane/nodeId/scroll position the reader was opened
@@ -136,7 +141,21 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     [segments]
   );
 
-  const theme = READER_THEMES[themeId];
+  const theme = READER_THEMES[resolvedTheme];
+
+  // Every segment's Pali word list, in the same order SegmentedText renders (and taps) them —
+  // shared by onWordClick (to record where a lookup came from) and goToAdjacentWord (to walk
+  // forward/backward across segment boundaries) below.
+  const segWords = useMemo(() => (segments ? segments.map((s) => splitPaliWords(s.pali)) : []), [segments]);
+
+  // The word SegmentedText should render as persistently "active" (see its activeWordIndex prop)
+  // — kept referentially stable across renders where the position hasn't actually changed by
+  // depending on the primitives, not on `dict` itself (setDict always allocates a new object,
+  // including from goToAdjacentWord even when only the word text should visually update).
+  const activeWord = useMemo(
+    () => (dict ? { segIndex: dict.segIndex, wordIndex: dict.wordIndex } : null),
+    [dict?.segIndex, dict?.wordIndex]
+  );
 
   useEffect(() => {
     setOpenSegs({});
@@ -261,6 +280,41 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [siblingIds, suttaId, panel]);
 
+  // Walks forward/backward from the currently-open dict word to the next Pali token, crossing
+  // into the next/previous segment (skipping any with no Pali tokens at all) once the current
+  // one runs out — used by DictionaryDock's own prev/next arrows and the reader's Shift+Arrow
+  // shortcut (see the keydown effect right below, which depends on this — hence declaring it
+  // here rather than alongside onWordClick/closeDict further down: a hook's dependency array is
+  // evaluated immediately, so referencing a later `const` there throws "used before
+  // initialization", unlike a plain reference inside a closure body that only runs later).
+  const goToAdjacentWord = useCallback(
+    (dir: 1 | -1) => {
+      if (!dict || !dictionary || segWords.length === 0) return;
+      let si = dict.segIndex;
+      let wi = dict.wordIndex + dir;
+      while (si >= 0 && si < segWords.length) {
+        const words = segWords[si];
+        if (wi >= 0 && wi < words.length) {
+          const raw = words[wi];
+          const def = lookupWord(dictionary, raw);
+          setDict({ word: stripPunct(raw), gloss: def ? `${def.length}` : 'Pali', defs: def, segIndex: si, wordIndex: wi });
+          // Reveal + scroll only on an actual segment change — every word within an already-open
+          // segment is already on screen at once (unlike a highlight jump, there's no per-word
+          // position to scroll to within it), so re-centering the page on every single step would
+          // just be distracting churn. See onWordClick's own comment for the dock-opens-fresh case.
+          if (si !== dict.segIndex) {
+            setOpenSegs((s) => (s[si] ? s : { ...s, [si]: true }));
+            requestAnimationFrame(() => scrollToSegment(si, 'center'));
+          }
+          return;
+        }
+        si += dir;
+        wi = dir === 1 ? 0 : (segWords[si]?.length ?? 1) - 1;
+      }
+    },
+    [dict, dictionary, segWords, scrollToSegment]
+  );
+
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       // While open, the help modal owns every key itself — Esc or '?' again both close it,
@@ -300,8 +354,19 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       } else if (isShortcut(e, SHORTCUTS.readerSearch)) {
         e.preventDefault();
         setSearchOpen(true);
-      } else if (isShortcut(e, SHORTCUTS.readerNav)) step(e.key === 'ArrowLeft' ? -1 : 1);
-      else if (isShortcut(e, SHORTCUTS.readerHighlights)) {
+      } else if (isShortcut(e, SHORTCUTS.readerNav)) {
+        // Shift+Arrow steps sutta-to-sutta (readerNav); plain Arrow is reserved for the
+        // dictionary dock's own prev/next word (readerDictNav) and is a no-op with the dock
+        // closed — it no longer falls back to sutta-to-sutta. Both share the same `match`, so
+        // isShortcut() alone can't tell them apart (it deliberately ignores Shift — see its own
+        // comment); the split happens here.
+        if (e.shiftKey) {
+          step(e.key === 'ArrowLeft' ? -1 : 1);
+        } else if (dict) {
+          e.preventDefault();
+          goToAdjacentWord(e.key === 'ArrowLeft' ? -1 : 1);
+        }
+      } else if (isShortcut(e, SHORTCUTS.readerHighlights)) {
         e.preventDefault();
         setTab('highlights');
         setPanel(true);
@@ -325,7 +390,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [shortcutsOpen, dict, panel, pop, closePop, searchOpen, siblingIds, suttaId]);
+  }, [shortcutsOpen, dict, panel, pop, closePop, searchOpen, siblingIds, suttaId, goToAdjacentWord]);
 
   function jumpToHighlight(segIndex: number) {
     setPanel(false);
@@ -375,19 +440,27 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     if (sel) sel.removeAllRanges();
   }, []);
   const onWordClick = useCallback(
-    (raw: string) => {
+    (raw: string, segIndex: number, wordIndex: number) => {
       if (!dictionary) return;
-      const word = raw.replace(/[.,;:""''"'?!—]/g, '');
       const def = lookupWord(dictionary, raw);
       setDict({
-        word,
+        word: stripPunct(raw),
         gloss: def ? `${def.length}` : 'Pali',
         defs: def,
+        segIndex,
+        wordIndex,
       });
       const sel = window.getSelection();
       if (sel) sel.removeAllRanges();
+      // The dock is a fixed-height panel docked at the bottom (see DictionaryDock's own
+      // maxHeight) — it can cover a word tapped near the bottom of the viewport the instant it
+      // opens, so this re-centers the segment above it. goToAdjacentWord below deliberately does
+      // *not* repeat this on every word step — only when a step actually crosses into a different
+      // segment — since stepping within an already-open, already-visible segment has nothing new
+      // to scroll to.
+      requestAnimationFrame(() => scrollToSegment(segIndex, 'center'));
     },
-    [dictionary]
+    [dictionary, scrollToSegment]
   );
   const onToggleSeg = useCallback((i: number) => setOpenSegs((s) => ({ ...s, [i]: !s[i] })), []);
   const onToggleNote = useCallback((i: number) => setOpenNotes((s) => ({ ...s, [i]: !s[i] })), []);
@@ -596,6 +669,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
               showNotes={showNotes}
               openNotes={openNotes}
               onToggleNote={onToggleNote}
+              activeWord={activeWord}
             />
           ) : (
             <div className="font-sans text-sm opacity-50">Loading…</div>
@@ -608,7 +682,16 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       </div>
 
       {dict && (
-        <DictionaryDock word={dict.word} gloss={dict.gloss} defs={dict.defs} theme={theme} fontSize={fs} onClose={closeDict} />
+        <DictionaryDock
+          word={dict.word}
+          gloss={dict.gloss}
+          defs={dict.defs}
+          theme={theme}
+          fontSize={fs}
+          onClose={closeDict}
+          onPrev={() => goToAdjacentWord(-1)}
+          onNext={() => goToAdjacentWord(1)}
+        />
       )}
 
       {panel && (
@@ -634,6 +717,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
         <HighlightGutter
           scrollRef={scrollRef}
           highlightGroups={highlightGroups}
+          theme={theme}
           onJump={jumpToHighlight}
           layoutKey={`${fs}-${lh}-${face}-${allPali}-${segments ? segments.length : 'loading'}`}
         />

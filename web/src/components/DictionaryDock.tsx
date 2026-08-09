@@ -1,4 +1,4 @@
-import { X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import type { ThemeColors } from '../lib/types';
 
 interface DictionaryDockProps {
@@ -8,9 +8,11 @@ interface DictionaryDockProps {
   theme: ThemeColors;
   fontSize: number;
   onClose: () => void;
+  onPrev: () => void;
+  onNext: () => void;
 }
 
-export function DictionaryDock({ word, gloss, defs, theme, fontSize, onClose }: DictionaryDockProps) {
+export function DictionaryDock({ word, gloss, defs, theme, fontSize, onClose, onPrev, onNext }: DictionaryDockProps) {
   const glossSize = Math.max(11, fontSize - 5.5);
   const defSize = Math.max(12, fontSize - 3.5);
   const numbered = !!defs && defs.length > 1;
@@ -24,15 +26,37 @@ export function DictionaryDock({ word, gloss, defs, theme, fontSize, onClose }: 
         <div className="font-semibold font-serif" style={{ fontSize: fontSize + 2 }}>{word}</div>
         <div className="font-sans flex-1 opacity-55" style={{ fontSize: glossSize }}>{gloss}</div>
         <button
-          className="flex items-center gap-1 font-sans opacity-60"
-          style={{ fontSize: glossSize }}
+          aria-label="Previous word"
+          title="Previous word"
+          className="flex items-center opacity-60"
+          onClick={(e) => {
+            e.stopPropagation();
+            onPrev();
+          }}
+        >
+          <ChevronLeft size={16} strokeWidth={1.75} />
+        </button>
+        <button
+          aria-label="Next word"
+          title="Next word"
+          className="flex items-center opacity-60"
+          onClick={(e) => {
+            e.stopPropagation();
+            onNext();
+          }}
+        >
+          <ChevronRight size={16} strokeWidth={1.75} />
+        </button>
+        <button
+          aria-label="Close"
+          title="Close"
+          className="flex items-center opacity-60"
           onClick={(e) => {
             e.stopPropagation();
             onClose();
           }}
         >
-          <X size={13} strokeWidth={1.75} />
-          Close
+          <X size={16} strokeWidth={1.75} />
         </button>
       </div>
       <div className="flex-1 min-h-0 overflow-y-auto flex flex-col gap-[9px] mt-[7px] opacity-[.82]" style={{ fontSize: defSize }}>

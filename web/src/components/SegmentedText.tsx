@@ -1,6 +1,7 @@
 import { memo, useMemo, type CSSProperties } from 'react';
 import type { SegmentFile, SegmentRole } from '../lib/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
+import { highlightPaint } from '../lib/theme';
 
 interface Part {
   text: string;
@@ -84,11 +85,20 @@ interface SegmentRowProps {
   face: string;
   paragraphGap: number;
   onToggleSeg: (i: number) => void;
-  onWordClick: (word: string) => void;
+  // wordIndex is the tapped word's position among this segment's own Pali tokens (see
+  // lib/dictionary.ts's splitPaliWords) — lets ReaderPage step to the prev/next word from
+  // wherever the DictionaryDock's own arrows are clicked, without re-deriving it from the raw
+  // word text (which isn't unique within a segment).
+  onWordClick: (word: string, segIndex: number, wordIndex: number) => void;
   onSpanClick: (i: number, s: number, e: number, rect: DOMRect, color: string) => void;
   showNotes: boolean;
   noteOpen: boolean;
   onToggleNote: (i: number) => void;
+  // The word index (within *this* segment) currently shown in the DictionaryDock, or null if
+  // this segment isn't the active one — a plain nullable number rather than the full {segIndex,
+  // wordIndex} pair so an unrelated segment's own SegmentRow keeps seeing `null` before and after
+  // a click elsewhere, and its `memo` bails instead of re-rendering (see the perf note below).
+  activeWordIndex: number | null;
 }
 
 // One sutta segment (a paragraph/verse-line/heading/etc — see SegmentFile). Memoized so that
@@ -112,6 +122,7 @@ const SegmentRow = memo(function SegmentRow({
   showNotes,
   noteOpen,
   onToggleNote,
+  activeWordIndex,
 }: SegmentRowProps) {
   const parts = buildParts(seg.en, hlForSeg);
   // A structural sub-heading (SuttaCentral's own <h2>/<h3> nesting — see build-corpus.mjs's
@@ -153,7 +164,15 @@ const SegmentRow = memo(function SegmentRow({
               // this span sits inside the same selectable English prose the highlight-selection
               // feature drags across (including dragging *through* an existing highlight to
               // extend/merge it), so suppressing selection on it would break that drag mid-gesture.
-              style={{ background: p.c, borderRadius: 2, boxShadow: `0 0 0 2px ${p.c}`, color: '#1B1917' }}
+              // Text color switches to theme.fg once the paint itself dims below opaque (dark
+              // theme) — the hardcoded near-black otherwise assumes an opaque pastel background,
+              // which no longer holds once that background is alpha-composited over a dark page.
+              style={{
+                background: highlightPaint(p.c, theme),
+                borderRadius: 2,
+                boxShadow: `0 0 0 2px ${highlightPaint(p.c, theme)}`,
+                color: theme.highlightAlpha < 1 ? theme.fg : '#1B1917',
+              }}
               onClick={(e) => {
                 e.stopPropagation();
                 onSpanClick(i, p.s!, p.e!, (e.target as HTMLElement).getBoundingClientRect(), p.c!);
@@ -167,11 +186,25 @@ const SegmentRow = memo(function SegmentRow({
         )}
         {seg.note && showNotes && (
           <sup
+            // padding (rather than just a bigger glyph) is what actually grows the tap target —
+            // a bare `<sup>*</sup>` hit-tests to its own tiny painted glyph, which is what made
+            // it fiddly to hit on a touch screen. Vertical padding on an inline, non-replaced
+            // element doesn't affect line-height, so it's free; the horizontal padding does add a
+            // little real space in the line, which is fine since this always sits at the end of
+            // the paragraph with nothing after it to crowd. `verticalAlign`/`top` replace the
+            // browser default `sup` super-raise (which, combined with the padding above, sat the
+            // asterisk high enough to nearly touch the line above) with a small, fixed downward
+            // nudge instead — enough to read as a trailing mark, not a superscript.
             style={{
               marginLeft: 2,
+              padding: '8px 8px 8px 4px',
               color: theme.pali,
               fontStyle: 'normal',
               fontWeight: 700,
+              fontSize: '1.05em',
+              verticalAlign: 'baseline',
+              position: 'relative',
+              top: '0.1em',
               cursor: 'pointer',
               userSelect: 'none',
               WebkitUserSelect: 'none',
@@ -190,24 +223,47 @@ const SegmentRow = memo(function SegmentRow({
       {open && (
         <p
           className="animate-fadeUp"
-          style={{ margin: '6px 0 12px', fontSize, lineHeight: lineHeight / 100, fontFamily: face, color: theme.pali }}
+          // --pw-hover backs .pw:hover (index.css) — theme.tint rather than a fixed color, so a
+          // tapped/hovered Pali word's highlight stays a subtle wash against theme.pali's own
+          // text color instead of a hardcoded light tan that read as near-invisible against the
+          // dark theme's own gold Pali color.
+          style={
+            {
+              margin: '6px 0 12px',
+              fontSize,
+              lineHeight: lineHeight / 100,
+              fontFamily: face,
+              color: theme.pali,
+              '--pw-hover': theme.tint,
+            } as CSSProperties
+          }
         >
-          {seg.pali.split(/(\s+)/).map((t, j) =>
-            t.trim() === '' ? (
-              <span key={j}>{t}</span>
-            ) : (
-              <span
-                key={j}
-                className="pw"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onWordClick(t);
-                }}
-              >
-                {t}
-              </span>
-            )
-          )}
+          {(() => {
+            let wordIndex = -1;
+            return seg.pali.split(/(\s+)/).map((t, j) => {
+              if (t.trim() === '') return <span key={j}>{t}</span>;
+              const w = ++wordIndex;
+              // Driven by real state (the word currently shown in the DictionaryDock), not by
+              // :hover — :hover alone used to be the only "this word is active" cue, which only
+              // ever reliably stuck around on iOS Safari's tap-lingers-as-hover quirk; it doesn't
+              // survive at all once the dock's own prev/next arrows move the lookup to a word the
+              // pointer was never actually over.
+              const isActive = w === activeWordIndex;
+              return (
+                <span
+                  key={j}
+                  className="pw"
+                  style={isActive ? { background: theme.tint } : undefined}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onWordClick(t, i, w);
+                  }}
+                >
+                  {t}
+                </span>
+              );
+            });
+          })()}
         </p>
       )}
       {showNotes && seg.note && noteOpen && (
@@ -235,7 +291,11 @@ interface SegmentedTextProps {
   openSegs: Record<number, boolean>;
   allPali: boolean;
   onToggleSeg: (i: number) => void;
-  onWordClick: (word: string) => void;
+  // wordIndex is the tapped word's position among this segment's own Pali tokens (see
+  // lib/dictionary.ts's splitPaliWords) — lets ReaderPage step to the prev/next word from
+  // wherever the DictionaryDock's own arrows are clicked, without re-deriving it from the raw
+  // word text (which isn't unique within a segment).
+  onWordClick: (word: string, segIndex: number, wordIndex: number) => void;
   onTextUp: () => void;
   onSpanClick: (i: number, s: number, e: number, rect: DOMRect, color: string) => void;
   // Sujato's own translator notes (SegmentFile.note) — whether the asterisk markers show at all
@@ -244,6 +304,11 @@ interface SegmentedTextProps {
   showNotes: boolean;
   openNotes: Record<number, boolean>;
   onToggleNote: (i: number) => void;
+  // The word currently shown in the DictionaryDock, or null if none — ReaderPage memoizes this
+  // on {segIndex, wordIndex} (not on the whole dict-state object) so it stays referentially
+  // stable across renders where the active word hasn't actually changed; see the activeWordIndex
+  // comment on SegmentRowProps for why that stability matters.
+  activeWord: { segIndex: number; wordIndex: number } | null;
 }
 
 const EMPTY_HIGHLIGHTS: Highlight[] = [];
@@ -271,6 +336,7 @@ function SegmentedTextInner({
   showNotes,
   openNotes,
   onToggleNote,
+  activeWord,
 }: SegmentedTextProps) {
   // Space between paragraphs — scales with both the Size and Line height reader controls (not a
   // fixed pixel value), so turning either up also opens up more room between paragraphs instead
@@ -316,6 +382,7 @@ function SegmentedTextInner({
             showNotes={showNotes}
             noteOpen={!!openNotes[i]}
             onToggleNote={onToggleNote}
+            activeWordIndex={activeWord && activeWord.segIndex === i ? activeWord.wordIndex : null}
           />
         );
       })}
