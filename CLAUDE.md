@@ -69,6 +69,10 @@ writes:
 - `web/public/data/dictionary.json` and **`data/pli2en_dpd_map.json`** — the DPD dictionary
   reshaped from a `[{entry, definition}]` array into a `{entry: definition[]}` object for O(1)
   lookup. The `data/` copy is kept as a reusable artifact alongside the source list.
+- `web/public/data/text-shards/*.json` and `text-shards/manifest.json` — the same per-sutta text
+  as `text/{uid}.json` above, repacked into ~1MB bundles (`SHARD_TARGET_BYTES`) for Settings'
+  "Download all suttas for offline" bulk fetch (`web/src/lib/offline.ts`) — see "Offline
+  strategy" below.
 
 **`data/html/pli/ms/sutta/`** mirrors upstream bilara-data's `html/pli/ms/sutta/` tree (same
 range-batched files, same relative paths as `data/pali/sutta/`, just `_html.json` instead of
@@ -140,84 +144,49 @@ translation).
 
 ```
 users/{uid}                          { email, googleId, name, picture, createdAt }
-users/{uid}/lists/{listId}           { label, parentId, kind, position, items: string[] }   —
-                                                                                `kind` is
-                                                                                'list' (holds
-                                                                                suttas, can't
-                                                                                have children) or
-                                                                                'group'
-                                                                                ("ListGroup": can
-                                                                                hold other
-                                                                                lists/groups,
-                                                                                `items` always []);
-                                                                                a doc with no
-                                                                                `kind` field
-                                                                                defaults to 'list'
-                                                                                (`serializeList` in
-                                                                                routes/lists.js);
-                                                                                items is an
-                                                                                ordered array of
-                                                                                sutta uids, not a
-                                                                                subcollection;
-                                                                                parentId is null
-                                                                                for a top-level
-                                                                                entry, otherwise
-                                                                                another doc's id —
-                                                                                and if non-null,
-                                                                                that doc must be a
-                                                                                group, enforced
-                                                                                server-side
-                                                                                (`invalidParentReason`
-                                                                                in
-                                                                                routes/lists.js) on
-                                                                                every create/
-                                                                                reparent/reorder;
-                                                                                nesting depth
-                                                                                itself isn't capped
-                                                                                — the client just
-                                                                                renders whatever
-                                                                                depth exists;
-                                                                                position orders
-                                                                                siblings (docs
-                                                                                sharing the same
-                                                                                parentId), not the
-                                                                                whole collection
-users/{uid}/notes/{suttaId}          { text, updatedAt }        — doc ID *is* the sutta uid
-users/{uid}/highlights/{highlightId} { suttaId, i, s, e, color, g, createdAt }  — `g` is a
-                                                                                groupId shared by
-                                                                                every doc written
-                                                                                by one
-                                                                                PUT /highlights/
-                                                                                ranges call, so a
-                                                                                cross-segment
-                                                                                highlight
-                                                                                (multiple docs, one
-                                                                                per segment) can be
-                                                                                recombined by
-                                                                                `groupHighlights()`
-                                                                                (web/src/lib/
-                                                                                highlights.ts)
-                                                                                without inferring
-                                                                                it from segment
-                                                                                adjacency
-users/{uid}/visited/{suttaId}        { visitedAt }              — doc ID *is* the sutta uid;
-                                                                   written once the reader has
-                                                                   stayed open on that sutta for
-                                                                   at least 30% of its estimated
-                                                                   reading time (`sutta.min`,
-                                                                   ReaderPage's dwell-timer effect)
+users/{uid}/lists/{listId}           { label, parentId, kind, position, items }
+users/{uid}/notes/{suttaId}          { text, updatedAt }
+users/{uid}/highlights/{highlightId} { suttaId, i, s, e, color, g, createdAt }
+users/{uid}/visited/{suttaId}        { visitedAt }
 ```
 
+- **`lists`** — `kind` is `'list'` (holds suttas, can't have children) or `'group'` ("ListGroup":
+  can hold other lists/groups, `items` always `[]`); a doc with no `kind` field defaults to
+  `'list'` (`serializeList` in `routes/lists.js`). `items` is an ordered array of sutta uids, not
+  a subcollection. `parentId` is `null` for a top-level entry, otherwise another doc's id — and
+  if non-null, that doc must be a group, enforced server-side (`invalidParentReason` in
+  `routes/lists.js`) on every create/reparent/reorder; nesting depth itself isn't capped, the
+  client just renders whatever depth exists. `position` orders siblings (docs sharing the same
+  `parentId`), not the whole collection.
+- **`notes`** — doc ID *is* the sutta uid.
+- **`highlights`** — one doc is one highlighted range within one segment of one sutta:
+  - `i` — that segment's index within the sutta's segment array (matches the DOM's own
+    `data-seg` attribute in the reader)
+  - `s` / `e` — the half-open character range `[s, e)` within that segment's text
+  - `color` — the highlight's color
+  - `g` — a groupId shared by every doc written from one `PUT /highlights/ranges` call, so a
+    highlight spanning multiple segments (one doc per segment) can be recombined for
+    display/counting by `groupHighlights()` (`web/src/lib/highlights.ts`) without inferring it
+    from segment adjacency
+- **`visited`** — doc ID *is* the sutta uid; written once the reader has stayed open on that
+  sutta for at least 30% of its estimated reading time (`sutta.min`, `ReaderPage`'s dwell-timer
+  effect).
+
 `membership` (sutta → list labels, what the frontend actually renders as chips) isn't stored —
-it's derived at read time from each list's `items` array in `buildUserData()`
-(`routes/data.js`), which also returns each list's `parentId` and its own `items` (in stored
+it's derived at read time from each list's `items` array by `assembleUserData()`
+(`server/src/lib/userData.js`, called from `buildUserData()` in `routes/data.js`, pulled out into
+its own pure function so the shaping/auto-list logic below is unit-testable without a live
+Firestore/emulator), which also returns each list's `parentId` and its own `items` (in stored
 order) so the client can render lists as a tree and show/reorder a list's contents without a
 second round trip. List add/remove uses `FieldValue.arrayUnion`/`arrayRemove` (atomic, no
-read-modify-write race); reordering (`PUT /api/lists/order` for sibling lists, `PUT
-/api/lists/:id/items/order` for one list's suttas) replaces `position`/`items` outright instead,
-since a full reorder isn't expressible as a single atomic array op the way add/remove is.
-Deleting a list re-parents its own children to its parent (`routes/lists.js`) rather than
-orphaning or cascade-deleting them. `PUT /api/highlights/ranges` fetches a sutta's highlights
+read-modify-write race); `PUT /api/lists/order` (sibling lists) replaces `position` outright,
+since a full reorder isn't expressible as a single atomic array op the way add/remove is; `PUT
+/api/lists/:id/items/order` (one list's suttas) instead *reconciles* the posted order against the
+list's current `items` — an id added by another tab after the client's snapshot (arrayUnion
+racing the reorder) is appended rather than silently dropped, and one removed the same way is
+left out rather than resurrected. Deleting a list re-parents its own children to its parent
+(`routes/lists.js`) rather than orphaning or cascade-deleting them. `PUT /api/highlights/ranges`
+fetches a sutta's highlights
 (single equality `where`, no composite index needed), filters overlaps of the given `[s,e)`
 ranges (one or more, each in its own segment `i` — a cross-segment selection passes every
 segment's range in one request) in memory, and deletes+inserts in a single `runTransaction()`,
@@ -241,30 +210,39 @@ middleware gates every route in `routes/lists.js`, `routes/annotations.js`, `rou
 `asyncHandler.js` (forwards rejections to Express's error middleware instead of hanging as
 unhandled rejections).
 
+CORS is locked to a single allowed origin, `WEB_ORIGIN` (`server/src/index.js`, default
+`http://localhost:5173`; the deployed service sets it via `scripts/deploy.sh`, see `deploy.md`).
+Four separate `express-rate-limit` instances cover different traffic shapes (`/data/*` static
+corpus/dictionary/text assets, the rest of the API/SPA in general, `POST /api/auth/google`, and
+`GET /api/auth/me` on its own since `AuthContext` calls it on every page load/PWA relaunch and
+would otherwise share — and exhaust — the real-sign-in budget).
+
 `GET /api/data` returns everything a signed-in user needs in one shot, shaped to match the
 frontend's state (`lists`, `membership`, `notes`, `highlights`, `visited`) — see
 `buildUserData()` in `routes/data.js`. `GET /api/data/export` returns the same payload plus
 `email`/`exportedAt`, as a downloadable attachment (`Content-Disposition`), for a full personal
 data export.
 
-`buildUserData()` also synthesizes three **non-persisted** entries into the `lists` array it
-returns — `{id: 'auto-recent', label: 'Recent', auto: true, items: [...]}` (last 20 visited) and
-the `Highlights`/`Notes` equivalents (up to `AUTO_LIST_CAP` = 100 each), ids/labels duplicated in
-`web/src/lib/autoLists.ts` — so the client can render "recently visited"/"every
-highlighted/noted sutta" through the same `ListDef` shape and `membership` chips as a real list,
-without them being real `users/{uid}/lists/{listId}` docs: they're recomputed fresh on every
-fetch (most-recent first — visited/highlighted/noted respectively — since there's no stored
-order the way a real list has, and capped since `ListPane` renders every item as an
-unvirtualized DOM row), can't be renamed/deleted/reordered, and the client keeps them out of the
-user-editable "My lists" tree via their `auto: true` flag, rendering them in `TreePane`'s own
-"Automatic" section instead (`Recent` first, then `Highlights`, then `Notes` — a fixed order set
-in `TreePane.tsx`, not the `lists` array's own order).
+`assembleUserData()` (`server/src/lib/userData.js`) also synthesizes three **non-persisted**
+entries into the `lists` array it returns — `{id: 'auto-recent', label: 'Recent', auto: true,
+items: [...]}` (last 20 visited, `RECENT_AUTO_LIST_CAP`) and the `Highlights`/`Notes` equivalents
+(up to `AUTO_LIST_CAP` = 100 each), ids/labels duplicated in `web/src/lib/autoLists.ts` — so the
+client can render "recently visited"/"every highlighted/noted sutta" through the same `ListDef`
+shape and `membership` chips as a real list, without them being real `users/{uid}/lists/{listId}`
+docs: they're recomputed fresh on every fetch (most-recent first — visited/highlighted/noted
+respectively — since there's no stored order the way a real list has, and capped since `ListPane`
+renders every item as an unvirtualized DOM row), can't be renamed/deleted/reordered, and the
+client keeps them out of the user-editable "My lists" tree via their `auto: true` flag, rendering
+them in `TreePane`'s own "Automatic" section instead (`Recent` first, then `Highlights`, then
+`Notes` — a fixed order set in `TreePane.tsx`, not the `lists` array's own order).
 
-In production (`NODE_ENV=production`, set by the Dockerfile) `index.js` also serves the built
-SPA (`web-dist/`, copied in at image build time) and sets `trust proxy` + `secure` cookies —
-Cloud Run terminates TLS and forwards `X-Forwarded-Proto: https`, which is what makes the
-secure cookie actually get set. Testing the container locally over plain HTTP without faking
-that header will look like broken auth (cookie silently not persisted) — it isn't; see the
+`index.js` sets `trust proxy` unconditionally (Cloud Run always sits behind a TLS-terminating
+proxy in production, and it's a no-op in dev). In production specifically
+(`NODE_ENV=production`, set by the Dockerfile) it also serves the built SPA (`web-dist/`, copied
+in at image build time) and switches the session cookie to `secure` — Cloud Run forwards
+`X-Forwarded-Proto: https`, which combined with `trust proxy` is what makes the secure cookie
+actually get set. Testing the container locally over plain HTTP without faking that header will
+look like broken auth (cookie silently not persisted) — it isn't; see the
 "Local Docker testing" note in `deploy.md`.
 
 ## Frontend (`web/src/`)
@@ -335,8 +313,11 @@ that header will look like broken auth (cookie silently not persisted) — it is
   typing plain "a"/"n" matches Pali "ā"/"ñ" etc. Ranks a ref/title/Pali match above a
   blurb-or-note-only match, and caps every surface at `SEARCH_RESULTS_CAP` (80) results.
 - Escape closes the nearest thing there is to close — the reader's word-lookup dock, then its side
-  panel, then the reader itself (`ReaderPage`); the Settings page (`navigate(-1)`, same as its
-  "Back" button). Reader Escape handling runs *before* the usual input/textarea bail (unlike every
+  panel, then the reader itself (`ReaderPage`); the Settings page navigates to `/` (same as its
+  "Back" button), which `RestoreLastLocation` (`App.tsx`) resolves to wherever the user actually
+  came from — deliberately not `navigate(-1)`, since that needs real browser history and would do
+  nothing on a fresh tab/PWA relaunch landing straight on `/settings`, or after a hard refresh
+  there. Reader Escape handling runs *before* the usual input/textarea bail (unlike every
   other reader shortcut) so it still works while a text field inside the panel has focus — e.g.
   the note textarea, which has no Escape handling of its own; a field that *does* handle Escape
   itself first (`ListMembershipPicker`'s search/create input, which clears nesting-mode/draft
@@ -353,6 +334,15 @@ canon) are **not** forced into the install — `vite.config.ts`'s `runtimeCachin
 `CacheFirst` on first request instead (the dictionary gets fetched on app boot anyway, so it's
 cached within seconds regardless). Non-latin font subsets follow the same cache-on-first-use
 pattern. `/api/*` is `NetworkOnly` — user data is never served stale.
+
+For someone who wants every sutta available offline up front rather than waiting on
+first-visit caching, Settings has a "Download all suttas for offline" action
+(`web/src/lib/offline.ts`) that fetches the whole canon as ~1MB shard bundles (`build-corpus.mjs`
+writes these to `web/public/data/text-shards/`, indexed by a small precached
+`text-shards/manifest.json`) and writes each sutta directly into the same `sutta-text` Cache
+Storage cache the reactive `CacheFirst` rule above uses — so a bulk download and an ordinary
+"open this sutta" populate identical cache entries, and the reader never knows which path put
+something there.
 
 ## Known gaps / deliberate simplifications
 

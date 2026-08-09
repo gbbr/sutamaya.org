@@ -146,8 +146,8 @@ multiple senses has multiple strings in `definition[]`; render as a list.
 5. Dictionary overlay is lazy/on-demand against `pli2en_dpd.json`, unrelated
    to the above until the user taps a word.
 
-## Open question for later
+## Note: user state lives elsewhere
 
-None of this data carries user state (lists, notes, highlights) — per the
-design brief that's a separate per-user sync layer (Google auth) sitting on
-top of these read-only uids/segment-ids as foreign keys. Not modeled here.
+None of this data carries user state (lists, notes, highlights, visited) — that's a separate
+per-user Firestore sync layer (Google auth) sitting on top of these read-only uids/segment-ids as
+foreign keys, since implemented — see CLAUDE.md's "Backend" section.
