@@ -192,19 +192,20 @@ const SegmentRow = memo(function SegmentRow({
             // element doesn't affect line-height, so it's free; the horizontal padding does add a
             // little real space in the line, which is fine since this always sits at the end of
             // the paragraph with nothing after it to crowd. `verticalAlign`/`top` replace the
-            // browser default `sup` super-raise (which, combined with the padding above, sat the
-            // asterisk high enough to nearly touch the line above) with a small, fixed downward
-            // nudge instead — enough to read as a trailing mark, not a superscript.
+            // browser default `sup` super-raise (which sat the asterisk high enough to nearly
+            // touch the line above) with a smaller, fixed raise instead — a conventional
+            // footnote-marker position just above the baseline, not a full superscript and not
+            // sitting on the line itself.
             style={{
               marginLeft: 2,
               padding: '8px 8px 8px 4px',
               color: theme.pali,
               fontStyle: 'normal',
               fontWeight: 700,
-              fontSize: '1.05em',
+              fontSize: '0.85em',
               verticalAlign: 'baseline',
               position: 'relative',
-              top: '0.1em',
+              top: '-0.4em',
               cursor: 'pointer',
               userSelect: 'none',
               WebkitUserSelect: 'none',
