@@ -9,9 +9,9 @@ import { fileURLToPath } from 'node:url';
 // the shell already. Mirror the deploy script's trick here instead of asking for a second,
 // easy-to-forget copy of the same public client id: read it out of web/.env.development.
 //
-// Must be imported *before* anything that reads process.env.GOOGLE_CLIENT_ID at module load
-// time (server/src/auth.js) — ES module imports are evaluated in the order they're written, so
-// this only works because index.js imports this file first, ahead of ./routes/auth.js.
+// auth.js reads process.env.GOOGLE_CLIENT_ID lazily (on first real use, not at module-load
+// time), so this no longer needs to run before auth.js is imported — but it still needs to run
+// before the first Google sign-in attempt, so index.js imports it up front regardless.
 if (process.env.NODE_ENV !== 'production' && !process.env.GOOGLE_CLIENT_ID) {
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
   try {

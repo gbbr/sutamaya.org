@@ -11,3 +11,24 @@ afterEach(() => cleanup());
 // routinely (search-hit nav, deep-link scroll-to-node, etc.), so stub it globally rather than in
 // every test file that happens to render one of them.
 Element.prototype.scrollIntoView = function scrollIntoView() {};
+
+// jsdom implements no real layout, so Range.prototype has neither getClientRects nor
+// getBoundingClientRect at all — useHighlightPopup calls both while building a highlight-popup
+// position from a selection, so any selection-driven test throws without these stubs.
+Range.prototype.getClientRects = function getClientRects() {
+  return [] as unknown as DOMRectList;
+};
+Range.prototype.getBoundingClientRect = function getBoundingClientRect() {
+  return new DOMRect();
+};
+
+// jsdom has no ResizeObserver at all (again, no real layout to observe) — components that
+// recompute measurements on resize (e.g. HighlightGutter) need at least a no-op stub to
+// construct without throwing; tests that care about a resize firing call the observer callback
+// directly instead of relying on this to do anything.
+class ResizeObserverStub {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+globalThis.ResizeObserver = globalThis.ResizeObserver || (ResizeObserverStub as unknown as typeof ResizeObserver);

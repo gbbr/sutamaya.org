@@ -9,6 +9,8 @@ import {
   chapterSpanNote,
   headerTitle,
   roleFor,
+  cleanNote,
+  buildBodySegments,
 } from './collections.js';
 
 // A miniature stand-in for SN's shape: chapters (sn1, sn2) nested under a super-vagga, each
@@ -171,5 +173,110 @@ describe('roleFor', () => {
 
   it('returns undefined for plain prose', () => {
     expect(roleFor('<p>{}</p>')).toBeUndefined();
+  });
+});
+
+describe('cleanNote', () => {
+  it('strips a suttacentral.net cross-reference link down to its plain text', () => {
+    expect(cleanNote("See <a href='https://suttacentral.net/sn1.2'>SN 1.2</a> for more.")).toBe(
+      'See SN 1.2 for more.'
+    );
+  });
+
+  it('keeps other inline HTML as-is', () => {
+    expect(cleanNote('An <i>emphasized</i> word.')).toBe('An <i>emphasized</i> word.');
+  });
+
+  it('trims surrounding whitespace', () => {
+    expect(cleanNote('  padded  ')).toBe('padded');
+  });
+
+  it('strips multiple links in the same note', () => {
+    expect(cleanNote("<a href='#a'>One</a> and <a href='#b'>Two</a>")).toBe('One and Two');
+  });
+});
+
+describe('buildBodySegments', () => {
+  function maps({ pali = [], en = [], html = [], notes = [] } = {}) {
+    return [new Map(pali), new Map(en), new Map(html), new Map(notes)];
+  }
+
+  it('skips title ("0"/"0.*") segments', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [
+        ['sn1.1:0', 'Title line'],
+        ['sn1.1:0.1', 'Subtitle line'],
+        ['sn1.1:1.1', 'Body text'],
+      ],
+      en: [['sn1.1:1.1', 'Body text (en)']],
+    });
+    const segs = buildBodySegments(pali, en, html, notes);
+    expect(segs).toEqual([{ key: 'sn1.1:1.1', pali: 'Body text', en: 'Body text (en)' }]);
+  });
+
+  it('skips a segment with neither pali nor english text', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:1.1', '   ']],
+      en: [['sn1.1:1.1', '']],
+    });
+    expect(buildBodySegments(pali, en, html, notes)).toEqual([]);
+  });
+
+  it('orders by the pali map when present, falling back to the sujato map otherwise', () => {
+    const [pali, en, html, notes] = maps({
+      en: [
+        ['sn1.1:1.2', 'second'],
+        ['sn1.1:1.1', 'first'],
+      ],
+    });
+    const segs = buildBodySegments(pali, en, html, notes);
+    expect(segs.map((s) => s.key)).toEqual(['sn1.1:1.2', 'sn1.1:1.1']);
+  });
+
+  it('attaches role/headingLevel derived from the html structure map', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:1.1', 'Heading text']],
+      en: [['sn1.1:1.1', 'Heading text (en)']],
+      html: [['sn1.1:1.1', '<h2>{}</h2>']],
+    });
+    const [seg] = buildBodySegments(pali, en, html, notes);
+    expect(seg).toMatchObject({ role: 'heading', headingLevel: 2 });
+  });
+
+  it('falls back to pali for an "end" (colophon) segment with no english translation', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:9.9', 'Suttaṁ niṭṭhitaṁ.']],
+      html: [['sn1.1:9.9', "<p class='endsutta'>{}</p>"]],
+    });
+    const [seg] = buildBodySegments(pali, en, html, notes);
+    expect(seg.en).toBe('Suttaṁ niṭṭhitaṁ.');
+    expect(seg.role).toBe('end');
+  });
+
+  it('does not fall back to pali for a non-"end" segment missing english', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:1.1', 'Pali only']],
+    });
+    const [seg] = buildBodySegments(pali, en, html, notes);
+    expect(seg.en).toBe('');
+  });
+
+  it('attaches a cleaned note when one exists for the segment', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:1.1', 'text']],
+      en: [['sn1.1:1.1', 'text (en)']],
+      notes: [['sn1.1:1.1', "See <a href='https://suttacentral.net/sn1.2'>SN 1.2</a>."]],
+    });
+    const [seg] = buildBodySegments(pali, en, html, notes);
+    expect(seg.note).toBe('See SN 1.2.');
+  });
+
+  it('omits `note` entirely when there is no note for the segment', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:1.1', 'text']],
+      en: [['sn1.1:1.1', 'text (en)']],
+    });
+    const [seg] = buildBodySegments(pali, en, html, notes);
+    expect(seg.note).toBeUndefined();
   });
 });
