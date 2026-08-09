@@ -215,9 +215,10 @@ token credential from Google Identity Services (see `AuthContext.tsx`), and
 the Firestore user and setting the session cookie (`cookie-session`, no JWT/refresh flow).
 Requires `GOOGLE_CLIENT_ID` in the server's environment — set explicitly for the deployed
 service (`scripts/deploy.sh`, see `deploy.md`), or auto-loaded for local dev from
-`web/.env.development`'s `VITE_GOOGLE_CLIENT_ID` (`server/src/env.js`, imported first in
-`index.js` since it has to run before `auth.js` reads `process.env.GOOGLE_CLIENT_ID` at module
-load time) — so `npm run dev:server` needs no server-side env setup of its own. `requireAuth`
+`web/.env.development`'s `VITE_GOOGLE_CLIENT_ID` (`server/src/env.js`) — so `npm run dev:server`
+needs no server-side env setup of its own. `auth.js` reads `process.env.GOOGLE_CLIENT_ID` lazily
+(on first real use, not at module-load time), so this has no import-order dependency on `env.js`
+running first. `requireAuth`
 middleware gates every route in `routes/lists.js`, `routes/annotations.js`, `routes/data.js`;
 `routes/auth.js` is open. All Firestore calls are async, so every route is wrapped in
 `asyncHandler.js` (forwards rejections to Express's error middleware instead of hanging as

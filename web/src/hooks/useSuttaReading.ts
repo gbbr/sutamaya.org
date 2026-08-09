@@ -19,8 +19,8 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(suttaId:
   const hlCount = useMemo(() => highlightCount(hlForSutta), [hlForSutta]);
 
   // useCallback (not a plain function, unlike this hook's other return values) since ReaderPage's
-  // goToAdjacentWord wraps this in its own useCallback, which its keydown effect depends on —
-  // without a stable reference here, that effect would tear down and re-attach its `window`
+  // goToAdjacentWord wraps this in its own useCallback, which useReaderKeyboard's effect depends
+  // on — without a stable reference here, that effect would tear down and re-attach its `window`
   // listener on every render. scrollRef is a plain useRef, so it never changes identity, which
   // means this callback itself now stays stable for the component's whole lifetime.
   const scrollToSegment = useCallback((segIndex: number, block: ScrollLogicalPosition = 'start') => {
