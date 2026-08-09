@@ -254,6 +254,12 @@ const SegmentRow = memo(function SegmentRow({
                 <span
                   key={j}
                   className="pw"
+                  // Distinct attribute names from the ancestor heading's own `data-seg` (used by
+                  // scrollToSegment) — lets ReaderPage's scrollToWordIfCovered locate *this*
+                  // specific word's DOM rect (to check whether it's actually hidden) without
+                  // colliding with that existing per-segment query.
+                  data-word-seg={i}
+                  data-word={w}
                   style={isActive ? { background: theme.tint } : undefined}
                   onClick={(e) => {
                     e.stopPropagation();
