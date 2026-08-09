@@ -6,13 +6,14 @@ import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { useSuttaReading } from '../hooks/useSuttaReading';
 import { useReaderOrigin } from '../hooks/useReaderOrigin';
+import { useReaderKeyboard } from '../hooks/useReaderKeyboard';
 import { flatSuttaOrder, breadcrumbFor } from '../lib/corpus';
 import { flattenListTree, resolveListById } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { setReaderThemeColor } from '../lib/themeColor';
 import { lookupWord, splitPaliWords, stripPunct } from '../lib/dictionary';
-import { SHORTCUTS, shortcutsForScope, isShortcut } from '../lib/shortcuts';
+import { shortcutsForScope } from '../lib/shortcuts';
 import { tagIntent } from '../lib/routeIntent';
 import { SegmentedText } from '../components/SegmentedText';
 import { HighlightPopup } from '../components/HighlightPopup';
@@ -318,83 +319,6 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     [dict, dictionary, segWords, scrollToWordIfCovered]
   );
 
-  useEffect(() => {
-    function onKey(e: KeyboardEvent) {
-      // While open, the help modal owns every key itself — Esc or '?' again both close it,
-      // mirroring how every other overlay in this app closes.
-      if (shortcutsOpen) {
-        if (e.key === 'Escape' || isShortcut(e, SHORTCUTS.readerHelp)) {
-          e.preventDefault();
-          setShortcutsOpen(false);
-        }
-        return;
-      }
-      // While the search overlay is open, it owns every key itself (see its own onKeyDown) —
-      // bail out before even the input/textarea tag check below, since a click on a result row
-      // (not the input) would otherwise let these fall through to the reader's own shortcuts.
-      if (searchOpen) return;
-      // Escape is handled before the input/textarea bail below (unlike every other shortcut
-      // here) — it's the "leave this" key even mid-edit (e.g. the highlights panel's own note
-      // textarea, which has no Escape handling of its own), not a text-insertion key like '/' or
-      // 'h'/'l'/'n' that would otherwise land in whatever's focused. A field with its own
-      // graduated Escape behavior (see ListMembershipPicker) calls stopPropagation() so this
-      // doesn't also fire on the same keypress and skip past its first step.
-      if (isShortcut(e, SHORTCUTS.readerClose)) {
-        // A live selection/highlight-color popup is the innermost thing to back out of — it
-        // takes priority even over the dictionary dock, since a word tap can't happen without
-        // first releasing whatever text was selected.
-        if (pop) closePop();
-        else if (dict) closeDict();
-        else if (panel) setPanel(false);
-        else closeReader();
-        return;
-      }
-      const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
-      if (tag === 'input' || tag === 'textarea') return;
-      if (isShortcut(e, SHORTCUTS.readerHelp)) {
-        e.preventDefault();
-        setShortcutsOpen(true);
-      } else if (isShortcut(e, SHORTCUTS.readerSearch)) {
-        e.preventDefault();
-        setSearchOpen(true);
-      } else if (isShortcut(e, SHORTCUTS.readerNav)) {
-        // Shift+Arrow steps sutta-to-sutta (readerNav); plain Arrow is reserved for the
-        // dictionary dock's own prev/next word (readerDictNav) and is a no-op with the dock
-        // closed — it no longer falls back to sutta-to-sutta. Both share the same `match`, so
-        // isShortcut() alone can't tell them apart (it deliberately ignores Shift — see its own
-        // comment); the split happens here.
-        if (e.shiftKey) {
-          step(e.key === 'ArrowLeft' ? -1 : 1);
-        } else if (dict) {
-          e.preventDefault();
-          goToAdjacentWord(e.key === 'ArrowLeft' ? -1 : 1);
-        }
-      } else if (isShortcut(e, SHORTCUTS.readerHighlights)) {
-        e.preventDefault();
-        setTab('highlights');
-        setPanel(true);
-      } else if (isShortcut(e, SHORTCUTS.readerLists)) {
-        // Without this, the same keypress that opens the panel also lands in the Lists tab's
-        // now-focused filter input (it autoFocuses — see ListMembershipPicker) since nothing
-        // stopped the browser's own default text-insertion behavior for this key.
-        e.preventDefault();
-        setTab('lists');
-        setPanel(true);
-      } else if (isShortcut(e, SHORTCUTS.readerNote)) {
-        e.preventDefault();
-        setTab('highlights');
-        setPanel(true);
-        setNoteFocusSignal((s) => s + 1);
-      } else if (isShortcut(e, SHORTCUTS.readerNotesToggle)) {
-        e.preventDefault();
-        toggleShowNotes();
-      }
-    }
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [shortcutsOpen, dict, panel, pop, closePop, searchOpen, siblingIds, suttaId, goToAdjacentWord]);
-
   function jumpToHighlight(segIndex: number) {
     setPanel(false);
     requestAnimationFrame(() => scrollToSegment(segIndex, 'center'));
@@ -456,6 +380,27 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     const moved = Math.hypot(e.clientX - start.x, e.clientY - start.y);
     if (moved < 10 && !String(window.getSelection()) && pop) closePop();
   }
+
+  useReaderKeyboard({
+    shortcutsOpen,
+    setShortcutsOpen,
+    searchOpen,
+    setSearchOpen,
+    pop,
+    closePop,
+    dict,
+    closeDict,
+    panel,
+    setPanel,
+    closeReader,
+    step,
+    siblingIds,
+    suttaId,
+    goToAdjacentWord,
+    setTab,
+    setNoteFocusSignal,
+    toggleShowNotes,
+  });
 
   if (!corpus || !sutta || !suttaId) {
     return (
