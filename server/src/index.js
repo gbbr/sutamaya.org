@@ -31,14 +31,31 @@ app.set('trust proxy', 1);
 // GET /api/data's response, both of which compress ~70-90% as JSON/text.
 app.use(compression());
 
-// Covers the static SPA/data files and general API traffic — generous enough for
-// real browsing (including repeat dictionary/text fetches), tight enough to bound
-// what a single IP can pull from the uncached-by-bots public assets.
+// Static corpus/dictionary/per-sutta text under /data/ is public, non-sensitive, and the target
+// of Settings' "Download all suttas for offline" feature — a deliberate, single-user bulk pull of
+// one /data/text/{uid}.json request per sutta (~4000 across the whole canon; see
+// scripts/build-corpus.mjs's output). generalLimiter's budget below is tuned for ordinary
+// API+browsing traffic and was blowing through almost immediately once that download started,
+// 429ing the rest of it — which reads as the download hanging (each 429 itself resolves fast, but
+// the circuit breaker in web/src/lib/offline.ts trips after ~18 of them and gives up early). This
+// is a separate, much looser budget sized for a full offline download plus real headroom, while
+// still bounding a truly abusive scraping bot.
+const dataLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 8000,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+// Covers the static SPA shell and general API traffic — generous enough for real browsing
+// (including repeat dictionary/text fetches), tight enough to bound what a single IP can pull
+// from the uncached-by-bots public assets. /data/ has its own separate, looser budget above.
 const generalLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   limit: 300,
   standardHeaders: true,
   legacyHeaders: false,
+  skip: (req) => req.path.startsWith('/data/'),
 });
 
 // POST /api/auth/google does real work (verifies the Google ID token against Google's
@@ -65,6 +82,7 @@ const meLimiter = rateLimit({
   legacyHeaders: false,
 });
 
+app.use('/data', dataLimiter);
 app.use(generalLimiter);
 app.use('/api/auth/me', meLimiter);
 app.use('/api/auth', authLimiter);
