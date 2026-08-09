@@ -11,7 +11,7 @@ import { groupHighlights, highlightCount } from '../lib/highlights';
 // namespaced (`reader:{id}`) per sutta.
 export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(suttaId: string | undefined, scrollKeyPrefix: string) {
   const { highlights } = useUserData();
-  const segments = useSuttaText(suttaId);
+  const { segments, error, retry } = useSuttaText(suttaId);
   const hlForSutta = (suttaId && highlights[suttaId]) || [];
   const popup = useHighlightPopup(suttaId, hlForSutta, segments);
   const scrollRef = useScrollMemory<T>(suttaId ? `${scrollKeyPrefix}:${suttaId}` : null);
@@ -30,5 +30,5 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(suttaId:
     scrollRef.current?.querySelector(`[data-seg="${segIndex}"]`)?.scrollIntoView({ behavior: 'smooth', block });
   }, [scrollRef]);
 
-  return { segments, hlForSutta, highlightGroups, hlCount, scrollRef, scrollToSegment, ...popup };
+  return { segments, error, retry, hlForSutta, highlightGroups, hlCount, scrollRef, scrollToSegment, ...popup };
 }

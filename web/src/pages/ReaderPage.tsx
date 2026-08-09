@@ -100,6 +100,8 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   const sutta = corpus && suttaId ? corpus.suttas[suttaId] : undefined;
   const {
     segments,
+    error: textError,
+    retry: retryText,
     hlForSutta,
     highlightGroups,
     hlCount,
@@ -671,6 +673,17 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
               onToggleNote={onToggleNote}
               activeWord={activeWord}
             />
+          ) : textError ? (
+            <div className="flex flex-col items-center gap-3 font-sans text-sm text-center" style={{ padding: '24px 0' }}>
+              <div style={{ color: theme.fg, opacity: 0.7 }}>Couldn't load this sutta. Check your connection and try again.</div>
+              <button
+                className="text-[13px] px-3 py-1.5 rounded-md hover:opacity-70"
+                style={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
+                onClick={retryText}
+              >
+                Retry
+              </button>
+            </div>
           ) : (
             <div className="font-sans text-sm opacity-50">Loading…</div>
           )}
