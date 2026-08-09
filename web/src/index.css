@@ -268,6 +268,12 @@ textarea {
   -webkit-user-select: none;
   -webkit-touch-callout: none;
 }
-.pw:hover {
-  background: var(--pw-hover, #eadfc6);
+/* Scoped to real pointers only — on touch, iOS Safari's tap-lingers-as-hover quirk keeps this
+   background stuck on whichever `.pw` was tapped *previously* until some other element is tapped
+   (not just once one is), so it can end up showing alongside the newly-tapped word's own
+   state-driven `isActive` highlight (SegmentedText.tsx) instead of being replaced by it. */
+@media (hover: hover) and (pointer: fine) {
+  .pw:hover {
+    background: var(--pw-hover, #eadfc6);
+  }
 }
