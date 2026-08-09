@@ -6,6 +6,7 @@ import { NoteEditor } from './NoteEditor';
 import { ListMembershipPicker } from './ListMembershipPicker';
 import type { SegmentFile } from '../lib/corpus';
 import { highlightGroupText, type HighlightGroup } from '../lib/highlights';
+import { highlightPaint } from '../lib/theme';
 import type { ReaderFace, ReaderTheme, ThemeColors } from '../lib/types';
 
 interface ReaderMenuPanelProps {
@@ -27,10 +28,16 @@ interface ReaderMenuPanelProps {
   onTabChange?: (tab: 'highlights' | 'lists' | 'text') => void;
 }
 
-const THEME_SWATCHES: Array<{ id: ReaderTheme; label: string; bg: string; fg: string }> = [
-  { id: 'light', label: 'Light', bg: '#FBFAF7', fg: '#1B1917' },
-  { id: 'sepia', label: 'Sepia', bg: '#F3E7D3', fg: '#3A2E1E' },
-  { id: 'dark', label: 'Dark', bg: '#2A241E', fg: '#EDE6D9' },
+// Order matches the app-shell Theme picker (Settings > Theme): Light, Dark, System — with
+// Sepia, which has no app-shell equivalent, appended after. Every swatch's label is rendered
+// with mix-blend-mode: difference over white (see below) rather than a hand-picked `fg` per
+// swatch, so the System tile's half-light/half-dark preview gets automatic contrast on both
+// halves for free, using the same mechanism as the solid-color tiles.
+const THEME_SWATCHES: Array<{ id: ReaderTheme; label: string; bg: string }> = [
+  { id: 'light', label: 'Light', bg: '#FBFAF7' },
+  { id: 'dark', label: 'Dark', bg: '#2A241E' },
+  { id: 'system', label: 'System', bg: 'linear-gradient(90deg,#FBFAF7 50%,#2A241E 50%)' },
+  { id: 'sepia', label: 'Sepia', bg: '#F3E7D3' },
 ];
 const FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
   { id: 'serif', label: 'Newsreader' },
@@ -193,7 +200,7 @@ export function ReaderMenuPanel({
                 style={{ borderBottom: `1px solid ${theme.rule}` }}
                 onClick={() => onJumpToHighlight(g.i)}
               >
-                <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: g.c }} />
+                <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: highlightPaint(g.c, theme) }} />
                 <span className="flex-1 text-sm leading-[1.45]">{highlightGroupText(g, segments).slice(0, 92) || `Segment ${g.i + 1}`}</span>
                 <span
                   className="flex items-center gap-1 font-sans text-[11.5px] opacity-45"
@@ -228,11 +235,14 @@ export function ReaderMenuPanel({
               {THEME_SWATCHES.map((t) => (
                 <button
                   key={t.id}
-                  className="flex-1 h-[52px] rounded-[10px] text-[14.5px]"
-                  style={{ background: t.bg, color: t.fg, border: `1px solid ${currentTheme === t.id ? theme.fg : theme.rule}` }}
+                  className="relative flex-1 h-[52px] rounded-[10px] text-[14.5px] overflow-hidden"
+                  style={{ border: `1px solid ${currentTheme === t.id ? theme.fg : theme.rule}` }}
                   onClick={() => setTheme(t.id)}
                 >
-                  {t.label}
+                  <span className="absolute inset-0" style={{ background: t.bg }} />
+                  <span className="relative" style={{ color: '#fff', mixBlendMode: 'difference' }}>
+                    {t.label}
+                  </span>
                 </button>
               ))}
             </div>

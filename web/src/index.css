@@ -269,5 +269,5 @@ textarea {
   -webkit-touch-callout: none;
 }
 .pw:hover {
-  background: #eadfc6;
+  background: var(--pw-hover, #eadfc6);
 }

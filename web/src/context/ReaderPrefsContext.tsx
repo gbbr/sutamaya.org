@@ -1,7 +1,8 @@
-import { createContext, useContext, useMemo, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { usePersistedState } from '../hooks/usePersistedState';
-import type { ReaderFace, ReaderTheme } from '../lib/types';
+import type { ReaderFace, ReaderTheme, ResolvedReaderTheme } from '../lib/types';
 import { READER_PREFS_KEY } from '../lib/storageKeys';
+import { systemPrefersDark } from '../lib/uiPrefs';
 
 export interface ReaderPrefs {
   theme: ReaderTheme;
@@ -16,6 +17,9 @@ export interface ReaderPrefs {
 }
 
 interface ReaderPrefsState extends ReaderPrefs {
+  // The theme actually rendered — 'system' resolved live against the OS preference (see the
+  // provider's own matchMedia tracking below); 'light'/'sepia'/'dark' pass through unchanged.
+  resolvedTheme: ResolvedReaderTheme;
   setTheme: (t: ReaderTheme) => void;
   setFs: (n: number) => void;
   setLh: (n: number) => void;
@@ -24,16 +28,32 @@ interface ReaderPrefsState extends ReaderPrefs {
   toggleShowNotes: () => void;
 }
 
-const DEFAULTS: ReaderPrefs = { theme: 'light', fs: 18, lh: 165, face: 'serif', allPali: false, showNotes: true };
+const DEFAULTS: ReaderPrefs = { theme: 'system', fs: 18, lh: 165, face: 'georgia', allPali: false, showNotes: true };
 
 const ReaderPrefsContext = createContext<ReaderPrefsState | null>(null);
 
 export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
   const [prefs, setPrefs] = usePersistedState<ReaderPrefs>(READER_PREFS_KEY, DEFAULTS);
 
+  // Tracks the OS preference live (not just once at selection time) so a 'system' theme keeps
+  // following it — mirrors UiPrefsContext's own system-theme tracking for the app shell, kept
+  // separate since the reader applies explicit ThemeColors objects rather than a CSS class.
+  const [systemDark, setSystemDark] = useState(() => systemPrefersDark());
+  useEffect(() => {
+    if (prefs.theme !== 'system') return;
+    const mql = window.matchMedia('(prefers-color-scheme: dark)');
+    const onChange = () => setSystemDark(mql.matches);
+    onChange();
+    mql.addEventListener('change', onChange);
+    return () => mql.removeEventListener('change', onChange);
+  }, [prefs.theme]);
+
+  const resolvedTheme: ResolvedReaderTheme = prefs.theme === 'system' ? (systemDark ? 'dark' : 'light') : prefs.theme;
+
   const value = useMemo<ReaderPrefsState>(
     () => ({
       ...prefs,
+      resolvedTheme,
       setTheme: (theme) => setPrefs((p) => ({ ...p, theme })),
       setFs: (fs) => setPrefs((p) => ({ ...p, fs })),
       setLh: (lh) => setPrefs((p) => ({ ...p, lh })),
@@ -41,7 +61,7 @@ export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
       toggleAllPali: () => setPrefs((p) => ({ ...p, allPali: !p.allPali })),
       toggleShowNotes: () => setPrefs((p) => ({ ...p, showNotes: !p.showNotes })),
     }),
-    [prefs, setPrefs]
+    [prefs, resolvedTheme, setPrefs]
   );
 
   return <ReaderPrefsContext.Provider value={value}>{children}</ReaderPrefsContext.Provider>;

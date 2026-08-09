@@ -90,11 +90,14 @@ export interface User {
   picture?: string | null;
 }
 
-export type ReaderTheme = 'light' | 'sepia' | 'dark';
+export type ReaderTheme = 'light' | 'dark' | 'sepia' | 'system';
+// What 'system' actually resolves to at render time — see ReaderPrefsContext's live
+// prefers-color-scheme tracking.
+export type ResolvedReaderTheme = Exclude<ReaderTheme, 'system'>;
 export type ReaderFace = 'serif' | 'georgia' | 'sans' | 'system' | 'times';
 
 // The app shell's own light/dark mode (Settings > Theme) — distinct from ReaderTheme, which is
-// the immersive reader's separate light/sepia/dark preference and unaffected by this. 'system'
+// the immersive reader's separate light/dark/system preference and unaffected by this. 'system'
 // follows the OS's prefers-color-scheme; see lib/uiPrefs.ts's applyTheme().
 export type AppTheme = 'light' | 'dark' | 'system';
 
@@ -108,4 +111,8 @@ export interface ThemeColors {
   // A lighter, lower-alpha fill than `rule` — for a filled pill/badge background (e.g.
   // HighlightCountBadge) that needs to read as a subtle tint rather than a visible border tone.
   tint: string;
+  // 1 (opaque) for light/sepia, where a HIGHLIGHT_COLORS pastel already reads as a soft wash
+  // against those bright backgrounds; <1 for dark, where painting the same opaque pastel would
+  // read as a bright, attention-grabbing patch — see lib/theme.ts's highlightPaint().
+  highlightAlpha: number;
 }

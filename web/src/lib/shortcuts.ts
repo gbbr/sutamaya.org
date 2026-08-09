@@ -26,7 +26,16 @@ export const SHORTCUTS = {
   // Reader (ReaderPage.tsx)
   readerClose: { match: ['Escape'], keys: ['Esc'], label: 'Close the dictionary, panel, or the reader', scope: 'reader' },
   readerSearch: { match: ['/'], keys: ['/'], label: 'Search suttas (Esc to close)', scope: 'reader' },
-  readerNav: { match: ['ArrowLeft', 'ArrowRight'], keys: ['←', '→'], label: 'Previous / next sutta', scope: 'reader' },
+  // Same `match` on both — deliberately: it's Shift that distinguishes them, and isShortcut()
+  // itself doesn't check Shift (see its own comment), so the ReaderPage keydown handler checks
+  // e.shiftKey directly rather than relying on `match` to tell the two apart.
+  readerNav: { match: ['ArrowLeft', 'ArrowRight'], keys: ['⇧←', '⇧→'], label: 'Previous / next sutta', scope: 'reader' },
+  readerDictNav: {
+    match: ['ArrowLeft', 'ArrowRight'],
+    keys: ['←', '→'],
+    label: 'Previous / next word in the dictionary',
+    scope: 'reader',
+  },
   readerHighlights: { match: ['h'], keys: ['H'], label: 'Open the highlights panel', scope: 'reader' },
   readerLists: { match: ['l'], keys: ['L'], label: 'Open the lists panel', scope: 'reader' },
   readerNote: { match: ['n'], keys: ['N'], label: 'Add a note', scope: 'reader' },
