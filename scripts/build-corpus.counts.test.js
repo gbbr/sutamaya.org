@@ -66,3 +66,42 @@ describe('build-corpus sutta counts (real data)', () => {
     });
   }
 });
+
+// web/src/lib/offline.test.ts covers the shard-download logic itself against fakes, but not
+// whether build-corpus.mjs's shard files are actually well-formed — in particular, each shard's
+// body is hand-built by string-concatenating already-serialized per-uid JSON (see flushShard())
+// rather than going through JSON.stringify() again, which is fast but has no safety net against a
+// malformed separator/comma or a uid needing escaping. These tests catch that against the real
+// build output instead.
+describe('build-corpus text shards (real data)', () => {
+  const dataDir = path.join(ROOT, 'web', 'public', 'data');
+  let manifest;
+
+  beforeAll(() => {
+    manifest = JSON.parse(fs.readFileSync(path.join(dataDir, 'text-shards', 'manifest.json'), 'utf8'));
+  });
+
+  it('accounts for every sutta in corpus.json exactly once, with no duplicates across shards', () => {
+    const allUids = manifest.shards.flatMap((s) => s.uids);
+    expect(allUids.length).toBe(manifest.totalUids);
+    expect(new Set(allUids).size).toBe(allUids.length);
+    expect(allUids.sort()).toEqual(Object.keys(corpus.suttas).sort());
+  });
+
+  it('totalBytes is the sum of each shard entry\'s own byte count', () => {
+    expect(manifest.shards.reduce((n, s) => n + s.bytes, 0)).toBe(manifest.totalBytes);
+  });
+
+  it('every shard file is valid JSON, its byte length matches its manifest entry, its keys match the manifest\'s uid list, and each uid\'s content matches that uid\'s own text/{uid}.json byte-for-byte', () => {
+    for (const shard of manifest.shards) {
+      const raw = fs.readFileSync(path.join(dataDir, shard.file), 'utf8');
+      expect(Buffer.byteLength(raw)).toBe(shard.bytes);
+      const bundle = JSON.parse(raw);
+      expect(Object.keys(bundle).sort()).toEqual([...shard.uids].sort());
+      for (const uid of shard.uids) {
+        const individual = fs.readFileSync(path.join(dataDir, 'text', `${uid}.json`), 'utf8');
+        expect(JSON.stringify(bundle[uid])).toBe(individual);
+      }
+    }
+  });
+});
