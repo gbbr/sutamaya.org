@@ -9,6 +9,7 @@ import { flatSuttaOrder, breadcrumbFor } from '../lib/corpus';
 import { flattenListTree, resolveListById } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
+import { setReaderThemeColor } from '../lib/themeColor';
 import { lookupWord, splitPaliWords, stripPunct } from '../lib/dictionary';
 import { SHORTCUTS, shortcutsForScope, isShortcut } from '../lib/shortcuts';
 import { tagIntent } from '../lib/routeIntent';
@@ -144,6 +145,14 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   );
 
   const theme = READER_THEMES[resolvedTheme];
+
+  // Drives the OS/browser chrome (mobile status bar, desktop PWA title bar) with the reader's own
+  // background while it's open — otherwise that chrome stays stuck on the shell's theme (see
+  // lib/themeColor.ts). Cleared on unmount so it falls back to whatever the shell was showing.
+  useEffect(() => {
+    setReaderThemeColor(theme.bg);
+    return () => setReaderThemeColor(null);
+  }, [theme.bg]);
 
   // Every segment's Pali word list, in the same order SegmentedText renders (and taps) them —
   // shared by onWordClick (to record where a lookup came from) and goToAdjacentWord (to walk
