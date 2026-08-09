@@ -12,7 +12,7 @@ import { flattenListTree, resolveListById } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { setReaderThemeColor } from '../lib/themeColor';
-import { lookupWord, splitPaliWords, stripPunct } from '../lib/dictionary';
+import { lookupWord, splitPaliWords, stripPunct, findAdjacentWord } from '../lib/dictionary';
 import { shortcutsForScope } from '../lib/shortcuts';
 import { tagIntent } from '../lib/routeIntent';
 import { SegmentedText } from '../components/SegmentedText';
@@ -294,27 +294,19 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
   const goToAdjacentWord = useCallback(
     (dir: 1 | -1) => {
       if (!dict || !dictionary || segWords.length === 0) return;
-      let si = dict.segIndex;
-      let wi = dict.wordIndex + dir;
-      while (si >= 0 && si < segWords.length) {
-        const words = segWords[si];
-        if (wi >= 0 && wi < words.length) {
-          const raw = words[wi];
-          const def = lookupWord(dictionary, raw);
-          setDict({ word: stripPunct(raw), gloss: def ? `${def.length}` : 'Pali', defs: def, segIndex: si, wordIndex: wi });
-          // Reveal on an actual segment change — an already-open segment's words are all already
-          // rendered. Whether to scroll is then left entirely to scrollToWordIfCovered, which
-          // checks the *word's* own visibility rather than assuming a segment change always needs
-          // one (a short next segment can easily land fully in view on its own) or that staying
-          // within one never does (a taller definition list can still push the current word under
-          // the dock without the segment changing at all).
-          if (si !== dict.segIndex) setOpenSegs((s) => (s[si] ? s : { ...s, [si]: true }));
-          requestAnimationFrame(() => scrollToWordIfCovered(si, wi));
-          return;
-        }
-        si += dir;
-        wi = dir === 1 ? 0 : (segWords[si]?.length ?? 1) - 1;
-      }
+      const next = findAdjacentWord(segWords, dict.segIndex, dict.wordIndex, dir);
+      if (!next) return;
+      const { segIndex: si, wordIndex: wi, word: raw } = next;
+      const def = lookupWord(dictionary, raw);
+      setDict({ word: stripPunct(raw), gloss: def ? `${def.length}` : 'Pali', defs: def, segIndex: si, wordIndex: wi });
+      // Reveal on an actual segment change — an already-open segment's words are all already
+      // rendered. Whether to scroll is then left entirely to scrollToWordIfCovered, which
+      // checks the *word's* own visibility rather than assuming a segment change always needs
+      // one (a short next segment can easily land fully in view on its own) or that staying
+      // within one never does (a taller definition list can still push the current word under
+      // the dock without the segment changing at all).
+      if (si !== dict.segIndex) setOpenSegs((s) => (s[si] ? s : { ...s, [si]: true }));
+      requestAnimationFrame(() => scrollToWordIfCovered(si, wi));
     },
     [dict, dictionary, segWords, scrollToWordIfCovered]
   );
