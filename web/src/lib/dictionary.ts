@@ -1,10 +1,11 @@
 import type { Dictionary } from './types';
 
-const PUNCT = /[.,;:""''"'?!—­‘’“”]/g;
+const PUNCT = /[.,;:""''"'?!­‘’“”…()]/g;
 
 // Also used by ReaderPage to build the DictionaryDock's display headword, and when stepping to
 // an adjacent word (see splitPaliWords below) — one definition of "punctuation to strip off a
-// tapped Pali token" shared by both lookup and display.
+// tapped Pali token" shared by both lookup and display. Does NOT include "—"/"-" (dashes) — see
+// WORD_BOUNDARY below for why those are handled at the word-splitting level instead.
 export function stripPunct(raw: string): string {
   return raw.replace(PUNCT, '');
 }
@@ -14,12 +15,27 @@ export function lookupWord(dict: Dictionary, raw: string): string[] | null {
   return dict[word] || dict[word.toLowerCase()] || null;
 }
 
+// A run of whitespace, or a single "—" (em dash) or "-" (hyphen) — all act as word boundaries in
+// this dataset's Pali text. SuttaCentral uses these to join what are, for dictionary-lookup
+// purposes, separate words with *no* surrounding space (e.g. "samudānetabbā—cīvarapiṇḍapātasenā
+// sanagilānappaccayabhesajjaparikkhārā—te" — MN17 and ~400 other suttas — is three words, not one
+// run-on compound; "Todeyya-kappā" is two). Treating it as ordinary strippable punctuation
+// (stripPunct's old behavior) instead just deleted the dashes and concatenated the words into a
+// string that doesn't exist in the dictionary.
+// Exported (along with isWordBoundary below) so SegmentedText's own render-time split — which
+// needs to keep the dash *visible* in the text, unlike this function — can't drift out of sync on
+// what counts as a word; its word index has to line up with this function's for goToAdjacentWord.
+export const WORD_BOUNDARY = /(\s+|—|-)/;
+
+export function isWordBoundary(token: string): boolean {
+  return token.trim() === '' || token === '—' || token === '-';
+}
+
 // A segment's Pali word tokens in order, matching what SegmentedText renders as individual
-// clickable `.pw` spans (it splits on `/(\s+)/` to keep whitespace for layout, then skips the
-// blank entries — same token order, just without the whitespace) — so a word's index here lines
-// up with the `wordIndex` ReaderPage's onWordClick receives from it.
+// clickable `.pw` spans — so a word's index here lines up with the `wordIndex` ReaderPage's
+// onWordClick receives from it.
 export function splitPaliWords(pali: string): string[] {
-  return pali.split(/\s+/).filter(Boolean);
+  return pali.split(WORD_BOUNDARY).filter((t) => !isWordBoundary(t));
 }
 
 export interface AdjacentWord {

@@ -2,6 +2,7 @@ import { memo, useMemo, type CSSProperties } from 'react';
 import type { SegmentFile, SegmentRole } from '../lib/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
 import { highlightPaint } from '../lib/theme';
+import { WORD_BOUNDARY, isWordBoundary } from '../lib/dictionary';
 
 interface Part {
   text: string;
@@ -241,8 +242,12 @@ const SegmentRow = memo(function SegmentRow({
         >
           {(() => {
             let wordIndex = -1;
-            return seg.pali.split(/(\s+)/).map((t, j) => {
-              if (t.trim() === '') return <span key={j}>{t}</span>;
+            // Splits on whitespace *and* a bare "—" (see lib/dictionary.ts's WORD_BOUNDARY) — the
+            // dash itself still renders (it's real text, e.g. joining two words with no space
+            // between them), just as an inert span like whitespace, not a clickable/lookup-able
+            // word of its own.
+            return seg.pali.split(WORD_BOUNDARY).map((t, j) => {
+              if (isWordBoundary(t)) return <span key={j}>{t}</span>;
               const w = ++wordIndex;
               // Driven by real state (the word currently shown in the DictionaryDock), not by
               // :hover — :hover alone used to be the only "this word is active" cue, which only
