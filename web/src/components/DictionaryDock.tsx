@@ -23,7 +23,7 @@ export function DictionaryDock({ word, gloss, defs, theme, fontSize, onClose, on
       style={{ borderTop: `2px solid ${theme.fg}`, background: theme.panel, padding: '14px 22px 18px', maxHeight: '45vh' }}
     >
       <div className="flex-none flex items-baseline gap-3">
-        <div className="font-semibold font-serif" style={{ fontSize: fontSize + 2 }}>{word}</div>
+        <div className="font-semibold font-serif min-w-0 truncate" style={{ fontSize: fontSize + 2 }}>{word}</div>
         <div className="font-sans flex-1 opacity-55" style={{ fontSize: glossSize }}>{gloss}</div>
         <button
           aria-label="Previous word"
