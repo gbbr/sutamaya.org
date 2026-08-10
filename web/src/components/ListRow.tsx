@@ -39,6 +39,11 @@ export interface ListRowDraftProps {
   draftInputRef: (el: HTMLInputElement | null) => void;
 }
 
+// Left indent for a row at the given nesting depth — 18px base plus 14px per level, shared by the
+// row itself and the secondary rows (delete confirm, options menu, new-list draft) beneath it so
+// they stay visually aligned under the row they belong to.
+const rowIndent = (depth: number) => 18 + depth * 14;
+
 // One row of the "My lists" tree — a list can nest other lists as children (folder-like), with
 // button-based rename/delete/move controls that always work (touch included), plus Pointer
 // Events drag-and-drop reordering/nesting when "reorder mode" (see the toggle by "My lists") is
@@ -143,7 +148,7 @@ export const ListRow = memo(function ListRow({
           else onSelect(String(list.id));
         }}
         style={{
-          paddingLeft: 18 + depth * 14,
+          paddingLeft: rowIndent(depth),
           opacity: dragging ? 0.4 : 1,
           background: myEdge === 'inside' ? 'rgb(var(--accent2) / .16)' : undefined,
           // 'bottom' recolors (and thickens) this row's own permanent border-bottom rather than
@@ -257,7 +262,7 @@ export const ListRow = memo(function ListRow({
         )}
       </div>
       {confirmDeleteId === list.id ? (
-        <div className="flex items-center gap-2 pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: 18 + depth * 14 + 11 }}>
+        <div className="flex items-center gap-2 pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: rowIndent(depth) + 11 }}>
           <span className="font-sans text-[12px] text-ink/60">Delete "{list.label}"?</span>
           <button
             onClick={() => onDelete(list)}
@@ -270,7 +275,7 @@ export const ListRow = memo(function ListRow({
           </button>
         </div>
       ) : blockedDelete?.id === list.id ? (
-        <div className="pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: 18 + depth * 14 + 11 }}>
+        <div className="pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: rowIndent(depth) + 11 }}>
           <span className="font-sans text-[12px] text-ink/60">
             "{list.label}" has {blockedDelete.count} {blockedDelete.kind === 'items' ? (blockedDelete.count === 1 ? 'sutta' : 'suttas') : blockedDelete.count === 1 ? 'list' : 'lists'} —{' '}
             {blockedDelete.kind === 'items' ? 'remove ' + (blockedDelete.count == 1 ? 'it' : 'them') + ' first' : 'move ' + (blockedDelete.count == 1 ? 'it' : 'them') + ' out first'}.
@@ -279,7 +284,7 @@ export const ListRow = memo(function ListRow({
       ) : (
         menuOpen &&
         !editing && (
-          <div className="flex items-center gap-[6px] pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: 18 + depth * 14 + 11 }}>
+          <div className="flex items-center gap-[6px] pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: rowIndent(depth) + 11 }}>
             <button
               aria-label="Move up"
               title="Move up"
@@ -354,7 +359,7 @@ export const ListRow = memo(function ListRow({
           />
         ))}
       {creatingParentId === list.id && (
-        <div className="pr-[18px] pt-1 pb-2" style={{ paddingLeft: 18 + (depth + 1) * 14 }}>
+        <div className="pr-[18px] pt-1 pb-2" style={{ paddingLeft: rowIndent(depth + 1) }}>
           <input
             ref={draftInputRef}
             autoFocus

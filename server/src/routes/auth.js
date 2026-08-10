@@ -38,10 +38,13 @@ authRouter.post(
   })
 );
 
-authRouter.post('/logout', (req, res) => {
-  req.session = null;
-  res.json({ ok: true });
-});
+authRouter.post(
+  '/logout',
+  asyncHandler(async (req, res) => {
+    req.session = null;
+    res.json({ ok: true });
+  })
+);
 
 authRouter.get(
   '/me',

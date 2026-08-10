@@ -106,8 +106,6 @@ function mockLayout(overrides: Partial<ReturnType<typeof useLayout>> = {}): Retu
     treeW: 264,
     w: 1200,
     mobile: false,
-    twoPane: false,
-    desktop: true,
     paneW: { tree: 264, treeMax: 600 },
     resetTree: vi.fn(),
     dragTree: vi.fn(),

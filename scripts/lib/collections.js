@@ -246,8 +246,8 @@ const VERSE_LINE_RE = /class=['"]verse-line['"]/;
 const END_RE = /class=['"](?:end\w*|uddana-intro)['"]/;
 const SPEAKER_RE = /class=['"]speaker['"]/;
 const LIST_ITEM_RE = /<li>/;
-export const GATHA_OPEN_RE = /<blockquote class=['"](?:gatha|uddanagatha|vagguddanagatha)['"]>/;
-export const BLOCKQUOTE_CLOSE_RE = /<\/blockquote>/;
+const GATHA_OPEN_RE = /<blockquote class=['"](?:gatha|uddanagatha|vagguddanagatha)['"]>/;
+const BLOCKQUOTE_CLOSE_RE = /<\/blockquote>/;
 
 export function roleFor(template) {
   if (!template) return undefined;

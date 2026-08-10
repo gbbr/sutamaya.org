@@ -14,8 +14,6 @@ interface PaneWidths {
 interface LayoutState extends LayoutPrefs {
   w: number;
   mobile: boolean;
-  twoPane: boolean;
-  desktop: boolean;
   paneW: PaneWidths;
   resetTree: () => void;
   dragTree: (e: ReactPointerEvent) => void;
@@ -72,8 +70,6 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
   }, [setPrefs]);
 
   const mobile = w < MOBILE_BREAKPOINT;
-  const twoPane = w >= MOBILE_BREAKPOINT && w < 880;
-  const desktop = w >= 880;
 
   const paneW = useMemo<PaneWidths>(() => {
     const treeMax = Math.max(210, w - 320);
@@ -86,8 +82,6 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
       ...prefs,
       w,
       mobile,
-      twoPane,
-      desktop,
       paneW,
       resetTree: () => setPrefs((p) => ({ ...p, treeW: 264 })),
       dragTree: (e) => {
@@ -95,7 +89,7 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
         document.body.style.userSelect = 'none';
       },
     }),
-    [prefs, w, mobile, twoPane, desktop, paneW, setPrefs]
+    [prefs, w, mobile, paneW, setPrefs]
   );
 
   return <LayoutContext.Provider value={value}>{children}</LayoutContext.Provider>;
