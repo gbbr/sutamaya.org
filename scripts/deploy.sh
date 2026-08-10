@@ -96,6 +96,19 @@ gcloud run deploy sutamaya \
   --memory=512Mi \
   --timeout=30
 
+# `--source .` staged this deploy's source as a zip in the run-sources-* bucket and Cloud Build
+# already read it to produce the image above — it serves no purpose from here on, so delete it
+# right away instead of waiting on that bucket's 7-day lifecycle rule (a backstop for the case
+# this step doesn't run, e.g. a deploy invoked outside this script — not the primary cleanup).
+LATEST_BUILD_ID="$(gcloud builds list --project="$PROJECT_ID" --region="$REGION" --limit=1 --sort-by=~createTime --format='value(id)')"
+if [ -n "$LATEST_BUILD_ID" ]; then
+  SOURCE_BUCKET="$(gcloud builds describe "$LATEST_BUILD_ID" --project="$PROJECT_ID" --region="$REGION" --format='value(source.storageSource.bucket)')"
+  SOURCE_OBJECT="$(gcloud builds describe "$LATEST_BUILD_ID" --project="$PROJECT_ID" --region="$REGION" --format='value(source.storageSource.object)')"
+  if [ -n "$SOURCE_BUCKET" ] && [ -n "$SOURCE_OBJECT" ]; then
+    gcloud storage rm "gs://$SOURCE_BUCKET/$SOURCE_OBJECT" --project="$PROJECT_ID" >/dev/null 2>&1 || true
+  fi
+fi
+
 # Audible confirmation once the whole deploy (tests + gcloud run deploy) has actually
 # succeeded — `set -e` means we never reach here on failure. macOS-only; silently skipped
 # elsewhere since deploys can also run from CI/Linux.
