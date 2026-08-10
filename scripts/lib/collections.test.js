@@ -171,9 +171,15 @@ describe('roleFor', () => {
     expect(roleFor('')).toBeUndefined();
   });
 
-  it('detects a heading and its level', () => {
+  it('detects a heading and its level, down to h5', () => {
     expect(roleFor('<h2>{}</h2>')).toEqual({ role: 'heading', headingLevel: 2 });
     expect(roleFor('<h3>{}</h3>')).toEqual({ role: 'heading', headingLevel: 3 });
+    expect(roleFor('<h4>{}</h4>')).toEqual({ role: 'heading', headingLevel: 4 });
+    expect(roleFor('<h5>{}</h5>')).toEqual({ role: 'heading', headingLevel: 5 });
+  });
+
+  it('does not treat <h1> as an in-body heading (it is the document title, stripped elsewhere)', () => {
+    expect(roleFor('<h1>{}</h1>')).toBeUndefined();
   });
 
   it('detects a verse line', () => {
@@ -191,6 +197,12 @@ describe('roleFor', () => {
 
   it('returns undefined for plain prose', () => {
     expect(roleFor('<p>{}</p>')).toBeUndefined();
+  });
+
+  it('detects an ordered-list item, at any position in the <ol>', () => {
+    expect(roleFor("<ol><li>{}</li>")).toEqual({ role: 'list-item' });
+    expect(roleFor('<li>{}</li>')).toEqual({ role: 'list-item' });
+    expect(roleFor('<li>{}</li></ol>')).toEqual({ role: 'list-item' });
   });
 });
 
@@ -277,6 +289,50 @@ describe('buildBodySegments', () => {
     });
     const [seg] = buildBodySegments(pali, en, html, notes);
     expect(seg.en).toBe('');
+  });
+
+  it('marks a gatha stanza as verse even when only the opening line carries the blockquote/class marker (an7.63-style data)', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [
+        ['x:5.1', 'line one'],
+        ['x:5.2', 'line two'],
+        ['x:5.3', 'line three'],
+      ],
+      en: [
+        ['x:5.1', 'line one (en)'],
+        ['x:5.2', 'line two (en)'],
+        ['x:5.3', 'line three (en)'],
+      ],
+      html: [
+        ['x:5.1', "<blockquote class='gatha'><p data-counter='1'>{}<br>"],
+        ['x:5.2', '{}<br>'],
+        ['x:5.3', '{}</p></blockquote>'],
+      ],
+    });
+    const segs = buildBodySegments(pali, en, html, notes);
+    expect(segs.map((s) => s.role)).toEqual(['verse', 'verse', 'verse']);
+  });
+
+  it('stops treating segments as verse once the gatha blockquote actually closes', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [
+        ['x:5.1', 'verse line'],
+        ['x:5.2', 'closing verse line'],
+        ['x:6.1', 'ordinary prose'],
+      ],
+      en: [
+        ['x:5.1', 'verse line (en)'],
+        ['x:5.2', 'closing verse line (en)'],
+        ['x:6.1', 'ordinary prose (en)'],
+      ],
+      html: [
+        ['x:5.1', "<blockquote class='gatha'><p data-counter='1'>{}<br>"],
+        ['x:5.2', '{}</p></blockquote>'],
+        ['x:6.1', '<p>{}</p>'],
+      ],
+    });
+    const segs = buildBodySegments(pali, en, html, notes);
+    expect(segs.map((s) => s.role)).toEqual(['verse', 'verse', undefined]);
   });
 
   it('attaches a cleaned note when one exists for the segment', () => {
