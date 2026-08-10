@@ -9,7 +9,7 @@ interface HighlightGutterProps {
   scrollRef: RefObject<HTMLElement>;
   highlightGroups: HighlightGroup[];
   theme: ThemeColors;
-  onJump: (segIndex: number) => void;
+  onJump: (segIndex: number, highlightId?: string) => void;
   // Recomputed whenever this changes, in addition to on mount/highlight-change/resize — pass
   // anything that can reflow the text without resizing the scroll container itself (font size,
   // line height, face, Pali-always-shown, or the sutta's segments going from not-yet-loaded to
@@ -77,7 +77,7 @@ export function HighlightGutter({ scrollRef, highlightGroups, theme, onJump, lay
           className="absolute w-[11px] hover:w-[20px] rounded-[2px] shadow-sm transition-[width] duration-150 ease-out"
           style={{ background: highlightPaint(m.c, theme), height: 6, top: m.top - 3, right: 0, pointerEvents: 'auto' }}
           title="Jump to highlight"
-          onClick={() => onJump(m.i)}
+          onClick={() => onJump(m.i, m.key)}
         />
       ))}
     </div>
