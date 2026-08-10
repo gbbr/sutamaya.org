@@ -5,6 +5,7 @@ import { asyncHandler } from '../asyncHandler.js';
 import { nextPosition } from '../lib/listPositions.js';
 import { invalidParentReasonForDoc, wouldCreateCycle } from '../lib/listParent.js';
 import { shapeList } from '../lib/listShape.js';
+import { reconcileItemOrder } from '../lib/listItemOrder.js';
 
 export const listsRouter = Router();
 listsRouter.use(requireAuth);
@@ -221,17 +222,7 @@ listsRouter.put(
     const doc = await requireSuttaListDoc(ref, res);
     if (!doc) return;
     const order = orderFromBody(req.body);
-    // Reconcile against the current stored items instead of blind-replacing: if a sutta was
-    // added (arrayUnion, e.g. from another tab) after the client snapshotted `order`, it won't
-    // be in `order` — append it rather than silently dropping it. Anything removed the same way
-    // is dropped from `order` rather than resurrected.
-    const current = doc.data().items || [];
-    const currentSet = new Set(current);
-    const reconciled = order.filter((id) => currentSet.has(id));
-    const reconciledSet = new Set(reconciled);
-    current.forEach((id) => {
-      if (!reconciledSet.has(id)) reconciled.push(id);
-    });
+    const reconciled = reconcileItemOrder(doc.data().items || [], order);
     await ref.update({ items: reconciled });
     res.json({ ok: true });
   })
