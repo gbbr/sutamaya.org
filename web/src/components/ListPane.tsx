@@ -58,6 +58,15 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
     [corpus, nodeId, lists, searching, hits]
   );
 
+  // A search hit's row is still keyed/displayed by the batch's own id (`items` above), but
+  // opening it should land on the more specific inner sutta the hit actually matched, when there
+  // is one (e.g. searching "dhp325" against the "dhp320-333" batch) — see SearchHit.matchedId.
+  const openTargets = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const h of hits) if (h.matchedId) map.set(h.id, h.matchedId);
+    return map;
+  }, [hits]);
+
   // Chips/highlight-count per row, keyed off `items` rather than the reorder-drag's own
   // `displayItems` — `items` (and therefore this map) doesn't change while a drag reshuffles
   // display order, so dragging a list no longer recomputes every visible row's chip/highlight
@@ -261,7 +270,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
               <button
                 className={`block w-full text-left px-5 py-[13px] ${currentList && !currentList.auto && reorderMode ? 'pr-12' : ''} ${on ? 'bg-ink/[.05]' : ''}`}
                 style={on ? { boxShadow: 'inset 2px 0 0 rgb(var(--accent2))' } : undefined}
-                onClick={() => onOpen(id)}
+                onClick={() => onOpen(openTargets.get(id) ?? id)}
               >
                 <span>
                   <span className="font-sans text-[14.5px] font-bold tracking-[.02em] mr-2.5 text-ink/60">{s.ref}</span>

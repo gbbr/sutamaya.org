@@ -7,7 +7,7 @@ import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { useSuttaReading } from '../hooks/useSuttaReading';
 import { useReaderOrigin } from '../hooks/useReaderOrigin';
 import { useReaderKeyboard } from '../hooks/useReaderKeyboard';
-import { flatSuttaOrder, breadcrumbFor } from '../lib/corpus';
+import { flatSuttaOrder, breadcrumbFor, resolveCanonicalSuttaId } from '../lib/corpus';
 import { flattenListTree, resolveListById } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
@@ -35,8 +35,17 @@ interface DictState {
   wordIndex: number;
 }
 
-export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId: string }>) {
+export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus, dictionary } = useCorpus();
+  // A batched document (several inner suttas in one file, e.g. "dhp320-333") has no corpus entry
+  // of its own for any individual inner sutta ("dhp321") — resolving here means every other use
+  // of `suttaId` below (text fetch, highlights/notes/visited, Prev/Next, breadcrumb) transparently
+  // operates on the batch's own id, same as if the batch id had been requested directly.
+  // `requestedSubUid` is only set when that resolution actually changed something — i.e. this was
+  // a deep link/search hit for a specific inner sutta — and is used below purely to scroll to and
+  // softly mark that inner sutta's own segments once the batch loads.
+  const suttaId = corpus && routeSuttaId ? resolveCanonicalSuttaId(corpus, routeSuttaId) : routeSuttaId;
+  const requestedSubUid = routeSuttaId && routeSuttaId !== suttaId ? routeSuttaId : undefined;
   const { notes, membership, lists, markVisited } = useUserData();
   const { resolvedTheme, fs, lh, face, allPali, showNotes, toggleShowNotes } = useReaderPrefs();
 
@@ -158,6 +167,20 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
+
+  // Landed here via a deep link/search hit for one specific inner sutta of a batched document
+  // (see requestedSubUid above) — scroll to its first segment once the batch's text has loaded.
+  // Runs a frame after mount/load, same as jumpToHighlight below, which is what lets it win over
+  // useScrollMemory's own restore of a previously-remembered scroll position for this document
+  // (that restore reacts to the same segments-rendering DOM mutation via a MutationObserver
+  // microtask, so it always settles before this rAF fires) — a deep link to a specific verse
+  // should always take you there, not back to wherever you last scrolled to in the batch.
+  useEffect(() => {
+    if (!requestedSubUid || !segments) return;
+    const idx = segments.findIndex((s) => s.key.startsWith(`${requestedSubUid}:`));
+    if (idx === -1) return;
+    requestAnimationFrame(() => scrollToSegment(idx, 'center'));
+  }, [requestedSubUid, segments, scrollToSegment]);
 
   // The whole corpus in canonical browse order, not just the current category's siblings — so
   // Prev/Next carries on into the next/previous category once the current one runs out, rather
@@ -596,6 +619,7 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
               openNotes={openNotes}
               onToggleNote={onToggleNote}
               activeWord={activeWord}
+              focusUid={requestedSubUid}
             />
           ) : textError ? (
             <div className="flex flex-col items-center gap-3 font-sans text-sm text-center" style={{ padding: '24px 0' }}>

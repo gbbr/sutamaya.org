@@ -4,7 +4,7 @@ import { SegmentedText } from './SegmentedText';
 import type { SegmentFile } from '../lib/corpus';
 import type { ThemeColors } from '../lib/types';
 
-const theme: ThemeColors = { bg: '#fff', fg: '#000', dim: '#888', rule: '#ccc', panel: '#fff', pali: '#333', tint: '#eee', highlightAlpha: 1, selection: '#ddd' };
+const theme: ThemeColors = { bg: '#fff', fg: '#000', dim: '#888', rule: '#ccc', panel: '#fff', pali: '#333', tint: '#eee', focusTint: '#f5f5f5', highlightAlpha: 1, selection: '#ddd' };
 
 function baseProps(segments: SegmentFile[], overrides: Partial<Parameters<typeof SegmentedText>[0]> = {}) {
   return {
@@ -115,5 +115,36 @@ describe('SegmentedText — verse-group breaks in a batched document', () => {
     const row = container.querySelector('#dhp320\\:2') as HTMLElement;
     expect(row.style.marginBottom).not.toBe('0px');
     expect(row.style.marginBottom).not.toBe('');
+  });
+});
+
+// Regression coverage for a related bug: a direct link or search hit for one specific inner sutta
+// of a batched document (e.g. "dhp321" within the loaded "dhp320-333" document) had no way to tell
+// the reader which of the batch's many identical-looking verses it actually pointed at — see
+// ReaderPage's requestedSubUid/focusUid plumbing. Every segment belonging to that inner sutta
+// should pick up a background wash; segments belonging to a different inner sutta in the same
+// batch should not.
+describe('SegmentedText — focusUid marks one inner sutta within a batched document', () => {
+  const segments: SegmentFile[] = [
+    { key: 'dhp321:1', pali: 'a', en: 'a', role: 'verse' },
+    { key: 'dhp322:1', pali: 'b', en: 'b', role: 'verse' },
+  ];
+
+  it('gives the focused inner sutta\'s segment a background wash', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { focusUid: 'dhp321' })} />);
+    const row = container.querySelector('#dhp321\\:1') as HTMLElement;
+    expect(row.style.background).not.toBe('');
+  });
+
+  it('leaves a different inner sutta in the same batch unmarked', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { focusUid: 'dhp321' })} />);
+    const row = container.querySelector('#dhp322\\:1') as HTMLElement;
+    expect(row.style.background).toBe('');
+  });
+
+  it('marks nothing when focusUid is unset', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments)} />);
+    const row = container.querySelector('#dhp321\\:1') as HTMLElement;
+    expect(row.style.background).toBe('');
   });
 });

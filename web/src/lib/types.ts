@@ -111,6 +111,12 @@ export interface ThemeColors {
   // A lighter, lower-alpha fill than `rule` — for a filled pill/badge background (e.g.
   // HighlightCountBadge) that needs to read as a subtle tint rather than a visible border tone.
   tint: string;
+  // Even more washed than `tint` — for a wash spanning a large block (e.g. a whole verse's worth
+  // of segment rows in SegmentedText's focusUid marker) rather than a small badge/word; the same
+  // alpha as `tint` reads as a much stronger fill once it covers that much more area, light theme
+  // especially (its bright background gives the least room before a fill starts looking like a
+  // real highlight rather than a quiet "you are here" marker).
+  focusTint: string;
   // 1 (opaque) for light/sepia, where a HIGHLIGHT_COLORS pastel already reads as a soft wash
   // against those bright backgrounds; <1 for dark, where painting the same opaque pastel would
   // read as a bright, attention-grabbing patch — see lib/theme.ts's highlightPaint().

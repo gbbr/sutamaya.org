@@ -362,7 +362,8 @@ export function TreePane({
         }
         if (isShortcut(e, SHORTCUTS.librarySelectOpen) && searchActiveIndexRef.current >= 0 && searchActiveIndexRef.current < displayHits.length) {
           e.preventDefault();
-          openHit(displayHits[searchActiveIndexRef.current].id);
+          const hit = displayHits[searchActiveIndexRef.current];
+          openHit(hit.matchedId ?? hit.id);
           return;
         }
       }
@@ -573,14 +574,14 @@ export function TreePane({
                 results can appear, so it keeps rendering them itself. */}
             {mobile && (
               <>
-                {displayHits.map(({ id, sutta }, i) => (
+                {displayHits.map(({ id, matchedId, sutta }, i) => (
                   <button
                     key={id}
                     ref={(el) => {
                       hitRefs.current[i] = el;
                     }}
                     className={`row flex flex-col w-full text-left gap-[1px] px-[18px] py-[11px] border-b border-ink/[.07] ${i === searchActiveIndex ? 'bg-ink/[.06]' : ''}`}
-                    onClick={() => openHit(id)}
+                    onClick={() => openHit(matchedId ?? id)}
                   >
                     <span>
                       <span className="font-sans text-[11.5px] font-bold text-ink/60 mr-2.5">{sutta.ref}</span>

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ancestorsOf, compareIds, searchCorpus, sortByIdAsc } from './corpus';
+import { ancestorsOf, compareIds, resolveCanonicalSuttaId, searchCorpus, sortByIdAsc } from './corpus';
 import type { Corpus, Sutta } from './types';
 
 // Only the fields compareIds/sortByIdAsc actually touch (the id key) matter here; the rest
@@ -133,5 +133,43 @@ describe('searchCorpus', () => {
       },
     };
     expect(searchCorpus(batched, 'sn35.181', {}).map((h) => h.id)).toEqual(['sn35.180-182']);
+  });
+
+  it('surfaces the specific inner sutta id on a range-query match, so a caller can open that instead of the batch', () => {
+    const batched: Corpus = {
+      nikayas: [],
+      suttas: {
+        'dhp320-333': { ref: 'Dhp320–333', node: 'dhp', en: '23. Elephants', pali: 'Nāgavagga', blurb: '', min: 2 },
+      },
+    };
+    const [hit] = searchCorpus(batched, 'dhp325', {});
+    expect(hit).toMatchObject({ id: 'dhp320-333', matchedId: 'dhp325' });
+  });
+
+  it('leaves matchedId unset for a plain title/blurb match (no per-inner-sutta data to attribute it to)', () => {
+    expect(searchCorpus(corpus, 'mindfulness', {})[0].matchedId).toBeUndefined();
+  });
+});
+
+describe('resolveCanonicalSuttaId', () => {
+  const corpus: Corpus = {
+    nikayas: [],
+    suttas: {
+      mn1: { ref: 'MN 1', node: 'x', en: 'x', pali: 'x', blurb: '', min: 1 },
+      'dhp320-333': { ref: 'Dhp320–333', node: 'dhp', en: '23. Elephants', pali: 'Nāgavagga', blurb: '', min: 2 },
+    },
+  };
+
+  it('resolves a real id to itself', () => {
+    expect(resolveCanonicalSuttaId(corpus, 'mn1')).toBe('mn1');
+  });
+
+  it('resolves a bare inner-sutta id to its enclosing batch', () => {
+    expect(resolveCanonicalSuttaId(corpus, 'dhp321')).toBe('dhp320-333');
+  });
+
+  it('leaves an id matching no batch and no real entry unchanged', () => {
+    expect(resolveCanonicalSuttaId(corpus, 'dhp999')).toBe('dhp999');
+    expect(resolveCanonicalSuttaId(corpus, 'not-a-real-id')).toBe('not-a-real-id');
   });
 });

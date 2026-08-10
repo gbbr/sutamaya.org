@@ -62,7 +62,8 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
       setActiveIndex((i) => Math.max(0, i - 1));
     } else if (e.key === 'Enter' && displayHits[activeIndex]) {
       e.preventDefault();
-      onOpenSutta(displayHits[activeIndex].id);
+      const hit = displayHits[activeIndex];
+      onOpenSutta(hit.matchedId ?? hit.id);
     }
   }
 
@@ -106,7 +107,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
                 borderBottom: `1px solid ${theme.rule}`,
               }}
               onMouseEnter={() => setActiveIndex(i)}
-              onClick={() => onOpenSutta(h.id)}
+              onClick={() => onOpenSutta(h.matchedId ?? h.id)}
             >
               <span>
                 <span className="font-sans text-[11.5px] font-bold mr-2.5" style={{ color: theme.dim }}>

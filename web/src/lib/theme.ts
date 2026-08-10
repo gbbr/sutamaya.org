@@ -6,8 +6,13 @@ export const READER_THEMES: Record<ResolvedReaderTheme, ThemeColors> = {
   // the shell's own paper/ink that those hand-tuned colors already looked right unchanged. Sepia
   // has no shell equivalent to borrow, so it's tinted from `pali` (the theme's own warm accent)
   // instead — `fg` would've been a near-neutral choice here, reading as plain gray.
-  light: { bg: '#FBFAF7', fg: '#1B1917', dim: 'rgba(27,25,23,.5)', rule: 'rgba(27,25,23,.16)', panel: '#FFFDFA', pali: '#8A6A3B', tint: 'rgba(27,25,23,.08)', highlightAlpha: 1, selection: '#EADFC6' },
-  sepia: { bg: '#F3E7D3', fg: '#3A2E1E', dim: 'rgba(58,46,30,.55)', rule: 'rgba(58,46,30,.2)', panel: '#F8EEDD', pali: '#8C6222', tint: 'rgba(58,46,30,.1)', highlightAlpha: 1, selection: 'rgba(140,98,34,.32)' },
+  // `light`'s own `focusTint` is likewise built from `pali` (#8A6A3B — the same warm brown as the
+  // app shell's own `--accent2`, index.css) rather than `fg`: sepia's and dark's `fg` are already
+  // warm-toned (a brown, a cream respectively), so a wash built from *their* `fg` already reads
+  // tinted rather than gray — only light's `fg` is a true near-neutral near-black, which made its
+  // focus wash read as a flat gray smudge instead of matching the app's warm literary palette.
+  light: { bg: '#FBFAF7', fg: '#1B1917', dim: 'rgba(27,25,23,.5)', rule: 'rgba(27,25,23,.16)', panel: '#FFFDFA', pali: '#8A6A3B', tint: 'rgba(27,25,23,.08)', focusTint: 'rgba(138,106,59,.09)', highlightAlpha: 1, selection: '#EADFC6' },
+  sepia: { bg: '#F3E7D3', fg: '#3A2E1E', dim: 'rgba(58,46,30,.55)', rule: 'rgba(58,46,30,.2)', panel: '#F8EEDD', pali: '#8C6222', tint: 'rgba(58,46,30,.1)', focusTint: 'rgba(58,46,30,.05)', highlightAlpha: 1, selection: 'rgba(140,98,34,.32)' },
   // A warm dark brown (like reading by lamplight), not a near-black — matches the rest of the
   // app's warm, literary palette instead of reading as a stark "OLED dark mode" screen.
   dark: {
@@ -18,6 +23,7 @@ export const READER_THEMES: Record<ResolvedReaderTheme, ThemeColors> = {
     panel: '#332C24',
     pali: '#C9A86F',
     tint: 'rgba(237,230,217,.09)',
+    focusTint: 'rgba(237,230,217,.05)',
     highlightAlpha: 0.35,
     selection: '#4A3E28',
   },
