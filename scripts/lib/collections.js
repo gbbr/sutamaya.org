@@ -98,20 +98,31 @@ export function flattenLeaves(node, out = []) {
   return out;
 }
 
+// Depth-first walk of the corpus tree, visiting each named object entry (array elements are
+// walked straight through, since they carry no key of their own to match against) via
+// `visit(key, val)`: a truthy return records that value as a match and stops descending into it,
+// a falsy one keeps walking into it looking for matches deeper down. Shared by findChapterNodes
+// and findLeafGroups below, which are otherwise identical shape and differ only in their own match
+// condition and what they record — see each's own comment for what it's actually finding.
+function walkNamedGroups(node, visit, results = []) {
+  if (Array.isArray(node)) node.forEach((n) => walkNamedGroups(n, visit, results));
+  else if (node && typeof node === 'object') {
+    for (const [key, val] of Object.entries(node)) {
+      const match = visit(key, val);
+      if (match) results.push(match);
+      else walkNamedGroups(val, visit, results);
+    }
+  }
+  return results;
+}
+
 // Finds every group node whose key matches `pattern` anywhere in the tree, without
 // descending further once matched (used to pull sn1..sn56 / an1..an11 "chapter" rows out
 // from underneath the super-vagga / vagga grouping layers we're deliberately skipping).
 // Returns the raw subtree (`node`) alongside the flattened `leaves` so callers that need to
 // keep walking (e.g. findLeafGroups, for vagga-level categories) can do so.
 export function findChapterNodes(node, pattern, results = []) {
-  if (Array.isArray(node)) node.forEach((n) => findChapterNodes(n, pattern, results));
-  else if (node && typeof node === 'object') {
-    for (const [key, val] of Object.entries(node)) {
-      if (pattern.test(key)) results.push({ key, node: val, leaves: flattenLeaves(val) });
-      else findChapterNodes(val, pattern, results);
-    }
-  }
-  return results;
+  return walkNamedGroups(node, (key, val) => (pattern.test(key) ? { key, node: val, leaves: flattenLeaves(val) } : null), results);
 }
 
 // Finds a named group's subtree anywhere under `node`, by exact key (used to pull out SN's 5
@@ -141,14 +152,7 @@ export function findNodeByKey(node, key) {
 // regardless of what they're called), since a name-based pattern can't cover every wrapper
 // name in the data (e.g. an2-peyyala, which further nests real vaggas but isn't itself one).
 export function findLeafGroups(node, results = []) {
-  if (Array.isArray(node)) node.forEach((n) => findLeafGroups(n, results));
-  else if (node && typeof node === 'object') {
-    for (const [key, val] of Object.entries(node)) {
-      if (Array.isArray(val) && val.every((v) => typeof v === 'string')) results.push({ key, leaves: val });
-      else findLeafGroups(val, results);
-    }
-  }
-  return results;
+  return walkNamedGroups(node, (key, val) => (Array.isArray(val) && val.every((v) => typeof v === 'string') ? { key, leaves: val } : null), results);
 }
 
 // Extracts the [start, end] sutta numbers from a leaf uid's trailing numeric segment:
