@@ -464,7 +464,9 @@ export function TreePane({
               onClick={() => setPaneView((v) => (v === 'library' ? 'lists' : 'library'))}
             >
               <div
-                className="absolute top-[2px] bottom-[2px] rounded-full bg-chip border border-ink/[.12] shadow-[0_1px_2px_rgba(27,25,23,.18)] transition-[left] duration-200 ease-out"
+                className={`absolute top-[2px] bottom-[2px] rounded-full border border-ink/[.12] shadow-[0_1px_2px_rgba(27,25,23,.18)] transition-[left,background-color] duration-200 ease-out ${
+                  paneView === 'lists' ? 'bg-[#5C6B73]' : 'bg-chip'
+                }`}
                 style={{ left: paneView === 'library' ? 2 : '50%', width: 'calc(50% - 2px)' }}
               />
               {/* Mobile-sized to roughly match the "sutamaya" title's own height — this and the
@@ -477,7 +479,7 @@ export function TreePane({
                 <Library size={mobile ? 14 : 13} strokeWidth={2} />
               </span>
               <span
-                className={`relative z-10 flex items-center justify-center rounded-full transition-colors ${paneView === 'lists' ? 'text-ink' : 'text-ink/45'}`}
+                className={`relative z-10 flex items-center justify-center rounded-full transition-colors ${paneView === 'lists' ? 'text-[#FBFAF7]' : 'text-ink/45'}`}
                 style={mobile ? { width: 28, height: 28 } : { width: 24, height: 24 }}
               >
                 <List size={mobile ? 14 : 13} strokeWidth={2} />

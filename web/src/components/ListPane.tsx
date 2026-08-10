@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, ArrowUpDown, Check, GripVertical } from 'lucide-react';
+import { ArrowLeft, ArrowUpDown, Check, GripVertical, List } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -213,7 +213,10 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
           </button>
         )}
         <div className="flex-1 min-w-0">
-          <div className="font-sans text-[19px] font-semibold tracking-[-.01em] truncate">{title}</div>
+          <div className="flex items-center gap-1.5 min-w-0">
+            {currentList && <List size={14} strokeWidth={2} className="flex-none text-ink" />}
+            <div className="font-sans text-[19px] font-semibold tracking-[-.01em] truncate">{title}</div>
+          </div>
           <div className="font-sans text-xs text-ink/[.42] mt-[2px]">{meta}</div>
         </div>
         {currentList && !currentList.auto && (
