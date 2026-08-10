@@ -130,7 +130,18 @@ export const ListRow = memo(function ListRow({
       <div
         ref={getRowRef(list.id)}
         data-node-id={list.id}
-        className={`row flex items-center gap-[7px] w-full text-left pr-[10px] py-[7px] border-b border-ink/[.07] ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
+        // The row itself carries the click (not just the label button inside it) so the
+        // indentation and inter-element gaps are clickable too, not just the label text — a
+        // plain <div> here (not <button>) since it wraps several of its own interactive
+        // children (chevron/label/options), which a <button> can't nest. Controls that need
+        // their own distinct behavior (options menu, drag handle) stopPropagation so this
+        // doesn't also fire for them — see their own onClick/onPointerDown below.
+        className={`row flex items-center gap-[7px] w-full text-left pr-[10px] py-[7px] border-b border-ink/[.07] cursor-pointer ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
+        onClick={() => {
+          if (editing) return;
+          if (isGroup) onToggle(list.id);
+          else onSelect(String(list.id));
+        }}
         style={{
           paddingLeft: 18 + depth * 14,
           opacity: dragging ? 0.4 : 1,
@@ -164,13 +175,25 @@ export const ListRow = memo(function ListRow({
               WebkitTouchCallout: 'none',
             }}
             onPointerDown={(e) => onRowPointerDown(e, list.id)}
+            // A drag that never clears the pointer session's own movement threshold still
+            // ends in a plain click on pointerup — stopped here so tapping the handle can't
+            // also fire the row's own click-to-select/toggle above.
+            onClick={(e) => e.stopPropagation()}
           >
             <GripVertical size={13} strokeWidth={2} />
           </span>
         )}
         <button
           className="w-[19px] -ml-1 flex-none flex items-center justify-center text-ink/55 hover:text-ink"
-          onClick={() => isGroup && onToggle(list.id)}
+          onClick={(e) => {
+            // Only intercepts (and stops the row's own click from also firing) when it has its
+            // own effect, i.e. a group's toggle — for a plain list, where this chevron is just
+            // an empty placeholder, the click passes through to the row's handler instead.
+            if (isGroup) {
+              e.stopPropagation();
+              onToggle(list.id);
+            }
+          }}
         >
           {/* A group always shows its chevron — even empty, before it has any children — since
               the chevron is the only thing distinguishing a group row from a list row (no
@@ -199,7 +222,12 @@ export const ListRow = memo(function ListRow({
         ) : (
           <button
             className="font-serif flex-1 min-w-0 text-left text-[15px] font-semibold truncate py-[2px]"
-            onClick={() => {
+            onClick={(e) => {
+              // Stops here so this doesn't also fire the identical logic on the row's own
+              // onClick via bubbling — kept as its own handler (rather than just relying on the
+              // row) so a keyboard user tabbed to the label can still activate it with
+              // Enter/Space, which only a real <button> gets for free.
+              e.stopPropagation();
               // A group can't hold suttas itself, so clicking one has nothing to show in the
               // list pane — same as the corpus browse tree's own chapter rows (see TreeRow),
               // it just expands/collapses in place instead.
@@ -219,7 +247,10 @@ export const ListRow = memo(function ListRow({
             className="flex-none w-[20px] h-[20px] flex items-center justify-center rounded text-ink/40 hover:bg-ink/[.08] hover:text-ink"
             aria-label="List options"
             title="List options"
-            onClick={() => onToggleMenu(list.id)}
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleMenu(list.id);
+            }}
           >
             <MoreHorizontal size={14} strokeWidth={2} />
           </button>
