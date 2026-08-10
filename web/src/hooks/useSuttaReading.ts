@@ -5,6 +5,7 @@ import { useHighlightPopup } from './useHighlightPopup';
 import { useScrollMemory } from './useScrollMemory';
 import { groupHighlights, highlightCount } from '../lib/highlights';
 import { getUiScale } from '../lib/uiPrefs';
+import { computeSegmentScrollOffset } from '../lib/segmentScroll';
 
 // The "load a sutta's reading state" boilerplate for ReaderPage (full-screen) — renders segments/
 // highlights through SegmentedText and needs the selection-popup, scroll-restoration, and
@@ -41,19 +42,12 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(suttaId:
     const el = hlEl || segEl;
     // Computed by hand rather than via native scrollIntoView, for both alignments: this app
     // applies its Settings > UI scale via CSS `zoom` on <html> (lib/uiPrefs.ts, active even at
-    // the default 1x on any Chromium desktop), and native scrollIntoView isn't zoom-aware.
-    // getBoundingClientRect() reports real, post-zoom screen coordinates, while scrollBy's `top`
-    // is a local, pre-zoom scroll unit (same distinction already documented, and already once
-    // fixed the same way, in HighlightGutter/computeGutterLayout) — dividing by getUiScale()
-    // converts the former into the latter before it's used as a scroll delta.
-    const uiScale = getUiScale();
+    // the default 1x on any Chromium desktop), and native scrollIntoView isn't zoom-aware. See
+    // computeSegmentScrollOffset (lib/segmentScroll.ts) for the actual unit conversion, the same
+    // fix already applied once in HighlightGutter/computeGutterLayout.
     const containerRect = container.getBoundingClientRect();
     const elRect = el.getBoundingClientRect();
-    const START_MARGIN = 24;
-    const offset =
-      block === 'center'
-        ? (elRect.top + elRect.height / 2 - (containerRect.top + containerRect.height / 2)) / uiScale
-        : (elRect.top - containerRect.top) / uiScale - START_MARGIN;
+    const offset = computeSegmentScrollOffset(containerRect, elRect, block, getUiScale());
     container.scrollBy({ top: offset, behavior: 'smooth' });
   }, [scrollRef]);
 

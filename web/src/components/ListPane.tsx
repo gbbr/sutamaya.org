@@ -8,6 +8,7 @@ import { usePointerDragSession } from '../hooks/usePointerDragSession';
 import { listItemsFor, nodeLabel, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
 import { highlightCount } from '../lib/highlights';
 import { flattenListTree, resolveListById } from '../lib/lists';
+import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { HighlightCountBadge } from './HighlightCountBadge';
 import type { Sutta } from '../lib/types';
@@ -118,20 +119,9 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
           const rect = el.getBoundingClientRect();
           return { itemId, mid: rect.top + rect.height / 2 };
         })
-        .filter((x): x is { itemId: string; mid: number } => !!x);
-      let targetIndex = mids.length;
-      for (let i = 0; i < mids.length; i++) {
-        if (y < mids[i].mid) {
-          targetIndex = i;
-          break;
-        }
-      }
-      const currentIndex = order.indexOf(id);
-      if (currentIndex === -1) return order;
-      const insertAt = currentIndex < targetIndex ? targetIndex - 1 : targetIndex;
-      if (insertAt === currentIndex) return order;
-      const next = order.filter((x) => x !== id);
-      next.splice(insertAt, 0, id);
+        .filter((x): x is ItemMidpoint => !!x);
+      const next = resolveDragReorder(order, id, mids, y);
+      if (next === order) return order;
       dragOrderRef.current = next;
       return next;
     });

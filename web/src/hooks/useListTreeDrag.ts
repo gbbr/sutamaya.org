@@ -1,6 +1,13 @@
 import { useCallback, useRef, useState, type RefObject } from 'react';
 import { usePointerDragSession } from './usePointerDragSession';
-import { resolveTreeDropTarget, resolveDropIndicator, type DropRow, type DropIndicator } from '../lib/listTreeDrop';
+import {
+  resolveTreeDropTarget,
+  resolveDropIndicator,
+  isDescendantOf,
+  planListDrop,
+  type DropRow,
+  type DropIndicator,
+} from '../lib/listTreeDrop';
 import type { DropZone, ListDef } from '../lib/types';
 
 interface UseListTreeDragParams {
@@ -43,51 +50,6 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
   const overIdRef = useRef<string | null>(null);
   const overZoneRef = useRef<DropZone | null>(null);
 
-  // True if `candidateId` sits somewhere underneath `ofId` in the list tree — dropping `ofId`
-  // onto (or as a new sibling within) a descendant of itself would create a cycle, so every drop
-  // handler checks this first regardless of zone.
-  // useCallback'd (as are the handlers below it) so the chain ending in onRowPointerDown — passed
-  // straight through to ListRow (see TreePane) — stays referentially stable across renders that
-  // don't actually change `lists`, matching TreeRow/ListRow's own memoization needs.
-  const isDescendant = useCallback(
-    (candidateId: string, ofId: string): boolean => {
-      let cur = lists.find((l) => l.id === candidateId);
-      while (cur?.parentId) {
-        if (cur.parentId === ofId) return true;
-        cur = lists.find((l) => l.id === cur!.parentId);
-      }
-      return false;
-    },
-    [lists]
-  );
-
-  // A list can't hold anything (no sub-lists, no sub-groups), so it's only ever a valid drop
-  // target for the 'inside' zone when it's a group — true for both a dragged list and a dragged
-  // group. The 'before'/'after' sibling zones just reorder-and-inherit the target's own parent,
-  // which is always valid regardless of kind: both a list and a group are allowed to rest at the
-  // top level (a list can get there by being dragged next to another top-level row, same as a
-  // group can — the "+" next to My Lists just doesn't happen to create one there directly).
-  const isValidDrop = useCallback(
-    (draggedId: string, targetId: string, zone: DropZone): boolean => {
-      const dragged = lists.find((l) => l.id === draggedId);
-      const target = lists.find((l) => l.id === targetId);
-      if (!dragged || !target || isDescendant(target.id, draggedId)) return false;
-      if (zone === 'inside') return target.kind === 'group';
-      return true;
-    },
-    [lists, isDescendant]
-  );
-
-  const siblingIdsWithInsert = useCallback(
-    (parentId: string | null, insertId: string, targetId: string, after: boolean): string[] => {
-      const scoped = (parentId ? listChildrenOf(parentId) : topLevelLists).map((s) => s.id).filter((id) => id !== insertId);
-      const targetIdx = scoped.indexOf(targetId);
-      scoped.splice(after ? targetIdx + 1 : targetIdx, 0, insertId);
-      return scoped;
-    },
-    [listChildrenOf, topLevelLists]
-  );
-
   const getRowRef = useCallback((id: string) => {
     let cb = rowRefCallbacks.current.get(id);
     if (!cb) {
@@ -122,7 +84,7 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
       // cycle.
       const invalid = new Set<string>([draggedId]);
       for (const l of lists) {
-        if (isDescendant(l.id, draggedId)) invalid.add(l.id);
+        if (isDescendantOf(lists, l.id, draggedId)) invalid.add(l.id);
       }
 
       const rows: DropRow[] = Array.from(rowElRefs.current.entries())
@@ -138,29 +100,25 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
       overZoneRef.current = target?.zone ?? null;
       setIndicator(resolveDropIndicator(target, rows));
     },
-    [lists, isDescendant]
+    [lists]
   );
 
+  // What to actually do on drop is decided by planListDrop (lib/listTreeDrop.ts, pulled out to be
+  // plain-logic testable) — see its own comment for why a cross-parent 'before'/'after' drop only
+  // ever needs the single reorderLists call, not a separate setListParent first (that used to mean
+  // two optimistic re-renders and a visible two-step flicker on drop — see a55e1ecc).
   const commitDrop = useCallback(
     async (draggedId: string, target: ListDef, zone: DropZone) => {
-      const dragged = lists.find((l) => l.id === draggedId);
-      if (!dragged || !isValidDrop(draggedId, target.id, zone)) return;
-      if (zone === 'inside') {
-        if (dragged.parentId !== target.id) await setListParent(draggedId, target.id);
-        setListExpanded((x) => ({ ...x, [target.id]: true }));
+      const plan = planListDrop(lists, draggedId, target, zone, listChildrenOf, topLevelLists);
+      if (plan.type === 'invalid') return;
+      if (plan.type === 'reparent') {
+        if (!plan.alreadyParented) await setListParent(draggedId, plan.parentId);
+        setListExpanded((x) => ({ ...x, [plan.parentId]: true }));
         return;
       }
-      const newParentId = target.parentId ?? null;
-      // No separate setListParent call here even when this drop also crosses into a different
-      // parent — reorderLists' own endpoint sets parentId on every id in `order` unconditionally
-      // (see its own comment), so one call already re-parents *and* positions the dragged item.
-      // Two sequential calls here used to mean two optimistic re-renders — the dragged item would
-      // land under its new parent first, then jump again once reorderLists' own network response
-      // came back — a visible two-step flicker on drop.
-      const order = siblingIdsWithInsert(newParentId, draggedId, target.id, zone === 'after');
-      await reorderLists(newParentId, order);
+      await reorderLists(plan.parentId, plan.order);
     },
-    [lists, isValidDrop, setListParent, setListExpanded, siblingIdsWithInsert, reorderLists]
+    [lists, listChildrenOf, topLevelLists, setListParent, setListExpanded, reorderLists]
   );
 
   const finishTreeDrag = useCallback(() => {
