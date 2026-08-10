@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { navigate } from '@reach/router';
-import { Settings, ChevronRight, ChevronDown, Highlighter, StickyNote, History, ArrowUpDown, Library, List, Folder, Search, X } from 'lucide-react';
+import { Settings, Highlighter, StickyNote, History, Library, List, Search, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
@@ -11,16 +11,17 @@ import { useListTreeIndex } from '../hooks/useListTreeIndex';
 import { useListCrud } from '../hooks/useListCrud';
 import { useListTreeDrag } from '../hooks/useListTreeDrag';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
-import { ancestorsOf, findNode, isExpandable, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
+import { ancestorsOf, findNode, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
 import { ancestorsOfList } from '../lib/lists';
 import { derivePaneViewSync } from '../lib/paneView';
 import { TREE_VIEW_KEY, TREE_EXPANDED_KEY } from '../lib/storageKeys';
 import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
 import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
 import type { ListDef } from '../lib/types';
-import { TreeRow } from './TreeRow';
 import { SignedInBadge } from './SignedInBadge';
-import { ListRow, type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
+import { type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
+import { CorpusTreeView } from './CorpusTreeView';
+import { ListsTreeView } from './ListsTreeView';
 
 interface PersistedExpansion {
   corpus: string[];
@@ -589,174 +590,40 @@ export function TreePane({
             )}
           </div>
         ) : effectiveView === 'library' ? (
-          <div>
-            {corpus.nikayas.map((n) => {
-                const open = !!expanded[n.id];
-                const expandableNode = isExpandable(n);
-                return (
-                  <div key={n.id}>
-                    <button
-                      data-node-id={n.id}
-                      className={`row flex items-center gap-[11px] w-full text-left px-[18px] py-[9px] border-b border-ink/[.07] transition-colors duration-500 ${
-                        nodeId === n.id || flashNodeId === n.id ? 'bg-ink/[.06]' : ''
-                      }`}
-                      onClick={() => (expandableNode ? toggleExpanded(n.id) : onSelect(n.id))}
-                    >
-                      <span className="w-[11px] flex-none flex items-center justify-center text-ink/55">
-                        {expandableNode ? open ? <ChevronDown size={14} strokeWidth={2} /> : <ChevronRight size={14} strokeWidth={2} /> : ''}
-                      </span>
-                      <span className="flex-1 min-w-0">
-                        <span className="block text-[16px] font-semibold leading-[1.3]">{n.label}</span>
-                        <span className="block font-sans text-[12.5px] font-medium text-ink/60 mt-[1px]">{n.sub}</span>
-                      </span>
-                      <span className="font-sans text-[11.5px] font-medium text-ink/50">{n.count}</span>
-                    </button>
-                    {expandableNode &&
-                      open &&
-                      n.chapters!.map((c) => (
-                        <TreeRow
-                          key={c.id}
-                          node={c}
-                          depth={1}
-                          nodeId={nodeId}
-                          flashNodeId={flashNodeId}
-                          expanded={expanded}
-                          onToggle={toggleExpanded}
-                          onSelect={onSelect}
-                        />
-                      ))}
-                  </div>
-                );
-              })}
-          </div>
+          <CorpusTreeView corpus={corpus} expanded={expanded} onToggle={toggleExpanded} onSelect={onSelect} nodeId={nodeId} flashNodeId={flashNodeId} />
         ) : (
-          <div>
-            <div className="flex items-center justify-between pl-[18px] pr-[10px] pt-2 pb-1">
-              <span className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">My lists</span>
-              <div className="flex items-center gap-[7px]">
-                <button
-                  aria-label={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
-                  title={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
-                  className={`w-[22px] h-[22px] border rounded-md flex items-center justify-center ${
-                    reorderMode ? 'border-accent2 bg-accent2 text-[#FBFAF7]' : 'border-ink/[.20] bg-transparent text-ink/50 hover:bg-ink/[.06]'
-                  }`}
-                  onClick={() => {
-                    setReorderMode((m) => !m);
-                    setMenuOpenId(null);
-                  }}
-                >
-                  <ArrowUpDown size={12} strokeWidth={2} />
-                </button>
-                <button
-                  aria-label="New list or group"
-                  title="New list or group"
-                  className="plus w-[22px] h-[22px] border border-ink/[.20] rounded-md flex items-center justify-center text-[15px] leading-none text-ink/50 hover:bg-ink/[.06]"
-                  onClick={toggleTopLevelDraft}
-                >
-                  +
-                </button>
-              </div>
-            </div>
-            {reorderMode && (
-              <div className="px-[18px] pb-1.5 font-sans text-[11.5px] text-ink/45">Drag a list onto a group to nest it, or to the top/bottom edge of a row to reorder.</div>
-            )}
-            {creatingParentId === null && (
-              <div className="flex items-center gap-[6px] pl-[18px] pr-[10px] pt-1.5 pb-2">
-                <input
-                  ref={listInput}
-                  autoFocus
-                  value={draft}
-                  onChange={(e) => setDraft(e.target.value)}
-                  onKeyDown={onDraftKey}
-                  onBlur={() => setCreatingParentId(undefined)}
-                  placeholder={draftKind === 'group' ? 'Group name — return to create' : 'List name — return to create'}
-                  className="font-serif flex-1 min-w-0 h-[34px] border border-accent rounded-lg px-2.5 bg-field text-[14.5px] outline-none"
-                  autoComplete="off"
-                  autoCorrect="off"
-                  autoCapitalize="off"
-                  spellCheck={false}
-                />
-                {/* Icon-only List/Group toggle (no text labels — the input's own placeholder
-                    already says which one is picked) — a single button spanning both icons, so
-                    a click anywhere on it flips draftKind, not just on whichever side happens to
-                    be inactive. onMouseDown preventDefault keeps focus on the input instead of
-                    shifting it here, so flipping kind mid-type doesn't trigger the input's own
-                    onBlur (which cancels the whole draft). */}
-                <button
-                  type="button"
-                  aria-label={draftKind === 'list' ? 'Switch to Group' : 'Switch to List'}
-                  title={draftKind === 'list' ? 'Switch to Group' : 'Switch to List'}
-                  onMouseDown={(e) => e.preventDefault()}
-                  onClick={() => setDraftKind((k) => (k === 'list' ? 'group' : 'list'))}
-                  className="relative flex-none flex items-center p-[2px] rounded-full bg-ink/[.09]"
-                >
-                  <div
-                    className="absolute top-[2px] bottom-[2px] rounded-full bg-chip border border-ink/[.12] shadow-[0_1px_2px_rgba(27,25,23,.15)] transition-[left] duration-150 ease-out"
-                    style={{ left: draftKind === 'list' ? 2 : '50%', width: 'calc(50% - 2px)' }}
-                  />
-                  <span className={`relative z-10 w-[26px] h-[26px] flex items-center justify-center transition-colors ${draftKind === 'list' ? 'text-ink' : 'text-ink/50'}`}>
-                    <List size={13} strokeWidth={2} />
-                  </span>
-                  <span className={`relative z-10 w-[26px] h-[26px] flex items-center justify-center transition-colors ${draftKind === 'group' ? 'text-ink' : 'text-ink/50'}`}>
-                    <Folder size={13} strokeWidth={2} />
-                  </span>
-                </button>
-              </div>
-            )}
-            {topLevelLists.map((l, idx) => (
-              <ListRow
-                key={l.id}
-                list={l}
-                depth={0}
-                nodeId={nodeId}
-                childrenOf={listChildrenOf}
-                countFor={countFor}
-                listExpanded={listExpanded}
-                onToggle={toggleListExpanded}
-                onSelect={onSelect}
-                menu={listRowMenu}
-                edit={listRowEdit}
-                del={listRowDelete}
-                draft={listRowDraft}
-                siblingIndex={idx}
-                siblingCount={topLevelLists.length}
-                reorderMode={reorderMode}
-                dragId={dragId}
-                indicator={indicator}
-                onRowPointerDown={onRowPointerDown}
-                getRowRef={getRowRef}
-              />
-            ))}
-            {autoLists.length > 0 && (
-              <div>
-                <div className="px-[18px] pt-[22px] pb-1">
-                  <span className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">Automatic</span>
-                </div>
-                {autoLists.map(({ list, sub, Icon }) => (
-                  <button
-                    key={list.id}
-                    data-node-id={list.id}
-                    className={`row flex items-center gap-[11px] w-full text-left px-[18px] py-[9px] border-b border-ink/[.07] ${
-                      nodeId === String(list.id) ? 'bg-ink/[.06]' : ''
-                    }`}
-                    onClick={() => onSelect(String(list.id))}
-                  >
-                    <span className="w-[11px] flex-none flex items-center justify-center text-ink/40">
-                      <Icon size={13} strokeWidth={2} />
-                    </span>
-                    <span className="flex-1 min-w-0">
-                      <span className="block text-[16px] font-semibold leading-[1.3]">{list.label}</span>
-                      <span className="block font-sans text-[12.5px] font-medium text-ink/60 mt-[1px]">{sub}</span>
-                    </span>
-                    <span className="font-sans text-[11.5px] font-medium text-ink/50">{list.items.length}</span>
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+          <ListsTreeView
+            nodeId={nodeId}
+            onSelect={onSelect}
+            reorderMode={reorderMode}
+            setReorderMode={setReorderMode}
+            setMenuOpenId={setMenuOpenId}
+            toggleTopLevelDraft={toggleTopLevelDraft}
+            creatingParentId={creatingParentId}
+            setCreatingParentId={setCreatingParentId}
+            listInput={listInput}
+            draft={draft}
+            setDraft={setDraft}
+            onDraftKey={onDraftKey}
+            draftKind={draftKind}
+            setDraftKind={setDraftKind}
+            topLevelLists={topLevelLists}
+            listChildrenOf={listChildrenOf}
+            countFor={countFor}
+            listExpanded={listExpanded}
+            onToggleListExpanded={toggleListExpanded}
+            listRowMenu={listRowMenu}
+            listRowEdit={listRowEdit}
+            listRowDelete={listRowDelete}
+            listRowDraft={listRowDraft}
+            dragId={dragId}
+            indicator={indicator}
+            onRowPointerDown={onRowPointerDown}
+            getRowRef={getRowRef}
+            autoLists={autoLists}
+          />
         )}
       </div>
-
     </aside>
   );
 }
