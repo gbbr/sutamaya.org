@@ -250,7 +250,10 @@ export function buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap) {
     const segId = key.slice(key.indexOf(':') + 1);
     if (segId === '0' || segId.startsWith('0.')) continue; // nikaya/book/vagga/sutta title lines
     const pali = (paliMap.get(key) || '').trim();
-    let en = (sujatoMap.get(key) || '').trim();
+    // Sujato's verse translations mark an enjambment (a long line split across two for
+    // typesetting) with a bare "<j>" placeholder, always as "<space><j><word>" — dropped rather
+    // than turned into a real line break, since nothing renders it as one.
+    let en = (sujatoMap.get(key) || '').replace(/<j>/g, '').trim();
     if (!pali && !en) continue;
     const roleInfo = roleFor(htmlMap.get(key));
     // A colophon note ("Tevijjasuttaṁ niṭṭhitaṁ terasamaṁ." — "The Tevijja Sutta is finished")

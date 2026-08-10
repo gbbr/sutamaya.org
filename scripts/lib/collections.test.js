@@ -279,4 +279,13 @@ describe('buildBodySegments', () => {
     const [seg] = buildBodySegments(pali, en, html, notes);
     expect(seg.note).toBeUndefined();
   });
+
+  it('strips a verse enjambment "<j>" marker out of the english text', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:1.1', 'text']],
+      en: [['sn1.1:1.1', 'comprehending Gopaka, <j>they were struck with urgency.']],
+    });
+    const [seg] = buildBodySegments(pali, en, html, notes);
+    expect(seg.en).toBe('comprehending Gopaka, they were struck with urgency.');
+  });
 });
