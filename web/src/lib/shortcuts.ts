@@ -57,3 +57,10 @@ export function isShortcut(e: Pick<KeyboardEvent, 'key' | 'ctrlKey' | 'metaKey' 
   if (e.ctrlKey || e.metaKey || e.altKey) return false;
   return shortcut.match.includes(e.key) || shortcut.match.includes(e.key.toLowerCase());
 }
+
+// True if `e` targets a text input/textarea — the standard bail-out so a single-key shortcut
+// (e.g. 'h', '/') doesn't fire while the user is typing into a field.
+export function isTypingTarget(e: Pick<KeyboardEvent, 'target'>): boolean {
+  const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
+  return tag === 'input' || tag === 'textarea';
+}

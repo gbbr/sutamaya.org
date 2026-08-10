@@ -1,4 +1,5 @@
 import { latestIds } from './autoListRecency.js';
+import { shapeList } from './listShape.js';
 
 // Fixed, non-persisted ids for the three auto-managed lists below — never written to the `lists`
 // collection, so they can't drift from the highlights/notes/visited docs they're derived from
@@ -27,18 +28,18 @@ export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDoc
   // Keyed by list id, not label — two lists can share a label (e.g. same-named lists nested
   // under different parents), and an id is the only thing that identifies one unambiguously.
   const membership = {};
+  // `parentId`/`items` (in stored order) let the client render lists as a tree (groups
+  // nested under their parent) and show/reorder each list's own suttas in the order the user
+  // put them in, instead of re-deriving both from the flatter `membership` map, which only
+  // tells you *which* lists a sutta belongs to, not their relative order within one list.
+  // `kind` distinguishes a plain list (holds suttas) from a ListGroup (holds only other
+  // lists/groups, never items — see routes/lists.js's invalidParentReason).
   const lists = listDocs.map(({ id, data }) => {
-    const items = data.items || [];
-    items.forEach((suttaId) => {
+    const shaped = shapeList(id, data);
+    shaped.items.forEach((suttaId) => {
       (membership[suttaId] = membership[suttaId] || []).push(id);
     });
-    // `parentId`/`items` (in stored order) let the client render lists as a tree (groups
-    // nested under their parent) and show/reorder each list's own suttas in the order the user
-    // put them in, instead of re-deriving both from the flatter `membership` map, which only
-    // tells you *which* lists a sutta belongs to, not their relative order within one list.
-    // `kind` distinguishes a plain list (holds suttas) from a ListGroup (holds only other
-    // lists/groups, never items — see routes/lists.js's invalidParentReason).
-    return { id, label: data.label, parentId: data.parentId ?? null, kind: data.kind === 'group' ? 'group' : 'list', items };
+    return shaped;
   });
 
   const notes = {};

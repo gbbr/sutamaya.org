@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
+import { SHORTCUTS, isShortcut, isTypingTarget } from '../lib/shortcuts';
 
 interface UseReaderKeyboardOptions {
   shortcutsOpen: boolean;
@@ -82,8 +82,7 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
         else closeReader();
         return;
       }
-      const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
-      if (tag === 'input' || tag === 'textarea') return;
+      if (isTypingTarget(e)) return;
       if (isShortcut(e, SHORTCUTS.readerHelp)) {
         e.preventDefault();
         setShortcutsOpen(true);

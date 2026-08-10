@@ -4,6 +4,7 @@ import { X, Menu as MenuIcon, ChevronRight } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
+import { useLayout } from '../context/LayoutContext';
 import { useSuttaReading } from '../hooks/useSuttaReading';
 import { useReaderOrigin } from '../hooks/useReaderOrigin';
 import { useReaderKeyboard } from '../hooks/useReaderKeyboard';
@@ -66,7 +67,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   const [noteFocusSignal, setNoteFocusSignal] = useState(0);
   const [searchOpen, setSearchOpen] = useState(false);
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
-  const [mobile, setMobile] = useState(() => window.innerWidth < 860);
+  const { mobile } = useLayout();
   const tapRef = useRef<{ x: number; y: number } | null>(null);
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -163,12 +164,6 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     const timer = window.setTimeout(() => markVisited(suttaId), dwellMs);
     return () => window.clearTimeout(timer);
   }, [suttaId, sutta, markVisited]);
-
-  useEffect(() => {
-    const onResize = () => setMobile(window.innerWidth < 860);
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, []);
 
   // Landed here via a deep link/search hit for one specific inner sutta of a batched document
   // (see requestedSubUid above) — scroll to its first segment once the batch's text has loaded.

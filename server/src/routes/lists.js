@@ -4,13 +4,21 @@ import { requireAuth } from '../auth.js';
 import { asyncHandler } from '../asyncHandler.js';
 import { nextPosition } from '../lib/listPositions.js';
 import { invalidParentReasonForDoc, wouldCreateCycle } from '../lib/listParent.js';
+import { shapeList } from '../lib/listShape.js';
 
 export const listsRouter = Router();
 listsRouter.use(requireAuth);
 
 function serializeList(doc) {
-  const data = doc.data();
-  return { id: doc.id, label: data.label, parentId: data.parentId ?? null, kind: data.kind === 'group' ? 'group' : 'list', items: data.items || [] };
+  return shapeList(doc.id, doc.data());
+}
+
+function parentIdFromBody(body) {
+  return typeof body?.parentId === 'string' ? body.parentId : null;
+}
+
+function orderFromBody(body) {
+  return Array.isArray(body?.order) ? body.order : [];
 }
 
 // Fetches the candidate parent and checks it via invalidParentReasonForDoc (see that function's
@@ -23,20 +31,36 @@ async function invalidParentReason(userId, parentId) {
   return invalidParentReasonForDoc(doc);
 }
 
-// Same parent-existence/kind check as invalidParentReason, plus a cycle check for each id in
-// `movingIds` being reparented to `parentId` (see wouldCreateCycle's own comment) — used
-// wherever an *existing* list's parentId is being changed, unlike a fresh create.
+// Same parent-existence/kind check as invalidParentReason (delegated to it directly, so the two
+// can't drift apart), plus a cycle check for each id in `movingIds` being reparented to
+// `parentId` (see wouldCreateCycle's own comment) — used wherever an *existing* list's parentId
+// is being changed, unlike a fresh create.
 async function invalidReparentReason(userId, parentId, movingIds) {
-  if (!parentId) return null;
-  const doc = await listsCol(userId).doc(parentId).get();
-  const kindError = invalidParentReasonForDoc(doc);
+  const kindError = await invalidParentReason(userId, parentId);
   if (kindError) return kindError;
+  if (!parentId) return null;
   const snap = await listsCol(userId).get();
   const allLists = snap.docs.map((d) => ({ id: d.id, parentId: d.data().parentId ?? null }));
   for (const movingId of movingIds) {
     if (wouldCreateCycle(movingId, parentId, allLists)) return 'Cannot move a list into its own descendant.';
   }
   return null;
+}
+
+// Fetches a list doc, writing the 404/400 response itself and returning null when the doc
+// doesn't exist or can't hold suttas (a group) — shared by the two "add/reorder this list's
+// items" routes below, which both need the same existence+kind check before touching `items`.
+async function requireSuttaListDoc(ref, res) {
+  const doc = await ref.get();
+  if (!doc.exists) {
+    res.status(404).json({ error: 'not_found' });
+    return null;
+  }
+  if (doc.data().kind === 'group') {
+    res.status(400).json({ error: 'A group cannot hold suttas.' });
+    return null;
+  }
+  return doc;
 }
 
 listsRouter.get(
@@ -53,7 +77,7 @@ listsRouter.post(
     const label = ((req.body && req.body.label) || '').trim();
     if (!label) return res.status(400).json({ error: 'List name is required.' });
     const kind = req.body?.kind === 'group' ? 'group' : 'list';
-    const parentId = typeof req.body?.parentId === 'string' ? req.body.parentId : null;
+    const parentId = parentIdFromBody(req.body);
     const parentError = await invalidParentReason(req.user.id, parentId);
     if (parentError) return res.status(400).json({ error: parentError });
     const col = listsCol(req.user.id);
@@ -89,7 +113,7 @@ listsRouter.patch(
     // `parentId` is a legitimate value to explicitly set to null (move to top level), so check
     // for the key's presence rather than truthiness.
     if (req.body && 'parentId' in req.body) {
-      const parentId = typeof req.body.parentId === 'string' ? req.body.parentId : null;
+      const parentId = parentIdFromBody(req.body);
       const parentError = await invalidReparentReason(req.user.id, parentId, [req.params.id]);
       if (parentError) return res.status(400).json({ error: parentError });
       update.parentId = parentId;
@@ -119,8 +143,8 @@ listsRouter.patch(
 listsRouter.put(
   '/order',
   asyncHandler(async (req, res) => {
-    const parentId = typeof req.body?.parentId === 'string' ? req.body.parentId : null;
-    const order = Array.isArray(req.body?.order) ? req.body.order : [];
+    const parentId = parentIdFromBody(req.body);
+    const order = orderFromBody(req.body);
     const parentError = await invalidReparentReason(req.user.id, parentId, order);
     if (parentError) return res.status(400).json({ error: parentError });
     const batch = db.batch();
@@ -169,9 +193,8 @@ listsRouter.post(
     const suttaId = req.body && req.body.suttaId;
     if (!suttaId) return res.status(400).json({ error: 'suttaId is required.' });
     const ref = listsCol(req.user.id).doc(req.params.id);
-    const doc = await ref.get();
-    if (!doc.exists) return res.status(404).json({ error: 'not_found' });
-    if (doc.data().kind === 'group') return res.status(400).json({ error: 'A group cannot hold suttas.' });
+    const doc = await requireSuttaListDoc(ref, res);
+    if (!doc) return;
     await ref.update({ items: FieldValue.arrayUnion(suttaId) });
     res.status(201).json({ ok: true });
   })
@@ -195,10 +218,9 @@ listsRouter.put(
   '/:id/items/order',
   asyncHandler(async (req, res) => {
     const ref = listsCol(req.user.id).doc(req.params.id);
-    const doc = await ref.get();
-    if (!doc.exists) return res.status(404).json({ error: 'not_found' });
-    if (doc.data().kind === 'group') return res.status(400).json({ error: 'A group cannot hold suttas.' });
-    const order = Array.isArray(req.body?.order) ? req.body.order : [];
+    const doc = await requireSuttaListDoc(ref, res);
+    if (!doc) return;
+    const order = orderFromBody(req.body);
     // Reconcile against the current stored items instead of blind-replacing: if a sutta was
     // added (arrayUnion, e.g. from another tab) after the client snapshotted `order`, it won't
     // be in `order` — append it rather than silently dropping it. Anything removed the same way
