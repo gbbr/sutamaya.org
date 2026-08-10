@@ -145,6 +145,24 @@ describe('headerTitle', () => {
     const map = new Map([['dn10:0.1', 'Wrong sutta']]);
     expect(headerTitle(map, 'dn1')).toBeNull();
   });
+
+  it('skips a "~" segment (SuttaCentral\'s "unchanged from above" marker) for the next-highest real one', () => {
+    const map = new Map([
+      ['an11.502-981:0.1', 'Aṅguttara Nikāya 11 '],
+      ['an11.502-981:0.2', 'Paṭhamapaṇṇāsaka '],
+      ['an11.502-981:0.3', 'Sāmaññavagga '],
+      ['an11.502-981:0.4', '~ '],
+    ]);
+    expect(headerTitle(map, 'an11.502-981')).toBe('Sāmaññavagga');
+  });
+
+  it('returns null when every "0.N" segment is "~"', () => {
+    const map = new Map([
+      ['an5.303:0.1', '~ '],
+      ['an5.303:0.2', '~ '],
+    ]);
+    expect(headerTitle(map, 'an5.303')).toBeNull();
+  });
 });
 
 describe('roleFor', () => {
