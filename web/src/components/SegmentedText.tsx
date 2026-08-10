@@ -9,6 +9,7 @@ interface Part {
   c?: string;
   s?: number;
   e?: number;
+  id?: string;
 }
 
 // A segment key is "{uid}:{paragraph}.{sub...}" (e.g. "an8.70:3.7.0" is paragraph 3) — the digit
@@ -77,7 +78,7 @@ function buildParts(text: string, hlForSeg: Highlight[]): Part[] {
   let cur = 0;
   ranges.forEach((r) => {
     if (r.s > cur) parts.push({ text: text.slice(cur, r.s) });
-    parts.push({ text: text.slice(Math.max(cur, r.s), r.e), c: r.c, s: r.s, e: r.e });
+    parts.push({ text: text.slice(Math.max(cur, r.s), r.e), c: r.c, s: r.s, e: r.e, id: r.id });
     cur = Math.max(cur, r.e);
   });
   if (cur < text.length) parts.push({ text: text.slice(cur) });
@@ -183,6 +184,12 @@ const SegmentRow = memo(function SegmentRow({
           p.c ? (
             <span
               key={j}
+              // Identifies which highlight (its first segment's own doc id — see HighlightGroup's
+              // `key` in lib/highlights.ts, which is the same id) this span belongs to, so a jump
+              // triggered from the gutter/highlights panel (useSuttaReading's scrollToSegment) can
+              // center on the actually-highlighted text rather than this whole (possibly much
+              // longer) segment — see that function's own comment.
+              data-hl-id={p.id}
               // Deliberately no user-select:none here, unlike `.pw`/the note asterisk below —
               // this span sits inside the same selectable English prose the highlight-selection
               // feature drags across (including dragging *through* an existing highlight to

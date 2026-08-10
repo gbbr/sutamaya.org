@@ -19,7 +19,7 @@ interface ReaderMenuPanelProps {
   // passed down rather than re-derived here so the same computation isn't done twice per render.
   highlightGroups: HighlightGroup[];
   onClose: () => void;
-  onJumpToHighlight: (segIndex: number) => void;
+  onJumpToHighlight: (segIndex: number, highlightId?: string) => void;
   // See NoteEditor's `focusSignal` — bumped by ReaderPage's "n" shortcut to focus the note box
   // even if this panel (and its highlights tab) is already open.
   noteFocusSignal?: number;
@@ -198,7 +198,7 @@ export function ReaderMenuPanel({
                 key={g.key}
                 className="flex w-full gap-2.5 items-start py-2.5 text-left"
                 style={{ borderBottom: `1px solid ${theme.rule}` }}
-                onClick={() => onJumpToHighlight(g.i)}
+                onClick={() => onJumpToHighlight(g.i, g.key)}
               >
                 <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: highlightPaint(g.c, theme) }} />
                 <span className="flex-1 text-sm leading-[1.45]">{highlightGroupText(g, segments).slice(0, 92) || `Segment ${g.i + 1}`}</span>

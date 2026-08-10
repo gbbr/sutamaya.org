@@ -334,9 +334,9 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     [dict, dictionary, segWords, scrollToWordIfCovered]
   );
 
-  function jumpToHighlight(segIndex: number) {
+  function jumpToHighlight(segIndex: number, highlightId?: string) {
     setPanel(false);
-    requestAnimationFrame(() => scrollToSegment(segIndex, 'center'));
+    requestAnimationFrame(() => scrollToSegment(segIndex, 'center', highlightId));
   }
 
   function closeReader() {
