@@ -171,7 +171,7 @@ function buildLeaf(uid, nodeId, collection) {
     ref: formatRef(uid),
     node: nodeId,
     en: headerTitle(sujatoMap, uid) || stripTitlePrefix(names.en.get(uid)) || formatRef(uid),
-    pali: headerTitle(paliMap, uid) || names.pali.get(uid) || uid,
+    pali: headerTitle(paliMap, uid) || names.pali.get(uid) || formatRef(uid),
     blurb: blurbs.get(uid) || '',
     min,
   };

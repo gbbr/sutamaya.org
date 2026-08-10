@@ -193,8 +193,14 @@ export function headerTitle(map, uid) {
   for (const key of map.keys()) {
     const m = key.match(new RegExp(`^${uid.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}:0\\.(\\d+)$`));
     if (m && +m[1] > bestN) {
+      const value = map.get(key).trim();
+      // "~" is SuttaCentral's own "unchanged from the segment above" marker (seen in several
+      // AN Rāgapeyyāla/"etc." batch documents) — it's a placeholder, not a real title, so skip
+      // it and keep the next-highest real "0.N" segment (typically the enclosing vagga name)
+      // instead of surfacing the bare tilde as the sutta's title.
+      if (value === '~') continue;
       bestN = +m[1];
-      best = map.get(key);
+      best = value;
     }
   }
   return best ? best.trim() : null;
