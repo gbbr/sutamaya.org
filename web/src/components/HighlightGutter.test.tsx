@@ -101,7 +101,7 @@ describe('HighlightGutter', () => {
     expect(mark.style.top).toBe('-3px'); // ratio 0 * height - 3
   });
 
-  it('calls onJump with the segment index when a mark is clicked', async () => {
+  it('calls onJump with the segment index and highlight id when a mark is clicked', async () => {
     const onJump = vi.fn();
     const container = buildContainer({
       containerRect: { top: 0, height: 500 },
@@ -115,6 +115,6 @@ describe('HighlightGutter', () => {
     await act(async () => {
       mark.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     });
-    expect(onJump).toHaveBeenCalledWith(7);
+    expect(onJump).toHaveBeenCalledWith(7, 'g1');
   });
 });

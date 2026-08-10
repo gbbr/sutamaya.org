@@ -151,7 +151,12 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
         return;
       }
       const newParentId = target.parentId ?? null;
-      if (dragged.parentId !== newParentId) await setListParent(draggedId, newParentId);
+      // No separate setListParent call here even when this drop also crosses into a different
+      // parent — reorderLists' own endpoint sets parentId on every id in `order` unconditionally
+      // (see its own comment), so one call already re-parents *and* positions the dragged item.
+      // Two sequential calls here used to mean two optimistic re-renders — the dragged item would
+      // land under its new parent first, then jump again once reorderLists' own network response
+      // came back — a visible two-step flicker on drop.
       const order = siblingIdsWithInsert(newParentId, draggedId, target.id, zone === 'after');
       await reorderLists(newParentId, order);
     },

@@ -214,10 +214,21 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
 
   const reorderLists = useCallback(
     async (parentId: string | null, order: string[]) => {
+      // Mirrors the server's own PUT /order handler (routes/lists.js), which sets `parentId` on
+      // every id in `order` unconditionally, not just position — so this one optimistic update
+      // also re-parents a dragged item that's crossing into `parentId` for the first time, not
+      // just ones already there. That's what lets useListTreeDrag's commitDrop fold a
+      // cross-parent drop into this single call instead of a separate setListParent first (see
+      // its own comment) — one network round trip and one re-render instead of two sequential
+      // ones, which is what was producing a visible two-step "jump" on drop.
       setLists((ls) => {
         const orderIndex = new Map(order.map((id, idx) => [id, idx]));
-        const siblings = ls.filter((l) => l.parentId === parentId).sort((a, b) => (orderIndex.get(a.id) ?? 0) - (orderIndex.get(b.id) ?? 0));
-        const others = ls.filter((l) => l.parentId !== parentId);
+        const inOrder = new Set(order);
+        const siblings = ls
+          .filter((l) => inOrder.has(l.id))
+          .map((l) => (l.parentId === parentId ? l : { ...l, parentId }))
+          .sort((a, b) => (orderIndex.get(a.id) ?? 0) - (orderIndex.get(b.id) ?? 0));
+        const others = ls.filter((l) => !inOrder.has(l.id));
         return [...others, ...siblings];
       });
       try {
