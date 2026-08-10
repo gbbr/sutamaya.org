@@ -90,3 +90,30 @@ describe('SegmentedText — hyphen-joined Pali words', () => {
     expect([...container.querySelectorAll('.pw')].some((el) => el.textContent === '-')).toBe(false);
   });
 });
+
+// Regression coverage for a real bug: a batched leaf document (several inner suttas in one file,
+// e.g. "dhp320-333") numbers each inner sutta's lines flatly with no dot ("dhp320:1" … "dhp320:4",
+// then resetting to "dhp321:1" …) — paragraphOf() used to key only off that trailing digit, so
+// consecutive lines within one verse (different digits) looked like separate paragraphs while the
+// boundary between two different verses (digits that happen to coincide) could collapse into one,
+// making a whole batch of verses render as one undifferentiated block instead of distinct stanzas.
+describe('SegmentedText — verse-group breaks in a batched document', () => {
+  const segments: SegmentFile[] = [
+    { key: 'dhp320:1', pali: 'a', en: 'a', role: 'verse' },
+    { key: 'dhp320:2', pali: 'b', en: 'b', role: 'verse' },
+    { key: 'dhp321:1', pali: 'c', en: 'c', role: 'verse' },
+  ];
+
+  it('keeps lines of the same inner verse together, with no gap between them', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments)} />);
+    const row = container.querySelector('#dhp320\\:1') as HTMLElement;
+    expect(row.style.marginBottom).toBe('0px');
+  });
+
+  it('inserts a real gap at the boundary into the next inner verse', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments)} />);
+    const row = container.querySelector('#dhp320\\:2') as HTMLElement;
+    expect(row.style.marginBottom).not.toBe('0px');
+    expect(row.style.marginBottom).not.toBe('');
+  });
+});

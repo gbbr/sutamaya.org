@@ -13,9 +13,19 @@ interface Part {
 
 // A segment key is "{uid}:{paragraph}.{sub...}" (e.g. "an8.70:3.7.0" is paragraph 3) — the digit
 // group right after the colon and before the first '.' is the paragraph number shared by every
-// segment within it, regardless of how deep the rest of the key nests.
+// segment within it, regardless of how deep the rest of the key nests. Grouping includes the uid
+// itself (not just that digit) because a *batched* leaf document (several inner suttas in one
+// file, e.g. "dhp320-333") numbers each inner sutta's lines flatly with no dot at all — "dhp320:1"
+// … "dhp320:4", then resetting to "dhp321:1" — so the uid boundary, not a digit, is what actually
+// marks a new paragraph there; a real single-sutta document never has an undotted body key (only
+// its "0"/"0.*" title lines do, already stripped before this ever runs), so falling back to the
+// bare uid when there's no dot only ever fires for that batched case.
 function paragraphOf(key: string): string {
-  return key.split(':').pop()!.split('.')[0];
+  const colon = key.indexOf(':');
+  const uid = key.slice(0, colon);
+  const segId = key.slice(colon + 1);
+  const dot = segId.indexOf('.');
+  return dot === -1 ? uid : `${uid}:${segId.slice(0, dot)}`;
 }
 
 // Per-role style on top of the base English `<p>` style (see SegmentFile.role) — a light,
