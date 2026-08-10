@@ -231,6 +231,42 @@ function staticHaystacksFor(corpus: Corpus): Map<string, { title: string; blurb:
   return cache;
 }
 
+interface UidRange {
+  prefix: string;
+  start: number;
+  end: number;
+}
+
+// A batched leaf uid (e.g. "dhp320-333", covering Dhp verses 320 through 333 in one document —
+// see build-corpus.mjs) has no entry of its own for any individual number inside that range, so
+// a query for one of them (e.g. "dhp325") wouldn't otherwise match anything. Mirrors
+// scripts/lib/collections.js's suttaNumRange: `prefix` is everything up to the trailing
+// `start-end` (including a dotted chapter number, e.g. "sn35." or "an1."), so it lines up with
+// how a query for a number in that range would itself be typed ("sn35.181", "an1.5").
+const RANGE_UID = /^([a-z][a-z-]*(?:\d+\.)?)(\d+)-(\d+)$/;
+const RANGE_QUERY = /^([a-z][a-z-]*(?:\d+\.)?)(\d+)$/;
+
+function parseRangeUid(id: string): UidRange | null {
+  const m = id.match(RANGE_UID);
+  if (!m) return null;
+  return { prefix: m[1], start: Number(m[2]), end: Number(m[3]) };
+}
+
+const rangeCache = new WeakMap<Corpus, Map<string, UidRange>>();
+
+function rangesFor(corpus: Corpus): Map<string, UidRange> {
+  let cache = rangeCache.get(corpus);
+  if (!cache) {
+    cache = new Map();
+    for (const [id] of suttaEntries(corpus)) {
+      const range = parseRangeUid(id);
+      if (range) cache.set(id, range);
+    }
+    rangeCache.set(corpus, cache);
+  }
+  return cache;
+}
+
 // Ranks a ref/title/Pali match above a blurb-or-note-only match (e.g. searching "mind" should
 // surface a sutta titled "The Mind" before one that merely mentions "mind" in its blurb) — ties
 // (same rank) keep the corpus's own build order, since `Array.prototype.sort` is a stable sort in
@@ -239,12 +275,19 @@ export function searchCorpus(corpus: Corpus, query: string, notes: Record<string
   const q = searchKey(query.trim());
   if (!q) return [];
   const staticHaystacks = staticHaystacksFor(corpus);
+  const rangeQuery = q.match(RANGE_QUERY);
+  const ranges = rangeQuery ? rangesFor(corpus) : null;
   const hits: Array<SearchHit & { rank: number }> = [];
   for (const [id, s] of suttaEntries(corpus)) {
     const { title, blurb } = staticHaystacks.get(id)!;
     const note = notes[id];
-    const inTitle = title.includes(q);
+    let inTitle = title.includes(q);
     const inRest = blurb.includes(q) || (!!note && searchKey(note).includes(q));
+    if (!inTitle && !inRest && rangeQuery) {
+      const range = ranges!.get(id);
+      const num = Number(rangeQuery[2]);
+      if (range && range.prefix === rangeQuery[1] && num >= range.start && num <= range.end) inTitle = true;
+    }
     if (!inTitle && !inRest) continue;
     hits.push({ id, sutta: s, rank: inTitle ? 0 : 1 });
   }

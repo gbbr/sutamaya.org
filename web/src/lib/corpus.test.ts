@@ -111,4 +111,27 @@ describe('searchCorpus', () => {
   it('returns nothing for a blank query', () => {
     expect(searchCorpus(corpus, '   ', {})).toEqual([]);
   });
+
+  it('finds a batched range document by an individual number inside its range', () => {
+    const batched: Corpus = {
+      nikayas: [],
+      suttas: {
+        'dhp306-319': { ref: 'Dhp306–319', node: 'dhp', en: '22. The Underworld', pali: 'Nirayavagga', blurb: '', min: 2 },
+        'dhp320-333': { ref: 'Dhp320–333', node: 'dhp', en: '23. Elephants', pali: 'Nāgavagga', blurb: '', min: 2 },
+      },
+    };
+    expect(searchCorpus(batched, 'dhp325', {}).map((h) => h.id)).toEqual(['dhp320-333']);
+    expect(searchCorpus(batched, 'dhp340', {}).map((h) => h.id)).toEqual([]);
+  });
+
+  it('respects the range query\'s own prefix, not just the numeric overlap', () => {
+    const batched: Corpus = {
+      nikayas: [],
+      suttas: {
+        'sn35.180-182': { ref: 'SN35.180–182', node: 'sn', en: 'x', pali: 'x', blurb: '', min: 1 },
+        'an1.180-182': { ref: 'AN1.180–182', node: 'an', en: 'y', pali: 'y', blurb: '', min: 1 },
+      },
+    };
+    expect(searchCorpus(batched, 'sn35.181', {}).map((h) => h.id)).toEqual(['sn35.180-182']);
+  });
 });
