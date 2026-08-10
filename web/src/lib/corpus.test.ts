@@ -149,6 +149,21 @@ describe('searchCorpus', () => {
   it('leaves matchedId unset for a plain title/blurb match (no per-inner-sutta data to attribute it to)', () => {
     expect(searchCorpus(corpus, 'mindfulness', {})[0].matchedId).toBeUndefined();
   });
+
+  it('still surfaces matchedId when the query is a batch\'s own first inner uid', () => {
+    // A batch's ref is always exactly `${prefix}${start}` with no separator (e.g. "Dhp320–333"),
+    // so a query for its first inner uid ("dhp320") already satisfies the plain title match on
+    // its own, before the range-query fallback ever runs — matchedId must still get attached in
+    // that case, not just for a query that misses the literal ref text (e.g. "dhp325" above).
+    const batched: Corpus = {
+      nikayas: [],
+      suttas: {
+        'dhp320-333': { ref: 'Dhp320–333', node: 'dhp', en: '23. Elephants', pali: 'Nāgavagga', blurb: '', min: 2 },
+      },
+    };
+    const [hit] = searchCorpus(batched, 'dhp320', {});
+    expect(hit).toMatchObject({ id: 'dhp320-333', matchedId: 'dhp320' });
+  });
 });
 
 describe('resolveCanonicalSuttaId', () => {
