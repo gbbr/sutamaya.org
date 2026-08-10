@@ -212,8 +212,11 @@ export function headerTitle(map, uid) {
 // translation), so one `html/` file covers both the Pali and English text for the same segment
 // keys. Checked in this order (a segment matches at most one, based on inspecting a broad sample
 // of the actual data — see that script's own comment):
-//   - `heading`: a `<h2>`/`<h3>` sub-heading inside a longer document (e.g. DN9's internal
-//     sections), not to be confused with the "0.*" title lines already stripped elsewhere.
+//   - `heading`: a `<h2>`–`<h5>` sub-heading inside a longer document (e.g. DN9's internal
+//     sections, or DN2's numbered "4.3.3.2. Mind-Made Body" sub-sections, which nest as deep as
+//     <h5>). Not to be confused with `<h1>` (`class='sutta-title'`/`'range-title'`), which is
+//     always the document's own "0"/"0.*" title line, already stripped elsewhere (headerTitle()) —
+//     so `<h1>` is deliberately excluded here rather than just never occurring in body segments.
 //   - `verse`: `<span class='verse-line'>` inside a `<blockquote class='gatha'>` — a line of
 //     poetry, vs. plain `<p>` for prose. Also covers the `uddanagatha`/`vagguddanagatha` mnemonic
 //     verses at a chapter's end, which nest `verse-line` the same way.
@@ -223,10 +226,28 @@ export function headerTitle(map, uid) {
 //     English at all, rather than leaving a blank paragraph the tap-to-reveal interaction would
 //     otherwise never make visible).
 //   - `speaker`: an inline dialogue attribution embedded mid-verse (e.g. "said the Buddha,").
-const HEADING_RE = /^<h([23])>/;
+//   - `list-item`: an `<li>` inside an `<ol>` — a genuine numbered list embedded in body prose
+//     (e.g. DN28 §10's four types of practice), rather than the usual run of plain `<p>`
+//     paragraphs. Every segment in a list carries its own `<li>` (unlike the gatha case below), so
+//     this one's a plain per-template check.
+//
+// `verse` has a second, stateful path in buildBodySegments below: almost every gatha/uddanagatha/
+// vagguddanagatha blockquote tags each of its own lines with `<span class='verse-line'>` (checked
+// here), but at least one file in this dataset (an7.63, §§5–13) instead only tags the blockquote's
+// own opening `<p data-counter='N'>` per stanza, joining lines with a bare `<br>` and carrying no
+// per-segment marker at all on the continuation lines — so buildBodySegments also tracks whether
+// it's currently between an unclosed `<blockquote class='gatha'|'uddanagatha'|'vagguddanagatha'>`
+// and its matching `</blockquote>`, and falls back to `verse` for any such segment `roleFor` alone
+// didn't already classify. Confirmed (via a full-corpus scan) that every gatha-class blockquote in
+// this dataset has a balanced open/close, so the fallback can't leak into text past a stanza it
+// doesn't belong to.
+const HEADING_RE = /^<h([2345])>/;
 const VERSE_LINE_RE = /class=['"]verse-line['"]/;
 const END_RE = /class=['"](?:end\w*|uddana-intro)['"]/;
 const SPEAKER_RE = /class=['"]speaker['"]/;
+const LIST_ITEM_RE = /<li>/;
+export const GATHA_OPEN_RE = /<blockquote class=['"](?:gatha|uddanagatha|vagguddanagatha)['"]>/;
+export const BLOCKQUOTE_CLOSE_RE = /<\/blockquote>/;
 
 export function roleFor(template) {
   if (!template) return undefined;
@@ -235,6 +256,7 @@ export function roleFor(template) {
   if (VERSE_LINE_RE.test(template)) return { role: 'verse' };
   if (END_RE.test(template)) return { role: 'end' };
   if (SPEAKER_RE.test(template)) return { role: 'speaker' };
+  if (LIST_ITEM_RE.test(template)) return { role: 'list-item' };
   return undefined;
 }
 
@@ -252,6 +274,10 @@ export function cleanNote(text) {
 export function buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap) {
   const orderedKeys = paliMap.size ? [...paliMap.keys()] : [...sujatoMap.keys()];
   const segs = [];
+  // See roleFor's own comment — tracks whether the segment currently being visited falls between
+  // an unclosed gatha/uddanagatha/vagguddanagatha blockquote and its matching close, for html
+  // structure data that doesn't tag every line of a stanza individually (e.g. an7.63).
+  let insideGathaBlockquote = false;
   for (const key of orderedKeys) {
     const segId = key.slice(key.indexOf(':') + 1);
     if (segId === '0' || segId.startsWith('0.')) continue; // nikaya/book/vagga/sutta title lines
@@ -260,8 +286,15 @@ export function buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap) {
     // typesetting) with a bare "<j>" placeholder, always as "<space><j><word>" — dropped rather
     // than turned into a real line break, since nothing renders it as one.
     let en = (sujatoMap.get(key) || '').replace(/<j>/g, '').trim();
+    // Open/close state is updated even for a segment with no text on either side (skipped just
+    // below) — otherwise a blank segment landing mid-stanza would drop the open/close tracking.
+    const template = htmlMap.get(key);
+    if (template && GATHA_OPEN_RE.test(template)) insideGathaBlockquote = true;
+    const stillInsideGatha = insideGathaBlockquote;
+    if (template && BLOCKQUOTE_CLOSE_RE.test(template)) insideGathaBlockquote = false;
     if (!pali && !en) continue;
-    const roleInfo = roleFor(htmlMap.get(key));
+    let roleInfo = roleFor(template);
+    if (!roleInfo && stillInsideGatha) roleInfo = { role: 'verse' };
     // A colophon note ("Tevijjasuttaṁ niṭṭhitaṁ terasamaṁ." — "The Tevijja Sutta is finished")
     // is frequently Pali-only, since it's a scribal marker rather than teaching content Sujato
     // translated — falling back to Pali here (only for this role) means the reader always has

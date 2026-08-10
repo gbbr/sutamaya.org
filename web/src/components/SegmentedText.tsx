@@ -35,27 +35,35 @@ function paragraphOf(key: string): string {
 //   - verse: italic, and gets a quoted-block left rule (on the wrapping div, not here — see
 //     lastInParagraph below, which the rule reuses to span a whole stanza in one line).
 //   - heading: bold and a size up, for a sutta's own internal sub-headings (e.g. DN9's numbered
-//     sections). A heading's key shares its paragraph number with the body text right after it
-//     (e.g. "6.0" the heading, "6.1"/"6.2"/… its paragraph), so the wrapping div's own "no gap
-//     within a paragraph" margin never fires for it — the heading element gets its own top/bottom
-//     margin instead (below, in the JSX), more above than below like a normal heading.
-//     An <h3> (nested under an <h2> — see SegmentFile.headingLevel) steps down from the <h2>
-//     size rather than matching it, so the two actually read as a hierarchy.
+//     sections, or DN2's <h5>-deep "4.3.3.2. Mind-Made Body" sub-sections). A heading's key shares
+//     its paragraph number with the body text right after it (e.g. "6.0" the heading, "6.1"/"6.2"/…
+//     its paragraph), so the wrapping div's own "no gap within a paragraph" margin never fires for
+//     it — the heading element gets its own top/bottom margin instead (below, in the JSX), more
+//     above than below like a normal heading.
+//     <h3>/<h4>/<h5> (nested under an <h2> — see SegmentFile.headingLevel) step down from the
+//     <h2> size one notch at a time, so all four actually read as one hierarchy rather than
+//     matching it or each other.
 //   - end: a closing colophon note ("The Tevijja Sutta is finished") — centered, muted, and a
 //     size down, read as a trailing note rather than more body text.
 //   - speaker: an inline dialogue attribution embedded mid-verse ("said the Buddha,") — muted,
 //     a size down, and deliberately *not* italic, so it stands apart from the verse around it.
+//   - list-item: a genuine `<ol>`/`<li>` numbered list embedded in body prose (e.g. DN28 §10's
+//     four types of practice — see build-corpus.mjs's roleFor()/buildBodySegments). Segments
+//     render as plain text, not real DOM `<li>`s, so there's no browser-generated marker — a
+//     hanging indent (`paddingLeft`/`textIndent` on the wrapping style, set in the JSX below since
+//     that isn't part of the base font/color styling this function returns) plus a literal "N. "
+//     prefix (SegmentRow's own JSX, from the running listIndex prop) stand in for one.
 function roleStyle(
   role: SegmentRole | undefined,
   fontSize: number,
   theme: ThemeColors,
-  headingLevel?: 2 | 3
+  headingLevel?: 2 | 3 | 4 | 5
 ): CSSProperties {
   switch (role) {
     case 'verse':
       return { fontStyle: 'normal' };
     case 'heading':
-      return { fontWeight: 700, fontSize: fontSize + (headingLevel === 3 ? 1 : 3) };
+      return { fontWeight: 700, fontSize: fontSize + (5 - (headingLevel ?? 2)) };
     case 'end':
       return { fontSize: Math.max(11, fontSize - 2), color: theme.dim, fontStyle: 'italic', textAlign: 'center' };
     case 'speaker':
@@ -91,6 +99,11 @@ interface SegmentRowProps {
   hlForSeg: Highlight[];
   open: boolean;
   lastInParagraph: boolean;
+  // Only meaningful when seg.role === 'list-item' — this item's 1-based ordinal within its own
+  // run of consecutive list-item segments (reset at the first non-list-item segment above it), so
+  // it can render a real "1."/"2."/… marker despite segments having no actual DOM <li> of their
+  // own to get one from the browser (see SegmentedTextInner's own running counter).
+  listIndex?: number;
   afterVerse: boolean;
   // True when this segment belongs to the specific inner sutta a deep link/search hit pointed at
   // within a batched document (see SegmentedTextProps.focusUid) — gets a soft background wash so
@@ -129,6 +142,7 @@ const SegmentRow = memo(function SegmentRow({
   open,
   lastInParagraph,
   afterVerse,
+  listIndex,
   focused,
   theme,
   fontSize,
@@ -144,11 +158,12 @@ const SegmentRow = memo(function SegmentRow({
   activeWordIndex,
 }: SegmentRowProps) {
   const parts = buildParts(seg.en, hlForSeg);
-  // A structural sub-heading (SuttaCentral's own <h2>/<h3> nesting — see build-corpus.mjs's
+  // A structural sub-heading (SuttaCentral's own <h2>–<h5> nesting — see build-corpus.mjs's
   // roleFor()) renders as a real heading element, not a styled <p>, and picks up the UI's sans
   // font (like the reader's chrome) rather than the reading face — it's document structure, not
   // body prose.
-  const HeadingTag: 'h2' | 'h3' | 'p' = seg.role === 'heading' ? (seg.headingLevel === 3 ? 'h3' : 'h2') : 'p';
+  const HeadingTag: 'h2' | 'h3' | 'h4' | 'h5' | 'p' =
+    seg.role === 'heading' ? (`h${seg.headingLevel ?? 2}` as 'h2' | 'h3' | 'h4' | 'h5') : 'p';
   return (
     <div
       id={seg.key}
@@ -178,8 +193,17 @@ const SegmentRow = memo(function SegmentRow({
           ...(seg.role === 'heading' ? null : { fontFamily: face }),
           ...roleStyle(seg.role, fontSize, theme, seg.headingLevel),
           ...(seg.role === 'heading' ? { marginTop: paragraphGap, marginBottom: Math.round(paragraphGap / 2) } : null),
+          // Indents the item's own text so it lines up under itself on every wrapped line, not
+          // just the first — the "N." marker below is pulled out of flow entirely (absolutely
+          // positioned into the gutter this padding opens up) rather than using a negative
+          // text-indent, which pushed the marker to the left of every other paragraph's own edge
+          // instead of flush with it.
+          ...(seg.role === 'list-item' ? { paddingLeft: 24, position: 'relative' } : null),
         }}
       >
+        {seg.role === 'list-item' && (
+          <span style={{ position: 'absolute', left: 0, width: 20, userSelect: 'none' }}>{listIndex}.</span>
+        )}
         {parts.map((p, j) =>
           p.c ? (
             <span
@@ -401,6 +425,13 @@ function SegmentedTextInner({
     }
     return map;
   }, [highlights]);
+  // A list-item's ordinal within its own run of consecutive list-item segments — reset to 0
+  // whenever the previous segment wasn't also one, so a second, unrelated <ol> further down the
+  // same sutta restarts its own numbering at 1 rather than continuing the first list's count.
+  // Mutated in iteration order inside the .map below (arrays iterate in order, so this is safe),
+  // not a separate memoized pass — cheap enough not to need one (see highlightsBySeg above, which
+  // *does* justify memoizing since it's an O(segments × highlights) scan otherwise).
+  let runningListIndex = 0;
   return (
     <div data-component="SegmentedText" data-segroot onMouseUp={onTextUp} onTouchEnd={onTextUp}>
       {segments.map((seg, i) => {
@@ -410,6 +441,7 @@ function SegmentedTextInner({
         // one's) gets space, so same-paragraph segments read as one continuous block of text.
         const next = segments[i + 1];
         const lastInParagraph = !next || paragraphOf(next.key) !== paragraphOf(seg.key);
+        runningListIndex = seg.role === 'list-item' ? runningListIndex + 1 : 0;
         return (
           <SegmentRow
             key={seg.key}
@@ -419,6 +451,7 @@ function SegmentedTextInner({
             open={allPali || !!openSegs[i]}
             lastInParagraph={lastInParagraph}
             afterVerse={segments[i - 1]?.role === 'verse'}
+            listIndex={seg.role === 'list-item' ? runningListIndex : undefined}
             focused={!!focusUid && seg.key.startsWith(`${focusUid}:`)}
             theme={theme}
             fontSize={fontSize}

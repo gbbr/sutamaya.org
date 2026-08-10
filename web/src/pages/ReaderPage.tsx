@@ -104,12 +104,14 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   // leaf group) — shown above the title, each segment navigating via /browse/{id}, which already
   // expands every ancestor and scrolls to it (see TreePane's useScrollToNode).
   const breadcrumb = useMemo(() => (corpus && sutta ? breadcrumbFor(corpus, sutta.node) : []), [corpus, sutta]);
-  // Only DN9-style suttas with internal `<h2>`/`<h3>` structure (see build-corpus.mjs's
+  // Only DN9-style suttas with internal `<h2>`–`<h5>` structure (see build-corpus.mjs's
   // `roleFor()`) have any of these — empty for most suttas, which is why the block that renders
-  // this is conditional on it below.
+  // this is conditional on it below. The Contents list steps indentation/size/weight down one
+  // notch per level (h2 top-level, h5 deepest — e.g. DN2's numbered sub-sections), so the jump
+  // menu reads as the same 4-deep hierarchy the headings themselves render as in the body.
   const headings = useMemo(
     () =>
-      (segments || []).reduce<Array<{ i: number; text: string; level: 2 | 3 }>>((acc, s, i) => {
+      (segments || []).reduce<Array<{ i: number; text: string; level: 2 | 3 | 4 | 5 }>>((acc, s, i) => {
         if (s.role === 'heading') acc.push({ i, text: s.en, level: s.headingLevel ?? 2 });
         return acc;
       }, []),
@@ -579,23 +581,32 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
                 <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: theme.dim, marginBottom: 8 }}>
                   Contents
                 </div>
-                {headings.map((h) => (
-                  <button
-                    key={h.i}
-                    className="block text-left hover:underline"
-                    style={{
-                      paddingLeft: h.level === 3 ? 16 : 0,
-                      marginTop: 6,
-                      fontSize: h.level === 3 ? 16 : 17,
-                      fontWeight: h.level === 3 ? 400 : 600,
-                      color: theme.fg,
-                      opacity: h.level === 3 ? 0.72 : 0.9,
-                    }}
-                    onClick={() => scrollToSegment(h.i)}
-                  >
-                    {h.text}
-                  </button>
-                ))}
+                {headings.map((h) => {
+                  // Step size for each level below the top (h2): one indent/size/opacity notch
+                  // per level, so h2→h5 read as a real 4-deep hierarchy rather than 2 flat tiers.
+                  // Anchored to the reader's own Size preference (`fs`, same value driving
+                  // SegmentedText's fontSize below) rather than a fixed pixel value, so the
+                  // Contents list scales along with the body text instead of staying fixed while
+                  // everything else in the reader grows/shrinks.
+                  const step = h.level - 2;
+                  return (
+                    <button
+                      key={h.i}
+                      className="block text-left hover:underline"
+                      style={{
+                        paddingLeft: step * 12,
+                        marginTop: 6,
+                        fontSize: fs - 1 - step,
+                        fontWeight: h.level === 2 ? 600 : 400,
+                        color: theme.fg,
+                        opacity: 0.9 - step * 0.06,
+                      }}
+                      onClick={() => scrollToSegment(h.i)}
+                    >
+                      {h.text}
+                    </button>
+                  );
+                })}
               </nav>
               <div style={{ height: 1, background: theme.rule, margin: '20px 0 22px' }} />
             </div>

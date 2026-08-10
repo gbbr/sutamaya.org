@@ -26,17 +26,18 @@ export function loadDictionary(): Promise<Dictionary> {
 
 // SuttaCentral's own structural role for this segment (see scripts/fetch-html-structure.mjs and
 // build-corpus.mjs's roleFor()) — omitted for the common "plain prose" case.
-export type SegmentRole = 'verse' | 'heading' | 'end' | 'speaker';
+export type SegmentRole = 'verse' | 'heading' | 'end' | 'speaker' | 'list-item';
 
 export interface SegmentFile {
   key: string;
   pali: string;
   en: string;
   role?: SegmentRole;
-  // Only set when role === 'heading' — SuttaCentral's own <h2>/<h3> nesting for this sub-heading
-  // (e.g. DN9's internal sections genuinely nest h3s under an h2), preserved so the reader can
-  // render real <h2>/<h3> elements instead of collapsing them to one visual weight.
-  headingLevel?: 2 | 3;
+  // Only set when role === 'heading' — SuttaCentral's own <h2>–<h5> nesting for this sub-heading
+  // (e.g. DN9's internal sections genuinely nest h3s under an h2, DN2's numbered sub-sections nest
+  // as deep as h5), preserved so the reader can render the real heading element instead of
+  // collapsing every level to one visual weight.
+  headingLevel?: 2 | 3 | 4 | 5;
   // Sujato's own translator note for this segment (data/sujato/notes/), if any — may contain
   // inline HTML (`<i>`/`<em>`/`<b>`/`<span>`); cross-reference links have already been stripped
   // to plain text at build time (see build-corpus.mjs's cleanNote()).
