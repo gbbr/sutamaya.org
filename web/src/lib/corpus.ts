@@ -190,6 +190,13 @@ export function ancestorsOf(corpus: Corpus | null, nodeId: string | undefined): 
 export interface SearchHit {
   id: string;
   sutta: Sutta;
+  // Set only when the match came from the range-query fallback below (e.g. searching "dhp325"
+  // against the "dhp320-333" batch) — the specific inner sutta id a caller should actually open
+  // (via resolveCanonicalSuttaId, which resolves back to `id` for the fetch/lookup) instead of
+  // `id` itself, so the reader can scroll to/mark that inner sutta rather than just opening the
+  // batch at its top. Unset for a plain title/blurb/note match — the source dataset has no
+  // per-inner-sutta blurb to attribute a text match to a specific one.
+  matchedId?: string;
 }
 
 // A short/common query (a single letter, "the") can realistically match hundreds of suttas — every
@@ -267,6 +274,25 @@ function rangesFor(corpus: Corpus): Map<string, UidRange> {
   return cache;
 }
 
+// A batched leaf uid has no `corpus.suttas` entry of its own for any individual sutta inside it
+// (see the doc comment above RANGE_UID) — so a route/deep-link id like "dhp321" (the batch
+// dhp320-333's own 4th verse) doesn't resolve directly. This finds the enclosing batch's id the
+// same way searchCorpus's own range-query fallback below already does, so `/read/dhp321` and a
+// search hit for "dhp321" both land on the right document. Identity for a real id (including one
+// that's coincidentally range-uid-shaped but already has its own entry — checked first) or an id
+// that matches no range at all (so a genuinely invalid id still resolves to itself and 404s, same
+// as today).
+export function resolveCanonicalSuttaId(corpus: Corpus, id: string): string {
+  if (corpus.suttas[id]) return id;
+  const m = id.match(RANGE_QUERY);
+  if (!m) return id;
+  const num = Number(m[2]);
+  for (const [batchId, range] of rangesFor(corpus)) {
+    if (range.prefix === m[1] && num >= range.start && num <= range.end) return batchId;
+  }
+  return id;
+}
+
 // Ranks a ref/title/Pali match above a blurb-or-note-only match (e.g. searching "mind" should
 // surface a sutta titled "The Mind" before one that merely mentions "mind" in its blurb) — ties
 // (same rank) keep the corpus's own build order, since `Array.prototype.sort` is a stable sort in
@@ -283,13 +309,17 @@ export function searchCorpus(corpus: Corpus, query: string, notes: Record<string
     const note = notes[id];
     let inTitle = title.includes(q);
     const inRest = blurb.includes(q) || (!!note && searchKey(note).includes(q));
+    let matchedId: string | undefined;
     if (!inTitle && !inRest && rangeQuery) {
       const range = ranges!.get(id);
       const num = Number(rangeQuery[2]);
-      if (range && range.prefix === rangeQuery[1] && num >= range.start && num <= range.end) inTitle = true;
+      if (range && range.prefix === rangeQuery[1] && num >= range.start && num <= range.end) {
+        inTitle = true;
+        matchedId = `${rangeQuery[1]}${rangeQuery[2]}`;
+      }
     }
     if (!inTitle && !inRest) continue;
-    hits.push({ id, sutta: s, rank: inTitle ? 0 : 1 });
+    hits.push({ id, sutta: s, matchedId, rank: inTitle ? 0 : 1 });
   }
   hits.sort((a, b) => a.rank - b.rank);
   return hits;

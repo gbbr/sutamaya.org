@@ -91,6 +91,10 @@ interface SegmentRowProps {
   open: boolean;
   lastInParagraph: boolean;
   afterVerse: boolean;
+  // True when this segment belongs to the specific inner sutta a deep link/search hit pointed at
+  // within a batched document (see SegmentedTextProps.focusUid) — gets a soft background wash so
+  // it's identifiable among the rest of the (otherwise identical-looking) batch.
+  focused: boolean;
   theme: ThemeColors;
   fontSize: number;
   lineHeight: number;
@@ -124,6 +128,7 @@ const SegmentRow = memo(function SegmentRow({
   open,
   lastInParagraph,
   afterVerse,
+  focused,
   theme,
   fontSize,
   lineHeight,
@@ -148,6 +153,7 @@ const SegmentRow = memo(function SegmentRow({
       id={seg.key}
       style={{
         marginBottom: lastInParagraph ? paragraphGap : 0,
+        ...(focused ? { background: theme.focusTint } : null),
         ...(seg.role === 'verse' ? { paddingLeft: 14, borderLeft: `2px solid ${theme.rule}` } : null),
         // A speaker attribution ("said the Buddha,") immediately after a verse line reads as
         // part of that verse, so it should sit at the verse's own indentation and quote rule
@@ -337,6 +343,11 @@ interface SegmentedTextProps {
   // stable across renders where the active word hasn't actually changed; see the activeWordIndex
   // comment on SegmentRowProps for why that stability matters.
   activeWord: { segIndex: number; wordIndex: number } | null;
+  // The inner sutta a deep link/search hit pointed at within a batched document (e.g. "dhp321"
+  // within the loaded "dhp320-333" document) — every segment whose key starts with `${focusUid}:`
+  // gets a background wash (see SegmentRowProps.focused) so it's identifiable among the rest of
+  // the batch. Undefined for a normal, non-batched sutta or a bare visit to the batch itself.
+  focusUid?: string;
 }
 
 const EMPTY_HIGHLIGHTS: Highlight[] = [];
@@ -365,6 +376,7 @@ function SegmentedTextInner({
   openNotes,
   onToggleNote,
   activeWord,
+  focusUid,
 }: SegmentedTextProps) {
   // Space between paragraphs — scales with both the Size and Line height reader controls (not a
   // fixed pixel value), so turning either up also opens up more room between paragraphs instead
@@ -400,6 +412,7 @@ function SegmentedTextInner({
             open={allPali || !!openSegs[i]}
             lastInParagraph={lastInParagraph}
             afterVerse={segments[i - 1]?.role === 'verse'}
+            focused={!!focusUid && seg.key.startsWith(`${focusUid}:`)}
             theme={theme}
             fontSize={fontSize}
             lineHeight={lineHeight}
