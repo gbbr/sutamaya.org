@@ -179,7 +179,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     if (!requestedSubUid || !segments) return;
     const idx = segments.findIndex((s) => s.key.startsWith(`${requestedSubUid}:`));
     if (idx === -1) return;
-    requestAnimationFrame(() => scrollToSegment(idx, 'center'));
+    requestAnimationFrame(() => scrollToSegment(idx, 'start'));
   }, [requestedSubUid, segments, scrollToSegment]);
 
   // The whole corpus in canonical browse order, not just the current category's siblings — so
