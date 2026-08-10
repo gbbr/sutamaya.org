@@ -80,6 +80,7 @@ interface SegmentRowProps {
   hlForSeg: Highlight[];
   open: boolean;
   lastInParagraph: boolean;
+  afterVerse: boolean;
   theme: ThemeColors;
   fontSize: number;
   lineHeight: number;
@@ -112,6 +113,7 @@ const SegmentRow = memo(function SegmentRow({
   hlForSeg,
   open,
   lastInParagraph,
+  afterVerse,
   theme,
   fontSize,
   lineHeight,
@@ -137,6 +139,10 @@ const SegmentRow = memo(function SegmentRow({
       style={{
         marginBottom: lastInParagraph ? paragraphGap : 0,
         ...(seg.role === 'verse' ? { paddingLeft: 14, borderLeft: `2px solid ${theme.rule}` } : null),
+        // A speaker attribution ("said the Buddha,") immediately after a verse line reads as
+        // part of that verse, so it should sit at the verse's own indentation and quote rule
+        // rather than snapping back to the margin.
+        ...(seg.role === 'speaker' && afterVerse ? { paddingLeft: 28, borderLeft: `2px solid ${theme.rule}` } : null),
       }}
     >
       <HeadingTag
@@ -383,6 +389,7 @@ function SegmentedTextInner({
             hlForSeg={highlightsBySeg.get(i) ?? EMPTY_HIGHLIGHTS}
             open={allPali || !!openSegs[i]}
             lastInParagraph={lastInParagraph}
+            afterVerse={segments[i - 1]?.role === 'verse'}
             theme={theme}
             fontSize={fontSize}
             lineHeight={lineHeight}
