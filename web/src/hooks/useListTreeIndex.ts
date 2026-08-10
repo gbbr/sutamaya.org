@@ -38,9 +38,8 @@ export function useListTreeIndex(lists: ListDef[]) {
     for (const l of lists) collect(l.id);
     return cache;
   }, [lists, listChildrenOf]);
-  const listTotalMembers = (id: string) => listMemberSets.get(id)?.size ?? 0;
 
-  // A group's own badge can't use listTotalMembers (a group holds no items) — it counts how many
+  // A group's own badge can't use listMemberSets (a group holds no items) — it counts how many
   // lists/groups sit anywhere underneath it instead, recursing through `listChildrenOf` the same
   // way listMemberSets does.
   const listGroupCounts = useMemo(() => {
@@ -58,7 +57,6 @@ export function useListTreeIndex(lists: ListDef[]) {
     for (const l of lists) collect(l.id);
     return cache;
   }, [lists, listChildrenOf]);
-  const groupTotalLists = (id: string) => listGroupCounts.get(id) ?? 0;
   // useCallback'd — passed straight through to ListRow (see TreePane), whose own memoization
   // (mirroring TreeRow's) needs this to stay referentially stable across renders that don't
   // actually change the underlying counts.
@@ -69,5 +67,5 @@ export function useListTreeIndex(lists: ListDef[]) {
 
   const topLevelLists = useMemo(() => lists.filter((l) => !l.parentId && !l.auto), [lists]);
 
-  return { listChildrenOf, listMemberSets, listTotalMembers, listGroupCounts, groupTotalLists, countFor, topLevelLists };
+  return { listChildrenOf, listMemberSets, listGroupCounts, countFor, topLevelLists };
 }

@@ -92,8 +92,6 @@ describe('mobile search -> reader -> close flow', () => {
     });
     vi.mocked(useLayout).mockReturnValue({
       mobile: true,
-      twoPane: false,
-      desktop: false,
       w: 400,
       treeW: 264,
       paneW: { tree: 264, treeMax: 400 },
