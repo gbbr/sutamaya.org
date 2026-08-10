@@ -1,8 +1,13 @@
 import type { ReaderFace, ResolvedReaderTheme, ThemeColors } from './types';
 
 export const READER_THEMES: Record<ResolvedReaderTheme, ThemeColors> = {
-  light: { bg: '#FBFAF7', fg: '#1B1917', dim: 'rgba(27,25,23,.5)', rule: 'rgba(27,25,23,.16)', panel: '#FFFDFA', pali: '#8A6A3B', tint: 'rgba(27,25,23,.08)', highlightAlpha: 1 },
-  sepia: { bg: '#F3E7D3', fg: '#3A2E1E', dim: 'rgba(58,46,30,.55)', rule: 'rgba(58,46,30,.2)', panel: '#F8EEDD', pali: '#8C6222', tint: 'rgba(58,46,30,.1)', highlightAlpha: 1 },
+  // `selection` for light/dark reuses the exact tan the app shell's own `--selection`
+  // (index.css) already used for each — the reader's light/dark backgrounds are close enough to
+  // the shell's own paper/ink that those hand-tuned colors already looked right unchanged. Sepia
+  // has no shell equivalent to borrow, so it's tinted from `pali` (the theme's own warm accent)
+  // instead — `fg` would've been a near-neutral choice here, reading as plain gray.
+  light: { bg: '#FBFAF7', fg: '#1B1917', dim: 'rgba(27,25,23,.5)', rule: 'rgba(27,25,23,.16)', panel: '#FFFDFA', pali: '#8A6A3B', tint: 'rgba(27,25,23,.08)', highlightAlpha: 1, selection: '#EADFC6' },
+  sepia: { bg: '#F3E7D3', fg: '#3A2E1E', dim: 'rgba(58,46,30,.55)', rule: 'rgba(58,46,30,.2)', panel: '#F8EEDD', pali: '#8C6222', tint: 'rgba(58,46,30,.1)', highlightAlpha: 1, selection: 'rgba(140,98,34,.32)' },
   // A warm dark brown (like reading by lamplight), not a near-black — matches the rest of the
   // app's warm, literary palette instead of reading as a stark "OLED dark mode" screen.
   dark: {
@@ -14,6 +19,7 @@ export const READER_THEMES: Record<ResolvedReaderTheme, ThemeColors> = {
     pali: '#C9A86F',
     tint: 'rgba(237,230,217,.09)',
     highlightAlpha: 0.35,
+    selection: '#4A3E28',
   },
 };
 

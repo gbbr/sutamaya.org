@@ -7,7 +7,7 @@ import type { ThemeColors } from '../lib/types';
 vi.mock('../lib/uiPrefs', () => ({ getUiScale: vi.fn(() => 1) }));
 import { getUiScale } from '../lib/uiPrefs';
 
-const theme: ThemeColors = { bg: '#fff', fg: '#000', dim: '#888', rule: '#ccc', panel: '#fff', pali: '#333', tint: '#eee', highlightAlpha: 1 };
+const theme: ThemeColors = { bg: '#fff', fg: '#000', dim: '#888', rule: '#ccc', panel: '#fff', pali: '#333', tint: '#eee', highlightAlpha: 1, selection: '#ddd' };
 
 function group(overrides: Partial<HighlightGroup> = {}): HighlightGroup {
   return { key: 'g1', c: 'yellow', i: 0, items: [], ...overrides };

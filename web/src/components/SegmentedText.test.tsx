@@ -4,7 +4,7 @@ import { SegmentedText } from './SegmentedText';
 import type { SegmentFile } from '../lib/corpus';
 import type { ThemeColors } from '../lib/types';
 
-const theme: ThemeColors = { bg: '#fff', fg: '#000', dim: '#888', rule: '#ccc', panel: '#fff', pali: '#333', tint: '#eee', highlightAlpha: 1 };
+const theme: ThemeColors = { bg: '#fff', fg: '#000', dim: '#888', rule: '#ccc', panel: '#fff', pali: '#333', tint: '#eee', highlightAlpha: 1, selection: '#ddd' };
 
 function baseProps(segments: SegmentFile[], overrides: Partial<Parameters<typeof SegmentedText>[0]> = {}) {
   return {

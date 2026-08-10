@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
 import { X, Menu as MenuIcon, ChevronRight } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
@@ -410,7 +410,14 @@ export function ReaderPage({ suttaId, location }: RouteComponentProps<{ suttaId:
       ref={rootRef}
       data-component="ReaderPage"
       className="fixed inset-0 z-40 flex flex-col animate-fadeIn"
-      style={{ background: theme.bg, color: theme.fg, touchAction: 'pan-y' }}
+      style={
+        {
+          background: theme.bg,
+          color: theme.fg,
+          touchAction: 'pan-y',
+          '--reader-selection': theme.selection,
+        } as CSSProperties
+      }
       onPointerDown={onReaderPointerDown}
       onPointerUp={onReaderPointerUp}
     >

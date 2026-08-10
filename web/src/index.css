@@ -247,6 +247,14 @@ textarea {
   background: rgb(var(--selection));
 }
 
+/* The immersive reader has its own light/sepia/dark theme (ReaderPrefsContext, lib/theme.ts),
+   separate from the app shell's light/dark toggle above — so its selection color can't just
+   follow --selection, which only ever tracks the shell's own theme. ReaderPage sets
+   --reader-selection inline from the resolved reader theme's own ThemeColors.selection. */
+[data-component='ReaderPage'] ::selection {
+  background: var(--reader-selection);
+}
+
 .sc {
   overflow-y: auto;
   overscroll-behavior-x: none;
