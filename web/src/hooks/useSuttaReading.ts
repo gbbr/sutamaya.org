@@ -27,7 +27,21 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(suttaId:
     // 'start' rather than 'center' — a jump (TOC heading, highlight) reads as "go to this point
     // and read on from there", so the target belongs near the top of the reading pane with the
     // following text visible below it, not centered with half the context above it wasted.
-    scrollRef.current?.querySelector(`[data-seg="${segIndex}"]`)?.scrollIntoView({ behavior: 'smooth', block });
+    const container = scrollRef.current;
+    const el = container?.querySelector(`[data-seg="${segIndex}"]`);
+    if (!container || !el) return;
+    if (block === 'start') {
+      // Plain scrollIntoView({block:'start'}) lands the target flush against the pane's edge —
+      // nudge it down by a small margin so it isn't butted right up against the top. Computed as
+      // a one-off pixel delta (not CSS scroll-margin-top on the segment) so it only affects this
+      // 'start' case and doesn't skew the 'center' case below (jumpToHighlight's word/segment
+      // centering), which needs the element's true geometric center, not one padded on one side.
+      const START_MARGIN = 24;
+      const offset = el.getBoundingClientRect().top - container.getBoundingClientRect().top - START_MARGIN;
+      container.scrollBy({ top: offset, behavior: 'smooth' });
+    } else {
+      el.scrollIntoView({ behavior: 'smooth', block });
+    }
   }, [scrollRef]);
 
   return { segments, error, retry, hlForSutta, highlightGroups, hlCount, scrollRef, scrollToSegment, ...popup };
