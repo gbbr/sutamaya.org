@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState, t
 import { dataApi, highlightsApi, listsApi, notesApi, visitedApi } from '../lib/api';
 import type { Highlight, HighlightsMap, ListDef, ListKind, Membership, NotesMap, VisitedMap } from '../lib/types';
 import { RECENT_AUTO_LIST_CAP, RECENT_AUTO_LIST_ID } from '../lib/autoLists';
+import { applyListReorder } from '../lib/lists';
 import { useAuth } from './AuthContext';
 
 interface UserDataState {
@@ -221,16 +222,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       // cross-parent drop into this single call instead of a separate setListParent first (see
       // its own comment) — one network round trip and one re-render instead of two sequential
       // ones, which is what was producing a visible two-step "jump" on drop.
-      setLists((ls) => {
-        const orderIndex = new Map(order.map((id, idx) => [id, idx]));
-        const inOrder = new Set(order);
-        const siblings = ls
-          .filter((l) => inOrder.has(l.id))
-          .map((l) => (l.parentId === parentId ? l : { ...l, parentId }))
-          .sort((a, b) => (orderIndex.get(a.id) ?? 0) - (orderIndex.get(b.id) ?? 0));
-        const others = ls.filter((l) => !inOrder.has(l.id));
-        return [...others, ...siblings];
-      });
+      setLists((ls) => applyListReorder(ls, parentId, order));
       try {
         await listsApi.reorder(parentId, order);
       } catch (e) {

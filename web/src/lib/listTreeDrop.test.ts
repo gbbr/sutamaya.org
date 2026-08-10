@@ -1,5 +1,14 @@
 import { describe, expect, it } from 'vitest';
-import { resolveTreeDropTarget, resolveDropIndicator, type DropRow } from './listTreeDrop';
+import {
+  resolveTreeDropTarget,
+  resolveDropIndicator,
+  isDescendantOf,
+  isValidListDrop,
+  siblingIdsWithInsert,
+  planListDrop,
+  type DropRow,
+} from './listTreeDrop';
+import type { ListDef } from './types';
 
 // A realistic row is roughly 34-40px tall (py-[7px] + one line of 15px text) — the exact number
 // doesn't matter for this math, just that rows are stacked with no gap, matching real layout.
@@ -105,5 +114,135 @@ describe('resolveDropIndicator', () => {
 
   it('passes null through', () => {
     expect(resolveDropIndicator(null, rows)).toBeNull();
+  });
+});
+
+// Same tree shape as server/src/lib/listParent.test.js's cycle-guard fixture (the client's own
+// backstop for the same rule — see useListTreeDrag's own comment on isDescendantOf).
+const tree: ListDef[] = [
+  { id: 'g1', label: 'G1', parentId: null, kind: 'group', items: [] },
+  { id: 'g2', label: 'G2', parentId: 'g1', kind: 'group', items: [] },
+  { id: 'g3', label: 'G3', parentId: 'g2', kind: 'group', items: [] },
+  { id: 'l1', label: 'L1', parentId: 'g1', kind: 'list', items: [] },
+  { id: 'l2', label: 'L2', parentId: null, kind: 'list', items: [] },
+];
+
+describe('isDescendantOf', () => {
+  it('is true for a direct child', () => {
+    expect(isDescendantOf(tree, 'g2', 'g1')).toBe(true);
+  });
+
+  it('is true for a deeper descendant', () => {
+    expect(isDescendantOf(tree, 'g3', 'g1')).toBe(true);
+  });
+
+  it('is false for an unrelated top-level list', () => {
+    expect(isDescendantOf(tree, 'l2', 'g1')).toBe(false);
+  });
+
+  it('is false for a node checked against itself', () => {
+    expect(isDescendantOf(tree, 'g1', 'g1')).toBe(false);
+  });
+
+  it('is false for a parent checked against its own child (wrong direction)', () => {
+    expect(isDescendantOf(tree, 'g1', 'g2')).toBe(false);
+  });
+});
+
+describe('isValidListDrop', () => {
+  it('allows a before/after sibling drop regardless of kind', () => {
+    expect(isValidListDrop(tree, 'l1', 'l2', 'before')).toBe(true);
+    expect(isValidListDrop(tree, 'l1', 'g2', 'after')).toBe(true);
+  });
+
+  it('allows nesting inside a group', () => {
+    expect(isValidListDrop(tree, 'l1', 'g2', 'inside')).toBe(true);
+  });
+
+  it('rejects nesting inside a plain list', () => {
+    expect(isValidListDrop(tree, 'l1', 'l2', 'inside')).toBe(false);
+  });
+
+  it('rejects dropping a group near/into its own descendant, regardless of zone', () => {
+    expect(isValidListDrop(tree, 'g1', 'g3', 'inside')).toBe(false);
+    expect(isValidListDrop(tree, 'g1', 'g3', 'before')).toBe(false);
+  });
+
+  it('rejects an unknown dragged or target id', () => {
+    expect(isValidListDrop(tree, 'missing', 'g2', 'inside')).toBe(false);
+    expect(isValidListDrop(tree, 'l1', 'missing', 'inside')).toBe(false);
+  });
+});
+
+describe('siblingIdsWithInsert', () => {
+  const childrenOf = (parentId: string) => tree.filter((l) => l.parentId === parentId);
+  const topLevelLists = tree.filter((l) => !l.parentId);
+
+  it('inserts before the target among top-level lists', () => {
+    expect(siblingIdsWithInsert(childrenOf, topLevelLists, null, 'l1', 'l2', false)).toEqual(['g1', 'l1', 'l2']);
+  });
+
+  it('inserts after the target among top-level lists', () => {
+    expect(siblingIdsWithInsert(childrenOf, topLevelLists, null, 'l1', 'l2', true)).toEqual(['g1', 'l2', 'l1']);
+  });
+
+  it('inserts within a named parent\'s own children', () => {
+    expect(siblingIdsWithInsert(childrenOf, topLevelLists, 'g1', 'x', 'g2', true)).toEqual(['g2', 'x', 'l1']);
+  });
+
+  it('excludes the inserted id from its old position when it was already a sibling in scope', () => {
+    // l1 dropped back among g1's own children (its current parent), reordered before g2.
+    expect(siblingIdsWithInsert(childrenOf, topLevelLists, 'g1', 'l1', 'g2', false)).toEqual(['l1', 'g2']);
+  });
+});
+
+describe('planListDrop', () => {
+  const childrenOf = (parentId: string) => tree.filter((l) => l.parentId === parentId);
+  const topLevelLists = tree.filter((l) => !l.parentId);
+  const g2 = tree.find((l) => l.id === 'g2')!;
+  const g1 = tree.find((l) => l.id === 'g1')!;
+  const l2 = tree.find((l) => l.id === 'l2')!;
+
+  it('plans a reparent when dropping inside a group the dragged item is not already in', () => {
+    expect(planListDrop(tree, 'l2', g2, 'inside', childrenOf, topLevelLists)).toEqual({
+      type: 'reparent',
+      parentId: 'g2',
+      alreadyParented: false,
+    });
+  });
+
+  it('marks alreadyParented when the dragged item is already that group\'s direct child', () => {
+    const g1AsTarget = tree.find((l) => l.id === 'g1')!;
+    expect(planListDrop(tree, 'l1', g1AsTarget, 'inside', childrenOf, topLevelLists)).toEqual({
+      type: 'reparent',
+      parentId: 'g1',
+      alreadyParented: true,
+    });
+  });
+
+  it('plans a single reorder for a before/after drop, even one crossing into a new parent', () => {
+    // l2 (currently top-level) dropped after l1, which lives inside g1 — one 'reorder' plan
+    // targeting g1 covers both the re-parent and the position, matching the server's own PUT
+    // /order semantics (see applyListReorder in lib/lists.ts) and avoiding the two-step-flicker
+    // bug (a55e1ecc) a separate 'reparent' call first used to cause.
+    const l1 = tree.find((l) => l.id === 'l1')!;
+    expect(planListDrop(tree, 'l2', l1, 'after', childrenOf, topLevelLists)).toEqual({
+      type: 'reorder',
+      parentId: 'g1',
+      order: ['g2', 'l1', 'l2'],
+    });
+  });
+
+  it('plans invalid for nesting inside a plain list', () => {
+    expect(planListDrop(tree, 'g1', l2, 'inside', childrenOf, topLevelLists)).toEqual({ type: 'invalid' });
+  });
+
+  it('plans invalid for dropping a group into its own descendant', () => {
+    const g3 = tree.find((l) => l.id === 'g3')!;
+    expect(planListDrop(tree, 'g1', g3, 'inside', childrenOf, topLevelLists)).toEqual({ type: 'invalid' });
+  });
+
+  it('plans invalid for an unknown dragged id', () => {
+    expect(planListDrop(tree, 'missing', g1, 'before', childrenOf, topLevelLists)).toEqual({ type: 'invalid' });
   });
 });
