@@ -310,7 +310,14 @@ export function searchCorpus(corpus: Corpus, query: string, notes: Record<string
     let inTitle = title.includes(q);
     const inRest = blurb.includes(q) || (!!note && searchKey(note).includes(q));
     let matchedId: string | undefined;
-    if (!inTitle && !inRest && rangeQuery) {
+    // Checked unconditionally (not just when `!inTitle`) — a batch's own ref text is always
+    // exactly `${prefix}${start}` with no separator (e.g. "Dhp209–220"), so a query for a batch's
+    // very first inner uid ("dhp209") already satisfies `inTitle` via that literal substring,
+    // same as any other ref/title match. Gating this on `!inTitle` would then skip setting
+    // matchedId for that one case (every other inner uid doesn't literally appear in the ref, so
+    // only reaches matchedId through this branch), silently losing the sub-uid and opening the
+    // batch at its top instead of scrolling/highlighting the actually-requested first sutta.
+    if (rangeQuery) {
       const range = ranges!.get(id);
       const num = Number(rangeQuery[2]);
       if (range && range.prefix === rangeQuery[1] && num >= range.start && num <= range.end) {
