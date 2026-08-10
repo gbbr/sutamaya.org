@@ -130,10 +130,16 @@ same command: it checks `gcloud auth list` for an active account and errors out 
 if you're not authenticated, resolves `PROJECT_ID` from the env or `gcloud config get-value
 project`, and defaults `REGION` to `europe-west1` — override either with `PROJECT_ID=... REGION=...
 npm run deploy`. It also pre-creates the `cloud-run-source-deploy` Artifact Registry repo and
-attaches `scripts/artifact-cleanup-policy.json` to it (keep the 5 most recent image versions,
-delete anything older than 30 days) before deploying — see "Staying in the free tier" below.
+attaches `scripts/artifact-cleanup-policy.json` to it (keep the 3 most recent image versions,
+delete everything else immediately) before deploying — see "Staying in the free tier" below.
 Pre-creating the repo also means `gcloud run deploy` never hits its interactive "create this repo?"
 prompt, which is otherwise unsafe to run from a non-interactive script.
+
+After the deploy finishes, `scripts/deploy.sh` also deletes the source zip that `--source .`
+just staged in Cloud Storage for this run (looked up from the Cloud Build job's own
+`source.storageSource` record) — Cloud Build has already read it into the image by then, so it
+has no further purpose. See "Staying in the free tier" below for the bucket-level backstop this
+relies on if a deploy is ever invoked outside this script.
 
 `GOOGLE_CLOUD_PROJECT` (which `server/src/firestore.js` uses to talk to the right Firestore
 database) is **not** set automatically by Cloud Run, despite an earlier version of this doc
@@ -187,12 +193,30 @@ to their ceilings. The two things actually worth watching:
 - **Artifact Registry's 0.5GB is the tightest limit** — each `gcloud run deploy` pushes a new
   image (~500MB uncompressed, less as compressed layers, but they accumulate). `npm run deploy`
   attaches a native cleanup policy (`scripts/artifact-cleanup-policy.json`) to the repo that keeps
-  the 5 most recent image versions and deletes anything older than 30 days automatically, so this
+  only the 3 most recent image versions and deletes everything else immediately, so this
   doesn't need a manual step. To apply/update it by hand instead:
   ```bash
   gcloud artifacts repositories set-cleanup-policies cloud-run-source-deploy \
     --project="$PROJECT_ID" --location="$REGION" --policy=scripts/artifact-cleanup-policy.json
   ```
+- **The `run-sources-$PROJECT_ID-$REGION` Cloud Storage bucket** — created automatically the
+  first time `gcloud run deploy --source .` runs, one zip per deploy (source doesn't stay in Cloud
+  Build; the zip is uploaded here first and Cloud Build reads it from here). Note this bucket
+  doesn't benefit from Cloud Storage's Always Free tier at all outside a handful of US regions, so
+  `europe-west1` (this doc's default) pays standard per-GB storage from the first byte — kept
+  negligible by two layers: `scripts/deploy.sh` deletes each deploy's own zip right after Cloud
+  Build finishes reading it, and (as a backstop for anything deployed outside that script, e.g.
+  directly via `gcloud run deploy` or CI) a bucket lifecycle rule expires anything left after 7
+  days:
+  ```bash
+  cat > /tmp/gcs-lifecycle.json <<'EOF'
+  { "rule": [ { "action": { "type": "Delete" }, "condition": { "age": 7 } } ] }
+  EOF
+  gcloud storage buckets update "gs://run-sources-${PROJECT_ID}-${REGION}" \
+    --project="$PROJECT_ID" --lifecycle-file=/tmp/gcs-lifecycle.json
+  ```
+  Unlike the Artifact Registry policy above, this isn't applied automatically by `scripts/deploy.sh`
+  — run it once by hand after the bucket exists (i.e. after your first deploy).
 - **Set a budget alert** as a safety net regardless — it won't stop spending, but it emails you
   before anything surprising shows up:
   ```bash
