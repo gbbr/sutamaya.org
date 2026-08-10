@@ -249,9 +249,12 @@ export function TreePane({
     [lists]
   );
 
-  function toggleListExpanded(id: string) {
+  // useCallback'd for the same reason toggleExpanded above is — passed straight through to
+  // ListRow, whose own memoization (mirroring TreeRow's) needs this to stay referentially stable
+  // across renders that don't actually change it.
+  const toggleListExpanded = useCallback((id: string) => {
     setListExpanded((x) => ({ ...x, [id]: !x[id] }));
-  }
+  }, []);
 
   const {
     menuOpenId,
@@ -391,42 +394,62 @@ export function TreePane({
   // reached it; called second, so it wins the final scroll position when both are set.
   useScrollToNode(scrollRef, flashNodeId, [effectiveView, expanded, listExpanded, corpus, lists]);
 
+  // ListRow's props are grouped by concern (see ListRow.tsx) — built once here rather than at
+  // each of its (potentially deeply nested) call sites. Each bundle is useMemo'd (and
+  // draftInputRef useCallback'd) so ListRow's own memoization isn't defeated by a freshly-built
+  // object/closure on every TreePane render that doesn't actually change any of its fields — see
+  // ListRow's own memo comment. Computed above the `if (!corpus) return null` below since hooks
+  // can't run conditionally.
+  const listRowMenu: ListRowMenuProps = useMemo(
+    () => ({
+      menuOpenId,
+      onToggleMenu: toggleListMenu,
+      onMove: moveList,
+      onAddChild: addChildList,
+      onStartEdit: startEditList,
+      onArmDelete: armDeleteList,
+    }),
+    [menuOpenId, toggleListMenu, moveList, addChildList, startEditList, armDeleteList]
+  );
+  const listRowEdit: ListRowEditProps = useMemo(
+    () => ({
+      editingId,
+      editDraft,
+      onEditDraftChange: setEditDraft,
+      onCommitEdit: commitEditList,
+      onCancelEdit: cancelEditList,
+    }),
+    [editingId, editDraft, setEditDraft, commitEditList, cancelEditList]
+  );
+  const listRowDelete: ListRowDeleteProps = useMemo(
+    () => ({
+      confirmDeleteId,
+      onDelete: deleteList,
+      onCancelDelete: cancelDeleteList,
+      blockedDelete,
+    }),
+    [confirmDeleteId, deleteList, cancelDeleteList, blockedDelete]
+  );
+  const draftInputRef = useCallback(
+    (el: HTMLInputElement | null) => {
+      listInput.current = el;
+    },
+    [listInput]
+  );
+  const listRowDraft: ListRowDraftProps = useMemo(
+    () => ({
+      creatingParentId,
+      draft,
+      onDraftChange: setDraft,
+      onDraftKey,
+      draftInputRef,
+    }),
+    [creatingParentId, draft, setDraft, onDraftKey, draftInputRef]
+  );
+
   if (!corpus) return null;
 
   const style = mobile ? { flex: 1 } : { flex: 'none', width: paneW.tree };
-
-  // ListRow's props are grouped by concern (see ListRow.tsx) — built once here rather than at
-  // each of its (potentially deeply nested) call sites.
-  const listRowMenu: ListRowMenuProps = {
-    menuOpenId,
-    onToggleMenu: toggleListMenu,
-    onMove: moveList,
-    onAddChild: addChildList,
-    onStartEdit: startEditList,
-    onArmDelete: armDeleteList,
-  };
-  const listRowEdit: ListRowEditProps = {
-    editingId,
-    editDraft,
-    onEditDraftChange: setEditDraft,
-    onCommitEdit: commitEditList,
-    onCancelEdit: cancelEditList,
-  };
-  const listRowDelete: ListRowDeleteProps = {
-    confirmDeleteId,
-    onDelete: deleteList,
-    onCancelDelete: cancelDeleteList,
-    blockedDelete,
-  };
-  const listRowDraft: ListRowDraftProps = {
-    creatingParentId,
-    draft,
-    onDraftChange: setDraft,
-    onDraftKey,
-    draftInputRef: (el) => {
-      listInput.current = el;
-    },
-  };
 
   return (
     <aside

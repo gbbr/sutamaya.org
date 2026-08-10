@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import type { ListDef } from '../lib/types';
 
 // Pure derivations over the user's list tree — shared by TreePane's render (My Lists tree),
@@ -59,7 +59,13 @@ export function useListTreeIndex(lists: ListDef[]) {
     return cache;
   }, [lists, listChildrenOf]);
   const groupTotalLists = (id: string) => listGroupCounts.get(id) ?? 0;
-  const countFor = (l: ListDef) => (l.kind === 'group' ? groupTotalLists(l.id) : listTotalMembers(l.id));
+  // useCallback'd — passed straight through to ListRow (see TreePane), whose own memoization
+  // (mirroring TreeRow's) needs this to stay referentially stable across renders that don't
+  // actually change the underlying counts.
+  const countFor = useCallback(
+    (l: ListDef) => (l.kind === 'group' ? (listGroupCounts.get(l.id) ?? 0) : (listMemberSets.get(l.id)?.size ?? 0)),
+    [listGroupCounts, listMemberSets]
+  );
 
   const topLevelLists = useMemo(() => lists.filter((l) => !l.parentId && !l.auto), [lists]);
 
