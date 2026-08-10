@@ -1,9 +1,10 @@
-import { useCallback, useDeferredValue, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
 import { useLayout } from '../context/LayoutContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
-import { flatSuttaOrder, searchCorpus, sortByIdAsc, suttasFor } from '../lib/corpus';
+import { useCorpusSearch } from '../hooks/useCorpusSearch';
+import { flatSuttaOrder, sortByIdAsc, suttasFor } from '../lib/corpus';
 import { SHORTCUTS, shortcutsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, type RouteIntent } from '../lib/routeIntent';
@@ -135,15 +136,10 @@ export function LibraryPage({
   // Computed once here (not independently by TreePane and ListPane, which used to each run their
   // own searchCorpus scan on every keystroke) and handed down to both, so they render one
   // consistent result set instead of two — TreePane keeps its own input/keyboard nav, ListPane
-  // does the actual row rendering; see both components for how they split it. Deferred rather
-  // than tied straight to `query` so the input itself (and the `query.trim()`-driven "searching"
-  // branch below) stays instantly responsive even while a slower device is still catching up on
-  // the scan — same rationale as ReaderSearchOverlay's own deferred search.
-  const deferredQuery = useDeferredValue(query);
-  const hits = useMemo(
-    () => (corpus && deferredQuery.trim() ? searchCorpus(corpus, deferredQuery, notes) : []),
-    [corpus, deferredQuery, notes]
-  );
+  // does the actual row rendering; see both components for how they split it. useCorpusSearch
+  // itself defers the scan off `query` so the input stays instantly responsive even while a
+  // slower device is still catching up (same hook ReaderSearchOverlay uses for its own scan).
+  const hits = useCorpusSearch(corpus, query, notes);
   // The hit TreePane's own arrow-key nav currently has highlighted, mirrored here so ListPane
   // (which renders the actual rows on desktop) can show that same highlight — see TreePane's
   // onActiveHitChange and ListPane's activeId.
