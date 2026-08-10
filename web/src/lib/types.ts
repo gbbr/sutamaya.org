@@ -115,4 +115,9 @@ export interface ThemeColors {
   // against those bright backgrounds; <1 for dark, where painting the same opaque pastel would
   // read as a bright, attention-grabbing patch — see lib/theme.ts's highlightPaint().
   highlightAlpha: number;
+  // The native text-selection background, scoped to the reader (see index.css's
+  // `[data-component="ReaderPage"] ::selection` and ReaderPage's `--reader-selection`) — kept
+  // separate from the app shell's own `--selection` CSS var (index.css), which follows the UI's
+  // light/dark toggle rather than the reader's own theme.
+  selection: string;
 }
