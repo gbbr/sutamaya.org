@@ -4,7 +4,7 @@ import { useLayout } from '../context/LayoutContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { flatSuttaOrder, searchCorpus, sortByIdAsc, suttasFor } from '../lib/corpus';
-import { SHORTCUTS, shortcutsForScope, isShortcut } from '../lib/shortcuts';
+import { SHORTCUTS, shortcutsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, type RouteIntent } from '../lib/routeIntent';
 import { TreePane } from '../components/TreePane';
@@ -224,8 +224,7 @@ export function LibraryPage({
         }
         return;
       }
-      const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
-      if (tag === 'input' || tag === 'textarea') return;
+      if (isTypingTarget(e)) return;
       if (isShortcut(e, SHORTCUTS.libraryHelp)) {
         e.preventDefault();
         setShortcutsOpen(true);
