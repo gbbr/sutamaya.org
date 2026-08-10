@@ -128,4 +128,87 @@ describe('routes/lists.js (Firestore emulator)', () => {
       .send({ parentId: parent.body.list.id });
     expect(res.status).toBe(400);
   });
+
+  it('PUT /:id/items/order reorders a list\'s own items', async () => {
+    userId = testUserId();
+    const list = await request(app).post('/api/lists').set('x-test-user', userId).send({ label: 'L' });
+    for (const suttaId of ['sn1.1', 'sn1.2', 'sn1.3']) {
+      await request(app).post(`/api/lists/${list.body.list.id}/items`).set('x-test-user', userId).send({ suttaId });
+    }
+
+    const res = await request(app)
+      .put(`/api/lists/${list.body.list.id}/items/order`)
+      .set('x-test-user', userId)
+      .send({ order: ['sn1.3', 'sn1.1', 'sn1.2'] });
+    expect(res.status).toBe(200);
+
+    const snap = await listsCol(userId).doc(list.body.list.id).get();
+    expect(snap.data().items).toEqual(['sn1.3', 'sn1.1', 'sn1.2']);
+  });
+
+  it('PUT /:id/items/order appends an item present in stored items but missing from the posted order', async () => {
+    userId = testUserId();
+    const list = await request(app).post('/api/lists').set('x-test-user', userId).send({ label: 'L' });
+    await request(app).post(`/api/lists/${list.body.list.id}/items`).set('x-test-user', userId).send({ suttaId: 'sn1.1' });
+    await request(app).post(`/api/lists/${list.body.list.id}/items`).set('x-test-user', userId).send({ suttaId: 'sn1.2' });
+
+    // Simulates another tab adding sn1.2 after this client already snapshotted an order of just ['sn1.1'].
+    const res = await request(app)
+      .put(`/api/lists/${list.body.list.id}/items/order`)
+      .set('x-test-user', userId)
+      .send({ order: ['sn1.1'] });
+    expect(res.status).toBe(200);
+
+    const snap = await listsCol(userId).doc(list.body.list.id).get();
+    expect(snap.data().items).toEqual(['sn1.1', 'sn1.2']);
+  });
+
+  it('PUT /:id/items/order 404s for a nonexistent list and 400s for a group', async () => {
+    userId = testUserId();
+    const missing = await request(app).put('/api/lists/does-not-exist/items/order').set('x-test-user', userId).send({ order: [] });
+    expect(missing.status).toBe(404);
+
+    const group = await request(app).post('/api/lists').set('x-test-user', userId).send({ label: 'Group', kind: 'group' });
+    const onGroup = await request(app)
+      .put(`/api/lists/${group.body.list.id}/items/order`)
+      .set('x-test-user', userId)
+      .send({ order: [] });
+    expect(onGroup.status).toBe(400);
+  });
+
+  it('PUT /order bulk-reorders sibling lists', async () => {
+    userId = testUserId();
+    const a = await request(app).post('/api/lists').set('x-test-user', userId).send({ label: 'A' });
+    const b = await request(app).post('/api/lists').set('x-test-user', userId).send({ label: 'B' });
+    const c = await request(app).post('/api/lists').set('x-test-user', userId).send({ label: 'C' });
+
+    const res = await request(app)
+      .put('/api/lists/order')
+      .set('x-test-user', userId)
+      .send({ parentId: null, order: [c.body.list.id, a.body.list.id, b.body.list.id] });
+    expect(res.status).toBe(200);
+
+    const positions = await Promise.all(
+      [c, a, b].map(async (created, expectedPosition) => {
+        const doc = await listsCol(userId).doc(created.body.list.id).get();
+        return doc.data().position === expectedPosition;
+      })
+    );
+    expect(positions).toEqual([true, true, true]);
+  });
+
+  it('PUT /order rejects reparenting into a cycle the same way PATCH does', async () => {
+    userId = testUserId();
+    const grandparent = await request(app).post('/api/lists').set('x-test-user', userId).send({ label: 'A', kind: 'group' });
+    const parent = await request(app)
+      .post('/api/lists')
+      .set('x-test-user', userId)
+      .send({ label: 'B', kind: 'group', parentId: grandparent.body.list.id });
+
+    const res = await request(app)
+      .put('/api/lists/order')
+      .set('x-test-user', userId)
+      .send({ parentId: parent.body.list.id, order: [grandparent.body.list.id] });
+    expect(res.status).toBe(400);
+  });
 });
