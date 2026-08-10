@@ -103,7 +103,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
               }}
               className="row flex flex-col w-full text-left gap-[1px] px-5 py-3"
               style={{
-                background: i === activeIndex ? theme.rule : 'transparent',
+                background: i === activeIndex ? theme.tint : 'transparent',
                 borderBottom: `1px solid ${theme.rule}`,
               }}
               onMouseEnter={() => setActiveIndex(i)}

@@ -231,10 +231,13 @@ export function TreePane({
   const [searchOpen, setSearchOpen] = useState(() => query.trim().length > 0);
   const searchInput = useRef<HTMLInputElement>(null);
   // Up/down (and Enter to open) over the search results list only — see the keydown effect
-  // below. `searchActiveIndexRef` mirrors the state so the effect's Enter branch always reads
-  // the live index without needing to resubscribe its listener on every arrow keypress.
-  const [searchActiveIndex, setSearchActiveIndex] = useState(-1);
-  const searchActiveIndexRef = useRef(-1);
+  // below. Starts at 0 (not -1) so the first result is pre-highlighted as soon as there are
+  // hits, matching the reader's Alfred-style search overlay — Enter opens it immediately
+  // without an arrow-key press first. `searchActiveIndexRef` mirrors the state so the effect's
+  // Enter branch always reads the live index without needing to resubscribe its listener on
+  // every arrow keypress.
+  const [searchActiveIndex, setSearchActiveIndex] = useState(0);
+  const searchActiveIndexRef = useRef(0);
   searchActiveIndexRef.current = searchActiveIndex;
   const hitRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
@@ -310,18 +313,18 @@ export function TreePane({
   const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);
 
   useEffect(() => {
-    setSearchActiveIndex(-1);
+    setSearchActiveIndex(0);
   }, [query]);
 
   useEffect(() => {
-    if (searchActiveIndex >= 0) hitRefs.current[searchActiveIndex]?.scrollIntoView({ block: 'nearest' });
+    hitRefs.current[searchActiveIndex]?.scrollIntoView({ block: 'nearest' });
   }, [searchActiveIndex]);
 
   // Mirrors the currently keyboard-highlighted hit up to LibraryPage so it can show the same
   // highlight on ListPane's own row for it (see this pane's own render below, which stops
   // rendering hit rows itself once ListPane is also visible).
   useEffect(() => {
-    onActiveHitChange?.(searching && searchActiveIndex >= 0 ? displayHits[searchActiveIndex]?.id : undefined);
+    onActiveHitChange?.(searching ? displayHits[searchActiveIndex]?.id : undefined);
   }, [searching, searchActiveIndex, displayHits, onActiveHitChange]);
 
   // Hides the search input and clears its query — on Escape, the inline "x", or opening a hit
@@ -360,7 +363,7 @@ export function TreePane({
           else setSearchActiveIndex((i) => Math.max(0, i - 1));
           return;
         }
-        if (isShortcut(e, SHORTCUTS.librarySelectOpen) && searchActiveIndexRef.current >= 0 && searchActiveIndexRef.current < displayHits.length) {
+        if (isShortcut(e, SHORTCUTS.librarySelectOpen) && searchActiveIndexRef.current < displayHits.length) {
           e.preventDefault();
           const hit = displayHits[searchActiveIndexRef.current];
           openHit(hit.matchedId ?? hit.id);
