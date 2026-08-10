@@ -1,7 +1,9 @@
-import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
-import { searchCorpus, SEARCH_RESULTS_CAP } from '../lib/corpus';
+import { useCorpusSearch } from '../hooks/useCorpusSearch';
+import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
+import { SEARCH_RESULTS_CAP } from '../lib/corpus';
 import type { ThemeColors } from '../lib/types';
 
 interface ReaderSearchOverlayProps {
@@ -17,34 +19,17 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
   const { corpus } = useCorpus();
   const { notes } = useUserData();
   const [query, setQuery] = useState('');
-  const [activeIndex, setActiveIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
-  const rowRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
-  // Deferred rather than run on `query` directly — searchCorpus scans every sutta in the corpus
-  // on each call, so tying it straight to the input would risk a dropped keystroke on a slower
-  // device; useDeferredValue keeps typing itself always-urgent and lets React interrupt/restart
-  // a stale search if the user keeps typing, without a hand-rolled debounce timer.
-  const deferredQuery = useDeferredValue(query);
-  const hits = useMemo(
-    () => (corpus && deferredQuery.trim() ? searchCorpus(corpus, deferredQuery, notes) : []),
-    [corpus, deferredQuery, notes]
-  );
+  const hits = useCorpusSearch(corpus, query, notes);
   // Only render/keyboard-navigate the first SEARCH_RESULTS_CAP — a short/common query can match
   // hundreds of suttas, and every hit is an unvirtualized row in a small scroll panel.
   const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);
+  const { activeIndex, setActiveIndex, moveBy, setRowRef } = useActiveHitIndex(query);
 
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
-
-  useEffect(() => {
-    setActiveIndex(0);
-  }, [query]);
-
-  useEffect(() => {
-    rowRefs.current[activeIndex]?.scrollIntoView({ block: 'nearest' });
-  }, [activeIndex]);
 
   function onKeyDown(e: React.KeyboardEvent) {
     // Stops here — the reader's own window-level keydown handler already bails while this
@@ -56,10 +41,10 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
       onClose();
     } else if (e.key === 'ArrowDown') {
       e.preventDefault();
-      setActiveIndex((i) => Math.min(displayHits.length - 1, i + 1));
+      moveBy(1, displayHits.length);
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
-      setActiveIndex((i) => Math.max(0, i - 1));
+      moveBy(-1, displayHits.length);
     } else if (e.key === 'Enter' && displayHits[activeIndex]) {
       e.preventDefault();
       const hit = displayHits[activeIndex];
@@ -98,9 +83,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
           {displayHits.map((h, i) => (
             <button
               key={h.id}
-              ref={(el) => {
-                rowRefs.current[i] = el;
-              }}
+              ref={setRowRef(i)}
               className="row flex flex-col w-full text-left gap-[1px] px-5 py-3"
               style={{
                 background: i === activeIndex ? theme.tint : 'transparent',

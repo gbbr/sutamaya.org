@@ -10,6 +10,7 @@ import { useScrollToNode } from '../hooks/useScrollToNode';
 import { useListTreeIndex } from '../hooks/useListTreeIndex';
 import { useListCrud } from '../hooks/useListCrud';
 import { useListTreeDrag } from '../hooks/useListTreeDrag';
+import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
 import { ancestorsOf, findNode, isExpandable, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
 import { ancestorsOfList } from '../lib/lists';
 import { derivePaneViewSync } from '../lib/paneView';
@@ -235,11 +236,10 @@ export function TreePane({
   // hits, matching the reader's Alfred-style search overlay — Enter opens it immediately
   // without an arrow-key press first. `searchActiveIndexRef` mirrors the state so the effect's
   // Enter branch always reads the live index without needing to resubscribe its listener on
-  // every arrow keypress.
-  const [searchActiveIndex, setSearchActiveIndex] = useState(0);
-  const searchActiveIndexRef = useRef(0);
-  searchActiveIndexRef.current = searchActiveIndex;
-  const hitRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  // every arrow keypress — see useActiveHitIndex (lib/hooks), shared with ReaderSearchOverlay's
+  // own identical index-navigation needs.
+  const { activeIndex: searchActiveIndex, activeIndexRef: searchActiveIndexRef, moveBy: moveSearchActiveIndexBy, setRowRef: setHitRowRef } =
+    useActiveHitIndex(query);
 
   const { listChildrenOf, countFor, topLevelLists } = useListTreeIndex(lists);
   const autoLists = useMemo(
@@ -312,14 +312,6 @@ export function TreePane({
   // results" label below so that count stays honest.
   const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);
 
-  useEffect(() => {
-    setSearchActiveIndex(0);
-  }, [query]);
-
-  useEffect(() => {
-    hitRefs.current[searchActiveIndex]?.scrollIntoView({ block: 'nearest' });
-  }, [searchActiveIndex]);
-
   // Mirrors the currently keyboard-highlighted hit up to LibraryPage so it can show the same
   // highlight on ListPane's own row for it (see this pane's own render below, which stops
   // rendering hit rows itself once ListPane is also visible).
@@ -359,8 +351,7 @@ export function TreePane({
       if (searching && displayHits.length > 0 && !(tag === 'textarea' || (tag === 'input' && !isSearchInput))) {
         if (isShortcut(e, SHORTCUTS.librarySelectMove)) {
           e.preventDefault();
-          if (e.key === 'ArrowDown') setSearchActiveIndex((i) => Math.min(displayHits.length - 1, i + 1));
-          else setSearchActiveIndex((i) => Math.max(0, i - 1));
+          moveSearchActiveIndexBy(e.key === 'ArrowDown' ? 1 : -1, displayHits.length);
           return;
         }
         if (isShortcut(e, SHORTCUTS.librarySelectOpen) && searchActiveIndexRef.current < displayHits.length) {
@@ -580,9 +571,7 @@ export function TreePane({
                 {displayHits.map(({ id, matchedId, sutta }, i) => (
                   <button
                     key={id}
-                    ref={(el) => {
-                      hitRefs.current[i] = el;
-                    }}
+                    ref={setHitRowRef(i)}
                     className={`row flex flex-col w-full text-left gap-[1px] px-[18px] py-[11px] border-b border-ink/[.07] ${i === searchActiveIndex ? 'bg-ink/[.06]' : ''}`}
                     onClick={() => openHit(matchedId ?? id)}
                   >
