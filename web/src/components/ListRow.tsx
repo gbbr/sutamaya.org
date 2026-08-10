@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { ChevronDown, ChevronRight, ChevronUp, GripVertical, MoreHorizontal, Pencil, Plus, Trash2 } from 'lucide-react';
 import type { KeyboardEvent } from 'react';
 import type { BlockedDelete } from '../hooks/useListCrud';
@@ -58,7 +59,14 @@ export interface ListRowDraftProps {
 // onRowPointerDown/getRowRef) stay flat, passed straight through from TreePane's own
 // useListTreeDrag() (itself built on the shared usePointerDragSession) — they're a single
 // cohesive concern already, so bundling them wouldn't reduce the prop count in a meaningful way.
-export function ListRow({
+//
+// Wrapped in `memo` — same reasoning as TreeRow's own memoization (see its comment): a TreePane
+// re-render triggered by something unrelated to a given row (toggling paneView, expanding a
+// sibling, navigating) shouldn't force every list row to re-render too. Requires
+// onToggle/onSelect/countFor/onRowPointerDown and the menu/edit/del/draft prop bundles to stay
+// referentially stable across such renders — see TreePane's own useCallback/useMemo wrapping of
+// each.
+export const ListRow = memo(function ListRow({
   list,
   depth,
   nodeId,
@@ -334,4 +342,4 @@ export function ListRow({
       )}
     </div>
   );
-}
+});

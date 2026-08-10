@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type Dispatch, type KeyboardEvent, type SetStateAction } from 'react';
+import { useCallback, useEffect, useRef, useState, type Dispatch, type KeyboardEvent, type SetStateAction } from 'react';
 import type { ListDef, ListKind } from '../lib/types';
 
 // How long the "can't delete, not empty" message stays up before auto-dismissing — long enough
@@ -52,86 +52,105 @@ export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, cr
     };
   }, []);
 
-  function toggleListMenu(id: string) {
+  // Every handler below is useCallback'd (mirroring TreePane's own toggleExpanded — see its
+  // comment) so ListRow's memoization isn't defeated by a freshly-allocated handler on every
+  // TreePane render (this hook is called fresh each time). Most only ever call setState
+  // functions (themselves stable), so they carry no deps; the few that read other state directly
+  // (commitEditList, submitDraft, ...) depend on it, but that state only changes while the
+  // relevant row is actively being edited/created — not during an ordinary toggle/expand/select —
+  // so the identity churn stays scoped to that one row.
+  const toggleListMenu = useCallback((id: string) => {
     setMenuOpenId((m) => (m === id ? null : id));
-  }
+  }, []);
 
-  function startEditList(l: ListDef) {
+  const startEditList = useCallback((l: ListDef) => {
     setMenuOpenId(null);
     setEditingId(l.id);
     setEditDraft(l.label);
-  }
+  }, []);
 
-  function commitEditList() {
+  const commitEditList = useCallback(() => {
     const id = editingId;
     const text = editDraft.trim();
     setEditingId(null);
     if (!id) return;
     if (text) renameList(id, text);
-  }
+  }, [editingId, editDraft, renameList]);
 
-  function cancelEditList() {
+  const cancelEditList = useCallback(() => {
     setEditingId(null);
-  }
+  }, []);
 
-  function armBlockedDelete(blocked: BlockedDelete) {
+  const armBlockedDelete = useCallback((blocked: BlockedDelete) => {
     if (blockedDeleteTimer.current) clearTimeout(blockedDeleteTimer.current);
     setBlockedDelete(blocked);
     blockedDeleteTimer.current = setTimeout(() => setBlockedDelete(null), BLOCKED_DELETE_MS);
-  }
+  }, []);
 
-  function armDeleteList(l: ListDef) {
-    setMenuOpenId(null);
-    // A group can't hold suttas itself (see ListRow's comment on that), so it's blocked purely on
-    // having any nested lists/groups; a list is blocked purely on its own `items`.
-    if (l.kind === 'group') {
-      const childCount = listChildrenOf(l.id).length;
-      if (childCount > 0) {
-        armBlockedDelete({ id: l.id, count: childCount, kind: 'children' });
+  const armDeleteList = useCallback(
+    (l: ListDef) => {
+      setMenuOpenId(null);
+      // A group can't hold suttas itself (see ListRow's comment on that), so it's blocked purely
+      // on having any nested lists/groups; a list is blocked purely on its own `items`.
+      if (l.kind === 'group') {
+        const childCount = listChildrenOf(l.id).length;
+        if (childCount > 0) {
+          armBlockedDelete({ id: l.id, count: childCount, kind: 'children' });
+          return;
+        }
+      } else if (l.items.length > 0) {
+        armBlockedDelete({ id: l.id, count: l.items.length, kind: 'items' });
         return;
       }
-    } else if (l.items.length > 0) {
-      armBlockedDelete({ id: l.id, count: l.items.length, kind: 'items' });
-      return;
-    }
-    setConfirmDeleteId(l.id);
-  }
+      setConfirmDeleteId(l.id);
+    },
+    [listChildrenOf, armBlockedDelete]
+  );
 
-  function cancelDeleteList() {
+  const cancelDeleteList = useCallback(() => {
     setConfirmDeleteId(null);
-  }
+  }, []);
 
-  function deleteList(l: ListDef) {
-    setConfirmDeleteId(null);
-    removeList(l.id);
-  }
+  const deleteList = useCallback(
+    (l: ListDef) => {
+      setConfirmDeleteId(null);
+      removeList(l.id);
+    },
+    [removeList]
+  );
 
-  function addChildList(parentId: string) {
-    setMenuOpenId(null);
-    setListExpanded((x) => ({ ...x, [parentId]: true }));
-    setCreatingParentId(parentId);
-    setDraft('');
-  }
+  const addChildList = useCallback(
+    (parentId: string) => {
+      setMenuOpenId(null);
+      setListExpanded((x) => ({ ...x, [parentId]: true }));
+      setCreatingParentId(parentId);
+      setDraft('');
+    },
+    [setListExpanded]
+  );
 
   // The header's own "+" — toggles a top-level draft open/closed, defaulting the kind picker
   // back to 'list' each time it opens fresh (not whatever was last picked).
-  function toggleTopLevelDraft() {
+  const toggleTopLevelDraft = useCallback(() => {
     setCreatingParentId((c) => (c === undefined ? null : undefined));
     setDraft('');
     setDraftKind('list');
-  }
+  }, []);
 
-  function moveList(l: ListDef, dir: -1 | 1) {
-    const scoped = l.parentId ? listChildrenOf(l.parentId) : topLevelLists;
-    const idx = scoped.findIndex((s) => s.id === l.id);
-    const swapWith = idx + dir;
-    if (idx < 0 || swapWith < 0 || swapWith >= scoped.length) return;
-    const order = scoped.map((s) => s.id);
-    [order[idx], order[swapWith]] = [order[swapWith], order[idx]];
-    reorderLists(l.parentId ?? null, order);
-  }
+  const moveList = useCallback(
+    (l: ListDef, dir: -1 | 1) => {
+      const scoped = l.parentId ? listChildrenOf(l.parentId) : topLevelLists;
+      const idx = scoped.findIndex((s) => s.id === l.id);
+      const swapWith = idx + dir;
+      if (idx < 0 || swapWith < 0 || swapWith >= scoped.length) return;
+      const order = scoped.map((s) => s.id);
+      [order[idx], order[swapWith]] = [order[swapWith], order[idx]];
+      reorderLists(l.parentId ?? null, order);
+    },
+    [listChildrenOf, topLevelLists, reorderLists]
+  );
 
-  async function submitDraft() {
+  const submitDraft = useCallback(async () => {
     const name = draft.trim();
     const parentId = creatingParentId ?? null;
     // The header's own "+" (parentId null, top level) lets the user pick list vs. group via
@@ -147,17 +166,20 @@ export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, cr
     } catch {
       // Signed out: createList() already triggered the Google sign-in prompt.
     }
-  }
+  }, [draft, creatingParentId, draftKind, createList, onCreated]);
 
-  function onDraftKey(e: KeyboardEvent<HTMLInputElement>) {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      submitDraft();
-    } else if (e.key === 'Escape') {
-      setCreatingParentId(undefined);
-      setDraft('');
-    }
-  }
+  const onDraftKey = useCallback(
+    (e: KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        submitDraft();
+      } else if (e.key === 'Escape') {
+        setCreatingParentId(undefined);
+        setDraft('');
+      }
+    },
+    [submitDraft]
+  );
 
   return {
     menuOpenId,

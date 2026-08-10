@@ -46,14 +46,20 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
   // True if `candidateId` sits somewhere underneath `ofId` in the list tree — dropping `ofId`
   // onto (or as a new sibling within) a descendant of itself would create a cycle, so every drop
   // handler checks this first regardless of zone.
-  function isDescendant(candidateId: string, ofId: string): boolean {
-    let cur = lists.find((l) => l.id === candidateId);
-    while (cur?.parentId) {
-      if (cur.parentId === ofId) return true;
-      cur = lists.find((l) => l.id === cur!.parentId);
-    }
-    return false;
-  }
+  // useCallback'd (as are the handlers below it) so the chain ending in onRowPointerDown — passed
+  // straight through to ListRow (see TreePane) — stays referentially stable across renders that
+  // don't actually change `lists`, matching TreeRow/ListRow's own memoization needs.
+  const isDescendant = useCallback(
+    (candidateId: string, ofId: string): boolean => {
+      let cur = lists.find((l) => l.id === candidateId);
+      while (cur?.parentId) {
+        if (cur.parentId === ofId) return true;
+        cur = lists.find((l) => l.id === cur!.parentId);
+      }
+      return false;
+    },
+    [lists]
+  );
 
   // A list can't hold anything (no sub-lists, no sub-groups), so it's only ever a valid drop
   // target for the 'inside' zone when it's a group — true for both a dragged list and a dragged
@@ -61,20 +67,26 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
   // which is always valid regardless of kind: both a list and a group are allowed to rest at the
   // top level (a list can get there by being dragged next to another top-level row, same as a
   // group can — the "+" next to My Lists just doesn't happen to create one there directly).
-  function isValidDrop(draggedId: string, targetId: string, zone: DropZone): boolean {
-    const dragged = lists.find((l) => l.id === draggedId);
-    const target = lists.find((l) => l.id === targetId);
-    if (!dragged || !target || isDescendant(target.id, draggedId)) return false;
-    if (zone === 'inside') return target.kind === 'group';
-    return true;
-  }
+  const isValidDrop = useCallback(
+    (draggedId: string, targetId: string, zone: DropZone): boolean => {
+      const dragged = lists.find((l) => l.id === draggedId);
+      const target = lists.find((l) => l.id === targetId);
+      if (!dragged || !target || isDescendant(target.id, draggedId)) return false;
+      if (zone === 'inside') return target.kind === 'group';
+      return true;
+    },
+    [lists, isDescendant]
+  );
 
-  function siblingIdsWithInsert(parentId: string | null, insertId: string, targetId: string, after: boolean): string[] {
-    const scoped = (parentId ? listChildrenOf(parentId) : topLevelLists).map((s) => s.id).filter((id) => id !== insertId);
-    const targetIdx = scoped.indexOf(targetId);
-    scoped.splice(after ? targetIdx + 1 : targetIdx, 0, insertId);
-    return scoped;
-  }
+  const siblingIdsWithInsert = useCallback(
+    (parentId: string | null, insertId: string, targetId: string, after: boolean): string[] => {
+      const scoped = (parentId ? listChildrenOf(parentId) : topLevelLists).map((s) => s.id).filter((id) => id !== insertId);
+      const targetIdx = scoped.indexOf(targetId);
+      scoped.splice(after ? targetIdx + 1 : targetIdx, 0, insertId);
+      return scoped;
+    },
+    [listChildrenOf, topLevelLists]
+  );
 
   const getRowRef = useCallback((id: string) => {
     let cb = rowRefCallbacks.current.get(id);
@@ -100,46 +112,53 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
   // drag can reorder the underlying `lists` array (and therefore the rows' visual order) without
   // remounting any of them (same `key`s), leaving the Map's iteration order stale relative to
   // what's actually on screen — sorting by `rect.top` keeps this correct regardless.
-  function updateDropTarget(y: number) {
-    const draggedId = dragIdRef.current;
-    if (!draggedId) return;
+  const updateDropTarget = useCallback(
+    (y: number) => {
+      const draggedId = dragIdRef.current;
+      if (!draggedId) return;
 
-    // A row nested under the dragged item (only relevant while dragging a group) can't itself be
-    // a valid target — dropping the group inside/around its own descendant would create a cycle.
-    const invalid = new Set<string>([draggedId]);
-    for (const l of lists) {
-      if (isDescendant(l.id, draggedId)) invalid.add(l.id);
-    }
+      // A row nested under the dragged item (only relevant while dragging a group) can't itself
+      // be a valid target — dropping the group inside/around its own descendant would create a
+      // cycle.
+      const invalid = new Set<string>([draggedId]);
+      for (const l of lists) {
+        if (isDescendant(l.id, draggedId)) invalid.add(l.id);
+      }
 
-    const rows: DropRow[] = Array.from(rowElRefs.current.entries())
-      .filter(([id]) => !invalid.has(id))
-      .map(([id, el]) => {
-        const rect = el.getBoundingClientRect();
-        return { id, top: rect.top, bottom: rect.bottom, isGroup: lists.find((l) => l.id === id)?.kind === 'group' };
-      })
-      .sort((a, b) => a.top - b.top);
+      const rows: DropRow[] = Array.from(rowElRefs.current.entries())
+        .filter(([id]) => !invalid.has(id))
+        .map(([id, el]) => {
+          const rect = el.getBoundingClientRect();
+          return { id, top: rect.top, bottom: rect.bottom, isGroup: lists.find((l) => l.id === id)?.kind === 'group' };
+        })
+        .sort((a, b) => a.top - b.top);
 
-    const target = resolveTreeDropTarget(y, rows);
-    overIdRef.current = target?.id ?? null;
-    overZoneRef.current = target?.zone ?? null;
-    setIndicator(resolveDropIndicator(target, rows));
-  }
+      const target = resolveTreeDropTarget(y, rows);
+      overIdRef.current = target?.id ?? null;
+      overZoneRef.current = target?.zone ?? null;
+      setIndicator(resolveDropIndicator(target, rows));
+    },
+    [lists, isDescendant]
+  );
 
-  async function commitDrop(draggedId: string, target: ListDef, zone: DropZone) {
-    const dragged = lists.find((l) => l.id === draggedId);
-    if (!dragged || !isValidDrop(draggedId, target.id, zone)) return;
-    if (zone === 'inside') {
-      if (dragged.parentId !== target.id) await setListParent(draggedId, target.id);
-      setListExpanded((x) => ({ ...x, [target.id]: true }));
-      return;
-    }
-    const newParentId = target.parentId ?? null;
-    if (dragged.parentId !== newParentId) await setListParent(draggedId, newParentId);
-    const order = siblingIdsWithInsert(newParentId, draggedId, target.id, zone === 'after');
-    await reorderLists(newParentId, order);
-  }
+  const commitDrop = useCallback(
+    async (draggedId: string, target: ListDef, zone: DropZone) => {
+      const dragged = lists.find((l) => l.id === draggedId);
+      if (!dragged || !isValidDrop(draggedId, target.id, zone)) return;
+      if (zone === 'inside') {
+        if (dragged.parentId !== target.id) await setListParent(draggedId, target.id);
+        setListExpanded((x) => ({ ...x, [target.id]: true }));
+        return;
+      }
+      const newParentId = target.parentId ?? null;
+      if (dragged.parentId !== newParentId) await setListParent(draggedId, newParentId);
+      const order = siblingIdsWithInsert(newParentId, draggedId, target.id, zone === 'after');
+      await reorderLists(newParentId, order);
+    },
+    [lists, isValidDrop, setListParent, setListExpanded, siblingIdsWithInsert, reorderLists]
+  );
 
-  function finishTreeDrag() {
+  const finishTreeDrag = useCallback(() => {
     const draggedId = dragIdRef.current;
     const targetId = overIdRef.current;
     const zone = overZoneRef.current;
@@ -152,23 +171,28 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
     const target = lists.find((l) => l.id === targetId);
     if (!target) return;
     void commitDrop(draggedId, target, zone);
-  }
+  }, [lists, commitDrop]);
 
   const dragSession = usePointerDragSession({ scrollRef, onFrame: updateDropTarget });
 
   // Only engages a drag once the pointer clears a small movement threshold — a plain tap (no
   // movement) reaches the row's own button clicks (select/rename/delete/menu) normally, since
   // nothing here calls preventDefault or pointer-capture until a real drag is underway.
-  function onRowPointerDown(e: React.PointerEvent, id: string) {
-    dragSession.start(e, {
-      threshold: 6,
-      onEngage: () => {
-        dragIdRef.current = id;
-        setDragId(id);
-      },
-      onEnd: finishTreeDrag,
-    });
-  }
+  // useCallback'd — passed straight through to ListRow (see TreePane), whose own memoization
+  // (mirroring TreeRow's) needs this to stay referentially stable across unrelated renders.
+  const onRowPointerDown = useCallback(
+    (e: React.PointerEvent, id: string) => {
+      dragSession.start(e, {
+        threshold: 6,
+        onEngage: () => {
+          dragIdRef.current = id;
+          setDragId(id);
+        },
+        onEnd: finishTreeDrag,
+      });
+    },
+    [dragSession, finishTreeDrag]
+  );
 
   return { reorderMode, setReorderMode, dragId, indicator, onRowPointerDown, getRowRef };
 }
