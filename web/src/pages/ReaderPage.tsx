@@ -11,8 +11,7 @@ import { useReaderKeyboard } from '../hooks/useReaderKeyboard';
 import { useReaderSwipeNav } from '../hooks/useReaderSwipeNav';
 import { useDictionaryLookup } from '../hooks/useDictionaryLookup';
 import { flatSuttaOrder, breadcrumbFor, resolveCanonicalSuttaId } from '../lib/corpus';
-import { flattenListTree, resolveListById } from '../lib/lists';
-import { AUTO_LIST_IDS } from '../lib/autoLists';
+import { flattenListTree, resolveListById, suttaRowMeta } from '../lib/lists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { setReaderThemeColor } from '../lib/themeColor';
 import { shortcutsForScope } from '../lib/shortcuts';
@@ -24,7 +23,7 @@ import { DictionaryDock } from '../components/DictionaryDock';
 import { ReaderMenuPanel } from '../components/ReaderMenuPanel';
 import { ReaderSearchOverlay } from '../components/ReaderSearchOverlay';
 import { ReaderShortcutsModal } from '../components/ReaderShortcutsModal';
-import { HighlightCountBadge } from '../components/HighlightCountBadge';
+import { SuttaRowChips } from '../components/SuttaRowChips';
 
 export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus } = useCorpus();
@@ -79,17 +78,13 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   } = useSuttaReading(suttaId, 'reader');
   // "Highlights"/"Notes" membership (see server/src/routes/data.js's buildUserData) is redundant
   // here — the highlight gutter and the note preview above already say as much — so they're
-  // filtered out of the chip row entirely.
+  // filtered out of the chip row entirely (suttaRowMeta's own AUTO_LIST_IDS filter, same as
+  // ListPane/TreePane/ReaderSearchOverlay's use of it).
   const flatLists = useMemo(() => flattenListTree(lists), [lists]);
-  const suttaLists = useMemo(() => {
-    const raw = (suttaId && membership[suttaId]) || [];
-    return raw
-      .filter((id) => !AUTO_LIST_IDS.has(id))
-      .map((id) => {
-        const { list, breadcrumb } = resolveListById(id, flatLists);
-        return { id, list, breadcrumb };
-      });
-  }, [suttaId, membership, flatLists]);
+  const suttaChips = useMemo(
+    () => (suttaId ? suttaRowMeta([suttaId], membership, {}, flatLists).get(suttaId)?.chips ?? [] : []),
+    [suttaId, membership, flatLists]
+  );
   // Where this sutta lives in the browse tree (nikaya, any intermediate groups, down to its own
   // leaf group) — shown above the title, each segment navigating via /browse/{id}, which already
   // expands every ancestor and scrolls to it (see TreePane's useScrollToNode).
@@ -348,42 +343,27 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
               {notes[suttaId]}
             </div>
           )}
-          {(suttaLists.length > 0 || hlCount > 0) && (
-            <div className="flex flex-wrap items-center gap-[6px]" style={{ marginTop: 11 }}>
-              {suttaLists.map(({ id, list, breadcrumb }) => {
-                return (
-                  <button
-                    key={id}
-                    className="inline-flex items-center h-5 whitespace-nowrap rounded-full px-[10px] font-sans text-[11px] hover:opacity-70"
-                    style={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
-                    onClick={() =>
-                      // Must explicitly tag `fromView: 'list'` rather than relying on LibraryPage's
-                      // own "no router state at all -> fresh arrival" fallback (see its `view` init)
-                      // — @reach/router's navigate() always stamps a `{key}` onto location.state even
-                      // when no state is passed, so that fallback never actually fires for this (or
-                      // any other) in-app navigate() call; without this, the pane shown depended on
-                      // whatever view happened to be persisted from last time (works by accident when
-                      // that was already 'list', shows the tree instead when it wasn't).
-                      list && navigate(`/browse/${list.id}/${suttaId}`, { state: tagIntent({ fromView: 'list' }) })
-                    }
-                  >
-                    {breadcrumb}
-                  </button>
-                );
-              })}
-              {hlCount > 0 && (
-                <HighlightCountBadge
-                  count={hlCount}
-                  theme={theme}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setTab('highlights');
-                    setPanel(true);
-                  }}
-                />
-              )}
-            </div>
-          )}
+          <SuttaRowChips
+            chips={suttaChips}
+            hlCount={hlCount}
+            theme={theme}
+            onChipClick={(chipId) => {
+              const { list } = resolveListById(chipId, flatLists);
+              // Must explicitly tag `fromView: 'list'` rather than relying on LibraryPage's own
+              // "no router state at all -> fresh arrival" fallback (see its `view` init) —
+              // @reach/router's navigate() always stamps a `{key}` onto location.state even when
+              // no state is passed, so that fallback never actually fires for this (or any other)
+              // in-app navigate() call; without this, the pane shown depended on whatever view
+              // happened to be persisted from last time (works by accident when that was already
+              // 'list', shows the tree instead when it wasn't).
+              if (list) navigate(`/browse/${list.id}/${suttaId}`, { state: tagIntent({ fromView: 'list' }) });
+            }}
+            onHighlightClick={(e) => {
+              e.stopPropagation();
+              setTab('highlights');
+              setPanel(true);
+            }}
+          />
           <div style={{ height: 1, background: theme.rule, margin: '20px 0 22px' }} />
 
           {headings.length > 0 && (

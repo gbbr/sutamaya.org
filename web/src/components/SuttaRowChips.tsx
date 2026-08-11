@@ -1,24 +1,53 @@
 import type { SuttaRowChip } from '../lib/lists';
+import type { ThemeColors } from '../lib/types';
 import { HighlightCountBadge } from './HighlightCountBadge';
 
 interface SuttaRowChipsProps {
   chips: SuttaRowChip[];
   hlCount: number;
+  // Present only in the Reader (search overlay, sutta header) — the reader has its own
+  // light/sepia/dark theme system, independent of the app shell's own dark/light mode (see
+  // index.css's --ink), so a reader caller passes its resolved theme to get inline-styled chips
+  // matching it instead of the app-shell-tied `border-ink/25` Tailwind classes ListPane/TreePane
+  // fall back to when this is omitted. Also forwarded to HighlightCountBadge for the same reason.
+  theme?: ThemeColors;
+  // Only the reader's sutta header passes these — its chips navigate to the clicked list, and its
+  // badge opens the Highlights side-panel tab. Without a click handler, a chip/badge renders as a
+  // plain (non-interactive) span, same as ListPane/TreePane's read-only search rows, where the row
+  // itself is already the click target and a nested <button> would be invalid HTML anyway.
+  onChipClick?: (chipId: string) => void;
+  onHighlightClick?: (e: React.MouseEvent) => void;
 }
 
 // List-membership chips + highlight-count badge for one sutta row — shared by ListPane's desktop
-// rows and TreePane's mobile search results (see lib/lists.ts's suttaRowMeta for how the props
-// are computed) so the two stay visually and behaviourally identical rather than drifting apart.
-export function SuttaRowChips({ chips, hlCount }: SuttaRowChipsProps) {
+// rows, TreePane's mobile search results, the Reader's own search overlay, and the Reader's sutta
+// header (see lib/lists.ts's suttaRowMeta for how `chips`/`hlCount` are computed) so all four stay
+// visually and behaviourally identical rather than drifting apart.
+export function SuttaRowChips({ chips, hlCount, theme, onChipClick, onHighlightClick }: SuttaRowChipsProps) {
   if (chips.length === 0 && hlCount === 0) return null;
+  const ChipTag = onChipClick ? 'button' : 'span';
   return (
     <span className="flex flex-wrap items-center gap-1.5 mt-2">
       {chips.map((c) => (
-        <span key={c.id} className="inline-flex items-center h-5 whitespace-nowrap rounded-[10px] px-[9px] font-sans text-[11px] border border-ink/25">
+        <ChipTag
+          key={c.id}
+          className={`inline-flex items-center h-5 whitespace-nowrap rounded-[10px] px-[9px] font-sans text-[11px] ${
+            theme ? '' : 'border border-ink/25'
+          } ${onChipClick ? 'hover:opacity-70' : ''}`}
+          style={theme ? { border: `1px solid ${theme.rule}`, color: theme.fg } : undefined}
+          onClick={
+            onChipClick
+              ? (e) => {
+                  e.stopPropagation();
+                  onChipClick(c.id);
+                }
+              : undefined
+          }
+        >
           {c.breadcrumb}
-        </span>
+        </ChipTag>
       ))}
-      {hlCount > 0 && <HighlightCountBadge count={hlCount} />}
+      {hlCount > 0 && <HighlightCountBadge count={hlCount} theme={theme} onClick={onHighlightClick} />}
     </span>
   );
 }

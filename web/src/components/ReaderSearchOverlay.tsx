@@ -4,6 +4,8 @@ import { useUserData } from '../context/UserDataContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
 import { SEARCH_RESULTS_CAP } from '../lib/corpus';
+import { flattenListTree, suttaRowMeta } from '../lib/lists';
+import { SuttaRowChips } from './SuttaRowChips';
 import type { ThemeColors } from '../lib/types';
 
 interface ReaderSearchOverlayProps {
@@ -17,7 +19,7 @@ interface ReaderSearchOverlayProps {
 // same blurb/note as ListPane, so results are identifiable without opening them.
 export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearchOverlayProps) {
   const { corpus } = useCorpus();
-  const { notes } = useUserData();
+  const { lists, notes, membership, highlights } = useUserData();
   const [query, setQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -26,6 +28,14 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
   // hundreds of suttas, and every hit is an unvirtualized row in a small scroll panel.
   const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);
   const { activeIndex, setActiveIndex, moveBy, setRowRef } = useActiveHitIndex(query);
+
+  // Same list-membership chips + highlight-count badge as ListPane/TreePane's own search results
+  // (see lib/lists.ts's suttaRowMeta), so a reader-search row is identifiable the same way.
+  const flatLists = useMemo(() => flattenListTree(lists), [lists]);
+  const rowMeta = useMemo(
+    () => suttaRowMeta(displayHits.map((h) => h.id), membership, highlights, flatLists),
+    [displayHits, membership, highlights, flatLists]
+  );
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -80,37 +90,41 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
           style={{ color: theme.fg, borderBottom: `1px solid ${theme.rule}` }}
         />
         <div className="sc flex-1 overflow-y-auto">
-          {displayHits.map((h, i) => (
-            <button
-              key={h.id}
-              ref={setRowRef(i)}
-              className="row flex flex-col w-full text-left gap-[1px] px-5 py-3"
-              style={{
-                background: i === activeIndex ? theme.tint : 'transparent',
-                borderBottom: `1px solid ${theme.rule}`,
-              }}
-              onMouseEnter={() => setActiveIndex(i)}
-              onClick={() => onOpenSutta(h.matchedId ?? h.id)}
-            >
-              <span>
-                <span className="font-sans text-[11.5px] font-bold mr-2.5" style={{ color: theme.dim }}>
-                  {h.sutta.ref}
+          {displayHits.map((h, i) => {
+            const { chips, hlCount } = rowMeta.get(h.id) ?? { chips: [], hlCount: 0 };
+            return (
+              <button
+                key={h.id}
+                ref={setRowRef(i)}
+                className="row flex flex-col w-full text-left gap-[1px] px-5 py-3"
+                style={{
+                  background: i === activeIndex ? theme.tint : 'transparent',
+                  borderBottom: `1px solid ${theme.rule}`,
+                }}
+                onMouseEnter={() => setActiveIndex(i)}
+                onClick={() => onOpenSutta(h.matchedId ?? h.id)}
+              >
+                <span>
+                  <span className="font-sans text-[11.5px] font-bold mr-2.5" style={{ color: theme.dim }}>
+                    {h.sutta.ref}
+                  </span>
+                  <span className="text-[15.5px] font-semibold leading-[1.3]">{h.sutta.en}</span>
                 </span>
-                <span className="text-[15.5px] font-semibold leading-[1.3]">{h.sutta.en}</span>
-              </span>
-              <span className="font-serif text-[13px] italic" style={{ color: theme.pali }}>
-                {h.sutta.pali}
-              </span>
-              {(notes[h.id] || h.sutta.blurb) && (
-                <span
-                  className={`text-[13px] leading-[1.45] mt-[3px] ${notes[h.id] ? 'pl-[8px] border-l-2' : 'italic'}`}
-                  style={{ color: theme.dim, borderColor: notes[h.id] ? theme.rule : undefined }}
-                >
-                  {notes[h.id] || h.sutta.blurb}
+                <span className="font-serif text-[13px] italic" style={{ color: theme.pali }}>
+                  {h.sutta.pali}
                 </span>
-              )}
-            </button>
-          ))}
+                {(notes[h.id] || h.sutta.blurb) && (
+                  <span
+                    className={`text-[13px] leading-[1.45] mt-[3px] ${notes[h.id] ? 'pl-[8px] border-l-2' : 'italic'}`}
+                    style={{ color: theme.dim, borderColor: notes[h.id] ? theme.rule : undefined }}
+                  >
+                    {notes[h.id] || h.sutta.blurb}
+                  </span>
+                )}
+                <SuttaRowChips chips={chips} hlCount={hlCount} theme={theme} />
+              </button>
+            );
+          })}
           {query.trim() && hits.length === 0 && (
             <div className="font-sans text-center text-[13px] py-8 px-5" style={{ color: theme.dim }}>
               No matches.
