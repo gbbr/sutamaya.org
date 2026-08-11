@@ -12,6 +12,11 @@ afterEach(() => cleanup());
 // every test file that happens to render one of them.
 Element.prototype.scrollIntoView = function scrollIntoView() {};
 
+// Same reasoning as scrollIntoView above — jsdom implements neither, but the reader's own
+// scrollToSegment (useSuttaReading.ts) and its "back to top" button call them directly.
+Element.prototype.scrollBy = function scrollBy() {};
+Element.prototype.scrollTo = function scrollTo() {};
+
 // jsdom implements no real layout, so Range.prototype has neither getClientRects nor
 // getBoundingClientRect at all — useHighlightPopup calls both while building a highlight-popup
 // position from a selection, so any selection-driven test throws without these stubs.
