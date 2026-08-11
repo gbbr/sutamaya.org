@@ -4,6 +4,7 @@ import { ArrowUpDown, List, Folder } from 'lucide-react';
 import type { ListDef, ListKind } from '../lib/types';
 import type { DropIndicator } from '../lib/listTreeDrop';
 import { ListRow, type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
+import { SlidingPillToggle } from './SlidingPillToggle';
 
 interface ListsTreeViewProps {
   nodeId?: string;
@@ -121,30 +122,24 @@ export function ListsTreeView({
             spellCheck={false}
           />
           {/* Icon-only List/Group toggle (no text labels — the input's own placeholder
-              already says which one is picked) — a single button spanning both icons, so
+              already says which one is picked) — a single control spanning both icons, so
               a click anywhere on it flips draftKind, not just on whichever side happens to
               be inactive. onMouseDown preventDefault keeps focus on the input instead of
               shifting it here, so flipping kind mid-type doesn't trigger the input's own
               onBlur (which cancels the whole draft). */}
-          <button
-            type="button"
-            aria-label={draftKind === 'list' ? 'Switch to Group' : 'Switch to List'}
-            title={draftKind === 'list' ? 'Switch to Group' : 'Switch to List'}
-            onMouseDown={(e) => e.preventDefault()}
+          <SlidingPillToggle
+            active={draftKind === 'list' ? 'left' : 'right'}
             onClick={() => setDraftKind((k) => (k === 'list' ? 'group' : 'list'))}
-            className="relative flex-none flex items-center p-[2px] rounded-full bg-ink/[.09]"
-          >
-            <div
-              className="absolute top-[2px] bottom-[2px] rounded-full bg-chip border border-ink/[.12] shadow-[0_1px_2px_rgba(27,25,23,.15)] transition-[left] duration-150 ease-out"
-              style={{ left: draftKind === 'list' ? 2 : '50%', width: 'calc(50% - 2px)' }}
-            />
-            <span className={`relative z-10 w-[26px] h-[26px] flex items-center justify-center transition-colors ${draftKind === 'list' ? 'text-ink' : 'text-ink/50'}`}>
-              <List size={13} strokeWidth={2} />
-            </span>
-            <span className={`relative z-10 w-[26px] h-[26px] flex items-center justify-center transition-colors ${draftKind === 'group' ? 'text-ink' : 'text-ink/50'}`}>
-              <Folder size={13} strokeWidth={2} />
-            </span>
-          </button>
+            onMouseDown={(e) => e.preventDefault()}
+            ariaLabel={draftKind === 'list' ? 'Switch to Group' : 'Switch to List'}
+            title={draftKind === 'list' ? 'Switch to Group' : 'Switch to List'}
+            leftIcon={<List size={13} strokeWidth={2} />}
+            rightIcon={<Folder size={13} strokeWidth={2} />}
+            leftIconClassName={draftKind === 'list' ? 'text-ink' : 'text-ink/50'}
+            rightIconClassName={draftKind === 'group' ? 'text-ink' : 'text-ink/50'}
+            slotSize={26}
+            thumbClassName="bg-chip border border-ink/[.12] shadow-[0_1px_2px_rgba(27,25,23,.15)] transition-[left] duration-150 ease-out"
+          />
         </div>
       )}
       {topLevelLists.map((l, idx) => (

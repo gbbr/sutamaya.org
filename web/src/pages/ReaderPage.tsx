@@ -22,7 +22,7 @@ import { HighlightGutter } from '../components/HighlightGutter';
 import { DictionaryDock } from '../components/DictionaryDock';
 import { ReaderMenuPanel } from '../components/ReaderMenuPanel';
 import { ReaderSearchOverlay } from '../components/ReaderSearchOverlay';
-import { ReaderShortcutsModal } from '../components/ReaderShortcutsModal';
+import { ShortcutsModal } from '../components/ShortcutsModal';
 import { SuttaRowChips } from '../components/SuttaRowChips';
 
 export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentProps<{ suttaId: string }>) {
@@ -489,7 +489,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
       {searchOpen && <ReaderSearchOverlay theme={theme} onOpenSutta={onSearchOpenSutta} onClose={() => setSearchOpen(false)} />}
 
       {shortcutsOpen && (
-        <ReaderShortcutsModal shortcuts={shortcutsForScope('reader')} theme={theme} onClose={() => setShortcutsOpen(false)} />
+        <ShortcutsModal shortcuts={shortcutsForScope('reader')} theme={theme} onClose={() => setShortcutsOpen(false)} />
       )}
     </div>
   );
