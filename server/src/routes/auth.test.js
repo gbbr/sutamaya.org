@@ -45,13 +45,19 @@ function mockPayload(overrides = {}) {
 describe('routes/auth.js (Firestore emulator, real cookie-session)', () => {
   const originalClientId = process.env.GOOGLE_CLIENT_ID;
   const createdUserIds = [];
+  let consoleErrorSpy;
 
   beforeEach(() => {
     verifyIdToken.mockReset();
     process.env.GOOGLE_CLIENT_ID = 'test-client-id';
+    // routes/auth.js deliberately console.errors on a failed credential verification (see its own
+    // comment) — expected here since two tests below exercise exactly that rejection path; silence
+    // it so a passing test run doesn't print what looks like an error.
+    consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(async () => {
+    consoleErrorSpy.mockRestore();
     if (originalClientId === undefined) delete process.env.GOOGLE_CLIENT_ID;
     else process.env.GOOGLE_CLIENT_ID = originalClientId;
     while (createdUserIds.length) {
