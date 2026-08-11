@@ -376,19 +376,7 @@ something there.
   resolution.
 - The reader's "change translation source" control is a static label ("Sujato (2018)") — this
   dataset only has one English translation per collection, so there's nothing to switch to.
-- "My lists" is two kinds of entry, both `ListDef`s distinguished by `kind` (see the Firestore
-  schema above): a plain **list** holds suttas (`items`) and can't have children; a **group**
-  ("ListGroup") is the reverse — it can only contain other lists/groups and can never hold items
-  itself, enforced both server-side (`invalidParentReason` in `routes/lists.js`) and client-side
-  (the list tree's drag-and-drop only offers the "nest inside" drop zone over a group row, and
-  only a group row gets a child-creating "+"; see `isValidListDrop` in `lib/listTreeDrop.ts`). The
-  "+" next to "My lists" itself only ever creates a top-level group — the sole way to create a
-  plain list is the "+" on a group's own row (or, in the reader's `ListMembershipPicker`, typing a
-  name that doesn't exist yet offers creating either a list or a group directly, list creation
-  there is the one path that can still land a list at the top level). Rename (double-click a
-  row's name, or the pencil button), delete (children re-parent up one level rather than being
-  orphaned), and reordering (both of siblings and of a list's own suttas) all work the same
-  regardless of kind. `ListPane` (a list's own suttas) and `ListRow` (the list tree itself,
+- `ListPane` (a list's own suttas) and `ListRow` (the list tree itself,
   rendered by `TreePane`'s `ListsTreeView` sub-view, reorder/nest) both drive reordering via the
   same native Pointer Events approach (touch and mouse alike, with live reordering and edge
   auto-scroll — the shared window-listener/rAF/auto-scroll plumbing lives in
