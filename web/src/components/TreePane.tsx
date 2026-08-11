@@ -23,6 +23,7 @@ import { SuttaRowChips } from './SuttaRowChips';
 import { type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
 import { CorpusTreeView } from './CorpusTreeView';
 import { ListsTreeView } from './ListsTreeView';
+import { SlidingPillToggle } from './SlidingPillToggle';
 
 interface PersistedExpansion {
   corpus: string[];
@@ -466,35 +467,24 @@ export function TreePane({
       <header className="flex-none px-[18px] pt-4 pb-3.5 border-b border-ink/10">
         <div className="flex items-center gap-2">
           <div className="text-[22px] font-semibold tracking-[-.01em] flex-1 truncate">sutamaya</div>
+          {/* Mobile-sized to roughly match the "sutamaya" title's own height — this and the
+              account badge next to it are the two touch targets in this row people actually
+              reach for repeatedly. */}
           {user && (
-            <button
-              className="relative flex flex-none items-center rounded-full p-[2px] bg-ink/[.09]"
-              aria-label={paneView === 'library' ? 'Switch to My Lists' : 'Switch to Library'}
-              title={paneView === 'library' ? 'Switch to My Lists (x)' : 'Switch to Library (x)'}
+            <SlidingPillToggle
+              active={paneView === 'library' ? 'left' : 'right'}
               onClick={() => setPaneView((v) => (v === 'library' ? 'lists' : 'library'))}
-            >
-              <div
-                className={`absolute top-[2px] bottom-[2px] rounded-full border border-ink/[.12] shadow-[0_1px_2px_rgba(27,25,23,.18)] transition-[left,background-color] duration-200 ease-out ${
-                  paneView === 'lists' ? 'bg-[#5C6B73]' : 'bg-chip'
-                }`}
-                style={{ left: paneView === 'library' ? 2 : '50%', width: 'calc(50% - 2px)' }}
-              />
-              {/* Mobile-sized to roughly match the "sutamaya" title's own height — this and the
-                  account badge next to it are the two touch targets in this row people actually
-                  reach for repeatedly. */}
-              <span
-                className={`relative z-10 flex items-center justify-center rounded-full transition-colors ${paneView === 'library' ? 'text-ink' : 'text-ink/45'}`}
-                style={mobile ? { width: 28, height: 28 } : { width: 24, height: 24 }}
-              >
-                <Library size={mobile ? 14 : 13} strokeWidth={2} />
-              </span>
-              <span
-                className={`relative z-10 flex items-center justify-center rounded-full transition-colors ${paneView === 'lists' ? 'text-[#FBFAF7]' : 'text-ink/45'}`}
-                style={mobile ? { width: 28, height: 28 } : { width: 24, height: 24 }}
-              >
-                <List size={mobile ? 14 : 13} strokeWidth={2} />
-              </span>
-            </button>
+              ariaLabel={paneView === 'library' ? 'Switch to My Lists' : 'Switch to Library'}
+              title={paneView === 'library' ? 'Switch to My Lists (x)' : 'Switch to Library (x)'}
+              leftIcon={<Library size={mobile ? 14 : 13} strokeWidth={2} />}
+              rightIcon={<List size={mobile ? 14 : 13} strokeWidth={2} />}
+              leftIconClassName={paneView === 'library' ? 'text-ink' : 'text-ink/45'}
+              rightIconClassName={paneView === 'lists' ? 'text-[#FBFAF7]' : 'text-ink/45'}
+              slotSize={mobile ? 28 : 24}
+              thumbClassName={`border border-ink/[.12] shadow-[0_1px_2px_rgba(27,25,23,.18)] transition-[left,background-color] duration-200 ease-out ${
+                paneView === 'lists' ? 'bg-[#5C6B73]' : 'bg-chip'
+              }`}
+            />
           )}
           {/* Same outer height as the pane toggle to its left (24px icon + 2px padding on each
               side = 28/32) and the account badge to its right, so all three sit flush along the
