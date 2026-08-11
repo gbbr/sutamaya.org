@@ -1,11 +1,11 @@
 # Data brief: linking `data/` into one tree
 
-Self-note on how the four pieces under `data/` fit together to drive Sutamaya's
+Self-note on how the pieces under `data/` fit together to drive Sutamaya's
 Sutta Browser, Reader, and Pali dictionary overlay. See `design/README.md`
 (git history, since it's deleted from the working tree) for the product spec
 this data feeds.
 
-## The four pieces
+## The five pieces
 
 ```
 data/
@@ -18,6 +18,9 @@ data/
     name/          titles, per collection, in English (Sujato translation)
     blurb/         one-paragraph descriptions for nikayas/vaggas/suttas
     sutta/         English text, segmented (Sujato translation)
+  html/pli/ms/sutta/ SuttaCentral's per-segment HTML structure (verse/heading/end/speaker/
+                   list-item), mirrored from bilara-data via scripts/fetch-html-structure.mjs
+                   — used only to set each segment's `role`, not part of the primary text data
   pli2en_dpd.json  standalone Pali->English dictionary (142,495 headwords)
 ```
 

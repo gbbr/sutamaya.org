@@ -66,11 +66,13 @@ writes:
   **recursively-nested** `chapters[]` — a row with `chapters` expands further, one without is
   where suttas live) plus a flat `suttas` map (`uid -> {ref, node, en, pali, blurb, min}`).
 - `web/public/data/text/{uid}.json` — one file per leaf document: an ordered array of
-  `{key, pali, en, role?, note?}` segments (structural "0.*" header lines are stripped; that's
-  where titles/blurbs come from instead — see `headerTitle()` in the script). `role` (omitted for
-  the common plain-prose case) is one of `'verse' | 'heading' | 'end' | 'speaker'`, set from
-  SuttaCentral's own structural markup — see below and `SegmentedText.tsx`'s `roleStyle()`, which
-  is what actually renders each one distinctly. `note` (also omitted when absent) is Sujato's own
+  `{key, pali, en, role?, headingLevel?, note?}` segments (structural "0.*" header lines are
+  stripped; that's where titles/blurbs come from instead — see `headerTitle()` in the script).
+  `role` (omitted for the common plain-prose case) is one of
+  `'verse' | 'heading' | 'end' | 'speaker' | 'list-item'`, set from SuttaCentral's own structural
+  markup — see below and `SegmentedText.tsx`'s `roleStyle()`, which is what actually renders each
+  one distinctly (`headingLevel`, 2–5, is set alongside `role: 'heading'` for a nested
+  sub-heading). `note` (also omitted when absent) is Sujato's own
   translator footnote for that segment, from `data/sujato/notes/{collection}/...` (same uid/
   segment-keyed, range-batched files as everything else) — rendered as a small clickable asterisk
   at the end of the segment (`SegmentedText.tsx`), which the reader can hide entirely with "c" or
@@ -95,16 +97,18 @@ also covers the `uddanagatha`/`vagguddanagatha` mnemonic verses at a chapter's e
 `verse-line` the same way, `<h2>`/`<h3>` for a sub-heading inside a longer document (e.g. DN9's
 own internal sections — distinct from the "0.*" title lines already stripped), a closing colophon
 note (`class='endsutta'`/`'endvagga'`/`'endsection'`/`'endbook'`/`'endkanda'`/bare `'end'`, or
-`'uddana-intro'` — "Their mnemonic:"), or `class='speaker'` for an inline dialogue attribution
-embedded mid-verse ("said the Buddha,"). This is language-independent structure (a verse is a
+`'uddana-intro'` — "Their mnemonic:"), `class='speaker'` for an inline dialogue attribution
+embedded mid-verse ("said the Buddha,"), or an `<li>` for a genuine numbered list embedded in body
+prose (`role: 'list-item'`, e.g. DN28 §10's four types of practice). This is language-independent
+structure (a verse is a
 verse regardless of translation), so one `html/` file covers both the Pali and English text for
 the same segment keys. Unlike `data/pali/`/`data/sujato/`, it isn't part of the primary dataset —
 `scripts/fetch-html-structure.mjs` is a one-time (not part of
 `npm run build`) script that downloads it from bilara-data on GitHub, skipping files that already
 exist locally unless `--force`; re-run it (`node scripts/fetch-html-structure.mjs`) if
 `data/pali/sutta/` ever gains files it doesn't have a mirror for yet. `build-corpus.mjs` reads it
-only to set each segment's `role` (`roleFor()`, matched in heading → verse → end → speaker order)
-— the `<p>`/`<blockquote>` wrapper structure itself isn't otherwise used; `SegmentedText.tsx`
+only to set each segment's `role` (`roleFor()`, matched in heading → verse → end → speaker →
+list-item order) — the `<p>`/`<blockquote>` wrapper structure itself isn't otherwise used; `SegmentedText.tsx`
 derives its own paragraph/stanza grouping straight from segment key numbering (see its
 `paragraphOf()`), which happens to already line up with `html/`'s `<p>` boundaries for both prose
 paragraphs and verse stanzas. A colophon note (`role: 'end'`) is frequently Pali-only — Sujato's
@@ -290,12 +294,18 @@ look like broken auth (cookie silently not persisted) — it isn't; see the
   assigned `g` — see Backend above) and then re-merged for display/counting by `lib/highlights.ts`'s
   `groupHighlights()`, which groups by that shared `g` rather than disjoint pieces.
 - `TreePane`'s Library/My Lists toggle — a compact icon-based segmented control on the title row
-  switches between the corpus browse tree and the user's list tree; state persists across reloads
-  via `localStorage`.
-- Routing is URL-driven: `/browse/:nodeId`
-  and `/browse/:nodeId/:suttaId` render `LibraryPage` (tree/list, responsive to viewport
-  width — see `LayoutContext.mobile/twoPane/desktop`); `/read/:suttaId` renders `ReaderPage`
-  full-screen; `/settings` is a separate route. There's no login/register route — Google
+  switches between the corpus browse tree (`CorpusTreeView`) and the user's list tree
+  (`ListsTreeView`, which renders `ListRow` recursively); state persists across reloads via
+  `localStorage`. `TreePane` itself still owns cross-cutting state (list CRUD via `useListCrud`,
+  the derived tree index via `useListTreeIndex`, auto-list ordering) and passes it down to
+  whichever sub-view is active.
+- Routing is URL-driven: `/browse/:nodeId/*suttaId` is one splat route (not two separate route
+  elements for the with/without-sutta cases) rendering `LibraryPage` (tree/list, responsive to
+  viewport width — see `LayoutContext.mobile/twoPane/desktop`) — deliberately a single element so
+  selecting/deselecting a sutta doesn't remount `LibraryPage` (and every pane's scroll position
+  with it); the splat gives `''` (not `undefined`) when no sutta is selected. `/read/:suttaId`
+  renders `ReaderPage` full-screen; `/settings` is a separate route. There's no login/register
+  route — Google
   sign-in is triggered in place (the account badge in `TreePane`, or `promptGoogleSignIn()`
   wherever a signed-out user attempts an authenticated action). A sutta's sibling list for
   Prev/Next in the reader comes from `corpus.suttas[id].node`, not from however the reader was
@@ -370,19 +380,21 @@ something there.
   schema above): a plain **list** holds suttas (`items`) and can't have children; a **group**
   ("ListGroup") is the reverse — it can only contain other lists/groups and can never hold items
   itself, enforced both server-side (`invalidParentReason` in `routes/lists.js`) and client-side
-  (`TreePane`'s drag-and-drop only offers the "nest inside" drop zone over a group row, and only
-  a group row gets a child-creating "+"; see `isValidDrop`). The "+" next to "My lists" itself
-  only ever creates a top-level group — the sole way to create a plain list is the "+" on a
-  group's own row (or, in the reader's `ListMembershipPicker`, typing a name that doesn't exist
-  yet offers creating either a list or a group directly, list creation there is the one path that
-  can still land a list at the top level). Rename (double-click a row's name, or the pencil
-  button), delete (children re-parent up one level rather than being orphaned), and reordering
-  (both of siblings and of a list's own suttas) all work the same regardless of kind. `ListPane`
-  (a list's own suttas) and `TreePane`'s `ListRow` (the list tree itself, reorder/nest) both drive
-  reordering via the same native Pointer Events approach (touch and mouse alike, with live
-  reordering and edge auto-scroll) — not HTML5 drag-and-drop, which doesn't fire reliably on
-  touch; `TreePane` additionally offers button controls (rename/delete/move) as an always-works
-  alternative to dragging.
+  (the list tree's drag-and-drop only offers the "nest inside" drop zone over a group row, and
+  only a group row gets a child-creating "+"; see `isValidListDrop` in `lib/listTreeDrop.ts`). The
+  "+" next to "My lists" itself only ever creates a top-level group — the sole way to create a
+  plain list is the "+" on a group's own row (or, in the reader's `ListMembershipPicker`, typing a
+  name that doesn't exist yet offers creating either a list or a group directly, list creation
+  there is the one path that can still land a list at the top level). Rename (double-click a
+  row's name, or the pencil button), delete (children re-parent up one level rather than being
+  orphaned), and reordering (both of siblings and of a list's own suttas) all work the same
+  regardless of kind. `ListPane` (a list's own suttas) and `ListRow` (the list tree itself,
+  rendered by `TreePane`'s `ListsTreeView` sub-view, reorder/nest) both drive reordering via the
+  same native Pointer Events approach (touch and mouse alike, with live reordering and edge
+  auto-scroll — the shared window-listener/rAF/auto-scroll plumbing lives in
+  `usePointerDragSession`, the list tree's own drop-target resolution in `useListTreeDrag`) — not
+  HTML5 drag-and-drop, which doesn't fire reliably on touch; `ListRow` additionally offers button
+  controls (rename/delete/move) as an always-works alternative to dragging.
 - Cache staleness has no revalidation path for anything keyed by an unversioned URL:
   `dictionary.json`, `data/text/{uid}.json`, and `/fonts/*.woff2` are all `CacheFirst`
   with a 1-year expiration (`vite.config.ts`), so a data/font fix shipped after a user has already
