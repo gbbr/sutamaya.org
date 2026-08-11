@@ -212,7 +212,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
             </div>
           </div>
           <div className="font-sans text-xs text-ink/[.42] mt-[2px]">
-            {title.ref && <span className="font-sans font-bold text-ink/45">{title.ref} · </span>}{meta}
+            {title.ref && <span className="font-sans text-ink/45">{title.ref} · </span>}{meta}
           </div>
         </div>
         {currentList && !currentList.auto && (
