@@ -160,14 +160,16 @@ export function breadcrumbFor(corpus: Corpus, nodeId: string): BreadcrumbEntry[]
   return chain.map((n) => ({ id: n.id, label: n.label }));
 }
 
-export function nodeLabel(corpus: Corpus, id: string, lists: ListDef[]): string {
+// `ref` is only present for a chapter-kind node (e.g. "MN1–10"), matching TreeRow's own
+// ref/label split so a title bar can style the ref the same way (see ListPane's title header).
+export function nodeLabel(corpus: Corpus, id: string, lists: ListDef[]): { ref?: string; label: string } {
   const found = findNode(corpus, id);
   if (found) {
-    if (found.kind === 'chapter') return `${found.node.ref} · ${found.node.label}`;
-    return found.node.label;
+    if (found.kind === 'chapter') return { ref: found.node.ref, label: found.node.label };
+    return { label: found.node.label };
   }
   const list = lists.find((l) => String(l.id) === id);
-  return list ? list.label : '';
+  return { label: list ? list.label : '' };
 }
 
 // A node "has children to expand" (nikaya rows only ever toggle open/closed, never
