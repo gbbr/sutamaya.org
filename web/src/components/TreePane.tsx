@@ -12,13 +12,14 @@ import { useListCrud } from '../hooks/useListCrud';
 import { useListTreeDrag } from '../hooks/useListTreeDrag';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
 import { ancestorsOf, findNode, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
-import { ancestorsOfList } from '../lib/lists';
+import { ancestorsOfList, flattenListTree, suttaRowMeta } from '../lib/lists';
 import { derivePaneViewSync } from '../lib/paneView';
 import { TREE_VIEW_KEY, TREE_EXPANDED_KEY } from '../lib/storageKeys';
 import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
 import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
 import type { ListDef } from '../lib/types';
 import { SignedInBadge } from './SignedInBadge';
+import { SuttaRowChips } from './SuttaRowChips';
 import { type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
 import { CorpusTreeView } from './CorpusTreeView';
 import { ListsTreeView } from './ListsTreeView';
@@ -100,7 +101,7 @@ export function TreePane({
   flashNodeId,
 }: TreePaneProps) {
   const { corpus } = useCorpus();
-  const { lists, createList, renameList, removeList, reorderLists, setListParent } = useUserData();
+  const { lists, membership, notes, highlights, createList, renameList, removeList, reorderLists, setListParent } = useUserData();
   const { user, promptGoogleSignIn } = useAuth();
   const { mobile, paneW } = useLayout();
   const scrollRef = useScrollMemory<HTMLDivElement>('tree', visible);
@@ -312,6 +313,15 @@ export function TreePane({
   // SEARCH_RESULTS_CAP (see its own comment); `hits.length` (uncapped) still drives the "N
   // results" label below so that count stays honest.
   const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);
+
+  // List-membership chips, highlight count, and note per hit — same lookup ListPane's own rows
+  // use (see suttaRowMeta), needed here too since mobile has no ListPane to show them instead
+  // (see the mobile search-row rendering below).
+  const flatLists = useMemo(() => flattenListTree(lists), [lists]);
+  const searchRowMeta = useMemo(
+    () => suttaRowMeta(displayHits.map((h) => h.id), membership, highlights, flatLists),
+    [displayHits, membership, highlights, flatLists]
+  );
 
   // Mirrors the currently keyboard-highlighted hit up to LibraryPage so it can show the same
   // highlight on ListPane's own row for it (see this pane's own render below, which stops
@@ -564,27 +574,39 @@ export function TreePane({
               {hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ results` : `${hits.length} ${hits.length === 1 ? 'result' : 'results'}`}
             </div>
             {/* On desktop, ListPane is visible right next to this pane and renders the same hits
-                with more detail (blurb/note, list chips, highlight count) — showing them again
+                with more detail (blurb, list chips, highlight count, note) — showing them again
                 here too was pure duplication. This pane still owns the input and keyboard nav
                 (see the keydown effect above, and onActiveHitChange mirroring the highlight into
                 ListPane); on mobile, where ListPane isn't shown at all, it's still the only place
-                results can appear, so it keeps rendering them itself. */}
+                results can appear, so it renders list chips/highlight-count/note itself too
+                (skipping the blurb — screen space here is tighter than ListPane's full-width
+                column, and title/ref/Pali already identify the result). */}
             {mobile && (
               <>
-                {displayHits.map(({ id, matchedId, sutta }, i) => (
-                  <button
-                    key={id}
-                    ref={setHitRowRef(i)}
-                    className={`row flex flex-col w-full text-left gap-[1px] px-[18px] py-[11px] border-b border-ink/[.07] ${i === searchActiveIndex ? 'bg-ink/[.06]' : ''}`}
-                    onClick={() => openHit(matchedId ?? id)}
-                  >
-                    <span>
-                      <span className="font-sans text-[11.5px] font-bold text-ink/60 mr-2.5">{sutta.ref}</span>
-                      <span className="text-[16px] font-semibold leading-[1.3]">{sutta.en}</span>
-                    </span>
-                    <span className="font-serif text-[13.5px] italic text-accent-text">{sutta.pali}</span>
-                  </button>
-                ))}
+                {displayHits.map(({ id, matchedId, sutta }, i) => {
+                  const note = notes[id];
+                  const { chips, hlCount } = searchRowMeta.get(id) ?? { chips: [], hlCount: 0 };
+                  return (
+                    <button
+                      key={id}
+                      ref={setHitRowRef(i)}
+                      className={`row flex flex-col w-full text-left gap-[1px] px-[18px] py-[11px] border-b border-ink/[.07] ${i === searchActiveIndex ? 'bg-ink/[.06]' : ''}`}
+                      onClick={() => openHit(matchedId ?? id)}
+                    >
+                      <span>
+                        <span className="font-sans text-[11.5px] font-bold text-ink/60 mr-2.5">{sutta.ref}</span>
+                        <span className="text-[16px] font-semibold leading-[1.3]">{sutta.en}</span>
+                      </span>
+                      <span className="font-serif text-[13.5px] italic text-accent-text">{sutta.pali}</span>
+                      {note && (
+                        <span className="block font-serif text-[14px] leading-[1.4] mt-[6px] pl-[10px] border-l-2 border-ink/30">
+                          {note}
+                        </span>
+                      )}
+                      <SuttaRowChips chips={chips} hlCount={hlCount} />
+                    </button>
+                  );
+                })}
                 {hits.length === 0 && (
                   <div className="font-sans text-center text-[13px] text-ink/40 py-[30px] px-5">No matches.</div>
                 )}

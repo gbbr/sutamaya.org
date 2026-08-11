@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { ancestorsOfList, applyListReorder } from './lists';
-import type { ListDef } from './types';
+import { ancestorsOfList, applyListReorder, flattenListTree, suttaRowMeta } from './lists';
+import { HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from './autoLists';
+import type { Highlight, ListDef } from './types';
 
 const lists: ListDef[] = [
   { id: 'g1', label: 'Suttas to study', parentId: null, kind: 'group', items: [] },
@@ -65,5 +66,42 @@ describe('applyListReorder', () => {
     const alreadyThere: ListDef = { id: 'a', label: 'A', parentId: 'g1', kind: 'list', items: [] };
     const result = applyListReorder([alreadyThere], 'g1', ['a']);
     expect(result[0]).toBe(alreadyThere);
+  });
+});
+
+function h(id: string, i: number, s: number, e: number, g: string, c = '#ffe08a'): Highlight {
+  return { id, i, s, e, c, g };
+}
+
+describe('suttaRowMeta', () => {
+  const flatLists = flattenListTree(lists);
+
+  it('resolves each membership id to its chip breadcrumb, nested lists included', () => {
+    const map = suttaRowMeta(['dn1'], { dn1: ['l1', 'l2'] }, {}, flatLists);
+    expect(map.get('dn1')?.chips).toEqual([
+      { id: 'l1', breadcrumb: 'Suttas to study / Favorites' },
+      { id: 'l2', breadcrumb: 'Read later' },
+    ]);
+  });
+
+  it('filters the auto-managed lists (Highlights/Notes) out of the chips', () => {
+    const map = suttaRowMeta(['dn1'], { dn1: ['l2', HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID] }, {}, flatLists);
+    expect(map.get('dn1')?.chips).toEqual([{ id: 'l2', breadcrumb: 'Read later' }]);
+  });
+
+  it('counts merged highlight groups (by shared groupId), not raw highlight docs', () => {
+    const highlights = { dn1: [h('a', 0, 2, 5, 'g1'), h('b', 1, 0, 3, 'g1'), h('c', 2, 0, 4, 'g2')] };
+    const map = suttaRowMeta(['dn1'], {}, highlights, flatLists);
+    expect(map.get('dn1')?.hlCount).toBe(2);
+  });
+
+  it('gives an empty-chips/zero-count entry for a sutta with no membership or highlights', () => {
+    const map = suttaRowMeta(['dn1'], {}, {}, flatLists);
+    expect(map.get('dn1')).toEqual({ chips: [], hlCount: 0 });
+  });
+
+  it('produces one entry per requested id', () => {
+    const map = suttaRowMeta(['dn1', 'dn2'], { dn1: ['l2'] }, {}, flatLists);
+    expect([...map.keys()]).toEqual(['dn1', 'dn2']);
   });
 });
