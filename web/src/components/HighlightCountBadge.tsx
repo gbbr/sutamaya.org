@@ -22,6 +22,7 @@ export function HighlightCountBadge({ count, onClick, theme, style }: HighlightC
   const Tag = onClick ? 'button' : 'span';
   return (
     <Tag
+      data-component="HighlightCountBadge"
       className="inline-flex items-center gap-1 h-5 whitespace-nowrap rounded-full px-[9px] font-sans text-[11px] font-bold bg-ink/10 text-ink/60"
       style={theme ? { background: theme.tint, color: theme.fg, ...style } : style}
       onClick={onClick}

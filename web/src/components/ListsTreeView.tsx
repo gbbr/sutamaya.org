@@ -75,7 +75,7 @@ export function ListsTreeView({
   autoLists,
 }: ListsTreeViewProps) {
   return (
-    <div>
+    <div data-component="ListsTreeView">
       <div className="flex items-center justify-between pl-[18px] pr-[10px] pt-2 pb-1">
         <span className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">My lists</span>
         <div className="flex items-center gap-[7px]">
