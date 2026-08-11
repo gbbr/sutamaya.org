@@ -27,7 +27,7 @@ export function SuttaRowChips({ chips, hlCount, theme, onChipClick, onHighlightC
   if (chips.length === 0 && hlCount === 0) return null;
   const ChipTag = onChipClick ? 'button' : 'span';
   return (
-    <span className="flex flex-wrap items-center gap-1.5 mt-2">
+    <span data-component="SuttaRowChips" className="flex flex-wrap items-center gap-1.5 mt-2">
       {chips.map((c) => (
         <ChipTag
           key={c.id}

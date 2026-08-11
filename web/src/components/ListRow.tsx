@@ -131,7 +131,7 @@ export const ListRow = memo(function ListRow({
   const myEdge = indicator?.id === list.id ? indicator.edge : null;
 
   return (
-    <div>
+    <div data-component="ListRow">
       <div
         ref={getRowRef(list.id)}
         data-node-id={list.id}

@@ -44,6 +44,7 @@ export function SlidingPillToggle({
   return (
     <button
       type="button"
+      data-component="SlidingPillToggle"
       className="relative flex flex-none items-center rounded-full p-[2px] bg-ink/[.09]"
       aria-label={ariaLabel}
       title={title}

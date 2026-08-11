@@ -36,7 +36,7 @@ export const TreeRow = memo(function TreeRow({
   const open = !!expanded[node.id];
   const { mobile } = useLayout();
   return (
-    <div>
+    <div data-component="TreeRow">
       <button
         data-node-id={node.id}
         className={`row flex items-start gap-[9px] w-full text-left pr-[18px] py-[9px] border-b border-ink/[.07] transition-colors duration-500 ${

@@ -19,7 +19,7 @@ interface CorpusTreeViewProps {
 // and the header/search chrome around both trees.
 export function CorpusTreeView({ corpus, expanded, onToggle, onSelect, nodeId, flashNodeId }: CorpusTreeViewProps) {
   return (
-    <div>
+    <div data-component="CorpusTreeView">
       {corpus.nikayas.map((n) => {
         const open = !!expanded[n.id];
         const expandableNode = isExpandable(n);
