@@ -75,7 +75,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     close: closePop,
     popStop,
     openPop,
-  } = useSuttaReading(suttaId, 'reader');
+  } = useSuttaReading(suttaId, 'reader', !!requestedSubUid);
   // "Highlights"/"Notes" membership (see server/src/routes/data.js's buildUserData) is redundant
   // here — the highlight gutter and the note preview above already say as much — so they're
   // filtered out of the chip row entirely (suttaRowMeta's own AUTO_LIST_IDS filter, same as
@@ -144,11 +144,13 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
 
   // Landed here via a deep link/search hit for one specific inner sutta of a batched document
   // (see requestedSubUid above) — scroll to its first segment once the batch's text has loaded.
-  // Runs a frame after mount/load, same as jumpToHighlight below, which is what lets it win over
-  // useScrollMemory's own restore of a previously-remembered scroll position for this document
-  // (that restore reacts to the same segments-rendering DOM mutation via a MutationObserver
-  // microtask, so it always settles before this rAF fires) — a deep link to a specific verse
-  // should always take you there, not back to wherever you last scrolled to in the batch.
+  // Runs a frame after mount/load, same as jumpToHighlight below. `useSuttaReading` is told about
+  // `requestedSubUid` (see its own `hasDeepLinkTarget` param) so useScrollMemory skips its usual
+  // restore-a-remembered-position behavior for this mount entirely, rather than this effect having
+  // to fight/override it (iOS Safari can otherwise land a `scrollBy({behavior:'smooth'})` call
+  // issued a few ms after that restore's own synchronous `scrollTop =` write well past the
+  // intended target — two scroll writes on the same container that close together can *stack*
+  // instead of the second one superseding the first).
   useEffect(() => {
     if (!requestedSubUid || !segments) return;
     const idx = segments.findIndex((s) => s.key.startsWith(`${requestedSubUid}:`));

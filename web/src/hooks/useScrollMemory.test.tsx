@@ -1,0 +1,111 @@
+import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { act, render } from '@testing-library/react';
+import { useScrollMemory, cancelPendingRestore } from './useScrollMemory';
+
+// `positions` (useScrollMemory.ts's module-level remembered-offset map) is a singleton shared by
+// every hook instance for the lifetime of this test file — each test below uses its own unique
+// key so a remembered value written by one test can't leak into another.
+let keyCounter = 0;
+function freshKey() {
+  return `test-key-${++keyCounter}`;
+}
+
+function TestBox({ scrollKey, active, skipRestore }: { scrollKey: string | null; active?: boolean; skipRestore?: boolean }) {
+  const ref = useScrollMemory<HTMLDivElement>(scrollKey, active, skipRestore);
+  return <div ref={ref} data-testid="box" />;
+}
+
+// Simulates a real scroll: sets scrollTop and fires the 'scroll' event the hook listens on, which
+// is what actually records the new value into the `positions` map (see useScrollMemory.ts).
+function scrollTo(el: HTMLElement, top: number) {
+  el.scrollTop = top;
+  el.dispatchEvent(new Event('scroll'));
+}
+
+beforeEach(() => {
+  // Same in-memory localStorage stub used by other tests in this suite (e.g.
+  // hooks/useReaderOrigin.test.tsx) — useScrollMemory persists to it, and Node's own global here
+  // otherwise makes every call throw.
+  const store = new Map<string, string>();
+  vi.stubGlobal('localStorage', {
+    getItem: (k: string) => store.get(k) ?? null,
+    setItem: (k: string, v: string) => void store.set(k, String(v)),
+    removeItem: (k: string) => void store.delete(k),
+    clear: () => store.clear(),
+  });
+});
+
+describe('useScrollMemory', () => {
+  it('restores a remembered scrollTop on a later mount with the same key', () => {
+    const key = freshKey();
+    const first = render(<TestBox scrollKey={key} />);
+    scrollTo(first.getByTestId('box'), 240);
+    first.unmount(); // persists the final scrollTop under `key`
+
+    const second = render(<TestBox scrollKey={key} />);
+    expect(second.getByTestId('box').scrollTop).toBe(240);
+  });
+
+  it('skipRestore leaves scrollTop untouched even when a remembered position exists', () => {
+    const key = freshKey();
+    const first = render(<TestBox scrollKey={key} />);
+    scrollTo(first.getByTestId('box'), 300);
+    first.unmount();
+
+    // Same key still has 300 remembered — a caller passing skipRestore (ReaderPage's deep-link
+    // case, so its own jump-to-segment is the only scroll write on this mount) must not have that
+    // position silently applied underneath it.
+    const second = render(<TestBox scrollKey={key} skipRestore />);
+    expect(second.getByTestId('box').scrollTop).toBe(0);
+  });
+
+  it('the MutationObserver reapplies a remembered position once enough content has loaded', async () => {
+    const key = freshKey();
+    const first = render(<TestBox scrollKey={key} />);
+    scrollTo(first.getByTestId('box'), 800);
+    first.unmount();
+
+    const second = render(<TestBox scrollKey={key} />);
+    const el = second.getByTestId('box');
+    // Real browsers clamp `scrollTop = 800` back to 0 here since the container has no scrollable
+    // content yet (sutta text is still being fetched) — jsdom doesn't clamp, so this reproduces
+    // that starting condition by hand.
+    el.scrollTop = 0;
+    Object.defineProperty(el, 'clientHeight', { value: 100, configurable: true });
+    Object.defineProperty(el, 'scrollHeight', { value: 1000, configurable: true }); // 900 >= 800
+
+    await act(async () => {
+      el.appendChild(document.createElement('span')); // simulates the sutta text finishing rendering
+      // MutationObserver callbacks fire as a microtask, after this synchronous block returns.
+      await Promise.resolve();
+    });
+
+    expect(el.scrollTop).toBe(800);
+  });
+
+  it('cancelPendingRestore stops that reapply from clobbering a scroll made in the meantime', async () => {
+    const key = freshKey();
+    const first = render(<TestBox scrollKey={key} />);
+    scrollTo(first.getByTestId('box'), 800);
+    first.unmount();
+
+    const second = render(<TestBox scrollKey={key} />);
+    const el = second.getByTestId('box');
+    el.scrollTop = 0;
+    Object.defineProperty(el, 'clientHeight', { value: 100, configurable: true });
+    Object.defineProperty(el, 'scrollHeight', { value: 1000, configurable: true });
+
+    // A deliberate scroll elsewhere in the app (useSuttaReading's scrollToSegment) cancels the
+    // still-armed restore before landing its own jump — simulated here as a jump to 50.
+    cancelPendingRestore(el);
+    el.scrollTop = 50;
+
+    await act(async () => {
+      el.appendChild(document.createElement('span'));
+      await Promise.resolve();
+    });
+
+    // Without the cancel, this would have been forced back to 800 (see the previous test).
+    expect(el.scrollTop).toBe(50);
+  });
+});
