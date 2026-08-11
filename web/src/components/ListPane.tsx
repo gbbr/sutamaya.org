@@ -6,11 +6,9 @@ import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { usePointerDragSession } from '../hooks/usePointerDragSession';
 import { listItemsFor, nodeLabel, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
-import { highlightCount } from '../lib/highlights';
-import { flattenListTree, resolveListById } from '../lib/lists';
+import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
-import { AUTO_LIST_IDS } from '../lib/autoLists';
-import { HighlightCountBadge } from './HighlightCountBadge';
+import { SuttaRowChips } from './SuttaRowChips';
 import type { Sutta } from '../lib/types';
 
 interface ListPaneProps {
@@ -72,16 +70,10 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
   // `displayItems` — `items` (and therefore this map) doesn't change while a drag reshuffles
   // display order, so dragging a list no longer recomputes every visible row's chip/highlight
   // lookups on every rAF tick, just the moved row's position.
-  const rowMeta = useMemo(() => {
-    const map = new Map<string, { chips: Array<{ id: string; breadcrumb: string }>; hlCount: number }>();
-    for (const [id] of items) {
-      const chips = (membership[id] || [])
-        .filter((c) => !AUTO_LIST_IDS.has(c))
-        .map((c) => ({ id: c, breadcrumb: resolveListById(c, flatLists).breadcrumb }));
-      map.set(id, { chips, hlCount: highlightCount(highlights[id] || []) });
-    }
-    return map;
-  }, [items, membership, flatLists, highlights]);
+  const rowMeta = useMemo(
+    () => suttaRowMeta(items.map(([id]) => id), membership, highlights, flatLists),
+    [items, membership, flatLists, highlights]
+  );
 
   // Pointer Events (not HTML5 drag-and-drop, which touch browsers largely don't fire) drive a
   // single-list drag-reorder: the dragged item's id and a live working copy of the order live in
@@ -282,19 +274,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                 ) : (
                   <span className="block text-[14px] leading-[1.5] mt-1.5 text-ink/[.72]">{s.blurb}</span>
                 )}
-                {(chips.length > 0 || hlCount > 0) && (
-                  <span className="flex flex-wrap items-center gap-1.5 mt-2">
-                    {chips.map((c) => (
-                      <span
-                        key={c.id}
-                        className="inline-flex items-center h-5 whitespace-nowrap rounded-[10px] px-[9px] font-sans text-[11px] border border-ink/25"
-                      >
-                        {c.breadcrumb}
-                      </span>
-                    ))}
-                    {hlCount > 0 && <HighlightCountBadge count={hlCount} />}
-                  </span>
-                )}
+                <SuttaRowChips chips={chips} hlCount={hlCount} />
               </button>
               {currentList && !currentList.auto && reorderMode && (
                 <span

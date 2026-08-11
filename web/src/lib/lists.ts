@@ -1,4 +1,6 @@
-import type { ListDef } from './types';
+import { AUTO_LIST_IDS } from './autoLists';
+import { highlightCount } from './highlights';
+import type { HighlightsMap, ListDef, Membership } from './types';
 
 export interface ListPathOption {
   list: ListDef;
@@ -34,6 +36,31 @@ export function flattenListTree(lists: ListDef[]): ListPathOption[] {
 // matching list is found (e.g. it was deleted since).
 export function resolveListById(id: string, flatTree: ListPathOption[]): ListPathOption | { list: null; depth: 0; breadcrumb: string } {
   return flatTree.find((f) => f.list.id === id) ?? { list: null, depth: 0, breadcrumb: id };
+}
+
+export interface SuttaRowChip {
+  id: string;
+  breadcrumb: string;
+}
+
+export interface SuttaRowMeta {
+  chips: SuttaRowChip[];
+  hlCount: number;
+}
+
+// Per-sutta list-membership chips + total highlight count for a row's meta line — shared by
+// ListPane's own rows and TreePane's mobile search results (see SuttaRowMeta component). The
+// "Highlights"/"Notes" auto lists are filtered out of the chips since those are already shown via
+// the highlight badge and note text directly, same reasoning as ListPane's own comment on this.
+export function suttaRowMeta(ids: Iterable<string>, membership: Membership, highlights: HighlightsMap, flatLists: ListPathOption[]): Map<string, SuttaRowMeta> {
+  const map = new Map<string, SuttaRowMeta>();
+  for (const id of ids) {
+    const chips = (membership[id] || [])
+      .filter((c) => !AUTO_LIST_IDS.has(c))
+      .map((c) => ({ id: c, breadcrumb: resolveListById(c, flatLists).breadcrumb }));
+    map.set(id, { chips, hlCount: highlightCount(highlights[id] || []) });
+  }
+  return map;
 }
 
 // Pure reducer for UserDataContext's reorderLists optimistic local update — pulled out so the
