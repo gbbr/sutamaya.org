@@ -345,27 +345,29 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
               {notes[suttaId]}
             </div>
           )}
-          <SuttaRowChips
-            chips={suttaChips}
-            hlCount={hlCount}
-            theme={theme}
-            onChipClick={(chipId) => {
-              const { list } = resolveListById(chipId, flatLists);
-              // Must explicitly tag `fromView: 'list'` rather than relying on LibraryPage's own
-              // "no router state at all -> fresh arrival" fallback (see its `view` init) —
-              // @reach/router's navigate() always stamps a `{key}` onto location.state even when
-              // no state is passed, so that fallback never actually fires for this (or any other)
-              // in-app navigate() call; without this, the pane shown depended on whatever view
-              // happened to be persisted from last time (works by accident when that was already
-              // 'list', shows the tree instead when it wasn't).
-              if (list) navigate(`/browse/${list.id}/${suttaId}`, { state: tagIntent({ fromView: 'list' }) });
-            }}
-            onHighlightClick={(e) => {
-              e.stopPropagation();
-              setTab('highlights');
-              setPanel(true);
-            }}
-          />
+          <div className="mt-4">
+            <SuttaRowChips
+              chips={suttaChips}
+              hlCount={hlCount}
+              theme={theme}
+              onChipClick={(chipId) => {
+                const { list } = resolveListById(chipId, flatLists);
+                // Must explicitly tag `fromView: 'list'` rather than relying on LibraryPage's own
+                // "no router state at all -> fresh arrival" fallback (see its `view` init) —
+                // @reach/router's navigate() always stamps a `{key}` onto location.state even when
+                // no state is passed, so that fallback never actually fires for this (or any other)
+                // in-app navigate() call; without this, the pane shown depended on whatever view
+                // happened to be persisted from last time (works by accident when that was already
+                // 'list', shows the tree instead when it wasn't).
+                if (list) navigate(`/browse/${list.id}/${suttaId}`, { state: tagIntent({ fromView: 'list' }) });
+              }}
+              onHighlightClick={(e) => {
+                e.stopPropagation();
+                setTab('highlights');
+                setPanel(true);
+              }}
+            />
+          </div>
           <div style={{ height: 1, background: theme.rule, margin: '20px 0 22px' }} />
 
           {headings.length > 0 && (
