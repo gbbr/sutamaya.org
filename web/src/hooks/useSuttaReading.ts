@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react';
 import { useUserData } from '../context/UserDataContext';
 import { useSuttaText } from './useSuttaText';
 import { useHighlightPopup } from './useHighlightPopup';
-import { useScrollMemory } from './useScrollMemory';
+import { useScrollMemory, cancelPendingRestore } from './useScrollMemory';
 import { groupHighlights, highlightCount } from '../lib/highlights';
 import { getUiScale } from '../lib/uiPrefs';
 import { computeSegmentScrollOffset } from '../lib/segmentScroll';
@@ -11,12 +11,21 @@ import { computeSegmentScrollOffset } from '../lib/segmentScroll';
 // highlights through SegmentedText and needs the selection-popup, scroll-restoration, and
 // highlight-grouping plumbing around it. `scrollKeyPrefix` keeps the remembered scroll position
 // namespaced (`reader:{id}`) per sutta.
-export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(suttaId: string | undefined, scrollKeyPrefix: string) {
+// `hasDeepLinkTarget` — true when the caller (ReaderPage) already knows, from the route alone
+// and before text has even loaded, that it's about to jump to one specific segment (a deep
+// link/search hit for one inner sutta of a batched document — ReaderPage's `requestedSubUid`) —
+// see useScrollMemory's `skipRestore` for why this needs to suppress its scroll-memory restore
+// entirely up front rather than letting scrollToSegment try to override it after the fact.
+export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
+  suttaId: string | undefined,
+  scrollKeyPrefix: string,
+  hasDeepLinkTarget = false
+) {
   const { highlights } = useUserData();
   const { segments, error, retry } = useSuttaText(suttaId);
   const hlForSutta = (suttaId && highlights[suttaId]) || [];
   const popup = useHighlightPopup(suttaId, hlForSutta, segments);
-  const scrollRef = useScrollMemory<T>(suttaId ? `${scrollKeyPrefix}:${suttaId}` : null);
+  const scrollRef = useScrollMemory<T>(suttaId ? `${scrollKeyPrefix}:${suttaId}` : null, true, hasDeepLinkTarget);
   const highlightGroups = useMemo(() => groupHighlights(hlForSutta), [hlForSutta]);
   const hlCount = useMemo(() => highlightCount(hlForSutta), [hlForSutta]);
 
@@ -32,6 +41,11 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(suttaId:
     const container = scrollRef.current;
     const segEl = container?.querySelector<HTMLElement>(`[data-seg="${segIndex}"]`);
     if (!container || !segEl) return;
+    // This is a deliberate jump to a specific segment — supersedes whatever scroll position
+    // useScrollMemory's own restore was trying to reach for this container, including a
+    // MutationObserver-based reapply that can otherwise still be armed and fire later (see
+    // cancelPendingRestore's own comment), clobbering the jump below once it lands.
+    cancelPendingRestore(container);
     // A highlight can cover only the tail of a long, multi-sentence segment (or start partway
     // through one) — centering the *segment's* whole box in that case leaves the actually-
     // highlighted text sitting well below the pane's true center, worse the further into the
