@@ -188,44 +188,145 @@ pricing pages before relying on these, since Google does change free-tier terms:
 | Secret Manager | 6 active secret versions · 10,000 access operations/month |
 
 For a personal/low-traffic deployment of this app, Cloud Run and Firestore usage won't be close
-to their ceilings. The two things actually worth watching:
+to their ceilings. Everything below is the full record of what's actually been done on this
+project to keep it that way — the checklist to redo if this is ever set up again from scratch.
 
-- **Artifact Registry's 0.5GB is the tightest limit** — each `gcloud run deploy` pushes a new
-  image (~500MB uncompressed, less as compressed layers, but they accumulate). `npm run deploy`
-  attaches a native cleanup policy (`scripts/artifact-cleanup-policy.json`) to the repo that keeps
-  only the 3 most recent image versions and deletes everything else immediately, so this
-  doesn't need a manual step. To apply/update it by hand instead:
-  ```bash
-  gcloud artifacts repositories set-cleanup-policies cloud-run-source-deploy \
-    --project="$PROJECT_ID" --location="$REGION" --policy=scripts/artifact-cleanup-policy.json
-  ```
-- **The `run-sources-$PROJECT_ID-$REGION` Cloud Storage bucket** — created automatically the
-  first time `gcloud run deploy --source .` runs, one zip per deploy (source doesn't stay in Cloud
-  Build; the zip is uploaded here first and Cloud Build reads it from here). Note this bucket
-  doesn't benefit from Cloud Storage's Always Free tier at all outside a handful of US regions, so
-  `europe-west1` (this doc's default) pays standard per-GB storage from the first byte — kept
-  negligible by two layers: `scripts/deploy.sh` deletes each deploy's own zip right after Cloud
-  Build finishes reading it, and (as a backstop for anything deployed outside that script, e.g.
-  directly via `gcloud run deploy` or CI) a bucket lifecycle rule expires anything left after 7
-  days:
-  ```bash
-  cat > /tmp/gcs-lifecycle.json <<'EOF'
-  { "rule": [ { "action": { "type": "Delete" }, "condition": { "age": 7 } } ] }
-  EOF
-  gcloud storage buckets update "gs://run-sources-${PROJECT_ID}-${REGION}" \
-    --project="$PROJECT_ID" --lifecycle-file=/tmp/gcs-lifecycle.json
-  ```
-  Unlike the Artifact Registry policy above, this isn't applied automatically by `scripts/deploy.sh`
-  — run it once by hand after the bucket exists (i.e. after your first deploy).
-- **Set a budget alert** as a safety net regardless — it won't stop spending, but it emails you
-  before anything surprising shows up:
-  ```bash
-  gcloud billing budgets create \
-    --billing-account="$(gcloud beta billing projects describe "$PROJECT_ID" --format='value(billingAccountName)' | sed 's#billingAccounts/##')" \
-    --display-name="Sutamaya free-tier guard" \
-    --budget-amount=1USD \
-    --threshold-rule=percent=100
-  ```
+### Cost-reduction measures already in place
+
+1. **Cloud Run scaling/CPU config** — part of the `gcloud run deploy` call in `scripts/deploy.sh`
+   step 6 above, not a separate step:
+   - `--min-instances=0` — scale to zero; nothing billed while nobody's using the app.
+   - `--max-instances=1` — hard ceiling on concurrent instances, so a traffic spike or a bug that
+     loops requests can't multiply cost unbounded.
+   - No `--cpu-boost`/always-allocated-CPU flag — CPU is billed request-based (only while actually
+     handling a request), the cheaper of Cloud Run's two CPU billing modes, instead of for the
+     full lifetime of an instance.
+   - `--memory=512Mi` — modest allocation; GB-seconds billing scales directly with this.
+   - `--timeout=30` — bounds worst-case GB-seconds if a request ever hangs instead of returning.
+
+2. **Artifact Registry's 0.5GB is the tightest free-tier limit** — each `gcloud run deploy` pushes
+   a new image (~500MB uncompressed, less as compressed layers, but they accumulate). `npm run
+   deploy` attaches a native cleanup policy (`scripts/artifact-cleanup-policy.json`) to the repo
+   before every deploy, keeping only the 3 most recent image versions and deleting everything else
+   immediately — no manual step needed. To apply/update it by hand instead:
+   ```bash
+   gcloud artifacts repositories set-cleanup-policies cloud-run-source-deploy \
+     --project="$PROJECT_ID" --location="$REGION" --policy=scripts/artifact-cleanup-policy.json
+   ```
+
+3. **The `run-sources-$PROJECT_ID-$REGION` Cloud Storage bucket** — created automatically the
+   first time `gcloud run deploy --source .` runs, one zip per deploy (source doesn't stay in Cloud
+   Build; the zip is uploaded here first and Cloud Build reads it from here). This bucket doesn't
+   benefit from Cloud Storage's Always Free tier at all outside a handful of US regions, so
+   `europe-west1` (this doc's default) pays standard per-GB storage from the first byte — this was
+   the actual cost driver found on this project (frequent deploys, nothing ever cleaning the
+   bucket up: 57 leftover zips / ~1.1GB by the time it was noticed, deleted by hand once via
+   `gcloud storage rm -r "gs://run-sources-${PROJECT_ID}-${REGION}/services/**"`). Kept negligible
+   going forward by two layers:
+   - `scripts/deploy.sh` deletes each deploy's own zip right after Cloud Build finishes reading it
+     (looked up from that build's own `source.storageSource` record — see the script for the exact
+     commands).
+   - As a backstop for anything deployed outside that script (e.g. directly via `gcloud run
+     deploy`, or CI), a bucket lifecycle rule expires anything left after 7 days:
+     ```bash
+     cat > /tmp/gcs-lifecycle.json <<'EOF'
+     { "rule": [ { "action": { "type": "Delete" }, "condition": { "age": 7 } } ] }
+     EOF
+     gcloud storage buckets update "gs://run-sources-${PROJECT_ID}-${REGION}" \
+       --project="$PROJECT_ID" --lifecycle-file=/tmp/gcs-lifecycle.json
+     ```
+     Unlike the Artifact Registry policy above, this isn't applied automatically by
+     `scripts/deploy.sh` — run it once by hand after the bucket exists (i.e. after your first
+     deploy).
+
+4. **Budget alert** — doesn't reduce cost by itself, but is the safety net that emails you as
+   spend crosses a threshold instead of finding out on the next invoice. Live config on this
+   project: $5/month, alerts at 50% and 100% of spend. Recreate with:
+   ```bash
+   gcloud billing budgets create \
+     --billing-account="$(gcloud beta billing projects describe "$PROJECT_ID" --format='value(billingAccountName)' | sed 's#billingAccounts/##')" \
+     --display-name="Billing Alerts \$5" \
+     --budget-amount=5USD \
+     --threshold-rule=percent=0.5 \
+     --threshold-rule=percent=1.0
+   ```
+
+5. **BigQuery billing export** — see "Billing export to BigQuery" just below. Also not a cost
+   reducer by itself; it's what makes it possible to actually diagnose *where* cost came from at
+   SKU level, which is how item 3 above was found in the first place instead of guessed at.
+
+6. **Cloud Logging retention trimmed to 7 days** (`_Default` bucket, default is 30) — see "Cloud
+   Logging retention" below. Recorded here for completeness, but flagged honestly: this is
+   hygiene, not a real cost saving — see that section for why.
+
+7. **Standing-infrastructure audit** — confirmed no Compute Engine instances, Cloud SQL, or GKE
+   clusters exist on this project (all three APIs disabled), so there's no idle-but-billing
+   compute sitting around beyond Cloud Run itself. See "What's *not* worth doing here" below.
+
+### Billing export to BigQuery (for actually diagnosing cost)
+
+A budget alert tells you *that* spend crossed a threshold, not *what* caused it. For that, enable
+the standard usage cost export to BigQuery — this is the only way to get SKU-level detail (which
+service, which SKU, which day). There's no `gcloud`/`bq` command that flips the export on itself
+(it's a billing-account-level link, console-only): Console → Billing → your billing account →
+**Billing export** → **BigQuery export** → **Standard usage cost** → edit → pick the dataset
+below → Save.
+
+The dataset it exports into does need to exist first, and that part *is* scriptable:
+
+```bash
+bq mk --project_id="$PROJECT_ID" --location=EU --dataset \
+  --description="Cloud Billing export (standard usage cost)" billing_export
+```
+
+(use a location that matches where you'd query from; `EU`/`US` are the common choices — it
+doesn't need to match `$REGION`, and can't be changed later without recreating the dataset).
+
+To confirm the console step actually linked correctly without re-opening the console: once
+enabled, Google grants a system service account write access to the dataset, so its presence in
+the dataset's IAM bindings is the tell —
+
+```bash
+bq show --format=prettyjson "$PROJECT_ID:billing_export" | grep billing-export-bigquery
+```
+
+— if that prints `billing-export-bigquery@system.gserviceaccount.com` as an `OWNER`, the export
+is wired up. The first rows can take up to a day or so to appear after enabling
+(`SELECT COUNT(*) FROM \`$PROJECT_ID.billing_export.gcp_billing_export_v1_*\`` — the table name
+suffix is your billing account ID with dashes as underscores); after that it refreshes multiple
+times a day. Once populated, a query like this breaks cost down by service:
+
+```bash
+bq query --project_id="$PROJECT_ID" --use_legacy_sql=false '
+  SELECT service.description AS service, sku.description AS sku,
+         SUM(cost) AS cost, currency
+  FROM `'"$PROJECT_ID"'.billing_export.gcp_billing_export_v1_*`
+  WHERE usage_start_time >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 30 DAY)
+  GROUP BY service, sku, currency
+  ORDER BY cost DESC'
+```
+
+### Cloud Logging retention
+
+Cloud Run/Cloud Build write to the project's `_Default` log bucket, which defaults to 30 days'
+retention. Shortening it doesn't save money on its own — the Cloud Logging free tier (50GiB
+ingested/project/month) is governed by ingestion volume, not how long logs are kept within that
+default window — but it's still reasonable hygiene to cap it if you don't need a month of
+history:
+
+```bash
+gcloud logging buckets update _Default --project="$PROJECT_ID" --location=global --retention-days=7
+```
+
+### What's *not* worth doing here
+
+Checked and ruled out during a full standing-infrastructure audit: no Compute Engine instances,
+Cloud SQL, or GKE clusters exist in this project (all three APIs are disabled), so there's no
+idle-but-billing infra to find. Cloud Run itself is already in its cheapest configuration for
+this app — `--min-instances=0` (scale-to-zero, no idle cost) and no `--cpu-boost`/always-on CPU
+flag (request-based CPU billing, not allocated-while-idle). There's nothing further to trim on
+the compute side; the GCS/Artifact Registry accumulation above was the actual (and only) real
+cost driver found.
 
 ## Local Docker testing (optional)
 
