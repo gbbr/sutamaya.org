@@ -185,7 +185,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
 
   if (!corpus) return null;
 
-  const title = searching ? 'Search' : nodeLabel(corpus, nodeId || '', lists);
+  const title = searching ? { label: 'Search' } : nodeLabel(corpus, nodeId || '', lists);
   const readCount = items.filter(([id]) => visited[id]).length;
   const meta = searching
     ? hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ results` : `${hits.length} ${hits.length === 1 ? 'result' : 'results'}`
@@ -207,9 +207,13 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-1.5 min-w-0">
             {currentList && <List size={14} strokeWidth={2} className="flex-none text-ink" />}
-            <div className="font-sans text-[19px] font-semibold tracking-[-.01em] truncate">{title}</div>
+            <div className="min-w-0 truncate">
+              <span className="font-sans text-[19px] font-semibold tracking-[-.01em]">{title.label}</span>
+            </div>
           </div>
-          <div className="font-sans text-xs text-ink/[.42] mt-[2px]">{meta}</div>
+          <div className="font-sans text-xs text-ink/[.42] mt-[2px]">
+            {title.ref && <span className="font-sans font-bold text-ink/45">{title.ref} · </span>}{meta}
+          </div>
         </div>
         {currentList && !currentList.auto && (
           <button
