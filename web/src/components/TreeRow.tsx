@@ -34,7 +34,6 @@ export const TreeRow = memo(function TreeRow({
 }) {
   const expandable = isExpandable(node);
   const open = !!expanded[node.id];
-  const { mobile } = useLayout();
   return (
     <div data-component="TreeRow">
       <button
@@ -42,11 +41,7 @@ export const TreeRow = memo(function TreeRow({
         className={`row flex items-start gap-[9px] w-full text-left pr-[18px] py-[9px] border-b border-ink/[.07] transition-colors duration-500 ${
           nodeId === node.id || flashNodeId === node.id ? 'bg-ink/[.06]' : ''
         }`}
-        // On mobile, the first level isn't indented — the nikaya headings above are already
-        // visually distinct (bolder, their own row style, plus a chevron), so the extra 14px
-        // here bought nothing but cramped text width on a narrow single-pane screen. Once both
-        // panes fit side by side there's room to spare, so it steps in from depth 0 as before.
-        style={{ paddingLeft: 18 + Math.max(0, depth - (mobile ? 1 : 0)) * 14 }}
+        style={{ paddingLeft: 18 + depth * 14 }}
         onClick={() => (expandable ? onToggle(node.id) : onSelect(node.id))}
       >
         <span className="w-[11px] flex-none flex items-center justify-center text-ink/40 mt-[7px]">
