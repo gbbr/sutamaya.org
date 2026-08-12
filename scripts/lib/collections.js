@@ -29,13 +29,13 @@ export const SN_GROUPS = [
   { id: 'sn-mahavaggasamyutta', label: 'The Great Chapter' },
 ];
 
-// The 20 Khuddaka Nikāya books, in canonical order. Each is flattened to its leaf documents
+// Selected 6 key Khuddaka Nikāya books, in canonical order. Each is flattened to its leaf documents
 // one level down (see flattenLeaves in build-corpus.mjs) — no intermediate vagga/nipāta rows.
 export const KN_BOOKS = [
-  { id: 'snp', label: 'Sutta Nipāta', pali: 'Suttanipāta' },
-  { id: 'dhp', label: 'Dhammapada', pali: 'Dhammapada' },
-  { id: 'ud', label: 'Udāna', pali: 'Udāna' },
-  { id: 'iti', label: 'Itivuttaka', pali: 'Itivuttaka' },
+  { id: 'snp', label: 'Anthology of Discourses', pali: 'Suttanipāta' },
+  { id: 'dhp', label: 'Sayings of Dhamma', pali: 'Dhammapada' },
+  { id: 'ud', label: 'Heartfelt Sayings', pali: 'Udāna' },
+  { id: 'iti', label: 'So It Was Said', pali: 'Itivuttaka' },
   { id: 'thag', label: 'Verses of Senior Monks', pali: 'Theragāthā' },
   { id: 'thig', label: 'Verses of Senior Nuns', pali: 'Therīgāthā' },
 ];
