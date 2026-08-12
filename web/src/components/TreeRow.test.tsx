@@ -25,16 +25,16 @@ const renderDesktop = (ui: ReactElement) => renderAt(1440, ui);
 const renderMobile = (ui: ReactElement) => renderAt(MOBILE_BREAKPOINT - 1, ui);
 
 describe('TreeRow', () => {
-  it('does not indent the first level beyond the 18px base on mobile', () => {
+  it('indents first level by 14px from the 18px base once both panes fit (mobile)', () => {
     renderMobile(<TreeRow node={leaf} depth={1} expanded={{}} onToggle={vi.fn()} onSelect={vi.fn()} />);
     const row = screen.getByText('Book of Ones').closest('button') as HTMLButtonElement;
-    expect(row.style.paddingLeft).toBe('18px');
+    expect(row.style.paddingLeft).toBe('32px');
   });
 
-  it('indents deeper rows by 14px per depth level past the first on mobile, offset from the 18px base', () => {
+  it('indents deeper rows by 14px per depth level past the first, offset from the 18px base (mobile)', () => {
     renderMobile(<TreeRow node={leaf} depth={2} expanded={{}} onToggle={vi.fn()} onSelect={vi.fn()} />);
     const row = screen.getByText('Book of Ones').closest('button') as HTMLButtonElement;
-    expect(row.style.paddingLeft).toBe('32px'); // 18 + (2-1)*14
+    expect(row.style.paddingLeft).toBe('46px'); // 18 + 1*14
   });
 
   it('indents every level by 14px from the 18px base once both panes fit (non-mobile)', () => {
