@@ -21,6 +21,7 @@ interface ListsTreeViewProps {
   onDraftKey: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   draftKind: ListKind;
   setDraftKind: (updater: (k: ListKind) => ListKind) => void;
+  submittingDraft: boolean;
   topLevelLists: ListDef[];
   listChildrenOf: (parentId: string) => ListDef[];
   countFor: (l: ListDef) => number;
@@ -59,6 +60,7 @@ export function ListsTreeView({
   onDraftKey,
   draftKind,
   setDraftKind,
+  submittingDraft,
   topLevelLists,
   listChildrenOf,
   countFor,
@@ -140,6 +142,17 @@ export function ListsTreeView({
             slotSize={26}
             thumbClassName="bg-chip border border-ink/[.12] shadow-[0_1px_2px_rgba(27,25,23,.15)] transition-[left] duration-150 ease-out"
           />
+        </div>
+      )}
+      {topLevelLists.length === 0 && creatingParentId !== null && !submittingDraft && (
+        <div className="flex flex-col items-center gap-2.5 px-[18px] pt-16 pb-8 text-center">
+          <span className="font-sans text-[13px] text-ink/55">You have no lists yet.</span>
+          <button
+            className="font-sans text-[13px] font-semibold text-accent2 border border-accent2 rounded-lg px-3 py-1.5 hover:bg-accent2/10"
+            onClick={toggleTopLevelDraft}
+          >
+            Create your first list
+          </button>
         </div>
       )}
       {topLevelLists.map((l, idx) => (

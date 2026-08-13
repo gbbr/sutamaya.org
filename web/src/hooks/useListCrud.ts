@@ -43,6 +43,11 @@ export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, cr
   // Only meaningful (and only shown) for a top-level draft — a per-row "+" only ever appears on
   // a group row and always adds a plain list inside it (see ListRow), no choice to make there.
   const [draftKind, setDraftKind] = useState<ListKind>('list');
+  // True only for the network round-trip inside submitDraft — draftKind closes (creatingParentId
+  // resets to undefined) immediately on submit for a snappy feel, but createList() itself awaits
+  // the API call, so without this flag the empty-lists state (topLevelLists still [], draft no
+  // longer open) would flash back on screen for that gap before the new list lands.
+  const [submittingDraft, setSubmittingDraft] = useState(false);
   const listInput = useRef<HTMLInputElement | null>(null);
   const blockedDeleteTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -160,11 +165,14 @@ export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, cr
     setCreatingParentId(undefined);
     setDraft('');
     if (!name) return;
+    setSubmittingDraft(true);
     try {
       const list = await createList(name, parentId, kind);
       onCreated?.(list);
     } catch {
       // Signed out: createList() already triggered the Google sign-in prompt.
+    } finally {
+      setSubmittingDraft(false);
     }
   }, [draft, creatingParentId, draftKind, createList, onCreated]);
 
@@ -195,6 +203,7 @@ export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, cr
     setDraft,
     draftKind,
     setDraftKind,
+    submittingDraft,
     listInput,
     toggleListMenu,
     startEditList,

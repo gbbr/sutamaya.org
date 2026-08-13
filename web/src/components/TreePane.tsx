@@ -276,6 +276,7 @@ export function TreePane({
     setDraft,
     draftKind,
     setDraftKind,
+    submittingDraft,
     listInput,
     toggleListMenu,
     startEditList,
@@ -621,6 +622,7 @@ export function TreePane({
             onDraftKey={onDraftKey}
             draftKind={draftKind}
             setDraftKind={setDraftKind}
+            submittingDraft={submittingDraft}
             topLevelLists={topLevelLists}
             listChildrenOf={listChildrenOf}
             countFor={countFor}
