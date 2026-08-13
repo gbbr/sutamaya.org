@@ -135,6 +135,168 @@ export function SettingsPage(_props: RouteComponentProps) {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
+  // User authentication section with Google sign-in and with Export JSON and Sign-out when
+  // authenticated.
+  const userSection = (
+    <>
+      {/* loading gates only this account section now, not the whole page — Display/Offline
+          above render immediately regardless. Auth resolution retries with backoff on any
+          network hiccup (see AuthContext), which competes with this page's own heavy download
+          traffic for bandwidth on mobile; blanking the entire page for however long that takes
+          was needlessly punishing when only this section actually depends on it. */}
+      {loading ? null : user ? (
+        <>
+          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3">Authentication</div>
+          <div className="font-sans text-[13px] text-ink/60 mb-1">Signed in as</div>
+          <div className="text-[16px] mb-6">{user.name ? `${user.name} · ${user.email}` : user.email}</div>
+          <a
+            href={dataApi.exportUrl}
+            className="block w-full text-center h-11 leading-[44px] rounded-field border border-ink/[.22] font-sans text-[14px] font-medium mb-3"
+          >
+            Export my data as JSON
+          </a>
+          <button
+            className="flex items-center justify-center gap-1.5 w-full h-11 rounded-field bg-accent text-[#FBFAF7] font-sans text-[14px] font-medium"
+            onClick={async () => {
+              await logout();
+              navigate('/');
+            }}
+          >
+            <LogOut size={15} strokeWidth={1.75} />
+            Sign out
+          </button>
+        </>
+      ) : (
+        <>
+          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3">Authentication</div>
+          <div className="font-sans text-[14px] text-ink/60 mb-4">
+            Sign in with Google to sync your lists, notes and highlights across devices.
+          </div>
+          <GoogleSignInButton variant="standard" />
+          {authError && <div className="font-sans text-[13px] text-red-600 mt-2">{authError}</div>}
+        </>
+      )}
+    </>
+  );
+
+  // UI Theme configuration section.
+  const themeSection = (
+    <>
+      <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3 mt-6">Display</div>
+
+      <div className="mb-6">
+        <div className="font-sans text-[14px] mb-2">Theme</div>
+        <div className="grid grid-cols-3 gap-2">
+          {THEME_OPTIONS.map((t) => (
+            <button
+              key={t.id}
+              className={`h-9 rounded-field border font-sans text-[13px] ${
+                theme === t.id ? 'border-accent bg-accent text-[#FBFAF7]' : 'border-ink/[.22] text-ink/70'
+              }`}
+              onClick={() => setTheme(t.id)}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="mb-3">
+        <div className="flex items-baseline justify-between mb-2">
+          <label htmlFor="ui-scale" className="font-sans text-[14px]">
+            UI Scale
+          </label>
+          <span className="font-sans text-[13px] text-ink/50">{Math.round(uiScale * 100)}%</span>
+        </div>
+        <input
+          id="ui-scale"
+          type="range"
+          min={UI_SCALE_MIN}
+          max={UI_SCALE_MAX}
+          step={UI_SCALE_STEP}
+          value={uiScale}
+          onChange={(e) => setUiScale(Number(e.target.value))}
+          className="w-full accent-accent"
+        />
+        <div className="flex justify-between font-sans text-[11px] text-ink/40 mt-1">
+          <span>{Math.round(UI_SCALE_MIN * 100)}%</span>
+          <button className="underline decoration-ink/25 underline-offset-2" onClick={() => setUiScale(1)}>
+            Reset
+          </button>
+          <span>{Math.round(UI_SCALE_MAX * 100)}%</span>
+        </div>
+      </div>
+
+      <div className="mb-6">
+        <div className="font-sans text-[14px] mb-2">UI Font</div>
+        <div className="grid grid-cols-3 gap-2">
+          {UI_FACE_OPTIONS.map((f) => (
+            <button
+              key={f.id}
+              className={`h-9 rounded-field border font-sans text-[13px] ${
+                uiFace === f.id ? 'border-accent bg-accent text-[#FBFAF7]' : 'border-ink/[.22] text-ink/70'
+              }`}
+              onClick={() => setUiFace(f.id)}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+
+  // Download offline corpus section.
+  const offlineSection = (
+    <>
+      <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3 mt-6">Offline</div>
+
+      <div className="mb-6">
+        {offlineStatus === 'downloading' ? (
+          <>
+            <div className="h-2 rounded-full bg-ink/10 overflow-hidden mb-2">
+              <div
+                className="h-full bg-accent transition-[width]"
+                style={{ width: `${progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%` }}
+              />
+            </div>
+            <div className="flex items-center justify-between font-sans text-[13px] text-ink/50">
+              <span>{progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%</span>
+              <button className="underline decoration-ink/25 underline-offset-2" onClick={handleCancelOfflineDownload}>
+                Cancel
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="font-sans text-[13px] text-ink/60 mb-2">
+              {cachedStatus
+                ? cachedStatus.cached >= cachedStatus.total
+                  ? 'All suttas available offline.'
+                  : `${Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% available offline.`
+                : 'Checking offline availability…'}
+            </div>
+            <button
+              className="block w-full text-center h-11 rounded-field border border-ink/[.22] font-sans text-[14px] font-medium disabled:opacity-50"
+              onClick={handleDownloadOffline}
+              disabled={!corpus}
+            >
+              Download all suttas for offline
+            </button>
+            {failedCount > 0 &&
+              (circuitTripped ? (
+                <div className="font-sans text-[13px] text-red-600 mt-2">
+                  Stopped early after repeated failures — {failedCount} couldn't be downloaded.
+                </div>
+              ) : (
+                <div className="font-sans text-[13px] text-red-600 mt-2">{failedCount} couldn't be downloaded — try again.</div>
+              ))}
+          </>
+        )}
+      </div>
+    </>
+  );
+
   // items-start, not the flex default (stretch) — stretch caps this column at the container's own
   // height, so its content overflows past its box (and past its own pb-10, which then sits inside
   // that capped box instead of after the real, overflowing end of the content) rather than growing
@@ -152,148 +314,18 @@ export function SettingsPage(_props: RouteComponentProps) {
           Back
         </button>
         <div className="text-[22px] font-semibold tracking-[-.01em] mb-6">Settings</div>
-
-        <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3">Display</div>
-
-        <div className="mb-6">
-          <div className="font-sans text-[14px] mb-2">Theme</div>
-          <div className="grid grid-cols-3 gap-2">
-            {THEME_OPTIONS.map((t) => (
-              <button
-                key={t.id}
-                className={`h-9 rounded-field border font-sans text-[13px] ${
-                  theme === t.id ? 'border-accent bg-accent text-[#FBFAF7]' : 'border-ink/[.22] text-ink/70'
-                }`}
-                onClick={() => setTheme(t.id)}
-              >
-                {t.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="mb-3">
-          <div className="flex items-baseline justify-between mb-2">
-            <label htmlFor="ui-scale" className="font-sans text-[14px]">
-              UI scale
-            </label>
-            <span className="font-sans text-[13px] text-ink/50">{Math.round(uiScale * 100)}%</span>
-          </div>
-          <input
-            id="ui-scale"
-            type="range"
-            min={UI_SCALE_MIN}
-            max={UI_SCALE_MAX}
-            step={UI_SCALE_STEP}
-            value={uiScale}
-            onChange={(e) => setUiScale(Number(e.target.value))}
-            className="w-full accent-accent"
-          />
-          <div className="flex justify-between font-sans text-[11px] text-ink/40 mt-1">
-            <span>{Math.round(UI_SCALE_MIN * 100)}%</span>
-            <button className="underline decoration-ink/25 underline-offset-2" onClick={() => setUiScale(1)}>
-              Reset
-            </button>
-            <span>{Math.round(UI_SCALE_MAX * 100)}%</span>
-          </div>
-        </div>
-
-        <div className="mb-6">
-          <div className="font-sans text-[14px] mb-2">UI font</div>
-          <div className="grid grid-cols-3 gap-2">
-            {UI_FACE_OPTIONS.map((f) => (
-              <button
-                key={f.id}
-                className={`h-9 rounded-field border font-sans text-[13px] ${
-                  uiFace === f.id ? 'border-accent bg-accent text-[#FBFAF7]' : 'border-ink/[.22] text-ink/70'
-                }`}
-                onClick={() => setUiFace(f.id)}
-              >
-                {f.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3">Offline</div>
-
-        <div className="mb-6">
-          {offlineStatus === 'downloading' ? (
-            <>
-              <div className="h-2 rounded-full bg-ink/10 overflow-hidden mb-2">
-                <div
-                  className="h-full bg-accent transition-[width]"
-                  style={{ width: `${progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%` }}
-                />
-              </div>
-              <div className="flex items-center justify-between font-sans text-[13px] text-ink/50">
-                <span>{progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%</span>
-                <button className="underline decoration-ink/25 underline-offset-2" onClick={handleCancelOfflineDownload}>
-                  Cancel
-                </button>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="font-sans text-[13px] text-ink/60 mb-2">
-                {cachedStatus
-                  ? cachedStatus.cached >= cachedStatus.total
-                    ? 'All suttas available offline.'
-                    : `${Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% available offline.`
-                  : 'Checking offline availability…'}
-              </div>
-              <button
-                className="block w-full text-center h-11 rounded-field border border-ink/[.22] font-sans text-[14px] font-medium disabled:opacity-50"
-                onClick={handleDownloadOffline}
-                disabled={!corpus}
-              >
-                Download all suttas for offline
-              </button>
-              {failedCount > 0 &&
-                (circuitTripped ? (
-                  <div className="font-sans text-[13px] text-red-600 mt-2">
-                    Stopped early after repeated failures — {failedCount} couldn't be downloaded.
-                  </div>
-                ) : (
-                  <div className="font-sans text-[13px] text-red-600 mt-2">{failedCount} couldn't be downloaded — try again.</div>
-                ))}
-            </>
-          )}
-        </div>
-
-        {/* loading gates only this account section now, not the whole page — Display/Offline
-            above render immediately regardless. Auth resolution retries with backoff on any
-            network hiccup (see AuthContext), which competes with this page's own heavy download
-            traffic for bandwidth on mobile; blanking the entire page for however long that takes
-            was needlessly punishing when only this section actually depends on it. */}
-        {loading ? null : user ? (
+        {/* When signed in, display the user section last */}
+        { !loading && user ? (
           <>
-            <div className="font-sans text-[13px] text-ink/60 mb-1">Signed in as</div>
-            <div className="text-[16px] mb-6">{user.name ? `${user.name} · ${user.email}` : user.email}</div>
-            <a
-              href={dataApi.exportUrl}
-              className="block w-full text-center h-11 leading-[44px] rounded-field border border-ink/[.22] font-sans text-[14px] font-medium mb-3"
-            >
-              Export my data as JSON
-            </a>
-            <button
-              className="flex items-center justify-center gap-1.5 w-full h-11 rounded-field bg-accent text-[#FBFAF7] font-sans text-[14px] font-medium"
-              onClick={async () => {
-                await logout();
-                navigate('/');
-              }}
-            >
-              <LogOut size={15} strokeWidth={1.75} />
-              Sign out
-            </button>
+            {themeSection}
+            {offlineSection}
+            {userSection}
           </>
         ) : (
           <>
-            <div className="font-sans text-[14px] text-ink/60 mb-4">
-              Sign in with Google to sync your lists, notes and highlights across devices.
-            </div>
-            <GoogleSignInButton variant="standard" />
-            {authError && <div className="font-sans text-[13px] text-red-600 mt-2">{authError}</div>}
+            {userSection}
+            {themeSection}
+            {offlineSection}
           </>
         )}
       </div>
