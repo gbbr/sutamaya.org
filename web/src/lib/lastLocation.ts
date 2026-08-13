@@ -9,9 +9,13 @@ import { LAST_LOCATION_KEY } from './storageKeys';
 const VALID_PATH = /^\/browse\/[^/]+(\/[^/]*)?$|^\/read\/[^/]+$/;
 
 function maybePersist(pathname: string) {
-  // '/' itself is a transient bounce-off (about to be redirected away from), and reopening
-  // into Settings would be surprising — skip persisting both.
-  if (pathname === '/' || pathname.startsWith('/settings')) return;
+  // Only ever overwrite the stored location with another one `getLastLocation()` would actually
+  // return — otherwise a bogus URL (a stale/typo'd link, anything landing on NotFoundPage) would
+  // clobber a genuinely valid last location with one `getLastLocation()`'s own VALID_PATH check
+  // immediately rejects on read, losing the real one instead of falling back to it. '/' itself is
+  // a transient bounce-off (about to be redirected away from) and would fail VALID_PATH anyway;
+  // Settings is deliberately excluded so reopening the app doesn't land back in it.
+  if (!VALID_PATH.test(pathname) || pathname.startsWith('/settings')) return;
   try {
     localStorage.setItem(LAST_LOCATION_KEY, pathname);
   } catch {
