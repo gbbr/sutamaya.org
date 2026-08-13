@@ -32,7 +32,7 @@ describe('LayoutContext drag-resize', () => {
     const { result } = renderLayout();
 
     act(() => {
-      result.current.dragTree({ clientX: 100 } as unknown as React.PointerEvent);
+      result.current.dragTree({ clientX: 100, preventDefault: () => {} } as unknown as React.PointerEvent);
     });
     setItem.mockClear(); // dragTree itself doesn't persist — only isolate what follows
 
@@ -56,7 +56,7 @@ describe('LayoutContext drag-resize', () => {
     const startTree = result.current.paneW.tree;
 
     act(() => {
-      result.current.dragTree({ clientX: 100 } as unknown as React.PointerEvent);
+      result.current.dragTree({ clientX: 100, preventDefault: () => {} } as unknown as React.PointerEvent);
     });
     act(() => {
       window.dispatchEvent(new PointerEvent('pointermove', { clientX: 140 }));
