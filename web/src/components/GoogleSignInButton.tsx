@@ -1,25 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-
-interface GoogleSignInButtonProps {
-  // "icon" is a bare circular G, for the compact sign-in badge; "standard" is Google's full
-  // pill button with "Sign in with Google" text, for the Settings page.
-  variant: 'icon' | 'standard';
-  width?: number;
-}
+import { getUiScale } from '../lib/uiPrefs';
 
 // Renders Google's own Sign in with Google button (via the Identity Services script tag in
 // index.html) instead of a plain click handler that calls `prompt()` — the rendered button is
-// what Chrome's FedCM flow actually expects, so it's both more reliable than One Tap alone and
-// unmistakably a Google sign-in affordance (the "G" logo the icon variant shows).
-export function GoogleSignInButton({ variant, width }: GoogleSignInButtonProps) {
+// what Chrome's FedCM flow actually expects, so it's more reliable than One Tap alone. Only ever
+// used full-width on the Settings page (Google's "standard" pill button) — no other variant/size
+// has been needed, so this doesn't take props for one.
+export function GoogleSignInButton() {
   const { googleReady } = useAuth();
   const ref = useRef<HTMLDivElement>(null);
   // Google's rendered button has a fixed pixel width baked into its iframe (no "100%" option),
-  // so for the standard variant — used full-width on the Settings page — measure the container
-  // instead of hardcoding a value that'd either overflow a narrow phone or leave a gap on a
-  // wide one.
-  const [measuredWidth, setMeasuredWidth] = useState<number | undefined>(width);
+  // so measure the container instead of hardcoding a value that'd either overflow a narrow
+  // phone or leave a gap on a wide one.
+  const [measuredWidth, setMeasuredWidth] = useState<number | undefined>(undefined);
 
   // Measured once (plus on a genuine window resize, debounced) rather than via a live
   // ResizeObserver — the button below is destroyed and recreated every time `measuredWidth`
@@ -28,7 +22,7 @@ export function GoogleSignInButton({ variant, width }: GoogleSignInButtonProps) 
   // That was tearing out and rebuilding the live button, with a real window where a click lands on
   // an empty/mid-replacement container and is silently lost.
   useEffect(() => {
-    if (variant !== 'standard' || width != null || !ref.current) return;
+    if (!ref.current) return;
     const el = ref.current;
     const measure = () => setMeasuredWidth(Math.round(el.getBoundingClientRect().width));
     measure();
@@ -42,22 +36,31 @@ export function GoogleSignInButton({ variant, width }: GoogleSignInButtonProps) 
       window.removeEventListener('resize', onResize);
       window.clearTimeout(timeout);
     };
-  }, [variant, width]);
+  }, []);
 
   useEffect(() => {
-    if (!googleReady || !ref.current || !window.google) return;
-    if (variant === 'standard' && width == null && !measuredWidth) return; // wait for the first measurement
+    if (!googleReady || !ref.current || !window.google || !measuredWidth) return; // wait for the first measurement
     ref.current.innerHTML = '';
-    window.google.accounts.id.renderButton(
-      ref.current,
-      variant === 'icon'
-        ? { type: 'icon', shape: 'circle', theme: 'outline', size: 'small' }
-        : { type: 'standard', theme: 'filled_blue', size: 'large', shape: 'pill', text: 'signin_with', width: measuredWidth }
-    );
-  }, [googleReady, variant, measuredWidth]);
+    window.google.accounts.id.renderButton(ref.current, {
+      type: 'standard',
+      theme: 'filled_blue',
+      size: 'large',
+      shape: 'pill',
+      text: 'signin_with',
+      // measuredWidth comes from getBoundingClientRect(), which reports the container's actual
+      // on-screen (already-zoomed) width. The `width` option below, in contrast, becomes a CSS
+      // length assigned *inside* the zoomed <html> (applyUiScale, lib/uiPrefs.ts) — same as
+      // index.css's <html> height rule, it gets zoomed a second time at paint time unless
+      // divided back down by getUiScale() first, or the button ends up wider than its own
+      // container (worse the higher the UI-size setting). Also clamp to Google's own supported
+      // width range (200-400px, in that same local/zoomed unit space) — it silently ignores
+      // values outside that range, so a narrower/wider container shouldn't silently end up with
+      // a button wider than its box either.
+      width: Math.min(400, Math.max(200, Math.round(measuredWidth / getUiScale()))),
+    });
+  }, [googleReady, measuredWidth]);
 
-  // Hard-coded a height of 44px to reduce the flicker on the Settings page on loading. However,
-  // this works only for the 'standard' button (the only one used at the time of this change). This
-  // will have to be adapted if other variants will be desired from this component.
-  return <div ref={ref} style={{height:'40px', display: 'flex'}} data-component="GoogleSignInButton" className={variant === 'standard' ? 'w-full' : 'flex-none'} />;
+  // Fixed height to match Google's own rendered button height and avoid a layout flicker while
+  // it loads in.
+  return <div ref={ref} style={{ height: '40px', display: 'flex' }} data-component="GoogleSignInButton" className="w-full" />;
 }
