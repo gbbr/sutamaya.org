@@ -172,7 +172,7 @@ export function SettingsPage(_props: RouteComponentProps) {
           <div className="font-sans text-[14px] text-ink/60 mb-4">
             Sign in with Google to sync your lists, notes and highlights across devices.
           </div>
-          <GoogleSignInButton variant="standard" />
+          <GoogleSignInButton />
           {authError && <div className="font-sans text-[13px] text-red-600 mt-2">{authError}</div>}
         </>
       )}
