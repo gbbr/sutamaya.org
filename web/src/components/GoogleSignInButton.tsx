@@ -56,5 +56,8 @@ export function GoogleSignInButton({ variant, width }: GoogleSignInButtonProps) 
     );
   }, [googleReady, variant, measuredWidth]);
 
-  return <div ref={ref} data-component="GoogleSignInButton" className={variant === 'standard' ? 'w-full' : 'flex-none'} />;
+  // Hard-coded a height of 44px to reduce the flicker on the Settings page on loading. However,
+  // this works only for the 'standard' button (the only one used at the time of this change). This
+  // will have to be adapted if other variants will be desired from this component.
+  return <div ref={ref} style={{height:'40px', display: 'flex'}} data-component="GoogleSignInButton" className={variant === 'standard' ? 'w-full' : 'flex-none'} />;
 }
