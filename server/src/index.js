@@ -75,4 +75,7 @@ app.use((err, _req, res, _next) => {
 
 app.listen(PORT, () => {
   console.log(`Sutamaya API listening on http://localhost:${PORT}`);
+  console.log(
+    `GOOGLE_CLOUD_PROJECT=${process.env.GOOGLE_CLOUD_PROJECT || process.env.GCLOUD_PROJECT || 'sutamaya-local'}`
+  );
 });
