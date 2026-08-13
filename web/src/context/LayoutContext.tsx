@@ -85,6 +85,10 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
       paneW,
       resetTree: () => setPrefs((p) => ({ ...p, treeW: 264 })),
       dragTree: (e) => {
+        // Suppresses the synthetic compatibility click a touch pointerup otherwise fires — that
+        // click hit-tests at the *lift-off* point, which by then is over a tree/list row that
+        // slid under the finger as the panes resized, registering as an accidental row click.
+        e.preventDefault();
         drag.current = { key: 'treeW', x0: e.clientX, w0: paneW.tree, min: 210, max: paneW.treeMax };
         document.body.style.userSelect = 'none';
       },
