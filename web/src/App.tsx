@@ -4,6 +4,7 @@ import { AppProviders } from './context/AppProviders';
 import { useCorpus } from './context/CorpusContext';
 import { getLastLocation } from './lib/lastLocation';
 import { LibraryPage } from './pages/LibraryPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 import { ReaderPage } from './pages/ReaderPage';
 import { SettingsPage } from './pages/SettingsPage';
 
@@ -39,6 +40,21 @@ function RestoreLastLocation(_props: RouteComponentProps) {
   return null;
 }
 
+// A bare-uid deep link (e.g. a shared "/dn9" instead of "/read/dn9"). @reach/router ranks the
+// static "/browse", "/read", "/settings" routes above this dynamic one regardless of source
+// order, so it only ever matches a single unknown-to-those path segment. Redirects to the reader
+// when the id is a real sutta uid; otherwise falls through to the same NotFoundPage the router's
+// own `default` renders for anything else unmatched.
+function RedirectToReader({ suttaId }: RouteComponentProps<{ suttaId: string }>) {
+  const { corpus } = useCorpus();
+  const known = Boolean(suttaId && corpus?.suttas[suttaId]);
+  useEffect(() => {
+    if (known) navigate(`/read/${suttaId}`, { replace: true });
+  }, [known, suttaId]);
+  if (!known) return <NotFoundPage />;
+  return null;
+}
+
 function Routes() {
   const { loading, error, retry } = useCorpus();
   if (error) return <LoadFailed onRetry={retry} />;
@@ -54,6 +70,8 @@ function Routes() {
       <LibraryPage path="/browse/:nodeId/*suttaId" />
       <ReaderPage path="/read/:suttaId" />
       <SettingsPage path="/settings" />
+      <RedirectToReader path="/:suttaId" />
+      <NotFoundPage default />
     </Router>
   );
 }
