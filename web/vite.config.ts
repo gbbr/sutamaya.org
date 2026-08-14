@@ -6,7 +6,6 @@ import { VitePWA } from 'vite-plugin-pwa';
 // `allowedHosts` below), paired with how to actually reach the app through each one — printed
 // on `npm run dev` startup so it doesn't have to be remembered/looked up each time.
 const devHosts: Record<string, string> = {
-  'gbbr.local': 'http://gbbr.local:5173',
   'local.sutamaya.org':
     'https://local.sutamaya.org  (needs `caddy run` in a separate terminal — see deploy.md "Testing on mobile")',
 };

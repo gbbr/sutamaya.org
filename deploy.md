@@ -370,8 +370,9 @@ up, so it works normally once actually deployed. To reproduce that locally with 
 ## Testing on mobile (local dev)
 
 The dev server already listens on all interfaces (`host: true` in `web/vite.config.ts`) and a
-phone on the same LAN can reach it by this machine's mDNS name (`gbbr.local`, already in
-`allowedHosts`). That's enough for browsing, but **Google sign-in won't work over it**: GSI
+phone on the same LAN can reach it by this machine's mDNS name (add it to `devHosts` in
+`web/vite.config.ts` to allow it through the dev server's Host-header guard). That's enough for
+browsing, but **Google sign-in won't work over it**: GSI
 validates the page's origin client-side against the OAuth client's authorized origins, and
 Google rejects that origin outright unless its host ends in a real, public top-level domain —
 so neither a LAN IP nor a `.local` mDNS name will ever be accepted, no matter what's serving it.
