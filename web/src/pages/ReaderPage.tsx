@@ -16,6 +16,7 @@ import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { setReaderThemeColor } from '../lib/themeColor';
 import { shortcutsForScope } from '../lib/shortcuts';
 import { tagIntent } from '../lib/routeIntent';
+import { animateScrollTop } from '../lib/segmentScroll';
 import { SegmentedText } from '../components/SegmentedText';
 import { HighlightPopup } from '../components/HighlightPopup';
 import { HighlightGutter } from '../components/HighlightGutter';
@@ -269,7 +270,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           className="flex-1 text-center opacity-75 font-serif cursor-pointer"
           aria-label="Scroll to top"
           title="Scroll to top"
-          onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={() => scrollRef.current && animateScrollTop(scrollRef.current, 0)}
         >
           {mobile ? sutta.ref : `${sutta.ref} · ${sutta.pali}`}
         </button>

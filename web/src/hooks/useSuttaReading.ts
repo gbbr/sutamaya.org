@@ -5,7 +5,7 @@ import { useHighlightPopup } from './useHighlightPopup';
 import { useScrollMemory, cancelPendingRestore } from './useScrollMemory';
 import { groupHighlights, highlightCount } from '../lib/highlights';
 import { getUiScale } from '../lib/uiPrefs';
-import { computeSegmentScrollOffset } from '../lib/segmentScroll';
+import { computeSegmentScrollOffset, animateScrollTop } from '../lib/segmentScroll';
 
 // The "load a sutta's reading state" boilerplate for ReaderPage (full-screen) — renders segments/
 // highlights through SegmentedText and needs the selection-popup, scroll-restoration, and
@@ -58,11 +58,15 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
     // applies its Settings > UI scale via CSS `zoom` on <html> (lib/uiPrefs.ts, active even at
     // the default 1x on any Chromium desktop), and native scrollIntoView isn't zoom-aware. See
     // computeSegmentScrollOffset (lib/segmentScroll.ts) for the actual unit conversion, the same
-    // fix already applied once in HighlightGutter/computeGutterLayout.
+    // fix already applied once in HighlightGutter/computeGutterLayout. The actual scroll write
+    // below goes through animateScrollTop rather than a native animated scrollBy/scrollTo — see
+    // that function's own comment for why.
     const containerRect = container.getBoundingClientRect();
     const elRect = el.getBoundingClientRect();
-    const offset = computeSegmentScrollOffset(containerRect, elRect, block, getUiScale());
-    container.scrollBy({ top: offset, behavior: 'smooth' });
+    const scale = getUiScale();
+    const offset = computeSegmentScrollOffset(containerRect, elRect, block, scale);
+
+    animateScrollTop(container, container.scrollTop + offset);
   }, [scrollRef]);
 
   return { segments, error, retry, hlForSutta, highlightGroups, hlCount, scrollRef, scrollToSegment, ...popup };
