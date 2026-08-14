@@ -10,7 +10,7 @@
 // not this one.
 import fs from 'node:fs';
 import path from 'node:path';
-import { listLocalRelPaths, keysHash, SUJATO_DIR, SNAPSHOT_PATH, MANIFEST_PATH } from './lib/sujatoSync.js';
+import { listLocalRelPaths, keysHash, SUJATO_DIR, SNAPSHOT_PATH, MANIFEST_PATH, green } from './lib/sujatoSync.js';
 
 // Core logic, callable directly with explicit paths (tests use this to point at a fixture tree
 // instead of the real data/sujato — see scripts/update-sujato.test.js).
@@ -46,5 +46,5 @@ export function runSnapshot({ sujatoDir = SUJATO_DIR, snapshotPath = SNAPSHOT_PA
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const snapshot = runSnapshot();
-  console.log(`update-sujato snapshot regenerated — ${snapshot.fileCount} files recorded at ${path.relative(process.cwd(), SNAPSHOT_PATH)}.`);
+  console.log(green(`update-sujato snapshot regenerated — ${snapshot.fileCount} files recorded at ${path.relative(process.cwd(), SNAPSHOT_PATH)}.`));
 }

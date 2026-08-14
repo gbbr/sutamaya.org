@@ -15,6 +15,12 @@ import {
   checkSnapshotInSync,
   SUJATO_DIR,
   SNAPSHOT_PATH,
+  MANIFEST_PATH,
+  red,
+  green,
+  yellow,
+  bold,
+  blue,
 } from './lib/sujatoSync.js';
 
 function describeSetDiff(oldKeys, newKeys) {
@@ -47,7 +53,11 @@ export function runCheck({ bilaraRoot, sujatoDir = SUJATO_DIR, snapshotPath = SN
 
   // Independent of bilaraRoot entirely — verifies data/sujato/ itself still matches
   // snapshot.json, catching a copy that got committed without a follow-up update-sujato:snapshot.
-  const issues = [...checkSnapshotInSync({ sujatoDir, snapshotPath }).issues];
+  // Kept separate from upstreamIssues below (rather than one merged list) since they're different
+  // questions with different fixes: local drift means "run update-sujato:snapshot", an upstream
+  // issue means "review what changed in SC_DATA_PATH".
+  const localIssues = checkSnapshotInSync({ sujatoDir, snapshotPath }).issues;
+  const upstreamIssues = [];
   let checked = 0;
 
   for (const [relPath, expected] of Object.entries(snapshot.files)) {
@@ -57,7 +67,7 @@ export function runCheck({ bilaraRoot, sujatoDir = SUJATO_DIR, snapshotPath = SN
       const where = sourcePath ?? '(no known category)';
       const relocations = possibleRelocations(relPath);
       const hint = relocations.length > 0 ? ` — might have moved to: ${relocations.join(', ')}` : '';
-      issues.push(`${relPath}: expected at ${where}, not found${hint} (renamed or removed upstream?)`);
+      upstreamIssues.push(`${relPath}: expected at ${where}, not found${hint} (renamed or removed upstream?)`);
       continue;
     }
 
@@ -65,21 +75,22 @@ export function runCheck({ bilaraRoot, sujatoDir = SUJATO_DIR, snapshotPath = SN
     try {
       keys = Object.keys(JSON.parse(fs.readFileSync(sourcePath, 'utf8')));
     } catch (err) {
-      issues.push(`${relPath}: failed to parse ${sourcePath}: ${err.message}`);
+      upstreamIssues.push(`${relPath}: failed to parse ${sourcePath}: ${err.message}`);
       continue;
     }
 
     if (keys.length !== expected.keyCount || keysHash(keys) !== expected.keysHash) {
       const localPath = path.join(sujatoDir, relPath);
       const oldKeys = fs.existsSync(localPath) ? Object.keys(JSON.parse(fs.readFileSync(localPath, 'utf8'))) : [];
-      issues.push(`${relPath}: segment ids changed (${oldKeys.length} → ${keys.length}) — ${describeSetDiff(oldKeys, keys)}`);
+      upstreamIssues.push(`${relPath}: segment ids changed (${oldKeys.length} → ${keys.length}) — ${describeSetDiff(oldKeys, keys)}`);
       continue;
     }
 
     checked += 1;
   }
 
-  return { ok: issues.length === 0, issues, checked, totalTracked: Object.keys(snapshot.files).length };
+  const issues = [...localIssues, ...upstreamIssues];
+  return { ok: issues.length === 0, issues, localIssues, upstreamIssues, checked, totalTracked: Object.keys(snapshot.files).length };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
@@ -87,21 +98,37 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   try {
     ({ bilaraRoot } = requireSourceRoot());
   } catch (err) {
-    console.error(err.message);
+    console.error(red(err.message));
     process.exit(1);
   }
 
   const result = runCheck({ bilaraRoot });
 
   if (!result.ok) {
-    console.error(`update-sujato check FAILED — ${result.issues.length} of ${result.totalTracked} tracked file(s) have a problem:\n`);
-    for (const issue of result.issues) console.error(`- ${issue}`);
+    console.error(bold(red(`update-sujato check FAILED — ${result.issues.length} of ${result.totalTracked} tracked file(s) have a problem:`)));
+
+    if (result.localIssues.length) {
+      console.error(bold(red(`\nLocal drift — data/sujato/ vs snapshot.json (${result.localIssues.length}):`)));
+      console.error(red(`  did a previous update-sujato:copy forget to run update-sujato:snapshot afterward?`));
+      for (const issue of result.localIssues) console.error(red(`- ${issue}`));
+
+      if (fs.existsSync(MANIFEST_PATH)) {
+        const { sourceCommit, snapshotCommit } = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
+        console.error(`\ndata/sujato/manifest.json:\n\tsourceCommit   = ${sourceCommit ?? '(none)'}\n\tsnapshotCommit = ${snapshotCommit ?? '(none)'}`);
+      }
+    }
+
+    if (result.upstreamIssues.length) {
+      console.error(bold(yellow(`\nUpstream changes — ${bilaraRoot} vs snapshot.json (${result.upstreamIssues.length}):`)));
+      for (const issue of result.upstreamIssues) console.error(yellow(`- ${issue}`));
+    }
+
     console.error(
-      `\nReview the files, copy them over using upadte-sujato:copy, test the post using update-sujato:post ` +
-        `and if all looks well regenerate the snapshot using update-sujato:snapshot.`,
+      `\nReview the files, copy them over using ${blue('update-sujato:copy')}, test the post-processing using ${blue('update-sujato:post')} ` +
+        `and if all looks well regenerate the snapshot using ${blue('update-sujato:snapshot')}.`,
     );
     process.exit(1);
   }
 
-  console.log(`update-sujato check OK — ${result.checked} tracked files verified against ${bilaraRoot}.`);
+  console.log(green(`update-sujato check OK — ${result.checked} tracked files verified against ${bilaraRoot}.`));
 }

@@ -5,6 +5,18 @@ import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
+// Shared CLI colors for the update-sujato-{check,copy,post,snapshot}.mjs scripts — no color
+// library needed for a handful of raw ANSI codes. Skipped outright when neither stdout nor stderr
+// is a TTY (piped/redirected output, e.g. captured into a log file) or NO_COLOR is set, so a
+// non-interactive run never has to look at escape codes.
+const useColor = (!!process.stdout.isTTY || !!process.stderr.isTTY) && !process.env.NO_COLOR;
+const wrapColor = (code) => (s) => (useColor ? `\x1b[${code}m${s}\x1b[0m` : s);
+export const red = wrapColor(91); // bright red — plain 31 reads too dark on a black background
+export const green = wrapColor(32);
+export const yellow = wrapColor(33);
+export const blue = wrapColor(36);
+export const bold = wrapColor(1);
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const ROOT = path.join(__dirname, '..', '..');
 export const SUJATO_DIR = path.join(ROOT, 'data', 'sujato');
@@ -137,11 +149,9 @@ export function checkSnapshotInSync({ sujatoDir = SUJATO_DIR, snapshotPath = SNA
     }
     const keys = Object.keys(JSON.parse(fs.readFileSync(localPath, 'utf8')));
     if (keys.length !== expected.keyCount || keysHash(keys) !== expected.keysHash) {
-      issues.push(
-        `${relPath}: data/sujato has drifted from the snapshot (local keys differ) — did a previous ` +
-          `update-sujato:copy forget to run update-sujato:snapshot afterward? Run update-sujato:snapshot ` +
-          `once you've confirmed data/sujato's current contents are correct.`,
-      );
+      // Kept terse (just what differs) — the "did you forget update-sujato:snapshot?" explanation
+      // belongs once per run, not once per file (see update-sujato-check.mjs's CLI block).
+      issues.push(`${relPath}: local keys differ from the snapshot (${expected.keyCount} → ${keys.length}).`);
     }
   }
 

@@ -7,7 +7,18 @@
 // See scripts/update-sujato/README.md.
 import fs from 'node:fs';
 import path from 'node:path';
-import { requireSourceRoot, sourceGitInfo, sourcePathFor, loadSnapshot, SUJATO_DIR, SNAPSHOT_PATH, MANIFEST_PATH } from './lib/sujatoSync.js';
+import {
+  requireSourceRoot,
+  sourceGitInfo,
+  sourcePathFor,
+  loadSnapshot,
+  SUJATO_DIR,
+  SNAPSHOT_PATH,
+  MANIFEST_PATH,
+  red,
+  green,
+  yellow,
+} from './lib/sujatoSync.js';
 
 // Core logic, callable directly with explicit paths/gitInfo (tests use this to point at a
 // fixture tree instead of the real data/sujato — see scripts/update-sujato.test.js). Returns the
@@ -52,21 +63,21 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     ({ scDataPath, bilaraRoot } = requireSourceRoot());
     gitInfo = sourceGitInfo(scDataPath);
   } catch (err) {
-    console.error(err.message);
+    console.error(red(err.message));
     process.exit(1);
   }
 
   if (gitInfo.dirty) {
-    console.warn(`Warning: SC_DATA_PATH (${scDataPath}) has uncommitted local changes — manifest.json's commit won't fully describe what was copied.`);
+    console.warn(yellow(`Warning: SC_DATA_PATH (${scDataPath}) has uncommitted local changes — manifest.json's commit won't fully describe what was copied.`));
   }
 
   let manifest;
   try {
     manifest = runCopy({ bilaraRoot, gitInfo });
   } catch (err) {
-    console.error(err.message);
+    console.error(red(err.message));
     process.exit(1);
   }
 
-  console.log(`update-sujato copy done — ${manifest.fileCount} files copied from ${bilaraRoot} (sc-data @ ${gitInfo.commit.slice(0, 12)}).`);
+  console.log(green(`update-sujato copy done — ${manifest.fileCount} files copied from ${bilaraRoot} (sc-data @ ${gitInfo.commit.slice(0, 12)}).`));
 }
