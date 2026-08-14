@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Reads /data (SuttaCentral-style Bilara JSON) and emits web/public/data/{corpus.json,dictionary.json,text/*.json}.
-// See data/BRIEF.md for the raw data model, and CLAUDE.md for the browse-tree rules this encodes.
+// See data/README.md for the raw data model, and CLAUDE.md for the browse-tree rules this encodes.
 
 import fs from 'node:fs';
 import path from 'node:path';

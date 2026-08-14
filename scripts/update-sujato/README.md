@@ -1,6 +1,6 @@
 # `npm run update-sujato`
 
-Refreshes `data/sujato/` (blurb/name/sutta/notes — see `data/BRIEF.md`) from a local checkout of
+Refreshes `data/sujato/` (blurb/name/sutta/notes — see `data/README.md`) from a local checkout of
 [suttacentral/sc-data](https://github.com/suttacentral/sc-data), pointed to by the `SC_DATA_PATH`
 env var (must be the repo root — the pipeline reads from its `sc_bilara_data/` subtree, and (for
 `copy`) its git commit). Runs three steps in order (`npm run update-sujato:check && :copy &&
