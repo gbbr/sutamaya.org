@@ -46,3 +46,17 @@ that's what lets it catch a file being renamed/restructured or gaining/losing se
 file added to `data/sujato/` by some other means after the snapshot was taken is outside this
 pipeline's tracked scope (not in `snapshot.json`'s `files` map) and won't be checked, copied, or
 snapshotted by this pipeline until a manual `update-sujato:snapshot` run picks it up.
+
+## Tests
+
+`../update-sujato.test.js` covers all four `runXxx()` exports (`runCheck`/`runCopy`/`runPost`/
+`runSnapshot` — the same functions each script's CLI entry point calls) against throwaway
+temp-dir fixtures, never the real `data/sujato` or a real `SC_DATA_PATH` checkout: every script
+accepts explicit `sujatoDir`/`bilaraRoot`/`snapshotPath`/`manifestPath` overrides for exactly this
+reason, defaulting to the real paths only when called from each script's own CLI guard
+(`if (import.meta.url === ...)`). Covers a clean check pass, a detected segment-id change, a
+missing/relocated file (with and without a basename-fallback hint), copy's byte-for-byte output
+and manifest, post's word-form substitution (including the "immerser" false-positive it's meant to
+avoid) and idempotency, and a full check-fails → copy → post → snapshot → check-passes round trip.
+`requireSourceRoot`/`sourceGitInfo` (`../lib/sujatoSync.js`) are covered separately against a real
+throwaway `git init` fixture and `SC_DATA_PATH` env var manipulation, restored after each test.

@@ -12,21 +12,30 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { listLocalRelPaths, keysHash, SUJATO_DIR, SNAPSHOT_PATH } from './lib/sujatoSync.js';
 
-const relPaths = listLocalRelPaths();
-const files = {};
-for (const relPath of relPaths) {
-  const keys = Object.keys(JSON.parse(fs.readFileSync(path.join(SUJATO_DIR, relPath), 'utf8')));
-  files[relPath] = { keyCount: keys.length, keysHash: keysHash(keys) };
+// Core logic, callable directly with explicit paths (tests use this to point at a fixture tree
+// instead of the real data/sujato — see scripts/update-sujato.test.js).
+export function runSnapshot({ sujatoDir = SUJATO_DIR, snapshotPath = SNAPSHOT_PATH } = {}) {
+  const relPaths = listLocalRelPaths(sujatoDir);
+  const files = {};
+  for (const relPath of relPaths) {
+    const keys = Object.keys(JSON.parse(fs.readFileSync(path.join(sujatoDir, relPath), 'utf8')));
+    files[relPath] = { keyCount: keys.length, keysHash: keysHash(keys) };
+  }
+
+  const snapshot = {
+    generatedAt: new Date().toISOString(),
+    note: 'Baseline snapshot of data/sujato, used by update-sujato-check.mjs to verify a prospective sc-data checkout has not renamed files or changed segment ids before copying. Regenerated only manually (npm run update-sujato:snapshot), after reviewing a check failure by hand — never automatically.',
+    fileCount: relPaths.length,
+    files,
+  };
+
+  fs.mkdirSync(path.dirname(snapshotPath), { recursive: true });
+  fs.writeFileSync(snapshotPath, JSON.stringify(snapshot, null, 2) + '\n');
+
+  return snapshot;
 }
 
-const snapshot = {
-  generatedAt: new Date().toISOString(),
-  note: 'Baseline snapshot of data/sujato, used by update-sujato-check.mjs to verify a prospective sc-data checkout has not renamed files or changed segment ids before copying. Regenerated only manually (npm run update-sujato:snapshot), after reviewing a check failure by hand — never automatically.',
-  fileCount: relPaths.length,
-  files,
-};
-
-fs.mkdirSync(path.dirname(SNAPSHOT_PATH), { recursive: true });
-fs.writeFileSync(SNAPSHOT_PATH, JSON.stringify(snapshot, null, 2) + '\n');
-
-console.log(`update-sujato snapshot regenerated — ${relPaths.length} files recorded at ${path.relative(process.cwd(), SNAPSHOT_PATH)}.`);
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const snapshot = runSnapshot();
+  console.log(`update-sujato snapshot regenerated — ${snapshot.fileCount} files recorded at ${path.relative(process.cwd(), SNAPSHOT_PATH)}.`);
+}

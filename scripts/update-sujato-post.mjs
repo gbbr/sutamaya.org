@@ -12,7 +12,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { listLocalRelPaths, SUJATO_DIR } from './lib/sujatoSync.js';
 
-const WORD_FORMS = [
+export const WORD_FORMS = [
   ['mendicant', 'bhikkhu'],
   ['mendicants', 'bhikkhus'],
   ['immerse', 'concentrate'],
@@ -25,7 +25,7 @@ const WORD_FORMS = [
 
 const capitalize = (s) => s[0].toUpperCase() + s.slice(1);
 
-function applyReplacements(text) {
+export function applyReplacements(text) {
   let result = text;
   let count = 0;
   for (const [word, replacement] of WORD_FORMS) {
@@ -37,28 +37,37 @@ function applyReplacements(text) {
   return { result, count };
 }
 
-let filesChanged = 0;
-let replacements = 0;
+// Core logic, callable directly with an explicit sujatoDir (tests use this to point at a fixture
+// tree instead of the real data/sujato — see scripts/update-sujato.test.js).
+export function runPost({ sujatoDir = SUJATO_DIR } = {}) {
+  let filesChanged = 0;
+  let replacements = 0;
 
-for (const relPath of listLocalRelPaths()) {
-  const fullPath = path.join(SUJATO_DIR, relPath);
-  const obj = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+  for (const relPath of listLocalRelPaths(sujatoDir)) {
+    const fullPath = path.join(sujatoDir, relPath);
+    const obj = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
 
-  let changed = false;
-  for (const [key, value] of Object.entries(obj)) {
-    if (typeof value !== 'string') continue;
-    const { result, count } = applyReplacements(value);
-    if (count > 0) {
-      obj[key] = result;
-      replacements += count;
-      changed = true;
+    let changed = false;
+    for (const [key, value] of Object.entries(obj)) {
+      if (typeof value !== 'string') continue;
+      const { result, count } = applyReplacements(value);
+      if (count > 0) {
+        obj[key] = result;
+        replacements += count;
+        changed = true;
+      }
+    }
+
+    if (changed) {
+      fs.writeFileSync(fullPath, JSON.stringify(obj, null, 2));
+      filesChanged += 1;
     }
   }
 
-  if (changed) {
-    fs.writeFileSync(fullPath, JSON.stringify(obj, null, 2));
-    filesChanged += 1;
-  }
+  return { filesChanged, replacements };
 }
 
-console.log(`update-sujato post done — ${replacements} replacements across ${filesChanged} file(s).`);
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const { filesChanged, replacements } = runPost();
+  console.log(`update-sujato post done — ${replacements} replacements across ${filesChanged} file(s).`);
+}
