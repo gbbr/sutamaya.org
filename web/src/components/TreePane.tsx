@@ -276,7 +276,7 @@ export function TreePane({
     setDraft,
     draftKind,
     setDraftKind,
-    submittingDraft,
+    submittingParentId,
     listInput,
     toggleListMenu,
     startEditList,
@@ -451,8 +451,9 @@ export function TreePane({
       onDraftChange: setDraft,
       onDraftKey,
       draftInputRef,
+      submittingParentId,
     }),
-    [creatingParentId, draft, setDraft, onDraftKey, draftInputRef]
+    [creatingParentId, draft, setDraft, onDraftKey, draftInputRef, submittingParentId]
   );
 
   if (!corpus) return null;
@@ -623,7 +624,7 @@ export function TreePane({
             onDraftKey={onDraftKey}
             draftKind={draftKind}
             setDraftKind={setDraftKind}
-            submittingDraft={submittingDraft}
+            submittingParentId={submittingParentId}
             topLevelLists={topLevelLists}
             listChildrenOf={listChildrenOf}
             countFor={countFor}
