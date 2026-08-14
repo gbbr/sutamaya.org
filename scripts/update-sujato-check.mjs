@@ -6,7 +6,15 @@
 // the translated values are allowed to differ. See scripts/update-sujato/README.md.
 import fs from 'node:fs';
 import path from 'node:path';
-import { requireSourceRoot, sourcePathFor, buildBasenameIndex, loadSnapshot, keysHash, SUJATO_DIR } from './lib/sujatoSync.js';
+import {
+  requireSourceRoot,
+  sourcePathFor,
+  buildBasenameIndex,
+  loadSnapshot,
+  keysHash,
+  SUJATO_DIR,
+  SNAPSHOT_PATH,
+} from './lib/sujatoSync.js';
 
 function describeSetDiff(oldKeys, newKeys) {
   const oldSet = new Set(oldKeys);
@@ -21,63 +29,75 @@ function describeSetDiff(oldKeys, newKeys) {
   return parts.join('; ');
 }
 
-let bilaraRoot;
-try {
-  ({ bilaraRoot } = requireSourceRoot());
-} catch (err) {
-  console.error(err.message);
-  process.exit(1);
-}
+// Core logic, callable directly with an explicit bilaraRoot/sujatoDir/snapshotPath (tests use
+// this to point at a fixture tree instead of the real data/sujato — see
+// scripts/update-sujato.test.js). Returns a result object instead of printing/exiting so callers
+// (the CLI entry point below, or a test) decide what to do with it.
+export function runCheck({ bilaraRoot, sujatoDir = SUJATO_DIR, snapshotPath = SNAPSHOT_PATH }) {
+  const snapshot = loadSnapshot(snapshotPath);
 
-const snapshot = loadSnapshot();
-
-// Built lazily on the first missing file — a full-tree scan, so not worth doing unless something
-// has actually gone missing from its expected path.
-let basenameIndex = null;
-function possibleRelocations(relPath) {
-  if (!basenameIndex) basenameIndex = buildBasenameIndex(bilaraRoot);
-  return basenameIndex.get(path.basename(relPath)) || [];
-}
-
-const issues = [];
-let checked = 0;
-
-for (const [relPath, expected] of Object.entries(snapshot.files)) {
-  const sourcePath = sourcePathFor(bilaraRoot, relPath);
-
-  if (!sourcePath || !fs.existsSync(sourcePath)) {
-    const where = sourcePath ?? '(no known category)';
-    const relocations = possibleRelocations(relPath);
-    const hint = relocations.length > 0 ? ` — might have moved to: ${relocations.join(', ')}` : '';
-    issues.push(`${relPath}: expected at ${where}, not found${hint} (renamed or removed upstream?)`);
-    continue;
+  // Built lazily on the first missing file — a full-tree scan, so not worth doing unless
+  // something has actually gone missing from its expected path.
+  let basenameIndex = null;
+  function possibleRelocations(relPath) {
+    if (!basenameIndex) basenameIndex = buildBasenameIndex(bilaraRoot);
+    return basenameIndex.get(path.basename(relPath)) || [];
   }
 
-  let keys;
+  const issues = [];
+  let checked = 0;
+
+  for (const [relPath, expected] of Object.entries(snapshot.files)) {
+    const sourcePath = sourcePathFor(bilaraRoot, relPath);
+
+    if (!sourcePath || !fs.existsSync(sourcePath)) {
+      const where = sourcePath ?? '(no known category)';
+      const relocations = possibleRelocations(relPath);
+      const hint = relocations.length > 0 ? ` — might have moved to: ${relocations.join(', ')}` : '';
+      issues.push(`${relPath}: expected at ${where}, not found${hint} (renamed or removed upstream?)`);
+      continue;
+    }
+
+    let keys;
+    try {
+      keys = Object.keys(JSON.parse(fs.readFileSync(sourcePath, 'utf8')));
+    } catch (err) {
+      issues.push(`${relPath}: failed to parse ${sourcePath}: ${err.message}`);
+      continue;
+    }
+
+    if (keys.length !== expected.keyCount || keysHash(keys) !== expected.keysHash) {
+      const oldKeys = Object.keys(JSON.parse(fs.readFileSync(path.join(sujatoDir, relPath), 'utf8')));
+      issues.push(`${relPath}: segment ids changed (${oldKeys.length} → ${keys.length}) — ${describeSetDiff(oldKeys, keys)}`);
+      continue;
+    }
+
+    checked += 1;
+  }
+
+  return { ok: issues.length === 0, issues, checked, totalTracked: Object.keys(snapshot.files).length };
+}
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  let bilaraRoot;
   try {
-    keys = Object.keys(JSON.parse(fs.readFileSync(sourcePath, 'utf8')));
+    ({ bilaraRoot } = requireSourceRoot());
   } catch (err) {
-    issues.push(`${relPath}: failed to parse ${sourcePath}: ${err.message}`);
-    continue;
+    console.error(err.message);
+    process.exit(1);
   }
 
-  if (keys.length !== expected.keyCount || keysHash(keys) !== expected.keysHash) {
-    const oldKeys = Object.keys(JSON.parse(fs.readFileSync(path.join(SUJATO_DIR, relPath), 'utf8')));
-    issues.push(`${relPath}: segment ids changed (${oldKeys.length} → ${keys.length}) — ${describeSetDiff(oldKeys, keys)}`);
-    continue;
+  const result = runCheck({ bilaraRoot });
+
+  if (!result.ok) {
+    console.error(`update-sujato check FAILED — ${result.issues.length} of ${result.totalTracked} tracked file(s) have a problem:\n`);
+    for (const issue of result.issues) console.error(`- ${issue}`);
+    console.error(
+      `\nReview the files, copy them over using upadte-sujato:copy, test the post using update-sujato:post ` +
+        `and if all looks well regenerate the snapshot using update-sujato:snapshot.`,
+    );
+    process.exit(1);
   }
 
-  checked += 1;
+  console.log(`update-sujato check OK — ${result.checked} tracked files verified against ${bilaraRoot}.`);
 }
-
-if (issues.length > 0) {
-  console.error(`update-sujato check FAILED — ${issues.length} of ${Object.keys(snapshot.files).length} tracked file(s) have a problem:\n`);
-  for (const issue of issues) console.error(`- ${issue}`);
-  console.error(
-    `\nReview the files, copy them over using upadte-sujato:copy, test the post using update-sujato:post ` +
-      `and if all looks well regenerate the snapshot using update-sujato:snapshot.`,
-  );
-  process.exit(1);
-}
-
-console.log(`update-sujato check OK — ${checked} tracked files verified against ${bilaraRoot}.`);

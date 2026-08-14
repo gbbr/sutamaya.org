@@ -7,44 +7,60 @@
 // See scripts/update-sujato/README.md.
 import fs from 'node:fs';
 import path from 'node:path';
-import { requireSourceRoot, sourceGitInfo, sourcePathFor, loadSnapshot, SUJATO_DIR, MANIFEST_PATH } from './lib/sujatoSync.js';
+import { requireSourceRoot, sourceGitInfo, sourcePathFor, loadSnapshot, SUJATO_DIR, SNAPSHOT_PATH, MANIFEST_PATH } from './lib/sujatoSync.js';
 
-let scDataPath, bilaraRoot, gitInfo;
-try {
-  ({ scDataPath, bilaraRoot } = requireSourceRoot());
-  gitInfo = sourceGitInfo(scDataPath);
-} catch (err) {
-  console.error(err.message);
-  process.exit(1);
+// Core logic, callable directly with explicit paths/gitInfo (tests use this to point at a
+// fixture tree instead of the real data/sujato — see scripts/update-sujato.test.js). Returns the
+// manifest it wrote instead of just printing, so callers can assert on it.
+export function runCopy({ bilaraRoot, gitInfo, sujatoDir = SUJATO_DIR, snapshotPath = SNAPSHOT_PATH, manifestPath = MANIFEST_PATH }) {
+  const snapshot = loadSnapshot(snapshotPath);
+
+  let copied = 0;
+  for (const relPath of Object.keys(snapshot.files)) {
+    const sourcePath = sourcePathFor(bilaraRoot, relPath);
+    if (!sourcePath || !fs.existsSync(sourcePath)) {
+      throw new Error(`${relPath}: expected source at ${sourcePath ?? '(no known category)'} — run update-sujato-check first.`);
+    }
+    const destPath = path.join(sujatoDir, relPath);
+    fs.mkdirSync(path.dirname(destPath), { recursive: true });
+    fs.copyFileSync(sourcePath, destPath);
+    copied += 1;
+  }
+
+  const manifest = {
+    sourceRepo: 'suttacentral/sc-data',
+    sourceCommit: gitInfo.commit,
+    sourceCommitDate: gitInfo.commitDate,
+    sourceDirty: gitInfo.dirty,
+    updatedAt: new Date().toISOString(),
+    fileCount: copied,
+  };
+  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
+
+  return manifest;
 }
 
-if (gitInfo.dirty) {
-  console.warn(`Warning: SC_DATA_PATH (${scDataPath}) has uncommitted local changes — manifest.json's commit won't fully describe what was copied.`);
-}
-
-const snapshot = loadSnapshot();
-
-let copied = 0;
-for (const relPath of Object.keys(snapshot.files)) {
-  const sourcePath = sourcePathFor(bilaraRoot, relPath);
-  if (!sourcePath || !fs.existsSync(sourcePath)) {
-    console.error(`${relPath}: expected source at ${sourcePath ?? '(no known category)'} — run update-sujato-check first.`);
+if (import.meta.url === `file://${process.argv[1]}`) {
+  let scDataPath, bilaraRoot, gitInfo;
+  try {
+    ({ scDataPath, bilaraRoot } = requireSourceRoot());
+    gitInfo = sourceGitInfo(scDataPath);
+  } catch (err) {
+    console.error(err.message);
     process.exit(1);
   }
-  const destPath = path.join(SUJATO_DIR, relPath);
-  fs.mkdirSync(path.dirname(destPath), { recursive: true });
-  fs.copyFileSync(sourcePath, destPath);
-  copied += 1;
+
+  if (gitInfo.dirty) {
+    console.warn(`Warning: SC_DATA_PATH (${scDataPath}) has uncommitted local changes — manifest.json's commit won't fully describe what was copied.`);
+  }
+
+  let manifest;
+  try {
+    manifest = runCopy({ bilaraRoot, gitInfo });
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+
+  console.log(`update-sujato copy done — ${manifest.fileCount} files copied from ${bilaraRoot} (sc-data @ ${gitInfo.commit.slice(0, 12)}).`);
 }
-
-const manifest = {
-  sourceRepo: 'suttacentral/sc-data',
-  sourceCommit: gitInfo.commit,
-  sourceCommitDate: gitInfo.commitDate,
-  sourceDirty: gitInfo.dirty,
-  updatedAt: new Date().toISOString(),
-  fileCount: copied,
-};
-fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + '\n');
-
-console.log(`update-sujato copy done — ${copied} files copied from ${bilaraRoot} (sc-data @ ${gitInfo.commit.slice(0, 12)}).`);

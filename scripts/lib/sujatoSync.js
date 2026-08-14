@@ -97,12 +97,13 @@ export function walkJsonFiles(dir) {
   return out;
 }
 
-// Relative (POSIX-style) paths of every tracked content file currently under data/sujato/ (i.e.
+// Relative (POSIX-style) paths of every tracked content file currently under sujatoDir (i.e.
 // blurb/name/sutta/notes — excludes manifest.json itself, which is provenance metadata, not
-// translation content).
-export function listLocalRelPaths() {
-  return walkJsonFiles(SUJATO_DIR)
-    .map((f) => path.relative(SUJATO_DIR, f).split(path.sep).join('/'))
+// translation content). Defaults to the real data/sujato/; overridable so tests can point it at a
+// fixture directory instead.
+export function listLocalRelPaths(sujatoDir = SUJATO_DIR) {
+  return walkJsonFiles(sujatoDir)
+    .map((f) => path.relative(sujatoDir, f).split(path.sep).join('/'))
     .filter((rel) => rel !== path.basename(MANIFEST_PATH))
     .sort();
 }
@@ -111,9 +112,10 @@ export function keysHash(keys) {
   return crypto.createHash('sha256').update([...keys].sort().join('\n')).digest('hex');
 }
 
-export function loadSnapshot() {
-  if (!fs.existsSync(SNAPSHOT_PATH)) {
-    throw new Error(`No snapshot at ${path.relative(ROOT, SNAPSHOT_PATH)} — see scripts/update-sujato/README.md.`);
+// Defaults to the real snapshot.json; overridable so tests can point it at a fixture file instead.
+export function loadSnapshot(snapshotPath = SNAPSHOT_PATH) {
+  if (!fs.existsSync(snapshotPath)) {
+    throw new Error(`No snapshot at ${snapshotPath} — see scripts/update-sujato/README.md.`);
   }
-  return JSON.parse(fs.readFileSync(SNAPSHOT_PATH, 'utf8'));
+  return JSON.parse(fs.readFileSync(snapshotPath, 'utf8'));
 }
