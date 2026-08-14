@@ -4,6 +4,7 @@ import { db, notesCol, highlightsCol, visitedCol } from '../firestore.js';
 import { requireAuth } from '../auth.js';
 import { asyncHandler } from '../asyncHandler.js';
 import { planHighlightRangeUpdate } from '../lib/highlightRangePlan.js';
+import { NOTE_MAX_LENGTH } from '../lib/textLimits.js';
 
 export const annotationsRouter = Router();
 annotationsRouter.use(requireAuth);
@@ -11,7 +12,7 @@ annotationsRouter.use(requireAuth);
 annotationsRouter.put(
   '/notes/:suttaId',
   asyncHandler(async (req, res) => {
-    const text = (req.body && req.body.text) || '';
+    const text = ((req.body && req.body.text) || '').slice(0, NOTE_MAX_LENGTH);
     const ref = notesCol(req.user.id).doc(req.params.suttaId);
     if (text.trim() === '') await ref.delete();
     else await ref.set({ text, updatedAt: new Date().toISOString() });

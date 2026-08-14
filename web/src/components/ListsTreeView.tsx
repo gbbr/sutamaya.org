@@ -5,6 +5,7 @@ import type { ListDef, ListKind } from '../lib/types';
 import type { DropIndicator } from '../lib/listTreeDrop';
 import { ListRow, type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
 import { SlidingPillToggle } from './SlidingPillToggle';
+import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits';
 
 interface ListsTreeViewProps {
   nodeId?: string;
@@ -117,6 +118,7 @@ export function ListsTreeView({
             onKeyDown={onDraftKey}
             onBlur={() => setCreatingParentId(undefined)}
             placeholder={draftKind === 'group' ? 'Group name — return to create' : 'List name — return to create'}
+            maxLength={LIST_NAME_MAX_LENGTH}
             className="font-serif flex-1 min-w-0 h-[34px] border border-accent rounded-lg px-2.5 bg-field text-[14.5px] outline-none"
             autoComplete="off"
             autoCorrect="off"

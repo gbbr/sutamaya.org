@@ -206,7 +206,7 @@ export function ReaderMenuPanel({
                 placeholder="Add a note — return to save"
                 textareaClassName="w-full bg-transparent text-[16px] resize-none outline-none font-serif"
                 textareaStyle={{ border: 0, color: theme.fg }}
-                saveButtonClassName="mt-1.5 font-sans text-[11.5px] font-semibold px-2 py-[3px] rounded"
+                saveButtonClassName="font-sans text-[11.5px] font-semibold px-2 py-[3px] rounded"
                 saveButtonStyle={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
               />
             </div>

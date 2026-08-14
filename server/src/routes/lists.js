@@ -6,6 +6,7 @@ import { nextPosition } from '../lib/listPositions.js';
 import { invalidParentReasonForDoc, wouldCreateCycle } from '../lib/listParent.js';
 import { shapeList } from '../lib/listShape.js';
 import { reconcileItemOrder } from '../lib/listItemOrder.js';
+import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits.js';
 
 export const listsRouter = Router();
 listsRouter.use(requireAuth);
@@ -75,7 +76,7 @@ listsRouter.get(
 listsRouter.post(
   '/',
   asyncHandler(async (req, res) => {
-    const label = ((req.body && req.body.label) || '').trim();
+    const label = ((req.body && req.body.label) || '').trim().slice(0, LIST_NAME_MAX_LENGTH);
     if (!label) return res.status(400).json({ error: 'List name is required.' });
     const kind = req.body?.kind === 'group' ? 'group' : 'list';
     const parentId = parentIdFromBody(req.body);
@@ -109,7 +110,7 @@ listsRouter.patch(
   asyncHandler(async (req, res) => {
     const ref = listsCol(req.user.id).doc(req.params.id);
     const update = {};
-    if (typeof req.body?.label === 'string' && req.body.label.trim()) update.label = req.body.label.trim();
+    if (typeof req.body?.label === 'string' && req.body.label.trim()) update.label = req.body.label.trim().slice(0, LIST_NAME_MAX_LENGTH);
     if (Number.isInteger(req.body?.position)) update.position = req.body.position;
     // `parentId` is a legitimate value to explicitly set to null (move to top level), so check
     // for the key's presence rather than truthiness.

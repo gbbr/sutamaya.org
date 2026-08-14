@@ -3,6 +3,7 @@ import { dataApi, highlightsApi, listsApi, notesApi, visitedApi } from '../lib/a
 import type { Highlight, HighlightsMap, ListDef, ListKind, Membership, NotesMap, VisitedMap } from '../lib/types';
 import { RECENT_AUTO_LIST_CAP, RECENT_AUTO_LIST_ID } from '../lib/autoLists';
 import { applyListReorder } from '../lib/lists';
+import { LIST_NAME_MAX_LENGTH, NOTE_MAX_LENGTH } from '../lib/textLimits';
 import { useAuth } from './AuthContext';
 
 interface UserDataState {
@@ -147,10 +148,11 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
         promptGoogleSignIn();
         throw new Error('not_authenticated');
       }
-      const existing = lists.find((l) => l.label === label && l.parentId === parentId && l.kind === kind);
+      const capped = label.slice(0, LIST_NAME_MAX_LENGTH);
+      const existing = lists.find((l) => l.label === capped && l.parentId === parentId && l.kind === kind);
       if (existing) return existing;
       try {
-        const { list } = await listsApi.create(label, parentId, kind);
+        const { list } = await listsApi.create(capped, parentId, kind);
         const def: ListDef = { id: list.id, label: list.label, parentId: list.parentId, kind: list.kind, items: list.items };
         setLists((ls) => [...ls, def]);
         return def;
@@ -164,7 +166,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
 
   const renameList = useCallback(
     async (id: string, label: string) => {
-      const trimmed = label.trim();
+      const trimmed = label.trim().slice(0, LIST_NAME_MAX_LENGTH);
       if (!trimmed) return;
       const old = lists.find((l) => l.id === id);
       if (!old || old.label === trimmed) return;
@@ -293,8 +295,9 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   const submitNote = useCallback(
     async (suttaId: string, text: string) => {
       if (!user) return promptGoogleSignIn();
-      setNotes((n) => ({ ...n, [suttaId]: text }));
-      await mutateThenSync('submit note', () => notesApi.set(suttaId, text));
+      const capped = text.slice(0, NOTE_MAX_LENGTH);
+      setNotes((n) => ({ ...n, [suttaId]: capped }));
+      await mutateThenSync('submit note', () => notesApi.set(suttaId, capped));
     },
     [user, promptGoogleSignIn, mutateThenSync]
   );
