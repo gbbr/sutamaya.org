@@ -83,6 +83,70 @@ describe('useScrollMemory', () => {
     expect(el.scrollTop).toBe(800);
   });
 
+  it('keeps correcting drift from a second, later content wave (e.g. notes/highlight chips loading after the text)', async () => {
+    const key = freshKey();
+    const first = render(<TestBox scrollKey={key} />);
+    scrollTo(first.getByTestId('box'), 800);
+    first.unmount();
+
+    const second = render(<TestBox scrollKey={key} />);
+    const el = second.getByTestId('box');
+    el.scrollTop = 0;
+    Object.defineProperty(el, 'clientHeight', { value: 100, configurable: true });
+    Object.defineProperty(el, 'scrollHeight', { value: 1000, configurable: true });
+
+    await act(async () => {
+      el.appendChild(document.createElement('span')); // the sutta text finishing rendering
+      await Promise.resolve();
+    });
+    expect(el.scrollTop).toBe(800);
+
+    // A separate, later fetch (ReaderPage's notes/highlight-count/list chips, from
+    // UserDataContext) inserts more content above the text, growing the container further and —
+    // in a real browser — nudging scrollTop via CSS scroll anchoring. Simulated here as an
+    // ordinary further mutation that also moves scrollTop away from `desired`, the same shape
+    // that anchoring compensation takes.
+    await act(async () => {
+      Object.defineProperty(el, 'scrollHeight', { value: 1080, configurable: true });
+      el.scrollTop = 880; // anchoring's own compensating bump, not a real user scroll
+      el.appendChild(document.createElement('div'));
+      await Promise.resolve();
+    });
+
+    expect(el.scrollTop).toBe(800);
+  });
+
+  it('stops correcting once real user scroll input arrives, even if content grows again afterward', async () => {
+    const key = freshKey();
+    const first = render(<TestBox scrollKey={key} />);
+    scrollTo(first.getByTestId('box'), 800);
+    first.unmount();
+
+    const second = render(<TestBox scrollKey={key} />);
+    const el = second.getByTestId('box');
+    el.scrollTop = 0;
+    Object.defineProperty(el, 'clientHeight', { value: 100, configurable: true });
+    Object.defineProperty(el, 'scrollHeight', { value: 1000, configurable: true });
+
+    await act(async () => {
+      el.appendChild(document.createElement('span'));
+      await Promise.resolve();
+    });
+    expect(el.scrollTop).toBe(800);
+
+    // The user actually scrolls themselves — this must give up the restore for good.
+    el.dispatchEvent(new Event('wheel'));
+    el.scrollTop = 500;
+
+    await act(async () => {
+      Object.defineProperty(el, 'scrollHeight', { value: 1080, configurable: true });
+      el.appendChild(document.createElement('div'));
+      await Promise.resolve();
+    });
+
+    expect(el.scrollTop).toBe(500);
+  });
+
   it('cancelPendingRestore stops that reapply from clobbering a scroll made in the meantime', async () => {
     const key = freshKey();
     const first = render(<TestBox scrollKey={key} />);

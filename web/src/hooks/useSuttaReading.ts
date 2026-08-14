@@ -21,11 +21,21 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
   scrollKeyPrefix: string,
   hasDeepLinkTarget = false
 ) {
-  const { highlights } = useUserData();
+  const { highlights, ready: userDataReady } = useUserData();
   const { segments, error, retry } = useSuttaText(suttaId);
   const hlForSutta = (suttaId && highlights[suttaId]) || [];
   const popup = useHighlightPopup(suttaId, hlForSutta, segments);
-  const scrollRef = useScrollMemory<T>(suttaId ? `${scrollKeyPrefix}:${suttaId}` : null, true, hasDeepLinkTarget);
+  // Notes/highlight-count/list-membership chips (rendered above the text — see ReaderPage.tsx)
+  // come from UserDataContext's own, separately-timed fetch — waiting for both this and
+  // `segments` before ever touching scrollTop is what lets useScrollMemory restore once,
+  // correctly, instead of reactively correcting for whichever of the two lands second (see its
+  // own `readyToRestore` param comment).
+  const scrollRef = useScrollMemory<T>(
+    suttaId ? `${scrollKeyPrefix}:${suttaId}` : null,
+    true,
+    hasDeepLinkTarget,
+    !!segments && userDataReady
+  );
   const highlightGroups = useMemo(() => groupHighlights(hlForSutta), [hlForSutta]);
   const hlCount = useMemo(() => highlightCount(hlForSutta), [hlForSutta]);
 

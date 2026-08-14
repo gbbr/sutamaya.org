@@ -67,7 +67,12 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (!user) {
-      setReady(false);
+      // `ready` means "we know the final state of user data for this session" — true
+      // immediately for a signed-out user, since there's nothing to fetch (see
+      // useSuttaReading's own use of this to gate the reader's scroll restore on knowing
+      // notes/highlights/membership have settled one way or the other, not just on a signed-in
+      // fetch actually completing).
+      setReady(true);
       setLists([]);
       setMembership({});
       setNotes({});
