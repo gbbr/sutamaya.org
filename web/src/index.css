@@ -204,6 +204,13 @@ body {
   color: rgb(var(--ink));
   font-family: var(--ui-serif, 'Newsreader'), Georgia, serif;
   -webkit-font-smoothing: antialiased;
+  /* Without this, iOS Safari holds every tap for ~300-350ms to check whether a second tap is
+     coming (double-tap-to-zoom), since this app's viewport allows pinch-zoom — `manipulation`
+     opts out of just that discrete gesture (pinch-zoom and normal panning/scrolling still work
+     fine everywhere) and removes the wait for every UI control, at the minor cost of losing
+     double-tap-to-zoom as a convenience gesture — a tradeoff, not an accessibility loss, since
+     pinch-zoom remains available regardless. */
+  touch-action: manipulation;
 }
 
 a {
