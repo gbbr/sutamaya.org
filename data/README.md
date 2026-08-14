@@ -10,7 +10,7 @@ pipeline" section for how each piece below is consumed.
 data/
   super-tree.json    whole-canon nav tree (all languages/collections; only its an/dn/mn/sn/kn
                       branches are in scope here — see "Coverage" below)
-  tree/               per-collection nav tree (an/dn/mn/sn + kn's 20 sub-books)
+  tree/               per-collection nav tree (an/dn/mn/sn + kn's 6 curated books, see below)
   pali/
     name/             Pali titles
     sutta/             Pali text, segmented
@@ -34,7 +34,8 @@ interlinear Pali possible. Files under `sutta/` are range-batched (e.g.
 
 ## Coverage
 
-Only `an`, `dn`, `mn`, `sn`, and `kn` (its 20 sub-books) have real sutta text in this dataset. The
+Only `an`, `dn`, `mn`, `sn`, and `kn` (a curated 6 of its books, not the full traditional set —
+see the browse-tree table in [CLAUDE.md](../CLAUDE.md)) have real sutta text in this dataset. The
 rest of `super-tree.json` — Chinese/Sanskrit/Tibetan parallels and other alternate-language
 texts — has no root/translation text here and isn't wired into any tree this app walks.
 
