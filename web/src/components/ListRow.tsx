@@ -13,7 +13,9 @@ export interface ListRowMenuProps {
   onMove: (l: ListDef, dir: -1 | 1) => void;
   onAddChild: (parentId: string) => void;
   onStartEdit: (l: ListDef) => void;
-  onArmDelete: (l: ListDef) => void;
+  // `bypassBlock` (Shift+click on the bin icon) skips the "not empty" block and goes straight to
+  // the normal delete confirmation — see useListCrud's armDeleteList.
+  onArmDelete: (l: ListDef, bypassBlock?: boolean) => void;
 }
 
 export interface ListRowEditProps {
@@ -337,8 +339,8 @@ export const ListRow = memo(function ListRow({
             </button>
             <button
               aria-label="Delete"
-              title="Delete"
-              onClick={() => onArmDelete(list)}
+              title="Delete (Shift-click to skip the not-empty warning)"
+              onClick={(e) => onArmDelete(list, e.shiftKey)}
               className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.13] text-ink/55 hover:bg-red-600/[.07] hover:text-red-600"
             >
               <Trash2 size={12} strokeWidth={2} />

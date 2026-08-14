@@ -95,19 +95,25 @@ export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, cr
   }, []);
 
   const armDeleteList = useCallback(
-    (l: ListDef) => {
+    // `bypassBlock` is a Shift+click on the bin icon (ListRow) — skips straight to the normal
+    // delete confirmation even for a non-empty list/group, instead of the "remove them first"
+    // block below. Still requires that confirmation step; this only skips the block, not the
+    // confirm.
+    (l: ListDef, bypassBlock = false) => {
       setMenuOpenId(null);
       // A group can't hold suttas itself (see ListRow's comment on that), so it's blocked purely
       // on having any nested lists/groups; a list is blocked purely on its own `items`.
-      if (l.kind === 'group') {
-        const childCount = listChildrenOf(l.id).length;
-        if (childCount > 0) {
-          armBlockedDelete({ id: l.id, count: childCount, kind: 'children' });
+      if (!bypassBlock) {
+        if (l.kind === 'group') {
+          const childCount = listChildrenOf(l.id).length;
+          if (childCount > 0) {
+            armBlockedDelete({ id: l.id, count: childCount, kind: 'children' });
+            return;
+          }
+        } else if (l.items.length > 0) {
+          armBlockedDelete({ id: l.id, count: l.items.length, kind: 'items' });
           return;
         }
-      } else if (l.items.length > 0) {
-        armBlockedDelete({ id: l.id, count: l.items.length, kind: 'items' });
-        return;
       }
       setConfirmDeleteId(l.id);
     },

@@ -117,6 +117,20 @@ describe('useListCrud', () => {
     expect(result.current.blockedDelete).toBeNull();
   });
 
+  it('armDeleteList with bypassBlock skips the block and arms normal confirmation for a non-empty list', () => {
+    const { result } = setup();
+    act(() => result.current.armDeleteList({ id: 'x1', label: 'Nonempty', parentId: null, kind: 'list', items: ['a', 'b'] }, true));
+    expect(result.current.confirmDeleteId).toBe('x1');
+    expect(result.current.blockedDelete).toBeNull();
+  });
+
+  it('armDeleteList with bypassBlock skips the block and arms normal confirmation for a non-empty group', () => {
+    const { result } = setup();
+    act(() => result.current.armDeleteList({ ...lists[0], kind: 'group' }, true));
+    expect(result.current.confirmDeleteId).toBe('l1');
+    expect(result.current.blockedDelete).toBeNull();
+  });
+
   it('blockedDelete auto-dismisses after its timeout, with no manual dismiss control', () => {
     vi.useFakeTimers();
     try {
