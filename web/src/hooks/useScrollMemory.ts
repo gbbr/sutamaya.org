@@ -60,6 +60,14 @@ export function cancelPendingRestore(el: HTMLElement | null | undefined) {
   pendingRestoreCancel.delete(el);
 }
 
+// Real user scroll input is the signal that gives up an in-progress restore for good (see
+// doRestore below) — same set animateScrollTop (lib/segmentScroll.ts) treats as cancelling input.
+const USER_INTENT_EVENTS = ['wheel', 'touchstart', 'pointerdown'] as const;
+
+// Backstop so a restore that never quite reaches `desired` (no more content growth, no user
+// input either) doesn't leave a MutationObserver running forever.
+const RESTORE_GRACE_MS = 5000;
+
 // `active` lets a caller that's mounted-but-hidden (e.g. LibraryPage keeps both TreePane and
 // ListPane mounted on mobile, toggling `display:none` on the inactive one instead of
 // unmounting it, so its React/scroll state survives the toggle) skip restoring scroll while
@@ -79,26 +87,19 @@ export function cancelPendingRestore(el: HTMLElement | null | undefined) {
 // — this only skips the restore-on-mount half, so leaving/re-entering a plain, non-deep-linked
 // view of the same sutta still remembers and restores its own scroll position correctly.
 //
-// `readyToRestore` lets a caller that knows it has more than one async content source feeding
-// this same container defer the restore until all of them have actually landed, rather than
-// leaving this hook to discover that the hard way. Concretely: the reader's sutta text
-// (useSuttaText) and its notes/highlight-count/list-membership chips (rendered above the text —
-// see ReaderPage.tsx, and useSuttaReading's own use of this param) come from two independent
-// fetches that don't resolve together — restoring as soon as the text alone satisfies `desired`
-// used to mean the chips/notes fetch landing moments later, inserting its own block above the
-// text, would grow the container *again* and shift what's on screen (including via the browser's
-// own CSS scroll-anchoring compensating for content inserted above the current position — see
-// git history for the on-device capture that pinned this down). Defaulting to `true` keeps every
-// other caller (TreePane/ListPane, which have no such second source) restoring immediately on
-// mount, same as before this param existed.
-const USER_INTENT_EVENTS = ['wheel', 'touchstart', 'pointerdown'] as const;
-
-// Even with `readyToRestore` covering the known content sources, this stays as a backstop for
-// anything unanticipated — give up unconditionally after this long with no user input and no
-// more growth, so a mount that never quite reaches `desired` doesn't leave a MutationObserver
-// running forever.
-const RESTORE_GRACE_MS = 5000;
-
+// `readyToRestore` lets a caller with more than one async content source feeding this container
+// (the reader's sutta text and its separately-fetched notes/highlight/chip data — see
+// useSuttaReading) defer the restore until both have landed, instead of restoring against the
+// first one and getting shifted once the second lands (including via the browser's own CSS
+// scroll-anchoring compensating for content inserted above the current position). Defaults to
+// `true` so TreePane/ListPane, which have no second source, restore immediately as before.
+//
+// Not a dependency of the lifecycle effect below, even though it fluctuates within one mount:
+// the reader's segments go stale -> null -> new on every Prev/Next while the scroll-memory `key`
+// stays the same, so `readyToRestore` dips true -> false -> true right as this container's
+// content transiently collapses (SegmentedText -> "Loading…"). Tearing the effect down on that
+// dip would persist whatever scrollTop the collapse clamped to; `readyRef` below guards recording
+// directly instead, so the effect's own mount lifecycle can stay keyed on [key, active] alone.
 export function useScrollMemory<T extends HTMLElement>(
   key: string | null | undefined,
   active = true,
@@ -106,56 +107,101 @@ export function useScrollMemory<T extends HTMLElement>(
   readyToRestore = true
 ) {
   const ref = useRef<T>(null);
+  const readyRef = useRef(readyToRestore);
+  const doRestoreRef = useRef<(() => void) | null>(null);
+  // Whether the *current* streak of readiness has already been restored — a ref object rather
+  // than a plain flag local to the lifecycle effect below, since a one-shot flag could succeed
+  // once against stale content during a readyToRestore dip and then block the real restore once
+  // fresh content actually loads. Reset on every key/active mount and on every dip to not-ready.
+  const restoreStateRef = useRef<{ restored: boolean }>({ restored: false });
 
   useLayoutEffect(() => {
+    readyRef.current = readyToRestore;
+    if (!readyToRestore) restoreStateRef.current.restored = false;
+  }, [readyToRestore]);
+
+  // Owns the container's whole mount lifecycle — attaching/detaching `onScroll` and persisting
+  // the final position on unmount — keyed only on [key, active], deliberately not
+  // `readyToRestore` (see its own comment above for why). Exposes the actual one-time restore as
+  // `doRestoreRef.current` rather than performing it unconditionally here, so the effect below
+  // can trigger it once `readyToRestore` actually arrives without needing to be part of this
+  // effect's own teardown/re-run cycle.
+  useLayoutEffect(() => {
     const el = ref.current;
-    if (!el || key == null || !active || !readyToRestore) return;
-    const desired = skipRestore ? 0 : positions.get(key) ?? 0;
-    if (!skipRestore) el.scrollTop = desired;
+    if (!el || key == null || !active) return;
+    restoreStateRef.current = { restored: false };
     const onScroll = () => {
+      // Don't trust scrollTop while the caller says this container isn't in a real, final state
+      // yet (see readyToRestore's own comment above) — a native 'scroll' event fires just as
+      // readily for a collapse-driven clamp as for a real user scroll.
+      if (!readyRef.current) return;
       positions.set(key, el.scrollTop);
       schedulePersist();
     };
     el.addEventListener('scroll', onScroll, { passive: true });
 
-    // `readyToRestore` handles the *known* async content sources for a caller that tells this
-    // hook about them; this covers everything else. `el` itself doesn't resize when its content
-    // grows after this point (it's a flex/viewport-bound scroll container, so its own box stays
-    // fixed — only scrollHeight, the overflowing content inside it, grows), which is why this
-    // needs a MutationObserver on the subtree rather than a ResizeObserver on `el`. Stays armed
-    // rather than disconnecting after its first correction, so it can also catch the browser's
-    // own CSS scroll-anchoring compensating for any further, unanticipated content shift as an
-    // ordinary scrollTop change away from `desired`. Only real user scroll input (or an explicit
-    // cancelPendingRestore — see its own comment) gives up this restore for good; a bare timeout
-    // is just the last-resort backstop.
     let stop: (() => void) | null = null;
-    if (desired > 0 && !skipRestore) {
-      const mo = new MutationObserver(() => {
-        if (el.scrollTop !== desired && el.scrollHeight - el.clientHeight >= desired) {
-          el.scrollTop = desired;
-        }
-      });
-      mo.observe(el, { childList: true, subtree: true });
-      const onUserIntent = () => stop?.();
-      USER_INTENT_EVENTS.forEach((type) => el.addEventListener(type, onUserIntent, { passive: true, once: true }));
-      const graceTimer = setTimeout(() => stop?.(), RESTORE_GRACE_MS);
-      stop = () => {
-        mo.disconnect();
-        clearTimeout(graceTimer);
-        USER_INTENT_EVENTS.forEach((type) => el.removeEventListener(type, onUserIntent));
-        pendingRestoreCancel.delete(el);
-        stop = null;
-      };
-      pendingRestoreCancel.set(el, stop);
-    }
+    const restoreState = restoreStateRef.current;
+    doRestoreRef.current = () => {
+      if (restoreState.restored) return;
+      restoreState.restored = true;
+      const desired = skipRestore ? 0 : positions.get(key) ?? 0;
+      if (!skipRestore) el.scrollTop = desired;
+
+      // `el` itself doesn't resize when its content grows after this point (it's a
+      // flex/viewport-bound scroll container, so its own box stays fixed — only scrollHeight,
+      // the overflowing content inside it, grows), which is why this needs a MutationObserver on
+      // the subtree rather than a ResizeObserver on `el`. Stays armed rather than disconnecting
+      // after its first correction, so it can also catch the browser's own CSS scroll-anchoring
+      // compensating for any further, unanticipated content shift as an ordinary scrollTop
+      // change away from `desired`. Only real user scroll input (or an explicit
+      // cancelPendingRestore — see its own comment) gives up this restore for good; a bare
+      // timeout is just the last-resort backstop.
+      if (desired > 0 && !skipRestore) {
+        const mo = new MutationObserver(() => {
+          if (el.scrollTop !== desired && el.scrollHeight - el.clientHeight >= desired) {
+            el.scrollTop = desired;
+          }
+        });
+        mo.observe(el, { childList: true, subtree: true });
+        const onUserIntent = () => stop?.();
+        USER_INTENT_EVENTS.forEach((type) => el.addEventListener(type, onUserIntent, { passive: true, once: true }));
+        const graceTimer = setTimeout(() => stop?.(), RESTORE_GRACE_MS);
+        stop = () => {
+          mo.disconnect();
+          clearTimeout(graceTimer);
+          USER_INTENT_EVENTS.forEach((type) => el.removeEventListener(type, onUserIntent));
+          pendingRestoreCancel.delete(el);
+          stop = null;
+        };
+        pendingRestoreCancel.set(el, stop);
+      }
+    };
+    if (readyRef.current) doRestoreRef.current();
 
     return () => {
-      positions.set(key, el.scrollTop);
-      schedulePersist();
+      // Same guard as onScroll's — a container mid-transition (readyToRestore false) that
+      // unmounts or changes key shouldn't persist whatever transiently-collapsed scrollTop it
+      // happens to have.
+      if (readyRef.current) {
+        positions.set(key, el.scrollTop);
+        schedulePersist();
+      }
       el.removeEventListener('scroll', onScroll);
       stop?.();
+      doRestoreRef.current = null;
     };
-  }, [key, active, readyToRestore]);
+  }, [key, active]);
+
+  // Triggers the restore once `readyToRestore` actually arrives for the current key — the effect
+  // above already calls it immediately if ready at mount time; this covers readiness landing
+  // later (the common case: useSuttaText/UserDataContext still loading at mount). `key` is in
+  // these deps too, not just `readyToRestore`, so a key change that lands while `readyToRestore`
+  // stays continuously true (no intervening dip) still triggers a restore for the *new* mount,
+  // rather than being skipped because the boolean itself never flipped.
+  useLayoutEffect(() => {
+    if (readyToRestore) doRestoreRef.current?.();
+  }, [key, readyToRestore]);
 
   return ref;
 }
