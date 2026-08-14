@@ -16,7 +16,8 @@ export const AN_BOOK_NAMES = [
   'Ones', 'Twos', 'Threes', 'Fours', 'Fives', 'Sixes', 'Sevens', 'Eights', 'Nines', 'Tens', 'Elevens',
 ];
 
-// SN's 5 top-level "super-vaggas" — the tree wraps sn1..sn56 in these, per §1 of BRIEF.md.
+// SN's 5 top-level "super-vaggas" — the tree wraps sn1..sn56 in these (see data/README.md's
+// "Layout" section for the tree/ shape).
 // Fixed, canonical, English glosses given by explicit product decision (matches the Sujato
 // title's own gist word — "Verses", "Causation", ... — rather than deriving from name files,
 // since the raw titles ("The Group of Linked Discourses Beginning With …") don't abbreviate
@@ -265,7 +266,7 @@ export function roleFor(template) {
 }
 
 // Sujato's own translator notes (data/sujato/notes/, same uid/segment-keyed, range-batched files
-// as everything else — see data/BRIEF.md) carry inline HTML (`<i>`/`<em>`/`<b>`/`<span>`, kept
+// as everything else — see data/README.md) carry inline HTML (`<i>`/`<em>`/`<b>`/`<span>`, kept
 // as-is) and cross-reference links to other suttas on suttacentral.net (`<a href='https://
 // suttacentral.net/...'>`) — stripped down to their plain text here rather than kept as live
 // links, since a link off to the actual live website doesn't belong in an offline-first reader

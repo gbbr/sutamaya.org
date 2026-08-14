@@ -29,7 +29,7 @@ Requires a local Firestore emulator for `npm run dev:server` — see `CLAUDE.md`
 The source texts come from [SuttaCentral](https://suttacentral.net) (Bilara-style JSON), pulled
 into `data/` and lightly transformed at build time by
 [`scripts/build-corpus.mjs`](scripts/build-corpus.mjs) into the static bundle the web app fetches
-at runtime. See `data/BRIEF.md` and the "Data pipeline" section of `CLAUDE.md` for details.
+at runtime. See `data/README.md` and the "Data pipeline" section of `CLAUDE.md` for details.
 
 ## License
 
