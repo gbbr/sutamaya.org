@@ -108,10 +108,10 @@ prose (`role: 'list-item'`, e.g. DN28 §10's four types of practice). This is la
 structure (a verse is a
 verse regardless of translation), so one `html/` file covers both the Pali and English text for
 the same segment keys. Unlike `data/pali/`/`data/sujato/`, it isn't part of the primary dataset —
-`scripts/fetch-html-structure.mjs` is a one-time (not part of
-`npm run build`) script that downloads it from bilara-data on GitHub, skipping files that already
-exist locally unless `--force`; re-run it (`node scripts/fetch-html-structure.mjs`) if
-`data/pali/sutta/` ever gains files it doesn't have a mirror for yet. `build-corpus.mjs` reads it
+it was pulled from bilara-data on GitHub by a one-time fetch script that has since been removed
+(`f5fbd0cd`, "scripts: remove one-off scripts"), so `data/html/` is now a static checked-in
+dataset with no regeneration path; a new fetch script would need to be written if
+`data/pali/sutta/` ever gains files it doesn't have a mirror for. `build-corpus.mjs` reads it
 only to set each segment's `role` (`roleFor()`, matched in heading → verse → end → speaker →
 list-item order) — the `<p>`/`<blockquote>` wrapper structure itself isn't otherwise used; `SegmentedText.tsx`
 derives its own paragraph/stanza grouping straight from segment key numbering (see its
@@ -379,8 +379,11 @@ something there.
   the network is down the optimistic local update stands but the write is lost (only
   `console.error`-logged). A real offline-first sync layer would need a queue + conflict
   resolution.
-- The reader's "change translation source" control is a static label ("Sujato (2018)") — this
-  dataset only has one English translation per collection, so there's nothing to switch to.
+- The reader has no translation-source picker — this dataset only has one English translation per
+  collection, so there's nothing to switch to. The reader heading instead shows a "Source:
+  SuttaCentral (modified)" attribution line (`ReaderPage.tsx`), linking to the `sc-data` commit
+  the text was synced from (`corpus.sujatoCommit`) and to `update-sujato-post.mjs`, which
+  documents the terminology substitutions applied on top of Sujato's translation.
 - `ListPane` (a list's own suttas) and `ListRow` (the list tree itself,
   rendered by `TreePane`'s `ListsTreeView` sub-view, reorder/nest) both drive reordering via the
   same native Pointer Events approach (touch and mouse alike, with live reordering and edge
