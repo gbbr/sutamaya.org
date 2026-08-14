@@ -15,8 +15,14 @@ env var (must be the repo root — the pipeline reads from its `sc_bilara_data/`
    `data/sujato/` itself still matches `snapshot.json` (`checkSnapshotInSync` in
    `../lib/sujatoSync.js`, needs no `SC_DATA_PATH`), catching a `copy` that got committed without a
    follow-up `update-sujato:snapshot` — this half also runs as part of `npm test` (see Tests
-   below), so a stale snapshot fails CI-style even without anyone running `check` by hand. Fails
-   loudly, listing every problem found, without touching `data/sujato/`.
+   below), so a stale snapshot fails CI-style even without anyone running `check` by hand. The two
+   kinds of failure are surfaced separately in `runCheck`'s result (`localIssues` vs
+   `upstreamIssues` — they call for different fixes, "run `update-sujato:snapshot`" vs "review what
+   changed upstream") and printed in their own colored sections on a failure (red for local drift,
+   with `manifest.json`'s `sourceCommit`/`snapshotCommit` printed alongside it; yellow for upstream
+   changes; green for a clean pass) — colors come from `../lib/sujatoSync.js` (plain ANSI codes,
+   shared by all four scripts below, skipped automatically when output isn't a TTY or `NO_COLOR` is
+   set). Fails loudly, listing every problem found, without touching `data/sujato/`.
 2. **copy** (`../update-sujato-copy.mjs`) — byte-copies each matched source file over its
    `data/sujato/` counterpart, then writes `data/sujato/manifest.json` recording the `SC_DATA_PATH`
    git commit it copied from (`sourceCommit`/`sourceCommitDate`/`sourceDirty`, plus `updatedAt` and

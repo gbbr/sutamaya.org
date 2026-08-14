@@ -10,7 +10,7 @@
 // concentration) — a substring swap turned that into the nonsense "water concentrater".
 import fs from 'node:fs';
 import path from 'node:path';
-import { listLocalRelPaths, SUJATO_DIR } from './lib/sujatoSync.js';
+import { listLocalRelPaths, SUJATO_DIR, green } from './lib/sujatoSync.js';
 
 export const WORD_FORMS = [
   ['mendicant', 'bhikkhu'],
@@ -69,5 +69,5 @@ export function runPost({ sujatoDir = SUJATO_DIR } = {}) {
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const { filesChanged, replacements } = runPost();
-  console.log(`update-sujato post done — ${replacements} replacements across ${filesChanged} file(s).`);
+  console.log(green(`update-sujato post done — ${replacements} replacements across ${filesChanged} file(s).`));
 }

@@ -179,8 +179,7 @@ describe('checkSnapshotInSync', () => {
 
     expect(result.ok).toBe(false);
     const issue = result.issues.find((i) => i.startsWith('sutta/dn/dn1_translation-en-sujato.json'));
-    expect(issue).toMatch(/drifted from the snapshot/);
-    expect(issue).toMatch(/update-sujato:snapshot/);
+    expect(issue).toMatch(/local keys differ from the snapshot \(2 → 3\)/);
   });
 
   it('reports a file tracked in the snapshot but missing from data/sujato', () => {
@@ -232,6 +231,8 @@ describe('update-sujato pipeline (fixture)', () => {
     const result = runCheck({ bilaraRoot: fx.bilaraRoot, sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath });
 
     expect(result.ok).toBe(false);
+    expect(result.localIssues).toEqual([]);
+    expect(result.upstreamIssues).toHaveLength(1);
     expect(result.issues).toHaveLength(1);
     expect(result.issues[0]).toMatch(/sutta\/dn\/dn1_translation-en-sujato\.json/);
     expect(result.issues[0]).toMatch(/segment ids changed \(2 → 3\)/);
@@ -248,7 +249,10 @@ describe('update-sujato pipeline (fixture)', () => {
     const result = runCheck({ bilaraRoot: fx.bilaraRoot, sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath });
 
     expect(result.ok).toBe(false);
-    expect(result.issues.find((i) => i.startsWith('sutta/dn/dn1_translation-en-sujato.json'))).toMatch(/drifted from the snapshot/);
+    expect(result.upstreamIssues).toEqual([]);
+    expect(result.localIssues).toHaveLength(1);
+    expect(result.localIssues[0]).toMatch(/local keys differ from the snapshot/);
+    expect(result.issues.find((i) => i.startsWith('sutta/dn/dn1_translation-en-sujato.json'))).toMatch(/local keys differ from the snapshot/);
   });
 
   it('check reports a missing file, with a relocation hint when a same-named file exists elsewhere', () => {
