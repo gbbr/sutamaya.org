@@ -80,6 +80,8 @@ function loadSegMap(filePath) {
   return new Map(Object.entries(readJSON(filePath)));
 }
 
+const sujatoManifest = readJSON(path.join(DATA, 'sujato', 'manifest.json'));
+
 console.log('Indexing source files…');
 const paliFiles = buildFileIndex(path.join(DATA, 'pali', 'sutta'));
 const sujatoFiles = buildFileIndex(path.join(DATA, 'sujato', 'sutta'));
@@ -288,7 +290,10 @@ const nikayas = [];
   console.log(`  kn: ${chapterRows.length} books, ${chapterRows.reduce((n, c) => n + c.count, 0)} leaf documents`);
 }
 
-fs.writeFileSync(path.join(OUT, 'corpus.json'), JSON.stringify({ nikayas, suttas }));
+fs.writeFileSync(
+  path.join(OUT, 'corpus.json'),
+  JSON.stringify({ nikayas, suttas, sujatoCommit: sujatoManifest.sourceCommit })
+);
 console.log(`Wrote corpus.json (${leafCount} leaf documents, ${nikayas.length} nikāyas)`);
 
 flushShard();

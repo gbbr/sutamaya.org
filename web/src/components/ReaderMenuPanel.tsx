@@ -296,13 +296,6 @@ export function ReaderMenuPanel({
               </label>
               <span className="flex-1 text-[12.5px] opacity-55">Translator's notes (also "c")</span>
             </div>
-            <div style={ctlRowStyle}>
-              <span className="font-sans text-[12.5px] opacity-55" style={{ width: 86 }}>
-                Source
-              </span>
-              <span className="flex-1 text-[14.5px]">Sujato (2018), edited</span>
-              <span className="font-sans text-[12.5px] opacity-45" style={{ display: 'none' }}>change</span>
-            </div>
           </div>
         )}
       </div>

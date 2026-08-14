@@ -32,6 +32,9 @@ export interface Nikaya {
 export interface Corpus {
   nikayas: Nikaya[];
   suttas: SuttaMap;
+  // The suttacentral/sc-data commit data/sujato/ was last synced from (data/sujato/manifest.json's
+  // sourceCommit) — used to link the reader's translation attribution to the exact source revision.
+  sujatoCommit: string;
 }
 
 export interface Segment {
