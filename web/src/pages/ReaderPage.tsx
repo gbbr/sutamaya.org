@@ -194,7 +194,18 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   // Wrapped in useCallback (as is onToggleNote below) so SegmentedText's own per-segment
   // memoization isn't defeated by a freshly-allocated function on every ReaderPage render — see
   // SegmentedText.tsx's perf note. (onWordClick itself lives in useDictionaryLookup now.)
-  const onToggleSeg = useCallback((i: number) => setOpenSegs((s) => ({ ...s, [i]: !s[i] })), []);
+  // Collapsing the Pali on the segment the dictionary dock's active word belongs to also closes
+  // the dock — otherwise it'd keep pointing at a word that's no longer visible.
+  const onToggleSeg = useCallback(
+    (i: number) => {
+      setOpenSegs((s) => {
+        const willOpen = !s[i];
+        if (!willOpen && dict?.segIndex === i) closeDict();
+        return { ...s, [i]: willOpen };
+      });
+    },
+    [dict, closeDict]
+  );
   const onToggleNote = useCallback((i: number) => setOpenNotes((s) => ({ ...s, [i]: !s[i] })), []);
 
   function onReaderPointerDown(e: React.PointerEvent) {
