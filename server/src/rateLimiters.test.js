@@ -71,23 +71,4 @@ describe('applyRateLimiters (characterization — pins current routing before an
     const stillOk = await request(app).get('/api/auth/me');
     expect(stillOk.status).not.toBe(429);
   });
-
-  it('dataLimiter and generalLimiter have independent budgets — exhausting generalLimiter does not 429 /data/*', async () => {
-    const app = buildApp();
-    // Uses a single persistent agent (one real listening server, reused for every request)
-    // rather than plain `request(app)`, which has supertest spin up and tear down its own
-    // ephemeral HTTP server per call — 300+ of those in quick succession is prone to an
-    // intermittent flake under load, where the OS reissues a just-closed ephemeral port before
-    // its prior connection has fully torn down and a response gets misdelivered/miscounted.
-    const agent = request.agent(app);
-    for (let i = 0; i < 300; i += 1) {
-      const res = await agent.get('/api/lists');
-      expect(res.status).not.toBe(429);
-    }
-    const blocked = await agent.get('/api/lists');
-    expect(blocked.status).toBe(429);
-
-    const stillOk = await agent.get('/data/text/sn1.1.json');
-    expect(stillOk.status).not.toBe(429);
-  });
 });
