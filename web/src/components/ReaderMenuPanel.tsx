@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Trash2, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
@@ -62,7 +62,7 @@ export function ReaderMenuPanel({
 }: ReaderMenuPanelProps) {
   const [tab, setTab] = useState(initialTab);
   const { user, promptGoogleSignIn } = useAuth();
-  const { notes, submitNote, removeHighlights } = useUserData();
+  const { notes, submitNote } = useUserData();
   const { theme: currentTheme, setTheme, fs, setFs, lh, setLh, face, setFace, allPali, toggleAllPali, showNotes, toggleShowNotes } =
     useReaderPrefs();
 
@@ -219,19 +219,6 @@ export function ReaderMenuPanel({
               >
                 <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: highlightPaint(g.c, theme) }} />
                 <span className="flex-1 text-sm leading-[1.45]">{highlightGroupText(g, segments).slice(0, 92) || `Segment ${g.i + 1}`}</span>
-                <span
-                  className="flex items-center gap-1 font-sans text-[11.5px] opacity-45"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    removeHighlights(
-                      suttaId,
-                      g.items.map((h) => h.id)
-                    );
-                  }}
-                >
-                  <Trash2 size={12} strokeWidth={1.75} />
-                  Remove
-                </span>
               </button>
             ))}
             {highlightGroups.length === 0 && (

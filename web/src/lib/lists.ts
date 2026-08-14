@@ -52,12 +52,17 @@ export interface SuttaRowMeta {
 // ListPane's own rows and TreePane's mobile search results (see SuttaRowMeta component). The
 // "Highlights"/"Notes" auto lists are filtered out of the chips since those are already shown via
 // the highlight badge and note text directly, same reasoning as ListPane's own comment on this.
+// Chips are ordered to match the user's My Lists tree (flatLists' own depth-first order), not
+// membership[id]'s raw array order (which is just insertion order — the order suttas happened to
+// get added to each list), so a row's chips stay stable/predictable as list membership changes.
 export function suttaRowMeta(ids: Iterable<string>, membership: Membership, highlights: HighlightsMap, flatLists: ListPathOption[]): Map<string, SuttaRowMeta> {
+  const listOrder = new Map(flatLists.map((f, i) => [f.list.id, i]));
   const map = new Map<string, SuttaRowMeta>();
   for (const id of ids) {
     const chips = (membership[id] || [])
       .filter((c) => !AUTO_LIST_IDS.has(c))
-      .map((c) => ({ id: c, breadcrumb: resolveListById(c, flatLists).breadcrumb }));
+      .map((c) => ({ id: c, breadcrumb: resolveListById(c, flatLists).breadcrumb }))
+      .sort((a, b) => (listOrder.get(a.id) ?? Infinity) - (listOrder.get(b.id) ?? Infinity));
     map.set(id, { chips, hlCount: highlightCount(highlights[id] || []) });
   }
   return map;
