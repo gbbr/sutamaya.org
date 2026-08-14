@@ -27,7 +27,7 @@ interface ListsTreeViewProps {
   onDraftKey: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   draftKind: ListKind;
   setDraftKind: (updater: (k: ListKind) => ListKind) => void;
-  submittingDraft: boolean;
+  submittingParentId: string | null | undefined;
   topLevelLists: ListDef[];
   listChildrenOf: (parentId: string) => ListDef[];
   countFor: (l: ListDef) => number;
@@ -67,7 +67,7 @@ export function ListsTreeView({
   onDraftKey,
   draftKind,
   setDraftKind,
-  submittingDraft,
+  submittingParentId,
   topLevelLists,
   listChildrenOf,
   countFor,
@@ -154,9 +154,12 @@ export function ListsTreeView({
       )}
       {/* Reserves the draft input row's own height (pt-1.5 + h-34 + pb-2 = 48px) during the
           submitDraft() network round-trip, so the pane doesn't visibly collapse to just the
-          header between the input closing (see submitDraft's comment) and the new row landing. */}
-      {submittingDraft && <div className="h-[48px]" />}
-      {ready && topLevelLists.length === 0 && creatingParentId !== null && !submittingDraft && (
+          header between the input closing (see submitDraft's comment) and the new row landing.
+          Scoped to a top-level submission specifically (submittingParentId === null) — a nested
+          submission under a group reserves its own row's height in ListRow instead, keyed to
+          that group's id, not this one. */}
+      {submittingParentId === null && <div className="h-[48px]" />}
+      {ready && topLevelLists.length === 0 && creatingParentId !== null && submittingParentId === undefined && (
         <div className="flex flex-col items-center gap-2.5 px-[18px] pt-16 pb-8 text-center">
           <span className="font-sans text-[13px] text-ink/55">You have no lists yet.</span>
           <button

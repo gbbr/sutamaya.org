@@ -39,6 +39,10 @@ export interface ListRowDraftProps {
   onDraftChange: (v: string) => void;
   onDraftKey: (e: KeyboardEvent<HTMLInputElement>) => void;
   draftInputRef: (el: HTMLInputElement | null) => void;
+  // Set to this row's own id for the network round-trip after its draft input has already closed
+  // (see useListCrud's submitDraft) — keeps this row reserving the input's row height so the new
+  // list doesn't visibly collapse-then-jump when it lands.
+  submittingParentId: string | null | undefined;
 }
 
 // Left indent for a row at the given nesting depth — 18px base plus 14px per level, shared by the
@@ -121,7 +125,7 @@ export const ListRow = memo(function ListRow({
   const { menuOpenId, onToggleMenu, onMove, onAddChild, onStartEdit, onArmDelete } = menu;
   const { editingId, editDraft, onEditDraftChange, onCommitEdit, onCancelEdit } = edit;
   const { confirmDeleteId, onDelete, onCancelDelete, blockedDelete } = del;
-  const { creatingParentId, draft, onDraftChange, onDraftKey, draftInputRef } = draftProps;
+  const { creatingParentId, draft, onDraftChange, onDraftKey, draftInputRef, submittingParentId } = draftProps;
 
   const { mobile } = useLayout();
   const kids = childrenOf(list.id);
@@ -342,23 +346,30 @@ export const ListRow = memo(function ListRow({
           </div>
         )
       )}
-      {creatingParentId === list.id && (
+      {(creatingParentId === list.id || submittingParentId === list.id) && (
         <div className="pr-[18px] pt-1 pb-2" style={{ paddingLeft: rowIndent(depth + 1) }}>
-          <input
-            ref={draftInputRef}
-            autoFocus
-            value={draft}
-            onChange={(e) => onDraftChange(e.target.value)}
-            onKeyDown={onDraftKey}
-            onBlur={() => onDraftKey({ key: 'Escape' } as KeyboardEvent<HTMLInputElement>)}
-            placeholder="List name — return to create"
-            maxLength={LIST_NAME_MAX_LENGTH}
-            className="font-serif w-full h-[32px] border border-accent rounded-lg px-2.5 bg-field text-[14px] outline-none"
-            autoComplete="off"
-            autoCorrect="off"
-            autoCapitalize="off"
-            spellCheck={false}
-          />
+          {creatingParentId === list.id ? (
+            <input
+              ref={draftInputRef}
+              autoFocus
+              value={draft}
+              onChange={(e) => onDraftChange(e.target.value)}
+              onKeyDown={onDraftKey}
+              onBlur={() => onDraftKey({ key: 'Escape' } as KeyboardEvent<HTMLInputElement>)}
+              placeholder="List name — return to create"
+              maxLength={LIST_NAME_MAX_LENGTH}
+              className="font-serif w-full h-[32px] border border-accent rounded-lg px-2.5 bg-field text-[14px] outline-none"
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="off"
+              spellCheck={false}
+            />
+          ) : (
+            // submitDraft() has already closed the input (creatingParentId reset) but the
+            // createList() network round-trip hasn't landed yet — keep reserving this row's
+            // height so the new list doesn't collapse-then-jump when it finally appears.
+            <div className="h-[32px]" />
+          )}
         </div>
       )}
       {hasKids &&
