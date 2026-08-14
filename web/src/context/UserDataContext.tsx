@@ -82,15 +82,26 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     }
     let cancelled = false;
     setReady(false);
-    dataApi.all().then((d) => {
-      if (cancelled) return;
-      setLists(d.lists);
-      setMembership(d.membership);
-      setNotes(d.notes);
-      setHighlights(d.highlights);
-      setVisited(d.visited);
-      setReady(true);
-    });
+    dataApi
+      .all()
+      .then((d) => {
+        if (cancelled) return;
+        setLists(d.lists);
+        setMembership(d.membership);
+        setNotes(d.notes);
+        setHighlights(d.highlights);
+        setVisited(d.visited);
+        setReady(true);
+      })
+      .catch((e) => {
+        if (cancelled) return;
+        // A failed fetch is still a *settled* final state (no data, but nothing left pending) —
+        // without this, one transient failure (401 from a lapsed session, a rate limit, a Cloud
+        // Run cold start) would leave `ready` stuck false for the rest of the signed-in session,
+        // permanently disabling anything gated on it (see readyToRestore in useSuttaReading.ts).
+        console.error('initial user-data fetch failed', e);
+        setReady(true);
+      });
     return () => {
       cancelled = true;
     };
