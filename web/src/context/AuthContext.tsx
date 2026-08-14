@@ -103,16 +103,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
   }, [loginWithGoogle]);
 
-  // Used to *not* be a real button — this fired Google's silent "One Tap" prompt
-  // (google.accounts.id.prompt()), which Google is deprecating in favor of FedCM and which, in
-  // practice, fails completely silently (no popup, no error, no callback) for a long list of
-  // ordinary reasons: FedCM disabled for the site, third-party cookies blocked, the browser's
-  // One Tap cooldown after a previous dismissal, etc. — exactly what showed up in testing.
-  // google.accounts.id.renderButton() is the reliable alternative (a real, user-clicked element
-  // that reliably opens a popup, since browsers require a genuine click — not a programmatic
-  // API call — to permit that), but it has to render into on-page DOM, so it can't be fired
-  // imperatively from arbitrary call sites (list/note/highlight actions in UserDataContext).
-  // Routing all of those to the Settings page, which renders the actual button, is the fix.
+  // google.accounts.id.renderButton() needs a real, user-clicked on-page element to reliably open
+  // its popup (browsers require a genuine click, not a programmatic API call), so it can't be
+  // fired imperatively from arbitrary call sites (list/note/highlight actions in
+  // UserDataContext) — routing all of those to the Settings page, which renders the actual
+  // button, sidesteps that.
   const promptGoogleSignIn = useCallback(() => {
     navigate('/settings');
   }, []);

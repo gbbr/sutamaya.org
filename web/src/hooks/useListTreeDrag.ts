@@ -105,8 +105,9 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
 
   // What to actually do on drop is decided by planListDrop (lib/listTreeDrop.ts, pulled out to be
   // plain-logic testable) — see its own comment for why a cross-parent 'before'/'after' drop only
-  // ever needs the single reorderLists call, not a separate setListParent first (that used to mean
-  // two optimistic re-renders and a visible two-step flicker on drop — see a55e1ecc).
+  // ever needs the single reorderLists call, not a separate setListParent first: reorderLists'
+  // own endpoint already re-parents every id in the order it's given, so a separate setListParent
+  // call first would just add its own network round trip and a visible two-step flicker on drop.
   const commitDrop = useCallback(
     async (draggedId: string, target: ListDef, zone: DropZone) => {
       const plan = planListDrop(lists, draggedId, target, zone, listChildrenOf, topLevelLists);

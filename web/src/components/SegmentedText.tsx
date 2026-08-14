@@ -302,11 +302,9 @@ const SegmentRow = memo(function SegmentRow({
             return seg.pali.split(WORD_BOUNDARY).map((t, j) => {
               if (isWordBoundary(t)) return <span key={j}>{t}</span>;
               const w = ++wordIndex;
-              // Driven by real state (the word currently shown in the DictionaryDock), not by
-              // :hover — :hover alone used to be the only "this word is active" cue, which only
-              // ever reliably stuck around on iOS Safari's tap-lingers-as-hover quirk; it doesn't
-              // survive at all once the dock's own prev/next arrows move the lookup to a word the
-              // pointer was never actually over.
+              // Driven by real state (the word currently shown in the DictionaryDock), not CSS
+              // :hover — needs to stay active once the dock's own prev/next arrows move the
+              // lookup to a word the pointer was never actually over, which :hover can't express.
               const isActive = w === activeWordIndex;
               return (
                 <span

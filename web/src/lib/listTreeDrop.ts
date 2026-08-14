@@ -131,8 +131,8 @@ export type ListDropPlan =
 
 // What committing a drop should actually do — pulled out of useListTreeDrag's commitDrop as a
 // pure decision function, the same way resolveTreeDropTarget/resolveDropIndicator above were, so
-// the logic behind a real shipped bug (a55e1ecc: calling setListParent *and then* reorderLists
-// when a drop crossed parents rendered the moved item under its new parent, then jumped again once
+// the logic behind a real shipped bug (calling setListParent *and then* reorderLists when a drop
+// crossed parents rendered the moved item under its new parent, then jumped again once
 // reorderLists' own response landed) is directly testable without a DOM or pointer events.
 // reorderLists' own endpoint (and its optimistic mirror, applyListReorder in lib/lists.ts) sets
 // parentId on every id in `order` unconditionally, so a 'before'/'after' drop only ever needs the
