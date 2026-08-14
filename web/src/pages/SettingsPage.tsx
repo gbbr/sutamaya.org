@@ -328,6 +328,14 @@ export function SettingsPage(_props: RouteComponentProps) {
             {offlineSection}
           </>
         )}
+        <a
+          href="https://github.com/gbbr/sutamaya.org/issues/new"
+          target="_blank"
+          rel="noreferrer"
+          className="block text-center font-sans text-[12px] text-ink/40 underline decoration-ink/25 underline-offset-2 mt-8"
+        >
+          Report an issue
+        </a>
       </div>
     </div>
   );
