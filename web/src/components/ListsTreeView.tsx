@@ -146,6 +146,10 @@ export function ListsTreeView({
           />
         </div>
       )}
+      {/* Reserves the draft input row's own height (pt-1.5 + h-34 + pb-2 = 48px) during the
+          submitDraft() network round-trip, so the pane doesn't visibly collapse to just the
+          header between the input closing (see submitDraft's comment) and the new row landing. */}
+      {submittingDraft && <div className="h-[48px]" />}
       {topLevelLists.length === 0 && creatingParentId !== null && !submittingDraft && (
         <div className="flex flex-col items-center gap-2.5 px-[18px] pt-16 pb-8 text-center">
           <span className="font-sans text-[13px] text-ink/55">You have no lists yet.</span>
