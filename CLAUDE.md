@@ -129,7 +129,7 @@ leaving a blank paragraph the tap-to-reveal-Pali interaction would otherwise nev
 | MN | — | vagga-level categories (its 3 "fifty"/pannasa wrappers flattened) | that vagga's suttas |
 | SN | 5 super-vagga groups (`SN1–11 · Verses`, … `SN45–56 · The Great Chapter`) | that group's chapters `SN1`, `SN2`, … `SN56` | that saṁyutta's vagga-level categories (any "fifty"/pannasaka wrapper flattened) |
 | AN | nipātas `AN 1 · Book of Ones` … `AN 11 · Book of Elevens` | that nipāta's vagga-level categories (any "fifty"/pannasaka wrapper flattened) | — |
-| KN | all 20 books (`kp`, `dhp`, `ud`, …) | that book's leaf documents, one level down, whatever that level actually is (vagga for most books, nipāta+vagga flattened for others) — see `flattenLeaves()` |
+| KN | its 6 curated books (`dhp`, `ud`, `iti`, `snp`, `thag`, `thig` — see `KN_BOOKS` in `scripts/lib/collections.js`; the traditional Khuddaka Nikāya has 20-ish, only these are in this dataset) | that book's leaf documents, one level down, whatever that level actually is (vagga for most books, nipāta+vagga flattened for others) — see `flattenLeaves()` |
 
 `findChapterNodes()` locates `sn\d+`/`an\d+` keys at whatever depth they occur in the tree
 (SN nests them under 5 super-vaggas, AN doesn't nest them at all); `findNodeByKey()` pulls out
@@ -155,10 +155,8 @@ segment keys are prefixed by the individual sub-uids, not the batch uid) there i
 header, so the vagga name from the name-index is the title — which is correct, since the whole
 batch *is* that vagga.
 
-Only `an`, `dn`, `mn`, `sn`, and 9 of the 20 KN books have a Sujato English translation in this
-dataset (`ls data/sujato/sutta`); the rest have Pali root text only, and English titles for
-them still resolve from `sujato/name` (title metadata exists independent of full-text
-translation).
+`an`, `dn`, `mn`, `sn`, and all 6 of the KN books in this dataset (`ls data/sujato/sutta`) have a
+Sujato English translation — none of the KN books here are Pali-only.
 
 ## Backend (`server/`)
 
