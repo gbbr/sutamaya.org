@@ -40,6 +40,26 @@ describe('routes/lists.js (Firestore emulator)', () => {
     expect(res.body.list.parentId).toBe(group.body.list.id);
   });
 
+  // New lists/groups are meant to appear at the front of their parent's children, not the back —
+  // per product decision on the "+" button next to My Lists.
+  it('puts a newly-created list first among its top-level siblings', async () => {
+    userId = testUserId();
+    const first = await request(app).post('/api/lists').set('x-test-user', userId).send({ label: 'First' });
+    const second = await request(app).post('/api/lists').set('x-test-user', userId).send({ label: 'Second' });
+    const snap = await listsCol(userId).orderBy('position').get();
+    expect(snap.docs.map((d) => d.id)).toEqual([second.body.list.id, first.body.list.id]);
+  });
+
+  it('puts a newly-created list first among its siblings under the same group', async () => {
+    userId = testUserId();
+    const group = await request(app).post('/api/lists').set('x-test-user', userId).send({ label: 'Group', kind: 'group' });
+    const parentId = group.body.list.id;
+    const first = await request(app).post('/api/lists').set('x-test-user', userId).send({ label: 'First', parentId });
+    const second = await request(app).post('/api/lists').set('x-test-user', userId).send({ label: 'Second', parentId });
+    const snap = await listsCol(userId).where('parentId', '==', parentId).orderBy('position').get();
+    expect(snap.docs.map((d) => d.id)).toEqual([second.body.list.id, first.body.list.id]);
+  });
+
   // isNotFound() (lists.js) keys off Firestore's raw gRPC NOT_FOUND code (5) to fold "does this
   // doc exist" into the write itself rather than a separate .get() first — this pins that
   // assumption against the real emulator (not a synthetic error), so a future

@@ -5,3 +5,10 @@
 export function nextPosition(positions) {
   return positions.reduce((max, p) => Math.max(max, p ?? 0), -1) + 1;
 }
+
+// Next sibling `position` to prepend before — one less than the min of `positions`, or 0 for an
+// empty group. Used by list/group creation, which puts a newly-created entry at the front of its
+// parent's children rather than the back.
+export function firstPosition(positions) {
+  return positions.reduce((min, p) => Math.min(min, p ?? 0), 1) - 1;
+}

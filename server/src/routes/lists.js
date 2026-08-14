@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { db, listsCol, FieldValue } from '../firestore.js';
 import { requireAuth } from '../auth.js';
 import { asyncHandler } from '../asyncHandler.js';
-import { nextPosition } from '../lib/listPositions.js';
+import { nextPosition, firstPosition } from '../lib/listPositions.js';
 import { invalidParentReasonForDoc, wouldCreateCycle } from '../lib/listParent.js';
 import { shapeList } from '../lib/listShape.js';
 import { reconcileItemOrder } from '../lib/listItemOrder.js';
@@ -84,13 +84,16 @@ listsRouter.post(
     if (parentError) return res.status(400).json({ error: parentError });
     const col = listsCol(req.user.id);
     const ref = col.doc();
-    // Reading the current max position and writing the new doc in one transaction (instead of
-    // two separate calls) keeps two near-simultaneous creates from both computing the same
-    // `max + 1` and landing on colliding positions — Firestore retries the loser once the
-    // winner's write is visible.
+    // Reading the current min position among true siblings and writing the new doc in one
+    // transaction (instead of two separate calls) keeps two near-simultaneous creates from both
+    // computing the same `min - 1` and landing on colliding positions — Firestore retries the
+    // loser once the winner's write is visible. A new list/group is meant to appear at the front
+    // of its parent's children (per product decision), not the back, so this uses `firstPosition`
+    // rather than `nextPosition`; equality-only query on `parentId`, no orderBy, so it doesn't
+    // need a composite index — same pattern as the delete-reparenting route below.
     await db.runTransaction(async (tx) => {
-      const last = await tx.get(col.orderBy('position', 'desc').limit(1));
-      const position = nextPosition(last.docs.map((d) => d.data().position));
+      const siblings = await tx.get(col.where('parentId', '==', parentId));
+      const position = firstPosition(siblings.docs.map((d) => d.data().position));
       tx.set(ref, { label, parentId, kind, position, items: [], createdAt: new Date().toISOString() });
     });
     res.status(201).json({ list: { id: ref.id, label, parentId, kind, items: [] } });

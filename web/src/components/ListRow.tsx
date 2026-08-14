@@ -342,6 +342,25 @@ export const ListRow = memo(function ListRow({
           </div>
         )
       )}
+      {creatingParentId === list.id && (
+        <div className="pr-[18px] pt-1 pb-2" style={{ paddingLeft: rowIndent(depth + 1) }}>
+          <input
+            ref={draftInputRef}
+            autoFocus
+            value={draft}
+            onChange={(e) => onDraftChange(e.target.value)}
+            onKeyDown={onDraftKey}
+            onBlur={() => onDraftKey({ key: 'Escape' } as KeyboardEvent<HTMLInputElement>)}
+            placeholder="List name — return to create"
+            maxLength={LIST_NAME_MAX_LENGTH}
+            className="font-serif w-full h-[32px] border border-accent rounded-lg px-2.5 bg-field text-[14px] outline-none"
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck={false}
+          />
+        </div>
+      )}
       {hasKids &&
         open &&
         kids.map((k, idx) => (
@@ -368,25 +387,6 @@ export const ListRow = memo(function ListRow({
             getRowRef={getRowRef}
           />
         ))}
-      {creatingParentId === list.id && (
-        <div className="pr-[18px] pt-1 pb-2" style={{ paddingLeft: rowIndent(depth + 1) }}>
-          <input
-            ref={draftInputRef}
-            autoFocus
-            value={draft}
-            onChange={(e) => onDraftChange(e.target.value)}
-            onKeyDown={onDraftKey}
-            onBlur={() => onDraftKey({ key: 'Escape' } as KeyboardEvent<HTMLInputElement>)}
-            placeholder="List name — return to create"
-            maxLength={LIST_NAME_MAX_LENGTH}
-            className="font-serif w-full h-[32px] border border-accent rounded-lg px-2.5 bg-field text-[14px] outline-none"
-            autoComplete="off"
-            autoCorrect="off"
-            autoCapitalize="off"
-            spellCheck={false}
-          />
-        </div>
-      )}
     </div>
   );
 });
