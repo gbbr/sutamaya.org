@@ -45,3 +45,14 @@ texts — has no root/translation text here and isn't wired into any tree this a
 update-sujato` — see [`scripts/update-sujato/README.md`](../scripts/update-sujato/README.md) for
 how that works. `data/pali/`, `data/tree/`, `data/super-tree.json`, and `data/html/` have no such
 pipeline; they're static and only change by hand.
+
+## License and attribution
+
+Everything under `data/` — Pali root text, Bhikkhu Sujato's English translations, titles, blurbs,
+translator notes, and the `html/` structural markup — is sourced from
+[SuttaCentral](https://suttacentral.net) (`sc-data`/`bilara-data`), which dedicates its texts to
+the public domain under [CC0](https://creativecommons.org/publicdomain/zero/1.0/) — see
+[`sc_bilara_data/LICENSE.md`](https://github.com/suttacentral/sc-data/blob/main/sc_bilara_data/LICENSE.md).
+Sutamaya modifies Sujato's translation in places (see `scripts/update-sujato/README.md` for the specific
+terminology substitutions applied); those modifications are released under the same terms as the
+rest of this repo (see the root [`LICENSE`](../LICENSE)), not as a claim over the underlying text.
