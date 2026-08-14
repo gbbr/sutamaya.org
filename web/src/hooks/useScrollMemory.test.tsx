@@ -10,8 +10,18 @@ function freshKey() {
   return `test-key-${++keyCounter}`;
 }
 
-function TestBox({ scrollKey, active, skipRestore }: { scrollKey: string | null; active?: boolean; skipRestore?: boolean }) {
-  const ref = useScrollMemory<HTMLDivElement>(scrollKey, active, skipRestore);
+function TestBox({
+  scrollKey,
+  active,
+  skipRestore,
+  readyToRestore,
+}: {
+  scrollKey: string | null;
+  active?: boolean;
+  skipRestore?: boolean;
+  readyToRestore?: boolean;
+}) {
+  const ref = useScrollMemory<HTMLDivElement>(scrollKey, active, skipRestore, readyToRestore);
   return <div ref={ref} data-testid="box" />;
 }
 
@@ -145,6 +155,45 @@ describe('useScrollMemory', () => {
     });
 
     expect(el.scrollTop).toBe(500);
+  });
+
+  it('a readyToRestore dip mid-mount (e.g. Prev/Next\'s segments -> null -> new gap) does not corrupt the saved position', () => {
+    const key = freshKey();
+    // Seed a remembered position for this key, as if it was already scrolled to 500 in an
+    // earlier reading session.
+    const seed = render(<TestBox scrollKey={key} />);
+    scrollTo(seed.getByTestId('box'), 500);
+    seed.unmount();
+
+    // Mounts already ready — the reader's Prev/Next doesn't remount ReaderPage, it lands on a
+    // fresh key with the *previous* sutta's segments still non-null for one render (see
+    // useSuttaText's own effect timing), so readyToRestore can already be true at this first
+    // commit for the new key.
+    const view = render(<TestBox scrollKey={key} readyToRestore />);
+    const el = view.getByTestId('box');
+    expect(el.scrollTop).toBe(500);
+
+    // useSuttaText then clears segments to null while it fetches the next sutta's text —
+    // ReaderPage swaps SegmentedText for its "Loading…" placeholder on the very same mount
+    // (same scroll-memory key), collapsing this container's scrollHeight as part of applying
+    // *that same render's* DOM changes — a real browser clamps scrollTop down to fit as an
+    // intrinsic part of that, before any effect cleanup below even runs (jsdom doesn't clamp on
+    // its own — see the earlier "Real browsers clamp…" test's own comment — so this sets it by
+    // hand first, to land before the rerender the same way the real clamp would). The bug this
+    // guards is a cleanup that blindly persists whatever scrollTop reads as at that point.
+    el.scrollTop = 0;
+    view.rerender(<TestBox scrollKey={key} readyToRestore={false} />);
+
+    // The next sutta's real text finishes loading — readyToRestore flips back true on the same
+    // key/mount (ReaderPage never remounted).
+    view.rerender(<TestBox scrollKey={key} readyToRestore />);
+    expect(el.scrollTop).toBe(500);
+
+    view.unmount();
+    // The remembered position itself must have survived the round trip too, not just this
+    // element's own scrollTop.
+    const reopened = render(<TestBox scrollKey={key} readyToRestore />);
+    expect(reopened.getByTestId('box').scrollTop).toBe(500);
   });
 
   it('cancelPendingRestore stops that reapply from clobbering a scroll made in the meantime', async () => {
