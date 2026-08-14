@@ -78,12 +78,38 @@ export function cancelPendingRestore(el: HTMLElement | null | undefined) {
 // scroll-memory *recording* (the `onScroll` listener/`positions` map below) still runs as normal
 // — this only skips the restore-on-mount half, so leaving/re-entering a plain, non-deep-linked
 // view of the same sutta still remembers and restores its own scroll position correctly.
-export function useScrollMemory<T extends HTMLElement>(key: string | null | undefined, active = true, skipRestore = false) {
+//
+// `readyToRestore` lets a caller that knows it has more than one async content source feeding
+// this same container defer the restore until all of them have actually landed, rather than
+// leaving this hook to discover that the hard way. Concretely: the reader's sutta text
+// (useSuttaText) and its notes/highlight-count/list-membership chips (rendered above the text —
+// see ReaderPage.tsx, and useSuttaReading's own use of this param) come from two independent
+// fetches that don't resolve together — restoring as soon as the text alone satisfies `desired`
+// used to mean the chips/notes fetch landing moments later, inserting its own block above the
+// text, would grow the container *again* and shift what's on screen (including via the browser's
+// own CSS scroll-anchoring compensating for content inserted above the current position — see
+// git history for the on-device capture that pinned this down). Defaulting to `true` keeps every
+// other caller (TreePane/ListPane, which have no such second source) restoring immediately on
+// mount, same as before this param existed.
+const USER_INTENT_EVENTS = ['wheel', 'touchstart', 'pointerdown'] as const;
+
+// Even with `readyToRestore` covering the known content sources, this stays as a backstop for
+// anything unanticipated — give up unconditionally after this long with no user input and no
+// more growth, so a mount that never quite reaches `desired` doesn't leave a MutationObserver
+// running forever.
+const RESTORE_GRACE_MS = 5000;
+
+export function useScrollMemory<T extends HTMLElement>(
+  key: string | null | undefined,
+  active = true,
+  skipRestore = false,
+  readyToRestore = true
+) {
   const ref = useRef<T>(null);
 
   useLayoutEffect(() => {
     const el = ref.current;
-    if (!el || key == null || !active) return;
+    if (!el || key == null || !active || !readyToRestore) return;
     const desired = skipRestore ? 0 : positions.get(key) ?? 0;
     if (!skipRestore) el.scrollTop = desired;
     const onScroll = () => {
@@ -92,49 +118,44 @@ export function useScrollMemory<T extends HTMLElement>(key: string | null | unde
     };
     el.addEventListener('scroll', onScroll, { passive: true });
 
-    // Content that finishes loading only after mount (the reader's sutta text is fetched async —
-    // see useSuttaText) can grow this element's *scrollable content* well past its initial
-    // near-empty height, after the scrollTop set above already clamped to 0 for lack of room to
-    // scroll to. `el` itself doesn't resize when that happens (it's a flex/viewport-bound scroll
-    // container, so its own box stays fixed — only scrollHeight, the overflowing content inside
-    // it, grows), which is why this needs a MutationObserver on the subtree rather than a
-    // ResizeObserver on `el`. Re-apply once more the first time enough content has rendered to
-    // actually hold the desired offset. Guarded on scrollTop still being exactly 0 so a real user
-    // scroll that happens to land before the content finishes loading isn't clobbered by this
-    // replaying stale state — though that guard alone isn't enough on its own: it stays armed,
-    // watching for further mutations, until its threshold is actually met, which can be well after
-    // this mount's *first* content mutation (e.g. `desired` was recorded further into the document
-    // than this session's content happens to reach). A deliberate scroll elsewhere in the app (see
-    // cancelPendingRestore above) can land back at exactly 0 in the meantime — e.g. jumping to a
-    // batched document's very first verse — indistinguishable, from this guard alone, from the
-    // pre-load 0 it's meant to catch, so without an explicit cancel it would still fire later and
-    // clobber that deliberate scroll once enough content has finally arrived.
-    let mo: MutationObserver | null = null;
+    // `readyToRestore` handles the *known* async content sources for a caller that tells this
+    // hook about them; this covers everything else. `el` itself doesn't resize when its content
+    // grows after this point (it's a flex/viewport-bound scroll container, so its own box stays
+    // fixed — only scrollHeight, the overflowing content inside it, grows), which is why this
+    // needs a MutationObserver on the subtree rather than a ResizeObserver on `el`. Stays armed
+    // rather than disconnecting after its first correction, so it can also catch the browser's
+    // own CSS scroll-anchoring compensating for any further, unanticipated content shift as an
+    // ordinary scrollTop change away from `desired`. Only real user scroll input (or an explicit
+    // cancelPendingRestore — see its own comment) gives up this restore for good; a bare timeout
+    // is just the last-resort backstop.
+    let stop: (() => void) | null = null;
     if (desired > 0 && !skipRestore) {
-      mo = new MutationObserver(() => {
-        if (el.scrollTop !== 0) {
-          mo?.disconnect();
-          pendingRestoreCancel.delete(el);
-          return;
-        }
-        if (el.scrollHeight - el.clientHeight >= desired) {
+      const mo = new MutationObserver(() => {
+        if (el.scrollTop !== desired && el.scrollHeight - el.clientHeight >= desired) {
           el.scrollTop = desired;
-          mo?.disconnect();
-          pendingRestoreCancel.delete(el);
         }
       });
       mo.observe(el, { childList: true, subtree: true });
-      pendingRestoreCancel.set(el, () => mo?.disconnect());
+      const onUserIntent = () => stop?.();
+      USER_INTENT_EVENTS.forEach((type) => el.addEventListener(type, onUserIntent, { passive: true, once: true }));
+      const graceTimer = setTimeout(() => stop?.(), RESTORE_GRACE_MS);
+      stop = () => {
+        mo.disconnect();
+        clearTimeout(graceTimer);
+        USER_INTENT_EVENTS.forEach((type) => el.removeEventListener(type, onUserIntent));
+        pendingRestoreCancel.delete(el);
+        stop = null;
+      };
+      pendingRestoreCancel.set(el, stop);
     }
 
     return () => {
       positions.set(key, el.scrollTop);
       schedulePersist();
       el.removeEventListener('scroll', onScroll);
-      mo?.disconnect();
-      pendingRestoreCancel.delete(el);
+      stop?.();
     };
-  }, [key, active]);
+  }, [key, active, readyToRestore]);
 
   return ref;
 }
