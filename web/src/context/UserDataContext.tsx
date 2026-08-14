@@ -154,7 +154,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       try {
         const { list } = await listsApi.create(capped, parentId, kind);
         const def: ListDef = { id: list.id, label: list.label, parentId: list.parentId, kind: list.kind, items: list.items };
-        setLists((ls) => [...ls, def]);
+        setLists((ls) => [def, ...ls]);
         return def;
       } catch (e) {
         console.error('create list failed', e);
