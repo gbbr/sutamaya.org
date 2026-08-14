@@ -8,6 +8,11 @@ import { SlidingPillToggle } from './SlidingPillToggle';
 import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits';
 
 interface ListsTreeViewProps {
+  // Gates the "You have no lists yet" empty state — false until the initial GET /api/data
+  // round-trip resolves (UserDataContext's own `ready`), so a signed-in user who actually has
+  // lists doesn't see that placeholder flash on screen for the fetch's duration before their
+  // real list rows land.
+  ready: boolean;
   nodeId?: string;
   onSelect: (nodeId: string) => void;
   reorderMode: boolean;
@@ -47,6 +52,7 @@ interface ListsTreeViewProps {
 // (list CRUD, drag-and-drop, expansion) still lives in TreePane itself, via useListCrud/
 // useListTreeDrag/useListTreeIndex — this component only renders it.
 export function ListsTreeView({
+  ready,
   nodeId,
   onSelect,
   reorderMode,
@@ -150,7 +156,7 @@ export function ListsTreeView({
           submitDraft() network round-trip, so the pane doesn't visibly collapse to just the
           header between the input closing (see submitDraft's comment) and the new row landing. */}
       {submittingDraft && <div className="h-[48px]" />}
-      {topLevelLists.length === 0 && creatingParentId !== null && !submittingDraft && (
+      {ready && topLevelLists.length === 0 && creatingParentId !== null && !submittingDraft && (
         <div className="flex flex-col items-center gap-2.5 px-[18px] pt-16 pb-8 text-center">
           <span className="font-sans text-[13px] text-ink/55">You have no lists yet.</span>
           <button

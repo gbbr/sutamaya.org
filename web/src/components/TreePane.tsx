@@ -102,7 +102,7 @@ export function TreePane({
   flashNodeId,
 }: TreePaneProps) {
   const { corpus } = useCorpus();
-  const { lists, membership, notes, highlights, createList, renameList, removeList, reorderLists, setListParent } = useUserData();
+  const { ready, lists, membership, notes, highlights, createList, renameList, removeList, reorderLists, setListParent } = useUserData();
   const { user, promptGoogleSignIn } = useAuth();
   const { mobile, paneW } = useLayout();
   const scrollRef = useScrollMemory<HTMLDivElement>('tree', visible);
@@ -608,6 +608,7 @@ export function TreePane({
           <CorpusTreeView corpus={corpus} expanded={expanded} onToggle={toggleExpanded} onSelect={onSelect} nodeId={nodeId} flashNodeId={flashNodeId} />
         ) : (
           <ListsTreeView
+            ready={ready}
             nodeId={nodeId}
             onSelect={onSelect}
             reorderMode={reorderMode}
