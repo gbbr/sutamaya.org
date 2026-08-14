@@ -306,6 +306,19 @@ bq query --project_id="$PROJECT_ID" --use_legacy_sql=false '
   ORDER BY cost DESC'
 ```
 
+**What the first real data showed (Aug 3–14, ~12 days after enabling):** net cost after credits was
+~$0.19 total and trending down to ~$0/day by the last few days — confirming the `run-sources`
+bucket cleanup above actually took effect, not just in theory. More usefully, it showed which
+free-tier allowances are real for this project and which aren't: every CPU/memory-related Cloud
+Run SKU (`Services CPU`, `Services Memory`, `Min Instance CPU/Memory`) appears in the export with
+a cost *and* an equal offsetting credit, netting to exactly $0 — but **Cloud Run network egress
+(`Data Transfer Out`) gets no credit at all**, and was the only nonzero line item across the whole
+period (the numbers table above lists "1GB egress" as part of Cloud Run's Always Free allowance,
+but that only actually applies to specific destinations — traffic out of `europe-west1` isn't
+covered). At this app's traffic level that's still negligible (~$0.15–0.50/month pace, nowhere
+near the $5 budget), so it's not worth optimizing — but it's the one thing that will always show
+nonzero cost as real usage grows, worth knowing rather than being surprised by later.
+
 ### Cloud Logging retention
 
 Cloud Run/Cloud Build write to the project's `_Default` log bucket, which defaults to 30 days'
