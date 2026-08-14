@@ -73,8 +73,7 @@ export function ReaderMenuPanel({
   // Highlights' note textarea) need to stay above the on-screen keyboard, and this container is
   // `position: absolute` inside ReaderPage's `fixed inset-0` root, which stays pinned to the full
   // layout-viewport height and doesn't shrink for the keyboard, so anything anchored to its
-  // *bottom* (the old `bottom: 0; maxHeight: 74%` sheet this used to be) ends up hidden beneath
-  // the keyboard rather than pushed up above it.
+  // *bottom* ends up hidden beneath the keyboard rather than pushed up above it.
   const isThemeSheet = mobile && tab === 'text';
   // Only the initial mount should play an entrance animation — once mounted, switching tabs
   // changes `panelStyle`/shape live (see below) and should snap instantly, not replay a

@@ -24,8 +24,7 @@ annotationsRouter.put(
 // segment i) of suttaId with `color` (color === null just removes the overlap) — a single-range
 // array covers the common single-segment selection, a multi-entry one covers a cross-segment
 // selection (see useHighlightPopup), so one request always maps to one atomic write regardless
-// of how many segments it spans. Mirrors the prototype's setRangeHl. All docs written by one
-// call share a `g` (groupId) so a cross-segment highlight can be grouped back together
+// of how many segments it spans. All docs written by one
 // (lib/highlights.ts's groupHighlights) without inferring it from segment adjacency. Fetches by
 // suttaId alone (single equality filter, no composite index needed) and filters/overlaps in
 // memory — a sutta has at most a handful of highlights, so this is cheap either way. Runs as a

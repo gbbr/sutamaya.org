@@ -117,10 +117,9 @@ function failedUidsOf(shards: ShardEntry[], wanted: Set<string>): string[] {
 }
 
 // Three full batches' worth of failures in a row, at the default concurrency — past this point,
-// it's no longer plausible this is ordinary flakiness. Observed on-device (back when this was a
-// per-sutta fetch): a download that consistently, reproducibly capped at the same point even
-// across full app restarts, most likely because the device is genuinely low on free storage and
-// every new cache.put() from here on is doomed.
+// it's no longer plausible this is ordinary flakiness (a device genuinely low on free storage,
+// say, where every new cache.put() from here on is doomed), so the circuit trips rather than
+// burning a full SHARD_FETCH_TIMEOUT_MS proving that for every remaining shard.
 const SHARD_CONCURRENCY = 4;
 const MAX_CONSECUTIVE_FAILURES = SHARD_CONCURRENCY * 3;
 

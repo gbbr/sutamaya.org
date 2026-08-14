@@ -19,9 +19,7 @@ export function lookupWord(dict: Dictionary, raw: string): string[] | null {
 // this dataset's Pali text. SuttaCentral uses these to join what are, for dictionary-lookup
 // purposes, separate words with *no* surrounding space (e.g. "samudānetabbā—cīvarapiṇḍapātasenā
 // sanagilānappaccayabhesajjaparikkhārā—te" — MN17 and ~400 other suttas — is three words, not one
-// run-on compound; "Todeyya-kappā" is two). Treating it as ordinary strippable punctuation
-// (stripPunct's old behavior) instead just deleted the dashes and concatenated the words into a
-// string that doesn't exist in the dictionary.
+// run-on compound; "Todeyya-kappā" is two).
 // Exported (along with isWordBoundary below) so SegmentedText's own render-time split — which
 // needs to keep the dash *visible* in the text, unlike this function — can't drift out of sync on
 // what counts as a word; its word index has to line up with this function's for goToAdjacentWord.

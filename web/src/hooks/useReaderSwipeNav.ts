@@ -22,18 +22,13 @@ interface UseReaderSwipeNavOptions {
 // conflicting with normal vertical scrolling: it tells the browser upfront, from CSS alone, that
 // only vertical panning is ever handled natively here, so it can start compositor-thread
 // scrolling immediately on any vertical-ish touch without waiting on this effect's own
-// `touchmove` listener at all. Without it (an earlier version of this effect registered
-// `touchmove` as `{ passive: false }` specifically so it could call `preventDefault()` once a
-// gesture revealed itself as horizontal-dominant), *every* touch-driven scroll in the reader —
-// not just actual swipes — had to synchronously wait for this handler to run before the browser
-// would commit to scrolling at all, since a non-passive listener means the browser can't know in
-// advance whether a given gesture will end up preventDefault()-ed. That's harmless when the main
-// thread is free, but on a slow device/first load — heavy initial `SegmentedText` rendering,
-// corpus/text JSON parsing — it reads as "can't scroll for a few seconds": the browser is just
-// waiting on a main thread that's busy with something else entirely. With `touch-action: pan-y`
-// declared, the listener below only ever needs to *read* touch deltas for the horizontal-swipe
-// threshold — it no longer blocks or has to preventDefault anything itself (the browser already
-// won't hand horizontal motion to native scroll/pull-to-refresh), so it can stay fully passive.
+// `touchmove` listener at all. That's what lets the listener below stay fully passive — it only
+// ever needs to *read* touch deltas for the horizontal-swipe threshold, never preventDefault()
+// anything itself (the browser already won't hand horizontal motion to native scroll/
+// pull-to-refresh). A non-passive listener, by contrast, forces the browser to wait for it to run
+// before committing to *any* touch-driven scroll, on the chance it calls preventDefault() — on a
+// slow device or first load (heavy initial `SegmentedText` rendering, corpus/text JSON parsing)
+// with the main thread busy, that reads as "can't scroll for a few seconds."
 export function useReaderSwipeNav({ rootRef, panel, step, siblingIds, suttaId }: UseReaderSwipeNavOptions) {
   useEffect(() => {
     const el = rootRef.current;

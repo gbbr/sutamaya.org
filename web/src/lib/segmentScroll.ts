@@ -21,8 +21,7 @@ export function computeSegmentScrollOffset(
 // `scrollBy({behavior:'smooth'})`/`scrollTo({behavior:'smooth'})` call on top of the one already
 // applied above to convert the getBoundingClientRect (post-zoom) measurement into scrollTop's own
 // (pre-zoom) units — landing short of the target by a factor of `scale`, worse the farther the
-// jump, confirmed by on-device logging (see git history for the debug instrumentation this
-// replaced). `scrollTop` itself has no such ambiguity (a plain property read/write, not an
+// jump. `scrollTop` itself has no such ambiguity (a plain property read/write, not an
 // animated-scroll API), so this drives the animation by hand instead of trusting the browser's
 // own "smooth" interpolation to use the same units on every engine.
 const activeScrollAnimations = new WeakMap<HTMLElement, () => void>();
