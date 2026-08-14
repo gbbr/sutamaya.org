@@ -269,10 +269,25 @@ export function roleFor(template) {
 // as-is) and cross-reference links to other suttas on suttacentral.net (`<a href='https://
 // suttacentral.net/...'>`) — stripped down to their plain text here rather than kept as live
 // links, since a link off to the actual live website doesn't belong in an offline-first reader
-// (and may point at a sutta this dataset doesn't even have translated).
+// (and may point at a sutta this dataset doesn't even have translated). Safe to keep the rest of
+// the markup here since a note is rendered wholesale via dangerouslySetInnerHTML
+// (SegmentedText.tsx) when expanded — there's no character-offset system it could desync.
 const NOTE_LINK_RE = /<a\b[^>]*>(.*?)<\/a>/gis;
 export function cleanNote(text) {
   return text.replace(NOTE_LINK_RE, '$1').trim();
+}
+
+// Sujato's main sutta translation text (data/sujato/sutta/) carries the same occasional inline
+// HTML — `<b>`/`<em>` emphasis, `<i lang='pi' translate='no'>` around an untranslated Pali
+// loanword, and rarely an `<a href='...'>` cross-reference link — but unlike a note, a segment's
+// English text is rendered as plain text sliced by character offset for highlighting
+// (SegmentedText.tsx's buildParts, offsets computed in useHighlightPopup.ts): keeping the tags
+// would desync those offsets from what the user actually sees and selects, and could split a tag
+// in half at a highlight boundary. Stripped down to plain text instead — losing the occasional
+// emphasis/loanword styling (a small fraction of segments) is cheaper than that risk.
+const HTML_TAG_RE = /<[^>]+>/g;
+export function stripHtmlTags(text) {
+  return text.replace(HTML_TAG_RE, '').trim();
 }
 
 export function buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap) {
@@ -288,8 +303,10 @@ export function buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap) {
     const pali = (paliMap.get(key) || '').trim();
     // Sujato's verse translations mark an enjambment (a long line split across two for
     // typesetting) with a bare "<j>" placeholder, always as "<space><j><word>" — dropped rather
-    // than turned into a real line break, since nothing renders it as one.
-    let en = (sujatoMap.get(key) || '').replace(/<j>/g, '').trim();
+    // than turned into a real line break, since nothing renders it as one. stripHtmlTags below
+    // would also catch it, but this stays explicit since it's a Sujato-specific placeholder, not
+    // real markup.
+    let en = stripHtmlTags((sujatoMap.get(key) || '').replace(/<j>/g, ''));
     // Open/close state is updated even for a segment with no text on either side (skipped just
     // below) — otherwise a blank segment landing mid-stanza would drop the open/close tracking.
     const template = htmlMap.get(key);

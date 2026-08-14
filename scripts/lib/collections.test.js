@@ -10,6 +10,7 @@ import {
   headerTitle,
   roleFor,
   cleanNote,
+  stripHtmlTags,
   buildBodySegments,
 } from './collections.js';
 
@@ -226,6 +227,24 @@ describe('cleanNote', () => {
   });
 });
 
+describe('stripHtmlTags', () => {
+  it('strips emphasis/bold/lang-tagged inline tags, keeping their text', () => {
+    expect(stripHtmlTags('<em>That</em> self')).toBe('That self');
+    expect(stripHtmlTags('a <b>bold</b> word')).toBe('a bold word');
+    expect(stripHtmlTags("<i lang='pi' translate='no'>dukkha</i> arises")).toBe('dukkha arises');
+  });
+
+  it('strips a link tag down to its plain text', () => {
+    expect(stripHtmlTags("See <a href='https://suttacentral.net/sn1.2'>SN 1.2</a> for more.")).toBe(
+      'See SN 1.2 for more.'
+    );
+  });
+
+  it('trims surrounding whitespace', () => {
+    expect(stripHtmlTags('  padded  ')).toBe('padded');
+  });
+});
+
 describe('buildBodySegments', () => {
   function maps({ pali = [], en = [], html = [], notes = [] } = {}) {
     return [new Map(pali), new Map(en), new Map(html), new Map(notes)];
@@ -289,6 +308,15 @@ describe('buildBodySegments', () => {
     });
     const [seg] = buildBodySegments(pali, en, html, notes);
     expect(seg.en).toBe('');
+  });
+
+  it('strips inline HTML from the english text (unlike a note, en is sliced by character offset for highlighting)', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:1.1', 'Pali']],
+      en: [['sn1.1:1.1', "'<em>That</em> self of which you speak does exist."]],
+    });
+    const [seg] = buildBodySegments(pali, en, html, notes);
+    expect(seg.en).toBe("'That self of which you speak does exist.");
   });
 
   it('marks a gatha stanza as verse even when only the opening line carries the blockquote/class marker (an7.63-style data)', () => {
