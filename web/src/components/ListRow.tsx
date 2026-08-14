@@ -5,6 +5,7 @@ import type { BlockedDelete } from '../hooks/useListCrud';
 import type { DropIndicator } from '../lib/listTreeDrop';
 import type { ListDef } from '../lib/types';
 import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits';
+import { useLayout } from '../context/LayoutContext';
 
 export interface ListRowMenuProps {
   menuOpenId: string | null;
@@ -122,6 +123,7 @@ export const ListRow = memo(function ListRow({
   const { confirmDeleteId, onDelete, onCancelDelete, blockedDelete } = del;
   const { creatingParentId, draft, onDraftChange, onDraftKey, draftInputRef } = draftProps;
 
+  const { mobile } = useLayout();
   const kids = childrenOf(list.id);
   const hasKids = kids.length > 0;
   const isGroup = list.kind === 'group';
@@ -241,7 +243,13 @@ export const ListRow = memo(function ListRow({
               if (isGroup) onToggle(list.id);
               else onSelect(String(list.id));
             }}
-            onDoubleClick={() => onStartEdit(list)}
+            // Desktop only — undefined (not just gated on click) rather than omitted, since on
+            // iOS Safari the mere presence of a `dblclick` listener anywhere reachable makes
+            // WebKit hold every tap for ~300ms to disambiguate a possible second tap, and React
+            // delegates this listener to the app root the first time any element actually uses
+            // it, for the rest of that page load — see the perf investigation this came out of.
+            // Rename is still reachable via the "…" options menu's Pencil button on mobile.
+            onDoubleClick={mobile ? undefined : () => onStartEdit(list)}
           >
             {list.label}
           </button>
