@@ -119,3 +119,31 @@ export function loadSnapshot(snapshotPath = SNAPSHOT_PATH) {
   }
   return JSON.parse(fs.readFileSync(snapshotPath, 'utf8'));
 }
+
+// Verifies data/sujato/ itself still matches snapshot.json — independent of SC_DATA_PATH/
+// bilaraRoot entirely, so it can run any time (in particular, as part of `npm test`) without a
+// checkout of sc-data on hand. Catches a copy that got committed without a follow-up
+// update-sujato:snapshot: since post-processing only ever changes values, never segment ids, a
+// tracked file's keys should always still match what the snapshot recorded for it.
+export function checkSnapshotInSync({ sujatoDir = SUJATO_DIR, snapshotPath = SNAPSHOT_PATH } = {}) {
+  const snapshot = loadSnapshot(snapshotPath);
+  const issues = [];
+
+  for (const [relPath, expected] of Object.entries(snapshot.files)) {
+    const localPath = path.join(sujatoDir, relPath);
+    if (!fs.existsSync(localPath)) {
+      issues.push(`${relPath}: tracked in snapshot.json but missing from data/sujato entirely.`);
+      continue;
+    }
+    const keys = Object.keys(JSON.parse(fs.readFileSync(localPath, 'utf8')));
+    if (keys.length !== expected.keyCount || keysHash(keys) !== expected.keysHash) {
+      issues.push(
+        `${relPath}: data/sujato has drifted from the snapshot (local keys differ) — did a previous ` +
+          `update-sujato:copy forget to run update-sujato:snapshot afterward? Run update-sujato:snapshot ` +
+          `once you've confirmed data/sujato's current contents are correct.`,
+      );
+    }
+  }
+
+  return { ok: issues.length === 0, issues };
+}

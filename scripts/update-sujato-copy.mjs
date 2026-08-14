@@ -27,11 +27,17 @@ export function runCopy({ bilaraRoot, gitInfo, sujatoDir = SUJATO_DIR, snapshotP
     copied += 1;
   }
 
+  // Carried forward, not touched by copy itself — only update-sujato-snapshot.mjs updates it, so
+  // a copy left un-snapshotted shows up as a visible sourceCommit/snapshotCommit mismatch in the
+  // same file/diff hunk (see scripts/update-sujato/README.md).
+  const previousSnapshotCommit = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, 'utf8')).snapshotCommit ?? null : null;
+
   const manifest = {
     sourceRepo: 'suttacentral/sc-data',
     sourceCommit: gitInfo.commit,
     sourceCommitDate: gitInfo.commitDate,
     sourceDirty: gitInfo.dirty,
+    snapshotCommit: previousSnapshotCommit,
     updatedAt: new Date().toISOString(),
     fileCount: copied,
   };
