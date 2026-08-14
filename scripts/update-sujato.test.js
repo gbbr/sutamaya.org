@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { requireSourceRoot, sourceGitInfo } from './lib/sujatoSync.js';
+import { requireSourceRoot, sourceGitInfo, checkSnapshotInSync } from './lib/sujatoSync.js';
 import { runCheck } from './update-sujato-check.mjs';
 import { runCopy } from './update-sujato-copy.mjs';
 import { runPost, applyReplacements } from './update-sujato-post.mjs';
@@ -149,6 +149,58 @@ describe('requireSourceRoot / sourceGitInfo', () => {
   });
 });
 
+describe('checkSnapshotInSync', () => {
+  let fx;
+
+  beforeEach(() => {
+    fx = makeFixture();
+  });
+
+  afterEach(() => {
+    fs.rmSync(fx.root, { recursive: true, force: true });
+  });
+
+  it('reports ok when data/sujato matches the snapshot', () => {
+    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath });
+
+    expect(checkSnapshotInSync({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath })).toEqual({ ok: true, issues: [] });
+  });
+
+  it('reports drift when data/sujato changed without the snapshot being regenerated', () => {
+    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath });
+    // Simulate: copy+post already happened and got committed, but update-sujato:snapshot was
+    // never run afterward — bilaraRoot/upstream is irrelevant here, this is purely local drift.
+    const localPath = path.join(fx.sujatoDir, 'sutta/dn/dn1_translation-en-sujato.json');
+    const local = readJson(localPath);
+    local['dn1:1.3'] = 'A new local verse line.';
+    writeJson(localPath, local);
+
+    const result = checkSnapshotInSync({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath });
+
+    expect(result.ok).toBe(false);
+    const issue = result.issues.find((i) => i.startsWith('sutta/dn/dn1_translation-en-sujato.json'));
+    expect(issue).toMatch(/drifted from the snapshot/);
+    expect(issue).toMatch(/update-sujato:snapshot/);
+  });
+
+  it('reports a file tracked in the snapshot but missing from data/sujato', () => {
+    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath });
+    fs.rmSync(path.join(fx.sujatoDir, 'name/dn-name_translation-en-sujato.json'));
+
+    const result = checkSnapshotInSync({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath });
+
+    expect(result.ok).toBe(false);
+    const issue = result.issues.find((i) => i.startsWith('name/dn-name_translation-en-sujato.json'));
+    expect(issue).toMatch(/missing from data\/sujato/);
+  });
+
+  it('the real repo: data/sujato and snapshot.json are in sync', () => {
+    // No overrides — this is the one guard that actually protects the repo: if copy/post ran and
+    // got committed without a follow-up update-sujato:snapshot, this fails on the next `npm test`.
+    expect(checkSnapshotInSync()).toEqual({ ok: true, issues: [] });
+  });
+});
+
 describe('update-sujato pipeline (fixture)', () => {
   let fx;
 
@@ -161,7 +213,7 @@ describe('update-sujato pipeline (fixture)', () => {
   });
 
   it('check passes against a snapshot taken from matching content, touching nothing', () => {
-    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath });
+    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath });
     const before = readJson(path.join(fx.sujatoDir, 'sutta/dn/dn1_translation-en-sujato.json'));
 
     const result = runCheck({ bilaraRoot: fx.bilaraRoot, sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath });
@@ -171,7 +223,7 @@ describe('update-sujato pipeline (fixture)', () => {
   });
 
   it('check reports a segment-id change upstream, naming the new segment ids', () => {
-    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath });
+    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath });
     const sourcePath = path.join(fx.bilaraRoot, FIXTURE_FILES['sutta/dn/dn1_translation-en-sujato.json'].sourceRel);
     const upstream = readJson(sourcePath);
     upstream['dn1:1.3'] = 'A new verse line.';
@@ -186,8 +238,21 @@ describe('update-sujato pipeline (fixture)', () => {
     expect(result.issues[0]).toMatch(/new segment ids: dn1:1\.3/);
   });
 
+  it('check folds in local drift (data/sujato out of sync with the snapshot) even when the upstream side is clean', () => {
+    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath });
+    const localPath = path.join(fx.sujatoDir, 'sutta/dn/dn1_translation-en-sujato.json');
+    const local = readJson(localPath);
+    local['dn1:1.3'] = 'A new local verse line.';
+    writeJson(localPath, local);
+
+    const result = runCheck({ bilaraRoot: fx.bilaraRoot, sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath });
+
+    expect(result.ok).toBe(false);
+    expect(result.issues.find((i) => i.startsWith('sutta/dn/dn1_translation-en-sujato.json'))).toMatch(/drifted from the snapshot/);
+  });
+
   it('check reports a missing file, with a relocation hint when a same-named file exists elsewhere', () => {
-    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath });
+    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath });
     const expectedPath = path.join(fx.bilaraRoot, FIXTURE_FILES['notes/dn/dn1_comment-en-sujato.json'].sourceRel);
     const relocated = path.join(fx.bilaraRoot, 'somewhere-else', 'dn1_comment-en-sujato.json');
     fs.mkdirSync(path.dirname(relocated), { recursive: true });
@@ -202,7 +267,7 @@ describe('update-sujato pipeline (fixture)', () => {
   });
 
   it('copy overwrites sujatoDir byte-for-byte from bilaraRoot and writes manifest.json', () => {
-    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath });
+    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath });
     const sourcePath = path.join(fx.bilaraRoot, FIXTURE_FILES['sutta/dn/dn1_translation-en-sujato.json'].sourceRel);
     fs.writeFileSync(sourcePath, JSON.stringify({ 'dn1:1.1': 'Revised text.' }, null, 2));
 
@@ -214,8 +279,54 @@ describe('update-sujato pipeline (fixture)', () => {
     expect(readJson(fx.manifestPath)).toEqual(manifest);
   });
 
+  it('copy sets manifest.snapshotCommit to null when there is no prior manifest.json', () => {
+    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath });
+
+    const manifest = runCopy({
+      bilaraRoot: fx.bilaraRoot,
+      gitInfo: { commit: 'abc123', commitDate: '2026-01-01T00:00:00Z', dirty: false },
+      sujatoDir: fx.sujatoDir,
+      snapshotPath: fx.snapshotPath,
+      manifestPath: fx.manifestPath,
+    });
+
+    expect(manifest.sourceCommit).toBe('abc123');
+    expect(manifest.snapshotCommit).toBeNull();
+  });
+
+  it('copy carries snapshotCommit forward from the previous manifest.json unchanged', () => {
+    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath });
+    writeJson(fx.manifestPath, { sourceCommit: 'old-commit', snapshotCommit: 'old-commit' });
+
+    const manifest = runCopy({
+      bilaraRoot: fx.bilaraRoot,
+      gitInfo: { commit: 'new-commit', commitDate: '2026-01-01T00:00:00Z', dirty: false },
+      sujatoDir: fx.sujatoDir,
+      snapshotPath: fx.snapshotPath,
+      manifestPath: fx.manifestPath,
+    });
+
+    // A copy with no follow-up snapshot leaves these visibly mismatched in the same file.
+    expect(manifest.sourceCommit).toBe('new-commit');
+    expect(manifest.snapshotCommit).toBe('old-commit');
+  });
+
+  it('snapshot updates manifest.snapshotCommit to match the current sourceCommit', () => {
+    writeJson(fx.manifestPath, { sourceCommit: 'new-commit', snapshotCommit: 'old-commit' });
+
+    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath });
+
+    expect(readJson(fx.manifestPath).snapshotCommit).toBe('new-commit');
+  });
+
+  it('snapshot is a no-op on manifest.json when one does not exist yet', () => {
+    expect(fs.existsSync(fx.manifestPath)).toBe(false);
+    expect(() => runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath })).not.toThrow();
+    expect(fs.existsSync(fx.manifestPath)).toBe(false);
+  });
+
   it('copy throws instead of silently skipping if a tracked file is missing from bilaraRoot', () => {
-    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath });
+    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath });
     fs.rmSync(path.join(fx.bilaraRoot, FIXTURE_FILES['name/dn-name_translation-en-sujato.json'].sourceRel));
 
     expect(() =>
@@ -255,7 +366,7 @@ describe('update-sujato pipeline (fixture)', () => {
   });
 
   it('the full review workflow (check fails -> copy -> post -> snapshot -> check passes) round-trips', () => {
-    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath });
+    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath });
     const sourcePath = path.join(fx.bilaraRoot, FIXTURE_FILES['sutta/dn/dn1_translation-en-sujato.json'].sourceRel);
     const upstream = readJson(sourcePath);
     upstream['dn1:1.3'] = 'A newly added verse line about mendicants.';
@@ -271,12 +382,16 @@ describe('update-sujato pipeline (fixture)', () => {
       manifestPath: fx.manifestPath,
     });
     runPost({ sujatoDir: fx.sujatoDir });
-    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath });
+    runSnapshot({ sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath });
 
     const result = runCheck({ bilaraRoot: fx.bilaraRoot, sujatoDir: fx.sujatoDir, snapshotPath: fx.snapshotPath });
     expect(result).toMatchObject({ ok: true, checked: 4 });
     expect(readJson(path.join(fx.sujatoDir, 'sutta/dn/dn1_translation-en-sujato.json'))['dn1:1.3']).toBe(
       'A newly added verse line about bhikkhus.',
     );
+    // The completed workflow leaves manifest.json's two commit fields caught up with each other.
+    const manifest = readJson(fx.manifestPath);
+    expect(manifest.snapshotCommit).toBe(manifest.sourceCommit);
+    expect(manifest.snapshotCommit).toBe('deadbeef');
   });
 });

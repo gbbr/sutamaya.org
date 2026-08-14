@@ -10,11 +10,11 @@
 // not this one.
 import fs from 'node:fs';
 import path from 'node:path';
-import { listLocalRelPaths, keysHash, SUJATO_DIR, SNAPSHOT_PATH } from './lib/sujatoSync.js';
+import { listLocalRelPaths, keysHash, SUJATO_DIR, SNAPSHOT_PATH, MANIFEST_PATH } from './lib/sujatoSync.js';
 
 // Core logic, callable directly with explicit paths (tests use this to point at a fixture tree
 // instead of the real data/sujato — see scripts/update-sujato.test.js).
-export function runSnapshot({ sujatoDir = SUJATO_DIR, snapshotPath = SNAPSHOT_PATH } = {}) {
+export function runSnapshot({ sujatoDir = SUJATO_DIR, snapshotPath = SNAPSHOT_PATH, manifestPath = MANIFEST_PATH } = {}) {
   const relPaths = listLocalRelPaths(sujatoDir);
   const files = {};
   for (const relPath of relPaths) {
@@ -31,6 +31,15 @@ export function runSnapshot({ sujatoDir = SUJATO_DIR, snapshotPath = SNAPSHOT_PA
 
   fs.mkdirSync(path.dirname(snapshotPath), { recursive: true });
   fs.writeFileSync(snapshotPath, JSON.stringify(snapshot, null, 2) + '\n');
+
+  // Mark manifest.json's provenance as caught up with this snapshot — see
+  // scripts/update-sujato-copy.mjs's comment on why sourceCommit/snapshotCommit live together
+  // there rather than in snapshot.json.
+  if (fs.existsSync(manifestPath)) {
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    manifest.snapshotCommit = manifest.sourceCommit;
+    fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
+  }
 
   return snapshot;
 }

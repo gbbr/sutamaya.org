@@ -12,6 +12,7 @@ import {
   buildBasenameIndex,
   loadSnapshot,
   keysHash,
+  checkSnapshotInSync,
   SUJATO_DIR,
   SNAPSHOT_PATH,
 } from './lib/sujatoSync.js';
@@ -44,7 +45,9 @@ export function runCheck({ bilaraRoot, sujatoDir = SUJATO_DIR, snapshotPath = SN
     return basenameIndex.get(path.basename(relPath)) || [];
   }
 
-  const issues = [];
+  // Independent of bilaraRoot entirely — verifies data/sujato/ itself still matches
+  // snapshot.json, catching a copy that got committed without a follow-up update-sujato:snapshot.
+  const issues = [...checkSnapshotInSync({ sujatoDir, snapshotPath }).issues];
   let checked = 0;
 
   for (const [relPath, expected] of Object.entries(snapshot.files)) {
@@ -67,7 +70,8 @@ export function runCheck({ bilaraRoot, sujatoDir = SUJATO_DIR, snapshotPath = SN
     }
 
     if (keys.length !== expected.keyCount || keysHash(keys) !== expected.keysHash) {
-      const oldKeys = Object.keys(JSON.parse(fs.readFileSync(path.join(sujatoDir, relPath), 'utf8')));
+      const localPath = path.join(sujatoDir, relPath);
+      const oldKeys = fs.existsSync(localPath) ? Object.keys(JSON.parse(fs.readFileSync(localPath, 'utf8'))) : [];
       issues.push(`${relPath}: segment ids changed (${oldKeys.length} → ${keys.length}) — ${describeSetDiff(oldKeys, keys)}`);
       continue;
     }
