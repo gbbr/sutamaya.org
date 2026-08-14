@@ -4,6 +4,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
 import { flattenListTree, type ListPathOption } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
+import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits';
 import type { ListDef, ThemeColors } from '../lib/types';
 
 interface ListMembershipPickerProps {
@@ -49,7 +50,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
 
   const rows: Row[] = useMemo(() => {
     if (nestingParent) {
-      const name = draft.trim();
+      const name = draft.trim().slice(0, LIST_NAME_MAX_LENGTH);
       return name
         ? [
             { type: 'create-nested-list', name, parentId: nestingParent.id, parentLabel: nestingParent.label },
@@ -91,7 +92,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
     const slashIdx = q.lastIndexOf('/');
     if (slashIdx !== -1) {
       const parentQuery = q.slice(0, slashIdx).trim().toLowerCase();
-      const nameQuery = q.slice(slashIdx + 1).trim();
+      const nameQuery = q.slice(slashIdx + 1).trim().slice(0, LIST_NAME_MAX_LENGTH);
       if (parentQuery) {
         const parentCandidates = flatAll.filter((f) => f.list.label.toLowerCase().includes(parentQuery));
         const exactParent = flatAll.find((f) => f.list.kind === 'group' && f.list.label.toLowerCase() === parentQuery);
@@ -114,7 +115,8 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
     const ql = q.toLowerCase();
     const matches = flatAll.filter((f) => f.breadcrumb.toLowerCase().includes(ql));
     const listRows: Row[] = matches.map((option) => ({ type: 'list' as const, option }));
-    return [...listRows, { type: 'create-top-list', name: q }, { type: 'create-top-group', name: q }];
+    const cappedName = q.slice(0, LIST_NAME_MAX_LENGTH);
+    return [...listRows, { type: 'create-top-list', name: cappedName }, { type: 'create-top-group', name: cappedName }];
   }, [draft, flatAll, suttaListIds, nestingParent]);
 
   useEffect(() => {

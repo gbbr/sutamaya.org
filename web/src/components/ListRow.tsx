@@ -4,6 +4,7 @@ import type { KeyboardEvent } from 'react';
 import type { BlockedDelete } from '../hooks/useListCrud';
 import type { DropIndicator } from '../lib/listTreeDrop';
 import type { ListDef } from '../lib/types';
+import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits';
 
 export interface ListRowMenuProps {
   menuOpenId: string | null;
@@ -218,6 +219,7 @@ export const ListRow = memo(function ListRow({
               } else if (e.key === 'Escape') onCancelEdit();
             }}
             onBlur={onCommitEdit}
+            maxLength={LIST_NAME_MAX_LENGTH}
             className="font-serif flex-1 min-w-0 h-[26px] border border-accent rounded px-1.5 bg-field text-[14.5px] outline-none"
             autoComplete="off"
             autoCorrect="off"
@@ -368,6 +370,7 @@ export const ListRow = memo(function ListRow({
             onKeyDown={onDraftKey}
             onBlur={() => onDraftKey({ key: 'Escape' } as KeyboardEvent<HTMLInputElement>)}
             placeholder="List name — return to create"
+            maxLength={LIST_NAME_MAX_LENGTH}
             className="font-serif w-full h-[32px] border border-accent rounded-lg px-2.5 bg-field text-[14px] outline-none"
             autoComplete="off"
             autoCorrect="off"
