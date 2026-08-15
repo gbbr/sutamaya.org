@@ -6,11 +6,12 @@ import { defineConfig } from 'vitest/config';
 // for speed. `.test.tsx` files render actual components, so those run under jsdom instead —
 // scoped via environmentMatchGlobs rather than flipping the whole suite to jsdom.
 //
-// routeIntent.test.ts is a `.test.ts` exception: it exercises `sessionStorage` directly, a real
-// Web Storage API that only exists under jsdom (or a browser) — not in plain Node (Node's own
-// global sessionStorage is a recent, still-stabilizing addition some Node versions lack, so
-// relying on it would make the test's pass/fail depend on which Node the runner happens to have
-// rather than on the code under test).
+// routeIntent.test.ts and pwaNudge.test.ts are `.test.ts` exceptions: they exercise real Web
+// APIs (sessionStorage/localStorage, matchMedia) that only exist under jsdom (or a browser) — not
+// in plain Node (Node's own global Web Storage is a recent, still-stabilizing addition some Node
+// versions lack, so relying on it would make the test's pass/fail depend on which Node the
+// runner happens to have rather than on the code under test; matchMedia has no Node equivalent
+// at all).
 export default defineConfig({
   test: {
     projects: [
@@ -18,14 +19,14 @@ export default defineConfig({
         test: {
           name: 'node',
           include: ['server/src/**/*.test.js', 'web/src/**/*.test.ts', 'scripts/**/*.test.js'],
-          exclude: ['web/src/lib/routeIntent.test.ts'],
+          exclude: ['web/src/lib/routeIntent.test.ts', 'web/src/lib/pwaNudge.test.ts'],
           environment: 'node',
         },
       },
       {
         test: {
           name: 'jsdom',
-          include: ['web/src/**/*.test.tsx', 'web/src/lib/routeIntent.test.ts'],
+          include: ['web/src/**/*.test.tsx', 'web/src/lib/routeIntent.test.ts', 'web/src/lib/pwaNudge.test.ts'],
           environment: 'jsdom',
           setupFiles: ['web/src/setupTests.ts'],
         },

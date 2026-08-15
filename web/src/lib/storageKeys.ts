@@ -10,3 +10,5 @@ export const ROUTE_INTENT_KEY = 'sutamaya.routeIntent';
 export const UI_PREFS_KEY = 'sutamaya.uiPrefs';
 export const READER_PREFS_KEY = 'sutamaya.readerPrefs';
 export const LAYOUT_PREFS_KEY = 'sutamaya.layout';
+export const HAS_OPENED_SUTTA_KEY = 'sutamaya.hasOpenedSutta';
+export const OFFLINE_NUDGE_DISMISSED_KEY = 'sutamaya.offlineNudgeDismissed';

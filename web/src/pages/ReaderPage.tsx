@@ -17,6 +17,7 @@ import { setReaderThemeColor } from '../lib/themeColor';
 import { shortcutsForScope } from '../lib/shortcuts';
 import { tagIntent } from '../lib/routeIntent';
 import { animateScrollTop } from '../lib/segmentScroll';
+import { markSuttaOpened } from '../lib/pwaNudge';
 import { SegmentedText } from '../components/SegmentedText';
 import { HighlightPopup } from '../components/HighlightPopup';
 import { HighlightGutter } from '../components/HighlightGutter';
@@ -113,6 +114,12 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     setReaderThemeColor(theme.bg);
     return () => setReaderThemeColor(null);
   }, [theme.bg]);
+
+  // Drives the offline-download nudge banner in TreePane, which only makes sense to show once
+  // someone has actually opened a sutta — not the very first thing a fresh PWA install sees.
+  useEffect(() => {
+    markSuttaOpened();
+  }, []);
 
   useEffect(() => {
     setOpenSegs({});
