@@ -522,6 +522,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           word={dict.word}
           gloss={dict.gloss}
           defs={dict.defs}
+          loading={dict.loading}
           theme={theme}
           fontSize={fs}
           onClose={closeDict}

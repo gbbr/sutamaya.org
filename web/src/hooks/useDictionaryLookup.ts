@@ -12,6 +12,9 @@ interface DictState {
   // from the (not-unique-within-a-segment) word text itself.
   segIndex: number;
   wordIndex: number;
+  // Set when the dock was opened before the (~20MB, background-loaded) dictionary had finished
+  // fetching — see onWordClick below. Resolved by the effect that watches `dictionary` below.
+  loading?: boolean;
 }
 
 interface UseDictionaryLookupOptions {
@@ -36,6 +39,19 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
   useEffect(() => {
     setDict(null);
   }, [suttaId]);
+
+  // First-ever visit: the dictionary (~20MB) can still be mid-fetch when the reader is already
+  // interactive (only `corpus` gates first paint — see CorpusContext). A tap during that window
+  // opens the dock in `loading` state (see onWordClick below); once `dictionary` actually
+  // resolves, redo that lookup for real rather than leaving the dock stuck showing "Loading…".
+  useEffect(() => {
+    if (!dictionary) return;
+    setDict((d) => {
+      if (!d?.loading) return d;
+      const def = lookupWord(dictionary, d.word);
+      return { ...d, gloss: def ? `${def.length}` : 'Pali', defs: def, loading: false };
+    });
+  }, [dictionary]);
 
   // Every segment's Pali word list, in the same order SegmentedText renders (and taps) them —
   // shared by onWordClick (to record where a lookup came from) and goToAdjacentWord (to walk
@@ -124,15 +140,21 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
 
   const onWordClick = useCallback(
     (raw: string, segIndex: number, wordIndex: number) => {
-      if (!dictionary) return;
-      const def = lookupWord(dictionary, raw);
-      setDict({
-        word: stripPunct(raw),
-        gloss: def ? `${def.length}` : 'Pali',
-        defs: def,
-        segIndex,
-        wordIndex,
-      });
+      if (!dictionary) {
+        // Dictionary still loading in the background (see the effect above) — open the dock in a
+        // loading state rather than silently no-oping the tap, which otherwise reads as "broken"
+        // on a first-ever visit.
+        setDict({ word: stripPunct(raw), gloss: 'Loading…', defs: null, segIndex, wordIndex, loading: true });
+      } else {
+        const def = lookupWord(dictionary, raw);
+        setDict({
+          word: stripPunct(raw),
+          gloss: def ? `${def.length}` : 'Pali',
+          defs: def,
+          segIndex,
+          wordIndex,
+        });
+      }
       const sel = window.getSelection();
       if (sel) sel.removeAllRanges();
       // The dock opening can cover the just-tapped word if it's near the bottom of the reading
