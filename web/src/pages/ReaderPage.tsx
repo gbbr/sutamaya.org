@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { X, Menu as MenuIcon, ChevronRight } from 'lucide-react';
+import { X, Menu as MenuIcon, ChevronRight, List as ListIcon } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
@@ -165,13 +165,33 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   // the reader was entered from browsing, a search result, or a deep link.
   const siblingIds = useMemo(() => (corpus ? flatSuttaOrder(corpus) : []), [corpus]);
 
+  // Opened from a user list (My Lists, not the corpus browse tree) — Prev/Next should stay inside
+  // that list's own items and stop dead at either end, the same as LibraryPage's own Up/Down
+  // handling of this exact case (see its `currentList` there): jumping away to wherever a sutta
+  // happens to live in the corpus would defeat the point of viewing a curated list. Also drives
+  // the "viewing from list X" indicator above the breadcrumb below, so the reader makes that
+  // narrowed Prev/Next scope visible rather than silently behaving differently. `from` is
+  // `/browse/{nodeId}/{suttaId}` (see LibraryPage's onOpen), and stays constant across a Prev/Next
+  // run (navigateToSutta carries it forward), so the list origin holds for the whole session.
+  const listOrigin = useMemo(() => {
+    const nodeId = from?.match(/^\/browse\/([^/]+)\//)?.[1];
+    return nodeId ? lists.find((l) => l.id === decodeURIComponent(nodeId)) : undefined;
+  }, [from, lists]);
+
   function step(dir: 1 | -1) {
     if (!suttaId) return;
-    const i = siblingIds.indexOf(suttaId);
-    const next = siblingIds[Math.min(siblingIds.length - 1, Math.max(0, i + dir))];
     // navigateToSutta carries `from`/`fromView` forward so closing after stepping through
     // several suttas still returns to wherever the reader was originally opened from, not the
     // last-stepped sutta's own location.
+    if (listOrigin) {
+      const items = listOrigin.items;
+      const i = items.indexOf(suttaId);
+      const next = i === -1 ? undefined : items[i + dir];
+      if (next && next !== suttaId) navigateToSutta(next);
+      return;
+    }
+    const i = siblingIds.indexOf(suttaId);
+    const next = siblingIds[Math.min(siblingIds.length - 1, Math.max(0, i + dir))];
     if (next && next !== suttaId) navigateToSutta(next);
   }
 
@@ -306,6 +326,21 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
 
       <div ref={scrollRef} className="sc flex-1" style={{ padding: '44px 22px 120px' }}>
         <div style={{ maxWidth: measureWidth, margin: '0 auto' }}>
+          {listOrigin && (
+            <nav className="font-sans flex items-center gap-1" style={{ fontSize: 12, marginBottom: 7, color: theme.dim }}>
+              <button
+                className="flex items-center gap-1 hover:underline"
+                onClick={() =>
+                  navigate(`/browse/${encodeURIComponent(listOrigin.id)}/${encodeURIComponent(suttaId)}`, {
+                    state: tagIntent({ fromView: 'list' }),
+                  })
+                }
+              >
+                <ListIcon size={11} strokeWidth={2} />
+                {listOrigin.label}
+              </button>
+            </nav>
+          )}
           {breadcrumb.length > 0 && (
             <nav className="font-sans flex flex-wrap items-center gap-1" style={{ fontSize: 12, marginBottom: 7, color: theme.dim }}>
               {breadcrumb.map((b, i) => (
