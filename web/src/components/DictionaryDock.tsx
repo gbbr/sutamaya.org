@@ -5,6 +5,7 @@ interface DictionaryDockProps {
   word: string;
   gloss: string;
   defs: string[] | null;
+  loading?: boolean;
   theme: ThemeColors;
   fontSize: number;
   onClose: () => void;
@@ -12,7 +13,7 @@ interface DictionaryDockProps {
   onNext: () => void;
 }
 
-export function DictionaryDock({ word, gloss, defs, theme, fontSize, onClose, onPrev, onNext }: DictionaryDockProps) {
+export function DictionaryDock({ word, gloss, defs, loading, theme, fontSize, onClose, onPrev, onNext }: DictionaryDockProps) {
   const glossSize = Math.max(11, fontSize - 5.5);
   const defSize = Math.max(12, fontSize - 3.5);
   const numbered = !!defs && defs.length > 1;
@@ -60,7 +61,9 @@ export function DictionaryDock({ word, gloss, defs, theme, fontSize, onClose, on
         </button>
       </div>
       <div className="flex-1 min-h-0 overflow-y-auto flex flex-col gap-[9px] mt-[7px] opacity-[.82]" style={{ fontSize: defSize }}>
-        {defs && defs.length > 0 ? (
+        {loading ? (
+          <div className="leading-[1.55] opacity-70">Loading dictionary…</div>
+        ) : defs && defs.length > 0 ? (
           defs.map((entry, i) => (
             <div key={i} className="flex items-baseline gap-[8px] leading-[1.55]">
               {numbered && (
