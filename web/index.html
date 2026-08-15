@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#FDFCFA" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <!-- Cloudflare Web Analytics — aggregate visit/pageview counts only (cookie-less, no
+         personal data). Manually registered against the sutamaya.org site tag in the Cloudflare
+         dashboard, not tied to any DNS/proxy change. Sees SPA route changes automatically (it
+         hooks History API pushState/popstate), so it reports real in-app navigation, not just
+         the entry URL. Only fires while online — offline PWA sessions aren't counted. -->
+    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "9ccb5acc36b045d1a2ae008a1c61e694"}'></script>
     <!--
       iPadOS Safari's "Add to Home Screen" only offers a full standalone web app (rather than a
       plain bookmark) when these Apple-specific tags are present — the web manifest alone isn't
