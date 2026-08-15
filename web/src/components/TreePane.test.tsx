@@ -21,11 +21,21 @@ vi.mock('../context/UserDataContext', () => ({ useUserData: vi.fn() }));
 vi.mock('../context/AuthContext', () => ({ useAuth: vi.fn() }));
 vi.mock('../context/LayoutContext', () => ({ useLayout: vi.fn() }));
 vi.mock('@reach/router', () => ({ navigate: vi.fn() }));
+vi.mock('../lib/pwaNudge', () => ({
+  isStandalone: vi.fn(),
+  hasOpenedSutta: vi.fn(),
+  isOfflineNudgeDismissed: vi.fn(),
+  dismissOfflineNudge: vi.fn(),
+}));
+vi.mock('../lib/offline', () => ({ estimateOfflineStatus: vi.fn() }));
 
+import { navigate } from '@reach/router';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
 import { useLayout } from '../context/LayoutContext';
+import { isStandalone, hasOpenedSutta, isOfflineNudgeDismissed, dismissOfflineNudge } from '../lib/pwaNudge';
+import { estimateOfflineStatus } from '../lib/offline';
 import { TreePane } from './TreePane';
 import { searchCorpus } from '../lib/corpus';
 import type { Corpus, ListDef, User } from '../lib/types';
@@ -181,6 +191,12 @@ beforeEach(() => {
     logout: vi.fn(async () => {}),
   });
   vi.mocked(useLayout).mockReturnValue(mockLayout());
+  // Default to "nudge can never show" for every test that isn't specifically about it — see the
+  // 'offline download nudge' describe block below for the cases that override these.
+  vi.mocked(isStandalone).mockReturnValue(false);
+  vi.mocked(hasOpenedSutta).mockReturnValue(false);
+  vi.mocked(isOfflineNudgeDismissed).mockReturnValue(false);
+  vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 0, total: 0 });
 });
 
 describe('corpus browse tree', () => {
@@ -465,5 +481,76 @@ describe('keyboard: x toggles Library / My Lists', () => {
     expect(screen.getByText('Suttas to study')).toBeInTheDocument();
     fireEvent.keyDown(window, { key: 'x' });
     expect(screen.getByText('Long Discourses')).toBeInTheDocument();
+  });
+});
+
+describe('offline download nudge', () => {
+  const nudgeText = 'Download the full canon for offline reading';
+
+  it('stays hidden in a regular (non-PWA) browser tab even once a sutta has been opened and the corpus is incomplete', async () => {
+    vi.mocked(isStandalone).mockReturnValue(false);
+    vi.mocked(hasOpenedSutta).mockReturnValue(true);
+    vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 3, total: 10 });
+    renderHarness();
+    // Nothing async to actually wait on here (the cheap synchronous checks already rule the
+    // banner out before estimateOfflineStatus would ever be called) — this just confirms it
+    // never appears.
+    expect(screen.queryByText(nudgeText)).not.toBeInTheDocument();
+    expect(estimateOfflineStatus).not.toHaveBeenCalled();
+  });
+
+  it('stays hidden until a sutta has actually been opened, even when standalone', () => {
+    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(hasOpenedSutta).mockReturnValue(false);
+    renderHarness();
+    expect(screen.queryByText(nudgeText)).not.toBeInTheDocument();
+    expect(estimateOfflineStatus).not.toHaveBeenCalled();
+  });
+
+  it('stays hidden once already dismissed', () => {
+    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(hasOpenedSutta).mockReturnValue(true);
+    vi.mocked(isOfflineNudgeDismissed).mockReturnValue(true);
+    renderHarness();
+    expect(screen.queryByText(nudgeText)).not.toBeInTheDocument();
+    expect(estimateOfflineStatus).not.toHaveBeenCalled();
+  });
+
+  it('stays hidden once the corpus is already fully cached for offline', async () => {
+    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(hasOpenedSutta).mockReturnValue(true);
+    vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 10, total: 10 });
+    renderHarness();
+    await vi.waitFor(() => expect(estimateOfflineStatus).toHaveBeenCalled());
+    expect(screen.queryByText(nudgeText)).not.toBeInTheDocument();
+  });
+
+  it('shows once standalone, a sutta has been opened, and the corpus is incomplete', async () => {
+    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(hasOpenedSutta).mockReturnValue(true);
+    vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 3, total: 10 });
+    renderHarness();
+    expect(await screen.findByText(nudgeText)).toBeInTheDocument();
+  });
+
+  it('its Download button navigates to Settings scrolled to the offline section', async () => {
+    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(hasOpenedSutta).mockReturnValue(true);
+    vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 3, total: 10 });
+    renderHarness();
+    await screen.findByText(nudgeText);
+    await userEvent.click(screen.getByRole('button', { name: 'Download' }));
+    expect(navigate).toHaveBeenCalledWith('/settings', { state: { scrollTo: 'offline' } });
+  });
+
+  it('dismissing hides it and persists the dismissal', async () => {
+    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(hasOpenedSutta).mockReturnValue(true);
+    vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 3, total: 10 });
+    renderHarness();
+    await screen.findByText(nudgeText);
+    await userEvent.click(screen.getByLabelText('Dismiss'));
+    expect(screen.queryByText(nudgeText)).not.toBeInTheDocument();
+    expect(dismissOfflineNudge).toHaveBeenCalled();
   });
 });

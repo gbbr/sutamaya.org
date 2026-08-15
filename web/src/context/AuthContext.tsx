@@ -109,7 +109,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // UserDataContext) — routing all of those to the Settings page, which renders the actual
   // button, sidesteps that.
   const promptGoogleSignIn = useCallback(() => {
-    navigate('/settings');
+    navigate('/settings', { state: { scrollTo: 'auth' } });
   }, []);
 
   const logout = useCallback(async () => {

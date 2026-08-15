@@ -28,6 +28,10 @@ const UI_FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
   { id: 'system', label: 'System' },
 ];
 
+// The two sections this page can be deep-linked into and highlighted on arrival — see the
+// scroll/flash effect below.
+type ScrollTarget = 'offline' | 'auth';
+
 // Delegates to '/', which RestoreLastLocation (App.tsx) already resolves to
 // getLastLocation() ?? '/browse/dn' — reusing that instead of duplicating the same fallback
 // chain here.
@@ -35,7 +39,7 @@ function backToLastLocation() {
   navigate('/');
 }
 
-export function SettingsPage(_props: RouteComponentProps) {
+export function SettingsPage({ location }: RouteComponentProps) {
   const { user, logout, loading, authError } = useAuth();
   const { uiScale, uiFace, theme, setUiScale, setUiFace, setTheme } = useUiPrefs();
   const { corpus } = useCorpus();
@@ -49,6 +53,18 @@ export function SettingsPage(_props: RouteComponentProps) {
   const [failedCount, setFailedCount] = useState(0);
   const [circuitTripped, setCircuitTripped] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
+
+  // Lets an entry point elsewhere in the app — the offline-download nudge in TreePane, or a
+  // sign-in prompt (ReaderMenuPanel, ListMembershipPicker, the account badge — see
+  // promptGoogleSignIn in AuthContext) — land here already scrolled to, and briefly
+  // highlighting, the specific section it was actually about, rather than just the page top.
+  // Both refs are attached unconditionally (see the Offline/Authentication sections below, and
+  // note the Authentication section renders a stable placeholder rather than collapsing to
+  // nothing while `loading`), so the scroll effect further down never has to wait on anything
+  // async.
+  const offlineSectionRef = useRef<HTMLDivElement>(null);
+  const authSectionRef = useRef<HTMLDivElement>(null);
+  const [flashTarget, setFlashTarget] = useState<ScrollTarget | null>(null);
 
   useEffect(() => {
     if (!corpus) return;
@@ -69,6 +85,28 @@ export function SettingsPage(_props: RouteComponentProps) {
       cancelled = true;
     };
   }, [corpus]);
+
+  // Scrolls to, and briefly highlights, whichever section this page was actually navigated here
+  // for. Deliberately only runs once on mount (not keyed on location.state) — it's a one-shot
+  // "you arrived here for a reason" cue, not something that should re-fire on unrelated re-renders.
+  useEffect(() => {
+    const scrollTo = (location?.state as { scrollTo?: ScrollTarget } | undefined)?.scrollTo;
+    if (!scrollTo) return;
+    const ref = scrollTo === 'offline' ? offlineSectionRef : authSectionRef;
+    ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setFlashTarget(scrollTo);
+    const timer = window.setTimeout(() => setFlashTarget(null), 1600);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  // Constant inset/padding (not just conditional on the flash itself) so the highlight has room
+  // to bleed slightly past the section's own text without the padding itself popping in and
+  // shifting layout right as the flash starts.
+  function flashClass(id: ScrollTarget): string {
+    return `-mx-3 px-3 py-2 rounded-field transition-colors duration-[1400ms] ease-out ${
+      flashTarget === id ? 'bg-accent/10' : 'bg-transparent'
+    }`;
+  }
 
   // Aborts an in-flight download if the user navigates away from Settings. Without this, leaving
   // mid-download orphans it: abortRef is a ref, so it doesn't survive unmount, and returning to
@@ -135,168 +173,6 @@ export function SettingsPage(_props: RouteComponentProps) {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  // User authentication section with Google sign-in and with Export JSON and Sign-out when
-  // authenticated.
-  const userSection = (
-    <>
-      {/* loading gates only this account section now, not the whole page — Display/Offline
-          above render immediately regardless. Auth resolution retries with backoff on any
-          network hiccup (see AuthContext), which competes with this page's own heavy download
-          traffic for bandwidth on mobile; blanking the entire page for however long that takes
-          was needlessly punishing when only this section actually depends on it. */}
-      {loading ? null : user ? (
-        <>
-          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3">Authentication</div>
-          <div className="font-sans text-[13px] text-ink/60 mb-1">Signed in as</div>
-          <div className="text-[16px] mb-6">{user.name ? `${user.name} · ${user.email}` : user.email}</div>
-          <a
-            href={dataApi.exportUrl}
-            className="block w-full text-center h-11 leading-[44px] rounded-field border border-ink/[.22] font-sans text-[14px] font-medium mb-3"
-          >
-            Export my data as JSON
-          </a>
-          <button
-            className="flex items-center justify-center gap-1.5 w-full h-11 rounded-field bg-accent text-[#FBFAF7] font-sans text-[14px] font-medium"
-            onClick={async () => {
-              await logout();
-              navigate('/');
-            }}
-          >
-            <LogOut size={15} strokeWidth={1.75} />
-            Sign out
-          </button>
-        </>
-      ) : (
-        <>
-          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3">Authentication</div>
-          <div className="font-sans text-[14px] text-ink/60 mb-4">
-            Sign in with Google to sync your lists, notes and highlights across devices.
-          </div>
-          <GoogleSignInButton />
-          {authError && <div className="font-sans text-[13px] text-red-600 mt-2">{authError}</div>}
-        </>
-      )}
-    </>
-  );
-
-  // UI Theme configuration section.
-  const themeSection = (
-    <>
-      <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3 mt-6">Display</div>
-
-      <div className="mb-6">
-        <div className="font-sans text-[14px] mb-2">Theme</div>
-        <div className="grid grid-cols-3 gap-2">
-          {THEME_OPTIONS.map((t) => (
-            <button
-              key={t.id}
-              className={`h-9 rounded-field border font-sans text-[13px] ${
-                theme === t.id ? 'border-accent bg-accent text-[#FBFAF7]' : 'border-ink/[.22] text-ink/70'
-              }`}
-              onClick={() => setTheme(t.id)}
-            >
-              {t.label}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div className="mb-3">
-        <div className="flex items-baseline justify-between mb-2">
-          <label htmlFor="ui-scale" className="font-sans text-[14px]">
-            UI Scale
-          </label>
-          <span className="font-sans text-[13px] text-ink/50">{Math.round(uiScale * 100)}%</span>
-        </div>
-        <input
-          id="ui-scale"
-          type="range"
-          min={UI_SCALE_MIN}
-          max={UI_SCALE_MAX}
-          step={UI_SCALE_STEP}
-          value={uiScale}
-          onChange={(e) => setUiScale(Number(e.target.value))}
-          className="w-full accent-accent"
-        />
-        <div className="flex justify-between font-sans text-[11px] text-ink/40 mt-1">
-          <span>{Math.round(UI_SCALE_MIN * 100)}%</span>
-          <button className="underline decoration-ink/25 underline-offset-2" onClick={() => setUiScale(1)}>
-            Reset
-          </button>
-          <span>{Math.round(UI_SCALE_MAX * 100)}%</span>
-        </div>
-      </div>
-
-      <div className="mb-6">
-        <div className="font-sans text-[14px] mb-2">UI Font</div>
-        <div className="grid grid-cols-3 gap-2">
-          {UI_FACE_OPTIONS.map((f) => (
-            <button
-              key={f.id}
-              className={`h-9 rounded-field border font-sans text-[13px] ${
-                uiFace === f.id ? 'border-accent bg-accent text-[#FBFAF7]' : 'border-ink/[.22] text-ink/70'
-              }`}
-              onClick={() => setUiFace(f.id)}
-            >
-              {f.label}
-            </button>
-          ))}
-        </div>
-      </div>
-    </>
-  );
-
-  // Download offline corpus section.
-  const offlineSection = (
-    <>
-      <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3 mt-6">Offline</div>
-
-      <div className="mb-6">
-        {offlineStatus === 'downloading' ? (
-          <>
-            <div className="h-2 rounded-full bg-ink/10 overflow-hidden mb-2">
-              <div
-                className="h-full bg-accent transition-[width]"
-                style={{ width: `${progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%` }}
-              />
-            </div>
-            <div className="flex items-center justify-between font-sans text-[13px] text-ink/50">
-              <span>{progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%</span>
-              <button className="underline decoration-ink/25 underline-offset-2" onClick={handleCancelOfflineDownload}>
-                Cancel
-              </button>
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="font-sans text-[13px] text-ink/60 mb-2">
-              {cachedStatus
-                ? cachedStatus.cached >= cachedStatus.total
-                  ? 'All suttas available offline.'
-                  : `${Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% available offline.`
-                : 'Checking offline availability…'}
-            </div>
-            <button
-              className="block w-full text-center h-11 rounded-field border border-ink/[.22] font-sans text-[14px] font-medium disabled:opacity-50"
-              onClick={handleDownloadOffline}
-              disabled={!corpus}
-            >
-              Download all suttas for offline
-            </button>
-            {failedCount > 0 &&
-              (circuitTripped ? (
-                <div className="font-sans text-[13px] text-red-600 mt-2">
-                  Stopped early after repeated failures — {failedCount} couldn't be downloaded.
-                </div>
-              ) : (
-                <div className="font-sans text-[13px] text-red-600 mt-2">{failedCount} couldn't be downloaded — try again.</div>
-              ))}
-          </>
-        )}
-      </div>
-    </>
-  );
-
   // items-start, not the flex default (stretch) — stretch caps this column at the container's own
   // height, so its content overflows past its box (and past its own pb-10, which then sits inside
   // that capped box instead of after the real, overflowing end of the content) rather than growing
@@ -314,20 +190,167 @@ export function SettingsPage(_props: RouteComponentProps) {
           Back
         </button>
         <div className="text-[22px] font-semibold tracking-[-.01em] mb-6">Settings</div>
-        {/* When signed in, display the user section last */}
-        { !loading && user ? (
-          <>
-            {themeSection}
-            {offlineSection}
-            {userSection}
-          </>
-        ) : (
-          <>
-            {userSection}
-            {themeSection}
-            {offlineSection}
-          </>
-        )}
+
+        {/* UI Theme configuration section. */}
+        <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3 mt-6">Display</div>
+
+        <div className="mb-6">
+          <div className="font-sans text-[14px] mb-2">Theme</div>
+          <div className="grid grid-cols-3 gap-2">
+            {THEME_OPTIONS.map((t) => (
+              <button
+                key={t.id}
+                className={`h-9 rounded-field border font-sans text-[13px] ${
+                  theme === t.id ? 'border-accent bg-accent text-[#FBFAF7]' : 'border-ink/[.22] text-ink/70'
+                }`}
+                onClick={() => setTheme(t.id)}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-3">
+          <div className="flex items-baseline justify-between mb-2">
+            <label htmlFor="ui-scale" className="font-sans text-[14px]">
+              UI Scale
+            </label>
+            <span className="font-sans text-[13px] text-ink/50">{Math.round(uiScale * 100)}%</span>
+          </div>
+          <input
+            id="ui-scale"
+            type="range"
+            min={UI_SCALE_MIN}
+            max={UI_SCALE_MAX}
+            step={UI_SCALE_STEP}
+            value={uiScale}
+            onChange={(e) => setUiScale(Number(e.target.value))}
+            className="w-full accent-accent"
+          />
+          <div className="flex justify-between font-sans text-[11px] text-ink/40 mt-1">
+            <span>{Math.round(UI_SCALE_MIN * 100)}%</span>
+            <button className="underline decoration-ink/25 underline-offset-2" onClick={() => setUiScale(1)}>
+              Reset
+            </button>
+            <span>{Math.round(UI_SCALE_MAX * 100)}%</span>
+          </div>
+        </div>
+
+        <div className="mb-6">
+          <div className="font-sans text-[14px] mb-2">UI Font</div>
+          <div className="grid grid-cols-3 gap-2">
+            {UI_FACE_OPTIONS.map((f) => (
+              <button
+                key={f.id}
+                className={`h-9 rounded-field border font-sans text-[13px] ${
+                  uiFace === f.id ? 'border-accent bg-accent text-[#FBFAF7]' : 'border-ink/[.22] text-ink/70'
+                }`}
+                onClick={() => setUiFace(f.id)}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Download offline corpus section. Renders unconditionally regardless of
+            `loading`/corpus state (see offlineSectionRef above) — cachedStatus itself starts out
+            null and just shows a "Checking…" line until it resolves, which doesn't affect this
+            section's own position or height. */}
+        <div ref={offlineSectionRef} className={flashClass('offline')}>
+          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3 mt-6">Offline</div>
+
+          <div className="mb-6">
+            {offlineStatus === 'downloading' ? (
+              <>
+                <div className="h-2 rounded-full bg-ink/10 overflow-hidden mb-2">
+                  <div
+                    className="h-full bg-accent transition-[width]"
+                    style={{ width: `${progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%` }}
+                  />
+                </div>
+                <div className="flex items-center justify-between font-sans text-[13px] text-ink/50">
+                  <span>{progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%</span>
+                  <button className="underline decoration-ink/25 underline-offset-2" onClick={handleCancelOfflineDownload}>
+                    Cancel
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="font-sans text-[13px] text-ink/60 mb-2">
+                  {cachedStatus
+                    ? cachedStatus.cached >= cachedStatus.total
+                      ? 'All suttas available offline.'
+                      : `${Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% available offline.`
+                    : 'Checking offline availability…'}
+                </div>
+                <button
+                  className="block w-full text-center h-11 rounded-field border border-ink/[.22] font-sans text-[14px] font-medium disabled:opacity-50"
+                  onClick={handleDownloadOffline}
+                  disabled={!corpus}
+                >
+                  Download all suttas for offline
+                </button>
+                {failedCount > 0 &&
+                  (circuitTripped ? (
+                    <div className="font-sans text-[13px] text-red-600 mt-2">
+                      Stopped early after repeated failures — {failedCount} couldn't be downloaded.
+                    </div>
+                  ) : (
+                    <div className="font-sans text-[13px] text-red-600 mt-2">{failedCount} couldn't be downloaded — try again.</div>
+                  ))}
+              </>
+            )}
+          </div>
+        </div>
+
+        {/* User authentication section with Google sign-in and with Export JSON and Sign-out
+            when authenticated. Fixed as the last section on the page regardless of sign-in
+            state — it used to lead when signed out, to surface the sign-in CTA for visitors who
+            landed here specifically to sign in, but that's now handled more reliably by
+            promptGoogleSignIn's scrollTo:'auth' state (see the effect above), which works
+            regardless of section order and doesn't depend on Settings happening to open already
+            scrolled to its top. While `loading`, it shows a lightweight placeholder rather than
+            collapsing to nothing, so the section always has real height and a valid scroll
+            target (see authSectionRef above) regardless of how long the session check takes. */}
+        <div ref={authSectionRef} className={flashClass('auth')}>
+          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3 mt-6">Authentication</div>
+          {loading ? (
+            <div className="font-sans text-[13px] text-ink/40">Checking sign-in status…</div>
+          ) : user ? (
+            <>
+              <div className="font-sans text-[13px] text-ink/60 mb-1">Signed in as</div>
+              <div className="text-[16px] mb-6">{user.name ? `${user.name} · ${user.email}` : user.email}</div>
+              <a
+                href={dataApi.exportUrl}
+                className="block w-full text-center h-11 leading-[44px] rounded-field border border-ink/[.22] font-sans text-[14px] font-medium mb-3"
+              >
+                Export my data as JSON
+              </a>
+              <button
+                className="flex items-center justify-center gap-1.5 w-full h-11 rounded-field bg-accent text-[#FBFAF7] font-sans text-[14px] font-medium"
+                onClick={async () => {
+                  await logout();
+                  navigate('/');
+                }}
+              >
+                <LogOut size={15} strokeWidth={1.75} />
+                Sign out
+              </button>
+            </>
+          ) : (
+            <>
+              <div className="font-sans text-[14px] text-ink/60 mb-4">
+                Sign in with Google to sync your lists, notes and highlights across devices.
+              </div>
+              <GoogleSignInButton />
+              {authError && <div className="font-sans text-[13px] text-red-600 mt-2">{authError}</div>}
+            </>
+          )}
+        </div>
+
         <a
           href="https://github.com/gbbr/sutamaya.org/issues/new"
           target="_blank"
