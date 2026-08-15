@@ -65,13 +65,15 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
   return (
     <div
       className="fixed inset-0 z-50 flex justify-center animate-fadeIn"
-      style={{ background: 'rgba(0,0,0,.35)', paddingTop: '12vh' }}
+      // Not `vh` — see index.css's --app-height comment for why some WebView builds don't
+      // recompute it correctly after applyUiScale's viewport-meta path changes the page's scale.
+      style={{ background: 'rgba(0,0,0,.35)', paddingTop: 'calc(var(--app-height, 100vh) * 0.12)' }}
       onClick={onClose}
     >
       <div
         data-component="ReaderSearchOverlay"
         className="w-full mx-4 flex flex-col overflow-hidden rounded-2xl shadow-popup"
-        style={{ background: theme.panel, maxWidth: 560, maxHeight: '70vh' }}
+        style={{ background: theme.panel, maxWidth: 560, maxHeight: 'calc(var(--app-height, 100vh) * 0.70)' }}
         onClick={(e) => e.stopPropagation()}
       >
         <input
