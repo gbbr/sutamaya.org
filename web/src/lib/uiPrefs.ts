@@ -86,6 +86,16 @@ export function applyUiScale(scale: number) {
         : `initial-scale=${effectiveScale}, viewport-fit=cover`
     );
   }
+  // Re-measure next frame, once the browser has reflowed against the new initial-scale.
+  requestAnimationFrame(syncAppHeight);
+}
+
+// Sets --app-height, which index.css's <html> height rule reads instead of `vh`/`dvh` — some
+// WebView builds don't recompute those correctly after applyUiScale's viewport-meta path above
+// changes the page's scale, but visualViewport.height stays accurate throughout.
+export function syncAppHeight() {
+  const height = window.visualViewport?.height ?? window.innerHeight;
+  document.documentElement.style.setProperty('--app-height', `${height}px`);
 }
 
 // Overrides the app's `font-serif` utility (titles, Pali, blurbs — see tailwind.config.js,

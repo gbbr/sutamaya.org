@@ -21,7 +21,15 @@ export function DictionaryDock({ word, gloss, defs, loading, theme, fontSize, on
     <section
       data-component="DictionaryDock"
       className="flex-none flex flex-col animate-sheetUp"
-      style={{ borderTop: `2px solid ${theme.fg}`, background: theme.panel, padding: '14px 22px 18px', maxHeight: '45vh' }}
+      style={{
+        borderTop: `2px solid ${theme.fg}`,
+        background: theme.panel,
+        padding: '14px 22px 18px',
+        // Not `45vh` — see index.css's --app-height comment for why some WebView builds don't
+        // recompute `vh` correctly after applyUiScale's viewport-meta path changes the page's
+        // scale.
+        maxHeight: 'calc(var(--app-height, 100vh) * 0.45)',
+      }}
     >
       <div className="flex-none flex items-baseline gap-3">
         <div className="font-semibold font-serif min-w-0 truncate" style={{ fontSize: fontSize + 2 }}>{word}</div>

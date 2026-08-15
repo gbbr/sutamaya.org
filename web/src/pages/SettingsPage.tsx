@@ -173,13 +173,12 @@ export function SettingsPage({ location }: RouteComponentProps) {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  // items-start, not the flex default (stretch) — stretch caps this column at the container's own
-  // height, so its content overflows past its box (and past its own pb-10, which then sits inside
-  // that capped box instead of after the real, overflowing end of the content) rather than growing
-  // the column to its natural (taller) content height the way scrolling needs.
+  // Plain block layout + margin-auto centering, not flex(justify-center/items-start) — flex
+  // containers with overflow:auto have a history of scrollHeight bugs on some WebView builds;
+  // block layout's overflow handling is simpler and more universally correct.
   return (
-    <div data-component="SettingsPage" className="sc h-full bg-paper px-5 pt-10 flex justify-center items-start">
-      <div className="w-full max-w-[420px] pb-10">
+    <div data-component="SettingsPage" className="sc h-full bg-paper px-5 pt-10">
+      <div className="w-full max-w-[420px] pb-10 mx-auto">
         {/* Goes to '/', which restores wherever the user actually was (see RestoreLastLocation
             in App.tsx) rather than a fixed default — and, since it doesn't rely on genuine
             browser history the way navigate(-1) would, also works when there's no in-app
