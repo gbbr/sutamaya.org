@@ -4,7 +4,7 @@ CREATE TABLE users (
   google_id   TEXT NOT NULL UNIQUE,
   name        TEXT,
   picture     TEXT,
-  created_at  TEXT NOT NULL          -- ISO 8601 string, same as Firestore stored
+  created_at  TEXT NOT NULL          -- ISO 8601 string
 );
 
 -- `items` stays a JSON array rather than becoming a join table, deliberately: it keeps

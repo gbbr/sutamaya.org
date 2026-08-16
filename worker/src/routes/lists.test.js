@@ -3,11 +3,9 @@ import { describe, expect, it } from 'vitest';
 import app from '../index.js';
 import { createSessionCookie } from '../session.js';
 
-// Ported from server/src/routes/lists.test.js. Two differences in the harness, both from the move
-// off Firestore: assertions read `lists` rows straight out of env.DB instead of listsCol(userId),
-// and a signed-in caller is a real signed session cookie (see session.js) rather than the
-// x-test-user header shim server/src/testUtils/testApp.js used. D1 rows need no explicit cleanup —
-// vitest-pool-workers rolls back each test's storage writes (isolatedStorage, on by default).
+// Assertions read `lists` rows straight out of env.DB, and a signed-in caller is a real signed
+// session cookie (see session.js). D1 rows need no explicit cleanup — vitest-pool-workers rolls
+// back each test's storage writes (isolatedStorage, on by default).
 
 // requireAuth never reads the database (see its comment in auth.js), but `lists.user_id` is a real
 // foreign key into `users`, so a signed-in caller needs an actual user row behind the cookie.
@@ -111,9 +109,8 @@ describe('routes/lists.js (D1)', () => {
     expect((await listRow(second.id)).position).toBe(-1);
   });
 
-  // The Express version folded "does this list exist" into the write via Firestore's gRPC
-  // NOT_FOUND code (5); the D1 version reads `meta.changes === 0` off the UPDATE instead. What's
-  // pinned here is the 404 response contract either way.
+  // "Does this list exist" is folded into the write itself — `meta.changes === 0` off the
+  // UPDATE means no matching row. What's pinned here is the 404 response contract.
   it('PATCH on a nonexistent list 404s', async () => {
     const { cookie } = await signIn();
     const res = await api('/api/lists/does-not-exist', { method: 'PATCH', cookie, body: { label: 'x' } });
@@ -257,9 +254,8 @@ describe('routes/lists.js (D1)', () => {
     expect(res.status).toBe(400);
   });
 
-  // Firestore's users/{uid}/lists subcollection isolated one user's lists from another's
-  // structurally; in D1 the `AND user_id = ?` predicate on every statement is the only thing that
-  // does, which makes this the phase's central correctness property rather than a nicety.
+  // The `AND user_id = ?` predicate on every statement is the only thing isolating one user's
+  // lists from another's, which makes this a central correctness property rather than a nicety.
   it("never reads or writes another user's list", async () => {
     const owner = await signIn();
     const other = await signIn();

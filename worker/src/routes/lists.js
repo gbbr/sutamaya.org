@@ -10,10 +10,10 @@ import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits.js';
 export const listsRouter = new Hono();
 listsRouter.use(requireAuth);
 
-// Every statement in this router is scoped `AND user_id = ?`: D1 is one flat table per entity, so
-// unlike Firestore's `users/{uid}/lists` subcollection there is no structural isolation between
-// users — the predicate *is* the isolation. A missing scope would leak or overwrite another user's
-// list, so it belongs on reads, writes and existence checks alike.
+// Every statement in this router is scoped `AND user_id = ?`: D1 is one flat table per entity,
+// with no structural isolation between users — the predicate *is* the isolation. A missing scope
+// would leak or overwrite another user's list, so it belongs on reads, writes and existence
+// checks alike.
 
 function parseItems(row) {
   return JSON.parse(row.items || '[]');
@@ -201,12 +201,12 @@ listsRouter.delete('/:id', async (c) => {
       .bind(parentId, position++, child.id, userId)
   );
   statements.push(db.prepare('DELETE FROM lists WHERE id = ? AND user_id = ?').bind(id, userId));
-  // Narrower than the Firestore transaction this replaces: D1 has no interactive transactions, so
-  // the batch below is atomic but the reads above are not part of it. A create or reorder landing
-  // under `parentId` in that window can collide with the positions computed here. Acceptable
-  // because both requests would have to come from the same signed-in user within milliseconds,
-  // and the worst outcome is two re-parented siblings sharing a position — but it is a real
-  // narrowing, not a free translation.
+  // D1 has no interactive transactions, so the batch below is atomic but the reads above are not
+  // part of it. A create or reorder landing under `parentId` in that window can collide with the
+  // positions computed here. Acceptable because both requests would have to come from the same
+  // signed-in user within milliseconds, and the worst outcome is two re-parented siblings
+  // sharing a position — but it's a real race window, worth knowing about rather than assuming
+  // atomic.
   await db.batch(statements);
   return c.json({ ok: true });
 });

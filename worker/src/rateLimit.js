@@ -2,15 +2,13 @@
 // call sites read the same way whether or not a binding is configured — and so the decision
 // logic is unit-testable against a stub binding.
 //
-// Three of `server/src/rateLimiters.js`'s four express-rate-limit instances live here instead;
-// in-memory counters have no meaning on Workers, where every isolate would keep its own. The
-// fourth — the 400/15min budget for the static corpus, dictionary and per-sutta text under
-// `/data/` — is gone rather than replaced, and that is correct: those files are served straight
-// from the assets binding and never reach the Worker at all.
+// Three per-IP budgets live here: `/api/*` in general, `POST /api/auth/google`, and
+// `GET /api/auth/me` on its own. There's no limiter for the static corpus, dictionary and
+// per-sutta text under `/data/` — those files are served straight from the assets binding and
+// never reach the Worker at all.
 //
-// The binding's `simple.period` accepts only 10 or 60 seconds, so the Express limiters' 15-minute
-// windows can't be carried over as-is — wrangler.jsonc expresses them per minute instead. The
-// converted numbers, and how they compare, are in deploy.md.
+// The binding's `simple.period` accepts only 10 or 60 seconds, so every budget here is expressed
+// per minute in wrangler.jsonc — the actual numbers are in deploy.md.
 
 // Returns true if the request is allowed through. `key` is what the budget is counted against —
 // the client IP.

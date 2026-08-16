@@ -307,7 +307,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   // a per-keystroke stream, so — like highlights below — this can afford a full sync after
   // every call instead of an optimistic local sync: `lists`/`membership` include the derived
   // "Highlights"/"Notes" auto-lists computed server-side in buildUserData() (see
-  // server/src/routes/data.js), and a sync is the only way to pick up that derived state.
+  // worker/src/routes/data.js), and a sync is the only way to pick up that derived state.
   const submitNote = useCallback(
     async (suttaId: string, text: string) => {
       if (!user) return promptGoogleSignIn();

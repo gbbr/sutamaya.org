@@ -8,11 +8,11 @@ import { dataRouter } from './routes/data.js';
 
 const app = new Hono();
 
-// Mirrors how server/src/rateLimiters.js routes its limiters: every /api/* request draws from the
-// general budget, and /api/auth/* draws from a second, tighter one on top — its own for
-// GET /api/auth/me, which AuthContext fires on every page load and PWA relaunch, and a much
-// tighter one for the rest of /api/auth/*, so routine reloads can't burn through the budget a
-// genuine sign-in needs. Nothing else is mounted here: static assets never reach the Worker.
+// Every /api/* request draws from the general budget, and /api/auth/* draws from a second,
+// tighter one on top — its own for GET /api/auth/me, which AuthContext fires on every page load
+// and PWA relaunch, and a much tighter one for the rest of /api/auth/*, so routine reloads can't
+// burn through the budget a genuine sign-in needs. Nothing else is mounted here: static assets
+// never reach the Worker.
 app.use('/api/*', async (c, next) => {
   const tooMany = () => c.json({ error: 'Too many requests. Please try again in a moment.' }, 429);
   const ip = c.req.header('cf-connecting-ip');
@@ -26,8 +26,8 @@ app.use('/api/*', async (c, next) => {
 });
 
 // A no-op for the normal same-origin case — the Worker serves the SPA from the assets binding on
-// this very origin — but it preserves the guard server/src/index.js has today. Built per request
-// rather than once at module scope because the allowed origin comes from the environment.
+// this very origin — but it guards against a stray cross-origin call. Built per request rather
+// than once at module scope because the allowed origin comes from the environment.
 app.use('/api/*', (c, next) => cors({ origin: c.env.WEB_ORIGIN, credentials: true })(c, next));
 
 app.get('/api/health', async (c) => {

@@ -16,12 +16,6 @@ jobs:
           node-version: 24
           cache: npm
 
-      # scripts/with-emulator.mjs starts a Firestore emulator for the test run, which needs a JRE.
-      - uses: actions/setup-java@v5
-        with:
-          distribution: temurin
-          java-version: '21'
-
       - run: npm ci
 
       - run: npm test

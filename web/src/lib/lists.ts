@@ -31,7 +31,7 @@ export function flattenListTree(lists: ListDef[]): ListPathOption[] {
   return out;
 }
 
-// membership[suttaId] carries list ids (see server/src/routes/data.js's buildUserData) — this
+// membership[suttaId] carries list ids (see worker/src/routes/data.js's buildUserData) — this
 // resolves one back to its list and breadcrumb. Falls back to a bare id-only result if no
 // matching list is found (e.g. it was deleted since).
 export function resolveListById(id: string, flatTree: ListPathOption[]): ListPathOption | { list: null; depth: 0; breadcrumb: string } {

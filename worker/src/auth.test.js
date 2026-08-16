@@ -67,9 +67,7 @@ describe('verifyGoogleCredential', () => {
 });
 
 // No manual per-test cleanup here: this project's vitest-pool-workers version defaults
-// isolatedStorage to true, so each test's D1 writes are rolled back automatically at test end
-// (unlike the Firestore-emulator suites under server/, which persist for the life of the
-// emulator process and so clean up explicitly — see server/src/testUtils/testApp.js).
+// isolatedStorage to true, so each test's D1 writes are rolled back automatically at test end.
 describe('findOrCreateGoogleUser / findUserById', () => {
   it('creates a new user for a googleId not seen before', async () => {
     const user = await findOrCreateGoogleUser(env.DB, {

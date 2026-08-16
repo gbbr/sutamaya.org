@@ -4,20 +4,19 @@
 //
 // Privacy: this script only ever computes and prints *aggregate* numbers (counts, sums, totals
 // across all users). It never prints a per-user row, a uid, an email/name, or the content of any
-// note/highlight — it only counts whether those docs exist. That's a deliberate constraint, not
-// an incidental one: see the per-user Firestore doc shapes in CLAUDE.md ("Backend (server/)") —
-// this script is what it looks like to summarize usage without exposing any of that per-user
-// detail. If you're extending this file, keep new metrics to the same shape (a total, not a
-// breakdown by person).
+// note/highlight — it only counts whether those rows exist. That's a deliberate constraint, not
+// an incidental one: see the per-user D1 table shapes in CLAUDE.md ("Backend (worker/)") — this
+// script is what it looks like to summarize usage without exposing any of that per-user detail.
+// If you're extending this file, keep new metrics to the same shape (a total, not a breakdown by
+// person). The one exception is the `visited` table's `sutta_id`/`visited_at` columns, read in
+// full below to compute reading-time totals — still no user identifier leaves this script.
 //
-// Against the local emulator (default): just run `npm run usage-report`.
-// Against production Firestore: `NODE_ENV=production GOOGLE_CLOUD_PROJECT=<project-id> npm run
-// usage-report`, with valid Application Default Credentials for a principal that has Firestore
-// read access (e.g. `gcloud auth application-default login`) — same as any other script talking
-// to `server/src/firestore.js` (see deploy.md).
+// Runs every query in one batch against the remote D1 database via `wrangler d1 execute --remote
+// --json`; this script has no D1 access of its own, same as every other admin action against it.
+// Needs `wrangler login` first.
+import { execFileSync } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { usersCol, listsCol, notesCol, highlightsCol, visitedCol } from '../server/src/firestore.js';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 const cutoffIso = (days) => new Date(Date.now() - days * DAY_MS).toISOString();
@@ -39,64 +38,73 @@ async function loadSuttaMinutes() {
   }
 }
 
+const esc = (iso) => iso.replace(/'/g, "''");
+
+// One batch, executed as a single `wrangler d1 execute`; the result array comes back in this
+// same order.
+const STATEMENTS = [
+  `SELECT COUNT(*) AS c FROM users;`,
+  `SELECT COUNT(*) AS c FROM users WHERE created_at >= '${esc(CUTOFF_7D)}';`,
+  `SELECT COUNT(*) AS c FROM users WHERE created_at >= '${esc(CUTOFF_30D)}';`,
+  `SELECT COUNT(DISTINCT user_id) AS c FROM visited WHERE visited_at >= '${esc(CUTOFF_7D)}';`,
+  `SELECT COUNT(DISTINCT user_id) AS c FROM visited WHERE visited_at >= '${esc(CUTOFF_30D)}';`,
+  `SELECT sutta_id, visited_at FROM visited;`,
+  `SELECT COUNT(*) AS c FROM notes;`,
+  `SELECT COUNT(*) AS c FROM highlights;`,
+  `SELECT COUNT(*) AS c FROM lists;`,
+];
+
+function queryD1() {
+  const out = execFileSync(
+    'npx',
+    ['wrangler', 'd1', 'execute', 'sutamaya', '--remote', '--json', '--command', STATEMENTS.join('\n')],
+    { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }
+  );
+  return JSON.parse(out);
+}
+
 async function main() {
   const suttaMinutes = await loadSuttaMinutes();
 
-  const usersSnap = await usersCol().get();
-  const totalUsers = usersSnap.size;
-  let newUsers7d = 0;
-  let newUsers30d = 0;
-  for (const doc of usersSnap.docs) {
-    const createdAt = doc.data().createdAt;
-    if (createdAt >= CUTOFF_30D) newUsers30d += 1;
-    if (createdAt >= CUTOFF_7D) newUsers7d += 1;
-  }
+  const [
+    usersResult,
+    newUsers7dResult,
+    newUsers30dResult,
+    activeUsers7dResult,
+    activeUsers30dResult,
+    visitedRowsResult,
+    notesResult,
+    highlightsResult,
+    listsResult,
+  ] = queryD1();
 
-  let activeUsers7d = 0;
-  let activeUsers30d = 0;
+  const totalUsers = usersResult.results[0].c;
+  const newUsers7d = newUsers7dResult.results[0].c;
+  const newUsers30d = newUsers30dResult.results[0].c;
+  const activeUsers7d = activeUsers7dResult.results[0].c;
+  const activeUsers30d = activeUsers30dResult.results[0].c;
+  const totalNotes = notesResult.results[0].c;
+  const totalHighlights = highlightsResult.results[0].c;
+  const totalLists = listsResult.results[0].c;
+
   let visitsAllTime = 0;
   let visits7d = 0;
   let visits30d = 0;
   let minutesAllTime = 0;
   let minutes7d = 0;
   let minutes30d = 0;
-  let totalNotes = 0;
-  let totalHighlights = 0;
-  let totalLists = 0;
-
-  for (const userDoc of usersSnap.docs) {
-    const uid = userDoc.id;
-    const [visitedSnap, notesCount, highlightsCount, listsCount] = await Promise.all([
-      visitedCol(uid).get(),
-      notesCol(uid).count().get(),
-      highlightsCol(uid).count().get(),
-      listsCol(uid).count().get(),
-    ]);
-
-    totalNotes += notesCount.data().count;
-    totalHighlights += highlightsCount.data().count;
-    totalLists += listsCount.data().count;
-
-    let userActive7d = false;
-    let userActive30d = false;
-    for (const doc of visitedSnap.docs) {
-      const { visitedAt } = doc.data();
-      const min = suttaMinutes ? suttaMinutes[doc.id] || 0 : 0;
-      visitsAllTime += 1;
-      minutesAllTime += min;
-      if (visitedAt >= CUTOFF_30D) {
-        visits30d += 1;
-        minutes30d += min;
-        userActive30d = true;
-      }
-      if (visitedAt >= CUTOFF_7D) {
-        visits7d += 1;
-        minutes7d += min;
-        userActive7d = true;
-      }
+  for (const row of visitedRowsResult.results) {
+    const min = suttaMinutes ? suttaMinutes[row.sutta_id] || 0 : 0;
+    visitsAllTime += 1;
+    minutesAllTime += min;
+    if (row.visited_at >= CUTOFF_30D) {
+      visits30d += 1;
+      minutes30d += min;
     }
-    if (userActive7d) activeUsers7d += 1;
-    if (userActive30d) activeUsers30d += 1;
+    if (row.visited_at >= CUTOFF_7D) {
+      visits7d += 1;
+      minutes7d += min;
+    }
   }
 
   const fmtMin = (m) => `${Math.round(m)} min (~${(m / 60).toFixed(1)} h)`;

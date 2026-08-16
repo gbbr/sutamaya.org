@@ -1,7 +1,12 @@
 {
   "name": "sutamaya",
   "main": "./worker/src/index.js",
-  "compatibility_date": "2026-08-01",
+  "compatibility_date": "2025-10-11",
+  // Cutover lives here rather than in the dashboard so it's diffable and repeatable. Cloudflare
+  // creates and manages the apex DNS record and its certificate; the Google A/AAAA records this
+  // replaces must be deleted first (they're recorded in the migration plan — restoring them is
+  // the rollback). Takes effect on the next `wrangler deploy`, not before.
+  "routes": [{ "pattern": "sutamaya.org", "custom_domain": true }],
   "assets": {
     "directory": "./web/dist",
     "binding": "ASSETS",

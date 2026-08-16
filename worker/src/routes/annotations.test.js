@@ -3,9 +3,8 @@ import { describe, expect, it } from 'vitest';
 import app from '../index.js';
 import { createSessionCookie } from '../session.js';
 
-// Ported from server/src/routes/annotations.test.js. Same harness differences as
-// routes/lists.test.js: assertions read rows straight out of env.DB instead of highlightsCol(userId),
-// a signed-in caller is a real signed session cookie, and D1 rows need no explicit cleanup
+// Same harness as routes/lists.test.js: assertions read rows straight out of env.DB, a
+// signed-in caller is a real signed session cookie, and D1 rows need no explicit cleanup
 // (vitest-pool-workers rolls back each test's storage writes).
 
 async function signIn() {
@@ -57,8 +56,8 @@ describe('routes/annotations.js (D1)', () => {
     expect(data2.notes['sn1.1']).toBeUndefined();
   });
 
-  // Firestore's ref.set() replaced the whole doc; the upsert has to do the same rather than leave
-  // the first write's text behind.
+  // The upsert must replace the row's whole text rather than leave the first write's text
+  // behind.
   it('overwrites an existing note', async () => {
     const { cookie } = await signIn();
     await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'first' } });
@@ -225,8 +224,8 @@ describe('routes/annotations.js (D1)', () => {
     expect(results[0].visited_at > first.visited_at).toBe(true);
   });
 
-  // As in routes/lists.js, `AND user_id = ?` is now the only thing isolating one user's annotations
-  // from another's — Firestore's per-user subcollections did it structurally.
+  // As in routes/lists.js, `AND user_id = ?` is the only thing isolating one user's annotations
+  // from another's.
   it("never reads or writes another user's annotations", async () => {
     const owner = await signIn();
     const other = await signIn();

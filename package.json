@@ -7,7 +7,6 @@
     "node": ">=24.15.0"
   },
   "workspaces": [
-    "server",
     "web",
     "worker"
   ],
@@ -18,19 +17,17 @@
     "update-data:copy": "node scripts/update-data-copy.mjs",
     "update-data:post": "node scripts/update-data-post.mjs",
     "update-data:snapshot": "node scripts/update-data-snapshot.mjs",
-    "dev:server": "npm run dev --workspace server",
-    "dev:web": "npm run dev --workspace web",
     "dev:worker": "wrangler dev --port 8787",
-    "dev": "npm run build:corpus && concurrently -k -n server,web -c blue,green \"npm run dev:server\" \"npm run dev:web\"",
+    "dev:web": "npm run dev --workspace web",
+    "dev": "npm run build:corpus && concurrently -k -n worker,web -c blue,green \"npm run dev:worker\" \"npm run dev:web\"",
     "build": "npm run build:corpus && npm run build --workspace web",
     "usage-report": "node scripts/usage-report.mjs",
-    "test": "NODE_OPTIONS=--disable-warning=ExperimentalWarning node scripts/with-emulator.mjs npx vitest run",
+    "test": "npx vitest run",
     "deploy": "bash scripts/deploy.sh"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.9.10",
     "concurrently": "^9.1.0",
-    "supertest": "^7.2.2",
     "vite": "^6.4.3",
     "vitest": "^3.2.7",
     "wrangler": "^4.123.0"

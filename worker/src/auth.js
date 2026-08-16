@@ -40,9 +40,9 @@ export async function findUserById(db, id) {
 }
 
 // The session cookie is signed (Hono's HMAC-SHA256 helpers, see session.js), so it's already
-// trustworthy without a D1 round trip to confirm the user still exists — same reasoning as
-// server/src/auth.js's requireAuth. Every route gated by this only ever reads c.get('userId');
-// routes that need the full profile fetch it themselves via findUserById.
+// trustworthy without a D1 round trip to confirm the user still exists. Every route gated by
+// this only ever reads c.get('userId'); routes that need the full profile fetch it themselves
+// via findUserById.
 export const requireAuth = async (c, next) => {
   const userId = await readSessionCookie(c.req.raw, c.env.SESSION_SECRET);
   if (!userId) return c.json({ error: 'not_authenticated' }, 401);

@@ -4,13 +4,9 @@ node_modules/
 web/dist/
 web/dev-dist/
 web/public/data/
-server/data/*.sqlite
-server/data/*.sqlite-*
 .env
 *.local
 *.tsbuildinfo
-firebase-debug.log
-firestore-debug.log
 .dev.vars
 .wrangler/
 
