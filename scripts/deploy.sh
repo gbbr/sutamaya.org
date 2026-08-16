@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# Deploys Sutamaya to Cloud Run. See deploy.md for the one-time setup this assumes
-# (APIs enabled, Firestore database, sutamaya-run service account, session secret).
+# Deploys Sutamaya to Cloudflare as a single Worker serving both the built SPA + static corpus
+# (the assets binding, from web/dist) and /api/*, backed by D1. See deploy.md for the one-time
+# setup this assumes (wrangler login, the D1 database, the SESSION_SECRET secret).
 set -euo pipefail
 
 SKIP_TESTS=0
@@ -18,98 +19,14 @@ else
   fi
 fi
 
-if ! command -v gcloud >/dev/null 2>&1; then
-  echo "error: gcloud CLI not found. Install it: https://cloud.google.com/sdk/docs/install" >&2
-  exit 1
-fi
+# wrangler uploads web/dist exactly as it finds it, so the build has to run every deploy —
+# a stale or missing directory would ship yesterday's SPA, or no static corpus at all.
+echo "Building the SPA and corpus bundle…"
+npm run build
 
-ACCOUNT="$(gcloud auth list --filter=status:ACTIVE --format='value(account)' 2>/dev/null || true)"
-if [ -z "$ACCOUNT" ]; then
-  echo "error: no active gcloud authentication. Run 'gcloud auth login' first." >&2
-  exit 1
-fi
+npx wrangler deploy
 
-PROJECT_ID="${PROJECT_ID:-$(gcloud config get-value project 2>/dev/null || true)}"
-if [ -z "$PROJECT_ID" ] || [ "$PROJECT_ID" = "(unset)" ]; then
-  echo "error: no GCP project set. Run 'gcloud config set project <PROJECT_ID>' or pass PROJECT_ID=<id>." >&2
-  exit 1
-fi
-
-REGION="${REGION:-europe-west1}"
-REPO="cloud-run-source-deploy"
-
-echo "Deploying sutamaya to Cloud Run — project=$PROJECT_ID region=$REGION account=$ACCOUNT"
-
-# Pre-create the Artifact Registry repo `gcloud run deploy --source` would otherwise create
-# on the fly (avoids its interactive y/n prompt, which is unsafe in non-interactive runs) and
-# attach a cleanup policy so old image versions don't eat the 0.5GB free-tier storage quota.
-if ! gcloud artifacts repositories describe "$REPO" --project="$PROJECT_ID" --location="$REGION" >/dev/null 2>&1; then
-  echo "Creating Artifact Registry repo $REPO in $REGION…"
-  gcloud artifacts repositories create "$REPO" \
-    --project="$PROJECT_ID" \
-    --location="$REGION" \
-    --repository-format=docker \
-    --description="Cloud Run source deploys for sutamaya"
-fi
-gcloud artifacts repositories set-cleanup-policies "$REPO" \
-  --project="$PROJECT_ID" \
-  --location="$REGION" \
-  --policy="$(dirname "$0")/artifact-cleanup-policy.json"
-
-# The server needs the same OAuth Client ID the frontend was built with, to verify Google's
-# sign-in tokens are actually meant for this app. It's a public identifier (not a secret), and
-# already lives in web/.env.production for the frontend build — read it from there so it never
-# has to be pasted in by hand, and never gets silently dropped from an already-deployed service
-# (--set-env-vars below replaces the full env var set every deploy, not just adds to it).
-GOOGLE_CLIENT_ID="${GOOGLE_CLIENT_ID:-$(sed -n 's/^VITE_GOOGLE_CLIENT_ID=//p' "$(dirname "$0")/../web/.env.production" 2>/dev/null || true)}"
-
-# Cloud Run does *not* inject GOOGLE_CLOUD_PROJECT automatically (despite what an earlier
-# version of deploy.md claimed) — without it, server/src/firestore.js falls back to its
-# 'sutamaya-local' local-dev default and every Firestore call 500s with a "permission denied on
-# resource project sutamaya-local" error, which only surfaces once a request actually reaches
-# Firestore (e.g. the first successful sign-in).
-# Same-origin in production (index.js serves the built SPA itself — see CLAUDE.md), so this
-# mostly guards a hypothetical cross-origin request rather than anything hit in normal use — but
-# left unset it silently falls back to index.js's dev default (http://localhost:5173) in the
-# deployed container, which is simply wrong there. Defaults to the project's real domain;
-# override with WEB_ORIGIN=... if deploying under a different one.
-WEB_ORIGIN="${WEB_ORIGIN:-https://sutamaya.org}"
-
-ENV_VARS="NODE_ENV=production,GOOGLE_CLOUD_PROJECT=$PROJECT_ID,WEB_ORIGIN=$WEB_ORIGIN"
-if [ -n "$GOOGLE_CLIENT_ID" ]; then
-  ENV_VARS="$ENV_VARS,GOOGLE_CLIENT_ID=$GOOGLE_CLIENT_ID"
-else
-  echo "error: no GOOGLE_CLIENT_ID found — set VITE_GOOGLE_CLIENT_ID in web/.env.production, or pass GOOGLE_CLIENT_ID=... to this script." >&2
-  exit 1
-fi
-
-gcloud run deploy sutamaya \
-  --source . \
-  --project="$PROJECT_ID" \
-  --region="$REGION" \
-  --service-account="sutamaya-run@${PROJECT_ID}.iam.gserviceaccount.com" \
-  --set-secrets="SESSION_SECRET=sutamaya-session-secret:latest" \
-  --set-env-vars="$ENV_VARS" \
-  --allow-unauthenticated \
-  --min-instances=0 \
-  --max-instances=1 \
-  --memory=512Mi \
-  --timeout=30
-
-# `--source .` staged this deploy's source as a zip in the run-sources-* bucket and Cloud Build
-# already read it to produce the image above — it serves no purpose from here on, so delete it
-# right away instead of waiting on that bucket's 7-day lifecycle rule (a backstop for the case
-# this step doesn't run, e.g. a deploy invoked outside this script — not the primary cleanup).
-LATEST_BUILD_ID="$(gcloud builds list --project="$PROJECT_ID" --region="$REGION" --limit=1 --sort-by=~createTime --format='value(id)')"
-if [ -n "$LATEST_BUILD_ID" ]; then
-  SOURCE_BUCKET="$(gcloud builds describe "$LATEST_BUILD_ID" --project="$PROJECT_ID" --region="$REGION" --format='value(source.storageSource.bucket)')"
-  SOURCE_OBJECT="$(gcloud builds describe "$LATEST_BUILD_ID" --project="$PROJECT_ID" --region="$REGION" --format='value(source.storageSource.object)')"
-  if [ -n "$SOURCE_BUCKET" ] && [ -n "$SOURCE_OBJECT" ]; then
-    gcloud storage rm "gs://$SOURCE_BUCKET/$SOURCE_OBJECT" --project="$PROJECT_ID" >/dev/null 2>&1 || true
-  fi
-fi
-
-# Audible confirmation once the whole deploy (tests + gcloud run deploy) has actually
-# succeeded — `set -e` means we never reach here on failure. macOS-only; silently skipped
-# elsewhere since deploys can also run from CI/Linux.
+# Audible confirmation once the whole deploy (tests + build + upload) has actually succeeded —
+# `set -e` means we never reach here on failure. macOS-only; silently skipped elsewhere since
+# deploys can also run from CI/Linux.
 command -v afplay >/dev/null 2>&1 && afplay /System/Library/Sounds/Glass.aiff 2>/dev/null || true
