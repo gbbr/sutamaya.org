@@ -1,16 +1,16 @@
 #!/usr/bin/env node
-// Post-processing baked into every update-sujato run: Sujato's translation uses "mendicant" and
+// Post-processing baked into every update-data run: Sujato's translation uses "mendicant" and
 // "immersion" where this app prefers "bhikkhu" and "concentration" — rewrite every value under
 // data/sujato (blurb, name, sutta, notes alike) accordingly. Keys (segment ids) are never
-// touched. See scripts/update-sujato/README.md.
+// touched. Pali root text and the HTML structural markup have no translatable English prose, so
+// they're untouched by this step — see scripts/update-data/README.md.
 //
 // Word forms are listed explicitly rather than done as a blind "immers" -> "concentrat" substring
 // swap: the source text also has unrelated words built on the same stem, e.g. MN40's "water
 // immerser" (someone who dunks themselves in water, nothing to do with meditative immersion/
 // concentration) — a substring swap turned that into the nonsense "water concentrater".
 import fs from 'node:fs';
-import path from 'node:path';
-import { listLocalRelPaths, SUJATO_DIR, green } from './lib/sujatoSync.js';
+import { walkJsonFiles, SUJATO_DIR, green } from './lib/dataSync.js';
 
 export const WORD_FORMS = [
   ['mendicant', 'bhikkhu'],
@@ -38,13 +38,12 @@ export function applyReplacements(text) {
 }
 
 // Core logic, callable directly with an explicit sujatoDir (tests use this to point at a fixture
-// tree instead of the real data/sujato — see scripts/update-sujato.test.js).
+// tree instead of the real data/sujato — see scripts/update-data.test.js).
 export function runPost({ sujatoDir = SUJATO_DIR } = {}) {
   let filesChanged = 0;
   let replacements = 0;
 
-  for (const relPath of listLocalRelPaths(sujatoDir)) {
-    const fullPath = path.join(sujatoDir, relPath);
+  for (const fullPath of walkJsonFiles(sujatoDir)) {
     const obj = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
 
     let changed = false;
@@ -69,5 +68,5 @@ export function runPost({ sujatoDir = SUJATO_DIR } = {}) {
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const { filesChanged, replacements } = runPost();
-  console.log(green(`update-sujato post done — ${replacements} replacements across ${filesChanged} file(s).`));
+  console.log(green(`update-data post done — ${replacements} replacements across ${filesChanged} file(s).`));
 }

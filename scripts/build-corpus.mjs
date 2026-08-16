@@ -80,7 +80,7 @@ function loadSegMap(filePath) {
   return new Map(Object.entries(readJSON(filePath)));
 }
 
-const sujatoManifest = readJSON(path.join(DATA, 'sujato', 'manifest.json'));
+const sujatoManifest = readJSON(path.join(DATA, 'manifest.json'));
 
 console.log('Indexing source files…');
 const paliFiles = buildFileIndex(path.join(DATA, 'pali', 'sutta'));
