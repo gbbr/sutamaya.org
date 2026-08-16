@@ -1,5 +1,6 @@
 import { Hono } from 'hono';
 import { authRouter } from './routes/auth.js';
+import { listsRouter } from './routes/lists.js';
 
 const app = new Hono();
 
@@ -9,6 +10,7 @@ app.get('/api/health', async (c) => {
 });
 
 app.route('/api/auth', authRouter);
+app.route('/api/lists', listsRouter);
 
 app.onError((err, c) => {
   console.error(err);

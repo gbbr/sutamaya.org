@@ -1,5 +1,6 @@
 import { Hono } from 'hono';
 import { findOrCreateGoogleUser, findUserById, verifyGoogleCredential } from '../auth.js';
+import { jsonBody } from '../jsonBody.js';
 import { clearSessionCookie, createSessionCookie, readSessionCookie } from '../session.js';
 
 function publicUser(user) {
@@ -14,13 +15,7 @@ function publicUser(user) {
 export const authRouter = new Hono();
 
 authRouter.post('/google', async (c) => {
-  let body;
-  try {
-    body = await c.req.json();
-  } catch {
-    body = {};
-  }
-  const { credential } = body || {};
+  const { credential } = (await jsonBody(c)) || {};
   if (typeof credential !== 'string' || !credential) {
     return c.json({ error: 'Missing Google credential.' }, 400);
   }
