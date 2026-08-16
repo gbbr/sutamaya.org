@@ -2,12 +2,11 @@ import { generateSignedCookie } from 'hono/cookie';
 import { parseSigned } from 'hono/utils/cookie';
 
 export const SESSION_COOKIE_NAME = 'sutamaya_session';
-const MAX_AGE = 90 * 24 * 60 * 60; // seconds — mirrors server/src/index.js's cookie-session maxAge
+const MAX_AGE = 90 * 24 * 60 * 60; // seconds
 
 // Builds the Set-Cookie header value for a signed session cookie carrying `userId` (HMAC-SHA256
-// via Web Crypto, through Hono's own cookie helpers). `secure` mirrors server/src/index.js's
-// `secure: isProd` — the caller derives it from whether the request came in over https, so this
-// still works over plain http under `wrangler dev`.
+// via Web Crypto, through Hono's own cookie helpers). The caller derives `secure` from whether
+// the request came in over https, so this still works over plain http under `wrangler dev`.
 export async function createSessionCookie(userId, secret, { secure = true } = {}) {
   return generateSignedCookie(SESSION_COOKIE_NAME, userId, secret, {
     httpOnly: true,

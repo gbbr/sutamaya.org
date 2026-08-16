@@ -25,8 +25,8 @@ authRouter.post('/google', async (c) => {
     profile = await verifyGoogleCredential(credential, c.env.GOOGLE_CLIENT_ID);
   } catch (err) {
     // Logged here rather than left to the global error handler, since this deliberately
-    // returns a generic 401 to the client either way — see server/src/routes/auth.js's own
-    // comment, which this mirrors.
+    // returns a generic 401 to the client either way regardless of the underlying cause
+    // (expired token, bad signature, audience mismatch, ...).
     console.error('Google credential verification failed:', err);
     return c.json({ error: 'Could not verify Google sign-in.' }, 401);
   }

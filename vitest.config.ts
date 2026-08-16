@@ -18,7 +18,7 @@ export default defineConfig({
       {
         test: {
           name: 'node',
-          include: ['server/src/**/*.test.js', 'web/src/**/*.test.ts', 'scripts/**/*.test.js'],
+          include: ['web/src/**/*.test.ts', 'scripts/**/*.test.js'],
           exclude: ['web/src/lib/routeIntent.test.ts', 'web/src/lib/pwaNudge.test.ts'],
           environment: 'node',
         },

@@ -205,7 +205,7 @@ export interface SearchHit {
 // A short/common query (a single letter, "the") can realistically match hundreds of suttas — every
 // searchCorpus consumer (TreePane's own search, ListPane, ReaderSearchOverlay) renders hits as
 // unvirtualized DOM rows in a scroll panel, so each caps how many it actually renders to this (same
-// AUTO_LIST_CAP pattern as server/src/routes/data.js's auto-lists) — searchCorpus itself still
+// AUTO_LIST_CAP pattern as worker/src/lib/userData.js's auto-lists) — searchCorpus itself still
 // returns every match so a caller can show an accurate total count.
 export const SEARCH_RESULTS_CAP = 80;
 

@@ -45,7 +45,13 @@ export function animateScrollTop(container: HTMLElement, targetScrollTop: number
     return;
   }
 
-  const startTime = performance.now();
+  // `startTime` is seeded from the first rAF callback's own timestamp, not a `performance.now()`
+  // read taken here before scheduling it — jsdom's rAF clock runs independently of (and can lag
+  // well behind) `performance.now()`, so seeding from the latter made `t` go deeply negative on
+  // the opening frames under test, driving easeOutCubic far outside [0,1] and overshooting the
+  // target by a large, non-deterministic margin before self-correcting. Deriving both readings
+  // from the same rAF clock keeps `t` in [0,1] on every engine.
+  let startTime: number | null = null;
   let cancelled = false;
   const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
   function cancel() {
@@ -55,6 +61,7 @@ export function animateScrollTop(container: HTMLElement, targetScrollTop: number
   }
   function step(now: number) {
     if (cancelled) return;
+    if (startTime === null) startTime = now;
     const t = Math.min(1, (now - startTime) / duration);
     container.scrollTop = start + delta * easeOutCubic(t);
     if (t < 1) requestAnimationFrame(step);

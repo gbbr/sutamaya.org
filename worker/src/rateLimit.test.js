@@ -3,11 +3,11 @@ import { describe, expect, it } from 'vitest';
 import app from './index.js';
 import { checkRateLimit } from './rateLimit.js';
 
-// server/src/rateLimiters.test.js doesn't port — it reads each limiter's budget off the
-// `RateLimit-Limit` response header, and a Cloudflare Rate Limiting binding emits no such header.
-// What that suite was really pinning is which budget applies to which path, since this app has
-// already had one production incident from that wiring being order-sensitive. So: the wrapper's
-// own decisions here, then the same path-by-path routing check against stub bindings.
+// A Cloudflare Rate Limiting binding emits no `RateLimit-Limit` response header to assert on, so
+// this pins the thing that actually matters instead — which budget applies to which path, since
+// this app has already had one production incident from that wiring being order-sensitive. So:
+// the wrapper's own decisions here, then the same path-by-path routing check against stub
+// bindings.
 
 // Counts calls and denies once `limit` of them have been made — the shape of the real binding's
 // `.limit({key})`, which returns `{success}` and nothing else.

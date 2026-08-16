@@ -24,7 +24,7 @@ async function buildUserData(db, userId) {
       data: { label: row.label, parentId: row.parent_id, kind: row.kind, items: JSON.parse(row.items || '[]') },
     })),
     // notes/visited are keyed by (user_id, sutta_id) rather than carrying a synthetic id, so the
-    // sutta id plays the role the Firestore doc id did — which is what assembleUserData keys by.
+    // sutta id is used as `id` here — which is what assembleUserData keys by.
     noteDocs: notes.results.map((row) => ({ id: row.sutta_id, data: { text: row.text, updatedAt: row.updated_at } })),
     highlightDocs: highlights.results.map((row) => ({
       id: row.id,

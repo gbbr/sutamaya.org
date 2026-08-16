@@ -7,8 +7,9 @@ highlighting, notes, lists, typography controls).
 ## Stack
 
 - **`web/`** — React + TypeScript + Tailwind CSS + Vite, packaged as a PWA.
-- **`server/`** — Node + Express, using Firestore for storage and Google sign-in for session auth.
-  Deploys as a single container to Cloud Run — see `deploy.md`.
+- **`worker/`** — a Cloudflare Worker (Hono) serving `/api/*`, backed by **D1** for storage and
+  Google sign-in for session auth. Also serves the built SPA and static corpus from the same
+  Worker via Cloudflare's assets binding — see `deploy.md`.
 - **`scripts/`** — builds the static corpus bundle the web app fetches at runtime, and keeps the
   underlying text data in sync with upstream sources.
 
@@ -18,11 +19,9 @@ See `CLAUDE.md` for full architecture and data-pipeline details.
 
 ```
 npm install
-npm run dev            # builds the corpus bundle, then runs server + web concurrently
+npm run dev            # builds the corpus bundle, then runs the Worker + web concurrently
 npm test                # runs the test suite
 ```
-
-Requires a local Firestore emulator for `npm run dev:server` — see `CLAUDE.md`.
 
 ## Data
 

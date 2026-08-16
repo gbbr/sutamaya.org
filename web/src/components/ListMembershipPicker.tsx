@@ -42,9 +42,9 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
   }, [autoFocus]);
 
   // membership[suttaId] includes the "Highlights"/"Notes" auto-list ids (see
-  // server/src/routes/data.js's buildUserData) — those aren't real lists (no Firestore doc, no
-  // id to add/remove items against), so they're excluded here rather than rendered as a
-  // toggleable chip that would 404 against the server.
+  // worker/src/routes/data.js's buildUserData) — those aren't real lists (no D1 row, no id to
+  // add/remove items against), so they're excluded here rather than rendered as a toggleable
+  // chip that would 404 against the API.
   const suttaListIds = (membership[suttaId] || []).filter((id) => !AUTO_LIST_IDS.has(id));
   const flatAll = useMemo(() => flattenListTree(lists), [lists]);
 

@@ -78,7 +78,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     popStop,
     openPop,
   } = useSuttaReading(suttaId, 'reader', !!requestedSubUid);
-  // "Highlights"/"Notes" membership (see server/src/routes/data.js's buildUserData) is redundant
+  // "Highlights"/"Notes" membership (see worker/src/routes/data.js's buildUserData) is redundant
   // here — the highlight gutter and the note preview above already say as much — so they're
   // filtered out of the chip row entirely (suttaRowMeta's own AUTO_LIST_IDS filter, same as
   // ListPane/TreePane/ReaderSearchOverlay's use of it).

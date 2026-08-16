@@ -6,8 +6,8 @@ import { NOTE_MAX_LENGTH } from '../lib/textLimits.js';
 export const annotationsRouter = new Hono();
 annotationsRouter.use(requireAuth);
 
-// As in routes/lists.js, every statement here is scoped `AND user_id = ?` — D1 has one flat table
-// per entity where Firestore had a per-user subcollection, so that predicate is the only thing
+// As in routes/lists.js, every statement here is scoped `AND user_id = ?` — D1 is flat tables
+// with no structural per-user isolation of their own, so that predicate is the only thing
 // isolating one user's annotations from another's.
 
 // Blank text deletes the row rather than storing an empty string: lib/userData.js's auto-notes
@@ -31,9 +31,8 @@ annotationsRouter.put('/notes/:suttaId', async (c) => {
   return c.json({ ok: true });
 });
 
-// Deletes every stored highlight overlapping one of the posted ranges. The predicate is
-// lib/highlightOverlap.js's rangesOverlap() expressed in SQL — same segment, `h.s < e AND h.e > s`,
-// so a highlight merely touching at an edge is left alone.
+// Deletes every stored highlight overlapping one of the posted ranges — same segment,
+// `h.s < e AND h.e > s`, so a highlight merely touching at an edge is left alone.
 const DELETE_OVERLAPS_SQL = `
   DELETE FROM highlights
    WHERE user_id = ?1 AND sutta_id = ?2 AND i = ?3 AND s < ?4 AND e > ?5
@@ -52,11 +51,10 @@ const INSERT_HIGHLIGHT_SQL = `
 // cross-segment highlight can be recombined for display/counting (lib/highlights.ts's
 // groupHighlights) without inferring it from segment adjacency.
 //
-// Where the Express version read the sutta's highlights and filtered overlaps in memory, SQL does
-// the filtering, so the whole operation is one db.batch() of DELETEs followed by INSERTs — no read
-// at all, which closes the lost-update window the Firestore transaction existed to cover rather
-// than merely narrowing it. Deletes come first in the batch so a fresh insert can't be removed by
-// a later range's overlap delete.
+// SQL does the overlap filtering, so the whole operation is one db.batch() of DELETEs followed
+// by INSERTs — no read at all, which closes the lost-update window a check-then-write approach
+// would leave open. Deletes come first in the batch so a fresh insert can't be removed by a
+// later range's overlap delete.
 annotationsRouter.put('/highlights/ranges', async (c) => {
   const db = c.env.DB;
   const userId = c.get('userId');

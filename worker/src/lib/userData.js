@@ -2,7 +2,7 @@ import { latestIds } from './autoListRecency.js';
 import { shapeList } from './listShape.js';
 
 // Fixed, non-persisted ids for the three auto-managed lists below — never written to the `lists`
-// collection, so they can't drift from the highlights/notes/visited docs they're derived from
+// table, so they can't drift from the highlights/notes/visited rows they're derived from
 // (unlike a stored list, which needs its own explicit add/remove call kept in sync with every
 // highlight or note change) and can't be renamed, deleted, or manually reordered.
 // These string literals are duplicated in web/src/lib/autoLists.ts (no module shared between the
@@ -13,17 +13,17 @@ export const NOTES_AUTO_LIST_ID = 'auto-notes';
 
 // Bounds how many rows ListPane has to render for an auto-list — it renders every item as a
 // full DOM row, unvirtualized, so an unbounded list would get sluggish for a heavy user long
-// before hitting any Firestore cost concern (the underlying highlights/notes/visited
-// collections are fetched in full either way, for highlight-span/note-badge/visited-state
-// rendering elsewhere in the app). "Recent" additionally uses this as its actual product
-// definition ("last 20 visited"), not just a rendering safeguard — see RECENT_AUTO_LIST_CAP.
+// before hitting any D1 read-volume concern (the underlying highlights/notes/visited tables are
+// fetched in full either way, for highlight-span/note-badge/visited-state rendering elsewhere in
+// the app). "Recent" additionally uses this as its actual product definition ("last 20
+// visited"), not just a rendering safeguard — see RECENT_AUTO_LIST_CAP.
 export const AUTO_LIST_CAP = 100;
 export const RECENT_AUTO_LIST_CAP = 20;
 
-// Pure assembly of buildUserData's (routes/data.js) response shape from already-fetched
-// Firestore docs — pulled out so the shaping/auto-list-synthesis logic is unit-testable without
-// a live Firestore/emulator. Each `*Docs` array is `{id, data}` pairs, `data` being each doc's
-// own field object (i.e. `doc.data()`), matching how routes/data.js maps its query snapshots.
+// Pure assembly of buildUserData's (routes/data.js) response shape from already-fetched D1 rows —
+// pulled out so the shaping/auto-list-synthesis logic is unit-testable without a live database.
+// Each `*Docs` array is `{id, data}` pairs, `data` being each row's own field object, matching
+// how routes/data.js maps its query results.
 export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDocs }) {
   // Keyed by list id, not label — two lists can share a label (e.g. same-named lists nested
   // under different parents), and an id is the only thing that identifies one unambiguously.

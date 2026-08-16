@@ -57,7 +57,7 @@ export interface Highlight {
 
 // 'list' holds suttas (`items`) and can't have children. 'group' ("ListGroup") is the reverse:
 // it can only contain other lists/groups and can never hold items itself — see
-// server/src/routes/lists.js's invalidParentReason, which enforces this server-side too.
+// worker/src/routes/lists.js's invalidParentReason, which enforces this server-side too.
 export type ListKind = 'list' | 'group';
 
 export interface ListDef {
@@ -71,7 +71,7 @@ export interface ListDef {
   // empty for a `kind: 'group'` entry.
   items: string[];
   // True for the auto-managed lists ("Recent", "Highlights", "Notes") synthesized server-side in
-  // buildUserData() from the visited/highlights/notes collections — not a real Firestore doc, so
+  // buildUserData() from the visited/highlights/notes tables — not a real `lists` row, so
   // it can't be renamed, deleted, reparented, or have its own items reordered.
   auto?: boolean;
 }

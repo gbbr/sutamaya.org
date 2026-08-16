@@ -117,7 +117,7 @@ describe('resolveDropIndicator', () => {
   });
 });
 
-// Same tree shape as server/src/lib/listParent.test.js's cycle-guard fixture (the client's own
+// Same tree shape as worker/src/lib/listParent.test.js's cycle-guard fixture (the client's own
 // backstop for the same rule — see useListTreeDrag's own comment on isDescendantOf).
 const tree: ListDef[] = [
   { id: 'g1', label: 'G1', parentId: null, kind: 'group', items: [] },

@@ -3,8 +3,7 @@ import { describe, expect, it } from 'vitest';
 import app from '../index.js';
 import { createSessionCookie } from '../session.js';
 
-// Ported from server/src/routes/data.test.js — same harness differences as routes/lists.test.js
-// (real signed session cookie, no explicit cleanup).
+// Same harness as routes/lists.test.js (real signed session cookie, no explicit cleanup).
 
 async function signIn(email) {
   const userId = crypto.randomUUID();
@@ -97,8 +96,8 @@ describe('routes/data.js (D1)', () => {
     expect(body.lists.find((l) => l.id === list.id).items).toEqual(['sn1.1']);
   });
 
-  // The client renders lists as a tree in stored sibling order, so the ORDER BY position that
-  // replaces Firestore's .orderBy('position') has to survive.
+  // The client renders lists as a tree in stored sibling order, so the ORDER BY position in
+  // buildUserData's query has to survive.
   it('returns lists in stored position order', async () => {
     const { cookie } = await signIn();
     const first = (await (await api('/api/lists', { method: 'POST', cookie, body: { label: 'First' } })).json()).list;
