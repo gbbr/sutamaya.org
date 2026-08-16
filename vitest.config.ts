@@ -31,6 +31,7 @@ export default defineConfig({
           setupFiles: ['web/src/setupTests.ts'],
         },
       },
+      './worker/vitest.config.ts',
     ],
   },
 });
