@@ -1,16 +1,70 @@
-# Deploying to Cloud Run
+# Deploying
 
-Sutamaya deploys as **one Cloud Run service**: the container built from the root `Dockerfile`
-runs the Express API and also serves the built React SPA (`web/dist`) — see `CLAUDE.md` for why
-(same-origin cookies, one thing to deploy). User data (lists/notes/highlights/visited) lives in
-**Firestore**, since Cloud Run's container filesystem is ephemeral — and Firestore's Always Free
-tier is generous enough that a personal-use deployment of this app shouldn't need to pay
-anything. See "Staying in the free tier" below for the numbers.
+Sutamaya has two deployments right now, and they are not the same thing:
 
-Once the one-time setup below is done, redeploying is just `npm run deploy`.
+- **`sutamaya.org` is served by Cloud Run** — the container built from the root `Dockerfile`,
+  running the Express API and serving the built React SPA (`web/dist`), with user data in
+  **Firestore**. Everything from "Cloud Run" below describes it. Nothing deploys to it any more;
+  `npm run deploy` no longer targets it.
+- **`npm run deploy` deploys the Cloudflare Worker** — one Worker serving the SPA and the static
+  corpus from Cloudflare's edge plus `/api/*`, backed by **D1**. It is live on its `*.workers.dev`
+  URL only, and takes over the custom domain at cutover.
 
-This whole guide uses the `gcloud` CLI — no console clicking. Run every command from the repo
-root unless noted.
+## Deploying the Cloudflare Worker
+
+`npm run deploy` (root `scripts/deploy.sh`) runs `npm test`, refuses to continue if it fails
+(`npm run deploy -- --skip-tests` overrides), then `npm run build` followed by `npx wrangler
+deploy`. The build is not optional: `wrangler` uploads `web/dist` exactly as it finds it, so a
+stale directory ships a stale SPA and a stale corpus bundle.
+
+One-time setup:
+
+```bash
+npx wrangler login
+npx wrangler d1 create sutamaya          # database_id goes in wrangler.jsonc
+npx wrangler d1 migrations apply sutamaya --remote
+npx wrangler secret put SESSION_SECRET   # any long random string
+```
+
+`WEB_ORIGIN` and `GOOGLE_CLIENT_ID` are plain `vars` in `wrangler.jsonc` — neither is a secret,
+and `GOOGLE_CLIENT_ID` must match the one `web/.env.production` builds the frontend with, or
+sign-in fails verification. Each deployed origin (including the `*.workers.dev` preview URL) also
+has to be listed in the OAuth client's *Authorized JavaScript origins*, or Google Identity
+Services refuses to render the sign-in button there at all.
+
+### Rate limiting
+
+Per-IP, via Cloudflare Rate Limiting bindings declared in `wrangler.jsonc` and applied in
+`worker/src/index.js`. A binding's `simple.period` accepts only 10 or 60 seconds, so the Express
+app's 15-minute windows can't be carried over as-is — these are the per-minute conversions:
+
+| Path | Express (per 15 min) | Worker (per min) |
+|---|---|---|
+| `/api/*` in general | 300 | 60 |
+| `POST /api/auth/google` | 20 | 5 |
+| `GET /api/auth/me` | 120 | 20 |
+| `/data/*` (corpus, dictionary, per-sutta text) | 400 | — none |
+
+Per-minute is *tighter* on a burst and looser over an hour; the sign-in and `/me` budgets are the
+ones where that matters, and both still comfortably clear normal use (one `/me` per page load or
+PWA relaunch, and a sign-in that only fires on a real button press). `/data/*` has no limiter
+because it needs none: those files come from the assets binding and never invoke the Worker.
+
+### Free-tier limits worth knowing
+
+- Workers: 100,000 requests/day, 10ms CPU per invocation, 3MB gzipped script, 50 subrequests.
+  Static-asset requests are free, unlimited, and don't count against that daily budget.
+- Static assets: 20,000 files per version, 25MiB per file. The current build is ~4,100 files /
+  83MB — but `dictionary.json` alone is 19.7MiB, leaving only ~5MiB of headroom against the
+  per-file ceiling. Worth watching if the dictionary ever grows.
+- D1: 5,000,000 rows read/day, 100,000 rows written/day, 5GB storage.
+
+---
+
+# Cloud Run
+
+What follows describes the deployment `sutamaya.org` still points at. It uses the `gcloud` CLI —
+no console clicking. Run every command from the repo root unless noted.
 
 ## Prerequisites
 
@@ -95,9 +149,10 @@ Web Client ID:
    JavaScript origins: your local dev URL (`http://localhost:5173`), your custom domain if any,
    and the Cloud Run service URL. No redirect URI is needed.
 3. Put the resulting Client ID in `VITE_GOOGLE_CLIENT_ID` in `web/.env.production` (and
-   `web/.env.development` for local dev) — it's a public identifier, safe to commit.
-   `npm run deploy` reads it from `web/.env.production` automatically and passes it to the
-   server, so it only needs to be set once here — not pasted in on every deploy.
+   `web/.env.development` for local dev) — it's a public identifier, safe to commit. The
+   `gcloud run deploy` command below passes the same value to the server as `GOOGLE_CLIENT_ID`,
+   which is what verifies a sign-in token was actually issued for this app. (The Worker gets it
+   from `wrangler.jsonc`'s `vars` instead.)
 
 ## 6. Deploy
 
@@ -125,34 +180,24 @@ IAM/IAP instead. `--timeout=30` bounds worst-case GB-seconds if a request ever h
 you have a route that legitimately needs longer). `GOOGLE_CLOUD_PROJECT` and `WEB_ORIGIN` matter
 here too — see the note right after this command.
 
-Once the one-time setup above is done, `npm run deploy` (root `scripts/deploy.sh`) wraps this
-same command: it checks `gcloud auth list` for an active account and errors out (no auto-login)
-if you're not authenticated, resolves `PROJECT_ID` from the env or `gcloud config get-value
-project`, and defaults `REGION` to `europe-west1` — override either with `PROJECT_ID=... REGION=...
-npm run deploy`. It also pre-creates the `cloud-run-source-deploy` Artifact Registry repo and
-attaches `scripts/artifact-cleanup-policy.json` to it (keep the 3 most recent image versions,
-delete everything else immediately) before deploying — see "Staying in the free tier" below.
-Pre-creating the repo also means `gcloud run deploy` never hits its interactive "create this repo?"
-prompt, which is otherwise unsafe to run from a non-interactive script.
-
-After the deploy finishes, `scripts/deploy.sh` also deletes the source zip that `--source .`
-just staged in Cloud Storage for this run (looked up from the Cloud Build job's own
-`source.storageSource` record) — Cloud Build has already read it into the image by then, so it
-has no further purpose. See "Staying in the free tier" below for the bucket-level backstop this
-relies on if a deploy is ever invoked outside this script.
+This is the whole deploy — run it by hand. `npm run deploy` targets Cloudflare now, so there is
+no script wrapping this command any more; the Artifact Registry repo and its cleanup policy
+(`scripts/artifact-cleanup-policy.json`, "Staying in the free tier" below) already exist from
+earlier deploys, and pre-creating the repo is what kept `gcloud run deploy` from hitting its
+interactive "create this repo?" prompt. `--source .` also stages a source zip in Cloud Storage
+that Cloud Build has no further use for once the image is built; the `run-sources-*` bucket's
+7-day lifecycle rule cleans it up.
 
 `GOOGLE_CLOUD_PROJECT` (which `server/src/firestore.js` uses to talk to the right Firestore
 database) is **not** set automatically by Cloud Run, despite an earlier version of this doc
-claiming otherwise — `scripts/deploy.sh` passes it explicitly (`--set-env-vars`) alongside
+claiming otherwise — the `--set-env-vars` above passes it explicitly, alongside
 `NODE_ENV`. Without it, `firestore.js` falls back to its local-dev default project id
 (`sutamaya-local`) and every Firestore call fails with a "permission denied on resource project
 sutamaya-local" error — which only actually surfaces once a request reaches Firestore (e.g. the
 first successful sign-in), so it's easy to deploy, see the app *load* fine, and not notice.
-`scripts/deploy.sh` also sets `WEB_ORIGIN` (defaulting to `https://sutamaya.org`, override with
-`WEB_ORIGIN=... npm run deploy` if deploying under a different domain) — `server/src/index.js`
-uses it for the CORS `origin` check; harmless to get wrong for the normal same-origin SPA+API
-deploy this guide describes, but worth setting correctly if anything ever calls the API
-cross-origin.
+`WEB_ORIGIN` (`https://sutamaya.org` here) is what `server/src/index.js` uses for the CORS
+`origin` check — harmless to get wrong for the normal same-origin SPA+API deploy this guide
+describes, but worth setting correctly if anything ever calls the API cross-origin.
 
 `gcloud run deploy` prints the service URL when it finishes:
 
@@ -162,17 +207,6 @@ gcloud run services describe sutamaya --region="$REGION" --format='value(status.
 
 Open it, sign in with Google, and confirm lists/notes/highlights save and survive a refresh —
 that round-trips through Firestore, so it's the real end-to-end check.
-
-## Redeploying
-
-`npm run deploy`, every time — no arguments needed. Cloud Build rebuilds the image fresh from
-your current working tree (uncommitted changes included, since `--source .` uploads the local
-directory, not a git ref — commit first if you want the deployed image to match a specific
-commit).
-
-`scripts/deploy.sh` runs `npm test` first and refuses to deploy if it fails. To deploy anyway
-(e.g. a known-flaky test, or a deliberate hotfix), pass `--skip-tests`:
-`npm run deploy -- --skip-tests`.
 
 ## Staying in the free tier
 
@@ -193,8 +227,8 @@ project to keep it that way — the checklist to redo if this is ever set up aga
 
 ### Cost-reduction measures already in place
 
-1. **Cloud Run scaling/CPU config** — part of the `gcloud run deploy` call in `scripts/deploy.sh`
-   step 6 above, not a separate step:
+1. **Cloud Run scaling/CPU config** — part of the `gcloud run deploy` call in step 6 above, not a
+   separate step:
    - `--min-instances=0` — scale to zero; nothing billed while nobody's using the app.
    - `--max-instances=1` — hard ceiling on concurrent instances, so a traffic spike or a bug that
      loops requests can't multiply cost unbounded.
@@ -205,10 +239,9 @@ project to keep it that way — the checklist to redo if this is ever set up aga
    - `--timeout=30` — bounds worst-case GB-seconds if a request ever hangs instead of returning.
 
 2. **Artifact Registry's 0.5GB is the tightest free-tier limit** — each `gcloud run deploy` pushes
-   a new image (~500MB uncompressed, less as compressed layers, but they accumulate). `npm run
-   deploy` attaches a native cleanup policy (`scripts/artifact-cleanup-policy.json`) to the repo
-   before every deploy, keeping only the 3 most recent image versions and deleting everything else
-   immediately — no manual step needed. To apply/update it by hand instead:
+   a new image (~500MB uncompressed, less as compressed layers, but they accumulate). The repo
+   carries a native cleanup policy (`scripts/artifact-cleanup-policy.json`) keeping only the 3 most
+   recent image versions and deleting everything else immediately. To apply or update it:
    ```bash
    gcloud artifacts repositories set-cleanup-policies cloud-run-source-deploy \
      --project="$PROJECT_ID" --location="$REGION" --policy=scripts/artifact-cleanup-policy.json
@@ -221,23 +254,16 @@ project to keep it that way — the checklist to redo if this is ever set up aga
    `europe-west1` (this doc's default) pays standard per-GB storage from the first byte — this was
    the actual cost driver found on this project (frequent deploys, nothing ever cleaning the
    bucket up: 57 leftover zips / ~1.1GB by the time it was noticed, deleted by hand once via
-   `gcloud storage rm -r "gs://run-sources-${PROJECT_ID}-${REGION}/services/**"`). Kept negligible
-   going forward by two layers:
-   - `scripts/deploy.sh` deletes each deploy's own zip right after Cloud Build finishes reading it
-     (looked up from that build's own `source.storageSource` record — see the script for the exact
-     commands).
-   - As a backstop for anything deployed outside that script (e.g. directly via `gcloud run
-     deploy`, or CI), a bucket lifecycle rule expires anything left after 7 days:
-     ```bash
-     cat > /tmp/gcs-lifecycle.json <<'EOF'
-     { "rule": [ { "action": { "type": "Delete" }, "condition": { "age": 7 } } ] }
-     EOF
-     gcloud storage buckets update "gs://run-sources-${PROJECT_ID}-${REGION}" \
-       --project="$PROJECT_ID" --lifecycle-file=/tmp/gcs-lifecycle.json
-     ```
-     Unlike the Artifact Registry policy above, this isn't applied automatically by
-     `scripts/deploy.sh` — run it once by hand after the bucket exists (i.e. after your first
-     deploy).
+   `gcloud storage rm -r "gs://run-sources-${PROJECT_ID}-${REGION}/services/**"`). A bucket
+   lifecycle rule now expires anything left after 7 days — applied once by hand, after the bucket
+   exists (i.e. after the first deploy):
+   ```bash
+   cat > /tmp/gcs-lifecycle.json <<'EOF'
+   { "rule": [ { "action": { "type": "Delete" }, "condition": { "age": 7 } } ] }
+   EOF
+   gcloud storage buckets update "gs://run-sources-${PROJECT_ID}-${REGION}" \
+     --project="$PROJECT_ID" --lifecycle-file=/tmp/gcs-lifecycle.json
+   ```
 
 4. **Budget alert** — doesn't reduce cost by itself, but is the safety net that emails you as
    spend crosses a threshold instead of finding out on the next invoice. Live config on this
@@ -442,7 +468,6 @@ itself doesn't need to change.
 
 ## Notes / gaps
 
-- No CI — every deploy above is a manual `npm run deploy`. Wire it into a GitHub Actions
-  workflow with `google-github-actions/deploy-cloudrun` later if you want deploys on push.
+- No CI — deploys are manual, on both platforms.
 - `--max-instances=1` is a sane default for a personal app (bounds worst-case cost); raise it in
-  `scripts/deploy.sh` if you expect real concurrent traffic.
+  the `gcloud run deploy` command if you expect real concurrent traffic.
