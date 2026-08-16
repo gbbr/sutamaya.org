@@ -1,5 +1,6 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { dataApi, highlightsApi, listsApi, notesApi, visitedApi } from '../lib/api';
+import { retryWithBackoff } from '../lib/retry';
 import type { Highlight, HighlightsMap, ListDef, ListKind, Membership, NotesMap, VisitedMap } from '../lib/types';
 import { RECENT_AUTO_LIST_CAP, RECENT_AUTO_LIST_ID } from '../lib/autoLists';
 import { applyListReorder } from '../lib/lists';
@@ -64,9 +65,19 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   const [notes, setNotes] = useState<NotesMap>({});
   const [highlights, setHighlights] = useState<HighlightsMap>({});
   const [visited, setVisited] = useState<VisitedMap>({});
+  // Generation counter for whole-dataset fetches (the initial load and every syncUserData).
+  // Nothing sequences those against each other on the wire, so on a slow link two overlapping
+  // mutations' syncs routinely resolve out of order and the older snapshot lands last, silently
+  // reverting the newer change on screen. Each fetch claims a generation on entry and drops its
+  // own result if a later one has since started.
+  const syncSeq = useRef(0);
 
   useEffect(() => {
     if (!user) {
+      // Claims a generation before clearing, so a sync still in flight from the signed-in session
+      // can't resolve afterwards and repopulate this cleared state with the previous account's
+      // lists/notes/highlights.
+      syncSeq.current += 1;
       // `ready` means "we know the final state of user data for this session" — true
       // immediately for a signed-out user, since there's nothing to fetch (see
       // useSuttaReading's own use of this to gate the reader's scroll restore on knowing
@@ -82,23 +93,32 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     }
     let cancelled = false;
     setReady(false);
-    dataApi
-      .all()
+    // Bumping the generation here also invalidates any sync still in flight from the previous
+    // user, so their data can't land on top of this one's.
+    const seq = (syncSeq.current += 1);
+    // Retried like AuthContext's own session load: a signed-in user whose one attempt lost to a
+    // network blip otherwise gets a silently empty Library/notes/highlights, with no indication
+    // and no recovery short of a reload.
+    retryWithBackoff(() => dataApi.all())
       .then((d) => {
         if (cancelled) return;
-        setLists(d.lists);
-        setMembership(d.membership);
-        setNotes(d.notes);
-        setHighlights(d.highlights);
-        setVisited(d.visited);
+        // Superseded by a sync issued while this was in flight — that snapshot is newer, so keep
+        // it. `ready` still settles below either way.
+        if (seq === syncSeq.current) {
+          setLists(d.lists);
+          setMembership(d.membership);
+          setNotes(d.notes);
+          setHighlights(d.highlights);
+          setVisited(d.visited);
+        }
         setReady(true);
       })
       .catch((e) => {
         if (cancelled) return;
         // A failed fetch is still a *settled* final state (no data, but nothing left pending) —
-        // without this, one transient failure (401 from a lapsed session, a rate limit, a Cloud
-        // Run cold start) would leave `ready` stuck false for the rest of the signed-in session,
-        // permanently disabling anything gated on it (see readyToRestore in useSuttaReading.ts).
+        // without this, one transient failure (401 from a lapsed session, a rate limit) would
+        // leave `ready` stuck false for the rest of the signed-in session, permanently disabling
+        // anything gated on it (see readyToRestore in useSuttaReading.ts).
         console.error('initial user-data fetch failed', e);
         setReady(true);
       });
@@ -117,11 +137,16 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   // optimistic local edit can't express, e.g. the auto "Highlights"/"Notes" lists) and on
   // failure (to discard an optimistic edit that never actually made it to the server).
   const syncUserData = useCallback(async () => {
+    const seq = (syncSeq.current += 1);
     const fresh = await dataApi.all();
+    // A newer fetch started while this one was out — its snapshot wins, so drop this one rather
+    // than overwriting newer state with older (see syncSeq).
+    if (seq !== syncSeq.current) return;
     setLists(fresh.lists);
     setMembership(fresh.membership);
     setNotes(fresh.notes);
     setHighlights(fresh.highlights);
+    setVisited(fresh.visited);
   }, []);
 
   // Every mutator applies its change optimistically before the network call settles, then
@@ -267,9 +292,15 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       if (!user) return promptGoogleSignIn();
       const list = lists.find((l) => l.id === listId);
       if (!list) return;
-      const current = membership[suttaId] || [];
-      const on = current.includes(listId);
-      setMembership((m) => ({ ...m, [suttaId]: on ? current.filter((id) => id !== listId) : [...current, listId] }));
+      const on = (membership[suttaId] || []).includes(listId);
+      // Derives from the updater's own `m`, not the `membership` closure — two chips tapped on the
+      // same sutta before a re-render flushes would otherwise both start from the same stale array,
+      // and the second would drop the first. Both writes still reach the server, so only the UI
+      // diverges — and since this mutator doesn't resync on success, it would stay diverged.
+      setMembership((m) => {
+        const cur = m[suttaId] || [];
+        return { ...m, [suttaId]: on ? cur.filter((id) => id !== listId) : [...cur, listId] };
+      });
       setLists((ls) =>
         ls.map((l) => (l.id === listId ? { ...l, items: on ? l.items.filter((s) => s !== suttaId) : [...l.items, suttaId] } : l))
       );
