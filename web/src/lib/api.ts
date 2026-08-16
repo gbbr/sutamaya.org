@@ -9,9 +9,8 @@ import type { Highlight, ListDef, ListKind, Membership, NotesMap, HighlightsMap,
 const REQUEST_TIMEOUT_MS = 30_000;
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  let res: Response;
   try {
-    res = await fetch(`/api${path}`, {
+    const res = await fetch(`/api${path}`, {
       credentials: 'include',
       headers: init?.body ? { 'Content-Type': 'application/json' } : undefined,
       ...init,
@@ -19,26 +18,31 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
       // today, and one silently replacing this would reintroduce the unbounded hang.
       signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
     });
+    if (!res.ok) {
+      let error = `Request failed (${res.status})`;
+      try {
+        const body = await res.json();
+        if (body?.error) error = body.error;
+      } catch {
+        // ignore
+      }
+      throw new Error(error);
+    }
+    if (res.status === 204) return undefined as T;
+    // Awaited inside the try, not returned as a bare promise, so a body read that aborts is
+    // caught below rather than escaping as-is.
+    return (await res.json()) as T;
   } catch (err) {
-    // Surfaces as a legible message in the failure logs every mutator writes, rather than the
-    // bare "signal timed out" DOMException.
+    // The signal aborts the response stream too, not just the connection attempt, so a large
+    // payload still arriving at the deadline (/api/data is the one that gets there) rejects on
+    // the body read rather than at fetch() — hence the catch around both. Surfaces as a legible
+    // message in the failure logs every mutator writes, rather than the bare "signal timed out"
+    // DOMException.
     if (err instanceof DOMException && err.name === 'TimeoutError') {
       throw new Error(`Request timed out after ${REQUEST_TIMEOUT_MS / 1000}s`);
     }
     throw err;
   }
-  if (!res.ok) {
-    let error = `Request failed (${res.status})`;
-    try {
-      const body = await res.json();
-      if (body?.error) error = body.error;
-    } catch {
-      // ignore
-    }
-    throw new Error(error);
-  }
-  if (res.status === 204) return undefined as T;
-  return res.json() as Promise<T>;
 }
 
 export const authApi = {
