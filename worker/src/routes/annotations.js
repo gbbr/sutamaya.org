@@ -63,8 +63,8 @@ annotationsRouter.put('/highlights/ranges', async (c) => {
     return c.json({ error: 'suttaId and a non-empty ranges array are required.' }, 400);
   }
   for (const r of ranges) {
-    if (!Number.isInteger(r.i) || !Number.isInteger(r.s) || !Number.isInteger(r.e)) {
-      return c.json({ error: 'each range needs integer i, s, e.' }, 400);
+    if (!Number.isInteger(r.i) || !Number.isInteger(r.s) || !Number.isInteger(r.e) || r.s >= r.e) {
+      return c.json({ error: 'each range needs integer i, s, e with s < e.' }, 400);
     }
   }
   const statements = ranges.map((r) =>

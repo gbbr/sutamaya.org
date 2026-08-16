@@ -146,6 +146,65 @@ describe('routes/annotations.js (D1)', () => {
     expect(rows).toHaveLength(3);
   });
 
+  it('replaces an existing highlight fully contained by the new range', async () => {
+    const { userId, cookie } = await signIn();
+    await api('/api/highlights/ranges', {
+      method: 'PUT',
+      cookie,
+      body: { suttaId: 'sn1.1', color: 'yellow', ranges: [{ i: 0, s: 5, e: 10 }] },
+    });
+
+    // [0,15) fully contains the stored [5,10).
+    await api('/api/highlights/ranges', {
+      method: 'PUT',
+      cookie,
+      body: { suttaId: 'sn1.1', color: 'green', ranges: [{ i: 0, s: 0, e: 15 }] },
+    });
+
+    const rows = await highlightsOf(userId, 'sn1.1');
+    expect(rows).toHaveLength(1);
+    expect(rows[0]).toMatchObject({ s: 0, e: 15, color: 'green' });
+  });
+
+  it('replaces an existing highlight that fully contains the new, smaller range', async () => {
+    const { userId, cookie } = await signIn();
+    await api('/api/highlights/ranges', {
+      method: 'PUT',
+      cookie,
+      body: { suttaId: 'sn1.1', color: 'yellow', ranges: [{ i: 0, s: 0, e: 20 }] },
+    });
+
+    // [5,10) is fully inside the stored [0,20).
+    await api('/api/highlights/ranges', {
+      method: 'PUT',
+      cookie,
+      body: { suttaId: 'sn1.1', color: 'green', ranges: [{ i: 0, s: 5, e: 10 }] },
+    });
+
+    const rows = await highlightsOf(userId, 'sn1.1');
+    expect(rows).toHaveLength(1);
+    expect(rows[0]).toMatchObject({ s: 5, e: 10, color: 'green' });
+  });
+
+  it('rejects a zero-width or inverted range instead of writing degenerate rows', async () => {
+    const { userId, cookie } = await signIn();
+    const zeroWidth = await api('/api/highlights/ranges', {
+      method: 'PUT',
+      cookie,
+      body: { suttaId: 'sn1.1', color: 'yellow', ranges: [{ i: 0, s: 5, e: 5 }] },
+    });
+    expect(zeroWidth.status).toBe(400);
+
+    const inverted = await api('/api/highlights/ranges', {
+      method: 'PUT',
+      cookie,
+      body: { suttaId: 'sn1.1', color: 'yellow', ranges: [{ i: 0, s: 10, e: 5 }] },
+    });
+    expect(inverted.status).toBe(400);
+
+    expect(await highlightsOf(userId, 'sn1.1')).toHaveLength(0);
+  });
+
   it('erases overlapping highlights when color is null, inserting nothing', async () => {
     const { userId, cookie } = await signIn();
     await api('/api/highlights/ranges', {
@@ -171,7 +230,7 @@ describe('routes/annotations.js (D1)', () => {
       body: { suttaId: 'sn1.1', color: 'yellow', ranges: [{ i: 0, s: 5 }] },
     });
     expect(res.status).toBe(400);
-    expect(await res.json()).toEqual({ error: 'each range needs integer i, s, e.' });
+    expect(await res.json()).toEqual({ error: 'each range needs integer i, s, e with s < e.' });
   });
 
   it('rejects a missing suttaId or empty ranges array', async () => {
