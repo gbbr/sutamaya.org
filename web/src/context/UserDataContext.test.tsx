@@ -7,7 +7,10 @@ import { RECENT_AUTO_LIST_ID } from '../lib/autoLists';
 // UserDataProvider reads `useAuth()` straight from AuthContext (not injected), so a signed-in
 // user is stubbed here rather than wrapping every test in a real AuthProvider (which would need
 // its own authApi.me() mock plumbing this hook doesn't otherwise care about).
-const mockUser = { id: 'u1', email: 'a@b.com', name: 'A', picture: '' };
+const signedInUser = { id: 'u1', email: 'a@b.com', name: 'A', picture: '' };
+// Mutable so a test can sign out mid-flight (the useAuth stub reads it per call, not once at
+// mock-factory time); reset in beforeEach.
+let mockUser: typeof signedInUser | null = signedInUser;
 const promptGoogleSignIn = vi.fn();
 vi.mock('./AuthContext', () => ({
   useAuth: () => ({ user: mockUser, promptGoogleSignIn }),
@@ -49,6 +52,7 @@ function setup() {
 
 beforeEach(() => {
   vi.clearAllMocks();
+  mockUser = signedInUser;
 });
 
 describe('UserDataProvider', () => {
@@ -151,5 +155,127 @@ describe('UserDataProvider', () => {
     // same content, so consumers keyed on it (useListTreeIndex, ListPane's flatLists) don't
     // rebuild for nothing.
     expect(result.current.lists).toBe(listsBefore);
+  });
+
+  it('ignores a whole-dataset sync whose response lands after a newer one started', async () => {
+    const stale = { ...structuredClone(baseData), lists: [{ ...baseData.lists[0], label: 'Stale' }] };
+    const fresh = { ...structuredClone(baseData), lists: [{ ...baseData.lists[0], label: 'Fresh' }] };
+    let releaseStale: (v: UserData) => void = () => {};
+    dataApiAll
+      .mockResolvedValueOnce(structuredClone(baseData)) // initial mount fetch
+      .mockImplementationOnce(() => new Promise<UserData>((resolve) => { releaseStale = resolve; }))
+      .mockResolvedValueOnce(fresh);
+    const { result } = setup();
+    await waitFor(() => expect(result.current.ready).toBe(true));
+
+    // Two syncs overlap — the one issued *first* is the one that resolves last, which is the
+    // ordinary case on a slow connection when two mutations are made in quick succession.
+    let slowSync: Promise<void> = Promise.resolve();
+    act(() => {
+      slowSync = result.current.syncUserData();
+    });
+    await act(async () => {
+      await result.current.syncUserData();
+    });
+    expect(result.current.lists[0].label).toBe('Fresh');
+
+    await act(async () => {
+      releaseStale(stale);
+      await slowSync;
+    });
+
+    // Without the generation guard the older snapshot lands last and silently reverts the newer
+    // one on screen.
+    expect(result.current.lists[0].label).toBe('Fresh');
+  });
+
+  it('keeps both membership toggles when two are made on one sutta before a re-render', async () => {
+    dataApiAll.mockResolvedValue({
+      ...structuredClone(baseData),
+      lists: [...structuredClone(baseData.lists), { id: 'l2', label: 'Later', parentId: null, kind: 'list', items: [] }],
+    });
+    const { result } = setup();
+    await waitFor(() => expect(result.current.ready).toBe(true));
+
+    await act(async () => {
+      await Promise.all([result.current.toggleMembership('dn1', 'l1'), result.current.toggleMembership('dn1', 'l2')]);
+    });
+
+    // Both calls see the same (empty) `membership` closure, so deriving the next value from it
+    // rather than from the updater's own argument drops whichever chip was added first.
+    expect(result.current.membership.dn1).toEqual(['l1', 'l2']);
+  });
+
+  it('drops an in-flight sync when the user signs out, instead of repopulating cleared state', async () => {
+    let releaseSync: (v: UserData) => void = () => {};
+    dataApiAll
+      .mockResolvedValueOnce(structuredClone(baseData)) // initial mount fetch
+      .mockImplementationOnce(() => new Promise<UserData>((resolve) => { releaseSync = resolve; }));
+    const { result, rerender } = setup();
+    await waitFor(() => expect(result.current.ready).toBe(true));
+
+    let slowSync: Promise<void> = Promise.resolve();
+    act(() => {
+      slowSync = result.current.syncUserData();
+    });
+
+    mockUser = null;
+    rerender();
+    expect(result.current.lists).toEqual([]);
+
+    await act(async () => {
+      releaseSync(structuredClone(baseData));
+      await slowSync;
+    });
+
+    // The signed-in session's data must not come back after sign-out just because its fetch was
+    // still in flight when the user logged out.
+    expect(result.current.lists).toEqual([]);
+    expect(result.current.notes).toEqual({});
+  });
+
+  it('syncUserData reconciles `visited` along with the rest of the dataset', async () => {
+    dataApiAll
+      .mockResolvedValueOnce(structuredClone(baseData)) // initial mount fetch
+      .mockResolvedValueOnce({ ...structuredClone(baseData), visited: { dn1: '2024-05-05T00:00:00.000Z' } });
+    const { result } = setup();
+    await waitFor(() => expect(result.current.ready).toBe(true));
+    expect(result.current.visited).toEqual({});
+
+    await act(async () => {
+      await result.current.syncUserData();
+    });
+
+    // Left out of the sync, `visited` would be write-once at load — a failed visitedApi.mark would
+    // leave its optimistic read-marker standing forever, and another device's reads never appear.
+    expect(result.current.visited).toEqual({ dn1: '2024-05-05T00:00:00.000Z' });
+  });
+
+  it('retries the initial fetch after a transient failure rather than settling on empty data', async () => {
+    vi.useFakeTimers();
+    try {
+      dataApiAll
+        .mockRejectedValueOnce(new Error('network blip'))
+        .mockResolvedValueOnce(structuredClone(baseData));
+      const { result } = setup();
+
+      // First attempt has failed; still not ready, and nothing applied yet.
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(0);
+      });
+      expect(result.current.ready).toBe(false);
+      expect(result.current.lists).toEqual([]);
+
+      // Past the first backoff step (RETRY_DELAYS_MS[0] = 500ms) the retry succeeds.
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(500);
+      });
+
+      expect(dataApiAll).toHaveBeenCalledTimes(2);
+      expect(result.current.lists).toEqual(baseData.lists);
+      expect(result.current.ready).toBe(true);
+    } finally {
+      vi.useRealTimers();
+    }
   });
 });
