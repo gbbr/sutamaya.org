@@ -8,9 +8,19 @@ export default defineWorkersProject(async () => {
 
   // The pool reads the real wrangler.jsonc below, which errors out if its `assets.directory`
   // doesn't exist — and `web/dist` is a git-ignored build output, absent on a fresh checkout and in
-  // CI, where `npm test` runs without a web build. The Worker tests only exercise `/api/*`, which
-  // never touches the assets binding, so an empty directory is enough to satisfy the config.
-  fs.mkdirSync(path.join(__dirname, '..', 'web', 'dist'), { recursive: true });
+  // CI, where `npm test` runs without a web build. Create it, and seed the two files
+  // src/assetRouting.test.js needs to tell "the assets binding answered" from "the Worker
+  // answered": one page for the SPA fallback to return, one plain file to serve directly. Only
+  // written when absent, so a real build is never clobbered — the test asserts on how the request
+  // was *routed*, not on what these contain, so placeholders serve it as well as the real build.
+  const distDir = path.join(__dirname, '..', 'web', 'dist');
+  fs.mkdirSync(distDir, { recursive: true });
+  const seed = (name: string, contents: string) => {
+    const file = path.join(distDir, name);
+    if (!fs.existsSync(file)) fs.writeFileSync(file, contents);
+  };
+  seed('index.html', '<!doctype html><title>test placeholder</title>\n');
+  seed('favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"/>\n');
 
   return {
     test: {
