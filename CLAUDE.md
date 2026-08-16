@@ -396,4 +396,6 @@ something there.
   cached that exact path won't reach them until the TTL lapses, the `sutta-text` cache's 8000-entry
   cap evicts it, or they clear site data — there's no cache-busting query/hash on these URLs.
   `/assets/*` is safe from this only because Vite content-hashes those filenames; anything that
-  overwrites a hashed file's content in place without renaming it would hit the same problem.
+  overwrites a hashed file's content in place without renaming it would hit the same problem. In
+  particular, an `update-data` refresh (see `scripts/update-data/README.md`) won't reach a user
+  who's already cached the affected suttas until one of the above happens.
