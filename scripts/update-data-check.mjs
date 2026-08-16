@@ -21,6 +21,7 @@ import {
   checkSnapshotInSync,
   checkCrossCategoryIntegrity,
   listLocalRelPaths,
+  readKeysSafe,
   DATA_DIRS,
   SNAPSHOT_PATH,
   MANIFEST_PATH,
@@ -42,14 +43,6 @@ function describeSetDiff(oldKeys, newKeys) {
   if (removed.length) parts.push(`missing segment ids: ${fmt(removed)}`);
   if (added.length) parts.push(`new segment ids: ${fmt(added)}`);
   return parts.join('; ');
-}
-
-function readKeysSafe(filePath) {
-  try {
-    return Object.keys(JSON.parse(fs.readFileSync(filePath, 'utf8')));
-  } catch {
-    return null;
-  }
 }
 
 // Core logic, callable directly with an explicit bilaraRoot/dataDirs/snapshotPath (tests use this

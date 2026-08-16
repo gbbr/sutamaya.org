@@ -168,6 +168,16 @@ export function keysHash(keys) {
   return crypto.createHash('sha256').update([...keys].sort().join('\n')).digest('hex');
 }
 
+// A file's segment ids, or null if it's missing/unparseable — the "unreadable, already reported
+// elsewhere" case checkCrossCategoryIntegrity's keysFor callback expects.
+export function readKeysSafe(filePath) {
+  try {
+    return Object.keys(JSON.parse(fs.readFileSync(filePath, 'utf8')));
+  } catch {
+    return null;
+  }
+}
+
 // Defaults to the real snapshot.json; overridable so tests can point it at a fixture file instead.
 export function loadSnapshot(snapshotPath = SNAPSHOT_PATH) {
   if (!fs.existsSync(snapshotPath)) {

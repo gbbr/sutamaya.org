@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { requireSourceRoot, sourceGitInfo, checkSnapshotInSync, checkCrossCategoryIntegrity } from './lib/dataSync.js';
+import { requireSourceRoot, sourceGitInfo, checkSnapshotInSync, checkCrossCategoryIntegrity, listLocalRelPaths, localPathFor, readKeysSafe } from './lib/dataSync.js';
 import { runCheck } from './update-data-check.mjs';
 import { runCopy } from './update-data-copy.mjs';
 import { runPost, applyReplacements } from './update-data-post.mjs';
@@ -213,6 +213,15 @@ describe('checkSnapshotInSync', () => {
     // No overrides — this is the one guard that actually protects the repo: if copy/post ran and
     // got committed without a follow-up update-data:snapshot, this fails on the next `npm test`.
     expect(checkSnapshotInSync()).toEqual({ ok: true, issues: [] });
+  });
+
+  it('the real repo: pali/html match exactly and sujato is a subset of pali', () => {
+    // No overrides — unlike checkSnapshotInSync above (which only catches a per-file drift from
+    // snapshot.json), this is what actually protects the repo from a cross-category misalignment:
+    // build-corpus.mjs degrades silently (dropped/unstyled segments, not a build failure) when
+    // pali/sujato/html disagree — see INTEGRITY_GROUPS in lib/dataSync.js.
+    const keysFor = (relPath) => readKeysSafe(localPathFor(relPath));
+    expect(checkCrossCategoryIntegrity(listLocalRelPaths(), keysFor)).toEqual([]);
   });
 });
 
