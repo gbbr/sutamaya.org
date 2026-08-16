@@ -213,17 +213,21 @@ export function ReaderMenuPanel({
                 saveButtonStyle={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
               />
             </div>
-            {highlightGroups.map((g) => (
-              <button
-                key={g.key}
-                className="flex w-full gap-2.5 items-start py-2.5 text-left"
-                style={{ borderBottom: `1px solid ${theme.rule}` }}
-                onClick={() => onJumpToHighlight(g.i, g.key)}
-              >
-                <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: highlightPaint(g.c, theme) }} />
-                <span className="flex-1 text-sm leading-[1.45]">{highlightGroupText(g, segments).slice(0, 92) || `Segment ${g.i + 1}`}</span>
-              </button>
-            ))}
+            {highlightGroups.map((g) => {
+              const text = highlightGroupText(g, segments);
+              const preview = text.length > 120 ? `${text.slice(0, 120)}…` : text;
+              return (
+                <button
+                  key={g.key}
+                  className="flex w-full gap-2.5 items-start py-2.5 text-left"
+                  style={{ borderBottom: `1px solid ${theme.rule}` }}
+                  onClick={() => onJumpToHighlight(g.i, g.key)}
+                >
+                  <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: highlightPaint(g.c, theme) }} />
+                  <span className="flex-1 text-sm leading-[1.45]">{preview || `Segment ${g.i + 1}`}</span>
+                </button>
+              );
+            })}
             {highlightGroups.length === 0 && (
               <div className="font-sans text-[12.5px] opacity-40 py-1.5">Select text in the reading, then pick a colour.</div>
             )}
