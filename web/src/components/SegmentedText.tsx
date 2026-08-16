@@ -411,7 +411,7 @@ function SegmentedTextInner({
   // fixed pixel value), so turning either up also opens up more room between paragraphs instead
   // of just within them. 0.6x a full computed line height reads as a clear paragraph break
   // without the gap dominating the page the way a full line height did.
-  const paragraphGap = Math.round((fontSize * lineHeight * 0.6) / 100);
+  const paragraphGap = Math.round((fontSize * lineHeight * 1.1) / 100);
   // Grouped once per `highlights` change (O(segments + highlights)) rather than every segment
   // re-scanning the whole array (O(segments × highlights)).
   const highlightsBySeg = useMemo(() => {
