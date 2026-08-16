@@ -1,0 +1,24 @@
+{
+  "name": "sutamaya",
+  "main": "./worker/src/index.js",
+  "compatibility_date": "2026-08-01",
+  "assets": {
+    "directory": "./web/dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sutamaya",
+      "database_id": "fd146fd9-2f62-4774-8110-35f453bbf178",
+      "migrations_dir": "worker/migrations"
+    }
+  ],
+  "vars": {
+    "WEB_ORIGIN": "https://sutamaya.org",
+    "GOOGLE_CLIENT_ID": "45956701911-0a93js1du42ia6vtno0n4bh36crkn5f6.apps.googleusercontent.com"
+  },
+  "observability": { "enabled": true }
+}

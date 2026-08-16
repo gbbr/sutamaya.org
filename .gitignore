@@ -11,4 +11,6 @@ server/data/*.sqlite-*
 *.tsbuildinfo
 firebase-debug.log
 firestore-debug.log
+.dev.vars
+.wrangler/
 
