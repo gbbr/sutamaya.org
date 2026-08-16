@@ -34,7 +34,7 @@ vi.mock('../lib/api', () => ({
     removeItem: vi.fn(),
   },
   notesApi: { set: (...args: unknown[]) => notesApiSet(...args) },
-  highlightsApi: { setRanges: (...args: unknown[]) => highlightsApiSetRanges(...args), remove: vi.fn() },
+  highlightsApi: { setRanges: (...args: unknown[]) => highlightsApiSetRanges(...args) },
   visitedApi: { mark: vi.fn(() => Promise.resolve()) },
 }));
 

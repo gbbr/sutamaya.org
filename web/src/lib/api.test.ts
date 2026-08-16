@@ -1,0 +1,52 @@
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { notesApi } from './api';
+
+// These cover request()'s shared plumbing — the timeout wiring and how a failure is reported —
+// rather than any individual endpoint; notesApi.set is just the cheapest caller to drive it with.
+describe('request()', () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  function stubFetch(impl: () => Promise<Response>) {
+    const fetchMock = vi.fn(impl);
+    vi.stubGlobal('fetch', fetchMock);
+    return fetchMock;
+  }
+
+  it('attaches an abort signal, so a stalled connection cannot hang for the browser default', async () => {
+    const fetchMock = stubFetch(async () => new Response(JSON.stringify({ ok: true }), { status: 200 }));
+
+    await notesApi.set('dn1', 'a note');
+
+    const init = fetchMock.mock.calls[0][1] as RequestInit;
+    expect(init.signal).toBeInstanceOf(AbortSignal);
+    // Placed after the `...init` spread — a caller-supplied signal must not be able to silently
+    // replace it and reintroduce the unbounded hang.
+    expect(init.signal?.aborted).toBe(false);
+  });
+
+  it('reports a timed-out request as a legible error rather than a bare DOMException', async () => {
+    stubFetch(async () => {
+      throw new DOMException('signal timed out', 'TimeoutError');
+    });
+
+    // Every mutator logs its failure via console.error (see UserDataContext) — "signal timed out"
+    // there says nothing about what actually happened.
+    await expect(notesApi.set('dn1', 'a note')).rejects.toThrow(/timed out after 30s/);
+  });
+
+  it('leaves a non-timeout network failure untouched', async () => {
+    stubFetch(async () => {
+      throw new TypeError('Failed to fetch');
+    });
+
+    await expect(notesApi.set('dn1', 'a note')).rejects.toThrow('Failed to fetch');
+  });
+
+  it('still surfaces the server error body on a non-ok response', async () => {
+    stubFetch(async () => new Response(JSON.stringify({ error: 'rate_limited' }), { status: 429 }));
+
+    await expect(notesApi.set('dn1', 'a note')).rejects.toThrow('rate_limited');
+  });
+});
