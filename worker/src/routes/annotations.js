@@ -85,8 +85,11 @@ annotationsRouter.put('/highlights/ranges', async (c) => {
   return c.json({ ok: true });
 });
 
-// Deleting a highlight that isn't there is not an error, matching the Express original — the
-// client fires this optimistically and a missing row means the intended end state already holds.
+// No current client calls this: removing a highlight goes through PUT /highlights/ranges with a
+// null `color`, which does the delete in the same atomic batch as everything else. It stays for
+// PWA shells cached before that change, which still fire this optimistically. Deleting a
+// highlight that isn't there is not an error — a missing row means the intended end state
+// already holds.
 annotationsRouter.delete('/highlights/:id', async (c) => {
   await c.env.DB.prepare('DELETE FROM highlights WHERE id = ? AND user_id = ?')
     .bind(c.req.param('id'), c.get('userId'))

@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { notesApi } from './api';
+import { dataApi, notesApi } from './api';
 
 // These cover request()'s shared plumbing — the timeout wiring and how a failure is reported —
 // rather than any individual endpoint; notesApi.set is just the cheapest caller to drive it with.
@@ -34,6 +34,22 @@ describe('request()', () => {
     // Every mutator logs its failure via console.error (see UserDataContext) — "signal timed out"
     // there says nothing about what actually happened.
     await expect(notesApi.set('dn1', 'a note')).rejects.toThrow(/timed out after 30s/);
+  });
+
+  it('reports a timeout that lands during the body read the same way', async () => {
+    // The signal aborts the response stream too, so a payload still arriving at the deadline
+    // rejects on res.json(), not at fetch() — and /api/data, the whole user dataset, is the call
+    // that actually gets that far.
+    stubFetch(
+      async () =>
+        ({
+          ok: true,
+          status: 200,
+          json: () => Promise.reject(new DOMException('signal timed out', 'TimeoutError')),
+        }) as unknown as Response
+    );
+
+    await expect(dataApi.all()).rejects.toThrow(/timed out after 30s/);
   });
 
   it('leaves a non-timeout network failure untouched', async () => {
