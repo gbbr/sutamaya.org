@@ -13,7 +13,7 @@ export default defineWorkersProject(async () => {
         workers: {
           wrangler: { configPath: '../wrangler.jsonc' },
           miniflare: {
-            bindings: { TEST_MIGRATIONS: migrations },
+            bindings: { TEST_MIGRATIONS: migrations, SESSION_SECRET: 'test-secret-not-for-prod' },
           },
         },
       },
