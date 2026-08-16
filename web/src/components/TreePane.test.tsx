@@ -104,7 +104,6 @@ function mockUserData(overrides: Partial<ReturnType<typeof useUserData>> = {}): 
     addToList: vi.fn(async () => {}),
     submitNote: vi.fn(async () => {}),
     setHighlightRanges: vi.fn(async () => {}),
-    removeHighlights: vi.fn(async () => {}),
     markVisited: vi.fn(),
     syncUserData: vi.fn(async () => {}),
     ...overrides,

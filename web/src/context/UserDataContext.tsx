@@ -25,7 +25,6 @@ interface UserDataState {
   addToList: (suttaId: string, list: ListDef) => Promise<void>;
   submitNote: (suttaId: string, text: string) => Promise<void>;
   setHighlightRanges: (suttaId: string, ranges: { i: number; s: number; e: number }[], color: string | null) => Promise<void>;
-  removeHighlights: (suttaId: string, ids: string[]) => Promise<void>;
   markVisited: (suttaId: string) => void;
   syncUserData: () => Promise<void>;
 }
@@ -52,7 +51,6 @@ const EMPTY: UserDataState = {
   addToList: async () => {},
   submitNote: async () => {},
   setHighlightRanges: async () => {},
-  removeHighlights: async () => {},
   markVisited: () => {},
   syncUserData: async () => {},
 };
@@ -367,15 +365,6 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     [user, promptGoogleSignIn, mutateThenSync]
   );
 
-  const removeHighlights = useCallback(
-    async (suttaId: string, ids: string[]) => {
-      const idSet = new Set(ids);
-      setHighlights((hs) => ({ ...hs, [suttaId]: (hs[suttaId] || []).filter((h) => !idSet.has(h.id)) }));
-      await mutateThenSync('remove highlights', () => Promise.all(ids.map((id) => highlightsApi.remove(id))));
-    },
-    [mutateThenSync]
-  );
-
   // The server bumps visitedAt (and so "Recent"'s order) on every call, not just the first visit
   // (see PUT /api/visited/:suttaId), so the optimistic update mirrors that here too — otherwise
   // "Recent" only reflects a mark taken this session after the next unrelated syncUserData call,
@@ -423,7 +412,6 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       addToList,
       submitNote,
       setHighlightRanges,
-      removeHighlights,
       markVisited,
       syncUserData,
     }),
@@ -445,7 +433,6 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       addToList,
       submitNote,
       setHighlightRanges,
-      removeHighlights,
       markVisited,
       syncUserData,
     ]

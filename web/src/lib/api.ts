@@ -1,11 +1,32 @@
 import type { Highlight, ListDef, ListKind, Membership, NotesMap, HighlightsMap, VisitedMap, User } from './types';
 
+// Deliberately generous: this is the "the connection is dead" backstop, not a latency budget.
+// /api/data carries the user's whole dataset, so a genuinely slow mobile connection can legitimately
+// take a while — timing out early would turn a slow-but-fine request into a failure, and every
+// failed mutation triggers a full resync (see UserDataContext), making things worse rather than
+// better. Without any timeout at all, though, a stalled connection hangs for the browser's own
+// default (minutes), leaving mutations unsettled and their in-progress UI stuck with them.
+const REQUEST_TIMEOUT_MS = 30_000;
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`/api${path}`, {
-    credentials: 'include',
-    headers: init?.body ? { 'Content-Type': 'application/json' } : undefined,
-    ...init,
-  });
+  let res: Response;
+  try {
+    res = await fetch(`/api${path}`, {
+      credentials: 'include',
+      headers: init?.body ? { 'Content-Type': 'application/json' } : undefined,
+      ...init,
+      // After the spread, so the timeout always applies — no call site passes a signal of its own
+      // today, and one silently replacing this would reintroduce the unbounded hang.
+      signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+    });
+  } catch (err) {
+    // Surfaces as a legible message in the failure logs every mutator writes, rather than the
+    // bare "signal timed out" DOMException.
+    if (err instanceof DOMException && err.name === 'TimeoutError') {
+      throw new Error(`Request timed out after ${REQUEST_TIMEOUT_MS / 1000}s`);
+    }
+    throw err;
+  }
   if (!res.ok) {
     let error = `Request failed (${res.status})`;
     try {
@@ -62,7 +83,6 @@ export const notesApi = {
 export const highlightsApi = {
   setRanges: (suttaId: string, ranges: { i: number; s: number; e: number }[], color: string | null) =>
     request<{ ok: true }>('/highlights/ranges', { method: 'PUT', body: JSON.stringify({ suttaId, ranges, color }) }),
-  remove: (id: string) => request<{ ok: true }>(`/highlights/${encodeURIComponent(id)}`, { method: 'DELETE' }),
 };
 
 export const visitedApi = {

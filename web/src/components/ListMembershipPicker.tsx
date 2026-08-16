@@ -36,6 +36,12 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
   const [activeIndex, setActiveIndex] = useState(0);
   const [nestingParent, setNestingParent] = useState<ListDef | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  // Guards the create path against a double-tap (or a held Enter) while the POST is still out.
+  // createList() dedupes by label against `lists`, which can't yet contain a list whose create
+  // hasn't returned — so on a slow connection the second activation sails past that check and
+  // creates a duplicate. A ref, not state: this only needs to suppress the redundant call, and
+  // re-rendering the row mid-create would fight the input's own focus handling.
+  const creatingRef = useRef(false);
 
   useEffect(() => {
     if (autoFocus) inputRef.current?.focus();
@@ -136,6 +142,11 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       toggleMembership(suttaId, row.option.list.id);
       return;
     }
+    // Only the create path is guarded — toggleMembership above is idempotent server-side
+    // (ADD_ITEM_SQL/REMOVE_ITEM_SQL in routes/lists.js), and tapping a membership row twice is a
+    // legitimate on-then-off, not something to swallow.
+    if (creatingRef.current) return;
+    creatingRef.current = true;
     const isGroup = row.type === 'create-top-group' || row.type === 'create-nested-group';
     const parentId = row.type === 'create-nested-list' || row.type === 'create-nested-group' ? row.parentId : null;
     try {
@@ -144,6 +155,8 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       if (!isGroup) await addToList(suttaId, list);
     } catch {
       // Signed out: createList() already triggered the Google sign-in prompt.
+    } finally {
+      creatingRef.current = false;
     }
     setDraft('');
     setNestingParent(null);
