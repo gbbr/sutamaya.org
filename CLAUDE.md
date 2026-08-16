@@ -86,9 +86,9 @@ writes:
   suttas on suttacentral.net (`<a href='https://suttacentral.net/...'>`) are stripped down to
   their plain text at build time (`cleanNote()`) rather than kept live, since a link off to the
   actual website doesn't belong in an offline-first reader.
-- `web/public/data/dictionary.json` and **`data/pli2en_dpd_map.json`** — the DPD dictionary
-  reshaped from a `[{entry, definition}]` array into a `{entry: definition[]}` object for O(1)
-  lookup. The `data/` copy is kept as a reusable artifact alongside the source list.
+- `web/public/data/dictionary.json` — the DPD dictionary reshaped from a
+  `[{entry, definition}]` array (`data/pli2en_dpd.json`) into a `{entry: definition[]}` object for
+  O(1) lookup.
 - `web/public/data/text-shards/*.json` and `text-shards/manifest.json` — the same per-sutta text
   as `text/{uid}.json` above, repacked into ~1MB bundles (`SHARD_TARGET_BYTES`) for Settings'
   "Download all suttas for offline" bulk fetch (`web/src/lib/offline.ts`) — see "Offline

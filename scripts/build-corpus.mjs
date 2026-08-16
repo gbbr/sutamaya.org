@@ -310,7 +310,6 @@ const dpdList = readJSON(path.join(DATA, 'pli2en_dpd.json'));
 const dpdMap = {};
 for (const { entry, definition } of dpdList) dpdMap[entry] = definition;
 const dpdJson = JSON.stringify(dpdMap);
-fs.writeFileSync(path.join(DATA, 'pli2en_dpd_map.json'), dpdJson);
 fs.writeFileSync(path.join(OUT, 'dictionary.json'), dpdJson);
 console.log(`  ${dpdList.length} headwords`);
 
