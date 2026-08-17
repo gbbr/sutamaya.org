@@ -184,9 +184,41 @@ export const RULES = [
   },
   // ── Segment overrides ───────────────────────────────────────────────────────
   // These run last, over the term rules' output — so `from` is the post-processed text, not
-  // upstream's. Each is a place where sati-aware's "mindfully" → "with awareness" lands in a word
+  // upstream's. Most are places where sati-aware's "mindfully" → "with awareness" lands in a word
   // order English won't take; the phrase is fine, it just has to move. `segments: [...]` is for a
   // line the corpus repeats verbatim, where one from/to is the whole decision.
+  //
+  // The three samudaya ones are a different case: the term rule is right to leave the noun
+  // "origination" alone (26 of its 30 segments are sambhava, not samudaya — see
+  // samudaya-arising's why), and these four lines are the exception it can't express.
+  {
+    id: 'samudaya-exclamation-arising',
+    kind: 'segment',
+    why: '‘Samudayo, samudayo’ — the awakening exclamation, paired with ‘Nirodho, nirodho’ ' +
+      '(“Cessation, cessation”) a few lines later. Sujato reaches for the noun "origination" only ' +
+      'here, so samudaya-arising doesn’t catch it, and the line ends up contradicting its own ' +
+      'sutta: sn12.65:3.7 already reads "this entire mass of suffering arises" and 8.6 "their ' +
+      'arising".',
+    segments: ['sn12.10:4.4', 'sn12.65:3.8'],
+    from: '‘Origination, origination.’ Such was the vision, knowledge, wisdom, realization, and light that arose in me regarding teachings not learned before from another. ',
+    to: '‘Arising, arising.’ Such was the vision, knowledge, wisdom, realization, and light that arose in me regarding teachings not learned before from another. ',
+  },
+  {
+    id: 'samudaya-exclamation-arising-vipassi',
+    kind: 'segment',
+    why: 'samudaya-exclamation-arising’s line, as sn12.4 tells it of Vipassī.',
+    segment: 'sn12.4:13.4',
+    from: '‘Origination, origination.’ While Vipassī was intent on awakening, such was the vision, knowledge, wisdom, realization, and light that arose in him regarding teachings not learned before from another. ',
+    to: '‘Arising, arising.’ While Vipassī was intent on awakening, such was the vision, knowledge, wisdom, realization, and light that arose in him regarding teachings not learned before from another. ',
+  },
+  {
+    id: 'samudaya-exclamation-arising-dn14',
+    kind: 'segment',
+    why: 'samudaya-exclamation-arising’s line, as DN 14 tells it of Vipassī.',
+    segment: 'dn14:2.19.6',
+    from: '‘Origination, origination.’ Such was the vision, knowledge, wisdom, realization, and light that arose in Vipassī, the one intent on awakening, regarding teachings not learned before from another. ',
+    to: '‘Arising, arising.’ Such was the vision, knowledge, wisdom, realization, and light that arose in Vipassī, the one intent on awakening, regarding teachings not learned before from another. ',
+  },
   {
     id: 'enter-with-awareness',
     kind: 'segment',
