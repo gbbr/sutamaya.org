@@ -86,7 +86,7 @@ describe('reader deep link into an already-visited batched document', () => {
       )
     );
 
-    vi.mocked(useCorpus).mockReturnValue({ corpus: buildCorpus(), dictionary: null, loading: false, error: false, retry: vi.fn() });
+    vi.mocked(useCorpus).mockReturnValue({ corpus: buildCorpus(), dictionary: null, loading: false, error: false, retry: vi.fn(), retryDictionary: vi.fn() });
     vi.mocked(useUserData).mockReturnValue(userDataDefaults);
     vi.mocked(useAuth).mockReturnValue({
       user: null,
