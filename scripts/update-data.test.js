@@ -8,7 +8,7 @@ import { runCheck } from './update-data-check.mjs';
 import { runCopy } from './update-data-copy.mjs';
 import { runPost } from './update-data-post.mjs';
 import { runSnapshot } from './update-data-snapshot.mjs';
-import { applyRuleToChunks, applyTermRules, applySegmentOverride, isPermitted, chunksToString, loadRules, loadSidecar, isTermRule, isSegmentRule, segmentsOf, RETRANSLATION_PATH } from './lib/retranslation.js';
+import { applyRuleToChunks, applyTermRules, applySegmentOverride, isPermitted, chunksToString, loadRules, loadSidecar, isTermRule, isSegmentRule, segmentsOf, scopeOf, RETRANSLATION_PATH } from './lib/retranslation.js';
 
 // Everything here runs against throwaway temp-dir fixtures, never the real data/{sujato,pali,html}
 // or a real SC_DATA_PATH checkout — check/copy/post/snapshot all accept explicit dataDirs/
@@ -213,6 +213,17 @@ describe('applyRuleToChunks / applyTermRules — the retranslation engine', () =
     expect(applyTermRules('aware', { treeName: 'sujato/sutta', segmentId: 's:2', rules: [rule], sidecars }).result).toBe('aware');
   });
 
+  it('never touches sujato/notes, whatever a rule asks for', () => {
+    const rule = { id: 'test-notes', mode: 'deny', forms: [['mindful', 'aware']] };
+    const sidecars = new Map();
+    const run = (treeName) => applyTermRules('be mindful', { treeName, segmentId: 's:1', rules: [rule], sidecars }).result;
+    expect(run('sujato/sutta')).toBe('be aware');
+    expect(run('sujato/notes')).toBe('be mindful');
+    // And a rule that names notes explicitly is a load-time error, so the policy can't be
+    // half-undone by one rule opting back in.
+    expect(scopeOf(rule)).not.toContain('sujato/notes');
+  });
+
   it('a rule is skipped outside its scope', () => {
     const rule = { id: 'test-scoped', mode: 'deny', scope: ['sujato/sutta'], forms: [['aware', 'understanding']] };
     const sidecars = new Map();
@@ -233,9 +244,9 @@ describe('the shipped rules, one example each', () => {
     // own and leave "awareness meditation" behind.
     ['satipatthana-establishment-of-awareness', 'sn52.1:1.4', 'sujato/sutta', 'missed out on these four kinds of mindfulness meditation', 'missed out on these four establishments of awareness'],
     ['satipatthana-establishment-of-awareness', 'dn22:0.2', 'sujato/sutta', 'The Longer Discourse on Mindfulness Meditation', 'The Longer Discourse on the Establishment of Awareness'],
-    // Out of scope: the note argues for the rendering this rule reverses, so it keeps Sujato's own
-    // words (sati-aware still has its "mindfulness", which is what leaves "awareness meditation").
-    ['satipatthana-establishment-of-awareness', 'mn10:1.1', 'sujato/notes', 'i.e. “mindfulness meditation” or simply “meditation”', 'i.e. “awareness meditation” or simply “meditation”'],
+    // No rule reaches a note, so MN 10's — which argues for the very rendering this one reverses —
+    // stays word for word as Sujato wrote it.
+    ['satipatthana-establishment-of-awareness', 'mn10:1.1', 'sujato/notes', 'i.e. “mindfulness meditation” or simply “meditation”', 'i.e. “mindfulness meditation” or simply “meditation”'],
     ['sati-aware', 'sn9.1:3.1', 'sujato/sutta', 'Give up discontent; be mindful;', 'Give up discontent; be aware;'],
     // "mindfully" needs more than the word swapped, hence the phrase.
     ['sati-aware', 'an6.29:11.3', 'sujato/sutta', 'a mendicant goes out mindfully, returns mindfully', 'a bhikkhu goes out with awareness, returns with awareness'],
@@ -246,7 +257,8 @@ describe('the shipped rules, one example each', () => {
     ['sampajanna-understanding', 'sn54.10:5.5', 'sujato/sutta', 'keen, aware, and mindful', 'keen, understanding, and aware'],
     // Denied: plain-English "aware", introducing a perception rather than rendering sampajañña.
     ['sampajanna-understanding', 'an1.451:1.1', 'sujato/sutta', 'aware that ‘consciousness is infinite’', 'aware that ‘consciousness is infinite’'],
-    // Out of scope: sujato/notes keeps Sujato's own gloss of citta.
+    // Same, for a term whose English is ordinary English in Sujato's own prose: his gloss of citta
+    // is left alone, where "awareness" → "understanding" would have made nonsense of it.
     ['sampajanna-understanding', 'dn22:1.11', 'sujato/notes', '“Mind” (citta) is simple awareness.', '“Mind” (citta) is simple awareness.'],
     ['samudaya-arising', 'sn56.11:4.3', 'sujato/sutta', 'the noble truth of the origin of suffering', 'the noble truth of the arising of suffering'],
     // Denied: aggañña, how the world began.
@@ -719,13 +731,18 @@ describe('update-data pipeline (fixture)', () => {
     const { ok, filesChanged, replacements } = await runPost({ retranslationPath: fx.retranslationPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir });
 
     expect(ok).toBe(true);
-    expect(filesChanged).toBe(4);
+    // blurb, name and sutta — not the notes file, which no rule may touch.
+    expect(filesChanged).toBe(3);
     expect(replacements).toBeGreaterThan(0);
     expect(readJson(path.join(fx.postDir, 'sutta/dn/dn1_translation-en-sujato.json'))).toEqual({
       'dn1:1.1': 'The bhikkhu practiced concentration.',
       'dn1:1.2': 'A water immerser is different.',
     });
     expect(readJson(path.join(fx.postDir, 'name/dn-name_translation-en-sujato.json'))['dn-name:1.dn1']).toBe('The Bhikkhus Sutta');
+    // The note is copied through verbatim, terms and all — see "Notes are never retranslated".
+    expect(readJson(path.join(fx.postDir, 'notes/dn/dn1_comment-en-sujato.json'))).toEqual(
+      FIXTURE_FILES['sujato/notes/dn/dn1_comment-en-sujato.json'].content,
+    );
     // data/sujato itself is untouched — post only ever writes postDir.
     expect(readJson(path.join(fx.dataDirs.sujato, 'sutta/dn/dn1_translation-en-sujato.json'))).toEqual(
       FIXTURE_FILES['sujato/sutta/dn/dn1_translation-en-sujato.json'].content,
@@ -805,9 +822,10 @@ describe('update-data pipeline (fixture)', () => {
 
     const counts = readJson(countsPath);
     // FIXTURE_FILES contains "mendicant"(s) 4 times (blurb, name, sutta, notes) and "immersion" 3
-    // times (blurb, sutta, notes) — see FIXTURE_FILES above.
-    expect(counts.rules['mendicant-bhikkhu']).toBe(4);
-    expect(counts.rules['immersion-concentration']).toBe(3);
+    // times (blurb, sutta, notes) — see FIXTURE_FILES above. The notes occurrence of each doesn't
+    // count: no rule reaches sujato/notes.
+    expect(counts.rules['mendicant-bhikkhu']).toBe(3);
+    expect(counts.rules['immersion-concentration']).toBe(2);
   });
 
   describe('check: retranslation rule anchors', () => {

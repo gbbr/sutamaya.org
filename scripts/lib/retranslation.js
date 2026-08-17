@@ -12,9 +12,20 @@ export const RETRANSLATION_PATH = path.join(ROOT, 'scripts', 'update-data', 'ret
 export const RULES_DIR = path.join(ROOT, 'scripts', 'update-data', 'rules');
 export const COUNTS_PATH = path.join(ROOT, 'scripts', 'update-data', 'retranslation.counts.json');
 
-// The four sujato trees a rule's `scope` can name — matches CATEGORY_SOURCE_PREFIXES's sujato/*
-// entries in lib/dataSync.js. Defaulted to all four when a rule has no explicit `scope`.
+// The four sujato trees post copies — matches CATEGORY_SOURCE_PREFIXES's sujato/* entries in
+// lib/dataSync.js.
 export const SUJATO_TREES = ['sujato/sutta', 'sujato/notes', 'sujato/name', 'sujato/blurb'];
+
+// The three a rule may rewrite, and the default scope. **sujato/notes is never retranslated**: a
+// note is Sujato writing *about* the text rather than translating it, so he quotes his own
+// renderings and uses the same words as ordinary English, and a rule that is right on the
+// translation is routinely wrong there — "mindfulness and awareness" (satisampajañña) collapsing to
+// "awareness and awareness", "its gradual disappearance" becoming "its gradual disappearing",
+// "mindfully lay down to rest" becoming "with awareness lay down to rest". A note can't be
+// corrected by hand either, since a segment override resolves through sutta-only ids (see
+// buildSegmentIndex). Naming it in a `scope` is rejected rather than ignored, so the policy can't
+// be half-undone by one rule.
+export const RETRANSLATABLE_TREES = ['sujato/sutta', 'sujato/name', 'sujato/blurb'];
 
 // Loads the rules array from retranslation.mjs, read as text and imported via a data: URL rather
 // than `import('file://...')` — the file's own content decides freshness (no ESM module-cache
@@ -58,6 +69,11 @@ export async function loadRules(retranslationPath = RETRANSLATION_PATH) {
       if (rule.mode !== 'allow' && rule.mode !== 'deny') {
         throw new Error(`Term rule "${rule.id}" needs mode: 'allow' | 'deny'.`);
       }
+      for (const tree of rule.scope ?? []) {
+        if (!RETRANSLATABLE_TREES.includes(tree)) {
+          throw new Error(`Term rule "${rule.id}" scopes ${tree}, which is not retranslatable (see RETRANSLATABLE_TREES).`);
+        }
+      }
     }
   }
   return rules;
@@ -77,9 +93,9 @@ export function segmentsOf(rule) {
   return rule.segment ? [rule.segment] : [];
 }
 
-// A term rule's own trees, defaulting to all four sujato/* categories.
+// A term rule's own trees, defaulting to every tree a rule may rewrite.
 export function scopeOf(rule) {
-  return rule.scope && rule.scope.length ? rule.scope : SUJATO_TREES;
+  return rule.scope && rule.scope.length ? rule.scope : RETRANSLATABLE_TREES;
 }
 
 export function sidecarPath(ruleId, rulesDir = RULES_DIR) {

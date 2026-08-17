@@ -64,13 +64,8 @@ export const RULES = [
       'establishments of awareness", and the bare singular carries its own article ("the ' +
       'establishment of awareness") since English will not take it without one; the two ' +
       'preposition forms exist so a title keeps that article lowercase ("The Longer Discourse on ' +
-      'the Establishment of Awareness"). Skips sujato/notes: MN 10\'s and DN 22\'s notes are ' +
-      'Sujato explaining the very choice this rule reverses ("satipaṭṭhāna refers especially to a ' +
-      'conscious development of contemplative practices based on mindfulness, i.e. \'mindfulness ' +
-      'meditation\'"), which rewritten reads as its own tautology, and a note arguing for a ' +
-      'rendering is better left saying what he said.',
+      'the Establishment of Awareness").',
     mode: 'deny',
-    scope: ['sujato/sutta', 'sujato/name', 'sujato/blurb'],
     predicate: /satipaṭṭhān/i,
     forms: [
       ['kinds of mindfulness meditation', 'establishments of awareness'],
@@ -105,12 +100,8 @@ export const RULES = [
     why: 'Sujato renders sampajañña as "situational awareness"/"awareness"/"aware"; this app ' +
       'prefers "understanding". Closed, because plain-English "aware" is common and unrelated — ' +
       'the formless attainments alone account for ~150 segments of "aware that ‘space is ' +
-      'infinite’", which translates iti, not sampajañña. Skips sujato/notes, which shares its ' +
-      'segment ids with sujato/sutta and so can\'t be decided separately: Sujato\'s notes use ' +
-      '"awareness" freely for citta, viññāṇa and saññā ("‘Mind’ (citta) is simple awareness"), and ' +
-      'a note that explains his choice of word is better left saying what he said.',
+      'infinite’", which translates iti, not sampajañña.',
     mode: 'allow',
-    scope: ['sujato/sutta', 'sujato/blurb'],
     predicate: /sampajañ|sampajān/i,
     forms: [
       ['situational awareness', 'understanding'],
@@ -136,13 +127,10 @@ export const RULES = [
       '"arising", pairing it with atthaṅgama as "disappearing". Open: the exclusions are ' +
       'paṭiccasamuppanna ("dependently originated"), aggañña ("the origin of the world"), and a ' +
       'handful of other -sambhava/-samuṭṭhāna compounds. Deliberately leaves "source" (77 ' +
-      'segments of samudaya) alone: an open rule can\'t safely claim a word that ordinary ' +
-      'English uses as freely as that one — and skips sujato/notes for the same reason, since ' +
-      '"origin story", "origin myth" and "a humble origin" are all Sujato writing plain English ' +
-      'about the text rather than translating it (and notes can\'t be excluded by id, sharing ' +
-      'theirs with sujato/sutta).',
+      'segments of samudaya) alone, and the noun "origination" with it: an open rule can\'t safely ' +
+      'claim words that ordinary English uses as freely as those, and "origination" is sambhava ' +
+      'four times out of five ("there is no origination of suffering") besides.',
     mode: 'deny',
-    scope: ['sujato/sutta', 'sujato/blurb'],
     predicate: /samuday|samudet/i,
     forms: [
       ['origin', 'arising'],
