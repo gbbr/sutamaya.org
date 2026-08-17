@@ -13,7 +13,12 @@ import { emptyMirror, type MirrorState } from './mirror';
 // is exactly what the app did before the mirror existed, rather than failing outright.
 
 const DB_NAME = 'sutamaya';
-const DB_VERSION = 1;
+// Bump this whenever MirrorState's shape changes. A record persisted under an older shape isn't
+// valid input for code written against the new one — see onupgradeneeded, which wipes rather than
+// migrates it, which is safe because the mirror is a cache: the server is the durable copy, so
+// losing it costs only a re-pull (and, for anything still dirty, replaying whatever local edits
+// hadn't synced yet).
+const DB_VERSION = 2;
 const STORE = 'mirrors';
 
 const memory = new Map<string, MirrorState>();
@@ -31,7 +36,10 @@ function openDb(): Promise<IDBDatabase | null> {
       return resolve(null);
     }
     request.onupgradeneeded = () => {
-      if (!request.result.objectStoreNames.contains(STORE)) request.result.createObjectStore(STORE, { keyPath: 'userId' });
+      // A version bump means the shape changed since whatever wrote the existing store — delete
+      // and recreate rather than keep rows a newer MirrorState wasn't written to read.
+      if (request.result.objectStoreNames.contains(STORE)) request.result.deleteObjectStore(STORE);
+      request.result.createObjectStore(STORE, { keyPath: 'userId' });
     };
     request.onsuccess = () => resolve(request.result);
     // Blocked, disabled, or out of quota — fall back to memory rather than leaving the app with no
