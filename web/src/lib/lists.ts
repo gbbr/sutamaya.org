@@ -68,23 +68,6 @@ export function suttaRowMeta(ids: Iterable<string>, membership: Membership, high
   return map;
 }
 
-// Pure reducer for UserDataContext's reorderLists optimistic local update — pulled out so the
-// logic that mirrors the server's own PUT /order handler (setting `parentId` on every id in
-// `order` unconditionally, not just position) is directly testable. That mirroring is what lets
-// useListTreeDrag's commitDrop fold a cross-parent drop into this one call instead of a separate
-// setListParent first (see planListDrop in lib/listTreeDrop.ts) — the fix for a real shipped bug
-// (a55e1ecc) where two sequential calls produced a visible two-step "jump" on drop.
-export function applyListReorder(lists: ListDef[], parentId: string | null, order: string[]): ListDef[] {
-  const orderIndex = new Map(order.map((id, idx) => [id, idx]));
-  const inOrder = new Set(order);
-  const siblings = lists
-    .filter((l) => inOrder.has(l.id))
-    .map((l) => (l.parentId === parentId ? l : { ...l, parentId }))
-    .sort((a, b) => (orderIndex.get(a.id) ?? 0) - (orderIndex.get(b.id) ?? 0));
-  const others = lists.filter((l) => !inOrder.has(l.id));
-  return [...others, ...siblings];
-}
-
 // Same idea as corpus.ts's ancestorsOf, for TreePane's "My lists" tree: every ancestor list id
 // (by `parentId` chain) that needs to be open for `nodeId` — a list itself, e.g. from a
 // membership chip's /browse/{list_id} navigation — to be visible, plus `nodeId` itself so a list

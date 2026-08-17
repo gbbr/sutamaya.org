@@ -12,7 +12,7 @@ export function isRetryable(status: number | undefined): boolean {
 // Duck-typed rather than `instanceof ApiError` deliberately: importing the class here would couple
 // this module to api.ts, and every test that mocks '../lib/api' wholesale (AuthContext,
 // UserDataContext) would need to know to re-export it. A `status` field is all this needs.
-function statusOf(err: unknown): number | undefined {
+export function statusOf(err: unknown): number | undefined {
   const status = (err as { status?: unknown } | null)?.status;
   return typeof status === 'number' ? status : undefined;
 }

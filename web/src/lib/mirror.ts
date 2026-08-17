@@ -1,0 +1,473 @@
+import { displacedGroupIds, type HlRange } from './highlights';
+import { AUTO_LIST_IDS } from './autoLists';
+import { highlightRowsFor } from './mirrorView';
+import { nextMtime } from './mtime';
+import { randomId } from './ids';
+import type { UserData } from './api';
+import type { ListKind } from './types';
+
+// The offline mirror: every list, note, highlight and visit this account has, as the client's own
+// durable copy rather than a cache of the last server response. Mutators here write to it and mark
+// what they touched dirty; lib/sync.ts pushes the dirty parts and applies the server's snapshot
+// back; lib/mirrorView.ts derives the shape the UI renders. Nothing in this module talks to the
+// network, and every function is a pure state transition — the one deliberate exception being that
+// mutators call nextMtime()/randomId(), because a write's timestamp and identity have to be minted
+// *when the user acts*, not when the flush eventually reaches the network. That distinction is the
+// whole point of the design (see offline-sync.md).
+//
+// Two kinds of pending work, and the split is deliberate:
+//
+// - **Records** are desired state. A list, a note, a visit, a highlight group: the flush pushes
+//   what should be true, so replaying it means the same thing an hour later as it did when the
+//   user acted.
+// - **Ops** are the exception, for everything that edits a list's `items`. Add, remove and reorder
+//   are already idempotent and commuting server-side, so they replay as they are — and keeping
+//   them as operations is what lets two devices each file a different sutta into the same list
+//   and have both stick, instead of one `items` array overwriting the other.
+
+export interface ListRecord {
+  id: string;
+  label: string;
+  parentId: string | null;
+  kind: ListKind;
+  items: string[];
+  // Orders siblings (rows sharing a parent), not the whole set, and is routinely negative: a new
+  // list is prepended, not appended (see firstPosition).
+  position: number;
+  mtime: string;
+  // A tombstone, not a removal: a list dropped from the mirror outright would come straight back
+  // on the next pull if the delete hadn't been pushed yet, and its descendants would be re-homed
+  // to the root in the meantime instead of going with it.
+  deleted: boolean;
+  // True until POST /lists has landed for this row — the flush needs to know whether to create the
+  // row or patch it, and a client-minted id is exactly what makes that knowable offline.
+  pendingCreate: boolean;
+}
+
+export interface NoteRecord {
+  suttaId: string;
+  // Blank means cleared. The server tombstones a blank note rather than storing it, and the mirror
+  // keeps the empty record for the same reason: it is what loses the merge against a stale device
+  // pushing the note's old body back.
+  text: string;
+  mtime: string;
+}
+
+// One immutable highlight group, keyed by the `g` the client minted when the user picked the
+// colour. `erase` names the groups this write displaces — worked out on the device where the user
+// acted, so the server never has to infer it from rows that may have changed since. A pure erase
+// is `color: null` with a non-empty `erase` and no rows of its own.
+export interface HighlightRecord {
+  g: string;
+  suttaId: string;
+  ranges: HlRange[];
+  color: string | null;
+  erase: string[];
+  mtime: string;
+}
+
+export interface VisitedRecord {
+  suttaId: string;
+  visitedAt: string;
+}
+
+export type RecordKind = 'list' | 'note' | 'highlight' | 'visited';
+
+export interface Stored<T> {
+  // Set by a local mutation, cleared once the server has acknowledged that exact version (see
+  // lib/sync.ts). Everything dirty survives a pull unchanged — it is work the snapshot hasn't
+  // seen yet.
+  dirty: boolean;
+  data: T;
+}
+
+// A queued edit to one list's `items`. `seq` is a per-mirror counter, so ops replay in the order
+// the user made them rather than in whatever order a map iterates.
+export type QueuedOp =
+  | { id: string; seq: number; type: 'add'; listId: string; suttaId: string }
+  | { id: string; seq: number; type: 'remove'; listId: string; suttaId: string }
+  | { id: string; seq: number; type: 'order'; listId: string; order: string[]; mtime: string };
+
+export interface MirrorState {
+  // Whose mirror this is. Persisted with it and checked on every save, so a session that signs
+  // out and back in as someone else can't write one account's records under the other's key.
+  userId: string | null;
+  lists: Record<string, Stored<ListRecord>>;
+  notes: Record<string, Stored<NoteRecord>>;
+  highlights: Record<string, Stored<HighlightRecord>>;
+  visited: Record<string, Stored<VisitedRecord>>;
+  ops: QueuedOp[];
+  nextSeq: number;
+}
+
+export function emptyMirror(userId: string | null = null): MirrorState {
+  return { userId, lists: {}, notes: {}, highlights: {}, visited: {}, ops: [], nextSeq: 1 };
+}
+
+// Position for a newly created list: one less than its lowest sibling, seeded at 1 so an empty
+// parent yields 0. Mirrors lib/listPositions.js's firstPosition (and the SQL reproduction of it in
+// CREATE_LIST_SQL), so a list created offline lands where the server would have put it.
+function firstPosition(positions: number[]): number {
+  return positions.reduce((min, p) => Math.min(min, p ?? 0), 1) - 1;
+}
+
+function withList(state: MirrorState, id: string, record: Stored<ListRecord> | null): MirrorState {
+  const lists = { ...state.lists };
+  if (record) lists[id] = record;
+  else delete lists[id];
+  return { ...state, lists };
+}
+
+// Applies `change` to a live list record and marks it dirty. A missing (or already tombstoned)
+// row is left alone — there is nothing to edit and nothing to push.
+function editList(state: MirrorState, id: string, change: Partial<ListRecord>): MirrorState {
+  const current = state.lists[id];
+  if (!current || current.data.deleted) return state;
+  return withList(state, id, { dirty: true, data: { ...current.data, ...change, mtime: nextMtime() } });
+}
+
+// `id` is minted by the caller rather than here, so the list it creates has its final identity
+// before this returns — the caller hands that same ListDef straight back to the UI without having
+// to read it out of the state it just queued.
+export function createListRecord(
+  state: MirrorState,
+  { id, label, parentId, kind }: { id: string; label: string; parentId: string | null; kind: ListKind }
+): MirrorState {
+  const siblings = Object.values(state.lists)
+    .filter((l) => !l.data.deleted && l.data.parentId === parentId)
+    .map((l) => l.data.position);
+  const record: ListRecord = {
+    id,
+    label,
+    parentId,
+    kind,
+    items: [],
+    position: firstPosition(siblings),
+    mtime: nextMtime(),
+    deleted: false,
+    pendingCreate: true,
+  };
+  return withList(state, record.id, { dirty: true, data: record });
+}
+
+export function renameListRecord(state: MirrorState, id: string, label: string): MirrorState {
+  return editList(state, id, { label });
+}
+
+export function setListParentRecord(state: MirrorState, id: string, parentId: string | null): MirrorState {
+  return editList(state, id, { parentId });
+}
+
+// One drag, one pass: every id in `order` takes its index as its position and `parentId` as its
+// parent, which is what folds a cross-parent drop into the same call as the reorder it arrived
+// with. Each row is still its own record with its own conditional write, so a list edited more
+// recently on another device keeps that edit rather than being dragged back by this reorder.
+export function reorderListRecords(state: MirrorState, parentId: string | null, order: string[]): MirrorState {
+  return order.reduce((acc, id, position) => editList(acc, id, { parentId, position }), state);
+}
+
+// Tombstones the list — except one that has never reached the server, which is dropped outright
+// along with anything queued against it. Pushing a create and then a delete for a row no device
+// has ever seen is pure noise, and the create landing after the delete would resurrect it.
+export function removeListRecord(state: MirrorState, id: string): MirrorState {
+  const current = state.lists[id];
+  if (!current) return state;
+  if (current.data.pendingCreate) {
+    return { ...withList(state, id, null), ops: state.ops.filter((op) => op.listId !== id) };
+  }
+  return editList(state, id, { deleted: true });
+}
+
+export function setNoteRecord(state: MirrorState, suttaId: string, text: string): MirrorState {
+  // Whitespace-only is stored as cleared, exactly as the server does (`text.trim() === ''`
+  // tombstones the row) — otherwise the mirror would show a note in the Notes auto-list that the
+  // server has no row for, and the divergence would only close on the next pull.
+  const stored = text.trim() ? text : '';
+  return {
+    ...state,
+    notes: { ...state.notes, [suttaId]: { dirty: true, data: { suttaId, text: stored, mtime: nextMtime() } } },
+  };
+}
+
+export function markVisitedRecord(state: MirrorState, suttaId: string): MirrorState {
+  // Re-marking whatever is already the most recent visit changes nothing anyone can see — "Recent"
+  // is ordered by exactly this — so it's skipped rather than churning the state reference and
+  // making every consumer keyed on it (the My Lists tree's lookup tables, ListPane's flatLists)
+  // rebuild for nothing. Revisiting a sutta *isn't* skipped: that's a real reordering.
+  const current = state.visited[suttaId];
+  if (current && Object.values(state.visited).every((v) => v.data.visitedAt <= current.data.visitedAt)) return state;
+  return {
+    ...state,
+    visited: { ...state.visited, [suttaId]: { dirty: true, data: { suttaId, visitedAt: nextMtime() } } },
+  };
+}
+
+// One highlight write: a new group over `ranges` (or nothing at all, for a plain erase), plus the
+// groups it displaces. A group is immutable, so a recolour is a tombstone and a brand new group,
+// never an update — which is what makes the write safe to replay.
+export function writeHighlightRecord(
+  state: MirrorState,
+  suttaId: string,
+  ranges: HlRange[],
+  color: string | null
+): MirrorState {
+  const displaced = displacedGroupIds(highlightRowsFor(state, suttaId), ranges);
+  const highlights = { ...state.highlights };
+  const erase: string[] = [];
+  for (const g of displaced) {
+    const record = highlights[g];
+    // A group created and then erased before either ever synced drops out entirely rather than
+    // pushing a create followed by a tombstone: the tombstone's `WHERE g = ?` matches nothing if it
+    // somehow lands first, and the create then resurrects a highlight the user already erased.
+    // Its own tombstones have to come along, though — a recolour made offline and then undone
+    // offline still has to retire the group it displaced, which the server does still hold.
+    if (record?.dirty) erase.push(...record.data.erase);
+    else erase.push(g);
+    delete highlights[g];
+  }
+  const pushable = [...new Set(erase)];
+  if (!color && !pushable.length) return { ...state, highlights };
+  const g = randomId();
+  highlights[g] = { dirty: true, data: { g, suttaId, ranges, color, erase: pushable, mtime: nextMtime() } };
+  return { ...state, highlights };
+}
+
+// The op minus the identity the queue gives it. Spelled out rather than derived with Omit, which
+// distributes over the union into a shape none of the three members actually has.
+type NewOp =
+  | { type: 'add'; listId: string; suttaId: string }
+  | { type: 'remove'; listId: string; suttaId: string }
+  | { type: 'order'; listId: string; order: string[]; mtime: string };
+
+function nextOp(state: MirrorState, op: NewOp): MirrorState {
+  return {
+    ...state,
+    ops: [...state.ops, { ...op, id: randomId(), seq: state.nextSeq } as QueuedOp],
+    nextSeq: state.nextSeq + 1,
+  };
+}
+
+// Adds or removes one sutta in one list, locally and as a queued op. Two pending ops for the same
+// pair that undo each other cancel: the local items array is then back to what the server already
+// has, so there is nothing left to push.
+export function queueMembership(state: MirrorState, listId: string, suttaId: string, add: boolean): MirrorState {
+  const current = state.lists[listId];
+  if (!current) return state;
+  const items = add
+    ? current.data.items.includes(suttaId)
+      ? current.data.items
+      : [...current.data.items, suttaId]
+    : current.data.items.filter((s) => s !== suttaId);
+  // Item membership isn't part of the record's own conditional write, so this doesn't touch mtime
+  // or the dirty flag — the queued op is what carries it.
+  const withItems = withList(state, listId, { ...current, data: { ...current.data, items } });
+  const pending = withItems.ops.filter(
+    (op) => op.type !== 'order' && op.listId === listId && op.suttaId === suttaId
+  );
+  const inverse = pending[pending.length - 1];
+  const rest = { ...withItems, ops: withItems.ops.filter((op) => !pending.includes(op)) };
+  if (inverse && inverse.type === (add ? 'remove' : 'add')) return rest;
+  return nextOp(rest, { type: add ? 'add' : 'remove', listId, suttaId });
+}
+
+// A list's own item order. Queued rather than folded into the record because it edits the same
+// `items` column the add/remove ops do — and the server reconciles a posted order against whatever
+// is actually stored, so an id another device added since is appended rather than dropped.
+export function queueItemOrder(state: MirrorState, listId: string, order: string[]): MirrorState {
+  const current = state.lists[listId];
+  if (!current) return state;
+  const withItems = withList(state, listId, { ...current, data: { ...current.data, items: order } });
+  // Only the latest order matters — an earlier one it supersedes would just be overwritten.
+  const superseded = { ...withItems, ops: withItems.ops.filter((op) => !(op.type === 'order' && op.listId === listId)) };
+  return nextOp(superseded, { type: 'order', listId, order, mtime: nextMtime() });
+}
+
+function reconcileItems(current: string[], order: string[]): string[] {
+  const currentSet = new Set(current);
+  const reconciled = order.filter((id) => currentSet.has(id));
+  const reconciledSet = new Set(reconciled);
+  current.forEach((id) => {
+    if (!reconciledSet.has(id)) reconciled.push(id);
+  });
+  return reconciled;
+}
+
+// Replays the still-queued item ops over a freshly pulled `items` array, so a membership change
+// made offline doesn't blink out of the UI for as long as it takes to land.
+function replayOps(lists: Record<string, Stored<ListRecord>>, ops: QueuedOp[]): Record<string, Stored<ListRecord>> {
+  for (const op of ops) {
+    const target = lists[op.listId];
+    if (!target) continue;
+    const items = target.data.items;
+    const next =
+      op.type === 'add'
+        ? items.includes(op.suttaId)
+          ? items
+          : [...items, op.suttaId]
+        : op.type === 'remove'
+          ? items.filter((s) => s !== op.suttaId)
+          : reconcileItems(items, op.order);
+    lists[op.listId] = { ...target, data: { ...target.data, items: next } };
+  }
+  return lists;
+}
+
+// Folds a `GET /api/data` snapshot into the mirror: the server's version replaces every clean
+// record, clean records the snapshot doesn't mention are gone (deleted elsewhere, or cascaded out
+// by a deleted ancestor), and everything still dirty survives untouched — it is work the snapshot
+// was taken before seeing.
+export function applySnapshot(state: MirrorState, snapshot: UserData): MirrorState {
+  const lists: Record<string, Stored<ListRecord>> = {};
+  // The snapshot arrives already repaired and in sibling order but without positions of its own
+  // (the server drops them, along with mtime and the tombstones), so each row takes its index
+  // among its siblings. That keeps the order the server sent and gives a local reorder something
+  // to renumber.
+  const seen = new Map<string | null, number>();
+  for (const list of snapshot.lists) {
+    // The three auto-lists are synthesized, not rows — the mirror derives its own (see
+    // lib/mirrorView.ts) so they exist offline too.
+    if (list.auto || AUTO_LIST_IDS.has(list.id)) continue;
+    const parentId = list.parentId ?? null;
+    const position = seen.get(parentId) ?? 0;
+    seen.set(parentId, position + 1);
+    lists[list.id] = {
+      dirty: false,
+      data: {
+        id: list.id,
+        label: list.label,
+        parentId,
+        kind: list.kind,
+        items: list.items,
+        position,
+        // The server doesn't send a list's mtime, so a pulled row carries none. It is only ever
+        // read as the loser-picking tiebreak when two moves form a cycle — and a snapshot the
+        // server already repaired has none, so the only rows that can be in one are the locally
+        // moved ones, which do carry a real mtime.
+        mtime: '',
+        deleted: false,
+        pendingCreate: false,
+      },
+    };
+  }
+  for (const [id, record] of Object.entries(state.lists)) if (record.dirty) lists[id] = record;
+
+  const notes: Record<string, Stored<NoteRecord>> = {};
+  for (const [suttaId, text] of Object.entries(snapshot.notes)) {
+    notes[suttaId] = { dirty: false, data: { suttaId, text, mtime: '' } };
+  }
+  for (const [id, record] of Object.entries(state.notes)) if (record.dirty) notes[id] = record;
+
+  const visited: Record<string, Stored<VisitedRecord>> = {};
+  for (const [suttaId, visitedAt] of Object.entries(snapshot.visited)) {
+    visited[suttaId] = { dirty: false, data: { suttaId, visitedAt } };
+  }
+  for (const [id, record] of Object.entries(state.visited)) if (record.dirty) visited[id] = record;
+
+  // A group this device has erased but not yet pushed is still live on the server, so it comes
+  // back in the snapshot. Dropping it here is what keeps an erase made offline from visibly
+  // undoing itself on every pull until the write lands.
+  const pendingErase = new Set(
+    Object.values(state.highlights).flatMap((record) => (record.dirty ? record.data.erase : []))
+  );
+  const highlights: Record<string, Stored<HighlightRecord>> = {};
+  for (const [suttaId, rows] of Object.entries(snapshot.highlights)) {
+    for (const row of rows) {
+      if (pendingErase.has(row.g)) continue;
+      // One row per segment; the group is the record, so they're recombined by `g` on the way in.
+      const group = highlights[row.g] ?? {
+        dirty: false,
+        data: { g: row.g, suttaId, ranges: [], color: row.c, erase: [], mtime: row.m },
+      };
+      group.data.ranges.push({ i: row.i, s: row.s, e: row.e });
+      highlights[row.g] = group;
+    }
+  }
+  for (const group of Object.values(highlights)) group.data.ranges.sort((a, b) => a.i - b.i || a.s - b.s);
+  for (const [id, record] of Object.entries(state.highlights)) if (record.dirty) highlights[id] = record;
+
+  return { ...state, lists: replayOps(lists, state.ops), notes, highlights, visited };
+}
+
+// Renames a list the server refused the id of (409 id_collision — another account holds it), along
+// with every reference to it: its children's parentId and every queued op naming it. Without this
+// the record could never drain, since every retry would collide identically.
+export function remapListId(state: MirrorState, from: string, to: string): MirrorState {
+  const existing = state.lists[from];
+  if (!existing) return state;
+  const lists: Record<string, Stored<ListRecord>> = {};
+  for (const [id, record] of Object.entries(state.lists)) {
+    if (id === from) continue;
+    lists[id] =
+      record.data.parentId === from ? { ...record, dirty: true, data: { ...record.data, parentId: to } } : record;
+  }
+  lists[to] = { ...existing, data: { ...existing.data, id: to } };
+  return {
+    ...state,
+    lists,
+    ops: state.ops.map((op) => (op.listId === from ? { ...op, listId: to } : op)),
+  };
+}
+
+function clearDirty<T extends { mtime: string }>(
+  records: Record<string, Stored<T>>,
+  id: string,
+  mtime: string,
+  extra?: Partial<T>
+): Record<string, Stored<T>> {
+  const record = records[id];
+  if (!record) return records;
+  // Edited again while the flush was out — the newer version is still unsent, so it stays dirty.
+  const settled = record.data.mtime === mtime;
+  if (!settled && !extra) return records;
+  return { ...records, [id]: { dirty: !settled, data: extra ? { ...record.data, ...extra } : record.data } };
+}
+
+export interface FlushAck {
+  kind: RecordKind;
+  id: string;
+  mtime: string;
+}
+
+export interface FlushOutcome {
+  // 'ok' — everything drained and the pull applied. 'offline' — a retryable failure stopped the
+  // flush partway; nothing was lost, the rest goes next time. 'unauthorized' — the session lapsed,
+  // so the flush pauses with the queue intact rather than throwing writes away. 'blocked' — another
+  // tab holds the flush lock.
+  status: 'ok' | 'offline' | 'unauthorized' | 'blocked';
+  acks: FlushAck[];
+  doneOps: string[];
+  remaps: { from: string; to: string }[];
+  snapshot: UserData | null;
+}
+
+// Folds a finished flush back into whatever the mirror looks like *now* — which may not be what
+// the flush started from, since the user goes on editing while it is out. Everything here is
+// matched on the exact version that was pushed, so a record edited mid-flush stays dirty.
+export function applyFlushOutcome(state: MirrorState, outcome: FlushOutcome): MirrorState {
+  let next = outcome.remaps.reduce((acc, { from, to }) => remapListId(acc, from, to), state);
+  for (const ack of outcome.acks) {
+    if (ack.kind === 'list') next = { ...next, lists: clearDirty(next.lists, ack.id, ack.mtime, { pendingCreate: false }) };
+    else if (ack.kind === 'note') next = { ...next, notes: clearDirty(next.notes, ack.id, ack.mtime) };
+    else if (ack.kind === 'visited') {
+      const record = next.visited[ack.id];
+      if (record && record.data.visitedAt === ack.mtime) {
+        next = { ...next, visited: { ...next.visited, [ack.id]: { dirty: false, data: record.data } } };
+      }
+    } else {
+      const record = next.highlights[ack.id];
+      // A pushed erase-only write holds no rows of its own, so once it has landed there is nothing
+      // left for it to represent.
+      if (record?.data.mtime === ack.mtime) {
+        const highlights = { ...next.highlights };
+        if (record.data.color === null) delete highlights[ack.id];
+        else highlights[ack.id] = { dirty: false, data: { ...record.data, erase: [] } };
+        next = { ...next, highlights };
+      }
+    }
+  }
+  if (outcome.doneOps.length) {
+    const done = new Set(outcome.doneOps);
+    next = { ...next, ops: next.ops.filter((op) => !done.has(op.id)) };
+  }
+  return outcome.snapshot ? applySnapshot(next, outcome.snapshot) : next;
+}

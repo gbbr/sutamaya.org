@@ -1,13 +1,14 @@
 # Offline sync
 
 Sutamaya is offline-first for *reading* — the corpus, the app shell and (optionally) every sutta's
-text are cached locally, so browsing and reading work with no network. Writing is not: list, note
-and highlight mutations fire straight at `/api/*`, and when the network is down the optimistic
-local edit stands while the write is lost with nothing but a `console.error` (see
-`UserDataContext`'s `resyncAfterFailure`). This document is the plan for closing that gap.
+text are cached locally, so browsing and reading work with no network. It was not offline-first for
+*writing*: list, note and highlight mutations fired straight at `/api/*`, and when the network was
+down the optimistic local edit stood while the write was lost with nothing but a `console.error`.
+This document is the plan for closing that gap.
 
 It sets out what breaks today, the design, the compromises taken deliberately, the order to build
-it in, and a reference appendix.
+it in, and a reference appendix. Steps 1 through 4 are built (see each step's own notes and
+CLAUDE.md); step 5, the UI that makes sync state legible, is not.
 
 ## Scale, and what follows from it
 
@@ -220,6 +221,13 @@ to express what two idempotent statements already express. The only thing given 
 add-on-one-device versus remove-on-another resolves by arrival order rather than by timestamp, which
 at this scale is not worth a line of code to prevent.
 
+A list's own **item order** (`PUT /lists/:id/items/order`) went in the same queue rather than into
+the list's record, because it edits the same `items` column those two do and the server already
+reconciles a posted order against what is actually stored. Kept as a record it would have needed a
+second clock on the row: the record's `mtime` guards one conditional `UPDATE`, and pushing a rename
+and a reorder under the same one means whichever goes second is rejected for not being strictly
+newer. As an op it carries its own `mtime` and the ordering falls out of the queue.
+
 The hybrid brings back one thing pure records would have removed, and it has to be handled rather
 than assumed away: **a flush must push records before operations.** A list created offline and then
 filled with suttas produces one record and several operations, and an operation naming a list the
@@ -290,25 +298,27 @@ lose a list with no tombstone to explain why.
 
 ### Client
 
-`UserDataContext` currently holds server-shaped state in React state and replaces it wholesale after
-every mutation. It becomes a view over an **IndexedDB mirror**: mutators write locally and mark the
-record dirty, and a flush pushes dirty records and queued membership operations through the existing
-endpoints. `syncUserData`, `mutateThenSync` and `resyncAfterFailure` disappear — there is no longer
-an optimistic edit to discard, because the local write *is* the durable write.
+`UserDataContext` is a view over an **IndexedDB mirror**: mutators write locally and mark the record
+dirty, and a flush pushes dirty records and queued membership operations through the existing
+endpoints. It holds no optimistic edit to discard, because the local write *is* the durable write —
+which is what retired `syncUserData`, `mutateThenSync` and `resyncAfterFailure`.
 
 Pulling stays `GET /api/data`, unchanged: a full snapshot, applied after a flush. At this scale the
 payload is small enough that a delta protocol would be pure cost.
 
 **The auto-lists move to the client.** `assembleUserData` synthesizes `Recent`, `Highlights` and
-`Notes` server-side, which works only while the server is the source of truth. Once the mirror is, a
-sutta highlighted offline must appear under `Highlights` immediately with no network, so the same
-derivation runs client-side over the mirror. Port it rather than reimplementing — it is already a
-pure function of fetched rows, `latestIds` and the caps included, and the ids and labels are already
-duplicated in `web/src/lib/autoLists.ts`. The server keeps its copy, which still serves the pull.
+`Notes` server-side, which works only while the server is the source of truth. Now that the mirror
+is, a sutta highlighted offline has to appear under `Highlights` immediately with no network, so the
+same derivation runs client-side over the mirror (`web/src/lib/mirrorView.ts`) — ported rather than
+reimplemented, since it is already a pure function of fetched rows, `latestIds` and the caps
+included, and the ids and labels were already duplicated in `web/src/lib/autoLists.ts`. The same goes
+for `repairListTree` (`web/src/lib/listTree.ts`), for the same reason: a group deleted offline only
+takes its contents with it if the cascade runs where the UI reads from. The server keeps both copies,
+which still shape the pull.
 
 Supporting work: the mirror is namespaced by `userId` so an account switch can't cross-write; a 401
-pauses the flush and prompts re-authentication rather than dropping records; and a
-`BroadcastChannel` or Web Lock elects a single flushing tab.
+pauses the flush and prompts re-authentication rather than dropping records; and a Web Lock elects a
+single flushing tab.
 
 ## Deliberate compromises
 
@@ -448,6 +458,32 @@ One step per branch, each independently shippable, each ending with `npm test` g
    *Tests:* a mutation with the network down survives a reload; a flush after reconnect lands every
    queued change; a 401 pauses rather than drops; a 409 on create re-mints the id and the retried
    flush lands, with queued references following the new id.
+
+   Where it landed (`web/src/lib/mirror.ts`, `mirrorView.ts`, `mirrorDb.ts`, `sync.ts`,
+   `listTree.ts`):
+
+   - **`PUT /lists/order` lost its caller.** A sibling reorder is a `position` change on each moved
+     row, so it goes as one conditional `PATCH` per row — which is what a record push is. The bulk
+     endpoint sets `parentId` unconditionally on every id it is given, the exact "means something
+     different when replayed" shape this plan rules out. The route is left in place as API surface.
+   - **Read-time tree repair had to be ported too**, not just the auto-lists. Once the mirror is what
+     the UI renders, a group deleted offline only takes its contents with it if the cascade runs
+     client-side. `lib/listTree.ts` is a straight port of the worker's, so both sides agree.
+   - **Applying a pull is "replace clean, keep dirty"**, plus two rules the record model alone
+     doesn't give: still-queued item ops are replayed over the pulled `items` (or a membership change
+     made offline blinks out of the UI on every pull), and a group named by a still-pending `erase` is
+     dropped from the snapshot (or an erase made offline visibly undoes itself on every pull).
+   - **A dirty flag clears against the exact `mtime` that was pushed**, rather than on the request
+     succeeding. The user goes on editing while a flush is out, so an ack for a version the mirror has
+     already moved past has to leave the record dirty.
+   - **`mirrorDb.ts` stores one IndexedDB record per user id** — the whole mirror as a single value.
+     At tens of kilobytes a per-record store buys only partial-write hazards.
+   - **A 404 retires a write** rather than leaving it dirty forever: the row is gone (deleted
+     elsewhere, or cascaded out), so the write is moot rather than failed. Only a genuinely permanent
+     rejection (a 400) stays dirty, which is the stuck queue step 5 surfaces.
+   - **`markVisited` skips re-marking whatever is already the most recent visit.** It changes nothing
+     anyone can see, and it would churn the state reference every consumer keyed on `lists` rebuilds
+     from.
 
 5. **Making it legible.** Offline writing that the user cannot see the state of is worse than
    useless — they cannot tell "saved locally, will sync" from "lost", which is the very uncertainty
@@ -591,8 +627,9 @@ the natural granularity.
 
 A flush pushes every dirty record **first**, then every queued membership operation (see "Records
 for most things, operations for membership" — an operation naming a list the server has not yet seen
-is dropped), then pulls `GET /api/data` and applies it. Clear a dirty flag only when the server
-echoes the record back unchanged; leave dirty anything it rejected, so the next flush recomputes
+is dropped), then pulls `GET /api/data` and applies it. Clear a dirty flag only for the exact version
+that was acknowledged — a record edited again while the flush was out stays dirty, since the newer
+version is still unsent — and leave dirty anything the server rejected, so the next flush recomputes
 against merged state rather than retrying blindly.
 
 Collapse the queue before pushing: a record superseded by a later edit to the same row pushes once,

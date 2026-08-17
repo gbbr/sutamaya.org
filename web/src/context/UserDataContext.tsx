@@ -1,14 +1,40 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import { dataApi, highlightsApi, listsApi, notesApi, visitedApi } from '../lib/api';
-import { retryWithBackoff } from '../lib/retry';
 import type { Highlight, HighlightsMap, ListDef, ListKind, Membership, NotesMap, VisitedMap } from '../lib/types';
-import { RECENT_AUTO_LIST_CAP, RECENT_AUTO_LIST_ID } from '../lib/autoLists';
-import { applyListReorder } from '../lib/lists';
-import { displacedGroupIds } from '../lib/highlights';
-import { nextMtime } from '../lib/mtime';
+import {
+  applyFlushOutcome,
+  createListRecord,
+  emptyMirror,
+  markVisitedRecord,
+  queueItemOrder,
+  queueMembership,
+  removeListRecord,
+  renameListRecord,
+  reorderListRecords,
+  setListParentRecord,
+  setNoteRecord,
+  writeHighlightRecord,
+  type MirrorState,
+} from '../lib/mirror';
+import { deriveUserData } from '../lib/mirrorView';
+import { loadMirror, saveMirror } from '../lib/mirrorDb';
+import { flushWithLock } from '../lib/sync';
 import { randomId } from '../lib/ids';
 import { LIST_NAME_MAX_LENGTH, NOTE_MAX_LENGTH } from '../lib/textLimits';
 import { useAuth } from './AuthContext';
+
+// The user's lists, notes, highlights and visits, as a view over the offline mirror
+// (lib/mirror.ts) rather than over the server. Every mutator writes to the mirror and returns —
+// the local write *is* the durable write, so nothing here has an optimistic edit to roll back and
+// nothing is lost when the network is down. A flush (lib/sync.ts) pushes what the server hasn't
+// seen and folds the merged result back in, on the triggers below.
+
+// A mutation is followed by a flush after this long, so a burst of edits (dragging a list through
+// several positions, filing a sutta into three lists) becomes one flush rather than several. Note
+// editing already commits on Enter/blur (NoteEditor), so this is never per-keystroke.
+const FLUSH_DEBOUNCE_MS = 2000;
+// Backstop for everything the event triggers miss — a tab left open on a flaky connection, or a
+// device that came back online without firing `online`.
+const FLUSH_POLL_MS = 5 * 60 * 1000;
 
 interface UserDataState {
   ready: boolean;
@@ -29,7 +55,6 @@ interface UserDataState {
   submitNote: (suttaId: string, text: string) => Promise<void>;
   setHighlightRanges: (suttaId: string, ranges: { i: number; s: number; e: number }[], color: string | null) => Promise<void>;
   markVisited: (suttaId: string) => void;
-  syncUserData: () => Promise<void>;
 }
 
 const UserDataContext = createContext<UserDataState | null>(null);
@@ -55,72 +80,55 @@ const EMPTY: UserDataState = {
   submitNote: async () => {},
   setHighlightRanges: async () => {},
   markVisited: () => {},
-  syncUserData: async () => {},
 };
 
 export function UserDataProvider({ children }: { children: ReactNode }) {
   const { user, promptGoogleSignIn } = useAuth();
+  const [state, setState] = useState<MirrorState>(emptyMirror);
   const [ready, setReady] = useState(false);
-  const [lists, setLists] = useState<ListDef[]>([]);
-  const [membership, setMembership] = useState<Membership>({});
-  const [notes, setNotes] = useState<NotesMap>({});
-  const [highlights, setHighlights] = useState<HighlightsMap>({});
-  const [visited, setVisited] = useState<VisitedMap>({});
-  // Generation counter for whole-dataset fetches (the initial load and every syncUserData).
-  // Nothing sequences those against each other on the wire, so on a slow link two overlapping
-  // mutations' syncs routinely resolve out of order and the older snapshot lands last, silently
-  // reverting the newer change on screen. Each fetch claims a generation on entry and drops its
-  // own result if a later one has since started.
-  const syncSeq = useRef(0);
+  // Set when the session has lapsed (a 401 during a flush). The queue is intact — nothing is
+  // dropped — but the automatic triggers stand down until the user signs back in, since retrying
+  // an expired cookie every couple of minutes achieves nothing.
+  const [paused, setPaused] = useState(false);
+
+  // The flush reads the mirror at the moment it runs, not at the moment its trigger was set up,
+  // so it goes through a ref rather than through the callback's own closure.
+  const stateRef = useRef(state);
+  const pausedRef = useRef(paused);
+  const flushing = useRef(false);
+  const flushTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
+    stateRef.current = state;
+  }, [state]);
+  useEffect(() => {
+    pausedRef.current = paused;
+  }, [paused]);
+
+  useEffect(() => {
+    setPaused(false);
     if (!user) {
-      // Claims a generation before clearing, so a sync still in flight from the signed-in session
-      // can't resolve afterwards and repopulate this cleared state with the previous account's
-      // lists/notes/highlights.
-      syncSeq.current += 1;
-      // `ready` means "we know the final state of user data for this session" — true
-      // immediately for a signed-out user, since there's nothing to fetch (see
-      // useSuttaReading's own use of this to gate the reader's scroll restore on knowing
-      // notes/highlights/membership have settled one way or the other, not just on a signed-in
-      // fetch actually completing).
+      // Nothing to load and nothing to sync. The signed-out mirror is empty rather than the last
+      // user's — that data stays in IndexedDB under their own id, ready for them to sign back in.
+      setState(emptyMirror());
       setReady(true);
-      setLists([]);
-      setMembership({});
-      setNotes({});
-      setHighlights({});
-      setVisited({});
       return;
     }
     let cancelled = false;
     setReady(false);
-    // Bumping the generation here also invalidates any sync still in flight from the previous
-    // user, so their data can't land on top of this one's.
-    const seq = (syncSeq.current += 1);
-    // Retried like AuthContext's own session load: a signed-in user whose one attempt lost to a
-    // network blip otherwise gets a silently empty Library/notes/highlights, with no indication
-    // and no recovery short of a reload.
-    retryWithBackoff(() => dataApi.all())
-      .then((d) => {
+    loadMirror(user.id)
+      .then((loaded) => {
         if (cancelled) return;
-        // Superseded by a sync issued while this was in flight — that snapshot is newer, so keep
-        // it. `ready` still settles below either way.
-        if (seq === syncSeq.current) {
-          setLists(d.lists);
-          setMembership(d.membership);
-          setNotes(d.notes);
-          setHighlights(d.highlights);
-          setVisited(d.visited);
-        }
+        setState(loaded);
+        // `ready` means "the local dataset is known" — a question the mirror answers without a
+        // network, which is the point. Nothing downstream (see useSuttaReading's scroll restore)
+        // waits on the server any more.
         setReady(true);
       })
       .catch((e) => {
+        console.error('mirror load failed', e);
         if (cancelled) return;
-        // A failed fetch is still a *settled* final state (no data, but nothing left pending) —
-        // without this, one transient failure (401 from a lapsed session, a rate limit) would
-        // leave `ready` stuck false for the rest of the signed-in session, permanently disabling
-        // anything gated on it (see readyToRestore in useSuttaReading.ts).
-        console.error('initial user-data fetch failed', e);
+        setState(emptyMirror(user.id));
         setReady(true);
       });
     return () => {
@@ -128,60 +136,81 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     };
   }, [user]);
 
+  // Persist on every change, including the ones a flush folds back in. Guarded on the mirror's own
+  // userId rather than on `user`, so the window between an account switch and its load resolving
+  // can't write one account's records under the other's key.
+  useEffect(() => {
+    if (!user || state.userId !== user.id) return;
+    saveMirror(state).catch((e) => console.error('mirror save failed', e));
+  }, [state, user]);
+
+  const flush = useCallback(async () => {
+    const current = stateRef.current;
+    if (!current.userId || flushing.current) return;
+    flushing.current = true;
+    try {
+      const outcome = await flushWithLock(current);
+      // Another tab is flushing this same mirror — it will apply the result for both of us.
+      if (outcome.status === 'blocked') return;
+      // Applied to the mirror as it is *now*, not as the flush found it: the user goes on editing
+      // while a flush is out, and applyFlushOutcome only clears what was actually acknowledged.
+      setState((s) => (s.userId === current.userId ? applyFlushOutcome(s, outcome) : s));
+      setPaused(outcome.status === 'unauthorized');
+      if (outcome.status === 'unauthorized') promptGoogleSignIn();
+    } catch (e) {
+      console.error('sync flush failed', e);
+    } finally {
+      flushing.current = false;
+    }
+  }, [promptGoogleSignIn]);
+
+  const scheduleFlush = useCallback(() => {
+    if (flushTimer.current) clearTimeout(flushTimer.current);
+    flushTimer.current = setTimeout(() => {
+      flushTimer.current = null;
+      if (!pausedRef.current) flush();
+    }, FLUSH_DEBOUNCE_MS);
+  }, [flush]);
+
+  useEffect(
+    () => () => {
+      if (flushTimer.current) clearTimeout(flushTimer.current);
+    },
+    []
+  );
+
+  useEffect(() => {
+    if (!ready || !user || paused) return;
+    flush();
+    const onOnline = () => flush();
+    const onVisible = () => {
+      if (document.visibilityState === 'visible') flush();
+    };
+    window.addEventListener('online', onOnline);
+    document.addEventListener('visibilitychange', onVisible);
+    const poll = setInterval(flush, FLUSH_POLL_MS);
+    return () => {
+      window.removeEventListener('online', onOnline);
+      document.removeEventListener('visibilitychange', onVisible);
+      clearInterval(poll);
+    };
+  }, [ready, user, paused, flush]);
+
+  const { lists, membership, notes, highlights, visited } = useMemo(() => deriveUserData(state), [state]);
+
+  // Every mutator goes through this: apply to the mirror, then flush shortly after. The guard on
+  // `userId` drops a write that lands after sign-out rather than filing it under nobody.
+  const mutate = useCallback(
+    (change: (s: MirrorState) => MirrorState) => {
+      setState((s) => (s.userId ? change(s) : s));
+      scheduleFlush();
+    },
+    [scheduleFlush]
+  );
+
   const listMembers = useCallback(
     (listId: string) => Object.entries(membership).filter(([, ids]) => ids.includes(listId)).map(([id]) => id),
     [membership]
-  );
-
-  // Re-fetches everything from the server and applies it verbatim — the single source of truth
-  // every mutator below reconciles against, both on success (to pick up server-derived state an
-  // optimistic local edit can't express, e.g. the auto "Highlights"/"Notes" lists) and on
-  // failure (to discard an optimistic edit that never actually made it to the server).
-  const syncUserData = useCallback(async () => {
-    const seq = (syncSeq.current += 1);
-    const fresh = await dataApi.all();
-    // A newer fetch started while this one was out — its snapshot wins, so drop this one rather
-    // than overwriting newer state with older (see syncSeq).
-    if (seq !== syncSeq.current) return;
-    setLists(fresh.lists);
-    setMembership(fresh.membership);
-    setNotes(fresh.notes);
-    setHighlights(fresh.highlights);
-    setVisited(fresh.visited);
-  }, []);
-
-  // Every mutator applies its change optimistically before the network call settles, then
-  // relies on this to correct course if the call fails — since there's no offline write queue
-  // (see CLAUDE.md), a rejected request otherwise leaves the optimistic edit stranded with no
-  // indication it was never saved. Logs unconditionally so a failure is never silent even when
-  // the caller doesn't await/catch the mutator itself (most UI call sites don't).
-  const resyncAfterFailure = useCallback(
-    async (context: string, error: unknown) => {
-      console.error(`${context} failed`, error);
-      try {
-        await syncUserData();
-      } catch (e) {
-        console.error('resync after failure also failed', e);
-      }
-    },
-    [syncUserData]
-  );
-
-  // Shared shape for the mutators below that need a full server resync on success (not just an
-  // optimistic local edit) — see submitNote's comment on why. `rethrow` defaults to off since
-  // most call sites (per CLAUDE.md) don't await/catch the mutator themselves; setHighlightRanges
-  // opts in because its own caller (useHighlightPopup's `pick`) does catch it.
-  const mutateThenSync = useCallback(
-    async (context: string, apiCall: () => Promise<unknown>, options: { rethrow?: boolean } = {}) => {
-      try {
-        await apiCall();
-        await syncUserData();
-      } catch (e) {
-        await resyncAfterFailure(context, e);
-        if (options.rethrow) throw e;
-      }
-    },
-    [syncUserData, resyncAfterFailure]
   );
 
   const createList = useCallback(
@@ -190,20 +219,21 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
         promptGoogleSignIn();
         throw new Error('not_authenticated');
       }
-      const capped = label.slice(0, LIST_NAME_MAX_LENGTH);
-      const existing = lists.find((l) => l.label === capped && l.parentId === parentId && l.kind === kind);
+      // Trimmed and capped the same way POST /lists does it, so the local label is the one the
+      // server will store rather than one a later pull quietly corrects.
+      const capped = label.trim().slice(0, LIST_NAME_MAX_LENGTH);
+      // Auto-lists are excluded: they share the shape of a top-level list, so a user creating a
+      // list genuinely called "Notes" would otherwise be handed the synthesized one back.
+      const existing = lists.find((l) => !l.auto && l.label === capped && l.parentId === parentId && l.kind === kind);
       if (existing) return existing;
-      try {
-        const { list } = await listsApi.create(capped, parentId, kind);
-        const def: ListDef = { id: list.id, label: list.label, parentId: list.parentId, kind: list.kind, items: list.items };
-        setLists((ls) => [def, ...ls]);
-        return def;
-      } catch (e) {
-        console.error('create list failed', e);
-        throw e;
-      }
+      // The client names what it creates, so the list can be renamed, moved and filed into before
+      // the server has ever heard of it — and so a create whose response was lost is a no-op on
+      // retry rather than a second list.
+      const id = randomId();
+      mutate((s) => createListRecord(s, { id, label: capped, parentId, kind }));
+      return { id, label: capped, parentId, kind, items: [] };
     },
-    [lists, user, promptGoogleSignIn]
+    [lists, user, promptGoogleSignIn, mutate]
   );
 
   const renameList = useCallback(
@@ -212,197 +242,92 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       if (!trimmed) return;
       const old = lists.find((l) => l.id === id);
       if (!old || old.label === trimmed) return;
-      setLists((ls) => ls.map((l) => (l.id === id ? { ...l, label: trimmed } : l)));
-      // membership is keyed by list id (see routes/data.js), which doesn't change on rename, so
-      // there's nothing to rewrite there.
-      try {
-        await listsApi.rename(id, trimmed);
-      } catch (e) {
-        await resyncAfterFailure('rename list', e);
-      }
+      mutate((s) => renameListRecord(s, id, trimmed));
     },
-    [lists, resyncAfterFailure]
+    [lists, mutate]
   );
 
+  // Tombstoned, not removed — and its contents go with it, which the mirror's own tree repair
+  // (lib/listTree.ts) works out on read exactly as the server does.
   const removeList = useCallback(
     async (id: string) => {
-      setLists((ls) => ls.filter((l) => l.id !== id));
-      setMembership((m) => {
-        const next: Membership = {};
-        for (const [suttaId, ids] of Object.entries(m)) next[suttaId] = ids.filter((x) => x !== id);
-        return next;
-      });
-      try {
-        await listsApi.remove(id);
-        // The server re-parents any sub-lists of the deleted list to its own parent (see
-        // routes/lists.js) instead of orphaning them — sync to pick that up, since it can't be
-        // expressed as a local optimistic edit without duplicating that logic here.
-        await syncUserData();
-      } catch (e) {
-        await resyncAfterFailure('remove list', e);
-      }
+      mutate((s) => removeListRecord(s, id));
     },
-    [syncUserData, resyncAfterFailure]
+    [mutate]
   );
 
   const setListParent = useCallback(
     async (id: string, parentId: string | null) => {
-      setLists((ls) => ls.map((l) => (l.id === id ? { ...l, parentId } : l)));
-      try {
-        await listsApi.setParent(id, parentId);
-      } catch (e) {
-        await resyncAfterFailure('set list parent', e);
-      }
+      mutate((s) => setListParentRecord(s, id, parentId));
     },
-    [resyncAfterFailure]
+    [mutate]
   );
 
   const reorderLists = useCallback(
     async (parentId: string | null, order: string[]) => {
-      // Mirrors the server's own PUT /order handler (routes/lists.js), which sets `parentId` on
-      // every id in `order` unconditionally, not just position — so this one optimistic update
-      // also re-parents a dragged item that's crossing into `parentId` for the first time, not
-      // just ones already there. That's what lets useListTreeDrag's commitDrop fold a
-      // cross-parent drop into this single call instead of a separate setListParent first (see
-      // its own comment) — one network round trip and one re-render instead of two sequential
-      // ones, which is what was producing a visible two-step "jump" on drop.
-      setLists((ls) => applyListReorder(ls, parentId, order));
-      try {
-        await listsApi.reorder(parentId, order);
-      } catch (e) {
-        await resyncAfterFailure('reorder lists', e);
-      }
+      // Sets `parentId` on every id in `order`, not just position — that's what lets
+      // useListTreeDrag's commitDrop fold a cross-parent drop into this single call instead of a
+      // separate setListParent first (see its own comment).
+      mutate((s) => reorderListRecords(s, parentId, order));
     },
-    [resyncAfterFailure]
+    [mutate]
   );
 
   const reorderListItems = useCallback(
     async (id: string, order: string[]) => {
-      setLists((ls) => ls.map((l) => (l.id === id ? { ...l, items: order } : l)));
-      try {
-        await listsApi.reorderItems(id, order);
-      } catch (e) {
-        await resyncAfterFailure('reorder list items', e);
-      }
+      mutate((s) => queueItemOrder(s, id, order));
     },
-    [resyncAfterFailure]
+    [mutate]
   );
 
   const toggleMembership = useCallback(
     async (suttaId: string, listId: string) => {
       if (!user) return promptGoogleSignIn();
       const list = lists.find((l) => l.id === listId);
-      if (!list) return;
+      if (!list || list.auto) return;
       const on = (membership[suttaId] || []).includes(listId);
-      // Derives from the updater's own `m`, not the `membership` closure — two chips tapped on the
-      // same sutta before a re-render flushes would otherwise both start from the same stale array,
-      // and the second would drop the first. Both writes still reach the server, so only the UI
-      // diverges — and since this mutator doesn't resync on success, it would stay diverged.
-      setMembership((m) => {
-        const cur = m[suttaId] || [];
-        return { ...m, [suttaId]: on ? cur.filter((id) => id !== listId) : [...cur, listId] };
-      });
-      setLists((ls) =>
-        ls.map((l) => (l.id === listId ? { ...l, items: on ? l.items.filter((s) => s !== suttaId) : [...l.items, suttaId] } : l))
-      );
-      try {
-        if (on) await listsApi.removeItem(listId, suttaId);
-        else await listsApi.addItem(listId, suttaId);
-      } catch (e) {
-        await resyncAfterFailure('toggle list membership', e);
-      }
+      mutate((s) => queueMembership(s, listId, suttaId, !on));
     },
-    [lists, membership, user, promptGoogleSignIn, resyncAfterFailure]
+    [lists, membership, user, promptGoogleSignIn, mutate]
   );
 
-  // Like toggleMembership's "add" branch, but takes the list directly instead of looking it up
-  // in `lists` — for adding to a list a caller just created: createList's own setLists call
-  // won't be reflected in this component's `lists` closure until the next render, so looking it
-  // up by id right after creating it would silently find nothing.
+  // Like toggleMembership's "add" branch, but takes the list directly instead of looking it up in
+  // `lists` — for adding to a list a caller just created, which won't be in this component's
+  // `lists` closure until the next render.
   const addToList = useCallback(
     async (suttaId: string, list: ListDef) => {
       if (!user) return promptGoogleSignIn();
-      if ((membership[suttaId] || []).includes(list.id)) return;
-      setMembership((m) => ({ ...m, [suttaId]: [...(m[suttaId] || []), list.id] }));
-      setLists((ls) => ls.map((l) => (l.id === list.id ? { ...l, items: [...l.items, suttaId] } : l)));
-      try {
-        await listsApi.addItem(list.id, suttaId);
-      } catch (e) {
-        await resyncAfterFailure('add to list', e);
-        throw e;
-      }
+      mutate((s) => queueMembership(s, list.id, suttaId, true));
     },
-    [membership, user, promptGoogleSignIn, resyncAfterFailure]
+    [user, promptGoogleSignIn, mutate]
   );
 
-  // Notes are a discrete, infrequent action (submit on Enter/blur/button — see NoteEditor), not
-  // a per-keystroke stream, so — like highlights below — this can afford a full sync after
-  // every call instead of an optimistic local sync: `lists`/`membership` include the derived
-  // "Highlights"/"Notes" auto-lists computed server-side in buildUserData() (see
-  // worker/src/routes/data.js), and a sync is the only way to pick up that derived state.
   const submitNote = useCallback(
     async (suttaId: string, text: string) => {
       if (!user) return promptGoogleSignIn();
-      const capped = text.slice(0, NOTE_MAX_LENGTH);
-      setNotes((n) => ({ ...n, [suttaId]: capped }));
-      await mutateThenSync('submit note', () => notesApi.set(suttaId, capped));
+      mutate((s) => setNoteRecord(s, suttaId, text.slice(0, NOTE_MAX_LENGTH)));
     },
-    [user, promptGoogleSignIn, mutateThenSync]
+    [user, promptGoogleSignIn, mutate]
   );
 
-  // A highlight group is immutable: this mints the new group's id and its timestamp here, where
-  // the user acted, and works out which existing groups the selection displaces so the server is
-  // told rather than left to infer it from whatever overlaps by the time the write lands. A
-  // recolour is therefore a tombstone plus a new group, and an erase (color === null) is a
-  // tombstone alone.
+  // A highlight group is immutable, so this doesn't edit anything: it mints a new group and names
+  // the groups the selection displaces (see lib/mirror.ts's writeHighlightRecord). A recolour is a
+  // tombstone plus a new group; an erase (color === null) is a tombstone alone.
   const setHighlightRanges = useCallback(
     async (suttaId: string, ranges: { i: number; s: number; e: number }[], color: string | null) => {
       if (!user) return promptGoogleSignIn();
       if (!ranges.length) return;
-      const g = randomId();
-      const mtime = nextMtime();
-      const erase = displacedGroupIds(highlights[suttaId] || [], ranges);
-      setHighlights((hs) => {
-        const current = hs[suttaId] || [];
-        const kept = current.filter((h) => !erase.includes(h.g));
-        // Same `g`/`m` the server will store, so the optimistic rows are the real ones bar their
-        // server-minted row ids (which only ever serve as React keys and scroll targets).
-        const added = color ? ranges.map((r) => ({ id: `${g}:${r.i}`, i: r.i, s: r.s, e: r.e, c: color, g, m: mtime })) : [];
-        return { ...hs, [suttaId]: [...kept, ...added] };
-      });
-      await mutateThenSync('set highlight ranges', () => highlightsApi.setRanges(suttaId, ranges, color, { g, mtime, erase }), {
-        rethrow: true,
-      });
+      mutate((s) => writeHighlightRecord(s, suttaId, ranges, color));
     },
-    [highlights, user, promptGoogleSignIn, mutateThenSync]
+    [user, promptGoogleSignIn, mutate]
   );
 
-  // The server bumps visitedAt (and so "Recent"'s order) on every call, not just the first visit
-  // (see PUT /api/visited/:suttaId), so the optimistic update mirrors that here too — otherwise
-  // "Recent" only reflects a mark taken this session after the next unrelated syncUserData call,
-  // rather than immediately, and a page that never triggers one (e.g. reading straight through
-  // Prev/Next and back out) would show it stale until a manual refresh.
   const markVisited = useCallback(
     (suttaId: string) => {
       if (!user) return;
-      setVisited((v) => (v[suttaId] ? v : { ...v, [suttaId]: new Date().toISOString() }));
-      setLists((ls) => {
-        const recent = ls.find((l) => l.id === RECENT_AUTO_LIST_ID);
-        // Already at the front — no-op, so a revisit of the same (already most-recent) sutta
-        // doesn't churn `lists`' reference and force every consumer keyed on it (the My Lists
-        // tree's own lookup tables, ListPane's flatLists) to rebuild for nothing.
-        if (recent && recent.items[0] === suttaId) return ls;
-        const items = [suttaId, ...(recent?.items || []).filter((id) => id !== suttaId)].slice(0, RECENT_AUTO_LIST_CAP);
-        return recent
-          ? ls.map((l) => (l.id === RECENT_AUTO_LIST_ID ? { ...l, items } : l))
-          : [...ls, { id: RECENT_AUTO_LIST_ID, label: 'Recent', parentId: null, kind: 'list', items, auto: true }];
-      });
-      setMembership((m) =>
-        (m[suttaId] || []).includes(RECENT_AUTO_LIST_ID) ? m : { ...m, [suttaId]: [...(m[suttaId] || []), RECENT_AUTO_LIST_ID] }
-      );
-      visitedApi.mark(suttaId).catch((e) => console.error('visited save failed', e));
+      mutate((s) => markVisitedRecord(s, suttaId));
     },
-    [user]
+    [user, mutate]
   );
 
   const value = useMemo<UserDataState>(
@@ -425,7 +350,6 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       submitNote,
       setHighlightRanges,
       markVisited,
-      syncUserData,
     }),
     [
       ready,
@@ -446,7 +370,6 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       submitNote,
       setHighlightRanges,
       markVisited,
-      syncUserData,
     ]
   );
 

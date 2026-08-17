@@ -113,11 +113,9 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
   const pick = useCallback(
     async (color: string | null) => {
       if (!pop || !suttaId) return;
-      try {
-        await setHighlightRanges(suttaId, pop.ranges, color);
-      } catch (e) {
-        console.error('highlight range save failed', e);
-      }
+      // Writes to the offline mirror, so it can't fail on the network — the flush owns everything
+      // that can (see UserDataContext).
+      await setHighlightRanges(suttaId, pop.ranges, color);
       setPop(null);
       const sel = window.getSelection();
       if (sel) sel.removeAllRanges();

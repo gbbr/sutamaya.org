@@ -58,7 +58,6 @@ const userDataDefaults: ReturnType<typeof useUserData> = {
   submitNote: async () => {},
   setHighlightRanges: async () => {},
   markVisited: () => {},
-  syncUserData: async () => {},
 };
 
 describe('mobile search -> reader -> close flow', () => {
