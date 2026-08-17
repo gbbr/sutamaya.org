@@ -114,6 +114,17 @@ export function useScrollMemory<T extends HTMLElement>(
   // once against stale content during a readyToRestore dip and then block the real restore once
   // fresh content actually loads. Reset on every key/active mount and on every dip to not-ready.
   const restoreStateRef = useRef<{ restored: boolean }>({ restored: false });
+  // The last scrollTop this hook itself actually knows to be correct — set synchronously by our
+  // own restore writes and by real `scroll` events, never by an ad hoc `el.scrollTop` read. A read
+  // forces a synchronous layout, and on a Prev/Next the DOM can briefly be a hybrid of the new
+  // sutta's header (title/blurb — driven straight off the already-loaded corpus, so it swaps in a
+  // render before the body does) over the *previous* sutta's still-rendered body (segments only
+  // clear once useSuttaText's own effect runs). If the two headers differ in height, that hybrid
+  // frame is exactly the kind of above-the-fold content change the browser's own CSS scroll
+  // anchoring compensates for — and forcing layout via a raw `el.scrollTop` read during that
+  // window (as unmount/teardown below used to) bakes the anchoring nudge in as if it were the
+  // real, settled position, corrupting what gets persisted for the sutta being left.
+  const lastKnownScrollTopRef = useRef(0);
 
   useLayoutEffect(() => {
     readyRef.current = readyToRestore;
@@ -135,6 +146,7 @@ export function useScrollMemory<T extends HTMLElement>(
       // yet (see readyToRestore's own comment above) — a native 'scroll' event fires just as
       // readily for a collapse-driven clamp as for a real user scroll.
       if (!readyRef.current) return;
+      lastKnownScrollTopRef.current = el.scrollTop;
       positions.set(key, el.scrollTop);
       schedulePersist();
     };
@@ -146,7 +158,10 @@ export function useScrollMemory<T extends HTMLElement>(
       if (restoreState.restored) return;
       restoreState.restored = true;
       const desired = skipRestore ? 0 : positions.get(key) ?? 0;
-      if (!skipRestore) el.scrollTop = desired;
+      if (!skipRestore) {
+        el.scrollTop = desired;
+        lastKnownScrollTopRef.current = desired;
+      }
 
       // `el` itself doesn't resize when its content grows after this point (it's a
       // flex/viewport-bound scroll container, so its own box stays fixed — only scrollHeight,
@@ -158,9 +173,15 @@ export function useScrollMemory<T extends HTMLElement>(
       // cancelPendingRestore — see its own comment) gives up this restore for good; a bare
       // timeout is just the last-resort backstop.
       if (desired > 0 && !skipRestore) {
+        // A prior restore within this same key-mount (readyToRestore can dip and recover more
+        // than once — see this hook's own comment above) may still have its own MutationObserver/
+        // timer/listeners armed; without disconnecting it first, reassigning `stop` below orphans
+        // it running for up to RESTORE_GRACE_MS, fighting this new one over the same `el`.
+        stop?.();
         const mo = new MutationObserver(() => {
           if (el.scrollTop !== desired && el.scrollHeight - el.clientHeight >= desired) {
             el.scrollTop = desired;
+            lastKnownScrollTopRef.current = desired;
           }
         });
         mo.observe(el, { childList: true, subtree: true });
@@ -182,9 +203,10 @@ export function useScrollMemory<T extends HTMLElement>(
     return () => {
       // Same guard as onScroll's — a container mid-transition (readyToRestore false) that
       // unmounts or changes key shouldn't persist whatever transiently-collapsed scrollTop it
-      // happens to have.
+      // happens to have. Persists `lastKnownScrollTopRef` rather than reading `el.scrollTop` fresh
+      // here — see that ref's own comment for why a fresh read at this exact moment isn't safe.
       if (readyRef.current) {
-        positions.set(key, el.scrollTop);
+        positions.set(key, lastKnownScrollTopRef.current);
         schedulePersist();
       }
       el.removeEventListener('scroll', onScroll);
