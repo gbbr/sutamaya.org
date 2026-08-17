@@ -4,6 +4,7 @@ import { ArrowLeft, LogOut } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpus } from '../context/CorpusContext';
+import { useUserData, type SyncStatus } from '../context/UserDataContext';
 import { GoogleSignInButton } from '../components/GoogleSignInButton';
 import { dataApi } from '../lib/api';
 import { flatSuttaOrder } from '../lib/corpus';
@@ -39,10 +40,34 @@ function backToLastLocation() {
   navigate('/');
 }
 
+// A short, coarse "how stale might this be" readout for the sync line below — exact-to-the-minute
+// precision isn't the point, just whether it was a moment ago or a while ago.
+function formatSyncedAt(iso: string): string {
+  const seconds = Math.max(0, Math.round((Date.now() - new Date(iso).getTime()) / 1000));
+  if (seconds < 60) return 'just now';
+  const minutes = Math.round(seconds / 60);
+  if (minutes < 60) return `${minutes} minute${minutes === 1 ? '' : 's'} ago`;
+  const hours = Math.round(minutes / 60);
+  if (hours < 24) return `${hours} hour${hours === 1 ? '' : 's'} ago`;
+  const days = Math.round(hours / 24);
+  return `${days} day${days === 1 ? '' : 's'} ago`;
+}
+
+// One line describing the offline-sync queue (see offline-sync.md step 5) — the same states the
+// TreePane sync indicator shows, spelled out in words for the place a user would come looking for
+// more detail than an icon can carry.
+function syncStatusLine(status: SyncStatus, pendingCount: number, lastSyncedAt: string | null): string {
+  if (status === 'offline') return "Offline — changes are saved locally and will sync when you're back online.";
+  if (status === 'stuck') return "Some changes couldn't be synced and will keep being retried.";
+  if (status === 'pending') return `Syncing ${pendingCount} change${pendingCount === 1 ? '' : 's'}…`;
+  return lastSyncedAt ? `Last synced ${formatSyncedAt(lastSyncedAt)}.` : 'Not synced yet.';
+}
+
 export function SettingsPage({ location }: RouteComponentProps) {
   const { user, logout, loading, authError } = useAuth();
   const { uiScale, uiFace, theme, setUiScale, setUiFace, setTheme } = useUiPrefs();
   const { corpus } = useCorpus();
+  const { syncStatus, pendingCount, lastSyncedAt } = useUserData();
 
   const [offlineStatus, setOfflineStatus] = useState<'idle' | 'downloading'>('idle');
   // done/total are bytes across the shard bundles being downloaded (see lib/offline.ts), not
@@ -301,6 +326,16 @@ export function SettingsPage({ location }: RouteComponentProps) {
                     <div className="font-sans text-[13px] text-red-600 mt-2">{failedCount} couldn't be downloaded — try again.</div>
                   ))}
               </>
+            )}
+            {/* This is about lists/notes/highlights syncing to the account (offline-sync.md), a
+                separate mechanism from the corpus caching above — grouped here anyway since both
+                read as "offline-related status" to a user, and neither means anything signed out. */}
+            {user && (
+              <div
+                className={`font-sans text-[13px] mt-3 ${syncStatus === 'stuck' ? 'text-red-600' : 'text-ink/50'}`}
+              >
+                {syncStatusLine(syncStatus, pendingCount, lastSyncedAt)}
+              </div>
             )}
           </div>
         </div>

@@ -512,6 +512,21 @@ write, so a list, note or highlight made with no network is kept rather than log
   guaranteed); a list deleted before its create ever landed goes outright along with its queued ops;
   an add and a remove of the same sutta in the same list cancel; only the latest item order for a
   list is kept.
+- **Sync state is legible, not just durable.** `UserDataContext` derives a `syncStatus` —
+  `'synced' | 'pending' | 'offline' | 'stuck'` — from `lib/mirror.ts`'s `syncCounts()` (how many
+  records/ops are dirty, and how many of those the server has permanently rejected) plus the
+  browser's own `online`/`offline` events; `'offline'` wins over everything else, then `'stuck'`,
+  then a plain `'pending'` count. `SyncIndicator` (`components/SyncIndicator.tsx`) renders it next
+  to the account badge in `TreePane`'s header, the one piece of chrome visible on every load;
+  `SettingsPage` spells the same state out as a line of text next to the offline-download action,
+  plus how long ago the last successful flush landed (`lastSyncedAt`, set only when a flush fully
+  drains and pulls). A record or op the server permanently refuses (a 400, or an id collision that
+  outlives every retry) is marked `rejected` in the mirror rather than silently retried forever with
+  only a `console.error` to show for it — still dirty, still retried, but now the thing `'stuck'`
+  reads from. A 401 during a flush sets `needsReauth` instead of calling `promptGoogleSignIn()`
+  directly: that function still navigates to Settings' sign-in section, but only from a real user
+  click on the indicator now, not from a background flush deciding on its own to interrupt whatever
+  the reader was doing mid-sutta.
 
 ## Offline strategy
 
@@ -535,12 +550,6 @@ something there.
 
 ## Known gaps / deliberate simplifications
 
-- **Offline writing has no UI.** The mirror and its flush are built (see "Client mirror"), so a
-  write made offline is durable and syncs on reconnect — but nothing on screen says so. There's no
-  synced/pending/offline indicator, the 401 pause prompts re-auth through
-  `promptGoogleSignIn()`'s existing (modal) surface rather than a quiet one, and a record the server
-  rejects permanently stays dirty with only a `console.error` to show for it, retried on every flush
-  forever. That's step 5 of `offline-sync.md`, which is the plan and tracks which steps are done.
 - A last-writer-wins merge discards the losing edit silently, by design — see `offline-sync.md`'s
   "Deliberate compromises", which also rules out the conflict UI that would surface it. Order
   (sibling order, a list's item order) moves as a unit on its row's own `mtime`, so two devices

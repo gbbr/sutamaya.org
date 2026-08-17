@@ -7,8 +7,8 @@ down the optimistic local edit stood while the write was lost with nothing but a
 This document is the plan for closing that gap.
 
 It sets out what breaks today, the design, the compromises taken deliberately, the order to build
-it in, and a reference appendix. Steps 1 through 4 are built (see each step's own notes and
-CLAUDE.md); step 5, the UI that makes sync state legible, is not.
+it in, and a reference appendix. All five steps are built (see each step's own notes and
+CLAUDE.md).
 
 ## Scale, and what follows from it
 

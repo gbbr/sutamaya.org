@@ -78,6 +78,13 @@ export interface Stored<T> {
   // lib/sync.ts). Everything dirty survives a pull unchanged — it is work the snapshot hasn't
   // seen yet.
   dirty: boolean;
+  // Set when the server permanently rejected this exact version (a 400, or an id collision that
+  // outlived every retry) rather than merely not having seen it yet — still dirty, since the flush
+  // keeps retrying it (see lib/sync.ts), but distinct so the sync indicator can tell "queued" from
+  // "stuck" instead of retrying forever in silence. A fresh local edit replaces this whole `Stored`
+  // rather than patching it (see e.g. editList), which is what clears the flag: a new version
+  // deserves a fresh attempt rather than being pre-judged by its predecessor's failure.
+  rejected?: boolean;
   data: T;
 }
 
@@ -86,11 +93,22 @@ export interface Stored<T> {
 // iterates. `siblingOrder` is keyed by `parentId` (null for the top level) rather than by a
 // `listId` like the other three, since it is about a parent's children rather than a list's
 // contents.
+// `rejected` mirrors Stored.rejected above, for the same reason: an op the server has permanently
+// refused (a delete-target-in-a-cycle 400, say) still sits in the queue being retried, but the sync
+// indicator needs to tell that apart from one merely not-yet-sent.
 export type QueuedOp =
-  | { id: string; seq: number; type: 'add'; listId: string; suttaId: string }
-  | { id: string; seq: number; type: 'remove'; listId: string; suttaId: string }
-  | { id: string; seq: number; type: 'order'; listId: string; order: string[]; mtime: string }
-  | { id: string; seq: number; type: 'siblingOrder'; parentId: string | null; order: string[]; mtime: string };
+  | { id: string; seq: number; type: 'add'; listId: string; suttaId: string; rejected?: boolean }
+  | { id: string; seq: number; type: 'remove'; listId: string; suttaId: string; rejected?: boolean }
+  | { id: string; seq: number; type: 'order'; listId: string; order: string[]; mtime: string; rejected?: boolean }
+  | {
+      id: string;
+      seq: number;
+      type: 'siblingOrder';
+      parentId: string | null;
+      order: string[];
+      mtime: string;
+      rejected?: boolean;
+    };
 
 export interface MirrorState {
   // Whose mirror this is. Persisted with it and checked on every save, so a session that signs
@@ -478,6 +496,35 @@ function clearDirty<T extends { mtime: string }>(
   return { ...records, [id]: { dirty: !settled, data: extra ? { ...record.data, ...extra } : record.data } };
 }
 
+// Marks a record `rejected` for the exact version the server permanently refused. A record edited
+// again since — `mtime` has moved on — is left alone: the rejection was about a version that no
+// longer exists, and the fresh one deserves its own attempt rather than starting out stuck.
+function markRejected<T extends { mtime: string }>(
+  records: Record<string, Stored<T>>,
+  id: string,
+  mtime: string
+): Record<string, Stored<T>> {
+  const record = records[id];
+  if (!record || record.data.mtime !== mtime) return records;
+  return { ...records, [id]: { ...record, rejected: true } };
+}
+
+// Counts of work the mirror still owes the server: `pending` is everything dirty or queued,
+// `stuck` is the subset of that the server has already permanently refused. Pure UI state, read by
+// UserDataContext to derive the sync indicator (offline-sync.md step 5) — a `stuck` count above
+// zero is what turns "retrying forever in silence" into something the user can actually see.
+export function syncCounts(state: MirrorState): { pending: number; stuck: number } {
+  let pending = state.ops.length;
+  let stuck = state.ops.reduce((n, op) => n + (op.rejected ? 1 : 0), 0);
+  for (const group of [state.lists, state.notes, state.highlights, state.visited]) {
+    for (const record of Object.values(group)) {
+      if (record.dirty) pending += 1;
+      if (record.rejected) stuck += 1;
+    }
+  }
+  return { pending, stuck };
+}
+
 export interface FlushAck {
   kind: RecordKind;
   id: string;
@@ -491,7 +538,12 @@ export interface FlushOutcome {
   // tab holds the flush lock.
   status: 'ok' | 'offline' | 'unauthorized' | 'blocked';
   acks: FlushAck[];
+  // Records and ops the server permanently refused this round (a 400, or an id collision that
+  // outlived every retry) — left dirty/queued rather than acked, but marked so the mirror can tell
+  // the sync indicator "stuck" instead of leaving the rejection silent.
+  rejected: FlushAck[];
   doneOps: string[];
+  rejectedOps: string[];
   remaps: { from: string; to: string }[];
   snapshot: UserData | null;
 }
@@ -521,9 +573,25 @@ export function applyFlushOutcome(state: MirrorState, outcome: FlushOutcome): Mi
       }
     }
   }
+  for (const ack of outcome.rejected) {
+    if (ack.kind === 'list') next = { ...next, lists: markRejected(next.lists, ack.id, ack.mtime) };
+    else if (ack.kind === 'note') next = { ...next, notes: markRejected(next.notes, ack.id, ack.mtime) };
+    else if (ack.kind === 'visited') {
+      const record = next.visited[ack.id];
+      if (record && record.data.visitedAt === ack.mtime) {
+        next = { ...next, visited: { ...next.visited, [ack.id]: { ...record, rejected: true } } };
+      }
+    } else {
+      next = { ...next, highlights: markRejected(next.highlights, ack.id, ack.mtime) };
+    }
+  }
   if (outcome.doneOps.length) {
     const done = new Set(outcome.doneOps);
     next = { ...next, ops: next.ops.filter((op) => !done.has(op.id)) };
+  }
+  if (outcome.rejectedOps.length) {
+    const rejected = new Set(outcome.rejectedOps);
+    next = { ...next, ops: next.ops.map((op) => (rejected.has(op.id) ? { ...op, rejected: true } : op)) };
   }
   return outcome.snapshot ? applySnapshot(next, outcome.snapshot) : next;
 }

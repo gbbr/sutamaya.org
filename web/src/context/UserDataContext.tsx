@@ -12,6 +12,7 @@ import {
   queueSiblingOrder,
   setListParentRecord,
   setNoteRecord,
+  syncCounts,
   writeHighlightRecord,
   type MirrorState,
 } from '../lib/mirror';
@@ -36,6 +37,14 @@ const FLUSH_DEBOUNCE_MS = 2000;
 // device that came back online without firing `online`.
 const FLUSH_POLL_MS = 5 * 60 * 1000;
 
+// What the sync indicator (TreePane, beside the account badge) shows. 'offline' takes priority
+// over everything else — the browser itself says there's no network, which already explains why
+// nothing is draining. 'stuck' is next: a queue the server has permanently refused is a different
+// problem than one merely waiting its turn, and silently retrying it forever is the exact failure
+// mode offline sync exists to fix (see offline-sync.md step 5). Otherwise it's 'pending' (queued,
+// still expected to land) or 'synced' (nothing owed).
+export type SyncStatus = 'synced' | 'pending' | 'offline' | 'stuck';
+
 interface UserDataState {
   ready: boolean;
   lists: ListDef[];
@@ -43,6 +52,16 @@ interface UserDataState {
   notes: NotesMap;
   highlights: HighlightsMap;
   visited: VisitedMap;
+  // Sync state for the persistent-chrome indicator — see SyncStatus above.
+  syncStatus: SyncStatus;
+  pendingCount: number;
+  lastSyncedAt: string | null;
+  // Set when a flush hit a 401 — the queue is intact, but the session has lapsed and the automatic
+  // triggers have stood down. Deliberately doesn't navigate anywhere on its own (interrupting
+  // someone mid-sutta with a forced trip to Settings is what this replaces); the sync indicator
+  // surfaces it, and a click calls promptGoogleSignIn(), which is the right time for that
+  // navigation because it is now a direct response to the user's own action.
+  needsReauth: boolean;
   listMembers: (listId: string) => string[];
   createList: (label: string, parentId?: string | null, kind?: ListKind) => Promise<ListDef>;
   renameList: (id: string, label: string) => Promise<void>;
@@ -66,6 +85,10 @@ const EMPTY: UserDataState = {
   notes: {},
   highlights: {},
   visited: {},
+  syncStatus: 'synced',
+  pendingCount: 0,
+  lastSyncedAt: null,
+  needsReauth: false,
   listMembers: () => [],
   createList: async () => {
     throw new Error('not ready');
@@ -88,8 +111,26 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
   // Set when the session has lapsed (a 401 during a flush). The queue is intact — nothing is
   // dropped — but the automatic triggers stand down until the user signs back in, since retrying
-  // an expired cookie every couple of minutes achieves nothing.
+  // an expired cookie every couple of minutes achieves nothing. Exposed as `needsReauth`.
   const [paused, setPaused] = useState(false);
+  // Display-only: when the last flush actually reached the network and pulled a fresh snapshot.
+  // Not persisted — it's a "how stale might this be" cue, not data worth surviving a reload for.
+  const [lastSyncedAt, setLastSyncedAt] = useState<string | null>(null);
+  // The browser's own online/offline signal, tracked independently of the flush triggers below (see
+  // that effect's own `online` listener, which exists to *schedule a flush* — this one exists only
+  // to *display* connectivity, so it runs unconditionally rather than standing down while paused).
+  const [online, setOnline] = useState(() => (typeof navigator === 'undefined' ? true : navigator.onLine));
+
+  useEffect(() => {
+    const goOnline = () => setOnline(true);
+    const goOffline = () => setOnline(false);
+    window.addEventListener('online', goOnline);
+    window.addEventListener('offline', goOffline);
+    return () => {
+      window.removeEventListener('online', goOnline);
+      window.removeEventListener('offline', goOffline);
+    };
+  }, []);
 
   // The flush reads the mirror at the moment it runs, not at the moment its trigger was set up,
   // so it goes through a ref rather than through the callback's own closure.
@@ -156,13 +197,18 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       // while a flush is out, and applyFlushOutcome only clears what was actually acknowledged.
       setState((s) => (s.userId === current.userId ? applyFlushOutcome(s, outcome) : s));
       setPaused(outcome.status === 'unauthorized');
-      if (outcome.status === 'unauthorized') promptGoogleSignIn();
+      // A genuine 401 pause is surfaced through `needsReauth` (see the sync indicator in TreePane)
+      // rather than by calling promptGoogleSignIn() here directly — that navigates to Settings, and
+      // firing it from a background flush would yank the reader away from whatever they were doing
+      // for a session lapse they haven't even noticed yet. promptGoogleSignIn() is still the right
+      // call once *they* act on the indicator.
+      if (outcome.status === 'ok') setLastSyncedAt(new Date().toISOString());
     } catch (e) {
       console.error('sync flush failed', e);
     } finally {
       flushing.current = false;
     }
-  }, [promptGoogleSignIn]);
+  }, []);
 
   const scheduleFlush = useCallback(() => {
     if (flushTimer.current) clearTimeout(flushTimer.current);
@@ -197,6 +243,12 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   }, [ready, user, paused, flush]);
 
   const { lists, membership, notes, highlights, visited } = useMemo(() => deriveUserData(state), [state]);
+
+  const { pending: pendingCount, stuck: stuckCount } = useMemo(() => syncCounts(state), [state]);
+  // 'offline' first — the browser itself says there's no network, which already explains why
+  // nothing is draining, regardless of anything else the queue is carrying. 'stuck' next: a
+  // permanently-refused record is a different problem than one merely waiting its turn.
+  const syncStatus: SyncStatus = !online ? 'offline' : stuckCount > 0 ? 'stuck' : pendingCount > 0 ? 'pending' : 'synced';
 
   // Every mutator goes through this: apply to the mirror, then flush shortly after. The guard on
   // `userId` drops a write that lands after sign-out rather than filing it under nobody.
@@ -339,6 +391,10 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       notes,
       highlights,
       visited,
+      syncStatus,
+      pendingCount,
+      lastSyncedAt,
+      needsReauth: paused,
       listMembers,
       createList,
       renameList,
@@ -359,6 +415,10 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       notes,
       highlights,
       visited,
+      syncStatus,
+      pendingCount,
+      lastSyncedAt,
+      paused,
       listMembers,
       createList,
       renameList,
