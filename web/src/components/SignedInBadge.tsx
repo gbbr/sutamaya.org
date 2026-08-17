@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { navigate } from '@reach/router';
 import type { User } from '../lib/types';
 
@@ -8,6 +9,12 @@ import type { User } from '../lib/types';
 // chrome (mobile much bigger — see TreePane's header).
 export function SignedInBadge({ user, size, promptGoogleSignIn }: { user: User | null; size: number; promptGoogleSignIn: () => void }) {
   const dim = { width: size, height: size };
+  // The initials render first and stay put until the <img> actually finishes loading — Google's
+  // avatar URL is unreachable offline (it's not something the PWA precaches), and revealing the
+  // <img> only on success means an offline/failed load just leaves the initials showing, rather
+  // than flashing the browser's broken-image glyph before falling back. `key` resets `loaded`
+  // on a real account switch, so a new picture gets its own fresh attempt.
+  const [loaded, setLoaded] = useState(false);
   return user ? (
     <button
       data-component="SignedInBadge"
@@ -17,11 +24,18 @@ export function SignedInBadge({ user, size, promptGoogleSignIn }: { user: User |
       title={`Signed in as ${user.email}`}
       onClick={() => navigate('/settings')}
     >
-      {user.picture ? (
-        <img src={user.picture} alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-      ) : (
-        user.email[0]?.toUpperCase()
+      {user.picture && (
+        <img
+          key={user.picture}
+          src={user.picture}
+          alt=""
+          className="w-full h-full object-cover"
+          style={{ display: loaded ? undefined : 'none' }}
+          referrerPolicy="no-referrer"
+          onLoad={() => setLoaded(true)}
+        />
       )}
+      {(!user.picture || !loaded) && user.email[0]?.toUpperCase()}
     </button>
   ) : (
     // Google's own rendered "icon" button (google.accounts.id.renderButton with type: 'icon')
