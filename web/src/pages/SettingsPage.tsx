@@ -53,7 +53,7 @@ function formatSyncedAt(iso: string): string {
   return `${days} day${days === 1 ? '' : 's'} ago`;
 }
 
-// One line describing the offline-sync queue (see offline-sync.md step 5) — the same states the
+// One line describing the offline-sync queue (see offline-sync.md's "Sync state") — the same states the
 // TreePane sync indicator shows, spelled out in words for the place a user would come looking for
 // more detail than an icon can carry.
 function syncStatusLine(status: SyncStatus, pendingCount: number, lastSyncedAt: string | null): string {
