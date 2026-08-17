@@ -67,6 +67,30 @@ awareness and mindfulness") sits against Pali reading *Divā vā yadi vā ratti�
 by night"). And **`blurb`/`name` have no Pali counterpart at all.** Neither is a special case for
 a list; both are just judgment at review time.
 
+### Notes are never retranslated
+
+`sujato/notes` is out of every rule's reach — the default scope omits it, and a rule naming it is
+rejected rather than ignored (`RETRANSLATABLE_TREES` in `../lib/retranslation.js`). A note is
+Sujato writing *about* the text rather than translating it, so the same words appear as ordinary
+English and as quotations of his own renderings, and a rule that is right on the translation is
+routinely wrong on the note beside it:
+
+| Note | What a rule did to it |
+|---|---|
+| `sn47.35:3.2` | the "awareness" part of **"awareness and awareness"** (*satisampajañña*) — the sentence exists to say which half is which |
+| `sn54.1:5.2` | "fading away" in the sense of its **gradual disappearing** |
+| `sn9.5:1.3` | Ānanda meditated till late at night, then **with awareness lay down** to rest |
+| `sn47.40:2.2` | This teaching on **origination and passing away** — half-converted, matching neither his wording nor ours |
+
+None of these can be corrected in place: a segment override resolves ids through a sutta-only
+index (see "Segment override" below), so there is no per-note escape hatch to pair with a rule
+that mostly works. The blanket exclusion is the cheaper answer, and the honest one — a note that
+argues for a rendering should keep the rendering it argues for.
+
+**A note therefore reads in Sujato's terms while the text beside it reads in this app's**, which is
+the accepted cost: MN 10's note says the *satipaṭṭhāna* it glosses is "mindfulness meditation"
+where the translation above it says "the establishment of awareness".
+
 ### The Pali predicate
 
 Something still has to *propose* the list. That's a regex over the aligned Pali root text — the
@@ -95,7 +119,7 @@ override**, which replaces one line outright.
   why: 'Sujato renders sampajañña as "aware"/"situational awareness"; this app prefers ' +
        '"understanding". Closed because plain-English "aware" is common and unrelated.',
   mode: 'allow',                       // 'allow' (closed) | 'deny' (open) — see below
-  scope: ['sujato/sutta', 'sujato/notes'],
+  scope: ['sujato/sutta', 'sujato/blurb'],  // optional; defaults to sutta + name + blurb
   predicate: /sampajañ|sampajān/i,     // proposes candidates; never runs at build time
   forms: [
     ['situational awareness', 'understanding'],
@@ -188,14 +212,8 @@ override therefore only ever targets the main translation, never a note/blurb/na
 - **`id`** — stable, unique; names the sidecar and the diff file.
 - **`why`** — required prose. Which Pali term, and why this app departs from upstream. A 2,000-id
   list says nothing about intent on its own; this is what carries it.
-- **`scope`** — which trees, from `sujato/{sutta,notes,name,blurb}`. Defaults to all four. It is also
-  the only way to treat a note differently from the line it annotates: **`sujato/notes` reuses the
-  sutta text's own segment ids** (8,916 of them), so `allow`/`deny` can't say one thing about
-  `dn22:1.11`'s translation and another about its footnote. That matters where a term's English is
-  ordinary English in Sujato's own prose — his notes gloss *citta* as "simple awareness" while
-  rendering *sampajāna* as "aware", and no list can separate those — so `sampajanna-understanding`
-  and `samudaya-arising` are scoped to `sujato/sutta` + `sujato/blurb` and leave the notes saying
-  what he said.
+- **`scope`** — which trees, from `sujato/{sutta,name,blurb}`. Defaults to all three. Naming
+  `sujato/notes` is an error, not an option — see below.
 - **`forms`** — `[from, to]` pairs, matched on English word boundaries, longest-first regardless
   of array order so `situational awareness` isn't pre-empted by `awareness`. Every inflection is
   listed explicitly rather than swapping stems: the corpus contains unrelated words on the same
