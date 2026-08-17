@@ -249,11 +249,19 @@ defending the order.
 
 ### Tree repair at read time
 
-Tombstoned groups leave children pointing at rows that are no longer there, so the tree has to be
-repaired where it is built rather than where a delete happens: any list whose `parentId` points at a
-missing or tombstoned row is re-homed to the root. The same walk cheaply breaks cycles (A4), which
-covers the two-devices-moving-groups-into-each-other case without a special path. This retires the
-server's delete-time re-parenting in `routes/lists.js` along with its non-atomic read-then-write.
+Deleting a group deletes what is inside it — the folder convention, and what the client's own
+blocked-delete already assumed the server should do. That is expressed as a cascade at read time
+rather than a subtree rewrite at delete time: one `UPDATE` tombstones the group, and the read drops
+every list with a tombstoned ancestor (A4). Doing it on read is what makes it converge — a child
+added on another device while this one was offline is hidden by the same rule, where a delete-time
+walk would have missed it entirely and left it stranded at the top level. The same walk cheaply
+breaks cycles, covering the two-devices-moving-groups-into-each-other case without a special path.
+This retires the server's delete-time re-parenting in `routes/lists.js` along with its non-atomic
+read-then-write.
+
+Re-homing to the root survives only for a `parentId` that points at **no row at all** — a client
+pushing a child before its parent. That is a dangling reference, not a delete, and dropping it would
+lose a list with no tombstone to explain why.
 
 ### Client
 
@@ -371,8 +379,9 @@ One step per branch, each independently shippable, each ending with `npm test` g
    notes and highlights. Every read path then has to filter them — `buildUserData`,
    `assembleUserData`, and the membership derivation — and `suttaListRow` has to *accept* a
    tombstoned list rather than 404, since a membership operation may arrive after the list's own
-   delete. The tree repair in A4 takes over from the delete handler's re-parenting: a group's
-   children are re-homed at read time rather than rewritten at delete time.
+   delete. The tree repair in A4 takes over from the delete handler's re-parenting: deleting a group
+   tombstones only that one row, and its descendants are cascaded out at read time rather than
+   re-parented at delete time.
 
    Do the read filtering in the same commit as the delete change, not after. Between the two, every
    deleted row is live again to the client — a visible data-corruption window on a deployed app. The
@@ -380,9 +389,10 @@ One step per branch, each independently shippable, each ending with `npm test` g
    the filter puts a deleted note straight back into the Notes auto-list.
 
    *Tests:* a deleted row persists in D1 with `deleted = 1`; tombstoned rows are absent from `GET
-   /api/data` — notes especially; an add targeting a tombstoned list still lands; children of a
-   tombstoned group re-home to the grandparent; a cycle resolves identically from either input
-   order.
+   /api/data` — notes especially; an add targeting a tombstoned list still lands; a tombstoned
+   group's whole subtree is absent from `GET /api/data` while its descendants' own rows stay
+   untouched; a list whose parent is absent entirely is re-homed rather than dropped; a cycle
+   resolves identically from either input order.
 
 3. **Highlights as immutable groups.** Client-generated `g` in `useHighlightPopup.ts`, tombstones
    instead of `DELETE_OVERLAPS_SQL`, group-level writes, and render-time overlap resolution in
@@ -510,15 +520,25 @@ one in the same format, using a fixed server `deviceId`.
 
 ### A4 — Tree repair
 
-Run over the list set on read, on both server and client, producing the tree the UI renders:
+Run over the list set on read — **tombstones included**, since the cascade needs them — on both
+server and client, producing the tree the UI renders:
 
-1. Drop tombstoned lists; collect the rest into a map by id.
-2. **Re-home orphans** — any list whose `parentId` points at a missing or tombstoned row gets
-   `parentId = null`. This is what replaces the delete handler's re-parenting.
+1. Collect every row into a map by id, tombstoned ones too.
+2. **Re-home danglers** — a `parentId` pointing at no row *at all* gets `parentId = null`. This is a
+   safety net, not delete semantics: `parent_id` has no foreign key, so a client that pushes a child
+   before its parent would otherwise leave a list that exists but renders nowhere. A `parentId`
+   pointing at a *tombstoned* row is the different case step 4 handles.
 3. **Break cycles** — walk each list's ancestor chain; on revisiting a node, re-home the member with
    the **lowest** `mtime` to the root. Lowest, so the most recent intent survives. Deterministic
-   given identical input, which is what makes two devices agree without communicating.
-4. Order siblings by `position`, tie-breaking on `id` so equal positions — which the negative-prepend
+   given identical input, which is what makes two devices agree without communicating. Must run
+   before step 4, whose walk would otherwise never terminate.
+4. **Cascade deletes** — drop every tombstoned list, and every list with a tombstoned ancestor.
+   Deleting a group deletes what is inside it, the way deleting a folder does; children are *not*
+   re-homed. So one `UPDATE` on the group makes its whole subtree disappear here, with no descendant
+   walk at write time, and a child added on another device while this one was offline is hidden by
+   the same rule instead of surfacing as a stray at the top level. Survivors form a closed forest —
+   a live list can never point at a dropped parent — because anything whose parent went, went too.
+5. Order siblings by `position`, tie-breaking on `id` so equal positions — which the negative-prepend
    scheme can produce — still render stably.
 
 ### A5 — Flush triggers

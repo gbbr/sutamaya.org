@@ -2,6 +2,7 @@ import { Hono } from 'hono';
 import { requireAuth } from '../auth.js';
 import { jsonBody } from '../jsonBody.js';
 import { NOTE_MAX_LENGTH } from '../lib/textLimits.js';
+import { resolveMtime } from '../lib/mtime.js';
 
 export const annotationsRouter = new Hono();
 annotationsRouter.use(requireAuth);
@@ -10,24 +11,33 @@ annotationsRouter.use(requireAuth);
 // with no structural per-user isolation of their own, so that predicate is the only thing
 // isolating one user's annotations from another's.
 
-// Blank text deletes the row rather than storing an empty string: lib/userData.js's auto-notes
-// list treats "row exists" as "has a note", so an empty note left behind would keep showing up
-// there.
+// Blank text tombstones the note (`deleted = 1`, text emptied) rather than storing an empty string
+// or removing the row. lib/userData.js's auto-notes list treats "row exists" as "has a note", so an
+// empty note left visible would keep showing up there — and a hard delete would let a device that
+// was offline when the clear happened push its stale copy back, which against a missing row is
+// indistinguishable from writing a brand new note. The tombstone stays behind to lose that merge.
+//
+// Setting and clearing are the same conditional upsert, differing only in `deleted`: both are just
+// a state the note is in at a given mtime, so a stale clear can no more erase a newer edit than a
+// stale edit can undo a newer clear.
+const UPSERT_NOTE_SQL = `
+  INSERT INTO notes (user_id, sutta_id, text, updated_at, mtime, deleted) VALUES (?1, ?2, ?3, ?4, ?4, ?5)
+    ON CONFLICT(user_id, sutta_id) DO UPDATE SET text = ?3, updated_at = ?4, mtime = ?4, deleted = ?5
+    WHERE ?4 > notes.mtime
+`;
+
 annotationsRouter.put('/notes/:suttaId', async (c) => {
   const body = await jsonBody(c);
   const text = ((body && body.text) || '').slice(0, NOTE_MAX_LENGTH);
-  const userId = c.get('userId');
-  const suttaId = c.req.param('suttaId');
-  if (text.trim() === '') {
-    await c.env.DB.prepare('DELETE FROM notes WHERE user_id = ? AND sutta_id = ?').bind(userId, suttaId).run();
-  } else {
-    await c.env.DB.prepare(
-      `INSERT INTO notes (user_id, sutta_id, text, updated_at) VALUES (?1, ?2, ?3, ?4)
-         ON CONFLICT(user_id, sutta_id) DO UPDATE SET text = ?3, updated_at = ?4`
-    )
-      .bind(userId, suttaId, text, new Date().toISOString())
-      .run();
-  }
+  const cleared = text.trim() === '';
+  // Conditional on mtime so a stale offline edit can't overwrite newer work made elsewhere in the
+  // meantime — the entire conflict resolution is this WHERE clause. `updated_at` takes the same
+  // client-supplied instant as `mtime`, so the Notes auto-list orders by when the user wrote the
+  // note rather than by when the write happened to reach the server.
+  const mtime = resolveMtime(body?.mtime);
+  await c.env.DB.prepare(UPSERT_NOTE_SQL)
+    .bind(c.get('userId'), c.req.param('suttaId'), cleared ? '' : text, mtime, cleared ? 1 : 0)
+    .run();
   return c.json({ ok: true });
 });
 
@@ -39,8 +49,8 @@ const DELETE_OVERLAPS_SQL = `
 `;
 
 const INSERT_HIGHLIGHT_SQL = `
-  INSERT INTO highlights (id, user_id, sutta_id, i, s, e, color, g, created_at)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+  INSERT INTO highlights (id, user_id, sutta_id, i, s, e, color, g, created_at, mtime)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 `;
 
 // Atomically replace any highlight overlapping any of the given [s,e) ranges (each in its own
@@ -58,7 +68,7 @@ const INSERT_HIGHLIGHT_SQL = `
 annotationsRouter.put('/highlights/ranges', async (c) => {
   const db = c.env.DB;
   const userId = c.get('userId');
-  const { suttaId, ranges, color } = (await jsonBody(c)) || {};
+  const { suttaId, ranges, color, mtime: clientMtime } = (await jsonBody(c)) || {};
   if (!suttaId || !Array.isArray(ranges) || !ranges.length) {
     return c.json({ error: 'suttaId and a non-empty ranges array are required.' }, 400);
   }
@@ -72,12 +82,14 @@ annotationsRouter.put('/highlights/ranges', async (c) => {
   );
   if (color) {
     const groupId = crypto.randomUUID();
-    const createdAt = new Date().toISOString();
+    // `created_at` takes the client's instant too, so the Highlights auto-list orders by when
+    // the user highlighted rather than when the write reached the server.
+    const mtime = resolveMtime(clientMtime);
     for (const r of ranges) {
       statements.push(
         db
           .prepare(INSERT_HIGHLIGHT_SQL)
-          .bind(crypto.randomUUID(), userId, suttaId, r.i, r.s, r.e, color, groupId, createdAt)
+          .bind(crypto.randomUUID(), userId, suttaId, r.i, r.s, r.e, color, groupId, mtime, mtime)
       );
     }
   }
@@ -86,23 +98,33 @@ annotationsRouter.put('/highlights/ranges', async (c) => {
 });
 
 // No current client calls this: removing a highlight goes through PUT /highlights/ranges with a
-// null `color`, which does the delete in the same atomic batch as everything else. It stays for
+// null `color`, which does the removal in the same atomic batch as everything else. It stays for
 // PWA shells cached before that change, which still fire this optimistically. Deleting a
 // highlight that isn't there is not an error — a missing row means the intended end state
 // already holds.
+//
+// Tombstones rather than deletes, so a device that was offline when this ran can't push the
+// highlight back as an apparently-new one. Unconditional on mtime: the id is only knowable from
+// synced server state, so there is no offline replay of this to be stale.
 annotationsRouter.delete('/highlights/:id', async (c) => {
-  await c.env.DB.prepare('DELETE FROM highlights WHERE id = ? AND user_id = ?')
-    .bind(c.req.param('id'), c.get('userId'))
+  await c.env.DB.prepare('UPDATE highlights SET deleted = 1, mtime = ? WHERE id = ? AND user_id = ?')
+    .bind(resolveMtime(), c.req.param('id'), c.get('userId'))
     .run();
   return c.json({ ok: true });
 });
 
 annotationsRouter.post('/visited/:suttaId', async (c) => {
+  const body = await jsonBody(c);
+  // `visited` has no separate mtime column — visited_at already is the clock, so it's the one
+  // the client supplies and the conditional write compares against. A stale offline visit can
+  // then no longer jump ahead of a newer visit recorded elsewhere.
+  const visitedAt = resolveMtime(body?.visitedAt);
   await c.env.DB.prepare(
     `INSERT INTO visited (user_id, sutta_id, visited_at) VALUES (?1, ?2, ?3)
-       ON CONFLICT(user_id, sutta_id) DO UPDATE SET visited_at = ?3`
+       ON CONFLICT(user_id, sutta_id) DO UPDATE SET visited_at = ?3
+       WHERE ?3 > visited.visited_at`
   )
-    .bind(c.get('userId'), c.req.param('suttaId'), new Date().toISOString())
+    .bind(c.get('userId'), c.req.param('suttaId'), visitedAt)
     .run();
   return c.json({ ok: true });
 });

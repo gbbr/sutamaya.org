@@ -142,15 +142,43 @@ Sujato English translation — none of the KN books here are Pali-only.
 
 A Cloudflare Worker (Hono), serving `/api/*` and, via the assets binding declared in the root
 `wrangler.jsonc`, the built SPA and static corpus from the same origin. **D1** (serverless SQLite)
-holds user data — one row per user per entity, `worker/migrations/0001_init.sql`:
+holds user data — one row per user per entity, `worker/migrations/0001_init.sql` plus
+`0002_offline_sync.sql`:
 
 ```
 users       { id, email, google_id, name, picture, created_at }
-lists       { id, user_id, label, parent_id, kind, position, items, created_at }
-notes       { user_id, sutta_id, text, updated_at }          -- PK (user_id, sutta_id)
-highlights  { id, user_id, sutta_id, i, s, e, color, g, created_at }
+lists       { id, user_id, label, parent_id, kind, position, items, created_at, mtime, deleted }
+notes       { user_id, sutta_id, text, updated_at, mtime, deleted }   -- PK (user_id, sutta_id)
+highlights  { id, user_id, sutta_id, i, s, e, color, g, created_at, mtime, deleted }
 visited     { user_id, sutta_id, visited_at }                 -- PK (user_id, sutta_id)
 ```
+
+**`mtime` and `deleted` are the offline-sync machinery** — see `offline-sync.md` for the full
+design, of which the server half is built and the client half (an IndexedDB mirror replacing
+`UserDataContext`'s optimistic-write model) is not yet.
+
+- **`mtime`** is a `${ISO}|${deviceId}` string (`lib/mtime.js`); ISO 8601 is fixed-width, so
+  lexicographic comparison is chronological in both SQLite `TEXT` and JS. Every mutable write is
+  conditional on it — an upsert whose `DO UPDATE` carries `WHERE excluded.mtime > <table>.mtime`, or
+  an `UPDATE ... AND mtime < ?` — which is the whole of conflict resolution: last writer wins, per
+  row, no merge algebra. The client supplies it (captured when the user acts, not when the write
+  flushes); `resolveMtime()` generates one with a `server` deviceId when a write arrives without,
+  monotonically clamped so two writes in the same millisecond can't tie and reject each other.
+  The existing timestamp columns (`notes.updated_at`, `highlights.created_at`, `visited.visited_at`)
+  take the client's value too, so the auto-lists order by when the user acted rather than by when
+  the write arrived. `visited` needs no `mtime` of its own — `visited_at` already is its clock.
+- **`deleted`** is a tombstone. Deletes never remove the row, because a device that was offline when
+  a delete happened would otherwise push its still-live copy back on reconnect, which against a
+  missing row is indistinguishable from a fresh creation. **Every read path therefore excludes
+  tombstones** — `notes`/`highlights` filter `deleted = 0` in SQL, `GET /api/lists` likewise, and
+  `buildUserData`'s `lists` read instead hands them to `repairListTree` (see below), which needs them
+  to cascade and drops them itself. Miss one and deleted notes reappear in the Notes auto-list,
+  deleted highlights render, deleted lists show as membership chips. Two write paths deliberately
+  *don't* filter: `suttaListRow` (a membership add queued offline may arrive after the list's own
+  delete, and must land on the dead row rather than 404 and be discarded) and `invalidParentReason`
+  (nesting under a group deleted elsewhere is accepted rather than rejected, then cascaded out on
+  read). The cycle check in `invalidReparentReason` does filter, so a dead row can't manufacture a
+  cycle out of a chain nothing renders.
 
 Every table but `users` carries `user_id` and every query is scoped `AND user_id = ?` (or
 equivalent) — that predicate is the only thing isolating one user's data from another's, since
@@ -171,9 +199,12 @@ writes and existence checks alike (`routes/lists.js`, `routes/annotations.js`).
   (rows sharing the same `parent_id`), not the whole table, and is routinely negative — a new
   list/group is prepended, not appended, via `lib/listPositions.js`'s `firstPosition` (reproduced
   as SQL in `CREATE_LIST_SQL`, `routes/lists.js`).
-- **`notes`** — keyed by `(user_id, sutta_id)` directly, no synthetic id. A blank `text` deletes
-  the row rather than storing an empty string, since `assembleUserData()`'s auto-notes list treats
-  "row exists" as "has a note".
+- **`notes`** — keyed by `(user_id, sutta_id)` directly, no synthetic id. A blank `text` tombstones
+  the note rather than storing an empty string, since `assembleUserData()`'s auto-notes list treats
+  "row exists" as "has a note" — so the read filter on `deleted` is what keeps that rule true.
+  Setting and clearing are the same conditional upsert (`UPSERT_NOTE_SQL`), differing only in
+  `deleted`: both are just a state the note is in at a given `mtime`, so a stale clear can no more
+  erase a newer edit than a stale edit can undo a newer clear.
 - **`highlights`** — one row is one highlighted range within one segment of one sutta:
   - `i` — that segment's index within the sutta's segment array (matches the DOM's own
     `data-seg` attribute in the reader)
@@ -199,13 +230,36 @@ reorder isn't expressible as a single statement the way add/remove is; `PUT
 /api/lists/:id/items/order` (one list's suttas) instead *reconciles* the posted order against the
 list's current `items` (`lib/listItemOrder.js`'s `reconcileItemOrder`) — an id added by another
 tab after the client's snapshot is appended rather than silently dropped, and one removed the same
-way is left out rather than resurrected. Deleting a list re-parents its own children to its parent
-(`routes/lists.js`) rather than orphaning or cascade-deleting them — a `SELECT` for the children
-and the new parent's existing siblings, positions computed in JS via `lib/listPositions.js`'s
-`nextPosition`, then one `db.batch()` of the child `UPDATE`s plus the `DELETE`. D1 has no
-interactive transactions, so that read→write gap is real (not atomic the way the batch itself is)
-— acceptable here because the app runs single-user-per-tree, but worth knowing rather than a
-silently-dropped guarantee; see the comment above that `db.batch()` call.
+way is left out rather than resurrected.
+
+Deleting a list or group tombstones that one row and nothing else. **The tree is then repaired at
+read time** (`lib/listTree.js`'s `repairListTree`, called from `assembleUserData`), which is where
+the delete actually takes effect:
+
+- **Deleting a group deletes what's inside it** — every list with a tombstoned ancestor is dropped,
+  recursively. Children are *not* re-parented; deleting a folder doesn't scatter its contents. The
+  descendants' own rows are left untouched, so one `UPDATE` retires a whole subtree and it all comes
+  back if the group is ever un-deleted.
+- **A `parentId` pointing at no row at all** is re-homed to the root — the one case re-homing still
+  covers. It's a dangling reference, not a delete (`parent_id` has no foreign key, so a client that
+  pushes a child before its parent can produce one), and dropping it would lose a list with no
+  tombstone to explain why.
+- **Cycles** are broken by re-homing the lowest-`mtime` member, so the most recent move survives.
+  Runs before the cascade, whose ancestor walk would otherwise never terminate.
+- **Siblings** are ordered by `position`, tie-broken on `id`.
+
+Repairing on read rather than at delete time is what lets two devices converge on the same tree
+without communicating — whichever delete or move lands second never saw the other — so every step is
+deterministic given identical input, never dependent on row order. A child added on one device while
+another was deleting its parent group gets hidden by the cascade, where a delete-time subtree walk
+would have missed it and stranded it at the top level. It also retired the delete handler's old
+children/siblings `SELECT`s and the non-atomic read-then-write they sat in (D1 has no interactive
+transactions, so those reads were never part of the `db.batch()` that followed).
+
+Because the cascade needs to see tombstones, `buildUserData` is the one read that fetches dead
+`lists` rows (`notes`/`highlights` still filter `deleted = 0` in SQL) and lets `repairListTree` drop
+them. `position`/`mtime`/`deleted` feed the repair only — `shapeList` drops all three, so none reach
+the client.
 
 `PUT /api/highlights/ranges` deletes every stored highlight overlapping any of the posted `[s,e)`
 ranges (one or more, each in its own segment `i` — a cross-segment selection passes every
@@ -375,10 +429,13 @@ something there.
 
 ## Known gaps / deliberate simplifications
 
-- No offline write queue: list/note/highlight mutations fire immediately against the API: if
-  the network is down the optimistic local update stands but the write is lost (only
-  `console.error`-logged). A real offline-first sync layer would need a queue + conflict
-  resolution.
+- No offline write queue *on the client yet*: list/note/highlight mutations still fire immediately
+  against the API, so if the network is down the optimistic local update stands but the write is
+  lost (only `console.error`-logged). The server side of the fix is in place — client-supplied
+  `mtime` with conditional writes, tombstones, client-generated list ids, read-time tree repair (see
+  the Backend section) — but the client half, an IndexedDB mirror with a dirty-record flush replacing
+  `UserDataContext`'s optimistic model, is not. `offline-sync.md` is the plan and tracks which steps
+  are done.
 - The reader has no translation-source picker — this dataset only has one English translation per
   collection, so there's nothing to switch to. The reader heading instead shows a "Source:
   SuttaCentral (modified)" attribution line (`ReaderPage.tsx`), linking to the `sc-data` commit

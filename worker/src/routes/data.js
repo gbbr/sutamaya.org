@@ -12,16 +12,33 @@ dataRouter.use(requireAuth);
 // that function expects, mapping snake_case columns back to the camelCase field names it (and the
 // client) use. db.batch sends all four in one round trip and reads them as one snapshot.
 async function buildUserData(db, userId) {
+  // Tombstoned rows must never reach the client: they survive in D1 so a device that was offline
+  // when the delete happened can't resurrect them by pushing its still-live copy back. Notes are the
+  // sharpest of these — assembleUserData's auto-notes list treats "a row exists" as "this sutta has
+  // a note", so a tombstone slipping past the filter would put a deleted note back on screen.
+  //
+  // `lists` is the exception that fetches its tombstones: lib/listTree.js needs them to cascade a
+  // deleted group's descendants out, and drops every dead row itself.
   const [lists, notes, highlights, visited] = await db.batch([
     db.prepare('SELECT * FROM lists WHERE user_id = ? ORDER BY position').bind(userId),
-    db.prepare('SELECT * FROM notes WHERE user_id = ?').bind(userId),
-    db.prepare('SELECT * FROM highlights WHERE user_id = ?').bind(userId),
+    db.prepare('SELECT * FROM notes WHERE user_id = ? AND deleted = 0').bind(userId),
+    db.prepare('SELECT * FROM highlights WHERE user_id = ? AND deleted = 0').bind(userId),
     db.prepare('SELECT * FROM visited WHERE user_id = ?').bind(userId),
   ]);
   return assembleUserData({
+    // `position`/`mtime`/`deleted` are here only to feed lib/listTree.js's read-time repair (cascade,
+    // dangling-parent re-homing, cycle breaking, sibling order) — none of the three reach the client.
     listDocs: lists.results.map((row) => ({
       id: row.id,
-      data: { label: row.label, parentId: row.parent_id, kind: row.kind, items: JSON.parse(row.items || '[]') },
+      data: {
+        label: row.label,
+        parentId: row.parent_id,
+        kind: row.kind,
+        items: JSON.parse(row.items || '[]'),
+        position: row.position,
+        mtime: row.mtime,
+        deleted: row.deleted,
+      },
     })),
     // notes/visited are keyed by (user_id, sutta_id) rather than carrying a synthetic id, so the
     // sutta id is used as `id` here — which is what assembleUserData keys by.

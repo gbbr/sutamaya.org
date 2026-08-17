@@ -1,5 +1,6 @@
 import { latestIds } from './autoListRecency.js';
 import { shapeList } from './listShape.js';
+import { repairListTree } from './listTree.js';
 
 // Fixed, non-persisted ids for the three auto-managed lists below — never written to the `lists`
 // table, so they can't drift from the highlights/notes/visited rows they're derived from
@@ -24,6 +25,10 @@ export const RECENT_AUTO_LIST_CAP = 20;
 // pulled out so the shaping/auto-list-synthesis logic is unit-testable without a live database.
 // Each `*Docs` array is `{id, data}` pairs, `data` being each row's own field object, matching
 // how routes/data.js maps its query results.
+//
+// Tombstoned notes/highlights/visited rows are filtered out in SQL before they get here (see
+// buildUserData). `listDocs` is the exception and arrives with its tombstones, because lib/listTree.js
+// needs them to cascade a deleted group's descendants out — it does that filtering itself.
 export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDocs }) {
   // Keyed by list id, not label — two lists can share a label (e.g. same-named lists nested
   // under different parents), and an id is the only thing that identifies one unambiguously.
@@ -34,8 +39,22 @@ export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDoc
   // tells you *which* lists a sutta belongs to, not their relative order within one list.
   // `kind` distinguishes a plain list (holds suttas) from a ListGroup (holds only other
   // lists/groups, never items — see routes/lists.js's invalidParentReason).
-  const lists = listDocs.map(({ id, data }) => {
-    const shaped = shapeList(id, data);
+  //
+  // repairListTree (lib/listTree.js) decides which lists survive at all — dropping tombstones and
+  // everything beneath them — as well as their order and, where a stored `parentId` dangles, the
+  // parentId each is shaped with. `position`/`mtime`/`deleted` feed that repair and stop here.
+  const dataById = new Map(listDocs.map(({ id, data }) => [id, data]));
+  const ordered = repairListTree(
+    listDocs.map(({ id, data }) => ({
+      id,
+      parentId: data.parentId ?? null,
+      position: data.position ?? 0,
+      mtime: data.mtime ?? '',
+      deleted: data.deleted ?? 0,
+    }))
+  );
+  const lists = ordered.map(({ id, parentId }) => {
+    const shaped = shapeList(id, { ...dataById.get(id), parentId });
     shaped.items.forEach((suttaId) => {
       (membership[suttaId] = membership[suttaId] || []).push(id);
     });

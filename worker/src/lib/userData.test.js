@@ -30,6 +30,51 @@ describe('assembleUserData', () => {
     expect(result.membership).toEqual({ dn1: ['l1'], dn2: ['l1'] });
   });
 
+  // listDocs arrives with its tombstones (unlike the other three), so the drop-and-cascade happens
+  // here rather than in SQL — and a deleted group must take its children's membership chips with it.
+  it('drops a tombstoned list and everything beneath it, membership included', () => {
+    const result = assembleUserData({
+      ...empty,
+      listDocs: [
+        { id: 'g1', data: { label: 'Study', kind: 'group', items: [], deleted: 1 } },
+        { id: 'l1', data: { label: 'Buried', parentId: 'g1', kind: 'list', items: ['dn1'] } },
+        { id: 'l2', data: { label: 'Kept', kind: 'list', items: ['dn2'] } },
+      ],
+    });
+    expect(result.lists.map((l) => l.id)).toEqual(['l2']);
+    expect(result.membership).toEqual({ dn2: ['l2'] });
+  });
+
+  // A parentId pointing at no doc at all is the dangling case, not a delete — re-homed, not dropped.
+  it('re-homes a list whose parent is absent from the doc set entirely', () => {
+    const result = assembleUserData({
+      ...empty,
+      listDocs: [{ id: 'l1', data: { label: 'Dangler', parentId: 'never-synced', kind: 'list', items: [] } }],
+    });
+    expect(result.lists).toEqual([{ id: 'l1', label: 'Dangler', parentId: null, kind: 'list', items: [] }]);
+  });
+
+  // position/mtime/deleted are inputs to the repair only — they must not reach the client.
+  it('does not leak position, mtime or deleted into the returned lists', () => {
+    const result = assembleUserData({
+      ...empty,
+      listDocs: [{ id: 'l1', data: { label: 'X', kind: 'list', items: [], position: -3, mtime: '2026-01-01|d', deleted: 0 } }],
+    });
+    expect(result.lists).toEqual([{ id: 'l1', label: 'X', parentId: null, kind: 'list', items: [] }]);
+  });
+
+  it('orders lists by position, tie-breaking on id', () => {
+    const result = assembleUserData({
+      ...empty,
+      listDocs: [
+        { id: 'b', data: { label: 'B', items: [], position: 0 } },
+        { id: 'a', data: { label: 'A', items: [], position: 0 } },
+        { id: 'first', data: { label: 'First', items: [], position: -1 } },
+      ],
+    });
+    expect(result.lists.map((l) => l.id)).toEqual(['first', 'a', 'b']);
+  });
+
   it('defaults a doc with no kind field to a plain list', () => {
     const result = assembleUserData({ ...empty, listDocs: [{ id: 'l1', data: { label: 'X', items: [] } }] });
     expect(result.lists[0].kind).toBe('list');
