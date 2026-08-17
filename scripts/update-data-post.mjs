@@ -25,7 +25,7 @@ import {
   paliTextFor,
 } from './lib/retranslation.js';
 
-const DIFF_DIR = path.join(ROOT, 'scripts', 'update-data', 'diff');
+const DIFF_DIR = path.join(ROOT, 'data', 'diff');
 
 // Core logic, callable directly with explicit dirs/paths (tests point these at fixture trees
 // instead of the real data/sujato(.post) — see scripts/update-data.test.js). Never touches
@@ -102,9 +102,12 @@ export async function runPost({
         }
         obj[segment] = result;
         changedFiles.add(relPath);
+        ruleCounts.set(rule.id, (ruleCounts.get(rule.id) ?? 0) + 1);
+        if (diff) diffEntries.push({ ruleId: rule.id, relPath, segmentId: segment, from: current, to: result });
       }
     }
   }
+  for (const rule of segmentRules) if (!ruleCounts.has(rule.id)) ruleCounts.set(rule.id, 0);
 
   const ok = deadRules.length === 0 && brokenOverrides.length === 0;
 
@@ -117,7 +120,7 @@ export async function runPost({
     }
   }
 
-  if (diff) writeDiffFiles({ diffDir, diffEntries, rules: termRules, ruleCounts, deadRules, changedFiles, paliDir: path.join(path.dirname(sujatoDir), 'pali') });
+  if (diff) writeDiffFiles({ diffDir, diffEntries, rules: [...termRules, ...segmentRules], ruleCounts, deadRules, changedFiles, paliDir: path.join(path.dirname(sujatoDir), 'pali') });
 
   return {
     ok,
@@ -130,7 +133,7 @@ export async function runPost({
 }
 
 // --- Diff writer (npm run update-data:post:diff) -------------------------------------------
-// Writes scripts/update-data/diff/{00-summary,<id>}.diff — gitignored, wiped each run. Colour is
+// Writes data/diff/{00-summary,<id>}.diff — gitignored, wiped each run. Colour is
 // forced on regardless of TTY (unlike lib/dataSync.js's red/green/etc, which are TTY-gated) since
 // these files are always written non-interactively and are meant to be read with `less -R`.
 const wrap = (code) => (s) => `\x1b[${code}m${s}\x1b[0m`;
@@ -170,12 +173,15 @@ function writeDiffFiles({ diffDir, diffEntries, rules, ruleCounts, deadRules, ch
 
   for (const [ruleId, entries] of byRule) {
     const lines = [fBold(`Rule: ${ruleId}`), fDim(`${entries.length} change(s)`), ''];
-    for (const { relPath, segmentId, chunks } of entries) {
+    for (const { relPath, segmentId, chunks, from, to } of entries) {
       const pali = relPath.startsWith('sujato/sutta/') ? paliTextFor(segmentId, relPath, paliDir) : null;
       lines.push(fYellow(`${segmentId}`) + fDim(`  (${relPath})`));
       if (pali) lines.push(fDim(`  PLI: `) + pali);
-      lines.push(fRed(`  - `) + renderChunks(chunks, ruleId, 'before', fRed));
-      lines.push(fGreen(`  + `) + renderChunks(chunks, ruleId, 'after', fGreen));
+      // Segment-override entries carry the whole before/after value directly (`from`/`to`) rather
+      // than chunks — the rule replaces the entire segment, so there's no surrounding context to
+      // isolate a span within.
+      lines.push(fRed(`  - `) + (chunks ? renderChunks(chunks, ruleId, 'before', fRed) : fRed(from)));
+      lines.push(fGreen(`  + `) + (chunks ? renderChunks(chunks, ruleId, 'after', fGreen) : fGreen(to)));
       lines.push('');
     }
     fs.writeFileSync(path.join(diffDir, `${ruleId}.diff`), lines.join('\n') + '\n');
@@ -207,5 +213,5 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   }
 
   console.log(green(`update-data post done — ${result.replacements} replacement(s) across ${result.filesChanged} file(s). Wrote data/sujato.post/.`));
-  if (diff) console.log(green(`Diffs written to scripts/update-data/diff/ — read with 'less -R'.`));
+  if (diff) console.log(green(`Diffs written to data/diff/ — read with 'less -R'.`));
 }

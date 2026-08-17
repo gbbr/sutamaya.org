@@ -9,7 +9,7 @@ web/dist/
 web/dev-dist/
 web/public/data/
 data/sujato.post/
-scripts/update-data/diff/
+data/diff/
 .env
 *.local
 *.tsbuildinfo
