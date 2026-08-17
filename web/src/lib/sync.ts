@@ -39,6 +39,7 @@ async function send(run: () => Promise<unknown>): Promise<Verdict> {
 function runOp(op: QueuedOp): Promise<unknown> {
   if (op.type === 'add') return listsApi.addItem(op.listId, op.suttaId);
   if (op.type === 'remove') return listsApi.removeItem(op.listId, op.suttaId);
+  if (op.type === 'siblingOrder') return listsApi.reorder(op.parentId, op.order, op.mtime);
   return listsApi.reorderItems(op.listId, op.order, op.mtime);
 }
 
@@ -106,7 +107,7 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
       landed = settle({ kind: 'list', id: current.id, mtime: current.mtime }, verdict);
     } else {
       landed = await push({ kind: 'list', id: listId, mtime: data.mtime }, () =>
-        listsApi.update(listId, { label: data.label, parentId: data.parentId, position: data.position, mtime: data.mtime })
+        listsApi.update(listId, { label: data.label, parentId: data.parentId, mtime: data.mtime })
       );
     }
     if (!landed) break;

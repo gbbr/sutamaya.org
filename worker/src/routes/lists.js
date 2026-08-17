@@ -4,6 +4,7 @@ import { jsonBody } from '../jsonBody.js';
 import { invalidParentReasonForRow, wouldCreateCycle } from '../lib/listParent.js';
 import { shapeList } from '../lib/listShape.js';
 import { reconcileItemOrder } from '../lib/listItemOrder.js';
+import { reconcileSiblingOrder } from '../lib/listSiblingOrder.js';
 import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits.js';
 import { resolveMtime } from '../lib/mtime.js';
 import { HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID, RECENT_AUTO_LIST_ID } from '../lib/userData.js';
@@ -209,14 +210,30 @@ listsRouter.patch('/:id', async (c) => {
 // touch — or even know about — any other parent's lists. Registered ahead of the parameterized
 // routes below: Hono matches in registration order, so static segments come first as a matter of
 // habit, even though nothing in this router actually collides.
+//
+// This is the client's whole reorder path, and it is one request per gesture by design: expressing
+// a drag as a PATCH per sibling instead meant dragging the 50th list of a group to the top fired 50
+// of them, which exhausts the Worker's per-minute rate limit in a couple of gestures and takes
+// GET /api/auth/me down with it. Like every other write here it has to survive being replayed from
+// an offline queue, which is what reconcileSiblingOrder is for.
 listsRouter.put('/order', async (c) => {
   const db = c.env.DB;
   const userId = c.get('userId');
   const body = await jsonBody(c);
   const parentId = parentIdFromBody(body);
-  const order = orderFromBody(body);
-  const parentError = await invalidReparentReason(db, userId, parentId, order);
+  const posted = orderFromBody(body);
+  const parentError = await invalidReparentReason(db, userId, parentId, posted);
   if (parentError) return c.json({ error: parentError }, 400);
+  // Live rows only: a tombstoned list is out of the tree, and a stale posted order naming one must
+  // not write a position back onto it. Fetched together so one round trip answers both "does this
+  // id still exist" and "what else lives in this parent that the client never saw".
+  const { results } = await db
+    .prepare('SELECT id, parent_id FROM lists WHERE user_id = ? AND deleted = 0')
+    .bind(userId)
+    .all();
+  const liveIds = new Set(results.map((row) => row.id));
+  const currentChildIds = results.filter((row) => (row.parent_id ?? null) === parentId).map((row) => row.id);
+  const order = reconcileSiblingOrder(posted, currentChildIds, liveIds);
   if (order.length) {
     // One reorder gesture, one mtime, applied to every sibling it touches — each row still
     // guarded on its own stored mtime, so a list edited more recently elsewhere (e.g. renamed

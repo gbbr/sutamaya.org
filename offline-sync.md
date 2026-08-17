@@ -208,10 +208,14 @@ The client's queue holds two kinds of entry, and the split matters.
 
 **Records** — a list, a note, a highlight group, a visit — are pushed as *desired state*, never as
 the operation that produced it. Replaying an operation is unsafe when its effect depends on server
-state at execution time (`PUT /highlights/ranges` deletes whatever currently overlaps;
-`PUT /lists/order` reassigns parents wholesale), because an hour later it means something different
-than it did when the user acted. A record states what should be true, so replay is idempotent and
-order-independent.
+state at execution time (`PUT /highlights/ranges` deletes whatever currently overlaps), because an
+hour later it means something different than it did when the user acted. A record states what should
+be true, so replay is idempotent and order-independent.
+
+The test is whether an operation can be made to mean the same thing on replay, not whether it is an
+operation. `PUT /lists/order` originally failed it — it reassigned parents wholesale over whatever
+ids it was handed — and was given a reconcile step (`reconcileSiblingOrder`) precisely so it would
+pass, because as records a sibling reorder cost one request per sibling. See below.
 
 **Membership** is the exception, and stays operation-based: `POST /lists/:id/items` and
 `DELETE /lists/:id/items/:suttaId` queue and replay exactly as they are. They are already safe to
@@ -462,10 +466,16 @@ One step per branch, each independently shippable, each ending with `npm test` g
    Where it landed (`web/src/lib/mirror.ts`, `mirrorView.ts`, `mirrorDb.ts`, `sync.ts`,
    `listTree.ts`):
 
-   - **`PUT /lists/order` lost its caller.** A sibling reorder is a `position` change on each moved
-     row, so it goes as one conditional `PATCH` per row — which is what a record push is. The bulk
-     endpoint sets `parentId` unconditionally on every id it is given, the exact "means something
-     different when replayed" shape this plan rules out. The route is left in place as API surface.
+   - **`PUT /lists/order` stayed the sibling-reorder path, with a reconcile step added.** Pushing a
+     reorder as a record per moved row — one conditional `PATCH` each — was tried first and doesn't
+     scale: dragging the 50th list of a group to the top rewrites all 50 positions, which exhausts
+     the `/api/*` rate limit in a couple of gestures and takes `GET /api/auth/me` down with it, so
+     the app renders as signed out. The bulk endpoint's actual defect was that it reassigned
+     `parentId` wholesale over whatever ids it was handed; `reconcileSiblingOrder`
+     (`worker/src/lib/listSiblingOrder.js`) fixes that directly — a posted id that is no longer live
+     is dropped, and a live child the posted order never mentioned is appended — which is the same
+     treatment `reconcileItemOrder` already gave item order. So sibling order joins membership as an
+     **operation**, queued by `parentId`.
    - **Read-time tree repair had to be ported too**, not just the auto-lists. Once the mirror is what
      the UI renders, a group deleted offline only takes its contents with it if the cascade runs
      client-side. `lib/listTree.ts` is a straight port of the worker's, so both sides agree.

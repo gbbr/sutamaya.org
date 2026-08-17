@@ -81,12 +81,16 @@ export interface Stored<T> {
   data: T;
 }
 
-// A queued edit to one list's `items`. `seq` is a per-mirror counter, so ops replay in the order
-// the user made them rather than in whatever order a map iterates.
+// A queued edit to one list's `items`, or to one parent's sibling order. `seq` is a per-mirror
+// counter, so ops replay in the order the user made them rather than in whatever order a map
+// iterates. `siblingOrder` is keyed by `parentId` (null for the top level) rather than by a
+// `listId` like the other three, since it is about a parent's children rather than a list's
+// contents.
 export type QueuedOp =
   | { id: string; seq: number; type: 'add'; listId: string; suttaId: string }
   | { id: string; seq: number; type: 'remove'; listId: string; suttaId: string }
-  | { id: string; seq: number; type: 'order'; listId: string; order: string[]; mtime: string };
+  | { id: string; seq: number; type: 'order'; listId: string; order: string[]; mtime: string }
+  | { id: string; seq: number; type: 'siblingOrder'; parentId: string | null; order: string[]; mtime: string };
 
 export interface MirrorState {
   // Whose mirror this is. Persisted with it and checked on every save, so a session that signs
@@ -120,9 +124,18 @@ function withList(state: MirrorState, id: string, record: Stored<ListRecord> | n
 
 // Applies `change` to a live list record and marks it dirty. A missing (or already tombstoned)
 // row is left alone — there is nothing to edit and nothing to push.
+//
+// A change that alters nothing is dropped rather than stamped: a fresh `mtime` on an untouched row
+// would win it every future last-writer-wins merge, so a rename made on another device would lose
+// to a local edit that never actually touched that row. It also keeps a no-op drop — dragging a row
+// back where it started — from costing a request.
 function editList(state: MirrorState, id: string, change: Partial<ListRecord>): MirrorState {
   const current = state.lists[id];
   if (!current || current.data.deleted) return state;
+  // Object.is, so an array-valued change (`items`, which nothing here passes today) always counts
+  // as a change rather than being compared by identity and wrongly skipped.
+  const changed = Object.entries(change).some(([key, value]) => !Object.is(current.data[key as keyof ListRecord], value));
+  if (!changed) return state;
   return withList(state, id, { dirty: true, data: { ...current.data, ...change, mtime: nextMtime() } });
 }
 
@@ -158,12 +171,31 @@ export function setListParentRecord(state: MirrorState, id: string, parentId: st
   return editList(state, id, { parentId });
 }
 
-// One drag, one pass: every id in `order` takes its index as its position and `parentId` as its
-// parent, which is what folds a cross-parent drop into the same call as the reorder it arrived
-// with. Each row is still its own record with its own conditional write, so a list edited more
-// recently on another device keeps that edit rather than being dragged back by this reorder.
-export function reorderListRecords(state: MirrorState, parentId: string | null, order: string[]): MirrorState {
-  return order.reduce((acc, id, position) => editList(acc, id, { parentId, position }), state);
+// Sibling order — the whole of one drag or one Move-up/down click. Queued as a single operation
+// rather than written into each row's own record, because as records it cost one PATCH per sibling:
+// dragging the 50th list of a group to the top rewrote all 50 positions, which exhausts the
+// Worker's per-minute rate limit in a couple of gestures and takes GET /api/auth/me down with it.
+// One gesture is now one request whatever the group's size.
+//
+// `order` is the parent's full sibling sequence with the moved row already in place, and every id in
+// it is re-parented to `parentId` — which is what lets a cross-parent drop stay a single call rather
+// than a setListParent followed by a reorder (see planListDrop in lib/listTreeDrop.ts).
+//
+// Positions are applied locally so the tree renders the new order with no round trip, but *without*
+// marking the rows dirty: sibling order isn't part of a record's own conditional write any more, so
+// dirtying them here would push the per-row PATCHes this exists to avoid. The queued op carries it,
+// the same division queueMembership already uses for a list's items.
+export function queueSiblingOrder(state: MirrorState, parentId: string | null, order: string[]): MirrorState {
+  const lists = { ...state.lists };
+  order.forEach((id, position) => {
+    const current = lists[id];
+    if (!current || current.data.deleted) return;
+    lists[id] = { ...current, data: { ...current.data, parentId, position } };
+  });
+  // Only the latest order for a given parent matters — an earlier one it supersedes would just be
+  // overwritten. Keyed on parentId, so reordering two different groups queues two ops.
+  const ops = state.ops.filter((op) => !(op.type === 'siblingOrder' && op.parentId === parentId));
+  return nextOp({ ...state, lists, ops }, { type: 'siblingOrder', parentId, order, mtime: nextMtime() });
 }
 
 // Tombstones the list — except one that has never reached the server, which is dropped outright
@@ -173,7 +205,9 @@ export function removeListRecord(state: MirrorState, id: string): MirrorState {
   const current = state.lists[id];
   if (!current) return state;
   if (current.data.pendingCreate) {
-    return { ...withList(state, id, null), ops: state.ops.filter((op) => op.listId !== id) };
+    // A queued sibling order may still name this id; it is left alone rather than rewritten, since
+    // the server reconciles a posted order against the rows that actually exist and drops the rest.
+    return { ...withList(state, id, null), ops: state.ops.filter((op) => !('listId' in op) || op.listId !== id) };
   }
   return editList(state, id, { deleted: true });
 }
@@ -237,7 +271,8 @@ export function writeHighlightRecord(
 type NewOp =
   | { type: 'add'; listId: string; suttaId: string }
   | { type: 'remove'; listId: string; suttaId: string }
-  | { type: 'order'; listId: string; order: string[]; mtime: string };
+  | { type: 'order'; listId: string; order: string[]; mtime: string }
+  | { type: 'siblingOrder'; parentId: string | null; order: string[]; mtime: string };
 
 function nextOp(state: MirrorState, op: NewOp): MirrorState {
   return {
@@ -262,7 +297,7 @@ export function queueMembership(state: MirrorState, listId: string, suttaId: str
   // or the dirty flag — the queued op is what carries it.
   const withItems = withList(state, listId, { ...current, data: { ...current.data, items } });
   const pending = withItems.ops.filter(
-    (op) => op.type !== 'order' && op.listId === listId && op.suttaId === suttaId
+    (op) => (op.type === 'add' || op.type === 'remove') && op.listId === listId && op.suttaId === suttaId
   );
   const inverse = pending[pending.length - 1];
   const rest = { ...withItems, ops: withItems.ops.filter((op) => !pending.includes(op)) };
@@ -292,10 +327,20 @@ function reconcileItems(current: string[], order: string[]): string[] {
   return reconciled;
 }
 
-// Replays the still-queued item ops over a freshly pulled `items` array, so a membership change
-// made offline doesn't blink out of the UI for as long as it takes to land.
+// Replays the still-queued ops over freshly pulled rows, so a change made offline doesn't blink out
+// of the UI for as long as it takes to land — a membership edit over the pulled `items`, and a
+// reorder over the pulled positions, which the snapshot would otherwise hand back in the server's
+// older order.
 function replayOps(lists: Record<string, Stored<ListRecord>>, ops: QueuedOp[]): Record<string, Stored<ListRecord>> {
   for (const op of ops) {
+    if (op.type === 'siblingOrder') {
+      op.order.forEach((id, position) => {
+        const target = lists[id];
+        if (!target) return;
+        lists[id] = { ...target, data: { ...target.data, parentId: op.parentId, position } };
+      });
+      continue;
+    }
     const target = lists[op.listId];
     if (!target) continue;
     const items = target.data.items;
@@ -320,8 +365,8 @@ export function applySnapshot(state: MirrorState, snapshot: UserData): MirrorSta
   const lists: Record<string, Stored<ListRecord>> = {};
   // The snapshot arrives already repaired and in sibling order but without positions of its own
   // (the server drops them, along with mtime and the tombstones), so each row takes its index
-  // among its siblings. That keeps the order the server sent and gives a local reorder something
-  // to renumber.
+  // among its siblings. That keeps the order the server sent, and matches what the server itself
+  // stores after a reorder, which assigns dense indices the same way (PUT /api/lists/order).
   const seen = new Map<string | null, number>();
   for (const list of snapshot.lists) {
     // The three auto-lists are synthesized, not rows — the mirror derives its own (see
@@ -404,7 +449,18 @@ export function remapListId(state: MirrorState, from: string, to: string): Mirro
   return {
     ...state,
     lists,
-    ops: state.ops.map((op) => (op.listId === from ? { ...op, listId: to } : op)),
+    // A sibling order names ids in `order` rather than in a `listId`, and its `parentId` can be the
+    // renamed row too — a reorder of the group's children queued before the group itself landed.
+    ops: state.ops.map((op) => {
+      if (op.type === 'siblingOrder') {
+        return {
+          ...op,
+          parentId: op.parentId === from ? to : op.parentId,
+          order: op.order.map((id) => (id === from ? to : id)),
+        };
+      }
+      return op.listId === from ? { ...op, listId: to } : op;
+    }),
   };
 }
 

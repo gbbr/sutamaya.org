@@ -9,7 +9,7 @@ import {
   queueMembership,
   removeListRecord,
   renameListRecord,
-  reorderListRecords,
+  queueSiblingOrder,
   setListParentRecord,
   setNoteRecord,
   writeHighlightRecord,
@@ -265,10 +265,11 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
 
   const reorderLists = useCallback(
     async (parentId: string | null, order: string[]) => {
-      // Sets `parentId` on every id in `order`, not just position — that's what lets
-      // useListTreeDrag's commitDrop fold a cross-parent drop into this single call instead of a
-      // separate setListParent first (see its own comment).
-      mutate((s) => reorderListRecords(s, parentId, order));
+      // Queued as one operation for the whole gesture, not a write per sibling — see
+      // queueSiblingOrder. Sets `parentId` on every id in `order` as well as its position, which is
+      // what lets useListTreeDrag's commitDrop fold a cross-parent drop into this single call
+      // instead of a separate setListParent first (see its own comment).
+      mutate((s) => queueSiblingOrder(s, parentId, order));
     },
     [mutate]
   );
