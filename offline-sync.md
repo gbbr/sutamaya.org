@@ -164,7 +164,7 @@ the network; every mutator is a pure state transition that marks what it touched
 | `lib/mirror.ts` | The `MirrorState` — `lists`/`notes`/`highlights`/`visited` records plus an `ops` queue — namespaced by `userId`, and every mutator over it |
 | `lib/mirrorView.ts` | Derives what the UI renders, including the three auto-lists. A port of the worker's `assembleUserData` |
 | `lib/listTree.ts` | Read-time tree repair. A port of the worker's `repairListTree` |
-| `lib/mirrorDb.ts` | Persists the whole mirror as one IndexedDB value per user id |
+| `lib/mirrorDb.ts` | Persists the whole mirror as one IndexedDB value per user id, versioned by `DB_VERSION` |
 | `lib/sync.ts` | The flush |
 | `lib/mtime.ts` | `nextMtime()` |
 | `lib/lastUser.ts` | Who was signed in, in `localStorage` |
@@ -250,6 +250,14 @@ Things a change here must not break:
 11. **The mirror is keyed by user id**, so an account switch cannot cross-write.
 12. **`mirrorView.ts`/`listTree.ts` and their worker originals must agree.** They are ports; a fix to
     one belongs in both.
+13. **Bump `DB_VERSION` (`lib/mirrorDb.ts`) in the same change as any alteration to `MirrorState`'s
+    persisted shape — including the shape of anything `GET /api/data` writes into it.** A record
+    saved under the old shape is not valid input for code written against the new one, and IndexedDB
+    has no reason to touch it on its own. `onupgradeneeded` wipes and recreates the store rather than
+    migrating, which is safe because the mirror is a cache of the server plus whatever is still
+    dirty; the cost is a re-pull. Skip the bump and a device carrying a stale record crashes on read
+    — which is exactly what changing the notes payload to `{text, m}` did to a mirror that had
+    already persisted the bare-string form.
 
 ## Accepted losses
 
