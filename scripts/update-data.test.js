@@ -257,13 +257,16 @@ describe('the shipped rules, one example each', () => {
     // Denied: caṅkamati, with no sati in the Pali at all.
     ['sati-aware', 'dn25:6.2', 'sujato/sutta', 'he walked mindfully in the open air', 'he walked mindfully in the open air'],
     // The dn22:1.9 collision from docs/retranslation.md, through the rules as shipped: sati-aware
-    // produces the very word sampajanna-understanding consumes, and locking keeps them apart.
-    ['sampajanna-understanding', 'sn54.10:5.5', 'sujato/sutta', 'keen, aware, and mindful', 'keen, understanding, and aware'],
+    // produces the very word sampajanna-full-comprehension consumes, and locking keeps them apart.
+    // Also pins the adjective slot the participle exists for — a noun phrase cannot stand here.
+    ['sampajanna-full-comprehension', 'sn54.10:5.5', 'sujato/sutta', 'keen, aware, and mindful', 'keen, fully comprehending, and aware'],
+    // The other half of the split: Sujato's noun is sampajañña and takes the noun phrase.
+    ['sampajanna-full-comprehension', 'an2.179:1.3', 'sujato/sutta', 'Mindfulness and situational awareness.', 'Awareness and full comprehension.'],
     // Denied: plain-English "aware", introducing a perception rather than rendering sampajañña.
-    ['sampajanna-understanding', 'an1.451:1.1', 'sujato/sutta', 'aware that ‘consciousness is infinite’', 'aware that ‘consciousness is infinite’'],
+    ['sampajanna-full-comprehension', 'an1.451:1.1', 'sujato/sutta', 'aware that ‘consciousness is infinite’', 'aware that ‘consciousness is infinite’'],
     // Same, for a term whose English is ordinary English in Sujato's own prose: his gloss of citta
-    // is left alone, where "awareness" → "understanding" would have made nonsense of it.
-    ['sampajanna-understanding', 'dn22:1.11', 'sujato/notes', '“Mind” (citta) is simple awareness.', '“Mind” (citta) is simple awareness.'],
+    // is left alone, where "awareness" → "full comprehension" would have made nonsense of it.
+    ['sampajanna-full-comprehension', 'dn22:1.11', 'sujato/notes', '“Mind” (citta) is simple awareness.', '“Mind” (citta) is simple awareness.'],
     ['samudaya-arising', 'sn56.11:4.3', 'sujato/sutta', 'the noble truth of the origin of suffering', 'the noble truth of the arising of suffering'],
     // Denied: aggañña, how the world began.
     ['samudaya-arising', 'dn24:2.14.1', 'sujato/sutta', 'I understand the origin of the world.', 'I understand the origin of the world.'],
@@ -297,6 +300,17 @@ describe('the shipped rules, one example each', () => {
     }
   });
 
+  // Every word the term rules before `ruleId` can produce, lowercased. These are the tokens the
+  // real pass has locked by the time `ruleId` runs, so it can never consume one of them.
+  const producedBefore = (rules, ruleId) => {
+    const out = new Set();
+    for (const rule of rules.filter(isTermRule)) {
+      if (rule.id === ruleId) break;
+      for (const [, to] of rule.forms) out.add(to.toLowerCase());
+    }
+    return out;
+  };
+
   it('anchors each segment override on text its own from/to describes', async () => {
     const rules = await loadRules(RETRANSLATION_PATH);
     const overrides = rules.filter(isSegmentRule);
@@ -308,13 +322,25 @@ describe('the shipped rules, one example each', () => {
       // still contains a form the term rules rewrite, the anchor can never match what post
       // produces.
       expect(rule.from, rule.id).not.toBe(rule.to);
-      const { result: reprocessed } = applyTermRules(rule.from, {
+      const { chunks } = applyTermRules(rule.from, {
         treeName: 'sujato/sutta',
         segmentId: segmentsOf(rule)[0],
         rules,
         sidecars: new Map(rules.filter(isTermRule).map((r) => [r.id, loadSidecar(r.id)])),
       });
-      expect(reprocessed, `${rule.id}'s from is not post-processed text`).toBe(rule.from);
+      // Reprocessing on its own has no lock history, so it re-consumes tokens the real pass had
+      // already locked: a word one rule *produces* is invisible to a later rule listing the same
+      // word as a source, which is the whole of the sati-aware → sampajañña collision (see "The
+      // pass" in docs/retranslation.md). That difference is expected rather than a broken anchor,
+      // so a rewrite is only a failure when what it consumed is not an earlier rule's output.
+      for (const chunk of chunks) {
+        if (!chunk.locked || chunk.text === chunk.original) continue;
+        expect(
+          producedBefore(rules, chunk.ruleId).has(chunk.original.toLowerCase()),
+          `${rule.id}'s from is not post-processed text: ${chunk.ruleId} rewrites `
+            + `"${chunk.original}" to "${chunk.text}"`,
+        ).toBe(true);
+      }
     }
   });
 });
