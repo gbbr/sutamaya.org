@@ -11,11 +11,13 @@
     "worker"
   ],
   "scripts": {
-    "build:corpus": "node scripts/build-corpus.mjs",
+    "build:corpus": "npm run update-data:post && node scripts/build-corpus.mjs",
     "update-data": "npm run update-data:check && npm run update-data:copy && npm run update-data:post",
     "update-data:check": "node scripts/update-data-check.mjs",
     "update-data:copy": "node scripts/update-data-copy.mjs",
     "update-data:post": "node scripts/update-data-post.mjs",
+    "update-data:post:diff": "node scripts/update-data-post.mjs --diff",
+    "update-data:triage": "node scripts/update-data-triage.mjs",
     "update-data:snapshot": "node scripts/update-data-snapshot.mjs",
     "dev:worker": "wrangler dev --port 8787",
     "dev:web": "npm run dev --workspace web",

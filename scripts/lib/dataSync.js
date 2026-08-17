@@ -17,6 +17,7 @@ export const green = wrapColor(32);
 export const yellow = wrapColor(33);
 export const blue = wrapColor(36);
 export const bold = wrapColor(1);
+export const dim = wrapColor(2);
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const ROOT = path.join(__dirname, '..', '..');
