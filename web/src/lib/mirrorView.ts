@@ -63,8 +63,11 @@ export function deriveUserData(state: MirrorState): UserData {
   const noteEntries: { id: string; at: string }[] = [];
   for (const { data } of Object.values(state.notes)) {
     // A cleared note is kept as a record so it can lose a merge against a stale device pushing the
-    // old body back — but "has a note" means non-empty text, here as on the server.
-    if (!data.text) continue;
+    // old body back — but "has a note" means non-empty text, here as on the server. The typeof
+    // guard is for a persisted mirror written by a different app version than the one reading it
+    // (mirrorDb.ts has no schema migration) — a malformed local record should drop the note, not
+    // crash the reader.
+    if (typeof data.text !== 'string' || !data.text) continue;
     notes[data.suttaId] = data.text;
     noteEntries.push({ id: data.suttaId, at: data.mtime });
   }
