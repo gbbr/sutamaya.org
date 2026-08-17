@@ -34,9 +34,10 @@ the change is legitimate, this is the sequence:
 
 1. `npm run update-data:copy` — bypasses the guard and copies the new content in directly.
    `data/sujato/` is now pristine upstream, so `git diff data/sujato/` shows exactly what changed.
-2. `npm run update-data:post` — regenerates `data/sujato.post/` (Sujato's text only — Pali and
-   HTML have no translatable English prose). If a retranslation rule broke, work it via
-   `npm run update-data:triage` — see `retranslation.md`.
+2. `npm run update-data:post:diff` — regenerates `data/sujato.post/` (Sujato's text only — Pali
+   and HTML have no translatable English prose) and writes per-rule rewrites to `data/diff/` for
+   review. If a retranslation rule broke, work it via `npm run update-data:triage` — see
+   `retranslation.md`.
 3. Test and ensure all is well.
 4. `npm run update-data:snapshot` — tells the tool "yes, this is now the new normal" by recording
    what's now in `data/{sujato,pali,html}` as the new baseline (so future `check` runs compare

@@ -54,7 +54,7 @@ upstream) and writes `data/sujato.post/` (generated).
 6. **Add a fixture** to the rule's examples and run `npm test`.
 
 7. **Apply and audit**: `npm run update-data:post:diff`, then read
-   `scripts/update-data/diff/<rule-id>.diff`. Check the Pali shown against each rewrite.
+   `data/diff/<rule-id>.diff`. Check the Pali shown against each rewrite.
 
 8. **Leave the baseline alone.** Match counts are recorded by `update-data:snapshot`, which is the
    user's call to run — don't run it yourself.

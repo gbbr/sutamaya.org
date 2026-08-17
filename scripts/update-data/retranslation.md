@@ -306,7 +306,7 @@ npm run update-data:post          # apply rules
 npm run update-data:post:diff     # apply rules, and write per-rule diffs
 ```
 
-Writes to `scripts/update-data/diff/` (gitignored, wiped each run):
+Writes to `data/diff/` (gitignored, wiped each run):
 
 - `00-summary.diff` — every rule with its match count, files touched, triage-queue size, and any
   rule that matched zero.
