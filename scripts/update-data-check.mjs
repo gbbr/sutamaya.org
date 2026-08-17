@@ -31,7 +31,7 @@ import {
   bold,
   blue,
 } from './lib/dataSync.js';
-import { RULES_DIR, RETRANSLATION_PATH, loadRules, isTermRule, isSegmentRule, scopeOf, formsMatch, buildSegmentIndex } from './lib/retranslation.js';
+import { RULES_DIR, RETRANSLATION_PATH, loadRules, loadSidecar, isTermRule, isSegmentRule, segmentsOf, scopeOf, formsMatch, applyTermRules, buildSegmentIndex } from './lib/retranslation.js';
 
 function describeSetDiff(oldKeys, newKeys) {
   const oldSet = new Set(oldKeys);
@@ -47,14 +47,21 @@ function describeSetDiff(oldKeys, newKeys) {
 }
 
 // Every term rule that finds no match anywhere in `sujatoUpstreamByRelPath` (restricted to its own
-// scope), and every segment rule whose `from` no longer matches upstream verbatim — resolved
-// against upstream (via bilaraRoot), before anything is copied, so a broken rule surfaces at the
-// same point a structural problem would rather than only after `update-data:post` runs against
-// already-copied-in local data. Segment rules resolve their file via the *local* segment index
-// (data/sujato is expected to still have every override's segment at its current relPath — a
-// renamed/relocated file is what the structural upstreamIssues pass above already catches).
-function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex) {
+// scope), and every segment rule whose `from` no longer anchors — resolved against upstream (via
+// bilaraRoot), before anything is copied, so a broken rule surfaces at the same point a structural
+// problem would rather than only after `update-data:post` runs against already-copied-in local data.
+// Segment rules resolve their file via the *local* segment index (data/sujato is expected to still
+// have every override's segment at its current relPath — a renamed/relocated file is what the
+// structural upstreamIssues pass above already catches).
+//
+// An override's `from` is post-processed text, not upstream's own: overrides run last, over the term
+// rules' output (see retranslation.md's "Segment override"), so the term rules are applied to the
+// upstream segment here before comparing. Comparing against raw upstream instead would fail every
+// override whose line contains a term any rule rewrites, which is most of them — an override usually
+// exists *because* a term rule got that line wrong.
+function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, rulesDir) {
   const issues = [];
+  const sidecars = new Map(rules.filter(isTermRule).map((rule) => [rule.id, loadSidecar(rule.id, rulesDir)]));
 
   for (const rule of rules.filter(isTermRule)) {
     const scope = new Set(scopeOf(rule));
@@ -73,21 +80,30 @@ function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex) {
   }
 
   for (const rule of rules.filter(isSegmentRule)) {
-    const relPath = localSegmentIndex.get(rule.segment);
-    if (!relPath) {
-      issues.push(`${rule.id} (${rule.segment}): segment not found in local data/sujato — can't verify against upstream.`);
-      continue;
-    }
-    const upstreamObj = sujatoUpstreamByRelPath.get(relPath);
-    if (!upstreamObj) continue; // relPath wasn't read this run (not in snapshot.files) — nothing to compare
-    const upstreamNow = upstreamObj[rule.segment];
-    if (upstreamNow !== rule.from) {
-      issues.push(
-        `${rule.id} (${rule.segment}): rule's "from" no longer matches upstream verbatim.\n` +
-          `    from (recorded):  ${rule.from}\n` +
-          `    upstream (now):   ${upstreamNow ?? '(segment removed upstream)'}\n` +
-          `    to (this app's):  ${rule.to}`,
-      );
+    // Each named segment is checked on its own, so an override covering a repeated line reports the
+    // one repeat that drifted rather than the whole rule.
+    for (const segment of segmentsOf(rule)) {
+      const relPath = localSegmentIndex.get(segment);
+      if (!relPath) {
+        issues.push(`${rule.id} (${segment}): segment not found in local data/sujato — can't verify against upstream.`);
+        continue;
+      }
+      const upstreamObj = sujatoUpstreamByRelPath.get(relPath);
+      if (!upstreamObj) continue; // relPath wasn't read this run (not in snapshot.files) — nothing to compare
+      const upstreamNow = upstreamObj[segment];
+      const anchorNow =
+        typeof upstreamNow === 'string'
+          ? applyTermRules(upstreamNow, { treeName: 'sujato/sutta', segmentId: segment, rules, sidecars }).result
+          : upstreamNow;
+      if (anchorNow !== rule.from) {
+        issues.push(
+          `${rule.id} (${segment}): rule's "from" no longer matches verbatim.\n` +
+            `    from (recorded):  ${rule.from}\n` +
+            `    upstream (now):   ${upstreamNow ?? '(segment removed upstream)'}\n` +
+            (anchorNow !== upstreamNow ? `    after term rules: ${anchorNow}\n` : '') +
+            `    to (this app's):  ${rule.to}`,
+        );
+      }
     }
   }
 
@@ -171,7 +187,7 @@ export async function runCheck({ bilaraRoot, dataDirs = DATA_DIRS, snapshotPath 
   // rather than importing SUJATO_DIR directly, so a fixture dataDirs override (tests) is honored.
   const rules = await loadRules(retranslationPath);
   const localSegmentIndex = buildSegmentIndex(dataDirs.sujato);
-  const ruleIssues = checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex);
+  const ruleIssues = checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, rulesDir);
 
   const issues = [...localIssues, ...upstreamIssues, ...integrityIssues, ...localIntegrityIssues, ...ruleIssues];
   return {

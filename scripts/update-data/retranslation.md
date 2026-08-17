@@ -171,6 +171,11 @@ doesn't exist.
 `from` is verbatim and doubles as the rule's anchor. Segment rules run **after** all term rules,
 against their output — writing one means the term rules got that line wrong.
 
+`segments: ['thag1.31:1.3', 'thag3.9:2.3', …]` replaces `segment` where the corpus repeats a line
+verbatim — a stock verse recurring across three Theragāthā poems, say — so one `from`/`to` covers all
+of them instead of the same rule copied per id. Every named segment still has to match `from` on its
+own, and a broken anchor names the segment that drifted, not the rule.
+
 Segment ids resolve to files through a segment→file index built once per run, scoped to
 `sujato/sutta` only: range-batched files hold segments keyed by sub-uid (`an1.5:1.2` lives in
 `an1.1-10_translation-en-sujato.json`), so the filename can't be derived from the id, and
@@ -183,7 +188,14 @@ override therefore only ever targets the main translation, never a note/blurb/na
 - **`id`** — stable, unique; names the sidecar and the diff file.
 - **`why`** — required prose. Which Pali term, and why this app departs from upstream. A 2,000-id
   list says nothing about intent on its own; this is what carries it.
-- **`scope`** — which trees, from `sujato/{sutta,notes,name,blurb}`. Defaults to all four.
+- **`scope`** — which trees, from `sujato/{sutta,notes,name,blurb}`. Defaults to all four. It is also
+  the only way to treat a note differently from the line it annotates: **`sujato/notes` reuses the
+  sutta text's own segment ids** (8,916 of them), so `allow`/`deny` can't say one thing about
+  `dn22:1.11`'s translation and another about its footnote. That matters where a term's English is
+  ordinary English in Sujato's own prose — his notes gloss *citta* as "simple awareness" while
+  rendering *sampajāna* as "aware", and no list can separate those — so `sampajanna-understanding`
+  and `samudaya-arising` are scoped to `sujato/sutta` + `sujato/blurb` and leave the notes saying
+  what he said.
 - **`forms`** — `[from, to]` pairs, matched on English word boundaries, longest-first regardless
   of array order so `situational awareness` isn't pre-empted by `awareness`. Every inflection is
   listed explicitly rather than swapping stems: the corpus contains unrelated words on the same
