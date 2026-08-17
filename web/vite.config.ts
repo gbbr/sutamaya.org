@@ -16,6 +16,12 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg'],
+      // Off by default (the plugin's own default) since a dev-mode service worker can serve
+      // stale responses and fight Vite's HMR. Opt in with PWA_DEV=1 when specifically testing
+      // install/standalone behavior (e.g. via local.sutamaya.org — see deploy.md "Testing on
+      // mobile"); unregister the SW in DevTools → Application afterward so it doesn't linger
+      // and cause unrelated stale-content confusion in later dev sessions.
+      devOptions: { enabled: !!process.env.PWA_DEV },
       manifest: {
         name: 'Sutamaya',
         short_name: 'Sutamaya',

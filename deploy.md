@@ -157,6 +157,13 @@ through Vite's own proxy to the Worker on `:8787` unchanged. Add
 — additive, so `http://localhost:5173` and the production origin are unaffected. Then open
 `https://local.sutamaya.org` on the phone (same LAN) — sign-in should complete normally.
 
+**To test PWA install/standalone behavior** over `local.sutamaya.org` (rather than just sign-in),
+start Vite with `PWA_DEV=1 npm run dev` first — `vite-plugin-pwa` registers a service worker only
+under `devOptions.enabled`, which is off by default (a dev-mode SW can serve stale responses and
+fight Vite's HMR), so without it Chrome's "Add to Home Screen" falls back to a bookmark-style
+shortcut that keeps showing the address bar instead of a true standalone app. Unregister the SW in
+DevTools → Application afterward so it doesn't linger into a later plain `npm run dev` session.
+
 ## Notes / gaps
 
 - No CI — deploys are manual.
