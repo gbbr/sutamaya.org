@@ -31,6 +31,7 @@ import {
   bold,
   blue,
 } from './lib/dataSync.js';
+import { RULES_DIR, RETRANSLATION_PATH, loadRules, isTermRule, isSegmentRule, scopeOf, formsMatch, buildSegmentIndex } from './lib/retranslation.js';
 
 function describeSetDiff(oldKeys, newKeys) {
   const oldSet = new Set(oldKeys);
@@ -45,11 +46,59 @@ function describeSetDiff(oldKeys, newKeys) {
   return parts.join('; ');
 }
 
+// Every term rule that finds no match anywhere in `sujatoUpstreamByRelPath` (restricted to its own
+// scope), and every segment rule whose `from` no longer matches upstream verbatim — resolved
+// against upstream (via bilaraRoot), before anything is copied, so a broken rule surfaces at the
+// same point a structural problem would rather than only after `update-data:post` runs against
+// already-copied-in local data. Segment rules resolve their file via the *local* segment index
+// (data/sujato is expected to still have every override's segment at its current relPath — a
+// renamed/relocated file is what the structural upstreamIssues pass above already catches).
+function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex) {
+  const issues = [];
+
+  for (const rule of rules.filter(isTermRule)) {
+    const scope = new Set(scopeOf(rule));
+    let matched = false;
+    for (const [relPath, obj] of sujatoUpstreamByRelPath) {
+      if (!scope.has(relPath.split('/').slice(0, 2).join('/'))) continue;
+      for (const value of Object.values(obj)) {
+        if (typeof value === 'string' && formsMatch(rule, value)) {
+          matched = true;
+          break;
+        }
+      }
+      if (matched) break;
+    }
+    if (!matched) issues.push(`${rule.id}: matches nowhere upstream — the term may be gone. Dead rule, not just drifted.`);
+  }
+
+  for (const rule of rules.filter(isSegmentRule)) {
+    const relPath = localSegmentIndex.get(rule.segment);
+    if (!relPath) {
+      issues.push(`${rule.id} (${rule.segment}): segment not found in local data/sujato — can't verify against upstream.`);
+      continue;
+    }
+    const upstreamObj = sujatoUpstreamByRelPath.get(relPath);
+    if (!upstreamObj) continue; // relPath wasn't read this run (not in snapshot.files) — nothing to compare
+    const upstreamNow = upstreamObj[rule.segment];
+    if (upstreamNow !== rule.from) {
+      issues.push(
+        `${rule.id} (${rule.segment}): rule's "from" no longer matches upstream verbatim.\n` +
+          `    from (recorded):  ${rule.from}\n` +
+          `    upstream (now):   ${upstreamNow ?? '(segment removed upstream)'}\n` +
+          `    to (this app's):  ${rule.to}`,
+      );
+    }
+  }
+
+  return issues;
+}
+
 // Core logic, callable directly with an explicit bilaraRoot/dataDirs/snapshotPath (tests use this
 // to point at fixture trees instead of the real data/{sujato,pali,html} — see
 // scripts/update-data.test.js). Returns a result object instead of printing/exiting so callers
 // (the CLI entry point below, or a test) decide what to do with it.
-export function runCheck({ bilaraRoot, dataDirs = DATA_DIRS, snapshotPath = SNAPSHOT_PATH }) {
+export async function runCheck({ bilaraRoot, dataDirs = DATA_DIRS, snapshotPath = SNAPSHOT_PATH, rulesDir = RULES_DIR, retranslationPath = RETRANSLATION_PATH }) {
   const snapshot = loadSnapshot(snapshotPath);
 
   // Built lazily on the first missing file — a full-tree scan, so not worth doing unless
@@ -71,6 +120,10 @@ export function runCheck({ bilaraRoot, dataDirs = DATA_DIRS, snapshotPath = SNAP
 
   // Reused below for the upstream integrity cross-check, so every tracked file is only read once.
   const upstreamKeysByRelPath = new Map();
+  // Full parsed content (not just keys), but only for sujato/* categories — pali/html have no
+  // translatable prose, so rules never touch them and there's no reason to hold their content in
+  // memory here. Feeds checkRuleAnchors below.
+  const sujatoUpstreamByRelPath = new Map();
 
   for (const [relPath, expected] of Object.entries(snapshot.files)) {
     const sourcePath = sourcePathFor(bilaraRoot, relPath);
@@ -83,13 +136,15 @@ export function runCheck({ bilaraRoot, dataDirs = DATA_DIRS, snapshotPath = SNAP
       continue;
     }
 
-    let keys;
+    let parsed;
     try {
-      keys = Object.keys(JSON.parse(fs.readFileSync(sourcePath, 'utf8')));
+      parsed = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
     } catch (err) {
       upstreamIssues.push(`${relPath}: failed to parse ${sourcePath}: ${err.message}`);
       continue;
     }
+    const keys = Object.keys(parsed);
+    if (relPath.startsWith('sujato/')) sujatoUpstreamByRelPath.set(relPath, parsed);
 
     upstreamKeysByRelPath.set(relPath, keys);
 
@@ -110,7 +165,15 @@ export function runCheck({ bilaraRoot, dataDirs = DATA_DIRS, snapshotPath = SNAP
   // state, which matches itself and matches upstream just fine on a per-file basis.
   const localIntegrityIssues = checkCrossCategoryIntegrity(listLocalRelPaths(dataDirs), (relPath) => readKeysSafe(localPathFor(relPath, dataDirs)));
 
-  const issues = [...localIssues, ...upstreamIssues, ...integrityIssues, ...localIntegrityIssues];
+  // Independent of every check above — a retranslation rule can be perfectly fine structurally
+  // (segment ids untouched, cross-category alignment intact) while still being dead or stale, so
+  // this runs regardless of whether anything else failed. sujatoDir defaults from dataDirs.sujato
+  // rather than importing SUJATO_DIR directly, so a fixture dataDirs override (tests) is honored.
+  const rules = await loadRules(retranslationPath);
+  const localSegmentIndex = buildSegmentIndex(dataDirs.sujato);
+  const ruleIssues = checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex);
+
+  const issues = [...localIssues, ...upstreamIssues, ...integrityIssues, ...localIntegrityIssues, ...ruleIssues];
   return {
     ok: issues.length === 0,
     issues,
@@ -118,6 +181,7 @@ export function runCheck({ bilaraRoot, dataDirs = DATA_DIRS, snapshotPath = SNAP
     upstreamIssues,
     integrityIssues,
     localIntegrityIssues,
+    ruleIssues,
     checked,
     totalTracked: Object.keys(snapshot.files).length,
   };
@@ -132,7 +196,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     process.exit(1);
   }
 
-  const result = runCheck({ bilaraRoot });
+  const result = await runCheck({ bilaraRoot });
 
   if (!result.ok) {
     console.error(bold(red(`update-data check FAILED — ${result.issues.length} problem(s) found (${result.totalTracked} tracked files):`)));
@@ -161,6 +225,12 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     if (result.localIntegrityIssues.length) {
       console.error(bold(red(`\nLocal cross-category integrity — data/{sujato,pali,html} segment ids don't line up (${result.localIntegrityIssues.length}):`)));
       for (const issue of result.localIntegrityIssues) console.error(red(`- ${issue}`));
+    }
+
+    if (result.ruleIssues.length) {
+      console.error(bold(yellow(`\nRetranslation rules — broken against upstream (${result.ruleIssues.length}):`)));
+      for (const issue of result.ruleIssues) console.error(yellow(`- ${issue}`));
+      console.error(`  see scripts/update-data/retranslation.md's "Reconciling an upstream change".`);
     }
 
     console.error(

@@ -60,8 +60,8 @@ No real Cloudflare account or credentials needed for local dev — except `VITE_
 
 ## Data pipeline (`scripts/build-corpus.mjs`)
 
-Reads `data/tree/*.json`, `data/pali/`, `data/sujato/`, `data/html/`, `data/pli2en_dpd.json` and
-writes:
+Reads `data/tree/*.json`, `data/pali/`, `data/sujato.post/`, `data/html/`, `data/pli2en_dpd.json`
+and writes:
 
 - `web/public/data/corpus.json` — the browse tree (`nikayas[]`, each optionally with a
   **recursively-nested** `chapters[]` — a row with `chapters` expands further, one without is

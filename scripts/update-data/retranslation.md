@@ -171,9 +171,12 @@ doesn't exist.
 `from` is verbatim and doubles as the rule's anchor. Segment rules run **after** all term rules,
 against their output — writing one means the term rules got that line wrong.
 
-Segment ids resolve to files through a segment→file index built once per run: range-batched files
-hold segments keyed by sub-uid (`an1.5:1.2` lives in `an1.1-10_translation-en-sujato.json`), so
-the filename can't be derived from the id.
+Segment ids resolve to files through a segment→file index built once per run, scoped to
+`sujato/sutta` only: range-batched files hold segments keyed by sub-uid (`an1.5:1.2` lives in
+`an1.1-10_translation-en-sujato.json`), so the filename can't be derived from the id, and
+`sujato/notes` reuses the exact same segment ids as the sutta text it annotates — a single index
+spanning both would resolve an id to whichever tree happened to be indexed last. A segment
+override therefore only ever targets the main translation, never a note/blurb/name entry.
 
 ### Shared fields
 

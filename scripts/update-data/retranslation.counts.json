@@ -1,0 +1,8 @@
+{
+  "generatedAt": "2026-08-17T12:49:36.033Z",
+  "note": "Each term rule's current match count across data/sujato — its anchor when it has no allow/deny queue of its own to check (an open rule with an empty deny list). Regenerated only by update-data:snapshot, alongside snapshot.json.",
+  "rules": {
+    "mendicant-bhikkhu": 5,
+    "immersion-concentration": 3
+  }
+}
