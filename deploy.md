@@ -41,10 +41,19 @@ npm run deploy
 ```
 
 `npm run deploy` (root `scripts/deploy.sh`) runs `npm test`, refuses to continue if it fails
-(`npm run deploy -- --skip-tests` overrides), then `npm run build` followed by `npx wrangler
-deploy`. The build is not optional: `wrangler` uploads `web/dist` exactly as it finds it, so a
-stale directory ships a stale SPA and a stale corpus bundle. There's no CI/deploy-on-push — every
-deploy is this one command, run by hand.
+(`npm run deploy -- --skip-tests` overrides), then `npm run build`, then applies any pending D1
+migrations, then `npx wrangler deploy`. The build is not optional: `wrangler` uploads `web/dist`
+exactly as it finds it, so a stale directory ships a stale SPA and a stale corpus bundle. There's no
+CI/deploy-on-push — every deploy is this one command, run by hand.
+
+Migrations run *before* the upload, which is what makes a **migration additive-only** — `ADD COLUMN`
+with a default, or a new index, never a rename or a drop. For the window between the two steps the
+previous Worker is still serving against the new schema, so anything it can't tolerate is an outage.
+A destructive change needs two deploys: widen the schema and ship code tolerating both shapes, then
+narrow it once nothing reads the old shape.
+
+(Local dev is not covered by this — a new migration has to be applied to your own D1 by hand, see
+`CLAUDE.md`.)
 
 Open the deployed URL, sign in with Google, and confirm lists/notes/highlights save and survive a
 refresh — that round-trips through D1, so it's the real end-to-end check.
