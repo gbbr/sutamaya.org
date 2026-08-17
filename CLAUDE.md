@@ -572,7 +572,7 @@ something there.
 ## Known gaps / deliberate simplifications
 
 - A last-writer-wins merge discards the losing edit silently, by design — see `offline-sync.md`'s
-  "Deliberate compromises", which also rules out the conflict UI that would surface it. Order
+  "Accepted losses", which also rules out the conflict UI that would surface it. Order
   (sibling order, a list's item order) moves as a unit on its row's own `mtime`, so two devices
   reordering the same thing offline means one ordering wins and the user re-drags.
 - Highlight offsets are content coordinates, not anchors: `(i, s, e)` index into segment text, so an

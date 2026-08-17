@@ -42,7 +42,7 @@ const FLUSH_POLL_MS = 5 * 60 * 1000;
 // over everything else — the browser itself says there's no network, which already explains why
 // nothing is draining. 'stuck' is next: a queue the server has permanently refused is a different
 // problem than one merely waiting its turn, and silently retrying it forever is the exact failure
-// mode offline sync exists to fix (see offline-sync.md step 5). Otherwise it's 'pending' (queued,
+// mode offline sync exists to fix (see offline-sync.md's "Sync state"). Otherwise it's 'pending' (queued,
 // still expected to land) or 'synced' (nothing owed).
 export type SyncStatus = 'synced' | 'pending' | 'offline' | 'stuck';
 

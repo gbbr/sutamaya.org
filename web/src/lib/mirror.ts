@@ -557,7 +557,7 @@ function markRejected<T extends { mtime: string }>(
 
 // Counts of work the mirror still owes the server: `pending` is everything dirty or queued,
 // `stuck` is the subset of that the server has already permanently refused. Pure UI state, read by
-// UserDataContext to derive the sync indicator (offline-sync.md step 5) — a `stuck` count above
+// UserDataContext to derive the sync indicator (offline-sync.md's "Sync state") — a `stuck` count above
 // zero is what turns "retrying forever in silence" into something the user can actually see.
 export function syncCounts(state: MirrorState): { pending: number; stuck: number } {
   let pending = state.ops.length;

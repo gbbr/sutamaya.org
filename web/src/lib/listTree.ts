@@ -1,4 +1,4 @@
-// The client half of the read-time tree repair (offline-sync.md's A4), ported from
+// The client half of the read-time tree repair (offline-sync.md's A3), ported from
 // worker/src/lib/listTree.js — same algorithm, same order, so both halves produce the same tree
 // from the same rows. It has to exist twice because the mirror is now the source of truth the UI
 // renders from: a group deleted offline has to take its contents with it immediately, with no
