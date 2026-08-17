@@ -27,7 +27,10 @@ upstream) and writes `data/sujato.post/` (generated).
    renders — a rule keyed on the English alone is the mistake this system exists to prevent.
 
 2. **Draft the rule** with `forms`, a `predicate` regex over the Pali, `mode: 'allow'`, and an
-   empty sidecar. Write the `why` now: which Pali term, why this app departs from upstream.
+   empty sidecar. Write the `why` now: which Pali term, why this app departs from upstream. Place
+   it under the right `// ── Family ──` banner group (or start a new one) rather than appending to
+   the end of the array — see "Keeping the file organized" below; this is not optional tidiness,
+   since group/array order is what settles same-word collisions.
 
 3. **Run `npm run update-data:triage -- <rule-id>`.** With an empty list, the whole footprint is
    untriaged — this run *is* the enumeration. Work every case into `allow` or into `deny` with a
@@ -63,7 +66,36 @@ upstream) and writes `data/sujato.post/` (generated).
 
 For "change this specific line": `kind: 'segment'`, with `from` copied **verbatim** from
 `data/sujato.post/` — term rules have already run on it, and segment rules apply last, to their
-output. A whitespace difference fails the anchor, so copy, don't retype.
+output. A whitespace difference fails the anchor, so copy, don't retype. Add it to the trailing
+`// ── Segment overrides ──` group at the end of the array, not next to the term rule it patches —
+see "Keeping the file organized" below.
+
+## Keeping the file organized
+
+`RULES` is one array, and it only grows, so `retranslation.mjs` groups entries by term family
+under a `// ── Family Name ──` banner comment, with a short header comment at the top of the file
+listing the groups in array order — e.g. `standalone terms`, `awareness`, `arising / passing`,
+`segment overrides`. This isn't cosmetic: order inside and between groups is exactly what settles
+a same-word collision (locking handles the rest — see the same-word-collisions step above), so the
+grouping doubles as documentation of *why* rules sit where they do — the awareness group's own
+comment, for instance, records that `sati-aware` and `sampajanna-understanding` are neighbors
+because they meet in the satipaṭṭhāna formula, a fact that would otherwise have to be
+reconstructed from the two rules' `why` fields.
+
+When adding a rule:
+
+- **Existing family** (shares a Pali root, or is part of the same doctrinal cluster): add it to
+  that group, at whichever position collision order requires, and update the group's banner
+  comment if the new rule changes what it needs to say.
+- **New family**: add a new banner group at the array position collision order requires, and add a
+  line for it to the file's header comment.
+- **Segment overrides** always go in the trailing `// ── Segment overrides ──` group, never inline
+  next to the term rule they patch — they already run last regardless of array position, so
+  keeping them together makes that fixed ordering the array's own shape rather than something a
+  reader has to remember.
+
+This is a low bar — a `why` per rule, one banner per family, one header line per group — but it's
+what keeps a file that will only keep growing navigable without `git blame`.
 
 ## Working a triage queue after a refresh
 
