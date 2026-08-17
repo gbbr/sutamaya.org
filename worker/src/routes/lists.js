@@ -6,9 +6,16 @@ import { shapeList } from '../lib/listShape.js';
 import { reconcileItemOrder } from '../lib/listItemOrder.js';
 import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits.js';
 import { resolveMtime } from '../lib/mtime.js';
+import { HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID, RECENT_AUTO_LIST_ID } from '../lib/userData.js';
 
 export const listsRouter = new Hono();
 listsRouter.use(requireAuth);
+
+// assembleUserData synthesizes the three auto-lists into its response by these ids without
+// consulting the `lists` table, so a stored row sharing one would be returned alongside its
+// synthetic twin — same id, twice, the stored one first. The client resolves auto-lists with
+// `lists.find(...)` and would render the impostor in the "Automatic" section.
+const RESERVED_LIST_IDS = new Set([RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID]);
 
 // Every statement in this router is scoped `AND user_id = ?`: D1 is one flat table per entity,
 // with no structural isolation between users — the predicate *is* the isolation. A missing scope
@@ -128,8 +135,20 @@ listsRouter.post('/', async (c) => {
   // before it has ever reached the server; falling back to a server-minted one keeps a client that
   // doesn't send one working unchanged.
   const id = typeof body?.id === 'string' && body.id ? body.id : crypto.randomUUID();
+  if (RESERVED_LIST_IDS.has(id)) return c.json({ error: 'That list id is reserved.' }, 400);
   const mtime = resolveMtime(body?.mtime);
-  await c.env.DB.prepare(CREATE_LIST_SQL).bind(id, userId, label, parentId, kind, new Date().toISOString(), mtime).run();
+  const created = await c.env.DB.prepare(CREATE_LIST_SQL)
+    .bind(id, userId, label, parentId, kind, new Date().toISOString(), mtime)
+    .run();
+  // `lists.id` is a global PRIMARY KEY, so ON CONFLICT(id) fires on *any* user's row with this id,
+  // not just this user's. A skipped insert is therefore two different situations: the retry the
+  // conflict clause exists to absorb, or another account having claimed the id first. Only a
+  // user-scoped read tells them apart, and getting it wrong would hand the client a 201 for a row
+  // that does not exist under it — every later write against that id then 404s.
+  if (created.meta?.changes === 0) {
+    const mine = await c.env.DB.prepare('SELECT id FROM lists WHERE id = ? AND user_id = ?').bind(id, userId).first();
+    if (!mine) return c.json({ error: 'id_collision' }, 409);
+  }
   return c.json({ list: { id, label, parentId, kind, items: [] } }, 201);
 });
 

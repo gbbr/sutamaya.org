@@ -155,6 +155,15 @@ primary key, and a bare `INSERT` on a key collision raises a constraint error ra
 harmlessly. `CREATE_LIST_SQL` needs `ON CONFLICT(id) DO NOTHING` — after which a retry whose response
 was lost is a no-op instead of either a duplicate row or a spurious failure.
 
+`lists.id` is a global primary key, though, not `(user_id, id)`, so that conflict clause also
+absorbs a row belonging to *another account* — and sign-in is open to any Google account. The
+handler therefore inspects `meta.changes`: a skipped insert is followed by a user-scoped read that
+separates the retry (row is mine, answer 201) from the collision (row is someone else's, answer
+`409 id_collision` so the client mints a fresh id). Returning 201 for the second case would hand the
+client an id it does not own, and every later write against it would 404 under the `AND user_id = ?`
+scope. UUID clients will never collide by chance; the check is what keeps the failure legible if one
+ever does.
+
 ### 2. Tombstones
 
 Deleting sets `deleted = 1` rather than removing the row. Without this, a device that was offline
@@ -404,9 +413,17 @@ One step per branch, each independently shippable, each ending with `npm test` g
    triggers (A5), tab election, client-side auto-list derivation ported from
    `worker/src/lib/userData.js`, and the rewrite of `UserDataContext` into a view over the mirror.
    Retire `syncUserData`, `mutateThenSync` and `resyncAfterFailure`. Largest step by a wide margin —
-   consider splitting the mirror-and-read-path from the flush path if it gets unwieldy. *Tests:* a
-   mutation with the network down survives a reload; a flush after reconnect lands every queued
-   change; a 401 pauses rather than drops.
+   consider splitting the mirror-and-read-path from the flush path if it gets unwieldy.
+
+   This is the step that starts sending client-minted ids in earnest, so the flush needs a branch for
+   `409 id_collision` from `POST /lists` (see step 1 — it is not retryable): mint a fresh id, rewrite
+   the local record and every queued reference to it, and flush again. Without it a collision becomes
+   a dirty record that can never drain, which is exactly the stuck queue step 5 has to surface. A v4
+   UUID will not collide by chance, so this is about the failure being legible rather than likely.
+
+   *Tests:* a mutation with the network down survives a reload; a flush after reconnect lands every
+   queued change; a 401 pauses rather than drops; a 409 on create re-mints the id and the retried
+   flush lands, with queued references following the new id.
 
 5. **Making it legible.** Offline writing that the user cannot see the state of is worse than
    useless — they cannot tell "saved locally, will sync" from "lost", which is the very uncertainty

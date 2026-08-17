@@ -17,9 +17,16 @@ function serverMtime() {
   return `${new Date(ms).toISOString()}|${SERVER_DEVICE_ID}`;
 }
 
+// Comparison is lexicographic, so a stored value that sorts above every real ISO timestamp — a
+// stray 'zzz', a wrong-shape id, anything starting past '9' — wins every conditional write from
+// then on, and the row can never be updated again. A rejected write is a silent no-op by design
+// (last-writer-wins has no loser to report), so that state is unrecoverable short of direct D1
+// access. Validating the shape here is what keeps a malformed mtime from becoming permanent.
+const MTIME_PATTERN = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z\|.+$/;
+
 // A write with no client-supplied mtime (every write from a client that predates offline sync)
 // still needs a real, ordered value rather than the '' migration default, which would always
 // lose a conflict.
 export function resolveMtime(clientMtime) {
-  return typeof clientMtime === 'string' && clientMtime ? clientMtime : serverMtime();
+  return typeof clientMtime === 'string' && MTIME_PATTERN.test(clientMtime) ? clientMtime : serverMtime();
 }
