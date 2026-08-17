@@ -2,6 +2,7 @@ import { memo, useMemo, type CSSProperties } from 'react';
 import type { SegmentFile, SegmentRole } from '../lib/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
 import { highlightPaint } from '../lib/theme';
+import { paintSegmentHighlights } from '../lib/highlights';
 import { WORD_BOUNDARY, isWordBoundary } from '../lib/dictionary';
 
 interface Part {
@@ -80,15 +81,22 @@ function stripTags(html: string): string {
   return html.replace(/<[^>]+>/g, '');
 }
 
+// Slices a segment's text into rendered runs, highlighted and plain alternating. Overlaps between
+// two groups are resolved by paintSegmentHighlights (lib/highlights.ts) rather than here, since
+// which one wins the contested characters is a rule shared with the rest of the app, not a
+// rendering detail.
+//
+// A part's `s`/`e` are the winning highlight's own *stored* range, not the piece being drawn —
+// they're what a click hands back to openPop, which locates the group by exact stored offsets, so
+// clicking the visible half of a partly-covered highlight still acts on the whole thing.
 function buildParts(text: string, hlForSeg: Highlight[]): Part[] {
-  const ranges = [...hlForSeg].sort((a, b) => a.s - b.s);
   const parts: Part[] = [];
   let cur = 0;
-  ranges.forEach((r) => {
-    if (r.s > cur) parts.push({ text: text.slice(cur, r.s) });
-    parts.push({ text: text.slice(Math.max(cur, r.s), r.e), c: r.c, s: r.s, e: r.e, id: r.id });
-    cur = Math.max(cur, r.e);
-  });
+  for (const { s, e, src } of paintSegmentHighlights(hlForSeg)) {
+    if (s > cur) parts.push({ text: text.slice(cur, s) });
+    parts.push({ text: text.slice(s, e), c: src.c, s: src.s, e: src.e, id: src.id });
+    cur = e;
+  }
   if (cur < text.length) parts.push({ text: text.slice(cur) });
   return parts;
 }

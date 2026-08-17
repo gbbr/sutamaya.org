@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { render } from '@testing-library/react';
 import { SegmentedText } from './SegmentedText';
 import type { SegmentFile } from '../lib/corpus';
-import type { ThemeColors } from '../lib/types';
+import type { Highlight, ThemeColors } from '../lib/types';
 
 const theme: ThemeColors = { bg: '#fff', fg: '#000', dim: '#888', rule: '#ccc', panel: '#fff', pali: '#333', tint: '#eee', focusTint: '#f5f5f5', highlightAlpha: 1, selection: '#ddd' };
 
@@ -146,5 +146,44 @@ describe('SegmentedText — focusUid marks one inner sutta within a batched docu
     const { container } = render(<SegmentedText {...baseProps(segments)} />);
     const row = container.querySelector('#dhp321\\:1') as HTMLElement;
     expect(row.style.background).toBe('');
+  });
+});
+
+// Groups are immutable, so two devices highlighting overlapping spans offline both survive and
+// arrive together — the reader is where the contest is settled, deterministically by (mtime, g).
+describe('SegmentedText — overlapping highlight groups', () => {
+  const segments: SegmentFile[] = [{ key: 'dn1:1.1', pali: 'p', en: '0123456789abcde' }];
+  const older: Highlight = { id: 'h1', i: 0, s: 0, e: 10, c: '#ffe08a', g: 'g1', m: '2026-01-01T00:00:00.000Z|dev' };
+  const newer: Highlight = { id: 'h2', i: 0, s: 5, e: 15, c: '#a8d8f0', g: 'g2', m: '2026-01-02T00:00:00.000Z|dev' };
+
+  function highlightSpans(container: HTMLElement) {
+    return [...container.querySelectorAll<HTMLElement>('[data-hl-id]')].map((el) => [el.dataset.hlId, el.textContent]);
+  }
+
+  it('gives the contested characters to the later group', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { highlights: [older, newer] })} />);
+    expect(highlightSpans(container)).toEqual([
+      ['h1', '01234'],
+      ['h2', '56789abcde'],
+    ]);
+  });
+
+  it('renders the same regardless of the order the two arrive in', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { highlights: [newer, older] })} />);
+    expect(highlightSpans(container)).toEqual([
+      ['h1', '01234'],
+      ['h2', '56789abcde'],
+    ]);
+  });
+
+  // A click reports the highlight's *stored* range, not the visible fragment — openPop resolves a
+  // group by exact stored offsets, so clipping the click's coordinates would leave the rest of the
+  // partly-covered highlight untouched.
+  it('reports the loser\'s whole stored range when its surviving fragment is clicked', () => {
+    const onSpanClick = vi.fn();
+    const { container } = render(<SegmentedText {...baseProps(segments, { highlights: [older, newer], onSpanClick })} />);
+    const [fragment] = container.querySelectorAll('[data-hl-id]');
+    fragment.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    expect(onSpanClick).toHaveBeenCalledWith(0, 0, 10, expect.anything(), older.c);
   });
 });

@@ -33,7 +33,7 @@ function buildCorpus(): Corpus {
   };
 }
 
-const highlight: Highlight = { id: 'h1', i: 0, s: 0, e: 5, c: '#F0E3A8', g: 'g1' };
+const highlight: Highlight = { id: 'h1', i: 0, s: 0, e: 5, c: '#F0E3A8', g: 'g1', m: '2026-01-01T00:00:00.000Z|dev' };
 
 const userDataDefaults: ReturnType<typeof useUserData> = {
   ready: true,

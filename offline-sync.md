@@ -34,8 +34,9 @@ Take one numbered step per branch — 2a and 2b are two branches, not one. Each 
 shippable and leaves the app working and the suite green. Steps 1 through 3 change no user-visible
 behaviour except one highlight improvement; step 4 is where offline writing arrives, and step 5 is
 what makes it legible to the user.
-Throughout, the existing endpoints must keep working — the app is deployed, and a half-migrated
-client has to keep functioning.
+Each step's own client and server must agree, but nothing older than that has to keep working: the
+app is deployed and not released, so an endpoint is free to change shape outright rather than grow
+a compatibility branch for a stale PWA shell.
 
 Run the suite with `npm test` from the repo root, never `npx vitest` directly.
 
@@ -239,15 +240,30 @@ write is the design's only genuine data-loss bug.
 
 A highlight group is immutable and keyed by a client-generated `g`. A recolour is a tombstone plus a
 new group; an erase is a tombstone; the client computes which existing groups a new selection
-displaces and tombstones them explicitly. `DELETE_OVERLAPS_SQL` goes away. Immutability makes the
+displaces (`displacedGroupIds`) and names them in the write's `erase` list. A group is atomic there:
+a selection touching any part of one displaces the whole thing, rather than leaving the segments it
+missed behind as a stranded remnant. Immutability makes the
 server side trivial: there is no update case, so a create is `INSERT OR IGNORE` (re-pushing a group
 you already sent is a no-op) and an erase is a conditional `UPDATE ... SET deleted = 1` across the
 group's rows. The table keeps one row per segment; only the *record* is the group.
 
+`DELETE_OVERLAPS_SQL` is gone outright, with no server-side overlap path left behind: `g` and
+`erase` are required on every write, so a request that doesn't name what it displaces is rejected
+rather than half-applied. Nothing has to keep working across this change — the app is deployed but
+not released.
+
+`DELETE /highlights/:id` goes with it. It was already dead — removing a highlight has gone through
+`PUT /highlights/ranges` for a while — and it is the wrong shape besides: it needs a row id, which
+only exists after a sync, where the group's own `g` is knowable the moment the user acts.
+
 The residue is that two devices highlighting overlapping spans offline both survive, so stored
-ranges can overlap. That resolves deterministically at render time in `SegmentedText.tsx`, ordering
-by `(mtime, g)` so the later group wins the contested characters — strictly better than today, where
-one side is destroyed outright.
+ranges can overlap. That resolves deterministically at render time (`paintSegmentHighlights` in
+`lib/highlights.ts`, which `SegmentedText.tsx` renders from), ordering by `(mtime, g)` so the later
+group wins the contested characters — strictly better than today, where one side is destroyed
+outright. A group overlapped in the middle comes back as two pieces, each still carrying the
+group's own stored range, so a click on either resolves to the whole highlight. This is also why
+`GET /api/data` now sends each highlight's mtime (as `m`): the client needs it to render, not just
+to order the auto-lists.
 
 One ordering trap, since create and tombstone are different statements: a group created and then
 erased *before either ever synced* must be dropped from the queue entirely, not pushed as a create
@@ -403,11 +419,19 @@ One step per branch, each independently shippable, each ending with `npm test` g
    untouched; a list whose parent is absent entirely is re-homed rather than dropped; a cycle
    resolves identically from either input order.
 
-3. **Highlights as immutable groups.** Client-generated `g` in `useHighlightPopup.ts`, tombstones
-   instead of `DELETE_OVERLAPS_SQL`, group-level writes, and render-time overlap resolution in
-   `SegmentedText.tsx` ordering by `(mtime, g)`. The only user-visible change in the plan, and an
-   improvement. *Tests:* overlapping groups render with the later one winning the contested
-   characters; an erase tombstones rather than deletes; re-pushing a group is a no-op.
+3. **Highlights as immutable groups.** Client-generated `g`, tombstones instead of
+   `DELETE_OVERLAPS_SQL`, group-level writes, and render-time overlap resolution ordering by
+   `(mtime, g)`. The only user-visible change in the plan, and an improvement. *Tests:* overlapping
+   groups render with the later one winning the contested characters; an erase tombstones rather
+   than deletes; re-pushing a group is a no-op.
+
+   The group's `g`, its `mtime` and the `erase` list are minted in `UserDataContext`'s
+   `setHighlightRanges` rather than in `useHighlightPopup.ts`: working out what a selection
+   displaces needs the sutta's stored highlights, which is the same state the optimistic update
+   edits, and splitting the two would have duplicated the overlap logic across both. The popup hook
+   still owns everything about the selection itself. The mtime comes from `web/src/lib/mtime.ts`,
+   A2's client-side generator — this is its first caller; step 4 is where the rest of the entities
+   start using it.
 
 4. **Client mirror.** IndexedDB store, dirty-record tracking, the membership operation queue, flush
    triggers (A5), tab election, client-side auto-list derivation ported from

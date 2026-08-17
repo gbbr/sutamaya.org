@@ -55,14 +55,14 @@ describe('routes/data.js (D1)', () => {
     await api('/api/highlights/ranges', {
       method: 'PUT',
       cookie,
-      body: { suttaId: 'sn1.1', color: 'yellow', ranges: [{ i: 0, s: 0, e: 5 }] },
+      body: { suttaId: 'sn1.1', color: 'yellow', g: 'group-a', erase: [], ranges: [{ i: 0, s: 0, e: 5 }] },
     });
     await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'older note' } });
     await new Promise((r) => setTimeout(r, 5));
     await api('/api/highlights/ranges', {
       method: 'PUT',
       cookie,
-      body: { suttaId: 'sn1.2', color: 'blue', ranges: [{ i: 0, s: 0, e: 5 }] },
+      body: { suttaId: 'sn1.2', color: 'blue', g: 'group-b', erase: [], ranges: [{ i: 0, s: 0, e: 5 }] },
     });
     await api('/api/notes/sn1.2', { method: 'PUT', cookie, body: { text: 'newer note' } });
 
@@ -77,13 +77,15 @@ describe('routes/data.js (D1)', () => {
     await api('/api/highlights/ranges', {
       method: 'PUT',
       cookie,
-      body: { suttaId: 'sn1.1', color: 'yellow', ranges: [{ i: 2, s: 5, e: 10 }] },
+      body: { suttaId: 'sn1.1', color: 'yellow', g: 'group-a', erase: [], ranges: [{ i: 2, s: 5, e: 10 }] },
     });
 
     const body = await (await api('/api/data', { cookie })).json();
     expect(body.highlights['sn1.1']).toHaveLength(1);
-    expect(body.highlights['sn1.1'][0]).toMatchObject({ i: 2, s: 5, e: 10, c: 'yellow' });
-    expect(body.highlights['sn1.1'][0].g).toBeTruthy();
+    // `m` (the row's mtime) is part of that shape too — the reader needs it to decide which of two
+    // overlapping groups paints the characters they contest.
+    expect(body.highlights['sn1.1'][0]).toMatchObject({ i: 2, s: 5, e: 10, c: 'yellow', g: 'group-a' });
+    expect(body.highlights['sn1.1'][0].m).toBeTruthy();
   });
 
   it('membership reflects a real list a sutta was added to', async () => {

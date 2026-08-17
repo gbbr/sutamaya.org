@@ -99,8 +99,16 @@ export const notesApi = {
 };
 
 export const highlightsApi = {
-  setRanges: (suttaId: string, ranges: { i: number; s: number; e: number }[], color: string | null) =>
-    request<{ ok: true }>('/highlights/ranges', { method: 'PUT', body: JSON.stringify({ suttaId, ranges, color }) }),
+  // `group` is what makes this write replayable: `g` names the group being created (so re-sending
+  // it is a no-op rather than a second highlight), `erase` names the groups this selection
+  // displaces (so the server never has to infer that from rows that may have changed since), and
+  // `mtime` is when the user acted. See worker/src/routes/annotations.js.
+  setRanges: (
+    suttaId: string,
+    ranges: { i: number; s: number; e: number }[],
+    color: string | null,
+    group: { g: string; mtime: string; erase: string[] }
+  ) => request<{ ok: true }>('/highlights/ranges', { method: 'PUT', body: JSON.stringify({ suttaId, ranges, color, ...group }) }),
 };
 
 export const visitedApi = {

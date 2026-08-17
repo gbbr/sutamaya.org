@@ -52,7 +52,14 @@ export interface Highlight {
   s: number;
   e: number;
   c: string;
+  // The group this row belongs to — one selection, one group, one row per segment it spans (see
+  // lib/highlights.ts's groupHighlights). Minted by the client when the user picks the colour, so
+  // a highlight made offline already has its final identity.
   g: string;
+  // The group's mtime (`${ISO}|${deviceId}`, see lib/mtime.ts). Two devices' overlapping
+  // highlights can both survive now, so this — with `g` as the tiebreak — is what decides which
+  // one paints the characters they contest (paintSegmentHighlights).
+  m: string;
 }
 
 // 'list' holds suttas (`items`) and can't have children. 'group' ("ListGroup") is the reverse:
