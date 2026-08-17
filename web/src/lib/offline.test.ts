@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { estimateOfflineStatus, prefetchAllSuttas, SHARD_FETCH_TIMEOUT_MS, type ShardManifest } from './offline';
+import { estimateOfflineStatus, isDictionaryCached, prefetchAllSuttas, prefetchDictionary, SHARD_FETCH_TIMEOUT_MS, type ShardManifest } from './offline';
 
 // offline.ts targets browser-only behavior that this test's Node environment (see
 // vitest.config.ts — .test.ts files run under plain Node, not jsdom) doesn't provide on its own:
@@ -119,6 +119,56 @@ describe('offline', () => {
       vi.stubGlobal('window', {});
       const status = await estimateOfflineStatus(['dn1', 'dn2']);
       expect(status).toEqual({ cached: 0, total: 2 });
+    });
+  });
+
+  describe('prefetchDictionary / isDictionaryCached', () => {
+    it('fetches and caches the dictionary under its well-known URL when not already cached', async () => {
+      const fetchSpy = vi.fn(async () => jsonResponse({ entry: ['def'] }));
+      vi.stubGlobal('fetch', fetchSpy);
+
+      const ok = await prefetchDictionary();
+
+      expect(ok).toBe(true);
+      expect(fetchSpy).toHaveBeenCalledTimes(1);
+      const cache = await cacheStorage.open('dictionary');
+      expect(cache.has('/data/dictionary.json')).toBe(true);
+      expect(await isDictionaryCached()).toBe(true);
+    });
+
+    it('skips re-fetching when the dictionary is already cached', async () => {
+      const cache = await cacheStorage.open('dictionary');
+      await cache.put('/data/dictionary.json', jsonResponse({}));
+      const fetchSpy = vi.fn();
+      vi.stubGlobal('fetch', fetchSpy);
+
+      const ok = await prefetchDictionary();
+
+      expect(ok).toBe(true);
+      expect(fetchSpy).not.toHaveBeenCalled();
+    });
+
+    it('reports failure without throwing when the fetch fails, and leaves nothing cached', async () => {
+      vi.stubGlobal(
+        'fetch',
+        vi.fn(async () => {
+          throw new TypeError('network error');
+        })
+      );
+
+      const ok = await prefetchDictionary();
+
+      expect(ok).toBe(false);
+      expect(await isDictionaryCached()).toBe(false);
+    });
+
+    it('treats a non-ok response as a failure, not a cached entry', async () => {
+      vi.stubGlobal('fetch', vi.fn(async () => jsonResponse('not found', 404)));
+
+      const ok = await prefetchDictionary();
+
+      expect(ok).toBe(false);
+      expect(await isDictionaryCached()).toBe(false);
     });
   });
 

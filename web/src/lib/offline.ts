@@ -1,5 +1,9 @@
 const SUTTA_TEXT_CACHE = 'sutta-text';
 const MANIFEST_URL = '/data/text-shards/manifest.json';
+// Must match vite.config.ts's runtimeCaching cacheName/urlPattern for this URL — writing here
+// under any other name/key would leave the SW's own CacheFirst rule unable to find it.
+const DICTIONARY_CACHE = 'dictionary';
+const DICTIONARY_URL = '/data/dictionary.json';
 
 // Exported so tests can advance fake timers by the real value instead of duplicating it. Shards
 // are ~1MB bundles of many suttas (see scripts/build-corpus.mjs's SHARD_TARGET_BYTES), not the
@@ -187,6 +191,33 @@ export async function prefetchAllSuttas(
   // looking frozen while it's actually still working.
   const second = await runShardPass(cache, first.failed, concurrency, signal, onProgress, doneBytes, totalBytes);
   return { failed: failedUidsOf(second.failed, wanted), circuitTripped: second.circuitTripped };
+}
+
+export async function isDictionaryCached(): Promise<boolean> {
+  if (!('caches' in window)) return false;
+  const cache = await caches.open(DICTIONARY_CACHE);
+  return (await cache.match(DICTIONARY_URL)) !== undefined;
+}
+
+// CorpusProvider fetches the dictionary on boot regardless, and the SW's own CacheFirst rule
+// (vite.config.ts) normally catches that fetch within seconds — but "download all suttas for
+// offline" needs the dictionary to actually be cached by the time it reports done, not racing a
+// ~20MB fetch that started independently on page load and may still be in flight (e.g. the user
+// goes offline moments after starting the download). Written directly into Cache Storage the same
+// way fetchAndCacheShard above writes sutta text, for the same reason: don't trust a resolved
+// fetch() to imply the Service Worker's own cache write succeeded.
+export async function prefetchDictionary(signal?: AbortSignal): Promise<boolean> {
+  if (await isDictionaryCached()) return true;
+  try {
+    const res = await fetch(DICTIONARY_URL, { signal });
+    if (!res.ok) return false;
+    const body = await res.arrayBuffer();
+    const cache = await caches.open(DICTIONARY_CACHE);
+    await cache.put(new Request(DICTIONARY_URL), new Response(body, { headers: { 'Content-Type': 'application/json' } }));
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 export async function estimateOfflineStatus(uids: string[]): Promise<{ cached: number; total: number }> {

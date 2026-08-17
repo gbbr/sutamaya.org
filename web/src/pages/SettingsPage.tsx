@@ -8,7 +8,7 @@ import { useUserData, type SyncStatus } from '../context/UserDataContext';
 import { GoogleSignInButton } from '../components/GoogleSignInButton';
 import { dataApi } from '../lib/api';
 import { flatSuttaOrder } from '../lib/corpus';
-import { estimateOfflineStatus, prefetchAllSuttas } from '../lib/offline';
+import { estimateOfflineStatus, prefetchAllSuttas, prefetchDictionary } from '../lib/offline';
 import type { AppTheme, ReaderFace } from '../lib/types';
 
 const UI_SCALE_MIN = 0.85;
@@ -77,6 +77,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
   const [cachedStatus, setCachedStatus] = useState<{ cached: number; total: number } | null>(null);
   const [failedCount, setFailedCount] = useState(0);
   const [circuitTripped, setCircuitTripped] = useState(false);
+  const [dictionaryFailed, setDictionaryFailed] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
 
   // Lets an entry point elsewhere in the app — the offline-download nudge in TreePane, or a
@@ -163,17 +164,26 @@ export function SettingsPage({ location }: RouteComponentProps) {
     setProgress({ done: 0, total: uids.length });
     setFailedCount(0);
     setCircuitTripped(false);
+    setDictionaryFailed(false);
     // catch, not just finally — prefetchAllSuttas is designed to resolve normally even when
     // individual suttas fail (that's what the returned `failed` list is for), but this still
     // guards against something genuinely unexpected (e.g. Cache Storage itself unavailable)
     // turning into an unhandled rejection instead of the UI cleanly recovering to idle.
     try {
-      const { failed, circuitTripped: tripped } = await prefetchAllSuttas(uids, {
-        signal: controller.signal,
-        onProgress: (done, total) => setProgress({ done, total }),
-      });
+      // Run alongside the sutta shards rather than after — the dictionary is usually already
+      // cached (see prefetchDictionary's comment) so this is normally a no-op, but "download all
+      // suttas for offline" should still guarantee it before reporting done, since without a
+      // dictionary the reader's word lookups are stuck loading in airplane mode either way.
+      const [{ failed, circuitTripped: tripped }, dictionaryOk] = await Promise.all([
+        prefetchAllSuttas(uids, {
+          signal: controller.signal,
+          onProgress: (done, total) => setProgress({ done, total }),
+        }),
+        prefetchDictionary(controller.signal),
+      ]);
       setFailedCount(failed.length);
       setCircuitTripped(tripped);
+      setDictionaryFailed(!dictionaryOk && !controller.signal.aborted);
       setCachedStatus(await estimateOfflineStatus(uids));
     } catch (e) {
       console.error('Offline download failed', e);
@@ -325,6 +335,9 @@ export function SettingsPage({ location }: RouteComponentProps) {
                   ) : (
                     <div className="font-sans text-[13px] text-red-600 mt-2">{failedCount} couldn't be downloaded — try again.</div>
                   ))}
+                {dictionaryFailed && (
+                  <div className="font-sans text-[13px] text-red-600 mt-2">Dictionary couldn't be downloaded — try again.</div>
+                )}
               </>
             )}
             {/* This is about lists/notes/highlights syncing to the account (offline-sync.md), a
