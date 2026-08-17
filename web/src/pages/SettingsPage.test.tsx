@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Router, navigate } from '@reach/router';
 
 // Covers the two behaviors added on top of the plain "renders the three sections" page: (1)
@@ -12,11 +13,17 @@ vi.mock('../context/AuthContext', () => ({ useAuth: vi.fn() }));
 vi.mock('../context/UiPrefsContext', () => ({ useUiPrefs: vi.fn() }));
 vi.mock('../context/CorpusContext', () => ({ useCorpus: vi.fn() }));
 vi.mock('../context/UserDataContext', () => ({ useUserData: vi.fn() }));
+vi.mock('../lib/offline', () => ({
+  estimateOfflineStatus: vi.fn(async () => ({ cached: 0, total: 0 })),
+  prefetchAllSuttas: vi.fn(async () => ({ failed: [], circuitTripped: false })),
+  prefetchDictionary: vi.fn(async () => true),
+}));
 
 import { useAuth } from '../context/AuthContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
+import { prefetchDictionary } from '../lib/offline';
 import { SettingsPage } from './SettingsPage';
 import type { Corpus, User } from '../lib/types';
 
@@ -83,6 +90,7 @@ beforeEach(() => {
     loading: false,
     error: false,
     retry: vi.fn(),
+    retryDictionary: vi.fn(),
   });
   vi.mocked(useUserData).mockReturnValue(mockUserData());
 });
@@ -198,5 +206,43 @@ describe('sync status line', () => {
     vi.mocked(useUserData).mockReturnValue(mockUserData({ syncStatus: 'synced', lastSyncedAt: fiveMinutesAgo }));
     renderSettings();
     expect(screen.getByText('Last synced 5 minutes ago.')).toBeInTheDocument();
+  });
+});
+
+describe('downloading offline', () => {
+  it("retries CorpusContext's own dictionary once the download has cached it, so a reader stuck on \"Loading dictionary…\" doesn't need an unrelated online/visibility event to recover", async () => {
+    const retryDictionary = vi.fn();
+    vi.mocked(useCorpus).mockReturnValue({
+      corpus: { nikayas: [], suttas: {}, sujatoCommit: 'abc123' } as unknown as Corpus,
+      dictionary: null,
+      loading: false,
+      error: false,
+      retry: vi.fn(),
+      retryDictionary,
+    });
+    vi.mocked(prefetchDictionary).mockResolvedValue(true);
+
+    renderSettings();
+    await userEvent.click(screen.getByText('Download all suttas for offline'));
+
+    expect(retryDictionary).toHaveBeenCalledTimes(1);
+  });
+
+  it("does not retry CorpusContext's dictionary when the download itself failed to cache it", async () => {
+    const retryDictionary = vi.fn();
+    vi.mocked(useCorpus).mockReturnValue({
+      corpus: { nikayas: [], suttas: {}, sujatoCommit: 'abc123' } as unknown as Corpus,
+      dictionary: null,
+      loading: false,
+      error: false,
+      retry: vi.fn(),
+      retryDictionary,
+    });
+    vi.mocked(prefetchDictionary).mockResolvedValue(false);
+
+    renderSettings();
+    await userEvent.click(screen.getByText('Download all suttas for offline'));
+
+    expect(retryDictionary).not.toHaveBeenCalled();
   });
 });

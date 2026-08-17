@@ -66,7 +66,7 @@ function syncStatusLine(status: SyncStatus, pendingCount: number, lastSyncedAt: 
 export function SettingsPage({ location }: RouteComponentProps) {
   const { user, logout, loading, authError } = useAuth();
   const { uiScale, uiFace, theme, setUiScale, setUiFace, setTheme } = useUiPrefs();
-  const { corpus } = useCorpus();
+  const { corpus, retryDictionary } = useCorpus();
   const { syncStatus, pendingCount, lastSyncedAt } = useUserData();
 
   const [offlineStatus, setOfflineStatus] = useState<'idle' | 'downloading'>('idle');
@@ -184,6 +184,11 @@ export function SettingsPage({ location }: RouteComponentProps) {
       setFailedCount(failed.length);
       setCircuitTripped(tripped);
       setDictionaryFailed(!dictionaryOk && !controller.signal.aborted);
+      // A no-op unless CorpusContext's own boot-time dictionary load had separately failed and is
+      // sitting stuck (see its retryDictionary) — without this, successfully caching
+      // dictionary.json here wouldn't reach the reader's in-memory dictionary until some unrelated
+      // 'online'/visibilitychange event happened to fire, or the app was restarted.
+      if (dictionaryOk) retryDictionary();
       setCachedStatus(await estimateOfflineStatus(uids));
     } catch (e) {
       console.error('Offline download failed', e);
