@@ -240,6 +240,8 @@ describe('the shipped rules, one example each', () => {
   const EXAMPLES = [
     ['mendicant-bhikkhu', 'dn1:1.1', 'sujato/sutta', 'a mendicant and some mendicants', 'a bhikkhu and some bhikkhus'],
     ['immersion-concentration', 'dn1:1.1', 'sujato/sutta', 'they enter that immersion', 'they enter that concentration'],
+    // The article travels with the word it agrees with, or DN 1 reads "an concentration".
+    ['immersion-concentration', 'dn1:1.31.1', 'sujato/sutta', 'experiences an immersion of the heart', 'experiences a concentration of the heart'],
     // Runs ahead of sati-aware, which would otherwise take the "mindfulness" of this phrase on its
     // own and leave "awareness meditation" behind.
     ['satipatthana-establishment-of-awareness', 'sn52.1:1.4', 'sujato/sutta', 'missed out on these four kinds of mindfulness meditation', 'missed out on these four establishments of awareness'],
@@ -248,6 +250,8 @@ describe('the shipped rules, one example each', () => {
     // stays word for word as Sujato wrote it.
     ['satipatthana-establishment-of-awareness', 'mn10:1.1', 'sujato/notes', 'i.e. “mindfulness meditation” or simply “meditation”', 'i.e. “mindfulness meditation” or simply “meditation”'],
     ['sati-aware', 'sn9.1:3.1', 'sujato/sutta', 'Give up discontent; be mindful;', 'Give up discontent; be aware;'],
+    // Same, the other way round — "a mindful disciple" would become "a aware disciple".
+    ['sati-aware', 'sn4.17:4.1', 'sujato/sutta', 'But a mindful disciple of the Buddha', 'But an aware disciple of the Buddha'],
     // "mindfully" needs more than the word swapped, hence the phrase.
     ['sati-aware', 'an6.29:11.3', 'sujato/sutta', 'a mendicant goes out mindfully, returns mindfully', 'a bhikkhu goes out with awareness, returns with awareness'],
     // Denied: caṅkamati, with no sati in the Pali at all.
