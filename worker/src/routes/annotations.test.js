@@ -58,7 +58,7 @@ describe('routes/annotations.js (D1)', () => {
     expect(set.status).toBe(200);
 
     const data = await (await api('/api/data', { cookie })).json();
-    expect(data.notes['sn1.1']).toBe('hello');
+    expect(data.notes['sn1.1'].text).toBe('hello');
 
     const clear = await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: '' } });
     expect(clear.status).toBe(200);
@@ -90,7 +90,7 @@ describe('routes/annotations.js (D1)', () => {
     await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'newer', mtime: '2030-01-02T00:00:00.000Z|a' } });
     await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: '', mtime: '2030-01-01T00:00:00.000Z|a' } });
     const data = await (await api('/api/data', { cookie })).json();
-    expect(data.notes['sn1.1']).toBe('newer');
+    expect(data.notes['sn1.1'].text).toBe('newer');
   });
 
   it('does not let a stale edit undo a more recent clear', async () => {
@@ -109,7 +109,7 @@ describe('routes/annotations.js (D1)', () => {
     await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'first' } });
     await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'second' } });
     const data = await (await api('/api/data', { cookie })).json();
-    expect(data.notes['sn1.1']).toBe('second');
+    expect(data.notes['sn1.1'].text).toBe('second');
   });
 
   // The conditional write (WHERE excluded.mtime > notes.mtime) is the entire conflict
@@ -119,7 +119,7 @@ describe('routes/annotations.js (D1)', () => {
     await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'newer', mtime: '2026-01-02T00:00:00.000Z|a' } });
     await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'older', mtime: '2026-01-01T00:00:00.000Z|a' } });
     const data = await (await api('/api/data', { cookie })).json();
-    expect(data.notes['sn1.1']).toBe('newer');
+    expect(data.notes['sn1.1'].text).toBe('newer');
   });
 
   it('does not let an equal client mtime overwrite a note either', async () => {
@@ -128,7 +128,7 @@ describe('routes/annotations.js (D1)', () => {
     await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'first', mtime } });
     await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'second', mtime } });
     const data = await (await api('/api/data', { cookie })).json();
-    expect(data.notes['sn1.1']).toBe('first');
+    expect(data.notes['sn1.1'].text).toBe('first');
   });
 
   // A note written with an explicit mtime still orders the Notes auto-list by that timestamp,
@@ -513,7 +513,7 @@ describe('routes/annotations.js (D1)', () => {
     });
 
     const ownerData = await (await api('/api/data', { cookie: owner.cookie })).json();
-    expect(ownerData.notes['sn1.1']).toBe('private');
+    expect(ownerData.notes['sn1.1'].text).toBe('private');
     expect(ownerData.highlights['sn1.1']).toHaveLength(1);
     expect(ownerData.visited['sn1.1']).toBeTruthy();
   });

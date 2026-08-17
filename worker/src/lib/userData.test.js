@@ -80,9 +80,15 @@ describe('assembleUserData', () => {
     expect(result.lists[0].kind).toBe('list');
   });
 
-  it('maps notes by doc id', () => {
-    const result = assembleUserData({ ...empty, noteDocs: [{ id: 'dn1', data: { text: 'hello' } }] });
-    expect(result.notes).toEqual({ dn1: 'hello' });
+  it('maps notes by doc id, carrying each one’s mtime', () => {
+    // `m` is what the client orders its own Notes auto-list by (web/src/lib/mirrorView.ts derives
+    // it over the mirror so an offline note appears there with no round trip); dropping it here
+    // leaves every pulled note comparing equal and the list in SELECT order.
+    const result = assembleUserData({
+      ...empty,
+      noteDocs: [{ id: 'dn1', data: { text: 'hello', updatedAt: '2026-08-01T00:00:00.000Z|a' } }],
+    });
+    expect(result.notes).toEqual({ dn1: { text: 'hello', m: '2026-08-01T00:00:00.000Z|a' } });
   });
 
   it('groups highlights by suttaId, preserving each entry’s fields', () => {

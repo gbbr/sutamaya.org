@@ -124,7 +124,7 @@ describe('routes/data.js (D1)', () => {
     const body = await res.json();
     expect(body.email).toBe('exporter@example.com');
     expect(body.exportedAt).toBeTruthy();
-    expect(body.notes['sn1.1']).toBe('keep me');
+    expect(body.notes['sn1.1'].text).toBe('keep me');
     expect(body.lists).toBeInstanceOf(Array);
   });
 

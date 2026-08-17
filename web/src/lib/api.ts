@@ -1,4 +1,4 @@
-import type { Highlight, ListDef, ListKind, Membership, NotesMap, HighlightsMap, VisitedMap, User } from './types';
+import type { Highlight, ListDef, ListKind, Membership, HighlightsMap, VisitedMap, User } from './types';
 
 // Deliberately generous: this is the "the connection is dead" backstop, not a latency budget.
 // /api/data carries the user's whole dataset, so a genuinely slow mobile connection can legitimately
@@ -68,7 +68,10 @@ export const authApi = {
 export interface UserData {
   lists: ListDef[];
   membership: Membership;
-  notes: NotesMap;
+  // Not `NotesMap`: the wire carries each note's mtime alongside its text, the way a highlight row
+  // carries `m`, because the mirror orders the Notes auto-list by it (see applySnapshot). NotesMap
+  // stays the shape the UI renders, which only ever wants the text.
+  notes: Record<string, { text: string; m: string }>;
   highlights: HighlightsMap;
   visited: VisitedMap;
 }

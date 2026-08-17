@@ -22,9 +22,18 @@ export function wouldCreateCycle(movingId, parentId, allLists) {
   if (!parentId) return false;
   if (parentId === movingId) return true;
   const byId = new Map(allLists.map((l) => [l.id, l]));
+  // `seen` is what makes this terminate on rows that are *already* in a cycle. Cycles are broken at
+  // read time (lib/listTree.js) and never written back, so a pair of rows pointing at each other —
+  // two devices' reparents interleaving, which D1 has no transaction to prevent — stays that way in
+  // storage, and an unguarded walk up from one of them would spin until the Worker's CPU limit
+  // killed every request touching that subtree. The client's port has the same guard
+  // (web/src/lib/listTree.ts).
+  const seen = new Set([movingId]);
   let cur = byId.get(parentId);
   while (cur?.parentId) {
     if (cur.parentId === movingId) return true;
+    if (seen.has(cur.id)) return false;
+    seen.add(cur.id);
     cur = byId.get(cur.parentId);
   }
   return false;

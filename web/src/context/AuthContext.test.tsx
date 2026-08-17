@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { act, render, screen } from '@testing-library/react';
+import { LAST_USER_KEY } from '../lib/storageKeys';
 import type { User } from '../lib/types';
 
 vi.mock('@reach/router', () => ({ navigate: vi.fn() }));
@@ -34,11 +35,22 @@ describe('AuthContext', () => {
   beforeEach(() => {
     vi.useFakeTimers();
     vi.resetAllMocks();
+    // Same in-memory stub the rest of this suite uses (e.g. hooks/useScrollMemory.test.tsx) —
+    // Node's own global here is undefined, so lib/lastUser.ts would otherwise see every call throw
+    // and quietly fall back to "nothing remembered", which is the case under test.
+    const store = new Map<string, string>();
+    vi.stubGlobal('localStorage', {
+      getItem: (k: string) => store.get(k) ?? null,
+      setItem: (k: string, v: string) => void store.set(k, String(v)),
+      removeItem: (k: string) => void store.delete(k),
+      clear: () => store.clear(),
+    });
   });
 
   afterEach(() => {
     vi.useRealTimers();
     vi.unstubAllEnvs();
+    vi.unstubAllGlobals();
     delete (window as unknown as { google?: unknown }).google;
   });
 
@@ -145,6 +157,53 @@ describe('AuthContext', () => {
     expect(screen.getByTestId('user').textContent).toBe('none');
     expect(screen.getByTestId('loading').textContent).toBe('false');
     consoleError.mockRestore();
+  });
+
+  it('starts signed in from the remembered user when /auth/me cannot be reached', async () => {
+    localStorage.setItem(LAST_USER_KEY, JSON.stringify(testUser));
+    const { AuthProvider, useAuth } = await loadAuthContext();
+    const { authApi } = await import('../lib/api');
+    vi.mocked(authApi.me).mockRejectedValue(new Error('network down'));
+    const consoleWarn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+
+    render(
+      <AuthProvider>
+        <Probe useAuthHook={useAuth} />
+      </AuthProvider>
+    );
+
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(5100);
+    });
+
+    // The whole point of an offline-first reader: relaunching on a plane has to open this user's
+    // own mirror. Without a remembered identity `user` stays null, UserDataProvider mounts an empty
+    // mirror over a full one, and every list, note and highlight on the device is both invisible
+    // and unwritable until the network comes back.
+    expect(screen.getByTestId('user').textContent).toBe('a@example.com');
+    expect(screen.getByTestId('loading').textContent).toBe('false');
+    consoleWarn.mockRestore();
+  });
+
+  it('forgets the remembered user once the server says the session is over', async () => {
+    localStorage.setItem(LAST_USER_KEY, JSON.stringify(testUser));
+    const { AuthProvider, useAuth } = await loadAuthContext();
+    const { authApi } = await import('../lib/api');
+    // A genuinely signed-out session is a 200 with a null user, not an error (see routes/auth.js).
+    vi.mocked(authApi.me).mockResolvedValue({ user: null });
+
+    render(
+      <AuthProvider>
+        <Probe useAuthHook={useAuth} />
+      </AuthProvider>
+    );
+
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(0);
+    });
+
+    expect(screen.getByTestId('user').textContent).toBe('none');
+    expect(localStorage.getItem(LAST_USER_KEY)).toBeNull();
   });
 
   it('does not touch googleReady when VITE_GOOGLE_CLIENT_ID is unset', async () => {

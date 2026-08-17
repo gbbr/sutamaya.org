@@ -174,7 +174,7 @@ describe('UserDataProvider', () => {
     const withList: UserData = {
       ...structuredClone(baseData),
       lists: [...baseData.lists, { id: created.id, label: 'Offline list', parentId: null, kind: 'list', items: ['dn2'] }],
-      notes: { dn2: 'offline note' },
+      notes: { dn2: { text: 'offline note', m: '2026-08-01T00:00:00.000Z|server' } },
     };
     dataApiAll.mockResolvedValue(withList);
     listsApiCreate.mockImplementation(record('create', async () => ({ list: null })));
@@ -217,7 +217,10 @@ describe('UserDataProvider', () => {
     expect(notesApiSet).toHaveBeenCalledTimes(1);
 
     // Signing back in re-loads the same mirror and clears the pause — the write is still there.
-    dataApiAll.mockResolvedValue({ ...structuredClone(baseData), notes: { dn1: 'still mine' } });
+    dataApiAll.mockResolvedValue({
+      ...structuredClone(baseData),
+      notes: { dn1: { text: 'still mine', m: '2026-08-01T00:00:00.000Z|server' } },
+    });
     mockUser = { ...mockUser! };
     await act(async () => {
       rerender();
@@ -248,7 +251,10 @@ describe('UserDataProvider', () => {
     expect(result.current.pendingCount).toBeGreaterThan(0);
 
     notesApiSet.mockImplementation(record('note', async () => ({ ok: true })));
-    dataApiAll.mockResolvedValue({ ...structuredClone(baseData), notes: { dn1: 'a note' } });
+    dataApiAll.mockResolvedValue({
+      ...structuredClone(baseData),
+      notes: { dn1: { text: 'a note', m: '2026-08-01T00:00:00.000Z|server' } },
+    });
     await reconnect();
 
     expect(result.current.syncStatus).toBe('synced');

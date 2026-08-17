@@ -223,7 +223,7 @@ describe('planListDrop', () => {
   it('plans a single reorder for a before/after drop, even one crossing into a new parent', () => {
     // l2 (currently top-level) dropped after l1, which lives inside g1 — one 'reorder' plan
     // targeting g1 covers both the re-parent and the position, matching the server's own PUT
-    // /order semantics (see reorderListRecords in lib/mirror.ts) and avoiding the two-step-flicker
+    // /order semantics (see queueSiblingOrder in lib/mirror.ts) and avoiding the two-step-flicker
     // bug (a55e1ecc) a separate 'reparent' call first used to cause.
     const l1 = tree.find((l) => l.id === 'l1')!;
     expect(planListDrop(tree, 'l2', l1, 'after', childrenOf, topLevelLists)).toEqual({
