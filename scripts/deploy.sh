@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Deploys Sutamaya to Cloudflare as a single Worker serving both the built SPA + static corpus
-# (the assets binding, from web/dist) and /api/*, backed by D1. See deploy.md for the one-time
+# (the assets binding, from web/dist) and /api/*, backed by D1. See docs/deploy.md for the one-time
 # setup this assumes (wrangler login, the D1 database, the SESSION_SECRET secret).
 set -euo pipefail
 

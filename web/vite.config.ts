@@ -7,7 +7,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 // on `npm run dev` startup so it doesn't have to be remembered/looked up each time.
 const devHosts: Record<string, string> = {
   'local.sutamaya.org':
-    'https://local.sutamaya.org  (needs `caddy run` in a separate terminal — see deploy.md "Testing on mobile")',
+    'https://local.sutamaya.org  (needs `caddy run` in a separate terminal — see docs/deploy.md "Testing on mobile")',
 };
 
 export default defineConfig({
@@ -18,7 +18,7 @@ export default defineConfig({
       includeAssets: ['favicon.svg'],
       // Off by default (the plugin's own default) since a dev-mode service worker can serve
       // stale responses and fight Vite's HMR. Opt in with PWA_DEV=1 when specifically testing
-      // install/standalone behavior (e.g. via local.sutamaya.org — see deploy.md "Testing on
+      // install/standalone behavior (e.g. via local.sutamaya.org — see docs/deploy.md "Testing on
       // mobile"); unregister the SW in DevTools → Application afterward so it doesn't linger
       // and cause unrelated stale-content confusion in later dev sessions.
       devOptions: { enabled: !!process.env.PWA_DEV },
@@ -110,7 +110,7 @@ export default defineConfig({
     // raw IP, or explicitly allowed here. A phone on the LAN reaches this machine by its mDNS
     // name (e.g. "gbbr.local"), not an IP, so that name needs to be listed explicitly.
     // "local.sutamaya.org" is a real public-DNS name (Cloudflare A record pointed at this
-    // machine's LAN IP) fronted locally by Caddy on :443 — see deploy.md "Testing on mobile" —
+    // machine's LAN IP) fronted locally by Caddy on :443 — see docs/deploy.md "Testing on mobile" —
     // used only when a feature needs Google sign-in to work on a phone, which a bare LAN
     // IP/mDNS name can't do (Google rejects both as OAuth origins).
     allowedHosts: Object.keys(devHosts),

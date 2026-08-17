@@ -8,7 +8,7 @@
 // never reach the Worker at all.
 //
 // The binding's `simple.period` accepts only 10 or 60 seconds, so every budget here is expressed
-// per minute in wrangler.jsonc — the actual numbers are in deploy.md.
+// per minute in wrangler.jsonc — the actual numbers are in docs/deploy.md.
 
 // Returns true if the request is allowed through. `key` is what the budget is counted against —
 // the client IP.

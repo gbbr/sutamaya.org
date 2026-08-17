@@ -167,7 +167,7 @@ describe('applyRuleToChunks / applyTermRules — the retranslation engine', () =
   });
 
   it('locks matched spans so a later rule in the same pass cannot re-touch them', () => {
-    // The dn22:1.9 case from retranslation.md: "keen, aware, and mindful" — a rule turning
+    // The dn22:1.9 case from docs/retranslation.md: "keen, aware, and mindful" — a rule turning
     // "aware" into "understanding" must not let a later rule (turning "mindful" into "aware")
     // then have its own output re-caught by the first rule.
     const awareRule = { id: 'test-aware-understanding', mode: 'deny', forms: [['aware', 'understanding']] };
@@ -256,7 +256,7 @@ describe('the shipped rules, one example each', () => {
     ['sati-aware', 'an6.29:11.3', 'sujato/sutta', 'a mendicant goes out mindfully, returns mindfully', 'a bhikkhu goes out with awareness, returns with awareness'],
     // Denied: caṅkamati, with no sati in the Pali at all.
     ['sati-aware', 'dn25:6.2', 'sujato/sutta', 'he walked mindfully in the open air', 'he walked mindfully in the open air'],
-    // The dn22:1.9 collision from retranslation.md, through the rules as shipped: sati-aware
+    // The dn22:1.9 collision from docs/retranslation.md, through the rules as shipped: sati-aware
     // produces the very word sampajanna-understanding consumes, and locking keeps them apart.
     ['sampajanna-understanding', 'sn54.10:5.5', 'sujato/sutta', 'keen, aware, and mindful', 'keen, understanding, and aware'],
     // Denied: plain-English "aware", introducing a perception rather than rendering sampajañña.

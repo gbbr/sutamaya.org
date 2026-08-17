@@ -11,7 +11,7 @@ interface SyncIndicatorProps {
 }
 
 // The account badge's neighbour in TreePane's header — what state the offline sync queue is in
-// (see offline-sync.md's "Sync state"), as a single icon rather than a status line, since this sits in
+// (see docs/offline-sync.md's "Sync state"), as a single icon rather than a status line, since this sits in
 // chrome that's visible on every load and shouldn't cost more than a glance. `needsReauth` takes
 // priority over everything else: the session has lapsed and no amount of waiting fixes that, where
 // every other state resolves on its own. Clicking it is the only interactive case — it calls

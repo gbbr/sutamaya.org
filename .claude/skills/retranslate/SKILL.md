@@ -5,8 +5,8 @@ description: Add, change, or remove an editorial rule over Sujato's English tran
 
 # Retranslation rules
 
-The full design is `scripts/update-data/retranslation.md` — **read it before the first edit in a
-session.** This file is the procedure only.
+The full design is `docs/retranslation.md` — **read it before the first edit in a session.** This
+file is the procedure only.
 
 Rules live in `scripts/update-data/retranslation.mjs`, their segment lists in
 `scripts/update-data/rules/<id>.json`. `update-data:post` applies them to `data/sujato/` (pristine

@@ -1,6 +1,6 @@
-// The declared editorial layer over Sujato's English — see retranslation.md for the design this
+// The declared editorial layer over Sujato's English — see docs/retranslation.md for the design this
 // implements. Order is significant: a rule earlier in this array wins any same-word collision
-// with a later one (see "The pass" in retranslation.md). Each term rule's segment list, if any,
+// with a later one (see "The pass" in docs/retranslation.md). Each term rule's segment list, if any,
 // lives in its own sidecar at scripts/update-data/rules/<id>.json — never inline here, since that
 // list is machine-written by `update-data:triage` (see loadSidecar/saveSidecar in
 // scripts/lib/retranslation.js).
@@ -54,7 +54,7 @@ export const RULES = [
   // ── Awareness ───────────────────────────────────────────────────────────────
   // sati-aware and sampajanna-understanding meet in the satipaṭṭhāna formula ("keen, aware, and
   // mindful"), where sati-aware produces the very word sampajanna-understanding consumes. Locking,
-  // not order, is what keeps them apart — see "The pass" in retranslation.md, and the pinned
+  // not order, is what keeps them apart — see "The pass" in docs/retranslation.md, and the pinned
   // example in update-data.test.js. satipatthana-establishment-of-awareness runs ahead of both
   // because it *is* a same-word collision: it claims the "mindfulness" of "mindfulness meditation"
   // that sati-aware would otherwise take on its own.

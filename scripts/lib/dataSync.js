@@ -1,5 +1,5 @@
 // Shared helpers for scripts/update-data-{check,copy,post,snapshot}.mjs — see
-// scripts/update-data/README.md.
+// data/README.md.
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -182,7 +182,7 @@ export function readKeysSafe(filePath) {
 // Defaults to the real snapshot.json; overridable so tests can point it at a fixture file instead.
 export function loadSnapshot(snapshotPath = SNAPSHOT_PATH) {
   if (!fs.existsSync(snapshotPath)) {
-    throw new Error(`No snapshot at ${snapshotPath} — see scripts/update-data/README.md.`);
+    throw new Error(`No snapshot at ${snapshotPath} — see data/README.md.`);
   }
   return JSON.parse(fs.readFileSync(snapshotPath, 'utf8'));
 }

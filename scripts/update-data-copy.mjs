@@ -4,7 +4,7 @@
 // and records which sc-data commit that was in data/manifest.json. Run update-data-check.mjs
 // first; this trusts that it passed and fails loudly rather than skipping if a file that used to
 // exist at its expected path (see CATEGORY_SOURCE_PREFIXES in lib/dataSync.js) somehow doesn't
-// anymore. See scripts/update-data/README.md.
+// anymore. See data/README.md.
 import fs from 'node:fs';
 import {
   requireSourceRoot,
@@ -41,7 +41,7 @@ export function runCopy({ bilaraRoot, gitInfo, dataDirs = DATA_DIRS, snapshotPat
 
   // Carried forward, not touched by copy itself — only update-data-snapshot.mjs updates it, so a
   // copy left un-snapshotted shows up as a visible sourceCommit/snapshotCommit mismatch in the
-  // same file/diff hunk (see scripts/update-data/README.md).
+  // same file/diff hunk (see data/README.md).
   const previousSnapshotCommit = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, 'utf8')).snapshotCommit ?? null : null;
 
   const manifest = {

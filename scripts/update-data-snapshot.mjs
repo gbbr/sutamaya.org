@@ -3,7 +3,7 @@
 // resets the baseline update-data-check.mjs compares a prospective sc-data checkout against. Also
 // regenerates data/sujato.post/ (via update-data-post.mjs) and records each term rule's current
 // match count in scripts/update-data/retranslation.counts.json — the same "this is now the new
-// normal" act, just for rule footprints instead of segment ids (see retranslation.md's anchors
+// normal" act, just for rule footprints instead of segment ids (see docs/retranslation.md's anchors
 // table: an open rule's count is its own anchor, since it has no allow/deny queue to check).
 //
 // MANUAL, DELIBERATE USE ONLY — not part of `npm run update-data` (see package.json), and never
