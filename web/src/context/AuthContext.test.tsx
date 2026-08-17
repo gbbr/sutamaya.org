@@ -91,10 +91,42 @@ describe('AuthContext', () => {
     expect(screen.getByTestId('loading').textContent).toBe('false');
   });
 
-  it('gives up after exhausting all retries and treats it as signed-out, not an error state', async () => {
+  it('keeps trying a rate-limited session check rather than settling on signed-out', async () => {
     const { AuthProvider, useAuth } = await loadAuthContext();
     const { authApi } = await import('../lib/api');
-    vi.mocked(authApi.me).mockRejectedValue(new Error('still down'));
+    vi.mocked(authApi.me).mockRejectedValue(Object.assign(new Error('too many requests'), { status: 429 }));
+    const consoleWarn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+
+    render(
+      <AuthProvider>
+        <Probe useAuthHook={useAuth} />
+      </AuthProvider>
+    );
+
+    // 1 initial attempt + 3 retries (RETRY_DELAYS_MS = [500, 1500, 3000]), all of which land inside
+    // the Worker's own 60s rate-limit window and so are all doomed.
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(0 + 500 + 1500 + 3000 + 100);
+    });
+
+    expect(authApi.me).toHaveBeenCalledTimes(4);
+    // The app renders in the meantime — it works offline — but exhausting a budget is not a logout,
+    // so once that window has passed the next attempt picks the session up with no reload.
+    expect(screen.getByTestId('loading').textContent).toBe('false');
+    vi.mocked(authApi.me).mockResolvedValue({ user: testUser });
+
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(65_000);
+    });
+
+    expect(screen.getByTestId('user').textContent).toBe('a@example.com');
+    consoleWarn.mockRestore();
+  });
+
+  it('treats a permanent rejection as signed-out instead of retrying it forever', async () => {
+    const { AuthProvider, useAuth } = await loadAuthContext();
+    const { authApi } = await import('../lib/api');
+    vi.mocked(authApi.me).mockRejectedValue(Object.assign(new Error('bad request'), { status: 400 }));
     const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {});
 
     render(
@@ -103,12 +135,13 @@ describe('AuthContext', () => {
       </AuthProvider>
     );
 
-    // 1 initial attempt + 3 retries (RETRY_DELAYS_MS = [500, 1500, 3000]) all fail.
+    // A 400 isn't retryable, so retryWithBackoff rejects on the first attempt rather than spending
+    // the schedule on a call that will fail identically every time.
     await act(async () => {
-      await vi.advanceTimersByTimeAsync(0 + 500 + 1500 + 3000 + 100);
+      await vi.advanceTimersByTimeAsync(5100);
     });
 
-    expect(authApi.me).toHaveBeenCalledTimes(4);
+    expect(authApi.me).toHaveBeenCalledTimes(1);
     expect(screen.getByTestId('user').textContent).toBe('none');
     expect(screen.getByTestId('loading').textContent).toBe('false');
     consoleError.mockRestore();
