@@ -152,6 +152,20 @@ describe('applyRuleToChunks / applyTermRules — the retranslation engine', () =
     expect(apply('with situational awareness and mindfulness', rule)).toBe('with insight and mindfulness');
   });
 
+  it('cases a multi-word replacement the way the text it replaces is cased', () => {
+    // Lowercase and Sentence case both come out of the single-word behaviour; Title Case is what a
+    // multi-word form needs, since capitalizing only the first letter would leave a heading reading
+    // "The Longer Discourse on Establishment of awareness".
+    const rule = { id: 'test-title', mode: 'deny', forms: [['mindfulness meditation', 'the establishment of awareness']] };
+    expect(apply('develop mindfulness meditation', rule)).toBe('develop the establishment of awareness');
+    expect(apply('Mindfulness meditation leads on.', rule)).toBe('The establishment of awareness leads on.');
+    expect(apply('Mindfulness Meditation', rule)).toBe('The Establishment of Awareness');
+    // A form carrying its own leading preposition keeps that word's case, so the article after it
+    // stays lowercase where a title would have capitalized a leading one.
+    const onRule = { id: 'test-title-on', mode: 'deny', forms: [['on mindfulness meditation', 'on the establishment of awareness']] };
+    expect(apply('The Longer Discourse on Mindfulness Meditation', onRule)).toBe('The Longer Discourse on the Establishment of Awareness');
+  });
+
   it('locks matched spans so a later rule in the same pass cannot re-touch them', () => {
     // The dn22:1.9 case from retranslation.md: "keen, aware, and mindful" — a rule turning
     // "aware" into "understanding" must not let a later rule (turning "mindful" into "aware")
@@ -215,6 +229,13 @@ describe('the shipped rules, one example each', () => {
   const EXAMPLES = [
     ['mendicant-bhikkhu', 'dn1:1.1', 'sujato/sutta', 'a mendicant and some mendicants', 'a bhikkhu and some bhikkhus'],
     ['immersion-concentration', 'dn1:1.1', 'sujato/sutta', 'they enter that immersion', 'they enter that concentration'],
+    // Runs ahead of sati-aware, which would otherwise take the "mindfulness" of this phrase on its
+    // own and leave "awareness meditation" behind.
+    ['satipatthana-establishment-of-awareness', 'sn52.1:1.4', 'sujato/sutta', 'missed out on these four kinds of mindfulness meditation', 'missed out on these four establishments of awareness'],
+    ['satipatthana-establishment-of-awareness', 'dn22:0.2', 'sujato/sutta', 'The Longer Discourse on Mindfulness Meditation', 'The Longer Discourse on the Establishment of Awareness'],
+    // Out of scope: the note argues for the rendering this rule reverses, so it keeps Sujato's own
+    // words (sati-aware still has its "mindfulness", which is what leaves "awareness meditation").
+    ['satipatthana-establishment-of-awareness', 'mn10:1.1', 'sujato/notes', 'i.e. “mindfulness meditation” or simply “meditation”', 'i.e. “awareness meditation” or simply “meditation”'],
     ['sati-aware', 'sn9.1:3.1', 'sujato/sutta', 'Give up discontent; be mindful;', 'Give up discontent; be aware;'],
     // "mindfully" needs more than the word swapped, hence the phrase.
     ['sati-aware', 'an6.29:11.3', 'sujato/sutta', 'a mendicant goes out mindfully, returns mindfully', 'a bhikkhu goes out with awareness, returns with awareness'],

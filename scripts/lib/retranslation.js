@@ -125,6 +125,37 @@ export function sortedForms(rule) {
 const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const capitalize = (s) => s[0].toUpperCase() + s.slice(1);
 
+// Words a title leaves lowercase — enough to classify the corpus's own headings ("The Longer
+// Discourse on Mindfulness Meditation") and to set the ones this layer writes.
+const TITLE_LOWERCASE = new Set(['a', 'an', 'and', 'as', 'at', 'for', 'in', 'of', 'on', 'the', 'to']);
+
+// Whether a match is Title Case rather than a capitalized sentence — every word that a title would
+// capitalize does start with a capital, and there are at least two words to tell the two apart.
+// Single-word matches are never title case, so a one-word form behaves exactly as it always has.
+function isTitleCase(matched) {
+  const words = matched.split(/\s+/).filter(Boolean);
+  if (words.length < 2) return false;
+  const significant = words.filter((w) => !TITLE_LOWERCASE.has(w.toLowerCase()));
+  return significant.length > 0 && significant.every((w) => w[0] === w[0].toUpperCase());
+}
+
+// The replacement, cased to match what it replaces: lowercase as written, Sentence case from a
+// capitalized first letter, or Title Case throughout. The replacement's own first word follows the
+// match's first word rather than the title rule, so a form that carries a leading preposition
+// ("on mindfulness meditation" → "on the establishment of awareness") stays lowercase there while
+// a bare one ("Mindfulness Meditation" → "The Establishment of Awareness") does not.
+function caseAs(matched, replacement) {
+  const firstUpper = matched[0] === matched[0].toUpperCase();
+  if (!isTitleCase(matched)) return firstUpper ? capitalize(replacement) : replacement;
+  return replacement
+    .split(' ')
+    .map((word, i) => {
+      if (i === 0) return firstUpper ? capitalize(word) : word;
+      return TITLE_LOWERCASE.has(word.toLowerCase()) ? word : capitalize(word);
+    })
+    .join(' ');
+}
+
 // One combined alternation regex for a rule's forms, longest-first so e.g. "situational
 // awareness" is offered before "awareness" — JS regex alternation tries alternatives left to
 // right at each position, so ordering the alternatives this way is what makes the longer phrase
@@ -165,8 +196,7 @@ export function applyRuleToChunks(chunks, rule) {
     let m;
     while ((m = re.exec(text))) {
       if (m.index > cursor) out.push({ text: text.slice(cursor, m.index), locked: false });
-      const to = replacementFor(m[0]);
-      const replacement = m[0][0] === m[0][0].toUpperCase() ? capitalize(to) : to;
+      const replacement = caseAs(m[0], replacementFor(m[0]));
       out.push({ text: replacement, locked: true, ruleId: rule.id, original: m[0] });
       count += 1;
       cursor = m.index + m[0].length;
