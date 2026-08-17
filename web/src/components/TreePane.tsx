@@ -21,6 +21,7 @@ import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from
 import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
 import type { ListDef } from '../lib/types';
 import { SignedInBadge } from './SignedInBadge';
+import { SyncIndicator } from './SyncIndicator';
 import { SuttaRowChips } from './SuttaRowChips';
 import { type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
 import { CorpusTreeView } from './CorpusTreeView';
@@ -104,7 +105,21 @@ export function TreePane({
   flashNodeId,
 }: TreePaneProps) {
   const { corpus } = useCorpus();
-  const { ready, lists, membership, notes, highlights, createList, renameList, removeList, reorderLists, setListParent } = useUserData();
+  const {
+    ready,
+    lists,
+    membership,
+    notes,
+    highlights,
+    createList,
+    renameList,
+    removeList,
+    reorderLists,
+    setListParent,
+    syncStatus,
+    pendingCount,
+    needsReauth,
+  } = useUserData();
   const { user, promptGoogleSignIn } = useAuth();
   const { mobile, paneW } = useLayout();
 
@@ -539,6 +554,17 @@ export function TreePane({
               <button className="flex items-center text-ink/[.62]" aria-label="Settings" title="Settings" onClick={() => navigate('/settings')}>
                 <Settings size={mobile ? 20 : 16} strokeWidth={1.75} />
               </button>
+            )}
+            {/* Only meaningful once signed in — there's nothing to sync while signed out, and the
+                queue itself sits empty (see UserDataContext). */}
+            {user && (
+              <SyncIndicator
+                status={syncStatus}
+                pendingCount={pendingCount}
+                needsReauth={needsReauth}
+                onReauth={promptGoogleSignIn}
+                size={mobile ? 26 : 22}
+              />
             )}
             <SignedInBadge user={user} size={mobile ? 32 : 28} promptGoogleSignIn={promptGoogleSignIn} />
             {/* The badge above already goes to Settings regardless of sign-in state (see

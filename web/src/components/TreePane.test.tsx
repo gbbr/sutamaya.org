@@ -93,6 +93,10 @@ function mockUserData(overrides: Partial<ReturnType<typeof useUserData>> = {}): 
     notes: {},
     highlights: {},
     visited: {},
+    syncStatus: 'synced',
+    pendingCount: 0,
+    lastSyncedAt: null,
+    needsReauth: false,
     listMembers: () => [],
     createList: vi.fn(async () => buildLists()[0]),
     renameList: vi.fn(async () => {}),
@@ -550,5 +554,49 @@ describe('offline download nudge', () => {
     await userEvent.click(screen.getByLabelText('Dismiss'));
     expect(screen.queryByText(nudgeText)).not.toBeInTheDocument();
     expect(dismissOfflineNudge).toHaveBeenCalled();
+  });
+});
+
+describe('sync indicator', () => {
+  it('renders beside the account badge once signed in, reflecting the sync state', () => {
+    userData = mockUserData({ syncStatus: 'pending', pendingCount: 2 });
+    vi.mocked(useUserData).mockImplementation(() => userData);
+    renderHarness();
+    expect(screen.getByLabelText('Syncing 2 changes')).toBeInTheDocument();
+  });
+
+  it('is absent while signed out — there is nothing to sync', () => {
+    vi.mocked(useAuth).mockReturnValue({
+      user: null,
+      loading: false,
+      googleReady: true,
+      authError: null,
+      loginWithGoogle: vi.fn(async () => {}),
+      promptGoogleSignIn: vi.fn(),
+      logout: vi.fn(async () => {}),
+    });
+    renderHarness();
+    expect(screen.queryByLabelText('Synced')).not.toBeInTheDocument();
+  });
+
+  it('surfaces a lapsed session and calls promptGoogleSignIn on click, without navigating on its own', async () => {
+    const promptGoogleSignIn = vi.fn();
+    vi.mocked(useAuth).mockReturnValue({
+      user: buildUser(),
+      loading: false,
+      googleReady: true,
+      authError: null,
+      loginWithGoogle: vi.fn(async () => {}),
+      promptGoogleSignIn,
+      logout: vi.fn(async () => {}),
+    });
+    userData = mockUserData({ needsReauth: true });
+    vi.mocked(useUserData).mockImplementation(() => userData);
+    renderHarness();
+
+    // Only the user's own click calls it — nothing on the auth or sync side does so on its own
+    // (see UserDataContext.tsx's flush(), which sets `needsReauth` rather than navigating away).
+    await userEvent.click(screen.getByLabelText(/Sign-in expired/));
+    expect(promptGoogleSignIn).toHaveBeenCalled();
   });
 });

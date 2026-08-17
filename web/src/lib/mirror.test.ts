@@ -10,6 +10,7 @@ import {
   renameListRecord,
   queueSiblingOrder,
   setNoteRecord,
+  syncCounts,
   writeHighlightRecord,
   type FlushOutcome,
   type MirrorState,
@@ -242,16 +243,20 @@ describe('local collapses', () => {
   });
 });
 
-describe('applyFlushOutcome', () => {
-  const outcome = (over: Partial<FlushOutcome>): FlushOutcome => ({
-    status: 'ok',
-    acks: [],
-    doneOps: [],
-    remaps: [],
-    snapshot: null,
-    ...over,
-  });
+// Shared by both describe blocks below — applyFlushOutcome and syncCounts, which reads what it
+// leaves behind.
+const outcome = (over: Partial<FlushOutcome>): FlushOutcome => ({
+  status: 'ok',
+  acks: [],
+  rejected: [],
+  doneOps: [],
+  rejectedOps: [],
+  remaps: [],
+  snapshot: null,
+  ...over,
+});
 
+describe('applyFlushOutcome', () => {
   it('clears the dirty flag for the version that was actually pushed', () => {
     let state = setNoteRecord(emptyMirror('u1'), 'dn1', 'first');
     const pushed = state.notes.dn1.data.mtime;
@@ -295,5 +300,54 @@ describe('applyFlushOutcome', () => {
     state = applyFlushOutcome(state, outcome({ acks: [{ kind: 'highlight', id: g, mtime: record.data.mtime }] }));
 
     expect(state.highlights).toEqual({});
+  });
+
+  it('marks a permanently rejected record stuck, still dirty, without touching a newer edit', () => {
+    let state = setNoteRecord(emptyMirror('u1'), 'dn1', 'first');
+    const rejectedMtime = state.notes.dn1.data.mtime;
+    state = applyFlushOutcome(state, outcome({ rejected: [{ kind: 'note', id: 'dn1', mtime: rejectedMtime }] }));
+
+    expect(state.notes.dn1.dirty).toBe(true);
+    expect(state.notes.dn1.rejected).toBe(true);
+
+    // A version the rejection wasn't about — the user already tried again — isn't pre-judged by
+    // its predecessor's failure.
+    state = setNoteRecord(state, 'dn1', 'second');
+    expect(state.notes.dn1.rejected).toBeUndefined();
+  });
+
+  it('marks a permanently rejected op stuck without retiring it', () => {
+    let state = createListRecord(emptyMirror('u1'), { id: 'l1', label: 'l1', parentId: null, kind: 'list' });
+    state = { ...state, lists: { l1: { dirty: false, data: { ...state.lists.l1.data, pendingCreate: false } } } };
+    state = queueMembership(state, 'l1', 'dn1', true);
+    const opId = state.ops[0].id;
+    state = applyFlushOutcome(state, outcome({ rejectedOps: [opId] }));
+
+    expect(state.ops).toHaveLength(1);
+    expect(state.ops[0].rejected).toBe(true);
+  });
+});
+
+describe('syncCounts', () => {
+  it('counts every dirty record and queued op as pending', () => {
+    let state = setNoteRecord(emptyMirror('u1'), 'dn1', 'a note');
+    state = createListRecord(state, { id: 'l1', label: 'l1', parentId: null, kind: 'list' });
+    state = queueMembership(state, 'l1', 'dn2', true);
+
+    // Two dirty records (the note, the pending-create list) plus one queued op.
+    expect(syncCounts(state)).toEqual({ pending: 3, stuck: 0 });
+  });
+
+  it('counts a rejected record or op in both pending and stuck', () => {
+    let state = setNoteRecord(emptyMirror('u1'), 'dn1', 'a note');
+    const mtime = state.notes.dn1.data.mtime;
+    state = applyFlushOutcome(state, outcome({ rejected: [{ kind: 'note', id: 'dn1', mtime }] }));
+
+    expect(syncCounts(state)).toEqual({ pending: 1, stuck: 1 });
+  });
+
+  it('counts nothing once everything is clean', () => {
+    const state = applySnapshot(emptyMirror('u1'), emptySnapshot);
+    expect(syncCounts(state)).toEqual({ pending: 0, stuck: 0 });
   });
 });

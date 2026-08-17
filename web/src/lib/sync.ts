@@ -49,7 +49,9 @@ const MAX_ID_ATTEMPTS = 4;
 
 export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
   const acks: FlushAck[] = [];
+  const rejected: FlushAck[] = [];
   const doneOps: string[] = [];
+  const rejectedOps: string[] = [];
   const remaps: { from: string; to: string }[] = [];
   let working = state;
   // Set by the first failure that means "stop": there is no point pushing the rest of the queue at
@@ -70,8 +72,10 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
     }
     // 'collision' only reaches here after MAX_ID_ATTEMPTS fresh ids all collided, which is not a
     // thing that happens — but acking it would clear the dirty flag for a create that never landed.
-    if (verdict === 'permanent' || verdict === 'collision') console.error('sync rejected a record permanently', ack);
-    else acks.push(ack);
+    if (verdict === 'permanent' || verdict === 'collision') {
+      console.error('sync rejected a record permanently', ack);
+      rejected.push(ack);
+    } else acks.push(ack);
     return true;
   }
 
@@ -144,8 +148,10 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
       }
       // 'gone' is the list having been deleted elsewhere, which retires the op rather than failing
       // it. A permanent rejection stays queued, same as a rejected record.
-      if (verdict === 'permanent') console.error('sync rejected a list operation permanently', op);
-      else doneOps.push(op.id);
+      if (verdict === 'permanent') {
+        console.error('sync rejected a list operation permanently', op);
+        rejectedOps.push(op.id);
+      } else doneOps.push(op.id);
     }
   }
 
@@ -160,10 +166,18 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
     }
   }
 
-  return { status: halted ?? 'ok', acks, doneOps, remaps, snapshot };
+  return { status: halted ?? 'ok', acks, rejected, doneOps, rejectedOps, remaps, snapshot };
 }
 
-const BLOCKED: FlushOutcome = { status: 'blocked', acks: [], doneOps: [], remaps: [], snapshot: null };
+const BLOCKED: FlushOutcome = {
+  status: 'blocked',
+  acks: [],
+  rejected: [],
+  doneOps: [],
+  rejectedOps: [],
+  remaps: [],
+  snapshot: null,
+};
 
 // One flusher at a time across every tab and PWA window on the device. They all share the same
 // mirror, so two flushing at once would push the same records twice — harmless, since every write

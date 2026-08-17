@@ -42,6 +42,10 @@ const userDataDefaults: ReturnType<typeof useUserData> = {
   notes: {},
   highlights: { dn1: [highlight] },
   visited: {},
+  syncStatus: 'synced',
+  pendingCount: 0,
+  lastSyncedAt: null,
+  needsReauth: false,
   listMembers: () => [],
   createList: async () => {
     throw new Error('unused');

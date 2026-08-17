@@ -70,8 +70,25 @@ describe('flushMirror', () => {
     // is a thing to surface, not to hide. Nothing else in the flush is held up by it.
     expect(outcome.status).toBe('ok');
     expect(outcome.acks).toEqual([]);
+    // Reported separately from `acks` so the mirror can mark it stuck rather than merely "still
+    // dirty" — see applyFlushOutcome/syncCounts, which is what the sync indicator reads.
+    expect(outcome.rejected).toEqual([{ kind: 'note', id: 'dn1', mtime: state.notes.dn1.data.mtime }]);
     expect(outcome.doneOps).toHaveLength(1);
     expect(errorSpy).toHaveBeenCalled();
+    errorSpy.mockRestore();
+  });
+
+  it('reports a permanently rejected list operation the same way, without retiring it', async () => {
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    listsApiAddItem.mockImplementation(() => httpError(400));
+    const state = withQueuedAdd();
+    const opId = state.ops[0].id;
+
+    const outcome = await flushMirror(state);
+
+    expect(outcome.status).toBe('ok');
+    expect(outcome.doneOps).toEqual([]);
+    expect(outcome.rejectedOps).toEqual([opId]);
     errorSpy.mockRestore();
   });
 

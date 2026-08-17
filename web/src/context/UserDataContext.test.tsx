@@ -204,7 +204,11 @@ describe('UserDataProvider', () => {
     });
     await reconnect();
 
-    expect(promptGoogleSignIn).toHaveBeenCalled();
+    // Surfaced as state (`needsReauth`, read by the sync indicator — see SyncIndicator.tsx) rather
+    // than by navigating away on its own: a background flush hitting a 401 shouldn't yank the
+    // reader off whatever they were doing for a lapse they haven't even noticed yet.
+    expect(promptGoogleSignIn).not.toHaveBeenCalled();
+    expect(result.current.needsReauth).toBe(true);
     expect(result.current.notes.dn1).toBe('still mine');
 
     // Paused: further triggers stand down rather than retrying a cookie that has lapsed.
@@ -221,6 +225,73 @@ describe('UserDataProvider', () => {
     await waitFor(() => expect(notesApiSet).toHaveBeenCalledTimes(2));
     expect(notesApiSet).toHaveBeenLastCalledWith('dn1', 'still mine', expect.any(String));
     expect(result.current.notes.dn1).toBe('still mine');
+    expect(result.current.needsReauth).toBe(false);
+  });
+
+  it('reports pending while a write is queued, and synced once the flush drains it', async () => {
+    const { result } = setup();
+    await waitFor(() => expect(result.current.lists).toEqual(baseData.lists));
+    // The provider's own mount-time flush already landed by this point (dataApiAll resolves in
+    // beforeEach), so `lastSyncedAt` is already set before this test's own mutation.
+    await waitFor(() => expect(result.current.syncStatus).toBe('synced'));
+    expect(result.current.lastSyncedAt).not.toBeNull();
+
+    dataApiAll.mockImplementation(offline);
+    notesApiSet.mockImplementation(record('note', offline));
+    await act(async () => {
+      await result.current.submitNote('dn1', 'a note');
+    });
+
+    // The local write is durable the moment it lands in the mirror, before any request is even
+    // attempted — so the status reflects the queue, not any in-flight network call.
+    expect(result.current.syncStatus).toBe('pending');
+    expect(result.current.pendingCount).toBeGreaterThan(0);
+
+    notesApiSet.mockImplementation(record('note', async () => ({ ok: true })));
+    dataApiAll.mockResolvedValue({ ...structuredClone(baseData), notes: { dn1: 'a note' } });
+    await reconnect();
+
+    expect(result.current.syncStatus).toBe('synced');
+    expect(result.current.pendingCount).toBe(0);
+    expect(result.current.lastSyncedAt).not.toBeNull();
+  });
+
+  it('reports offline from the browser, independently of anything queued', async () => {
+    const { result } = setup();
+    await waitFor(() => expect(result.current.lists).toEqual(baseData.lists));
+
+    await act(async () => {
+      window.dispatchEvent(new Event('offline'));
+      await Promise.resolve();
+    });
+    expect(result.current.syncStatus).toBe('offline');
+
+    await act(async () => {
+      window.dispatchEvent(new Event('online'));
+      await Promise.resolve();
+    });
+    expect(result.current.syncStatus).toBe('synced');
+  });
+
+  it('reports stuck for a permanently rejected write, and keeps retrying it rather than dropping it', async () => {
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const { result } = setup();
+    await waitFor(() => expect(result.current.lists).toEqual(baseData.lists));
+
+    notesApiSet.mockImplementation(record('note', () => httpError(400)));
+    await act(async () => {
+      await result.current.submitNote('dn1', 'a bad note');
+    });
+    await reconnect();
+
+    // The server has permanently refused this version, but the compromise this design accepts is
+    // last-writer-wins, not "give up" — the write stays queued and keeps being retried; 'stuck' is
+    // only about making that visible instead of silent (see offline-sync.md step 5).
+    expect(result.current.syncStatus).toBe('stuck');
+    calls.length = 0;
+    await reconnect();
+    expect(calls).toContain('note');
+    errorSpy.mockRestore();
   });
 
   it('re-mints a colliding list id and makes every queued reference follow it', async () => {
