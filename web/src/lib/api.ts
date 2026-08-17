@@ -8,6 +8,20 @@ import type { Highlight, ListDef, ListKind, Membership, NotesMap, HighlightsMap,
 // default (minutes), leaving mutations unsettled and their in-progress UI stuck with them.
 const REQUEST_TIMEOUT_MS = 30_000;
 
+// Carries the HTTP status alongside the message so callers — retryWithBackoff in particular — can
+// tell a permanent rejection (400, 404) from one worth retrying (429, 5xx) without parsing text.
+// Thrown only for a non-ok response; a network failure or a timeout has no status to attach, which
+// retryWithBackoff's isRetryable() treats as retryable rather than as a missing case.
+export class ApiError extends Error {
+  readonly status: number;
+
+  constructor(message: string, status: number) {
+    super(message);
+    this.name = 'ApiError';
+    this.status = status;
+  }
+}
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   try {
     const res = await fetch(`/api${path}`, {
@@ -26,7 +40,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
       } catch {
         // ignore
       }
-      throw new Error(error);
+      throw new ApiError(error, res.status);
     }
     if (res.status === 204) return undefined as T;
     // Awaited inside the try, not returned as a bare promise, so a body read that aborts is
