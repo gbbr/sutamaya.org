@@ -113,6 +113,71 @@ describe('multi-device convergence (D1)', () => {
     expect(dataAddFirst.lists.filter((l) => ids(addFirstIds).has(l.id))).toEqual([]);
   });
 
+  // Same order-independence property as the note test above, but for a list's own PATCH (rename +
+  // reparent share one conditional write, per routes/lists.js) — untested for lists until now even
+  // though it's the identical mtime-guard mechanism.
+  it('a list rename/reparent conflict between two devices converges the same way regardless of arrival order', async () => {
+    async function setup(cookie) {
+      const folder = await createList(cookie, { label: 'Folder', kind: 'group' });
+      const list = await createList(cookie, { label: 'Original' });
+      return { folder, list };
+    }
+
+    const { cookie: cookieAFirst } = await signIn();
+    const idsAFirst = await setup(cookieAFirst);
+    await api(`/api/lists/${idsAFirst.list.id}`, {
+      method: 'PATCH',
+      cookie: cookieAFirst,
+      body: { label: 'from phone', parentId: idsAFirst.folder.id, mtime: '2030-01-01T00:00:02.000Z|phone' },
+    });
+    await api(`/api/lists/${idsAFirst.list.id}`, {
+      method: 'PATCH',
+      cookie: cookieAFirst,
+      body: { label: 'from laptop', parentId: null, mtime: '2030-01-01T00:00:01.000Z|laptop' },
+    });
+
+    const { cookie: cookieBFirst } = await signIn();
+    const idsBFirst = await setup(cookieBFirst);
+    await api(`/api/lists/${idsBFirst.list.id}`, {
+      method: 'PATCH',
+      cookie: cookieBFirst,
+      body: { label: 'from laptop', parentId: null, mtime: '2030-01-01T00:00:01.000Z|laptop' },
+    });
+    await api(`/api/lists/${idsBFirst.list.id}`, {
+      method: 'PATCH',
+      cookie: cookieBFirst,
+      body: { label: 'from phone', parentId: idsBFirst.folder.id, mtime: '2030-01-01T00:00:02.000Z|phone' },
+    });
+
+    const [dataAFirst, dataBFirst] = await Promise.all([dataFor(cookieAFirst), dataFor(cookieBFirst)]);
+    const listOf = (data, ids) => data.lists.find((l) => l.id === ids.list.id);
+    expect(listOf(dataAFirst, idsAFirst)).toMatchObject({ label: 'from phone', parentId: idsAFirst.folder.id });
+    expect(listOf(dataBFirst, idsBFirst)).toMatchObject({ label: 'from phone', parentId: idsBFirst.folder.id });
+  });
+
+  // Unlike a record write, an item op carries no mtime guard at all (see ADD_ITEM_SQL/
+  // REMOVE_ITEM_SQL in routes/lists.js) — the two ops in the earlier test only "commute" because
+  // they touch different suttas. The same sutta added by one device and removed by the other is a
+  // genuine conflict, and this documents what actually happens: whichever request the server saw
+  // last decides the outcome, not a timestamp.
+  it('add and remove of the same sutta from two devices is decided by arrival order, not a timestamp', async () => {
+    const { cookie: addLastCookie } = await signIn();
+    const listAddLast = await createList(addLastCookie, { label: 'L' });
+    await api(`/api/lists/${listAddLast.id}/items`, { method: 'POST', cookie: addLastCookie, body: { suttaId: 'sn1.1' } });
+    await api(`/api/lists/${listAddLast.id}/items/sn1.1`, { method: 'DELETE', cookie: addLastCookie });
+    await api(`/api/lists/${listAddLast.id}/items`, { method: 'POST', cookie: addLastCookie, body: { suttaId: 'sn1.1' } });
+
+    const { cookie: removeLastCookie } = await signIn();
+    const listRemoveLast = await createList(removeLastCookie, { label: 'L' });
+    await api(`/api/lists/${listRemoveLast.id}/items`, { method: 'POST', cookie: removeLastCookie, body: { suttaId: 'sn1.1' } });
+    await api(`/api/lists/${listRemoveLast.id}/items`, { method: 'POST', cookie: removeLastCookie, body: { suttaId: 'sn1.1' } });
+    await api(`/api/lists/${listRemoveLast.id}/items/sn1.1`, { method: 'DELETE', cookie: removeLastCookie });
+
+    const [dataAddLast, dataRemoveLast] = await Promise.all([dataFor(addLastCookie), dataFor(removeLastCookie)]);
+    expect(dataAddLast.lists.find((l) => l.id === listAddLast.id).items).toEqual(['sn1.1']);
+    expect(dataRemoveLast.lists.find((l) => l.id === listRemoveLast.id).items).toEqual([]);
+  });
+
   // Two devices each highlight an overlapping span in the same segment, offline and unaware of each
   // other, so neither names the other's group in `erase`. Per docs/offline-sync.md, both survive as
   // stored rows (the reader settles the contested characters by mtime/g at render time) — this must
