@@ -1,10 +1,14 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { navigate } from '@reach/router';
 import { authApi } from '../lib/api';
-import { retryWithBackoff } from '../lib/retry';
+import { isRetryable, retryWithBackoff, statusOf } from '../lib/retry';
 import type { User } from '../lib/types';
 
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+
+// Longer than the Worker's 60s rate-limit period, so a retry lands in a fresh budget rather than
+// spending the next one the moment it opens.
+const SESSION_RETRY_MS = 65_000;
 
 interface AuthState {
   user: User | null;
@@ -36,14 +40,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     // mode toggles back on) rather than a real "you're logged out" signal, and shouldn't wipe
     // an otherwise-valid session cookie's user out of the UI on the first blip — retry with
     // backoff before giving up.
+    //
+    // retryWithBackoff exhausts in about five seconds, which is inside the Worker's own 60s
+    // rate-limit window — so a 429 is guaranteed to fail every one of those attempts, and treating
+    // that as the end of it would render the app signed-out until the user happened to reload. A
+    // transient failure keeps trying on a slow loop instead. `loading` still clears after the first
+    // attempt: this is an offline-first app, and it should render rather than hold a spinner.
     let cancelled = false;
+    let timer: ReturnType<typeof setTimeout> | undefined;
     async function loadUser() {
       try {
         const r = await retryWithBackoff(() => authApi.me());
         if (!cancelled) setUser(r.user);
       } catch (err) {
-        console.error('Failed to load session after retries:', err);
-        if (!cancelled) setUser(null);
+        if (cancelled) return;
+        if (isRetryable(statusOf(err))) {
+          console.warn('Session check failed transiently; retrying:', err);
+          timer = setTimeout(loadUser, SESSION_RETRY_MS);
+          return;
+        }
+        console.error('Failed to load session:', err);
+        setUser(null);
       }
     }
     loadUser().finally(() => {
@@ -51,6 +68,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     });
     return () => {
       cancelled = true;
+      clearTimeout(timer);
     };
   }, []);
 
