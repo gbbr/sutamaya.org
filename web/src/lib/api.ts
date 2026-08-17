@@ -89,10 +89,17 @@ export const listsApi = {
   // answers 409 `id_collision` and is the flush's cue to mint a fresh one.
   create: (list: { id: string; label: string; parentId: string | null; kind: ListKind; mtime: string }) =>
     request<{ list: ListDef }>('/lists', { method: 'POST', body: JSON.stringify(list) }),
-  // One PATCH carries a list's whole mutable row — label, parent and sibling position alike —
-  // because the mirror pushes the record's desired state, not the individual edit that changed it.
-  update: (id: string, patch: { label?: string; parentId?: string | null; position?: number; mtime: string }) =>
+  // One PATCH carries a list's whole mutable row — label and parent — because the mirror pushes the
+  // record's desired state, not the individual edit that changed it. Sibling order is *not* part of
+  // it: that travels as one `reorder` call for the whole gesture (see below), so a drag costs one
+  // request instead of one per sibling.
+  update: (id: string, patch: { label?: string; parentId?: string | null; mtime: string }) =>
     request<{ ok: true }>(`/lists/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify(patch) }),
+  // One parent's children, in order — the whole of one drag or Move-up/down click, whatever the
+  // group's size. The server reconciles the posted order against the rows that actually exist, so
+  // this is safe to replay from an offline queue.
+  reorder: (parentId: string | null, order: string[], mtime: string) =>
+    request<{ ok: true }>('/lists/order', { method: 'PUT', body: JSON.stringify({ parentId, order, mtime }) }),
   remove: (id: string, mtime: string) =>
     request<{ ok: true }>(`/lists/${encodeURIComponent(id)}`, { method: 'DELETE', body: JSON.stringify({ mtime }) }),
   addItem: (id: string, suttaId: string) => request<{ ok: true }>(`/lists/${encodeURIComponent(id)}/items`, { method: 'POST', body: JSON.stringify({ suttaId }) }),

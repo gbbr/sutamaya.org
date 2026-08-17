@@ -8,7 +8,7 @@ import {
   queueMembership,
   removeListRecord,
   renameListRecord,
-  reorderListRecords,
+  queueSiblingOrder,
   setNoteRecord,
   writeHighlightRecord,
   type FlushOutcome,
@@ -168,7 +168,7 @@ describe('local collapses', () => {
     let state = list(emptyMirror('u1'), 'g1', null, 'group');
     state = list(state, 'a');
     state = list(state, 'b', 'g1');
-    state = reorderListRecords(state, 'g1', ['b', 'a']);
+    state = queueSiblingOrder(state, 'g1', ['b', 'a']);
 
     // Sets parentId on every id in `order`, not just position, which is what lets a cross-parent
     // drop fold into this single call instead of a setListParent first (see planListDrop in
@@ -176,9 +176,57 @@ describe('local collapses', () => {
     // produced a visible two-step "jump" on drop.
     expect(state.lists.a.data).toMatchObject({ parentId: 'g1', position: 1 });
     expect(state.lists.b.data).toMatchObject({ parentId: 'g1', position: 0 });
-    expect(state.lists.a.dirty && state.lists.b.dirty).toBe(true);
     // Untouched sibling sets keep their own positions — `position` orders siblings, not the table.
     expect(state.lists.g1.data.parentId).toBeNull();
+  });
+
+  it('queues one op for a whole reorder instead of dirtying every sibling', () => {
+    let state = applySnapshot(
+      emptyMirror('u1'),
+      snapshot({ lists: ['a', 'b', 'c'].map((id) => ({ id, label: id, parentId: null, kind: 'list' as const, items: [] })) })
+    );
+    state = queueSiblingOrder(state, null, ['c', 'a', 'b']);
+
+    // The whole point: dragging the last of N siblings to the top is one request, not N. As per-row
+    // records it was one PATCH each, which exhausts the Worker's per-minute budget in a couple of
+    // gestures — and takes GET /api/auth/me down with it, since they share that budget.
+    expect(state.ops).toHaveLength(1);
+    expect(Object.values(state.lists).every((record) => !record.dirty)).toBe(true);
+    // The order still applies locally and immediately, with no round trip.
+    expect(state.lists.c.data.position).toBe(0);
+    expect(state.lists.a.data.position).toBe(1);
+  });
+
+  it('keeps only the latest order per parent, and one per parent reordered', () => {
+    let state = list(emptyMirror('u1'), 'g1', null, 'group');
+    state = list(state, 'a', 'g1');
+    state = list(state, 'b', 'g1');
+    state = queueSiblingOrder(state, 'g1', ['a', 'b']);
+    state = queueSiblingOrder(state, 'g1', ['b', 'a']);
+    state = queueSiblingOrder(state, null, ['g1']);
+
+    // An order it supersedes would just be overwritten, so only the last one for that parent is
+    // worth pushing — but a different parent's order is its own gesture and survives alongside it.
+    expect(state.ops).toHaveLength(2);
+    expect(state.ops.map((op) => op.type === 'siblingOrder' && op.parentId)).toEqual(['g1', null]);
+  });
+
+  it('replays a queued reorder over the pulled positions', () => {
+    let state = applySnapshot(
+      emptyMirror('u1'),
+      snapshot({ lists: ['a', 'b'].map((id) => ({ id, label: id, parentId: null, kind: 'list' as const, items: [] })) })
+    );
+    state = queueSiblingOrder(state, null, ['b', 'a']);
+    state = applySnapshot(
+      state,
+      snapshot({ lists: ['a', 'b'].map((id) => ({ id, label: id, parentId: null, kind: 'list' as const, items: [] })) })
+    );
+
+    // The reorder hasn't landed, so the snapshot still has the old order — without the replay the
+    // tree would visibly snap back on every pull until the flush caught up.
+    expect(state.lists.b.data.position).toBe(0);
+    expect(state.lists.a.data.position).toBe(1);
+    expect(state.ops).toHaveLength(1);
   });
 
   it('skips re-marking whatever is already the most recent visit', () => {

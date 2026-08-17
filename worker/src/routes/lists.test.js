@@ -424,6 +424,39 @@ describe('routes/lists.js (D1)', () => {
     expect(positions).toEqual([0, 1, 2]);
   });
 
+  // This is the client's whole reorder path and it replays from an offline queue, so a posted order
+  // taken before another device's changes must not undo them — the sibling counterpart of
+  // PUT /:id/items/order's own reconcile.
+  it('PUT /order appends a sibling created after the posted order was snapshotted', async () => {
+    const { cookie } = await signIn();
+    const a = await createList(cookie, { label: 'A' });
+    const b = await createList(cookie, { label: 'B' });
+    // Simulates another device creating C after this client snapshotted an order of just [B, A].
+    const c = await createList(cookie, { label: 'C' });
+
+    const res = await api('/api/lists/order', { method: 'PUT', cookie, body: { parentId: null, order: [b.id, a.id] } });
+    expect(res.status).toBe(200);
+
+    // C keeps a position among its siblings rather than being left behind on a stale one shared
+    // with a row the reorder renumbered.
+    const positions = await Promise.all([b, a, c].map(async (created) => (await listRow(created.id)).position));
+    expect(positions).toEqual([0, 1, 2]);
+  });
+
+  it('PUT /order ignores an id in the posted order that has since been deleted', async () => {
+    const { cookie } = await signIn();
+    const a = await createList(cookie, { label: 'A' });
+    const b = await createList(cookie, { label: 'B' });
+    await api(`/api/lists/${b.id}`, { method: 'DELETE', cookie, body: {} });
+
+    const res = await api('/api/lists/order', { method: 'PUT', cookie, body: { parentId: null, order: [b.id, a.id] } });
+    expect(res.status).toBe(200);
+
+    // A takes the only live position. Writing one back onto the tombstone would resurrect its place
+    // in the tree if it were ever un-deleted.
+    expect((await listRow(a.id)).position).toBe(0);
+  });
+
   // Sibling order moves as a unit on each row's own mtime — a stale offline reorder replayed
   // after a newer one must not win.
   it('does not let an older client mtime overwrite a sibling order set with a newer one', async () => {

@@ -236,16 +236,25 @@ it's derived at read time from each list's `items` array by `assembleUserData()`
 `routes/data.js`, which runs the four `SELECT`s — batched in one `db.batch()` round trip — and
 adapts each row's snake_case columns into the `{id, data}` shape that function expects), which
 also returns each list's `parentId` and its own `items` (in stored order) so the client can render
-lists as a tree and show/reorder a list's contents without a second round trip. `PUT
-/api/lists/order` (sibling lists) replaces `position` outright via `db.batch()`, since a full
-reorder isn't expressible as a single statement the way add/remove is — **the client no longer calls
-it**, since it reassigns `parentId` wholesale on every id it's given and so can't be safely replayed
-from an offline queue; a reorder now goes through one conditional `PATCH` per moved sibling instead
-(see "Client mirror"), and the route stays only as API surface. `PUT
-/api/lists/:id/items/order` (one list's suttas) instead *reconciles* the posted order against the
-list's current `items` (`lib/listItemOrder.js`'s `reconcileItemOrder`) — an id added by another
-tab after the client's snapshot is appended rather than silently dropped, and one removed the same
-way is left out rather than resurrected.
+lists as a tree and show/reorder a list's contents without a second round trip. **Both reorder
+routes reconcile the posted order against what is actually stored**, which is what makes them safe
+to replay from an offline queue:
+
+- `PUT /api/lists/order` (sibling lists) writes dense `position`s via `db.batch()`, each row still
+  conditional on its own `mtime`, since a full reorder isn't expressible as a single statement the
+  way add/remove is. `lib/listSiblingOrder.js`'s `reconcileSiblingOrder` first drops any posted id
+  that is no longer a live row and appends any live child of that parent the posted order never
+  mentioned (created on another device since the client's snapshot). An id that belongs to a
+  *different* parent is deliberately kept — that is a cross-parent drop, and moving it in is the
+  point. This is the client's whole sibling-reorder path: **one request per gesture**, whatever the
+  group's size. Expressing it as a `PATCH` per sibling instead meant dragging the 50th list of a
+  group to the top fired 50 of them, which exhausts the `/api/*` rate limit in a couple of gestures
+  and takes `GET /api/auth/me` down with it — the shared budget makes that read as a lapsed session
+  (see `AuthContext`).
+- `PUT /api/lists/:id/items/order` (one list's suttas) reconciles the same way against the list's
+  current `items` (`lib/listItemOrder.js`'s `reconcileItemOrder`) — an id added by another tab after
+  the client's snapshot is appended rather than silently dropped, and one removed the same way is
+  left out rather than resurrected.
 
 Deleting a list or group tombstones that one row and nothing else. **The tree is then repaired at
 read time** (`lib/listTree.js`'s `repairListTree`, called from `assembleUserData`), which is where
@@ -466,8 +475,15 @@ write, so a list, note or highlight made with no network is kept rather than log
   a list's `items` — add, remove, reorder — is a queued **operation** instead, because those are
   already idempotent and commuting server-side (`ADD_ITEM_SQL`/`REMOVE_ITEM_SQL`,
   `reconcileItemOrder`), which is what lets two devices each file a different sutta into the same
-  list and have both stick. A flush therefore pushes **records first, then operations**: an operation
-  naming a list the server has never seen 404s and is discarded.
+  list and have both stick. **Sibling order is an operation too** (`queueSiblingOrder`, keyed by
+  `parentId` rather than by a `listId` like the other three): as per-row records a single drag cost
+  one `PATCH` per sibling and could exhaust the rate limit on its own, so the whole gesture travels
+  as one `PUT /api/lists/order`, which reconciles server-side the same way the item order does. It
+  is applied to the local rows immediately — positions and `parentId` both — but *without* marking
+  them dirty, since the op is what carries it; `replayOps` re-applies it over each pull so the tree
+  doesn't snap back to the server's older order while the flush catches up. A flush pushes
+  **records first, then operations**: an operation naming a list the server has never seen 404s and
+  is discarded.
 - **`lib/sync.ts`** is the flush. List creates go in `mtime` order (so a parent reaches the server
   before the child naming it, and so the server's own prepend reproduces the order the user created
   them in), then the other records, then the operations, then `GET /api/data` — a full snapshot, no
