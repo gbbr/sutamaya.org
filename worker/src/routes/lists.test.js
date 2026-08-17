@@ -87,6 +87,31 @@ describe('routes/lists.js (D1)', () => {
     expect((await listRow('dupe-id')).label).toBe('First label');
   });
 
+  // The same skipped insert as above, but from a second account: `lists.id` is a global primary
+  // key, so the conflict clause absorbs another user's row just as readily as a retry. Answering
+  // 201 here would hand the client an id it doesn't own and every later write against it would 404.
+  it('rejects a create whose client id is already held by another user', async () => {
+    const owner = await signIn();
+    expect((await api('/api/lists', { method: 'POST', cookie: owner.cookie, body: { label: 'Theirs', id: 'shared-id' } })).status).toBe(201);
+
+    const other = await signIn();
+    const res = await api('/api/lists', { method: 'POST', cookie: other.cookie, body: { label: 'Mine', id: 'shared-id' } });
+    expect(res.status).toBe(409);
+    expect(await res.json()).toEqual({ error: 'id_collision' });
+
+    expect(await siblingIds(other.userId, null)).toEqual([]);
+    expect((await listRow('shared-id')).user_id).toBe(owner.userId);
+  });
+
+  // A stored row sharing an auto-list's id would be returned alongside the synthesized one, and
+  // the client resolves auto-lists by id.
+  it.each(['auto-recent', 'auto-highlights', 'auto-notes'])('refuses to store a list under the reserved id %s', async (id) => {
+    const { userId, cookie } = await signIn();
+    const res = await api('/api/lists', { method: 'POST', cookie, body: { label: 'Impostor', id } });
+    expect(res.status).toBe(400);
+    expect(await siblingIds(userId, null)).toEqual([]);
+  });
+
   it('rejects a list whose parent is another plain list (not a group)', async () => {
     const { cookie } = await signIn();
     const plain = await createList(cookie, { label: 'Plain' });
