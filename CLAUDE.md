@@ -34,9 +34,21 @@ SC_DATA_PATH=/path/to/sc-data npm run update-data
 ```
 
 Run individually with `npm run dev:worker` / `npm run dev:web`. `dev:worker` is `wrangler dev
---port 8787`, running the Worker against a local D1 instance — `wrangler` creates and migrates it
-automatically from `worker/migrations/`, so there's no separate database process to start. The web
-dev server proxies `/api/*` to `http://localhost:8787` (override with `API_ORIGIN`).
+--port 8787`, running the Worker against a local D1 instance wrangler creates on demand, so there's
+no separate database process to start. The web dev server proxies `/api/*` to
+`http://localhost:8787` (override with `API_ORIGIN`).
+
+**Adding a migration means applying it to your local D1 by hand** — wrangler only migrates that
+database when it first creates it, not when `worker/migrations/` gains a file:
+
+```
+npx wrangler d1 migrations apply sutamaya --local     # stop dev:worker first
+```
+
+Skip it and every affected route 500s with `D1_ERROR: no such column: …`, while `npm test` stays
+green — `worker/vitest.config.ts` applies the full migration set to a fresh database on every run,
+so the suite never sees a stale schema. Deploys handle the remote database themselves
+(`scripts/deploy.sh`).
 
 No real Cloudflare account or credentials needed for local dev — except `VITE_GOOGLE_CLIENT_ID`
 (`web/.env.development`), since Google sign-in needs a real OAuth client even in dev (see

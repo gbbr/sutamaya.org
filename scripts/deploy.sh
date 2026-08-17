@@ -24,6 +24,14 @@ fi
 echo "Building the SPA and corpus bundle…"
 npm run build
 
+# Migrations run before the upload, not after: for the window between the two, the old Worker is
+# still serving, so a migration has to leave the *previous* code working — additive only (ADD COLUMN
+# with a default, a new index), never a rename or a drop. The other order would put new code in front
+# of an un-migrated database and 500 every affected route until this finished. Idempotent — wrangler
+# tracks what it has already applied in the d1_migrations table — so re-running a deploy is free.
+echo "Applying any pending D1 migrations…"
+npx wrangler d1 migrations apply sutamaya --remote
+
 npx wrangler deploy
 
 # Audible confirmation once the whole deploy (tests + build + upload) has actually succeeded —
