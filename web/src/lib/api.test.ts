@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { dataApi, notesApi } from './api';
+import { ApiError, dataApi, notesApi } from './api';
 
 // These cover request()'s shared plumbing — the timeout wiring and how a failure is reported —
 // rather than any individual endpoint; notesApi.set is just the cheapest caller to drive it with.
@@ -64,5 +64,13 @@ describe('request()', () => {
     stubFetch(async () => new Response(JSON.stringify({ error: 'rate_limited' }), { status: 429 }));
 
     await expect(notesApi.set('dn1', 'a note')).rejects.toThrow('rate_limited');
+  });
+
+  it('attaches the HTTP status to the thrown error, so callers can classify it', async () => {
+    stubFetch(async () => new Response(JSON.stringify({ error: 'not_found' }), { status: 404 }));
+
+    const err = await notesApi.set('dn1', 'a note').catch((e) => e);
+    expect(err).toBeInstanceOf(ApiError);
+    expect((err as ApiError).status).toBe(404);
   });
 });
