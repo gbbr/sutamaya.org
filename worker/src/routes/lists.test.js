@@ -66,6 +66,27 @@ describe('routes/lists.js (D1)', () => {
     expect((await res.json()).list).toMatchObject({ label: 'My favorites', parentId: null, kind: 'list', items: [] });
   });
 
+  it('creates a list with a client-supplied id', async () => {
+    const { userId, cookie } = await signIn();
+    const res = await api('/api/lists', { method: 'POST', cookie, body: { label: 'Mine', id: 'client-chosen-id' } });
+    expect(res.status).toBe(201);
+    expect((await res.json()).list.id).toBe('client-chosen-id');
+    expect(await siblingIds(userId, null)).toEqual(['client-chosen-id']);
+  });
+
+  // A create whose response was lost and got retried must be a no-op, not a duplicate row or an
+  // error — that's what makes client-generated ids safe to retry.
+  it('re-sending a create with the same client id is a no-op rather than a duplicate or an error', async () => {
+    const { userId, cookie } = await signIn();
+    const first = await api('/api/lists', { method: 'POST', cookie, body: { label: 'First label', id: 'dupe-id' } });
+    expect(first.status).toBe(201);
+    const second = await api('/api/lists', { method: 'POST', cookie, body: { label: 'Second label', id: 'dupe-id' } });
+    expect(second.status).toBe(201);
+
+    expect(await siblingIds(userId, null)).toEqual(['dupe-id']);
+    expect((await listRow('dupe-id')).label).toBe('First label');
+  });
+
   it('rejects a list whose parent is another plain list (not a group)', async () => {
     const { cookie } = await signIn();
     const plain = await createList(cookie, { label: 'Plain' });
@@ -131,21 +152,134 @@ describe('routes/lists.js (D1)', () => {
     expect(res.status).toBe(404);
   });
 
-  it('deleting a list re-parents its children to its own parent, not orphaned', async () => {
+  // The WHERE mtime < ? guard is the entire conflict resolution for a rename/move: a stale
+  // offline edit replayed after a newer one must not win. Both mtimes are set well past the
+  // real clock so they're guaranteed newer than the row's own server-generated creation mtime.
+  it('does not let an older client mtime overwrite a rename made with a newer one', async () => {
+    const { cookie } = await signIn();
+    const list = await createList(cookie, { label: 'Original' });
+    await api(`/api/lists/${list.id}`, { method: 'PATCH', cookie, body: { label: 'Newer', mtime: '2030-01-02T00:00:00.000Z|a' } });
+    const res = await api(`/api/lists/${list.id}`, { method: 'PATCH', cookie, body: { label: 'Older', mtime: '2030-01-01T00:00:00.000Z|a' } });
+
+    // A rejected stale write is not an error — the loser of last-writer-wins is dropped silently.
+    expect(res.status).toBe(200);
+    expect((await listRow(list.id)).label).toBe('Newer');
+  });
+
+  it('does not let an equal client mtime overwrite a rename either', async () => {
+    const { cookie } = await signIn();
+    const list = await createList(cookie, { label: 'Original' });
+    const mtime = '2030-01-01T00:00:00.000Z|a';
+    await api(`/api/lists/${list.id}`, { method: 'PATCH', cookie, body: { label: 'First', mtime } });
+    await api(`/api/lists/${list.id}`, { method: 'PATCH', cookie, body: { label: 'Second', mtime } });
+    expect((await listRow(list.id)).label).toBe('First');
+  });
+
+  // Tombstoned, not removed: the row has to stay behind so a device that was offline when the
+  // delete happened can't push its still-live copy back as an apparently-new list.
+  it('deleting a list tombstones the row and hides it from GET /api/data', async () => {
+    const { cookie } = await signIn();
+    const list = await createList(cookie, { label: 'Doomed' });
+    await api(`/api/lists/${list.id}/items`, { method: 'POST', cookie, body: { suttaId: 'sn1.1' } });
+
+    const del = await api(`/api/lists/${list.id}`, { method: 'DELETE', cookie });
+    expect(del.status).toBe(200);
+
+    const row = await listRow(list.id);
+    expect(row).toBeTruthy();
+    expect(row.deleted).toBe(1);
+    // `items` is untouched, so the list returns intact if it is ever resurrected.
+    expect(JSON.parse(row.items)).toEqual(['sn1.1']);
+
+    const data = await (await api('/api/data', { cookie })).json();
+    expect(data.lists.find((l) => l.id === list.id)).toBeUndefined();
+    // ...and it stops contributing membership chips for the suttas it held.
+    expect(data.membership['sn1.1']).toBeUndefined();
+  });
+
+  // Deleting a group takes everything inside it, the way deleting a folder does. The write side is
+  // one tombstone on the group — the descendants' own rows are untouched, and lib/listTree.js
+  // cascades them out on read, so a nested list added on another device while this one was offline
+  // gets hidden too instead of surfacing as a stray at the top level.
+  it('cascades a deleted group’s whole subtree out of GET /api/data with one tombstone', async () => {
     const { cookie } = await signIn();
     const group = await createList(cookie, { label: 'Group', kind: 'group' });
-    const child = await createList(cookie, { label: 'Child', parentId: group.id });
+    const inner = await createList(cookie, { label: 'Inner', kind: 'group', parentId: group.id });
+    const leaf = await createList(cookie, { label: 'Leaf', parentId: inner.id });
+    await api(`/api/lists/${leaf.id}/items`, { method: 'POST', cookie, body: { suttaId: 'sn1.1' } });
+    const survivor = await createList(cookie, { label: 'Survivor' });
 
     const del = await api(`/api/lists/${group.id}`, { method: 'DELETE', cookie });
     expect(del.status).toBe(200);
 
-    expect((await listRow(child.id)).parent_id).toBeNull();
+    // Only the group itself was written to; the descendants keep their rows and their parents.
+    expect((await listRow(group.id)).deleted).toBe(1);
+    expect((await listRow(inner.id)).deleted).toBe(0);
+    expect((await listRow(leaf.id)).parent_id).toBe(inner.id);
+
+    const data = await (await api('/api/data', { cookie })).json();
+    expect(data.lists.map((l) => l.id)).toEqual([survivor.id]);
+    // ...and the buried list stops contributing membership chips.
+    expect(data.membership['sn1.1']).toBeUndefined();
+  });
+
+  // A queued delete replayed after it already landed must not start 404ing — that would look like
+  // a permanently-rejected record to a flushing client.
+  it('re-deleting an already-tombstoned list is a no-op success, not a 404', async () => {
+    const { cookie } = await signIn();
+    const list = await createList(cookie, { label: 'Doomed' });
+    expect((await api(`/api/lists/${list.id}`, { method: 'DELETE', cookie })).status).toBe(200);
+    expect((await api(`/api/lists/${list.id}`, { method: 'DELETE', cookie })).status).toBe(200);
+    expect((await listRow(list.id)).deleted).toBe(1);
+  });
+
+  it('does not let a stale delete take out a list renamed more recently', async () => {
+    const { cookie } = await signIn();
+    const list = await createList(cookie, { label: 'Keep me' });
+    await api(`/api/lists/${list.id}`, { method: 'PATCH', cookie, body: { label: 'Renamed', mtime: '2030-01-02T00:00:00.000Z|a' } });
+    const del = await api(`/api/lists/${list.id}`, { method: 'DELETE', cookie, body: { mtime: '2030-01-01T00:00:00.000Z|a' } });
+    expect(del.status).toBe(200);
+    expect((await listRow(list.id)).deleted).toBe(0);
   });
 
   it('deleting a nonexistent list 404s', async () => {
     const { cookie } = await signIn();
     const res = await api('/api/lists/does-not-exist', { method: 'DELETE', cookie });
     expect(res.status).toBe(404);
+  });
+
+  // Membership stays operation-based, so an add queued offline can arrive after the list's own
+  // delete. It has to land on the dead row rather than 404 — dropping it is the silent loss the
+  // whole offline-sync design exists to prevent.
+  it('an add targeting a tombstoned list still lands on the dead row', async () => {
+    const { cookie } = await signIn();
+    const list = await createList(cookie, { label: 'Doomed' });
+    await api(`/api/lists/${list.id}`, { method: 'DELETE', cookie });
+
+    const add = await api(`/api/lists/${list.id}/items`, { method: 'POST', cookie, body: { suttaId: 'sn1.1' } });
+    expect(add.status).toBe(201);
+    expect(await itemsOf(list.id)).toEqual(['sn1.1']);
+
+    // Still invisible, since the row is tombstoned.
+    const data = await (await api('/api/data', { cookie })).json();
+    expect(data.membership['sn1.1']).toBeUndefined();
+  });
+
+  // Nesting under a group deleted elsewhere is accepted rather than rejected 400: the write lands
+  // instead of being thrown away, and the cascade then hides it along with the rest of that group's
+  // subtree — the user deleted the group, so nothing inside it should come back.
+  it('accepts nesting a new list under a tombstoned group, then cascades it out on read', async () => {
+    const { cookie } = await signIn();
+    const group = await createList(cookie, { label: 'Group', kind: 'group' });
+    await api(`/api/lists/${group.id}`, { method: 'DELETE', cookie });
+
+    const res = await api('/api/lists', { method: 'POST', cookie, body: { label: 'Child', parentId: group.id } });
+    expect(res.status).toBe(201);
+    const child = (await res.json()).list;
+    expect((await listRow(child.id)).parent_id).toBe(group.id);
+
+    const data = await (await api('/api/data', { cookie })).json();
+    expect(data.lists.find((l) => l.id === child.id)).toBeUndefined();
   });
 
   it('adds and removes a sutta from a list', async () => {
@@ -214,6 +348,30 @@ describe('routes/lists.js (D1)', () => {
     expect(await itemsOf(list.id)).toEqual(['sn1.1', 'sn1.2']);
   });
 
+  // Item order moves as a unit on the list's own mtime — a stale offline reorder replayed after
+  // a newer one must not win.
+  it('does not let an older client mtime overwrite an item order set with a newer one', async () => {
+    const { cookie } = await signIn();
+    const list = await createList(cookie, { label: 'L' });
+    for (const suttaId of ['sn1.1', 'sn1.2', 'sn1.3']) {
+      await api(`/api/lists/${list.id}/items`, { method: 'POST', cookie, body: { suttaId } });
+    }
+
+    await api(`/api/lists/${list.id}/items/order`, {
+      method: 'PUT',
+      cookie,
+      body: { order: ['sn1.3', 'sn1.1', 'sn1.2'], mtime: '2030-01-02T00:00:00.000Z|a' },
+    });
+    const res = await api(`/api/lists/${list.id}/items/order`, {
+      method: 'PUT',
+      cookie,
+      body: { order: ['sn1.2', 'sn1.1', 'sn1.3'], mtime: '2030-01-01T00:00:00.000Z|a' },
+    });
+
+    expect(res.status).toBe(200);
+    expect(await itemsOf(list.id)).toEqual(['sn1.3', 'sn1.1', 'sn1.2']);
+  });
+
   it('PUT /:id/items/order 404s for a nonexistent list and 400s for a group', async () => {
     const { cookie } = await signIn();
     const missing = await api('/api/lists/does-not-exist/items/order', { method: 'PUT', cookie, body: { order: [] } });
@@ -234,6 +392,30 @@ describe('routes/lists.js (D1)', () => {
       method: 'PUT',
       cookie,
       body: { parentId: null, order: [c.id, a.id, b.id] },
+    });
+    expect(res.status).toBe(200);
+
+    const positions = await Promise.all([c, a, b].map(async (created) => (await listRow(created.id)).position));
+    expect(positions).toEqual([0, 1, 2]);
+  });
+
+  // Sibling order moves as a unit on each row's own mtime — a stale offline reorder replayed
+  // after a newer one must not win.
+  it('does not let an older client mtime overwrite a sibling order set with a newer one', async () => {
+    const { cookie } = await signIn();
+    const a = await createList(cookie, { label: 'A' });
+    const b = await createList(cookie, { label: 'B' });
+    const c = await createList(cookie, { label: 'C' });
+
+    await api('/api/lists/order', {
+      method: 'PUT',
+      cookie,
+      body: { parentId: null, order: [c.id, a.id, b.id], mtime: '2030-01-02T00:00:00.000Z|a' },
+    });
+    const res = await api('/api/lists/order', {
+      method: 'PUT',
+      cookie,
+      body: { parentId: null, order: [a.id, b.id, c.id], mtime: '2030-01-01T00:00:00.000Z|a' },
     });
     expect(res.status).toBe(200);
 

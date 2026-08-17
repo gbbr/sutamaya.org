@@ -1,11 +1,11 @@
 import { Hono } from 'hono';
 import { requireAuth } from '../auth.js';
 import { jsonBody } from '../jsonBody.js';
-import { nextPosition } from '../lib/listPositions.js';
 import { invalidParentReasonForRow, wouldCreateCycle } from '../lib/listParent.js';
 import { shapeList } from '../lib/listShape.js';
 import { reconcileItemOrder } from '../lib/listItemOrder.js';
 import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits.js';
+import { resolveMtime } from '../lib/mtime.js';
 
 export const listsRouter = new Hono();
 listsRouter.use(requireAuth);
@@ -37,6 +37,10 @@ function orderFromBody(body) {
 // own comment for the actual validity rule) — the top-level `null` case short-circuits before ever
 // hitting D1. Used for creating a new list, which can never be its own ancestor, so no cycle check
 // is needed here — see invalidReparentReason below for moving an *existing* list.
+//
+// Deliberately unfiltered on `deleted`: nesting under a group deleted elsewhere is accepted rather
+// than rejected 400, because rejecting throws the user's move away, and lib/listTree.js re-homes the
+// child to the root on read anyway. Only the kind check still rejects.
 async function invalidParentReason(db, userId, parentId) {
   if (!parentId) return null;
   const row = await db.prepare('SELECT kind FROM lists WHERE id = ? AND user_id = ?').bind(parentId, userId).first();
@@ -51,7 +55,11 @@ async function invalidReparentReason(db, userId, parentId, movingIds) {
   const kindError = await invalidParentReason(db, userId, parentId);
   if (kindError) return kindError;
   if (!parentId) return null;
-  const { results } = await db.prepare('SELECT id, parent_id FROM lists WHERE user_id = ?').bind(userId).all();
+  // Live rows only: a tombstoned list is no longer part of the tree, so counting it here could
+  // manufacture a cycle out of a chain that no read path ever renders. The cycles that survive
+  // this check — two devices each making a locally-valid move — are broken at read time by
+  // lib/listTree.js instead, which is the only place both devices can agree on the outcome.
+  const { results } = await db.prepare('SELECT id, parent_id FROM lists WHERE user_id = ? AND deleted = 0').bind(userId).all();
   const allLists = results.map((row) => ({ id: row.id, parentId: row.parent_id ?? null }));
   for (const movingId of movingIds) {
     if (wouldCreateCycle(movingId, parentId, allLists)) return 'Cannot move a list into its own descendant.';
@@ -63,6 +71,12 @@ async function invalidReparentReason(db, userId, parentId, movingIds) {
 // query. Returns `{row}` for a plain list that can hold suttas, or `{error, status}` for the two
 // rejections — 404 for a list that doesn't exist (for this user), 400 for a group. Reported as
 // data rather than written as a response, since a Hono handler owns its own return value.
+//
+// Deliberately unfiltered on `deleted`, and load-bearingly so: membership stays operation-based
+// (see the plan's "records for most things, operations for membership"), so an add queued offline
+// can arrive after the list's own delete. Treating the tombstone as not-found would 404 and discard
+// the add — the exact silent loss this all exists to prevent. It lands on the dead row instead,
+// invisible to every read path, and returns with the list if it is ever resurrected.
 async function suttaListRow(db, userId, id) {
   const row = await db.prepare('SELECT items, kind FROM lists WHERE id = ? AND user_id = ?').bind(id, userId).first();
   if (!row) return { error: 'not_found', status: 404 };
@@ -70,8 +84,10 @@ async function suttaListRow(db, userId, id) {
   return { row };
 }
 
+// A flat list of this user's live lists. The client reads its tree from GET /api/data instead
+// (which additionally applies lib/listTree.js's repair), so this stays a plain filtered read.
 listsRouter.get('/', async (c) => {
-  const { results } = await c.env.DB.prepare('SELECT * FROM lists WHERE user_id = ? ORDER BY position')
+  const { results } = await c.env.DB.prepare('SELECT * FROM lists WHERE user_id = ? AND deleted = 0 ORDER BY position')
     .bind(c.get('userId'))
     .all();
   return c.json({ lists: results.map(serializeList) });
@@ -85,13 +101,18 @@ listsRouter.get('/', async (c) => {
 // the two-argument scalar `MIN(x, 1) - 1` reproduces its `Math.min(min, p) - 1` reduce seeded at 1
 // — which is why an empty parent yields 0 rather than -1. The aggregate MIN and the scalar MIN sit
 // at separate query levels precisely so that parse is unambiguous.
+//
+// ON CONFLICT(id) DO NOTHING is what makes a client-chosen id idempotent: a create whose response
+// was lost and got retried lands on the same id and becomes a no-op instead of a duplicate row or
+// a constraint error.
 const CREATE_LIST_SQL = `
-  INSERT INTO lists (id, user_id, label, parent_id, kind, position, items, created_at)
+  INSERT INTO lists (id, user_id, label, parent_id, kind, position, items, created_at, mtime)
   SELECT ?1, ?2, ?3, ?4, ?5,
          (SELECT MIN(x, 1) - 1 FROM (
             SELECT COALESCE(MIN(position), 1) AS x
               FROM lists WHERE user_id = ?2 AND parent_id IS ?4)),
-         '[]', ?6
+         '[]', ?6, ?7
+  ON CONFLICT(id) DO NOTHING
 `;
 
 listsRouter.post('/', async (c) => {
@@ -103,8 +124,12 @@ listsRouter.post('/', async (c) => {
   const parentId = parentIdFromBody(body);
   const parentError = await invalidParentReason(c.env.DB, userId, parentId);
   if (parentError) return c.json({ error: parentError }, 400);
-  const id = crypto.randomUUID();
-  await c.env.DB.prepare(CREATE_LIST_SQL).bind(id, userId, label, parentId, kind, new Date().toISOString()).run();
+  // A client-chosen id is what lets an offline create be referenced (renamed, filed into, moved)
+  // before it has ever reached the server; falling back to a server-minted one keeps a client that
+  // doesn't send one working unchanged.
+  const id = typeof body?.id === 'string' && body.id ? body.id : crypto.randomUUID();
+  const mtime = resolveMtime(body?.mtime);
+  await c.env.DB.prepare(CREATE_LIST_SQL).bind(id, userId, label, parentId, kind, new Date().toISOString(), mtime).run();
   return c.json({ list: { id, label, parentId, kind, items: [] } }, 201);
 });
 
@@ -133,14 +158,22 @@ listsRouter.patch('/:id', async (c) => {
     values.push(parentId);
   }
   if (assignments.length) {
-    // `meta.changes` counts the rows the UPDATE matched, not the ones whose values actually
-    // differed, so 0 is exactly "no such list for this user" — which folds the existence check
-    // into the write instead of a separate SELECT beforehand.
+    // Conditional on mtime, same as the annotation writes: a stale offline rename/move can't
+    // clobber a fresher edit made elsewhere. That also means `meta.changes === 0` is no longer
+    // purely "no such list" — it's also what a rejected stale write looks like — so a miss falls
+    // back to an existence check before deciding it's a 404. A rejected stale write is not an
+    // error: the loser of last-writer-wins is silently dropped, not surfaced.
+    const mtime = resolveMtime(body?.mtime);
+    assignments.push('mtime = ?');
+    values.push(mtime);
     const result = await db
-      .prepare(`UPDATE lists SET ${assignments.join(', ')} WHERE id = ? AND user_id = ?`)
-      .bind(...values, id, userId)
+      .prepare(`UPDATE lists SET ${assignments.join(', ')} WHERE id = ? AND user_id = ? AND mtime < ?`)
+      .bind(...values, id, userId, mtime)
       .run();
-    if (result.meta.changes === 0) return c.json({ error: 'not_found' }, 404);
+    if (result.meta.changes === 0) {
+      const exists = await db.prepare('SELECT id FROM lists WHERE id = ? AND user_id = ?').bind(id, userId).first();
+      if (!exists) return c.json({ error: 'not_found' }, 404);
+    }
   } else {
     // Nothing to write — fall back to a plain existence check so a PATCH with no recognized
     // fields still 404s for a bogus id instead of silently succeeding.
@@ -166,48 +199,49 @@ listsRouter.put('/order', async (c) => {
   const parentError = await invalidReparentReason(db, userId, parentId, order);
   if (parentError) return c.json({ error: parentError }, 400);
   if (order.length) {
+    // One reorder gesture, one mtime, applied to every sibling it touches — each row still
+    // guarded on its own stored mtime, so a list edited more recently elsewhere (e.g. renamed
+    // from another device) keeps that edit instead of being dragged back by a stale reorder.
+    const mtime = resolveMtime(body?.mtime);
     await db.batch(
       order.map((id, position) =>
         db
-          .prepare('UPDATE lists SET position = ?, parent_id = ? WHERE id = ? AND user_id = ?')
-          .bind(position, parentId, id, userId)
+          .prepare('UPDATE lists SET position = ?, parent_id = ?, mtime = ? WHERE id = ? AND user_id = ? AND mtime < ?')
+          .bind(position, parentId, mtime, id, userId, mtime)
       )
     );
   }
   return c.json({ ok: true });
 });
 
+// Tombstones the list instead of removing it, so a device that was offline when the delete
+// happened can't resurrect it on reconnect by pushing its still-live copy — against a hard-deleted
+// row that push is indistinguishable from a fresh creation.
+//
+// A deleted group's children are left pointing at the dead row rather than re-parented here: the
+// read-time repair in lib/listTree.js re-homes them to the root, which is both the same outcome and
+// the only one two devices can agree on without talking to each other. That also retires this
+// handler's old children/siblings SELECTs, and with them the non-atomic read-then-write they sat in
+// (D1 has no interactive transactions, so those reads were never part of the batch that followed).
+//
+// Conditional on mtime like every other write, so a stale offline delete can't take out a list
+// renamed or refilled more recently elsewhere. `meta.changes === 0` therefore covers both "no such
+// list" and "a newer write already won", so a miss falls back to an existence check for the 404 —
+// and re-deleting an already-tombstoned list is a no-op success, which is what makes a replayed
+// delete safe.
 listsRouter.delete('/:id', async (c) => {
   const db = c.env.DB;
   const userId = c.get('userId');
   const id = c.req.param('id');
-  const list = await db.prepare('SELECT parent_id FROM lists WHERE id = ? AND user_id = ?').bind(id, userId).first();
-  if (!list) return c.json({ error: 'not_found' }, 404);
-  // Re-parent any sub-lists to this list's own parent (bubble them up a level) instead of
-  // orphaning them (dangling parentId pointing at a deleted row) or cascade-deleting them, which
-  // would silently destroy list membership data the user didn't ask to remove.
-  const parentId = list.parent_id ?? null;
-  const [children, newSiblings] = await Promise.all([
-    db.prepare('SELECT id FROM lists WHERE user_id = ? AND parent_id IS ?').bind(userId, id).all(),
-    db.prepare('SELECT position FROM lists WHERE user_id = ? AND parent_id IS ?').bind(userId, parentId).all(),
-  ]);
-  // Re-parented children keep arriving at their own old positions otherwise, which can collide
-  // with the new parent's existing children (both starting at 0) and leave their relative order
-  // undefined — append them after the new parent's current siblings instead.
-  let position = nextPosition(newSiblings.results.map((row) => row.position));
-  const statements = children.results.map((child) =>
-    db
-      .prepare('UPDATE lists SET parent_id = ?, position = ? WHERE id = ? AND user_id = ?')
-      .bind(parentId, position++, child.id, userId)
-  );
-  statements.push(db.prepare('DELETE FROM lists WHERE id = ? AND user_id = ?').bind(id, userId));
-  // D1 has no interactive transactions, so the batch below is atomic but the reads above are not
-  // part of it. A create or reorder landing under `parentId` in that window can collide with the
-  // positions computed here. Acceptable because both requests would have to come from the same
-  // signed-in user within milliseconds, and the worst outcome is two re-parented siblings
-  // sharing a position — but it's a real race window, worth knowing about rather than assuming
-  // atomic.
-  await db.batch(statements);
+  const mtime = resolveMtime((await jsonBody(c))?.mtime);
+  const result = await db
+    .prepare('UPDATE lists SET deleted = 1, mtime = ? WHERE id = ? AND user_id = ? AND mtime < ?')
+    .bind(mtime, id, userId, mtime)
+    .run();
+  if (result.meta.changes === 0) {
+    const exists = await db.prepare('SELECT id FROM lists WHERE id = ? AND user_id = ?').bind(id, userId).first();
+    if (!exists) return c.json({ error: 'not_found' }, 404);
+  }
   return c.json({ ok: true });
 });
 
@@ -260,11 +294,14 @@ listsRouter.put('/:id/items/order', async (c) => {
   const id = c.req.param('id');
   const found = await suttaListRow(db, userId, id);
   if (found.error) return c.json({ error: found.error }, found.status);
-  const order = orderFromBody(await jsonBody(c));
-  const reconciled = reconcileItemOrder(parseItems(found.row), order);
+  const body = await jsonBody(c);
+  const reconciled = reconcileItemOrder(parseItems(found.row), orderFromBody(body));
+  // Item order moves as a unit on the list's own mtime, same as sibling order — a stale offline
+  // reorder can't overwrite a fresher one made elsewhere.
+  const mtime = resolveMtime(body?.mtime);
   await db
-    .prepare('UPDATE lists SET items = ? WHERE id = ? AND user_id = ?')
-    .bind(JSON.stringify(reconciled), id, userId)
+    .prepare('UPDATE lists SET items = ?, mtime = ? WHERE id = ? AND user_id = ? AND mtime < ?')
+    .bind(JSON.stringify(reconciled), mtime, id, userId, mtime)
     .run();
   return c.json({ ok: true });
 });
