@@ -28,8 +28,8 @@ Three things follow from that separation, and they're the reason for it:
 - **`post` is a pure function of (upstream text, rules).** Re-running it is always safe, and
   editing a rule and re-running gives the same result as a clean run — which matters because
   rule-writing is trial and error. Applying rules on top of already-rewritten text compounds them
-  (`mindful`→`aware`, then a later `aware`→`understanding`, and now you can't tell which *aware*
-  came from where).
+  (`mindful`→`aware`, then a later `aware`→`fully comprehending`, and now you can't tell which
+  *aware* came from where).
 - **`git diff data/sujato/` after a copy shows exactly what upstream changed**, uncontaminated by
   our own edits. That diff is the thing you actually read when reconciling a broken rule, so it
   has to be honest.
@@ -105,20 +105,20 @@ override**, which replaces one line outright.
 
 ```js
 {
-  id: 'sampajanna-understanding',
+  id: 'sampajanna-full-comprehension',
   why: 'Sujato renders sampajañña as "aware"/"situational awareness"; this app prefers ' +
-       '"understanding". Closed because plain-English "aware" is common and unrelated.',
+       '"full comprehension". Closed because plain-English "aware" is common and unrelated.',
   mode: 'allow',                       // 'allow' (closed) | 'deny' (open) — see below
   scope: ['sujato/sutta', 'sujato/blurb'],  // optional; defaults to sutta + name + blurb
   predicate: /sampajañ|sampajān/i,     // proposes candidates; never runs at build time
   forms: [
-    ['situational awareness', 'understanding'],
-    ['aware', 'understanding'],
+    ['situational awareness', 'full comprehension'],
+    ['aware', 'fully comprehending'],
   ],
 }
 ```
 
-with `scripts/update-data/rules/sampajanna-understanding.json`:
+with `scripts/update-data/rules/sampajanna-full-comprehension.json`:
 
 ```json
 {
@@ -160,19 +160,24 @@ Ambiguous terms tend to be the small ones anyway — `aware` is 656 segments (~1
 
 ```js
 {
-  id: 'dn22-1.9-satipatthana-gloss',
+  id: 'sampajano-hoti-answer',
   kind: 'segment',
-  why: 'The stock formula reads awkwardly once sampajāna is "understanding".',
-  segment: 'dn22:1.9',
-  from: '…keen, aware, and mindful, rid of covetousness and displeasure for the world',
-  to:   '…keen, understanding, and aware, rid of covetousness and displeasure for the world',
+  why: 'Evaṁ kho bhikkhu sampajāno hoti — the section’s closing answer, worded to match the ' +
+       'opening question sampajano-hoti-question rebuilds.',
+  segments: ['sn47.35:3.5', 'sn36.8:4.3', 'dn16:2.13.3'],
+  from: 'That’s how a bhikkhu is fully comprehending. ',
+  to:   'That’s how a bhikkhu has full comprehension. ',
 }
 ```
 
 `from` is verbatim and doubles as the rule's anchor. Segment rules run **after** all term rules,
 against their output — writing one means the term rules got that line wrong. That is routine where
-a swap changes a word's part of speech: "understanding" is a noun where Sujato's "aware" was an
-adjective, so every predicative use of his ("a mendicant is aware") needs its clause rebuilt.
+a swap changes a word's part of speech, because `forms` chooses one replacement per source word and
+a single English word can sit in more than one grammatical slot. Sujato's adjectival "aware" is
+*sampajāna*, and it takes a participle so it can stand in a list of adjectives ("keen, fully
+comprehending, and aware"); the handful of lines where he used the same word as a whole predicate
+("a mendicant is aware") need their clause rebuilt around the noun instead, and that is what these
+rules do.
 
 `segments: ['thag1.31:1.3', 'thag3.9:2.3', …]` replaces `segment` where the corpus repeats a line
 verbatim — a stock verse recurring across three Theragāthā poems, say — so one `from`/`to` covers
@@ -238,7 +243,7 @@ That's benign, because the two rules never compete for the same word: one matche
 other "mindful". In 472 of those 531 segments the English carries both words, one per rule.
 Locking is what keeps them from interfering — the *sati* rule produces "aware", the exact token
 the *sampajañña* rule consumes, and locking makes that new token invisible to it. The result is
-"keen, understanding, and aware" **whichever order the two rules run in**.
+"keen, fully comprehending, and aware" **whichever order the two rules run in**.
 
 Ordering therefore matters only when two rules match the *same* English word, where the earlier
 rule simply wins. Order rules deliberately anyway; rely on locking for correctness.
@@ -298,7 +303,7 @@ the rule still fires, but its footprint drops sharply.
 
 ```
 npm run update-data:triage                              # every rule: stale + untriaged counts
-npm run update-data:triage -- sampajanna-understanding  # one rule, every case in full
+npm run update-data:triage -- sampajanna-full-comprehension  # one rule, every case in full
 ```
 
 For one rule it lists every queued segment with its English, its aligned Pali, and its role (prose

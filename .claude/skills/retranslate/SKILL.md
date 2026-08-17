@@ -1,6 +1,6 @@
 ---
 name: retranslate
-description: Add, change, or remove an editorial rule over Sujato's English translation — rendering a Pali term differently throughout (e.g. "replace all forms of sati with aware/awareness", "sampajañña should be understanding", "origin → arising"), or overriding one specific segment's wording. Also use when an update-data run reports a broken rule or a non-empty triage queue.
+description: Add, change, or remove an editorial rule over Sujato's English translation — rendering a Pali term differently throughout (e.g. "replace all forms of sati with aware/awareness", "sampajañña should be full comprehension", "origin → arising"), or overriding one specific segment's wording. Also use when an update-data run reports a broken rule or a non-empty triage queue.
 ---
 
 # Retranslation rules
@@ -78,7 +78,7 @@ listing the groups in array order — e.g. `standalone terms`, `awareness`, `ari
 `segment overrides`. This isn't cosmetic: order inside and between groups is exactly what settles
 a same-word collision (locking handles the rest — see the same-word-collisions step above), so the
 grouping doubles as documentation of *why* rules sit where they do — the awareness group's own
-comment, for instance, records that `sati-aware` and `sampajanna-understanding` are neighbors
+comment, for instance, records that `sati-aware` and `sampajanna-full-comprehension` are neighbors
 because they meet in the satipaṭṭhāna formula, a fact that would otherwise have to be
 reconstructed from the two rules' `why` fields.
 

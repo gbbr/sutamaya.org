@@ -15,7 +15,7 @@
 //
 //   standalone terms   mendicant-bhikkhu, immersion-concentration
 //   awareness          satipatthana-establishment-of-awareness, sati-aware,
-//                      sampajanna-understanding
+//                      sampajanna-full-comprehension
 //   arising / passing   samudaya-arising, vaya-passing-away, atthangama-disappearing,
 //                      udayabbaya-arising-passing-away
 //   segment overrides  one line each, applied last
@@ -52,8 +52,8 @@ export const RULES = [
     ],
   },
   // ── Awareness ───────────────────────────────────────────────────────────────
-  // sati-aware and sampajanna-understanding meet in the satipaṭṭhāna formula ("keen, aware, and
-  // mindful"), where sati-aware produces the very word sampajanna-understanding consumes. Locking,
+  // sati-aware and sampajanna-full-comprehension meet in the satipaṭṭhāna formula ("keen, aware,
+  // and mindful"), where sati-aware produces the very word the sampajañña rule consumes. Locking,
   // not order, is what keeps them apart — see "The pass" in docs/retranslation.md, and the pinned
   // example in update-data.test.js. satipatthana-establishment-of-awareness runs ahead of both
   // because it *is* a same-word collision: it claims the "mindfulness" of "mindfulness meditation"
@@ -103,23 +103,29 @@ export const RULES = [
     ],
   },
   {
-    id: 'sampajanna-understanding',
+    id: 'sampajanna-full-comprehension',
     why: 'Sujato renders sampajañña as "situational awareness"/"awareness"/"aware"; this app ' +
-      'prefers "understanding". Closed, because plain-English "aware" is common and unrelated — ' +
-      'the formless attainments alone account for ~150 segments of "aware that ‘space is ' +
-      'infinite’", which translates iti, not sampajañña.',
+      'prefers "full comprehension". Closed, because plain-English "aware" is common and ' +
+      'unrelated — the formless attainments alone account for ~150 segments of "aware that ‘space ' +
+      'is infinite’", which translates iti, not sampajañña. "Full comprehension" is a noun phrase ' +
+      'where Sujato has both a noun and an adjective, but his own wording splits the two cleanly: ' +
+      'the nouns "situational awareness"/"awareness" are sampajañña, while a bare "aware"/' +
+      '"unaware" is the adjective sampajāna. So the adjective takes the participle instead — a ' +
+      'noun phrase cannot stand in the satipaṭṭhāna formula\'s adjective slot ("keen, aware, and ' +
+      'mindful" would give "keen, full comprehension, and aware"), and that slot alone is ~250 ' +
+      'segments.',
     mode: 'allow',
     predicate: /sampajañ|sampajān/i,
     forms: [
-      ['situational awareness', 'understanding'],
-      ['awareness', 'understanding'],
-      ['aware', 'understanding'],
+      ['situational awareness', 'full comprehension'],
+      ['awareness', 'full comprehension'],
+      ['aware', 'fully comprehending'],
       // asampajāna. All nine of its segments are the negated term, so these carry no ambiguity of
       // their own — but they matter for the one line that has both terms negated at once, an5.210's
       // "falling asleep unmindful and unaware" (muṭṭhassatissa asampajānassa), which without them
       // reads "unaware and unaware" once sati-aware has had it.
-      ['unawareness', 'lack of understanding'],
-      ['unaware', 'without understanding'],
+      ['unawareness', 'lack of full comprehension'],
+      ['unaware', 'without full comprehension'],
     ],
   },
   // ── Arising and passing away ────────────────────────────────────────────────
@@ -199,71 +205,97 @@ export const RULES = [
   // "origination" alone (26 of its 30 segments are sambhava, not samudaya — see
   // samudaya-arising's why), and these four lines are the exception it can't express.
   //
-  // The six sampajañña ones are a third: "understanding" is a noun where Sujato's "aware" was an
-  // adjective, so wherever he used it predicatively ("a mendicant is aware", "aware of the
-  // situation") the swap reads as the wrong English word — as a progressive tense, or as
-  // "sympathetic". The clause has to be rebuilt around the noun, which a word-for-word form can't
-  // do; a form spanning more words can't either, since mendicant-bhikkhu has already locked the
-  // "bhikkhu" in the middle of two of them.
+  // The seven sampajañña ones are a third. Its adjective form is a participle, which stands in a
+  // list of adjectives but not as a whole predicate, so wherever Sujato used his "aware"
+  // predicatively ("a mendicant is aware", "aware of the situation") the clause has to be rebuilt
+  // around the noun — which a word-for-word form can't do, and a form spanning more words can't
+  // either, since mendicant-bhikkhu has already locked the "bhikkhu" in the middle of two of them.
+  //
+  // sn56-34-abhisamaya-understand is a fourth: nothing is wrong with the swap itself, but "full
+  // comprehension" now lands beside Sujato's own "comprehend", which is his word for a different
+  // term (abhisamaya). Only that one segment has both in the same sentence.
   {
-    id: 'sampajano-hoti-acts-with-understanding',
+    id: 'sampajano-hoti-question',
     kind: 'segment',
-    why: 'sampajāno hoti, closing the sampajañña section — "a bhikkhu is understanding" reads as a ' +
-      'progressive tense. The section\'s own refrain is "acts with understanding when going out and ' +
-      'coming back", so it closes on that.',
+    why: 'Kathañca bhikkhu sampajāno hoti, opening the sampajañña section — "how is a bhikkhu ' +
+      'fully comprehending?" reads as a progressive tense asking what he is doing right now. The ' +
+      'noun carries the standing quality the section goes on to define. Paired with ' +
+      'sampajano-hoti-answer, which closes the same section.',
+    segments: ['dn16:2.13.1', 'sn36.7:4.1', 'sn36.8:4.1', 'sn47.2:3.1', 'sn47.35:3.1'],
+    from: 'And how is a bhikkhu fully comprehending? ',
+    to: 'And how does a bhikkhu have full comprehension? ',
+  },
+  {
+    id: 'sampajano-hoti-answer',
+    kind: 'segment',
+    why: 'Evaṁ kho bhikkhu sampajāno hoti — sampajano-hoti-question’s line as the section’s ' +
+      'closing answer, and worded to match it.',
     segments: ['sn47.35:3.5', 'sn36.8:4.3', 'dn16:2.13.3'],
-    from: 'That’s how a bhikkhu is understanding. ',
-    to: 'That’s how a bhikkhu acts with understanding. ',
+    from: 'That’s how a bhikkhu is fully comprehending. ',
+    to: 'That’s how a bhikkhu has full comprehension. ',
   },
   {
     id: 'sampajano-situation-they',
     kind: 'segment',
-    why: 'Itiha tattha sampajāno hoti. "They are understanding of the situation" is English for ' +
-      'being sympathetic about it — the one sense sampajañña doesn’t carry. The verb says it ' +
-      'plainly instead.',
+    why: 'Itiha tattha sampajāno hoti. "They are fully comprehending of the situation" is not a ' +
+      'construction English takes — the participle can\'t govern "of". The verb says it plainly ' +
+      'instead.',
     segments: ['mn122:9.5', 'mn122:9.12', 'mn122:10.6', 'mn122:10.13', 'mn122:11.3', 'mn122:11.6',
       'mn122:11.9', 'mn122:11.12', 'mn122:12.3', 'mn122:12.5', 'mn122:13.3', 'mn122:13.5',
       'mn122:15.7', 'mn122:15.12', 'mn122:17.4', 'an7.49:3.3', 'an7.49:3.6', 'an7.49:15.3',
       'an7.49:16.3'],
-    from: 'In this way they are understanding of the situation. ',
-    to: 'In this way they understand the situation. ',
+    from: 'In this way they are fully comprehending of the situation. ',
+    to: 'In this way they fully comprehend the situation. ',
   },
   {
     id: 'sampajano-situation-he',
     kind: 'segment',
     why: 'sampajano-situation-they’s line, as an8.9 has it: singular.',
     segments: ['an8.9:1.9', 'an8.9:2.8'],
-    from: 'In this way he’s understanding of the situation. ',
-    to: 'In this way he understands the situation. ',
+    from: 'In this way he’s fully comprehending of the situation. ',
+    to: 'In this way he fully comprehends the situation. ',
   },
   {
     id: 'sampajano-conception-second',
     kind: 'segment',
     why: 'The four kinds of conception (gabbhāvakkanti), whose Pali alternates sampajāna and ' +
-      'asampajāna across all three moments. "Someone is understanding when conceived" reads as a ' +
-      'progressive tense; "has understanding" pairs with the "without understanding" the negative ' +
-      'already produces. The first kind needs no override — it is negative throughout, and "is ' +
-      'without understanding" was already fine.',
+      'asampajāna across all three moments. "Someone is full comprehension when conceived" puts a ' +
+      'noun phrase where a predicate belongs; "has full comprehension" pairs with the "without ' +
+      'full comprehension" the negative already produces. The first kind needs no override — it is ' +
+      'negative throughout, and "is without full comprehension" was already fine.',
     segments: ['dn28:5.4', 'dn33:1.11.177'],
-    from: 'Furthermore, someone is understanding when conceived in their mother’s womb, but without understanding as they remain there, and without understanding as they emerge. This is the second kind of conception. ',
-    to: 'Furthermore, someone has understanding when conceived in their mother’s womb, but without understanding as they remain there, and without understanding as they emerge. This is the second kind of conception. ',
+    from: 'Furthermore, someone is fully comprehending when conceived in their mother’s womb, but without full comprehension as they remain there, and without full comprehension as they emerge. This is the second kind of conception. ',
+    to: 'Furthermore, someone has full comprehension when conceived in their mother’s womb, but without full comprehension as they remain there, and without full comprehension as they emerge. This is the second kind of conception. ',
   },
   {
     id: 'sampajano-conception-third',
     kind: 'segment',
-    why: 'sampajano-conception-second’s line, for the third kind: understanding through conception ' +
-      'and gestation, not through birth.',
+    why: 'sampajano-conception-second’s line, for the third kind: full comprehension through ' +
+      'conception and gestation, not through birth.',
     segments: ['dn28:5.5', 'dn33:1.11.178'],
-    from: 'Furthermore, someone is understanding when conceived in their mother’s womb, understanding as they remain there, but without understanding as they emerge. This is the third kind of conception. ',
-    to: 'Furthermore, someone has understanding when conceived in their mother’s womb, with understanding as they remain there, but without understanding as they emerge. This is the third kind of conception. ',
+    from: 'Furthermore, someone is fully comprehending when conceived in their mother’s womb, fully comprehending as they remain there, but without full comprehension as they emerge. This is the third kind of conception. ',
+    to: 'Furthermore, someone has full comprehension when conceived in their mother’s womb, with full comprehension as they remain there, but without full comprehension as they emerge. This is the third kind of conception. ',
   },
   {
     id: 'sampajano-conception-fourth',
     kind: 'segment',
-    why: 'sampajano-conception-second’s line, for the fourth kind: understanding throughout.',
+    why: 'sampajano-conception-second’s line, for the fourth kind: full comprehension throughout.',
     segments: ['dn28:5.6', 'dn33:1.11.179'],
-    from: 'Furthermore, someone is understanding when conceived in their mother’s womb, understanding as they remain there, and understanding as they emerge. This is the fourth kind of conception. ',
-    to: 'Furthermore, someone has understanding when conceived in their mother’s womb, with understanding as they remain there, and with understanding as they emerge. This is the fourth kind of conception. ',
+    from: 'Furthermore, someone is fully comprehending when conceived in their mother’s womb, fully comprehending as they remain there, and fully comprehending as they emerge. This is the fourth kind of conception. ',
+    to: 'Furthermore, someone has full comprehension when conceived in their mother’s womb, with full comprehension as they remain there, and with full comprehension as they emerge. This is the fourth kind of conception. ',
+  },
+  {
+    id: 'sn56-34-abhisamaya-understand',
+    kind: 'segment',
+    why: 'yathābhūtaṁ abhisamayāya, which Sujato renders "truly comprehending" — his word for ' +
+      'abhisamaya, unrelated to sampajañña. Once sampajañña is "full comprehension" the two sit in ' +
+      'one sentence saying different things with the same root. Only this segment has both, so ' +
+      'abhisamaya moves rather than the app’s own term: "truly understand" reads the yathābhūtaṁ ' +
+      'straight, and "in order to" makes the line parallel to 1.2’s "in order to extinguish it", ' +
+      'which is the same karaṇīyaṁ construction in the Pali.',
+    segment: 'sn56.34:2.1',
+    from: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and full comprehension to truly comprehending the four noble truths. ',
+    to: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and full comprehension in order to truly understand the four noble truths. ',
   },
   {
     id: 'samudaya-exclamation-arising',
