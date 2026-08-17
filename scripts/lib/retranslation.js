@@ -45,8 +45,11 @@ export async function loadRules(retranslationPath = RETRANSLATION_PATH) {
       throw new Error(`Rule "${rule.id}" has no "why" — every rule must state its reason (see retranslation.md).`);
     }
     if (rule.kind === 'segment') {
-      if (!rule.segment || !rule.from || typeof rule.to !== 'string') {
-        throw new Error(`Segment rule "${rule.id}" needs segment, from, and to.`);
+      if (segmentsOf(rule).length === 0 || !rule.from || typeof rule.to !== 'string') {
+        throw new Error(`Segment rule "${rule.id}" needs segment (or segments), from, and to.`);
+      }
+      if (rule.segment && rule.segments) {
+        throw new Error(`Segment rule "${rule.id}" sets both segment and segments — use one.`);
       }
     } else {
       if (!Array.isArray(rule.forms) || rule.forms.length === 0) {
@@ -62,6 +65,17 @@ export async function loadRules(retranslationPath = RETRANSLATION_PATH) {
 
 export const isTermRule = (rule) => rule.kind !== 'segment';
 export const isSegmentRule = (rule) => rule.kind === 'segment';
+
+// The segments one override applies to. `segment: 'x'` and `segments: ['x', 'y']` are the same
+// thing, one entry versus several — the plural is for a line the corpus repeats verbatim (a stock
+// verse recurring across three Theragāthā poems, say), where one `from`/`to` is the whole decision
+// and spelling it out per segment would be the same rule copied. Every named segment must still
+// match `from` on its own, so a repeat that has since drifted breaks the anchor instead of being
+// quietly skipped.
+export function segmentsOf(rule) {
+  if (rule.segments) return rule.segments;
+  return rule.segment ? [rule.segment] : [];
+}
 
 // A term rule's own trees, defaulting to all four sujato/* categories.
 export function scopeOf(rule) {

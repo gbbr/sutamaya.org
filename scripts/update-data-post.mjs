@@ -17,6 +17,7 @@ import {
   loadRules,
   isTermRule,
   isSegmentRule,
+  segmentsOf,
   loadSidecar,
   applyTermRules,
   applySegmentOverride,
@@ -86,20 +87,22 @@ export async function runPost({
   if (segmentRules.length > 0) {
     const segmentIndex = buildSegmentIndex(sujatoDir);
     for (const rule of segmentRules) {
-      const relPath = segmentIndex.get(rule.segment);
-      if (!relPath) {
-        brokenOverrides.push({ id: rule.id, segment: rule.segment, reason: 'segment id not found in data/sujato' });
-        continue;
+      for (const segment of segmentsOf(rule)) {
+        const relPath = segmentIndex.get(segment);
+        if (!relPath) {
+          brokenOverrides.push({ id: rule.id, segment, reason: 'segment id not found in data/sujato' });
+          continue;
+        }
+        const obj = objects.get(relPath);
+        const current = obj[segment];
+        const { result, applied } = applySegmentOverride(current, rule);
+        if (!applied) {
+          brokenOverrides.push({ id: rule.id, segment, reason: "rule's from no longer matches verbatim", from: rule.from, current });
+          continue;
+        }
+        obj[segment] = result;
+        changedFiles.add(relPath);
       }
-      const obj = objects.get(relPath);
-      const current = obj[rule.segment];
-      const { result, applied } = applySegmentOverride(current, rule);
-      if (!applied) {
-        brokenOverrides.push({ id: rule.id, segment: rule.segment, reason: "rule's from no longer matches verbatim", from: rule.from, current });
-        continue;
-      }
-      obj[rule.segment] = result;
-      changedFiles.add(relPath);
     }
   }
 

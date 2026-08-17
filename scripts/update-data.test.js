@@ -8,7 +8,7 @@ import { runCheck } from './update-data-check.mjs';
 import { runCopy } from './update-data-copy.mjs';
 import { runPost } from './update-data-post.mjs';
 import { runSnapshot } from './update-data-snapshot.mjs';
-import { applyRuleToChunks, applyTermRules, applySegmentOverride, isPermitted, chunksToString } from './lib/retranslation.js';
+import { applyRuleToChunks, applyTermRules, applySegmentOverride, isPermitted, chunksToString, loadRules, loadSidecar, isTermRule, isSegmentRule, segmentsOf, RETRANSLATION_PATH } from './lib/retranslation.js';
 
 // Everything here runs against throwaway temp-dir fixtures, never the real data/{sujato,pali,html}
 // or a real SC_DATA_PATH checkout — check/copy/post/snapshot all accept explicit dataDirs/
@@ -66,14 +66,27 @@ function makeFixture() {
   const bilaraRoot = path.join(root, 'bilara');
   const snapshotPath = path.join(root, 'snapshot.json');
   const manifestPath = path.join(root, 'manifest.json');
-  // post/check/snapshot all default to the real scripts/update-data/retranslation.mjs — its two
-  // rules (mendicant-bhikkhu, immersion-concentration) are global (open, empty deny list), and
-  // FIXTURE_FILES' content happens to contain both terms, so runPost/runCheck exercise them for
-  // free against this fixture without a dedicated fixture rules file. Tests that need a *different*
-  // rule set (a dead rule, a segment override, the same-segment collision) write their own via
-  // writeRulesFixture below and pass its path as retranslationPath.
+  // Passed to every runSnapshot below, because its own default is the *real*
+  // scripts/update-data/retranslation.counts.json — a fixture snapshot that doesn't override it
+  // rewrites the repo's rule baseline with two fixture-scale numbers, and green tests are the only
+  // sign of it.
+  const countsPath = path.join(root, 'retranslation.counts.json');
   const postDir = path.join(root, 'sujato.post');
   const rulesDir = path.join(root, 'rules');
+  // Every pipeline test here runs against its own rules file, never the shipped
+  // scripts/update-data/retranslation.mjs: two global rules whose terms FIXTURE_FILES contains,
+  // which is all runPost/runCheck/runSnapshot need to exercise. Defaulting to the real file instead
+  // would tie this five-file fixture to whatever segments the shipped rules happen to name — a
+  // segment override anchored on mn10:0.2 has nothing to resolve against here, and would fail every
+  // test in this block the day someone adds one. Tests needing a different rule set (a dead rule, a
+  // broken override, a same-segment collision) write their own via writeRulesFixture below.
+  const retranslationPath = writeRulesFixture(
+    root,
+    `[
+      { id: 'mendicant-bhikkhu', why: 'fixture', mode: 'deny', forms: [['mendicant', 'bhikkhu'], ['mendicants', 'bhikkhus']] },
+      { id: 'immersion-concentration', why: 'fixture', mode: 'deny', forms: [['immersion', 'concentration']] },
+    ]`,
+  );
 
   for (const [relPath, { sourceRel, content }] of Object.entries(FIXTURE_FILES)) {
     const [dirName, ...rest] = relPath.split('/');
@@ -81,7 +94,7 @@ function makeFixture() {
     writeJson(path.join(bilaraRoot, sourceRel), content);
   }
 
-  return { root, dataDirs, bilaraRoot, snapshotPath, manifestPath, postDir, rulesDir };
+  return { root, dataDirs, bilaraRoot, snapshotPath, manifestPath, countsPath, postDir, rulesDir, retranslationPath };
 }
 
 // Writes a throwaway retranslation.mjs exporting `rules` (an array literal source string, e.g.
@@ -194,6 +207,81 @@ describe('applyRuleToChunks / applyTermRules — the retranslation engine', () =
   });
 });
 
+// One worked example per shipped rule, run through the real retranslation.mjs and the real
+// sidecars in scripts/update-data/rules/ (no data/ is read — these are the segment's actual
+// upstream words, pinned here). Editing a rule's forms, or dropping a segment from its list, breaks
+// the example that covers it, which is the point: a list edit is otherwise invisible.
+describe('the shipped rules, one example each', () => {
+  const EXAMPLES = [
+    ['mendicant-bhikkhu', 'dn1:1.1', 'sujato/sutta', 'a mendicant and some mendicants', 'a bhikkhu and some bhikkhus'],
+    ['immersion-concentration', 'dn1:1.1', 'sujato/sutta', 'they enter that immersion', 'they enter that concentration'],
+    ['sati-aware', 'sn9.1:3.1', 'sujato/sutta', 'Give up discontent; be mindful;', 'Give up discontent; be aware;'],
+    // "mindfully" needs more than the word swapped, hence the phrase.
+    ['sati-aware', 'an6.29:11.3', 'sujato/sutta', 'a mendicant goes out mindfully, returns mindfully', 'a bhikkhu goes out with awareness, returns with awareness'],
+    // Denied: caṅkamati, with no sati in the Pali at all.
+    ['sati-aware', 'dn25:6.2', 'sujato/sutta', 'he walked mindfully in the open air', 'he walked mindfully in the open air'],
+    // The dn22:1.9 collision from retranslation.md, through the rules as shipped: sati-aware
+    // produces the very word sampajanna-understanding consumes, and locking keeps them apart.
+    ['sampajanna-understanding', 'sn54.10:5.5', 'sujato/sutta', 'keen, aware, and mindful', 'keen, understanding, and aware'],
+    // Denied: plain-English "aware", introducing a perception rather than rendering sampajañña.
+    ['sampajanna-understanding', 'an1.451:1.1', 'sujato/sutta', 'aware that ‘consciousness is infinite’', 'aware that ‘consciousness is infinite’'],
+    // Out of scope: sujato/notes keeps Sujato's own gloss of citta.
+    ['sampajanna-understanding', 'dn22:1.11', 'sujato/notes', '“Mind” (citta) is simple awareness.', '“Mind” (citta) is simple awareness.'],
+    ['samudaya-arising', 'sn56.11:4.3', 'sujato/sutta', 'the noble truth of the origin of suffering', 'the noble truth of the arising of suffering'],
+    // Denied: aggañña, how the world began.
+    ['samudaya-arising', 'dn24:2.14.1', 'sujato/sutta', 'I understand the origin of the world.', 'I understand the origin of the world.'],
+    // samudaya's verb form and vaya in one line.
+    ['vaya-passing-away', 'sn52.1:3.1', 'sujato/sutta', 'observing the liability to originate, to vanish, and to originate and vanish', 'observing the liability to arise, to pass away, and to arise and pass away'],
+    // Denied: antaradhāyati, a being leaving a scene.
+    ['vaya-passing-away', 'sn4.10:6.1', 'sujato/sutta', 'miserable and sad, vanished right there.', 'miserable and sad, vanished right there.'],
+    ['atthangama-disappearing', 'sn53.1-12:1.8', 'sujato/sutta', 'the disappearance of former happiness and sadness', 'the disappearing of former happiness and sadness'],
+    // Denied: antaradhāna, the true teaching being lost.
+    ['atthangama-disappearing', 'an1.114:1.1', 'sujato/sutta', 'the decline and disappearance of the true teaching', 'the decline and disappearance of the true teaching'],
+    ['udayabbaya-arising-passing-away', 'sn22.89:11.2', 'sujato/sutta', 'observing rise and fall in the five grasping aggregates', 'observing arising and passing away in the five grasping aggregates'],
+    // Denied: uppādavaya, and used verbally — the noun phrase would not fit.
+    ['udayabbaya-arising-passing-away', 'sn1.11:5.4', 'sujato/sutta', 'their nature is to rise and fall;', 'their nature is to rise and fall;'],
+  ];
+
+  it('rewrites each rule’s example, and leaves its excluded example alone', async () => {
+    const rules = await loadRules(RETRANSLATION_PATH);
+    const sidecars = new Map(rules.filter(isTermRule).map((rule) => [rule.id, loadSidecar(rule.id)]));
+    for (const [ruleId, segmentId, treeName, input, expected] of EXAMPLES) {
+      expect(rules.some((r) => r.id === ruleId), `no such rule: ${ruleId}`).toBe(true);
+      const { result } = applyTermRules(input, { treeName, segmentId, rules, sidecars });
+      expect(result, `${ruleId} @ ${segmentId}`).toBe(expected);
+    }
+  });
+
+  it('covers every shipped term rule', async () => {
+    const rules = await loadRules(RETRANSLATION_PATH);
+    const covered = new Set(EXAMPLES.map(([id]) => id));
+    for (const rule of rules.filter(isTermRule)) {
+      expect(covered.has(rule.id), `term rule ${rule.id} has no example above`).toBe(true);
+    }
+  });
+
+  it('anchors each segment override on text its own from/to describes', async () => {
+    const rules = await loadRules(RETRANSLATION_PATH);
+    const overrides = rules.filter(isSegmentRule);
+    expect(overrides.length).toBeGreaterThan(0);
+    for (const rule of overrides) {
+      expect(segmentsOf(rule).length, `${rule.id} names no segment`).toBeGreaterThan(0);
+      expect(applySegmentOverride(rule.from, rule).result, rule.id).toBe(rule.to);
+      // An override is a rewrite, and it has to be anchored on post-processed text: if `from`
+      // still contains a form the term rules rewrite, the anchor can never match what post
+      // produces.
+      expect(rule.from, rule.id).not.toBe(rule.to);
+      const { result: reprocessed } = applyTermRules(rule.from, {
+        treeName: 'sujato/sutta',
+        segmentId: segmentsOf(rule)[0],
+        rules,
+        sidecars: new Map(rules.filter(isTermRule).map((r) => [r.id, loadSidecar(r.id)])),
+      });
+      expect(reprocessed, `${rule.id}'s from is not post-processed text`).toBe(rule.from);
+    }
+  });
+});
+
 describe('isPermitted', () => {
   it('allow mode: only segments in the allow list', () => {
     const rule = { mode: 'allow' };
@@ -205,6 +293,47 @@ describe('isPermitted', () => {
     const rule = { mode: 'deny' };
     expect(isPermitted(rule, { allow: [], deny: {} }, 'a')).toBe(true);
     expect(isPermitted(rule, { allow: [], deny: { a: 'reason' } }, 'a')).toBe(false);
+  });
+});
+
+describe('segmentsOf', () => {
+  it('reads either spelling, and rejects a rule that uses both', async () => {
+    expect(segmentsOf({ segment: 'dn1:1.1' })).toEqual(['dn1:1.1']);
+    expect(segmentsOf({ segments: ['dn1:1.1', 'dn1:1.2'] })).toEqual(['dn1:1.1', 'dn1:1.2']);
+    expect(segmentsOf({})).toEqual([]);
+
+    const root = fs.mkdtempSync(path.join(os.tmpdir(), 'update-data-segments-'));
+    const both = writeRulesFixture(root, `[{ id: 'x', kind: 'segment', why: 't', segment: 'a:1', segments: ['a:1'], from: 'a', to: 'b' }]`);
+    await expect(loadRules(both)).rejects.toThrow(/sets both segment and segments/);
+    const neither = writeRulesFixture(path.join(root), `[{ id: 'x', kind: 'segment', why: 't', from: 'a', to: 'b' }]`);
+    await expect(loadRules(neither)).rejects.toThrow(/needs segment \(or segments\)/);
+    fs.rmSync(root, { recursive: true, force: true });
+  });
+
+  it('post applies an override to every segment it names', async () => {
+    const fx = makeFixture();
+    const retranslationPath = writeRulesFixture(
+      fx.root,
+      `[{ id: 'both-lines', kind: 'segment', why: 'test', segments: ['dn1:1.1', 'dn1:1.2'], from: 'Shared line.', to: 'Rewritten.' }]`,
+    );
+    const file = path.join(fx.dataDirs.sujato, 'sutta/dn/dn1_translation-en-sujato.json');
+    writeJson(file, { 'dn1:1.1': 'Shared line.', 'dn1:1.2': 'Shared line.' });
+
+    const result = await runPost({ sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir, retranslationPath });
+
+    expect(result.ok).toBe(true);
+    expect(readJson(path.join(fx.postDir, 'sutta/dn/dn1_translation-en-sujato.json'))).toEqual({
+      'dn1:1.1': 'Rewritten.',
+      'dn1:1.2': 'Rewritten.',
+    });
+
+    // One repeat drifting is reported as that segment, not as the whole rule.
+    writeJson(file, { 'dn1:1.1': 'Shared line.', 'dn1:1.2': 'Upstream reworded this one.' });
+    const drifted = await runPost({ sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir, retranslationPath });
+    expect(drifted.ok).toBe(false);
+    expect(drifted.brokenOverrides).toHaveLength(1);
+    expect(drifted.brokenOverrides[0]).toMatchObject({ id: 'both-lines', segment: 'dn1:1.2' });
+    fs.rmSync(fx.root, { recursive: true, force: true });
   });
 });
 
@@ -291,13 +420,13 @@ describe('checkSnapshotInSync', () => {
   });
 
   it('reports ok when data/{sujato,pali,html} matches the snapshot', async () => {
-    await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
 
     expect(checkSnapshotInSync({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath })).toEqual({ ok: true, issues: [] });
   });
 
   it('reports drift when a local file changed without the snapshot being regenerated', async () => {
-    await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
     // Simulate: copy+post already happened and got committed, but update-data:snapshot was never
     // run afterward — bilaraRoot/upstream is irrelevant here, this is purely local drift.
     const localPath = path.join(fx.dataDirs.sujato, 'sutta/dn/dn1_translation-en-sujato.json');
@@ -313,7 +442,7 @@ describe('checkSnapshotInSync', () => {
   });
 
   it('reports a file tracked in the snapshot but missing locally', async () => {
-    await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
     fs.rmSync(path.join(fx.dataDirs.sujato, 'name/dn-name_translation-en-sujato.json'));
 
     const result = checkSnapshotInSync({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });
@@ -404,10 +533,10 @@ describe('update-data pipeline (fixture)', () => {
   });
 
   it('check passes against a snapshot taken from matching content, touching nothing', async () => {
-    await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
     const before = readJson(path.join(fx.dataDirs.sujato, 'sutta/dn/dn1_translation-en-sujato.json'));
 
-    const result = await runCheck({ bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });
+    const result = await runCheck({ retranslationPath: fx.retranslationPath, bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });
 
     expect(result).toMatchObject({ ok: true, issues: [], checked: 7, totalTracked: 7 });
     // check never mutates data/sujato — that's post's job, and only into sujato.post/.
@@ -415,13 +544,13 @@ describe('update-data pipeline (fixture)', () => {
   });
 
   it('check reports a segment-id change upstream, naming the new segment ids', async () => {
-    await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
     const sourcePath = path.join(fx.bilaraRoot, FIXTURE_FILES['sujato/sutta/dn/dn1_translation-en-sujato.json'].sourceRel);
     const upstream = readJson(sourcePath);
     upstream['dn1:1.3'] = 'A new verse line.';
     writeJson(sourcePath, upstream);
 
-    const result = await runCheck({ bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });
+    const result = await runCheck({ retranslationPath: fx.retranslationPath, bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });
 
     expect(result.ok).toBe(false);
     expect(result.localIssues).toEqual([]);
@@ -434,13 +563,13 @@ describe('update-data pipeline (fixture)', () => {
   });
 
   it('check folds in local drift even when the upstream side is clean', async () => {
-    await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
     const localPath = path.join(fx.dataDirs.sujato, 'sutta/dn/dn1_translation-en-sujato.json');
     const local = readJson(localPath);
     local['dn1:1.3'] = 'A new local verse line.';
     writeJson(localPath, local);
 
-    const result = await runCheck({ bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });
+    const result = await runCheck({ retranslationPath: fx.retranslationPath, bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });
 
     expect(result.ok).toBe(false);
     expect(result.upstreamIssues).toEqual([]);
@@ -449,13 +578,13 @@ describe('update-data pipeline (fixture)', () => {
   });
 
   it('check reports a missing file, with a relocation hint when a same-named file exists elsewhere', async () => {
-    await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
     const expectedPath = path.join(fx.bilaraRoot, FIXTURE_FILES['sujato/notes/dn/dn1_comment-en-sujato.json'].sourceRel);
     const relocated = path.join(fx.bilaraRoot, 'somewhere-else', 'dn1_comment-en-sujato.json');
     fs.mkdirSync(path.dirname(relocated), { recursive: true });
     fs.renameSync(expectedPath, relocated);
 
-    const result = await runCheck({ bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });
+    const result = await runCheck({ retranslationPath: fx.retranslationPath, bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });
 
     expect(result.ok).toBe(false);
     const issue = result.upstreamIssues.find((i) => i.startsWith('sujato/notes/dn/dn1_comment-en-sujato.json'));
@@ -464,10 +593,10 @@ describe('update-data pipeline (fixture)', () => {
   });
 
   it('runs the local cross-category integrity pass by default (no flag needed)', async () => {
-    await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
     // Both local dataDirs and bilaraRoot start aligned (see FIXTURE_FILES/makeFixture), so
     // localIntegrityIssues is always computed (present, not undefined/gated) but empty here.
-    const result = await runCheck({ bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });
+    const result = await runCheck({ retranslationPath: fx.retranslationPath, bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });
     expect(result.localIntegrityIssues).toEqual([]);
     expect(result.ok).toBe(true);
   });
@@ -481,9 +610,9 @@ describe('update-data pipeline (fixture)', () => {
     const local = readJson(localSujatoPath);
     local['dn1:1.3'] = 'A segment with no Pali counterpart.';
     writeJson(localSujatoPath, local);
-    await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
 
-    const result = await runCheck({ bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });
+    const result = await runCheck({ retranslationPath: fx.retranslationPath, bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });
 
     expect(result.localIssues).toEqual([]);
     expect(result.localIntegrityIssues.length).toBeGreaterThan(0);
@@ -492,7 +621,7 @@ describe('update-data pipeline (fixture)', () => {
   });
 
   it('copy overwrites dataDirs byte-for-byte from bilaraRoot and writes manifest.json', async () => {
-    await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
     const sourcePath = path.join(fx.bilaraRoot, FIXTURE_FILES['sujato/sutta/dn/dn1_translation-en-sujato.json'].sourceRel);
     fs.writeFileSync(sourcePath, JSON.stringify({ 'dn1:1.1': 'Revised text.' }, null, 2));
 
@@ -505,7 +634,7 @@ describe('update-data pipeline (fixture)', () => {
   });
 
   it('copy sets manifest.snapshotCommit to null when there is no prior manifest.json', async () => {
-    await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
 
     const manifest = runCopy({
       bilaraRoot: fx.bilaraRoot,
@@ -520,7 +649,7 @@ describe('update-data pipeline (fixture)', () => {
   });
 
   it('copy carries snapshotCommit forward from the previous manifest.json unchanged', async () => {
-    await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
     writeJson(fx.manifestPath, { sourceCommit: 'old-commit', snapshotCommit: 'old-commit' });
 
     const manifest = runCopy({
@@ -539,19 +668,19 @@ describe('update-data pipeline (fixture)', () => {
   it('snapshot updates manifest.snapshotCommit to match the current sourceCommit', async () => {
     writeJson(fx.manifestPath, { sourceCommit: 'new-commit', snapshotCommit: 'old-commit' });
 
-    await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
 
     expect(readJson(fx.manifestPath).snapshotCommit).toBe('new-commit');
   });
 
   it('snapshot is a no-op on manifest.json when one does not exist yet', async () => {
     expect(fs.existsSync(fx.manifestPath)).toBe(false);
-    await expect(runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir })).resolves.not.toThrow();
+    await expect(runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir })).resolves.not.toThrow();
     expect(fs.existsSync(fx.manifestPath)).toBe(false);
   });
 
   it('copy throws instead of silently skipping if a tracked file is missing from bilaraRoot', async () => {
-    await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
     fs.rmSync(path.join(fx.bilaraRoot, FIXTURE_FILES['sujato/name/dn-name_translation-en-sujato.json'].sourceRel));
 
     expect(() =>
@@ -566,7 +695,7 @@ describe('update-data pipeline (fixture)', () => {
   });
 
   it('post rewrites tracked word forms into sujato.post/, leaving data/sujato itself pristine', async () => {
-    const { ok, filesChanged, replacements } = await runPost({ sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir });
+    const { ok, filesChanged, replacements } = await runPost({ retranslationPath: fx.retranslationPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir });
 
     expect(ok).toBe(true);
     expect(filesChanged).toBe(4);
@@ -585,10 +714,10 @@ describe('update-data pipeline (fixture)', () => {
   });
 
   it('post is idempotent — re-running against the same pristine input gives byte-identical output', async () => {
-    await runPost({ sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir });
+    await runPost({ retranslationPath: fx.retranslationPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir });
     const after = readJson(path.join(fx.postDir, 'sutta/dn/dn1_translation-en-sujato.json'));
 
-    const second = await runPost({ sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir });
+    const second = await runPost({ retranslationPath: fx.retranslationPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir });
 
     expect(second.ok).toBe(true);
     expect(readJson(path.join(fx.postDir, 'sutta/dn/dn1_translation-en-sujato.json'))).toEqual(after);
@@ -643,6 +772,7 @@ describe('update-data pipeline (fixture)', () => {
     const countsPath = path.join(fx.root, 'retranslation.counts.json');
 
     await runSnapshot({
+      retranslationPath: fx.retranslationPath,
       dataDirs: fx.dataDirs,
       snapshotPath: fx.snapshotPath,
       manifestPath: fx.manifestPath,
@@ -662,7 +792,7 @@ describe('update-data pipeline (fixture)', () => {
   describe('check: retranslation rule anchors', () => {
     it('flags a term rule that matches nowhere upstream', async () => {
       const retranslationPath = writeRulesFixture(fx.root, `[{ id: 'dead-rule', why: 'test', mode: 'deny', forms: [['nonexistentword', 'x']] }]`);
-      await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir, retranslationPath });
+      await runSnapshot({ countsPath: fx.countsPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir, retranslationPath });
 
       const result = await runCheck({ bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, rulesDir: fx.rulesDir, retranslationPath });
 
@@ -676,7 +806,7 @@ describe('update-data pipeline (fixture)', () => {
         fx.root,
         `[{ id: 'stale-override', kind: 'segment', why: 'test', segment: 'dn1:1.1', from: 'The mendicant practiced immersion.', to: 'Rewritten.' }]`,
       );
-      await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir, retranslationPath });
+      await runSnapshot({ countsPath: fx.countsPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir, retranslationPath });
       // Upstream reworded the segment the override was anchored to.
       const sourcePath = path.join(fx.bilaraRoot, FIXTURE_FILES['sujato/sutta/dn/dn1_translation-en-sujato.json'].sourceRel);
       const upstream = readJson(sourcePath);
@@ -693,11 +823,37 @@ describe('update-data pipeline (fixture)', () => {
       expect(result.ruleIssues[0]).toMatch(/to \(this app's\):\s+Rewritten\./);
     });
 
+    it('anchors an override on post-processed text, not upstream’s own words', async () => {
+      // dn1:1.1 is "The mendicant practiced immersion." upstream, which the term rule turns into
+      // "The bhikkhu practiced immersion." — and that, not upstream's wording, is what an override
+      // has to match, since overrides run last, over the term rules' output.
+      const rules = (from) => `[
+        { id: 'term', why: 'test', mode: 'deny', forms: [['mendicant', 'bhikkhu']] },
+        { id: 'override', kind: 'segment', why: 'test', segment: 'dn1:1.1', from: ${JSON.stringify(from)}, to: 'Rewritten.' },
+      ]`;
+
+      const good = writeRulesFixture(fx.root, rules('The bhikkhu practiced immersion.'));
+      await runSnapshot({ countsPath: fx.countsPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir, retranslationPath: good });
+      expect((await runCheck({ bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, rulesDir: fx.rulesDir, retranslationPath: good })).ruleIssues).toEqual([]);
+      // And post agrees — the override lands, so check and post read `from` the same way.
+      const applied = await runPost({ sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir, retranslationPath: good });
+      expect(applied.ok).toBe(true);
+      expect(readJson(path.join(fx.postDir, 'sutta/dn/dn1_translation-en-sujato.json'))['dn1:1.1']).toBe('Rewritten.');
+
+      // Anchored on upstream's own wording instead, the override can never fire, and check says so.
+      const staleRoot = path.join(fx.root, 'stale');
+      fs.mkdirSync(staleRoot, { recursive: true });
+      const stale = writeRulesFixture(staleRoot, rules('The mendicant practiced immersion.'));
+      const result = await runCheck({ bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, rulesDir: fx.rulesDir, retranslationPath: stale });
+      expect(result.ruleIssues).toHaveLength(1);
+      expect(result.ruleIssues[0]).toMatch(/after term rules:\s+The bhikkhu practiced immersion\./);
+    });
+
     it('passes when every rule still matches upstream and no segment override is stale', async () => {
       // Default (real) rules file — FIXTURE_FILES contains both "mendicant" and "immersion".
-      await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir });
+      await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir });
 
-      const result = await runCheck({ bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, rulesDir: fx.rulesDir });
+      const result = await runCheck({ retranslationPath: fx.retranslationPath, bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, rulesDir: fx.rulesDir });
 
       expect(result.ruleIssues).toEqual([]);
       expect(result.ok).toBe(true);
@@ -705,7 +861,7 @@ describe('update-data pipeline (fixture)', () => {
   });
 
   it('the full review workflow (check fails -> copy -> post -> snapshot -> check passes) round-trips', async () => {
-    await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
     const sourcePath = path.join(fx.bilaraRoot, FIXTURE_FILES['sujato/sutta/dn/dn1_translation-en-sujato.json'].sourceRel);
     const upstream = readJson(sourcePath);
     upstream['dn1:1.3'] = 'A newly added verse line about mendicants.';
@@ -719,7 +875,7 @@ describe('update-data pipeline (fixture)', () => {
       writeJson(p, obj);
     }
 
-    expect((await runCheck({ bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath })).ok).toBe(false);
+    expect((await runCheck({ retranslationPath: fx.retranslationPath, bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath })).ok).toBe(false);
 
     runCopy({
       bilaraRoot: fx.bilaraRoot,
@@ -728,10 +884,10 @@ describe('update-data pipeline (fixture)', () => {
       snapshotPath: fx.snapshotPath,
       manifestPath: fx.manifestPath,
     });
-    await runPost({ sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
-    await runSnapshot({ dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runPost({ retranslationPath: fx.retranslationPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
+    await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
 
-    const result = await runCheck({ bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });
+    const result = await runCheck({ retranslationPath: fx.retranslationPath, bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });
     expect(result).toMatchObject({ ok: true, checked: 7 });
     // The new segment now exists in data/sujato verbatim (copy doesn't run post)...
     expect(readJson(path.join(fx.dataDirs.sujato, 'sutta/dn/dn1_translation-en-sujato.json'))['dn1:1.3']).toBe(

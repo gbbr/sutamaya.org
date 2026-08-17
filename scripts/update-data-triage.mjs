@@ -32,11 +32,21 @@ function segmentsInTree(sujatoDir, treeName) {
 // One rule's full triage state: which segments are stale, which are untriaged (closed) or
 // active-but-undenied (open, informational — see the comment on that below).
 function triageRule(rule, sidecar, sujatoDir) {
-  const bySegmentId = new Map(); // segmentId -> { segmentId, value, relPath } — every segment in scope
+  // segmentId -> { segmentId, value, relPath, matched } — every segment in scope, one entry per id.
+  // sujato/notes reuses the sutta text's own segment ids, so one id can name two different strings
+  // in two trees while allow/deny can only say one thing about it. The entry kept for display is
+  // the first tree walked (sutta, which has aligned Pali to show) unless it's a later tree that
+  // actually carries the term — and "contains a form" means any tree does, so a note that doesn't
+  // quote the term isn't reported as its sutta segment having lost it.
+  const bySegmentId = new Map();
   for (const treeName of scopeOf(rule)) {
-    for (const seg of segmentsInTree(sujatoDir, treeName)) bySegmentId.set(seg.segmentId, seg);
+    for (const seg of segmentsInTree(sujatoDir, treeName)) {
+      const matched = formsMatch(rule, seg.value);
+      const prev = bySegmentId.get(seg.segmentId);
+      if (!prev || (matched && !prev.matched)) bySegmentId.set(seg.segmentId, { ...seg, matched });
+    }
   }
-  const matched = [...bySegmentId.values()].filter((seg) => formsMatch(rule, seg.value));
+  const matched = [...bySegmentId.values()].filter((seg) => seg.matched);
   const matchedIds = new Set(matched.map((s) => s.segmentId));
 
   // A listed id's current segment, or a placeholder noting it's gone missing entirely (upstream
