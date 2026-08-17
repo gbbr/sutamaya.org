@@ -8,7 +8,7 @@
 // (pali/html exactly, sujato as a subset of pali — see INTEGRITY_GROUPS in lib/dataSync.js), both
 // upstream and against the local data/{sujato,pali,html} trees — the local pass is what catches a
 // snapshot taken from an already-misaligned local state, which would otherwise pass every other
-// check here. See scripts/update-data/README.md.
+// check here. See data/README.md.
 import fs from 'node:fs';
 import path from 'node:path';
 import {
@@ -55,7 +55,7 @@ function describeSetDiff(oldKeys, newKeys) {
 // structural upstreamIssues pass above already catches).
 //
 // An override's `from` is post-processed text, not upstream's own: overrides run last, over the term
-// rules' output (see retranslation.md's "Segment override"), so the term rules are applied to the
+// rules' output (see docs/retranslation.md's "Segment override"), so the term rules are applied to the
 // upstream segment here before comparing. Comparing against raw upstream instead would fail every
 // override whose line contains a term any rule rewrites, which is most of them — an override usually
 // exists *because* a term rule got that line wrong.
@@ -246,7 +246,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     if (result.ruleIssues.length) {
       console.error(bold(yellow(`\nRetranslation rules — broken against upstream (${result.ruleIssues.length}):`)));
       for (const issue of result.ruleIssues) console.error(yellow(`- ${issue}`));
-      console.error(`  see scripts/update-data/retranslation.md's "Reconciling an upstream change".`);
+      console.error(`  see docs/retranslation.md's "Reconciling an upstream change".`);
     }
 
     console.error(

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Works (or authors) a term rule's segment list — see scripts/update-data/retranslation.md's
+// Works (or authors) a term rule's segment list — see docs/retranslation.md's
 // "Working the queue" and .claude/skills/retranslate/SKILL.md for the workflow this serves.
 //
 // No-args: one line per term rule (stale/untriaged, or stale-denial/active-footprint counts, per

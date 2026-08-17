@@ -292,7 +292,7 @@ describe('UserDataProvider', () => {
 
     // The server has permanently refused this version, but the compromise this design accepts is
     // last-writer-wins, not "give up" — the write stays queued and keeps being retried; 'stuck' is
-    // only about making that visible instead of silent (see offline-sync.md's "Sync state").
+    // only about making that visible instead of silent (see docs/offline-sync.md's "Sync state").
     expect(result.current.syncStatus).toBe('stuck');
     calls.length = 0;
     await reconnect();

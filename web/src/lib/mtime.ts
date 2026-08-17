@@ -3,7 +3,7 @@ import { DEVICE_ID_KEY } from './storageKeys';
 
 // `${ISO}|${deviceId}` — the timestamp every mutable write carries, and the whole of this app's
 // conflict resolution: the server stores a write only when its mtime is strictly newer than the
-// stored one (see worker/src/lib/mtime.js and offline-sync.md's A2). ISO 8601 is fixed-width,
+// stored one (see worker/src/lib/mtime.js and docs/offline-sync.md's A2). ISO 8601 is fixed-width,
 // so plain lexicographic comparison is chronological comparison in both SQLite TEXT and
 // JavaScript `<`, with no parsing anywhere.
 //

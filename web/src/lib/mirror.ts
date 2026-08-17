@@ -13,7 +13,7 @@ import type { ListKind } from './types';
 // network, and every function is a pure state transition — the one deliberate exception being that
 // mutators call nextMtime()/randomId(), because a write's timestamp and identity have to be minted
 // *when the user acts*, not when the flush eventually reaches the network. That distinction is the
-// whole point of the design (see offline-sync.md).
+// whole point of the design (see docs/offline-sync.md).
 //
 // Two kinds of pending work, and the split is deliberate:
 //
@@ -557,7 +557,7 @@ function markRejected<T extends { mtime: string }>(
 
 // Counts of work the mirror still owes the server: `pending` is everything dirty or queued,
 // `stuck` is the subset of that the server has already permanently refused. Pure UI state, read by
-// UserDataContext to derive the sync indicator (offline-sync.md's "Sync state") — a `stuck` count above
+// UserDataContext to derive the sync indicator (docs/offline-sync.md's "Sync state") — a `stuck` count above
 // zero is what turns "retrying forever in silence" into something the user can actually see.
 export function syncCounts(state: MirrorState): { pending: number; stuck: number } {
   let pending = state.ops.length;

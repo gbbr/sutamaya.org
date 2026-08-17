@@ -9,11 +9,9 @@ highlighting, notes, lists, typography controls).
 - **`web/`** — React + TypeScript + Tailwind CSS + Vite, packaged as a PWA.
 - **`worker/`** — a Cloudflare Worker (Hono) serving `/api/*`, backed by **D1** for storage and
   Google sign-in for session auth. Also serves the built SPA and static corpus from the same
-  Worker via Cloudflare's assets binding — see `deploy.md`.
+  Worker via Cloudflare's assets binding — see `docs/deploy.md`.
 - **`scripts/`** — builds the static corpus bundle the web app fetches at runtime, and keeps the
   underlying text data in sync with upstream sources.
-
-See `CLAUDE.md` for full architecture and data-pipeline details.
 
 ## Getting started
 
@@ -28,7 +26,26 @@ npm test                # runs the test suite
 The source texts come from [SuttaCentral](https://suttacentral.net) (Bilara-style JSON), pulled
 into `data/` and lightly transformed at build time by
 [`scripts/build-corpus.mjs`](scripts/build-corpus.mjs) into the static bundle the web app fetches
-at runtime. See `data/README.md` and the "Data pipeline" section of `CLAUDE.md` for details.
+at runtime.
+
+## Docs
+
+```
+├── CLAUDE.md                      the working reference: architecture, invariants, gotchas
+├── data/
+│   └── README.md                  the dataset — layout, uid/segment-id keying and the alignment
+│                                   it rests on, coverage, refreshing from sc-data, licence
+├── docs/
+│   ├── deploy.md                  one-time Cloudflare + Google setup, what `npm run deploy` does,
+│   │                               rate limits, free-tier ceilings, mobile testing
+│   ├── offline-sync.md            local-first writes: the mirror, `mtime` conflict resolution,
+│   │                               tombstones, read-time tree repair
+│   └── retranslation.md           the editorial layer over Sujato's English: rule shapes, the
+│                                   locked-chunk pass, anchors, triage and audit
+└── .claude/skills/retranslate/
+    └── SKILL.md                   the procedure for writing a rule (docs/retranslation.md is
+                                    the spec it implements)
+```
 
 ## License
 

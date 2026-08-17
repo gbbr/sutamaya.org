@@ -1,6 +1,6 @@
 // Shared engine for the retranslation layer — scripts/update-data-post.mjs,
 // scripts/update-data-triage.mjs, and scripts/update-data-check.mjs's rule-anchor pass all build
-// on this. See scripts/update-data/retranslation.md for the design; this file is the mechanism.
+// on this. See docs/retranslation.md for the design; this file is the mechanism.
 import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT, DATA_ROOT, PALI_DIR, HTML_DIR, walkJsonFiles } from './dataSync.js';
@@ -53,7 +53,7 @@ export async function loadRules(retranslationPath = RETRANSLATION_PATH) {
     if (seen.has(rule.id)) throw new Error(`Duplicate rule id: ${rule.id}`);
     seen.add(rule.id);
     if (!rule.why || typeof rule.why !== 'string') {
-      throw new Error(`Rule "${rule.id}" has no "why" — every rule must state its reason (see retranslation.md).`);
+      throw new Error(`Rule "${rule.id}" has no "why" — every rule must state its reason (see docs/retranslation.md).`);
     }
     if (rule.kind === 'segment') {
       if (segmentsOf(rule).length === 0 || !rule.from || typeof rule.to !== 'string') {
@@ -112,7 +112,7 @@ export function loadSidecar(ruleId, rulesDir = RULES_DIR) {
 }
 
 // Machine-written, deterministically sorted so a re-write's diff shows only the actual change —
-// see retranslation.md's "Sidecars are machine-written and sorted".
+// see docs/retranslation.md's "Sidecars are machine-written and sorted".
 export function saveSidecar(ruleId, sidecar, rulesDir = RULES_DIR) {
   fs.mkdirSync(rulesDir, { recursive: true });
   const sorted = {
@@ -124,7 +124,7 @@ export function saveSidecar(ruleId, sidecar, rulesDir = RULES_DIR) {
   return sorted;
 }
 
-// Whether `rule` may touch `segmentId` at all — the allow/deny gate described in retranslation.md
+// Whether `rule` may touch `segmentId` at all — the allow/deny gate described in docs/retranslation.md
 // under "Closed or open". Independent of whether the rule's forms actually match the text there;
 // callers combine this with a forms match to decide what to do.
 export function isPermitted(rule, sidecar, segmentId) {
@@ -133,7 +133,7 @@ export function isPermitted(rule, sidecar, segmentId) {
 }
 
 // Longest-first so e.g. "situational awareness" is tried before "awareness" would otherwise
-// shadow it — see retranslation.md's "forms" field.
+// shadow it — see docs/retranslation.md's "forms" field.
 export function sortedForms(rule) {
   return [...rule.forms].sort((a, b) => b[0].length - a[0].length);
 }
@@ -193,7 +193,7 @@ export function formsMatch(rule, text) {
 }
 
 // The locked-chunk pass for one term rule against one segment's current chunk list — see
-// retranslation.md's "The pass". A chunk is `{ text, locked }`; locked chunks are invisible to
+// docs/retranslation.md's "The pass". A chunk is `{ text, locked }`; locked chunks are invisible to
 // every rule (this one and all later ones), which is what makes same-segment rules order-safe
 // (dn22:1.9's sampajañña/sati collision) while same-word collisions still resolve by array order.
 export function applyRuleToChunks(chunks, rule) {
@@ -231,7 +231,7 @@ export function chunksToString(chunks) {
 // scope/mode/sidecar permission. Returns the rewritten text and a Map<ruleId, matchCount> of only
 // the rules that actually matched here (used by post to accumulate totals and by triage's stale
 // check). `treeName` is one of SUJATO_TREES; `paliText` isn't consulted here — the predicate never
-// runs at build time (see retranslation.md) — it's only used by triage/report tooling.
+// runs at build time (see docs/retranslation.md) — it's only used by triage/report tooling.
 export function applyTermRules(value, { treeName, segmentId, rules, sidecars }) {
   let chunks = [{ text: value, locked: false }];
   const counts = new Map();
@@ -251,7 +251,7 @@ export function applyTermRules(value, { treeName, segmentId, rules, sidecars }) 
   return { result: chunksToString(chunks), counts, chunks };
 }
 
-// Segment override rules run after all term rules, against their output — see retranslation.md.
+// Segment override rules run after all term rules, against their output — see docs/retranslation.md.
 // Returns { result, applied } where applied is false (with no change made) if `from` doesn't match
 // verbatim, so callers can treat that as the anchor-broken case rather than silently no-op'ing.
 export function applySegmentOverride(value, rule) {
@@ -268,7 +268,7 @@ export function uidOf(segmentId) {
 // DATA_ROOT (e.g. 'sujato/sutta/an/an1/an1.1-10_translation-en-sujato.json'). Built by walking
 // every sutta file once — necessary because range-batched files key their segments by sub-uid,
 // not by the batch uid the filename carries, so the file can't be derived from a segment id alone
-// (see retranslation.md's "Segment ids resolve to files through a segment→file index"). Cheap
+// (see docs/retranslation.md's "Segment ids resolve to files through a segment→file index"). Cheap
 // (~4,000 files, a few hundred ms) and only needed for segment-override rules, so callers build it
 // once per run rather than per rule.
 //

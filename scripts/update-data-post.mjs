@@ -3,7 +3,7 @@
 // retranslation.mjs) to data/sujato/ and writes the result to data/sujato.post/ — never mutating
 // data/sujato/ itself, so it stays pristine upstream text and `post` is a pure function of
 // (upstream, rules), safely re-runnable while rules are being authored. See
-// scripts/update-data/retranslation.md for the full design; this is the mechanism.
+// docs/retranslation.md for the full design; this is the mechanism.
 //
 // Pali/HTML have no translatable English prose, so this step only ever touches sujato/*.
 import fs from 'node:fs';
@@ -32,7 +32,7 @@ const DIFF_DIR = path.join(ROOT, 'data', 'diff');
 // `sujatoDir`; only reads it. Writes `postDir` (wiped and fully rewritten each run) only when
 // every anchor holds — a dead term rule or a segment override whose `from` no longer matches
 // verbatim is a hard fail, and a hard-failing run must not silently produce a degraded build (see
-// retranslation.md's anchors table).
+// docs/retranslation.md's anchors table).
 export async function runPost({
   sujatoDir = SUJATO_DIR,
   postDir = SUJATO_POST_DIR,
@@ -208,7 +208,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
         }
       }
     }
-    console.error(`\nRun ${green('update-data:triage')} to work through it — see scripts/update-data/retranslation.md.`);
+    console.error(`\nRun ${green('update-data:triage')} to work through it — see docs/retranslation.md.`);
     process.exit(1);
   }
 

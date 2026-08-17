@@ -53,7 +53,7 @@ function formatSyncedAt(iso: string): string {
   return `${days} day${days === 1 ? '' : 's'} ago`;
 }
 
-// One line describing the offline-sync queue (see offline-sync.md's "Sync state") — the same states the
+// One line describing the offline-sync queue (see docs/offline-sync.md's "Sync state") — the same states the
 // TreePane sync indicator shows, spelled out in words for the place a user would come looking for
 // more detail than an icon can carry.
 function syncStatusLine(status: SyncStatus, pendingCount: number, lastSyncedAt: string | null): string {
@@ -345,7 +345,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                 )}
               </>
             )}
-            {/* This is about lists/notes/highlights syncing to the account (offline-sync.md), a
+            {/* This is about lists/notes/highlights syncing to the account (docs/offline-sync.md), a
                 separate mechanism from the corpus caching above — grouped here anyway since both
                 read as "offline-related status" to a user, and neither means anything signed out. */}
             {user && (
