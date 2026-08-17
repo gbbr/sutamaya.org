@@ -56,7 +56,6 @@ const userDataDefaults: ReturnType<typeof useUserData> = {
   submitNote: async () => {},
   setHighlightRanges: async () => {},
   markVisited: () => {},
-  syncUserData: async () => {},
 };
 
 describe('ReaderPage sutta header chips', () => {

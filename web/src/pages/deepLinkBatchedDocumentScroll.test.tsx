@@ -57,7 +57,6 @@ const userDataDefaults: ReturnType<typeof useUserData> = {
   submitNote: async () => {},
   setHighlightRanges: async () => {},
   markVisited: () => {},
-  syncUserData: async () => {},
 };
 
 describe('reader deep link into an already-visited batched document', () => {

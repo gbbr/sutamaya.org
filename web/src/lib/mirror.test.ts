@@ -1,0 +1,251 @@
+import { describe, expect, it } from 'vitest';
+import {
+  applyFlushOutcome,
+  applySnapshot,
+  createListRecord,
+  emptyMirror,
+  markVisitedRecord,
+  queueMembership,
+  removeListRecord,
+  renameListRecord,
+  reorderListRecords,
+  setNoteRecord,
+  writeHighlightRecord,
+  type FlushOutcome,
+  type MirrorState,
+} from './mirror';
+import type { UserData } from './api';
+
+const emptySnapshot: UserData = { lists: [], membership: {}, notes: {}, highlights: {}, visited: {} };
+
+function snapshot(overrides: Partial<UserData>): UserData {
+  return { ...emptySnapshot, ...overrides };
+}
+
+function list(state: MirrorState, id: string, parentId: string | null = null, kind: 'list' | 'group' = 'list'): MirrorState {
+  return createListRecord(state, { id, label: id, parentId, kind });
+}
+
+// A pulled record, as applySnapshot would have written it: clean, and therefore replaceable.
+function pulled(state: MirrorState, id: string, items: string[] = []): MirrorState {
+  return applySnapshot(state, snapshot({ lists: [{ id, label: id, parentId: null, kind: 'list', items }] }));
+}
+
+describe('applySnapshot', () => {
+  it('replaces clean records and keeps dirty ones', () => {
+    let state = pulled(emptyMirror('u1'), 'l1');
+    state = renameListRecord(state, 'l1', 'renamed offline');
+    state = pulled(state, 'l1');
+
+    // The pull was taken before the rename reached the server, so the local version is the newer
+    // one and stays — that is the whole reason a dirty flag exists rather than a cache.
+    expect(state.lists.l1.dirty).toBe(true);
+    expect(state.lists.l1.data.label).toBe('renamed offline');
+  });
+
+  it('drops a clean record the snapshot no longer mentions', () => {
+    let state = pulled(emptyMirror('u1'), 'l1');
+    state = applySnapshot(state, emptySnapshot);
+
+    // Deleted on another device, or cascaded out with a deleted ancestor: either way the server is
+    // right and there is nothing local worth keeping.
+    expect(state.lists.l1).toBeUndefined();
+  });
+
+  it('replays a queued membership op over the pulled items', () => {
+    let state = pulled(emptyMirror('u1'), 'l1');
+    state = queueMembership(state, 'l1', 'dn1', true);
+    state = pulled(state, 'l1', []);
+
+    // The add hasn't landed, so the snapshot doesn't have it — without the replay the sutta would
+    // blink out of the list on every pull until the flush caught up.
+    expect(state.lists.l1.data.items).toEqual(['dn1']);
+    expect(state.ops).toHaveLength(1);
+  });
+
+  it('does not resurrect a group a pending erase names', () => {
+    let state = applySnapshot(
+      emptyMirror('u1'),
+      snapshot({ highlights: { dn1: [{ id: 'h1', i: 0, s: 0, e: 5, c: 'yellow', g: 'g1', m: '2026-01-01T00:00:00.000Z|d' }] } })
+    );
+    state = writeHighlightRecord(state, 'dn1', [{ i: 0, s: 0, e: 5 }], null);
+    expect(state.highlights.g1).toBeUndefined();
+
+    state = applySnapshot(
+      state,
+      snapshot({ highlights: { dn1: [{ id: 'h1', i: 0, s: 0, e: 5, c: 'yellow', g: 'g1', m: '2026-01-01T00:00:00.000Z|d' }] } })
+    );
+
+    // The erase is still queued, so the server still has the group — dropping it here is what keeps
+    // an erase made offline from visibly undoing itself on every pull.
+    expect(state.highlights.g1).toBeUndefined();
+  });
+
+  it('recombines a pulled group into one record per `g`', () => {
+    const state = applySnapshot(
+      emptyMirror('u1'),
+      snapshot({
+        highlights: {
+          dn1: [
+            { id: 'h2', i: 1, s: 0, e: 4, c: 'yellow', g: 'g1', m: '2026-01-01T00:00:00.000Z|d' },
+            { id: 'h1', i: 0, s: 3, e: 9, c: 'yellow', g: 'g1', m: '2026-01-01T00:00:00.000Z|d' },
+          ],
+        },
+      })
+    );
+
+    // One row per segment on the wire, one record per group in the mirror — and in segment order,
+    // whatever order the rows arrived in.
+    expect(Object.keys(state.highlights)).toEqual(['g1']);
+    expect(state.highlights.g1.data.ranges).toEqual([
+      { i: 0, s: 3, e: 9 },
+      { i: 1, s: 0, e: 4 },
+    ]);
+  });
+});
+
+describe('local collapses', () => {
+  it('drops a highlight group created and erased before either ever synced', () => {
+    let state = writeHighlightRecord(emptyMirror('u1'), 'dn1', [{ i: 0, s: 0, e: 5 }], 'yellow');
+    const created = Object.keys(state.highlights);
+    expect(created).toHaveLength(1);
+
+    state = writeHighlightRecord(state, 'dn1', [{ i: 0, s: 0, e: 5 }], null);
+
+    // Pushed as a create-then-tombstone pair the tombstone matches nothing if it lands first, and
+    // the create then resurrects a highlight the user already erased. Nothing to push is both
+    // simpler and safer.
+    expect(state.highlights).toEqual({});
+  });
+
+  it('carries a dropped groups own tombstones into the write that replaces it', () => {
+    // A synced group, recoloured offline, then erased offline before either write went out.
+    let state = applySnapshot(
+      emptyMirror('u1'),
+      snapshot({ highlights: { dn1: [{ id: 'h1', i: 0, s: 0, e: 5, c: 'yellow', g: 'synced', m: '2026-01-01T00:00:00.000Z|d' }] } })
+    );
+    state = writeHighlightRecord(state, 'dn1', [{ i: 0, s: 0, e: 5 }], 'green');
+    state = writeHighlightRecord(state, 'dn1', [{ i: 0, s: 0, e: 5 }], null);
+
+    // The recolour is dropped as never-synced, but the group it displaced is one the server still
+    // holds — losing that tombstone with it would bring the original highlight back on the next pull.
+    const pending = Object.values(state.highlights);
+    expect(pending).toHaveLength(1);
+    expect(pending[0].data.color).toBeNull();
+    expect(pending[0].data.erase).toEqual(['synced']);
+  });
+
+  it('cancels an add and a remove of the same sutta in the same list', () => {
+    let state = pulled(emptyMirror('u1'), 'l1');
+    state = queueMembership(state, 'l1', 'dn1', true);
+    state = queueMembership(state, 'l1', 'dn1', false);
+
+    // Both were still queued, so the list's items are back to what the server already has.
+    expect(state.ops).toEqual([]);
+    expect(state.lists.l1.data.items).toEqual([]);
+  });
+
+  it('drops a list deleted before its create ever reached the server, along with its ops', () => {
+    let state = list(emptyMirror('u1'), 'l1');
+    state = queueMembership(state, 'l1', 'dn1', true);
+    state = removeListRecord(state, 'l1');
+
+    expect(state.lists.l1).toBeUndefined();
+    expect(state.ops).toEqual([]);
+  });
+
+  it('tombstones a list the server already knows about rather than removing it', () => {
+    let state = pulled(emptyMirror('u1'), 'l1');
+    state = removeListRecord(state, 'l1');
+
+    // The row has to stay: a device that was offline when the delete happened would otherwise push
+    // its still-live copy back, which against a missing row is a fresh creation.
+    expect(state.lists.l1.data.deleted).toBe(true);
+    expect(state.lists.l1.dirty).toBe(true);
+  });
+
+  it('renumbers a reorder and re-parents anything crossing into the target parent', () => {
+    let state = list(emptyMirror('u1'), 'g1', null, 'group');
+    state = list(state, 'a');
+    state = list(state, 'b', 'g1');
+    state = reorderListRecords(state, 'g1', ['b', 'a']);
+
+    // Sets parentId on every id in `order`, not just position, which is what lets a cross-parent
+    // drop fold into this single call instead of a setListParent first (see planListDrop in
+    // lib/listTreeDrop.ts) — the fix for a real shipped bug (a55e1ecc) where two sequential calls
+    // produced a visible two-step "jump" on drop.
+    expect(state.lists.a.data).toMatchObject({ parentId: 'g1', position: 1 });
+    expect(state.lists.b.data).toMatchObject({ parentId: 'g1', position: 0 });
+    expect(state.lists.a.dirty && state.lists.b.dirty).toBe(true);
+    // Untouched sibling sets keep their own positions — `position` orders siblings, not the table.
+    expect(state.lists.g1.data.parentId).toBeNull();
+  });
+
+  it('skips re-marking whatever is already the most recent visit', () => {
+    let state = markVisitedRecord(emptyMirror('u1'), 'dn1');
+    const before = state.visited;
+    state = markVisitedRecord(state, 'dn1');
+    expect(state.visited).toBe(before);
+
+    // A genuine change of most-recent is not skipped — that is a real reordering of "Recent".
+    state = markVisitedRecord(state, 'dn2');
+    state = markVisitedRecord(state, 'dn1');
+    expect(state.visited.dn1.data.visitedAt > state.visited.dn2.data.visitedAt).toBe(true);
+  });
+});
+
+describe('applyFlushOutcome', () => {
+  const outcome = (over: Partial<FlushOutcome>): FlushOutcome => ({
+    status: 'ok',
+    acks: [],
+    doneOps: [],
+    remaps: [],
+    snapshot: null,
+    ...over,
+  });
+
+  it('clears the dirty flag for the version that was actually pushed', () => {
+    let state = setNoteRecord(emptyMirror('u1'), 'dn1', 'first');
+    const pushed = state.notes.dn1.data.mtime;
+    state = applyFlushOutcome(state, outcome({ acks: [{ kind: 'note', id: 'dn1', mtime: pushed }] }));
+
+    expect(state.notes.dn1.dirty).toBe(false);
+  });
+
+  it('leaves a record dirty when it was edited again while the flush was out', () => {
+    let state = setNoteRecord(emptyMirror('u1'), 'dn1', 'first');
+    const pushed = state.notes.dn1.data.mtime;
+    state = setNoteRecord(state, 'dn1', 'second');
+    state = applyFlushOutcome(state, outcome({ acks: [{ kind: 'note', id: 'dn1', mtime: pushed }] }));
+
+    // The ack is for a version the mirror has already moved past, so the newer body is still unsent.
+    expect(state.notes.dn1.dirty).toBe(true);
+    expect(state.notes.dn1.data.text).toBe('second');
+  });
+
+  it('moves a re-minted list id, its children and its queued ops together', () => {
+    let state = list(emptyMirror('u1'), 'g1', null, 'group');
+    state = createListRecord(state, { id: 'c1', label: 'child', parentId: 'g1', kind: 'list' });
+    state = queueMembership(state, 'g1', 'dn1', true);
+    state = applyFlushOutcome(state, outcome({ remaps: [{ from: 'g1', to: 'g2' }] }));
+
+    expect(state.lists.g1).toBeUndefined();
+    expect(state.lists.g2.data.id).toBe('g2');
+    // A reference left behind would point at nothing: the child would render at the top level and
+    // the add would 404 against a list that does not exist.
+    expect(state.lists.c1.data.parentId).toBe('g2');
+    expect(state.ops[0].listId).toBe('g2');
+  });
+
+  it('retires a pushed erase-only write, which has no rows of its own to keep', () => {
+    let state = applySnapshot(
+      emptyMirror('u1'),
+      snapshot({ highlights: { dn1: [{ id: 'h1', i: 0, s: 0, e: 5, c: 'yellow', g: 'g1', m: '2026-01-01T00:00:00.000Z|d' }] } })
+    );
+    state = writeHighlightRecord(state, 'dn1', [{ i: 0, s: 0, e: 5 }], null);
+    const [g, record] = Object.entries(state.highlights)[0];
+    state = applyFlushOutcome(state, outcome({ acks: [{ kind: 'highlight', id: g, mtime: record.data.mtime }] }));
+
+    expect(state.highlights).toEqual({});
+  });
+});

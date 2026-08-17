@@ -2,10 +2,9 @@ import type { Highlight, ListDef, ListKind, Membership, NotesMap, HighlightsMap,
 
 // Deliberately generous: this is the "the connection is dead" backstop, not a latency budget.
 // /api/data carries the user's whole dataset, so a genuinely slow mobile connection can legitimately
-// take a while — timing out early would turn a slow-but-fine request into a failure, and every
-// failed mutation triggers a full resync (see UserDataContext), making things worse rather than
-// better. Without any timeout at all, though, a stalled connection hangs for the browser's own
-// default (minutes), leaving mutations unsettled and their in-progress UI stuck with them.
+// take a while — timing out early would turn a slow-but-fine request into a failure, which stops the
+// rest of that flush and defers it to the next trigger. Without any timeout at all, though, a
+// stalled connection hangs for the browser's own default (minutes), holding the flush open with it.
 const REQUEST_TIMEOUT_MS = 30_000;
 
 // Carries the HTTP status alongside the message so callers — retryWithBackoff in particular — can
@@ -79,23 +78,32 @@ export const dataApi = {
   exportUrl: '/api/data/export',
 };
 
+// Every mutating call carries the `mtime` its record was stamped with when the user acted (see
+// lib/mtime.ts) — the server stores the write only if that beats what it already has. None of
+// these are called from the UI directly any more: the mirror's flush (lib/sync.ts) is the only
+// caller, pushing a dirty record's desired state rather than the gesture that produced it.
 export const listsApi = {
-  create: (label: string, parentId: string | null = null, kind: ListKind = 'list') =>
-    request<{ list: ListDef }>('/lists', { method: 'POST', body: JSON.stringify({ label, parentId, kind }) }),
-  rename: (id: string, label: string) => request<{ ok: true }>(`/lists/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify({ label }) }),
-  setParent: (id: string, parentId: string | null) =>
-    request<{ ok: true }>(`/lists/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify({ parentId }) }),
-  remove: (id: string) => request<{ ok: true }>(`/lists/${encodeURIComponent(id)}`, { method: 'DELETE' }),
-  reorder: (parentId: string | null, order: string[]) =>
-    request<{ ok: true }>('/lists/order', { method: 'PUT', body: JSON.stringify({ parentId, order }) }),
+  // `id` is minted by the client, so a list created offline can be renamed, filed into and moved
+  // before it has ever reached the server. The insert is ON CONFLICT DO NOTHING, so re-sending a
+  // create whose response was lost is a no-op — unless the id belongs to another account, which
+  // answers 409 `id_collision` and is the flush's cue to mint a fresh one.
+  create: (list: { id: string; label: string; parentId: string | null; kind: ListKind; mtime: string }) =>
+    request<{ list: ListDef }>('/lists', { method: 'POST', body: JSON.stringify(list) }),
+  // One PATCH carries a list's whole mutable row — label, parent and sibling position alike —
+  // because the mirror pushes the record's desired state, not the individual edit that changed it.
+  update: (id: string, patch: { label?: string; parentId?: string | null; position?: number; mtime: string }) =>
+    request<{ ok: true }>(`/lists/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify(patch) }),
+  remove: (id: string, mtime: string) =>
+    request<{ ok: true }>(`/lists/${encodeURIComponent(id)}`, { method: 'DELETE', body: JSON.stringify({ mtime }) }),
   addItem: (id: string, suttaId: string) => request<{ ok: true }>(`/lists/${encodeURIComponent(id)}/items`, { method: 'POST', body: JSON.stringify({ suttaId }) }),
   removeItem: (id: string, suttaId: string) => request<{ ok: true }>(`/lists/${encodeURIComponent(id)}/items/${encodeURIComponent(suttaId)}`, { method: 'DELETE' }),
-  reorderItems: (id: string, order: string[]) =>
-    request<{ ok: true }>(`/lists/${encodeURIComponent(id)}/items/order`, { method: 'PUT', body: JSON.stringify({ order }) }),
+  reorderItems: (id: string, order: string[], mtime: string) =>
+    request<{ ok: true }>(`/lists/${encodeURIComponent(id)}/items/order`, { method: 'PUT', body: JSON.stringify({ order, mtime }) }),
 };
 
 export const notesApi = {
-  set: (suttaId: string, text: string) => request<{ ok: true }>(`/notes/${encodeURIComponent(suttaId)}`, { method: 'PUT', body: JSON.stringify({ text }) }),
+  set: (suttaId: string, text: string, mtime: string) =>
+    request<{ ok: true }>(`/notes/${encodeURIComponent(suttaId)}`, { method: 'PUT', body: JSON.stringify({ text, mtime }) }),
 };
 
 export const highlightsApi = {
@@ -112,7 +120,10 @@ export const highlightsApi = {
 };
 
 export const visitedApi = {
-  mark: (suttaId: string) => request<{ ok: true }>(`/visited/${encodeURIComponent(suttaId)}`, { method: 'POST' }),
+  // `visited` has no separate mtime column — visited_at is its own clock, so the instant the user
+  // opened the sutta is both the value stored and the guard the write is conditional on.
+  mark: (suttaId: string, visitedAt: string) =>
+    request<{ ok: true }>(`/visited/${encodeURIComponent(suttaId)}`, { method: 'POST', body: JSON.stringify({ visitedAt }) }),
 };
 
 export type { Highlight };

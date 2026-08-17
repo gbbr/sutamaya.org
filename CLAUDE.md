@@ -166,8 +166,7 @@ visited     { user_id, sutta_id, visited_at }                 -- PK (user_id, su
 ```
 
 **`mtime` and `deleted` are the offline-sync machinery** — see `offline-sync.md` for the full
-design, of which the server half is built and the client half (an IndexedDB mirror replacing
-`UserDataContext`'s optimistic-write model) is not yet.
+design, and "Client mirror" under Frontend for the client half that pushes them.
 
 - **`mtime`** is a `${ISO}|${deviceId}` string (`lib/mtime.js`); ISO 8601 is fixed-width, so
   lexicographic comparison is chronological in both SQLite `TEXT` and JS. Every mutable write is
@@ -239,7 +238,10 @@ adapts each row's snake_case columns into the `{id, data}` shape that function e
 also returns each list's `parentId` and its own `items` (in stored order) so the client can render
 lists as a tree and show/reorder a list's contents without a second round trip. `PUT
 /api/lists/order` (sibling lists) replaces `position` outright via `db.batch()`, since a full
-reorder isn't expressible as a single statement the way add/remove is; `PUT
+reorder isn't expressible as a single statement the way add/remove is — **the client no longer calls
+it**, since it reassigns `parentId` wholesale on every id it's given and so can't be safely replayed
+from an offline queue; a reorder now goes through one conditional `PATCH` per moved sibling instead
+(see "Client mirror"), and the route stays only as API surface. `PUT
 /api/lists/:id/items/order` (one list's suttas) instead *reconciles* the posted order against the
 list's current `items` (`lib/listItemOrder.js`'s `reconcileItemOrder`) — an id added by another
 tab after the client's snapshot is appended rather than silently dropped, and one removed the same
@@ -343,7 +345,10 @@ since there's no stored order the way a real list has, and capped since `ListPan
 item as an unvirtualized DOM row), can't be renamed/deleted/reordered, and the client keeps them
 out of the user-editable "My lists" tree via their `auto: true` flag, rendering them in
 `TreePane`'s own "Automatic" section instead (`Recent` first, then `Highlights`, then `Notes` — a
-fixed order set in `TreePane.tsx`, not the `lists` array's own order).
+fixed order set in `TreePane.tsx`, not the `lists` array's own order). The client synthesizes its own
+copy over the mirror (`web/src/lib/mirrorView.ts`, a port of this function) and renders *that*, so a
+sutta noted or highlighted offline joins the right auto-list with no round trip; these ones only ever
+travel as far as `applySnapshot`, which drops them.
 
 `worker/src/index.js` mounts the rate-limit and CORS middleware on `/api/*`, then routes: `/api/
 auth` → `authRouter`, `/api/lists` → `listsRouter`, `/api` → `annotationsRouter` (its own routes
@@ -355,17 +360,17 @@ uncaught.
 ## Frontend (`web/src/`)
 
 - `context/` — one provider per concern: `AuthContext` (session user), `CorpusContext` (static
-  corpus + dictionary, fetched once), `UserDataContext` (lists/notes/highlights/visited, backed
-  by the API with optimistic local updates — every mutator applies its change locally first,
-  then either syncs fresh server state on success or, on failure, logs and re-syncs from the
-  server to discard the stale optimistic edit, since there's no offline write queue),
-  `ReaderPrefsContext` (theme/font/line-height/Pali/notes-visibility), and `UiPrefsContext`
+  corpus + dictionary, fetched once), `UserDataContext` (lists/notes/highlights/visited, a view
+  over the offline mirror — see "Client mirror" below), `ReaderPrefsContext`
+  (theme/font/line-height/Pali/notes-visibility), and `UiPrefsContext`
   (pane-width/UI-scale/UI-font). Both prefs contexts are `localStorage`-backed
   (`usePersistedState`) only — deliberately per-device, not synced to the account, since theme
   and font/size preferences are display settings a user may reasonably want to differ by device
   (screen size, ambient lighting).
 - `lib/corpus.ts`, `lib/dictionary.ts`, `lib/theme.ts`, `lib/api.ts`, `lib/mtime.ts` — pure
   data/fetch helpers, no React.
+- `lib/mirror.ts`, `lib/mirrorView.ts`, `lib/mirrorDb.ts`, `lib/sync.ts`, `lib/listTree.ts` — the
+  offline mirror and its flush; also pure, no React (`UserDataContext` is the only caller).
 - `components/SegmentedText.tsx` — the reader's paragraph renderer (tap-to-reveal Pali, word-tap
   dictionary, highlighted-range spans). Stored highlight ranges can overlap (two devices, both
   offline), so what to paint comes from `lib/highlights.ts`'s `paintSegmentHighlights` rather than
@@ -445,6 +450,53 @@ uncaught.
   before actually closing) calls `stopPropagation()` so the reader's own handler doesn't also fire
   on the same keypress and skip past that first step.
 
+### Client mirror
+
+User data is **written locally first and synced afterwards** — the local write *is* the durable
+write, so a list, note or highlight made with no network is kept rather than logged and lost. See
+`offline-sync.md` for the design; this is what it looks like in the code.
+
+- **`lib/mirror.ts`** holds the mirror: a `MirrorState` of `lists`/`notes`/`highlights`/`visited`
+  records plus a queue of `items` operations, namespaced by `userId`. Every mutator is a pure state
+  transition that marks what it touched **dirty** and stamps `mtime` (`lib/mtime.ts`) *when the user
+  acts* — never when the flush reaches the network, which is the difference between a week-old
+  offline edit losing a merge and wrongly winning it.
+- **Records versus operations.** A list row, a note, a visit and a highlight group are **records**,
+  pushed as desired state, so replaying one means the same thing an hour later. Everything that edits
+  a list's `items` — add, remove, reorder — is a queued **operation** instead, because those are
+  already idempotent and commuting server-side (`ADD_ITEM_SQL`/`REMOVE_ITEM_SQL`,
+  `reconcileItemOrder`), which is what lets two devices each file a different sutta into the same
+  list and have both stick. A flush therefore pushes **records first, then operations**: an operation
+  naming a list the server has never seen 404s and is discarded.
+- **`lib/sync.ts`** is the flush. List creates go in `mtime` order (so a parent reaches the server
+  before the child naming it, and so the server's own prepend reproduces the order the user created
+  them in), then the other records, then the operations, then `GET /api/data` — a full snapshot, no
+  delta protocol. A `409 id_collision` on `POST /lists` re-mints the id and rewrites every local
+  reference to it (children, queued ops); a 401 pauses the flush and prompts re-auth with the queue
+  intact; a retryable failure stops it partway and the rest goes next time; a 404 retires the write
+  (the row is gone, so it is moot rather than failed); anything else permanent leaves the record
+  dirty rather than retrying blindly. Nothing mutates state directly — the flush reports what landed
+  and `applyFlushOutcome` folds that into whatever the mirror looks like *by then*, matched on the
+  exact `mtime` pushed, so a record edited mid-flush stays dirty. One flusher at a time across tabs,
+  via a Web Lock.
+- **Triggers** (`UserDataContext`): app load once the mirror is read, ~2s debounced after any
+  mutation, the `online` event, `visibilitychange` to visible, and a 5-minute poll as a backstop.
+- **`lib/mirrorView.ts`** derives what the UI renders — a port of the worker's `assembleUserData`,
+  including the three auto-lists, because a sutta highlighted offline has to appear under
+  "Highlights" with no round trip. `lib/listTree.ts` is likewise a port of the worker's
+  `repairListTree`, so a group deleted offline takes its contents with it immediately. Both exist
+  twice on purpose (no module is shared between the two npm workspaces); the server's copies still
+  shape the pull.
+- **`lib/mirrorDb.ts`** persists one IndexedDB record per user id — the whole mirror as a single
+  value, since the dataset is tens of kilobytes and a per-record store would buy only partial-write
+  hazards. Keying by user id is what stops an account switch from cross-writing. Where IndexedDB
+  isn't available at all it falls back to memory, so the app still works for the session.
+- **Local collapses**, all in `lib/mirror.ts`: a highlight group created and erased before either
+  synced is dropped rather than pushed as a create-then-tombstone pair (whose order can't be
+  guaranteed); a list deleted before its create ever landed goes outright along with its queued ops;
+  an add and a remove of the same sutta in the same list cancel; only the latest item order for a
+  list is kept.
+
 ## Offline strategy
 
 `corpus.json` (nav tree + titles/blurbs, a few MB) and the self-hosted latin/latin-ext font
@@ -467,13 +519,20 @@ something there.
 
 ## Known gaps / deliberate simplifications
 
-- No offline write queue *on the client yet*: list/note/highlight mutations still fire immediately
-  against the API, so if the network is down the optimistic local update stands but the write is
-  lost (only `console.error`-logged). The server side of the fix is in place — client-supplied
-  `mtime` with conditional writes, tombstones, client-generated list ids, read-time tree repair, and
-  highlights as immutable client-named groups (see the Backend section) — but the client half, an
-  IndexedDB mirror with a dirty-record flush replacing `UserDataContext`'s optimistic model, is
-  not. `offline-sync.md` is the plan and tracks which steps are done.
+- **Offline writing has no UI.** The mirror and its flush are built (see "Client mirror"), so a
+  write made offline is durable and syncs on reconnect — but nothing on screen says so. There's no
+  synced/pending/offline indicator, the 401 pause prompts re-auth through
+  `promptGoogleSignIn()`'s existing (modal) surface rather than a quiet one, and a record the server
+  rejects permanently stays dirty with only a `console.error` to show for it, retried on every flush
+  forever. That's step 5 of `offline-sync.md`, which is the plan and tracks which steps are done.
+- A last-writer-wins merge discards the losing edit silently, by design — see `offline-sync.md`'s
+  "Deliberate compromises", which also rules out the conflict UI that would surface it. Order
+  (sibling order, a list's item order) moves as a unit on its row's own `mtime`, so two devices
+  reordering the same thing offline means one ordering wins and the user re-drags.
+- Highlight offsets are content coordinates, not anchors: `(i, s, e)` index into segment text, so an
+  `update-data` corpus refresh (or a device holding a stale `CacheFirst` copy of a sutta — see the
+  cache-staleness gap below) can leave a stored range denoting different text. Out of scope for
+  offline sync and unfixed; it needs anchoring on a quoted prefix/suffix instead.
 - The reader has no translation-source picker — this dataset only has one English translation per
   collection, so there's nothing to switch to. The reader heading instead shows a "Source:
   SuttaCentral (modified)" attribution line (`ReaderPage.tsx`), linking to the `sc-data` commit

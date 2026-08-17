@@ -17,7 +17,7 @@ describe('request()', () => {
   it('attaches an abort signal, so a stalled connection cannot hang for the browser default', async () => {
     const fetchMock = stubFetch(async () => new Response(JSON.stringify({ ok: true }), { status: 200 }));
 
-    await notesApi.set('dn1', 'a note');
+    await notesApi.set('dn1', 'a note', '2026-01-01T00:00:00.000Z|dev');
 
     const init = fetchMock.mock.calls[0][1] as RequestInit;
     expect(init.signal).toBeInstanceOf(AbortSignal);
@@ -33,7 +33,7 @@ describe('request()', () => {
 
     // Every mutator logs its failure via console.error (see UserDataContext) — "signal timed out"
     // there says nothing about what actually happened.
-    await expect(notesApi.set('dn1', 'a note')).rejects.toThrow(/timed out after 30s/);
+    await expect(notesApi.set('dn1', 'a note', '2026-01-01T00:00:00.000Z|dev')).rejects.toThrow(/timed out after 30s/);
   });
 
   it('reports a timeout that lands during the body read the same way', async () => {
@@ -57,19 +57,19 @@ describe('request()', () => {
       throw new TypeError('Failed to fetch');
     });
 
-    await expect(notesApi.set('dn1', 'a note')).rejects.toThrow('Failed to fetch');
+    await expect(notesApi.set('dn1', 'a note', '2026-01-01T00:00:00.000Z|dev')).rejects.toThrow('Failed to fetch');
   });
 
   it('still surfaces the server error body on a non-ok response', async () => {
     stubFetch(async () => new Response(JSON.stringify({ error: 'rate_limited' }), { status: 429 }));
 
-    await expect(notesApi.set('dn1', 'a note')).rejects.toThrow('rate_limited');
+    await expect(notesApi.set('dn1', 'a note', '2026-01-01T00:00:00.000Z|dev')).rejects.toThrow('rate_limited');
   });
 
   it('attaches the HTTP status to the thrown error, so callers can classify it', async () => {
     stubFetch(async () => new Response(JSON.stringify({ error: 'not_found' }), { status: 404 }));
 
-    const err = await notesApi.set('dn1', 'a note').catch((e) => e);
+    const err = await notesApi.set('dn1', 'a note', '2026-01-01T00:00:00.000Z|dev').catch((e) => e);
     expect(err).toBeInstanceOf(ApiError);
     expect((err as ApiError).status).toBe(404);
   });
