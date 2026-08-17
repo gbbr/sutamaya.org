@@ -1,9 +1,15 @@
 .DS_Store
-.claude/
+# Contents rather than the directory itself: git can't re-include anything under an excluded
+# directory, and skills/ and commands/ are checked in (see .claude/skills/retranslate/).
+.claude/*
+!.claude/skills/
+!.claude/commands/
 node_modules/
 web/dist/
 web/dev-dist/
 web/public/data/
+data/sujato.post/
+scripts/update-data/diff/
 .env
 *.local
 *.tsbuildinfo
