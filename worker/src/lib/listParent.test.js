@@ -54,4 +54,19 @@ describe('wouldCreateCycle', () => {
   it('is false for moving a leaf list around regardless of target', () => {
     expect(wouldCreateCycle('l1', 'g3', tree)).toBe(false);
   });
+
+  it('terminates on rows that are already in a cycle', () => {
+    // Cycles are broken at read time (lib/listTree.js) and never written back, so storage can
+    // genuinely hold one — two devices' reparents interleaving, which D1 gives no transaction to
+    // prevent. Without the visited set this walk never ends, and every later request touching that
+    // subtree burns the Worker's CPU limit instead of answering.
+    const cyclic = [
+      { id: 'a', parentId: 'b' },
+      { id: 'b', parentId: 'a' },
+      { id: 'c', parentId: null },
+    ];
+    expect(wouldCreateCycle('c', 'a', cyclic)).toBe(false);
+    // Still correct for a move that really would close a loop through the same rows.
+    expect(wouldCreateCycle('a', 'b', cyclic)).toBe(true);
+  });
 });

@@ -4,6 +4,7 @@ import {
   applyFlushOutcome,
   createListRecord,
   emptyMirror,
+  markDispatched,
   markVisitedRecord,
   queueItemOrder,
   queueMembership,
@@ -189,6 +190,10 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     const current = stateRef.current;
     if (!current.userId || flushing.current) return;
     flushing.current = true;
+    // Before the first request goes out, not after the last one comes back: from here on the server
+    // may already hold these rows, so a delete or erase made while the flush is out has to be
+    // pushed as a tombstone rather than collapsed away locally (see markDispatched).
+    setState((s) => (s.userId === current.userId ? markDispatched(s, current) : s));
     try {
       const outcome = await flushWithLock(current);
       // Another tab is flushing this same mirror — it will apply the result for both of us.

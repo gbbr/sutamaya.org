@@ -483,7 +483,12 @@ write, so a list, note or highlight made with no network is kept rather than log
   them dirty, since the op is what carries it; `replayOps` re-applies it over each pull so the tree
   doesn't snap back to the server's older order while the flush catches up. A flush pushes
   **records first, then operations**: an operation naming a list the server has never seen 404s and
-  is discarded.
+  is discarded. Both order ops are conditional on the *row's* `mtime`, though — the same column a
+  rename or reparent writes — so `editList` re-stamps any queued order op naming a row it touches
+  (`restampOrderOps`). Without that, a reorder followed by a rename would leave the op behind the
+  record that flushes ahead of it, matching no row; the endpoint still answers `200 {ok:true}`, so
+  the flush would retire the op as landed while the pull restored the order the user had just
+  dragged away from.
 - **`lib/sync.ts`** is the flush. List creates go in `mtime` order (so a parent reaches the server
   before the child naming it, and so the server's own prepend reproduces the order the user created
   them in), then the other records, then the operations, then `GET /api/data` — a full snapshot, no
@@ -502,16 +507,32 @@ write, so a list, note or highlight made with no network is kept rather than log
   "Highlights" with no round trip. `lib/listTree.ts` is likewise a port of the worker's
   `repairListTree`, so a group deleted offline takes its contents with it immediately. Both exist
   twice on purpose (no module is shared between the two npm workspaces); the server's copies still
-  shape the pull.
+  shape the pull. Deriving the auto-lists here is why every pulled row has to carry the timestamp
+  they order by: `GET /api/data` sends each highlight's `mtime` as `m` and each note's as
+  `notes[suttaId].m` (the wire shape is `{text, m}`, not a bare string — see `UserData` in
+  `lib/api.ts`), and `visited` is its own clock. Without it the entries all compare equal and the
+  list falls back to the order the server's `SELECT` happened to return.
+- **`lib/lastUser.ts`** remembers who was signed in, in `localStorage`. Identity is the one thing
+  the mirror can't answer for itself — it stores everything under a user id, but only `GET
+  /api/auth/me` ever said what that id is — so `AuthContext` seeds `user` from it rather than from
+  null. Relaunching the PWA with no network otherwise left that fetch failing, `user` null, and
+  `UserDataProvider` mounting an empty mirror over a full one: every list, note and highlight on
+  the device invisible, and unwritable too. It's a cache of an identity, not a credential; the
+  signed session cookie still authorizes everything, so a stale entry costs at most a 401 on the
+  next flush, which is already the re-auth path.
 - **`lib/mirrorDb.ts`** persists one IndexedDB record per user id — the whole mirror as a single
   value, since the dataset is tens of kilobytes and a per-record store would buy only partial-write
   hazards. Keying by user id is what stops an account switch from cross-writing. Where IndexedDB
   isn't available at all it falls back to memory, so the app still works for the session.
 - **Local collapses**, all in `lib/mirror.ts`: a highlight group created and erased before either
-  synced is dropped rather than pushed as a create-then-tombstone pair (whose order can't be
-  guaranteed); a list deleted before its create ever landed goes outright along with its queued ops;
+  left the device is dropped rather than pushed as a create-then-tombstone pair (whose order can't be
+  guaranteed); a list deleted before its create ever left goes outright along with its queued ops;
   an add and a remove of the same sutta in the same list cancel; only the latest item order for a
-  list is kept.
+  list is kept. "Before it left" is `createSent`/`sent`, set by `markDispatched` as the flush puts a
+  record on the wire — not `dirty`/`pendingCreate`, which stay set for the whole round trip and past
+  a response lost on the way home. Collapsing a write the server has already taken would leave
+  nothing to carry the delete, and the pull at the end of that same flush hands the row straight
+  back.
 - **Sync state is legible, not just durable.** `UserDataContext` derives a `syncStatus` —
   `'synced' | 'pending' | 'offline' | 'stuck'` — from `lib/mirror.ts`'s `syncCounts()` (how many
   records/ops are dirty, and how many of those the server has permanently rejected) plus the

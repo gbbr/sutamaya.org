@@ -230,7 +230,17 @@ the list's record, because it edits the same `items` column those two do and the
 reconciles a posted order against what is actually stored. Kept as a record it would have needed a
 second clock on the row: the record's `mtime` guards one conditional `UPDATE`, and pushing a rename
 and a reorder under the same one means whichever goes second is rejected for not being strictly
-newer. As an op it carries its own `mtime` and the ordering falls out of the queue.
+newer.
+
+Being an op does not by itself escape that, because the op is still guarded against the *row's*
+`mtime` — there is one clock on the row, and a rename moves it. Since records flush ahead of ops, a
+reorder queued before a rename would arrive behind it and match nothing, and the endpoint answers
+`200 {ok:true}` either way, so the flush would count the op landed and drop it while the pull put
+the old order back. The mirror keeps the two in order instead: `editList` re-stamps any queued order
+op naming the row it is about to stamp (`restampOrderOps` in `web/src/lib/mirror.ts`), so the op
+stays ahead of this device's own later edits to that row. Against *another* device's edits it still
+carries the timestamp from when the user acted, so a stale reorder loses a genuine merge as before.
+Sibling order (`PUT /lists/order`) is guarded per row and re-stamped the same way.
 
 The hybrid brings back one thing pure records would have removed, and it has to be handled rather
 than assumed away: **a flush must push records before operations.** A list created offline and then
@@ -318,7 +328,17 @@ reimplemented, since it is already a pure function of fetched rows, `latestIds` 
 included, and the ids and labels were already duplicated in `web/src/lib/autoLists.ts`. The same goes
 for `repairListTree` (`web/src/lib/listTree.ts`), for the same reason: a group deleted offline only
 takes its contents with it if the cascade runs where the UI reads from. The server keeps both copies,
-which still shape the pull.
+which still shape the pull. Deriving the auto-lists on the client is also what makes each pulled
+row's timestamp part of the wire contract — a note travels as `{text, m}` rather than as bare text,
+alongside the `m` a highlight row already carried — since a client re-deriving `Notes` from rows
+with no timestamps can only order them by however the snapshot arrived.
+
+**Identity has to survive offline too.** The mirror is keyed by user id, but only `GET /api/auth/me`
+ever said what that id is, so a relaunch with no network — the PWA on a plane, which is the case
+this design exists for — left the app unable to name the account whose data it was already holding.
+`web/src/lib/lastUser.ts` remembers the last confirmed user in `localStorage` and `AuthContext`
+starts from it. It caches an identity, not a credential: the signed session cookie still authorizes
+every request, so a stale entry costs a 401 on the next flush, which is the re-auth path anyway.
 
 Supporting work: the mirror is namespaced by `userId` so an account switch can't cross-write; a 401
 pauses the flush and prompts re-authentication rather than dropping records; and a Web Lock elects a
@@ -486,6 +506,12 @@ One step per branch, each independently shippable, each ending with `npm test` g
    - **A dirty flag clears against the exact `mtime` that was pushed**, rather than on the request
      succeeding. The user goes on editing while a flush is out, so an ack for a version the mirror has
      already moved past has to leave the record dirty.
+   - **A local collapse needs "has this left the device", which `dirty` does not answer.** A create
+     and its undo cancel out only while the server has never heard of the row; `dirty` and
+     `pendingCreate` are both still set for the whole round trip and past a response lost on the way
+     home, so collapsing on them drops a delete the server never receives — and the pull at the end
+     of that same flush brings the row back. `markDispatched` marks the records a flush is about to
+     put on the wire, before its first request, and the collapses key off that instead.
    - **`mirrorDb.ts` stores one IndexedDB record per user id** — the whole mirror as a single value.
      At tens of kilobytes a per-record store buys only partial-write hazards.
    - **A 404 retires a write** rather than leaving it dirty forever: the row is gone (deleted

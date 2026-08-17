@@ -61,9 +61,14 @@ export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDoc
     return shaped;
   });
 
+  // `m` is the note's mtime, carried for the same reason a highlight row carries one: the client
+  // derives its own Notes auto-list over the mirror (web/src/lib/mirrorView.ts) so a sutta noted
+  // offline appears in it with no round trip, and it needs a timestamp to order that list by.
+  // Without it every pulled note compares equal and the list falls back to whatever order the
+  // SELECT happened to return.
   const notes = {};
   noteDocs.forEach(({ id, data }) => {
-    notes[id] = data.text;
+    notes[id] = { text: data.text, m: data.updatedAt || '' };
   });
 
   // `m` is the row's mtime, the tiebreak the reader paints overlapping groups by (see

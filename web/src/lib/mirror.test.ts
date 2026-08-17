@@ -4,7 +4,9 @@ import {
   applySnapshot,
   createListRecord,
   emptyMirror,
+  markDispatched,
   markVisitedRecord,
+  queueItemOrder,
   queueMembership,
   removeListRecord,
   renameListRecord,
@@ -42,6 +44,18 @@ describe('applySnapshot', () => {
     // one and stays — that is the whole reason a dirty flag exists rather than a cache.
     expect(state.lists.l1.dirty).toBe(true);
     expect(state.lists.l1.data.label).toBe('renamed offline');
+  });
+
+  it('keeps each pulled notes own mtime', () => {
+    const state = applySnapshot(
+      emptyMirror('u1'),
+      snapshot({ notes: { dn1: { text: 'hello', m: '2026-01-01T00:00:00.000Z|d' } } })
+    );
+
+    // mirrorView orders the Notes auto-list by this. A blank would flatten that order into whatever
+    // order the server's SELECT happened to return, and sort every pulled note below any locally
+    // dirty one regardless of which was actually written more recently.
+    expect(state.notes.dn1.data.mtime).toBe('2026-01-01T00:00:00.000Z|d');
   });
 
   it('drops a clean record the snapshot no longer mentions', () => {
@@ -155,6 +169,33 @@ describe('local collapses', () => {
     expect(state.ops).toEqual([]);
   });
 
+  it('tombstones a list deleted while its own create is still in flight', () => {
+    let state = list(emptyMirror('u1'), 'l1');
+    // What a flush does to the records it is about to put on the wire.
+    state = markDispatched(state, state);
+    state = removeListRecord(state, 'l1');
+
+    // The POST may already have landed, so there is no collapsing this away: dropping the record
+    // leaves nothing to carry the delete, and the pull at the end of that same flush hands the
+    // list back as a clean row.
+    expect(state.lists.l1.data.deleted).toBe(true);
+    expect(state.lists.l1.dirty).toBe(true);
+  });
+
+  it('tombstones a highlight group erased while its own create is still in flight', () => {
+    let state = writeHighlightRecord(emptyMirror('u1'), 'dn1', [{ i: 0, s: 0, e: 5 }], 'yellow');
+    const [g] = Object.keys(state.highlights);
+    state = markDispatched(state, state);
+    state = writeHighlightRecord(state, 'dn1', [{ i: 0, s: 0, e: 5 }], null);
+
+    // Same race as the list above: the group the server may already hold has to be named as a
+    // tombstone, or the erase quietly undoes itself on the next pull.
+    const pending = Object.values(state.highlights);
+    expect(pending).toHaveLength(1);
+    expect(pending[0].data.color).toBeNull();
+    expect(pending[0].data.erase).toEqual([g]);
+  });
+
   it('tombstones a list the server already knows about rather than removing it', () => {
     let state = pulled(emptyMirror('u1'), 'l1');
     state = removeListRecord(state, 'l1');
@@ -228,6 +269,37 @@ describe('local collapses', () => {
     expect(state.lists.b.data.position).toBe(0);
     expect(state.lists.a.data.position).toBe(1);
     expect(state.ops).toHaveLength(1);
+  });
+
+  it('keeps a queued item order ahead of a later edit to the same list', () => {
+    let state = pulled(emptyMirror('u1'), 'l1', ['a', 'b']);
+    state = queueItemOrder(state, 'l1', ['b', 'a']);
+    const queued = state.ops[0] as { mtime: string };
+    state = renameListRecord(state, 'l1', 'renamed');
+
+    // PUT /lists/:id/items/order is conditional on the *row's* mtime — the same column a rename
+    // writes — and records flush before ops. Left behind the rename, the op would match no row,
+    // still be answered 200, and be retired as landed while the pull restored the old order.
+    const op = state.ops[0] as { mtime: string };
+    expect(op.mtime > queued.mtime).toBe(true);
+    expect(op.mtime > state.lists.l1.data.mtime).toBe(true);
+  });
+
+  it('keeps a queued sibling order ahead of a later edit to a row it names', () => {
+    let state = pulled(emptyMirror('u1'), 'a');
+    state = applySnapshot(
+      state,
+      snapshot({ lists: ['a', 'b'].map((id) => ({ id, label: id, parentId: null, kind: 'list' as const, items: [] })) })
+    );
+    state = queueSiblingOrder(state, null, ['b', 'a']);
+    const queued = state.ops[0] as { mtime: string };
+    state = renameListRecord(state, 'a', 'renamed');
+
+    // PUT /lists/order guards every row it touches the same way, so a rename of any one of them
+    // would otherwise veto the whole gesture.
+    const op = state.ops[0] as { mtime: string };
+    expect(op.mtime > queued.mtime).toBe(true);
+    expect(op.mtime > state.lists.a.data.mtime).toBe(true);
   });
 
   it('skips re-marking whatever is already the most recent visit', () => {

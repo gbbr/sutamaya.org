@@ -42,6 +42,14 @@ export interface ListRecord {
   // True until POST /lists has landed for this row — the flush needs to know whether to create the
   // row or patch it, and a client-minted id is exactly what makes that knowable offline.
   pendingCreate: boolean;
+  // True once a flush has *dispatched* this row's POST, whether or not the response ever came back.
+  // Only read while `pendingCreate` is still set, and only by removeListRecord, which needs to tell
+  // "the server has never heard of this row" from "the server may well hold it already" — a
+  // distinction `pendingCreate` alone can't make, since it stays set for the whole in-flight window
+  // and beyond a response lost on the way home. It lives on the record rather than on the `Stored`
+  // wrapper because a rename replaces the wrapper, and whether the *row* reached the server is not
+  // something a later edit changes.
+  createSent: boolean;
 }
 
 export interface NoteRecord {
@@ -64,6 +72,10 @@ export interface HighlightRecord {
   color: string | null;
   erase: string[];
   mtime: string;
+  // As ListRecord.createSent: true once a flush has dispatched this group's write. A group erased
+  // while its own create is in flight has to be tombstoned rather than dropped, or the create the
+  // server already accepted comes straight back on the next pull.
+  sent: boolean;
 }
 
 export interface VisitedRecord {
@@ -154,7 +166,25 @@ function editList(state: MirrorState, id: string, change: Partial<ListRecord>): 
   // as a change rather than being compared by identity and wrongly skipped.
   const changed = Object.entries(change).some(([key, value]) => !Object.is(current.data[key as keyof ListRecord], value));
   if (!changed) return state;
-  return withList(state, id, { dirty: true, data: { ...current.data, ...change, mtime: nextMtime() } });
+  const next = withList(state, id, { dirty: true, data: { ...current.data, ...change, mtime: nextMtime() } });
+  return restampOrderOps(next, id);
+}
+
+// Moves any queued order op touching `id` ahead of the mtime just stamped on that row.
+//
+// Both order endpoints are conditional on the *row's* `mtime` — the same column a rename, reparent
+// or delete writes — so an order queued at T1 and then a rename made at T2 would leave the op
+// failing its own guard. The server answers `200 {ok:true}` for a guarded update that matched no
+// row, so the flush counts the op as landed and drops it, and the pull at the end of that same
+// flush hands back the order the user had just dragged away from. Re-stamping keeps the op newer
+// than this device's own later edits to the row, which is the only thing that can overtake it here;
+// against *another* device's edits it still carries a timestamp from when the user acted, so a
+// stale reorder loses a genuine merge exactly as before.
+function restampOrderOps(state: MirrorState, id: string): MirrorState {
+  const affected = (op: QueuedOp) =>
+    (op.type === 'order' && op.listId === id) || (op.type === 'siblingOrder' && op.order.includes(id));
+  if (!state.ops.some(affected)) return state;
+  return { ...state, ops: state.ops.map((op) => (affected(op) ? { ...op, mtime: nextMtime() } : op)) };
 }
 
 // `id` is minted by the caller rather than here, so the list it creates has its final identity
@@ -177,6 +207,7 @@ export function createListRecord(
     mtime: nextMtime(),
     deleted: false,
     pendingCreate: true,
+    createSent: false,
   };
   return withList(state, record.id, { dirty: true, data: record });
 }
@@ -216,13 +247,18 @@ export function queueSiblingOrder(state: MirrorState, parentId: string | null, o
   return nextOp({ ...state, lists, ops }, { type: 'siblingOrder', parentId, order, mtime: nextMtime() });
 }
 
-// Tombstones the list — except one that has never reached the server, which is dropped outright
-// along with anything queued against it. Pushing a create and then a delete for a row no device
-// has ever seen is pure noise, and the create landing after the delete would resurrect it.
+// Tombstones the list — except one that has never left this device, which is dropped outright along
+// with anything queued against it. Pushing a create and then a delete for a row no device has ever
+// seen is pure noise, and the create landing after the delete would resurrect it.
+//
+// "Never left this device" is `createSent`, not `pendingCreate`: the latter is still set while the
+// create is out on the wire, and a row deleted in that window is one the server may already hold.
+// Dropping it then loses the delete outright — nothing is left to push it, and the pull at the end
+// of that very flush brings the list back as a clean record.
 export function removeListRecord(state: MirrorState, id: string): MirrorState {
   const current = state.lists[id];
   if (!current) return state;
-  if (current.data.pendingCreate) {
+  if (current.data.pendingCreate && !current.data.createSent) {
     // A queued sibling order may still name this id; it is left alone rather than rewritten, since
     // the server reconciles a posted order against the rows that actually exist and drops the rest.
     return { ...withList(state, id, null), ops: state.ops.filter((op) => !('listId' in op) || op.listId !== id) };
@@ -268,19 +304,23 @@ export function writeHighlightRecord(
   const erase: string[] = [];
   for (const g of displaced) {
     const record = highlights[g];
-    // A group created and then erased before either ever synced drops out entirely rather than
-    // pushing a create followed by a tombstone: the tombstone's `WHERE g = ?` matches nothing if it
-    // somehow lands first, and the create then resurrects a highlight the user already erased.
+    // A group created and then erased before either ever left this device drops out entirely rather
+    // than pushing a create followed by a tombstone: the tombstone's `WHERE g = ?` matches nothing
+    // if it somehow lands first, and the create then resurrects a highlight the user already erased.
     // Its own tombstones have to come along, though — a recolour made offline and then undone
     // offline still has to retire the group it displaced, which the server does still hold.
     if (record?.dirty) erase.push(...record.data.erase);
-    else erase.push(g);
+    // Anything the server might hold is named as a tombstone, which covers a group whose own write
+    // is still in flight (`sent`) as well as one already synced. Tombstoning a group the server
+    // turns out never to have received matches no rows and costs nothing, where failing to
+    // tombstone one it did receive means the erase silently undoes itself on the next pull.
+    if (!record?.dirty || record.data.sent) erase.push(g);
     delete highlights[g];
   }
   const pushable = [...new Set(erase)];
   if (!color && !pushable.length) return { ...state, highlights };
   const g = randomId();
-  highlights[g] = { dirty: true, data: { g, suttaId, ranges, color, erase: pushable, mtime: nextMtime() } };
+  highlights[g] = { dirty: true, data: { g, suttaId, ranges, color, erase: pushable, mtime: nextMtime(), sent: false } };
   return { ...state, highlights };
 }
 
@@ -409,14 +449,20 @@ export function applySnapshot(state: MirrorState, snapshot: UserData): MirrorSta
         mtime: '',
         deleted: false,
         pendingCreate: false,
+        // Moot while `pendingCreate` is false — this row is on the server by definition, so there is
+        // no create left to have dispatched.
+        createSent: false,
       },
     };
   }
   for (const [id, record] of Object.entries(state.lists)) if (record.dirty) lists[id] = record;
 
   const notes: Record<string, Stored<NoteRecord>> = {};
-  for (const [suttaId, text] of Object.entries(snapshot.notes)) {
-    notes[suttaId] = { dirty: false, data: { suttaId, text, mtime: '' } };
+  for (const [suttaId, { text, m }] of Object.entries(snapshot.notes)) {
+    // The note's own mtime, not a blank: mirrorView orders the Notes auto-list by it, and a blank
+    // would both flatten that order into the snapshot's arrival order and sort every pulled note
+    // below any locally dirty one regardless of which was actually written more recently.
+    notes[suttaId] = { dirty: false, data: { suttaId, text, mtime: m } };
   }
   for (const [id, record] of Object.entries(state.notes)) if (record.dirty) notes[id] = record;
 
@@ -439,7 +485,7 @@ export function applySnapshot(state: MirrorState, snapshot: UserData): MirrorSta
       // One row per segment; the group is the record, so they're recombined by `g` on the way in.
       const group = highlights[row.g] ?? {
         dirty: false,
-        data: { g: row.g, suttaId, ranges: [], color: row.c, erase: [], mtime: row.m },
+        data: { g: row.g, suttaId, ranges: [], color: row.c, erase: [], mtime: row.m, sent: true },
       };
       group.data.ranges.push({ i: row.i, s: row.s, e: row.e });
       highlights[row.g] = group;
@@ -546,6 +592,38 @@ export interface FlushOutcome {
   rejectedOps: string[];
   remaps: { from: string; to: string }[];
   snapshot: UserData | null;
+}
+
+// Records that a flush is about to put these records on the wire. Called with the snapshot the
+// flush was handed, *before* its first request goes out — after would be too late, since the whole
+// point is to be right during the round trip itself.
+//
+// It marks the row rather than the version: `createSent`/`sent` answer "might the server hold this
+// already", which a later local edit doesn't change, so a record edited mid-flight keeps the flag
+// (and stays dirty on its own merits, see clearDirty). Marking a write the flush then never sends —
+// another tab held the lock, or an earlier record halted it — is deliberately harmless: the cost is
+// a tombstone for a row that may not exist, which matches nothing and is discarded.
+export function markDispatched(state: MirrorState, dispatched: MirrorState): MirrorState {
+  let lists = state.lists;
+  for (const [id, record] of Object.entries(dispatched.lists)) {
+    if (!record.dirty || !record.data.pendingCreate) continue;
+    const live = lists[id];
+    if (!live || live.data.createSent) continue;
+    if (lists === state.lists) lists = { ...state.lists };
+    lists[id] = { ...live, data: { ...live.data, createSent: true } };
+  }
+  let highlights = state.highlights;
+  for (const [g, record] of Object.entries(dispatched.highlights)) {
+    if (!record.dirty) continue;
+    const live = highlights[g];
+    if (!live || live.data.sent) continue;
+    if (highlights === state.highlights) highlights = { ...state.highlights };
+    highlights[g] = { ...live, data: { ...live.data, sent: true } };
+  }
+  // Same reference when there was nothing to mark, so the common case costs neither a render nor a
+  // write to IndexedDB.
+  if (lists === state.lists && highlights === state.highlights) return state;
+  return { ...state, lists, highlights };
 }
 
 // Folds a finished flush back into whatever the mirror looks like *now* — which may not be what

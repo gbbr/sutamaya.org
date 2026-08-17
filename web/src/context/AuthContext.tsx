@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState, t
 import { navigate } from '@reach/router';
 import { authApi } from '../lib/api';
 import { isRetryable, retryWithBackoff, statusOf } from '../lib/retry';
+import { readLastUser, writeLastUser } from '../lib/lastUser';
 import type { User } from '../lib/types';
 
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
@@ -23,7 +24,10 @@ interface AuthState {
 const AuthContext = createContext<AuthState | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
+  // Seeded from the last confirmed session rather than from null, so a relaunch with no network
+  // opens the user's own mirror instead of an empty one (see lib/lastUser.ts). The server's answer
+  // replaces it as soon as one arrives, in either direction.
+  const [user, setUser] = useState<User | null>(readLastUser);
   const [loading, setLoading] = useState(true);
   // True once google.accounts.id.initialize() has run — gates GoogleSignInButton's
   // renderButton() call, which needs that config to already exist (see GoogleSignInButton.tsx).
@@ -51,15 +55,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     async function loadUser() {
       try {
         const r = await retryWithBackoff(() => authApi.me());
+        // The server has spoken, so the remembered identity follows it exactly — including to
+        // null, which is what a genuinely signed-out session answers (200 with `user: null`).
+        writeLastUser(r.user);
         if (!cancelled) setUser(r.user);
       } catch (err) {
         if (cancelled) return;
         if (isRetryable(statusOf(err))) {
+          // Nothing here says the session is over, so the remembered user stands and the app goes
+          // on running against the mirror — the whole point of seeding `user` from it.
           console.warn('Session check failed transiently; retrying:', err);
           timer = setTimeout(loadUser, SESSION_RETRY_MS);
           return;
         }
         console.error('Failed to load session:', err);
+        writeLastUser(null);
         setUser(null);
       }
     }
@@ -74,6 +84,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const loginWithGoogle = useCallback(async (credential: string) => {
     const { user } = await authApi.google(credential);
+    writeLastUser(user);
     setUser(user);
   }, []);
 
@@ -132,6 +143,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const logout = useCallback(async () => {
     await authApi.logout();
+    writeLastUser(null);
     setUser(null);
   }, []);
 

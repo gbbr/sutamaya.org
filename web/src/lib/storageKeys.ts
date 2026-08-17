@@ -15,3 +15,6 @@ export const OFFLINE_NUDGE_DISMISSED_KEY = 'sutamaya.offlineNudgeDismissed';
 // This device's own id, minted once and kept forever — the tiebreak half of every mtime this
 // client stamps a write with (see lib/mtime.ts).
 export const DEVICE_ID_KEY = 'sutamaya.deviceId';
+// The last signed-in user, so a cold start with no network still knows whose mirror to open
+// (see lib/lastUser.ts).
+export const LAST_USER_KEY = 'sutamaya.lastUser';
