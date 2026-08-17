@@ -36,9 +36,13 @@ export const RULES = [
     id: 'immersion-concentration',
     why: 'Sujato renders samādhi as "immersion"; this app prefers "concentration". Open: the ' +
       '"immers-" stem also covers unrelated words like "water immerser" (MN40), but those aren’t ' +
-      'listed forms, so a substring swap never touches them — see the forms comment above.',
+      'listed forms, so a substring swap never touches them — see the forms comment above. Carries ' +
+      'the indefinite article in one form, since the word it agrees with is the word being ' +
+      'replaced: "experiences an immersion of the heart" (DN 1, 30 segments) would otherwise read ' +
+      '"an concentration".',
     mode: 'deny',
     forms: [
+      ['an immersion', 'a concentration'],
       ['immerse', 'concentrate'],
       ['immerses', 'concentrates'],
       ['immersed', 'concentrated'],
@@ -83,10 +87,13 @@ export const RULES = [
       'it, so the only exclusions are the "walking mindfully" passages, where the Pali is ' +
       'caṅkamati (walking meditation) with no sati in it at all. Leaves anussati/sarati alone — ' +
       'those render as "recollection"/"remember", and "recollection of the Buddha" is not an ' +
-      'awareness of anything.',
+      'awareness of anything. Carries the indefinite article in one form, since the word it ' +
+      'agrees with is the word being replaced: "a mindful disciple of the Buddha" (12 segments, ' +
+      'mostly verse) would otherwise read "a aware".',
     mode: 'deny',
     predicate: /(?<!s)sat[iīāo]|ānāpānassati|kāyagatāsati|upaṭṭhitassati|muṭṭhassa|patissat/i,
     forms: [
+      ['a mindful', 'an aware'],
       ['mindfulness', 'awareness'],
       ['mindful', 'aware'],
       ['mindfully', 'with awareness'],
@@ -191,6 +198,73 @@ export const RULES = [
   // The three samudaya ones are a different case: the term rule is right to leave the noun
   // "origination" alone (26 of its 30 segments are sambhava, not samudaya — see
   // samudaya-arising's why), and these four lines are the exception it can't express.
+  //
+  // The six sampajañña ones are a third: "understanding" is a noun where Sujato's "aware" was an
+  // adjective, so wherever he used it predicatively ("a mendicant is aware", "aware of the
+  // situation") the swap reads as the wrong English word — as a progressive tense, or as
+  // "sympathetic". The clause has to be rebuilt around the noun, which a word-for-word form can't
+  // do; a form spanning more words can't either, since mendicant-bhikkhu has already locked the
+  // "bhikkhu" in the middle of two of them.
+  {
+    id: 'sampajano-hoti-acts-with-understanding',
+    kind: 'segment',
+    why: 'sampajāno hoti, closing the sampajañña section — "a bhikkhu is understanding" reads as a ' +
+      'progressive tense. The section\'s own refrain is "acts with understanding when going out and ' +
+      'coming back", so it closes on that.',
+    segments: ['sn47.35:3.5', 'sn36.8:4.3', 'dn16:2.13.3'],
+    from: 'That’s how a bhikkhu is understanding. ',
+    to: 'That’s how a bhikkhu acts with understanding. ',
+  },
+  {
+    id: 'sampajano-situation-they',
+    kind: 'segment',
+    why: 'Itiha tattha sampajāno hoti. "They are understanding of the situation" is English for ' +
+      'being sympathetic about it — the one sense sampajañña doesn’t carry. The verb says it ' +
+      'plainly instead.',
+    segments: ['mn122:9.5', 'mn122:9.12', 'mn122:10.6', 'mn122:10.13', 'mn122:11.3', 'mn122:11.6',
+      'mn122:11.9', 'mn122:11.12', 'mn122:12.3', 'mn122:12.5', 'mn122:13.3', 'mn122:13.5',
+      'mn122:15.7', 'mn122:15.12', 'mn122:17.4', 'an7.49:3.3', 'an7.49:3.6', 'an7.49:15.3',
+      'an7.49:16.3'],
+    from: 'In this way they are understanding of the situation. ',
+    to: 'In this way they understand the situation. ',
+  },
+  {
+    id: 'sampajano-situation-he',
+    kind: 'segment',
+    why: 'sampajano-situation-they’s line, as an8.9 has it: singular.',
+    segments: ['an8.9:1.9', 'an8.9:2.8'],
+    from: 'In this way he’s understanding of the situation. ',
+    to: 'In this way he understands the situation. ',
+  },
+  {
+    id: 'sampajano-conception-second',
+    kind: 'segment',
+    why: 'The four kinds of conception (gabbhāvakkanti), whose Pali alternates sampajāna and ' +
+      'asampajāna across all three moments. "Someone is understanding when conceived" reads as a ' +
+      'progressive tense; "has understanding" pairs with the "without understanding" the negative ' +
+      'already produces. The first kind needs no override — it is negative throughout, and "is ' +
+      'without understanding" was already fine.',
+    segments: ['dn28:5.4', 'dn33:1.11.177'],
+    from: 'Furthermore, someone is understanding when conceived in their mother’s womb, but without understanding as they remain there, and without understanding as they emerge. This is the second kind of conception. ',
+    to: 'Furthermore, someone has understanding when conceived in their mother’s womb, but without understanding as they remain there, and without understanding as they emerge. This is the second kind of conception. ',
+  },
+  {
+    id: 'sampajano-conception-third',
+    kind: 'segment',
+    why: 'sampajano-conception-second’s line, for the third kind: understanding through conception ' +
+      'and gestation, not through birth.',
+    segments: ['dn28:5.5', 'dn33:1.11.178'],
+    from: 'Furthermore, someone is understanding when conceived in their mother’s womb, understanding as they remain there, but without understanding as they emerge. This is the third kind of conception. ',
+    to: 'Furthermore, someone has understanding when conceived in their mother’s womb, with understanding as they remain there, but without understanding as they emerge. This is the third kind of conception. ',
+  },
+  {
+    id: 'sampajano-conception-fourth',
+    kind: 'segment',
+    why: 'sampajano-conception-second’s line, for the fourth kind: understanding throughout.',
+    segments: ['dn28:5.6', 'dn33:1.11.179'],
+    from: 'Furthermore, someone is understanding when conceived in their mother’s womb, understanding as they remain there, and understanding as they emerge. This is the fourth kind of conception. ',
+    to: 'Furthermore, someone has understanding when conceived in their mother’s womb, with understanding as they remain there, and with understanding as they emerge. This is the fourth kind of conception. ',
+  },
   {
     id: 'samudaya-exclamation-arising',
     kind: 'segment',
