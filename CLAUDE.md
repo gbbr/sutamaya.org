@@ -222,10 +222,11 @@ writes and existence checks alike (`routes/lists.js`, `routes/annotations.js`).
     `data-seg` attribute in the reader)
   - `s` / `e` — the half-open character range `[s, e)` within that segment's text
   - `color` — the highlight's color
-  - `g` — a groupId shared by every row written from one `PUT /highlights/ranges` call, so a
-    highlight spanning multiple segments (one row per segment) can be recombined for
-    display/counting by `groupHighlights()` (`web/src/lib/highlights.ts`) without inferring it
-    from segment adjacency
+  - `g` — the groupId shared by every row of one highlight, minted by the client when the user
+    picks the colour, so a highlight spanning multiple segments (one row per segment) can be
+    recombined for display/counting by `groupHighlights()` (`web/src/lib/highlights.ts`) without
+    inferring it from segment adjacency. A group is **immutable**: nothing ever updates its rows,
+    and `(user_id, g, i)` is unique — see `PUT /api/highlights/ranges` below
 - **`visited`** — keyed by `(user_id, sutta_id)`; written once the reader has stayed open on that
   sutta for at least 30% of its estimated reading time (`sutta.min`, `ReaderPage`'s dwell-timer
   effect), via `INSERT ... ON CONFLICT DO UPDATE`.
@@ -273,15 +274,32 @@ Because the cascade needs to see tombstones, `buildUserData` is the one read tha
 them. `position`/`mtime`/`deleted` feed the repair only — `shapeList` drops all three, so none reach
 the client.
 
-`PUT /api/highlights/ranges` deletes every stored highlight overlapping any of the posted `[s,e)`
-ranges (one or more, each in its own segment `i` — a cross-segment selection passes every
-segment's range in one request) via a SQL predicate equivalent to "same segment, `s < e AND e >
-s`" (edge-touching isn't overlap), then inserts the new ranges — one `db.batch()` of `DELETE`s
-followed by `INSERT`s, all sharing one `g` (groupId) so the selection can be recombined for
-display without inferring it from segment adjacency (see the highlights row shape above). Because
-SQL does the overlap filtering, there's no in-memory overlap-math helper the way the pre-migration
-version needed one. D1's free tier (5,000,000 rows read/day, 100,000 rows written/day, 5GB
-storage) comfortably covers personal-scale use; see `deploy.md`.
+`PUT /api/highlights/ranges` writes one **immutable** highlight group: the posted `[s,e)` ranges
+(one or more, each in its own segment `i` — a cross-segment selection passes every segment's range
+in one request) are inserted under the client's own `g`, and the groups that selection displaces —
+which the *client* works out and names in `erase` — are tombstoned in the same `db.batch()`,
+tombstones first. A recolour is therefore a tombstone plus a brand new group and an erase (`color:
+null`) is a tombstone alone; nothing ever updates a highlight row. That is what makes the write
+safe to replay: "delete whatever currently overlaps" meant something different an hour later than
+it did when the user acted, and took whole highlights another device had created in between. The
+insert is `INSERT OR IGNORE` on the unique `(user_id, g, i)`, so re-sending a group (a flush
+retried after a lost response) lands on the same rows rather than duplicating the highlight, and
+the tombstone is conditional on `mtime` like every other write here.
+
+`g` and `erase` are both **required** — the server never works out what a selection displaces, so
+a write that doesn't say is a bug rather than a silent half-write, and a create without its own `g`
+would lose the idempotence the whole scheme rests on. Which groups a selection displaces is decided
+client-side by `displacedGroupIds` (`web/src/lib/highlights.ts`): same segment, `h.s < r.e && h.e >
+r.s`, edge-touching isn't overlap, and any overlap takes the *whole* group rather than the one row
+that overlapped.
+
+Two devices can now both highlight overlapping spans offline and both survive, so stored ranges may
+overlap; the reader settles which one paints the contested characters, by `(mtime, g)` — see
+`paintSegmentHighlights` (`web/src/lib/highlights.ts`), which is why `GET /api/data` sends each
+highlight's `mtime` as `m`.
+
+D1's free tier (5,000,000 rows read/day, 100,000 rows written/day, 5GB storage) comfortably covers
+personal-scale use; see `deploy.md`.
 
 Auth is Google sign-in only (`worker/src/auth.js`, `routes/auth.js`): the frontend gets an ID
 token credential from Google Identity Services (see `AuthContext.tsx`), and `POST
@@ -346,12 +364,16 @@ uncaught.
   (`usePersistedState`) only — deliberately per-device, not synced to the account, since theme
   and font/size preferences are display settings a user may reasonably want to differ by device
   (screen size, ambient lighting).
-- `lib/corpus.ts`, `lib/dictionary.ts`, `lib/theme.ts`, `lib/api.ts` — pure data/fetch helpers,
-  no React.
+- `lib/corpus.ts`, `lib/dictionary.ts`, `lib/theme.ts`, `lib/api.ts`, `lib/mtime.ts` — pure
+  data/fetch helpers, no React.
 - `components/SegmentedText.tsx` — the reader's paragraph renderer (tap-to-reveal Pali, word-tap
-  dictionary, highlighted-range spans). A segment with a translator note (`SegmentFile.note`)
-  gets a small clickable asterisk at the end
-  of its English text (`stopPropagation()`s so it doesn't also trigger the tap-to-reveal-Pali
+  dictionary, highlighted-range spans). Stored highlight ranges can overlap (two devices, both
+  offline), so what to paint comes from `lib/highlights.ts`'s `paintSegmentHighlights` rather than
+  from the raw rows: the later group by `(mtime, g)` wins the characters both cover, and a group
+  overlapped in the middle renders as two spans still carrying its own stored range (which is what
+  a click reports, so clicking either half acts on the whole highlight). A segment with a
+  translator note (`SegmentFile.note`) gets a small clickable asterisk at the end of its English
+  text (`stopPropagation()`s so it doesn't also trigger the tap-to-reveal-Pali
   click on the paragraph around it) — hover shows the plain-text note via the native `title`
   attribute, click toggles an inline expansion below the segment (rendered via
   `dangerouslySetInnerHTML`, safe here since a note's HTML is fixed build-time content, not
@@ -361,9 +383,13 @@ uncaught.
 - `hooks/useHighlightPopup.ts` — selection → floating colour-picker popup logic (segment-relative
   character offsets via `Range`). A selection spanning multiple segments produces one highlight range per segment, written in a
   single batched call (`UserDataContext.setHighlightRanges`, one `PUT /api/highlights/ranges`
-  request covering every segment's range in one atomic transaction, all sharing one server-
-  assigned `g` — see Backend above) and then re-merged for display/counting by `lib/highlights.ts`'s
+  request covering every segment's range in one atomic transaction, all sharing one `g` — see
+  Backend above) and then re-merged for display/counting by `lib/highlights.ts`'s
   `groupHighlights()`, which groups by that shared `g` rather than disjoint pieces.
+  `setHighlightRanges` is where a highlight's identity is minted — the group's `g`, its `mtime`
+  (`lib/mtime.ts`'s `nextMtime()`, stamped when the user acts, never when the write flushes), and
+  the `erase` list of groups the selection displaces (`displacedGroupIds`, which takes a whole
+  group when a selection touches any part of it, since a group is atomic).
 - `TreePane`'s Library/My Lists toggle — a compact icon-based segmented control on the title row
   switches between the corpus browse tree (`CorpusTreeView`) and the user's list tree
   (`ListsTreeView`, which renders `ListRow` recursively); state persists across reloads via
@@ -444,10 +470,10 @@ something there.
 - No offline write queue *on the client yet*: list/note/highlight mutations still fire immediately
   against the API, so if the network is down the optimistic local update stands but the write is
   lost (only `console.error`-logged). The server side of the fix is in place — client-supplied
-  `mtime` with conditional writes, tombstones, client-generated list ids, read-time tree repair (see
-  the Backend section) — but the client half, an IndexedDB mirror with a dirty-record flush replacing
-  `UserDataContext`'s optimistic model, is not. `offline-sync.md` is the plan and tracks which steps
-  are done.
+  `mtime` with conditional writes, tombstones, client-generated list ids, read-time tree repair, and
+  highlights as immutable client-named groups (see the Backend section) — but the client half, an
+  IndexedDB mirror with a dirty-record flush replacing `UserDataContext`'s optimistic model, is
+  not. `offline-sync.md` is the plan and tracks which steps are done.
 - The reader has no translation-source picker — this dataset only has one English translation per
   collection, so there's nothing to switch to. The reader heading instead shows a "Source:
   SuttaCentral (modified)" attribution line (`ReaderPage.tsx`), linking to the `sc-data` commit

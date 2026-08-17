@@ -45,7 +45,10 @@ async function buildUserData(db, userId) {
     noteDocs: notes.results.map((row) => ({ id: row.sutta_id, data: { text: row.text, updatedAt: row.updated_at } })),
     highlightDocs: highlights.results.map((row) => ({
       id: row.id,
-      data: { suttaId: row.sutta_id, i: row.i, s: row.s, e: row.e, color: row.color, g: row.g, createdAt: row.created_at },
+      // `mtime` is the one of these three that the client renders with rather than just orders by:
+      // two devices can now both highlight overlapping spans offline and both survive, so the
+      // reader resolves the contested characters by (mtime, g) — see lib/highlights.ts.
+      data: { suttaId: row.sutta_id, i: row.i, s: row.s, e: row.e, color: row.color, g: row.g, createdAt: row.created_at, mtime: row.mtime },
     })),
     visitedDocs: visited.results.map((row) => ({ id: row.sutta_id, data: { visitedAt: row.visited_at } })),
   });

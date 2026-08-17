@@ -66,9 +66,19 @@ export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDoc
     notes[id] = data.text;
   });
 
+  // `m` is the row's mtime, the tiebreak the reader paints overlapping groups by (see
+  // web/src/lib/highlights.ts) — short-keyed like `c`/`g` since this map is sent in full.
   const highlights = {};
   highlightDocs.forEach(({ id, data }) => {
-    (highlights[data.suttaId] = highlights[data.suttaId] || []).push({ id, i: data.i, s: data.s, e: data.e, c: data.color, g: data.g });
+    (highlights[data.suttaId] = highlights[data.suttaId] || []).push({
+      id,
+      i: data.i,
+      s: data.s,
+      e: data.e,
+      c: data.color,
+      g: data.g,
+      m: data.mtime ?? '',
+    });
   });
 
   const visited = {};

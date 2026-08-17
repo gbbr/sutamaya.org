@@ -37,19 +37,79 @@ export function buildCrossSegmentRanges(
 }
 
 // A cross-segment highlight is stored as one Highlight document per segment (see
-// useHighlightPopup's `pick`), all sharing the same `g` (groupId, assigned server-side by the
-// PUT /highlights/ranges call that wrote them) — recombine by that field rather than inferring
-// adjacency from segment/offset position.
+// useHighlightPopup's `pick`), all sharing the same `g` (groupId, minted by the client when the
+// user picked the colour) — collected by that field rather than by segment/offset adjacency,
+// which two overlapping groups would interleave and split apart. Groups come back in document
+// order, keyed on their first row's id.
 export function groupHighlights(highlights: Highlight[]): HighlightGroup[] {
-  const sorted = [...highlights].sort((a, b) => a.i - b.i || a.s - b.s);
-  const groups: Highlight[][] = [];
-  for (const h of sorted) {
-    const prevGroup = groups[groups.length - 1];
-    const prev = prevGroup?.[prevGroup.length - 1];
-    if (prev && h.g === prev.g) prevGroup.push(h);
-    else groups.push([h]);
+  const byGroup = new Map<string, Highlight[]>();
+  for (const h of [...highlights].sort((a, b) => a.i - b.i || a.s - b.s)) {
+    const items = byGroup.get(h.g);
+    if (items) items.push(h);
+    else byGroup.set(h.g, [h]);
   }
-  return groups.map((items) => ({ key: items[0].id, c: items[0].c, i: items[0].i, items }));
+  return [...byGroup.values()]
+    .sort((a, b) => a[0].i - b[0].i || a[0].s - b[0].s)
+    .map((items) => ({ key: items[0].id, c: items[0].c, i: items[0].i, items }));
+}
+
+// The groups a new selection displaces — every group with a row overlapping one of `ranges`
+// (same segment, `h.s < r.e && h.e > r.s`, so edge-touching isn't overlap). A group is
+// immutable and atomic: recolouring or erasing any part of one retires the whole thing, rather
+// than leaving the segments the selection happened to miss behind as a stranded remnant.
+//
+// The client works this out from what it can already see and tells the server explicitly, so the
+// write means the same thing whenever it is replayed — a server-side "delete whatever currently
+// overlaps" would take highlights another device created in the meantime.
+export function displacedGroupIds(highlights: Highlight[], ranges: HlRange[]): string[] {
+  const ids = new Set<string>();
+  for (const h of highlights) {
+    if (ranges.some((r) => h.i === r.i && h.s < r.e && h.e > r.s)) ids.add(h.g);
+  }
+  return [...ids];
+}
+
+// A painted piece of one segment's text: `s`/`e` are what to draw, `src` the highlight that won
+// those characters (its own stored range may be wider — see paintSegmentHighlights).
+export interface PaintedRange {
+  s: number;
+  e: number;
+  src: Highlight;
+}
+
+// Later group wins: mtime first, groupId as the tiebreak so two devices' writes in the same
+// millisecond still resolve identically on both of them.
+function precedes(a: Highlight, b: Highlight): boolean {
+  return a.m === b.m ? a.g < b.g : a.m < b.m;
+}
+
+// Resolves one segment's highlights into non-overlapping pieces to render, in document order.
+//
+// Stored ranges can genuinely overlap now that groups are immutable: two devices highlighting
+// overlapping spans offline both survive rather than one destroying the other, so the reader is
+// where the contest is settled — deterministically, by (mtime, g), the later group taking the
+// characters both cover. An earlier group overlapped in the middle comes back as two pieces,
+// both still carrying its own stored range.
+export function paintSegmentHighlights(hlForSeg: Highlight[]): PaintedRange[] {
+  if (hlForSeg.length < 2) return hlForSeg.map((h) => ({ s: h.s, e: h.e, src: h }));
+  // Ascending precedence, so the last covering highlight found for a slice is its winner.
+  const ranked = [...hlForSeg].sort((a, b) => (precedes(a, b) ? -1 : 1));
+  // Every endpoint, so each elementary slice between two adjacent ones is either fully inside a
+  // stored range or fully outside it — never partially.
+  const bounds = [...new Set(ranked.flatMap((h) => [h.s, h.e]))].sort((a, b) => a - b);
+  const painted: PaintedRange[] = [];
+  for (let k = 0; k < bounds.length - 1; k++) {
+    const [s, e] = [bounds[k], bounds[k + 1]];
+    let winner: Highlight | undefined;
+    for (const h of ranked) if (h.s <= s && h.e >= e) winner = h;
+    if (!winner) continue;
+    const prev = painted[painted.length - 1];
+    // Adjacent slices the same highlight won are one span, not several — otherwise a group
+    // overlapped at one end would render as two abutting spans with a seam between them.
+    if (prev && prev.src === winner && prev.e === s) prev.e = e;
+    else painted.push({ s, e, src: winner });
+  }
+  return painted;
 }
 
 // Total number of merged highlights on a sutta (see groupHighlights), across every colour — for

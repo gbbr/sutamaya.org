@@ -41,34 +41,41 @@ annotationsRouter.put('/notes/:suttaId', async (c) => {
   return c.json({ ok: true });
 });
 
-// Deletes every stored highlight overlapping one of the posted ranges — same segment,
-// `h.s < e AND h.e > s`, so a highlight merely touching at an edge is left alone.
-const DELETE_OVERLAPS_SQL = `
-  DELETE FROM highlights
-   WHERE user_id = ?1 AND sutta_id = ?2 AND i = ?3 AND s < ?4 AND e > ?5
-`;
-
+// A highlight group is immutable. One selection mints one `g` (groupId) and writes one row per
+// segment it spans, and nothing ever updates those rows again: a recolour is a tombstone plus a
+// brand new group, an erase is a tombstone. That's what makes the write safe to replay — the old
+// "delete whatever currently overlaps, then insert" meant something different an hour later than
+// it did when the user acted, and took whole highlights another device had created in between.
+//
+// (user_id, g, i) is a group's natural key (migration 0002's unique index), so OR IGNORE makes
+// re-pushing a group a no-op rather than a duplicate row or a constraint error.
 const INSERT_HIGHLIGHT_SQL = `
-  INSERT INTO highlights (id, user_id, sutta_id, i, s, e, color, g, created_at, mtime)
+  INSERT OR IGNORE INTO highlights (id, user_id, sutta_id, i, s, e, color, g, created_at, mtime)
   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 `;
 
-// Atomically replace any highlight overlapping any of the given [s,e) ranges (each in its own
-// segment i) of suttaId with `color` (color === null just removes the overlap) — a single-range
-// array covers the common single-segment selection, a multi-entry one covers a cross-segment
-// selection (see useHighlightPopup), so one request always maps to one atomic write regardless of
-// how many segments it spans. All rows written by one call share a single `g` (groupId) so a
-// cross-segment highlight can be recombined for display/counting (lib/highlights.ts's
-// groupHighlights) without inferring it from segment adjacency.
+// Retires a whole group — every segment it spans — in one statement. Conditional on mtime like
+// every other write here, so a stale erase can't retire a group created more recently.
+const TOMBSTONE_GROUP_SQL = `
+  UPDATE highlights SET deleted = 1, mtime = ?3 WHERE user_id = ?1 AND g = ?2 AND mtime < ?3
+`;
+
+// Writes one highlight group over the given [s,e) ranges (each in its own segment i) of suttaId —
+// a single-range array covers the common single-segment selection, a multi-entry one covers a
+// cross-segment selection (see useHighlightPopup), so one request always maps to one atomic write
+// regardless of how many segments it spans.
 //
-// SQL does the overlap filtering, so the whole operation is one db.batch() of DELETEs followed
-// by INSERTs — no read at all, which closes the lost-update window a check-then-write approach
-// would leave open. Deletes come first in the batch so a fresh insert can't be removed by a
-// later range's overlap delete.
+// The client decides everything about identity: `g` names the group being created and `erase`
+// names the groups this selection displaces, worked out from what that device can already see
+// (lib/highlights.ts's displacedGroupIds). The server never infers either from live rows — that is
+// what an hour-old replayed write would get wrong. Both are required, so a request that omits them
+// is a bug rather than a silent half-write; `color: null` is a plain erase, decided by `erase`
+// alone (its `ranges` only record what the user selected). Tombstones go into the batch before the
+// inserts, so a recolour can't retire the group it just created.
 annotationsRouter.put('/highlights/ranges', async (c) => {
   const db = c.env.DB;
   const userId = c.get('userId');
-  const { suttaId, ranges, color, mtime: clientMtime } = (await jsonBody(c)) || {};
+  const { suttaId, ranges, color, g, mtime: clientMtime, erase } = (await jsonBody(c)) || {};
   if (!suttaId || !Array.isArray(ranges) || !ranges.length) {
     return c.json({ error: 'suttaId and a non-empty ranges array are required.' }, 400);
   }
@@ -77,39 +84,30 @@ annotationsRouter.put('/highlights/ranges', async (c) => {
       return c.json({ error: 'each range needs integer i, s, e with s < e.' }, 400);
     }
   }
-  const statements = ranges.map((r) =>
-    db.prepare(DELETE_OVERLAPS_SQL).bind(userId, suttaId, r.i, r.e, r.s)
-  );
+  if (!Array.isArray(erase) || erase.some((id) => typeof id !== 'string' || !id)) {
+    return c.json({ error: 'erase must be an array of group ids.' }, 400);
+  }
+  // A server-minted id would cost the group its idempotence: a create re-sent after a lost
+  // response would arrive under a second name and duplicate the highlight instead of colliding
+  // with itself on (user_id, g, i). Every statement below is scoped `AND user_id = ?` and the
+  // unique index leads with user_id too, so one account's group id can't reach another's rows —
+  // shape is all that's left to check.
+  if (color && (typeof g !== 'string' || !g)) {
+    return c.json({ error: 'g must be a non-empty string.' }, 400);
+  }
+  // `created_at` takes the client's instant too, so the Highlights auto-list orders by when the
+  // user highlighted rather than when the write reached the server.
+  const mtime = resolveMtime(clientMtime);
+  const statements = erase.map((groupId) => db.prepare(TOMBSTONE_GROUP_SQL).bind(userId, groupId, mtime));
   if (color) {
-    const groupId = crypto.randomUUID();
-    // `created_at` takes the client's instant too, so the Highlights auto-list orders by when
-    // the user highlighted rather than when the write reached the server.
-    const mtime = resolveMtime(clientMtime);
     for (const r of ranges) {
       statements.push(
-        db
-          .prepare(INSERT_HIGHLIGHT_SQL)
-          .bind(crypto.randomUUID(), userId, suttaId, r.i, r.s, r.e, color, groupId, mtime, mtime)
+        db.prepare(INSERT_HIGHLIGHT_SQL).bind(crypto.randomUUID(), userId, suttaId, r.i, r.s, r.e, color, g, mtime, mtime)
       );
     }
   }
-  await db.batch(statements);
-  return c.json({ ok: true });
-});
-
-// No current client calls this: removing a highlight goes through PUT /highlights/ranges with a
-// null `color`, which does the removal in the same atomic batch as everything else. It stays for
-// PWA shells cached before that change, which still fire this optimistically. Deleting a
-// highlight that isn't there is not an error — a missing row means the intended end state
-// already holds.
-//
-// Tombstones rather than deletes, so a device that was offline when this ran can't push the
-// highlight back as an apparently-new one. Unconditional on mtime: the id is only knowable from
-// synced server state, so there is no offline replay of this to be stale.
-annotationsRouter.delete('/highlights/:id', async (c) => {
-  await c.env.DB.prepare('UPDATE highlights SET deleted = 1, mtime = ? WHERE id = ? AND user_id = ?')
-    .bind(resolveMtime(), c.req.param('id'), c.get('userId'))
-    .run();
+  // An erase that displaces nothing leaves nothing to run, and D1 rejects an empty batch.
+  if (statements.length) await db.batch(statements);
   return c.json({ ok: true });
 });
 

@@ -12,3 +12,6 @@ export const READER_PREFS_KEY = 'sutamaya.readerPrefs';
 export const LAYOUT_PREFS_KEY = 'sutamaya.layout';
 export const HAS_OPENED_SUTTA_KEY = 'sutamaya.hasOpenedSutta';
 export const OFFLINE_NUDGE_DISMISSED_KEY = 'sutamaya.offlineNudgeDismissed';
+// This device's own id, minted once and kept forever — the tiebreak half of every mtime this
+// client stamps a write with (see lib/mtime.ts).
+export const DEVICE_ID_KEY = 'sutamaya.deviceId';

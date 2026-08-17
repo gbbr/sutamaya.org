@@ -7,6 +7,8 @@ import type { SegmentFile } from '../lib/corpus';
 vi.mock('../context/UserDataContext', () => ({ useUserData: vi.fn() }));
 import { useUserData } from '../context/UserDataContext';
 
+const MTIME = '2026-01-01T00:00:00.000Z|dev';
+
 function mockUserData() {
   const setHighlightRanges = vi.fn(async () => {});
   vi.mocked(useUserData).mockReturnValue({ setHighlightRanges } as unknown as ReturnType<typeof useUserData>);
@@ -81,7 +83,7 @@ describe('useHighlightPopup', () => {
     it('reports the existing highlight color when the selection lands inside one', async () => {
       mockUserData();
       const { segs } = buildSegRoot(['Hello world']);
-      const highlights: Highlight[] = [{ id: 'h1', i: 0, s: 0, e: 5, c: 'yellow', g: 'g1' }];
+      const highlights: Highlight[] = [{ id: 'h1', i: 0, s: 0, e: 5, c: 'yellow', g: 'g1', m: MTIME }];
       const { result } = renderHook(() => useHighlightPopup('sn1.1', highlights, null));
 
       selectAcross(segs[0], 1, segs[0], 4); // inside the existing [0,5) highlight
@@ -147,9 +149,9 @@ describe('useHighlightPopup', () => {
     it('expands a click on one piece of a cross-segment highlight to every piece in its group', () => {
       mockUserData();
       const highlights: Highlight[] = [
-        { id: 'h1', i: 0, s: 5, e: 10, c: 'blue', g: 'group-1' },
-        { id: 'h2', i: 1, s: 0, e: 3, c: 'blue', g: 'group-1' },
-        { id: 'h3', i: 5, s: 0, e: 3, c: 'red', g: 'group-2' },
+        { id: 'h1', i: 0, s: 5, e: 10, c: 'blue', g: 'group-1', m: MTIME },
+        { id: 'h2', i: 1, s: 0, e: 3, c: 'blue', g: 'group-1', m: MTIME },
+        { id: 'h3', i: 5, s: 0, e: 3, c: 'red', g: 'group-2', m: MTIME },
       ];
       const { result } = renderHook(() => useHighlightPopup('sn1.1', highlights, null));
 

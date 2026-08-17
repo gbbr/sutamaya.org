@@ -94,11 +94,8 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
       // The segment's *data* length, not its rendered DOM textContent length — the `<p
       // data-seg>` can contain extra rendered characters beyond seg.en itself (e.g. the
       // translator-note asterisk, see SegmentedText), which would otherwise inflate a
-      // middle/first segment's stored `e` past the real text length. That mismatch breaks
-      // groupHighlights' boundary check (`prev.e === segments[prev.i].en.length`), so the run
-      // never merges past that segment — clicking a highlight to remove it then only finds part
-      // of the group, leaving the rest stranded. Falls back to textContent only if segment data
-      // isn't available to this hook.
+      // middle/first segment's stored `e` past the end of the very text those offsets index
+      // into. Falls back to textContent only if segment data isn't available to this hook.
       const segLengths = between.map((seg) => {
         const i = Number(seg.dataset.seg);
         return { i, fullLen: segments?.[i]?.en.length ?? seg.textContent?.length ?? 0 };

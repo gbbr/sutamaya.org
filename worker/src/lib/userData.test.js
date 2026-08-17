@@ -88,9 +88,9 @@ describe('assembleUserData', () => {
   it('groups highlights by suttaId, preserving each entry’s fields', () => {
     const result = assembleUserData({
       ...empty,
-      highlightDocs: [{ id: 'h1', data: { suttaId: 'dn1', i: 0, s: 5, e: 10, color: 'y', g: 'grp1' } }],
+      highlightDocs: [{ id: 'h1', data: { suttaId: 'dn1', i: 0, s: 5, e: 10, color: 'y', g: 'grp1', mtime: '2026-08-01T00:00:00.000Z|a' } }],
     });
-    expect(result.highlights).toEqual({ dn1: [{ id: 'h1', i: 0, s: 5, e: 10, c: 'y', g: 'grp1' }] });
+    expect(result.highlights).toEqual({ dn1: [{ id: 'h1', i: 0, s: 5, e: 10, c: 'y', g: 'grp1', m: '2026-08-01T00:00:00.000Z|a' }] });
   });
 
   it('maps visited by doc id to visitedAt', () => {

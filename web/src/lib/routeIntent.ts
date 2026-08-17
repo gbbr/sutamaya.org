@@ -10,23 +10,18 @@
 // but starts empty on a genuinely new tab/session). A second consumeIntent() call for the same id
 // — exactly what a stale-but-preserved history.state produces on refresh — returns null, so the
 // caller falls back to persisted preference instead of trusting the stale value.
+import { randomId } from './ids';
+
 export interface RouteIntent {
   navId: string;
   [key: string]: unknown;
 }
 
-// crypto.randomUUID() only exists in secure contexts (https, or http on localhost) — plain
-// http on a LAN IP (e.g. opening the dev server from a phone) has no crypto.randomUUID, and
-// calling it throws before navigate() ever runs, silently breaking every caller (the reader's
-// close button among them). Fall back to a non-cryptographic id; navId only needs to be unique
-// enough to distinguish one navigate() call from the next, not unguessable.
-function freshNavId(): string {
-  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') return crypto.randomUUID();
-  return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-}
-
 export function tagIntent<T extends object>(state: T): T & RouteIntent {
-  return { ...state, navId: freshNavId() };
+  // randomId() rather than crypto.randomUUID() directly — that throws outside a secure context,
+  // before navigate() ever runs, silently breaking every caller (the reader's close button among
+  // them). See lib/ids.ts.
+  return { ...state, navId: randomId() };
 }
 
 export function consumeIntent<T extends RouteIntent>(state: T | null | undefined, storageKey: string): T | null {

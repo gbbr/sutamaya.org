@@ -117,6 +117,28 @@ describe('UserDataProvider', () => {
     expect(dataApiAll).toHaveBeenCalledTimes(2);
   });
 
+  // The client names the group it is creating and the groups the selection displaces, rather than
+  // letting the server work the latter out from whatever overlaps by the time the write lands —
+  // that's what makes the write mean the same thing whenever it's replayed.
+  it('setHighlightRanges mints the group and names the groups it displaces', async () => {
+    const existing = { id: 'h1', i: 0, s: 0, e: 10, c: 'yellow', g: 'g1', m: '2026-01-01T00:00:00.000Z|dev' };
+    const untouched = { id: 'h2', i: 4, s: 0, e: 4, c: 'blue', g: 'g2', m: '2026-01-01T00:00:00.000Z|dev' };
+    dataApiAll.mockResolvedValue({ ...structuredClone(baseData), highlights: { dn1: [existing, untouched] } });
+    highlightsApiSetRanges.mockResolvedValueOnce({ ok: true });
+    const { result } = setup();
+    await waitFor(() => expect(result.current.ready).toBe(true));
+
+    await act(async () => {
+      await result.current.setHighlightRanges('dn1', [{ i: 0, s: 5, e: 12 }], 'green');
+    });
+
+    expect(highlightsApiSetRanges).toHaveBeenCalledWith('dn1', [{ i: 0, s: 5, e: 12 }], 'green', {
+      g: expect.any(String),
+      mtime: expect.stringMatching(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z\|.+$/),
+      erase: ['g1'],
+    });
+  });
+
   it('setHighlightRanges resyncs and rethrows when the save fails, so its caller sees the error', async () => {
     const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     dataApiAll.mockResolvedValue(structuredClone(baseData));

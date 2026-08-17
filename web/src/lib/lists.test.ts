@@ -70,7 +70,7 @@ describe('applyListReorder', () => {
 });
 
 function h(id: string, i: number, s: number, e: number, g: string, c = '#ffe08a'): Highlight {
-  return { id, i, s, e, c, g };
+  return { id, i, s, e, c, g, m: '2026-01-01T00:00:00.000Z|dev' };
 }
 
 describe('suttaRowMeta', () => {

@@ -4,6 +4,9 @@ import { retryWithBackoff } from '../lib/retry';
 import type { Highlight, HighlightsMap, ListDef, ListKind, Membership, NotesMap, VisitedMap } from '../lib/types';
 import { RECENT_AUTO_LIST_CAP, RECENT_AUTO_LIST_ID } from '../lib/autoLists';
 import { applyListReorder } from '../lib/lists';
+import { displacedGroupIds } from '../lib/highlights';
+import { nextMtime } from '../lib/mtime';
+import { randomId } from '../lib/ids';
 import { LIST_NAME_MAX_LENGTH, NOTE_MAX_LENGTH } from '../lib/textLimits';
 import { useAuth } from './AuthContext';
 
@@ -347,22 +350,31 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     [user, promptGoogleSignIn, mutateThenSync]
   );
 
+  // A highlight group is immutable: this mints the new group's id and its timestamp here, where
+  // the user acted, and works out which existing groups the selection displaces so the server is
+  // told rather than left to infer it from whatever overlaps by the time the write lands. A
+  // recolour is therefore a tombstone plus a new group, and an erase (color === null) is a
+  // tombstone alone.
   const setHighlightRanges = useCallback(
     async (suttaId: string, ranges: { i: number; s: number; e: number }[], color: string | null) => {
       if (!user) return promptGoogleSignIn();
       if (!ranges.length) return;
+      const g = randomId();
+      const mtime = nextMtime();
+      const erase = displacedGroupIds(highlights[suttaId] || [], ranges);
       setHighlights((hs) => {
         const current = hs[suttaId] || [];
-        const kept = current.filter((h) => !ranges.some((r) => h.i === r.i && h.s < r.e && h.e > r.s));
-        const tempGroupId = `temp-${Date.now()}`;
-        const added = color
-          ? ranges.map((r) => ({ id: `${tempGroupId}-${r.i}`, i: r.i, s: r.s, e: r.e, c: color, g: tempGroupId }))
-          : [];
+        const kept = current.filter((h) => !erase.includes(h.g));
+        // Same `g`/`m` the server will store, so the optimistic rows are the real ones bar their
+        // server-minted row ids (which only ever serve as React keys and scroll targets).
+        const added = color ? ranges.map((r) => ({ id: `${g}:${r.i}`, i: r.i, s: r.s, e: r.e, c: color, g, m: mtime })) : [];
         return { ...hs, [suttaId]: [...kept, ...added] };
       });
-      await mutateThenSync('set highlight ranges', () => highlightsApi.setRanges(suttaId, ranges, color), { rethrow: true });
+      await mutateThenSync('set highlight ranges', () => highlightsApi.setRanges(suttaId, ranges, color, { g, mtime, erase }), {
+        rethrow: true,
+      });
     },
-    [user, promptGoogleSignIn, mutateThenSync]
+    [highlights, user, promptGoogleSignIn, mutateThenSync]
   );
 
   // The server bumps visitedAt (and so "Recent"'s order) on every call, not just the first visit
