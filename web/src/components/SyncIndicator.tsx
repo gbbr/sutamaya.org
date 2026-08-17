@@ -76,7 +76,7 @@ export function SyncIndicator({ status, pendingCount, needsReauth, onReauth, siz
         aria-label={`Syncing ${pendingCount} change${pendingCount === 1 ? '' : 's'}`}
         title={`Syncing ${pendingCount} change${pendingCount === 1 ? '' : 's'}`}
       >
-        <RefreshCw size={iconSize} strokeWidth={1.75} />
+        <RefreshCw size={iconSize} strokeWidth={1.75} className="animate-[spin_2s_linear_infinite]" />
       </div>
     );
   }
