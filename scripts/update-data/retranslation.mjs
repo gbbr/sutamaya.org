@@ -14,7 +14,8 @@
 // and between them is still what settles a same-word collision:
 //
 //   standalone terms   mendicant-bhikkhu, immersion-concentration
-//   awareness          sati-aware, sampajanna-understanding
+//   awareness          satipatthana-establishment-of-awareness, sati-aware,
+//                      sampajanna-understanding
 //   arising / passing   samudaya-arising, vaya-passing-away, atthangama-disappearing,
 //                      udayabbaya-arising-passing-away
 //   segment overrides  one line each, applied last
@@ -47,9 +48,39 @@ export const RULES = [
     ],
   },
   // ── Awareness ───────────────────────────────────────────────────────────────
-  // These two meet in the satipaṭṭhāna formula ("keen, aware, and mindful"), where sati-aware
-  // produces the very word sampajanna-understanding consumes. Locking, not order, is what keeps
-  // them apart — see "The pass" in retranslation.md, and the pinned example in update-data.test.js.
+  // sati-aware and sampajanna-understanding meet in the satipaṭṭhāna formula ("keen, aware, and
+  // mindful"), where sati-aware produces the very word sampajanna-understanding consumes. Locking,
+  // not order, is what keeps them apart — see "The pass" in retranslation.md, and the pinned
+  // example in update-data.test.js. satipatthana-establishment-of-awareness runs ahead of both
+  // because it *is* a same-word collision: it claims the "mindfulness" of "mindfulness meditation"
+  // that sati-aware would otherwise take on its own.
+  {
+    id: 'satipatthana-establishment-of-awareness',
+    why: 'Sujato renders satipaṭṭhāna as "mindfulness meditation"; this app prefers "establishment ' +
+      'of awareness", the compound read literally (sati-upaṭṭhāna). Open: the phrase is his ' +
+      'dedicated rendering of this one term and nothing else in the corpus produces it — every one ' +
+      'of its 382 segments is satipaṭṭhāna, so there is nothing to exclude. The plural "the four ' +
+      'kinds of mindfulness meditation" absorbs "kinds of" rather than reading "the four kinds of ' +
+      'establishments of awareness", and the bare singular carries its own article ("the ' +
+      'establishment of awareness") since English will not take it without one; the two ' +
+      'preposition forms exist so a title keeps that article lowercase ("The Longer Discourse on ' +
+      'the Establishment of Awareness"). Skips sujato/notes: MN 10\'s and DN 22\'s notes are ' +
+      'Sujato explaining the very choice this rule reverses ("satipaṭṭhāna refers especially to a ' +
+      'conscious development of contemplative practices based on mindfulness, i.e. \'mindfulness ' +
+      'meditation\'"), which rewritten reads as its own tautology, and a note arguing for a ' +
+      'rendering is better left saying what he said.',
+    mode: 'deny',
+    scope: ['sujato/sutta', 'sujato/name', 'sujato/blurb'],
+    predicate: /satipaṭṭhān/i,
+    forms: [
+      ['kinds of mindfulness meditation', 'establishments of awareness'],
+      ['kind of mindfulness meditation', 'establishment of awareness'],
+      ['and mindfulness meditation', 'and the establishment of awareness'],
+      ['on mindfulness meditation', 'on the establishment of awareness'],
+      ['mindfulness meditations', 'establishments of awareness'],
+      ['mindfulness meditation', 'the establishment of awareness'],
+    ],
+  },
   {
     id: 'sati-aware',
     why: 'Sujato renders sati as "mindfulness"/"mindful"; this app prefers "awareness"/"aware". ' +
@@ -165,20 +196,9 @@ export const RULES = [
   },
   // ── Segment overrides ───────────────────────────────────────────────────────
   // These run last, over the term rules' output — so `from` is the post-processed text, not
-  // upstream's. All but the first are places where sati-aware's "mindfully" → "with awareness" lands
-  // in a word order English won't take; the phrase is fine, it just has to move. `segments: [...]`
-  // is for a line the corpus repeats verbatim, where one from/to is the whole decision.
-  {
-    id: 'mn10-title-establishment-of-awareness',
-    kind: 'segment',
-    why: 'Sujato titles the Satipaṭṭhānasutta "Mindfulness Meditation", which sati-aware turns into ' +
-      '"Awareness Meditation". This app names it for what the compound says: sati-upaṭṭhāna, the ' +
-      'establishment of awareness. DN 22 and the SN/AN chapters of the same name are left as ' +
-      '"Awareness Meditation".',
-    segment: 'mn10:0.2',
-    from: 'Awareness Meditation ',
-    to: 'Establishment of Awareness ',
-  },
+  // upstream's. Each is a place where sati-aware's "mindfully" → "with awareness" lands in a word
+  // order English won't take; the phrase is fine, it just has to move. `segments: [...]` is for a
+  // line the corpus repeats verbatim, where one from/to is the whole decision.
   {
     id: 'enter-with-awareness',
     kind: 'segment',

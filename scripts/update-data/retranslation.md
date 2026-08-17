@@ -200,7 +200,17 @@ override therefore only ever targets the main translation, never a note/blurb/na
   of array order so `situational awareness` isn't pre-empted by `awareness`. Every inflection is
   listed explicitly rather than swapping stems: the corpus contains unrelated words on the same
   stem, e.g. MN40's "water immerser" (someone who dunks themselves in water), which a substring
-  swap turns into the nonsense "water concentrater". Case is preserved.
+  swap turns into the nonsense "water concentrater".
+
+  **The match's case *pattern* is preserved**, not just its first letter: lowercase stays
+  lowercase, a capitalized first word gives Sentence case, and a match whose every significant word
+  is capitalized is Title Case, which the replacement reproduces word by word (`of`, `the`, `on`
+  and the rest of a small closed set stay lowercase). Sentence case is all a single-word form ever
+  needs; Title Case is what a multi-word one does, or a heading comes out reading "The Longer
+  Discourse on Establishment of awareness". The replacement's own first word follows the *match's*
+  first word rather than the title rule, so a form carrying a leading preposition (`on mindfulness
+  meditation` → `on the establishment of awareness`) keeps the article after it lowercase, where a
+  bare one (`Mindfulness Meditation` → `The Establishment of Awareness`) capitalizes it.
 
 ## The pass
 
