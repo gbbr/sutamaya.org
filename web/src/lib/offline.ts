@@ -1,3 +1,5 @@
+import { OFFLINE_DATA_VERSION_KEY, OFFLINE_DICTIONARY_VERSION_KEY } from './storageKeys';
+
 const SUTTA_TEXT_CACHE = 'sutta-text';
 const MANIFEST_URL = '/data/text-shards/manifest.json';
 // Must match vite.config.ts's runtimeCaching cacheName/urlPattern for this URL — writing here
@@ -220,10 +222,45 @@ export async function prefetchDictionary(signal?: AbortSignal): Promise<boolean>
   }
 }
 
-// Drops the Service Worker's CacheFirst copy of dictionary.json (vite.config.ts) so the next
-// fetch is a real one — what lets a retry recover from a cached response that isn't the
-// dictionary at all (see loadDictionary in lib/corpus.ts), which would otherwise be replayed
-// from cache for the whole year that entry lives.
+// The corpus versions this device last completed a full download at. Written only on a clean
+// finish (see SettingsPage's handleDownloadOffline) — a partial download leaves the previous
+// value, since a half-updated cache is exactly the stale state this is here to report. Absent for
+// anyone who has never bulk-downloaded, which is also who the update nudge deliberately skips:
+// their handful of reactively-cached suttas are cheap enough to just refresh on demand.
+export function cachedCorpusVersions(): { data: string | null; dictionary: string | null } {
+  try {
+    return {
+      data: localStorage.getItem(OFFLINE_DATA_VERSION_KEY),
+      dictionary: localStorage.getItem(OFFLINE_DICTIONARY_VERSION_KEY),
+    };
+  } catch {
+    return { data: null, dictionary: null };
+  }
+}
+
+export function recordCachedCorpusVersion(which: 'data' | 'dictionary', version: string): void {
+  try {
+    localStorage.setItem(which === 'data' ? OFFLINE_DATA_VERSION_KEY : OFFLINE_DICTIONARY_VERSION_KEY, version);
+  } catch {
+    // storage unavailable — ignore
+  }
+}
+
+// True once the text cached on this device is older than what this build serves. Only ever true
+// for a device that finished a bulk download, per cachedCorpusVersions above.
+export function isOfflineTextStale(dataVersion: string): boolean {
+  const cached = cachedCorpusVersions().data;
+  return cached !== null && cached !== dataVersion;
+}
+
+// Dropping the whole cache is what makes a re-download actually re-download: prefetchAllSuttas
+// skips every uid already present, so refreshing stale text without this would be a no-op that
+// reported success. Same for the dictionary, whose prefetch returns early when it's cached.
+export async function clearCachedText(): Promise<void> {
+  if (!('caches' in window)) return;
+  await caches.delete(SUTTA_TEXT_CACHE);
+}
+
 export async function clearCachedDictionary(): Promise<void> {
   if (!('caches' in window)) return;
   await caches.delete(DICTIONARY_CACHE);

@@ -605,3 +605,27 @@ something there.
   overwrites a hashed file's content in place without renaming it would hit the same problem. In
   particular, an `update-data` refresh (see `data/README.md`) won't reach a user who's already
   cached the affected suttas until one of the above happens.
+
+  **Bulk downloaders have an opt-in way out**, since for them the gap is worst — a complete cached
+  canon that silently never updates. `corpus.json` carries a `dataVersion` (a digest of the built
+  sutta text, folded from per-uid digests in uid-sorted order so it's build-machine independent)
+  and a separate `dictionaryVersion`; both change exactly when their content does, and `corpus.json`
+  is precached with the app shell, so a new build always delivers them. `lib/offline.ts` records
+  the versions a device last completed a full download at, and `isOfflineTextStale()` compares
+  them. When they diverge, the device gets the "Updated sutta text is available" variant of
+  `TreePane`'s existing nudge banner (the two variants share one slot and are mutually exclusive on
+  whether the corpus is fully cached), and Settings' Offline section says the same thing
+  permanently, in the accent colour behind an info icon, with a "Re-download updated suttas"
+  action. Unlike the download nudge it shares a slot with, this one is **not** PWA-gated: it can
+  only fire for someone who already finished a bulk download, and `CacheFirst` hands a browser tab
+  the same stale text it hands an installed app, so gating it on `isStandalone()` would only hide
+  the problem from people who have it. `isOfflineTextStale()` doubles as the cheap synchronous
+  guard that keeps the Cache Storage probe behind the banner off the common path.
+
+  The re-download drops the affected Cache Storage cache before re-fetching — `prefetchAllSuttas`
+  skips already-cached uids, so a refresh without the clear would report success having replaced
+  nothing — and the text and dictionary caches are cleared independently, so a reworded sutta
+  never costs a ~20MB dictionary re-fetch.
+  Dismissal is stored per `dataVersion`, so it silences one update rather than all future ones.
+  Nothing here helps a user who never bulk-downloaded: their reactively-cached suttas still sit
+  behind the 1-year TTL, and versioning those URLs is the fix that would close the gap properly.

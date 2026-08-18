@@ -36,6 +36,14 @@ export interface Corpus {
   // (data/manifest.json's sourceCommit) — used to link the reader's translation attribution to
   // the exact source revision.
   sujatoCommit: string;
+  // Digest of the built sutta text (scripts/build-corpus.mjs), changing whenever any sutta's
+  // rendered text does — an update-data refresh, a retranslation rule, a change to the builder
+  // itself. Since per-sutta text is cached under unversioned CacheFirst URLs, this is the only
+  // way a device can tell its offline copy has fallen behind (see lib/offline.ts).
+  dataVersion: string;
+  // The same, for dictionary.json — kept separate so a text-only change never prompts a ~20MB
+  // dictionary re-download.
+  dictionaryVersion: string;
 }
 
 export interface Segment {

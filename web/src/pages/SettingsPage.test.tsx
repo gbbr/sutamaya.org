@@ -17,13 +17,26 @@ vi.mock('../lib/offline', () => ({
   estimateOfflineStatus: vi.fn(async () => ({ cached: 0, total: 0 })),
   prefetchAllSuttas: vi.fn(async () => ({ failed: [], circuitTripped: false })),
   prefetchDictionary: vi.fn(async () => true),
+  cachedCorpusVersions: vi.fn(() => ({ data: null, dictionary: null })),
+  recordCachedCorpusVersion: vi.fn(),
+  isOfflineTextStale: vi.fn(() => false),
+  clearCachedText: vi.fn(async () => {}),
+  clearCachedDictionary: vi.fn(async () => {}),
 }));
 
 import { useAuth } from '../context/AuthContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
-import { prefetchDictionary } from '../lib/offline';
+import {
+  cachedCorpusVersions,
+  clearCachedDictionary,
+  clearCachedText,
+  isOfflineTextStale,
+  prefetchAllSuttas,
+  prefetchDictionary,
+  recordCachedCorpusVersion,
+} from '../lib/offline';
 import { SettingsPage } from './SettingsPage';
 import type { Corpus, User } from '../lib/types';
 
@@ -85,7 +98,7 @@ beforeEach(() => {
     setTheme: vi.fn(),
   });
   vi.mocked(useCorpus).mockReturnValue({
-    corpus: { nikayas: [], suttas: {}, sujatoCommit: 'abc123' } as unknown as Corpus,
+    corpus: { nikayas: [], suttas: {}, sujatoCommit: 'abc123', dataVersion: 'data-v2', dictionaryVersion: 'dict-v2' } as unknown as Corpus,
     dictionary: null,
     loading: false,
     error: false,
@@ -93,6 +106,16 @@ beforeEach(() => {
     retryDictionary: vi.fn(),
   });
   vi.mocked(useUserData).mockReturnValue(mockUserData());
+  // Offline-module mocks are module-level singletons, so both their return values and their call
+  // counts survive from one test to the next unless reset here. Default to the ordinary state:
+  // nothing downloaded before, nothing stale, every download succeeding.
+  vi.mocked(isOfflineTextStale).mockReturnValue(false);
+  vi.mocked(cachedCorpusVersions).mockReturnValue({ data: null, dictionary: null });
+  vi.mocked(prefetchAllSuttas).mockResolvedValue({ failed: [], circuitTripped: false });
+  vi.mocked(prefetchDictionary).mockResolvedValue(true);
+  vi.mocked(clearCachedText).mockClear();
+  vi.mocked(clearCachedDictionary).mockClear();
+  vi.mocked(recordCachedCorpusVersion).mockClear();
 });
 
 function renderSettings(path = '/settings') {
@@ -213,7 +236,7 @@ describe('downloading offline', () => {
   it("retries CorpusContext's own dictionary once the download has cached it, so a reader stuck on \"Loading dictionary…\" doesn't need an unrelated online/visibility event to recover", async () => {
     const retryDictionary = vi.fn();
     vi.mocked(useCorpus).mockReturnValue({
-      corpus: { nikayas: [], suttas: {}, sujatoCommit: 'abc123' } as unknown as Corpus,
+      corpus: { nikayas: [], suttas: {}, sujatoCommit: 'abc123', dataVersion: 'data-v2', dictionaryVersion: 'dict-v2' } as unknown as Corpus,
       dictionary: null,
       loading: false,
       error: false,
@@ -231,7 +254,7 @@ describe('downloading offline', () => {
   it("does not retry CorpusContext's dictionary when the download itself failed to cache it", async () => {
     const retryDictionary = vi.fn();
     vi.mocked(useCorpus).mockReturnValue({
-      corpus: { nikayas: [], suttas: {}, sujatoCommit: 'abc123' } as unknown as Corpus,
+      corpus: { nikayas: [], suttas: {}, sujatoCommit: 'abc123', dataVersion: 'data-v2', dictionaryVersion: 'dict-v2' } as unknown as Corpus,
       dictionary: null,
       loading: false,
       error: false,
@@ -244,5 +267,53 @@ describe('downloading offline', () => {
     await userEvent.click(screen.getByText('Download all suttas for offline'));
 
     expect(retryDictionary).not.toHaveBeenCalled();
+  });
+});
+
+describe('refreshing a stale offline copy', () => {
+  it('announces the update and offers a re-download instead of the first-time download', async () => {
+    vi.mocked(isOfflineTextStale).mockReturnValue(true);
+    renderSettings();
+    expect(await screen.findByText('Updated sutta text is available.')).toBeInTheDocument();
+    expect(screen.getByText('Re-download updated suttas')).toBeInTheDocument();
+    // The ordinary availability line is replaced, not shown alongside it.
+    expect(screen.queryByText('All suttas available offline.')).not.toBeInTheDocument();
+  });
+
+  // Without the clear, prefetchAllSuttas skips every already-cached uid and the "refresh" replaces
+  // nothing while still reporting success.
+  it('drops the sutta-text cache first when the cached text is behind the build', async () => {
+    vi.mocked(isOfflineTextStale).mockReturnValue(true);
+    vi.mocked(cachedCorpusVersions).mockReturnValue({ data: 'data-v1', dictionary: 'dict-v2' });
+    renderSettings();
+    await userEvent.click(screen.getByText('Re-download updated suttas'));
+    expect(clearCachedText).toHaveBeenCalled();
+    // Dictionary version unchanged — a reworded sutta must not cost a ~20MB re-fetch.
+    expect(clearCachedDictionary).not.toHaveBeenCalled();
+  });
+
+  it('drops the dictionary cache only when the dictionary itself changed', async () => {
+    vi.mocked(cachedCorpusVersions).mockReturnValue({ data: 'data-v2', dictionary: 'dict-v1' });
+    renderSettings();
+    await userEvent.click(screen.getByText('Download all suttas for offline'));
+    expect(clearCachedDictionary).toHaveBeenCalled();
+    expect(clearCachedText).not.toHaveBeenCalled();
+  });
+
+  it('records both versions once the download finishes cleanly', async () => {
+    renderSettings();
+    await userEvent.click(screen.getByText('Download all suttas for offline'));
+    expect(recordCachedCorpusVersion).toHaveBeenCalledWith('data', 'data-v2');
+    expect(recordCachedCorpusVersion).toHaveBeenCalledWith('dictionary', 'dict-v2');
+  });
+
+  // A partial download leaves the recorded version alone, so the nudge keeps reporting the copy as
+  // behind rather than declaring it current over a half-replaced cache.
+  it('leaves the recorded text version alone when some suttas failed', async () => {
+    vi.mocked(prefetchAllSuttas).mockResolvedValue({ failed: ['dn1'], circuitTripped: false });
+    renderSettings();
+    await userEvent.click(screen.getByText('Download all suttas for offline'));
+    expect(recordCachedCorpusVersion).not.toHaveBeenCalledWith('data', 'data-v2');
+    expect(recordCachedCorpusVersion).toHaveBeenCalledWith('dictionary', 'dict-v2');
   });
 });

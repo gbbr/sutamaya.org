@@ -26,16 +26,25 @@ vi.mock('../lib/pwaNudge', () => ({
   hasOpenedSutta: vi.fn(),
   isOfflineNudgeDismissed: vi.fn(),
   dismissOfflineNudge: vi.fn(),
+  dismissedOfflineUpdateVersion: vi.fn(),
+  dismissOfflineUpdate: vi.fn(),
 }));
-vi.mock('../lib/offline', () => ({ estimateOfflineStatus: vi.fn() }));
+vi.mock('../lib/offline', () => ({ estimateOfflineStatus: vi.fn(), isOfflineTextStale: vi.fn() }));
 
 import { navigate } from '@reach/router';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
 import { useLayout } from '../context/LayoutContext';
-import { isStandalone, hasOpenedSutta, isOfflineNudgeDismissed, dismissOfflineNudge } from '../lib/pwaNudge';
-import { estimateOfflineStatus } from '../lib/offline';
+import {
+  isStandalone,
+  hasOpenedSutta,
+  isOfflineNudgeDismissed,
+  dismissOfflineNudge,
+  dismissedOfflineUpdateVersion,
+  dismissOfflineUpdate,
+} from '../lib/pwaNudge';
+import { estimateOfflineStatus, isOfflineTextStale } from '../lib/offline';
 import { TreePane } from './TreePane';
 import { searchCorpus } from '../lib/corpus';
 import type { Corpus, ListDef, User } from '../lib/types';
@@ -70,6 +79,7 @@ function buildCorpus(): Corpus {
         min: 4,
       },
     },
+    dataVersion: 'data-v1',
   };
 }
 
@@ -193,12 +203,19 @@ beforeEach(() => {
     logout: vi.fn(async () => {}),
   });
   vi.mocked(useLayout).mockReturnValue(mockLayout());
-  // Default to "nudge can never show" for every test that isn't specifically about it — see the
-  // 'offline download nudge' describe block below for the cases that override these.
+  // Default to "neither nudge can show" for every test that isn't specifically about them — see
+  // the 'offline download nudge' / 'offline text update nudge' blocks for the cases overriding
+  // these.
   vi.mocked(isStandalone).mockReturnValue(false);
   vi.mocked(hasOpenedSutta).mockReturnValue(false);
   vi.mocked(isOfflineNudgeDismissed).mockReturnValue(false);
+  // Cleared, not just re-stubbed: several tests below assert this *wasn't* called (the cheap
+  // synchronous checks are meant to rule a banner out before the cache probe ever runs), which
+  // only means anything against a fresh call count.
+  vi.mocked(estimateOfflineStatus).mockClear();
   vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 0, total: 0 });
+  vi.mocked(dismissedOfflineUpdateVersion).mockReturnValue(null);
+  vi.mocked(isOfflineTextStale).mockReturnValue(false);
 });
 
 describe('corpus browse tree', () => {
@@ -509,13 +526,17 @@ describe('offline download nudge', () => {
     expect(estimateOfflineStatus).not.toHaveBeenCalled();
   });
 
-  it('stays hidden once already dismissed', () => {
+  it('stays hidden once already dismissed', async () => {
     vi.mocked(isStandalone).mockReturnValue(true);
     vi.mocked(hasOpenedSutta).mockReturnValue(true);
     vi.mocked(isOfflineNudgeDismissed).mockReturnValue(true);
+    vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 3, total: 10 });
     renderHarness();
+    // The cache probe still runs — dismissing this banner mustn't also silence the "updated text
+    // available" one that shares the slot, and that one needs to know whether the corpus is fully
+    // cached. Only the banner itself is suppressed.
+    await vi.waitFor(() => expect(estimateOfflineStatus).toHaveBeenCalled());
     expect(screen.queryByText(nudgeText)).not.toBeInTheDocument();
-    expect(estimateOfflineStatus).not.toHaveBeenCalled();
   });
 
   it('stays hidden once the corpus is already fully cached for offline', async () => {
@@ -554,6 +575,99 @@ describe('offline download nudge', () => {
     await userEvent.click(screen.getByLabelText('Dismiss'));
     expect(screen.queryByText(nudgeText)).not.toBeInTheDocument();
     expect(dismissOfflineNudge).toHaveBeenCalled();
+  });
+});
+
+describe('offline text update nudge', () => {
+  const updateText = 'Updated sutta text is available';
+  const downloadText = 'Download the full canon for offline reading';
+
+  // The state this banner is actually for: a device that finished a bulk download, whose cached
+  // text has since fallen behind the corpus this build serves. Deliberately leaves isStandalone
+  // at its `false` default — unlike the download nudge, this one is not PWA-gated.
+  function stale() {
+    vi.mocked(hasOpenedSutta).mockReturnValue(true);
+    vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 10, total: 10 });
+    vi.mocked(isOfflineTextStale).mockReturnValue(true);
+  }
+
+  it('shows once the fully-cached corpus has fallen behind the build', async () => {
+    stale();
+    renderHarness();
+    expect(await screen.findByText(updateText)).toBeInTheDocument();
+  });
+
+  // Standalone here only so the cache probe still runs — this has to show the banner staying away
+  // because the copy is current, not because nothing was ever checked.
+  it('stays hidden while the cached text still matches the build', async () => {
+    stale();
+    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(isOfflineTextStale).mockReturnValue(false);
+    renderHarness();
+    await vi.waitFor(() => expect(estimateOfflineStatus).toHaveBeenCalled());
+    expect(screen.queryByText(updateText)).not.toBeInTheDocument();
+  });
+
+  // The two banners share one slot, so "not fully cached yet" has to win — telling someone their
+  // copy is out of date is meaningless when they haven't got a complete one.
+  it('defers to the download nudge while the corpus is still incomplete', async () => {
+    stale();
+    vi.mocked(isStandalone).mockReturnValue(true); // the download nudge it defers to is PWA-only
+    vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 3, total: 10 });
+    renderHarness();
+    expect(await screen.findByText(downloadText)).toBeInTheDocument();
+    expect(screen.queryByText(updateText)).not.toBeInTheDocument();
+  });
+
+  // Unlike the download nudge, this one is not PWA-gated: CacheFirst serves the same stale text in
+  // a tab as in an installed app, and it only ever fires for someone who already chose to download
+  // the whole canon.
+  it('shows in a regular browser tab too', async () => {
+    stale();
+    vi.mocked(isStandalone).mockReturnValue(false);
+    vi.mocked(hasOpenedSutta).mockReturnValue(false);
+    renderHarness();
+    expect(await screen.findByText(updateText)).toBeInTheDocument();
+  });
+
+  // ...but the cache probe behind it still stays off the common path, since nothing is stale for
+  // anyone who never bulk-downloaded.
+  it('never probes Cache Storage for a device that has no bulk download recorded', () => {
+    vi.mocked(isOfflineTextStale).mockReturnValue(false);
+    renderHarness();
+    expect(screen.queryByText(updateText)).not.toBeInTheDocument();
+    expect(estimateOfflineStatus).not.toHaveBeenCalled();
+  });
+
+  it('its Update button navigates to Settings scrolled to the offline section', async () => {
+    stale();
+    renderHarness();
+    await screen.findByText(updateText);
+    await userEvent.click(screen.getByRole('button', { name: 'Update' }));
+    expect(navigate).toHaveBeenCalledWith('/settings', { state: { scrollTo: 'offline' } });
+  });
+
+  // Dismissal records the version rather than a boolean, so the next corpus change nudges again.
+  it('dismissing hides it and persists the dismissal against this dataVersion', async () => {
+    stale();
+    renderHarness();
+    await screen.findByText(updateText);
+    await userEvent.click(screen.getByLabelText('Dismiss'));
+    expect(screen.queryByText(updateText)).not.toBeInTheDocument();
+    expect(dismissOfflineUpdate).toHaveBeenCalledWith('data-v1');
+  });
+
+  it('stays hidden once dismissed at this dataVersion, and returns at the next one', async () => {
+    stale();
+    vi.mocked(dismissedOfflineUpdateVersion).mockReturnValue('data-v1');
+    const { unmount } = renderHarness();
+    await vi.waitFor(() => expect(estimateOfflineStatus).toHaveBeenCalled());
+    expect(screen.queryByText(updateText)).not.toBeInTheDocument();
+    unmount();
+
+    vi.mocked(dismissedOfflineUpdateVersion).mockReturnValue('data-v0');
+    renderHarness();
+    expect(await screen.findByText(updateText)).toBeInTheDocument();
   });
 });
 

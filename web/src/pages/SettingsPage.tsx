@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { ArrowLeft, LogOut } from 'lucide-react';
+import { ArrowLeft, Info, LogOut } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpus } from '../context/CorpusContext';
@@ -8,7 +8,16 @@ import { useUserData, type SyncStatus } from '../context/UserDataContext';
 import { GoogleSignInButton } from '../components/GoogleSignInButton';
 import { dataApi } from '../lib/api';
 import { flatSuttaOrder } from '../lib/corpus';
-import { estimateOfflineStatus, prefetchAllSuttas, prefetchDictionary } from '../lib/offline';
+import {
+  cachedCorpusVersions,
+  clearCachedDictionary,
+  clearCachedText,
+  estimateOfflineStatus,
+  isOfflineTextStale,
+  prefetchAllSuttas,
+  prefetchDictionary,
+  recordCachedCorpusVersion,
+} from '../lib/offline';
 import type { AppTheme, ReaderFace } from '../lib/types';
 
 const UI_SCALE_MIN = 0.85;
@@ -75,6 +84,11 @@ export function SettingsPage({ location }: RouteComponentProps) {
   // percentage does.
   const [progress, setProgress] = useState({ done: 0, total: 0 });
   const [cachedStatus, setCachedStatus] = useState<{ cached: number; total: number } | null>(null);
+  // Read during render rather than held in state: it's a synchronous localStorage compare, and
+  // every event that can change it (a finished download) already re-renders this page via
+  // setCachedStatus. Only ever true for a device that completed a bulk download — see
+  // cachedCorpusVersions.
+  const textStale = !!corpus && isOfflineTextStale(corpus.dataVersion);
   const [failedCount, setFailedCount] = useState(0);
   const [circuitTripped, setCircuitTripped] = useState(false);
   const [dictionaryFailed, setDictionaryFailed] = useState(false);
@@ -165,6 +179,13 @@ export function SettingsPage({ location }: RouteComponentProps) {
     setFailedCount(0);
     setCircuitTripped(false);
     setDictionaryFailed(false);
+    // Refreshing a stale copy has to drop the caches first: prefetchAllSuttas skips every uid
+    // already present and prefetchDictionary returns early when its one entry is, so re-running
+    // them over a full cache would report success without replacing a single stale byte. The two
+    // are cleared independently — a reworded sutta shouldn't cost a ~20MB dictionary re-fetch.
+    const versions = cachedCorpusVersions();
+    if (versions.data !== null && versions.data !== corpus.dataVersion) await clearCachedText();
+    if (versions.dictionary !== null && versions.dictionary !== corpus.dictionaryVersion) await clearCachedDictionary();
     // catch, not just finally — prefetchAllSuttas is designed to resolve normally even when
     // individual suttas fail (that's what the returned `failed` list is for), but this still
     // guards against something genuinely unexpected (e.g. Cache Storage itself unavailable)
@@ -189,6 +210,11 @@ export function SettingsPage({ location }: RouteComponentProps) {
       // dictionary.json here wouldn't reach the reader's in-memory dictionary until some unrelated
       // 'online'/visibilitychange event happened to fire, or the app was restarted.
       if (dictionaryOk) retryDictionary();
+      // Recorded only on a clean finish, and each half on its own — a cancelled or partly failed
+      // download leaves the previous version in place, which is exactly the "your offline copy is
+      // behind" state the nudge should keep reporting until it's actually resolved.
+      if (failed.length === 0 && !controller.signal.aborted) recordCachedCorpusVersion('data', corpus.dataVersion);
+      if (dictionaryOk) recordCachedCorpusVersion('dictionary', corpus.dictionaryVersion);
       setCachedStatus(await estimateOfflineStatus(uids));
     } catch (e) {
       console.error('Offline download failed', e);
@@ -318,19 +344,29 @@ export function SettingsPage({ location }: RouteComponentProps) {
               </>
             ) : (
               <>
-                <div className="font-sans text-[13px] text-ink/60 mb-2">
-                  {cachedStatus
-                    ? cachedStatus.cached >= cachedStatus.total
-                      ? 'All suttas available offline.'
-                      : `${Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% available offline.`
-                    : 'Checking offline availability…'}
-                </div>
+                {/* An available update gets an icon and the accent colour — every other state
+                    here is a passive status line in muted grey, which is exactly what the eye
+                    skips over, and this one is the only line that's asking for a decision. */}
+                {cachedStatus && textStale ? (
+                  <div className="flex items-start gap-1.5 font-sans text-[13px] text-accent-text mb-2">
+                    <Info size={15} strokeWidth={1.75} className="flex-none mt-[1.5px]" />
+                    <span>Updated sutta text is available.</span>
+                  </div>
+                ) : (
+                  <div className="font-sans text-[13px] text-ink/60 mb-2">
+                    {cachedStatus
+                      ? cachedStatus.cached >= cachedStatus.total
+                        ? 'All suttas available offline.'
+                        : `${Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% available offline.`
+                      : 'Checking offline availability…'}
+                  </div>
+                )}
                 <button
                   className="block w-full text-center h-11 rounded-field border border-ink/[.22] font-sans text-[14px] font-medium disabled:opacity-50"
                   onClick={handleDownloadOffline}
                   disabled={!corpus}
                 >
-                  Download all suttas for offline
+                  {textStale ? 'Re-download updated suttas' : 'Download all suttas for offline'}
                 </button>
                 {failedCount > 0 &&
                   (circuitTripped ? (
