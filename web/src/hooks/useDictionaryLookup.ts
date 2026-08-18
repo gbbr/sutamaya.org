@@ -143,8 +143,10 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
       if (!dictionary) {
         // Dictionary still loading in the background (see the effect above) — open the dock in a
         // loading state rather than silently no-oping the tap, which otherwise reads as "broken"
-        // on a first-ever visit.
-        setDict({ word: stripPunct(raw), gloss: 'Loading…', defs: null, segIndex, wordIndex, loading: true });
+        // on a first-ever visit. No gloss: the dock's body already says what's going on, and it
+        // says it accurately once an attempt has actually failed, where a "Loading…" gloss next to
+        // the word would still be claiming a download is in progress.
+        setDict({ word: stripPunct(raw), gloss: '', defs: null, segIndex, wordIndex, loading: true });
       } else {
         const def = lookupWord(dictionary, raw);
         setDict({

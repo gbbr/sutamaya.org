@@ -1,6 +1,8 @@
-import { describe, expect, it } from 'vitest';
-import { ancestorsOf, compareIds, resolveCanonicalSuttaId, searchCorpus, sortByIdAsc } from './corpus';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { ancestorsOf, compareIds, loadDictionary, resolveCanonicalSuttaId, searchCorpus, sortByIdAsc } from './corpus';
 import type { Corpus, ListDef, Sutta } from './types';
+
+vi.mock('./offline', () => ({ clearCachedDictionary: vi.fn(async () => {}) }));
 
 // Only the fields compareIds/sortByIdAsc actually touch (the id key) matter here; the rest
 // of Sutta is irrelevant filler to satisfy the type.
@@ -232,5 +234,86 @@ describe('resolveCanonicalSuttaId', () => {
   it('leaves an id matching no batch and no real entry unchanged', () => {
     expect(resolveCanonicalSuttaId(corpus, 'dhp999')).toBe('dhp999');
     expect(resolveCanonicalSuttaId(corpus, 'not-a-real-id')).toBe('not-a-real-id');
+  });
+});
+
+
+// The dictionary worker's own fetch/parse is covered by the browser it runs in; what matters here
+// is that loadDictionary always *settles*. A promise left hanging is the one failure the callers
+// can't recover from — retryWithBackoff never retries it and CorpusContext never marks the
+// dictionary failed, so the reader sits on "Loading dictionary…" for the rest of the session.
+describe('loadDictionary', () => {
+  const WATCHDOG_MS = 60_000;
+  let posted: Array<Record<string, unknown>>;
+  let terminated: number;
+  let instance: { onmessage: ((e: MessageEvent) => void) | null; onerror: ((e: ErrorEvent) => void) | null };
+
+  beforeEach(() => {
+    vi.useFakeTimers();
+    posted = [];
+    terminated = 0;
+    class FakeWorker {
+      onmessage: ((e: MessageEvent) => void) | null = null;
+      onerror: ((e: ErrorEvent) => void) | null = null;
+      postMessage(data: Record<string, unknown>) {
+        posted.push(data);
+      }
+      terminate() {
+        terminated += 1;
+      }
+      constructor() {
+        instance = this;
+      }
+    }
+    vi.stubGlobal('Worker', FakeWorker);
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+    vi.unstubAllGlobals();
+    vi.clearAllMocks();
+  });
+
+  const reply = (data: Record<string, unknown>) => instance.onmessage?.({ data } as MessageEvent);
+
+  it('rejects once the worker has gone silent, rather than hanging forever', async () => {
+    const p = loadDictionary();
+    const settled = expect(p).rejects.toThrow('timed out');
+    await vi.advanceTimersByTimeAsync(WATCHDOG_MS);
+    await settled;
+    expect(terminated).toBe(1);
+  });
+
+  it('keeps waiting while the worker is still pinging — a slow download is not a dead worker', async () => {
+    const p = loadDictionary();
+    let resolved = false;
+    void p.then(() => {
+      resolved = true;
+    });
+    for (let i = 0; i < 5; i += 1) {
+      await vi.advanceTimersByTimeAsync(WATCHDOG_MS - 1_000);
+      reply({ ping: true });
+    }
+    reply({ ok: true, dictionary: { dhamma: ['teaching'] } });
+    await expect(p).resolves.toEqual({ dhamma: ['teaching'] });
+    expect(resolved).toBe(true);
+  });
+
+  it('drops the cached response when the bytes that arrived are not the dictionary', async () => {
+    const { clearCachedDictionary } = await import('./offline');
+    const p = loadDictionary();
+    reply({ ok: false, corrupt: true, error: 'SyntaxError: Unexpected token <' });
+    await expect(p).rejects.toThrow('Unexpected token');
+    // Without this the SW's CacheFirst copy — a captive portal's page, a truncated write — is
+    // replayed by every later attempt for the whole year it stays cached.
+    expect(clearCachedDictionary).toHaveBeenCalled();
+  });
+
+  it('leaves the cache alone when the fetch itself failed — there is nothing poisoned to drop', async () => {
+    const { clearCachedDictionary } = await import('./offline');
+    const p = loadDictionary();
+    reply({ ok: false, error: 'TypeError: Failed to fetch' });
+    await expect(p).rejects.toThrow('Failed to fetch');
+    expect(clearCachedDictionary).not.toHaveBeenCalled();
   });
 });

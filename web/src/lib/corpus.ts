@@ -1,4 +1,5 @@
 import { flattenListTree } from './lists';
+import { clearCachedDictionary } from './offline';
 import type { ChapterRow, Corpus, Dictionary, ListDef, Nikaya, Sutta } from './types';
 
 export async function loadCorpus(): Promise<Corpus> {
@@ -12,15 +13,47 @@ export async function loadCorpus(): Promise<Corpus> {
 export function loadDictionary(): Promise<Dictionary> {
   return new Promise((resolve, reject) => {
     const worker = new Worker(new URL('../workers/dictionaryWorker.ts', import.meta.url), { type: 'module' });
-    worker.onmessage = (e: MessageEvent<{ ok: boolean; dictionary?: Dictionary; error?: string }>) => {
+    let watchdog: ReturnType<typeof setTimeout>;
+    // Nothing at all from the worker for this long — not even one of the pings it sends while
+    // bytes are arriving — means it has died rather than that the download is slow: an
+    // out-of-memory kill (plausible for a ~20MB parse on a small phone) fires no 'error' event of
+    // any kind. Without it that leaves this promise unsettled forever, which the callers can't
+    // recover from: retryWithBackoff never retries, CorpusContext never marks the dictionary
+    // failed, and every word tap sits on "Loading dictionary…" for the rest of the session. Set
+    // well past the worker's own PING_INTERVAL_MS, since the parse itself blocks its pings while
+    // it runs.
+    const WATCHDOG_MS = 60_000;
+    const armWatchdog = () => {
+      clearTimeout(watchdog);
+      watchdog = setTimeout(() => {
+        worker.terminate();
+        reject(new Error('dictionary worker timed out'));
+      }, WATCHDOG_MS);
+    };
+    worker.onmessage = (e: MessageEvent<{ ok?: boolean; ping?: boolean; corrupt?: boolean; dictionary?: Dictionary; error?: string }>) => {
+      if (e.data.ping) {
+        armWatchdog();
+        return;
+      }
+      clearTimeout(watchdog);
       worker.terminate();
-      if (e.data.ok && e.data.dictionary) resolve(e.data.dictionary);
-      else reject(new Error(e.data.error || 'dictionary worker failed'));
+      if (e.data.ok && e.data.dictionary) {
+        resolve(e.data.dictionary);
+        return;
+      }
+      const fail = () => reject(new Error(e.data.error || 'dictionary worker failed'));
+      // Bytes that aren't the dictionary have already been cached for a year by the SW's
+      // CacheFirst rule, so retrying without dropping them just replays the same failure — for
+      // the whole year, on every launch. Evicting first is what makes the retry a real one.
+      if (e.data.corrupt) clearCachedDictionary().catch(() => {}).then(fail);
+      else fail();
     };
     worker.onerror = (event) => {
+      clearTimeout(watchdog);
       worker.terminate();
       reject(event.error instanceof Error ? event.error : new Error('dictionary worker failed'));
     };
+    armWatchdog();
     worker.postMessage('load');
   });
 }

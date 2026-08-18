@@ -12,6 +12,11 @@ interface CorpusState {
   // nothing else ever resolves `corpus`. The dictionary's own failure isn't surfaced here: it
   // loads in the background and its only consumer already null-checks it (see below).
   error: boolean;
+  // True once every backoff attempt at the dictionary has failed — surfaced (unlike a load that's
+  // merely still in flight) so DictionaryDock can offer a Retry button rather than sitting on
+  // "Loading dictionary…" indefinitely, which is what a user whose device never fires another
+  // 'online'/visibilitychange event would otherwise be left with.
+  dictionaryFailed: boolean;
   retry: () => void;
   // Re-attempts a dictionary load that has already failed, no-op otherwise — for a caller that
   // has just independently confirmed the dictionary is now reachable (e.g. SettingsPage's "download
@@ -29,6 +34,7 @@ export function CorpusProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState(false);
   const [attempt, setAttempt] = useState(0);
   const [dictionaryAttempt, setDictionaryAttempt] = useState(0);
+  const [dictionaryFailed, setDictionaryFailed] = useState(false);
 
   useEffect(() => {
     setError(false);
@@ -59,13 +65,16 @@ export function CorpusProvider({ children }: { children: ReactNode }) {
     // internally, so a second online/visibilitychange event landing in that window would still
     // read "failed" and fire yet another concurrent attempt on top of the one already running.
     dictionaryFailedRef.current = false;
+    setDictionaryFailed(false);
     retryWithBackoff(loadDictionary)
       .then((d) => {
         if (!cancelled) setDictionary(d);
       })
       .catch((e) => {
         console.error('Failed to load dictionary', e);
-        if (!cancelled) dictionaryFailedRef.current = true;
+        if (cancelled) return;
+        dictionaryFailedRef.current = true;
+        setDictionaryFailed(true);
       });
     return () => {
       cancelled = true;
@@ -113,8 +122,8 @@ export function CorpusProvider({ children }: { children: ReactNode }) {
   // render. `dictionary` (~20MB, loaded off-thread — see loadDictionary()) keeps loading in the
   // background; its only consumer (ReaderPage's word-tap lookup) already null-checks it.
   const value = useMemo(
-    () => ({ corpus, dictionary, loading: !corpus && !error, error, retry, retryDictionary: retryDictionaryIfFailed }),
-    [corpus, dictionary, error, retry, retryDictionaryIfFailed]
+    () => ({ corpus, dictionary, loading: !corpus && !error, error, dictionaryFailed, retry, retryDictionary: retryDictionaryIfFailed }),
+    [corpus, dictionary, error, dictionaryFailed, retry, retryDictionaryIfFailed]
   );
   return <CorpusContext.Provider value={value}>{children}</CorpusContext.Provider>;
 }
