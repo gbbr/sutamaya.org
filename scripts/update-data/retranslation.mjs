@@ -18,6 +18,7 @@
 //                      sampajanna-full-comprehension
 //   arising / passing   samudaya-arising, vaya-passing-away, atthangama-disappearing,
 //                      udayabbaya-arising-passing-away
+//   change / instability  viparinama-annathatta-change-unstable
 //   segment overrides  one line each, applied last
 
 export const RULES = [
@@ -193,6 +194,49 @@ export const RULES = [
     predicate: /udayabbay|udayavyay/i,
     forms: [
       ['rise and fall', 'arising and passing away'],
+    ],
+  },
+  // ── Change and instability ──────────────────────────────────────────────────
+  // vipariṇāma paired with aññathatta/aññathābhāva — the doublet AN 3.47 lists alongside uppāda
+  // and vaya as the third mark of a conditioned phenomenon ("change while persisting"), which is
+  // why this group sits next to arising / passing. The adjacency is doctrinal only: nothing above
+  // produces "decay" or "perish" and nothing below consumes the "change"/"unstable" this rule
+  // writes, so there is no same-word collision here and the position settles nothing.
+  {
+    id: 'viparinama-annathatta-change-unstable',
+    why: 'Sujato renders the vipariṇāma/aññathā doublet as "decays and perishes"; this app ' +
+      'prefers "changes and is unstable". Both Pali terms are change-words — vipariṇāma is ' +
+      'transformation, aññathā-bhāva is becoming-otherwise — and neither carries the destruction ' +
+      '"perish" implies; Sujato himself renders aññathatta as "change" in 100 of its 112 ' +
+      'segments ("change while persisting", AN 3.47), so this brings the doublet into line with ' +
+      'the rest of his own English. Open: every form here is a multi-word phrase that only this ' +
+      'doublet produces, so there is nothing to exclude — the bare words are another matter, ' +
+      'which is why none of them is a form. "decay" alone is never this family (all 21 segments ' +
+      'are pārijuñña/jarā, MN 82\'s four kinds of decay), and a bare "perish" is mostly ' +
+      'nassati ("the world will perish"). Deliberately leaves vipariṇāmadhamma ("perishable", ' +
+      '209 segments with its negation) and the vipariṇāma compound nouns (MN 137/138, SN 22.7, ' +
+      'SN 35.136–7, MN 44, vipariṇāmadukkhatā) alone: those are vipariṇāma on its own rather ' +
+      'than the doublet, and they are a separate editorial decision. The two renderings meet in ' +
+      'only 2 of the 13 doublet suttas, so leaving them costs almost nothing — dn1:3.21.5 is the ' +
+      'one line where they land in adjacent sentences. Shares "unstable" with adhuva (14 ' +
+      'segments, "Conditions are unstable", AN 7.66); the two are near-synonyms and no sutta ' +
+      'carries both renderings, so the overlap is accepted rather than worked around.',
+    mode: 'deny',
+    predicate: /vipariṇ|vippariṇ|aññathatt|aññathābhāv/i,
+    forms: [
+      // The doublet as a whole predicate, singular and plural.
+      ['decays and perishes', 'changes and is unstable'],
+      ['decay and perish', 'change and are unstable'],
+      // Same words, but a bare infinitive governed by "were to" — 9 segments across MN 87 and
+      // SN 21.2, where the finite plural above would give "were to change and are unstable".
+      // Carries the governing words so the slot is unambiguous, and wins by longest-first.
+      ['were to decay and perish', 'were to change and be unstable'],
+      // The nominal slot: "their decay and perishing give rise to sorrow" (vipariṇāmaññathābhāvā).
+      ['decay and perishing', 'change and instability'],
+      // The adjectival slot, SN 25's formula (vipariṇāmī aññathābhāvī): "form is impermanent,
+      // decaying, and perishing". One form covers both words — which is also what keeps the rule
+      // off sn5.4:5.2's unrelated "decaying and frail", where there is no comma.
+      ['decaying, and perishing', 'changing, and unstable'],
     ],
   },
   // ── Segment overrides ───────────────────────────────────────────────────────
