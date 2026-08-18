@@ -56,13 +56,20 @@ export default defineConfig({
           // itself. The shard bundle files it points to are NOT precached — CacheFirst on first
           // request, same as everything else in data/text/.
           'data/text-shards/manifest.json',
+          // Which shard covers a given headword (~6KB). Precached because it is on the path of
+          // every single word tap, and because without it an offline device can't even work out
+          // which shard to look in, however many of them it has cached.
+          'data/dict-shards/manifest.json',
         ],
         navigateFallbackDenylist: [/^\/api\//],
         runtimeCaching: [
           {
-            urlPattern: /\/data\/dictionary\.json$/,
+            // One entry per dictionary range shard (see scripts/build-corpus.mjs) — the reader
+            // fetches only the shard a tapped word falls in, so these accumulate as words are
+            // looked up, and "download for offline" fills in the rest.
+            urlPattern: /\/data\/dict-shards\/.*\.json$/,
             handler: 'CacheFirst',
-            options: { cacheName: 'dictionary', expiration: { maxEntries: 1, maxAgeSeconds: 60 * 60 * 24 * 365 } },
+            options: { cacheName: 'dictionary', expiration: { maxEntries: 200, maxAgeSeconds: 60 * 60 * 24 * 365 } },
           },
           {
             urlPattern: /\/data\/text\/.*\.json$/,

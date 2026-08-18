@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { estimateOfflineStatus, isDictionaryCached, prefetchAllSuttas, prefetchDictionary, SHARD_FETCH_TIMEOUT_MS, type ShardManifest } from './offline';
+import { resetDictShardCache } from './dictionaryShards';
 
 // offline.ts targets browser-only behavior that this test's Node environment (see
 // vitest.config.ts — .test.ts files run under plain Node, not jsdom) doesn't provide on its own:
@@ -123,29 +124,60 @@ describe('offline', () => {
   });
 
   describe('prefetchDictionary / isDictionaryCached', () => {
-    it('fetches and caches the dictionary under its well-known URL when not already cached', async () => {
-      const fetchSpy = vi.fn(async () => jsonResponse({ entry: ['def'] }));
+    // Two shards, so "cached" has to mean all of them — the reader fetches one shard per tapped
+    // word, so a partially-filled cache is the normal state, not a finished download.
+    const dictManifest = {
+      shards: [
+        { file: 'dict-shards/000.json', first: 'a', last: 'mano' },
+        { file: 'dict-shards/001.json', first: 'metta', last: 'yoniso' },
+      ],
+    };
+    const dictFetch = (bad?: string) =>
+      vi.fn(async (url: string) => {
+        if (url === '/data/dict-shards/manifest.json') return jsonResponse(dictManifest);
+        if (url === bad) return jsonResponse('nope', 404);
+        return jsonResponse({ dhamma: ['teaching'] });
+      });
+
+    beforeEach(() => {
+      resetDictShardCache();
+    });
+
+    it('fetches and caches every shard when none are cached', async () => {
+      const fetchSpy = dictFetch();
       vi.stubGlobal('fetch', fetchSpy);
 
       const ok = await prefetchDictionary();
 
       expect(ok).toBe(true);
-      expect(fetchSpy).toHaveBeenCalledTimes(1);
       const cache = await cacheStorage.open('dictionary');
-      expect(cache.has('/data/dictionary.json')).toBe(true);
+      expect(cache.has('/data/dict-shards/000.json')).toBe(true);
+      expect(cache.has('/data/dict-shards/001.json')).toBe(true);
       expect(await isDictionaryCached()).toBe(true);
     });
 
-    it('skips re-fetching when the dictionary is already cached', async () => {
+    it('skips shards that are already cached', async () => {
       const cache = await cacheStorage.open('dictionary');
-      await cache.put('/data/dictionary.json', jsonResponse({}));
-      const fetchSpy = vi.fn();
+      await cache.put('/data/dict-shards/000.json', jsonResponse({}));
+      const fetchSpy = dictFetch();
       vi.stubGlobal('fetch', fetchSpy);
 
       const ok = await prefetchDictionary();
 
       expect(ok).toBe(true);
-      expect(fetchSpy).not.toHaveBeenCalled();
+      const shardFetches = fetchSpy.mock.calls.map(([u]) => u).filter((u: string) => !u.endsWith('manifest.json'));
+      expect(shardFetches).toEqual(['/data/dict-shards/001.json']);
+    });
+
+    // Half a dictionary is not an offline dictionary: the words in the missing shard fail, and
+    // the caller records a completed download that would silently never be repaired.
+    it('reports failure when any single shard fails, and does not report itself cached', async () => {
+      vi.stubGlobal('fetch', dictFetch('/data/dict-shards/001.json'));
+
+      const ok = await prefetchDictionary();
+
+      expect(ok).toBe(false);
+      expect(await isDictionaryCached()).toBe(false);
     });
 
     it('reports failure without throwing when the fetch fails, and leaves nothing cached', async () => {
@@ -155,15 +187,6 @@ describe('offline', () => {
           throw new TypeError('network error');
         })
       );
-
-      const ok = await prefetchDictionary();
-
-      expect(ok).toBe(false);
-      expect(await isDictionaryCached()).toBe(false);
-    });
-
-    it('treats a non-ok response as a failure, not a cached entry', async () => {
-      vi.stubGlobal('fetch', vi.fn(async () => jsonResponse('not found', 404)));
 
       const ok = await prefetchDictionary();
 

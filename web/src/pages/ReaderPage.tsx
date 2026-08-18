@@ -28,7 +28,7 @@ import { ShortcutsModal } from '../components/ShortcutsModal';
 import { SuttaRowChips } from '../components/SuttaRowChips';
 
 export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentProps<{ suttaId: string }>) {
-  const { corpus, dictionaryFailed, retryDictionary } = useCorpus();
+  const { corpus } = useCorpus();
   // A batched document (several inner suttas in one file, e.g. "dhp320-333") has no corpus entry
   // of its own for any individual inner sutta ("dhp321") — resolving here means every other use
   // of `suttaId` below (text fetch, highlights/notes/visited, Prev/Next, breadcrumb) transparently
@@ -139,7 +139,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     window.getSelection()?.removeAllRanges();
   }, [suttaId]);
 
-  const { dict, activeWord, closeDict, onWordClick, goToAdjacentWord } = useDictionaryLookup({
+  const { dict, activeWord, closeDict, onWordClick, goToAdjacentWord, retryLookup } = useDictionaryLookup({
     suttaId,
     segments,
     scrollRef,
@@ -539,13 +539,13 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           gloss={dict.gloss}
           defs={dict.defs}
           loading={dict.loading}
-          dictionaryFailed={dictionaryFailed}
+          dictionaryFailed={dict.failed}
           theme={theme}
           fontSize={fs}
           onClose={closeDict}
           onPrev={() => goToAdjacentWord(-1)}
           onNext={() => goToAdjacentWord(1)}
-          onRetryDictionary={retryDictionary}
+          onRetryDictionary={retryLookup}
         />
       )}
 

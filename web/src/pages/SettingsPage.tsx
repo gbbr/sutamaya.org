@@ -90,7 +90,7 @@ function syncStatusLine(
 export function SettingsPage({ location }: RouteComponentProps) {
   const { user, logout, loading, authError } = useAuth();
   const { uiScale, uiFace, theme, setUiScale, setUiFace, setTheme } = useUiPrefs();
-  const { corpus, retryDictionary } = useCorpus();
+  const { corpus } = useCorpus();
   const { syncStatus, pendingCount, lastSyncedAt } = useUserData();
 
   const [offlineStatus, setOfflineStatus] = useState<'idle' | 'downloading'>('idle');
@@ -195,9 +195,9 @@ export function SettingsPage({ location }: RouteComponentProps) {
     setCircuitTripped(false);
     setDictionaryFailed(false);
     // Refreshing a stale copy has to drop the caches first: prefetchAllSuttas skips every uid
-    // already present and prefetchDictionary returns early when its one entry is, so re-running
-    // them over a full cache would report success without replacing a single stale byte. The two
-    // are cleared independently — a reworded sutta shouldn't cost a ~20MB dictionary re-fetch.
+    // already present and prefetchDictionary skips every shard already cached, so re-running them
+    // over a full cache would report success without replacing a single stale byte. The two are
+    // cleared independently — a reworded sutta shouldn't cost a ~2.6MB dictionary re-fetch.
     const versions = cachedCorpusVersions();
     if (versions.data !== null && versions.data !== corpus.dataVersion) await clearCachedText();
     if (versions.dictionary !== null && versions.dictionary !== corpus.dictionaryVersion) await clearCachedDictionary();
@@ -206,10 +206,10 @@ export function SettingsPage({ location }: RouteComponentProps) {
     // guards against something genuinely unexpected (e.g. Cache Storage itself unavailable)
     // turning into an unhandled rejection instead of the UI cleanly recovering to idle.
     try {
-      // Run alongside the sutta shards rather than after — the dictionary is usually already
-      // cached (see prefetchDictionary's comment) so this is normally a no-op, but "download all
-      // suttas for offline" should still guarantee it before reporting done, since without a
-      // dictionary the reader's word lookups are stuck loading in airplane mode either way.
+      // Run alongside the sutta shards rather than after. The reader only fetches the dictionary
+      // shard each tapped word falls in, so unlike the sutta text this is rarely already complete
+      // — and "download all suttas for offline" has to guarantee it before reporting done, since
+      // without every shard the reader's word lookups fail in airplane mode either way.
       const [{ failed, circuitTripped: tripped }, dictionaryOk] = await Promise.all([
         prefetchAllSuttas(uids, {
           signal: controller.signal,
@@ -220,11 +220,6 @@ export function SettingsPage({ location }: RouteComponentProps) {
       setFailedCount(failed.length);
       setCircuitTripped(tripped);
       setDictionaryFailed(!dictionaryOk && !controller.signal.aborted);
-      // A no-op unless CorpusContext's own boot-time dictionary load had separately failed and is
-      // sitting stuck (see its retryDictionary) — without this, successfully caching
-      // dictionary.json here wouldn't reach the reader's in-memory dictionary until some unrelated
-      // 'online'/visibilitychange event happened to fire, or the app was restarted.
-      if (dictionaryOk) retryDictionary();
       // Recorded only on a clean finish, and each half on its own — a cancelled or partly failed
       // download leaves the previous version in place, which is exactly the "your offline copy is
       // behind" state the nudge should keep reporting until it's actually resolved.

@@ -99,11 +99,9 @@ beforeEach(() => {
   });
   vi.mocked(useCorpus).mockReturnValue({
     corpus: { nikayas: [], suttas: {}, sujatoCommit: 'abc123', dataVersion: 'data-v2', dictionaryVersion: 'dict-v2' } as unknown as Corpus,
-    dictionary: null,
     loading: false,
     error: false,
     retry: vi.fn(),
-    retryDictionary: vi.fn(),
   });
   vi.mocked(useUserData).mockReturnValue(mockUserData());
   // Offline-module mocks are module-level singletons, so both their return values and their call
@@ -232,43 +230,6 @@ describe('sync status line', () => {
   });
 });
 
-describe('downloading offline', () => {
-  it("retries CorpusContext's own dictionary once the download has cached it, so a reader stuck on \"Loading dictionary…\" doesn't need an unrelated online/visibility event to recover", async () => {
-    const retryDictionary = vi.fn();
-    vi.mocked(useCorpus).mockReturnValue({
-      corpus: { nikayas: [], suttas: {}, sujatoCommit: 'abc123', dataVersion: 'data-v2', dictionaryVersion: 'dict-v2' } as unknown as Corpus,
-      dictionary: null,
-      loading: false,
-      error: false,
-      retry: vi.fn(),
-      retryDictionary,
-    });
-    vi.mocked(prefetchDictionary).mockResolvedValue(true);
-
-    renderSettings();
-    await userEvent.click(screen.getByText('Download all suttas for offline'));
-
-    expect(retryDictionary).toHaveBeenCalledTimes(1);
-  });
-
-  it("does not retry CorpusContext's dictionary when the download itself failed to cache it", async () => {
-    const retryDictionary = vi.fn();
-    vi.mocked(useCorpus).mockReturnValue({
-      corpus: { nikayas: [], suttas: {}, sujatoCommit: 'abc123', dataVersion: 'data-v2', dictionaryVersion: 'dict-v2' } as unknown as Corpus,
-      dictionary: null,
-      loading: false,
-      error: false,
-      retry: vi.fn(),
-      retryDictionary,
-    });
-    vi.mocked(prefetchDictionary).mockResolvedValue(false);
-
-    renderSettings();
-    await userEvent.click(screen.getByText('Download all suttas for offline'));
-
-    expect(retryDictionary).not.toHaveBeenCalled();
-  });
-});
 
 describe('refreshing a stale offline copy', () => {
   it('announces the update and offers a re-download instead of the first-time download', async () => {

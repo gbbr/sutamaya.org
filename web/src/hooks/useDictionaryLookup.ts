@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useMemo, useState, type RefObject } from 'react';
-import { useCorpus } from '../context/CorpusContext';
-import { lookupWord, splitPaliWords, stripPunct, findAdjacentWord } from '../lib/dictionary';
+import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from 'react';
+import { splitPaliWords, stripPunct, findAdjacentWord } from '../lib/dictionary';
+import { lookupHeadword } from '../lib/dictionaryShards';
 import type { SegmentFile } from '../lib/corpus';
 
 interface DictState {
@@ -12,9 +12,13 @@ interface DictState {
   // from the (not-unique-within-a-segment) word text itself.
   segIndex: number;
   wordIndex: number;
-  // Set when the dock was opened before the (~20MB, background-loaded) dictionary had finished
-  // fetching — see onWordClick below. Resolved by the effect that watches `dictionary` below.
+  // This word's shard is still being fetched. Usually resolves within a microtask (the shard is
+  // already resident, or already in Cache Storage), so the dock's "Loading…" copy only really
+  // shows on a cold shard over a slow connection.
   loading?: boolean;
+  // That fetch failed — offline with this shard uncached, or a bad response. Distinguished from
+  // `loading` so the dock can offer a retry instead of claiming a download is still going.
+  failed?: boolean;
 }
 
 interface UseDictionaryLookupOptions {
@@ -31,7 +35,6 @@ interface UseDictionaryLookupOptions {
 // conditions, same dependency tracking) mirroring how useReaderKeyboard was already pulled out of
 // this same component.
 export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegment, setOpenSegs }: UseDictionaryLookupOptions) {
-  const { dictionary } = useCorpus();
   const [dict, setDict] = useState<DictState | null>(null);
 
   // Sutta changed (Prev/Next, a deep link, closing and reopening elsewhere) — any dock left open
@@ -40,18 +43,31 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
     setDict(null);
   }, [suttaId]);
 
-  // First-ever visit: the dictionary (~20MB) can still be mid-fetch when the reader is already
-  // interactive (only `corpus` gates first paint — see CorpusContext). A tap during that window
-  // opens the dock in `loading` state (see onWordClick below); once `dictionary` actually
-  // resolves, redo that lookup for real rather than leaving the dock stuck showing "Loading…".
-  useEffect(() => {
-    if (!dictionary) return;
-    setDict((d) => {
-      if (!d?.loading) return d;
-      const def = lookupWord(dictionary, d.word);
-      return { ...d, gloss: def ? `${def.length}` : 'Pali', defs: def, loading: false };
-    });
-  }, [dictionary]);
+  // Which lookup the dock is currently showing. Shard fetches settle out of order (holding
+  // Shift+Arrow walks words faster than a cold shard resolves), so a reply is only allowed to
+  // write state if it is still the one being waited on.
+  const currentLookup = useRef(0);
+
+  // Opens the dock on `raw` straight away and fills in the definitions once its shard arrives —
+  // the dock is doing the waiting, so a tap never looks like it did nothing.
+  const runLookup = useCallback((raw: string, segIndex: number, wordIndex: number) => {
+    const token = (currentLookup.current += 1);
+    setDict({ word: stripPunct(raw), gloss: '', defs: null, segIndex, wordIndex, loading: true });
+    lookupHeadword(raw).then(
+      (defs) => {
+        if (token !== currentLookup.current) return;
+        setDict((d) => (d ? { ...d, gloss: defs ? `${defs.length}` : 'Pali', defs, loading: false, failed: false } : d));
+      },
+      () => {
+        if (token !== currentLookup.current) return;
+        setDict((d) => (d ? { ...d, loading: true, failed: true } : d));
+      }
+    );
+  }, []);
+
+  const retryLookup = useCallback(() => {
+    if (dict) runLookup(dict.word, dict.segIndex, dict.wordIndex);
+  }, [dict, runLookup]);
 
   // Every segment's Pali word list, in the same order SegmentedText renders (and taps) them —
   // shared by onWordClick (to record where a lookup came from) and goToAdjacentWord (to walk
@@ -106,12 +122,11 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
   // shortcut (see useReaderKeyboard, which depends on this).
   const goToAdjacentWord = useCallback(
     (dir: 1 | -1) => {
-      if (!dict || !dictionary || segWords.length === 0) return;
+      if (!dict || segWords.length === 0) return;
       const next = findAdjacentWord(segWords, dict.segIndex, dict.wordIndex, dir);
       if (!next) return;
       const { segIndex: si, wordIndex: wi, word: raw } = next;
-      const def = lookupWord(dictionary, raw);
-      setDict({ word: stripPunct(raw), gloss: def ? `${def.length}` : 'Pali', defs: def, segIndex: si, wordIndex: wi });
+      runLookup(raw, si, wi);
       // Reveal on an actual segment change — an already-open segment's words are all already
       // rendered. Whether to scroll is then left entirely to scrollToWordIfCovered, which
       // checks the *word's* own visibility rather than assuming a segment change always needs
@@ -121,7 +136,7 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
       if (si !== dict.segIndex) setOpenSegs((s) => (s[si] ? s : { ...s, [si]: true }));
       requestAnimationFrame(() => scrollToWordIfCovered(si, wi));
     },
-    [dict, dictionary, segWords, scrollToWordIfCovered, setOpenSegs]
+    [dict, runLookup, segWords, scrollToWordIfCovered, setOpenSegs]
   );
 
   // A word/note/highlight tap is a single-shot click, not a selection (see the matching
@@ -140,31 +155,15 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
 
   const onWordClick = useCallback(
     (raw: string, segIndex: number, wordIndex: number) => {
-      if (!dictionary) {
-        // Dictionary still loading in the background (see the effect above) — open the dock in a
-        // loading state rather than silently no-oping the tap, which otherwise reads as "broken"
-        // on a first-ever visit. No gloss: the dock's body already says what's going on, and it
-        // says it accurately once an attempt has actually failed, where a "Loading…" gloss next to
-        // the word would still be claiming a download is in progress.
-        setDict({ word: stripPunct(raw), gloss: '', defs: null, segIndex, wordIndex, loading: true });
-      } else {
-        const def = lookupWord(dictionary, raw);
-        setDict({
-          word: stripPunct(raw),
-          gloss: def ? `${def.length}` : 'Pali',
-          defs: def,
-          segIndex,
-          wordIndex,
-        });
-      }
+      runLookup(raw, segIndex, wordIndex);
       const sel = window.getSelection();
       if (sel) sel.removeAllRanges();
       // The dock opening can cover the just-tapped word if it's near the bottom of the reading
       // pane — scrollToWordIfCovered re-centers only when that's actually true, not on every tap.
       requestAnimationFrame(() => scrollToWordIfCovered(segIndex, wordIndex));
     },
-    [dictionary, scrollToWordIfCovered]
+    [runLookup, scrollToWordIfCovered]
   );
 
-  return { dict, activeWord, closeDict, onWordClick, goToAdjacentWord };
+  return { dict, activeWord, closeDict, onWordClick, goToAdjacentWord, retryLookup };
 }

@@ -1,6 +1,5 @@
 import { flattenListTree } from './lists';
-import { clearCachedDictionary } from './offline';
-import type { ChapterRow, Corpus, Dictionary, ListDef, Nikaya, Sutta } from './types';
+import type { ChapterRow, Corpus, ListDef, Nikaya, Sutta } from './types';
 
 export async function loadCorpus(): Promise<Corpus> {
   const res = await fetch('/data/corpus.json');
@@ -8,59 +7,8 @@ export async function loadCorpus(): Promise<Corpus> {
   return res.json();
 }
 
-const DICTIONARY_URL = '/data/dictionary.json';
-
-// No bytes at all for this long means the connection has stalled, not that it's merely slow. That
-// distinction is why the body is streamed rather than fetched under one overall deadline: 20MB
-// legitimately takes minutes on a poor mobile connection, and aborting that would leave exactly
-// the users who most need an offline dictionary unable to ever finish downloading one.
-const STALL_TIMEOUT_MS = 30_000;
-
-async function fetchDictionaryText(): Promise<string> {
-  const controller = new AbortController();
-  let stall = setTimeout(() => controller.abort(), STALL_TIMEOUT_MS);
-  const restartStall = () => {
-    clearTimeout(stall);
-    stall = setTimeout(() => controller.abort(), STALL_TIMEOUT_MS);
-  };
-  try {
-    const res = await fetch(DICTIONARY_URL, { signal: controller.signal });
-    // An error response can still carry a body that parses as JSON (an error payload, a proxy's
-    // own page), which would otherwise be handed to the reader as though it were the dictionary.
-    if (!res.ok) throw new Error(`Failed to load dictionary.json (${res.status})`);
-    if (!res.body) return res.text();
-    const reader = res.body.getReader();
-    const chunks: BlobPart[] = [];
-    for (;;) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      if (value) chunks.push(value);
-      restartStall();
-    }
-    return new Blob(chunks).text();
-  } finally {
-    clearTimeout(stall);
-  }
-}
-
-// The ~20MB JSON.parse below runs on the main thread, deliberately. A Web Worker moves the parse
-// off it, but the only way back is a structured clone of the result — 140k+ keys, profiled at
-// ~300ms of blocked main thread, several times what the parse itself costs. Parsing here is both
-// cheaper and simpler; `dictionary` is loaded in the background and gates nothing (see
-// CorpusContext), so the parse lands well after first paint.
-export async function loadDictionary(): Promise<Dictionary> {
-  const text = await fetchDictionaryText();
-  try {
-    return JSON.parse(text) as Dictionary;
-  } catch (error: unknown) {
-    // The bytes arrived but aren't the dictionary — a captive portal's login page, a truncated
-    // write. `CacheFirst` (vite.config.ts) stores whatever that was for a year, so every later
-    // attempt would replay it from cache and fail identically; evicting it first is what makes
-    // the retry a real one.
-    await clearCachedDictionary().catch(() => {});
-    throw error instanceof Error ? error : new Error(String(error));
-  }
-}
+// The dictionary is not loaded here at all — it's fetched one range shard at a time, on the tap
+// that needs it. See lib/dictionaryShards.ts.
 
 // SuttaCentral's own structural role for this segment (see scripts/fetch-html-structure.mjs and
 // build-corpus.mjs's roleFor()) — omitted for the common "plain prose" case.
