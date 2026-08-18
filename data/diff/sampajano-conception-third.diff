@@ -1,0 +1,14 @@
+Rule: sampajano-conception-third — 2 change(s), 2 file(s)
+
+--- sujato/sutta/dn/dn28_translation-en-sujato.json
++++ sujato/sutta/dn/dn28_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn28:5.5
+ PLI: Puna caparaṁ, bhante, idhekacco sampajāno mātukucchiṁ okkamati; sampajāno mātukucchismiṁ ṭhāti; asampajāno mātukucchimhā nikkhamati. Ayaṁ tatiyā gabbhāvakkanti. 
+-Furthermore, someone is fully comprehending when conceived in their mother’s womb, fully comprehending as they remain there, but without full comprehension as they emerge. This is the third kind of conception. 
++Furthermore, someone has full comprehension when conceived in their mother’s womb, with full comprehension as they remain there, but without full comprehension as they emerge. This is the third kind of conception. 
+--- sujato/sutta/dn/dn33_translation-en-sujato.json
++++ sujato/sutta/dn/dn33_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn33:1.11.178
+ PLI: Puna caparaṁ, āvuso, idhekacco sampajāno mātukucchiṁ okkamati, sampajāno mātukucchismiṁ ṭhāti, asampajāno mātukucchimhā nikkhamati, ayaṁ tatiyā gabbhāvakkanti. 
+-Furthermore, someone is fully comprehending when conceived in their mother’s womb, fully comprehending as they remain there, but without full comprehension as they emerge. This is the third kind of conception. 
++Furthermore, someone has full comprehension when conceived in their mother’s womb, with full comprehension as they remain there, but without full comprehension as they emerge. This is the third kind of conception. 

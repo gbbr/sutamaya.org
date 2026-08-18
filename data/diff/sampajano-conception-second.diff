@@ -1,0 +1,14 @@
+Rule: sampajano-conception-second — 2 change(s), 2 file(s)
+
+--- sujato/sutta/dn/dn28_translation-en-sujato.json
++++ sujato/sutta/dn/dn28_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn28:5.4
+ PLI: Puna caparaṁ, bhante, idhekacco sampajāno mātukucchiṁ okkamati; asampajāno mātukucchismiṁ ṭhāti; asampajāno mātukucchimhā nikkhamati. Ayaṁ dutiyā gabbhāvakkanti. 
+-Furthermore, someone is fully comprehending when conceived in their mother’s womb, but without full comprehension as they remain there, and without full comprehension as they emerge. This is the second kind of conception. 
++Furthermore, someone has full comprehension when conceived in their mother’s womb, but without full comprehension as they remain there, and without full comprehension as they emerge. This is the second kind of conception. 
+--- sujato/sutta/dn/dn33_translation-en-sujato.json
++++ sujato/sutta/dn/dn33_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn33:1.11.177
+ PLI: Puna caparaṁ, āvuso, idhekacco sampajāno mātukucchiṁ okkamati, asampajāno mātukucchismiṁ ṭhāti, asampajāno mātukucchimhā nikkhamati, ayaṁ dutiyā gabbhāvakkanti. 
+-Furthermore, someone is fully comprehending when conceived in their mother’s womb, but without full comprehension as they remain there, and without full comprehension as they emerge. This is the second kind of conception. 
++Furthermore, someone has full comprehension when conceived in their mother’s womb, but without full comprehension as they remain there, and without full comprehension as they emerge. This is the second kind of conception. 

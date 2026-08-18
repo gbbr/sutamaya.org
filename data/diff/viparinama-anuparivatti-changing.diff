@@ -1,0 +1,70 @@
+Rule: viparinama-anuparivatti-changing — 16 change(s), 2 file(s)
+
+--- sujato/sutta/mn/mn138_translation-en-sujato.json
++++ sujato/sutta/mn/mn138_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn138:20.5
+ PLI: Tassa rūpavipariṇāmaññathābhāvā rūpavipariṇāmānuparivatti viññāṇaṁ hoti. 
+-and consciousness latches on to the perishing of form. 
++and consciousness latches on to the changing of form. 
+@@ -1,2 +1,2 @@ mn138:20.6
+ PLI: Tassa rūpavipariṇāmānuparivattajā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. 
+-Agitation occupies the mind, born of latching on to the perishing of form, and originating in accordance with natural principles. 
++Agitation occupies the mind, born of latching on to the changing of form, and originating in accordance with natural principles. 
+@@ -1,2 +1,2 @@ mn138:20.13
+ PLI: Tassa viññāṇavipariṇāmaññathābhāvā viññāṇavipariṇāmānuparivatti viññāṇaṁ hoti. 
+-and consciousness latches on to the perishing of consciousness. 
++and consciousness latches on to the changing of consciousness. 
+@@ -1,2 +1,2 @@ mn138:20.14
+ PLI: Tassa viññāṇavipariṇāmānuparivattajā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. 
+-Agitation occupies the mind, born of latching on to the perishing of consciousness, and originating in accordance with natural principles. 
++Agitation occupies the mind, born of latching on to the changing of consciousness, and originating in accordance with natural principles. 
+@@ -1,2 +1,2 @@ mn138:21.5
+ PLI: Tassa rūpavipariṇāmaññathābhāvā na ca rūpavipariṇāmānuparivatti viññāṇaṁ hoti. 
+-consciousness doesn’t latch on to the perishing of form. 
++consciousness doesn’t latch on to the changing of form. 
+@@ -1,2 +1,2 @@ mn138:21.6
+ PLI: Tassa na rūpavipariṇāmānuparivattajā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. 
+-Agitations—born of latching on to the perishing of form and originating in accordance with natural principles—don’t occupy the mind. 
++Agitations—born of latching on to the changing of form and originating in accordance with natural principles—don’t occupy the mind. 
+@@ -1,2 +1,2 @@ mn138:21.13
+ PLI: Tassa viññāṇavipariṇāmaññathābhāvā na ca viññāṇavipariṇāmānuparivatti viññāṇaṁ hoti. 
+-consciousness doesn’t latch on to the perishing of consciousness. 
++consciousness doesn’t latch on to the changing of consciousness. 
+@@ -1,2 +1,2 @@ mn138:21.14
+ PLI: Tassa na viññāṇavipariṇāmānuparivattajā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. 
+-Agitations—born of latching on to the perishing of consciousness and originating in accordance with natural principles—don’t occupy the mind. 
++Agitations—born of latching on to the changing of consciousness and originating in accordance with natural principles—don’t occupy the mind. 
+--- sujato/sutta/sn/sn22/sn22.7_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.7_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.7:2.5
+ PLI: Tassa rūpavipariṇāmaññathābhāvā rūpavipariṇāmānuparivatti viññāṇaṁ hoti. 
+-and consciousness latches on to the perishing of form. 
++and consciousness latches on to the changing of form. 
+@@ -1,2 +1,2 @@ sn22.7:2.6
+ PLI: Tassa rūpavipariṇāmānuparivattijā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. 
+-Agitation occupies their mind, born of latching on to the perishing of form, and originating in accordance with natural principles. 
++Agitation occupies their mind, born of latching on to the changing of form, and originating in accordance with natural principles. 
+@@ -1,2 +1,2 @@ sn22.7:5.3
+ PLI: Tassa viññāṇavipariṇāmaññathābhāvā viññāṇavipariṇāmānuparivatti viññāṇaṁ hoti. 
+-and consciousness latches on to the perishing of consciousness. 
++and consciousness latches on to the changing of consciousness. 
+@@ -1,2 +1,2 @@ sn22.7:5.4
+ PLI: Tassa viññāṇavipariṇāmānuparivattijā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. 
+-Agitation occupies their mind, born of latching on to the perishing of consciousness, and originating in accordance with natural principles. 
++Agitation occupies their mind, born of latching on to the changing of consciousness, and originating in accordance with natural principles. 
+@@ -1,2 +1,2 @@ sn22.7:6.5
+ PLI: Tassa rūpavipariṇāmaññathābhāvā na rūpavipariṇāmānuparivatti viññāṇaṁ hoti. 
+-consciousness doesn’t latch on to the perishing of form. 
++consciousness doesn’t latch on to the changing of form. 
+@@ -1,2 +1,2 @@ sn22.7:6.6
+ PLI: Tassa na rūpavipariṇāmānuparivattijā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. 
+-Agitations—born of latching on to the perishing of form and originating in accordance with natural principles—don’t occupy their mind. 
++Agitations—born of latching on to the changing of form and originating in accordance with natural principles—don’t occupy their mind. 
+@@ -1,2 +1,2 @@ sn22.7:9.3
+ PLI: Tassa viññāṇavipariṇāmaññathābhāvā na viññāṇavipariṇāmānuparivatti viññāṇaṁ hoti. 
+-consciousness doesn’t latch on to the perishing of consciousness. 
++consciousness doesn’t latch on to the changing of consciousness. 
+@@ -1,2 +1,2 @@ sn22.7:9.4
+ PLI: Tassa na viññāṇavipariṇāmānuparivattijā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. 
+-Agitations—born of latching on to the perishing of consciousness and originating in accordance with natural principles—don’t occupy their mind. 
++Agitations—born of latching on to the changing of consciousness and originating in accordance with natural principles—don’t occupy their mind. 

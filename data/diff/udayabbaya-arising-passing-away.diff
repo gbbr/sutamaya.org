@@ -1,0 +1,124 @@
+Rule: udayabbaya-arising-passing-away — 22 change(s), 17 file(s)
+
+--- sujato/sutta/an/an4/an4.12_translation-en-sujato.json
++++ sujato/sutta/an/an4/an4.12_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an4.12:7.3
+ PLI: Samavekkhitā ca dhammānaṁ, 
+-they scrutinize the rise and fall 
++they scrutinize the arising and passing away 
+--- sujato/sutta/an/an4/an4.41_translation-en-sujato.json
++++ sujato/sutta/an/an4/an4.41_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an4.41:5.2
+ PLI: Idha, bhikkhave, bhikkhu pañcasu upādānakkhandhesu udayabbayānupassī viharati: 
+-It’s when a bhikkhu meditates observing rise and fall in the five grasping aggregates. 
++It’s when a bhikkhu meditates observing arising and passing away in the five grasping aggregates. 
+--- sujato/sutta/an/an4/an4.90_translation-en-sujato.json
++++ sujato/sutta/an/an4/an4.90_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an4.90:3.2
+ PLI: Idha, bhikkhave, bhikkhu pañcasu upādānakkhandhesu udayabbayānupassī viharati: 
+-It’s when a bhikkhu meditates observing rise and fall in the five grasping aggregates. 
++It’s when a bhikkhu meditates observing arising and passing away in the five grasping aggregates. 
+@@ -1,2 +1,2 @@ an4.90:4.2
+ PLI: Idha, bhikkhave, bhikkhu pañcasu upādānakkhandhesu udayabbayānupassī viharati: 
+-It’s when a bhikkhu meditates observing rise and fall in the five grasping aggregates. 
++It’s when a bhikkhu meditates observing arising and passing away in the five grasping aggregates. 
+--- sujato/sutta/an/an5/an5.30_translation-en-sujato.json
++++ sujato/sutta/an/an5/an5.30_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an5.30:4.12
+ PLI: Pañcasu kho, nāgita, upādānakkhandhesu udayabbayānupassino viharato upādāne pāṭikulyatā saṇṭhāti—
+-When you meditate observing rise and fall in the five grasping aggregates, revulsion at grasping becomes stabilized. 
++When you meditate observing arising and passing away in the five grasping aggregates, revulsion at grasping becomes stabilized. 
+--- sujato/sutta/an/an8/an8.2_translation-en-sujato.json
++++ sujato/sutta/an/an8/an8.2_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an8.2:8.1
+ PLI: Pañcasu kho pana upādānakkhandhesu udayabbayānupassī viharati: 
+-They meditate observing rise and fall in the five grasping aggregates. 
++They meditate observing arising and passing away in the five grasping aggregates. 
+@@ -1,2 +1,2 @@ an8.2:16.1
+ PLI: ‘Pañcasu kho panāyamāyasmā upādānakkhandhesu udayabbayānupassī viharati—
+-‘They meditate observing rise and fall in the five grasping aggregates. … 
++‘They meditate observing arising and passing away in the five grasping aggregates. … 
+--- sujato/sutta/dn/dn14_translation-en-sujato.json
++++ sujato/sutta/dn/dn14_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn14:2.22.1
+ PLI: Atha kho, bhikkhave, vipassī bodhisatto aparena samayena pañcasu upādānakkhandhesu udayabbayānupassī vihāsi: 
+-After some time he meditated observing rise and fall in the five grasping aggregates. 
++After some time he meditated observing arising and passing away in the five grasping aggregates. 
+--- sujato/sutta/dn/dn33_translation-en-sujato.json
++++ sujato/sutta/dn/dn33_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn33:1.11.44
+ PLI: Idhāvuso, bhikkhu pañcasu upādānakkhandhesu udayabbayānupassī viharati. 
+-A bhikkhu meditates observing rise and fall in the five grasping aggregates. 
++A bhikkhu meditates observing arising and passing away in the five grasping aggregates. 
+--- sujato/sutta/dn/dn34_translation-en-sujato.json
++++ sujato/sutta/dn/dn34_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn34:2.1.22
+ PLI: Puna caparaṁ, āvuso, bhikkhu pañcasu upādānakkhandhesu, udayabbayānupassī viharati: 
+-Furthermore, a bhikkhu meditates observing rise and fall in the five grasping aggregates. 
++Furthermore, a bhikkhu meditates observing arising and passing away in the five grasping aggregates. 
+--- sujato/sutta/kn/dhp/dhp100-115_translation-en-sujato.json
++++ sujato/sutta/kn/dhp/dhp100-115_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dhp113:2
+ PLI: apassaṁ udayabbayaṁ; 
+-seeing rise and fall 
++seeing arising and passing away 
+@@ -1,2 +1,2 @@ dhp113:4
+ PLI: passato udayabbayaṁ. 
+-blind to rise and fall. 
++blind to arising and passing away. 
+--- sujato/sutta/kn/dhp/dhp360-382_translation-en-sujato.json
++++ sujato/sutta/kn/dhp/dhp360-382_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dhp374:2
+ PLI: khandhānaṁ udayabbayaṁ; 
+-of the rise and fall of the aggregates, 
++of the arising and passing away of the aggregates, 
+--- sujato/sutta/kn/iti/vagga11/iti111_translation-en-sujato.json
++++ sujato/sutta/kn/iti/vagga11/iti111_translation-en-sujato.json
+@@ -1,2 +1,2 @@ iti111:9.3
+ PLI: Samavekkhitā ca dhammānaṁ, 
+-they scrutinize the rise and fall 
++they scrutinize the arising and passing away 
+--- sujato/sutta/kn/thag/thag1.23_translation-en-sujato.json
++++ sujato/sutta/kn/thag/thag1.23_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thag1.23:1.4
+ PLI: khandhānaṁ udayabbayaṁ; 
+-the rise and fall of the aggregates, 
++the arising and passing away of the aggregates, 
+--- sujato/sutta/kn/thig/thig5.6_translation-en-sujato.json
++++ sujato/sutta/kn/thig/thig5.6_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thig5.6:5.2
+ PLI: khandhānaṁ udayabbayaṁ; 
+-the rise and fall of the aggregates. 
++the arising and passing away of the aggregates. 
+--- sujato/sutta/kn/ud/vagga4/ud4.2_translation-en-sujato.json
++++ sujato/sutta/kn/ud/vagga4/ud4.2_translation-en-sujato.json
+@@ -1,2 +1,2 @@ ud4.2:5.4
+ PLI: ñatvāna udayabbayaṁ; 
+-Having understood rise and fall, 
++Having understood arising and passing away, 
+--- sujato/sutta/mn/mn122_translation-en-sujato.json
++++ sujato/sutta/mn/mn122_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn122:16.1
+ PLI: Pañca kho ime, ānanda, upādānakkhandhā yattha bhikkhunā udayabbayānupassinā vihātabbaṁ: 
+-A bhikkhu should meditate observing rise and fall in these five grasping aggregates: 
++A bhikkhu should meditate observing arising and passing away in these five grasping aggregates: 
+--- sujato/sutta/sn/sn22/sn22.89_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.89_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.89:11.2
+ PLI: So aparena samayena pañcasu upādānakkhandhesu udayabbayānupassī viharati—
+-After some time they meditate observing rise and fall in the five grasping aggregates. 
++After some time they meditate observing arising and passing away in the five grasping aggregates. 
+@@ -1,2 +1,2 @@ sn22.89:12.7
+ PLI: So aparena samayena pañcasu upādānakkhandhesu udayabbayānupassī viharati. 
+-After some time they meditate observing rise and fall in the five grasping aggregates. 
++After some time they meditate observing arising and passing away in the five grasping aggregates. 
+--- sujato/sutta/sn/sn35/sn35.154_translation-en-sujato.json
++++ sujato/sutta/sn/sn35/sn35.154_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn35.154:2.1
+ PLI: “Cakkhundriye ce, bhikkhu, udayabbayānupassī viharanto cakkhundriye nibbindati …pe… 
+-“Bhikkhu, if someone meditates observing rise and fall in the eye faculty, they grow disillusioned with the eye faculty. 
++“Bhikkhu, if someone meditates observing arising and passing away in the eye faculty, they grow disillusioned with the eye faculty. 
+@@ -1,2 +1,2 @@ sn35.154:2.2
+ PLI: jivhindriye ce, bhikkhu, udayabbayānupassī viharanto jivhindriye nibbindati …pe… 
+-If they meditate observing rise and fall in the ear faculty … nose faculty … tongue faculty … body faculty … 
++If they meditate observing arising and passing away in the ear faculty … nose faculty … tongue faculty … body faculty … 

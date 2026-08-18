@@ -1,0 +1,6 @@
+# data/diff/ is machine output — every `update-data:post` run rewrites all of it (see
+# docs/retranslation.md). Marking it generated collapses it by default in GitHub's diff view and
+# keeps it out of the language stats; the files still syntax-highlight as diffs when opened on
+# their own, which is how they're meant to be read. GitHub-only — git itself ignores linguist-*,
+# so `git diff`, delta and bat are unaffected.
+data/diff/*.diff linguist-generated=true

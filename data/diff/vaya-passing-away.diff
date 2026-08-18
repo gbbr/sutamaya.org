@@ -1,0 +1,617 @@
+Rule: vaya-passing-away — 132 change(s), 44 file(s)
+
+--- sujato/blurb/sn-blurbs_root-en.json
++++ sujato/blurb/sn-blurbs_root-en.json
+@@ -1 +1 @@ sn-blurbs:sn23.20
+-Rādha asks the Buddha about what is liable to vanish, and the Buddha explains in terms of the five aggregates.
++Rādha asks the Buddha about what is liable to pass away, and the Buddha explains in terms of the five aggregates.
+--- sujato/sutta/an/an10/an10.240-266_translation-en-sujato.json
++++ sujato/sutta/an/an10/an10.240-266_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an10.240-266:1.5
+ PLI: vayāya … 
+-vanishing … 
++passing away … 
+--- sujato/sutta/an/an10/an10.267-746_translation-en-sujato.json
++++ sujato/sutta/an/an10/an10.267-746_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an10.267-746:1.20
+ PLI: vayāya … 
+-vanishing … 
++passing away … 
+--- sujato/sutta/an/an11/an11.22-29_translation-en-sujato.json
++++ sujato/sutta/an/an11/an11.22-29_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an11.26:1.1
+ PLI: abhabbo cakkhusmiṁ vayānupassī viharituṁ… 
+-… vanishing … 
++… passing away … 
+--- sujato/sutta/an/an11/an11.454-501_translation-en-sujato.json
++++ sujato/sutta/an/an11/an11.454-501_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an11.454-501:1.11
+ PLI: vayānupassī viharituṁ… 
+-meditate observing vanishing … 
++meditate observing passing away … 
+--- sujato/sutta/an/an11/an11.983-991_translation-en-sujato.json
++++ sujato/sutta/an/an11/an11.983-991_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an11.983-991:1.5
+ PLI: vayāya… 
+-vanishing … 
++passing away … 
+--- sujato/sutta/an/an11/an11.992-1151_translation-en-sujato.json
++++ sujato/sutta/an/an11/an11.992-1151_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an11.992-1151:1.21
+ PLI: vayāya… 
+-vanishing … 
++passing away … 
+--- sujato/sutta/an/an2/an2.310-479_translation-en-sujato.json
++++ sujato/sutta/an/an2/an2.310-479_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an2.310-319:2.1
+ PLI: “Rāgassa, bhikkhave, pariññāya … parikkhayāya … pahānāya … khayāya … vayāya … virāgāya … nirodhāya … cāgāya … paṭinissaggāya dve dhammā bhāvetabbā …pe… 
+-“For the complete understanding … finishing … giving up … ending … vanishing … fading away … cessation … giving away … letting go of greed, two things should be developed.” 
++“For the complete understanding … finishing … giving up … ending … passing away … fading away … cessation … giving away … letting go of greed, two things should be developed.” 
+@@ -1,2 +1,2 @@ an2.320-479:1.1
+ PLI: “Dosassa …pe… mohassa … kodhassa … upanāhassa … makkhassa … paḷāsassa … issāya … macchariyassa … māyāya … sāṭheyyassa … thambhassa … sārambhassa … mānassa … atimānassa … madassa … pamādassa … abhiññāya … pariññāya … parikkhayāya … pahānāya … khayāya … vayāya … virāgāya … nirodhāya … cāgāya … paṭinissaggāya dve dhammā bhāvetabbā. 
+-“Of hate … delusion … anger … acrimony … disdain … contempt … jealousy … stinginess … deceit … deviousness … obstinacy … aggression … conceit … arrogance … vanity … negligence … for insight … complete understanding … finishing … giving up … ending … vanishing … fading away … cessation … giving away … letting go … two things should be developed. 
++“Of hate … delusion … anger … acrimony … disdain … contempt … jealousy … stinginess … deceit … deviousness … obstinacy … aggression … conceit … arrogance … vanity … negligence … for insight … complete understanding … finishing … giving up … ending … passing away … fading away … cessation … giving away … letting go … two things should be developed. 
+--- sujato/sutta/an/an3/an3.183-352_translation-en-sujato.json
++++ sujato/sutta/an/an3/an3.183-352_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an3.183-352:2.5
+ PLI: vayāya … 
+-vanishing … 
++passing away … 
+@@ -1,2 +1,2 @@ an3.183-352:3.22
+ PLI: vayāya … 
+-vanishing … 
++passing away … 
+--- sujato/sutta/an/an3/an3.47_translation-en-sujato.json
++++ sujato/sutta/an/an3/an3.47_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an3.47:1.3
+ PLI: Uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyati. 
+-Arising is evident, vanishing is evident, and change while persisting is evident. 
++Arising is evident, passing away is evident, and change while persisting is evident. 
+@@ -1,2 +1,2 @@ an3.47:2.3
+ PLI: Na uppādo paññāyati, na vayo paññāyati, na ṭhitassa aññathattaṁ paññāyati. 
+-No arising is evident, no vanishing is evident, and no change while persisting is evident. 
++No arising is evident, no passing away is evident, and no change while persisting is evident. 
+--- sujato/sutta/an/an4/an4.277-303_translation-en-sujato.json
++++ sujato/sutta/an/an4/an4.277-303_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an4.277-303:1.1
+ PLI: “Rāgassa, bhikkhave, pariññāya …pe… parikkhayāya … pahānāya … khayāya … vayāya … virāgāya … nirodhāya … cāgāya … paṭinissaggāya cattāro dhammā bhāvetabbā …pe…. 
+-“For the complete understanding … finishing … giving up … ending … vanishing … fading away … cessation … giving away … letting go of greed, four things should be developed.” 
++“For the complete understanding … finishing … giving up … ending … passing away … fading away … cessation … giving away … letting go of greed, four things should be developed.” 
+--- sujato/sutta/an/an4/an4.304-783_translation-en-sujato.json
++++ sujato/sutta/an/an4/an4.304-783_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an4.304-783:1.1
+ PLI: “Dosassa …pe… mohassa … kodhassa … upanāhassa … makkhassa … paḷāsassa … issāya … macchariyassa … māyāya … sāṭheyyassa … thambhassa … sārambhassa … mānassa … atimānassa … madassa … pamādassa abhiññāya … pariññāya … parikkhayāya … pahānāya … khayāya … vayāya … virāgāya … nirodhāya … cāgāya … paṭinissaggāya ime cattāro dhammā bhāvetabbā”ti. 
+-“Of hate … delusion … anger … acrimony … disdain … contempt … jealousy … stinginess … deceit … deviousness … obstinacy … aggression … conceit … arrogance … vanity … negligence … for insight … complete understanding … finishing … giving up … ending … vanishing … fading away … cessation … giving away … letting go … four things should be developed.” 
++“Of hate … delusion … anger … acrimony … disdain … contempt … jealousy … stinginess … deceit … deviousness … obstinacy … aggression … conceit … arrogance … vanity … negligence … for insight … complete understanding … finishing … giving up … ending … passing away … fading away … cessation … giving away … letting go … four things should be developed.” 
+--- sujato/sutta/an/an5/an5.308-1152_translation-en-sujato.json
++++ sujato/sutta/an/an5/an5.308-1152_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an5.308-1152:1.1
+ PLI: “Rāgassa, bhikkhave, pariññāya … parikkhayāya … pahānāya … khayāya … vayāya … virāgāya … nirodhāya … cāgāya … paṭinissaggāya pañca dhammā bhāvetabbā. 
+-“For the complete understanding … finishing … giving up … ending … vanishing … fading away … cessation … giving away … letting go of greed, five things should be developed.” 
++“For the complete understanding … finishing … giving up … ending … passing away … fading away … cessation … giving away … letting go of greed, five things should be developed.” 
+@@ -1,2 +1,2 @@ an5.308-1152:1.2
+ PLI: Dosassa … mohassa … kodhassa … upanāhassa … makkhassa … paḷāsassa … issāya … macchariyassa … māyāya … sāṭheyyassa … thambhassa … sārambhassa … mānassa … atimānassa … madassa … pamādassa abhiññāya … pariññāya … parikkhayāya … pahānāya … khayāya … vayāya … virāgāya … nirodhāya … cāgāya … paṭinissaggāya pañca dhammā bhāvetabbā. 
+-“Of hate … delusion … anger … acrimony … disdain … contempt … jealousy … stinginess … deceit … deviousness … obstinacy … aggression … conceit … arrogance … vanity … negligence … for insight … complete understanding … finishing … giving up … ending … vanishing … fading away … cessation … giving away … letting go … five things should be developed. 
++“Of hate … delusion … anger … acrimony … disdain … contempt … jealousy … stinginess … deceit … deviousness … obstinacy … aggression … conceit … arrogance … vanity … negligence … for insight … complete understanding … finishing … giving up … ending … passing away … fading away … cessation … giving away … letting go … five things should be developed. 
+--- sujato/sutta/an/an6/an6.143-169_translation-en-sujato.json
++++ sujato/sutta/an/an6/an6.143-169_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an6.143-169:1.5
+ PLI: vayāya … 
+-vanishing … 
++passing away … 
+--- sujato/sutta/an/an6/an6.170-649_translation-en-sujato.json
++++ sujato/sutta/an/an6/an6.170-649_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an6.170-649:1.21
+ PLI: vayāya … 
+-vanishing … 
++passing away … 
+--- sujato/sutta/an/an7/an7.618-644_translation-en-sujato.json
++++ sujato/sutta/an/an7/an7.618-644_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an7.618-644:1.5
+ PLI: vayāya … 
+-vanishing … 
++passing away … 
+--- sujato/sutta/an/an7/an7.645-1124_translation-en-sujato.json
++++ sujato/sutta/an/an7/an7.645-1124_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an7.645-1124:1.21
+ PLI: vayāya … 
+-vanishing … 
++passing away … 
+--- sujato/sutta/an/an7/an7.96-614_translation-en-sujato.json
++++ sujato/sutta/an/an7/an7.96-614_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an7.96-614:1.6
+ PLI: cakkhusmiṁ vayānupassī viharati …pe… 
+-observing vanishing in the eye. … 
++observing passing away in the eye. … 
+@@ -1,2 +1,2 @@ an7.96-614:12.10
+ PLI: vayānupassī viharati … 
+-vanishing … 
++passing away … 
+--- sujato/sutta/an/an8/an8.121-147_translation-en-sujato.json
++++ sujato/sutta/an/an8/an8.121-147_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an8.121-147:1.5
+ PLI: vayāya … 
+-vanishing … 
++passing away … 
+--- sujato/sutta/an/an8/an8.148-627_translation-en-sujato.json
++++ sujato/sutta/an/an8/an8.148-627_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an8.148-627:1.21
+ PLI: vayāya … 
+-vanishing … 
++passing away … 
+--- sujato/sutta/an/an9/an9.113-432_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.113-432_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.113-432:1.21
+ PLI: vayāya … 
+-vanishing … 
++passing away … 
+--- sujato/sutta/an/an9/an9.95-112_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.95-112_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.95-112:1.5
+ PLI: vayāya …pe… 
+-vanishing … 
++passing away … 
+--- sujato/sutta/dn/dn15_translation-en-sujato.json
++++ sujato/sutta/dn/dn15_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn15:29.1
+ PLI: Sukhāpi kho, ānanda, vedanā aniccā saṅkhatā paṭiccasamuppannā khayadhammā vayadhammā virāgadhammā nirodhadhammā. 
+-Pleasant feelings, painful feelings, and neutral feelings are all impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. 
++Pleasant feelings, painful feelings, and neutral feelings are all impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
+--- sujato/sutta/dn/dn22_translation-en-sujato.json
++++ sujato/sutta/dn/dn22_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn22:2.12
+ PLI: Samudayadhammānupassī vā kāyasmiṁ viharati, vayadhammānupassī vā kāyasmiṁ viharati, samudayavayadhammānupassī vā kāyasmiṁ viharati. 
+-With respect to the body, they meditate observing the liability to arise, to vanish, and to arise and vanish. 
++With respect to the body, they meditate observing the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ dn22:3.4
+ PLI: Samudayadhammānupassī vā kāyasmiṁ viharati, vayadhammānupassī vā kāyasmiṁ viharati, samudayavayadhammānupassī vā kāyasmiṁ viharati. 
+-They meditate observing, with respect to the body, the liability to arise, to vanish, and to arise and vanish. 
++They meditate observing, with respect to the body, the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ dn22:10.7
+ PLI: Samudayadhammānupassī vā kāyasmiṁ viharati, vayadhammānupassī vā kāyasmiṁ viharati, samudayavayadhammānupassī vā kāyasmiṁ viharati. 
+-With respect to the body, they meditate observing the liability to arise, to vanish, and to arise and vanish. 
++With respect to the body, they meditate observing the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ dn22:11.12
+ PLI: Samudayadhammānupassī vā vedanāsu viharati, vayadhammānupassī vā vedanāsu viharati, samudayavayadhammānupassī vā vedanāsu viharati. 
+-With respect to feelings, they meditate observing the liability to arise, to vanish, and to arise and vanish. 
++With respect to feelings, they meditate observing the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ dn22:12.19
+ PLI: Samudayadhammānupassī vā cittasmiṁ viharati, vayadhammānupassī vā cittasmiṁ viharati, samudayavayadhammānupassī vā cittasmiṁ viharati. 
+-With respect to the mind, they meditate observing the liability to arise, to vanish, and to arise and vanish. 
++With respect to the mind, they meditate observing the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ dn22:13.10
+ PLI: Samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
+-They meditate observing the principles as liable to arise, as liable to fall, and as liable to both arise and vanish. 
++They meditate observing the principles as liable to arise, as liable to fall, and as liable to both arise and pass away. 
+@@ -1,2 +1,2 @@ dn22:16.11
+ PLI: Samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
+-They meditate observing, with respect to the principles, the liability to arise, to vanish, and to arise and vanish. 
++They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ dn22:21.39
+ PLI: Samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
+-They meditate observing, with respect to the principles, the liability to arise, to vanish, and to arise and vanish. 
++They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
+--- sujato/sutta/kn/snp/vagga3/snp3.12_translation-en-sujato.json
++++ sujato/sutta/kn/snp/vagga3/snp3.12_translation-en-sujato.json
+@@ -1,2 +1,2 @@ snp3.12:26.3
+ PLI: Phussa phussa vayaṁ passaṁ, 
+-seeing feelings vanish with every contact, 
++seeing feelings pass away with every contact, 
+--- sujato/sutta/mn/mn10_translation-en-sujato.json
++++ sujato/sutta/mn/mn10_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn10:5.2
+ PLI: samudayadhammānupassī vā kāyasmiṁ viharati, vayadhammānupassī vā kāyasmiṁ viharati, samudayavayadhammānupassī vā kāyasmiṁ viharati. 
+-They meditate observing, with respect to the body, the liability to arise, to vanish, and to arise and vanish. 
++They meditate observing, with respect to the body, the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ mn10:7.2
+ PLI: samudayadhammānupassī vā kāyasmiṁ viharati, vayadhammānupassī vā kāyasmiṁ viharati, samudayavayadhammānupassī vā kāyasmiṁ viharati. 
+-With respect to the body, they meditate observing the liability to arise, to vanish, and to arise and vanish. 
++With respect to the body, they meditate observing the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ mn10:31.2
+ PLI: samudayadhammānupassī vā kāyasmiṁ viharati, vayadhammānupassī vā kāyasmiṁ viharati, samudayavayadhammānupassī vā kāyasmiṁ viharati. 
+-With respect to the body, they meditate observing the liability to arise, to vanish, and to arise and vanish. 
++With respect to the body, they meditate observing the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ mn10:33.2
+ PLI: samudayadhammānupassī vā vedanāsu viharati, vayadhammānupassī vā vedanāsu viharati, samudayavayadhammānupassī vā vedanāsu viharati. 
+-With respect to feelings, they meditate observing the liability to arise, to vanish, and to arise and vanish. 
++With respect to feelings, they meditate observing the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ mn10:35.2
+ PLI: samudayadhammānupassī vā cittasmiṁ viharati, vayadhammānupassī vā cittasmiṁ viharati, samudayavayadhammānupassī vā cittasmiṁ viharati. 
+-With respect to the mind, they meditate observing the liability to arise, to vanish, and to arise and vanish. 
++With respect to the mind, they meditate observing the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ mn10:37.2
+ PLI: samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
+-They meditate observing, with respect to the principles, the liability to arise, to vanish, and to arise and vanish. 
++They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ mn10:43.2
+ PLI: samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
+-They meditate observing, with respect to the principles, the liability to arise, to vanish, and to arise and vanish. 
++They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ mn10:45.2
+ PLI: samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
+-They meditate observing, with respect to the principles, the liability to arise, to vanish, and to arise and vanish. 
++They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
+--- sujato/sutta/mn/mn148_translation-en-sujato.json
++++ sujato/sutta/mn/mn148_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn148:10.2
+ PLI: Cakkhussa uppādopi vayopi paññāyati. 
+-The arising and vanishing of the eye is evident, 
++The arising and passing away of the eye is evident, 
+@@ -1,2 +1,2 @@ mn148:10.3
+ PLI: Yassa kho pana uppādopi vayopi paññāyati, ‘attā me uppajjati ca veti cā’ti iccassa evamāgataṁ hoti. 
+-so it would follow that one’s self arises and vanishes. 
++so it would follow that one’s self arises and passes away. 
+@@ -1,2 +1,2 @@ mn148:10.8
+ PLI: Rūpānaṁ uppādopi vayopi paññāyati. 
+-The arising and vanishing of sights is evident, 
++The arising and passing away of sights is evident, 
+@@ -1,2 +1,2 @@ mn148:10.9
+ PLI: Yassa kho pana uppādopi vayopi paññāyati, ‘attā me uppajjati ca veti cā’ti iccassa evamāgataṁ hoti. 
+-so it would follow that one’s self arises and vanishes. 
++so it would follow that one’s self arises and passes away. 
+@@ -1,2 +1,2 @@ mn148:10.14
+ PLI: Cakkhuviññāṇassa uppādopi vayopi paññāyati. 
+-The arising and vanishing of eye consciousness is evident, 
++The arising and passing away of eye consciousness is evident, 
+@@ -1,2 +1,2 @@ mn148:10.15
+ PLI: Yassa kho pana uppādopi vayopi paññāyati, ‘attā me uppajjati ca veti cā’ti iccassa evamāgataṁ hoti. 
+-so it would follow that one’s self arises and vanishes. 
++so it would follow that one’s self arises and passes away. 
+@@ -1,2 +1,2 @@ mn148:10.20
+ PLI: Cakkhusamphassassa uppādopi vayopi paññāyati. 
+-The arising and vanishing of eye contact is evident, 
++The arising and passing away of eye contact is evident, 
+@@ -1,2 +1,2 @@ mn148:10.21
+ PLI: Yassa kho pana uppādopi vayopi paññāyati, ‘attā me uppajjati ca veti cā’ti iccassa evamāgataṁ hoti. 
+-so it would follow that one’s self arises and vanishes. 
++so it would follow that one’s self arises and passes away. 
+@@ -1,2 +1,2 @@ mn148:10.26
+ PLI: Vedanāya uppādopi vayopi paññāyati. 
+-The arising and vanishing of feeling is evident, 
++The arising and passing away of feeling is evident, 
+@@ -1,2 +1,2 @@ mn148:10.27
+ PLI: Yassa kho pana uppādopi vayopi paññāyati, ‘attā me uppajjati ca veti cā’ti iccassa evamāgataṁ hoti. 
+-so it would follow that one’s self arises and vanishes. 
++so it would follow that one’s self arises and passes away. 
+@@ -1,2 +1,2 @@ mn148:10.32
+ PLI: Taṇhāya uppādopi vayopi paññāyati. 
+-The arising and vanishing of craving is evident, 
++The arising and passing away of craving is evident, 
+@@ -1,2 +1,2 @@ mn148:10.33
+ PLI: Yassa kho pana uppādopi vayopi paññāyati, ‘attā me uppajjati ca veti cā’ti iccassa evamāgataṁ hoti. 
+-so it would follow that one’s self arises and vanishes. 
++so it would follow that one’s self arises and passes away. 
+@@ -1,2 +1,2 @@ mn148:11.6
+ PLI: Manassa uppādopi vayopi paññāyati. 
+-The arising and vanishing of the mind is evident, 
++The arising and passing away of the mind is evident, 
+@@ -1,2 +1,2 @@ mn148:11.7
+ PLI: Yassa kho pana uppādopi vayopi paññāyati, ‘attā me uppajjati ca veti cā’ti iccassa evamāgataṁ hoti. 
+-so it would follow that one’s self arises and vanishes. 
++so it would follow that one’s self arises and passes away. 
+@@ -1,2 +1,2 @@ mn148:15.8
+ PLI: Taṇhāya uppādopi vayopi paññāyati. 
+-The arising and vanishing of craving is evident, 
++The arising and passing away of craving is evident, 
+@@ -1,2 +1,2 @@ mn148:15.9
+ PLI: Yassa kho pana uppādopi vayopi paññāyati, ‘attā me uppajjati ca veti cā’ti iccassa evamāgataṁ hoti. 
+-so it would follow that one’s self arises and vanishes. 
++so it would follow that one’s self arises and passes away. 
+--- sujato/sutta/mn/mn28_translation-en-sujato.json
++++ sujato/sutta/mn/mn28_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn28:7.3
+ PLI: Tassā hi nāma, āvuso, bāhirāya pathavīdhātuyā tāva mahallikāya aniccatā paññāyissati, khayadhammatā paññāyissati, vayadhammatā paññāyissati, vipariṇāmadhammatā paññāyissati. 
+-So for all its great age, the earth element will be revealed as impermanent, liable to end, vanish, and perish. 
++So for all its great age, the earth element will be revealed as impermanent, liable to end, pass away, and perish. 
+@@ -1,2 +1,2 @@ mn28:12.8
+ PLI: Tassā hi nāma, āvuso, bāhirāya āpodhātuyā tāva mahallikāya aniccatā paññāyissati, khayadhammatā paññāyissati, vayadhammatā paññāyissati, vipariṇāmadhammatā paññāyissati. 
+-So for all its great age, the water element will be revealed as impermanent, liable to end, vanish, and perish. 
++So for all its great age, the water element will be revealed as impermanent, liable to end, pass away, and perish. 
+@@ -1,2 +1,2 @@ mn28:17.5
+ PLI: Tassā hi nāma, āvuso, bāhirāya tejodhātuyā tāva mahallikāya aniccatā paññāyissati, khayadhammatā paññāyissati, vayadhammatā paññāyissati, vipariṇāmadhammatā paññāyissati. 
+-So for all its great age, the fire element will be revealed as impermanent, liable to end, vanish, and perish. 
++So for all its great age, the fire element will be revealed as impermanent, liable to end, pass away, and perish. 
+@@ -1,2 +1,2 @@ mn28:22.4
+ PLI: Tassā hi nāma, āvuso, bāhirāya vāyodhātuyā tāva mahallikāya aniccatā paññāyissati, khayadhammatā paññāyissati, vayadhammatā paññāyissati, vipariṇāmadhammatā paññāyissati. 
+-So for all its great age, the air element will be revealed as impermanent, liable to end, vanish, and perish. 
++So for all its great age, the air element will be revealed as impermanent, liable to end, pass away, and perish. 
+--- sujato/sutta/mn/mn74_translation-en-sujato.json
++++ sujato/sutta/mn/mn74_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn74:11.1
+ PLI: Sukhāpi kho, aggivessana, vedanā aniccā saṅkhatā paṭiccasamuppannā khayadhammā vayadhammā virāgadhammā nirodhadhammā; 
+-Pleasant, painful, and neutral feelings are impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. 
++Pleasant, painful, and neutral feelings are impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
+--- sujato/sutta/sn/sn12/sn12.20_translation-en-sujato.json
++++ sujato/sutta/sn/sn12/sn12.20_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn12.20:4.2
+ PLI: Jarāmaraṇaṁ, bhikkhave, aniccaṁ saṅkhataṁ paṭiccasamuppannaṁ khayadhammaṁ vayadhammaṁ virāgadhammaṁ nirodhadhammaṁ. 
+-Old age and death are impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. 
++Old age and death are impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
+@@ -1,2 +1,2 @@ sn12.20:4.13
+ PLI: avijjā, bhikkhave, aniccā saṅkhatā paṭiccasamuppannā khayadhammā vayadhammā virāgadhammā nirodhadhammā. 
+-Ignorance is impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. 
++Ignorance is impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
+--- sujato/sutta/sn/sn12/sn12.34_translation-en-sujato.json
++++ sujato/sutta/sn/sn12/sn12.34_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn12.34:2.6
+ PLI: yampissa taṁ dhammaṭṭhitiñāṇaṁ tampi khayadhammaṁ vayadhammaṁ virāgadhammaṁ nirodhadhammanti ñāṇaṁ. 
+-And also their knowledge that even this knowledge of the stability of natural principles is liable to end, vanish, fade away, and cease. 
++And also their knowledge that even this knowledge of the stability of natural principles is liable to end, pass away, fade away, and cease. 
+@@ -1,2 +1,2 @@ sn12.34:3.13
+ PLI: yampissa taṁ dhammaṭṭhitiñāṇaṁ tampi khayadhammaṁ vayadhammaṁ virāgadhammaṁ nirodhadhammanti ñāṇaṁ. 
+-And also their knowledge that even this knowledge of the stability of natural principles is liable to end, vanish, fade away, and cease. 
++And also their knowledge that even this knowledge of the stability of natural principles is liable to end, pass away, fade away, and cease. 
+--- sujato/sutta/sn/sn22/sn22.126_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.126_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.126:2.2
+ PLI: vayadhammaṁ rūpaṁ ‘vayadhammaṁ rūpan’ti yathābhūtaṁ nappajānāti; 
+-They don’t truly understand form, which is liable to vanish, as form which is liable to vanish. 
++They don’t truly understand form, which is liable to pass away, as form which is liable to pass away. 
+@@ -1,2 +1,2 @@ sn22.126:2.3
+ PLI: samudayavayadhammaṁ rūpaṁ ‘samudayavayadhammaṁ rūpan’ti yathābhūtaṁ nappajānāti. 
+-They don’t truly understand form, which is liable to arise and vanish, as form which is liable to arise and vanish. 
++They don’t truly understand form, which is liable to arise and pass away, as form which is liable to arise and pass away. 
+@@ -1,2 +1,2 @@ sn22.126:2.12
+ PLI: vayadhammaṁ viññāṇaṁ ‘vayadhammaṁ viññāṇan’ti yathābhūtaṁ nappajānāti; 
+-They don’t truly understand consciousness, which is liable to vanish, as consciousness which is liable to vanish. 
++They don’t truly understand consciousness, which is liable to pass away, as consciousness which is liable to pass away. 
+@@ -1,2 +1,2 @@ sn22.126:2.13
+ PLI: samudayavayadhammaṁ viññāṇaṁ ‘samudayavayadhammaṁ viññāṇan’ti yathābhūtaṁ nappajānāti. 
+-They don’t truly understand consciousness, which is liable to arise and vanish, as consciousness which is liable to arise and vanish. 
++They don’t truly understand consciousness, which is liable to arise and pass away, as consciousness which is liable to arise and pass away. 
+@@ -1,2 +1,2 @@ sn22.126:4.2
+ PLI: vayadhammaṁ rūpaṁ ‘vayadhammaṁ rūpan’ti yathābhūtaṁ pajānāti; 
+-They truly understand form, which is liable to vanish, as form which is liable to vanish. 
++They truly understand form, which is liable to pass away, as form which is liable to pass away. 
+@@ -1,2 +1,2 @@ sn22.126:4.3
+ PLI: samudayavayadhammaṁ rūpaṁ ‘samudayavayadhammaṁ rūpan’ti yathābhūtaṁ pajānāti. 
+-They truly understand form, which is liable to arise and vanish, as form which is liable to arise and vanish. 
++They truly understand form, which is liable to arise and pass away, as form which is liable to arise and pass away. 
+@@ -1,2 +1,2 @@ sn22.126:4.12
+ PLI: vayadhammaṁ viññāṇaṁ ‘vayadhammaṁ viññāṇan’ti yathābhūtaṁ pajānāti; 
+-They truly understand consciousness, which is liable to vanish, as consciousness which is liable to vanish. 
++They truly understand consciousness, which is liable to pass away, as consciousness which is liable to pass away. 
+@@ -1,2 +1,2 @@ sn22.126:4.13
+ PLI: samudayavayadhammaṁ viññāṇaṁ ‘samudayavayadhammaṁ viññāṇan’ti yathābhūtaṁ pajānāti. 
+-They truly understand consciousness, which is liable to arise and vanish, as consciousness which is liable to arise and vanish. 
++They truly understand consciousness, which is liable to arise and pass away, as consciousness which is liable to arise and pass away. 
+--- sujato/sutta/sn/sn22/sn22.127_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.127_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.127:2.1
+ PLI: “Idhāvuso assutavā puthujjano samudayadhammaṁ rūpaṁ ‘samudayadhammaṁ rūpan’ti yathābhūtaṁ nappajānāti; vayadhammaṁ rūpaṁ …pe… ‘samudayavayadhammaṁ rūpan’ti yathābhūtaṁ nappajānāti. 
+-“Reverend, it’s when an unlearned ordinary person doesn’t truly understand form, which is liable to arise … liable to vanish … liable to arise and vanish, as form which is liable to arise and vanish. 
++“Reverend, it’s when an unlearned ordinary person doesn’t truly understand form, which is liable to arise … liable to pass away … liable to arise and pass away, as form which is liable to arise and pass away. 
+@@ -1,2 +1,2 @@ sn22.127:2.5
+ PLI: Samudayadhammaṁ viññāṇaṁ …pe… samudayavayadhammaṁ viññāṇaṁ ‘samudayavayadhammaṁ viññāṇan’ti yathābhūtaṁ nappajānāti. 
+-consciousness, which is liable to arise … liable to vanish … liable to arise and vanish, as consciousness which is liable to arise and vanish. 
++consciousness, which is liable to arise … liable to pass away … liable to arise and pass away, as consciousness which is liable to arise and pass away. 
+--- sujato/sutta/sn/sn22/sn22.128_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.128_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.128:2.1
+ PLI: “Idhāvuso, sutavā ariyasāvako samudayadhammaṁ rūpaṁ ‘samudayadhammaṁ rūpan’ti yathābhūtaṁ pajānāti; vayadhammaṁ rūpaṁ …pe… samudayavayadhammaṁ rūpaṁ ‘samudayavayadhammaṁ rūpan’ti yathābhūtaṁ pajānāti; 
+-“Reverend, it’s when a learned noble disciple truly understands form, which is liable to arise … liable to vanish … liable to arise and vanish, as form which is liable to arise and vanish. 
++“Reverend, it’s when a learned noble disciple truly understands form, which is liable to arise … liable to pass away … liable to arise and pass away, as form which is liable to arise and pass away. 
+@@ -1,2 +1,2 @@ sn22.128:2.5
+ PLI: Samudayadhammaṁ viññāṇaṁ … vayadhammaṁ viññāṇaṁ … samudayavayadhammaṁ viññāṇaṁ ‘samudayavayadhammaṁ viññāṇan’ti yathābhūtaṁ pajānāti. 
+-consciousness, which is liable to arise … liable to vanish … liable to arise and vanish, as consciousness which is liable to arise and vanish. 
++consciousness, which is liable to arise … liable to pass away … liable to arise and pass away, as consciousness which is liable to arise and pass away. 
+--- sujato/sutta/sn/sn22/sn22.21_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.21_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.21:1.5
+ PLI: “Rūpaṁ kho, ānanda, aniccaṁ saṅkhataṁ paṭiccasamuppannaṁ khayadhammaṁ vayadhammaṁ virāgadhammaṁ nirodhadhammaṁ. 
+-“Ānanda, form is impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. 
++“Ānanda, form is impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
+@@ -1,2 +1,2 @@ sn22.21:1.12
+ PLI: Viññāṇaṁ aniccaṁ saṅkhataṁ paṭiccasamuppannaṁ khayadhammaṁ vayadhammaṁ virāgadhammaṁ nirodhadhammaṁ. 
+-Consciousness is impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. 
++Consciousness is impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
+--- sujato/sutta/sn/sn22/sn22.37_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.37_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.37:2.2
+ PLI: ‘katamesaṁ, āvuso ānanda, dhammānaṁ uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyatī’ti? 
+-‘Reverend Ānanda, what are the things for which arising is evident, vanishing is evident, and change while persisting is evident?’ 
++‘Reverend Ānanda, what are the things for which arising is evident, passing away is evident, and change while persisting is evident?’ 
+@@ -1,2 +1,2 @@ sn22.37:2.5
+ PLI: ‘katamesaṁ, āvuso ānanda, dhammānaṁ uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyatī’ti? 
+-‘What are the things for which arising is evident, vanishing is evident, and change while persisting is evident?’ 
++‘What are the things for which arising is evident, passing away is evident, and change while persisting is evident?’ 
+@@ -1,2 +1,2 @@ sn22.37:2.7
+ PLI: ‘rūpassa kho, āvuso, uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyati. 
+-‘Reverend, the arising of form is evident, its vanishing is evident, and change while persisting is evident. 
++‘Reverend, the arising of form is evident, its passing away is evident, and change while persisting is evident. 
+@@ -1,2 +1,2 @@ sn22.37:2.11
+ PLI: viññāṇassa uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyati. 
+-consciousness is evident, its vanishing is evident, and change while persisting is evident. 
++consciousness is evident, its passing away is evident, and change while persisting is evident. 
+@@ -1,2 +1,2 @@ sn22.37:2.12
+ PLI: Imesaṁ kho, āvuso, dhammānaṁ uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyatī’ti. 
+-These are the things for which arising is evident, vanishing is evident, and change while persisting is evident.’ 
++These are the things for which arising is evident, passing away is evident, and change while persisting is evident.’ 
+@@ -1,2 +1,2 @@ sn22.37:3.2
+ PLI: Rūpassa kho, ānanda, uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyati. 
+-The arising of form is evident, its vanishing is evident, and change while persisting is evident. 
++The arising of form is evident, its passing away is evident, and change while persisting is evident. 
+@@ -1,2 +1,2 @@ sn22.37:3.6
+ PLI: viññāṇassa uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyati. 
+-consciousness is evident, its vanishing is evident, and change while persisting is evident. 
++consciousness is evident, its passing away is evident, and change while persisting is evident. 
+@@ -1,2 +1,2 @@ sn22.37:3.7
+ PLI: Imesaṁ kho, ānanda, dhammānaṁ uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyatīti. 
+-These are the things for which arising is evident, vanishing is evident, and change while persisting is evident. 
++These are the things for which arising is evident, passing away is evident, and change while persisting is evident. 
+--- sujato/sutta/sn/sn22/sn22.38_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.38_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.38:2.2
+ PLI: ‘katamesaṁ, āvuso ānanda, dhammānaṁ uppādo paññāyittha, vayo paññāyittha, ṭhitassa aññathattaṁ paññāyittha? 
+-‘Reverend Ānanda, what are the things for which arising, vanishing, and change while persisting were evident? 
++‘Reverend Ānanda, what are the things for which arising, passing away, and change while persisting were evident? 
+@@ -1,2 +1,2 @@ sn22.38:2.3
+ PLI: Katamesaṁ dhammānaṁ uppādo paññāyissati, vayo paññāyissati, ṭhitassa aññathattaṁ paññāyissati? 
+-What are the things for which arising, vanishing, and change while persisting will be evident? 
++What are the things for which arising, passing away, and change while persisting will be evident? 
+@@ -1,2 +1,2 @@ sn22.38:2.4
+ PLI: Katamesaṁ dhammānaṁ uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyatī’ti? 
+-What are the things for which arising, vanishing, and change while persisting are evident?’ 
++What are the things for which arising, passing away, and change while persisting are evident?’ 
+@@ -1,2 +1,2 @@ sn22.38:2.7
+ PLI: ‘katamesaṁ, āvuso ānanda, dhammānaṁ uppādo paññāyittha, vayo paññāyittha, ṭhitassa aññathattaṁ paññāyittha? 
+-‘Reverend Ānanda, what are the things for which arising, vanishing, and change while persisting were evident? 
++‘Reverend Ānanda, what are the things for which arising, passing away, and change while persisting were evident? 
+@@ -1,2 +1,2 @@ sn22.38:2.8
+ PLI: Katamesaṁ dhammānaṁ uppādo paññāyissati, vayo paññāyissati, ṭhitassa aññathattaṁ paññāyissati? 
+-What are the things for which arising, vanishing, and change while persisting will be evident? 
++What are the things for which arising, passing away, and change while persisting will be evident? 
+@@ -1,2 +1,2 @@ sn22.38:2.9
+ PLI: Katamesaṁ dhammānaṁ uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyatī’ti? 
+-What are the things for which arising, vanishing, and change while persisting are evident?’ 
++What are the things for which arising, passing away, and change while persisting are evident?’ 
+@@ -1,2 +1,2 @@ sn22.38:2.12
+ PLI: tassa uppādo paññāyittha, vayo paññāyittha, ṭhitassa aññathattaṁ paññāyittha. 
+-its arising, vanishing, and change while persisting were evident. 
++its arising, passing away, and change while persisting were evident. 
+@@ -1,2 +1,2 @@ sn22.38:2.19
+ PLI: tassa uppādo paññāyittha, vayo paññāyittha, ṭhitassa aññathattaṁ paññāyittha. 
+-its arising, vanishing, and change while persisting were evident. 
++its arising, passing away, and change while persisting were evident. 
+@@ -1,2 +1,2 @@ sn22.38:2.20
+ PLI: Imesaṁ kho, āvuso, dhammānaṁ uppādo paññāyittha, vayo paññāyittha, ṭhitassa aññathattaṁ paññāyittha. 
+-These are the things for which arising, vanishing, and change while persisting were evident. 
++These are the things for which arising, passing away, and change while persisting were evident. 
+@@ -1,2 +1,2 @@ sn22.38:3.2
+ PLI: tassa uppādo paññāyissati, vayo paññāyissati, ṭhitassa aññathattaṁ paññāyissati. 
+-its arising, vanishing, and change while persisting will be evident. 
++its arising, passing away, and change while persisting will be evident. 
+@@ -1,2 +1,2 @@ sn22.38:3.9
+ PLI: tassa uppādo paññāyissati, vayo paññāyissati, ṭhitassa aññathattaṁ paññāyissati. 
+-its arising, vanishing, and change while persisting will be evident. 
++its arising, passing away, and change while persisting will be evident. 
+@@ -1,2 +1,2 @@ sn22.38:3.10
+ PLI: Imesaṁ kho, āvuso, dhammānaṁ uppādo paññāyissati, vayo paññāyissati, ṭhitassa aññathattaṁ paññāyissati. 
+-These are the things for which arising, vanishing, and change while persisting will be evident. 
++These are the things for which arising, passing away, and change while persisting will be evident. 
+@@ -1,2 +1,2 @@ sn22.38:4.2
+ PLI: tassa uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyati. 
+-its arising, vanishing, and change while persisting is evident. 
++its arising, passing away, and change while persisting is evident. 
+@@ -1,2 +1,2 @@ sn22.38:4.7
+ PLI: Yaṁ viññāṇaṁ jātaṁ pātubhūtaṁ tassa uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyati. 
+-consciousness has been born, and has appeared, its arising, vanishing, and change while persisting are evident. 
++consciousness has been born, and has appeared, its arising, passing away, and change while persisting are evident. 
+@@ -1,2 +1,2 @@ sn22.38:4.8
+ PLI: Imesaṁ kho, āvuso, dhammānaṁ uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyatī’ti. 
+-These are the things for which arising is evident, vanishing is evident, and change while persisting is evident.’ 
++These are the things for which arising is evident, passing away is evident, and change while persisting is evident.’ 
+@@ -1,2 +1,2 @@ sn22.38:5.3
+ PLI: tassa uppādo paññāyittha, vayo paññāyittha, ṭhitassa aññathattaṁ paññāyittha. 
+-its arising, vanishing, and change while persisting were evident. 
++its arising, passing away, and change while persisting were evident. 
+@@ -1,2 +1,2 @@ sn22.38:5.8
+ PLI: tassa uppādo paññāyittha, vayo paññāyittha, ṭhitassa aññathattaṁ paññāyittha. 
+-its arising, vanishing, and change while persisting were evident. 
++its arising, passing away, and change while persisting were evident. 
+@@ -1,2 +1,2 @@ sn22.38:5.9
+ PLI: Imesaṁ kho, ānanda, dhammānaṁ uppādo paññāyittha, vayo paññāyittha, ṭhitassa aññathattaṁ paññāyittha. 
+-These are the things for which arising, vanishing, and change while persisting were evident. 
++These are the things for which arising, passing away, and change while persisting were evident. 
+@@ -1,2 +1,2 @@ sn22.38:6.2
+ PLI: tassa uppādo paññāyissati, vayo paññāyissati, ṭhitassa aññathattaṁ paññāyissati. 
+-its arising, vanishing, and change while persisting will be evident. 
++its arising, passing away, and change while persisting will be evident. 
+@@ -1,2 +1,2 @@ sn22.38:6.7
+ PLI: tassa uppādo paññāyissati, vayo paññāyissati, ṭhitassa aññathattaṁ paññāyissati. 
+-its arising, vanishing, and change while persisting will be evident. 
++its arising, passing away, and change while persisting will be evident. 
+@@ -1,2 +1,2 @@ sn22.38:6.8
+ PLI: Imesaṁ kho, ānanda, dhammānaṁ uppādo paññāyissati, vayo paññāyissati, ṭhitassa aññathattaṁ paññāyissati. 
+-These are the things for which arising, vanishing, and change while persisting will be evident. 
++These are the things for which arising, passing away, and change while persisting will be evident. 
+@@ -1,2 +1,2 @@ sn22.38:7.2
+ PLI: tassa uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyati. 
+-its arising, vanishing, and change while persisting are evident. 
++its arising, passing away, and change while persisting are evident. 
+@@ -1,2 +1,2 @@ sn22.38:7.7
+ PLI: tassa uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyati. 
+-its arising, vanishing, and change while persisting are evident. 
++its arising, passing away, and change while persisting are evident. 
+@@ -1,2 +1,2 @@ sn22.38:7.8
+ PLI: Imesaṁ kho, ānanda, dhammānaṁ uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyatīti. 
+-These are the things for which arising is evident, vanishing is evident, and change while persisting is evident. 
++These are the things for which arising is evident, passing away is evident, and change while persisting is evident. 
+--- sujato/sutta/sn/sn36/sn36.11_translation-en-sujato.json
++++ sujato/sutta/sn/sn36/sn36.11_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn36.11:2.10
+ PLI: vayadhammataṁ …pe… 
+-vanish, 
++pass away, 
+--- sujato/sutta/sn/sn36/sn36.2_translation-en-sujato.json
++++ sujato/sutta/sn/sn36/sn36.2_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn36.2:3.3
+ PLI: Phussa phussa vayaṁ passaṁ, 
+-seeing feelings vanish with every contact, 
++seeing feelings pass away with every contact, 
+--- sujato/sutta/sn/sn36/sn36.7_translation-en-sujato.json
++++ sujato/sutta/sn/sn36/sn36.7_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn36.7:5.8
+ PLI: So kāye ca sukhāya ca vedanāya aniccānupassī viharati, vayānupassī viharati, virāgānupassī viharati, nirodhānupassī viharati, paṭinissaggānupassī viharati. 
+-They meditate observing impermanence, vanishing, dispassion, cessation, and letting go in the body and pleasant feeling. 
++They meditate observing impermanence, passing away, dispassion, cessation, and letting go in the body and pleasant feeling. 
+@@ -1,2 +1,2 @@ sn36.7:6.9
+ PLI: So kāye ca dukkhāya ca vedanāya aniccānupassī viharati, vayānupassī viharati, virāgānupassī viharati, nirodhānupassī viharati, paṭinissaggānupassī viharati. 
+-They meditate observing impermanence, vanishing, dispassion, cessation, and letting go in the body and painful feeling. 
++They meditate observing impermanence, passing away, dispassion, cessation, and letting go in the body and painful feeling. 
+@@ -1,2 +1,2 @@ sn36.7:7.8
+ PLI: So kāye ca adukkhamasukhāya ca vedanāya aniccānupassī viharati, vayānupassī viharati, virāgānupassī viharati, nirodhānupassī viharati, paṭinissaggānupassī viharati. 
+-They meditate observing impermanence, vanishing, dispassion, cessation, and letting go in the body and neutral feeling. 
++They meditate observing impermanence, passing away, dispassion, cessation, and letting go in the body and neutral feeling. 
+--- sujato/sutta/sn/sn36/sn36.8_translation-en-sujato.json
++++ sujato/sutta/sn/sn36/sn36.8_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn36.8:5.9
+ PLI: So phasse ca sukhāya ca vedanāya aniccānupassī viharati, vayānupassī viharati, virāgānupassī viharati, nirodhānupassī viharati, paṭinissaggānupassī viharati. 
+-They meditate observing impermanence, vanishing, dispassion, cessation, and letting go in contact and pleasant feeling. 
++They meditate observing impermanence, passing away, dispassion, cessation, and letting go in contact and pleasant feeling. 
+--- sujato/sutta/sn/sn36/sn36.9_translation-en-sujato.json
++++ sujato/sutta/sn/sn36/sn36.9_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn36.9:1.1
+ PLI: “Tisso imā, bhikkhave, vedanā aniccā saṅkhatā paṭiccasamuppannā khayadhammā vayadhammā virāgadhammā nirodhadhammā. 
+-“Bhikkhus, these three feelings are impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. 
++“Bhikkhus, these three feelings are impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
+@@ -1,2 +1,2 @@ sn36.9:1.4
+ PLI: imā kho, bhikkhave, tisso vedanā aniccā saṅkhatā paṭiccasamuppannā khayadhammā vayadhammā virāgadhammā nirodhadhammā”ti. 
+-These are the three feelings that are impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease.” 
++These are the three feelings that are impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease.” 
+--- sujato/sutta/sn/sn47/sn47.40_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.40_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.40:2.2
+ PLI: Idha, bhikkhave, bhikkhu samudayadhammānupassī kāyasmiṁ viharati, vayadhammānupassī kāyasmiṁ viharati, samudayavayadhammānupassī kāyasmiṁ viharati, ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-It’s when a bhikkhu, with respect to the body, meditates observing the liability to arise, to vanish, and to arise and vanish—keen, fully comprehending, and aware, rid of covetousness and displeasure for the world. 
++It’s when a bhikkhu, with respect to the body, meditates observing the liability to arise, to pass away, and to arise and pass away—keen, fully comprehending, and aware, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn47.40:2.5
+ PLI: samudayadhammānupassī dhammesu viharati, vayadhammānupassī dhammesu viharati, samudayavayadhammānupassī dhammesu viharati, ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles, they meditate observing the liability to arise, to vanish, and to arise and vanish—keen, fully comprehending, and aware, rid of covetousness and displeasure for the world. 
++principles, they meditate observing the liability to arise, to pass away, and to arise and pass away—keen, fully comprehending, and aware, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn52/sn52.1_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.1_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.1:3.1
+ PLI: “Idhāvuso, bhikkhu ajjhattaṁ kāye samudayadhammānupassī viharati, ajjhattaṁ kāye vayadhammānupassī viharati, ajjhattaṁ kāye samudayavayadhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-“Reverend, it’s when a bhikkhu, with respect to the body internally, meditates observing the liability to arise, to vanish, and to arise and vanish—keen, fully comprehending, and aware, rid of covetousness and displeasure for the world. 
++“Reverend, it’s when a bhikkhu, with respect to the body internally, meditates observing the liability to arise, to pass away, and to arise and pass away—keen, fully comprehending, and aware, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn52.1:3.2
+ PLI: Bahiddhā kāye samudayadhammānupassī viharati, bahiddhā kāye vayadhammānupassī viharati, bahiddhā kāye samudayavayadhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-With respect to the body externally, they meditate observing the liability to arise, to vanish, and to arise and vanish—keen, fully comprehending, and aware, rid of covetousness and displeasure for the world. 
++With respect to the body externally, they meditate observing the liability to arise, to pass away, and to arise and pass away—keen, fully comprehending, and aware, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn52.1:3.3
+ PLI: Ajjhattabahiddhā kāye samudayadhammānupassī viharati, ajjhattabahiddhā kāye vayadhammānupassī viharati, ajjhattabahiddhā kāye samudayavayadhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-With respect to the body internally and externally, they meditate observing the liability to arise, to vanish, and to arise and vanish—keen, fully comprehending, and aware, rid of covetousness and displeasure for the world. 
++With respect to the body internally and externally, they meditate observing the liability to arise, to pass away, and to arise and pass away—keen, fully comprehending, and aware, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn52.1:5.3
+ PLI: Ajjhattabahiddhā vedanāsu samudayadhammānupassī viharati, ajjhattabahiddhā vedanāsu vayadhammānupassī viharati, ajjhattabahiddhā vedanāsu samudayavayadhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-internally and externally, they meditate observing the liability to arise, to vanish, and to arise and vanish … 
++internally and externally, they meditate observing the liability to arise, to pass away, and to arise and pass away … 
+@@ -1,2 +1,2 @@ sn52.1:7.3
+ PLI: ajjhattabahiddhā citte samudayadhammānupassī viharati … ajjhattabahiddhā citte vayadhammānupassī viharati … ajjhattabahiddhā citte samudayavayadhammānupassī viharati ātāpī …pe… abhijjhādomanassaṁ. 
+-internally and externally, they meditate observing the liability to arise, to vanish, and to arise and vanish … 
++internally and externally, they meditate observing the liability to arise, to pass away, and to arise and pass away … 
+@@ -1,2 +1,2 @@ sn52.1:9.3
+ PLI: ajjhattabahiddhā dhammesu samudayadhammānupassī viharati … ajjhattabahiddhā dhammesu vayadhammānupassī viharati … ajjhattabahiddhā dhammesu samudayavayadhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-internally and externally, they meditate observing the liability to arise, to vanish, and to arise and vanish … 
++internally and externally, they meditate observing the liability to arise, to pass away, and to arise and pass away … 

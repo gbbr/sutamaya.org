@@ -336,28 +336,40 @@ entire footprint untriaged, so the first triage run *is* the enumeration. There'
 It also tells you which `mode` the rule wants: if nearly everything lands in `allow`, the rule is
 better written open, with only the exceptions listed.
 
-## Auditing a run: `update-data:post:diff`
+## Auditing a run: `data/diff/`
 
-```
-npm run update-data:post          # apply rules
-npm run update-data:post:diff     # apply rules, and write per-rule diffs
-```
+`npm run update-data:post` always writes it — there's no separate flag or command, so the diffs
+can't be out of date with `data/sujato.post/`. The directory is wiped and fully rewritten each
+run:
 
-Writes to `data/diff/` (gitignored, wiped each run):
-
-- `00-summary.diff` — every rule with its match count and how many files it touched, and any rule
+- `00-summary.txt` — every rule with its match count and how many files it touched, and any rule
   that matched zero.
 - `<id>.diff` — one file per rule, every change it made.
 
-Per change: file, segment id, the **Pali** of that segment, then before/after with **the changed
-span highlighted inline**. Word-level, not line-level — these are single-word swaps inside long
-paragraphs, and a line diff just shows two near-identical walls of text.
+Per change: the source file, the segment id, the **Pali** of that segment, then the before/after
+pair. Only this rule's own spans differ between the two lines — every other rule's work shows as
+already-final text on both sides — so the change reads at word level even though it's stored as a
+line pair. No cap on entries; auditing all 1,200-odd rewrites of a term is the actual use case.
 
-Colour is forced on when writing these files; the shared helpers in `../scripts/lib/dataSync.js`
-disable it when stdout isn't a TTY, which is exactly the case here. Read with `less -R`.
+**`data/diff/` is checked in.** That's what makes an upstream refresh legible: after
+`update-data:copy`, `git diff data/diff/` is the list of this app's own rewrites that upstream has
+moved under, rule by rule, next to `git diff data/sujato/` for what upstream itself changed.
+Which is also why the files carry no colour and no timestamps, and sort their source paths — a run
+over unchanged input has to produce an unchanged tree, or the signal drowns.
 
-No cap on entries — the directory is gitignored, and auditing all 1,200-odd rewrites of a term is
-the actual use case.
+Each rule file is a real unified diff, so the word-level highlight comes from the viewer instead
+of from the bytes:
+
+```
+delta < data/diff/sati-aware.diff     # inline highlight of the changed span
+bat data/diff/sati-aware.diff         # plain diff syntax colouring
+git diff data/diff/                    # what moved since the last commit
+```
+
+`mendicant-bhikkhu.diff` is ~4MB and past GitHub's rendering limit, so that one is local-only;
+the rest display fine. `.gitattributes` marks them `linguist-generated`, which collapses them by
+default in GitHub's diff view and leaves everything else — blob view, `git diff`, delta, bat —
+untouched.
 
 Reading these for *mechanical* correctness isn't enough. A swap that is right term-for-term can
 still leave English that no one would write — a stranded article, or a noun standing where the

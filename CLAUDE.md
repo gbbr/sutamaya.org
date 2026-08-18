@@ -21,7 +21,12 @@ text-range highlighting, notes, lists, typography controls).
   `data/README.md`. `post` applies this app's own editorial layer over Sujato's English —
   terminology rules and per-segment overrides, declared in `scripts/update-data/retranslation.mjs`
   so they survive every refresh; **`docs/retranslation.md` is the spec, and the one thing to read
-  before touching a rule.**
+  before touching a rule.** Every `post` run also writes `data/diff/` — one unified diff per rule,
+  every rewrite it made, with the segment's Pali as context. Unlike the rest of the build's output
+  that directory is **checked in**, deliberately: `git diff data/diff/` after a refresh (or after
+  a rule edit) is the reviewable record of what changed in the text this app actually ships. Read
+  a single rule's file with `delta < data/diff/<rule-id>.diff` for the inline word-level
+  highlight; the files themselves stay plain, colourless and byte-stable so git can carry them.
 
 ## Commands
 

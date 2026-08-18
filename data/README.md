@@ -77,8 +77,9 @@ the change is legitimate:
    pristine upstream, so `git diff data/sujato/` now shows exactly what upstream changed.
 2. `npm run update-data:triage` — work every retranslation queue to empty; see
    [`../docs/retranslation.md`](../docs/retranslation.md).
-3. `npm run update-data:post:diff` — regenerate `sujato.post/`, and write each rule's rewrites to
-   `data/diff/` for review.
+3. `npm run update-data:post` — regenerate `sujato.post/` and, always, each rule's rewrites in
+   `data/diff/`. That directory is checked in, so `git diff data/diff/` now shows which of this
+   app's own rewrites upstream moved under — review it alongside `git diff data/sujato/`.
 4. `npm test`, and check the reader.
 5. `npm run update-data:snapshot` — records what's now in `sujato/`, `pali/` and `html/` as the new
    baseline, along with each rule's match count, so future `check` runs stop flagging this same
