@@ -1,0 +1,11 @@
+{
+  "reviewedAt": "2026-08-18",
+  "allow": [],
+  "deny": {
+    "an-blurbs:an8.23": "plain English — \"Hatthaka is anxious to know\" is eagerness, not paritassati; a blurb has no Pali to check it against",
+    "sn2.17:2.1": "utrasta — \"Niccaṁ utrastamidaṁ cittaṁ\", the mind as terrified, not paritassati",
+    "sn2.17:2.5": "anutrasta — the negation of sn2.17:2.1's utrasta, same denial",
+    "snp5.1:11.1": "utrasta — \"Utrastaṁ dukkhitaṁ disvā\", seeing him terrified, not paritassati",
+    "thag16.8:22.4": "ubbigga — \"ubbiggamanaso\", a startled mind; the word this app renders paritassati with, but not that term"
+  }
+}

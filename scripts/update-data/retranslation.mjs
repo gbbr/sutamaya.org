@@ -19,7 +19,9 @@
 //                      sampajanna-full-comprehension
 //   arising / passing   samudaya-arising, vaya-passing-away, atthangama-disappearing,
 //                      udayabbaya-arising-passing-away
-//   change / instability  viparinama-annathatta-change-unstable
+//   change / instability  viparinama-annathatta-change-unstable,
+//                      viparinama-anuparivatti-changing
+//   agitation          paritassati-agitated
 //   segment overrides  one line each, applied last; sub-grouped by cause, order immaterial
 
 export const RULES = [
@@ -53,7 +55,6 @@ export const RULES = [
       ['immersions', 'concentrations'],
     ],
   },
-  // ── Awareness ───────────────────────────────────────────────────────────────
   {
     id: 'patisambhida-analytical-knowledge',
     why: 'Sujato renders paṭisambhidā as "textual analysis"; this app prefers "analytical ' +
@@ -74,6 +75,7 @@ export const RULES = [
       ['textual analysis', 'analytical knowledge'],
     ],
   },
+  // ── Awareness ───────────────────────────────────────────────────────────────
   // sati-aware and sampajanna-full-comprehension meet in the satipaṭṭhāna formula ("keen, aware,
   // and mindful"), where sati-aware produces the very word the sampajañña rule consumes. Locking,
   // not order, is what keeps them apart — see "The pass" in docs/retranslation.md, and the pinned
@@ -221,8 +223,14 @@ export const RULES = [
   // vipariṇāma paired with aññathatta/aññathābhāva — the doublet AN 3.47 lists alongside uppāda
   // and vaya as the third mark of a conditioned phenomenon ("change while persisting"), which is
   // why this group sits next to arising / passing. The adjacency is doctrinal only: nothing above
-  // produces "decay" or "perish" and nothing below consumes the "change"/"unstable" this rule
-  // writes, so there is no same-word collision here and the position settles nothing.
+  // produces "decay" or "perish" and nothing below consumes the "change"/"unstable"/"changing"
+  // these rules write, so there is no same-word collision here and the position settles nothing.
+  //
+  // Two rules, splitting the term by construction rather than by meaning. The first takes the
+  // doublet wherever Sujato writes it as a whole clause ("decays and perishes"); the second takes
+  // the one place he writes it as a compound noun instead ("the perishing of form"). They can't
+  // be one rule because they share no English word — the forms of either match nothing the other
+  // matches — and the second's slot needs a bare verbal noun where the first's needs a doublet.
   {
     id: 'viparinama-annathatta-change-unstable',
     why: 'Sujato renders the vipariṇāma/aññathā doublet as "decays and perishes"; this app ' +
@@ -235,11 +243,13 @@ export const RULES = [
       'which is why none of them is a form. "decay" alone is never this family (all 21 segments ' +
       'are pārijuñña/jarā, MN 82\'s four kinds of decay), and a bare "perish" is mostly ' +
       'nassati ("the world will perish"). Deliberately leaves vipariṇāmadhamma ("perishable", ' +
-      '209 segments with its negation) and the vipariṇāma compound nouns (MN 137/138, SN 22.7, ' +
+      '209 segments with its negation) and the remaining vipariṇāma compound nouns (MN 137, ' +
       'SN 35.136–7, MN 44, vipariṇāmadukkhatā) alone: those are vipariṇāma on its own rather ' +
-      'than the doublet, and they are a separate editorial decision. The two renderings meet in ' +
-      'only 2 of the 13 doublet suttas, so leaving them costs almost nothing — dn1:3.21.5 is the ' +
-      'one line where they land in adjacent sentences. Shares "unstable" with adhuva (14 ' +
+      'than the doublet, and they are a separate editorial decision. MN 138 and SN 22.7 were ' +
+      'the exception worth taking — there the compound sits two segments from this rule\'s own ' +
+      'output — and they are viparinama-anuparivatti-changing\'s, below. That leaves dn1:3.21.5 ' +
+      'as the one line where the two renderings land in adjacent sentences. ' +
+      'Shares "unstable" with adhuva (14 ' +
       'segments, "Conditions are unstable", AN 7.66); the two are near-synonyms and no sutta ' +
       'carries both renderings, so the overlap is accepted rather than worked around.',
     mode: 'deny',
@@ -258,6 +268,72 @@ export const RULES = [
       // decaying, and perishing". One form covers both words — which is also what keeps the rule
       // off sn5.4:5.2's unrelated "decaying and frail", where there is no comma.
       ['decaying, and perishing', 'changing, and unstable'],
+    ],
+  },
+  {
+    id: 'viparinama-anuparivatti-changing',
+    why: 'The vipariṇāma compound noun of MN 138 and SN 22.7, which Sujato renders "the ' +
+      'perishing of form"/"of consciousness"; this app prefers "the changing of". The Pali is ' +
+      'rūpavipariṇāmānuparivatti viññāṇaṁ — consciousness that trails after form\'s ' +
+      'transformation (anuparivattati, "follows around; trails") — and, in the same segment, the ' +
+      'ablative rūpavipariṇāmaññathābhāvā, which Sujato collapses into that same phrase rather ' +
+      'than rendering twice. Nothing in either word is destruction: the DPD gives vipariṇāma as ' +
+      '"change; alteration; transformation" and vipariṇāmaññathābhāva as "change and alteration ' +
+      '(of)", and Bodhi has "preoccupied with the change of form" where Ñāṇamoli/Bodhi have "the ' +
+      'change of material form". So "perishing" is upstream\'s own outlier here, and without ' +
+      'this rule MN 138 contradicts itself two segments apart: 20.4 already reads "But that form ' +
+      'changes and is unstable" from viparinama-annathatta-change-unstable, and 20.5 then said ' +
+      '"latches on to the perishing of form" for the same word. Renders it "changing" rather ' +
+      'than "instability" deliberately — "instability" is this app\'s word for the *other* half ' +
+      'of the doublet (aññathābhāva), so it would reintroduce one stem under two renderings, and ' +
+      'anuparivatti needs a process to trail rather than a property. Open, with an empty deny ' +
+      'list: "perishing of" occurs in exactly these 16 segments corpus-wide, so the phrase is ' +
+      'this construction and nothing else. Two forms rather than a bare "perishing", which is ' +
+      'MN 137/SN 35.136–7\'s vipariṇāmavirāganirodha and SN 22.43\'s — all deliberately left to ' +
+      'a separate decision, and all safe from this rule because none of them names an aggregate ' +
+      'after the preposition. Introduces no collision on the output side either: "changing of" ' +
+      'appears nowhere else in the corpus.',
+    mode: 'deny',
+    predicate: /vipariṇāmānuparivatt/i,
+    forms: [
+      ['perishing of form', 'changing of form'],
+      ['perishing of consciousness', 'changing of consciousness'],
+    ],
+  },
+  // ── Agitation ───────────────────────────────────────────────────────────────
+  // paritassati, which MN 138 and SN 22.7 present as what grasping makes of vipariṇāma — hence
+  // the position after change and instability, whose second rule rewrites the very phrase this
+  // one's segment overrides quote ("latching on to the changing of form"). The adjacency is
+  // doctrinal only: this rule shares no word with any rule above or below, so the position
+  // settles nothing — but the overrides below it do depend on that rule having already run,
+  // since a segment override anchors on the term rules' output.
+  {
+    id: 'paritassati-agitated',
+    why: 'Sujato renders paritassati as "anxious"/"anxiety"; this app prefers "agitated"/' +
+      '"agitation". His own note on dn15:32.3 gives the term as conveying "the twin senses of ' +
+      'desire and agitation", and agitation is the half that survives translation — "anxiety" ' +
+      'reads as the modern affliction, which is not what a bhikkhu is warned off. Open: the ' +
+      'English word means something else in only five segments — utrasta, terror, in sn2.17 and ' +
+      'snp5.1; ubbigga in thag16.8; and an8.23\'s blurb, where "anxious to know" is ordinary ' +
+      'English for eager. Deliberately leaves the term\'s four other renderings alone: "worry" in ' +
+      'the contentment formula (an4.28, dn33, sn16.1), "relief" for aparitassāya in the frontier-' +
+      'citadel simile (an7.67, an8.30), "bothered" (an5.106) and "nervous" (mn91). Those are ' +
+      'Sujato reading the word contextually rather than as the doctrinal term, and bringing them ' +
+      'into line is a separate editorial decision. Shares "agitation" with calati — "For the ' +
+      'independent there\'s no agitation", snp3.12 — which carries no paritassati at all, so the ' +
+      'two renderings never meet in a sutta.',
+    mode: 'deny',
+    predicate: /paritass/i,
+    forms: [
+      ['anxious', 'agitated'],
+      // The plural noun paritassanā, which Sujato pluralizes too. English will not take
+      // "Agitations occupy the mind", so this one sentence goes singular — and the verb has to
+      // travel with the noun, which is what the longer form is for. Its negated twin, two
+      // paragraphs later in the same two suttas, needs segment overrides instead; see them for
+      // why a form can't reach it.
+      ['anxieties occupy', 'agitation occupies'],
+      ['anxieties', 'agitations'],
+      ['anxiety', 'agitation'],
     ],
   },
   // ── Segment overrides ───────────────────────────────────────────────────────
@@ -442,5 +518,46 @@ export const RULES = [
     segments: ['thag1.31:1.3', 'thag3.9:2.3', 'thag15.1:12.3'],
     from: 'one should with awareness endure, ',
     to: 'one should endure with awareness, ',
+  },
+  // ·· paritassanā as a plural noun ··
+  // The term rule already puts "Anxieties occupy the mind" into the singular, because the verb has
+  // to move with the noun and one form can carry both. Its negated twin — the same passage of the
+  // same two suttas, saying the same thing of a freed mind — puts those two words either side of a
+  // fifteen-word em-dash clause, which no form can span, and the trailing half can't be a form of
+  // its own either: "don’t occupy the mind" is ordinary English in AN 8.6, AN 9.26, MN 36 and
+  // SN 35.134, none of which has anything to do with paritassanā. So it is four anchors, one per
+  // wording: MN 138 has "the mind" where SN 22.7 has "their mind", and each says it of form and
+  // again of consciousness.
+  {
+    id: 'paritassana-not-occupy-mind-form',
+    kind: 'segment',
+    why: 'The negated half of MN 138’s paritassanā passage, of form.',
+    segment: 'mn138:21.6',
+    from: 'Agitations—born of latching on to the changing of form and originating in accordance with natural principles—don’t occupy the mind. ',
+    to: 'Agitation—born of latching on to the changing of form and originating in accordance with natural principles—doesn’t occupy the mind. ',
+  },
+  {
+    id: 'paritassana-not-occupy-mind-consciousness',
+    kind: 'segment',
+    why: 'paritassana-not-occupy-mind-form’s line, of consciousness.',
+    segment: 'mn138:21.14',
+    from: 'Agitations—born of latching on to the changing of consciousness and originating in accordance with natural principles—don’t occupy the mind. ',
+    to: 'Agitation—born of latching on to the changing of consciousness and originating in accordance with natural principles—doesn’t occupy the mind. ',
+  },
+  {
+    id: 'paritassana-not-occupy-their-mind-form',
+    kind: 'segment',
+    why: 'paritassana-not-occupy-mind-form’s line, as SN 22.7 has it: "their mind".',
+    segment: 'sn22.7:6.6',
+    from: 'Agitations—born of latching on to the changing of form and originating in accordance with natural principles—don’t occupy their mind. ',
+    to: 'Agitation—born of latching on to the changing of form and originating in accordance with natural principles—doesn’t occupy their mind. ',
+  },
+  {
+    id: 'paritassana-not-occupy-their-mind-consciousness',
+    kind: 'segment',
+    why: 'paritassana-not-occupy-their-mind-form’s line, of consciousness.',
+    segment: 'sn22.7:9.4',
+    from: 'Agitations—born of latching on to the changing of consciousness and originating in accordance with natural principles—don’t occupy their mind. ',
+    to: 'Agitation—born of latching on to the changing of consciousness and originating in accordance with natural principles—doesn’t occupy their mind. ',
   },
 ];
