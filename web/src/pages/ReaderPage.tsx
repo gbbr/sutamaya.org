@@ -118,7 +118,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   // Tab title tracks whatever sutta is actually open, so switching suttas or reopening the tab
   // after a refresh both show the right title without a round trip through the tree.
   useEffect(() => {
-    document.title = sutta ? `${sutta.ref} ${sutta.en}` : 'Sutamaya';
+    document.title = sutta ? `${sutta.ref} · ${sutta.en}` : 'Sutamaya';
     return () => {
       document.title = 'Sutamaya';
     };
