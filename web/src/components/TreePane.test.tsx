@@ -79,7 +79,11 @@ function buildCorpus(): Corpus {
         min: 4,
       },
     },
+    // dataVersion is what the offline-staleness banner tests below compare against; the other two
+    // are filler no test here reads.
     dataVersion: 'data-v1',
+    sujatoCommit: 'abc1234',
+    dictionaryVersion: 'dict-v1',
   };
 }
 
