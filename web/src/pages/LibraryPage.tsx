@@ -158,7 +158,7 @@ export function LibraryPage({
       document.title = 'Search';
     } else {
       const { ref, label } = nodeLabel(corpus, nodeId || '', lists);
-      document.title = label ? (ref ? `${ref} ${label}` : label) : 'Sutamaya';
+      document.title = label ? (ref ? `${ref} · ${label}` : label) : 'Sutamaya';
     }
     return () => {
       document.title = 'Sutamaya';
