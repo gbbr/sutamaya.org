@@ -141,9 +141,19 @@ function collectLeafGroupIds(node: { id: string; chapters?: ChapterRow[] }, acc:
 export function flatSuttaOrder(corpus: Corpus): string[] {
   const leafGroupIds: string[] = [];
   for (const n of corpus.nikayas) collectLeafGroupIds(n, leafGroupIds);
+  // Bucket every sutta by its node in one pass, rather than calling suttasFor() per leaf group.
+  // That would be ~440 leaf groups each re-running Object.entries() over all ~4000 suttas and
+  // filtering the result — 1.8M pair allocations, and ~550ms of blocked main thread at app boot,
+  // since LibraryPage calls this during its first render.
+  const byNode = new Map<string, Array<[string, Sutta]>>();
+  for (const entry of suttaEntries(corpus)) {
+    let bucket = byNode.get(entry[1].node);
+    if (!bucket) byNode.set(entry[1].node, (bucket = []));
+    bucket.push(entry);
+  }
   const ids: string[] = [];
   for (const groupId of leafGroupIds) {
-    for (const [id] of sortByIdAsc(suttasFor(corpus, groupId))) ids.push(id);
+    for (const [id] of sortByIdAsc(byNode.get(groupId) ?? [])) ids.push(id);
   }
   return ids;
 }
