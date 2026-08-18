@@ -139,7 +139,7 @@ export function LibraryPage({
   // does the actual row rendering; see both components for how they split it. useCorpusSearch
   // itself defers the scan off `query` so the input stays instantly responsive even while a
   // slower device is still catching up (same hook ReaderSearchOverlay uses for its own scan).
-  const hits = useCorpusSearch(corpus, query, notes);
+  const hits = useCorpusSearch(corpus, query, notes, lists);
   // The hit TreePane's own arrow-key nav currently has highlighted, mirrored here so ListPane
   // (which renders the actual rows on desktop) can show that same highlight — see TreePane's
   // onActiveHitChange and ListPane's activeId.

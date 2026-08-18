@@ -1,3 +1,4 @@
+import { flattenListTree } from './lists';
 import type { ChapterRow, Corpus, Dictionary, ListDef, Nikaya, Sutta } from './types';
 
 export async function loadCorpus(): Promise<Corpus> {
@@ -296,22 +297,48 @@ export function resolveCanonicalSuttaId(corpus: Corpus, id: string): string {
   return id;
 }
 
-// Ranks a ref/title/Pali match above a blurb-or-note-only match (e.g. searching "mind" should
-// surface a sutta titled "The Mind" before one that merely mentions "mind" in its blurb) — ties
-// (same rank) keep the corpus's own build order, since `Array.prototype.sort` is a stable sort in
-// every engine this app targets.
-export function searchCorpus(corpus: Corpus, query: string, notes: Record<string, string>): SearchHit[] {
+// Every leaf ('list'-kind) list nested under `groupId`, recursing through any nested groups —
+// used to expand a group-name match into the suttas its member lists actually hold, since a
+// group's own `items` is always empty (see worker/src/lib/userData.js's schema notes).
+function listDescendants(lists: ListDef[], groupId: string): ListDef[] {
+  const children = lists.filter((l) => l.parentId === groupId);
+  return children.flatMap((c) => (c.kind === 'group' ? listDescendants(lists, c.id) : [c]));
+}
+
+// Suttas reachable by matching the query against a list/group's own name, searched at any depth
+// (not just top-level lists/groups) via flattenListTree's full "Group / List" breadcrumb —
+// collapsed to a bare "group/list" for matching so the breadcrumb's " / " spacing isn't required
+// (a query like "group/list" or just "list" both match). A group match expands to every sutta in
+// every list nested under it.
+function matchingListItemIds(lists: ListDef[], q: string): Set<string> {
+  const ids = new Set<string>();
+  for (const { list, breadcrumb } of flattenListTree(lists)) {
+    const pathKey = searchKey(breadcrumb).replace(/\s*\/\s*/g, '/');
+    if (!pathKey.includes(q)) continue;
+    for (const l of list.kind === 'group' ? listDescendants(lists, list.id) : [list]) {
+      for (const itemId of l.items) ids.add(itemId);
+    }
+  }
+  return ids;
+}
+
+// Ranks a ref/title/Pali match above a blurb/note/list-name-only match (e.g. searching "mind"
+// should surface a sutta titled "The Mind" before one that merely mentions "mind" in its blurb or
+// is filed in a list named "Mind") — ties (same rank) keep the corpus's own build order, since
+// `Array.prototype.sort` is a stable sort in every engine this app targets.
+export function searchCorpus(corpus: Corpus, query: string, notes: Record<string, string>, lists: ListDef[] = []): SearchHit[] {
   const q = searchKey(query.trim());
   if (!q) return [];
   const staticHaystacks = staticHaystacksFor(corpus);
   const rangeQuery = q.match(RANGE_QUERY);
   const ranges = rangeQuery ? rangesFor(corpus) : null;
+  const listMatchIds = matchingListItemIds(lists, q);
   const hits: Array<SearchHit & { rank: number }> = [];
   for (const [id, s] of suttaEntries(corpus)) {
     const { title, blurb } = staticHaystacks.get(id)!;
     const note = notes[id];
     let inTitle = title.includes(q);
-    const inRest = blurb.includes(q) || (!!note && searchKey(note).includes(q));
+    const inRest = blurb.includes(q) || (!!note && searchKey(note).includes(q)) || listMatchIds.has(id);
     let matchedId: string | undefined;
     // Checked unconditionally (not just when `!inTitle`) — a batch's own ref text is always
     // exactly `${prefix}${start}` with no separator (e.g. "Dhp209–220"), so a query for a batch's
