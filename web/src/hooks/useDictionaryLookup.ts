@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from 'react';
 import { splitPaliWords, stripPunct, findAdjacentWord } from '../lib/dictionary';
-import { lookupHeadword } from '../lib/dictionaryShards';
+import { lookupHeadword, peekHeadword, prefetchHeadwordShard } from '../lib/dictionaryShards';
 import type { SegmentFile } from '../lib/corpus';
 
 interface DictState {
@@ -12,14 +12,19 @@ interface DictState {
   // from the (not-unique-within-a-segment) word text itself.
   segIndex: number;
   wordIndex: number;
-  // This word's shard is still being fetched. Usually resolves within a microtask (the shard is
-  // already resident, or already in Cache Storage), so the dock's "Loading…" copy only really
-  // shows on a cold shard over a slow connection.
+  // This word's shard is still being fetched, and has been for long enough to be worth saying so
+  // — see LOADING_DELAY_MS. Never set for a lookup that resolves promptly, so the dock's height
+  // doesn't move for the ordinary cached tap.
   loading?: boolean;
   // That fetch failed — offline with this shard uncached, or a bad response. Distinguished from
   // `loading` so the dock can offer a retry instead of claiming a download is still going.
   failed?: boolean;
 }
+
+// How long a lookup may take before the dock admits to waiting. A shard read that beats this never
+// renders a loading state at all, which is what stops the dock resizing twice — once to its
+// one-line "Loading…" body and again to the definitions — for every tapped word.
+const LOADING_DELAY_MS = 150;
 
 interface UseDictionaryLookupOptions {
   suttaId: string | undefined;
@@ -37,33 +42,67 @@ interface UseDictionaryLookupOptions {
 export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegment, setOpenSegs }: UseDictionaryLookupOptions) {
   const [dict, setDict] = useState<DictState | null>(null);
 
+  // Which lookup the dock is currently showing. Shard fetches settle out of order (holding
+  // Shift+Arrow walks words faster than a cold shard resolves), so a reply is only allowed to
+  // write state if it is still the one being waited on. Bumping it also cancels: closing the dock
+  // or changing sutta invalidates every reply and timer still in flight.
+  const currentLookup = useRef(0);
+  const loadingTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+
+  const cancelPending = useCallback(() => {
+    currentLookup.current += 1;
+    clearTimeout(loadingTimer.current);
+  }, []);
+
   // Sutta changed (Prev/Next, a deep link, closing and reopening elsewhere) — any dock left open
   // for the previous sutta's own segment indices is meaningless for the new one.
   useEffect(() => {
+    cancelPending();
     setDict(null);
-  }, [suttaId]);
+  }, [suttaId, cancelPending]);
 
-  // Which lookup the dock is currently showing. Shard fetches settle out of order (holding
-  // Shift+Arrow walks words faster than a cold shard resolves), so a reply is only allowed to
-  // write state if it is still the one being waited on.
-  const currentLookup = useRef(0);
+  useEffect(() => () => clearTimeout(loadingTimer.current), []);
 
-  // Opens the dock on `raw` straight away and fills in the definitions once its shard arrives —
-  // the dock is doing the waiting, so a tap never looks like it did nothing.
-  const runLookup = useCallback((raw: string, segIndex: number, wordIndex: number) => {
-    const token = (currentLookup.current += 1);
-    setDict({ word: stripPunct(raw), gloss: '', defs: null, segIndex, wordIndex, loading: true });
-    lookupHeadword(raw).then(
-      (defs) => {
-        if (token !== currentLookup.current) return;
-        setDict((d) => (d ? { ...d, gloss: defs ? `${defs.length}` : 'Pali', defs, loading: false, failed: false } : d));
-      },
-      () => {
-        if (token !== currentLookup.current) return;
-        setDict((d) => (d ? { ...d, loading: true, failed: true } : d));
+  const runLookup = useCallback(
+    (raw: string, segIndex: number, wordIndex: number) => {
+      const token = (currentLookup.current += 1);
+      const word = stripPunct(raw);
+      clearTimeout(loadingTimer.current);
+      const settle = (defs: string[] | null) =>
+        setDict({ word, gloss: defs ? `${defs.length}` : 'Pali', defs, segIndex, wordIndex });
+
+      // The shard is already parsed and in memory: answer in this same commit, so the dock opens
+      // (or steps) straight to its definitions with no intermediate render.
+      const known = peekHeadword(raw);
+      if (known !== undefined) {
+        settle(known);
+        return;
       }
-    );
-  }, []);
+
+      // Not resident. Move the caret to the new word if the dock is already open, but leave its
+      // body — and so its height — exactly as it was; a dock that isn't open stays shut rather
+      // than opening empty. Either way nothing visibly changes size until the timer below fires.
+      setDict((d) => (d ? { ...d, word, segIndex, wordIndex } : d));
+      loadingTimer.current = setTimeout(() => {
+        if (token !== currentLookup.current) return;
+        setDict({ word, gloss: '', defs: null, segIndex, wordIndex, loading: true });
+      }, LOADING_DELAY_MS);
+
+      lookupHeadword(raw).then(
+        (defs) => {
+          if (token !== currentLookup.current) return;
+          clearTimeout(loadingTimer.current);
+          settle(defs);
+        },
+        () => {
+          if (token !== currentLookup.current) return;
+          clearTimeout(loadingTimer.current);
+          setDict({ word, gloss: '', defs: null, segIndex, wordIndex, loading: true, failed: true });
+        }
+      );
+    },
+    []
+  );
 
   const retryLookup = useCallback(() => {
     if (dict) runLookup(dict.word, dict.segIndex, dict.wordIndex);
@@ -73,6 +112,20 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
   // shared by onWordClick (to record where a lookup came from) and goToAdjacentWord (to walk
   // forward/backward across segment boundaries) below.
   const segWords = useMemo(() => (segments ? segments.map((s) => splitPaliWords(s.pali)) : []), [segments]);
+
+  // Warm the shards either neighbour of the open word would need. Consecutive words in a sutta
+  // share almost no alphabetical locality — stepping through dn4 crosses a shard boundary on 37
+  // of every 39 steps — so without this, prev/next would take the async path every single time
+  // and the dock could never step without waiting.
+  const prefetchNeighbours = useCallback(
+    (segIndex: number, wordIndex: number) => {
+      for (const dir of [1, -1] as const) {
+        const neighbour = findAdjacentWord(segWords, segIndex, wordIndex, dir);
+        if (neighbour) prefetchHeadwordShard(neighbour.word);
+      }
+    },
+    [segWords]
+  );
 
   // The word SegmentedText should render as persistently "active" (see its activeWordIndex prop)
   // — kept referentially stable across renders where the position hasn't actually changed by
@@ -127,6 +180,7 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
       if (!next) return;
       const { segIndex: si, wordIndex: wi, word: raw } = next;
       runLookup(raw, si, wi);
+      prefetchNeighbours(si, wi);
       // Reveal on an actual segment change — an already-open segment's words are all already
       // rendered. Whether to scroll is then left entirely to scrollToWordIfCovered, which
       // checks the *word's* own visibility rather than assuming a segment change always needs
@@ -136,7 +190,7 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
       if (si !== dict.segIndex) setOpenSegs((s) => (s[si] ? s : { ...s, [si]: true }));
       requestAnimationFrame(() => scrollToWordIfCovered(si, wi));
     },
-    [dict, runLookup, segWords, scrollToWordIfCovered, setOpenSegs]
+    [dict, runLookup, prefetchNeighbours, segWords, scrollToWordIfCovered, setOpenSegs]
   );
 
   // A word/note/highlight tap is a single-shot click, not a selection (see the matching
@@ -148,21 +202,23 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
   // Clearing on every open/close, mirroring `pick()`/`close()` in useHighlightPopup.ts, forces
   // that state to release regardless of which side won.
   const closeDict = useCallback(() => {
+    cancelPending();
     setDict(null);
     const sel = window.getSelection();
     if (sel) sel.removeAllRanges();
-  }, []);
+  }, [cancelPending]);
 
   const onWordClick = useCallback(
     (raw: string, segIndex: number, wordIndex: number) => {
       runLookup(raw, segIndex, wordIndex);
+      prefetchNeighbours(segIndex, wordIndex);
       const sel = window.getSelection();
       if (sel) sel.removeAllRanges();
       // The dock opening can cover the just-tapped word if it's near the bottom of the reading
       // pane — scrollToWordIfCovered re-centers only when that's actually true, not on every tap.
       requestAnimationFrame(() => scrollToWordIfCovered(segIndex, wordIndex));
     },
-    [runLookup, scrollToWordIfCovered]
+    [runLookup, prefetchNeighbours, scrollToWordIfCovered]
   );
 
   return { dict, activeWord, closeDict, onWordClick, goToAdjacentWord, retryLookup };
