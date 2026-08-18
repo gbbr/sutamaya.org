@@ -25,7 +25,7 @@ text-range highlighting, notes, lists, typography controls).
   every rewrite it made, with the segment's Pali as context. Unlike the rest of the build's output
   that directory is **checked in**, deliberately: `git diff data/diff/` after a refresh (or after
   a rule edit) is the reviewable record of what changed in the text this app actually ships. Read
-  a single rule's file with `delta < data/diff/<rule-id>.diff` for the inline word-level
+  a single rule's file with `riff < data/diff/<rule-id>.diff` for the inline word-level
   highlight; the files themselves stay plain, colourless and byte-stable so git can carry them.
 
 ## Commands

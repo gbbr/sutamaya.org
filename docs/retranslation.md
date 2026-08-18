@@ -361,15 +361,23 @@ Each rule file is a real unified diff, so the word-level highlight comes from th
 of from the bytes:
 
 ```
-delta < data/diff/sati-aware.diff     # inline highlight of the changed span
-bat data/diff/sati-aware.diff         # plain diff syntax colouring
-git diff data/diff/                    # what moved since the last commit
+riff < data/diff/sati-aware.diff      # inline highlight of the changed span
+git diff data/diff/                   # what moved since the last commit
 ```
+
+`riff` adds the highlight and leaves the layout alone, so the file still reads as plain text under
+your own pager. `delta` does the same job but decorates heavily by default;
+`delta --color-only --minus-style normal --plus-style normal` gets it back to the same place.
 
 `mendicant-bhikkhu.diff` is ~4MB and past GitHub's rendering limit, so that one is local-only;
 the rest display fine. `.gitattributes` marks them `linguist-generated`, which collapses them by
-default in GitHub's diff view and leaves everything else — blob view, `git diff`, delta, bat —
+default in GitHub's diff view and leaves everything else — blob view, `git diff`, riff, delta —
 untouched.
+
+GitHub itself only word-highlights in a *commit* diff, where it has a real before/after pair to
+compare; its blob view runs a syntax lexer, which can colour a `-` line red but has no idea the
+next line is its counterpart. So change-over-time review works there, and auditing a rule's whole
+footprint is a local job.
 
 Reading these for *mechanical* correctness isn't enough. A swap that is right term-for-term can
 still leave English that no one would write — a stranded article, or a noun standing where the

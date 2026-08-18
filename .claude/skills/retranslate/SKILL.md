@@ -96,7 +96,7 @@ upstream) and writes `data/sujato.post/` (generated).
    wrong as an infinitive or a noun, and a single example hides that.
 
 8. **Apply and audit**: `npm run update-data:post`, then read `data/diff/<rule-id>.diff` (with
-   `delta <` for the inline highlight). Check the Pali shown against each rewrite. `data/diff/`
+   `riff <` for the inline highlight). Check the Pali shown against each rewrite. `data/diff/`
    is checked in, so commit its changes with the rule — for an edit to an existing rule, `git
    diff data/diff/` is exactly what the edit did to the corpus.
 
