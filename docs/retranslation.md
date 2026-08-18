@@ -274,9 +274,11 @@ routine maintenance, and the only signal is the one we build.
 | Rule matched at least once | term rules | **Hard fail.** The term is gone; the rule is dead. |
 | **Triage queue is empty** | term rules | **Review.** See below. |
 
-`update-data:check` reports all three **before** anything is copied, by resolving each rule against
-the upstream files. For a broken segment rule it prints three-way — the rule's `from`, upstream's
-text now, and the rule's `to` — enough to decide without opening anything.
+`update-data:check` hard-fails on the first two **before** anything is copied, by resolving each
+rule against the upstream files. For a broken segment rule it prints three-way — the rule's `from`,
+upstream's text now, and the rule's `to` — enough to decide without opening anything. The third is
+`update-data:triage`'s, which needs the new text in place, so it runs at the end of `npm run
+update-data` instead — a non-empty queue is a prompt to review, and doesn't fail the run.
 
 The triage queue is the coverage check on a rule's list:
 
@@ -295,9 +297,10 @@ volumes are small — over the last 8 months `aware` moved 867→859 segments an
 An **open rule with an empty deny list** has nothing to check against, so its anchor is its match
 count instead, recorded in `scripts/update-data/retranslation.counts.json` (machine-owned, written
 by `update-data:snapshot` alongside `snapshot.json` — both are the same act of accepting the
-current state as the new baseline). Reported, never enforced beyond the zero-match fail. It exists
-for the half-dead case that zero-match misses: upstream renames the term across part of the corpus,
-the rule still fires, but its footprint drops sharply.
+current state as the new baseline). Nothing verifies it for you: the file is committed, so
+re-snapshotting at the end of a refresh shows the movement as a git diff, one line per rule. That's
+where the half-dead case shows up — upstream renames the term across part of the corpus, the rule
+still fires so zero-match stays silent, but its footprint drops sharply.
 
 ## Working the queue: `update-data:triage`
 
@@ -331,8 +334,8 @@ npm run update-data:post:diff     # apply rules, and write per-rule diffs
 
 Writes to `data/diff/` (gitignored, wiped each run):
 
-- `00-summary.diff` — every rule with its match count, files touched, triage-queue size, and any
-  rule that matched zero.
+- `00-summary.diff` — every rule with its match count and how many files it touched, and any rule
+  that matched zero.
 - `<id>.diff` — one file per rule, every change it made.
 
 Per change: file, segment id, the **Pali** of that segment, then before/after with **the changed
