@@ -128,6 +128,35 @@ describe('UserDataProvider', () => {
     expect(result.current.membership).toEqual(baseData.membership);
   });
 
+  it('does not re-read the mirror when the same account arrives as a fresh user object', async () => {
+    // AuthContext seeds `user` synchronously from localStorage and then replaces it with whatever
+    // GET /api/auth/me answers — a new object carrying the same id. Reacting to that identity
+    // change re-read the mirror mid-session, so `ready` dropped back to false and every chip, note
+    // preview and highlight blanked and restored a few hundred milliseconds in, often with the
+    // reader already open.
+    const seen: boolean[] = [];
+    const { result, rerender } = renderHook(
+      () => {
+        const value = useUserData();
+        seen.push(value.ready);
+        return value;
+      },
+      { wrapper: UserDataProvider }
+    );
+    await waitFor(() => expect(result.current.lists).toEqual(baseData.lists));
+
+    seen.length = 0;
+    mockUser = { ...mockUser! };
+    await act(async () => {
+      rerender();
+    });
+    await settle();
+
+    expect(seen).not.toContain(false);
+    // And no second pull behind it either — the flush effect stands on the same identity.
+    expect(dataApiAll).toHaveBeenCalledTimes(1);
+  });
+
   it('keeps a mutation made with the network down, and still has it after a reload', async () => {
     const { result, unmount } = setup();
     await waitFor(() => expect(result.current.lists).toEqual(baseData.lists));
