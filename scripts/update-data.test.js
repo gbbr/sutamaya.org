@@ -280,6 +280,20 @@ describe('the shipped rules, one example each', () => {
     ['udayabbaya-arising-passing-away', 'sn22.89:11.2', 'sujato/sutta', 'observing rise and fall in the five grasping aggregates', 'observing arising and passing away in the five grasping aggregates'],
     // Denied: uppādavaya, and used verbally — the noun phrase would not fit.
     ['udayabbaya-arising-passing-away', 'sn1.11:5.4', 'sujato/sutta', 'their nature is to rise and fall;', 'their nature is to rise and fall;'],
+    // One example per grammatical slot, since the doublet occupies four and a single pair of
+    // forms would put a finite verb where an infinitive or a noun belongs.
+    ['viparinama-annathatta-change-unstable', 'sn22.1:9.5', 'sujato/sutta', 'But that form of theirs decays and perishes, ', 'But that form of theirs changes and is unstable, '],
+    ['viparinama-annathatta-change-unstable', 'an10.29:3.5', 'sujato/sutta', 'But even the gods of sublime luminosity decay and perish. ', 'But even the gods of sublime luminosity change and are unstable. '],
+    // Bare infinitive: the finite plural form would give "were to change and are unstable".
+    ['viparinama-annathatta-change-unstable', 'mn87:24.5', 'sujato/sutta', 'If she were to decay and perish, would sorrow arise in you?', 'If she were to change and be unstable, would sorrow arise in you?'],
+    // Nominal (vipariṇāmaññathābhāvā), where a verb cannot stand.
+    ['viparinama-annathatta-change-unstable', 'sn21.2:2.2', 'sujato/sutta', 'anything in the world whose decay and perishing would give rise to sorrow', 'anything in the world whose change and instability would give rise to sorrow'],
+    // Adjectival (vipariṇāmī aññathābhāvī), SN 25's formula — one form covering both words.
+    ['viparinama-annathatta-change-unstable', 'sn35.93:1.4', 'sujato/sutta', 'The eye is impermanent, decaying, and perishing. ', 'The eye is impermanent, changing, and unstable. '],
+    // Left alone: jarā, and pārijuñña. The rule has no bare "decaying"/"decay" form precisely so
+    // that these — and every other homonym — need no deny list to survive it.
+    ['viparinama-annathatta-change-unstable', 'sn5.4:5.2', 'sujato/sutta', 'decaying and frail. ', 'decaying and frail. '],
+    ['viparinama-annathatta-change-unstable', 'mn82:30.1', 'sujato/sutta', 'And what is decay due to old age? ', 'And what is decay due to old age? '],
   ];
 
   it('rewrites each rule’s example, and leaves its excluded example alone', async () => {

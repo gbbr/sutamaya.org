@@ -50,16 +50,35 @@ upstream) and writes `data/sujato.post/` (generated).
    segments that gain the term later, a closed one stops them for review. Where the lists are
    comparable, stay closed.
 
-5. **Check for same-word collisions.** Locking already covers a rule producing a token another
-   rule consumes, in either order — two rules sharing a *segment* is fine and common. Order only
-   decides the outcome when two rules match the **same English word**; there the earlier wins.
+5. **Check for same-word collisions between rules.** Locking already covers a rule producing a
+   token another rule consumes, in either order — two rules sharing a *segment* is fine and
+   common. Order only decides the outcome when two rules match the **same English word**; there
+   the earlier wins.
 
-6. **Add a fixture** to the rule's examples and run `npm test`.
+6. **Check what your replacement words already translate.** Step 5 is the source side; this is
+   the output side, and nothing in the pipeline catches it. A word you introduce may already be
+   Sujato's rendering of an unrelated Pali term — no predicate, list or triage queue will ever
+   flag that, because the rule is working exactly as written. For each replacement word, grep the
+   corpus for it, look at what Pali sits behind the hits, and then check whether those segments
+   ever share a **sutta** with the ones your rule rewrites. Distance is the whole question: the
+   same English word for two terms three hundred suttas apart costs a reader nothing, two lines
+   apart is a genuine ambiguity.
 
-7. **Apply and audit**: `npm run update-data:post:diff`, then read
+   Report what you find rather than resolving it alone. Accepting the overlap is the common
+   answer and often the right one — "unstable" renders both aññathā and adhuva, which are
+   near-synonyms whose suttas never intersect. The alternatives are picking a different word, or
+   a segment override for the one line where they meet, which is what
+   `sn56-34-abhisamaya-understand` exists for: "full comprehension" landed in the same sentence
+   as Sujato's "comprehend" for abhisamaya, a different term entirely.
+
+7. **Add a fixture** to the rule's examples and run `npm test`. One per grammatical slot the
+   rule's forms distinguish, not just one per rule — a form that is right as a finite verb can be
+   wrong as an infinitive or a noun, and a single example hides that.
+
+8. **Apply and audit**: `npm run update-data:post:diff`, then read
    `data/diff/<rule-id>.diff`. Check the Pali shown against each rewrite.
 
-8. **Leave the baseline alone.** Match counts are recorded by `update-data:snapshot`, which is the
+9. **Leave the baseline alone.** Match counts are recorded by `update-data:snapshot`, which is the
    user's call to run — don't run it yourself.
 
 ## Segment overrides
