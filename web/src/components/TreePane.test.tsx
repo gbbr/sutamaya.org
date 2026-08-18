@@ -190,7 +190,7 @@ beforeEach(() => {
     removeItem: (k: string) => void store.delete(k),
     clear: () => store.clear(),
   });
-  vi.mocked(useCorpus).mockReturnValue({ corpus: buildCorpus(), dictionary: null, loading: false, error: false, retry: vi.fn(), retryDictionary: vi.fn() });
+  vi.mocked(useCorpus).mockReturnValue({ corpus: buildCorpus(), loading: false, error: false, retry: vi.fn() });
   userData = mockUserData();
   vi.mocked(useUserData).mockImplementation(() => userData);
   vi.mocked(useAuth).mockReturnValue({

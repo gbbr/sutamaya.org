@@ -88,9 +88,14 @@ and writes:
   suttas on suttacentral.net (`<a href='https://suttacentral.net/...'>`) are stripped down to
   their plain text at build time (`cleanNote()`) rather than kept live, since a link off to the
   actual website doesn't belong in an offline-first reader.
-- `web/public/data/dictionary.json` — the DPD dictionary reshaped from a
-  `[{entry, definition}]` array (`data/pli2en_dpd.json`) into a `{entry: definition[]}` object for
-  O(1) lookup.
+- `web/public/data/dict-shards/*.json` and `dict-shards/manifest.json` — the DPD dictionary
+  (`data/pli2en_dpd.json`, a `[{entry, definition}]` array) reshaped into `{entry: definition[]}`
+  objects and split into ~256KB range shards (~75 of them, ~30KB gzipped each). The manifest gives
+  each shard's lowercased `first`/`last` headword, so a word tap binary-searches it and fetches
+  one shard instead of the whole ~20MB map — see `web/src/lib/dictionaryShards.ts`, whose
+  comparison has to match the builder's own (plain `<`/`>`, never `localeCompare`). A run of
+  headwords sharing a lowercased key is never split across shards, since one lookup consults both
+  the tapped spelling and its lowercase form.
 - `web/public/data/text-shards/*.json` and `text-shards/manifest.json` — the same per-sutta text
   as `text/{uid}.json` above, repacked into ~1MB bundles (`SHARD_TARGET_BYTES`) for Settings'
   "Download all suttas for offline" bulk fetch (`web/src/lib/offline.ts`) — see "Offline
@@ -563,12 +568,15 @@ write, so a list, note or highlight made with no network is kept rather than log
 
 `corpus.json` (nav tree + titles/blurbs, a few MB) and the self-hosted latin/latin-ext font
 subsets are precached with the app shell, so browsing and reading work offline immediately. The
-dictionary (~20MB, fetched and parsed on the main thread by `loadDictionary()` — well after first
-paint, which it never gates) and per-sutta text (~58MB across the whole
+dictionary shards (~2.6MB compressed across all ~75) and per-sutta text (~58MB across the whole
 canon) are **not** forced into the install — `vite.config.ts`'s `runtimeCaching` caches them
-`CacheFirst` on first request instead (the dictionary gets fetched on app boot anyway, so it's
-cached within seconds regardless). Non-latin font subsets follow the same cache-on-first-use
-pattern. `/api/*` is `NetworkOnly` — user data is never served stale.
+`CacheFirst` on first request instead. Nothing of the dictionary is fetched or parsed at boot: a
+tapped word pulls the one shard covering it, so an offline device holds whatever words it has
+already looked up plus whatever Settings' bulk download fetched — the same cache-as-you-read model
+the sutta text uses. `dict-shards/manifest.json` (~6KB) is precached with the shell, since every
+lookup needs it and without it a device can't tell which of its cached shards to consult.
+Non-latin font subsets follow the same cache-on-first-use pattern. `/api/*` is `NetworkOnly` —
+user data is never served stale.
 
 For someone who wants every sutta available offline up front rather than waiting on
 first-visit caching, Settings has a "Download all suttas for offline" action
@@ -602,7 +610,7 @@ something there.
   HTML5 drag-and-drop, which doesn't fire reliably on touch; `ListRow` additionally offers button
   controls (rename/delete/move) as an always-works alternative to dragging.
 - Cache staleness has no revalidation path for anything keyed by an unversioned URL:
-  `dictionary.json`, `data/text/{uid}.json`, and `/fonts/*.woff2` are all `CacheFirst`
+  `data/dict-shards/*.json`, `data/text/{uid}.json`, and `/fonts/*.woff2` are all `CacheFirst`
   with a 1-year expiration (`vite.config.ts`), so a data/font fix shipped after a user has already
   cached that exact path won't reach them until the TTL lapses, the `sutta-text` cache's 8000-entry
   cap evicts it, or they clear site data — there's no cache-busting query/hash on these URLs.
@@ -630,7 +638,7 @@ something there.
   The re-download drops the affected Cache Storage cache before re-fetching — `prefetchAllSuttas`
   skips already-cached uids, so a refresh without the clear would report success having replaced
   nothing — and the text and dictionary caches are cleared independently, so a reworded sutta
-  never costs a ~20MB dictionary re-fetch.
+  never costs a ~2.6MB dictionary re-fetch.
   Dismissal is stored per `dataVersion`, so it silences one update rather than all future ones.
   Nothing here helps a user who never bulk-downloaded: their reactively-cached suttas still sit
   behind the 1-year TTL, and versioning those URLs is the fix that would close the gap properly.

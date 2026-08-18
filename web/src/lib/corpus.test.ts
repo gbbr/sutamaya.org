@@ -1,8 +1,6 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { ancestorsOf, compareIds, flatSuttaOrder, loadDictionary, resolveCanonicalSuttaId, searchCorpus, sortByIdAsc } from './corpus';
+import { describe, expect, it } from 'vitest';
+import { ancestorsOf, compareIds, flatSuttaOrder, resolveCanonicalSuttaId, searchCorpus, sortByIdAsc } from './corpus';
 import type { Corpus, ListDef, Sutta } from './types';
-
-vi.mock('./offline', () => ({ clearCachedDictionary: vi.fn(async () => {}) }));
 
 // Only the fields compareIds/sortByIdAsc actually touch (the id key) matter here; the rest
 // of Sutta is irrelevant filler to satisfy the type.
@@ -287,102 +285,5 @@ describe('resolveCanonicalSuttaId', () => {
   it('leaves an id matching no batch and no real entry unchanged', () => {
     expect(resolveCanonicalSuttaId(corpus, 'dhp999')).toBe('dhp999');
     expect(resolveCanonicalSuttaId(corpus, 'not-a-real-id')).toBe('not-a-real-id');
-  });
-});
-
-
-// What matters here is that loadDictionary always *settles*. A promise left hanging is the one
-// failure the callers can't recover from — retryWithBackoff never retries it and CorpusContext
-// never marks the dictionary failed, so the reader sits on "Loading dictionary…" for the rest of
-// the session. The 20MB download is streamed to tell a stalled connection from a merely slow one,
-// so both of those need covering.
-describe('loadDictionary', () => {
-  const STALL_TIMEOUT_MS = 30_000;
-  const encoder = new TextEncoder();
-
-  // A fetch whose body hands back `chunks` one read() at a time, `delayMs` apart. With `thenStall`
-  // the final read() never settles until the caller's own AbortSignal fires — which is what a
-  // connection that dies mid-download actually looks like.
-  function fakeFetch(chunks: string[], { ok = true, status = 200, delayMs = 0, thenStall = false } = {}) {
-    return vi.fn((_url: string, init?: RequestInit) => {
-      let i = 0;
-      const reader = {
-        read: () =>
-          new Promise<{ done: boolean; value?: Uint8Array }>((resolve, reject) => {
-            // Any read still outstanding when the signal fires rejects, exactly as a real
-            // body stream does — without this the fake would sail through an abort and the
-            // stall timeout would look correct no matter what the implementation did.
-            const onAbort = () => reject(new DOMException('Aborted', 'AbortError'));
-            init?.signal?.addEventListener('abort', onAbort, { once: true });
-            const settle = (r: { done: boolean; value?: Uint8Array }) => {
-              init?.signal?.removeEventListener('abort', onAbort);
-              resolve(r);
-            };
-            if (i < chunks.length) {
-              const value = encoder.encode(chunks[i++]);
-              if (delayMs) setTimeout(() => settle({ done: false, value }), delayMs);
-              else settle({ done: false, value });
-            } else if (!thenStall) {
-              settle({ done: true });
-            }
-          }),
-      };
-      return Promise.resolve({ ok, status, body: { getReader: () => reader }, text: async () => chunks.join('') } as unknown as Response);
-    });
-  }
-
-  beforeEach(() => {
-    vi.useFakeTimers();
-  });
-
-  afterEach(() => {
-    vi.useRealTimers();
-    vi.unstubAllGlobals();
-    vi.clearAllMocks();
-  });
-
-  it('resolves with the parsed dictionary', async () => {
-    vi.stubGlobal('fetch', fakeFetch(['{"dhamma":["teac', 'hing"]}']));
-    await expect(loadDictionary()).resolves.toEqual({ dhamma: ['teaching'] });
-  });
-
-  it('rejects once the connection has gone silent, rather than hanging forever', async () => {
-    vi.stubGlobal('fetch', fakeFetch(['{"dha'], { thenStall: true }));
-    const p = loadDictionary();
-    const settled = expect(p).rejects.toThrow(/Abort/i);
-    await vi.advanceTimersByTimeAsync(STALL_TIMEOUT_MS);
-    await settled;
-  });
-
-  it('keeps waiting while bytes are still arriving — a slow download is not a stalled one', async () => {
-    const chunks = ['{"dha', 'mma":["teac', 'hing"]}'];
-    vi.stubGlobal('fetch', fakeFetch(chunks, { delayMs: STALL_TIMEOUT_MS - 1_000 }));
-    const p = loadDictionary();
-    // Far longer in total than the stall timeout, but never that long between two chunks.
-    for (let i = 0; i < chunks.length; i += 1) await vi.advanceTimersByTimeAsync(STALL_TIMEOUT_MS - 1_000);
-    await expect(p).resolves.toEqual({ dhamma: ['teaching'] });
-  });
-
-  it('drops the cached response when the bytes that arrived are not the dictionary', async () => {
-    const { clearCachedDictionary } = await import('./offline');
-    vi.stubGlobal('fetch', fakeFetch(['<html>captive portal</html>']));
-    await expect(loadDictionary()).rejects.toThrow(SyntaxError);
-    // Without this the SW's CacheFirst copy — a captive portal's page, a truncated write — is
-    // replayed by every later attempt for the whole year it stays cached.
-    expect(clearCachedDictionary).toHaveBeenCalled();
-  });
-
-  it('leaves the cache alone when the fetch itself failed — there is nothing poisoned to drop', async () => {
-    const { clearCachedDictionary } = await import('./offline');
-    vi.stubGlobal('fetch', vi.fn(async () => { throw new TypeError('Failed to fetch'); }));
-    await expect(loadDictionary()).rejects.toThrow('Failed to fetch');
-    expect(clearCachedDictionary).not.toHaveBeenCalled();
-  });
-
-  it('rejects an error response without treating its body as a dictionary', async () => {
-    const { clearCachedDictionary } = await import('./offline');
-    vi.stubGlobal('fetch', fakeFetch(['{"nope":[]}'], { ok: false, status: 503 }));
-    await expect(loadDictionary()).rejects.toThrow('(503)');
-    expect(clearCachedDictionary).not.toHaveBeenCalled();
   });
 });

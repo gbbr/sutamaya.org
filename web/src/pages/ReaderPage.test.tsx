@@ -76,7 +76,7 @@ describe('ReaderPage sutta header chips', () => {
     // mobileSearchReaderFlow.test.tsx, which uses the same stub for the same reason).
     vi.stubGlobal('fetch', vi.fn(() => new Promise(() => {})));
 
-    vi.mocked(useCorpus).mockReturnValue({ corpus: buildCorpus(), dictionary: null, loading: false, error: false, retry: vi.fn(), retryDictionary: vi.fn() });
+    vi.mocked(useCorpus).mockReturnValue({ corpus: buildCorpus(), loading: false, error: false, retry: vi.fn() });
     vi.mocked(useUserData).mockReturnValue(userDataDefaults);
     vi.mocked(useAuth).mockReturnValue({
       user: { id: 'u1', email: 'reader@example.com', name: 'Reader', picture: null },

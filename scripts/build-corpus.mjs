@@ -309,14 +309,55 @@ const nikayas = [];
   console.log(`  kn: ${chapterRows.length} books, ${chapterRows.reduce((n, c) => n + c.count, 0)} leaf documents`);
 }
 
-// --- Dictionary: flatten [{entry, definition:[...]}] into a headword-keyed object for O(1) lookup ---
-console.log('Building dictionary map…');
+// --- Dictionary: flatten [{entry, definition:[...]}] into a headword-keyed object, then split it
+// into range shards. A word tap needs one headword, so shipping all ~142k of them (~20MB, ~2.6MB
+// compressed, and too large for Cloudflare to hold at the edge) to answer one lookup is the wrong
+// trade: the reader fetches only the shard covering the tapped word — see lib/dictionaryShards.ts.
+console.log('Building dictionary shards…');
 const dpdList = readJSON(path.join(DATA, 'pli2en_dpd.json'));
 const dpdMap = {};
 for (const { entry, definition } of dpdList) dpdMap[entry] = definition;
 const dpdJson = JSON.stringify(dpdMap);
-fs.writeFileSync(path.join(OUT, 'dictionary.json'), dpdJson);
-console.log(`  ${dpdList.length} headwords`);
+
+const DICT_SHARD_TARGET_BYTES = 256 * 1024;
+// Shards are addressed by a lowercased key range, because lookupWord tries both the tapped word
+// and its lowercase form; sorting and splitting on the same key is what keeps those two in one
+// shard. Plain code-unit comparison, not localeCompare — lib/dictionaryShards.ts's binary search
+// has to reproduce this ordering exactly, and only `<`/`>` is portable between the two.
+const dictSortKey = (k) => k.toLowerCase();
+const headwords = Object.keys(dpdMap).sort((a, b) => {
+  const ka = dictSortKey(a);
+  const kb = dictSortKey(b);
+  if (ka !== kb) return ka < kb ? -1 : 1;
+  return a < b ? -1 : a > b ? 1 : 0;
+});
+
+const dictShards = [];
+let dictShardKeys = [];
+let dictShardBytes = 0;
+for (const key of headwords) {
+  const bytes = JSON.stringify(key).length + JSON.stringify(dpdMap[key]).length + 2;
+  // Never break a run of headwords sharing a sort key ("Buddha"/"buddha"): one lookup consults
+  // both spellings, so a boundary falling between them would make the lowercase form unreachable.
+  const canSplit = dictShardKeys.length > 0 && dictSortKey(dictShardKeys[dictShardKeys.length - 1]) !== dictSortKey(key);
+  if (dictShardBytes + bytes > DICT_SHARD_TARGET_BYTES && canSplit) {
+    dictShards.push(dictShardKeys);
+    dictShardKeys = [];
+    dictShardBytes = 0;
+  }
+  dictShardKeys.push(key);
+  dictShardBytes += bytes;
+}
+if (dictShardKeys.length) dictShards.push(dictShardKeys);
+
+fs.mkdirSync(path.join(OUT, 'dict-shards'), { recursive: true });
+const dictManifest = dictShards.map((keys, i) => {
+  const file = `dict-shards/${String(i).padStart(3, '0')}.json`;
+  fs.writeFileSync(path.join(OUT, file), JSON.stringify(Object.fromEntries(keys.map((k) => [k, dpdMap[k]]))));
+  return { file, first: dictSortKey(keys[0]), last: dictSortKey(keys[keys.length - 1]) };
+});
+fs.writeFileSync(path.join(OUT, 'dict-shards', 'manifest.json'), JSON.stringify({ shards: dictManifest }));
+console.log(`  ${dpdList.length} headwords in ${dictShards.length} shards`);
 
 // Both versions are emitted in corpus.json (precached and revisioned with the app shell, so a new
 // build always delivers them) rather than derived from anything the client caches itself. They're

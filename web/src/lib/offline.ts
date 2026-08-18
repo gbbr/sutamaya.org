@@ -1,11 +1,11 @@
+import { loadDictShardManifest } from './dictionaryShards';
 import { OFFLINE_DATA_VERSION_KEY, OFFLINE_DICTIONARY_VERSION_KEY } from './storageKeys';
 
 const SUTTA_TEXT_CACHE = 'sutta-text';
 const MANIFEST_URL = '/data/text-shards/manifest.json';
-// Must match vite.config.ts's runtimeCaching cacheName/urlPattern for this URL — writing here
-// under any other name/key would leave the SW's own CacheFirst rule unable to find it.
+// Must match vite.config.ts's runtimeCaching cacheName/urlPattern for these URLs — writing here
+// under any other name/key would leave the SW's own CacheFirst rule unable to find them.
 const DICTIONARY_CACHE = 'dictionary';
-const DICTIONARY_URL = '/data/dictionary.json';
 
 // Exported so tests can advance fake timers by the real value instead of duplicating it. Shards
 // are ~1MB bundles of many suttas (see scripts/build-corpus.mjs's SHARD_TARGET_BYTES), not the
@@ -195,28 +195,51 @@ export async function prefetchAllSuttas(
   return { failed: failedUidsOf(second.failed, wanted), circuitTripped: second.circuitTripped };
 }
 
+// Every dictionary shard is cached, so a word tap works with no network at all. Nothing weaker
+// will do: the reader fetches shards one at a time, on demand, so "some of them are cached" only
+// means the words looked up so far would work offline.
 export async function isDictionaryCached(): Promise<boolean> {
   if (!('caches' in window)) return false;
-  const cache = await caches.open(DICTIONARY_CACHE);
-  return (await cache.match(DICTIONARY_URL)) !== undefined;
+  try {
+    const [shards, cache] = await Promise.all([loadDictShardManifest(), caches.open(DICTIONARY_CACHE)]);
+    const present = await Promise.all(shards.map((s) => cache.match(`/data/${s.file}`)));
+    return present.every((r) => r !== undefined);
+  } catch {
+    return false;
+  }
 }
 
-// CorpusProvider fetches the dictionary on boot regardless, and the SW's own CacheFirst rule
-// (vite.config.ts) normally catches that fetch within seconds — but "download all suttas for
-// offline" needs the dictionary to actually be cached by the time it reports done, not racing a
-// ~20MB fetch that started independently on page load and may still be in flight (e.g. the user
-// goes offline moments after starting the download). Written directly into Cache Storage the same
-// way fetchAndCacheShard above writes sutta text, for the same reason: don't trust a resolved
-// fetch() to imply the Service Worker's own cache write succeeded.
+// Pulls every dictionary shard into Cache Storage. The reader only ever fetches the shard a tap
+// needs, so without this an offline device has whatever words it happened to look up online and
+// nothing else — where the reader is expected to work fully offline once a download has been
+// done. Written directly into Cache Storage the same way fetchAndCacheShard above writes sutta
+// text, for the same reason: don't trust a resolved fetch() to imply the Service Worker's own
+// cache write succeeded.
 export async function prefetchDictionary(signal?: AbortSignal): Promise<boolean> {
-  if (await isDictionaryCached()) return true;
+  if (!('caches' in window)) return false;
   try {
-    const res = await fetch(DICTIONARY_URL, { signal });
-    if (!res.ok) return false;
-    const body = await res.arrayBuffer();
-    const cache = await caches.open(DICTIONARY_CACHE);
-    await cache.put(new Request(DICTIONARY_URL), new Response(body, { headers: { 'Content-Type': 'application/json' } }));
-    return true;
+    const [shards, cache] = await Promise.all([loadDictShardManifest(), caches.open(DICTIONARY_CACHE)]);
+    let ok = true;
+    for (let i = 0; i < shards.length; i += SHARD_CONCURRENCY) {
+      if (signal?.aborted) return false;
+      const batch = shards.slice(i, i + SHARD_CONCURRENCY);
+      const results = await Promise.all(
+        batch.map(async (shard) => {
+          const url = `/data/${shard.file}`;
+          if (await cache.match(url)) return true;
+          try {
+            const res = await fetch(url, { signal });
+            if (!res.ok) return false;
+            await cache.put(new Request(url), new Response(await res.arrayBuffer(), { headers: { 'Content-Type': 'application/json' } }));
+            return true;
+          } catch {
+            return false;
+          }
+        })
+      );
+      if (results.some((r) => !r)) ok = false;
+    }
+    return ok;
   } catch {
     return false;
   }
