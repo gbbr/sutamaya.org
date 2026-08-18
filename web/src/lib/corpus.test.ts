@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { ancestorsOf, compareIds, loadDictionary, resolveCanonicalSuttaId, searchCorpus, sortByIdAsc } from './corpus';
+import { ancestorsOf, compareIds, flatSuttaOrder, loadDictionary, resolveCanonicalSuttaId, searchCorpus, sortByIdAsc } from './corpus';
 import type { Corpus, ListDef, Sutta } from './types';
 
 vi.mock('./offline', () => ({ clearCachedDictionary: vi.fn(async () => {}) }));
@@ -84,6 +84,59 @@ describe('ancestorsOf', () => {
 
   it('returns an empty object for an id not found in the corpus', () => {
     expect(ancestorsOf(corpus, 'sn1')).toEqual({});
+  });
+});
+
+describe('flatSuttaOrder', () => {
+  // Two nikayas, one flat and one nesting a chapter down to two leaf vaggas, so the walk has to
+  // recurse and to keep group order — plus ids that sort lexically the wrong way within a group.
+  const corpus: Corpus = {
+    nikayas: [
+      { id: 'dn', label: 'Long Discourses', sub: '', count: 2 },
+      {
+        id: 'an',
+        label: 'Numbered Discourses',
+        sub: '',
+        count: 3,
+        chapters: [
+          {
+            id: 'an1',
+            ref: 'AN 1',
+            label: 'Book of Ones',
+            count: 3,
+            chapters: [
+              { id: 'an1-v1', ref: 'AN 1.1–10', label: 'Vagga One', count: 2 },
+              { id: 'an1-v2', ref: 'AN 1.11–20', label: 'Vagga Two', count: 1 },
+            ],
+          },
+        ],
+      },
+    ],
+    suttas: {
+      'dn10': { ...stub('dn10'), node: 'dn' },
+      'dn2': { ...stub('dn2'), node: 'dn' },
+      'an1.11': { ...stub('an1.11'), node: 'an1-v2' },
+      'an1.10': { ...stub('an1.10'), node: 'an1-v1' },
+      'an1.2': { ...stub('an1.2'), node: 'an1-v1' },
+    },
+    sujatoCommit: '',
+    dataVersion: '',
+    dictionaryVersion: '',
+  };
+
+  it('walks nikaya by nikaya and leaf group by leaf group, id-ascending within each', () => {
+    expect(flatSuttaOrder(corpus)).toEqual(['dn2', 'dn10', 'an1.2', 'an1.10', 'an1.11']);
+  });
+
+  it('omits a sutta whose node is not a leaf group in the tree', () => {
+    // 'an1' is expandable, so it is never itself a leaf group — a sutta parked on it has no
+    // position in the browse order and must not appear.
+    const orphaned: Corpus = { ...corpus, suttas: { ...corpus.suttas, 'an1.99': { ...stub('an1.99'), node: 'an1' } } };
+    expect(flatSuttaOrder(orphaned)).not.toContain('an1.99');
+  });
+
+  it('returns an empty array for a corpus with no suttas', () => {
+    expect(flatSuttaOrder({ ...corpus, suttas: {} })).toEqual([]);
   });
 });
 
