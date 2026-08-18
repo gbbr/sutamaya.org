@@ -86,8 +86,9 @@ upstream) and writes `data/sujato.post/` (generated).
 For "change this specific line": `kind: 'segment'`, with `from` copied **verbatim** from
 `data/sujato.post/` — term rules have already run on it, and segment rules apply last, to their
 output. A whitespace difference fails the anchor, so copy, don't retype. Add it to the trailing
-`// ── Segment overrides ──` group at the end of the array, not next to the term rule it patches —
-see "Keeping the file organized" below.
+`// ── Segment overrides ──` group at the end of the array, not next to the term rule it patches,
+and within that group under the `// ·· cause ··` sub-banner for whatever forced the override —
+starting a new sub-banner if the cause is new. See "Keeping the file organized" below.
 
 ## Keeping the file organized
 
@@ -111,7 +112,14 @@ When adding a rule:
 - **Segment overrides** always go in the trailing `// ── Segment overrides ──` group, never inline
   next to the term rule they patch — they already run last regardless of array position, so
   keeping them together makes that fixed ordering the array's own shape rather than something a
-  reader has to remember.
+  reader has to remember. That group has its own internal structure: `// ·· cause ··` sub-banners
+  collecting the overrides that one problem forced (a participle that can't be a predicate, a
+  noun the term rule deliberately leaves alone, a phrase whose word order has to move), each
+  carrying the reasoning for its own rules so the group's preamble states only what is true of
+  every override. Put a new rule under the sub-banner for its cause, or start one. **Unlike the
+  term families, this order is navigation only** — a segment rule runs last whatever its array
+  position, so nothing turns on where it sits and regrouping is free; say so if you reorganize,
+  since the term-family rule above is the opposite.
 
 This is a low bar — a `why` per rule, one banner per family, one header line per group — but it's
 what keeps a file that will only keep growing navigable without `git blame`.
