@@ -347,6 +347,27 @@ describe('the shipped rules, one example each', () => {
     // Out of scope: the rule is sutta-only, and SN 41.6's note is Sujato arguing his own rendering
     // — it already uses the words this rule writes, for the sense he says the formula lacks.
     ['vitakka-vicara-thought-examination', 'sn41.6:2.4', 'sujato/notes', 'have a more basic sense in ordinary states of mind (“thought” and “exploring”), and a technical sense of placing the mind and keeping it connected.', 'have a more basic sense in ordinary states of mind (“thought” and “exploring”), and a technical sense of placing the mind and keeping it connected.'],
+    // The compound as a noun, and the verb in the same segment — a noun-only rule would give
+    // "Nine things rooted in proper attention. When you rational application of mind, joy…".
+    ['yoniso-proper-attention', 'dn34:2.2.3', 'sujato/sutta', 'Nine things rooted in rational application of mind. When you apply the mind rationally, joy springs up. ', 'Nine things rooted in proper attention. When you attend properly, joy springs up. '],
+    // Sujato's other word order, third person, and the "to" the verb keeps.
+    ['yoniso-proper-attention', 'sn22.122:1.8', 'sujato/sutta', 'It’s possible that an ethical bhikkhu who rationally applies the mind to the five grasping aggregates will realize the fruit of stream-entry.” ', 'It’s possible that an ethical bhikkhu who attends properly to the five grasping aggregates will realize the fruit of stream-entry.” '],
+    // Participle, and the imperative in Sentence case.
+    ['yoniso-proper-attention', 'iti16:2.2', 'sujato/sutta', 'A bhikkhu rationally applying the mind gives up the unskillful and develops the skillful.” ', 'A bhikkhu attending properly gives up the unskillful and develops the skillful.” '],
+    ['yoniso-proper-attention', 'sn35.159:1.6', 'sujato/sutta', 'Rationally apply the mind to sounds … ', 'Attend properly to sounds … '],
+    // AN 3.68's stray "on", which the verb has to absorb, since "attend properly on" is not English.
+    ['yoniso-proper-attention', 'an3.68:6.3', 'sujato/sutta', 'When you apply the mind rationally on the ugly feature of things, greed doesn’t arise. ', 'When you attend properly to the ugly feature of things, greed doesn’t arise. '],
+    // SN 12's second adverb, which moves behind the verb rather than being stranded in front of it.
+    ['yoniso-proper-attention', 'sn12.37:2.1', 'sujato/sutta', 'A learned noble disciple carefully and rationally applies the mind to dependent origination itself: ', 'A learned noble disciple attends carefully and properly to dependent origination itself: '],
+    // A title, in Title Case.
+    ['yoniso-proper-attention', 'sn46.24:0.3', 'sujato/sutta', 'Irrational Application of Mind ', 'Improper Attention '],
+    // Bare yoniso, with no manasikāra to compound with — the adverb and the adjective alone.
+    ['yoniso-proper-attention', 'an6.58:4.4', 'sujato/sutta', 'Reflecting rationally, they make use of almsfood: ', 'Reflecting properly, they make use of almsfood: '],
+    ['yoniso-proper-attention', 'mn126:14.6', 'sujato/sutta', 'Because that’s a rational way to win the fruit. ', 'Because that’s a proper way to win the fruit. '],
+    // Denied: ordinary English "rationally", for dhammato vivecetuṁ — no yoniso in the Pali.
+    ['yoniso-proper-attention', 'an10.34:1.10', 'sujato/sutta', 'They’re able to rationally dissuade someone from misconceptions that come up. ', 'They’re able to rationally dissuade someone from misconceptions that come up. '],
+    // Denied: blurb prose with no Pali to check it against — MN 60's apaṇṇaka method, not yoniso.
+    ['yoniso-proper-attention', 'mn-blurbs:mn60', 'sujato/blurb', 'how to use a rational reflection to arrive at practices and principles', 'how to use a rational reflection to arrive at practices and principles'],
   ];
 
   it('rewrites each rule’s example, and leaves its excluded example alone', async () => {
