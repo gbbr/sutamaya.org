@@ -299,6 +299,31 @@ describe('the shipped rules, one example each', () => {
     // that these — and every other homonym — need no deny list to survive it.
     ['viparinama-annathatta-change-unstable', 'sn5.4:5.2', 'sujato/sutta', 'decaying and frail. ', 'decaying and frail. '],
     ['viparinama-annathatta-change-unstable', 'mn82:30.1', 'sujato/sutta', 'And what is decay due to old age? ', 'And what is decay due to old age? '],
+    // The compound noun, which the doublet rule above cannot reach: two forms, one per aggregate
+    // Sujato names after the preposition. mn138:20.5 carries both the ablative
+    // rūpavipariṇāmaññathābhāvā and rūpavipariṇāmānuparivatti, which he collapses into this one
+    // phrase, so the single rewrite covers the pair.
+    ['viparinama-anuparivatti-changing', 'mn138:20.5', 'sujato/sutta', 'and consciousness latches on to the perishing of form. ', 'and consciousness latches on to the changing of form. '],
+    ['viparinama-anuparivatti-changing', 'sn22.7:9.3', 'sujato/sutta', 'consciousness doesn’t latch on to the perishing of consciousness. ', 'consciousness doesn’t latch on to the changing of consciousness. '],
+    // Left alone: vipariṇāmavirāganirodha, MN 137's own compound and a separate decision. The two
+    // forms name an aggregate precisely so a bare "perishing" can never take this line.
+    ['viparinama-anuparivatti-changing', 'mn137:11.2', 'sujato/sutta', 'the impermanence of sights—their perishing, fading away, and cessation— ', 'the impermanence of sights—their perishing, fading away, and cessation— '],
+    // One per slot paritassati occupies: the predicative adjective, the noun, a title (where the
+    // single-word form takes Sentence case, not Title Case), and the plural noun whose verb has to
+    // travel with it into the singular. The last of those also carries
+    // viparinama-anuparivatti-changing's rewrite in the same line — the two rules meet in this one
+    // sentence, each taking a word the other never matches.
+    ['paritassati-agitated', 'sn22.45:1.19', 'sujato/sutta', 'Being content, they’re not anxious. ', 'Being content, they’re not agitated. '],
+    ['paritassati-agitated', 'sn22.7:2.1', 'sujato/sutta', 'And how does grasping lead to anxiety?', 'And how does grasping lead to agitation?'],
+    ['paritassati-agitated', 'sn22.7:0.3', 'sujato/sutta', 'Anxiety Because of Grasping ', 'Agitation Because of Grasping '],
+    ['paritassati-agitated', 'mn138:20.6', 'sujato/sutta', 'Anxieties occupy the mind, born of latching on to the perishing of form, ', 'Agitation occupies the mind, born of latching on to the changing of form, '],
+    // Denied: utrasta, a terrified mind, and ubbigga — the second being the word this rule writes,
+    // for a term it deliberately does not claim.
+    ['paritassati-agitated', 'sn2.17:2.1', 'sujato/sutta', '“This mind is always anxious, ', '“This mind is always anxious, '],
+    ['paritassati-agitated', 'thag16.8:22.4', 'sujato/sutta', 'my mind was anxious. ', 'my mind was anxious. '],
+    // Denied: plain English in a blurb, which has no Pali to check it against — "anxious to know"
+    // is eagerness.
+    ['paritassati-agitated', 'an-blurbs:an8.23', 'sujato/blurb', 'Hatthaka is anxious to know that no lay people were present.', 'Hatthaka is anxious to know that no lay people were present.'],
   ];
 
   it('rewrites each rule’s example, and leaves its excluded example alone', async () => {
