@@ -19,7 +19,7 @@
 //   arising / passing   samudaya-arising, vaya-passing-away, atthangama-disappearing,
 //                      udayabbaya-arising-passing-away
 //   change / instability  viparinama-annathatta-change-unstable
-//   segment overrides  one line each, applied last
+//   segment overrides  one line each, applied last; sub-grouped by cause, order immaterial
 
 export const RULES = [
   // ── Standalone terms ────────────────────────────────────────────────────────
@@ -241,23 +241,19 @@ export const RULES = [
   },
   // ── Segment overrides ───────────────────────────────────────────────────────
   // These run last, over the term rules' output — so `from` is the post-processed text, not
-  // upstream's. Most are places where sati-aware's "mindfully" → "with awareness" lands in a word
-  // order English won't take; the phrase is fine, it just has to move. `segments: [...]` is for a
-  // line the corpus repeats verbatim, where one from/to is the whole decision.
+  // upstream's. `segments: [...]` is for a line the corpus repeats verbatim, where one from/to is
+  // the whole decision.
   //
-  // The three samudaya ones are a different case: the term rule is right to leave the noun
-  // "origination" alone (26 of its 30 segments are sambhava, not samudaya — see
-  // samudaya-arising's why), and these four lines are the exception it can't express.
-  //
-  // The seven sampajañña ones are a third. Its adjective form is a participle, which stands in a
-  // list of adjectives but not as a whole predicate, so wherever Sujato used his "aware"
-  // predicatively ("a mendicant is aware", "aware of the situation") the clause has to be rebuilt
-  // around the noun — which a word-for-word form can't do, and a form spanning more words can't
-  // either, since mendicant-bhikkhu has already locked the "bhikkhu" in the middle of two of them.
-  //
-  // sn56-34-abhisamaya-understand is a fourth: nothing is wrong with the swap itself, but "full
-  // comprehension" now lands beside Sujato's own "comprehend", which is his word for a different
-  // term (abhisamaya). Only that one segment has both in the same sentence.
+  // Grouped below by what forced the override, under `·· cause ··` sub-banners. Unlike the term
+  // families above, this order carries nothing: a segment rule applies last whatever its array
+  // position, so the sub-banners are navigation only and regrouping them costs nothing.
+
+  // ·· sampajañña predicate rebuilds ··
+  // Its adjective form is a participle, which stands in a list of adjectives but not as a whole
+  // predicate, so wherever Sujato used his "aware" predicatively ("a mendicant is aware", "aware
+  // of the situation") the clause has to be rebuilt around the noun — which a word-for-word form
+  // can't do, and a form spanning more words can't either, since mendicant-bhikkhu has already
+  // locked the "bhikkhu" in the middle of two of them.
   {
     id: 'sampajano-hoti-question',
     kind: 'segment',
@@ -328,6 +324,10 @@ export const RULES = [
     from: 'Furthermore, someone is fully comprehending when conceived in their mother’s womb, fully comprehending as they remain there, and fully comprehending as they emerge. This is the fourth kind of conception. ',
     to: 'Furthermore, someone has full comprehension when conceived in their mother’s womb, with full comprehension as they remain there, and with full comprehension as they emerge. This is the fourth kind of conception. ',
   },
+  // ·· sampajañña meeting Sujato's own "comprehend" ··
+  // Nothing is wrong with the swap itself, but "full comprehension" now lands beside Sujato's
+  // "comprehend", which is his word for abhisamaya — a different term entirely. Only this one
+  // segment has both in the same sentence.
   {
     id: 'sn56-34-abhisamaya-understand',
     kind: 'segment',
@@ -341,6 +341,10 @@ export const RULES = [
     from: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and full comprehension to truly comprehending the four noble truths. ',
     to: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and full comprehension in order to truly understand the four noble truths. ',
   },
+  // ·· samudaya as a noun ··
+  // The term rule is right to leave the noun "origination" alone (26 of its 30 segments are
+  // sambhava, not samudaya — see samudaya-arising's why); these lines are the exception it can't
+  // express.
   {
     id: 'samudaya-exclamation-arising',
     kind: 'segment',
@@ -369,6 +373,9 @@ export const RULES = [
     from: '‘Origination, origination.’ Such was the vision, knowledge, wisdom, realization, and light that arose in Vipassī, the one intent on awakening, regarding teachings not learned before from another. ',
     to: '‘Arising, arising.’ Such was the vision, knowledge, wisdom, realization, and light that arose in Vipassī, the one intent on awakening, regarding teachings not learned before from another. ',
   },
+  // ·· awareness word order ··
+  // Places where sati-aware's "mindfully" → "with awareness" lands in a word order English won't
+  // take; the phrase is fine, it just has to move.
   {
     id: 'enter-with-awareness',
     kind: 'segment',
