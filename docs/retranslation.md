@@ -295,12 +295,23 @@ volumes are small — over the last 8 months `aware` moved 867→859 segments an
 10,657→10,588 — so expect **tens of segments per refresh**, not thousands.
 
 An **open rule with an empty deny list** has nothing to check against, so its anchor is its match
-count instead, recorded in `scripts/update-data/retranslation.counts.json` (machine-owned, written
-by `update-data:snapshot` alongside `snapshot.json` — both are the same act of accepting the
-current state as the new baseline). Nothing verifies it for you: the file is committed, so
-re-snapshotting at the end of a refresh shows the movement as a git diff, one line per rule. That's
-where the half-dead case shows up — upstream renames the term across part of the corpus, the rule
-still fires so zero-match stays silent, but its footprint drops sharply.
+count instead, recorded in `scripts/update-data/retranslation.counts.json` (machine-owned). Nothing
+verifies it for you: the file is committed, so re-recording the counts shows the movement as a git
+diff, one line per rule. That's where the half-dead case shows up — upstream renames the term across
+part of the corpus, the rule still fires so zero-match stays silent, but its footprint drops sharply.
+
+Two commands write that file, from one implementation (`update-data-counts.mjs`), because the two
+occasions to write it are not the same act:
+
+- **`update-data:counts`** — after editing a rule. Records the new footprint and nothing else. A
+  rule added without it has no anchor at all.
+- **`update-data:snapshot`** — after an upstream refresh, where re-recording counts is part of the
+  wider "this is now the new normal" that also rebaselines `snapshot.json` and
+  `manifest.snapshotCommit`.
+
+Keeping them separate is what stops a rule edit from quietly re-accepting the current `data/` tree
+as the upstream baseline, which would blind the *next* `update-data:check` to a real upstream change
+(see `update-data-snapshot.mjs`'s own warning about running it without review).
 
 ## Working the queue: `update-data:triage`
 

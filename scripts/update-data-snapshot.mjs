@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 // Regenerates scripts/update-data/snapshot.json from the current data/{sujato,pali,html} — i.e.
 // resets the baseline update-data-check.mjs compares a prospective sc-data checkout against. Also
-// regenerates data/sujato.post/ (via update-data-post.mjs) and records each term rule's current
-// match count in scripts/update-data/retranslation.counts.json — the same "this is now the new
-// normal" act, just for rule footprints instead of segment ids (see docs/retranslation.md's anchors
-// table: an open rule's count is its own anchor, since it has no allow/deny queue to check).
+// regenerates data/sujato.post/ and records each term rule's current match count, by delegating to
+// update-data-counts.mjs — the same "this is now the new normal" act, just for rule footprints
+// instead of segment ids.
+//
+// Recording counts is also right after editing a *rule*, where rebaselining the segment-id snapshot
+// would be wrong; that is why the counts half is its own command (npm run update-data:counts) and
+// this file calls it rather than reimplementing it.
 //
 // MANUAL, DELIBERATE USE ONLY — not part of `npm run update-data` (see package.json), and never
 // run automatically by check/copy/post. Run it only after `update-data:check` has reported
@@ -14,9 +17,9 @@
 // not this one.
 import fs from 'node:fs';
 import path from 'node:path';
-import { listLocalRelPaths, localPathFor, keysHash, DATA_DIRS, SNAPSHOT_PATH, MANIFEST_PATH, green, yellow } from './lib/dataSync.js';
+import { listLocalRelPaths, localPathFor, keysHash, DATA_DIRS, SNAPSHOT_PATH, MANIFEST_PATH, green } from './lib/dataSync.js';
 import { SUJATO_DIR, RULES_DIR, RETRANSLATION_PATH, COUNTS_PATH } from './lib/retranslation.js';
-import { runPost } from './update-data-post.mjs';
+import { runCounts, reportCounts } from './update-data-counts.mjs';
 
 // Core logic, callable directly with explicit paths (tests use this to point at fixture trees
 // instead of the real data/{sujato,pali,html} — see scripts/update-data.test.js).
@@ -57,27 +60,16 @@ export async function runSnapshot({
   }
 
   // Re-runs post against the (now-baselined) data/sujato — cheap, and keeps data/sujato.post/
-  // fresh at exactly the moment the baseline changes. ruleCounts is populated even when a rule is
-  // currently broken (post returns it regardless of `ok`), so a snapshot taken mid-repair still
-  // records honest current counts rather than silently keeping stale ones.
-  const postResult = await runPost({ sujatoDir, postDir, rulesDir, retranslationPath });
-  const counts = {
-    generatedAt: new Date().toISOString(),
-    note: 'Each term rule\'s current match count across data/sujato — its anchor when it has no allow/deny queue of its own to check (an open rule with an empty deny list). Regenerated only by update-data:snapshot, alongside snapshot.json.',
-    rules: postResult.ruleCounts,
-  };
-  fs.mkdirSync(path.dirname(countsPath), { recursive: true });
-  fs.writeFileSync(countsPath, JSON.stringify(counts, null, 2) + '\n');
+  // fresh at exactly the moment the baseline changes. Rule counts are the same "this is now the
+  // new normal" act as the snapshot itself, so they're recorded here too, through the very command
+  // that records them on their own after a rule edit (update-data:counts).
+  const countsResult = await runCounts({ sujatoDir, postDir, rulesDir, retranslationPath, countsPath });
 
-  return { ...snapshot, ruleCounts: postResult.ruleCounts, postOk: postResult.ok };
+  return { ...snapshot, ...countsResult };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const snapshot = await runSnapshot();
   console.log(green(`update-data snapshot regenerated — ${snapshot.fileCount} files recorded at ${path.relative(process.cwd(), SNAPSHOT_PATH)}.`));
-  if (!snapshot.postOk) {
-    console.log(yellow(`update-data:post currently fails (dead rule or broken segment override) — counts recorded anyway; see ${path.relative(process.cwd(), COUNTS_PATH)} and run update-data:post to see why.`));
-  } else {
-    console.log(green(`Rule counts recorded at ${path.relative(process.cwd(), COUNTS_PATH)}.`));
-  }
+  reportCounts(snapshot);
 }

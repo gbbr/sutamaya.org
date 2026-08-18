@@ -18,6 +18,7 @@
     "update-data:post": "node scripts/update-data-post.mjs",
     "update-data:post:diff": "node scripts/update-data-post.mjs --diff",
     "update-data:triage": "node scripts/update-data-triage.mjs",
+    "update-data:counts": "node scripts/update-data-counts.mjs",
     "update-data:snapshot": "node scripts/update-data-snapshot.mjs",
     "dev:worker": "wrangler dev --port 8787",
     "dev:web": "npm run dev --workspace web",
