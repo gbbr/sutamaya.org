@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { ArrowLeft, Info, LogOut } from 'lucide-react';
+import { AlertTriangle, ArrowLeft, Check, CloudOff, Info, LogOut, RefreshCw } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpus } from '../context/CorpusContext';
@@ -62,14 +62,29 @@ function formatSyncedAt(iso: string): string {
   return `${days} day${days === 1 ? '' : 's'} ago`;
 }
 
-// One line describing the offline-sync queue (see docs/offline-sync.md's "Sync state") — the same states the
-// TreePane sync indicator shows, spelled out in words for the place a user would come looking for
-// more detail than an icon can carry.
-function syncStatusLine(status: SyncStatus, pendingCount: number, lastSyncedAt: string | null): string {
-  if (status === 'offline') return "Offline — changes are saved locally and will sync when you're back online.";
-  if (status === 'stuck') return "Some changes couldn't be synced and will keep being retried.";
-  if (status === 'pending') return `Syncing ${pendingCount} change${pendingCount === 1 ? '' : 's'}…`;
-  return lastSyncedAt ? `Last synced ${formatSyncedAt(lastSyncedAt)}.` : 'Not synced yet.';
+// One line (plus the same icon TreePane's sync indicator uses for that state — see
+// SyncIndicator.tsx) describing the offline-sync queue (see docs/offline-sync.md's "Sync state"),
+// spelled out in words for the place a user would come looking for more detail than an icon alone
+// can carry.
+function syncStatusLine(
+  status: SyncStatus,
+  pendingCount: number,
+  lastSyncedAt: string | null,
+): { Icon: typeof RefreshCw; spin: boolean; text: string } {
+  if (status === 'offline') {
+    return { Icon: CloudOff, spin: false, text: "Offline — changes are saved locally and will sync when you're back online." };
+  }
+  if (status === 'stuck') {
+    return { Icon: AlertTriangle, spin: false, text: "Some changes couldn't be synced and will keep being retried." };
+  }
+  if (status === 'pending') {
+    return { Icon: RefreshCw, spin: true, text: `Syncing ${pendingCount} change${pendingCount === 1 ? '' : 's'}…` };
+  }
+  return {
+    Icon: Check,
+    spin: false,
+    text: lastSyncedAt ? `Last synced ${formatSyncedAt(lastSyncedAt)}.` : 'Not synced yet.',
+  };
 }
 
 export function SettingsPage({ location }: RouteComponentProps) {
@@ -381,16 +396,6 @@ export function SettingsPage({ location }: RouteComponentProps) {
                 )}
               </>
             )}
-            {/* This is about lists/notes/highlights syncing to the account (docs/offline-sync.md), a
-                separate mechanism from the corpus caching above — grouped here anyway since both
-                read as "offline-related status" to a user, and neither means anything signed out. */}
-            {user && (
-              <div
-                className={`font-sans text-[13px] mt-3 ${syncStatus === 'stuck' ? 'text-red-600' : 'text-ink/50'}`}
-              >
-                {syncStatusLine(syncStatus, pendingCount, lastSyncedAt)}
-              </div>
-            )}
           </div>
         </div>
 
@@ -404,13 +409,27 @@ export function SettingsPage({ location }: RouteComponentProps) {
             collapsing to nothing, so the section always has real height and a valid scroll
             target (see authSectionRef above) regardless of how long the session check takes. */}
         <div ref={authSectionRef} className={flashClass('auth')}>
-          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3 mt-6">Authentication</div>
+          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3 mt-6">Account</div>
           {loading ? (
             <div className="font-sans text-[13px] text-ink/40">Checking sign-in status…</div>
           ) : user ? (
             <>
+              {/* This is about lists/notes/highlights syncing to the account (docs/offline-sync.md), a
+               separate mechanism from the corpus caching above — grouped here anyway since both
+               read as "offline-related status" to a user, and neither means anything signed out. */}
+              {user &&
+                (() => {
+                  const { Icon, spin, text } = syncStatusLine(syncStatus, pendingCount, lastSyncedAt);
+                  return (
+                    <div className={`flex items-center gap-1.5 font-sans text-[13px] mb-6 ${syncStatus === 'stuck' ? 'text-red-600' : 'text-ink/50'}`}>
+                      <Icon size={13} strokeWidth={1.75} className={`flex-none ${spin ? 'animate-[spin_2s_linear_infinite]' : ''}`} />
+                      {text}
+                    </div>
+                  );
+                })()
+              }
               <div className="font-sans text-[13px] text-ink/60 mb-1">Signed in as</div>
-              <div className="text-[16px] mb-6">{user.name ? `${user.name} · ${user.email}` : user.email}</div>
+              <div className="text-[16px] mb-3">{user.name ? `${user.name} · ${user.email}` : user.email}</div>
               <a
                 href={dataApi.exportUrl}
                 className="block w-full text-center h-11 leading-[44px] rounded-field border border-ink/[.22] font-sans text-[14px] font-medium mb-3"
