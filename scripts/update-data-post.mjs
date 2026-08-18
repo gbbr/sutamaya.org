@@ -141,8 +141,8 @@ export async function runPost({
 // byte-stability the requirement — no colour, no timestamps, source files in sorted order — so a
 // run over unchanged input produces an unchanged tree and any diff at all is real.
 //
-// Each rule file is a genuine unified diff, which is what pays for the plain bytes: `delta <
-// data/diff/<id>.diff` (or `bat`) recomputes the changed span and highlights it inline, so the
+// Each rule file is a genuine unified diff, which is what pays for the plain bytes: `riff <
+// data/diff/<id>.diff` (or delta) recomputes the changed span and highlights it inline, so the
 // word-level view lives in the viewer instead of in the file, and the same file still reads
 // cleanly through `git diff` and on GitHub.
 
@@ -231,5 +231,5 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   }
 
   console.log(green(`update-data post done — ${result.replacements} replacement(s) across ${result.filesChanged} file(s). Wrote data/sujato.post/.`));
-  console.log(green(`Per-rule diffs written to data/diff/ — read one with 'delta < data/diff/<rule-id>.diff'.`));
+  console.log(green(`Per-rule diffs written to data/diff/ — read one with 'riff < data/diff/<rule-id>.diff'.`));
 }
