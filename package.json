@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "build:corpus": "npm run update-data:post && node scripts/build-corpus.mjs",
-    "update-data": "npm run update-data:check && npm run update-data:copy && npm run update-data:post",
+    "update-data": "npm run update-data:check && npm run update-data:copy && npm run update-data:post && (npm run update-data:triage || true)",
     "update-data:check": "node scripts/update-data-check.mjs",
     "update-data:copy": "node scripts/update-data-copy.mjs",
     "update-data:post": "node scripts/update-data-post.mjs",

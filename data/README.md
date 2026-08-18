@@ -54,6 +54,11 @@ static and only changes by hand.
 SC_DATA_PATH=/path/to/sc-data npm run update-data
 ```
 
+A clean run ends by printing each retranslation rule's triage queue (see
+[`../docs/retranslation.md`](../docs/retranslation.md)). A non-empty queue doesn't fail the run —
+it's upstream having moved a term into or out of a segment a rule cares about, and it's worked by
+hand.
+
 If it refuses to run, it's flagging one of two things — read what it prints before doing anything
 else:
 
