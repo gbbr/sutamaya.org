@@ -119,7 +119,7 @@ export function CorpusProvider({ children }: { children: ReactNode }) {
   );
 
   // Only `corpus` gates first paint — it's a few MB and is all the browse tree/reader need to
-  // render. `dictionary` (~20MB, loaded off-thread — see loadDictionary()) keeps loading in the
+  // render. `dictionary` (~20MB, see loadDictionary()) keeps loading in the
   // background; its only consumer (ReaderPage's word-tap lookup) already null-checks it.
   const value = useMemo(
     () => ({ corpus, dictionary, loading: !corpus && !error, error, dictionaryFailed, retry, retryDictionary: retryDictionaryIfFailed }),

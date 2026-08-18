@@ -563,8 +563,8 @@ write, so a list, note or highlight made with no network is kept rather than log
 
 `corpus.json` (nav tree + titles/blurbs, a few MB) and the self-hosted latin/latin-ext font
 subsets are precached with the app shell, so browsing and reading work offline immediately. The
-dictionary (~20MB, fetched and parsed in a Web Worker — `workers/dictionaryWorker.ts` — so it
-never blocks the main thread or gates first paint) and per-sutta text (~58MB across the whole
+dictionary (~20MB, fetched and parsed on the main thread by `loadDictionary()` — well after first
+paint, which it never gates) and per-sutta text (~58MB across the whole
 canon) are **not** forced into the install — `vite.config.ts`'s `runtimeCaching` caches them
 `CacheFirst` on first request instead (the dictionary gets fetched on app boot anyway, so it's
 cached within seconds regardless). Non-latin font subsets follow the same cache-on-first-use
