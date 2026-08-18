@@ -6,14 +6,31 @@ interface DictionaryDockProps {
   gloss: string;
   defs: string[] | null;
   loading?: boolean;
+  // Every attempt at the (~20MB, background-loaded) dictionary has failed — see CorpusContext.
+  // Without this the dock's `loading` copy is indistinguishable from a download that is still
+  // going, and the user has nothing to act on.
+  dictionaryFailed?: boolean;
   theme: ThemeColors;
   fontSize: number;
   onClose: () => void;
   onPrev: () => void;
   onNext: () => void;
+  onRetryDictionary: () => void;
 }
 
-export function DictionaryDock({ word, gloss, defs, loading, theme, fontSize, onClose, onPrev, onNext }: DictionaryDockProps) {
+export function DictionaryDock({
+  word,
+  gloss,
+  defs,
+  loading,
+  dictionaryFailed,
+  theme,
+  fontSize,
+  onClose,
+  onPrev,
+  onNext,
+  onRetryDictionary,
+}: DictionaryDockProps) {
   const glossSize = Math.max(11, fontSize - 5.5);
   const defSize = Math.max(12, fontSize - 3.5);
   const numbered = !!defs && defs.length > 1;
@@ -69,7 +86,20 @@ export function DictionaryDock({ word, gloss, defs, loading, theme, fontSize, on
         </button>
       </div>
       <div className="flex-1 min-h-0 overflow-y-auto flex flex-col gap-[9px] mt-[7px] opacity-[.82]" style={{ fontSize: defSize }}>
-        {loading ? (
+        {loading && dictionaryFailed ? (
+          <div className="leading-[1.55] flex items-baseline gap-[10px]">
+            <span className="opacity-70">Couldn't download the dictionary.</span>
+            <button
+              className="font-sans underline underline-offset-2"
+              onClick={(e) => {
+                e.stopPropagation();
+                onRetryDictionary();
+              }}
+            >
+              Retry
+            </button>
+          </div>
+        ) : loading ? (
           <div className="leading-[1.55] opacity-70">Loading dictionary…</div>
         ) : defs && defs.length > 0 ? (
           defs.map((entry, i) => (

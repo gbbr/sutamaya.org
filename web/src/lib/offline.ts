@@ -220,6 +220,15 @@ export async function prefetchDictionary(signal?: AbortSignal): Promise<boolean>
   }
 }
 
+// Drops the Service Worker's CacheFirst copy of dictionary.json (vite.config.ts) so the next
+// fetch is a real one — what lets a retry recover from a cached response that isn't the
+// dictionary at all (see loadDictionary in lib/corpus.ts), which would otherwise be replayed
+// from cache for the whole year that entry lives.
+export async function clearCachedDictionary(): Promise<void> {
+  if (!('caches' in window)) return;
+  await caches.delete(DICTIONARY_CACHE);
+}
+
 export async function estimateOfflineStatus(uids: string[]): Promise<{ cached: number; total: number }> {
   if (!('caches' in window)) return { cached: 0, total: uids.length };
   const cache = await caches.open(SUTTA_TEXT_CACHE);
