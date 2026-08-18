@@ -22,6 +22,7 @@
 //   change / instability  viparinama-annathatta-change-unstable,
 //                      viparinama-anuparivatti-changing
 //   agitation          paritassati-agitated
+//   thought / examination  vitakka-vicara-thought-examination
 //   segment overrides  one line each, applied last; sub-grouped by cause, order immaterial
 
 export const RULES = [
@@ -336,6 +337,58 @@ export const RULES = [
       ['anxiety', 'agitation'],
     ],
   },
+  // ── Thought and examination ─────────────────────────────────────────────────
+  {
+    id: 'vitakka-vicara-thought-examination',
+    why: 'Sujato renders the jhāna pair vitakka/vicāra as "placing the mind"/"keeping it ' +
+      'connected", reading them as movements of attention rather than as thinking; this app ' +
+      'prefers "thought"/"examination" (Bodhi’s later rendering, and the DPD’s leading gloss for ' +
+      'each — vitakka "thought; reflection; pondering", vicāra "consideration; exploring, ' +
+      'examination"). It also unifies Sujato with himself: outside this formula he already gives ' +
+      'vitakka as "thought" in 440 segments, so the same Pali word currently reads two ' +
+      'unrelated ways depending on whether it sits in the jhāna formula. SN 41.6 supports the ' +
+      'discursive reading — the pair is the *verbal* process because "first you think and ' +
+      'examine, then you break into speech". Open with an empty deny list: all 254 segments ' +
+      'carrying this wording are the formula, and nothing else in the corpus produces it. ' +
+      'Scoped to sutta since name/blurb never carry it. ' +
+      'The pair is one interleaved English idiom, so the forms are phrases rather than words and ' +
+      'both terms live in one rule — splitting them would leave "while thought and examination". ' +
+      'The forms cover each grammatical slot the idiom stands in: appositive (savitakkaṁ ' +
+      'savicāraṁ), genitive absolute (vitakkavicārānaṁ vūpasamā), privative (avitakkaṁ ' +
+      'avicāraṁ), the vicāramatta middle term, bare subject noun, finite and negated verbs (na ' +
+      'vitakketi na vicāreti), and vitakka standing alone. The longest form absorbs the ' +
+      'article — "As the placing of the mind and keeping it connected are stilled" would ' +
+      'otherwise leave "As the thought and examination are stilled" across 106 segments — while ' +
+      'the bare-article form stays for MN 66 and AN 9.42, which have no "the". ' +
+      'Sujato’s own translator notes quote his wording and are never retranslated, so 14 suttas ' +
+      'have a note reading in his terms beside text reading in ours.',
+    mode: 'deny',
+    scope: ['sujato/sutta'],
+    predicate: /vitakk|vicār/i,
+    forms: [
+      // the pair
+      ['the placing of the mind and the keeping it connected', 'thought and examination'],
+      ['without placing the mind, merely keeping it connected', 'without thought, with just examination'],
+      ['neither placing the mind nor keeping it connected', 'neither thinking nor examining'],
+      ['without placing the mind and keeping it connected', 'without thought or examination'],
+      ['without placing the mind or keeping it connected', 'without thought or examination'],
+      ['neither place the mind nor keep it connected', 'neither think nor examine'],
+      ['while placing the mind and keeping it connected', 'with thought and examination'],
+      ['the placing of the mind and keeping it connected', 'thought and examination'],
+      ['placing of the mind and keeping it connected', 'thought and examination'],
+      ['placing the mind and keeping it connected', 'thought and examination'],
+      ['placing the mind, keeping it connected', 'thought, examination'],
+      ['place the mind and keep it connected', 'think and examine'],
+      ['placing and keeping', 'thought and examination'],
+      // vitakka alone
+      ['not placing the mind', 'no thought'],
+      ['placing the mind', 'thought'],
+      ['place the mind', 'think'],
+      // vicāra alone
+      ['keeping it connected', 'examination'],
+      ['keep it connected', 'examine'],
+    ],
+  },
   // ── Segment overrides ───────────────────────────────────────────────────────
   // These run last, over the term rules' output — so `from` is the post-processed text, not
   // upstream's. `segments: [...]` is for a line the corpus repeats verbatim, where one from/to is
@@ -559,5 +612,24 @@ export const RULES = [
     segment: 'sn22.7:9.4',
     from: 'Agitations—born of latching on to the changing of consciousness and originating in accordance with natural principles—don’t occupy their mind. ',
     to: 'Agitation—born of latching on to the changing of consciousness and originating in accordance with natural principles—doesn’t occupy their mind. ',
+  },
+
+  // ·· heading case ··
+  // caseAs reads a match as Title Case only when every significant word is capitalized, and it
+  // counts "it" as significant (it isn't in TITLE_LOWERCASE), so a heading of Sujato's that
+  // lowercases "it" reads as a capitalized sentence and the replacement comes back in sentence
+  // case. Fixed per heading rather than by adding "it" to that set, which would re-case every
+  // rule's headings to solve one.
+  {
+    id: 'sn43-3-thought-examination-title',
+    kind: 'segment',
+    why: 'SN 43.3’s title, "Placing the Mind and Keeping it Connected" — Title Case, but the ' +
+      'lowercase "it" makes caseAs treat it as a sentence, so ' +
+      'vitakka-vicara-thought-examination returns "Thought and examination". This is the sutta’s ' +
+      'displayed title (build-corpus’s headerTitle reads the highest "0.N" segment), so the case ' +
+      'is visible in the browse tree, not just in the body text.',
+    segment: 'sn43.3:0.3',
+    from: 'Thought and examination ',
+    to: 'Thought and Examination ',
   },
 ];

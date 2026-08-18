@@ -324,6 +324,29 @@ describe('the shipped rules, one example each', () => {
     // Denied: plain English in a blurb, which has no Pali to check it against — "anxious to know"
     // is eagerness.
     ['paritassati-agitated', 'an-blurbs:an8.23', 'sujato/blurb', 'Hatthaka is anxious to know that no lay people were present.', 'Hatthaka is anxious to know that no lay people were present.'],
+    // One per grammatical slot the jhāna pair stands in, since the idiom is a phrase rather than a
+    // word and a form that fits one slot is ungrammatical in the next. The first also pins the
+    // article: the longest form has to swallow "the" or 106 segments read "As the thought and
+    // examination are stilled".
+    ['vitakka-vicara-thought-examination', 'sn53.1-12:1.6', 'sujato/sutta', 'As the placing of the mind and keeping it connected are stilled, they enter and remain in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. ', 'As thought and examination are stilled, they enter and remain in the second absorption, which has the rapture and bliss born of concentration, with internal clarity and mind at one, without thought or examination. '],
+    // Finite verbs, then the bare subject noun, in one line — a noun-only rule would give "First
+    // you thought and examination".
+    ['vitakka-vicara-thought-examination', 'sn41.6:2.4', 'sujato/sutta', 'First you place the mind and keep it connected, then you break into speech. That’s why placing the mind and keeping it connected are a verbal process. ', 'First you think and examine, then you break into speech. That’s why thought and examination are a verbal process. '],
+    // Negated verbs (na vitakketi na vicāreti).
+    ['vitakka-vicara-thought-examination', 'sn47.10:6.13', 'sujato/sutta', 'They relax, and neither place the mind nor keep it connected. ', 'They relax, and neither think nor examine. '],
+    // The vicāramatta middle term, where the two halves take different treatments.
+    ['vitakka-vicara-thought-examination', 'sn43.12:3.5', 'sujato/sutta', 'Immersion without placing the mind, merely keeping it connected. … ', 'Concentration without thought, with just examination. … '],
+    // The pair as a bare list of first-absorption factors, comma-joined rather than "and"-joined.
+    ['vitakka-vicara-thought-examination', 'mn43:20.4', 'sujato/sutta', 'Placing the mind, keeping it connected, rapture, bliss, and unification of mind are present. ', 'Thought, examination, rapture, bliss, and unification of mind are present. '],
+    // vitakka alone, positive and negated (avitakka), where "no thought" carries the negation the
+    // "not" would otherwise strand.
+    ['vitakka-vicara-thought-examination', 'an9.41:8.11', 'sujato/sutta', 'And so, after some time, I saw the drawbacks of placing the mind and cultivated that, and I realized the benefits of not placing the mind and developed that. ', 'And so, after some time, I saw the drawbacks of thought and cultivated that, and I realized the benefits of no thought and developed that. '],
+    // A title, where the single-word form takes Sentence case. SN 43.3's own title needs a segment
+    // override instead — its lowercase "it" hides the Title Case from caseAs.
+    ['vitakka-vicara-thought-examination', 'sn28.2:0.3', 'sujato/sutta', 'Without Placing the Mind ', 'Without Thought '],
+    // Out of scope: the rule is sutta-only, and SN 41.6's note is Sujato arguing his own rendering
+    // — it already uses the words this rule writes, for the sense he says the formula lacks.
+    ['vitakka-vicara-thought-examination', 'sn41.6:2.4', 'sujato/notes', 'have a more basic sense in ordinary states of mind (“thought” and “exploring”), and a technical sense of placing the mind and keeping it connected.', 'have a more basic sense in ordinary states of mind (“thought” and “exploring”), and a technical sense of placing the mind and keeping it connected.'],
   ];
 
   it('rewrites each rule’s example, and leaves its excluded example alone', async () => {
