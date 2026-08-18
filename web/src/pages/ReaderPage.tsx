@@ -294,7 +294,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
       onPointerUp={onReaderPointerUp}
     >
       <header className="font-sans flex-none flex items-center gap-4 px-5 py-3 text-[13px]" style={{ borderBottom: `1px solid ${theme.rule}` }}>
-        <button className="flex items-center" title="Close" onClick={closeReader}>
+        <button className="flex items-center p-3 -m-3" title="Close" onClick={closeReader}>
           <X size={15} strokeWidth={1.75} />
         </button>
         {/* Tapping the title bar scrolls back to the top of the sutta — the same "tap the top of
@@ -313,7 +313,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           {mobile ? sutta.ref : `${sutta.ref} · ${sutta.pali}`}
         </button>
         <button
-          className="flex items-center"
+          className="flex items-center p-3 -m-3"
           aria-label="Menu"
           title="Menu"
           onClick={(e) => {
