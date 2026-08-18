@@ -242,6 +242,11 @@ describe('the shipped rules, one example each', () => {
     ['immersion-concentration', 'dn1:1.1', 'sujato/sutta', 'they enter that immersion', 'they enter that concentration'],
     // The article travels with the word it agrees with, or DN 1 reads "an concentration".
     ['immersion-concentration', 'dn1:1.31.1', 'sujato/sutta', 'experiences an immersion of the heart', 'experiences a concentration of the heart'],
+    ['patisambhida-analytical-knowledge', 'an7.38:1.1', 'sujato/sutta', 'will soon realize the four kinds of textual analysis', 'will soon realize the four kinds of analytical knowledge'],
+    // The heading slot: four of the term's occurrences are Title Case sutta names.
+    ['patisambhida-analytical-knowledge', 'an4.172:0.3', 'sujato/sutta', 'Sāriputta’s Attainment of Textual Analysis', 'Sāriputta’s Attainment of Analytical Knowledge'],
+    // Untouched, like every note: Sujato's own gloss keeps his own wording.
+    ['patisambhida-analytical-knowledge', 'mn43:1.3', 'sujato/notes', 'foremost in the methods of textual analysis', 'foremost in the methods of textual analysis'],
     // Runs ahead of sati-aware, which would otherwise take the "mindfulness" of this phrase on its
     // own and leave "awareness meditation" behind.
     ['satipatthana-establishment-of-awareness', 'sn52.1:1.4', 'sujato/sutta', 'missed out on these four kinds of mindfulness meditation', 'missed out on these four establishments of awareness'],
