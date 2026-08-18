@@ -17,6 +17,7 @@ upstream) and writes `data/sujato.post/` (generated).
 - **Don't hand-edit `data/sujato/`.** It's upstream's bytes; every edit belongs in a rule, or the
   next refresh silently reverts it and the honest upstream diff is lost.
 - **Don't run `update-data:copy` or `update-data:snapshot`** unless the user explicitly asks.
+  `update-data:counts` is the one to run after a rule edit — see step 9 for why they're separate.
 - **Don't list what you don't have to.** Always take the shorter of `allow`/`deny` — a term with
   no homonym problem (`mendicant`) is an open rule with an empty deny list, not 10,588 ids.
 
@@ -97,8 +98,16 @@ upstream) and writes `data/sujato.post/` (generated).
 8. **Apply and audit**: `npm run update-data:post:diff`, then read
    `data/diff/<rule-id>.diff`. Check the Pali shown against each rewrite.
 
-9. **Leave the baseline alone.** Match counts are recorded by `update-data:snapshot`, which is the
-   user's call to run — don't run it yourself.
+9. **Record the new counts**: `npm run update-data:counts`, and commit the
+   `retranslation.counts.json` diff with the rule. A rule absent from that file has no anchor at
+   all when its deny list is empty — the count *is* what would catch it going half-dead after a
+   future refresh — and the one-line-per-rule diff is the reviewable record of what the edit did.
+
+   **Not `update-data:snapshot`.** That command records counts too, but it also rebaselines
+   `snapshot.json` and `manifest.snapshotCommit`, the upstream segment-id drift detector — only
+   ever right after a human has reviewed a real upstream change. Rebaselining it as a side effect
+   of a rule edit silently blinds the *next* `update-data:check`. Same code, run through the
+   entry point that does only the half you're entitled to.
 
 ## Changing a term's rendering
 
@@ -180,6 +189,13 @@ entirely. Find what replaced it before rewriting the rule.
 `post` reads pristine input, so re-running after each edit is always safe; iterate freely.
 
 ## Reporting back
+
+**Keep every report compact** — this applies to the lexicography block, the footprint survey, the
+per-slot form split and the final summary alike, not just the closing message. A dozen lines and a
+small table is the target; the size of the investigation never sets the size of the reply. Lead
+with the decision the user has to make, put supporting evidence in a table or a handful of example
+lines rather than prose, and hold the rest until asked. A queue of two hundred cases is reported as
+a count and a shape breakdown, never as a listing.
 
 Which rules changed, each one's match count, and what's left in any queue. Point at the diff files
 rather than pasting them.
