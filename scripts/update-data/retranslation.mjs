@@ -13,7 +13,8 @@
 // Grouped by term family below, in array order — the groups are for reading, and the order inside
 // and between them is still what settles a same-word collision:
 //
-//   standalone terms   mendicant-bhikkhu, immersion-concentration
+//   standalone terms   mendicant-bhikkhu, immersion-concentration,
+//                      patisambhida-analytical-knowledge
 //   awareness          satipatthana-establishment-of-awareness, sati-aware,
 //                      sampajanna-full-comprehension
 //   arising / passing   samudaya-arising, vaya-passing-away, atthangama-disappearing,
@@ -53,6 +54,26 @@ export const RULES = [
     ],
   },
   // ── Awareness ───────────────────────────────────────────────────────────────
+  {
+    id: 'patisambhida-analytical-knowledge',
+    why: 'Sujato renders paṭisambhidā as "textual analysis"; this app prefers "analytical ' +
+      'knowledge" (Bodhi’s and Ñāṇamoli’s rendering) — the four paṭisambhidās are of meaning, ' +
+      'text, terminology and eloquence, so "textual" names only the second of them. Open: every ' +
+      'occurrence in the corpus is paṭisambhidā, so there is nothing to exclude. One form covers ' +
+      'it: the phrase is always a noun, never plural or verbal, and caseAs handles the four Title ' +
+      'Case headings it appears in ("Textual Analysis (1st)", "Sāriputta’s Attainment of Textual ' +
+      'Analysis"). AN 1.175-186 carries it in the same sentence as "the fruit of knowledge and ' +
+      'freedom" (vijjā) — one English word for two terms, accepted rather than overridden, since ' +
+      're-rendering vijjā is a far larger decision than this rule. AN 1.593-595’s ' +
+      'anekadhātupaṭisambhidā, which Sujato gives as a bare "analysis", is deliberately left ' +
+      'alone: no form can claim "analysis" on its own without taking the ~150 unrelated uses of ' +
+      'the word with it.',
+    mode: 'deny',
+    predicate: /paṭisambhid/i,
+    forms: [
+      ['textual analysis', 'analytical knowledge'],
+    ],
+  },
   // sati-aware and sampajanna-full-comprehension meet in the satipaṭṭhāna formula ("keen, aware,
   // and mindful"), where sati-aware produces the very word the sampajañña rule consumes. Locking,
   // not order, is what keeps them apart — see "The pass" in docs/retranslation.md, and the pinned

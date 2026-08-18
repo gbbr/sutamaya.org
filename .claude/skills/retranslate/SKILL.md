@@ -26,6 +26,25 @@ upstream) and writes `data/sujato.post/` (generated).
    user named an English word ("replace all occurrences of aware"), work out which Pali term it
    renders — a rule keyed on the English alone is the mistake this system exists to prevent.
 
+   Then **check the proposed rendering against the DPD and against other translators, and report
+   both** before drafting anything. The user proposes the English word, but he wants the
+   lexicography in front of him when he confirms it:
+
+   - **DPD** — `data/pli2en_dpd.json`, already in the repo, is a `[{entry, definition}]` array
+     keyed by Pali word (inflected forms included). Look up the base term and quote its gloss:
+     `paṭisambhidā` gives "penetrating insight (into); analytical knowledge (of); discriminating
+     understanding (of)", which is why "analytical knowledge" won over "analytical understanding".
+     Compounds have their own entries, so a term that only ever appears bound (`anekadhātu-`
+     `paṭisambhidā`) is still findable.
+   - **Other translators** — say what Bodhi, Anālayo, Thanissaro and Ñāṇamoli use for the term,
+     and note where they disagree with each other or with Sujato. These aren't in the repo, so
+     they come from knowledge rather than a lookup; say so when a rendering is one you're unsure
+     of rather than asserting it.
+
+   Report this as its own short block, not buried in the footprint table — an agreed rendering
+   backed by the dictionary and the other translations is the point of the exercise, and it
+   belongs in the rule's `why` afterwards.
+
 2. **Draft the rule** with `forms`, a `predicate` regex over the Pali, `mode: 'allow'`, and an
    empty sidecar. Write the `why` now: which Pali term, why this app departs from upstream. Place
    it under the right `// ── Family ──` banner group (or start a new one) rather than appending to
@@ -80,6 +99,31 @@ upstream) and writes `data/sujato.post/` (generated).
 
 9. **Leave the baseline alone.** Match counts are recorded by `update-data:snapshot`, which is the
    user's call to run — don't run it yourself.
+
+## Changing a term's rendering
+
+Changing what an existing rule renders a term as is **not** substituting the new English into the
+rule's existing `forms` pairs. Review the rule's entire footprint again from scratch, and expect to
+invent forms the previous rendering never needed.
+
+The reason is grammatical. A `forms` pair maps one English source word to one replacement, but
+Sujato's source word usually sits in more than one grammatical slot, and a replacement that works
+in one slot is routinely ungrammatical in another. `sampajanna-full-comprehension` is the worked
+example: "understanding" happened to double as a participle, so one form covered both slots,
+whereas "full comprehension" is a noun phrase that cannot stand in the satipaṭṭhāna formula's list
+of adjectives — "keen, aware, and mindful" would have become "keen, full comprehension, and
+aware" across roughly 250 segments. The fix was to split Sujato's own vocabulary: his nouns
+"situational awareness"/"awareness" render the noun *sampajañña* and take "full comprehension",
+while his bare "aware"/"unaware" render the adjective *sampajāna* and take "fully
+comprehending"/"without full comprehension", leaving only a dozen predicative lines for segment
+overrides.
+
+The method: dump every rewritten segment's before/after with its aligned Pali, deduplicate by
+rewrite shape, and read all the distinct shapes. Around 700 rewrites collapse to roughly 200
+shapes, which is small enough to read in full, and reading them is what surfaces the slots that
+need their own form. Do this before reporting the change as done, and **report the per-slot form
+split explicitly** — that split is the substantive editorial decision, not an implementation
+detail.
 
 ## Segment overrides
 
