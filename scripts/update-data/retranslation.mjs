@@ -229,9 +229,10 @@ export const RULES = [
   //
   // Two rules, splitting the term by construction rather than by meaning. The first takes the
   // doublet wherever Sujato writes it as a whole clause ("decays and perishes"); the second takes
-  // the one place he writes it as a compound noun instead ("the perishing of form"). They can't
-  // be one rule because they share no English word — the forms of either match nothing the other
-  // matches — and the second's slot needs a bare verbal noun where the first's needs a doublet.
+  // the one place he writes it as a compound noun instead ("the perishing of form"). One widened
+  // predicate could carry both, but they are kept apart deliberately: they share no English word,
+  // so neither's forms can reach what the other rewrites, and each then gets a predicate that
+  // states its own construction and a match count that moves only when that construction does.
   {
     id: 'viparinama-annathatta-change-unstable',
     why: 'Sujato renders the vipariṇāma/aññathā doublet as "decays and perishes"; this app ' +
