@@ -552,7 +552,7 @@ export function TreePane({
               rightIconClassName={paneView === 'lists' ? 'text-[#FBFAF7]' : 'text-ink/45'}
               slotSize={mobile ? 28 : 24}
               thumbClassName={`border border-ink/[.12] shadow-[0_1px_2px_rgba(27,25,23,.18)] transition-[left,background-color] duration-200 ease-out ${
-                paneView === 'lists' ? 'bg-[#5C6B73]' : 'bg-chip'
+                paneView === 'lists' ? 'bg-pill-lists' : 'bg-chip'
               }`}
             />
           )}
