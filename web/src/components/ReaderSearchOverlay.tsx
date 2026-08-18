@@ -23,7 +23,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
   const [query, setQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const hits = useCorpusSearch(corpus, query, notes);
+  const hits = useCorpusSearch(corpus, query, notes, lists);
   // Only render/keyboard-navigate the first SEARCH_RESULTS_CAP — a short/common query can match
   // hundreds of suttas, and every hit is an unvirtualized row in a small scroll panel.
   const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);

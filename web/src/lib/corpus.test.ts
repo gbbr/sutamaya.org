@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { ancestorsOf, compareIds, resolveCanonicalSuttaId, searchCorpus, sortByIdAsc } from './corpus';
-import type { Corpus, Sutta } from './types';
+import type { Corpus, ListDef, Sutta } from './types';
 
 // Only the fields compareIds/sortByIdAsc actually touch (the id key) matter here; the rest
 // of Sutta is irrelevant filler to satisfy the type.
@@ -163,6 +163,52 @@ describe('searchCorpus', () => {
     };
     const [hit] = searchCorpus(batched, 'dhp320', {});
     expect(hit).toMatchObject({ id: 'dhp320-333', matchedId: 'dhp320' });
+  });
+
+  describe('matching against list/group names', () => {
+    const list = (over: Partial<ListDef>): ListDef => ({
+      id: 'x', label: 'x', parentId: null, kind: 'list', items: [], ...over,
+    });
+
+    it('surfaces every sutta in a list matched by its own name', () => {
+      const lists = [list({ id: 'l1', label: 'Favourites', items: ['mn1', 'mn10'] })];
+      expect(searchCorpus(corpus, 'favourites', {}, lists).map((h) => h.id).sort()).toEqual(['mn1', 'mn10']);
+    });
+
+    it('matches a nested list by its "group/list" path, not just its own label', () => {
+      const lists = [
+        list({ id: 'g1', label: 'Group', kind: 'group' }),
+        list({ id: 'l1', label: 'Favourites', parentId: 'g1', items: ['mn1'] }),
+      ];
+      expect(searchCorpus(corpus, 'group/favourites', {}, lists).map((h) => h.id)).toEqual(['mn1']);
+      // A bare label search still works at any depth, not just for top-level lists.
+      expect(searchCorpus(corpus, 'favourites', {}, lists).map((h) => h.id)).toEqual(['mn1']);
+    });
+
+    it('expands a matched group name into every sutta in every list nested under it', () => {
+      const lists = [
+        list({ id: 'g1', label: 'Study', kind: 'group' }),
+        list({ id: 'l1', label: 'Week 1', parentId: 'g1', items: ['mn1'] }),
+        list({ id: 'l2', label: 'Week 2', parentId: 'g1', items: ['mn10'] }),
+      ];
+      expect(searchCorpus(corpus, 'study', {}, lists).map((h) => h.id).sort()).toEqual(['mn1', 'mn10']);
+    });
+
+    it('is case- and diacritic-insensitive on list names, same as everything else', () => {
+      const lists = [list({ id: 'l1', label: 'Satipaṭṭhāna', items: ['mn10'] })];
+      expect(searchCorpus(corpus, 'satipatthana', {}, lists).map((h) => h.id)).toEqual(['mn10']);
+    });
+
+    it('does not match a list whose name does not contain the query', () => {
+      const lists = [list({ id: 'l1', label: 'Favourites', items: ['mn1'] })];
+      expect(searchCorpus(corpus, 'nonexistent', {}, lists)).toEqual([]);
+    });
+
+    it('ranks a list-only match alongside a blurb-only match, below a title match', () => {
+      // mn10's title itself matches "mind" (rank 0); mn1 only matches via the list name here.
+      const lists = [list({ id: 'l1', label: 'mind', items: ['mn1'] })];
+      expect(searchCorpus(corpus, 'mind', {}, lists).map((h) => h.id)).toEqual(['mn10', 'mn1']);
+    });
   });
 });
 
