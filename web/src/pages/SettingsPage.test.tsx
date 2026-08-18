@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { Router, navigate } from '@reach/router';
 
 // Covers the two behaviors added on top of the plain "renders the three sections" page: (1)
-// Authentication is always the last section, regardless of sign-in state, and never collapses to
+// Account is always the last section, regardless of sign-in state, and never collapses to
 // nothing while `loading` — both needed for (2), the scrollTo:'offline'/'auth' deep-link effect
 // (see promptGoogleSignIn in AuthContext, and the offline-download nudge in TreePane) to always
 // have a real, correctly-positioned element to scroll to.
@@ -128,24 +128,24 @@ function renderSettings(path = '/settings') {
 }
 
 describe('section order', () => {
-  it('is fixed — Display, then Offline, then Authentication — regardless of sign-in state', () => {
+  it('is fixed — Display, then Offline, then Account — regardless of sign-in state', () => {
     vi.mocked(useAuth).mockReturnValue(mockAuth({ user: null }));
     const { container: signedOut } = renderSettings();
     const textOut = signedOut.textContent!;
     expect(textOut.indexOf('Display')).toBeLessThan(textOut.indexOf('Offline'));
-    expect(textOut.indexOf('Offline')).toBeLessThan(textOut.indexOf('Authentication'));
+    expect(textOut.indexOf('Offline')).toBeLessThan(textOut.indexOf('Account'));
 
     vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser() }));
     const { container: signedIn } = renderSettings();
     const textIn = signedIn.textContent!;
     expect(textIn.indexOf('Display')).toBeLessThan(textIn.indexOf('Offline'));
-    expect(textIn.indexOf('Offline')).toBeLessThan(textIn.indexOf('Authentication'));
+    expect(textIn.indexOf('Offline')).toBeLessThan(textIn.indexOf('Account'));
   });
 
-  it('renders a placeholder — not nothing — for Authentication while the session check is loading', () => {
+  it('renders a placeholder — not nothing — for Account while the session check is loading', () => {
     vi.mocked(useAuth).mockReturnValue(mockAuth({ loading: true }));
     renderSettings();
-    expect(screen.getByText('Authentication')).toBeInTheDocument();
+    expect(screen.getByText('Account')).toBeInTheDocument();
     expect(screen.getByText('Checking sign-in status…')).toBeInTheDocument();
   });
 });
@@ -168,7 +168,7 @@ describe('scrollTo deep link', () => {
     expect(offlineSection.className).toContain('bg-accent/10');
   });
 
-  it('scrolls to the Authentication section when navigated here with scrollTo: "auth"', async () => {
+  it('scrolls to the Account section when navigated here with scrollTo: "auth"', async () => {
     const scrollSpy = vi.spyOn(Element.prototype, 'scrollIntoView').mockImplementation(() => {});
     navigate('/settings', { state: { scrollTo: 'auth' } });
     render(
@@ -176,7 +176,7 @@ describe('scrollTo deep link', () => {
         <SettingsPage path="/settings" />
       </Router>
     );
-    const authSection = screen.getByText('Authentication').parentElement!;
+    const authSection = screen.getByText('Account').parentElement!;
     expect(scrollSpy).toHaveBeenCalled();
     expect(scrollSpy.mock.instances).toContain(authSection);
     expect(authSection.className).toContain('bg-accent/10');
