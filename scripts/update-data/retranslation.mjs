@@ -23,6 +23,7 @@
 //                      viparinama-anuparivatti-changing
 //   agitation          paritassati-agitated
 //   thought / examination  vitakka-vicara-thought-examination
+//   attention          yoniso-proper-attention
 //   segment overrides  one line each, applied last; sub-grouped by cause, order immaterial
 
 export const RULES = [
@@ -388,6 +389,72 @@ export const RULES = [
       // vicāra alone
       ['keeping it connected', 'examination'],
       ['keep it connected', 'examine'],
+    ],
+  },
+  // ── Attention ───────────────────────────────────────────────────────────────
+  // Placed after thought/examination, whose `why` records that Sujato reads vitakka/vicāra as
+  // movements of attention — the doctrinal neighbour, not a collision. Nothing else in the corpus
+  // renders as "rational"/"rationally", and the words this rule produces ("proper", "attention")
+  // are never consumed by a rule above it, so its position settles nothing on its own.
+  {
+    id: 'yoniso-proper-attention',
+    why: 'Sujato renders yoniso/ayoniso as "rational"/"irrational" and the compound ' +
+      'yoniso manasikāra as "rational application of mind"; this app prefers "properly"/' +
+      '"improperly" and "proper attention"/"improper attention". The DPD leads with exactly ' +
+      'these glosses — yoniso "properly; prudently; thoroughly; carefully", ayoniso "improperly; ' +
+      'imprudently; unwisely; carelessly", manasikāra "attention (to); bringing-to-mind" — and ' +
+      'Horner used "proper attention" for the compound. (Bodhi, Ñāṇamoli and Anālayo say "wise ' +
+      'attention", which is the better-known rendering; "proper" was chosen because it tracks ' +
+      'the adverb, and the adverb has to carry the ~90 segments where yoniso stands alone.) ' +
+      '"Rational" is the wrong register regardless: yoniso is literally "according to the ' +
+      'source/origin", a matter of attending to a thing the right way round, not of reasoning. ' +
+      'Open with a small deny list: Sujato uses "rational"/"rationally" for essentially nothing ' +
+      'but yoniso, so the exclusions are four segments of ordinary English. Nearby words on the ' +
+      'same stem — "rationale", "rationalist", "rationality" — are different words and are never ' +
+      'matched, since forms match on whole-word boundaries. ' +
+      'The compound is a noun and cannot fill the verb slots, so the forms split by grammatical ' +
+      'slot: the noun phrase takes "proper attention", while "apply the mind rationally" (and its ' +
+      'other word order, "rationally apply the mind") becomes "attend properly", inflected for ' +
+      'each of the four slots Sujato uses — infinitive/imperative, third person, participle. Both ' +
+      'orders are listed because Sujato uses both, sometimes in the same sutta (mn2). The bare ' +
+      'adverb and adjective come last, so they only catch the yoniso occurrences that stand ' +
+      'outside the compound — "reflecting properly on the food that they eat", "a proper way to ' +
+      'win the fruit" (mn126, yoni/ayoni). ' +
+      'Shares "proper"/"properly" with ordinary English elsewhere in the corpus (343 segments — ' +
+      '"practice properly", "the proper lifespan"), which costs nothing: the rendering that ' +
+      'matters is the fixed compound "proper attention", and no rewrite of this rule lands within ' +
+      'three segments of one of those.',
+    mode: 'deny',
+    predicate: /yoni/i,
+    forms: [
+      // yoniso manasikāra, the noun
+      ['irrational application of mind', 'improper attention'],
+      ['rational application of mind', 'proper attention'],
+      // yoniso manasi karoti, the verb — both of Sujato's word orders, per slot.
+      // The SN 12 dependent-origination lines (sādhukaṁ yoniso manasi karoti) put a second adverb
+      // in front of the verb, which the bare form would strand as "carefully and attends
+      // properly", so that whole phrase is one form and the adverbs move behind the verb.
+      ['carefully and rationally applies the mind', 'attends carefully and properly'],
+      ['irrationally applying the mind', 'attending improperly'],
+      ['rationally applying the mind', 'attending properly'],
+      ['applying the mind irrationally', 'attending improperly'],
+      ['applying the mind rationally', 'attending properly'],
+      ['irrationally applies the mind', 'attends improperly'],
+      ['rationally applies the mind', 'attends properly'],
+      ['applies the mind irrationally', 'attends improperly'],
+      ['applies the mind rationally', 'attends properly'],
+      ['irrationally apply the mind', 'attend improperly'],
+      ['rationally apply the mind', 'attend properly'],
+      // AN 3.68 has "apply the mind rationally *on*" where every other line has "to"; "attend"
+      // only takes "to", so the preposition travels with the verb rather than being stranded.
+      ['apply the mind rationally on', 'attend properly to'],
+      ['apply the mind irrationally', 'attend improperly'],
+      ['apply the mind rationally', 'attend properly'],
+      // yoniso standing alone
+      ['irrationally', 'improperly'],
+      ['rationally', 'properly'],
+      ['irrational', 'improper'],
+      ['rational', 'proper'],
     ],
   },
   // ── Segment overrides ───────────────────────────────────────────────────────
