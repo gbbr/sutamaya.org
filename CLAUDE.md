@@ -36,6 +36,8 @@ npm run dev               # builds the corpus bundle, then runs the Worker + web
 npm run build:corpus      # regenerate web/public/data/ from data/ (run after editing data/)
 npm run build              # production build (corpus + web/dist)
 npm test                   # runs the (deliberately small) Vitest suite — see below
+npm run typecheck          # tsc over web/src — the only place types are actually enforced, since
+                            # `npm run build` transpiles with `tsc -b --noCheck`. CI runs it.
 npm run deploy             # deploy to Cloudflare — see docs/deploy.md; runs `npm test` first and
                             # refuses to deploy on a red suite unless you pass --skip-tests
 SC_DATA_PATH=/path/to/sc-data npm run update-data
@@ -436,6 +438,12 @@ uncaught.
   wherever a signed-out user attempts an authenticated action). A sutta's sibling list for
   Prev/Next in the reader comes from `corpus.suttas[id].node`, not from however the reader was
   entered, so it's correct from a search result or a deep link too.
+- `components/ErrorBoundary.tsx` wraps the whole app in `App.tsx`, *outside* `AppProviders` so a
+  provider's own render throw is caught too. It turns what would otherwise be a blank page into a
+  panel offering a reload and a link back to `/browse/dn` — recovery is a full page load, never a
+  state reset, since the state that produced the error is usually still there. It catches **render**
+  errors only: event handlers, timers and rejected promises (the mirror's flush, every fetch) never
+  reach it and keep their own handling where they happen.
 - **`<StrictMode>` is deliberately not used** (see `main.tsx`) — `@reach/router`'s `<Redirect>`
   relies on class-lifecycle timing (`componentDidMount` → `Promise.resolve().then(navigate)`)
   that React 18's dev-mode double-invoking breaks, so `/` → `/browse/dn` silently never fires

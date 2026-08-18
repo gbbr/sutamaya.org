@@ -24,6 +24,7 @@
     "dev": "npm run build:corpus && concurrently -k -n worker,web -c blue,green \"npm run dev:worker\" \"npm run dev:web\"",
     "build": "npm run build:corpus && npm run build --workspace web",
     "usage-report": "node scripts/usage-report.mjs",
+    "typecheck": "npm run typecheck --workspace web",
     "test": "npx vitest run",
     "deploy": "bash scripts/deploy.sh"
   },

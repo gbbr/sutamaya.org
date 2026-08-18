@@ -359,7 +359,7 @@ describe('applyFlushOutcome', () => {
     // A reference left behind would point at nothing: the child would render at the top level and
     // the add would 404 against a list that does not exist.
     expect(state.lists.c1.data.parentId).toBe('g2');
-    expect(state.ops[0].listId).toBe('g2');
+    expect(state.ops[0]).toMatchObject({ type: 'add', listId: 'g2' });
   });
 
   it('retires a pushed erase-only write, which has no rows of its own to keep', () => {

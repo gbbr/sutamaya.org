@@ -6,6 +6,10 @@ import type { Corpus, ListDef, Sutta } from './types';
 // of Sutta is irrelevant filler to satisfy the type.
 const stub = (id: string): Sutta => ({ ref: id, node: 'x', en: id, pali: id, blurb: '', min: 1 });
 
+// The build's provenance/versioning fields, spread into each fixture below. Nothing here reads
+// them — they exist for the reader's source attribution and the offline staleness check.
+const meta = { sujatoCommit: 'abc1234', dataVersion: 'd1', dictionaryVersion: 'k1' };
+
 describe('compareIds', () => {
   it('sorts a double-digit chapter after a single-digit one numerically, not lexically', () => {
     expect(compareIds('mn9', 'mn10')).toBeLessThan(0);
@@ -46,6 +50,7 @@ describe('sortByIdAsc', () => {
 
 describe('ancestorsOf', () => {
   const corpus: Corpus = {
+    ...meta,
     nikayas: [
       { id: 'dn', label: 'Long Discourses', sub: '', count: 1 },
       {
@@ -140,6 +145,7 @@ describe('flatSuttaOrder', () => {
 
 describe('searchCorpus', () => {
   const corpus: Corpus = {
+    ...meta,
     nikayas: [],
     suttas: {
       'mn1': { ref: 'MN 1', node: 'x', en: 'The Root of All Things', pali: 'Mūlapariyāyasutta', blurb: 'The Buddha analyzes how the mind relates to experience.', min: 30 },
@@ -167,6 +173,7 @@ describe('searchCorpus', () => {
 
   it('finds a batched range document by an individual number inside its range', () => {
     const batched: Corpus = {
+      ...meta,
       nikayas: [],
       suttas: {
         'dhp306-319': { ref: 'Dhp306–319', node: 'dhp', en: '22. The Underworld', pali: 'Nirayavagga', blurb: '', min: 2 },
@@ -179,6 +186,7 @@ describe('searchCorpus', () => {
 
   it('respects the range query\'s own prefix, not just the numeric overlap', () => {
     const batched: Corpus = {
+      ...meta,
       nikayas: [],
       suttas: {
         'sn35.180-182': { ref: 'SN35.180–182', node: 'sn', en: 'x', pali: 'x', blurb: '', min: 1 },
@@ -190,6 +198,7 @@ describe('searchCorpus', () => {
 
   it('surfaces the specific inner sutta id on a range-query match, so a caller can open that instead of the batch', () => {
     const batched: Corpus = {
+      ...meta,
       nikayas: [],
       suttas: {
         'dhp320-333': { ref: 'Dhp320–333', node: 'dhp', en: '23. Elephants', pali: 'Nāgavagga', blurb: '', min: 2 },
@@ -209,6 +218,7 @@ describe('searchCorpus', () => {
     // its own, before the range-query fallback ever runs — matchedId must still get attached in
     // that case, not just for a query that misses the literal ref text (e.g. "dhp325" above).
     const batched: Corpus = {
+      ...meta,
       nikayas: [],
       suttas: {
         'dhp320-333': { ref: 'Dhp320–333', node: 'dhp', en: '23. Elephants', pali: 'Nāgavagga', blurb: '', min: 2 },
@@ -267,6 +277,7 @@ describe('searchCorpus', () => {
 
 describe('resolveCanonicalSuttaId', () => {
   const corpus: Corpus = {
+    ...meta,
     nikayas: [],
     suttas: {
       mn1: { ref: 'MN 1', node: 'x', en: 'x', pali: 'x', blurb: '', min: 1 },

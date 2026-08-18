@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Router, navigate, type RouteComponentProps } from '@reach/router';
 import { AppProviders } from './context/AppProviders';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import { useCorpus } from './context/CorpusContext';
 import { getLastLocation } from './lib/lastLocation';
 import { LibraryPage } from './pages/LibraryPage';
@@ -78,8 +79,10 @@ function Routes() {
 
 export default function App() {
   return (
-    <AppProviders>
-      <Routes />
-    </AppProviders>
+    <ErrorBoundary>
+      <AppProviders>
+        <Routes />
+      </AppProviders>
+    </ErrorBoundary>
   );
 }

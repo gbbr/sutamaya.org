@@ -33,6 +33,9 @@ function buildCorpus(): Corpus {
       // resolveCanonicalSuttaId in lib/corpus.ts), only for the batch as a whole.
       'dhp1-20': { ref: 'Dhp 1–20', node: 'kn', en: 'Twin Verses', pali: 'Yamakavaggo', blurb: '', min: 5 },
     },
+    sujatoCommit: 'abc1234',
+    dataVersion: 'data-v1',
+    dictionaryVersion: 'dict-v1',
   };
 }
 

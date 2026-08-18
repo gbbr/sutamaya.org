@@ -13,6 +13,14 @@ import type { Highlight, HighlightsMap, ListDef, Membership, NotesMap, VisitedMa
 // "Notes", neither of which can wait on a round trip. The server keeps its copy, which still
 // serves the pull.
 
+// What the UI actually renders. The wire's `UserData` shape, except that each note is reduced to
+// its text: a note's mtime exists to order the Notes auto-list, which happens here, so nothing
+// downstream of this function ever wants it. Kept a distinct type rather than reusing `UserData`
+// so the compiler can still tell the two note shapes apart.
+export interface DerivedUserData extends Omit<UserData, 'notes'> {
+  notes: NotesMap;
+}
+
 // Bounds how many rows ListPane has to render for an auto-list — it renders every item as a full
 // DOM row, unvirtualized. Mirrors AUTO_LIST_CAP in worker/src/lib/userData.js.
 const AUTO_LIST_CAP = 100;
@@ -47,7 +55,7 @@ export function highlightRowsFor(state: MirrorState, suttaId: string): Highlight
     .flatMap((record) => rowsOf(record.data));
 }
 
-export function deriveUserData(state: MirrorState): UserData {
+export function deriveUserData(state: MirrorState): DerivedUserData {
   const membership: Membership = {};
   // repairListTree decides which lists survive at all — dropping tombstones and everything beneath
   // them — as well as their order and, where a stored parentId dangles, the parentId each is

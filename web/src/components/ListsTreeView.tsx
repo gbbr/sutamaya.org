@@ -21,7 +21,10 @@ interface ListsTreeViewProps {
   toggleTopLevelDraft: () => void;
   creatingParentId: string | null | undefined;
   setCreatingParentId: (id: string | null | undefined) => void;
-  listInput: RefObject<HTMLInputElement | null>;
+  // `RefObject<HTMLInputElement>` rather than `RefObject<HTMLInputElement | null>` — a ref object
+  // is already nullable in its own `current`, and only this spelling is what React's `ref` prop
+  // accepts below.
+  listInput: RefObject<HTMLInputElement>;
   draft: string;
   setDraft: (v: string) => void;
   onDraftKey: (e: React.KeyboardEvent<HTMLInputElement>) => void;

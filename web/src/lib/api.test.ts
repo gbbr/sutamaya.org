@@ -8,7 +8,9 @@ describe('request()', () => {
     vi.unstubAllGlobals();
   });
 
-  function stubFetch(impl: () => Promise<Response>) {
+  // Typed with fetch's own parameters (rather than as a bare thunk) so the recorded calls carry
+  // the `init` argument the first test below reads back.
+  function stubFetch(impl: (...args: Parameters<typeof fetch>) => Promise<Response>) {
     const fetchMock = vi.fn(impl);
     vi.stubGlobal('fetch', fetchMock);
     return fetchMock;

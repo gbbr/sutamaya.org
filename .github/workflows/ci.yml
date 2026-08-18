@@ -17,5 +17,12 @@ jobs:
           cache: npm
 
       - run: npm ci
+
+      # The only place types are enforced: the production build runs `tsc -b --noCheck` (Vite
+      # transpiles without checking, and a deploy shouldn't be gated on a slow full check), so
+      # without this step a type error reaches production unnoticed. Runs before the corpus build
+      # since it needs no data and fails in seconds.
+      - run: npm run typecheck
+
       - run: npm run build:corpus
       - run: npm test

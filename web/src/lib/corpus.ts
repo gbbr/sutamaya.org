@@ -158,8 +158,10 @@ export function breadcrumbFor(corpus: Corpus, nodeId: string): BreadcrumbEntry[]
 
 // `ref` is only present for a chapter-kind node (e.g. "MN1–10"), matching TreeRow's own
 // ref/label split so a title bar can style the ref the same way (see ListPane's title header).
-export function nodeLabel(corpus: Corpus, id: string, lists: ListDef[]): { ref?: string; label: string } {
-  const found = findNode(corpus, id);
+// Takes a nullable corpus, like ancestorsOf: callers hold whatever CorpusContext currently has,
+// and a user list's label resolves from `lists` whether or not the corpus is loaded.
+export function nodeLabel(corpus: Corpus | null, id: string, lists: ListDef[]): { ref?: string; label: string } {
+  const found = corpus ? findNode(corpus, id) : null;
   if (found) {
     if (found.kind === 'chapter') return { ref: found.node.ref, label: found.node.label };
     return { label: found.node.label };

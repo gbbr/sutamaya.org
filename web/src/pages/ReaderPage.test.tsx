@@ -30,6 +30,9 @@ function buildCorpus(): Corpus {
     suttas: {
       dn1: { ref: 'DN 1', node: 'dn', en: 'Brahmajala', pali: 'Brahmajālasutta', blurb: 'The Divine Net', min: 5 },
     },
+    sujatoCommit: 'abc1234',
+    dataVersion: 'data-v1',
+    dictionaryVersion: 'dict-v1',
   };
 }
 
