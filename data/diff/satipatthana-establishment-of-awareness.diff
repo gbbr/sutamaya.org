@@ -1,0 +1,1616 @@
+Rule: satipatthana-establishment-of-awareness — 354 change(s), 135 file(s)
+
+--- sujato/blurb/an-blurbs_root-en.json
++++ sujato/blurb/an-blurbs_root-en.json
+@@ -1 +1 @@ an-blurbs:an4.274
+-Develop insight into greed through the four kinds of mindfulness meditation.
++Develop insight into greed through the four establishments of awareness.
+--- sujato/blurb/dn-blurbs_root-en.json
++++ sujato/blurb/dn-blurbs_root-en.json
+@@ -1 +1 @@ dn-blurbs:dn22
+-The Buddha details the seventh factor of the noble eightfold path, mindfulness meditation. This discourse is essentially identical to MN 10, with the addition of an extended section on the four noble truths derived from MN 141.
++The Buddha details the seventh factor of the noble eightfold path, the establishment of awareness. This discourse is essentially identical to MN 10, with the addition of an extended section on the four noble truths derived from MN 141.
+--- sujato/blurb/mn-blurbs_root-en.json
++++ sujato/blurb/mn-blurbs_root-en.json
+@@ -1 +1 @@ mn-blurbs:mn10
+-Here the Buddha details the seventh factor of the noble eightfold path, mindfulness meditation. This collects many of the meditation teachings found throughout the canon, especially the foundational practices focusing on the body, and is regarded as one of the most important meditation discourses.
++Here the Buddha details the seventh factor of the noble eightfold path, the establishment of awareness. This collects many of the meditation teachings found throughout the canon, especially the foundational practices focusing on the body, and is regarded as one of the most important meditation discourses.
+@@ -1 +1 @@ mn-blurbs:mn51
+-The Buddha discusses mindfulness meditation with lay practitioners. Contrasting the openness of animals with the duplicity of humans, he explains how to practice in a way that causes no harm to oneself or others.
++The Buddha discusses the establishment of awareness with lay practitioners. Contrasting the openness of animals with the duplicity of humans, he explains how to practice in a way that causes no harm to oneself or others.
+@@ -1 +1 @@ mn-blurbs:mn118
+-Surrounded by many well-practiced bhikkhus, the Buddha teaches awareness of breathing in detail, showing how it relates to the four kinds of mindfulness meditation.
++Surrounded by many well-practiced bhikkhus, the Buddha teaches awareness of breathing in detail, showing how it relates to the four establishments of awareness.
+@@ -1 +1 @@ mn-blurbs:mn119
+-This focuses on the first aspect of mindfulness meditation, the observation of the body. This set of practices, simple as they seem, have far-reaching benefits.
++This focuses on the first aspect of the establishment of awareness, the observation of the body. This set of practices, simple as they seem, have far-reaching benefits.
+--- sujato/blurb/sn-blurbs_root-en.json
++++ sujato/blurb/sn-blurbs_root-en.json
+@@ -1 +1 @@ sn-blurbs:sn47
+-The “Linked Discourses on Mindfulness Meditation” contains 104 discourses on the four kinds of mindfulness meditation (<i lang='pi' translate='no'>satipaṭṭhāna</i>, otherwise known as the “foundations of awareness” or “establishments of awareness”). These are the body, feelings, mind, and principles. The last of these is translated in various ways, but a close reading of the texts in this chapter shows that it originally referred to the “principles” of causality underlying the process of meditation itself. These discourses on this fundamental topic are much less known than the longer “Discourse on Mindfulness Meditation” found in versions in MN 10 and DN 22; however, they are historically earlier than that late compilation. Where MN 10 emphasizes insight meditation, in this collection we frequently find awareness closely connected to absorption, as it is the factor of the path that leads directly to “right concentration”. Insight is mentioned only rarely. The root meaning of the term awareness (<i lang='pi' translate='no'>sati</i>) is “memory”, and when used in meditation it refers to not “forgetting” one’s meditation, but keeping focus on the breath or other theme of meditation. This collection presents a range of perspectives on mindfulness meditation; one of its most memorable features is a series of similes or parables illustrating the practice. The partner of awareness (<i lang='pi' translate='no'>sati</i>) is “situational awareness” (<i lang='pi' translate='no'>sampajañña</i>, sometimes rendered as “clear comprehension”), which refers to keeping a broad awareness and understanding especially in daily activities.
++The “Linked Discourses on the Establishment of Awareness” contains 104 discourses on the four establishments of awareness (<i lang='pi' translate='no'>satipaṭṭhāna</i>, otherwise known as the “foundations of awareness” or “establishments of awareness”). These are the body, feelings, mind, and principles. The last of these is translated in various ways, but a close reading of the texts in this chapter shows that it originally referred to the “principles” of causality underlying the process of meditation itself. These discourses on this fundamental topic are much less known than the longer “Discourse on the Establishment of Awareness” found in versions in MN 10 and DN 22; however, they are historically earlier than that late compilation. Where MN 10 emphasizes insight meditation, in this collection we frequently find awareness closely connected to absorption, as it is the factor of the path that leads directly to “right concentration”. Insight is mentioned only rarely. The root meaning of the term awareness (<i lang='pi' translate='no'>sati</i>) is “memory”, and when used in meditation it refers to not “forgetting” one’s meditation, but keeping focus on the breath or other theme of meditation. This collection presents a range of perspectives on the establishment of awareness; one of its most memorable features is a series of similes or parables illustrating the practice. The partner of awareness (<i lang='pi' translate='no'>sati</i>) is “situational awareness” (<i lang='pi' translate='no'>sampajañña</i>, sometimes rendered as “clear comprehension”), which refers to keeping a broad awareness and understanding especially in daily activities.
+@@ -1 +1 @@ sn-blurbs:sn52
+-The “Linked Discourses with Anuruddha” contains 24 discourses with Anuruddha, famous for his powers of clairvoyance, but here revealed as an exponent of mindfulness meditation. It is to mindfulness meditation that he attributes his spiritual attainments, whether psychic powers, absorptions, or awakening. This series of texts can be regarded as a supplement to SN 47.
++The “Linked Discourses with Anuruddha” contains 24 discourses with Anuruddha, famous for his powers of clairvoyance, but here revealed as an exponent of the establishment of awareness. It is to the establishment of awareness that he attributes his spiritual attainments, whether psychic powers, absorptions, or awakening. This series of texts can be regarded as a supplement to SN 47.
+@@ -1 +1 @@ sn-blurbs:sn54
+-The “Linked Discourses on Breath Meditation” contains 20 discourses on breath meditation (<i lang='pi' translate='no'>ānāpānassati</i>), the most revered form of meditation from early Buddhism until the present day. It was practiced by the Buddha himself. The meditation is taught in a detailed series of sixteen steps. These are partially sequential, but also overlap in some cases. The development of these fulfills all four kinds of mindfulness meditation and the seven factors of awakening. Thus this one form of meditation can lead to awakening; which is not, however, to say that it is invariably the best approach. The Buddha taught many different meditations for a reason; each has its own qualities and benefits. Breath meditation is seen as a peaceful and pleasant meditation which helps still distracting thoughts. It is a simple practice broadly suitable for most meditators, but leading to profound depths.
++The “Linked Discourses on Breath Meditation” contains 20 discourses on breath meditation (<i lang='pi' translate='no'>ānāpānassati</i>), the most revered form of meditation from early Buddhism until the present day. It was practiced by the Buddha himself. The meditation is taught in a detailed series of sixteen steps. These are partially sequential, but also overlap in some cases. The development of these fulfills all four establishments of awareness and the seven factors of awakening. Thus this one form of meditation can lead to awakening; which is not, however, to say that it is invariably the best approach. The Buddha taught many different meditations for a reason; each has its own qualities and benefits. Breath meditation is seen as a peaceful and pleasant meditation which helps still distracting thoughts. It is a simple practice broadly suitable for most meditators, but leading to profound depths.
+@@ -1 +1 @@ sn-blurbs:sn47.1
+-At Ambapālī’s mango grove, the Buddha teaches the bhikkhus about the “way to convergence”, the four kinds of mindfulness meditation. 
++At Ambapālī’s mango grove, the Buddha teaches the bhikkhus about the “way to convergence”, the four establishments of awareness. 
+@@ -1 +1 @@ sn-blurbs:sn47.2
+-At Ambapālī’s mango grove, the Buddha teaches the bhikkhus about the four kinds of mindfulness meditation and the practice of full comprehension. 
++At Ambapālī’s mango grove, the Buddha teaches the bhikkhus about the four establishments of awareness and the practice of full comprehension. 
+@@ -1 +1 @@ sn-blurbs:sn47.3
+-When a bhikkhu asks for a teaching to take on retreat, the Buddha issues an unexpected rebuke. Evidently the bhikkhu had been badly behaved; but now, he insists, he is sincere. The Buddha relents, and teaches the four kinds of mindfulness meditation, well grounded on ethics.
++When a bhikkhu asks for a teaching to take on retreat, the Buddha issues an unexpected rebuke. Evidently the bhikkhu had been badly behaved; but now, he insists, he is sincere. The Buddha relents, and teaches the four establishments of awareness, well grounded on ethics.
+@@ -1 +1 @@ sn-blurbs:sn47.4
+-Newly ordained bhikkhus <em>should</em> practice the four kinds of mindfulness meditation; trainees <em>are</em> practicing them, and perfected ones have perfected the practice.
++Newly ordained bhikkhus <em>should</em> practice the four establishments of awareness; trainees <em>are</em> practicing them, and perfected ones have perfected the practice.
+@@ -1 +1 @@ sn-blurbs:sn47.5
+-The four kinds of mindfulness meditation are a complete heap of what is skillful.
++The four establishments of awareness are a complete heap of what is skillful.
+@@ -1 +1 @@ sn-blurbs:sn47.6
+-The parable of the quail and the hawk. When the quail ventured outside her ancestral territory, she became vulnerable. And what is a bhikkhu’s ancestral territory? The four kinds of mindfulness meditation.
++The parable of the quail and the hawk. When the quail ventured outside her ancestral territory, she became vulnerable. And what is a bhikkhu’s ancestral territory? The four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn47.7
+-The parable of the foolish monkey who gets trapped in tar when it ventures outside its ancestral territory. And what is a bhikkhu’s ancestral territory? The four kinds of mindfulness meditation.
++The parable of the foolish monkey who gets trapped in tar when it ventures outside its ancestral territory. And what is a bhikkhu’s ancestral territory? The four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn47.8
+-The parable of the cook. They present different kinds of dishes to the king, and observe which the king likes. In the same way, a bhikkhu observes why their meditation succeeds or fails. When the four kinds of mindfulness meditation succeeds it leads to giving up hindrances and entering concentration.
++The parable of the cook. They present different kinds of dishes to the king, and observe which the king likes. In the same way, a bhikkhu observes why their meditation succeeds or fails. When the four establishments of awareness succeeds it leads to giving up hindrances and entering concentration.
+@@ -1 +1 @@ sn-blurbs:sn47.9
+-The Buddha decides to spend his final rains retreat at Vesālī in Beluvagāmaka. During the retreat he becomes very ill, but later recovers. Ānanda wonders who will guide the Saṅgha when the Buddha dies, but the Buddha says they should be their own refuge, grounded on the four kinds of mindfulness meditation.
++The Buddha decides to spend his final rains retreat at Vesālī in Beluvagāmaka. During the retreat he becomes very ill, but later recovers. Ānanda wonders who will guide the Saṅgha when the Buddha dies, but the Buddha says they should be their own refuge, grounded on the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn47.10
+-When Ānanda visits the nuns’s quarters they tell him that their meditation is prospering to higher and higher levels. Ānanda reporrts the good news to the Buddha, who speaks of two ways of developing the four kinds of mindfulness meditation: directed and undirected.
++When Ānanda visits the nuns’s quarters they tell him that their meditation is prospering to higher and higher levels. Ānanda reporrts the good news to the Buddha, who speaks of two ways of developing the four establishments of awareness: directed and undirected.
+@@ -1 +1 @@ sn-blurbs:sn47.11
+-Sāriputta asks the Buddha what is a great man, and the Buddha says it is someone whose mind has been freed by developing the four kinds of mindfulness meditation.
++Sāriputta asks the Buddha what is a great man, and the Buddha says it is someone whose mind has been freed by developing the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn47.12
+-Sāriputta boldly claims that no-one has ever, or will ever, be more enlightened than the Buddha. He admits that he cannot read the minds of all the Buddhas, but he understands a principle of the Dhamma: all those who become awakened do so by giving up the five hindrances, practicing the four kinds of mindfulness meditation, and developing the seven awakening factors.
++Sāriputta boldly claims that no-one has ever, or will ever, be more enlightened than the Buddha. He admits that he cannot read the minds of all the Buddhas, but he understands a principle of the Dhamma: all those who become awakened do so by giving up the five hindrances, practicing the four establishments of awareness, and developing the seven awakening factors.
+@@ -1 +1 @@ sn-blurbs:sn47.13
+-Sāriputta dies of illness, and the novice Cunda together with Ānanda take his bowl and robes and report the sad news to the Buddha. The Buddha dispels Ānanda’s sadness by speaking of the four kinds of mindfulness meditation.
++Sāriputta dies of illness, and the novice Cunda together with Ānanda take his bowl and robes and report the sad news to the Buddha. The Buddha dispels Ānanda’s sadness by speaking of the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn47.15
+-When Venerable Bāhiya asks for a teaching to take on retreat, the Buddha teaches the four kinds of mindfulness meditation, well grounded on ethics.
++When Venerable Bāhiya asks for a teaching to take on retreat, the Buddha teaches the four establishments of awareness, well grounded on ethics.
+@@ -1 +1 @@ sn-blurbs:sn47.16
+-When Venerable Uttiya asks for a teaching to take on retreat, the Buddha teaches the four kinds of mindfulness meditation, well grounded on ethics.
++When Venerable Uttiya asks for a teaching to take on retreat, the Buddha teaches the four establishments of awareness, well grounded on ethics.
+@@ -1 +1 @@ sn-blurbs:sn47.17
+-The four kinds of mindfulness meditation lead to the end of suffering.
++The four establishments of awareness lead to the end of suffering.
+@@ -1 +1 @@ sn-blurbs:sn47.18
+-Just after the Buddha’s awakening, Brahmā Sahampati supports the Buddha’s reflection that the four kinds of mindfulness meditation are the way to convergence.
++Just after the Buddha’s awakening, Brahmā Sahampati supports the Buddha’s reflection that the four establishments of awareness are the way to convergence.
+@@ -1 +1 @@ sn-blurbs:sn47.19
+-Two acrobats discuss whether one should support the other, or the other way around. The Buddha says they should support each other. In the same way we should practice the four kinds of mindfulness meditation both for one’s own benefit and to protect others.
++Two acrobats discuss whether one should support the other, or the other way around. The Buddha says they should support each other. In the same way we should practice the four establishments of awareness both for one’s own benefit and to protect others.
+@@ -1 +1 @@ sn-blurbs:sn47.21
+-Venerable Bhadda asks Ānanda about the ethical virtues encouraged by the Buddha—what is their purpose? To develop the four kinds of mindfulness meditation.
++Venerable Bhadda asks Ānanda about the ethical virtues encouraged by the Buddha—what is their purpose? To develop the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn47.22
+-Venerable Bhadda asks Ānanda about the conditions under which the true teaching lasts long or does not last long after the Buddha’s passing. Ānanda says it depends on whether the four kinds of mindfulness meditation are practiced.
++Venerable Bhadda asks Ānanda about the conditions under which the true teaching lasts long or does not last long after the Buddha’s passing. Ānanda says it depends on whether the four establishments of awareness are practiced.
+@@ -1 +1 @@ sn-blurbs:sn47.23
+-Venerable Bhadda asks Ānanda about the conditions under which the true teaching declines. Ānanda says it depends on whether the four kinds of mindfulness meditation are practiced.
++Venerable Bhadda asks Ānanda about the conditions under which the true teaching declines. Ānanda says it depends on whether the four establishments of awareness are practiced.
+@@ -1 +1 @@ sn-blurbs:sn47.24
+-A simple teaching on the four kinds of mindfulness meditation.
++A simple teaching on the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn47.25
+-A brahmin asks the Buddha about the conditions under which the true teaching lasts long or does not last long after the Buddha’s passing. The Buddha says it depends on whether the four kinds of mindfulness meditation are practiced.
++A brahmin asks the Buddha about the conditions under which the true teaching lasts long or does not last long after the Buddha’s passing. The Buddha says it depends on whether the four establishments of awareness are practiced.
+@@ -1 +1 @@ sn-blurbs:sn47.26
+-Sāriputta asks Anuruddha what makes someone a trainee. It is someone who has partly developed the four kinds of mindfulness meditation.
++Sāriputta asks Anuruddha what makes someone a trainee. It is someone who has partly developed the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn47.27
+-Sāriputta asks Anuruddha what makes someone an adept. It is someone who has fully developed the four kinds of mindfulness meditation.
++Sāriputta asks Anuruddha what makes someone an adept. It is someone who has fully developed the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn47.28
+-Anuruddha claims to have developed the various direct knowledges by practicing the four kinds of mindfulness meditation.
++Anuruddha claims to have developed the various direct knowledges by practicing the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn47.29
+-When the householder Sirivaḍḍha is sick, Ānanda visits him and encourages him to practice mindfulness meditation. But he has already developed them, and abandoned the five lower fetters.
++When the householder Sirivaḍḍha is sick, Ānanda visits him and encourages him to practice the establishment of awareness. But he has already developed them, and abandoned the five lower fetters.
+@@ -1 +1 @@ sn-blurbs:sn47.30
+-When the householder Mānadinna is sick, Ānanda visits him and encourages him to practice mindfulness meditation. But he has already developed them, and abandoned the five lower fetters.
++When the householder Mānadinna is sick, Ānanda visits him and encourages him to practice the establishment of awareness. But he has already developed them, and abandoned the five lower fetters.
+@@ -1 +1 @@ sn-blurbs:sn47.31
+-The full knowledge of mindfulness meditation was not learned before the Buddha.
++The full knowledge of the establishment of awareness was not learned before the Buddha.
+@@ -1 +1 @@ sn-blurbs:sn47.32
+-The four kinds of mindfulness meditation lead to peace.
++The four establishments of awareness lead to peace.
+@@ -1 +1 @@ sn-blurbs:sn47.33
+-Someone who has neglected the four kinds of mindfulness meditation has neglected the noble path.
++Someone who has neglected the four establishments of awareness has neglected the noble path.
+@@ -1 +1 @@ sn-blurbs:sn47.34
+-The four kinds of mindfulness meditation lead from the near to the far shore.
++The four establishments of awareness lead from the near to the far shore.
+@@ -1 +1 @@ sn-blurbs:sn47.35
+-Awareness is the four kinds of mindfulness meditation. Full comprehension is watching the arising and passing of feelings, thoughts, and perceptions.
++Awareness is the four establishments of awareness. Full comprehension is watching the arising and passing of feelings, thoughts, and perceptions.
+@@ -1 +1 @@ sn-blurbs:sn47.36
+-When the four kinds of mindfulness meditation are developed, perfection or non-return may be expected.
++When the four establishments of awareness are developed, perfection or non-return may be expected.
+@@ -1 +1 @@ sn-blurbs:sn47.37
+-Developing the four kinds of mindfulness meditation, desire is abandoned.
++Developing the four establishments of awareness, desire is abandoned.
+@@ -1 +1 @@ sn-blurbs:sn47.38
+-The four kinds of mindfulness meditation lead to realizing the deathless.
++The four establishments of awareness lead to realizing the deathless.
+@@ -1 +1 @@ sn-blurbs:sn47.39
+-The development of the four kinds of mindfulness meditation.
++The development of the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn47.40
+-The Buddha teaches the simple passage on the four kinds of mindfulness meditation and an advanced analysis, which involves contemplating them as impermanent.
++The Buddha teaches the simple passage on the four establishments of awareness and an advanced analysis, which involves contemplating them as impermanent.
+@@ -1 +1 @@ sn-blurbs:sn47.41
+-Develop the four kinds of mindfulness meditation, don’t let the deathless be lost.
++Develop the four establishments of awareness, don’t let the deathless be lost.
+@@ -1 +1 @@ sn-blurbs:sn47.42
+-The causes for the origination and cessation of the phenomena upon which the four kinds of mindfulness meditation are grounded.
++The causes for the origination and cessation of the phenomena upon which the four establishments of awareness are grounded.
+@@ -1 +1 @@ sn-blurbs:sn47.43
+-The Buddha tells the bhikkhus how, just after his awakening, Brahmā Sahampati supported the Buddha’s reflection that the four kinds of mindfulness meditation are the way to convergence.
++The Buddha tells the bhikkhus how, just after his awakening, Brahmā Sahampati supported the Buddha’s reflection that the four establishments of awareness are the way to convergence.
+@@ -1 +1 @@ sn-blurbs:sn47.44
+-Be aware by developing the four kinds of mindfulness meditation.
++Be aware by developing the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn47.45
+-The four kinds of mindfulness meditation are a heap of the skillful.
++The four establishments of awareness are a heap of the skillful.
+@@ -1 +1 @@ sn-blurbs:sn47.46
+-When a bhikkhu asks for a teaching to take on retreat, the Buddha teaches the four kinds of mindfulness meditation, well grounded on restraint in the code of monastic rules.
++When a bhikkhu asks for a teaching to take on retreat, the Buddha teaches the four establishments of awareness, well grounded on restraint in the code of monastic rules.
+@@ -1 +1 @@ sn-blurbs:sn47.47
+-When a bhikkhu asks for a teaching to take on retreat, the Buddha teaches the four kinds of mindfulness meditation, well grounded on good bodily, verbal, and mental conduct.
++When a bhikkhu asks for a teaching to take on retreat, the Buddha teaches the four establishments of awareness, well grounded on good bodily, verbal, and mental conduct.
+@@ -1 +1 @@ sn-blurbs:sn47.48
+-You should encourage your friends to practice the four kinds of mindfulness meditation.
++You should encourage your friends to practice the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn47.49
+-The four kinds of mindfulness meditation help to understand the three feelings.
++The four establishments of awareness help to understand the three feelings.
+@@ -1 +1 @@ sn-blurbs:sn47.50
+-The four kinds of mindfulness meditation help to give up the defilements.
++The four establishments of awareness help to give up the defilements.
+@@ -1 +1 @@ sn-blurbs:sn52.1
+-While meditating alone, Anuruddha reflected that one who has neglected the four kinds of mindfulness meditation has neglected the path to the end of suffering. Moggallāna reads his mind and visits to question him on this. Anuruddha speaks of developing the four kinds of mindfulness meditation internally and externally, in terms of arising and cessation, and developing power over perceptions.
++While meditating alone, Anuruddha reflected that one who has neglected the four establishments of awareness has neglected the path to the end of suffering. Moggallāna reads his mind and visits to question him on this. Anuruddha speaks of developing the four establishments of awareness internally and externally, in terms of arising and cessation, and developing power over perceptions.
+@@ -1 +1 @@ sn-blurbs:sn52.2
+-While meditating alone, Anuruddha reflected that one who has neglected the four kinds of mindfulness meditation has neglected the path to the end of suffering. Moggallāna reads his mind and visits to question him on this. Anuruddha speaks of developing the four kinds of mindfulness meditation internally and externally.
++While meditating alone, Anuruddha reflected that one who has neglected the four establishments of awareness has neglected the path to the end of suffering. Moggallāna reads his mind and visits to question him on this. Anuruddha speaks of developing the four establishments of awareness internally and externally.
+@@ -1 +1 @@ sn-blurbs:sn52.3
+-When some bhikkhus ask Anuruddha how he attained such higher knowledge, he replies it is from developing the four kinds of mindfulness meditation.
++When some bhikkhus ask Anuruddha how he attained such higher knowledge, he replies it is from developing the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn52.4
+-Sāriputta and Moggallāna ask Anuruddha what a trainee bhikkhu should practice. He replies that it is the four kinds of mindfulness meditation.
++Sāriputta and Moggallāna ask Anuruddha what a trainee bhikkhu should practice. He replies that it is the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn52.5
+-Sāriputta and Moggallāna ask Anuruddha what an adept bhikkhu should practice. He replies that it is the four kinds of mindfulness meditation.
++Sāriputta and Moggallāna ask Anuruddha what an adept bhikkhu should practice. He replies that it is the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn52.6
+-When Sāriputta ask Anuruddha how he attained such higher knowledge, he replies it is from developing the four kinds of mindfulness meditation.
++When Sāriputta ask Anuruddha how he attained such higher knowledge, he replies it is from developing the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn52.7
+-The four kinds of mindfulness meditation lead to the ending of craving.
++The four establishments of awareness lead to the ending of craving.
+@@ -1 +1 @@ sn-blurbs:sn52.8
+-Even if kings beg them to disrobe, a bhikkhu who has developed the four kinds of mindfulness meditation is unmoved. Their mind flows to Nibbāna like the Ganges to the sea.
++Even if kings beg them to disrobe, a bhikkhu who has developed the four establishments of awareness is unmoved. Their mind flows to Nibbāna like the Ganges to the sea.
+@@ -1 +1 @@ sn-blurbs:sn52.9
+-Sāriputta asks why Anuruddha looks so peaceful, and he replies it is due to developing the four kinds of mindfulness meditation.
++Sāriputta asks why Anuruddha looks so peaceful, and he replies it is due to developing the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn52.10
+-Some bhikkhus ask Anuruddha how he remains equanimous even though ill. He replies that it is due to the four kinds of mindfulness meditation.
++Some bhikkhus ask Anuruddha how he remains equanimous even though ill. He replies that it is due to the four establishments of awareness.
+@@ -1 +1 @@ sn-blurbs:sn52.11
+-By developing the four kinds of mindfulness meditation Anuruddha surveys a thousand world systems.
++By developing the four establishments of awareness Anuruddha surveys a thousand world systems.
+--- sujato/name/an-name_translation-en-sujato.json
++++ sujato/name/an-name_translation-en-sujato.json
+@@ -1 +1 @@ an-name:1332.an9-satipatthanavagga
+-The Chapter on Mindfulness Meditation 
++The Chapter on the Establishment of Awareness 
+--- sujato/name/dn-name_translation-en-sujato.json
++++ sujato/name/dn-name_translation-en-sujato.json
+@@ -1 +1 @@ dn-name:24.dn22
+-The Longer Discourse on Mindfulness Meditation 
++The Longer Discourse on the Establishment of Awareness 
+--- sujato/name/mn-name_translation-en-sujato.json
++++ sujato/name/mn-name_translation-en-sujato.json
+@@ -1 +1 @@ mn-name:12.mn10
+-The Discourse on Mindfulness Meditation 
++The Discourse on the Establishment of Awareness 
+--- sujato/name/sn-name_translation-en-sujato.json
++++ sujato/name/sn-name_translation-en-sujato.json
+@@ -1 +1 @@ sn-name:1614.sn47
+-Linked Discourses on Mindfulness Meditation 
++Linked Discourses on the Establishment of Awareness 
+--- sujato/sutta/an/an10/an10.28_translation-en-sujato.json
++++ sujato/sutta/an/an10/an10.28_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an10.28:6.5
+ PLI: Catūsu satipaṭṭhānesu—
+-The four kinds of mindfulness meditation. … 
++The four establishments of awareness. … 
+--- sujato/sutta/an/an10/an10.61_translation-en-sujato.json
++++ sujato/sutta/an/an10/an10.61_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an10.61:6.6
+ PLI: ‘Cattāro satipaṭṭhānā’tissa vacanīyaṁ. 
+-You should say: ‘The four kinds of mindfulness meditation.’ 
++You should say: ‘The four establishments of awareness.’ 
+@@ -1,2 +1,2 @@ an10.61:6.7
+ PLI: Cattāropāhaṁ, bhikkhave, satipaṭṭhāne sāhāre vadāmi, no anāhāre. 
+-I say that the four kinds of mindfulness meditation are fueled by something, they’re not unfueled. 
++I say that the four establishments of awareness are fueled by something, they’re not unfueled. 
+@@ -1,2 +1,2 @@ an10.61:6.8
+ PLI: Ko cāhāro catunnaṁ satipaṭṭhānānaṁ? 
+-And what is the fuel for the four kinds of mindfulness meditation? 
++And what is the fuel for the four establishments of awareness? 
+@@ -1,2 +1,2 @@ an10.61:7.1
+ PLI: Iti kho, bhikkhave, sappurisasaṁsevo paripūro saddhammassavanaṁ paripūreti, saddhammassavanaṁ paripūraṁ saddhaṁ paripūreti, saddhā paripūrā yonisomanasikāraṁ paripūreti, yonisomanasikāro paripūro satisampajaññaṁ paripūreti, satisampajaññaṁ paripūraṁ indriyasaṁvaraṁ paripūreti, indriyasaṁvaro paripūro tīṇi sucaritāni paripūreti, tīṇi sucaritāni paripūrāni cattāro satipaṭṭhāne paripūrenti, cattāro satipaṭṭhānā paripūrā satta bojjhaṅge paripūrenti, satta bojjhaṅgā paripūrā vijjāvimuttiṁ paripūrenti; 
+-In this way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … proper attention … awareness and full comprehension … sense restraint … the three kinds of good conduct … the four kinds of mindfulness meditation … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. 
++In this way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … proper attention … awareness and full comprehension … sense restraint … the three kinds of good conduct … the four establishments of awareness … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. 
+@@ -1,2 +1,2 @@ an10.61:9.1
+ PLI: Evamevaṁ kho, bhikkhave, sappurisasaṁsevo paripūro saddhammassavanaṁ paripūreti, saddhammassavanaṁ paripūraṁ saddhaṁ paripūreti, saddhā paripūrā yonisomanasikāraṁ paripūreti, yonisomanasikāro paripūro satisampajaññaṁ paripūreti, satisampajaññaṁ paripūraṁ indriyasaṁvaraṁ paripūreti, indriyasaṁvaro paripūro tīṇi sucaritāni paripūreti, tīṇi sucaritāni paripūrāni cattāro satipaṭṭhāne paripūrenti, cattāro satipaṭṭhānā paripūrā satta bojjhaṅge paripūrenti, satta bojjhaṅgā paripūrā vijjāvimuttiṁ paripūrenti; 
+-In the same way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … proper attention … awareness and full comprehension … sense restraint … the three kinds of good conduct … the four kinds of mindfulness meditation … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. 
++In the same way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … proper attention … awareness and full comprehension … sense restraint … the three kinds of good conduct … the four establishments of awareness … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. 
+--- sujato/sutta/an/an10/an10.62_translation-en-sujato.json
++++ sujato/sutta/an/an10/an10.62_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an10.62:6.6
+ PLI: ‘Cattāro satipaṭṭhānā’tissa vacanīyaṁ. 
+-You should say: ‘The four kinds of mindfulness meditation.’ 
++You should say: ‘The four establishments of awareness.’ 
+@@ -1,2 +1,2 @@ an10.62:6.7
+ PLI: Cattāropāhaṁ, bhikkhave, satipaṭṭhāne sāhāre vadāmi, no anāhāre. 
+-I say that the four kinds of mindfulness meditation are fueled by something, they’re not unfueled. 
++I say that the four establishments of awareness are fueled by something, they’re not unfueled. 
+@@ -1,2 +1,2 @@ an10.62:6.8
+ PLI: Ko cāhāro catunnaṁ satipaṭṭhānānaṁ? 
+-And what is the fuel for the four kinds of mindfulness meditation? 
++And what is the fuel for the four establishments of awareness? 
+@@ -1,2 +1,2 @@ an10.62:7.1
+ PLI: Iti kho, bhikkhave, sappurisasaṁsevo paripūro saddhammassavanaṁ paripūreti, saddhammassavanaṁ paripūraṁ saddhaṁ paripūreti, saddhā paripūrā yonisomanasikāraṁ paripūreti, yonisomanasikāro paripūro satisampajaññaṁ paripūreti, satisampajaññaṁ paripūraṁ indriyasaṁvaraṁ paripūreti, indriyasaṁvaro paripūro tīṇi sucaritāni paripūreti, tīṇi sucaritāni paripūrāni cattāro satipaṭṭhāne paripūrenti, cattāro satipaṭṭhānā paripūrā satta bojjhaṅge paripūrenti, satta bojjhaṅgā paripūrā vijjāvimuttiṁ paripūrenti; 
+-In this way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … proper attention … awareness and full comprehension … sense restraint … the three kinds of good conduct … the four kinds of mindfulness meditation … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. 
++In this way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … proper attention … awareness and full comprehension … sense restraint … the three kinds of good conduct … the four establishments of awareness … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. 
+@@ -1,2 +1,2 @@ an10.62:8.3
+ PLI: Evamevaṁ kho, bhikkhave, sappurisasaṁsevo paripūro saddhammassavanaṁ paripūreti …pe… 
+-In the same way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … proper attention … awareness and full comprehension … sense restraint …the three kinds of good conduct … the four kinds of mindfulness meditation … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. 
++In the same way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … proper attention … awareness and full comprehension … sense restraint …the three kinds of good conduct … the four establishments of awareness … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. 
+--- sujato/sutta/an/an10/an10.90_translation-en-sujato.json
++++ sujato/sutta/an/an10/an10.90_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an10.90:5.1
+ PLI: Puna caparaṁ, bhante, khīṇāsavassa bhikkhuno cattāro satipaṭṭhānā bhāvitā honti subhāvitā. 
+-Furthermore, a bhikkhu with defilements ended has well developed the four kinds of mindfulness meditation. 
++Furthermore, a bhikkhu with defilements ended has well developed the four establishments of awareness. 
+--- sujato/sutta/an/an10/an10.95_translation-en-sujato.json
++++ sujato/sutta/an/an10/an10.95_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an10.95:11.2
+ PLI: Atha kho evamettha tathāgatassa hoti: ‘ye kho keci lokamhā nīyiṁsu vā nīyanti vā nīyissanti vā, sabbe te pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe, catūsu satipaṭṭhānesu suppatiṭṭhitacittā, satta bojjhaṅge yathābhūtaṁ bhāvetvā. 
+-But the Realized One knows that whoever is saved from the world—whether in the past, the future, or the present—all have given up the five hindrances, corruptions of the heart that weaken wisdom. They have firmly established their mind in the four kinds of mindfulness meditation. And they have truly developed the seven awakening factors. 
++But the Realized One knows that whoever is saved from the world—whether in the past, the future, or the present—all have given up the five hindrances, corruptions of the heart that weaken wisdom. They have firmly established their mind in the four establishments of awareness. And they have truly developed the seven awakening factors. 
+--- sujato/sutta/an/an11/an11.17_translation-en-sujato.json
++++ sujato/sutta/an/an11/an11.17_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an11.17:11.2
+ PLI: Idha, bhikkhave, bhikkhu cattāro satipaṭṭhāne yathābhūtaṁ nappajānāti. 
+-It’s when a bhikkhu doesn’t truly understand the four kinds of mindfulness meditation. 
++It’s when a bhikkhu doesn’t truly understand the four establishments of awareness. 
+@@ -1,2 +1,2 @@ an11.17:25.2
+ PLI: Idha, bhikkhave, bhikkhu cattāro satipaṭṭhāne yathābhūtaṁ pajānāti. 
+-It’s when a bhikkhu truly understands the four kinds of mindfulness meditation. 
++It’s when a bhikkhu truly understands the four establishments of awareness. 
+--- sujato/sutta/an/an4/an4.274_translation-en-sujato.json
++++ sujato/sutta/an/an4/an4.274_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an4.274:0.3
+ PLI: Satipaṭṭhānasutta 
+-Mindfulness Meditation 
++The Establishment of Awareness 
+--- sujato/sutta/an/an5/an5.136_translation-en-sujato.json
++++ sujato/sutta/an/an5/an5.136_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an5.136:3.5
+ PLI: catūsu satipaṭṭhānesu suppatiṭṭhitacitto hoti; 
+-Their mind is firmly established in the four kinds of mindfulness meditation. 
++Their mind is firmly established in the four establishments of awareness. 
+--- sujato/sutta/an/an5/an5.15_translation-en-sujato.json
++++ sujato/sutta/an/an5/an5.15_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an5.15:1.11
+ PLI: Catūsu satipaṭṭhānesu. 
+-In the four kinds of mindfulness meditation. 
++In the four establishments of awareness. 
+--- sujato/sutta/an/an6/an6.57_translation-en-sujato.json
++++ sujato/sutta/an/an6/an6.57_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an6.57:13.5
+ PLI: So evaṁ pabbajito samāno pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe, catūsu satipaṭṭhānesu suppatiṭṭhitacitto, satta bojjhaṅge yathābhūtaṁ bhāvetvā akaṇhaṁ asukkaṁ nibbānaṁ abhijāyati. 
+-They give up the five hindrances, corruptions of the heart that weaken wisdom. They firmly establish their mind in the four kinds of mindfulness meditation. They truly develop the seven awakening factors. And then they give rise to extinguishment, which is neither dark nor bright. 
++They give up the five hindrances, corruptions of the heart that weaken wisdom. They firmly establish their mind in the four establishments of awareness. They truly develop the seven awakening factors. And then they give rise to extinguishment, which is neither dark nor bright. 
+@@ -1,2 +1,2 @@ an6.57:16.5
+ PLI: So evaṁ pabbajito samāno pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe, catūsu satipaṭṭhānesu suppatiṭṭhitacitto, satta bojjhaṅge yathābhūtaṁ bhāvetvā akaṇhaṁ asukkaṁ nibbānaṁ abhijāyati. 
+-They give up the five hindrances, corruptions of the heart that weaken wisdom. They firmly establish their mind in the four kinds of mindfulness meditation. They truly develop the seven awakening factors. And then they give rise to extinguishment, which is neither dark nor bright. 
++They give up the five hindrances, corruptions of the heart that weaken wisdom. They firmly establish their mind in the four establishments of awareness. They truly develop the seven awakening factors. And then they give rise to extinguishment, which is neither dark nor bright. 
+--- sujato/sutta/an/an7/an7.71_translation-en-sujato.json
++++ sujato/sutta/an/an7/an7.71_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an7.71:1.7
+ PLI: Catunnaṁ satipaṭṭhānānaṁ, catunnaṁ sammappadhānānaṁ, catunnaṁ iddhipādānaṁ, pañcannaṁ indriyānaṁ, pañcannaṁ balānaṁ, sattannaṁ bojjhaṅgānaṁ, ariyassa aṭṭhaṅgikassa maggassa. 
+-The four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
++The four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
+@@ -1,2 +1,2 @@ an7.71:2.14
+ PLI: Catunnaṁ satipaṭṭhānānaṁ, catunnaṁ sammappadhānānaṁ, catunnaṁ iddhipādānaṁ, pañcannaṁ indriyānaṁ, pañcannaṁ balānaṁ, sattannaṁ bojjhaṅgānaṁ, ariyassa aṭṭhaṅgikassa maggassa. 
+-The four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
++The four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
+@@ -1,2 +1,2 @@ an7.71:3.7
+ PLI: Catunnaṁ satipaṭṭhānānaṁ, catunnaṁ sammappadhānānaṁ, catunnaṁ iddhipādānaṁ, pañcannaṁ indriyānaṁ, pañcannaṁ balānaṁ, sattannaṁ bojjhaṅgānaṁ, ariyassa aṭṭhaṅgikassa maggassa. 
+-The four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
++The four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
+@@ -1,2 +1,2 @@ an7.71:4.14
+ PLI: Catunnaṁ satipaṭṭhānānaṁ …pe… ariyassa aṭṭhaṅgikassa maggassa. 
+-The four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
++The four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
+--- sujato/sutta/an/an8/an8.19_translation-en-sujato.json
++++ sujato/sutta/an/an8/an8.19_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an8.19:17.2
+ PLI: evamevaṁ kho, pahārāda, ayaṁ dhammavinayo bahuratano anekaratano. Tatrimāni ratanāni, seyyathidaṁ—cattāro satipaṭṭhānā, cattāro sammappadhānā, cattāro iddhipādā, pañcindriyāni, pañca balāni, satta bojjhaṅgā, ariyo aṭṭhaṅgiko maggo. 
+-In the same way, this teaching and training is full of many kinds of treasures, such as the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
++In the same way, this teaching and training is full of many kinds of treasures, such as the four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
+--- sujato/sutta/an/an8/an8.28_translation-en-sujato.json
++++ sujato/sutta/an/an8/an8.28_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an8.28:5.1
+ PLI: Puna caparaṁ, bhante, khīṇāsavassa bhikkhuno cattāro satipaṭṭhānā bhāvitā honti subhāvitā. 
+-Furthermore, a bhikkhu with defilements ended has well developed the four kinds of mindfulness meditation. 
++Furthermore, a bhikkhu with defilements ended has well developed the four establishments of awareness. 
+--- sujato/sutta/an/an9/an9.63_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.63_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.63:0.2
+ PLI: 7. Satipaṭṭhānavagga 
+-7. Mindfulness Meditation 
++7. The Establishment of Awareness 
+@@ -1,2 +1,2 @@ an9.63:0.3
+ PLI: Sikkhādubbalyasutta 
+-Weaknesses in Training and Mindfulness Meditation 
++Weaknesses in Training and the Establishment of Awareness 
+@@ -1,2 +1,2 @@ an9.63:2.1
+ PLI: Imesaṁ kho, bhikkhave, pañcannaṁ sikkhādubbalyānaṁ pahānāya cattāro satipaṭṭhānā bhāvetabbā. 
+-To give up these five weaknesses in your training you should develop the four kinds of mindfulness meditation. 
++To give up these five weaknesses in your training you should develop the four establishments of awareness. 
+@@ -1,2 +1,2 @@ an9.63:2.7
+ PLI: Imesaṁ kho, bhikkhave, pañcannaṁ sikkhādubbalyānaṁ pahānāya ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
+-To give up those five weaknesses in your training you should develop these four kinds of mindfulness meditation.” 
++To give up those five weaknesses in your training you should develop these four establishments of awareness.” 
+--- sujato/sutta/an/an9/an9.64_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.64_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.64:0.2
+ PLI: 7. Satipaṭṭhānavagga 
+-7. Mindfulness Meditation 
++7. The Establishment of Awareness 
+@@ -1,2 +1,2 @@ an9.64:2.1
+ PLI: Imesaṁ kho, bhikkhave, pañcannaṁ nīvaraṇānaṁ pahānāya cattāro satipaṭṭhānā bhāvetabbā. 
+-To give up these five hindrances you should develop the four kinds of mindfulness meditation. 
++To give up these five hindrances you should develop the four establishments of awareness. 
+@@ -1,2 +1,2 @@ an9.64:2.7
+ PLI: Imesaṁ kho, bhikkhave, pañcannaṁ nīvaraṇānaṁ pahānāya ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
+-To give up those five hindrances you should develop these four kinds of mindfulness meditation.” 
++To give up those five hindrances you should develop these four establishments of awareness.” 
+--- sujato/sutta/an/an9/an9.65_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.65_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.65:0.2
+ PLI: 7. Satipaṭṭhānavagga 
+-7. Mindfulness Meditation 
++7. The Establishment of Awareness 
+@@ -1,2 +1,2 @@ an9.65:2.1
+ PLI: Imesaṁ kho, bhikkhave, pañcannaṁ kāmaguṇānaṁ pahānāya …pe… ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
+-To give up these five kinds of sensual stimulation you should develop the four kinds of mindfulness meditation. …” 
++To give up these five kinds of sensual stimulation you should develop the four establishments of awareness. …” 
+--- sujato/sutta/an/an9/an9.66_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.66_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.66:0.2
+ PLI: 7. Satipaṭṭhānavagga 
+-7. Mindfulness Meditation 
++7. The Establishment of Awareness 
+@@ -1,2 +1,2 @@ an9.66:2.1
+ PLI: Imesaṁ kho, bhikkhave, pañcannaṁ upādānakkhandhānaṁ pahānāya …pe… ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
+-To give up these five grasping aggregates you should develop the four kinds of mindfulness meditation. …” 
++To give up these five grasping aggregates you should develop the four establishments of awareness. …” 
+--- sujato/sutta/an/an9/an9.67_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.67_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.67:0.2
+ PLI: 7. Satipaṭṭhānavagga 
+-7. Mindfulness Meditation 
++7. The Establishment of Awareness 
+@@ -1,2 +1,2 @@ an9.67:2.1
+ PLI: Imesaṁ kho, bhikkhave, pañcannaṁ orambhāgiyānaṁ saṁyojanānaṁ pahānāya …pe… ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
+-To give up these five lower fetters you should develop the four kinds of mindfulness meditation. …” 
++To give up these five lower fetters you should develop the four establishments of awareness. …” 
+--- sujato/sutta/an/an9/an9.68_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.68_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.68:0.2
+ PLI: 7. Satipaṭṭhānavagga 
+-7. Mindfulness Meditation 
++7. The Establishment of Awareness 
+@@ -1,2 +1,2 @@ an9.68:2.1
+ PLI: Imāsaṁ kho, bhikkhave, pañcannaṁ gatīnaṁ pahānāya …pe… ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
+-To give up these five destinations you should develop the four kinds of mindfulness meditation. …” 
++To give up these five destinations you should develop the four establishments of awareness. …” 
+--- sujato/sutta/an/an9/an9.69_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.69_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.69:0.2
+ PLI: 7. Satipaṭṭhānavagga 
+-7. Mindfulness Meditation 
++7. The Establishment of Awareness 
+@@ -1,2 +1,2 @@ an9.69:2.1
+ PLI: Imesaṁ kho, bhikkhave, pañcannaṁ macchariyānaṁ pahānāya …pe… ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
+-To give up these five kinds of stinginess you should develop the four kinds of mindfulness meditation. …” 
++To give up these five kinds of stinginess you should develop the four establishments of awareness. …” 
+--- sujato/sutta/an/an9/an9.70_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.70_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.70:0.2
+ PLI: 7. Satipaṭṭhānavagga 
+-7. Mindfulness Meditation 
++7. The Establishment of Awareness 
+@@ -1,2 +1,2 @@ an9.70:2.1
+ PLI: Imesaṁ kho, bhikkhave, pañcannaṁ uddhambhāgiyānaṁ saṁyojanānaṁ pahānāya …pe… ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
+-To give up these five higher fetters you should develop the four kinds of mindfulness meditation. …” 
++To give up these five higher fetters you should develop the four establishments of awareness. …” 
+--- sujato/sutta/an/an9/an9.71_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.71_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.71:0.2
+ PLI: 7. Satipaṭṭhānavagga 
+-7. Mindfulness Meditation 
++7. The Establishment of Awareness 
+@@ -1,2 +1,2 @@ an9.71:3.1
+ PLI: Imesaṁ kho, bhikkhave, pañcannaṁ cetokhilānaṁ pahānāya …pe… ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
+-To give up these five kinds of hard-heartedness you should develop the four kinds of mindfulness meditation. …” 
++To give up these five kinds of hard-heartedness you should develop the four establishments of awareness. …” 
+--- sujato/sutta/an/an9/an9.72_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.72_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.72:0.2
+ PLI: 7. Satipaṭṭhānavagga 
+-7. Mindfulness Meditation 
++7. The Establishment of Awareness 
+@@ -1,2 +1,2 @@ an9.72:3.1
+ PLI: Imesaṁ kho, bhikkhave, pañcannaṁ cetasovinibandhānaṁ pahānāya cattāro satipaṭṭhānā bhāvetabbā. 
+-To give up these five shackles of the heart you should develop the four kinds of mindfulness meditation. 
++To give up these five shackles of the heart you should develop the four establishments of awareness. 
+@@ -1,2 +1,2 @@ an9.72:3.7
+ PLI: Imesaṁ kho, bhikkhave, pañcannaṁ cetasovinibandhānaṁ pahānāya ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
+-To give up these five shackles of the heart you should develop these four kinds of mindfulness meditation.” 
++To give up these five shackles of the heart you should develop these four establishments of awareness.” 
+--- sujato/sutta/an/an9/an9.74-81_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.74-81_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.74-81:1.1
+ PLI: (Yathā satipaṭṭhānavagge tathā sammappadhānavasena vitthāretabbā.) 
+-(Tell in full as in the chapter on mindfulness meditation.) 
++(Tell in full as in the chapter on the establishment of awareness.) 
+--- sujato/sutta/an/an9/an9.84-91_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.84-91_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.84-91:1.1
+ PLI: (Yathā satipaṭṭhānavagge tathā iddhipādavasena vitthāretabbā.) 
+-(Tell in full as in the chapter on mindfulness meditation.) 
++(Tell in full as in the chapter on the establishment of awareness.) 
+--- sujato/sutta/dn/dn16_translation-en-sujato.json
++++ sujato/sutta/dn/dn16_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn16:1.17.9
+ PLI: ‘ye te, bhante, ahesuṁ atītamaddhānaṁ arahanto sammāsambuddhā, sabbe te bhagavanto pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe catūsu satipaṭṭhānesu supatiṭṭhitacittā sattabojjhaṅge yathābhūtaṁ bhāvetvā anuttaraṁ sammāsambodhiṁ abhisambujjhiṁsu. 
+-‘All the perfected ones, fully awakened Buddhas—whether past, future, or present—give up the five hindrances, corruptions of the heart that weaken wisdom. Their mind is firmly established in the four kinds of mindfulness meditation. They correctly develop the seven awakening factors. And they awaken to the supreme perfect awakening.’” 
++‘All the perfected ones, fully awakened Buddhas—whether past, future, or present—give up the five hindrances, corruptions of the heart that weaken wisdom. Their mind is firmly established in the four establishments of awareness. They correctly develop the seven awakening factors. And they awaken to the supreme perfect awakening.’” 
+@@ -1,2 +1,2 @@ dn16:3.50.5
+ PLI: Seyyathidaṁ—cattāro satipaṭṭhānā, cattāro sammappadhānā, cattāro iddhipādā, pañcindriyāni, pañca balāni, satta bojjhaṅgā, ariyo aṭṭhaṅgiko maggo. 
+-They are: the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
++They are: the four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
+--- sujato/sutta/dn/dn18_translation-en-sujato.json
++++ sujato/sutta/dn/dn18_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn18:26.3.0
+ PLI: 8. Catusatipaṭṭhāna 
+-8. Mindfulness Meditation 
++8. The Establishment of Awareness 
+@@ -1,2 +1,2 @@ dn18:26.4
+ PLI: “Taṁ kiṁ maññanti, bhonto devā tāvatiṁsā, yāva supaññattā cime tena bhagavatā jānatā passatā arahatā sammāsambuddhena cattāro satipaṭṭhānā paññattā kusalassādhigamāya. 
+-“What do the good gods of the thirty-three think? How well described by the Buddha are the four kinds of mindfulness meditation! They are taught for achieving what is skillful. 
++“What do the good gods of the thirty-three think? How well described by the Buddha are the four establishments of awareness! They are taught for achieving what is skillful. 
+@@ -1,2 +1,2 @@ dn18:26.16
+ PLI: Ime kho, bho, tena bhagavatā jānatā passatā arahatā sammāsambuddhena cattāro satipaṭṭhānā paññattā kusalassādhigamāyā”ti. 
+-These are the four kinds of mindfulness meditation taught by the Buddha for achieving what is skillful.” 
++These are the four establishments of awareness taught by the Buddha for achieving what is skillful.” 
+--- sujato/sutta/dn/dn22_translation-en-sujato.json
++++ sujato/sutta/dn/dn22_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn22:0.2
+ PLI: Mahāsatipaṭṭhānasutta 
+-The Longer Discourse on Mindfulness Meditation 
++The Longer Discourse on the Establishment of Awareness 
+@@ -1,2 +1,2 @@ dn22:1.7
+ PLI: “Ekāyano ayaṁ, bhikkhave, maggo sattānaṁ visuddhiyā, sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ cattāro satipaṭṭhānā. 
+-“Bhikkhus, the four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
++“Bhikkhus, the four establishments of awareness are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
+@@ -1,2 +1,2 @@ dn22:22.1
+ PLI: Yo hi koci, bhikkhave, ime cattāro satipaṭṭhāne evaṁ bhāveyya sattavassāni, tassa dvinnaṁ phalānaṁ aññataraṁ phalaṁ pāṭikaṅkhaṁ 
+-Anyone who develops these four kinds of mindfulness meditation in this way for seven years can expect one of two results: 
++Anyone who develops these four establishments of awareness in this way for seven years can expect one of two results: 
+@@ -1,2 +1,2 @@ dn22:22.4
+ PLI: Yo hi koci, bhikkhave, ime cattāro satipaṭṭhāne evaṁ bhāveyya cha vassāni …pe… 
+-anyone who develops these four kinds of mindfulness meditation in this way for six years … 
++anyone who develops these four establishments of awareness in this way for six years … 
+@@ -1,2 +1,2 @@ dn22:22.22
+ PLI: Yo hi koci, bhikkhave, ime cattāro satipaṭṭhāne evaṁ bhāveyya sattāhaṁ, tassa dvinnaṁ phalānaṁ aññataraṁ phalaṁ pāṭikaṅkhaṁ 
+-anyone who develops these four kinds of mindfulness meditation in this way for seven days can expect one of two results: 
++anyone who develops these four establishments of awareness in this way for seven days can expect one of two results: 
+@@ -1,2 +1,2 @@ dn22:22.24
+ PLI: Ekāyano ayaṁ, bhikkhave, maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya yadidaṁ cattāro satipaṭṭhānāti. 
+-‘The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.’ 
++‘The four establishments of awareness are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.’ 
+--- sujato/sutta/dn/dn28_translation-en-sujato.json
++++ sujato/sutta/dn/dn28_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn28:2.9
+ PLI: Ye te, bhante, ahesuṁ atītamaddhānaṁ arahanto sammāsambuddhā, sabbe te bhagavanto pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe catūsu satipaṭṭhānesu suppatiṭṭhitacittā, satta sambojjhaṅge yathābhūtaṁ bhāvetvā anuttaraṁ sammāsambodhiṁ abhisambujjhiṁsu. 
+-‘All the perfected ones, fully awakened Buddhas—whether past, future, or present—give up the five hindrances, corruptions of the heart that weaken wisdom. Their mind is firmly established in the four kinds of mindfulness meditation. They correctly develop the seven awakening factors. And they awaken to the supreme perfect awakening.’ 
++‘All the perfected ones, fully awakened Buddhas—whether past, future, or present—give up the five hindrances, corruptions of the heart that weaken wisdom. Their mind is firmly established in the four establishments of awareness. They correctly develop the seven awakening factors. And they awaken to the supreme perfect awakening.’ 
+@@ -1,2 +1,2 @@ dn28:3.3
+ PLI: cattāro satipaṭṭhānā, cattāro sammappadhānā, cattāro iddhipādā, pañcindriyāni, pañca balāni, satta bojjhaṅgā, ariyo aṭṭhaṅgiko maggo. 
+-the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
++the four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
+--- sujato/sutta/dn/dn29_translation-en-sujato.json
++++ sujato/sutta/dn/dn29_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn29:17.3
+ PLI: Seyyathidaṁ—cattāro satipaṭṭhānā, cattāro sammappadhānā, cattāro iddhipādā, pañcindriyāni, pañca balāni, satta bojjhaṅgā, ariyo aṭṭhaṅgiko maggo. 
+-They are the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
++They are the four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
+@@ -1,2 +1,2 @@ dn29:40.1
+ PLI: Imesañca, cunda, pubbantasahagatānaṁ diṭṭhinissayānaṁ imesañca aparantasahagatānaṁ diṭṭhinissayānaṁ pahānāya samatikkamāya evaṁ mayā cattāro satipaṭṭhānā desitā paññattā. 
+-I have taught and pointed out the four kinds of mindfulness meditation for giving up and going beyond all these views of the first beginning and the final end. 
++I have taught and pointed out the four establishments of awareness for giving up and going beyond all these views of the first beginning and the final end. 
+@@ -1,2 +1,2 @@ dn29:40.7
+ PLI: Imesañca, cunda, pubbantasahagatānaṁ diṭṭhinissayānaṁ imesañca aparantasahagatānaṁ diṭṭhinissayānaṁ pahānāya samatikkamāya. Evaṁ mayā ime cattāro satipaṭṭhānā desitā paññattā”ti. 
+-These are the four kinds of mindfulness meditation that I have taught for giving up and going beyond all these views of the first beginning and the final end.” 
++These are the four establishments of awareness that I have taught for giving up and going beyond all these views of the first beginning and the final end.” 
+--- sujato/sutta/dn/dn33_translation-en-sujato.json
++++ sujato/sutta/dn/dn33_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn33:1.11.4
+ PLI: Cattāro satipaṭṭhānā. 
+-<b>Four kinds of mindfulness meditation:</b> 
++<b>Four establishments of awareness:</b> 
+--- sujato/sutta/dn/dn34_translation-en-sujato.json
++++ sujato/sutta/dn/dn34_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn34:1.5.7
+ PLI: Cattāro satipaṭṭhānā—
+-The four kinds of mindfulness meditation. 
++The four establishments of awareness. 
+@@ -1,2 +1,2 @@ dn34:1.8.65
+ PLI: Puna caparaṁ, āvuso, khīṇāsavassa bhikkhuno cattāro satipaṭṭhānā bhāvitā honti subhāvitā. 
+-Furthermore, a bhikkhu with defilements ended has well developed the four kinds of mindfulness meditation. … 
++Furthermore, a bhikkhu with defilements ended has well developed the four establishments of awareness. … 
+--- sujato/sutta/kn/thag/thag1.100_translation-en-sujato.json
++++ sujato/sutta/kn/thag/thag1.100_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thag1.100:1.2
+ PLI: Satipaṭṭhānagocaro; 
+-mindfulness meditation is your range; 
++the establishment of awareness is your range; 
+--- sujato/sutta/kn/thag/thag16.3_translation-en-sujato.json
++++ sujato/sutta/kn/thag/thag16.3_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thag16.3:19.1
+ PLI: Satipaṭṭhānapāsādaṁ, 
+-I climbed the tower of mindfulness meditation, 
++I climbed the tower of the establishment of awareness, 
+--- sujato/sutta/kn/thag/thag18.1_translation-en-sujato.json
++++ sujato/sutta/kn/thag/thag18.1_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thag18.1:40.1
+ PLI: Satipaṭṭhānagīvo so, 
+-The great sage’s neck is mindfulness meditation; 
++The great sage’s neck is the establishment of awareness; 
+--- sujato/sutta/kn/thag/thag2.23_translation-en-sujato.json
++++ sujato/sutta/kn/thag/thag2.23_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thag2.23:2.1
+ PLI: Cattāro satipaṭṭhāne, 
+-Developing the four mindfulness meditations, 
++Developing the four establishments of awareness, 
+--- sujato/sutta/kn/thag/thag5.8_translation-en-sujato.json
++++ sujato/sutta/kn/thag/thag5.8_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thag5.8:3.1
+ PLI: Bhāvento satipaṭṭhāne, 
+-Developing mindfulness meditation, 
++Developing the establishment of awareness, 
+--- sujato/sutta/kn/ud/vagga5/ud5.5_translation-en-sujato.json
++++ sujato/sutta/kn/ud/vagga5/ud5.5_translation-en-sujato.json
+@@ -1,2 +1,2 @@ ud5.5:25.2
+ PLI: evamevaṁ kho, bhikkhave, ayaṁ dhammavinayo bahuratano anekaratano; tatrimāni ratanāni, seyyathidaṁ—cattāro satipaṭṭhānā, cattāro sammappadhānā, cattāro iddhipādā, pañcindriyāni, pañca balāni, satta bojjhaṅgā, ariyo aṭṭhaṅgiko maggo. 
+-In the same way, this teaching and training is full of many kinds of treasures, such as the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
++In the same way, this teaching and training is full of many kinds of treasures, such as the four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
+--- sujato/sutta/mn/mn103_translation-en-sujato.json
++++ sujato/sutta/mn/mn103_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn103:3.2
+ PLI: cattāro satipaṭṭhānā cattāro sammappadhānā cattāro iddhipādā pañcindriyāni pañca balāni satta bojjhaṅgā ariyo aṭṭhaṅgiko maggo, tattha sabbeheva samaggehi sammodamānehi avivadamānehi sikkhitabbaṁ. 
+-the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. You should train in these things in harmony, appreciating each other, without dispute. 
++the four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. You should train in these things in harmony, appreciating each other, without dispute. 
+--- sujato/sutta/mn/mn104_translation-en-sujato.json
++++ sujato/sutta/mn/mn104_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn104:5.3
+ PLI: cattāro satipaṭṭhānā cattāro sammappadhānā cattāro iddhipādā pañcindriyāni pañca balāni satta bojjhaṅgā ariyo aṭṭhaṅgiko maggo, passasi no tvaṁ, ānanda, imesu dhammesu dvepi bhikkhū nānāvāde”ti? 
+-the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path?” 
++the four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path?” 
+--- sujato/sutta/mn/mn10_translation-en-sujato.json
++++ sujato/sutta/mn/mn10_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn10:0.2
+ PLI: Satipaṭṭhānasutta 
+-Mindfulness Meditation 
++The Establishment of Awareness 
+@@ -1,2 +1,2 @@ mn10:2.1
+ PLI: “Ekāyano ayaṁ, bhikkhave, maggo sattānaṁ visuddhiyā, sokaparidevānaṁ samatikkamāya, dukkhadomanassānaṁ atthaṅgamāya, ñāyassa adhigamāya, nibbānassa sacchikiriyāya, yadidaṁ cattāro satipaṭṭhānā. 
+-“Bhikkhus, the four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
++“Bhikkhus, the four establishments of awareness are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
+@@ -1,2 +1,2 @@ mn10:46.1
+ PLI: Yo hi koci, bhikkhave, ime cattāro satipaṭṭhāne evaṁ bhāveyya satta vassāni, tassa dvinnaṁ phalānaṁ aññataraṁ phalaṁ pāṭikaṅkhaṁ 
+-Anyone who develops these four kinds of mindfulness meditation in this way for seven years can expect one of two results: 
++Anyone who develops these four establishments of awareness in this way for seven years can expect one of two results: 
+@@ -1,2 +1,2 @@ mn10:46.4
+ PLI: Yo hi koci, bhikkhave, ime cattāro satipaṭṭhāne evaṁ bhāveyya cha vassāni …pe… 
+-anyone who develops these four kinds of mindfulness meditation in this way for six years … 
++anyone who develops these four establishments of awareness in this way for six years … 
+@@ -1,2 +1,2 @@ mn10:46.22
+ PLI: Yo hi koci, bhikkhave, ime cattāro satipaṭṭhāne evaṁ bhāveyya sattāhaṁ, tassa dvinnaṁ phalānaṁ aññataraṁ phalaṁ pāṭikaṅkhaṁ 
+-anyone who develops these four kinds of mindfulness meditation in this way for seven days can expect one of two results: 
++anyone who develops these four establishments of awareness in this way for seven days can expect one of two results: 
+@@ -1,2 +1,2 @@ mn10:47.1
+ PLI: ‘Ekāyano ayaṁ, bhikkhave, maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya yadidaṁ cattāro satipaṭṭhānā’ti. 
+-‘The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.’ 
++‘The four establishments of awareness are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.’ 
+--- sujato/sutta/mn/mn118_translation-en-sujato.json
++++ sujato/sutta/mn/mn118_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn118:13.1
+ PLI: Santi, bhikkhave, bhikkhū imasmiṁ bhikkhusaṅghe catunnaṁ satipaṭṭhānānaṁ bhāvanānuyogamanuyuttā viharanti—
+-In this Saṅgha there are bhikkhus who are committed to developing the four kinds of mindfulness meditation … 
++In this Saṅgha there are bhikkhus who are committed to developing the four establishments of awareness … 
+@@ -1,2 +1,2 @@ mn118:15.2
+ PLI: Ānāpānassati, bhikkhave, bhāvitā bahulīkatā cattāro satipaṭṭhāne paripūreti. 
+-Awareness of breathing, when developed and cultivated, fulfills the four kinds of mindfulness meditation. 
++Awareness of breathing, when developed and cultivated, fulfills the four establishments of awareness. 
+@@ -1,2 +1,2 @@ mn118:15.3
+ PLI: Cattāro satipaṭṭhānā bhāvitā bahulīkatā satta bojjhaṅge paripūrenti. 
+-The four kinds of mindfulness meditation, when developed and cultivated, fulfill the seven awakening factors. 
++The four establishments of awareness, when developed and cultivated, fulfill the seven awakening factors. 
+@@ -1,2 +1,2 @@ mn118:23.1
+ PLI: Kathaṁ bhāvitā ca, bhikkhave, ānāpānassati kathaṁ bahulīkatā cattāro satipaṭṭhāne paripūreti? 
+-And how is awareness of breathing developed and cultivated so as to fulfill the four kinds of mindfulness meditation? 
++And how is awareness of breathing developed and cultivated so as to fulfill the four establishments of awareness? 
+@@ -1,2 +1,2 @@ mn118:28.1
+ PLI: Evaṁ bhāvitā kho, bhikkhave, ānāpānassati evaṁ bahulīkatā cattāro satipaṭṭhāne paripūreti. 
+-That’s how awareness of breathing, when developed and cultivated, fulfills the four kinds of mindfulness meditation. 
++That’s how awareness of breathing, when developed and cultivated, fulfills the four establishments of awareness. 
+@@ -1,2 +1,2 @@ mn118:29.1
+ PLI: Kathaṁ bhāvitā ca, bhikkhave, cattāro satipaṭṭhānā kathaṁ bahulīkatā satta bojjhaṅge paripūrenti? 
+-And how are the four kinds of mindfulness meditation developed and cultivated so as to fulfill the seven awakening factors? 
++And how are the four establishments of awareness developed and cultivated so as to fulfill the seven awakening factors? 
+@@ -1,2 +1,2 @@ mn118:40.1
+ PLI: Evaṁ bhāvitā kho, bhikkhave, cattāro satipaṭṭhānā evaṁ bahulīkatā satta sambojjhaṅge paripūrenti. 
+-That’s how the four kinds of mindfulness meditation, when developed and cultivated, fulfill the seven awakening factors. 
++That’s how the four establishments of awareness, when developed and cultivated, fulfill the seven awakening factors. 
+--- sujato/sutta/mn/mn125_translation-en-sujato.json
++++ sujato/sutta/mn/mn125_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn125:23.5
+ PLI: evameva kho, aggivessana, ariyasāvakassa ime cattāro satipaṭṭhānā cetaso upanibandhanā honti gehasitānañceva sīlānaṁ abhinimmadanāya gehasitānañceva sarasaṅkappānaṁ abhinimmadanāya gehasitānañceva darathakilamathapariḷāhānaṁ abhinimmadanāya ñāyassa adhigamāya nibbānassa sacchikiriyāya. 
+-In the same way, a noble disciple has these four kinds of mindfulness meditation as tethers for the mind so as to subdue behaviors tied to domestic life, memories and thoughts tied to domestic life, stress, weariness, and fever tied to domestic life, to discover the system, and to realize extinguishment. 
++In the same way, a noble disciple has these four establishments of awareness as tethers for the mind so as to subdue behaviors tied to domestic life, memories and thoughts tied to domestic life, stress, weariness, and fever tied to domestic life, to discover the system, and to realize extinguishment. 
+--- sujato/sutta/mn/mn12_translation-en-sujato.json
++++ sujato/sutta/mn/mn12_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn12:62.9
+ PLI: Te maṁ catunnaṁ satipaṭṭhānānaṁ upādāyupādāya pañhaṁ puccheyyuṁ, puṭṭho puṭṭho cāhaṁ tesaṁ byākareyyaṁ, byākatañca me byākatato dhāreyyuṁ, na ca maṁ dutiyakaṁ uttari paṭipuccheyyuṁ. 
+-They’d bring up questions about the four kinds of mindfulness meditation again and again, and I would answer each question. They’d remember the answers and not ask the same question twice. 
++They’d bring up questions about the four establishments of awareness again and again, and I would answer each question. They’d remember the answers and not ask the same question twice. 
+--- sujato/sutta/mn/mn149_translation-en-sujato.json
++++ sujato/sutta/mn/mn149_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn149:10.8
+ PLI: Tassa evaṁ imaṁ ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāvayato cattāropi satipaṭṭhānā bhāvanāpāripūriṁ gacchanti, cattāropi sammappadhānā bhāvanāpāripūriṁ gacchanti, cattāropi iddhipādā bhāvanāpāripūriṁ gacchanti, pañcapi indriyāni bhāvanāpāripūriṁ gacchanti, pañcapi balāni bhāvanāpāripūriṁ gacchanti, sattapi bojjhaṅgā bhāvanāpāripūriṁ gacchanti. 
+-When the noble eightfold path is developed, the following are fully developed: the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, and the seven awakening factors. 
++When the noble eightfold path is developed, the following are fully developed: the four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, and the seven awakening factors. 
+--- sujato/sutta/mn/mn151_translation-en-sujato.json
++++ sujato/sutta/mn/mn151_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn151:12.2
+ PLI: ‘bhāvitā nu kho me cattāro satipaṭṭhānā’ti? 
+-‘Have I developed the four kinds of mindfulness meditation?’ 
++‘Have I developed the four establishments of awareness?’ 
+--- sujato/sutta/mn/mn33_translation-en-sujato.json
++++ sujato/sutta/mn/mn33_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn33:12.2
+ PLI: Idha, bhikkhave, bhikkhu cattāro satipaṭṭhāne yathābhūtaṁ nappajānāti. 
+-It’s when a bhikkhu doesn’t truly understand the four kinds of mindfulness meditation. 
++It’s when a bhikkhu doesn’t truly understand the four establishments of awareness. 
+@@ -1,2 +1,2 @@ mn33:25.2
+ PLI: Idha, bhikkhave, bhikkhu cattāro satipaṭṭhāne yathābhūtaṁ pajānāti. 
+-It’s when a bhikkhu truly understands the four kinds of mindfulness meditation. 
++It’s when a bhikkhu truly understands the four establishments of awareness. 
+--- sujato/sutta/mn/mn44_translation-en-sujato.json
++++ sujato/sutta/mn/mn44_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn44:12.3
+ PLI: cattāro satipaṭṭhānā samādhinimittā; 
+-The four kinds of mindfulness meditation are the bases for concentration. 
++The four establishments of awareness are the bases for concentration. 
+--- sujato/sutta/mn/mn51_translation-en-sujato.json
++++ sujato/sutta/mn/mn51_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn51:3.8
+ PLI: te catūsu satipaṭṭhānesu suppatiṭṭhitacittā viharanti. 
+-They meditate with their minds firmly established in the four kinds of mindfulness meditation. 
++They meditate with their minds firmly established in the four establishments of awareness. 
+@@ -1,2 +1,2 @@ mn51:4.3
+ PLI: Yāva supaññattā cime, bhante, bhagavatā cattāro satipaṭṭhānā sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya. 
+-How well described by the Buddha are the four kinds of mindfulness meditation! They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
++How well described by the Buddha are the four establishments of awareness! They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
+@@ -1,2 +1,2 @@ mn51:4.4
+ PLI: Mayampi hi, bhante, gihī odātavasanā kālena kālaṁ imesu catūsu satipaṭṭhānesu suppatiṭṭhitacittā viharāma. 
+-For we white-clothed laypeople also from time to time meditate with our minds well established in the four kinds of mindfulness meditation. 
++For we white-clothed laypeople also from time to time meditate with our minds well established in the four establishments of awareness. 
+--- sujato/sutta/mn/mn77_translation-en-sujato.json
++++ sujato/sutta/mn/mn77_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn77:15.1
+ PLI: Puna caparaṁ, udāyi, akkhātā mayā sāvakānaṁ paṭipadā, yathāpaṭipannā me sāvakā cattāro satipaṭṭhāne bhāventi. 
+-Furthermore, I have explained to my disciples a practice that they use to develop the four kinds of mindfulness meditation. 
++Furthermore, I have explained to my disciples a practice that they use to develop the four establishments of awareness. 
+--- sujato/sutta/sn/sn22/sn22.101_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.101_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.101:2.6
+ PLI: Abhāvitattā catunnaṁ satipaṭṭhānānaṁ, abhāvitattā catunnaṁ sammappadhānānaṁ, abhāvitattā catunnaṁ iddhipādānaṁ, abhāvitattā pañcannaṁ indriyānaṁ, abhāvitattā pañcannaṁ balānaṁ, abhāvitattā sattannaṁ bojjhaṅgānaṁ, abhāvitattā ariyassa aṭṭhaṅgikassa maggassa. 
+-Undeveloped in the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
++Undeveloped in the four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
+@@ -1,2 +1,2 @@ sn22.101:3.14
+ PLI: Abhāvitattā catunnaṁ satipaṭṭhānānaṁ …pe… aṭṭhaṅgikassa maggassa. 
+-Undeveloped in the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
++Undeveloped in the four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
+@@ -1,2 +1,2 @@ sn22.101:4.6
+ PLI: Bhāvitattā catunnaṁ satipaṭṭhānānaṁ, bhāvitattā catunnaṁ sammappadhānānaṁ, bhāvitattā catunnaṁ iddhipādānaṁ, bhāvitattā pañcannaṁ indriyānaṁ, bhāvitattā pañcannaṁ balānaṁ, bhāvitattā sattannaṁ bojjhaṅgānaṁ, bhāvitattā ariyassa aṭṭhaṅgikassa maggassa. 
+-Developed in the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
++Developed in the four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
+@@ -1,2 +1,2 @@ sn22.101:5.14
+ PLI: Bhāvitattā catunnaṁ satipaṭṭhānānaṁ …pe… bhāvitattā ariyassa aṭṭhaṅgikassa maggassa. 
+-Developed in the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
++Developed in the four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. 
+--- sujato/sutta/sn/sn22/sn22.80_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.80_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.80:8.4
+ PLI: Catūsu vā satipaṭṭhānesu suppatiṭṭhitacittassa viharato animittaṁ vā samādhiṁ bhāvayato. 
+-In those who meditate with their mind firmly established in the four kinds of mindfulness meditation; or who develop signless concentration. 
++In those who meditate with their mind firmly established in the four establishments of awareness; or who develop signless concentration. 
+--- sujato/sutta/sn/sn22/sn22.81_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.81_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.81:4.7
+ PLI: vicayaso desitā cattāro satipaṭṭhānā; 
+-I’ve analytically taught the four kinds of mindfulness meditation, 
++I’ve analytically taught the four establishments of awareness, 
+--- sujato/sutta/sn/sn43/sn43.5_translation-en-sujato.json
++++ sujato/sutta/sn/sn43/sn43.5_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn43.5:0.3
+ PLI: Satipaṭṭhānasutta 
+-Mindfulness Meditation 
++The Establishment of Awareness 
+@@ -1,2 +1,2 @@ sn43.5:1.2
+ PLI: Cattāro satipaṭṭhānā. Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe…. 
+-The four kinds of mindfulness meditation. …” 
++The four establishments of awareness. …” 
+--- sujato/sutta/sn/sn45/sn45.155_translation-en-sujato.json
++++ sujato/sutta/sn/sn45/sn45.155_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn45.155:1.3
+ PLI: evameva kho, bhikkhave, bhikkhuno ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāvayato ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkaroto cattāropi satipaṭṭhānā bhāvanāpāripūriṁ gacchanti, cattāropi sammappadhānā bhāvanāpāripūriṁ gacchanti, cattāropi iddhipādā bhāvanāpāripūriṁ gacchanti, pañcapi indriyāni bhāvanāpāripūriṁ gacchanti, pañcapi balāni bhāvanāpāripūriṁ gacchanti, sattapi bojjhaṅgā bhāvanāpāripūriṁ gacchanti. 
+-In the same way, when the noble eightfold path is developed and cultivated the following are fully developed: the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, and the seven awakening factors. 
++In the same way, when the noble eightfold path is developed and cultivated the following are fully developed: the four establishments of awareness, the four right efforts, the four bases of psychic power, the five faculties, the five powers, and the seven awakening factors. 
+--- sujato/sutta/sn/sn46/sn46.6_translation-en-sujato.json
++++ sujato/sutta/sn/sn46/sn46.6_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn46.6:2.4
+ PLI: “Cattāro kho, kuṇḍaliya, satipaṭṭhānā bhāvitā bahulīkatā satta bojjhaṅge paripūrentī”ti. 
+-“The four kinds of mindfulness meditation.” 
++“The four establishments of awareness.” 
+@@ -1,2 +1,2 @@ sn46.6:2.5
+ PLI: “Katame pana, bho gotama, dhammā bhāvitā, bahulīkatā cattāro satipaṭṭhāne paripūrentī”ti? 
+-“But what things must be developed and cultivated in order to fulfill the four kinds of mindfulness meditation?” 
++“But what things must be developed and cultivated in order to fulfill the four establishments of awareness?” 
+@@ -1,2 +1,2 @@ sn46.6:6.1
+ PLI: Kathaṁ bhāvitāni ca, kuṇḍaliya, tīṇi sucaritāni kathaṁ bahulīkatāni cattāro satipaṭṭhāne paripūrenti? 
+-And how are the three kinds of good conduct developed and cultivated so as to fulfill the four kinds of mindfulness meditation? 
++And how are the three kinds of good conduct developed and cultivated so as to fulfill the four establishments of awareness? 
+@@ -1,2 +1,2 @@ sn46.6:6.3
+ PLI: Evaṁ bhāvitāni kho, kuṇḍaliya, tīṇi sucaritāni evaṁ bahulīkatāni cattāro satipaṭṭhāne paripūrenti. 
+-That’s how the three kinds of good conduct are developed and cultivated so as to fulfill the four kinds of mindfulness meditation. 
++That’s how the three kinds of good conduct are developed and cultivated so as to fulfill the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn46.6:7.1
+ PLI: Kathaṁ bhāvitā ca, kuṇḍaliya, cattāro satipaṭṭhānā kathaṁ bahulīkatā satta bojjhaṅge paripūrenti? 
+-And how are the four kinds of mindfulness meditation developed and cultivated so as to fulfill the seven awakening factors? 
++And how are the four establishments of awareness developed and cultivated so as to fulfill the seven awakening factors? 
+@@ -1,2 +1,2 @@ sn46.6:7.6
+ PLI: Evaṁ bhāvitā kho, kuṇḍaliya, cattāro satipaṭṭhānā evaṁ bahulīkatā satta bojjhaṅge paripūrenti. 
+-That’s how the four kinds of mindfulness meditation are developed and cultivated so as to fulfill the seven awakening factors. 
++That’s how the four establishments of awareness are developed and cultivated so as to fulfill the seven awakening factors. 
+--- sujato/sutta/sn/sn47/sn47.10_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.10_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.10:2.1
+ PLI: “Idha, bhante ānanda, sambahulā bhikkhuniyo catūsu satipaṭṭhānesu suppatiṭṭhitacittā viharantiyo uḷāraṁ pubbenāparaṁ visesaṁ sañjānantī”ti. 
+-“Honorable Ānanda, several nuns meditate with their minds firmly established in the four kinds of mindfulness meditation. They have realized a higher distinction than they had before.” 
++“Honorable Ānanda, several nuns meditate with their minds firmly established in the four establishments of awareness. They have realized a higher distinction than they had before.” 
+@@ -1,2 +1,2 @@ sn47.10:2.3
+ PLI: Yo hi koci, bhaginiyo, bhikkhu vā bhikkhunī vā catūsu satipaṭṭhānesu suppatiṭṭhitacitto viharati, tassetaṁ pāṭikaṅkhaṁ: 
+-Any monk or nun who meditates with their mind firmly established in the four kinds of mindfulness meditation can expect to 
++Any monk or nun who meditates with their mind firmly established in the four establishments of awareness can expect to 
+@@ -1,2 +1,2 @@ sn47.10:5.2
+ PLI: Yo hi koci, ānanda, bhikkhu vā bhikkhunī vā catūsu satipaṭṭhānesu suppatiṭṭhitacitto viharati, tassetaṁ pāṭikaṅkhaṁ: 
+-Any monk or nun who meditates with their mind firmly established in the four kinds of mindfulness meditation can expect to 
++Any monk or nun who meditates with their mind firmly established in the four establishments of awareness can expect to 
+--- sujato/sutta/sn/sn47/sn47.12_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.12_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.12:6.9
+ PLI: ‘yepi te, bhante, ahesuṁ atītamaddhānaṁ arahanto sammāsambuddhā, sabbe te bhagavanto pañca nīvaraṇe pahāya, cetaso upakkilese paññāya dubbalīkaraṇe, catūsu satipaṭṭhānesu suppatiṭṭhitacittā, satta bojjhaṅge yathābhūtaṁ bhāvetvā, anuttaraṁ sammāsambodhiṁ abhisambujjhiṁsu. 
+-‘Those who are perfected ones, fully awakened Buddhas—whether past, future, or present—give up the five hindrances, corruptions of the heart that weaken wisdom. Their mind is firmly established in the four kinds of mindfulness meditation. They correctly develop the seven awakening factors. And they awaken to the supreme perfect awakening.’” 
++‘Those who are perfected ones, fully awakened Buddhas—whether past, future, or present—give up the five hindrances, corruptions of the heart that weaken wisdom. Their mind is firmly established in the four establishments of awareness. They correctly develop the seven awakening factors. And they awaken to the supreme perfect awakening.’” 
+--- sujato/sutta/sn/sn47/sn47.15_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.15_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.15:1.7
+ PLI: Yato ca kho te, bāhiya, sīlañca suvisuddhaṁ bhavissati, diṭṭhi ca ujukā, tato tvaṁ, bāhiya, sīlaṁ nissāya sīle patiṭṭhāya cattāro satipaṭṭhāne bhāveyyāsi. 
+-When your ethics are well purified and your view is correct, you should develop the four kinds of mindfulness meditation, depending on and grounded on ethics. 
++When your ethics are well purified and your view is correct, you should develop the four establishments of awareness, depending on and grounded on ethics. 
+@@ -1,2 +1,2 @@ sn47.15:2.6
+ PLI: Yato kho tvaṁ, bāhiya, sīlaṁ nissāya sīle patiṭṭhāya ime cattāro satipaṭṭhāne evaṁ bhāvessasi, tato tuyhaṁ, bāhiya, yā ratti vā divaso vā āgamissati, vuddhiyeva pāṭikaṅkhā kusalesu dhammesu, no parihānī”ti. 
+-When you develop these four kinds of mindfulness meditation, depending on and grounded on ethics, you can expect growth, not decline, in skillful qualities, whether by day or by night.” 
++When you develop these four establishments of awareness, depending on and grounded on ethics, you can expect growth, not decline, in skillful qualities, whether by day or by night.” 
+--- sujato/sutta/sn/sn47/sn47.16_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.16_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.16:1.7
+ PLI: Yato ca kho te, uttiya, sīlañca suvisuddhaṁ bhavissati, diṭṭhi ca ujukā, tato tvaṁ, uttiya, sīlaṁ nissāya sīle patiṭṭhāya cattāro satipaṭṭhāne bhāveyyāsi. 
+-When your ethics are well purified and your view is correct, you should develop the four kinds of mindfulness meditation, depending on and grounded on ethics. 
++When your ethics are well purified and your view is correct, you should develop the four establishments of awareness, depending on and grounded on ethics. 
+@@ -1,2 +1,2 @@ sn47.16:2.6
+ PLI: Yato kho tvaṁ, uttiya, sīlaṁ nissāya sīle patiṭṭhāya ime cattāro satipaṭṭhāne evaṁ bhāvessasi, tato tvaṁ, uttiya, gamissasi maccudheyyassa pāran”ti. 
+-When you develop these four kinds of mindfulness meditation, depending on and grounded on ethics, you’ll cross beyond Death’s dominion.” 
++When you develop these four establishments of awareness, depending on and grounded on ethics, you’ll cross beyond Death’s dominion.” 
+--- sujato/sutta/sn/sn47/sn47.17_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.17_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.17:1.1
+ PLI: “Cattārome, bhikkhave, satipaṭṭhānā bhāvitā bahulīkatā ariyā niyyānikā niyyanti takkarassa sammā dukkhakkhayāya. 
+-“Bhikkhus, when these four kinds of mindfulness meditation are developed and cultivated they are noble and emancipating, and bring one who practices them to the complete ending of suffering. 
++“Bhikkhus, when these four establishments of awareness are developed and cultivated they are noble and emancipating, and bring one who practices them to the complete ending of suffering. 
+@@ -1,2 +1,2 @@ sn47.17:1.7
+ PLI: Ime kho, bhikkhave, cattāro satipaṭṭhānā bhāvitā bahulīkatā ariyā niyyānikā niyyanti takkarassa sammā dukkhakkhayāyā”ti. 
+-When these four kinds of mindfulness meditation are developed and cultivated they are noble and emancipating, and bring one who practices them to the complete ending of suffering.” 
++When these four establishments of awareness are developed and cultivated they are noble and emancipating, and bring one who practices them to the complete ending of suffering.” 
+--- sujato/sutta/sn/sn47/sn47.18_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.18_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.18:1.3
+ PLI: “ekāyanvāyaṁ maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ—cattāro satipaṭṭhānā. 
+-“The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
++“The four establishments of awareness are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
+@@ -1,2 +1,2 @@ sn47.18:2.6
+ PLI: Ekāyanvāyaṁ maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ—cattāro satipaṭṭhānā”ti. 
+-The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.” 
++The four establishments of awareness are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.” 
+@@ -1,2 +1,2 @@ sn47.18:3.4
+ PLI: Ekāyanvāyaṁ, bhante, maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ—cattāro satipaṭṭhānā. 
+-Sir, the four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
++Sir, the four establishments of awareness are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
+@@ -1,2 +1,2 @@ sn47.18:4.6
+ PLI: Ekāyanvāyaṁ, bhante, maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ—cattāro satipaṭṭhānā”ti. 
+-The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.” 
++The four establishments of awareness are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.” 
+--- sujato/sutta/sn/sn47/sn47.19_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.19_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.19:2.2
+ PLI: Attānaṁ, bhikkhave, rakkhissāmīti satipaṭṭhānaṁ sevitabbaṁ; 
+-Thinking ‘I’ll look after myself,’ you should cultivate mindfulness meditation. 
++Thinking ‘I’ll look after myself,’ you should cultivate the establishment of awareness. 
+@@ -1,2 +1,2 @@ sn47.19:2.3
+ PLI: paraṁ rakkhissāmīti satipaṭṭhānaṁ sevitabbaṁ. 
+-Thinking ‘I’ll look after others,’ you should cultivate mindfulness meditation. 
++Thinking ‘I’ll look after others,’ you should cultivate the establishment of awareness. 
+@@ -1,2 +1,2 @@ sn47.19:3.7
+ PLI: Attānaṁ, bhikkhave, rakkhissāmīti satipaṭṭhānaṁ sevitabbaṁ; 
+-Thinking ‘I’ll look after myself,’ you should cultivate mindfulness meditation. 
++Thinking ‘I’ll look after myself,’ you should cultivate the establishment of awareness. 
+@@ -1,2 +1,2 @@ sn47.19:3.8
+ PLI: paraṁ rakkhissāmīti satipaṭṭhānaṁ sevitabbaṁ. 
+-Thinking ‘I’ll look after others,’ you should cultivate mindfulness meditation. 
++Thinking ‘I’ll look after others,’ you should cultivate the establishment of awareness. 
+--- sujato/sutta/sn/sn47/sn47.1_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.1_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.1:2.1
+ PLI: “Ekāyanvāyaṁ, bhikkhave, maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ—cattāro satipaṭṭhānā. 
+-“Bhikkhus, the four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
++“Bhikkhus, the four establishments of awareness are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
+@@ -1,2 +1,2 @@ sn47.1:2.7
+ PLI: Ekāyanvāyaṁ, bhikkhave, maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ—cattāro satipaṭṭhānā”ti. 
+-The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.” 
++The four establishments of awareness are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.” 
+--- sujato/sutta/sn/sn47/sn47.21_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.21_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.21:2.6
+ PLI: “Yānimāni, āvuso bhadda, kusalāni sīlāni vuttāni bhagavatā, imāni kusalāni sīlāni yāvadeva catunnaṁ satipaṭṭhānānaṁ bhāvanāya vuttāni bhagavatā. 
+-“The Buddha has spoken of skillful ethics to the extent necessary for developing the four kinds of mindfulness meditation. 
++“The Buddha has spoken of skillful ethics to the extent necessary for developing the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn47.21:3.6
+ PLI: Yānimāni, āvuso bhadda, kusalāni sīlāni vuttāni bhagavatā, imāni kusalāni sīlāni yāvadeva imesaṁ catunnaṁ satipaṭṭhānānaṁ bhāvanāya vuttāni bhagavatā”ti. 
+-The Buddha has spoken of skillful ethics to the extent necessary for developing the four kinds of mindfulness meditation.” 
++The Buddha has spoken of skillful ethics to the extent necessary for developing the four establishments of awareness.” 
+--- sujato/sutta/sn/sn47/sn47.22_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.22_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.22:2.7
+ PLI: “Catunnaṁ kho, āvuso, satipaṭṭhānānaṁ abhāvitattā abahulīkatattā tathāgate parinibbute saddhammo na ciraṭṭhitiko hoti. 
+-“It’s because of not developing and cultivating the four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Realized One. 
++“It’s because of not developing and cultivating the four establishments of awareness that the true teaching doesn’t last long after the final quenching of the Realized One. 
+@@ -1,2 +1,2 @@ sn47.22:2.8
+ PLI: Catunnañca kho, āvuso, satipaṭṭhānānaṁ bhāvitattā bahulīkatattā tathāgate parinibbute saddhammo ciraṭṭhitiko hoti. 
+-It’s because of developing and cultivating the four kinds of mindfulness meditation that the true teaching does last long after the final quenching of the Realized One. 
++It’s because of developing and cultivating the four establishments of awareness that the true teaching does last long after the final quenching of the Realized One. 
+@@ -1,2 +1,2 @@ sn47.22:3.6
+ PLI: Imesaṁ kho, āvuso, catunnaṁ satipaṭṭhānānaṁ abhāvitattā abahulīkatattā tathāgate parinibbute saddhammo na ciraṭṭhitiko hoti. 
+-It’s because of not developing and cultivating these four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Realized One. 
++It’s because of not developing and cultivating these four establishments of awareness that the true teaching doesn’t last long after the final quenching of the Realized One. 
+@@ -1,2 +1,2 @@ sn47.22:3.7
+ PLI: Imesañca kho, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā tathāgate parinibbute saddhammo ciraṭṭhitiko hotī”ti. 
+-It’s because of developing and cultivating these four kinds of mindfulness meditation that the true teaching does last long after the final quenching of the Realized One.” 
++It’s because of developing and cultivating these four establishments of awareness that the true teaching does last long after the final quenching of the Realized One.” 
+--- sujato/sutta/sn/sn47/sn47.23_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.23_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.23:2.7
+ PLI: “Catunnaṁ kho, āvuso, satipaṭṭhānānaṁ abhāvitattā abahulīkatattā saddhammaparihānaṁ hoti. 
+-“It’s because of not developing and cultivating the four kinds of mindfulness meditation that the true teaching declines. 
++“It’s because of not developing and cultivating the four establishments of awareness that the true teaching declines. 
+@@ -1,2 +1,2 @@ sn47.23:2.8
+ PLI: Catunnañca kho, āvuso, satipaṭṭhānānaṁ bhāvitattā bahulīkatattā saddhammaaparihānaṁ hoti. 
+-It’s because of developing and cultivating the four kinds of mindfulness meditation that the true teaching doesn’t decline. 
++It’s because of developing and cultivating the four establishments of awareness that the true teaching doesn’t decline. 
+@@ -1,2 +1,2 @@ sn47.23:3.6
+ PLI: Imesaṁ kho, āvuso, catunnaṁ satipaṭṭhānānaṁ abhāvitattā abahulīkatattā saddhammaparihānaṁ hoti. 
+-It’s because of not developing and cultivating these four kinds of mindfulness meditation that the true teaching declines. 
++It’s because of not developing and cultivating these four establishments of awareness that the true teaching declines. 
+@@ -1,2 +1,2 @@ sn47.23:3.7
+ PLI: Imesañca kho, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā saddhammaaparihānaṁ hotī”ti. 
+-And it’s because of developing and cultivating these four kinds of mindfulness meditation that the true teaching doesn’t decline.” 
++And it’s because of developing and cultivating these four establishments of awareness that the true teaching doesn’t decline.” 
+--- sujato/sutta/sn/sn47/sn47.24_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.24_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.24:1.2
+ PLI: “Cattārome, bhikkhave, satipaṭṭhānā. 
+-“Bhikkhus, there are these four kinds of mindfulness meditation. 
++“Bhikkhus, there are these four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn47.24:1.8
+ PLI: Ime kho, bhikkhave, cattāro satipaṭṭhānā”ti. 
+-These are the four kinds of mindfulness meditation.” 
++These are the four establishments of awareness.” 
+--- sujato/sutta/sn/sn47/sn47.25_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.25_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.25:2.1
+ PLI: “Catunnaṁ kho, brāhmaṇa, satipaṭṭhānānaṁ abhāvitattā abahulīkatattā tathāgate parinibbute saddhammo na ciraṭṭhitiko hoti. 
+-“Brahmin, it’s because of not developing and cultivating the four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Realized One. 
++“Brahmin, it’s because of not developing and cultivating the four establishments of awareness that the true teaching doesn’t last long after the final quenching of the Realized One. 
+@@ -1,2 +1,2 @@ sn47.25:2.2
+ PLI: Catunnañca kho, brāhmaṇa, satipaṭṭhānānaṁ bhāvitattā bahulīkatattā tathāgate parinibbute saddhammo ciraṭṭhitiko hoti. 
+-It’s because of developing and cultivating the four kinds of mindfulness meditation that the true teaching does last long after the final quenching of the Realized One. 
++It’s because of developing and cultivating the four establishments of awareness that the true teaching does last long after the final quenching of the Realized One. 
+@@ -1,2 +1,2 @@ sn47.25:3.6
+ PLI: Imesaṁ kho, brāhmaṇa, catunnaṁ satipaṭṭhānānaṁ abhāvitattā abahulīkatattā tathāgate parinibbute saddhammo na ciraṭṭhitiko hoti. 
+-It’s because of not developing and cultivating these four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Realized One. 
++It’s because of not developing and cultivating these four establishments of awareness that the true teaching doesn’t last long after the final quenching of the Realized One. 
+@@ -1,2 +1,2 @@ sn47.25:3.7
+ PLI: Imesañca kho, brāhmaṇa, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā tathāgate parinibbute saddhammo ciraṭṭhitiko hotī”ti. 
+-It’s because of developing and cultivating these four kinds of mindfulness meditation that the true teaching does last long after the final quenching of the Realized One.” 
++It’s because of developing and cultivating these four establishments of awareness that the true teaching does last long after the final quenching of the Realized One.” 
+--- sujato/sutta/sn/sn47/sn47.26_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.26_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.26:1.6
+ PLI: “Catunnaṁ kho, āvuso, satipaṭṭhānānaṁ padesaṁ bhāvitattā sekho hoti. 
+-“Reverends, a trainee is someone who has partly developed the four kinds of mindfulness meditation. 
++“Reverends, a trainee is someone who has partly developed the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn47.26:2.6
+ PLI: Imesaṁ kho, āvuso, catunnaṁ satipaṭṭhānānaṁ padesaṁ bhāvitattā sekho hotī”ti. 
+-A trainee is someone who has partly developed the four kinds of mindfulness meditation.” 
++A trainee is someone who has partly developed the four establishments of awareness.” 
+--- sujato/sutta/sn/sn47/sn47.27_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.27_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.27:1.5
+ PLI: “Catunnaṁ kho, āvuso, satipaṭṭhānānaṁ samattaṁ bhāvitattā asekho hoti. 
+-“Reverends, an adept is someone who has completely developed the four kinds of mindfulness meditation. 
++“Reverends, an adept is someone who has completely developed the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn47.27:2.6
+ PLI: Imesaṁ kho, āvuso, catunnaṁ satipaṭṭhānānaṁ samattaṁ bhāvitattā asekho hotī”ti. 
+-An adept is someone who has completely developed the four kinds of mindfulness meditation.” 
++An adept is someone who has completely developed the four establishments of awareness.” 
+--- sujato/sutta/sn/sn47/sn47.28_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.28_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.28:1.4
+ PLI: “Catunnaṁ, āvuso, satipaṭṭhānānaṁ bhāvitattā bahulīkatattā mahābhiññataṁ patto. 
+-“Reverend, I attained great direct knowledge by developing and cultivating the four kinds of mindfulness meditation. 
++“Reverend, I attained great direct knowledge by developing and cultivating the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn47.28:2.6
+ PLI: Imesaṁ khvāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā mahābhiññataṁ patto. 
+-I attained great direct knowledge by developing and cultivating these four kinds of mindfulness meditation. 
++I attained great direct knowledge by developing and cultivating these four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn47.28:2.7
+ PLI: Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā sahassaṁ lokaṁ abhijānāmī”ti. 
+-And it’s because of developing and cultivating these four kinds of mindfulness meditation that I directly know the thousandfold galaxy.” 
++And it’s because of developing and cultivating these four establishments of awareness that I directly know the thousandfold galaxy.” 
+--- sujato/sutta/sn/sn47/sn47.29_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.29_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.29:4.1
+ PLI: “Yeme, bhante, bhagavatā cattāro satipaṭṭhānā desitā saṁvijjanti, te dhammā mayi, ahañca tesu dhammesu sandissāmi. 
+-“These four kinds of mindfulness meditation that were taught by the Buddha are found in me, and I exhibit them. 
++“These four establishments of awareness that were taught by the Buddha are found in me, and I exhibit them. 
+--- sujato/sutta/sn/sn47/sn47.32_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.32_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.32:1.1
+ PLI: “Cattārome, bhikkhave, satipaṭṭhānā bhāvitā bahulīkatā ekantanibbidāya virāgāya nirodhāya upasamāya abhiññāya sambodhāya nibbānāya saṁvattanti. 
+-“Bhikkhus, these four kinds of mindfulness meditation, when developed and cultivated, lead solely to disillusionment, dispassion, cessation, peace, insight, awakening, and extinguishment. 
++“Bhikkhus, these four establishments of awareness, when developed and cultivated, lead solely to disillusionment, dispassion, cessation, peace, insight, awakening, and extinguishment. 
+@@ -1,2 +1,2 @@ sn47.32:2.6
+ PLI: Ime kho, bhikkhave, cattāro satipaṭṭhānā bhāvitā bahulīkatā ekantanibbidāya virāgāya nirodhāya upasamāya abhiññāya sambodhāya nibbānāya saṁvattantī”ti. 
+-These four kinds of mindfulness meditation, when developed and cultivated, lead solely to disillusionment, dispassion, cessation, peace, insight, awakening, and extinguishment.” 
++These four establishments of awareness, when developed and cultivated, lead solely to disillusionment, dispassion, cessation, peace, insight, awakening, and extinguishment.” 
+--- sujato/sutta/sn/sn47/sn47.33_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.33_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.33:1.1
+ PLI: “Yesaṁ kesañci, bhikkhave, cattāro satipaṭṭhānā viraddhā, viraddho tesaṁ ariyo maggo sammā dukkhakkhayagāmī. 
+-“Bhikkhus, whoever has missed out on the four kinds of mindfulness meditation has missed out on the noble path to the complete ending of suffering. 
++“Bhikkhus, whoever has missed out on the four establishments of awareness has missed out on the noble path to the complete ending of suffering. 
+@@ -1,2 +1,2 @@ sn47.33:1.2
+ PLI: Yesaṁ kesañci, bhikkhave, cattāro satipaṭṭhānā āraddhā, āraddho tesaṁ ariyo maggo sammā dukkhakkhayagāmī. 
+-Whoever has undertaken the four kinds of mindfulness meditation has undertaken the noble path to the complete ending of suffering. 
++Whoever has undertaken the four establishments of awareness has undertaken the noble path to the complete ending of suffering. 
+@@ -1,2 +1,2 @@ sn47.33:2.6
+ PLI: Yesaṁ kesañci, bhikkhave, ime cattāro satipaṭṭhānā viraddhā, viraddho tesaṁ ariyo maggo sammā dukkhakkhayagāmī. 
+-Whoever has missed out on these four kinds of mindfulness meditation has missed out on the noble path to the complete ending of suffering. 
++Whoever has missed out on these four establishments of awareness has missed out on the noble path to the complete ending of suffering. 
+@@ -1,2 +1,2 @@ sn47.33:2.7
+ PLI: Yesaṁ kesañci, bhikkhave, ime cattāro satipaṭṭhānā āraddhā, āraddho tesaṁ ariyo maggo sammā dukkhakkhayagāmī”ti. 
+-Whoever has undertaken these four kinds of mindfulness meditation has undertaken the noble path to the complete ending of suffering.” 
++Whoever has undertaken these four establishments of awareness has undertaken the noble path to the complete ending of suffering.” 
+--- sujato/sutta/sn/sn47/sn47.34_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.34_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.34:1.1
+ PLI: “Cattārome, bhikkhave, satipaṭṭhānā bhāvitā bahulīkatā apārā pāraṁ gamanāya saṁvattanti. 
+-“Bhikkhus, when these four kinds of mindfulness meditation are developed and cultivated they lead to going from the near shore to the far shore. 
++“Bhikkhus, when these four establishments of awareness are developed and cultivated they lead to going from the near shore to the far shore. 
+@@ -1,2 +1,2 @@ sn47.34:2.6
+ PLI: Ime kho, bhikkhave, cattāro satipaṭṭhānā bhāvitā bahulīkatā apārā pāraṁ gamanāya saṁvattantī”ti. 
+-When these four kinds of mindfulness meditation are developed and cultivated they lead to going from the near shore to the far shore.” 
++When these four establishments of awareness are developed and cultivated they lead to going from the near shore to the far shore.” 
+--- sujato/sutta/sn/sn47/sn47.36_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.36_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.36:1.1
+ PLI: “Cattārome, bhikkhave, satipaṭṭhānā. 
+-“Bhikkhus, there are these four kinds of mindfulness meditation. 
++“Bhikkhus, there are these four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn47.36:1.7
+ PLI: Ime kho, bhikkhave, cattāro satipaṭṭhānā. 
+-These are the four kinds of mindfulness meditation. 
++These are the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn47.36:1.8
+ PLI: Imesaṁ kho, bhikkhave, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā dvinnaṁ phalānaṁ aññataraṁ phalaṁ pāṭikaṅkhaṁ—
+-Because of developing and cultivating these four kinds of mindfulness meditation, one of two results can be expected: 
++Because of developing and cultivating these four establishments of awareness, one of two results can be expected: 
+--- sujato/sutta/sn/sn47/sn47.37_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.37_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.37:1.1
+ PLI: “Cattārome, bhikkhave, satipaṭṭhānā. 
+-“Bhikkhus, there are these four kinds of mindfulness meditation. 
++“Bhikkhus, there are these four establishments of awareness. 
+--- sujato/sutta/sn/sn47/sn47.38_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.38_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.38:1.1
+ PLI: “Cattārome, bhikkhave, satipaṭṭhānā. 
+-“Bhikkhus, there are these four kinds of mindfulness meditation. 
++“Bhikkhus, there are these four establishments of awareness. 
+--- sujato/sutta/sn/sn47/sn47.39_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.39_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.39:1.1
+ PLI: “Catunnaṁ, bhikkhave, satipaṭṭhānānaṁ bhāvanaṁ desessāmi. 
+-“Bhikkhus, I will teach you the development of the four kinds of mindfulness meditation. 
++“Bhikkhus, I will teach you the development of the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn47.39:1.3
+ PLI: Katamā, bhikkhave, catunnaṁ satipaṭṭhānānaṁ bhāvanā? 
+-And what is the development of the four kinds of mindfulness meditation? 
++And what is the development of the four establishments of awareness? 
+@@ -1,2 +1,2 @@ sn47.39:1.8
+ PLI: Ayaṁ kho, bhikkhave, catunnaṁ satipaṭṭhānānaṁ bhāvanā”ti. 
+-This is the development of the four kinds of mindfulness meditation.” 
++This is the development of the four establishments of awareness.” 
+--- sujato/sutta/sn/sn47/sn47.3_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.3_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.3:1.9
+ PLI: Yato kho te, bhikkhu, sīlañca suvisuddhaṁ bhavissati diṭṭhi ca ujukā, tato tvaṁ, bhikkhu, sīlaṁ nissāya sīle patiṭṭhāya cattāro satipaṭṭhāne tividhena bhāveyyāsi. 
+-When your ethics are well purified and your view is correct, you should develop the four kinds of mindfulness meditation in three ways, depending on and grounded on ethics. 
++When your ethics are well purified and your view is correct, you should develop the four establishments of awareness in three ways, depending on and grounded on ethics. 
+@@ -1,2 +1,2 @@ sn47.3:2.14
+ PLI: Yato kho tvaṁ, bhikkhu, sīlaṁ nissāya sīle patiṭṭhāya ime cattāro satipaṭṭhāne evaṁ tividhena bhāvessasi, tato tuyhaṁ, bhikkhu, yā ratti vā divaso vā āgamissati vuddhiyeva pāṭikaṅkhā kusalesu dhammesu, no parihānī”ti. 
+-When you develop the four kinds of mindfulness meditation in these three ways, depending on and grounded on ethics, you can expect growth, not decline, in skillful qualities, whether by day or by night.” 
++When you develop the four establishments of awareness in these three ways, depending on and grounded on ethics, you can expect growth, not decline, in skillful qualities, whether by day or by night.” 
+--- sujato/sutta/sn/sn47/sn47.40_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.40_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.40:1.1
+ PLI: “Satipaṭṭhānañca vo, bhikkhave, desessāmi satipaṭṭhānabhāvanañca satipaṭṭhānabhāvanāgāminiñca paṭipadaṁ. 
+-“Bhikkhus, I will teach you mindfulness meditation, the development of mindfulness meditation, and the practice that leads to the development of mindfulness meditation. 
++“Bhikkhus, I will teach you the establishment of awareness, the development of the establishment of awareness, and the practice that leads to the development of the establishment of awareness. 
+@@ -1,2 +1,2 @@ sn47.40:1.3
+ PLI: Katamañca, bhikkhave, satipaṭṭhānaṁ? 
+-And what is mindfulness meditation? 
++And what is the establishment of awareness? 
+@@ -1,2 +1,2 @@ sn47.40:1.8
+ PLI: Idaṁ vuccati, bhikkhave, satipaṭṭhānaṁ. 
+-This is called mindfulness meditation. 
++This is called the establishment of awareness. 
+@@ -1,2 +1,2 @@ sn47.40:2.1
+ PLI: Katamā ca, bhikkhave, satipaṭṭhānabhāvanā? 
+-And what is the development of mindfulness meditation? 
++And what is the development of the establishment of awareness? 
+@@ -1,2 +1,2 @@ sn47.40:2.6
+ PLI: Ayaṁ vuccati, bhikkhave, satipaṭṭhānabhāvanā. 
+-This is called the development of mindfulness meditation. 
++This is called the development of the establishment of awareness. 
+@@ -1,2 +1,2 @@ sn47.40:3.1
+ PLI: Katamā ca, bhikkhave, satipaṭṭhānabhāvanāgāminī paṭipadā? 
+-And what is the practice that leads to the development of mindfulness meditation? 
++And what is the practice that leads to the development of the establishment of awareness? 
+@@ -1,2 +1,2 @@ sn47.40:3.4
+ PLI: Ayaṁ vuccati, bhikkhave, satipaṭṭhānabhāvanāgāminī paṭipadā”ti. 
+-This is called the practice that leads to the development of mindfulness meditation.” 
++This is called the practice that leads to the development of the establishment of awareness.” 
+--- sujato/sutta/sn/sn47/sn47.41_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.41_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.41:1.2
+ PLI: “Catūsu, bhikkhave, satipaṭṭhānesu suppatiṭṭhitacittā viharatha. 
+-“Bhikkhus, you should meditate with your mind firmly established in the four kinds of mindfulness meditation. 
++“Bhikkhus, you should meditate with your mind firmly established in the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn47.41:1.9
+ PLI: Imesu, bhikkhave, catūsu satipaṭṭhānesu suppatiṭṭhitacittā viharatha. 
+-You should meditate with your mind firmly established in the four kinds of mindfulness meditation. 
++You should meditate with your mind firmly established in the four establishments of awareness. 
+--- sujato/sutta/sn/sn47/sn47.42_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.42_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.42:1.1
+ PLI: “Catunnaṁ, bhikkhave, satipaṭṭhānānaṁ samudayañca atthaṅgamañca desessāmi. 
+-“Bhikkhus, I will teach you the arising and disappearing of the four kinds of mindfulness meditation. 
++“Bhikkhus, I will teach you the arising and disappearing of the four establishments of awareness. 
+--- sujato/sutta/sn/sn47/sn47.43_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.43_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.43:1.5
+ PLI: ‘ekāyanvāyaṁ maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ—cattāro satipaṭṭhānā. 
+-‘The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
++‘The four establishments of awareness are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
+@@ -1,2 +1,2 @@ sn47.43:2.6
+ PLI: Ekāyanvāyaṁ maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ—cattāro satipaṭṭhānā’ti. 
+-The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.’ 
++The four establishments of awareness are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.’ 
+@@ -1,2 +1,2 @@ sn47.43:3.4
+ PLI: Ekāyanvāyaṁ, bhante, maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ—cattāro satipaṭṭhānā. 
+-Sir, the four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
++Sir, the four establishments of awareness are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
+@@ -1,2 +1,2 @@ sn47.43:4.6
+ PLI: Ekāyanvāyaṁ, bhante, maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ—cattāro satipaṭṭhānā’ti. 
+-The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.’ 
++The four establishments of awareness are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.’ 
+--- sujato/sutta/sn/sn47/sn47.45_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.45_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.45:1.1
+ PLI: “‘Kusalarāsī’ti, bhikkhave, vadamāno cattāro satipaṭṭhāne sammā vadamāno vadeyya. 
+-“Rightly speaking, bhikkhus, you’d call these four kinds of mindfulness meditation a ‘heap of the skillful’. 
++“Rightly speaking, bhikkhus, you’d call these four establishments of awareness a ‘heap of the skillful’. 
+@@ -1,2 +1,2 @@ sn47.45:1.2
+ PLI: Kevalo hāyaṁ, bhikkhave, kusalarāsi, yadidaṁ—cattāro satipaṭṭhānā. 
+-For these four kinds of mindfulness meditation are entirely a heap of the skillful. 
++For these four establishments of awareness are entirely a heap of the skillful. 
+@@ -1,2 +1,2 @@ sn47.45:2.6
+ PLI: ‘Kusalarāsī’ti, bhikkhave, vadamāno ime cattāro satipaṭṭhāne sammā vadamāno vadeyya. 
+-Rightly speaking, you’d call these four kinds of mindfulness meditation a ‘heap of the skillful’. 
++Rightly speaking, you’d call these four establishments of awareness a ‘heap of the skillful’. 
+@@ -1,2 +1,2 @@ sn47.45:2.7
+ PLI: Kevalo hāyaṁ, bhikkhave, kusalarāsi, yadidaṁ—cattāro satipaṭṭhānā”ti. 
+-For these four kinds of mindfulness meditation are entirely a heap of the skillful.” 
++For these four establishments of awareness are entirely a heap of the skillful.” 
+--- sujato/sutta/sn/sn47/sn47.46_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.46_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.46:2.5
+ PLI: Yato kho tvaṁ, bhikkhu, pātimokkhasaṁvarasaṁvuto viharissasi ācāragocarasampanno aṇumattesu vajjesu bhayadassāvī samādāya sikkhassu sikkhāpadesu; tato tvaṁ, bhikkhu, sīlaṁ nissāya sīle patiṭṭhāya cattāro satipaṭṭhāne bhāveyyāsi. 
+-When you’ve done this, you should develop the four kinds of mindfulness meditation, depending on and grounded on ethics. 
++When you’ve done this, you should develop the four establishments of awareness, depending on and grounded on ethics. 
+@@ -1,2 +1,2 @@ sn47.46:3.6
+ PLI: Yato kho tvaṁ, bhikkhu, sīlaṁ nissāya sīle patiṭṭhāya ime cattāro satipaṭṭhāne evaṁ bhāvessasi, tato tuyhaṁ, bhikkhu, yā ratti vā divaso vā āgamissati vuddhiyeva pāṭikaṅkhā kusalesu dhammesu, no parihānī”ti. 
+-When you develop the four kinds of mindfulness meditation in this way, depending on and grounded on ethics, you can expect growth, not decline, in skillful qualities, whether by day or by night.” 
++When you develop the four establishments of awareness in this way, depending on and grounded on ethics, you can expect growth, not decline, in skillful qualities, whether by day or by night.” 
+--- sujato/sutta/sn/sn47/sn47.47_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.47_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.47:1.8
+ PLI: Yato kho tvaṁ, bhikkhu, kāyaduccaritaṁ pahāya kāyasucaritaṁ bhāvessasi, vacīduccaritaṁ pahāya vacīsucaritaṁ bhāvessasi, manoduccaritaṁ pahāya manosucaritaṁ bhāvessasi, tato tvaṁ, bhikkhu, sīlaṁ nissāya sīle patiṭṭhāya cattāro satipaṭṭhāne bhāveyyāsi. 
+-When you’ve done this, you should develop the four kinds of mindfulness meditation, depending on and grounded on ethics. 
++When you’ve done this, you should develop the four establishments of awareness, depending on and grounded on ethics. 
+@@ -1,2 +1,2 @@ sn47.47:2.6
+ PLI: Yato kho tvaṁ, bhikkhu, sīlaṁ nissāya sīle patiṭṭhāya ime cattāro satipaṭṭhāne evaṁ bhāvessasi, tato tuyhaṁ, bhikkhu, yā ratti vā divaso vā āgamissati vuddhiyeva pāṭikaṅkhā kusalesu dhammesu, no parihānī”ti …pe… 
+-When you develop the four kinds of mindfulness meditation in this way, depending on and grounded on ethics, you can expect growth, not decline, in skillful qualities, whether by day or by night.” … 
++When you develop the four establishments of awareness in this way, depending on and grounded on ethics, you can expect growth, not decline, in skillful qualities, whether by day or by night.” … 
+--- sujato/sutta/sn/sn47/sn47.48_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.48_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.48:1.1
+ PLI: “Ye, bhikkhave, anukampeyyātha, ye ca kho sotabbaṁ maññeyyuṁ mittā vā amaccā vā ñātī vā sālohitā vā, te vo, bhikkhave, catunnaṁ satipaṭṭhānānaṁ bhāvanāya samādapetabbā nivesetabbā patiṭṭhāpetabbā. 
+-“Bhikkhus, those for whom you have sympathy, and those worth listening to—friends and colleagues, relatives and family—should be encouraged, supported, and established by you in the development of the four kinds of mindfulness meditation. 
++“Bhikkhus, those for whom you have sympathy, and those worth listening to—friends and colleagues, relatives and family—should be encouraged, supported, and established by you in the development of the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn47.48:2.6
+ PLI: Ye, bhikkhave, anukampeyyātha, ye ca sotabbaṁ maññeyyuṁ mittā vā amaccā vā ñātī vā sālohitā vā, te vo, bhikkhave, imesaṁ catunnaṁ satipaṭṭhānānaṁ bhāvanāya samādapetabbā nivesetabbā patiṭṭhāpetabbā”ti. 
+-Those for whom you have sympathy, and those worth listening to—friends and colleagues, relatives and family—should be encouraged, supported, and established by you in the development of the four kinds of mindfulness meditation.” 
++Those for whom you have sympathy, and those worth listening to—friends and colleagues, relatives and family—should be encouraged, supported, and established by you in the development of the four establishments of awareness.” 
+--- sujato/sutta/sn/sn47/sn47.49_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.49_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.49:1.5
+ PLI: Imāsaṁ kho, bhikkhave, tissannaṁ vedanānaṁ pariññāya cattāro satipaṭṭhānā bhāvetabbā. 
+-The four kinds of mindfulness meditation should be developed to completely understand these three feelings. 
++The four establishments of awareness should be developed to completely understand these three feelings. 
+@@ -1,2 +1,2 @@ sn47.49:2.6
+ PLI: Imāsaṁ kho, bhikkhave, tissannaṁ vedanānaṁ pariññāya ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
+-These four kinds of mindfulness meditation should be developed to completely understand these three feelings.” 
++These four establishments of awareness should be developed to completely understand these three feelings.” 
+--- sujato/sutta/sn/sn47/sn47.4_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.4_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.4:2.1
+ PLI: “Ye te, bhikkhave, bhikkhū navā acirapabbajitā adhunāgatā imaṁ dhammavinayaṁ, te vo, bhikkhave, bhikkhū catunnaṁ satipaṭṭhānānaṁ bhāvanāya samādapetabbā nivesetabbā patiṭṭhāpetabbā. 
+-“Bhikkhus, those bhikkhus who are junior—recently gone forth, newly come to this teaching and training—should be encouraged, supported, and established by you in the four kinds of mindfulness meditation. 
++“Bhikkhus, those bhikkhus who are junior—recently gone forth, newly come to this teaching and training—should be encouraged, supported, and established by you in the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn47.4:5.1
+ PLI: Yepi te, bhikkhave, bhikkhū navā acirapabbajitā adhunāgatā imaṁ dhammavinayaṁ, te vo, bhikkhave, bhikkhū imesaṁ catunnaṁ satipaṭṭhānānaṁ bhāvanāya samādapetabbā nivesetabbā patiṭṭhāpetabbā”ti. 
+-Those bhikkhus who are junior—recently gone forth, newly come to this teaching and training—should be encouraged, supported, and established by you in these four kinds of mindfulness meditation.” 
++Those bhikkhus who are junior—recently gone forth, newly come to this teaching and training—should be encouraged, supported, and established by you in these four establishments of awareness.” 
+--- sujato/sutta/sn/sn47/sn47.50_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.50_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.50:1.5
+ PLI: Imesaṁ kho, bhikkhave, tiṇṇannaṁ āsavānaṁ pahānāya cattāro satipaṭṭhānā bhāvetabbā. 
+-The four kinds of mindfulness meditation should be developed to give up these three defilements. 
++The four establishments of awareness should be developed to give up these three defilements. 
+@@ -1,2 +1,2 @@ sn47.50:2.6
+ PLI: Imesaṁ kho, bhikkhave, tiṇṇannaṁ āsavānaṁ pahānāya ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
+-These four kinds of mindfulness meditation should be developed to give up these three defilements.” 
++These four establishments of awareness should be developed to give up these three defilements.” 
+--- sujato/sutta/sn/sn47/sn47.51-62_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.51-62_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.51-62:1.2
+ PLI: evameva kho, bhikkhave, bhikkhu cattāro satipaṭṭhāne bhāvento cattāro satipaṭṭhāne bahulīkaronto nibbānaninno hoti nibbānapoṇo nibbānapabbhāro. 
+-In the same way, a bhikkhu who develops and cultivates the four kinds of mindfulness meditation slants, slopes, and inclines to extinguishment. 
++In the same way, a bhikkhu who develops and cultivates the four establishments of awareness slants, slopes, and inclines to extinguishment. 
+@@ -1,2 +1,2 @@ sn47.51-62:2.1
+ PLI: Kathañca, bhikkhave, bhikkhu cattāro satipaṭṭhāne bhāvento cattāro satipaṭṭhāne bahulīkaronto nibbānaninno hoti nibbānapoṇo nibbānapabbhāro? 
+-And how does a bhikkhu who develops the four kinds of mindfulness meditation slant, slope, and incline to extinguishment? 
++And how does a bhikkhu who develops the four establishments of awareness slant, slope, and incline to extinguishment? 
+@@ -1,2 +1,2 @@ sn47.51-62:2.6
+ PLI: Evaṁ kho, bhikkhave, bhikkhu cattāro satipaṭṭhāne bhāvento cattāro satipaṭṭhāne bahulīkaronto nibbānaninno hoti nibbānapoṇo nibbānapabbhāro”ti vitthāretabbaṁ. 
+-That’s how a bhikkhu who develops and cultivates the four kinds of mindfulness meditation slants, slopes, and inclines to extinguishment.” 
++That’s how a bhikkhu who develops and cultivates the four establishments of awareness slants, slopes, and inclines to extinguishment.” 
+--- sujato/sutta/sn/sn47/sn47.5_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.5_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.5:2.1
+ PLI: ‘Kusalarāsī’ti, bhikkhave, vadamāno cattāro satipaṭṭhāne sammā vadamāno vadeyya. 
+-Rightly speaking, you’d call these four kinds of mindfulness meditation a ‘heap of the skillful’. 
++Rightly speaking, you’d call these four establishments of awareness a ‘heap of the skillful’. 
+@@ -1,2 +1,2 @@ sn47.5:2.2
+ PLI: Kevalo hāyaṁ, bhikkhave, kusalarāsi, yadidaṁ—cattāro satipaṭṭhānā. 
+-For these four kinds of mindfulness meditation are entirely a heap of the skillful. 
++For these four establishments of awareness are entirely a heap of the skillful. 
+@@ -1,2 +1,2 @@ sn47.5:2.8
+ PLI: ‘Kusalarāsī’ti, bhikkhave, vadamāno ime cattāro satipaṭṭhāne sammā vadamāno vadeyya. 
+-Rightly speaking, you’d call these four kinds of mindfulness meditation a ‘heap of the skillful’. 
++Rightly speaking, you’d call these four establishments of awareness a ‘heap of the skillful’. 
+@@ -1,2 +1,2 @@ sn47.5:2.9
+ PLI: Kevalo hāyaṁ, bhikkhave, kusalarāsi, yadidaṁ—cattāro satipaṭṭhānā”ti. 
+-For these four kinds of mindfulness meditation are entirely a heap of the skillful.” 
++For these four establishments of awareness are entirely a heap of the skillful.” 
+--- sujato/sutta/sn/sn47/sn47.6_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.6_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.6:4.5
+ PLI: cattāro satipaṭṭhānā. 
+-It’s the four kinds of mindfulness meditation. 
++It’s the four establishments of awareness. 
+--- sujato/sutta/sn/sn47/sn47.7_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.7_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.7:4.5
+ PLI: cattāro satipaṭṭhānā. 
+-It’s the four kinds of mindfulness meditation. 
++It’s the four establishments of awareness. 
+--- sujato/sutta/sn/sn47/sn47.95-104_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.95-104_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.95-104:1.5
+ PLI: Imesaṁ kho, bhikkhave, pañcannaṁ uddhambhāgiyānaṁ saṁyojanānaṁ abhiññāya pariññāya parikkhayāya pahānāya cattāro satipaṭṭhānā bhāvetabbā. 
+-The four kinds of mindfulness meditation should be developed for the direct knowledge, complete understanding, finishing, and giving up of these five higher fetters. 
++The four establishments of awareness should be developed for the direct knowledge, complete understanding, finishing, and giving up of these five higher fetters. 
+@@ -1,2 +1,2 @@ sn47.95-104:2.6
+ PLI: Imesaṁ kho, bhikkhave, pañcannaṁ uddhambhāgiyānaṁ saṁyojanānaṁ abhiññāya pariññāya parikkhayāya pahānāya ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
+-These four kinds of mindfulness meditation should be developed for the direct knowledge, complete understanding, finishing, and giving up of these five higher fetters.” 
++These four establishments of awareness should be developed for the direct knowledge, complete understanding, finishing, and giving up of these five higher fetters.” 
+@@ -1,2 +1,2 @@ sn47.95-104:3.1
+ PLI: (Yathā maggasaṁyuttaṁ tathā satipaṭṭhānasaṁyuttaṁ vitthāretabbaṁ.) 
+-(The Linked Discourses on Mindfulness Meditation should be told in full as in the Linked Discourses on the Path. These ten discourses correspond to SN 45.171–179, with the above as the final discourse.) 
++(The Linked Discourses on the Establishment of Awareness should be told in full as in the Linked Discourses on the Path. These ten discourses correspond to SN 45.171–179, with the above as the final discourse.) 
+@@ -1,2 +1,2 @@ sn47.95-104:4.5
+ PLI: Satipaṭṭhānasaṁyuttaṁ tatiyaṁ. 
+-The Linked Discourses on Mindfulness Meditation, the third section. 
++The Linked Discourses on the Establishment of Awareness, the third section. 
+--- sujato/sutta/sn/sn48/sn48.11_translation-en-sujato.json
++++ sujato/sutta/sn/sn48/sn48.11_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn48.11:3.2
+ PLI: Yaṁ kho, bhikkhave, cattāro satipaṭṭhāne ārabbha satiṁ paṭilabhati—
+-The awareness that’s gained owing to the four kinds of mindfulness meditation. 
++The awareness that’s gained owing to the four establishments of awareness. 
+--- sujato/sutta/sn/sn48/sn48.8_translation-en-sujato.json
++++ sujato/sutta/sn/sn48/sn48.8_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn48.8:1.11
+ PLI: Catūsu satipaṭṭhānesu—
+-In the four kinds of mindfulness meditation. 
++In the four establishments of awareness. 
+--- sujato/sutta/sn/sn52/sn52.10_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.10_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.10:2.2
+ PLI: “Catūsu kho me, āvuso, satipaṭṭhānesu suppatiṭṭhitacittassa viharato uppannā sārīrikā dukkhā vedanā cittaṁ na pariyādāya tiṭṭhanti. 
+-“Reverends, I meditate with my mind firmly established in the four kinds of mindfulness meditation so that physical pain doesn’t occupy my mind. 
++“Reverends, I meditate with my mind firmly established in the four establishments of awareness so that physical pain doesn’t occupy my mind. 
+@@ -1,2 +1,2 @@ sn52.10:2.8
+ PLI: imesu kho me, āvuso, catūsu satipaṭṭhānesu suppatiṭṭhitacittassa viharato uppannā sārīrikā dukkhā vedanā cittaṁ na pariyādāya tiṭṭhantī”ti. 
+-I meditate with my mind firmly established in these four kinds of mindfulness meditation so that physical pain doesn’t occupy my mind.” 
++I meditate with my mind firmly established in these four establishments of awareness so that physical pain doesn’t occupy my mind.” 
+--- sujato/sutta/sn/sn52/sn52.11_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.11_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.11:2.2
+ PLI: “Catunnaṁ khvāhaṁ, āvuso, satipaṭṭhānānaṁ bhāvitattā bahulīkatattā mahābhiññataṁ patto. 
+-“Reverends, I attained great direct knowledge by developing and cultivating the four kinds of mindfulness meditation. 
++“Reverends, I attained great direct knowledge by developing and cultivating the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn52.11:2.8
+ PLI: imesaṁ khvāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā mahābhiññataṁ patto. 
+-I attained great direct knowledge by developing and cultivating these four kinds of mindfulness meditation. 
++I attained great direct knowledge by developing and cultivating these four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn52.11:2.9
+ PLI: Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā kappasahassaṁ anussarāmī”ti. 
+-And it’s because of developing and cultivating these four kinds of mindfulness meditation that I recollect a thousand eons.” 
++And it’s because of developing and cultivating these four establishments of awareness that I recollect a thousand eons.” 
+--- sujato/sutta/sn/sn52/sn52.12_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.12_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.12:1.1
+ PLI: “Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā anekavihitaṁ iddhividhaṁ paccanubhomi—ekopi hutvā bahudhā homi …pe… yāva brahmalokāpi kāyena vasaṁ vattemī”ti. 
+-“… And it’s because of developing and cultivating these four kinds of mindfulness meditation that I wield the many kinds of psychic power: multiplying myself and becoming one again … controlling the body as far as the realm of divinity.” 
++“… And it’s because of developing and cultivating these four establishments of awareness that I wield the many kinds of psychic power: multiplying myself and becoming one again … controlling the body as far as the realm of divinity.” 
+--- sujato/sutta/sn/sn52/sn52.13_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.13_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.13:1.1
+ PLI: “Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā dibbāya sotadhātuyā visuddhāya atikkantamānusikāya ubho sadde suṇāmi dibbe ca mānuse ca ye dūre santike cā”ti. 
+-“… And it’s because of developing and cultivating these four kinds of mindfulness meditation that, with clairaudience that is purified and superhuman, I hear both kinds of sounds, human and heavenly, whether near or far.” 
++“… And it’s because of developing and cultivating these four establishments of awareness that, with clairaudience that is purified and superhuman, I hear both kinds of sounds, human and heavenly, whether near or far.” 
+--- sujato/sutta/sn/sn52/sn52.14_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.14_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.14:1.1
+ PLI: “Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā parasattānaṁ parapuggalānaṁ cetasā ceto paricca pajānāmi—
+-“… And it’s because of developing and cultivating these four kinds of mindfulness meditation that I understand the minds of other beings and individuals, having encompassed them with my mind. 
++“… And it’s because of developing and cultivating these four establishments of awareness that I understand the minds of other beings and individuals, having encompassed them with my mind. 
+--- sujato/sutta/sn/sn52/sn52.15_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.15_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.15:1.1
+ PLI: “Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā ṭhānañca ṭhānato aṭṭhānañca aṭṭhānato yathābhūtaṁ pajānāmī”ti. 
+-“… And it’s because of developing and cultivating these four kinds of mindfulness meditation that I truly understand the possible as possible and the impossible as impossible.” 
++“… And it’s because of developing and cultivating these four establishments of awareness that I truly understand the possible as possible and the impossible as impossible.” 
+--- sujato/sutta/sn/sn52/sn52.16_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.16_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.16:1.1
+ PLI: “Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā atītānāgatapaccuppannānaṁ kammasamādānānaṁ ṭhānaso hetuso vipākaṁ yathābhūtaṁ pajānāmī”ti. 
+-“… And it’s because of developing and cultivating these four kinds of mindfulness meditation that I truly understand the result of deeds undertaken in the past, future, and present in terms of grounds and causes.” 
++“… And it’s because of developing and cultivating these four establishments of awareness that I truly understand the result of deeds undertaken in the past, future, and present in terms of grounds and causes.” 
+--- sujato/sutta/sn/sn52/sn52.17_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.17_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.17:1.1
+ PLI: “Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā sabbatthagāminippaṭipadaṁ yathābhūtaṁ pajānāmī”ti. 
+-“… And it’s because of developing and cultivating these four kinds of mindfulness meditation that I truly understand where all paths of practice lead.” 
++“… And it’s because of developing and cultivating these four establishments of awareness that I truly understand where all paths of practice lead.” 
+--- sujato/sutta/sn/sn52/sn52.18_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.18_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.18:1.1
+ PLI: “Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā anekadhātunānādhātulokaṁ yathābhūtaṁ pajānāmī”ti. 
+-“… And it’s because of developing and cultivating these four kinds of mindfulness meditation that I truly understand the world with its many and diverse elements.” 
++“… And it’s because of developing and cultivating these four establishments of awareness that I truly understand the world with its many and diverse elements.” 
+--- sujato/sutta/sn/sn52/sn52.19_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.19_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.19:1.1
+ PLI: “Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā sattānaṁ nānādhimuttikataṁ yathābhūtaṁ pajānāmī”ti. 
+-“… And it’s because of developing and cultivating these four kinds of mindfulness meditation that I truly understand the diverse convictions of sentient beings.” 
++“… And it’s because of developing and cultivating these four establishments of awareness that I truly understand the diverse convictions of sentient beings.” 
+--- sujato/sutta/sn/sn52/sn52.1_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.1_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.1:1.4
+ PLI: “yesaṁ kesañci cattāro satipaṭṭhānā viraddhā, viraddho tesaṁ ariyo maggo sammā dukkhakkhayagāmī. 
+-“Whoever has missed out on these four kinds of mindfulness meditation has missed out on the noble path to the complete ending of suffering. 
++“Whoever has missed out on these four establishments of awareness has missed out on the noble path to the complete ending of suffering. 
+@@ -1,2 +1,2 @@ sn52.1:1.5
+ PLI: Yesaṁ kesañci cattāro satipaṭṭhānā āraddhā, āraddho tesaṁ ariyo maggo sammā dukkhakkhayagāmī”ti. 
+-Whoever has undertaken these four kinds of mindfulness meditation has undertaken the noble path to the complete ending of suffering.” 
++Whoever has undertaken these four establishments of awareness has undertaken the noble path to the complete ending of suffering.” 
+@@ -1,2 +1,2 @@ sn52.1:2.3
+ PLI: “kittāvatā nu kho, āvuso anuruddha, bhikkhuno cattāro satipaṭṭhānā āraddhā hontī”ti? 
+-“Reverend Anuruddha, how do you define the undertaking of the four kinds of mindfulness meditation by a bhikkhu?” 
++“Reverend Anuruddha, how do you define the undertaking of the four establishments of awareness by a bhikkhu?” 
+@@ -1,2 +1,2 @@ sn52.1:10.3
+ PLI: Ettāvatā kho, āvuso, bhikkhuno cattāro satipaṭṭhānā āraddhā hontī”ti. 
+-That’s how to define the undertaking of the four kinds of mindfulness meditation by a bhikkhu.” 
++That’s how to define the undertaking of the four establishments of awareness by a bhikkhu.” 
+--- sujato/sutta/sn/sn52/sn52.20_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.20_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.20:1.1
+ PLI: “Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā parasattānaṁ parapuggalānaṁ indriyaparopariyattaṁ yathābhūtaṁ pajānāmī”ti. 
+-“… And it’s because of developing and cultivating these four kinds of mindfulness meditation that I truly understand the faculties of other sentient beings and other individuals after encompassing them with my mind.” 
++“… And it’s because of developing and cultivating these four establishments of awareness that I truly understand the faculties of other sentient beings and other individuals after encompassing them with my mind.” 
+--- sujato/sutta/sn/sn52/sn52.21_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.21_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.21:1.1
+ PLI: “Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā jhānavimokkhasamādhisamāpattīnaṁ saṅkilesaṁ vodānaṁ vuṭṭhānaṁ yathābhūtaṁ pajānāmī”ti. 
+-“… And it’s because of developing and cultivating these four kinds of mindfulness meditation that I truly understand corruption, cleansing, and emergence regarding the absorptions, liberations, concentrations, and attainments.” 
++“… And it’s because of developing and cultivating these four establishments of awareness that I truly understand corruption, cleansing, and emergence regarding the absorptions, liberations, concentrations, and attainments.” 
+--- sujato/sutta/sn/sn52/sn52.22_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.22_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.22:1.1
+ PLI: “Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā anekavihitaṁ pubbenivāsaṁ anussarāmi, seyyathidaṁ—ekampi jātiṁ dvepi jātiyo …pe… iti sākāraṁ sauddesaṁ anekavihitaṁ pubbenivāsaṁ anussarāmī”ti. 
+-“… And it’s because of developing and cultivating these four kinds of mindfulness meditation that I recollect my many kinds of past lives, with features and details.” 
++“… And it’s because of developing and cultivating these four establishments of awareness that I recollect my many kinds of past lives, with features and details.” 
+--- sujato/sutta/sn/sn52/sn52.23_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.23_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.23:1.1
+ PLI: “Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā dibbena cakkhunā visuddhena atikkantamānusakena satte passāmi cavamāne upapajjamāne …pe… iti dibbena cakkhunā visuddhena atikkantamānusakena yathākammūpage satte pajānāmī”ti. 
+-“… And it’s because of developing and cultivating these four kinds of mindfulness meditation that, with clairvoyance that is purified and superhuman, I understand how sentient beings pass on according to their deeds.” 
++“… And it’s because of developing and cultivating these four establishments of awareness that, with clairvoyance that is purified and superhuman, I understand how sentient beings pass on according to their deeds.” 
+--- sujato/sutta/sn/sn52/sn52.24_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.24_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.24:1.1
+ PLI: “Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā āsavānaṁ khayā anāsavaṁ cetovimuttiṁ paññāvimuttiṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharāmī”ti. 
+-“… And it’s because of developing and cultivating these four kinds of mindfulness meditation that I realized the undefiled freedom of heart and freedom by wisdom. And I live having realized it with my own insight in this very life due to the ending of defilements.” 
++“… And it’s because of developing and cultivating these four establishments of awareness that I realized the undefiled freedom of heart and freedom by wisdom. And I live having realized it with my own insight in this very life due to the ending of defilements.” 
+--- sujato/sutta/sn/sn52/sn52.2_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.2_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.2:1.3
+ PLI: “yesaṁ kesañci cattāro satipaṭṭhānā viraddhā, viraddho tesaṁ ariyo maggo sammā dukkhakkhayagāmī; 
+-“Whoever has missed out on these four kinds of mindfulness meditation has missed out on the noble path to the complete ending of suffering. 
++“Whoever has missed out on these four establishments of awareness has missed out on the noble path to the complete ending of suffering. 
+@@ -1,2 +1,2 @@ sn52.2:1.4
+ PLI: yesaṁ kesañci cattāro satipaṭṭhānā āraddhā, āraddho tesaṁ ariyo maggo sammā dukkhakkhayagāmī”ti. 
+-Whoever has undertaken these four kinds of mindfulness meditation has undertaken the noble path to the complete ending of suffering.” 
++Whoever has undertaken these four establishments of awareness has undertaken the noble path to the complete ending of suffering.” 
+@@ -1,2 +1,2 @@ sn52.2:3.1
+ PLI: “kittāvatā nu kho, āvuso anuruddha, bhikkhuno cattāro satipaṭṭhānā āraddhā hontī”ti? 
+-“Reverend Anuruddha, how do you define the undertaking of the four kinds of mindfulness meditation by a bhikkhu?” 
++“Reverend Anuruddha, how do you define the undertaking of the four establishments of awareness by a bhikkhu?” 
+@@ -1,2 +1,2 @@ sn52.2:7.4
+ PLI: Ettāvatā kho, āvuso, bhikkhuno cattāro satipaṭṭhānā āraddhā hontī”ti. 
+-That’s how to define the undertaking of the four kinds of mindfulness meditation by a bhikkhu.” 
++That’s how to define the undertaking of the four establishments of awareness by a bhikkhu.” 
+--- sujato/sutta/sn/sn52/sn52.3_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.3_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.3:2.1
+ PLI: “Catunnaṁ khvāhaṁ, āvuso, satipaṭṭhānānaṁ bhāvitattā bahulīkatattā mahābhiññataṁ patto. 
+-“Reverends, I attained great direct knowledge by developing and cultivating the four kinds of mindfulness meditation. 
++“Reverends, I attained great direct knowledge by developing and cultivating the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn52.3:2.7
+ PLI: imesaṁ khvāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā mahābhiññataṁ patto. 
+-I attained great direct knowledge by developing and cultivating these four kinds of mindfulness meditation. 
++I attained great direct knowledge by developing and cultivating these four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn52.3:2.8
+ PLI: Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā hīnaṁ dhammaṁ hīnato abbhaññāsiṁ, majjhimaṁ dhammaṁ majjhimato abbhaññāsiṁ, paṇītaṁ dhammaṁ paṇītato abbhaññāsin”ti. 
+-And it was by developing and cultivating these four kinds of mindfulness meditation that I directly knew the lower principle as lower, the middle principle as middle, and the higher principle as higher.” 
++And it was by developing and cultivating these four establishments of awareness that I directly knew the lower principle as lower, the middle principle as middle, and the higher principle as higher.” 
+--- sujato/sutta/sn/sn52/sn52.4_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.4_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.4:2.1
+ PLI: “Sekhenāvuso sāriputta, bhikkhunā cattāro satipaṭṭhānā upasampajja vihātabbā. 
+-“Reverend Sāriputta, a trainee bhikkhu should enter and remain in the four kinds of mindfulness meditation. 
++“Reverend Sāriputta, a trainee bhikkhu should enter and remain in the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn52.4:2.7
+ PLI: sekhenāvuso sāriputta, bhikkhunā ime cattāro satipaṭṭhānā upasampajja vihātabbā”ti. 
+-A trainee bhikkhu should enter and remain in these four kinds of mindfulness meditation.” 
++A trainee bhikkhu should enter and remain in these four establishments of awareness.” 
+--- sujato/sutta/sn/sn52/sn52.5_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.5_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.5:1.4
+ PLI: “Asekhenāvuso sāriputta, bhikkhunā cattāro satipaṭṭhānā upasampajja vihātabbā. 
+-“Reverend Sāriputta, a bhikkhu who is an adept should enter and remain in the four kinds of mindfulness meditation. 
++“Reverend Sāriputta, a bhikkhu who is an adept should enter and remain in the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn52.5:1.10
+ PLI: asekhenāvuso sāriputta, bhikkhunā ime cattāro satipaṭṭhānā upasampajja vihātabbā”ti. 
+-A bhikkhu who is an adept should enter and remain in these four kinds of mindfulness meditation.” 
++A bhikkhu who is an adept should enter and remain in these four establishments of awareness.” 
+--- sujato/sutta/sn/sn52/sn52.6_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.6_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.6:1.4
+ PLI: “Catunnaṁ khvāhaṁ, āvuso, satipaṭṭhānānaṁ bhāvitattā bahulīkatattā mahābhiññataṁ patto. 
+-“Reverend, I attained great direct knowledge by developing and cultivating the four kinds of mindfulness meditation. 
++“Reverend, I attained great direct knowledge by developing and cultivating the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn52.6:1.10
+ PLI: imesaṁ khvāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā mahābhiññataṁ patto. 
+-I attained great direct knowledge by developing and cultivating these four kinds of mindfulness meditation. 
++I attained great direct knowledge by developing and cultivating these four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn52.6:1.11
+ PLI: Imesañca panāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā sahassaṁ lokaṁ abhijānāmī”ti. 
+-And it’s because of developing and cultivating these four kinds of mindfulness meditation that I directly know the thousandfold galaxy.” 
++And it’s because of developing and cultivating these four establishments of awareness that I directly know the thousandfold galaxy.” 
+--- sujato/sutta/sn/sn52/sn52.7_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.7_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.7:2.1
+ PLI: “Cattārome, āvuso, satipaṭṭhānā bhāvitā bahulīkatā taṇhākkhayāya saṁvattanti. 
+-“Reverends, when these four kinds of mindfulness meditation are developed and cultivated they lead to the ending of craving. 
++“Reverends, when these four establishments of awareness are developed and cultivated they lead to the ending of craving. 
+@@ -1,2 +1,2 @@ sn52.7:2.7
+ PLI: ime kho, āvuso, cattāro satipaṭṭhānā bhāvitā bahulīkatā taṇhākkhayāya saṁvattantī”ti. 
+-When these four kinds of mindfulness meditation are developed and cultivated they lead to the ending of craving.” 
++When these four establishments of awareness are developed and cultivated they lead to the ending of craving.” 
+--- sujato/sutta/sn/sn52/sn52.8_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.8_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.8:2.1
+ PLI: “Evameva kho, āvuso, bhikkhuṁ cattāro satipaṭṭhāne bhāventaṁ cattāro satipaṭṭhāne bahulīkarontaṁ rājāno vā rājamahāmattā vā mittā vā amaccā vā ñātī vā sālohitā vā bhogehi abhihaṭṭhuṁ pavāreyyuṁ: 
+-“In the same way, while a bhikkhu develops and cultivates the four kinds of mindfulness meditation, if rulers or their chief ministers, friends or colleagues, relatives or family should invite them to accept wealth, saying: 
++“In the same way, while a bhikkhu develops and cultivates the four establishments of awareness, if rulers or their chief ministers, friends or colleagues, relatives or family should invite them to accept wealth, saying: 
+@@ -1,2 +1,2 @@ sn52.8:3.1
+ PLI: So vata, āvuso, bhikkhu cattāro satipaṭṭhāne bhāvento cattāro satipaṭṭhāne bahulīkaronto sikkhaṁ paccakkhāya hīnāyāvattissatīti—netaṁ ṭhānaṁ vijjati. 
+-It is quite impossible for a bhikkhu who is developing and cultivating the four kinds of mindfulness meditation to resign the training and return to a lesser life. 
++It is quite impossible for a bhikkhu who is developing and cultivating the four establishments of awareness to resign the training and return to a lesser life. 
+@@ -1,2 +1,2 @@ sn52.8:3.4
+ PLI: Kathañcāvuso, bhikkhu cattāro satipaṭṭhāne bhāveti, cattāro satipaṭṭhāne bahulīkarotīti? 
+-And how does a bhikkhu develop and cultivate the four kinds of mindfulness meditation? 
++And how does a bhikkhu develop and cultivate the four establishments of awareness? 
+@@ -1,2 +1,2 @@ sn52.8:3.9
+ PLI: Evaṁ kho, āvuso, bhikkhu cattāro satipaṭṭhāne bhāveti, cattāro satipaṭṭhāne bahulīkarotī”ti. 
+-That’s how a bhikkhu develops and cultivates the four kinds of mindfulness meditation.” 
++That’s how a bhikkhu develops and cultivates the four establishments of awareness.” 
+--- sujato/sutta/sn/sn52/sn52.9_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.9_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.9:2.3
+ PLI: “Catūsu khvāhaṁ, āvuso, satipaṭṭhānesu suppatiṭṭhitacitto etarahi bahulaṁ viharāmi. 
+-“These days, reverend, I usually meditate with my mind firmly established in the four kinds of mindfulness meditation. 
++“These days, reverend, I usually meditate with my mind firmly established in the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn52.9:2.9
+ PLI: imesu khvāhaṁ, āvuso, catūsu satipaṭṭhānesu suppatiṭṭhitacitto etarahi bahulaṁ viharāmi. 
+-These days I usually meditate with my mind firmly established in these four kinds of mindfulness meditation. 
++These days I usually meditate with my mind firmly established in these four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn52.9:2.10
+ PLI: Yo so, āvuso, bhikkhu arahaṁ khīṇāsavo vusitavā katakaraṇīyo ohitabhāro anuppattasadattho parikkhīṇabhavasaṁyojano sammadaññāvimutto, so imesu catūsu satipaṭṭhānesu suppatiṭṭhitacitto bahulaṁ viharatī”ti. 
+-A bhikkhu who is perfected—with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment—usually meditates with their mind firmly established in these four kinds of mindfulness meditation.” 
++A bhikkhu who is perfected—with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment—usually meditates with their mind firmly established in these four establishments of awareness.” 
+--- sujato/sutta/sn/sn54/sn54.13_translation-en-sujato.json
++++ sujato/sutta/sn/sn54/sn54.13_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn54.13:3.2
+ PLI: “Ānāpānassatisamādhi kho, ānanda, ekadhammo bhāvito bahulīkato cattāro satipaṭṭhāne paripūreti, cattāro satipaṭṭhānā bhāvitā bahulīkatā satta bojjhaṅge paripūrenti, satta bojjhaṅgā bhāvitā bahulīkatā vijjāvimuttiṁ paripūrenti. 
+-“Concentration due to awareness of breathing is one thing that, when developed and cultivated, fulfills the four kinds of mindfulness meditation. And the four kinds of mindfulness meditation, when developed and cultivated, fulfill the seven awakening factors. And the seven awakening factors, when developed and cultivated, fulfill knowledge and freedom. 
++“Concentration due to awareness of breathing is one thing that, when developed and cultivated, fulfills the four establishments of awareness. And the four establishments of awareness, when developed and cultivated, fulfill the seven awakening factors. And the seven awakening factors, when developed and cultivated, fulfill knowledge and freedom. 
+@@ -1,2 +1,2 @@ sn54.13:4.1
+ PLI: Kathaṁ bhāvito, ānanda, ānāpānassatisamādhi kathaṁ bahulīkato cattāro satipaṭṭhāne paripūreti? 
+-And how is awareness of breathing developed and cultivated so as to fulfill the four kinds of mindfulness meditation? 
++And how is awareness of breathing developed and cultivated so as to fulfill the four establishments of awareness? 
+@@ -1,2 +1,2 @@ sn54.13:9.1
+ PLI: Evaṁ bhāvito kho, ānanda, ānāpānassatisamādhi evaṁ bahulīkato cattāro satipaṭṭhāne paripūreti. 
+-That’s how concentration due to awareness of breathing is developed and cultivated so as to fulfill the four kinds of mindfulness meditation. 
++That’s how concentration due to awareness of breathing is developed and cultivated so as to fulfill the four establishments of awareness. 
+@@ -1,2 +1,2 @@ sn54.13:10.1
+ PLI: Kathaṁ bhāvitā cānanda, cattāro satipaṭṭhānā kathaṁ bahulīkatā satta bojjhaṅge paripūrenti? 
+-And how are the four kinds of mindfulness meditation developed and cultivated so as to fulfill the seven awakening factors? 
++And how are the four establishments of awareness developed and cultivated so as to fulfill the seven awakening factors? 
+@@ -1,2 +1,2 @@ sn54.13:17.7
+ PLI: (Yathā paṭhamaṁ satipaṭṭhānaṁ, evaṁ vitthāretabbaṁ.) 
+-(Tell in full as for the first kind of mindfulness meditation.) 
++(Tell in full as for the first establishment of awareness.) 
+@@ -1,2 +1,2 @@ sn54.13:18.4
+ PLI: Evaṁ bhāvitā kho, ānanda, cattāro satipaṭṭhānā evaṁ bahulīkatā satta bojjhaṅge paripūrenti. 
+-That’s how the four kinds of mindfulness meditation are developed and cultivated so as to fulfill the seven awakening factors. 
++That’s how the four establishments of awareness are developed and cultivated so as to fulfill the seven awakening factors. 
+--- sujato/sutta/sn/sn54/sn54.14_translation-en-sujato.json
++++ sujato/sutta/sn/sn54/sn54.14_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn54.14:2.2
+ PLI: Ānāpānassatisamādhi, ānanda, ekadhammo bhāvito bahulīkato cattāro satipaṭṭhāne paripūreti, cattāro satipaṭṭhānā bhāvitā bahulīkatā satta bojjhaṅge paripūrenti, satta bojjhaṅgā bhāvitā bahulīkatā vijjāvimuttiṁ paripūrentīti. 
+-Concentration due to awareness of breathing is one thing that, when developed and cultivated, fulfills the four kinds of mindfulness meditation. And the four kinds of mindfulness meditation, when developed and cultivated, fulfill the seven awakening factors. And the seven awakening factors, when developed and cultivated, fulfill knowledge and freedom. 
++Concentration due to awareness of breathing is one thing that, when developed and cultivated, fulfills the four establishments of awareness. And the four establishments of awareness, when developed and cultivated, fulfill the seven awakening factors. And the seven awakening factors, when developed and cultivated, fulfill knowledge and freedom. 
+@@ -1,2 +1,2 @@ sn54.14:2.3
+ PLI: Kathaṁ bhāvito cānanda, ānāpānassatisamādhi, kathaṁ bahulīkato cattāro satipaṭṭhāne paripūreti? 
+-And how is awareness of breathing developed and cultivated so as to fulfill the four kinds of mindfulness meditation? … 
++And how is awareness of breathing developed and cultivated so as to fulfill the four establishments of awareness? … 
+--- sujato/sutta/sn/sn54/sn54.15_translation-en-sujato.json
++++ sujato/sutta/sn/sn54/sn54.15_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn54.15:2.2
+ PLI: “Ānāpānassatisamādhi kho, bhikkhave, ekadhammo bhāvito bahulīkato cattāro satipaṭṭhāne paripūreti, cattāro satipaṭṭhānā bhāvitā bahulīkatā satta bojjhaṅge paripūrenti, satta bojjhaṅgā bhāvitā bahulīkatā vijjāvimuttiṁ paripūrentīti. 
+-“Concentration due to awareness of breathing is one thing that, when developed and cultivated, fulfills the four kinds of mindfulness meditation. And the four kinds of mindfulness meditation, when developed and cultivated, fulfill the seven awakening factors. And the seven awakening factors, when developed and cultivated, fulfill knowledge and freedom. 
++“Concentration due to awareness of breathing is one thing that, when developed and cultivated, fulfills the four establishments of awareness. And the four establishments of awareness, when developed and cultivated, fulfill the seven awakening factors. And the seven awakening factors, when developed and cultivated, fulfill knowledge and freedom. 
+@@ -1,2 +1,2 @@ sn54.15:3.1
+ PLI: Kathaṁ bhāvito ca, bhikkhave, ānāpānassatisamādhi kathaṁ bahulīkato cattāro satipaṭṭhāne paripūreti? 
+-And how is awareness of breathing developed and cultivated so as to fulfill the four kinds of mindfulness meditation? … 
++And how is awareness of breathing developed and cultivated so as to fulfill the four establishments of awareness? … 
+--- sujato/sutta/sn/sn54/sn54.16_translation-en-sujato.json
++++ sujato/sutta/sn/sn54/sn54.16_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn54.16:2.2
+ PLI: Ānāpānassatisamādhi, bhikkhave, ekadhammo bhāvito bahulīkato cattāro satipaṭṭhāne paripūreti, cattāro satipaṭṭhānā bhāvitā bahulīkatā satta bojjhaṅge paripūrenti, satta bojjhaṅgā bhāvitā bahulīkatā vijjāvimuttiṁ paripūrentīti. 
+-Concentration due to awareness of breathing is one thing that, when developed and cultivated, fulfills the four kinds of mindfulness meditation. And the four kinds of mindfulness meditation, when developed and cultivated, fulfill the seven awakening factors. And the seven awakening factors, when developed and cultivated, fulfill knowledge and freedom. 
++Concentration due to awareness of breathing is one thing that, when developed and cultivated, fulfills the four establishments of awareness. And the four establishments of awareness, when developed and cultivated, fulfill the seven awakening factors. And the seven awakening factors, when developed and cultivated, fulfill knowledge and freedom. 
+@@ -1,2 +1,2 @@ sn54.16:3.1
+ PLI: Kathaṁ bhāvito ca, bhikkhave, ānāpānassatisamādhi kathaṁ bahulīkato cattāro satipaṭṭhāne paripūreti? 
+-And how is awareness of breathing developed and cultivated so as to fulfill the four kinds of mindfulness meditation? 
++And how is awareness of breathing developed and cultivated so as to fulfill the four establishments of awareness? 

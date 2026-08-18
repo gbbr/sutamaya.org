@@ -16,7 +16,6 @@
     "update-data:check": "node scripts/update-data-check.mjs",
     "update-data:copy": "node scripts/update-data-copy.mjs",
     "update-data:post": "node scripts/update-data-post.mjs",
-    "update-data:post:diff": "node scripts/update-data-post.mjs --diff",
     "update-data:triage": "node scripts/update-data-triage.mjs",
     "update-data:counts": "node scripts/update-data-counts.mjs",
     "update-data:snapshot": "node scripts/update-data-snapshot.mjs",

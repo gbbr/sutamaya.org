@@ -95,8 +95,10 @@ upstream) and writes `data/sujato.post/` (generated).
    rule's forms distinguish, not just one per rule — a form that is right as a finite verb can be
    wrong as an infinitive or a noun, and a single example hides that.
 
-8. **Apply and audit**: `npm run update-data:post:diff`, then read
-   `data/diff/<rule-id>.diff`. Check the Pali shown against each rewrite.
+8. **Apply and audit**: `npm run update-data:post`, then read `data/diff/<rule-id>.diff` (with
+   `delta <` for the inline highlight). Check the Pali shown against each rewrite. `data/diff/`
+   is checked in, so commit its changes with the rule — for an edit to an existing rule, `git
+   diff data/diff/` is exactly what the edit did to the corpus.
 
 9. **Record the new counts**: `npm run update-data:counts`, and commit the
    `retranslation.counts.json` diff with the rule. A rule absent from that file has no anchor at

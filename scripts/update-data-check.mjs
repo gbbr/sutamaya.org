@@ -250,8 +250,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     }
 
     console.error(
-      `\nReview the files, copy them over using ${blue('update-data:copy')}, test the post-processing using ${blue('update-data:post:diff')} ` +
-        `(review the rewrites in ${blue('data/diff/')}) and if all looks well regenerate the snapshot using ${blue('update-data:snapshot')}.`,
+      `\nReview the files, copy them over using ${blue('update-data:copy')}, test the post-processing using ${blue('update-data:post')} ` +
+        `(review the rewrites with ${blue('git diff data/diff/')}) and if all looks well regenerate the snapshot using ${blue('update-data:snapshot')}.`,
     );
     process.exit(1);
   }

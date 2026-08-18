@@ -1,0 +1,32 @@
+Rule: sampajano-hoti-question — 5 change(s), 5 file(s)
+
+--- sujato/sutta/dn/dn16_translation-en-sujato.json
++++ sujato/sutta/dn/dn16_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn16:2.13.1
+ PLI: Kathañca, bhikkhave, bhikkhu sampajāno hoti? 
+-And how is a bhikkhu fully comprehending? 
++And how does a bhikkhu have full comprehension? 
+--- sujato/sutta/sn/sn36/sn36.7_translation-en-sujato.json
++++ sujato/sutta/sn/sn36/sn36.7_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn36.7:4.1
+ PLI: Kathañca, bhikkhave, bhikkhu sampajāno hoti? 
+-And how is a bhikkhu fully comprehending? 
++And how does a bhikkhu have full comprehension? 
+--- sujato/sutta/sn/sn36/sn36.8_translation-en-sujato.json
++++ sujato/sutta/sn/sn36/sn36.8_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn36.8:4.1
+ PLI: Kathañca, bhikkhave, bhikkhu sampajāno hoti? 
+-And how is a bhikkhu fully comprehending? 
++And how does a bhikkhu have full comprehension? 
+--- sujato/sutta/sn/sn47/sn47.2_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.2_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.2:3.1
+ PLI: Kathañca, bhikkhave, bhikkhu sampajāno hoti? 
+-And how is a bhikkhu fully comprehending? 
++And how does a bhikkhu have full comprehension? 
+--- sujato/sutta/sn/sn47/sn47.35_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.35_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.35:3.1
+ PLI: Kathañca, bhikkhave, bhikkhu sampajāno hoti? 
+-And how is a bhikkhu fully comprehending? 
++And how does a bhikkhu have full comprehension? 

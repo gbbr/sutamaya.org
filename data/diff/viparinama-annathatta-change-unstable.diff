@@ -1,0 +1,410 @@
+Rule: viparinama-annathatta-change-unstable — 90 change(s), 24 file(s)
+
+--- sujato/sutta/an/an10/an10.29_translation-en-sujato.json
++++ sujato/sutta/an/an10/an10.29_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an10.29:1.2
+ PLI: Raññopi kho, bhikkhave, pasenadissa kosalassa attheva aññathattaṁ atthi vipariṇāmo. 
+-But even King Pasenadi decays and perishes. 
++But even King Pasenadi changes and is unstable. 
+@@ -1,2 +1,2 @@ an10.29:2.4
+ PLI: Mahābrahmunopi kho, bhikkhave, attheva aññathattaṁ atthi vipariṇāmo. 
+-But even the Great Divinity decays and perishes. 
++But even the Great Divinity changes and is unstable. 
+@@ -1,2 +1,2 @@ an10.29:3.5
+ PLI: Ābhassarānampi kho, bhikkhave, devānaṁ attheva aññathattaṁ atthi vipariṇāmo. 
+-But even the gods of sublime luminosity decay and perish. 
++But even the gods of sublime luminosity change and are unstable. 
+@@ -1,2 +1,2 @@ an10.29:5.3
+ PLI: Evaṁsaññīnampi kho, bhikkhave, sattānaṁ attheva aññathattaṁ atthi vipariṇāmo. 
+-But even the sentient beings who perceive like this decay and perish. 
++But even the sentient beings who perceive like this change and are unstable. 
+@@ -1,2 +1,2 @@ an10.29:14.4
+ PLI: Evaṁsaññīnampi kho, bhikkhave, sattānaṁ attheva aññathattaṁ atthi vipariṇāmo. 
+-But even the sentient beings who perceive like this decay and perish. 
++But even the sentient beings who perceive like this change and are unstable. 
+@@ -1,2 +1,2 @@ an10.29:16.3
+ PLI: Evaṁpaṭipannānampi kho, bhikkhave, sattānaṁ attheva aññathattaṁ atthi vipariṇāmo. 
+-But even the sentient beings who practice like this decay and perish. 
++But even the sentient beings who practice like this change and are unstable. 
+@@ -1,2 +1,2 @@ an10.29:18.3
+ PLI: Evaṁsaññīnampi kho, bhikkhave, sattānaṁ attheva aññathattaṁ atthi vipariṇāmo. 
+-But even the sentient beings who perceive like this decay and perish. 
++But even the sentient beings who perceive like this change and are unstable. 
+@@ -1,2 +1,2 @@ an10.29:19.6
+ PLI: Evaṁdiṭṭhīnampi kho, bhikkhave, sattānaṁ attheva aññathattaṁ atthi vipariṇāmo. 
+-But even the sentient beings who have views like this decay and perish. 
++But even the sentient beings who have views like this change and are unstable. 
+@@ -1,2 +1,2 @@ an10.29:20.5
+ PLI: Evaṁvādīnampi kho, bhikkhave, sattānaṁ attheva aññathattaṁ atthi vipariṇāmo. 
+-But even the sentient beings who have such a doctrine decay and perish. 
++But even the sentient beings who have such a doctrine change and are unstable. 
+--- sujato/sutta/an/an5/an5.30_translation-en-sujato.json
++++ sujato/sutta/an/an5/an5.30_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an5.30:4.6
+ PLI: Piyānaṁ kho, nāgita, vipariṇāmaññathābhāvā uppajjanti sokaparidevadukkhadomanassupāyāsā—
+-When loved ones decay and perish, sorrow, lamentation, pain, sadness, and distress arise. 
++When loved ones change and are unstable, sorrow, lamentation, pain, sadness, and distress arise. 
+--- sujato/sutta/dn/dn1_translation-en-sujato.json
++++ sujato/sutta/dn/dn1_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn1:3.21.5
+ PLI: Kāmā hi, bho, aniccā dukkhā vipariṇāmadhammā, tesaṁ vipariṇāmaññathābhāvā uppajjanti sokaparidevadukkhadomanassupāyāsā. 
+-Because sensual pleasures are impermanent, suffering, and perishable. Their decay and perishing give rise to sorrow, lamentation, pain, sadness, and distress. 
++Because sensual pleasures are impermanent, suffering, and perishable. Their change and instability give rise to sorrow, lamentation, pain, sadness, and distress. 
+--- sujato/sutta/mn/mn122_translation-en-sujato.json
++++ sujato/sutta/mn/mn122_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn122:5.1
+ PLI: Nāhaṁ, ānanda, ekaṁ rūpampi samanupassāmi yattha rattassa yathābhiratassa rūpassa vipariṇāmaññathābhāvā na uppajjeyyuṁ sokaparidevadukkhadomanassūpāyāsā. 
+-Ānanda, I do not see even a single sight which, with its decay and perishing, would not give rise to sorrow, lamentation, pain, sadness, and distress in someone who has desire and lust for it. 
++Ānanda, I do not see even a single sight which, with its change and instability, would not give rise to sorrow, lamentation, pain, sadness, and distress in someone who has desire and lust for it. 
+--- sujato/sutta/mn/mn138_translation-en-sujato.json
++++ sujato/sutta/mn/mn138_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn138:20.4
+ PLI: Tassa taṁ rūpaṁ vipariṇamati, aññathā hoti. 
+-But that form decays and perishes, 
++But that form changes and is unstable, 
+@@ -1,2 +1,2 @@ mn138:20.12
+ PLI: Tassa taṁ viññāṇaṁ vipariṇamati, aññathā hoti. 
+-But that consciousness decays and perishes, 
++But that consciousness changes and is unstable, 
+@@ -1,2 +1,2 @@ mn138:21.4
+ PLI: Tassa taṁ rūpaṁ vipariṇamati, aññathā hoti. 
+-When that form decays and perishes, 
++When that form changes and is unstable, 
+@@ -1,2 +1,2 @@ mn138:21.12
+ PLI: Tassa taṁ viññāṇaṁ vipariṇamati, aññathā hoti. 
+-When that consciousness decays and perishes, 
++When that consciousness changes and is unstable, 
+--- sujato/sutta/mn/mn87_translation-en-sujato.json
++++ sujato/sutta/mn/mn87_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn87:24.5
+ PLI: vajiriyā te kumāriyā vipariṇāmaññathābhāvā uppajjeyyuṁ sokaparidevadukkhadomanassupāyāsā”ti? 
+-If she were to decay and perish, would sorrow, lamentation, pain, sadness, and distress arise in you?” 
++If she were to change and be unstable, would sorrow, lamentation, pain, sadness, and distress arise in you?” 
+@@ -1,2 +1,2 @@ mn87:24.6
+ PLI: “Vajiriyā me, mallike, kumāriyā vipariṇāmaññathābhāvā jīvitassapi siyā aññathattaṁ, kiṁ pana me na uppajjissanti sokaparidevadukkhadomanassupāyāsā”ti? 
+-“If she were to decay and perish, my life would fall apart. How could sorrow, lamentation, pain, sadness, and distress not arise in me?” 
++“If she were to change and be unstable, my life would fall apart. How could sorrow, lamentation, pain, sadness, and distress not arise in me?” 
+@@ -1,2 +1,2 @@ mn87:27.4
+ PLI: mayhaṁ te vipariṇāmaññathābhāvā uppajjeyyuṁ sokaparidevadukkhadomanassupāyāsā”ti? 
+-If I were to decay and perish, would sorrow, lamentation, pain, sadness, and distress arise in you?” 
++If I were to change and be unstable, would sorrow, lamentation, pain, sadness, and distress arise in you?” 
+@@ -1,2 +1,2 @@ mn87:27.5
+ PLI: “Tuyhañhi me, mallike, vipariṇāmaññathābhāvā jīvitassapi siyā aññathattaṁ, kiṁ pana me na uppajjissanti sokaparidevadukkhadomanassupāyāsā”ti? 
+-“If you were to decay and perish, my life would fall apart. How could sorrow, lamentation, pain, sadness, and distress not arise in me?” 
++“If you were to change and be unstable, my life would fall apart. How could sorrow, lamentation, pain, sadness, and distress not arise in me?” 
+@@ -1,2 +1,2 @@ mn87:28.6
+ PLI: kāsikosalānaṁ te vipariṇāmaññathābhāvā uppajjeyyuṁ sokaparidevadukkhadomanassupāyāsā”ti? 
+-If these realms were to decay and perish, would sorrow, lamentation, pain, sadness, and distress arise in you?” 
++If these realms were to change and be unstable, would sorrow, lamentation, pain, sadness, and distress arise in you?” 
+@@ -1,2 +1,2 @@ mn87:28.7
+ PLI: “Kāsikosalānañhi, mallike, vipariṇāmaññathābhāvā jīvitassapi siyā aññathattaṁ, kiṁ pana me na uppajjissanti sokaparidevadukkhadomanassupāyāsā”ti? 
+-“If they were to decay and perish, my life would fall apart. How could sorrow, lamentation, pain, sadness, and distress not arise in me?” 
++“If they were to change and be unstable, my life would fall apart. How could sorrow, lamentation, pain, sadness, and distress not arise in me?” 
+--- sujato/sutta/sn/sn21/sn21.2_translation-en-sujato.json
++++ sujato/sutta/sn/sn21/sn21.2_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn21.2:2.2
+ PLI: ‘atthi nu kho taṁ kiñci lokasmiṁ yassa me vipariṇāmaññathābhāvā uppajjeyyuṁ sokaparidevadukkhadomanassupāyāsā’ti? 
+-‘Is there anything in the world whose decay and perishing would give rise to sorrow, lamentation, pain, sadness, and distress in me?’ 
++‘Is there anything in the world whose change and instability would give rise to sorrow, lamentation, pain, sadness, and distress in me?’ 
+@@ -1,2 +1,2 @@ sn21.2:2.4
+ PLI: ‘natthi kho taṁ kiñci lokasmiṁ yassa me vipariṇāmaññathābhāvā uppajjeyyuṁ sokaparidevadukkhadomanassupāyāsā’”ti. 
+-‘There is nothing in the world whose decay and perishing would give rise to sorrow, lamentation, pain, sadness, and distress in me.’” 
++‘There is nothing in the world whose change and instability would give rise to sorrow, lamentation, pain, sadness, and distress in me.’” 
+@@ -1,2 +1,2 @@ sn21.2:3.2
+ PLI: “satthupi kho te, āvuso sāriputta, vipariṇāmaññathābhāvā nuppajjeyyuṁ sokaparidevadukkhadomanassupāyāsā”ti? 
+-“Even if the Teacher were to decay and perish? Wouldn’t that give rise to sorrow, lamentation, pain, sadness, and distress in you?” 
++“Even if the Teacher were to change and be unstable? Wouldn’t that give rise to sorrow, lamentation, pain, sadness, and distress in you?” 
+@@ -1,2 +1,2 @@ sn21.2:3.3
+ PLI: “Satthupi kho me, āvuso, vipariṇāmaññathābhāvā nuppajjeyyuṁ sokaparidevadukkhadomanassupāyāsā, api ca me evamassa: 
+-“Even if the Teacher were to decay and perish, that wouldn’t give rise to sorrow, lamentation, pain, sadness, and distress in me. Still, I would think: 
++“Even if the Teacher were to change and be unstable, that wouldn’t give rise to sorrow, lamentation, pain, sadness, and distress in me. Still, I would think: 
+@@ -1,2 +1,2 @@ sn21.2:3.7
+ PLI: Tasmā āyasmato sāriputtassa satthupi vipariṇāmaññathābhāvā nuppajjeyyuṁ sokaparidevadukkhadomanassupāyāsā”ti. 
+-So even if the Teacher were to decay and perish, it wouldn’t give rise to sorrow, lamentation, pain, sadness, and distress in him.” 
++So even if the Teacher were to change and be unstable, it wouldn’t give rise to sorrow, lamentation, pain, sadness, and distress in him.” 
+--- sujato/sutta/sn/sn22/sn22.1_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.1_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.1:9.5
+ PLI: Tassa ‘ahaṁ rūpaṁ, mama rūpan’ti pariyuṭṭhaṭṭhāyino taṁ rūpaṁ vipariṇamati aññathā hoti. 
+-But that form of theirs decays and perishes, 
++But that form of theirs changes and is unstable, 
+@@ -1,2 +1,2 @@ sn22.1:10.3
+ PLI: Tassa ‘ahaṁ vedanā, mama vedanā’ti pariyuṭṭhaṭṭhāyino, sā vedanā vipariṇamati aññathā hoti. 
+-But that feeling of theirs decays and perishes, 
++But that feeling of theirs changes and is unstable, 
+@@ -1,2 +1,2 @@ sn22.1:11.3
+ PLI: Tassa ‘ahaṁ saññā, mama saññā’ti pariyuṭṭhaṭṭhāyino, sā saññā vipariṇamati aññathā hoti. 
+-But that perception of theirs decays and perishes, 
++But that perception of theirs changes and is unstable, 
+@@ -1,2 +1,2 @@ sn22.1:12.3
+ PLI: Tassa ‘ahaṁ saṅkhārā, mama saṅkhārā’ti pariyuṭṭhaṭṭhāyino, te saṅkhārā vipariṇamanti aññathā honti. 
+-But those choices of theirs decay and perish, 
++But those choices of theirs change and are unstable, 
+@@ -1,2 +1,2 @@ sn22.1:13.3
+ PLI: Tassa ‘ahaṁ viññāṇaṁ, mama viññāṇan’ti pariyuṭṭhaṭṭhāyino, taṁ viññāṇaṁ vipariṇamati aññathā hoti. 
+-But that consciousness of theirs decays and perishes, 
++But that consciousness of theirs changes and is unstable, 
+@@ -1,2 +1,2 @@ sn22.1:14.5
+ PLI: Tassa ‘ahaṁ rūpaṁ, mama rūpan’ti apariyuṭṭhaṭṭhāyino, taṁ rūpaṁ vipariṇamati aññathā hoti. 
+-So when that form of theirs decays and perishes, 
++So when that form of theirs changes and is unstable, 
+@@ -1,2 +1,2 @@ sn22.1:15.3
+ PLI: Tassa ‘ahaṁ vedanā, mama vedanā’ti apariyuṭṭhaṭṭhāyino, sā vedanā vipariṇamati aññathā hoti. 
+-So when that feeling of theirs decays and perishes, 
++So when that feeling of theirs changes and is unstable, 
+@@ -1,2 +1,2 @@ sn22.1:16.3
+ PLI: Tassa ‘ahaṁ saññā, mama saññā’ti apariyuṭṭhaṭṭhāyino, sā saññā vipariṇamati aññathā hoti. 
+-So when that perception of theirs decays and perishes, 
++So when that perception of theirs changes and is unstable, 
+@@ -1,2 +1,2 @@ sn22.1:17.3
+ PLI: Tassa ‘ahaṁ saṅkhārā, mama saṅkhārā’ti apariyuṭṭhaṭṭhāyino, te saṅkhārā vipariṇamanti aññathā honti. 
+-So when those choices of theirs decay and perish, 
++So when those choices of theirs change and are unstable, 
+@@ -1,2 +1,2 @@ sn22.1:18.3
+ PLI: Tassa ‘ahaṁ viññāṇaṁ, mama viññāṇan’ti apariyuṭṭhaṭṭhāyino, taṁ viññāṇaṁ vipariṇamati aññathā hoti. 
+-So when that consciousness of theirs decays and perishes, 
++So when that consciousness of theirs changes and is unstable, 
+--- sujato/sutta/sn/sn22/sn22.2_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.2_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.2:8.10
+ PLI: ‘rūpe kho, āvuso, avigatarāgassa avigatacchandassa avigatapemassa avigatapipāsassa avigatapariḷāhassa avigatataṇhassa tassa rūpassa vipariṇāmaññathābhāvā uppajjanti sokaparidevadukkhadomanassupāyāsā. 
+-‘If you’re not free of greed, desire, fondness, thirst, passion, and craving for form, when that form decays and perishes it gives rise to sorrow, lamentation, pain, sadness, and distress. 
++‘If you’re not free of greed, desire, fondness, thirst, passion, and craving for form, when that form changes and is unstable it gives rise to sorrow, lamentation, pain, sadness, and distress. 
+@@ -1,2 +1,2 @@ sn22.2:8.15
+ PLI: Viññāṇe avigatarāgassa avigatacchandassa avigatapemassa avigatapipāsassa avigatapariḷāhassa avigatataṇhassa tassa viññāṇassa vipariṇāmaññathābhāvā uppajjanti sokaparidevadukkhadomanassupāyāsā. 
+-consciousness, when that consciousness decays and perishes it gives rise to sorrow, lamentation, pain, sadness, and distress. 
++consciousness, when that consciousness changes and is unstable it gives rise to sorrow, lamentation, pain, sadness, and distress. 
+@@ -1,2 +1,2 @@ sn22.2:9.10
+ PLI: ‘rūpe kho, āvuso, vigatarāgassa vigatacchandassa vigatapemassa vigatapipāsassa vigatapariḷāhassa vigatataṇhassa tassa rūpassa vipariṇāmaññathābhāvā nuppajjanti sokaparidevadukkhadomanassupāyāsā. 
+-‘If you are rid of greed, desire, fondness, thirst, passion, and craving for form, when that form decays and perishes it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. 
++‘If you are rid of greed, desire, fondness, thirst, passion, and craving for form, when that form changes and is unstable it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. 
+@@ -1,2 +1,2 @@ sn22.2:9.14
+ PLI: Viññāṇe vigatarāgassa vigatacchandassa vigatapemassa vigatapipāsassa vigatapariḷāhassa vigatataṇhassa tassa viññāṇassa vipariṇāmaññathābhāvā nuppajjanti sokaparidevadukkhadomanassupāyāsā. 
+-consciousness, when that consciousness decays and perishes it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. 
++consciousness, when that consciousness changes and is unstable it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. 
+--- sujato/sutta/sn/sn22/sn22.43_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.43_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.43:2.4
+ PLI: Tassa taṁ rūpaṁ vipariṇamati, aññathā ca hoti. 
+-But that form of theirs decays and perishes, 
++But that form of theirs changes and is unstable, 
+@@ -1,2 +1,2 @@ sn22.43:2.12
+ PLI: Tassa taṁ viññāṇaṁ vipariṇamati, aññathā ca hoti. 
+-But that consciousness of theirs decays and perishes, 
++But that consciousness of theirs changes and is unstable, 
+--- sujato/sutta/sn/sn22/sn22.7_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.7_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.7:2.4
+ PLI: Tassa taṁ rūpaṁ vipariṇamati aññathā hoti. 
+-But that form of theirs decays and perishes, 
++But that form of theirs changes and is unstable, 
+@@ -1,2 +1,2 @@ sn22.7:5.2
+ PLI: Tassa taṁ viññāṇaṁ vipariṇamati aññathā hoti. 
+-But that consciousness of theirs decays and perishes, 
++But that consciousness of theirs changes and is unstable, 
+@@ -1,2 +1,2 @@ sn22.7:6.4
+ PLI: Tassa taṁ rūpaṁ vipariṇamati aññathā hoti. 
+-When that form of theirs decays and perishes, 
++When that form of theirs changes and is unstable, 
+@@ -1,2 +1,2 @@ sn22.7:9.2
+ PLI: tassa taṁ viññāṇaṁ vipariṇamati aññathā hoti. 
+-When that consciousness of theirs decays and perishes, 
++When that consciousness of theirs changes and is unstable, 
+--- sujato/sutta/sn/sn22/sn22.84_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.84_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.84:3.10
+ PLI: rūpe avigatarāgassa avigatacchandassa avigatapemassa avigatapipāsassa avigatapariḷāhassa avigatataṇhassa, tassa rūpassa vipariṇāmaññathābhāvā uppajjanti sokaparidevadukkhadomanassupāyāsā”ti? 
+-If you’re not rid of greed, desire, fondness, thirst, passion, and craving for form, when that form decays and perishes, will it give rise to sorrow, lamentation, pain, sadness, and distress?” 
++If you’re not rid of greed, desire, fondness, thirst, passion, and craving for form, when that form changes and is unstable, will it give rise to sorrow, lamentation, pain, sadness, and distress?” 
+@@ -1,2 +1,2 @@ sn22.84:5.3
+ PLI: Yathā taṁ saṅkhāresu anigatarāgassa, viññāṇe avigatarāgassa avigatacchandassa avigatapemassa avigatapipāsassa avigatapariḷāhassa avigatataṇhassa, tassa viññāṇassa vipariṇāmaññathābhāvā uppajjanti sokaparidevadukkhadomanassupāyāsā”ti? 
+-consciousness, when that consciousness decays and perishes, will it give rise to sorrow, lamentation, pain, sadness, and distress?” 
++consciousness, when that consciousness changes and is unstable, will it give rise to sorrow, lamentation, pain, sadness, and distress?” 
+@@ -1,2 +1,2 @@ sn22.84:6.5
+ PLI: rūpe vigatarāgassa vigatacchandassa vigatapemassa vigatapipāsassa vigatapariḷāhassa vigatataṇhassa, tassa rūpassa vipariṇāmaññathābhāvā uppajjanti sokaparidevadukkhadomanassupāyāsā”ti? 
+-If you are rid of greed, desire, fondness, thirst, passion, and craving for form, when that form decays and perishes, will it give rise to sorrow, lamentation, pain, sadness, and distress?” 
++If you are rid of greed, desire, fondness, thirst, passion, and craving for form, when that form changes and is unstable, will it give rise to sorrow, lamentation, pain, sadness, and distress?” 
+--- sujato/sutta/sn/sn22/sn22.8_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.8_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.8:1.6
+ PLI: Tassa taṁ rūpaṁ vipariṇamati aññathā hoti. 
+-But that form of theirs decays and perishes, 
++But that form of theirs changes and is unstable, 
+@@ -1,2 +1,2 @@ sn22.8:1.12
+ PLI: Tassa taṁ viññāṇaṁ vipariṇamati aññathā hoti. 
+-But that consciousness of theirs decays and perishes, 
++But that consciousness of theirs changes and is unstable, 
+@@ -1,2 +1,2 @@ sn22.8:2.3
+ PLI: Tassa taṁ rūpaṁ vipariṇamati aññathā hoti. 
+-When that form of theirs decays and perishes, 
++When that form of theirs changes and is unstable, 
+@@ -1,2 +1,2 @@ sn22.8:2.9
+ PLI: Tassa taṁ viññāṇaṁ vipariṇamati aññathā hoti. 
+-When that consciousness of theirs decays and perishes, 
++When that consciousness of theirs changes and is unstable, 
+--- sujato/sutta/sn/sn25/sn25.10_translation-en-sujato.json
++++ sujato/sutta/sn/sn25/sn25.10_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn25.10:1.2
+ PLI: “Rūpaṁ, bhikkhave, aniccaṁ vipariṇāmi aññathābhāvi; 
+-“Bhikkhus, form is impermanent, decaying, and perishing. 
++“Bhikkhus, form is impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn25.10:1.6
+ PLI: viññāṇaṁ aniccaṁ vipariṇāmi aññathābhāvi. 
+-and consciousness are impermanent, decaying, and perishing. 
++and consciousness are impermanent, changing, and unstable. 
+--- sujato/sutta/sn/sn25/sn25.1_translation-en-sujato.json
++++ sujato/sutta/sn/sn25/sn25.1_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn25.1:1.2
+ PLI: “Cakkhuṁ, bhikkhave, aniccaṁ vipariṇāmi aññathābhāvi; 
+-“Bhikkhus, the eye is impermanent, decaying, and perishing. 
++“Bhikkhus, the eye is impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn25.1:1.7
+ PLI: mano anicco vipariṇāmī aññathābhāvī. 
+-and mind are impermanent, decaying, and perishing. 
++and mind are impermanent, changing, and unstable. 
+--- sujato/sutta/sn/sn25/sn25.2_translation-en-sujato.json
++++ sujato/sutta/sn/sn25/sn25.2_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn25.2:1.2
+ PLI: “Rūpā, bhikkhave, aniccā vipariṇāmino aññathābhāvino; 
+-“Bhikkhus, sights are impermanent, decaying, and perishing. 
++“Bhikkhus, sights are impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn25.2:1.7
+ PLI: dhammā aniccā vipariṇāmino aññathābhāvino. 
+-and ideas are impermanent, decaying, and perishing. 
++and ideas are impermanent, changing, and unstable. 
+--- sujato/sutta/sn/sn25/sn25.3_translation-en-sujato.json
++++ sujato/sutta/sn/sn25/sn25.3_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn25.3:1.2
+ PLI: “Cakkhuviññāṇaṁ, bhikkhave, aniccaṁ vipariṇāmi aññathābhāvi; 
+-“Bhikkhus, eye consciousness is impermanent, decaying, and perishing. 
++“Bhikkhus, eye consciousness is impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn25.3:1.7
+ PLI: manoviññāṇaṁ aniccaṁ vipariṇāmi aññathābhāvi. 
+-and mind consciousness are impermanent, decaying, and perishing. 
++and mind consciousness are impermanent, changing, and unstable. 
+--- sujato/sutta/sn/sn25/sn25.4_translation-en-sujato.json
++++ sujato/sutta/sn/sn25/sn25.4_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn25.4:1.2
+ PLI: “Cakkhusamphasso, bhikkhave, anicco vipariṇāmī aññathābhāvī; 
+-“Bhikkhus, eye contact is impermanent, decaying, and perishing. 
++“Bhikkhus, eye contact is impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn25.4:1.7
+ PLI: manosamphasso anicco vipariṇāmī aññathābhāvī. 
+-and mind contact are impermanent, decaying, and perishing. 
++and mind contact are impermanent, changing, and unstable. 
+--- sujato/sutta/sn/sn25/sn25.5_translation-en-sujato.json
++++ sujato/sutta/sn/sn25/sn25.5_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn25.5:1.2
+ PLI: “Cakkhusamphassajā, bhikkhave, vedanā aniccā vipariṇāmī aññathābhāvī; 
+-“Bhikkhus, feeling born of eye contact is impermanent, decaying, and perishing. 
++“Bhikkhus, feeling born of eye contact is impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn25.5:1.7
+ PLI: manosamphassajā vedanā aniccā vipariṇāmī aññathābhāvī. 
+-and feeling born of mind contact are impermanent, decaying, and perishing. 
++and feeling born of mind contact are impermanent, changing, and unstable. 
+--- sujato/sutta/sn/sn25/sn25.6_translation-en-sujato.json
++++ sujato/sutta/sn/sn25/sn25.6_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn25.6:1.2
+ PLI: “Rūpasaññā, bhikkhave, aniccā vipariṇāmī aññathābhāvī; 
+-“Bhikkhus, perception of sights is impermanent, decaying, and perishing. 
++“Bhikkhus, perception of sights is impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn25.6:1.7
+ PLI: dhammasaññā aniccā vipariṇāmī aññathābhāvī. 
+-and perception of ideas are impermanent, decaying, and perishing. 
++and perception of ideas are impermanent, changing, and unstable. 
+--- sujato/sutta/sn/sn25/sn25.7_translation-en-sujato.json
++++ sujato/sutta/sn/sn25/sn25.7_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn25.7:1.2
+ PLI: “Rūpasañcetanā, bhikkhave, aniccā vipariṇāmī aññathābhāvī; 
+-“Bhikkhus, intention regarding sights is impermanent, decaying, and perishing. 
++“Bhikkhus, intention regarding sights is impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn25.7:1.7
+ PLI: dhammasañcetanā aniccā vipariṇāmī aññathābhāvī. 
+-and intentions regarding ideas are impermanent, decaying, and perishing. 
++and intentions regarding ideas are impermanent, changing, and unstable. 
+--- sujato/sutta/sn/sn25/sn25.8_translation-en-sujato.json
++++ sujato/sutta/sn/sn25/sn25.8_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn25.8:1.2
+ PLI: “Rūpataṇhā, bhikkhave, aniccā vipariṇāmī aññathābhāvī; 
+-“Bhikkhus, craving for sights is impermanent, decaying, and perishing. 
++“Bhikkhus, craving for sights is impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn25.8:1.7
+ PLI: dhammataṇhā aniccā vipariṇāmī aññathābhāvī. 
+-and craving for ideas are impermanent, decaying, and perishing. 
++and craving for ideas are impermanent, changing, and unstable. 
+--- sujato/sutta/sn/sn25/sn25.9_translation-en-sujato.json
++++ sujato/sutta/sn/sn25/sn25.9_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn25.9:1.2
+ PLI: “Pathavīdhātu, bhikkhave, aniccā vipariṇāmī aññathābhāvī; 
+-“Bhikkhus, the earth element is impermanent, decaying, and perishing. 
++“Bhikkhus, the earth element is impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn25.9:1.7
+ PLI: viññāṇadhātu aniccā vipariṇāmī aññathābhāvī. 
+-and the consciousness element are impermanent, decaying, and perishing. 
++and the consciousness element are impermanent, changing, and unstable. 
+--- sujato/sutta/sn/sn35/sn35.93_translation-en-sujato.json
++++ sujato/sutta/sn/sn35/sn35.93_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn35.93:1.4
+ PLI: Cakkhu aniccaṁ vipariṇāmi aññathābhāvi. 
+-The eye is impermanent, decaying, and perishing. 
++The eye is impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn35.93:1.5
+ PLI: Rūpā aniccā vipariṇāmino aññathābhāvino. 
+-Sights are impermanent, decaying, and perishing. 
++Sights are impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn35.93:1.6
+ PLI: Itthetaṁ dvayaṁ calañceva byathañca aniccaṁ vipariṇāmi aññathābhāvi. 
+-So this duality is tottering and toppling; it’s impermanent, decaying, and perishing. 
++So this duality is tottering and toppling; it’s impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn35.93:1.7
+ PLI: Cakkhuviññāṇaṁ aniccaṁ vipariṇāmi aññathābhāvi. 
+-Eye consciousness is impermanent, decaying, and perishing. 
++Eye consciousness is impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn35.93:1.8
+ PLI: Yopi hetu yopi paccayo cakkhuviññāṇassa uppādāya, sopi hetu sopi paccayo anicco vipariṇāmī aññathābhāvī. 
+-And the causes and reasons that give rise to eye consciousness are also impermanent, decaying, and perishing. 
++And the causes and reasons that give rise to eye consciousness are also impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn35.93:1.11
+ PLI: Cakkhusamphassopi anicco vipariṇāmī aññathābhāvī. 
+-Eye contact is also impermanent, decaying, and perishing. 
++Eye contact is also impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn35.93:1.12
+ PLI: Yopi hetu yopi paccayo cakkhusamphassassa uppādāya, sopi hetu sopi paccayo anicco vipariṇāmī aññathābhāvī. 
+-And the causes and reasons that give rise to eye contact are also impermanent, decaying, and perishing. 
++And the causes and reasons that give rise to eye contact are also impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn35.93:1.15
+ PLI: Itthetepi dhammā calā ceva byathā ca aniccā vipariṇāmino aññathābhāvino …pe… 
+-So these things too are tottering and toppling; they’re impermanent, decaying, and perishing. 
++So these things too are tottering and toppling; they’re impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn35.93:3.2
+ PLI: Mano anicco vipariṇāmī aññathābhāvī. 
+-The mind is impermanent, decaying, and perishing. 
++The mind is impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn35.93:3.3
+ PLI: Dhammā aniccā vipariṇāmino aññathābhāvino. 
+-Ideas are impermanent, decaying, and perishing. 
++Ideas are impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn35.93:3.4
+ PLI: Itthetaṁ dvayaṁ calañceva byathañca aniccaṁ vipariṇāmi aññathābhāvi. 
+-So this duality is tottering and toppling; it’s impermanent, decaying, and perishing. 
++So this duality is tottering and toppling; it’s impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn35.93:3.5
+ PLI: Manoviññāṇaṁ aniccaṁ vipariṇāmi aññathābhāvi. 
+-Mind consciousness is impermanent, decaying, and perishing. 
++Mind consciousness is impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn35.93:3.6
+ PLI: Yopi hetu yopi paccayo manoviññāṇassa uppādāya, sopi hetu sopi paccayo anicco vipariṇāmī aññathābhāvī. 
+-And the causes and reasons that give rise to mind consciousness are also impermanent, decaying, and perishing. 
++And the causes and reasons that give rise to mind consciousness are also impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn35.93:3.9
+ PLI: Manosamphassopi anicco vipariṇāmī aññathābhāvī. 
+-Mind contact is also impermanent, decaying, and perishing. 
++Mind contact is also impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn35.93:3.10
+ PLI: Yopi hetu yopi paccayo manosamphassassa uppādāya, sopi hetu sopi paccayo anicco vipariṇāmī aññathābhāvī. 
+-And the causes and reasons that give rise to mind contact are also impermanent, decaying, and perishing. 
++And the causes and reasons that give rise to mind contact are also impermanent, changing, and unstable. 
+@@ -1,2 +1,2 @@ sn35.93:3.13
+ PLI: Itthetepi dhammā calā ceva byathā ca aniccā vipariṇāmino aññathābhāvino. 
+-So these things too are tottering and toppling; they’re impermanent, decaying, and perishing. 
++So these things too are tottering and toppling; they’re impermanent, changing, and unstable. 

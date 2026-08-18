@@ -1,0 +1,104 @@
+Rule: patisambhida-analytical-knowledge — 22 change(s), 9 file(s)
+
+--- sujato/blurb/an-blurbs_root-en.json
++++ sujato/blurb/an-blurbs_root-en.json
+@@ -1 +1 @@ an-blurbs:an4.172
+-Sāriputta realized the four kinds of textual analysis a fortnight after he ordained.
++Sāriputta realized the four kinds of analytical knowledge a fortnight after he ordained.
+@@ -1 +1 @@ an-blurbs:an5.95
+-Supported by five factors, including four aspects of textual analysis, one will soon realize the unshakable.
++Supported by five factors, including four aspects of analytical knowledge, one will soon realize the unshakable.
+@@ -1 +1 @@ an-blurbs:an7.38
+-With seven qualities, a bhikkhu will soon realize the four kinds of textual analysis.
++With seven qualities, a bhikkhu will soon realize the four kinds of analytical knowledge.
+@@ -1 +1 @@ an-blurbs:an7.39
+-With seven qualities, Sāriputta realized the four kinds of textual analysis.
++With seven qualities, Sāriputta realized the four kinds of analytical knowledge.
+--- sujato/sutta/an/an1/an1.170-187_translation-en-sujato.json
++++ sujato/sutta/an/an1/an1.170-187_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an1.175-186:1.1
+ PLI: “Ekapuggalassa, bhikkhave, pātubhāvā mahato cakkhussa pātubhāvo hoti, mahato ālokassa pātubhāvo hoti, mahato obhāsassa pātubhāvo hoti, channaṁ anuttariyānaṁ pātubhāvo hoti, catunnaṁ paṭisambhidānaṁ sacchikiriyā hoti, anekadhātupaṭivedho hoti, nānādhātupaṭivedho hoti, vijjāvimuttiphalasacchikiriyā hoti, sotāpattiphalasacchikiriyā hoti, sakadāgāmiphalasacchikiriyā hoti, anāgāmiphalasacchikiriyā hoti, arahattaphalasacchikiriyā hoti. 
+-“With the appearance of one individual, bhikkhus, there is the appearance of a great eye, a great light, a great radiance, and the six unsurpassable things; the realization of the four kinds of textual analysis; the penetration of many and diverse elements; the realization of the fruit of knowledge and freedom; the realization of the fruits of stream-entry, once-return, non-return, and perfection. 
++“With the appearance of one individual, bhikkhus, there is the appearance of a great eye, a great light, a great radiance, and the six unsurpassable things; the realization of the four kinds of analytical knowledge; the penetration of many and diverse elements; the realization of the fruit of knowledge and freedom; the realization of the fruits of stream-entry, once-return, non-return, and perfection. 
+@@ -1,2 +1,2 @@ an1.175-186:1.4
+ PLI: Imassa kho, bhikkhave, ekapuggalassa pātubhāvā mahato cakkhussa pātubhāvo hoti, mahato ālokassa pātubhāvo hoti, mahato obhāsassa pātubhāvo hoti, channaṁ anuttariyānaṁ pātubhāvo hoti, catunnaṁ paṭisambhidānaṁ sacchikiriyā hoti, anekadhātupaṭivedho hoti, nānādhātupaṭivedho hoti, vijjāvimuttiphalasacchikiriyā hoti, sotāpattiphalasacchikiriyā hoti, sakadāgāmiphalasacchikiriyā hoti, anāgāmiphalasacchikiriyā hoti, arahattaphalasacchikiriyā hotī”ti. 
+-This is the one individual whose appearance brings the appearance of a great eye, a great light, a great radiance, and the six unsurpassable things; the realization of the four kinds of textual analysis; the penetration of many and diverse elements; the realization of the fruit of knowledge and freedom; the realization of the fruits of stream-entry, once-return, non-return, and perfection.” 
++This is the one individual whose appearance brings the appearance of a great eye, a great light, a great radiance, and the six unsurpassable things; the realization of the four kinds of analytical knowledge; the penetration of many and diverse elements; the realization of the fruit of knowledge and freedom; the realization of the fruits of stream-entry, once-return, non-return, and perfection.” 
+--- sujato/sutta/an/an1/an1.209-218_translation-en-sujato.json
++++ sujato/sutta/an/an1/an1.209-218_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an1.218:1.1
+ PLI: … Paṭisambhidāpattānaṁ yadidaṁ mahākoṭṭhito”ti. 
+-… who have attained the methods of textual analysis is Mahākoṭṭhita.” 
++… who have attained the methods of analytical knowledge is Mahākoṭṭhita.” 
+--- sujato/sutta/an/an4/an4.140_translation-en-sujato.json
++++ sujato/sutta/an/an4/an4.140_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an4.140:1.8
+ PLI: Aṭṭhānametaṁ, bhikkhave, anavakāso yaṁ catūhi paṭisambhidāhi samannāgato atthato vā byañjanato vā pariyādānaṁ gaccheyyā”ti. 
+-It is impossible, it cannot happen that someone accomplished in the four kinds of textual analysis will ever run out of meaningful things to say, or ways of phrasing things.” 
++It is impossible, it cannot happen that someone accomplished in the four kinds of analytical knowledge will ever run out of meaningful things to say, or ways of phrasing things.” 
+--- sujato/sutta/an/an4/an4.172_translation-en-sujato.json
++++ sujato/sutta/an/an4/an4.172_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an4.172:0.3
+ PLI: Vibhattisutta 
+-Sāriputta’s Attainment of Textual Analysis 
++Sāriputta’s Attainment of Analytical Knowledge 
+@@ -1,2 +1,2 @@ an4.172:2.1
+ PLI: “Addhamāsūpasampannena me, āvuso, atthapaṭisambhidā sacchikatā odhiso byañjanaso. 
+-“Reverends, I realized the textual analysis of the meaning—piece by piece and expression by expression—a fortnight after I ordained. 
++“Reverends, I realized the analytical knowledge of the meaning—piece by piece and expression by expression—a fortnight after I ordained. 
+@@ -1,2 +1,2 @@ an4.172:3.1
+ PLI: Addhamāsūpasampannena me, āvuso, dhammapaṭisambhidā sacchikatā odhiso byañjanaso. 
+-I realized the textual analysis of the text—piece by piece and expression by expression—a fortnight after I ordained. … 
++I realized the analytical knowledge of the text—piece by piece and expression by expression—a fortnight after I ordained. … 
+@@ -1,2 +1,2 @@ an4.172:4.1
+ PLI: Addhamāsūpasampannena me, āvuso, niruttipaṭisambhidā sacchikatā odhiso byañjanaso. 
+-I realized the textual analysis of definition—piece by piece and expression by expression—a fortnight after I ordained. … 
++I realized the analytical knowledge of definition—piece by piece and expression by expression—a fortnight after I ordained. … 
+@@ -1,2 +1,2 @@ an4.172:5.1
+ PLI: Addhamāsūpasampannena me, āvuso, paṭibhānapaṭisambhidā sacchikatā odhiso byañjanaso. 
+-I realized the textual analysis of eloquence—piece by piece and expression by expression—a fortnight after I ordained. 
++I realized the analytical knowledge of eloquence—piece by piece and expression by expression—a fortnight after I ordained. 
+--- sujato/sutta/an/an5/an5.86_translation-en-sujato.json
++++ sujato/sutta/an/an5/an5.86_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an5.86:0.3
+ PLI: Paṭisambhidāpattasutta 
+-Attaining the Methods of Textual Analysis 
++Attaining the Methods of Analytical Knowledge 
+@@ -1,2 +1,2 @@ an5.86:1.3
+ PLI: Atthapaṭisambhidāpatto hoti, dhammapaṭisambhidāpatto hoti, niruttipaṭisambhidāpatto hoti, paṭibhānapaṭisambhidāpatto hoti, 
+-They have attained the textual analysis of meaning, text, definition, and eloquence. 
++They have attained the analytical knowledge of meaning, text, definition, and eloquence. 
+--- sujato/sutta/an/an5/an5.95_translation-en-sujato.json
++++ sujato/sutta/an/an5/an5.95_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an5.95:1.3
+ PLI: Idha, bhikkhave, bhikkhu atthapaṭisambhidāpatto hoti, dhammapaṭisambhidāpatto hoti, niruttipaṭisambhidāpatto hoti, paṭibhānapaṭisambhidāpatto hoti, yathāvimuttaṁ cittaṁ paccavekkhati. 
+-It’s when a bhikkhu has attained the textual analysis of meaning, text, definition, and eloquence, and they review the extent of their mind’s freedom. 
++It’s when a bhikkhu has attained the analytical knowledge of meaning, text, definition, and eloquence, and they review the extent of their mind’s freedom. 
+--- sujato/sutta/an/an7/an7.38_translation-en-sujato.json
++++ sujato/sutta/an/an7/an7.38_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an7.38:0.3
+ PLI: Paṭhamapaṭisambhidāsutta 
+-Textual Analysis (1st) 
++Analytical Knowledge (1st) 
+@@ -1,2 +1,2 @@ an7.38:1.1
+ PLI: “Sattahi, bhikkhave, dhammehi samannāgato bhikkhu nacirasseva catasso paṭisambhidā sayaṁ abhiññā sacchikatvā upasampajja vihareyya. 
+-“Bhikkhus, a bhikkhu with seven qualities will soon realize the four kinds of textual analysis and live having achieved them with their own insight. 
++“Bhikkhus, a bhikkhu with seven qualities will soon realize the four kinds of analytical knowledge and live having achieved them with their own insight. 
+@@ -1,2 +1,2 @@ an7.38:1.10
+ PLI: Imehi kho, bhikkhave, sattahi dhammehi samannāgato bhikkhu nacirasseva catasso paṭisambhidā sayaṁ abhiññā sacchikatvā upasampajja vihareyyā”ti. 
+-A bhikkhu with these seven qualities will soon realize the four kinds of textual analysis and live having achieved them with their own insight.” 
++A bhikkhu with these seven qualities will soon realize the four kinds of analytical knowledge and live having achieved them with their own insight.” 
+--- sujato/sutta/an/an7/an7.39_translation-en-sujato.json
++++ sujato/sutta/an/an7/an7.39_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an7.39:0.3
+ PLI: Dutiyapaṭisambhidāsutta 
+-Textual Analysis (2nd) 
++Analytical Knowledge (2nd) 
+@@ -1,2 +1,2 @@ an7.39:1.1
+ PLI: “Sattahi, bhikkhave, dhammehi samannāgato sāriputto catasso paṭisambhidā sayaṁ abhiññā sacchikatvā upasampajja viharati. 
+-“Bhikkhus, having seven qualities, Sāriputta realized the four kinds of textual analysis and lives having achieved them with his own insight. 
++“Bhikkhus, having seven qualities, Sāriputta realized the four kinds of analytical knowledge and lives having achieved them with his own insight. 
+@@ -1,2 +1,2 @@ an7.39:1.10
+ PLI: Imehi kho, bhikkhave, sattahi dhammehi samannāgato sāriputto catasso paṭisambhidā sayaṁ abhiññā sacchikatvā upasampajja viharatī”ti. 
+-Having these seven qualities, Sāriputta realized the four kinds of textual analysis and lives having achieved them with his own insight.” 
++Having these seven qualities, Sāriputta realized the four kinds of analytical knowledge and lives having achieved them with his own insight.” 

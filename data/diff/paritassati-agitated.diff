@@ -1,0 +1,386 @@
+Rule: paritassati-agitated — 81 change(s), 31 file(s)
+
+--- sujato/blurb/sn-blurbs_root-en.json
++++ sujato/blurb/sn-blurbs_root-en.json
+@@ -1 +1 @@ sn-blurbs:sn22.7
+-An ordinary person identifies their self with the five aggregates and suffers anxiety when the aggregates change. But a noble disciple, free of such identification, does not suffer.
++An ordinary person identifies their self with the five aggregates and suffers agitation when the aggregates change. But a noble disciple, free of such identification, does not suffer.
+@@ -1 +1 @@ sn-blurbs:sn22.8
+-An ordinary person identifies their self with the five aggregates and suffers anxiety when the aggregates change. But a noble disciple, free of such identification, does not suffer.
++An ordinary person identifies their self with the five aggregates and suffers agitation when the aggregates change. But a noble disciple, free of such identification, does not suffer.
+--- sujato/sutta/an/an7/an7.61_translation-en-sujato.json
++++ sujato/sutta/an/an7/an7.61_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an7.61:13.8
+ PLI: anupādiyaṁ na paritassati, aparitassaṁ paccattaṁyeva parinibbāyati. 
+-Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. 
++Not grasping, they’re not agitated. Not being agitated, they personally become extinguished. 
+--- sujato/sutta/an/an9/an9.37_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.37_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.37:7.4
+ PLI: vimuttattā ṭhito, ṭhitattā santusito, santusitattā no paritassati. 
+-Being free, it’s stable. Being stable, it’s content. Being content, one is not anxious. 
++Being free, it’s stable. Being stable, it’s content. Being content, one is not agitated. 
+@@ -1,2 +1,2 @@ an9.37:8.3
+ PLI: vimuttattā ṭhito, ṭhitattā santusito, santusitattā no paritassati. 
+-Being free, it’s stable. Being stable, it’s content. Being content, one is not anxious. 
++Being free, it’s stable. Being stable, it’s content. Being content, one is not agitated. 
+--- sujato/sutta/dn/dn15_translation-en-sujato.json
++++ sujato/sutta/dn/dn15_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn15:32.3
+ PLI: anupādiyaṁ na paritassati, aparitassaṁ paccattaññeva parinibbāyati, 
+-Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. 
++Not grasping, they’re not agitated. Not being agitated, they personally become extinguished. 
+--- sujato/sutta/dn/dn19_translation-en-sujato.json
++++ sujato/sutta/dn/dn19_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn19:43.3
+ PLI: Atha kho, bho, mahāgovindassa brāhmaṇassa catunnaṁ māsānaṁ accayena ahudeva ukkaṇṭhanā ahu paritassanā: 
+-But then, when the four months had passed, the Great Steward became dissatisfied and anxious, 
++But then, when the four months had passed, the Great Steward became dissatisfied and agitated, 
+--- sujato/sutta/dn/dn1_translation-en-sujato.json
++++ sujato/sutta/dn/dn1_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn1:2.4.1
+ PLI: Tassa tattha ekakassa dīgharattaṁ nivusitattā anabhirati paritassanā uppajjati: 
+-But after staying there all alone for a long time, they become dissatisfied and anxious: 
++But after staying there all alone for a long time, they become dissatisfied and agitated: 
+@@ -1,2 +1,2 @@ dn1:3.32.0.2
+ PLI: 4.1. Paritassitavipphanditavāra 
+-4.1. Anxiety and Evasiveness 
++4.1. Agitation and Evasiveness 
+@@ -1,2 +1,2 @@ dn1:3.32.1
+ PLI: Tatra, bhikkhave, ye te samaṇabrāhmaṇā sassatavādā sassataṁ attānañca lokañca paññapenti catūhi vatthūhi, tadapi tesaṁ bhavataṁ samaṇabrāhmaṇānaṁ ajānataṁ apassataṁ vedayitaṁ taṇhāgatānaṁ paritassitavipphanditameva. 
+-Now, these things are only the feeling of those who do not know or see, the anxiety and evasiveness of those under the sway of craving. Namely, when those ascetics and brahmins assert that the self and the cosmos are eternal on four grounds … 
++Now, these things are only the feeling of those who do not know or see, the agitation and evasiveness of those under the sway of craving. Namely, when those ascetics and brahmins assert that the self and the cosmos are eternal on four grounds … 
+@@ -1,2 +1,2 @@ dn1:3.44.1
+ PLI: Tatra, bhikkhave, ye te samaṇabrāhmaṇā pubbantakappikā ca aparantakappikā ca pubbantāparantakappikā ca pubbantāparantānudiṭṭhino pubbantāparantaṁ ārabbha anekavihitāni adhimuttipadāni abhivadanti dvāsaṭṭhiyā vatthūhi, tadapi tesaṁ bhavataṁ samaṇabrāhmaṇānaṁ ajānataṁ apassataṁ vedayitaṁ taṇhāgatānaṁ paritassitavipphanditameva. 
+-When those ascetics and brahmins speculate and theorize about the first beginning and the final end on these sixty-two grounds, these things are only the feeling of those who do not know or see, the anxiety and evasiveness of those under the sway of craving. 
++When those ascetics and brahmins speculate and theorize about the first beginning and the final end on these sixty-two grounds, these things are only the feeling of those who do not know or see, the agitation and evasiveness of those under the sway of craving. 
+--- sujato/sutta/dn/dn24_translation-en-sujato.json
++++ sujato/sutta/dn/dn24_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn24:2.16.1
+ PLI: Tassa tattha ekakassa dīgharattaṁ nivusitattā anabhirati paritassanā uppajjati—
+-But after staying there all alone for a long time, they become dissatisfied and anxious, 
++But after staying there all alone for a long time, they become dissatisfied and agitated, 
+--- sujato/sutta/kn/dhp/dhp383-423_translation-en-sujato.json
++++ sujato/sutta/kn/dhp/dhp383-423_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dhp397:2
+ PLI: yo ve na paritassati; 
+-they have no anxiety. 
++they have no agitation. 
+--- sujato/sutta/kn/iti/vagga10/iti94_translation-en-sujato.json
++++ sujato/sutta/kn/iti/vagga10/iti94_translation-en-sujato.json
+@@ -1,2 +1,2 @@ iti94:2.1
+ PLI: “Tathā tathā, bhikkhave, bhikkhu upaparikkheyya yathā yathāssa upaparikkhato bahiddhā cassa viññāṇaṁ avikkhittaṁ avisaṭaṁ ajjhattaṁ asaṇṭhitaṁ anupādāya na paritasseyya. 
+-“A bhikkhu should examine in whatever way such that, while examining, consciousness would neither be scattered nor diffused externally, nor stuck internally, and they would not be anxious because of grasping. 
++“A bhikkhu should examine in whatever way such that, while examining, consciousness would neither be scattered nor diffused externally, nor stuck internally, and they would not be agitated because of grasping. 
+@@ -1,2 +1,2 @@ iti94:2.2
+ PLI: Bahiddhā, bhikkhave, viññāṇe avikkhitte avisaṭe sati ajjhattaṁ asaṇṭhite anupādāya aparitassato āyatiṁ jātijarāmaraṇadukkhasamudayasambhavo na hotī”ti. 
+-When consciousness is neither scattered nor diffused externally, nor stuck internally, and they are not anxious because of grasping, there is no coming to be of the arising of suffering—of rebirth, old age, and death in the future.” 
++When consciousness is neither scattered nor diffused externally, nor stuck internally, and they are not agitated because of grasping, there is no coming to be of the arising of suffering—of rebirth, old age, and death in the future.” 
+--- sujato/sutta/kn/snp/vagga3/snp3.9_translation-en-sujato.json
++++ sujato/sutta/kn/snp/vagga3/snp3.9_translation-en-sujato.json
+@@ -1,2 +1,2 @@ snp3.9:33.2
+ PLI: Yo ve na paritassati; 
+-they have no anxiety; 
++they have no agitation; 
+--- sujato/sutta/mn/mn11_translation-en-sujato.json
++++ sujato/sutta/mn/mn11_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn11:17.2
+ PLI: Anupādiyaṁ na paritassati, aparitassaṁ paccattaññeva parinibbāyati. 
+-Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. 
++Not grasping, they’re not agitated. Not being agitated, they personally become extinguished. 
+--- sujato/sutta/mn/mn138_translation-en-sujato.json
++++ sujato/sutta/mn/mn138_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn138:3.1
+ PLI: “Tathā tathā, bhikkhave, bhikkhu upaparikkheyya yathā yathā upaparikkhato bahiddhā cassa viññāṇaṁ avikkhittaṁ avisaṭaṁ, ajjhattaṁ asaṇṭhitaṁ anupādāya na paritasseyya. 
+-“A bhikkhu should examine in whatever way such that, while examining, consciousness would neither be scattered nor diffused externally, nor stuck internally, and they would not be anxious because of grasping. 
++“A bhikkhu should examine in whatever way such that, while examining, consciousness would neither be scattered nor diffused externally, nor stuck internally, and they would not be agitated because of grasping. 
+@@ -1,2 +1,2 @@ mn138:3.2
+ PLI: Bahiddhā, bhikkhave, viññāṇe avikkhitte avisaṭe sati ajjhattaṁ asaṇṭhite anupādāya aparitassato āyatiṁ jātijarāmaraṇadukkhasamudayasambhavo na hotī”ti. 
+-When consciousness is neither scattered nor diffused externally, nor stuck internally, and they are not anxious because of grasping, there is no coming to be of the arising of suffering—of rebirth, old age, and death in the future.” 
++When consciousness is neither scattered nor diffused externally, nor stuck internally, and they are not agitated because of grasping, there is no coming to be of the arising of suffering—of rebirth, old age, and death in the future.” 
+@@ -1,2 +1,2 @@ mn138:9.5
+ PLI: ‘tathā tathā, bhikkhave, bhikkhu upaparikkheyya, yathā yathā upaparikkhato bahiddhā cassa viññāṇaṁ avikkhittaṁ avisaṭaṁ ajjhattaṁ asaṇṭhitaṁ anupādāya na paritasseyya, bahiddhā, bhikkhave, viññāṇe avikkhitte avisaṭe sati ajjhattaṁ asaṇṭhite anupādāya aparitassato āyatiṁ jātijarāmaraṇadukkhasamudayasambhavo na hotī’ti. 
+-‘A bhikkhu should examine in whatever way such that, while examining, consciousness would neither be scattered nor diffused externally, nor stuck internally, and they would not be anxious because of grasping. When consciousness is neither scattered nor diffused externally, nor stuck internally, and they are not anxious because of grasping, there is no coming to be of the arising of suffering—of rebirth, old age, and death in the future.’ 
++‘A bhikkhu should examine in whatever way such that, while examining, consciousness would neither be scattered nor diffused externally, nor stuck internally, and they would not be agitated because of grasping. When consciousness is neither scattered nor diffused externally, nor stuck internally, and they are not agitated because of grasping, there is no coming to be of the arising of suffering—of rebirth, old age, and death in the future.’ 
+@@ -1,2 +1,2 @@ mn138:20.1
+ PLI: Kathañcāvuso, anupādā paritassanā hoti? 
+-And how is it anxious because of grasping? 
++And how is it agitated because of grasping? 
+@@ -1,2 +1,2 @@ mn138:20.6
+ PLI: Tassa rūpavipariṇāmānuparivattajā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. 
+-Anxieties occupy the mind, born of latching on to the changing of form, and originating in accordance with natural principles. 
++Agitation occupies the mind, born of latching on to the changing of form, and originating in accordance with natural principles. 
+@@ -1,2 +1,2 @@ mn138:20.7
+ PLI: Cetaso pariyādānā uttāsavā ca hoti vighātavā ca apekkhavā ca anupādāya ca paritassati. 
+-So it becomes frightened, worried, concerned, and anxious because of grasping. 
++So it becomes frightened, worried, concerned, and agitated because of grasping. 
+@@ -1,2 +1,2 @@ mn138:20.14
+ PLI: Tassa viññāṇavipariṇāmānuparivattajā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. 
+-Anxieties occupy the mind, born of latching on to the changing of consciousness, and originating in accordance with natural principles. 
++Agitation occupies the mind, born of latching on to the changing of consciousness, and originating in accordance with natural principles. 
+@@ -1,2 +1,2 @@ mn138:20.15
+ PLI: Cetaso pariyādānā uttāsavā ca hoti vighātavā ca apekkhavā ca anupādāya ca paritassati. 
+-So it becomes frightened, worried, concerned, and anxious because of grasping. 
++So it becomes frightened, worried, concerned, and agitated because of grasping. 
+@@ -1,2 +1,2 @@ mn138:20.16
+ PLI: Evaṁ kho, āvuso, anupādā paritassanā hoti. 
+-That’s how it is anxious because of grasping. 
++That’s how it is agitated because of grasping. 
+@@ -1,2 +1,2 @@ mn138:21.1
+ PLI: Kathañcāvuso, anupādānā aparitassanā hoti? 
+-And how is it not anxious because of grasping? 
++And how is it not agitated because of grasping? 
+@@ -1,2 +1,2 @@ mn138:21.6
+ PLI: Tassa na rūpavipariṇāmānuparivattajā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. 
+-Anxieties—born of latching on to the changing of form and originating in accordance with natural principles—don’t occupy the mind. 
++Agitations—born of latching on to the changing of form and originating in accordance with natural principles—don’t occupy the mind. 
+@@ -1,2 +1,2 @@ mn138:21.7
+ PLI: Cetaso pariyādānā na cevuttāsavā hoti na ca vighātavā na ca apekkhavā anupādāya ca na paritassati. 
+-So it does not become frightened, worried, concerned, or anxious because of grasping. 
++So it does not become frightened, worried, concerned, or agitated because of grasping. 
+@@ -1,2 +1,2 @@ mn138:21.14
+ PLI: Tassa na viññāṇavipariṇāmānuparivattajā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. 
+-Anxieties—born of latching on to the changing of consciousness and originating in accordance with natural principles—don’t occupy the mind. 
++Agitations—born of latching on to the changing of consciousness and originating in accordance with natural principles—don’t occupy the mind. 
+@@ -1,2 +1,2 @@ mn138:21.15
+ PLI: Cetaso pariyādānā na cevuttāsavā hoti na ca vighātavā na ca apekkhavā, anupādāya ca na paritassati. 
+-So it does not become frightened, worried, concerned, or anxious because of grasping. 
++So it does not become frightened, worried, concerned, or agitated because of grasping. 
+@@ -1,2 +1,2 @@ mn138:21.16
+ PLI: Evaṁ kho, āvuso, anupādā aparitassanā hoti. 
+-That’s how it is not anxious because of grasping. 
++That’s how it is not agitated because of grasping. 
+@@ -1,2 +1,2 @@ mn138:22.2
+ PLI: ‘tathā tathā, bhikkhave, bhikkhu upaparikkheyya yathā yathā upaparikkhato bahiddhā cassa viññāṇaṁ avikkhittaṁ avisaṭaṁ, ajjhattaṁ asaṇṭhitaṁ anupādāya na paritasseyya. 
+-‘A bhikkhu should examine in whatever way such that, while examining, consciousness would neither be scattered nor diffused externally, nor stuck internally, and they would not be anxious because of grasping. 
++‘A bhikkhu should examine in whatever way such that, while examining, consciousness would neither be scattered nor diffused externally, nor stuck internally, and they would not be agitated because of grasping. 
+@@ -1,2 +1,2 @@ mn138:22.3
+ PLI: Bahiddhā, bhikkhave, viññāṇe avikkhitte avisaṭe sati ajjhattaṁ asaṇṭhite anupādāya aparitassato āyatiṁ jātijarāmaraṇadukkhasamudayasambhavo na hotī’ti. 
+-When consciousness is neither scattered nor diffused externally, nor stuck internally, and they are not anxious because of grasping, there is no coming to be of the arising of suffering—of rebirth, old age, and death in the future.’ 
++When consciousness is neither scattered nor diffused externally, nor stuck internally, and they are not agitated because of grasping, there is no coming to be of the arising of suffering—of rebirth, old age, and death in the future.’ 
+--- sujato/sutta/mn/mn140_translation-en-sujato.json
++++ sujato/sutta/mn/mn140_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn140:22.12
+ PLI: anupādiyaṁ na paritassati, aparitassaṁ paccattaṁyeva parinibbāyati. 
+-Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. 
++Not grasping, they’re not agitated. Not being agitated, they personally become extinguished. 
+--- sujato/sutta/mn/mn22_translation-en-sujato.json
++++ sujato/sutta/mn/mn22_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn22:17.1
+ PLI: So evaṁ samanupassanto asati na paritassatī”ti. 
+-Seeing in this way they’re not anxious about what doesn’t exist.” 
++Seeing in this way they’re not agitated about what doesn’t exist.” 
+@@ -1,2 +1,2 @@ mn22:18.2
+ PLI: “siyā nu kho, bhante, bahiddhā asati paritassanā”ti? 
+-“Sir, can there be anxiety about what doesn’t exist externally?” 
++“Sir, can there be agitation about what doesn’t exist externally?” 
+@@ -1,2 +1,2 @@ mn22:18.8
+ PLI: Evaṁ kho, bhikkhu, bahiddhā asati paritassanā hotī”ti. 
+-That’s how there is anxiety about what doesn’t exist externally.” 
++That’s how there is agitation about what doesn’t exist externally.” 
+@@ -1,2 +1,2 @@ mn22:19.1
+ PLI: “Siyā pana, bhante, bahiddhā asati aparitassanā”ti? 
+-“But can there be no anxiety about what doesn’t exist externally?” 
++“But can there be no agitation about what doesn’t exist externally?” 
+@@ -1,2 +1,2 @@ mn22:19.7
+ PLI: Evaṁ kho, bhikkhu, bahiddhā asati aparitassanā hotī”ti. 
+-That’s how there is no anxiety about what doesn’t exist externally.” 
++That’s how there is no agitation about what doesn’t exist externally.” 
+@@ -1,2 +1,2 @@ mn22:20.1
+ PLI: “Siyā nu kho, bhante, ajjhattaṁ asati paritassanā”ti? 
+-“But can there be anxiety about what doesn’t exist internally?” 
++“But can there be agitation about what doesn’t exist internally?” 
+@@ -1,2 +1,2 @@ mn22:20.9
+ PLI: Evaṁ kho, bhikkhu, ajjhattaṁ asati paritassanā hotī”ti. 
+-That’s how there is anxiety about what doesn’t exist internally.” 
++That’s how there is agitation about what doesn’t exist internally.” 
+@@ -1,2 +1,2 @@ mn22:21.1
+ PLI: “Siyā pana, bhante, ajjhattaṁ asati aparitassanā”ti? 
+-“But can there be no anxiety about what doesn’t exist internally?” 
++“But can there be no agitation about what doesn’t exist internally?” 
+@@ -1,2 +1,2 @@ mn22:21.9
+ PLI: Evaṁ kho, bhikkhu, ajjhattaṁ asati aparitassanā hoti. 
+-That’s how there is no anxiety about what doesn’t exist internally. 
++That’s how there is no agitation about what doesn’t exist internally. 
+--- sujato/sutta/mn/mn37_translation-en-sujato.json
++++ sujato/sutta/mn/mn37_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn37:3.8
+ PLI: Anupādiyaṁ na paritassati, aparitassaṁ paccattaññeva parinibbāyati: 
+-Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. 
++Not grasping, they’re not agitated. Not being agitated, they personally become extinguished. 
+@@ -1,2 +1,2 @@ mn37:13.9
+ PLI: anupādiyaṁ na paritassati, aparitassaṁ paccattaññeva parinibbāyati: 
+-Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. 
++Not grasping, they’re not agitated. Not being agitated, they personally become extinguished. 
+--- sujato/sutta/mn/mn98_translation-en-sujato.json
++++ sujato/sutta/mn/mn98_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn98:11.8
+ PLI: yo ve na paritassati; 
+-they have no anxiety; 
++they have no agitation; 
+--- sujato/sutta/sn/sn12/sn12.51_translation-en-sujato.json
++++ sujato/sutta/sn/sn12/sn12.51_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn12.51:9.6
+ PLI: anupādiyaṁ na paritassati, aparitassaṁ paccattaññeva parinibbāyati. 
+-Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. 
++Not grasping, they’re not agitated. Not being agitated, they personally become extinguished. 
+--- sujato/sutta/sn/sn22/sn22.43_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.43_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.43:3.2
+ PLI: Tesaṁ pahānā na paritassati, aparitassaṁ sukhaṁ viharati, sukhavihārī bhikkhu ‘tadaṅganibbuto’ti vuccati. 
+-When these things are given up there’s no anxiety. Without anxiety you live happily. A bhikkhu who lives happily is said to be quenched in that respect. 
++When these things are given up there’s no agitation. Without agitation you live happily. A bhikkhu who lives happily is said to be quenched in that respect. 
+@@ -1,2 +1,2 @@ sn22.43:3.9
+ PLI: Tesaṁ pahānā na paritassati, aparitassaṁ sukhaṁ viharati, sukhavihārī bhikkhu ‘tadaṅganibbuto’ti vuccatī”ti. 
+-When these things are given up there’s no anxiety. Without anxiety you live happily. A bhikkhu who lives happily is said to be quenched in that respect.” 
++When these things are given up there’s no agitation. Without agitation you live happily. A bhikkhu who lives happily is said to be quenched in that respect.” 
+--- sujato/sutta/sn/sn22/sn22.45_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.45_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.45:1.19
+ PLI: Vimuttattā ṭhitaṁ. Ṭhitattā santusitaṁ. Santusitattā na paritassati. Aparitassaṁ paccattaññeva parinibbāyati. 
+-Being free, it’s stable. Being stable, it’s content. Being content, they’re not anxious. Not being anxious, they personally become extinguished. 
++Being free, it’s stable. Being stable, it’s content. Being content, they’re not agitated. Not being agitated, they personally become extinguished. 
+--- sujato/sutta/sn/sn22/sn22.46_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.46_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.46:2.9
+ PLI: Vimuttattā ṭhitaṁ. Ṭhitattā santusitaṁ. Santusitattā na paritassati. Aparitassaṁ paccattaññeva parinibbāyati. 
+-Being free, it’s stable. Being stable, it’s content. Being content, they’re not anxious. Not being anxious, they personally become extinguished. 
++Being free, it’s stable. Being stable, it’s content. Being content, they’re not agitated. Not being agitated, they personally become extinguished. 
+--- sujato/sutta/sn/sn22/sn22.53_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.53_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.53:3.9
+ PLI: Vimuttattā ṭhitaṁ. Ṭhitattā santusitaṁ. Santusitattā na paritassati. Aparitassaṁ paccattaññeva parinibbāyati. 
+-Being free, it’s stable. Being stable, it’s content. Being content, they’re not anxious. Not being anxious, they personally become extinguished. 
++Being free, it’s stable. Being stable, it’s content. Being content, they’re not agitated. Not being agitated, they personally become extinguished. 
+--- sujato/sutta/sn/sn22/sn22.54_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.54_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.54:4.9
+ PLI: Vimuttattā ṭhitaṁ. Ṭhitattā santusitaṁ. Santusitattā na paritassati. Aparitassaṁ paccattaññeva parinibbāyati. 
+-Being free, it’s stable. Being stable, it’s content. Being content, they’re not anxious. Not being anxious, they personally become extinguished. 
++Being free, it’s stable. Being stable, it’s content. Being content, they’re not agitated. Not being agitated, they personally become extinguished. 
+--- sujato/sutta/sn/sn22/sn22.55_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.55_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.55:13.7
+ PLI: Vimuttattā ṭhitaṁ. Ṭhitattā santusitaṁ. Santusitattā na paritassati. Aparitassaṁ paccattaññeva parinibbāyati. 
+-Being free, it’s stable. Being stable, it’s content. Being content, they’re not anxious. Not being anxious, they personally become extinguished. 
++Being free, it’s stable. Being stable, it’s content. Being content, they’re not agitated. Not being agitated, they personally become extinguished. 
+--- sujato/sutta/sn/sn22/sn22.7_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.7_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.7:0.3
+ PLI: Upādāparitassanāsutta 
+-Anxiety Because of Grasping 
++Agitation Because of Grasping 
+@@ -1,2 +1,2 @@ sn22.7:1.2
+ PLI: “Upādāparitassanañca vo, bhikkhave, desessāmi anupādāaparitassanañca. 
+-“Bhikkhus, I will teach you how grasping leads to anxiety, and how not grasping leads to freedom from anxiety. 
++“Bhikkhus, I will teach you how grasping leads to agitation, and how not grasping leads to freedom from agitation. 
+@@ -1,2 +1,2 @@ sn22.7:2.1
+ PLI: “Kathañca, bhikkhave, upādāparitassanā hoti? 
+-“And how does grasping lead to anxiety? 
++“And how does grasping lead to agitation? 
+@@ -1,2 +1,2 @@ sn22.7:2.6
+ PLI: Tassa rūpavipariṇāmānuparivattijā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. 
+-Anxieties occupy their mind, born of latching on to the changing of form, and originating in accordance with natural principles. 
++Agitation occupies their mind, born of latching on to the changing of form, and originating in accordance with natural principles. 
+@@ -1,2 +1,2 @@ sn22.7:2.7
+ PLI: Cetaso pariyādānā uttāsavā ca hoti vighātavā ca apekkhavā ca upādāya ca paritassati. 
+-So they become frightened, worried, concerned, and anxious because of grasping. 
++So they become frightened, worried, concerned, and agitated because of grasping. 
+@@ -1,2 +1,2 @@ sn22.7:5.4
+ PLI: Tassa viññāṇavipariṇāmānuparivattijā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. 
+-Anxieties occupy their mind, born of latching on to the changing of consciousness, and originating in accordance with natural principles. 
++Agitation occupies their mind, born of latching on to the changing of consciousness, and originating in accordance with natural principles. 
+@@ -1,2 +1,2 @@ sn22.7:5.5
+ PLI: Cetaso pariyādānā uttāsavā ca hoti vighātavā ca apekkhavā ca upādāya ca paritassati. 
+-So they become frightened, worried, concerned, and anxious because of grasping. 
++So they become frightened, worried, concerned, and agitated because of grasping. 
+@@ -1,2 +1,2 @@ sn22.7:5.6
+ PLI: Evaṁ kho, bhikkhave, upādāparitassanā hoti. 
+-That’s how grasping leads to anxiety. 
++That’s how grasping leads to agitation. 
+@@ -1,2 +1,2 @@ sn22.7:6.1
+ PLI: Kathañca, bhikkhave, anupādāaparitassanā hoti? 
+-And how does not grasping lead to freedom from anxiety? 
++And how does not grasping lead to freedom from agitation? 
+@@ -1,2 +1,2 @@ sn22.7:6.6
+ PLI: Tassa na rūpavipariṇāmānuparivattijā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. 
+-Anxieties—born of latching on to the changing of form and originating in accordance with natural principles—don’t occupy their mind. 
++Agitations—born of latching on to the changing of form and originating in accordance with natural principles—don’t occupy their mind. 
+@@ -1,2 +1,2 @@ sn22.7:6.7
+ PLI: Cetaso apariyādānā na cevuttāsavā hoti na ca vighātavā na ca apekkhavā, anupādāya ca na paritassati. 
+-So they don’t become frightened, worried, concerned, or anxious because of grasping. 
++So they don’t become frightened, worried, concerned, or agitated because of grasping. 
+@@ -1,2 +1,2 @@ sn22.7:9.4
+ PLI: Tassa na viññāṇavipariṇāmānuparivattijā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. 
+-Anxieties—born of latching on to the changing of consciousness and originating in accordance with natural principles—don’t occupy their mind. 
++Agitations—born of latching on to the changing of consciousness and originating in accordance with natural principles—don’t occupy their mind. 
+@@ -1,2 +1,2 @@ sn22.7:9.5
+ PLI: Cetaso apariyādānā na cevuttāsavā hoti na ca vighātavā na ca apekkhavā, anupādāya ca na paritassati. 
+-So they don’t become frightened, worried, concerned, or anxious because of grasping. 
++So they don’t become frightened, worried, concerned, or agitated because of grasping. 
+@@ -1,2 +1,2 @@ sn22.7:9.6
+ PLI: Evaṁ kho, bhikkhave, anupādā aparitassanaṁ hotī”ti. 
+-That’s how not grasping leads to freedom from anxiety.” 
++That’s how not grasping leads to freedom from agitation.” 
+--- sujato/sutta/sn/sn22/sn22.8_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.8_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.8:0.3
+ PLI: Dutiyaupādāparitassanāsutta 
+-Anxiety Because of Grasping (2nd) 
++Agitation Because of Grasping (2nd) 
+@@ -1,2 +1,2 @@ sn22.8:1.2
+ PLI: “Upādāparitassanañca vo, bhikkhave, desessāmi anupādāaparitassanañca. 
+-“Bhikkhus, I will teach you how grasping leads to anxiety, and how not grasping leads to freedom from anxiety. 
++“Bhikkhus, I will teach you how grasping leads to agitation, and how not grasping leads to freedom from agitation. 
+@@ -1,2 +1,2 @@ sn22.8:1.4
+ PLI: kathañca, bhikkhave, upādāparitassanā hoti? 
+-And how does grasping lead to anxiety? 
++And how does grasping lead to agitation? 
+@@ -1,2 +1,2 @@ sn22.8:1.14
+ PLI: Evaṁ kho, bhikkhave, upādāparitassanā hoti. 
+-That’s how grasping leads to anxiety. 
++That’s how grasping leads to agitation. 
+@@ -1,2 +1,2 @@ sn22.8:2.1
+ PLI: Kathañca, bhikkhave, anupādāaparitassanā hoti? 
+-And how does not grasping lead to freedom from anxiety? 
++And how does not grasping lead to freedom from agitation? 
+@@ -1,2 +1,2 @@ sn22.8:2.11
+ PLI: Evaṁ kho, bhikkhave, anupādāaparitassanā hotī”ti. 
+-That’s how not grasping leads to freedom from anxiety.” 
++That’s how not grasping leads to freedom from agitation.” 
+--- sujato/sutta/sn/sn22/sn22.90_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.90_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.90:3.13
+ PLI: Paritassanā upādānaṁ uppajjati; 
+-Because of anxiety, grasping arises 
++Because of agitation, grasping arises 
+--- sujato/sutta/sn/sn35/sn35.234_translation-en-sujato.json
++++ sujato/sutta/sn/sn35/sn35.234_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn35.234:7.4
+ PLI: Anupādiyaṁ na paritassati. Aparitassaṁ paccattaññeva parinibbāyati. 
+-Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. 
++Not grasping, they’re not agitated. Not being agitated, they personally become extinguished. 
+--- sujato/sutta/sn/sn35/sn35.30_translation-en-sujato.json
++++ sujato/sutta/sn/sn35/sn35.30_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn35.30:1.21
+ PLI: Anupādiyaṁ na paritassati. Aparitassaṁ paccattaññeva parinibbāyati. 
+-Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. 
++Not grasping, they’re not agitated. Not being agitated, they personally become extinguished. 
+--- sujato/sutta/sn/sn35/sn35.31_translation-en-sujato.json
++++ sujato/sutta/sn/sn35/sn35.31_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn35.31:1.23
+ PLI: Anupādiyaṁ na paritassati. Aparitassaṁ paccattaññeva parinibbāyati. 
+-Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. 
++Not grasping, they’re not agitated. Not being agitated, they personally become extinguished. 
+--- sujato/sutta/sn/sn35/sn35.90_translation-en-sujato.json
++++ sujato/sutta/sn/sn35/sn35.90_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn35.90:4.2
+ PLI: Anupādiyaṁ na paritassati. Aparitassaṁ paccattaññeva parinibbāyati. 
+-Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. 
++Not grasping, they’re not agitated. Not being agitated, they personally become extinguished. 
+--- sujato/sutta/sn/sn35/sn35.91_translation-en-sujato.json
++++ sujato/sutta/sn/sn35/sn35.91_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn35.91:4.3
+ PLI: Anupādiyaṁ na paritassati. Aparitassaṁ paccattaññeva parinibbāyati. 
+-Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. 
++Not grasping, they’re not agitated. Not being agitated, they personally become extinguished. 

@@ -1,0 +1,14 @@
+Rule: samudaya-exclamation-arising — 2 change(s), 2 file(s)
+
+--- sujato/sutta/sn/sn12/sn12.10_translation-en-sujato.json
++++ sujato/sutta/sn/sn12/sn12.10_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn12.10:4.4
+ PLI: ‘Samudayo, samudayo’ti kho me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi. 
+-‘Origination, origination.’ Such was the vision, knowledge, wisdom, realization, and light that arose in me regarding teachings not learned before from another. 
++‘Arising, arising.’ Such was the vision, knowledge, wisdom, realization, and light that arose in me regarding teachings not learned before from another. 
+--- sujato/sutta/sn/sn12/sn12.65_translation-en-sujato.json
++++ sujato/sutta/sn/sn12/sn12.65_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn12.65:3.8
+ PLI: ‘Samudayo, samudayo’ti kho me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi ñāṇaṁ udapādi paññā udapādi vijjā udapādi āloko udapādi. 
+-‘Origination, origination.’ Such was the vision, knowledge, wisdom, realization, and light that arose in me regarding teachings not learned before from another. 
++‘Arising, arising.’ Such was the vision, knowledge, wisdom, realization, and light that arose in me regarding teachings not learned before from another. 

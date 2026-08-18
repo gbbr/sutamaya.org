@@ -1,0 +1,1584 @@
+Rule: yoniso-proper-attention — 353 change(s), 85 file(s)
+
+--- sujato/sutta/an/an1/an1.11-20_translation-en-sujato.json
++++ sujato/sutta/an/an1/an1.11-20_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an1.11:1.2
+ PLI: Subhanimittaṁ, bhikkhave, ayoniso manasi karoto anuppanno ceva kāmacchando uppajjati uppanno ca kāmacchando bhiyyobhāvāya vepullāya saṁvattatī”ti. 
+-When you apply the mind irrationally to the feature of beauty, sensual desire arises, and once arisen it increases and grows.” 
++When you attend improperly to the feature of beauty, sensual desire arises, and once arisen it increases and grows.” 
+@@ -1,2 +1,2 @@ an1.12:1.2
+ PLI: Paṭighanimittaṁ, bhikkhave, ayoniso manasi karoto anuppanno ceva byāpādo uppajjati uppanno ca byāpādo bhiyyobhāvāya vepullāya saṁvattatī”ti. 
+-When you apply the mind irrationally to the feature of aversion, ill will arises, and once arisen it increases and grows.” 
++When you attend improperly to the feature of aversion, ill will arises, and once arisen it increases and grows.” 
+@@ -1,2 +1,2 @@ an1.15:1.1
+ PLI: “Nāhaṁ, bhikkhave, aññaṁ ekadhammampi samanupassāmi yena anuppannā vā vicikicchā uppajjati uppannā vā vicikicchā bhiyyobhāvāya vepullāya saṁvattati yathayidaṁ, bhikkhave, ayonisomanasikāro. 
+-“Bhikkhus, I do not see a single thing that gives rise to doubt, or, when it has arisen, makes it increase and grow like irrational application of mind. 
++“Bhikkhus, I do not see a single thing that gives rise to doubt, or, when it has arisen, makes it increase and grow like improper attention. 
+@@ -1,2 +1,2 @@ an1.15:1.2
+ PLI: Ayoniso, bhikkhave, manasi karoto anuppannā ceva vicikicchā uppajjati uppannā ca vicikicchā bhiyyobhāvāya vepullāya saṁvattatī”ti. 
+-When you apply the mind irrationally, doubt arises, and once arisen it increases and grows.” 
++When you attend improperly, doubt arises, and once arisen it increases and grows.” 
+@@ -1,2 +1,2 @@ an1.16:1.2
+ PLI: Asubhanimittaṁ, bhikkhave, yoniso manasi karoto anuppanno ceva kāmacchando nuppajjati uppanno ca kāmacchando pahīyatī”ti. 
+-When you apply the mind rationally to the feature of ugliness, sensual desire does not arise, or, if it has already arisen, it’s given up.” 
++When you attend properly to the feature of ugliness, sensual desire does not arise, or, if it has already arisen, it’s given up.” 
+@@ -1,2 +1,2 @@ an1.17:1.2
+ PLI: Mettaṁ, bhikkhave, cetovimuttiṁ yoniso manasi karoto anuppanno ceva byāpādo nuppajjati uppanno ca byāpādo pahīyatī”ti. 
+-When you apply the mind rationally to the heart’s release by love, ill will does not arise, or, if it has already arisen, it’s given up.” 
++When you attend properly to the heart’s release by love, ill will does not arise, or, if it has already arisen, it’s given up.” 
+@@ -1,2 +1,2 @@ an1.20:1.1
+ PLI: “Nāhaṁ, bhikkhave, aññaṁ ekadhammampi samanupassāmi yena anuppannā vā vicikicchā nuppajjati uppannā vā vicikicchā pahīyati yathayidaṁ, bhikkhave, yonisomanasikāro. 
+-“Bhikkhus, I do not see a single thing that prevents doubt from arising, or, when it has arisen, gives it up like rational application of mind. 
++“Bhikkhus, I do not see a single thing that prevents doubt from arising, or, when it has arisen, gives it up like proper attention. 
+@@ -1,2 +1,2 @@ an1.20:1.2
+ PLI: Yoniso, bhikkhave, manasi karoto anuppannā ceva vicikicchā nuppajjati uppannā ca vicikicchā pahīyatī”ti. 
+-When you apply the mind rationally, doubt does not arise, or, if it’s already arisen, it’s given up.” 
++When you attend properly, doubt does not arise, or, if it’s already arisen, it’s given up.” 
+--- sujato/sutta/an/an1/an1.306-315_translation-en-sujato.json
++++ sujato/sutta/an/an1/an1.306-315_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an1.310:1.1
+ PLI: “Nāhaṁ, bhikkhave, aññaṁ ekadhammampi samanupassāmi yena anuppannā vā micchādiṭṭhi uppajjati uppannā vā micchādiṭṭhi pavaḍḍhati yathayidaṁ, bhikkhave, ayonisomanasikāro. 
+-“Bhikkhus, I do not see a single thing that gives rise to wrong view, and once arisen, makes it grow like irrational application of mind. 
++“Bhikkhus, I do not see a single thing that gives rise to wrong view, and once arisen, makes it grow like improper attention. 
+@@ -1,2 +1,2 @@ an1.310:1.2
+ PLI: Ayoniso, bhikkhave, manasi karoto anuppannā ceva micchādiṭṭhi uppajjati uppannā ca micchādiṭṭhi pavaḍḍhatī”ti. 
+-When you apply the mind irrationally, wrong view arises, and once arisen it grows.” 
++When you attend improperly, wrong view arises, and once arisen it grows.” 
+@@ -1,2 +1,2 @@ an1.311:1.1
+ PLI: “Nāhaṁ, bhikkhave, aññaṁ ekadhammampi samanupassāmi yena anuppannā vā sammādiṭṭhi uppajjati uppannā vā sammādiṭṭhi pavaḍḍhati yathayidaṁ, bhikkhave, yonisomanasikāro. 
+-“Bhikkhus, I do not see a single thing that gives rise to right view, or, once it has already arisen, makes it grow like rational application of mind. 
++“Bhikkhus, I do not see a single thing that gives rise to right view, or, once it has already arisen, makes it grow like proper attention. 
+@@ -1,2 +1,2 @@ an1.311:1.2
+ PLI: Yoniso, bhikkhave, manasi karoto anuppannā ceva sammādiṭṭhi uppajjati uppannā ca sammādiṭṭhi pavaḍḍhatī”ti. 
+-When you apply the mind rationally, right view arises, and once arisen it grows.” 
++When you attend properly, right view arises, and once arisen it grows.” 
+--- sujato/sutta/an/an1/an1.61-70_translation-en-sujato.json
++++ sujato/sutta/an/an1/an1.61-70_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an1.66:1.1
+ PLI: “Nāhaṁ, bhikkhave, aññaṁ ekadhammampi samanupassāmi yena anuppannā vā akusalā dhammā uppajjanti uppannā vā kusalā dhammā parihāyanti yathayidaṁ, bhikkhave, ayonisomanasikāro. 
+-“Bhikkhus, I do not see a single thing that gives rise to unskillful qualities, or makes skillful qualities decline like irrational application of mind. 
++“Bhikkhus, I do not see a single thing that gives rise to unskillful qualities, or makes skillful qualities decline like improper attention. 
+@@ -1,2 +1,2 @@ an1.66:1.2
+ PLI: Ayoniso, bhikkhave, manasi karoto anuppannā ceva akusalā dhammā uppajjanti uppannā ca kusalā dhammā parihāyantī”ti. 
+-When you apply the mind irrationally, unskillful qualities arise and skillful qualities decline.” 
++When you attend improperly, unskillful qualities arise and skillful qualities decline.” 
+@@ -1,2 +1,2 @@ an1.67:1.1
+ PLI: “Nāhaṁ, bhikkhave, aññaṁ ekadhammampi samanupassāmi yena anuppannā vā kusalā dhammā uppajjanti uppannā vā akusalā dhammā parihāyanti yathayidaṁ, bhikkhave, yonisomanasikāro. 
+-“Bhikkhus, I do not see a single thing that gives rise to skillful qualities, or makes unskillful qualities decline like rational application of mind. 
++“Bhikkhus, I do not see a single thing that gives rise to skillful qualities, or makes unskillful qualities decline like proper attention. 
+@@ -1,2 +1,2 @@ an1.67:1.2
+ PLI: Yoniso, bhikkhave, manasi karoto anuppannā ceva kusalā dhammā uppajjanti uppannā ca akusalā dhammā parihāyantī”ti. 
+-When you apply the mind rationally, skillful qualities arise and unskillful qualities decline.” 
++When you attend properly, skillful qualities arise and unskillful qualities decline.” 
+--- sujato/sutta/an/an1/an1.71-81_translation-en-sujato.json
++++ sujato/sutta/an/an1/an1.71-81_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an1.74:1.1
+ PLI: “Nāhaṁ, bhikkhave, aññaṁ ekadhammampi samanupassāmi yena anuppannā vā bojjhaṅgā nuppajjanti uppannā vā bojjhaṅgā na bhāvanāpāripūriṁ gacchanti yathayidaṁ, bhikkhave, ayonisomanasikāro. 
+-“Bhikkhus, I do not see a single thing that prevents the awakening factors from arising, or, if they’ve already arisen, prevents them from being fully developed like irrational application of mind. 
++“Bhikkhus, I do not see a single thing that prevents the awakening factors from arising, or, if they’ve already arisen, prevents them from being fully developed like improper attention. 
+@@ -1,2 +1,2 @@ an1.74:1.2
+ PLI: Ayoniso, bhikkhave, manasi karoto anuppannā ceva bojjhaṅgā nuppajjanti uppannā ca bojjhaṅgā na bhāvanāpāripūriṁ gacchantī”ti. 
+-When you apply the mind irrationally, the awakening factors don’t arise, or, if they’ve already arisen, they’re not fully developed.” 
++When you attend improperly, the awakening factors don’t arise, or, if they’ve already arisen, they’re not fully developed.” 
+@@ -1,2 +1,2 @@ an1.75:1.1
+ PLI: “Nāhaṁ, bhikkhave, aññaṁ ekadhammampi samanupassāmi yena anuppannā vā bojjhaṅgā uppajjanti uppannā vā bojjhaṅgā bhāvanāpāripūriṁ gacchanti yathayidaṁ, bhikkhave, yonisomanasikāro. 
+-“Bhikkhus, I do not see a single thing that gives rise to the awakening factors, or, if they’ve already arisen, fully develops them like rational application of mind. 
++“Bhikkhus, I do not see a single thing that gives rise to the awakening factors, or, if they’ve already arisen, fully develops them like proper attention. 
+@@ -1,2 +1,2 @@ an1.75:1.2
+ PLI: Yoniso, bhikkhave, manasi karoto anuppannā ceva bojjhaṅgā uppajjanti uppannā ca bojjhaṅgā bhāvanāpāripūriṁ gacchantī”ti. 
+-When you apply the mind rationally, the awakening factors arise, or, if they’ve already arisen, they’re fully developed.” 
++When you attend properly, the awakening factors arise, or, if they’ve already arisen, they’re fully developed.” 
+--- sujato/sutta/an/an1/an1.82-97_translation-en-sujato.json
++++ sujato/sutta/an/an1/an1.82-97_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an1.90:1.1
+ PLI: “Nāhaṁ, bhikkhave, aññaṁ ekadhammampi samanupassāmi yo evaṁ mahato anatthāya saṁvattati yathayidaṁ, bhikkhave, ayonisomanasikāro. 
+-“Bhikkhus, I do not see a single thing that is so very harmful as irrational application of mind. 
++“Bhikkhus, I do not see a single thing that is so very harmful as improper attention. 
+@@ -1,2 +1,2 @@ an1.90:1.2
+ PLI: Ayonisomanasikāro, bhikkhave, mahato anatthāya saṁvattatī”ti. 
+-Irrational application of mind is very harmful.” 
++Improper attention is very harmful.” 
+@@ -1,2 +1,2 @@ an1.91:1.1
+ PLI: “Nāhaṁ, bhikkhave, aññaṁ ekadhammampi samanupassāmi yo evaṁ mahato atthāya saṁvattati yathayidaṁ, bhikkhave, yoniso manasikāro. 
+-“Bhikkhus, I do not see a single thing that is so very beneficial as rational application of mind. 
++“Bhikkhus, I do not see a single thing that is so very beneficial as proper attention. 
+@@ -1,2 +1,2 @@ an1.91:1.2
+ PLI: Yonisomanasikāro, bhikkhave, mahato atthāya saṁvattatī”ti. 
+-Rational application of mind is very beneficial.” 
++Proper attention is very beneficial.” 
+--- sujato/sutta/an/an1/an1.98-139_translation-en-sujato.json
++++ sujato/sutta/an/an1/an1.98-139_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an1.102-109:1.1
+ PLI: “Ajjhattikaṁ, bhikkhave, aṅganti karitvā nāññaṁ ekaṅgampi samanupassāmi yaṁ evaṁ mahato anatthāya saṁvattati yathayidaṁ, bhikkhave, mahicchatā …pe… appicchatā … asantuṭṭhitā … santuṭṭhitā … ayonisomanasikāro … yonisomanasikāro … asampajaññaṁ … sampajaññaṁ … dvādasamaṁ. 
+-“Taking into account interior factors, bhikkhus, I do not see a single one that is so very harmful as having many wishes … having few wishes … lack of contentment … contentment … irrational application of mind … rational application of mind … lack of full comprehension … full comprehension …” 
++“Taking into account interior factors, bhikkhus, I do not see a single one that is so very harmful as having many wishes … having few wishes … lack of contentment … contentment … improper attention … proper attention … lack of full comprehension … full comprehension …” 
+@@ -1,2 +1,2 @@ an1.118-128:1.1
+ PLI: “Nāhaṁ, bhikkhave, aññaṁ ekadhammampi samanupassāmi yo evaṁ saddhammassa sammosāya antaradhānāya saṁvattati yathayidaṁ, bhikkhave, mahicchatā …pe… appicchatā … asantuṭṭhitā … santuṭṭhitā … ayonisomanasikāro … yonisomanasikāro … asampajaññaṁ … sampajaññaṁ … pāpamittatā … kalyāṇamittatā … anuyogo akusalānaṁ dhammānaṁ, ananuyogo kusalānaṁ dhammānaṁ. 
+-“Bhikkhus, I do not see a single thing that leads to the decline and disappearance of the true teaching like having many wishes … having few wishes … lack of contentment … contentment … irrational application of mind … rational application of mind … lack of full comprehension … full comprehension … bad friends … good friends … pursuing bad habits and not good habits. 
++“Bhikkhus, I do not see a single thing that leads to the decline and disappearance of the true teaching like having many wishes … having few wishes … lack of contentment … contentment … improper attention … proper attention … lack of full comprehension … full comprehension … bad friends … good friends … pursuing bad habits and not good habits. 
+--- sujato/sutta/an/an10/an10.47_translation-en-sujato.json
++++ sujato/sutta/an/an10/an10.47_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an10.47:1.7
+ PLI: Ayoniso manasikāro kho, mahāli, hetu, ayoniso manasikāro paccayo pāpassa kammassa kiriyāya pāpassa kammassa pavattiyā. 
+-Irrational application of mind is the cause of bad deeds … 
++Improper attention is the cause of bad deeds … 
+@@ -1,2 +1,2 @@ an10.47:2.5
+ PLI: Yoniso manasikāro kho, mahāli, hetu, yoniso manasikāro paccayo kalyāṇassa kammassa kiriyāya kalyāṇassa kammassa pavattiyā. 
+-Rational application of mind is the cause of good deeds … 
++Proper attention is the cause of good deeds … 
+--- sujato/sutta/an/an10/an10.61_translation-en-sujato.json
++++ sujato/sutta/an/an10/an10.61_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an10.61:2.15
+ PLI: ‘Ayonisomanasikāro’tissa vacanīyaṁ. 
+-You should say: ‘Irrational application of mind.’ 
++You should say: ‘Improper attention.’ 
+@@ -1,2 +1,2 @@ an10.61:2.16
+ PLI: Ayonisomanasikārampāhaṁ, bhikkhave, sāhāraṁ vadāmi, no anāhāraṁ. 
+-I say that irrational application of mind is fueled by something, it’s not unfueled. 
++I say that improper attention is fueled by something, it’s not unfueled. 
+@@ -1,2 +1,2 @@ an10.61:2.17
+ PLI: Ko cāhāro ayonisomanasikārassa? 
+-And what is the fuel for irrational application of mind? 
++And what is the fuel for improper attention? 
+@@ -1,2 +1,2 @@ an10.61:3.1
+ PLI: Iti kho, bhikkhave, asappurisasaṁsevo paripūro asaddhammassavanaṁ paripūreti, asaddhammassavanaṁ paripūraṁ assaddhiyaṁ paripūreti, assaddhiyaṁ paripūraṁ ayonisomanasikāraṁ paripūreti, ayonisomanasikāro paripūro asatāsampajaññaṁ paripūreti, asatāsampajaññaṁ paripūraṁ indriyaasaṁvaraṁ paripūreti, indriyaasaṁvaro paripūro tīṇi duccaritāni paripūreti, tīṇi duccaritāni paripūrāni pañca nīvaraṇe paripūrenti, pañca nīvaraṇā paripūrā avijjaṁ paripūrenti; 
+-In this way, when the factor of associating with untrue persons is fulfilled, it fulfills the factor of listening to an untrue teaching. When the factor of listening to an untrue teaching is fulfilled, it fulfills the factor of lack of faith … irrational application of mind … lack of awareness and full comprehension … lack of sense restraint … the three kinds of misconduct … the five hindrances. When the five hindrances are fulfilled, they fulfill ignorance. 
++In this way, when the factor of associating with untrue persons is fulfilled, it fulfills the factor of listening to an untrue teaching. When the factor of listening to an untrue teaching is fulfilled, it fulfills the factor of lack of faith … improper attention … lack of awareness and full comprehension … lack of sense restraint … the three kinds of misconduct … the five hindrances. When the five hindrances are fulfilled, they fulfill ignorance. 
+@@ -1,2 +1,2 @@ an10.61:5.1
+ PLI: Evamevaṁ kho, bhikkhave, asappurisasaṁsevo paripūro asaddhammassavanaṁ paripūreti, asaddhammassavanaṁ paripūraṁ assaddhiyaṁ paripūreti, assaddhiyaṁ paripūraṁ ayonisomanasikāraṁ paripūreti, ayonisomanasikāro paripūro asatāsampajaññaṁ paripūreti, asatāsampajaññaṁ paripūraṁ indriyaasaṁvaraṁ paripūreti, indriyaasaṁvaro paripūro tīṇi duccaritāni paripūreti, tīṇi duccaritāni paripūrāni pañca nīvaraṇe paripūrenti, pañca nīvaraṇā paripūrā avijjaṁ paripūrenti; 
+-In the same way, when the factor of associating with untrue persons is fulfilled, it fulfills the factor of listening to an untrue teaching. When the factor of listening to an untrue teaching is fulfilled, it fulfills the factor of lack of faith … irrational application of mind … lack of awareness and full comprehension … lack of sense restraint … the three kinds of misconduct … the five hindrances. When the five hindrances are fulfilled, they fulfill ignorance. 
++In the same way, when the factor of associating with untrue persons is fulfilled, it fulfills the factor of listening to an untrue teaching. When the factor of listening to an untrue teaching is fulfilled, it fulfills the factor of lack of faith … improper attention … lack of awareness and full comprehension … lack of sense restraint … the three kinds of misconduct … the five hindrances. When the five hindrances are fulfilled, they fulfill ignorance. 
+@@ -1,2 +1,2 @@ an10.61:6.18
+ PLI: ‘Yonisomanasikāro’tissa vacanīyaṁ. 
+-You should say: ‘Rational application of mind.’ 
++You should say: ‘Proper attention.’ 
+@@ -1,2 +1,2 @@ an10.61:6.19
+ PLI: Yonisomanasikārampāhaṁ, bhikkhave, sāhāraṁ vadāmi, no anāhāraṁ. 
+-I say that rational application of mind is fueled by something, it’s not unfueled. 
++I say that proper attention is fueled by something, it’s not unfueled. 
+@@ -1,2 +1,2 @@ an10.61:6.20
+ PLI: Ko cāhāro yonisomanasikārassa? 
+-And what is the fuel for rational application of mind? 
++And what is the fuel for proper attention? 
+@@ -1,2 +1,2 @@ an10.61:7.1
+ PLI: Iti kho, bhikkhave, sappurisasaṁsevo paripūro saddhammassavanaṁ paripūreti, saddhammassavanaṁ paripūraṁ saddhaṁ paripūreti, saddhā paripūrā yonisomanasikāraṁ paripūreti, yonisomanasikāro paripūro satisampajaññaṁ paripūreti, satisampajaññaṁ paripūraṁ indriyasaṁvaraṁ paripūreti, indriyasaṁvaro paripūro tīṇi sucaritāni paripūreti, tīṇi sucaritāni paripūrāni cattāro satipaṭṭhāne paripūrenti, cattāro satipaṭṭhānā paripūrā satta bojjhaṅge paripūrenti, satta bojjhaṅgā paripūrā vijjāvimuttiṁ paripūrenti; 
+-In this way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … rational application of mind … awareness and full comprehension … sense restraint … the three kinds of good conduct … the four establishments of awareness … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. 
++In this way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … proper attention … awareness and full comprehension … sense restraint … the three kinds of good conduct … the four establishments of awareness … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. 
+@@ -1,2 +1,2 @@ an10.61:9.1
+ PLI: Evamevaṁ kho, bhikkhave, sappurisasaṁsevo paripūro saddhammassavanaṁ paripūreti, saddhammassavanaṁ paripūraṁ saddhaṁ paripūreti, saddhā paripūrā yonisomanasikāraṁ paripūreti, yonisomanasikāro paripūro satisampajaññaṁ paripūreti, satisampajaññaṁ paripūraṁ indriyasaṁvaraṁ paripūreti, indriyasaṁvaro paripūro tīṇi sucaritāni paripūreti, tīṇi sucaritāni paripūrāni cattāro satipaṭṭhāne paripūrenti, cattāro satipaṭṭhānā paripūrā satta bojjhaṅge paripūrenti, satta bojjhaṅgā paripūrā vijjāvimuttiṁ paripūrenti; 
+-In the same way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … rational application of mind … awareness and full comprehension … sense restraint … the three kinds of good conduct … the four establishments of awareness … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. 
++In the same way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … proper attention … awareness and full comprehension … sense restraint … the three kinds of good conduct … the four establishments of awareness … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. 
+--- sujato/sutta/an/an10/an10.62_translation-en-sujato.json
++++ sujato/sutta/an/an10/an10.62_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an10.62:2.18
+ PLI: ‘Ayonisomanasikāro’tissa vacanīyaṁ. 
+-You should say: ‘Irrational application of mind.’ 
++You should say: ‘Improper attention.’ 
+@@ -1,2 +1,2 @@ an10.62:2.19
+ PLI: Ayonisomanasikārampāhaṁ, bhikkhave, sāhāraṁ vadāmi, no anāhāraṁ. 
+-I say that irrational application of mind is fueled by something, it’s not unfueled. 
++I say that improper attention is fueled by something, it’s not unfueled. 
+@@ -1,2 +1,2 @@ an10.62:2.20
+ PLI: Ko cāhāro ayonisomanasikārassa? 
+-And what is the fuel for irrational application of mind? 
++And what is the fuel for improper attention? 
+@@ -1,2 +1,2 @@ an10.62:3.1
+ PLI: Iti kho, bhikkhave, asappurisasaṁsevo paripūro assaddhammassavanaṁ paripūreti, assaddhammassavanaṁ paripūraṁ assaddhiyaṁ paripūreti, assaddhiyaṁ paripūraṁ ayonisomanasikāraṁ paripūreti, ayonisomanasikāro paripūro asatāsampajaññaṁ paripūreti, asatāsampajaññaṁ paripūraṁ indriyaasaṁvaraṁ paripūreti, indriyaasaṁvaro paripūro tīṇi duccaritāni paripūreti, tīṇi duccaritāni paripūrāni pañca nīvaraṇe paripūrenti, pañca nīvaraṇā paripūrā avijjaṁ paripūrenti, avijjā paripūrā bhavataṇhaṁ paripūreti; 
+-In this way, when the factor of associating with untrue persons is fulfilled, it fulfills the factor of listening to an untrue teaching. When the factor of listening to an untrue teaching is fulfilled, it fulfills the factor of lack of faith … irrational application of mind … lack of awareness and full comprehension … lack of sense restraint … the three kinds of misconduct … the five hindrances … ignorance. When ignorance is fulfilled, it fulfills craving for continued existence. 
++In this way, when the factor of associating with untrue persons is fulfilled, it fulfills the factor of listening to an untrue teaching. When the factor of listening to an untrue teaching is fulfilled, it fulfills the factor of lack of faith … improper attention … lack of awareness and full comprehension … lack of sense restraint … the three kinds of misconduct … the five hindrances … ignorance. When ignorance is fulfilled, it fulfills craving for continued existence. 
+@@ -1,2 +1,2 @@ an10.62:5.1
+ PLI: Evamevaṁ kho, bhikkhave, asappurisasaṁsevo paripūro assaddhammassavanaṁ paripūreti, assaddhammassavanaṁ paripūraṁ assaddhiyaṁ paripūreti, assaddhiyaṁ paripūraṁ ayonisomanasikāraṁ paripūreti, ayonisomanasikāro paripūro asatāsampajaññaṁ paripūreti, asatāsampajaññaṁ paripūraṁ indriyaasaṁvaraṁ paripūreti, indriyaasaṁvaro paripūro tīṇi duccaritāni paripūreti, tīṇi duccaritāni paripūrāni pañca nīvaraṇe paripūrenti, pañca nīvaraṇā paripūrā avijjaṁ paripūrenti, avijjā paripūrā bhavataṇhaṁ paripūreti; 
+-In the same way, when the factor of associating with untrue persons is fulfilled, it fulfills the factor of listening to an untrue teaching. When the factor of listening to an untrue teaching is fulfilled, it fulfills the factor of lack of faith … irrational application of mind … lack of awareness and full comprehension … lack of sense restraint … the three kinds of misconduct … the five hindrances … ignorance. When ignorance is fulfilled, it fulfills craving for continued existence. 
++In the same way, when the factor of associating with untrue persons is fulfilled, it fulfills the factor of listening to an untrue teaching. When the factor of listening to an untrue teaching is fulfilled, it fulfills the factor of lack of faith … improper attention … lack of awareness and full comprehension … lack of sense restraint … the three kinds of misconduct … the five hindrances … ignorance. When ignorance is fulfilled, it fulfills craving for continued existence. 
+@@ -1,2 +1,2 @@ an10.62:6.18
+ PLI: ‘Yonisomanasikāro’tissa vacanīyaṁ. 
+-You should say: ‘Rational application of mind.’ 
++You should say: ‘Proper attention.’ 
+@@ -1,2 +1,2 @@ an10.62:6.19
+ PLI: Yonisomanasikārampāhaṁ, bhikkhave, sāhāraṁ vadāmi, no anāhāraṁ. 
+-I say that rational application of mind is fueled by something, it’s not unfueled. 
++I say that proper attention is fueled by something, it’s not unfueled. 
+@@ -1,2 +1,2 @@ an10.62:6.20
+ PLI: Ko cāhāro yonisomanasikārassa? 
+-And what is the fuel for rational application of mind? 
++And what is the fuel for proper attention? 
+@@ -1,2 +1,2 @@ an10.62:7.1
+ PLI: Iti kho, bhikkhave, sappurisasaṁsevo paripūro saddhammassavanaṁ paripūreti, saddhammassavanaṁ paripūraṁ saddhaṁ paripūreti, saddhā paripūrā yonisomanasikāraṁ paripūreti, yonisomanasikāro paripūro satisampajaññaṁ paripūreti, satisampajaññaṁ paripūraṁ indriyasaṁvaraṁ paripūreti, indriyasaṁvaro paripūro tīṇi sucaritāni paripūreti, tīṇi sucaritāni paripūrāni cattāro satipaṭṭhāne paripūrenti, cattāro satipaṭṭhānā paripūrā satta bojjhaṅge paripūrenti, satta bojjhaṅgā paripūrā vijjāvimuttiṁ paripūrenti; 
+-In this way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … rational application of mind … awareness and full comprehension … sense restraint … the three kinds of good conduct … the four establishments of awareness … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. 
++In this way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … proper attention … awareness and full comprehension … sense restraint … the three kinds of good conduct … the four establishments of awareness … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. 
+@@ -1,2 +1,2 @@ an10.62:8.3
+ PLI: Evamevaṁ kho, bhikkhave, sappurisasaṁsevo paripūro saddhammassavanaṁ paripūreti …pe… 
+-In the same way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … rational application of mind … awareness and full comprehension … sense restraint …the three kinds of good conduct … the four establishments of awareness … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. 
++In the same way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … proper attention … awareness and full comprehension … sense restraint …the three kinds of good conduct … the four establishments of awareness … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. 
+--- sujato/sutta/an/an10/an10.76_translation-en-sujato.json
++++ sujato/sutta/an/an10/an10.76_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an10.76:4.3
+ PLI: Ayonisomanasikāraṁ appahāya, kummaggasevanaṁ appahāya, cetaso līnattaṁ appahāya—
+-Irrational application of mind, following a wrong path, and mental sluggishness. 
++Improper attention, following a wrong path, and mental sluggishness. 
+@@ -1,2 +1,2 @@ an10.76:5.1
+ PLI: Tayome, bhikkhave, dhamme appahāya abhabbo ayoniso manasikāraṁ pahātuṁ kummaggasevanaṁ pahātuṁ cetaso līnattaṁ pahātuṁ. 
+-Without giving up three things you can’t give up irrational application of mind, following a wrong path, and mental sluggishness. 
++Without giving up three things you can’t give up improper attention, following a wrong path, and mental sluggishness. 
+@@ -1,2 +1,2 @@ an10.76:5.4
+ PLI: ime kho, bhikkhave, tayo dhamme appahāya abhabbo ayonisomanasikāraṁ pahātuṁ kummaggasevanaṁ pahātuṁ cetaso līnattaṁ pahātuṁ. 
+-Without giving up these three things you can’t give up irrational application of mind, following a wrong path, and mental sluggishness. 
++Without giving up these three things you can’t give up improper attention, following a wrong path, and mental sluggishness. 
+@@ -1,2 +1,2 @@ an10.76:11.7
+ PLI: So vikkhittacitto samāno abhabbo ayonisomanasikāraṁ pahātuṁ kummaggasevanaṁ pahātuṁ cetaso līnattaṁ pahātuṁ. 
+-When your mind is scattered you can’t give up irrational application of mind, following a wrong path, and mental sluggishness. 
++When your mind is scattered you can’t give up improper attention, following a wrong path, and mental sluggishness. 
+@@ -1,2 +1,2 @@ an10.76:14.3
+ PLI: Ayonisomanasikāraṁ pahāya, kummaggasevanaṁ pahāya, cetaso līnattaṁ pahāya—
+-Irrational application of mind, following a wrong path, and mental sluggishness. 
++Improper attention, following a wrong path, and mental sluggishness. 
+@@ -1,2 +1,2 @@ an10.76:15.1
+ PLI: Tayome, bhikkhave, dhamme pahāya bhabbo ayonisomanasikāraṁ pahātuṁ kummaggasevanaṁ pahātuṁ cetaso līnattaṁ pahātuṁ. 
+-After giving up three things you can give up irrational application of mind, following a wrong path, and mental sluggishness. 
++After giving up three things you can give up improper attention, following a wrong path, and mental sluggishness. 
+@@ -1,2 +1,2 @@ an10.76:15.4
+ PLI: ime kho, bhikkhave, tayo dhamme pahāya bhabbo ayonisomanasikāraṁ pahātuṁ kummaggasevanaṁ pahātuṁ cetaso līnattaṁ pahātuṁ. 
+-After giving up these three things you can give up irrational application of mind, following a wrong path, and mental sluggishness. 
++After giving up these three things you can give up improper attention, following a wrong path, and mental sluggishness. 
+@@ -1,2 +1,2 @@ an10.76:21.7
+ PLI: So avikkhittacitto samāno bhabbo ayonisomanasikāraṁ pahātuṁ kummaggasevanaṁ pahātuṁ cetaso līnattaṁ pahātuṁ. 
+-When your mind isn’t scattered you can give up irrational application of mind, following a wrong path, and mental sluggishness. 
++When your mind isn’t scattered you can give up improper attention, following a wrong path, and mental sluggishness. 
+--- sujato/sutta/an/an10/an10.93_translation-en-sujato.json
++++ sujato/sutta/an/an10/an10.93_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an10.93:9.5
+ PLI: imassa ayamāyasmato diṭṭhi attano vā ayonisomanasikārahetu uppannā paratoghosapaccayā vā. 
+-This view of his has either arisen from his own irrational application of mind, or is conditioned by what someone else says. 
++This view of his has either arisen from his own improper attention, or is conditioned by what someone else says. 
+@@ -1,2 +1,2 @@ an10.93:10.4
+ PLI: imassāpi ayamāyasmato diṭṭhi attano vā ayonisomanasikārahetu uppannā paratoghosapaccayā vā. 
+-This view of his has either arisen from his own irrational application of mind, or is conditioned by what someone else says. 
++This view of his has either arisen from his own improper attention, or is conditioned by what someone else says. 
+@@ -1,2 +1,2 @@ an10.93:11.11
+ PLI: imassāpi ayamāyasmato diṭṭhi attano vā ayonisomanasikārahetu uppannā paratoghosapaccayā vā. 
+-This view of his has either arisen from his own irrational application of mind, or is conditioned by what someone else says. 
++This view of his has either arisen from his own improper attention, or is conditioned by what someone else says. 
+--- sujato/sutta/an/an2/an2.118-129_translation-en-sujato.json
++++ sujato/sutta/an/an2/an2.118-129_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an2.123:1.3
+ PLI: Subhanimittañca ayoniso ca manasikāro. 
+-The feature of beauty and irrational application of mind. 
++The feature of beauty and improper attention. 
+@@ -1,2 +1,2 @@ an2.124:1.3
+ PLI: Paṭighanimittañca ayoniso ca manasikāro. 
+-The feature of harshness and irrational application of mind. 
++The feature of harshness and improper attention. 
+@@ -1,2 +1,2 @@ an2.125:1.3
+ PLI: Parato ca ghoso ayoniso ca manasikāro. 
+-The voice of another and irrational application of mind. 
++The voice of another and improper attention. 
+@@ -1,2 +1,2 @@ an2.126:1.3
+ PLI: Parato ca ghoso, yoniso ca manasikāro. 
+-The voice of another and rational application of mind. 
++The voice of another and proper attention. 
+--- sujato/sutta/an/an3/an3.16_translation-en-sujato.json
++++ sujato/sutta/an/an3/an3.16_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an3.16:3.2
+ PLI: Idha, bhikkhave, bhikkhu paṭisaṅkhā yoniso āhāraṁ āhāreti: 
+-It’s when a bhikkhu reflects rationally on the food that they eat: 
++It’s when a bhikkhu reflects properly on the food that they eat: 
+--- sujato/sutta/an/an3/an3.5_translation-en-sujato.json
++++ sujato/sutta/an/an3/an3.5_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an3.5:0.3
+ PLI: Ayonisosutta 
+-Irrational 
++Improper 
+@@ -1,2 +1,2 @@ an3.5:1.3
+ PLI: Ayoniso pañhaṁ kattā hoti, ayoniso pañhaṁ vissajjetā hoti, parassa kho pana yoniso pañhaṁ vissajjitaṁ parimaṇḍalehi padabyañjanehi siliṭṭhehi upagatehi nābbhanumoditā hoti. 
+-They ask a question irrationally. They answer a question irrationally. And when someone else answers a question rationally—with well-rounded, coherent, and relevant words and phrases—they disagree with it. 
++They ask a question improperly. They answer a question improperly. And when someone else answers a question properly—with well-rounded, coherent, and relevant words and phrases—they disagree with it. 
+@@ -1,2 +1,2 @@ an3.5:2.3
+ PLI: Yoniso pañhaṁ kattā hoti, yoniso pañhaṁ vissajjetā hoti, parassa kho pana yoniso pañhaṁ vissajjitaṁ parimaṇḍalehi padabyañjanehi siliṭṭhehi upagatehi abbhanumoditā hoti. 
+-They ask a question rationally. They answer a question rationally. And when someone else answers a question rationally—with well-rounded, coherent, and relevant words and phrases—they agree with it. 
++They ask a question properly. They answer a question properly. And when someone else answers a question properly—with well-rounded, coherent, and relevant words and phrases—they agree with it. 
+--- sujato/sutta/an/an3/an3.68_translation-en-sujato.json
++++ sujato/sutta/an/an3/an3.68_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an3.68:3.3
+ PLI: Tassa subhanimittaṁ ayoniso manasi karoto anuppanno vā rāgo uppajjati uppanno vā rāgo bhiyyobhāvāya vepullāya saṁvattati. 
+-When you apply the mind irrationally to the feature of beauty, greed arises, and once arisen it increases and grows. 
++When you attend improperly to the feature of beauty, greed arises, and once arisen it increases and grows. 
+@@ -1,2 +1,2 @@ an3.68:4.3
+ PLI: Tassa paṭighanimittaṁ ayoniso manasi karoto anuppanno vā doso uppajjati uppanno vā doso bhiyyobhāvāya vepullāya saṁvattati. 
+-When you apply the mind irrationally to the feature of aversion, hate arises, and once arisen it increases and grows. 
++When you attend improperly to the feature of aversion, hate arises, and once arisen it increases and grows. 
+@@ -1,2 +1,2 @@ an3.68:5.2
+ PLI: ‘“Ayoniso manasikāro”tissa vacanīyaṁ. 
+-You should say: ‘Irrational application of mind. 
++You should say: ‘Improper attention. 
+@@ -1,2 +1,2 @@ an3.68:5.3
+ PLI: Tassa ayoniso manasi karoto anuppanno vā moho uppajjati uppanno vā moho bhiyyobhāvāya vepullāya saṁvattati. 
+-When you apply the mind irrationally, delusion arises, and once arisen it increases and grows. 
++When you attend improperly, delusion arises, and once arisen it increases and grows. 
+@@ -1,2 +1,2 @@ an3.68:6.3
+ PLI: Tassa asubhanimittaṁ yoniso manasi karoto anuppanno ceva rāgo nuppajjati uppanno ca rāgo pahīyati. 
+-When you apply the mind rationally on the ugly feature of things, greed doesn’t arise, or if it’s already arisen it’s given up. 
++When you attend properly to the ugly feature of things, greed doesn’t arise, or if it’s already arisen it’s given up. 
+@@ -1,2 +1,2 @@ an3.68:7.3
+ PLI: Tassa mettaṁ cetovimuttiṁ yoniso manasi karoto anuppanno ceva doso nuppajjati uppanno ca doso pahīyati. 
+-When you apply the mind rationally on the heart’s release by love, hate doesn’t arise, or if it’s already arisen it’s given up. 
++When you attend properly to the heart’s release by love, hate doesn’t arise, or if it’s already arisen it’s given up. 
+@@ -1,2 +1,2 @@ an3.68:8.2
+ PLI: ‘“Yonisomanasikāro”tissa vacanīyaṁ. 
+-You should say: ‘Rational application of mind. 
++You should say: ‘Proper attention. 
+@@ -1,2 +1,2 @@ an3.68:8.3
+ PLI: Tassa yoniso manasi karoto anuppanno ceva moho nuppajjati uppanno ca moho pahīyati. 
+-When you apply the mind rationally, delusion doesn’t arise, or if it’s already arisen it’s given up. 
++When you attend properly, delusion doesn’t arise, or if it’s already arisen it’s given up. 
+--- sujato/sutta/an/an4/an4.159_translation-en-sujato.json
++++ sujato/sutta/an/an4/an4.159_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an4.159:5.4
+ PLI: Idha, bhagini, bhikkhu paṭisaṅkhā yoniso āhāraṁ āhāreti: 
+-Take a bhikkhu who reflects rationally on the food that they eat: 
++Take a bhikkhu who reflects properly on the food that they eat: 
+--- sujato/sutta/an/an4/an4.248_translation-en-sujato.json
++++ sujato/sutta/an/an4/an4.248_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an4.248:1.3
+ PLI: Sappurisasaṁsevo, saddhammasavanaṁ, yonisomanasikāro, dhammānudhammappaṭipatti—
+-Associating with true persons, listening to the true teaching, rational application of mind, and practicing in line with the teaching. 
++Associating with true persons, listening to the true teaching, proper attention, and practicing in line with the teaching. 
+--- sujato/sutta/an/an4/an4.249_translation-en-sujato.json
++++ sujato/sutta/an/an4/an4.249_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an4.249:1.3
+ PLI: Sappurisasaṁsevo, saddhammasavanaṁ, yonisomanasikāro, dhammānudhammappaṭipatti—
+-Associating with true persons, listening to the true teaching, rational application of mind, and practicing in line with the teaching. 
++Associating with true persons, listening to the true teaching, proper attention, and practicing in line with the teaching. 
+--- sujato/sutta/an/an4/an4.37_translation-en-sujato.json
++++ sujato/sutta/an/an4/an4.37_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an4.37:4.2
+ PLI: Idha, bhikkhave, bhikkhu paṭisaṅkhā yoniso āhāraṁ āhāreti: 
+-It’s when a bhikkhu reflects rationally on the food that they eat: 
++It’s when a bhikkhu reflects properly on the food that they eat: 
+--- sujato/sutta/an/an5/an5.151_translation-en-sujato.json
++++ sujato/sutta/an/an5/an5.151_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an5.151:1.3
+ PLI: Kathaṁ paribhoti, kathikaṁ paribhoti, attānaṁ paribhoti, vikkhittacitto dhammaṁ suṇāti, anekaggacitto ayoniso ca manasi karoti. 
+-They disparage the talk, the speaker, or themselves. They listen with scattered and disunified mind. They apply the mind irrationally. 
++They disparage the talk, the speaker, or themselves. They listen with scattered and disunified mind. They attend improperly. 
+@@ -1,2 +1,2 @@ an5.151:2.3
+ PLI: Na kathaṁ paribhoti, na kathikaṁ paribhoti, na attānaṁ paribhoti, avikkhittacitto dhammaṁ suṇāti, ekaggacitto yoniso ca manasi karoti. 
+-They don’t disparage the talk, the speaker, or themselves. They listen with unscattered and unified mind. They apply the mind rationally. 
++They don’t disparage the talk, the speaker, or themselves. They listen with unscattered and unified mind. They attend properly. 
+--- sujato/sutta/an/an6/an6.58_translation-en-sujato.json
++++ sujato/sutta/an/an6/an6.58_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an6.58:3.2
+ PLI: Idha, bhikkhave, bhikkhu paṭisaṅkhā yoniso cakkhundriyasaṁvarasaṁvuto viharati. 
+-Take a bhikkhu who, reflecting rationally, lives restraining the eye faculty. 
++Take a bhikkhu who, reflecting properly, lives restraining the eye faculty. 
+@@ -1,2 +1,2 @@ an6.58:3.4
+ PLI: Paṭisaṅkhā yoniso sotindriya …pe… 
+-Reflecting rationally, they live restraining the ear faculty … 
++Reflecting properly, they live restraining the ear faculty … 
+@@ -1,2 +1,2 @@ an6.58:4.2
+ PLI: Idha, bhikkhave, bhikkhu paṭisaṅkhā yoniso cīvaraṁ paṭisevati: 
+-Take a bhikkhu who, reflecting rationally, makes use of robes: 
++Take a bhikkhu who, reflecting properly, makes use of robes: 
+@@ -1,2 +1,2 @@ an6.58:4.4
+ PLI: Paṭisaṅkhā yoniso piṇḍapātaṁ paṭisevati: 
+-Reflecting rationally, they make use of almsfood: 
++Reflecting properly, they make use of almsfood: 
+@@ -1,2 +1,2 @@ an6.58:4.6
+ PLI: Paṭisaṅkhā yoniso senāsanaṁ paṭisevati: 
+-Reflecting rationally, they make use of lodgings: 
++Reflecting properly, they make use of lodgings: 
+@@ -1,2 +1,2 @@ an6.58:4.8
+ PLI: Paṭisaṅkhā yoniso gilānapaccayabhesajjaparikkhāraṁ paṭisevati: 
+-Reflecting rationally, they make use of medicines and supplies for the sick: 
++Reflecting properly, they make use of medicines and supplies for the sick: 
+@@ -1,2 +1,2 @@ an6.58:5.2
+ PLI: Idha, bhikkhave, bhikkhu paṭisaṅkhā yoniso khamo hoti sītassa uṇhassa, jighacchāya, pipāsāya, ḍaṁsamakasavātātapasarīsapasamphassānaṁ, duruttānaṁ durāgatānaṁ vacanapathānaṁ, uppannānaṁ sārīrikānaṁ vedanānaṁ dukkhānaṁ tibbānaṁ kharānaṁ kaṭukānaṁ asātānaṁ amanāpānaṁ pāṇaharānaṁ adhivāsakajātiko hoti. 
+-Take a bhikkhu who, reflecting rationally, endures cold, heat, hunger, and thirst. They endure the touch of flies, mosquitoes, wind, sun, and reptiles. They endure rude and unwelcome criticism. And they put up with physical pain—sharp, severe, acute, unpleasant, disagreeable, and life-threatening. 
++Take a bhikkhu who, reflecting properly, endures cold, heat, hunger, and thirst. They endure the touch of flies, mosquitoes, wind, sun, and reptiles. They endure rude and unwelcome criticism. And they put up with physical pain—sharp, severe, acute, unpleasant, disagreeable, and life-threatening. 
+@@ -1,2 +1,2 @@ an6.58:6.2
+ PLI: Idha, bhikkhave, bhikkhu paṭisaṅkhā yoniso caṇḍaṁ hatthiṁ parivajjeti, caṇḍaṁ assaṁ parivajjeti, caṇḍaṁ goṇaṁ parivajjeti, caṇḍaṁ kukkuraṁ parivajjeti, ahiṁ khāṇuṁ kaṇṭakaṭṭhānaṁ sobbhaṁ papātaṁ candanikaṁ oḷigallaṁ, yathārūpe anāsane nisinnaṁ, yathārūpe agocare carantaṁ, yathārūpe pāpake mitte bhajantaṁ viññū sabrahmacārī pāpakesu ṭhānesu okappeyyuṁ, so tañca anāsanaṁ tañca agocaraṁ te ca pāpake mitte paṭisaṅkhā yoniso parivajjeti. 
+-Take a bhikkhu who, reflecting rationally, avoids a wild elephant, a wild horse, a wild ox, a wild dog, a snake, a stump, thorny ground, a pit, a cliff, a swamp, and a sewer. Reflecting rationally, they avoid sitting on inappropriate seats, walking in inappropriate neighborhoods, and mixing with bad friends—whatever sensible spiritual companions would believe to be a bad setting. 
++Take a bhikkhu who, reflecting properly, avoids a wild elephant, a wild horse, a wild ox, a wild dog, a snake, a stump, thorny ground, a pit, a cliff, a swamp, and a sewer. Reflecting properly, they avoid sitting on inappropriate seats, walking in inappropriate neighborhoods, and mixing with bad friends—whatever sensible spiritual companions would believe to be a bad setting. 
+@@ -1,2 +1,2 @@ an6.58:7.2
+ PLI: Idha, bhikkhave, bhikkhu paṭisaṅkhā yoniso uppannaṁ kāmavitakkaṁ nādhivāseti pajahati vinodeti byantīkaroti anabhāvaṁ gameti, 
+-Take a bhikkhu who, reflecting rationally, doesn’t tolerate a sensual, 
++Take a bhikkhu who, reflecting properly, doesn’t tolerate a sensual, 
+@@ -1,2 +1,2 @@ an6.58:8.2
+ PLI: Idha, bhikkhave, bhikkhu paṭisaṅkhā yoniso satisambojjhaṅgaṁ bhāveti vivekanissitaṁ virāganissitaṁ nirodhanissitaṁ vosaggapariṇāmiṁ, 
+-Take a bhikkhu who, reflecting rationally, develops the awakening factors of awareness, 
++Take a bhikkhu who, reflecting properly, develops the awakening factors of awareness, 
+--- sujato/sutta/an/an7/an7.3_translation-en-sujato.json
++++ sujato/sutta/an/an7/an7.3_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an7.3:3.1
+ PLI: Yoniso vicine dhammaṁ, 
+-They should examine the teaching rationally, 
++They should examine the teaching properly, 
+--- sujato/sutta/an/an7/an7.4_translation-en-sujato.json
++++ sujato/sutta/an/an7/an7.4_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an7.4:11.1
+ PLI: Yoniso vicine dhammaṁ, 
+-They should examine the teaching rationally, 
++They should examine the teaching properly, 
+--- sujato/sutta/an/an8/an8.9_translation-en-sujato.json
++++ sujato/sutta/an/an8/an8.9_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an8.9:3.2
+ PLI: Idha, bhikkhave, nando paṭisaṅkhā yoniso āhāraṁ āhāreti: 
+-Nanda reflects rationally on the food he eats: 
++Nanda reflects properly on the food he eats: 
+--- sujato/sutta/dn/dn14_translation-en-sujato.json
++++ sujato/sutta/dn/dn14_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn14:2.18.6
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.18.10
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.18.14
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.18.18
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.18.22
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.18.26
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.18.30
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.18.34
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.18.38
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.18.42
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.20.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.20.7
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.20.11
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.20.15
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.20.19
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.20.23
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.20.27
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.20.31
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.20.35
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+@@ -1,2 +1,2 @@ dn14:2.20.39
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom, 
++Then, through proper attention, Vipassī penetrated with wisdom, 
+--- sujato/sutta/dn/dn18_translation-en-sujato.json
++++ sujato/sutta/dn/dn18_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn18:23.7
+ PLI: So aparena samayena ariyadhammaṁ suṇāti, yoniso manasi karoti, dhammānudhammaṁ paṭipajjati. 
+-After some time they hear the teaching of the noble ones, rationally apply the mind to how it applies to them, and practice in line with the teaching. 
++After some time they hear the teaching of the noble ones, attend properly to how it applies to them, and practice in line with the teaching. 
+@@ -1,2 +1,2 @@ dn18:24.2
+ PLI: So aparena samayena ariyadhammaṁ suṇāti, yoniso manasi karoti, dhammānudhammaṁ paṭipajjati. 
+-After some time they hear the teaching of the noble ones, rationally apply the mind to how it applies to them, and practice in line with the teaching. 
++After some time they hear the teaching of the noble ones, attend properly to how it applies to them, and practice in line with the teaching. 
+@@ -1,2 +1,2 @@ dn18:25.3
+ PLI: So aparena samayena ariyadhammaṁ suṇāti, yoniso manasi karoti, dhammānudhammaṁ paṭipajjati. 
+-After some time they hear the teaching of the noble ones, rationally apply the mind to how it applies to them, and practice in line with the teaching. 
++After some time they hear the teaching of the noble ones, attend properly to how it applies to them, and practice in line with the teaching. 
+--- sujato/sutta/dn/dn23_translation-en-sujato.json
++++ sujato/sutta/dn/dn23_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn23:13.29
+ PLI: Yathā taṁ bālā abyattā anayabyasanaṁ āpannā ayoniso dāyajjaṁ gavesantī, evameva kho tvaṁ, rājañña, bālo abyatto anayabyasanaṁ āpajjissasi ayoniso paralokaṁ gavesanto; 
+-Being foolish and incompetent, she sought an inheritance irrationally and fell to ruin and disaster. In the same way, chieftain, being foolish and incompetent, you’re seeking the other world irrationally and will fall to ruin and disaster, 
++Being foolish and incompetent, she sought an inheritance improperly and fell to ruin and disaster. In the same way, chieftain, being foolish and incompetent, you’re seeking the other world improperly and will fall to ruin and disaster, 
+@@ -1,2 +1,2 @@ dn23:19.17
+ PLI: ‘yāva bālā ime paccantajanapadā manussā, kathañhi nāma ayoniso saṅkhasaddaṁ gavesissantī’ti. 
+-‘How foolish are these borderland folk! For how on earth can they seek the sound of a horn so irrationally?’ 
++‘How foolish are these borderland folk! For how on earth can they seek the sound of a horn so improperly?’ 
+@@ -1,2 +1,2 @@ dn23:21.48
+ PLI: ‘yāva bālo ayaṁ dārako abyatto, kathañhi nāma ayoniso aggiṁ gavesissatī’ti. 
+-‘How foolish is this boy, how incompetent! For how on earth can he seek a fire so irrationally?’ 
++‘How foolish is this boy, how incompetent! For how on earth can he seek a fire so improperly?’ 
+@@ -1,2 +1,2 @@ dn23:21.51
+ PLI: Na tveva yathā tvaṁ bālo abyatto ayoniso aggiṁ gavesī’ti. 
+-Not the foolish and incompetent way you sought it so irrationally.’ 
++Not the foolish and incompetent way you sought it so improperly.’ 
+@@ -1,2 +1,2 @@ dn23:21.52
+ PLI: Evameva kho tvaṁ, rājañña, bālo abyatto ayoniso paralokaṁ gavesissasi. 
+-In the same way, chieftain, being foolish and incompetent, you seek the other world irrationally. 
++In the same way, chieftain, being foolish and incompetent, you seek the other world improperly. 
+@@ -1,2 +1,2 @@ dn23:23.68
+ PLI: Evameva kho tvaṁ, rājañña, bālo abyatto anayabyasanaṁ āpajjissasi ayoniso paralokaṁ gavesanto, seyyathāpi so purimo satthavāho. 
+-In the same way, chieftain, being foolish and incompetent, you will come to ruin seeking the other world irrationally, like the first caravan leader. 
++In the same way, chieftain, being foolish and incompetent, you will come to ruin seeking the other world improperly, like the first caravan leader. 
+--- sujato/sutta/dn/dn33_translation-en-sujato.json
++++ sujato/sutta/dn/dn33_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn33:1.11.107
+ PLI: sappurisasaṁsevo, saddhammassavanaṁ, yonisomanasikāro, dhammānudhammappaṭipatti. 
+-associating with true persons, listening to the true teaching, rational application of mind, and practicing in line with the teaching. 
++associating with true persons, listening to the true teaching, proper attention, and practicing in line with the teaching. 
+--- sujato/sutta/dn/dn34_translation-en-sujato.json
++++ sujato/sutta/dn/dn34_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn34:1.2.15
+ PLI: Ayoniso manasikāro. 
+-Irrational application of mind. 
++Improper attention. 
+@@ -1,2 +1,2 @@ dn34:1.2.18
+ PLI: Yoniso manasikāro. 
+-Rational application of mind. 
++Proper attention. 
+@@ -1,2 +1,2 @@ dn34:2.2.3
+ PLI: Nava yonisomanasikāramūlakā dhammā, yonisomanasikaroto pāmojjaṁ jāyati, pamuditassa pīti jāyati, pītimanassa kāyo passambhati, passaddhakāyo sukhaṁ vedeti, sukhino cittaṁ samādhiyati, samāhite citte yathābhūtaṁ jānāti passati, yathābhūtaṁ jānaṁ passaṁ nibbindati, nibbindaṁ virajjati, virāgā vimuccati. 
+-Nine things rooted in rational application of mind. When you apply the mind rationally, joy springs up. When you’re joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, you feel bliss. And when you’re blissful, the mind becomes concentrated. When your mind is concentrated, you truly know and see. When you truly know and see, you grow disillusioned. Being disillusioned, desire fades away. When desire fades away you’re freed. 
++Nine things rooted in proper attention. When you attend properly, joy springs up. When you’re joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, you feel bliss. And when you’re blissful, the mind becomes concentrated. When your mind is concentrated, you truly know and see. When you truly know and see, you grow disillusioned. Being disillusioned, desire fades away. When desire fades away you’re freed. 
+--- sujato/sutta/dn/dn4_translation-en-sujato.json
++++ sujato/sutta/dn/dn4_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn4:8.5
+ PLI: ‘bālo soṇadaṇḍo brāhmaṇo abyatto, nāsakkhi samaṇaṁ gotamaṁ yoniso pañhaṁ pucchitun’ti. 
+-‘Soṇadaṇḍa is foolish and incompetent. He’s not able to ask the ascetic Gotama a rational question.’ 
++‘Soṇadaṇḍa is foolish and incompetent. He’s not able to ask the ascetic Gotama a proper question.’ 
+--- sujato/sutta/kn/iti/vagga2/iti16_translation-en-sujato.json
++++ sujato/sutta/kn/iti/vagga2/iti16_translation-en-sujato.json
+@@ -1,2 +1,2 @@ iti16:2.1
+ PLI: “Sekhassa, bhikkhave, bhikkhuno appattamānasassa anuttaraṁ yogakkhemaṁ patthayamānassa viharato ajjhattikaṁ aṅganti karitvā nāññaṁ ekaṅgampi samanupassāmi yaṁ evaṁ bahūpakāraṁ yathayidaṁ, bhikkhave, yoniso manasikāro. 
+-“Taking into account interior factors, bhikkhus, I do not see a single one that is so very helpful as rational application of mind for a trainee bhikkhu who hasn’t achieved their heart’s desire, but lives aspiring to the supreme sanctuary from the yoke. 
++“Taking into account interior factors, bhikkhus, I do not see a single one that is so very helpful as proper attention for a trainee bhikkhu who hasn’t achieved their heart’s desire, but lives aspiring to the supreme sanctuary from the yoke. 
+@@ -1,2 +1,2 @@ iti16:2.2
+ PLI: Yoniso, bhikkhave, bhikkhu manasi karonto akusalaṁ pajahati, kusalaṁ bhāvetī”ti. 
+-A bhikkhu rationally applying the mind gives up the unskillful and develops the skillful.” 
++A bhikkhu attending properly gives up the unskillful and develops the skillful.” 
+@@ -1,2 +1,2 @@ iti16:3.4
+ PLI: uttamatthassa pattiyā; 
+-as rational application of mind. 
++as proper attention. 
+@@ -1,2 +1,2 @@ iti16:3.5
+ PLI: Yoniso padahaṁ bhikkhu, 
+-Striving rationally, a bhikkhu 
++Striving properly, a bhikkhu 
+--- sujato/sutta/kn/thag/thag19.1_translation-en-sujato.json
++++ sujato/sutta/kn/thag/thag19.1_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thag19.1:26.1
+ PLI: ‘Dukkhanti khandhe paṭipassa yoniso, 
+-“Reflect rationally on the aggregates as suffering, 
++“Reflect properly on the aggregates as suffering, 
+@@ -1,2 +1,2 @@ thag19.1:27.1
+ PLI: ‘Aniccaṁ dukkhanti vipassa yoniso, 
+-“Rationally discern that impermanence is suffering, 
++“Properly discern that impermanence is suffering, 
+--- sujato/sutta/kn/thag/thag2.19_translation-en-sujato.json
++++ sujato/sutta/kn/thag/thag2.19_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thag2.19:2.3
+ PLI: Yoniso paṭipajjitvā, 
+-I practiced rationally and extracted 
++I practiced properly and extracted 
+--- sujato/sutta/kn/thag/thag5.7_translation-en-sujato.json
++++ sujato/sutta/kn/thag/thag5.7_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thag5.7:3.3
+ PLI: Tathaṁ yāthāvakaṁ atthaṁ, 
+-I rationally reflected 
++I properly reflected 
+--- sujato/sutta/kn/thig/thig16.1_translation-en-sujato.json
++++ sujato/sutta/kn/thig/thig16.1_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thig16.1:25.1
+ PLI: Khandhadhātuāyatanaṁ, 
+-Rationally examining 
++Properly examining 
+@@ -1,2 +1,2 @@ thig16.1:66.3
+ PLI: Yo yoniso payuñjati, 
+-by those who rationally apply themselves; 
++by those who properly apply themselves; 
+--- sujato/sutta/kn/thig/thig5.3_translation-en-sujato.json
++++ sujato/sutta/kn/thig/thig5.3_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thig5.3:1.1
+ PLI: “Ayoniso manasikārā, 
+-Due to irrational application of mind, 
++Due to improper attention, 
+--- sujato/sutta/kn/thig/thig5.4_translation-en-sujato.json
++++ sujato/sutta/kn/thig/thig5.4_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thig5.4:4.2
+ PLI: vicinantiyā yoniso; 
+-rationally investigating, 
++properly investigating, 
+--- sujato/sutta/mn/mn107_translation-en-sujato.json
++++ sujato/sutta/mn/mn107_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn107:5.3
+ PLI: Paṭisaṅkhā yoniso āhāraṁ āhāreyyāsi—
+-Reflect rationally on the food that you eat: 
++Reflect properly on the food that you eat: 
+--- sujato/sutta/mn/mn126_translation-en-sujato.json
++++ sujato/sutta/mn/mn126_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn126:4.3
+ PLI: ‘āsañcepi karitvā ayoniso brahmacariyaṁ caranti, abhabbā phalassa adhigamāya; 
+-‘If you lead the spiritual life irrationally, you can’t win the fruit, regardless of whether you make a wish, 
++‘If you lead the spiritual life improperly, you can’t win the fruit, regardless of whether you make a wish, 
+@@ -1,2 +1,2 @@ mn126:4.7
+ PLI: Āsañcepi karitvā yoniso brahmacariyaṁ caranti, bhabbā phalassa adhigamāya; 
+-But if you lead the spiritual life rationally, you can win the fruit, regardless of whether you make a wish, 
++But if you lead the spiritual life properly, you can win the fruit, regardless of whether you make a wish, 
+@@ -1,2 +1,2 @@ mn126:9.6
+ PLI: Ayoni hesā, bhūmija, phalassa adhigamāya. 
+-Because that’s an irrational way to win the fruit. 
++Because that’s an improper way to win the fruit. 
+@@ -1,2 +1,2 @@ mn126:10.7
+ PLI: Ayoni hesā, bhūmija, telassa adhigamāya. 
+-Because that’s an irrational way to extract oil. 
++Because that’s an improper way to extract oil. 
+@@ -1,2 +1,2 @@ mn126:10.13
+ PLI: Ayoni hesā, bhūmija, phalassa adhigamāya. 
+-Because that’s an irrational way to win the fruit. 
++Because that’s an improper way to win the fruit. 
+@@ -1,2 +1,2 @@ mn126:11.7
+ PLI: Ayoni hesā, bhūmija, khīrassa adhigamāya. 
+-Because that’s an irrational way to get milk. 
++Because that’s an improper way to get milk. 
+@@ -1,2 +1,2 @@ mn126:11.14
+ PLI: Ayoni hesā, bhūmija, phalassa adhigamāya. 
+-Because that’s an irrational way to win the fruit. 
++Because that’s an improper way to win the fruit. 
+@@ -1,2 +1,2 @@ mn126:12.7
+ PLI: Ayoni hesā, bhūmija, navanītassa adhigamāya. 
+-Because that’s an irrational way to produce butter. 
++Because that’s an improper way to produce butter. 
+@@ -1,2 +1,2 @@ mn126:12.14
+ PLI: Ayoni hesā, bhūmija, phalassa adhigamāya. 
+-Because that’s an irrational way to win the fruit. 
++Because that’s an improper way to win the fruit. 
+@@ -1,2 +1,2 @@ mn126:13.7
+ PLI: Ayoni hesā, bhūmija, aggissa adhigamāya. 
+-Because that’s an irrational way to start a fire. 
++Because that’s an improper way to start a fire. 
+@@ -1,2 +1,2 @@ mn126:13.14
+ PLI: Ayoni hesā, bhūmija, phalassa adhigamāya. 
+-Because that’s an irrational way to win the fruit. 
++Because that’s an improper way to win the fruit. 
+@@ -1,2 +1,2 @@ mn126:14.6
+ PLI: Yoni hesā, bhūmija, phalassa adhigamāya. 
+-Because that’s a rational way to win the fruit. 
++Because that’s a proper way to win the fruit. 
+@@ -1,2 +1,2 @@ mn126:15.7
+ PLI: Yoni hesā, bhūmija, telassa adhigamāya. 
+-Because that’s a rational way to extract oil. 
++Because that’s a proper way to extract oil. 
+@@ -1,2 +1,2 @@ mn126:15.14
+ PLI: Yoni hesā, bhūmija, phalassa adhigamāya. 
+-Because that’s a rational way to win the fruit. 
++Because that’s a proper way to win the fruit. 
+@@ -1,2 +1,2 @@ mn126:16.7
+ PLI: Yoni hesā, bhūmija, khīrassa adhigamāya. 
+-Because that’s a rational way to get milk. 
++Because that’s a proper way to get milk. 
+@@ -1,2 +1,2 @@ mn126:16.14
+ PLI: Yoni hesā, bhūmija, phalassa adhigamāya. 
+-Because that’s a rational way to win the fruit. 
++Because that’s a proper way to win the fruit. 
+@@ -1,2 +1,2 @@ mn126:17.7
+ PLI: Yoni hesā, bhūmija, navanītassa adhigamāya. 
+-Because that’s a rational way to produce butter. 
++Because that’s a proper way to produce butter. 
+@@ -1,2 +1,2 @@ mn126:17.14
+ PLI: Yoni hesā, bhūmija, phalassa adhigamāya. 
+-Because that’s a rational way to win the fruit. 
++Because that’s a proper way to win the fruit. 
+@@ -1,2 +1,2 @@ mn126:18.7
+ PLI: Yoni hesā, bhūmija, aggissa adhigamāya. 
+-Because that’s a rational way to start a fire. 
++Because that’s a proper way to start a fire. 
+@@ -1,2 +1,2 @@ mn126:18.14
+ PLI: Yoni hesā, bhūmija, phalassa adhigamāya. 
+-Because that’s a rational way to win the fruit. 
++Because that’s a proper way to win the fruit. 
+--- sujato/sutta/mn/mn136_translation-en-sujato.json
++++ sujato/sutta/mn/mn136_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn136:6.7
+ PLI: ‘idānevāyaṁ udāyī moghapuriso ummujjamāno ayoniso ummujjissatī’ti. 
+-he was coming up with something irrational. 
++he was coming up with something improper. 
+--- sujato/sutta/mn/mn143_translation-en-sujato.json
++++ sujato/sutta/mn/mn143_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn143:17.13
+ PLI: Yoniso vicine dhammaṁ, 
+-would examine the teaching rationally, 
++would examine the teaching properly, 
+--- sujato/sutta/mn/mn2_translation-en-sujato.json
++++ sujato/sutta/mn/mn2_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn2:3.3
+ PLI: Yoniso ca manasikāraṁ ayoniso ca manasikāraṁ. 
+-Rational application of mind and irrational application of mind. 
++Proper attention and improper attention. 
+@@ -1,2 +1,2 @@ mn2:3.4
+ PLI: Ayoniso, bhikkhave, manasikaroto anuppannā ceva āsavā uppajjanti, uppannā ca āsavā pavaḍḍhanti; 
+-When you apply the mind irrationally, defilements arise, and once arisen they grow. 
++When you attend improperly, defilements arise, and once arisen they grow. 
+@@ -1,2 +1,2 @@ mn2:3.5
+ PLI: yoniso ca kho, bhikkhave, manasikaroto anuppannā ceva āsavā na uppajjanti, uppannā ca āsavā pahīyanti. 
+-When you apply the mind rationally, defilements don’t arise, and those that have already arisen are given up. 
++When you attend properly, defilements don’t arise, and those that have already arisen are given up. 
+@@ -1,2 +1,2 @@ mn2:7.2
+ PLI: So evaṁ ayoniso manasi karoti: 
+-This is how they apply the mind irrationally: 
++This is how they attend improperly: 
+@@ -1,2 +1,2 @@ mn2:8.1
+ PLI: Tassa evaṁ ayoniso manasikaroto channaṁ diṭṭhīnaṁ aññatarā diṭṭhi uppajjati. 
+-When they apply the mind irrationally in this way, one of the following six views arises in them and is taken as a genuine fact. 
++When they attend improperly in this way, one of the following six views arises in them and is taken as a genuine fact. 
+@@ -1,2 +1,2 @@ mn2:11.1
+ PLI: So ‘idaṁ dukkhan’ti yoniso manasi karoti, ‘ayaṁ dukkhasamudayo’ti yoniso manasi karoti, ‘ayaṁ dukkhanirodho’ti yoniso manasi karoti, ‘ayaṁ dukkhanirodhagāminī paṭipadā’ti yoniso manasi karoti. 
+-They rationally apply the mind: ‘This is suffering’ … ‘This is the arising of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. 
++They attend properly: ‘This is suffering’ … ‘This is the arising of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. 
+@@ -1,2 +1,2 @@ mn2:12.2
+ PLI: Idha, bhikkhave, bhikkhu paṭisaṅkhā yoniso cakkhundriyasaṁvarasaṁvuto viharati. 
+-Take a bhikkhu who, reflecting rationally, lives restraining the eye faculty. 
++Take a bhikkhu who, reflecting properly, lives restraining the eye faculty. 
+@@ -1,2 +1,2 @@ mn2:12.4
+ PLI: Paṭisaṅkhā yoniso sotindriyasaṁvarasaṁvuto viharati …pe… 
+-Reflecting rationally, they live restraining the ear faculty … 
++Reflecting properly, they live restraining the ear faculty … 
+@@ -1,2 +1,2 @@ mn2:13.2
+ PLI: Idha, bhikkhave, bhikkhu paṭisaṅkhā yoniso cīvaraṁ paṭisevati: 
+-Take a bhikkhu who, reflecting rationally, makes use of robes: 
++Take a bhikkhu who, reflecting properly, makes use of robes: 
+@@ -1,2 +1,2 @@ mn2:14.1
+ PLI: Paṭisaṅkhā yoniso piṇḍapātaṁ paṭisevati: 
+-Reflecting rationally, they make use of almsfood: 
++Reflecting properly, they make use of almsfood: 
+@@ -1,2 +1,2 @@ mn2:15.1
+ PLI: Paṭisaṅkhā yoniso senāsanaṁ paṭisevati: 
+-Reflecting rationally, they make use of lodgings: 
++Reflecting properly, they make use of lodgings: 
+@@ -1,2 +1,2 @@ mn2:16.1
+ PLI: Paṭisaṅkhā yoniso gilānappaccayabhesajjaparikkhāraṁ paṭisevati: 
+-Reflecting rationally, they make use of medicines and supplies for the sick: 
++Reflecting properly, they make use of medicines and supplies for the sick: 
+@@ -1,2 +1,2 @@ mn2:18.2
+ PLI: Idha, bhikkhave, bhikkhu paṭisaṅkhā yoniso khamo hoti sītassa uṇhassa, jighacchāya pipāsāya. Ḍaṁsamakasavātātapasarīsapasamphassānaṁ, duruttānaṁ durāgatānaṁ vacanapathānaṁ, uppannānaṁ sārīrikānaṁ vedanānaṁ dukkhānaṁ tibbānaṁ kharānaṁ kaṭukānaṁ asātānaṁ amanāpānaṁ pāṇaharānaṁ adhivāsakajātiko hoti. 
+-Take a bhikkhu who, reflecting rationally, endures cold, heat, hunger, and thirst. They endure the touch of flies, mosquitoes, wind, sun, and reptiles. They endure rude and unwelcome criticism. And they put up with physical pain—sharp, severe, acute, unpleasant, disagreeable, and life-threatening. 
++Take a bhikkhu who, reflecting properly, endures cold, heat, hunger, and thirst. They endure the touch of flies, mosquitoes, wind, sun, and reptiles. They endure rude and unwelcome criticism. And they put up with physical pain—sharp, severe, acute, unpleasant, disagreeable, and life-threatening. 
+@@ -1,2 +1,2 @@ mn2:19.2
+ PLI: Idha, bhikkhave, bhikkhu paṭisaṅkhā yoniso caṇḍaṁ hatthiṁ parivajjeti, caṇḍaṁ assaṁ parivajjeti, caṇḍaṁ goṇaṁ parivajjeti, caṇḍaṁ kukkuraṁ parivajjeti, ahiṁ khāṇuṁ kaṇṭakaṭṭhānaṁ sobbhaṁ papātaṁ candanikaṁ oḷigallaṁ. 
+-Take a bhikkhu who, reflecting rationally, avoids a wild elephant, a wild horse, a wild ox, a wild dog, a snake, a stump, thorny ground, a pit, a cliff, a swamp, and a sewer. 
++Take a bhikkhu who, reflecting properly, avoids a wild elephant, a wild horse, a wild ox, a wild dog, a snake, a stump, thorny ground, a pit, a cliff, a swamp, and a sewer. 
+@@ -1,2 +1,2 @@ mn2:19.3
+ PLI: Yathārūpe anāsane nisinnaṁ yathārūpe agocare carantaṁ yathārūpe pāpake mitte bhajantaṁ viññū sabrahmacārī pāpakesu ṭhānesu okappeyyuṁ, so tañca anāsanaṁ tañca agocaraṁ te ca pāpake mitte paṭisaṅkhā yoniso parivajjeti. 
+-Reflecting rationally, they avoid sitting on inappropriate seats, walking in inappropriate neighborhoods, and mixing with bad friends—whatever sensible spiritual companions would believe to be a bad setting. 
++Reflecting properly, they avoid sitting on inappropriate seats, walking in inappropriate neighborhoods, and mixing with bad friends—whatever sensible spiritual companions would believe to be a bad setting. 
+@@ -1,2 +1,2 @@ mn2:20.2
+ PLI: Idha, bhikkhave, bhikkhu paṭisaṅkhā yoniso uppannaṁ kāmavitakkaṁ nādhivāseti pajahati vinodeti byantīkaroti anabhāvaṁ gameti, uppannaṁ byāpādavitakkaṁ …pe… uppannaṁ vihiṁsāvitakkaṁ …pe… uppannuppanne pāpake akusale dhamme nādhivāseti pajahati vinodeti byantīkaroti anabhāvaṁ gameti. 
+-Take a bhikkhu who, reflecting rationally, doesn’t tolerate a sensual, malicious, or cruel thought that has arisen, but gives it up, dispels it, eliminates it, and obliterates it. They don’t tolerate any bad, unskillful qualities that have arisen, but give them up, dispel them, eliminate them, and obliterate them. 
++Take a bhikkhu who, reflecting properly, doesn’t tolerate a sensual, malicious, or cruel thought that has arisen, but gives it up, dispels it, eliminates it, and obliterates it. They don’t tolerate any bad, unskillful qualities that have arisen, but give them up, dispel them, eliminate them, and obliterate them. 
+@@ -1,2 +1,2 @@ mn2:21.2
+ PLI: Idha, bhikkhave, bhikkhu paṭisaṅkhā yoniso satisambojjhaṅgaṁ bhāveti vivekanissitaṁ virāganissitaṁ nirodhanissitaṁ vossaggapariṇāmiṁ; 
+-Take a bhikkhu who, reflecting rationally, develops the awakening factors of awareness, 
++Take a bhikkhu who, reflecting properly, develops the awakening factors of awareness, 
+--- sujato/sutta/mn/mn39_translation-en-sujato.json
++++ sujato/sutta/mn/mn39_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn39:9.2
+ PLI: ‘Bhojane mattaññuno bhavissāma, paṭisaṅkhā yoniso āhāraṁ āharissāma, 
+-You should train yourselves like this: ‘We will not eat too much. We will only eat after reflecting rationally on our food. 
++You should train yourselves like this: ‘We will not eat too much. We will only eat after reflecting properly on our food. 
+--- sujato/sutta/mn/mn43_translation-en-sujato.json
++++ sujato/sutta/mn/mn43_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn43:13.3
+ PLI: parato ca ghoso, yoniso ca manasikāro. 
+-the voice of another and rational application of mind. 
++the voice of another and proper attention. 
+--- sujato/sutta/mn/mn53_translation-en-sujato.json
++++ sujato/sutta/mn/mn53_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn53:9.2
+ PLI: Idha, mahānāma, ariyasāvako paṭisaṅkhā yoniso āhāraṁ āhāreti: 
+-It’s when a noble disciple reflects rationally on the food that they eat: 
++It’s when a noble disciple reflects properly on the food that they eat: 
+--- sujato/sutta/sn/sn1/sn1.48_translation-en-sujato.json
++++ sujato/sutta/sn/sn1/sn1.48_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn1.48:3.3
+ PLI: Yoniso vicine dhammaṁ, 
+-would examine the teaching rationally, 
++would examine the teaching properly, 
+--- sujato/sutta/sn/sn12/sn12.10_translation-en-sujato.json
++++ sujato/sutta/sn/sn12/sn12.10_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn12.10:2.3
+ PLI: Tassa mayhaṁ, bhikkhave, yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, I penetrated with wisdom: 
++Then, through proper attention, I penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.10:3.12
+ PLI: Tassa mayhaṁ, bhikkhave, yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, I penetrated with wisdom: 
++Then, through proper attention, I penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.10:5.3
+ PLI: Tassa mayhaṁ, bhikkhave, yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, I penetrated with wisdom: 
++Then, through proper attention, I penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.10:6.12
+ PLI: Tassa mayhaṁ, bhikkhave, yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, I penetrated with wisdom: 
++Then, through proper attention, I penetrated with wisdom: 
+--- sujato/sutta/sn/sn12/sn12.37_translation-en-sujato.json
++++ sujato/sutta/sn/sn12/sn12.37_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn12.37:2.1
+ PLI: Tatra kho, bhikkhave, sutavā ariyasāvako paṭiccasamuppādaññeva sādhukaṁ yoniso manasi karoti: 
+-A learned noble disciple carefully and rationally applies the mind to dependent origination itself: 
++A learned noble disciple attends carefully and properly to dependent origination itself: 
+--- sujato/sutta/sn/sn12/sn12.41_translation-en-sujato.json
++++ sujato/sutta/sn/sn12/sn12.41_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn12.41:12.2
+ PLI: Idha, gahapati, ariyasāvako paṭiccasamuppādaññeva sādhukaṁ yoniso manasi karoti: 
+-A noble disciple carefully and rationally applies the mind to dependent origination itself: 
++A noble disciple attends carefully and properly to dependent origination itself: 
+--- sujato/sutta/sn/sn12/sn12.42_translation-en-sujato.json
++++ sujato/sutta/sn/sn12/sn12.42_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn12.42:4.2
+ PLI: Idha, bhikkhave, ariyasāvako paṭiccasamuppādaññeva sādhukaṁ yoniso manasi karoti …pe… 
+-A noble disciple carefully and rationally applies the mind to dependent origination itself … 
++A noble disciple attends carefully and properly to dependent origination itself … 
+--- sujato/sutta/sn/sn12/sn12.4_translation-en-sujato.json
++++ sujato/sutta/sn/sn12/sn12.4_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn12.4:2.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:3.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:4.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:5.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:6.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:7.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:8.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:9.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:10.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:11.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:12.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:14.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:15.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:16.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:17.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:18.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:19.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:20.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:21.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:22.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:23.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.4:24.3
+ PLI: Atha kho, bhikkhave, vipassissa bodhisattassa yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, Vipassī penetrated with wisdom: 
++Then, through proper attention, Vipassī penetrated with wisdom: 
+--- sujato/sutta/sn/sn12/sn12.61_translation-en-sujato.json
++++ sujato/sutta/sn/sn12/sn12.61_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn12.61:5.1
+ PLI: Tatra, bhikkhave, sutavā ariyasāvako paṭiccasamuppādaṁyeva sādhukaṁ yoniso manasi karoti: 
+-In this case, a learned noble disciple carefully and rationally applies the mind to dependent origination itself: 
++In this case, a learned noble disciple attends carefully and properly to dependent origination itself: 
+--- sujato/sutta/sn/sn12/sn12.62_translation-en-sujato.json
++++ sujato/sutta/sn/sn12/sn12.62_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn12.62:3.1
+ PLI: Tatra, bhikkhave, sutavā ariyasāvako paṭiccasamuppādaṁyeva sādhukaṁ yoniso manasi karoti: 
+-In this case, a learned noble disciple carefully and rationally applies the mind to dependent origination itself: 
++In this case, a learned noble disciple attends carefully and properly to dependent origination itself: 
+--- sujato/sutta/sn/sn12/sn12.65_translation-en-sujato.json
++++ sujato/sutta/sn/sn12/sn12.65_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn12.65:1.8
+ PLI: Tassa mayhaṁ, bhikkhave, yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, I penetrated with wisdom: 
++Then, through proper attention, I penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.65:2.11
+ PLI: Tassa mayhaṁ, bhikkhave, yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, I penetrated with wisdom: 
++Then, through proper attention, I penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.65:2.15
+ PLI: Tassa mayhaṁ, bhikkhave, yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, I penetrated with wisdom: 
++Then, through proper attention, I penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.65:4.4
+ PLI: Tassa mayhaṁ, bhikkhave, yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, I penetrated with wisdom: 
++Then, through proper attention, I penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.65:4.17
+ PLI: Tassa mayhaṁ, bhikkhave, yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, I penetrated with wisdom: 
++Then, through proper attention, I penetrated with wisdom: 
+@@ -1,2 +1,2 @@ sn12.65:5.4
+ PLI: Tassa mayhaṁ, bhikkhave, yoniso manasikārā ahu paññāya abhisamayo: 
+-Then, through rational application of mind, I penetrated with wisdom: 
++Then, through proper attention, I penetrated with wisdom: 
+--- sujato/sutta/sn/sn2/sn2.20_translation-en-sujato.json
++++ sujato/sutta/sn/sn2/sn2.20_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn2.20:4.3
+ PLI: Yoniso vicine dhammaṁ, 
+-would examine the teaching rationally, 
++would examine the teaching properly, 
+--- sujato/sutta/sn/sn22/sn22.122_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.122_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.122:1.3
+ PLI: “sīlavatāvuso, sāriputta, bhikkhunā katame dhammā yoniso manasikātabbā”ti? 
+-“Reverend Sāriputta, what things should an ethical bhikkhu rationally apply the mind to?” 
++“Reverend Sāriputta, what things should an ethical bhikkhu attend properly to?” 
+@@ -1,2 +1,2 @@ sn22.122:1.4
+ PLI: “Sīlavatāvuso, koṭṭhika, bhikkhunā pañcupādānakkhandhā aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato yoniso manasi kātabbā. 
+-“Reverend Koṭṭhita, an ethical bhikkhu should rationally apply the mind to the five grasping aggregates as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
++“Reverend Koṭṭhita, an ethical bhikkhu should attend properly to the five grasping aggregates as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
+@@ -1,2 +1,2 @@ sn22.122:1.7
+ PLI: Sīlavatāvuso, koṭṭhika, bhikkhunā ime pañcupādānakkhandhā aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato yoniso manasi kātabbā. 
+-An ethical bhikkhu should rationally apply the mind to these five grasping aggregates as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
++An ethical bhikkhu should attend properly to these five grasping aggregates as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
+@@ -1,2 +1,2 @@ sn22.122:1.8
+ PLI: Ṭhānaṁ kho panetaṁ, āvuso, vijjati yaṁ sīlavā bhikkhu ime pañcupādānakkhandhe aniccato …pe… anattato yoniso manasi karonto sotāpattiphalaṁ sacchikareyyā”ti. 
+-It’s possible that an ethical bhikkhu who rationally applies the mind to the five grasping aggregates will realize the fruit of stream-entry.” 
++It’s possible that an ethical bhikkhu who attends properly to the five grasping aggregates will realize the fruit of stream-entry.” 
+@@ -1,2 +1,2 @@ sn22.122:2.1
+ PLI: “Sotāpannena panāvuso sāriputta, bhikkhunā katame dhammā yoniso manasi kātabbā”ti? 
+-“But Reverend Sāriputta, what things should a bhikkhu stream-enterer rationally apply the mind to?” 
++“But Reverend Sāriputta, what things should a bhikkhu stream-enterer attend properly to?” 
+@@ -1,2 +1,2 @@ sn22.122:2.2
+ PLI: “Sotāpannenapi kho, āvuso koṭṭhika, bhikkhunā ime pañcupādānakkhandhā aniccato …pe… anattato yoniso manasi kātabbā. 
+-“A bhikkhu stream-enterer should also rationally apply the mind to these five grasping aggregates as impermanent … as not-self. 
++“A bhikkhu stream-enterer should also attend properly to these five grasping aggregates as impermanent … as not-self. 
+@@ -1,2 +1,2 @@ sn22.122:2.3
+ PLI: Ṭhānaṁ kho panetaṁ, āvuso, vijjati yaṁ sotāpanno bhikkhu ime pañcupādānakkhandhe aniccato …pe… anattato yoniso manasi karonto sakadāgāmiphalaṁ sacchikareyyā”ti. 
+-It’s possible that a bhikkhu stream-enterer who rationally applies the mind to the five grasping aggregates will realize the fruit of once-return.” 
++It’s possible that a bhikkhu stream-enterer who attends properly to the five grasping aggregates will realize the fruit of once-return.” 
+@@ -1,2 +1,2 @@ sn22.122:3.1
+ PLI: “Sakadāgāminā panāvuso sāriputta, bhikkhunā katame dhammā yoniso manasi kātabbā”ti? 
+-“But Reverend Sāriputta, what things should a bhikkhu once-returner rationally apply the mind to?” 
++“But Reverend Sāriputta, what things should a bhikkhu once-returner attend properly to?” 
+@@ -1,2 +1,2 @@ sn22.122:3.2
+ PLI: “Sakadāgāmināpi kho, āvuso koṭṭhika, bhikkhunā ime pañcupādānakkhandhā aniccato …pe… anattato yoniso manasi kātabbā. 
+-“A bhikkhu once-returner should also rationally apply the mind to these five grasping aggregates as impermanent … as not-self. 
++“A bhikkhu once-returner should also attend properly to these five grasping aggregates as impermanent … as not-self. 
+@@ -1,2 +1,2 @@ sn22.122:3.3
+ PLI: Ṭhānaṁ kho panetaṁ, āvuso, vijjati yaṁ sakadāgāmī bhikkhu ime pañcupādānakkhandhe aniccato …pe… anattato yoniso manasi karonto anāgāmiphalaṁ sacchikareyyā”ti. 
+-It’s possible that a bhikkhu once-returner who rationally applies the mind to the five grasping aggregates will realize the fruit of non-return.” 
++It’s possible that a bhikkhu once-returner who attends properly to the five grasping aggregates will realize the fruit of non-return.” 
+@@ -1,2 +1,2 @@ sn22.122:4.1
+ PLI: “Anāgāminā panāvuso sāriputta, bhikkhunā katame dhammā yoniso manasi kātabbā”ti? 
+-“But Reverend Sāriputta, what things should a bhikkhu non-returner rationally apply the mind to?” 
++“But Reverend Sāriputta, what things should a bhikkhu non-returner attend properly to?” 
+@@ -1,2 +1,2 @@ sn22.122:4.2
+ PLI: “Anāgāmināpi kho, āvuso koṭṭhika, bhikkhunā ime pañcupādānakkhandhā aniccato …pe… anattato yoniso manasi kātabbā. 
+-“A bhikkhu non-returner should also rationally apply the mind to these five grasping aggregates as impermanent … as not-self. 
++“A bhikkhu non-returner should also attend properly to these five grasping aggregates as impermanent … as not-self. 
+@@ -1,2 +1,2 @@ sn22.122:4.3
+ PLI: Ṭhānaṁ kho panetaṁ, āvuso, vijjati yaṁ anāgāmī bhikkhu ime pañcupādānakkhandhe aniccato …pe… anattato yoniso manasi karonto arahattaṁ sacchikareyyā”ti. 
+-It’s possible that a bhikkhu non-returner who rationally applies the mind to the five grasping aggregates will realize perfection.” 
++It’s possible that a bhikkhu non-returner who attends properly to the five grasping aggregates will realize perfection.” 
+@@ -1,2 +1,2 @@ sn22.122:5.1
+ PLI: “Arahatā panāvuso sāriputta, katame dhammā yoniso manasi kātabbā”ti? 
+-“But Reverend Sāriputta, what things should a perfected one rationally apply the mind to?” 
++“But Reverend Sāriputta, what things should a perfected one attend properly to?” 
+@@ -1,2 +1,2 @@ sn22.122:5.2
+ PLI: “Arahatāpi kho, āvuso koṭṭhika, ime pañcupādānakkhandhe aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato yoniso manasi kātabbā. 
+-“Reverend Koṭṭhita, a perfected one should also rationally apply the mind to the five grasping aggregates as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
++“Reverend Koṭṭhita, a perfected one should also attend properly to the five grasping aggregates as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
+--- sujato/sutta/sn/sn22/sn22.123_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.123_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.123:2.1
+ PLI: “Sutavatāvuso sāriputta, bhikkhunā katame dhammā yoniso manasi kātabbā”ti? 
+-“Reverend Sāriputta, what things should a learned bhikkhu rationally apply the mind to?” 
++“Reverend Sāriputta, what things should a learned bhikkhu attend properly to?” 
+@@ -1,2 +1,2 @@ sn22.123:2.2
+ PLI: “Sutavatāvuso koṭṭhika, bhikkhunā pañcupādānakkhandhā aniccato …pe… anattato yoniso manasi kātabbā. 
+-“A learned bhikkhu should rationally apply the mind to these five grasping aggregates as impermanent … as not-self. 
++“A learned bhikkhu should attend properly to these five grasping aggregates as impermanent … as not-self. 
+@@ -1,2 +1,2 @@ sn22.123:2.5
+ PLI: Sutavatāvuso koṭṭhika, bhikkhunā ime pañcupādānakkhandhā aniccato …pe… anattato yoniso manasi kātabbā. 
+-A learned bhikkhu should rationally apply the mind to these five grasping aggregates as impermanent … as not-self. 
++A learned bhikkhu should attend properly to these five grasping aggregates as impermanent … as not-self. 
+@@ -1,2 +1,2 @@ sn22.123:2.6
+ PLI: Ṭhānaṁ kho panetaṁ, āvuso, vijjati—yaṁ sutavā bhikkhu ime pañcupādānakkhandhe aniccato …pe… anattato yoniso manasi karonto sotāpattiphalaṁ sacchikareyyā”ti. 
+-It’s possible that a learned bhikkhu who rationally applies the mind to the five grasping aggregates will realize the fruit of stream-entry.” 
++It’s possible that a learned bhikkhu who attends properly to the five grasping aggregates will realize the fruit of stream-entry.” 
+@@ -1,2 +1,2 @@ sn22.123:3.1
+ PLI: “Sotāpannena panāvuso sāriputta, bhikkhunā katame dhammā yoniso manasi kātabbā”ti? 
+-“But Reverend Sāriputta, what things should a bhikkhu stream-enterer rationally apply the mind to?” 
++“But Reverend Sāriputta, what things should a bhikkhu stream-enterer attend properly to?” 
+@@ -1,2 +1,2 @@ sn22.123:3.2
+ PLI: “Sotāpannenapi kho āvuso koṭṭhika, bhikkhunā ime pañcupādānakkhandhā aniccato …pe… anattato yoniso manasi kātabbā. 
+-“A bhikkhu stream-enterer should also rationally apply the mind to these five grasping aggregates as impermanent … as not-self. 
++“A bhikkhu stream-enterer should also attend properly to these five grasping aggregates as impermanent … as not-self. 
+@@ -1,2 +1,2 @@ sn22.123:3.3
+ PLI: Ṭhānaṁ kho panetaṁ, āvuso, vijjati—yaṁ sotāpanno bhikkhu ime pañcupādānakkhandhe aniccato …pe… anattato yoniso manasi karonto sakadāgāmiphalaṁ …pe… 
+-It’s possible that a bhikkhu stream-enterer who rationally applies the mind to the five grasping aggregates will realize the fruit of once-return.” … 
++It’s possible that a bhikkhu stream-enterer who attends properly to the five grasping aggregates will realize the fruit of once-return.” … 
+@@ -1,2 +1,2 @@ sn22.123:3.4
+ PLI: anāgāmiphalaṁ …pe… 
+-“It’s possible that a bhikkhu once-returner who rationally applies the mind to the five grasping aggregates will realize the fruit of non-return.” … 
++“It’s possible that a bhikkhu once-returner who attends properly to the five grasping aggregates will realize the fruit of non-return.” … 
+@@ -1,2 +1,2 @@ sn22.123:3.5
+ PLI: arahattaphalaṁ sacchikareyyā”ti. 
+-“It’s possible that a bhikkhu non-returner who rationally applies the mind to the five grasping aggregates will realize the fruit of perfection.” 
++“It’s possible that a bhikkhu non-returner who attends properly to the five grasping aggregates will realize the fruit of perfection.” 
+@@ -1,2 +1,2 @@ sn22.123:4.1
+ PLI: “Arahatā panāvuso sāriputta, katame dhammā yoniso manasi kātabbā”ti? 
+-“But Reverend Sāriputta, what things should a perfected one rationally apply the mind to?” 
++“But Reverend Sāriputta, what things should a perfected one attend properly to?” 
+@@ -1,2 +1,2 @@ sn22.123:4.2
+ PLI: “Arahatāpi khvāvuso koṭṭhika, ime pañcupādānakkhandhā aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato yoniso manasi kātabbā. 
+-“Reverend Koṭṭhita, a perfected one should rationally apply the mind to the five grasping aggregates as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
++“Reverend Koṭṭhita, a perfected one should attend properly to the five grasping aggregates as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
+--- sujato/sutta/sn/sn22/sn22.43_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.43_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.43:1.3
+ PLI: Attadīpānaṁ, bhikkhave, viharataṁ attasaraṇānaṁ anaññasaraṇānaṁ, dhammadīpānaṁ dhammasaraṇānaṁ anaññasaraṇānaṁ yoni upaparikkhitabbā ‘Kiṁjātikā sokaparidevadukkhadomanassupāyāsā, kiṁpahotikā’ti? 
+-When you live like this, you should examine rationally: ‘From what are sorrow, lamentation, pain, sadness, and distress born and produced?’ 
++When you live like this, you should examine properly: ‘From what are sorrow, lamentation, pain, sadness, and distress born and produced?’ 
+--- sujato/sutta/sn/sn22/sn22.52_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.52_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.52:1.2
+ PLI: “Rūpaṁ, bhikkhave, yoniso manasi karotha, rūpāniccatañca yathābhūtaṁ samanupassatha. 
+-“Bhikkhus, rationally apply the mind to form. Truly see the impermanence of form. 
++“Bhikkhus, attend properly to form. Truly see the impermanence of form. 
+@@ -1,2 +1,2 @@ sn22.52:1.6
+ PLI: Vedanaṁ, bhikkhave, yoniso manasi karotha, vedanāniccatañca yathābhūtaṁ samanupassatha. 
+-Rationally apply the mind to feeling … 
++Attend properly to feeling … 
+--- sujato/sutta/sn/sn22/sn22.95_translation-en-sujato.json
++++ sujato/sutta/sn/sn22/sn22.95_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn22.95:2.1
+ PLI: “Seyyathāpi, bhikkhave, ayaṁ gaṅgā nadī mahantaṁ pheṇapiṇḍaṁ āvaheyya. Tamenaṁ cakkhumā puriso passeyya nijjhāyeyya yoniso upaparikkheyya. Tassa taṁ passato nijjhāyato yoniso upaparikkhato rittakaññeva khāyeyya, tucchakaññeva khāyeyya, asārakaññeva khāyeyya. Kiñhi siyā, bhikkhave, pheṇapiṇḍe sāro? 
+-“Bhikkhus, suppose this Ganges River was carrying along a big lump of foam. And a person with clear eyes would see it and contemplate it, examining it rationally. And it would appear to them as completely vacuous, hollow, and insubstantial. For what essence could there be in a lump of foam? 
++“Bhikkhus, suppose this Ganges River was carrying along a big lump of foam. And a person with clear eyes would see it and contemplate it, examining it properly. And it would appear to them as completely vacuous, hollow, and insubstantial. For what essence could there be in a lump of foam? 
+@@ -1,2 +1,2 @@ sn22.95:2.2
+ PLI: Evameva kho, bhikkhave, yaṁ kiñci rūpaṁ atītānāgatapaccuppannaṁ …pe… yaṁ dūre santike vā taṁ bhikkhu passati nijjhāyati yoniso upaparikkhati. Tassa taṁ passato nijjhāyato yoniso upaparikkhato rittakaññeva khāyati, tucchakaññeva khāyati, asārakaññeva khāyati. Kiñhi siyā, bhikkhave, rūpe sāro? 
+-In the same way, a bhikkhu sees and contemplates any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near—examining it rationally. And it appears to them completely vacuous, hollow, and insubstantial. For what essence could there be in form? 
++In the same way, a bhikkhu sees and contemplates any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near—examining it properly. And it appears to them completely vacuous, hollow, and insubstantial. For what essence could there be in form? 
+@@ -1,2 +1,2 @@ sn22.95:3.1
+ PLI: Seyyathāpi, bhikkhave, saradasamaye thullaphusitake deve vassante udake udakapubbuḷaṁ uppajjati ceva nirujjhati ca. Tamenaṁ cakkhumā puriso passeyya nijjhāyeyya yoniso upaparikkheyya. Tassa taṁ passato nijjhāyato yoniso upaparikkhato rittakaññeva khāyeyya, tucchakaññeva khāyeyya, asārakaññeva khāyeyya. Kiñhi siyā, bhikkhave, udakapubbuḷe sāro? 
+-Suppose it was autumn, when the heavens rain heavily, and a bubble on the water forms and pops right away. And a person with clear eyes would see it and contemplate it, examining it rationally. And it would appear to them as completely vacuous, hollow, and insubstantial. For what essence could there be in a water bubble? 
++Suppose it was autumn, when the heavens rain heavily, and a bubble on the water forms and pops right away. And a person with clear eyes would see it and contemplate it, examining it properly. And it would appear to them as completely vacuous, hollow, and insubstantial. For what essence could there be in a water bubble? 
+@@ -1,2 +1,2 @@ sn22.95:3.2
+ PLI: Evameva kho, bhikkhave, yā kāci vedanā atītānāgatapaccuppannā …pe… yā dūre santike vā taṁ bhikkhu passati nijjhāyati yoniso upaparikkhati. Tassa taṁ passato nijjhāyato yoniso upaparikkhato rittakaññeva khāyati, tucchakaññeva khāyati, asārakaññeva khāyati. Kiñhi siyā, bhikkhave, vedanāya sāro? 
+-In the same way, a bhikkhu sees and contemplates any kind of feeling at all … examining it rationally. And it appears to them completely vacuous, hollow, and insubstantial. For what essence could there be in feeling? 
++In the same way, a bhikkhu sees and contemplates any kind of feeling at all … examining it properly. And it appears to them completely vacuous, hollow, and insubstantial. For what essence could there be in feeling? 
+@@ -1,2 +1,2 @@ sn22.95:4.1
+ PLI: Seyyathāpi, bhikkhave, gimhānaṁ pacchime māse ṭhite majjhanhike kāle marīcikā phandati. Tamenaṁ cakkhumā puriso passeyya nijjhāyeyya yoniso upaparikkheyya. Tassa taṁ passato nijjhāyato yoniso upaparikkhato rittakaññeva khāyeyya, tucchakaññeva khāyeyya …pe… kiñhi siyā, bhikkhave, marīcikāya sāro? 
+-Suppose that in the last month of summer, at noon, a shimmering mirage appears. And a person with clear eyes would see it and contemplate it, examining it rationally. And it would appear to them as completely vacuous, hollow, and insubstantial. For what essence could there be in a mirage? 
++Suppose that in the last month of summer, at noon, a shimmering mirage appears. And a person with clear eyes would see it and contemplate it, examining it properly. And it would appear to them as completely vacuous, hollow, and insubstantial. For what essence could there be in a mirage? 
+@@ -1,2 +1,2 @@ sn22.95:5.1
+ PLI: Seyyathāpi, bhikkhave, puriso sāratthiko sāragavesī sārapariyesanaṁ caramāno tiṇhaṁ kuṭhāriṁ ādāya vanaṁ paviseyya. So tattha passeyya mahantaṁ kadalikkhandhaṁ ujuṁ navaṁ akukkukajātaṁ. Tamenaṁ mūle chindeyya; mūle chetvā agge chindeyya, agge chetvā pattavaṭṭiṁ vinibbhujeyya. So tassa pattavaṭṭiṁ vinibbhujanto pheggumpi nādhigaccheyya, kuto sāraṁ. Tamenaṁ cakkhumā puriso passeyya nijjhāyeyya yoniso upaparikkheyya. Tassa taṁ passato nijjhāyato yoniso upaparikkhato rittakaññeva khāyeyya, tucchakaññeva khāyeyya, asārakaññeva khāyeyya. Kiñhi siyā, bhikkhave, kadalikkhandhe sāro? 
+-Suppose there was a person in need of heartwood. Wandering in search of heartwood, they’d take a sharp axe and enter a forest. There they’d see a big banana trunk, straight and young and grown unskewed. They’d cut it down at the base, cut off the top, and unroll the coiled sheaths. But they wouldn’t even find sapwood, much less heartwood. And a person with clear eyes would see it and contemplate it, examining it rationally. And it would appear to them as completely vacuous, hollow, and insubstantial. For what essence could there be in a banana trunk? 
++Suppose there was a person in need of heartwood. Wandering in search of heartwood, they’d take a sharp axe and enter a forest. There they’d see a big banana trunk, straight and young and grown unskewed. They’d cut it down at the base, cut off the top, and unroll the coiled sheaths. But they wouldn’t even find sapwood, much less heartwood. And a person with clear eyes would see it and contemplate it, examining it properly. And it would appear to them as completely vacuous, hollow, and insubstantial. For what essence could there be in a banana trunk? 
+@@ -1,2 +1,2 @@ sn22.95:5.2
+ PLI: Evameva kho, bhikkhave, ye keci saṅkhārā atītānāgatapaccuppannā …pe… ye dūre santike vā taṁ bhikkhu passati nijjhāyati yoniso upaparikkhati. Tassa taṁ passato nijjhāyato yoniso upaparikkhato rittakaññeva khāyati, tucchakaññeva khāyati, asārakaññeva khāyati. Kiñhi siyā, bhikkhave, saṅkhāresu sāro? 
+-In the same way, a bhikkhu sees and contemplates any kind of choices at all … examining them rationally. And they appear to them as completely vacuous, hollow, and insubstantial. For what essence could there be in choices? 
++In the same way, a bhikkhu sees and contemplates any kind of choices at all … examining them properly. And they appear to them as completely vacuous, hollow, and insubstantial. For what essence could there be in choices? 
+@@ -1,2 +1,2 @@ sn22.95:6.1
+ PLI: Seyyathāpi, bhikkhave, māyākāro vā māyākārantevāsī vā catumahāpathe māyaṁ vidaṁseyya. Tamenaṁ cakkhumā puriso passeyya nijjhāyeyya yoniso upaparikkheyya. Tassa taṁ passato nijjhāyato yoniso upaparikkhato rittakaññeva khāyeyya, tucchakaññeva khāyeyya, asārakaññeva khāyeyya. Kiñhi siyā, bhikkhave, māyāya sāro? 
+-Suppose an illusionist or their apprentice was to demonstrate an illusion at the crossroads. And a person with clear eyes would see it and contemplate it, examining it rationally. And it would appear to them as completely vacuous, hollow, and insubstantial. For what essence could there be in an illusion? 
++Suppose an illusionist or their apprentice was to demonstrate an illusion at the crossroads. And a person with clear eyes would see it and contemplate it, examining it properly. And it would appear to them as completely vacuous, hollow, and insubstantial. For what essence could there be in an illusion? 
+@@ -1,2 +1,2 @@ sn22.95:6.2
+ PLI: Evameva kho, bhikkhave, yaṁ kiñci viññāṇaṁ atītānāgatapaccuppannaṁ …pe… yaṁ dūre santike vā, taṁ bhikkhu passati nijjhāyati yoniso upaparikkhati. Tassa taṁ passato nijjhāyato yoniso upaparikkhato rittakaññeva khāyati, tucchakaññeva khāyati, asārakaññeva khāyati. Kiñhi siyā, bhikkhave, viññāṇe sāro? 
+-In the same way, a bhikkhu sees and contemplates any kind of consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near—examining it rationally. And it appears to them completely vacuous, hollow, and insubstantial. For what essence could there be in consciousness? 
++In the same way, a bhikkhu sees and contemplates any kind of consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near—examining it properly. And it appears to them completely vacuous, hollow, and insubstantial. For what essence could there be in consciousness? 
+@@ -1,2 +1,2 @@ sn22.95:10.2
+ PLI: yoniso upaparikkhati; 
+-examining them rationally, 
++examining them properly, 
+--- sujato/sutta/sn/sn35/sn35.120_translation-en-sujato.json
++++ sujato/sutta/sn/sn35/sn35.120_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn35.120:4.2
+ PLI: Idhāvuso, bhikkhu paṭisaṅkhā yoniso āhāraṁ āhāreti: 
+-It’s when a bhikkhu reflects rationally on the food that they eat: 
++It’s when a bhikkhu reflects properly on the food that they eat: 
+--- sujato/sutta/sn/sn35/sn35.158_translation-en-sujato.json
++++ sujato/sutta/sn/sn35/sn35.158_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn35.158:1.1
+ PLI: “Cakkhuṁ, bhikkhave, yoniso manasi karotha, cakkhāniccatañca yathābhūtaṁ samanupassatha. 
+-“Bhikkhus, rationally apply the mind to the eye. Truly see the impermanence of the eye. 
++“Bhikkhus, attend properly to the eye. Truly see the impermanence of the eye. 
+@@ -1,2 +1,2 @@ sn35.158:1.6
+ PLI: Sotaṁ, bhikkhave, yoniso manasi karotha … 
+-Rationally apply the mind to the ear … 
++Attend properly to the ear … 
+--- sujato/sutta/sn/sn35/sn35.159_translation-en-sujato.json
++++ sujato/sutta/sn/sn35/sn35.159_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn35.159:1.1
+ PLI: “Rūpe, bhikkhave, yoniso manasi karotha, rūpāniccatañca yathābhūtaṁ samanupassatha. 
+-“Bhikkhus, rationally apply the mind to sights. Truly see the impermanence of sights. 
++“Bhikkhus, attend properly to sights. Truly see the impermanence of sights. 
+@@ -1,2 +1,2 @@ sn35.159:1.6
+ PLI: Sadde … 
+-Rationally apply the mind to sounds … 
++Attend properly to sounds … 
+--- sujato/sutta/sn/sn35/sn35.239_translation-en-sujato.json
++++ sujato/sutta/sn/sn35/sn35.239_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn35.239:3.2
+ PLI: Idha, bhikkhave, bhikkhu paṭisaṅkhā yoniso āhāraṁ āhāreti: 
+-It’s when a bhikkhu reflects rationally on the food that they eat: 
++It’s when a bhikkhu reflects properly on the food that they eat: 
+@@ -1,2 +1,2 @@ sn35.239:3.5
+ PLI: evaṁ kho, bhikkhave, bhikkhu paṭisaṅkhā yoniso āhāraṁ āhāreti: 
+-In the same way, a bhikkhu reflects rationally on the food that they eat: 
++In the same way, a bhikkhu reflects properly on the food that they eat: 
+--- sujato/sutta/sn/sn4/sn4.4_translation-en-sujato.json
++++ sujato/sutta/sn/sn4/sn4.4_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn4.4:2.1
+ PLI: “Mayhaṁ kho, bhikkhave, yoniso manasikārā yoniso sammappadhānā anuttarā vimutti anuppattā, anuttarā vimutti sacchikatā. 
+-“Bhikkhus, I have attained and realized supreme freedom through rational application of mind and rational right effort. 
++“Bhikkhus, I have attained and realized supreme freedom through proper attention and proper right effort. 
+@@ -1,2 +1,2 @@ sn4.4:2.2
+ PLI: Tumhepi, bhikkhave, yoniso manasikārā yoniso sammappadhānā anuttaraṁ vimuttiṁ anupāpuṇātha, anuttaraṁ vimuttiṁ sacchikarothā”ti. 
+-You too should attain and realize supreme freedom through rational application of mind and rational right effort.” 
++You too should attain and realize supreme freedom through proper attention and proper right effort.” 
+--- sujato/sutta/sn/sn45/sn45.55_translation-en-sujato.json
++++ sujato/sutta/sn/sn45/sn45.55_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn45.55:0.3
+ PLI: Yonisomanasikārasampadāsutta 
+-Accomplishment in Rational Application of Mind (1st) 
++Accomplishment in Proper Attention (1st) 
+@@ -1,2 +1,2 @@ sn45.55:1.2
+ PLI: evameva kho, bhikkhave, bhikkhuno ariyassa aṭṭhaṅgikassa maggassa uppādāya etaṁ pubbaṅgamaṁ etaṁ pubbanimittaṁ, yadidaṁ—yonisomanasikārasampadā. 
+-In the same way accomplishment in rational application of mind is the forerunner and harbinger of the noble eightfold path for a bhikkhu. 
++In the same way accomplishment in proper attention is the forerunner and harbinger of the noble eightfold path for a bhikkhu. 
+@@ -1,2 +1,2 @@ sn45.55:1.3
+ PLI: Yonisomanasikārasampannassetaṁ, bhikkhave, bhikkhuno pāṭikaṅkhaṁ—ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāvessati, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkarissati. 
+-A bhikkhu accomplished in rational application of mind can expect to develop and cultivate the noble eightfold path. 
++A bhikkhu accomplished in proper attention can expect to develop and cultivate the noble eightfold path. 
+@@ -1,2 +1,2 @@ sn45.55:1.4
+ PLI: Kathañca, bhikkhave, bhikkhu yonisomanasikārasampanno ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāveti, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkaroti? 
+-And how does a bhikkhu accomplished in rational application of mind develop and cultivate the noble eightfold path? 
++And how does a bhikkhu accomplished in proper attention develop and cultivate the noble eightfold path? 
+@@ -1,2 +1,2 @@ sn45.55:1.6
+ PLI: Evaṁ kho, bhikkhave, bhikkhu yonisomanasikārasampanno ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāveti, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkarotī”ti. 
+-That’s how a bhikkhu accomplished in rational application of mind develops and cultivates the noble eightfold path.” 
++That’s how a bhikkhu accomplished in proper attention develops and cultivates the noble eightfold path.” 
+--- sujato/sutta/sn/sn45/sn45.62_translation-en-sujato.json
++++ sujato/sutta/sn/sn45/sn45.62_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn45.62:0.3
+ PLI: Dutiyayonisomanasikārasampadāsutta 
+-Accomplishment in Rational Application of Mind (2nd) 
++Accomplishment in Proper Attention (2nd) 
+@@ -1,2 +1,2 @@ sn45.62:1.1
+ PLI: “Yadidaṁ—yonisomanasikārasampadā. 
+-“… accomplishment in rational application of mind. 
++“… accomplishment in proper attention. 
+@@ -1,2 +1,2 @@ sn45.62:1.2
+ PLI: Yonisomanasikārasampannassetaṁ, bhikkhave, bhikkhuno pāṭikaṅkhaṁ—ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāvessati, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkarissati. 
+-A bhikkhu accomplished in rational application of mind can expect to develop and cultivate the noble eightfold path. 
++A bhikkhu accomplished in proper attention can expect to develop and cultivate the noble eightfold path. 
+@@ -1,2 +1,2 @@ sn45.62:1.3
+ PLI: Kathañca, bhikkhave, bhikkhu yonisomanasikārasampanno ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāveti, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkaroti? 
+-And how does a bhikkhu accomplished in rational application of mind develop and cultivate the noble eightfold path? 
++And how does a bhikkhu accomplished in proper attention develop and cultivate the noble eightfold path? 
+@@ -1,2 +1,2 @@ sn45.62:1.5
+ PLI: Evaṁ kho, bhikkhave, bhikkhu yonisomanasikārasampanno ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāveti, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkarotī”ti. 
+-That’s how a bhikkhu accomplished in rational application of mind develops and cultivates the noble eightfold path.” 
++That’s how a bhikkhu accomplished in proper attention develops and cultivates the noble eightfold path.” 
+--- sujato/sutta/sn/sn45/sn45.69_translation-en-sujato.json
++++ sujato/sutta/sn/sn45/sn45.69_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn45.69:0.3
+ PLI: Yonisomanasikārasampadāsutta 
+-Accomplishment in Rational Application of Mind (1st) 
++Accomplishment in Proper Attention (1st) 
+@@ -1,2 +1,2 @@ sn45.69:1.1
+ PLI: “Yadidaṁ—yonisomanasikārasampadā. 
+-“… accomplishment in rational application of mind. 
++“… accomplishment in proper attention. 
+@@ -1,2 +1,2 @@ sn45.69:1.2
+ PLI: Yonisomanasikārasampannassetaṁ, bhikkhave, bhikkhuno pāṭikaṅkhaṁ—ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāvessati, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkarissati. 
+-A bhikkhu accomplished in rational application of mind can expect to develop and cultivate the noble eightfold path. 
++A bhikkhu accomplished in proper attention can expect to develop and cultivate the noble eightfold path. 
+@@ -1,2 +1,2 @@ sn45.69:1.3
+ PLI: Kathañca, bhikkhave, bhikkhu yonisomanasikārasampanno ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāveti, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkaroti? 
+-And how does a bhikkhu accomplished in rational application of mind develop and cultivate the noble eightfold path? 
++And how does a bhikkhu accomplished in proper attention develop and cultivate the noble eightfold path? 
+@@ -1,2 +1,2 @@ sn45.69:1.5
+ PLI: Evaṁ kho, bhikkhave, bhikkhu yonisomanasikārasampanno ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāveti, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkarotī”ti. 
+-That’s how a bhikkhu accomplished in rational application of mind develops and cultivates the noble eightfold path.” 
++That’s how a bhikkhu accomplished in proper attention develops and cultivates the noble eightfold path.” 
+--- sujato/sutta/sn/sn45/sn45.76_translation-en-sujato.json
++++ sujato/sutta/sn/sn45/sn45.76_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn45.76:0.3
+ PLI: Dutiyayonisomanasikārasampadāsutta 
+-Accomplishment in Rational Application of Mind (2nd) 
++Accomplishment in Proper Attention (2nd) 
+@@ -1,2 +1,2 @@ sn45.76:1.1
+ PLI: “Yadidaṁ—yonisomanasikārasampadā. 
+-“… accomplishment in rational application of mind. 
++“… accomplishment in proper attention. 
+@@ -1,2 +1,2 @@ sn45.76:1.2
+ PLI: Yonisomanasikārasampannassetaṁ, bhikkhave, bhikkhuno pāṭikaṅkhaṁ—ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāvessati, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkarissati. 
+-A bhikkhu accomplished in rational application of mind can expect to develop and cultivate the noble eightfold path. 
++A bhikkhu accomplished in proper attention can expect to develop and cultivate the noble eightfold path. 
+@@ -1,2 +1,2 @@ sn45.76:1.3
+ PLI: Kathañca, bhikkhave, bhikkhu yonisomanasikārasampanno ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāveti, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkaroti? 
+-And how does a bhikkhu accomplished in rational application of mind develop and cultivate the noble eightfold path? 
++And how does a bhikkhu accomplished in proper attention develop and cultivate the noble eightfold path? 
+@@ -1,2 +1,2 @@ sn45.76:1.5
+ PLI: Evaṁ kho, bhikkhave, bhikkhu yonisomanasikārasampanno ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāveti, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkarotī”ti. 
+-That’s how a bhikkhu accomplished in rational application of mind develops and cultivates the noble eightfold path.” 
++That’s how a bhikkhu accomplished in proper attention develops and cultivates the noble eightfold path.” 
+--- sujato/sutta/sn/sn45/sn45.83_translation-en-sujato.json
++++ sujato/sutta/sn/sn45/sn45.83_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn45.83:0.3
+ PLI: Yonisomanasikārasampadāsutta 
+-Accomplishment in Rational Application of Mind 
++Accomplishment in Proper Attention 
+@@ -1,2 +1,2 @@ sn45.83:1.1
+ PLI: “Yathayidaṁ, bhikkhave, yonisomanasikārasampadā. 
+-“… accomplishment in rational application of mind. 
++“… accomplishment in proper attention. 
+@@ -1,2 +1,2 @@ sn45.83:1.2
+ PLI: Yonisomanasikārasampannassetaṁ, bhikkhave, bhikkhuno pāṭikaṅkhaṁ—ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāvessati, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkarissati. 
+-A bhikkhu accomplished in rational application of mind can expect to develop and cultivate the noble eightfold path. 
++A bhikkhu accomplished in proper attention can expect to develop and cultivate the noble eightfold path. 
+@@ -1,2 +1,2 @@ sn45.83:1.3
+ PLI: Kathañca, bhikkhave, bhikkhu yonisomanasikārasampanno ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāveti, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkaroti? 
+-And how does a bhikkhu accomplished in rational application of mind develop and cultivate the noble eightfold path? 
++And how does a bhikkhu accomplished in proper attention develop and cultivate the noble eightfold path? 
+@@ -1,2 +1,2 @@ sn45.83:1.5
+ PLI: Evaṁ kho, bhikkhave, bhikkhu yonisomanasikārasampanno ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāveti, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkarotī”ti. 
+-That’s how a bhikkhu accomplished in rational application of mind develops and cultivates the noble eightfold path.” 
++That’s how a bhikkhu accomplished in proper attention develops and cultivates the noble eightfold path.” 
+--- sujato/sutta/sn/sn45/sn45.90_translation-en-sujato.json
++++ sujato/sutta/sn/sn45/sn45.90_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn45.90:0.3
+ PLI: Dutiyayonisomanasikārasampadāsutta 
+-Accomplishment in Rational Application of Mind (2nd) 
++Accomplishment in Proper Attention (2nd) 
+@@ -1,2 +1,2 @@ sn45.90:1.1
+ PLI: “Yathayidaṁ, bhikkhave, yonisomanasikārasampadā. 
+-“… accomplishment in rational application of mind. 
++“… accomplishment in proper attention. 
+@@ -1,2 +1,2 @@ sn45.90:1.2
+ PLI: Yonisomanasikārasampannassetaṁ, bhikkhave, bhikkhuno pāṭikaṅkhaṁ—ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāvessati, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkarissati. 
+-A bhikkhu accomplished in rational application of mind can expect to develop and cultivate the noble eightfold path. 
++A bhikkhu accomplished in proper attention can expect to develop and cultivate the noble eightfold path. 
+@@ -1,2 +1,2 @@ sn45.90:1.3
+ PLI: Kathañca, bhikkhave, bhikkhu yonisomanasikārasampanno ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāveti, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkaroti? 
+-And how does a bhikkhu accomplished in rational application of mind develop and cultivate the noble eightfold path? 
++And how does a bhikkhu accomplished in proper attention develop and cultivate the noble eightfold path? 
+@@ -1,2 +1,2 @@ sn45.90:1.5
+ PLI: Evaṁ kho, bhikkhave, bhikkhu yonisomanasikārasampanno ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāveti, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkarotī”ti. 
+-That’s how a bhikkhu accomplished in rational application of mind develops and cultivates the noble eightfold path.” 
++That’s how a bhikkhu accomplished in proper attention develops and cultivates the noble eightfold path.” 
+--- sujato/sutta/sn/sn46/sn46.13_translation-en-sujato.json
++++ sujato/sutta/sn/sn46/sn46.13_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn46.13:1.2
+ PLI: evameva kho, bhikkhave, bhikkhuno sattannaṁ bojjhaṅgānaṁ uppādāya etaṁ pubbaṅgamaṁ etaṁ pubbanimittaṁ, yadidaṁ—yonisomanasikāro. 
+-In the same way, for a bhikkhu rational application of mind is the forerunner and harbinger of the arising of the seven awakening factors. 
++In the same way, for a bhikkhu proper attention is the forerunner and harbinger of the arising of the seven awakening factors. 
+@@ -1,2 +1,2 @@ sn46.13:1.3
+ PLI: Yonisomanasikārasampannassetaṁ, bhikkhave, bhikkhuno pāṭikaṅkhaṁ—satta bojjhaṅge bhāvessati, satta bojjhaṅge bahulīkarissati. 
+-A bhikkhu accomplished in rational application of mind can expect to develop and cultivate the seven awakening factors. 
++A bhikkhu accomplished in proper attention can expect to develop and cultivate the seven awakening factors. 
+@@ -1,2 +1,2 @@ sn46.13:2.1
+ PLI: Kathañca, bhikkhave, bhikkhu yonisomanasikārasampanno satta bojjhaṅge bhāveti, satta bojjhaṅge bahulīkaroti? 
+-And how does a bhikkhu with rational application of mind develop and cultivate the seven awakening factors? 
++And how does a bhikkhu with proper attention develop and cultivate the seven awakening factors? 
+@@ -1,2 +1,2 @@ sn46.13:2.4
+ PLI: Evaṁ kho, bhikkhave, bhikkhu yonisomanasikārasampanno satta bojjhaṅge bhāveti, satta bojjhaṅge bahulīkarotī”ti. 
+-That’s how a bhikkhu with rational application of mind develops and cultivates the seven awakening factors.” 
++That’s how a bhikkhu with proper attention develops and cultivates the seven awakening factors.” 
+--- sujato/sutta/sn/sn46/sn46.24_translation-en-sujato.json
++++ sujato/sutta/sn/sn46/sn46.24_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn46.24:0.3
+ PLI: Ayonisomanasikārasutta 
+-Irrational Application of Mind 
++Improper Attention 
+@@ -1,2 +1,2 @@ sn46.24:1.1
+ PLI: “Ayoniso, bhikkhave, manasikaroto anuppanno ceva kāmacchando uppajjati, uppanno ca kāmacchando bhiyyobhāvāya vepullāya saṁvattati; 
+-“Bhikkhus, when you apply the mind irrationally, sensual desire, 
++“Bhikkhus, when you attend improperly, sensual desire, 
+@@ -1,2 +1,2 @@ sn46.24:2.1
+ PLI: Yoniso ca kho, bhikkhave, manasikaroto anuppanno ceva kāmacchando nuppajjati, uppanno ca kāmacchando pahīyati; 
+-When you apply the mind rationally, sensual desire, 
++When you attend properly, sensual desire, 
+--- sujato/sutta/sn/sn46/sn46.2_translation-en-sujato.json
++++ sujato/sutta/sn/sn46/sn46.2_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn46.2:2.3
+ PLI: Tattha ayonisomanasikārabahulīkāro—
+-Frequent irrational application of mind to that 
++Frequent improper attention to that 
+@@ -1,2 +1,2 @@ sn46.2:3.3
+ PLI: Tattha ayonisomanasikārabahulīkāro—
+-Frequent irrational application of mind to that 
++Frequent improper attention to that 
+@@ -1,2 +1,2 @@ sn46.2:4.3
+ PLI: Tattha ayonisomanasikārabahulīkāro—
+-Frequent irrational application of mind to them 
++Frequent improper attention to them 
+@@ -1,2 +1,2 @@ sn46.2:5.3
+ PLI: Tattha ayonisomanasikārabahulīkāro—
+-Frequent irrational application of mind to that 
++Frequent improper attention to that 
+@@ -1,2 +1,2 @@ sn46.2:6.3
+ PLI: Tattha ayonisomanasikārabahulīkāro—
+-Frequent irrational application of mind to them 
++Frequent improper attention to them 
+@@ -1,2 +1,2 @@ sn46.2:9.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to them 
++Frequent proper attention to them 
+@@ -1,2 +1,2 @@ sn46.2:10.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to them 
++Frequent proper attention to them 
+@@ -1,2 +1,2 @@ sn46.2:11.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to them 
++Frequent proper attention to them 
+@@ -1,2 +1,2 @@ sn46.2:12.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to them 
++Frequent proper attention to them 
+@@ -1,2 +1,2 @@ sn46.2:13.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to that 
++Frequent proper attention to that 
+@@ -1,2 +1,2 @@ sn46.2:14.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to them 
++Frequent proper attention to them 
+@@ -1,2 +1,2 @@ sn46.2:15.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to them 
++Frequent proper attention to them 
+--- sujato/sutta/sn/sn46/sn46.32_translation-en-sujato.json
++++ sujato/sutta/sn/sn46/sn46.32_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn46.32:1.1
+ PLI: “Ye keci, bhikkhave, dhammā kusalā kusalabhāgiyā kusalapakkhikā, sabbe te yonisomanasikāramūlakā yonisomanasikārasamosaraṇā; yonisomanasikāro tesaṁ dhammānaṁ aggamakkhāyati. 
+-“Bhikkhus, whatever qualities are skillful, part of the skillful, on the side of the skillful, all of them are rooted in rational application of mind and meet at rational application of mind, and rational application of mind is said to be the best of them. 
++“Bhikkhus, whatever qualities are skillful, part of the skillful, on the side of the skillful, all of them are rooted in proper attention and meet at proper attention, and proper attention is said to be the best of them. 
+@@ -1,2 +1,2 @@ sn46.32:1.2
+ PLI: Yonisomanasikārasampannassetaṁ, bhikkhave, bhikkhuno pāṭikaṅkhaṁ—satta bojjhaṅge bhāvessati, satta bojjhaṅge bahulīkarissati. 
+-A bhikkhu accomplished in rational application of mind can expect to develop and cultivate the seven awakening factors. 
++A bhikkhu accomplished in proper attention can expect to develop and cultivate the seven awakening factors. 
+@@ -1,2 +1,2 @@ sn46.32:2.1
+ PLI: Kathañca, bhikkhave, bhikkhu yonisomanasikārasampanno satta bojjhaṅge bhāveti, satta bojjhaṅge bahulīkaroti? 
+-And how does a bhikkhu with rational application of mind develop and cultivate the seven awakening factors? 
++And how does a bhikkhu with proper attention develop and cultivate the seven awakening factors? 
+@@ -1,2 +1,2 @@ sn46.32:2.4
+ PLI: Evaṁ kho, bhikkhave, bhikkhu yonisomanasikārasampanno satta bojjhaṅge bhāveti, satta bojjhaṅge bahulīkarotī”ti. 
+-That’s how a bhikkhu with rational application of mind develops and cultivates the seven awakening factors.” 
++That’s how a bhikkhu with proper attention develops and cultivates the seven awakening factors.” 
+--- sujato/sutta/sn/sn46/sn46.35_translation-en-sujato.json
++++ sujato/sutta/sn/sn46/sn46.35_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn46.35:0.3
+ PLI: Ayonisomanasikārasutta 
+-Irrational Application of Mind 
++Improper Attention 
+@@ -1,2 +1,2 @@ sn46.35:1.1
+ PLI: “Ayoniso, bhikkhave, manasikaroto anuppanno ceva kāmacchando uppajjati, uppanno ca kāmacchando bhiyyobhāvāya vepullāya saṁvattati; anuppanno ceva byāpādo uppajjati, uppanno ca byāpādo bhiyyobhāvāya vepullāya saṁvattati; anuppannañceva thinamiddhaṁ uppajjati, uppannañca thinamiddhaṁ bhiyyobhāvāya vepullāya saṁvattati; anuppannañceva uddhaccakukkuccaṁ uppajjati, uppannañca uddhaccakukkuccaṁ bhiyyobhāvāya vepullāya saṁvattati; anuppannā ceva vicikicchā uppajjati, uppannā ca vicikicchā bhiyyobhāvāya vepullāya saṁvattatī”ti. 
+-“Bhikkhus, when you apply the mind irrationally, sensual desire, ill will, dullness and drowsiness, restlessness and remorse, and doubt arise, and once arisen they increase and grow.” 
++“Bhikkhus, when you attend improperly, sensual desire, ill will, dullness and drowsiness, restlessness and remorse, and doubt arise, and once arisen they increase and grow.” 
+@@ -1,2 +1,2 @@ sn46.35:2.1
+ PLI: “Yoniso ca kho, bhikkhave, manasikaroto anuppanno ceva satisambojjhaṅgo uppajjati, uppanno ca satisambojjhaṅgo bhāvanāpāripūriṁ gacchati …pe… anuppanno ceva upekkhāsambojjhaṅgo uppajjati, uppanno ca upekkhāsambojjhaṅgo bhāvanāpāripūriṁ gacchatī”ti. 
+-“Bhikkhus, when you apply the mind rationally, the awakening factors of awareness, investigation of principles, energy, rapture, tranquility, concentration, and equanimity arise, and once they’ve arisen, they’re fully developed.” 
++“Bhikkhus, when you attend properly, the awakening factors of awareness, investigation of principles, energy, rapture, tranquility, concentration, and equanimity arise, and once they’ve arisen, they’re fully developed.” 
+--- sujato/sutta/sn/sn46/sn46.49_translation-en-sujato.json
++++ sujato/sutta/sn/sn46/sn46.49_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn46.49:1.1
+ PLI: “Ajjhattikaṁ, bhikkhave, aṅganti karitvā nāññaṁ ekaṅgampi samanupassāmi sattannaṁ bojjhaṅgānaṁ uppādāya, yathayidaṁ—bhikkhave, yonisomanasikāro. 
+-“Taking into account interior factors, bhikkhus, I do not see a single one that gives rise to the seven awakening factors like rational application of mind. …” 
++“Taking into account interior factors, bhikkhus, I do not see a single one that gives rise to the seven awakening factors like proper attention. …” 
+--- sujato/sutta/sn/sn46/sn46.51_translation-en-sujato.json
++++ sujato/sutta/sn/sn46/sn46.51_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn46.51:1.6
+ PLI: Tattha ayonisomanasikārabahulīkāro—
+-Frequent irrational application of mind to that 
++Frequent improper attention to that 
+@@ -1,2 +1,2 @@ sn46.51:2.3
+ PLI: Tattha ayonisomanasikārabahulīkāro—
+-Frequent irrational application of mind to that 
++Frequent improper attention to that 
+@@ -1,2 +1,2 @@ sn46.51:3.3
+ PLI: Tattha ayonisomanasikārabahulīkāro—
+-Frequent irrational application of mind to that 
++Frequent improper attention to that 
+@@ -1,2 +1,2 @@ sn46.51:4.3
+ PLI: Tattha ayonisomanasikārabahulīkāro—
+-Frequent irrational application of mind to that 
++Frequent improper attention to that 
+@@ -1,2 +1,2 @@ sn46.51:5.3
+ PLI: Tattha ayonisomanasikārabahulīkāro—
+-Frequent irrational application of mind to them 
++Frequent improper attention to them 
+@@ -1,2 +1,2 @@ sn46.51:6.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to them 
++Frequent proper attention to them 
+@@ -1,2 +1,2 @@ sn46.51:7.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to them 
++Frequent proper attention to them 
+@@ -1,2 +1,2 @@ sn46.51:8.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to them 
++Frequent proper attention to them 
+@@ -1,2 +1,2 @@ sn46.51:9.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to them 
++Frequent proper attention to them 
+@@ -1,2 +1,2 @@ sn46.51:10.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to that 
++Frequent proper attention to that 
+@@ -1,2 +1,2 @@ sn46.51:11.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to them 
++Frequent proper attention to them 
+@@ -1,2 +1,2 @@ sn46.51:12.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to them 
++Frequent proper attention to them 
+@@ -1,2 +1,2 @@ sn46.51:13.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to that 
++Frequent proper attention to that 
+@@ -1,2 +1,2 @@ sn46.51:14.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to that 
++Frequent proper attention to that 
+@@ -1,2 +1,2 @@ sn46.51:15.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to them 
++Frequent proper attention to them 
+@@ -1,2 +1,2 @@ sn46.51:16.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to that 
++Frequent proper attention to that 
+@@ -1,2 +1,2 @@ sn46.51:17.3
+ PLI: Tattha yonisomanasikārabahulīkāro—
+-Frequent rational application of mind to them 
++Frequent proper attention to them 
+--- sujato/sutta/sn/sn55/sn55.28_translation-en-sujato.json
++++ sujato/sutta/sn/sn55/sn55.28_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn55.28:4.2
+ PLI: Idha, gahapati, ariyasāvako paṭiccasamuppādaññeva sādhukaṁ yoniso manasi karoti—
+-A noble disciple rationally applies the mind to dependent origination itself: 
++A noble disciple attends properly to dependent origination itself: 
+--- sujato/sutta/sn/sn55/sn55.50_translation-en-sujato.json
++++ sujato/sutta/sn/sn55/sn55.50_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn55.50:1.3
+ PLI: Sappurisasaṁsevo, saddhammassavanaṁ, yonisomanasikāro, dhammānudhammappaṭipatti—
+-Associating with true persons, listening to the true teaching, rational application of mind, and practicing in line with the teaching. 
++Associating with true persons, listening to the true teaching, proper attention, and practicing in line with the teaching. 
+--- sujato/sutta/sn/sn55/sn55.55_translation-en-sujato.json
++++ sujato/sutta/sn/sn55/sn55.55_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn55.55:1.3
+ PLI: Sappurisasaṁsevo, saddhammassavanaṁ, yonisomanasikāro, dhammānudhammappaṭipatti—
+-Associating with true persons, listening to the true teaching, rational application of mind, and practicing in line with the teaching. 
++Associating with true persons, listening to the true teaching, proper attention, and practicing in line with the teaching. 
+--- sujato/sutta/sn/sn55/sn55.5_translation-en-sujato.json
++++ sujato/sutta/sn/sn55/sn55.5_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn55.5:1.4
+ PLI: “Sappurisasaṁsevo hi, bhante, sotāpattiyaṅgaṁ, saddhammassavanaṁ sotāpattiyaṅgaṁ, yonisomanasikāro sotāpattiyaṅgaṁ, dhammānudhammappaṭipatti sotāpattiyaṅgan”ti. 
+-“Sir, the factors for stream-entry are associating with true persons, listening to the true teaching, rational application of mind, and practicing in line with the teaching.” 
++“Sir, the factors for stream-entry are associating with true persons, listening to the true teaching, proper attention, and practicing in line with the teaching.” 
+@@ -1,2 +1,2 @@ sn55.5:1.6
+ PLI: Sappurisasaṁsevo hi, sāriputta, sotāpattiyaṅgaṁ, saddhammassavanaṁ sotāpattiyaṅgaṁ, yonisomanasikāro sotāpattiyaṅgaṁ, dhammānudhammappaṭipatti sotāpattiyaṅgaṁ. 
+-For the factors for stream-entry are associating with true persons, listening to the true teaching, rational application of mind, and practicing in line with the teaching. 
++For the factors for stream-entry are associating with true persons, listening to the true teaching, proper attention, and practicing in line with the teaching. 
+--- sujato/sutta/sn/sn55/sn55.62_translation-en-sujato.json
++++ sujato/sutta/sn/sn55/sn55.62_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn55.62:1.3
+ PLI: Sappurisasaṁsevo, saddhammassavanaṁ, yonisomanasikāro, dhammānudhammappaṭipatti—
+-Associating with true persons, listening to the true teaching, rational application of mind, and practicing in line with the teaching. 
++Associating with true persons, listening to the true teaching, proper attention, and practicing in line with the teaching. 
+--- sujato/sutta/sn/sn55/sn55.74_translation-en-sujato.json
++++ sujato/sutta/sn/sn55/sn55.74_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn55.74:1.3
+ PLI: Sappurisasaṁsevo, saddhammassavanaṁ, yonisomanasikāro, dhammānudhammappaṭipatti—
+-Associating with true persons, listening to the true teaching, rational application of mind, and practicing in line with the teaching. 
++Associating with true persons, listening to the true teaching, proper attention, and practicing in line with the teaching. 
+--- sujato/sutta/sn/sn9/sn9.11_translation-en-sujato.json
++++ sujato/sutta/sn/sn9/sn9.11_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn9.11:2.1
+ PLI: “Ayoniso manasikārā, 
+-“Because of irrational application of mind, 
++“Because of improper attention, 
+@@ -1,2 +1,2 @@ sn9.11:2.4
+ PLI: yoniso anucintaya. 
+-make sure your thoughts are rational. 
++make sure your thoughts are proper. 
