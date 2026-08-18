@@ -8,54 +8,58 @@ export async function loadCorpus(): Promise<Corpus> {
   return res.json();
 }
 
-// Runs the fetch + ~20MB JSON.parse in a Web Worker (see workers/dictionaryWorker.ts) instead of
-// blocking the main thread at app boot.
-export function loadDictionary(): Promise<Dictionary> {
-  return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('../workers/dictionaryWorker.ts', import.meta.url), { type: 'module' });
-    let watchdog: ReturnType<typeof setTimeout>;
-    // Nothing at all from the worker for this long — not even one of the pings it sends while
-    // bytes are arriving — means it has died rather than that the download is slow: an
-    // out-of-memory kill (plausible for a ~20MB parse on a small phone) fires no 'error' event of
-    // any kind. Without it that leaves this promise unsettled forever, which the callers can't
-    // recover from: retryWithBackoff never retries, CorpusContext never marks the dictionary
-    // failed, and every word tap sits on "Loading dictionary…" for the rest of the session. Set
-    // well past the worker's own PING_INTERVAL_MS, since the parse itself blocks its pings while
-    // it runs.
-    const WATCHDOG_MS = 60_000;
-    const armWatchdog = () => {
-      clearTimeout(watchdog);
-      watchdog = setTimeout(() => {
-        worker.terminate();
-        reject(new Error('dictionary worker timed out'));
-      }, WATCHDOG_MS);
-    };
-    worker.onmessage = (e: MessageEvent<{ ok?: boolean; ping?: boolean; corrupt?: boolean; dictionary?: Dictionary; error?: string }>) => {
-      if (e.data.ping) {
-        armWatchdog();
-        return;
-      }
-      clearTimeout(watchdog);
-      worker.terminate();
-      if (e.data.ok && e.data.dictionary) {
-        resolve(e.data.dictionary);
-        return;
-      }
-      const fail = () => reject(new Error(e.data.error || 'dictionary worker failed'));
-      // Bytes that aren't the dictionary have already been cached for a year by the SW's
-      // CacheFirst rule, so retrying without dropping them just replays the same failure — for
-      // the whole year, on every launch. Evicting first is what makes the retry a real one.
-      if (e.data.corrupt) clearCachedDictionary().catch(() => {}).then(fail);
-      else fail();
-    };
-    worker.onerror = (event) => {
-      clearTimeout(watchdog);
-      worker.terminate();
-      reject(event.error instanceof Error ? event.error : new Error('dictionary worker failed'));
-    };
-    armWatchdog();
-    worker.postMessage('load');
-  });
+const DICTIONARY_URL = '/data/dictionary.json';
+
+// No bytes at all for this long means the connection has stalled, not that it's merely slow. That
+// distinction is why the body is streamed rather than fetched under one overall deadline: 20MB
+// legitimately takes minutes on a poor mobile connection, and aborting that would leave exactly
+// the users who most need an offline dictionary unable to ever finish downloading one.
+const STALL_TIMEOUT_MS = 30_000;
+
+async function fetchDictionaryText(): Promise<string> {
+  const controller = new AbortController();
+  let stall = setTimeout(() => controller.abort(), STALL_TIMEOUT_MS);
+  const restartStall = () => {
+    clearTimeout(stall);
+    stall = setTimeout(() => controller.abort(), STALL_TIMEOUT_MS);
+  };
+  try {
+    const res = await fetch(DICTIONARY_URL, { signal: controller.signal });
+    // An error response can still carry a body that parses as JSON (an error payload, a proxy's
+    // own page), which would otherwise be handed to the reader as though it were the dictionary.
+    if (!res.ok) throw new Error(`Failed to load dictionary.json (${res.status})`);
+    if (!res.body) return res.text();
+    const reader = res.body.getReader();
+    const chunks: BlobPart[] = [];
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      if (value) chunks.push(value);
+      restartStall();
+    }
+    return new Blob(chunks).text();
+  } finally {
+    clearTimeout(stall);
+  }
+}
+
+// The ~20MB JSON.parse below runs on the main thread, deliberately. A Web Worker moves the parse
+// off it, but the only way back is a structured clone of the result — 140k+ keys, profiled at
+// ~300ms of blocked main thread, several times what the parse itself costs. Parsing here is both
+// cheaper and simpler; `dictionary` is loaded in the background and gates nothing (see
+// CorpusContext), so the parse lands well after first paint.
+export async function loadDictionary(): Promise<Dictionary> {
+  const text = await fetchDictionaryText();
+  try {
+    return JSON.parse(text) as Dictionary;
+  } catch (error: unknown) {
+    // The bytes arrived but aren't the dictionary — a captive portal's login page, a truncated
+    // write. `CacheFirst` (vite.config.ts) stores whatever that was for a year, so every later
+    // attempt would replay it from cache and fail identically; evicting it first is what makes
+    // the retry a real one.
+    await clearCachedDictionary().catch(() => {});
+    throw error instanceof Error ? error : new Error(String(error));
+  }
 }
 
 // SuttaCentral's own structural role for this segment (see scripts/fetch-html-structure.mjs and
