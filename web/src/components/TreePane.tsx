@@ -14,8 +14,15 @@ import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
 import { ancestorsOf, findNode, flatSuttaOrder, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
 import { ancestorsOfList, flattenListTree, suttaRowMeta } from '../lib/lists';
 import { derivePaneViewSync } from '../lib/paneView';
-import { estimateOfflineStatus } from '../lib/offline';
-import { isStandalone, hasOpenedSutta, isOfflineNudgeDismissed, dismissOfflineNudge } from '../lib/pwaNudge';
+import { estimateOfflineStatus, isOfflineTextStale } from '../lib/offline';
+import {
+  isStandalone,
+  hasOpenedSutta,
+  isOfflineNudgeDismissed,
+  dismissOfflineNudge,
+  dismissedOfflineUpdateVersion,
+  dismissOfflineUpdate,
+} from '../lib/pwaNudge';
 import { TREE_VIEW_KEY, TREE_EXPANDED_KEY } from '../lib/storageKeys';
 import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
 import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
@@ -123,18 +130,28 @@ export function TreePane({
   const { user, promptGoogleSignIn } = useAuth();
   const { mobile, paneW } = useLayout();
 
-  // One-time nudge for PWA-installed users who haven't downloaded the corpus for offline
-  // reading — see the banner render below. `hasOpenedSutta`/`isOfflineNudgeDismissed` are read
-  // once per mount (not subscribed live) since TreePane itself remounts on the route boundary
-  // that actually changes either of them (returning from /read/:suttaId, or this banner's own
-  // dismiss button, which sets local state directly instead of waiting for a remount).
+  // Two nudges sharing one banner slot below the header, made mutually exclusive by whether the
+  // corpus is fully cached: download it for offline reading, or — once it is — refresh a copy
+  // that's fallen behind the text this build serves. The dismissal state and `hasOpenedSutta` are
+  // read once per mount (not subscribed live) since TreePane remounts on the route boundary that
+  // actually changes them (returning from /read/:suttaId), and each dismiss button sets local
+  // state directly rather than waiting for a remount.
   const [nudgeDismissed, setNudgeDismissed] = useState(() => isOfflineNudgeDismissed());
+  const [updateDismissedVersion, setUpdateDismissedVersion] = useState(() => dismissedOfflineUpdateVersion());
   const [offlineCachedStatus, setOfflineCachedStatus] = useState<{ cached: number; total: number } | null>(null);
-  const eligibleForOfflineNudge = isStandalone() && hasOpenedSutta() && !nudgeDismissed;
+  // The download nudge is PWA-only: asking for ~28MB in a passing browser tab is pushy, and it's
+  // an installed app that has any use for the whole canon. The update nudge isn't, because it can
+  // only fire for someone who already *finished* that download — they've committed to offline
+  // reading whether or not they installed the app, and CacheFirst serves them the same stale text
+  // in a tab as in the PWA, so hiding it there just leaves them silently a year behind.
+  const downloadNudgeEligible = isStandalone() && hasOpenedSutta();
+  const textStale = !!corpus && isOfflineTextStale(corpus.dataVersion);
   useEffect(() => {
     // Cache Storage membership over the whole corpus isn't free — only bother once the cheap,
-    // synchronous checks above already say the banner could plausibly show.
-    if (!corpus || !eligibleForOfflineNudge) return;
+    // synchronous checks above already say a banner could plausibly show. `textStale` is one of
+    // those checks (a localStorage compare), and is false for anyone who never bulk-downloaded,
+    // which is what keeps this probe off the common path.
+    if (!corpus || !(downloadNudgeEligible || textStale)) return;
     let cancelled = false;
     estimateOfflineStatus(flatSuttaOrder(corpus)).then((s) => {
       if (!cancelled) setOfflineCachedStatus(s);
@@ -142,11 +159,18 @@ export function TreePane({
     return () => {
       cancelled = true;
     };
-  }, [corpus, eligibleForOfflineNudge]);
-  const showOfflineNudge = eligibleForOfflineNudge && !!offlineCachedStatus && offlineCachedStatus.cached < offlineCachedStatus.total;
+  }, [corpus, downloadNudgeEligible, textStale]);
+  const fullyCached = !!offlineCachedStatus && offlineCachedStatus.cached >= offlineCachedStatus.total;
+  const showOfflineNudge = downloadNudgeEligible && !nudgeDismissed && !!offlineCachedStatus && !fullyCached;
+  const showUpdateNudge = textStale && fullyCached && !!corpus && updateDismissedVersion !== corpus.dataVersion;
   function dismissOfflineNudgeBanner() {
     dismissOfflineNudge();
     setNudgeDismissed(true);
+  }
+  function dismissUpdateNudgeBanner() {
+    if (!corpus) return;
+    dismissOfflineUpdate(corpus.dataVersion);
+    setUpdateDismissedVersion(corpus.dataVersion);
   }
 
   const scrollRef = useScrollMemory<HTMLDivElement>('tree', visible);
@@ -614,21 +638,23 @@ export function TreePane({
         )}
       </header>
 
-      {showOfflineNudge && (
+      {(showOfflineNudge || showUpdateNudge) && (
         <div className="flex-none flex items-center gap-2.5 px-[18px] py-2.5 border-b border-ink/10 bg-accent/[.06]">
           <Download size={15} strokeWidth={1.75} className="flex-none text-ink/60" />
-          <div className="flex-1 min-w-0 font-sans text-[12.5px] text-ink/70 truncate">Download the full canon for offline reading</div>
+          <div className="flex-1 min-w-0 font-sans text-[12.5px] text-ink/70 truncate">
+            {showUpdateNudge ? 'Updated sutta text is available' : 'Download the full canon for offline reading'}
+          </div>
           <button
             className="flex-none font-sans text-[12.5px] font-semibold text-accent-text underline decoration-accent-text/40 underline-offset-2"
             onClick={() => navigate('/settings', { state: { scrollTo: 'offline' } })}
           >
-            Download
+            {showUpdateNudge ? 'Update' : 'Download'}
           </button>
           <button
             className="flex-none flex items-center justify-center w-5 h-5 rounded-full text-ink/40 hover:bg-ink/[.08] hover:text-ink"
             aria-label="Dismiss"
             title="Dismiss"
-            onClick={dismissOfflineNudgeBanner}
+            onClick={showUpdateNudge ? dismissUpdateNudgeBanner : dismissOfflineNudgeBanner}
           >
             <X size={13} strokeWidth={2} />
           </button>

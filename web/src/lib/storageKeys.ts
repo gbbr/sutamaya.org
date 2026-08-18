@@ -12,6 +12,13 @@ export const READER_PREFS_KEY = 'sutamaya.readerPrefs';
 export const LAYOUT_PREFS_KEY = 'sutamaya.layout';
 export const HAS_OPENED_SUTTA_KEY = 'sutamaya.hasOpenedSutta';
 export const OFFLINE_NUDGE_DISMISSED_KEY = 'sutamaya.offlineNudgeDismissed';
+// The corpus dataVersion/dictionaryVersion this device last completed a full offline download at
+// (see lib/offline.ts) — compared against the live corpus to spot a stale offline copy.
+export const OFFLINE_DATA_VERSION_KEY = 'sutamaya.offlineDataVersion';
+export const OFFLINE_DICTIONARY_VERSION_KEY = 'sutamaya.offlineDictionaryVersion';
+// The dataVersion whose "updated text available" nudge was dismissed. Stores the version rather
+// than a boolean, so dismissing one update doesn't silence every later one.
+export const OFFLINE_UPDATE_DISMISSED_KEY = 'sutamaya.offlineUpdateDismissed';
 // This device's own id, minted once and kept forever — the tiebreak half of every mtime this
 // client stamps a write with (see lib/mtime.ts).
 export const DEVICE_ID_KEY = 'sutamaya.deviceId';

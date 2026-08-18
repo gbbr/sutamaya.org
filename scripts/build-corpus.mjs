@@ -4,6 +4,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import {
   NIKAYA_META, AN_BOOK_NAMES, KN_BOOKS, SN_GROUPS, REF_ABBR,
@@ -25,6 +26,12 @@ const OUT_SHARDS = path.join(OUT, 'text-shards');
 
 function readJSON(p) {
   return JSON.parse(fs.readFileSync(p, 'utf8'));
+}
+
+// Truncated to 16 hex chars everywhere it's used — these are change detectors, not security
+// digests, and they travel in corpus.json and localStorage.
+function sha256(s) {
+  return createHash('sha256').update(s).digest('hex').slice(0, 16);
 }
 // Names the collection and expected path on failure — a bare ENOENT/JSON-parse stack trace here
 // otherwise doesn't say which of the 25+ loadTree() calls (one per nikaya/KN book) actually
@@ -121,6 +128,12 @@ fs.mkdirSync(OUT_SHARDS, { recursive: true });
 const suttas = {};
 let leafCount = 0;
 
+// Per-uid digests of exactly the bytes written to web/public/data/text/, folded into corpus.json's
+// `dataVersion` below. That's what lets a client tell whether the sutta text it cached (under
+// unversioned CacheFirst URLs — see CLAUDE.md's cache-staleness note) is still the text this build
+// produces, and offer a re-download when it isn't.
+const textDigests = new Map();
+
 // Bulk offline download (Settings' "Download all suttas for offline") fetches these shard
 // bundles instead of one request per sutta (~4000 across the whole canon) — see
 // web/src/lib/offline.ts. Each shard is a hand-built JSON object literal (uid -> that uid's
@@ -169,6 +182,7 @@ function buildLeaf(uid, nodeId, collection) {
     }))
   );
   fs.writeFileSync(path.join(OUT_TEXT, `${uid}.json`), segsJson);
+  textDigests.set(uid, sha256(segsJson));
 
   shardBuf.push([uid, segsJson]);
   shardBufBytes += Buffer.byteLength(segsJson);
@@ -295,20 +309,6 @@ const nikayas = [];
   console.log(`  kn: ${chapterRows.length} books, ${chapterRows.reduce((n, c) => n + c.count, 0)} leaf documents`);
 }
 
-fs.writeFileSync(
-  path.join(OUT, 'corpus.json'),
-  JSON.stringify({ nikayas, suttas, sujatoCommit: sujatoManifest.sourceCommit })
-);
-console.log(`Wrote corpus.json (${leafCount} leaf documents, ${nikayas.length} nikāyas)`);
-
-flushShard();
-const totalShardBytes = shardManifest.reduce((n, s) => n + s.bytes, 0);
-fs.writeFileSync(
-  path.join(OUT_SHARDS, 'manifest.json'),
-  JSON.stringify({ totalBytes: totalShardBytes, totalUids: leafCount, shards: shardManifest })
-);
-console.log(`Wrote ${shardManifest.length} text shards (${(totalShardBytes / 1e6).toFixed(1)} MB) for offline bulk download`);
-
 // --- Dictionary: flatten [{entry, definition:[...]}] into a headword-keyed object for O(1) lookup ---
 console.log('Building dictionary map…');
 const dpdList = readJSON(path.join(DATA, 'pli2en_dpd.json'));
@@ -317,5 +317,32 @@ for (const { entry, definition } of dpdList) dpdMap[entry] = definition;
 const dpdJson = JSON.stringify(dpdMap);
 fs.writeFileSync(path.join(OUT, 'dictionary.json'), dpdJson);
 console.log(`  ${dpdList.length} headwords`);
+
+// Both versions are emitted in corpus.json (precached and revisioned with the app shell, so a new
+// build always delivers them) rather than derived from anything the client caches itself. They're
+// kept apart because they're separately downloadable and wildly different sizes: a reworded
+// sentence in one sutta must not prompt a ~20MB dictionary re-fetch. Sorting by uid makes
+// dataVersion independent of directory-walk order, so an unchanged corpus rebuilds identically.
+const dataVersion = sha256(
+  [...textDigests]
+    .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+    .map(([uid, digest]) => `${uid}:${digest}`)
+    .join('\n')
+);
+const dictionaryVersion = sha256(dpdJson);
+
+fs.writeFileSync(
+  path.join(OUT, 'corpus.json'),
+  JSON.stringify({ nikayas, suttas, sujatoCommit: sujatoManifest.sourceCommit, dataVersion, dictionaryVersion })
+);
+console.log(`Wrote corpus.json (${leafCount} leaf documents, ${nikayas.length} nikāyas, data ${dataVersion})`);
+
+flushShard();
+const totalShardBytes = shardManifest.reduce((n, s) => n + s.bytes, 0);
+fs.writeFileSync(
+  path.join(OUT_SHARDS, 'manifest.json'),
+  JSON.stringify({ totalBytes: totalShardBytes, totalUids: leafCount, shards: shardManifest })
+);
+console.log(`Wrote ${shardManifest.length} text shards (${(totalShardBytes / 1e6).toFixed(1)} MB) for offline bulk download`);
 
 console.log('Done.');
