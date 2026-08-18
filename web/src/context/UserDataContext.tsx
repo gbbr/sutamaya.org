@@ -147,9 +147,24 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     pausedRef.current = paused;
   }, [paused]);
 
+  // Keyed on the user's *id*, not the `user` object — AuthContext seeds `user` synchronously from
+  // localStorage and then replaces it with a fresh object once GET /api/auth/me answers, so an
+  // object-identity dependency re-ran everything below for what is the same account: `ready` went
+  // back to false and the mirror was re-read from IndexedDB a few hundred milliseconds in, blanking
+  // and restoring every chip, note preview and highlight — often with the reader already open — and
+  // firing a second, redundant flush behind it.
+  const userId = user?.id ?? null;
+
+  // Clearing the pause is keyed on the `user` object instead, not its id: signing back in after a
+  // 401 hands back a new object carrying the *same* id, and that's precisely the event that means
+  // the cookie is good again. Setting it to a value it already holds doesn't re-render, so the
+  // boot-time /api/auth/me resolution passing through here costs nothing.
   useEffect(() => {
     setPaused(false);
-    if (!user) {
+  }, [user]);
+
+  useEffect(() => {
+    if (!userId) {
       // Nothing to load and nothing to sync. The signed-out mirror is empty rather than the last
       // user's — that data stays in IndexedDB under their own id, ready for them to sign back in.
       setState(emptyMirror());
@@ -158,7 +173,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     }
     let cancelled = false;
     setReady(false);
-    loadMirror(user.id)
+    loadMirror(userId)
       .then((loaded) => {
         if (cancelled) return;
         setState(loaded);
@@ -170,13 +185,13 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       .catch((e) => {
         console.error('mirror load failed', e);
         if (cancelled) return;
-        setState(emptyMirror(user.id));
+        setState(emptyMirror(userId));
         setReady(true);
       });
     return () => {
       cancelled = true;
     };
-  }, [user]);
+  }, [userId]);
 
   // Persist on every change, including the ones a flush folds back in. Guarded on the mirror's own
   // userId rather than on `user`, so the window between an account switch and its load resolving
@@ -231,7 +246,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   );
 
   useEffect(() => {
-    if (!ready || !user || paused) return;
+    if (!ready || !userId || paused) return;
     flush();
     const onOnline = () => flush();
     const onVisible = () => {
@@ -245,7 +260,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       document.removeEventListener('visibilitychange', onVisible);
       clearInterval(poll);
     };
-  }, [ready, user, paused, flush]);
+  }, [ready, userId, paused, flush]);
 
   const { lists, membership, notes, highlights, visited } = useMemo(() => deriveUserData(state), [state]);
 
