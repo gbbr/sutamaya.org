@@ -1,5 +1,13 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { lookupHeadword, resetDictShardCache, shardFor, type DictShard } from './dictionaryShards';
+import {
+  loadDictShardManifest,
+  lookupHeadword,
+  peekHeadword,
+  prefetchHeadwordShard,
+  resetDictShardCache,
+  shardFor,
+  type DictShard,
+} from './dictionaryShards';
 
 const shards: DictShard[] = [
   { file: 'dict-shards/000.json', first: 'a', last: 'buddha' },
@@ -103,6 +111,48 @@ describe('lookupHeadword', () => {
     await expect(lookupHeadword('sati')).rejects.toThrow();
     await expect(lookupHeadword('sati')).rejects.toThrow();
     expect(fetched.filter((u) => u.endsWith('002.json'))).toHaveLength(2);
+  });
+
+  // peekHeadword is what lets the reader answer a tap without a repaint — see useDictionaryLookup.
+  describe('peekHeadword', () => {
+    it('knows nothing before the manifest has loaded', () => {
+      expect(peekHeadword('dhamma')).toBeUndefined();
+    });
+
+    it('knows nothing while the shard is loaded but not yet parsed', async () => {
+      await loadDictShardManifest();
+      const pending = lookupHeadword('dhamma');
+      expect(peekHeadword('dhamma')).toBeUndefined();
+      await pending;
+    });
+
+    it('answers from a resident shard once it has settled', async () => {
+      await lookupHeadword('dhamma');
+      expect(peekHeadword('dhamma')).toEqual(['teaching']);
+      expect(peekHeadword('Dhamma')).toEqual(['the Teaching']);
+      // A definite "no entry" too, not just a hit.
+      expect(peekHeadword('nibbana')).toBeNull();
+    });
+
+    it('answers a word outside every shard range without needing any shard', async () => {
+      await loadDictShardManifest();
+      expect(peekHeadword('zzz')).toBeNull();
+    });
+  });
+
+  describe('prefetchHeadwordShard', () => {
+    it('warms a shard so a later lookup can be answered synchronously', async () => {
+      prefetchHeadwordShard('dhamma');
+      // Let the manifest and shard fetches settle.
+      await vi.waitFor(() => expect(peekHeadword('dhamma')).toEqual(['teaching']));
+      expect(fetched.filter((u) => u.endsWith('001.json'))).toHaveLength(1);
+    });
+
+    it('swallows a failing shard rather than rejecting into nothing', async () => {
+      prefetchHeadwordShard('sati');
+      await vi.waitFor(() => expect(fetched.some((u) => u.endsWith('002.json'))).toBe(true));
+      expect(peekHeadword('sati')).toBeUndefined();
+    });
   });
 
   it('refetches the manifest after a failed manifest fetch', async () => {

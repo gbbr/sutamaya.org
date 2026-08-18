@@ -1,11 +1,17 @@
 import { createRef } from 'react';
-import { act, renderHook, waitFor } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { useDictionaryLookup } from './useDictionaryLookup';
-import { lookupHeadword } from '../lib/dictionaryShards';
+import { lookupHeadword, peekHeadword, prefetchHeadwordShard } from '../lib/dictionaryShards';
 import type { SegmentFile } from '../lib/corpus';
 
-vi.mock('../lib/dictionaryShards', () => ({ lookupHeadword: vi.fn() }));
+vi.mock('../lib/dictionaryShards', () => ({
+  lookupHeadword: vi.fn(),
+  peekHeadword: vi.fn(),
+  prefetchHeadwordShard: vi.fn(),
+}));
+
+const LOADING_DELAY_MS = 150;
 
 const segments: SegmentFile[] = [
   { key: 'dn1:1.1', pali: 'evaṁ me sutaṁ', en: 'So I have heard.' },
@@ -27,39 +33,145 @@ function setup(suttaId = 'dn1') {
 
 describe('useDictionaryLookup', () => {
   beforeEach(() => {
+    vi.useFakeTimers();
+    vi.mocked(peekHeadword).mockReset().mockReturnValue(undefined);
     vi.mocked(lookupHeadword).mockReset();
+    vi.mocked(prefetchHeadwordShard).mockReset();
   });
 
   afterEach(() => {
+    vi.useRealTimers();
     vi.clearAllMocks();
   });
 
-  it('opens the dock immediately, then fills in the definitions when the shard arrives', async () => {
-    let resolve!: (v: string[] | null) => void;
-    vi.mocked(lookupHeadword).mockReturnValue(new Promise((r) => { resolve = r; }));
-    const { result } = setup();
+  // The flicker this exists to prevent: the dock's "Loading…" body is one line and its definitions
+  // are several, so any render that passes through a loading state resizes the dock twice.
+  describe('never shows a loading state for a lookup that resolves promptly', () => {
+    it('answers a resident shard in a single commit, with no loading state at all', () => {
+      vi.mocked(peekHeadword).mockReturnValue(['thus', 'so']);
+      const { result } = setup();
 
-    act(() => {
-      result.current.onWordClick('evaṁ', 0, 0);
-    });
-    // A tap must never look like it did nothing, even while its shard is still in flight.
-    expect(result.current.dict).toMatchObject({ word: 'evaṁ', loading: true, defs: null, segIndex: 0, wordIndex: 0 });
+      act(() => {
+        result.current.onWordClick('evaṁ', 0, 0);
+      });
 
-    await act(async () => {
-      resolve(['thus', 'so']);
+      expect(result.current.dict).toMatchObject({ word: 'evaṁ', gloss: '2', defs: ['thus', 'so'] });
+      expect(result.current.dict?.loading).toBeFalsy();
+      expect(lookupHeadword).not.toHaveBeenCalled();
     });
-    expect(result.current.dict).toMatchObject({ word: 'evaṁ', loading: false, failed: false, gloss: '2', defs: ['thus', 'so'] });
+
+    it('leaves the dock closed while a non-resident shard resolves, rather than opening it empty', async () => {
+      let resolve!: (v: string[] | null) => void;
+      vi.mocked(lookupHeadword).mockReturnValue(new Promise((r) => { resolve = r; }));
+      const { result } = setup();
+
+      act(() => {
+        result.current.onWordClick('evaṁ', 0, 0);
+      });
+      // Part-way to the delay, so the assertion depends on the delay actually being honoured
+      // rather than merely on fake timers not having run.
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(LOADING_DELAY_MS - 50);
+      });
+      expect(result.current.dict).toBeNull();
+
+      await act(async () => {
+        resolve(['thus']);
+      });
+      expect(result.current.dict).toMatchObject({ word: 'evaṁ', defs: ['thus'] });
+      expect(result.current.dict?.loading).toBeFalsy();
+    });
+
+    it('keeps the open dock’s definitions, and so its height, while stepping to a non-resident word', async () => {
+      vi.mocked(peekHeadword).mockReturnValueOnce(['first']);
+      const { result } = setup();
+      act(() => {
+        result.current.onWordClick('evaṁ', 0, 0);
+      });
+
+      let resolve!: (v: string[] | null) => void;
+      vi.mocked(lookupHeadword).mockReturnValue(new Promise((r) => { resolve = r; }));
+      act(() => {
+        result.current.goToAdjacentWord(1);
+      });
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(LOADING_DELAY_MS - 50);
+      });
+
+      // Caret has moved to the new word, but the body is untouched — no loading, same defs.
+      expect(result.current.dict).toMatchObject({ word: 'me', wordIndex: 1, defs: ['first'] });
+      expect(result.current.dict?.loading).toBeFalsy();
+
+      await act(async () => {
+        resolve(['second']);
+      });
+      expect(result.current.dict).toMatchObject({ word: 'me', defs: ['second'] });
+    });
+  });
+
+  describe('admits to waiting only once the lookup is genuinely slow', () => {
+    it('shows the loading state after the delay elapses', async () => {
+      vi.mocked(lookupHeadword).mockReturnValue(new Promise(() => {}));
+      const { result } = setup();
+
+      act(() => {
+        result.current.onWordClick('evaṁ', 0, 0);
+      });
+      expect(result.current.dict).toBeNull();
+
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(LOADING_DELAY_MS);
+      });
+      expect(result.current.dict).toMatchObject({ word: 'evaṁ', loading: true, defs: null });
+    });
+
+    it('does not show it when the lookup beats the delay', async () => {
+      vi.mocked(lookupHeadword).mockResolvedValue(['thus']);
+      const states: Array<boolean | undefined> = [];
+      const { result } = setup();
+
+      await act(async () => {
+        result.current.onWordClick('evaṁ', 0, 0);
+      });
+      states.push(result.current.dict?.loading);
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(LOADING_DELAY_MS * 2);
+      });
+
+      expect(states).toEqual([undefined]);
+      expect(result.current.dict).toMatchObject({ defs: ['thus'] });
+      expect(result.current.dict?.loading).toBeFalsy();
+    });
+
+    // A timer left armed past a close would pop the dock back open on a word the reader dismissed.
+    it('cancels a pending loading state when the dock is closed', async () => {
+      vi.mocked(lookupHeadword).mockReturnValue(new Promise(() => {}));
+      const { result } = setup();
+
+      act(() => {
+        result.current.onWordClick('evaṁ', 0, 0);
+      });
+      act(() => {
+        result.current.closeDict();
+      });
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(LOADING_DELAY_MS * 2);
+      });
+
+      expect(result.current.dict).toBeNull();
+    });
   });
 
   it('settles a word the dictionary has no entry for, rather than leaving it loading', async () => {
-    vi.mocked(lookupHeadword).mockResolvedValue(null);
+    vi.mocked(peekHeadword).mockReturnValue(null);
     const { result } = setup();
 
-    await act(async () => {
+    act(() => {
       result.current.onWordClick('notaword', 0, 0);
     });
 
-    expect(result.current.dict).toMatchObject({ loading: false, defs: null, gloss: 'Pali' });
+    expect(result.current.dict).toMatchObject({ defs: null, gloss: 'Pali' });
+    expect(result.current.dict?.loading).toBeFalsy();
   });
 
   // The dock renders its retry branch on `loading && failed`, so a failed fetch has to set both —
@@ -90,7 +202,8 @@ describe('useDictionaryLookup', () => {
     });
 
     expect(lookupHeadword).toHaveBeenLastCalledWith('evaṁ');
-    expect(result.current.dict).toMatchObject({ loading: false, failed: false, defs: ['thus'] });
+    expect(result.current.dict).toMatchObject({ defs: ['thus'] });
+    expect(result.current.dict?.failed).toBeFalsy();
   });
 
   // Holding Shift+Arrow walks words faster than a cold shard resolves, so replies land out of
@@ -110,29 +223,28 @@ describe('useDictionaryLookup', () => {
     });
     expect(result.current.dict).toMatchObject({ word: 'sutaṁ', defs: ['second'] });
 
-    // The first lookup only now comes back.
     await act(async () => {
       resolveFirst(['first']);
     });
     expect(result.current.dict).toMatchObject({ word: 'sutaṁ', defs: ['second'] });
   });
 
-  it('steps to the adjacent word and looks that one up', async () => {
-    vi.mocked(lookupHeadword).mockResolvedValue(['x']);
+  // Consecutive words in a sutta rarely share a shard, so without warming the neighbours every
+  // prev/next would take the async path and the dock could never step without waiting.
+  it('warms both neighbours’ shards around the open word', () => {
+    vi.mocked(peekHeadword).mockReturnValue(['x']);
     const { result } = setup();
 
-    await act(async () => {
-      result.current.onWordClick('evaṁ', 0, 0);
-    });
-    await act(async () => {
-      result.current.goToAdjacentWord(1);
+    act(() => {
+      result.current.onWordClick('me', 0, 1);
     });
 
-    await waitFor(() => expect(result.current.dict).toMatchObject({ word: 'me', segIndex: 0, wordIndex: 1 }));
+    const warmed = vi.mocked(prefetchHeadwordShard).mock.calls.map(([w]) => w);
+    expect(warmed).toEqual(expect.arrayContaining(['sutaṁ', 'evaṁ']));
   });
 
   it('clears the dock when the sutta changes, since segment indices no longer mean anything', async () => {
-    vi.mocked(lookupHeadword).mockResolvedValue(['x']);
+    vi.mocked(peekHeadword).mockReturnValue(['x']);
     const { result, rerender } = renderHook(
       ({ suttaId }) =>
         useDictionaryLookup({
@@ -145,7 +257,7 @@ describe('useDictionaryLookup', () => {
       { initialProps: { suttaId: 'dn1' } }
     );
 
-    await act(async () => {
+    act(() => {
       result.current.onWordClick('evaṁ', 0, 0);
     });
     expect(result.current.dict).not.toBeNull();
