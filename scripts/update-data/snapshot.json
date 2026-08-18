@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T12:49:23.311Z",
+  "generatedAt": "2026-08-18T09:43:53.156Z",
   "note": "Baseline snapshot of data/{sujato,pali,html}, used by update-data-check.mjs to verify a prospective sc-data checkout has not renamed files or changed segment ids before copying. Regenerated only manually (npm run update-data:snapshot), after reviewing a check failure by hand — never automatically.",
   "fileCount": 13488,
   "files": {
