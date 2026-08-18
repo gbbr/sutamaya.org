@@ -4,7 +4,7 @@ import { useLayout } from '../context/LayoutContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
-import { flatSuttaOrder, sortByIdAsc, suttasFor } from '../lib/corpus';
+import { flatSuttaOrder, nodeLabel, sortByIdAsc, suttasFor } from '../lib/corpus';
 import { SHORTCUTS, shortcutsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, type RouteIntent } from '../lib/routeIntent';
@@ -149,6 +149,21 @@ export function LibraryPage({
   useEffect(() => {
     setNodeId(routeNodeId);
   }, [routeNodeId]);
+
+  // Tab title mirrors whatever the right pane is actually showing (a corpus node, a user list, or
+  // a search) — the same `nodeLabel` lookup ListPane's own header uses — so it's correct on a
+  // fresh reload of the current URL, not just after an in-app navigation.
+  useEffect(() => {
+    if (query.trim().length > 0) {
+      document.title = 'Search';
+    } else {
+      const { ref, label } = nodeLabel(corpus, nodeId || '', lists);
+      document.title = label ? (ref ? `${ref} ${label}` : label) : 'Sutamaya';
+    }
+    return () => {
+      document.title = 'Sutamaya';
+    };
+  }, [corpus, nodeId, lists, query]);
 
   // useCallback-wrapped (not inline arrows at the JSX call sites below) so these stay
   // referentially stable across renders that don't actually change what they'd do — e.g.

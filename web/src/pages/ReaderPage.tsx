@@ -115,6 +115,15 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     return () => setReaderThemeColor(null);
   }, [theme.bg]);
 
+  // Tab title tracks whatever sutta is actually open, so switching suttas or reopening the tab
+  // after a refresh both show the right title without a round trip through the tree.
+  useEffect(() => {
+    document.title = sutta ? `${sutta.ref} ${sutta.en}` : 'Sutamaya';
+    return () => {
+      document.title = 'Sutamaya';
+    };
+  }, [sutta]);
+
   // Drives the offline-download nudge banner in TreePane, which only makes sense to show once
   // someone has actually opened a sutta — not the very first thing a fresh PWA install sees.
   useEffect(() => {
