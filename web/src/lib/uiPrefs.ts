@@ -93,7 +93,16 @@ export function applyUiScale(scale: number) {
 // Sets --app-height, which index.css's <html> height rule reads instead of `vh`/`dvh` — some
 // WebView builds don't recompute those correctly after applyUiScale's viewport-meta path above
 // changes the page's scale, but visualViewport.height stays accurate throughout.
+//
+// Skipped while the user has pinch-zoomed in (visualViewport.scale !== 1): that gesture shrinks
+// visualViewport.height without changing the actual (CSS-pixel) viewport, so following it here
+// would shrink <html> to less than the real screen and leave a growing blank gap below #root
+// (both are `overflow: hidden`, see index.css) that gets worse the further in the user zooms.
+// Freezing --app-height at its last correct value until the user zooms back out to 1 is what
+// this function is for either way — real viewport changes (address-bar show/hide, keyboard,
+// UI-scale) all happen at scale 1.
 export function syncAppHeight() {
+  if (window.visualViewport && window.visualViewport.scale !== 1) return;
   const height = window.visualViewport?.height ?? window.innerHeight;
   document.documentElement.style.setProperty('--app-height', `${height}px`);
 }
