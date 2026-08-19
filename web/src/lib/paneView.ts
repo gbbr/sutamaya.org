@@ -9,19 +9,18 @@ export type PaneView = 'library' | 'lists';
 // Returns the pane view to switch to, or null to leave it alone. Null covers: the very first
 // mount of a reader-close round trip (its `nodeId` can be a sutta's own corpus node even though
 // "My lists" was showing the whole time — forcing back to 'library' would discard that for no
-// reason); signed-out users (no lists to switch to); no `nodeId` yet; and a `nodeId` that's
-// neither a list id nor a resolvable corpus node (nothing to react to).
+// reason); no `nodeId` yet; and a `nodeId` that's neither a list id nor a resolvable corpus node
+// (nothing to react to).
 export function derivePaneViewSync(params: {
   isFirstRun: boolean;
   restoreOrigin: boolean;
-  signedIn: boolean;
   nodeId: string | undefined;
   nodeIsListId: boolean;
   nodeIsCorpusNode: boolean;
 }): PaneView | null {
-  const { isFirstRun, restoreOrigin, signedIn, nodeId, nodeIsListId, nodeIsCorpusNode } = params;
+  const { isFirstRun, restoreOrigin, nodeId, nodeIsListId, nodeIsCorpusNode } = params;
   if (isFirstRun && restoreOrigin) return null;
-  if (!signedIn || !nodeId) return null;
+  if (!nodeId) return null;
   if (nodeIsListId) return 'lists';
   if (nodeIsCorpusNode) return 'library';
   return null;

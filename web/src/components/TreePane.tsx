@@ -135,8 +135,9 @@ export function TreePane({
   // Library and My Lists used to share one scrolling column, with My Lists always below the
   // (often long) nikaya tree — effectively inaccessible without a lot of scrolling for anyone
   // who mainly lives in one or the other. This switches the pane between full views of each
-  // instead, persisted like the rest of this pane's layout prefs. Signed-out users have no lists
-  // to switch to, so they're pinned to 'library' regardless of what's stored.
+  // instead, persisted like the rest of this pane's layout prefs. Not gated on being signed in: a
+  // signed-out reader has lists of their own, held in the local mirror until an account adopts
+  // them (see UserDataContext), so "My lists" is always a real place to go.
   const [paneView, setPaneView] = useState<'library' | 'lists'>(() => {
     try {
       return localStorage.getItem(TREE_VIEW_KEY) === 'lists' ? 'lists' : 'library';
@@ -151,7 +152,6 @@ export function TreePane({
       // storage unavailable — ignore
     }
   }, [paneView]);
-  const effectiveView = user ? paneView : 'library';
 
   // A membership chip's /browse/{list_id} navigation (or any other deep link to a list) needs
   // the "My lists" tree actually showing for that row to be visible at all — flip the toggle for
@@ -177,14 +177,13 @@ export function TreePane({
     const next = derivePaneViewSync({
       isFirstRun,
       restoreOrigin,
-      signedIn: !!user,
       nodeId,
       nodeIsListId,
       nodeIsCorpusNode: !!(corpus && nodeId && findNode(corpus, nodeId)),
     });
     if (next) setPaneView(next);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user, nodeId, nodeIsListId, corpus]);
+  }, [nodeId, nodeIsListId, corpus]);
 
   // Expands every ancestor level of the current node whenever nodeId *changes* after mount —
   // covers deep links and search-driven navigation within an already-mounted TreePane, without
@@ -396,24 +395,24 @@ export function TreePane({
         } else {
           setSearchOpen(true);
         }
-      } else if (isShortcut(e, SHORTCUTS.libraryToggleLists) && user) {
+      } else if (isShortcut(e, SHORTCUTS.libraryToggleLists)) {
         e.preventDefault();
         setPaneView((v) => (v === 'library' ? 'lists' : 'library'));
       }
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [user, searching, displayHits, searchOpen, onOpenSutta]);
+  }, [searching, displayHits, searchOpen, onOpenSutta]);
 
   // The target row (corpus chapter or list) often isn't in the DOM yet on the same render
   // nodeId changed on — the ancestor-expand effects above (and, for a list, the paneView switch
   // above) still need to run and re-render first — so this retries on each of their state
   // changes until the row is actually findable, not just once.
-  useScrollToNode(scrollRef, nodeId, [effectiveView, expanded, listExpanded, corpus, lists]);
+  useScrollToNode(scrollRef, nodeId, [paneView, expanded, listExpanded, corpus, lists]);
   // A breadcrumb click's specific segment (see LibraryPage) — may be an ancestor above `nodeId`
   // itself, so it gets its own scroll rather than assuming `nodeId`'s scroll above already
   // reached it; called second, so it wins the final scroll position when both are set.
-  useScrollToNode(scrollRef, flashNodeId, [effectiveView, expanded, listExpanded, corpus, lists]);
+  useScrollToNode(scrollRef, flashNodeId, [paneView, expanded, listExpanded, corpus, lists]);
 
   // ListRow's props are grouped by concern (see ListRow.tsx) — built once here rather than at
   // each of its (potentially deeply nested) call sites. Each bundle is useMemo'd (and
@@ -485,22 +484,20 @@ export function TreePane({
           {/* Mobile-sized to roughly match the "sutamaya" title's own height — this and the
               account badge next to it are the two touch targets in this row people actually
               reach for repeatedly. */}
-          {user && (
-            <SlidingPillToggle
-              active={paneView === 'library' ? 'left' : 'right'}
-              onClick={() => setPaneView((v) => (v === 'library' ? 'lists' : 'library'))}
-              ariaLabel={paneView === 'library' ? 'Switch to My Lists' : 'Switch to Library'}
-              title={paneView === 'library' ? 'Switch to My Lists (x)' : 'Switch to Library (x)'}
-              leftIcon={<Library size={mobile ? 14 : 13} strokeWidth={2} />}
-              rightIcon={<List size={mobile ? 14 : 13} strokeWidth={2} />}
-              leftIconClassName={paneView === 'library' ? 'text-ink' : 'text-ink/45'}
-              rightIconClassName={paneView === 'lists' ? 'text-[#FBFAF7]' : 'text-ink/45'}
-              slotSize={mobile ? 28 : 24}
-              thumbClassName={`border border-ink/[.12] shadow-[0_1px_2px_rgba(27,25,23,.18)] transition-[left,background-color] duration-200 ease-out ${
-                paneView === 'lists' ? 'bg-pill-lists' : 'bg-chip'
-              }`}
-            />
-          )}
+          <SlidingPillToggle
+            active={paneView === 'library' ? 'left' : 'right'}
+            onClick={() => setPaneView((v) => (v === 'library' ? 'lists' : 'library'))}
+            ariaLabel={paneView === 'library' ? 'Switch to My Lists' : 'Switch to Library'}
+            title={paneView === 'library' ? 'Switch to My Lists (x)' : 'Switch to Library (x)'}
+            leftIcon={<Library size={mobile ? 14 : 13} strokeWidth={2} />}
+            rightIcon={<List size={mobile ? 14 : 13} strokeWidth={2} />}
+            leftIconClassName={paneView === 'library' ? 'text-ink' : 'text-ink/45'}
+            rightIconClassName={paneView === 'lists' ? 'text-[#FBFAF7]' : 'text-ink/45'}
+            slotSize={mobile ? 28 : 24}
+            thumbClassName={`border border-ink/[.12] shadow-[0_1px_2px_rgba(27,25,23,.18)] transition-[left,background-color] duration-200 ease-out ${
+              paneView === 'lists' ? 'bg-pill-lists' : 'bg-chip'
+            }`}
+          />
           {/* Same outer height as the pane toggle to its left (24px icon + 2px padding on each
               side = 28/32) and the account badge to its right, so all three sit flush along the
               same vertical center instead of each keying off its own inner content size —
@@ -620,7 +617,7 @@ export function TreePane({
               </>
             )}
           </div>
-        ) : effectiveView === 'library' ? (
+        ) : paneView === 'library' ? (
           <CorpusTreeView corpus={corpus} expanded={expanded} onToggle={toggleExpanded} onSelect={onSelect} nodeId={nodeId} flashNodeId={flashNodeId} />
         ) : (
           <ListsTreeView

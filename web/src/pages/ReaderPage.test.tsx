@@ -83,6 +83,9 @@ describe('ReaderPage sutta header chips', () => {
     vi.mocked(useUserData).mockReturnValue(userDataDefaults);
     vi.mocked(useAuth).mockReturnValue({
       user: { id: 'u1', email: 'reader@example.com', name: 'Reader', picture: null },
+      isSignedIn: true,
+      dataUserId: 'u1',
+      localUserId: 'local-test',
       loading: false,
       authError: null,
       requestEmailCode: vi.fn(async () => {}),

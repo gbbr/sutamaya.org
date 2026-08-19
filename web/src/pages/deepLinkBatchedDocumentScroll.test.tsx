@@ -93,6 +93,9 @@ describe('reader deep link into an already-visited batched document', () => {
     vi.mocked(useUserData).mockReturnValue(userDataDefaults);
     vi.mocked(useAuth).mockReturnValue({
       user: null,
+      isSignedIn: false,
+      dataUserId: 'local-test',
+      localUserId: 'local-test',
       loading: false,
       authError: null,
       requestEmailCode: vi.fn(async () => {}),

@@ -25,3 +25,11 @@ export const DEVICE_ID_KEY = 'sutamaya.deviceId';
 // The last signed-in user, so a cold start with no network still knows whose mirror to open
 // (see lib/lastUser.ts).
 export const LAST_USER_KEY = 'sutamaya.lastUser';
+// The id a signed-out user's lists, notes and highlights are filed under until they sign in
+// (see lib/localAccount.ts). Minted once and kept until a sign-in adopts it or a sign-out
+// retires it.
+export const LOCAL_USER_KEY = 'sutamaya.localUserId';
+// The local user id whose "sign in to keep this safe" banner was dismissed. Stores the id rather
+// than a boolean, so signing out — which mints a fresh local id — offers the prompt again to what
+// is, as far as this device's unsynced data is concerned, a new body of work.
+export const KEEP_SAFE_DISMISSED_KEY = 'sutamaya.keepSafeDismissed';
