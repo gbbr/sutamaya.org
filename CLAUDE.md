@@ -560,17 +560,27 @@ write, so a list, note or highlight made with no network is kept rather than log
   `'synced' | 'pending' | 'offline' | 'stuck'` — from `lib/mirror.ts`'s `syncCounts()` (how many
   records/ops are dirty, and how many of those the server has permanently rejected) plus the
   browser's own `online`/`offline` events; `'offline'` wins over everything else, then `'stuck'`,
-  then a plain `'pending'` count. `SyncIndicator` (`components/SyncIndicator.tsx`) renders it next
-  to the account badge in `TreePane`'s header, the one piece of chrome visible on every load;
-  `SettingsPage` spells the same state out as a line of text next to the offline-download action,
-  plus how long ago the last successful flush landed (`lastSyncedAt`, set only when a flush fully
-  drains and pulls). A record or op the server permanently refuses (a 400, or an id collision that
-  outlives every retry) is marked `rejected` in the mirror rather than silently retried forever with
-  only a `console.error` to show for it — still dirty, still retried, but now the thing `'stuck'`
-  reads from. A 401 during a flush sets `needsReauth` instead of calling `promptGoogleSignIn()`
-  directly: that function still navigates to Settings' sign-in section, but only from a real user
-  click on the indicator now, not from a background flush deciding on its own to interrupt whatever
-  the reader was doing mid-sutta.
+  then a plain `'pending'` count. `SettingsPage` spells that state out as a line of text next to the
+  offline-download action, plus how long ago the last successful flush landed (`lastSyncedAt`, set
+  only when a flush fully drains and pulls) — and it's the only place any of it is shown. The app's
+  chrome carries none of it: `'pending'` drains in seconds and implying doubt about a write that's
+  already durable locally works against the local-first model, `'offline'` is something the device
+  already says, and `'stuck'` retries forever and resolves itself once whatever refused it is fixed,
+  so there's nothing to act on. A record or op the server permanently refuses (a 400, or an id
+  collision that outlives every retry) is marked `rejected` in the mirror rather than silently
+  retried forever with only a `console.error` to show for it — still dirty, still retried, but now
+  the thing `'stuck'` reads from. **`needsReauth` is the exception, and the one sync state with
+  chrome of its own** — a banner in `components/HeaderBanner.tsx`, which owns the single slot below
+  `TreePane`'s header and the three mutually exclusive things that can occupy it (this, and the two
+  offline nudges under "Offline strategy" below, over both of which it takes priority). A lapsed
+  session is the only state the UI otherwise misrepresents: the account badge still shows a
+  signed-in user (seeded from `lib/lastUser.ts`) and every list/note/highlight still reads and
+  writes against the local mirror, so nothing looks wrong while nothing reaches the server —
+  indefinitely, since the pause stands every automatic trigger down until a fresh sign-in clears it.
+  A 401 during a flush sets it rather than calling `promptGoogleSignIn()` directly: that function
+  still navigates to Settings' sign-in section, but only from a real user click on the banner now,
+  not from a background flush deciding on its own to interrupt whatever the reader was doing
+  mid-sutta.
 
 ## Offline strategy
 
@@ -635,8 +645,8 @@ something there.
   is precached with the app shell, so a new build always delivers them. `lib/offline.ts` records
   the versions a device last completed a full download at, and `isOfflineTextStale()` compares
   them. When they diverge, the device gets the "Updated sutta text is available" variant of
-  `TreePane`'s existing nudge banner (the two variants share one slot and are mutually exclusive on
-  whether the corpus is fully cached), and Settings' Offline section says the same thing
+  `HeaderBanner` (the two nudges are mutually exclusive on whether the corpus is fully cached, and
+  both yield the slot to the re-auth banner), and Settings' Offline section says the same thing
   permanently, in the accent colour behind an info icon, with a "Re-download updated suttas"
   action. Unlike the download nudge it shares a slot with, this one is **not** PWA-gated: it can
   only fire for someone who already finished a bulk download, and `CacheFirst` hands a browser tab
