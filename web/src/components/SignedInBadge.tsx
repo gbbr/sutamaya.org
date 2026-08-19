@@ -3,12 +3,11 @@ import { navigate } from '@reach/router';
 import { UserRound } from 'lucide-react';
 import type { User } from '../lib/types';
 
-// Both branches navigate to /settings either way (see promptGoogleSignIn in AuthContext.tsx) —
-// this badge and the Settings gear are always redundant, but only actually removed for the
-// signed-in case below (the "G" sign-in badge is offered alongside the gear, not instead of it).
+// The single account/settings entry point in TreePane's header, signed in or out — which is why
+// both branches just navigate to /settings rather than the signed-out one starting a sign-in.
 // Parameterized on size so mobile and desktop can each size it to match their own surrounding
 // chrome (mobile much bigger — see TreePane's header).
-export function SignedInBadge({ user, size, promptGoogleSignIn }: { user: User | null; size: number; promptGoogleSignIn: () => void }) {
+export function SignedInBadge({ user, size }: { user: User | null; size: number }) {
   const dim = { width: size, height: size };
   // The initials render first and stay put until the <img> actually finishes loading — Google's
   // avatar URL is unreachable offline (it's not something the PWA precaches), and revealing the
@@ -40,16 +39,16 @@ export function SignedInBadge({ user, size, promptGoogleSignIn }: { user: User |
     </button>
   ) : (
     // A neutral account glyph rather than any one provider's mark: which providers are on offer
-    // is the sign-in screen's business, and this badge only has to say "there's an account here
-    // and you're not in it". Wired to `promptGoogleSignIn`, which takes the user to Settings'
-    // sign-in section rather than starting a redirect from under them (see AuthContext.tsx).
+    // is the sign-in screen's business. It opens Settings rather than a sign-in, since nothing
+    // here requires an account — signing in is one of the things on that page, not the point of
+    // it (the "keep this safe" banner is what actually asks for one, when there's a reason to).
     <button
       data-component="SignedInBadge"
       className="flex-none rounded-full border border-ink/25 flex items-center justify-center text-ink/50 hover:bg-ink/[.06] hover:text-ink/70"
       style={dim}
-      aria-label="Sign in"
-      title="Sign in"
-      onClick={promptGoogleSignIn}
+      aria-label="Settings"
+      title="Settings"
+      onClick={() => navigate('/settings')}
     >
       <UserRound size={Math.round(size * 0.55)} strokeWidth={1.75} />
     </button>
