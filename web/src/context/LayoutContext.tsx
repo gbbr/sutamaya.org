@@ -19,7 +19,12 @@ interface LayoutState extends LayoutPrefs {
   dragTree: (e: ReactPointerEvent) => void;
 }
 
-const DEFAULTS: LayoutPrefs = { treeW: 264 };
+// The tree pane's width before the user ever drags the divider, and what "Reset" restores.
+// Exported so the test measuring a drag can start from it rather than from its own copy of the
+// number, which silently went stale the first time this changed.
+export const DEFAULT_TREE_W = 300;
+
+const DEFAULTS: LayoutPrefs = { treeW: DEFAULT_TREE_W };
 
 // Also read by lib/uiPrefs.ts (mobile gets a baked-in UI scale boost) — kept as one exported
 // constant rather than two literals so the two can't drift apart.
@@ -114,7 +119,7 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
       w,
       mobile,
       paneW,
-      resetTree: () => setPrefs((p) => ({ ...p, treeW: 264 })),
+      resetTree: () => setPrefs((p) => ({ ...p, treeW: DEFAULTS.treeW })),
       dragTree: (e) => {
         // Asks the browser to suppress the compatibility mouse events a touch gesture would
         // otherwise synthesize, and stops a mouse drag from selecting text as it sweeps across
