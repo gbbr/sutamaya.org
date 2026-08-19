@@ -86,23 +86,36 @@ export function applyUiScale(scale: number) {
         : `initial-scale=${effectiveScale}, viewport-fit=cover`
     );
   }
-  // Re-measure next frame, once the browser has reflowed against the new initial-scale.
-  requestAnimationFrame(syncAppHeight);
+  // Re-measure next frame, once the browser has reflowed against the new initial-scale — and
+  // treat whatever visualViewport.scale settles at as the new "resting" scale, since on the
+  // viewport-meta fallback path a non-1 UI-scale pref makes that resting value itself != 1 (see
+  // restingViewportScale below).
+  requestAnimationFrame(() => {
+    restingViewportScale = window.visualViewport?.scale ?? 1;
+    syncAppHeight();
+  });
 }
+
+// The visualViewport.scale that counts as "at rest, no real pinch-zoom" for syncAppHeight's
+// guard below. On the `zoom`-capable path this is always 1 (applyUiScale never touches the
+// viewport meta there). On the viewport-meta fallback path, applyUiScale sets `initial-scale`
+// itself, so the resting scale tracks whatever UI-scale is currently in effect instead.
+let restingViewportScale = 1;
 
 // Sets --app-height, which index.css's <html> height rule reads instead of `vh`/`dvh` — some
 // WebView builds don't recompute those correctly after applyUiScale's viewport-meta path above
 // changes the page's scale, but visualViewport.height stays accurate throughout.
 //
-// Skipped while the user has pinch-zoomed in (visualViewport.scale !== 1): that gesture shrinks
-// visualViewport.height without changing the actual (CSS-pixel) viewport, so following it here
-// would shrink <html> to less than the real screen and leave a growing blank gap below #root
-// (both are `overflow: hidden`, see index.css) that gets worse the further in the user zooms.
-// Freezing --app-height at its last correct value until the user zooms back out to 1 is what
-// this function is for either way — real viewport changes (address-bar show/hide, keyboard,
-// UI-scale) all happen at scale 1.
+// Skipped while the user has pinch-zoomed in (visualViewport.scale off its resting value): that
+// gesture shrinks visualViewport.height without changing the actual (CSS-pixel) viewport, so
+// following it here would shrink <html> to less than the real screen and leave a growing blank
+// gap below #root (both are `overflow: hidden`, see index.css) that gets worse the further in
+// the user zooms. Freezing --app-height at its last correct value until the user zooms back out
+// to the resting scale is what this function is for either way — real viewport changes
+// (address-bar show/hide, keyboard) all happen at that resting scale, not at a pinch-zoomed one.
 export function syncAppHeight() {
-  if (window.visualViewport && window.visualViewport.scale !== 1) return;
+  const scale = window.visualViewport?.scale;
+  if (scale != null && Math.abs(scale - restingViewportScale) > 0.01) return;
   const height = window.visualViewport?.height ?? window.innerHeight;
   document.documentElement.style.setProperty('--app-height', `${height}px`);
 }

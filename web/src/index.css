@@ -189,11 +189,14 @@ html {
      don't recompute correctly after applyUiScale's viewport-meta path changes the page's scale.
      Falls back to plain `vh` until syncAppHeight has run once. */
   height: calc(var(--app-height, 100vh) / var(--ui-scale, 1));
-  /* Stops the standalone PWA's edge-swipe left/right from being interpreted as a browser
+  /* x stops the standalone PWA's edge-swipe left/right from being interpreted as a browser
      back/forward navigation gesture (there's no browser chrome to go back/forward *in*, so it
-     just looks like the page glitching). Must be set here, not just on body, since this is the
-     actual top-level scroller WebKit checks for standalone web apps. */
-  overscroll-behavior-x: none;
+     just looks like the page glitching). y stops WebKit's native rubber-band bounce on the
+     document itself, which it otherwise allows even a sub-pixel of overflow to trigger (a
+     scaled `--app-height` reading can be a fraction of a CSS px off the real one). Must be set
+     here, not just on body, since this is the actual top-level scroller WebKit checks for
+     standalone web apps. */
+  overscroll-behavior: none;
   /* Every page manages its own internal scroll region (TreePane/ListPane/ReaderPage are all
      `h-full overflow-hidden` or `fixed inset-0`) — the document itself is never meant to scroll.
      Without this, a single transient frame where content briefly exceeds the viewport (e.g. the
@@ -277,7 +280,11 @@ textarea {
 
 .sc {
   overflow-y: auto;
-  overscroll-behavior-x: none;
+  /* `contain`, not the `none` used elsewhere for the edge-swipe-nav case: this keeps the native
+     bounce feel at the pane's own top/bottom, it just stops that bounce from chaining into the
+     parent document once the pane has no more scroll room of its own — which is what let a drag
+     inside the tree/list pane move the whole viewport instead. */
+  overscroll-behavior: contain;
   scrollbar-width: thin;
   scrollbar-color: rgb(var(--ink) / 0.2) transparent;
 }
