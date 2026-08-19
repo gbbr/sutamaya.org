@@ -87,7 +87,7 @@ describe('ErrorBoundary', () => {
         <Boom throws={true} />
       </ErrorBoundary>
     );
-    await userEvent.click(screen.getByRole('button', { name: 'Back to the library' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Go to the library' }));
 
     expect(assign).toHaveBeenCalledWith('/browse/dn');
     consoleError.mockRestore();

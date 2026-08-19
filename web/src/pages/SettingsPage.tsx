@@ -321,162 +321,23 @@ export function SettingsPage({ location }: RouteComponentProps) {
         </button>
         <div className="text-[22px] font-semibold tracking-[-.01em] mb-5">Settings</div>
 
-        {/* UI Theme configuration section. A card, with its label outside and above it: the
-            controls inside are separated by hairlines rather than by whitespace, so one section
-            reads as one object at a glance and the gaps between sections don't have to carry that
-            job on their own. Every row keeps its label on its own line above a full-width control
-            — a label column beside the control would squeeze the option pills at narrow widths and
-            at the top of the UI-scale range. */}
-        <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">Display</div>
-
-        <div className={`${CARD} border-ink/[.09] bg-ink/[.02] mb-5`}>
-          <div className="py-3.5">
-            <div className="font-sans text-[12.5px] text-ink/55 mb-2">Theme</div>
-            <div className="flex gap-2">
-              {THEME_OPTIONS.map((t) => (
-                <button
-                  key={t.id}
-                  className={`relative flex-1 h-[46px] rounded-[7px] overflow-hidden font-sans text-[12.5px] ring-inset ${
-                    theme === t.id ? 'ring-2 ring-accent' : 'ring-1 ring-ink/20'
-                  }`}
-                  onClick={() => setTheme(t.id)}
-                >
-                  <span className="absolute inset-0" style={{ background: t.bg }} />
-                  <span className="relative" style={{ color: '#fff', mixBlendMode: 'difference' }}>
-                    {t.label}
-                  </span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="py-3.5 border-t border-ink/[.06]">
-            <div className="flex items-baseline justify-between mb-1.5">
-              <label htmlFor="ui-scale" className="font-sans text-[12.5px] text-ink/55">
-                UI scale
-              </label>
-              <div className="flex items-baseline gap-3">
-                <span className="font-sans text-[12.5px] tabular-nums text-ink/70">{Math.round(uiScale * 100)}%</span>
-                <button className="font-sans text-[12.5px] text-accent-text" onClick={() => setUiScale(1)}>
-                  Reset
-                </button>
-              </div>
-            </div>
-            <input
-              id="ui-scale"
-              type="range"
-              min={UI_SCALE_MIN}
-              max={UI_SCALE_MAX}
-              step={UI_SCALE_STEP}
-              value={uiScale}
-              onChange={(e) => setUiScale(Number(e.target.value))}
-              className="w-full accent-accent"
-            />
-          </div>
-
-          <div className="py-3.5 border-t border-ink/[.06]">
-            <div className="font-sans text-[12.5px] text-ink/55 mb-2">UI font</div>
-            <div className="flex flex-wrap gap-1.5">
-              {UI_FACE_OPTIONS.map((f) => (
-                <button
-                  key={f.id}
-                  className={`h-[34px] px-3.5 rounded-full border font-sans text-[12.5px] ${
-                    uiFace === f.id ? 'border-accent bg-accent/10 text-accent-text' : 'border-ink/[.18] text-ink/70'
-                  }`}
-                  onClick={() => setUiFace(f.id)}
-                >
-                  {f.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Download offline corpus section. Renders unconditionally regardless of
-            `loading`/corpus state (see offlineSectionRef above) — cachedStatus itself starts out
-            null and just shows a "Checking…" line until it resolves, which doesn't affect this
-            section's own position or height. */}
-        <div ref={offlineSectionRef}>
-          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">Offline</div>
-
-          <div className={`${cardClass('offline')} py-4 mb-5`}>
-            {offlineStatus === 'downloading' ? (
-              <>
-                <div className="h-1.5 rounded-full bg-ink/10 overflow-hidden mb-2">
-                  <div
-                    className="h-full bg-accent transition-[width]"
-                    style={{ width: `${progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%` }}
-                  />
-                </div>
-                <div className="flex items-center justify-between font-sans text-[12.5px] text-ink/55">
-                  <span className="tabular-nums">{progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%</span>
-                  <button className="text-accent-text" onClick={handleCancelOfflineDownload}>
-                    Cancel
-                  </button>
-                </div>
-              </>
-            ) : (
-              <>
-                {/* An available update gets an icon and the accent colour — every other state
-                    here is a passive status line in muted grey, which is exactly what the eye
-                    skips over, and this one is the only line that's asking for a decision. It's
-                    also the only one whose button is filled rather than outlined, for the same
-                    reason: nothing else on this page is asking to be acted on. */}
-                {cachedStatus && textStale ? (
-                  <div className="flex items-start gap-1.5 font-sans text-[13px] text-accent-text mb-3">
-                    <Info size={15} strokeWidth={1.75} className="flex-none mt-[1.5px]" />
-                    <span>Updated sutta text is available.</span>
-                  </div>
-                ) : (
-                  <div className="font-sans text-[13px] text-ink/60 mb-3">
-                    {cachedStatus
-                      ? cachedStatus.cached >= cachedStatus.total
-                        ? 'All suttas available offline.'
-                        : `${Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% available offline.`
-                      : 'Checking offline availability…'}
-                  </div>
-                )}
-                <button
-                  className={`${textStale ? PRIMARY_BUTTON : SECONDARY_BUTTON} disabled:opacity-50`}
-                  onClick={handleDownloadOffline}
-                  disabled={!corpus}
-                >
-                  {textStale ? 'Re-download updated suttas' : 'Download all suttas for offline'}
-                </button>
-                {failedCount > 0 &&
-                  (circuitTripped ? (
-                    <div className="font-sans text-[13px] text-red-600 mt-2">
-                      Stopped early after repeated failures — {failedCount} couldn't be downloaded.
-                    </div>
-                  ) : (
-                    <div className="font-sans text-[13px] text-red-600 mt-2">{failedCount} couldn't be downloaded — try again.</div>
-                  ))}
-                {dictionaryFailed && (
-                  <div className="font-sans text-[13px] text-red-600 mt-2">Dictionary couldn't be downloaded — try again.</div>
-                )}
-              </>
-            )}
-          </div>
-        </div>
-
         {/* User authentication section with Google sign-in and with Export JSON and Sign-out
-            when authenticated. Fixed as the last section on the page regardless of sign-in
-            state — it used to lead when signed out, to surface the sign-in CTA for visitors who
-            landed here specifically to sign in, but that's now handled more reliably by
-            promptGoogleSignIn's scrollTo:'auth' state (see the effect above), which works
-            regardless of section order and doesn't depend on Settings happening to open already
-            scrolled to its top. While `loading`, it shows a lightweight placeholder rather than
-            collapsing to nothing, so the section always has real height and a valid scroll
+            when authenticated. Leads the page: it's the one section that says whether anything
+            here is being kept anywhere but this device, and it's where the header's account badge
+            and the "keep this safe" banner both land. Scroll targeting doesn't depend on that
+            position — promptGoogleSignIn's scrollTo:'auth' state (see the effect above) works
+            regardless of section order. While `loading`, it shows a lightweight placeholder rather
+            than collapsing to nothing, so the section always has real height and a valid scroll
             target (see authSectionRef above) regardless of how long the session check takes. */}
         <div ref={authSectionRef}>
           <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">Account</div>
-          <div className={cardClass('auth')}>
+          <div className={`${cardClass('auth')} mb-5`}>
             {loading ? (
               <div className="font-sans text-[13px] text-ink/40 py-4">Checking sign-in status…</div>
             ) : user ? (
               <>
                 {/* This is about lists/notes/highlights syncing to the account (docs/offline-sync.md), a
-                 separate mechanism from the corpus caching above — grouped here anyway since both
+                 separate mechanism from the corpus caching below — grouped here anyway since both
                  read as "offline-related status" to a user, and neither means anything signed out.
                  A lapsed session replaces it rather than joining it: `user` is still populated (it's
                  cached in lib/lastUser.ts and a flush 401 deliberately doesn't clear it, since that
@@ -553,9 +414,12 @@ export function SettingsPage({ location }: RouteComponentProps) {
               </>
             ) : (
               <div className="py-4">
+                {/* Says the same thing the header's "keep this safe" banner says, at length:
+                    "temporarily" rather than a bare "saved on this device", which reads as a
+                    reassurance when the point is that nothing outside this device holds a copy. */}
                 <div className="font-sans text-[13px] text-ink/60 mb-3">
-                  Your lists, notes and highlights are saved on this device. Sign in to sync them across devices —
-                  everything you’ve made so far comes with you.
+                  Your lists, notes and highlights are stored temporarily on this device — nothing else has a copy. Sign
+                  in to keep them and sync across devices; everything you’ve made so far comes with you.
                 </div>
                 {/* Permanent, not dismissible, and shown whether or not the user has made anything
                     yet: on iOS in a browser tab this is the literal storage policy, not a nudge —
@@ -578,6 +442,145 @@ export function SettingsPage({ location }: RouteComponentProps) {
                 <EmailCodeSignIn returnTo={signInReturnTo} />
               </div>
             )}
+          </div>
+        </div>
+
+        {/* Download offline corpus section. Renders unconditionally regardless of
+            `loading`/corpus state (see offlineSectionRef above) — cachedStatus itself starts out
+            null and just shows a "Checking…" line until it resolves, which doesn't affect this
+            section's own position or height. */}
+        <div ref={offlineSectionRef}>
+          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">Offline</div>
+
+          <div className={`${cardClass('offline')} py-4 mb-5`}>
+            {offlineStatus === 'downloading' ? (
+              <>
+                <div className="h-1.5 rounded-full bg-ink/10 overflow-hidden mb-2">
+                  <div
+                    className="h-full bg-accent transition-[width]"
+                    style={{ width: `${progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%` }}
+                  />
+                </div>
+                <div className="flex items-center justify-between font-sans text-[12.5px] text-ink/55">
+                  <span className="tabular-nums">{progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%</span>
+                  <button className="text-accent-text" onClick={handleCancelOfflineDownload}>
+                    Cancel
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                {/* An available update gets an icon and the accent colour — every other state
+                    here is a passive status line in muted grey, which is exactly what the eye
+                    skips over, and this one is the only line that's asking for a decision. It's
+                    also the only one whose button is filled rather than outlined, for the same
+                    reason: nothing else on this page is asking to be acted on. */}
+                {cachedStatus && textStale ? (
+                  <div className="flex items-start gap-1.5 font-sans text-[13px] text-accent-text mb-3">
+                    <Info size={15} strokeWidth={1.75} className="flex-none mt-[1.5px]" />
+                    <span>Updated sutta text is available.</span>
+                  </div>
+                ) : (
+                  <div className="font-sans text-[13px] text-ink/60 mb-3">
+                    {cachedStatus
+                      ? cachedStatus.cached >= cachedStatus.total
+                        ? 'All suttas available offline.'
+                        : `${Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% available offline.`
+                      : 'Checking offline availability…'}
+                  </div>
+                )}
+                <button
+                  className={`${textStale ? PRIMARY_BUTTON : SECONDARY_BUTTON} disabled:opacity-50`}
+                  onClick={handleDownloadOffline}
+                  disabled={!corpus}
+                >
+                  {textStale ? 'Re-download updated suttas' : 'Download all suttas for offline'}
+                </button>
+                {failedCount > 0 &&
+                  (circuitTripped ? (
+                    <div className="font-sans text-[13px] text-red-600 mt-2">
+                      Stopped early after repeated failures — {failedCount} couldn't be downloaded.
+                    </div>
+                  ) : (
+                    <div className="font-sans text-[13px] text-red-600 mt-2">{failedCount} couldn't be downloaded — try again.</div>
+                  ))}
+                {dictionaryFailed && (
+                  <div className="font-sans text-[13px] text-red-600 mt-2">Dictionary couldn't be downloaded — try again.</div>
+                )}
+              </>
+            )}
+          </div>
+        </div>
+
+        {/* UI Theme configuration section. A card, with its label outside and above it: the
+            controls inside are separated by hairlines rather than by whitespace, so one section
+            reads as one object at a glance and the gaps between sections don't have to carry that
+            job on their own. Every row keeps its label on its own line above a full-width control
+            — a label column beside the control would squeeze the option pills at narrow widths and
+            at the top of the UI-scale range. Last on the page: these are set once and rarely
+            revisited, unlike the account and offline state above them. */}
+        <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">Display</div>
+
+        <div className={`${CARD} border-ink/[.09] bg-ink/[.02] mb-5`}>
+          <div className="py-3.5">
+            <div className="font-sans text-[12.5px] text-ink/55 mb-2">Theme</div>
+            <div className="flex gap-2">
+              {THEME_OPTIONS.map((t) => (
+                <button
+                  key={t.id}
+                  className={`relative flex-1 h-[46px] rounded-[7px] overflow-hidden font-sans text-[12.5px] ring-inset ${
+                    theme === t.id ? 'ring-2 ring-accent' : 'ring-1 ring-ink/20'
+                  }`}
+                  onClick={() => setTheme(t.id)}
+                >
+                  <span className="absolute inset-0" style={{ background: t.bg }} />
+                  <span className="relative" style={{ color: '#fff', mixBlendMode: 'difference' }}>
+                    {t.label}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="py-3.5 border-t border-ink/[.06]">
+            <div className="flex items-baseline justify-between mb-1.5">
+              <label htmlFor="ui-scale" className="font-sans text-[12.5px] text-ink/55">
+                UI scale
+              </label>
+              <div className="flex items-baseline gap-3">
+                <span className="font-sans text-[12.5px] tabular-nums text-ink/70">{Math.round(uiScale * 100)}%</span>
+                <button className="font-sans text-[12.5px] text-accent-text" onClick={() => setUiScale(1)}>
+                  Reset
+                </button>
+              </div>
+            </div>
+            <input
+              id="ui-scale"
+              type="range"
+              min={UI_SCALE_MIN}
+              max={UI_SCALE_MAX}
+              step={UI_SCALE_STEP}
+              value={uiScale}
+              onChange={(e) => setUiScale(Number(e.target.value))}
+              className="w-full accent-accent"
+            />
+          </div>
+
+          <div className="py-3.5 border-t border-ink/[.06]">
+            <div className="font-sans text-[12.5px] text-ink/55 mb-2">UI font</div>
+            <div className="flex flex-wrap gap-1.5">
+              {UI_FACE_OPTIONS.map((f) => (
+                <button
+                  key={f.id}
+                  className={`h-[34px] px-3.5 rounded-full border font-sans text-[12.5px] ${
+                    uiFace === f.id ? 'border-accent bg-accent/10 text-accent-text' : 'border-ink/[.18] text-ink/70'
+                  }`}
+                  onClick={() => setUiFace(f.id)}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 

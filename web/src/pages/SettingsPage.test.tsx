@@ -129,18 +129,18 @@ function renderSettings(path = '/settings') {
 }
 
 describe('section order', () => {
-  it('is fixed — Display, then Offline, then Account — regardless of sign-in state', () => {
+  it('is fixed — Account, then Offline, then Display — regardless of sign-in state', () => {
     vi.mocked(useAuth).mockReturnValue(mockAuth({ user: null }));
     const { container: signedOut } = renderSettings();
     const textOut = signedOut.textContent!;
-    expect(textOut.indexOf('Display')).toBeLessThan(textOut.indexOf('Offline'));
-    expect(textOut.indexOf('Offline')).toBeLessThan(textOut.indexOf('Account'));
+    expect(textOut.indexOf('Account')).toBeLessThan(textOut.indexOf('Offline'));
+    expect(textOut.indexOf('Offline')).toBeLessThan(textOut.indexOf('Display'));
 
     vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser() }));
     const { container: signedIn } = renderSettings();
     const textIn = signedIn.textContent!;
-    expect(textIn.indexOf('Display')).toBeLessThan(textIn.indexOf('Offline'));
-    expect(textIn.indexOf('Offline')).toBeLessThan(textIn.indexOf('Account'));
+    expect(textIn.indexOf('Account')).toBeLessThan(textIn.indexOf('Offline'));
+    expect(textIn.indexOf('Offline')).toBeLessThan(textIn.indexOf('Display'));
   });
 
   it('renders a placeholder — not nothing — for Account while the session check is loading', () => {

@@ -56,12 +56,14 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
             Reload
           </button>
           {/* The escape hatch from a page that crashes every time it loads — a sutta whose text
-              trips the reader, say, which reloading alone would only reproduce. */}
+              trips the reader, say, which reloading alone would only reproduce. Goes to a fixed
+              collection rather than anywhere the user was: "back" is exactly what must not happen
+              here, and the label says where it lands rather than implying a return. */}
           <button
             className="font-sans text-[14px] px-4 py-2 rounded-md border border-ink/25 hover:bg-ink/[.06]"
             onClick={() => window.location.assign('/browse/dn')}
           >
-            Back to the library
+            Go to the library
           </button>
         </div>
       </div>

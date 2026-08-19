@@ -158,13 +158,15 @@ export function HeaderBanner() {
     // speech — WebKit evicts all script-writable storage for a site left unvisited for about a
     // week — so that case gets the specific warning rather than the general one. Both sentences
     // stay short enough to survive a phone-width pane without truncating; the button carries the
-    // action so the text only has to carry the risk.
+    // action so the text only has to carry the risk. "Temporarily" is the load-bearing word in
+    // the general case: without it the line reads as a reassurance that the work is safely stored
+    // here, when what it has to say is that nothing outside this device holds a copy of it.
     const ios = isIosBrowserTab();
     return (
       <Banner
         tone={ios ? 'alert' : 'accent'}
         icon={ios ? <AlertTriangle size={15} strokeWidth={1.75} /> : <Info size={15} strokeWidth={1.75} />}
-        text={ios ? 'Safari may erase this in 7 days' : 'Saved on this device only'}
+        text={ios ? 'Safari may erase this in 7 days' : 'Saved temporarily on this device'}
         action="Sign in"
         onAction={promptGoogleSignIn}
         onDismiss={() => {

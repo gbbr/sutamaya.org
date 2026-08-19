@@ -738,7 +738,7 @@ describe('sync state', () => {
 });
 
 describe('deferred sign-in', () => {
-  const keepSafeText = 'Saved on this device only';
+  const keepSafeText = 'Saved temporarily on this device';
   const iosText = 'Safari may erase this in 7 days';
 
   function signedOut(userDataOverrides: Partial<ReturnType<typeof useUserData>> = {}) {
