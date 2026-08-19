@@ -9,6 +9,7 @@ import { GoogleSignInButton } from '../components/GoogleSignInButton';
 import { EmailCodeSignIn } from '../components/EmailCodeSignIn';
 import { dataApi } from '../lib/api';
 import { flatSuttaOrder } from '../lib/corpus';
+import { isIosBrowserTab } from '../lib/localAccount';
 import {
   cachedCorpusVersions,
   clearCachedDictionary,
@@ -135,6 +136,9 @@ export function SettingsPage({ location }: RouteComponentProps) {
   const { uiScale, uiFace, theme, setUiScale, setUiFace, setTheme } = useUiPrefs();
   const { corpus } = useCorpus();
   const { syncStatus, pendingCount, lastSyncedAt, needsReauth } = useUserData();
+
+  // Second click arms the sign-out button when there is unsynced work to lose — see the button.
+  const [confirmSignOut, setConfirmSignOut] = useState(false);
 
   const [offlineStatus, setOfflineStatus] = useState<'idle' | 'downloading'>('idle');
   // done/total are bytes across the shard bundles being downloaded (see lib/offline.ts), not
@@ -517,23 +521,57 @@ export function SettingsPage({ location }: RouteComponentProps) {
                       Export my data as JSON
                     </a>
                   )}
+                  {/* Signing out drops this device's copy of the account's data (see logout in
+                      AuthContext) — which is only safe for what the server already has. Anything
+                      still queued would go with it, so that case asks first rather than confirming
+                      unconditionally: a signed-out-and-back-in round trip on a fully synced account
+                      loses nothing and shouldn't have to answer for itself. */}
+                  {confirmSignOut && (
+                    <div className="flex items-start gap-1.5 font-sans text-[13px] text-red-600 mb-2">
+                      <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
+                      <span>
+                        {pendingCount === 1 ? '1 change hasn’t' : `${pendingCount} changes haven’t`} synced yet. Signing
+                        out now discards {pendingCount === 1 ? 'it' : 'them'}.
+                      </span>
+                    </div>
+                  )}
                   <button
                     className={QUIET_BUTTON}
                     onClick={async () => {
+                      if (pendingCount > 0 && !confirmSignOut) {
+                        setConfirmSignOut(true);
+                        return;
+                      }
                       await logout();
                       navigate('/');
                     }}
                   >
                     <LogOut size={14} strokeWidth={1.75} />
-                    Sign out
+                    {confirmSignOut ? 'Sign out anyway' : 'Sign out'}
                   </button>
                 </div>
               </>
             ) : (
               <div className="py-4">
                 <div className="font-sans text-[13px] text-ink/60 mb-3">
-                  Sign in to sync your lists, notes and highlights across devices.
+                  Your lists, notes and highlights are saved on this device. Sign in to sync them across devices —
+                  everything you’ve made so far comes with you.
                 </div>
+                {/* Permanent, not dismissible, and shown whether or not the user has made anything
+                    yet: on iOS in a browser tab this is the literal storage policy, not a nudge —
+                    WebKit evicts a site's IndexedDB after about seven days without a visit. The
+                    header banner's version of this can be dismissed; the standing fact can't be.
+                    Installing to the Home Screen is the documented exemption, so it's offered
+                    alongside signing in rather than being the second-best answer. */}
+                {isIosBrowserTab() && (
+                  <div className="flex items-start gap-1.5 font-sans text-[13px] text-red-600 mb-3">
+                    <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
+                    <span>
+                      Safari erases this site’s data after about a week without a visit. Sign in, or add Sutamaya to your
+                      Home Screen, to keep it.
+                    </span>
+                  </div>
+                )}
                 <GoogleSignInButton returnTo={signInReturnTo} />
                 {authError && <div className="font-sans text-[13px] text-red-600 mt-2">{authError}</div>}
                 <SignInDivider />

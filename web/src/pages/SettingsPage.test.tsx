@@ -75,8 +75,8 @@ function buildUser(): User {
 }
 
 function mockAuth(overrides: Partial<ReturnType<typeof useAuth>> = {}): ReturnType<typeof useAuth> {
-  return {
-    user: null,
+  const merged = {
+    user: null as User | null,
     loading: false,
     authError: null,
     requestEmailCode: vi.fn(async () => {}),
@@ -85,6 +85,9 @@ function mockAuth(overrides: Partial<ReturnType<typeof useAuth>> = {}): ReturnTy
     logout: vi.fn(async () => {}),
     ...overrides,
   };
+  // Derived from `user` rather than passed in, so a test that signs someone in by overriding
+  // `user` alone still gets a coherent auth state (see AuthContext, where these track it too).
+  return { ...merged, isSignedIn: !!merged.user, dataUserId: merged.user?.id ?? 'local-test', localUserId: 'local-test' };
 }
 
 beforeEach(() => {

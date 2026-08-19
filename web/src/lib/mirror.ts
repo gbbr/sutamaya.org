@@ -528,6 +528,100 @@ export function remapListId(state: MirrorState, from: string, to: string): Mirro
   };
 }
 
+// Separates the two halves of a note that were written under different identities, when signing in
+// brings a locally-written note onto an account that already had one for the same sutta.
+export const ADOPTED_NOTE_SEPARATOR = '\n\n———\n\n';
+
+// Moves everything a signed-out reader made (`local`) into the account they just signed into
+// (`account`), so the ordinary flush pushes it to the server as their own.
+//
+// Every adopted record is marked dirty and keeps the `mtime` it was written at — not a fresh one.
+// That timestamp is when the user actually acted, and re-stamping it would let a note written on
+// this device a week ago beat one they wrote on their phone yesterday, which is the exact failure
+// the whole mtime scheme exists to prevent (docs/offline-sync.md). Lists and highlights are
+// re-created rather than merged: both carry client-minted ids, so nothing they hold can collide
+// with what the account already has, and both go back to `pendingCreate`/`sent: false` because
+// this account's server has genuinely never seen them.
+//
+// Notes are the one thing that can collide, being keyed by sutta rather than by a minted id. Where
+// this device can see both texts, they are concatenated rather than one silently replacing the
+// other — a note is prose the user wrote by hand, and appending is lossless where last-writer-wins
+// is not. Where it can't (a first sign-in on a device that has never held this account's data, so
+// the account mirror is empty until the first pull), the ordinary mtime merge decides, exactly as
+// it does between any two devices.
+export function adoptMirror(account: MirrorState, local: MirrorState): MirrorState {
+  const lists = { ...account.lists };
+  for (const [id, record] of Object.entries(local.lists)) {
+    // A list created and deleted before it ever left the device: there is nothing on any server to
+    // retire, so the tombstone has nothing to say.
+    if (record.data.deleted && record.data.pendingCreate) continue;
+    if (lists[id]) continue;
+    lists[id] = { dirty: true, data: { ...record.data, pendingCreate: true, createSent: false } };
+  }
+
+  const notes = { ...account.notes };
+  for (const [suttaId, record] of Object.entries(local.notes)) {
+    if (!record.data.text) continue;
+    const existing = notes[suttaId];
+    if (!existing?.data.text || existing.data.text === record.data.text) {
+      notes[suttaId] = { dirty: true, data: { ...record.data } };
+      continue;
+    }
+    notes[suttaId] = {
+      dirty: true,
+      data: {
+        suttaId,
+        text: `${existing.data.text}${ADOPTED_NOTE_SEPARATOR}${record.data.text}`,
+        // The merged text is new, so it needs a timestamp newer than either half — otherwise the
+        // older of the two could win against the very row it was just merged into.
+        mtime: nextMtime(),
+      },
+    };
+  }
+
+  const highlights = { ...account.highlights };
+  for (const [g, record] of Object.entries(local.highlights)) {
+    if (highlights[g]) continue;
+    highlights[g] = { dirty: true, data: { ...record.data, sent: false } };
+  }
+
+  const visited = { ...account.visited };
+  for (const [suttaId, record] of Object.entries(local.visited)) {
+    const existing = visited[suttaId];
+    if (existing && existing.data.visitedAt >= record.data.visitedAt) continue;
+    visited[suttaId] = { dirty: true, data: { ...record.data } };
+  }
+
+  // Re-sequenced onto the end of the account's own queue: `seq` is per-mirror, and the local ops
+  // have to replay after anything already waiting rather than interleaving by a counter that meant
+  // something else.
+  const ops = [...local.ops]
+    .sort((a, b) => a.seq - b.seq)
+    .map((op, i) => ({ ...op, seq: account.nextSeq + i }));
+
+  return {
+    ...account,
+    lists,
+    notes,
+    highlights,
+    visited,
+    ops: [...account.ops, ...ops],
+    nextSeq: account.nextSeq + ops.length,
+  };
+}
+
+// True when a mirror holds anything at all worth carrying onto an account — the guard that keeps
+// sign-in from doing adoption work for the overwhelmingly common case of a device that has never
+// been used signed out.
+export function hasContent(state: MirrorState): boolean {
+  return (
+    Object.keys(state.lists).length > 0 ||
+    Object.values(state.notes).some((n) => !!n.data.text) ||
+    Object.keys(state.highlights).length > 0 ||
+    Object.keys(state.visited).length > 0
+  );
+}
+
 function clearDirty<T extends { mtime: string }>(
   records: Record<string, Stored<T>>,
   id: string,

@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react';
 import { Check, ChevronDown, Folder, Plus } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
-import { useAuth } from '../context/AuthContext';
 import { flattenListTree, type ListPathOption } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits';
@@ -30,7 +29,6 @@ type Row =
 // exact existing match offers creating either a list or a group with it, since which one the
 // user wants isn't inferrable from the text alone. Used by the reader's Lists tab.
 export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose }: ListMembershipPickerProps) {
-  const { user, promptGoogleSignIn } = useAuth();
   const { lists, membership, toggleMembership, addToList, createList } = useUserData();
   const [draft, setDraft] = useState('');
   const [activeIndex, setActiveIndex] = useState(0);
@@ -197,26 +195,6 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       else if (draft) setDraft('');
       else onRequestClose?.();
     }
-  }
-
-  // Signed out, `lists`/`membership` are always empty (see UserDataContext) — rather than show a
-  // search box with nothing to search and a "Create list" row that silently just re-prompts sign
-  // in the moment it's used, show the prompt directly.
-  if (!user) {
-    return (
-      <div data-component="ListMembershipPicker" className="flex flex-col items-center gap-3 py-6 text-center">
-        <p className="font-sans text-[13.5px]" style={{ color: theme.fg, opacity: 0.6 }}>
-          Sign in to add this sutta to a list.
-        </p>
-        <button
-          className="font-sans text-[13px] font-semibold px-4 py-[9px] rounded-full"
-          style={{ background: theme.fg, color: theme.bg }}
-          onClick={promptGoogleSignIn}
-        >
-          Sign in
-        </button>
-      </div>
-    );
   }
 
   const rowStyle = (active: boolean) => ({

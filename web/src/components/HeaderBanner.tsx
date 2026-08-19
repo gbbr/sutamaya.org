@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { navigate } from '@reach/router';
-import { AlertTriangle, Download, X } from 'lucide-react';
+import { AlertTriangle, Download, Info, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
 import { flatSuttaOrder } from '../lib/corpus';
 import { estimateOfflineStatus, isOfflineTextStale } from '../lib/offline';
+import { dismissKeepSafe, isIosBrowserTab, isKeepSafeDismissed } from '../lib/localAccount';
 import {
   isStandalone,
   hasOpenedSutta,
@@ -15,19 +16,86 @@ import {
   dismissOfflineUpdate,
 } from '../lib/pwaNudge';
 
-// The one slot below TreePane's header, and the three mutually exclusive things that can occupy it.
+// The one slot below TreePane's header, and the four mutually exclusive things that can occupy it.
 // Takes no props: everything it needs comes from context, so TreePane just renders it.
+//
+// Exactly one banner shows at a time, in this order of priority:
+//
+//   1. **Re-auth** — the session lapsed. Nothing else in the UI says so, and nothing syncs until
+//      it's fixed, so it outranks everything.
+//   2. **Keep this safe** — signed out, with local work now worth losing. Outranks the offline
+//      nudges because it's about data that may not survive, not about convenience.
+//   3. **Updated text** — a bulk-downloaded corpus has fallen behind this build.
+//   4. **Download** — the corpus isn't cached for offline reading yet.
 //
 // The dismissal state and `hasOpenedSutta` are read once per mount (not subscribed live) since this
 // remounts with TreePane on the route boundary that actually changes them (returning from
 // /read/:suttaId), and each dismiss button sets local state directly rather than waiting for one.
+
+// How much locally-made work is enough to be worth interrupting a signed-out reader over. One note
+// or one list is a deliberate act of authorship; a single highlight is closer to a swipe, so those
+// take a few. Below this the banner stays away entirely — a first-time reader hasn't got anything
+// to lose yet, and asking them to sign in before they do is the wall this whole feature removes.
+const KEEP_SAFE_HIGHLIGHTS = 3;
+
+// One banner's chrome, so the four variants differ only in what they say and do.
+function Banner({
+  tone,
+  icon,
+  text,
+  action,
+  onAction,
+  onDismiss,
+}: {
+  tone: 'alert' | 'accent';
+  icon: ReactNode;
+  text: string;
+  action: string;
+  onAction: () => void;
+  onDismiss?: () => void;
+}) {
+  const alert = tone === 'alert';
+  return (
+    <div
+      data-component="HeaderBanner"
+      className={`flex-none flex items-center gap-2.5 px-[18px] py-2.5 border-b border-ink/10 ${
+        alert ? 'bg-red-600/[.07]' : 'bg-accent/[.06]'
+      }`}
+    >
+      <span className={`flex-none ${alert ? 'text-red-600' : 'text-ink/60'}`}>{icon}</span>
+      <div className="flex-1 min-w-0 font-sans text-[12.5px] text-ink/70 truncate">{text}</div>
+      <button
+        className={`flex-none font-sans text-[12.5px] font-semibold underline underline-offset-2 ${
+          alert ? 'text-red-600 decoration-red-600/40' : 'text-accent-text decoration-accent-text/40'
+        }`}
+        onClick={onAction}
+      >
+        {action}
+      </button>
+      {onDismiss && (
+        <button
+          className="flex-none flex items-center justify-center w-5 h-5 rounded-full text-ink/40 hover:bg-ink/[.08] hover:text-ink"
+          aria-label="Dismiss"
+          title="Dismiss"
+          onClick={onDismiss}
+        >
+          <X size={13} strokeWidth={2} />
+        </button>
+      )}
+    </div>
+  );
+}
+
 export function HeaderBanner() {
   const { corpus } = useCorpus();
-  const { needsReauth } = useUserData();
-  const { promptGoogleSignIn } = useAuth();
+  const { needsReauth, lists, notes, highlights } = useUserData();
+  const { promptGoogleSignIn, isSignedIn, localUserId } = useAuth();
 
   const [nudgeDismissed, setNudgeDismissed] = useState(() => isOfflineNudgeDismissed());
   const [updateDismissedVersion, setUpdateDismissedVersion] = useState(() => dismissedOfflineUpdateVersion());
+  // Keyed by the local id, so signing out — which mints a fresh one — offers the prompt again for
+  // what is, as far as this device's unsynced work goes, a new body of work.
+  const [keepSafeDismissed, setKeepSafeDismissed] = useState(() => isKeepSafeDismissed(localUserId));
   const [offlineCachedStatus, setOfflineCachedStatus] = useState<{ cached: number; total: number } | null>(null);
   // The download nudge is PWA-only: asking for ~28MB in a passing browser tab is pushy, and it's
   // an installed app that has any use for the whole canon. The update nudge isn't, because it can
@@ -57,71 +125,77 @@ export function HeaderBanner() {
   const showOfflineNudge = downloadNudgeEligible && !nudgeDismissed && !!offlineCachedStatus && !fullyCached;
   const showUpdateNudge = textStale && fullyCached && !!corpus && updateDismissedVersion !== corpus.dataVersion;
 
-  function dismissOfflineNudgeBanner() {
-    dismissOfflineNudge();
-    setNudgeDismissed(true);
-  }
-  function dismissUpdateNudgeBanner() {
-    if (!corpus) return;
-    dismissOfflineUpdate(corpus.dataVersion);
-    setUpdateDismissedVersion(corpus.dataVersion);
+  // Counted off the derived view rather than the mirror, so it means the same thing the user sees:
+  // auto-lists are excluded (they exist whether or not the user made anything), and a highlight is
+  // counted per group — one selection, however many segments it spans.
+  const madeSomething =
+    lists.some((l) => !l.auto) ||
+    Object.keys(notes).length > 0 ||
+    new Set(Object.values(highlights).flatMap((rows) => rows.map((h) => h.g))).size >= KEEP_SAFE_HIGHLIGHTS;
+  const showKeepSafe = !isSignedIn && madeSomething && !keepSafeDismissed;
+
+  if (needsReauth) {
+    // A lapsed session is the one sync state worth interrupting for: nothing else in the UI changes
+    // when it happens (the account badge still shows a signed-in user, seeded from lib/lastUser.ts,
+    // and every list/note/highlight still reads and writes against the local mirror), so the app
+    // looks entirely normal while nothing reaches the server. Every other state — draining,
+    // offline, permanently refused — either resolves on its own or can't be acted on, and lives as
+    // text in Settings' Offline section instead. Not dismissible: the only thing that resolves it
+    // is signing in, which the button does.
+    return (
+      <Banner
+        tone="alert"
+        icon={<AlertTriangle size={15} strokeWidth={1.75} />}
+        text="Signed out — changes aren't syncing"
+        action="Sign in"
+        onAction={promptGoogleSignIn}
+      />
+    );
   }
 
-  // A lapsed session is the one sync state worth interrupting for: nothing else in the UI changes
-  // when it happens (the account badge still shows a signed-in user, seeded from lib/lastUser.ts,
-  // and every list/note/highlight still reads and writes against the local mirror), so the app
-  // looks entirely normal while nothing reaches the server. Every other state — draining, offline,
-  // permanently refused — either resolves on its own or can't be acted on, and lives as text in
-  // Settings' Offline section instead. Not dismissible: the only thing that resolves it is signing
-  // in, which the button does. Takes the slot from the two nudges while it's up; those can wait.
-  if (needsReauth) {
+  if (showKeepSafe) {
+    // Signed out, and now with something to lose. On iOS in a browser tab that isn't a figure of
+    // speech — WebKit evicts all script-writable storage for a site left unvisited for about a
+    // week — so that case gets the specific warning rather than the general one. Both sentences
+    // stay short enough to survive a phone-width pane without truncating; the button carries the
+    // action so the text only has to carry the risk.
+    const ios = isIosBrowserTab();
     return (
-      <div
-        data-component="HeaderBanner"
-        className="flex-none flex items-center gap-2.5 px-[18px] py-2.5 border-b border-ink/10 bg-red-600/[.07]"
-      >
-        <AlertTriangle size={15} strokeWidth={1.75} className="flex-none text-red-600" />
-        <div
-          className="flex-1 min-w-0 font-sans text-[12.5px] text-ink/70 truncate"
-          title="Your session expired. Changes are saved on this device and will sync once you sign in again."
-        >
-          Signed out — changes aren't syncing
-        </div>
-        <button
-          className="flex-none font-sans text-[12.5px] font-semibold text-red-600 underline decoration-red-600/40 underline-offset-2"
-          onClick={promptGoogleSignIn}
-        >
-          Sign in
-        </button>
-      </div>
+      <Banner
+        tone={ios ? 'alert' : 'accent'}
+        icon={ios ? <AlertTriangle size={15} strokeWidth={1.75} /> : <Info size={15} strokeWidth={1.75} />}
+        text={ios ? 'Safari may erase this in 7 days' : 'Saved on this device only'}
+        action="Sign in"
+        onAction={promptGoogleSignIn}
+        onDismiss={() => {
+          dismissKeepSafe(localUserId);
+          setKeepSafeDismissed(true);
+        }}
+      />
     );
   }
 
   if (!showOfflineNudge && !showUpdateNudge) return null;
 
   return (
-    <div
-      data-component="HeaderBanner"
-      className="flex-none flex items-center gap-2.5 px-[18px] py-2.5 border-b border-ink/10 bg-accent/[.06]"
-    >
-      <Download size={15} strokeWidth={1.75} className="flex-none text-ink/60" />
-      <div className="flex-1 min-w-0 font-sans text-[12.5px] text-ink/70 truncate">
-        {showUpdateNudge ? 'Updated sutta text is available' : 'Download the full canon for offline reading'}
-      </div>
-      <button
-        className="flex-none font-sans text-[12.5px] font-semibold text-accent-text underline decoration-accent-text/40 underline-offset-2"
-        onClick={() => navigate('/settings', { state: { scrollTo: 'offline' } })}
-      >
-        {showUpdateNudge ? 'Update' : 'Download'}
-      </button>
-      <button
-        className="flex-none flex items-center justify-center w-5 h-5 rounded-full text-ink/40 hover:bg-ink/[.08] hover:text-ink"
-        aria-label="Dismiss"
-        title="Dismiss"
-        onClick={showUpdateNudge ? dismissUpdateNudgeBanner : dismissOfflineNudgeBanner}
-      >
-        <X size={13} strokeWidth={2} />
-      </button>
-    </div>
+    <Banner
+      tone="accent"
+      icon={<Download size={15} strokeWidth={1.75} />}
+      text={showUpdateNudge ? 'Updated sutta text is available' : 'Download the full canon for offline reading'}
+      action={showUpdateNudge ? 'Update' : 'Download'}
+      onAction={() => navigate('/settings', { state: { scrollTo: 'offline' } })}
+      onDismiss={
+        showUpdateNudge
+          ? () => {
+              if (!corpus) return;
+              dismissOfflineUpdate(corpus.dataVersion);
+              setUpdateDismissedVersion(corpus.dataVersion);
+            }
+          : () => {
+              dismissOfflineNudge();
+              setNudgeDismissed(true);
+            }
+      }
+    />
   );
 }

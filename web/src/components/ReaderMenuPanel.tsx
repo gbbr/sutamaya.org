@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { X } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
-import { useAuth } from '../context/AuthContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { NoteEditor } from './NoteEditor';
 import { ListMembershipPicker } from './ListMembershipPicker';
@@ -61,7 +60,6 @@ export function ReaderMenuPanel({
   onTabChange,
 }: ReaderMenuPanelProps) {
   const [tab, setTab] = useState(initialTab);
-  const { user, promptGoogleSignIn } = useAuth();
   const { notes, submitNote } = useUserData();
   const { theme: currentTheme, setTheme, fs, setFs, lh, setLh, face, setFace, allPali, toggleAllPali, showNotes, toggleShowNotes } =
     useReaderPrefs();
@@ -183,22 +181,7 @@ export function ReaderMenuPanel({
           </div>
         </div>
 
-        {tab === 'highlights' && !user && (
-          <div className="sc flex-1 min-h-0 flex flex-col items-center gap-3 py-6 text-center">
-            <p className="font-sans text-[13.5px]" style={{ color: theme.fg, opacity: 0.6 }}>
-              Sign in to save notes and highlights.
-            </p>
-            <button
-              className="font-sans text-[13px] font-semibold px-4 py-[9px] rounded-full"
-              style={{ background: theme.fg, color: theme.bg }}
-              onClick={promptGoogleSignIn}
-            >
-              Sign in
-            </button>
-          </div>
-        )}
-
-        {tab === 'highlights' && user && (
+        {tab === 'highlights' && (
           <div className="sc flex-1 min-h-0">
             <div className="rounded-field mb-3.5 p-[11px_13px]" style={{ border: `1px solid ${theme.rule}`, padding: '11px 13px' }}>
               <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase opacity-60 mb-[5px]">Sutta note</div>

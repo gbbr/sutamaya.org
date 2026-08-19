@@ -30,6 +30,11 @@ vi.mock('../lib/pwaNudge', () => ({
   dismissOfflineUpdate: vi.fn(),
 }));
 vi.mock('../lib/offline', () => ({ estimateOfflineStatus: vi.fn(), isOfflineTextStale: vi.fn() }));
+vi.mock('../lib/localAccount', () => ({
+  isIosBrowserTab: vi.fn(),
+  isKeepSafeDismissed: vi.fn(),
+  dismissKeepSafe: vi.fn(),
+}));
 
 import { navigate } from '@reach/router';
 import { useCorpus } from '../context/CorpusContext';
@@ -45,6 +50,7 @@ import {
   dismissOfflineUpdate,
 } from '../lib/pwaNudge';
 import { estimateOfflineStatus, isOfflineTextStale } from '../lib/offline';
+import { dismissKeepSafe, isIosBrowserTab, isKeepSafeDismissed } from '../lib/localAccount';
 import { TreePane } from './TreePane';
 import { searchCorpus } from '../lib/corpus';
 import type { Corpus, ListDef, User } from '../lib/types';
@@ -199,6 +205,9 @@ beforeEach(() => {
   vi.mocked(useUserData).mockImplementation(() => userData);
   vi.mocked(useAuth).mockReturnValue({
     user: buildUser(),
+    isSignedIn: true,
+    dataUserId: 'u1',
+    localUserId: 'local-test',
     loading: false,
     authError: null,
     requestEmailCode: vi.fn(async () => {}),
@@ -220,6 +229,10 @@ beforeEach(() => {
   vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 0, total: 0 });
   vi.mocked(dismissedOfflineUpdateVersion).mockReturnValue(null);
   vi.mocked(isOfflineTextStale).mockReturnValue(false);
+  // Same idea for the deferred-sign-in banner: signed in by default (see the useAuth stub above),
+  // so it can't show unless a test signs the user out.
+  vi.mocked(isIosBrowserTab).mockReturnValue(false);
+  vi.mocked(isKeepSafeDismissed).mockReturnValue(false);
 });
 
 describe('corpus browse tree', () => {
@@ -690,6 +703,9 @@ describe('sync state', () => {
     const promptGoogleSignIn = vi.fn();
     vi.mocked(useAuth).mockReturnValue({
       user: buildUser(),
+      isSignedIn: true,
+      dataUserId: 'u1',
+      localUserId: 'local-test',
       loading: false,
       authError: null,
       requestEmailCode: vi.fn(async () => {}),
@@ -718,5 +734,123 @@ describe('sync state', () => {
 
     expect(await screen.findByText(/aren't syncing/)).toBeInTheDocument();
     expect(screen.queryByText(/Download the full canon/)).not.toBeInTheDocument();
+  });
+});
+
+describe('deferred sign-in', () => {
+  const keepSafeText = 'Saved on this device only';
+  const iosText = 'Safari may erase this in 7 days';
+
+  function signedOut(userDataOverrides: Partial<ReturnType<typeof useUserData>> = {}) {
+    vi.mocked(useAuth).mockReturnValue({
+      user: null,
+      isSignedIn: false,
+      dataUserId: 'local-test',
+      localUserId: 'local-test',
+      loading: false,
+      authError: null,
+      requestEmailCode: vi.fn(async () => {}),
+      signInWithEmailCode: vi.fn(async () => {}),
+      promptGoogleSignIn: vi.fn(),
+      logout: vi.fn(async () => {}),
+    });
+    userData = mockUserData({ lists: [], ...userDataOverrides });
+    vi.mocked(useUserData).mockImplementation(() => userData);
+  }
+
+  it('offers My Lists to a signed-out reader', () => {
+    signedOut({ lists: buildLists() });
+    renderHarness();
+    fireEvent.keyDown(window, { key: 'x' });
+    expect(screen.getByText('Suttas to study')).toBeInTheDocument();
+  });
+
+  it('stays quiet until the reader has made something worth keeping', () => {
+    signedOut();
+    renderHarness();
+    expect(screen.queryByText(keepSafeText)).not.toBeInTheDocument();
+  });
+
+  it('does not count merely reading as something worth keeping', () => {
+    signedOut({ visited: { dn1: '2026-01-01T00:00:00.000Z' } });
+    renderHarness();
+    expect(screen.queryByText(keepSafeText)).not.toBeInTheDocument();
+  });
+
+  it('shows after a first note', () => {
+    signedOut({ notes: { dn1: 'a thought' } });
+    renderHarness();
+    expect(screen.getByText(keepSafeText)).toBeInTheDocument();
+  });
+
+  it('shows after a first list, but not for the auto-lists', () => {
+    signedOut({ lists: [{ id: 'auto-recent', label: 'Recent', parentId: null, kind: 'list', items: [], auto: true }] });
+    const { unmount } = renderHarness();
+    expect(screen.queryByText(keepSafeText)).not.toBeInTheDocument();
+    unmount();
+
+    signedOut({ lists: buildLists() });
+    renderHarness();
+    expect(screen.getByText(keepSafeText)).toBeInTheDocument();
+  });
+
+  it('counts highlight groups, not rows, and waits for the third', () => {
+    // One selection spanning two segments is one group — it must not count as two.
+    const twoSegmentGroup = [
+      { id: 'h1', i: 0, s: 0, e: 5, c: '#ff0', g: 'g1', m: '1|d' },
+      { id: 'h2', i: 1, s: 0, e: 5, c: '#ff0', g: 'g1', m: '1|d' },
+    ];
+    signedOut({ highlights: { dn1: twoSegmentGroup } });
+    const { unmount } = renderHarness();
+    expect(screen.queryByText(keepSafeText)).not.toBeInTheDocument();
+    unmount();
+
+    signedOut({
+      highlights: {
+        dn1: [...twoSegmentGroup, { id: 'h3', i: 2, s: 0, e: 5, c: '#ff0', g: 'g2', m: '2|d' }],
+        dn2: [{ id: 'h4', i: 0, s: 0, e: 5, c: '#ff0', g: 'g3', m: '3|d' }],
+      },
+    });
+    renderHarness();
+    expect(screen.getByText(keepSafeText)).toBeInTheDocument();
+  });
+
+  it('says something stronger, and true, on iOS in a browser tab', () => {
+    vi.mocked(isIosBrowserTab).mockReturnValue(true);
+    signedOut({ notes: { dn1: 'a thought' } });
+    renderHarness();
+    expect(screen.getByText(iosText)).toBeInTheDocument();
+    expect(screen.queryByText(keepSafeText)).not.toBeInTheDocument();
+  });
+
+  it('dismissing hides it and records the local id it was dismissed for', async () => {
+    signedOut({ notes: { dn1: 'a thought' } });
+    renderHarness();
+    await userEvent.click(screen.getByLabelText('Dismiss'));
+    expect(screen.queryByText(keepSafeText)).not.toBeInTheDocument();
+    expect(dismissKeepSafe).toHaveBeenCalledWith('local-test');
+  });
+
+  it('stays hidden once already dismissed for this local id', () => {
+    vi.mocked(isKeepSafeDismissed).mockReturnValue(true);
+    signedOut({ notes: { dn1: 'a thought' } });
+    renderHarness();
+    expect(screen.queryByText(keepSafeText)).not.toBeInTheDocument();
+  });
+
+  it('takes the banner slot from an offline nudge, and yields it to re-auth', async () => {
+    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(hasOpenedSutta).mockReturnValue(true);
+    vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 0, total: 10 });
+    signedOut({ notes: { dn1: 'a thought' } });
+    const { unmount } = renderHarness();
+    expect(screen.getByText(keepSafeText)).toBeInTheDocument();
+    expect(screen.queryByText(/Download the full canon/)).not.toBeInTheDocument();
+    unmount();
+
+    signedOut({ notes: { dn1: 'a thought' }, needsReauth: true });
+    renderHarness();
+    expect(await screen.findByText(/aren't syncing/)).toBeInTheDocument();
+    expect(screen.queryByText(keepSafeText)).not.toBeInTheDocument();
   });
 });

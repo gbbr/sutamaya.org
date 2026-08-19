@@ -168,6 +168,33 @@ the network; every mutator is a pure state transition that marks what it touched
 | `lib/sync.ts` | The flush |
 | `lib/mtime.ts` | `nextMtime()` |
 | `lib/lastUser.ts` | Who was signed in, in `localStorage` |
+| `lib/localAccount.ts` | This device's id for a reader who hasn't signed in, and the iOS-storage-policy test |
+
+### Deferred sign-in
+
+A reader who has never signed in gets a `local-…` id (`lib/localAccount.ts`) and a mirror of their
+own, so making a highlight makes a highlight rather than raising a sign-in wall. That works because
+the mirror is already namespaced by user id and the local write is already the durable one — the
+only thing signing out of the model was an id to file under.
+
+Two things differ from a real account, and only two. The flush stands down (`isLocalUserId` guards
+it: there is no session, so every request would 401). And on sign-in, `adoptMirror` moves the whole
+local mirror onto the account — every record marked dirty, lists and highlight groups reset to
+`pendingCreate`/`sent: false` since that account's server has genuinely never seen them — after
+which the ordinary flush carries it up. Adoption keeps each record's own `mtime` rather than
+re-stamping: that timestamp is when the user acted, and a fresh one would let a week-old local note
+beat yesterday's edit from their phone.
+
+Notes are the only thing that can collide, being keyed by sutta rather than by a minted id. Where
+the device can see both texts, they are concatenated (`ADOPTED_NOTE_SEPARATOR`) rather than one
+replacing the other — a note is prose, and appending is lossless where last-writer-wins is not.
+Where it can't (a first sign-in on a device with no prior copy of the account's data), the ordinary
+`mtime` merge decides, exactly as between any two devices.
+
+Signing out retires this device's copy of the account's data and mints a fresh local id. Leaving it
+in place would keep a departed account's notes readable and writable by whoever signs in next, and
+would push them back to the server the moment they did. Nothing is lost — the account's data is on
+the server — except anything still queued, which is what the sign-out button warns about.
 
 `mirrorView.ts` and `listTree.ts` exist twice on purpose — no module is shared between the two npm
 workspaces — and the server's copies still shape the pull.
@@ -300,6 +327,11 @@ Things a change here must not break:
   push genuinely recent entries out.
 - **A long-offline device meets a lapsed cookie.** The session cookie's 90-day max age means the
   queue must survive re-auth, which is what `needsReauth` and the pause are for.
+- **Work made signed out lives only on that device.** There is no server copy until the user signs
+  in, so clearing site data loses it — and on iOS in a browser tab, so does not visiting for about
+  a week (WebKit evicts script-writable storage; a home-screen install is exempt). This is stated
+  to the user rather than engineered around: the header banner prompts once there is something
+  worth keeping, and Settings says it permanently where the eviction policy actually applies.
 - **Highlight offsets are content coordinates, not anchors.** `(i, s, e)` index into segment text, so
   an `update-data` corpus refresh — or a device holding a stale `CacheFirst` copy of a sutta — can
   leave a stored range denoting different text. Out of scope here; fixing it needs anchoring on a

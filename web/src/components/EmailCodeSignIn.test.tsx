@@ -17,6 +17,9 @@ beforeEach(() => {
   signInWithEmailCode = vi.fn(async () => {});
   vi.mocked(useAuth).mockReturnValue({
     user: null,
+    isSignedIn: false,
+    dataUserId: 'local-test',
+    localUserId: 'local-test',
     loading: false,
     authError: null,
     requestEmailCode,

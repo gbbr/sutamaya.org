@@ -442,7 +442,8 @@ uncaught.
 
 ## Frontend (`web/src/`)
 
-- `context/` — one provider per concern: `AuthContext` (session user), `CorpusContext` (static
+- `context/` — one provider per concern: `AuthContext` (session user, plus the `dataUserId` /
+  `localUserId` identity a signed-out reader writes under — see "Deferred sign-in"), `CorpusContext` (static
   corpus + dictionary, fetched once), `UserDataContext` (lists/notes/highlights/visited, a view
   over the offline mirror — see "Client mirror" below), `ReaderPrefsContext`
   (theme/font/line-height/Pali/notes-visibility), and `UiPrefsContext`
@@ -452,7 +453,8 @@ uncaught.
   (screen size, ambient lighting).
 - `lib/corpus.ts`, `lib/dictionary.ts`, `lib/theme.ts`, `lib/api.ts`, `lib/mtime.ts` — pure
   data/fetch helpers, no React.
-- `lib/mirror.ts`, `lib/mirrorView.ts`, `lib/mirrorDb.ts`, `lib/sync.ts`, `lib/listTree.ts` — the
+- `lib/mirror.ts`, `lib/mirrorView.ts`, `lib/mirrorDb.ts`, `lib/sync.ts`, `lib/listTree.ts`,
+  `lib/localAccount.ts` — the
   offline mirror and its flush; also pure, no React (`UserDataContext` is the only caller).
 - `components/SegmentedText.tsx` — the reader's paragraph renderer (tap-to-reveal Pali, word-tap
   dictionary, highlighted-range spans). Stored highlight ranges can overlap (two devices, both
@@ -490,9 +492,9 @@ uncaught.
   selecting/deselecting a sutta doesn't remount `LibraryPage` (and every pane's scroll position
   with it); the splat gives `''` (not `undefined`) when no sutta is selected. `/read/:suttaId`
   renders `ReaderPage` full-screen; `/settings` is a separate route. There's no login/register
-  route — Google
-  sign-in is triggered in place (the account badge in `TreePane`, or `promptGoogleSignIn()`
-  wherever a signed-out user attempts an authenticated action). A sutta's sibling list for
+  route — signing in happens in Settings' Account section, which the account badge in `TreePane`
+  and `promptGoogleSignIn()` both navigate to. **Nothing requires it**: see "Deferred sign-in"
+  below, and `docs/offline-sync.md`. A sutta's sibling list for
   Prev/Next in the reader comes from `corpus.suttas[id].node`, not from however the reader was
   entered, so it's correct from a search result or a deep link too.
 - `components/ErrorBoundary.tsx` wraps the whole app in `App.tsx`, *outside* `AppProviders` so a
@@ -628,8 +630,9 @@ write, so a list, note or highlight made with no network is kept rather than log
   retried forever with only a `console.error` to show for it — still dirty, still retried, but now
   the thing `'stuck'` reads from. **`needsReauth` is the exception, and the one sync state with
   chrome of its own** — a banner in `components/HeaderBanner.tsx`, which owns the single slot below
-  `TreePane`'s header and the three mutually exclusive things that can occupy it (this, and the two
-  offline nudges under "Offline strategy" below, over both of which it takes priority). A lapsed
+  `TreePane`'s header and the four mutually exclusive things that can occupy it, in strict priority
+  order: **re-auth**, then the **"keep this safe"** deferred-sign-in prompt (below), then the two
+  offline nudges under "Offline strategy". Exactly one shows at a time; there is never a stack. A lapsed
   session is the only state the UI otherwise misrepresents: the account badge still shows a
   signed-in user (seeded from `lib/lastUser.ts`) and every list/note/highlight still reads and
   writes against the local mirror, so nothing looks wrong while nothing reaches the server —
@@ -638,6 +641,32 @@ write, so a list, note or highlight made with no network is kept rather than log
   still navigates to Settings' sign-in section, but only from a real user click on the banner now,
   not from a background flush deciding on its own to interrupt whatever the reader was doing
   mid-sutta.
+
+### Deferred sign-in
+
+**Signing in is never required to use the app.** A reader who hasn't signed in gets a `local-…` id
+(`lib/localAccount.ts`) and their own mirror, so a first highlight is a highlight rather than a
+sign-in wall — no mutator in `UserDataContext` is gated on a session any more, and `TreePane`'s
+My-lists surface is ungated too. The flush is the only thing that is (`isLocalUserId`): a local
+mirror has no session behind it, so every request would 401.
+
+Signing in calls `adoptMirror` (`lib/mirror.ts`), which moves the local mirror onto the account and
+lets the ordinary flush push it. It runs from `UserDataContext`'s load effect on every load of an
+*account* mirror rather than on a sign-in transition — there is no reliable transition to watch,
+since `user` is seeded from `localStorage` before the session is confirmed, and a reload
+mid-adoption has to finish the job; `hasContent` makes it a no-op otherwise. Adoption keeps each
+record's own `mtime`, and merges a colliding note by appending rather than replacing. Signing out
+deletes this device's copy of the account's mirror and mints a fresh local id; Settings' Sign out
+warns first when anything is still unsynced. `docs/offline-sync.md` has the full rationale.
+
+The **"keep this safe"** banner is the one nudge toward an account: it appears once the local mirror
+holds a first note, a first list, or a third highlight group — not before, since a reader with
+nothing to lose has nothing to be warned about. Dismissal is keyed to the local id, so it silences
+this body of work rather than all future ones, and a sign-out (fresh id) offers it again. On iOS in
+a browser tab it says something stronger and true — WebKit evicts script-writable storage for a site
+unvisited for about a week, and a home-screen install is the documented exemption — detected by
+`isIosBrowserTab()`, which is also what puts a *permanent, undismissable* version of the same
+sentence in Settings' Account section. The heuristic's wrong answer only ever over-warns.
 
 ## Offline strategy
 
@@ -703,7 +732,7 @@ something there.
   the versions a device last completed a full download at, and `isOfflineTextStale()` compares
   them. When they diverge, the device gets the "Updated sutta text is available" variant of
   `HeaderBanner` (the two nudges are mutually exclusive on whether the corpus is fully cached, and
-  both yield the slot to the re-auth banner), and Settings' Offline section says the same thing
+  both yield the slot to the re-auth and keep-this-safe banners), and Settings' Offline section says the same thing
   permanently, in the accent colour behind an info icon, with a "Re-download updated suttas"
   action. Unlike the download nudge it shares a slot with, this one is **not** PWA-gated: it can
   only fire for someone who already finished a bulk download, and `CacheFirst` hands a browser tab

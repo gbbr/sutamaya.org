@@ -88,6 +88,9 @@ describe('mobile search -> reader -> close flow', () => {
     vi.mocked(useUserData).mockReturnValue(userDataDefaults);
     vi.mocked(useAuth).mockReturnValue({
       user: null,
+      isSignedIn: false,
+      dataUserId: 'local-test',
+      localUserId: 'local-test',
       loading: false,
       authError: null,
       requestEmailCode: vi.fn(async () => {}),
@@ -168,6 +171,9 @@ describe('mobile search -> reader -> close flow', () => {
   it("keeps TreePane on 'My lists' after a search result is opened and the reader is closed", async () => {
     vi.mocked(useAuth).mockReturnValue({
       user: { id: 'u1', email: 'reader@example.com', name: 'Reader', picture: null },
+      isSignedIn: true,
+      dataUserId: 'u1',
+      localUserId: 'local-test',
       loading: false,
       authError: null,
       requestEmailCode: vi.fn(async () => {}),

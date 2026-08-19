@@ -1,9 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import {
+  ADOPTED_NOTE_SEPARATOR,
+  adoptMirror,
   applyFlushOutcome,
   applySnapshot,
   createListRecord,
   emptyMirror,
+  hasContent,
   markDispatched,
   markVisitedRecord,
   queueItemOrder,
@@ -421,5 +424,64 @@ describe('syncCounts', () => {
   it('counts nothing once everything is clean', () => {
     const state = applySnapshot(emptyMirror('u1'), emptySnapshot);
     expect(syncCounts(state)).toEqual({ pending: 0, stuck: 0 });
+  });
+});
+
+describe('adoptMirror', () => {
+  it('carries signed-out lists onto the account as fresh creates', () => {
+    let local = list(emptyMirror('local-1'), 'l1');
+    local = queueMembership(local, 'l1', 'dn1', true);
+    const adopted = adoptMirror(emptyMirror('u1'), local);
+
+    expect(adopted.userId).toBe('u1');
+    expect(adopted.lists.l1.dirty).toBe(true);
+    // The account's server has never seen this row, whatever the local mirror thought.
+    expect(adopted.lists.l1.data.pendingCreate).toBe(true);
+    expect(adopted.lists.l1.data.createSent).toBe(false);
+    expect(adopted.ops).toHaveLength(1);
+    expect(adopted.ops[0]).toMatchObject({ type: 'add', listId: 'l1', suttaId: 'dn1' });
+  });
+
+  it('keeps each record at the mtime the user wrote it', () => {
+    const local = setNoteRecord(emptyMirror('local-1'), 'dn1', 'written offline');
+    const adopted = adoptMirror(emptyMirror('u1'), local);
+    expect(adopted.notes.dn1.data.mtime).toBe(local.notes.dn1.data.mtime);
+  });
+
+  it('appends rather than replaces when both sides have a note for the same sutta', () => {
+    const account = setNoteRecord(emptyMirror('u1'), 'dn1', 'from my phone');
+    const local = setNoteRecord(emptyMirror('local-1'), 'dn1', 'from this browser');
+    const adopted = adoptMirror(account, local);
+
+    expect(adopted.notes.dn1.data.text).toBe(`from my phone${ADOPTED_NOTE_SEPARATOR}from this browser`);
+    // A merged note is newer than either half, or the older one could win against the row it was
+    // just merged into.
+    expect(adopted.notes.dn1.data.mtime > account.notes.dn1.data.mtime).toBe(true);
+    expect(adopted.notes.dn1.data.mtime > local.notes.dn1.data.mtime).toBe(true);
+  });
+
+  it('drops a list created and deleted before it ever left the device', () => {
+    let local = list(emptyMirror('local-1'), 'l1');
+    local = removeListRecord(local, 'l1');
+    expect(adoptMirror(emptyMirror('u1'), local).lists).toEqual({});
+  });
+
+  it('re-sequences ops onto the end of the account queue', () => {
+    let account = list(emptyMirror('u1'), 'a1');
+    account = queueMembership(account, 'a1', 'mn1', true);
+    let local = list(emptyMirror('local-1'), 'l1');
+    local = queueMembership(local, 'l1', 'dn1', true);
+
+    const adopted = adoptMirror(account, local);
+    const seqs = adopted.ops.map((op) => op.seq);
+    expect(seqs).toEqual([...seqs].sort((a, b) => a - b));
+    expect(new Set(seqs).size).toBe(seqs.length);
+    expect(adopted.nextSeq).toBeGreaterThan(Math.max(...seqs));
+  });
+
+  it('is a no-op for an empty local mirror', () => {
+    expect(hasContent(emptyMirror('local-1'))).toBe(false);
+    const account = list(emptyMirror('u1'), 'a1');
+    expect(adoptMirror(account, emptyMirror('local-1'))).toEqual(account);
   });
 });

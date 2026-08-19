@@ -3,6 +3,8 @@ import { navigate } from '@reach/router';
 import { authApi } from '../lib/api';
 import { isRetryable, retryWithBackoff, statusOf } from '../lib/retry';
 import { readLastUser, writeLastUser } from '../lib/lastUser';
+import { localUserId, resetLocalUserId } from '../lib/localAccount';
+import { deleteMirror } from '../lib/mirrorDb';
 import type { User } from '../lib/types';
 
 // Longer than the Worker's 60s rate-limit period, so a retry lands in a fresh budget rather than
@@ -12,6 +14,18 @@ const SESSION_RETRY_MS = 65_000;
 interface AuthState {
   user: User | null;
   loading: boolean;
+  // Whether there is a real session behind `user`. Distinct from `user != null` only in intent:
+  // reading it at a call site says "this needs the server", where reading `user` usually means
+  // "show me who this is".
+  isSignedIn: boolean;
+  // Whose data the app is reading and writing — the signed-in account, or this device's local id
+  // for a reader who hasn't signed in yet (lib/localAccount.ts). Never null, which is what lets
+  // every list, note and highlight be created before there is an account to hold them.
+  dataUserId: string;
+  // This device's signed-out id, whether or not it is currently the one in use. Exposed separately
+  // because sign-in has to go looking for the mirror it left behind (see UserDataContext's
+  // adoption) at a point where `dataUserId` has already moved on to the account.
+  localUserId: string;
   authError: string | null;
   promptGoogleSignIn: () => void;
   requestEmailCode: (email: string) => Promise<void>;
@@ -31,6 +45,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // replaces it as soon as one arrives, in either direction.
   const [user, setUser] = useState<User | null>(readLastUser);
   const [loading, setLoading] = useState(true);
+  // This device's signed-out identity. Held in state rather than read on demand so that retiring it
+  // at sign-out re-renders everything reading `dataUserId` — which is what swaps the UI over to the
+  // fresh, empty local mirror.
+  const [localId, setLocalId] = useState(localUserId);
   // A failed sign-in comes back as ?auth_error=<reason> on the page the OAuth callback redirects
   // to (worker/src/routes/auth.js) — the flow is a full-page round trip, so there's no live
   // promise left to catch a rejection from. Seeded synchronously from the URL the app booted on,
@@ -123,15 +141,39 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(user);
   }, []);
 
+  // Signing out retires this device's copy of the account's data along with the session. The
+  // alternative — leaving it in place under a local id — would keep every note and highlight
+  // readable and editable by whoever signs in next, and would push a departed account's work back
+  // to the server the moment they did. Nothing is lost: the account's own data is on the server,
+  // which is the point of having signed in. Anything genuinely unsynced is warned about at the
+  // button (SettingsPage), not silently here.
   const logout = useCallback(async () => {
+    const previousId = user?.id;
     await authApi.logout();
     writeLastUser(null);
     setUser(null);
-  }, []);
+    // A fresh namespace, so whatever the user does next starts empty and gets offered the
+    // "keep this safe" prompt again on its own merits.
+    setLocalId(resetLocalUserId());
+    if (previousId) await deleteMirror(previousId);
+  }, [user]);
+
+  const dataUserId = user?.id ?? localId;
 
   const value = useMemo(
-    () => ({ user, loading, authError, promptGoogleSignIn, requestEmailCode, signInWithEmailCode, logout }),
-    [user, loading, authError, promptGoogleSignIn, requestEmailCode, signInWithEmailCode, logout]
+    () => ({
+      user,
+      loading,
+      isSignedIn: !!user,
+      dataUserId,
+      localUserId: localId,
+      authError,
+      promptGoogleSignIn,
+      requestEmailCode,
+      signInWithEmailCode,
+      logout,
+    }),
+    [user, loading, dataUserId, localId, authError, promptGoogleSignIn, requestEmailCode, signInWithEmailCode, logout]
   );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

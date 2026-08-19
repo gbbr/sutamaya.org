@@ -83,3 +83,21 @@ export async function saveMirror(state: MirrorState): Promise<void> {
   }
   await transact(db, 'readwrite', (store) => store.put(state));
 }
+
+// Drops one id's mirror outright. Two callers, both of which mean "this device is done carrying
+// that identity's data": sign-out, where leaving a departed account's notes readable and writable
+// on the device is both a privacy leak and a lie about who the app belongs to now, and adoption,
+// which has just copied the signed-out mirror onto a real account and would otherwise leave a
+// duplicate behind for the next sign-out to resurrect.
+export async function deleteMirror(userId: string): Promise<void> {
+  memory.delete(userId);
+  const db = await openDb();
+  if (!db) return;
+  try {
+    await transact(db, 'readwrite', (store) => store.delete(userId));
+  } catch (e) {
+    // Nothing downstream depends on this having worked — the record is unreachable either way once
+    // the id it was filed under is retired.
+    console.error('mirror delete failed', e);
+  }
+}

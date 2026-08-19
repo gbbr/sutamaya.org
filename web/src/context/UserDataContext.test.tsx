@@ -16,9 +16,19 @@ import { RECENT_AUTO_LIST_ID } from '../lib/autoLists';
 // mock-factory time); given a fresh id per test in beforeEach, since the mirror is keyed by user
 // id and fake-indexeddb keeps its contents for the whole file.
 let mockUser: { id: string; email: string; name: string; picture: string } | null = null;
+// The id the provider files data under while signed out (see lib/localAccount.ts). Given a fresh
+// value per test alongside `mockUser`, for the same reason: fake-indexeddb keeps its contents for
+// the whole file, and a shared local id would leak one test's signed-out mirror into the next.
+let mockLocalId = 'local-test';
 const promptGoogleSignIn = vi.fn();
 vi.mock('./AuthContext', () => ({
-  useAuth: () => ({ user: mockUser, promptGoogleSignIn }),
+  useAuth: () => ({
+    user: mockUser,
+    isSignedIn: !!mockUser,
+    dataUserId: mockUser?.id ?? mockLocalId,
+    localUserId: mockLocalId,
+    promptGoogleSignIn,
+  }),
 }));
 
 // Every network call the flush can make, plus the order they were made in — "records before
@@ -106,6 +116,7 @@ beforeEach(() => {
   calls.length = 0;
   seq += 1;
   mockUser = { id: `u${seq}`, email: 'a@b.com', name: 'A', picture: '' };
+  mockLocalId = `local-${seq}`;
   dataApiAll.mockResolvedValue(structuredClone(baseData));
   listsApiCreate.mockImplementation(record('create', async () => ({ list: null })));
   listsApiUpdate.mockImplementation(record('update', async () => ({ ok: true })));
@@ -449,13 +460,44 @@ describe('UserDataProvider', () => {
     expect(result.current.membership.dn1).toEqual(['l1', 'l2']);
   });
 
-  it('drops everything from view on sign-out without touching the stored mirror', async () => {
+  it('switches to the local mirror on sign-out', async () => {
     const { result, rerender } = setup();
     await waitFor(() => expect(result.current.lists).toEqual(baseData.lists));
 
+    // The account's own stored mirror is retired by AuthContext's logout, not here — from this
+    // provider's side, signing out is simply a different id to read and write under.
     mockUser = null;
     rerender();
     await waitFor(() => expect(result.current.lists).toEqual([]));
     expect(result.current.notes).toEqual({});
+  });
+
+  it('writes without an account and pushes it all once the user signs in', async () => {
+    mockUser = null;
+    const { result, rerender } = setup();
+    await waitFor(() => expect(result.current.ready).toBe(true));
+
+    // No sign-in prompt, no thrown error, no request: the local write is the durable write.
+    await act(async () => {
+      await result.current.submitNote('dn1', 'noted before signing in');
+      await result.current.setHighlightRanges('dn1', [{ i: 0, s: 0, e: 4 }], '#ff0');
+    });
+    expect(result.current.notes.dn1).toBe('noted before signing in');
+    expect(promptGoogleSignIn).not.toHaveBeenCalled();
+    expect(notesApiSet).not.toHaveBeenCalled();
+
+    // What the server hands back once it has taken the adopted note — the pull at the end of the
+    // same flush, so the round trip is exercised rather than stopping at the push.
+    dataApiAll.mockResolvedValue({
+      ...structuredClone(baseData),
+      notes: { dn1: { text: 'noted before signing in', m: '2030-01-01T00:00:00.000Z|server' } },
+    });
+    mockUser = { id: `u${seq}`, email: 'a@b.com', name: 'A', picture: '' };
+    rerender();
+
+    await waitFor(() => expect(notesApiSet).toHaveBeenCalled());
+    expect(notesApiSet.mock.calls[0][1]).toBe('noted before signing in');
+    await waitFor(() => expect(highlightsApiSetRanges).toHaveBeenCalled());
+    await waitFor(() => expect(result.current.notes.dn1).toBe('noted before signing in'));
   });
 });

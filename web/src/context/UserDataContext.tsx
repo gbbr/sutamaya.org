@@ -1,9 +1,11 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import type { Highlight, HighlightsMap, ListDef, ListKind, Membership, NotesMap, VisitedMap } from '../lib/types';
 import {
+  adoptMirror,
   applyFlushOutcome,
   createListRecord,
   emptyMirror,
+  hasContent,
   markDispatched,
   markVisitedRecord,
   queueItemOrder,
@@ -18,7 +20,8 @@ import {
   type MirrorState,
 } from '../lib/mirror';
 import { deriveUserData } from '../lib/mirrorView';
-import { loadMirror, saveMirror } from '../lib/mirrorDb';
+import { isLocalUserId } from '../lib/localAccount';
+import { deleteMirror, loadMirror, saveMirror } from '../lib/mirrorDb';
 import { flushWithLock } from '../lib/sync';
 import { randomId } from '../lib/ids';
 import { LIST_NAME_MAX_LENGTH, NOTE_MAX_LENGTH } from '../lib/textLimits';
@@ -29,6 +32,13 @@ import { useAuth } from './AuthContext';
 // the local write *is* the durable write, so nothing here has an optimistic edit to roll back and
 // nothing is lost when the network is down. A flush (lib/sync.ts) pushes what the server hasn't
 // seen and folds the merged result back in, on the triggers below.
+//
+// **Signing in is deferred, not required.** A reader who has never signed in gets a local id
+// (lib/localAccount.ts) and writes to a mirror of their own, so highlighting a sentence highlights
+// it instead of raising a sign-in wall. The only thing that changes on sign-in is that there is
+// now somewhere to push to: the local mirror is adopted onto the account (adoptMirror) and the
+// ordinary flush carries it up. Everything between those two points — the mutators below, the
+// derived view, the auto-lists — is identical either way.
 
 // A mutation is followed by a flush after this long, so a burst of edits (dragging a list through
 // several positions, filing a sutta into three lists) becomes one flush rather than several. Note
@@ -107,7 +117,7 @@ const EMPTY: UserDataState = {
 };
 
 export function UserDataProvider({ children }: { children: ReactNode }) {
-  const { user, promptGoogleSignIn } = useAuth();
+  const { user, isSignedIn, dataUserId, localUserId } = useAuth();
   const [state, setState] = useState<MirrorState>(emptyMirror);
   const [ready, setReady] = useState(false);
   // Set when the session has lapsed (a 401 during a flush). The queue is intact — nothing is
@@ -147,13 +157,15 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     pausedRef.current = paused;
   }, [paused]);
 
-  // Keyed on the user's *id*, not the `user` object — AuthContext seeds `user` synchronously from
+  // Keyed on the *id*, not the `user` object — AuthContext seeds `user` synchronously from
   // localStorage and then replaces it with a fresh object once GET /api/auth/me answers, so an
   // object-identity dependency re-ran everything below for what is the same account: `ready` went
   // back to false and the mirror was re-read from IndexedDB a few hundred milliseconds in, blanking
   // and restoring every chip, note preview and highlight — often with the reader already open — and
   // firing a second, redundant flush behind it.
-  const userId = user?.id ?? null;
+  //
+  // Never null: signed out, this is the device's local id, so there is always a mirror to write to.
+  const userId = dataUserId;
 
   // Clearing the pause is keyed on the `user` object instead, not its id: signing back in after a
   // 401 hands back a new object carrying the *same* id, and that's precisely the event that means
@@ -164,46 +176,61 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   }, [user]);
 
   useEffect(() => {
-    if (!userId) {
-      // Nothing to load and nothing to sync. The signed-out mirror is empty rather than the last
-      // user's — that data stays in IndexedDB under their own id, ready for them to sign back in.
-      setState(emptyMirror());
-      setReady(true);
-      return;
-    }
     let cancelled = false;
     setReady(false);
-    loadMirror(userId)
-      .then((loaded) => {
-        if (cancelled) return;
-        setState(loaded);
-        // `ready` means "the local dataset is known" — a question the mirror answers without a
-        // network, which is the point. Nothing downstream (see useSuttaReading's scroll restore)
-        // waits on the server any more.
-        setReady(true);
-      })
-      .catch((e) => {
-        console.error('mirror load failed', e);
-        if (cancelled) return;
-        setState(emptyMirror(userId));
-        setReady(true);
-      });
+    // Signing out has to blank the departing account's data on this render, not whenever the
+    // IndexedDB read lands. Signing *in* deliberately doesn't: the outgoing mirror there is the
+    // local one, and it is about to be adopted onto the account below — blanking it would flash
+    // the user's own notes and highlights out of existence at the moment they signed in to keep
+    // them.
+    setState((s) => (s.userId === userId || isLocalUserId(s.userId) ? s : emptyMirror(userId)));
+    (async () => {
+      let loaded = await loadMirror(userId);
+      // Signing in adopts whatever this device made signed-out. Runs on every load of an account
+      // mirror rather than on a sign-in transition, because there is no reliable transition to
+      // watch: `user` is seeded from localStorage before the session is confirmed, and a reload
+      // mid-adoption has to finish the job. It costs one IndexedDB read, and `hasContent` makes it
+      // a no-op for a device that has never been used signed out.
+      if (!isLocalUserId(userId)) {
+        const local = await loadMirror(localUserId);
+        if (hasContent(local)) {
+          loaded = adoptMirror(loaded, local);
+          // Persisted before the local copy is dropped, so a crash between the two leaves a
+          // duplicate rather than a hole.
+          await saveMirror(loaded);
+          await deleteMirror(localUserId);
+        }
+      }
+      if (cancelled) return;
+      setState(loaded);
+      // `ready` means "the local dataset is known" — a question the mirror answers without a
+      // network, which is the point. Nothing downstream (see useSuttaReading's scroll restore)
+      // waits on the server any more.
+      setReady(true);
+    })().catch((e) => {
+      console.error('mirror load failed', e);
+      if (cancelled) return;
+      setState(emptyMirror(userId));
+      setReady(true);
+    });
     return () => {
       cancelled = true;
     };
-  }, [userId]);
+  }, [userId, localUserId]);
 
   // Persist on every change, including the ones a flush folds back in. Guarded on the mirror's own
-  // userId rather than on `user`, so the window between an account switch and its load resolving
-  // can't write one account's records under the other's key.
+  // userId, so the window between an account switch (or a sign-in) and its load resolving can't
+  // write one identity's records under the other's key.
   useEffect(() => {
-    if (!user || state.userId !== user.id) return;
+    if (state.userId !== userId) return;
     saveMirror(state).catch((e) => console.error('mirror save failed', e));
-  }, [state, user]);
+  }, [state, userId]);
 
   const flush = useCallback(async () => {
     const current = stateRef.current;
-    if (!current.userId || flushing.current) return;
+    // A local mirror has nowhere to go: there is no account behind it, so every request would 401.
+    // It becomes flushable the moment sign-in adopts it onto a real one.
+    if (!current.userId || isLocalUserId(current.userId) || flushing.current) return;
     flushing.current = true;
     // Before the first request goes out, not after the last one comes back: from here on the server
     // may already hold these rows, so a delete or erase made while the flush is out has to be
@@ -246,7 +273,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   );
 
   useEffect(() => {
-    if (!ready || !userId || paused) return;
+    if (!ready || !isSignedIn || paused) return;
     flush();
     const onOnline = () => flush();
     const onVisible = () => {
@@ -260,7 +287,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       document.removeEventListener('visibilitychange', onVisible);
       clearInterval(poll);
     };
-  }, [ready, userId, paused, flush]);
+  }, [ready, isSignedIn, userId, paused, flush]);
 
   const { lists, membership, notes, highlights, visited } = useMemo(() => deriveUserData(state), [state]);
 
@@ -287,10 +314,6 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
 
   const createList = useCallback(
     async (label: string, parentId: string | null = null, kind: ListKind = 'list') => {
-      if (!user) {
-        promptGoogleSignIn();
-        throw new Error('not_authenticated');
-      }
       // Trimmed and capped the same way POST /lists does it, so the local label is the one the
       // server will store rather than one a later pull quietly corrects.
       const capped = label.trim().slice(0, LIST_NAME_MAX_LENGTH);
@@ -305,7 +328,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       mutate((s) => createListRecord(s, { id, label: capped, parentId, kind }));
       return { id, label: capped, parentId, kind, items: [] };
     },
-    [lists, user, promptGoogleSignIn, mutate]
+    [lists, mutate]
   );
 
   const renameList = useCallback(
@@ -355,13 +378,12 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
 
   const toggleMembership = useCallback(
     async (suttaId: string, listId: string) => {
-      if (!user) return promptGoogleSignIn();
       const list = lists.find((l) => l.id === listId);
       if (!list || list.auto) return;
       const on = (membership[suttaId] || []).includes(listId);
       mutate((s) => queueMembership(s, listId, suttaId, !on));
     },
-    [lists, membership, user, promptGoogleSignIn, mutate]
+    [lists, membership, mutate]
   );
 
   // Like toggleMembership's "add" branch, but takes the list directly instead of looking it up in
@@ -369,18 +391,16 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   // `lists` closure until the next render.
   const addToList = useCallback(
     async (suttaId: string, list: ListDef) => {
-      if (!user) return promptGoogleSignIn();
       mutate((s) => queueMembership(s, list.id, suttaId, true));
     },
-    [user, promptGoogleSignIn, mutate]
+    [mutate]
   );
 
   const submitNote = useCallback(
     async (suttaId: string, text: string) => {
-      if (!user) return promptGoogleSignIn();
       mutate((s) => setNoteRecord(s, suttaId, text.slice(0, NOTE_MAX_LENGTH)));
     },
-    [user, promptGoogleSignIn, mutate]
+    [mutate]
   );
 
   // A highlight group is immutable, so this doesn't edit anything: it mints a new group and names
@@ -388,19 +408,17 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   // tombstone plus a new group; an erase (color === null) is a tombstone alone.
   const setHighlightRanges = useCallback(
     async (suttaId: string, ranges: { i: number; s: number; e: number }[], color: string | null) => {
-      if (!user) return promptGoogleSignIn();
       if (!ranges.length) return;
       mutate((s) => writeHighlightRecord(s, suttaId, ranges, color));
     },
-    [user, promptGoogleSignIn, mutate]
+    [mutate]
   );
 
   const markVisited = useCallback(
     (suttaId: string) => {
-      if (!user) return;
       mutate((s) => markVisitedRecord(s, suttaId));
     },
-    [user, mutate]
+    [mutate]
   );
 
   const value = useMemo<UserDataState>(

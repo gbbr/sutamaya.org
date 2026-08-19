@@ -4,7 +4,6 @@ import { derivePaneViewSync } from './paneView';
 const base = {
   isFirstRun: false,
   restoreOrigin: false,
-  signedIn: true,
   nodeId: 'dn1',
   nodeIsListId: false,
   nodeIsCorpusNode: true,
@@ -37,10 +36,6 @@ describe('derivePaneViewSync', () => {
     expect(derivePaneViewSync({ ...base, isFirstRun: false, restoreOrigin: true, nodeIsListId: true, nodeIsCorpusNode: false })).toBe(
       'lists'
     );
-  });
-
-  it('does nothing for a signed-out user', () => {
-    expect(derivePaneViewSync({ ...base, signedIn: false, nodeIsListId: true, nodeIsCorpusNode: false })).toBeNull();
   });
 
   it('does nothing without a nodeId', () => {
