@@ -41,8 +41,11 @@ const KEEP_SAFE_HIGHLIGHTS = 2;
 
 // Exported so tests assert against the same strings this component actually renders, rather than
 // a copy that can drift out of sync with it.
-export const OFFLINE_DOWNLOAD_TEXT = 'Download the full canon for offline reading';
+export const OFFLINE_DOWNLOAD_TEXT = 'Download the canon for offline reading';
 export const OFFLINE_UPDATE_TEXT = 'Updated sutta text is available';
+export const REAUTH_TEXT = "Signed out — changes aren't syncing";
+export const KEEP_SAFE_TEXT = 'Saved temporarily on this device';
+export const KEEP_SAFE_IOS_TEXT = 'Safari may erase your notes in 7 days';
 
 // One banner's chrome, so the four variants differ only in what they say and do.
 function Banner({
@@ -69,7 +72,9 @@ function Banner({
       }`}
     >
       <span className={`flex-none ${alert ? 'text-red-600' : 'text-ink/60'}`}>{icon}</span>
-      <div className="flex-1 min-w-0 font-sans text-[12.5px] text-ink/70 truncate">{text}</div>
+      <div className="flex-1 min-w-0 font-sans text-[12.5px] text-ink/70 truncate" title={text}>
+        {text}
+      </div>
       <button
         className={`flex-none font-sans text-[12.5px] font-semibold underline underline-offset-2 ${
           alert ? 'text-red-600 decoration-red-600/40' : 'text-accent-text decoration-accent-text/40'
@@ -152,7 +157,7 @@ export function HeaderBanner() {
       <Banner
         tone="alert"
         icon={<AlertTriangle size={15} strokeWidth={1.75} />}
-        text="Signed out — changes aren't syncing"
+        text={REAUTH_TEXT}
         action="Sign in"
         onAction={promptGoogleSignIn}
       />
@@ -172,7 +177,7 @@ export function HeaderBanner() {
       <Banner
         tone={ios ? 'alert' : 'accent'}
         icon={ios ? <AlertTriangle size={15} strokeWidth={1.75} /> : <Info size={15} strokeWidth={1.75} />}
-        text={ios ? 'Safari may erase this in 7 days' : 'Saved temporarily on this device'}
+        text={ios ? KEEP_SAFE_IOS_TEXT : KEEP_SAFE_TEXT}
         action="Sign in"
         onAction={promptGoogleSignIn}
         onDismiss={() => {
