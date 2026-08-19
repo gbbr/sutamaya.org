@@ -120,6 +120,10 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
       } else if (isShortcut(e, SHORTCUTS.readerNotesToggle)) {
         e.preventDefault();
         toggleShowNotes();
+      } else if (isShortcut(e, SHORTCUTS.readerTheme)) {
+        e.preventDefault();
+        setTab('text');
+        setPanel(true);
       }
     }
     window.addEventListener('keydown', onKey);
