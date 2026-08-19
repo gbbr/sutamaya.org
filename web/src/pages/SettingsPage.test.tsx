@@ -160,10 +160,11 @@ describe('scrollTo deep link', () => {
     const offlineSection = screen.getByText('Offline').parentElement!;
     expect(scrollSpy).toHaveBeenCalled();
     expect(scrollSpy.mock.instances).toContain(offlineSection);
-    // Flash highlight applied immediately alongside the scroll — its fade-out is timer-driven
-    // (see flashClass in SettingsPage), not asserted here to avoid coupling this test to that
-    // exact duration.
-    expect(offlineSection.className).toContain('bg-accent/10');
+    // Flash highlight applied immediately alongside the scroll, to the section's card (the
+    // sibling below the heading the scroll targets — see cardClass in SettingsPage). Its
+    // fade-out is timer-driven, not asserted here to avoid coupling this test to that exact
+    // duration.
+    expect(screen.getByText('Offline').nextElementSibling!.className).toContain('border-accent');
   });
 
   it('scrolls to the Account section when navigated here with scrollTo: "auth"', async () => {
@@ -177,7 +178,7 @@ describe('scrollTo deep link', () => {
     const authSection = screen.getByText('Account').parentElement!;
     expect(scrollSpy).toHaveBeenCalled();
     expect(scrollSpy.mock.instances).toContain(authSection);
-    expect(authSection.className).toContain('bg-accent/10');
+    expect(screen.getByText('Account').nextElementSibling!.className).toContain('border-accent');
   });
 
   it('does not scroll at all when arriving without a scrollTo state', () => {
