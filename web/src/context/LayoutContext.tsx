@@ -27,10 +27,37 @@ export const MOBILE_BREAKPOINT = 860;
 
 const LayoutContext = createContext<LayoutState | null>(null);
 
+// Eats the one synthetic compatibility click a touch device fires after the divider drag ends.
+// That click hit-tests at the *lift-off* point rather than at the divider, and the divider stops
+// tracking the finger once the drag clamps at its min/max — so an overshoot past either end lands
+// the click on whichever tree or list row is under the finger, opening a sutta the user never
+// tapped. Cancelling `pointerdown` (and `touchend`, on the divider itself) is supposed to suppress
+// this, but WebKit in a standalone PWA honors neither reliably: touchstart arrives uncancelable
+// there, and otherwise-identical gestures sometimes synthesize the click anyway. Swallowing it
+// here is the part that doesn't depend on the browser cooperating.
+//
+// Disarmed by the next `pointerdown` as well as by the timeout, so a real tap — which always
+// begins with one — can never be the click that gets eaten.
+function swallowNextClick() {
+  const onClick = (e: MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    disarm();
+  };
+  const disarm = () => {
+    window.clearTimeout(timer);
+    window.removeEventListener('click', onClick, true);
+    window.removeEventListener('pointerdown', disarm, true);
+  };
+  const timer = window.setTimeout(disarm, 400);
+  window.addEventListener('click', onClick, true);
+  window.addEventListener('pointerdown', disarm, true);
+}
+
 export function LayoutProvider({ children }: { children: ReactNode }) {
   const [prefs, setPrefs] = usePersistedState<LayoutPrefs>(LAYOUT_PREFS_KEY, DEFAULTS);
   const [w, setW] = useState(() => (typeof window !== 'undefined' ? window.innerWidth : 1440));
-  const drag = useRef<{ key: 'treeW'; x0: number; w0: number; min: number; max: number } | null>(null);
+  const drag = useRef<{ key: 'treeW'; x0: number; w0: number; min: number; max: number; moved: boolean } | null>(null);
   // Live width while actively dragging the tree-pane divider, kept out of `prefs` (and so out of
   // usePersistedState's un-debounced `localStorage.setItem`) until the drag actually ends —
   // committing on every `pointermove` tick meant a synchronous storage write on every one of
@@ -46,6 +73,7 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
     const onMove = (e: PointerEvent) => {
       const d = drag.current;
       if (!d) return;
+      d.moved = true;
       const next = Math.min(d.max, Math.max(d.min, d.w0 + e.clientX - d.x0));
       liveTreeWRef.current = next;
       setLiveTreeW(next);
@@ -55,6 +83,9 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
         const committed = liveTreeWRef.current;
         setPrefs((p) => ({ ...p, treeW: committed }));
       }
+      // Only a drag that actually moved displaces what's under the finger — a bare tap on the
+      // strip has nothing to swallow, and arming for it would eat a click the user does want.
+      if (drag.current?.moved) swallowNextClick();
       drag.current = null;
       liveTreeWRef.current = null;
       setLiveTreeW(null);
@@ -85,11 +116,12 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
       paneW,
       resetTree: () => setPrefs((p) => ({ ...p, treeW: 264 })),
       dragTree: (e) => {
-        // Suppresses the synthetic compatibility click a touch pointerup otherwise fires — that
-        // click hit-tests at the *lift-off* point, which by then is over a tree/list row that
-        // slid under the finger as the panes resized, registering as an accidental row click.
+        // Asks the browser to suppress the compatibility mouse events a touch gesture would
+        // otherwise synthesize, and stops a mouse drag from selecting text as it sweeps across
+        // both panes. Browsers that honor it save `swallowNextClick` (above) the work; the ones
+        // that don't are why that fallback exists.
         e.preventDefault();
-        drag.current = { key: 'treeW', x0: e.clientX, w0: paneW.tree, min: 210, max: paneW.treeMax };
+        drag.current = { key: 'treeW', x0: e.clientX, w0: paneW.tree, min: 210, max: paneW.treeMax, moved: false };
         document.body.style.userSelect = 'none';
       },
     }),

@@ -346,6 +346,12 @@ export function LibraryPage({
           className="absolute top-0 bottom-0 z-10 cursor-col-resize touch-none"
           style={{ left: paneW.tree - TREE_LIST_HIT_BEFORE, width: TREE_LIST_HIT_BEFORE + TREE_LIST_HIT_AFTER }}
           onPointerDown={dragTree}
+          // `touchend` is the only event in the touch sequence WebKit reliably lets us cancel
+          // here — `touchstart` arrives uncancelable because of `touch-none` above — and
+          // cancelling it is what asks iOS not to synthesize the trailing click that would
+          // otherwise open whichever row the finger drifted over. See LayoutContext's
+          // `swallowNextClick` for why this alone isn't trusted to be enough.
+          onTouchEnd={(e) => e.preventDefault()}
           onDoubleClick={resetTree}
         />
       )}
