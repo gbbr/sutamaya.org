@@ -567,6 +567,13 @@ export function adoptMirror(account: MirrorState, local: MirrorState): MirrorSta
       notes[suttaId] = { dirty: true, data: { ...record.data } };
       continue;
     }
+    // A retried adoption (crash/reload between saveMirror and deleteMirror in UserDataContext) can
+    // run this merge twice against the same local record — the account note has already absorbed
+    // it. Without this check the local half gets appended a second time.
+    if (existing.data.text.endsWith(`${ADOPTED_NOTE_SEPARATOR}${record.data.text}`)) {
+      notes[suttaId] = { dirty: true, data: { ...existing.data } };
+      continue;
+    }
     notes[suttaId] = {
       dirty: true,
       data: {
