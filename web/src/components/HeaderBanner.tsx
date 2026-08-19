@@ -39,6 +39,11 @@ import {
 // meantime. A first-time reader with nothing yet still sees nothing.
 const KEEP_SAFE_HIGHLIGHTS = 2;
 
+// Exported so tests assert against the same strings this component actually renders, rather than
+// a copy that can drift out of sync with it.
+export const OFFLINE_DOWNLOAD_TEXT = 'Download the full canon for offline reading';
+export const OFFLINE_UPDATE_TEXT = 'Updated sutta text is available';
+
 // One banner's chrome, so the four variants differ only in what they say and do.
 function Banner({
   tone,
@@ -184,7 +189,7 @@ export function HeaderBanner() {
     <Banner
       tone="accent"
       icon={<Download size={15} strokeWidth={1.75} />}
-      text={showUpdateNudge ? 'Updated sutta text is available' : 'Download the full canon for offline reading'}
+      text={showUpdateNudge ? OFFLINE_UPDATE_TEXT : OFFLINE_DOWNLOAD_TEXT}
       action={showUpdateNudge ? 'Update' : 'Download'}
       onAction={() => navigate('/settings', { state: { scrollTo: 'offline' } })}
       onDismiss={

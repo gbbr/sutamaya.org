@@ -37,6 +37,7 @@ vi.mock('../lib/localAccount', () => ({
 }));
 
 import { navigate } from '@reach/router';
+import { OFFLINE_DOWNLOAD_TEXT, OFFLINE_UPDATE_TEXT } from './HeaderBanner';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
@@ -521,7 +522,7 @@ describe('keyboard: x toggles Library / My Lists', () => {
 });
 
 describe('offline download nudge', () => {
-  const nudgeText = 'Download the full canon for offline reading';
+  const nudgeText = OFFLINE_DOWNLOAD_TEXT;
 
   it('stays hidden in a regular (non-PWA) browser tab even once a sutta has been opened and the corpus is incomplete', async () => {
     vi.mocked(isStandalone).mockReturnValue(false);
@@ -596,8 +597,8 @@ describe('offline download nudge', () => {
 });
 
 describe('offline text update nudge', () => {
-  const updateText = 'Updated sutta text is available';
-  const downloadText = 'Download the full canon for offline reading';
+  const updateText = OFFLINE_UPDATE_TEXT;
+  const downloadText = OFFLINE_DOWNLOAD_TEXT;
 
   // The state this banner is actually for: a device that finished a bulk download, whose cached
   // text has since fallen behind the corpus this build serves. Deliberately leaves isStandalone
