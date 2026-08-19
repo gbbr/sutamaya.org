@@ -17,11 +17,10 @@ export interface HlRange {
 // Pure range-building math for a cross-segment selection (useHighlightPopup's onTextUp): the
 // first segment gets the tail from the selection start to its own end, each segment strictly in
 // between gets its full length, and the last segment gets the head from its own start to the
-// selection end. `segs` must already be in document order. Split out from useHighlightPopup so
-// this — the part that previously caused a real bug (a middle segment's length has to come from
-// stored segment data, not rendered DOM textContent, which can include extra characters like a
-// translator-note asterisk — see useHighlightPopup's own `fullLen` comment) — is unit-testable
-// without a DOM.
+// selection end. `segs` must already be in document order, and each `fullLen` has to come from
+// the stored segment text rather than rendered DOM textContent, which carries characters that
+// aren't part of it (see useHighlightPopup's own `fullLen` comment). Kept out of the hook so it
+// is unit-testable without a DOM.
 export function buildCrossSegmentRanges(
   segs: { i: number; fullLen: number }[],
   startOffset: number,

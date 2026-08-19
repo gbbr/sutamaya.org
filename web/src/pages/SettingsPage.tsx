@@ -9,11 +9,10 @@ import { GoogleSignInButton } from '../components/GoogleSignInButton';
 import { EmailCodeSignIn } from '../components/EmailCodeSignIn';
 import { dataApi } from '../lib/api';
 import { flatSuttaOrder } from '../lib/corpus';
+import { isTypingTarget } from '../lib/shortcuts';
 import { isIosBrowserTab } from '../lib/localAccount';
 import {
   cachedCorpusVersions,
-  clearCachedDictionary,
-  clearCachedText,
   estimateOfflineStatus,
   isOfflineTextStale,
   prefetchAllSuttas,
@@ -245,17 +244,18 @@ export function SettingsPage({ location }: RouteComponentProps) {
     setFailedCount(0);
     setCircuitTripped(false);
     setDictionaryFailed(false);
-    // Clears first whenever this device can't vouch for what's already cached being current: a
-    // known-stale previous version, or no completed download to have verified it in the first
-    // place (reactively-cached suttas from browsing may predate this build). prefetchAllSuttas
-    // skips every uid already present and prefetchDictionary skips every shard already cached, so
-    // re-running them over a cache we can't vouch for would report success without replacing a
-    // single stale byte. Skipped only when the recorded version already matches, so an interrupted
-    // download on an otherwise-current device still resumes rather than restarting. The two are
-    // cleared independently — a reworded sutta shouldn't cost a ~2.6MB dictionary re-fetch.
+    // Whenever this device can't vouch for what's already cached being current — a known-stale
+    // recorded version, or no completed download to have verified it in the first place, since
+    // reactively-cached suttas from ordinary browsing may predate this build — every shard is
+    // refetched and overwritten in place rather than skipped. Without that, both prefetchers skip
+    // what they already hold and the "refresh" reports success without replacing a stale byte.
+    // Overwriting rather than deleting the cache first is what keeps a download that fails or is
+    // cancelled from leaving the device with *less* offline text than it started with. The two
+    // versions are tracked independently, so reworded sutta text doesn't cost a ~2.6MB dictionary
+    // refetch; a matching version means an interrupted download resumes instead of restarting.
     const versions = cachedCorpusVersions();
-    if (versions.data !== corpus.dataVersion) await clearCachedText();
-    if (versions.dictionary !== corpus.dictionaryVersion) await clearCachedDictionary();
+    const forceText = versions.data !== corpus.dataVersion;
+    const forceDictionary = versions.dictionary !== corpus.dictionaryVersion;
     // catch, not just finally — prefetchAllSuttas is designed to resolve normally even when
     // individual suttas fail (that's what the returned `failed` list is for), but this still
     // guards against something genuinely unexpected (e.g. Cache Storage itself unavailable)
@@ -268,9 +268,10 @@ export function SettingsPage({ location }: RouteComponentProps) {
       const [{ failed, circuitTripped: tripped }, dictionaryOk] = await Promise.all([
         prefetchAllSuttas(uids, {
           signal: controller.signal,
+          force: forceText,
           onProgress: (done, total) => setProgress({ done, total }),
         }),
-        prefetchDictionary(controller.signal),
+        prefetchDictionary(controller.signal, forceDictionary),
       ]);
       setFailedCount(failed.length);
       setCircuitTripped(tripped);
@@ -294,11 +295,12 @@ export function SettingsPage({ location }: RouteComponentProps) {
   }
 
   // Same "return to wherever the user actually was" as the "Back" button above (see its own
-  // comment) — Escape is the conventional "leave this screen" key, and there's no free-text
-  // field here whose own Escape handling would need to take priority over it.
+  // comment) — Escape is the conventional "leave this screen" key. It stands down while a text
+  // field has focus: the sign-in card's email and six-digit code inputs are both here, and
+  // abandoning the page mid-entry would throw away a code the user has to request again.
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') backToLastLocation();
+      if (e.key === 'Escape' && !isTypingTarget(e)) backToLastLocation();
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);

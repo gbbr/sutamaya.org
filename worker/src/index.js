@@ -38,7 +38,7 @@ app.get('/api/health', async (c) => {
 app.route('/api/auth', authRouter);
 app.route('/api/lists', listsRouter);
 // Mounted at /api, not /api/annotations — its routes are /notes/*, /highlights/* and /visited/*,
-// which are the client's actual paths (same as the Express original).
+// which are the client's actual paths.
 app.route('/api', annotationsRouter);
 app.route('/api/data', dataRouter);
 

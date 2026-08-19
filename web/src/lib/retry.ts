@@ -20,7 +20,7 @@ export function statusOf(err: unknown): number | undefined {
 // Retries `fn` with the app's standard backoff schedule for a flaky network call: a couple of
 // silent retries first (offline blips, a cold CDN edge), rejecting with the last error only once
 // those are exhausted or the failure is permanent. Shared by AuthContext (loading the signed-in
-// session) and useSuttaText (loading a sutta's text), both of which used to duplicate this loop.
+// session) and useSuttaText (loading a sutta's text).
 export async function retryWithBackoff<T>(fn: () => Promise<T>): Promise<T> {
   for (let attempt = 0; ; attempt += 1) {
     try {

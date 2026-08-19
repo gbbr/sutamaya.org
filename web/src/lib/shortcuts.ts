@@ -18,7 +18,7 @@ export const SHORTCUTS = {
   // TreePane's own search-hit navigation and LibraryPage's browse-row navigation, since both are
   // the same "arrow to move the highlight, enter to open it" action applied to two different lists.
   librarySearch: { match: ['/'], keys: ['/'], label: 'Search the library (Esc to close)', scope: 'library' },
-  libraryToggleLists: { match: ['x'], keys: ['X'], label: 'Switch Library / My Lists (signed in)', scope: 'library' },
+  libraryToggleLists: { match: ['x'], keys: ['X'], label: 'Switch Library / My Lists', scope: 'library' },
   librarySelectMove: { match: ['ArrowUp', 'ArrowDown'], keys: ['↑', '↓'], label: 'Move the highlighted row (or search result)', scope: 'library' },
   librarySelectOpen: { match: ['Enter'], keys: ['Enter'], label: 'Open the highlighted sutta', scope: 'library' },
   libraryHelp: { match: ['?'], keys: ['?'], label: 'Show keyboard shortcuts', scope: 'library' },

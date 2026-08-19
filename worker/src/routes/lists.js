@@ -80,11 +80,11 @@ async function invalidReparentReason(db, userId, parentId, movingIds) {
 // rejections — 404 for a list that doesn't exist (for this user), 400 for a group. Reported as
 // data rather than written as a response, since a Hono handler owns its own return value.
 //
-// Deliberately unfiltered on `deleted`, and load-bearingly so: membership stays operation-based
-// (see the plan's "records for most things, operations for membership"), so an add queued offline
-// can arrive after the list's own delete. Treating the tombstone as not-found would 404 and discard
-// the add — the exact silent loss this all exists to prevent. It lands on the dead row instead,
-// invisible to every read path, and returns with the list if it is ever resurrected.
+// Deliberately unfiltered on `deleted`, and load-bearingly so: membership travels as operations
+// rather than as record state (see docs/offline-sync.md), so an add queued offline can arrive
+// after the list's own delete. Treating the tombstone as not-found would 404 and discard the add —
+// the exact silent loss this all exists to prevent. It lands on the dead row instead, invisible to
+// every read path, and returns with the list if that is ever un-deleted.
 async function suttaListRow(db, userId, id) {
   const row = await db.prepare('SELECT items, kind FROM lists WHERE id = ? AND user_id = ?').bind(id, userId).first();
   if (!row) return { error: 'not_found', status: 404 };
@@ -255,10 +255,10 @@ listsRouter.put('/order', async (c) => {
 // row that push is indistinguishable from a fresh creation.
 //
 // A deleted group's children are left pointing at the dead row rather than re-parented here: the
-// read-time repair in lib/listTree.js re-homes them to the root, which is both the same outcome and
-// the only one two devices can agree on without talking to each other. That also retires this
-// handler's old children/siblings SELECTs, and with them the non-atomic read-then-write they sat in
-// (D1 has no interactive transactions, so those reads were never part of the batch that followed).
+// read-time repair in lib/listTree.js cascades them out, which is the only outcome two devices can
+// agree on without talking to each other. It also keeps this handler to a single statement — a
+// subtree walk here would need a read-then-write that D1 can't make atomic, having no interactive
+// transactions.
 //
 // Conditional on mtime like every other write, so a stale offline delete can't take out a list
 // renamed or refilled more recently elsewhere. `meta.changes === 0` therefore covers both "no such
@@ -315,8 +315,8 @@ const REMOVE_ITEM_SQL = `
 `;
 
 listsRouter.delete('/:id/items/:suttaId', async (c) => {
-  // No kind check here, matching the Express original: removing an item from a group is harmless
-  // (it has none) and only the list's existence matters, which `meta.changes` already reports.
+  // No kind check here: removing an item from a group is harmless (it has none) and only the
+  // list's existence matters, which `meta.changes` already reports.
   const result = await c.env.DB.prepare(REMOVE_ITEM_SQL)
     .bind(c.req.param('id'), c.get('userId'), c.req.param('suttaId'))
     .run();

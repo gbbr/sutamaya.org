@@ -20,8 +20,8 @@ interface LayoutState extends LayoutPrefs {
 }
 
 // The tree pane's width before the user ever drags the divider, and what "Reset" restores.
-// Exported so the test measuring a drag can start from it rather than from its own copy of the
-// number, which silently went stale the first time this changed.
+// Exported so the test measuring a drag starts from this value rather than its own copy, which
+// would go stale the moment this one changes.
 export const DEFAULT_TREE_W = 300;
 
 const DEFAULTS: LayoutPrefs = { treeW: DEFAULT_TREE_W };

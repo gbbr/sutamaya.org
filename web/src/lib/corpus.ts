@@ -10,8 +10,8 @@ export async function loadCorpus(): Promise<Corpus> {
 // The dictionary is not loaded here at all — it's fetched one range shard at a time, on the tap
 // that needs it. See lib/dictionaryShards.ts.
 
-// SuttaCentral's own structural role for this segment (see scripts/fetch-html-structure.mjs and
-// build-corpus.mjs's roleFor()) — omitted for the common "plain prose" case.
+// SuttaCentral's own structural role for this segment, derived at build time from `data/html/`
+// (see build-corpus.mjs's roleFor()) — omitted for the common "plain prose" case.
 export type SegmentRole = 'verse' | 'heading' | 'end' | 'speaker' | 'list-item';
 
 export interface SegmentFile {
@@ -206,6 +206,11 @@ export interface SearchHit {
 // AUTO_LIST_CAP pattern as worker/src/lib/userData.js's auto-lists) — searchCorpus itself still
 // returns every match so a caller can show an accurate total count.
 export const SEARCH_RESULTS_CAP = 80;
+
+// What both search inputs (TreePane's and ReaderSearchOverlay's) offer to match on. Named here,
+// beside searchCorpus itself, so the promise and the fields it actually scans can't drift apart —
+// note that the sutta *text* is not among them.
+export const SEARCH_PLACEHOLDER = 'Search ID, title, blurb, note';
 
 // Case- and diacritic-insensitive comparison key — Pali romanization leans heavily on combining
 // marks (ā, ī, ū, ñ, ṭ, ḍ, ṇ, ḷ, ṁ, …) that most people don't bother typing, so a search for

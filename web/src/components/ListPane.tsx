@@ -67,9 +67,9 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
   }, [hits]);
 
   // Chips/highlight-count per row, keyed off `items` rather than the reorder-drag's own
-  // `displayItems` — `items` (and therefore this map) doesn't change while a drag reshuffles
-  // display order, so dragging a list no longer recomputes every visible row's chip/highlight
-  // lookups on every rAF tick, just the moved row's position.
+  // `displayItems`: `items` doesn't change while a drag reshuffles display order, so this map
+  // survives the whole gesture instead of every visible row's chip/highlight lookups being
+  // recomputed on each rAF tick.
   const rowMeta = useMemo(
     () => suttaRowMeta(items.map(([id]) => id), membership, highlights, flatLists),
     [items, membership, flatLists, highlights]

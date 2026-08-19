@@ -12,9 +12,9 @@ interface ShortcutsModalProps {
 }
 
 // The "?" keyboard-shortcuts help modal, shared by LibraryPage (app-shell themed) and ReaderPage
-// (reader-themed) — both render the same `Shortcut[]` from lib/shortcuts.ts through the same
-// overlay/header/list/<kbd> structure, previously two near-identical copies differing only in how
-// each styled itself (Tailwind `ink` tokens vs. inline `theme.*` styles).
+// (reader-themed) — both render the same `Shortcut[]` from lib/shortcuts.ts through one
+// overlay/header/list/<kbd> structure. The only difference is how it's styled: Tailwind `ink`
+// tokens when no `theme` is passed, inline `theme.*` styles when one is.
 export function ShortcutsModal({ shortcuts, onClose, theme }: ShortcutsModalProps) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center animate-fadeIn" style={{ background: 'rgba(0,0,0,.35)' }} onClick={onClose}>

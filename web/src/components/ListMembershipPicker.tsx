@@ -151,8 +151,10 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       const list = await createList(row.name, parentId, isGroup ? 'group' : 'list');
       // A freshly created group can't hold the sutta — nothing to add it to.
       if (!isGroup) await addToList(suttaId, list);
-    } catch {
-      // Signed out: createList() already triggered the Google sign-in prompt.
+    } catch (e) {
+      // Both write to the local mirror and can't fail on the network, so this only catches
+      // something genuinely unexpected — enough to release the re-entrancy guard below.
+      console.error('list create failed', e);
     } finally {
       creatingRef.current = false;
     }

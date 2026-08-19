@@ -3,7 +3,7 @@ import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
-import { SEARCH_RESULTS_CAP } from '../lib/corpus';
+import { SEARCH_PLACEHOLDER, SEARCH_RESULTS_CAP } from '../lib/corpus';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { SuttaRowChips } from './SuttaRowChips';
 import type { ThemeColors } from '../lib/types';
@@ -83,7 +83,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={onKeyDown}
-          placeholder="Search ID, title, blurb, note, text"
+          placeholder={SEARCH_PLACEHOLDER}
           autoComplete="off"
           autoCorrect="off"
           autoCapitalize="off"

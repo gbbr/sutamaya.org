@@ -26,9 +26,8 @@ interface UseReaderKeyboardOptions {
 }
 
 // All of the reader's single-key shortcuts (see lib/shortcuts.ts's SHORTCUTS.reader*), in one
-// window-level keydown listener. Pulled out of ReaderPage.tsx as a faithful move (same
-// conditions, same order, same dependency tracking) — see useReaderKeyboard.test.tsx for
-// per-shortcut coverage of the ordering this depends on.
+// window-level keydown listener. The order the branches are checked in is load-bearing — see
+// useReaderKeyboard.test.tsx, which covers it per shortcut.
 export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
   const {
     shortcutsOpen,
@@ -90,11 +89,10 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
         e.preventDefault();
         setSearchOpen(true);
       } else if (isShortcut(e, SHORTCUTS.readerNav)) {
-        // Shift+Arrow steps sutta-to-sutta (readerNav); plain Arrow is reserved for the
-        // dictionary dock's own prev/next word (readerDictNav) and is a no-op with the dock
-        // closed — it no longer falls back to sutta-to-sutta. Both share the same `match`, so
-        // isShortcut() alone can't tell them apart (it deliberately ignores Shift — see its own
-        // comment); the split happens here.
+        // Shift+Arrow steps sutta-to-sutta (readerNav); plain Arrow belongs to the dictionary
+        // dock's own prev/next word (readerDictNav) and does nothing with the dock closed. Both
+        // share the same `match`, so isShortcut() alone can't tell them apart (it deliberately
+        // ignores Shift — see its own comment); the split happens here.
         if (e.shiftKey) {
           step(e.key === 'ArrowLeft' ? -1 : 1);
         } else if (dict) {

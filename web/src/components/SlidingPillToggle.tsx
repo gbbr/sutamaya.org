@@ -20,13 +20,12 @@ interface SlidingPillToggleProps {
   onMouseDown?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-// A two-state pill toggle with a sliding thumb behind whichever icon is active — shared by
-// TreePane's Library/My-lists pane switch and ListsTreeView's List/Group draft-kind picker
-// (previously two near-identical copies of the same track/thumb/icon-span markup and position
-// math, differing only in size and color scheme). `thumbClassName`/`*IconClassName` are left to
-// the caller rather than folded into more props here, since that's the one thing that genuinely
-// differs between the two homes: TreePane tints the thumb itself (an accent color) to signal the
-// view switch, while ListsTreeView keeps the thumb neutral and only tints the icon.
+// A two-state pill toggle with a sliding thumb behind whichever icon is active — one set of
+// track/thumb/icon-span markup and position math, shared by TreePane's Library/My-lists pane
+// switch and ListsTreeView's List/Group draft-kind picker. `thumbClassName`/`*IconClassName` are
+// left to the caller rather than folded into more props here, since colour is the one thing that
+// genuinely differs between the two homes: TreePane tints the thumb itself (an accent colour) to
+// signal the view switch, while ListsTreeView keeps the thumb neutral and only tints the icon.
 export function SlidingPillToggle({
   active,
   onClick,

@@ -20,8 +20,6 @@ vi.mock('../lib/offline', () => ({
   cachedCorpusVersions: vi.fn(() => ({ data: null, dictionary: null })),
   recordCachedCorpusVersion: vi.fn(),
   isOfflineTextStale: vi.fn(() => false),
-  clearCachedText: vi.fn(async () => {}),
-  clearCachedDictionary: vi.fn(async () => {}),
 }));
 
 import { useAuth } from '../context/AuthContext';
@@ -30,8 +28,6 @@ import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import {
   cachedCorpusVersions,
-  clearCachedDictionary,
-  clearCachedText,
   isOfflineTextStale,
   prefetchAllSuttas,
   prefetchDictionary,
@@ -112,10 +108,8 @@ beforeEach(() => {
   // nothing downloaded before, nothing stale, every download succeeding.
   vi.mocked(isOfflineTextStale).mockReturnValue(false);
   vi.mocked(cachedCorpusVersions).mockReturnValue({ data: null, dictionary: null });
-  vi.mocked(prefetchAllSuttas).mockResolvedValue({ failed: [], circuitTripped: false });
-  vi.mocked(prefetchDictionary).mockResolvedValue(true);
-  vi.mocked(clearCachedText).mockClear();
-  vi.mocked(clearCachedDictionary).mockClear();
+  vi.mocked(prefetchAllSuttas).mockClear().mockResolvedValue({ failed: [], circuitTripped: false });
+  vi.mocked(prefetchDictionary).mockClear().mockResolvedValue(true);
   vi.mocked(recordCachedCorpusVersion).mockClear();
 });
 
@@ -263,24 +257,34 @@ describe('refreshing a stale offline copy', () => {
     expect(screen.queryByText('All suttas available offline.')).not.toBeInTheDocument();
   });
 
-  // Without the clear, prefetchAllSuttas skips every already-cached uid and the "refresh" replaces
+  // Without forcing, prefetchAllSuttas skips every already-cached uid and the "refresh" replaces
   // nothing while still reporting success.
-  it('drops the sutta-text cache first when the cached text is behind the build', async () => {
+  it('refetches every sutta shard when the cached text is behind the build', async () => {
     vi.mocked(isOfflineTextStale).mockReturnValue(true);
     vi.mocked(cachedCorpusVersions).mockReturnValue({ data: 'data-v1', dictionary: 'dict-v2' });
     renderSettings();
     await userEvent.click(screen.getByText('Re-download updated suttas'));
-    expect(clearCachedText).toHaveBeenCalled();
-    // Dictionary version unchanged — a reworded sutta must not cost a ~20MB re-fetch.
-    expect(clearCachedDictionary).not.toHaveBeenCalled();
+    expect(vi.mocked(prefetchAllSuttas).mock.calls[0][1]).toMatchObject({ force: true });
+    // Dictionary version unchanged — a reworded sutta must not cost a ~2.6MB re-fetch.
+    expect(vi.mocked(prefetchDictionary).mock.calls[0][1]).toBe(false);
   });
 
-  it('drops the dictionary cache only when the dictionary itself changed', async () => {
+  it('refetches the dictionary only when the dictionary itself changed', async () => {
     vi.mocked(cachedCorpusVersions).mockReturnValue({ data: 'data-v2', dictionary: 'dict-v1' });
     renderSettings();
     await userEvent.click(screen.getByText('Download all suttas for offline'));
-    expect(clearCachedDictionary).toHaveBeenCalled();
-    expect(clearCachedText).not.toHaveBeenCalled();
+    expect(vi.mocked(prefetchDictionary).mock.calls[0][1]).toBe(true);
+    expect(vi.mocked(prefetchAllSuttas).mock.calls[0][1]).toMatchObject({ force: false });
+  });
+
+  // A device that has never completed a download can't vouch for whatever ordinary browsing left
+  // in the cache, so it refetches everything — but nothing is deleted up front, so a download that
+  // fails or is cancelled can't leave it with less offline text than it started with.
+  it('refetches everything, without clearing, on a first-ever download', async () => {
+    renderSettings();
+    await userEvent.click(screen.getByText('Download all suttas for offline'));
+    expect(vi.mocked(prefetchAllSuttas).mock.calls[0][1]).toMatchObject({ force: true });
+    expect(vi.mocked(prefetchDictionary).mock.calls[0][1]).toBe(true);
   });
 
   it('records both versions once the download finishes cleanly', async () => {

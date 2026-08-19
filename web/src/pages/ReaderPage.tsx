@@ -147,11 +147,11 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     setOpenSegs,
   });
 
-  // A sutta only counts as "visited" once the reader has actually stayed open on it for a
-  // meaningful fraction of its estimated reading time — marking it the instant it opens (the old
-  // behavior) meant a single Prev/Next flick-through marked everything it passed as read, making
-  // the "read" checkmark (ListPane) not mean much. Cancelled (never marked) if the
-  // sutta changes — Prev/Next, closing, a deep link elsewhere — before the dwell time elapses.
+  // A sutta only counts as "visited" once the reader has stayed open on it for a meaningful
+  // fraction of its estimated reading time. Marking on open instead would let a single Prev/Next
+  // flick-through mark everything it passed as read, leaving the "read" checkmark (ListPane)
+  // meaning little. Cancelled — never marked — if the sutta changes (Prev/Next, closing, a deep
+  // link elsewhere) before the dwell time elapses.
   useEffect(() => {
     if (!suttaId || !sutta) return;
     const dwellMs = Math.max(1000, sutta.min * 60 * 1000 * 0.3);

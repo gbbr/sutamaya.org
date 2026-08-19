@@ -3,9 +3,9 @@ export interface ItemMidpoint {
   mid: number;
 }
 
-// Pure reposition logic for ListPane's own sutta-item drag reorder — pulled out of
-// updateDragTarget so "which index does this vertical position resolve to, and what does
-// removing+reinserting the dragged id there produce" is testable without real DOM rects. `mids`
+// Pure reposition logic for ListPane's own sutta-item drag reorder — kept out of the component
+// so "which index does this vertical position resolve to, and what does removing and reinserting
+// the dragged id there produce" is testable without real DOM rects. `mids`
 // are each item's current vertical midpoint (an item with no measured row yet is already filtered
 // out by the caller). Returns the same `order` reference, not a copy, when the drop position
 // hasn't actually changed — lets a caller (a React state updater) bail out via referential

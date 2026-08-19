@@ -6,9 +6,10 @@ import type { ListDef, ListKind } from '../lib/types';
 const BLOCKED_DELETE_MS = 4000;
 
 // What's stopping a delete: a group with lists/groups still nested inside it, or a list with
-// suttas still in it. Deleting either today would silently discard content (a group's children
-// get bounced up to its own parent server-side, see routes/lists.js — not what "delete" should
-// mean here; a list's `items` are just gone) rather than actually confirming the user wants that.
+// suttas still in it. Either would discard content the confirmation prompt doesn't mention —
+// deleting a group takes every list nested under it with it (the cascade in lib/listTree.ts and
+// its server counterpart), and a list's `items` go with the list — so the row has to be emptied
+// first, or the delete armed past this block with a Shift+click on the bin icon (see ListRow).
 export interface BlockedDelete {
   id: string;
   count: number;
@@ -177,8 +178,10 @@ export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, cr
     try {
       const list = await createList(name, parentId, kind);
       onCreated?.(list);
-    } catch {
-      // Signed out: createList() already triggered the Google sign-in prompt.
+    } catch (e) {
+      // createList writes to the local mirror and can't fail on the network, so this only catches
+      // something genuinely unexpected — enough to keep the draft input from staying stuck open.
+      console.error('list create failed', e);
     } finally {
       setSubmittingParentId(undefined);
     }

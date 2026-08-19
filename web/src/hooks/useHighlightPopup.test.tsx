@@ -69,6 +69,40 @@ describe('useHighlightPopup', () => {
       expect(result.current.pop?.on).toBeNull();
     });
 
+    // A list-item segment renders its "1." marker, and any segment with a translator note renders
+    // an asterisk, inside the same [data-seg] paragraph — neither is part of the stored `en` text,
+    // and SegmentedText marks both `data-seg-ignore`. Range.toString() counts them regardless of
+    // `user-select: none`, so without discounting them every offset taken in such a segment lands
+    // a couple of characters right of what was selected.
+    it('discounts rendered text that is not part of the segment', async () => {
+      mockUserData();
+      const root = document.createElement('div');
+      root.setAttribute('data-segroot', '');
+      const p = document.createElement('p');
+      p.dataset.seg = '0';
+      const marker = document.createElement('span');
+      marker.setAttribute('data-seg-ignore', '');
+      marker.textContent = '1.';
+      const body = document.createTextNode('Hello world');
+      const note = document.createElement('sup');
+      note.setAttribute('data-seg-ignore', '');
+      note.textContent = '*';
+      p.append(marker, body, note);
+      root.appendChild(p);
+      document.body.appendChild(root);
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', [], null));
+
+      const range = document.createRange();
+      range.setStart(body, 0);
+      range.setEnd(body, 5); // "Hello"
+      const sel = window.getSelection();
+      sel?.removeAllRanges();
+      sel?.addRange(range);
+      await triggerTextUp(result.current.onTextUp);
+
+      expect(result.current.pop?.ranges).toEqual([{ i: 0, s: 0, e: 5 }]);
+    });
+
     it('collapses to null when the selection is empty', async () => {
       mockUserData();
       const { segs } = buildSegRoot(['Hello world']);
