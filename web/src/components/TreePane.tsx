@@ -480,7 +480,7 @@ export function TreePane({
     >
       <header className="flex-none px-[18px] pt-4 pb-3.5 border-b border-ink/10">
         <div className="flex items-center gap-2">
-          <div className="text-[22px] font-semibold tracking-[-.01em] flex-1 truncate">sutamaya</div>
+          <div className="text-[22px] font-semibold tracking-[-.01em] flex-1 truncate" style={{ fontFamily: 'Newsreader, Georgia, serif' }}>sutamaya</div>
           {/* Mobile-sized to roughly match the "sutamaya" title's own height — this and the
               account badge next to it are the two touch targets in this row people actually
               reach for repeatedly. */}
