@@ -25,6 +25,7 @@ export default {
         'accent-text': 'rgb(var(--accent-text) / <alpha-value>)',
         'accent-hover': '#6B5230',
         'danger-text': 'rgb(var(--danger-text) / <alpha-value>)',
+        'warning-text': 'rgb(var(--warning-text) / <alpha-value>)',
         selection: 'rgb(var(--selection) / <alpha-value>)',
         'pill-lists': 'rgb(var(--pill-lists) / <alpha-value>)',
         'hl-amber': '#F0E3A8',
