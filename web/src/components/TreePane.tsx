@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { navigate } from '@reach/router';
-import { Settings, Highlighter, StickyNote, History, Library, List, Search, X, Download } from 'lucide-react';
+import { Settings, Highlighter, StickyNote, History, Library, List, Search, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
@@ -14,21 +14,12 @@ import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
 import { ancestorsOf, findNode, flatSuttaOrder, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
 import { ancestorsOfList, flattenListTree, suttaRowMeta } from '../lib/lists';
 import { derivePaneViewSync } from '../lib/paneView';
-import { estimateOfflineStatus, isOfflineTextStale } from '../lib/offline';
-import {
-  isStandalone,
-  hasOpenedSutta,
-  isOfflineNudgeDismissed,
-  dismissOfflineNudge,
-  dismissedOfflineUpdateVersion,
-  dismissOfflineUpdate,
-} from '../lib/pwaNudge';
 import { TREE_VIEW_KEY, TREE_EXPANDED_KEY } from '../lib/storageKeys';
 import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
 import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
 import type { ListDef } from '../lib/types';
 import { SignedInBadge } from './SignedInBadge';
-import { SyncIndicator } from './SyncIndicator';
+import { HeaderBanner } from './HeaderBanner';
 import { SuttaRowChips } from './SuttaRowChips';
 import { type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
 import { CorpusTreeView } from './CorpusTreeView';
@@ -123,55 +114,9 @@ export function TreePane({
     removeList,
     reorderLists,
     setListParent,
-    syncStatus,
-    pendingCount,
-    needsReauth,
   } = useUserData();
   const { user, promptGoogleSignIn } = useAuth();
   const { mobile, paneW } = useLayout();
-
-  // Two nudges sharing one banner slot below the header, made mutually exclusive by whether the
-  // corpus is fully cached: download it for offline reading, or — once it is — refresh a copy
-  // that's fallen behind the text this build serves. The dismissal state and `hasOpenedSutta` are
-  // read once per mount (not subscribed live) since TreePane remounts on the route boundary that
-  // actually changes them (returning from /read/:suttaId), and each dismiss button sets local
-  // state directly rather than waiting for a remount.
-  const [nudgeDismissed, setNudgeDismissed] = useState(() => isOfflineNudgeDismissed());
-  const [updateDismissedVersion, setUpdateDismissedVersion] = useState(() => dismissedOfflineUpdateVersion());
-  const [offlineCachedStatus, setOfflineCachedStatus] = useState<{ cached: number; total: number } | null>(null);
-  // The download nudge is PWA-only: asking for ~28MB in a passing browser tab is pushy, and it's
-  // an installed app that has any use for the whole canon. The update nudge isn't, because it can
-  // only fire for someone who already *finished* that download — they've committed to offline
-  // reading whether or not they installed the app, and CacheFirst serves them the same stale text
-  // in a tab as in the PWA, so hiding it there just leaves them silently a year behind.
-  const downloadNudgeEligible = isStandalone() && hasOpenedSutta();
-  const textStale = !!corpus && isOfflineTextStale(corpus.dataVersion);
-  useEffect(() => {
-    // Cache Storage membership over the whole corpus isn't free — only bother once the cheap,
-    // synchronous checks above already say a banner could plausibly show. `textStale` is one of
-    // those checks (a localStorage compare), and is false for anyone who never bulk-downloaded,
-    // which is what keeps this probe off the common path.
-    if (!corpus || !(downloadNudgeEligible || textStale)) return;
-    let cancelled = false;
-    estimateOfflineStatus(flatSuttaOrder(corpus)).then((s) => {
-      if (!cancelled) setOfflineCachedStatus(s);
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, [corpus, downloadNudgeEligible, textStale]);
-  const fullyCached = !!offlineCachedStatus && offlineCachedStatus.cached >= offlineCachedStatus.total;
-  const showOfflineNudge = downloadNudgeEligible && !nudgeDismissed && !!offlineCachedStatus && !fullyCached;
-  const showUpdateNudge = textStale && fullyCached && !!corpus && updateDismissedVersion !== corpus.dataVersion;
-  function dismissOfflineNudgeBanner() {
-    dismissOfflineNudge();
-    setNudgeDismissed(true);
-  }
-  function dismissUpdateNudgeBanner() {
-    if (!corpus) return;
-    dismissOfflineUpdate(corpus.dataVersion);
-    setUpdateDismissedVersion(corpus.dataVersion);
-  }
 
   const scrollRef = useScrollMemory<HTMLDivElement>('tree', visible);
   // Computed synchronously on mount (not via an effect) so the tree is *already* expanded to
@@ -579,17 +524,6 @@ export function TreePane({
                 <Settings size={mobile ? 20 : 16} strokeWidth={1.75} />
               </button>
             )}
-            {/* Only meaningful once signed in — there's nothing to sync while signed out, and the
-                queue itself sits empty (see UserDataContext). */}
-            {user && (
-              <SyncIndicator
-                status={syncStatus}
-                pendingCount={pendingCount}
-                needsReauth={needsReauth}
-                onReauth={promptGoogleSignIn}
-                size={mobile ? 26 : 22}
-              />
-            )}
             <SignedInBadge user={user} size={mobile ? 32 : 28} promptGoogleSignIn={promptGoogleSignIn} />
             {/* The badge above already goes to Settings regardless of sign-in state (see
                 SignedInBadge) — once signed in it's the one obvious account affordance, so the
@@ -638,28 +572,7 @@ export function TreePane({
         )}
       </header>
 
-      {(showOfflineNudge || showUpdateNudge) && (
-        <div className="flex-none flex items-center gap-2.5 px-[18px] py-2.5 border-b border-ink/10 bg-accent/[.06]">
-          <Download size={15} strokeWidth={1.75} className="flex-none text-ink/60" />
-          <div className="flex-1 min-w-0 font-sans text-[12.5px] text-ink/70 truncate">
-            {showUpdateNudge ? 'Updated sutta text is available' : 'Download the full canon for offline reading'}
-          </div>
-          <button
-            className="flex-none font-sans text-[12.5px] font-semibold text-accent-text underline decoration-accent-text/40 underline-offset-2"
-            onClick={() => navigate('/settings', { state: { scrollTo: 'offline' } })}
-          >
-            {showUpdateNudge ? 'Update' : 'Download'}
-          </button>
-          <button
-            className="flex-none flex items-center justify-center w-5 h-5 rounded-full text-ink/40 hover:bg-ink/[.08] hover:text-ink"
-            aria-label="Dismiss"
-            title="Dismiss"
-            onClick={showUpdateNudge ? dismissUpdateNudgeBanner : dismissOfflineNudgeBanner}
-          >
-            <X size={13} strokeWidth={2} />
-          </button>
-        </div>
-      )}
+      <HeaderBanner />
 
       <div ref={scrollRef} className="sc flex-1 py-2.5 pb-6">
         {searching ? (

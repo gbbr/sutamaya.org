@@ -221,6 +221,24 @@ describe('sync status line', () => {
     expect(screen.getByText(/couldn.t be synced/)).toBeInTheDocument();
   });
 
+  // `user` stays populated through a lapsed session (lib/lastUser.ts — clearing it would mount an
+  // empty mirror over a full one), so without this branch the section renders as an ordinary
+  // signed-in account and TreePane's re-auth banner points at a sign-in button that isn't there.
+  it('offers a way back in when the session has lapsed, without pretending the queue is moving', () => {
+    vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser() }));
+    vi.mocked(useUserData).mockReturnValue(mockUserData({ needsReauth: true, syncStatus: 'pending', pendingCount: 2 }));
+    renderSettings();
+
+    expect(screen.getByText(/Your session expired/)).toBeInTheDocument();
+    expect(document.querySelector('[data-component="GoogleSignInButton"]')).toBeInTheDocument();
+    expect(screen.queryByText('Syncing 2 changes…')).not.toBeInTheDocument();
+    // A plain link to a requireAuth route would only answer 401 and download an error body.
+    expect(screen.queryByText('Export my data as JSON')).not.toBeInTheDocument();
+    // Still their account, and POST /api/auth/logout is unauthenticated, so leaving still works.
+    expect(screen.getByText(/Signed in as/)).toBeInTheDocument();
+    expect(screen.getByText('Sign out')).toBeInTheDocument();
+  });
+
   it('reports how long ago the last sync landed once drained', () => {
     vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser() }));
     const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000).toISOString();

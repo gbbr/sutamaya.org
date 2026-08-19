@@ -62,10 +62,10 @@ function formatSyncedAt(iso: string): string {
   return `${days} day${days === 1 ? '' : 's'} ago`;
 }
 
-// One line (plus the same icon TreePane's sync indicator uses for that state — see
-// SyncIndicator.tsx) describing the offline-sync queue (see docs/offline-sync.md's "Sync state"),
-// spelled out in words for the place a user would come looking for more detail than an icon alone
-// can carry.
+// One line describing the offline-sync queue (see docs/offline-sync.md's "Sync state"). This is the
+// only place any of it is shown: the app's chrome carries nothing for the states that resolve on
+// their own (draining, offline) or that a user can't act on (permanently refused), so this is where
+// someone wondering whether their data has actually reached the server finds out.
 function syncStatusLine(
   status: SyncStatus,
   pendingCount: number,
@@ -91,7 +91,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
   const { user, logout, loading, authError } = useAuth();
   const { uiScale, uiFace, theme, setUiScale, setUiFace, setTheme } = useUiPrefs();
   const { corpus } = useCorpus();
-  const { syncStatus, pendingCount, lastSyncedAt } = useUserData();
+  const { syncStatus, pendingCount, lastSyncedAt, needsReauth } = useUserData();
 
   const [offlineStatus, setOfflineStatus] = useState<'idle' | 'downloading'>('idle');
   // done/total are bytes across the shard bundles being downloaded (see lib/offline.ts), not
@@ -411,26 +411,53 @@ export function SettingsPage({ location }: RouteComponentProps) {
             <>
               {/* This is about lists/notes/highlights syncing to the account (docs/offline-sync.md), a
                separate mechanism from the corpus caching above — grouped here anyway since both
-               read as "offline-related status" to a user, and neither means anything signed out. */}
-              {user &&
-                (() => {
-                  const { Icon, spin, text } = syncStatusLine(syncStatus, pendingCount, lastSyncedAt);
-                  return (
-                    <div className={`flex items-center gap-1.5 font-sans text-[13px] mb-6 ${syncStatus === 'stuck' ? 'text-red-600' : 'text-ink/50'}`}>
-                      <Icon size={13} strokeWidth={1.75} className={`flex-none ${spin ? 'animate-[spin_2s_linear_infinite]' : ''}`} />
-                      {text}
-                    </div>
-                  );
-                })()
-              }
-              <div className="font-sans text-[13px] text-ink/60 mb-1">Signed in as</div>
+               read as "offline-related status" to a user, and neither means anything signed out.
+               A lapsed session replaces it rather than joining it: `user` is still populated (it's
+               cached in lib/lastUser.ts and a flush 401 deliberately doesn't clear it, since that
+               would mount an empty mirror over a full one), so without this the section renders as
+               a perfectly ordinary signed-in account and the banner that sent the user here points
+               at a sign-in button that isn't there. `syncStatus` would meanwhile report the queue
+               as 'pending', which is true but misleading — nothing is being sent while paused. */}
+              {needsReauth ? (
+                <>
+                  <div className="flex items-start gap-1.5 font-sans text-[13px] mb-4 text-red-600">
+                    <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
+                    <span>
+                      Your session expired, so nothing is syncing. Your changes are saved on this device and will sync
+                      once you sign in again.
+                    </span>
+                  </div>
+                  <GoogleSignInButton />
+                  {authError && <div className="font-sans text-[13px] text-red-600 mt-2">{authError}</div>}
+                  <div className="font-sans text-[13px] text-ink/60 mb-1 mt-6">Signed in as</div>
+                </>
+              ) : (
+                <>
+                  {(() => {
+                    const { Icon, spin, text } = syncStatusLine(syncStatus, pendingCount, lastSyncedAt);
+                    return (
+                      <div className={`flex items-center gap-1.5 font-sans text-[13px] mb-6 ${syncStatus === 'stuck' ? 'text-red-600' : 'text-ink/50'}`}>
+                        <Icon size={13} strokeWidth={1.75} className={`flex-none ${spin ? 'animate-[spin_2s_linear_infinite]' : ''}`} />
+                        {text}
+                      </div>
+                    );
+                  })()}
+                  <div className="font-sans text-[13px] text-ink/60 mb-1">Signed in as</div>
+                </>
+              )}
               <div className="text-[16px] mb-3">{user.name ? `${user.name} · ${user.email}` : user.email}</div>
-              <a
-                href={dataApi.exportUrl}
-                className="block w-full text-center h-11 leading-[44px] rounded-field border border-ink/[.22] font-sans text-[14px] font-medium mb-3"
-              >
-                Export my data as JSON
-              </a>
+              {/* Hidden while the session is dead rather than left to fail: this is a plain link to
+                  a requireAuth route, so it would answer 401 and hand back an error body as a
+                  download. Sign out below stays — POST /api/auth/logout is unauthenticated, so it
+                  works either way, and leaving the account is a legitimate thing to want here. */}
+              {!needsReauth && (
+                <a
+                  href={dataApi.exportUrl}
+                  className="block w-full text-center h-11 leading-[44px] rounded-field border border-ink/[.22] font-sans text-[14px] font-medium mb-3"
+                >
+                  Export my data as JSON
+                </a>
+              )}
               <button
                 className="flex items-center justify-center gap-1.5 w-full h-11 rounded-field bg-accent text-[#FBFAF7] font-sans text-[14px] font-medium"
                 onClick={async () => {

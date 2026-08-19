@@ -233,9 +233,9 @@ describe('UserDataProvider', () => {
     });
     await reconnect();
 
-    // Surfaced as state (`needsReauth`, read by the sync indicator — see SyncIndicator.tsx) rather
-    // than by navigating away on its own: a background flush hitting a 401 shouldn't yank the
-    // reader off whatever they were doing for a lapse they haven't even noticed yet.
+    // Surfaced as state (`needsReauth`, which TreePane renders as a banner) rather than by
+    // navigating away on its own: a background flush hitting a 401 shouldn't yank the reader off
+    // whatever they were doing for a lapse they haven't even noticed yet.
     expect(promptGoogleSignIn).not.toHaveBeenCalled();
     expect(result.current.needsReauth).toBe(true);
     expect(result.current.notes.dn1).toBe('still mine');

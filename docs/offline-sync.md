@@ -216,9 +216,15 @@ collapses key off that.
 `syncCounts()` reports how many records/ops are dirty and how many of those the server has
 permanently rejected; `UserDataContext` combines that with the browser's `online`/`offline` events
 into `'synced' | 'pending' | 'offline' | 'stuck'`. `'offline'` wins over everything, then `'stuck'`,
-then a plain `'pending'` count. `SyncIndicator` renders it beside the account badge in `TreePane`
-(the one piece of chrome visible on every load); `SettingsPage` spells it out in words along with
-`lastSyncedAt`, set only when a flush fully drains and pulls.
+then a plain `'pending'` count. `SettingsPage` spells it out in words along with `lastSyncedAt` (set
+only when a flush fully drains and pulls), and that is the only place any of it is shown.
+
+The app's chrome deliberately carries none of it. `'pending'` drains in a couple of seconds and
+implying doubt about a write that is already durable locally works against the whole local-first
+model; `'offline'` is something the device already says, and changes nothing about whether the work
+is safe; `'stuck'` retries forever and resolves itself once whatever refused it is fixed, so there
+is nothing for the user to do. `needsReauth` is the exception and gets a banner of its own — see
+below.
 
 A record or op the server permanently refuses (a 400, or an id collision that outlives every retry)
 is marked `rejected` — still dirty, still retried, but now something `'stuck'` can read, rather than
@@ -226,8 +232,17 @@ being retried forever with only a `console.error` to show for it.
 
 A 401 sets `needsReauth` and pauses the flush with the queue intact. It deliberately does *not* call
 `promptGoogleSignIn()` itself: that navigates to Settings, and firing it from a background flush
-would yank the reader away mid-sutta for a lapse they haven't noticed. It fires from a real click on
-the indicator instead.
+would yank the reader away mid-sutta for a lapse they haven't noticed. It fires from a real click
+instead — on the banner `TreePane` shows below its header, sharing the slot the two offline nudges
+use and taking priority over both.
+
+That banner is the only sync state the app's chrome shows, because a lapsed session is the only one
+the UI otherwise misrepresents: `AuthContext` seeds `user` from `lib/lastUser.ts`, so the account
+badge still shows a signed-in user, and every list, note and highlight still reads and writes
+against the local mirror. Nothing looks wrong while nothing reaches the server, and it stays that
+way indefinitely — the pause stands every automatic trigger down, and only a fresh sign-in (the
+`[user]` effect in `UserDataContext`, keyed on object identity so re-authing the same account still
+counts) clears it.
 
 ## Invariants
 

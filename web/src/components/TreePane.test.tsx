@@ -675,26 +675,15 @@ describe('offline text update nudge', () => {
   });
 });
 
-describe('sync indicator', () => {
-  it('renders beside the account badge once signed in, reflecting the sync state', () => {
-    userData = mockUserData({ syncStatus: 'pending', pendingCount: 2 });
+describe('sync state', () => {
+  // Only a lapsed session gets chrome here. The rest resolve on their own (draining, offline) or
+  // can't be acted on (permanently refused), and are spelled out in Settings instead.
+  it.each(['pending', 'offline', 'stuck'] as const)('shows nothing for %s', (syncStatus) => {
+    userData = mockUserData({ syncStatus, pendingCount: 2 });
     vi.mocked(useUserData).mockImplementation(() => userData);
     renderHarness();
-    expect(screen.getByLabelText('Syncing 2 changes')).toBeInTheDocument();
-  });
-
-  it('is absent while signed out — there is nothing to sync', () => {
-    vi.mocked(useAuth).mockReturnValue({
-      user: null,
-      loading: false,
-      googleReady: true,
-      authError: null,
-      loginWithGoogle: vi.fn(async () => {}),
-      promptGoogleSignIn: vi.fn(),
-      logout: vi.fn(async () => {}),
-    });
-    renderHarness();
-    expect(screen.queryByLabelText('Synced')).not.toBeInTheDocument();
+    expect(screen.queryByText(/aren't syncing/)).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Sign in' })).not.toBeInTheDocument();
   });
 
   it('surfaces a lapsed session and calls promptGoogleSignIn on click, without navigating on its own', async () => {
@@ -712,9 +701,22 @@ describe('sync indicator', () => {
     vi.mocked(useUserData).mockImplementation(() => userData);
     renderHarness();
 
+    expect(screen.getByText(/aren't syncing/)).toBeInTheDocument();
     // Only the user's own click calls it — nothing on the auth or sync side does so on its own
     // (see UserDataContext.tsx's flush(), which sets `needsReauth` rather than navigating away).
-    await userEvent.click(screen.getByLabelText(/Sign-in expired/));
+    await userEvent.click(screen.getByRole('button', { name: 'Sign in' }));
     expect(promptGoogleSignIn).toHaveBeenCalled();
+  });
+
+  it('takes the banner slot from an offline nudge that would otherwise show', async () => {
+    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(hasOpenedSutta).mockReturnValue(true);
+    vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 0, total: 10 });
+    userData = mockUserData({ needsReauth: true });
+    vi.mocked(useUserData).mockImplementation(() => userData);
+    renderHarness();
+
+    expect(await screen.findByText(/aren't syncing/)).toBeInTheDocument();
+    expect(screen.queryByText(/Download the full canon/)).not.toBeInTheDocument();
   });
 });
