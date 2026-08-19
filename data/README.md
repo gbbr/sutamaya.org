@@ -16,10 +16,10 @@ data/
     name/             Pali titles
     sutta/             Pali text, segmented
   sujato/
-    name/             English titles (Sujato translation)
+    name/             English titles (Bhikkhu Sujato translation)
     blurb/            one-paragraph descriptions
-    sutta/             English text, segmented (Sujato translation)
-    notes/             Sujato's translator footnotes, segment-keyed
+    sutta/             English text, segmented (Bhikkhu Sujato translation)
+    notes/             Bhikkhu Sujato's translator footnotes, segment-keyed
   sujato.post/         generated, gitignored: `sujato/` with this app's editorial rules applied —
                         what build-corpus actually reads. See ../docs/retranslation.md
   html/pli/ms/sutta/   SuttaCentral's per-segment HTML structure (verse/heading/end/speaker/
@@ -32,7 +32,7 @@ Everything is keyed by a **uid** (`dn1`, `sn1.1`, `an1.2`, ...) and a **segment 
 `1.1.2`, ...); `uid:segment_id` is the atomic key used throughout. `pali/sutta/` and
 `html/pli/ms/sutta/` always share the exact same segment ids for the same uid (same document, two
 renderings of it); `sujato/sutta/` shares them too except for a handful of Pali-only scribal
-colophon lines Sujato's translation legitimately skips — that's the alignment that makes
+colophon lines Bhikkhu Sujato's translation legitimately skips — that's the alignment that makes
 interlinear Pali possible. Files under `sutta/` are range-batched (e.g. `an1.1-10_root-pli-ms.json`
 covers ten suttas in one file), not one-file-per-sutta, except where `dn`/`mn` suttas happen to be
 long enough to each fill a file on their own.
@@ -67,7 +67,7 @@ else:
 - a **cross-category integrity problem**: the segment-id alignment described above, which
   `update-data:check` verifies both against the upstream checkout and against the local trees. The
   local pass is what catches a snapshot taken from an already-misaligned local state, which would
-  otherwise pass every other check. A Sujato-only segment id is always worth flagging; a
+  otherwise pass every other check. A Bhikkhu Sujato-only segment id is always worth flagging; a
   Pali/html-only one usually isn't.
 
 It'll keep refusing on a plain re-run, since that's the guard doing its job. Once you've confirmed
@@ -95,6 +95,6 @@ translator notes, and the `html/` structural markup — is sourced from
 [SuttaCentral](https://suttacentral.net) (`sc-data`/`bilara-data`), which dedicates its texts to
 the public domain under [CC0](https://creativecommons.org/publicdomain/zero/1.0/) — see
 [`sc_bilara_data/LICENSE.md`](https://github.com/suttacentral/sc-data/blob/main/sc_bilara_data/LICENSE.md).
-Sutamaya modifies Sujato's translation in places (see [`../docs/retranslation.md`](../docs/retranslation.md));
+Sutamaya modifies Bhikkhu Sujato's translation in places (see [`../docs/retranslation.md`](../docs/retranslation.md));
 those modifications are released under the same terms as the rest of this repo (see the root
 [`LICENSE`](../LICENSE)), not as a claim over the underlying text.

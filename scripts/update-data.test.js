@@ -245,14 +245,14 @@ describe('the shipped rules, one example each', () => {
     ['patisambhida-analytical-knowledge', 'an7.38:1.1', 'sujato/sutta', 'will soon realize the four kinds of textual analysis', 'will soon realize the four kinds of analytical knowledge'],
     // The heading slot: four of the term's occurrences are Title Case sutta names.
     ['patisambhida-analytical-knowledge', 'an4.172:0.3', 'sujato/sutta', 'Sāriputta’s Attainment of Textual Analysis', 'Sāriputta’s Attainment of Analytical Knowledge'],
-    // Untouched, like every note: Sujato's own gloss keeps his own wording.
+    // Untouched, like every note: Bhikkhu Sujato's own gloss keeps his own wording.
     ['patisambhida-analytical-knowledge', 'mn43:1.3', 'sujato/notes', 'foremost in the methods of textual analysis', 'foremost in the methods of textual analysis'],
     // Runs ahead of sati-aware, which would otherwise take the "mindfulness" of this phrase on its
     // own and leave "awareness meditation" behind.
     ['satipatthana-establishment-of-awareness', 'sn52.1:1.4', 'sujato/sutta', 'missed out on these four kinds of mindfulness meditation', 'missed out on these four establishments of awareness'],
     ['satipatthana-establishment-of-awareness', 'dn22:0.2', 'sujato/sutta', 'The Longer Discourse on Mindfulness Meditation', 'The Longer Discourse on the Establishment of Awareness'],
     // No rule reaches a note, so MN 10's — which argues for the very rendering this one reverses —
-    // stays word for word as Sujato wrote it.
+    // stays word for word as Bhikkhu Sujato wrote it.
     ['satipatthana-establishment-of-awareness', 'mn10:1.1', 'sujato/notes', 'i.e. “mindfulness meditation” or simply “meditation”', 'i.e. “mindfulness meditation” or simply “meditation”'],
     ['sati-aware', 'sn9.1:3.1', 'sujato/sutta', 'Give up discontent; be mindful;', 'Give up discontent; be aware;'],
     // Same, the other way round — "a mindful disciple" would become "a aware disciple".
@@ -265,14 +265,14 @@ describe('the shipped rules, one example each', () => {
     // produces the very word sampajanna-clear-comprehension consumes, and locking keeps them apart.
     // Also pins the adjective slot the participle exists for — a noun phrase cannot stand here.
     ['sampajanna-clear-comprehension', 'sn54.10:5.5', 'sujato/sutta', 'keen, aware, and mindful', 'keen, clearly comprehending, and aware'],
-    // The other half of the split: Sujato's noun is sampajañña and takes the noun phrase.
+    // The other half of the split: Bhikkhu Sujato's noun is sampajañña and takes the noun phrase.
     ['sampajanna-clear-comprehension', 'an2.179:1.3', 'sujato/sutta', 'Mindfulness and situational awareness.', 'Awareness and clear comprehension.'],
     // The negated slot, and the line both awareness rules negate at once (muṭṭhassatissa
     // asampajānassa) — without its own forms this reads "unaware and unaware".
     ['sampajanna-clear-comprehension', 'an5.210:1.1', 'sujato/sutta', 'falling asleep unmindful and unaware', 'falling asleep unaware and without clear comprehension'],
     // Denied: plain-English "aware", introducing a perception rather than rendering sampajañña.
     ['sampajanna-clear-comprehension', 'an1.451:1.1', 'sujato/sutta', 'aware that ‘consciousness is infinite’', 'aware that ‘consciousness is infinite’'],
-    // Same, for a term whose English is ordinary English in Sujato's own prose: his gloss of citta
+    // Same, for a term whose English is ordinary English in Bhikkhu Sujato's own prose: his gloss of citta
     // is left alone, where "awareness" → "clear comprehension" would have made nonsense of it.
     ['sampajanna-clear-comprehension', 'dn22:1.11', 'sujato/notes', '“Mind” (citta) is simple awareness.', '“Mind” (citta) is simple awareness.'],
     // vippasanna beside sampajañña: both of the rule's forms, prose and verse.
@@ -308,7 +308,7 @@ describe('the shipped rules, one example each', () => {
     ['viparinama-annathatta-change-unstable', 'sn5.4:5.2', 'sujato/sutta', 'decaying and frail. ', 'decaying and frail. '],
     ['viparinama-annathatta-change-unstable', 'mn82:30.1', 'sujato/sutta', 'And what is decay due to old age? ', 'And what is decay due to old age? '],
     // The compound noun, which the doublet rule above cannot reach: two forms, one per aggregate
-    // Sujato names after the preposition. mn138:20.5 carries both the ablative
+    // Bhikkhu Sujato names after the preposition. mn138:20.5 carries both the ablative
     // rūpavipariṇāmaññathābhāvā and rūpavipariṇāmānuparivatti, which he collapses into this one
     // phrase, so the single rewrite covers the pair.
     ['viparinama-anuparivatti-changing', 'mn138:20.5', 'sujato/sutta', 'and consciousness latches on to the perishing of form. ', 'and consciousness latches on to the changing of form. '],
@@ -352,13 +352,13 @@ describe('the shipped rules, one example each', () => {
     // A title, where the single-word form takes Sentence case. SN 43.3's own title needs a segment
     // override instead — its lowercase "it" hides the Title Case from caseAs.
     ['vitakka-vicara-thought-examination', 'sn28.2:0.3', 'sujato/sutta', 'Without Placing the Mind ', 'Without Thought '],
-    // Out of scope: the rule is sutta-only, and SN 41.6's note is Sujato arguing his own rendering
+    // Out of scope: the rule is sutta-only, and SN 41.6's note is Bhikkhu Sujato arguing his own rendering
     // — it already uses the words this rule writes, for the sense he says the formula lacks.
     ['vitakka-vicara-thought-examination', 'sn41.6:2.4', 'sujato/notes', 'have a more basic sense in ordinary states of mind (“thought” and “exploring”), and a technical sense of placing the mind and keeping it connected.', 'have a more basic sense in ordinary states of mind (“thought” and “exploring”), and a technical sense of placing the mind and keeping it connected.'],
     // The compound as a noun, and the verb in the same segment — a noun-only rule would give
     // "Nine things rooted in proper attention. When you rational application of mind, joy…".
     ['yoniso-proper-attention', 'dn34:2.2.3', 'sujato/sutta', 'Nine things rooted in rational application of mind. When you apply the mind rationally, joy springs up. ', 'Nine things rooted in proper attention. When you attend properly, joy springs up. '],
-    // Sujato's other word order, third person, and the "to" the verb keeps.
+    // Bhikkhu Sujato's other word order, third person, and the "to" the verb keeps.
     ['yoniso-proper-attention', 'sn22.122:1.8', 'sujato/sutta', 'It’s possible that an ethical bhikkhu who rationally applies the mind to the five grasping aggregates will realize the fruit of stream-entry.” ', 'It’s possible that an ethical bhikkhu who attends properly to the five grasping aggregates will realize the fruit of stream-entry.” '],
     // Participle, and the imperative in Sentence case.
     ['yoniso-proper-attention', 'iti16:2.2', 'sujato/sutta', 'A bhikkhu rationally applying the mind gives up the unskillful and develops the skillful.” ', 'A bhikkhu attending properly gives up the unskillful and develops the skillful.” '],
@@ -765,10 +765,10 @@ describe('update-data pipeline (fixture)', () => {
     // snapshot gets regenerated from that already-broken state — so local-vs-snapshot and
     // upstream-vs-snapshot both pass individually (nothing has "drifted" since), and this local
     // integrity pass is the only thing that still catches it.
-    const localSujatoPath = path.join(fx.dataDirs.sujato, 'sutta/dn/dn1_translation-en-sujato.json');
-    const local = readJson(localSujatoPath);
+    const localBhikkhu SujatoPath = path.join(fx.dataDirs.sujato, 'sutta/dn/dn1_translation-en-sujato.json');
+    const local = readJson(localBhikkhu SujatoPath);
     local['dn1:1.3'] = 'A segment with no Pali counterpart.';
-    writeJson(localSujatoPath, local);
+    writeJson(localBhikkhu SujatoPath, local);
     await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
 
     const result = await runCheck({ retranslationPath: fx.retranslationPath, bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Applies the declared editorial layer over Sujato's English (scripts/update-data/
+// Applies the declared editorial layer over Bhikkhu Sujato's English (scripts/update-data/
 // retranslation.mjs) to data/sujato/ and writes the result to data/sujato.post/ — never mutating
 // data/sujato/ itself, so it stays pristine upstream text and `post` is a pure function of
 // (upstream, rules), safely re-runnable while rules are being authored. See

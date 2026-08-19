@@ -1,6 +1,6 @@
 # Retranslation rules
 
-Sujato's English is the base text; this app ships an edited version of it. The edits are
+Bhikkhu Sujato's English is the base text; this app ships an edited version of it. The edits are
 *declared*, not applied by hand — `scripts/update-data/retranslation.mjs` holds every rule, and
 `update-data:post` applies them on every refresh. That's what makes an editorial decision survive
 the next upstream sync instead of being silently overwritten by it.
@@ -43,7 +43,7 @@ post-processed tree until it does.
 
 ## Why this isn't find-and-replace
 
-The obvious approach — swap English word X for Y everywhere — breaks on homonyms. Sujato renders
+The obvious approach — swap English word X for Y everywhere — breaks on homonyms. Bhikkhu Sujato renders
 *sampajañña* as "aware", but "aware" also appears as ordinary English translating nothing of the
 sort. A blind swap corrupts the second set.
 
@@ -61,7 +61,7 @@ So a segment id is a stable address to hang an editorial decision on, even thoug
 at that address changes constantly. That asymmetry is what the whole design rests on.
 
 An explicit list also settles two cases nothing else handles well. **Verse** breaks segment
-alignment — Sujato reorders freely across lines, so `sn22.95:14.3`'s English ("with situational
+alignment — Bhikkhu Sujato reorders freely across lines, so `sn22.95:14.3`'s English ("with situational
 awareness and mindfulness") sits against Pali reading *Divā vā yadi vā rattiṁ* ("whether by day or
 by night"). And **`blurb`/`name` have no Pali counterpart at all.** Neither is a special case for
 a list; both are just judgment at review time.
@@ -70,7 +70,7 @@ a list; both are just judgment at review time.
 
 `sujato/notes` is out of every rule's reach — the default scope omits it, and a rule naming it is
 rejected rather than ignored (`RETRANSLATABLE_TREES` in `../scripts/lib/retranslation.js`). A note
-is Sujato writing *about* the text rather than translating it, so the same words appear as ordinary
+is Bhikkhu Sujato writing *about* the text rather than translating it, so the same words appear as ordinary
 English and as quotations of his own renderings, and a rule that is right on the translation is
 routinely wrong on the note beside it: `sn47.35:3.2` explains which half of "mindfulness and
 awareness" is which and came out as *the "awareness" part of "awareness and awareness"*;
@@ -79,7 +79,7 @@ phrase half-converted, matching neither his wording nor ours.
 
 None of these can be corrected in place: a segment override resolves ids through a sutta-only
 index (see "Segment override" below), so there's no per-note escape hatch to pair with a rule that
-mostly works. **A note therefore reads in Sujato's terms while the text beside it reads in this
+mostly works. **A note therefore reads in Bhikkhu Sujato's terms while the text beside it reads in this
 app's**, which is the accepted cost — MN 10's note glosses *satipaṭṭhāna* as "mindfulness
 meditation" where the translation above it says "the establishment of awareness".
 
@@ -108,7 +108,7 @@ override**, which replaces one line outright.
 ```js
 {
   id: 'sampajanna-clear-comprehension',
-  why: 'Sujato renders sampajañña as "aware"/"situational awareness"; this app prefers ' +
+  why: 'Bhikkhu Sujato renders sampajañña as "aware"/"situational awareness"; this app prefers ' +
        '"clear comprehension". Closed because plain-English "aware" is common and unrelated.',
   mode: 'allow',                       // 'allow' (closed) | 'deny' (open) — see below
   scope: ['sujato/sutta', 'sujato/blurb'],  // optional; defaults to sutta + name + blurb
@@ -175,7 +175,7 @@ Ambiguous terms tend to be the small ones anyway — `aware` is 656 segments (~1
 `from` is verbatim and doubles as the rule's anchor. Segment rules run **after** all term rules,
 against their output — writing one means the term rules got that line wrong. That is routine where
 a swap changes a word's part of speech, because `forms` chooses one replacement per source word and
-a single English word can sit in more than one grammatical slot. Sujato's adjectival "aware" is
+a single English word can sit in more than one grammatical slot. Bhikkhu Sujato's adjectival "aware" is
 *sampajāna*, and it takes a participle so it can stand in a list of adjectives ("keen, fully
 comprehending, and aware"); the handful of lines where he used the same word as a whole predicate
 ("a mendicant is aware") need their clause rebuilt around the noun instead, and that is what these
@@ -263,7 +263,7 @@ pinned fixture, and a per-rule input/output example checked directly.
 
 ## Anchors: how a rule announces that it broke
 
-Upstream is a moving target. Sujato revises his own terminology continuously and in bulk — sweeps
+Upstream is a moving target. Bhikkhu Sujato revises his own terminology continuously and in bulk — sweeps
 touching 500+ files land a few times a year — and the sync commits are machine-generated with
 identical messages (`[GHA] Nilakkhana transform and sync files from bilara-data repo.`), so the
 git log tells you nothing about what changed. Recent examples: `tradition` → `denomination`,

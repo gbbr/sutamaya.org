@@ -40,7 +40,7 @@ at runtime.
 │   │                               rate limits, free-tier ceilings, mobile testing
 │   ├── offline-sync.md            local-first writes: the mirror, `mtime` conflict resolution,
 │   │                               tombstones, read-time tree repair
-│   └── retranslation.md           the editorial layer over Sujato's English: rule shapes, the
+│   └── retranslation.md           the editorial layer over Bhikkhu Sujato's English: rule shapes, the
 │                                   locked-chunk pass, anchors, triage and audit
 └── .claude/skills/retranslate/
     └── SKILL.md                   the procedure for writing a rule (docs/retranslation.md is

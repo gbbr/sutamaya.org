@@ -18,7 +18,7 @@ export const AN_BOOK_NAMES = [
 
 // SN's 5 top-level "super-vaggas" — the tree wraps sn1..sn56 in these (see data/README.md's
 // "Layout" section for the tree/ shape).
-// Fixed, canonical, English glosses given by explicit product decision (matches the Sujato
+// Fixed, canonical, English glosses given by explicit product decision (matches the Bhikkhu Sujato
 // title's own gist word — "Verses", "Causation", ... — rather than deriving from name files,
 // since the raw titles ("The Group of Linked Discourses Beginning With …") don't abbreviate
 // cleanly via stripTitlePrefix for all five).
@@ -57,7 +57,7 @@ export function formatRef(uid) {
   return `${abbr}${digits.replace(/-/g, '–')}`;
 }
 
-// Sujato's English chapter/vagga names are full sentences ("Linked Discourses With Deities",
+// Bhikkhu Sujato's English chapter/vagga names are full sentences ("Linked Discourses With Deities",
 // "The Chapter on a Reed") where the browse tree just wants the distinguishing part ("Deities",
 // "A Reed"). Sorted longest-first so e.g. "The Chapter with the " is tried before the shorter
 // "The Chapter with " it would otherwise be shadowed by.
@@ -265,7 +265,7 @@ export function roleFor(template) {
   return undefined;
 }
 
-// Sujato's own translator notes (data/sujato/notes/, same uid/segment-keyed, range-batched files
+// Bhikkhu Sujato's own translator notes (data/sujato/notes/, same uid/segment-keyed, range-batched files
 // as everything else — see data/README.md) carry inline HTML (`<i>`/`<em>`/`<b>`/`<span>`, kept
 // as-is) and cross-reference links to other suttas on suttacentral.net (`<a href='https://
 // suttacentral.net/...'>`) — stripped down to their plain text here rather than kept as live
@@ -278,7 +278,7 @@ export function cleanNote(text) {
   return text.replace(NOTE_LINK_RE, '$1').trim();
 }
 
-// Sujato's main sutta translation text (data/sujato/sutta/) carries the same occasional inline
+// Bhikkhu Sujato's main sutta translation text (data/sujato/sutta/) carries the same occasional inline
 // HTML — `<b>`/`<em>` emphasis, `<i lang='pi' translate='no'>` around an untranslated Pali
 // loanword, and rarely an `<a href='...'>` cross-reference link — but unlike a note, a segment's
 // English text is rendered as plain text sliced by character offset for highlighting
@@ -302,10 +302,10 @@ export function buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap) {
     const segId = key.slice(key.indexOf(':') + 1);
     if (segId === '0' || segId.startsWith('0.')) continue; // nikaya/book/vagga/sutta title lines
     const pali = (paliMap.get(key) || '').trim();
-    // Sujato's verse translations mark an enjambment (a long line split across two for
+    // Bhikkhu Sujato's verse translations mark an enjambment (a long line split across two for
     // typesetting) with a bare "<j>" placeholder, always as "<space><j><word>" — dropped rather
     // than turned into a real line break, since nothing renders it as one. stripHtmlTags below
-    // would also catch it, but this stays explicit since it's a Sujato-specific placeholder, not
+    // would also catch it, but this stays explicit since it's a Bhikkhu Sujato-specific placeholder, not
     // real markup.
     let en = stripHtmlTags((sujatoMap.get(key) || '').replace(/<j>/g, ''));
     // Open/close state is updated even for a segment with no text on either side (skipped just
@@ -318,7 +318,7 @@ export function buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap) {
     let roleInfo = roleFor(template);
     if (!roleInfo && stillInsideGatha) roleInfo = { role: 'verse' };
     // A colophon note ("Tevijjasuttaṁ niṭṭhitaṁ terasamaṁ." — "The Tevijja Sutta is finished")
-    // is frequently Pali-only, since it's a scribal marker rather than teaching content Sujato
+    // is frequently Pali-only, since it's a scribal marker rather than teaching content Bhikkhu Sujato
     // translated — falling back to Pali here (only for this role) means the reader always has
     // *something* to show for it, instead of a blank paragraph with nothing to tap-reveal.
     if (roleInfo?.role === 'end' && !en) en = pali;

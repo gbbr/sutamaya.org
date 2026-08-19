@@ -375,7 +375,7 @@ interface SegmentedTextProps {
   onWordClick: (word: string, segIndex: number, wordIndex: number) => void;
   onTextUp: () => void;
   onSpanClick: (i: number, s: number, e: number, rect: DOMRect, color: string) => void;
-  // Sujato's own translator notes (SegmentFile.note) — whether the asterisk markers show at all
+  // Bhikkhu Sujato's own translator notes (SegmentFile.note) — whether the asterisk markers show at all
   // ("c" in the reader, or the Theme tab's checkbox — see ReaderPage/ReaderMenuPanel), and which
   // ones are expanded inline (mirrors openSegs/onToggleSeg's per-segment-index shape).
   showNotes: boolean;

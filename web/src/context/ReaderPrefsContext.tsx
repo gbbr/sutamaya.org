@@ -10,7 +10,7 @@ export interface ReaderPrefs {
   lh: number;
   face: ReaderFace;
   allPali: boolean;
-  // Whether the note-asterisk markers (Sujato's translator notes — see SegmentedText.tsx) show
+  // Whether the note-asterisk markers (Bhikkhu Sujato's translator notes — see SegmentedText.tsx) show
   // at all; "c" in the reader and the Theme tab's checkbox both flip this (see ReaderPage,
   // ReaderMenuPanel).
   showNotes: boolean;
