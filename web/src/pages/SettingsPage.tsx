@@ -29,7 +29,7 @@ const UI_SCALE_STEP = 0.05;
 // Sutta text + dictionary shards combined (see build:corpus's text-shards and dict-shards
 // manifests) — hardcoded rather than fetched, since it only moves a little between corpus
 // refreshes and isn't worth a manifest round trip just to show a "~X MB" estimate.
-const TOTAL_DOWNLOAD_MB_ESTIMATE = 48;
+const TOTAL_DOWNLOAD_MB_ESTIMATE = 50;
 
 // Each theme is previewed as a miniature of the shell itself — a narrow tree-pane band beside the
 // wider paper surface, in that theme's own two colours — rather than named in a filled button, so
@@ -529,40 +529,36 @@ export function SettingsPage({ location }: RouteComponentProps) {
                     skips over, and this one is the only line that's asking for a decision. It's
                     also the only one whose button is filled rather than outlined, for the same
                     reason: nothing else on this page is asking to be acted on. */}
-                {cachedStatus && textStale ? (
+                {!cachedStatus ? (
+                  <div className="font-sans text-[13px] text-ink/70 mb-3">Checking content status…</div>
+                ) : textStale ? (
                   <div className="flex items-start gap-1.5 font-sans text-[13px] text-accent-text mb-3">
                     <Info size={15} strokeWidth={1.75} className="flex-none mt-[1.5px]" />
-                    <span>Updated sutta text is available.</span>
+                    <span>Updated content is available.</span>
                   </div>
-                ) : cachedStatus && cachedStatus.cached >= cachedStatus.total ? (
-                  <div className="font-sans text-[13px] text-ink/70 mb-3">All suttas available offline.</div>
+                ) : cachedStatus.cached >= cachedStatus.total ? (
+                  <div className="font-sans text-[13px] text-ink/70 mb-3">All content available offline.</div>
                 ) : (
                   <div className="font-sans text-[13px] text-ink/70 mb-3">
-                    Download all suttas to enable the app to work fully offline when you don't have an internet
-                    connection.
-                    {cachedStatus && (
-                      <>
-                        {' '}
-                        Currently {Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% available offline.
-                      </>
-                    )}
-                    {' '}Total download size is about {TOTAL_DOWNLOAD_MB_ESTIMATE} MB.
+                    Downloading all content enables the app to work fully offline. Total size is approx. {TOTAL_DOWNLOAD_MB_ESTIMATE} MB.
+                    <br /><br />
+                    Currently {Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% is available offline.
                   </div>
                 )}
                 <button
                   className={`${textStale ? PRIMARY_BUTTON : SECONDARY_BUTTON} disabled:opacity-50`}
                   onClick={handleDownloadOffline}
-                  disabled={!corpus}
+                  disabled={!corpus || !cachedStatus || (!textStale && cachedStatus.cached >= cachedStatus.total)}
                 >
                   {textStale ? 'Re-download updated suttas' : 'Download all content'}
                 </button>
                 {failedCount > 0 &&
                   (circuitTripped ? (
                     <div className="font-sans text-[13px] text-danger-text mt-2">
-                      Stopped early after repeated failures — {failedCount} couldn't be downloaded.
+                      Stopped early after repeated failures — {failedCount} items couldn't be downloaded.
                     </div>
                   ) : (
-                    <div className="font-sans text-[13px] text-danger-text mt-2">{failedCount} couldn't be downloaded — try again.</div>
+                    <div className="font-sans text-[13px] text-danger-text mt-2">{failedCount} items couldn't be downloaded — try again.</div>
                   ))}
                 {dictionaryFailed && (
                   <div className="font-sans text-[13px] text-danger-text mt-2">Dictionary couldn't be downloaded — try again.</div>
