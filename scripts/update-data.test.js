@@ -765,10 +765,10 @@ describe('update-data pipeline (fixture)', () => {
     // snapshot gets regenerated from that already-broken state — so local-vs-snapshot and
     // upstream-vs-snapshot both pass individually (nothing has "drifted" since), and this local
     // integrity pass is the only thing that still catches it.
-    const localBhikkhu SujatoPath = path.join(fx.dataDirs.sujato, 'sutta/dn/dn1_translation-en-sujato.json');
-    const local = readJson(localBhikkhu SujatoPath);
+    const localSujatoPath = path.join(fx.dataDirs.sujato, 'sutta/dn/dn1_translation-en-sujato.json');
+    const local = readJson(localSujatoPath);
     local['dn1:1.3'] = 'A segment with no Pali counterpart.';
-    writeJson(localBhikkhu SujatoPath, local);
+    writeJson(localSujatoPath, local);
     await runSnapshot({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
 
     const result = await runCheck({ retranslationPath: fx.retranslationPath, bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath });
