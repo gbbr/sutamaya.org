@@ -739,7 +739,7 @@ describe('sync state', () => {
     renderHarness();
 
     expect(await screen.findByText(/aren't syncing/)).toBeInTheDocument();
-    expect(screen.queryByText(/Download the full canon/)).not.toBeInTheDocument();
+    expect(screen.queryByText(OFFLINE_DOWNLOAD_TEXT)).not.toBeInTheDocument();
   });
 });
 
@@ -851,12 +851,35 @@ describe('deferred sign-in', () => {
     signedOut({ notes: { dn1: 'a thought' } });
     const { unmount } = renderHarness();
     expect(screen.getByText(keepSafeText)).toBeInTheDocument();
-    expect(screen.queryByText(/Download the full canon/)).not.toBeInTheDocument();
+    expect(screen.queryByText(OFFLINE_DOWNLOAD_TEXT)).not.toBeInTheDocument();
     unmount();
 
     signedOut({ notes: { dn1: 'a thought' }, needsReauth: true });
     renderHarness();
     expect(await screen.findByText(/aren't syncing/)).toBeInTheDocument();
     expect(screen.queryByText(keepSafeText)).not.toBeInTheDocument();
+  });
+
+  it('leaves the slot empty on dismiss rather than swapping in the download nudge, which returns on the next mount', async () => {
+    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(hasOpenedSutta).mockReturnValue(true);
+    vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 0, total: 10 });
+    signedOut({ notes: { dn1: 'a thought' } });
+    const { unmount } = renderHarness();
+
+    await userEvent.click(screen.getByLabelText('Dismiss'));
+    // Let the cache probe settle before asserting the slot is empty, so this fails for the right
+    // reason: without it the download banner could be missing merely because `offlineCachedStatus`
+    // hadn't resolved yet, and the assertion would hold even with the swap back in place.
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    expect(screen.queryByText(keepSafeText)).not.toBeInTheDocument();
+    expect(screen.queryByText(OFFLINE_DOWNLOAD_TEXT)).not.toBeInTheDocument();
+    unmount();
+
+    // Returning from the reader remounts TreePane, which is when the next banner down gets its turn.
+    vi.mocked(isKeepSafeDismissed).mockReturnValue(true);
+    signedOut({ notes: { dn1: 'a thought' } });
+    renderHarness();
+    expect(await screen.findByText(OFFLINE_DOWNLOAD_TEXT)).toBeInTheDocument();
   });
 });
