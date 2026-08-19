@@ -84,9 +84,9 @@ describe('ReaderPage sutta header chips', () => {
     vi.mocked(useAuth).mockReturnValue({
       user: { id: 'u1', email: 'reader@example.com', name: 'Reader', picture: null },
       loading: false,
-      googleReady: true,
       authError: null,
-      loginWithGoogle: vi.fn(async () => {}),
+      requestEmailCode: vi.fn(async () => {}),
+      signInWithEmailCode: vi.fn(async () => {}),
       promptGoogleSignIn: vi.fn(),
       logout: vi.fn(async () => {}),
     });

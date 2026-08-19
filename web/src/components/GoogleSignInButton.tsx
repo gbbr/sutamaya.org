@@ -1,66 +1,46 @@
-import { useEffect, useRef, useState } from 'react';
-import { useAuth } from '../context/AuthContext';
-import { getUiScale } from '../lib/uiPrefs';
+// Starts the OAuth redirect flow (worker/src/routes/auth.js) — a plain same-origin link, so there
+// is no SDK to load, nothing to measure, and no cross-origin iframe for Safari's storage
+// partitioning to break. `return` is where the Worker sends the browser once the round trip ends;
+// it validates the value again on both legs (safeReturnPath), so this is a convenience, not a
+// trust boundary.
+//
+// An <a> rather than a button with an onClick handler: this *is* a navigation, so it should behave
+// like one (visible target, works before hydration, middle-click opens a tab that also works).
+// Styled to match the page's own buttons rather than rendered by Google, since a plain link can't
+// use their iframe-based button anyway.
+//
+// `returnTo` is where the user was when they were sent here to sign in (carried in router state by
+// promptGoogleSignIn), so the round trip ends on the sutta they were filing rather than on the
+// Settings page. Falls back to the current URL for someone who simply walked into Settings.
+export function GoogleSignInButton({ returnTo }: { returnTo?: string }) {
+  const here = typeof window === 'undefined' ? '/settings' : window.location.pathname + window.location.search;
+  const href = `/api/auth/google/start?return=${encodeURIComponent(returnTo || here)}`;
 
-// Renders Google's own Sign in with Google button (via the Identity Services script tag in
-// index.html) instead of a plain click handler that calls `prompt()` — the rendered button is
-// what Chrome's FedCM flow actually expects, so it's more reliable than One Tap alone. Only ever
-// used full-width on the Settings page (Google's "standard" pill button) — no other variant/size
-// has been needed, so this doesn't take props for one.
-export function GoogleSignInButton() {
-  const { googleReady } = useAuth();
-  const ref = useRef<HTMLDivElement>(null);
-  // Google's rendered button has a fixed pixel width baked into its iframe (no "100%" option),
-  // so measure the container instead of hardcoding a value that'd either overflow a narrow
-  // phone or leave a gap on a wide one.
-  const [measuredWidth, setMeasuredWidth] = useState<number | undefined>(undefined);
-
-  // Measured once (plus on a genuine window resize, debounced) rather than via a live
-  // ResizeObserver — the button below is destroyed and recreated every time `measuredWidth`
-  // changes (Google's iframe has no resize API), and a ResizeObserver fires on any incidental
-  // content shift (a scrollbar toggling, a web font swapping in), not just real viewport resizes.
-  // That was tearing out and rebuilding the live button, with a real window where a click lands on
-  // an empty/mid-replacement container and is silently lost.
-  useEffect(() => {
-    if (!ref.current) return;
-    const el = ref.current;
-    const measure = () => setMeasuredWidth(Math.round(el.getBoundingClientRect().width));
-    measure();
-    let timeout: number | undefined;
-    const onResize = () => {
-      window.clearTimeout(timeout);
-      timeout = window.setTimeout(measure, 250);
-    };
-    window.addEventListener('resize', onResize);
-    return () => {
-      window.removeEventListener('resize', onResize);
-      window.clearTimeout(timeout);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!googleReady || !ref.current || !window.google || !measuredWidth) return; // wait for the first measurement
-    ref.current.innerHTML = '';
-    window.google.accounts.id.renderButton(ref.current, {
-      type: 'standard',
-      theme: 'filled_blue',
-      size: 'large',
-      shape: 'pill',
-      text: 'signin_with',
-      // measuredWidth comes from getBoundingClientRect(), which reports the container's actual
-      // on-screen (already-zoomed) width. The `width` option below, in contrast, becomes a CSS
-      // length assigned *inside* the zoomed <html> (applyUiScale, lib/uiPrefs.ts) — same as
-      // index.css's <html> height rule, it gets zoomed a second time at paint time unless
-      // divided back down by getUiScale() first, or the button ends up wider than its own
-      // container (worse the higher the UI-size setting). Also clamp to Google's own supported
-      // width range (200-400px, in that same local/zoomed unit space) — it silently ignores
-      // values outside that range, so a narrower/wider container shouldn't silently end up with
-      // a button wider than its box either.
-      width: Math.min(400, Math.max(200, Math.round(measuredWidth / getUiScale()))),
-    });
-  }, [googleReady, measuredWidth]);
-
-  // Fixed height to match Google's own rendered button height and avoid a layout flicker while
-  // it loads in.
-  return <div ref={ref} style={{ height: '40px', display: 'flex' }} data-component="GoogleSignInButton" className="w-full" />;
+  return (
+    <a
+      data-component="GoogleSignInButton"
+      href={href}
+      className="flex items-center justify-center gap-2 w-full h-10 rounded-field border border-ink/[.18] font-sans text-[13.5px] font-medium hover:bg-ink/[.04]"
+    >
+      <svg width="16" height="16" viewBox="0 0 18 18" aria-hidden="true" className="flex-none">
+        <path
+          fill="#4285F4"
+          d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z"
+        />
+        <path
+          fill="#34A853"
+          d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z"
+        />
+        <path
+          fill="#FBBC05"
+          d="M3.964 10.71A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.042l3.007-2.332z"
+        />
+        <path
+          fill="#EA4335"
+          d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z"
+        />
+      </svg>
+      Sign in with Google
+    </a>
+  );
 }

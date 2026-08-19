@@ -78,9 +78,9 @@ function mockAuth(overrides: Partial<ReturnType<typeof useAuth>> = {}): ReturnTy
   return {
     user: null,
     loading: false,
-    googleReady: true,
     authError: null,
-    loginWithGoogle: vi.fn(async () => {}),
+    requestEmailCode: vi.fn(async () => {}),
+    signInWithEmailCode: vi.fn(async () => {}),
     promptGoogleSignIn: vi.fn(),
     logout: vi.fn(async () => {}),
     ...overrides,

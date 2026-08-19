@@ -94,9 +94,9 @@ describe('reader deep link into an already-visited batched document', () => {
     vi.mocked(useAuth).mockReturnValue({
       user: null,
       loading: false,
-      googleReady: true,
       authError: null,
-      loginWithGoogle: vi.fn(async () => {}),
+      requestEmailCode: vi.fn(async () => {}),
+      signInWithEmailCode: vi.fn(async () => {}),
       promptGoogleSignIn: vi.fn(),
       logout: vi.fn(async () => {}),
     });

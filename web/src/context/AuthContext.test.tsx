@@ -9,21 +9,19 @@ vi.mock('../lib/api', () => ({
 }));
 
 // AuthContext.tsx is imported dynamically (not statically at the top of this file) so each test
-// can `vi.resetModules()` first — GOOGLE_CLIENT_ID is read from import.meta.env once, at module
-// load time, so a fresh module instance is the only way to test both the "unset" and "set" cases
-// in the same file.
+// can `vi.resetModules()` first — the provider reads ?auth_error=1 off the URL as it initialises,
+// so each case needs a fresh module instance against the URL it just set up.
 async function loadAuthContext() {
   vi.resetModules();
   return import('./AuthContext');
 }
 
 function Probe({ useAuthHook }: { useAuthHook: () => ReturnType<typeof import('./AuthContext').useAuth> }) {
-  const { user, loading, googleReady, authError } = useAuthHook();
+  const { user, loading, authError } = useAuthHook();
   return (
     <div>
       <span data-testid="user">{user ? user.email : 'none'}</span>
       <span data-testid="loading">{String(loading)}</span>
-      <span data-testid="googleReady">{String(googleReady)}</span>
       <span data-testid="authError">{authError ?? 'none'}</span>
     </div>
   );
@@ -206,8 +204,10 @@ describe('AuthContext', () => {
     expect(localStorage.getItem(LAST_USER_KEY)).toBeNull();
   });
 
-  it('does not touch googleReady when VITE_GOOGLE_CLIENT_ID is unset', async () => {
-    vi.stubEnv('VITE_GOOGLE_CLIENT_ID', '');
+  // The OAuth flow is a full-page round trip, so a failed sign-in can't reject a promise here —
+  // the Worker's callback redirects back with ?auth_error=1 instead (worker/src/routes/auth.js).
+  it('surfaces a failed sign-in from ?auth_error=1 and strips it from the URL', async () => {
+    window.history.replaceState(null, '', '/settings?auth_error=1');
     const { AuthProvider, useAuth } = await loadAuthContext();
     const { authApi } = await import('../lib/api');
     vi.mocked(authApi.me).mockResolvedValue({ user: null });
@@ -221,11 +221,14 @@ describe('AuthContext', () => {
       await vi.advanceTimersByTimeAsync(0);
     });
 
-    expect(screen.getByTestId('googleReady').textContent).toBe('false');
+    expect(screen.getByTestId('authError').textContent).toBe('Sign-in did not complete. Please try again.');
+    // Left in the URL it would reappear on every reload of a page the user is now happily on.
+    expect(window.location.search).toBe('');
+    expect(window.location.pathname).toBe('/settings');
   });
 
-  it('becomes googleReady once window.google appears, via the bounded poll', async () => {
-    vi.stubEnv('VITE_GOOGLE_CLIENT_ID', 'test-client-id');
+  it('keeps the rest of the query when stripping the error marker', async () => {
+    window.history.replaceState(null, '', '/browse/dn?q=metta&auth_error=1');
     const { AuthProvider, useAuth } = await loadAuthContext();
     const { authApi } = await import('../lib/api');
     vi.mocked(authApi.me).mockResolvedValue({ user: null });
@@ -238,41 +241,25 @@ describe('AuthContext', () => {
     await act(async () => {
       await vi.advanceTimersByTimeAsync(0);
     });
-    expect(screen.getByTestId('googleReady').textContent).toBe('false');
 
-    // Simulate the GIS <script> tag finishing its load partway through the poll.
-    const initialize = vi.fn();
-    (window as unknown as { google: Window['google'] }).google = {
-      accounts: { id: { initialize, prompt: vi.fn(), renderButton: vi.fn() } },
-    };
-
-    await act(async () => {
-      await vi.advanceTimersByTimeAsync(300); // a few 100ms poll ticks
-    });
-
-    expect(initialize).toHaveBeenCalledWith(expect.objectContaining({ client_id: 'test-client-id' }));
-    expect(screen.getByTestId('googleReady').textContent).toBe('true');
+    expect(window.location.search).toBe('?q=metta');
   });
 
-  it('gives up polling for window.google after ~15s and never becomes ready', async () => {
-    vi.stubEnv('VITE_GOOGLE_CLIENT_ID', 'test-client-id');
+  it('reports no error for an ordinary load', async () => {
+    window.history.replaceState(null, '', '/settings');
     const { AuthProvider, useAuth } = await loadAuthContext();
     const { authApi } = await import('../lib/api');
     vi.mocked(authApi.me).mockResolvedValue({ user: null });
-    const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {});
 
     render(
       <AuthProvider>
         <Probe useAuthHook={useAuth} />
       </AuthProvider>
     );
-
     await act(async () => {
-      await vi.advanceTimersByTimeAsync(16000); // past MAX_ATTEMPTS (150 * 100ms = 15000ms)
+      await vi.advanceTimersByTimeAsync(0);
     });
 
-    expect(screen.getByTestId('googleReady').textContent).toBe('false');
-    expect(consoleError).toHaveBeenCalledWith('Google Identity Services script did not load in time.');
-    consoleError.mockRestore();
+    expect(screen.getByTestId('authError').textContent).toBe('none');
   });
 });

@@ -6,6 +6,7 @@ import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData, type SyncStatus } from '../context/UserDataContext';
 import { GoogleSignInButton } from '../components/GoogleSignInButton';
+import { EmailCodeSignIn } from '../components/EmailCodeSignIn';
 import { dataApi } from '../lib/api';
 import { flatSuttaOrder } from '../lib/corpus';
 import {
@@ -67,6 +68,18 @@ const PRIMARY_BUTTON =
 const SECONDARY_BUTTON =
   'flex items-center justify-center gap-1.5 w-full h-10 rounded-field border border-ink/[.18] font-sans text-[13.5px] font-medium';
 const QUIET_BUTTON = 'flex items-center justify-center gap-1.5 w-full h-9 font-sans text-[13px] text-ink/55';
+
+// Separates the two sign-in methods without ranking them — they're alternatives, not a primary
+// and a fallback.
+function SignInDivider() {
+  return (
+    <div className="flex items-center gap-3 my-3.5">
+      <span className="h-px flex-1 bg-ink/[.12]" />
+      <span className="font-sans text-[11.5px] uppercase tracking-wider text-ink/40">or</span>
+      <span className="h-px flex-1 bg-ink/[.12]" />
+    </div>
+  );
+}
 
 // The two sections this page can be deep-linked into and highlighted on arrival — see the
 // scroll/flash effect below.
@@ -170,6 +183,11 @@ export function SettingsPage({ location }: RouteComponentProps) {
       cancelled = true;
     };
   }, [corpus]);
+
+  // Where a signed-out action sent the user here from (promptGoogleSignIn) — handed to the
+  // sign-in button so the OAuth round trip returns them to it. Read once, at mount, for the same
+  // reason the scroll cue below is.
+  const [signInReturnTo] = useState(() => (location?.state as { returnTo?: string } | undefined)?.returnTo);
 
   // Scrolls to, and briefly highlights, whichever section this page was actually navigated here
   // for. Deliberately only runs once on mount (not keyed on location.state) — it's a one-shot
@@ -471,8 +489,10 @@ export function SettingsPage({ location }: RouteComponentProps) {
                         once you sign in again.
                       </span>
                     </div>
-                    <GoogleSignInButton />
+                    <GoogleSignInButton returnTo={signInReturnTo} />
                     {authError && <div className="font-sans text-[13px] text-red-600 mt-2">{authError}</div>}
+                    <SignInDivider />
+                    <EmailCodeSignIn returnTo={signInReturnTo} />
                   </div>
                 ) : (
                   (() => {
@@ -512,10 +532,12 @@ export function SettingsPage({ location }: RouteComponentProps) {
             ) : (
               <div className="py-4">
                 <div className="font-sans text-[13px] text-ink/60 mb-3">
-                  Sign in with Google to sync your lists, notes and highlights across devices.
+                  Sign in to sync your lists, notes and highlights across devices.
                 </div>
-                <GoogleSignInButton />
+                <GoogleSignInButton returnTo={signInReturnTo} />
                 {authError && <div className="font-sans text-[13px] text-red-600 mt-2">{authError}</div>}
+                <SignInDivider />
+                <EmailCodeSignIn returnTo={signInReturnTo} />
               </div>
             )}
           </div>

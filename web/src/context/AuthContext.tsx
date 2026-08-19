@@ -5,8 +5,6 @@ import { isRetryable, retryWithBackoff, statusOf } from '../lib/retry';
 import { readLastUser, writeLastUser } from '../lib/lastUser';
 import type { User } from '../lib/types';
 
-const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
-
 // Longer than the Worker's 60s rate-limit period, so a retry lands in a fresh budget rather than
 // spending the next one the moment it opens.
 const SESSION_RETRY_MS = 65_000;
@@ -14,14 +12,18 @@ const SESSION_RETRY_MS = 65_000;
 interface AuthState {
   user: User | null;
   loading: boolean;
-  googleReady: boolean;
   authError: string | null;
-  loginWithGoogle: (credential: string) => Promise<void>;
   promptGoogleSignIn: () => void;
+  requestEmailCode: (email: string) => Promise<void>;
+  signInWithEmailCode: (email: string, code: string) => Promise<void>;
   logout: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthState | null>(null);
+
+function authErrorMessage(marker: string | null): string | null {
+  return marker ? 'Sign-in did not complete. Please try again.' : null;
+}
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   // Seeded from the last confirmed session rather than from null, so a relaunch with no network
@@ -29,13 +31,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // replaces it as soon as one arrives, in either direction.
   const [user, setUser] = useState<User | null>(readLastUser);
   const [loading, setLoading] = useState(true);
-  // True once google.accounts.id.initialize() has run — gates GoogleSignInButton's
-  // renderButton() call, which needs that config to already exist (see GoogleSignInButton.tsx).
-  const [googleReady, setGoogleReady] = useState(false);
-  // Set only from the GIS callback below — a failure that never reaches our JS at all (Chrome's
-  // FedCM handshake dying before `callback` fires) can't be surfaced here, but a credential that
-  // *is* obtained and then fails verification/network can be, and previously wasn't (console-only).
-  const [authError, setAuthError] = useState<string | null>(null);
+  // A failed sign-in comes back as ?auth_error=<reason> on the page the OAuth callback redirects
+  // to (worker/src/routes/auth.js) — the flow is a full-page round trip, so there's no live
+  // promise left to catch a rejection from. Seeded synchronously from the URL the app booted on,
+  // which is the only moment the marker can be there; stripped below so a reload doesn't show it
+  // again.
+  const [authError, setAuthError] = useState<string | null>(() =>
+    authErrorMessage(new URLSearchParams(window.location.search).get('auth_error'))
+  );
+
+  useEffect(() => {
+    if (!authError) return;
+    const url = new URL(window.location.href);
+    if (!url.searchParams.has('auth_error')) return;
+    url.searchParams.delete('auth_error');
+    window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+  }, [authError]);
 
   useEffect(() => {
     // GET /auth/me returns 200 with { user: null } for a genuinely signed-out session — it
@@ -82,63 +93,34 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  const loginWithGoogle = useCallback(async (credential: string) => {
-    const { user } = await authApi.google(credential);
-    writeLastUser(user);
-    setUser(user);
+  // Called from arbitrary places a signed-out user tries something that needs an account (the
+  // list/note/highlight actions in UserDataContext, the account badge). It sends them to
+  // Settings' sign-in section rather than starting the redirect itself: leaving the app is a big
+  // enough interruption that it should follow a click on something that says "Sign in", not a
+  // click on "add to list".
+  //
+  // `returnTo` is where they were when they hit the wall, carried through Settings and into the
+  // OAuth round trip so signing in puts them back on the sutta they were filing rather than
+  // stranding them on the Settings page. Captured here rather than read off the URL later —
+  // by the time the button is clicked, the URL *is* /settings.
+  const promptGoogleSignIn = useCallback(() => {
+    const returnTo = window.location.pathname + window.location.search;
+    navigate('/settings', { state: { scrollTo: 'auth', returnTo } });
   }, []);
 
-  useEffect(() => {
-    if (!GOOGLE_CLIENT_ID) return;
-    let cancelled = false;
-    function init() {
-      if (cancelled || !window.google) return;
-      window.google.accounts.id.initialize({
-        client_id: GOOGLE_CLIENT_ID!,
-        callback: ({ credential }) => {
-          setAuthError(null);
-          loginWithGoogle(credential).catch((err) => {
-            console.error('Google sign-in failed:', err);
-            setAuthError(err instanceof Error ? err.message : 'Sign-in failed. Please try again.');
-          });
-        },
-      });
-      setGoogleReady(true);
-    }
-    if (window.google) init();
-    else {
-      // Bounded rather than polling forever — if the Google Identity Services script never
-      // loads at all (ad-blocker, network failure, script restructured), this gives up after
-      // ~15s and leaves googleReady false instead of running an interval for the tab's whole
-      // lifetime with no error surfaced anywhere.
-      let attempts = 0;
-      const MAX_ATTEMPTS = 150;
-      const id = window.setInterval(() => {
-        if (window.google) {
-          window.clearInterval(id);
-          init();
-          return;
-        }
-        attempts += 1;
-        if (attempts >= MAX_ATTEMPTS) {
-          window.clearInterval(id);
-          console.error('Google Identity Services script did not load in time.');
-        }
-      }, 100);
-      return () => window.clearInterval(id);
-    }
-    return () => {
-      cancelled = true;
-    };
-  }, [loginWithGoogle]);
+  const requestEmailCode = useCallback(async (email: string) => {
+    setAuthError(null);
+    await authApi.requestEmailCode(email);
+  }, []);
 
-  // google.accounts.id.renderButton() needs a real, user-clicked on-page element to reliably open
-  // its popup (browsers require a genuine click, not a programmatic API call), so it can't be
-  // fired imperatively from arbitrary call sites (list/note/highlight actions in
-  // UserDataContext) — routing all of those to the Settings page, which renders the actual
-  // button, sidesteps that.
-  const promptGoogleSignIn = useCallback(() => {
-    navigate('/settings', { state: { scrollTo: 'auth' } });
+  // Unlike the OAuth redirect, this establishes the session without the page ever unloading —
+  // which is the point of a code over a link: it works the same inside an installed PWA, where a
+  // link opened from the mail app would have signed the browser in and left the app signed out.
+  const signInWithEmailCode = useCallback(async (email: string, code: string) => {
+    const { user } = await authApi.verifyEmailCode(email, code);
+    setAuthError(null);
+    writeLastUser(user);
+    setUser(user);
   }, []);
 
   const logout = useCallback(async () => {
@@ -148,8 +130,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const value = useMemo(
-    () => ({ user, loading, googleReady, authError, loginWithGoogle, promptGoogleSignIn, logout }),
-    [user, loading, googleReady, authError, loginWithGoogle, promptGoogleSignIn, logout]
+    () => ({ user, loading, authError, promptGoogleSignIn, requestEmailCode, signInWithEmailCode, logout }),
+    [user, loading, authError, promptGoogleSignIn, requestEmailCode, signInWithEmailCode, logout]
   );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

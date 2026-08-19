@@ -11,28 +11,55 @@ npx wrangler login
 npx wrangler d1 create sutamaya            # copy the printed database_id into wrangler.jsonc
 npx wrangler d1 migrations apply sutamaya --remote
 npx wrangler secret put SESSION_SECRET     # any long random string
+npx wrangler secret put GOOGLE_CLIENT_SECRET   # from the OAuth client below
 ```
 
-`WEB_ORIGIN` and `GOOGLE_CLIENT_ID` are plain `vars` in `wrangler.jsonc` — neither is a secret,
-and `GOOGLE_CLIENT_ID` must match the one `web/.env.production` builds the frontend with, or
-sign-in fails verification.
+`WEB_ORIGIN` and `GOOGLE_CLIENT_ID` are plain `vars` in `wrangler.jsonc` — neither is a secret.
+`WEB_ORIGIN` carries more weight than it looks: the OAuth flow builds every URL in the round trip
+from it (the redirect URI it registers with Google, and the address it sends the browser back to),
+so a wrong value doesn't degrade sign-in, it breaks it.
 
 ### Google sign-in
 
-Sign-in is Google-only (see `CLAUDE.md`). This is the one piece of setup that still lives in
-Google's world — Google Identity Services needs a real OAuth Web Client, but nothing else about
-it (no billing account, no GCP services enabled):
+The browser never talks to Google's JavaScript — it navigates to `/api/auth/google/start`, and the
+Worker runs the OAuth 2.0 authorization-code exchange server-side (`worker/src/oauth.js`). So the
+frontend build takes no auth configuration at all; both halves of the credential live on the
+Worker. Setup needs a real OAuth Web Client, but nothing else from Google (no billing account, no
+GCP services enabled):
 
 1. [Google Cloud Console](https://console.cloud.google.com) → **APIs & Services → OAuth consent
    screen** — External, add `sutamaya.org` as an authorized domain, publish.
-2. **Credentials → Create Credentials → OAuth client ID → Web application** — authorized
-   JavaScript origins: your local dev URL (`http://localhost:5173`), the custom domain
-   (`https://sutamaya.org`), and any preview URL you deploy to (the `*.workers.dev` URL Cloudflare
-   assigns the Worker). No redirect URI is needed.
-3. Put the resulting Client ID in `VITE_GOOGLE_CLIENT_ID` in `web/.env.production` (and
-   `web/.env.development` for local dev) — it's a public identifier, safe to commit — and in
-   `GOOGLE_CLIENT_ID` under `vars` in `wrangler.jsonc`, which is what the Worker uses to verify a
-   sign-in token was actually issued for this app.
+2. **Credentials → Create Credentials → OAuth client ID → Web application** — set **authorized
+   redirect URIs** (not just JavaScript origins, which this flow no longer uses) to
+   `/api/auth/google/callback` on every origin you sign in from:
+   - `http://localhost:5173/api/auth/google/callback` — local dev
+   - `https://sutamaya.org/api/auth/google/callback` — production
+   - the same path on any preview URL you deploy to
+
+   These must match byte for byte, or Google fails the round trip with `redirect_uri_mismatch`
+   before the user ever gets back to the app.
+3. Put the Client ID in `GOOGLE_CLIENT_ID` under `vars` in `wrangler.jsonc` (a public identifier,
+   safe to commit), and the Client Secret in the `GOOGLE_CLIENT_SECRET` Worker secret above. For
+   local dev both go in `.dev.vars`, along with `WEB_ORIGIN=http://localhost:5173` — the
+   production `WEB_ORIGIN` in `wrangler.jsonc` would otherwise send the dev flow to the live site.
+
+### Sign-in by emailed code
+
+The second way in, and the one needing no provider account. Codes go out through
+[Resend](https://resend.com), whose free tier (3,000/month) covers this app many times over.
+Cloudflare's own Email Sending would avoid the third party but requires a Workers Paid plan.
+
+1. Sign up at resend.com and add `sutamaya.org` under **Domains** — it gives you the SPF/DKIM/DMARC
+   records to add to the zone. Verification is what stops the mail landing in spam, so don't skip
+   it; sending is blocked until the domain verifies.
+2. **API Keys → Create**, with send permission only.
+3. `npx wrangler secret put RESEND_API_KEY` for production, and the same key in `.dev.vars` for
+   local dev.
+
+`MAIL_FROM` (`vars` in `wrangler.jsonc`) is the address codes come from and must be on the verified
+domain. Leave `RESEND_API_KEY` blank to develop without the email flow — `/api/auth/email/request`
+then answers 502 and Google sign-in is unaffected. There's no local mail sink: a key that works
+sends real mail to real inboxes, so test with an address you own.
 
 ## Deploy
 
@@ -68,8 +95,9 @@ refresh — that round-trips through D1, so it's the real end-to-end check.
 
 Cloudflare creates and manages the apex DNS record and its TLS certificate — nothing to configure
 at a DNS provider by hand, since Cloudflare already runs `sutamaya.org`'s nameservers. Takes
-effect on the next `wrangler deploy`. Add the domain to the OAuth client's authorized JavaScript
-origins too (see above) — `VITE_GOOGLE_CLIENT_ID` itself doesn't need to change.
+effect on the next `wrangler deploy`. Add the domain's `/api/auth/google/callback` to the OAuth
+client's authorized redirect URIs too, and point `WEB_ORIGIN` at it (see above) — the client id and
+secret themselves don't change.
 
 ## Rate limiting
 
@@ -79,13 +107,15 @@ Per-IP, via Cloudflare Rate Limiting bindings declared in `wrangler.jsonc` and a
 | Path | Limit |
 |---|---|
 | `/api/*` in general | 60/min |
-| `POST /api/auth/google` | 5/min |
+| `/api/auth/*` except `/me` | 15/min |
 | `GET /api/auth/me` | 20/min |
 | `/data/*` (corpus, dictionary, per-sutta text) | — none |
 
-The sign-in and `/me` budgets comfortably clear normal use (one `/me` per page load or PWA
-relaunch, and a sign-in that only fires on a real button press). `/data/*` has no limiter because
-it needs none: those files come from the assets binding and never invoke the Worker.
+The sign-in budget has to cover more than one request per attempt: a Google sign-in spends two
+(start, callback) and an emailed-code sign-in at least two more (request, verify), plus a mistyped
+code or a resend. Guessing a code is bounded by `login_codes.attempts`, not by this. The `/me`
+budget clears normal use easily (one per page load or PWA relaunch). `/data/*` has no limiter
+because it needs none: those files come from the assets binding and never invoke the Worker.
 
 ## Free-tier limits worth knowing
 
@@ -105,11 +135,11 @@ where a reader is.
 The dev server already listens on all interfaces (`host: true` in `web/vite.config.ts`) and a
 phone on the same LAN can reach it by this machine's mDNS name (add it to `devHosts` in
 `web/vite.config.ts` to allow it through the dev server's Host-header guard). That's enough for
-browsing, but **Google sign-in won't work over it**: GSI
-validates the page's origin client-side against the OAuth client's authorized origins, and
-Google rejects that origin outright unless its host ends in a real, public top-level domain —
-so neither a LAN IP nor a `.local` mDNS name will ever be accepted, no matter what's serving it.
-Deploying just to test a login-gated feature isn't practical for day-to-day iteration.
+browsing, but **Google sign-in won't work over it**: the flow's redirect URI has to be registered
+on the OAuth client, and Google only accepts hosts on a real, public top-level domain (plus
+`localhost` itself) — so neither a LAN IP nor a `.local` mDNS name will ever be accepted, no matter
+what's serving it. Deploying just to test a login-gated feature isn't practical for day-to-day
+iteration.
 
 The fix used here: a real subdomain of `sutamaya.org` — `local.sutamaya.org` — pointed at this
 machine's LAN IP, served locally by [Caddy](https://caddyserver.com) with a genuine Let's
@@ -153,9 +183,11 @@ CLOUDFLARE_API_TOKEN=your-token sudo --preserve-env=CLOUDFLARE_API_TOKEN caddy r
 the cert on first run and renews automatically on later runs — no local CA, no cert warnings, no
 per-device trust step, since it's a real publicly-trusted certificate. `/api/*` keeps going
 through Vite's own proxy to the Worker on `:8787` unchanged. Add
-`https://local.sutamaya.org` to the OAuth client's authorized JavaScript origins once (see above)
-— additive, so `http://localhost:5173` and the production origin are unaffected. Then open
-`https://local.sutamaya.org` on the phone (same LAN) — sign-in should complete normally.
+`https://local.sutamaya.org/api/auth/google/callback` to the OAuth client's authorized redirect
+URIs once (see above) — additive, so `http://localhost:5173/...` and the production one are
+unaffected — and set `WEB_ORIGIN=https://local.sutamaya.org` in `.dev.vars` for the session, since
+the flow builds its redirect URI from it and would otherwise send the phone to `localhost`. Then
+open `https://local.sutamaya.org` on the phone (same LAN) — sign-in should complete normally.
 
 **To test PWA install/standalone behavior** over `local.sutamaya.org` (rather than just sign-in),
 start Vite with `PWA_DEV=1 npm run dev` first — `vite-plugin-pwa` registers a service worker only
