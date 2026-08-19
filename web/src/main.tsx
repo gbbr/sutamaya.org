@@ -15,8 +15,20 @@ applyTheme(uiPrefs.theme);
 // Keeps --app-height (see lib/uiPrefs.ts) fresh across resizes, orientation changes, and the
 // on-screen keyboard opening/closing.
 syncAppHeight();
-window.visualViewport?.addEventListener('resize', syncAppHeight);
-window.addEventListener('resize', syncAppHeight);
+// syncAppHeight's own guard skips updates mid-pinch-zoom (see its comment) so the in-gesture
+// frames don't flash a wrong height — but that means the *last* resize event of a gesture, fired
+// while the scale is still a hair off its resting value, can get skipped too, stranding
+// --app-height at the zoomed frame forever with nothing left to re-trigger a sync. This trailing
+// call re-checks once events have stopped for a moment, by which point the scale has settled and
+// the guard passes.
+let appHeightSettleTimer: ReturnType<typeof setTimeout>;
+function onViewportResize() {
+  syncAppHeight();
+  clearTimeout(appHeightSettleTimer);
+  appHeightSettleTimer = setTimeout(syncAppHeight, 200);
+}
+window.visualViewport?.addEventListener('resize', onViewportResize);
+window.addEventListener('resize', onViewportResize);
 
 // No <StrictMode> here: @reach/router's Redirect (and its history subscription) relies on
 // class-component lifecycle timing that React 18's dev-mode double-invoking breaks — a

@@ -136,6 +136,26 @@ export function SettingsPage({ location }: RouteComponentProps) {
   const { corpus } = useCorpus();
   const { syncStatus, pendingCount, lastSyncedAt, needsReauth } = useUserData();
 
+  // setUiScale ultimately rewrites the viewport meta tag's `initial-scale` on iOS Safari (see
+  // applyUiScale in lib/uiPrefs.ts) — dragging the slider fires onChange on every tick, and
+  // rewriting that tag a dozen times a second never gives WebKit a frame to finish reflowing one
+  // change before the next lands, which desyncs the viewport-height tracking that rule depends
+  // on. liveUiScale drives the input and the percentage label so dragging still feels immediate;
+  // the real commit (setUiScale) is debounced, with pointerup/keyup flushing it right away once
+  // the gesture actually ends.
+  const [liveUiScale, setLiveUiScale] = useState(uiScale);
+  useEffect(() => setLiveUiScale(uiScale), [uiScale]);
+  const uiScaleCommitTimer = useRef<ReturnType<typeof setTimeout>>();
+  const handleUiScaleChange = (v: number) => {
+    setLiveUiScale(v);
+    clearTimeout(uiScaleCommitTimer.current);
+    uiScaleCommitTimer.current = setTimeout(() => setUiScale(v), 150);
+  };
+  const commitUiScale = () => {
+    clearTimeout(uiScaleCommitTimer.current);
+    setUiScale(liveUiScale);
+  };
+
   // Second click arms the sign-out button when there is unsynced work to lose — see the button.
   const [confirmSignOut, setConfirmSignOut] = useState(false);
 
@@ -550,8 +570,8 @@ export function SettingsPage({ location }: RouteComponentProps) {
                 UI scale
               </label>
               <div className="flex items-baseline gap-3">
-                <span className="font-sans text-[12.5px] tabular-nums text-ink/70">{Math.round(uiScale * 100)}%</span>
-                <button className="font-sans text-[12.5px] text-accent-text" onClick={() => setUiScale(1)}>
+                <span className="font-sans text-[12.5px] tabular-nums text-ink/70">{Math.round(liveUiScale * 100)}%</span>
+                <button className="font-sans text-[12.5px] text-accent-text" onClick={() => { setLiveUiScale(1); setUiScale(1); }}>
                   Reset
                 </button>
               </div>
@@ -562,8 +582,10 @@ export function SettingsPage({ location }: RouteComponentProps) {
               min={UI_SCALE_MIN}
               max={UI_SCALE_MAX}
               step={UI_SCALE_STEP}
-              value={uiScale}
-              onChange={(e) => setUiScale(Number(e.target.value))}
+              value={liveUiScale}
+              onChange={(e) => handleUiScaleChange(Number(e.target.value))}
+              onPointerUp={commitUiScale}
+              onKeyUp={commitUiScale}
               className="w-full accent-accent"
             />
           </div>
