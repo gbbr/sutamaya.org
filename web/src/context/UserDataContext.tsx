@@ -218,13 +218,19 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     };
   }, [userId, localUserId]);
 
-  // Persist on every change, including the ones a flush folds back in. Guarded on the mirror's own
-  // userId, so the window between an account switch (or a sign-in) and its load resolving can't
-  // write one identity's records under the other's key.
+  // Persist on every change, including the ones a flush folds back in.
+  //
+  // Both guards are load-bearing. The `userId` one keeps the window between an identity change and
+  // its load resolving from writing one identity's records under the other's key. **`ready` is what
+  // keeps the placeholder above from being mistaken for data**: it carries the incoming `userId`, so
+  // it passes the first guard, and saving it overwrites the very mirror the load is still reading —
+  // which silently destroyed a signed-out reader's work on the next page load, and left the sign-in
+  // that followed with nothing to adopt. Nothing is worth persisting until the load has produced it,
+  // which is exactly what `ready` means.
   useEffect(() => {
-    if (state.userId !== userId) return;
+    if (!ready || state.userId !== userId) return;
     saveMirror(state).catch((e) => console.error('mirror save failed', e));
-  }, [state, userId]);
+  }, [ready, state, userId]);
 
   const flush = useCallback(async () => {
     const current = stateRef.current;

@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { LayoutProvider, useLayout } from './LayoutContext';
+import { DEFAULT_TREE_W, LayoutProvider, useLayout } from './LayoutContext';
 import { LAYOUT_PREFS_KEY } from '../lib/storageKeys';
 
 // Dragging the tree-pane divider used to call setPrefs (and so localStorage.setItem) on every
@@ -48,7 +48,7 @@ describe('LayoutContext drag-resize', () => {
     });
     const layoutWrites = setItem.mock.calls.filter(([key]) => key === LAYOUT_PREFS_KEY);
     expect(layoutWrites).toHaveLength(1);
-    expect(JSON.parse(layoutWrites[0][1] as string)).toMatchObject({ treeW: 190 - 100 + 264 });
+    expect(JSON.parse(layoutWrites[0][1] as string)).toMatchObject({ treeW: 190 - 100 + DEFAULT_TREE_W });
   });
 
   it('still tracks the live width on every pointermove for a smooth visual drag', () => {

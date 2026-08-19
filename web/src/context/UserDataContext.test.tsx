@@ -500,4 +500,28 @@ describe('UserDataProvider', () => {
     await waitFor(() => expect(highlightsApiSetRanges).toHaveBeenCalled());
     await waitFor(() => expect(result.current.notes.dn1).toBe('noted before signing in'));
   });
+
+  // The Google path is a full-page redirect, so the app that comes back is a fresh mount reading
+  // the mirror off disk — not the same React tree re-rendering with a new user, which is what the
+  // test above covers. Both have to adopt.
+  it('adopts signed-out work across the reload that a redirect sign-in ends with', async () => {
+    mockUser = null;
+    const first = setup();
+    await waitFor(() => expect(first.result.current.ready).toBe(true));
+    await act(async () => {
+      await first.result.current.submitNote('dn1', 'written before the redirect');
+    });
+    await settle();
+    first.unmount();
+
+    dataApiAll.mockResolvedValue({
+      ...structuredClone(baseData),
+      notes: { dn1: { text: 'written before the redirect', m: '2030-01-01T00:00:00.000Z|server' } },
+    });
+    mockUser = { id: `u${seq}`, email: 'a@b.com', name: 'A', picture: '' };
+    const second = setup();
+
+    await waitFor(() => expect(second.result.current.notes.dn1).toBe('written before the redirect'));
+    await waitFor(() => expect(notesApiSet).toHaveBeenCalled());
+  });
 });
