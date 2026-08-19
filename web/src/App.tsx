@@ -12,7 +12,7 @@ import { SettingsPage } from './pages/SettingsPage';
 function Splash() {
   return (
     <div data-component="Splash" className="flex items-center justify-center h-full bg-paper">
-      <div className="font-serif text-[20px] text-ink/70">sutamaya</div>
+      <div className="text-[20px] text-ink/70" style={{ fontFamily: 'Newsreader, Georgia, serif' }}>sutamaya</div>
     </div>
   );
 }
