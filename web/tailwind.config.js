@@ -24,6 +24,7 @@ export default {
         accent2: 'rgb(var(--accent2) / <alpha-value>)',
         'accent-text': 'rgb(var(--accent-text) / <alpha-value>)',
         'accent-hover': '#6B5230',
+        'danger-text': 'rgb(var(--danger-text) / <alpha-value>)',
         selection: 'rgb(var(--selection) / <alpha-value>)',
         'pill-lists': 'rgb(var(--pill-lists) / <alpha-value>)',
         'hl-amber': '#F0E3A8',

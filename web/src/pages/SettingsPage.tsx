@@ -349,7 +349,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                  as 'pending', which is true but misleading — nothing is being sent while paused. */}
                 {needsReauth ? (
                   <div className="py-4">
-                    <div className="flex items-start gap-1.5 font-sans text-[13px] mb-3 text-red-600">
+                    <div className="flex items-start gap-1.5 font-sans text-[13px] mb-3 text-danger-text">
                       <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
                       <span>
                         Your session expired, so nothing is syncing. Your changes are saved on this device and will sync
@@ -357,7 +357,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                       </span>
                     </div>
                     <GoogleSignInButton returnTo={signInReturnTo} />
-                    {authError && <div className="font-sans text-[13px] text-red-600 mt-2">{authError}</div>}
+                    {authError && <div className="font-sans text-[13px] text-danger-text mt-2">{authError}</div>}
                     <SignInDivider />
                     <EmailCodeSignIn returnTo={signInReturnTo} />
                   </div>
@@ -365,7 +365,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                   (() => {
                     const { Icon, spin, text } = syncStatusLine(syncStatus, pendingCount, lastSyncedAt);
                     return (
-                      <div className={`flex items-start gap-1.5 py-3.5 font-sans text-[13px] ${syncStatus === 'stuck' ? 'text-red-600' : 'text-ink/55'}`}>
+                      <div className={`flex items-start gap-1.5 py-3.5 font-sans text-[13px] ${syncStatus === 'stuck' ? 'text-danger-text' : 'text-ink/55'}`}>
                         <Icon size={13} strokeWidth={1.75} className={`flex-none mt-[3px] ${spin ? 'animate-[spin_2s_linear_infinite]' : ''}`} />
                         {text}
                       </div>
@@ -390,7 +390,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                       unconditionally: a signed-out-and-back-in round trip on a fully synced account
                       loses nothing and shouldn't have to answer for itself. */}
                   {confirmSignOut && (
-                    <div className="flex items-start gap-1.5 font-sans text-[13px] text-red-600 mb-2">
+                    <div className="flex items-start gap-1.5 font-sans text-[13px] text-danger-text mb-2">
                       <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
                       <span>
                         {pendingCount === 1 ? '1 change hasn’t' : `${pendingCount} changes haven’t`} synced yet. Signing
@@ -430,7 +430,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                     Installing to the Home Screen is the documented exemption, so it's offered
                     alongside signing in rather than being the second-best answer. */}
                 {isIosBrowserTab() && (
-                  <div className="flex items-start gap-1.5 font-sans text-[13px] text-red-600 mb-3">
+                  <div className="flex items-start gap-1.5 font-sans text-[13px] text-danger-text mb-3">
                     <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
                     <span>
                       Safari erases this site’s data after about a week without a visit. Sign in, or add Sutamaya to your
@@ -439,7 +439,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                   </div>
                 )}
                 <GoogleSignInButton returnTo={signInReturnTo} />
-                {authError && <div className="font-sans text-[13px] text-red-600 mt-2">{authError}</div>}
+                {authError && <div className="font-sans text-[13px] text-danger-text mt-2">{authError}</div>}
                 <SignInDivider />
                 <EmailCodeSignIn returnTo={signInReturnTo} />
               </div>
@@ -500,14 +500,14 @@ export function SettingsPage({ location }: RouteComponentProps) {
                 </button>
                 {failedCount > 0 &&
                   (circuitTripped ? (
-                    <div className="font-sans text-[13px] text-red-600 mt-2">
+                    <div className="font-sans text-[13px] text-danger-text mt-2">
                       Stopped early after repeated failures — {failedCount} couldn't be downloaded.
                     </div>
                   ) : (
-                    <div className="font-sans text-[13px] text-red-600 mt-2">{failedCount} couldn't be downloaded — try again.</div>
+                    <div className="font-sans text-[13px] text-danger-text mt-2">{failedCount} couldn't be downloaded — try again.</div>
                   ))}
                 {dictionaryFailed && (
-                  <div className="font-sans text-[13px] text-red-600 mt-2">Dictionary couldn't be downloaded — try again.</div>
+                  <div className="font-sans text-[13px] text-danger-text mt-2">Dictionary couldn't be downloaded — try again.</div>
                 )}
               </>
             )}

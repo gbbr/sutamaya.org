@@ -140,7 +140,7 @@ export function EmailCodeSignIn({ returnTo }: { returnTo?: string }) {
           </div>
         </>
       )}
-      {error && <div className="font-sans text-[13px] text-red-600">{error}</div>}
+      {error && <div className="font-sans text-[13px] text-danger-text">{error}</div>}
     </form>
   );
 }

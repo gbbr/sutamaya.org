@@ -71,13 +71,13 @@ function Banner({
         alert ? 'bg-red-600/[.07]' : 'bg-accent/[.06]'
       }`}
     >
-      <span className={`flex-none ${alert ? 'text-red-600' : 'text-ink/60'}`}>{icon}</span>
+      <span className={`flex-none ${alert ? 'text-danger-text' : 'text-ink/60'}`}>{icon}</span>
       <div className="flex-1 min-w-0 font-sans text-[12.5px] text-ink/70 truncate" title={text}>
         {text}
       </div>
       <button
         className={`flex-none font-sans text-[12.5px] font-semibold underline underline-offset-2 ${
-          alert ? 'text-red-600 decoration-red-600/40' : 'text-accent-text decoration-accent-text/40'
+          alert ? 'text-danger-text decoration-danger-text/40' : 'text-accent-text decoration-accent-text/40'
         }`}
         onClick={onAction}
       >
