@@ -34,4 +34,15 @@ describe('SignedInBadge', () => {
     expect(navigate).toHaveBeenCalledWith('/settings');
     expect(screen.queryByLabelText(/Signed in as/)).not.toBeInTheDocument();
   });
+
+  it('signed out with local work: shows the dot and says so in the label', () => {
+    const { container } = render(<SignedInBadge user={null} size={26} atRisk />);
+    expect(screen.getByLabelText(/saved only on this device/)).toBeInTheDocument();
+    expect(container.querySelector('[data-component="SignedInBadgeDot"]')).toBeInTheDocument();
+  });
+
+  it('signed out with nothing to lose: no dot', () => {
+    const { container } = render(<SignedInBadge user={null} size={26} />);
+    expect(container.querySelector('[data-component="SignedInBadgeDot"]')).not.toBeInTheDocument();
+  });
 });
