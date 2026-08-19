@@ -37,7 +37,12 @@ vi.mock('../lib/localAccount', () => ({
 }));
 
 import { navigate } from '@reach/router';
-import { OFFLINE_DOWNLOAD_TEXT, OFFLINE_UPDATE_TEXT } from './HeaderBanner';
+import {
+  OFFLINE_DOWNLOAD_TEXT,
+  OFFLINE_UPDATE_TEXT,
+  KEEP_SAFE_TEXT,
+  KEEP_SAFE_IOS_TEXT,
+} from './HeaderBanner';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
@@ -739,8 +744,8 @@ describe('sync state', () => {
 });
 
 describe('deferred sign-in', () => {
-  const keepSafeText = 'Saved temporarily on this device';
-  const iosText = 'Safari may erase this in 7 days';
+  const keepSafeText = KEEP_SAFE_TEXT;
+  const iosText = KEEP_SAFE_IOS_TEXT;
 
   function signedOut(userDataOverrides: Partial<ReturnType<typeof useUserData>> = {}) {
     vi.mocked(useAuth).mockReturnValue({
