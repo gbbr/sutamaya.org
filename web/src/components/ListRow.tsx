@@ -56,12 +56,11 @@ const rowIndent = (depth: number) => 18 + depth * 14;
 // button-based rename/delete/move controls that always work (touch included), plus Pointer
 // Events drag-and-drop reordering/nesting when "reorder mode" (see the toggle by "My lists") is
 // on. The drag surface is a dedicated handle on the row's left edge (icon + a 30px-wide, full
-// row height touch target), not the whole row — an earlier version made the entire row
-// touchAction:none while in reorder mode, which also blocked vertical scrolling of the list
-// pane itself (you couldn't scroll past a row without dragging it) and needed userSelect:none
-// smeared across the whole row to stop text selection. Confining touchAction/userSelect to the
-// handle keeps the rest of the row (title, member count, options button) scrollable and
-// selectable as normal, matching ListPane's sutta-reorder grip. A press-and-drag on the handle
+// row height touch target), not the whole row: `touchAction: none` on the row itself would also
+// block vertical scrolling of the list pane past it, and would need `userSelect: none` smeared
+// across the row to stop text selection. Confining both to the handle keeps the rest of the row
+// (title, member count, options button) scrollable and selectable as normal, matching ListPane's
+// sutta-reorder grip. A press-and-drag on the handle
 // engages once it clears a small movement threshold (a plain tap still reaches the handle's
 // no-op — nothing else lives there — harmlessly). Dropping on the inner half of a group's row
 // nests it as a child, anywhere else resolves to a sibling position (see useListTreeDrag's

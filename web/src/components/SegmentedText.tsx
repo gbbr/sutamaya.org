@@ -33,8 +33,9 @@ function paragraphOf(key: string): string {
 // Per-role style on top of the base English `<p>` style (see SegmentFile.role) — a light,
 // legible-but-distinct treatment for each of SuttaCentral's own structural roles, rather than
 // every segment reading as identical body prose:
-//   - verse: italic, and gets a quoted-block left rule (on the wrapping div, not here — see
-//     lastInParagraph below, which the rule reuses to span a whole stanza in one line).
+//   - verse: no type change of its own — it reads as verse from the quoted-block left rule and
+//     indent, which live on the wrapping div rather than here (see the JSX below) so one rule
+//     spans a whole stanza in a single line.
 //   - heading: bold and a size up, for a sutta's own internal sub-headings (e.g. DN9's numbered
 //     sections, or DN2's <h5>-deep "4.3.3.2. Mind-Made Body" sub-sections). A heading's key shares
 //     its paragraph number with the body text right after it (e.g. "6.0" the heading, "6.1"/"6.2"/…
@@ -51,9 +52,9 @@ function paragraphOf(key: string): string {
 //   - list-item: a genuine `<ol>`/`<li>` numbered list embedded in body prose (e.g. DN28 §10's
 //     four types of practice — see build-corpus.mjs's roleFor()/buildBodySegments). Segments
 //     render as plain text, not real DOM `<li>`s, so there's no browser-generated marker — a
-//     hanging indent (`paddingLeft`/`textIndent` on the wrapping style, set in the JSX below since
-//     that isn't part of the base font/color styling this function returns) plus a literal "N. "
-//     prefix (SegmentRow's own JSX, from the running listIndex prop) stand in for one.
+//     hanging indent (`paddingLeft`, set in the JSX below since it isn't part of the base
+//     font/color styling this function returns) plus a literal "N." prefix positioned into the
+//     gutter it opens (SegmentRow's own JSX, from the running listIndex prop) stand in for one.
 function roleStyle(
   role: SegmentRole | undefined,
   fontSize: number,
@@ -210,7 +211,9 @@ const SegmentRow = memo(function SegmentRow({
         }}
       >
         {seg.role === 'list-item' && (
-          <span style={{ position: 'absolute', left: 0, width: 20, userSelect: 'none' }}>{listIndex}.</span>
+          // data-seg-ignore: rendered text that isn't part of `seg.en`, so the selection offsets
+          // useHighlightPopup takes inside this paragraph discount it (see its IGNORED_TEXT).
+          <span data-seg-ignore style={{ position: 'absolute', left: 0, width: 20, userSelect: 'none' }}>{listIndex}.</span>
         )}
         {parts.map((p, j) =>
           p.c ? (
@@ -227,8 +230,8 @@ const SegmentRow = memo(function SegmentRow({
               // feature drags across (including dragging *through* an existing highlight to
               // extend/merge it), so suppressing selection on it would break that drag mid-gesture.
               // Text color switches to theme.fg once the paint itself dims below opaque (dark
-              // theme) — the hardcoded near-black otherwise assumes an opaque pastel background,
-              // which no longer holds once that background is alpha-composited over a dark page.
+              // theme): the near-black below assumes an opaque pastel background, which doesn't
+              // hold once that background is alpha-composited over a dark page.
               style={{
                 background: highlightPaint(p.c, theme),
                 borderRadius: 2,
@@ -248,6 +251,9 @@ const SegmentRow = memo(function SegmentRow({
         )}
         {seg.note && showNotes && (
           <sup
+            // As the list-item marker above: rendered text that isn't part of `seg.en`, so
+            // useHighlightPopup's offsets discount it.
+            data-seg-ignore
             // padding (rather than just a bigger glyph) is what actually grows the tap target —
             // a bare `<sup>*</sup>` hit-tests to its own tiny painted glyph, which is what made
             // it fiddly to hit on a touch screen. Vertical padding on an inline, non-replaced
@@ -415,11 +421,10 @@ function SegmentedTextInner({
   activeWord,
   focusUid,
 }: SegmentedTextProps) {
-  // Space between paragraphs — scales with both the Size and Line height reader controls (not a
-  // fixed pixel value), so turning either up also opens up more room between paragraphs instead
-  // of just within them. 0.6x a full computed line height reads as a clear paragraph break
-  // without the gap dominating the page the way a full line height did.
-  const paragraphGap = Math.round((fontSize * lineHeight * 1.0) / 100);
+  // Space between paragraphs — one full computed line height, so it scales with both the Size and
+  // Line height reader controls rather than being a fixed pixel value: turning either up opens up
+  // more room between paragraphs as well as within them.
+  const paragraphGap = Math.round((fontSize * lineHeight) / 100);
   // Grouped once per `highlights` change (O(segments + highlights)) rather than every segment
   // re-scanning the whole array (O(segments × highlights)).
   const highlightsBySeg = useMemo(() => {

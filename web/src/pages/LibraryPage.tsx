@@ -33,24 +33,22 @@ export function LibraryPage({
   // `suttaId` is a splat segment (see App.tsx) so both /browse/:nodeId and
   // /browse/:nodeId/:suttaId are the *same* route element — giving it '' rather than undefined
   // when absent, and keeping LibraryPage mounted (with all its local state, including every
-  // pane's scroll position) across selecting/deselecting a highlighted row, instead of the
-  // full remount+state-loss that two separate <LibraryPage> route elements caused (reach-router
-  // auto-keys route children by position, so switching which one matched was a key change).
+  // pane's scroll position) across selecting and deselecting a highlighted row. Two separate
+  // <LibraryPage> route elements would remount it on every such change instead: reach-router
+  // auto-keys route children by position, so switching which one matches is a key change.
   const { mobile, dragTree, resetTree, paneW } = useLayout();
   const { corpus } = useCorpus();
   const { lists, notes } = useUserData();
   // @reach/router defers the actual route-param update by a microtask + rAF after navigate()
   // (see LocationProvider.componentDidMount in @reach/router/lib/history.js), so reading
-  // `rawSuttaId`/`routeNodeId` straight from route props here would render one frame with
-  // whatever *new* local UI state a navigation handler flips synchronously (`view`, or
-  // Up/Down's `nodeId` below) paired with the *stale* id from props — on mobile that's a
-  // visible flash of the previous/empty list before the correct one appears (the "flickers,
-  // needs a second tap" bug); for Up/Down specifically it read as the step not "continuing"
-  // from wherever you already were, since the highlighted row would revert to the old sutta for
-  // a frame before catching up. Mirroring both ids into local state, set synchronously alongside
-  // whatever else a given navigation changes, keeps every render consistent; the effects below
-  // just keep them truthful for back/forward/deep-link navigation that doesn't go through one of
-  // this page's own handlers.
+  // `rawSuttaId`/`routeNodeId` straight from route props would render one frame pairing whatever
+  // *new* local UI state a navigation handler flips synchronously (`view`, or Up/Down's `nodeId`
+  // below) with the *stale* id still on props — on mobile a visible flash of the previous or
+  // empty list before the right one appears, and for Up/Down a highlighted row that jumps back to
+  // the old sutta for a frame before catching up. Mirroring both ids into local state, set
+  // synchronously alongside whatever else a given navigation changes, keeps every render
+  // consistent; the effects below keep them truthful for back/forward/deep-link navigation that
+  // doesn't go through one of this page's own handlers.
   const [suttaId, setSuttaId] = useState(rawSuttaId || undefined);
   useEffect(() => {
     setSuttaId(rawSuttaId || undefined);
@@ -76,13 +74,12 @@ export function LibraryPage({
   // unlike the one-shot values below.
   const restoreOrigin = !!(location?.state as { restoreOrigin?: boolean } | undefined)?.restoreOrigin;
   // `fromView`/`flashNodeId`, by contrast, are values meant to apply to exactly one arrival (a
-  // reader-close round trip, a breadcrumb click) — location.state set by navigate() survives a
-  // same-tab refresh (the browser keeps history.state for the current entry across a reload), so
-  // trusting them unconditionally let a refresh resurrect a stale value and silently override a
-  // pane switch made by hand since (the single most-patched bug in this component's history — see
-  // lib/routeIntent.ts). Consumed exactly once via a lazy initializer, the same one-shot guarantee
-  // `view`'s own initializer below relies on, so a stale resurrection reads as "no intent" and
-  // falls through to persisted preference instead.
+  // reader-close round trip, a breadcrumb click) — and location.state set by navigate() survives a
+  // same-tab refresh, since the browser keeps history.state for the current entry across a reload.
+  // Trusting them unconditionally therefore lets a refresh resurrect a stale value and silently
+  // override a pane switch made by hand since (see lib/routeIntent.ts). Consumed exactly once via
+  // a lazy initializer, the same one-shot guarantee `view`'s own initializer below relies on, so a
+  // stale resurrection reads as "no intent" and falls through to persisted preference instead.
   const [consumedIntent] = useState(() =>
     consumeIntent(
       location?.state as ({ fromView?: 'tree' | 'list'; flashNodeId?: string } & RouteIntent) | null | undefined,
@@ -133,10 +130,10 @@ export function LibraryPage({
   const [query, setQuery] = useState('');
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
 
-  // Computed once here (not independently by TreePane and ListPane, which used to each run their
-  // own searchCorpus scan on every keystroke) and handed down to both, so they render one
-  // consistent result set instead of two — TreePane keeps its own input/keyboard nav, ListPane
-  // does the actual row rendering; see both components for how they split it. useCorpusSearch
+  // Computed once here, not independently by TreePane and ListPane, and handed down to both — so
+  // they render one consistent result set from one scan per keystroke rather than two. TreePane
+  // keeps the input and keyboard nav, ListPane does the actual row rendering; see both
+  // components for how they split it. useCorpusSearch
   // itself defers the scan off `query` so the input stays instantly responsive even while a
   // slower device is still catching up (same hook ReaderSearchOverlay uses for its own scan).
   const hits = useCorpusSearch(corpus, query, notes, lists);
@@ -189,11 +186,11 @@ export function LibraryPage({
       // A *search* hit is the one case where the opened id isn't actually a member of whatever
       // `nodeId` currently is — search spans the whole corpus regardless of what's browsed, so a
       // hit found while browsing category A can easily live in category B. Browsing straight
-      // (tapping a row in the tree/a list) never has this mismatch: the clicked row is always
-      // already a member of `nodeId`'s own contents. Returning to A afterward would show the
-      // tree/list pane on a category the reopened sutta doesn't even belong to (on mobile, the
-      // "wrong tree pane" bug) — using the sutta's own node instead lands back on where it
-      // actually lives, the same place a bare deep link to it would.
+      // (tapping a row in the tree or a list) never has this mismatch: the clicked row is always
+      // already a member of `nodeId`'s own contents. Returning to A afterward would leave the
+      // tree/list pane on a category the reopened sutta doesn't belong to, so the sutta's own
+      // node is used instead — landing back where it actually lives, the same place a bare deep
+      // link to it would.
       const returnNodeId = query.trim() && corpus?.suttas[id] ? corpus.suttas[id].node : nodeId;
       const from = `/browse/${encodeURIComponent(returnNodeId || '')}/${encodeURIComponent(id)}`;
       // Also persisted (not just carried in router state) so ReaderPage's own close can still
@@ -337,10 +334,9 @@ export function LibraryPage({
         />
       </div>
 
-      {/* Positioned absolutely (rather than the zero-footprint negative-margin overlay this
-          replaced) so the touch-friendly hit area can extend past the pane boundary on both
-          sides without shifting either pane's width or fighting DOM paint order for which pane
-          "wins" the overlap — z-10 keeps it grabbable above both panes' own content regardless. */}
+      {/* Positioned absolutely so the touch-friendly hit area can extend past the pane boundary
+          on both sides without shifting either pane's width or fighting DOM paint order over
+          which pane "wins" the overlap — z-10 keeps it grabbable above both panes' content. */}
       {!mobile && (
         <div
           className="absolute top-0 bottom-0 z-10 cursor-col-resize touch-none"

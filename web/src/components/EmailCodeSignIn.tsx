@@ -9,6 +9,10 @@ import { useAuth } from '../context/AuthContext';
 
 const FIELD =
   'w-full h-10 px-3 rounded-field border border-ink/[.18] bg-transparent font-sans text-[14px] placeholder:text-ink/35';
+// The code field arrives focused and is the only thing the user has to do on this card once the
+// mail lands, so it carries the accent border the app uses elsewhere for the input it wants typed
+// into (ListRow's rename/draft fields) rather than the same resting outline as every other field.
+const FIELD_ACTIVE = 'border-accent ring-2 ring-accent/25';
 const SUBMIT =
   'flex items-center justify-center gap-1.5 w-full h-10 rounded-field bg-accent text-[#FBFAF7] font-sans text-[13.5px] font-medium disabled:opacity-50';
 const LINK = 'font-sans text-[12.5px] text-ink/55 underline decoration-ink/25 underline-offset-2';
@@ -97,7 +101,7 @@ export function EmailCodeSignIn({ returnTo }: { returnTo?: string }) {
             inputMode="numeric"
             autoComplete="one-time-code"
             required
-            className={`${FIELD} tracking-[.3em] text-center`}
+            className={`${FIELD} ${FIELD_ACTIVE} tracking-[.3em] text-center`}
           />
           <button type="submit" className={SUBMIT} disabled={busy || code.length !== 6}>
             {busy ? 'Checking…' : 'Sign in'}

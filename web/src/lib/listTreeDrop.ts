@@ -11,8 +11,8 @@ export interface DropRow {
 }
 
 // Resolves what dropping at vertical position `y` would do, given the currently-rendered rows of
-// the list tree. Pulled out of useListTreeDrag as a pure function so it's directly testable with
-// plain geometry (no real DOM/jsdom layout needed) — see listTreeDrop.test.ts.
+// the list tree. Pure, so it's directly testable with plain geometry and no real DOM/jsdom layout
+// — see listTreeDrop.test.ts.
 //
 // Two passes, in order:
 // 1) Nesting: the pointer sitting over the inner half of a *group* row nests as its child.
@@ -28,11 +28,11 @@ export interface DropRow {
 //    simply an invalid 'inside' zone with no fallback, so letting go reset the drag to its start
 //    position instead of dropping anywhere.
 //
-// Together these two passes are also what eliminates the double drop-indicator line that used to
-// show up right under an expanded group's own name: with independent per-row zone math, the
-// group's own bottom edge ("sibling after the group, i.e. outside it") and its first child's top
-// edge ("first inside the group") sat on the same boundary pixel and could both look valid there.
-// Here there's exactly one linear scan producing exactly one answer for any given y — a group
+// Together these two passes are also what keeps a single drop-indicator line under an expanded
+// group's own name: with independent per-row zone math, the group's own bottom edge ("sibling
+// after the group, i.e. outside it") and its first child's top edge ("first inside the group") sit
+// on the same boundary pixel and can both look valid there. Here there's exactly one linear scan
+// producing exactly one answer for any given y — a group
 // row can only ever match 'inside' (pass 1) or 'before' (pass 2, only when the pointer is above
 // its own midpoint, e.g. because it has an even earlier sibling above it); it can never come out
 // as 'after', since pass 2 only assigns 'after' as the fallback for landing past *every* row's
@@ -84,9 +84,8 @@ export function resolveDropIndicator(target: { id: string; zone: DropZone } | nu
 }
 
 // True if `candidateId` sits somewhere underneath `ofId` in the list tree — dropping `ofId` onto
-// (or as a new sibling within) a descendant of itself would create a cycle. Pulled out of
-// useListTreeDrag alongside the rest of this file's pure logic — see isValidListDrop/planListDrop
-// below, the actual decision functions that use it.
+// (or as a new sibling within) a descendant of itself would create a cycle. See
+// isValidListDrop/planListDrop below, the decision functions that use it.
 export function isDescendantOf(lists: ListDef[], candidateId: string, ofId: string): boolean {
   let cur = lists.find((l) => l.id === candidateId);
   while (cur?.parentId) {
@@ -129,15 +128,13 @@ export type ListDropPlan =
   | { type: 'reparent'; parentId: string; alreadyParented: boolean }
   | { type: 'reorder'; parentId: string | null; order: string[] };
 
-// What committing a drop should actually do — pulled out of useListTreeDrag's commitDrop as a
-// pure decision function, the same way resolveTreeDropTarget/resolveDropIndicator above were, so
-// the logic behind a real shipped bug (calling setListParent *and then* reorderLists when a drop
-// crossed parents rendered the moved item under its new parent, then jumped again once
-// reorderLists' own response landed) is directly testable without a DOM or pointer events.
-// reorderLists (queueSiblingOrder in lib/mirror.ts) sets
-// parentId on every id in `order` unconditionally, so a 'before'/'after' drop only ever needs the
-// single 'reorder' plan, even when it also crosses into a different parent — 'reparent' is only
-// for 'inside', which nests into a group with no sibling order to insert into.
+// What committing a drop should actually do — a pure decision function, like
+// resolveTreeDropTarget/resolveDropIndicator above, so it is testable without a DOM or pointer
+// events. reorderLists (queueSiblingOrder in lib/mirror.ts) sets parentId on every id in `order`
+// unconditionally, so a 'before'/'after' drop only ever needs the single 'reorder' plan, even
+// when it crosses into a different parent — pairing a setListParent with it would render the
+// moved row under its new parent and then move it again once the reorder landed. 'reparent' is
+// only for 'inside', which nests into a group with no sibling order to insert into.
 export function planListDrop(
   lists: ListDef[],
   draggedId: string,

@@ -49,11 +49,11 @@ interface ListsTreeViewProps {
 
 // The "My lists" tree (TreePane's other view) — the reorder-mode/new-list header row, the
 // top-level new-list/group draft input, the list tree itself (ListRow, recursing into its own
-// children), and the read-only "Automatic" section (Recent/Highlights/Notes). Split out of
-// TreePane, which otherwise mixed this with the unrelated corpus browse tree render (see
-// CorpusTreeView) in one component; the two share almost no JSX. All the state driving this view
-// (list CRUD, drag-and-drop, expansion) still lives in TreePane itself, via useListCrud/
-// useListTreeDrag/useListTreeIndex — this component only renders it.
+// children), and the read-only "Automatic" section (Recent/Highlights/Notes). Its own component
+// rather than part of TreePane because it shares almost no JSX with the corpus browse tree it
+// alternates with (see CorpusTreeView). All the state driving this view — list CRUD,
+// drag-and-drop, expansion — lives in TreePane, via useListCrud/useListTreeDrag/useListTreeIndex;
+// this component only renders it.
 export function ListsTreeView({
   ready,
   nodeId,

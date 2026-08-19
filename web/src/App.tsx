@@ -28,12 +28,11 @@ function LoadFailed({ onRetry }: { onRetry: () => void }) {
   );
 }
 
-// Replaces a plain `<Redirect to="/browse/dn">` at "/" — the bare origin is what both a fresh
-// tab and a PWA relaunched from the home-screen icon land on (vite-plugin-pwa's manifest
-// start_url defaults to "/"), so restoring here is what makes "close and reopen" return to
-// wherever the user actually was, not always DN. Mirrors <Redirect>'s own navigate-on-mount
-// shape so it behaves the same way under this app's deliberate no-StrictMode setup (see
-// main.tsx).
+// What "/" resolves to. The bare origin is where both a fresh tab and a PWA relaunched from the
+// home-screen icon land (vite-plugin-pwa's manifest start_url defaults to "/"), so restoring the
+// last location here is what makes "close and reopen" return to wherever the user actually was
+// rather than always to DN. Navigates on mount, the same shape @reach/router's own <Redirect>
+// uses, so it behaves correctly under this app's deliberate no-StrictMode setup (see main.tsx).
 function RestoreLastLocation(_props: RouteComponentProps) {
   useEffect(() => {
     navigate(getLastLocation() ?? '/browse/dn', { replace: true });

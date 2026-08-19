@@ -11,7 +11,7 @@ import { useListTreeIndex } from '../hooks/useListTreeIndex';
 import { useListCrud } from '../hooks/useListCrud';
 import { useListTreeDrag } from '../hooks/useListTreeDrag';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
-import { ancestorsOf, findNode, flatSuttaOrder, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
+import { ancestorsOf, findNode, flatSuttaOrder, SEARCH_PLACEHOLDER, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
 import { ancestorsOfList, flattenListTree, suttaRowMeta } from '../lib/lists';
 import { derivePaneViewSync } from '../lib/paneView';
 import { TREE_VIEW_KEY, TREE_EXPANDED_KEY } from '../lib/storageKeys';
@@ -31,12 +31,10 @@ interface PersistedExpansion {
   lists: string[];
 }
 
-// Only the ancestor chain of whatever's currently selected used to survive a remount — anything
-// else the user expanded by hand (browsing around without selecting a leaf in it) silently
-// collapsed on refresh/relaunch. Persisted here as a plain id list per tree (corpus vs. My
-// lists), read once at mount and unioned with the always-force-expanded ancestor chain (see
-// `expanded`/`listExpanded` below) so a deep link's own ancestors still open regardless of what
-// was previously expanded.
+// Everything the user has expanded by hand, kept across a refresh or relaunch — as a plain id
+// list per tree (corpus vs. My lists), read once at mount and unioned with the always-expanded
+// ancestor chain of whatever is selected (see `expanded`/`listExpanded` below), so a deep link's
+// own ancestors open regardless of what this device had open before.
 function loadPersistedExpansion(): PersistedExpansion {
   try {
     const raw = localStorage.getItem(TREE_EXPANDED_KEY);
@@ -69,7 +67,7 @@ interface TreePaneProps {
   hits: SearchHit[];
   // Reports the row this pane's own arrow-key nav currently has highlighted (or undefined when
   // not searching / nothing highlighted yet), so ListPane can mirror that highlight onto its own
-  // rows on desktop, where this pane no longer renders them itself.
+  // rows on desktop, where it — not this pane — renders the hits.
   onActiveHitChange?: (id: string | undefined) => void;
   // Whether this pane is currently the visible one (LibraryPage keeps both TreePane and
   // ListPane mounted on mobile and toggles `display:none` instead of unmounting — see
@@ -132,12 +130,11 @@ export function TreePane({
     ...toRecord(persistedExpansion.corpus),
     ...ancestorsOf(corpus, nodeId),
   }));
-  // Library and My Lists used to share one scrolling column, with My Lists always below the
-  // (often long) nikaya tree — effectively inaccessible without a lot of scrolling for anyone
-  // who mainly lives in one or the other. This switches the pane between full views of each
-  // instead, persisted like the rest of this pane's layout prefs. Not gated on being signed in: a
-  // signed-out reader has lists of their own, held in the local mirror until an account adopts
-  // them (see UserDataContext), so "My lists" is always a real place to go.
+  // Which of the two trees this pane shows in full — they get the whole column each rather than
+  // sharing one scroll, where My Lists would sit below the often-long nikaya tree and take a lot
+  // of scrolling to reach. Persisted like the rest of this pane's layout prefs. Not gated on being
+  // signed in: a signed-out reader has lists of their own, held in the local mirror until an
+  // account adopts them (see UserDataContext), so "My lists" is always a real place to go.
   const [paneView, setPaneView] = useState<'library' | 'lists'>(() => {
     try {
       return localStorage.getItem(TREE_VIEW_KEY) === 'lists' ? 'lists' : 'library';
@@ -159,11 +156,10 @@ export function TreePane({
   // breadcrumb segment's /browse/{corpus_node_id} navigation (or any other deep link into the
   // browse tree) needs to flip back to 'library' — otherwise a user who navigates there while
   // "My lists" is showing ends up on a list view with nothing selected instead.
-  // Depend on whether nodeId *is* a list id, not on the `lists` array itself — reordering or
-  // re-parenting a list (drag-and-drop in ListRow) gives `lists` a new reference without adding
-  // or removing any id, and re-running this on that reference change alone snapped the pane back
-  // to 'library' immediately after every mobile drag-drop (nodeId, still a corpus node id from
-  // whatever the user was last browsing, would hit the `else if` branch below).
+  // Depends on whether nodeId *is* a list id, not on the `lists` array itself: reordering or
+  // re-parenting a list gives `lists` a new reference without adding or removing any id, and
+  // re-running on that alone would snap the pane back to 'library' after every drag — `nodeId` is
+  // still whatever corpus node was last browsed, so it takes the corpus branch below.
   //
   // Skipped on the very first run (mount) whenever `restoreOrigin` says so — see its own prop
   // comment for why a reader-close round trip needs this sync suppressed exactly once, while a
@@ -354,13 +350,12 @@ export function TreePane({
 
   // Opening a search hit navigates to `/read/:id` — a different route than this one, so
   // LibraryPage (and this pane's search UI with it) unmounts once the reader takes over; a
-  // return trip remounts it fresh, with no stale query/result list to clean up. Deliberately
+  // return trip remounts it fresh, with no stale query or result list to clean up. Deliberately
   // *not* calling closeSearch() first: `navigate()` only takes effect a microtask+rAF later (see
   // LibraryPage's own comment on this), so clearing the search UI synchronously here would paint
-  // a frame of the bare tree underneath before the reader actually replaces it — the "search
-  // hides, tree flashes, then the reader shows" bug. Leaving the search UI exactly as the user
-  // left it until the swap happens keeps the transition looking like search result → reader,
-  // with nothing in between.
+  // a frame of the bare tree underneath before the reader replaces it. Leaving the search UI
+  // exactly as the user left it until the swap happens keeps the transition reading as search
+  // result → reader, with nothing in between.
   function openHit(id: string) {
     onOpenSutta(id);
   }
@@ -512,11 +507,9 @@ export function TreePane({
           >
             <Search size={mobile ? 16 : 15} strokeWidth={2} />
           </button>
-          {/* Account entry point, right of the toggle on every viewport (this used to be a
-              separate desktop-only footer at the bottom of the pane, with nothing else on it —
-              not worth a whole row of its own when it fits right here). */}
-          {/* The badge goes to Settings in either sign-in state, so it's the only thing needed
-              here — a separate gear beside it would open the same page. */}
+          {/* Account entry point, right of the toggle on every viewport. The badge goes to
+              Settings in either sign-in state, so it's the only control needed here — a separate
+              gear beside it would open the same page. */}
           <SignedInBadge user={user} size={mobile ? 32 : 28} />
         </div>
         {searchOpen && (
@@ -541,7 +534,7 @@ export function TreePane({
                   closeSearch();
                 }
               }}
-              placeholder="Search ID, title, blurb, note, text"
+              placeholder={SEARCH_PLACEHOLDER}
               className="w-full h-[38px] border border-ink/[.22] rounded-field pl-3 pr-8 bg-field text-[14.5px] outline-none"
               autoComplete="off"
               autoCorrect="off"
@@ -568,14 +561,14 @@ export function TreePane({
             <div className="px-[18px] pt-2 pb-1 font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">
               {hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ results` : `${hits.length} ${hits.length === 1 ? 'result' : 'results'}`}
             </div>
-            {/* On desktop, ListPane is visible right next to this pane and renders the same hits
-                with more detail (blurb, list chips, highlight count, note) — showing them again
-                here too was pure duplication. This pane still owns the input and keyboard nav
-                (see the keydown effect above, and onActiveHitChange mirroring the highlight into
-                ListPane); on mobile, where ListPane isn't shown at all, it's still the only place
-                results can appear, so it renders list chips/highlight-count/note itself too
-                (skipping the blurb — screen space here is tighter than ListPane's full-width
-                column, and title/ref/Pali already identify the result). */}
+            {/* Hit rows are mobile-only here. On desktop ListPane sits right next to this pane
+                and renders the same hits with more detail (blurb, list chips, highlight count,
+                note), so this pane contributes only the count above, the input, and the keyboard
+                nav (see the keydown effect above, and onActiveHitChange mirroring the highlight
+                into ListPane). On mobile ListPane isn't shown at all, making this the only place
+                results can appear — hence the chips/highlight-count/note here too, minus the
+                blurb, since this column is narrower than ListPane's and ref/title/Pali already
+                identify the result. */}
             {mobile && (
               <>
                 {displayHits.map(({ id, matchedId, sutta }, i) => {

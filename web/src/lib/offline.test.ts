@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { estimateOfflineStatus, isDictionaryCached, prefetchAllSuttas, prefetchDictionary, SHARD_FETCH_TIMEOUT_MS, type ShardManifest } from './offline';
+import { estimateOfflineStatus, prefetchAllSuttas, prefetchDictionary, SHARD_FETCH_TIMEOUT_MS, type ShardManifest } from './offline';
 import { resetDictShardCache } from './dictionaryShards';
 
 // offline.ts targets browser-only behavior that this test's Node environment (see
@@ -123,9 +123,9 @@ describe('offline', () => {
     });
   });
 
-  describe('prefetchDictionary / isDictionaryCached', () => {
-    // Two shards, so "cached" has to mean all of them — the reader fetches one shard per tapped
-    // word, so a partially-filled cache is the normal state, not a finished download.
+  describe('prefetchDictionary', () => {
+    // Two shards, so "downloaded" has to mean all of them — the reader fetches one shard per
+    // tapped word, so a partially-filled cache is the normal state, not a finished download.
     const dictManifest = {
       shards: [
         { file: 'dict-shards/000.json', first: 'a', last: 'mano' },
@@ -153,7 +153,6 @@ describe('offline', () => {
       const cache = await cacheStorage.open('dictionary');
       expect(cache.has('/data/dict-shards/000.json')).toBe(true);
       expect(cache.has('/data/dict-shards/001.json')).toBe(true);
-      expect(await isDictionaryCached()).toBe(true);
     });
 
     it('skips shards that are already cached', async () => {
@@ -169,15 +168,32 @@ describe('offline', () => {
       expect(shardFetches).toEqual(['/data/dict-shards/001.json']);
     });
 
+    // How a device whose cached dictionary can't be vouched for is brought up to date: every
+    // shard is refetched and overwritten in place, with nothing deleted first, so a run that
+    // fails partway leaves the previous copy intact rather than half-erased.
+    it('refetches shards that are already cached when forced', async () => {
+      const cache = await cacheStorage.open('dictionary');
+      await cache.put('/data/dict-shards/000.json', jsonResponse({}));
+      const fetchSpy = dictFetch();
+      vi.stubGlobal('fetch', fetchSpy);
+
+      const ok = await prefetchDictionary(undefined, true);
+
+      expect(ok).toBe(true);
+      const shardFetches = fetchSpy.mock.calls.map(([u]) => u).filter((u: string) => !u.endsWith('manifest.json'));
+      expect(shardFetches).toEqual(['/data/dict-shards/000.json', '/data/dict-shards/001.json']);
+    });
+
     // Half a dictionary is not an offline dictionary: the words in the missing shard fail, and
-    // the caller records a completed download that would silently never be repaired.
-    it('reports failure when any single shard fails, and does not report itself cached', async () => {
+    // the caller would otherwise record a completed download that is never repaired.
+    it('reports failure when any single shard fails', async () => {
       vi.stubGlobal('fetch', dictFetch('/data/dict-shards/001.json'));
 
       const ok = await prefetchDictionary();
 
       expect(ok).toBe(false);
-      expect(await isDictionaryCached()).toBe(false);
+      const cache = await cacheStorage.open('dictionary');
+      expect(cache.has('/data/dict-shards/001.json')).toBe(false);
     });
 
     it('reports failure without throwing when the fetch fails, and leaves nothing cached', async () => {
@@ -191,7 +207,8 @@ describe('offline', () => {
       const ok = await prefetchDictionary();
 
       expect(ok).toBe(false);
-      expect(await isDictionaryCached()).toBe(false);
+      const cache = await cacheStorage.open('dictionary');
+      expect(cache.has('/data/dict-shards/000.json')).toBe(false);
     });
   });
 

@@ -16,11 +16,11 @@ interface NoteEditorProps {
   focusSignal?: number;
 }
 
-// A note is a discrete edit, not a live stream — Enter commits it (no newline key at all),
-// leaving the field also commits, and the Save button is there for anyone who'd
-// rather not remember either shortcut. Keeps its own draft state so nothing round-trips to the
-// server per keystroke; only resyncs from `value` when it changes out from under the draft
-// (switching suttas, or a fresh fetch), not while the user is actively mid-edit.
+// A note is a discrete edit, not a live stream — Enter commits it (so there's no newline key at
+// all), leaving the field also commits, and the Save button is there for anyone who'd rather not
+// remember either shortcut. Keeps its own draft state so nothing is written per keystroke, and
+// resyncs it whenever `value` changes: normally that's switching suttas, but a note edited on
+// another device and pulled in mid-edit replaces the draft too.
 export function NoteEditor({
   value,
   onSubmit,

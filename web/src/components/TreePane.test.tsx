@@ -58,7 +58,7 @@ import {
 import { estimateOfflineStatus, isOfflineTextStale } from '../lib/offline';
 import { dismissKeepSafe, isIosBrowserTab, isKeepSafeDismissed } from '../lib/localAccount';
 import { TreePane } from './TreePane';
-import { searchCorpus } from '../lib/corpus';
+import { searchCorpus, SEARCH_PLACEHOLDER } from '../lib/corpus';
 import type { Corpus, ListDef, User } from '../lib/types';
 
 function buildCorpus(): Corpus {
@@ -412,15 +412,15 @@ describe('search', () => {
 
   it('is hidden until the search icon is clicked, then autofocuses', async () => {
     renderHarness();
-    expect(screen.queryByPlaceholderText('Search ID, title, blurb, note, text')).not.toBeInTheDocument();
+    expect(screen.queryByPlaceholderText(SEARCH_PLACEHOLDER)).not.toBeInTheDocument();
     await userEvent.click(screen.getByLabelText('Search'));
-    expect(screen.getByPlaceholderText('Search ID, title, blurb, note, text')).toHaveFocus();
+    expect(screen.getByPlaceholderText(SEARCH_PLACEHOLDER)).toHaveFocus();
   });
 
   it('filters to matching results and opens one on click, leaving the search UI as-is', async () => {
     const { onOpenSutta } = renderHarness();
     await userEvent.click(screen.getByLabelText('Search'));
-    const input = screen.getByPlaceholderText('Search ID, title, blurb, note, text');
+    const input = screen.getByPlaceholderText(SEARCH_PLACEHOLDER);
     await userEvent.type(input, 'hindrance');
     expect(screen.getByText('Overcoming the Hindrances')).toBeInTheDocument();
     await userEvent.click(screen.getByText('Overcoming the Hindrances'));
@@ -428,13 +428,13 @@ describe('search', () => {
     // Deliberately *not* cleared here — clearing it synchronously would flash the bare tree for
     // a frame before the (deferred) navigation actually replaces this page with the reader. It's
     // left for the real component to unmount along with the rest of this page once that happens.
-    expect(screen.getByPlaceholderText('Search ID, title, blurb, note, text')).toHaveValue('hindrance');
+    expect(screen.getByPlaceholderText(SEARCH_PLACEHOLDER)).toHaveValue('hindrance');
   });
 
   it('shows a no-matches state for a query with no hits', async () => {
     renderHarness();
     await userEvent.click(screen.getByLabelText('Search'));
-    const input = screen.getByPlaceholderText('Search ID, title, blurb, note, text');
+    const input = screen.getByPlaceholderText(SEARCH_PLACEHOLDER);
     await userEvent.type(input, 'nonexistentquery');
     expect(screen.getByText('No matches.')).toBeInTheDocument();
   });
@@ -442,51 +442,51 @@ describe('search', () => {
   it('typing without opening search first reaches nothing (no hidden input to type into)', async () => {
     renderHarness();
     await userEvent.keyboard('hindrance');
-    expect(screen.queryByPlaceholderText('Search ID, title, blurb, note, text')).not.toBeInTheDocument();
+    expect(screen.queryByPlaceholderText(SEARCH_PLACEHOLDER)).not.toBeInTheDocument();
     expect(screen.queryByText('Overcoming the Hindrances')).not.toBeInTheDocument();
   });
 
   it('"/" opens and focuses the search box from anywhere; Escape closes and clears it', async () => {
     renderHarness();
     fireEvent.keyDown(window, { key: '/' });
-    const input = screen.getByPlaceholderText('Search ID, title, blurb, note, text') as HTMLInputElement;
+    const input = screen.getByPlaceholderText(SEARCH_PLACEHOLDER) as HTMLInputElement;
     expect(input).toHaveFocus();
     await userEvent.type(input, 'hindrance');
     expect(screen.queryByText('No matches.')).not.toBeInTheDocument();
     fireEvent.keyDown(input, { key: 'Escape' });
-    expect(screen.queryByPlaceholderText('Search ID, title, blurb, note, text')).not.toBeInTheDocument();
+    expect(screen.queryByPlaceholderText(SEARCH_PLACEHOLDER)).not.toBeInTheDocument();
   });
 
   it('the inline "x" clears and closes the search box', async () => {
     renderHarness();
     await userEvent.click(screen.getByLabelText('Search'));
-    const input = screen.getByPlaceholderText('Search ID, title, blurb, note, text');
+    const input = screen.getByPlaceholderText(SEARCH_PLACEHOLDER);
     await userEvent.type(input, 'hindrance');
     await userEvent.click(screen.getByLabelText('Clear search'));
-    expect(screen.queryByPlaceholderText('Search ID, title, blurb, note, text')).not.toBeInTheDocument();
+    expect(screen.queryByPlaceholderText(SEARCH_PLACEHOLDER)).not.toBeInTheDocument();
   });
 
   it('submitting an empty query (Enter) closes the search box', async () => {
     renderHarness();
     await userEvent.click(screen.getByLabelText('Search'));
-    const input = screen.getByPlaceholderText('Search ID, title, blurb, note, text');
+    const input = screen.getByPlaceholderText(SEARCH_PLACEHOLDER);
     fireEvent.keyDown(input, { key: 'Enter' });
-    expect(screen.queryByPlaceholderText('Search ID, title, blurb, note, text')).not.toBeInTheDocument();
+    expect(screen.queryByPlaceholderText(SEARCH_PLACEHOLDER)).not.toBeInTheDocument();
   });
 
   it('clicking the search icon again while open closes it (same as "x"/Escape)', async () => {
     renderHarness();
     await userEvent.click(screen.getByLabelText('Search'));
-    expect(screen.getByPlaceholderText('Search ID, title, blurb, note, text')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(SEARCH_PLACEHOLDER)).toBeInTheDocument();
     await userEvent.click(screen.getByLabelText('Close search'));
-    expect(screen.queryByPlaceholderText('Search ID, title, blurb, note, text')).not.toBeInTheDocument();
+    expect(screen.queryByPlaceholderText(SEARCH_PLACEHOLDER)).not.toBeInTheDocument();
   });
 
   it('on desktop, shows only the result count — not the row list (ListPane renders results there)', async () => {
     vi.mocked(useLayout).mockReturnValue(mockLayout({ mobile: false }));
     renderHarness();
     await userEvent.click(screen.getByLabelText('Search'));
-    const input = screen.getByPlaceholderText('Search ID, title, blurb, note, text');
+    const input = screen.getByPlaceholderText(SEARCH_PLACEHOLDER);
     await userEvent.type(input, 'hindrance');
     expect(screen.getByText('1 result')).toBeInTheDocument();
     expect(screen.queryByText('Overcoming the Hindrances')).not.toBeInTheDocument();

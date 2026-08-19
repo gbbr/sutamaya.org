@@ -12,13 +12,14 @@ export interface GutterMark {
   top: number;
 }
 
-// Pure position math for HighlightGutter's raindrop marks, split out of that component's
-// `recompute()` so the screen-coordinate/scroll-unit conversion — the part that previously had a
-// real bug (see HighlightGutter's own comment: getBoundingClientRect() reports real, post-`zoom`
-// screen coordinates, but scrollTop/scrollHeight are local, pre-zoom layout units — mixing them
-// without dividing the rect values by `scale` first misplaced every mark under zoom) — is
-// unit-testable without a DOM. `containerRect`/`segTop` are raw getBoundingClientRect() readings
-// (post-zoom); `scrollHeight`/`scrollTop` are the container's own pre-zoom scroll properties.
+// Pure position math for HighlightGutter's raindrop marks, kept out of that component so the
+// screen-coordinate/scroll-unit conversion is unit-testable without a DOM. That conversion is the
+// delicate part (see HighlightGutter's own comment): getBoundingClientRect() reports real,
+// post-`zoom` screen coordinates, while scrollTop/scrollHeight are local, pre-zoom layout units,
+// so the rect values have to be divided by `scale` before the two are mixed or every mark lands
+// in the wrong place under a non-1 UI scale. `containerRect`/`segTop` are raw
+// getBoundingClientRect() readings (post-zoom); `scrollHeight`/`scrollTop` are the container's
+// own pre-zoom scroll properties.
 export function computeGutterLayout(
   groups: HighlightGroup[],
   containerRect: { top: number; height: number },

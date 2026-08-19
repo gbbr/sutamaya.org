@@ -13,10 +13,10 @@ interface CorpusTreeViewProps {
 }
 
 // The corpus browse tree (TreePane's "Library" view) — one row per nikaya, each expandable into
-// TreeRow's own recursive chapter/category rendering. Split out of TreePane, which otherwise mixed
-// this with the unrelated "My lists" tree render (see ListsTreeView) in one component; the two
-// share almost no JSX. TreePane itself still owns all the state this needs (expanded/onToggle)
-// and the header/search chrome around both trees.
+// TreeRow's own recursive chapter/category rendering. Its own component rather than part of
+// TreePane because it shares almost no JSX with the "My lists" tree it alternates with (see
+// ListsTreeView); TreePane still owns all the state this needs (expanded/onToggle) and the
+// header/search chrome around both trees.
 export function CorpusTreeView({ corpus, expanded, onToggle, onSelect, nodeId, flashNodeId }: CorpusTreeViewProps) {
   return (
     <div data-component="CorpusTreeView">

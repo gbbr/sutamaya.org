@@ -1,10 +1,8 @@
 export type PaneView = 'library' | 'lists';
 
-// Pure decision logic behind TreePane's Library/My-lists toggle sync effect — pulled out so it's
-// unit-testable on its own, since the mobile pane-state bugs this drives (which pane shows after
-// a chip/breadcrumb click, a deep link, or a reader-close round trip) have historically been the
-// single most-patched bug class in this component, with no direct test coverage of the decision
-// itself.
+// Pure decision logic behind TreePane's Library/My-lists toggle sync effect — kept out of the
+// component so the decision itself is unit-testable, since which pane shows after a chip or
+// breadcrumb click, a deep link, or a reader-close round trip is delicate and easy to regress.
 //
 // Returns the pane view to switch to, or null to leave it alone. Null covers: the very first
 // mount of a reader-close round trip (its `nodeId` can be a sutta's own corpus node even though

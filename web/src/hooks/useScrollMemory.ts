@@ -31,9 +31,9 @@ function persist() {
   }
 }
 
-// Writing to sessionStorage on every scroll tick would be a lot of synchronous main-thread
-// work during a fling — debounce it, and flush immediately on pagehide (fires for reloads too,
-// not just navigating away) so the very last position isn't lost to an unfired debounce.
+// Writing to localStorage on every scroll tick would be a lot of synchronous main-thread work
+// during a fling — debounce it, and flush immediately on pagehide (fires for reloads too, not
+// just navigating away) so the very last position isn't lost to an unfired debounce.
 let persistTimer: ReturnType<typeof setTimeout> | null = null;
 function schedulePersist() {
   if (persistTimer != null) return;

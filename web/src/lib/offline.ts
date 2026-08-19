@@ -110,10 +110,10 @@ async function cachedUidSet(cache: Cache, uids: string[]): Promise<Set<string>> 
   return cached;
 }
 
-// A shard can only be fetched whole — there's no per-sutta resumability within one anymore (the
-// tradeoff for cutting ~4000 requests down to a few dozen). "Satisfied" means every uid this
-// caller actually wants out of that shard is already individually cached, so the shard can be
-// skipped entirely rather than re-downloaded.
+// A shard can only be fetched whole — resumability is per shard, not per sutta, which is the
+// tradeoff for cutting ~4000 requests down to a few dozen. "Satisfied" means every uid this caller
+// actually wants out of that shard is already individually cached, so the shard can be skipped
+// entirely rather than re-downloaded.
 function shardSatisfied(shard: ShardEntry, wanted: Set<string>, cached: Set<string>): boolean {
   return shard.uids.every((u) => !wanted.has(u) || cached.has(u));
 }
@@ -164,16 +164,25 @@ async function runShardPass(
   return { failed, circuitTripped: false };
 }
 
+// `force` refetches every shard instead of skipping the uids already present, overwriting each
+// cache entry in place. That's how a device whose cached text can't be vouched for is brought up
+// to date — deleting the cache first would do the same thing, but a download that then fails or is
+// cancelled would leave it with less offline text than it started with (see SettingsPage).
 export async function prefetchAllSuttas(
   uids: string[],
-  opts: { concurrency?: number; signal?: AbortSignal; onProgress?: (doneBytes: number, totalBytes: number) => void } = {}
+  opts: {
+    concurrency?: number;
+    signal?: AbortSignal;
+    force?: boolean;
+    onProgress?: (doneBytes: number, totalBytes: number) => void;
+  } = {}
 ): Promise<{ failed: string[]; circuitTripped: boolean }> {
-  const { concurrency = SHARD_CONCURRENCY, signal, onProgress } = opts;
+  const { concurrency = SHARD_CONCURRENCY, signal, force = false, onProgress } = opts;
   if (signal?.aborted) return { failed: [], circuitTripped: false };
 
   const [manifest, cache] = await Promise.all([fetchManifest(signal), caches.open(SUTTA_TEXT_CACHE)]);
   const wanted = new Set(uids);
-  const cached = await cachedUidSet(cache, uids);
+  const cached = force ? new Set<string>() : await cachedUidSet(cache, uids);
 
   // Restricted to shards that actually contain at least one wanted uid — irrelevant in practice
   // ("download all suttas" always wants everything the manifest has), but keeps this correct if
@@ -189,24 +198,10 @@ export async function prefetchAllSuttas(
     return { failed: failedUidsOf(first.failed, wanted), circuitTripped: first.circuitTripped };
   }
 
-  // Retry through the same onProgress callback — no more silent second pass leaving the UI
-  // looking frozen while it's actually still working.
+  // One retry pass over whatever failed, reporting through the same onProgress callback so the UI
+  // keeps moving rather than looking frozen while this is still working.
   const second = await runShardPass(cache, first.failed, concurrency, signal, onProgress, doneBytes, totalBytes);
   return { failed: failedUidsOf(second.failed, wanted), circuitTripped: second.circuitTripped };
-}
-
-// Every dictionary shard is cached, so a word tap works with no network at all. Nothing weaker
-// will do: the reader fetches shards one at a time, on demand, so "some of them are cached" only
-// means the words looked up so far would work offline.
-export async function isDictionaryCached(): Promise<boolean> {
-  if (!('caches' in window)) return false;
-  try {
-    const [shards, cache] = await Promise.all([loadDictShardManifest(), caches.open(DICTIONARY_CACHE)]);
-    const present = await Promise.all(shards.map((s) => cache.match(`/data/${s.file}`)));
-    return present.every((r) => r !== undefined);
-  } catch {
-    return false;
-  }
 }
 
 // Pulls every dictionary shard into Cache Storage. The reader only ever fetches the shard a tap
@@ -215,7 +210,10 @@ export async function isDictionaryCached(): Promise<boolean> {
 // done. Written directly into Cache Storage the same way fetchAndCacheShard above writes sutta
 // text, for the same reason: don't trust a resolved fetch() to imply the Service Worker's own
 // cache write succeeded.
-export async function prefetchDictionary(signal?: AbortSignal): Promise<boolean> {
+//
+// `force` refetches shards already present rather than skipping them, overwriting them in place —
+// see prefetchAllSuttas above for why that beats clearing the cache first.
+export async function prefetchDictionary(signal?: AbortSignal, force = false): Promise<boolean> {
   if (!('caches' in window)) return false;
   try {
     const [shards, cache] = await Promise.all([loadDictShardManifest(), caches.open(DICTIONARY_CACHE)]);
@@ -226,7 +224,7 @@ export async function prefetchDictionary(signal?: AbortSignal): Promise<boolean>
       const results = await Promise.all(
         batch.map(async (shard) => {
           const url = `/data/${shard.file}`;
-          if (await cache.match(url)) return true;
+          if (!force && (await cache.match(url))) return true;
           try {
             const res = await fetch(url, { signal });
             if (!res.ok) return false;
@@ -274,19 +272,6 @@ export function recordCachedCorpusVersion(which: 'data' | 'dictionary', version:
 export function isOfflineTextStale(dataVersion: string): boolean {
   const cached = cachedCorpusVersions().data;
   return cached !== null && cached !== dataVersion;
-}
-
-// Dropping the whole cache is what makes a re-download actually re-download: prefetchAllSuttas
-// skips every uid already present, so refreshing stale text without this would be a no-op that
-// reported success. Same for the dictionary, whose prefetch returns early when it's cached.
-export async function clearCachedText(): Promise<void> {
-  if (!('caches' in window)) return;
-  await caches.delete(SUTTA_TEXT_CACHE);
-}
-
-export async function clearCachedDictionary(): Promise<void> {
-  if (!('caches' in window)) return;
-  await caches.delete(DICTIONARY_CACHE);
 }
 
 export async function estimateOfflineStatus(uids: string[]): Promise<{ cached: number; total: number }> {

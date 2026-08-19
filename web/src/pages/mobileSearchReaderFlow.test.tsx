@@ -22,6 +22,7 @@ import { useLayout } from '../context/LayoutContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { LibraryPage } from './LibraryPage';
 import { ReaderPage } from './ReaderPage';
+import { SEARCH_PLACEHOLDER } from '../lib/corpus';
 import type { Corpus } from '../lib/types';
 
 function buildCorpus(): Corpus {
@@ -147,7 +148,7 @@ describe('mobile search -> reader -> close flow', () => {
 
     // Open search and search for the MN sutta while DN is still the browsed nodeId.
     fireEvent.click(tree().getByRole('button', { name: 'Search' }));
-    const input = tree().getByPlaceholderText('Search ID, title, blurb, note, text');
+    const input = tree().getByPlaceholderText(SEARCH_PLACEHOLDER);
     fireEvent.change(input, { target: { value: 'Mulapariyaya' } });
 
     const hit = await tree().findByText('Mulapariyaya');
@@ -203,7 +204,7 @@ describe('mobile search -> reader -> close flow', () => {
     // Search (still visible/usable regardless of the Library/My-lists toggle) and open a hit —
     // an ordinary corpus sutta, not a member of "Favorites".
     fireEvent.click(tree().getByRole('button', { name: 'Search' }));
-    fireEvent.change(tree().getByPlaceholderText('Search ID, title, blurb, note, text'), {
+    fireEvent.change(tree().getByPlaceholderText(SEARCH_PLACEHOLDER), {
       target: { value: 'Mulapariyaya' },
     });
     fireEvent.click(await tree().findByText('Mulapariyaya'));

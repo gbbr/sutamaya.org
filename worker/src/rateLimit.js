@@ -2,10 +2,11 @@
 // call sites read the same way whether or not a binding is configured — and so the decision
 // logic is unit-testable against a stub binding.
 //
-// Three per-IP budgets live here: `/api/*` in general, `POST /api/auth/google`, and
-// `GET /api/auth/me` on its own. There's no limiter for the static corpus, dictionary and
-// per-sutta text under `/data/` — those files are served straight from the assets binding and
-// never reach the Worker at all.
+// Three per-IP budgets live here: `/api/*` in general, `/api/auth/*` (the sign-in routes), and
+// `GET /api/auth/me` on its own, since AuthContext calls it on every page load and PWA relaunch
+// and would otherwise exhaust the budget a real sign-in needs. There's no limiter for the static
+// corpus, dictionary and per-sutta text under `/data/` — those files are served straight from the
+// assets binding and never reach the Worker at all.
 //
 // The binding's `simple.period` accepts only 10 or 60 seconds, so every budget here is expressed
 // per minute in wrangler.jsonc — the actual numbers are in docs/deploy.md.

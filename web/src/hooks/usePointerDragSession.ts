@@ -32,8 +32,8 @@ interface StartDragOptions {
 // reliably), a rAF loop that auto-scrolls `scrollRef`'s container and calls back into the
 // caller's own per-frame drop-target logic, and unmount-safe cleanup of both. What differs
 // between the two callers — hit-testing rows for a drop zone vs. reshuffling a live order array,
-// and how each commits its result — stays in their own code; this hook only owns the parts that
-// were previously duplicated line-for-line.
+// and how each commits its result — stays in their own code; this hook owns only the mechanics
+// they have in common.
 export function usePointerDragSession({ scrollRef, onFrame }: UsePointerDragSessionParams) {
   const activeRef = useRef(false);
   const pointerYRef = useRef(0);

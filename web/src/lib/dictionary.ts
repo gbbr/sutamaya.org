@@ -44,10 +44,10 @@ export interface AdjacentWord {
 
 // Walks from (fromSegIndex, fromWordIndex) to the next Pali token in `dir`, crossing into the
 // next/previous segment (skipping any with no Pali tokens at all) once the current one runs out
-// — used by ReaderPage's goToAdjacentWord (DictionaryDock's prev/next arrows, and the reader's
-// Shift+Arrow shortcut with the dock open). Pure: `segWords` is each segment's own token list, in
-// the same order as the sutta itself — no DOM/state involved, so this is the part worth
-// unit-testing directly rather than only through the component. Returns null once `dir` walks
+// — used by useDictionaryLookup's goToAdjacentWord (DictionaryDock's prev/next arrows, and the
+// reader's Left/Right shortcut with the dock open). Pure: `segWords` is each segment's own token
+// list, in the same order as the sutta itself — no DOM or state involved, so this is directly
+// unit-testable rather than only reachable through the component. Returns null once `dir` walks
 // past either end of the sutta with nothing found.
 export function findAdjacentWord(segWords: string[][], fromSegIndex: number, fromWordIndex: number, dir: 1 | -1): AdjacentWord | null {
   let si = fromSegIndex;

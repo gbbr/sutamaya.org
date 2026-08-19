@@ -34,11 +34,10 @@ interface UseDictionaryLookupOptions {
   setOpenSegs: (updater: (s: Record<number, boolean>) => Record<number, boolean>) => void;
 }
 
-// ReaderPage's word-tap dictionary lookup cluster: the currently-open dock's state, opening/
+// ReaderPage's word-tap dictionary lookup cluster: the currently-open dock's state, opening and
 // closing it, and stepping to the adjacent Pali word (DictionaryDock's own prev/next arrows, and
-// the reader's Shift+Arrow shortcut). Pulled out as its own hook — a faithful move (same
-// conditions, same dependency tracking) mirroring how useReaderKeyboard was already pulled out of
-// this same component.
+// the reader's plain Left/Right shortcut, which only does this while the dock is open — Shift
+// belongs to sutta-to-sutta navigation; see useReaderKeyboard).
 export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegment, setOpenSegs }: UseDictionaryLookupOptions) {
   const [dict, setDict] = useState<DictState | null>(null);
 
@@ -171,8 +170,8 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
 
   // Walks forward/backward from the currently-open dict word to the next Pali token, crossing
   // into the next/previous segment (skipping any with no Pali tokens at all) once the current one
-  // runs out — used by DictionaryDock's own prev/next arrows and the reader's Shift+Arrow
-  // shortcut (see useReaderKeyboard, which depends on this).
+  // runs out — used by DictionaryDock's own prev/next arrows and the reader's Left/Right shortcut
+  // (see useReaderKeyboard, which depends on this).
   const goToAdjacentWord = useCallback(
     (dir: 1 | -1) => {
       if (!dict || segWords.length === 0) return;

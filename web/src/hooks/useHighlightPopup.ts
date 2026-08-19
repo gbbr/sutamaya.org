@@ -18,15 +18,37 @@ function closestSeg(node: Node | null): HTMLElement | null {
   return el ? el.closest<HTMLElement>('[data-seg]') : null;
 }
 
-// Character offset from the start of `seg`'s text to a point inside it — same technique for
-// both ends of a selection, single- or multi-segment, so they're always consistent with each
-// other and with how highlighted spans are rendered (SegmentedText slices `seg.en` by these
-// same offsets).
+// Text rendered inside a segment that isn't part of its stored `en` string — the list-item's
+// "1." marker and the translator-note asterisk (see SegmentedText, which marks both). Both are
+// `user-select: none`, but that only governs what the *user* can select: `Range.toString()`
+// counts them regardless, so they have to be discounted by hand or every offset taken inside a
+// numbered-list segment lands a couple of characters right of the selection.
+const IGNORED_TEXT = '[data-seg-ignore]';
+
+// How much of `pre`'s text belongs to those non-content elements. Both ranges start at the same
+// point, so an element whose end yields a shorter-or-equal string ends at or before `pre`'s own
+// end — meaning its text was counted and has to come back off.
+function ignoredLengthWithin(seg: HTMLElement, pre: Range): number {
+  const preLength = pre.toString().length;
+  let ignored = 0;
+  for (const el of seg.querySelectorAll<HTMLElement>(IGNORED_TEXT)) {
+    const upTo = document.createRange();
+    upTo.selectNodeContents(seg);
+    upTo.setEndAfter(el);
+    if (upTo.toString().length <= preLength) ignored += el.textContent?.length ?? 0;
+  }
+  return ignored;
+}
+
+// Character offset into `seg`'s stored text for a point inside its rendered DOM — used for both
+// ends of a selection, single- or multi-segment, so they are always consistent with each other
+// and with how highlighted spans are rendered (SegmentedText slices `seg.en` by these same
+// offsets).
 function offsetWithin(seg: HTMLElement, container: Node, containerOffset: number): number {
   const pre = document.createRange();
   pre.selectNodeContents(seg);
   pre.setEnd(container, containerOffset);
-  return pre.toString().length;
+  return pre.toString().length - ignoredLengthWithin(seg, pre);
 }
 
 export function useHighlightPopup(suttaId: string | undefined, highlights: Highlight[], segments: SegmentFile[] | null = null) {
@@ -67,7 +89,10 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
 
       if (a === b) {
         const st = offsetWithin(a, range.startContainer, range.startOffset);
-        const en = st + String(sel).length;
+        // Measured the same way as the start rather than from the selection's own string length:
+        // whether a `user-select: none` run inside the paragraph lands in `String(sel)` varies by
+        // browser, where offsetWithin discounts it explicitly.
+        const en = offsetWithin(a, range.endContainer, range.endOffset);
         if (en <= st) return;
         const i = Number(a.dataset.seg);
         const cur = highlights.filter((h) => h.i === i).find((h) => h.s < en && h.e > st);
