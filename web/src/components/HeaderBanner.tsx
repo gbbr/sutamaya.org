@@ -32,11 +32,12 @@ import {
 // remounts with TreePane on the route boundary that actually changes them (returning from
 // /read/:suttaId), and each dismiss button sets local state directly rather than waiting for one.
 
-// How much locally-made work is enough to be worth interrupting a signed-out reader over. One note
-// or one list is a deliberate act of authorship; a single highlight is closer to a swipe, so those
-// take a few. Below this the banner stays away entirely — a first-time reader hasn't got anything
-// to lose yet, and asking them to sign in before they do is the wall this whole feature removes.
-const KEEP_SAFE_HIGHLIGHTS = 3;
+// How much locally-made work is enough to warrant the banner. One note or one list is a deliberate
+// act of authorship and counts on its own; a single highlight can be a stray drag, so it takes a
+// second one to read as intent. Kept this low because the banner costs almost nothing — a
+// dismissible strip below the header — while waiting costs whatever the reader loses in the
+// meantime. A first-time reader with nothing yet still sees nothing.
+const KEEP_SAFE_HIGHLIGHTS = 2;
 
 // One banner's chrome, so the four variants differ only in what they say and do.
 function Banner({

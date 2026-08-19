@@ -660,7 +660,7 @@ deletes this device's copy of the account's mirror and mints a fresh local id; S
 warns first when anything is still unsynced. `docs/offline-sync.md` has the full rationale.
 
 The **"keep this safe"** banner is the one nudge toward an account: it appears once the local mirror
-holds a first note, a first list, or a third highlight group — not before, since a reader with
+holds a first note, a first list, or a second highlight group — not before, since a reader with
 nothing to lose has nothing to be warned about. Dismissal is keyed to the local id, so it silences
 this body of work rather than all future ones, and a sign-out (fresh id) offers it again. On iOS in
 a browser tab it says something stronger and true — WebKit evicts script-writable storage for a site

@@ -794,7 +794,7 @@ describe('deferred sign-in', () => {
     expect(screen.getByText(keepSafeText)).toBeInTheDocument();
   });
 
-  it('counts highlight groups, not rows, and waits for the third', () => {
+  it('counts highlight groups, not rows, and waits for the second', () => {
     // One selection spanning two segments is one group — it must not count as two.
     const twoSegmentGroup = [
       { id: 'h1', i: 0, s: 0, e: 5, c: '#ff0', g: 'g1', m: '1|d' },
@@ -807,8 +807,8 @@ describe('deferred sign-in', () => {
 
     signedOut({
       highlights: {
-        dn1: [...twoSegmentGroup, { id: 'h3', i: 2, s: 0, e: 5, c: '#ff0', g: 'g2', m: '2|d' }],
-        dn2: [{ id: 'h4', i: 0, s: 0, e: 5, c: '#ff0', g: 'g3', m: '3|d' }],
+        dn1: twoSegmentGroup,
+        dn2: [{ id: 'h3', i: 0, s: 0, e: 5, c: '#ff0', g: 'g2', m: '2|d' }],
       },
     });
     renderHarness();
