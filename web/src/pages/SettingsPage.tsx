@@ -468,8 +468,10 @@ export function SettingsPage({ location }: RouteComponentProps) {
                     ("Saved temporarily on this device") — this is the risk that wording is short
                     for. Gated on the same "is there actually something to lose" check the banner
                     itself uses (hasLocalWorkWorthKeeping), so a first-time reader with nothing yet
-                    doesn't see a warning about losing nothing. */}
-                {hasLocalWorkWorthKeeping(lists, notes, highlights) && (
+                    doesn't see a warning about losing nothing. Suppressed on an iOS browser tab,
+                    where the danger line below states the same risk in its concrete form — two
+                    stacked warnings about one thing read as noise. */}
+                {!isIosBrowserTab() && hasLocalWorkWorthKeeping(lists, notes, highlights) && (
                   <div className="flex items-start gap-1.5 font-sans text-[13px] text-warning-text mb-3">
                     <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
                     <span>Without signing in, you risk losing your changes when the browser clears this website's data.</span>
