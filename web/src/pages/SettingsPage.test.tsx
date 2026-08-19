@@ -272,7 +272,7 @@ describe('refreshing a stale offline copy', () => {
   it('refetches the dictionary only when the dictionary itself changed', async () => {
     vi.mocked(cachedCorpusVersions).mockReturnValue({ data: 'data-v2', dictionary: 'dict-v1' });
     renderSettings();
-    await userEvent.click(screen.getByText('Download all suttas for offline'));
+    await userEvent.click(screen.getByText('Download all content'));
     expect(vi.mocked(prefetchDictionary).mock.calls[0][1]).toBe(true);
     expect(vi.mocked(prefetchAllSuttas).mock.calls[0][1]).toMatchObject({ force: false });
   });
@@ -282,14 +282,14 @@ describe('refreshing a stale offline copy', () => {
   // fails or is cancelled can't leave it with less offline text than it started with.
   it('refetches everything, without clearing, on a first-ever download', async () => {
     renderSettings();
-    await userEvent.click(screen.getByText('Download all suttas for offline'));
+    await userEvent.click(screen.getByText('Download all content'));
     expect(vi.mocked(prefetchAllSuttas).mock.calls[0][1]).toMatchObject({ force: true });
     expect(vi.mocked(prefetchDictionary).mock.calls[0][1]).toBe(true);
   });
 
   it('records both versions once the download finishes cleanly', async () => {
     renderSettings();
-    await userEvent.click(screen.getByText('Download all suttas for offline'));
+    await userEvent.click(screen.getByText('Download all content'));
     expect(recordCachedCorpusVersion).toHaveBeenCalledWith('data', 'data-v2');
     expect(recordCachedCorpusVersion).toHaveBeenCalledWith('dictionary', 'dict-v2');
   });
@@ -299,7 +299,7 @@ describe('refreshing a stale offline copy', () => {
   it('leaves the recorded text version alone when some suttas failed', async () => {
     vi.mocked(prefetchAllSuttas).mockResolvedValue({ failed: ['dn1'], circuitTripped: false });
     renderSettings();
-    await userEvent.click(screen.getByText('Download all suttas for offline'));
+    await userEvent.click(screen.getByText('Download all content'));
     expect(recordCachedCorpusVersion).not.toHaveBeenCalledWith('data', 'data-v2');
     expect(recordCachedCorpusVersion).toHaveBeenCalledWith('dictionary', 'dict-v2');
   });

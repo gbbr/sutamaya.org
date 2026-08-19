@@ -7,6 +7,7 @@ import { useAuth } from '../context/AuthContext';
 import { flatSuttaOrder } from '../lib/corpus';
 import { estimateOfflineStatus, isOfflineTextStale } from '../lib/offline';
 import { dismissKeepSafe, isIosBrowserTab, isKeepSafeDismissed } from '../lib/localAccount';
+import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
 import {
   isStandalone,
   hasOpenedSutta,
@@ -31,13 +32,6 @@ import {
 // The dismissal state and `hasOpenedSutta` are read once per mount (not subscribed live) since this
 // remounts with TreePane on the route boundary that actually changes them (returning from
 // /read/:suttaId), and each dismiss button sets local state directly rather than waiting for one.
-
-// How much locally-made work is enough to warrant the banner. One note or one list is a deliberate
-// act of authorship and counts on its own; a single highlight can be a stray drag, so it takes a
-// second one to read as intent. Kept this low because the banner costs almost nothing — a
-// dismissible strip below the header — while waiting costs whatever the reader loses in the
-// meantime. A first-time reader with nothing yet still sees nothing.
-const KEEP_SAFE_HIGHLIGHTS = 2;
 
 // Exported so tests assert against the same strings this component actually renders, rather than
 // a copy that can drift out of sync with it.
@@ -139,11 +133,7 @@ export function HeaderBanner() {
   // Counted off the derived view rather than the mirror, so it means the same thing the user sees:
   // auto-lists are excluded (they exist whether or not the user made anything), and a highlight is
   // counted per group — one selection, however many segments it spans.
-  const madeSomething =
-    lists.some((l) => !l.auto) ||
-    Object.keys(notes).length > 0 ||
-    new Set(Object.values(highlights).flatMap((rows) => rows.map((h) => h.g))).size >= KEEP_SAFE_HIGHLIGHTS;
-  const showKeepSafe = !isSignedIn && madeSomething && !keepSafeDismissed;
+  const showKeepSafe = !isSignedIn && hasLocalWorkWorthKeeping(lists, notes, highlights) && !keepSafeDismissed;
 
   if (needsReauth) {
     // A lapsed session is the one sync state worth interrupting for: nothing else in the UI changes

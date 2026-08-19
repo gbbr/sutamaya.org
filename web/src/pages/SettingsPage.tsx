@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { AlertTriangle, ArrowLeft, Check, CloudOff, Info, LogOut, RefreshCw } from 'lucide-react';
+import { AlertTriangle, ArrowLeft, Check, CloudOff, Download, Info, LogOut, RefreshCw } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpus } from '../context/CorpusContext';
@@ -11,6 +11,7 @@ import { dataApi } from '../lib/api';
 import { flatSuttaOrder } from '../lib/corpus';
 import { isTypingTarget } from '../lib/shortcuts';
 import { isIosBrowserTab } from '../lib/localAccount';
+import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
 import {
   cachedCorpusVersions,
   estimateOfflineStatus,
@@ -24,6 +25,11 @@ import type { AppTheme, ReaderFace } from '../lib/types';
 const UI_SCALE_MIN = 0.85;
 const UI_SCALE_MAX = 1.4;
 const UI_SCALE_STEP = 0.05;
+
+// Sutta text + dictionary shards combined (see build:corpus's text-shards and dict-shards
+// manifests) — hardcoded rather than fetched, since it only moves a little between corpus
+// refreshes and isn't worth a manifest round trip just to show a "~X MB" estimate.
+const TOTAL_DOWNLOAD_MB_ESTIMATE = 48;
 
 // Each theme is previewed as a miniature of the shell itself — a narrow tree-pane band beside the
 // wider paper surface, in that theme's own two colours — rather than named in a filled button, so
@@ -60,14 +66,25 @@ const UI_FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
 // can flash.
 const CARD = 'rounded-field border px-4 transition-colors duration-[1200ms] ease-out';
 
-// Two button shapes for the whole page. Primary is reserved for the one action a card is actually
-// asking for; everything else is outlined, and anything the user is unlikely to want (Sign out) is
-// quieter still — see QUIET_BUTTON.
+// Primary is reserved for the one action a card is actually asking for; secondary is the plain
+// outlined full-width shape for everything else that still deserves that much weight. Export and
+// Sign out don't — neither is what a card is asking the reader to do — so they're plain icon+text
+// links instead (LINK_ACTION), sized like inline text rather than a button.
 const PRIMARY_BUTTON =
-  'flex items-center justify-center gap-1.5 w-full h-10 rounded-field bg-accent text-[#FBFAF7] font-sans text-[13.5px] font-medium';
+  'flex items-center justify-center gap-1.5 w-full h-10 rounded-field bg-accent hover:bg-accent/90 text-[#FBFAF7] font-sans text-[13.5px] font-medium';
 const SECONDARY_BUTTON =
-  'flex items-center justify-center gap-1.5 w-full h-10 rounded-field border border-ink/[.18] font-sans text-[13.5px] font-medium';
-const QUIET_BUTTON = 'flex items-center justify-center gap-1.5 w-full h-9 font-sans text-[13px] text-ink/55';
+  'flex items-center justify-center gap-1.5 w-full h-10 rounded-field border border-ink/[.18] font-sans text-[13.5px] font-medium text-ink hover:text-ink hover:bg-ink/[.04]';
+// Underlined to match the app's existing convention for small inline actions (EmailCodeSignIn's
+// "Resend code"/"Use a different email") — without it, the icon was the only thing marking these
+// as clickable rather than descriptive text.
+const LINK_ACTION = 'inline-flex items-center gap-1.5 font-sans text-[13px] text-ink/55 underline decoration-ink/25 hover:text-ink';
+// Danger-text is reserved on this page for something actually wrong right now (a stuck sync, a
+// failed download, the iOS eviction warning) — not a standing "this button is risky" tint, which
+// would fight with those real warnings when one is showing alongside it. Sign out only borrows it
+// once armed (confirmSignOut), matching the same-colored warning line that appears above it at
+// that point; at rest it reads the same as Export.
+const LINK_DANGER =
+  'inline-flex items-center gap-1.5 font-sans text-[13px] text-danger-text underline decoration-danger-text/40 hover:text-danger-text';
 
 // Separates the two sign-in methods without ranking them — they're alternatives, not a primary
 // and a fallback.
@@ -134,7 +151,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
   const { user, logout, loading, authError } = useAuth();
   const { uiScale, uiFace, theme, setUiScale, setUiFace, setTheme } = useUiPrefs();
   const { corpus } = useCorpus();
-  const { syncStatus, pendingCount, lastSyncedAt, needsReauth } = useUserData();
+  const { syncStatus, pendingCount, lastSyncedAt, needsReauth, lists, notes, highlights } = useUserData();
 
   // setUiScale ultimately rewrites the viewport meta tag's `initial-scale` on iOS Safari (see
   // applyUiScale in lib/uiPrefs.ts) — dragging the slider fires onChange on every tick, and
@@ -385,7 +402,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                   (() => {
                     const { Icon, spin, text } = syncStatusLine(syncStatus, pendingCount, lastSyncedAt);
                     return (
-                      <div className={`flex items-start gap-1.5 py-3.5 font-sans text-[13px] ${syncStatus === 'stuck' ? 'text-danger-text' : 'text-ink/55'}`}>
+                      <div className={`flex items-start gap-1.5 py-3.5 font-sans text-[13px] ${syncStatus === 'stuck' ? 'text-danger-text' : 'text-ink/70'}`}>
                         <Icon size={13} strokeWidth={1.75} className={`flex-none mt-[3px] ${spin ? 'animate-[spin_2s_linear_infinite]' : ''}`} />
                         {text}
                       </div>
@@ -394,16 +411,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                 )}
                 <div className="py-3.5 border-t border-ink/[.06]">
                   <div className="font-sans text-[12.5px] text-ink/55 mb-1">Signed in as</div>
-                  <div className="text-[15.5px] mb-3">{user.name ? `${user.name} · ${user.email}` : user.email}</div>
-                  {/* Hidden while the session is dead rather than left to fail: this is a plain link to
-                      a requireAuth route, so it would answer 401 and hand back an error body as a
-                      download. Sign out below stays — POST /api/auth/logout is unauthenticated, so it
-                      works either way, and leaving the account is a legitimate thing to want here. */}
-                  {!needsReauth && (
-                    <a href={dataApi.exportUrl} className={`${SECONDARY_BUTTON} mb-1`}>
-                      Export my data as JSON
-                    </a>
-                  )}
+                  <div className="text-[13.5px] mb-3">{user.name ? `${user.name} · ${user.email}` : user.email}</div>
                   {/* Signing out drops this device's copy of the account's data (see logout in
                       AuthContext) — which is only safe for what the server already has. Anything
                       still queued would go with it, so that case asks first rather than confirming
@@ -418,31 +426,55 @@ export function SettingsPage({ location }: RouteComponentProps) {
                       </span>
                     </div>
                   )}
-                  <button
-                    className={QUIET_BUTTON}
-                    onClick={async () => {
-                      if (pendingCount > 0 && !confirmSignOut) {
-                        setConfirmSignOut(true);
-                        return;
-                      }
-                      await logout();
-                      navigate('/');
-                    }}
-                  >
-                    <LogOut size={14} strokeWidth={1.75} />
-                    {confirmSignOut ? 'Sign out anyway' : 'Sign out'}
-                  </button>
+                  {/* Sign out on the left, Export on the right — leaving and taking a copy with you
+                      are opposite-feeling actions, not two items in a list, so they don't share an
+                      edge the way stacked links would. Export is hidden while the session is dead
+                      rather than left to fail (see below); Sign out still works either way, since
+                      POST /api/auth/logout is unauthenticated. */}
+                  <div className="flex items-center justify-between">
+                    <button
+                      className={confirmSignOut ? LINK_DANGER : LINK_ACTION}
+                      onClick={async () => {
+                        if (pendingCount > 0 && !confirmSignOut) {
+                          setConfirmSignOut(true);
+                          return;
+                        }
+                        await logout();
+                        navigate('/');
+                      }}
+                    >
+                      <LogOut size={13} strokeWidth={1.75} />
+                      {confirmSignOut ? 'Sign out anyway' : 'Sign out'}
+                    </button>
+                    {/* This is a plain link to a requireAuth route, so a dead session would answer
+                        401 and hand back an error body as a download — hidden rather than left to
+                        fail that way. */}
+                    {!needsReauth && (
+                      <a href={dataApi.exportUrl} className={LINK_ACTION}>
+                        <Download size={13} strokeWidth={1.75} />
+                        Export my data as JSON
+                      </a>
+                    )}
+                  </div>
                 </div>
               </>
             ) : (
               <div className="py-4">
-                {/* Says the same thing the header's "keep this safe" banner says, at length:
-                    "temporarily" rather than a bare "saved on this device", which reads as a
-                    reassurance when the point is that nothing outside this device holds a copy. */}
-                <div className="font-sans text-[13px] text-ink/60 mb-3">
-                  Your lists, notes and highlights are stored temporarily on this device. Sign
-                  in to keep them and sync across devices.
+                <div className="font-sans text-[13px] text-ink/70 mb-3">
+                  Your lists, notes and highlights are saved on this device. Sign in to keep them and sync across
+                  devices.
                 </div>
+                {/* Complements the line above rather than repeating the header banner's own wording
+                    ("Saved temporarily on this device") — this is the risk that wording is short
+                    for. Gated on the same "is there actually something to lose" check the banner
+                    itself uses (hasLocalWorkWorthKeeping), so a first-time reader with nothing yet
+                    doesn't see a warning about losing nothing. */}
+                {hasLocalWorkWorthKeeping(lists, notes, highlights) && (
+                  <div className="flex items-start gap-1.5 font-sans text-[13px] text-warning-text mb-3">
+                    <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
+                    <span>If the browser clears this website's data, you will lose your local changes if you don't sign in.</span>
+                  </div>
+                )}
                 {/* Permanent, not dismissible, and shown whether or not the user has made anything
                     yet: on iOS in a browser tab this is the literal storage policy, not a nudge —
                     WebKit evicts a site's IndexedDB after about seven days without a visit. The
@@ -502,13 +534,19 @@ export function SettingsPage({ location }: RouteComponentProps) {
                     <Info size={15} strokeWidth={1.75} className="flex-none mt-[1.5px]" />
                     <span>Updated sutta text is available.</span>
                   </div>
+                ) : cachedStatus && cachedStatus.cached >= cachedStatus.total ? (
+                  <div className="font-sans text-[13px] text-ink/70 mb-3">All suttas available offline.</div>
                 ) : (
-                  <div className="font-sans text-[13px] text-ink/60 mb-3">
-                    {cachedStatus
-                      ? cachedStatus.cached >= cachedStatus.total
-                        ? 'All suttas available offline.'
-                        : `${Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% available offline.`
-                      : 'Checking offline availability…'}
+                  <div className="font-sans text-[13px] text-ink/70 mb-3">
+                    Download all suttas to enable the app to work fully offline when you don't have an internet
+                    connection.
+                    {cachedStatus && (
+                      <>
+                        {' '}
+                        Currently {Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% available offline.
+                      </>
+                    )}
+                    {' '}Total download size is about {TOTAL_DOWNLOAD_MB_ESTIMATE} MB.
                   </div>
                 )}
                 <button
@@ -516,7 +554,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                   onClick={handleDownloadOffline}
                   disabled={!corpus}
                 >
-                  {textStale ? 'Re-download updated suttas' : 'Download all suttas for offline'}
+                  {textStale ? 'Re-download updated suttas' : 'Download all content'}
                 </button>
                 {failedCount > 0 &&
                   (circuitTripped ? (
@@ -597,7 +635,9 @@ export function SettingsPage({ location }: RouteComponentProps) {
                 <button
                   key={f.id}
                   className={`h-[34px] px-3.5 rounded-full border font-sans text-[12.5px] ${
-                    uiFace === f.id ? 'border-accent bg-accent/10 text-accent-text' : 'border-ink/[.18] text-ink/70'
+                    uiFace === f.id
+                      ? 'border-accent bg-accent/10 text-accent-text'
+                      : 'border-ink/[.18] text-ink/70 hover:bg-ink/[.04]'
                   }`}
                   onClick={() => setUiFace(f.id)}
                 >
