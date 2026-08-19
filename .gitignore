@@ -11,6 +11,7 @@ web/public/data/
 data/sujato.post/
 .env
 *.local
+CLAUDE.local.md
 *.tsbuildinfo
 .dev.vars
 .wrangler/
