@@ -137,6 +137,7 @@
      see the --accent comment above for why button fills stay theme-invariant while this doesn't:
      unlike a filled button, text-on-background contrast actually needs to respond to the theme. */
   --accent-text: 146 114 67;
+  --danger-text: 220 38 38;
   --selection: 234 223 198;
   /* TreePane's Library/My-Lists pill thumb, "lists" side only ('library' side uses --chip
      instead). A cool slate reads as a harsh outlier against this theme's warm cream/beige
@@ -166,6 +167,7 @@
   --accent: 146 114 67;
   --accent2: 138 106 59;
   --accent-text: 196 154 97;
+  --danger-text: 248 113 113;
   --selection: 74 62 40;
   --pill-lists: 110 118 122;
 }
