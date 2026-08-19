@@ -200,9 +200,9 @@ beforeEach(() => {
   vi.mocked(useAuth).mockReturnValue({
     user: buildUser(),
     loading: false,
-    googleReady: true,
     authError: null,
-    loginWithGoogle: vi.fn(async () => {}),
+    requestEmailCode: vi.fn(async () => {}),
+    signInWithEmailCode: vi.fn(async () => {}),
     promptGoogleSignIn: vi.fn(),
     logout: vi.fn(async () => {}),
   });
@@ -691,9 +691,9 @@ describe('sync state', () => {
     vi.mocked(useAuth).mockReturnValue({
       user: buildUser(),
       loading: false,
-      googleReady: true,
       authError: null,
-      loginWithGoogle: vi.fn(async () => {}),
+      requestEmailCode: vi.fn(async () => {}),
+      signInWithEmailCode: vi.fn(async () => {}),
       promptGoogleSignIn,
       logout: vi.fn(async () => {}),
     });

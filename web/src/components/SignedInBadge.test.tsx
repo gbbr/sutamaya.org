@@ -27,10 +27,10 @@ describe('SignedInBadge', () => {
     );
   });
 
-  it('signed out: shows the Google sign-in button and calls promptGoogleSignIn on click', async () => {
+  it('signed out: shows a neutral sign-in badge and calls promptGoogleSignIn on click', async () => {
     const promptGoogleSignIn = vi.fn();
     render(<SignedInBadge user={null} size={26} promptGoogleSignIn={promptGoogleSignIn} />);
-    await userEvent.click(screen.getByLabelText('Sign in with Google'));
+    await userEvent.click(screen.getByLabelText('Sign in'));
     expect(promptGoogleSignIn).toHaveBeenCalled();
     expect(screen.queryByLabelText(/Signed in as/)).not.toBeInTheDocument();
   });

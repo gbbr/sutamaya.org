@@ -62,9 +62,10 @@ green — `worker/vitest.config.ts` applies the full migration set to a fresh da
 so the suite never sees a stale schema. Deploys handle the remote database themselves
 (`scripts/deploy.sh`).
 
-No real Cloudflare account or credentials needed for local dev — except `VITE_GOOGLE_CLIENT_ID`
-(`web/.env.development`), since Google sign-in needs a real OAuth client even in dev (see
-`docs/deploy.md`); leave it blank to develop with the Google button hidden.
+No real Cloudflare account or credentials needed for local dev — except `GOOGLE_CLIENT_SECRET` and
+`WEB_ORIGIN=http://localhost:5173` in `.dev.vars`, since Google sign-in needs a real OAuth client
+even in dev (see `docs/deploy.md`). Leave the secret blank to develop signed-out: the sign-in link
+then bounces straight back with `?auth_error=1` instead of starting a flow it can't finish.
 
 ## Data pipeline (`scripts/build-corpus.mjs`)
 
@@ -172,10 +173,12 @@ Sujato English translation — none of the KN books here are Pali-only.
 A Cloudflare Worker (Hono), serving `/api/*` and, via the assets binding declared in the root
 `wrangler.jsonc`, the built SPA and static corpus from the same origin. **D1** (serverless SQLite)
 holds user data — one row per user per entity, `worker/migrations/0001_init.sql` plus
-`0002_offline_sync.sql`:
+`0002_offline_sync.sql` and `0003_email_auth.sql`:
 
 ```
-users       { id, email, google_id, name, picture, created_at }
+users       { id, email, google_id, name, picture, created_at }   -- email is UNIQUE
+identities  { provider, subject, user_id, created_at }            -- PK (provider, subject)
+login_codes { email, code_hash, expires_at, attempts, created_at } -- PK email
 lists       { id, user_id, label, parent_id, kind, position, items, created_at, mtime, deleted }
 notes       { user_id, sutta_id, text, updated_at, mtime, deleted }   -- PK (user_id, sutta_id)
 highlights  { id, user_id, sutta_id, i, s, e, color, g, created_at, mtime, deleted }
@@ -329,15 +332,70 @@ highlight's `mtime` as `m`.
 D1's free tier (5,000,000 rows read/day, 100,000 rows written/day, 5GB storage) comfortably covers
 personal-scale use; see `docs/deploy.md`.
 
-Auth is Google sign-in only (`worker/src/auth.js`, `routes/auth.js`): the frontend gets an ID
-token credential from Google Identity Services (see `AuthContext.tsx`), and `POST
-/api/auth/google` verifies it (`jose`'s `jwtVerify` against Google's published JWKS, checking
-issuer/audience/`email_verified`) before finding-or-creating the D1 user and setting the session
-cookie — a `sutamaya_session` cookie signed with HMAC-SHA256 via Hono's `hono/cookie` helpers
-(`worker/src/session.js`), not a JWT/refresh flow. `GOOGLE_CLIENT_ID` and `WEB_ORIGIN` are plain
-`vars` in the root `wrangler.jsonc` (see `docs/deploy.md`) — neither is a secret, but
-`GOOGLE_CLIENT_ID` must match the one `VITE_GOOGLE_CLIENT_ID` builds the frontend with, or
-sign-in fails verification. `requireAuth` middleware (`worker/src/auth.js`) gates every route in
+There are two ways in: **Google**, over a server-side **OAuth 2.0 authorization-code redirect**
+(`worker/src/oauth.js`, `routes/auth.js`), and an **emailed code**. The browser loads no Google
+JavaScript at all: it navigates to `GET /api/auth/google/start`, which redirects to Google, and
+Google returns it to `GET /api/auth/google/callback`, which exchanges the code for an `id_token`
+server-side and verifies it with `verifyGoogleCredential` (`jose`'s `jwtVerify` against Google's
+published JWKS, checking issuer/audience/`email_verified`) before finding-or-creating the D1 user
+and setting the session cookie — a `sutamaya_session` cookie signed with HMAC-SHA256 via Hono's `hono/cookie`
+helpers (`worker/src/session.js`), not a JWT/refresh flow. Being a same-origin top-level
+navigation, it needs no third-party cookie or iframe access, which is what makes it survive
+Safari's ITP and iOS home-screen PWAs where the old in-page Identity Services button did not.
+
+The round trip is guarded twice, and both halves matter: the `state` parameter is HMAC-signed with
+`SESSION_SECRET` (so only a state this Worker issued, less than ten minutes ago, is accepted), and
+the nonce inside it is *also* set as a short-lived `Path=/api/auth` cookie, so a state can only be
+redeemed by the browser it was issued to — without which an attacker holding a valid code for their
+own account could trick a victim into completing the callback and silently sign them into it. The
+`?return=` path travels inside that signed state and is run through `safeReturnPath` on both legs,
+resolving against `WEB_ORIGIN` and collapsing anything off-origin to `/` — that function is the
+only thing standing between the start route and an open redirect. Every failure path redirects into
+the app with `?auth_error=1` rather than answering JSON, since a user watching a full-page
+navigation would otherwise land on a blank error body with no way back; `AuthContext` reads that
+marker once at boot, shows it, and strips it from the URL.
+
+`POST /api/auth/google` (the old in-page credential endpoint) is still mounted and still tested, as
+the rollback path while the redirect flow proves itself.
+
+**Sign-in by emailed code** (`worker/src/emailAuth.js`, `POST /api/auth/email/request` and
+`/email/verify`) is the second way in, and the one that needs no provider account at all. It is a
+six-digit code, **not a magic link, and that choice is about the PWA**: a link is opened from the
+mail client, which on iOS means Safari rather than the installed app — the session cookie would
+land in the browser's jar while the app the user actually opens stays signed out, with nothing on
+screen to explain why. A code never leaves the app, so the session is established by a `fetch` from
+inside the PWA and lands where it belongs by construction. `request` sends a code and answers
+`{ok:true}` for any plausible address whether or not an account exists (otherwise the endpoint is a
+way to ask which addresses have accounts); the account is created at `verify` time, not before.
+Only an HMAC of the code is stored, bound to the address so it can't be replayed against another.
+What actually makes a six-digit secret safe is `login_codes.attempts` — five wrong tries spend the
+row, and because the budget lives on the code rather than in a rate limiter, a fresh IP buys no
+further guesses. Requesting a new code replaces the outstanding one; a resend inside
+`RESEND_COOLDOWN_MS` answers `{ok:true}` without sending again, so the button can't be pointed at
+someone's inbox.
+
+**`identities`** is the authoritative record of how an account can be signed into — `('google',
+<sub>)` or `('email', <address>)` — and is what to read, not `users.google_id`. That column is
+`NOT NULL UNIQUE` and predates multi-provider sign-in; dropping the constraint would need a
+destructive table rebuild, which migrations here don't do, so an account created any other way
+carries an opaque placeholder there (`placeholderGoogleId`, `worker/src/auth.js`) that matches no
+real Google subject. Accounts are **linked on a verified email**: both providers prove the address,
+so signing in a new way joins the existing account rather than forking a second one holding half
+the user's lists. `users.email` is uniquely indexed, which is what makes that rule hold rather than
+merely being attempted in code.
+
+Mail goes out through **Resend** (`sendEmail` in `emailAuth.js` — a plain REST call, no SDK), from
+`MAIL_FROM`, keyed by the `RESEND_API_KEY` secret. Cloudflare's own Email Sending binding would
+avoid the third party but needs a Workers Paid plan. The sending domain has to be verified once —
+see `docs/deploy.md`.
+
+`GOOGLE_CLIENT_ID`, `MAIL_FROM` and `WEB_ORIGIN` are plain `vars` in the root `wrangler.jsonc`;
+`GOOGLE_CLIENT_SECRET` and `RESEND_API_KEY` are Worker secrets (see `docs/deploy.md`). The
+frontend build takes no auth
+configuration at all now — there is no `VITE_GOOGLE_CLIENT_ID` and no `web/.env.*`. `WEB_ORIGIN` is
+load-bearing beyond CORS: the flow builds its registered redirect URI and its return URL from it,
+so in local dev it has to be the *web* dev server (`http://localhost:5173`, set in `.dev.vars`),
+not wrangler's own port. `requireAuth` middleware (`worker/src/auth.js`) gates every route in
 `routes/lists.js`, `routes/annotations.js`, `routes/data.js`; `routes/auth.js` is open. It reads
 only the signed cookie, no D1 round trip, since the signature alone is enough to trust the
 `userId` it carries — routes that need the full profile (e.g. `/api/data/export`'s `email`) fetch
