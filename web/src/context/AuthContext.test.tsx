@@ -5,7 +5,7 @@ import type { User } from '../lib/types';
 
 vi.mock('@reach/router', () => ({ navigate: vi.fn() }));
 vi.mock('../lib/api', () => ({
-  authApi: { me: vi.fn(), google: vi.fn(), logout: vi.fn() },
+  authApi: { me: vi.fn(), logout: vi.fn() },
 }));
 
 // AuthContext.tsx is imported dynamically (not statically at the top of this file) so each test

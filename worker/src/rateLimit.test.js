@@ -77,11 +77,11 @@ describe('rate limiter routing (which budget applies to which path)', () => {
     expect(auth.calls).toHaveLength(0);
   });
 
-  it('POST /api/auth/google draws from the general budget and the sign-in one, not /me', async () => {
+  it('POST /api/auth/email/request draws from the general budget and the sign-in one, not /me', async () => {
     const general = stubBinding();
     const auth = stubBinding();
     const me = stubBinding();
-    await api('/api/auth/google', {
+    await api('/api/auth/email/request', {
       method: 'POST',
       bindings: { RATE_LIMIT_API: general, RATE_LIMIT_AUTH: auth, RATE_LIMIT_ME: me },
     });
@@ -92,7 +92,7 @@ describe('rate limiter routing (which budget applies to which path)', () => {
 
   it('exhausting the sign-in budget does not 429 /api/auth/me — separate budgets', async () => {
     const bindings = { RATE_LIMIT_API: stubBinding(), RATE_LIMIT_AUTH: stubBinding(0), RATE_LIMIT_ME: stubBinding() };
-    const blocked = await api('/api/auth/google', { method: 'POST', bindings });
+    const blocked = await api('/api/auth/email/request', { method: 'POST', bindings });
     expect(blocked.status).toBe(429);
     expect(await blocked.json()).toEqual({ error: 'Too many requests. Please try again in a moment.' });
 

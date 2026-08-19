@@ -60,8 +60,6 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 
 export const authApi = {
   me: () => request<{ user: User | null }>('/auth/me'),
-  google: (credential: string) =>
-    request<{ user: User }>('/auth/google', { method: 'POST', body: JSON.stringify({ credential }) }),
   requestEmailCode: (email: string) =>
     request<{ ok: true }>('/auth/email/request', { method: 'POST', body: JSON.stringify({ email }) }),
   verifyEmailCode: (email: string, code: string) =>
