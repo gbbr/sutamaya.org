@@ -24,19 +24,49 @@ const UI_SCALE_MIN = 0.85;
 const UI_SCALE_MAX = 1.4;
 const UI_SCALE_STEP = 0.05;
 
-const THEME_OPTIONS: Array<{ id: AppTheme; label: string }> = [
-  { id: 'light', label: 'Light' },
-  { id: 'dark', label: 'Dark' },
-  { id: 'system', label: 'System' },
+// Each theme is previewed as a miniature of the shell itself — a narrow tree-pane band beside the
+// wider paper surface, in that theme's own two colours — rather than named in a filled button, so
+// the choice is made by looking rather than by reading. Same idea as the reader's own swatch
+// picker (ReaderMenuPanel's THEME_SWATCHES), with the shell's palette instead of the reader's, and
+// the same mix-blend-difference label so the System tile's light/dark halves both stay legible
+// without a hand-picked foreground per tile.
+const THEME_OPTIONS: Array<{ id: AppTheme; label: string; bg: string }> = [
+  { id: 'light', label: 'Light', bg: 'linear-gradient(90deg,#F0ECE4 0 34%,#FDFCFA 34%)' },
+  { id: 'dark', label: 'Dark', bg: 'linear-gradient(90deg,#1E1B17 0 34%,#171513 34%)' },
+  {
+    id: 'system',
+    label: 'System',
+    bg: 'linear-gradient(90deg,#F0ECE4 0 17%,#FDFCFA 17% 50%,#1E1B17 50% 67%,#171513 67%)',
+  },
 ];
 
 const UI_FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
-  { id: 'serif', label: 'Newsreader' },
+  { id: 'serif', label: 'News' },
   { id: 'georgia', label: 'Georgia' },
   { id: 'sans', label: 'Sans' },
   { id: 'times', label: 'Times' },
   { id: 'system', label: 'System' },
 ];
+
+// Every section is one of these: a panel holding rows split by hairlines. The tint is `ink` at
+// very low alpha rather than a fixed colour, so it darkens the page slightly in the light theme
+// and lightens it in the dark one from a single declaration — `field` is *whiter* than `paper`,
+// which reads as a hole rather than a surface at this size. It stays barely distinct from the page
+// on purpose: the border is what draws the card, and the fill only has to keep it from reading as
+// an empty outline. Border and background
+// are left to the caller: the flashed-on-arrival state (see cardClass) swaps both, and
+// transitioning them is why every card carries the transition here rather than only the two that
+// can flash.
+const CARD = 'rounded-field border px-4 transition-colors duration-[1200ms] ease-out';
+
+// Two button shapes for the whole page. Primary is reserved for the one action a card is actually
+// asking for; everything else is outlined, and anything the user is unlikely to want (Sign out) is
+// quieter still — see QUIET_BUTTON.
+const PRIMARY_BUTTON =
+  'flex items-center justify-center gap-1.5 w-full h-10 rounded-field bg-accent text-[#FBFAF7] font-sans text-[13.5px] font-medium';
+const SECONDARY_BUTTON =
+  'flex items-center justify-center gap-1.5 w-full h-10 rounded-field border border-ink/[.18] font-sans text-[13.5px] font-medium';
+const QUIET_BUTTON = 'flex items-center justify-center gap-1.5 w-full h-9 font-sans text-[13px] text-ink/55';
 
 // The two sections this page can be deep-linked into and highlighted on arrival — see the
 // scroll/flash effect below.
@@ -154,13 +184,12 @@ export function SettingsPage({ location }: RouteComponentProps) {
     return () => window.clearTimeout(timer);
   }, []);
 
-  // Constant inset/padding (not just conditional on the flash itself) so the highlight has room
-  // to bleed slightly past the section's own text without the padding itself popping in and
-  // shifting layout right as the flash starts.
-  function flashClass(id: ScrollTarget): string {
-    return `-mx-3 px-3 py-2 rounded-field transition-colors duration-[1400ms] ease-out ${
-      flashTarget === id ? 'bg-accent/10' : 'bg-transparent'
-    }`;
+  // The arrival highlight is the section's own card, tinted and outlined in the accent — so it's
+  // an even border all the way round by construction, with no inset padding to hand-balance, and
+  // nothing moves when it fades: both properties are colours the card already has, and CARD
+  // carries the transition that takes them back to rest.
+  function cardClass(id: ScrollTarget): string {
+    return `${CARD} ${flashTarget === id ? 'border-accent bg-accent/[.09]' : 'border-ink/[.09] bg-ink/[.02]'}`;
   }
 
   // Aborts an in-flight download if the user navigates away from Settings. Without this, leaving
@@ -194,13 +223,17 @@ export function SettingsPage({ location }: RouteComponentProps) {
     setFailedCount(0);
     setCircuitTripped(false);
     setDictionaryFailed(false);
-    // Refreshing a stale copy has to drop the caches first: prefetchAllSuttas skips every uid
-    // already present and prefetchDictionary skips every shard already cached, so re-running them
-    // over a full cache would report success without replacing a single stale byte. The two are
+    // Clears first whenever this device can't vouch for what's already cached being current: a
+    // known-stale previous version, or no completed download to have verified it in the first
+    // place (reactively-cached suttas from browsing may predate this build). prefetchAllSuttas
+    // skips every uid already present and prefetchDictionary skips every shard already cached, so
+    // re-running them over a cache we can't vouch for would report success without replacing a
+    // single stale byte. Skipped only when the recorded version already matches, so an interrupted
+    // download on an otherwise-current device still resumes rather than restarting. The two are
     // cleared independently — a reworded sutta shouldn't cost a ~2.6MB dictionary re-fetch.
     const versions = cachedCorpusVersions();
-    if (versions.data !== null && versions.data !== corpus.dataVersion) await clearCachedText();
-    if (versions.dictionary !== null && versions.dictionary !== corpus.dictionaryVersion) await clearCachedDictionary();
+    if (versions.data !== corpus.dataVersion) await clearCachedText();
+    if (versions.dictionary !== corpus.dictionaryVersion) await clearCachedDictionary();
     // catch, not just finally — prefetchAllSuttas is designed to resolve normally even when
     // individual suttas fail (that's what the returned `failed` list is for), but this still
     // guards against something genuinely unexpected (e.g. Cache Storage itself unavailable)
@@ -260,72 +293,80 @@ export function SettingsPage({ location }: RouteComponentProps) {
             browser history the way navigate(-1) would, also works when there's no in-app
             history to go back to: a fresh tab/PWA relaunch landing straight on /settings, or a
             hard refresh while on this page. */}
-        <button className="flex items-center gap-1.5 font-sans text-[13px] text-ink/50 mb-6" onClick={backToLastLocation}>
+        <button className="flex items-center gap-1.5 font-sans text-[13px] text-ink/50 mb-5" onClick={backToLastLocation}>
           <ArrowLeft size={14} strokeWidth={1.75} />
           Back
         </button>
-        <div className="text-[22px] font-semibold tracking-[-.01em] mb-6">Settings</div>
+        <div className="text-[22px] font-semibold tracking-[-.01em] mb-5">Settings</div>
 
-        {/* UI Theme configuration section. */}
-        <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3 mt-6">Display</div>
+        {/* UI Theme configuration section. A card, with its label outside and above it: the
+            controls inside are separated by hairlines rather than by whitespace, so one section
+            reads as one object at a glance and the gaps between sections don't have to carry that
+            job on their own. Every row keeps its label on its own line above a full-width control
+            — a label column beside the control would squeeze the option pills at narrow widths and
+            at the top of the UI-scale range. */}
+        <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">Display</div>
 
-        <div className="mb-6">
-          <div className="font-sans text-[14px] mb-2">Theme</div>
-          <div className="grid grid-cols-3 gap-2">
-            {THEME_OPTIONS.map((t) => (
-              <button
-                key={t.id}
-                className={`h-9 rounded-field border font-sans text-[13px] ${
-                  theme === t.id ? 'border-accent bg-accent text-[#FBFAF7]' : 'border-ink/[.22] text-ink/70'
-                }`}
-                onClick={() => setTheme(t.id)}
-              >
-                {t.label}
-              </button>
-            ))}
+        <div className={`${CARD} border-ink/[.09] bg-ink/[.02] mb-5`}>
+          <div className="py-3.5">
+            <div className="font-sans text-[12.5px] text-ink/55 mb-2">Theme</div>
+            <div className="flex gap-2">
+              {THEME_OPTIONS.map((t) => (
+                <button
+                  key={t.id}
+                  className={`relative flex-1 h-[46px] rounded-[7px] overflow-hidden font-sans text-[12.5px] ring-inset ${
+                    theme === t.id ? 'ring-2 ring-accent' : 'ring-1 ring-ink/20'
+                  }`}
+                  onClick={() => setTheme(t.id)}
+                >
+                  <span className="absolute inset-0" style={{ background: t.bg }} />
+                  <span className="relative" style={{ color: '#fff', mixBlendMode: 'difference' }}>
+                    {t.label}
+                  </span>
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="mb-3">
-          <div className="flex items-baseline justify-between mb-2">
-            <label htmlFor="ui-scale" className="font-sans text-[14px]">
-              UI Scale
-            </label>
-            <span className="font-sans text-[13px] text-ink/50">{Math.round(uiScale * 100)}%</span>
+          <div className="py-3.5 border-t border-ink/[.06]">
+            <div className="flex items-baseline justify-between mb-1.5">
+              <label htmlFor="ui-scale" className="font-sans text-[12.5px] text-ink/55">
+                UI scale
+              </label>
+              <div className="flex items-baseline gap-3">
+                <span className="font-sans text-[12.5px] tabular-nums text-ink/70">{Math.round(uiScale * 100)}%</span>
+                <button className="font-sans text-[12.5px] text-accent-text" onClick={() => setUiScale(1)}>
+                  Reset
+                </button>
+              </div>
+            </div>
+            <input
+              id="ui-scale"
+              type="range"
+              min={UI_SCALE_MIN}
+              max={UI_SCALE_MAX}
+              step={UI_SCALE_STEP}
+              value={uiScale}
+              onChange={(e) => setUiScale(Number(e.target.value))}
+              className="w-full accent-accent"
+            />
           </div>
-          <input
-            id="ui-scale"
-            type="range"
-            min={UI_SCALE_MIN}
-            max={UI_SCALE_MAX}
-            step={UI_SCALE_STEP}
-            value={uiScale}
-            onChange={(e) => setUiScale(Number(e.target.value))}
-            className="w-full accent-accent"
-          />
-          <div className="flex justify-between font-sans text-[11px] text-ink/40 mt-1">
-            <span>{Math.round(UI_SCALE_MIN * 100)}%</span>
-            <button className="underline decoration-ink/25 underline-offset-2" onClick={() => setUiScale(1)}>
-              Reset
-            </button>
-            <span>{Math.round(UI_SCALE_MAX * 100)}%</span>
-          </div>
-        </div>
 
-        <div className="mb-6">
-          <div className="font-sans text-[14px] mb-2">UI Font</div>
-          <div className="grid grid-cols-3 gap-2">
-            {UI_FACE_OPTIONS.map((f) => (
-              <button
-                key={f.id}
-                className={`h-9 rounded-field border font-sans text-[13px] ${
-                  uiFace === f.id ? 'border-accent bg-accent text-[#FBFAF7]' : 'border-ink/[.22] text-ink/70'
-                }`}
-                onClick={() => setUiFace(f.id)}
-              >
-                {f.label}
-              </button>
-            ))}
+          <div className="py-3.5 border-t border-ink/[.06]">
+            <div className="font-sans text-[12.5px] text-ink/55 mb-2">UI font</div>
+            <div className="flex flex-wrap gap-1.5">
+              {UI_FACE_OPTIONS.map((f) => (
+                <button
+                  key={f.id}
+                  className={`h-[34px] px-3.5 rounded-full border font-sans text-[12.5px] ${
+                    uiFace === f.id ? 'border-accent bg-accent/10 text-accent-text' : 'border-ink/[.18] text-ink/70'
+                  }`}
+                  onClick={() => setUiFace(f.id)}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -333,21 +374,21 @@ export function SettingsPage({ location }: RouteComponentProps) {
             `loading`/corpus state (see offlineSectionRef above) — cachedStatus itself starts out
             null and just shows a "Checking…" line until it resolves, which doesn't affect this
             section's own position or height. */}
-        <div ref={offlineSectionRef} className={flashClass('offline')}>
-          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3 mt-6">Offline</div>
+        <div ref={offlineSectionRef}>
+          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">Offline</div>
 
-          <div className="mb-6">
+          <div className={`${cardClass('offline')} py-4 mb-5`}>
             {offlineStatus === 'downloading' ? (
               <>
-                <div className="h-2 rounded-full bg-ink/10 overflow-hidden mb-2">
+                <div className="h-1.5 rounded-full bg-ink/10 overflow-hidden mb-2">
                   <div
                     className="h-full bg-accent transition-[width]"
                     style={{ width: `${progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%` }}
                   />
                 </div>
-                <div className="flex items-center justify-between font-sans text-[13px] text-ink/50">
-                  <span>{progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%</span>
-                  <button className="underline decoration-ink/25 underline-offset-2" onClick={handleCancelOfflineDownload}>
+                <div className="flex items-center justify-between font-sans text-[12.5px] text-ink/55">
+                  <span className="tabular-nums">{progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%</span>
+                  <button className="text-accent-text" onClick={handleCancelOfflineDownload}>
                     Cancel
                   </button>
                 </div>
@@ -356,14 +397,16 @@ export function SettingsPage({ location }: RouteComponentProps) {
               <>
                 {/* An available update gets an icon and the accent colour — every other state
                     here is a passive status line in muted grey, which is exactly what the eye
-                    skips over, and this one is the only line that's asking for a decision. */}
+                    skips over, and this one is the only line that's asking for a decision. It's
+                    also the only one whose button is filled rather than outlined, for the same
+                    reason: nothing else on this page is asking to be acted on. */}
                 {cachedStatus && textStale ? (
-                  <div className="flex items-start gap-1.5 font-sans text-[13px] text-accent-text mb-2">
+                  <div className="flex items-start gap-1.5 font-sans text-[13px] text-accent-text mb-3">
                     <Info size={15} strokeWidth={1.75} className="flex-none mt-[1.5px]" />
                     <span>Updated sutta text is available.</span>
                   </div>
                 ) : (
-                  <div className="font-sans text-[13px] text-ink/60 mb-2">
+                  <div className="font-sans text-[13px] text-ink/60 mb-3">
                     {cachedStatus
                       ? cachedStatus.cached >= cachedStatus.total
                         ? 'All suttas available offline.'
@@ -372,7 +415,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                   </div>
                 )}
                 <button
-                  className="block w-full text-center h-11 rounded-field border border-ink/[.22] font-sans text-[14px] font-medium disabled:opacity-50"
+                  className={`${textStale ? PRIMARY_BUTTON : SECONDARY_BUTTON} disabled:opacity-50`}
                   onClick={handleDownloadOffline}
                   disabled={!corpus}
                 >
@@ -403,88 +446,86 @@ export function SettingsPage({ location }: RouteComponentProps) {
             scrolled to its top. While `loading`, it shows a lightweight placeholder rather than
             collapsing to nothing, so the section always has real height and a valid scroll
             target (see authSectionRef above) regardless of how long the session check takes. */}
-        <div ref={authSectionRef} className={flashClass('auth')}>
-          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-3 mt-6">Account</div>
-          {loading ? (
-            <div className="font-sans text-[13px] text-ink/40">Checking sign-in status…</div>
-          ) : user ? (
-            <>
-              {/* This is about lists/notes/highlights syncing to the account (docs/offline-sync.md), a
-               separate mechanism from the corpus caching above — grouped here anyway since both
-               read as "offline-related status" to a user, and neither means anything signed out.
-               A lapsed session replaces it rather than joining it: `user` is still populated (it's
-               cached in lib/lastUser.ts and a flush 401 deliberately doesn't clear it, since that
-               would mount an empty mirror over a full one), so without this the section renders as
-               a perfectly ordinary signed-in account and the banner that sent the user here points
-               at a sign-in button that isn't there. `syncStatus` would meanwhile report the queue
-               as 'pending', which is true but misleading — nothing is being sent while paused. */}
-              {needsReauth ? (
-                <>
-                  <div className="flex items-start gap-1.5 font-sans text-[13px] mb-4 text-red-600">
-                    <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
-                    <span>
-                      Your session expired, so nothing is syncing. Your changes are saved on this device and will sync
-                      once you sign in again.
-                    </span>
+        <div ref={authSectionRef}>
+          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">Account</div>
+          <div className={cardClass('auth')}>
+            {loading ? (
+              <div className="font-sans text-[13px] text-ink/40 py-4">Checking sign-in status…</div>
+            ) : user ? (
+              <>
+                {/* This is about lists/notes/highlights syncing to the account (docs/offline-sync.md), a
+                 separate mechanism from the corpus caching above — grouped here anyway since both
+                 read as "offline-related status" to a user, and neither means anything signed out.
+                 A lapsed session replaces it rather than joining it: `user` is still populated (it's
+                 cached in lib/lastUser.ts and a flush 401 deliberately doesn't clear it, since that
+                 would mount an empty mirror over a full one), so without this the section renders as
+                 a perfectly ordinary signed-in account and the banner that sent the user here points
+                 at a sign-in button that isn't there. `syncStatus` would meanwhile report the queue
+                 as 'pending', which is true but misleading — nothing is being sent while paused. */}
+                {needsReauth ? (
+                  <div className="py-4">
+                    <div className="flex items-start gap-1.5 font-sans text-[13px] mb-3 text-red-600">
+                      <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
+                      <span>
+                        Your session expired, so nothing is syncing. Your changes are saved on this device and will sync
+                        once you sign in again.
+                      </span>
+                    </div>
+                    <GoogleSignInButton />
+                    {authError && <div className="font-sans text-[13px] text-red-600 mt-2">{authError}</div>}
                   </div>
-                  <GoogleSignInButton />
-                  {authError && <div className="font-sans text-[13px] text-red-600 mt-2">{authError}</div>}
-                  <div className="font-sans text-[13px] text-ink/60 mb-1 mt-6">Signed in as</div>
-                </>
-              ) : (
-                <>
-                  {(() => {
+                ) : (
+                  (() => {
                     const { Icon, spin, text } = syncStatusLine(syncStatus, pendingCount, lastSyncedAt);
                     return (
-                      <div className={`flex items-center gap-1.5 font-sans text-[13px] mb-6 ${syncStatus === 'stuck' ? 'text-red-600' : 'text-ink/50'}`}>
-                        <Icon size={13} strokeWidth={1.75} className={`flex-none ${spin ? 'animate-[spin_2s_linear_infinite]' : ''}`} />
+                      <div className={`flex items-start gap-1.5 py-3.5 font-sans text-[13px] ${syncStatus === 'stuck' ? 'text-red-600' : 'text-ink/55'}`}>
+                        <Icon size={13} strokeWidth={1.75} className={`flex-none mt-[3px] ${spin ? 'animate-[spin_2s_linear_infinite]' : ''}`} />
                         {text}
                       </div>
                     );
-                  })()}
-                  <div className="font-sans text-[13px] text-ink/60 mb-1">Signed in as</div>
-                </>
-              )}
-              <div className="text-[16px] mb-3">{user.name ? `${user.name} · ${user.email}` : user.email}</div>
-              {/* Hidden while the session is dead rather than left to fail: this is a plain link to
-                  a requireAuth route, so it would answer 401 and hand back an error body as a
-                  download. Sign out below stays — POST /api/auth/logout is unauthenticated, so it
-                  works either way, and leaving the account is a legitimate thing to want here. */}
-              {!needsReauth && (
-                <a
-                  href={dataApi.exportUrl}
-                  className="block w-full text-center h-11 leading-[44px] rounded-field border border-ink/[.22] font-sans text-[14px] font-medium mb-3"
-                >
-                  Export my data as JSON
-                </a>
-              )}
-              <button
-                className="flex items-center justify-center gap-1.5 w-full h-11 rounded-field bg-accent text-[#FBFAF7] font-sans text-[14px] font-medium"
-                onClick={async () => {
-                  await logout();
-                  navigate('/');
-                }}
-              >
-                <LogOut size={15} strokeWidth={1.75} />
-                Sign out
-              </button>
-            </>
-          ) : (
-            <>
-              <div className="font-sans text-[14px] text-ink/60 mb-4">
-                Sign in with Google to sync your lists, notes and highlights across devices.
+                  })()
+                )}
+                <div className="py-3.5 border-t border-ink/[.06]">
+                  <div className="font-sans text-[12.5px] text-ink/55 mb-1">Signed in as</div>
+                  <div className="text-[15.5px] mb-3">{user.name ? `${user.name} · ${user.email}` : user.email}</div>
+                  {/* Hidden while the session is dead rather than left to fail: this is a plain link to
+                      a requireAuth route, so it would answer 401 and hand back an error body as a
+                      download. Sign out below stays — POST /api/auth/logout is unauthenticated, so it
+                      works either way, and leaving the account is a legitimate thing to want here. */}
+                  {!needsReauth && (
+                    <a href={dataApi.exportUrl} className={`${SECONDARY_BUTTON} mb-1`}>
+                      Export my data as JSON
+                    </a>
+                  )}
+                  <button
+                    className={QUIET_BUTTON}
+                    onClick={async () => {
+                      await logout();
+                      navigate('/');
+                    }}
+                  >
+                    <LogOut size={14} strokeWidth={1.75} />
+                    Sign out
+                  </button>
+                </div>
+              </>
+            ) : (
+              <div className="py-4">
+                <div className="font-sans text-[13px] text-ink/60 mb-3">
+                  Sign in with Google to sync your lists, notes and highlights across devices.
+                </div>
+                <GoogleSignInButton />
+                {authError && <div className="font-sans text-[13px] text-red-600 mt-2">{authError}</div>}
               </div>
-              <GoogleSignInButton />
-              {authError && <div className="font-sans text-[13px] text-red-600 mt-2">{authError}</div>}
-            </>
-          )}
+            )}
+          </div>
         </div>
 
         <a
           href="https://github.com/gbbr/sutamaya.org/issues/new"
           target="_blank"
           rel="noreferrer"
-          className="block text-center font-sans text-[12px] text-ink/40 underline decoration-ink/25 underline-offset-2 mt-8"
+          className="block text-center font-sans text-[12px] text-ink/40 underline decoration-ink/25 underline-offset-2 mt-6"
         >
           Report an issue
         </a>
