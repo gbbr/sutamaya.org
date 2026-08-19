@@ -409,7 +409,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
             )}
             {' '}(
             <a
-              href="https://github.com/gbbr/sutamaya.org/blob/main/scripts/update-data/retranslation.mjs"
+              href="https://github.com/gbbr/sutamaya.org/blob/main/docs/translation-changes.md"
               target="_blank"
               rel="noreferrer"
               style={{ color: 'inherit', textDecoration: 'none' }}

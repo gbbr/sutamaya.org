@@ -4,17 +4,17 @@ Rule: sampajano-hoti-answer — 3 change(s), 3 file(s)
 +++ sujato/sutta/dn/dn16_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn16:2.13.3
  PLI: Evaṁ kho, bhikkhave, bhikkhu sampajāno hoti. 
--That’s how a bhikkhu is fully comprehending. 
-+That’s how a bhikkhu has full comprehension. 
+-That’s how a bhikkhu is clearly comprehending. 
++That’s how a bhikkhu has clear comprehension. 
 --- sujato/sutta/sn/sn36/sn36.8_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.8_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.8:4.3
  PLI: Evaṁ kho, bhikkhave, bhikkhu sampajāno hoti. 
--That’s how a bhikkhu is fully comprehending. 
-+That’s how a bhikkhu has full comprehension. 
+-That’s how a bhikkhu is clearly comprehending. 
++That’s how a bhikkhu has clear comprehension. 
 --- sujato/sutta/sn/sn47/sn47.35_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.35_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.35:3.5
  PLI: Evaṁ kho, bhikkhave, bhikkhu sampajāno hoti. 
--That’s how a bhikkhu is fully comprehending. 
-+That’s how a bhikkhu has full comprehension. 
+-That’s how a bhikkhu is clearly comprehending. 
++That’s how a bhikkhu has clear comprehension. 

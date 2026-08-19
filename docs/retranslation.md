@@ -9,6 +9,8 @@ Two kinds of edit are in scope: **terminology** (render a Pali term consistently
 prefers — *mendicant* → *bhikkhu*, *immersion* → *concentration*) and **per-segment** corrections
 (one specific line, reworded). [`data/README.md`](../data/README.md) covers the surrounding
 `update-data` pipeline; this document is only the editorial layer on top of it.
+[`translation-changes.md`](translation-changes.md) is the plain-language summary of what the layer
+currently does, for a reader rather than a maintainer.
 
 ## Where it sits in the pipeline
 
@@ -28,7 +30,7 @@ Three things follow from that separation, and they're the reason for it:
 - **`post` is a pure function of (upstream text, rules).** Re-running it is always safe, and
   editing a rule and re-running gives the same result as a clean run — which matters because
   rule-writing is trial and error. Applying rules on top of already-rewritten text compounds them
-  (`mindful`→`aware`, then a later `aware`→`fully comprehending`, and now you can't tell which
+  (`mindful`→`aware`, then a later `aware`→`clearly comprehending`, and now you can't tell which
   *aware* came from where).
 - **`git diff data/sujato/` after a copy shows exactly what upstream changed**, uncontaminated by
   our own edits. That diff is the thing you actually read when reconciling a broken rule, so it
@@ -105,20 +107,20 @@ override**, which replaces one line outright.
 
 ```js
 {
-  id: 'sampajanna-full-comprehension',
+  id: 'sampajanna-clear-comprehension',
   why: 'Sujato renders sampajañña as "aware"/"situational awareness"; this app prefers ' +
-       '"full comprehension". Closed because plain-English "aware" is common and unrelated.',
+       '"clear comprehension". Closed because plain-English "aware" is common and unrelated.',
   mode: 'allow',                       // 'allow' (closed) | 'deny' (open) — see below
   scope: ['sujato/sutta', 'sujato/blurb'],  // optional; defaults to sutta + name + blurb
   predicate: /sampajañ|sampajān/i,     // proposes candidates; never runs at build time
   forms: [
-    ['situational awareness', 'full comprehension'],
-    ['aware', 'fully comprehending'],
+    ['situational awareness', 'clear comprehension'],
+    ['aware', 'clearly comprehending'],
   ],
 }
 ```
 
-with `scripts/update-data/rules/sampajanna-full-comprehension.json`:
+with `scripts/update-data/rules/sampajanna-clear-comprehension.json`:
 
 ```json
 {
@@ -165,8 +167,8 @@ Ambiguous terms tend to be the small ones anyway — `aware` is 656 segments (~1
   why: 'Evaṁ kho bhikkhu sampajāno hoti — the section’s closing answer, worded to match the ' +
        'opening question sampajano-hoti-question rebuilds.',
   segments: ['sn47.35:3.5', 'sn36.8:4.3', 'dn16:2.13.3'],
-  from: 'That’s how a bhikkhu is fully comprehending. ',
-  to:   'That’s how a bhikkhu has full comprehension. ',
+  from: 'That’s how a bhikkhu is clearly comprehending. ',
+  to:   'That’s how a bhikkhu has clear comprehension. ',
 }
 ```
 
@@ -243,7 +245,7 @@ That's benign, because the two rules never compete for the same word: one matche
 other "mindful". In 472 of those 531 segments the English carries both words, one per rule.
 Locking is what keeps them from interfering — the *sati* rule produces "aware", the exact token
 the *sampajañña* rule consumes, and locking makes that new token invisible to it. The result is
-"keen, fully comprehending, and aware" **whichever order the two rules run in**.
+"keen, clearly comprehending, and aware" **whichever order the two rules run in**.
 
 Ordering therefore matters only when two rules match the *same* English word, where the earlier
 rule simply wins. Order rules deliberately anyway; rely on locking for correctness.
@@ -317,7 +319,7 @@ as the upstream baseline, which would blind the *next* `update-data:check` to a 
 
 ```
 npm run update-data:triage                              # every rule: stale + untriaged counts
-npm run update-data:triage -- sampajanna-full-comprehension  # one rule, every case in full
+npm run update-data:triage -- sampajanna-clear-comprehension  # one rule, every case in full
 ```
 
 For one rule it lists every queued segment with its English, its aligned Pali, and its role (prose

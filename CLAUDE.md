@@ -608,8 +608,9 @@ something there.
 - The reader has no translation-source picker — this dataset only has one English translation per
   collection, so there's nothing to switch to. The reader heading instead shows a "Source:
   SuttaCentral (modified)" attribution line (`ReaderPage.tsx`), linking to the `sc-data` commit
-  the text was synced from (`corpus.sujatoCommit`) and to `update-data-post.mjs`, which
-  documents the terminology substitutions applied on top of Sujato's translation.
+  the text was synced from (`corpus.sujatoCommit`) and to `docs/translation-changes.md` on GitHub —
+  the plain-language summary of this app's own edits, written for a reader rather than a maintainer,
+  which is why the link goes there and not to `retranslation.mjs`.
 - `ListPane` (a list's own suttas) and `ListRow` (the list tree itself,
   rendered by `TreePane`'s `ListsTreeView` sub-view, reorder/nest) both drive reordering via the
   same native Pointer Events approach (touch and mouse alike, with live reordering and edge

@@ -262,16 +262,24 @@ describe('the shipped rules, one example each', () => {
     // Denied: caṅkamati, with no sati in the Pali at all.
     ['sati-aware', 'dn25:6.2', 'sujato/sutta', 'he walked mindfully in the open air', 'he walked mindfully in the open air'],
     // The dn22:1.9 collision from docs/retranslation.md, through the rules as shipped: sati-aware
-    // produces the very word sampajanna-full-comprehension consumes, and locking keeps them apart.
+    // produces the very word sampajanna-clear-comprehension consumes, and locking keeps them apart.
     // Also pins the adjective slot the participle exists for — a noun phrase cannot stand here.
-    ['sampajanna-full-comprehension', 'sn54.10:5.5', 'sujato/sutta', 'keen, aware, and mindful', 'keen, fully comprehending, and aware'],
+    ['sampajanna-clear-comprehension', 'sn54.10:5.5', 'sujato/sutta', 'keen, aware, and mindful', 'keen, clearly comprehending, and aware'],
     // The other half of the split: Sujato's noun is sampajañña and takes the noun phrase.
-    ['sampajanna-full-comprehension', 'an2.179:1.3', 'sujato/sutta', 'Mindfulness and situational awareness.', 'Awareness and full comprehension.'],
+    ['sampajanna-clear-comprehension', 'an2.179:1.3', 'sujato/sutta', 'Mindfulness and situational awareness.', 'Awareness and clear comprehension.'],
+    // The negated slot, and the line both awareness rules negate at once (muṭṭhassatissa
+    // asampajānassa) — without its own forms this reads "unaware and unaware".
+    ['sampajanna-clear-comprehension', 'an5.210:1.1', 'sujato/sutta', 'falling asleep unmindful and unaware', 'falling asleep unaware and without clear comprehension'],
     // Denied: plain-English "aware", introducing a perception rather than rendering sampajañña.
-    ['sampajanna-full-comprehension', 'an1.451:1.1', 'sujato/sutta', 'aware that ‘consciousness is infinite’', 'aware that ‘consciousness is infinite’'],
+    ['sampajanna-clear-comprehension', 'an1.451:1.1', 'sujato/sutta', 'aware that ‘consciousness is infinite’', 'aware that ‘consciousness is infinite’'],
     // Same, for a term whose English is ordinary English in Sujato's own prose: his gloss of citta
-    // is left alone, where "awareness" → "full comprehension" would have made nonsense of it.
-    ['sampajanna-full-comprehension', 'dn22:1.11', 'sujato/notes', '“Mind” (citta) is simple awareness.', '“Mind” (citta) is simple awareness.'],
+    // is left alone, where "awareness" → "clear comprehension" would have made nonsense of it.
+    ['sampajanna-clear-comprehension', 'dn22:1.11', 'sujato/notes', '“Mind” (citta) is simple awareness.', '“Mind” (citta) is simple awareness.'],
+    // vippasanna beside sampajañña: both of the rule's forms, prose and verse.
+    ['vippasanna-calm', 'sn47.4:2.4', 'sujato/sutta', 'keen, aware, at one, with minds that are clear', 'keen, clearly comprehending, at one, with minds that are calm'],
+    ['vippasanna-calm', 'iti47:4.2', 'sujato/sutta', 'immersed in samādhi, joyful and clear', 'concentrated in samādhi, joyful and calm'],
+    // Denied by omission: the same word for the same term, where nothing collides with it.
+    ['vippasanna-calm', 'dn20:5.8', 'sujato/sutta', 'clear and unclouded.”', 'clear and unclouded.”'],
     ['samudaya-arising', 'sn56.11:4.3', 'sujato/sutta', 'the noble truth of the origin of suffering', 'the noble truth of the arising of suffering'],
     // Denied: aggañña, how the world began.
     ['samudaya-arising', 'dn24:2.14.1', 'sujato/sutta', 'I understand the origin of the world.', 'I understand the origin of the world.'],
