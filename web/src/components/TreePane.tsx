@@ -17,6 +17,7 @@ import { derivePaneViewSync } from '../lib/paneView';
 import { TREE_VIEW_KEY, TREE_EXPANDED_KEY } from '../lib/storageKeys';
 import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
 import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
+import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
 import type { ListDef } from '../lib/types';
 import { SignedInBadge } from './SignedInBadge';
 import { HeaderBanner } from './HeaderBanner';
@@ -510,7 +511,7 @@ export function TreePane({
           {/* Account entry point, right of the toggle on every viewport. The badge goes to
               Settings in either sign-in state, so it's the only control needed here — a separate
               gear beside it would open the same page. */}
-          <SignedInBadge user={user} size={mobile ? 32 : 28} />
+          <SignedInBadge user={user} size={mobile ? 32 : 28} atRisk={!user && hasLocalWorkWorthKeeping(lists, notes, highlights)} />
         </div>
         {searchOpen && (
           <div className="mt-4 relative">
