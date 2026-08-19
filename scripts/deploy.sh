@@ -9,6 +9,13 @@ for arg in "$@"; do
   if [ "$arg" = "--skip-tests" ]; then SKIP_TESTS=1; fi
 done
 
+# Fail fast, before the test/build cycle, if wrangler isn't authenticated. `wrangler whoami`
+# always exits 0, even when logged out, so check its output instead of its exit code.
+if npx wrangler whoami 2>&1 | grep -q "You are not authenticated"; then
+  echo "error: not logged in to Cloudflare. Run: npx wrangler login" >&2
+  exit 1
+fi
+
 if [ "$SKIP_TESTS" = "1" ]; then
   echo "Skipping tests (--skip-tests passed) — deploying without a green test run."
 else
