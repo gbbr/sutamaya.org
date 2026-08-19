@@ -420,8 +420,8 @@ export function SettingsPage({ location }: RouteComponentProps) {
                     "temporarily" rather than a bare "saved on this device", which reads as a
                     reassurance when the point is that nothing outside this device holds a copy. */}
                 <div className="font-sans text-[13px] text-ink/60 mb-3">
-                  Your lists, notes and highlights are stored temporarily on this device — nothing else has a copy. Sign
-                  in to keep them and sync across devices; everything you’ve made so far comes with you.
+                  Your lists, notes and highlights are stored temporarily on this device. Sign
+                  in to keep them and sync across devices.
                 </div>
                 {/* Permanent, not dismissible, and shown whether or not the user has made anything
                     yet: on iOS in a browser tab this is the literal storage policy, not a nudge —
