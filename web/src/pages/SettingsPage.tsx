@@ -534,7 +534,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                 ) : textStale ? (
                   <div className="flex items-start gap-1.5 font-sans text-[13px] text-accent-text mb-3">
                     <Info size={15} strokeWidth={1.75} className="flex-none mt-[1.5px]" />
-                    <span>Updated content is available.</span>
+                    <span>Updated content is available ({TOTAL_DOWNLOAD_MB_ESTIMATE} MB).</span>
                   </div>
                 ) : cachedStatus.cached >= cachedStatus.total ? (
                   <div className="font-sans text-[13px] text-ink/70 mb-3">All content available offline.</div>
@@ -550,7 +550,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                   onClick={handleDownloadOffline}
                   disabled={!corpus || !cachedStatus || (!textStale && cachedStatus.cached >= cachedStatus.total)}
                 >
-                  {textStale ? 'Re-download updated suttas' : 'Download all content'}
+                  {textStale ? 'Download updated content' : 'Download all content'}
                 </button>
                 {failedCount > 0 &&
                   (circuitTripped ? (
