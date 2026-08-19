@@ -28,7 +28,7 @@ interface ReaderPrefsState extends ReaderPrefs {
   toggleShowNotes: () => void;
 }
 
-const DEFAULTS: ReaderPrefs = { theme: 'system', fs: 18, lh: 165, face: 'georgia', allPali: false, showNotes: true };
+const DEFAULTS: ReaderPrefs = { theme: 'system', fs: 18, lh: 165, face: 'georgia', allPali: false, showNotes: false };
 
 const ReaderPrefsContext = createContext<ReaderPrefsState | null>(null);
 
