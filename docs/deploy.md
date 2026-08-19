@@ -30,7 +30,7 @@ GCP services enabled):
 1. [Google Cloud Console](https://console.cloud.google.com) → **APIs & Services → OAuth consent
    screen** — External, add `sutamaya.org` as an authorized domain, publish.
 2. **Credentials → Create Credentials → OAuth client ID → Web application** — set **authorized
-   redirect URIs** (not just JavaScript origins, which this flow no longer uses) to
+   redirect URIs** (not JavaScript origins, which this flow doesn't use) to
    `/api/auth/google/callback` on every origin you sign in from:
    - `http://localhost:5173/api/auth/google/callback` — local dev
    - `https://sutamaya.org/api/auth/google/callback` — production
