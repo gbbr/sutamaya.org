@@ -34,6 +34,37 @@ function cookieFrom(res) {
   return setCookie ? setCookie.split(';')[0] : undefined;
 }
 
+// Two Set-Cookie headers come back from a successful callback (the nonce being cleared, and the
+// session), so these pick the one being asked about rather than taking the first.
+function nonceCookieFrom(res) {
+  const cookie = res.headers.getSetCookie().find((c) => c.startsWith('sutamaya_oauth='));
+  return cookie ? cookie.split(';')[0] : undefined;
+}
+
+function sessionCookieFrom(res) {
+  const cookie = res.headers.getSetCookie().find((c) => c.startsWith('sutamaya_session=') && !c.includes('Max-Age=0'));
+  return cookie ? cookie.split(';')[0] : undefined;
+}
+
+// `WEB_ORIGIN` is pinned rather than taken from .dev.vars so the redirect assertions don't depend
+// on local config.
+const OAUTH_ENV = { ...env, WEB_ORIGIN: 'https://sutamaya.org', GOOGLE_CLIENT_SECRET: 'client-secret' };
+
+// Drives the whole Google round trip the way a browser does — start, then callback carrying both
+// the state and the nonce cookie the start handed out. Sign-in has no other entry point now, so
+// every test that needs a session goes through this.
+async function signInWithGoogle(app, payload = mockPayload(), returnTo = '/settings') {
+  const start = await app.request(`/api/auth/google/start?return=${encodeURIComponent(returnTo)}`, {}, OAUTH_ENV);
+  const state = new URL(start.headers.get('Location')).searchParams.get('state');
+  globalThis.fetch = vi.fn(async () => Response.json({ id_token: 'id-tok' }));
+  jwtVerify.mockResolvedValue({ payload });
+  return app.request(
+    `/api/auth/google/callback?code=abc&state=${encodeURIComponent(state)}`,
+    { headers: { Cookie: nonceCookieFrom(start) } },
+    OAUTH_ENV
+  );
+}
+
 describe('routes/auth.js (D1, real signed cookies)', () => {
   let consoleErrorSpy;
 
@@ -55,87 +86,62 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
     expect(await res.json()).toEqual({ user: null });
   });
 
-  it('POST /google with a missing credential returns 400 without verifying anything', async () => {
-    const { default: app } = await import('../index.js');
-    const res = await app.request('/api/auth/google', { method: 'POST', body: '{}', headers: { 'Content-Type': 'application/json' } }, env);
-    expect(res.status).toBe(400);
-    expect(jwtVerify).not.toHaveBeenCalled();
-  });
-
   it('signs in a new Google user, sets the session cookie, and GET /me reflects it', async () => {
     const { default: app } = await import('../index.js');
-    jwtVerify.mockResolvedValue({ payload: mockPayload() });
+    const signIn = await signInWithGoogle(app);
 
-    const signIn = await app.request(
-      '/api/auth/google',
-      { method: 'POST', body: JSON.stringify({ credential: 'tok' }), headers: { 'Content-Type': 'application/json' } },
-      env
-    );
-    expect(signIn.status).toBe(200);
-    const signInBody = await signIn.json();
-    expect(signInBody.user).toMatchObject({ email: 'reader@example.com', name: 'Ann Reader', picture: 'https://example.com/pic.jpg' });
-    expect(signInBody.user.googleId).toBeUndefined(); // publicUser() strips it
-    const cookie = cookieFrom(signIn);
+    const cookie = sessionCookieFrom(signIn);
     expect(cookie).toBeTruthy();
 
-    const me = await app.request('/api/auth/me', { headers: { Cookie: cookie } }, env);
+    const me = await app.request('/api/auth/me', { headers: { Cookie: cookie } }, OAUTH_ENV);
     expect(me.status).toBe(200);
-    expect(await me.json()).toEqual({ user: signInBody.user });
+    const { user } = await me.json();
+    expect(user).toMatchObject({ email: 'reader@example.com', name: 'Ann Reader', picture: 'https://example.com/pic.jpg' });
+    expect(user.googleId).toBeUndefined(); // publicUser() strips it
   });
 
   it('a second sign-in with the same googleId updates the existing user instead of creating a duplicate', async () => {
     const { default: app } = await import('../index.js');
-    jwtVerify.mockResolvedValue({ payload: mockPayload() });
-    const first = await app.request(
-      '/api/auth/google',
-      { method: 'POST', body: JSON.stringify({ credential: 'tok' }), headers: { 'Content-Type': 'application/json' } },
-      env
-    );
-    const firstBody = await first.json();
+    const first = await signInWithGoogle(app);
+    const firstMe = await app.request('/api/auth/me', { headers: { Cookie: sessionCookieFrom(first) } }, OAUTH_ENV);
+    const firstUser = (await firstMe.json()).user;
 
-    jwtVerify.mockResolvedValue({ payload: mockPayload({ name: 'Ann R.', picture: 'https://example.com/new.jpg' }) });
-    const second = await app.request(
-      '/api/auth/google',
-      { method: 'POST', body: JSON.stringify({ credential: 'tok2' }), headers: { 'Content-Type': 'application/json' } },
-      env
-    );
-    const secondBody = await second.json();
+    const second = await signInWithGoogle(app, mockPayload({ name: 'Ann R.', picture: 'https://example.com/new.jpg' }));
+    const secondMe = await app.request('/api/auth/me', { headers: { Cookie: sessionCookieFrom(second) } }, OAUTH_ENV);
+    const secondUser = (await secondMe.json()).user;
 
-    expect(second.status).toBe(200);
-    expect(secondBody.user.id).toBe(firstBody.user.id);
-    expect(secondBody.user.name).toBe('Ann R.');
+    expect(secondUser.id).toBe(firstUser.id);
+    expect(secondUser.name).toBe('Ann R.');
 
     const rows = await env.DB.prepare('SELECT id FROM users WHERE google_id = ?').bind('google-sub-1').all();
     expect(rows.results).toHaveLength(1);
   });
 
-  it('rejects an unverified-email credential with 401 and does not establish a session', async () => {
+  it('rejects an unverified-email credential and does not establish a session', async () => {
     const { default: app } = await import('../index.js');
-    jwtVerify.mockResolvedValue({ payload: mockPayload({ email_verified: false }) });
+    const signIn = await signInWithGoogle(app, mockPayload({ email_verified: false }));
 
-    const signIn = await app.request(
-      '/api/auth/google',
-      { method: 'POST', body: JSON.stringify({ credential: 'tok' }), headers: { 'Content-Type': 'application/json' } },
-      env
-    );
-    expect(signIn.status).toBe(401);
-    expect(cookieFrom(signIn)).toBeUndefined();
+    expect(signIn.headers.get('Location')).toBe('https://sutamaya.org/settings?auth_error=1');
+    expect(sessionCookieFrom(signIn)).toBeUndefined();
 
-    const me = await app.request('/api/auth/me', {}, env);
+    const me = await app.request('/api/auth/me', {}, OAUTH_ENV);
     expect(await me.json()).toEqual({ user: null });
   });
 
   it('rejects when Google credential verification itself throws (e.g. expired/forged token)', async () => {
     const { default: app } = await import('../index.js');
+    const start = await app.request('/api/auth/google/start?return=%2Fsettings', {}, OAUTH_ENV);
+    const state = new URL(start.headers.get('Location')).searchParams.get('state');
+    globalThis.fetch = vi.fn(async () => Response.json({ id_token: 'id-tok' }));
     jwtVerify.mockRejectedValue(new Error('invalid token signature'));
 
     const res = await app.request(
-      '/api/auth/google',
-      { method: 'POST', body: JSON.stringify({ credential: 'bad' }), headers: { 'Content-Type': 'application/json' } },
-      env
+      `/api/auth/google/callback?code=abc&state=${encodeURIComponent(state)}`,
+      { headers: { Cookie: nonceCookieFrom(start) } },
+      OAUTH_ENV
     );
-    expect(res.status).toBe(401);
-    expect(await res.json()).toEqual({ error: 'Could not verify Google sign-in.' });
+    expect(res.headers.get('Location')).toBe('https://sutamaya.org/settings?auth_error=1');
+    expect(sessionCookieFrom(res)).toBeUndefined();
   });
 
   // --- OAuth redirect flow -------------------------------------------------------------------
@@ -145,8 +151,6 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
   // signature and that cookie. `WEB_ORIGIN` is pinned here rather than taken from .dev.vars so
   // the redirect assertions don't depend on local config.
   describe('GET /google/start and /google/callback', () => {
-    const OAUTH_ENV = { ...env, WEB_ORIGIN: 'https://sutamaya.org', GOOGLE_CLIENT_SECRET: 'client-secret' };
-
     // The token exchange is the one place this Worker calls out to the network, through the
     // global fetch — stubbed per test, and put back afterwards so nothing else in the suite
     // inherits it.
@@ -154,16 +158,6 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
     afterEach(() => {
       globalThis.fetch = realFetch;
     });
-
-    function nonceCookieFrom(res) {
-      const cookie = res.headers.getSetCookie().find((c) => c.startsWith('sutamaya_oauth='));
-      return cookie ? cookie.split(';')[0] : undefined;
-    }
-
-    function sessionCookieFrom(res) {
-      const cookie = res.headers.getSetCookie().find((c) => c.startsWith('sutamaya_session=') && !c.includes('Max-Age=0'));
-      return cookie ? cookie.split(';')[0] : undefined;
-    }
 
     async function beginFlow(app, returnTo = '/settings') {
       const res = await app.request(`/api/auth/google/start?return=${encodeURIComponent(returnTo)}`, {}, OAUTH_ENV);
@@ -387,15 +381,16 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
 
     it('lands on the existing account when the address already signed in with Google', async () => {
       const { default: app } = await import('../index.js');
-      const testEnv = emailEnv();
-      jwtVerify.mockResolvedValue({ payload: mockPayload({ email: 'shared@example.com', sub: 'google-shared' }) });
-      const viaGoogle = await app.request(
-        '/api/auth/google',
-        { method: 'POST', body: JSON.stringify({ credential: 'tok' }), headers: { 'Content-Type': 'application/json' } },
-        testEnv
+      const viaGoogle = await signInWithGoogle(app, mockPayload({ email: 'shared@example.com', sub: 'google-shared' }));
+      const googleMe = await app.request(
+        '/api/auth/me',
+        { headers: { Cookie: sessionCookieFrom(viaGoogle) } },
+        OAUTH_ENV
       );
-      const googleUser = (await viaGoogle.json()).user;
+      const googleUser = (await googleMe.json()).user;
 
+      // emailEnv() re-stubs fetch for Resend, so it has to come after the Google round trip above.
+      const testEnv = emailEnv();
       await post(app, 'email/request', { email: 'shared@example.com' }, testEnv);
       const res = await post(app, 'email/verify', { email: 'shared@example.com', code: codeFromMail() }, testEnv);
 
@@ -495,13 +490,8 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
 
   it('POST /logout clears an established session', async () => {
     const { default: app } = await import('../index.js');
-    jwtVerify.mockResolvedValue({ payload: mockPayload() });
-    const signIn = await app.request(
-      '/api/auth/google',
-      { method: 'POST', body: JSON.stringify({ credential: 'tok' }), headers: { 'Content-Type': 'application/json' } },
-      env
-    );
-    const cookie = cookieFrom(signIn);
+    const signIn = await signInWithGoogle(app);
+    const cookie = sessionCookieFrom(signIn);
 
     const logout = await app.request('/api/auth/logout', { method: 'POST', headers: { Cookie: cookie } }, env);
     expect(logout.status).toBe(200);

@@ -40,29 +40,6 @@ function publicUser(user) {
 
 export const authRouter = new Hono();
 
-authRouter.post('/google', async (c) => {
-  const { credential } = (await jsonBody(c)) || {};
-  if (typeof credential !== 'string' || !credential) {
-    return c.json({ error: 'Missing Google credential.' }, 400);
-  }
-
-  let profile;
-  try {
-    profile = await verifyGoogleCredential(credential, c.env.GOOGLE_CLIENT_ID);
-  } catch (err) {
-    // Logged here rather than left to the global error handler, since this deliberately
-    // returns a generic 401 to the client either way regardless of the underlying cause
-    // (expired token, bad signature, audience mismatch, ...).
-    console.error('Google credential verification failed:', err);
-    return c.json({ error: 'Could not verify Google sign-in.' }, 401);
-  }
-
-  const user = await findOrCreateGoogleUser(c.env.DB, profile);
-  const secure = new URL(c.req.url).protocol === 'https:';
-  c.header('Set-Cookie', await createSessionCookie(user.id, c.env.SESSION_SECRET, { secure }), { append: true });
-  return c.json({ user: publicUser(user) });
-});
-
 // Sends the browser off to Google. `?return=` is where to come back to once the flow ends —
 // validated through safeReturnPath both on the way out and again on the way back in, since it
 // travels through the provider in between.

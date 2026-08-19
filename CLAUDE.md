@@ -355,9 +355,6 @@ the app with `?auth_error=1` rather than answering JSON, since a user watching a
 navigation would otherwise land on a blank error body with no way back; `AuthContext` reads that
 marker once at boot, shows it, and strips it from the URL.
 
-`POST /api/auth/google` (the old in-page credential endpoint) is still mounted and still tested, as
-the rollback path while the redirect flow proves itself.
-
 **Sign-in by emailed code** (`worker/src/emailAuth.js`, `POST /api/auth/email/request` and
 `/email/verify`) is the second way in, and the one that needs no provider account at all. It is a
 six-digit code, **not a magic link, and that choice is about the PWA**: a link is opened from the
