@@ -472,7 +472,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                 {hasLocalWorkWorthKeeping(lists, notes, highlights) && (
                   <div className="flex items-start gap-1.5 font-sans text-[13px] text-warning-text mb-3">
                     <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
-                    <span>If the browser clears this website's data, you will lose your local changes if you don't sign in.</span>
+                    <span>Without signing in, you risk losing your changes when the browser clears this website's data.</span>
                   </div>
                 )}
                 {/* Permanent, not dismissible, and shown whether or not the user has made anything
