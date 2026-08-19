@@ -1,4 +1,4 @@
-// The declared editorial layer over Sujato's English — see docs/retranslation.md for the design this
+// The declared editorial layer over Bhikkhu Sujato's English — see docs/retranslation.md for the design this
 // implements. Order is significant: a rule earlier in this array wins any same-word collision
 // with a later one (see "The pass" in docs/retranslation.md). Each term rule's segment list, if any,
 // lives in its own sidecar at scripts/update-data/rules/<id>.json — never inline here, since that
@@ -30,7 +30,7 @@ export const RULES = [
   // ── Standalone terms ────────────────────────────────────────────────────────
   {
     id: 'mendicant-bhikkhu',
-    why: 'Sujato renders bhikkhu as "mendicant"; this app keeps the Pali. Nothing else in the ' +
+    why: 'Bhikkhu Sujato renders bhikkhu as "mendicant"; this app keeps the Pali. Nothing else in the ' +
       'corpus renders as "mendicant", so nothing needs excluding — open, empty deny list.',
     mode: 'deny',
     forms: [
@@ -40,7 +40,7 @@ export const RULES = [
   },
   {
     id: 'immersion-concentration',
-    why: 'Sujato renders samādhi as "immersion"; this app prefers "concentration". Open: the ' +
+    why: 'Bhikkhu Sujato renders samādhi as "immersion"; this app prefers "concentration". Open: the ' +
       '"immers-" stem also covers unrelated words like "water immerser" (MN40), but those aren’t ' +
       'listed forms, so a substring swap never touches them — see the forms comment above. Carries ' +
       'the indefinite article in one form, since the word it agrees with is the word being ' +
@@ -59,7 +59,7 @@ export const RULES = [
   },
   {
     id: 'patisambhida-analytical-knowledge',
-    why: 'Sujato renders paṭisambhidā as "textual analysis"; this app prefers "analytical ' +
+    why: 'Bhikkhu Sujato renders paṭisambhidā as "textual analysis"; this app prefers "analytical ' +
       'knowledge" (Bodhi’s and Ñāṇamoli’s rendering) — the four paṭisambhidās are of meaning, ' +
       'text, terminology and eloquence, so "textual" names only the second of them. Open: every ' +
       'occurrence in the corpus is paṭisambhidā, so there is nothing to exclude. One form covers ' +
@@ -68,7 +68,7 @@ export const RULES = [
       'Analysis"). AN 1.175-186 carries it in the same sentence as "the fruit of knowledge and ' +
       'freedom" (vijjā) — one English word for two terms, accepted rather than overridden, since ' +
       're-rendering vijjā is a far larger decision than this rule. AN 1.593-595’s ' +
-      'anekadhātupaṭisambhidā, which Sujato gives as a bare "analysis", is deliberately left ' +
+      'anekadhātupaṭisambhidā, which Bhikkhu Sujato gives as a bare "analysis", is deliberately left ' +
       'alone: no form can claim "analysis" on its own without taking the ~150 unrelated uses of ' +
       'the word with it.',
     mode: 'deny',
@@ -88,7 +88,7 @@ export const RULES = [
   // the lines where the two words met.
   {
     id: 'satipatthana-establishment-of-awareness',
-    why: 'Sujato renders satipaṭṭhāna as "mindfulness meditation"; this app prefers "establishment ' +
+    why: 'Bhikkhu Sujato renders satipaṭṭhāna as "mindfulness meditation"; this app prefers "establishment ' +
       'of awareness", the compound read literally (sati-upaṭṭhāna). Open: the phrase is his ' +
       'dedicated rendering of this one term and nothing else in the corpus produces it — every one ' +
       'of its 382 segments is satipaṭṭhāna, so there is nothing to exclude. The plural "the four ' +
@@ -110,7 +110,7 @@ export const RULES = [
   },
   {
     id: 'sati-aware',
-    why: 'Sujato renders sati as "mindfulness"/"mindful"; this app prefers "awareness"/"aware". ' +
+    why: 'Bhikkhu Sujato renders sati as "mindfulness"/"mindful"; this app prefers "awareness"/"aware". ' +
       'Open: "mindful" is his dedicated term for sati and nothing else in the corpus renders as ' +
       'it, so the only exclusions are the "walking mindfully" passages, where the Pali is ' +
       'caṅkamati (walking meditation) with no sati in it at all. Leaves anussati/sarati alone — ' +
@@ -132,12 +132,12 @@ export const RULES = [
   },
   {
     id: 'sampajanna-clear-comprehension',
-    why: 'Sujato renders sampajañña as "situational awareness"/"awareness"/"aware"; this app ' +
+    why: 'Bhikkhu Sujato renders sampajañña as "situational awareness"/"awareness"/"aware"; this app ' +
       'prefers "clear comprehension" — Bodhi’s rendering in SN/AN, and DPD’s own first gloss for ' +
       'the noun ("clear awareness"). Closed, because plain-English "aware" is common and ' +
       'unrelated — the formless attainments alone account for ~150 segments of "aware that ‘space ' +
       'is infinite’", which translates iti, not sampajañña. "Clear comprehension" is a noun phrase ' +
-      'where Sujato has both a noun and an adjective, but his own wording splits the two cleanly: ' +
+      'where Bhikkhu Sujato has both a noun and an adjective, but his own wording splits the two cleanly: ' +
       'the nouns "situational awareness"/"awareness" are sampajañña, while a bare "aware"/' +
       '"unaware" is the adjective sampajāna. So the adjective takes the participle instead — a ' +
       'noun phrase cannot stand in the satipaṭṭhāna formula\'s adjective slot ("keen, aware, and ' +
@@ -159,7 +159,7 @@ export const RULES = [
   },
   {
     id: 'vippasanna-calm',
-    why: 'Sujato renders vippasanna as "clear", which is right nearly everywhere it occurs — clear ' +
+    why: 'Bhikkhu Sujato renders vippasanna as "clear", which is right nearly everywhere it occurs — clear ' +
       'water, a clear gem, "faculties so very clear", "transparent, clear, and unclouded" — so this ' +
       'is deliberately not a rule about the term. It exists only for the lines where his "clear" ' +
       'for vippasanna sits beside this app’s "clear comprehension" for sampajañña, two unrelated ' +
@@ -167,7 +167,7 @@ export const RULES = [
       'vippasannacittā) and Iti 47’s wakefulness verse, which states the phrase twice, once as ' +
       'prose and once as verse. "Calm" is the DPD’s own gloss for the compound (vippasannamana, ' +
       '"with clear mind; with calm mind") and the one candidate that isn’t already spoken for: ' +
-      '"tranquil" is Sujato’s word for passaddhi across 305 segments and "serene" his for samatha ' +
+      '"tranquil" is Bhikkhu Sujato’s word for passaddhi across 305 segments and "serene" his for samatha ' +
       'across 220, so either would trade this collision for a worse one. Closed, and not because ' +
       'the list is shorter — every occurrence of both phrases is already vippasanna, so an open ' +
       'rule would be no longer. It is closed because "clear" is the right rendering in the other 68 ' +
@@ -183,14 +183,14 @@ export const RULES = [
     ],
   },
   // ── Arising and passing away ────────────────────────────────────────────────
-  // One doctrinal pair across four Pali terms, which Sujato renders with four different English
+  // One doctrinal pair across four Pali terms, which Bhikkhu Sujato renders with four different English
   // words: samudaya "origin", vaya "vanishing", atthaṅgama "disappearance", udayabbaya "rise and
   // fall". They land on "arising" and "passing away"/"disappearing" here, so the pair reads as a
   // pair. vaya runs before atthangama because both can claim "disappearance"; the rest are
   // order-independent, matching different words.
   {
     id: 'samudaya-arising',
-    why: 'Sujato renders samudaya as "origin" (and as the verb "originates"); this app prefers ' +
+    why: 'Bhikkhu Sujato renders samudaya as "origin" (and as the verb "originates"); this app prefers ' +
       '"arising", pairing it with atthaṅgama as "disappearing". Open: the exclusions are ' +
       'paṭiccasamuppanna ("dependently originated"), aggañña ("the origin of the world"), and a ' +
       'handful of other -sambhava/-samuṭṭhāna compounds. Deliberately leaves "source" (77 ' +
@@ -207,10 +207,10 @@ export const RULES = [
   },
   {
     id: 'vaya-passing-away',
-    why: 'Sujato renders vaya as "vanishing"/"vanish"; this app prefers "passing away". Closed, ' +
+    why: 'Bhikkhu Sujato renders vaya as "vanishing"/"vanish"; this app prefers "passing away". Closed, ' +
       'because "vanish" in this corpus is overwhelmingly antaradhāyati — Māra, a deity or the ' +
       'Buddha disappearing from a scene — which is two thirds of the corpus\'s uses of the word ' +
-      'and nothing to do with impermanence. The six segments where Sujato renders vaya as ' +
+      'and nothing to do with impermanence. The six segments where Bhikkhu Sujato renders vaya as ' +
       '"disappearance" instead ("observing disappearance", an6.55/an9.26) are left to ' +
       'atthangama-disappearing: claiming that word here would drag all 355 of its segments into ' +
       'this rule\'s queue to buy a difference between two renderings this app treats as ' +
@@ -226,11 +226,11 @@ export const RULES = [
   },
   {
     id: 'atthangama-disappearing',
-    why: 'Sujato renders atthaṅgama as "disappearance"; this app prefers "disappearing", ' +
+    why: 'Bhikkhu Sujato renders atthaṅgama as "disappearance"; this app prefers "disappearing", ' +
       'pairing it with samudaya as "arising". Open: the one real exclusion is antaradhāna, "the ' +
       'decline and disappearance of the true teaching", which is a different term about the ' +
       'teaching being lost rather than about a phenomenon ceasing. Also picks up the six vaya ' +
-      'segments Sujato renders "disappearance" — see vaya-passing-away.',
+      'segments Bhikkhu Sujato renders "disappearance" — see vaya-passing-away.',
     mode: 'deny',
     predicate: /atthaṅgam|atthagam/i,
     forms: [
@@ -239,7 +239,7 @@ export const RULES = [
   },
   {
     id: 'udayabbaya-arising-passing-away',
-    why: 'Sujato renders udayabbaya as "rise and fall"; this app prefers "arising and passing ' +
+    why: 'Bhikkhu Sujato renders udayabbaya as "rise and fall"; this app prefers "arising and passing ' +
       'away", which is what he already uses for the near-synonym udayatthagāminī. Closed: "rise ' +
       'and fall" is ordinary English, and even within this corpus it also renders uppādavaya in ' +
       'a verbal construction ("their nature is to rise and fall") the noun phrase can\'t replace.',
@@ -257,17 +257,17 @@ export const RULES = [
   // these rules write, so there is no same-word collision here and the position settles nothing.
   //
   // Two rules, splitting the term by construction rather than by meaning. The first takes the
-  // doublet wherever Sujato writes it as a whole clause ("decays and perishes"); the second takes
+  // doublet wherever Bhikkhu Sujato writes it as a whole clause ("decays and perishes"); the second takes
   // the one place he writes it as a compound noun instead ("the perishing of form"). One widened
   // predicate could carry both, but they are kept apart deliberately: they share no English word,
   // so neither's forms can reach what the other rewrites, and each then gets a predicate that
   // states its own construction and a match count that moves only when that construction does.
   {
     id: 'viparinama-annathatta-change-unstable',
-    why: 'Sujato renders the vipariṇāma/aññathā doublet as "decays and perishes"; this app ' +
+    why: 'Bhikkhu Sujato renders the vipariṇāma/aññathā doublet as "decays and perishes"; this app ' +
       'prefers "changes and is unstable". Both Pali terms are change-words — vipariṇāma is ' +
       'transformation, aññathā-bhāva is becoming-otherwise — and neither carries the destruction ' +
-      '"perish" implies; Sujato himself renders aññathatta as "change" in 100 of its 112 ' +
+      '"perish" implies; Bhikkhu Sujato himself renders aññathatta as "change" in 100 of its 112 ' +
       'segments ("change while persisting", AN 3.47), so this brings the doublet into line with ' +
       'the rest of his own English. Open: every form here is a multi-word phrase that only this ' +
       'doublet produces, so there is nothing to exclude — the bare words are another matter, ' +
@@ -303,11 +303,11 @@ export const RULES = [
   },
   {
     id: 'viparinama-anuparivatti-changing',
-    why: 'The vipariṇāma compound noun of MN 138 and SN 22.7, which Sujato renders "the ' +
+    why: 'The vipariṇāma compound noun of MN 138 and SN 22.7, which Bhikkhu Sujato renders "the ' +
       'perishing of form"/"of consciousness"; this app prefers "the changing of". The Pali is ' +
       'rūpavipariṇāmānuparivatti viññāṇaṁ — consciousness that trails after form\'s ' +
       'transformation (anuparivattati, "follows around; trails") — and, in the same segment, the ' +
-      'ablative rūpavipariṇāmaññathābhāvā, which Sujato collapses into that same phrase rather ' +
+      'ablative rūpavipariṇāmaññathābhāvā, which Bhikkhu Sujato collapses into that same phrase rather ' +
       'than rendering twice. Nothing in either word is destruction: the DPD gives vipariṇāma as ' +
       '"change; alteration; transformation" and vipariṇāmaññathābhāva as "change and alteration ' +
       '(of)", and Bodhi has "preoccupied with the change of form" where Ñāṇamoli/Bodhi have "the ' +
@@ -340,7 +340,7 @@ export const RULES = [
   // since a segment override anchors on the term rules' output.
   {
     id: 'paritassati-agitated',
-    why: 'Sujato renders paritassati as "anxious"/"anxiety"; this app prefers "agitated"/' +
+    why: 'Bhikkhu Sujato renders paritassati as "anxious"/"anxiety"; this app prefers "agitated"/' +
       '"agitation". His own note on dn15:32.3 gives the term as conveying "the twin senses of ' +
       'desire and agitation", and agitation is the half that survives translation — "anxiety" ' +
       'reads as the modern affliction, which is not what a bhikkhu is warned off. Open: the ' +
@@ -349,7 +349,7 @@ export const RULES = [
       'English for eager. Deliberately leaves the term\'s four other renderings alone: "worry" in ' +
       'the contentment formula (an4.28, dn33, sn16.1), "relief" for aparitassāya in the frontier-' +
       'citadel simile (an7.67, an8.30), "bothered" (an5.106) and "nervous" (mn91). Those are ' +
-      'Sujato reading the word contextually rather than as the doctrinal term, and bringing them ' +
+      'Bhikkhu Sujato reading the word contextually rather than as the doctrinal term, and bringing them ' +
       'into line is a separate editorial decision. Shares "agitation" with calati — "For the ' +
       'independent there\'s no agitation", snp3.12 — which carries no paritassati at all, so the ' +
       'two renderings never meet in a sutta.',
@@ -357,7 +357,7 @@ export const RULES = [
     predicate: /paritass/i,
     forms: [
       ['anxious', 'agitated'],
-      // The plural noun paritassanā, which Sujato pluralizes too. English will not take
+      // The plural noun paritassanā, which Bhikkhu Sujato pluralizes too. English will not take
       // "Agitations occupy the mind", so this one sentence goes singular — and the verb has to
       // travel with the noun, which is what the longer form is for. Its negated twin, two
       // paragraphs later in the same two suttas, needs segment overrides instead; see them for
@@ -370,11 +370,11 @@ export const RULES = [
   // ── Thought and examination ─────────────────────────────────────────────────
   {
     id: 'vitakka-vicara-thought-examination',
-    why: 'Sujato renders the jhāna pair vitakka/vicāra as "placing the mind"/"keeping it ' +
+    why: 'Bhikkhu Sujato renders the jhāna pair vitakka/vicāra as "placing the mind"/"keeping it ' +
       'connected", reading them as movements of attention rather than as thinking; this app ' +
       'prefers "thought"/"examination" (Bodhi’s later rendering, and the DPD’s leading gloss for ' +
       'each — vitakka "thought; reflection; pondering", vicāra "consideration; exploring, ' +
-      'examination"). It also unifies Sujato with himself: outside this formula he already gives ' +
+      'examination"). It also unifies Bhikkhu Sujato with himself: outside this formula he already gives ' +
       'vitakka as "thought" in 440 segments, so the same Pali word currently reads two ' +
       'unrelated ways depending on whether it sits in the jhāna formula. SN 41.6 supports the ' +
       'discursive reading — the pair is the *verbal* process because "first you think and ' +
@@ -390,7 +390,7 @@ export const RULES = [
       'article — "As the placing of the mind and keeping it connected are stilled" would ' +
       'otherwise leave "As the thought and examination are stilled" across 106 segments — while ' +
       'the bare-article form stays for MN 66 and AN 9.42, which have no "the". ' +
-      'Sujato’s own translator notes quote his wording and are never retranslated, so 14 suttas ' +
+      'Bhikkhu Sujato’s own translator notes quote his wording and are never retranslated, so 14 suttas ' +
       'have a note reading in his terms beside text reading in ours.',
     mode: 'deny',
     scope: ['sujato/sutta'],
@@ -420,13 +420,13 @@ export const RULES = [
     ],
   },
   // ── Attention ───────────────────────────────────────────────────────────────
-  // Placed after thought/examination, whose `why` records that Sujato reads vitakka/vicāra as
+  // Placed after thought/examination, whose `why` records that Bhikkhu Sujato reads vitakka/vicāra as
   // movements of attention — the doctrinal neighbour, not a collision. Nothing else in the corpus
   // renders as "rational"/"rationally", and the words this rule produces ("proper", "attention")
   // are never consumed by a rule above it, so its position settles nothing on its own.
   {
     id: 'yoniso-proper-attention',
-    why: 'Sujato renders yoniso/ayoniso as "rational"/"irrational" and the compound ' +
+    why: 'Bhikkhu Sujato renders yoniso/ayoniso as "rational"/"irrational" and the compound ' +
       'yoniso manasikāra as "rational application of mind"; this app prefers "properly"/' +
       '"improperly" and "proper attention"/"improper attention". The DPD leads with exactly ' +
       'these glosses — yoniso "properly; prudently; thoroughly; carefully", ayoniso "improperly; ' +
@@ -436,15 +436,15 @@ export const RULES = [
       'the adverb, and the adverb has to carry the ~90 segments where yoniso stands alone.) ' +
       '"Rational" is the wrong register regardless: yoniso is literally "according to the ' +
       'source/origin", a matter of attending to a thing the right way round, not of reasoning. ' +
-      'Open with a small deny list: Sujato uses "rational"/"rationally" for essentially nothing ' +
+      'Open with a small deny list: Bhikkhu Sujato uses "rational"/"rationally" for essentially nothing ' +
       'but yoniso, so the exclusions are four segments of ordinary English. Nearby words on the ' +
       'same stem — "rationale", "rationalist", "rationality" — are different words and are never ' +
       'matched, since forms match on whole-word boundaries. ' +
       'The compound is a noun and cannot fill the verb slots, so the forms split by grammatical ' +
       'slot: the noun phrase takes "proper attention", while "apply the mind rationally" (and its ' +
       'other word order, "rationally apply the mind") becomes "attend properly", inflected for ' +
-      'each of the four slots Sujato uses — infinitive/imperative, third person, participle. Both ' +
-      'orders are listed because Sujato uses both, sometimes in the same sutta (mn2). The bare ' +
+      'each of the four slots Bhikkhu Sujato uses — infinitive/imperative, third person, participle. Both ' +
+      'orders are listed because Bhikkhu Sujato uses both, sometimes in the same sutta (mn2). The bare ' +
       'adverb and adjective come last, so they only catch the yoniso occurrences that stand ' +
       'outside the compound — "reflecting properly on the food that they eat", "a proper way to ' +
       'win the fruit" (mn126, yoni/ayoni). ' +
@@ -458,7 +458,7 @@ export const RULES = [
       // yoniso manasikāra, the noun
       ['irrational application of mind', 'improper attention'],
       ['rational application of mind', 'proper attention'],
-      // yoniso manasi karoti, the verb — both of Sujato's word orders, per slot.
+      // yoniso manasi karoti, the verb — both of Bhikkhu Sujato's word orders, per slot.
       // The SN 12 dependent-origination lines (sādhukaṁ yoniso manasi karoti) put a second adverb
       // in front of the verb, which the bare form would strand as "carefully and attends
       // properly", so that whole phrase is one form and the adverbs move behind the verb.
@@ -496,7 +496,7 @@ export const RULES = [
 
   // ·· sampajañña predicate rebuilds ··
   // Its adjective form is a participle, which stands in a list of adjectives but not as a whole
-  // predicate, so wherever Sujato used his "aware" predicatively ("a mendicant is aware", "aware
+  // predicate, so wherever Bhikkhu Sujato used his "aware" predicatively ("a mendicant is aware", "aware
   // of the situation") the clause has to be rebuilt around the noun — which a word-for-word form
   // can't do, and a form spanning more words can't either, since mendicant-bhikkhu has already
   // locked the "bhikkhu" in the middle of two of them.
@@ -570,14 +570,14 @@ export const RULES = [
     from: 'Furthermore, someone is clearly comprehending when conceived in their mother’s womb, clearly comprehending as they remain there, and clearly comprehending as they emerge. This is the fourth kind of conception. ',
     to: 'Furthermore, someone has clear comprehension when conceived in their mother’s womb, with clear comprehension as they remain there, and with clear comprehension as they emerge. This is the fourth kind of conception. ',
   },
-  // ·· sampajañña meeting Sujato's own "comprehend" ··
-  // Nothing is wrong with the swap itself, but "clear comprehension" now lands beside Sujato's
+  // ·· sampajañña meeting Bhikkhu Sujato's own "comprehend" ··
+  // Nothing is wrong with the swap itself, but "clear comprehension" now lands beside Bhikkhu Sujato's
   // "comprehend", which is his word for abhisamaya — a different term entirely. Only this one
   // segment has both in the same sentence.
   {
     id: 'sn56-34-abhisamaya-understand',
     kind: 'segment',
-    why: 'yathābhūtaṁ abhisamayāya, which Sujato renders "truly comprehending" — his word for ' +
+    why: 'yathābhūtaṁ abhisamayāya, which Bhikkhu Sujato renders "truly comprehending" — his word for ' +
       'abhisamaya, unrelated to sampajañña. Once sampajañña is "clear comprehension" the two sit in ' +
       'one sentence saying different things with the same root. Only this segment has both, so ' +
       'abhisamaya moves rather than the app’s own term: "truly understand" reads the yathābhūtaṁ ' +
@@ -595,7 +595,7 @@ export const RULES = [
     id: 'samudaya-exclamation-arising',
     kind: 'segment',
     why: '‘Samudayo, samudayo’ — the awakening exclamation, paired with ‘Nirodho, nirodho’ ' +
-      '(“Cessation, cessation”) a few lines later. Sujato reaches for the noun "origination" only ' +
+      '(“Cessation, cessation”) a few lines later. Bhikkhu Sujato reaches for the noun "origination" only ' +
       'here, so samudaya-arising doesn’t catch it, and the line ends up contradicting its own ' +
       'sutta: sn12.65:3.7 already reads "this entire mass of suffering arises" and 8.6 "their ' +
       'arising".',
@@ -643,7 +643,7 @@ export const RULES = [
   {
     id: 'thag16-10-walk-with-awareness',
     kind: 'segment',
-    why: 'Satiṁ upaṭṭhapetvāna, which Sujato compresses to "very mindfully" — "very with awareness" ' +
+    why: 'Satiṁ upaṭṭhapetvāna, which Bhikkhu Sujato compresses to "very mindfully" — "very with awareness" ' +
       'is not a phrase, and the Pali is plainer than the intensifier anyway.',
     segment: 'thag16.10:27.3',
     from: 'very with awareness; ',
@@ -712,7 +712,7 @@ export const RULES = [
 
   // ·· heading case ··
   // caseAs reads a match as Title Case only when every significant word is capitalized, and it
-  // counts "it" as significant (it isn't in TITLE_LOWERCASE), so a heading of Sujato's that
+  // counts "it" as significant (it isn't in TITLE_LOWERCASE), so a heading of Bhikkhu Sujato's that
   // lowercases "it" reads as a capitalized sentence and the replacement comes back in sentence
   // case. Fixed per heading rather than by adding "it" to that set, which would re-case every
   // rule's headings to solve one.

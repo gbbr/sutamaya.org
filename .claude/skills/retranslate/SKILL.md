@@ -1,6 +1,6 @@
 ---
 name: retranslate
-description: Add, change, or remove an editorial rule over Sujato's English translation — rendering a Pali term differently throughout (e.g. "replace all forms of sati with aware/awareness", "sampajañña should be clear comprehension", "origin → arising"), or overriding one specific segment's wording. Also use when an update-data run reports a broken rule or a non-empty triage queue.
+description: Add, change, or remove an editorial rule over Bhikkhu Sujato's English translation — rendering a Pali term differently throughout (e.g. "replace all forms of sati with aware/awareness", "sampajañña should be clear comprehension", "origin → arising"), or overriding one specific segment's wording. Also use when an update-data run reports a broken rule or a non-empty triage queue.
 ---
 
 # Retranslation rules
@@ -23,7 +23,7 @@ upstream) and writes `data/sujato.post/` (generated).
 
 ## Adding a term rule
 
-1. **Identify the Pali term** the user means, and the English Sujato currently uses for it. If the
+1. **Identify the Pali term** the user means, and the English Bhikkhu Sujato currently uses for it. If the
    user named an English word ("replace all occurrences of aware"), work out which Pali term it
    renders — a rule keyed on the English alone is the mistake this system exists to prevent.
 
@@ -38,7 +38,7 @@ upstream) and writes `data/sujato.post/` (generated).
      Compounds have their own entries, so a term that only ever appears bound (`anekadhātu-`
      `paṭisambhidā`) is still findable.
    - **Other translators** — say what Bodhi, Anālayo, Thanissaro and Ñāṇamoli use for the term,
-     and note where they disagree with each other or with Sujato. These aren't in the repo, so
+     and note where they disagree with each other or with Bhikkhu Sujato. These aren't in the repo, so
      they come from knowledge rather than a lookup; say so when a rendering is one you're unsure
      of rather than asserting it.
 
@@ -77,7 +77,7 @@ upstream) and writes `data/sujato.post/` (generated).
 
 6. **Check what your replacement words already translate.** Step 5 is the source side; this is
    the output side, and nothing in the pipeline catches it. A word you introduce may already be
-   Sujato's rendering of an unrelated Pali term — no predicate, list or triage queue will ever
+   Bhikkhu Sujato's rendering of an unrelated Pali term — no predicate, list or triage queue will ever
    flag that, because the rule is working exactly as written. For each replacement word, grep the
    corpus for it, look at what Pali sits behind the hits, and then check whether those segments
    ever share a **sutta** with the ones your rule rewrites. Distance is the whole question: the
@@ -89,7 +89,7 @@ upstream) and writes `data/sujato.post/` (generated).
    near-synonyms whose suttas never intersect. The alternatives are picking a different word, or
    a segment override for the one line where they meet, which is what
    `sn56-34-abhisamaya-understand` exists for: "clear comprehension" landed in the same sentence
-   as Sujato's "comprehend" for abhisamaya, a different term entirely.
+   as Bhikkhu Sujato's "comprehend" for abhisamaya, a different term entirely.
 
 7. **Add a fixture** to the rule's examples and run `npm test`. One per grammatical slot the
    rule's forms distinguish, not just one per rule — a form that is right as a finite verb can be
@@ -112,8 +112,8 @@ upstream) and writes `data/sujato.post/` (generated).
    entry point that does only the half you're entitled to.
 
 10. **Update `docs/translation-changes.md`** — the plain-language summary of every departure from
-    Sujato, written for a reader who wants to know how this app's text differs from his, not for
-    anyone maintaining the rules. A term rule earns a row in its table (Pali, Sujato's word, ours,
+    Bhikkhu Sujato, written for a reader who wants to know how this app's text differs from his, not for
+    anyone maintaining the rules. A term rule earns a row in its table (Pali, Bhikkhu Sujato's word, ours,
     one line of why); a segment override usually earns nothing but a bump to the approximate count
     in "Reworded lines", unless it's a new *kind* of rewording. It's the one artifact here that
     won't announce its own staleness — no test or anchor covers it — so it goes in the same commit
@@ -126,12 +126,12 @@ rule's existing `forms` pairs. Review the rule's entire footprint again from scr
 invent forms the previous rendering never needed.
 
 The reason is grammatical. A `forms` pair maps one English source word to one replacement, but
-Sujato's source word usually sits in more than one grammatical slot, and a replacement that works
+Bhikkhu Sujato's source word usually sits in more than one grammatical slot, and a replacement that works
 in one slot is routinely ungrammatical in another. `sampajanna-clear-comprehension` is the worked
 example: "understanding" happened to double as a participle, so one form covered both slots,
 whereas "clear comprehension" is a noun phrase that cannot stand in the satipaṭṭhāna formula's list
 of adjectives — "keen, aware, and mindful" would have become "keen, clear comprehension, and
-aware" across roughly 250 segments. The fix was to split Sujato's own vocabulary: his nouns
+aware" across roughly 250 segments. The fix was to split Bhikkhu Sujato's own vocabulary: his nouns
 "situational awareness"/"awareness" render the noun *sampajañña* and take "clear comprehension",
 while his bare "aware"/"unaware" render the adjective *sampajāna* and take "clearly
 comprehending"/"without clear comprehension", leaving only a dozen predicative lines for segment

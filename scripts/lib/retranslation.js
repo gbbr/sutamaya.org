@@ -17,7 +17,7 @@ export const COUNTS_PATH = path.join(ROOT, 'scripts', 'update-data', 'retranslat
 export const SUJATO_TREES = ['sujato/sutta', 'sujato/notes', 'sujato/name', 'sujato/blurb'];
 
 // The three a rule may rewrite, and the default scope. **sujato/notes is never retranslated**: a
-// note is Sujato writing *about* the text rather than translating it, so he quotes his own
+// note is Bhikkhu Sujato writing *about* the text rather than translating it, so he quotes his own
 // renderings and uses the same words as ordinary English, and a rule that is right on the
 // translation is routinely wrong there — "mindfulness and awareness" (satisampajañña) collapsing to
 // "awareness and awareness", "its gradual disappearance" becoming "its gradual disappearing",
@@ -296,7 +296,7 @@ export function buildSegmentIndex(sujatoDir = SUJATO_DIR) {
 }
 
 // The Pali root text segment aligned with a given sujato/sutta segment id — used only by
-// triage/report/diff tooling (never at build time; see the predicate note above). Sujato's
+// triage/report/diff tooling (never at build time; see the predicate note above). Bhikkhu Sujato's
 // sutta/notes files share their relative path (minus filename suffix) with pali/sutta, so this is
 // a pure path transform, not a lookup through buildSegmentIndex.
 export function paliCounterpartPath(sujatoSuttaRelPath) {

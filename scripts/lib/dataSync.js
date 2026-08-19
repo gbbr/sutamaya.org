@@ -233,7 +233,7 @@ export const INTEGRITY_GROUPS = [
     b: { prefix: 'html/pli/ms/sutta', suffix: '_html.json' },
   },
   {
-    // Sujato's translation legitimately skips some Pali-only scribal colophon lines (e.g.
+    // Bhikkhu Sujato's translation legitimately skips some Pali-only scribal colophon lines (e.g.
     // "Tevijjasuttaṁ niṭṭhitaṁ terasamaṁ.") that pali/html both always carry — see CLAUDE.md's
     // note on buildBodySegments' Pali fallback for role: 'end' segments — so this direction only:
     // every segment id sujato has must also exist in pali, never the reverse. That's what
@@ -278,7 +278,7 @@ export function checkCrossCategoryIntegrity(relPaths, keysFor) {
       if (!relA || !relB) {
         // 'exact' groups expect both sides always present together, so either one missing is
         // worth flagging. 'subset' groups only care about the subset side having no counterpart
-        // to check against — a superset-only file (e.g. a Pali range with no Sujato translation
+        // to check against — a superset-only file (e.g. a Pali range with no Bhikkhu Sujato translation
         // at all) is normal and not this check's concern.
         if (group.kind === 'exact' || (group.kind === 'subset' && relA)) {
           issues.push(`${group.name} ${baseKey}: present in ${relA ? group.a.prefix : group.b.prefix} but missing from ${relA ? group.b.prefix : group.a.prefix}.`);

@@ -4,7 +4,7 @@
 // must still exist at its expected path (see CATEGORY_SOURCE_PREFIXES in lib/dataSync.js), with
 // the exact same set of segment ids it had when scripts/update-data/snapshot.json was taken —
 // only the translated/structural values are allowed to differ. It also cross-checks that a
-// sutta's Pali root text, Sujato translation, and HTML structure stay aligned with each other
+// sutta's Pali root text, Bhikkhu Sujato translation, and HTML structure stay aligned with each other
 // (pali/html exactly, sujato as a subset of pali — see INTEGRITY_GROUPS in lib/dataSync.js), both
 // upstream and against the local data/{sujato,pali,html} trees — the local pass is what catches a
 // snapshot taken from an already-misaligned local state, which would otherwise pass every other
@@ -234,7 +234,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     }
 
     if (result.integrityIssues.length) {
-      console.error(bold(yellow(`\nUpstream cross-category integrity — Pali/Sujato/HTML segment ids don't line up (${result.integrityIssues.length}):`)));
+      console.error(bold(yellow(`\nUpstream cross-category integrity — Pali/Bhikkhu Sujato/HTML segment ids don't line up (${result.integrityIssues.length}):`)));
       for (const issue of result.integrityIssues) console.error(yellow(`- ${issue}`));
     }
 

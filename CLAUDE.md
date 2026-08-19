@@ -79,7 +79,7 @@ and writes into `web/public/data/`:
 - **`text/{uid}.json`** — one file per leaf document: an ordered array of
   `{key, pali, en, role?, headingLevel?, note?}` segments. `role` is
   `'verse' | 'heading' | 'end' | 'speaker' | 'list-item'`, derived from SuttaCentral's own markup in
-  `data/html/`; `note` is Sujato's translator footnote, which may contain inline HTML.
+  `data/html/`; `note` is Bhikkhu Sujato's translator footnote, which may contain inline HTML.
 - **`dict-shards/*.json` + `manifest.json`** — the DPD dictionary split into ~256KB range shards, so
   a word tap fetches ~30KB instead of a ~20MB map. `web/src/lib/dictionaryShards.ts` binary-searches
   the manifest; its comparison must match the builder's (plain `<`/`>`, never `localeCompare`).
