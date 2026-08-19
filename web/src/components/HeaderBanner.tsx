@@ -32,6 +32,11 @@ import {
 // The dismissal state and `hasOpenedSutta` are read once per mount (not subscribed live) since this
 // remounts with TreePane on the route boundary that actually changes them (returning from
 // /read/:suttaId), and each dismiss button sets local state directly rather than waiting for one.
+//
+// At most one banner is dismissed per mount: dismissing one leaves the slot empty rather than
+// swapping in the next one down the list, which — same bar, same place, same shape — reads as the
+// dismiss having failed, so the second message gets closed unread. The successor waits for the next
+// mount, which is every return from the reader.
 
 // Exported so tests assert against the same strings this component actually renders, rather than
 // a copy that can drift out of sync with it.
@@ -101,6 +106,10 @@ export function HeaderBanner() {
   // Keyed by the local id, so signing out — which mints a fresh one — offers the prompt again for
   // what is, as far as this device's unsynced work goes, a new body of work.
   const [keepSafeDismissed, setKeepSafeDismissed] = useState(() => isKeepSafeDismissed(localUserId));
+  // Set by any dismiss that can uncover a lower-priority banner, to hold the slot empty until the
+  // next mount. Only "keep this safe" can, so far — the two offline nudges are mutually exclusive
+  // and nothing ranks below them.
+  const [dismissedThisMount, setDismissedThisMount] = useState(false);
   const [offlineCachedStatus, setOfflineCachedStatus] = useState<{ cached: number; total: number } | null>(null);
   // The download nudge is PWA-only: asking for ~28MB in a passing browser tab is pushy, and it's
   // an installed app that has any use for the whole canon. The update nudge isn't, because it can
@@ -173,12 +182,13 @@ export function HeaderBanner() {
         onDismiss={() => {
           dismissKeepSafe(localUserId);
           setKeepSafeDismissed(true);
+          setDismissedThisMount(true);
         }}
       />
     );
   }
 
-  if (!showOfflineNudge && !showUpdateNudge) return null;
+  if (dismissedThisMount || (!showOfflineNudge && !showUpdateNudge)) return null;
 
   return (
     <Banner
