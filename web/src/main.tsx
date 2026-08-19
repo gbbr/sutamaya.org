@@ -30,6 +30,33 @@ function onViewportResize() {
 window.visualViewport?.addEventListener('resize', onViewportResize);
 window.addEventListener('resize', onViewportResize);
 
+// Returning from the background strands iPad Safari on a stale, too-short viewport: it collapses
+// its tab bar without telling the page, so innerHeight/visualViewport.height keep reporting the
+// pre-background height and the app renders ~95px short, showing a band of bare canvas below it.
+// Re-measuring here doesn't help — the numbers Safari reports are themselves stale, and it only
+// recomputes them in response to a *document-level* scroll. `overflow: hidden` on <html>
+// (index.css, so the document itself never scrolls) is what denies it one, which is why the bar
+// persists until the user happens to touch the screen.
+//
+// So give it one: make the document briefly scrollable, scroll a pixel, and put everything back
+// on the next frame. Safari then fires a real resize, and onViewportResize above picks up the
+// corrected height through the normal path. The restore lands within a frame, which keeps mobile's
+// address-bar hide animation (see index.css's `overflow: hidden` comment) from being triggered.
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState !== 'visible') return;
+  const html = document.documentElement;
+  const overflow = html.style.overflow;
+  html.style.overflow = 'auto';
+  html.style.height = '200%';
+  window.scrollTo(0, 1);
+  requestAnimationFrame(() => {
+    window.scrollTo(0, 0);
+    html.style.overflow = overflow;
+    html.style.height = '';
+    syncAppHeight();
+  });
+});
+
 // No <StrictMode> here: @reach/router's Redirect (and its history subscription) relies on
 // class-component lifecycle timing that React 18's dev-mode double-invoking breaks — a
 // redirect from "/" would silently never fire. See CLAUDE.md "Frontend" for the tradeoff.
