@@ -369,7 +369,9 @@ What actually makes a six-digit secret safe is `login_codes.attempts` — five w
 row, and because the budget lives on the code rather than in a rate limiter, a fresh IP buys no
 further guesses. Requesting a new code replaces the outstanding one; a resend inside
 `RESEND_COOLDOWN_MS` answers `{ok:true}` without sending again, so the button can't be pointed at
-someone's inbox.
+someone's inbox. `request` also sweeps expired rows in the same `db.batch()` — a code requested and
+never used has no other way out of the table, since the verify path only runs if the user comes
+back, so without it every abandoned attempt would leave a row for good.
 
 **`identities`** is the authoritative record of how an account can be signed into — `('google',
 <sub>)` or `('email', <address>)` — and is what to read, not `users.google_id`. That column is

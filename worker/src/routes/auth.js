@@ -126,14 +126,20 @@ authRouter.post('/email/request', async (c) => {
   }
 
   const code = generateCode();
-  await c.env.DB.prepare(
-    `INSERT INTO login_codes (email, code_hash, expires_at, attempts, created_at)
-     VALUES (?, ?, ?, 0, ?)
-     ON CONFLICT(email) DO UPDATE SET code_hash = excluded.code_hash, expires_at = excluded.expires_at,
-       attempts = 0, created_at = excluded.created_at`
-  )
-    .bind(email, await hashCode(code, email, c.env.SESSION_SECRET), new Date(now + CODE_TTL_MS).toISOString(), new Date(now).toISOString())
-    .run();
+  const nowIso = new Date(now).toISOString();
+  await c.env.DB.batch([
+    // A code that is requested and then never used would otherwise leave its row behind for good:
+    // the verify path is the only other place a row is removed, and it only runs if the user comes
+    // back. Sweeping here costs one statement in a round trip that was happening anyway, and means
+    // the table is tidied every time anyone signs in — which is exactly when it grows.
+    c.env.DB.prepare('DELETE FROM login_codes WHERE expires_at < ?').bind(nowIso),
+    c.env.DB.prepare(
+      `INSERT INTO login_codes (email, code_hash, expires_at, attempts, created_at)
+       VALUES (?, ?, ?, 0, ?)
+       ON CONFLICT(email) DO UPDATE SET code_hash = excluded.code_hash, expires_at = excluded.expires_at,
+         attempts = 0, created_at = excluded.created_at`
+    ).bind(email, await hashCode(code, email, c.env.SESSION_SECRET), new Date(now + CODE_TTL_MS).toISOString(), nowIso),
+  ]);
 
   try {
     await sendEmail({

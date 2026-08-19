@@ -461,6 +461,39 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
       expect(sent).toHaveLength(1);
     });
 
+    // A code requested and never used has no other route out of the table — the verify path only
+    // runs if the user comes back — so it would sit there indefinitely without this.
+    it('sweeps expired rows for other addresses when a new code is requested', async () => {
+      const { default: app } = await import('../index.js');
+      const testEnv = emailEnv();
+      const past = new Date(Date.now() - 60_000).toISOString();
+      await env.DB.prepare('INSERT INTO login_codes (email, code_hash, expires_at, attempts, created_at) VALUES (?, ?, ?, 0, ?)')
+        .bind('abandoned@example.com', 'dead-hash', past, past)
+        .run();
+
+      await post(app, 'email/request', { email: 'fresh@example.com' }, testEnv);
+
+      const swept = await env.DB.prepare('SELECT * FROM login_codes WHERE email = ?').bind('abandoned@example.com').first();
+      expect(swept).toBeNull();
+      // The row just written is untouched — its expiry is in the future.
+      const kept = await env.DB.prepare('SELECT * FROM login_codes WHERE email = ?').bind('fresh@example.com').first();
+      expect(kept).not.toBeNull();
+    });
+
+    it('still issues a working code when the requester’s own row had expired', async () => {
+      const { default: app } = await import('../index.js');
+      const testEnv = emailEnv();
+      await post(app, 'email/request', { email: 'lapsed@example.com' }, testEnv);
+      const past = new Date(Date.now() - 60_000).toISOString();
+      await env.DB.prepare('UPDATE login_codes SET expires_at = ?, created_at = ? WHERE email = ?')
+        .bind(past, past, 'lapsed@example.com')
+        .run();
+
+      await post(app, 'email/request', { email: 'lapsed@example.com' }, testEnv);
+      const res = await post(app, 'email/verify', { email: 'lapsed@example.com', code: codeFromMail() }, testEnv);
+      expect(res.status).toBe(200);
+    });
+
     it('rejects a code for an address that never asked for one', async () => {
       const { default: app } = await import('../index.js');
       const res = await post(app, 'email/verify', { email: 'nobody@example.com', code: '123456' }, emailEnv());
