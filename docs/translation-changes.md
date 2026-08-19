@@ -1,4 +1,4 @@
-# How this app's text differs from Sujato's
+# Translation changes
 
 The English here is Bhikkhu Sujato's translation, published by SuttaCentral under CC0. It is not
 reproduced verbatim: a small number of recurring terms are rendered differently, and about fifty
