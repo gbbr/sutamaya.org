@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { navigate } from '@reach/router';
 import { UserRound } from 'lucide-react';
+import { isIosBrowserTab } from '../lib/localAccount';
 import type { User } from '../lib/types';
 
 // The single account/settings entry point in TreePane's header, signed in or out — which is why
@@ -60,9 +61,12 @@ export function SignedInBadge({ user, size, atRisk = false }: { user: User | nul
         // and `treepane` on desktop, so a ring painted to match one of them would be a visible
         // patch on the other. The badge's own border token separates the dot from the glyph
         // beneath it on either.
+        //
+        // Red on an iOS browser tab, matching the banner and the Settings line that turn red under
+        // the same condition — there the data is on a deletion timer, not merely unsynced.
         <span
           data-component="SignedInBadgeDot"
-          className="absolute rounded-full bg-accent border border-ink/25"
+          className={`absolute rounded-full border border-ink/25 ${isIosBrowserTab() ? 'bg-danger-text' : 'bg-accent'}`}
           style={{ width: 8, height: 8, top: -1, right: -1 }}
         />
       )}
