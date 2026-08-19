@@ -14,7 +14,7 @@ vi.mock('../context/UiPrefsContext', () => ({ useUiPrefs: vi.fn() }));
 vi.mock('../context/CorpusContext', () => ({ useCorpus: vi.fn() }));
 vi.mock('../context/UserDataContext', () => ({ useUserData: vi.fn() }));
 vi.mock('../lib/offline', () => ({
-  estimateOfflineStatus: vi.fn(async () => ({ cached: 0, total: 0 })),
+  estimateOfflineStatus: vi.fn(async () => ({ cached: 0, total: 10 })),
   prefetchAllSuttas: vi.fn(async () => ({ failed: [], circuitTripped: false })),
   prefetchDictionary: vi.fn(async () => true),
   cachedCorpusVersions: vi.fn(() => ({ data: null, dictionary: null })),
@@ -251,8 +251,8 @@ describe('refreshing a stale offline copy', () => {
   it('announces the update and offers a re-download instead of the first-time download', async () => {
     vi.mocked(isOfflineTextStale).mockReturnValue(true);
     renderSettings();
-    expect(await screen.findByText('Updated sutta text is available.')).toBeInTheDocument();
-    expect(screen.getByText('Re-download updated suttas')).toBeInTheDocument();
+    expect(await screen.findByText('Updated content is available (50 MB).')).toBeInTheDocument();
+    expect(screen.getByText('Download updated content')).toBeInTheDocument();
     // The ordinary availability line is replaced, not shown alongside it.
     expect(screen.queryByText('All suttas available offline.')).not.toBeInTheDocument();
   });
@@ -263,7 +263,7 @@ describe('refreshing a stale offline copy', () => {
     vi.mocked(isOfflineTextStale).mockReturnValue(true);
     vi.mocked(cachedCorpusVersions).mockReturnValue({ data: 'data-v1', dictionary: 'dict-v2' });
     renderSettings();
-    await userEvent.click(screen.getByText('Re-download updated suttas'));
+    await userEvent.click(screen.getByText('Download updated content'));
     expect(vi.mocked(prefetchAllSuttas).mock.calls[0][1]).toMatchObject({ force: true });
     // Dictionary version unchanged — a reworded sutta must not cost a ~2.6MB re-fetch.
     expect(vi.mocked(prefetchDictionary).mock.calls[0][1]).toBe(false);
