@@ -79,12 +79,15 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
     consoleErrorSpy.mockRestore();
   });
 
+  // First in the file, so this is the one that pays for loading the Worker's whole module graph
+  // inside workerd. Milliseconds once warm, but a loaded CI runner needs more headroom for that
+  // first import than the default 5s timeout gives.
   it('GET /me returns a null user for a signed-out request', async () => {
     const { default: app } = await import('../index.js');
     const res = await app.request('/api/auth/me', {}, env);
     expect(res.status).toBe(200);
     expect(await res.json()).toEqual({ user: null });
-  });
+  }, 30_000);
 
   it('signs in a new Google user, sets the session cookie, and GET /me reflects it', async () => {
     const { default: app } = await import('../index.js');
