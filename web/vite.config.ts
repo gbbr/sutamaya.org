@@ -80,6 +80,18 @@ export default defineConfig({
             },
           },
           {
+            // The help page's screenshots (see pages/HelpPage.tsx) — ~630KB that most installs
+            // never open, so they are not precached; they land here on first view of /help, and
+            // Settings' bulk offline download fills them in (prefetchHelpImages in lib/offline.ts)
+            // so a device that has "downloaded all content" can still read the guide in airplane
+            // mode. CacheFirst with no revalidation is safe here, unlike the unversioned /data/
+            // paths (see CLAUDE.md "Cache staleness"), because Vite content-hashes these
+            // filenames: a re-captured screenshot arrives as a new URL rather than a stale hit.
+            urlPattern: /\/assets\/.*\.webp$/,
+            handler: 'CacheFirst',
+            options: { cacheName: 'help-images', expiration: { maxEntries: 40, maxAgeSeconds: 60 * 60 * 24 * 365 } },
+          },
+          {
             urlPattern: /\/fonts\/.*\.woff2$/,
             handler: 'CacheFirst',
             options: { cacheName: 'fonts', expiration: { maxEntries: 20, maxAgeSeconds: 60 * 60 * 24 * 365 } },

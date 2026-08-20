@@ -6,6 +6,16 @@ const MANIFEST_URL = '/data/text-shards/manifest.json';
 // Must match vite.config.ts's runtimeCaching cacheName/urlPattern for these URLs — writing here
 // under any other name/key would leave the SW's own CacheFirst rule unable to find them.
 const DICTIONARY_CACHE = 'dictionary';
+const HELP_IMAGE_CACHE = 'help-images';
+
+// Every screenshot on the help page. Globbed rather than listed so this can't drift from what
+// HelpPage.tsx actually imports — the glob covers the whole directory, so a shot added there is
+// downloaded for offline use without anyone remembering to update a second list. Vite resolves
+// this at build time to the same content-hashed URLs the page requests, which is what lets a
+// cache entry written here satisfy the page's own <img> later.
+const HELP_IMAGE_URLS = Object.values(
+  import.meta.glob('../assets/help/*.webp', { eager: true, query: '?url', import: 'default' })
+) as string[];
 
 // Exported so tests can advance fake timers by the real value instead of duplicating it. Shards
 // are ~1MB bundles of many suttas (see scripts/build-corpus.mjs's SHARD_TARGET_BYTES), not the
@@ -238,6 +248,42 @@ export async function prefetchDictionary(signal?: AbortSignal, force = false): P
       if (results.some((r) => !r)) ok = false;
     }
     return ok;
+  } catch {
+    return false;
+  }
+}
+
+// Pulls the help page's screenshots into Cache Storage alongside the canon, so "download all
+// content" leaves a device that can still read the guide with no connection — a help page that
+// goes to broken images offline would be a poor joke in an app whose whole point is working
+// offline. Written directly into the same cache the Service Worker's own CacheFirst rule reads
+// (see vite.config.ts), the same way the two prefetchers above write theirs.
+//
+// Best-effort by design, and deliberately without a failure state of its own in Settings: these
+// are ~630KB of illustration for a page that reads perfectly well as text, so a missing one is
+// not worth a banner next to the ones that mean the reader has no sutta text.
+//
+// No `force` parameter: the filenames are content-hashed, so a re-captured screenshot is a new URL
+// that simply isn't cached yet, and one already present can never be stale.
+export async function prefetchHelpImages(signal?: AbortSignal): Promise<boolean> {
+  if (!('caches' in window)) return false;
+  try {
+    const cache = await caches.open(HELP_IMAGE_CACHE);
+    const results = await Promise.all(
+      HELP_IMAGE_URLS.map(async (url) => {
+        if (signal?.aborted) return false;
+        try {
+          if (await cache.match(url)) return true;
+          const res = await fetch(url, { signal });
+          if (!res.ok) return false;
+          await cache.put(new Request(url), res);
+          return true;
+        } catch {
+          return false;
+        }
+      })
+    );
+    return results.every(Boolean);
   } catch {
     return false;
   }
