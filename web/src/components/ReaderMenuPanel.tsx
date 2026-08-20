@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { X } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
-import { useReaderPrefs } from '../context/ReaderPrefsContext';
+import { LH_MAX, LH_MIN, LH_STEP, useReaderPrefs } from '../context/ReaderPrefsContext';
 import { NoteEditor } from './NoteEditor';
 import { ListMembershipPicker } from './ListMembershipPicker';
 import type { SegmentFile } from '../lib/corpus';
@@ -247,7 +247,7 @@ export function ReaderMenuPanel({
               <span className="font-sans text-[12.5px] opacity-55" style={{ width: 86 }}>
                 Line height
               </span>
-              <input type="range" min={140} max={200} step={5} value={lh} onChange={(e) => setLh(+e.target.value)} className="flex-1" style={{ accentColor: '#8A6A3B' }} />
+              <input type="range" min={LH_MIN} max={LH_MAX} step={LH_STEP} value={lh} onChange={(e) => setLh(+e.target.value)} className="flex-1" style={{ accentColor: '#8A6A3B' }} />
             </div>
             <div style={{ padding: '12px 0', borderTop: `1px solid ${theme.rule}` }}>
               <span className="font-sans text-[12.5px] opacity-55 block mb-2">Face</span>
