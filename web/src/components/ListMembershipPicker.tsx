@@ -216,13 +216,15 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
           </button>
         </div>
       )}
+      {/* text-base, not the 14.5px the rows use: iOS Safari zooms the page when a font-size under
+          16px takes focus, and web/index.html deliberately leaves pinch-zoom enabled. */}
       <input
         ref={inputRef}
         value={draft}
         onChange={(e) => setDraft(e.target.value)}
         onKeyDown={onKeyDown}
         placeholder={nestingParent ? 'Name — return to create' : 'Search or create — "Group / New" to nest'}
-        className="w-full h-11 rounded-[10px] px-3 bg-transparent text-base outline-none"
+        className="w-full h-[38px] rounded-[10px] px-3 bg-transparent text-base outline-none"
         style={{ border: `1px solid ${theme.pali}`, color: theme.fg }}
         autoComplete="off"
         autoCorrect="off"
@@ -237,7 +239,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
             return (
               <button
                 key={row.type}
-                className="flex w-full items-center gap-2 px-2 py-[11px] text-left text-[15px]"
+                className="flex w-full items-center gap-2 px-2 py-[9px] text-left text-[14.5px]"
                 style={rowStyle(active)}
                 onMouseEnter={() => setActiveIndex(idx)}
                 onClick={() => activateRow(row)}
@@ -252,7 +254,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
             return (
               <button
                 key={row.type}
-                className="flex w-full items-center gap-2 px-2 py-[11px] text-left text-[15px]"
+                className="flex w-full items-center gap-2 px-2 py-[9px] text-left text-[14.5px]"
                 style={rowStyle(active)}
                 onMouseEnter={() => setActiveIndex(idx)}
                 onClick={() => activateRow(row)}
@@ -262,7 +264,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
               </button>
             );
           }
-          const { list, depth, breadcrumb } = row.option;
+          const { list, depth } = row.option;
           const isGroup = list.kind === 'group';
           const checked = !isGroup && suttaListIds.includes(list.id);
           return (
@@ -272,7 +274,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
               style={{ ...rowStyle(active), paddingLeft: 8 + depth * 14 }}
               onMouseEnter={() => setActiveIndex(idx)}
             >
-              <button className="flex flex-1 min-w-0 items-center gap-2 py-[11px] pr-2 text-left" onClick={() => activateRow(row)}>
+              <button className="flex flex-1 min-w-0 items-center gap-2 py-[9px] pr-2 text-left" onClick={() => activateRow(row)}>
                 {isGroup ? (
                   // Rows here are always flattened/already "expanded" (see flattenListTree) —
                   // this chevron is a static, non-interactive indicator that the row is a group
@@ -287,7 +289,13 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
                     {checked && <Check size={11} strokeWidth={3} color={theme.bg} />}
                   </span>
                 )}
-                <span className="min-w-0 truncate text-[15px]">{breadcrumb}</span>
+                {/* The bare name, never the "Parent / Child" breadcrumb the option also carries: a
+                    nested list's path is long enough that the name — the only part that identifies
+                    the row — ends up entirely behind the ellipsis. Browsing loses nothing by it
+                    (rows are the whole tree in depth-first order, each indented by its depth, so
+                    the parent chain is on screen above), and filtered rows keep their indentation
+                    as a hint of where a match sits. */}
+                <span className="min-w-0 truncate text-[14.5px]">{list.label}</span>
               </button>
               {isGroup && (
                 <button
