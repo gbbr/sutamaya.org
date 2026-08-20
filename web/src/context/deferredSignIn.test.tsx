@@ -48,6 +48,12 @@ const ACCOUNT: User = { id: 'account-1', email: 'a@b.com', name: 'A', picture: n
 
 const emptyData: UserData = { lists: [], membership: {}, notes: {}, highlights: {}, visited: {} };
 
+// The fake server keeps what was pushed to it, because the flush pulls a full snapshot straight
+// after pushing and `applySnapshot` keeps only what is still dirty (lib/mirror.ts). A snapshot that
+// forgot the note it had just accepted would blank it one render after adoption produced it —
+// making an assertion on the note a race against a single frame rather than a check of the result.
+let serverNotes: UserData['notes'] = {};
+
 // A minimal surface over both providers: the note is the cheapest record to assert, and the two
 // buttons are the two identity transitions under test.
 function Probe() {
@@ -96,8 +102,12 @@ beforeEach(() => {
   });
   authMe.mockResolvedValue({ user: null });
   authLogout.mockResolvedValue({ ok: true });
-  dataApiAll.mockResolvedValue(structuredClone(emptyData));
-  notesApiSet.mockResolvedValue({ ok: true });
+  serverNotes = {};
+  dataApiAll.mockImplementation(async () => ({ ...structuredClone(emptyData), notes: { ...serverNotes } }));
+  notesApiSet.mockImplementation(async (suttaId: string, text: string, m: string) => {
+    serverNotes[suttaId] = { text, m };
+    return { ok: true };
+  });
 });
 
 describe('deferred sign-in, across the real AuthProvider', () => {
@@ -126,9 +136,9 @@ describe('deferred sign-in, across the real AuthProvider', () => {
     await settle();
     first.unmount();
 
-    // The server has nothing: whatever shows up has to have come from adoption, not the pull.
+    // The server starts with nothing, so anything it can hand back has to have got there by being
+    // pushed — which is to say by adoption.
     authMe.mockResolvedValue({ user: ACCOUNT });
-    dataApiAll.mockResolvedValue(structuredClone(emptyData));
     mount();
 
     await waitFor(() => expect(screen.getByTestId('who')).toHaveTextContent(`signed-in:${ACCOUNT.id}`));
