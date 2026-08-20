@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, Check, GripVertical, List, MinusCircle, Pencil } from 'lucide-react';
+import { Check, ChevronLeft, GripVertical, List, MinusCircle, Pencil } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -230,15 +230,19 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
 
   return (
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
-      <header className="flex-none flex items-center gap-5 px-5 pt-4 pb-3.5 border-b border-ink/10">
+      <header className="flex-none flex items-center gap-3 px-5 pt-4 pb-3.5 border-b border-ink/10">
         {mobile && (
+          // Deliberately the same 28px round icon button as the edit toggle on the right, so the
+          // header reads as icon / title / icon. The border and chip fill are what make it read
+          // as a control at rest — an unfilled grey chevron doesn't — and match the pill toggle's
+          // thumb in TreePane's header. The `after` pseudo-element pads the tap target out to
+          // ~44px without growing the circle or shifting anything else in the flex row.
           <button
-            className="flex-none flex flex-col items-center gap-0.5 font-sans text-[11px] text-ink/50"
+            className="relative flex-none w-[28px] h-[28px] rounded-full flex items-center justify-center border border-ink/[.12] bg-chip/40 text-ink/60 hover:text-ink active:bg-ink/[.08] after:content-[''] after:absolute after:-inset-2"
             aria-label="Back"
             onClick={onBack}
           >
-            <ArrowLeft size={15} strokeWidth={1.75} />
-            Back
+            <ChevronLeft size={17} strokeWidth={2} />
           </button>
         )}
         <div className="flex-1 min-w-0">
@@ -254,8 +258,15 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
         </div>
         {currentList && !currentList.auto && (
           <button
+            // The bordered resting state is mobile-only, to match the back button beside it.
+            // On desktop there's no back button to pair with, and hover already tells you the
+            // icon is a control, so it stays bare until pointed at.
             className={`flex-none w-[28px] h-[28px] rounded-full flex items-center justify-center ${
-              editMode ? 'bg-accent2 text-[#FBFAF7]' : 'text-ink/45 hover:bg-ink/[.08] hover:text-ink'
+              editMode
+                ? 'bg-accent2 text-[#FBFAF7]'
+                : mobile
+                  ? 'border border-ink/[.12] bg-chip/40 text-ink/60 hover:text-ink active:bg-ink/[.08]'
+                  : 'text-ink/45 hover:bg-ink/[.08] hover:text-ink'
             }`}
             aria-label={editMode ? 'Done editing list' : 'Edit list'}
             title={editMode ? 'Done editing list' : 'Edit list'}
