@@ -41,7 +41,10 @@ export function useReaderSwipeNav({ rootRef, panel, step, siblingIds, suttaId }:
       // overlay rendered inside this same root, so without this guard a touch drag started over
       // it — including a horizontal one on a slider thumb — would still bubble up here and get
       // read as a swipe once released.
-      if (panel || e.touches.length !== 1) {
+      // A live text selection takes precedence over the swipe: dragging either of its handles is
+      // a horizontal drag over the reading pane like any other, and the reader wants the handle
+      // to move, not the sutta to change. One tap clears the selection and swiping works again.
+      if (panel || e.touches.length !== 1 || String(window.getSelection())) {
         start = null;
         lock = null;
         return;
@@ -59,7 +62,9 @@ export function useReaderSwipeNav({ rootRef, panel, step, siblingIds, suttaId }:
       }
     }
     function onTouchEnd(e: TouchEvent) {
-      if (!panel && start && lock === 'h') {
+      // The touchstart guard can't catch the long-press-drag that *creates* a selection — there is
+      // nothing selected yet when the touch lands — so the gesture is re-checked on release.
+      if (!panel && start && lock === 'h' && !String(window.getSelection())) {
         const t = e.changedTouches[0];
         const dx = t.clientX - start.x;
         const dy = t.clientY - start.y;
