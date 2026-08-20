@@ -451,7 +451,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                     {!needsReauth && (
                       <a href={dataApi.exportUrl} className={LINK_ACTION}>
                         <Download size={13} strokeWidth={1.75} />
-                        Export my data as JSON
+                        Export my data
                       </a>
                     )}
                   </div>
