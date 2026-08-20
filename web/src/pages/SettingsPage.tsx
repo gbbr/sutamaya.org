@@ -55,16 +55,17 @@ const UI_FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
   { id: 'system', label: 'System' },
 ];
 
-// Every section is one of these: a panel holding rows split by hairlines. The tint is `ink` at
-// very low alpha rather than a fixed colour, so it darkens the page slightly in the light theme
-// and lightens it in the dark one from a single declaration — `field` is *whiter* than `paper`,
-// which reads as a hole rather than a surface at this size. It stays barely distinct from the page
-// on purpose: the border is what draws the card, and the fill only has to keep it from reading as
-// an empty outline. Border and background
-// are left to the caller: the flashed-on-arrival state (see cardClass) swaps both, and
+// Every section is one of these: a panel holding rows split by hairlines. Each theme lifts the
+// card off the page from its own end of the brightness scale — light mode fills it with `field`,
+// which is whiter than `paper`; dark mode tints with `ink` at very low alpha, which lightens
+// there. Either way it stays barely distinct from the page on purpose: the border is what draws
+// the card, and the fill only has to keep it from reading as an empty outline. Border and
+// background are left to the caller: the flashed-on-arrival state (see cardClass) swaps both, and
 // transitioning them is why every card carries the transition here rather than only the two that
 // can flash.
 const CARD = 'rounded-field border px-4 transition-colors duration-[1200ms] ease-out';
+// The two halves of that fill, as one class the flashed and unflashed paths can share.
+const CARD_FILL = 'bg-field dark:bg-ink/[.02]';
 
 // Primary is reserved for the one action a card is actually asking for; secondary is the plain
 // outlined full-width shape for everything else that still deserves that much weight. Export and
@@ -74,14 +75,16 @@ const PRIMARY_BUTTON =
   'flex items-center justify-center gap-1.5 w-full h-10 rounded-field bg-accent hover:bg-accent/90 text-[#FBFAF7] font-sans text-[13.5px] font-medium';
 const SECONDARY_BUTTON =
   'flex items-center justify-center gap-1.5 w-full h-10 rounded-field border border-ink/[.18] font-sans text-[13.5px] font-medium text-ink hover:text-ink hover:bg-ink/[.04]';
-// The UI scale steppers — SECONDARY_BUTTON's outline and radius at a fixed width, since these
-// two sit side by side in one row rather than spanning it.
+// The UI scale steppers. No border or radius of their own: they're segments inside one bordered,
+// rounded group (see the UI scale row), which draws the outline and the hairlines between them.
 const UI_SCALE_STEP_BTN =
-  'flex items-center justify-center w-14 h-9 rounded-field border border-ink/[.18] text-ink hover:bg-ink/[.04] disabled:opacity-35 disabled:hover:bg-transparent';
+  'flex items-center justify-center w-12 h-9 text-ink hover:bg-ink/[.04] disabled:opacity-35 disabled:hover:bg-transparent';
 // Underlined to match the app's existing convention for small inline actions (EmailCodeSignIn's
 // "Resend code"/"Use a different email") — without it, the icon was the only thing marking these
 // as clickable rather than descriptive text.
-const LINK_ACTION = 'inline-flex items-center gap-1.5 font-sans text-[13px] text-ink/55 underline decoration-ink/25 hover:text-ink';
+// Held at ink/70 rather than the ink/55 used for this page's descriptive labels: these are the
+// two things someone comes to this section to *do*, and at label weight they read as disabled.
+const LINK_ACTION = 'inline-flex items-center gap-1.5 font-sans text-[13px] text-ink/70 underline decoration-ink/40 hover:text-ink';
 // Danger-text is reserved on this page for something actually wrong right now (a stuck sync, a
 // failed download, the iOS eviction warning) — not a standing "this button is risky" tint, which
 // would fight with those real warnings when one is showing alongside it. Sign out only borrows it
@@ -246,7 +249,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
   // nothing moves when it fades: both properties are colours the card already has, and CARD
   // carries the transition that takes them back to rest.
   function cardClass(id: ScrollTarget): string {
-    return `${CARD} ${flashTarget === id ? 'border-accent bg-accent/[.09]' : 'border-ink/[.09] bg-ink/[.02]'}`;
+    return `${CARD} ${flashTarget === id ? 'border-accent bg-accent/[.09]' : `border-ink/[.09] ${CARD_FILL}`}`;
   }
 
   // Aborts an in-flight download if the user navigates away from Settings. Without this, leaving
@@ -410,7 +413,20 @@ export function SettingsPage({ location }: RouteComponentProps) {
                 )}
                 <div className="py-3.5 border-t border-ink/[.06]">
                   <div className="font-sans text-[12.5px] text-ink/55 mb-1">Signed in as</div>
-                  <div className="text-[13.5px] mb-3">{user.name ? `${user.name} · ${user.email}` : user.email}</div>
+                  {/* Name and address stacked rather than joined on one line: at narrow widths a
+                      single line wraps mid-pair and strands the separator on its own row. The
+                      address wraps within itself instead of truncating — people read it to check
+                      which account they're in. */}
+                  <div className="mb-3">
+                    {user.name && <div className="text-[13.5px]">{user.name}</div>}
+                    <div
+                      className={`font-sans break-all ${
+                        user.name ? 'text-[12.5px] text-ink/55 mt-0.5' : 'text-[13.5px]'
+                      }`}
+                    >
+                      {user.email}
+                    </div>
+                  </div>
                   {/* Signing out drops this device's copy of the account's data (see logout in
                       AuthContext) — which is only safe for what the server already has. Anything
                       still queued would go with it, so that case asks first rather than confirming
@@ -535,9 +551,14 @@ export function SettingsPage({ location }: RouteComponentProps) {
                   <div className="font-sans text-[13px] text-ink/70 mb-3">All content available offline.</div>
                 ) : (
                   <div className="font-sans text-[13px] text-ink/70 mb-3">
-                    Downloading all content enables the app to work fully offline. Total size is approx. {TOTAL_DOWNLOAD_MB_ESTIMATE} MB.
-                    <br /><br />
-                    Currently {Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% is available offline.
+                    {/* How much is already here leads: it's the fact that tells the reader whether
+                        this is worth doing at all. What the download buys them, and what it costs,
+                        follow. */}
+                    <p>Currently {Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% is available offline.</p>
+                    <p className="mt-2">
+                      Downloading all content enables the app to work fully offline. Total size is approx.{' '}
+                      {TOTAL_DOWNLOAD_MB_ESTIMATE} MB.
+                    </p>
                   </div>
                 )}
                 <button
@@ -572,7 +593,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
             revisited, unlike the account and offline state above them. */}
         <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">Display</div>
 
-        <div className={`${CARD} border-ink/[.09] bg-ink/[.02] mb-5`}>
+        <div className={`${CARD} border-ink/[.09] ${CARD_FILL} mb-5`}>
           <div className="py-3.5">
             <div className="font-sans text-[12.5px] text-ink/55 mb-2">Theme</div>
             <div className="flex gap-4">
@@ -612,17 +633,25 @@ export function SettingsPage({ location }: RouteComponentProps) {
             </div>
           </div>
 
-          <div className="py-3.5 border-t border-ink/[.06]">
-            <div className="flex items-baseline justify-between mb-2">
+          {/* The one row on this card that keeps its label beside the control rather than above
+              it: the stepper is a fixed, compact width, so a full-width row would leave most of
+              it empty. It wraps back to two lines when the two halves stop fitting — which they
+              do at the top of the scale range on a narrow phone. Reset travels with the label,
+              at the far edge from the "+", since each step re-zooms the page and drifts a
+              held-still pointer upward. */}
+          <div className="py-3.5 border-t border-ink/[.06] flex flex-wrap items-center justify-between gap-y-2">
+            <div className="flex items-baseline gap-3">
               <div className="font-sans text-[12.5px] text-ink/55">UI scale</div>
-              <button className="font-sans text-[12.5px] text-accent-text" onClick={() => setUiScale(1)}>
-                Reset
-              </button>
+              {uiScale !== 1 && (
+                <button className="font-sans text-[12.5px] text-accent-text" onClick={() => setUiScale(1)}>
+                  Reset
+                </button>
+              )}
             </div>
-            {/* The two buttons sit at the row's outer edges with the current value centered
-                between them, so the control keeps the full-width presence the slider it replaced
-                had rather than shrinking to a corner stepper. */}
-            <div className="flex items-center justify-between">
+            {/* One connected stepper — the two buttons and the value they change share a single
+                outline, divided by hairlines. Spread to the row's outer edges instead, the gap
+                between them reads as an empty segmented control rather than as one object. */}
+            <div className="inline-flex items-stretch rounded-field border border-ink/[.18] overflow-hidden">
               <button
                 className={UI_SCALE_STEP_BTN}
                 aria-label="Decrease UI scale"
@@ -631,7 +660,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
               >
                 <Minus size={16} strokeWidth={2} />
               </button>
-              <span className="font-sans text-[13.5px] tabular-nums text-ink/70">
+              <span className="flex items-center justify-center w-16 border-x border-ink/[.18] font-sans text-[13.5px] tabular-nums text-ink/70">
                 {Math.round(uiScale * 100)}%
               </span>
               <button
@@ -647,7 +676,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
 
           <div className="py-3.5 border-t border-ink/[.06]">
             <div className="font-sans text-[12.5px] text-ink/55 mb-2">UI font</div>
-            <div className="flex flex-wrap justify-center gap-1.5">
+            <div className="flex flex-wrap gap-1.5">
               {UI_FACE_OPTIONS.map((f) => (
                 <button
                   key={f.id}
