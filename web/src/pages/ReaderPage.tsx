@@ -566,7 +566,17 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
         />
       )}
 
-      {pop && <HighlightPopup pop={pop} theme={theme} onPick={pick} onRemove={() => pick(null)} onStop={popStop} />}
+      {pop && (
+        <HighlightPopup
+          pop={pop}
+          theme={theme}
+          mobile={mobile}
+          onPick={pick}
+          onRemove={() => pick(null)}
+          onClose={closePop}
+          onStop={popStop}
+        />
+      )}
 
       {!panel && (
         <HighlightGutter
