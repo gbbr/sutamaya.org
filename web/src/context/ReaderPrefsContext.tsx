@@ -36,6 +36,12 @@ export const LH_MIN = 155;
 export const LH_MAX = 205;
 export const LH_STEP = 5;
 
+// Body text size, in px. The floor is where the reader's 34em measure still holds a comfortable
+// line on a phone; the ceiling is where it stops fitting one at all.
+export const FS_MIN = 15;
+export const FS_MAX = 24;
+export const FS_STEP = 1;
+
 const DEFAULTS: ReaderPrefs = { theme: 'system', fs: 18, lh: 175, face: 'georgia', allPali: false, showNotes: false };
 
 const ReaderPrefsContext = createContext<ReaderPrefsState | null>(null);
@@ -62,7 +68,9 @@ export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
     () => ({
       ...prefs,
       // Clamped on read, not on write: a device that stored a value from an earlier, wider range
-      // would otherwise keep rendering at a leading the slider can no longer reach or show.
+      // would otherwise keep rendering at a size or leading the stepper can no longer reach or
+      // show — and its "−"/"+" would then sit disabled at a value outside their own range.
+      fs: Math.min(FS_MAX, Math.max(FS_MIN, prefs.fs)),
       lh: Math.min(LH_MAX, Math.max(LH_MIN, prefs.lh)),
       resolvedTheme,
       setTheme: (theme) => setPrefs((p) => ({ ...p, theme })),

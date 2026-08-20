@@ -39,7 +39,7 @@ export const SHORTCUTS = {
   readerHighlights: { match: ['h'], keys: ['H'], label: 'Open the highlights panel', scope: 'reader' },
   readerLists: { match: ['l'], keys: ['L'], label: 'Open the lists panel', scope: 'reader' },
   readerNote: { match: ['n'], keys: ['N'], label: 'Add a note', scope: 'reader' },
-  readerTheme: { match: ['t'], keys: ['T'], label: 'Open the theme panel', scope: 'reader' },
+  readerTheme: { match: ['t'], keys: ['T'], label: 'Open the display panel', scope: 'reader' },
   readerNotesToggle: { match: ['c'], keys: ['C'], label: 'Toggle translator notes', scope: 'reader' },
   readerHelp: { match: ['?'], keys: ['?'], label: 'Show keyboard shortcuts', scope: 'reader' },
 } satisfies Record<string, Shortcut>;

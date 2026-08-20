@@ -218,9 +218,11 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
     }
   }
 
+  // `tint`, not `rule` — `rule` is a border tone, and spread across a whole row it reads as a
+  // selected row rather than as the pointer/keyboard cursor it actually is.
   const rowStyle = (active: boolean) => ({
-    borderRadius: 8,
-    background: active ? theme.rule : 'transparent',
+    borderRadius: 9,
+    background: active ? theme.tint : 'transparent',
   });
 
   return (
@@ -243,8 +245,8 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
         onChange={(e) => setDraft(e.target.value)}
         onKeyDown={onKeyDown}
         placeholder={nestingParent ? 'Name — return to create' : 'Search or create — "Group / New" to nest'}
-        className="w-full h-[38px] rounded-[10px] px-3 bg-transparent text-base outline-none"
-        style={{ border: `1px solid ${theme.pali}`, color: theme.fg }}
+        className="w-full h-[38px] rounded-field px-3 text-base outline-none"
+        style={{ border: `1px solid ${theme.pali}`, background: theme.bg, color: theme.fg }}
         autoComplete="off"
         autoCorrect="off"
         autoCapitalize="off"
@@ -301,9 +303,16 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
                   // folder icon), not an actual expand/collapse toggle.
                   <ChevronDown size={14} strokeWidth={2} className="flex-none opacity-50" style={{ color: theme.fg }} />
                 ) : (
+                  // Checked fills with the theme's accent rather than with full-strength `fg`,
+                  // matching every other selected state in the reader's panel; unchecked draws in
+                  // `dim` rather than `fg`, which at 16px read as a heavier mark than the name
+                  // beside it.
                   <span
-                    className="flex-none w-[16px] h-[16px] rounded-[4px] flex items-center justify-center"
-                    style={{ border: `1px solid ${theme.fg}`, background: checked ? theme.fg : 'transparent' }}
+                    className="flex-none w-[16px] h-[16px] rounded-[5px] flex items-center justify-center"
+                    style={{
+                      border: `1px solid ${checked ? theme.pali : theme.dim}`,
+                      background: checked ? theme.pali : 'transparent',
+                    }}
                   >
                     {checked && <Check size={11} strokeWidth={3} color={theme.bg} />}
                   </span>
