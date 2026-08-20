@@ -395,27 +395,14 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           <div className="font-sans" style={{ fontSize: fs - 6, marginTop: 9, color: theme.dim }}>
             {sutta.min} min read ·{' '}
             Source:{' '}
-            {corpus.sujatoCommit ? (
-              <a
-                href={`https://github.com/suttacentral/sc-data/tree/${corpus.sujatoCommit}`}
-                target="_blank"
-                rel="noreferrer"
-                style={{ color: 'inherit', textDecoration: 'none' }}
-              >
-                SuttaCentral
-              </a>
-            ) : (
-              'SuttaCentral'
-            )}
-            {' '}(
             <a
-              href="https://github.com/gbbr/sutamaya.org/blob/main/docs/translation-changes.md"
+              href={`https://github.com/gbbr/sutamaya.org/blob/main/docs/translation-changes.md`}
               target="_blank"
               rel="noreferrer"
               style={{ color: 'inherit', textDecoration: 'none' }}
             >
-              modified
-            </a>)
+              SuttaCentral, modified
+            </a>
           </div>
           {sutta.blurb && (
             <div className="italic" style={{ fontSize: fs - 4, lineHeight: 1.6, marginTop: 11, color: theme.fg, opacity: 0.72 }}>
