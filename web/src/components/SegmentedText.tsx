@@ -114,6 +114,10 @@ interface SegmentRowProps {
   // own to get one from the browser (see SegmentedTextInner's own running counter).
   listIndex?: number;
   afterVerse: boolean;
+  // True when the segment immediately above is itself a heading — a subheading stacked under its
+  // parent is one unit with it, so it drops its own top margin and lets the parent's bottom margin
+  // set the (much smaller) gap.
+  afterHeading: boolean;
   // True when this segment belongs to the specific inner sutta a deep link/search hit pointed at
   // within a batched document (see SegmentedTextProps.focusUid) — gets a soft background wash so
   // it's identifiable among the rest of the (otherwise identical-looking) batch.
@@ -123,6 +127,10 @@ interface SegmentRowProps {
   lineHeight: number;
   face: string;
   paragraphGap: number;
+  // Kept as two scalars rather than one `{top, bottom}` object: SegmentRow is memoized, and a
+  // fresh object per parent render would miss on every row.
+  headingGapTop: number;
+  headingGapBottom: number;
   onToggleSeg: (i: number) => void;
   // wordIndex is the tapped word's position among this segment's own Pali tokens (see
   // lib/dictionary.ts's splitPaliWords) — lets ReaderPage step to the prev/next word from
@@ -151,6 +159,7 @@ const SegmentRow = memo(function SegmentRow({
   open,
   lastInParagraph,
   afterVerse,
+  afterHeading,
   listIndex,
   focused,
   theme,
@@ -158,6 +167,8 @@ const SegmentRow = memo(function SegmentRow({
   lineHeight,
   face,
   paragraphGap,
+  headingGapTop,
+  headingGapBottom,
   onToggleSeg,
   onWordClick,
   onSpanClick,
@@ -201,7 +212,9 @@ const SegmentRow = memo(function SegmentRow({
           color: theme.fg,
           ...(seg.role === 'heading' ? null : { fontFamily: face }),
           ...roleStyle(seg.role, fontSize, theme, seg.headingLevel),
-          ...(seg.role === 'heading' ? { marginTop: paragraphGap, marginBottom: Math.round(paragraphGap / 2) } : null),
+          ...(seg.role === 'heading'
+            ? { marginTop: afterHeading ? 0 : headingGapTop, marginBottom: headingGapBottom }
+            : null),
           // Indents the item's own text so it lines up under itself on every wrapped line, not
           // just the first — the "N." marker below is pulled out of flow entirely (absolutely
           // positioned into the gutter this padding opens up) rather than using a negative
@@ -421,10 +434,20 @@ function SegmentedTextInner({
   activeWord,
   focusUid,
 }: SegmentedTextProps) {
-  // Space between paragraphs — one full computed line height, so it scales with both the Size and
-  // Line height reader controls rather than being a fixed pixel value: turning either up opens up
-  // more room between paragraphs as well as within them.
-  const paragraphGap = Math.round((fontSize * lineHeight) / 100);
+  // One line box at the current size and leading. Every vertical gap below is a fraction of it, so
+  // the page's whole rhythm scales with both the Size and Line height reader controls rather than
+  // being a fixed pixel value.
+  const line = (fontSize * lineHeight) / 100;
+  // Paragraph breaks sit a little under a full line: at a full line, baseline-to-baseline across a
+  // break is exactly twice the leading, which at the airy end of the line-height scale reads as
+  // disconnected blocks rather than one continuous text.
+  const paragraphGap = Math.round(line * 0.8);
+  // A section heading has to bind downward, to the section it opens. Its top margin therefore has
+  // to beat the preceding paragraph's own bottom margin outright rather than add to it — adjacent
+  // margins collapse to the larger of the two, so a heading carrying the same value as a paragraph
+  // break would get no extra room at all.
+  const headingGapTop = Math.round(line * 1.8);
+  const headingGapBottom = Math.round(line * 0.6);
   // Grouped once per `highlights` change (O(segments + highlights)) rather than every segment
   // re-scanning the whole array (O(segments × highlights)).
   const highlightsBySeg = useMemo(() => {
@@ -462,6 +485,7 @@ function SegmentedTextInner({
             open={allPali || !!openSegs[i]}
             lastInParagraph={lastInParagraph}
             afterVerse={segments[i - 1]?.role === 'verse'}
+            afterHeading={segments[i - 1]?.role === 'heading'}
             listIndex={seg.role === 'list-item' ? runningListIndex : undefined}
             focused={!!focusUid && seg.key.startsWith(`${focusUid}:`)}
             theme={theme}
@@ -469,6 +493,8 @@ function SegmentedTextInner({
             lineHeight={lineHeight}
             face={face}
             paragraphGap={paragraphGap}
+            headingGapTop={headingGapTop}
+            headingGapBottom={headingGapBottom}
             onToggleSeg={onToggleSeg}
             onWordClick={onWordClick}
             onSpanClick={onSpanClick}
