@@ -1,5 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  // Compiles every `hover:` utility inside `@media (hover: hover)`, so none of them apply on a
+  // touch screen. Without it iOS Safari's tap-lingers-as-hover quirk leaves the hover state stuck
+  // on whichever element ends up under the tap point — most visibly when a row is removed from a
+  // list and the row that slides up into its place inherits the red delete-icon hover.
+  // index.css does the same thing by hand for `.pw`, which this doesn't cover (a raw CSS rule,
+  // not a Tailwind utility).
+  future: { hoverOnlyWhenSupported: true },
   // Toggled by adding/removing a `dark` class on <html> — see lib/uiPrefs.ts's applyTheme().
   // Not 'media': the app has its own explicit Settings > Theme control (light/dark/system), and
   // 'system' resolves to the OS preference itself rather than relying on Tailwind's built-in
