@@ -24,10 +24,11 @@ type Row =
 // on the highlighted row without closing, Shift+Enter/Tab on a highlighted *group* row nests a
 // new list/group inside it, and "Group / New name" typed directly does the same without needing
 // the shortcut. Only a group can contain anything (see ListDef.kind in lib/types.ts), so a group
-// row never shows a membership checkmark (it can't hold this sutta itself) and a plain list row
-// never shows the nesting "+" (it can't hold anything either) — and any typed name that isn't an
-// exact existing match offers creating either a list or a group with it, since which one the
-// user wants isn't inferrable from the text alone. Used by the reader's Lists tab.
+// row never shows a membership checkmark (it can't hold this sutta itself) and tapping it nests
+// instead of toggling — which is also what makes the gesture reachable on touch, where the
+// keyboard shortcut isn't. Any typed name that isn't an exact existing match offers creating
+// either a list or a group with it, since which one the user wants isn't inferrable from the text
+// alone. Used by the reader's Lists tab.
 export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose }: ListMembershipPickerProps) {
   const { lists, membership, toggleMembership, addToList, createList } = useUserData();
   const [draft, setDraft] = useState('');
@@ -51,6 +52,24 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
   // chip that would 404 against the API.
   const suttaListIds = (membership[suttaId] || []).filter((id) => !AUTO_LIST_IDS.has(id));
   const flatAll = useMemo(() => flattenListTree(lists), [lists]);
+  const filtering = draft.trim().length > 0;
+
+  // Root ancestor per list, for the faded marker a filtered row carries. Walked from each list
+  // rather than split out of its breadcrumb string, since a label is free to contain " / " itself.
+  const rootLabelById = useMemo(() => {
+    const byId = new Map(lists.map((l) => [l.id, l]));
+    const out = new Map<string, string>();
+    for (const l of lists) {
+      let cur = l;
+      while (cur.parentId) {
+        const parent = byId.get(cur.parentId);
+        if (!parent) break;
+        cur = parent;
+      }
+      out.set(l.id, cur.label);
+    }
+    return out;
+  }, [lists]);
 
   const rows: Row[] = useMemo(() => {
     if (nestingParent) {
@@ -239,7 +258,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
             return (
               <button
                 key={row.type}
-                className="flex w-full items-center gap-2 px-2 py-[9px] text-left text-[14.5px]"
+                className="flex w-full items-center gap-2 px-2 py-[6px] text-left text-[14.5px]"
                 style={rowStyle(active)}
                 onMouseEnter={() => setActiveIndex(idx)}
                 onClick={() => activateRow(row)}
@@ -254,7 +273,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
             return (
               <button
                 key={row.type}
-                className="flex w-full items-center gap-2 px-2 py-[9px] text-left text-[14.5px]"
+                className="flex w-full items-center gap-2 px-2 py-[6px] text-left text-[14.5px]"
                 style={rowStyle(active)}
                 onMouseEnter={() => setActiveIndex(idx)}
                 onClick={() => activateRow(row)}
@@ -270,11 +289,11 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
           return (
             <div
               key={list.id}
-              className="group flex items-center gap-1"
+              className="flex items-center"
               style={{ ...rowStyle(active), paddingLeft: 8 + depth * 14 }}
               onMouseEnter={() => setActiveIndex(idx)}
             >
-              <button className="flex flex-1 min-w-0 items-center gap-2 py-[9px] pr-2 text-left" onClick={() => activateRow(row)}>
+              <button className="flex flex-1 min-w-0 items-center gap-2 py-[6px] pr-2 text-left" onClick={() => activateRow(row)}>
                 {isGroup ? (
                   // Rows here are always flattened/already "expanded" (see flattenListTree) —
                   // this chevron is a static, non-interactive indicator that the row is a group
@@ -293,22 +312,17 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
                     nested list's path is long enough that the name — the only part that identifies
                     the row — ends up entirely behind the ellipsis. Browsing loses nothing by it
                     (rows are the whole tree in depth-first order, each indented by its depth, so
-                    the parent chain is on screen above), and filtered rows keep their indentation
-                    as a hint of where a match sits. */}
+                    the parent chain is on screen above). */}
                 <span className="min-w-0 truncate text-[14.5px]">{list.label}</span>
+                {/* Filtered results are scattered matches with no parent rows around them to read
+                    the indentation against, so a nested one names the top of its tree — enough to
+                    tell two same-named lists apart without spending the width a full path would.
+                    Sized and faded to read as a marker rather than as part of the name, and capped
+                    so it can never be the reason the name itself truncates. */}
+                {filtering && depth > 0 && (
+                  <span className="ml-auto flex-none max-w-[45%] truncate font-sans text-[11.5px] opacity-50">{rootLabelById.get(list.id)}</span>
+                )}
               </button>
-              {isGroup && (
-                <button
-                  className="flex-none w-6 h-6 mr-1 flex items-center justify-center rounded opacity-0 group-hover:opacity-70 hover:!opacity-100 [@media(hover:none)]:opacity-70 transition-opacity"
-                  title={`New list or group inside ${list.label}`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    enterNestingMode(list);
-                  }}
-                >
-                  <Plus size={13} strokeWidth={2} />
-                </button>
-              )}
             </div>
           );
         })}
