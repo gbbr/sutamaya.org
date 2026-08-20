@@ -54,8 +54,8 @@ export const KEEP_SAFE_IOS_TEXT = 'Save your changes';
 // following mount, in the same bar, in the same place. Amber matches how Settings' Account card
 // already renders this same risk.
 const TONES = {
-  alert: { bar: 'bg-red-600/[.07]', icon: 'text-danger-text', action: 'text-danger-text decoration-danger-text/40' },
-  warn: { bar: 'bg-amber-500/[.08]', icon: 'text-warning-text', action: 'text-warning-text decoration-warning-text/40' },
+  alert: { bar: 'bg-danger-text/[.07]', icon: 'text-danger-text', action: 'text-danger-text decoration-danger-text/40' },
+  warn: { bar: 'bg-warning-text/[.08]', icon: 'text-warning-text', action: 'text-warning-text decoration-warning-text/40' },
   accent: { bar: 'bg-accent/[.06]', icon: 'text-ink/60', action: 'text-accent-text decoration-accent-text/40' },
 } as const;
 
