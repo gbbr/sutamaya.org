@@ -281,7 +281,7 @@ export const ListRow = memo(function ListRow({
           <span className="font-sans text-[12px] text-ink/60">Delete "{list.label}"?</span>
           <button
             onClick={() => onDelete(list)}
-            className="font-sans text-[12px] font-semibold px-2 py-[3px] rounded border border-red-600/40 text-red-600 hover:bg-red-600/10"
+            className="font-sans text-[12px] font-semibold px-2 py-[3px] rounded border border-danger-text/40 text-danger-text hover:bg-danger-text/10"
           >
             Delete
           </button>
