@@ -660,7 +660,7 @@ export function TreePane({
         onClick={() => navigate('/help')}
       >
         <CircleHelp size={15} strokeWidth={2} className="flex-none text-ink/35" />
-        {Object.keys(visited).length < HELP_ONBOARDING_VISITS ? 'How to use Sutamaya' : 'Help'}
+        {Object.keys(visited).length < HELP_ONBOARDING_VISITS ? 'How to use this app' : 'Help'}
       </button>
     </aside>
   );
