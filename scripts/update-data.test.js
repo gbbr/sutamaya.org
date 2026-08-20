@@ -611,11 +611,14 @@ describe('checkSnapshotInSync', () => {
     expect(issue).toMatch(/missing locally/);
   });
 
+  // Both checks below read every file under data/{sujato,pali,html} — a few thousand of them.
+  // That is well under a second on an idle machine, but they run alongside the rest of the suite,
+  // and a loaded CI runner needs more room for that much I/O than the default 5s timeout gives.
   it('the real repo: data/{sujato,pali,html} and snapshot.json are in sync', () => {
     // No overrides — this is the one guard that actually protects the repo: if copy/post ran and
     // got committed without a follow-up update-data:snapshot, this fails on the next `npm test`.
     expect(checkSnapshotInSync()).toEqual({ ok: true, issues: [] });
-  });
+  }, 30_000);
 
   it('the real repo: pali/html match exactly and sujato is a subset of pali', () => {
     // No overrides — unlike checkSnapshotInSync above (which only catches a per-file drift from
@@ -624,7 +627,7 @@ describe('checkSnapshotInSync', () => {
     // pali/sujato/html disagree — see INTEGRITY_GROUPS in lib/dataSync.js.
     const keysFor = (relPath) => readKeysSafe(localPathFor(relPath));
     expect(checkCrossCategoryIntegrity(listLocalRelPaths(), keysFor)).toEqual([]);
-  });
+  }, 30_000);
 });
 
 describe('checkCrossCategoryIntegrity', () => {
