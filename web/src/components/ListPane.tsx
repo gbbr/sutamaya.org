@@ -254,8 +254,8 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
         </div>
         {currentList && !currentList.auto && (
           <button
-            className={`flex-none w-[26px] h-[26px] border rounded-md flex items-center justify-center ${
-              editMode ? 'border-accent2 bg-accent2 text-[#FBFAF7]' : 'border-ink/[.20] bg-transparent text-ink/50 hover:bg-ink/[.06]'
+            className={`flex-none w-[28px] h-[28px] rounded-full flex items-center justify-center ${
+              editMode ? 'bg-accent2 text-[#FBFAF7]' : 'text-ink/45 hover:bg-ink/[.08] hover:text-ink'
             }`}
             aria-label={editMode ? 'Done editing list' : 'Edit list'}
             title={editMode ? 'Done editing list' : 'Edit list'}

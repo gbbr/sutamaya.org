@@ -94,8 +94,8 @@ export function ListsTreeView({
           <button
             aria-label={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
             title={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
-            className={`w-[22px] h-[22px] border rounded-md flex items-center justify-center ${
-              reorderMode ? 'border-accent2 bg-accent2 text-[#FBFAF7]' : 'border-ink/[.20] bg-transparent text-ink/50 hover:bg-ink/[.06]'
+            className={`w-[24px] h-[24px] rounded-full flex items-center justify-center ${
+              reorderMode ? 'bg-accent2 text-[#FBFAF7]' : 'text-ink/45 hover:bg-ink/[.08] hover:text-ink'
             }`}
             onClick={() => {
               setReorderMode((m) => !m);
@@ -107,7 +107,7 @@ export function ListsTreeView({
           <button
             aria-label="New list or group"
             title="New list or group"
-            className="plus w-[22px] h-[22px] border border-ink/[.20] rounded-md flex items-center justify-center text-[15px] leading-none text-ink/50 hover:bg-ink/[.06]"
+            className="plus w-[24px] h-[24px] rounded-full flex items-center justify-center text-[16px] leading-none text-ink/45 hover:bg-ink/[.08] hover:text-ink"
             onClick={toggleTopLevelDraft}
           >
             +
