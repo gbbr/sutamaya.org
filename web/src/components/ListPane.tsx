@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Check, ChevronLeft, GripVertical, List, MinusCircle, Pencil } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
@@ -15,6 +15,21 @@ import type { Sutta } from '../lib/types';
 // destroys nothing but its position in that list, so this stands in for a confirmation step
 // rather than being added on top of one.
 const UNDO_WINDOW_MS = 7000;
+
+// How long the rows below a removed one take to slide up into the space it left. The removal
+// itself is immediate — this animates the rows that *stay*, which is what makes the change
+// legible without any of them being held on screen after the data says they're gone.
+const ROW_SHIFT_MS = 220;
+
+// How long after a removal the remove buttons stop responding. The rows below are sliding up
+// into the vacated space, so a tap during that would otherwise land on whichever row is passing
+// under the finger rather than the one that was there when it was pressed.
+const REMOVE_LOCK_MS = ROW_SHIFT_MS + 120;
+
+// A captured set of row positions goes stale if the removal it belongs to never lands (an
+// offline write that errors, a list that changed underneath). Past this, it's dropped rather than
+// replayed against some unrelated later change.
+const FLIP_CAPTURE_TTL_MS = 500;
 
 interface ListPaneProps {
   nodeId?: string;
@@ -114,8 +129,58 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
     setUndone(next);
   }
 
+  // A deadline rather than a piece of state: the lock only ever gates the tap handler, so it has
+  // no business re-rendering the pane when it arms or lapses.
+  const removeLockedUntil = useRef(0);
+
+  // Where every mounted row sat just before a removal changed the list — the "First" half of a
+  // FLIP. The layout effect below reads it once the new rows are laid out, and animates
+  // each surviving row from where it was to where it now is. Viewport coordinates, not offsets
+  // within the scroll container, so a scroll adjustment the browser makes as the content shrinks
+  // is already accounted for in the delta.
+  const flipFrom = useRef<{ at: number; node: string | undefined; tops: Map<string, number> } | null>(null);
+
+  function captureRowPositions() {
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
+    const tops = new Map<string, number>();
+    for (const [id, el] of itemRowRefs.current) tops.set(id, el.getBoundingClientRect().top);
+    flipFrom.current = { at: performance.now(), node: nodeId, tops };
+  }
+
+  // Runs after every render that changed the rendered rows, but only does anything when a capture
+  // is waiting — i.e. when this render is the one applying a removal. Layout effect,
+  // not a plain one: the rows have to be moved back to their old positions before the browser
+  // gets a chance to paint them in their new ones.
+  useLayoutEffect(() => {
+    const capture = flipFrom.current;
+    flipFrom.current = null;
+    // A capture from another list (switched away within the TTL) describes rows that aren't on
+    // screen any more — those positions mean nothing here.
+    if (!capture || capture.node !== nodeId || performance.now() - capture.at > FLIP_CAPTURE_TTL_MS) return;
+    for (const [id, el] of itemRowRefs.current) {
+      const was = capture.tops.get(id);
+      if (was === undefined) continue;
+      const rect = el.getBoundingClientRect();
+      const dy = was - rect.top;
+      // Rows that didn't move (everything above the removal) and rows scrolled out of sight have
+      // nothing worth animating.
+      if (!dy || rect.bottom < 0 || rect.top > window.innerHeight) continue;
+      el.animate([{ transform: `translateY(${dy}px)` }, { transform: 'none' }], {
+        duration: ROW_SHIFT_MS,
+        easing: 'ease-out',
+      });
+    }
+    // `items`, not the drag's `displayItems`: a reorder drag shuffles rows every frame under the
+    // finger and must never be animated on top of.
+  }, [items]);
+
   function onRemove(id: string, ref: string) {
     if (!currentList || currentList.auto) return;
+    // Nothing for a beat after the last removal, while the rows are still moving — see
+    // REMOVE_LOCK_MS.
+    if (performance.now() < removeLockedUntil.current) return;
+    removeLockedUntil.current = performance.now() + REMOVE_LOCK_MS;
+    captureRowPositions();
     armUndo({ listId: currentList.id, suttaId: id, ref, order: currentList.items.slice() });
     void toggleMembership(id, currentList.id);
   }
@@ -289,7 +354,13 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
             }`}
           >
             <span className="flex-1 min-w-0 truncate">Removed {undone.ref}</span>
-            <button className="flex-none font-semibold text-accent-text" onClick={onUndo}>
+            {/* Padded out to a real target — the negative margins keep the bar the same height,
+                and the `after` pseudo-element takes the tappable area past 44px without any of
+                that padding being visible. */}
+            <button
+              className="relative flex-none font-semibold text-accent-text px-2.5 py-1.5 -my-1.5 -mr-1 rounded hover:bg-accent-text/[.09] after:content-[''] after:absolute after:-inset-2"
+              onClick={onUndo}
+            >
               Undo
             </button>
           </div>
