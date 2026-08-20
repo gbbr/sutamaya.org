@@ -299,51 +299,56 @@ export const ListRow = memo(function ListRow({
       ) : (
         menuOpen &&
         !editing && (
-          <div className="flex items-center gap-[6px] pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: rowIndent(depth) + 11 }}>
-            <button
-              aria-label="Move up"
-              title="Move up"
-              disabled={siblingIndex === 0}
-              onClick={() => onMove(list, -1)}
-              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.13] text-ink/55 hover:bg-ink/[.05] disabled:opacity-25"
-            >
-              <ChevronUp size={13} strokeWidth={2} />
-            </button>
-            <button
-              aria-label="Move down"
-              title="Move down"
-              disabled={siblingIndex === siblingCount - 1}
-              onClick={() => onMove(list, 1)}
-              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.13] text-ink/55 hover:bg-ink/[.05] disabled:opacity-25"
-            >
-              <ChevronDown size={13} strokeWidth={2} />
-            </button>
-            {list.kind === 'group' && (
+          <div className="flex pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: rowIndent(depth) + 11 }}>
+            {/* One pill holding borderless icons, rather than a row of individually bordered
+                boxes — it reads as a single popped-out toolbar belonging to the row above it,
+                and matches the rounded-full vocabulary the rest of the app uses. */}
+            <div className="flex items-center gap-[2px] rounded-full bg-ink/[.06] p-[3px]">
               <button
-                aria-label="New list in this group"
-                title="New list in this group"
-                onClick={() => onAddChild(list.id)}
-                className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.13] text-ink/55 hover:bg-ink/[.05]"
+                aria-label="Move up"
+                title="Move up"
+                disabled={siblingIndex === 0}
+                onClick={() => onMove(list, -1)}
+                className="w-[24px] h-[22px] flex items-center justify-center rounded-full text-ink/55 hover:bg-ink/[.10] hover:text-ink disabled:opacity-25 disabled:hover:bg-transparent"
               >
-                <Plus size={14} strokeWidth={2} />
+                <ChevronUp size={13} strokeWidth={2} />
               </button>
-            )}
-            <button
-              aria-label="Rename"
-              title="Rename"
-              onClick={() => onStartEdit(list)}
-              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.13] text-ink/55 hover:bg-ink/[.05]"
-            >
-              <Pencil size={12} strokeWidth={2} />
-            </button>
-            <button
-              aria-label="Delete"
-              title="Delete (Shift-click to skip the not-empty warning)"
-              onClick={(e) => onArmDelete(list, e.shiftKey)}
-              className="w-[24px] h-[22px] flex items-center justify-center rounded border border-ink/[.13] text-ink/55 hover:bg-red-600/[.07] hover:text-red-600"
-            >
-              <Trash2 size={12} strokeWidth={2} />
-            </button>
+              <button
+                aria-label="Move down"
+                title="Move down"
+                disabled={siblingIndex === siblingCount - 1}
+                onClick={() => onMove(list, 1)}
+                className="w-[24px] h-[22px] flex items-center justify-center rounded-full text-ink/55 hover:bg-ink/[.10] hover:text-ink disabled:opacity-25 disabled:hover:bg-transparent"
+              >
+                <ChevronDown size={13} strokeWidth={2} />
+              </button>
+              {list.kind === 'group' && (
+                <button
+                  aria-label="New list in this group"
+                  title="New list in this group"
+                  onClick={() => onAddChild(list.id)}
+                  className="w-[24px] h-[22px] flex items-center justify-center rounded-full text-ink/55 hover:bg-ink/[.10] hover:text-ink"
+                >
+                  <Plus size={14} strokeWidth={2} />
+                </button>
+              )}
+              <button
+                aria-label="Rename"
+                title="Rename"
+                onClick={() => onStartEdit(list)}
+                className="w-[24px] h-[22px] flex items-center justify-center rounded-full text-ink/55 hover:bg-ink/[.10] hover:text-ink"
+              >
+                <Pencil size={12} strokeWidth={2} />
+              </button>
+              <button
+                aria-label="Delete"
+                title="Delete (Shift-click to skip the not-empty warning)"
+                onClick={(e) => onArmDelete(list, e.shiftKey)}
+                className="w-[24px] h-[22px] flex items-center justify-center rounded-full text-ink/55 hover:bg-danger-text/[.12] hover:text-danger-text"
+              >
+                <Trash2 size={12} strokeWidth={2} />
+              </button>
+            </div>
           </div>
         )
       )}
