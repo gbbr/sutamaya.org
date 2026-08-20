@@ -48,7 +48,7 @@ export const TreeRow = memo(function TreeRow({
           {expandable && (open ? <ChevronDown size={12} strokeWidth={2} /> : <ChevronRight size={12} strokeWidth={2} />)}
         </span>
         <span className="flex-1 min-w-0">
-          <span className="text-[15px] font-semibold leading-[1.3]">{node.label}</span>
+          <span className="text-[15px] font-medium leading-[1.3]">{node.label}</span>
           {node.sub && <span className="block font-serif text-[13px] italic text-accent-text mt-[1px]">{node.sub}</span>}
           <span className="block font-sans text-[13px] text-ink/45 mt-[2px]">
             {node.ref} · {node.count} sutta{node.count === 1 ? '' : 's'}

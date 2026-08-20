@@ -235,7 +235,7 @@ export const ListRow = memo(function ListRow({
           />
         ) : (
           <button
-            className="font-serif flex-1 min-w-0 text-left text-[15px] font-semibold truncate py-[2px]"
+            className="font-serif flex-1 min-w-0 text-left text-[15px] font-medium truncate py-[2px]"
             onClick={(e) => {
               // Stops here so this doesn't also fire the identical logic on the row's own
               // onClick via bubbling — kept as its own handler (rather than just relying on the

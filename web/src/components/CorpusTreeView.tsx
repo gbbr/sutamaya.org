@@ -36,7 +36,7 @@ export function CorpusTreeView({ corpus, expanded, onToggle, onSelect, nodeId, f
                 {expandableNode ? open ? <ChevronDown size={14} strokeWidth={2} /> : <ChevronRight size={14} strokeWidth={2} /> : ''}
               </span>
               <span className="flex-1 min-w-0">
-                <span className="block text-[16px] font-semibold leading-[1.3]">{n.label}</span>
+                <span className="block text-[16px] font-medium leading-[1.3]">{n.label}</span>
                 <span className="block font-sans text-[12.5px] font-medium text-ink/60 mt-[1px]">{n.sub}</span>
               </span>
               <span className="font-sans text-[11.5px] font-medium text-ink/50">{n.count}</span>
