@@ -40,11 +40,13 @@ import {
 
 // Exported so tests assert against the same strings this component actually renders, rather than
 // a copy that can drift out of sync with it.
-export const OFFLINE_DOWNLOAD_TEXT = 'Download the canon for offline reading';
-export const OFFLINE_UPDATE_TEXT = 'Updated sutta text is available';
-export const REAUTH_TEXT = "Signed out — changes aren't syncing";
-export const KEEP_SAFE_TEXT = 'Saved temporarily on this device';
-export const KEEP_SAFE_IOS_TEXT = 'Safari may erase your notes in 7 days';
+export const OFFLINE_DOWNLOAD_TEXT = 'Keep reading offline';
+export const OFFLINE_UPDATE_TEXT = 'Updated sutta text available';
+export const REAUTH_TEXT = "Changes not syncing";
+export const KEEP_SAFE_TEXT = 'Save your changes';
+// This one is more drastic because Safari wipes in 7 days of inactivity (outside PWA).
+// But keep the text the same because this one shows in red.
+export const KEEP_SAFE_IOS_TEXT = 'Save your changes';
 
 // Three tones for three kinds of message: red is broken and needs fixing, amber is data at risk,
 // accent is an optional improvement. They have to be told apart at a glance because they share one
@@ -173,11 +175,10 @@ export function HeaderBanner() {
   if (showKeepSafe) {
     // Signed out, and now with something to lose. On iOS in a browser tab that isn't a figure of
     // speech — WebKit evicts all script-writable storage for a site left unvisited for about a
-    // week — so that case gets the specific warning rather than the general one. Both sentences
-    // stay short enough to survive a phone-width pane without truncating; the button carries the
-    // action so the text only has to carry the risk. "Temporarily" is the load-bearing word in
-    // the general case: without it the line reads as a reassurance that the work is safely stored
-    // here, when what it has to say is that nothing outside this device holds a copy of it.
+    // week — so that case gets the stronger, red tone rather than amber. Naming Safari specifically
+    // would be wrong on iOS Chrome and other non-Safari browsers, which share the same WebKit
+    // storage engine and eviction behavior, so the text itself stays the same and only the tone
+    // escalates.
     const ios = isIosBrowserTab();
     return (
       <Banner

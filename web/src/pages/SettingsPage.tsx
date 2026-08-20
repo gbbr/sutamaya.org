@@ -482,10 +482,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                 {isIosBrowserTab() && hasLocalWork && (
                   <div className="flex items-start gap-1.5 font-sans text-[13px] text-danger-text mb-3">
                     <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
-                    <span>
-                      Safari erases this site’s data after about a week without a visit. Sign in, or add Sutamaya to your
-                      Home Screen, to keep it.
-                    </span>
+                    <span>Without signing in, you risk losing your changes when the browser clears this website's data.</span>
                   </div>
                 )}
                 <GoogleSignInButton returnTo={signInReturnTo} />

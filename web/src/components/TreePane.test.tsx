@@ -40,6 +40,7 @@ import { navigate } from '@reach/router';
 import {
   OFFLINE_DOWNLOAD_TEXT,
   OFFLINE_UPDATE_TEXT,
+  REAUTH_TEXT,
   KEEP_SAFE_TEXT,
   KEEP_SAFE_IOS_TEXT,
 } from './HeaderBanner';
@@ -701,7 +702,7 @@ describe('sync state', () => {
     userData = mockUserData({ syncStatus, pendingCount: 2 });
     vi.mocked(useUserData).mockImplementation(() => userData);
     renderHarness();
-    expect(screen.queryByText(/aren't syncing/)).not.toBeInTheDocument();
+    expect(screen.queryByText(REAUTH_TEXT)).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: 'Sign in' })).not.toBeInTheDocument();
   });
 
@@ -723,7 +724,7 @@ describe('sync state', () => {
     vi.mocked(useUserData).mockImplementation(() => userData);
     renderHarness();
 
-    expect(screen.getByText(/aren't syncing/)).toBeInTheDocument();
+    expect(screen.getByText(REAUTH_TEXT)).toBeInTheDocument();
     // Only the user's own click calls it — nothing on the auth or sync side does so on its own
     // (see UserDataContext.tsx's flush(), which sets `needsReauth` rather than navigating away).
     await userEvent.click(screen.getByRole('button', { name: 'Sign in' }));
@@ -738,7 +739,7 @@ describe('sync state', () => {
     vi.mocked(useUserData).mockImplementation(() => userData);
     renderHarness();
 
-    expect(await screen.findByText(/aren't syncing/)).toBeInTheDocument();
+    expect(await screen.findByText(REAUTH_TEXT)).toBeInTheDocument();
     expect(screen.queryByText(OFFLINE_DOWNLOAD_TEXT)).not.toBeInTheDocument();
   });
 });
@@ -821,12 +822,12 @@ describe('deferred sign-in', () => {
     expect(screen.getByText(keepSafeText)).toBeInTheDocument();
   });
 
-  it('says something stronger, and true, on iOS in a browser tab', () => {
+  it('escalates to the red tone on iOS in a browser tab, same text otherwise', () => {
     vi.mocked(isIosBrowserTab).mockReturnValue(true);
     signedOut({ notes: { dn1: 'a thought' } });
     renderHarness();
-    expect(screen.getByText(iosText)).toBeInTheDocument();
-    expect(screen.queryByText(keepSafeText)).not.toBeInTheDocument();
+    const banner = screen.getByText(iosText).closest('[data-component="HeaderBanner"]');
+    expect(banner).toHaveClass('bg-red-600/[.07]');
   });
 
   it('dismissing hides it and records the local id it was dismissed for', async () => {
@@ -856,7 +857,7 @@ describe('deferred sign-in', () => {
 
     signedOut({ notes: { dn1: 'a thought' }, needsReauth: true });
     renderHarness();
-    expect(await screen.findByText(/aren't syncing/)).toBeInTheDocument();
+    expect(await screen.findByText(REAUTH_TEXT)).toBeInTheDocument();
     expect(screen.queryByText(keepSafeText)).not.toBeInTheDocument();
   });
 
