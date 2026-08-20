@@ -1,12 +1,19 @@
-import { describe, it, expect, beforeAll } from 'vitest';
+import { describe, it, expect, afterAll, beforeAll } from 'vitest';
 import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { KN_BOOKS } from './lib/collections.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
+
+// Somewhere disposable, via CORPUS_OUT (see build-corpus.mjs), because the build deletes and
+// rewrites its whole output directory: running the tests has no business wiping the
+// web/public/data a dev server is serving, or racing whatever else is writing there.
+const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'build-corpus-'));
+afterAll(() => fs.rmSync(dataDir, { recursive: true, force: true }));
 
 let corpus;
 
@@ -15,9 +22,13 @@ let corpus;
 // extracted counts, which a fixture tree couldn't do. Costs ~2s (thousands of source files
 // indexed), which is why it's isolated in this file rather than folded into collections.test.js.
 beforeAll(() => {
-  const result = spawnSync(process.execPath, ['scripts/build-corpus.mjs'], { cwd: ROOT, encoding: 'utf8' });
+  const result = spawnSync(process.execPath, ['scripts/build-corpus.mjs'], {
+    cwd: ROOT,
+    encoding: 'utf8',
+    env: { ...process.env, CORPUS_OUT: dataDir },
+  });
   if (result.status !== 0) throw new Error(`build-corpus.mjs failed:\n${result.stdout}\n${result.stderr}`);
-  corpus = JSON.parse(fs.readFileSync(path.join(ROOT, 'web', 'public', 'data', 'corpus.json'), 'utf8'));
+  corpus = JSON.parse(fs.readFileSync(path.join(dataDir, 'corpus.json'), 'utf8'));
 }, 30000);
 
 function countMatching(prefixPattern) {
@@ -74,7 +85,6 @@ describe('build-corpus sutta counts (real data)', () => {
 // malformed separator/comma or a uid needing escaping. These tests catch that against the real
 // build output instead.
 describe('build-corpus text shards (real data)', () => {
-  const dataDir = path.join(ROOT, 'web', 'public', 'data');
   let manifest;
 
   beforeAll(() => {
@@ -92,6 +102,8 @@ describe('build-corpus text shards (real data)', () => {
     expect(manifest.shards.reduce((n, s) => n + s.bytes, 0)).toBe(manifest.totalBytes);
   });
 
+  // Reads every shard plus all 4000-odd per-uid files — the heaviest read in the suite, and well
+  // past the default 5s timeout whenever the machine is busy.
   it('every shard file is valid JSON, its byte length matches its manifest entry, its keys match the manifest\'s uid list, and each uid\'s content matches that uid\'s own text/{uid}.json byte-for-byte', () => {
     for (const shard of manifest.shards) {
       const raw = fs.readFileSync(path.join(dataDir, shard.file), 'utf8');
@@ -103,5 +115,5 @@ describe('build-corpus text shards (real data)', () => {
         expect(JSON.stringify(bundle[uid])).toBe(individual);
       }
     }
-  });
+  }, 30_000);
 });
