@@ -156,10 +156,9 @@ export function SettingsPage({ location }: RouteComponentProps) {
   // setUiScale ultimately rewrites the viewport meta tag's `initial-scale` on iOS Safari (see
   // applyUiScale in lib/uiPrefs.ts) — dragging the slider fires onChange on every tick, and
   // rewriting that tag a dozen times a second never gives WebKit a frame to finish reflowing one
-  // change before the next lands, which desyncs the viewport-height tracking that rule depends
-  // on. liveUiScale drives the input and the percentage label so dragging still feels immediate;
-  // the real commit (setUiScale) is debounced, with pointerup/keyup flushing it right away once
-  // the gesture actually ends.
+  // change before the next lands, which it visibly struggles with. liveUiScale drives the input
+  // and the percentage label so dragging still feels immediate; the real commit (setUiScale) is
+  // debounced, with pointerup/keyup flushing it right away once the gesture actually ends.
   const [liveUiScale, setLiveUiScale] = useState(uiScale);
   useEffect(() => setLiveUiScale(uiScale), [uiScale]);
   const uiScaleCommitTimer = useRef<ReturnType<typeof setTimeout>>();
