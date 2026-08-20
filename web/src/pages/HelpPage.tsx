@@ -180,15 +180,16 @@ const SECTIONS: HelpSection[] = [
         name: 'markup-mobile.webp',
         title: 'Marking a passage',
         marks: [
-          [44.6, 47.0],
-          [25.2, 52.0],
-          [51.1, 74.5],
-          [89.2, 61.7],
+          [4.5, 14.6],
+          [25.0, 21.9],
+          [64.7, 95.8],
+          [88.0, 22.5],
         ],
         steps: [
-          'Any note you make on a sutta shows up here.',
-          'Select text and choose a colour to highlight it with. Tap an existing highlight to change it or remove it.',
-          'Any previous highlights you\'ve made are shown on the right edge. Tapping them scrolls the page there.',
+          'Your notes show up after the sutta summary.',
+          'Highlight count. Clicking it takes you to Highlights.',
+          'Select text in the sutta and choose a colour to highlight it.',
+          'Any existing highlights show up on the right edge. Click the mark to scroll to them.',
         ],
       },
       {
