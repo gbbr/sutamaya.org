@@ -1,9 +1,21 @@
-import { createContext, useContext, useEffect, useMemo, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { usePersistedState } from '../hooks/usePersistedState';
-import { UI_PREFS_KEY, UI_PREFS_DEFAULTS, applyUiScale, applyUiFace, applyTheme, type UiPrefs } from '../lib/uiPrefs';
-import type { AppTheme, ReaderFace } from '../lib/types';
+import {
+  UI_PREFS_KEY,
+  UI_PREFS_DEFAULTS,
+  applyUiScale,
+  applyUiFace,
+  applyTheme,
+  systemPrefersDark,
+  type UiPrefs,
+} from '../lib/uiPrefs';
+import type { AppTheme, ReaderFace, ResolvedAppTheme } from '../lib/types';
 
 interface UiPrefsState extends UiPrefs {
+  // The theme actually rendered — the default 'system' resolved live against the OS preference,
+  // 'light'/'dark' passed through. Settings' Theme picker offers only the two resolved values and
+  // marks this one selected, so an untouched install shows the OS's choice rather than nothing.
+  resolvedTheme: ResolvedAppTheme;
   setUiScale: (n: number) => void;
   setUiFace: (f: ReaderFace) => void;
   setTheme: (t: AppTheme) => void;
@@ -23,25 +35,33 @@ export function UiPrefsProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     applyUiFace(prefs.uiFace);
   }, [prefs.uiFace]);
-  // A 'system' selection needs to keep tracking the OS preference live, not just resolve it once
-  // at selection time.
+  // The default 'system' needs to keep tracking the OS preference live, not just resolve it once
+  // at load — mirrors ReaderPrefsContext's tracking for the reader's own theme.
+  const [systemDark, setSystemDark] = useState(() => systemPrefersDark());
   useEffect(() => {
-    applyTheme(prefs.theme);
     if (prefs.theme !== 'system') return;
     const mql = window.matchMedia('(prefers-color-scheme: dark)');
-    const onChange = () => applyTheme(prefs.theme);
+    const onChange = () => setSystemDark(mql.matches);
+    onChange();
     mql.addEventListener('change', onChange);
     return () => mql.removeEventListener('change', onChange);
   }, [prefs.theme]);
 
+  const resolvedTheme: ResolvedAppTheme = prefs.theme === 'system' ? (systemDark ? 'dark' : 'light') : prefs.theme;
+
+  useEffect(() => {
+    applyTheme(resolvedTheme);
+  }, [resolvedTheme]);
+
   const value = useMemo<UiPrefsState>(
     () => ({
       ...prefs,
+      resolvedTheme,
       setUiScale: (uiScale) => setPrefs((p) => ({ ...p, uiScale })),
       setUiFace: (uiFace) => setPrefs((p) => ({ ...p, uiFace })),
       setTheme: (theme) => setPrefs((p) => ({ ...p, theme })),
     }),
-    [prefs, setPrefs]
+    [prefs, resolvedTheme, setPrefs]
   );
 
   return <UiPrefsContext.Provider value={value}>{children}</UiPrefsContext.Provider>;

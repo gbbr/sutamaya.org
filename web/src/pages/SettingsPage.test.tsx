@@ -92,6 +92,7 @@ beforeEach(() => {
     uiScale: 1,
     uiFace: 'serif',
     theme: 'light',
+    resolvedTheme: 'light',
     setUiScale: vi.fn(),
     setUiFace: vi.fn(),
     setTheme: vi.fn(),

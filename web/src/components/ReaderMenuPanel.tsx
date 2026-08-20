@@ -7,7 +7,7 @@ import { ListMembershipPicker } from './ListMembershipPicker';
 import type { SegmentFile } from '../lib/corpus';
 import { highlightGroupText, type HighlightGroup } from '../lib/highlights';
 import { highlightPaint } from '../lib/theme';
-import type { ReaderFace, ReaderTheme, ThemeColors } from '../lib/types';
+import type { ReaderFace, ResolvedReaderTheme, ThemeColors } from '../lib/types';
 
 interface ReaderMenuPanelProps {
   suttaId: string;
@@ -28,15 +28,15 @@ interface ReaderMenuPanelProps {
   onTabChange?: (tab: 'highlights' | 'lists' | 'text') => void;
 }
 
-// Order matches the app-shell Theme picker (Settings > Theme): Light, Dark, System — with
-// Sepia, which has no app-shell equivalent, appended after. Every swatch's label is rendered
-// with mix-blend-mode: difference over white (see below) rather than a hand-picked `fg` per
-// swatch, so the System tile's half-light/half-dark preview gets automatic contrast on both
-// halves for free, using the same mechanism as the solid-color tiles.
-const THEME_SWATCHES: Array<{ id: ReaderTheme; label: string; bg: string }> = [
+// Order matches the app-shell Theme picker (Settings > Theme): Light, Dark — with Sepia, which
+// has no app-shell equivalent, appended after. 'system' is the default both pickers resolve
+// through rather than a swatch of its own (see types.ts's ReaderTheme note), so the selected
+// swatch is matched against the resolved theme below. Labels are rendered with
+// mix-blend-mode: difference over white rather than a hand-picked `fg` per swatch, so each one
+// gets its contrast from the colour it sits on.
+const THEME_SWATCHES: Array<{ id: ResolvedReaderTheme; label: string; bg: string }> = [
   { id: 'light', label: 'Light', bg: '#FBFAF7' },
   { id: 'dark', label: 'Dark', bg: '#2A241E' },
-  { id: 'system', label: 'System', bg: 'linear-gradient(90deg,#FBFAF7 50%,#2A241E 50%)' },
   { id: 'sepia', label: 'Sepia', bg: '#F3E7D3' },
 ];
 const FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
@@ -61,7 +61,7 @@ export function ReaderMenuPanel({
 }: ReaderMenuPanelProps) {
   const [tab, setTab] = useState(initialTab);
   const { notes, submitNote } = useUserData();
-  const { theme: currentTheme, setTheme, fs, setFs, lh, setLh, face, setFace, allPali, toggleAllPali, showNotes, toggleShowNotes } =
+  const { resolvedTheme, setTheme, fs, setFs, lh, setLh, face, setFace, allPali, toggleAllPali, showNotes, toggleShowNotes } =
     useReaderPrefs();
 
   // The Theme tab has no text inputs, so on mobile it renders as a short bottom sheet instead of
@@ -226,7 +226,8 @@ export function ReaderMenuPanel({
                 <button
                   key={t.id}
                   className="relative flex-1 h-[52px] rounded-[10px] text-[14.5px] overflow-hidden"
-                  style={{ border: `1px solid ${currentTheme === t.id ? theme.fg : theme.rule}` }}
+                  aria-pressed={resolvedTheme === t.id}
+                  style={{ border: `1px solid ${resolvedTheme === t.id ? theme.fg : theme.rule}` }}
                   onClick={() => setTheme(t.id)}
                 >
                   <span className="absolute inset-0" style={{ background: t.bg }} />

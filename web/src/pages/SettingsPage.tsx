@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { AlertTriangle, ArrowLeft, Check, CloudOff, Download, Info, LogOut, RefreshCw } from 'lucide-react';
+import { AlertTriangle, ArrowLeft, Check, CloudOff, Download, Info, LogOut, Minus, Plus, RefreshCw } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpus } from '../context/CorpusContext';
@@ -20,7 +20,7 @@ import {
   prefetchDictionary,
   recordCachedCorpusVersion,
 } from '../lib/offline';
-import type { AppTheme, ReaderFace } from '../lib/types';
+import type { ReaderFace, ResolvedAppTheme } from '../lib/types';
 
 const UI_SCALE_MIN = 0.85;
 const UI_SCALE_MAX = 1.4;
@@ -31,20 +31,20 @@ const UI_SCALE_STEP = 0.05;
 // refreshes and isn't worth a manifest round trip just to show a "~X MB" estimate.
 const TOTAL_DOWNLOAD_MB_ESTIMATE = 50;
 
-// Each theme is previewed as a miniature of the shell itself — a narrow tree-pane band beside the
-// wider paper surface, in that theme's own two colours — rather than named in a filled button, so
-// the choice is made by looking rather than by reading. Same idea as the reader's own swatch
-// picker (ReaderMenuPanel's THEME_SWATCHES), with the shell's palette instead of the reader's, and
-// the same mix-blend-difference label so the System tile's light/dark halves both stay legible
-// without a hand-picked foreground per tile.
-const THEME_OPTIONS: Array<{ id: AppTheme; label: string; bg: string }> = [
-  { id: 'light', label: 'Light', bg: 'linear-gradient(90deg,#F0ECE4 0 34%,#FDFCFA 34%)' },
-  { id: 'dark', label: 'Dark', bg: 'linear-gradient(90deg,#1E1B17 0 34%,#171513 34%)' },
-  {
-    id: 'system',
-    label: 'System',
-    bg: 'linear-gradient(90deg,#F0ECE4 0 17%,#FDFCFA 17% 50%,#1E1B17 50% 67%,#171513 67%)',
-  },
+// Each theme is previewed as a miniature of the shell itself — a narrow tree-pane band of rows
+// beside the wider paper surface, drawn in that theme's own palette — rather than named in a
+// filled button, so the choice is made by looking rather than by reading. Same idea as the
+// reader's own swatch picker (ReaderMenuPanel's THEME_SWATCHES), with the shell's colours instead
+// of the reader's. Only the two resolved themes are offered; 'system' is the default the picker
+// resolves *through* rather than an option (see types.ts's ReaderTheme note), which is what lets
+// each tile carry one palette and so name itself in plain text underneath.
+//
+// The colours are literals rather than the `--paper`/`--treepane`/`--ink` custom properties they
+// mirror, because both tiles have to render in their own theme at once while the page as a whole
+// is in only one of them.
+const THEME_OPTIONS: Array<{ id: ResolvedAppTheme; label: string; paper: string; pane: string; ink: string; accent: string }> = [
+  { id: 'light', label: 'Light', paper: '#FDFCFA', pane: '#F0ECE4', ink: '#1B1917', accent: '#927243' },
+  { id: 'dark', label: 'Dark', paper: '#171513', pane: '#1E1B17', ink: '#E4DFD8', accent: '#C49A61' },
 ];
 
 const UI_FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
@@ -74,6 +74,10 @@ const PRIMARY_BUTTON =
   'flex items-center justify-center gap-1.5 w-full h-10 rounded-field bg-accent hover:bg-accent/90 text-[#FBFAF7] font-sans text-[13.5px] font-medium';
 const SECONDARY_BUTTON =
   'flex items-center justify-center gap-1.5 w-full h-10 rounded-field border border-ink/[.18] font-sans text-[13.5px] font-medium text-ink hover:text-ink hover:bg-ink/[.04]';
+// The UI scale steppers — SECONDARY_BUTTON's outline and radius at a fixed width, since these
+// two sit side by side in one row rather than spanning it.
+const UI_SCALE_STEP_BTN =
+  'flex items-center justify-center w-14 h-9 rounded-field border border-ink/[.18] text-ink hover:bg-ink/[.04] disabled:opacity-35 disabled:hover:bg-transparent';
 // Underlined to match the app's existing convention for small inline actions (EmailCodeSignIn's
 // "Resend code"/"Use a different email") — without it, the icon was the only thing marking these
 // as clickable rather than descriptive text.
@@ -149,27 +153,18 @@ function syncStatusLine(
 
 export function SettingsPage({ location }: RouteComponentProps) {
   const { user, logout, loading, authError } = useAuth();
-  const { uiScale, uiFace, theme, setUiScale, setUiFace, setTheme } = useUiPrefs();
+  const { uiScale, uiFace, resolvedTheme, setUiScale, setUiFace, setTheme } = useUiPrefs();
   const { corpus } = useCorpus();
   const { syncStatus, pendingCount, lastSyncedAt, needsReauth, lists, notes, highlights } = useUserData();
 
-  // setUiScale ultimately rewrites the viewport meta tag's `initial-scale` on iOS Safari (see
-  // applyUiScale in lib/uiPrefs.ts) — dragging the slider fires onChange on every tick, and
-  // rewriting that tag a dozen times a second never gives WebKit a frame to finish reflowing one
-  // change before the next lands, which it visibly struggles with. liveUiScale drives the input
-  // and the percentage label so dragging still feels immediate; the real commit (setUiScale) is
-  // debounced, with pointerup/keyup flushing it right away once the gesture actually ends.
-  const [liveUiScale, setLiveUiScale] = useState(uiScale);
-  useEffect(() => setLiveUiScale(uiScale), [uiScale]);
-  const uiScaleCommitTimer = useRef<ReturnType<typeof setTimeout>>();
-  const handleUiScaleChange = (v: number) => {
-    setLiveUiScale(v);
-    clearTimeout(uiScaleCommitTimer.current);
-    uiScaleCommitTimer.current = setTimeout(() => setUiScale(v), 150);
-  };
-  const commitUiScale = () => {
-    clearTimeout(uiScaleCommitTimer.current);
-    setUiScale(liveUiScale);
+  // Stepped rather than dragged: applying a scale rewrites the viewport meta tag's
+  // `initial-scale` on iOS Safari (see applyUiScale in lib/uiPrefs.ts), and WebKit needs a frame
+  // to reflow against it — one discrete commit per tap gives it that, where a slider fired a
+  // dozen a second. Rounded back onto the step grid so repeated 0.05 additions can't drift off
+  // it in binary floating point.
+  const stepUiScale = (delta: number) => {
+    const next = Math.min(UI_SCALE_MAX, Math.max(UI_SCALE_MIN, uiScale + delta));
+    setUiScale(Math.round(next / UI_SCALE_STEP) * UI_SCALE_STEP);
   };
 
   // Second click arms the sign-out button when there is unsynced work to lose — see the button.
@@ -581,53 +576,79 @@ export function SettingsPage({ location }: RouteComponentProps) {
         <div className={`${CARD} border-ink/[.09] bg-ink/[.02] mb-5`}>
           <div className="py-3.5">
             <div className="font-sans text-[12.5px] text-ink/55 mb-2">Theme</div>
-            <div className="flex gap-2">
-              {THEME_OPTIONS.map((t) => (
-                <button
-                  key={t.id}
-                  className={`relative flex-1 h-[46px] rounded-[7px] overflow-hidden font-sans text-[12.5px] ring-inset ${
-                    theme === t.id ? 'ring-2 ring-accent' : 'ring-1 ring-ink/20'
-                  }`}
-                  onClick={() => setTheme(t.id)}
-                >
-                  <span className="absolute inset-0" style={{ background: t.bg }} />
-                  <span className="relative" style={{ color: '#fff', mixBlendMode: 'difference' }}>
-                    {t.label}
-                  </span>
-                </button>
-              ))}
+            <div className="flex gap-4">
+              {THEME_OPTIONS.map((t) => {
+                const selected = resolvedTheme === t.id;
+                return (
+                  <button key={t.id} className="flex-1" aria-pressed={selected} onClick={() => setTheme(t.id)}>
+                    {/* A real border, not `ring-inset`: an inset box-shadow paints under the
+                        tile's own opaque panels and would be invisible. Held at 2px in both
+                        states so selecting one doesn't nudge the miniature inside it. */}
+                    <span
+                      className={`flex h-[62px] rounded-field overflow-hidden border-2 ${
+                        selected ? 'border-accent' : 'border-ink/[.12]'
+                      }`}
+                    >
+                      <span className="w-[34%] flex flex-col justify-center gap-[5px] px-2" style={{ background: t.pane }}>
+                        <span className="h-[4px] w-[78%] rounded-full" style={{ background: t.ink, opacity: 0.28 }} />
+                        <span className="h-[4px] w-[56%] rounded-full" style={{ background: t.accent }} />
+                        <span className="h-[4px] w-[66%] rounded-full" style={{ background: t.ink, opacity: 0.28 }} />
+                      </span>
+                      <span className="flex-1 flex flex-col justify-center gap-[6px] px-2.5" style={{ background: t.paper }}>
+                        <span className="h-[5px] w-[58%] rounded-full" style={{ background: t.ink, opacity: 0.75 }} />
+                        <span className="h-[4px] w-full rounded-full" style={{ background: t.ink, opacity: 0.2 }} />
+                        <span className="h-[4px] w-[85%] rounded-full" style={{ background: t.ink, opacity: 0.2 }} />
+                      </span>
+                    </span>
+                    <span
+                      className={`block mt-1.5 font-sans text-[12.5px] ${
+                        selected ? 'text-accent-text font-medium' : 'text-ink/55'
+                      }`}
+                    >
+                      {t.label}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
           <div className="py-3.5 border-t border-ink/[.06]">
-            <div className="flex items-baseline justify-between mb-1.5">
-              <label htmlFor="ui-scale" className="font-sans text-[12.5px] text-ink/55">
-                UI scale
-              </label>
-              <div className="flex items-baseline gap-3">
-                <span className="font-sans text-[12.5px] tabular-nums text-ink/70">{Math.round(liveUiScale * 100)}%</span>
-                <button className="font-sans text-[12.5px] text-accent-text" onClick={() => { setLiveUiScale(1); setUiScale(1); }}>
-                  Reset
-                </button>
-              </div>
+            <div className="flex items-baseline justify-between mb-2">
+              <div className="font-sans text-[12.5px] text-ink/55">UI scale</div>
+              <button className="font-sans text-[12.5px] text-accent-text" onClick={() => setUiScale(1)}>
+                Reset
+              </button>
             </div>
-            <input
-              id="ui-scale"
-              type="range"
-              min={UI_SCALE_MIN}
-              max={UI_SCALE_MAX}
-              step={UI_SCALE_STEP}
-              value={liveUiScale}
-              onChange={(e) => handleUiScaleChange(Number(e.target.value))}
-              onPointerUp={commitUiScale}
-              onKeyUp={commitUiScale}
-              className="w-full accent-accent"
-            />
+            {/* The two buttons sit at the row's outer edges with the current value centered
+                between them, so the control keeps the full-width presence the slider it replaced
+                had rather than shrinking to a corner stepper. */}
+            <div className="flex items-center justify-between">
+              <button
+                className={UI_SCALE_STEP_BTN}
+                aria-label="Decrease UI scale"
+                disabled={uiScale <= UI_SCALE_MIN}
+                onClick={() => stepUiScale(-UI_SCALE_STEP)}
+              >
+                <Minus size={16} strokeWidth={2} />
+              </button>
+              <span className="font-sans text-[13.5px] tabular-nums text-ink/70">
+                {Math.round(uiScale * 100)}%
+              </span>
+              <button
+                className={UI_SCALE_STEP_BTN}
+                aria-label="Increase UI scale"
+                disabled={uiScale >= UI_SCALE_MAX}
+                onClick={() => stepUiScale(UI_SCALE_STEP)}
+              >
+                <Plus size={16} strokeWidth={2} />
+              </button>
+            </div>
           </div>
 
           <div className="py-3.5 border-t border-ink/[.06]">
             <div className="font-sans text-[12.5px] text-ink/55 mb-2">UI font</div>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap justify-center gap-1.5">
               {UI_FACE_OPTIONS.map((f) => (
                 <button
                   key={f.id}

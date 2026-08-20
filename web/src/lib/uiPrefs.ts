@@ -91,9 +91,9 @@ export function systemPrefersDark(): boolean {
 }
 
 // Toggles the `dark` class Tailwind's darkMode:'class' (tailwind.config.js) and index.css's
-// `:root.dark` var overrides both key off. 'system' resolves against the OS preference at the
-// moment this runs — UiPrefsContext re-runs it on a matchMedia change event so a 'system'
-// selection keeps tracking the OS live, not just at load/selection time.
+// `:root.dark` var overrides both key off. 'system' is still accepted because main.tsx applies
+// the raw stored preference before React mounts; from then on UiPrefsContext resolves it against
+// its own live matchMedia tracking and passes 'light'/'dark' straight through.
 export function applyTheme(theme: AppTheme) {
   const dark = theme === 'dark' || (theme === 'system' && systemPrefersDark());
   document.documentElement.classList.toggle('dark', dark);

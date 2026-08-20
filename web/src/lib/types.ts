@@ -109,6 +109,10 @@ export interface User {
   picture?: string | null;
 }
 
+// 'system' is the starting value rather than one of the offered choices: neither picker lists it,
+// and both show whichever theme it currently resolves to as the selected one, so a reader who has
+// never touched the setting follows the OS and one who has picked stays put. See
+// ResolvedReaderTheme / ResolvedAppTheme below for the resolved side.
 export type ReaderTheme = 'light' | 'dark' | 'sepia' | 'system';
 // What 'system' actually resolves to at render time — see ReaderPrefsContext's live
 // prefers-color-scheme tracking.
@@ -116,9 +120,11 @@ export type ResolvedReaderTheme = Exclude<ReaderTheme, 'system'>;
 export type ReaderFace = 'serif' | 'georgia' | 'sans' | 'system' | 'times';
 
 // The app shell's own light/dark mode (Settings > Theme) — distinct from ReaderTheme, which is
-// the immersive reader's separate light/dark/system preference and unaffected by this. 'system'
-// follows the OS's prefers-color-scheme; see lib/uiPrefs.ts's applyTheme().
+// the immersive reader's separate preference and unaffected by this. 'system' follows the OS's
+// prefers-color-scheme; see lib/uiPrefs.ts's applyTheme().
 export type AppTheme = 'light' | 'dark' | 'system';
+// The counterpart to ResolvedReaderTheme for the shell — see UiPrefsContext's matchMedia tracking.
+export type ResolvedAppTheme = Exclude<AppTheme, 'system'>;
 
 export interface ThemeColors {
   bg: string;
