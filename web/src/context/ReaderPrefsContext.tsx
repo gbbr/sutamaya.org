@@ -28,7 +28,15 @@ interface ReaderPrefsState extends ReaderPrefs {
   toggleShowNotes: () => void;
 }
 
-const DEFAULTS: ReaderPrefs = { theme: 'system', fs: 18, lh: 165, face: 'georgia', allPali: false, showNotes: false };
+// Line height, as a percentage. The floor is deliberately generous: the reader's measure is 34em
+// (~70 characters), and at that width anything below ~1.55 loses the line return — a setting nobody
+// would keep. `lh` also drives the paragraph gap and the gap above interleaved Pali
+// (see SegmentedText's paragraphGap), so the whole page breathes with it, not just the leading.
+export const LH_MIN = 155;
+export const LH_MAX = 205;
+export const LH_STEP = 5;
+
+const DEFAULTS: ReaderPrefs = { theme: 'system', fs: 18, lh: 175, face: 'georgia', allPali: false, showNotes: false };
 
 const ReaderPrefsContext = createContext<ReaderPrefsState | null>(null);
 
@@ -53,6 +61,9 @@ export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
   const value = useMemo<ReaderPrefsState>(
     () => ({
       ...prefs,
+      // Clamped on read, not on write: a device that stored a value from an earlier, wider range
+      // would otherwise keep rendering at a leading the slider can no longer reach or show.
+      lh: Math.min(LH_MAX, Math.max(LH_MIN, prefs.lh)),
       resolvedTheme,
       setTheme: (theme) => setPrefs((p) => ({ ...p, theme })),
       setFs: (fs) => setPrefs((p) => ({ ...p, fs })),
