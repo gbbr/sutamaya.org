@@ -343,7 +343,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
       <div ref={scrollRef} className="sc flex-1" style={{ padding: '44px 22px 120px' }}>
         <div style={{ maxWidth: measureWidth, margin: '0 auto' }}>
           {listOrigin && (
-            <nav className="font-sans flex items-center gap-1" style={{ fontSize: 12, marginBottom: 7, color: theme.dim }}>
+            <nav className="font-sans flex items-center gap-1" style={{ fontSize: fs - 6, marginBottom: 7, color: theme.dim }}>
               <button
                 className="flex items-center gap-1 hover:underline"
                 onClick={() =>
@@ -352,16 +352,16 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
                   })
                 }
               >
-                <ListIcon size={11} strokeWidth={2} />
+                <ListIcon size={fs - 7} strokeWidth={2} />
                 {listOrigin.label}
               </button>
             </nav>
           )}
           {breadcrumb.length > 0 && (
-            <nav className="font-sans flex flex-wrap items-center gap-1" style={{ fontSize: 12, marginBottom: 7, color: theme.dim }}>
+            <nav className="font-sans flex flex-wrap items-center gap-1" style={{ fontSize: fs - 6, marginBottom: 7, color: theme.dim }}>
               {breadcrumb.map((b, i) => (
                 <span key={b.id} className="flex items-center gap-1">
-                  {i > 0 && <ChevronRight size={11} strokeWidth={2} />}
+                  {i > 0 && <ChevronRight size={fs - 7} strokeWidth={2} />}
                   <button
                     className="hover:underline"
                     onClick={() =>
@@ -392,7 +392,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           <div className="font-serif italic" style={{ fontSize: fs - 2, marginTop: 5, color: theme.dim }}>
             {sutta.pali}
           </div>
-          <div className="font-sans" style={{ fontSize: 12, marginTop: 9, color: theme.dim }}>
+          <div className="font-sans" style={{ fontSize: fs - 6, marginTop: 9, color: theme.dim }}>
             {sutta.min} min read ·{' '}
             Source:{' '}
             {corpus.sujatoCommit ? (
@@ -435,6 +435,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
               chips={suttaChips}
               hlCount={hlCount}
               theme={theme}
+              fs={fs}
               onChipClick={(chipId) => {
                 const { list } = resolveListById(chipId, flatLists);
                 // Must explicitly tag `fromView: 'list'` rather than relying on LibraryPage's own
