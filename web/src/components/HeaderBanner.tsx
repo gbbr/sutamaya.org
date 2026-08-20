@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { navigate } from '@reach/router';
-import { AlertTriangle, Download, Info, X } from 'lucide-react';
+import { AlertTriangle, Download, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
@@ -46,6 +46,17 @@ export const REAUTH_TEXT = "Signed out — changes aren't syncing";
 export const KEEP_SAFE_TEXT = 'Saved temporarily on this device';
 export const KEEP_SAFE_IOS_TEXT = 'Safari may erase your notes in 7 days';
 
+// Three tones for three kinds of message: red is broken and needs fixing, amber is data at risk,
+// accent is an optional improvement. They have to be told apart at a glance because they share one
+// slot and arrive one after another — dismissing a banner uncovers the next one down on the
+// following mount, in the same bar, in the same place. Amber matches how Settings' Account card
+// already renders this same risk.
+const TONES = {
+  alert: { bar: 'bg-red-600/[.07]', icon: 'text-danger-text', action: 'text-danger-text decoration-danger-text/40' },
+  warn: { bar: 'bg-amber-500/[.08]', icon: 'text-warning-text', action: 'text-warning-text decoration-warning-text/40' },
+  accent: { bar: 'bg-accent/[.06]', icon: 'text-ink/60', action: 'text-accent-text decoration-accent-text/40' },
+} as const;
+
 // One banner's chrome, so the four variants differ only in what they say and do.
 function Banner({
   tone,
@@ -55,29 +66,25 @@ function Banner({
   onAction,
   onDismiss,
 }: {
-  tone: 'alert' | 'accent';
+  tone: keyof typeof TONES;
   icon: ReactNode;
   text: string;
   action: string;
   onAction: () => void;
   onDismiss?: () => void;
 }) {
-  const alert = tone === 'alert';
+  const { bar, icon: iconClass, action: actionClass } = TONES[tone];
   return (
     <div
       data-component="HeaderBanner"
-      className={`flex-none flex items-center gap-2.5 px-[18px] py-2.5 border-b border-ink/10 ${
-        alert ? 'bg-red-600/[.07]' : 'bg-accent/[.06]'
-      }`}
+      className={`flex-none flex items-center gap-2.5 px-[18px] py-2.5 border-b border-ink/10 ${bar}`}
     >
-      <span className={`flex-none ${alert ? 'text-danger-text' : 'text-ink/60'}`}>{icon}</span>
+      <span className={`flex-none ${iconClass}`}>{icon}</span>
       <div className="flex-1 min-w-0 font-sans text-[12.5px] text-ink/70 truncate" title={text}>
         {text}
       </div>
       <button
-        className={`flex-none font-sans text-[12.5px] font-semibold underline underline-offset-2 ${
-          alert ? 'text-danger-text decoration-danger-text/40' : 'text-accent-text decoration-accent-text/40'
-        }`}
+        className={`flex-none font-sans text-[12.5px] font-semibold underline underline-offset-2 ${actionClass}`}
         onClick={onAction}
       >
         {action}
@@ -174,8 +181,8 @@ export function HeaderBanner() {
     const ios = isIosBrowserTab();
     return (
       <Banner
-        tone={ios ? 'alert' : 'accent'}
-        icon={ios ? <AlertTriangle size={15} strokeWidth={1.75} /> : <Info size={15} strokeWidth={1.75} />}
+        tone={ios ? 'alert' : 'warn'}
+        icon={<AlertTriangle size={15} strokeWidth={1.75} />}
         text={ios ? KEEP_SAFE_IOS_TEXT : KEEP_SAFE_TEXT}
         action="Sign in"
         onAction={promptGoogleSignIn}

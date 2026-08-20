@@ -62,11 +62,12 @@ export function SignedInBadge({ user, size, atRisk = false }: { user: User | nul
         // patch on the other. The badge's own border token separates the dot from the glyph
         // beneath it on either.
         //
-        // Red on an iOS browser tab, matching the banner and the Settings line that turn red under
-        // the same condition — there the data is on a deletion timer, not merely unsynced.
+        // Amber, and red on an iOS browser tab — the same pair the banner and the Settings line use
+        // under the same conditions, since all three are saying one thing. Red is reserved for the
+        // iOS case, where the data is on a deletion timer rather than merely unsynced.
         <span
           data-component="SignedInBadgeDot"
-          className={`absolute rounded-full border border-ink/25 ${isIosBrowserTab() ? 'bg-danger-text' : 'bg-accent'}`}
+          className={`absolute rounded-full border border-ink/25 ${isIosBrowserTab() ? 'bg-danger-text' : 'bg-warning-text'}`}
           style={{ width: 8, height: 8, top: -1, right: -1 }}
         />
       )}

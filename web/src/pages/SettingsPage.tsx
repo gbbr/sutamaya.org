@@ -157,6 +157,11 @@ export function SettingsPage({ location }: RouteComponentProps) {
   const { corpus } = useCorpus();
   const { syncStatus, pendingCount, lastSyncedAt, needsReauth, lists, notes, highlights } = useUserData();
 
+  // The one gate on every "your data is only on this device" warning — the header banner, the dot
+  // on the account badge and both warning lines in the Account card below. A reader who hasn't
+  // made anything yet has nothing to lose, so none of them appear.
+  const hasLocalWork = hasLocalWorkWorthKeeping(lists, notes, highlights);
+
   // Stepped rather than dragged: applying a scale rewrites the viewport meta tag's
   // `initial-scale` on iOS Safari (see applyUiScale in lib/uiPrefs.ts), and WebKit needs a frame
   // to reflow against it — one discrete commit per tap gives it that, where a slider fired a
@@ -460,24 +465,21 @@ export function SettingsPage({ location }: RouteComponentProps) {
                 </div>
                 {/* Complements the line above rather than repeating the header banner's own wording
                     ("Saved temporarily on this device") — this is the risk that wording is short
-                    for. Gated on the same "is there actually something to lose" check the banner
-                    itself uses (hasLocalWorkWorthKeeping), so a first-time reader with nothing yet
-                    doesn't see a warning about losing nothing. Suppressed on an iOS browser tab,
-                    where the danger line below states the same risk in its concrete form — two
-                    stacked warnings about one thing read as noise. */}
-                {!isIosBrowserTab() && hasLocalWorkWorthKeeping(lists, notes, highlights) && (
+                    for. Suppressed on an iOS browser tab, where the danger line below states the
+                    same risk in its concrete form — two stacked warnings about one thing read as
+                    noise. */}
+                {!isIosBrowserTab() && hasLocalWork && (
                   <div className="flex items-start gap-1.5 font-sans text-[13px] text-warning-text mb-3">
                     <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
                     <span>Without signing in, you risk losing your changes when the browser clears this website's data.</span>
                   </div>
                 )}
-                {/* Permanent, not dismissible, and shown whether or not the user has made anything
-                    yet: on iOS in a browser tab this is the literal storage policy, not a nudge —
-                    WebKit evicts a site's IndexedDB after about seven days without a visit. The
-                    header banner's version of this can be dismissed; the standing fact can't be.
-                    Installing to the Home Screen is the documented exemption, so it's offered
-                    alongside signing in rather than being the second-best answer. */}
-                {isIosBrowserTab() && (
+                {/* On iOS in a browser tab this is the literal storage policy, not a nudge — WebKit
+                    evicts a site's IndexedDB after about seven days without a visit — so unlike the
+                    header banner's version of it, it can't be dismissed. Installing to the Home
+                    Screen is the documented exemption, so it's offered alongside signing in rather
+                    than being the second-best answer. */}
+                {isIosBrowserTab() && hasLocalWork && (
                   <div className="flex items-start gap-1.5 font-sans text-[13px] text-danger-text mb-3">
                     <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
                     <span>
