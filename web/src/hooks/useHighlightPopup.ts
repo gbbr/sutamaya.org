@@ -82,8 +82,8 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
       // Anchor at the end of the selection, not its horizontal center — the tail of the last
       // visual line (getClientRects()' last entry covers wrapped multi-line selections too, not
       // just the bounding box getBoundingClientRect() would give), so the colour picker lands
-      // right where the user's cursor/finger lifted off and appears below that line, since above
-      // is where the OS selection menu already sits on mobile.
+      // right where the user's cursor lifted off. Only the desktop popup uses this; on mobile
+      // HighlightPopup pins itself to the bottom edge and ignores the anchor.
       const rects = range.getClientRects();
       const endRect = rects[rects.length - 1] || range.getBoundingClientRect();
 
