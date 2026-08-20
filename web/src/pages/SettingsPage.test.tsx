@@ -232,7 +232,7 @@ describe('sync status line', () => {
     expect(document.querySelector('[data-component="GoogleSignInButton"]')).toBeInTheDocument();
     expect(screen.queryByText('Syncing 2 changes…')).not.toBeInTheDocument();
     // A plain link to a requireAuth route would only answer 401 and download an error body.
-    expect(screen.queryByText('Export my data as JSON')).not.toBeInTheDocument();
+    expect(screen.queryByText('Export my data')).not.toBeInTheDocument();
     // Still their account, and POST /api/auth/logout is unauthenticated, so leaving still works.
     expect(screen.getByText(/Signed in as/)).toBeInTheDocument();
     expect(screen.getByText('Sign out')).toBeInTheDocument();
