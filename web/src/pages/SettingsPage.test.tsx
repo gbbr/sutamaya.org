@@ -17,6 +17,7 @@ vi.mock('../lib/offline', () => ({
   estimateOfflineStatus: vi.fn(async () => ({ cached: 0, total: 10 })),
   prefetchAllSuttas: vi.fn(async () => ({ failed: [], circuitTripped: false })),
   prefetchDictionary: vi.fn(async () => true),
+  prefetchHelpImages: vi.fn(async () => true),
   cachedCorpusVersions: vi.fn(() => ({ data: null, dictionary: null })),
   recordCachedCorpusVersion: vi.fn(),
   isOfflineTextStale: vi.fn(() => false),

@@ -18,6 +18,7 @@ import {
   isOfflineTextStale,
   prefetchAllSuttas,
   prefetchDictionary,
+  prefetchHelpImages,
   recordCachedCorpusVersion,
 } from '../lib/offline';
 import type { ReaderFace, ResolvedAppTheme } from '../lib/types';
@@ -304,6 +305,10 @@ export function SettingsPage({ location }: RouteComponentProps) {
       // shard each tapped word falls in, so unlike the sutta text this is rarely already complete
       // — and "download all suttas for offline" has to guarantee it before reporting done, since
       // without every shard the reader's word lookups fail in airplane mode either way.
+      // The help page's screenshots ride along in the same pass — a fraction of a percent of the
+      // total, and without them "download all content" would leave the guide showing broken
+      // images offline. Its result isn't surfaced: see prefetchHelpImages for why illustration
+      // failing doesn't deserve the same banner as missing sutta text.
       const [{ failed, circuitTripped: tripped }, dictionaryOk] = await Promise.all([
         prefetchAllSuttas(uids, {
           signal: controller.signal,
@@ -311,6 +316,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
           onProgress: (done, total) => setProgress({ done, total }),
         }),
         prefetchDictionary(controller.signal, forceDictionary),
+        prefetchHelpImages(controller.signal),
       ]);
       setFailedCount(failed.length);
       setCircuitTripped(tripped);
@@ -694,14 +700,25 @@ export function SettingsPage({ location }: RouteComponentProps) {
           </div>
         </div>
 
-        <a
-          href="https://github.com/gbbr/sutamaya.org/issues/new"
-          target="_blank"
-          rel="noreferrer"
-          className="block text-center font-sans text-[12px] text-ink/40 underline decoration-ink/25 underline-offset-2 mt-6"
-        >
-          Report an issue
-        </a>
+        {/* Both are occasional-use links rather than actions this page is asking for, so they
+            share one muted footer row instead of a card of their own. The library's own help row
+            (TreePane) is the primary way into the guide; this is the second place someone looks. */}
+        <div className="flex items-center justify-center gap-2.5 font-sans text-[12px] text-ink/40 mt-6">
+          <button className="underline decoration-ink/25 underline-offset-2" onClick={() => navigate('/help')}>
+            Help
+          </button>
+          <span aria-hidden className="text-ink/25">
+            ·
+          </span>
+          <a
+            href="https://github.com/gbbr/sutamaya.org/issues/new"
+            target="_blank"
+            rel="noreferrer"
+            className="underline decoration-ink/25 underline-offset-2"
+          >
+            Report an issue
+          </a>
+        </div>
       </div>
     </div>
   );

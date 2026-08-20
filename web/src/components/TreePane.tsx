@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { navigate } from '@reach/router';
-import { Highlighter, StickyNote, History, Library, List, Search, X } from 'lucide-react';
+import { CircleHelp, Highlighter, StickyNote, History, Library, List, Search, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
@@ -48,6 +48,13 @@ function loadPersistedExpansion(): PersistedExpansion {
   }
   return { corpus: [], lists: [] };
 }
+
+// How many suttas someone has to have opened before the help row stops introducing itself. The
+// row itself is permanent — help earns its place long after onboarding, for the things used
+// rarely (export, the offline download, what a highlight colour meant) — but "How to use
+// Sutamaya" reads like a tutorial prompt and goes stale, where a plain "Help" reads as furniture
+// indefinitely. Same row, same place; only the label settles down.
+const HELP_ONBOARDING_VISITS = 5;
 
 function toRecord(ids: string[]): Record<string, boolean> {
   const record: Record<string, boolean> = {};
@@ -108,6 +115,7 @@ export function TreePane({
     membership,
     notes,
     highlights,
+    visited,
     createList,
     renameList,
     removeList,
@@ -639,6 +647,21 @@ export function TreePane({
           />
         )}
       </div>
+
+      {/* Pinned below the scroll area rather than trailing the tree's own rows: as the last row of
+          a fifty-sutta list it would never be seen, and someone who wants help is by definition
+          not going to scroll hunting for it. It costs a row in this pane only — never in the
+          reader, and on mobile never while reading — which is what keeps it from being a bottom
+          bar the whole app pays for. The inset keeps it clear of the iOS home indicator, where
+          this pane runs to the bottom of the viewport in an installed PWA. */}
+      <button
+        className="flex-none flex items-center gap-[9px] px-[18px] py-[11px] border-t border-ink/10 text-left font-sans text-[12.5px] text-ink/45 hover:text-ink/70"
+        style={{ paddingBottom: 'calc(11px + env(safe-area-inset-bottom, 0px))' }}
+        onClick={() => navigate('/help')}
+      >
+        <CircleHelp size={15} strokeWidth={2} className="flex-none text-ink/35" />
+        {Object.keys(visited).length < HELP_ONBOARDING_VISITS ? 'How to use Sutamaya' : 'Help'}
+      </button>
     </aside>
   );
 }
