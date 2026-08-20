@@ -42,10 +42,7 @@ export function DictionaryDock({
         borderTop: `2px solid ${theme.fg}`,
         background: theme.panel,
         padding: '14px 22px 18px',
-        // Not `45vh` — see index.css's --app-height comment for why some WebView builds don't
-        // recompute `vh` correctly after applyUiScale's viewport-meta path changes the page's
-        // scale.
-        maxHeight: 'calc(var(--app-height, 100vh) * 0.45)',
+        maxHeight: '45dvh',
       }}
     >
       <div className="flex-none flex items-baseline gap-3">

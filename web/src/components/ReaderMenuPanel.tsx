@@ -87,11 +87,7 @@ export function ReaderMenuPanel({
         left: 0,
         right: 0,
         bottom: 0,
-        // Not `62vh` — see index.css's --app-height comment for why some WebView builds don't
-        // recompute it correctly after applyUiScale's viewport-meta path changes the page's
-        // scale. This sheet's close button/tabs sit above its own scrollable content, so an
-        // inflated cap here could push them off-screen with no way to scroll back to them.
-        maxHeight: 'calc(var(--app-height, 100vh) * 0.62)',
+        maxHeight: '62dvh',
         display: 'flex',
         flexDirection: 'column' as const,
         background: theme.panel,
