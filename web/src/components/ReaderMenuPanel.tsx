@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { X } from 'lucide-react';
+import { Minus, Plus, Trash2, X } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
-import { LH_MAX, LH_MIN, LH_STEP, useReaderPrefs } from '../context/ReaderPrefsContext';
+import { FS_MAX, FS_MIN, FS_STEP, LH_MAX, LH_MIN, LH_STEP, useReaderPrefs } from '../context/ReaderPrefsContext';
 import { NoteEditor } from './NoteEditor';
 import { ListMembershipPicker } from './ListMembershipPicker';
 import type { SegmentFile } from '../lib/corpus';
@@ -9,11 +9,13 @@ import { highlightGroupText, type HighlightGroup } from '../lib/highlights';
 import { highlightPaint } from '../lib/theme';
 import type { ReaderFace, ResolvedReaderTheme, ThemeColors } from '../lib/types';
 
+type Tab = 'highlights' | 'lists' | 'text';
+
 interface ReaderMenuPanelProps {
   suttaId: string;
   mobile: boolean;
   theme: ThemeColors;
-  initialTab: 'highlights' | 'lists' | 'text';
+  initialTab: Tab;
   segments: SegmentFile[] | null;
   // ReaderPage/useSuttaReading already group this sutta's highlights once via groupHighlights —
   // passed down rather than re-derived here so the same computation isn't done twice per render.
@@ -24,21 +26,27 @@ interface ReaderMenuPanelProps {
   // even if this panel (and its highlights tab) is already open.
   noteFocusSignal?: number;
   // Lets ReaderPage react when the user switches tab from inside the already-open panel (e.g. to
-  // dismiss an open DictionaryDock when landing on the Theme tab's mobile sheet — see ReaderPage).
-  onTabChange?: (tab: 'highlights' | 'lists' | 'text') => void;
+  // dismiss an open DictionaryDock when landing on the Display tab's mobile sheet — see ReaderPage).
+  onTabChange?: (tab: Tab) => void;
 }
 
-// Order matches the app-shell Theme picker (Settings > Theme): Light, Dark — with Sepia, which
-// has no app-shell equivalent, appended after. 'system' is the default both pickers resolve
-// through rather than a swatch of its own (see types.ts's ReaderTheme note), so the selected
-// swatch is matched against the resolved theme below. Labels are rendered with
-// mix-blend-mode: difference over white rather than a hand-picked `fg` per swatch, so each one
-// gets its contrast from the colour it sits on.
-const THEME_SWATCHES: Array<{ id: ResolvedReaderTheme; label: string; bg: string }> = [
-  { id: 'light', label: 'Light', bg: '#FBFAF7' },
-  { id: 'dark', label: 'Dark', bg: '#2A241E' },
-  { id: 'sepia', label: 'Sepia', bg: '#F3E7D3' },
+// Each theme is previewed as a miniature of the reading surface itself — lines of body text on
+// that theme's own paper, with one line in its Pali accent — rather than named on a flat colour
+// chip. Same device as the app shell's own picker (SettingsPage's THEME_OPTIONS), which draws a
+// miniature of the *shell* instead; here there is no tree pane to draw, so the tile is the page.
+// It also replaces that flat chip's mix-blend-mode label trick: the name now sits under the tile
+// in the panel's own ink, so it is legible at the same contrast on all three.
+//
+// The colours are literals rather than READER_THEMES lookups because all three tiles render in
+// their own palette at once while the panel around them is in only one of them.
+// 'system' is the default both this and the shell picker resolve *through* rather than a tile of
+// its own (see types.ts's ReaderTheme note), so selection is matched against the resolved theme.
+const THEME_TILES: Array<{ id: ResolvedReaderTheme; label: string; bg: string; fg: string; pali: string }> = [
+  { id: 'light', label: 'Light', bg: '#FBFAF7', fg: '#1B1917', pali: '#8A6A3B' },
+  { id: 'dark', label: 'Dark', bg: '#2A241E', fg: '#EDE6D9', pali: '#C9A86F' },
+  { id: 'sepia', label: 'Sepia', bg: '#F3E7D3', fg: '#3A2E1E', pali: '#8C6222' },
 ];
+
 const FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
   { id: 'serif', label: 'Newsreader' },
   { id: 'georgia', label: 'Georgia' },
@@ -46,6 +54,116 @@ const FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
   { id: 'times', label: 'Times' },
   { id: 'system', label: 'System' },
 ];
+
+const TABS: Array<{ id: Tab; label: string }> = [
+  { id: 'highlights', label: 'Highlights' },
+  { id: 'lists', label: 'Lists' },
+  { id: 'text', label: 'Display' },
+];
+
+// A two-or-more-state segmented control: one recessed track with a raised thumb under the active
+// option. Used for this panel's tab bar and for the Display tab's Pali and translator-note rows —
+// the same shape at two sizes, so a setting with exactly two states shows *both* of them rather
+// than a single button whose label has to double as the current value and the action.
+function Segmented<T extends string>({
+  value,
+  options,
+  onChange,
+  theme,
+  grow,
+}: {
+  value: T;
+  options: Array<{ id: T; label: string }>;
+  onChange: (id: T) => void;
+  theme: ThemeColors;
+  // Tab bar: fill the panel's width, equal shares. Setting rows: hug the labels.
+  grow?: boolean;
+}) {
+  return (
+    <div
+      className={`${grow ? 'flex' : 'inline-flex'} items-stretch rounded-full p-[3px]`}
+      style={{ background: theme.tint }}
+    >
+      {options.map((o) => {
+        const on = value === o.id;
+        return (
+          <button
+            key={o.id}
+            aria-pressed={on}
+            className={`${grow ? 'flex-1' : ''} rounded-full font-sans text-[12.5px] whitespace-nowrap ${
+              grow ? 'px-2 py-[7px]' : 'px-3 py-[5px]'
+            }`}
+            style={{
+              // The thumb is the panel's own surface lifted out of the recessed track, so it
+              // needs no border of its own to separate from it.
+              background: on ? theme.panel : 'transparent',
+              color: on ? theme.fg : theme.dim,
+              fontWeight: on ? 500 : 400,
+              boxShadow: on ? '0 1px 2px rgba(0,0,0,.12)' : 'none',
+            }}
+            onClick={() => onChange(o.id)}
+          >
+            {o.label}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+// One connected group — the two buttons and the value they change share a single outline, divided
+// by hairlines. Matches Settings' UI-scale stepper. A stepper rather than a slider because both of
+// these ranges are short and discrete, and landing on one stop of nine with a thumb on a phone is
+// far harder than tapping "+"; it also shows the value, which the bare range inputs never did.
+function Stepper({
+  value,
+  min,
+  max,
+  step,
+  onChange,
+  format,
+  label,
+  theme,
+}: {
+  value: number;
+  min: number;
+  max: number;
+  step: number;
+  onChange: (n: number) => void;
+  format: (n: number) => string;
+  label: string;
+  theme: ThemeColors;
+}) {
+  const btn = 'flex items-center justify-center w-11 h-[34px] disabled:opacity-30';
+  return (
+    <div className="inline-flex items-stretch rounded-field overflow-hidden" style={{ border: `1px solid ${theme.rule}` }}>
+      <button
+        className={btn}
+        style={{ color: theme.fg }}
+        aria-label={`Decrease ${label}`}
+        disabled={value <= min}
+        onClick={() => onChange(Math.max(min, value - step))}
+      >
+        <Minus size={15} strokeWidth={2} />
+      </button>
+      <span
+        className="flex items-center justify-center w-[58px] font-sans text-[13px] tabular-nums"
+        style={{ borderLeft: `1px solid ${theme.rule}`, borderRight: `1px solid ${theme.rule}`, color: theme.fg }}
+      >
+        {format(value)}
+      </span>
+      <button
+        className={btn}
+        style={{ color: theme.fg }}
+        aria-label={`Increase ${label}`}
+        disabled={value >= max}
+        onClick={() => onChange(Math.min(max, value + step))}
+      >
+        <Plus size={15} strokeWidth={2} />
+      </button>
+    </div>
+  );
+}
 
 export function ReaderMenuPanel({
   suttaId,
@@ -60,11 +178,11 @@ export function ReaderMenuPanel({
   onTabChange,
 }: ReaderMenuPanelProps) {
   const [tab, setTab] = useState(initialTab);
-  const { notes, submitNote } = useUserData();
+  const { notes, submitNote, setHighlightRanges } = useUserData();
   const { resolvedTheme, setTheme, fs, setFs, lh, setLh, face, setFace, allPali, toggleAllPali, showNotes, toggleShowNotes } =
     useReaderPrefs();
 
-  // The Theme tab has no text inputs, so on mobile it renders as a short bottom sheet instead of
+  // The Display tab has no text inputs, so on mobile it renders as a short bottom sheet instead of
   // going full-screen — leaving the reader visible above it so font/line-height/theme changes can
   // be seen live while adjusting them (see below). Highlights and Lists stay full-screen and
   // top-anchored (not a bottom sheet): their inputs (Lists' auto-focused search/create field;
@@ -116,71 +234,77 @@ export function ReaderMenuPanel({
         flexDirection: 'column' as const,
         background: theme.panel,
         color: theme.fg,
-        borderLeft: `2px solid ${theme.fg}`,
+        // A hairline plus a cast shadow, rather than the heavy 2px `fg` rule this drawer used to
+        // carry: the shadow is what separates it from the reading behind it, so the edge itself
+        // doesn't have to be a line dark enough to read as part of the page's own furniture.
+        borderLeft: `1px solid ${theme.rule}`,
+        boxShadow: '-10px 0 30px rgba(0,0,0,.12)',
         padding: '18px 20px 22px',
       };
 
   const entranceClass = hasEnteredRef.current ? '' : isThemeSheet ? 'animate-sheetUp' : 'animate-fadeIn';
   const panelClassName = `${isThemeSheet ? 'rounded-t-sheet shadow-sheet' : ''} ${entranceClass}`.trim();
 
-  const tabBtn = (id: 'highlights' | 'lists' | 'text', label: string) => (
-    <button
-      key={id}
-      className="flex-1 text-center pb-2.5 font-sans text-[11px] font-bold tracking-[.1em] uppercase"
-      style={{
-        color: theme.fg,
-        opacity: tab === id ? 1 : 0.5,
-        borderBottom: `2px solid ${tab === id ? theme.fg : 'transparent'}`,
-        marginBottom: -1,
-      }}
-      onClick={() => {
-        setTab(id);
-        onTabChange?.(id);
-      }}
-    >
-      {label}
-    </button>
-  );
+  // Every setting is one of these: label on the left, control on the right, split from the row
+  // above by a hairline. It wraps to two lines when the two halves stop fitting, which the face
+  // pills always do and the steppers can at the top of the UI-scale range on a narrow phone.
+  const settingRow = 'flex flex-wrap items-center justify-between gap-x-4 gap-y-2.5 py-3';
+  const hairline = { borderTop: `1px solid ${theme.tint}` };
+  const rowLabel = 'font-sans text-[12.5px]';
 
-  const ctlRowStyle = { display: 'flex', alignItems: 'center', gap: 10, padding: '12px 0', borderTop: `1px solid ${theme.rule}` };
-  const pill = (on: boolean) => ({
-    borderRadius: 14,
-    padding: '5px 13px',
-    fontSize: 12.5,
-    border: `1px solid ${theme.rule}`,
-    background: on ? theme.fg : 'transparent',
-    color: on ? theme.bg : theme.fg,
-  });
+  // Erasing from here goes through the same path as HighlightPopup's "Remove": a group is
+  // immutable and atomic, so re-writing its own ranges with a null colour retires the whole thing
+  // (see lib/mirror.ts's writeHighlightRecord). No confirmation, matching that popup — the trash
+  // sits in its own target, clear of the row's jump-to action.
+  const removeGroup = (g: HighlightGroup) =>
+    setHighlightRanges(
+      suttaId,
+      g.items.map(({ i, s, e }) => ({ i, s, e })),
+      null
+    );
 
   return (
     <>
       {/* Full-screen (Highlights/Lists on mobile) leaves no backdrop to tap-to-close — mobile gets
-          an explicit close button in the header row instead (below). The Theme sheet is partial-
+          an explicit close button in the header row instead (below). The Display sheet is partial-
           height, so it gets a backdrop too: tapping the dimmed reader text above it closes it. */}
       {(!mobile || isThemeSheet) && <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,.12)' }} onClick={onClose} />}
       <div data-component="ReaderMenuPanel" style={panelStyle} className={panelClassName}>
-        <div className="flex items-end gap-2 mb-4">
+        <div className="flex items-center gap-1.5 mb-4">
+          <div className="flex-1 min-w-0">
+            <Segmented
+              grow
+              value={tab}
+              options={TABS}
+              theme={theme}
+              onChange={(id) => {
+                setTab(id);
+                onTabChange?.(id);
+              }}
+            />
+          </div>
+          {/* Outside the track rather than as a fourth segment — closing isn't one of the things
+              this control is choosing between. Desktop closes on the backdrop or Escape. */}
           {mobile && (
             <button
-              className="flex-none flex items-center justify-center pb-2.5"
-              style={{ borderBottom: '2px solid transparent', marginBottom: -1 }}
-              title="Close"
+              className="flex-none flex items-center justify-center w-9 h-9 rounded-full"
+              style={{ color: theme.dim }}
+              aria-label="Close"
               onClick={onClose}
             >
-              <X size={17} strokeWidth={1.75} />
+              <X size={18} strokeWidth={1.75} />
             </button>
           )}
-          <div className="flex flex-1 gap-1" style={{ borderBottom: `1px solid ${theme.rule}` }}>
-            {tabBtn('highlights', 'Highlights')}
-            {tabBtn('lists', 'Lists')}
-            {tabBtn('text', 'Theme')}
-          </div>
         </div>
 
         {tab === 'highlights' && (
           <div className="sc flex-1 min-h-0">
-            <div className="rounded-field mb-3.5 p-[11px_13px]" style={{ border: `1px solid ${theme.rule}`, padding: '11px 13px' }}>
-              <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase opacity-60 mb-[5px]">Sutta note</div>
+            {/* Recessed against the panel — `bg` is the reading surface, a shade off the `panel`
+                around it — so the note reads as somewhere to write rather than as another row. */}
+            <div className="rounded-field mb-4 px-3 py-2.5" style={{ border: `1px solid ${theme.rule}`, background: theme.bg }}>
+              <div className={`${rowLabel} mb-1`} style={{ color: theme.dim }}>
+                Sutta note
+              </div>
               <NoteEditor
                 value={notes[suttaId] || ''}
                 onSubmit={(text) => submitNote(suttaId, text)}
@@ -188,27 +312,45 @@ export function ReaderMenuPanel({
                 placeholder="Add a note — return to save"
                 textareaClassName="w-full bg-transparent text-[16px] resize-none outline-none font-serif"
                 textareaStyle={{ border: 0, color: theme.fg }}
-                saveButtonClassName="font-sans text-[11.5px] font-semibold px-2 py-[3px] rounded"
+                saveButtonClassName="font-sans text-[12px] font-medium px-2.5 py-[3px] rounded-full"
                 saveButtonStyle={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
               />
             </div>
+
+            {/* The count belongs beside the heading, not on the rows: it answers "how much have I
+                marked in this sutta" at a glance, which is most of why this tab gets opened. */}
+            <div className={`${rowLabel} flex items-baseline gap-1.5 mb-0.5`} style={{ color: theme.dim }}>
+              Highlights
+              {highlightGroups.length > 0 && <span className="tabular-nums">{highlightGroups.length}</span>}
+            </div>
+
             {highlightGroups.map((g) => {
               const text = highlightGroupText(g, segments);
               const preview = text.length > 120 ? `${text.slice(0, 120)}…` : text;
               return (
-                <button
-                  key={g.key}
-                  className="flex w-full gap-2.5 items-start py-2.5 text-left"
-                  style={{ borderBottom: `1px solid ${theme.rule}` }}
-                  onClick={() => onJumpToHighlight(g.i, g.key)}
-                >
-                  <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: highlightPaint(g.c, theme) }} />
-                  <span className="flex-1 text-sm leading-[1.45]">{preview || `Segment ${g.i + 1}`}</span>
-                </button>
+                <div key={g.key} className="flex items-stretch gap-1" style={{ borderBottom: `1px solid ${theme.tint}` }}>
+                  <button className="flex flex-1 min-w-0 gap-2.5 items-start py-2.5 text-left" onClick={() => onJumpToHighlight(g.i, g.key)}>
+                    <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: highlightPaint(g.c, theme) }} />
+                    <span className="flex-1 text-sm leading-[1.45]">{preview || `Segment ${g.i + 1}`}</span>
+                  </button>
+                  {/* Always visible, never hover-revealed: this panel is used on touch, where
+                      there is no hover state to reveal it with. Faded instead, so it reads as
+                      secondary to the row's own jump-to action. */}
+                  <button
+                    className="flex-none flex items-start justify-center w-9 pt-[11px] opacity-45 hover:opacity-100"
+                    style={{ color: theme.fg }}
+                    aria-label="Remove highlight"
+                    onClick={() => removeGroup(g)}
+                  >
+                    <Trash2 size={14} strokeWidth={1.75} />
+                  </button>
+                </div>
               );
             })}
             {highlightGroups.length === 0 && (
-              <div className="font-sans text-[12.5px] opacity-40 py-1.5">Select text in the reading, then pick a colour.</div>
+              <div className="font-sans text-[12.5px] py-1.5" style={{ color: theme.dim, opacity: 0.8 }}>
+                Select text in the reading, then pick a colour.
+              </div>
             )}
           </div>
         )}
@@ -221,67 +363,133 @@ export function ReaderMenuPanel({
 
         {tab === 'text' && (
           <div className="sc flex-1 min-h-0">
-            <div className="flex gap-[9px] mb-1.5">
-              {THEME_SWATCHES.map((t) => (
-                <button
-                  key={t.id}
-                  className="relative flex-1 h-[52px] rounded-[10px] text-[14.5px] overflow-hidden"
-                  aria-pressed={resolvedTheme === t.id}
-                  style={{ border: `1px solid ${resolvedTheme === t.id ? theme.fg : theme.rule}` }}
-                  onClick={() => setTheme(t.id)}
-                >
-                  <span className="absolute inset-0" style={{ background: t.bg }} />
-                  <span className="relative" style={{ color: '#fff', mixBlendMode: 'difference' }}>
-                    {t.label}
-                  </span>
-                </button>
-              ))}
-            </div>
-            <div style={ctlRowStyle}>
-              <span className="font-sans text-[12.5px] opacity-55" style={{ width: 86 }}>
-                Size
-              </span>
-              <input type="range" min={15} max={24} step={1} value={fs} onChange={(e) => setFs(+e.target.value)} className="flex-1" style={{ accentColor: '#8A6A3B' }} />
-            </div>
-            <div style={ctlRowStyle}>
-              <span className="font-sans text-[12.5px] opacity-55" style={{ width: 86 }}>
-                Line height
-              </span>
-              <input type="range" min={LH_MIN} max={LH_MAX} step={LH_STEP} value={lh} onChange={(e) => setLh(+e.target.value)} className="flex-1" style={{ accentColor: '#8A6A3B' }} />
-            </div>
-            <div style={{ padding: '12px 0', borderTop: `1px solid ${theme.rule}` }}>
-              <span className="font-sans text-[12.5px] opacity-55 block mb-2">Face</span>
-              <div className="grid grid-cols-3 gap-2">
-                {FACE_OPTIONS.map((f) => (
-                  <button
-                    key={f.id}
-                    style={{ ...pill(face === f.id), fontSize: 12, padding: '5px 10px', textAlign: 'center' }}
-                    onClick={() => setFace(f.id)}
-                  >
-                    {f.label}
-                  </button>
-                ))}
+            <div className="pb-3.5">
+              <div className={`${rowLabel} mb-2`} style={{ color: theme.dim }}>
+                Theme
+              </div>
+              <div className="flex gap-2.5">
+                {THEME_TILES.map((t) => {
+                  const selected = resolvedTheme === t.id;
+                  return (
+                    <button key={t.id} className="flex-1 min-w-0" aria-pressed={selected} onClick={() => setTheme(t.id)}>
+                      {/* Held at 2px in both states so selecting a tile doesn't nudge the
+                          miniature inside it. */}
+                      <span
+                        className="flex flex-col justify-center gap-[5px] h-[58px] px-2.5 rounded-field overflow-hidden"
+                        style={{ background: t.bg, border: `2px solid ${selected ? theme.pali : theme.rule}` }}
+                      >
+                        <span className="h-[4px] w-[62%] rounded-full" style={{ background: t.fg, opacity: 0.75 }} />
+                        <span className="h-[3px] w-full rounded-full" style={{ background: t.fg, opacity: 0.24 }} />
+                        <span className="h-[3px] w-[88%] rounded-full" style={{ background: t.fg, opacity: 0.24 }} />
+                        <span className="h-[3px] w-[46%] rounded-full" style={{ background: t.pali }} />
+                      </span>
+                      <span
+                        className="block mt-1.5 font-sans text-[12.5px] truncate"
+                        style={{ color: selected ? theme.pali : theme.dim, fontWeight: selected ? 500 : 400 }}
+                      >
+                        {t.label}
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
-            <div style={ctlRowStyle}>
-              <span className="font-sans text-[12.5px] opacity-55" style={{ width: 86 }}>
+
+            <div className={settingRow} style={hairline}>
+              <span className={rowLabel} style={{ color: theme.dim }}>
+                Text size
+              </span>
+              <Stepper
+                value={fs}
+                min={FS_MIN}
+                max={FS_MAX}
+                step={FS_STEP}
+                onChange={setFs}
+                format={(n) => `${n}px`}
+                label="text size"
+                theme={theme}
+              />
+            </div>
+
+            <div className={settingRow} style={hairline}>
+              <span className={rowLabel} style={{ color: theme.dim }}>
+                Line height
+              </span>
+              <Stepper
+                value={lh}
+                min={LH_MIN}
+                max={LH_MAX}
+                step={LH_STEP}
+                onChange={setLh}
+                format={(n) => (n / 100).toFixed(2)}
+                label="line height"
+                theme={theme}
+              />
+            </div>
+
+            {/* The one row whose control keeps its own line: five names never fit beside a label,
+                and wrapping them into the row's right-hand half would ladder them one per line. */}
+            <div className="py-3.5" style={hairline}>
+              <div className={`${rowLabel} mb-2`} style={{ color: theme.dim }}>
+                Typeface
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {FACE_OPTIONS.map((f) => {
+                  const on = face === f.id;
+                  return (
+                    <button
+                      key={f.id}
+                      aria-pressed={on}
+                      className="h-[32px] px-3 rounded-full font-sans text-[12.5px]"
+                      style={{
+                        // The accent at low alpha, the same fill Settings' UI-font pills use —
+                        // an 8-digit hex because these are theme literals, not CSS vars.
+                        border: `1px solid ${on ? theme.pali : theme.rule}`,
+                        background: on ? `${theme.pali}1F` : 'transparent',
+                        color: on ? theme.pali : theme.dim,
+                        fontWeight: on ? 500 : 400,
+                      }}
+                      onClick={() => setFace(f.id)}
+                    >
+                      {f.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className={settingRow} style={hairline}>
+              <span className={rowLabel} style={{ color: theme.dim }}>
                 Pali
               </span>
-              <button style={pill(allPali)} onClick={toggleAllPali}>
-                {allPali ? 'Always shown' : 'On tap'}
-              </button>
+              <Segmented
+                value={allPali ? 'always' : 'tap'}
+                options={[
+                  { id: 'tap', label: 'On tap' },
+                  { id: 'always', label: 'Always' },
+                ]}
+                theme={theme}
+                onChange={(id) => {
+                  if ((id === 'always') !== allPali) toggleAllPali();
+                }}
+              />
             </div>
-            <div style={ctlRowStyle}>
-              <label className="flex items-center gap-2 font-sans text-[12.5px]" style={{ width: 86 }}>
-                <input
-                  type="checkbox"
-                  checked={showNotes}
-                  onChange={toggleShowNotes}
-                  style={{ accentColor: '#8A6A3B', width: 15, height: 15 }}
-                />
-                Notes
-              </label>
-              <span className="flex-1 text-[12.5px] opacity-55">Translator's notes (also "c")</span>
+
+            <div className={settingRow} style={hairline}>
+              <span className={rowLabel} style={{ color: theme.dim }}>
+                Translator's notes
+              </span>
+              <Segmented
+                value={showNotes ? 'shown' : 'hidden'}
+                options={[
+                  { id: 'hidden', label: 'Hidden' },
+                  { id: 'shown', label: 'Shown' },
+                ]}
+                theme={theme}
+                onChange={(id) => {
+                  if ((id === 'shown') !== showNotes) toggleShowNotes();
+                }}
+              />
             </div>
           </div>
         )}
