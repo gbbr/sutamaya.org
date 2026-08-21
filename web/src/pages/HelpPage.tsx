@@ -334,6 +334,42 @@ const SECTIONS: HelpSection[] = [
   },
 ];
 
+// The one part of the page that can't be a screenshot tour, and so deliberately not a HelpSection:
+// installing happens in browser chrome — Safari's Share sheet, Chrome's ⋮ menu — which no capture
+// of this app can show, and which Apple and Google rename often enough that a picture would age
+// faster than a sentence does.
+const INSTALL_TITLE = 'Install the app';
+
+const INSTALL_LEAD =
+  'Adding Sutamaya to your home screen gives it its own icon and a full screen with no address ' +
+  'bar. It is the same app, with everything you have saved.';
+
+const INSTALL_PLATFORMS: Array<{ title: string; steps: string[] }> = [
+  {
+    title: 'iPhone and iPad',
+    steps: [
+      'Open sutamaya.org in Safari. It has to be Safari — Chrome and Firefox on iOS cannot install it.',
+      'Tap the Share button in the toolbar.',
+      'Scroll down the list and tap "Add to Home Screen".',
+      'Tap "Add", top right.',
+    ],
+  },
+  {
+    title: 'Android',
+    steps: [
+      'Open sutamaya.org in Chrome.',
+      'Tap the ⋮ menu, top right.',
+      'Tap "Add to Home screen", then "Install".',
+      'Chrome may offer to install it for you instead — either way works.',
+    ],
+  },
+];
+
+const INSTALL_TIPS = [
+  'Install first, then sign in and download the content — the installed app has its own storage, ' +
+    'separate from the browser you installed it from.',
+];
+
 // Deliberately outside the app's palette. These are annotation drawn over a photograph of the
 // product, not part of the product, and a marker in the accent colour would read as another piece
 // of the UI it is pointing at. Solid with a pale ring so it holds an edge over screenshot pixels
@@ -417,6 +453,43 @@ function ShotColumn({ shot, startIndex, showTitle }: { shot: HelpShot; startInde
   );
 }
 
+// A tip is the part of a section a reader is least likely to already know, so it can't be set as
+// the quietest text on the page — it gets a tinted card instead, read at the legend's own size and
+// weight. The amber is `warning-text`, the same tone HeaderBanner and Settings already use for
+// "worth knowing", rather than the markers' red: that red is annotation drawn *over* a screenshot,
+// and letting it spread to the page's own furniture would stop it meaning that.
+// One card per section, not per tip, so two tips don't repeat the icon.
+// The padding is asymmetric on purpose: the icon already holds the text well clear of the left
+// edge, while on the right nothing but the padding keeps a wrapped line off it.
+function TipCard({ tips }: { tips: string[] }) {
+  return (
+    <div className="flex items-start gap-2 rounded-field bg-warning-text/[.09] pl-2.5 pr-[18px] py-3 mt-4">
+      <Lightbulb size={15} strokeWidth={1.75} className="flex-none mt-[2px] text-warning-text" />
+      <div className="flex-1 min-w-0 flex flex-col gap-2 font-sans text-[13px] leading-[1.45] text-ink/75">
+        {tips.map((tip) => (
+          <p key={tip}>{withEmphasis(tip)}</p>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// A section runs to several screens on a phone, so the way back to "On this page" — the only route
+// to a different section — is a long swipe up from wherever the reader finished. Dimmer than the
+// section's own text and set to the right margin, off the left edge every other line starts from,
+// so it reads as the end of the section rather than as one more thing to read.
+function BackToTop({ onClick }: { onClick: () => void }) {
+  return (
+    <button
+      className="flex items-center gap-1.5 ml-auto font-sans text-[12.5px] text-ink/40 hover:text-ink/70 mt-5 py-1"
+      onClick={onClick}
+    >
+      <ArrowUp size={13} strokeWidth={1.75} />
+      Back to top
+    </button>
+  );
+}
+
 export function HelpPage(_props: RouteComponentProps) {
   // The page's own scroll container, so "Back to top" can return to it. The document itself never
   // scrolls here — the app shell is a fixed-height layout and this `.sc` div is what moves.
@@ -471,6 +544,14 @@ export function HelpPage(_props: RouteComponentProps) {
                 {section.title}
               </button>
             ))}
+            <button
+              className="font-sans text-[13px] text-left text-ink/45 hover:text-ink/75 py-[5px]"
+              onClick={() =>
+                document.getElementById(anchorId(INSTALL_TITLE))?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            >
+              {INSTALL_TITLE}
+            </button>
           </div>
         </nav>
 
@@ -492,41 +573,38 @@ export function HelpPage(_props: RouteComponentProps) {
                   <ShotColumn key={shot.name} shot={shot} startIndex={startIndex} showTitle={columns.length > 1} />
                 ))}
               </div>
-              {/* A tip is the part of a section a reader is least likely to already know, so it
-                  can't be set as the quietest text on the page — it gets a tinted card instead,
-                  read at the legend's own size and weight. The amber is `warning-text`, the same
-                  tone HeaderBanner and Settings already use for "worth knowing", rather than the
-                  markers' red: that red is annotation drawn *over* a screenshot, and letting it
-                  spread to the page's own furniture would stop it meaning that.
-                  One card per section, not per tip, so two tips don't repeat the icon.
-                  The padding is asymmetric on purpose: the icon already holds the text well clear
-                  of the left edge, while on the right nothing but the padding keeps a wrapped line
-                  off it. */}
-              {section.tips && (
-                <div className="flex items-start gap-2 rounded-field bg-warning-text/[.09] pl-2.5 pr-[18px] py-3 mt-4">
-                  <Lightbulb size={15} strokeWidth={1.75} className="flex-none mt-[2px] text-warning-text" />
-                  <div className="flex-1 min-w-0 flex flex-col gap-2 font-sans text-[13px] leading-[1.45] text-ink/75">
-                    {section.tips.map((tip) => (
-                      <p key={tip}>{withEmphasis(tip)}</p>
-                    ))}
-                  </div>
-                </div>
-              )}
-              {/* A section runs to several screens on a phone, so the way back to "On this page" —
-                  the only route to a different section — is a long swipe up from wherever the
-                  reader finished. Dimmer than the section's own text and set to the right margin,
-                  off the left edge every other line starts from, so it reads as the end of the
-                  section rather than as one more thing to read. */}
-              <button
-                className="flex items-center gap-1.5 ml-auto font-sans text-[12.5px] text-ink/40 hover:text-ink/70 mt-5 py-1"
-                onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
-              >
-                <ArrowUp size={13} strokeWidth={1.75} />
-                Back to top
-              </button>
+              {section.tips && <TipCard tips={section.tips} />}
+              <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />
             </section>
           );
         })}
+
+        {/* Written out here rather than driven from SECTIONS: it is the same section furniture
+            around two plain numbered lists instead of a picture and its legend. The numbers are
+            the page's own quiet ink, not the markers' red — nothing here is annotation over a
+            screenshot, and reusing that red would blunt what it means everywhere else. */}
+        <section id={anchorId(INSTALL_TITLE)} className="mb-10 scroll-mt-6">
+          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">
+            {INSTALL_TITLE}
+          </div>
+          <p className="font-serif text-[15px] leading-[1.55] text-ink/70 mb-4">{INSTALL_LEAD}</p>
+          <div className="flex flex-wrap gap-x-5 gap-y-7">
+            {INSTALL_PLATFORMS.map((platform) => (
+              <div key={platform.title} className="flex-1 min-w-[190px]">
+                <div className="font-sans text-[12px] font-semibold text-ink/70">{platform.title}</div>
+                <ol className="list-decimal mt-2 pl-[18px] flex flex-col gap-2 marker:font-sans marker:text-[12px] marker:text-ink/40 marker:tabular-nums">
+                  {platform.steps.map((step) => (
+                    <li key={step} className="font-sans text-[13px] leading-[1.45] text-ink/75 pl-1">
+                      {step}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            ))}
+          </div>
+          <TipCard tips={INSTALL_TIPS} />
+          <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />
+        </section>
       </div>
     </div>
   );
