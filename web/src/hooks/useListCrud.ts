@@ -1,20 +1,5 @@
-import { useCallback, useEffect, useRef, useState, type Dispatch, type KeyboardEvent, type SetStateAction } from 'react';
+import { useCallback, useRef, useState, type Dispatch, type KeyboardEvent, type SetStateAction } from 'react';
 import type { ListDef, ListKind } from '../lib/types';
-
-// How long the "can't delete, not empty" message stays up before auto-dismissing — long enough
-// to read ("'X' has 3 suttas — remove them first."), no manual dismiss button.
-const BLOCKED_DELETE_MS = 4000;
-
-// What's stopping a delete: a group with lists/groups still nested inside it, or a list with
-// suttas still in it. Either would discard content the confirmation prompt doesn't mention —
-// deleting a group takes every list nested under it with it (the cascade in lib/listTree.ts and
-// its server counterpart), and a list's `items` go with the list — so the row has to be emptied
-// first, or the delete armed past this block with a Shift+click on the bin icon (see ListRow).
-export interface BlockedDelete {
-  id: string;
-  count: number;
-  kind: 'items' | 'children';
-}
 
 interface UseListCrudParams {
   listChildrenOf: (parentId: string) => ListDef[];
@@ -34,7 +19,6 @@ interface UseListCrudParams {
 export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, createList, renameList, removeList, reorderLists, onCreated }: UseListCrudParams) {
   const [menuOpenId, setMenuOpenId] = useState<string | null>(null);
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
-  const [blockedDelete, setBlockedDelete] = useState<BlockedDelete | null>(null);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editDraft, setEditDraft] = useState('');
   // `undefined` = no draft input open; `null` = creating a top-level entry; a list id = creating
@@ -52,13 +36,6 @@ export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, cr
   // which parent — top-level vs. a specific group row — actually submitted).
   const [submittingParentId, setSubmittingParentId] = useState<string | null | undefined>(undefined);
   const listInput = useRef<HTMLInputElement | null>(null);
-  const blockedDeleteTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    return () => {
-      if (blockedDeleteTimer.current) clearTimeout(blockedDeleteTimer.current);
-    };
-  }, []);
 
   // Every handler below is useCallback'd (mirroring TreePane's own toggleExpanded — see its
   // comment) so ListRow's memoization isn't defeated by a freshly-allocated handler on every
@@ -89,37 +66,10 @@ export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, cr
     setEditingId(null);
   }, []);
 
-  const armBlockedDelete = useCallback((blocked: BlockedDelete) => {
-    if (blockedDeleteTimer.current) clearTimeout(blockedDeleteTimer.current);
-    setBlockedDelete(blocked);
-    blockedDeleteTimer.current = setTimeout(() => setBlockedDelete(null), BLOCKED_DELETE_MS);
+  const armDeleteList = useCallback((l: ListDef) => {
+    setMenuOpenId(null);
+    setConfirmDeleteId(l.id);
   }, []);
-
-  const armDeleteList = useCallback(
-    // `bypassBlock` is a Shift+click on the bin icon (ListRow) — skips straight to the normal
-    // delete confirmation even for a non-empty list/group, instead of the "remove them first"
-    // block below. Still requires that confirmation step; this only skips the block, not the
-    // confirm.
-    (l: ListDef, bypassBlock = false) => {
-      setMenuOpenId(null);
-      // A group can't hold suttas itself (see ListRow's comment on that), so it's blocked purely
-      // on having any nested lists/groups; a list is blocked purely on its own `items`.
-      if (!bypassBlock) {
-        if (l.kind === 'group') {
-          const childCount = listChildrenOf(l.id).length;
-          if (childCount > 0) {
-            armBlockedDelete({ id: l.id, count: childCount, kind: 'children' });
-            return;
-          }
-        } else if (l.items.length > 0) {
-          armBlockedDelete({ id: l.id, count: l.items.length, kind: 'items' });
-          return;
-        }
-      }
-      setConfirmDeleteId(l.id);
-    },
-    [listChildrenOf, armBlockedDelete]
-  );
 
   const cancelDeleteList = useCallback(() => {
     setConfirmDeleteId(null);
@@ -204,7 +154,6 @@ export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, cr
     menuOpenId,
     setMenuOpenId,
     confirmDeleteId,
-    blockedDelete,
     editingId,
     editDraft,
     setEditDraft,

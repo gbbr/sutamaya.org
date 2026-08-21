@@ -95,71 +95,13 @@ describe('useListCrud', () => {
     expect(removeList).not.toHaveBeenCalled();
   });
 
-  it('armDeleteList blocks a non-empty list instead of arming confirmation', () => {
+  it('armDeleteList arms confirmation for a non-empty list and a non-empty group alike', () => {
     const { result } = setup();
     act(() => result.current.armDeleteList({ id: 'x1', label: 'Nonempty', parentId: null, kind: 'list', items: ['a', 'b'] }));
-    expect(result.current.blockedDelete).toEqual({ id: 'x1', count: 2, kind: 'items' });
-    expect(result.current.confirmDeleteId).toBeNull();
-  });
-
-  it('armDeleteList blocks a non-empty group (by nested list/group count, not items)', () => {
-    const { result } = setup();
+    expect(result.current.confirmDeleteId).toBe('x1');
     // l1 has one child in the fixture list tree (l3, parentId: 'l1') — reused here as a group.
     act(() => result.current.armDeleteList({ ...lists[0], kind: 'group' }));
-    expect(result.current.blockedDelete).toEqual({ id: 'l1', count: 1, kind: 'children' });
-    expect(result.current.confirmDeleteId).toBeNull();
-  });
-
-  it('armDeleteList arms normal confirmation for an empty list/group', () => {
-    const { result } = setup();
-    act(() => result.current.armDeleteList(lists[1])); // l2: empty list, no children
-    expect(result.current.confirmDeleteId).toBe('l2');
-    expect(result.current.blockedDelete).toBeNull();
-  });
-
-  it('armDeleteList with bypassBlock skips the block and arms normal confirmation for a non-empty list', () => {
-    const { result } = setup();
-    act(() => result.current.armDeleteList({ id: 'x1', label: 'Nonempty', parentId: null, kind: 'list', items: ['a', 'b'] }, true));
-    expect(result.current.confirmDeleteId).toBe('x1');
-    expect(result.current.blockedDelete).toBeNull();
-  });
-
-  it('armDeleteList with bypassBlock skips the block and arms normal confirmation for a non-empty group', () => {
-    const { result } = setup();
-    act(() => result.current.armDeleteList({ ...lists[0], kind: 'group' }, true));
     expect(result.current.confirmDeleteId).toBe('l1');
-    expect(result.current.blockedDelete).toBeNull();
-  });
-
-  it('blockedDelete auto-dismisses after its timeout, with no manual dismiss control', () => {
-    vi.useFakeTimers();
-    try {
-      const { result } = setup();
-      act(() => result.current.armDeleteList({ id: 'x1', label: 'Nonempty', parentId: null, kind: 'list', items: ['a'] }));
-      expect(result.current.blockedDelete).not.toBeNull();
-      act(() => vi.advanceTimersByTime(3999));
-      expect(result.current.blockedDelete).not.toBeNull();
-      act(() => vi.advanceTimersByTime(1));
-      expect(result.current.blockedDelete).toBeNull();
-    } finally {
-      vi.useRealTimers();
-    }
-  });
-
-  it('re-arming a blocked delete resets its own timeout rather than stacking', () => {
-    vi.useFakeTimers();
-    try {
-      const { result } = setup();
-      act(() => result.current.armDeleteList({ id: 'x1', label: 'A', parentId: null, kind: 'list', items: ['a'] }));
-      act(() => vi.advanceTimersByTime(3000));
-      act(() => result.current.armDeleteList({ id: 'x2', label: 'B', parentId: null, kind: 'list', items: ['b'] }));
-      act(() => vi.advanceTimersByTime(3000)); // 3000+3000 > 4000, but the second arm restarted the clock
-      expect(result.current.blockedDelete).toEqual({ id: 'x2', count: 1, kind: 'items' });
-      act(() => vi.advanceTimersByTime(1000));
-      expect(result.current.blockedDelete).toBeNull();
-    } finally {
-      vi.useRealTimers();
-    }
   });
 
   it('addChildList expands the parent, opens a draft input scoped to it, and closes the menu', () => {

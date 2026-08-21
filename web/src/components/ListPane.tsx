@@ -1,5 +1,5 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { Check, ChevronLeft, GripVertical, List, MinusCircle, Pencil } from 'lucide-react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { ArrowUpDown, Check, ChevronLeft, GripVertical, List } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -10,26 +10,6 @@ import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
 import { SuttaRowChips } from './SuttaRowChips';
 import type { Sutta } from '../lib/types';
-
-// How long the "Removed … Undo" bar stays up after a removal. Removing a sutta from a list
-// destroys nothing but its position in that list, so this stands in for a confirmation step
-// rather than being added on top of one.
-const UNDO_WINDOW_MS = 7000;
-
-// How long the rows below a removed one take to slide up into the space it left. The removal
-// itself is immediate — this animates the rows that *stay*, which is what makes the change
-// legible without any of them being held on screen after the data says they're gone.
-const ROW_SHIFT_MS = 220;
-
-// How long after a removal the remove buttons stop responding. The rows below are sliding up
-// into the vacated space, so a tap during that would otherwise land on whichever row is passing
-// under the finger rather than the one that was there when it was pressed.
-const REMOVE_LOCK_MS = ROW_SHIFT_MS + 120;
-
-// A captured set of row positions goes stale if the removal it belongs to never lands (an
-// offline write that errors, a list that changed underneath). Past this, it's dropped rather than
-// replayed against some unrelated later change.
-const FLIP_CAPTURE_TTL_MS = 500;
 
 interface ListPaneProps {
   nodeId?: string;
@@ -53,7 +33,7 @@ interface ListPaneProps {
 
 export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, onOpen, visible = true }: ListPaneProps) {
   const { corpus } = useCorpus();
-  const { lists, membership, notes, highlights, visited, reorderListItems, toggleMembership } = useUserData();
+  const { lists, membership, notes, highlights, visited, reorderListItems } = useUserData();
   const { mobile } = useLayout();
   const scrollRef = useScrollMemory<HTMLDivElement>(`list:${query.trim() ? 'search' : nodeId || 'none'}`, visible);
   const itemRowRefs = useRef<Map<string, HTMLDivElement>>(new Map());
@@ -103,94 +83,17 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
   // target whenever the pointer sits inside the top/bottom edge band, so it also reorders
   // correctly if content scrolls under a stationary finger.
   const [dragOrder, setDragOrder] = useState<string[] | null>(null);
-  // Edit mode: the per-row drag handle *and* the remove button. Off by default — both take space
-  // every row would otherwise get, and putting removal behind an explicit mode is what keeps a
-  // stray tap while browsing from pulling a sutta out of a list (mirrors TreePane's own
-  // reorder-mode toggle for the list tree). Never offered for an auto list, whose membership is
-  // derived rather than stored — see the header toggle's `!currentList.auto` guard.
-  const [editMode, setEditMode] = useState(false);
+  // Off by default — the drag handles take up space every row would otherwise get, so they only
+  // show once explicitly requested via the header toggle (mirrors TreePane's own reorder-mode
+  // toggle for the list tree). Never offered for an auto list, whose membership is derived rather
+  // than stored — see the header toggle's `!currentList.auto` guard.
+  const [reorderMode, setReorderMode] = useState(false);
   const dragIdRef = useRef<string | null>(null);
   // Mirrors `dragOrder` so endDrag can read the live value. The window-level `onUp` listener
   // that calls endDrag is registered once, at drag-start, so the `endDrag` closure it holds is
   // fixed to that render — reading the `dragOrder` *state* there would see whatever it was back
   // at drag-start (null), not the live in-progress order; a ref isn't tied to any one render.
   const dragOrderRef = useRef<string[] | null>(null);
-
-  // The last removal, kept only long enough to offer an undo. `order` is the list's item order as
-  // it was *before* the removal: re-adding appends to the end (see queueMembership), so putting
-  // the row back where it was means replaying that order on top of the re-add.
-  type Undoable = { listId: string; suttaId: string; ref: string; order: string[] };
-  const [undone, setUndone] = useState<Undoable | null>(null);
-  const undoTimer = useRef<number | null>(null);
-
-  function armUndo(next: Undoable | null) {
-    if (undoTimer.current) window.clearTimeout(undoTimer.current);
-    undoTimer.current = next ? window.setTimeout(() => setUndone(null), UNDO_WINDOW_MS) : null;
-    setUndone(next);
-  }
-
-  // A deadline rather than a piece of state: the lock only ever gates the tap handler, so it has
-  // no business re-rendering the pane when it arms or lapses.
-  const removeLockedUntil = useRef(0);
-
-  // Where every mounted row sat just before a removal changed the list — the "First" half of a
-  // FLIP. The layout effect below reads it once the new rows are laid out, and animates
-  // each surviving row from where it was to where it now is. Viewport coordinates, not offsets
-  // within the scroll container, so a scroll adjustment the browser makes as the content shrinks
-  // is already accounted for in the delta.
-  const flipFrom = useRef<{ at: number; node: string | undefined; tops: Map<string, number> } | null>(null);
-
-  function captureRowPositions() {
-    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
-    const tops = new Map<string, number>();
-    for (const [id, el] of itemRowRefs.current) tops.set(id, el.getBoundingClientRect().top);
-    flipFrom.current = { at: performance.now(), node: nodeId, tops };
-  }
-
-  // Runs after every render that changed the rendered rows, but only does anything when a capture
-  // is waiting — i.e. when this render is the one applying a removal. Layout effect,
-  // not a plain one: the rows have to be moved back to their old positions before the browser
-  // gets a chance to paint them in their new ones.
-  useLayoutEffect(() => {
-    const capture = flipFrom.current;
-    flipFrom.current = null;
-    // A capture from another list (switched away within the TTL) describes rows that aren't on
-    // screen any more — those positions mean nothing here.
-    if (!capture || capture.node !== nodeId || performance.now() - capture.at > FLIP_CAPTURE_TTL_MS) return;
-    for (const [id, el] of itemRowRefs.current) {
-      const was = capture.tops.get(id);
-      if (was === undefined) continue;
-      const rect = el.getBoundingClientRect();
-      const dy = was - rect.top;
-      // Rows that didn't move (everything above the removal) and rows scrolled out of sight have
-      // nothing worth animating.
-      if (!dy || rect.bottom < 0 || rect.top > window.innerHeight) continue;
-      el.animate([{ transform: `translateY(${dy}px)` }, { transform: 'none' }], {
-        duration: ROW_SHIFT_MS,
-        easing: 'ease-out',
-      });
-    }
-    // `items`, not the drag's `displayItems`: a reorder drag shuffles rows every frame under the
-    // finger and must never be animated on top of.
-  }, [items]);
-
-  function onRemove(id: string, ref: string) {
-    if (!currentList || currentList.auto) return;
-    // Nothing for a beat after the last removal, while the rows are still moving — see
-    // REMOVE_LOCK_MS.
-    if (performance.now() < removeLockedUntil.current) return;
-    removeLockedUntil.current = performance.now() + REMOVE_LOCK_MS;
-    captureRowPositions();
-    armUndo({ listId: currentList.id, suttaId: id, ref, order: currentList.items.slice() });
-    void toggleMembership(id, currentList.id);
-  }
-
-  function onUndo() {
-    if (!undone) return;
-    const { listId, suttaId, order } = undone;
-    armUndo(null);
-    void toggleMembership(suttaId, listId).then(() => reorderListItems(listId, order));
-  }
 
   const displayItems: Array<[string, Sutta]> =
     dragOrder && corpus
@@ -250,9 +153,6 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
   // link or Prev/Next navigation while dragging), rather than leaving stale refs/rAF running.
   useEffect(() => {
     if (dragIdRef.current) endDrag();
-    // The undo offer belongs to the list it was made in — left up across a switch it would put a
-    // "Removed …" bar over a list that row was never in.
-    armUndo(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nodeId]);
 
@@ -263,7 +163,6 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
   useEffect(() => {
     return () => {
       if (dragIdRef.current) endDrag();
-      if (undoTimer.current) window.clearTimeout(undoTimer.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -297,7 +196,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
       <header className="flex-none flex items-center gap-3 px-5 pt-4 pb-3.5 border-b border-ink/10">
         {mobile && (
-          // Deliberately the same 28px round icon button as the edit toggle on the right, so the
+          // Deliberately the same 28px round icon button as the reorder toggle on the right, so the
           // header reads as icon / title / icon. The border and chip fill are what make it read
           // as a control at rest — an unfilled grey chevron doesn't — and match the pill toggle's
           // thumb in TreePane's header. The `after` pseudo-element pads the tap target out to
@@ -327,45 +226,20 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
             // On desktop there's no back button to pair with, and hover already tells you the
             // icon is a control, so it stays bare until pointed at.
             className={`flex-none w-[28px] h-[28px] rounded-full flex items-center justify-center ${
-              editMode
+              reorderMode
                 ? 'bg-accent2 text-[#FBFAF7]'
                 : mobile
                   ? 'border border-ink/[.12] bg-chip/40 text-ink/60 hover:text-ink active:bg-ink/[.08]'
                   : 'text-ink/45 hover:bg-ink/[.08] hover:text-ink'
             }`}
-            aria-label={editMode ? 'Done editing list' : 'Edit list'}
-            title={editMode ? 'Done editing list' : 'Edit list'}
-            onClick={() => setEditMode((m) => !m)}
+            aria-label={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
+            title={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
+            onClick={() => setReorderMode((m) => !m)}
           >
-            <Pencil size={13} strokeWidth={2} />
+            <ArrowUpDown size={13} strokeWidth={2} />
           </button>
         )}
       </header>
-      {/* The undo bar floats over the top of the rows rather than sitting in the flex column with
-          them: in flow it would push the whole list down ~44px on removal and back up when it
-          times out, shifting rows under the finger in the one mode where the next tap is likely
-          another remove button. The zero-height wrapper is what keeps it out of the flow — it
-          takes no space in the column, and the bar hangs off it just below the header. */}
-      {undone && (
-        <div className="relative flex-none h-0 z-10">
-          <div
-            className={`absolute left-0 right-0 top-0 flex items-center gap-3 px-5 py-3 border-b border-ink/10 shadow-popup animate-fadeUp font-sans text-[13px] text-ink/70 ${
-              mobile ? 'bg-paper' : 'bg-listpane'
-            }`}
-          >
-            <span className="flex-1 min-w-0 truncate">Removed {undone.ref}</span>
-            {/* Padded out to a real target — the negative margins keep the bar the same height,
-                and the `after` pseudo-element takes the tappable area past 44px without any of
-                that padding being visible. */}
-            <button
-              className="relative flex-none font-semibold text-accent-text px-2.5 py-1.5 -my-1.5 -mr-1 rounded hover:bg-accent-text/[.09] after:content-[''] after:absolute after:-inset-2"
-              onClick={onUndo}
-            >
-              Undo
-            </button>
-          </div>
-        </div>
-      )}
       <div
         ref={scrollRef}
         className="sc flex-1"
@@ -384,7 +258,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
           const note = notes[id];
           const { chips, hlCount } = rowMeta.get(id) ?? { chips: [], hlCount: 0 };
           const dragging = dragIdRef.current === id;
-          const editing = !!currentList && !currentList.auto && editMode;
+          const reordering = !!currentList && !currentList.auto && reorderMode;
           return (
             <div
               key={id}
@@ -396,7 +270,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
               style={dragging ? { opacity: 0.5 } : undefined}
             >
               <button
-                className={`block w-full text-left px-5 py-[13px] ${editing ? 'pl-12 pr-12' : ''} ${on ? 'bg-ink/[.05]' : ''}`}
+                className={`block w-full text-left px-5 py-[13px] ${reordering ? 'pr-12' : ''} ${on ? 'bg-ink/[.05]' : ''}`}
                 style={on ? { boxShadow: 'inset 2px 0 0 rgb(var(--accent2))' } : undefined}
                 onClick={() => onOpen(openTargets.get(id) ?? id)}
               >
@@ -419,17 +293,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                 )}
                 <SuttaRowChips chips={chips} hlCount={hlCount} />
               </button>
-              {editing && (
-                <button
-                  className="absolute left-0 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center text-danger-text/55 hover:text-danger-text"
-                  aria-label={`Remove ${s.ref} from this list`}
-                  title={`Remove ${s.ref} from this list`}
-                  onClick={() => onRemove(id, s.ref)}
-                >
-                  <MinusCircle size={17} strokeWidth={2} />
-                </button>
-              )}
-              {editing && (
+              {reordering && (
                 <span
                   className="absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded text-ink/40"
                   style={{

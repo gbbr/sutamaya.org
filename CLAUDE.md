@@ -219,5 +219,7 @@ started with.
   `dictionaryVersion`, `lib/offline.ts` records what a device last completed a full download at, and
   a mismatch surfaces an "Updated sutta text is available" banner plus a re-download action in
   Settings. Nothing helps someone who never bulk-downloaded; versioning those URLs is the real fix.
-- A non-empty list or group can only be deleted by first emptying it, or by Shift-clicking the bin
-  icon — which touch devices have no way to do.
+- Deleting a list or group is a single inline confirmation with no undo, and nothing stops a
+  non-empty one — a list's suttas and a group's whole nested subtree go with it. The prompt names
+  only the row itself; the row's own count badge is the sole indication of what's inside. Once
+  confirmed, the only recovery is a device that hasn't synced yet.

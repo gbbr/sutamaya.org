@@ -232,17 +232,15 @@ const SECTIONS: HelpSection[] = [
         marks: [
           [82.6, 4.7],
           [92.5, 32.2],
-          [5.8, 32.2],
         ],
         steps: [
           'Toggle the re-ordering of suttas within a list. Sort them by your own criteria.',
           'Drag the handle to move a sutta to a different position.',
-          'Remove it from the list.',
         ],
       },
     ],
-    note: 'Lists or groups can only be deleted if empty. However, holding the "Shift" button on a keyboard ' +
-      'will permit deleting even a non-empty row.',
+    note: 'Deleting a list takes the suttas in it with it, and deleting a group takes every list nested ' +
+      'inside it. There is one confirmation and no undo.',
   },
   {
     title: 'Lists while reading',
