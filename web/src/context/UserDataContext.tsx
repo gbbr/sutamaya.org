@@ -48,7 +48,7 @@ const FLUSH_DEBOUNCE_MS = 2000;
 // device that came back online without firing `online`.
 const FLUSH_POLL_MS = 5 * 60 * 1000;
 
-// What the sync indicator (TreePane, beside the account badge) shows. 'offline' takes priority
+// What the sync indicator (components/DataStatus.tsx, in TreePane's footer) shows. 'offline' takes priority
 // over everything else — the browser itself says there's no network, which already explains why
 // nothing is draining. 'stuck' is next: a queue the server has permanently refused is a different
 // problem than one merely waiting its turn, and silently retrying it forever is the exact failure
@@ -250,7 +250,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       // while a flush is out, and applyFlushOutcome only clears what was actually acknowledged.
       setState((s) => (s.userId === current.userId ? applyFlushOutcome(s, outcome) : s));
       setPaused(outcome.status === 'unauthorized');
-      // A genuine 401 pause is surfaced through `needsReauth` (see the sync indicator in TreePane)
+      // A genuine 401 pause is surfaced through `needsReauth` (see DataLocationRow and HeaderBanner)
       // rather than by calling promptGoogleSignIn() here directly — that navigates to Settings, and
       // firing it from a background flush would yank the reader away from whatever they were doing
       // for a session lapse they haven't even noticed yet. promptGoogleSignIn() is still the right
