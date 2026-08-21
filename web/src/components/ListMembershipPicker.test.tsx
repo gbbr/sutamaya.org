@@ -101,9 +101,9 @@ describe('ListMembershipPicker', () => {
     expect(toggleMembership).toHaveBeenCalledTimes(2);
   });
 
-  // Browse mode renders group rows purely as the structure the indentation is read against, so
-  // the arrow-key cursor has to step over them — landing on one would make Enter a no-op.
-  it('steps the keyboard cursor over group rows while browsing', async () => {
+  // Group rows are part of the keyboard walk in browse mode, because activating one collapses or
+  // expands its subtree.
+  it('collapses and expands a group from the keyboard while browsing', async () => {
     vi.mocked(useUserData).mockReturnValue({
       lists: [
         { id: 'g1', label: 'Study', parentId: null, kind: 'group', items: [] },
@@ -121,17 +121,22 @@ describe('ListMembershipPicker', () => {
     const input = screen.getByRole('textbox');
     input.focus();
 
-    // Rows are [Study (group), Satipatthana, Favorites] — the cursor starts on Satipatthana, not
-    // on the group above it.
-    await typist.keyboard('{Enter}');
+    // Rows are [Study (group), Satipatthana, Favorites], everything expanded on open.
+    await typist.keyboard('{ArrowDown}{Enter}');
     expect(toggleMembership).toHaveBeenLastCalledWith('dn1', 'l1');
 
     await typist.keyboard('{ArrowDown}{Enter}');
     expect(toggleMembership).toHaveBeenLastCalledWith('dn1', 'l2');
 
-    await typist.keyboard('{ArrowUp}{Enter}');
-    expect(toggleMembership).toHaveBeenLastCalledWith('dn1', 'l1');
-    expect(toggleMembership).toHaveBeenCalledTimes(3);
+    // Back onto the group. Enter there collapses it, taking its nested list off screen without
+    // touching membership; Enter again brings it back.
+    await typist.keyboard('{ArrowUp}{ArrowUp}{Enter}');
+    expect(screen.queryByText('Satipatthana')).toBeNull();
+    expect(screen.getByText('Favorites')).toBeTruthy();
+    expect(toggleMembership).toHaveBeenCalledTimes(2);
+
+    await typist.keyboard('{Enter}');
+    expect(screen.getByText('Satipatthana')).toBeTruthy();
   });
 
   // Search mode drops groups entirely and appends the create row, so Enter on the last row
