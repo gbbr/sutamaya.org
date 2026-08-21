@@ -22,7 +22,7 @@ gloss a term in his wording while the line above it uses ours.
 | atthaṅgama | disappearance | **disappearing** | The other half of that pair. |
 | vaya | vanishing | **passing away** | "Vanish" elsewhere means a being leaving a scene; this is impermanence. |
 | udayabbaya | rise and fall | **arising and passing away** | Matches the pair above, and Bhikkhu Sujato's own wording for the near-synonym *udayatthagāminī*. |
-| vipariṇāma + aññathābhāva | decays and perishes | **changes and is unstable** | Both Pali words mean change; neither means decay or death. |
+| vipariṇāma + aññathābhāva | decays and perishes | **changes and becomes otherwise** | Both Pali words mean change; neither means decay or death. |
 | vitakka / vicāra | placing the mind / keeping it connected | **thought / examination** | Reads them as thinking, which is what the words mean outside the jhāna formula too. |
 | yoniso manasikāra | rational application of mind | **proper attention** | *Yoniso* is "from the source", i.e. appropriately — not a claim about rationality. |
 | paṭisambhidā | textual analysis | **analytical knowledge** | The four *paṭisambhidās* are of meaning, text, terminology and eloquence — only the second is textual. |
@@ -46,5 +46,11 @@ different Pali terms would otherwise land on the same English word in one senten
 
 ## Seeing the changes
 
-Every rewrite is recorded in `data/diff/`, one file per rule, with the Pali of each line for
-context. `docs/retranslation.md` describes how the machinery works.
+Every rewrite is recorded in [`data/diff/`](../data/diff/), one file per rule, with the Pali of
+each line for context.
+
+For the nitty-gritty, every change on this page is declared in one file:
+[`scripts/update-data/retranslation.mjs`](../scripts/update-data/retranslation.mjs). Each rule
+there carries the reasoning for its own term — the dictionary glosses, what other translators use,
+which occurrences are deliberately left alone and why — in far more detail than this summary.
+[`docs/retranslation.md`](retranslation.md) describes how the machinery works.

@@ -38255,62 +38255,62 @@ Rule: mendicant-bhikkhu — 10991 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn25/sn25.10_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn25.10:1.2
  PLI: “Rūpaṁ, bhikkhave, aniccaṁ vipariṇāmi aññathābhāvi; 
--“Mendicants, form is impermanent, changing, and unstable. 
-+“Bhikkhus, form is impermanent, changing, and unstable. 
+-“Mendicants, form is impermanent, changing, and becoming otherwise. 
++“Bhikkhus, form is impermanent, changing, and becoming otherwise. 
 --- sujato/sutta/sn/sn25/sn25.1_translation-en-sujato.json
 +++ sujato/sutta/sn/sn25/sn25.1_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn25.1:1.2
  PLI: “Cakkhuṁ, bhikkhave, aniccaṁ vipariṇāmi aññathābhāvi; 
--“Mendicants, the eye is impermanent, changing, and unstable. 
-+“Bhikkhus, the eye is impermanent, changing, and unstable. 
+-“Mendicants, the eye is impermanent, changing, and becoming otherwise. 
++“Bhikkhus, the eye is impermanent, changing, and becoming otherwise. 
 --- sujato/sutta/sn/sn25/sn25.2_translation-en-sujato.json
 +++ sujato/sutta/sn/sn25/sn25.2_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn25.2:1.2
  PLI: “Rūpā, bhikkhave, aniccā vipariṇāmino aññathābhāvino; 
--“Mendicants, sights are impermanent, changing, and unstable. 
-+“Bhikkhus, sights are impermanent, changing, and unstable. 
+-“Mendicants, sights are impermanent, changing, and becoming otherwise. 
++“Bhikkhus, sights are impermanent, changing, and becoming otherwise. 
 --- sujato/sutta/sn/sn25/sn25.3_translation-en-sujato.json
 +++ sujato/sutta/sn/sn25/sn25.3_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn25.3:1.2
  PLI: “Cakkhuviññāṇaṁ, bhikkhave, aniccaṁ vipariṇāmi aññathābhāvi; 
--“Mendicants, eye consciousness is impermanent, changing, and unstable. 
-+“Bhikkhus, eye consciousness is impermanent, changing, and unstable. 
+-“Mendicants, eye consciousness is impermanent, changing, and becoming otherwise. 
++“Bhikkhus, eye consciousness is impermanent, changing, and becoming otherwise. 
 --- sujato/sutta/sn/sn25/sn25.4_translation-en-sujato.json
 +++ sujato/sutta/sn/sn25/sn25.4_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn25.4:1.2
  PLI: “Cakkhusamphasso, bhikkhave, anicco vipariṇāmī aññathābhāvī; 
--“Mendicants, eye contact is impermanent, changing, and unstable. 
-+“Bhikkhus, eye contact is impermanent, changing, and unstable. 
+-“Mendicants, eye contact is impermanent, changing, and becoming otherwise. 
++“Bhikkhus, eye contact is impermanent, changing, and becoming otherwise. 
 --- sujato/sutta/sn/sn25/sn25.5_translation-en-sujato.json
 +++ sujato/sutta/sn/sn25/sn25.5_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn25.5:1.2
  PLI: “Cakkhusamphassajā, bhikkhave, vedanā aniccā vipariṇāmī aññathābhāvī; 
--“Mendicants, feeling born of eye contact is impermanent, changing, and unstable. 
-+“Bhikkhus, feeling born of eye contact is impermanent, changing, and unstable. 
+-“Mendicants, feeling born of eye contact is impermanent, changing, and becoming otherwise. 
++“Bhikkhus, feeling born of eye contact is impermanent, changing, and becoming otherwise. 
 --- sujato/sutta/sn/sn25/sn25.6_translation-en-sujato.json
 +++ sujato/sutta/sn/sn25/sn25.6_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn25.6:1.2
  PLI: “Rūpasaññā, bhikkhave, aniccā vipariṇāmī aññathābhāvī; 
--“Mendicants, perception of sights is impermanent, changing, and unstable. 
-+“Bhikkhus, perception of sights is impermanent, changing, and unstable. 
+-“Mendicants, perception of sights is impermanent, changing, and becoming otherwise. 
++“Bhikkhus, perception of sights is impermanent, changing, and becoming otherwise. 
 --- sujato/sutta/sn/sn25/sn25.7_translation-en-sujato.json
 +++ sujato/sutta/sn/sn25/sn25.7_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn25.7:1.2
  PLI: “Rūpasañcetanā, bhikkhave, aniccā vipariṇāmī aññathābhāvī; 
--“Mendicants, intention regarding sights is impermanent, changing, and unstable. 
-+“Bhikkhus, intention regarding sights is impermanent, changing, and unstable. 
+-“Mendicants, intention regarding sights is impermanent, changing, and becoming otherwise. 
++“Bhikkhus, intention regarding sights is impermanent, changing, and becoming otherwise. 
 --- sujato/sutta/sn/sn25/sn25.8_translation-en-sujato.json
 +++ sujato/sutta/sn/sn25/sn25.8_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn25.8:1.2
  PLI: “Rūpataṇhā, bhikkhave, aniccā vipariṇāmī aññathābhāvī; 
--“Mendicants, craving for sights is impermanent, changing, and unstable. 
-+“Bhikkhus, craving for sights is impermanent, changing, and unstable. 
+-“Mendicants, craving for sights is impermanent, changing, and becoming otherwise. 
++“Bhikkhus, craving for sights is impermanent, changing, and becoming otherwise. 
 --- sujato/sutta/sn/sn25/sn25.9_translation-en-sujato.json
 +++ sujato/sutta/sn/sn25/sn25.9_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn25.9:1.2
  PLI: “Pathavīdhātu, bhikkhave, aniccā vipariṇāmī aññathābhāvī; 
--“Mendicants, the earth element is impermanent, changing, and unstable. 
-+“Bhikkhus, the earth element is impermanent, changing, and unstable. 
+-“Mendicants, the earth element is impermanent, changing, and becoming otherwise. 
++“Bhikkhus, the earth element is impermanent, changing, and becoming otherwise. 
 --- sujato/sutta/sn/sn26/sn26.10_translation-en-sujato.json
 +++ sujato/sutta/sn/sn26/sn26.10_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn26.10:1.2

@@ -19,7 +19,7 @@
 //                      sampajanna-clear-comprehension
 //   arising / passing   samudaya-arising, vaya-passing-away, atthangama-disappearing,
 //                      udayabbaya-arising-passing-away
-//   change / instability  viparinama-annathatta-change-unstable,
+//   change / alteration  viparinama-annathatta-change-unstable,
 //                      viparinama-anuparivatti-changing
 //   agitation          paritassati-agitated
 //   thought / examination  vitakka-vicara-thought-examination
@@ -249,12 +249,13 @@ export const RULES = [
       ['rise and fall', 'arising and passing away'],
     ],
   },
-  // ── Change and instability ──────────────────────────────────────────────────
+  // ── Change and alteration ───────────────────────────────────────────────────
   // vipariṇāma paired with aññathatta/aññathābhāva — the doublet AN 3.47 lists alongside uppāda
   // and vaya as the third mark of a conditioned phenomenon ("change while persisting"), which is
   // why this group sits next to arising / passing. The adjacency is doctrinal only: nothing above
-  // produces "decay" or "perish" and nothing below consumes the "change"/"unstable"/"changing"
-  // these rules write, so there is no same-word collision here and the position settles nothing.
+  // produces "decay" or "perish" and nothing below consumes the "change"/"otherwise"/"alteration"/
+  // "changing" these rules write, so there is no same-word collision here and the position
+  // settles nothing.
   //
   // Two rules, splitting the term by construction rather than by meaning. The first takes the
   // doublet wherever Bhikkhu Sujato writes it as a whole clause ("decays and perishes"); the second takes
@@ -265,11 +266,21 @@ export const RULES = [
   {
     id: 'viparinama-annathatta-change-unstable',
     why: 'Bhikkhu Sujato renders the vipariṇāma/aññathā doublet as "decays and perishes"; this app ' +
-      'prefers "changes and is unstable". Both Pali terms are change-words — vipariṇāma is ' +
+      'prefers "changes and becomes otherwise". Both Pali terms are change-words — vipariṇāma is ' +
       'transformation, aññathā-bhāva is becoming-otherwise — and neither carries the destruction ' +
       '"perish" implies; Bhikkhu Sujato himself renders aññathatta as "change" in 100 of its 112 ' +
       'segments ("change while persisting", AN 3.47), so this brings the doublet into line with ' +
-      'the rest of his own English. Open: every form here is a multi-word phrase that only this ' +
+      'the rest of his own English. ' +
+      'Aññathā-bhāva reads "becoming otherwise" wherever English will take a participle, which ' +
+      'is the DPD\'s own gloss for aññathābhāvī ("changing; altering; becoming otherwise") — as ' +
+      'a finite verb in 50 segments ("But that form changes and becomes otherwise"), and in ' +
+      'SN 25\'s list of adjectives in 36 ("form is impermanent, changing, and becoming ' +
+      'otherwise"). The nominal slot cannot take it, since a gerund will not stand where ' +
+      '"their decay and perishing give rise to sorrow" puts a noun, so those 4 segments read ' +
+      '"alteration" instead — the DPD\'s gloss for the compound vipariṇāmaññathābhāva, "change ' +
+      'and alteration (of)", and Bodhi\'s and Ñāṇamoli\'s rendering of it. One stem under two ' +
+      'renderings is the accepted cost of that. ' +
+      'Open: every form here is a multi-word phrase that only this ' +
       'doublet produces, so there is nothing to exclude — the bare words are another matter, ' +
       'which is why none of them is a form. "decay" alone is never this family (all 21 segments ' +
       'are pārijuñña/jarā, MN 82\'s four kinds of decay), and a bare "perish" is mostly ' +
@@ -280,25 +291,25 @@ export const RULES = [
       'the exception worth taking — there the compound sits two segments from this rule\'s own ' +
       'output — and they are viparinama-anuparivatti-changing\'s, below. That leaves dn1:3.21.5 ' +
       'as the one line where the two renderings land in adjacent sentences. ' +
-      'Shares "unstable" with adhuva (14 ' +
-      'segments, "Conditions are unstable", AN 7.66); the two are near-synonyms and no sutta ' +
-      'carries both renderings, so the overlap is accepted rather than worked around.',
+      'On the output side, "alteration" appears nowhere else in the retranslatable trees, and ' +
+      '"otherwise" appears in 83 segments as ordinary English ("not otherwise", "wished ' +
+      'otherwise") of which DN 1 is the only sutta this rule also rewrites — and DN 1\'s one ' +
+      'rewrite is fourteen sections away from its plain-English uses, so the two never meet on ' +
+      'a page.',
     mode: 'deny',
     predicate: /vipariṇ|vippariṇ|aññathatt|aññathābhāv/i,
     forms: [
-      // The doublet as a whole predicate, singular and plural.
-      ['decays and perishes', 'changes and is unstable'],
-      ['decay and perish', 'change and are unstable'],
-      // Same words, but a bare infinitive governed by "were to" — 9 segments across MN 87 and
-      // SN 21.2, where the finite plural above would give "were to change and are unstable".
-      // Carries the governing words so the slot is unambiguous, and wins by longest-first.
-      ['were to decay and perish', 'were to change and be unstable'],
+      // The doublet as a whole predicate, singular and plural. The plural doubles as the bare
+      // infinitive governed by "were to" — 9 segments across MN 87 and SN 21.2, where upstream
+      // also writes "decay and perish" — because "become" is already the form that slot wants.
+      ['decays and perishes', 'changes and becomes otherwise'],
+      ['decay and perish', 'change and become otherwise'],
       // The nominal slot: "their decay and perishing give rise to sorrow" (vipariṇāmaññathābhāvā).
-      ['decay and perishing', 'change and instability'],
+      ['decay and perishing', 'change and alteration'],
       // The adjectival slot, SN 25's formula (vipariṇāmī aññathābhāvī): "form is impermanent,
       // decaying, and perishing". One form covers both words — which is also what keeps the rule
       // off sn5.4:5.2's unrelated "decaying and frail", where there is no comma.
-      ['decaying, and perishing', 'changing, and unstable'],
+      ['decaying, and perishing', 'changing, and becoming otherwise'],
     ],
   },
   {
@@ -313,11 +324,11 @@ export const RULES = [
       '(of)", and Bodhi has "preoccupied with the change of form" where Ñāṇamoli/Bodhi have "the ' +
       'change of material form". So "perishing" is upstream\'s own outlier here, and without ' +
       'this rule MN 138 contradicts itself two segments apart: 20.4 already reads "But that form ' +
-      'changes and is unstable" from viparinama-annathatta-change-unstable, and 20.5 then said ' +
-      '"latches on to the perishing of form" for the same word. Renders it "changing" rather ' +
-      'than "instability" deliberately — "instability" is this app\'s word for the *other* half ' +
-      'of the doublet (aññathābhāva), so it would reintroduce one stem under two renderings, and ' +
-      'anuparivatti needs a process to trail rather than a property. Open, with an empty deny ' +
+      'changes and becomes otherwise" from viparinama-annathatta-change-unstable, and 20.5 then ' +
+      'said "latches on to the perishing of form" for the same word. Renders it "changing" — the ' +
+      'vipariṇāma half — rather than reaching for one of that rule\'s words for the aññathābhāva ' +
+      'half, since anuparivatti needs a process to trail rather than a property, and this is ' +
+      'the compound noun of vipariṇāma proper. Open, with an empty deny ' +
       'list: "perishing of" occurs in exactly these 16 segments corpus-wide, so the phrase is ' +
       'this construction and nothing else. Two forms rather than a bare "perishing", which is ' +
       'MN 137/SN 35.136–7\'s vipariṇāmavirāganirodha and SN 22.43\'s — all deliberately left to ' +
@@ -333,7 +344,7 @@ export const RULES = [
   },
   // ── Agitation ───────────────────────────────────────────────────────────────
   // paritassati, which MN 138 and SN 22.7 present as what grasping makes of vipariṇāma — hence
-  // the position after change and instability, whose second rule rewrites the very phrase this
+  // the position after change and alteration, whose second rule rewrites the very phrase this
   // one's segment overrides quote ("latching on to the changing of form"). The adjacency is
   // doctrinal only: this rule shares no word with any rule above or below, so the position
   // settles nothing — but the overrides below it do depend on that rule having already run,
