@@ -100,4 +100,63 @@ describe('ListMembershipPicker', () => {
     // left unguarded.
     expect(toggleMembership).toHaveBeenCalledTimes(2);
   });
+
+  // Browse mode renders group rows purely as the structure the indentation is read against, so
+  // the arrow-key cursor has to step over them — landing on one would make Enter a no-op.
+  it('steps the keyboard cursor over group rows while browsing', async () => {
+    vi.mocked(useUserData).mockReturnValue({
+      lists: [
+        { id: 'g1', label: 'Study', parentId: null, kind: 'group', items: [] },
+        { id: 'l1', label: 'Satipatthana', parentId: 'g1', kind: 'list', items: [] },
+        { id: 'l2', label: 'Favorites', parentId: null, kind: 'list', items: [] },
+      ],
+      membership: {},
+      toggleMembership,
+      addToList,
+      createList,
+    } as unknown as ReturnType<typeof useUserData>);
+    const typist = userEvent.setup();
+
+    render(<ListMembershipPicker suttaId="dn1" theme={theme} />);
+    const input = screen.getByRole('textbox');
+    input.focus();
+
+    // Rows are [Study (group), Satipatthana, Favorites] — the cursor starts on Satipatthana, not
+    // on the group above it.
+    await typist.keyboard('{Enter}');
+    expect(toggleMembership).toHaveBeenLastCalledWith('dn1', 'l1');
+
+    await typist.keyboard('{ArrowDown}{Enter}');
+    expect(toggleMembership).toHaveBeenLastCalledWith('dn1', 'l2');
+
+    await typist.keyboard('{ArrowUp}{Enter}');
+    expect(toggleMembership).toHaveBeenLastCalledWith('dn1', 'l1');
+    expect(toggleMembership).toHaveBeenCalledTimes(3);
+  });
+
+  // Search mode drops groups entirely and appends the create row, so Enter on the last row
+  // creates rather than toggling.
+  it('navigates search results and lands on the create row past the last match', async () => {
+    createList.mockResolvedValue({ id: 'l9', label: 'Sati', parentId: null, kind: 'list', items: [] });
+    vi.mocked(useUserData).mockReturnValue({
+      lists: [
+        { id: 'g1', label: 'Study', parentId: null, kind: 'group', items: [] },
+        { id: 'l1', label: 'Satipatthana', parentId: 'g1', kind: 'list', items: [] },
+      ],
+      membership: {},
+      toggleMembership,
+      addToList,
+      createList,
+    } as unknown as ReturnType<typeof useUserData>);
+    const typist = userEvent.setup();
+
+    render(<ListMembershipPicker suttaId="dn1" theme={theme} />);
+    await typist.type(screen.getByRole('textbox'), 'Sati');
+
+    // Rows are [Satipatthana, Create list "Sati"] — the group matched nothing of its own and is
+    // not a row here at all.
+    await typist.keyboard('{ArrowDown}{Enter}');
+    expect(createList).toHaveBeenCalledWith('Sati', null, 'list');
+    expect(toggleMembership).not.toHaveBeenCalled();
+  });
 });

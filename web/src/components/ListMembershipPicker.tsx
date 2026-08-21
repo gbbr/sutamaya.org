@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react';
-import { Check, ChevronDown, Folder, Plus } from 'lucide-react';
+import { Check, ChevronDown, Plus } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
 import { flattenListTree, type ListPathOption } from '../lib/lists';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits';
-import type { ListDef, ThemeColors } from '../lib/types';
+import type { ThemeColors } from '../lib/types';
 
 // Matches ListRow's own cap (see its MAX_INDENT_DEPTH) — nesting itself is unlimited, but the
 // indent stops growing past this depth so a deep tree can't squeeze row content off a narrow
@@ -19,26 +19,29 @@ interface ListMembershipPickerProps {
 }
 
 type Row =
+  // Browse mode only: a group can't hold a sutta, so it's here purely as the structure the
+  // indentation below it is read against — not selectable, not activatable.
+  | { type: 'group'; option: ListPathOption }
   | { type: 'list'; option: ListPathOption }
-  | { type: 'create-top-list'; name: string }
-  | { type: 'create-top-group'; name: string }
-  | { type: 'create-nested-list'; name: string; parentId: string; parentLabel: string }
-  | { type: 'create-nested-group'; name: string; parentId: string; parentLabel: string };
+  | { type: 'create'; name: string };
 
-// A single-input, multi-select "add to lists" widget: type to filter, Enter toggles membership
-// on the highlighted row without closing, Shift+Enter/Tab on a highlighted *group* row nests a
-// new list/group inside it, and "Group / New name" typed directly does the same without needing
-// the shortcut. Only a group can contain anything (see ListDef.kind in lib/types.ts), so a group
-// row never shows a membership checkmark (it can't hold this sutta itself) and tapping it nests
-// instead of toggling — which is also what makes the gesture reachable on touch, where the
-// keyboard shortcut isn't. Any typed name that isn't an exact existing match offers creating
-// either a list or a group with it, since which one the user wants isn't inferrable from the text
-// alone. Used by the reader's Lists tab.
+// An "add to lists" widget with two distinct modes in one popover, the way a label/folder picker
+// conventionally works:
+//
+//   empty input  -> browse: the whole list tree, indented by depth, groups included as structure.
+//   any input    -> search: a flat, ranked list of *lists only*, no indentation, each row naming
+//                   its parent path in dimmed text, plus a single "Create list" row at the end.
+//
+// Indentation and filtering are never mixed: an indented row in a filtered list has no parent
+// above it to be read against, so the path is spelled out instead. Groups drop out of the results
+// entirely — they can't hold this sutta, so a group row there would be an unselectable row in a
+// list whose whole purpose is selecting. Creating a *group*, or a list nested inside one, is the
+// Library tree's job (see ListRow's inline create); this picker only ever creates a top-level
+// list, which is the one thing it's open to do. Used by the reader's Lists tab.
 export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose }: ListMembershipPickerProps) {
   const { lists, membership, toggleMembership, addToList, createList } = useUserData();
   const [draft, setDraft] = useState('');
   const [activeIndex, setActiveIndex] = useState(0);
-  const [nestingParent, setNestingParent] = useState<ListDef | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   // Guards the create path against a double-tap (or a held Enter) while the POST is still out.
   // createList() dedupes by label against `lists`, which can't yet contain a list whose create
@@ -57,45 +60,35 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
   // chip that would 404 against the API.
   const suttaListIds = (membership[suttaId] || []).filter((id) => !AUTO_LIST_IDS.has(id));
   const flatAll = useMemo(() => flattenListTree(lists), [lists]);
-  const filtering = draft.trim().length > 0;
+  const query = draft.trim();
 
-  // Root ancestor per list, for the faded marker a filtered row carries. Walked from each list
-  // rather than split out of its breadcrumb string, since a label is free to contain " / " itself.
-  const rootLabelById = useMemo(() => {
+  // Ancestor chain per list, for the dimmed path a search result carries. Walked from each list
+  // rather than sliced off its breadcrumb string, since a label is free to contain " / " itself.
+  const parentPathById = useMemo(() => {
     const byId = new Map(lists.map((l) => [l.id, l]));
     const out = new Map<string, string>();
     for (const l of lists) {
-      let cur = l;
-      while (cur.parentId) {
-        const parent = byId.get(cur.parentId);
-        if (!parent) break;
-        cur = parent;
+      const parts: string[] = [];
+      let cur = l.parentId ? byId.get(l.parentId) : undefined;
+      while (cur) {
+        parts.unshift(cur.label);
+        cur = cur.parentId ? byId.get(cur.parentId) : undefined;
       }
-      out.set(l.id, cur.label);
+      out.set(l.id, parts.join(' / '));
     }
     return out;
   }, [lists]);
 
   const rows: Row[] = useMemo(() => {
-    if (nestingParent) {
-      const name = draft.trim().slice(0, LIST_NAME_MAX_LENGTH);
-      return name
-        ? [
-            { type: 'create-nested-list', name, parentId: nestingParent.id, parentLabel: nestingParent.label },
-            { type: 'create-nested-group', name, parentId: nestingParent.id, parentLabel: nestingParent.label },
-          ]
-        : [];
-    }
-    const q = draft.trim();
-    if (!q) {
-      // Browsing (nothing typed): float whole root-subtrees that contain a member to the top,
-      // so re-checking one you just added (to remove it, say) doesn't require typing its name
-      // again. Reordering only at the *root* level (not per-row) matters: flatAll is already in
-      // depth-first parent-then-children order, so a plain per-row partition by membership would
-      // pull a nested member list away from its own parent, floating it up alone with no visible
-      // parent above it — this instead keeps every subtree's internal order intact and only
-      // moves whole subtrees relative to each other. Array.sort is stable (ES2019+), so a
-      // same-root tie (return 0) always preserves that original relative order.
+    if (!query) {
+      // Browsing: float whole root-subtrees that contain a member to the top, so re-checking one
+      // you just added (to remove it, say) doesn't require typing its name again. Reordering only
+      // at the *root* level (not per-row) matters: flatAll is already in depth-first
+      // parent-then-children order, so a plain per-row partition by membership would pull a nested
+      // member list away from its own parent, floating it up alone with no visible parent above
+      // it — this instead keeps every subtree's internal order intact and only moves whole
+      // subtrees relative to each other. Array.sort is stable (ES2019+), so a same-root tie
+      // (return 0) always preserves that original relative order.
       const rootOf = new Map<string, string>();
       for (const f of flatAll) {
         rootOf.set(f.list.id, f.depth === 0 ? f.list.id : (rootOf.get(f.list.parentId!) ?? f.list.id));
@@ -110,57 +103,52 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
         if (aRoot === bRoot) return 0;
         return (rootHasMember.has(aRoot) ? 0 : 1) - (rootHasMember.has(bRoot) ? 0 : 1);
       });
-      return sorted.map((option) => ({ type: 'list' as const, option }));
+      return sorted.map((option) => ({ type: option.list.kind === 'group' ? ('group' as const) : ('list' as const), option }));
     }
-    // "Group / New name" — an explicit typed path to creating something nested, an alternative
-    // to the Shift+Enter/Tab gesture (which has no reliable touch equivalent). Only a group can
-    // be nested into, so the exact-match lookup is scoped to group rows — an exact match against
-    // a plain list's name still shows up in `listRows` below (for toggling its membership), it
-    // just doesn't offer a "create nested under it" row.
-    const slashIdx = q.lastIndexOf('/');
-    if (slashIdx !== -1) {
-      const parentQuery = q.slice(0, slashIdx).trim().toLowerCase();
-      const nameQuery = q.slice(slashIdx + 1).trim().slice(0, LIST_NAME_MAX_LENGTH);
-      if (parentQuery) {
-        const parentCandidates = flatAll.filter((f) => f.list.label.toLowerCase().includes(parentQuery));
-        const exactParent = flatAll.find((f) => f.list.kind === 'group' && f.list.label.toLowerCase() === parentQuery);
-        const listRows: Row[] = parentCandidates.map((option) => ({ type: 'list' as const, option }));
-        if (exactParent && nameQuery) {
-          return [
-            { type: 'create-nested-list', name: nameQuery, parentId: exactParent.list.id, parentLabel: exactParent.list.label },
-            { type: 'create-nested-group', name: nameQuery, parentId: exactParent.list.id, parentLabel: exactParent.list.label },
-            ...listRows,
-          ];
-        }
-        return listRows;
-      }
-    }
-    // Both existing matches AND the option to create a new list/group with this exact name are
-    // always shown together — a new one can legitimately be a substring (or superstring) of an
-    // existing name (e.g. typing "Te" when "Temp" already exists), so zero-vs-nonzero matches was
-    // the wrong signal for whether to offer creating one. createList() itself already dedupes an
-    // exact same-label-same-parent-same-kind create against an existing list/group.
-    const ql = q.toLowerCase();
-    const matches = flatAll.filter((f) => f.breadcrumb.toLowerCase().includes(ql));
-    const listRows: Row[] = matches.map((option) => ({ type: 'list' as const, option }));
-    const cappedName = q.slice(0, LIST_NAME_MAX_LENGTH);
-    return [...listRows, { type: 'create-top-list', name: cappedName }, { type: 'create-top-group', name: cappedName }];
-  }, [draft, flatAll, suttaListIds, nestingParent]);
+    // Matching the whole breadcrumb, not just the label, so typing a group's name still finds the
+    // lists inside it even though the group itself no longer appears as a row.
+    const ql = query.toLowerCase();
+    const order = new Map(flatAll.map((f, i) => [f.list.id, i]));
+    const matches = flatAll
+      .filter((f) => f.list.kind !== 'group' && f.breadcrumb.toLowerCase().includes(ql))
+      .sort((a, b) => {
+        // A hit on the list's own name outranks one that only matched somewhere in its path, then
+        // the shorter name (the closer the match is to being the whole name), then tree order.
+        const aName = a.list.label.toLowerCase().includes(ql) ? 0 : 1;
+        const bName = b.list.label.toLowerCase().includes(ql) ? 0 : 1;
+        return aName - bName || a.list.label.length - b.list.label.length || order.get(a.list.id)! - order.get(b.list.id)!;
+      });
+    // The create row is always offered, never only when nothing matched — a new list can
+    // legitimately be a substring (or superstring) of an existing name (e.g. typing "Te" when
+    // "Temp" already exists). createList() itself dedupes an exact same-label-same-parent create.
+    return [
+      ...matches.map((option) => ({ type: 'list' as const, option })),
+      { type: 'create' as const, name: query.slice(0, LIST_NAME_MAX_LENGTH) },
+    ];
+  }, [query, flatAll, suttaListIds]);
+
+  // Group rows are structure, not choices, so the keyboard cursor steps over them.
+  const selectable = useMemo(() => rows.map((r, i) => (r.type === 'group' ? -1 : i)).filter((i) => i >= 0), [rows]);
 
   useEffect(() => {
-    setActiveIndex(0);
-  }, [draft, nestingParent]);
+    setActiveIndex(selectable[0] ?? 0);
+    // Re-homing the cursor is about the *query* changing, not about `selectable`'s identity — it
+    // is rebuilt on every membership toggle too, and re-running then would yank the cursor back
+    // to the first row mid-checking.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [draft]);
 
-  const activeIdx = Math.min(activeIndex, Math.max(0, rows.length - 1));
+  const activeIdx = selectable.includes(activeIndex) ? activeIndex : (selectable[0] ?? -1);
+
+  function step(delta: number) {
+    const at = selectable.indexOf(activeIdx);
+    const next = Math.min(selectable.length - 1, Math.max(0, (at < 0 ? 0 : at) + delta));
+    setActiveIndex(selectable[next] ?? 0);
+  }
 
   async function activateRow(row: Row) {
+    if (row.type === 'group') return;
     if (row.type === 'list') {
-      // A group can't hold this sutta itself — the only useful click on a group row is drilling
-      // into it to create something inside, same as its own "+" button.
-      if (row.option.list.kind === 'group') {
-        enterNestingMode(row.option.list);
-        return;
-      }
       toggleMembership(suttaId, row.option.list.id);
       return;
     }
@@ -169,12 +157,9 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
     // legitimate on-then-off, not something to swallow.
     if (creatingRef.current) return;
     creatingRef.current = true;
-    const isGroup = row.type === 'create-top-group' || row.type === 'create-nested-group';
-    const parentId = row.type === 'create-nested-list' || row.type === 'create-nested-group' ? row.parentId : null;
     try {
-      const list = await createList(row.name, parentId, isGroup ? 'group' : 'list');
-      // A freshly created group can't hold the sutta — nothing to add it to.
-      if (!isGroup) await addToList(suttaId, list);
+      const list = await createList(row.name, null, 'list');
+      await addToList(suttaId, list);
     } catch (e) {
       // Both write to the local mirror and can't fail on the network, so this only catches
       // something genuinely unexpected — enough to release the re-entrancy guard below.
@@ -183,42 +168,25 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       creatingRef.current = false;
     }
     setDraft('');
-    setNestingParent(null);
-  }
-
-  function enterNestingMode(list: ListDef) {
-    setNestingParent(list);
-    setDraft('');
-    inputRef.current?.focus();
   }
 
   function onKeyDown(e: KeyboardEvent<HTMLInputElement>) {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
-      setActiveIndex((i) => Math.min(rows.length - 1, i + 1));
+      step(1);
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
-      setActiveIndex((i) => Math.max(0, i - 1));
-    } else if (e.key === 'Tab' || (e.key === 'Enter' && e.shiftKey)) {
-      const row = rows[activeIdx];
-      if (row && row.type === 'list' && row.option.list.kind === 'group' && !nestingParent) {
-        e.preventDefault();
-        enterNestingMode(row.option.list);
-      }
+      step(-1);
     } else if (e.key === 'Enter') {
       e.preventDefault();
       const row = rows[activeIdx];
       if (row) activateRow(row);
-    } else if (e.key === 'Backspace' && draft === '' && nestingParent) {
-      e.preventDefault();
-      setNestingParent(null);
     } else if (e.key === 'Escape') {
       // Stops here (doesn't bubble to the reader's own window-level Escape handler — see
-      // ReaderPage) so a first Escape clearing nesting/draft doesn't also skip straight to
-      // closing the whole panel in the same keypress.
+      // ReaderPage) so a first Escape clearing the draft doesn't also skip straight to closing
+      // the whole panel in the same keypress.
       e.stopPropagation();
-      if (nestingParent) setNestingParent(null);
-      else if (draft) setDraft('');
+      if (draft) setDraft('');
       else onRequestClose?.();
     }
   }
@@ -232,16 +200,6 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
 
   return (
     <div data-component="ListMembershipPicker">
-      {nestingParent && (
-        <div className="flex items-center gap-1.5 mb-1.5 font-sans text-[11.5px]" style={{ color: theme.fg, opacity: 0.65 }}>
-          <span>
-            New list or group inside <strong>{nestingParent.label}</strong>
-          </span>
-          <button className="opacity-70 hover:opacity-100" title="Cancel" onClick={() => setNestingParent(null)}>
-            ×
-          </button>
-        </div>
-      )}
       {/* text-base, not the 14.5px the rows use: iOS Safari zooms the page when a font-size under
           16px takes focus, and web/index.html deliberately leaves pinch-zoom enabled. */}
       <input
@@ -249,7 +207,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
         value={draft}
         onChange={(e) => setDraft(e.target.value)}
         onKeyDown={onKeyDown}
-        placeholder={nestingParent ? 'Name — return to create' : 'Search or create — "Group / New" to nest'}
+        placeholder="Search or create a list"
         className="w-full h-[38px] rounded-field px-3 text-base outline-none"
         style={{ border: `1px solid ${theme.pali}`, background: theme.bg, color: theme.fg }}
         autoComplete="off"
@@ -260,92 +218,96 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       <div className="mt-1.5">
         {rows.map((row, idx) => {
           const active = idx === activeIdx;
-          if (row.type === 'create-top-list' || row.type === 'create-nested-list') {
-            const label = row.type === 'create-nested-list' ? `Create list "${row.name}" inside ${row.parentLabel}` : `Create list "${row.name}"`;
+          if (row.type === 'create') {
             return (
               <button
-                key={row.type}
+                key="create"
                 className="flex w-full items-center gap-2 px-2 py-[6px] text-left text-[14.5px]"
-                style={rowStyle(active)}
+                style={{ ...rowStyle(active), borderTop: `1px solid ${theme.rule}`, borderRadius: 0, marginTop: 4, paddingTop: 10 }}
                 onMouseEnter={() => setActiveIndex(idx)}
                 onClick={() => activateRow(row)}
               >
                 <Plus size={13} strokeWidth={2} className="flex-none opacity-60" />
-                {label}
-              </button>
-            );
-          }
-          if (row.type === 'create-top-group' || row.type === 'create-nested-group') {
-            const label = row.type === 'create-nested-group' ? `Create group "${row.name}" inside ${row.parentLabel}` : `Create group "${row.name}"`;
-            return (
-              <button
-                key={row.type}
-                className="flex w-full items-center gap-2 px-2 py-[6px] text-left text-[14.5px]"
-                style={rowStyle(active)}
-                onMouseEnter={() => setActiveIndex(idx)}
-                onClick={() => activateRow(row)}
-              >
-                <Folder size={13} strokeWidth={2} className="flex-none opacity-60" />
-                {label}
+                <span className="min-w-0 truncate">Create list “{row.name}”</span>
               </button>
             );
           }
           const { list, depth } = row.option;
-          const isGroup = list.kind === 'group';
-          const checked = !isGroup && suttaListIds.includes(list.id);
+          if (row.type === 'group') {
+            return (
+              <div
+                key={list.id}
+                className="flex items-center gap-2 py-[6px] pr-2 text-[14.5px]"
+                style={{ paddingLeft: 8 + Math.min(depth, MAX_INDENT_DEPTH) * 14 }}
+              >
+                {/* Rows here are always flattened/already "expanded" (see flattenListTree) — this
+                    chevron is a static indicator that the row is a group (matching the tree pane's
+                    own groups, which show a chevron instead of a folder icon), not an
+                    expand/collapse toggle. */}
+                <ChevronDown size={14} strokeWidth={2} className="flex-none opacity-50" style={{ color: theme.fg }} />
+                <span className="min-w-0 truncate" style={{ opacity: 0.65 }}>
+                  {list.label}
+                </span>
+              </div>
+            );
+          }
+          const checked = suttaListIds.includes(list.id);
+          const parentPath = parentPathById.get(list.id) ?? '';
           return (
             <div
               key={list.id}
               className="flex items-center"
-              style={{ ...rowStyle(active), paddingLeft: 8 + Math.min(depth, MAX_INDENT_DEPTH) * 14 }}
+              style={{ ...rowStyle(active), paddingLeft: query ? 8 : 8 + Math.min(depth, MAX_INDENT_DEPTH) * 14 }}
               onMouseEnter={() => setActiveIndex(idx)}
             >
               <button className="flex flex-1 min-w-0 items-center gap-2 py-[6px] pr-2 text-left" onClick={() => activateRow(row)}>
-                {isGroup ? (
-                  // Rows here are always flattened/already "expanded" (see flattenListTree) —
-                  // this chevron is a static, non-interactive indicator that the row is a group
-                  // (matching the tree pane's own groups, which show a chevron instead of a
-                  // folder icon), not an actual expand/collapse toggle.
-                  <ChevronDown size={14} strokeWidth={2} className="flex-none opacity-50" style={{ color: theme.fg }} />
-                ) : (
-                  // Checked fills with the theme's accent rather than with full-strength `fg`,
-                  // matching every other selected state in the reader's panel; unchecked draws in
-                  // `dim` rather than `fg`, which at 16px read as a heavier mark than the name
-                  // beside it.
+                {/* Checked fills with the theme's accent rather than with full-strength `fg`,
+                    matching every other selected state in the reader's panel; unchecked draws in
+                    `dim` rather than `fg`, which at 16px read as a heavier mark than the name
+                    beside it. */}
+                <span
+                  className="flex-none w-[16px] h-[16px] rounded-[5px] flex items-center justify-center"
+                  style={{
+                    border: `1px solid ${checked ? theme.pali : theme.dim}`,
+                    background: checked ? theme.pali : 'transparent',
+                  }}
+                >
+                  {checked && <Check size={11} strokeWidth={3} color={theme.bg} />}
+                </span>
+                <MatchedLabel label={list.label} query={query} />
+                {/* Search results are flat, so a nested list names its ancestors here instead of
+                    being indented under them. `direction: rtl` puts the ellipsis at the *start*,
+                    so a long path loses its root rather than the parent nearest this list; the
+                    leading LRM keeps a path starting with a digit or punctuation from being
+                    reordered by that. */}
+                {query && parentPath && (
                   <span
-                    className="flex-none w-[16px] h-[16px] rounded-[5px] flex items-center justify-center"
-                    style={{
-                      border: `1px solid ${checked ? theme.pali : theme.dim}`,
-                      background: checked ? theme.pali : 'transparent',
-                    }}
+                    className="ml-auto min-w-0 truncate font-sans text-[11.5px] opacity-50"
+                    style={{ direction: 'rtl', textAlign: 'right' }}
                   >
-                    {checked && <Check size={11} strokeWidth={3} color={theme.bg} />}
+                    {'‎' + parentPath}
                   </span>
-                )}
-                {/* The bare name, never the "Parent / Child" breadcrumb the option also carries: a
-                    nested list's path is long enough that the name — the only part that identifies
-                    the row — ends up entirely behind the ellipsis. Browsing loses nothing by it
-                    (rows are the whole tree in depth-first order, each indented by its depth, so
-                    the parent chain is on screen above). */}
-                <span className="min-w-0 truncate text-[14.5px]">{list.label}</span>
-                {/* Filtered results are scattered matches with no parent rows around them to read
-                    the indentation against, so a nested one names the top of its tree — enough to
-                    tell two same-named lists apart without spending the width a full path would.
-                    Sized and faded to read as a marker rather than as part of the name, and capped
-                    so it can never be the reason the name itself truncates. */}
-                {filtering && depth > 0 && (
-                  <span className="ml-auto flex-none max-w-[45%] truncate font-sans text-[11.5px] opacity-50">{rootLabelById.get(list.id)}</span>
                 )}
               </button>
             </div>
           );
         })}
-        {rows.length === 0 && nestingParent && (
-          <div className="font-sans text-[12.5px] px-2 py-1.5" style={{ opacity: 0.5 }}>
-            Type a name to create it inside {nestingParent.label}.
-          </div>
-        )}
       </div>
     </div>
+  );
+}
+
+// The matched run in bold, so a result explains why it's a result. Only the first occurrence and
+// only in the name: a match that landed in the parent path instead is already accounted for by
+// the path shown beside it.
+function MatchedLabel({ label, query }: { label: string; query: string }) {
+  const at = query ? label.toLowerCase().indexOf(query.toLowerCase()) : -1;
+  if (at < 0) return <span className="min-w-0 truncate text-[14.5px]">{label}</span>;
+  return (
+    <span className="min-w-0 truncate text-[14.5px]">
+      {label.slice(0, at)}
+      <strong className="font-semibold">{label.slice(at, at + query.length)}</strong>
+      {label.slice(at + query.length)}
+    </span>
   );
 }
