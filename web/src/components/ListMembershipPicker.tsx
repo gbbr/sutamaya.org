@@ -40,7 +40,7 @@ type Row =
 // Library tree's job (see ListRow's inline create); this picker only ever creates a top-level
 // list, which is the one thing it's open to do. Used by the reader's Lists tab.
 export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose }: ListMembershipPickerProps) {
-  const { lists, membership, toggleMembership, addToList, createList } = useUserData();
+  const { ready, lists, membership, toggleMembership, addToList, createList } = useUserData();
   const [draft, setDraft] = useState('');
   const [activeIndex, setActiveIndex] = useState(0);
   // Collapsed groups, by id. Starts empty on every open — the picker is mounted fresh each time,
@@ -65,6 +65,15 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
   // add/remove items against), so they're excluded here rather than rendered as a toggleable
   // chip that would 404 against the API.
   const suttaListIds = (membership[suttaId] || []).filter((id) => !AUTO_LIST_IDS.has(id));
+  // Membership as it stood when the picker opened, which is what the browse ordering below sorts
+  // by. Sorting by *live* membership would re-rank the rows on every toggle, throwing the row
+  // just tapped (and everything under it) somewhere else while the pointer is still on it — so
+  // the order is frozen and only the checkmarks follow live membership. Snapshotted during
+  // render rather than in an effect, so the first paint is already in its final order; keyed on
+  // `ready` so a picker that opens before the mirror has loaded doesn't freeze an empty set, and
+  // on `suttaId` so it re-snapshots if a host ever reuses this component across suttas.
+  const [openMembership, setOpenMembership] = useState<{ key: string | null; ids: Set<string> }>({ key: null, ids: new Set() });
+  if (ready && openMembership.key !== suttaId) setOpenMembership({ key: suttaId, ids: new Set(suttaListIds) });
   const flatAll = useMemo(() => flattenListTree(lists), [lists]);
   const query = draft.trim();
 
@@ -87,8 +96,9 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
 
   const rows: Row[] = useMemo(() => {
     if (!query) {
-      // Browsing: float whole root-subtrees that contain a member to the top, so re-checking one
-      // you just added (to remove it, say) doesn't require typing its name again. Reordering only
+      // Browsing: float whole root-subtrees that contained a member when the picker opened to the
+      // top, so re-checking one you just added (to remove it, say) doesn't require typing its
+      // name again — see `openMembership` above for why it's the snapshot. Reordering only
       // at the *root* level (not per-row) matters: flatAll is already in depth-first
       // parent-then-children order, so a plain per-row partition by membership would pull a nested
       // member list away from its own parent, floating it up alone with no visible parent above
@@ -101,7 +111,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       }
       const rootHasMember = new Set<string>();
       for (const f of flatAll) {
-        if (suttaListIds.includes(f.list.id)) rootHasMember.add(rootOf.get(f.list.id)!);
+        if (openMembership.ids.has(f.list.id)) rootHasMember.add(rootOf.get(f.list.id)!);
       }
       const sorted = [...flatAll].sort((a, b) => {
         const aRoot = rootOf.get(a.list.id)!;
@@ -141,7 +151,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       ...matches.map((option) => ({ type: 'list' as const, option })),
       { type: 'create' as const, name: query.slice(0, LIST_NAME_MAX_LENGTH) },
     ];
-  }, [query, flatAll, suttaListIds, collapsed]);
+  }, [query, flatAll, openMembership.ids, collapsed]);
 
   useEffect(() => {
     setActiveIndex(0);
@@ -180,6 +190,11 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
     try {
       const list = await createList(row.name, null, 'list');
       await addToList(suttaId, list);
+      // Creating is the one action that *does* re-rank the rows: clearing the key makes the next
+      // render re-snapshot from live membership, so the list just created floats to the top with
+      // the rest. The view is being rebuilt from search back to browse anyway, so there's no row
+      // under the pointer to yank away.
+      setOpenMembership({ key: null, ids: new Set() });
     } catch (e) {
       // Both write to the local mirror and can't fail on the network, so this only catches
       // something genuinely unexpected — enough to release the re-entrancy guard below.
