@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef } from 'react';
 import { Trash2, X } from 'lucide-react';
-import { HIGHLIGHT_COLORS } from '../lib/theme';
+import { HIGHLIGHT_COLORS, highlightPaint } from '../lib/theme';
 import { getUiScale } from '../lib/uiPrefs';
 import type { ThemeColors } from '../lib/types';
 import type { PopState } from '../hooks/useHighlightPopup';
@@ -21,10 +21,11 @@ interface HighlightPopupProps {
 // both them and the panel behind, which no single color does — dark's cream `fg` sinks into the
 // pastel, an ink rim sinks into dark's brown panel. Held off the swatch, the ring only ever has the
 // panel to clear, so `fg` reads in all three themes.
-// The ring is `dim`, not the full-strength `fg`: the gap is what separates it from the swatch, so
-// the ring only has to stay legible against the panel, and at full strength it read louder than the
-// "Remove" label beside it (drawn at 65%) in every theme.
-const selectedRing = (theme: ThemeColors) => `0 0 0 1px ${theme.panel}, 0 0 0 2px ${theme.dim}`;
+// Every swatch carries a hairline; the applied one's is brought up from `rule` to `dim`. That works
+// because a swatch is painted in its theme's own fill (highlightPaint), so it always contrasts with
+// the panel it sits on and a line between the two is visible in any theme. `dim` rather than `fg`
+// keeps it from reading louder than the "Remove" label beside it, drawn at 65%.
+const swatchBorder = (theme: ThemeColors, selected: boolean) => (selected ? theme.dim : theme.rule);
 
 export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, onStop }: HighlightPopupProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -88,7 +89,7 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
             >
               <span
                 className="w-[26px] h-[26px] rounded-full border"
-                style={{ background: c, borderColor: 'rgba(0,0,0,.22)', boxShadow: pop.on === c ? selectedRing(theme) : undefined }}
+                style={{ background: highlightPaint(c, theme), borderColor: swatchBorder(theme, pop.on === c) }}
               />
             </button>
           ))}
@@ -133,7 +134,7 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
         <button
           key={c}
           className="w-5 h-5 rounded-full border"
-          style={{ background: c, borderColor: 'rgba(0,0,0,.22)', boxShadow: pop.on === c ? selectedRing(theme) : undefined }}
+          style={{ background: highlightPaint(c, theme), borderColor: swatchBorder(theme, pop.on === c) }}
           onClick={(e) => {
             e.stopPropagation();
             onPick(c);
