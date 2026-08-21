@@ -205,7 +205,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
   const readCount = items.filter(([id]) => visited[id]).length;
   const meta = searching
     ? hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ results` : `${hits.length} ${hits.length === 1 ? 'result' : 'results'}`
-    : `${items.length} suttas · ${readCount} read`;
+    : `${items.length} sutta${items.length === 1 ? '' : 's'} · ${readCount} read`;
 
   return (
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
