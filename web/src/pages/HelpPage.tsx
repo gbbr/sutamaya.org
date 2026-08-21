@@ -115,12 +115,14 @@ const SECTIONS: HelpSection[] = [
         name: 'library-items-mobile.webp',
         title: 'Inside a book',
         marks: [
-          [15.4, 2.6],
-          [84.1, 16.0],
+          [4.4, 2.5],
+          [48.4, 21.3],
+          [82.4, 12.0],
         ],
         steps: [
-          'Back to the collections.',
-          'A tick marks that you have already spent time here. Tap any row to start reading.',
+          'Go back.',
+          'Click a sutta to open it. A tick next to its title means you\'ve spent some time on it.',
+          'Add this sutta to a list.',
         ],
       },
     ],
@@ -261,14 +263,14 @@ const SECTIONS: HelpSection[] = [
         name: 'reader-chips-mobile.webp',
         title: 'Where it already is',
         marks: [
-          [22.7, 82.9],
-          [55.9, 10.4],
+          [36.7, 10.9],
+          [91.9, 65.5],
+          [21.6, 68.7],
         ],
         steps: [
-          'Lists this sutta is part of and number of highlights. Click a list ' +
-            'to navigate to it. Click the highlight count to open the Highlights side panel.',
-          'If you\'ve opened this sutta from a list, it is displayed here. Navigating to the next or previous ' +
-            'sutta will be within that list.',
+          'The current list you are in. Navigating back and forth between suttas will be within this list (see tip below).',
+          'Open the list picker.',
+          'Number of highlights on page. Click it to open the highlight panel.',
         ],
       },
       {
@@ -276,16 +278,14 @@ const SECTIONS: HelpSection[] = [
         name: 'lists-tab-mobile.webp',
         title: 'The Lists tab',
         marks: [
-          [21.1, 11.0],
-          [30.7, 16.0],
-          [45.7, 27.9],
-          [50.7, 31.8],
+          [23.3, 10.7],
+          [47.0, 17.4],
+          [47.6, 24.6],
         ],
         steps: [
-          'Type the nameo of a list or group that you\'d like to add this sutta too. Press Enter to toggle its membership.',
-          'Click a group to create another list or group within it.',
+          'Search for a list or create a new one.',
+          'Select a list to toggle its membership.',
           'Create a new list with that name.',
-          'Create a new group with that name.',
         ],
       },
     ],
