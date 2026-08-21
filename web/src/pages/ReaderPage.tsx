@@ -439,6 +439,11 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
                 setTab('highlights');
                 setPanel(true);
               }}
+              onAddToList={(e) => {
+                e.stopPropagation();
+                setTab('lists');
+                setPanel(true);
+              }}
             />
           </div>
           <div style={{ height: 1, background: theme.rule, margin: '20px 0 22px' }} />

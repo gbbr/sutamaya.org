@@ -200,22 +200,33 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
 
   return (
     <div data-component="ListMembershipPicker">
-      {/* text-base, not the 14.5px the rows use: iOS Safari zooms the page when a font-size under
-          16px takes focus, and web/index.html deliberately leaves pinch-zoom enabled. */}
-      <input
-        ref={inputRef}
-        value={draft}
-        onChange={(e) => setDraft(e.target.value)}
-        onKeyDown={onKeyDown}
-        placeholder="Search or create a list"
-        className="w-full h-[38px] rounded-field px-3 text-base outline-none"
-        style={{ border: `1px solid ${theme.pali}`, background: theme.bg, color: theme.fg }}
-        autoComplete="off"
-        autoCorrect="off"
-        autoCapitalize="off"
-        spellCheck={false}
-      />
-      <div className="mt-1.5">
+      {/* Pinned, so it stays put once the rows below it scroll — the conventional shape for a
+          picker like this, and the one the keyboard needs: focus stays in the input while
+          ArrowUp/Down walks the rows, so letting it scroll out of view hides the control the user
+          is actually driving. `theme.panel` (not `theme.bg`, which the input itself uses) is
+          whatever surface this picker was dropped onto — the reader's panel, the Library's
+          popover — so rows pass underneath it rather than showing through. */}
+      <div className="sticky top-0 z-10 pb-1.5" style={{ background: theme.panel }}>
+        {/* Matches the rows' own 14.5px, so the input doesn't read as a heavier element than the
+            list it filters — except on a touch pointer, where it goes back to 16px: iOS Safari
+            zooms the whole page when an input with a smaller font takes focus, and
+            web/index.html deliberately leaves pinch-zoom enabled, so the usual `maximum-scale`
+            escape isn't open to us. The 16px only ever applies where that zoom is a risk. */}
+        <input
+          ref={inputRef}
+          value={draft}
+          onChange={(e) => setDraft(e.target.value)}
+          onKeyDown={onKeyDown}
+          placeholder="Search or create a list"
+          className="w-full h-[34px] rounded-field px-3 text-[14.5px] [@media(pointer:coarse)]:text-base outline-none"
+          style={{ border: `1px solid ${theme.pali}`, background: theme.bg, color: theme.fg }}
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck={false}
+        />
+      </div>
+      <div>
         {rows.map((row, idx) => {
           const active = idx === activeIdx;
           if (row.type === 'create') {
