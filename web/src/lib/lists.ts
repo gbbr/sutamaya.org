@@ -40,6 +40,11 @@ export function resolveListById(id: string, flatTree: ListPathOption[]): ListPat
 
 export interface SuttaRowChip {
   id: string;
+  // A chip shows the list's own name, not its full path: the leaf is what the user named and what
+  // identifies the list to them, the hierarchy is what the tree is for, and a nested path turns a
+  // row of chips into a wall of text. `breadcrumb` rides along as the hover title, so a desktop
+  // reader can still tell apart two lists that share a name under different parents.
+  label: string;
   breadcrumb: string;
 }
 
@@ -61,7 +66,10 @@ export function suttaRowMeta(ids: Iterable<string>, membership: Membership, high
   for (const id of ids) {
     const chips = (membership[id] || [])
       .filter((c) => !AUTO_LIST_IDS.has(c))
-      .map((c) => ({ id: c, breadcrumb: resolveListById(c, flatLists).breadcrumb }))
+      .map((c) => {
+        const { list, breadcrumb } = resolveListById(c, flatLists);
+        return { id: c, label: list?.label ?? breadcrumb, breadcrumb };
+      })
       .sort((a, b) => (listOrder.get(a.id) ?? Infinity) - (listOrder.get(b.id) ?? Infinity));
     map.set(id, { chips, hlCount: highlightCount(highlights[id] || []) });
   }

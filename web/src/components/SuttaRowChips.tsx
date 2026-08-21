@@ -63,8 +63,9 @@ export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighli
                 }
               : undefined
           }
+          title={c.breadcrumb}
         >
-          {c.breadcrumb}
+          {c.label}
         </ChipTag>
       ))}
       {/* Filled, like the highlight badge beside it and unlike the outlined chips — in this row
