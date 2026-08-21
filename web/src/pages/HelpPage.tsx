@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { ArrowLeft, ArrowUp, Lightbulb } from 'lucide-react';
+import { ArrowLeft, ArrowUp, ExternalLink, Lightbulb } from 'lucide-react';
 import { isTypingTarget } from '../lib/shortcuts';
 import dictionaryShot from '../assets/help/dictionary-mobile.webp';
 import libraryShot from '../assets/help/library-mobile.webp';
@@ -370,6 +370,17 @@ const INSTALL_TIPS = [
     'separate from the browser you installed it from.',
 ];
 
+const CONTACT_TITLE = 'Get in touch';
+
+// The issue tracker rather than an email address: an address written into a public page is
+// harvested by crawlers within weeks, and a bug report is more useful where it can be answered in
+// the open and closed when it is fixed.
+const CONTACT_LEAD =
+  'Bugs, questions and suggestions all go to the same place — the project’s issue tracker. ' +
+  'Anything filed there is public, and posting needs a free GitHub account.';
+
+const CONTACT_URL = 'https://github.com/gbbr/sutamaya.org/issues/new';
+
 // Deliberately outside the app's palette. These are annotation drawn over a photograph of the
 // product, not part of the product, and a marker in the accent colour would read as another piece
 // of the UI it is pointing at. Solid with a pale ring so it holds an edge over screenshot pixels
@@ -523,7 +534,7 @@ export function HelpPage(_props: RouteComponentProps) {
             A labelled, indented column rather than a wrapped inline run or a bordered card: the
             app already says "a group of rows you can go to" exactly this way — a quiet uppercase
             micro-label with its rows indented beneath it, the same shape as MY LISTS and AUTOMATIC
-            in the lists pane — so this needs no new visual device. Six links threaded into one
+            in the lists pane — so this needs no new visual device. The links threaded into one
             wrapped line would also sit close enough together to be mis-tapped on a phone, and a
             card would give a signpost more weight than the sections it points at. The label is
             dimmer than a real section header, so this reads as a way in rather than as a seventh
@@ -551,6 +562,14 @@ export function HelpPage(_props: RouteComponentProps) {
               }
             >
               {INSTALL_TITLE}
+            </button>
+            <button
+              className="font-sans text-[13px] text-left text-ink/45 hover:text-ink/75 py-[5px]"
+              onClick={() =>
+                document.getElementById(anchorId(CONTACT_TITLE))?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            >
+              {CONTACT_TITLE}
             </button>
           </div>
         </nav>
@@ -604,6 +623,25 @@ export function HelpPage(_props: RouteComponentProps) {
           </div>
           <TipCard tips={INSTALL_TIPS} />
           <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />
+        </section>
+
+        {/* Last section on the page, and the shortest: a lead and one link. It keeps the section
+            furniture so it appears in "On this page" like everything else, but it gets no tip card
+            and no back-to-top — the page ends here, so there is nothing further to return from. */}
+        <section id={anchorId(CONTACT_TITLE)} className="mb-10 scroll-mt-6">
+          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">
+            {CONTACT_TITLE}
+          </div>
+          <p className="font-serif text-[15px] leading-[1.55] text-ink/70 mb-4">{CONTACT_LEAD}</p>
+          <a
+            href={CONTACT_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 font-sans text-[13px] text-ink/70 hover:text-ink underline decoration-ink/25 underline-offset-2"
+          >
+            Open an issue on GitHub
+            <ExternalLink size={13} strokeWidth={1.75} className="flex-none text-ink/40" />
+          </a>
         </section>
       </div>
     </div>
