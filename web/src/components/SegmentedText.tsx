@@ -242,14 +242,14 @@ const SegmentRow = memo(function SegmentRow({
               // this span sits inside the same selectable English prose the highlight-selection
               // feature drags across (including dragging *through* an existing highlight to
               // extend/merge it), so suppressing selection on it would break that drag mid-gesture.
-              // Text color switches to theme.fg once the paint itself dims below opaque (dark
-              // theme): the near-black below assumes an opaque pastel background, which doesn't
-              // hold once that background is alpha-composited over a dark page.
+              // Text color switches to theme.fg wherever the theme paints its own fills (dark): the
+              // near-black below assumes the pale pastel the light themes paint, and would be
+              // unreadable on a deep one.
               style={{
                 background: highlightPaint(p.c, theme),
                 borderRadius: 2,
                 boxShadow: `0 0 0 2px ${highlightPaint(p.c, theme)}`,
-                color: theme.highlightAlpha < 1 ? theme.fg : '#1B1917',
+                color: theme.highlightPalette ? theme.fg : '#1B1917',
               }}
               onClick={(e) => {
                 e.stopPropagation();

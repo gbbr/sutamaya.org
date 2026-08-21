@@ -142,10 +142,11 @@ export interface ThemeColors {
   // especially (its bright background gives the least room before a fill starts looking like a
   // real highlight rather than a quiet "you are here" marker).
   focusTint: string;
-  // 1 (opaque) for light/sepia, where a HIGHLIGHT_COLORS pastel already reads as a soft wash
-  // against those bright backgrounds; <1 for dark, where painting the same opaque pastel would
-  // read as a bright, attention-grabbing patch — see lib/theme.ts's highlightPaint().
-  highlightAlpha: number;
+  // This theme's own highlight fills, index-aligned with HIGHLIGHT_COLORS, or null to paint the
+  // stored color itself. Only dark carries a palette: the pastels HIGHLIGHT_COLORS stores read as
+  // a soft wash on the bright backgrounds but need genuinely different (deeper, still hue-distinct)
+  // fills against a dark one — see lib/theme.ts's highlightPaint().
+  highlightPalette: readonly string[] | null;
   // The native text-selection background, scoped to the reader (see index.css's
   // `[data-component="ReaderPage"] ::selection` and ReaderPage's `--reader-selection`) — kept
   // separate from the app shell's own `--selection` CSS var (index.css), which follows the UI's
