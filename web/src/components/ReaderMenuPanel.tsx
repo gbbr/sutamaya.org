@@ -356,7 +356,7 @@ export function ReaderMenuPanel({
         )}
 
         {tab === 'lists' && (
-          <div className="sc flex-1 min-h-0">
+          <div className="flex flex-col flex-1 min-h-0">
             <ListMembershipPicker suttaId={suttaId} theme={theme} autoFocus onRequestClose={onClose} />
           </div>
         )}
