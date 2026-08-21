@@ -6,6 +6,11 @@ import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits';
 import type { ListDef, ThemeColors } from '../lib/types';
 
+// Matches ListRow's own cap (see its MAX_INDENT_DEPTH) — nesting itself is unlimited, but the
+// indent stops growing past this depth so a deep tree can't squeeze row content off a narrow
+// screen.
+const MAX_INDENT_DEPTH = 3;
+
 interface ListMembershipPickerProps {
   suttaId: string;
   theme: ThemeColors;
@@ -292,7 +297,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
             <div
               key={list.id}
               className="flex items-center"
-              style={{ ...rowStyle(active), paddingLeft: 8 + depth * 14 }}
+              style={{ ...rowStyle(active), paddingLeft: 8 + Math.min(depth, MAX_INDENT_DEPTH) * 14 }}
               onMouseEnter={() => setActiveIndex(idx)}
             >
               <button className="flex flex-1 min-w-0 items-center gap-2 py-[6px] pr-2 text-left" onClick={() => activateRow(row)}>
