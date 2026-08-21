@@ -210,7 +210,7 @@ export const SEARCH_RESULTS_CAP = 80;
 // What both search inputs (TreePane's and ReaderSearchOverlay's) offer to match on. Named here,
 // beside searchCorpus itself, so the promise and the fields it actually scans can't drift apart —
 // note that the sutta *text* is not among them.
-export const SEARCH_PLACEHOLDER = 'Search ID, title, blurb, note';
+export const SEARCH_PLACEHOLDER = 'Search ID, title, blurb, note, list';
 
 // Case- and diacritic-insensitive comparison key — Pali romanization leans heavily on combining
 // marks (ā, ī, ū, ñ, ṭ, ḍ, ṇ, ḷ, ṁ, …) that most people don't bother typing, so a search for
