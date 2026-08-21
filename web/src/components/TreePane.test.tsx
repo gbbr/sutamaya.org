@@ -161,10 +161,12 @@ function Harness({
   initialNodeId,
   onSelect,
   onOpenSutta,
+  shortcutsOpen,
 }: {
   initialNodeId?: string;
   onSelect: (id: string) => void;
   onOpenSutta: (id: string) => void;
+  shortcutsOpen?: boolean;
 }) {
   const [query, setQuery] = useState('');
   const [nodeId, setNodeId] = useState(initialNodeId);
@@ -182,14 +184,17 @@ function Harness({
       onSearch={setQuery}
       query={query}
       hits={hits}
+      shortcutsOpen={shortcutsOpen}
     />
   );
 }
 
-function renderHarness(initialNodeId?: string) {
+function renderHarness(initialNodeId?: string, shortcutsOpen?: boolean) {
   const onSelect = vi.fn();
   const onOpenSutta = vi.fn();
-  const utils = render(<Harness initialNodeId={initialNodeId} onSelect={onSelect} onOpenSutta={onOpenSutta} />);
+  const utils = render(
+    <Harness initialNodeId={initialNodeId} onSelect={onSelect} onOpenSutta={onOpenSutta} shortcutsOpen={shortcutsOpen} />
+  );
   return { ...utils, onSelect, onOpenSutta };
 }
 
@@ -530,6 +535,21 @@ describe('keyboard: x toggles Library / My Lists', () => {
     fireEvent.keyDown(window, { key: 'x' });
     expect(screen.queryByText('Long Discourses')).not.toBeInTheDocument();
     expect(screen.getByText('Suttas to study')).toBeInTheDocument();
+    fireEvent.keyDown(window, { key: 'x' });
+    expect(screen.getByText('Long Discourses')).toBeInTheDocument();
+  });
+});
+
+describe('keyboard: the shortcuts modal owns every key while open', () => {
+  it('"/" does not open the search box behind it', () => {
+    renderHarness(undefined, true);
+    fireEvent.keyDown(window, { key: '/' });
+    expect(screen.queryByPlaceholderText(SEARCH_PLACEHOLDER)).not.toBeInTheDocument();
+  });
+
+  it('"x" does not swap Library / My Lists behind it', () => {
+    renderHarness(undefined, true);
+    expect(screen.getByText('Long Discourses')).toBeInTheDocument();
     fireEvent.keyDown(window, { key: 'x' });
     expect(screen.getByText('Long Discourses')).toBeInTheDocument();
   });

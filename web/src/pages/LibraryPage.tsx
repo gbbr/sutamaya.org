@@ -12,16 +12,10 @@ import { TreePane } from '../components/TreePane';
 import { ListPane } from '../components/ListPane';
 import { ShortcutsModal } from '../components/ShortcutsModal';
 
-// Tree/list divider hit area — split asymmetrically around the boundary rather than centered on
-// it, since a naive symmetric widening runs into two different edges' content:
-//  - TreePane's "List options" row button sits flush against the pane's right edge (pr-[10px],
-//    20px button — see TreePane.tsx's ListRow), so the reach backward (into the tree pane) stays
-//    inside that 10px padding buffer.
-//  - ListPane's own rows are `px-5` (20px) with the row itself being the full-width tap target
-//    (TreePane.tsx's counterpart, ListPane.tsx ~L264), so the reach forward (into the list pane)
-//    is kept well short of where the row's visible text actually starts, rather than visually
-//    bleeding into it.
-// Nothing is drawn here — only the cursor and drag behavior live in this strip.
+// Tree/list divider hit area. Asymmetric around the boundary because the two edges differ:
+// backwards it must stay inside TreePane's 10px right padding, where the "List options" button
+// sits flush; forwards it can reach further, since ListPane's rows are `px-5`. Nothing is drawn
+// here — the strip carries only the resize cursor and the drag.
 const TREE_LIST_HIT_BEFORE = 8;
 const TREE_LIST_HIT_AFTER = 14;
 
@@ -30,68 +24,38 @@ export function LibraryPage({
   suttaId: rawSuttaId,
   location,
 }: RouteComponentProps<{ nodeId: string; suttaId?: string }>) {
-  // `suttaId` is a splat segment (see App.tsx) so both /browse/:nodeId and
-  // /browse/:nodeId/:suttaId are the *same* route element — giving it '' rather than undefined
-  // when absent, and keeping LibraryPage mounted (with all its local state, including every
-  // pane's scroll position) across selecting and deselecting a highlighted row. Two separate
-  // <LibraryPage> route elements would remount it on every such change instead: reach-router
-  // auto-keys route children by position, so switching which one matches is a key change.
+  // `suttaId` is a splat segment (see App.tsx), so /browse/:nodeId and /browse/:nodeId/:suttaId
+  // are one route element and this page stays mounted — with every pane's scroll position —
+  // across selecting and deselecting a row.
   const { mobile, dragTree, resetTree, paneW } = useLayout();
   const { corpus } = useCorpus();
   const { lists, notes } = useUserData();
-  // @reach/router defers the actual route-param update by a microtask + rAF after navigate()
-  // (see LocationProvider.componentDidMount in @reach/router/lib/history.js), so reading
-  // `rawSuttaId`/`routeNodeId` straight from route props would render one frame pairing whatever
-  // *new* local UI state a navigation handler flips synchronously (`view`, or Up/Down's `nodeId`
-  // below) with the *stale* id still on props — on mobile a visible flash of the previous or
-  // empty list before the right one appears, and for Up/Down a highlighted row that jumps back to
-  // the old sutta for a frame before catching up. Mirroring both ids into local state, set
-  // synchronously alongside whatever else a given navigation changes, keeps every render
-  // consistent; the effects below keep them truthful for back/forward/deep-link navigation that
-  // doesn't go through one of this page's own handlers.
+  // @reach/router defers the route-param update by a microtask + rAF after navigate(), so
+  // reading the ids straight off props would render a frame pairing new local state with a stale
+  // id — a flash of the wrong list on mobile, a highlighted row that jumps back for a frame.
+  // Mirroring them into state, set synchronously with everything else a handler changes, keeps
+  // each render consistent; the effects below cover navigation this page didn't initiate.
   const [suttaId, setSuttaId] = useState(rawSuttaId || undefined);
   useEffect(() => {
     setSuttaId(rawSuttaId || undefined);
   }, [rawSuttaId]);
-  // `/read/:suttaId` and `/settings` are both genuinely separate routes (full-screen, not one of
-  // this page's panes), so navigating to either fully unmounts LibraryPage — `view` can't just
-  // default to 'tree' here, or mobile would show the browse tree instead of the sutta list the
-  // user was just looking at, which reads as "my place got reset". A reader round trip carries
-  // the pane it was opened from back in `location.state.fromView` (see onOpen below and
-  // ReaderPage's own `from`/`fromView`), so that takes priority when present — it's the only way
-  // to know the user was actually on 'tree' (e.g. searched and opened a hit straight from there)
-  // rather than 'list'. Absent that (a fresh deep link to a specific sutta, e.g. tapping a
-  // list-membership chip in the Reader), a suttaId in the URL still means start on 'list' so the
-  // highlighted row is actually visible; otherwise fall back to whichever pane was last shown,
-  // persisted the same way as TreePane's own Library/My Lists toggle (`sutamaya.treeView`), since
-  // a plain in-memory default can't survive the remount either.
-  // Whether this mount is a reader-close round trip (as opposed to an explicit chip/breadcrumb
-  // click or a fresh deep link) — see TreePane's own `restoreOrigin` prop for why its Library/My
-  // lists toggle needs to know this on top of `fromView` above.
-  // `restoreOrigin` only ever *suppresses* TreePane's own corrective sync (see its own prop
-  // comment) — trusting a stale, refresh-resurrected `true` here is harmless (worst case: skips a
-  // sync that would've been a no-op), so it's read straight off location.state on every render,
-  // unlike the one-shot values below.
+  // Only ever *suppresses* TreePane's corrective pane sync, so a stale value resurrected by a
+  // refresh is harmless (worst case it skips a no-op sync) — hence read straight off
+  // location.state, unlike the one-shot values below.
   const restoreOrigin = !!(location?.state as { restoreOrigin?: boolean } | undefined)?.restoreOrigin;
-  // `fromView`/`flashNodeId`, by contrast, are values meant to apply to exactly one arrival (a
-  // reader-close round trip, a breadcrumb click) — and location.state set by navigate() survives a
-  // same-tab refresh, since the browser keeps history.state for the current entry across a reload.
-  // Trusting them unconditionally therefore lets a refresh resurrect a stale value and silently
-  // override a pane switch made by hand since (see lib/routeIntent.ts). Consumed exactly once via
-  // a lazy initializer, the same one-shot guarantee `view`'s own initializer below relies on, so a
-  // stale resurrection reads as "no intent" and falls through to persisted preference instead.
+  // `fromView`/`flashNodeId` are meant for exactly one arrival, but location.state survives a
+  // same-tab refresh (the browser keeps history.state for the current entry), so trusting them
+  // unconditionally would let a reload override a pane switch made by hand since. Consumed once
+  // via a lazy initializer, so a stale resurrection reads as "no intent" instead.
   const [consumedIntent] = useState(() =>
     consumeIntent(
       location?.state as ({ fromView?: 'tree' | 'list'; flashNodeId?: string } & RouteIntent) | null | undefined,
       ROUTE_INTENT_KEY
     )
   );
-  // A breadcrumb click in the reader (see ReaderPage) always lands here on the sutta's own leaf
-  // group — that part doesn't change — but also names which specific ancestor segment was
-  // actually clicked, so the tree pane can briefly scroll to and highlight that exact row (which
-  // may be higher up the chain than the leaf group itself) without disturbing anything else this
-  // page already does. Cleared on a timer rather than left to linger, since it's a "here's where
-  // that was" pointer, not a real selection.
+  // A reader breadcrumb click always lands on the sutta's own leaf group, but names the ancestor
+  // segment actually clicked so the tree pane can briefly scroll to and highlight that row.
+  // Timed out rather than left standing — it points at where something is, it isn't a selection.
   const locationFlashNodeId = consumedIntent?.flashNodeId as string | undefined;
   const [flashNodeId, setFlashNodeId] = useState<string | undefined>(undefined);
   useEffect(() => {
@@ -103,14 +67,10 @@ export function LibraryPage({
   const [view, setView] = useState<'tree' | 'list'>(() => {
     const fromView = consumedIntent?.fromView;
     if (fromView === 'tree' || fromView === 'list') return fromView;
-    // A bare suttaId in the URL with *no* router state at all means a genuinely fresh arrival
-    // that never went through one of this app's own navigate() calls — a bookmark, a typed URL,
-    // or a list-membership chip tap in the Reader (which sets no state) — where 'list' is the
-    // only way to actually reveal the highlighted row. A mount that *did* carry state (even once
-    // the one-shot intent above is stale/already-consumed — e.g. refreshing after a manual pane
-    // switch made without navigating, like ListPane's Back button) came from an in-app
-    // navigation, so persisted preference is the more trustworthy signal there instead of this
-    // generic fallback.
+    // A suttaId with no router state at all is a fresh arrival that never went through one of
+    // this app's navigate() calls — a bookmark or a typed URL — where 'list' is the only way to
+    // reveal the highlighted row. A mount that carried state came from in-app navigation, so the
+    // persisted preference below is the better signal there.
     if (suttaId && !location?.state) return 'list';
     try {
       const stored = localStorage.getItem(LIBRARY_VIEW_KEY);
@@ -130,16 +90,12 @@ export function LibraryPage({
   const [query, setQuery] = useState('');
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
 
-  // Computed once here, not independently by TreePane and ListPane, and handed down to both — so
-  // they render one consistent result set from one scan per keystroke rather than two. TreePane
-  // keeps the input and keyboard nav, ListPane does the actual row rendering; see both
-  // components for how they split it. useCorpusSearch
-  // itself defers the scan off `query` so the input stays instantly responsive even while a
-  // slower device is still catching up (same hook ReaderSearchOverlay uses for its own scan).
+  // Scanned once here and handed to both panes, so they show one result set from one scan per
+  // keystroke. useCorpusSearch defers the scan off `query`, keeping the input responsive on a
+  // slow device.
   const hits = useCorpusSearch(corpus, query, notes, lists);
-  // The hit TreePane's own arrow-key nav currently has highlighted, mirrored here so ListPane
-  // (which renders the actual rows on desktop) can show that same highlight — see TreePane's
-  // onActiveHitChange and ListPane's activeId.
+  // TreePane owns the arrow-key nav; mirrored here so ListPane, which renders the rows on
+  // desktop, can show the same highlight.
   const [activeSearchId, setActiveSearchId] = useState<string | undefined>(undefined);
 
   const [nodeId, setNodeId] = useState(routeNodeId);
@@ -147,9 +103,8 @@ export function LibraryPage({
     setNodeId(routeNodeId);
   }, [routeNodeId]);
 
-  // Tab title mirrors whatever the right pane is actually showing (a corpus node, a user list, or
-  // a search) — the same `nodeLabel` lookup ListPane's own header uses — so it's correct on a
-  // fresh reload of the current URL, not just after an in-app navigation.
+  // Tab title mirrors what the right pane shows, via the same `nodeLabel` lookup ListPane's own
+  // header uses, so it's right on a fresh reload and not only after an in-app navigation.
   useEffect(() => {
     if (query.trim().length > 0) {
       document.title = 'Search';
@@ -162,11 +117,9 @@ export function LibraryPage({
     };
   }, [corpus, nodeId, lists, query]);
 
-  // useCallback-wrapped (not inline arrows at the JSX call sites below) so these stay
-  // referentially stable across renders that don't actually change what they'd do — e.g.
-  // TreePane's keydown effect depends on `onOpenSutta`, so a fresh function identity on every
-  // LibraryPage render (typing in the search box re-renders this page on every keystroke) would
-  // otherwise tear down and re-add that window-level listener once per keystroke.
+  // useCallback'd, not inline arrows: TreePane's keydown effect depends on `onOpenSutta`, and
+  // typing in the search box re-renders this page per keystroke — a fresh identity each time
+  // would tear down and re-add that window listener on every one.
   const onSelectNode = useCallback((id: string) => {
     setQuery('');
     setView('list');
@@ -177,26 +130,18 @@ export function LibraryPage({
 
   const onOpen = useCallback(
     (id: string) => {
-      // `from`/`fromView` round-trip through the reader's own navigate() calls (Prev/Next, its
-      // search overlay) so that whenever it's closed — however many suttas later — it lands back
-      // on exactly this pane/nodeId/scroll position instead of falling back to the sutta's bare
-      // corpus location (see ReaderPage's closeReader, and this page's own `view` init above for
-      // why `fromView` specifically is needed on top of the URL alone).
+      // `from`/`fromView` ride along through the reader's own navigate() calls, so closing it —
+      // however many Prev/Next steps later — returns to this exact pane, node and scroll offset
+      // rather than the sutta's bare corpus location.
       //
-      // A *search* hit is the one case where the opened id isn't actually a member of whatever
-      // `nodeId` currently is — search spans the whole corpus regardless of what's browsed, so a
-      // hit found while browsing category A can easily live in category B. Browsing straight
-      // (tapping a row in the tree or a list) never has this mismatch: the clicked row is always
-      // already a member of `nodeId`'s own contents. Returning to A afterward would leave the
-      // tree/list pane on a category the reopened sutta doesn't belong to, so the sutta's own
-      // node is used instead — landing back where it actually lives, the same place a bare deep
-      // link to it would.
+      // A search hit is the one case where the opened id isn't a member of the current `nodeId`:
+      // search spans the whole corpus, so a hit found while browsing DN can live in MN. Returning
+      // there would leave the pane on a category the sutta doesn't belong to, so its own node is
+      // used instead — where a bare deep link would have landed.
       const returnNodeId = query.trim() && corpus?.suttas[id] ? corpus.suttas[id].node : nodeId;
       const from = `/browse/${encodeURIComponent(returnNodeId || '')}/${encodeURIComponent(id)}`;
-      // Also persisted (not just carried in router state) so ReaderPage's own close can still
-      // return to this pane/location after a hard refresh, which drops location.state entirely
-      // (browser-native — a fresh navigation's history entry has none) — see ReaderPage's
-      // closeReader for the fallback that reads this back.
+      // Persisted as well as carried in router state, since a hard refresh drops location.state
+      // entirely — see ReaderPage's closeReader for the fallback that reads this back.
       try {
         localStorage.setItem(READER_ORIGIN_KEY, JSON.stringify({ suttaId: id, from, fromView: view }));
       } catch {
@@ -210,17 +155,13 @@ export function LibraryPage({
   const showTreePane = !mobile || view === 'tree';
   const showListPane = !mobile || view === 'list';
 
-  // The whole corpus in canonical browse order — same list ReaderPage's own Prev/Next walks —
-  // so Up/Down below can step across a category boundary once the current one runs out, rather
-  // than stopping at its edge.
+  // Canonical browse order for the whole corpus — the same list ReaderPage's Prev/Next walks —
+  // so Up/Down can cross a category boundary instead of stopping at its edge.
   const suttaOrder = useMemo(() => (corpus ? flatSuttaOrder(corpus) : []), [corpus]);
 
-  // Up/Down move the highlighted row through the list (tree pane follows along); Enter opens it
-  // into the full reader. Both key off `suttaId` itself (whether the URL ends in a sutta, i.e.
-  // `/browse/:nodeId/:suttaId`), not any pane's visibility — a sutta can be "selected" this way
-  // on mobile too (e.g. the reader closed back to this view via its `from` state — see
-  // ReaderPage), and that URL sutta is the only well-defined "current" item to step from or open
-  // (see ListPane's matching `on` highlight).
+  // Up/Down move the highlighted row, Enter opens it. Both key off `suttaId` rather than any
+  // pane's visibility: the URL's sutta is the only well-defined "current" item, and a sutta can
+  // be selected this way on mobile too.
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       // While open, the help modal owns every key itself — Esc or '?' again both close it,
@@ -247,16 +188,12 @@ export function LibraryPage({
       }
       if (!isShortcut(e, SHORTCUTS.librarySelectMove)) return;
       const dir = e.key === 'ArrowUp' ? -1 : 1;
-      // Browsing a user list, Up/Down stays inside it — stepping through *that* list's own
-      // items in its own stored order, never touching `nodeId`, and stopping dead at either end
-      // rather than spilling into the canonical corpus order. Jumping away to wherever a sutta
-      // happens to live in the tree would defeat the point of viewing a curated list at all (its
-      // whole reason to exist is a different order/subset than the corpus's own).
+      // In a user list, Up/Down stays inside it, in its stored order, stopping dead at either
+      // end. Spilling into corpus order would defeat the point of a curated list.
       const currentList = lists.find((l) => l.id === nodeId);
       if (currentList) {
         const items = currentList.items;
-        // Nothing selected yet (Up/Down pressed with the list pane not "active") — start from
-        // its first item rather than doing nothing, regardless of which direction was pressed.
+        // Nothing selected yet — start at the first item whichever direction was pressed.
         if (!suttaId) {
           const first = items[0];
           if (!first) return;
@@ -274,15 +211,12 @@ export function LibraryPage({
         navigate(`/browse/${encodeURIComponent(nodeId || '')}/${encodeURIComponent(next)}`);
         return;
       }
-      // Otherwise (browsing the corpus tree itself), step through the whole corpus's canonical
-      // order instead, which can land on a sutta outside whatever's currently browsed (a
-      // different category) — always re-deriving `nodeId` from the landed-on sutta's own corpus
-      // node, the same way clicking it in the tree would, is what makes the tree pane (and the
-      // list pane's contents) follow along and expand/scroll to the right place on that jump.
+      // Browsing the corpus tree instead: step canonical order, which can leave the current
+      // category. Re-deriving `nodeId` from the landed-on sutta each time — as clicking it in
+      // the tree would — is what makes both panes follow along and scroll to the right place.
       if (!suttaId) {
-        // Start from whatever category is already browsed (ListPane's own first row), not the
-        // canonical corpus order's first sutta overall — that'd jump away from wherever the tree
-        // pane already has nodeId pointed, which reads as teleporting rather than "starting".
+        // Start from the browsed category's first row, not corpus order's very first sutta,
+        // which would read as teleporting away from wherever the tree already points.
         const first = (nodeId && sortByIdAsc(suttasFor(corpus, nodeId))[0]?.[0]) || suttaOrder[0];
         if (!first) return;
         e.preventDefault();
@@ -311,14 +245,11 @@ export function LibraryPage({
 
   return (
     <div data-component="LibraryPage" className="relative flex overflow-hidden bg-paper h-full">
-      {/* Always mounted (never conditionally rendered) on mobile — a mounted-but-hidden pane
-          keeps its scroll position and `expanded` tree state across a tree<->list toggle
-          instead of losing them to a remount. `display:contents` when shown keeps this wrapper
-          transparent to the flex layout, matching the unwrapped behavior exactly. The `visible`
-          prop (-> useScrollMemory) handles the other half: a pane that mounts *while* hidden
-          (e.g. LibraryPage remounting after the reader closes) can't restore its scroll then —
-          a `display:none` box has no scroll extent, so `scrollTop = saved` just clamps to 0 —
-          it restores instead the moment `visible` actually flips true. */}
+      {/* Both panes stay mounted on mobile and hide, so a tree<->list toggle keeps each one's
+          scroll offset and expansion state. `display:contents` leaves this wrapper transparent
+          to the flex layout. The `visible` prop covers the other half: a `display:none` box has
+          no scroll extent, so a pane that mounts while hidden can only restore its scroll once
+          `visible` flips true — see useScrollMemory. */}
       <div style={{ display: showTreePane ? 'contents' : 'none' }}>
         <TreePane
           nodeId={nodeId}
@@ -331,22 +262,21 @@ export function LibraryPage({
           visible={showTreePane}
           restoreOrigin={restoreOrigin}
           flashNodeId={flashNodeId}
+          shortcutsOpen={shortcutsOpen}
         />
       </div>
 
-      {/* Positioned absolutely so the touch-friendly hit area can extend past the pane boundary
-          on both sides without shifting either pane's width or fighting DOM paint order over
-          which pane "wins" the overlap — z-10 keeps it grabbable above both panes' content. */}
+      {/* Absolute, so the hit area can overhang both panes without changing either one's width
+          or depending on paint order; z-10 keeps it grabbable above their content. */}
       {!mobile && (
         <div
           className="absolute top-0 bottom-0 z-10 cursor-col-resize touch-none"
           style={{ left: paneW.tree - TREE_LIST_HIT_BEFORE, width: TREE_LIST_HIT_BEFORE + TREE_LIST_HIT_AFTER }}
           onPointerDown={dragTree}
-          // `touchend` is the only event in the touch sequence WebKit reliably lets us cancel
-          // here — `touchstart` arrives uncancelable because of `touch-none` above — and
-          // cancelling it is what asks iOS not to synthesize the trailing click that would
-          // otherwise open whichever row the finger drifted over. See LayoutContext's
-          // `swallowNextClick` for why this alone isn't trusted to be enough.
+          // `touchend` is the only event WebKit reliably lets us cancel here (`touch-none` above
+          // makes `touchstart` arrive uncancelable), and cancelling it asks iOS not to synthesize
+          // the trailing click that would open whichever row the finger drifted over. See
+          // LayoutContext's `swallowNextClick` for why this alone isn't trusted.
           onTouchEnd={(e) => e.preventDefault()}
           onDoubleClick={resetTree}
         />

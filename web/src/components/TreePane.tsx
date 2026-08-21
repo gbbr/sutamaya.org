@@ -32,10 +32,8 @@ interface PersistedExpansion {
   lists: string[];
 }
 
-// Everything the user has expanded by hand, kept across a refresh or relaunch — as a plain id
-// list per tree (corpus vs. My lists), read once at mount and unioned with the always-expanded
-// ancestor chain of whatever is selected (see `expanded`/`listExpanded` below), so a deep link's
-// own ancestors open regardless of what this device had open before.
+// What the user expanded by hand, one id list per tree. Unioned at mount with the selected
+// node's ancestor chain, so a deep link opens its own ancestors whatever this device had open.
 function loadPersistedExpansion(): PersistedExpansion {
   try {
     const raw = localStorage.getItem(TREE_EXPANDED_KEY);
@@ -61,32 +59,23 @@ interface TreePaneProps {
   onOpenSutta: (suttaId: string) => void;
   onSearch: (query: string) => void;
   query: string;
-  // Computed once by LibraryPage (not independently here) and shared with ListPane, so the two
-  // panes show one consistent result set instead of each running its own searchCorpus scan — see
-  // ListPane, which does the actual row rendering on desktop while this pane just keeps its input
-  // and keyboard nav.
+  // Scanned once by LibraryPage and shared with ListPane, so both panes show one result set.
+  // On desktop ListPane renders the rows; this pane keeps the input and the keyboard nav.
   hits: SearchHit[];
-  // Reports the row this pane's own arrow-key nav currently has highlighted (or undefined when
-  // not searching / nothing highlighted yet), so ListPane can mirror that highlight onto its own
-  // rows on desktop, where it — not this pane — renders the hits.
+  // The hit this pane's arrow-key nav has highlighted, so ListPane can mirror it on desktop.
   onActiveHitChange?: (id: string | undefined) => void;
-  // Whether this pane is currently the visible one (LibraryPage keeps both TreePane and
-  // ListPane mounted on mobile and toggles `display:none` instead of unmounting — see
-  // useScrollMemory for why scroll restoration needs to know this).
+  // False while LibraryPage has this pane `display:none` on mobile rather than unmounted — see
+  // useScrollMemory, which can't restore a scroll offset into a box with no scroll extent.
   visible?: boolean;
-  // True when this mount is a reader-close round trip landing back on wherever the reader was
-  // opened from (see LibraryPage's `view` init and ReaderPage's closeReader), as opposed to an
-  // explicit chip/breadcrumb click or a fresh deep link. The Library/My-lists toggle below
-  // (`paneView`) needs to tell these apart: a chip/breadcrumb click is a deliberate "go to this
-  // list/category" that should flip the toggle to match; a reader-close round trip is not — its
-  // `nodeId` can easily be a corpus node (a sutta's own `node`, unrelated to what was actually
-  // browsed) even though the user had "My lists" open the whole time, and forcing the toggle
-  // back to 'library' in that case would discard their pane choice for no reason.
+  // This mount is a reader-close round trip, not a deliberate chip/breadcrumb click or deep
+  // link. Suppresses the Library/My-lists sync below once: such a mount's `nodeId` is often a
+  // corpus node even though the user had My lists open, and syncing would discard their choice.
   restoreOrigin?: boolean;
-  // The specific breadcrumb segment last clicked in the reader (see LibraryPage/ReaderPage) —
-  // may be an ancestor above `nodeId` itself. Briefly scrolled to and highlighted, then cleared
-  // by LibraryPage's own timer; doesn't otherwise affect what's browsed.
+  // The breadcrumb segment last clicked in the reader — may sit above `nodeId`. Briefly scrolled
+  // to and highlighted; doesn't affect what's browsed.
   flashNodeId?: string;
+  // LibraryPage's "?" modal is open, so this pane's own '/' and 'x' shortcuts stand down.
+  shortcutsOpen?: boolean;
 }
 
 export function TreePane({
@@ -100,6 +89,7 @@ export function TreePane({
   visible = true,
   restoreOrigin = false,
   flashNodeId,
+  shortcutsOpen = false,
 }: TreePaneProps) {
   const { corpus } = useCorpus();
   const {
@@ -118,24 +108,16 @@ export function TreePane({
   const { mobile, paneW } = useLayout();
 
   const scrollRef = useScrollMemory<HTMLDivElement>('tree', visible);
-  // Computed synchronously on mount (not via an effect) so the tree is *already* expanded to
-  // nodeId by the very first render — otherwise useScrollMemory's restore (a layout effect,
-  // which always runs before any passive effect) would fire against a still-collapsed tree
-  // whenever TreePane mounts fresh already pointed at a deep node (e.g. LibraryPage remounting
-  // after the reader closes, on desktop where it's always "visible" so that restore-on-visible
-  // fallback never kicks in either), silently clamping the restored scroll offset back to 0.
-  // Read once at mount (see loadPersistedExpansion) — the lazy-initializer form guarantees the
-  // localStorage read itself only happens once, not on every render.
+  // Expanded synchronously at mount, never via an effect: useScrollMemory restores in a layout
+  // effect, so a tree still collapsed at that point clamps the restored offset back to 0.
   const [persistedExpansion] = useState(loadPersistedExpansion);
   const [expanded, setExpanded] = useState<Record<string, boolean>>(() => ({
     ...toRecord(persistedExpansion.corpus),
     ...ancestorsOf(corpus, nodeId),
   }));
-  // Which of the two trees this pane shows in full — they get the whole column each rather than
-  // sharing one scroll, where My Lists would sit below the often-long nikaya tree and take a lot
-  // of scrolling to reach. Persisted like the rest of this pane's layout prefs. Not gated on being
-  // signed in: a signed-out reader has lists of their own, held in the local mirror until an
-  // account adopts them (see UserDataContext), so "My lists" is always a real place to go.
+  // Which of the two trees gets the column — they don't share one scroll, where My lists would
+  // sit below the long nikaya tree. Never gated on being signed in: a signed-out reader's lists
+  // live in the local mirror, so My lists is always a real place to go.
   const [paneView, setPaneView] = useState<'library' | 'lists'>(() => {
     try {
       return localStorage.getItem(TREE_VIEW_KEY) === 'lists' ? 'lists' : 'library';
@@ -151,21 +133,11 @@ export function TreePane({
     }
   }, [paneView]);
 
-  // A membership chip's /browse/{list_id} navigation (or any other deep link to a list) needs
-  // the "My lists" tree actually showing for that row to be visible at all — flip the toggle for
-  // the user rather than landing them on a Library view with nothing selected. Symmetrically, a
-  // breadcrumb segment's /browse/{corpus_node_id} navigation (or any other deep link into the
-  // browse tree) needs to flip back to 'library' — otherwise a user who navigates there while
-  // "My lists" is showing ends up on a list view with nothing selected instead.
-  // Depends on whether nodeId *is* a list id, not on the `lists` array itself: reordering or
-  // re-parenting a list gives `lists` a new reference without adding or removing any id, and
-  // re-running on that alone would snap the pane back to 'library' after every drag — `nodeId` is
-  // still whatever corpus node was last browsed, so it takes the corpus branch below.
-  //
-  // Skipped on the very first run (mount) whenever `restoreOrigin` says so — see its own prop
-  // comment for why a reader-close round trip needs this sync suppressed exactly once, while a
-  // breadcrumb/chip click or a fresh deep link (no `restoreOrigin`) still wants it to run on
-  // mount as before, since those *are* what this effect exists for in the first place.
+  // Points the toggle at whichever tree `nodeId` actually lives in, so a deep link to a list (a
+  // membership chip) or to a corpus node (a breadcrumb) doesn't land on the other tree with
+  // nothing selected. Keyed on whether nodeId *is* a list id rather than on `lists`: a reorder
+  // or re-parent hands back a new `lists` reference with the same ids, and re-running on that
+  // would snap the pane to 'library' after every drag. Skipped at mount when `restoreOrigin`.
   const nodeIsListId = lists.some((l) => l.id === nodeId);
   const mountedRef = useRef(false);
   useEffect(() => {
@@ -182,10 +154,8 @@ export function TreePane({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nodeId, nodeIsListId, corpus]);
 
-  // Expands every ancestor level of the current node whenever nodeId *changes* after mount —
-  // covers deep links and search-driven navigation within an already-mounted TreePane, without
-  // collapsing anything the user already had open. Shared by both the corpus tree and the "My
-  // lists" tree, which each keep their own independent expanded-state map.
+  // Opens the current node's ancestors when nodeId changes after mount, without collapsing
+  // anything the user already had open. Both trees keep their own expanded-state map.
   function expandIds(setter: (updater: (x: Record<string, boolean>) => Record<string, boolean>) => void, toOpen: Record<string, boolean>) {
     if (!Object.keys(toOpen).length) return;
     setter((x) => {
@@ -243,13 +213,8 @@ export function TreePane({
   // leave the pane showing search results with no visible way to see/edit what's being searched.
   const [searchOpen, setSearchOpen] = useState(() => query.trim().length > 0);
   const searchInput = useRef<HTMLInputElement>(null);
-  // Up/down (and Enter to open) over the search results list only — see the keydown effect
-  // below. Starts at 0 (not -1) so the first result is pre-highlighted as soon as there are
-  // hits, matching the reader's Alfred-style search overlay — Enter opens it immediately
-  // without an arrow-key press first. `searchActiveIndexRef` mirrors the state so the effect's
-  // Enter branch always reads the live index without needing to resubscribe its listener on
-  // every arrow keypress — see useActiveHitIndex (lib/hooks), shared with ReaderSearchOverlay's
-  // own identical index-navigation needs.
+  // Starts at 0, not -1, so Enter opens the first result without an arrow press first. The ref
+  // mirrors the state so the keydown effect below reads a live index without resubscribing.
   const { activeIndex: searchActiveIndex, activeIndexRef: searchActiveIndexRef, moveBy: moveSearchActiveIndexBy, setRowRef: setHitRowRef } =
     useActiveHitIndex(query);
 
@@ -348,20 +313,19 @@ export function TreePane({
     onSearch('');
   }
 
-  // Opening a search hit navigates to `/read/:id` — a different route than this one, so
-  // LibraryPage (and this pane's search UI with it) unmounts once the reader takes over; a
-  // return trip remounts it fresh, with no stale query or result list to clean up. Deliberately
-  // *not* calling closeSearch() first: `navigate()` only takes effect a microtask+rAF later (see
-  // LibraryPage's own comment on this), so clearing the search UI synchronously here would paint
-  // a frame of the bare tree underneath before the reader replaces it. Leaving the search UI
-  // exactly as the user left it until the swap happens keeps the transition reading as search
-  // result → reader, with nothing in between.
+  // Deliberately doesn't closeSearch() first: navigate() only lands a microtask+rAF later, so
+  // clearing the search UI here would paint a frame of the bare tree before the reader arrives.
+  // The route change unmounts this pane anyway, so there's no stale query to clean up.
   function openHit(id: string) {
     onOpenSutta(id);
   }
 
   useEffect(() => {
     function onKey(e: globalThis.KeyboardEvent) {
+      // The shortcuts modal owns every key while it's open (see LibraryPage's own handler) —
+      // without this, '/' opens the search row behind it and steals focus into the autofocused
+      // input, and 'x' swaps panes out of sight.
+      if (shortcutsOpen) return;
       const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
       // Up/down/Enter over the search hits work while the search input itself has focus (the
       // normal state while results are showing) — but not while some *other* input/textarea has
@@ -397,24 +361,17 @@ export function TreePane({
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [searching, displayHits, searchOpen, onOpenSutta]);
+  }, [searching, displayHits, searchOpen, onOpenSutta, shortcutsOpen]);
 
-  // The target row (corpus chapter or list) often isn't in the DOM yet on the same render
-  // nodeId changed on — the ancestor-expand effects above (and, for a list, the paneView switch
-  // above) still need to run and re-render first — so this retries on each of their state
-  // changes until the row is actually findable, not just once.
+  // The target row usually isn't in the DOM on the render nodeId changed on — the expand
+  // effects above have to run first — so these retry on each of those state changes.
   useScrollToNode(scrollRef, nodeId, [paneView, expanded, listExpanded, corpus, lists]);
-  // A breadcrumb click's specific segment (see LibraryPage) — may be an ancestor above `nodeId`
-  // itself, so it gets its own scroll rather than assuming `nodeId`'s scroll above already
-  // reached it; called second, so it wins the final scroll position when both are set.
+  // Second, so a breadcrumb's own segment (which may sit above nodeId) wins the final position.
   useScrollToNode(scrollRef, flashNodeId, [paneView, expanded, listExpanded, corpus, lists]);
 
-  // ListRow's props are grouped by concern (see ListRow.tsx) — built once here rather than at
-  // each of its (potentially deeply nested) call sites. Each bundle is useMemo'd (and
-  // draftInputRef useCallback'd) so ListRow's own memoization isn't defeated by a freshly-built
-  // object/closure on every TreePane render that doesn't actually change any of its fields — see
-  // ListRow's own memo comment. Computed above the `if (!corpus) return null` below since hooks
-  // can't run conditionally.
+  // ListRow's props, grouped by concern. Memoized so a fresh object on every TreePane render
+  // doesn't defeat ListRow's own memo; built above the `if (!corpus)` bail since hooks can't
+  // run conditionally.
   const listRowMenu: ListRowMenuProps = useMemo(
     () => ({
       menuOpenId,
@@ -475,9 +432,6 @@ export function TreePane({
       <header className="flex-none px-[18px] pt-4 pb-3.5 border-b border-ink/10">
         <div className="flex items-center gap-2">
           <div className="text-[22px] font-semibold tracking-[-.01em] flex-1 truncate" style={{ fontFamily: 'Newsreader, Georgia, serif' }}>sutamaya</div>
-          {/* Mobile-sized to roughly match the "sutamaya" title's own height — this and the
-              account badge next to it are the two touch targets in this row people actually
-              reach for repeatedly. */}
           <SlidingPillToggle
             active={paneView === 'library' ? 'left' : 'right'}
             onClick={() => setPaneView((v) => (v === 'library' ? 'lists' : 'library'))}
@@ -492,11 +446,8 @@ export function TreePane({
               paneView === 'lists' ? 'bg-pill-lists' : 'bg-chip'
             }`}
           />
-          {/* Same outer height as the pane toggle to its left (24px icon + 2px padding on each
-              side = 28/32) and the account badge to its right, so all three sit flush along the
-              same vertical center instead of each keying off its own inner content size —
-              clicking toggles the search row below open/closed (see closeSearch/searchOpen);
-              '/' from anywhere does the same (see the keydown effect above). */}
+          {/* Sized to match the toggle left of it and the badge right of it, so all three share
+              a vertical centre rather than each keying off its own content. */}
           <button
             className="flex-none rounded-full flex items-center justify-center text-ink/[.62] hover:bg-ink/[.06]"
             style={mobile ? { width: 32, height: 32 } : { width: 28, height: 28 }}
@@ -506,9 +457,7 @@ export function TreePane({
           >
             <Search size={mobile ? 16 : 15} strokeWidth={2} />
           </button>
-          {/* Account entry point, right of the toggle on every viewport. The badge goes to
-              Settings in either sign-in state, so it's the only control needed here — a separate
-              gear beside it would open the same page. */}
+          {/* Goes to Settings in either sign-in state, so no separate gear is needed here. */}
           <SignedInBadge user={user} size={mobile ? 32 : 28} />
         </div>
         {searchOpen && (
@@ -560,14 +509,9 @@ export function TreePane({
             <div className="px-[18px] pt-2 pb-1 font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">
               {hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ results` : `${hits.length} ${hits.length === 1 ? 'result' : 'results'}`}
             </div>
-            {/* Hit rows are mobile-only here. On desktop ListPane sits right next to this pane
-                and renders the same hits with more detail (blurb, list chips, highlight count,
-                note), so this pane contributes only the count above, the input, and the keyboard
-                nav (see the keydown effect above, and onActiveHitChange mirroring the highlight
-                into ListPane). On mobile ListPane isn't shown at all, making this the only place
-                results can appear — hence the chips/highlight-count/note here too, minus the
-                blurb, since this column is narrower than ListPane's and ref/title/Pali already
-                identify the result. */}
+            {/* Mobile-only: on desktop ListPane renders the same hits beside this pane, with the
+                blurb too, and this pane contributes just the count, the input and the key nav.
+                No blurb here — the column is narrower and ref/title/Pali already identify a hit. */}
             {mobile && (
               <>
                 {displayHits.map(({ id, matchedId, sutta }, i) => {
@@ -638,17 +582,11 @@ export function TreePane({
         )}
       </div>
 
-      {/* Pinned below the scroll area rather than trailing the tree's own rows: as the last row of
-          a fifty-sutta list it would never be seen, and someone who wants help is by definition
-          not going to scroll hunting for it. It costs a row in this pane only — never in the
-          reader, and on mobile never while reading — which is what keeps it from being a bottom
-          bar the whole app pays for. The inset keeps it clear of the iOS home indicator, where
-          this pane runs to the bottom of the viewport in an installed PWA.
-
-          Two ends, each its own button with its own full-height padding, so the tap targets stay
-          the height of the bar and the icons bookend it. Both buttons stay short enough to fit
-          side by side at the pane's 210px minimum (see LayoutContext) — which is most of why the
-          status end only spells itself out when something is wrong. */}
+      {/* Pinned below the scroll area, not trailing the rows, where it would sit under fifty
+          suttas and never be found. Each end is its own button carrying the bar's full height,
+          so both tap targets are bar-height and both fit at the pane's 210px minimum — which is
+          why the status end only spells itself out when something is wrong. The inset clears the
+          iOS home indicator, where this pane runs to the viewport bottom in an installed PWA. */}
       <div
         className="flex-none flex items-center justify-between border-t border-ink/10"
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
