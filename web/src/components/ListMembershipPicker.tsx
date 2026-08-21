@@ -19,8 +19,8 @@ interface ListMembershipPickerProps {
 }
 
 type Row =
-  // Browse mode only: a group can't hold a sutta, so it's here purely as the structure the
-  // indentation below it is read against — not selectable, not activatable.
+  // Browse mode only: a group can't hold a sutta, so activating one collapses or expands its
+  // subtree rather than selecting anything.
   | { type: 'group'; option: ListPathOption }
   | { type: 'list'; option: ListPathOption }
   | { type: 'create'; name: string };
@@ -28,7 +28,8 @@ type Row =
 // An "add to lists" widget with two distinct modes in one popover, the way a label/folder picker
 // conventionally works:
 //
-//   empty input  -> browse: the whole list tree, indented by depth, groups included as structure.
+//   empty input  -> browse: the whole list tree, indented by depth, with group rows that collapse
+//                   and expand their subtree.
 //   any input    -> search: a flat, ranked list of *lists only*, no indentation, each row naming
 //                   its parent path in dimmed text, plus a single "Create list" row at the end.
 //
@@ -42,6 +43,11 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
   const { lists, membership, toggleMembership, addToList, createList } = useUserData();
   const [draft, setDraft] = useState('');
   const [activeIndex, setActiveIndex] = useState(0);
+  // Collapsed groups, by id. Starts empty on every open — the picker is mounted fresh each time,
+  // so nothing is ever collapsed when it appears. That's deliberate: a collapsed group would hide
+  // a nested list this sutta is already in, and the whole point of opening this is to see where
+  // the sutta currently sits.
+  const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const inputRef = useRef<HTMLInputElement>(null);
   // Guards the create path against a double-tap (or a held Enter) while the POST is still out.
   // createList() dedupes by label against `lists`, which can't yet contain a list whose create
@@ -103,7 +109,17 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
         if (aRoot === bRoot) return 0;
         return (rootHasMember.has(aRoot) ? 0 : 1) - (rootHasMember.has(bRoot) ? 0 : 1);
       });
-      return sorted.map((option) => ({ type: option.list.kind === 'group' ? ('group' as const) : ('list' as const), option }));
+      // Everything under a collapsed group drops out. Computed over flatAll rather than `sorted`
+      // because it is in depth-first parent-then-children order, so one forward pass carries a
+      // collapse all the way down a subtree.
+      const hidden = new Set<string>();
+      for (const f of flatAll) {
+        const parentId = f.list.parentId;
+        if (parentId && (collapsed.has(parentId) || hidden.has(parentId))) hidden.add(f.list.id);
+      }
+      return sorted
+        .filter((option) => !hidden.has(option.list.id))
+        .map((option) => ({ type: option.list.kind === 'group' ? ('group' as const) : ('list' as const), option }));
     }
     // Matching the whole breadcrumb, not just the label, so typing a group's name still finds the
     // lists inside it even though the group itself no longer appears as a row.
@@ -125,29 +141,33 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       ...matches.map((option) => ({ type: 'list' as const, option })),
       { type: 'create' as const, name: query.slice(0, LIST_NAME_MAX_LENGTH) },
     ];
-  }, [query, flatAll, suttaListIds]);
-
-  // Group rows are structure, not choices, so the keyboard cursor steps over them.
-  const selectable = useMemo(() => rows.map((r, i) => (r.type === 'group' ? -1 : i)).filter((i) => i >= 0), [rows]);
+  }, [query, flatAll, suttaListIds, collapsed]);
 
   useEffect(() => {
-    setActiveIndex(selectable[0] ?? 0);
-    // Re-homing the cursor is about the *query* changing, not about `selectable`'s identity — it
-    // is rebuilt on every membership toggle too, and re-running then would yank the cursor back
-    // to the first row mid-checking.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    setActiveIndex(0);
   }, [draft]);
 
-  const activeIdx = selectable.includes(activeIndex) ? activeIndex : (selectable[0] ?? -1);
+  // Clamped rather than stored back, so collapsing a group out from under the cursor lands it on
+  // the last row instead of on nothing.
+  const activeIdx = rows.length ? Math.min(activeIndex, rows.length - 1) : -1;
 
   function step(delta: number) {
-    const at = selectable.indexOf(activeIdx);
-    const next = Math.min(selectable.length - 1, Math.max(0, (at < 0 ? 0 : at) + delta));
-    setActiveIndex(selectable[next] ?? 0);
+    setActiveIndex(Math.min(rows.length - 1, Math.max(0, activeIdx + delta)));
+  }
+
+  function toggleCollapsed(id: string) {
+    setCollapsed((prev) => {
+      const next = new Set(prev);
+      if (!next.delete(id)) next.add(id);
+      return next;
+    });
   }
 
   async function activateRow(row: Row) {
-    if (row.type === 'group') return;
+    if (row.type === 'group') {
+      toggleCollapsed(row.option.list.id);
+      return;
+    }
     if (row.type === 'list') {
       toggleMembership(suttaId, row.option.list.id);
       return;
@@ -199,14 +219,15 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
   });
 
   return (
-    <div data-component="ListMembershipPicker">
-      {/* Pinned, so it stays put once the rows below it scroll — the conventional shape for a
-          picker like this, and the one the keyboard needs: focus stays in the input while
-          ArrowUp/Down walks the rows, so letting it scroll out of view hides the control the user
-          is actually driving. `theme.panel` (not `theme.bg`, which the input itself uses) is
-          whatever surface this picker was dropped onto — the reader's panel, the Library's
-          popover — so rows pass underneath it rather than showing through. */}
-      <div className="sticky top-0 z-10 pb-1.5" style={{ background: theme.panel }}>
+    <div data-component="ListMembershipPicker" className="flex min-h-0 flex-1 flex-col">
+      {/* The input sits outside the scroll area rather than sticking to the top of it, so a row
+          scrolling past simply ends at the field's edge with nothing showing above it. (A sticky
+          header pins to its scroller's *padding* box, so every host that padded the scroller left
+          a strip above the field where the rows stayed visible.) It has to stay on screen either
+          way: focus lives in the input while ArrowUp/Down walks the rows, so it's the control the
+          user is actually driving. Hosts therefore lay this component out as a flex column of its
+          own height and leave the scrolling to it. */}
+      <div className="flex-none pb-1.5">
         {/* Matches the rows' own 14.5px, so the input doesn't read as a heavier element than the
             list it filters — except on a touch pointer, where it goes back to 16px: iOS Safari
             zooms the whole page when an input with a smaller font takes focus, and
@@ -245,21 +266,29 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
           }
           const { list, depth } = row.option;
           if (row.type === 'group') {
+            const isCollapsed = collapsed.has(list.id);
             return (
-              <div
+              <button
                 key={list.id}
-                className="flex items-center gap-2 py-[8px] pr-2 text-[14.5px]"
-                style={{ paddingLeft: 8 + Math.min(depth, MAX_INDENT_DEPTH) * 14 }}
+                className="flex w-full items-center gap-2 py-[8px] pr-2 text-left text-[14.5px]"
+                style={{ ...rowStyle(active), paddingLeft: 8 + Math.min(depth, MAX_INDENT_DEPTH) * 14 }}
+                aria-expanded={!isCollapsed}
+                onMouseEnter={() => setActiveIndex(idx)}
+                onClick={() => activateRow(row)}
               >
-                {/* Rows here are always flattened/already "expanded" (see flattenListTree) — this
-                    chevron is a static indicator that the row is a group (matching the tree pane's
-                    own groups, which show a chevron instead of a folder icon), not an
-                    expand/collapse toggle. */}
-                <ChevronDown size={14} strokeWidth={2} className="flex-none opacity-50" style={{ color: theme.fg }} />
+                {/* Points down when the group's lists are showing, right when they're hidden —
+                    matching the tree pane's own groups, which use a chevron rather than a folder
+                    icon. */}
+                <ChevronDown
+                  size={14}
+                  strokeWidth={2}
+                  className="flex-none opacity-50 transition-transform"
+                  style={{ color: theme.fg, transform: isCollapsed ? 'rotate(-90deg)' : undefined }}
+                />
                 <span className="min-w-0 truncate" style={{ opacity: 0.65 }}>
                   {list.label}
                 </span>
-              </div>
+              </button>
             );
           }
           const checked = suttaListIds.includes(list.id);
