@@ -272,6 +272,15 @@ function switchToMyLists() {
   return userEvent.click(screen.getByLabelText('Switch to My Lists'));
 }
 
+// The armed delete row's prompt, reassembled. It's split across spans so only the list's own
+// label truncates (see ListRow), which puts it out of reach of a plain getByText — that matches
+// on an element's *direct* text children. The nbsp holding "Delete" to the opening quote is
+// normalized back to a plain space so the expectations below read normally.
+function deletePromptText() {
+  const row = screen.getByRole('button', { name: 'Cancel' }).parentElement as HTMLElement;
+  return (row.querySelector('span')?.textContent ?? '').replace(/ /g, ' ');
+}
+
 describe('My Lists tree', () => {
   it('renders top-level groups/lists with item counts, nested content revealed on expand', async () => {
     renderHarness();
@@ -327,7 +336,7 @@ describe('My Lists tree', () => {
     const row = screen.getByText('Read later').closest('[data-node-id]') as HTMLElement;
     await userEvent.click(within(row).getByLabelText('List options'));
     await userEvent.click(screen.getByLabelText('Delete'));
-    expect(screen.getByText('Delete "Read later"?')).toBeInTheDocument();
+    expect(deletePromptText()).toBe('Delete "Read later"?');
     await userEvent.click(screen.getByRole('button', { name: 'Delete' }));
     expect(userData.removeList).toHaveBeenCalledWith('l2');
   });
@@ -343,28 +352,27 @@ describe('My Lists tree', () => {
     expect(screen.getByText('Read later')).toBeInTheDocument();
   });
 
-  it('blocks deleting a non-empty list, showing a message instead of the confirm row', async () => {
+  it('deletes a non-empty list rather than blocking on its contents', async () => {
     renderHarness();
     await switchToMyLists();
     await userEvent.click(screen.getByText('Suttas to study')); // expand the group to reach Favorites
     const row = screen.getByText('Favorites').closest('[data-node-id]') as HTMLElement;
     await userEvent.click(within(row).getByLabelText('List options'));
     await userEvent.click(screen.getByLabelText('Delete'));
-    expect(screen.getByText('"Favorites" has 1 sutta — remove it first.')).toBeInTheDocument();
-    expect(screen.queryByText('Delete "Favorites"?')).not.toBeInTheDocument();
-    expect(userData.removeList).not.toHaveBeenCalled();
-    // Auto-dismiss timing itself is covered at the hook level (useListCrud.test.tsx) — combining
-    // fake timers with user-event's own internal delays here isn't worth the added flakiness risk.
+    expect(deletePromptText()).toBe('Delete "Favorites"?');
+    await userEvent.click(screen.getByRole('button', { name: 'Delete' }));
+    expect(userData.removeList).toHaveBeenCalledWith('l1');
   });
 
-  it('blocks deleting a non-empty group, showing a message instead of the confirm row', async () => {
+  it('deletes a group with lists nested inside it rather than blocking on them', async () => {
     renderHarness();
     await switchToMyLists();
     const row = screen.getByText('Suttas to study').closest('[data-node-id]') as HTMLElement;
     await userEvent.click(within(row).getByLabelText('List options'));
     await userEvent.click(screen.getByLabelText('Delete'));
-    expect(screen.getByText('"Suttas to study" has 1 list — move it out first.')).toBeInTheDocument();
-    expect(userData.removeList).not.toHaveBeenCalled();
+    expect(deletePromptText()).toBe('Delete "Suttas to study"?');
+    await userEvent.click(screen.getByRole('button', { name: 'Delete' }));
+    expect(userData.removeList).toHaveBeenCalledWith('g1');
   });
 
   it('the top-level "+" opens a List/Group picker defaulting to List, with the input autofocused', async () => {

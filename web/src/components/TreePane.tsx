@@ -283,7 +283,6 @@ export function TreePane({
     menuOpenId,
     setMenuOpenId,
     confirmDeleteId,
-    blockedDelete,
     editingId,
     editDraft,
     setEditDraft,
@@ -450,9 +449,8 @@ export function TreePane({
       confirmDeleteId,
       onDelete: deleteList,
       onCancelDelete: cancelDeleteList,
-      blockedDelete,
     }),
-    [confirmDeleteId, deleteList, cancelDeleteList, blockedDelete]
+    [confirmDeleteId, deleteList, cancelDeleteList]
   );
   const draftInputRef = useCallback(
     (el: HTMLInputElement | null) => {

@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import { ChevronDown, ChevronRight, ChevronUp, GripVertical, MoreHorizontal, Pencil, Plus, Trash2 } from 'lucide-react';
 import type { KeyboardEvent } from 'react';
-import type { BlockedDelete } from '../hooks/useListCrud';
 import type { DropIndicator } from '../lib/listTreeDrop';
 import type { ListDef } from '../lib/types';
 import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits';
@@ -13,9 +12,7 @@ export interface ListRowMenuProps {
   onMove: (l: ListDef, dir: -1 | 1) => void;
   onAddChild: (parentId: string) => void;
   onStartEdit: (l: ListDef) => void;
-  // `bypassBlock` (Shift+click on the bin icon) skips the "not empty" block and goes straight to
-  // the normal delete confirmation — see useListCrud's armDeleteList.
-  onArmDelete: (l: ListDef, bypassBlock?: boolean) => void;
+  onArmDelete: (l: ListDef) => void;
 }
 
 export interface ListRowEditProps {
@@ -30,9 +27,6 @@ export interface ListRowDeleteProps {
   confirmDeleteId: string | null;
   onDelete: (l: ListDef) => void;
   onCancelDelete: () => void;
-  // Set instead of `confirmDeleteId` when the row isn't empty — see useListCrud's armDeleteList.
-  // Auto-dismisses itself (armDeleteList's own timer); no manual dismiss control here.
-  blockedDelete: BlockedDelete | null;
 }
 
 export interface ListRowDraftProps {
@@ -125,7 +119,7 @@ export const ListRow = memo(function ListRow({
 }) {
   const { menuOpenId, onToggleMenu, onMove, onAddChild, onStartEdit, onArmDelete } = menu;
   const { editingId, editDraft, onEditDraftChange, onCommitEdit, onCancelEdit } = edit;
-  const { confirmDeleteId, onDelete, onCancelDelete, blockedDelete } = del;
+  const { confirmDeleteId, onDelete, onCancelDelete } = del;
   const { creatingParentId, draft, onDraftChange, onDraftKey, draftInputRef, submittingParentId } = draftProps;
 
   const { mobile } = useLayout();
@@ -277,24 +271,28 @@ export const ListRow = memo(function ListRow({
         )}
       </div>
       {confirmDeleteId === list.id ? (
-        <div className="flex items-center gap-2 pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: rowIndent(depth) + 11 }}>
-          <span className="font-sans text-[12px] text-ink/60">Delete "{list.label}"?</span>
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: rowIndent(depth) + 11 }}>
+          {/* Two things keep the buttons on screen in a pane that can be dragged down to 210px
+              and indents another 14px per nesting level. `flex-1` gives the prompt a flex basis
+              of 0, so it contributes nothing to the line-breaking decision — the buttons stay on
+              this line as long as they themselves fit, and a long name shrinks the truncating
+              label rather than displacing them. `flex-wrap` covers the remaining case, where even
+              the two buttons alone are wider than what's left: they drop to their own line
+              instead of being clipped by TreePane's `overflow-hidden`. */}
+          <span className="flex-1 min-w-0 flex items-baseline font-sans text-[12px] text-ink/60">
+            <span className="flex-none">Delete&nbsp;"</span>
+            <span className="min-w-0 truncate">{list.label}</span>
+            <span className="flex-none">"?</span>
+          </span>
           <button
             onClick={() => onDelete(list)}
-            className="font-sans text-[12px] font-semibold px-2 py-[3px] rounded border border-danger-text/40 text-danger-text hover:bg-danger-text/10"
+            className="flex-none font-sans text-[12px] font-semibold px-2 py-[3px] rounded border border-danger-text/40 text-danger-text hover:bg-danger-text/10"
           >
             Delete
           </button>
-          <button onClick={onCancelDelete} className="font-sans text-[12px] px-2 py-[3px] rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]">
+          <button onClick={onCancelDelete} className="flex-none font-sans text-[12px] px-2 py-[3px] rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]">
             Cancel
           </button>
-        </div>
-      ) : blockedDelete?.id === list.id ? (
-        <div className="pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: rowIndent(depth) + 11 }}>
-          <span className="font-sans text-[12px] text-ink/60">
-            "{list.label}" has {blockedDelete.count} {blockedDelete.kind === 'items' ? (blockedDelete.count === 1 ? 'sutta' : 'suttas') : blockedDelete.count === 1 ? 'list' : 'lists'} —{' '}
-            {blockedDelete.kind === 'items' ? 'remove ' + (blockedDelete.count == 1 ? 'it' : 'them') + ' first' : 'move ' + (blockedDelete.count == 1 ? 'it' : 'them') + ' out first'}.
-          </span>
         </div>
       ) : (
         menuOpen &&
@@ -342,8 +340,8 @@ export const ListRow = memo(function ListRow({
               </button>
               <button
                 aria-label="Delete"
-                title="Delete (Shift-click to skip the not-empty warning)"
-                onClick={(e) => onArmDelete(list, e.shiftKey)}
+                title="Delete"
+                onClick={() => onArmDelete(list)}
                 className="w-[24px] h-[22px] flex items-center justify-center rounded-full text-ink/55 hover:bg-danger-text/[.12] hover:text-danger-text"
               >
                 <Trash2 size={12} strokeWidth={2} />
