@@ -27,10 +27,23 @@ gloss a term in his wording while the line above it uses ours.
 | yoniso manasikāra | rational application of mind | **proper attention** | *Yoniso* is "from the source", i.e. appropriately — not a claim about rationality. |
 | paṭisambhidā | textual analysis | **analytical knowledge** | The four *paṭisambhidās* are of meaning, text, terminology and eloquence — only the second is textual. |
 | paritassati | anxious, anxiety | **agitated, agitation** | Bhikkhu Sujato's own note gives the term as desire plus agitation; agitation is the half that survives. |
+| saṅkhāra | choices | **volitional formations** | Bhikkhu Bodhi's rendering, and the nearest thing the term has to a standard one. "Choices" narrows a word that covers much more than deliberate choosing. |
+| abhisaṅkharoti | make (choices) | **generate (volitional formations)** | The verb that goes with it — Bhikkhu Bodhi's too, and one of the dictionary's own glosses. |
 
 A term is changed everywhere it appears, but only where it really is that Pali word — Bhikkhu Sujato's
 "aware" also translates ordinary things that have nothing to do with *sampajañña*, and those are
 left alone.
+
+*Saṅkhāra* is the longest phrase on this page, and the cost is real: 137 lines list the five
+aggregates, and "form, feeling, perception, volitional formations, and consciousness" puts a
+seven-syllable phrase after four short words. The shorter "volitions" was rejected because that is
+*cetanā*'s word, and the two terms stand side by side in one list in eight lines — "intentions,
+aims, wishes, and volitions" would read as two synonyms rather than two distinct terms. Fourteen
+lines keep "choices", where the Pali means something else or the English was never *saṅkhāra* at
+all; MN 120, on a rebirth one deliberately aspires to, is left alone entirely.
+
+This only ever touches the one sense of the word. Where Bhikkhu Sujato renders *saṅkhāra* as
+"conditions", "conditioned phenomena", "physical process" or "life force", his wording stands.
 
 One change is narrower still. In fourteen lines — SN 47.4 and Iti 47 — *vippasanna* becomes
 **calm** rather than Bhikkhu Sujato's "clear", only because "clear comprehension" sits in the same sentence
@@ -39,10 +52,16 @@ what it means of water, a gem, or someone's face.
 
 ## Reworded lines
 
-About fifty individual lines are rewritten by hand. Nearly all of them exist because a term swap
-that reads well as an adjective doesn't work as a whole sentence — "how is a bhikkhu clearly
+About sixty individual lines are rewritten by hand. Nearly all of them exist because a term
+swap that reads well as an adjective doesn't work as a whole sentence — "how is a bhikkhu clearly
 comprehending?" becomes "how does a bhikkhu have clear comprehension?" — plus a handful where two
 different Pali terms would otherwise land on the same English word in one sentence.
+
+Three of them are DN 9, where Bhikkhu Sujato's two English phrases sit on the opposite Pali words
+to everywhere else in the corpus, so the halves of the sentence are swapped back. One is Snp 3.12,
+which reads "when choices *has* faded away" upstream and is corrected to "have" in passing. Two are
+the titles of AN 3.23 and SN 33.4, where a one-word title becoming a two-word one needs its
+capitals put back.
 
 ## Seeing the changes
 
