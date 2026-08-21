@@ -6,8 +6,8 @@ import { READER_THEMES } from '../lib/theme';
 import type { SuttaRowChip } from '../lib/lists';
 
 const chips: SuttaRowChip[] = [
-  { id: 'l1', breadcrumb: 'Favorites' },
-  { id: 'l2', breadcrumb: 'Study / Chapter 1' },
+  { id: 'l1', label: 'Favorites', breadcrumb: 'Favorites' },
+  { id: 'l2', label: 'Chapter 1', breadcrumb: 'Study / Chapter 1' },
 ];
 
 describe('SuttaRowChips', () => {
@@ -19,8 +19,14 @@ describe('SuttaRowChips', () => {
   it('renders a chip per list and the highlight badge when either is present', () => {
     render(<SuttaRowChips chips={chips} hlCount={3} />);
     expect(screen.getByText('Favorites')).toBeTruthy();
-    expect(screen.getByText('Study / Chapter 1')).toBeTruthy();
+    expect(screen.getByText('Chapter 1')).toBeTruthy();
     expect(screen.getByText('3')).toBeTruthy();
+  });
+
+  it('labels a nested list by its own name, with the full path only as the hover title', () => {
+    render(<SuttaRowChips chips={chips} hlCount={0} />);
+    expect(screen.queryByText('Study / Chapter 1')).toBeNull();
+    expect(screen.getByText('Chapter 1').getAttribute('title')).toBe('Study / Chapter 1');
   });
 
   it('renders just the badge when there are highlights but no list membership', () => {

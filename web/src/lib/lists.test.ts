@@ -34,17 +34,22 @@ function h(id: string, i: number, s: number, e: number, g: string, c = '#ffe08a'
 describe('suttaRowMeta', () => {
   const flatLists = flattenListTree(lists);
 
-  it('resolves each membership id to its chip breadcrumb, nested lists included', () => {
+  it('labels each chip with the list\'s own name and keeps its full path for the tooltip', () => {
     const map = suttaRowMeta(['dn1'], { dn1: ['l1', 'l2'] }, {}, flatLists);
     expect(map.get('dn1')?.chips).toEqual([
-      { id: 'l1', breadcrumb: 'Suttas to study / Favorites' },
-      { id: 'l2', breadcrumb: 'Read later' },
+      { id: 'l1', label: 'Favorites', breadcrumb: 'Suttas to study / Favorites' },
+      { id: 'l2', label: 'Read later', breadcrumb: 'Read later' },
     ]);
+  });
+
+  it('falls back to the id as the label for a membership whose list is gone', () => {
+    const map = suttaRowMeta(['dn1'], { dn1: ['gone'] }, {}, flatLists);
+    expect(map.get('dn1')?.chips).toEqual([{ id: 'gone', label: 'gone', breadcrumb: 'gone' }]);
   });
 
   it('filters the auto-managed lists (Highlights/Notes) out of the chips', () => {
     const map = suttaRowMeta(['dn1'], { dn1: ['l2', HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID] }, {}, flatLists);
-    expect(map.get('dn1')?.chips).toEqual([{ id: 'l2', breadcrumb: 'Read later' }]);
+    expect(map.get('dn1')?.chips).toEqual([{ id: 'l2', label: 'Read later', breadcrumb: 'Read later' }]);
   });
 
   it('counts merged highlight groups (by shared groupId), not raw highlight docs', () => {
