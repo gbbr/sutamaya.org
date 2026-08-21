@@ -413,12 +413,19 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
             </div>
           )}
           {notes[suttaId] && (
-            <div
-              className="pl-[10px]"
+            <button
+              type="button"
+              className="block w-full pl-[10px] text-left hover:opacity-100"
+              aria-label="Edit note"
               style={{ fontSize: fs - 4, lineHeight: 1.6, marginTop: 9, color: theme.fg, opacity: 0.72, borderLeft: `2px solid ${theme.rule}` }}
+              onClick={() => {
+                setTab('highlights');
+                setPanel(true);
+                setNoteFocusSignal((s) => s + 1);
+              }}
             >
               {notes[suttaId]}
-            </div>
+            </button>
           )}
           <div className="mt-4">
             <SuttaRowChips
