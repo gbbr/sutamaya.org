@@ -14,10 +14,10 @@ export const NOTES_AUTO_LIST_ID = 'auto-notes';
 
 // Bounds how many rows ListPane has to render for an auto-list — it renders every item as a
 // full DOM row, unvirtualized, so an unbounded list would get sluggish for a heavy user long
-// before hitting any D1 read-volume concern (the underlying highlights/notes/visited tables are
-// fetched in full either way, for highlight-span/note-badge/visited-state rendering elsewhere in
-// the app). "Recent" additionally uses this as its actual product definition ("last 20
-// visited"), not just a rendering safeguard — see RECENT_AUTO_LIST_CAP.
+// before hitting any D1 read-volume concern (the underlying highlights/notes tables are fetched
+// in full either way, for highlight-span and note-badge rendering elsewhere in the app).
+// "Recent" additionally uses this as its actual product definition ("last 20 visited"), not just
+// a rendering safeguard — see RECENT_AUTO_LIST_CAP. Nothing outside it reads `visited`.
 export const AUTO_LIST_CAP = 100;
 export const RECENT_AUTO_LIST_CAP = 20;
 

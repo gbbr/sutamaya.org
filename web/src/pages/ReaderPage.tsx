@@ -27,6 +27,11 @@ import { ReaderSearchOverlay } from '../components/ReaderSearchOverlay';
 import { ShortcutsModal } from '../components/ShortcutsModal';
 import { SuttaRowChips } from '../components/SuttaRowChips';
 
+// How long a sutta has to stay open before it counts as visited. Long enough that stepping
+// through with Prev/Next doesn't fill the Recent list with everything it passed, short enough
+// that genuinely opening something always records it.
+const VISIT_DEBOUNCE_MS = 5000;
+
 export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus } = useCorpus();
   // A batched document (several inner suttas in one file, e.g. "dhp320-333") has no corpus entry
@@ -147,15 +152,13 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     setOpenSegs,
   });
 
-  // A sutta only counts as "visited" once the reader has stayed open on it for a meaningful
-  // fraction of its estimated reading time. Marking on open instead would let a single Prev/Next
-  // flick-through mark everything it passed as read, leaving the "read" checkmark (ListPane)
-  // meaning little. Cancelled — never marked — if the sutta changes (Prev/Next, closing, a deep
-  // link elsewhere) before the dwell time elapses.
+  // "Visited" means opened, and feeds the Recent auto-list — it makes no claim about having read
+  // anything, so it doesn't try to measure that. The delay is only a debounce: a Prev/Next
+  // flick-through shouldn't fill Recent with everything it passed. Cancelled if the sutta changes
+  // before it elapses.
   useEffect(() => {
     if (!suttaId || !sutta) return;
-    const dwellMs = Math.max(1000, sutta.min * 60 * 1000 * 0.3);
-    const timer = window.setTimeout(() => markVisited(suttaId), dwellMs);
+    const timer = window.setTimeout(() => markVisited(suttaId), VISIT_DEBOUNCE_MS);
     return () => window.clearTimeout(timer);
   }, [suttaId, sutta, markVisited]);
 

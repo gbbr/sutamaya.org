@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowUpDown, Check, ChevronLeft, GripVertical, List, ListPlus } from 'lucide-react';
+import { ArrowUpDown, ChevronLeft, GripVertical, List, ListPlus } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -34,7 +34,7 @@ interface ListPaneProps {
 
 export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, onOpen, visible = true }: ListPaneProps) {
   const { corpus } = useCorpus();
-  const { lists, membership, notes, highlights, visited, reorderListItems } = useUserData();
+  const { lists, membership, notes, highlights, reorderListItems } = useUserData();
   const { mobile } = useLayout();
   const scrollRef = useScrollMemory<HTMLDivElement>(`list:${query.trim() ? 'search' : nodeId || 'none'}`, visible);
   const itemRowRefs = useRef<Map<string, HTMLDivElement>>(new Map());
@@ -202,10 +202,9 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
   if (!corpus) return null;
 
   const title = searching ? { label: 'Search' } : nodeLabel(corpus, nodeId || '', lists);
-  const readCount = items.filter(([id]) => visited[id]).length;
   const meta = searching
     ? hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ results` : `${hits.length} ${hits.length === 1 ? 'result' : 'results'}`
-    : `${items.length} sutta${items.length === 1 ? '' : 's'} · ${readCount} read`;
+    : `${items.length} sutta${items.length === 1 ? '' : 's'}`;
 
   return (
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
@@ -297,11 +296,6 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                 <span className={`block ${reordering ? '' : 'pr-12'}`}>
                   <span className="font-sans text-[14.5px] font-bold tracking-[.02em] mr-2.5 text-ink/60">{s.ref}</span>
                   <span className="text-[16.5px] leading-[1.3] font-serif">{s.en}</span>
-                  {visited[id] && (
-                    <span className="inline-flex align-middle ml-2.5 text-ink/[.28]">
-                      <Check size={13} strokeWidth={2.25} />
-                    </span>
-                  )}
                 </span>
                 <span
                   className={`block font-serif text-[13.5px] italic mt-[1px] text-accent-text ${reordering ? '' : 'pr-12'}`}
