@@ -218,7 +218,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
           onChange={(e) => setDraft(e.target.value)}
           onKeyDown={onKeyDown}
           placeholder="Search or create a list"
-          className="w-full h-[34px] rounded-field px-3 text-[14.5px] [@media(pointer:coarse)]:text-base outline-none"
+          className="w-full h-[38px] rounded-field px-3 text-[14.5px] [@media(pointer:coarse)]:text-base outline-none"
           style={{ border: `1px solid ${theme.pali}`, background: theme.bg, color: theme.fg }}
           autoComplete="off"
           autoCorrect="off"
@@ -233,8 +233,8 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
             return (
               <button
                 key="create"
-                className="flex w-full items-center gap-2 px-2 py-[6px] text-left text-[14.5px]"
-                style={{ ...rowStyle(active), borderTop: `1px solid ${theme.rule}`, borderRadius: 0, marginTop: 4, paddingTop: 10 }}
+                className="flex w-full items-center gap-2 px-2 py-[8px] text-left text-[14.5px]"
+                style={{ ...rowStyle(active), borderTop: `1px solid ${theme.rule}`, borderRadius: 0, marginTop: 4, paddingTop: 12 }}
                 onMouseEnter={() => setActiveIndex(idx)}
                 onClick={() => activateRow(row)}
               >
@@ -248,7 +248,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
             return (
               <div
                 key={list.id}
-                className="flex items-center gap-2 py-[6px] pr-2 text-[14.5px]"
+                className="flex items-center gap-2 py-[8px] pr-2 text-[14.5px]"
                 style={{ paddingLeft: 8 + Math.min(depth, MAX_INDENT_DEPTH) * 14 }}
               >
                 {/* Rows here are always flattened/already "expanded" (see flattenListTree) — this
@@ -271,7 +271,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
               style={{ ...rowStyle(active), paddingLeft: query ? 8 : 8 + Math.min(depth, MAX_INDENT_DEPTH) * 14 }}
               onMouseEnter={() => setActiveIndex(idx)}
             >
-              <button className="flex flex-1 min-w-0 items-center gap-2 py-[6px] pr-2 text-left" onClick={() => activateRow(row)}>
+              <button className="flex flex-1 min-w-0 items-center gap-2 py-[8px] pr-2 text-left" onClick={() => activateRow(row)}>
                 {/* Checked fills with the theme's accent rather than with full-strength `fg`,
                     matching every other selected state in the reader's panel; unchecked draws in
                     `dim` rather than `fg`, which at 16px read as a heavier mark than the name
