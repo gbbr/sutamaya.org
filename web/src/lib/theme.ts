@@ -34,6 +34,28 @@ export const READER_THEMES: Record<ResolvedReaderTheme, ThemeColors> = {
   },
 };
 
+// The app shell's own palette (index.css's `:root`/`:root.dark`) expressed as a ThemeColors, so a
+// component built for the reader can be dropped into the Library unchanged — ListMembershipPicker
+// is shared by both. Every entry is a live `var()` reference rather than a resolved colour, so it
+// follows Settings > Theme without anything here having to know which theme is active.
+// `highlightPalette`/`selection` are unused outside the reader and are here only to satisfy the
+// type.
+export const SHELL_THEME: ThemeColors = {
+  bg: 'rgb(var(--paper))',
+  fg: 'rgb(var(--ink))',
+  dim: 'rgb(var(--ink) / .5)',
+  rule: 'rgb(var(--ink) / .16)',
+  panel: 'rgb(var(--field))',
+  // `--accent-text`, not `--accent2`: this is the checkbox fill and the input's focus border, both
+  // of which sit directly on the page like the Pali subtitles that variable exists for, so it has
+  // to lighten in dark mode the way a solid button fill deliberately doesn't.
+  pali: 'rgb(var(--accent-text))',
+  tint: 'rgb(var(--ink) / .08)',
+  focusTint: 'rgb(var(--ink) / .05)',
+  highlightPalette: null,
+  selection: 'rgb(var(--selection))',
+};
+
 export const READER_FACES: Record<ReaderFace, string> = {
   serif: "'Newsreader',Georgia,serif",
   georgia: "Georgia,'Times New Roman',serif",

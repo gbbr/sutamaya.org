@@ -1,0 +1,168 @@
+import { useEffect, useLayoutEffect, useRef } from 'react';
+import { X } from 'lucide-react';
+import { ListMembershipPicker } from './ListMembershipPicker';
+import { SHELL_THEME } from '../lib/theme';
+import { getUiScale } from '../lib/uiPrefs';
+
+const POPOVER_WIDTH = 288;
+// How far the popover keeps off the viewport edges.
+const VIEWPORT_MARGIN = 10;
+// Between the popover and the control it hangs off.
+const ANCHOR_GAP = 6;
+// Tall enough to show a good number of lists, short enough that it still reads as a popover
+// rather than a panel. Trimmed further when the viewport itself is shorter than this.
+const MAX_POPOVER_HEIGHT = 420;
+
+const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(v, hi));
+
+const SAFE_AREA_BOTTOM = 'env(safe-area-inset-bottom, 0px)';
+
+interface ListMembershipPopoverProps {
+  suttaId: string;
+  // Screen-space rect of the control that opened this — the row's own "add to list" button. Taken
+  // once, at open: the row it belongs to can disappear while the popover is up (unchecking the
+  // list you are currently viewing removes it), and re-measuring a detached element would move
+  // the popover somewhere arbitrary.
+  anchor: DOMRect;
+  mobile: boolean;
+  onClose: () => void;
+}
+
+// The Library's wrapper around ListMembershipPicker, which is otherwise just a bare input + rows
+// with no chrome of its own (the reader supplies its own, in a side-panel tab). Two presentations:
+// a full-screen modal on touch, where an anchored popover would end up under the keyboard, and a
+// popover anchored to the row's control on desktop.
+//
+// Rendered by ListPane as a sibling of the list rather than inside the row, so it survives that
+// row unmounting — see `anchor` above.
+export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: ListMembershipPopoverProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el || mobile) return;
+    // Same coordinate handling as HighlightPopup: `anchor` and getBoundingClientRect() below are
+    // already multiplied by the `zoom` on <html> (see applyUiScale), but a CSS length assigned
+    // here gets multiplied by it again at paint time, so it has to be pre-divided.
+    const scale = getUiScale();
+    // Cap the height against the viewport before measuring, so a short window (or a long list of
+    // lists) can't produce a popover taller than there is room for on either side of the anchor.
+    el.style.maxHeight = `${Math.min(MAX_POPOVER_HEIGHT, window.innerHeight - VIEWPORT_MARGIN * 2) / scale}px`;
+    // Measure at a known origin rather than assuming the CSS width and an unbounded height: the
+    // height depends on how many lists exist, and clamping either axis against a guess is what
+    // lets a popover hang off the edge.
+    el.style.left = '0px';
+    el.style.top = '0px';
+    const { width, height } = el.getBoundingClientRect();
+    // Right edges aligned to the control, growing leftwards — the control sits at the row's right
+    // edge, so any other alignment pushes the popover off a narrow pane.
+    const left = clamp(anchor.right - width, VIEWPORT_MARGIN, window.innerWidth - width - VIEWPORT_MARGIN);
+    // Below the control by default; above it when that would overflow the bottom. The clamp is
+    // what catches the case where neither side has room, rather than letting the flip put it
+    // off the top instead.
+    const below = anchor.bottom + ANCHOR_GAP;
+    const wanted = below + height > window.innerHeight - VIEWPORT_MARGIN ? anchor.top - height - ANCHOR_GAP : below;
+    const top = clamp(wanted, VIEWPORT_MARGIN, window.innerHeight - height - VIEWPORT_MARGIN);
+    el.style.left = `${left / scale}px`;
+    el.style.top = `${top / scale}px`;
+  }, [anchor, mobile]);
+
+  // A `position: fixed` element is laid out against the *layout* viewport, which the software
+  // keyboard does not shrink — so on touch the modal's content would run on underneath the
+  // keyboard, putting the last rows out of reach. `visualViewport` is the only thing that reports
+  // the region actually on screen; no CSS unit exposes it (`dvh` tracks browser chrome, not the
+  // keyboard, and Safari ignores `interactive-widget=resizes-content`).
+  //
+  // What gets adjusted is the modal's bottom *padding*, not its height. The modal stays
+  // full-screen, so its background always covers the whole display: iOS animates the keyboard in
+  // over ~250ms but reports the new viewport height on the first frame, and anything that resized
+  // itself to match would sit a keyboard's height short of the screen for a quarter second with
+  // the page showing through the gap. Padding moves the content up immediately and leaves the
+  // background where it is.
+  useLayoutEffect(() => {
+    const el = ref.current;
+    const vv = window.visualViewport;
+    if (!el || !mobile || !vv) return;
+    const apply = () => {
+      const keyboard = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+      // With the keyboard up it covers the home indicator, so the safe-area inset it replaces is
+      // only wanted back once the keyboard is gone.
+      el.style.paddingBottom = keyboard ? `${keyboard / getUiScale()}px` : SAFE_AREA_BOTTOM;
+    };
+    apply();
+    vv.addEventListener('resize', apply);
+    return () => vv.removeEventListener('resize', apply);
+  }, [mobile]);
+
+  // The picker handles Escape itself, but only while its input has focus (and there the first
+  // press clears the draft rather than closing) — this covers every other case.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [onClose]);
+
+  // Full-screen on touch rather than a partial-height sheet: the keyboard comes up from the
+  // bottom and would eat most of a sheet, leaving a few rows visible between the two. Filling the
+  // screen puts the input at the very top, as far from the keyboard as the display allows, and
+  // gives the rows every pixel the keyboard isn't using — which is also what makes autofocusing
+  // the input reasonable here, since the keyboard covers rows rather than the field itself.
+  // There's no backdrop to tap, so the header's close button is the only way out and always has
+  // to be there.
+  if (mobile) {
+    return (
+      <div
+        ref={ref}
+        data-component="ListMembershipPopover"
+        // `touch-none` is what stops a drag on the modal's own chrome — the header, the gap beside
+        // the input — from panning the page underneath it. Those parts aren't scrollable, so iOS
+        // hands the gesture to the document instead, which both scrolls the page behind the modal
+        // and (because a fixed element is anchored to the layout viewport) makes the modal's top
+        // edge lag and gap. The rows opt back in to vertical panning below.
+        className="fixed left-0 right-0 top-0 z-50 flex flex-col bg-field animate-sheetUp touch-none"
+        // Always the full layout viewport. `paddingBottom` is the resting value the effect above
+        // swaps out while the keyboard is up, and the only value a browser without
+        // `visualViewport` ever sees.
+        style={{ height: '100%', paddingTop: 'env(safe-area-inset-top, 0px)', paddingBottom: SAFE_AREA_BOTTOM }}
+      >
+        <div className="flex-none flex items-center gap-2 px-4 pt-3.5 pb-2.5 border-b border-ink/10">
+          <span className="flex-1 min-w-0 font-sans text-[15px] font-semibold">Add to list</span>
+          <button
+            className="flex-none w-9 h-9 -mr-2 flex items-center justify-center rounded-full text-ink/50 active:bg-ink/[.08]"
+            aria-label="Close"
+            onClick={onClose}
+          >
+            <X size={18} strokeWidth={1.75} />
+          </button>
+        </div>
+        <div className="sc flex-1 min-h-0 px-4 pt-2.5 pb-4 touch-pan-y">
+          {/* No autoFocus on touch. Focusing the input while the modal is still sliding up leaves
+              it off-screen at that instant, and iOS answers by scrolling the whole layout viewport
+              to reveal it — dragging this modal and the page behind it ~270px up the screen. The
+              keyboard now only appears because someone tapped the field, by which time the modal
+              is at rest. It also keeps the rows, which are the point of this screen, unobscured
+              until the user actually asks to filter them. */}
+          <ListMembershipPicker suttaId={suttaId} theme={SHELL_THEME} onRequestClose={onClose} />
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      {/* Invisible, but it is what makes a click anywhere else dismiss the popover — and, being
+          fixed and full-screen, it also stops the pane scrolling out from under the anchor. */}
+      <div className="fixed inset-0 z-40" onClick={onClose} />
+      <div
+        ref={ref}
+        data-component="ListMembershipPopover"
+        className="sc fixed z-50 rounded-field border border-ink/[.14] bg-field shadow-popup p-2 animate-popIn"
+        style={{ width: POPOVER_WIDTH, overflowY: 'auto' }}
+      >
+        <ListMembershipPicker suttaId={suttaId} theme={SHELL_THEME} autoFocus onRequestClose={onClose} />
+      </div>
+    </>
+  );
+}

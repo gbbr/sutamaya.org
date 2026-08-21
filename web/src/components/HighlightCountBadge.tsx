@@ -28,7 +28,11 @@ export function HighlightCountBadge({ count, onClick, theme, fs, style }: Highli
   return (
     <Tag
       data-component="HighlightCountBadge"
-      className="inline-flex items-center gap-1 whitespace-nowrap rounded-full px-[9px] font-sans font-bold bg-ink/10 text-ink/60"
+      // The hover fade only when this is actually clickable — as a plain <span> (ListPane, where
+      // the row itself is the target) it would suggest an affordance that isn't there.
+      className={`inline-flex items-center gap-1 whitespace-nowrap rounded-full px-[9px] font-sans font-bold bg-ink/10 text-ink/60 ${
+        onClick ? 'hover:opacity-70' : ''
+      }`}
       style={theme ? { background: theme.tint, color: theme.fg, fontSize, height, ...style } : { fontSize, height, ...style }}
       onClick={onClick}
     >

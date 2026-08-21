@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowUpDown, Check, ChevronLeft, GripVertical, List } from 'lucide-react';
+import { ArrowUpDown, Check, ChevronLeft, GripVertical, List, ListPlus } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -9,6 +9,7 @@ import { listItemsFor, nodeLabel, SEARCH_RESULTS_CAP, type SearchHit } from '../
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
 import { SuttaRowChips } from './SuttaRowChips';
+import { ListMembershipPopover } from './ListMembershipPopover';
 import type { Sutta } from '../lib/types';
 
 interface ListPaneProps {
@@ -88,6 +89,11 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
   // toggle for the list tree). Never offered for an auto list, whose membership is derived rather
   // than stored — see the header toggle's `!currentList.auto` guard.
   const [reorderMode, setReorderMode] = useState(false);
+  // The row whose list-membership popover is open, with the screen-space rect of the control that
+  // opened it. Held here rather than in the row so it outlives that row: unchecking the list
+  // you're currently viewing drops the sutta out of `items`, and the popover has to stay up so it
+  // can be checked straight back on.
+  const [picker, setPicker] = useState<{ suttaId: string; anchor: DOMRect } | null>(null);
   const dragIdRef = useRef<string | null>(null);
   // Mirrors `dragOrder` so endDrag can read the live value. The window-level `onUp` listener
   // that calls endDrag is registered once, at drag-start, so the `endDrag` closure it holds is
@@ -166,6 +172,15 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // The popover is anchored to a rect captured at open, so anything that moves the rows out from
+  // under it has to dismiss it: switching what the pane is showing, entering reorder mode (where
+  // the control it points at is replaced by a drag handle), or the pane being swapped away on
+  // mobile — LibraryPage hides it with `display:none` rather than unmounting, which on its own
+  // would leave a fixed-position popover on screen over TreePane.
+  useEffect(() => {
+    setPicker(null);
+  }, [nodeId, searching, reorderMode, visible]);
 
   // Reveals the sutta the user just came from — e.g. tapping a list-membership chip in the
   // Reader now opens this pane with `selectedId` set (see ReaderPage's chip onClick) rather than
@@ -269,12 +284,17 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
               className="relative border-b border-ink/[.08]"
               style={dragging ? { opacity: 0.5 } : undefined}
             >
+              {/* The right gutter is only kept clear where a control actually sits. At rest the
+                  add-to-list button is anchored to the top of the row, so only the title and the
+                  Pali line beneath it give up the width — the blurb and chips run the row's full
+                  measure. While reordering the grip is vertically centred instead, and the whole
+                  row has to clear it. */}
               <button
                 className={`block w-full text-left px-5 py-[13px] ${reordering ? 'pr-12' : ''} ${on ? 'bg-ink/[.05]' : ''}`}
                 style={on ? { boxShadow: 'inset 2px 0 0 rgb(var(--accent2))' } : undefined}
                 onClick={() => onOpen(openTargets.get(id) ?? id)}
               >
-                <span>
+                <span className={`block ${reordering ? '' : 'pr-12'}`}>
                   <span className="font-sans text-[14.5px] font-bold tracking-[.02em] mr-2.5 text-ink/60">{s.ref}</span>
                   <span className="text-[16.5px] leading-[1.3] font-serif">{s.en}</span>
                   {visited[id] && (
@@ -283,7 +303,11 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                     </span>
                   )}
                 </span>
-                <span className="block font-serif text-[13.5px] italic mt-[1px] text-accent-text">{s.pali}</span>
+                <span
+                  className={`block font-serif text-[13.5px] italic mt-[1px] text-accent-text ${reordering ? '' : 'pr-12'}`}
+                >
+                  {s.pali}
+                </span>
                 {note ? (
                   <span className="block font-serif text-[14.5px] leading-[1.45] mt-[7px] pl-[10px] border-l-2 border-ink/30">
                     {note}
@@ -293,9 +317,46 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                 )}
                 <SuttaRowChips chips={chips} hlCount={hlCount} />
               </button>
+              {/* Opens the list-membership picker for this sutta. Hidden entirely while reordering
+                  so the grip below has the gutter to itself — one control per row edge, never two,
+                  and nobody manages memberships mid-drag. Anchored to the title line rather than
+                  vertically centred: a row runs three or four lines, so a centred button would
+                  float alongside the blurb instead of reading as the row's own action. Visible at
+                  rest on every device, never hover-revealed: an iPad gets the desktop layout but
+                  has no hover, so a hover-gated control would simply not exist there.
+
+                  The same 28px circle as the header's reorder toggle, at the same `right-5` the
+                  header's own `px-5` puts that toggle at, so the two share a vertical axis down
+                  the pane's right edge — on mobile that axis is the one the Back button mirrors.
+                  Borderless at rest, unlike the header pair: repeated down every row, their chip
+                  fill and border would read as a column of buttons competing with the text. The
+                  `after` pseudo-element pads the tap target out to 48px — Material's recommended
+                  minimum, comfortably past Apple's 44 — without growing the circle: it overhangs
+                  the layout rather than taking part in it, so the box still ends exactly at the
+                  `pr-12` the rows already reserve and the title loses no width to any of this. */}
+              {!reordering && (
+                <button
+                  className="absolute right-5 top-2.5 w-7 h-7 flex items-center justify-center rounded-full text-ink/45 hover:bg-ink/[.08] hover:text-ink active:bg-ink/[.12] after:content-[''] after:absolute after:-inset-2.5"
+                  aria-label={`Add ${s.ref} to a list`}
+                  onClick={(e) => setPicker({ suttaId: id, anchor: e.currentTarget.getBoundingClientRect() })}
+                >
+                  <ListPlus size={15} strokeWidth={2} />
+                </button>
+              )}
               {reordering && (
                 <span
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded text-ink/40"
+                  // `right-3` puts this target's centre on the same 34px-from-the-edge axis as the
+                  // header's reorder toggle and the add-to-list button it replaces, so nothing
+                  // shifts sideways when reorder mode is turned on. The target overhangs the rows'
+                  // `pr-12` text column, but only with empty space — the grip glyph itself is 16px
+                  // and stays well inside it.
+                  //
+                  // `inset-y-1` rather than a fixed height: a row runs three or four lines, and
+                  // grabbing one to drag it is a gesture aimed at the *row*, not at a 44px dot
+                  // inside it. Spanning the row's full height makes the whole right gutter grabbable
+                  // while the glyph stays centred, which matters most on touch — there is nothing
+                  // else to hit in that gutter while reordering, so there is nothing to steal from.
+                  className="absolute right-3 inset-y-1 w-11 flex items-center justify-center rounded text-ink/40"
                   style={{
                     touchAction: 'none',
                     cursor: 'grab',
@@ -317,6 +378,14 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
           </div>
         )}
       </div>
+      {picker && (
+        <ListMembershipPopover
+          suttaId={picker.suttaId}
+          anchor={picker.anchor}
+          mobile={mobile}
+          onClose={() => setPicker(null)}
+        />
+      )}
     </section>
   );
 }
