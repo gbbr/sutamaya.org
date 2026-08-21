@@ -538,6 +538,15 @@ export function SettingsPage({ location }: RouteComponentProps) {
                     Cancel
                   </button>
                 </div>
+                {/* Stated plainly, in the same muted grey as every other status line here, rather
+                    than as a warning: leaving loses nothing. The unmount abort above stops the
+                    download and prefetchAllSuttas skips whatever's already cached, so returning
+                    and tapping again picks up where it left off. Without the line, though, the
+                    bar just disappears when the reader navigates away and there's no way to tell
+                    a pause from a failure. */}
+                <div className="font-sans text-[12.5px] text-ink/45 mt-2">
+                  Leaving this page pauses the download — you can resume it later.
+                </div>
               </>
             ) : (
               <>
