@@ -130,10 +130,10 @@ function formatSyncedAt(iso: string): string {
   return `${days} day${days === 1 ? '' : 's'} ago`;
 }
 
-// One line describing the offline-sync queue (see docs/offline-sync.md's "Sync state"). This is the
-// only place any of it is shown: the app's chrome carries nothing for the states that resolve on
-// their own (draining, offline) or that a user can't act on (permanently refused), so this is where
-// someone wondering whether their data has actually reached the server finds out.
+// One line describing the offline-sync queue (see docs/offline-sync.md's "Sync state"). The full
+// sentences live here and nowhere else: the library's footer row (components/DataLocationRow.tsx)
+// carries the same states in two or three words and links here, so this is where someone who wants
+// to know what "Not synced" actually means finds out.
 function syncStatusLine(
   status: SyncStatus,
   pendingCount: number,
@@ -161,8 +161,8 @@ export function SettingsPage({ location }: RouteComponentProps) {
   const { corpus } = useCorpus();
   const { syncStatus, pendingCount, lastSyncedAt, needsReauth, lists, notes, highlights } = useUserData();
 
-  // The one gate on every "your data is only on this device" warning — the header banner, the dot
-  // on the account badge and both warning lines in the Account card below. A reader who hasn't
+  // The one gate on every "your data is only on this device" warning — the header banner, the
+  // footer's DataStatus and both warning lines in the Account card below. A reader who hasn't
   // made anything yet has nothing to lose, so none of them appear.
   const hasLocalWork = hasLocalWorkWorthKeeping(lists, notes, highlights);
 

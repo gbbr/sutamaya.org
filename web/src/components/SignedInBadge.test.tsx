@@ -35,13 +35,9 @@ describe('SignedInBadge', () => {
     expect(screen.queryByLabelText(/Signed in as/)).not.toBeInTheDocument();
   });
 
-  it('signed out with local work: shows the dot and says so in the label', () => {
-    const { container } = render(<SignedInBadge user={null} size={26} atRisk />);
-    expect(screen.getByLabelText(/saved only on this device/)).toBeInTheDocument();
-    expect(container.querySelector('[data-component="SignedInBadgeDot"]')).toBeInTheDocument();
-  });
-
-  it('signed out with nothing to lose: no dot', () => {
+  // The "only on this device" warning lives in the footer's DataStatus, not here — see the badge's
+  // own comment for why it carries no mark of its own.
+  it('signed out: carries no at-risk mark', () => {
     const { container } = render(<SignedInBadge user={null} size={26} />);
     expect(container.querySelector('[data-component="SignedInBadgeDot"]')).not.toBeInTheDocument();
   });

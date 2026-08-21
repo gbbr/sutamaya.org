@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { navigate } from '@reach/router';
 import { UserRound } from 'lucide-react';
-import { isIosBrowserTab } from '../lib/localAccount';
 import type { User } from '../lib/types';
 
 // The single account/settings entry point in TreePane's header, signed in or out — which is why
@@ -9,10 +8,10 @@ import type { User } from '../lib/types';
 // Parameterized on size so mobile and desktop can each size it to match their own surrounding
 // chrome (mobile much bigger — see TreePane's header).
 //
-// `atRisk` marks the signed-out branch with a notification dot: work exists that only this device
-// holds. Unlike the "keep this safe" banner it can't be dismissed, because it isn't a nudge — it's
-// the standing state of the data, and it stays until a sign-in actually resolves it.
-export function SignedInBadge({ user, size, atRisk = false }: { user: User | null; size: number; atRisk?: boolean }) {
+// Carries no "your work is only on this device" mark of its own: the footer's DataStatus says that
+// in words, and a bare dot here would be a third simultaneous signal for one fact, alongside the
+// header banner — with nothing but a tooltip to explain it.
+export function SignedInBadge({ user, size }: { user: User | null; size: number }) {
   const dim = { width: size, height: size };
   // The initials render first and stay put until the <img> actually finishes loading — Google's
   // avatar URL is unreachable offline (it's not something the PWA precaches), and revealing the
@@ -49,28 +48,13 @@ export function SignedInBadge({ user, size, atRisk = false }: { user: User | nul
     // it (the "keep this safe" banner is what actually asks for one, when there's a reason to).
     <button
       data-component="SignedInBadge"
-      className="relative flex-none rounded-full border border-ink/25 flex items-center justify-center text-ink/50 hover:bg-ink/[.06] hover:text-ink/70"
+      className="flex-none rounded-full border border-ink/25 flex items-center justify-center text-ink/50 hover:bg-ink/[.06] hover:text-ink/70"
       style={dim}
-      aria-label={atRisk ? 'Settings — your notes are saved only on this device' : 'Settings'}
-      title={atRisk ? 'Settings — your notes are saved only on this device' : 'Settings'}
+      aria-label="Settings"
+      title="Settings"
       onClick={() => navigate('/settings')}
     >
       <UserRound size={Math.round(size * 0.55)} strokeWidth={1.75} />
-      {atRisk && (
-        // Bordered rather than ringed in a background colour: this badge sits on `paper` on mobile
-        // and `treepane` on desktop, so a ring painted to match one of them would be a visible
-        // patch on the other. The badge's own border token separates the dot from the glyph
-        // beneath it on either.
-        //
-        // Amber, and red on an iOS browser tab — the same pair the banner and the Settings line use
-        // under the same conditions, since all three are saying one thing. Red is reserved for the
-        // iOS case, where the data is on a deletion timer rather than merely unsynced.
-        <span
-          data-component="SignedInBadgeDot"
-          className={`absolute rounded-full border border-ink/25 ${isIosBrowserTab() ? 'bg-danger-text' : 'bg-warning-text'}`}
-          style={{ width: 8, height: 8, top: -1, right: -1 }}
-        />
-      )}
     </button>
   );
 }

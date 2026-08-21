@@ -154,12 +154,12 @@ export function HeaderBanner() {
   const showKeepSafe = !isSignedIn && hasLocalWorkWorthKeeping(lists, notes, highlights) && !keepSafeDismissed;
 
   if (needsReauth) {
-    // A lapsed session is the one sync state worth interrupting for: nothing else in the UI changes
-    // when it happens (the account badge still shows a signed-in user, seeded from lib/lastUser.ts,
-    // and every list/note/highlight still reads and writes against the local mirror), so the app
-    // looks entirely normal while nothing reaches the server. Every other state — draining,
-    // offline, permanently refused — either resolves on its own or can't be acted on, and lives as
-    // text in Settings' Offline section instead. Not dismissible: the only thing that resolves it
+    // A lapsed session is the one sync state worth interrupting for: the account badge still shows
+    // a signed-in user (seeded from lib/lastUser.ts) and every list/note/highlight still reads and
+    // writes against the local mirror, so the app looks entirely normal while nothing reaches the
+    // server. Every other state — draining, offline, permanently refused — either resolves on its
+    // own or can't be acted on. The footer's DataStatus carries all of them as standing status,
+    // this bar only the one that needs an answer. Not dismissible: the only thing that resolves it
     // is signing in, which the button does.
     return (
       <Banner

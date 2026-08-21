@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { navigate } from '@reach/router';
-import { CircleHelp, Highlighter, StickyNote, History, Library, List, Search, X } from 'lucide-react';
+import { LifeBuoy, Highlighter, StickyNote, History, Library, List, Search, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
@@ -17,9 +17,9 @@ import { derivePaneViewSync } from '../lib/paneView';
 import { TREE_VIEW_KEY, TREE_EXPANDED_KEY } from '../lib/storageKeys';
 import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
 import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
-import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
 import type { ListDef } from '../lib/types';
 import { SignedInBadge } from './SignedInBadge';
+import { DataStatus } from './DataStatus';
 import { HeaderBanner } from './HeaderBanner';
 import { SuttaRowChips } from './SuttaRowChips';
 import { type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
@@ -48,13 +48,6 @@ function loadPersistedExpansion(): PersistedExpansion {
   }
   return { corpus: [], lists: [] };
 }
-
-// How many suttas someone has to have opened before the help row stops introducing itself. The
-// row itself is permanent — help earns its place long after onboarding, for the things used
-// rarely (export, the offline download, what a highlight colour meant) — but "How to use
-// Sutamaya" reads like a tutorial prompt and goes stale, where a plain "Help" reads as furniture
-// indefinitely. Same row, same place; only the label settles down.
-const HELP_ONBOARDING_VISITS = 5;
 
 function toRecord(ids: string[]): Record<string, boolean> {
   const record: Record<string, boolean> = {};
@@ -115,7 +108,6 @@ export function TreePane({
     membership,
     notes,
     highlights,
-    visited,
     createList,
     renameList,
     removeList,
@@ -517,7 +509,7 @@ export function TreePane({
           {/* Account entry point, right of the toggle on every viewport. The badge goes to
               Settings in either sign-in state, so it's the only control needed here — a separate
               gear beside it would open the same page. */}
-          <SignedInBadge user={user} size={mobile ? 32 : 28} atRisk={!user && hasLocalWorkWorthKeeping(lists, notes, highlights)} />
+          <SignedInBadge user={user} size={mobile ? 32 : 28} />
         </div>
         {searchOpen && (
           <div className="mt-4 relative">
@@ -651,15 +643,25 @@ export function TreePane({
           not going to scroll hunting for it. It costs a row in this pane only — never in the
           reader, and on mobile never while reading — which is what keeps it from being a bottom
           bar the whole app pays for. The inset keeps it clear of the iOS home indicator, where
-          this pane runs to the bottom of the viewport in an installed PWA. */}
-      <button
-        className="flex-none flex items-center gap-[9px] px-[18px] py-[11px] border-t border-ink/10 text-left font-sans text-[12.5px] text-ink/45 hover:text-ink/70"
-        style={{ paddingBottom: 'calc(11px + env(safe-area-inset-bottom, 0px))' }}
-        onClick={() => navigate('/help')}
+          this pane runs to the bottom of the viewport in an installed PWA.
+
+          Two ends, each its own button with its own full-height padding, so the tap targets stay
+          the height of the bar and the icons bookend it. Both buttons stay short enough to fit
+          side by side at the pane's 210px minimum (see LayoutContext) — which is most of why the
+          status end only spells itself out when something is wrong. */}
+      <div
+        className="flex-none flex items-center justify-between border-t border-ink/10"
+        style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       >
-        <CircleHelp size={15} strokeWidth={2} className="flex-none text-ink/35" />
-        {Object.keys(visited).length < HELP_ONBOARDING_VISITS ? 'How to use this app' : 'Help'}
-      </button>
+        <button
+          className="flex-none flex items-center gap-[9px] min-w-0 pl-[18px] pr-3 py-[11px] text-left font-sans text-[12.5px] text-ink/45 hover:text-ink/70"
+          onClick={() => navigate('/help')}
+        >
+          <LifeBuoy size={15} strokeWidth={2} className="flex-none text-ink/35" />
+          Help
+        </button>
+        <DataStatus />
+      </div>
     </aside>
   );
 }
