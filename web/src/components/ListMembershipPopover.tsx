@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 import { ListMembershipPicker } from './ListMembershipPicker';
+import { useCorpus } from '../context/CorpusContext';
 import { SHELL_THEME } from '../lib/theme';
 import { getUiScale } from '../lib/uiPrefs';
 
@@ -47,6 +48,10 @@ interface ListMembershipPopoverProps {
 // row unmounting — see `anchor` above.
 export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: ListMembershipPopoverProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const { corpus } = useCorpus();
+  // Only the mobile screen shows this; the desktop popover hangs off the row itself, which is
+  // still visible behind it.
+  const sutta = corpus?.suttas[suttaId];
 
   useLayoutEffect(() => {
     const el = ref.current;
@@ -141,9 +146,20 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
         style={{ height: '100%', paddingTop: 'env(safe-area-inset-top, 0px)', paddingBottom: SAFE_AREA_BOTTOM }}
       >
         <div className="flex-none flex items-center gap-2 px-4 pt-3.5 pb-2.5 border-b border-ink/10">
-          <span id={TITLE_ID} className="flex-1 min-w-0 font-sans text-[15px] font-semibold">
-            Add to list
-          </span>
+          {/* Sized and weighted like ListPane's own header rather than like a popover label: this
+              is a whole screen, and a 15px title on one reads as a stray caption. The second line
+              names the sutta because the row that opened this is no longer on screen to say. */}
+          <div className="flex-1 min-w-0">
+            <div id={TITLE_ID} className="font-sans text-[19px] font-semibold tracking-[-.01em]">
+              Add to list
+            </div>
+            {sutta && (
+              <div className="font-sans text-xs text-ink/[.42] mt-[2px] truncate">
+                <span className="text-ink/45">{sutta.ref} · </span>
+                {sutta.en}
+              </div>
+            )}
+          </div>
           <button
             className="flex-none w-9 h-9 -mr-2 flex items-center justify-center rounded-full text-ink/50 active:bg-ink/[.08]"
             aria-label="Close"
@@ -152,7 +168,7 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
             <X size={18} strokeWidth={1.75} />
           </button>
         </div>
-        <div className="sc flex-1 min-h-0 px-4 pt-2.5 pb-4 touch-pan-y">
+        <div className="flex flex-col flex-1 min-h-0 px-4 pt-2.5 pb-4">
           {/* No autoFocus on touch. Focusing the input while the modal is still sliding up leaves
               it off-screen at that instant, and iOS answers by scrolling the whole layout viewport
               to reveal it — dragging this modal and the page behind it ~270px up the screen. The
@@ -178,8 +194,8 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
         role="dialog"
         aria-modal="true"
         aria-label="Add to list"
-        className="sc fixed z-50 rounded-field border border-ink/[.14] bg-field shadow-popup p-2 animate-popIn"
-        style={{ width: POPOVER_WIDTH, overflowY: 'auto' }}
+        className="fixed z-50 flex flex-col rounded-field border border-ink/[.14] bg-field shadow-popup p-2 animate-popIn"
+        style={{ width: POPOVER_WIDTH }}
       >
         <ListMembershipPicker suttaId={suttaId} theme={SHELL_THEME} autoFocus={wantsAutoFocus()} onRequestClose={onClose} />
       </div>

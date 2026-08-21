@@ -247,7 +247,9 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
           spellCheck={false}
         />
       </div>
-      <div>
+      {/* `touch-pan-y`: the Library's mobile modal sets `touch-none` on itself to keep a drag on
+          its chrome from panning the page behind it, so the rows have to opt back in here. */}
+      <div className="sc min-h-0 flex-1 touch-pan-y">
         {rows.map((row, idx) => {
           const active = idx === activeIdx;
           if (row.type === 'create') {
