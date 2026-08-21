@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowUp, Lightbulb } from 'lucide-react';
 import { isTypingTarget } from '../lib/shortcuts';
 import dictionaryShot from '../assets/help/dictionary-mobile.webp';
 import libraryShot from '../assets/help/library-mobile.webp';
@@ -71,7 +71,7 @@ interface HelpShot {
   // What each of this column's markers points at, in order. Every line must correspond to
   // something visible in this shot — anything that doesn't (a keyboard shortcut, a gesture that
   // can't be photographed mid-flight, a state the screenshot isn't in) belongs in the section's
-  // `note`, so a number never points at nothing.
+  // `tips`, so a number never points at nothing.
   steps: string[];
 }
 
@@ -80,7 +80,11 @@ interface HelpSection {
   // A one-line orientation before the pictures — what this section is about.
   lead: string;
   shots: HelpShot[];
-  note?: string;
+  // The things a marker can't point at — a keyboard shortcut, a gesture, a consequence that only
+  // shows up after the fact. One paragraph each, and at most two or three per section: they render
+  // as a tinted card, which stops reading as "worth stopping for" if it grows into a wall.
+  // `*asterisks*` emphasise a run within a tip — see withEmphasis.
+  tips?: string[];
 }
 
 const SECTIONS: HelpSection[] = [
@@ -120,7 +124,7 @@ const SECTIONS: HelpSection[] = [
         ],
       },
     ],
-    note: 'On a keyboard, press ? to see a full list of shortcuts.',
+    tips: ['On a keyboard, press ? to see a full list of shortcuts.'],
   },
   {
     title: 'Reading',
@@ -163,8 +167,10 @@ const SECTIONS: HelpSection[] = [
         ],
       },
     ],
-    note: 'On a keyboard, press ? for the full list of shortcuts. Tip: pressing / in the Reader reveals' +
-      ' a Search bar so you can easily navigate to another sutta.',
+    tips: [
+      'On a keyboard, press ? for the full list of shortcuts.',
+      'Pressing / in the reader reveals a search bar, so you can jump straight to another sutta.',
+    ],
   },
   {
     title: 'Highlights & Notes',
@@ -202,7 +208,7 @@ const SECTIONS: HelpSection[] = [
         ],
       },
     ],
-    note: 'Every highlight is also marked down the reader’s right edge — tap a mark to jump there.',
+    tips: ['Every highlight is also marked down the reader’s right edge — tap a mark to jump there.'],
   },
   {
     title: 'Lists',
@@ -239,8 +245,12 @@ const SECTIONS: HelpSection[] = [
         ],
       },
     ],
-    note: 'Deleting a list takes the suttas in it with it, and deleting a group takes every list nested ' +
-      'inside it. There is one confirmation and no undo.',
+    tips: [
+      'To take a sutta out of a list, open the sutta, go to its "Lists" panel and uncheck the list ' +
+        '(see "Lists while reading").',
+      'Deleting a list takes the suttas in it with it, and deleting a group takes every list nested ' +
+        'inside it. There is one confirmation and no undo.',
+    ],
   },
   {
     title: 'Lists while reading',
@@ -279,8 +289,10 @@ const SECTIONS: HelpSection[] = [
         ],
       },
     ],
-    note: 'Tip: When reading, swiping left or right (or pressing Shift+Left/Right) navigates the the next ' +
-      'or previous sutta in the current collection.',
+    tips: [
+      'When reading, swiping left or right — or pressing Shift+Left/Right — moves to the next or ' +
+        'previous sutta in the current collection.',
+    ],
   },
   {
     title: 'Settings & Offline',
@@ -314,7 +326,11 @@ const SECTIONS: HelpSection[] = [
         ],
       },
     ],
-    note: 'Signing in is never required — everything works signed out. "Download all content" fetches the whole canon, so even a sutta you have never opened are there with no connection.',
+    tips: [
+      'Signing in is never required — everything works signed out.',
+      '"Download all content" fetches the whole canon, so even a sutta you have never opened is ' +
+        'there with no connection.',
+    ],
   },
 ];
 
@@ -323,6 +339,18 @@ const SECTIONS: HelpSection[] = [
 // of the UI it is pointing at. Solid with a pale ring so it holds an edge over screenshot pixels
 // of any colour, in either theme.
 const MARKER = 'flex items-center justify-center rounded-full bg-[#E23A2E] font-sans font-medium text-white tabular-nums';
+
+// `*emphasis*` inside a tip. A single asterisk, not Markdown's double, because a tip is a hand-
+// authored string in this file and never user input — there is nothing to escape and no other
+// Markdown to be consistent with. Split on the delimiter rather than replacing into HTML, so the
+// text stays text and can't inject markup: the capture group puts every emphasised run on an odd
+// index. `font-semibold` rather than bold — the self-hosted IBM Plex Sans only carries 400–600, so
+// a 700 request gets a synthesised smear instead of a real weight.
+function withEmphasis(tip: string) {
+  return tip.split(/\*(.+?)\*/).map((part, i) =>
+    i % 2 ? <span key={i} className="font-semibold text-ink/90">{part}</span> : part,
+  );
+}
 
 // Section ids for the contents list, derived from the title rather than stored beside it so the
 // two can't disagree about what a link points at.
@@ -390,6 +418,10 @@ function ShotColumn({ shot, startIndex, showTitle }: { shot: HelpShot; startInde
 }
 
 export function HelpPage(_props: RouteComponentProps) {
+  // The page's own scroll container, so "Back to top" can return to it. The document itself never
+  // scrolls here — the app shell is a fixed-height layout and this `.sc` div is what moves.
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   // Escape leaves the page, matching Settings — both are side trips off whatever the reader was
   // actually doing, and '/' restores that rather than relying on browser history (see
   // RestoreLastLocation in App.tsx).
@@ -402,7 +434,7 @@ export function HelpPage(_props: RouteComponentProps) {
   }, []);
 
   return (
-    <div data-component="HelpPage" className="sc h-full bg-paper px-5 pt-10">
+    <div ref={scrollRef} data-component="HelpPage" className="sc h-full bg-paper px-5 pt-10">
       <div className="w-full max-w-[520px] pb-10 mx-auto">
         <button className="flex items-center gap-1.5 font-sans text-[13px] text-ink/50 mb-5" onClick={() => navigate('/')}>
           <ArrowLeft size={14} strokeWidth={1.75} />
@@ -460,7 +492,38 @@ export function HelpPage(_props: RouteComponentProps) {
                   <ShotColumn key={shot.name} shot={shot} startIndex={startIndex} showTitle={columns.length > 1} />
                 ))}
               </div>
-              {section.note && <p className="font-sans text-[12.5px] leading-[1.5] text-ink/50 mt-4">{section.note}</p>}
+              {/* A tip is the part of a section a reader is least likely to already know, so it
+                  can't be set as the quietest text on the page — it gets a tinted card instead,
+                  read at the legend's own size and weight. The amber is `warning-text`, the same
+                  tone HeaderBanner and Settings already use for "worth knowing", rather than the
+                  markers' red: that red is annotation drawn *over* a screenshot, and letting it
+                  spread to the page's own furniture would stop it meaning that.
+                  One card per section, not per tip, so two tips don't repeat the icon.
+                  The padding is asymmetric on purpose: the icon already holds the text well clear
+                  of the left edge, while on the right nothing but the padding keeps a wrapped line
+                  off it. */}
+              {section.tips && (
+                <div className="flex items-start gap-2 rounded-field bg-warning-text/[.09] pl-2.5 pr-[18px] py-3 mt-4">
+                  <Lightbulb size={15} strokeWidth={1.75} className="flex-none mt-[2px] text-warning-text" />
+                  <div className="flex-1 min-w-0 flex flex-col gap-2 font-sans text-[13px] leading-[1.45] text-ink/75">
+                    {section.tips.map((tip) => (
+                      <p key={tip}>{withEmphasis(tip)}</p>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {/* A section runs to several screens on a phone, so the way back to "On this page" —
+                  the only route to a different section — is a long swipe up from wherever the
+                  reader finished. Dimmer than the section's own text and set to the right margin,
+                  off the left edge every other line starts from, so it reads as the end of the
+                  section rather than as one more thing to read. */}
+              <button
+                className="flex items-center gap-1.5 ml-auto font-sans text-[12.5px] text-ink/40 hover:text-ink/70 mt-5 py-1"
+                onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                <ArrowUp size={13} strokeWidth={1.75} />
+                Back to top
+              </button>
             </section>
           );
         })}
