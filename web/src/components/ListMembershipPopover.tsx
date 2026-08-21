@@ -17,6 +17,10 @@ const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(v, hi
 
 const SAFE_AREA_BOTTOM = 'env(safe-area-inset-bottom, 0px)';
 
+// Names the mobile sheet for assistive tech via its own visible heading, rather than repeating
+// the string in an aria-label. Only ever one of these is mounted at a time, so a constant is fine.
+const TITLE_ID = 'list-membership-popover-title';
+
 interface ListMembershipPopoverProps {
   suttaId: string;
   // Screen-space rect of the control that opened this — the row's own "add to list" button. Taken
@@ -116,6 +120,9 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
       <div
         ref={ref}
         data-component="ListMembershipPopover"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={TITLE_ID}
         // `touch-none` is what stops a drag on the modal's own chrome — the header, the gap beside
         // the input — from panning the page underneath it. Those parts aren't scrollable, so iOS
         // hands the gesture to the document instead, which both scrolls the page behind the modal
@@ -128,7 +135,9 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
         style={{ height: '100%', paddingTop: 'env(safe-area-inset-top, 0px)', paddingBottom: SAFE_AREA_BOTTOM }}
       >
         <div className="flex-none flex items-center gap-2 px-4 pt-3.5 pb-2.5 border-b border-ink/10">
-          <span className="flex-1 min-w-0 font-sans text-[15px] font-semibold">Add to list</span>
+          <span id={TITLE_ID} className="flex-1 min-w-0 font-sans text-[15px] font-semibold">
+            Add to list
+          </span>
           <button
             className="flex-none w-9 h-9 -mr-2 flex items-center justify-center rounded-full text-ink/50 active:bg-ink/[.08]"
             aria-label="Close"
@@ -158,6 +167,11 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
       <div
         ref={ref}
         data-component="ListMembershipPopover"
+        // Modal on desktop too: the click-catcher above blocks everything behind it, so telling
+        // assistive tech the background is out of reach matches what a pointer already finds.
+        role="dialog"
+        aria-modal="true"
+        aria-label="Add to list"
         className="sc fixed z-50 rounded-field border border-ink/[.14] bg-field shadow-popup p-2 animate-popIn"
         style={{ width: POPOVER_WIDTH, overflowY: 'auto' }}
       >
