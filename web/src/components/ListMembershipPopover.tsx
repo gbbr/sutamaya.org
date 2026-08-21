@@ -17,6 +17,12 @@ const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(v, hi
 
 const SAFE_AREA_BOTTOM = 'env(safe-area-inset-bottom, 0px)';
 
+// Whether opening the popover should also raise a software keyboard. A wide touch device — an
+// iPad in landscape — is past MOBILE_BREAKPOINT and so gets the anchored popover below, which is
+// positioned against the layout viewport that the keyboard does not shrink; focusing the input on
+// open therefore buries the rows the popover exists to show. Tapping the field still works.
+const wantsAutoFocus = () => !window.matchMedia?.('(pointer: coarse)').matches;
+
 // Names the mobile sheet for assistive tech via its own visible heading, rather than repeating
 // the string in an aria-label. Only ever one of these is mounted at a time, so a constant is fine.
 const TITLE_ID = 'list-membership-popover-title';
@@ -175,7 +181,7 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
         className="sc fixed z-50 rounded-field border border-ink/[.14] bg-field shadow-popup p-2 animate-popIn"
         style={{ width: POPOVER_WIDTH, overflowY: 'auto' }}
       >
-        <ListMembershipPicker suttaId={suttaId} theme={SHELL_THEME} autoFocus onRequestClose={onClose} />
+        <ListMembershipPicker suttaId={suttaId} theme={SHELL_THEME} autoFocus={wantsAutoFocus()} onRequestClose={onClose} />
       </div>
     </>
   );
