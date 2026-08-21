@@ -43,8 +43,11 @@ export interface ListRowDraftProps {
 
 // Left indent for a row at the given nesting depth — 18px base plus 14px per level, shared by the
 // row itself and the secondary rows (delete confirm, options menu, new-list draft) beneath it so
-// they stay visually aligned under the row they belong to.
-const rowIndent = (depth: number) => 18 + depth * 14;
+// they stay visually aligned under the row they belong to. Nesting itself is unlimited, but the
+// indent stops growing past MAX_INDENT_DEPTH so a deep tree can't squeeze row content off a narrow
+// screen; levels below that are still distinguishable by their expand/collapse state.
+const MAX_INDENT_DEPTH = 3;
+const rowIndent = (depth: number) => 18 + Math.min(depth, MAX_INDENT_DEPTH) * 14;
 
 // One row of the "My lists" tree — a list can nest other lists as children (folder-like), with
 // button-based rename/delete/move controls that always work (touch included), plus Pointer
