@@ -15,6 +15,17 @@ interface HighlightPopupProps {
   onStop: (e: React.SyntheticEvent) => void;
 }
 
+// Marks the swatch of the currently applied color. The ring sits *outside* the swatch, held off it
+// by a 1px band of the popup's own background, rather than being painted onto the swatch's border:
+// the swatches are the same pale pastels in every theme, so a rim drawn on the edge has to clear
+// both them and the panel behind, which no single color does — dark's cream `fg` sinks into the
+// pastel, an ink rim sinks into dark's brown panel. Held off the swatch, the ring only ever has the
+// panel to clear, so `fg` reads in all three themes.
+// The ring is `dim`, not the full-strength `fg`: the gap is what separates it from the swatch, so
+// the ring only has to stay legible against the panel, and at full strength it read louder than the
+// "Remove" label beside it (drawn at 65%) in every theme.
+const selectedRing = (theme: ThemeColors) => `0 0 0 1px ${theme.panel}, 0 0 0 2px ${theme.dim}`;
+
 export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, onStop }: HighlightPopupProps) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -77,7 +88,7 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
             >
               <span
                 className="w-[26px] h-[26px] rounded-full border"
-                style={{ background: c, borderColor: pop.on === c ? theme.fg : 'rgba(0,0,0,.22)' }}
+                style={{ background: c, borderColor: 'rgba(0,0,0,.22)', boxShadow: pop.on === c ? selectedRing(theme) : undefined }}
               />
             </button>
           ))}
@@ -122,7 +133,7 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
         <button
           key={c}
           className="w-5 h-5 rounded-full border"
-          style={{ background: c, borderColor: pop.on === c ? theme.fg : 'rgba(0,0,0,.22)' }}
+          style={{ background: c, borderColor: 'rgba(0,0,0,.22)', boxShadow: pop.on === c ? selectedRing(theme) : undefined }}
           onClick={(e) => {
             e.stopPropagation();
             onPick(c);
