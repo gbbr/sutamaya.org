@@ -29,10 +29,16 @@ export default defineConfig({
         theme_color: '#FDFCFA',
         background_color: '#FDFCFA',
         display: 'standalone',
+        // The `-vN` suffix is load-bearing: a browser caches an installed app's icons when it
+        // installs, and re-reads them only when the manifest itself changes. Overwriting these
+        // files in place leaves every existing install on the old artwork forever — uninstalling
+        // and reinstalling doesn't clear it, and neither does clearing site data, because the
+        // store is keyed by app id in the browser profile rather than by origin. Changing the
+        // artwork therefore means bumping the suffix here and renaming the files to match.
         icons: [
-          { src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png' },
-          { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png' },
-          { src: 'icons/icon-512-maskable.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+          { src: 'icons/icon-192-v2.png', sizes: '192x192', type: 'image/png' },
+          { src: 'icons/icon-512-v2.png', sizes: '512x512', type: 'image/png' },
+          { src: 'icons/icon-512-maskable-v2.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
       },
       workbox: {
