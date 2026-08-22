@@ -15,7 +15,7 @@ listsRouter.use(requireAuth);
 // assembleUserData synthesizes the three auto-lists into its response by these ids without
 // consulting the `lists` table, so a stored row sharing one would be returned alongside its
 // synthetic twin — same id, twice, the stored one first. The client resolves auto-lists with
-// `lists.find(...)` and would render the impostor in the "Automatic" section.
+// `lists.find(...)` and would render the impostor in the "Activity" section.
 const RESERVED_LIST_IDS = new Set([RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID]);
 
 // Every statement in this router is scoped `AND user_id = ?`: D1 is one flat table per entity,

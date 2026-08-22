@@ -85,7 +85,7 @@ export interface ListDef {
   // re-sorting a list's contents by sutta id the way browsing a nikaya/category does. Always
   // empty for a `kind: 'group'` entry.
   items: string[];
-  // True for the auto-managed lists ("Recent", "Highlights", "Notes") synthesized server-side in
+  // True for the auto-managed lists ("Visited", "Highlights", "Notes") synthesized server-side in
   // buildUserData() from the visited/highlights/notes tables — not a real `lists` row, so
   // it can't be renamed, deleted, reparented, or have its own items reordered.
   auto?: boolean;

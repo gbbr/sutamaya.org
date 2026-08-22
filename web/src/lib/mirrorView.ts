@@ -1,5 +1,5 @@
 import { repairListTree } from './listTree';
-import { HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID, RECENT_AUTO_LIST_ID, RECENT_AUTO_LIST_CAP } from './autoLists';
+import { AUTO_LIST_CAP, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID, RECENT_AUTO_LIST_ID } from './autoLists';
 import type { UserData } from './api';
 import type { MirrorState } from './mirror';
 import type { Highlight, HighlightsMap, ListDef, Membership, NotesMap, VisitedMap } from './types';
@@ -20,10 +20,6 @@ import type { Highlight, HighlightsMap, ListDef, Membership, NotesMap, VisitedMa
 export interface DerivedUserData extends Omit<UserData, 'notes'> {
   notes: NotesMap;
 }
-
-// Bounds how many rows ListPane has to render for an auto-list — it renders every item as a full
-// DOM row, unvirtualized. Mirrors AUTO_LIST_CAP in worker/src/lib/userData.js.
-const AUTO_LIST_CAP = 100;
 
 // Dedupes `entries` by id keeping each one's most recent `at`, sorts descending, caps to `limit`.
 // The worker's lib/autoListRecency.js, ported.
@@ -98,12 +94,12 @@ export function deriveUserData(state: MirrorState): DerivedUserData {
 
   // Most-recent first, since an auto-list has no stored order the way a real list has, and capped
   // because ListPane renders every item as an unvirtualized DOM row.
-  const recentIds = latestIds(visitedEntries, RECENT_AUTO_LIST_CAP);
+  const recentIds = latestIds(visitedEntries, AUTO_LIST_CAP);
   const highlightedIds = latestIds(highlightEntries, AUTO_LIST_CAP);
   const notedIds = latestIds(noteEntries, AUTO_LIST_CAP);
 
   if (recentIds.length) {
-    lists.push({ id: RECENT_AUTO_LIST_ID, label: 'Recent', parentId: null, kind: 'list', items: recentIds, auto: true });
+    lists.push({ id: RECENT_AUTO_LIST_ID, label: 'Visited', parentId: null, kind: 'list', items: recentIds, auto: true });
     recentIds.forEach((id) => (membership[id] = [...(membership[id] || []), RECENT_AUTO_LIST_ID]));
   }
   if (highlightedIds.length) {

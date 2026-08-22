@@ -278,7 +278,7 @@ export function setNoteRecord(state: MirrorState, suttaId: string, text: string)
 }
 
 export function markVisitedRecord(state: MirrorState, suttaId: string): MirrorState {
-  // Re-marking whatever is already the most recent visit changes nothing anyone can see — "Recent"
+  // Re-marking whatever is already the most recent visit changes nothing anyone can see — "Visited"
   // is ordered by exactly this — so it's skipped rather than churning the state reference and
   // making every consumer keyed on it (the My Lists tree's lookup tables, ListPane's flatLists)
   // rebuild for nothing. Revisiting a sutta *isn't* skipped: that's a real reordering.
