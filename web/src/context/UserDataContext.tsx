@@ -48,7 +48,8 @@ const FLUSH_DEBOUNCE_MS = 2000;
 // device that came back online without firing `online`.
 const FLUSH_POLL_MS = 5 * 60 * 1000;
 
-// What the sync indicator (components/DataStatus.tsx, in TreePane's footer) shows. 'offline' takes priority
+// How far the flush queue has got. Only 'stuck' and the separate `needsReauth` reach the UI (the
+// Account card in Settings, and HeaderBanner for the latter). 'offline' takes priority
 // over everything else — the browser itself says there's no network, which already explains why
 // nothing is draining. 'stuck' is next: a queue the server has permanently refused is a different
 // problem than one merely waiting its turn, and silently retrying it forever is the exact failure

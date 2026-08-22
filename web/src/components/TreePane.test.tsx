@@ -274,7 +274,7 @@ describe('corpus browse tree', () => {
 });
 
 function switchToMyLists() {
-  return userEvent.click(screen.getByLabelText('Switch to My Lists'));
+  return userEvent.click(screen.getByRole('button', { name: 'Lists' }));
 }
 
 // The armed delete row's prompt, reassembled. It's split across spans so only the list's own

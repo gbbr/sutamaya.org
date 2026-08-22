@@ -140,12 +140,6 @@
   --danger-text: 220 38 38;
   --warning-text: 161 98 7;
   --selection: 234 223 198;
-  /* TreePane's Library/My-Lists pill thumb, "lists" side only ('library' side uses --chip
-     instead). A cool slate reads as a harsh outlier against this theme's warm cream/beige
-     surfaces, so light mode gets a warmer, lower-saturation version of the same slate; dark
-     mode's own surfaces are already dark enough that the plain slate doesn't clash the same way,
-     so it keeps the original value below. */
-  --pill-lists: 118 112 104;
 }
 
 :root.dark {
@@ -171,7 +165,6 @@
   --danger-text: 248 113 113;
   --warning-text: 217 152 46;
   --selection: 74 62 40;
-  --pill-lists: 110 118 122;
 }
 
 /* --ui-scale (set from Settings > UI scale, see lib/uiPrefs.ts) is applied via CSS `zoom` on

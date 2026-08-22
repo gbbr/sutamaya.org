@@ -196,9 +196,9 @@ describe('mobile search -> reader -> close flow', () => {
     );
     const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
 
-    // Switch TreePane's own Library <-> My lists toggle to "My lists" — this doesn't touch
+    // Switch TreePane's own Library <-> My lists tabs to "My lists" — this doesn't touch
     // `nodeId` at all, which stays 'dn' (wherever was browsed before).
-    fireEvent.click(await tree().findByRole('button', { name: 'Switch to My Lists' }));
+    fireEvent.click(await tree().findByRole('button', { name: 'Lists' }));
     expect(tree().getByText('Favorites')).toBeTruthy();
 
     // Search (still visible/usable regardless of the Library/My-lists toggle) and open a hit —

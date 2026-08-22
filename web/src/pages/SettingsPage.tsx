@@ -162,7 +162,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
   const { syncStatus, pendingCount, lastSyncedAt, needsReauth, lists, notes, highlights } = useUserData();
 
   // The one gate on every "your data is only on this device" warning — the header banner, the
-  // footer's DataStatus and both warning lines in the Account card below. A reader who hasn't
+  // account badge's dot and both warning lines in the Account card below. A reader who hasn't
   // made anything yet has nothing to lose, so none of them appear.
   const hasLocalWork = hasLocalWorkWorthKeeping(lists, notes, highlights);
 
