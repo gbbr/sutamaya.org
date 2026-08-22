@@ -519,9 +519,15 @@ export function TreePane({
 
             Gone entirely once a query has results below: hits are drawn from the whole corpus
             regardless of which tab is active, so leaving a highlighted tab sitting above them
-            would claim they were filtered by it. */}
+            would claim they were filtered by it.
+
+            The -mx-1 cancels 4px of the header's own 18px side padding. On the right the rows
+            below are inset 10px, but what sits at that edge is a round hover target with air
+            around its glyph, so ending the underline at 10px overshoots what the eye reads as
+            the edge and 18px falls short of it; 14px splits the two. The left gets the same 4px
+            so the bar stays centred under the header above it. */}
         {!searching && (
-          <div className="flex mt-3 font-sans text-[12.5px] font-semibold">
+          <div className="flex mt-3 -mx-1 font-sans text-[12.5px] font-semibold">
             {(['library', 'lists'] as const).map((view) => (
               <button
                 key={view}
