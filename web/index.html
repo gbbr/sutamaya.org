@@ -25,7 +25,10 @@
          compensate; nothing in this app currently does that. -->
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Sutamaya" />
-    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <!-- Its own file rather than the manifest's icon-192: iOS renders this artwork at 180px on
+         the home screen and applies its own rounded-corner mask, while the manifest icons are
+         sized and padded for Android's circular adaptive-icon crop. -->
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
     <!-- Newsreader/IBM Plex Sans are self-hosted (see index.css's @font-face rules) rather than
          loaded from Google Fonts' CDN — no cross-origin round trip on first paint, and the fonts
          are covered by the same Service Worker precache as everything else. Preloading the
