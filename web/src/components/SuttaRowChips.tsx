@@ -42,6 +42,10 @@ export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighli
   const ChipTag = onChipClick ? 'button' : 'span';
   const fontSize = fs ? fs - 7 : 11;
   const height = fontSize + 9;
+  // The filled controls sit a little further from the chips than the chips do from each other, so
+  // the row reads as memberships first and controls after, rather than one undifferentiated run of
+  // pills. Nothing to separate from when there are no chips, so it stays flush with the row's edge.
+  const controlGap = chips.length > 0 ? 4 : undefined;
   return (
     <span data-component="SuttaRowChips" className="flex flex-wrap items-center gap-1.5 mt-2">
       {chips.map((c) => (
@@ -71,19 +75,35 @@ export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighli
       {/* Filled, like the highlight badge beside it and unlike the outlined chips — in this row
           filled means "control that opens a panel" and outlined means "a list this sutta is in".
           An outlined pill here, label and all, just reads as one more membership, named "Add to
-          list". Labelled rather than a bare icon because this is the one surface where a sutta may
-          have no chips at all, leaving nothing on screen to explain the icon. */}
+          list". The label is carried only when there are no chips: that is the one case where
+          nothing else on screen explains the icon. Beside existing chips the row already reads as
+          memberships, so a bare "+" is unambiguous and keeps the chips the thing being read. */}
       {onAddToList && (
         <button
-          className="relative inline-flex items-center gap-1 whitespace-nowrap rounded-full px-[9px] font-sans font-semibold bg-ink/10 text-ink/60 hover:opacity-70 after:content-[''] after:absolute after:-inset-[11px]"
-          style={theme ? { background: theme.tint, color: theme.fg, fontSize, height } : { fontSize, height }}
+          aria-label="Add to list"
+          className={`relative inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-full font-sans font-semibold bg-ink/10 text-ink/60 hover:opacity-70 after:content-[''] after:absolute after:-inset-[11px] ${
+            chips.length > 0 ? '' : 'px-[9px]'
+          }`}
+          style={
+            theme
+              ? { background: theme.tint, color: theme.fg, fontSize, height, width: chips.length > 0 ? height : undefined, marginLeft: controlGap }
+              : { fontSize, height, width: chips.length > 0 ? height : undefined, marginLeft: controlGap }
+          }
           onClick={onAddToList}
         >
           <Plus size={Math.round(fontSize)} strokeWidth={2.5} />
-          Add to list
+          {chips.length === 0 && 'Add to list'}
         </button>
       )}
-      {hlCount > 0 && <HighlightCountBadge count={hlCount} theme={theme} fs={fs} onClick={onHighlightClick} />}
+      {hlCount > 0 && (
+        <HighlightCountBadge
+          count={hlCount}
+          theme={theme}
+          fs={fs}
+          onClick={onHighlightClick}
+          style={{ marginLeft: chips.length > 0 || onAddToList ? 4 : undefined }}
+        />
+      )}
     </span>
   );
 }
