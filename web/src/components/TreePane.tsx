@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { navigate } from '@reach/router';
-import { LifeBuoy, Highlighter, StickyNote, History, Library, List, Search, X } from 'lucide-react';
+import { Lightbulb, Highlighter, StickyNote, History, Library, List, Search, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
@@ -13,19 +13,18 @@ import { useListTreeDrag } from '../hooks/useListTreeDrag';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
 import { ancestorsOf, findNode, flatSuttaOrder, SEARCH_PLACEHOLDER, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
 import { ancestorsOfList, flattenListTree, suttaRowMeta } from '../lib/lists';
+import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
 import { derivePaneViewSync } from '../lib/paneView';
 import { TREE_VIEW_KEY, TREE_EXPANDED_KEY } from '../lib/storageKeys';
 import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
 import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
 import type { ListDef } from '../lib/types';
 import { SignedInBadge } from './SignedInBadge';
-import { DataStatus } from './DataStatus';
 import { HeaderBanner } from './HeaderBanner';
 import { SuttaRowChips } from './SuttaRowChips';
 import { type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
 import { CorpusTreeView } from './CorpusTreeView';
 import { ListsTreeView } from './ListsTreeView';
-import { SlidingPillToggle } from './SlidingPillToggle';
 
 interface PersistedExpansion {
   corpus: string[];
@@ -429,27 +428,35 @@ export function TreePane({
       className={`flex flex-col h-full min-w-0 overflow-hidden border-r border-ink/10 ${mobile ? '' : 'bg-treepane'}`}
       style={style}
     >
-      <header className="flex-none px-[18px] pt-4 pb-3.5 border-b border-ink/10">
+      {/* No bottom padding while the tabs are up: their underline has to land on this border,
+          which is what makes the two read as one edge rather than a control floating above a
+          rule. With the tabs gone the padding comes back, or the search box sits on the rule. */}
+      <header className={`flex-none px-[18px] pt-4 border-b border-ink/10 ${searching ? 'pb-3.5' : ''}`}>
+        {/* Everything in this row is a destination away from the two trees — help, search, the
+            account. The pane's own Library/My-lists switch is deliberately *not* among them: as
+            one more small control in a row of small controls it read as chrome, when it's the
+            navigation half the app lives behind. It gets its own row below instead. */}
         <div className="flex items-center gap-2">
           <div className="text-[22px] font-semibold tracking-[-.01em] flex-1 truncate" style={{ fontFamily: 'Newsreader, Georgia, serif' }}>sutamaya</div>
-          <SlidingPillToggle
-            active={paneView === 'library' ? 'left' : 'right'}
-            onClick={() => setPaneView((v) => (v === 'library' ? 'lists' : 'library'))}
-            ariaLabel={paneView === 'library' ? 'Switch to My Lists' : 'Switch to Library'}
-            title={paneView === 'library' ? 'Switch to My Lists (x)' : 'Switch to Library (x)'}
-            leftIcon={<Library size={mobile ? 14 : 13} strokeWidth={2} />}
-            rightIcon={<List size={mobile ? 14 : 13} strokeWidth={2} />}
-            leftIconClassName={paneView === 'library' ? 'text-ink' : 'text-ink/45'}
-            rightIconClassName={paneView === 'lists' ? 'text-[#FBFAF7]' : 'text-ink/45'}
-            slotSize={mobile ? 28 : 24}
-            thumbClassName={`border border-ink/[.12] shadow-[0_1px_2px_rgba(27,25,23,.18)] transition-[left,background-color] duration-200 ease-out ${
-              paneView === 'lists' ? 'bg-pill-lists' : 'bg-chip'
-            }`}
-          />
-          {/* Sized to match the toggle left of it and the badge right of it, so all three share
-              a vertical centre rather than each keying off its own content. */}
+          {/* All three are sized alike so they share a vertical centre rather than each keying
+              off its own content. Their *horizontal* spacing can't come from the row's own gap,
+              though: these two are transparent boxes around a glyph that leaves 8–10px of air on
+              each side, while the badge is a bordered circle filling its box edge to edge. An even
+              gap therefore looks uneven — the badge crowds the search icon by about the width of
+              that air. So the row's gap is tightened between the two icon buttons and widened
+              before the badge, by roughly that difference. Swapping either glyph for one with a
+              different ink width means re-checking these two numbers. */}
           <button
             className="flex-none rounded-full flex items-center justify-center text-ink/[.62] hover:bg-ink/[.06]"
+            style={mobile ? { width: 32, height: 32 } : { width: 28, height: 28 }}
+            aria-label="Help"
+            title="Help"
+            onClick={() => navigate('/help')}
+          >
+            <Lightbulb size={mobile ? 16 : 15} strokeWidth={2} />
+          </button>
+          <button
+            className="flex-none -ml-1 rounded-full flex items-center justify-center text-ink/[.62] hover:bg-ink/[.06]"
             style={mobile ? { width: 32, height: 32 } : { width: 28, height: 28 }}
             aria-label={searchOpen ? 'Close search' : 'Search'}
             title={searchOpen ? 'Close search (Esc)' : 'Search (/)'}
@@ -458,7 +465,9 @@ export function TreePane({
             <Search size={mobile ? 16 : 15} strokeWidth={2} />
           </button>
           {/* Goes to Settings in either sign-in state, so no separate gear is needed here. */}
-          <SignedInBadge user={user} size={mobile ? 32 : 28} />
+          <div className="flex-none ml-[6px]">
+            <SignedInBadge user={user} size={mobile ? 32 : 28} atRisk={!user && hasLocalWorkWorthKeeping(lists, notes, highlights)} />
+          </div>
         </div>
         {searchOpen && (
           <div className="mt-4 relative">
@@ -499,11 +508,52 @@ export function TreePane({
             </button>
           </div>
         )}
+        {/* Named tabs rather than the icon toggle this used to be: two unlabelled glyphs in the
+            row above gave a reader nothing to guess from, and this is the only way to reach My
+            lists. Kept last in the header so the active tab's underline always meets the header's
+            own border, even with the search box open above it.
+
+            Two buttons, not one control that flips: an underlined tab bar reads as "click the one
+            you want", and clicking the tab you're already on should do nothing. The `x` shortcut
+            still flips between them.
+
+            Gone entirely once a query has results below: hits are drawn from the whole corpus
+            regardless of which tab is active, so leaving a highlighted tab sitting above them
+            would claim they were filtered by it. */}
+        {!searching && (
+          <div className="flex mt-3 font-sans text-[12.5px] font-semibold">
+            {(['library', 'lists'] as const).map((view) => (
+              <button
+                key={view}
+                className={`flex-1 min-w-0 flex items-center justify-center gap-[7px] h-[34px] border-b-2 transition-colors ${
+                  paneView === view ? 'border-accent-text text-ink' : 'border-transparent text-ink/45 hover:text-ink/70'
+                }`}
+                aria-pressed={paneView === view}
+                title={view === 'library' ? 'Library (x)' : 'My Lists (x)'}
+                onClick={() => setPaneView(view)}
+              >
+                {view === 'library' ? (
+                  <Library size={mobile ? 14 : 13} strokeWidth={2} />
+                ) : (
+                  <List size={mobile ? 14 : 13} strokeWidth={2} />
+                )}
+                {view === 'library' ? 'Library' : 'Lists'}
+              </button>
+            ))}
+          </div>
+        )}
       </header>
 
       <HeaderBanner />
 
-      <div ref={scrollRef} className="sc flex-1 py-2.5 pb-6">
+      {/* The inset clears the iOS home indicator, which this pane runs underneath in an installed
+          PWA — added to the bottom padding rather than replacing it, since the last row wants
+          breathing room on every other device too. */}
+      <div
+        ref={scrollRef}
+        className="sc flex-1 pt-2.5"
+        style={{ paddingBottom: 'calc(1.5rem + env(safe-area-inset-bottom, 0px))' }}
+      >
         {searching ? (
           <div>
             <div className="px-[18px] pt-2 pb-1 font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">
@@ -582,24 +632,6 @@ export function TreePane({
         )}
       </div>
 
-      {/* Pinned below the scroll area, not trailing the rows, where it would sit under fifty
-          suttas and never be found. Each end is its own button carrying the bar's full height,
-          so both tap targets are bar-height and both fit at the pane's 210px minimum — which is
-          why the status end only spells itself out when something is wrong. The inset clears the
-          iOS home indicator, where this pane runs to the viewport bottom in an installed PWA. */}
-      <div
-        className="flex-none flex items-center justify-between border-t border-ink/10"
-        style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
-      >
-        <button
-          className="flex-none flex items-center gap-[9px] min-w-0 pl-[18px] pr-3 py-[11px] text-left font-sans text-[12.5px] text-ink/45 hover:text-ink/70"
-          onClick={() => navigate('/help')}
-        >
-          <LifeBuoy size={15} strokeWidth={2} className="flex-none text-ink/35" />
-          Help
-        </button>
-        <DataStatus />
-      </div>
     </aside>
   );
 }

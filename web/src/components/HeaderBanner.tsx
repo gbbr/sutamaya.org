@@ -158,8 +158,8 @@ export function HeaderBanner() {
     // a signed-in user (seeded from lib/lastUser.ts) and every list/note/highlight still reads and
     // writes against the local mirror, so the app looks entirely normal while nothing reaches the
     // server. Every other state — draining, offline, permanently refused — either resolves on its
-    // own or can't be acted on. The footer's DataStatus carries all of them as standing status,
-    // this bar only the one that needs an answer. Not dismissible: the only thing that resolves it
+    // own or can't be acted on, and are spelled out in Settings' Account card for whoever goes
+    // looking. This bar carries only the one that needs an answer. Not dismissible: the only thing that resolves it
     // is signing in, which the button does.
     return (
       <Banner

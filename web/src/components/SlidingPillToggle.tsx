@@ -13,19 +13,16 @@ interface SlidingPillToggleProps {
   rightIconClassName: string;
   // Icon slot size in px, shared by both sides (each caller only ever needs one size for itself).
   slotSize: number;
-  // The thumb's own bg/border/shadow/transition/duration — the one part that's genuinely
-  // different per caller (see this component's own comment below), so it's supplied whole rather
-  // than broken into more granular props.
+  // The thumb's own bg/border/shadow/transition/duration, supplied whole rather than broken into
+  // more granular props.
   thumbClassName: string;
   onMouseDown?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-// A two-state pill toggle with a sliding thumb behind whichever icon is active — one set of
-// track/thumb/icon-span markup and position math, shared by TreePane's Library/My-lists pane
-// switch and ListsTreeView's List/Group draft-kind picker. `thumbClassName`/`*IconClassName` are
-// left to the caller rather than folded into more props here, since colour is the one thing that
-// genuinely differs between the two homes: TreePane tints the thumb itself (an accent colour) to
-// signal the view switch, while ListsTreeView keeps the thumb neutral and only tints the icon.
+// A two-state pill toggle with a sliding thumb behind whichever icon is active — ListsTreeView's
+// List/Group draft-kind picker. Colour is left to the caller rather than baked in, since this is a
+// choice made *inside* a form field rather than app navigation: the thumb stays neutral and only
+// the icon is tinted.
 export function SlidingPillToggle({
   active,
   onClick,
