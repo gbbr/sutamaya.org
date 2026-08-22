@@ -16,10 +16,9 @@ export const NOTES_AUTO_LIST_ID = 'auto-notes';
 // full DOM row, unvirtualized, so an unbounded list would get sluggish for a heavy user long
 // before hitting any D1 read-volume concern (the underlying highlights/notes tables are fetched
 // in full either way, for highlight-span and note-badge rendering elsewhere in the app).
-// "Recent" additionally uses this as its actual product definition ("last 20 visited"), not just
-// a rendering safeguard — see RECENT_AUTO_LIST_CAP. Nothing outside it reads `visited`.
+// All three share one cap, so "Visited" holding fewer than "Notes" is never something the user
+// has to discover. Nothing outside the "Visited" list reads `visited`.
 export const AUTO_LIST_CAP = 100;
-export const RECENT_AUTO_LIST_CAP = 20;
 
 // Pure assembly of buildUserData's (routes/data.js) response shape from already-fetched D1 rows —
 // pulled out so the shaping/auto-list-synthesis logic is unit-testable without a live database.
@@ -108,14 +107,14 @@ export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDoc
   );
 
   // visitedCol doc ids *are* sutta ids too (see the `visited` schema note above), most-recently-
-  // visited first, capped to the last 20.
+  // visited first.
   const recentIds = latestIds(
     visitedDocs.map(({ id, data }) => ({ id, at: data.visitedAt })),
-    RECENT_AUTO_LIST_CAP
+    AUTO_LIST_CAP
   );
 
   if (recentIds.length) {
-    lists.push({ id: RECENT_AUTO_LIST_ID, label: 'Recent', parentId: null, kind: 'list', items: recentIds, auto: true });
+    lists.push({ id: RECENT_AUTO_LIST_ID, label: 'Visited', parentId: null, kind: 'list', items: recentIds, auto: true });
     recentIds.forEach((id) => (membership[id] = [...(membership[id] || []), RECENT_AUTO_LIST_ID]));
   }
   if (highlightedIds.length) {

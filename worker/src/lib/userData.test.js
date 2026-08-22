@@ -5,7 +5,6 @@ import {
   HIGHLIGHTS_AUTO_LIST_ID,
   NOTES_AUTO_LIST_ID,
   AUTO_LIST_CAP,
-  RECENT_AUTO_LIST_CAP,
 } from './userData.js';
 
 const empty = { listDocs: [], noteDocs: [], highlightDocs: [], visitedDocs: [] };
@@ -113,7 +112,7 @@ describe('assembleUserData', () => {
       ],
     });
     const recent = result.lists.find((l) => l.id === RECENT_AUTO_LIST_ID);
-    expect(recent).toMatchObject({ label: 'Recent', parentId: null, kind: 'list', auto: true, items: ['dn2', 'dn1'] });
+    expect(recent).toMatchObject({ label: 'Visited', parentId: null, kind: 'list', auto: true, items: ['dn2', 'dn1'] });
     expect(result.membership.dn2).toContain(RECENT_AUTO_LIST_ID);
   });
 
@@ -132,8 +131,8 @@ describe('assembleUserData', () => {
     expect(result.lists.some((l) => l.auto)).toBe(false);
   });
 
-  it('caps Recent at RECENT_AUTO_LIST_CAP and Highlights/Notes at AUTO_LIST_CAP', () => {
-    const visitedDocs = Array.from({ length: RECENT_AUTO_LIST_CAP + 5 }, (_, i) => ({
+  it('caps every auto-list at AUTO_LIST_CAP', () => {
+    const visitedDocs = Array.from({ length: AUTO_LIST_CAP + 5 }, (_, i) => ({
       id: `s${i}`,
       data: { visitedAt: String(i).padStart(4, '0') },
     }));
@@ -142,7 +141,7 @@ describe('assembleUserData', () => {
       data: { suttaId: `s${i}`, createdAt: String(i).padStart(4, '0') },
     }));
     const result = assembleUserData({ ...empty, visitedDocs, highlightDocs });
-    expect(result.lists.find((l) => l.id === RECENT_AUTO_LIST_ID).items).toHaveLength(RECENT_AUTO_LIST_CAP);
+    expect(result.lists.find((l) => l.id === RECENT_AUTO_LIST_ID).items).toHaveLength(AUTO_LIST_CAP);
     expect(result.lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID).items).toHaveLength(AUTO_LIST_CAP);
   });
 

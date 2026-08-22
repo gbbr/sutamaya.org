@@ -34,7 +34,7 @@ describe('routes/data.js (D1)', () => {
     expect(await res.json()).toEqual({ lists: [], membership: {}, notes: {}, highlights: {}, visited: {} });
   });
 
-  it('synthesizes a non-persisted "Recent" auto-list from visited rows, most-recent first', async () => {
+  it('synthesizes a non-persisted "Visited" auto-list from visited rows, most-recent first', async () => {
     const { cookie } = await signIn();
     await api('/api/visited/sn1.1', { method: 'POST', cookie });
     await new Promise((r) => setTimeout(r, 5));

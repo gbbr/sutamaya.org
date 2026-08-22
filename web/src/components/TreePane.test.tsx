@@ -819,7 +819,7 @@ describe('deferred sign-in', () => {
   });
 
   it('shows after a first list, but not for the auto-lists', () => {
-    signedOut({ lists: [{ id: 'auto-recent', label: 'Recent', parentId: null, kind: 'list', items: [], auto: true }] });
+    signedOut({ lists: [{ id: 'auto-recent', label: 'Visited', parentId: null, kind: 'list', items: [], auto: true }] });
     const { unmount } = renderHarness();
     expect(screen.queryByText(keepSafeText)).not.toBeInTheDocument();
     unmount();

@@ -49,7 +49,7 @@ interface ListsTreeViewProps {
 
 // The "My lists" tree (TreePane's other view) — the reorder-mode/new-list header row, the
 // top-level new-list/group draft input, the list tree itself (ListRow, recursing into its own
-// children), and the read-only "Automatic" section (Recent/Highlights/Notes). Its own component
+// children), and the read-only "Activity" section (Visited/Highlights/Notes). Its own component
 // rather than part of TreePane because it shares almost no JSX with the corpus browse tree it
 // alternates with (see CorpusTreeView). All the state driving this view — list CRUD,
 // drag-and-drop, expansion — lives in TreePane, via useListCrud/useListTreeDrag/useListTreeIndex;
@@ -200,7 +200,7 @@ export function ListsTreeView({
       {autoLists.length > 0 && (
         <div>
           <div className="px-[18px] pt-[22px] pb-1">
-            <span className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">Automatic</span>
+            <span className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">Activity</span>
           </div>
           {autoLists.map(({ list, sub, Icon }) => (
             <button

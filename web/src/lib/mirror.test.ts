@@ -311,7 +311,7 @@ describe('local collapses', () => {
     state = markVisitedRecord(state, 'dn1');
     expect(state.visited).toBe(before);
 
-    // A genuine change of most-recent is not skipped — that is a real reordering of "Recent".
+    // A genuine change of most-recent is not skipped — that is a real reordering of "Visited".
     state = markVisitedRecord(state, 'dn2');
     state = markVisitedRecord(state, 'dn1');
     expect(state.visited.dn1.data.visitedAt > state.visited.dn2.data.visitedAt).toBe(true);
