@@ -12,9 +12,9 @@ import {
 import type { AppTheme, ReaderFace, ResolvedAppTheme } from '../lib/types';
 
 interface UiPrefsState extends UiPrefs {
-  // The theme actually rendered — the default 'system' resolved live against the OS preference,
-  // 'light'/'dark' passed through. Settings' Theme picker offers only the two resolved values and
-  // marks this one selected, so an untouched install shows the OS's choice rather than nothing.
+  // The theme actually rendered — 'system' resolved live against the OS preference, 'light'/'dark'
+  // passed through. Settings' Theme picker shows the stored `theme` instead, since System is one of
+  // the three tiles it offers; this is for anything that has to know which palette is on screen.
   resolvedTheme: ResolvedAppTheme;
   setUiScale: (n: number) => void;
   setUiFace: (f: ReaderFace) => void;
