@@ -68,7 +68,7 @@ const THEME_OPTIONS: Array<{ id: AppTheme; label: string; palettes: ShellPalette
 // background are left to the caller: the flashed-on-arrival state (see cardClass) swaps both, and
 // transitioning them is why every card carries the transition here rather than only the two that
 // can flash.
-const CARD = 'rounded-field border px-4 transition-colors duration-[1200ms] ease-out';
+const CARD = 'rounded-field border px-5 transition-colors duration-[1200ms] ease-out';
 // The two halves of that fill, as one class the flashed and unflashed paths can share.
 const CARD_FILL = 'bg-field dark:bg-ink/[.02]';
 
@@ -380,7 +380,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
   // block layout's overflow handling is simpler and more universally correct.
   return (
     <div data-component="SettingsPage" className="sc h-full bg-paper px-5 pt-10">
-      <div className="w-full max-w-[420px] pb-10 mx-auto">
+      <div className="w-full max-w-[540px] pb-10 mx-auto">
         {/* Goes to '/', which restores wherever the user actually was (see RestoreLastLocation
             in App.tsx) rather than a fixed default — and, since it doesn't rely on genuine
             browser history the way navigate(-1) would, also works when there's no in-app

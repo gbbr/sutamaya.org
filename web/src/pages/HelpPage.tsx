@@ -523,7 +523,7 @@ export function HelpPage(_props: RouteComponentProps) {
 
   return (
     <div ref={scrollRef} data-component="HelpPage" className="sc h-full bg-paper px-5 pt-10">
-      <div className="w-full max-w-[520px] pb-10 mx-auto">
+      <div className="w-full max-w-[640px] pb-10 mx-auto">
         <button className="flex items-center gap-1.5 font-sans text-ui-base text-ink-4 mb-5" onClick={() => navigate('/')}>
           <ArrowLeft size={17} strokeWidth={1.75} />
           Back
