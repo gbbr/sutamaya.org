@@ -42,7 +42,7 @@ interface ReaderMenuPanelProps {
 // 'system' is the default both this and the shell picker resolve *through* rather than a tile of
 // its own (see types.ts's ReaderTheme note), so selection is matched against the resolved theme.
 const THEME_TILES: Array<{ id: ResolvedReaderTheme; label: string; bg: string; fg: string; pali: string }> = [
-  { id: 'light', label: 'Light', bg: '#FBFAF7', fg: '#1B1917', pali: '#8A6A3B' },
+  { id: 'light', label: 'Light', bg: '#FAF8F3', fg: '#1B1917', pali: '#7A5B2E' },
   { id: 'dark', label: 'Dark', bg: '#2A241E', fg: '#EDE6D9', pali: '#C9A86F' },
   { id: 'sepia', label: 'Sepia', bg: '#F3E7D3', fg: '#3A2E1E', pali: '#8C6222' },
 ];
@@ -76,12 +76,12 @@ function Segmented<T extends string>({
   options: Array<{ id: T; label: string }>;
   onChange: (id: T) => void;
   theme: ThemeColors;
-  // Tab bar: fill the panel's width, equal shares. Setting rows: hug the labels.
+  // Tab bar: fill the panel's width, each tab sized by its own label. Setting rows: hug the labels.
   grow?: boolean;
 }) {
   return (
     <div
-      className={`${grow ? 'flex' : 'inline-flex'} items-stretch rounded-full p-[3px]`}
+      className={`${grow ? 'flex' : 'inline-flex'} items-stretch rounded-full p-[4px]`}
       style={{ background: theme.tint }}
     >
       {options.map((o) => {
@@ -90,8 +90,12 @@ function Segmented<T extends string>({
           <button
             key={o.id}
             aria-pressed={on}
-            className={`${grow ? 'flex-1' : ''} rounded-full font-sans text-ui-sm whitespace-nowrap ${
-              grow ? 'px-2 py-[7px]' : 'px-3 py-[5px]'
+            // `flex-auto`, not `flex-1`: `flex-1` zeroes the basis, so the tabs come out as equal
+            // shares of the track and their own horizontal padding never affects anything. Sizing
+            // from content plus padding instead lets that padding set how much air each label
+            // carries, with the leftover width still shared out evenly.
+            className={`${grow ? 'flex-auto' : ''} rounded-full font-sans text-ui-sm whitespace-nowrap ${
+              grow ? 'px-5 py-[8px]' : 'px-3.5 py-[6px]'
             }`}
             style={{
               // The thumb is the panel's own surface lifted out of the recessed track, so it
@@ -99,7 +103,10 @@ function Segmented<T extends string>({
               background: on ? theme.panel : 'transparent',
               color: on ? theme.fg : theme.dim,
               fontWeight: on ? 500 : 400,
-              boxShadow: on ? '0 1px 2px rgba(0,0,0,.12)' : 'none',
+              // The thumb is the panel's own colour, so on light — where the track is a faint
+              // tint of a near-black over a near-white panel — the shadow is the only thing
+              // separating the two. It has to be readable as a lift, not just a hairline.
+              boxShadow: on ? '0 1px 2px rgba(0,0,0,.18)' : 'none',
             }}
             onClick={() => onChange(o.id)}
           >
@@ -134,7 +141,7 @@ function Stepper({
   label: string;
   theme: ThemeColors;
 }) {
-  const btn = 'flex items-center justify-center w-11 h-[34px] disabled:opacity-30';
+  const btn = 'flex items-center justify-center w-[53px] h-[41px] disabled:opacity-30';
   return (
     <div className="inline-flex items-stretch rounded-field overflow-hidden" style={{ border: `1px solid ${theme.rule}` }}>
       <button
@@ -229,7 +236,7 @@ export function ReaderMenuPanel({
         top: 0,
         right: 0,
         bottom: 0,
-        width: 340,
+        width: 410,
         display: 'flex',
         flexDirection: 'column' as const,
         background: theme.panel,
@@ -270,7 +277,7 @@ export function ReaderMenuPanel({
           height, so it gets a backdrop too: tapping the dimmed reader text above it closes it. */}
       {(!mobile || isThemeSheet) && <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,.12)' }} onClick={onClose} />}
       <div data-component="ReaderMenuPanel" style={panelStyle} className={panelClassName}>
-        <div className="flex items-center gap-1.5 mb-4">
+        <div className="flex items-center gap-1.5 mb-5">
           <div className="flex-1 min-w-0">
             <Segmented
               grow
@@ -301,7 +308,7 @@ export function ReaderMenuPanel({
           <div className="sc flex-1 min-h-0">
             {/* Recessed against the panel — `bg` is the reading surface, a shade off the `panel`
                 around it — so the note reads as somewhere to write rather than as another row. */}
-            <div className="rounded-field mb-4 px-3 py-2.5" style={{ border: `1px solid ${theme.rule}`, background: theme.bg }}>
+            <div className="rounded-field mb-5 px-3.5 py-3" style={{ border: `1px solid ${theme.rule}`, background: theme.bg }}>
               <div className={`${rowLabel} mb-1`} style={{ color: theme.dim }}>
                 Sutta note
               </div>
@@ -313,7 +320,7 @@ export function ReaderMenuPanel({
                 rows={3}
                 textareaClassName="w-full bg-transparent text-ui-base resize-none outline-none font-serif"
                 textareaStyle={{ border: 0, color: theme.fg }}
-                saveButtonClassName="font-sans text-ui-sm font-medium px-2.5 py-[3px] rounded-full"
+                saveButtonClassName="font-sans text-ui-sm font-medium px-3 py-[4px] rounded-full"
                 saveButtonStyle={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
               />
             </div>
@@ -365,7 +372,7 @@ export function ReaderMenuPanel({
         {tab === 'text' && (
           <div className="sc flex-1 min-h-0">
             <div className="pb-3.5">
-              <div className={`${rowLabel} mb-2`} style={{ color: theme.dim }}>
+              <div className={`${rowLabel} mb-2.5`} style={{ color: theme.dim }}>
                 Theme
               </div>
               <div className="flex gap-2.5">
@@ -431,7 +438,7 @@ export function ReaderMenuPanel({
             {/* The one row whose control keeps its own line: five names never fit beside a label,
                 and wrapping them into the row's right-hand half would ladder them one per line. */}
             <div className="py-3.5" style={hairline}>
-              <div className={`${rowLabel} mb-2`} style={{ color: theme.dim }}>
+              <div className={`${rowLabel} mb-2.5`} style={{ color: theme.dim }}>
                 Typeface
               </div>
               <div className="flex flex-wrap gap-1.5">
@@ -441,7 +448,7 @@ export function ReaderMenuPanel({
                     <button
                       key={f.id}
                       aria-pressed={on}
-                      className="h-[32px] px-3 rounded-full font-sans text-ui-sm"
+                      className="h-[38px] px-3.5 rounded-full font-sans text-ui-sm"
                       style={{
                         // The accent at low alpha, the same fill Settings' UI-font pills use —
                         // an 8-digit hex because these are theme literals, not CSS vars.

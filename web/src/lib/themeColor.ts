@@ -8,9 +8,9 @@
 // falls back to the shell's last-applied color instead of a hardcoded default, so leaving the
 // reader restores whatever Library/Settings were already showing.
 
-// Hex twins of index.css's --paper var (#FDFCFA light, rgb(23 21 19) dark) — duplicated here
+// Hex twins of index.css's --paper var (#FBF9F5 light, rgb(23 21 19) dark) — duplicated here
 // since a meta attribute can't read a CSS custom property directly.
-const SHELL_LIGHT = '#FDFCFA';
+const SHELL_LIGHT = '#FBF9F5';
 const SHELL_DARK = '#171513';
 
 let shellColor = SHELL_LIGHT;

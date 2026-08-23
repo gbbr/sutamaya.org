@@ -181,21 +181,52 @@
    app (see SettingsPage.tsx, TreePane.tsx's reorder toggle) — that combination's contrast was
    tuned once, against these exact values, and brightening the accent for "dark mode" would weaken
    it (a brighter brown needs *darker* text on top, not the same light text) without fixing
-   anything, since a solid-colored button doesn't sit "in" the page background either way. */
+   anything, since a solid-colored button doesn't sit "in" the page background either way.
+
+   `--ink-2` through `--ink-5` are the *text* ramp below full-strength --ink, and the reason
+   they're their own colors rather than `text-ink/55`-style alphas: one alpha can't hold a
+   different value per theme, and the same alpha does not buy the same contrast on both ends of
+   the brightness scale. Over a near-white paper, .5 of a near-black ink composites to a flat
+   3.3:1 gray — under the 4.5:1 floor for the 15px labels that used it all over Settings and the
+   reader's Display tab — while the identical alpha over dark's cream ink lands materially
+   better. Four rungs by role, not by the alpha each replaced:
+
+     --ink-2  body copy and prose            9.4:1 light / 7.6:1 dark
+     --ink-3  section eyebrows, setting labels  5.7 / 5.3
+     --ink-4  quiet controls, icons, counts     4.8 / 3.7
+     --ink-5  hints and decorative glyphs that repeat something already said   3.4 / 2.7
+
+   Four rather than three because dark could always tell its five alphas apart and light never
+   could: lifting light's lower rungs to a legible floor squeezes --ink-3 and --ink-4 within about
+   a point of each other there, which costs light nothing (those levels already composited to
+   nearly the same gray) while letting dark keep them a full band apart. Dark's lower two stay
+   below 4.5:1, as they always were — the point of this ramp is light, and dark's appearance is
+   deliberately preserved.
+
+   Alpha is still right for *surfaces* — `border-ink/[.09]`, `bg-ink/[.08]` and friends are meant
+   to tint whatever they sit on and are left alone. */
 :root {
   --ink: 27 25 23;
-  --paper: 253 252 250;
+  --ink-2: 74 66 58;
+  --ink-3: 107 98 89;
+  --ink-4: 119 110 101;
+  --ink-5: 142 133 124;
+  /* Warmed a few units off the near-white it was (253 252 250): the ink ramp above reads as
+     tinted paper rather than gray-on-white against it, and it sits closer to the reader's own
+     light ground, which the Settings theme tile shows directly beside it. */
+  --paper: 251 249 245;
   --treepane: 240 236 228;
-  --listpane: 248 246 242;
-  --field: 255 253 250;
+  --listpane: 246 243 237;
+  --field: 255 254 251;
   --chip: 255 255 255;
   --accent: 146 114 67;
   --accent2: 138 106 59;
   /* Same brown as --accent, used where the accent color sits directly on the page as small
      italic Pali-subtitle text (TreePane/TreeRow/ListPane) rather than as a solid button fill —
      see the --accent comment above for why button fills stay theme-invariant while this doesn't:
-     unlike a filled button, text-on-background contrast actually needs to respond to the theme. */
-  --accent-text: 146 114 67;
+     unlike a filled button, text-on-background contrast actually needs to respond to the theme.
+     Darker than --accent for that reason — the accent's own value only reached 4.3:1 as text. */
+  --accent-text: 122 91 46;
   --danger-text: 220 38 38;
   --warning-text: 161 98 7;
   --selection: 234 223 198;
@@ -224,6 +255,14 @@
 
 :root.dark {
   --ink: 228 223 216;
+  /* Dark's own rungs of the ramp described on :root above. Unlike light's, these are not retuned
+     at all: each is the exact colour the alpha its role used to carry already composited to over
+     --paper here (.72, .58, .45 and .35 of --ink respectively). Dark's alphas were never the
+     problem, so nothing here is meant to look different than it did. */
+  --ink-2: 171 166 161;
+  --ink-3: 142 138 133;
+  --ink-4: 115 112 108;
+  --ink-5: 95 92 88;
   --paper: 23 21 19;
   /* Elevated *above* --paper (lighter, not darker) — the usual dark-theme convention for a panel
      that sits on top of the page background, the reverse of light mode's own relationship (there

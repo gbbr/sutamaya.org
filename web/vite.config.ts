@@ -26,8 +26,8 @@ export default defineConfig({
         name: 'Sutamaya',
         short_name: 'Sutamaya',
         description: 'An offline-first reader for the Early Buddhist Texts.',
-        theme_color: '#FDFCFA',
-        background_color: '#FDFCFA',
+        theme_color: '#FBF9F5',
+        background_color: '#FBF9F5',
         display: 'standalone',
         // The `-vN` suffix is load-bearing: a browser caches an installed app's icons when it
         // installs, and re-reads them only when the manifest itself changes. Overwriting these

@@ -146,7 +146,7 @@ export const ListRow = memo(function ListRow({
         // children (chevron/label/options), which a <button> can't nest. Controls that need
         // their own distinct behavior (options menu, drag handle) stopPropagation so this
         // doesn't also fire for them — see their own onClick/onPointerDown below.
-        className={`row flex items-center gap-[9px] w-full text-left pr-[10px] py-[10px] border-b border-ink/[.07] cursor-pointer ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
+        className={`row flex items-center gap-[9px] w-full text-left pr-[10px] py-[8px] border-b border-ink/[.07] cursor-pointer ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
         onClick={() => {
           if (editing) return;
           if (isGroup) onToggle(list.id);
@@ -170,7 +170,7 @@ export const ListRow = memo(function ListRow({
       >
         {reorderMode && (
           <span
-            className="flex-none flex items-center justify-center text-ink/35 -my-[7px] -ml-1.5"
+            className="flex-none flex items-center justify-center text-ink-5 -my-[7px] -ml-1.5"
             style={{
               width: 30,
               alignSelf: 'stretch',
@@ -194,7 +194,7 @@ export const ListRow = memo(function ListRow({
           </span>
         )}
         <button
-          className="w-[19px] -ml-1 flex-none flex items-center justify-center text-ink/55 hover:text-ink"
+          className="w-[19px] -ml-1 flex-none flex items-center justify-center text-ink-4 hover:text-ink"
           onClick={(e) => {
             // Only intercepts (and stops the row's own click from also firing) when it has its
             // own effect, i.e. a group's toggle — for a plain list, where this chevron is just
@@ -272,11 +272,11 @@ export const ListRow = memo(function ListRow({
           </button>
         )}
         {!editing && (
-          <span className="flex-none font-sans text-ui-xs font-medium text-ink/50">{countFor(list)}</span>
+          <span className="flex-none font-sans text-ui-xs font-medium text-ink-4">{countFor(list)}</span>
         )}
         {!editing && (
           <button
-            className="flex-none w-[20px] h-[20px] flex items-center justify-center rounded text-ink/40 hover:bg-ink/[.08] hover:text-ink"
+            className="flex-none w-[20px] h-[20px] flex items-center justify-center rounded text-ink-4 hover:bg-ink/[.08] hover:text-ink"
             aria-label="List options"
             title="List options"
             onClick={(e) => {
@@ -297,7 +297,7 @@ export const ListRow = memo(function ListRow({
               label rather than displacing them. `flex-wrap` covers the remaining case, where even
               the two buttons alone are wider than what's left: they drop to their own line
               instead of being clipped by TreePane's `overflow-hidden`. */}
-          <span className="flex-1 min-w-0 flex items-baseline font-sans text-ui-sm text-ink/60">
+          <span className="flex-1 min-w-0 flex items-baseline font-sans text-ui-sm text-ink-3">
             <span className="flex-none">Delete&nbsp;"</span>
             <span className="min-w-0 truncate">{list.label}</span>
             <span className="flex-none">"?</span>
@@ -308,7 +308,7 @@ export const ListRow = memo(function ListRow({
           >
             Delete
           </button>
-          <button onClick={onCancelDelete} className="flex-none font-sans text-ui-sm px-2 py-[3px] rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]">
+          <button onClick={onCancelDelete} className="flex-none font-sans text-ui-sm px-2 py-[3px] rounded border border-ink/[.18] text-ink-4 hover:bg-ink/[.08]">
             Cancel
           </button>
         </div>
@@ -325,7 +325,7 @@ export const ListRow = memo(function ListRow({
                 title="Move up"
                 disabled={siblingIndex === 0}
                 onClick={() => onMove(list, -1)}
-                className="w-[30px] h-[28px] flex items-center justify-center rounded-full text-ink/55 hover:bg-ink/[.10] hover:text-ink disabled:opacity-25 disabled:hover:bg-transparent"
+                className="w-[30px] h-[28px] flex items-center justify-center rounded-full text-ink-4 hover:bg-ink/[.10] hover:text-ink disabled:opacity-25 disabled:hover:bg-transparent"
               >
                 <ChevronUp size={16} strokeWidth={2} />
               </button>
@@ -334,7 +334,7 @@ export const ListRow = memo(function ListRow({
                 title="Move down"
                 disabled={siblingIndex === siblingCount - 1}
                 onClick={() => onMove(list, 1)}
-                className="w-[30px] h-[28px] flex items-center justify-center rounded-full text-ink/55 hover:bg-ink/[.10] hover:text-ink disabled:opacity-25 disabled:hover:bg-transparent"
+                className="w-[30px] h-[28px] flex items-center justify-center rounded-full text-ink-4 hover:bg-ink/[.10] hover:text-ink disabled:opacity-25 disabled:hover:bg-transparent"
               >
                 <ChevronDown size={16} strokeWidth={2} />
               </button>
@@ -343,7 +343,7 @@ export const ListRow = memo(function ListRow({
                   aria-label="New list in this group"
                   title="New list in this group"
                   onClick={() => onAddChild(list.id)}
-                  className="w-[30px] h-[28px] flex items-center justify-center rounded-full text-ink/55 hover:bg-ink/[.10] hover:text-ink"
+                  className="w-[30px] h-[28px] flex items-center justify-center rounded-full text-ink-4 hover:bg-ink/[.10] hover:text-ink"
                 >
                   <Plus size={17} strokeWidth={2} />
                 </button>
@@ -352,7 +352,7 @@ export const ListRow = memo(function ListRow({
                 aria-label="Rename"
                 title="Rename"
                 onClick={() => onStartEdit(list)}
-                className="w-[30px] h-[28px] flex items-center justify-center rounded-full text-ink/55 hover:bg-ink/[.10] hover:text-ink"
+                className="w-[30px] h-[28px] flex items-center justify-center rounded-full text-ink-4 hover:bg-ink/[.10] hover:text-ink"
               >
                 <Pencil size={15} strokeWidth={2} />
               </button>
@@ -360,7 +360,7 @@ export const ListRow = memo(function ListRow({
                 aria-label="Delete"
                 title="Delete"
                 onClick={() => onArmDelete(list)}
-                className="w-[30px] h-[28px] flex items-center justify-center rounded-full text-ink/55 hover:bg-danger-text/[.12] hover:text-danger-text"
+                className="w-[30px] h-[28px] flex items-center justify-center rounded-full text-ink-4 hover:bg-danger-text/[.12] hover:text-danger-text"
               >
                 <Trash2 size={15} strokeWidth={2} />
               </button>

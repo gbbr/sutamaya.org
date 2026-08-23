@@ -45,7 +45,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
         data-component="ErrorBoundaryFallback"
         className="flex flex-col items-center justify-center gap-4 h-full bg-paper px-6 text-center"
       >
-        <div className="font-serif text-ui-xl text-ink/70">
+        <div className="font-serif text-ui-xl text-ink-2">
           Something went wrong. Your notes, lists and highlights are saved on this device — they're safe.
         </div>
         <div className="flex items-center gap-2">

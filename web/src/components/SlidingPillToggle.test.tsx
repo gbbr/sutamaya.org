@@ -13,7 +13,7 @@ function renderToggle(overrides: Partial<Parameters<typeof SlidingPillToggle>[0]
       leftIcon={<span>L</span>}
       rightIcon={<span>R</span>}
       leftIconClassName="text-ink"
-      rightIconClassName="text-ink/45"
+      rightIconClassName="text-ink-4"
       slotSize={24}
       thumbClassName="bg-chip"
       {...overrides}
@@ -44,12 +44,12 @@ describe('SlidingPillToggle', () => {
   });
 
   it('applies the caller-supplied color classes to each icon slot, plus its own shared layout/transition classes', () => {
-    renderToggle({ leftIconClassName: 'text-ink', rightIconClassName: 'text-ink/45' });
+    renderToggle({ leftIconClassName: 'text-ink', rightIconClassName: 'text-ink-4' });
     const left = screen.getByText('L').parentElement as HTMLElement;
     const right = screen.getByText('R').parentElement as HTMLElement;
     expect(left.className).toContain('text-ink');
     expect(left.className).toContain('transition-colors');
-    expect(right.className).toContain('text-ink/45');
+    expect(right.className).toContain('text-ink-4');
   });
 
   it('sizes both icon slots from slotSize', () => {
