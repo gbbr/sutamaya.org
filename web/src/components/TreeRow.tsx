@@ -38,10 +38,10 @@ export const TreeRow = memo(function TreeRow({
     <div data-component="TreeRow">
       <button
         data-node-id={node.id}
-        className={`row flex items-center gap-[11px] w-full text-left pr-[22px] py-[11px] border-b border-ink/[.07] transition-colors duration-500 ${
+        className={`row flex items-center gap-[11px] w-full text-left pr-[22px] py-[13px] border-b border-ink/[.07] transition-colors duration-500 ${
           nodeId === node.id || flashNodeId === node.id ? 'bg-ink/[.06]' : ''
         }`}
-        style={{ paddingLeft: 18 + depth * 14 }}
+        style={{ paddingLeft: 24 + depth * 14 }}
         onClick={() => (expandable ? onToggle(node.id) : onSelect(node.id))}
       >
         <span className="w-[15px] flex-none flex items-center justify-center text-ink-4">

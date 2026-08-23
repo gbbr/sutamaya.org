@@ -27,7 +27,7 @@ export function CorpusTreeView({ corpus, expanded, onToggle, onSelect, nodeId, f
           <div key={n.id}>
             <button
               data-node-id={n.id}
-              className={`row flex items-center gap-[13px] w-full text-left px-[22px] py-[11px] border-b border-ink/[.07] transition-colors duration-500 ${
+              className={`row flex items-center gap-[13px] w-full text-left pl-[18px] pr-[22px] py-[11px] border-b border-ink/[.07] transition-colors duration-500 ${
                 nodeId === n.id || flashNodeId === n.id ? 'bg-ink/[.06]' : ''
               }`}
               onClick={() => (expandableNode ? onToggle(n.id) : onSelect(n.id))}
