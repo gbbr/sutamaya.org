@@ -21,7 +21,7 @@ import {
   prefetchHelpImages,
   recordCachedCorpusVersion,
 } from '../lib/offline';
-import type { AppTheme, ReaderFace } from '../lib/types';
+import type { AppTheme } from '../lib/types';
 
 const UI_SCALE_MIN = 0.85;
 const UI_SCALE_MAX = 1.4;
@@ -58,14 +58,6 @@ const THEME_OPTIONS: Array<{ id: AppTheme; label: string; palettes: ShellPalette
   { id: 'light', label: 'Light', palettes: [LIGHT_SHELL] },
   { id: 'dark', label: 'Dark', palettes: [DARK_SHELL] },
   { id: 'system', label: 'System', palettes: [LIGHT_SHELL, DARK_SHELL] },
-];
-
-const UI_FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
-  { id: 'serif', label: 'News' },
-  { id: 'georgia', label: 'Georgia' },
-  { id: 'sans', label: 'Sans' },
-  { id: 'times', label: 'Times' },
-  { id: 'system', label: 'System' },
 ];
 
 // Every section is one of these: a panel holding rows split by hairlines. Each theme lifts the
@@ -189,7 +181,7 @@ function syncStatusLine(
 
 export function SettingsPage({ location }: RouteComponentProps) {
   const { user, logout, loading, authError } = useAuth();
-  const { uiScale, uiFace, theme, setUiScale, setUiFace, setTheme } = useUiPrefs();
+  const { uiScale, theme, setUiScale, setTheme } = useUiPrefs();
   const { corpus } = useCorpus();
   const { syncStatus, pendingCount, lastSyncedAt, needsReauth, lists, notes, highlights } = useUserData();
 
@@ -732,24 +724,6 @@ export function SettingsPage({ location }: RouteComponentProps) {
             </div>
           </div>
 
-          <div className="py-3.5 border-t border-ink/[.06]">
-            <div className="font-sans text-ui-sm text-ink/55 mb-2">UI font</div>
-            <div className="flex flex-wrap gap-1.5">
-              {UI_FACE_OPTIONS.map((f) => (
-                <button
-                  key={f.id}
-                  className={`h-[34px] px-3.5 rounded-full border font-sans text-ui-sm ${
-                    uiFace === f.id
-                      ? 'border-accent bg-accent/10 text-accent-text'
-                      : 'border-ink/[.18] text-ink/70 hover:bg-ink/[.04]'
-                  }`}
-                  onClick={() => setUiFace(f.id)}
-                >
-                  {f.label}
-                </button>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Both are occasional-use links rather than actions this page is asking for, so they

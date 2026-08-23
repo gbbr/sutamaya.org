@@ -1,16 +1,14 @@
-import { READER_FACES } from './theme';
-import type { AppTheme, ReaderFace } from './types';
+import type { AppTheme } from './types';
 import { UI_PREFS_KEY } from './storageKeys';
 import { setShellThemeColor } from './themeColor';
 
 export interface UiPrefs {
   uiScale: number;
-  uiFace: ReaderFace;
   theme: AppTheme;
 }
 
 export { UI_PREFS_KEY };
-export const UI_PREFS_DEFAULTS: UiPrefs = { uiScale: 1, uiFace: 'system', theme: 'system' };
+export const UI_PREFS_DEFAULTS: UiPrefs = { uiScale: 1, theme: 'system' };
 
 export function loadUiPrefs(): UiPrefs {
   try {
@@ -74,14 +72,6 @@ export function applyUiScale(scale: number) {
         : `initial-scale=${scale}, viewport-fit=cover`
     );
   }
-}
-
-// Overrides the app's `font-serif` utility (titles, Pali, blurbs — see tailwind.config.js,
-// which routes it through --ui-serif with today's default as the CSS fallback) with one of the
-// same three faces the reader itself offers, for the same reason: a project-wide look, not a
-// per-surface one.
-export function applyUiFace(face: ReaderFace) {
-  document.documentElement.style.setProperty('--ui-serif', READER_FACES[face]);
 }
 
 // Also used by ReaderPrefsContext, which tracks the same OS preference for the reader's own

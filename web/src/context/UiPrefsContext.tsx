@@ -4,12 +4,11 @@ import {
   UI_PREFS_KEY,
   UI_PREFS_DEFAULTS,
   applyUiScale,
-  applyUiFace,
   applyTheme,
   systemPrefersDark,
   type UiPrefs,
 } from '../lib/uiPrefs';
-import type { AppTheme, ReaderFace, ResolvedAppTheme } from '../lib/types';
+import type { AppTheme, ResolvedAppTheme } from '../lib/types';
 
 interface UiPrefsState extends UiPrefs {
   // The theme actually rendered — 'system' resolved live against the OS preference, 'light'/'dark'
@@ -17,7 +16,6 @@ interface UiPrefsState extends UiPrefs {
   // the three tiles it offers; this is for anything that has to know which palette is on screen.
   resolvedTheme: ResolvedAppTheme;
   setUiScale: (n: number) => void;
-  setUiFace: (f: ReaderFace) => void;
   setTheme: (t: AppTheme) => void;
 }
 
@@ -27,14 +25,11 @@ export function UiPrefsProvider({ children }: { children: ReactNode }) {
   const [prefs, setPrefs] = usePersistedState<UiPrefs>(UI_PREFS_KEY, UI_PREFS_DEFAULTS);
 
   // main.tsx already applies the persisted values once, synchronously, before React mounts (so
-  // there's no flash of the default scale/font on load) — these effects just keep the DOM in
-  // sync whenever the user actually changes a setting from here on.
+  // there's no flash of the default scale on load) — this effect just keeps the DOM in sync
+  // whenever the user actually changes a setting from here on.
   useEffect(() => {
     applyUiScale(prefs.uiScale);
   }, [prefs.uiScale]);
-  useEffect(() => {
-    applyUiFace(prefs.uiFace);
-  }, [prefs.uiFace]);
   // The default 'system' needs to keep tracking the OS preference live, not just resolve it once
   // at load — mirrors ReaderPrefsContext's tracking for the reader's own theme.
   const [systemDark, setSystemDark] = useState(() => systemPrefersDark());
@@ -58,7 +53,6 @@ export function UiPrefsProvider({ children }: { children: ReactNode }) {
       ...prefs,
       resolvedTheme,
       setUiScale: (uiScale) => setPrefs((p) => ({ ...p, uiScale })),
-      setUiFace: (uiFace) => setPrefs((p) => ({ ...p, uiFace })),
       setTheme: (theme) => setPrefs((p) => ({ ...p, theme })),
     }),
     [prefs, resolvedTheme, setPrefs]
