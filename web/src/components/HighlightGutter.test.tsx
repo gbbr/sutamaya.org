@@ -64,7 +64,7 @@ describe('HighlightGutter', () => {
       <HighlightGutter scrollRef={{ current: container }} highlightGroups={[group({ i: 0 })]} theme={theme} onJump={vi.fn()} />
     );
     const mark = screen.getByTitle('Jump to highlight') as HTMLElement;
-    expect(mark.style.top).toBe('122px'); // ratio(0.25) * height(500) - 3 (half the mark's own height)
+    expect(mark.style.top).toBe('121px'); // ratio(0.25) * height(500) - 4 (half the mark's own height)
   });
 
   it('divides post-zoom screen coordinates by the UI scale before mixing them with pre-zoom scroll units', () => {
@@ -84,7 +84,7 @@ describe('HighlightGutter', () => {
     const mark = screen.getByTitle('Jump to highlight') as HTMLElement;
     // Same logical ratio (0.25) as the 1x test above, against the logical (post-division) track
     // height of 500 — i.e. identical output to the unzoomed case once scale is correctly divided out.
-    expect(mark.style.top).toBe('122px');
+    expect(mark.style.top).toBe('121px');
     vi.mocked(getUiScale).mockReturnValue(1);
   });
 
@@ -98,7 +98,7 @@ describe('HighlightGutter', () => {
       <HighlightGutter scrollRef={{ current: container }} highlightGroups={[group({ i: 3 })]} theme={theme} onJump={vi.fn()} />
     );
     const mark = screen.getByTitle('Jump to highlight') as HTMLElement;
-    expect(mark.style.top).toBe('-3px'); // ratio 0 * height - 3
+    expect(mark.style.top).toBe('-4px'); // ratio 0 * height - 4
   });
 
   it('calls onJump with the segment index and highlight id when a mark is clicked', async () => {
