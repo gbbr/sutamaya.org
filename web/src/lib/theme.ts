@@ -11,12 +11,16 @@ export const READER_THEMES: Record<ResolvedReaderTheme, ThemeColors> = {
   // the shell's own paper/ink that those hand-tuned colors already looked right unchanged. Sepia
   // has no shell equivalent to borrow, so it's tinted from `pali` (the theme's own warm accent)
   // instead — `fg` would've been a near-neutral choice here, reading as plain gray.
-  // `light`'s own `focusTint` is likewise built from `pali` (#8A6A3B — the same warm brown as the
-  // app shell's own `--accent2`, index.css) rather than `fg`: sepia's and dark's `fg` are already
+  // `light`'s own `focusTint` is likewise built from `pali` (the same warm brown as the app
+  // shell's own `--accent-text`, index.css) rather than `fg`: sepia's and dark's `fg` are already
   // warm-toned (a brown, a cream respectively), so a wash built from *their* `fg` already reads
   // tinted rather than gray — only light's `fg` is a true near-neutral near-black, which made its
   // focus wash read as a flat gray smudge instead of matching the app's warm literary palette.
-  light: { bg: '#FBFAF7', fg: '#1B1917', dim: 'rgba(27,25,23,.5)', rule: 'rgba(27,25,23,.16)', panel: '#FFFDFA', pali: '#8A6A3B', tint: 'rgba(27,25,23,.08)', focusTint: 'rgba(138,106,59,.09)', highlightPalette: null, selection: '#EADFC6' },
+  // `dim` is a solid warm gray rather than an alpha of `fg`: half of a near-black over a
+  // near-white ground composites to 3.3:1, and this theme's `dim` is the color of *every* row
+  // label in the menu panel's Display tab and of the tab bar's own inactive labels. It matches
+  // the shell's --ink-3 (index.css), which carries the same comment at more length.
+  light: { bg: '#FAF8F3', fg: '#1B1917', dim: '#6B6259', rule: 'rgba(27,25,23,.18)', panel: '#FFFEFB', pali: '#7A5B2E', tint: 'rgba(27,25,23,.1)', focusTint: 'rgba(122,91,46,.09)', highlightPalette: null, selection: '#EADFC6' },
   sepia: { bg: '#F3E7D3', fg: '#3A2E1E', dim: 'rgba(58,46,30,.55)', rule: 'rgba(58,46,30,.2)', panel: '#F8EEDD', pali: '#8C6222', tint: 'rgba(58,46,30,.1)', focusTint: 'rgba(58,46,30,.05)', highlightPalette: null, selection: 'rgba(140,98,34,.32)' },
   // A warm dark brown (like reading by lamplight), not a near-black — matches the rest of the
   // app's warm, literary palette instead of reading as a stark "OLED dark mode" screen.
@@ -43,14 +47,14 @@ export const READER_THEMES: Record<ResolvedReaderTheme, ThemeColors> = {
 export const SHELL_THEME: ThemeColors = {
   bg: 'rgb(var(--paper))',
   fg: 'rgb(var(--ink))',
-  dim: 'rgb(var(--ink) / .5)',
-  rule: 'rgb(var(--ink) / .16)',
+  dim: 'rgb(var(--ink-4))',
+  rule: 'rgb(var(--ink) / .18)',
   panel: 'rgb(var(--field))',
   // `--accent-text`, not `--accent2`: this is the checkbox fill and the input's focus border, both
   // of which sit directly on the page like the Pali subtitles that variable exists for, so it has
   // to lighten in dark mode the way a solid button fill deliberately doesn't.
   pali: 'rgb(var(--accent-text))',
-  tint: 'rgb(var(--ink) / .08)',
+  tint: 'rgb(var(--ink) / .1)',
   focusTint: 'rgb(var(--ink) / .05)',
   highlightPalette: null,
   selection: 'rgb(var(--selection))',

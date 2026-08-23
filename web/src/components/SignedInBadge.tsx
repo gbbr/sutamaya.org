@@ -50,7 +50,7 @@ export function SignedInBadge({ user, size, atRisk = false }: { user: User | nul
     // it (the "keep this safe" banner is what actually asks for one, when there's a reason to).
     <button
       data-component="SignedInBadge"
-      className="relative flex-none rounded-full border border-ink/25 flex items-center justify-center text-ink/50 hover:bg-ink/[.06] hover:text-ink/70"
+      className="relative flex-none rounded-full border border-ink/25 flex items-center justify-center text-ink-4 hover:bg-ink/[.06] hover:text-ink-2"
       style={dim}
       aria-label={atRisk ? 'Settings — your notes are saved only on this device' : 'Settings'}
       title={atRisk ? 'Settings — your notes are saved only on this device' : 'Settings'}

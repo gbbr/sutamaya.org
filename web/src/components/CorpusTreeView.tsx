@@ -27,19 +27,19 @@ export function CorpusTreeView({ corpus, expanded, onToggle, onSelect, nodeId, f
           <div key={n.id}>
             <button
               data-node-id={n.id}
-              className={`row flex items-center gap-[13px] w-full text-left px-[22px] py-[12px] border-b border-ink/[.07] transition-colors duration-500 ${
+              className={`row flex items-center gap-[13px] w-full text-left px-[22px] py-[11px] border-b border-ink/[.07] transition-colors duration-500 ${
                 nodeId === n.id || flashNodeId === n.id ? 'bg-ink/[.06]' : ''
               }`}
               onClick={() => (expandableNode ? onToggle(n.id) : onSelect(n.id))}
             >
-              <span className="w-[17px] flex-none flex items-center justify-center text-ink/55">
+              <span className="w-[17px] flex-none flex items-center justify-center text-ink-4">
                 {expandableNode ? open ? <ChevronDown size={17} strokeWidth={2} /> : <ChevronRight size={17} strokeWidth={2} /> : ''}
               </span>
               <span className="flex-1 min-w-0">
                 <span className="block text-ui-lg font-medium leading-[1.3]">{n.label}</span>
-                <span className="block font-sans text-ui-sm font-medium text-ink/60 mt-[1px]">{n.sub}</span>
+                <span className="block font-sans text-ui-sm font-medium text-ink-3 mt-[1px]">{n.sub}</span>
               </span>
-              <span className="font-sans text-ui-xs font-medium text-ink/50">{n.count}</span>
+              <span className="font-sans text-ui-xs font-medium text-ink-4">{n.count}</span>
             </button>
             {expandableNode &&
               open &&

@@ -38,19 +38,19 @@ export const TreeRow = memo(function TreeRow({
     <div data-component="TreeRow">
       <button
         data-node-id={node.id}
-        className={`row flex items-start gap-[11px] w-full text-left pr-[22px] py-[12px] border-b border-ink/[.07] transition-colors duration-500 ${
+        className={`row flex items-start gap-[11px] w-full text-left pr-[22px] py-[11px] border-b border-ink/[.07] transition-colors duration-500 ${
           nodeId === node.id || flashNodeId === node.id ? 'bg-ink/[.06]' : ''
         }`}
         style={{ paddingLeft: 18 + depth * 14 }}
         onClick={() => (expandable ? onToggle(node.id) : onSelect(node.id))}
       >
-        <span className="w-[15px] flex-none flex items-center justify-center text-ink/40 mt-[7px]">
+        <span className="w-[15px] flex-none flex items-center justify-center text-ink-4 mt-[7px]">
           {expandable && (open ? <ChevronDown size={15} strokeWidth={2} /> : <ChevronRight size={15} strokeWidth={2} />)}
         </span>
         <span className="flex-1 min-w-0">
           <span className="text-ui-lg font-medium leading-[1.3]">{node.label}</span>
           {node.sub && <span className="block font-serif text-ui-base italic text-accent-text mt-[1px]">{node.sub}</span>}
-          <span className="block font-sans text-ui-base text-ink/45 mt-[2px]">
+          <span className="block font-sans text-ui-base text-ink-4 mt-[2px]">
             {node.ref} · {node.count} sutta{node.count === 1 ? '' : 's'}
           </span>
         </span>

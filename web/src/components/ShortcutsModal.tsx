@@ -32,7 +32,7 @@ export function ShortcutsModal({ shortcuts, onClose, theme }: ShortcutsModalProp
             Keyboard shortcuts
           </div>
           <button
-            className={`font-sans text-ui-base ${theme ? '' : 'text-ink/50 hover:text-ink/70'}`}
+            className={`font-sans text-ui-base ${theme ? '' : 'text-ink-4 hover:text-ink-2'}`}
             style={theme ? { color: theme.dim } : undefined}
             onClick={onClose}
             aria-label="Close"
@@ -43,7 +43,7 @@ export function ShortcutsModal({ shortcuts, onClose, theme }: ShortcutsModalProp
         <ul className="py-2">
           {shortcuts.map((s) => (
             <li key={s.label} className="flex items-center justify-between gap-4 px-5 py-2">
-              <span className={`font-sans text-ui-base ${theme ? '' : 'text-ink/75'}`} style={theme ? { color: theme.fg } : undefined}>
+              <span className={`font-sans text-ui-base ${theme ? '' : 'text-ink-2'}`} style={theme ? { color: theme.fg } : undefined}>
                 {s.label}
               </span>
               <span className="flex items-center gap-1 flex-none">
@@ -51,7 +51,7 @@ export function ShortcutsModal({ shortcuts, onClose, theme }: ShortcutsModalProp
                   <kbd
                     key={k}
                     className={`inline-flex items-center justify-center min-w-[24px] h-[24px] px-1.5 rounded-md font-mono text-ui-xs font-semibold ${
-                      theme ? '' : 'border border-ink/20 bg-chip text-ink/70'
+                      theme ? '' : 'border border-ink/20 bg-chip text-ink-2'
                     }`}
                     style={theme ? { border: `1px solid ${theme.rule}`, color: theme.dim } : undefined}
                   >

@@ -447,7 +447,7 @@ export function TreePane({
               before the badge, by roughly that difference. Swapping either glyph for one with a
               different ink width means re-checking these two numbers. */}
           <button
-            className="flex-none rounded-full flex items-center justify-center text-ink/[.62] hover:bg-ink/[.06]"
+            className="flex-none rounded-full flex items-center justify-center text-ink-3 hover:bg-ink/[.06]"
             style={mobile ? { width: 40, height: 40 } : { width: 34, height: 34 }}
             aria-label="Help"
             title="Help"
@@ -456,7 +456,7 @@ export function TreePane({
             <Lightbulb size={mobile ? 20 : 18} strokeWidth={2} />
           </button>
           <button
-            className="flex-none -ml-1 rounded-full flex items-center justify-center text-ink/[.62] hover:bg-ink/[.06]"
+            className="flex-none -ml-1 rounded-full flex items-center justify-center text-ink-3 hover:bg-ink/[.06]"
             style={mobile ? { width: 40, height: 40 } : { width: 34, height: 34 }}
             aria-label={searchOpen ? 'Close search' : 'Search'}
             title={searchOpen ? 'Close search (Esc)' : 'Search (/)'}
@@ -499,7 +499,7 @@ export function TreePane({
               spellCheck={false}
             />
             <button
-              className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-full text-ink/40 hover:bg-ink/[.08] hover:text-ink"
+              className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-full text-ink-4 hover:bg-ink/[.08] hover:text-ink"
               aria-label="Clear search"
               title="Clear search"
               onClick={closeSearch}
@@ -534,7 +534,7 @@ export function TreePane({
               <button
                 key={view}
                 className={`flex-1 min-w-0 flex items-center justify-center gap-[9px] h-[42px] border-b-2 transition-colors ${
-                  paneView === view ? 'border-accent-text text-ink' : 'border-transparent text-ink/45 hover:text-ink/70'
+                  paneView === view ? 'border-accent-text text-ink' : 'border-transparent text-ink-4 hover:text-ink-2'
                 }`}
                 aria-pressed={paneView === view}
                 title={view === 'library' ? 'Library (x)' : 'My Lists (x)'}
@@ -564,7 +564,7 @@ export function TreePane({
       >
         {searching ? (
           <div>
-            <div className="px-[22px] pt-3 pb-1.5 font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink/[.58]">
+            <div className="px-[22px] pt-3 pb-1.5 font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3">
               {hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ results` : `${hits.length} ${hits.length === 1 ? 'result' : 'results'}`}
             </div>
             {/* Mobile-only: on desktop ListPane renders the same hits beside this pane, with the
@@ -583,7 +583,7 @@ export function TreePane({
                       onClick={() => openHit(matchedId ?? id)}
                     >
                       <span>
-                        <span className="font-sans text-ui-xs font-bold text-ink/60 mr-2.5">{sutta.ref}</span>
+                        <span className="font-sans text-ui-xs font-bold text-ink-3 mr-2.5">{sutta.ref}</span>
                         <span className="text-ui-lg font-semibold leading-[1.3]">{sutta.en}</span>
                       </span>
                       <span className="font-serif text-ui-base italic text-accent-text">{sutta.pali}</span>
@@ -597,7 +597,7 @@ export function TreePane({
                   );
                 })}
                 {hits.length === 0 && (
-                  <div className="font-sans text-center text-ui-base text-ink/40 py-[30px] px-5">No matches.</div>
+                  <div className="font-sans text-center text-ui-base text-ink-4 py-[30px] px-5">No matches.</div>
                 )}
               </>
             )}

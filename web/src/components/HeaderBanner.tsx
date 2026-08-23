@@ -56,7 +56,7 @@ export const KEEP_SAFE_IOS_TEXT = 'Save your changes';
 const TONES = {
   alert: { bar: 'bg-danger-text/[.07]', icon: 'text-danger-text', action: 'text-danger-text decoration-danger-text/40' },
   warn: { bar: 'bg-warning-text/[.08]', icon: 'text-warning-text', action: 'text-warning-text decoration-warning-text/40' },
-  accent: { bar: 'bg-accent/[.06]', icon: 'text-ink/60', action: 'text-accent-text decoration-accent-text/40' },
+  accent: { bar: 'bg-accent/[.06]', icon: 'text-ink-3', action: 'text-accent-text decoration-accent-text/40' },
 } as const;
 
 // One banner's chrome, so the four variants differ only in what they say and do.
@@ -82,7 +82,7 @@ function Banner({
       className={`flex-none flex items-center gap-2.5 px-[22px] py-2.5 border-b border-ink/10 ${bar}`}
     >
       <span className={`flex-none ${iconClass}`}>{icon}</span>
-      <div className="flex-1 min-w-0 font-sans text-ui-sm text-ink/70 truncate" title={text}>
+      <div className="flex-1 min-w-0 font-sans text-ui-sm text-ink-2 truncate" title={text}>
         {text}
       </div>
       <button
@@ -93,7 +93,7 @@ function Banner({
       </button>
       {onDismiss && (
         <button
-          className="flex-none flex items-center justify-center w-5 h-5 rounded-full text-ink/40 hover:bg-ink/[.08] hover:text-ink"
+          className="flex-none flex items-center justify-center w-5 h-5 rounded-full text-ink-4 hover:bg-ink/[.08] hover:text-ink"
           aria-label="Dismiss"
           title="Dismiss"
           onClick={onDismiss}

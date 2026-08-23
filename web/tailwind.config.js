@@ -22,6 +22,14 @@ export default {
         // pairs. `accent`/`accent2` are deliberately the *same* value in both themes (see the
         // comment on --accent in index.css for why) but still var-backed for consistency.
         ink: 'rgb(var(--ink) / <alpha-value>)',
+        // The text ramp below full-strength ink — `text-ink-2` … `text-ink-5` in place of the
+        // `text-ink/70`-style alphas these replaced, so each rung can hold its own value per
+        // theme. See the comment on --ink-2 in index.css for the roles and why alpha couldn't.
+        // Surfaces (`border-ink/[.09]`, `bg-ink/[.08]`) still use alpha, deliberately.
+        'ink-2': 'rgb(var(--ink-2) / <alpha-value>)',
+        'ink-3': 'rgb(var(--ink-3) / <alpha-value>)',
+        'ink-4': 'rgb(var(--ink-4) / <alpha-value>)',
+        'ink-5': 'rgb(var(--ink-5) / <alpha-value>)',
         paper: 'rgb(var(--paper) / <alpha-value>)',
         treepane: 'rgb(var(--treepane) / <alpha-value>)',
         listpane: 'rgb(var(--listpane) / <alpha-value>)',

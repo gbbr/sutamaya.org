@@ -81,7 +81,7 @@ export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighli
       {onAddToList && (
         <button
           aria-label="Add to list"
-          className={`relative inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-full font-sans font-semibold bg-ink/10 text-ink/60 hover:opacity-70 after:content-[''] after:absolute after:-inset-[11px] ${
+          className={`relative inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-full font-sans font-semibold bg-ink/10 text-ink-3 hover:opacity-70 after:content-[''] after:absolute after:-inset-[11px] ${
             chips.length > 0 ? '' : 'px-[9px]'
           }`}
           style={

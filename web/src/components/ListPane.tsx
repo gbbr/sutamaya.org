@@ -216,7 +216,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
           // thumb in TreePane's header. The `after` pseudo-element pads the tap target out to
           // ~44px without growing the circle or shifting anything else in the flex row.
           <button
-            className="relative flex-none w-[28px] h-[28px] rounded-full flex items-center justify-center border border-ink/[.12] bg-chip/40 text-ink/60 hover:text-ink active:bg-ink/[.08] after:content-[''] after:absolute after:-inset-2"
+            className="relative flex-none w-[28px] h-[28px] rounded-full flex items-center justify-center border border-ink/[.12] bg-chip/40 text-ink-3 hover:text-ink active:bg-ink/[.08] after:content-[''] after:absolute after:-inset-2"
             aria-label="Back"
             onClick={onBack}
           >
@@ -230,8 +230,8 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
               <span className="font-sans text-ui-2xl font-semibold tracking-[-.01em]">{title.label}</span>
             </div>
           </div>
-          <div className="font-sans text-ui-xs text-ink/[.42] mt-[2px]">
-            {title.ref && <span className="font-sans text-ink/45">{title.ref} · </span>}{meta}
+          <div className="font-sans text-ui-xs text-ink-4 mt-[2px]">
+            {title.ref && <span className="font-sans text-ink-4">{title.ref} · </span>}{meta}
           </div>
         </div>
         {currentList && !currentList.auto && (
@@ -243,8 +243,8 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
               reorderMode
                 ? 'bg-accent2 text-[#FBFAF7]'
                 : mobile
-                  ? 'border border-ink/[.12] bg-chip/40 text-ink/60 hover:text-ink active:bg-ink/[.08]'
-                  : 'text-ink/45 hover:bg-ink/[.08] hover:text-ink'
+                  ? 'border border-ink/[.12] bg-chip/40 text-ink-3 hover:text-ink active:bg-ink/[.08]'
+                  : 'text-ink-4 hover:bg-ink/[.08] hover:text-ink'
             }`}
             aria-label={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
             title={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
@@ -294,11 +294,11 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                 onClick={() => onOpen(openTargets.get(id) ?? id)}
               >
                 <span className={`block ${reordering ? '' : 'pr-12'}`}>
-                  <span className="font-sans text-ui-md font-bold tracking-[.02em] mr-2.5 text-ink/60">{s.ref}</span>
+                  <span className="font-sans text-ui-md font-bold tracking-[.02em] mr-2.5 text-ink-3">{s.ref}</span>
                   <span className="text-ui-xl leading-[1.3] font-serif">{s.en}</span>
                 </span>
                 <span
-                  className={`block font-serif text-ui-base italic mt-[1px] text-accent-text ${reordering ? '' : 'pr-12'}`}
+                  className={`block font-serif text-ui-base italic mt-[5px] text-accent-text ${reordering ? '' : 'pr-12'}`}
                 >
                   {s.pali}
                 </span>
@@ -307,7 +307,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                     {note}
                   </span>
                 ) : (
-                  <span className="block text-ui-md leading-[1.5] mt-1.5 text-ink/[.72]">{s.blurb}</span>
+                  <span className="block text-ui-md leading-[1.5] mt-1.5 text-ink-2">{s.blurb}</span>
                 )}
                 <SuttaRowChips chips={chips} hlCount={hlCount} />
               </button>
@@ -330,7 +330,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   `pr-12` the rows already reserve and the title loses no width to any of this. */}
               {!reordering && (
                 <button
-                  className="absolute right-5 top-2.5 w-7 h-7 flex items-center justify-center rounded-full text-ink/45 hover:bg-ink/[.08] hover:text-ink active:bg-ink/[.12] after:content-[''] after:absolute after:-inset-2.5"
+                  className="absolute right-5 top-2.5 w-7 h-7 flex items-center justify-center rounded-full text-ink-4 hover:bg-ink/[.08] hover:text-ink active:bg-ink/[.12] after:content-[''] after:absolute after:-inset-2.5"
                   aria-label={`Add ${s.ref} to a list`}
                   onClick={(e) => setPicker({ suttaId: id, anchor: e.currentTarget.getBoundingClientRect() })}
                 >
@@ -350,7 +350,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   // inside it. Spanning the row's full height makes the whole right gutter grabbable
                   // while the glyph stays centred, which matters most on touch — there is nothing
                   // else to hit in that gutter while reordering, so there is nothing to steal from.
-                  className="absolute right-3 inset-y-1 w-11 flex items-center justify-center rounded text-ink/40"
+                  className="absolute right-3 inset-y-1 w-11 flex items-center justify-center rounded text-ink-4"
                   style={{
                     touchAction: 'none',
                     cursor: 'grab',
@@ -367,7 +367,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
           );
         })}
         {items.length === 0 && (
-          <div className="font-sans text-center text-ui-base text-ink/40 py-10 px-5">
+          <div className="font-sans text-center text-ui-base text-ink-4 py-10 px-5">
             {searching ? `Nothing matches "${query}".` : 'Nothing here yet.'}
           </div>
         )}

@@ -154,14 +154,14 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
               Add to list
             </div>
             {sutta && (
-              <div className="font-sans text-ui-xs text-ink/[.42] mt-[2px] truncate">
-                <span className="text-ink/45">{sutta.ref} · </span>
+              <div className="font-sans text-ui-xs text-ink-4 mt-[2px] truncate">
+                <span className="text-ink-4">{sutta.ref} · </span>
                 {sutta.en}
               </div>
             )}
           </div>
           <button
-            className="flex-none w-9 h-9 -mr-2 flex items-center justify-center rounded-full text-ink/50 active:bg-ink/[.08]"
+            className="flex-none w-9 h-9 -mr-2 flex items-center justify-center rounded-full text-ink-4 active:bg-ink/[.08]"
             aria-label="Close"
             onClick={onClose}
           >
