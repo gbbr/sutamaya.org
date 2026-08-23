@@ -23,8 +23,12 @@ interface HighlightCountBadgeProps {
 // app shell's own light/dark mode, a deliberately separate system — see index.css) apply instead.
 export function HighlightCountBadge({ count, onClick, theme, fs, style }: HighlightCountBadgeProps) {
   const Tag = onClick ? 'button' : 'span';
-  const fontSize = fs ? fs - 7 : 11;
-  const height = fontSize + 9;
+  // Same type size as the chips this sits beside (SuttaRowChips' own `fontSize`), so the icon and
+  // the number read at their weight rather than shrinking away next to them. The pill itself is
+  // deliberately a little shorter than those chips outside the reader, so its height is its own
+  // number rather than derived from the type size.
+  const fontSize = fs ? fs - 7 : 14;
+  const height = fs ? fs + 2 : 20;
   return (
     <Tag
       data-component="HighlightCountBadge"
