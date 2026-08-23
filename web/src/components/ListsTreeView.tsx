@@ -218,7 +218,7 @@ export function ListsTreeView({
                 <Icon size={16} strokeWidth={2} />
               </span>
               <span className="flex-1 min-w-0">
-                <span className="block text-ui-lg font-medium leading-[1.3]">{list.label}</span>
+                <span className="block text-ui-md font-medium leading-[1.3]">{list.label}</span>
                 <span className="block font-sans text-ui-sm font-medium text-ink-3 mt-[1px]">{sub}</span>
               </span>
               <span className="font-sans text-ui-xs font-medium text-ink-4">{list.items.length}</span>

@@ -225,9 +225,9 @@ export const ListRow = memo(function ListRow({
             onBlur={onCommitEdit}
             maxLength={LIST_NAME_MAX_LENGTH}
             // A 38px field is the comfortable size to type in, but the static label it replaces
-            // occupies about 30px — 19px of Newsreader at its normal line height, plus 2px of
+            // occupies about 28px — 17px of Newsreader at its normal line height, plus 2px of
             // padding each side — so at its natural height the field would push the row taller
-            // the moment a rename starts. The negative margin lets the extra 8px hang outside the
+            // the moment a rename starts. The negative margin lets the extra 10px hang outside the
             // line box, into the row's own vertical padding, so the field renders full size while
             // contributing the label's height to layout. The label's height is font-metric
             // dependent, so this pairing is tuned by eye: if a rename still resizes the row, this
@@ -239,7 +239,7 @@ export const ListRow = memo(function ListRow({
             // where the static label puts them while leaving the field's edge clear of the
             // control before it — taking the exact 8 the inset would need closes that gap
             // entirely and the field sits flush.
-            className="font-serif flex-1 min-w-0 h-[38px] -my-[4px] -ml-[6px] border border-accent rounded px-[7px] bg-field text-ui-md outline-none"
+            className="font-serif flex-1 min-w-0 h-[38px] -my-[5px] -ml-[6px] border border-accent rounded px-[7px] bg-field text-ui-md outline-none"
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
@@ -247,7 +247,7 @@ export const ListRow = memo(function ListRow({
           />
         ) : (
           <button
-            className="font-serif flex-1 min-w-0 text-left text-ui-lg font-medium truncate py-[2px]"
+            className="font-serif flex-1 min-w-0 text-left text-ui-md font-medium truncate py-[2px]"
             onClick={(e) => {
               // Stops here so this doesn't also fire the identical logic on the row's own
               // onClick via bubbling — kept as its own handler (rather than just relying on the
