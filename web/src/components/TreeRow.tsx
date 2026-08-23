@@ -48,9 +48,11 @@ export const TreeRow = memo(function TreeRow({
           {expandable && (open ? <ChevronDown size={15} strokeWidth={2} /> : <ChevronRight size={15} strokeWidth={2} />)}
         </span>
         <span className="flex-1 min-w-0">
-          <span className="text-ui-lg font-medium leading-[1.3]">{node.label}</span>
-          {node.sub && <span className="block font-serif text-ui-base italic text-accent-text mt-[1px]">{node.sub}</span>}
-          <span className="block font-sans text-ui-base text-ink-4 mt-[2px]">
+          {/* A step below CorpusTreeView's own `text-ui-lg` label, which is the nikaya this row
+              sits under: these are its chapters, and reading as the same size flattens that. */}
+          <span className="text-ui-md font-medium leading-[1.3]">{node.label}</span>
+          {node.sub && <span className="block font-serif text-ui-sm italic text-accent-text mt-[1px]">{node.sub}</span>}
+          <span className="block font-sans text-ui-sm text-ink-4 mt-[2px]">
             {node.ref} · {node.count} sutta{node.count === 1 ? '' : 's'}
           </span>
         </span>

@@ -295,7 +295,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
               >
                 <span className={`block ${reordering ? '' : 'pr-12'}`}>
                   <span className="font-sans text-ui-md font-bold tracking-[.02em] mr-2.5 text-ink-3">{s.ref}</span>
-                  <span className="text-ui-xl leading-[1.3] font-serif">{s.en}</span>
+                  <span className="text-ui-lg leading-[1.3] font-serif">{s.en}</span>
                 </span>
                 <span
                   className={`block font-serif text-ui-base italic mt-[5px] text-accent-text ${reordering ? '' : 'pr-12'}`}
