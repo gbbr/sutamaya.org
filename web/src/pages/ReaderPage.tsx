@@ -305,9 +305,9 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
       onPointerDown={onReaderPointerDown}
       onPointerUp={onReaderPointerUp}
     >
-      <header className="font-sans flex-none flex items-center gap-4 px-5 py-3 text-[13px]" style={{ borderBottom: `1px solid ${theme.rule}` }}>
+      <header className="font-sans flex-none flex items-center gap-4 px-5 py-3 text-ui-base" style={{ borderBottom: `1px solid ${theme.rule}` }}>
         <button className="flex items-center p-3 -m-3" title="Close" onClick={closeReader}>
-          <X size={15} strokeWidth={1.75} />
+          <X size={19} strokeWidth={1.75} />
         </button>
         {/* Tapping the title bar scrolls back to the top of the sutta — the same "tap the top of
             the screen" convention most native iOS apps use. That convention is normally free
@@ -339,7 +339,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
             setPanel(true);
           }}
         >
-          <MenuIcon size={15} strokeWidth={1.75} />
+          <MenuIcon size={19} strokeWidth={1.75} />
         </button>
       </header>
 
@@ -519,7 +519,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
             <div className="flex flex-col items-center gap-3 font-sans text-sm text-center" style={{ padding: '24px 0' }}>
               <div style={{ color: theme.fg, opacity: 0.7 }}>Couldn't load this sutta. Check your connection and try again.</div>
               <button
-                className="text-[13px] px-3 py-1.5 rounded-md hover:opacity-70"
+                className="text-ui-base px-3 py-1.5 rounded-md hover:opacity-70"
                 style={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
                 onClick={retryText}
               >

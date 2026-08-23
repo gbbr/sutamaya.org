@@ -142,6 +142,27 @@
   --selection: 234 223 198;
 }
 
+/* The UI type scale — every `text-ui-*` utility resolves to one of these (see tailwind.config.js,
+   which maps the token names onto these vars). Chrome only: the reader's body text is its own
+   px-valued setting in ReaderPrefsContext, with SegmentedText deriving heading/note sizes from it
+   arithmetically, and it deliberately doesn't participate here.
+
+   Sizes carry no line-height — several call sites pair these with their own `leading-[…]`, and a
+   line-height baked into the token would fight them. Theme-invariant, so they live outside the
+   light/dark blocks; scoping a variant (e.g. raising the scale only on narrow viewports) means one
+   media query redefining these, rather than revisiting every call site. */
+:root {
+  --ui-text-2xs: 13px;
+  --ui-text-xs: 14px;
+  --ui-text-sm: 15px;
+  --ui-text-base: 16px;
+  --ui-text-md: 17px;
+  --ui-text-lg: 19px;
+  --ui-text-xl: 21px;
+  --ui-text-2xl: 24px;
+  --ui-text-3xl: 27px;
+}
+
 :root.dark {
   --ink: 228 223 216;
   --paper: 23 21 19;

@@ -73,9 +73,9 @@ const CARD_FILL = 'bg-field dark:bg-ink/[.02]';
 // Sign out don't — neither is what a card is asking the reader to do — so they're plain icon+text
 // links instead (LINK_ACTION), sized like inline text rather than a button.
 const PRIMARY_BUTTON =
-  'flex items-center justify-center gap-1.5 w-full h-10 rounded-field bg-accent hover:bg-accent/90 text-[#FBFAF7] font-sans text-[13.5px] font-medium';
+  'flex items-center justify-center gap-1.5 w-full h-10 rounded-field bg-accent hover:bg-accent/90 text-[#FBFAF7] font-sans text-ui-base font-medium';
 const SECONDARY_BUTTON =
-  'flex items-center justify-center gap-1.5 w-full h-10 rounded-field border border-ink/[.18] font-sans text-[13.5px] font-medium text-ink hover:text-ink hover:bg-ink/[.04]';
+  'flex items-center justify-center gap-1.5 w-full h-10 rounded-field border border-ink/[.18] font-sans text-ui-base font-medium text-ink hover:text-ink hover:bg-ink/[.04]';
 // The UI scale steppers. No border or radius of their own: they're segments inside one bordered,
 // rounded group (see the UI scale row), which draws the outline and the hairlines between them.
 const UI_SCALE_STEP_BTN =
@@ -85,14 +85,14 @@ const UI_SCALE_STEP_BTN =
 // as clickable rather than descriptive text.
 // Held at ink/70 rather than the ink/55 used for this page's descriptive labels: these are the
 // two things someone comes to this section to *do*, and at label weight they read as disabled.
-const LINK_ACTION = 'inline-flex items-center gap-1.5 font-sans text-[13px] text-ink/70 underline decoration-ink/40 hover:text-ink';
+const LINK_ACTION = 'inline-flex items-center gap-1.5 font-sans text-ui-base text-ink/70 underline decoration-ink/40 hover:text-ink';
 // Danger-text is reserved on this page for something actually wrong right now (a stuck sync, a
 // failed download, the iOS eviction warning) — not a standing "this button is risky" tint, which
 // would fight with those real warnings when one is showing alongside it. Sign out only borrows it
 // once armed (confirmSignOut), matching the same-colored warning line that appears above it at
 // that point; at rest it reads the same as Export.
 const LINK_DANGER =
-  'inline-flex items-center gap-1.5 font-sans text-[13px] text-danger-text underline decoration-danger-text/40 hover:text-danger-text';
+  'inline-flex items-center gap-1.5 font-sans text-ui-base text-danger-text underline decoration-danger-text/40 hover:text-danger-text';
 
 // Separates the two sign-in methods without ranking them — they're alternatives, not a primary
 // and a fallback.
@@ -100,7 +100,7 @@ function SignInDivider() {
   return (
     <div className="flex items-center gap-3 my-3.5">
       <span className="h-px flex-1 bg-ink/[.12]" />
-      <span className="font-sans text-[11.5px] uppercase tracking-wider text-ink/40">or</span>
+      <span className="font-sans text-ui-xs uppercase tracking-wider text-ink/40">or</span>
       <span className="h-px flex-1 bg-ink/[.12]" />
     </div>
   );
@@ -362,11 +362,11 @@ export function SettingsPage({ location }: RouteComponentProps) {
             browser history the way navigate(-1) would, also works when there's no in-app
             history to go back to: a fresh tab/PWA relaunch landing straight on /settings, or a
             hard refresh while on this page. */}
-        <button className="flex items-center gap-1.5 font-sans text-[13px] text-ink/50 mb-5" onClick={backToLastLocation}>
-          <ArrowLeft size={14} strokeWidth={1.75} />
+        <button className="flex items-center gap-1.5 font-sans text-ui-base text-ink/50 mb-5" onClick={backToLastLocation}>
+          <ArrowLeft size={17} strokeWidth={1.75} />
           Back
         </button>
-        <div className="text-[22px] font-semibold tracking-[-.01em] mb-5">Settings</div>
+        <div className="text-ui-3xl font-semibold tracking-[-.01em] mb-5">Settings</div>
 
         {/* User authentication section with Google sign-in and with Export JSON and Sign-out
             when authenticated. Leads the page: it's the one section that says whether anything
@@ -377,10 +377,10 @@ export function SettingsPage({ location }: RouteComponentProps) {
             than collapsing to nothing, so the section always has real height and a valid scroll
             target (see authSectionRef above) regardless of how long the session check takes. */}
         <div ref={authSectionRef}>
-          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">Account</div>
+          <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">Account</div>
           <div className={`${cardClass('auth')} mb-5`}>
             {loading ? (
-              <div className="font-sans text-[13px] text-ink/40 py-4">Checking sign-in status…</div>
+              <div className="font-sans text-ui-base text-ink/40 py-4">Checking sign-in status…</div>
             ) : user ? (
               <>
                 {/* This is about lists/notes/highlights syncing to the account (docs/offline-sync.md), a
@@ -394,15 +394,15 @@ export function SettingsPage({ location }: RouteComponentProps) {
                  as 'pending', which is true but misleading — nothing is being sent while paused. */}
                 {needsReauth ? (
                   <div className="py-4">
-                    <div className="flex items-start gap-1.5 font-sans text-[13px] mb-3 text-danger-text">
-                      <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
+                    <div className="flex items-start gap-1.5 font-sans text-ui-base mb-3 text-danger-text">
+                      <AlertTriangle size={16} strokeWidth={1.75} className="flex-none mt-[3px]" />
                       <span>
                         Your session expired, so nothing is syncing. Your changes are saved on this device and will sync
                         once you sign in again.
                       </span>
                     </div>
                     <GoogleSignInButton returnTo={signInReturnTo} />
-                    {authError && <div className="font-sans text-[13px] text-danger-text mt-2">{authError}</div>}
+                    {authError && <div className="font-sans text-ui-base text-danger-text mt-2">{authError}</div>}
                     <SignInDivider />
                     <EmailCodeSignIn returnTo={signInReturnTo} />
                   </div>
@@ -410,24 +410,24 @@ export function SettingsPage({ location }: RouteComponentProps) {
                   (() => {
                     const { Icon, spin, text } = syncStatusLine(syncStatus, pendingCount, lastSyncedAt);
                     return (
-                      <div className={`flex items-start gap-1.5 py-3.5 font-sans text-[13px] ${syncStatus === 'stuck' ? 'text-danger-text' : 'text-ink/70'}`}>
-                        <Icon size={13} strokeWidth={1.75} className={`flex-none mt-[3px] ${spin ? 'animate-[spin_2s_linear_infinite]' : ''}`} />
+                      <div className={`flex items-start gap-1.5 py-3.5 font-sans text-ui-base ${syncStatus === 'stuck' ? 'text-danger-text' : 'text-ink/70'}`}>
+                        <Icon size={16} strokeWidth={1.75} className={`flex-none mt-[4px] ${spin ? 'animate-[spin_2s_linear_infinite]' : ''}`} />
                         {text}
                       </div>
                     );
                   })()
                 )}
                 <div className="py-3.5 border-t border-ink/[.06]">
-                  <div className="font-sans text-[12.5px] text-ink/55 mb-1">Signed in as</div>
+                  <div className="font-sans text-ui-sm text-ink/55 mb-1">Signed in as</div>
                   {/* Name and address stacked rather than joined on one line: at narrow widths a
                       single line wraps mid-pair and strands the separator on its own row. The
                       address wraps within itself instead of truncating — people read it to check
                       which account they're in. */}
                   <div className="mb-3">
-                    {user.name && <div className="text-[13.5px]">{user.name}</div>}
+                    {user.name && <div className="text-ui-base">{user.name}</div>}
                     <div
                       className={`font-sans break-all ${
-                        user.name ? 'text-[12.5px] text-ink/55 mt-0.5' : 'text-[13.5px]'
+                        user.name ? 'text-ui-sm text-ink/55 mt-0.5' : 'text-ui-base'
                       }`}
                     >
                       {user.email}
@@ -439,8 +439,8 @@ export function SettingsPage({ location }: RouteComponentProps) {
                       unconditionally: a signed-out-and-back-in round trip on a fully synced account
                       loses nothing and shouldn't have to answer for itself. */}
                   {confirmSignOut && (
-                    <div className="flex items-start gap-1.5 font-sans text-[13px] text-danger-text mb-2">
-                      <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
+                    <div className="flex items-start gap-1.5 font-sans text-ui-base text-danger-text mb-2">
+                      <AlertTriangle size={16} strokeWidth={1.75} className="flex-none mt-[3px]" />
                       <span>
                         {pendingCount === 1 ? '1 change hasn’t' : `${pendingCount} changes haven’t`} synced yet. Signing
                         out now discards {pendingCount === 1 ? 'it' : 'them'}.
@@ -464,7 +464,9 @@ export function SettingsPage({ location }: RouteComponentProps) {
                         navigate('/');
                       }}
                     >
-                      <LogOut size={13} strokeWidth={1.75} />
+                      {/* Centring these geometrically leaves them reading high against the
+                          label, whose optical centre sits below the box's: nudged down a pixel. */}
+                      <LogOut size={16} strokeWidth={1.75} className="translate-y-[1px]" />
                       {confirmSignOut ? 'Sign out anyway' : 'Sign out'}
                     </button>
                     {/* This is a plain link to a requireAuth route, so a dead session would answer
@@ -472,7 +474,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                         fail that way. */}
                     {!needsReauth && (
                       <a href={dataApi.exportUrl} className={LINK_ACTION}>
-                        <Download size={13} strokeWidth={1.75} />
+                        <Download size={16} strokeWidth={1.75} className="translate-y-[1px]" />
                         Export my data
                       </a>
                     )}
@@ -481,7 +483,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
               </>
             ) : (
               <div className="py-4">
-                <div className="font-sans text-[13px] text-ink/70 mb-3">
+                <div className="font-sans text-ui-base text-ink/70 mb-3">
                   Your lists, notes and highlights are saved on this device. Sign in to keep them and sync across
                   devices.
                 </div>
@@ -491,8 +493,8 @@ export function SettingsPage({ location }: RouteComponentProps) {
                     same risk in its concrete form — two stacked warnings about one thing read as
                     noise. */}
                 {!isIosBrowserTab() && hasLocalWork && (
-                  <div className="flex items-start gap-1.5 font-sans text-[13px] text-warning-text mb-3">
-                    <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
+                  <div className="flex items-start gap-1.5 font-sans text-ui-base text-warning-text mb-3">
+                    <AlertTriangle size={16} strokeWidth={1.75} className="flex-none mt-[3px]" />
                     <span>Without signing in, you risk losing your changes when the browser clears this website's data.</span>
                   </div>
                 )}
@@ -502,13 +504,13 @@ export function SettingsPage({ location }: RouteComponentProps) {
                     Screen is the documented exemption, so it's offered alongside signing in rather
                     than being the second-best answer. */}
                 {isIosBrowserTab() && hasLocalWork && (
-                  <div className="flex items-start gap-1.5 font-sans text-[13px] text-danger-text mb-3">
-                    <AlertTriangle size={13} strokeWidth={1.75} className="flex-none mt-[3px]" />
+                  <div className="flex items-start gap-1.5 font-sans text-ui-base text-danger-text mb-3">
+                    <AlertTriangle size={16} strokeWidth={1.75} className="flex-none mt-[3px]" />
                     <span>Without signing in, you risk losing your changes when the browser clears this website's data.</span>
                   </div>
                 )}
                 <GoogleSignInButton returnTo={signInReturnTo} />
-                {authError && <div className="font-sans text-[13px] text-danger-text mt-2">{authError}</div>}
+                {authError && <div className="font-sans text-ui-base text-danger-text mt-2">{authError}</div>}
                 <SignInDivider />
                 <EmailCodeSignIn returnTo={signInReturnTo} />
               </div>
@@ -521,7 +523,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
             null and just shows a "Checking…" line until it resolves, which doesn't affect this
             section's own position or height. */}
         <div ref={offlineSectionRef}>
-          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">Offline</div>
+          <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">Offline</div>
 
           <div className={`${cardClass('offline')} py-4 mb-5`}>
             {offlineStatus === 'downloading' ? (
@@ -532,7 +534,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                     style={{ width: `${progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%` }}
                   />
                 </div>
-                <div className="flex items-center justify-between font-sans text-[12.5px] text-ink/55">
+                <div className="flex items-center justify-between font-sans text-ui-sm text-ink/55">
                   <span className="tabular-nums">{progress.total ? Math.round((progress.done / progress.total) * 100) : 0}%</span>
                   <button className="text-accent-text" onClick={handleCancelOfflineDownload}>
                     Cancel
@@ -544,7 +546,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                     and tapping again picks up where it left off. Without the line, though, the
                     bar just disappears when the reader navigates away and there's no way to tell
                     a pause from a failure. */}
-                <div className="font-sans text-[12.5px] text-ink/45 mt-2">
+                <div className="font-sans text-ui-sm text-ink/45 mt-2">
                   Leaving this page pauses the download — you can resume it later.
                 </div>
               </>
@@ -556,16 +558,16 @@ export function SettingsPage({ location }: RouteComponentProps) {
                     also the only one whose button is filled rather than outlined, for the same
                     reason: nothing else on this page is asking to be acted on. */}
                 {!cachedStatus ? (
-                  <div className="font-sans text-[13px] text-ink/70 mb-3">Checking content status…</div>
+                  <div className="font-sans text-ui-base text-ink/70 mb-3">Checking content status…</div>
                 ) : textStale ? (
-                  <div className="flex items-start gap-1.5 font-sans text-[13px] text-accent-text mb-3">
-                    <Info size={15} strokeWidth={1.75} className="flex-none mt-[1.5px]" />
+                  <div className="flex items-start gap-1.5 font-sans text-ui-base text-accent-text mb-3">
+                    <Info size={18} strokeWidth={1.75} className="flex-none mt-[2px]" />
                     <span>Updated content is available ({TOTAL_DOWNLOAD_MB_ESTIMATE} MB).</span>
                   </div>
                 ) : cachedStatus.cached >= cachedStatus.total ? (
-                  <div className="font-sans text-[13px] text-ink/70 mb-3">All content available offline.</div>
+                  <div className="font-sans text-ui-base text-ink/70 mb-3">All content available offline.</div>
                 ) : (
-                  <div className="font-sans text-[13px] text-ink/70 mb-3">
+                  <div className="font-sans text-ui-base text-ink/70 mb-3">
                     {/* How much is already here leads: it's the fact that tells the reader whether
                         this is worth doing at all. What the download buys them, and what it costs,
                         follow. */}
@@ -585,14 +587,14 @@ export function SettingsPage({ location }: RouteComponentProps) {
                 </button>
                 {failedCount > 0 &&
                   (circuitTripped ? (
-                    <div className="font-sans text-[13px] text-danger-text mt-2">
+                    <div className="font-sans text-ui-base text-danger-text mt-2">
                       Stopped early after repeated failures — {failedCount} items couldn't be downloaded.
                     </div>
                   ) : (
-                    <div className="font-sans text-[13px] text-danger-text mt-2">{failedCount} items couldn't be downloaded — try again.</div>
+                    <div className="font-sans text-ui-base text-danger-text mt-2">{failedCount} items couldn't be downloaded — try again.</div>
                   ))}
                 {dictionaryFailed && (
-                  <div className="font-sans text-[13px] text-danger-text mt-2">Dictionary couldn't be downloaded — try again.</div>
+                  <div className="font-sans text-ui-base text-danger-text mt-2">Dictionary couldn't be downloaded — try again.</div>
                 )}
               </>
             )}
@@ -606,11 +608,11 @@ export function SettingsPage({ location }: RouteComponentProps) {
             — a label column beside the control would squeeze the option pills at narrow widths and
             at the top of the UI-scale range. Last on the page: these are set once and rarely
             revisited, unlike the account and offline state above them. */}
-        <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">Display</div>
+        <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">Display</div>
 
         <div className={`${CARD} border-ink/[.09] ${CARD_FILL} mb-5`}>
           <div className="py-3.5">
-            <div className="font-sans text-[12.5px] text-ink/55 mb-2">Theme</div>
+            <div className="font-sans text-ui-sm text-ink/55 mb-2">Theme</div>
             <div className="flex gap-4">
               {THEME_OPTIONS.map((t) => {
                 const selected = resolvedTheme === t.id;
@@ -636,7 +638,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                       </span>
                     </span>
                     <span
-                      className={`block mt-1.5 font-sans text-[12.5px] ${
+                      className={`block mt-1.5 font-sans text-ui-sm ${
                         selected ? 'text-accent-text font-medium' : 'text-ink/55'
                       }`}
                     >
@@ -656,9 +658,9 @@ export function SettingsPage({ location }: RouteComponentProps) {
               held-still pointer upward. */}
           <div className="py-3.5 border-t border-ink/[.06] flex flex-wrap items-center justify-between gap-y-2">
             <div className="flex items-baseline gap-3">
-              <div className="font-sans text-[12.5px] text-ink/55">UI scale</div>
+              <div className="font-sans text-ui-sm text-ink/55">UI scale</div>
               {uiScale !== 1 && (
-                <button className="font-sans text-[12.5px] text-accent-text" onClick={() => setUiScale(1)}>
+                <button className="font-sans text-ui-sm text-accent-text" onClick={() => setUiScale(1)}>
                   Reset
                 </button>
               )}
@@ -673,9 +675,9 @@ export function SettingsPage({ location }: RouteComponentProps) {
                 disabled={uiScale <= UI_SCALE_MIN}
                 onClick={() => stepUiScale(-UI_SCALE_STEP)}
               >
-                <Minus size={16} strokeWidth={2} />
+                <Minus size={19} strokeWidth={2} />
               </button>
-              <span className="flex items-center justify-center w-16 border-x border-ink/[.18] font-sans text-[13.5px] tabular-nums text-ink/70">
+              <span className="flex items-center justify-center w-16 border-x border-ink/[.18] font-sans text-ui-base tabular-nums text-ink/70">
                 {Math.round(uiScale * 100)}%
               </span>
               <button
@@ -684,18 +686,18 @@ export function SettingsPage({ location }: RouteComponentProps) {
                 disabled={uiScale >= UI_SCALE_MAX}
                 onClick={() => stepUiScale(UI_SCALE_STEP)}
               >
-                <Plus size={16} strokeWidth={2} />
+                <Plus size={19} strokeWidth={2} />
               </button>
             </div>
           </div>
 
           <div className="py-3.5 border-t border-ink/[.06]">
-            <div className="font-sans text-[12.5px] text-ink/55 mb-2">UI font</div>
+            <div className="font-sans text-ui-sm text-ink/55 mb-2">UI font</div>
             <div className="flex flex-wrap gap-1.5">
               {UI_FACE_OPTIONS.map((f) => (
                 <button
                   key={f.id}
-                  className={`h-[34px] px-3.5 rounded-full border font-sans text-[12.5px] ${
+                  className={`h-[34px] px-3.5 rounded-full border font-sans text-ui-sm ${
                     uiFace === f.id
                       ? 'border-accent bg-accent/10 text-accent-text'
                       : 'border-ink/[.18] text-ink/70 hover:bg-ink/[.04]'
@@ -712,7 +714,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
         {/* Both are occasional-use links rather than actions this page is asking for, so they
             share one muted footer row instead of a card of their own. The library's own help row
             (TreePane) is the primary way into the guide; this is the second place someone looks. */}
-        <div className="flex items-center justify-center gap-2.5 font-sans text-[12px] text-ink/40 mt-6">
+        <div className="flex items-center justify-center gap-2.5 font-sans text-ui-sm text-ink/40 mt-6">
           <button className="underline decoration-ink/25 underline-offset-2" onClick={() => navigate('/help')}>
             Help
           </button>

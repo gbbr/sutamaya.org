@@ -8,15 +8,15 @@ import { useAuth } from '../context/AuthContext';
 // (see worker/src/emailAuth.js).
 
 const FIELD =
-  'w-full h-10 px-3 rounded-field border border-ink/[.18] bg-transparent font-sans text-[14px] placeholder:text-ink/35';
+  'w-full h-10 px-3 rounded-field border border-ink/[.18] bg-transparent font-sans text-ui-md placeholder:text-ink/35';
 // The code field arrives focused and is the only thing the user has to do on this card once the
 // mail lands, so it carries the accent border the app uses elsewhere for the input it wants typed
 // into (ListRow's rename/draft fields) rather than the same resting outline as every other field.
 const FIELD_ACTIVE = 'border-accent ring-2 ring-accent/25';
 const SUBMIT =
-  'flex items-center justify-center gap-1.5 w-full h-10 rounded-field bg-accent text-[#FBFAF7] font-sans text-[13.5px] font-medium disabled:opacity-50';
-const LINK = 'font-sans text-[12.5px] text-ink/55 underline decoration-ink/25 underline-offset-2';
-const LINK_SPENT = 'font-sans text-[12.5px] text-ink/35';
+  'flex items-center justify-center gap-1.5 w-full h-10 rounded-field bg-accent text-[#FBFAF7] font-sans text-ui-base font-medium disabled:opacity-50';
+const LINK = 'font-sans text-ui-sm text-ink/55 underline decoration-ink/25 underline-offset-2';
+const LINK_SPENT = 'font-sans text-ui-sm text-ink/35';
 
 // Matches RESEND_COOLDOWN_MS in worker/src/emailAuth.js, where a request inside the window is
 // accepted and deliberately not sent — the outstanding code is still valid, and a second one would
@@ -87,7 +87,7 @@ export function EmailCodeSignIn({ returnTo }: { returnTo?: string }) {
         </>
       ) : (
         <>
-          <div className="font-sans text-[13px] text-ink/60">
+          <div className="font-sans text-ui-base text-ink/60">
             We sent a six-digit code to <span className="text-ink/85">{email.trim()}</span>. It expires in 10 minutes.
           </div>
           <input
@@ -140,7 +140,7 @@ export function EmailCodeSignIn({ returnTo }: { returnTo?: string }) {
           </div>
         </>
       )}
-      {error && <div className="font-sans text-[13px] text-danger-text">{error}</div>}
+      {error && <div className="font-sans text-ui-base text-danger-text">{error}</div>}
     </form>
   );
 }

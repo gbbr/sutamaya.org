@@ -41,13 +41,13 @@ export interface ListRowDraftProps {
   submittingParentId: string | null | undefined;
 }
 
-// Left indent for a row at the given nesting depth — 18px base plus 14px per level, shared by the
+// Left indent for a row at the given nesting depth — 22px base plus 16px per level, shared by the
 // row itself and the secondary rows (delete confirm, options menu, new-list draft) beneath it so
 // they stay visually aligned under the row they belong to. Nesting itself is unlimited, but the
 // indent stops growing past MAX_INDENT_DEPTH so a deep tree can't squeeze row content off a narrow
 // screen; levels below that are still distinguishable by their expand/collapse state.
 const MAX_INDENT_DEPTH = 3;
-const rowIndent = (depth: number) => 18 + Math.min(depth, MAX_INDENT_DEPTH) * 14;
+const rowIndent = (depth: number) => 22 + Math.min(depth, MAX_INDENT_DEPTH) * 16;
 
 // One row of the "My lists" tree — a list can nest other lists as children (folder-like), with
 // button-based rename/delete/move controls that always work (touch included), plus Pointer
@@ -146,7 +146,7 @@ export const ListRow = memo(function ListRow({
         // children (chevron/label/options), which a <button> can't nest. Controls that need
         // their own distinct behavior (options menu, drag handle) stopPropagation so this
         // doesn't also fire for them — see their own onClick/onPointerDown below.
-        className={`row flex items-center gap-[7px] w-full text-left pr-[10px] py-[7px] border-b border-ink/[.07] cursor-pointer ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
+        className={`row flex items-center gap-[9px] w-full text-left pr-[10px] py-[10px] border-b border-ink/[.07] cursor-pointer ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
         onClick={() => {
           if (editing) return;
           if (isGroup) onToggle(list.id);
@@ -190,7 +190,7 @@ export const ListRow = memo(function ListRow({
             // also fire the row's own click-to-select/toggle above.
             onClick={(e) => e.stopPropagation()}
           >
-            <GripVertical size={13} strokeWidth={2} />
+            <GripVertical size={16} strokeWidth={2} />
           </span>
         )}
         <button
@@ -209,7 +209,7 @@ export const ListRow = memo(function ListRow({
               the chevron is the only thing distinguishing a group row from a list row (no
               separate folder icon; see the comment on ListRow above). A list never shows one:
               it can't hold anything to expand into. */}
-          {isGroup ? open ? <ChevronDown size={14} strokeWidth={2} /> : <ChevronRight size={14} strokeWidth={2} /> : null}
+          {isGroup ? open ? <ChevronDown size={17} strokeWidth={2} /> : <ChevronRight size={17} strokeWidth={2} /> : null}
         </button>
         {editing ? (
           <input
@@ -224,7 +224,22 @@ export const ListRow = memo(function ListRow({
             }}
             onBlur={onCommitEdit}
             maxLength={LIST_NAME_MAX_LENGTH}
-            className="font-serif flex-1 min-w-0 h-[26px] border border-accent rounded px-1.5 bg-field text-[14.5px] outline-none"
+            // A 38px field is the comfortable size to type in, but the static label it replaces
+            // occupies about 30px — 19px of Newsreader at its normal line height, plus 2px of
+            // padding each side — so at its natural height the field would push the row taller
+            // the moment a rename starts. The negative margin lets the extra 8px hang outside the
+            // line box, into the row's own vertical padding, so the field renders full size while
+            // contributing the label's height to layout. The label's height is font-metric
+            // dependent, so this pairing is tuned by eye: if a rename still resizes the row, this
+            // is the one number to move, in the direction that makes 38 minus twice it match.
+            // 7px of padding all round: at 38px tall with 17px type the text already sits about
+            // 7px below the top edge, so anything tighter horizontally reads as a field whose
+            // text is crammed against the left wall. The negative left margin then borrows 6 of
+            // the row's 9px gap back, which lands the characters within a couple of pixels of
+            // where the static label puts them while leaving the field's edge clear of the
+            // control before it — taking the exact 8 the inset would need closes that gap
+            // entirely and the field sits flush.
+            className="font-serif flex-1 min-w-0 h-[38px] -my-[4px] -ml-[6px] border border-accent rounded px-[7px] bg-field text-ui-md outline-none"
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
@@ -232,7 +247,7 @@ export const ListRow = memo(function ListRow({
           />
         ) : (
           <button
-            className="font-serif flex-1 min-w-0 text-left text-[15px] font-medium truncate py-[2px]"
+            className="font-serif flex-1 min-w-0 text-left text-ui-lg font-medium truncate py-[2px]"
             onClick={(e) => {
               // Stops here so this doesn't also fire the identical logic on the row's own
               // onClick via bubbling — kept as its own handler (rather than just relying on the
@@ -257,7 +272,7 @@ export const ListRow = memo(function ListRow({
           </button>
         )}
         {!editing && (
-          <span className="flex-none font-sans text-[11.5px] font-medium text-ink/50">{countFor(list)}</span>
+          <span className="flex-none font-sans text-ui-xs font-medium text-ink/50">{countFor(list)}</span>
         )}
         {!editing && (
           <button
@@ -269,31 +284,31 @@ export const ListRow = memo(function ListRow({
               onToggleMenu(list.id);
             }}
           >
-            <MoreHorizontal size={14} strokeWidth={2} />
+            <MoreHorizontal size={17} strokeWidth={2} />
           </button>
         )}
       </div>
       {confirmDeleteId === list.id ? (
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: rowIndent(depth) + 11 }}>
-          {/* Two things keep the buttons on screen in a pane that can be dragged down to 210px
-              and indents another 14px per nesting level. `flex-1` gives the prompt a flex basis
+          {/* Two things keep the buttons on screen in a pane that can be dragged down to 250px
+              and indents another 16px per nesting level. `flex-1` gives the prompt a flex basis
               of 0, so it contributes nothing to the line-breaking decision — the buttons stay on
               this line as long as they themselves fit, and a long name shrinks the truncating
               label rather than displacing them. `flex-wrap` covers the remaining case, where even
               the two buttons alone are wider than what's left: they drop to their own line
               instead of being clipped by TreePane's `overflow-hidden`. */}
-          <span className="flex-1 min-w-0 flex items-baseline font-sans text-[12px] text-ink/60">
+          <span className="flex-1 min-w-0 flex items-baseline font-sans text-ui-sm text-ink/60">
             <span className="flex-none">Delete&nbsp;"</span>
             <span className="min-w-0 truncate">{list.label}</span>
             <span className="flex-none">"?</span>
           </span>
           <button
             onClick={() => onDelete(list)}
-            className="flex-none font-sans text-[12px] font-semibold px-2 py-[3px] rounded border border-danger-text/40 text-danger-text hover:bg-danger-text/10"
+            className="flex-none font-sans text-ui-sm font-semibold px-2 py-[3px] rounded border border-danger-text/40 text-danger-text hover:bg-danger-text/10"
           >
             Delete
           </button>
-          <button onClick={onCancelDelete} className="flex-none font-sans text-[12px] px-2 py-[3px] rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]">
+          <button onClick={onCancelDelete} className="flex-none font-sans text-ui-sm px-2 py-[3px] rounded border border-ink/[.18] text-ink/55 hover:bg-ink/[.08]">
             Cancel
           </button>
         </div>
@@ -310,44 +325,44 @@ export const ListRow = memo(function ListRow({
                 title="Move up"
                 disabled={siblingIndex === 0}
                 onClick={() => onMove(list, -1)}
-                className="w-[24px] h-[22px] flex items-center justify-center rounded-full text-ink/55 hover:bg-ink/[.10] hover:text-ink disabled:opacity-25 disabled:hover:bg-transparent"
+                className="w-[30px] h-[28px] flex items-center justify-center rounded-full text-ink/55 hover:bg-ink/[.10] hover:text-ink disabled:opacity-25 disabled:hover:bg-transparent"
               >
-                <ChevronUp size={13} strokeWidth={2} />
+                <ChevronUp size={16} strokeWidth={2} />
               </button>
               <button
                 aria-label="Move down"
                 title="Move down"
                 disabled={siblingIndex === siblingCount - 1}
                 onClick={() => onMove(list, 1)}
-                className="w-[24px] h-[22px] flex items-center justify-center rounded-full text-ink/55 hover:bg-ink/[.10] hover:text-ink disabled:opacity-25 disabled:hover:bg-transparent"
+                className="w-[30px] h-[28px] flex items-center justify-center rounded-full text-ink/55 hover:bg-ink/[.10] hover:text-ink disabled:opacity-25 disabled:hover:bg-transparent"
               >
-                <ChevronDown size={13} strokeWidth={2} />
+                <ChevronDown size={16} strokeWidth={2} />
               </button>
               {list.kind === 'group' && (
                 <button
                   aria-label="New list in this group"
                   title="New list in this group"
                   onClick={() => onAddChild(list.id)}
-                  className="w-[24px] h-[22px] flex items-center justify-center rounded-full text-ink/55 hover:bg-ink/[.10] hover:text-ink"
+                  className="w-[30px] h-[28px] flex items-center justify-center rounded-full text-ink/55 hover:bg-ink/[.10] hover:text-ink"
                 >
-                  <Plus size={14} strokeWidth={2} />
+                  <Plus size={17} strokeWidth={2} />
                 </button>
               )}
               <button
                 aria-label="Rename"
                 title="Rename"
                 onClick={() => onStartEdit(list)}
-                className="w-[24px] h-[22px] flex items-center justify-center rounded-full text-ink/55 hover:bg-ink/[.10] hover:text-ink"
+                className="w-[30px] h-[28px] flex items-center justify-center rounded-full text-ink/55 hover:bg-ink/[.10] hover:text-ink"
               >
-                <Pencil size={12} strokeWidth={2} />
+                <Pencil size={15} strokeWidth={2} />
               </button>
               <button
                 aria-label="Delete"
                 title="Delete"
                 onClick={() => onArmDelete(list)}
-                className="w-[24px] h-[22px] flex items-center justify-center rounded-full text-ink/55 hover:bg-danger-text/[.12] hover:text-danger-text"
+                className="w-[30px] h-[28px] flex items-center justify-center rounded-full text-ink/55 hover:bg-danger-text/[.12] hover:text-danger-text"
               >
-                <Trash2 size={12} strokeWidth={2} />
+                <Trash2 size={15} strokeWidth={2} />
               </button>
             </div>
           </div>
@@ -365,7 +380,7 @@ export const ListRow = memo(function ListRow({
               onBlur={() => onDraftKey({ key: 'Escape' } as KeyboardEvent<HTMLInputElement>)}
               placeholder="List name — return to create"
               maxLength={LIST_NAME_MAX_LENGTH}
-              className="font-serif w-full h-[32px] border border-accent rounded-lg px-2.5 bg-field text-[14px] outline-none"
+              className="font-serif w-full h-[32px] border border-accent rounded-lg px-2.5 bg-field text-ui-md outline-none"
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="off"

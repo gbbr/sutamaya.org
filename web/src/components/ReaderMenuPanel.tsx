@@ -90,7 +90,7 @@ function Segmented<T extends string>({
           <button
             key={o.id}
             aria-pressed={on}
-            className={`${grow ? 'flex-1' : ''} rounded-full font-sans text-[12.5px] whitespace-nowrap ${
+            className={`${grow ? 'flex-1' : ''} rounded-full font-sans text-ui-sm whitespace-nowrap ${
               grow ? 'px-2 py-[7px]' : 'px-3 py-[5px]'
             }`}
             style={{
@@ -144,10 +144,10 @@ function Stepper({
         disabled={value <= min}
         onClick={() => onChange(Math.max(min, value - step))}
       >
-        <Minus size={15} strokeWidth={2} />
+        <Minus size={18} strokeWidth={2} />
       </button>
       <span
-        className="flex items-center justify-center w-[58px] font-sans text-[13px] tabular-nums"
+        className="flex items-center justify-center w-[58px] font-sans text-ui-base tabular-nums"
         style={{ borderLeft: `1px solid ${theme.rule}`, borderRight: `1px solid ${theme.rule}`, color: theme.fg }}
       >
         {format(value)}
@@ -159,7 +159,7 @@ function Stepper({
         disabled={value >= max}
         onClick={() => onChange(Math.min(max, value + step))}
       >
-        <Plus size={15} strokeWidth={2} />
+        <Plus size={18} strokeWidth={2} />
       </button>
     </div>
   );
@@ -250,7 +250,7 @@ export function ReaderMenuPanel({
   // pills always do and the steppers can at the top of the UI-scale range on a narrow phone.
   const settingRow = 'flex flex-wrap items-center justify-between gap-x-4 gap-y-2.5 py-3';
   const hairline = { borderTop: `1px solid ${theme.tint}` };
-  const rowLabel = 'font-sans text-[12.5px]';
+  const rowLabel = 'font-sans text-ui-sm';
 
   // Erasing from here goes through the same path as HighlightPopup's "Remove": a group is
   // immutable and atomic, so re-writing its own ranges with a null colour retires the whole thing
@@ -292,7 +292,7 @@ export function ReaderMenuPanel({
               aria-label="Close"
               onClick={onClose}
             >
-              <X size={18} strokeWidth={1.75} />
+              <X size={22} strokeWidth={1.75} />
             </button>
           )}
         </div>
@@ -310,9 +310,9 @@ export function ReaderMenuPanel({
                 onSubmit={(text) => submitNote(suttaId, text)}
                 focusSignal={noteFocusSignal}
                 placeholder="Add a note — return to save"
-                textareaClassName="w-full bg-transparent text-[16px] resize-none outline-none font-serif"
+                textareaClassName="w-full bg-transparent text-ui-lg resize-none outline-none font-serif"
                 textareaStyle={{ border: 0, color: theme.fg }}
-                saveButtonClassName="font-sans text-[12px] font-medium px-2.5 py-[3px] rounded-full"
+                saveButtonClassName="font-sans text-ui-sm font-medium px-2.5 py-[3px] rounded-full"
                 saveButtonStyle={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
               />
             </div>
@@ -331,7 +331,7 @@ export function ReaderMenuPanel({
                 <div key={g.key} className="flex items-stretch gap-1" style={{ borderBottom: `1px solid ${theme.tint}` }}>
                   <button className="flex flex-1 min-w-0 gap-2.5 items-start py-2.5 text-left" onClick={() => onJumpToHighlight(g.i, g.key)}>
                     <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: highlightPaint(g.c, theme) }} />
-                    <span className="flex-1 text-sm leading-[1.45]">{preview || `Segment ${g.i + 1}`}</span>
+                    <span className="flex-1 text-ui-sm leading-[1.45]">{preview || `Segment ${g.i + 1}`}</span>
                   </button>
                   {/* Always visible, never hover-revealed: this panel is used on touch, where
                       there is no hover state to reveal it with. Faded instead, so it reads as
@@ -342,13 +342,13 @@ export function ReaderMenuPanel({
                     aria-label="Remove highlight"
                     onClick={() => removeGroup(g)}
                   >
-                    <Trash2 size={14} strokeWidth={1.75} />
+                    <Trash2 size={17} strokeWidth={1.75} />
                   </button>
                 </div>
               );
             })}
             {highlightGroups.length === 0 && (
-              <div className="font-sans text-[12.5px] py-1.5" style={{ color: theme.dim, opacity: 0.8 }}>
+              <div className="font-sans text-ui-sm py-1.5" style={{ color: theme.dim, opacity: 0.8 }}>
                 Select text in the reading, then pick a colour.
               </div>
             )}
@@ -384,7 +384,7 @@ export function ReaderMenuPanel({
                         <span className="h-[3px] w-[46%] rounded-full" style={{ background: t.pali }} />
                       </span>
                       <span
-                        className="block mt-1.5 font-sans text-[12.5px] truncate"
+                        className="block mt-1.5 font-sans text-ui-sm truncate"
                         style={{ color: selected ? theme.pali : theme.dim, fontWeight: selected ? 500 : 400 }}
                       >
                         {t.label}
@@ -440,7 +440,7 @@ export function ReaderMenuPanel({
                     <button
                       key={f.id}
                       aria-pressed={on}
-                      className="h-[32px] px-3 rounded-full font-sans text-[12.5px]"
+                      className="h-[32px] px-3 rounded-full font-sans text-ui-sm"
                       style={{
                         // The accent at low alpha, the same fill Settings' UI-font pills use —
                         // an 8-digit hex because these are theme literals, not CSS vars.

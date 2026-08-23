@@ -79,14 +79,14 @@ function Banner({
   return (
     <div
       data-component="HeaderBanner"
-      className={`flex-none flex items-center gap-2.5 px-[18px] py-2.5 border-b border-ink/10 ${bar}`}
+      className={`flex-none flex items-center gap-2.5 px-[22px] py-2.5 border-b border-ink/10 ${bar}`}
     >
       <span className={`flex-none ${iconClass}`}>{icon}</span>
-      <div className="flex-1 min-w-0 font-sans text-[12.5px] text-ink/70 truncate" title={text}>
+      <div className="flex-1 min-w-0 font-sans text-ui-sm text-ink/70 truncate" title={text}>
         {text}
       </div>
       <button
-        className={`flex-none font-sans text-[12.5px] font-semibold underline underline-offset-2 ${actionClass}`}
+        className={`flex-none font-sans text-ui-sm font-semibold underline underline-offset-2 ${actionClass}`}
         onClick={onAction}
       >
         {action}
@@ -98,7 +98,7 @@ function Banner({
           title="Dismiss"
           onClick={onDismiss}
         >
-          <X size={13} strokeWidth={2} />
+          <X size={16} strokeWidth={2} />
         </button>
       )}
     </div>
@@ -164,7 +164,7 @@ export function HeaderBanner() {
     return (
       <Banner
         tone="alert"
-        icon={<AlertTriangle size={15} strokeWidth={1.75} />}
+        icon={<AlertTriangle size={18} strokeWidth={1.75} />}
         text={REAUTH_TEXT}
         action="Sign in"
         onAction={promptGoogleSignIn}
@@ -183,7 +183,7 @@ export function HeaderBanner() {
     return (
       <Banner
         tone={ios ? 'alert' : 'warn'}
-        icon={<AlertTriangle size={15} strokeWidth={1.75} />}
+        icon={<AlertTriangle size={18} strokeWidth={1.75} />}
         text={ios ? KEEP_SAFE_IOS_TEXT : KEEP_SAFE_TEXT}
         action="Sign in"
         onAction={promptGoogleSignIn}
@@ -201,7 +201,7 @@ export function HeaderBanner() {
   return (
     <Banner
       tone="accent"
-      icon={<Download size={15} strokeWidth={1.75} />}
+      icon={<Download size={18} strokeWidth={1.75} />}
       text={showUpdateNudge ? OFFLINE_UPDATE_TEXT : OFFLINE_DOWNLOAD_TEXT}
       action={showUpdateNudge ? 'Update' : 'Download'}
       onAction={() => navigate('/settings', { state: { scrollTo: 'offline' } })}

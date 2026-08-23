@@ -86,7 +86,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
           autoCorrect="off"
           autoCapitalize="off"
           spellCheck={false}
-          className="font-sans flex-none w-full px-5 py-4 text-[16px] outline-none bg-transparent"
+          className="font-sans flex-none w-full px-5 py-4 text-ui-lg outline-none bg-transparent"
           style={{ color: theme.fg, borderBottom: `1px solid ${theme.rule}` }}
         />
         <div className="sc flex-1 overflow-y-auto">
@@ -105,17 +105,17 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
                 onClick={() => onOpenSutta(h.matchedId ?? h.id)}
               >
                 <span>
-                  <span className="font-sans text-[11.5px] font-bold mr-2.5" style={{ color: theme.dim }}>
+                  <span className="font-sans text-ui-xs font-bold mr-2.5" style={{ color: theme.dim }}>
                     {h.sutta.ref}
                   </span>
-                  <span className="text-[15.5px] font-semibold leading-[1.3]">{h.sutta.en}</span>
+                  <span className="text-ui-lg font-semibold leading-[1.3]">{h.sutta.en}</span>
                 </span>
-                <span className="font-serif text-[13px] italic" style={{ color: theme.pali }}>
+                <span className="font-serif text-ui-base italic" style={{ color: theme.pali }}>
                   {h.sutta.pali}
                 </span>
                 {(notes[h.id] || h.sutta.blurb) && (
                   <span
-                    className={`text-[13px] leading-[1.45] mt-[3px] ${notes[h.id] ? 'pl-[8px] border-l-2' : 'italic'}`}
+                    className={`text-ui-base leading-[1.45] mt-[3px] ${notes[h.id] ? 'pl-[8px] border-l-2' : 'italic'}`}
                     style={{ color: theme.dim, borderColor: notes[h.id] ? theme.rule : undefined }}
                   >
                     {notes[h.id] || h.sutta.blurb}
@@ -126,12 +126,12 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
             );
           })}
           {query.trim() && hits.length === 0 && (
-            <div className="font-sans text-center text-[13px] py-8 px-5" style={{ color: theme.dim }}>
+            <div className="font-sans text-center text-ui-base py-8 px-5" style={{ color: theme.dim }}>
               No matches.
             </div>
           )}
           {!query.trim() && (
-            <div className="font-sans text-center text-[13px] py-8 px-5" style={{ color: theme.dim }}>
+            <div className="font-sans text-center text-ui-base py-8 px-5" style={{ color: theme.dim }}>
               Type to search the whole corpus.
             </div>
           )}

@@ -13,7 +13,7 @@ import { SettingsPage } from './pages/SettingsPage';
 function Splash() {
   return (
     <div data-component="Splash" className="flex items-center justify-center h-full bg-paper">
-      <div className="text-[20px] text-ink/70" style={{ fontFamily: 'Newsreader, Georgia, serif' }}>sutamaya</div>
+      <div className="text-ui-2xl text-ink/70" style={{ fontFamily: 'Newsreader, Georgia, serif' }}>sutamaya</div>
     </div>
   );
 }
@@ -21,8 +21,8 @@ function Splash() {
 function LoadFailed({ onRetry }: { onRetry: () => void }) {
   return (
     <div data-component="LoadFailed" className="flex flex-col items-center justify-center gap-4 h-full bg-paper px-6 text-center">
-      <div className="font-serif text-[17px] text-ink/70">Couldn't load the library. Check your connection and try again.</div>
-      <button className="font-sans text-[14px] px-4 py-2 rounded-md border border-ink/25 hover:bg-ink/[.06]" onClick={onRetry}>
+      <div className="font-serif text-ui-xl text-ink/70">Couldn't load the library. Check your connection and try again.</div>
+      <button className="font-sans text-ui-md px-4 py-2 rounded-md border border-ink/25 hover:bg-ink/[.06]" onClick={onRetry}>
         Retry
       </button>
     </div>

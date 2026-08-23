@@ -253,7 +253,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
           onChange={(e) => setDraft(e.target.value)}
           onKeyDown={onKeyDown}
           placeholder="Search or create a list"
-          className="w-full h-[38px] rounded-field px-3 text-[14.5px] [@media(pointer:coarse)]:text-base outline-none"
+          className="w-full h-[38px] rounded-field px-3 text-ui-md outline-none"
           style={{ border: `1px solid ${theme.pali}`, background: theme.bg, color: theme.fg }}
           autoComplete="off"
           autoCorrect="off"
@@ -271,12 +271,12 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
             return (
               <button
                 key="create"
-                className="flex w-full items-center gap-2 px-2 py-[8px] text-left text-[14.5px]"
+                className="flex w-full items-center gap-2 px-2 py-[8px] text-left text-ui-md"
                 style={{ ...rowStyle(active), borderTop: `1px solid ${theme.rule}`, borderRadius: 0, marginTop: 4, paddingTop: 12 }}
                 onMouseEnter={() => setActiveIndex(idx)}
                 onClick={() => activateRow(row)}
               >
-                <Plus size={13} strokeWidth={2} className="flex-none opacity-60" />
+                <Plus size={16} strokeWidth={2} className="flex-none opacity-60" />
                 <span className="min-w-0 truncate">Create list “{row.name}”</span>
               </button>
             );
@@ -288,7 +288,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
               <Fragment key={list.id}>
                 {sep}
                 <button
-                  className="flex w-full items-center gap-2 py-[8px] pr-2 text-left text-[14.5px]"
+                  className="flex w-full items-center gap-2 py-[8px] pr-2 text-left text-ui-md"
                   style={{ ...rowStyle(active), paddingLeft: 8 + Math.min(depth, MAX_INDENT_DEPTH) * 14 }}
                   aria-expanded={!isCollapsed}
                   onMouseEnter={() => setActiveIndex(idx)}
@@ -298,7 +298,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
                       matching the tree pane's own groups, which use a chevron rather than a folder
                       icon. */}
                   <ChevronDown
-                    size={14}
+                    size={17}
                     strokeWidth={2}
                     className="flex-none opacity-50 transition-transform"
                     style={{ color: theme.fg, transform: isCollapsed ? 'rotate(-90deg)' : undefined }}
@@ -335,7 +335,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
                       background: checked ? theme.pali : 'transparent',
                     }}
                   >
-                    {checked && <Check size={11} strokeWidth={3} color={theme.bg} />}
+                    {checked && <Check size={14} strokeWidth={3} color={theme.bg} />}
                   </span>
                   <MatchedLabel label={list.label} query={query} />
                   {/* A flat row names its ancestors here instead of being indented under them.
@@ -348,7 +348,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
                       each other into a few characters apiece. */}
                   {flat && parentPath && (
                     <span
-                      className="flex-none max-w-[45%] truncate font-sans text-[11.5px] opacity-50"
+                      className="flex-none max-w-[45%] truncate font-sans text-ui-xs opacity-50"
                       style={{ direction: 'rtl', textAlign: 'right' }}
                     >
                       {'‎' + parentPath}
@@ -369,9 +369,9 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
 // the path shown beside it.
 function MatchedLabel({ label, query }: { label: string; query: string }) {
   const at = query ? label.toLowerCase().indexOf(query.toLowerCase()) : -1;
-  if (at < 0) return <span className="min-w-0 flex-1 truncate text-[14.5px]">{label}</span>;
+  if (at < 0) return <span className="min-w-0 flex-1 truncate text-ui-md">{label}</span>;
   return (
-    <span className="min-w-0 flex-1 truncate text-[14.5px]">
+    <span className="min-w-0 flex-1 truncate text-ui-md">
       {label.slice(0, at)}
       <strong className="font-semibold">{label.slice(at, at + query.length)}</strong>
       {label.slice(at + query.length)}

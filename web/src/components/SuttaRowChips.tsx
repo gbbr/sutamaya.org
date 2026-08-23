@@ -40,14 +40,14 @@ interface SuttaRowChipsProps {
 export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighlightClick, onAddToList }: SuttaRowChipsProps) {
   if (chips.length === 0 && hlCount === 0 && !onAddToList) return null;
   const ChipTag = onChipClick ? 'button' : 'span';
-  const fontSize = fs ? fs - 7 : 11;
+  const fontSize = fs ? fs - 7 : 14;
   const height = fontSize + 9;
   // The filled controls sit a little further from the chips than the chips do from each other, so
   // the row reads as memberships first and controls after, rather than one undifferentiated run of
   // pills. Nothing to separate from when there are no chips, so it stays flush with the row's edge.
   const controlGap = chips.length > 0 ? 4 : undefined;
   return (
-    <span data-component="SuttaRowChips" className="flex flex-wrap items-center gap-1.5 mt-2">
+    <span data-component="SuttaRowChips" className="flex flex-wrap items-center gap-1.5 mt-3">
       {chips.map((c) => (
         <ChipTag
           key={c.id}

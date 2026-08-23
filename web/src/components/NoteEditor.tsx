@@ -89,7 +89,7 @@ export function NoteEditor({
       />
       {dirty && (
         <div className="flex items-center justify-between gap-2 mt-1.5">
-          <span className="font-sans text-[11px]" style={{ opacity: 0.5 }}>
+          <span className="font-sans text-ui-xs" style={{ opacity: 0.5 }}>
             {remaining} character{remaining === 1 ? '' : 's'} left
           </span>
           <button type="button" className={saveButtonClassName} style={saveButtonStyle} onMouseDown={(e) => e.preventDefault()} onClick={submit}>
