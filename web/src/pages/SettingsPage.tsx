@@ -21,7 +21,7 @@ import {
   prefetchHelpImages,
   recordCachedCorpusVersion,
 } from '../lib/offline';
-import type { ReaderFace, ResolvedAppTheme } from '../lib/types';
+import type { AppTheme, ReaderFace } from '../lib/types';
 
 const UI_SCALE_MIN = 0.85;
 const UI_SCALE_MAX = 1.4;
@@ -36,16 +36,28 @@ const TOTAL_DOWNLOAD_MB_ESTIMATE = 50;
 // beside the wider paper surface, drawn in that theme's own palette — rather than named in a
 // filled button, so the choice is made by looking rather than by reading. Same idea as the
 // reader's own swatch picker (ReaderMenuPanel's THEME_SWATCHES), with the shell's colours instead
-// of the reader's. Only the two resolved themes are offered; 'system' is the default the picker
-// resolves *through* rather than an option (see types.ts's ReaderTheme note), which is what lets
-// each tile carry one palette and so name itself in plain text underneath.
+// of the reader's.
 //
 // The colours are literals rather than the `--paper`/`--treepane`/`--ink` custom properties they
-// mirror, because both tiles have to render in their own theme at once while the page as a whole
-// is in only one of them.
-const THEME_OPTIONS: Array<{ id: ResolvedAppTheme; label: string; paper: string; pane: string; ink: string; accent: string }> = [
-  { id: 'light', label: 'Light', paper: '#FDFCFA', pane: '#F0ECE4', ink: '#1B1917', accent: '#927243' },
-  { id: 'dark', label: 'Dark', paper: '#171513', pane: '#1E1B17', ink: '#E4DFD8', accent: '#C49A61' },
+// mirror, because every tile has to render in its own theme at once while the page as a whole is
+// in only one of them.
+interface ShellPalette {
+  paper: string;
+  pane: string;
+  ink: string;
+  accent: string;
+}
+const LIGHT_SHELL: ShellPalette = { paper: '#FDFCFA', pane: '#F0ECE4', ink: '#1B1917', accent: '#927243' };
+const DARK_SHELL: ShellPalette = { paper: '#171513', pane: '#1E1B17', ink: '#E4DFD8', accent: '#C49A61' };
+
+// `palettes` is what the tile is drawn in: one for a pinned theme, two for System, which shows the
+// same miniature with the light half on the left and the dark half on the right — the OS's own
+// Light/Dark/Auto convention. The reader's picker deliberately has no System tile; this is the
+// shell's setting only.
+const THEME_OPTIONS: Array<{ id: AppTheme; label: string; palettes: ShellPalette[] }> = [
+  { id: 'light', label: 'Light', palettes: [LIGHT_SHELL] },
+  { id: 'dark', label: 'Dark', palettes: [DARK_SHELL] },
+  { id: 'system', label: 'System', palettes: [LIGHT_SHELL, DARK_SHELL] },
 ];
 
 const UI_FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
@@ -93,6 +105,26 @@ const LINK_ACTION = 'inline-flex items-center gap-1.5 font-sans text-ui-base tex
 // that point; at rest it reads the same as Export.
 const LINK_DANGER =
   'inline-flex items-center gap-1.5 font-sans text-ui-base text-danger-text underline decoration-danger-text/40 hover:text-danger-text';
+
+// The tree-pane band and paper surface of one theme-tile miniature. Every tile lays this out at
+// the tile's full width, so the System tile's two halves — each clipping one of them to its own
+// side — line their rows up exactly across the seam and only the palette changes there.
+function ShellMiniature({ p }: { p: ShellPalette }) {
+  return (
+    <>
+      <span className="w-[34%] flex flex-col justify-center gap-[5px] px-2" style={{ background: p.pane }}>
+        <span className="h-[4px] w-[78%] rounded-full" style={{ background: p.ink, opacity: 0.28 }} />
+        <span className="h-[4px] w-[56%] rounded-full" style={{ background: p.accent }} />
+        <span className="h-[4px] w-[66%] rounded-full" style={{ background: p.ink, opacity: 0.28 }} />
+      </span>
+      <span className="flex-1 flex flex-col justify-center gap-[6px] px-2.5" style={{ background: p.paper }}>
+        <span className="h-[5px] w-[58%] rounded-full" style={{ background: p.ink, opacity: 0.75 }} />
+        <span className="h-[4px] w-full rounded-full" style={{ background: p.ink, opacity: 0.2 }} />
+        <span className="h-[4px] w-[85%] rounded-full" style={{ background: p.ink, opacity: 0.2 }} />
+      </span>
+    </>
+  );
+}
 
 // Separates the two sign-in methods without ranking them — they're alternatives, not a primary
 // and a fallback.
@@ -157,7 +189,7 @@ function syncStatusLine(
 
 export function SettingsPage({ location }: RouteComponentProps) {
   const { user, logout, loading, authError } = useAuth();
-  const { uiScale, uiFace, resolvedTheme, setUiScale, setUiFace, setTheme } = useUiPrefs();
+  const { uiScale, uiFace, theme, setUiScale, setUiFace, setTheme } = useUiPrefs();
   const { corpus } = useCorpus();
   const { syncStatus, pendingCount, lastSyncedAt, needsReauth, lists, notes, highlights } = useUserData();
 
@@ -613,9 +645,9 @@ export function SettingsPage({ location }: RouteComponentProps) {
         <div className={`${CARD} border-ink/[.09] ${CARD_FILL} mb-5`}>
           <div className="py-3.5">
             <div className="font-sans text-ui-sm text-ink/55 mb-2">Theme</div>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               {THEME_OPTIONS.map((t) => {
-                const selected = resolvedTheme === t.id;
+                const selected = theme === t.id;
                 return (
                   <button key={t.id} className="flex-1" aria-pressed={selected} onClick={() => setTheme(t.id)}>
                     {/* A real border, not `ring-inset`: an inset box-shadow paints under the
@@ -626,16 +658,25 @@ export function SettingsPage({ location }: RouteComponentProps) {
                         selected ? 'border-accent' : 'border-ink/[.12]'
                       }`}
                     >
-                      <span className="w-[34%] flex flex-col justify-center gap-[5px] px-2" style={{ background: t.pane }}>
-                        <span className="h-[4px] w-[78%] rounded-full" style={{ background: t.ink, opacity: 0.28 }} />
-                        <span className="h-[4px] w-[56%] rounded-full" style={{ background: t.accent }} />
-                        <span className="h-[4px] w-[66%] rounded-full" style={{ background: t.ink, opacity: 0.28 }} />
-                      </span>
-                      <span className="flex-1 flex flex-col justify-center gap-[6px] px-2.5" style={{ background: t.paper }}>
-                        <span className="h-[5px] w-[58%] rounded-full" style={{ background: t.ink, opacity: 0.75 }} />
-                        <span className="h-[4px] w-full rounded-full" style={{ background: t.ink, opacity: 0.2 }} />
-                        <span className="h-[4px] w-[85%] rounded-full" style={{ background: t.ink, opacity: 0.2 }} />
-                      </span>
+                      {/* One slice per palette: each is an equal share of the tile's width
+                          holding a full-width miniature, pulled left by the slices before it so
+                          the slice shows its own part of it. With a single palette that's the
+                          whole miniature and no offset; with two it's the light left half beside
+                          the dark right half. */}
+                      {t.palettes.map((p, i) => (
+                        <span
+                          key={i}
+                          className="flex shrink-0 overflow-hidden"
+                          style={{ width: `${100 / t.palettes.length}%` }}
+                        >
+                          <span
+                            className="flex shrink-0"
+                            style={{ width: `${t.palettes.length * 100}%`, marginLeft: `-${i * 100}%` }}
+                          >
+                            <ShellMiniature p={p} />
+                          </span>
+                        </span>
+                      ))}
                     </span>
                     <span
                       className={`block mt-1.5 font-sans text-ui-sm ${
