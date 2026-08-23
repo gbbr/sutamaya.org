@@ -208,7 +208,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
 
   return (
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
-      <header className="flex-none flex items-center gap-3.5 px-5 pt-5 pb-4 border-b border-ink/10">
+      <header className="flex-none flex items-center gap-3.5 px-6 pt-5 pb-4 border-b border-ink/10">
         {mobile && (
           // Deliberately the same 28px round icon button as the reorder toggle on the right, so the
           // header reads as icon / title / icon. The border and chip fill are what make it read
@@ -289,7 +289,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   measure. While reordering the grip is vertically centred instead, and the whole
                   row has to clear it. */}
               <button
-                className={`block w-full text-left px-5 py-[16px] ${reordering ? 'pr-12' : ''} ${on ? 'bg-ink/[.05]' : ''}`}
+                className={`block w-full text-left px-6 py-[16px] ${reordering ? 'pr-12' : ''} ${on ? 'bg-ink/[.05]' : ''}`}
                 style={on ? { boxShadow: 'inset 2px 0 0 rgb(var(--accent2))' } : undefined}
                 onClick={() => onOpen(openTargets.get(id) ?? id)}
               >
@@ -313,24 +313,26 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
               </button>
               {/* Opens the list-membership picker for this sutta. Hidden entirely while reordering
                   so the grip below has the gutter to itself — one control per row edge, never two,
-                  and nobody manages memberships mid-drag. Anchored to the title line rather than
-                  vertically centred: a row runs three or four lines, so a centred button would
-                  float alongside the blurb instead of reading as the row's own action. Visible at
-                  rest on every device, never hover-revealed: an iPad gets the desktop layout but
-                  has no hover, so a hover-gated control would simply not exist there.
+                  and nobody manages memberships mid-drag. Held near the top of the row rather than
+                  centred in it: a row runs three or four lines, so a centred button would float
+                  alongside the blurb instead of reading as the row's own action. `top-5` matches
+                  the `right-5` beside it, so the circle sits the same distance from both edges of
+                  its corner. Visible at rest on every device, never hover-revealed: an iPad gets
+                  the desktop layout but has no hover, so a hover-gated control would simply not
+                  exist there.
 
-                  The same 28px circle as the header's reorder toggle, at the same `right-5` the
-                  header's own `px-5` puts that toggle at, so the two share a vertical axis down
-                  the pane's right edge — on mobile that axis is the one the Back button mirrors.
-                  Borderless at rest, unlike the header pair: repeated down every row, their chip
-                  fill and border would read as a column of buttons competing with the text. The
+                  The same 28px circle as the header's reorder toggle, but borderless at rest:
+                  repeated down every row, that pair's chip fill and border would read as a column
+                  of buttons competing with the text. Without the border it also needs to sit 4px
+                  outboard of them — a bordered chip's edge reads as the pane's margin, a bare
+                  glyph's doesn't. The
                   `after` pseudo-element pads the tap target out to 48px — Material's recommended
                   minimum, comfortably past Apple's 44 — without growing the circle: it overhangs
                   the layout rather than taking part in it, so the box still ends exactly at the
                   `pr-12` the rows already reserve and the title loses no width to any of this. */}
               {!reordering && (
                 <button
-                  className="absolute right-5 top-2.5 w-7 h-7 flex items-center justify-center rounded-full text-ink-4 hover:bg-ink/[.08] hover:text-ink active:bg-ink/[.12] after:content-[''] after:absolute after:-inset-2.5"
+                  className="absolute right-5 top-5 w-7 h-7 flex items-center justify-center rounded-full text-ink-4 hover:bg-ink/[.08] hover:text-ink active:bg-ink/[.12] after:content-[''] after:absolute after:-inset-2.5"
                   aria-label={`Add ${s.ref} to a list`}
                   onClick={(e) => setPicker({ suttaId: id, anchor: e.currentTarget.getBoundingClientRect() })}
                 >
@@ -367,7 +369,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
           );
         })}
         {items.length === 0 && (
-          <div className="font-sans text-center text-ui-base text-ink-4 py-10 px-5">
+          <div className="font-sans text-center text-ui-base text-ink-4 py-10 px-6">
             {searching ? `Nothing matches "${query}".` : 'Nothing here yet.'}
           </div>
         )}
