@@ -69,13 +69,13 @@ export function HighlightGutter({ scrollRef, highlightGroups, theme, onJump, lay
     <div
       data-component="HighlightGutter"
       className="fixed z-40"
-      style={{ top: track.top, height: track.height, right: 4, width: 24, pointerEvents: 'none' }}
+      style={{ top: track.top, height: track.height, right: 4, width: 28, pointerEvents: 'none' }}
     >
       {marks.map((m) => (
         <button
           key={m.key}
-          className="absolute w-[11px] hover:w-[20px] rounded-[2px] shadow-sm transition-[width] duration-150 ease-out"
-          style={{ background: highlightPaint(m.c, theme), height: 6, top: m.top - 3, right: 0, pointerEvents: 'auto' }}
+          className="absolute w-[13px] hover:w-[23px] rounded-[2px] shadow-sm transition-[width] duration-150 ease-out"
+          style={{ background: highlightPaint(m.c, theme), height: 8, top: m.top - 4, right: 0, pointerEvents: 'auto' }}
           title="Jump to highlight"
           onClick={() => onJump(m.i, m.key)}
         />
