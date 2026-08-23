@@ -310,7 +310,8 @@ export function ReaderMenuPanel({
                 onSubmit={(text) => submitNote(suttaId, text)}
                 focusSignal={noteFocusSignal}
                 placeholder="Add a note — return to save"
-                textareaClassName="w-full bg-transparent text-ui-lg resize-none outline-none font-serif"
+                rows={3}
+                textareaClassName="w-full bg-transparent text-ui-base resize-none outline-none font-serif"
                 textareaStyle={{ border: 0, color: theme.fg }}
                 saveButtonClassName="font-sans text-ui-sm font-medium px-2.5 py-[3px] rounded-full"
                 saveButtonStyle={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
