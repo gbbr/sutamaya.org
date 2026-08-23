@@ -91,11 +91,9 @@ beforeEach(() => {
   vi.mocked(useAuth).mockReturnValue(mockAuth());
   vi.mocked(useUiPrefs).mockReturnValue({
     uiScale: 1,
-    uiFace: 'serif',
     theme: 'light',
     resolvedTheme: 'light',
     setUiScale: vi.fn(),
-    setUiFace: vi.fn(),
     setTheme: vi.fn(),
   });
   vi.mocked(useCorpus).mockReturnValue({

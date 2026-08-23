@@ -53,10 +53,12 @@ export default {
         'ui-3xl': 'var(--ui-text-3xl)',
       },
       fontFamily: {
-        // Routed through --ui-serif (set from Settings > UI font, see lib/uiPrefs.ts) so the
-        // app-wide "UI font" preference can override every use of `font-serif` at once; the
-        // var()'s own fallback is today's default, so nothing changes until it's actually set.
-        serif: ['var(--ui-serif, Newsreader)', 'Georgia', 'serif'],
+        // `font-serif` is a misnomer kept for now: it no longer selects a serif, it selects the
+        // shell's own face — the same Inter `body` sets in index.css. It stays as a utility
+        // because a handful of call sites sit inside the reader, which paints its own face onto
+        // its subtree, and need to opt back out to the shell's (ReaderMenuPanel's note field,
+        // ReaderSearchOverlay's Pali, DictionaryDock's headword).
+        serif: ['Inter', 'system-ui', 'sans-serif'],
         georgia: ['Georgia', 'Times New Roman', 'serif'],
         sans: ['IBM Plex Sans', 'system-ui', 'sans-serif'],
       },

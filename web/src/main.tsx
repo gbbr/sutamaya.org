@@ -1,15 +1,14 @@
 import { createRoot } from 'react-dom/client';
 import App from './App';
-import { loadUiPrefs, applyUiScale, applyUiFace, applyTheme } from './lib/uiPrefs';
+import { loadUiPrefs, applyUiScale, applyTheme } from './lib/uiPrefs';
 import './index.css';
 
 // Applied synchronously here, before React mounts, so there's no flash of the default
-// scale/font/theme before UiPrefsProvider's effects would otherwise catch up — see Settings >
-// UI scale/font/Theme (SettingsPage.tsx) for where these are actually changed and lib/uiPrefs.ts
+// scale/theme before UiPrefsProvider's effects would otherwise catch up — see Settings >
+// UI scale/Theme (SettingsPage.tsx) for where these are actually changed and lib/uiPrefs.ts
 // for how each is applied.
 const uiPrefs = loadUiPrefs();
 applyUiScale(uiPrefs.uiScale);
-applyUiFace(uiPrefs.uiFace);
 applyTheme(uiPrefs.theme);
 
 // Returning from the background strands iPad Safari on a stale, too-short viewport: it collapses
