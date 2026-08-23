@@ -25,22 +25,22 @@ const renderDesktop = (ui: ReactElement) => renderAt(1440, ui);
 const renderMobile = (ui: ReactElement) => renderAt(MOBILE_BREAKPOINT - 1, ui);
 
 describe('TreeRow', () => {
-  it('indents first level by 14px from the 18px base once both panes fit (mobile)', () => {
+  it('indents first level by 14px from the 24px base once both panes fit (mobile)', () => {
     renderMobile(<TreeRow node={leaf} depth={1} expanded={{}} onToggle={vi.fn()} onSelect={vi.fn()} />);
     const row = screen.getByText('Book of Ones').closest('button') as HTMLButtonElement;
-    expect(row.style.paddingLeft).toBe('32px');
+    expect(row.style.paddingLeft).toBe('38px'); // 24 + 1*14
   });
 
-  it('indents deeper rows by 14px per depth level past the first, offset from the 18px base (mobile)', () => {
+  it('indents deeper rows by 14px per depth level past the first, offset from the 24px base (mobile)', () => {
     renderMobile(<TreeRow node={leaf} depth={2} expanded={{}} onToggle={vi.fn()} onSelect={vi.fn()} />);
     const row = screen.getByText('Book of Ones').closest('button') as HTMLButtonElement;
-    expect(row.style.paddingLeft).toBe('46px'); // 18 + 1*14
+    expect(row.style.paddingLeft).toBe('52px'); // 24 + 2*14
   });
 
-  it('indents every level by 14px from the 18px base once both panes fit (non-mobile)', () => {
+  it('indents every level by 14px from the 24px base once both panes fit (non-mobile)', () => {
     renderDesktop(<TreeRow node={leaf} depth={1} expanded={{}} onToggle={vi.fn()} onSelect={vi.fn()} />);
     const row = screen.getByText('Book of Ones').closest('button') as HTMLButtonElement;
-    expect(row.style.paddingLeft).toBe('32px'); // 18 + 1*14
+    expect(row.style.paddingLeft).toBe('38px'); // 24 + 1*14
   });
 
   it('shows a chevron only when the row has children to expand', () => {
