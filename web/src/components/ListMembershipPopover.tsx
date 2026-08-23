@@ -150,11 +150,11 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
               is a whole screen, and a 15px title on one reads as a stray caption. The second line
               names the sutta because the row that opened this is no longer on screen to say. */}
           <div className="flex-1 min-w-0">
-            <div id={TITLE_ID} className="font-sans text-[19px] font-semibold tracking-[-.01em]">
+            <div id={TITLE_ID} className="font-sans text-ui-2xl font-semibold tracking-[-.01em]">
               Add to list
             </div>
             {sutta && (
-              <div className="font-sans text-xs text-ink/[.42] mt-[2px] truncate">
+              <div className="font-sans text-ui-xs text-ink/[.42] mt-[2px] truncate">
                 <span className="text-ink/45">{sutta.ref} · </span>
                 {sutta.en}
               </div>
@@ -165,7 +165,7 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
             aria-label="Close"
             onClick={onClose}
           >
-            <X size={18} strokeWidth={1.75} />
+            <X size={22} strokeWidth={1.75} />
           </button>
         </div>
         <div className="flex flex-col flex-1 min-h-0 px-4 pt-2.5 pb-4">

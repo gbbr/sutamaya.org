@@ -57,7 +57,7 @@ export function DictionaryDock({
             onPrev();
           }}
         >
-          <ChevronLeft size={16} strokeWidth={1.75} />
+          <ChevronLeft size={19} strokeWidth={1.75} />
         </button>
         <button
           aria-label="Next word"
@@ -68,7 +68,7 @@ export function DictionaryDock({
             onNext();
           }}
         >
-          <ChevronRight size={16} strokeWidth={1.75} />
+          <ChevronRight size={19} strokeWidth={1.75} />
         </button>
         <button
           aria-label="Close"
@@ -79,7 +79,7 @@ export function DictionaryDock({
             onClose();
           }}
         >
-          <X size={16} strokeWidth={1.75} />
+          <X size={19} strokeWidth={1.75} />
         </button>
       </div>
       <div className="flex-1 min-h-0 overflow-y-auto flex flex-col gap-[9px] mt-[7px] opacity-[.82]" style={{ fontSize: defSize }}>

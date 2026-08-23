@@ -23,7 +23,7 @@ import readerShot from '../assets/help/reader-mobile.webp';
 // answer, not studying.
 //
 // **Phone-width captures serve every viewport.** A full 1280×800 desktop window shown in this
-// column renders its 13px UI text at about 5px — unreadable, and no marker placement rescues it.
+// column renders its 16px UI text at about 6px — unreadable, and no marker placement rescues it.
 // The app's structure is the same either way, so a desktop set would be a second copy of the same
 // explanation, needing a per-section crop to stay legible.
 //
@@ -385,6 +385,10 @@ const CONTACT_URL = 'https://github.com/gbbr/sutamaya.org/issues/new';
 // product, not part of the product, and a marker in the accent colour would read as another piece
 // of the UI it is pointing at. Solid with a pale ring so it holds an edge over screenshot pixels
 // of any colour, in either theme.
+// Its two call sites size the digit with a raw px font-size rather than a `text-ui-*` token,
+// because the numeral is artwork fitted to its own circle rather than UI text: the size that
+// works is whatever centres inside the diameter, so the two move together and neither belongs
+// on the shared type scale.
 const MARKER = 'flex items-center justify-center rounded-full bg-[#E23A2E] font-sans font-medium text-white tabular-nums';
 
 // `*emphasis*` inside a tip. A single asterisk, not Markdown's double, because a tip is a hand-
@@ -434,7 +438,7 @@ function ShotColumn({ shot, startIndex, showTitle }: { shot: HelpShot; startInde
           />
         ) : (
           <div className="flex items-center justify-center rounded-field border border-dashed border-ink/[.18] bg-ink/[.02] aspect-[390/844]">
-            <span className="font-sans text-[11px] text-center leading-[1.4] text-ink/35 px-3">{shot.name}</span>
+            <span className="font-sans text-ui-xs text-center leading-[1.4] text-ink/35 px-3">{shot.name}</span>
           </div>
         )}
         {/* Decorative: the legend below repeats every marker as a number, so nothing is lost when
@@ -444,19 +448,19 @@ function ShotColumn({ shot, startIndex, showTitle }: { shot: HelpShot; startInde
           <span
             key={i}
             aria-hidden
-            className={`${MARKER} absolute pointer-events-none w-4 h-4 text-[9.5px] ring-[1.0px] ring-white/80 shadow-[0_1px_2px_rgba(0,0,0,.4)]`}
+            className={`${MARKER} absolute pointer-events-none w-5 h-5 text-[12px] ring-[1.0px] ring-white/80 shadow-[0_1px_2px_rgba(0,0,0,.4)]`}
             style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%, -50%)' }}
           >
             {startIndex + i + 1}
           </span>
         ))}
       </div>
-      {showTitle && <div className="font-sans text-[12px] font-semibold text-ink/70 mt-3">{shot.title}</div>}
+      {showTitle && <div className="font-sans text-ui-sm font-semibold text-ink/70 mt-3">{shot.title}</div>}
       <ol className="mt-2 flex flex-col gap-2">
         {shot.steps.map((step, i) => (
           <li key={step} className="flex items-start gap-2">
-            <span className={`${MARKER} flex-none w-[17px] h-[17px] mt-[1px] text-[10px]`}>{startIndex + i + 1}</span>
-            <span className="font-sans text-[13px] leading-[1.45] text-ink/75">{step}</span>
+            <span className={`${MARKER} flex-none w-[21px] h-[21px] mt-[1px] text-[12px]`}>{startIndex + i + 1}</span>
+            <span className="font-sans text-ui-base leading-[1.45] text-ink/75">{step}</span>
           </li>
         ))}
       </ol>
@@ -475,8 +479,8 @@ function ShotColumn({ shot, startIndex, showTitle }: { shot: HelpShot; startInde
 function TipCard({ tips }: { tips: string[] }) {
   return (
     <div className="flex items-start gap-2 rounded-field bg-warning-text/[.09] pl-2.5 pr-[18px] py-3 mt-4">
-      <Lightbulb size={15} strokeWidth={1.75} className="flex-none mt-[2px] text-warning-text" />
-      <div className="flex-1 min-w-0 flex flex-col gap-2 font-sans text-[13px] leading-[1.45] text-ink/75">
+      <Lightbulb size={18} strokeWidth={1.75} className="flex-none mt-[2px] text-warning-text" />
+      <div className="flex-1 min-w-0 flex flex-col gap-2 font-sans text-ui-base leading-[1.45] text-ink/75">
         {tips.map((tip) => (
           <p key={tip}>{withEmphasis(tip)}</p>
         ))}
@@ -492,10 +496,10 @@ function TipCard({ tips }: { tips: string[] }) {
 function BackToTop({ onClick }: { onClick: () => void }) {
   return (
     <button
-      className="flex items-center gap-1.5 ml-auto font-sans text-[12.5px] text-ink/40 hover:text-ink/70 mt-5 py-1"
+      className="flex items-center gap-1.5 ml-auto font-sans text-ui-sm text-ink/40 hover:text-ink/70 mt-5 py-1"
       onClick={onClick}
     >
-      <ArrowUp size={13} strokeWidth={1.75} />
+      <ArrowUp size={16} strokeWidth={1.75} />
       Back to top
     </button>
   );
@@ -520,12 +524,12 @@ export function HelpPage(_props: RouteComponentProps) {
   return (
     <div ref={scrollRef} data-component="HelpPage" className="sc h-full bg-paper px-5 pt-10">
       <div className="w-full max-w-[520px] pb-10 mx-auto">
-        <button className="flex items-center gap-1.5 font-sans text-[13px] text-ink/50 mb-5" onClick={() => navigate('/')}>
-          <ArrowLeft size={14} strokeWidth={1.75} />
+        <button className="flex items-center gap-1.5 font-sans text-ui-base text-ink/50 mb-5" onClick={() => navigate('/')}>
+          <ArrowLeft size={17} strokeWidth={1.75} />
           Back
         </button>
-        <div className="text-[22px] font-semibold tracking-[-.01em] mb-2">How to use this app</div>
-        <p className="font-serif text-[15px] leading-[1.55] text-ink/65 mb-4">
+        <div className="text-ui-3xl font-semibold tracking-[-.01em] mb-2">How to use this app</div>
+        <p className="font-serif text-ui-lg leading-[1.55] text-ink/65 mb-4">
           A tour of the app in pictures. Nothing here needs an account, and nothing you've already visited needs a connection.
           For complete offline access, download all content from the Settings page.
         </p>
@@ -542,12 +546,12 @@ export function HelpPage(_props: RouteComponentProps) {
             Scrolled with scrollIntoView rather than an href, since a real hash link would put a
             URL into @reach/router's history that means nothing to the router. */}
         <nav className="mb-8">
-          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/40 mb-1">On this page</div>
+          <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink/40 mb-1">On this page</div>
           <div className="flex flex-col items-start pl-3.5">
             {SECTIONS.map((section) => (
               <button
                 key={section.title}
-                className="font-sans text-[13px] text-left text-ink/45 hover:text-ink/75 py-[5px]"
+                className="font-sans text-ui-base text-left text-ink/45 hover:text-ink/75 py-[5px]"
                 onClick={() =>
                   document.getElementById(anchorId(section.title))?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }
@@ -556,7 +560,7 @@ export function HelpPage(_props: RouteComponentProps) {
               </button>
             ))}
             <button
-              className="font-sans text-[13px] text-left text-ink/45 hover:text-ink/75 py-[5px]"
+              className="font-sans text-ui-base text-left text-ink/45 hover:text-ink/75 py-[5px]"
               onClick={() =>
                 document.getElementById(anchorId(INSTALL_TITLE))?.scrollIntoView({ behavior: 'smooth', block: 'start' })
               }
@@ -564,7 +568,7 @@ export function HelpPage(_props: RouteComponentProps) {
               {INSTALL_TITLE}
             </button>
             <button
-              className="font-sans text-[13px] text-left text-ink/45 hover:text-ink/75 py-[5px]"
+              className="font-sans text-ui-base text-left text-ink/45 hover:text-ink/75 py-[5px]"
               onClick={() =>
                 document.getElementById(anchorId(CONTACT_TITLE))?.scrollIntoView({ behavior: 'smooth', block: 'start' })
               }
@@ -583,10 +587,10 @@ export function HelpPage(_props: RouteComponentProps) {
           });
           return (
             <section key={section.title} id={anchorId(section.title)} className="mb-10 scroll-mt-6">
-              <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">
+              <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">
                 {section.title}
               </div>
-              <p className="font-serif text-[15px] leading-[1.55] text-ink/70 mb-4">{section.lead}</p>
+              <p className="font-serif text-ui-lg leading-[1.55] text-ink/70 mb-4">{section.lead}</p>
               <div className="flex flex-wrap gap-x-5 gap-y-7">
                 {columns.map(({ shot, startIndex }) => (
                   <ShotColumn key={shot.name} shot={shot} startIndex={startIndex} showTitle={columns.length > 1} />
@@ -603,17 +607,17 @@ export function HelpPage(_props: RouteComponentProps) {
             the page's own quiet ink, not the markers' red — nothing here is annotation over a
             screenshot, and reusing that red would blunt what it means everywhere else. */}
         <section id={anchorId(INSTALL_TITLE)} className="mb-10 scroll-mt-6">
-          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">
+          <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">
             {INSTALL_TITLE}
           </div>
-          <p className="font-serif text-[15px] leading-[1.55] text-ink/70 mb-4">{INSTALL_LEAD}</p>
+          <p className="font-serif text-ui-lg leading-[1.55] text-ink/70 mb-4">{INSTALL_LEAD}</p>
           <div className="flex flex-wrap gap-x-5 gap-y-7">
             {INSTALL_PLATFORMS.map((platform) => (
               <div key={platform.title} className="flex-1 min-w-[190px]">
-                <div className="font-sans text-[12px] font-semibold text-ink/70">{platform.title}</div>
-                <ol className="list-decimal mt-2 pl-[18px] flex flex-col gap-2 marker:font-sans marker:text-[12px] marker:text-ink/40 marker:tabular-nums">
+                <div className="font-sans text-ui-sm font-semibold text-ink/70">{platform.title}</div>
+                <ol className="list-decimal mt-2 pl-[18px] flex flex-col gap-2 marker:font-sans marker:text-ui-sm marker:text-ink/40 marker:tabular-nums">
                   {platform.steps.map((step) => (
-                    <li key={step} className="font-sans text-[13px] leading-[1.45] text-ink/75 pl-1">
+                    <li key={step} className="font-sans text-ui-base leading-[1.45] text-ink/75 pl-1">
                       {step}
                     </li>
                   ))}
@@ -629,18 +633,18 @@ export function HelpPage(_props: RouteComponentProps) {
             furniture so it appears in "On this page" like everything else, but it gets no tip card
             and no back-to-top — the page ends here, so there is nothing further to return from. */}
         <section id={anchorId(CONTACT_TITLE)} className="mb-10 scroll-mt-6">
-          <div className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">
+          <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink/[.58] mb-2">
             {CONTACT_TITLE}
           </div>
-          <p className="font-serif text-[15px] leading-[1.55] text-ink/70 mb-4">{CONTACT_LEAD}</p>
+          <p className="font-serif text-ui-lg leading-[1.55] text-ink/70 mb-4">{CONTACT_LEAD}</p>
           <a
             href={CONTACT_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 font-sans text-[13px] text-ink/70 hover:text-ink underline decoration-ink/25 underline-offset-2"
+            className="inline-flex items-center gap-1.5 font-sans text-ui-base text-ink/70 hover:text-ink underline decoration-ink/25 underline-offset-2"
           >
             Open an issue on GitHub
-            <ExternalLink size={13} strokeWidth={1.75} className="flex-none text-ink/40" />
+            <ExternalLink size={16} strokeWidth={1.75} className="flex-none text-ink/40" />
           </a>
         </section>
       </div>

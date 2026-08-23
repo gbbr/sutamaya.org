@@ -431,13 +431,13 @@ export function TreePane({
       {/* No bottom padding while the tabs are up: their underline has to land on this border,
           which is what makes the two read as one edge rather than a control floating above a
           rule. With the tabs gone the padding comes back, or the search box sits on the rule. */}
-      <header className={`flex-none px-[18px] pt-4 border-b border-ink/10 ${searching ? 'pb-3.5' : ''}`}>
+      <header className={`flex-none px-[22px] pt-5 border-b border-ink/10 ${searching ? 'pb-4' : ''}`}>
         {/* Everything in this row is a destination away from the two trees — help, search, the
             account. The pane's own Library/My-lists switch is deliberately *not* among them: as
             one more small control in a row of small controls it read as chrome, when it's the
             navigation half the app lives behind. It gets its own row below instead. */}
         <div className="flex items-center gap-2">
-          <div className="text-[22px] font-semibold tracking-[-.01em] flex-1 truncate" style={{ fontFamily: 'Newsreader, Georgia, serif' }}>sutamaya</div>
+          <div className="text-ui-3xl font-semibold tracking-[-.01em] flex-1 truncate" style={{ fontFamily: 'Newsreader, Georgia, serif' }}>sutamaya</div>
           {/* All three are sized alike so they share a vertical centre rather than each keying
               off its own content. Their *horizontal* spacing can't come from the row's own gap,
               though: these two are transparent boxes around a glyph that leaves 8–10px of air on
@@ -448,25 +448,25 @@ export function TreePane({
               different ink width means re-checking these two numbers. */}
           <button
             className="flex-none rounded-full flex items-center justify-center text-ink/[.62] hover:bg-ink/[.06]"
-            style={mobile ? { width: 32, height: 32 } : { width: 28, height: 28 }}
+            style={mobile ? { width: 40, height: 40 } : { width: 34, height: 34 }}
             aria-label="Help"
             title="Help"
             onClick={() => navigate('/help')}
           >
-            <Lightbulb size={mobile ? 16 : 15} strokeWidth={2} />
+            <Lightbulb size={mobile ? 20 : 18} strokeWidth={2} />
           </button>
           <button
             className="flex-none -ml-1 rounded-full flex items-center justify-center text-ink/[.62] hover:bg-ink/[.06]"
-            style={mobile ? { width: 32, height: 32 } : { width: 28, height: 28 }}
+            style={mobile ? { width: 40, height: 40 } : { width: 34, height: 34 }}
             aria-label={searchOpen ? 'Close search' : 'Search'}
             title={searchOpen ? 'Close search (Esc)' : 'Search (/)'}
             onClick={() => (searchOpen ? closeSearch() : setSearchOpen(true))}
           >
-            <Search size={mobile ? 16 : 15} strokeWidth={2} />
+            <Search size={mobile ? 20 : 18} strokeWidth={2} />
           </button>
           {/* Goes to Settings in either sign-in state, so no separate gear is needed here. */}
           <div className="flex-none ml-[6px]">
-            <SignedInBadge user={user} size={mobile ? 32 : 28} atRisk={!user && hasLocalWorkWorthKeeping(lists, notes, highlights)} />
+            <SignedInBadge user={user} size={mobile ? 40 : 34} atRisk={!user && hasLocalWorkWorthKeeping(lists, notes, highlights)} />
           </div>
         </div>
         {searchOpen && (
@@ -492,7 +492,7 @@ export function TreePane({
                 }
               }}
               placeholder={SEARCH_PLACEHOLDER}
-              className="w-full h-[38px] border border-ink/[.22] rounded-field pl-3 pr-8 bg-field text-[14.5px] outline-none"
+              className="w-full h-[38px] border border-ink/[.22] rounded-field pl-3 pr-8 bg-field text-ui-md outline-none"
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="off"
@@ -504,7 +504,7 @@ export function TreePane({
               title="Clear search"
               onClick={closeSearch}
             >
-              <X size={13} strokeWidth={2} />
+              <X size={16} strokeWidth={2} />
             </button>
           </div>
         )}
@@ -521,17 +521,19 @@ export function TreePane({
             regardless of which tab is active, so leaving a highlighted tab sitting above them
             would claim they were filtered by it.
 
-            The -mx-1 cancels 4px of the header's own 18px side padding. On the right the rows
+            The -mx-2 cancels 8px of the header's own 22px side padding. On the right the rows
             below are inset 10px, but what sits at that edge is a round hover target with air
             around its glyph, so ending the underline at 10px overshoots what the eye reads as
-            the edge and 18px falls short of it; 14px splits the two. The left gets the same 4px
-            so the bar stays centred under the header above it. */}
+            the edge and 22px falls short of it; 14px splits the two. The left gets the same 8px
+            so the bar stays centred under the header above it — both tabs are flex-1 in this one
+            row, so the margin moves the two outer ends together and the shared inner edge stays
+            put. */}
         {!searching && (
-          <div className="flex mt-3 -mx-1 font-sans text-[12.5px] font-semibold">
+          <div className="flex mt-4 -mx-2 font-sans text-ui-sm font-semibold">
             {(['library', 'lists'] as const).map((view) => (
               <button
                 key={view}
-                className={`flex-1 min-w-0 flex items-center justify-center gap-[7px] h-[34px] border-b-2 transition-colors ${
+                className={`flex-1 min-w-0 flex items-center justify-center gap-[9px] h-[42px] border-b-2 transition-colors ${
                   paneView === view ? 'border-accent-text text-ink' : 'border-transparent text-ink/45 hover:text-ink/70'
                 }`}
                 aria-pressed={paneView === view}
@@ -539,9 +541,9 @@ export function TreePane({
                 onClick={() => setPaneView(view)}
               >
                 {view === 'library' ? (
-                  <Library size={mobile ? 14 : 13} strokeWidth={2} />
+                  <Library size={mobile ? 17 : 16} strokeWidth={2} />
                 ) : (
-                  <List size={mobile ? 14 : 13} strokeWidth={2} />
+                  <List size={mobile ? 17 : 16} strokeWidth={2} />
                 )}
                 {view === 'library' ? 'Library' : 'Lists'}
               </button>
@@ -557,12 +559,12 @@ export function TreePane({
           breathing room on every other device too. */}
       <div
         ref={scrollRef}
-        className="sc flex-1 pt-2.5"
+        className="sc flex-1 pt-3"
         style={{ paddingBottom: 'calc(1.5rem + env(safe-area-inset-bottom, 0px))' }}
       >
         {searching ? (
           <div>
-            <div className="px-[18px] pt-2 pb-1 font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">
+            <div className="px-[22px] pt-3 pb-1.5 font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink/[.58]">
               {hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ results` : `${hits.length} ${hits.length === 1 ? 'result' : 'results'}`}
             </div>
             {/* Mobile-only: on desktop ListPane renders the same hits beside this pane, with the
@@ -577,16 +579,16 @@ export function TreePane({
                     <button
                       key={id}
                       ref={setHitRowRef(i)}
-                      className={`row flex flex-col w-full text-left gap-[1px] px-[18px] py-[11px] border-b border-ink/[.07] ${i === searchActiveIndex ? 'bg-ink/[.06]' : ''}`}
+                      className={`row flex flex-col w-full text-left gap-[2px] px-[22px] py-[14px] border-b border-ink/[.07] ${i === searchActiveIndex ? 'bg-ink/[.06]' : ''}`}
                       onClick={() => openHit(matchedId ?? id)}
                     >
                       <span>
-                        <span className="font-sans text-[11.5px] font-bold text-ink/60 mr-2.5">{sutta.ref}</span>
-                        <span className="text-[16px] font-semibold leading-[1.3]">{sutta.en}</span>
+                        <span className="font-sans text-ui-xs font-bold text-ink/60 mr-2.5">{sutta.ref}</span>
+                        <span className="text-ui-lg font-semibold leading-[1.3]">{sutta.en}</span>
                       </span>
-                      <span className="font-serif text-[13.5px] italic text-accent-text">{sutta.pali}</span>
+                      <span className="font-serif text-ui-base italic text-accent-text">{sutta.pali}</span>
                       {note && (
-                        <span className="block font-serif text-[14px] leading-[1.4] mt-[6px] pl-[10px] border-l-2 border-ink/30">
+                        <span className="block font-serif text-ui-md leading-[1.4] mt-[6px] pl-[10px] border-l-2 border-ink/30">
                           {note}
                         </span>
                       )}
@@ -595,7 +597,7 @@ export function TreePane({
                   );
                 })}
                 {hits.length === 0 && (
-                  <div className="font-sans text-center text-[13px] text-ink/40 py-[30px] px-5">No matches.</div>
+                  <div className="font-sans text-center text-ui-base text-ink/40 py-[30px] px-5">No matches.</div>
                 )}
               </>
             )}

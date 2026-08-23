@@ -22,7 +22,7 @@ interface LayoutState extends LayoutPrefs {
 // The tree pane's width before the user ever drags the divider, and what "Reset" restores.
 // Exported so the test measuring a drag starts from this value rather than its own copy, which
 // would go stale the moment this one changes.
-export const DEFAULT_TREE_W = 300;
+export const DEFAULT_TREE_W = 360;
 
 const DEFAULTS: LayoutPrefs = { treeW: DEFAULT_TREE_W };
 
@@ -108,7 +108,7 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
   const mobile = w < MOBILE_BREAKPOINT;
 
   const paneW = useMemo<PaneWidths>(() => {
-    const treeMax = Math.max(210, w - 320);
+    const treeMax = Math.max(250, w - 380);
     const tree = Math.min(liveTreeW ?? prefs.treeW, treeMax);
     return { tree, treeMax };
   }, [w, prefs, liveTreeW]);
@@ -126,7 +126,7 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
         // both panes. Browsers that honor it save `swallowNextClick` (above) the work; the ones
         // that don't are why that fallback exists.
         e.preventDefault();
-        drag.current = { key: 'treeW', x0: e.clientX, w0: paneW.tree, min: 210, max: paneW.treeMax, moved: false };
+        drag.current = { key: 'treeW', x0: e.clientX, w0: paneW.tree, min: 250, max: paneW.treeMax, moved: false };
         document.body.style.userSelect = 'none';
       },
     }),

@@ -88,8 +88,8 @@ export function ListsTreeView({
 }: ListsTreeViewProps) {
   return (
     <div data-component="ListsTreeView">
-      <div className="flex items-center justify-between pl-[18px] pr-[10px] pt-2 pb-1">
-        <span className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">My lists</span>
+      <div className="flex items-center justify-between pl-[22px] pr-[10px] pt-2 pb-1">
+        <span className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink/[.58]">My lists</span>
         <div className="flex items-center gap-[7px]">
           <button
             aria-label={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
@@ -102,8 +102,11 @@ export function ListsTreeView({
               setMenuOpenId(null);
             }}
           >
-            <ArrowUpDown size={12} strokeWidth={2} />
+            <ArrowUpDown size={15} strokeWidth={2} />
           </button>
+          {/* A raw px font-size rather than a `text-ui-*` token: the `+` is an icon glyph sized to
+              the 24px circle around it, not UI text, so it doesn't belong to the type scale and
+              shouldn't grow when that scale is retuned. */}
           <button
             aria-label="New list or group"
             title="New list or group"
@@ -115,10 +118,10 @@ export function ListsTreeView({
         </div>
       </div>
       {reorderMode && (
-        <div className="px-[18px] pb-1.5 font-sans text-[11.5px] text-ink/45">Drag a list onto a group to nest it, or to the top/bottom edge of a row to reorder.</div>
+        <div className="px-[22px] pb-1.5 font-sans text-ui-xs text-ink/45">Drag a list onto a group to nest it, or to the top/bottom edge of a row to reorder.</div>
       )}
       {creatingParentId === null && (
-        <div className="flex items-center gap-[6px] pl-[18px] pr-[10px] pt-1.5 pb-2">
+        <div className="flex items-center gap-[6px] pl-[22px] pr-[10px] pt-1.5 pb-2">
           <input
             ref={listInput}
             autoFocus
@@ -128,7 +131,7 @@ export function ListsTreeView({
             onBlur={() => setCreatingParentId(undefined)}
             placeholder={draftKind === 'group' ? 'Group name — return to create' : 'List name — return to create'}
             maxLength={LIST_NAME_MAX_LENGTH}
-            className="font-serif flex-1 min-w-0 h-[34px] border border-accent rounded-lg px-2.5 bg-field text-[14.5px] outline-none"
+            className="font-serif flex-1 min-w-0 h-[34px] border border-accent rounded-lg px-2.5 bg-field text-ui-md outline-none"
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
@@ -146,8 +149,8 @@ export function ListsTreeView({
             onMouseDown={(e) => e.preventDefault()}
             ariaLabel={draftKind === 'list' ? 'Switch to Group' : 'Switch to List'}
             title={draftKind === 'list' ? 'Switch to Group' : 'Switch to List'}
-            leftIcon={<List size={13} strokeWidth={2} />}
-            rightIcon={<Folder size={13} strokeWidth={2} />}
+            leftIcon={<List size={16} strokeWidth={2} />}
+            rightIcon={<Folder size={16} strokeWidth={2} />}
             leftIconClassName={draftKind === 'list' ? 'text-ink' : 'text-ink/50'}
             rightIconClassName={draftKind === 'group' ? 'text-ink' : 'text-ink/50'}
             slotSize={26}
@@ -163,10 +166,10 @@ export function ListsTreeView({
           that group's id, not this one. */}
       {submittingParentId === null && <div className="h-[48px]" />}
       {ready && topLevelLists.length === 0 && creatingParentId !== null && submittingParentId === undefined && (
-        <div className="flex flex-col items-center gap-2.5 px-[18px] pt-16 pb-8 text-center">
-          <span className="font-sans text-[13px] text-ink/55">You have no lists yet.</span>
+        <div className="flex flex-col items-center gap-2.5 px-[22px] pt-16 pb-8 text-center">
+          <span className="font-sans text-ui-base text-ink/55">You have no lists yet.</span>
           <button
-            className="font-sans text-[13px] font-semibold text-accent2 border border-accent2 rounded-lg px-3 py-1.5 hover:bg-accent2/10"
+            className="font-sans text-ui-base font-semibold text-accent2 border border-accent2 rounded-lg px-3 py-1.5 hover:bg-accent2/10"
             onClick={toggleTopLevelDraft}
           >
             Create your first list
@@ -199,26 +202,26 @@ export function ListsTreeView({
       ))}
       {autoLists.length > 0 && (
         <div>
-          <div className="px-[18px] pt-[22px] pb-1">
-            <span className="font-sans text-[10.5px] font-bold tracking-[.12em] uppercase text-ink/[.58]">Activity</span>
+          <div className="px-[22px] pt-[22px] pb-1">
+            <span className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink/[.58]">Activity</span>
           </div>
           {autoLists.map(({ list, sub, Icon }) => (
             <button
               key={list.id}
               data-node-id={list.id}
-              className={`row flex items-center gap-[11px] w-full text-left px-[18px] py-[9px] border-b border-ink/[.07] ${
+              className={`row flex items-center gap-[13px] w-full text-left px-[22px] py-[12px] border-b border-ink/[.07] ${
                 nodeId === String(list.id) ? 'bg-ink/[.06]' : ''
               }`}
               onClick={() => onSelect(String(list.id))}
             >
-              <span className="w-[11px] flex-none flex items-center justify-center text-ink/40">
-                <Icon size={13} strokeWidth={2} />
+              <span className="w-[16px] mr-[5px] flex-none flex items-center justify-center text-ink/40">
+                <Icon size={16} strokeWidth={2} />
               </span>
               <span className="flex-1 min-w-0">
-                <span className="block text-[16px] font-medium leading-[1.3]">{list.label}</span>
-                <span className="block font-sans text-[12.5px] font-medium text-ink/60 mt-[1px]">{sub}</span>
+                <span className="block text-ui-lg font-medium leading-[1.3]">{list.label}</span>
+                <span className="block font-sans text-ui-sm font-medium text-ink/60 mt-[1px]">{sub}</span>
               </span>
-              <span className="font-sans text-[11.5px] font-medium text-ink/50">{list.items.length}</span>
+              <span className="font-sans text-ui-xs font-medium text-ink/50">{list.items.length}</span>
             </button>
           ))}
         </div>

@@ -45,12 +45,12 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
         data-component="ErrorBoundaryFallback"
         className="flex flex-col items-center justify-center gap-4 h-full bg-paper px-6 text-center"
       >
-        <div className="font-serif text-[17px] text-ink/70">
+        <div className="font-serif text-ui-xl text-ink/70">
           Something went wrong. Your notes, lists and highlights are saved on this device — they're safe.
         </div>
         <div className="flex items-center gap-2">
           <button
-            className="font-sans text-[14px] px-4 py-2 rounded-md border border-ink/25 hover:bg-ink/[.06]"
+            className="font-sans text-ui-md px-4 py-2 rounded-md border border-ink/25 hover:bg-ink/[.06]"
             onClick={() => window.location.reload()}
           >
             Reload
@@ -60,7 +60,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
               collection rather than anywhere the user was: "back" is exactly what must not happen
               here, and the label says where it lands rather than implying a return. */}
           <button
-            className="font-sans text-[14px] px-4 py-2 rounded-md border border-ink/25 hover:bg-ink/[.06]"
+            className="font-sans text-ui-md px-4 py-2 rounded-md border border-ink/25 hover:bg-ink/[.06]"
             onClick={() => window.location.assign('/browse/dn')}
           >
             Go to the library

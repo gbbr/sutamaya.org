@@ -208,7 +208,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
 
   return (
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
-      <header className="flex-none flex items-center gap-3 px-5 pt-4 pb-3.5 border-b border-ink/10">
+      <header className="flex-none flex items-center gap-3.5 px-5 pt-5 pb-4 border-b border-ink/10">
         {mobile && (
           // Deliberately the same 28px round icon button as the reorder toggle on the right, so the
           // header reads as icon / title / icon. The border and chip fill are what make it read
@@ -220,17 +220,17 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
             aria-label="Back"
             onClick={onBack}
           >
-            <ChevronLeft size={17} strokeWidth={2} />
+            <ChevronLeft size={21} strokeWidth={2} />
           </button>
         )}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-1.5 min-w-0">
-            {currentList && <List size={14} strokeWidth={2} className="flex-none text-ink" />}
+            {currentList && <List size={17} strokeWidth={2} className="flex-none text-ink" />}
             <div className="min-w-0 truncate">
-              <span className="font-sans text-[19px] font-semibold tracking-[-.01em]">{title.label}</span>
+              <span className="font-sans text-ui-2xl font-semibold tracking-[-.01em]">{title.label}</span>
             </div>
           </div>
-          <div className="font-sans text-xs text-ink/[.42] mt-[2px]">
+          <div className="font-sans text-ui-xs text-ink/[.42] mt-[2px]">
             {title.ref && <span className="font-sans text-ink/45">{title.ref} · </span>}{meta}
           </div>
         </div>
@@ -250,7 +250,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
             title={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
             onClick={() => setReorderMode((m) => !m)}
           >
-            <ArrowUpDown size={13} strokeWidth={2} />
+            <ArrowUpDown size={16} strokeWidth={2} />
           </button>
         )}
       </header>
@@ -289,25 +289,25 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   measure. While reordering the grip is vertically centred instead, and the whole
                   row has to clear it. */}
               <button
-                className={`block w-full text-left px-5 py-[13px] ${reordering ? 'pr-12' : ''} ${on ? 'bg-ink/[.05]' : ''}`}
+                className={`block w-full text-left px-5 py-[16px] ${reordering ? 'pr-12' : ''} ${on ? 'bg-ink/[.05]' : ''}`}
                 style={on ? { boxShadow: 'inset 2px 0 0 rgb(var(--accent2))' } : undefined}
                 onClick={() => onOpen(openTargets.get(id) ?? id)}
               >
                 <span className={`block ${reordering ? '' : 'pr-12'}`}>
-                  <span className="font-sans text-[14.5px] font-bold tracking-[.02em] mr-2.5 text-ink/60">{s.ref}</span>
-                  <span className="text-[16.5px] leading-[1.3] font-serif">{s.en}</span>
+                  <span className="font-sans text-ui-md font-bold tracking-[.02em] mr-2.5 text-ink/60">{s.ref}</span>
+                  <span className="text-ui-xl leading-[1.3] font-serif">{s.en}</span>
                 </span>
                 <span
-                  className={`block font-serif text-[13.5px] italic mt-[1px] text-accent-text ${reordering ? '' : 'pr-12'}`}
+                  className={`block font-serif text-ui-base italic mt-[1px] text-accent-text ${reordering ? '' : 'pr-12'}`}
                 >
                   {s.pali}
                 </span>
                 {note ? (
-                  <span className="block font-serif text-[14.5px] leading-[1.45] mt-[7px] pl-[10px] border-l-2 border-ink/30">
+                  <span className="block font-serif text-ui-md leading-[1.45] mt-[7px] pl-[10px] border-l-2 border-ink/30">
                     {note}
                   </span>
                 ) : (
-                  <span className="block text-[14px] leading-[1.5] mt-1.5 text-ink/[.72]">{s.blurb}</span>
+                  <span className="block text-ui-md leading-[1.5] mt-1.5 text-ink/[.72]">{s.blurb}</span>
                 )}
                 <SuttaRowChips chips={chips} hlCount={hlCount} />
               </button>
@@ -334,7 +334,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   aria-label={`Add ${s.ref} to a list`}
                   onClick={(e) => setPicker({ suttaId: id, anchor: e.currentTarget.getBoundingClientRect() })}
                 >
-                  <ListPlus size={15} strokeWidth={2} />
+                  <ListPlus size={18} strokeWidth={2} />
                 </button>
               )}
               {reordering && (
@@ -342,7 +342,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   // `right-3` puts this target's centre on the same 34px-from-the-edge axis as the
                   // header's reorder toggle and the add-to-list button it replaces, so nothing
                   // shifts sideways when reorder mode is turned on. The target overhangs the rows'
-                  // `pr-12` text column, but only with empty space — the grip glyph itself is 16px
+                  // `pr-12` text column, but only with empty space — the grip glyph itself is 19px
                   // and stays well inside it.
                   //
                   // `inset-y-1` rather than a fixed height: a row runs three or four lines, and
@@ -360,14 +360,14 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   }}
                   onPointerDown={(e) => onHandlePointerDown(e, id)}
                 >
-                  <GripVertical size={16} strokeWidth={2} />
+                  <GripVertical size={19} strokeWidth={2} />
                 </span>
               )}
             </div>
           );
         })}
         {items.length === 0 && (
-          <div className="font-sans text-center text-[13.5px] text-ink/40 py-10 px-5">
+          <div className="font-sans text-center text-ui-base text-ink/40 py-10 px-5">
             {searching ? `Nothing matches "${query}".` : 'Nothing here yet.'}
           </div>
         )}

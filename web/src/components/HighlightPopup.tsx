@@ -102,7 +102,7 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
               onRemove();
             }}
           >
-            <Trash2 size={14} strokeWidth={1.75} />
+            <Trash2 size={17} strokeWidth={1.75} />
             Remove
           </button>
         )}
@@ -114,7 +114,7 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
             onClose();
           }}
         >
-          <X size={17} strokeWidth={1.75} />
+          <X size={21} strokeWidth={1.75} />
         </button>
       </div>
     );
@@ -149,7 +149,7 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
             onRemove();
           }}
         >
-          <Trash2 size={13} strokeWidth={1.75} />
+          <Trash2 size={16} strokeWidth={1.75} />
           Remove
         </button>
       )}

@@ -20,7 +20,7 @@ export function GoogleSignInButton({ returnTo }: { returnTo?: string }) {
     <a
       data-component="GoogleSignInButton"
       href={href}
-      className="flex items-center justify-center gap-2 w-full h-10 rounded-field border border-ink/[.18] font-sans text-[13.5px] font-medium text-ink hover:text-ink hover:bg-ink/[.04]"
+      className="flex items-center justify-center gap-2 w-full h-10 rounded-field border border-ink/[.18] font-sans text-ui-base font-medium text-ink hover:text-ink hover:bg-ink/[.04]"
     >
       <svg width="16" height="16" viewBox="0 0 18 18" aria-hidden="true" className="flex-none">
         <path

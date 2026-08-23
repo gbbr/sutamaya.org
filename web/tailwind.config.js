@@ -38,6 +38,20 @@ export default {
         'hl-green': '#CBE0C2',
         'hl-blue': '#CFDCEE',
       },
+      // The app's UI type scale, resolved from the custom properties index.css defines — one
+      // place to retune every size, instead of the arbitrary `text-[13px]` values these replaced.
+      // Values only, no line-height: call sites that need one set their own `leading-[…]`.
+      fontSize: {
+        'ui-2xs': 'var(--ui-text-2xs)',
+        'ui-xs': 'var(--ui-text-xs)',
+        'ui-sm': 'var(--ui-text-sm)',
+        'ui-base': 'var(--ui-text-base)',
+        'ui-md': 'var(--ui-text-md)',
+        'ui-lg': 'var(--ui-text-lg)',
+        'ui-xl': 'var(--ui-text-xl)',
+        'ui-2xl': 'var(--ui-text-2xl)',
+        'ui-3xl': 'var(--ui-text-3xl)',
+      },
       fontFamily: {
         // Routed through --ui-serif (set from Settings > UI font, see lib/uiPrefs.ts) so the
         // app-wide "UI font" preference can override every use of `font-serif` at once; the
