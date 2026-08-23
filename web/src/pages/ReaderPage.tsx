@@ -18,6 +18,7 @@ import { shortcutsForScope } from '../lib/shortcuts';
 import { tagIntent } from '../lib/routeIntent';
 import { animateScrollTop } from '../lib/segmentScroll';
 import { markSuttaOpened } from '../lib/pwaNudge';
+import { getReaderPanelTab, setReaderPanelTab, type ReaderPanelTab } from '../lib/readerPanelTab';
 import { SegmentedText } from '../components/SegmentedText';
 import { HighlightPopup } from '../components/HighlightPopup';
 import { HighlightGutter } from '../components/HighlightGutter';
@@ -46,7 +47,6 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   const { notes, membership, lists, markVisited } = useUserData();
   const { resolvedTheme, fs, lh, face, allPali, showNotes, toggleShowNotes } = useReaderPrefs();
 
-  const initialPanelTab = new URLSearchParams(location?.search).get('panel') as 'highlights' | 'lists' | 'text' | null;
   // Where to return to on close — the exact pane/nodeId/scroll position the reader was opened
   // from (see LibraryPage's onOpen), not just the sutta's bare corpus location. Falls back to
   // that bare location for a direct/bookmarked link to /read/:suttaId, which has no such origin.
@@ -57,8 +57,15 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   const { from, fromView, navigateToSutta, closeToOrigin } = useReaderOrigin(readerLocationState);
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
   const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
-  const [panel, setPanel] = useState(!!initialPanelTab);
-  const [tab, setTab] = useState<'highlights' | 'lists' | 'text'>(initialPanelTab || 'highlights');
+  const [panel, setPanel] = useState(false);
+  // The panel remembers its tab across suttas and sessions (lib/readerPanelTab.ts), so every path
+  // that lands on a tab — the header's Menu button, the chips, the keyboard shortcuts, switching
+  // tab from inside the open panel — records it.
+  const [tab, setTabState] = useState<ReaderPanelTab>(getReaderPanelTab);
+  const setTab = useCallback((t: ReaderPanelTab) => {
+    setTabState(t);
+    setReaderPanelTab(t);
+  }, []);
   const [noteFocusSignal, setNoteFocusSignal] = useState(0);
   const [searchOpen, setSearchOpen] = useState(false);
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
@@ -334,8 +341,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
             // DictionaryDock sitting underneath it wasting space — desktop's drawer never
             // overlaps the dock, so this is mobile-only (see ReaderMenuPanel's `onTabChange` for
             // the other path into the same state).
-            if (mobile) closeDict();
-            setTab('text');
+            if (mobile && tab === 'text') closeDict();
             setPanel(true);
           }}
         >
@@ -564,6 +570,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           onJumpToHighlight={jumpToHighlight}
           noteFocusSignal={noteFocusSignal}
           onTabChange={(t) => {
+            setTab(t);
             if (mobile && t === 'text') closeDict();
           }}
         />
