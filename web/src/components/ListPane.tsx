@@ -239,7 +239,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
             // The bordered resting state is mobile-only, to match the back button beside it.
             // On desktop there's no back button to pair with, and hover already tells you the
             // icon is a control, so it stays bare until pointed at.
-            className={`flex-none rounded-full flex items-center justify-center ${mobile ? 'w-[34px] h-[34px]' : 'w-[28px] h-[28px]'} ${
+            className={`flex-none rounded-full flex items-center justify-center ${mobile ? 'w-[34px] h-[34px]' : 'w-[38px] h-[38px] -mr-[2px]'} ${
               reorderMode
                 ? 'bg-accent2 text-[#FBFAF7]'
                 : mobile
@@ -250,7 +250,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
             title={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
             onClick={() => setReorderMode((m) => !m)}
           >
-            <ArrowUpDown size={mobile ? 18 : 16} strokeWidth={2} />
+            <ArrowUpDown size={mobile ? 16 : 18} strokeWidth={2} />
           </button>
         )}
       </header>

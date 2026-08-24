@@ -175,7 +175,7 @@ export const ListRow = memo(function ListRow({
           <span
             className="flex-none flex items-center justify-center text-ink-5 -my-[7px] -ml-1.5"
             style={{
-              width: 30,
+              width: 36,
               alignSelf: 'stretch',
               cursor: 'grab',
               // Scoped to just this handle (not the whole row, see the comment above) — blocks
@@ -193,7 +193,12 @@ export const ListRow = memo(function ListRow({
             // also fire the row's own click-to-select/toggle above.
             onClick={(e) => e.stopPropagation()}
           >
-            <GripVertical size={16} strokeWidth={2} />
+            {/* The circle is purely a hover cue, sized to match the other round icon buttons
+                (e.g. ListPane's add-to-list button) — the actual grab target is the full-height
+                span around it, so the circle doesn't need its own touch-target padding. */}
+            <span className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-ink/[.08]">
+              <GripVertical size={16} strokeWidth={2} />
+            </span>
           </span>
         )}
         <button
