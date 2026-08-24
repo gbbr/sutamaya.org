@@ -188,6 +188,22 @@ export function ancestorsOf(corpus: Corpus | null, nodeId: string | undefined): 
   return init;
 }
 
+// Every id below `nodeId`, at any depth, excluding `nodeId` itself — the inverse of ancestorsOf,
+// used by TreePane's ⌥-click deep collapse to close a whole subtree rather than just hiding it
+// with its children still flagged open.
+export function descendantIdsOf(corpus: Corpus | null, nodeId: string): string[] {
+  const found = corpus ? findNode(corpus, nodeId) : null;
+  if (!found) return [];
+  const ids: string[] = [];
+  (function walk(chapters: ChapterRow[] | undefined) {
+    for (const c of chapters || []) {
+      ids.push(c.id);
+      walk(c.chapters);
+    }
+  })(found.node.chapters);
+  return ids;
+}
+
 export interface SearchHit {
   id: string;
   sutta: Sutta;

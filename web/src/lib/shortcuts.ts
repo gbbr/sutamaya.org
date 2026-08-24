@@ -48,6 +48,23 @@ export function shortcutsForScope(scope: ShortcutScope): Shortcut[] {
   return Object.values(SHORTCUTS).filter((s) => s.scope === scope);
 }
 
+// Modifier-click gestures listed in the same "?" modal as the key shortcuts above. Deliberately
+// not part of SHORTCUTS: they carry no `match`, since no keydown handler can fire them — a
+// pointer handler reads `e.altKey` directly instead.
+export interface PointerHint {
+  keys: string[];
+  label: string;
+  scope: ShortcutScope;
+}
+
+export const POINTER_HINTS: PointerHint[] = [
+  { keys: ['⌥', 'Click'], label: 'Collapse a tree row and everything inside it', scope: 'library' },
+];
+
+export function pointerHintsForScope(scope: ShortcutScope): PointerHint[] {
+  return POINTER_HINTS.filter((h) => h.scope === scope);
+}
+
 // True if `e` triggers `shortcut` — checks `e.key` both as-is and lowercased, so call sites never
 // need to know (or repeat) whether a given shortcut is a case-insensitive letter ('h', 'x', ...)
 // or an exact key that must not be lowercased ('Enter', 'Escape', 'ArrowUp', '/', '?'). Ignores

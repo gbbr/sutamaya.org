@@ -35,7 +35,8 @@ interface ListsTreeViewProps {
   listChildrenOf: (parentId: string) => ListDef[];
   countFor: (l: ListDef) => number;
   listExpanded: Record<string, boolean>;
-  onToggleListExpanded: (id: string) => void;
+  // `deep` is ⌥-click — see ListRow's own note and TreePane's toggleListExpanded.
+  onToggleListExpanded: (id: string, deep?: boolean) => void;
   listRowMenu: ListRowMenuProps;
   listRowEdit: ListRowEditProps;
   listRowDelete: ListRowDeleteProps;

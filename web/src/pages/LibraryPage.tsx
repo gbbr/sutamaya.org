@@ -5,7 +5,7 @@ import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { flatSuttaOrder, nodeLabel, sortByIdAsc, suttasFor } from '../lib/corpus';
-import { SHORTCUTS, shortcutsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
+import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, type RouteIntent } from '../lib/routeIntent';
 import { TreePane } from '../components/TreePane';
@@ -295,7 +295,12 @@ export function LibraryPage({
         />
       </div>
 
-      {shortcutsOpen && <ShortcutsModal shortcuts={shortcutsForScope('library')} onClose={() => setShortcutsOpen(false)} />}
+      {shortcutsOpen && (
+        <ShortcutsModal
+          shortcuts={[...shortcutsForScope('library'), ...pointerHintsForScope('library')]}
+          onClose={() => setShortcutsOpen(false)}
+        />
+      )}
     </div>
   );
 }
