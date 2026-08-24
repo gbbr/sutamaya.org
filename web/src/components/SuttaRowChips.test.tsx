@@ -97,9 +97,10 @@ describe('SuttaRowChips', () => {
       expect(seg.className).not.toContain('bg-ink/10');
       const probe = document.createElement('div');
       probe.style.background = theme.tint;
-      probe.style.color = theme.dim;
       expect(seg.style.background).toBe(probe.style.background);
-      expect(seg.style.color).toBe(probe.style.color);
+      // No colour of its own: the segment inherits the pill's `theme.fg`, since a quieter rung
+      // over this fill drops below a legible contrast (see SuttaRowChips).
+      expect(seg.style.color).toBe('');
     });
 
     it('passes the theme through to the highlight badge', () => {
