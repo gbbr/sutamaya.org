@@ -77,13 +77,13 @@ const CARD_FILL = 'bg-field dark:bg-ink/[.02]';
 // Sign out don't — neither is what a card is asking the reader to do — so they're plain icon+text
 // links instead (LINK_ACTION), sized like inline text rather than a button.
 const PRIMARY_BUTTON =
-  'flex items-center justify-center gap-1.5 w-full h-10 rounded-field bg-accent hover:bg-accent/90 text-[#FBFAF7] font-sans text-ui-base font-medium';
+  'flex items-center justify-center gap-1.5 w-full py-[15px] rounded-field bg-accent hover:bg-accent/90 text-[#FBFAF7] font-sans text-ui-base font-medium';
 const SECONDARY_BUTTON =
-  'flex items-center justify-center gap-1.5 w-full h-10 rounded-field border border-ink/[.18] font-sans text-ui-base font-medium text-ink hover:text-ink hover:bg-ink/[.04]';
+  'flex items-center justify-center gap-1.5 w-full py-[15px] rounded-field border border-ink/[.18] font-sans text-ui-base font-medium text-ink hover:text-ink hover:bg-ink/[.04]';
 // The UI scale steppers. No border or radius of their own: they're segments inside one bordered,
 // rounded group (see the UI scale row), which draws the outline and the hairlines between them.
 const UI_SCALE_STEP_BTN =
-  'flex items-center justify-center w-12 h-9 text-ink hover:bg-ink/[.04] disabled:opacity-35 disabled:hover:bg-transparent';
+  'flex items-center justify-center w-12 h-10 text-ink hover:bg-ink/[.04] disabled:opacity-35 disabled:hover:bg-transparent';
 // Underlined to match the app's existing convention for small inline actions (EmailCodeSignIn's
 // "Resend code"/"Use a different email") — without it, the icon was the only thing marking these
 // as clickable rather than descriptive text.

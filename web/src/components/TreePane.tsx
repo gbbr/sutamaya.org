@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { navigate } from '@reach/router';
-import { Lightbulb, Highlighter, StickyNote, History, Library, List, Search, X } from 'lucide-react';
+import { LifeBuoy, Highlighter, StickyNote, History, Library, List, Search, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
@@ -251,9 +251,22 @@ export function TreePane({
   // useCallback'd for the same reason toggleExpanded above is — passed straight through to
   // ListRow, whose own memoization (mirroring TreeRow's) needs this to stay referentially stable
   // across renders that don't actually change it.
-  const toggleListExpanded = useCallback((id: string) => {
-    setListExpanded((x) => ({ ...x, [id]: !x[id] }));
-  }, []);
+  const toggleListExpanded = useCallback(
+    (id: string, deep = false) => {
+      setListExpanded((x) => {
+        if (!deep || !x[id]) return { ...x, [id]: !x[id] };
+        const next = { ...x, [id]: false };
+        const queue = listChildrenOf(id).map((l) => l.id);
+        while (queue.length) {
+          const childId = queue.pop()!;
+          next[childId] = false;
+          for (const grandchild of listChildrenOf(childId)) queue.push(grandchild.id);
+        }
+        return next;
+      });
+    },
+    [listChildrenOf]
+  );
 
   const {
     menuOpenId,
@@ -468,16 +481,16 @@ export function TreePane({
               different ink width means re-checking these two numbers. */}
           <button
             className="flex-none rounded-full flex items-center justify-center text-ink-3 hover:bg-ink/[.06]"
-            style={mobile ? { width: 40, height: 40 } : { width: 34, height: 34 }}
+            style={mobile ? { width: 44, height: 44 } : { width: 38, height: 38 }}
             aria-label="Help"
             title="Help"
             onClick={() => navigate('/help')}
           >
-            <Lightbulb size={mobile ? 20 : 18} strokeWidth={2} />
+            <LifeBuoy size={mobile ? 21 : 19} strokeWidth={2} />
           </button>
           <button
             className="flex-none -ml-1 rounded-full flex items-center justify-center text-ink-3 hover:bg-ink/[.06]"
-            style={mobile ? { width: 40, height: 40 } : { width: 34, height: 34 }}
+            style={mobile ? { width: 44, height: 44 } : { width: 38, height: 38 }}
             aria-label={searchOpen ? 'Close search' : 'Search'}
             title={searchOpen ? 'Close search (Esc)' : 'Search (/)'}
             onClick={() => (searchOpen ? closeSearch() : setSearchOpen(true))}

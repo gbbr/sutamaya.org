@@ -210,17 +210,17 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
       <header className="flex-none flex items-center gap-3.5 px-6 pt-5 pb-4 border-b border-ink/10">
         {mobile && (
-          // Deliberately the same 28px round icon button as the reorder toggle on the right, so the
+          // Deliberately the same round icon button as the reorder toggle on the right, so the
           // header reads as icon / title / icon. The border and chip fill are what make it read
           // as a control at rest — an unfilled grey chevron doesn't — and match the pill toggle's
           // thumb in TreePane's header. The `after` pseudo-element pads the tap target out to
           // ~44px without growing the circle or shifting anything else in the flex row.
           <button
-            className="relative flex-none w-[28px] h-[28px] rounded-full flex items-center justify-center border border-ink/[.12] bg-chip/40 text-ink-3 hover:text-ink active:bg-ink/[.08] after:content-[''] after:absolute after:-inset-2"
+            className="relative flex-none w-[34px] h-[34px] rounded-full flex items-center justify-center border border-ink/[.12] bg-chip/40 text-ink-3 hover:text-ink active:bg-ink/[.08] after:content-[''] after:absolute after:-inset-[5px]"
             aria-label="Back"
             onClick={onBack}
           >
-            <ChevronLeft size={21} strokeWidth={2} />
+            <ChevronLeft size={23} strokeWidth={2} />
           </button>
         )}
         <div className="flex-1 min-w-0">
@@ -239,7 +239,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
             // The bordered resting state is mobile-only, to match the back button beside it.
             // On desktop there's no back button to pair with, and hover already tells you the
             // icon is a control, so it stays bare until pointed at.
-            className={`flex-none w-[28px] h-[28px] rounded-full flex items-center justify-center ${
+            className={`flex-none rounded-full flex items-center justify-center ${mobile ? 'w-[34px] h-[34px]' : 'w-[28px] h-[28px]'} ${
               reorderMode
                 ? 'bg-accent2 text-[#FBFAF7]'
                 : mobile
@@ -250,7 +250,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
             title={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
             onClick={() => setReorderMode((m) => !m)}
           >
-            <ArrowUpDown size={16} strokeWidth={2} />
+            <ArrowUpDown size={mobile ? 18 : 16} strokeWidth={2} />
           </button>
         )}
       </header>
@@ -321,22 +321,22 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   the desktop layout but has no hover, so a hover-gated control would simply not
                   exist there.
 
-                  The same 28px circle as the header's reorder toggle, but borderless at rest:
-                  repeated down every row, that pair's chip fill and border would read as a column
-                  of buttons competing with the text. Without the border it also needs to sit 4px
-                  outboard of them — a bordered chip's edge reads as the pane's margin, a bare
-                  glyph's doesn't. The
+                  A 36px circle, borderless at rest: repeated down every row, the header reorder
+                  toggle's chip fill and border would read as a column of buttons competing with
+                  the text. Without the border it also needs to sit outboard of the row edge a bit
+                  further than a bordered chip would — a bordered chip's edge reads as the pane's
+                  margin, a bare glyph's doesn't. The
                   `after` pseudo-element pads the tap target out to 48px — Material's recommended
                   minimum, comfortably past Apple's 44 — without growing the circle: it overhangs
                   the layout rather than taking part in it, so the box still ends exactly at the
                   `pr-12` the rows already reserve and the title loses no width to any of this. */}
               {!reordering && (
                 <button
-                  className="absolute right-5 top-5 w-7 h-7 flex items-center justify-center rounded-full text-ink-4 hover:bg-ink/[.08] hover:text-ink active:bg-ink/[.12] after:content-[''] after:absolute after:-inset-2.5"
+                  className="absolute right-5 top-5 w-9 h-9 flex items-center justify-center rounded-full text-ink-4 hover:bg-ink/[.08] hover:text-ink active:bg-ink/[.12] after:content-[''] after:absolute after:-inset-1.5"
                   aria-label={`Add ${s.ref} to a list`}
                   onClick={(e) => setPicker({ suttaId: id, anchor: e.currentTarget.getBoundingClientRect() })}
                 >
-                  <ListPlus size={18} strokeWidth={2} />
+                  <ListPlus size={20} strokeWidth={2} />
                 </button>
               )}
               {reordering && (

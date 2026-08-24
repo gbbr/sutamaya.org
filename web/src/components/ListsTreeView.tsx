@@ -95,7 +95,7 @@ export function ListsTreeView({
           <button
             aria-label={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
             title={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
-            className={`w-[24px] h-[24px] rounded-full flex items-center justify-center ${
+            className={`w-[32px] h-[32px] rounded-full flex items-center justify-center ${
               reorderMode ? 'bg-accent2 text-[#FBFAF7]' : 'text-ink-4 hover:bg-ink/[.08] hover:text-ink'
             }`}
             onClick={() => {
@@ -106,12 +106,12 @@ export function ListsTreeView({
             <ArrowUpDown size={15} strokeWidth={2} />
           </button>
           {/* A raw px font-size rather than a `text-ui-*` token: the `+` is an icon glyph sized to
-              the 24px circle around it, not UI text, so it doesn't belong to the type scale and
+              the 32px circle around it, not UI text, so it doesn't belong to the type scale and
               shouldn't grow when that scale is retuned. */}
           <button
             aria-label="New list or group"
             title="New list or group"
-            className="plus w-[24px] h-[24px] rounded-full flex items-center justify-center text-[16px] leading-none text-ink-4 hover:bg-ink/[.08] hover:text-ink"
+            className="plus w-[32px] h-[32px] rounded-full flex items-center justify-center text-[16px] leading-none text-ink-4 hover:bg-ink/[.08] hover:text-ink"
             onClick={toggleTopLevelDraft}
           >
             +
@@ -132,7 +132,7 @@ export function ListsTreeView({
             onBlur={() => setCreatingParentId(undefined)}
             placeholder={draftKind === 'group' ? 'Group name — return to create' : 'List name — return to create'}
             maxLength={LIST_NAME_MAX_LENGTH}
-            className="font-serif flex-1 min-w-0 h-[34px] border border-accent rounded-lg px-2.5 bg-field text-ui-md outline-none"
+            className="font-serif flex-1 min-w-0 h-[36px] border border-accent rounded-lg px-2.5 bg-field text-ui-md outline-none"
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
@@ -150,22 +150,22 @@ export function ListsTreeView({
             onMouseDown={(e) => e.preventDefault()}
             ariaLabel={draftKind === 'list' ? 'Switch to Group' : 'Switch to List'}
             title={draftKind === 'list' ? 'Switch to Group' : 'Switch to List'}
-            leftIcon={<List size={16} strokeWidth={2} />}
-            rightIcon={<Folder size={16} strokeWidth={2} />}
+            leftIcon={<List size={18} strokeWidth={2} />}
+            rightIcon={<Folder size={18} strokeWidth={2} />}
             leftIconClassName={draftKind === 'list' ? 'text-ink' : 'text-ink-4'}
             rightIconClassName={draftKind === 'group' ? 'text-ink' : 'text-ink-4'}
-            slotSize={26}
+            slotSize={32}
             thumbClassName="bg-chip border border-ink/[.12] shadow-[0_1px_2px_rgba(27,25,23,.15)] transition-[left] duration-150 ease-out"
           />
         </div>
       )}
-      {/* Reserves the draft input row's own height (pt-1.5 + h-34 + pb-2 = 48px) during the
+      {/* Reserves the draft input row's own height (pt-1.5 + h-36 + pb-2 = 50px) during the
           submitDraft() network round-trip, so the pane doesn't visibly collapse to just the
           header between the input closing (see submitDraft's comment) and the new row landing.
           Scoped to a top-level submission specifically (submittingParentId === null) — a nested
           submission under a group reserves its own row's height in ListRow instead, keyed to
           that group's id, not this one. */}
-      {submittingParentId === null && <div className="h-[48px]" />}
+      {submittingParentId === null && <div className="h-[50px]" />}
       {ready && topLevelLists.length === 0 && creatingParentId !== null && submittingParentId === undefined && (
         <div className="flex flex-col items-center gap-2.5 px-[22px] pt-16 pb-8 text-center">
           <span className="font-sans text-ui-base text-ink-4">You have no lists yet.</span>
