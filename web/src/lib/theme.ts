@@ -20,8 +20,10 @@ export const READER_THEMES: Record<ResolvedReaderTheme, ThemeColors> = {
   // near-white ground composites to 3.3:1, and this theme's `dim` is the color of *every* row
   // label in the menu panel's Display tab and of the tab bar's own inactive labels. It matches
   // the shell's --ink-3 (index.css), which carries the same comment at more length.
-  light: { bg: '#FAF8F3', fg: '#1B1917', dim: '#6B6259', rule: 'rgba(27,25,23,.18)', panel: '#FFFEFB', pali: '#7A5B2E', tint: 'rgba(27,25,23,.1)', focusTint: 'rgba(122,91,46,.09)', highlightPalette: null, selection: '#EADFC6' },
-  sepia: { bg: '#F3E7D3', fg: '#3A2E1E', dim: 'rgba(58,46,30,.55)', rule: 'rgba(58,46,30,.2)', panel: '#F8EEDD', pali: '#8C6222', tint: 'rgba(58,46,30,.1)', focusTint: 'rgba(58,46,30,.05)', highlightPalette: null, selection: 'rgba(140,98,34,.32)' },
+  // Each theme's `paliTint` is its own `pali` at 15% — the one alpha that reads as a distinctly
+  // warm pill against these backgrounds without becoming a highlight in its own right.
+  light: { bg: '#FAF8F3', fg: '#1B1917', dim: '#6B6259', rule: 'rgba(27,25,23,.18)', panel: '#FFFEFB', pali: '#7A5B2E', tint: 'rgba(27,25,23,.1)', paliTint: 'rgba(122,91,46,.15)', focusTint: 'rgba(122,91,46,.09)', highlightPalette: null, selection: '#EADFC6' },
+  sepia: { bg: '#F3E7D3', fg: '#3A2E1E', dim: 'rgba(58,46,30,.55)', rule: 'rgba(58,46,30,.2)', panel: '#F8EEDD', pali: '#8C6222', tint: 'rgba(58,46,30,.1)', paliTint: 'rgba(140,98,34,.15)', focusTint: 'rgba(58,46,30,.05)', highlightPalette: null, selection: 'rgba(140,98,34,.32)' },
   // A warm dark brown (like reading by lamplight), not a near-black — matches the rest of the
   // app's warm, literary palette instead of reading as a stark "OLED dark mode" screen.
   dark: {
@@ -32,6 +34,7 @@ export const READER_THEMES: Record<ResolvedReaderTheme, ThemeColors> = {
     panel: '#332C24',
     pali: '#C9A86F',
     tint: 'rgba(237,230,217,.09)',
+    paliTint: 'rgba(201,168,111,.15)',
     focusTint: 'rgba(237,230,217,.05)',
     highlightPalette: DARK_HIGHLIGHTS,
     selection: '#4A3E28',
@@ -55,19 +58,27 @@ export const SHELL_THEME: ThemeColors = {
   // to lighten in dark mode the way a solid button fill deliberately doesn't.
   pali: 'rgb(var(--accent-text))',
   tint: 'rgb(var(--ink) / .1)',
+  // Built from `--accent-text` for the same reason `pali` above is: a wash that sits on the page
+  // has to lighten in dark mode, which `--accent` deliberately doesn't.
+  paliTint: 'rgb(var(--accent-text) / .15)',
   focusTint: 'rgb(var(--ink) / .05)',
   highlightPalette: null,
   selection: 'rgb(var(--selection))',
 };
 
+// Three of these name a face the OS may or may not ship, and each is followed by a self-hosted
+// clone of it (see index.css) so the picker never offers a tile that renders as something else:
+// Georgia falls to Gelasio, Charter to XCharter, Palatino to Gentium Book Plus. Ordinary
+// font-family fallback does the work — a browser only reaches for the stand-in when nothing
+// before it in the stack can set the character — so an Apple or Windows device uses the genuine
+// font and downloads none of them.
 export const READER_FACES: Record<ReaderFace, string> = {
-  serif: "'Newsreader',Georgia,serif",
-  georgia: "Georgia,'Times New Roman',serif",
+  georgia: 'Georgia,Gelasio,serif',
+  serif: "'Newsreader',Georgia,Gelasio,serif",
+  literata: "'Literata',Georgia,Gelasio,serif",
+  charter: 'Charter,XCharter,Georgia,Gelasio,serif',
+  palatino: "Palatino,'Palatino Linotype','Book Antiqua','Gentium Book Plus',Gelasio,serif",
   sans: "'IBM Plex Sans',system-ui,sans-serif",
-  // These two round the picker out to 5 without pulling in any new webfont — both are
-  // system-installed everywhere, which matters for an offline-first PWA.
-  system: "-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif",
-  times: "'Times New Roman',Times,serif",
 };
 
 // The three highlight colors, and the identity a highlight is stored under: `highlights.c` holds
