@@ -855,7 +855,7 @@ describe('deferred sign-in', () => {
     signedOut({ notes: { dn1: 'a thought' } });
     renderHarness();
     const banner = screen.getByText(iosText).closest('[data-component="HeaderBanner"]');
-    expect(banner).toHaveClass('bg-danger-text/[.07]');
+    expect(banner).toHaveClass('bg-danger-text/[.09]');
   });
 
   it('dismissing hides it and records the local id it was dismissed for', async () => {

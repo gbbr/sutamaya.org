@@ -34,7 +34,7 @@ import {
 // /read/:suttaId), and each dismiss button sets local state directly rather than waiting for one.
 //
 // At most one banner is dismissed per mount: dismissing one leaves the slot empty rather than
-// swapping in the next one down the list, which — same bar, same place, same shape — reads as the
+// swapping in the next one down the list, which — same card, same place, same shape — reads as the
 // dismiss having failed, so the second message gets closed unread. The successor waits for the next
 // mount, which is every return from the reader.
 
@@ -51,12 +51,15 @@ export const KEEP_SAFE_IOS_TEXT = 'Save your changes';
 // Three tones for three kinds of message: red is broken and needs fixing, amber is data at risk,
 // accent is an optional improvement. They have to be told apart at a glance because they share one
 // slot and arrive one after another — dismissing a banner uncovers the next one down on the
-// following mount, in the same bar, in the same place. Amber matches how Settings' Account card
+// following mount, in the same card, in the same place. Amber matches how Settings' Account card
 // already renders this same risk.
+//
+// The fills sit a touch above what a full-bleed bar needed: an inset card shows less of itself, and
+// this one lies on `treepane`, which is already darker than the page.
 const TONES = {
-  alert: { bar: 'bg-danger-text/[.07]', icon: 'text-danger-text', action: 'text-danger-text decoration-danger-text/40' },
-  warn: { bar: 'bg-warning-text/[.08]', icon: 'text-warning-text', action: 'text-warning-text decoration-warning-text/40' },
-  accent: { bar: 'bg-accent/[.06]', icon: 'text-ink-3', action: 'text-accent-text decoration-accent-text/40' },
+  alert: { fill: 'bg-danger-text/[.09]', icon: 'text-danger-text', action: 'text-danger-text decoration-danger-text/40' },
+  warn: { fill: 'bg-warning-text/[.10]', icon: 'text-warning-text', action: 'text-warning-text decoration-warning-text/40' },
+  accent: { fill: 'bg-accent/[.09]', icon: 'text-ink-3', action: 'text-accent-text decoration-accent-text/40' },
 } as const;
 
 // One banner's chrome, so the four variants differ only in what they say and do.
@@ -75,11 +78,19 @@ function Banner({
   onAction: () => void;
   onDismiss?: () => void;
 }) {
-  const { bar, icon: iconClass, action: actionClass } = TONES[tone];
+  const { fill, icon: iconClass, action: actionClass } = TONES[tone];
   return (
+    // A tinted card inset from both edges, not a full-bleed bar: the header now ends in the tab
+    // underline, and a second full-width band directly under it repeated that edge and left the
+    // active tab pointing at the message instead of at the list it labels. Inset, it reads as
+    // something sitting in the pane rather than as one more piece of header chrome.
+    //
+    // 12px of margin plus 12px of padding puts the icon on the 24px the tree rows start their text
+    // from, so the card lines up with the column below it rather than with the header's own
+    // 22px padding. `rounded-field` is the app's one card radius (Settings, Help's tips).
     <div
       data-component="HeaderBanner"
-      className={`flex-none flex items-center gap-2.5 px-[22px] py-2.5 border-b border-ink/10 ${bar}`}
+      className={`flex-none flex items-center gap-2.5 mx-3 mt-3 px-3 py-3 rounded-field ${fill}`}
     >
       <span className={`flex-none ${iconClass}`}>{icon}</span>
       <div className="flex-1 min-w-0 font-sans text-ui-sm text-ink-2 truncate" title={text}>
