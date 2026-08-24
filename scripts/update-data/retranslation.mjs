@@ -24,7 +24,7 @@
 //   agitation          paritassati-agitated
 //   thought / examination  vitakka-vicara-thought-examination
 //   attention          yoniso-proper-attention
-//   saṅkhāra           abhisankharoti-generate, sankhara-volitional-formations
+//   saṅkhāra           abhisankharoti-generate, sankhara-action-formations
 //   segment overrides  one line each, applied last; sub-grouped by cause, order immaterial
 
 export const RULES = [
@@ -548,10 +548,10 @@ export const RULES = [
   },
   // ── Saṅkhāra ────────────────────────────────────────────────────────────────
   // Where the group sits settles nothing — no rule above produces or consumes "choice",
-  // "volitional formation" or "make". The order *within* it does, and is the whole reason the two
+  // "action formation" or "make". The order *within* it does, and is the whole reason the two
   // rules are written the way they are. abhisankharoti-generate has to run first, because its
   // forms span Bhikkhu Sujato's verb and the noun it governs together ("makes hurtful choices"),
-  // and once sankhara-volitional-formations has rewritten that noun the span is locked and no
+  // and once sankhara-action-formations has rewritten that noun the span is locked and no
   // later form can cross it. Running the noun rule first and repairing the verb afterwards was the
   // other option, and it costs more than it looks: a form of bare "make" would put every one of
   // the corpus's ~2,300 other "make"s into the closed rule's untriaged queue at every refresh,
@@ -560,57 +560,65 @@ export const RULES = [
     id: 'abhisankharoti-generate',
     why: 'Bhikkhu Sujato governs his "choices" with "make" — "makes hurtful choices", "having ' +
       'made these choices", "not making choices", "stopped making karmic choices". Once ' +
-      'sankhara-volitional-formations has turned that noun into "volitional formations", "make" ' +
+      'sankhara-action-formations has turned that noun into "action formations", "make" ' +
       'no longer governs it in English, so this rule moves the verb to "generate". That is both ' +
       'what the Pali says — the DPD glosses abhisaṅkharoti "creates; constructs; generates; ' +
       'forms; fabricates" — and what Bodhi uses in the same passages ("generates a meritorious ' +
       'volitional formation", SN 12.51). ' +
       'Each form therefore carries the verb, the noun, and whatever adjective sits between them, ' +
       'and writes the finished phrase in one step — this rule, not ' +
-      'sankhara-volitional-formations, is what renders saṅkhāra in these 54 segments. Twenty ' +
+      'sankhara-action-formations, is what renders saṅkhāra in these 54 segments. Twenty ' +
       'forms because that is how many distinct shapes Bhikkhu Sujato uses; two of them ("continue ' +
       'to make them", "stop making them") have a pronoun where the others have the noun, SN 56.42 ' +
       'having already named it in the preceding clause. ' +
-      'The verb repeats the noun\'s own root, so "generates a volitional formation" is ' +
+      'The verb repeats the noun\'s own root, so "generates an action formation" is ' +
       'etymologically "forms a formation". That redundancy is in the Pali — abhisaṅkhāraṁ ' +
       'abhisaṅkharoti is a cognate accusative — and Bodhi keeps it rather than paraphrasing it ' +
-      'away, which is the reason for keeping it here too. ' +
+      'away, which is the reason for keeping it here too. Snp 3.12\'s "karmic choices" drops its ' +
+      'adjective instead of carrying it over: "action" already says what "karmic" was there to ' +
+      'say, and the word is Bhikkhu Sujato\'s gloss rather than the verse\'s — the Pali is the ' +
+      'bare Saṅkhāre uparundhiya. ' +
       'Closed, because a bare "make" form would be catastrophic — it is among the commonest verbs ' +
       'in the corpus. The multi-word forms make the list nearly self-selecting anyway; it is kept ' +
       'closed so that a new shape stops for review rather than being missed in silence.',
     mode: 'allow',
     predicate: /abhisaṅkhar/i,
     forms: [
-      ['makes both hurtful and pleasing choices', 'generates both hurtful and pleasing volitional formations'],
-      ['make an imperturbable choice', 'generate an imperturbable volitional formation'],
-      ['making karmic choices', 'generating karmic volitional formations'],
-      ['makes hurtful choices', 'generates hurtful volitional formations'],
-      ['makes pleasing choices', 'generates pleasing volitional formations'],
+      ['makes both hurtful and pleasing choices', 'generates both hurtful and pleasing action formations'],
+      ['make an imperturbable choice', 'generate an imperturbable action formation'],
+      ['making karmic choices', 'generating action formations'],
+      ['makes hurtful choices', 'generates hurtful action formations'],
+      ['makes pleasing choices', 'generates pleasing action formations'],
       ['continue to make them', 'continue to generate them'],
-      ['made these choices', 'generated these volitional formations'],
-      ['making such choices', 'generating such volitional formations'],
-      ['make such choices', 'generate such volitional formations'],
-      ['made such choices', 'generated such volitional formations'],
-      ['makes a good choice', 'generates a good volitional formation'],
-      ['make good choices', 'generate good volitional formations'],
-      ['make a bad choice', 'generate a bad volitional formation'],
-      ['make a good choice', 'generate a good volitional formation'],
+      ['made these choices', 'generated these action formations'],
+      ['making such choices', 'generating such action formations'],
+      ['make such choices', 'generate such action formations'],
+      ['made such choices', 'generated such action formations'],
+      ['makes a good choice', 'generates a good action formation'],
+      ['make good choices', 'generate good action formations'],
+      ['make a bad choice', 'generate a bad action formation'],
+      ['make a good choice', 'generate a good action formation'],
       ['stop making them', 'stop generating them'],
-      ['making choices', 'generating volitional formations'],
-      ['makes a choice', 'generates a volitional formation'],
-      ['make a choice', 'generate a volitional formation'],
-      ['made choices', 'generated volitional formations'],
-      ['make choices', 'generate volitional formations'],
+      ['making choices', 'generating action formations'],
+      ['makes a choice', 'generates an action formation'],
+      ['make a choice', 'generate an action formation'],
+      ['made choices', 'generated action formations'],
+      ['make choices', 'generate action formations'],
     ],
   },
   {
-    id: 'sankhara-volitional-formations',
+    id: 'sankhara-action-formations',
     why: 'Bhikkhu Sujato renders saṅkhāra as "choices" in the aggregate and dependent-origination ' +
-      'senses; this app prefers "volitional formations", which is Bhikkhu Bodhi\'s rendering and ' +
-      'the closest thing the term has to a standard one — Ñāṇamoli and Anālayo have "formations", ' +
-      'and the DPD\'s own gloss for this sense reads "intention; volitional formation; choice; ' +
-      'karmic activity". "Choices" narrows a word that covers far more than deliberate choosing; ' +
-      'it is Bhikkhu Sujato\'s own departure from consensus, not the consensus. ' +
+      'senses; this app prefers "action formations". The suttas define the term: SN 22.56 makes ' +
+      'the saṅkhāra aggregate the six classes of intention, and AN 6.63 says intention is kamma ' +
+      '(cetanāhaṁ, bhikkhave, kammaṁ vadāmi) — so what is formed is kamma, and kamma is action. ' +
+      'The DPD glosses this sense "intention; volitional formation; choice; karmic activity", ' +
+      'which is the same identification read off the dictionary. "Choices" narrows a word that ' +
+      'covers far more than deliberate choosing; it is Bhikkhu Sujato\'s own departure from the ' +
+      'other translators, not their consensus. ' +
+      'Not Bodhi\'s "volitional formations", which Ñāṇamoli and Anālayo shorten to "formations": ' +
+      '"volitional" states the mechanism where "action" states what the mechanism produces, and ' +
+      'the shorter phrase costs a syllable less in the 137 lines that list the five aggregates. ' +
       'His other renderings of the same word are left alone and this rule never reaches them — ' +
       '"conditions"/"conditioned phenomena" for sabbe saṅkhārā, "physical process" for ' +
       'kāyasaṅkhāra in the breathing formula, "life force" for āyusaṅkhāra, "intentions" for ' +
@@ -618,9 +626,16 @@ export const RULES = [
       'Not the bare "volitions": that is cetanā\'s word, and the two terms stand side by side in ' +
       'one list in eight segments (an1.314, an1.315, an10.104 — yā ca cetanā yā ca patthanā yo ca ' +
       'paṇidhi ye ca saṅkhārā), where "their intentions, aims, wishes, and volitions" would put ' +
-      'two English synonyms in one enumeration of four distinct Pali terms. The cost of the ' +
-      'longer phrase is real and falls mostly on the 137 lines listing the five aggregates, where ' +
-      'four short words are followed by a seven-syllable one. ' +
+      'two English synonyms in one enumeration of four distinct Pali terms. ' +
+      '"Action" is already Bhikkhu Sujato\'s word for sammākammanta, the path factor, and the two ' +
+      'share one segment exactly once, an10.104:3.1 — "right view, purpose, speech, action, ' +
+      'livelihood …" ending one sentence, "their intentions, aims, wishes, and action formations" ' +
+      'inside the next. Accepted: a sentence apart, "right action" is a fixed phrase in a ' +
+      'different grammatical slot, and the same line renders kāyakamma as "deeds", so nothing ' +
+      'else in it competes. Elsewhere the two are sentences or whole paragraphs apart — 14 suttas ' +
+      'carry both, always as the path-factor list beside the aggregate list. The five lines where ' +
+      'the collision was tight enough to hurt have segment overrides instead — see ' +
+      'an4-171-instigates-deeds and sn12-37-old-deeds-generated. ' +
       'The plural is upstream\'s and the Pali\'s. saṅkhārā is the only one of the five aggregates ' +
       'that is grammatically plural, and 244 sites already agree with it ("choices cease", "these ' +
       'choices", "are choices"), so a singular would be a grammatical rewrite rather than a swap. ' +
@@ -632,15 +647,24 @@ export const RULES = [
     mode: 'deny',
     predicate: /saṅkhār/i,
     forms: [
-      // SN 22's blurb names the aggregate and then glosses it in plain English — "volitional
+      // SN 22's blurb names the aggregate and then glosses it in plain English — "action
       // formations (saṅkhārā, i.e. intention, will, or volition; the choice to perform an act)".
       // The first "choices" is the term and must move; the second is Bhikkhu Sujato explaining
       // it, and moving that too makes the gloss define the term with itself. This form claims the
       // phrase first (forms match longest-first), so the bare "choice" below never sees it.
       // "Decision" rather than "volition" or "will", both of which the same sentence already uses.
       ['the choice to perform', 'the decision to perform'],
-      ['choices', 'volitional formations'],
-      ['choice', 'volitional formation'],
+      // The replacement begins with a vowel where Bhikkhu Sujato's word doesn't, so the article
+      // has to travel with it. No segment needs this today — abhisankharoti-generate already
+      // carries every "make a choice" — but the rule is open, so an upstream line that gains one
+      // would otherwise be rewritten to "a action formation" with nothing to catch it.
+      ['a choice', 'an action formation'],
+      // saṅkhāradhātu, 8 lines in SN 22. English puts an attributive noun in the singular, and
+      // hyphenates it when it is itself two words — "the choices element" comes through as "the
+      // action-formation element" rather than stacking a plural in front of another noun.
+      ['choices element', 'action-formation element'],
+      ['choices', 'action formations'],
+      ['choice', 'action formation'],
     ],
   },
   // ── Segment overrides ───────────────────────────────────────────────────────
@@ -888,42 +912,42 @@ export const RULES = [
   },
   // The same set read from the other end: caseAs treats a *single-word* match as a capitalized
   // sentence, because that is all a single-word replacement ever needs.
-  // sankhara-volitional-formations' replacement is two words, so Bhikkhu Sujato's one-word
-  // "Choices" comes back as "Volitional
+  // sankhara-action-formations' replacement is two words, so Bhikkhu Sujato's one-word
+  // "Choices" comes back as "Action
   // formations" wherever it heads a sutta. Two headings, since the name-tree copy of AN 3.23's
   // title is unreachable — build-corpus prefers the sutta's own 0.N segment and only falls back to
   // sujato/name, which segment overrides can't address anyway.
   //
-  // sankhara-volitional-formations is open, so a sutta upstream retitles to "Choices" would be
+  // sankhara-action-formations is open, so a sutta upstream retitles to "Choices" would be
   // rewritten without review and would land here sentence-cased. Nothing detects that; it is the
   // known price of the open mode.
   {
-    id: 'an3-23-volitional-formations-title',
+    id: 'an3-23-action-formations-title',
     kind: 'segment',
     why: 'AN 3.23’s title, "Choices" — a one-word match whose two-word replacement needs Title ' +
       'Case. This is the sutta’s displayed title (build-corpus’s headerTitle reads the highest ' +
       '"0.N" segment), so the case shows in the browse tree.',
     segment: 'an3.23:0.3',
-    from: 'Volitional formations ',
-    to: 'Volitional Formations ',
+    from: 'Action formations ',
+    to: 'Action Formations ',
   },
   {
-    id: 'sn33-4-volitional-formations-title',
+    id: 'sn33-4-action-formations-title',
     kind: 'segment',
-    why: 'an3-23-volitional-formations-title’s problem in SN 33.4, where the heading has a ' +
+    why: 'an3-23-action-formations-title’s problem in SN 33.4, where the heading has a ' +
       'preceding word ("Not Knowing Choices") and only the replaced half loses its case.',
     segment: 'sn33.4:0.3',
-    from: 'Not Knowing Volitional formations ',
-    to: 'Not Knowing Volitional Formations ',
+    from: 'Not Knowing Action formations ',
+    to: 'Not Knowing Action Formations ',
   },
 
   // ·· saṅkhāra rendered the other way round ··
   // DN 9 pairs ceteti with abhisaṅkharoti, and Bhikkhu Sujato assigns them the opposite way to
   // every other passage in the corpus: his "make a choice" is ceteti here, and "form an intention"
-  // is abhisaṅkharoti. sankhara-volitional-formations and abhisankharoti-generate both deny these
+  // is abhisaṅkharoti. sankhara-action-formations and abhisankharoti-generate both deny these
   // three segments, since applying them would have labelled each Pali word with the other one's
   // English. The override swaps the two halves instead, so the line says what MN 140's identical
-  // thought says once the term rules have run: "They neither generate a volitional formation nor
+  // thought says once the term rules have run: "They neither generate an action formation nor
   // form an intention". Three rules rather than one because the closing punctuation differs — a
   // quoted thought inside single quotes, inside double quotes, and unquoted narration.
   {
@@ -932,7 +956,7 @@ export const RULES = [
     why: 'DN 9’s ceteti/abhisaṅkharoti pair, as the reflected question in single quotes.',
     segment: 'dn9:17.5',
     from: 'Why don’t I neither make a choice nor form an intention?’ ',
-    to: 'Why don’t I neither form an intention nor generate a volitional formation?’ ',
+    to: 'Why don’t I neither form an intention nor generate an action formation?’ ',
   },
   {
     id: 'dn9-cetana-sankhara-question-double',
@@ -940,7 +964,7 @@ export const RULES = [
     why: 'dn9-cetana-sankhara-question-single’s line, as the retold question in double quotes.',
     segment: 'dn9:18.9',
     from: 'Why don’t I neither make a choice nor form an intention?” ',
-    to: 'Why don’t I neither form an intention nor generate a volitional formation?” ',
+    to: 'Why don’t I neither form an intention nor generate an action formation?” ',
   },
   {
     id: 'dn9-cetana-sankhara-answer',
@@ -948,7 +972,57 @@ export const RULES = [
     why: 'dn9-cetana-sankhara-question-single’s line, as the narrated answer.',
     segment: 'dn9:17.6',
     from: 'They neither make a choice nor form an intention. ',
-    to: 'They neither form an intention nor generate a volitional formation. ',
+    to: 'They neither form an intention nor generate an action formation. ',
+  },
+
+  // ·· "action" is already there, for kamma ··
+  // sankhara-action-formations' replacement shares a word with Bhikkhu Sujato's rendering of
+  // kamma, and in most of the corpus that costs nothing — "right action" is a fixed path factor
+  // and sits sentences away from the aggregate. In these five lines the two land in one clause,
+  // and each takes upstream's own other word for the term that is not saṅkhāra.
+  {
+    id: 'an4-171-instigates-deeds',
+    kind: 'segment',
+    why: 'kāyasaṅkhāraṁ abhisaṅkharoti, with the bodily/verbal/mental triad written out — so the ' +
+      'line reads "the action formation that gives rise to bodily, verbal, and mental action", ' +
+      'the same English word twice in one clause for saṅkhāra and for kamma. "Deeds" is Bhikkhu ' +
+      'Sujato’s own commonest rendering of kamma, and the phrase "bodily, verbal, or mental ' +
+      'deeds" is his (an1.314), so this borrows it rather than inventing one.',
+    segments: ['an4.171:2.1', 'sn12.25:11.1'],
+    from: 'By oneself one instigates the action formation that gives rise to bodily, verbal, and mental action, conditioned by which that pleasure and pain arise in oneself. ',
+    to: 'By oneself one instigates the action formation that gives rise to bodily, verbal, and mental deeds, conditioned by which that pleasure and pain arise in oneself. ',
+  },
+  {
+    id: 'sn12-37-old-deeds-generated',
+    kind: 'segment',
+    why: 'Purāṇamidaṁ kammaṁ abhisaṅkhataṁ abhisañcetayitaṁ. Bhikkhu Sujato turns the two past ' +
+      'participles into agents — "old deeds … produced by choices and intentions" — and with ' +
+      'this app’s noun that becomes deeds produced by action formations, which says the same ' +
+      'thing twice. The participles say it once: abhisaṅkhata is "generated", the verb ' +
+      'abhisankharoti-generate already uses for this root, and abhisañcetayita is "intended". ' +
+      'Bodhi reads it the same way ("generated and fashioned by volition"). Only the three lines ' +
+      'whose subject is kamma need this; the other 22 places the stock phrase appears have a ' +
+      'jhāna or a heart’s release as their subject and keep upstream’s wording.',
+    segment: 'sn12.37:1.3',
+    from: 'It’s old deeds, and should be seen as produced by action formations and intentions, as something to be felt. ',
+    to: 'It’s old deeds, and should be seen as generated and intended, as something to be felt. ',
+  },
+  {
+    id: 'sn35-146-old-deeds-generated-eye',
+    kind: 'segment',
+    why: 'sn12-37-old-deeds-generated’s line as SN 35.146 opens the sense fields with it.',
+    segment: 'sn35.146:1.4',
+    from: 'The eye is old deeds. It should be seen as produced by action formations and intentions, as something to be felt. ',
+    to: 'The eye is old deeds. It should be seen as generated and intended, as something to be felt. ',
+  },
+  {
+    id: 'sn35-146-old-deeds-generated-mind',
+    kind: 'segment',
+    why: 'sn12-37-old-deeds-generated’s line as SN 35.146 closes the sense fields with it, after ' +
+      'the elision.',
+    segment: 'sn35.146:1.6',
+    from: 'mind is old deeds. It should be seen as produced by action formations and intentions, as something to be felt. ',
+    to: 'mind is old deeds. It should be seen as generated and intended, as something to be felt. ',
   },
 
   // ·· a compound this rule is not meant to touch ··
@@ -957,12 +1031,12 @@ export const RULES = [
     kind: 'segment',
     why: 'sabbasaṅkhārasamatha is "the stilling of all activities" in all thirty other places it ' +
       'appears; Snp 3.12 alone is where Bhikkhu Sujato wrote "choices" for it, so ' +
-      'sankhara-volitional-formations turns the one outlier into "the stilling of all volitional ' +
+      'sankhara-action-formations turns the one outlier into "the stilling of all action ' +
       'formations" and leaves the other thirty as they were. The compound is outside this app’s ' +
       'scope for saṅkhāra — the aggregate and the dependent-origination link are what move — so ' +
       'this restores upstream’s own majority wording rather than inventing a third one.',
     segment: 'snp3.12:16.3',
-    from: 'through the stilling of all volitional formations, ',
+    from: 'through the stilling of all action formations, ',
     to: 'through the stilling of all activities, ',
   },
 
@@ -971,12 +1045,12 @@ export const RULES = [
     id: 'snp3-12-sankhara-have-faded',
     kind: 'segment',
     why: 'Snp 3.12 reads "When choices has faded away" upstream — a number disagreement that ' +
-      'predates this app, and that sankhara-volitional-formations would otherwise carry forward ' +
-      'verbatim as "When volitional formations has faded away". Every parallel line in the same ' +
+      'predates this app, and that sankhara-action-formations would otherwise carry forward ' +
+      'verbatim as "When action formations has faded away". Every parallel line in the same ' +
       'poem uses the plural verb.',
     segment: 'snp3.12:14.4',
-    from: '‘When volitional formations has faded away and ceased with no residue left behind, there is no origination of suffering’: this is the second contemplation. ',
-    to: '‘When volitional formations have faded away and ceased with no residue left behind, there is no origination of suffering’: this is the second contemplation. ',
+    from: '‘When action formations has faded away and ceased with no residue left behind, there is no origination of suffering’: this is the second contemplation. ',
+    to: '‘When action formations have faded away and ceased with no residue left behind, there is no origination of suffering’: this is the second contemplation. ',
   },
 
   // ·· an idiom the replacement adjective cannot take ··
