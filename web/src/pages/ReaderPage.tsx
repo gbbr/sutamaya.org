@@ -401,7 +401,11 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           <div className="font-serif italic" style={{ fontSize: fs - 2, marginTop: 5, color: theme.dim }}>
             {sutta.pali}
           </div>
-          <div className="font-sans" style={{ fontSize: fs - 6, marginTop: 9, color: theme.dim }}>
+          {/* Light's `theme.dim` is tuned for menu-row labels, which sit at a larger size; on this
+              small metadata line it reads louder than the title it sits under. Paled to the lightest
+              warm gray that still clears 4.5:1 on light's paper. Sepia and dark's own `dim` are
+              already alpha-composited well below their `fg`, so they need no equivalent. */}
+          <div className="font-sans" style={{ fontSize: fs - 6, marginTop: 9, color: resolvedTheme === 'light' ? '#7A7168' : theme.dim }}>
             {sutta.min} min read ·{' '}
             Source:{' '}
             <a
