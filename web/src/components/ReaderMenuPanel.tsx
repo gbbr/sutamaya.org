@@ -6,7 +6,7 @@ import { NoteEditor } from './NoteEditor';
 import { ListMembershipPicker } from './ListMembershipPicker';
 import type { SegmentFile } from '../lib/corpus';
 import { highlightGroupText, type HighlightGroup } from '../lib/highlights';
-import { highlightPaint } from '../lib/theme';
+import { highlightPaint, READER_FACES } from '../lib/theme';
 import type { ReaderFace, ResolvedReaderTheme, ThemeColors } from '../lib/types';
 
 type Tab = 'highlights' | 'lists' | 'text';
@@ -47,12 +47,18 @@ const THEME_TILES: Array<{ id: ResolvedReaderTheme; label: string; bg: string; f
   { id: 'sepia', label: 'Sepia', bg: '#F3E7D3', fg: '#3A2E1E', pali: '#8C6222' },
 ];
 
+// Six faces in reading order down the 3×2 grid below. Four are serifs of genuinely different
+// character — a reader who doesn't like one should be able to see, from the specimens alone, which
+// of the others is unlike it. Two (Newsreader, Literata) are vendored webfonts, so every device
+// has at least three real choices; Charter is Apple-only and Palatino is a different cut on each
+// platform, and both fall back to Georgia where they're missing (see READER_FACES).
 const FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
-  { id: 'serif', label: 'Newsreader' },
   { id: 'georgia', label: 'Georgia' },
+  { id: 'serif', label: 'Newsreader' },
+  { id: 'literata', label: 'Literata' },
+  { id: 'charter', label: 'Charter' },
+  { id: 'palatino', label: 'Palatino' },
   { id: 'sans', label: 'Sans' },
-  { id: 'times', label: 'Times' },
-  { id: 'system', label: 'System' },
 ];
 
 const TABS: Array<{ id: Tab; label: string }> = [
@@ -435,31 +441,54 @@ export function ReaderMenuPanel({
               />
             </div>
 
-            {/* The one row whose control keeps its own line: five names never fit beside a label,
-                and wrapping them into the row's right-hand half would ladder them one per line. */}
+            {/* The one row whose control keeps its own line. Each face is a specimen tile rather
+                than a name on a pill — "Aa" set in the face itself, named underneath — because the
+                names mean nothing to most readers and the whole decision is about how the letters
+                look. Three across, two down, the way Apple Books does it. */}
             <div className="py-3.5" style={hairline}>
               <div className={`${rowLabel} mb-2.5`} style={{ color: theme.dim }}>
                 Typeface
               </div>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="grid grid-cols-3 gap-1.5">
                 {FACE_OPTIONS.map((f) => {
                   const on = face === f.id;
                   return (
                     <button
                       key={f.id}
                       aria-pressed={on}
-                      className="h-[38px] px-3.5 rounded-full font-sans text-ui-sm"
+                      className="h-[66px] rounded-xl flex flex-col items-center justify-center gap-1.5"
                       style={{
                         // The accent at low alpha, the same fill Settings' UI-font pills use —
                         // an 8-digit hex because these are theme literals, not CSS vars.
                         border: `1px solid ${on ? theme.pali : theme.rule}`,
                         background: on ? `${theme.pali}1F` : 'transparent',
-                        color: on ? theme.pali : theme.dim,
-                        fontWeight: on ? 500 : 400,
                       }}
                       onClick={() => setFace(f.id)}
                     >
-                      {f.label}
+                      {/* Full ink even when unselected: this is the sample, and dimming it would
+                          misrepresent the face. Trimmed to cap height and baseline so all six
+                          specimens sit on one optical line — without it each "Aa" is centred in a
+                          box sized by its own ascent and descent, which rides Newsreader's
+                          visibly high and leaves the row looking unaligned. */}
+                      <span
+                        aria-hidden
+                        style={{
+                          fontFamily: READER_FACES[f.id],
+                          fontSize: 25,
+                          lineHeight: 1,
+                          color: theme.fg,
+                          textBoxTrim: 'trim-both',
+                          textBoxEdge: 'cap alphabetic',
+                        }}
+                      >
+                        Aa
+                      </span>
+                      <span
+                        className="font-sans text-ui-xs leading-none"
+                        style={{ color: on ? theme.pali : theme.dim, fontWeight: on ? 500 : 400 }}
+                      >
+                        {f.label}
+                      </span>
                     </button>
                   );
                 })}

@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useMemo, useState, type ReactNode
 import { usePersistedState } from '../hooks/usePersistedState';
 import type { ReaderFace, ReaderTheme, ResolvedReaderTheme } from '../lib/types';
 import { READER_PREFS_KEY } from '../lib/storageKeys';
+import { READER_FACES } from '../lib/theme';
 import { systemPrefersDark } from '../lib/uiPrefs';
 
 export interface ReaderPrefs {
@@ -73,6 +74,10 @@ export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
       // show — and its "−"/"+" would then sit disabled at a value outside their own range.
       fs: Math.min(FS_MAX, Math.max(FS_MIN, prefs.fs)),
       lh: Math.min(LH_MAX, Math.max(LH_MIN, prefs.lh)),
+      // Same reasoning one step further: a device holding a face id the picker no longer offers
+      // would look it up in READER_FACES, get `undefined`, and render the reader with no
+      // font-family at all — worse than any wrong-but-valid choice.
+      face: prefs.face in READER_FACES ? prefs.face : DEFAULTS.face,
       resolvedTheme,
       setTheme: (theme) => setPrefs((p) => ({ ...p, theme })),
       setFs: (fs) => setPrefs((p) => ({ ...p, fs })),

@@ -117,7 +117,9 @@ export type ReaderTheme = 'light' | 'dark' | 'sepia' | 'system';
 // What 'system' actually resolves to at render time — see ReaderPrefsContext's live
 // prefers-color-scheme tracking.
 export type ResolvedReaderTheme = Exclude<ReaderTheme, 'system'>;
-export type ReaderFace = 'serif' | 'georgia' | 'sans' | 'system' | 'times';
+// Six faces, because the reader's picker lays them out as a 3×2 grid of specimen tiles — see
+// ReaderMenuPanel's FACE_OPTIONS for what each one is and why it earns a cell.
+export type ReaderFace = 'georgia' | 'serif' | 'literata' | 'charter' | 'palatino' | 'sans';
 
 // The app shell's own light/dark mode (Settings > Theme) — distinct from ReaderTheme, which is
 // the immersive reader's separate preference and unaffected by this. 'system' follows the OS's
@@ -134,9 +136,14 @@ export interface ThemeColors {
   rule: string;
   panel: string;
   pali: string;
-  // A lighter, lower-alpha fill than `rule` — for a filled pill/badge background (e.g.
-  // HighlightCountBadge) that needs to read as a subtle tint rather than a visible border tone.
+  // A lighter, lower-alpha fill than `rule` — for a filled pill/badge background that needs to
+  // read as a subtle tint rather than a visible border tone.
   tint: string;
+  // The same idea in this theme's own accent hue (`pali`) instead of its ink — for a pill that has
+  // to be told apart from the neutral `tint` fills around it. HighlightCountBadge is why it
+  // exists: its badge sits directly beside list-membership chips whose parent segment is a `tint`
+  // fill, and a count and a group name reading as one material is exactly the confusion to avoid.
+  paliTint: string;
   // Even more washed than `tint` — for a wash spanning a large block (e.g. a whole verse's worth
   // of segment rows in SegmentedText's focusUid marker) rather than a small badge/word; the same
   // alpha as `tint` reads as a much stronger fill once it covers that much more area, light theme

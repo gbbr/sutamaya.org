@@ -67,6 +67,13 @@ export default defineConfig({
           // which shard to look in, however many of them it has cached.
           'data/dict-shards/manifest.json',
         ],
+        // Gelasio and Gentium are subset-per-range families like the four above, so they match the
+        // latin/latin-ext patterns — but they exist only as the stand-ins Georgia and Palatino
+        // fall back to on the platforms that don't ship those, and an Apple or Windows device
+        // never requests a byte of either. Precaching them would put ~280KB into every install to
+        // serve nobody. XCharter, the third stand-in, needs no entry here: it's a whole font, so
+        // its filenames don't carry a subset suffix and the patterns never matched them.
+        globIgnores: ['**/gelasio-*.woff2', '**/gentium-*.woff2'],
         navigateFallbackDenylist: [/^\/api\//],
         runtimeCaching: [
           {
@@ -100,7 +107,10 @@ export default defineConfig({
           {
             urlPattern: /\/fonts\/.*\.woff2$/,
             handler: 'CacheFirst',
-            options: { cacheName: 'fonts', expiration: { maxEntries: 20, maxAgeSeconds: 60 * 60 * 24 * 365 } },
+            // 40 rather than the file count: everything not precached lands here — the
+            // cyrillic/greek/vietnamese subsets plus all three fallback families — and an entry
+            // cap that a normal device can reach would evict a face mid-read.
+            options: { cacheName: 'fonts', expiration: { maxEntries: 40, maxAgeSeconds: 60 * 60 * 24 * 365 } },
           },
           {
             urlPattern: /\/api\/.*/,
