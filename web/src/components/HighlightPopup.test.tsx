@@ -7,7 +7,7 @@ import type { ThemeColors } from '../lib/types';
 
 vi.mock('../lib/uiPrefs', () => ({ getUiScale: vi.fn(() => 1) }));
 
-const theme: ThemeColors = { bg: '#fff', fg: '#000', dim: '#888', rule: '#ccc', panel: '#fff', pali: '#333', tint: '#eee', focusTint: '#f5f5f5', highlightPalette: null, selection: '#ddd' };
+const theme: ThemeColors = { bg: '#fff', fg: '#000', dim: '#888', rule: '#ccc', panel: '#fff', pali: '#333', tint: '#eee', paliTint: '#e8dcc8', focusTint: '#f5f5f5', highlightPalette: null, selection: '#ddd' };
 
 function renderPopup(mobile: boolean, pop: Partial<PopState> = {}) {
   const onPick = vi.fn();
