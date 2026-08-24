@@ -71,8 +71,8 @@ Rule: immersion-concentration — 2006 change(s), 823 file(s)
 -Having developed awareness, immersion, and wisdom the bhikkhu Piṇḍola Bhāradvāja declared his awakening.
 +Having developed awareness, composure, and wisdom the bhikkhu Piṇḍola Bhāradvāja declared his awakening.
 @@ -1 +1 @@ sn-blurbs:sn56.1
--Bhikkhus should develop immersion so as to understand the four noble truths: suffering, its arising, its cessation, and the path.
-+Bhikkhus should develop composure so as to understand the four noble truths: suffering, its arising, its cessation, and the path.
+-Bhikkhus should develop immersion so as to understand the four noble truths: stress, its arising, its cessation, and the path.
++Bhikkhus should develop composure so as to understand the four noble truths: stress, its arising, its cessation, and the path.
 --- sujato/name/sn-name_translation-en-sujato.json
 +++ sujato/name/sn-name_translation-en-sujato.json
 @@ -1 +1 @@ sn-name:1214.sn36.1
@@ -6575,16 +6575,16 @@ Rule: immersion-concentration — 2006 change(s), 823 file(s)
 +++ sujato/sutta/sn/sn35/sn35.97_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn35.97:1.9
  PLI: Dukkhino cittaṁ na samādhiyati. 
--When one is suffering, the mind does not become immersed in samādhi. 
-+When one is suffering, the mind does not become composed in samādhi. 
+-When one is stress, the mind does not become immersed in samādhi. 
++When one is stress, the mind does not become composed in samādhi. 
 @@ -1,2 +1,2 @@ sn35.97:1.10
  PLI: Asamāhite citte dhammā na pātubhavanti. 
 -When the mind is not immersed in samādhi, principles do not become clear. 
 +When the mind is not composed in samādhi, principles do not become clear. 
 @@ -1,2 +1,2 @@ sn35.97:1.20
  PLI: Dukkhino cittaṁ na samādhiyati. 
--When one is suffering, the mind does not become immersed in samādhi. 
-+When one is suffering, the mind does not become composed in samādhi. 
+-When one is stress, the mind does not become immersed in samādhi. 
++When one is stress, the mind does not become composed in samādhi. 
 @@ -1,2 +1,2 @@ sn35.97:1.21
  PLI: Asamāhite citte dhammā na pātubhavanti. 
 -When the mind is not immersed in samādhi, principles do not become clear. 
@@ -9415,8 +9415,8 @@ Rule: immersion-concentration — 2006 change(s), 823 file(s)
 +++ sujato/sutta/sn/sn55/sn55.40_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn55.40:3.9
  PLI: Dukkhino cittaṁ na samādhiyati. 
--When one is suffering, the mind does not become immersed in samādhi. 
-+When one is suffering, the mind does not become composed in samādhi. 
+-When one is stress, the mind does not become immersed in samādhi. 
++When one is stress, the mind does not become composed in samādhi. 
 @@ -1,2 +1,2 @@ sn55.40:3.10
  PLI: Asamāhite citte dhammā na pātubhavanti. 
 -When the mind is not immersed in samādhi, principles do not become clear. 
@@ -9427,8 +9427,8 @@ Rule: immersion-concentration — 2006 change(s), 823 file(s)
 +And they have the ethical conduct loved by the noble ones … leading to composure. 
 @@ -1,2 +1,2 @@ sn55.40:4.9
  PLI: Dukkhino cittaṁ na samādhiyati. 
--When one is suffering, the mind does not become immersed in samādhi. 
-+When one is suffering, the mind does not become composed in samādhi. 
+-When one is stress, the mind does not become immersed in samādhi. 
++When one is stress, the mind does not become composed in samādhi. 
 @@ -1,2 +1,2 @@ sn55.40:4.10
  PLI: Asamāhite citte dhammā na pātubhavanti. 
 -When the mind is not immersed in samādhi, principles do not become clear. 

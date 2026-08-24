@@ -950,20 +950,20 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +++ sujato/sutta/sn/sn12/sn12.43_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn12.43:1.2
  PLI: “Dukkhassa, bhikkhave, samudayañca atthaṅgamañca desessāmi. 
--“Bhikkhus, I will teach you the arising and disappearance of suffering. 
-+“Bhikkhus, I will teach you the arising and disappearing of suffering. 
+-“Bhikkhus, I will teach you the arising and disappearance of stress. 
++“Bhikkhus, I will teach you the arising and disappearing of stress. 
 @@ -1,2 +1,2 @@ sn12.43:4.1
  PLI: Katamo ca, bhikkhave, dukkhassa atthaṅgamo? 
--And what is the disappearance of suffering? 
-+And what is the disappearing of suffering? 
+-And what is the disappearance of stress? 
++And what is the disappearing of stress? 
 @@ -1,2 +1,2 @@ sn12.43:4.10
  PLI: Ayaṁ kho, bhikkhave, dukkhassa atthaṅgamo. 
--This is the disappearance of suffering. 
-+This is the disappearing of suffering. 
+-This is the disappearance of stress. 
++This is the disappearing of stress. 
 @@ -1,2 +1,2 @@ sn12.43:5.13
  PLI: Ayaṁ kho, bhikkhave, dukkhassa atthaṅgamo”ti. 
--This is the disappearance of suffering.” 
-+This is the disappearing of suffering.” 
+-This is the disappearance of stress.” 
++This is the disappearing of stress.” 
 --- sujato/sutta/sn/sn12/sn12.44_translation-en-sujato.json
 +++ sujato/sutta/sn/sn12/sn12.44_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn12.44:1.2
@@ -986,8 +986,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +++ sujato/sutta/sn/sn14/sn14.36_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn14.36:2.1
  PLI: Yo ca kho, bhikkhave, pathavīdhātuyā nirodho vūpasamo atthaṅgamo, dukkhasseso nirodho rogānaṁ vūpasamo jarāmaraṇassa atthaṅgamo. 
--The cessation, settling, and disappearance of the earth element is the cessation of suffering, the settling of diseases, and the disappearance of old age and death. 
-+The cessation, settling, and disappearing of the earth element is the cessation of suffering, the settling of diseases, and the disappearing of old age and death. 
+-The cessation, settling, and disappearance of the earth element is the cessation of stress, the settling of diseases, and the disappearance of old age and death. 
++The cessation, settling, and disappearing of the earth element is the cessation of stress, the settling of diseases, and the disappearing of old age and death. 
 @@ -1,2 +1,2 @@ sn14.36:2.2
  PLI: Yo āpodhātuyā …pe… 
 -The cessation, settling, and disappearance of the water element … 
@@ -998,8 +998,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +The cessation, settling, and disappearing of the fire element … 
 @@ -1,2 +1,2 @@ sn14.36:2.4
  PLI: yo vāyodhātuyā nirodho vūpasamo atthaṅgamo, dukkhasseso nirodho rogānaṁ vūpasamo jarāmaraṇassa atthaṅgamo”ti. 
--The cessation, settling, and disappearance of the air element is the cessation of suffering, the settling of diseases, and the disappearance of old age and death.” 
-+The cessation, settling, and disappearing of the air element is the cessation of suffering, the settling of diseases, and the disappearing of old age and death.” 
+-The cessation, settling, and disappearance of the air element is the cessation of stress, the settling of diseases, and the disappearance of old age and death.” 
++The cessation, settling, and disappearing of the air element is the cessation of stress, the settling of diseases, and the disappearing of old age and death.” 
 --- sujato/sutta/sn/sn14/sn14.38_translation-en-sujato.json
 +++ sujato/sutta/sn/sn14/sn14.38_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn14.38:1.5
@@ -1090,16 +1090,16 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +++ sujato/sutta/sn/sn22/sn22.30_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.30:1.7
  PLI: Yo ca kho, bhikkhave, rūpassa nirodho vūpasamo atthaṅgamo, dukkhasseso nirodho rogānaṁ vūpasamo jarāmaraṇassa atthaṅgamo. 
--The cessation, settling, and disappearance of form is the cessation of suffering, the settling of diseases, and the disappearance of old age and death. 
-+The cessation, settling, and disappearing of form is the cessation of suffering, the settling of diseases, and the disappearing of old age and death. 
+-The cessation, settling, and disappearance of form is the cessation of stress, the settling of diseases, and the disappearance of old age and death. 
++The cessation, settling, and disappearing of form is the cessation of stress, the settling of diseases, and the disappearing of old age and death. 
 @@ -1,2 +1,2 @@ sn22.30:1.8
  PLI: Yo vedanāya …pe… 
 -The cessation, settling, and disappearance of sensation … 
 +The cessation, settling, and disappearing of sensation … 
 @@ -1,2 +1,2 @@ sn22.30:1.11
  PLI: yo viññāṇassa nirodho vūpasamo atthaṅgamo, dukkhasseso nirodho rogānaṁ vūpasamo jarāmaraṇassa atthaṅgamo”ti. 
--consciousness is the cessation of suffering, the settling of diseases, and the disappearance of old age and death.” 
-+consciousness is the cessation of suffering, the settling of diseases, and the disappearing of old age and death.” 
+-consciousness is the cessation of stress, the settling of diseases, and the disappearance of old age and death.” 
++consciousness is the cessation of stress, the settling of diseases, and the disappearing of old age and death.” 
 --- sujato/sutta/sn/sn22/sn22.32_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.32_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.32:1.6
@@ -1182,30 +1182,30 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +++ sujato/sutta/sn/sn26/sn26.10_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn26.10:1.7
  PLI: Yo ca kho, bhikkhave, rūpassa nirodho vūpasamo atthaṅgamo, dukkhasseso nirodho, rogānaṁ vūpasamo, jarāmaraṇassa atthaṅgamo. 
--The cessation, settling, and disappearance of form is the cessation of suffering, the settling of diseases, and the disappearance of old age and death. 
-+The cessation, settling, and disappearing of form is the cessation of suffering, the settling of diseases, and the disappearing of old age and death. 
+-The cessation, settling, and disappearance of form is the cessation of stress, the settling of diseases, and the disappearance of old age and death. 
++The cessation, settling, and disappearing of form is the cessation of stress, the settling of diseases, and the disappearing of old age and death. 
 @@ -1,2 +1,2 @@ sn26.10:1.8
  PLI: Yo vedanāya … 
 -The cessation, settling, and disappearance of sensation, 
 +The cessation, settling, and disappearing of sensation, 
 @@ -1,2 +1,2 @@ sn26.10:1.11
  PLI: yo viññāṇassa nirodho vūpasamo atthaṅgamo, dukkhasseso nirodho, rogānaṁ vūpasamo, jarāmaraṇassa atthaṅgamo”ti. 
--and consciousness is the cessation of suffering, the settling of diseases, and the disappearance of old age and death.” 
-+and consciousness is the cessation of suffering, the settling of diseases, and the disappearing of old age and death.” 
+-and consciousness is the cessation of stress, the settling of diseases, and the disappearance of old age and death.” 
++and consciousness is the cessation of stress, the settling of diseases, and the disappearing of old age and death.” 
 --- sujato/sutta/sn/sn26/sn26.1_translation-en-sujato.json
 +++ sujato/sutta/sn/sn26/sn26.1_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn26.1:1.8
  PLI: Yo ca, bhikkhave, cakkhussa nirodho vūpasamo atthaṅgamo, dukkhasseso nirodho, rogānaṁ vūpasamo, jarāmaraṇassa atthaṅgamo. 
--The cessation, settling, and disappearance of the eye is the cessation of suffering, the settling of diseases, and the disappearance of old age and death. 
-+The cessation, settling, and disappearing of the eye is the cessation of suffering, the settling of diseases, and the disappearing of old age and death. 
+-The cessation, settling, and disappearance of the eye is the cessation of stress, the settling of diseases, and the disappearance of old age and death. 
++The cessation, settling, and disappearing of the eye is the cessation of stress, the settling of diseases, and the disappearing of old age and death. 
 @@ -1,2 +1,2 @@ sn26.1:1.9
  PLI: Yo sotassa nirodho …pe… 
 -The cessation, settling, and disappearance of the ear, 
 +The cessation, settling, and disappearing of the ear, 
 @@ -1,2 +1,2 @@ sn26.1:1.13
  PLI: yo manassa nirodho vūpasamo atthaṅgamo, dukkhasseso nirodho, rogānaṁ vūpasamo, jarāmaraṇassa atthaṅgamo”ti. 
--and mind is the cessation of suffering, the settling of diseases, and the disappearance of old age and death.” 
-+and mind is the cessation of suffering, the settling of diseases, and the disappearing of old age and death.” 
+-and mind is the cessation of stress, the settling of diseases, and the disappearance of old age and death.” 
++and mind is the cessation of stress, the settling of diseases, and the disappearing of old age and death.” 
 --- sujato/sutta/sn/sn26/sn26.2_translation-en-sujato.json
 +++ sujato/sutta/sn/sn26/sn26.2_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn26.2:1.8
@@ -1214,8 +1214,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +The cessation, settling, and disappearing of sights, 
 @@ -1,2 +1,2 @@ sn26.2:1.13
  PLI: yo dhammānaṁ nirodho vūpasamo atthaṅgamo, dukkhasseso nirodho, rogānaṁ vūpasamo, jarāmaraṇassa atthaṅgamo”ti. 
--and ideas is the cessation of suffering, the settling of diseases, and the disappearance of old age and death.” 
-+and ideas is the cessation of suffering, the settling of diseases, and the disappearing of old age and death.” 
+-and ideas is the cessation of stress, the settling of diseases, and the disappearance of old age and death.” 
++and ideas is the cessation of stress, the settling of diseases, and the disappearing of old age and death.” 
 --- sujato/sutta/sn/sn26/sn26.3_translation-en-sujato.json
 +++ sujato/sutta/sn/sn26/sn26.3_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn26.3:1.9
@@ -1256,8 +1256,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +++ sujato/sutta/sn/sn26/sn26.9_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn26.9:1.13
  PLI: yo viññāṇadhātuyā nirodho vūpasamo atthaṅgamo, dukkhasseso nirodho, rogānaṁ vūpasamo, jarāmaraṇassa atthaṅgamo”ti. 
--and the consciousness element is the cessation of suffering, the settling of diseases, and the disappearance of old age and death.” 
-+and the consciousness element is the cessation of suffering, the settling of diseases, and the disappearing of old age and death.” 
+-and the consciousness element is the cessation of stress, the settling of diseases, and the disappearance of old age and death.” 
++and the consciousness element is the cessation of stress, the settling of diseases, and the disappearing of old age and death.” 
 --- sujato/sutta/sn/sn28/sn28.4_translation-en-sujato.json
 +++ sujato/sutta/sn/sn28/sn28.4_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn28.4:2.1
@@ -1284,20 +1284,20 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +++ sujato/sutta/sn/sn35/sn35.106_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn35.106:1.1
  PLI: “Dukkhassa, bhikkhave, samudayañca atthaṅgamañca desessāmi. 
--“Bhikkhus, I will teach you the arising and disappearance of suffering. 
-+“Bhikkhus, I will teach you the arising and disappearing of suffering. 
+-“Bhikkhus, I will teach you the arising and disappearance of stress. 
++“Bhikkhus, I will teach you the arising and disappearing of stress. 
 @@ -1,2 +1,2 @@ sn35.106:2.1
  PLI: Katamo ca, bhikkhave, dukkhassa atthaṅgamo? 
--And what is the disappearance of suffering? 
-+And what is the disappearing of suffering? 
+-And what is the disappearance of stress? 
++And what is the disappearing of stress? 
 @@ -1,2 +1,2 @@ sn35.106:2.10
  PLI: Ayaṁ dukkhassa atthaṅgamo …pe… 
--This is the disappearance of suffering. … 
-+This is the disappearing of suffering. … 
+-This is the disappearance of stress. … 
++This is the disappearing of stress. … 
 @@ -1,2 +1,2 @@ sn35.106:2.20
  PLI: Ayaṁ kho, bhikkhave, dukkhassa atthaṅgamo”ti. 
--This is the disappearance of suffering.” 
-+This is the disappearing of suffering.” 
+-This is the disappearance of stress.” 
++This is the disappearing of stress.” 
 --- sujato/sutta/sn/sn35/sn35.107_translation-en-sujato.json
 +++ sujato/sutta/sn/sn35/sn35.107_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn35.107:1.1
@@ -1336,16 +1336,16 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +++ sujato/sutta/sn/sn35/sn35.21_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn35.21:2.1
  PLI: Yo ca kho, bhikkhave, cakkhussa nirodho vūpasamo atthaṅgamo, dukkhasseso nirodho, rogānaṁ vūpasamo, jarāmaraṇassa atthaṅgamo. 
--The cessation, settling, and disappearance of the eye is the cessation of suffering, the settling of diseases, and the disappearance of old age and death. 
-+The cessation, settling, and disappearing of the eye is the cessation of suffering, the settling of diseases, and the disappearing of old age and death. 
+-The cessation, settling, and disappearance of the eye is the cessation of stress, the settling of diseases, and the disappearance of old age and death. 
++The cessation, settling, and disappearing of the eye is the cessation of stress, the settling of diseases, and the disappearing of old age and death. 
 @@ -1,2 +1,2 @@ sn35.21:2.2
  PLI: Yo sotassa … 
 -The cessation, settling, and disappearance of the ear, 
 +The cessation, settling, and disappearing of the ear, 
 @@ -1,2 +1,2 @@ sn35.21:2.6
  PLI: yo manassa nirodho vūpasamo atthaṅgamo, dukkhasseso nirodho, rogānaṁ vūpasamo, jarāmaraṇassa atthaṅgamo”ti. 
--and mind is the cessation of suffering, the settling of diseases, and the disappearance of old age and death.” 
-+and mind is the cessation of suffering, the settling of diseases, and the disappearing of old age and death.” 
+-and mind is the cessation of stress, the settling of diseases, and the disappearance of old age and death.” 
++and mind is the cessation of stress, the settling of diseases, and the disappearing of old age and death.” 
 --- sujato/sutta/sn/sn35/sn35.22_translation-en-sujato.json
 +++ sujato/sutta/sn/sn35/sn35.22_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn35.22:2.1
@@ -1354,18 +1354,18 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +The cessation, settling, and disappearing of sights, 
 @@ -1,2 +1,2 @@ sn35.22:2.6
  PLI: yo dhammānaṁ nirodho vūpasamo atthaṅgamo, dukkhasseso nirodho, rogānaṁ vūpasamo, jarāmaraṇassa atthaṅgamo”ti. 
--and ideas is the cessation of suffering, the settling of diseases, and the disappearance of old age and death.” 
-+and ideas is the cessation of suffering, the settling of diseases, and the disappearing of old age and death.” 
+-and ideas is the cessation of stress, the settling of diseases, and the disappearance of old age and death.” 
++and ideas is the cessation of stress, the settling of diseases, and the disappearing of old age and death.” 
 --- sujato/sutta/sn/sn35/sn35.244_translation-en-sujato.json
 +++ sujato/sutta/sn/sn35/sn35.244_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn35.244:1.1
  PLI: “Yato kho, bhikkhave, bhikkhu sabbesaṁyeva dukkhadhammānaṁ samudayañca atthaṅgamañca yathābhūtaṁ pajānāti. 
--“Bhikkhus, when a bhikkhu truly understands the arising and disappearance of all things that entail suffering, 
-+“Bhikkhus, when a bhikkhu truly understands the arising and disappearing of all things that entail suffering, 
+-“Bhikkhus, when a bhikkhu truly understands the arising and disappearance of all things that entail stress, 
++“Bhikkhus, when a bhikkhu truly understands the arising and disappearing of all things that entail stress, 
 @@ -1,2 +1,2 @@ sn35.244:2.1
  PLI: Kathañca, bhikkhave, sabbesaṁyeva dukkhadhammānaṁ samudayañca atthaṅgamañca yathābhūtaṁ pajānāti? 
--And how does a bhikkhu truly understand the arising and disappearance of all things that entail suffering? 
-+And how does a bhikkhu truly understand the arising and disappearing of all things that entail suffering? 
+-And how does a bhikkhu truly understand the arising and disappearance of all things that entail stress? 
++And how does a bhikkhu truly understand the arising and disappearing of all things that entail stress? 
 @@ -1,2 +1,2 @@ sn35.244:2.2
  PLI: ‘Iti rūpaṁ, iti rūpassa samudayo, iti rūpassa atthaṅgamo; 
 -‘Such is form, such is the arising of form, such is the disappearance of form. 
@@ -1376,8 +1376,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +consciousness, such is the arising of consciousness, such is the disappearing of consciousness.’ 
 @@ -1,2 +1,2 @@ sn35.244:2.7
  PLI: evaṁ kho, bhikkhave, bhikkhu sabbesaṁyeva dukkhadhammānaṁ samudayañca atthaṅgamañca yathābhūtaṁ pajānāti. 
--That’s how a bhikkhu truly understands the arising and disappearance of all things that entail suffering. 
-+That’s how a bhikkhu truly understands the arising and disappearing of all things that entail suffering. 
+-That’s how a bhikkhu truly understands the arising and disappearance of all things that entail stress. 
++That’s how a bhikkhu truly understands the arising and disappearing of all things that entail stress. 
 --- sujato/sutta/sn/sn35/sn35.245_translation-en-sujato.json
 +++ sujato/sutta/sn/sn35/sn35.245_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn35.245:1.3
@@ -1478,20 +1478,20 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +++ sujato/sutta/sn/sn42/sn42.11_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn42.11:1.3
  PLI: “sādhu me, bhante, bhagavā dukkhassa samudayañca atthaṅgamañca desetū”ti. 
--“Please, sir, let the Blessed One teach me the arising and disappearance of suffering.” 
-+“Please, sir, let the Blessed One teach me the arising and disappearing of suffering.” 
+-“Please, sir, let the Blessed One teach me the arising and disappearance of stress.” 
++“Please, sir, let the Blessed One teach me the arising and disappearing of stress.” 
 @@ -1,2 +1,2 @@ sn42.11:1.4
  PLI: “Ahañce te, gāmaṇi, atītamaddhānaṁ ārabbha dukkhassa samudayañca atthaṅgamañca deseyyaṁ: 
--“Chief, if I were to teach you about the arising and disappearance of suffering in connection with the past, saying 
-+“Chief, if I were to teach you about the arising and disappearing of suffering in connection with the past, saying 
+-“Chief, if I were to teach you about the arising and disappearance of stress in connection with the past, saying 
++“Chief, if I were to teach you about the arising and disappearing of stress in connection with the past, saying 
 @@ -1,2 +1,2 @@ sn42.11:1.6
  PLI: Ahañce te, gāmaṇi, anāgatamaddhānaṁ ārabbha dukkhassa samudayañca atthaṅgamañca deseyyaṁ: 
--If I were to teach you about the arising and disappearance of suffering in connection with the future, saying 
-+If I were to teach you about the arising and disappearing of suffering in connection with the future, saying 
+-If I were to teach you about the arising and disappearance of stress in connection with the future, saying 
++If I were to teach you about the arising and disappearing of stress in connection with the future, saying 
 @@ -1,2 +1,2 @@ sn42.11:1.8
  PLI: Api cāhaṁ, gāmaṇi, idheva nisinno ettheva te nisinnassa dukkhassa samudayañca atthaṅgamañca desessāmi. 
--Rather, chief, I will teach you about the arising and disappearance of suffering as I am sitting right here and you are sitting right there. 
-+Rather, chief, I will teach you about the arising and disappearing of suffering as I am sitting right here and you are sitting right there. 
+-Rather, chief, I will teach you about the arising and disappearance of stress as I am sitting right here and you are sitting right there. 
++Rather, chief, I will teach you about the arising and disappearing of stress as I am sitting right here and you are sitting right there. 
 --- sujato/sutta/sn/sn45/sn45.8_translation-en-sujato.json
 +++ sujato/sutta/sn/sn45/sn45.8_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn45.8:10.5

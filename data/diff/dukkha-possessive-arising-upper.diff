@@ -1,0 +1,14 @@
+Rule: dukkha-possessive-arising-upper — 2 change(s), 2 file(s)
+
+--- sujato/sutta/kn/thag/thag21.1_translation-en-sujato.json
++++ sujato/sutta/kn/thag/thag21.1_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thag21.1:51.1
+ PLI: Dukkhaṁ dukkhasamuppādaṁ, 
+-Stress, stress’s arising, 
++Stress, the arising of stress, 
+--- sujato/sutta/kn/thig/thig7.2_translation-en-sujato.json
++++ sujato/sutta/kn/thig/thig7.2_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thig7.2:5.1
+ PLI: Dukkhaṁ dukkhasamuppādaṁ, 
+-Stress, stress’s arising, 
++Stress, the arising of stress, 
