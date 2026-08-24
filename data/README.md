@@ -59,11 +59,21 @@ A clean run ends by printing each retranslation rule's triage queue (see
 it's upstream having moved a term into or out of a segment a rule cares about, and it's worked by
 hand.
 
+`update-data:check` previews half of that queue before the copy: an allow/deny entry whose segment
+no longer contains the term upstream is dead, and it says so one line per rule. `:triage` itself
+can't see this until afterwards — it reads `data/sujato`, so it's judging the old text until the
+copy lands the new one, and it runs last in the chain behind a `|| true`. Also informational, for
+the same reason: the entries can only actually be removed once the copy has happened.
+
 If it refuses to run, it's flagging one of two things — read what it prints before doing anything
 else:
 
 - a moved or restructured file upstream (segment ids changed, or a tracked file isn't where it's
-  expected);
+  expected). One shape of change is exempt: upstream periodically pads its English files out to the
+  root text's full segment id set, and blank additions under `sujato/` can't alter the built text —
+  `build-corpus` orders a sutta's segments by the *Pali* keys and drops any segment blank on both
+  sides. Those are counted into a one-line "Accepted" summary instead of failing. A removal, an
+  addition carrying text, or any addition under `pali/`/`html/` still refuses;
 - a **cross-category integrity problem**: the segment-id alignment described above, which
   `update-data:check` verifies both against the upstream checkout and against the local trees. The
   local pass is what catches a snapshot taken from an already-misaligned local state, which would
@@ -81,7 +91,7 @@ the change is legitimate:
    `data/diff/`. That directory is checked in, so `git diff data/diff/` now shows which of this
    app's own rewrites upstream moved under — review it alongside `git diff data/sujato/`.
 4. `npm test`, and check the reader.
-5. `npm run update-data:snapshot` — records what's now in `sujato/`, `pali/` and `html/` as the new
+5. `npm run update-data:accept` — records what's now in `sujato/`, `pali/` and `html/` as the new
    baseline, along with each rule's match count, so future `check` runs stop flagging this same
    change.
 

@@ -190,7 +190,7 @@ export function loadSnapshot(snapshotPath = SNAPSHOT_PATH) {
 // Verifies data/{sujato,pali,html} itself still matches snapshot.json — independent of
 // SC_DATA_PATH/bilaraRoot entirely, so it can run any time (in particular, as part of `npm test`)
 // without a checkout of sc-data on hand. Catches a copy that got committed without a follow-up
-// update-data:snapshot: since post-processing only ever changes values, never segment ids, a
+// update-data:accept: since post-processing only ever changes values, never segment ids, a
 // tracked file's keys should always still match what the snapshot recorded for it.
 export function checkSnapshotInSync({ dataDirs = DATA_DIRS, snapshotPath = SNAPSHOT_PATH } = {}) {
   const snapshot = loadSnapshot(snapshotPath);
@@ -204,7 +204,7 @@ export function checkSnapshotInSync({ dataDirs = DATA_DIRS, snapshotPath = SNAPS
     }
     const keys = Object.keys(JSON.parse(fs.readFileSync(localPath, 'utf8')));
     if (keys.length !== expected.keyCount || keysHash(keys) !== expected.keysHash) {
-      // Kept terse (just what differs) — the "did you forget update-data:snapshot?" explanation
+      // Kept terse (just what differs) — the "did you forget update-data:accept?" explanation
       // belongs once per run, not once per file (see update-data-check.mjs's CLI block).
       issues.push(`${relPath}: local keys differ from the snapshot (${expected.keyCount} → ${keys.length}).`);
     }
