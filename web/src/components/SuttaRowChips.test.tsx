@@ -7,8 +7,12 @@ import type { SuttaRowChip } from '../lib/lists';
 
 const chips: SuttaRowChip[] = [
   { id: 'l1', label: 'Favorites', breadcrumb: 'Favorites' },
-  { id: 'l2', label: 'Chapter 1', breadcrumb: 'Study / Chapter 1' },
+  { id: 'l2', label: 'Chapter 1', parent: 'Study', breadcrumb: 'Study / Chapter 1' },
 ];
+
+// A chip renders as a pill wrapping one or two segments, so the element carrying the chip's own
+// classes/title/style is the parent of the element the label text is found in.
+const pillOf = (label: string) => screen.getByText(label).parentElement as HTMLElement;
 
 describe('SuttaRowChips', () => {
   it('renders nothing when there are no chips and no highlights', () => {
@@ -23,10 +27,17 @@ describe('SuttaRowChips', () => {
     expect(screen.getByText('3')).toBeTruthy();
   });
 
-  it('labels a nested list by its own name, with the full path only as the hover title', () => {
+  it('gives a nested list a leading segment naming its immediate parent', () => {
     render(<SuttaRowChips chips={chips} hlCount={0} />);
+    expect(pillOf('Chapter 1').textContent).toBe('StudyChapter 1');
+    // The full path stays out of the chip's own text — it's the hover title, nothing more.
     expect(screen.queryByText('Study / Chapter 1')).toBeNull();
-    expect(screen.getByText('Chapter 1').getAttribute('title')).toBe('Study / Chapter 1');
+    expect(pillOf('Chapter 1').getAttribute('title')).toBe('Study / Chapter 1');
+  });
+
+  it('renders a top-level list as a single-segment chip', () => {
+    render(<SuttaRowChips chips={chips} hlCount={0} />);
+    expect(pillOf('Favorites').textContent).toBe('Favorites');
   });
 
   it('renders just the badge when there are highlights but no list membership', () => {
@@ -54,7 +65,12 @@ describe('SuttaRowChips', () => {
 
     it('falls back to the app-shell ink border class on each chip', () => {
       render(<SuttaRowChips chips={chips} hlCount={0} />);
-      expect(screen.getByText('Favorites').className).toContain('border-ink/25');
+      expect(pillOf('Favorites').className).toContain('border-ink/25');
+    });
+
+    it('falls back to the app-shell ink fill on a parent segment', () => {
+      render(<SuttaRowChips chips={chips} hlCount={0} />);
+      expect(screen.getByText('Study').className).toContain('bg-ink/10');
     });
   });
 
@@ -63,7 +79,7 @@ describe('SuttaRowChips', () => {
 
     it('styles each chip from the theme instead of the ink Tailwind classes', () => {
       render(<SuttaRowChips chips={chips} hlCount={0} theme={theme} />);
-      const chip = screen.getByText('Favorites');
+      const chip = pillOf('Favorites');
       expect(chip.className).not.toContain('border-ink/25');
       // jsdom re-serializes the rgba() it's given (spaced-out components, trailing zero) rather
       // than preserving the literal string, so compare against a probe element run through the
@@ -75,14 +91,27 @@ describe('SuttaRowChips', () => {
       expect(chip.style.color).toBe(probe.style.color);
     });
 
-    it('passes the theme through to the highlight badge', () => {
-      render(<SuttaRowChips chips={[]} hlCount={5} theme={theme} />);
-      // HighlightCountBadge renders its own count text inside a themed span/button — background
-      // comes from theme.tint (see HighlightCountBadge's own theme branch).
-      const badge = screen.getByText('5').closest('span,button') as HTMLElement;
+    it('fills a parent segment from the theme\'s tint rather than the ink class', () => {
+      render(<SuttaRowChips chips={chips} hlCount={0} theme={theme} />);
+      const seg = screen.getByText('Study');
+      expect(seg.className).not.toContain('bg-ink/10');
       const probe = document.createElement('div');
       probe.style.background = theme.tint;
-      probe.style.color = theme.fg;
+      probe.style.color = theme.dim;
+      expect(seg.style.background).toBe(probe.style.background);
+      expect(seg.style.color).toBe(probe.style.color);
+    });
+
+    it('passes the theme through to the highlight badge', () => {
+      render(<SuttaRowChips chips={[]} hlCount={5} theme={theme} />);
+      // HighlightCountBadge renders its own count text inside a themed span/button — it fills from
+      // the theme's accent tint (not the neutral `tint` the chips' parent segments use) but keeps
+      // the theme's muted ink for the number itself, so it can't be mistaken for the
+      // accent-coloured Pali line (see HighlightCountBadge's own theme branch).
+      const badge = screen.getByText('5').closest('span,button') as HTMLElement;
+      const probe = document.createElement('div');
+      probe.style.background = theme.paliTint;
+      probe.style.color = theme.dim;
       expect(badge.style.background).toBe(probe.style.background);
       expect(badge.style.color).toBe(probe.style.color);
     });

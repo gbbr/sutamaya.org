@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import { Plus } from 'lucide-react';
 import type { SuttaRowChip } from '../lib/lists';
 import type { ThemeColors } from '../lib/types';
@@ -42,16 +43,33 @@ export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighli
   const ChipTag = onChipClick ? 'button' : 'span';
   const fontSize = fs ? fs - 7 : 14;
   const height = fontSize + 9;
-  // The filled controls sit a little further from the chips than the chips do from each other, so
-  // the row reads as memberships first and controls after, rather than one undifferentiated run of
-  // pills. Nothing to separate from when there are no chips, so it stays flush with the row's edge.
-  const controlGap = chips.length > 0 ? 4 : undefined;
+  // The add-to-list control runs a point above the chips: it has no fill or outline of its own, so
+  // a little extra size is what keeps it from disappearing into the run of pills — but only a
+  // little, since it sits at the end of that run rather than heading it.
+  const addFontSize = fontSize + 1;
+  // The add control keeps the plain chip-to-chip gap — it edits the memberships it sits at the end
+  // of, so it belongs to that run. The highlight badge is the odd one out on the line (a count,
+  // not a list), so it takes a wider gap to separate itself from whatever precedes it: a clear
+  // step away from the unfilled add control, or a small one from a chip's own edge in the Library,
+  // where there is no add control on the line at all. Nothing to separate from when the badge is
+  // alone, so it stays flush with the row's edge.
+  const badgeGap = onAddToList ? 12 : chips.length > 0 ? 4 : undefined;
   return (
     <span data-component="SuttaRowChips" className="flex flex-wrap items-center gap-1.5 mt-3">
+      {/* A chip for a list inside a group is segmented: a tinted leading segment naming the
+          immediate parent, then the list's own name. The parent is part of what identifies the
+          list — several groups can hold a "#anicca" — and a segment carries it on touch, where a
+          hover title says nothing. Repeating the parent on each of that group's chips is the cost
+          of every chip staying a self-contained unit: nothing has to line up, and the row wraps
+          chip-by-chip exactly as it did when they were plain pills, rather than needing a group
+          to survive being split across two lines.
+          `items-stretch` + `overflow-hidden` on the pill is what makes the parent segment's fill
+          reach both rounded ends; the horizontal padding moves onto the segments themselves, so a
+          parentless chip still renders exactly the pill it was before. */}
       {chips.map((c) => (
         <ChipTag
           key={c.id}
-          className={`inline-flex items-center whitespace-nowrap rounded-full px-[9px] font-sans ${
+          className={`inline-flex items-stretch overflow-hidden whitespace-nowrap rounded-full font-sans ${
             theme ? '' : 'border border-ink/25'
           } ${onChipClick ? 'hover:opacity-70' : ''}`}
           style={
@@ -69,29 +87,45 @@ export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighli
           }
           title={c.breadcrumb}
         >
-          {c.label}
+          {c.parent && (
+            <span
+              className={`flex items-center px-[8px] font-medium ${theme ? '' : 'bg-ink/10 text-ink-3'}`}
+              style={theme ? { background: theme.tint, color: theme.dim } : undefined}
+            >
+              {c.parent}
+            </span>
+          )}
+          <span className="flex items-center px-[9px]">{c.label}</span>
         </ChipTag>
       ))}
-      {/* Filled, like the highlight badge beside it and unlike the outlined chips — in this row
-          filled means "control that opens a panel" and outlined means "a list this sutta is in".
-          An outlined pill here, label and all, just reads as one more membership, named "Add to
-          list". The label is carried only when there are no chips: that is the one case where
-          nothing else on screen explains the icon. Beside existing chips the row already reads as
+      {/* No fill of any kind — unlike the highlight badge beside it and unlike the chips' own
+          parent segments. This is the only thing on the line that *acts*, and a third filled pill
+          beside them made the row read as a strip of buttons. It carries its weight by being
+          larger than the chips instead, and by changing colour under a pointer: the hover pair
+          travels as custom properties because both colours come from the active reading theme,
+          which a Tailwind `hover:` class can't read out of an inline style. Hover states compile
+          inside `@media (hover: hover)` (see tailwind.config.js), so an iOS tap can't leave this
+          stuck lit.
+          The label is carried only when there are no chips: that is the one case where nothing
+          else on screen explains the icon. Beside existing chips the row already reads as
           memberships, so a bare "+" is unambiguous and keeps the chips the thing being read. */}
       {onAddToList && (
         <button
           aria-label="Add to list"
-          className={`relative inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-full font-sans font-semibold bg-ink/10 text-ink-3 hover:opacity-70 after:content-[''] after:absolute after:-inset-[11px] ${
-            chips.length > 0 ? '' : 'px-[9px]'
-          }`}
+          className="relative inline-flex items-center gap-1 whitespace-nowrap font-sans font-semibold text-[color:var(--add-fg)] hover:text-[color:var(--add-fg-hover)] after:content-[''] after:absolute after:-inset-[11px]"
           style={
-            theme
-              ? { background: theme.tint, color: theme.fg, fontSize, height, width: chips.length > 0 ? height : undefined, marginLeft: controlGap }
-              : { fontSize, height, width: chips.length > 0 ? height : undefined, marginLeft: controlGap }
+            {
+              '--add-fg': theme ? theme.dim : 'rgb(var(--ink-4))',
+              '--add-fg-hover': theme ? theme.fg : 'rgb(var(--ink))',
+              fontSize: addFontSize,
+            } as CSSProperties
           }
           onClick={onAddToList}
         >
-          <Plus size={Math.round(fontSize)} strokeWidth={2.5} />
+          {/* Drawn at the control's own type size and a heavier stroke than the app's usual 2:
+              on its own beside the chips (the no-label case) the glyph *is* the control, and a
+              thin one at icon-button scale reads as a hairline rather than a mark. */}
+          <Plus size={Math.round(addFontSize)} strokeWidth={2.75} />
           {chips.length === 0 && 'Add to list'}
         </button>
       )}
@@ -101,7 +135,7 @@ export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighli
           theme={theme}
           fs={fs}
           onClick={onHighlightClick}
-          style={{ marginLeft: chips.length > 0 || onAddToList ? 4 : undefined }}
+          style={{ marginLeft: badgeGap }}
         />
       )}
     </span>

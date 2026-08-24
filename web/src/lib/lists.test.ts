@@ -34,11 +34,23 @@ function h(id: string, i: number, s: number, e: number, g: string, c = '#ffe08a'
 describe('suttaRowMeta', () => {
   const flatLists = flattenListTree(lists);
 
-  it('labels each chip with the list\'s own name and keeps its full path for the tooltip', () => {
+  it('labels each chip with the list\'s own name, its immediate parent and its full path', () => {
     const map = suttaRowMeta(['dn1'], { dn1: ['l1', 'l2'] }, {}, flatLists);
     expect(map.get('dn1')?.chips).toEqual([
-      { id: 'l1', label: 'Favorites', breadcrumb: 'Suttas to study / Favorites' },
-      { id: 'l2', label: 'Read later', breadcrumb: 'Read later' },
+      { id: 'l1', label: 'Favorites', parent: 'Suttas to study', breadcrumb: 'Suttas to study / Favorites' },
+      { id: 'l2', label: 'Read later', parent: undefined, breadcrumb: 'Read later' },
+    ]);
+  });
+
+  it('names only the immediate parent, not the whole chain, for a deeply nested list', () => {
+    const nested: ListDef[] = [
+      ...lists,
+      { id: 'g2', label: 'Retreat 2026', parentId: 'g1', kind: 'group', items: [] },
+      { id: 'l3', label: 'Week 1', parentId: 'g2', kind: 'list', items: [] },
+    ];
+    const map = suttaRowMeta(['dn1'], { dn1: ['l3'] }, {}, flattenListTree(nested));
+    expect(map.get('dn1')?.chips).toEqual([
+      { id: 'l3', label: 'Week 1', parent: 'Retreat 2026', breadcrumb: 'Suttas to study / Retreat 2026 / Week 1' },
     ]);
   });
 
