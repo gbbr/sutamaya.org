@@ -72,8 +72,8 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
   // survives the whole gesture instead of every visible row's chip/highlight lookups being
   // recomputed on each rAF tick.
   const rowMeta = useMemo(
-    () => suttaRowMeta(items.map(([id]) => id), membership, highlights, flatLists),
-    [items, membership, flatLists, highlights]
+    () => suttaRowMeta(items.map(([id]) => id), membership, highlights, flatLists, currentList?.id),
+    [items, membership, flatLists, highlights, currentList?.id]
   );
 
   // Pointer Events (not HTML5 drag-and-drop, which touch browsers largely don't fire) drive a

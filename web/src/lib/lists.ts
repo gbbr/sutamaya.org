@@ -60,12 +60,16 @@ export interface SuttaRowMeta {
 // Chips are ordered to match the user's My Lists tree (flatLists' own depth-first order), not
 // membership[id]'s raw array order (which is just insertion order — the order suttas happened to
 // get added to each list), so a row's chips stay stable/predictable as list membership changes.
-export function suttaRowMeta(ids: Iterable<string>, membership: Membership, highlights: HighlightsMap, flatLists: ListPathOption[]): Map<string, SuttaRowMeta> {
+// `excludeId` drops one more list from every row: the list being viewed. ListPane passes the list
+// it is showing, since "in this list" is exactly what the reader already knows. Nothing else
+// passes it — the reader's chips are a full account of a sutta's memberships, and a search result
+// isn't inside any one list.
+export function suttaRowMeta(ids: Iterable<string>, membership: Membership, highlights: HighlightsMap, flatLists: ListPathOption[], excludeId?: string): Map<string, SuttaRowMeta> {
   const listOrder = new Map(flatLists.map((f, i) => [f.list.id, i]));
   const map = new Map<string, SuttaRowMeta>();
   for (const id of ids) {
     const chips = (membership[id] || [])
-      .filter((c) => !AUTO_LIST_IDS.has(c))
+      .filter((c) => !AUTO_LIST_IDS.has(c) && c !== excludeId)
       .map((c) => {
         const { list, breadcrumb } = resolveListById(c, flatLists);
         return { id: c, label: list?.label ?? breadcrumb, breadcrumb };
