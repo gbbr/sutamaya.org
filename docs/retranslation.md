@@ -12,6 +12,22 @@ prefers — *mendicant* → *bhikkhu*, *immersion* → *concentration*) and **pe
 [`translation-changes.md`](translation-changes.md) is the plain-language summary of what the layer
 currently does, for a reader rather than a maintainer.
 
+## What settles a rendering
+
+The texts this app ships are the Early Buddhist Texts — the four main Nikāyas and six books of the
+Khuddaka — so a term means what those texts say it means. Where a passage defines one, that
+definition governs: SN 22.56 defines the *saṅkhāra* aggregate as the six classes of intention, and
+AN 6.63 calls intention *kamma*. The Abhidhamma and the commentaries — the Visuddhimagga above all
+— sit outside that basis, and a reading taken from them neither justifies a rendering nor rules one
+out. The gap is wide enough to change decisions: the commentarial *saṅkhārakkhandha* absorbs some
+fifty mental factors, which makes renderings that the suttas' own definition supports look too
+narrow.
+
+The DPD and the other translators inform a choice without settling it. A gloss list gives the range
+a word can carry, not which sense a passage is using, and Bodhi, Ñāṇamoli, Anālayo and Thanissaro
+disagree often enough that "the standard rendering" usually names one of them rather than a
+consensus.
+
 ## Where it sits in the pipeline
 
 ```
