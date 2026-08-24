@@ -14,7 +14,7 @@
 // and between them is still what settles a same-word collision:
 //
 //   standalone terms   mendicant-bhikkhu, immersion-concentration,
-//                      patisambhida-analytical-knowledge
+//                      patisambhida-analytical-knowledge, atapi-ardent
 //   awareness          satipatthana-establishment-of-awareness, sati-aware,
 //                      sampajanna-clear-comprehension
 //   arising / passing   samudaya-arising, vaya-passing-away, atthangama-disappearing,
@@ -76,6 +76,31 @@ export const RULES = [
     predicate: /paṭisambhid/i,
     forms: [
       ['textual analysis', 'analytical knowledge'],
+    ],
+  },
+  {
+    id: 'atapi-ardent',
+    why: 'Bhikkhu Sujato renders ātāpī as "keen"; this app prefers "ardent", which is the DPD’s own ' +
+      'gloss ("avid; ardent; zealous") and what Bodhi, Ñāṇamoli and Thanissaro all use — and what ' +
+      'Bhikkhu Sujato himself falls into twice (thag1.59, sn4.22). The literal sense is heat ' +
+      '(ā + √tap, "burning"), which "keen" loses entirely and "ardent" keeps. Open: "keen" is ' +
+      'ordinary English doing other work in 52 segments against 536 for ātāpī, and those 52 are ' +
+      'two stock idioms rather than a scattering — tibba- ("keen enthusiasm", "keen respect", "a ' +
+      'keen sense of conscience") and tikkha- ("keen faculties", "keenly develop"). The abstract ' +
+      'noun ātappa takes "ardor" (US spelling, as the corpus uses throughout) and the adverb ' +
+      'takes "ardently". The predicate misses ātāpī bound by sandhi (idhātāpī, kiccamātappaṁ, ' +
+      'tenahātappaṁ) and the stock "diligent, keen, and resolute" wherever the Pali beside it is ' +
+      'elided to …pe…, but an open rule covers those without listing them. AN 3.49 has Bhikkhu ' +
+      'Sujato using "keen to <verb>" for ātappaṁ karoti, an idiom "ardent" cannot take, and its ' +
+      'two lines are rebuilt by segment overrides instead.',
+    mode: 'deny',
+    predicate: /(^|[^a-zāīūṁṅñṭḍṇḷ])(an)?[aā]tāp|(^|[^a-zāīūṁṅñṭḍṇḷ])ātapp/i,
+    forms: [
+      // The article travels with the word it agrees with, or SN 1.23 reads "a ardent bhikkhu".
+      ['a keen', 'an ardent'],
+      ['keenness', 'ardor'],
+      ['keenly', 'ardently'],
+      ['keen', 'ardent'],
     ],
   },
   // ── Awareness ───────────────────────────────────────────────────────────────
@@ -928,5 +953,28 @@ export const RULES = [
     segment: 'snp3.12:14.4',
     from: '‘When volitional formations has faded away and ceased with no residue left behind, there is no origination of suffering’: this is the second contemplation. ',
     to: '‘When volitional formations have faded away and ceased with no residue left behind, there is no origination of suffering’: this is the second contemplation. ',
+  },
+
+  // ·· an idiom the replacement adjective cannot take ··
+  // "keen to <verb>" is idiomatic English for being eager to do something, which is how Bhikkhu
+  // Sujato renders ātappaṁ karoti in AN 3.49 — and "ardent" simply has no such construction. Only
+  // this one sutta uses it; everywhere else "keen" is predicative or attributive, where the
+  // adjective stands on its own. The gerund is the nearest thing English offers.
+  {
+    id: 'an3-49-ardent-in-preventing',
+    kind: 'segment',
+    why: 'ātappaṁ karaṇīyaṁ, "one should make an effort" — Bhikkhu Sujato\'s "you should be keen ' +
+      'to prevent" takes an infinitive that "ardent" cannot govern. Rebuilt on the gerund.',
+    segment: 'an3.49:1.3',
+    from: 'You should be ardent to prevent bad, unskillful qualities from arising. You should be ardent to give rise to skillful qualities. And you should be ardent to endure physical pain—sharp, severe, acute, unpleasant, disagreeable, life-threatening. ',
+    to: 'You should be ardent in preventing bad, unskillful qualities from arising. You should be ardent in giving rise to skillful qualities. And you should be ardent in enduring physical pain—sharp, severe, acute, unpleasant, disagreeable, life-threatening. ',
+  },
+  {
+    id: 'an3-49-ardent-in-preventing-answer',
+    kind: 'segment',
+    why: 'an3-49-ardent-in-preventing’s line as the section’s answer, ātappaṁ karoti.',
+    segment: 'an3.49:2.1',
+    from: 'It’s a bhikkhu who is ardent to prevent bad, unskillful qualities from arising. They’re ardent to give rise to skillful qualities. And they’re ardent to endure physical pain—sharp, severe, acute, unpleasant, disagreeable, life-threatening. ',
+    to: 'It’s a bhikkhu who is ardent in preventing bad, unskillful qualities from arising. They’re ardent in giving rise to skillful qualities. And they’re ardent in enduring physical pain—sharp, severe, acute, unpleasant, disagreeable, life-threatening. ',
   },
 ];

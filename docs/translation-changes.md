@@ -18,6 +18,7 @@ gloss a term in his wording while the line above it uses ours.
 | sati | mindfulness, mindful | **awareness, aware** | "Mindfulness" now carries a century of secular baggage the Pali doesn't. |
 | satipaṭṭhāna | mindfulness meditation | **the establishment of awareness** | The compound read literally (*sati* + *upaṭṭhāna*), rather than named as a practice. |
 | sampajañña | situational awareness, aware | **clear comprehension, clearly comprehending** | Bhikkhu Bodhi's rendering, and the dictionary's own first gloss. |
+| ātāpī | keen | **ardent** | The word is literally "burning" (*ā* + *√tap*), which "keen" loses. Bhikkhu Bodhi, Ñāṇamoli and Thanissaro all say "ardent", and Bhikkhu Sujato himself does twice. |
 | samudaya | origin | **arising** | So it reads as one half of a pair with *atthaṅgama*. |
 | atthaṅgama | disappearance | **disappearing** | The other half of that pair. |
 | vaya | vanishing | **passing away** | "Vanish" elsewhere means a being leaving a scene; this is impermanence. |

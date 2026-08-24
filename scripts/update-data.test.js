@@ -247,6 +247,15 @@ describe('the shipped rules, one example each', () => {
     ['patisambhida-analytical-knowledge', 'an4.172:0.3', 'sujato/sutta', 'Sāriputta’s Attainment of Textual Analysis', 'Sāriputta’s Attainment of Analytical Knowledge'],
     // Untouched, like every note: Bhikkhu Sujato's own gloss keeps his own wording.
     ['patisambhida-analytical-knowledge', 'mn43:1.3', 'sujato/notes', 'foremost in the methods of textual analysis', 'foremost in the methods of textual analysis'],
+    // One example per grammatical slot ātāpī occupies. The adjective is the satipaṭṭhāna formula's
+    // first word; the abstract noun ātappa is Bhikkhu Sujato's "keenness"; the adverb is his
+    // "keenly"; and the article travels with the adjective, or SN 1.23 reads "a ardent bhikkhu".
+    ['atapi-ardent', 'sn36.7:5.1', 'sujato/sutta', 'keen, aware, and mindful', 'ardent, clearly comprehending, and aware'],
+    ['atapi-ardent', 'an10.14:2.3', 'sujato/sutta', 'incline toward keenness, commitment', 'incline toward ardor, commitment'],
+    ['atapi-ardent', 'mn125:2.5', 'sujato/sutta', 'a mendicant who meditates diligently, keenly', 'a bhikkhu who meditates diligently, ardently'],
+    ['atapi-ardent', 'sn1.23:2.3', 'sujato/sutta', 'a keen and alert mendicant—', 'an ardent and alert bhikkhu—'],
+    // Denied: tibbagārava, "keen respect" for the Saṅgha — an intensity word, nothing of ātāpī.
+    ['atapi-ardent', 'sn1.49:7.2', 'sujato/sutta', 'with keen respect for the Saṅgha?', 'with keen respect for the Saṅgha?'],
     // Runs ahead of sati-aware, which would otherwise take the "mindfulness" of this phrase on its
     // own and leave "awareness meditation" behind.
     ['satipatthana-establishment-of-awareness', 'sn52.1:1.4', 'sujato/sutta', 'missed out on these four kinds of mindfulness meditation', 'missed out on these four establishments of awareness'],
@@ -264,7 +273,7 @@ describe('the shipped rules, one example each', () => {
     // The dn22:1.9 collision from docs/retranslation.md, through the rules as shipped: sati-aware
     // produces the very word sampajanna-clear-comprehension consumes, and locking keeps them apart.
     // Also pins the adjective slot the participle exists for — a noun phrase cannot stand here.
-    ['sampajanna-clear-comprehension', 'sn54.10:5.5', 'sujato/sutta', 'keen, aware, and mindful', 'keen, clearly comprehending, and aware'],
+    ['sampajanna-clear-comprehension', 'sn54.10:5.5', 'sujato/sutta', 'keen, aware, and mindful', 'ardent, clearly comprehending, and aware'],
     // The other half of the split: Bhikkhu Sujato's noun is sampajañña and takes the noun phrase.
     ['sampajanna-clear-comprehension', 'an2.179:1.3', 'sujato/sutta', 'Mindfulness and situational awareness.', 'Awareness and clear comprehension.'],
     // The negated slot, and the line both awareness rules negate at once (muṭṭhassatissa
@@ -276,7 +285,7 @@ describe('the shipped rules, one example each', () => {
     // is left alone, where "awareness" → "clear comprehension" would have made nonsense of it.
     ['sampajanna-clear-comprehension', 'dn22:1.11', 'sujato/notes', '“Mind” (citta) is simple awareness.', '“Mind” (citta) is simple awareness.'],
     // vippasanna beside sampajañña: both of the rule's forms, prose and verse.
-    ['vippasanna-calm', 'sn47.4:2.4', 'sujato/sutta', 'keen, aware, at one, with minds that are clear', 'keen, clearly comprehending, at one, with minds that are calm'],
+    ['vippasanna-calm', 'sn47.4:2.4', 'sujato/sutta', 'keen, aware, at one, with minds that are clear', 'ardent, clearly comprehending, at one, with minds that are calm'],
     ['vippasanna-calm', 'iti47:4.2', 'sujato/sutta', 'immersed in samādhi, joyful and clear', 'concentrated in samādhi, joyful and calm'],
     // Denied by omission: the same word for the same term, where nothing collides with it.
     ['vippasanna-calm', 'dn20:5.8', 'sujato/sutta', 'clear and unclouded.”', 'clear and unclouded.”'],
