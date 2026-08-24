@@ -37,9 +37,10 @@ export const LH_MAX = 205;
 export const LH_STEP = 5;
 
 // Body text size, in px. The floor is where the reader's 34em measure still holds a comfortable
-// line on a phone; the ceiling is where it stops fitting one at all.
+// line on a phone; the ceiling reaches far enough for a tablet at arm's length or a reader who
+// needs large text, and stops before the docked dictionary and the interleaved Pali crowd.
 export const FS_MIN = 15;
-export const FS_MAX = 24;
+export const FS_MAX = 28;
 export const FS_STEP = 1;
 
 const DEFAULTS: ReaderPrefs = { theme: 'system', fs: 18, lh: 175, face: 'georgia', allPali: false, showNotes: false };
