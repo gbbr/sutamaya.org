@@ -27,9 +27,9 @@ upstream) and writes `data/sujato.post/` (generated).
    user named an English word ("replace all occurrences of aware"), work out which Pali term it
    renders — a rule keyed on the English alone is the mistake this system exists to prevent.
 
-   Then **check the proposed rendering against the DPD and against other translators, and report
-   both** before drafting anything. The user proposes the English word, but he wants the
-   lexicography in front of him when he confirms it:
+   Then **check the proposed rendering against the DPD, against the term's own defining passages,
+   and against other translators, and report all three** before drafting anything. The user
+   proposes the English word, but he wants the lexicography in front of him when he confirms it:
 
    - **DPD** — `data/pli2en_dpd.json`, already in the repo, is a `[{entry, definition}]` array
      keyed by Pali word (inflected forms included). Look up the base term and quote its gloss:
@@ -37,6 +37,14 @@ upstream) and writes `data/sujato.post/` (generated).
      understanding (of)", which is why "analytical knowledge" won over "analytical understanding".
      Compounds have their own entries, so a term that only ever appears bound (`anekadhātu-`
      `paṭisambhidā`) is still findable.
+   - **The suttas, not the commentaries** — this app ships the Early Buddhist Texts, so a term
+     means what the Nikāyas themselves say it means. Quote the passage that defines it. The
+     Abhidhamma and the Visuddhimagga are not authorities here, and an objection sourced from
+     them is not grounds for rejecting a rendering the suttas support. *saṅkhārā* is the case in
+     point: SN 22.56 defines the aggregate as the six classes of intention and AN 6.63 calls
+     intention *kamma*, which is what makes a rendering along the lines of "kamma formations"
+     exact rather than narrow — it looks too narrow only against the commentarial
+     *saṅkhārakkhandha* and its fifty-odd mental factors.
    - **Other translators** — say what Bodhi, Anālayo, Thanissaro and Ñāṇamoli use for the term,
      and note where they disagree with each other or with Bhikkhu Sujato. These aren't in the repo, so
      they come from knowledge rather than a lookup; say so when a rendering is one you're unsure
