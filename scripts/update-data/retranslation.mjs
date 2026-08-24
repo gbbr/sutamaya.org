@@ -1182,22 +1182,6 @@ export const RULES = [
     to: 'When that talk was finished, I stilled, settled, unified, and collected my mind in samādhi internally in the same meditation subject as a basis of composure as before, in which I regularly meditate.” ',
   },
 
-  // ·· a false positive sharing its line with a true one ··
-  // Denying a segment takes the whole line out of the rule's reach, which is right where every
-  // match on it is a false positive and wrong where the line carries both. MN 128's list of the
-  // mind's corruptions is the only place that happens here.
-  {
-    id: 'mn128-excessive-contemplation-of-forms',
-    kind: 'segment',
-    why: 'Bhikkhu Sujato\'s "excessive immersion on forms" is atinijjhāyitattaṁ rūpānaṁ, excessive ' +
-      'contemplation — no samādhi, and denied wherever it stands alone (mn128:26.8, 27.11, 30.11). ' +
-      'This line also carries the real term in "my immersion fell away" (samādhi cavi), so the ' +
-      'rule has to run and the false positive is put back afterwards.',
-    segment: 'mn128:26.6',
-    from: '‘Excessive composure on forms arose in me, and because of that my composure fell away. ',
-    to: '‘Excessive immersion on forms arose in me, and because of that my composure fell away. ',
-  },
-
   // ·· vedanā's participle standing beside its noun ··
   // Bhikkhu Sujato writes both slots as "feeling", and DN 15's and MN 45's five lines are the only
   // places the participle and the noun share one — vedanaṁ vedayamāno elsewhere ("feeling the end
