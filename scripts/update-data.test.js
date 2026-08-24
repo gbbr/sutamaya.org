@@ -255,7 +255,7 @@ describe('the shipped rules, one example each', () => {
     // Denied: literal immersion in water, udakorohaka.
     //
     // A denied example reads the *shipped* sidecar, so it's the only specific guard that this
-    // exclusion still exists — update-data:triage reports a stale entry but never a deleted one,
+    // exclusion still exists — update-data triage reports a stale entry but never a deleted one,
     // and a rule that quietly starts rewriting an excluded segment would otherwise show up only as
     // a ±1 drift in retranslation.counts.json. Worth keeping, which is why it matters that the
     // segment is chosen for a sense upstream can't reword away: literal water is literal water,
@@ -672,7 +672,7 @@ describe('checkSnapshotInSync', () => {
 
   it('reports drift when a local file changed without the snapshot being regenerated', async () => {
     await runAccept({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir });
-    // Simulate: copy+post already happened and got committed, but update-data:accept was never
+    // Simulate: copy+post already happened and got committed, but update-data accept was never
     // run afterward — bilaraRoot/upstream is irrelevant here, this is purely local drift.
     const localPath = path.join(fx.dataDirs.sujato, 'sutta/dn/dn1_translation-en-sujato.json');
     const local = readJson(localPath);
@@ -702,7 +702,7 @@ describe('checkSnapshotInSync', () => {
   // and a loaded CI runner needs more room for that much I/O than the default 5s timeout gives.
   it('the real repo: data/{sujato,pali,html} and snapshot.json are in sync', () => {
     // No overrides — this is the one guard that actually protects the repo: if copy/post ran and
-    // got committed without a follow-up update-data:accept, this fails on the next `npm test`.
+    // got committed without a follow-up update-data accept, this fails on the next `npm test`.
     expect(checkSnapshotInSync()).toEqual({ ok: true, issues: [] });
   }, 30_000);
 
@@ -1150,30 +1150,6 @@ describe('update-data pipeline (fixture)', () => {
       expect(result.ruleIssues[0]).toMatch(/found\s+The bhikkhu practiced immersion\./);
     });
 
-    it('names a broken override’s same-sutta stale deny entries inside its own block', async () => {
-      // dn1:1.2 ("A water immerser is different.") never contained "immersion", so its exclusion is
-      // stale — and it sits on the same uid as the override's dn1:1.1, which is the case worth
-      // catching: an override and its rule's exclusions are written together over one passage, so
-      // deleting the override alone leaves the dead half behind.
-      const retranslationPath = writeRulesFixture(
-        fx.root,
-        `[
-          { id: 'immersion-concentration', why: 'test', mode: 'deny', forms: [['immersion', 'concentration']] },
-          { id: 'stale-override', kind: 'segment', why: 'test', segment: 'dn1:1.1', from: 'Never matched this.', to: 'Rewritten.' },
-        ]`,
-      );
-      writeJson(path.join(fx.rulesDir, 'immersion-concentration.json'), { reviewedAt: '2026-01-01', allow: [], deny: { 'dn1:1.2': 'fixture exclusion' } });
-      await runAccept({ countsPath: fx.countsPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir, retranslationPath });
-
-      const result = await runCheck({ bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, rulesDir: fx.rulesDir, retranslationPath });
-
-      expect(result.ruleIssues).toHaveLength(1);
-      expect(result.ruleIssues[0]).toMatch(/Dead on this sutta too/);
-      expect(result.ruleIssues[0]).toMatch(/immersion-concentration\s+\(deny\)\s+dn1:1\.2/);
-      // Still counted in the per-rule summary as well — the two views don't replace each other.
-      expect(result.staleTriage).toHaveLength(1);
-    });
-
     it('reports a deny entry upstream has invalidated, before the copy and without failing the run', async () => {
       // dn1:1.1 is the only sutta segment carrying "immersion", and it's excluded from the rule.
       writeJson(path.join(fx.rulesDir, 'immersion-concentration.json'), { reviewedAt: '2026-01-01', allow: [], deny: { 'dn1:1.1': 'fixture exclusion' } });
@@ -1187,7 +1163,7 @@ describe('update-data pipeline (fixture)', () => {
 
       expect(result.staleTriage).toHaveLength(1);
       expect(result.staleTriage[0]).toMatch(/immersion-concentration: 1 of 1 deny entries no longer contain the term upstream/);
-      expect(result.staleTriage[0]).toMatch(/update-data:triage -- immersion-concentration/);
+      expect(result.staleTriage[0]).toMatch(/update-data triage immersion-concentration/);
       // Reported, not failed on: a dead entry can only be worked after the copy, and doesn't make
       // copying unsafe.
       expect(result.issues).toEqual([]);

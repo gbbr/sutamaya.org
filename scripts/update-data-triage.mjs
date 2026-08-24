@@ -4,12 +4,13 @@
 //
 // No-args: one line per term rule (stale/untriaged, or stale-denial counts, per its mode). One rule
 // id: every queued case in full, with English, aligned Pali, and role. Read-only, with one opt-in
-// exception: `-- <rule-id> --prune` deletes that rule's stale entries from its sidecar (see
+// exception: `triage <rule-id> prune` deletes that rule's stale entries from its sidecar (see
 // pruneStale). Everything else is still a hand edit — this command tells you what to add — and
-// npm run update-data:accept is what re-baselines counts.
+// npm run update-data accept is what re-baselines counts.
 import fs from 'node:fs';
 import path from 'node:path';
 import { walkJsonFiles, red, green, yellow, bold, blue, dim } from './lib/dataSync.js';
+import { PAD, n, wrap } from './lib/ui.js';
 import { SUJATO_DIR, RULES_DIR, RETRANSLATION_PATH, loadRules, isTermRule, scopeOf, loadSidecar, saveSidecar, formsMatch, paliTextFor, roleOf } from './lib/retranslation.js';
 
 // Every segment id in `treeName`, with its current English text — read fresh from sujatoDir, not
@@ -70,7 +71,7 @@ export function triageRule(rule, sidecar, segmentsFor) {
   // with no persisted record of which segments were already reviewed under an open rule (only the
   // exclusions are tracked), "newly covered" can't be computed per-segment the way a closed rule's
   // `untriaged` can. Aggregate drift across refreshes is what retranslation.counts.json (written by
-  // update-data:accept) tracks instead.
+  // update-data accept) tracks instead.
   const staleDenials = Object.keys(sidecar.deny).filter((id) => !matchedIds.has(id)).map(resolve);
   return { mode: 'deny', staleDenials, matchedCount: matched.length };
 }
@@ -81,7 +82,7 @@ export function triageRule(rule, sidecar, segmentsFor) {
 // An upstream reword can kill dozens at once (one refresh left 74 of 88 dead), which is more than
 // anyone should delete by hand.
 //
-// Explicit --prune only, never a side effect of looking: triage is otherwise read-only, and the
+// Explicit `prune` only, never a side effect of looking: triage is otherwise read-only, and the
 // untriaged queue — the half that does need judgement — is deliberately left untouched. The result
 // is an ordinary git diff on the sidecar, reviewed like any other change.
 export function pruneStale(rule, sidecar, t, rulesDir = RULES_DIR) {
@@ -109,24 +110,22 @@ function printSegmentList(entries, { limit } = {}) {
   for (const raw of shown) {
     const seg = describeSegment(raw);
     if (seg.missing) {
-      console.log(`  ${yellow(seg.segmentId)} ${dim('— segment no longer exists upstream')}`);
+      console.log(`${PAD}${PAD}${yellow(seg.segmentId)} ${dim('— segment no longer exists upstream')}`);
       continue;
     }
-    console.log(`  ${yellow(seg.segmentId)} ${dim(`[${seg.role}]`)} ${dim(seg.relPath)}`);
-    if (seg.pali) console.log(`    ${dim('PLI:')} ${seg.pali}`);
-    console.log(`    ${dim('EN :')} ${seg.value.trim()}`);
+    console.log(`${PAD}${PAD}${yellow(seg.segmentId)} ${dim(`[${seg.role}]`)} ${dim(seg.relPath)}`);
+    if (seg.pali) console.log(`${PAD}${PAD}${PAD}${dim('PLI:')} ${seg.pali}`);
+    console.log(`${PAD}${PAD}${PAD}${dim('EN :')} ${seg.value.trim()}`);
   }
-  if (limit && entries.length > limit) console.log(dim(`  … (${entries.length - limit} more)`));
+  if (limit && entries.length > limit) console.log(dim(`${PAD}${PAD}… (${entries.length - limit} more)`));
 }
 
-async function main() {
-  const args = process.argv.slice(2);
-  const prune = args.includes('--prune');
-  const ruleId = args.find((arg) => !arg.startsWith('--'));
+// The whole CLI for the `triage` subcommand of update-data.mjs, which owns the banner around it.
+export async function runTriage({ ruleId, prune } = {}) {
   const rules = (await loadRules(RETRANSLATION_PATH)).filter(isTermRule);
 
   if (prune && !ruleId) {
-    console.error(red('--prune needs a rule id: update-data:triage -- <rule-id> --prune'));
+    console.error(red('prune needs a rule id: update-data triage <rule-id> prune'));
     return 1;
   }
 
@@ -138,7 +137,9 @@ async function main() {
   };
 
   if (!ruleId) {
-    console.log(bold('update-data:triage — every term rule\n'));
+    // Built before printing so every column can be padded to the widest entry — twenty-odd rules
+    // scanned for the one that isn't `current` is the actual use, and ragged columns defeat it.
+    const rows = [];
     let anyQueue = false;
     let anyStale = false;
     for (const rule of rules) {
@@ -148,97 +149,103 @@ async function main() {
         const queue = t.stale.length + t.untriaged.length;
         if (queue > 0) anyQueue = true;
         if (t.stale.length > 0) anyStale = true;
-        const label = queue > 0 ? yellow(`${t.stale.length}/${sidecar.allow.length} stale, ${t.untriaged.length} untriaged`) : green('current');
-        console.log(`${blue(rule.id)} ${dim(`(closed, ${sidecar.allow.length} allowed)`)}  ${label}`);
+        rows.push({
+          id: rule.id,
+          shape: `closed · ${n(sidecar.allow.length)} allowed`,
+          label: queue > 0 ? yellow(`${t.stale.length}/${sidecar.allow.length} stale, ${t.untriaged.length} untriaged`) : green('current'),
+        });
       } else {
-        const label = t.staleDenials.length > 0 ? yellow(`${t.staleDenials.length}/${Object.keys(sidecar.deny).length} stale denial(s)`) : green('current');
+        const denied = Object.keys(sidecar.deny).length;
         if (t.staleDenials.length > 0) anyQueue = anyStale = true;
-        console.log(`${blue(rule.id)} ${dim(`(open, ${Object.keys(sidecar.deny).length} denied, ${t.matchedCount} active)`)}  ${label}`);
+        rows.push({
+          id: rule.id,
+          shape: `open · ${n(denied)} denied · ${n(t.matchedCount)} active`,
+          label: t.staleDenials.length > 0 ? yellow(`${t.staleDenials.length}/${denied} stale`) : green('current'),
+        });
       }
     }
-    console.log();
-    console.log(
-      anyQueue
-        ? yellow(`Some rules have a non-empty queue — run ${blue('update-data:triage -- <rule-id>')} to work through one.`)
-        : green('All rules current.'),
-    );
+
+    const idWidth = Math.max(...rows.map((r) => r.id.length));
+    const shapeWidth = Math.max(...rows.map((r) => r.shape.length));
+    for (const r of rows) console.log(`${PAD}${blue(r.id.padEnd(idWidth))}  ${dim(r.shape.padEnd(shapeWidth))}  ${r.label}`);
+
+    if (!anyQueue) {
+      console.log(`\n${PAD}${green('All rules current.')}\n`);
+      return 0;
+    }
+    console.log(`\n${PAD}${yellow('Some rules have a non-empty queue.')}`);
+    console.log(`${PAD}${dim('Work one with  ')}${green('npm run update-data triage <rule-id>')}`);
     // The stale half of any queue is mechanical, so say so here rather than only inside a rule's
     // own listing — it's usually the bulk of the work after an upstream reword.
-    if (anyStale) {
-      console.log(dim(`Stale entries need no decision — clear a rule's with `) + blue(`update-data:triage -- <rule-id> --prune`) + dim('.'));
-    }
-    return anyQueue ? 1 : 0;
+    if (anyStale) console.log(`${PAD}${dim('Stale entries need no decision:  ')}${green('npm run update-data triage <rule-id> prune')}`);
+    console.log();
+    return 1;
   }
 
   const rule = rules.find((r) => r.id === ruleId);
   if (!rule) {
-    console.error(red(`No such term rule: ${ruleId}`));
+    console.error(`${PAD}${red(`No such term rule: ${ruleId}`)}\n`);
     return 1;
   }
   const sidecar = loadSidecar(rule.id, RULES_DIR);
   const t = triageRule(rule, sidecar, segmentsFor);
 
-  console.log(bold(`${rule.id}`) + dim(`  (${t.mode === 'allow' ? 'closed' : 'open'})`));
+  console.log(`${PAD}${bold(rule.id)}${dim(`  ${t.mode === 'allow' ? 'closed' : 'open'}`)}`);
 
   if (prune) {
     const kind = t.mode === 'allow' ? 'allow' : 'deny';
     const listed = t.mode === 'allow' ? sidecar.allow.length : Object.keys(sidecar.deny).length;
     const { removed } = pruneStale(rule, sidecar, t, RULES_DIR);
     if (!removed.length) {
-      console.log(green(`\nNothing to prune — no stale ${kind} entries.`));
+      console.log(`\n${PAD}${green(`Nothing to prune — no stale ${kind} entries.`)}\n`);
       return 0;
     }
-    console.log(bold(yellow(`\nDropped ${removed.length} stale ${kind} entr${removed.length === 1 ? 'y' : 'ies'}, ${listed - removed.length} remain:`)));
-    console.log(dim(`  ${removed.join(', ')}`));
-    console.log(dim(`\nReview it with ${blue(`git diff scripts/update-data/rules/${rule.id}.json`)}.`));
+    console.log(`\n${PAD}${bold(yellow(`Dropped ${removed.length} stale ${kind} entr${removed.length === 1 ? 'y' : 'ies'} — ${listed - removed.length} remain`))}`);
+    console.log(`${PAD}${PAD}${dim(removed.join(', '))}`);
+    console.log(`\n${PAD}${dim('Review it with  ')}${green(`git diff scripts/update-data/rules/${rule.id}.json`)}\n`);
     return 0;
   }
 
-  console.log(dim(rule.why));
+  for (const line of wrap(rule.why)) console.log(`${PAD}${dim(line)}`);
   console.log();
 
   if (t.mode === 'allow') {
     if (t.stale.length) {
-      console.log(bold(red(`Stale (${t.stale.length}/${sidecar.allow.length}) — allow-listed, no longer contains any form:`)));
+      console.log(`${PAD}${bold(red(`Stale (${t.stale.length}/${sidecar.allow.length}) — allow-listed, no longer contains any form:`))}`);
       printSegmentList(t.stale);
-      console.log(dim(`  No decision to make — drop all ${t.stale.length} with `) + blue(`update-data:triage -- ${rule.id} --prune`));
+      console.log(`${PAD}${dim(`No decision to make — drop all ${t.stale.length} with  `)}${green(`npm run update-data triage ${rule.id} prune`)}`);
       console.log();
     }
     if (t.untriaged.length) {
       const withPredicate = rule.predicate ? t.untriaged.filter((s) => rule.predicate.test(paliTextFor(s.segmentId, s.relPath) ?? '')) : t.untriaged;
       const withoutPredicate = rule.predicate ? t.untriaged.filter((s) => !withPredicate.includes(s)) : [];
-      console.log(bold(yellow(`Untriaged (${t.untriaged.length}) — contains a form, on neither list:`)));
+      console.log(`${PAD}${bold(yellow(`Untriaged (${t.untriaged.length}) — contains a form, on neither list:`))}`);
       if (rule.predicate) {
-        console.log(dim(`  predicate matches (${withPredicate.length}) — likely allow:`));
+        console.log(`${PAD}${dim(`predicate matches (${withPredicate.length}) — likely allow:`)}`);
         printSegmentList(withPredicate, { limit: 200 });
-        console.log(dim(`  predicate doesn't match (${withoutPredicate.length}) — check before deciding:`));
+        console.log(`${PAD}${dim(`predicate doesn't match (${withoutPredicate.length}) — check before deciding:`)}`);
         printSegmentList(withoutPredicate, { limit: 200 });
       } else {
         printSegmentList(t.untriaged, { limit: 200 });
       }
       console.log();
     }
-    if (!t.stale.length && !t.untriaged.length) console.log(green('Queue empty — rule is current.'));
-    console.log(dim(`\nEdit scripts/update-data/rules/${rule.id}.json directly: add each segment id to "allow" or to "deny" with a reason.`));
+    if (!t.stale.length && !t.untriaged.length) console.log(`${PAD}${green('Queue empty — rule is current.')}`);
+    console.log(`\n${PAD}${dim(`Edit scripts/update-data/rules/${rule.id}.json directly: add each segment id to "allow" or to "deny" with a reason.`)}\n`);
   } else {
     if (t.staleDenials.length) {
-      console.log(bold(red(`Stale denials (${t.staleDenials.length}/${Object.keys(sidecar.deny).length}) — denied, no longer contains any form:`)));
+      console.log(`${PAD}${bold(red(`Stale denials (${t.staleDenials.length}/${Object.keys(sidecar.deny).length}) — denied, no longer contains any form:`))}`);
       printSegmentList(t.staleDenials);
-      console.log(dim(`  No decision to make — drop all ${t.staleDenials.length} with `) + blue(`update-data:triage -- ${rule.id} --prune`));
+      console.log(`${PAD}${dim(`No decision to make — drop all ${t.staleDenials.length} with  `)}${green(`npm run update-data triage ${rule.id} prune`)}`);
       console.log();
     } else {
-      console.log(green('No stale denials.'));
+      console.log(`${PAD}${green('No stale denials.')}`);
     }
     console.log(
-      dim(`\n${t.matchedCount} segment(s) currently match this rule. Drift in that number across refreshes is tracked in scripts/update-data/retranslation.counts.json.`),
+      `\n${PAD}${dim(`${n(t.matchedCount)} segment(s) currently match this rule — drift in that number is tracked in retranslation.counts.json.`)}\n`,
     );
   }
 
   return t.mode === 'allow' ? (t.stale.length || t.untriaged.length ? 1 : 0) : t.staleDenials.length ? 1 : 0;
 }
 
-// Guarded like the other update-data-*.mjs entry points, so importing triageRule from here (which
-// update-data-check.mjs does) doesn't run the CLI and exit the process.
-if (import.meta.url === `file://${process.argv[1]}`) {
-  process.exit(await main());
-}

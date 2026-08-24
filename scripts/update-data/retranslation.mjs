@@ -2,7 +2,7 @@
 // implements. Order is significant: a rule earlier in this array wins any same-word collision
 // with a later one (see "The pass" in docs/retranslation.md). Each term rule's segment list, if any,
 // lives in its own sidecar at scripts/update-data/rules/<id>.json — never inline here, since that
-// list is machine-written by `update-data:triage` (see loadSidecar/saveSidecar in
+// list is machine-written by `update-data triage` (see loadSidecar/saveSidecar in
 // scripts/lib/retranslation.js).
 //
 // `forms` pairs are matched on English word boundaries, case-preserved; every inflection is listed

@@ -2,7 +2,7 @@
 
 Bhikkhu Sujato's English is the base text; this app ships an edited version of it. The edits are
 *declared*, not applied by hand — `scripts/update-data/retranslation.mjs` holds every rule, and
-`update-data:post` applies them on every refresh. That's what makes an editorial decision survive
+`update-data post` applies them on every refresh. That's what makes an editorial decision survive
 the next upstream sync instead of being silently overwritten by it.
 
 Two kinds of edit are in scope: **terminology** (render a Pali term consistently the way this app
@@ -102,7 +102,7 @@ meditation" where the translation above it says "the establishment of awareness"
 ### The Pali predicate
 
 Something still has to *propose* the list. That's a regex over the aligned Pali root text — the
-translation is segment-aligned with `data/pali/`, an invariant `update-data:check` already
+translation is segment-aligned with `data/pali/`, an invariant `update-data plan` already
 enforces (`INTEGRITY_GROUPS` in `../scripts/lib/dataSync.js`), so "segments whose Pali contains
 *sampajañña*" is a good first approximation of "segments where 'aware' means *sampajañña*".
 
@@ -292,11 +292,15 @@ routine maintenance, and the only signal is the one we build.
 | Rule matched at least once | term rules | **Hard fail.** The term is gone; the rule is dead. |
 | **Triage queue is empty** | term rules | **Review.** See below. |
 
-`update-data:check` hard-fails on the first two **before** anything is copied, by resolving each
-rule against the upstream files. For a broken segment rule it prints three-way — the rule's `from`,
-upstream's text now, and the rule's `to` — enough to decide without opening anything. The third is
-`update-data:triage`'s, which needs the new text in place, so it runs at the end of `npm run
-update-data` instead — a non-empty queue is a prompt to review, and doesn't fail the run.
+`update-data plan` reports the first two **before** anything is copied, by resolving each rule
+against the upstream files. A broken segment rule prints as a derivation — upstream's raw line, what
+the term rules did to it (`↪`), then `expected` against `found` with the diverging words coloured,
+and `Would write:` for the rule's `to` — enough to decide without opening anything. When `found`
+already reads correctly, the override is obsolete rather than drifted.
+
+The third belongs to `update-data triage`, which needs the new text in place and so only answers
+fully after `apply`. `plan` previews its stale half against the upstream checkout, since a dead
+allow/deny entry is worth knowing about before the copy; it never fails the run either way.
 
 The triage queue is the coverage check on a rule's list:
 
@@ -321,22 +325,22 @@ part of the corpus, the rule still fires so zero-match stays silent, but its foo
 Two commands write that file, from one implementation (`update-data-counts.mjs`), because the two
 occasions to write it are not the same act:
 
-- **`update-data:counts`** — after editing a rule. Records the new footprint and nothing else. A
+- **`update-data counts`** — after editing a rule. Records the new footprint and nothing else. A
   rule added without it has no anchor at all.
-- **`update-data:accept`** — after an upstream refresh, where re-recording counts is part of the
+- **`update-data accept`** — after an upstream refresh, where re-recording counts is part of the
   wider "this is now the new normal" that also rebaselines `snapshot.json` and
   `manifest.snapshotCommit`.
 
 Keeping them separate is what stops a rule edit from quietly re-accepting the current `data/` tree
-as the upstream baseline, which would blind the *next* `update-data:check` to a real upstream change
+as the upstream baseline, which would blind the *next* `update-data plan` to a real upstream change
 (see `update-data-accept.mjs`'s own warning about running it without review).
 
-## Working the queue: `update-data:triage`
+## Working the queue: `update-data triage`
 
 ```
-npm run update-data:triage                              # every rule: stale + untriaged counts
-npm run update-data:triage -- sampajanna-clear-comprehension  # one rule, every case in full
-npm run update-data:triage -- immersion-concentration --prune # drop that rule's stale entries
+npm run update-data triage                              # every rule: stale + untriaged counts
+npm run update-data triage sampajanna-clear-comprehension  # one rule, every case in full
+npm run update-data triage immersion-concentration prune    # drop that rule's stale entries
 ```
 
 For one rule it lists every queued segment with its English, its aligned Pali, and its role (prose
@@ -350,13 +354,17 @@ English → add to `deny` with a reason; upstream reworded a line you'd overridd
 segment rule if upstream's wording is now fine, otherwise re-derive `to` and re-anchor `from`. An
 empty queue means the rule is current.
 
-**`--prune` clears the stale half.** A stale entry names a segment that no longer contains any of
+**`prune` clears the stale half.** A stale entry names a segment that no longer contains any of
 the rule's forms, so allowing or denying it does nothing either way — there is no judgment left to
 make, only a dead line to delete. An upstream reword kills these in bulk (one refresh left 74 of
 `immersion-concentration`'s 88 denials dead), which is more than anyone should delete by hand.
-`--prune` removes exactly those, prints the ids, and leaves `untriaged` — the half that does need
-judgment — untouched. It is the one thing `update-data:triage` writes, and only when asked: the
+`prune` removes exactly those, prints the ids, and leaves `untriaged` — the half that does need
+judgment — untouched. It is the one thing `update-data triage` writes, and only when asked: the
 result is an ordinary `git diff` on the sidecar, reviewed like any other change.
+
+It's a positional word rather than a `--prune` flag on purpose: `npm run` drops anything starting
+with `--` unless a bare `--` precedes it, so a flag would be a documented command that silently
+did nothing.
 
 **Authoring a new rule is the same command.** A closed rule with an empty `allow` list has its
 entire footprint untriaged, so the first triage run *is* the enumeration. There's no separate mode.
@@ -365,12 +373,13 @@ better written open, with only the exceptions listed.
 
 ## Auditing a run: `data/diff/`
 
-`npm run update-data:post` always writes it — there's no separate flag or command, so the diffs
+`npm run update-data post` always writes it — there's no separate flag or command, so the diffs
 can't be out of date with `data/sujato.post/`. The directory is wiped and fully rewritten each
 run:
 
 - `00-summary.txt` — every rule with its match count and how many files it touched, and any rule
   that matched zero.
+- `00-all.diff` — every rule's effect at once: `data/sujato/` against `data/sujato.post/`.
 - `<id>.diff` — one file per rule, every change it made.
 
 Per change: the source file, the segment id, the **Pali** of that segment, then the before/after
@@ -378,8 +387,18 @@ pair. Only this rule's own spans differ between the two lines — every other ru
 already-final text on both sides — so the change reads at word level even though it's stored as a
 line pair. No cap on entries; auditing all 1,200-odd rewrites of a term is the actual use case.
 
+**The two kinds of file answer different questions, and a rule file's `-` side is not upstream.**
+Rules run in sequence over the same text, and each `<id>.diff` records that rule's own step, so its
+`-` side is whatever earlier rules had already made of the line. `sn36.7` reads "A mendicant should
+await their death mindful and aware" upstream and "A bhikkhu … aware and clearly comprehending"
+shipped, but in `sampajanna-clear-comprehension.diff` the `-` side is "aware and aware" — an
+intermediate that never ships, because `sati-aware` had already rewritten *mindful*. That's the
+honest way to attribute a change to a rule, and it's unreadable as a before/after. `00-all.diff` is
+the before/after: what this app ships differently from upstream, and the file to read after a
+refresh.
+
 **`data/diff/` is checked in.** That's what makes an upstream refresh legible: after
-`update-data:copy`, `git diff data/diff/` is the list of this app's own rewrites that upstream has
+`update-data apply`, `git diff data/diff/` is the list of this app's own rewrites that upstream has
 moved under, rule by rule, next to `git diff data/sujato/` for what upstream itself changed.
 Which is also why the files carry no colour and no timestamps, and sort their source paths — a run
 over unchanged input has to produce an unchanged tree, or the signal drowns.
@@ -389,7 +408,8 @@ of from the bytes:
 
 ```
 riff < data/diff/sati-aware.diff      # inline highlight of the changed span
-git diff data/diff/                   # what moved since the last commit
+git diff data/diff/00-all.diff        # what the shipped text gained or lost
+git diff data/diff/                   # the same, attributed rule by rule
 ```
 
 `riff` adds the highlight and leaves the layout alone, so the file still reads as plain text under

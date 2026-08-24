@@ -33,7 +33,7 @@ const DIFF_DIR = path.join(ROOT, 'data', 'diff');
 // every anchor holds — a dead term rule or a segment override whose `from` no longer matches
 // verbatim is a hard fail, and a hard-failing run must not silently produce a degraded build (see
 // docs/retranslation.md's anchors table).
-// `diff` is off by default so programmatic callers (the tests, update-data:counts) don't write
+// `diff` is off by default so programmatic callers (the tests, update-data counts) don't write
 // over the checked-in data/diff/; the CLI below always turns it on.
 export async function runPost({
   sujatoDir = SUJATO_DIR,
@@ -59,6 +59,14 @@ export async function runPost({
 
   const ruleCounts = new Map(); // ruleId -> total match count across the whole run
   const diffEntries = []; // { ruleId, relPath, segmentId, chunks } — only populated when diff
+  // `${relPath}\0${segmentId}` -> the pristine upstream value, recorded the first time anything
+  // rewrites that segment. `objects` is mutated in place as rules apply, so by the time the diff
+  // writer runs the upstream side is otherwise gone — and it's the side 00-all.diff is about.
+  const originals = new Map();
+  const recordOriginal = (relPath, segmentId, value) => {
+    const key = `${relPath}\0${segmentId}`;
+    if (!originals.has(key)) originals.set(key, value);
+  };
   let replacements = 0;
   const changedFiles = new Set();
 
@@ -68,6 +76,7 @@ export async function runPost({
       if (typeof value !== 'string') continue;
       const { result, counts, chunks } = applyTermRules(value, { treeName, segmentId, rules: termRules, sidecars });
       if (result === value) continue;
+      if (diff) recordOriginal(relPath, segmentId, value);
       obj[segmentId] = result;
       changedFiles.add(relPath);
       for (const [ruleId, count] of counts) {
@@ -102,6 +111,7 @@ export async function runPost({
           brokenOverrides.push({ id: rule.id, segment, reason: "rule's from no longer matches verbatim", from: rule.from, current });
           continue;
         }
+        if (diff) recordOriginal(relPath, segment, current);
         obj[segment] = result;
         changedFiles.add(relPath);
         ruleCounts.set(rule.id, (ruleCounts.get(rule.id) ?? 0) + 1);
@@ -122,7 +132,18 @@ export async function runPost({
     }
   }
 
-  if (diff) writeDiffFiles({ diffDir, diffEntries, rules: [...termRules, ...segmentRules], ruleCounts, deadRules, paliDir: path.join(path.dirname(sujatoDir), 'pali') });
+  if (diff) {
+    writeDiffFiles({
+      diffDir,
+      diffEntries,
+      rules: [...termRules, ...segmentRules],
+      ruleCounts,
+      deadRules,
+      originals,
+      objects,
+      paliDir: path.join(path.dirname(sujatoDir), 'pali'),
+    });
+  }
 
   return {
     ok,
@@ -135,7 +156,8 @@ export async function runPost({
 }
 
 // --- Diff writer -----------------------------------------------------------------------------
-// Writes data/diff/{00-summary.txt,<id>.diff}, wiped and fully rewritten on every `post` run.
+// Writes data/diff/{00-summary.txt,00-all.diff,<id>.diff}, wiped and fully rewritten on every
+// `post` run.
 // These files are **checked in**: `git diff data/diff/` after an `update-data` refresh is what
 // shows which of this app's own rewrites upstream has moved under, rule by rule. That makes
 // byte-stability the requirement — no colour, no timestamps, source files in sorted order — so a
@@ -160,14 +182,48 @@ function renderChunks(chunks, ruleId, variant) {
   return chunks.map((c) => (c.locked && c.ruleId === ruleId ? (variant === 'before' ? c.original : c.text) : c.text)).join('');
 }
 
-function writeDiffFiles({ diffDir, diffEntries, rules, ruleCounts, deadRules, paliDir }) {
+// One hunk per changed segment: the segment id goes in the header's section field and the Pali is
+// the hunk's single context line, both plain unified-diff grammar so every viewer parses them. The
+// line numbers are nominal — nothing ever applies these patches.
+function pushHunk(lines, { relPath, segmentId, before, after, paliDir }) {
+  const pali = relPath.startsWith('sujato/sutta/') ? paliTextFor(segmentId, relPath, paliDir) : null;
+  lines.push(`@@ -1${pali ? ',2' : ''} +1${pali ? ',2' : ''} @@ ${segmentId}`);
+  if (pali) lines.push(` PLI: ${oneLine(pali)}`);
+  lines.push(`-${oneLine(before)}`, `+${oneLine(after)}`);
+}
+
+// data/diff/00-all.diff — every rule's effect at once, upstream data/sujato/ against shipped
+// data/sujato.post/. The per-rule files each show one step of a sequence, so their `-` side is
+// whatever earlier rules had already made of the line, which is the honest way to attribute a
+// change to a rule but reads as nonsense out of context ("aware and aware", mid-way between
+// upstream's "mindful and aware" and the shipped "aware and clearly comprehending"). This file
+// answers the other question — what does this app ship differently from upstream — and is the one
+// to read after a refresh.
+function writeCombinedDiff({ diffDir, originals, objects, paliDir }) {
+  const byFile = new Map();
+  for (const [key, before] of originals) {
+    const [relPath, segmentId] = key.split('\0');
+    if (!byFile.has(relPath)) byFile.set(relPath, []);
+    byFile.get(relPath).push({ segmentId, before, after: objects.get(relPath)[segmentId] });
+  }
+
+  const total = originals.size;
+  const lines = [`All rules — data/sujato/ → data/sujato.post/ — ${total} change(s), ${byFile.size} file(s)`, ''];
+  for (const relPath of [...byFile.keys()].sort()) {
+    lines.push(`--- ${relPath}`, `+++ ${relPath}`);
+    for (const { segmentId, before, after } of byFile.get(relPath)) pushHunk(lines, { relPath, segmentId, before, after, paliDir });
+  }
+  fs.writeFileSync(path.join(diffDir, '00-all.diff'), lines.join('\n') + '\n');
+}
+
+function writeDiffFiles({ diffDir, diffEntries, rules, ruleCounts, deadRules, originals, objects, paliDir }) {
   fs.rmSync(diffDir, { recursive: true, force: true });
   fs.mkdirSync(diffDir, { recursive: true });
 
   const byRule = new Map(rules.map((r) => [r.id, []]));
   for (const entry of diffEntries) byRule.get(entry.ruleId)?.push(entry);
 
-  const summaryLines = ['update-data:post summary', ''];
+  const summaryLines = ['update-data post summary', ''];
   for (const rule of rules) {
     const count = ruleCounts.get(rule.id) ?? 0;
     const files = new Set(byRule.get(rule.id).map((e) => e.relPath)).size;
@@ -189,47 +245,21 @@ function writeDiffFiles({ diffDir, diffEntries, rules, ruleCounts, deadRules, pa
     const lines = [`Rule: ${ruleId} — ${entries.length} change(s), ${byFile.size} file(s)`, ''];
     for (const relPath of [...byFile.keys()].sort()) {
       lines.push(`--- ${relPath}`, `+++ ${relPath}`);
+      // Segment-override entries carry the whole before/after value directly (`from`/`to`) rather
+      // than chunks — the rule replaces the entire segment, so there's no surrounding context to
+      // isolate a span within.
       for (const { segmentId, chunks, from, to } of byFile.get(relPath)) {
-        const pali = relPath.startsWith('sujato/sutta/') ? paliTextFor(segmentId, relPath, paliDir) : null;
-        // One hunk per changed segment: the segment id goes in the header's section field and the
-        // Pali is the hunk's single context line, both plain unified-diff grammar so every viewer
-        // parses them. The line numbers are nominal — nothing ever applies these patches.
-        lines.push(`@@ -1${pali ? ',2' : ''} +1${pali ? ',2' : ''} @@ ${segmentId}`);
-        if (pali) lines.push(` PLI: ${oneLine(pali)}`);
-        // Segment-override entries carry the whole before/after value directly (`from`/`to`) rather
-        // than chunks — the rule replaces the entire segment, so there's no surrounding context to
-        // isolate a span within.
-        lines.push(`-${oneLine(chunks ? renderChunks(chunks, ruleId, 'before') : from)}`);
-        lines.push(`+${oneLine(chunks ? renderChunks(chunks, ruleId, 'after') : to)}`);
+        pushHunk(lines, {
+          relPath,
+          segmentId,
+          before: chunks ? renderChunks(chunks, ruleId, 'before') : from,
+          after: chunks ? renderChunks(chunks, ruleId, 'after') : to,
+          paliDir,
+        });
       }
     }
     fs.writeFileSync(path.join(diffDir, `${ruleId}.diff`), lines.join('\n') + '\n');
   }
-}
 
-if (import.meta.url === `file://${process.argv[1]}`) {
-  const result = await runPost({ diff: true });
-
-  if (!result.ok) {
-    console.error(bold(red(`update-data post FAILED — data/sujato.post/ was NOT written.`)));
-    if (result.deadRules.length) {
-      console.error(bold(red(`\nDead rules — matched nowhere (${result.deadRules.length}):`)));
-      for (const id of result.deadRules) console.error(red(`- ${id}`));
-    }
-    if (result.brokenOverrides.length) {
-      console.error(bold(red(`\nBroken segment overrides (${result.brokenOverrides.length}):`)));
-      for (const b of result.brokenOverrides) {
-        console.error(red(`- ${b.id} (${b.segment}): ${b.reason}`));
-        if (b.current !== undefined) {
-          console.error(yellow(`    rule's from: ${b.from}`));
-          console.error(yellow(`    current text: ${b.current}`));
-        }
-      }
-    }
-    console.error(`\nRun ${green('update-data:triage')} to work through it — see docs/retranslation.md.`);
-    process.exit(1);
-  }
-
-  console.log(green(`update-data post done — ${result.replacements} replacement(s) across ${result.filesChanged} file(s). Wrote data/sujato.post/.`));
-  console.log(green(`Per-rule diffs written to data/diff/ — read one with 'riff < data/diff/<rule-id>.diff'.`));
+  writeCombinedDiff({ diffDir, originals, objects, paliDir });
 }

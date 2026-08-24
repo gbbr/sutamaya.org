@@ -8,11 +8,11 @@
 // instead of segment ids.
 //
 // Recording counts is also right after editing a *rule*, where rebaselining the segment-id snapshot
-// would be wrong; that is why the counts half is its own command (npm run update-data:counts) and
+// would be wrong; that is why the counts half is its own command (npm run update-data counts) and
 // this file calls it rather than reimplementing it.
 //
 // MANUAL, DELIBERATE USE ONLY — not part of `npm run update-data` (see package.json), and never
-// run automatically by check/copy/post. Run it only after `update-data:check` has reported
+// run automatically by check/copy/post. Run it only after `update-data plan` has reported
 // segment-id changes, you've reviewed them by hand and confirmed they're legitimate upstream
 // revisions (not a renamed file or a bad match), and copied them in. Regenerating the snapshot
 // without that review defeats its whole purpose: it's what makes the *next* check detect changes,
@@ -44,7 +44,7 @@ export async function runAccept({
 
   const snapshot = {
     generatedAt: new Date().toISOString(),
-    note: 'Baseline snapshot of data/{sujato,pali,html}, used by update-data-check.mjs to verify a prospective sc-data checkout has not renamed files or changed segment ids before copying. Regenerated only manually (npm run update-data:accept), after reviewing a check failure by hand — never automatically.',
+    note: 'Baseline snapshot of data/{sujato,pali,html}, used by update-data-check.mjs to verify a prospective sc-data checkout has not renamed files or changed segment ids before copying. Regenerated only manually (npm run update-data accept), after reviewing a check failure by hand — never automatically.',
     fileCount: relPaths.length,
     files,
   };
@@ -64,14 +64,8 @@ export async function runAccept({
   // Re-runs post against the (now-baselined) data/sujato — cheap, and keeps data/sujato.post/
   // fresh at exactly the moment the baseline changes. Rule counts are the same "this is now the
   // new normal" act as the snapshot itself, so they're recorded here too, through the very command
-  // that records them on their own after a rule edit (update-data:counts).
+  // that records them on their own after a rule edit (update-data counts).
   const countsResult = await runCounts({ sujatoDir, postDir, rulesDir, retranslationPath, countsPath });
 
   return { ...snapshot, ...countsResult };
-}
-
-if (import.meta.url === `file://${process.argv[1]}`) {
-  const snapshot = await runAccept();
-  console.log(green(`update-data snapshot regenerated — ${snapshot.fileCount} files recorded at ${path.relative(process.cwd(), SNAPSHOT_PATH)}.`));
-  reportCounts(snapshot);
 }
