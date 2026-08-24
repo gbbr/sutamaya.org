@@ -69,7 +69,7 @@ export function SignedInBadge({ user, size, atRisk = false }: { user: User | nul
         <span
           data-component="SignedInBadgeDot"
           className={`absolute rounded-full border border-ink/25 ${isIosBrowserTab() ? 'bg-danger-text' : 'bg-warning-text'}`}
-          style={{ width: 8, height: 8, top: -1, right: -1 }}
+          style={{ width: 11, height: 11, top: -2, right: -2 }}
         />
       )}
     </button>
