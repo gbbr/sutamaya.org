@@ -247,23 +247,66 @@ export function queueSiblingOrder(state: MirrorState, parentId: string | null, o
   return nextOp({ ...state, lists, ops }, { type: 'siblingOrder', parentId, order, mtime: nextMtime() });
 }
 
-// Tombstones the list — except one that has never left this device, which is dropped outright along
-// with anything queued against it. Pushing a create and then a delete for a row no device has ever
-// seen is pure noise, and the create landing after the delete would resurrect it.
+// `id` plus every row beneath it, tombstoned rows included — what hangs off a dead ancestor still
+// has to be dealt with, and the callers below no-op on a row that is already tombstoned anyway.
+// Guarded by a visited set rather than assuming a tree: two devices can each make a valid move that
+// together form a cycle (see repairListTree), so the mirror can genuinely hold one.
+function withDescendants(state: MirrorState, id: string): string[] {
+  const childrenOf = new Map<string | null, string[]>();
+  for (const { data } of Object.values(state.lists)) {
+    const siblings = childrenOf.get(data.parentId) ?? [];
+    siblings.push(data.id);
+    childrenOf.set(data.parentId, siblings);
+  }
+  const out: string[] = [];
+  const seen = new Set<string>();
+  const queue = [id];
+  while (queue.length) {
+    const cur = queue.shift()!;
+    if (seen.has(cur)) continue;
+    seen.add(cur);
+    out.push(cur);
+    for (const child of childrenOf.get(cur) ?? []) queue.push(child);
+  }
+  return out;
+}
+
+// Deletes the list, and — since deleting a group takes what is inside it, the way deleting a folder
+// does — everything beneath it. Each row is decided on its own:
+//
+// - one that has **never left this device** is dropped outright, along with anything queued against
+//   it. Pushing a create and then a delete for a row no device has ever seen is pure noise, and the
+//   create landing after the delete would resurrect it.
+// - anything else is tombstoned, because the server may already hold it and nothing else would ever
+//   tell it the row is gone.
+//
+// The distinction is why a whole subtree can't share one verdict: a synced list dragged into a group
+// created moments ago sits under a never-sent parent, and dropping it with that parent would leave
+// the server's copy alive to come back on the next pull.
 //
 // "Never left this device" is `createSent`, not `pendingCreate`: the latter is still set while the
 // create is out on the wire, and a row deleted in that window is one the server may already hold.
 // Dropping it then loses the delete outright — nothing is left to push it, and the pull at the end
 // of that very flush brings the list back as a clean record.
 export function removeListRecord(state: MirrorState, id: string): MirrorState {
-  const current = state.lists[id];
-  if (!current) return state;
-  if (current.data.pendingCreate && !current.data.createSent) {
-    // A queued sibling order may still name this id; it is left alone rather than rewritten, since
-    // the server reconciles a posted order against the rows that actually exist and drops the rest.
-    return { ...withList(state, id, null), ops: state.ops.filter((op) => !('listId' in op) || op.listId !== id) };
+  if (!state.lists[id]) return state;
+  const dropped = new Set<string>();
+  let next = state;
+  for (const memberId of withDescendants(state, id)) {
+    const current = next.lists[memberId];
+    if (!current) continue;
+    if (current.data.pendingCreate && !current.data.createSent) {
+      dropped.add(memberId);
+      next = withList(next, memberId, null);
+    } else {
+      next = editList(next, memberId, { deleted: true });
+    }
   }
-  return editList(state, id, { deleted: true });
+  // A queued sibling order may still name a dropped id; it is left alone rather than rewritten,
+  // since the server reconciles a posted order against the rows that actually exist and drops the
+  // rest.
+  if (dropped.size === 0) return next;
+  return { ...next, ops: next.ops.filter((op) => !('listId' in op) || !dropped.has(op.listId)) };
 }
 
 export function setNoteRecord(state: MirrorState, suttaId: string, text: string): MirrorState {

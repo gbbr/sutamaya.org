@@ -13,6 +13,7 @@ import {
   queueMembership,
   removeListRecord,
   renameListRecord,
+  setListParentRecord,
   queueSiblingOrder,
   setNoteRecord,
   syncCounts,
@@ -168,6 +169,47 @@ describe('local collapses', () => {
     state = queueMembership(state, 'l1', 'dn1', true);
     state = removeListRecord(state, 'l1');
 
+    expect(state.lists.l1).toBeUndefined();
+    expect(state.ops).toEqual([]);
+  });
+
+  it('takes a deleted group\'s whole subtree with it', () => {
+    let state = list(emptyMirror('u1'), 'g1', null, 'group');
+    state = list(state, 'g2', 'g1', 'group');
+    state = list(state, 'l1', 'g2');
+    state = markDispatched(state, state);
+    state = removeListRecord(state, 'g1');
+
+    // Deleting a group deletes what is inside it — nothing may survive by being re-homed, which is
+    // what a child left pointing at a row that no longer exists would do (see repairListTree).
+    expect(state.lists.g2.data.deleted).toBe(true);
+    expect(state.lists.l1.data.deleted).toBe(true);
+  });
+
+  it('tombstones a synced list sitting under a group deleted before its own create was sent', () => {
+    let state = pulled(emptyMirror('u1'), 'l1');
+    state = list(state, 'g1', null, 'group');
+    state = setListParentRecord(state, 'l1', 'g1');
+    state = removeListRecord(state, 'g1');
+
+    // The group is this device's own invention and goes without trace, but the server holds `l1` —
+    // dropping it on the group's verdict would leave nothing to carry the delete, and the next pull
+    // would hand the list straight back.
+    expect(state.lists.g1).toBeUndefined();
+    expect(state.lists.l1.data.deleted).toBe(true);
+    expect(state.lists.l1.dirty).toBe(true);
+  });
+
+  it('drops an unsent list under a deleted group rather than pushing a create for it', () => {
+    let state = list(emptyMirror('u1'), 'g1', null, 'group');
+    state = markDispatched(state, state);
+    state = list(state, 'l1', 'g1');
+    state = queueMembership(state, 'l1', 'dn1', true);
+    state = removeListRecord(state, 'g1');
+
+    // The group has to be tombstoned, but the child never left this device: pushing its create
+    // under a tombstoned parent only leaves a row the server's own cascade hides.
+    expect(state.lists.g1.data.deleted).toBe(true);
     expect(state.lists.l1).toBeUndefined();
     expect(state.ops).toEqual([]);
   });

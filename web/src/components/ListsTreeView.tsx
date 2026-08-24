@@ -127,7 +127,7 @@ export function ListsTreeView({
         <div className="px-[22px] pb-1.5 font-sans text-ui-xs text-ink-4">Drag a list onto a group to nest it, or to the top/bottom edge of a row to reorder.</div>
       )}
       {creatingParentId === null && (
-        <div className="flex items-center gap-[6px] pl-[22px] pr-[10px] pt-1.5 pb-2">
+        <div className="flex items-center gap-[11px] pl-[22px] pr-[10px] pt-1.5 pb-2">
           <input
             ref={listInput}
             autoFocus
