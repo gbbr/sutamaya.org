@@ -26,7 +26,8 @@ gloss a term in his wording while the line above it uses ours.
 | vipariṇāma + aññathābhāva | decays and perishes | **changes and becomes otherwise** | Both Pali words mean change; neither means decay or death. |
 | vitakka / vicāra | placing the mind / keeping it connected | **thought / examination** | Reads them as thinking, which is what the words mean outside the jhāna formula too. |
 | yoniso manasikāra | rational application of mind | **proper attention** | *Yoniso* is "from the source", i.e. appropriately — not a claim about rationality. |
-| paṭisambhidā | textual analysis | **analytical knowledge** | The four *paṭisambhidās* are of meaning, text, terminology and eloquence — only the second is textual. |
+| paṭisambhidā | textual analysis | **analytical knowledge** | The four *paṭisambhidās* are of meaning, the Dhamma, terminology and eloquence — "textual" names only one of them. |
+| dhamma (six lines only) | text | **the Dhamma** | These discourses were memorized and recited, not written, so "text" imports something that didn't exist. Bhikkhu Bodhi's rendering. |
 | paritassati | anxious, anxiety | **agitated, agitation** | Bhikkhu Sujato's own note gives the term as desire plus agitation; agitation is the half that survives. |
 | saṅkhāra | choices | **volitional formations** | Bhikkhu Bodhi's rendering, and the nearest thing the term has to a standard one. "Choices" narrows a word that covers much more than deliberate choosing. |
 | abhisaṅkharoti | make (choices) | **generate (volitional formations)** | The verb that goes with it — Bhikkhu Bodhi's too, and one of the dictionary's own glosses. |

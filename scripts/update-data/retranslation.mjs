@@ -14,7 +14,7 @@
 // and between them is still what settles a same-word collision:
 //
 //   standalone terms   mendicant-bhikkhu, immersion-concentration,
-//                      patisambhida-analytical-knowledge, atapi-ardent
+//                      patisambhida-analytical-knowledge, dhamma-the-dhamma, atapi-ardent
 //   awareness          satipatthana-establishment-of-awareness, sati-aware,
 //                      sampajanna-clear-comprehension
 //   arising / passing   samudaya-arising, vaya-passing-away, atthangama-disappearing,
@@ -76,6 +76,30 @@ export const RULES = [
     predicate: /paṭisambhid/i,
     forms: [
       ['textual analysis', 'analytical knowledge'],
+    ],
+  },
+  {
+    id: 'dhamma-the-dhamma',
+    why: 'Six segments where Bhikkhu Sujato renders dhamma as "text"; this app prefers "the Dhamma" ' +
+      '(Bodhi’s rendering). The Early Buddhist Texts were transmitted orally, so "text" imports a ' +
+      'written artifact the passages do not have: dhammapaṭisambhidā (AN 5.86, AN 5.95, AN 4.172) ' +
+      'is knowledge of the teaching itself as against its meaning, and the attha–dhamma pair (AN ' +
+      '4.186, Thig 13.2, Dhp 363) is that same contrast in a phrase. Closed, and necessarily so: ' +
+      '"text" is otherwise ordinary English throughout the corpus — 265 "Abbreviated Texts" chapter ' +
+      'headings (peyyāla), DN 27’s ganthe karontā ("compiling texts"), DN 30’s nimittakovidā ' +
+      '("prognostic texts") and five parenthetical editorial notes — none of which is dhamma. ' +
+      'Bhikkhu Sujato’s own usual rendering of the attha–dhamma pair is "the meaning and the ' +
+      'teaching" (~40 segments, AN 4.6, AN 8.62, AN 8.78 and the rest); those are left alone, so ' +
+      'the three rewritten here read "the Dhamma" where their siblings read "the teaching". The ' +
+      'first form rebuilds the four-paṭisambhidā list rather than swapping one word, because "the ' +
+      'Dhamma" cannot sit as a bare item beside "meaning" and "definition"; repeating the ' +
+      'preposition is how Bodhi renders the list, and it leaves the other three members untouched.',
+    mode: 'allow',
+    scope: ['sujato/sutta'],
+    predicate: /dhammapaṭisambhid|atthaṁ dhammañca|atthamaññāya dhammamaññāya/i,
+    forms: [
+      ['of meaning, text, definition, and eloquence', 'of meaning, of the Dhamma, of definition, and of eloquence'],
+      ['the text', 'the Dhamma'],
     ],
   },
   {
