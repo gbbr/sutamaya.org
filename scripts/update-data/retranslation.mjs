@@ -8,7 +8,8 @@
 // `forms` pairs are matched on English word boundaries, case-preserved; every inflection is listed
 // explicitly rather than swapped by stem, since the corpus has unrelated words on the same stem —
 // e.g. MN40's "water immerser" (someone who dunks in water), which a substring swap would turn
-// into the nonsense "water concentrater".
+// into nonsense. Listing inflections is necessary but not sufficient: a listed inflection can
+// itself be ordinary English elsewhere, which is what a rule's deny list is for.
 //
 // Grouped by term family below, in array order — the groups are for reading, and the order inside
 // and between them is still what settles a same-word collision:
@@ -41,21 +42,38 @@ export const RULES = [
   },
   {
     id: 'immersion-concentration',
-    why: 'Bhikkhu Sujato renders samādhi as "immersion"; this app prefers "concentration". Open: the ' +
-      '"immers-" stem also covers unrelated words like "water immerser" (MN40), but those aren’t ' +
-      'listed forms, so a substring swap never touches them — see the forms comment above. Carries ' +
-      'the indefinite article in one form, since the word it agrees with is the word being ' +
-      'replaced: "experiences an immersion of the heart" (DN 1, 30 segments) would otherwise read ' +
-      '"an concentration".',
+    why: 'Bhikkhu Sujato renders samādhi as "immersion"; this app prefers "composure" (the DPD’s own gloss, ' +
+      'alongside "stillness of mind" and "mental composure"; Bodhi and Ñāṇamoli have ' +
+      '"concentration", Thanissaro "concentration", Anālayo "concentration"). Bare "composure", not ' +
+      '"mental composure": a dictionary entry needs the qualifier because it has no context, but ' +
+      'running text supplies it, and the stock lists would limp — "right mental composure", "born ' +
+      'of mental composure". Two English words for the one term, split by grammatical slot, since ' +
+      'no single word covers both: the noun is "composure", and the verbal slot takes "compose"/' +
+      '"collect" — Bhikkhu Sujato himself already renders samāhita as "composed" at dn20:5.4 ' +
+      '("resolute and composed", pahitattā samāhitā), so the participle matches his own usage, ' +
+      'while the finite verb and gerund take "collect" instead to stay clear of the corpus’s ' +
+      'existing "compose"/"composes" for writing verses (dn21, mn56, an4.231). "Unification" was ' +
+      'considered and rejected: the DPD assigns it to ekaggatā, and MN 44’s definition of the term ' +
+      '("cittassa ekaggatā ayaṁ samādhi") would have collapsed into "unification of the mind is ' +
+      'unification". Carries the indefinite article in one form, since the word it agrees with is ' +
+      'the word being replaced: "experiences an immersion of the heart" (DN 1, 30 segments) becomes ' +
+      '"experiences composure of the heart", with the article dropped rather than left stranded. ' +
+      'Open, but no longer with an empty deny list: several of the listed inflections are also ' +
+      'ordinary English in Bhikkhu Sujato’s hands, translating no samādhi at all — "immerse on the ' +
+      'gratification" (assādānupassino viharato), "immersing wholeheartedly" (sabbacetasā ' +
+      'samannāharitvā), literal immersion in water (udakorohaka, MN 40 and friends), one term of ' +
+      'MN 50’s mocking jhāyati/pajjhāyati/nijjhāyati/apajjhāyati string, and "mindfulness immersed ' +
+      'in the body" (kāyagatā sati). Those are denied; nothing else needs excluding.',
     mode: 'deny',
+    predicate: /samādh|samāhit|samādah|cetosamādh/i,
     forms: [
-      ['an immersion', 'a concentration'],
-      ['immerse', 'concentrate'],
-      ['immerses', 'concentrates'],
-      ['immersed', 'concentrated'],
-      ['immersing', 'concentrating'],
-      ['immersion', 'concentration'],
-      ['immersions', 'concentrations'],
+      ['an immersion', 'composure'],
+      ['immerse', 'collect'],
+      ['immerses', 'collects'],
+      ['immersed', 'composed'],
+      ['immersing', 'collecting'],
+      ['immersion', 'composure'],
+      ['immersions', 'composures'],
     ],
   },
   {
@@ -811,16 +829,16 @@ export const RULES = [
       'front. Only dn34 here: an5.27 carries the same line with a trailing elision mark, which is a ' +
       'different string and so a different anchor — see enter-with-awareness-elided.',
     segment: 'dn34:1.6.74',
-    from: '‘I with awareness enter into and emerge from this concentration.’ ',
-    to: '‘With awareness, I enter into and emerge from this concentration.’ ',
+    from: '‘I with awareness enter into and emerge from this composure.’ ',
+    to: '‘With awareness, I enter into and emerge from this composure.’ ',
   },
   {
     id: 'enter-with-awareness-elided',
     kind: 'segment',
     why: 'enter-with-awareness’s line, as an5.27 has it: followed by an elision mark.',
     segment: 'an5.27:1.8',
-    from: '‘I with awareness enter into and emerge from this concentration.’ … ',
-    to: '‘With awareness, I enter into and emerge from this concentration.’ … ',
+    from: '‘I with awareness enter into and emerge from this composure.’ … ',
+    to: '‘With awareness, I enter into and emerge from this composure.’ … ',
   },
   {
     id: 'thag16-10-walk-with-awareness',
@@ -1074,5 +1092,77 @@ export const RULES = [
     segment: 'an3.49:2.1',
     from: 'It’s a bhikkhu who is ardent to prevent bad, unskillful qualities from arising. They’re ardent to give rise to skillful qualities. And they’re ardent to endure physical pain—sharp, severe, acute, unpleasant, disagreeable, life-threatening. ',
     to: 'It’s a bhikkhu who is ardent in preventing bad, unskillful qualities from arising. They’re ardent in giving rise to skillful qualities. And they’re ardent in enduring physical pain—sharp, severe, acute, unpleasant, disagreeable, life-threatening. ',
+  },
+
+  // ·· samādhi's participle as a past perfect ··
+  // "Immersed" doubles as an intransitive verb, so Bhikkhu Sujato can write "when my mind had
+  // immersed in samādhi". "Composed" is only ever the state, and "my mind had composed" reads as
+  // authorship instead. The copula has to come back — which is what he writes himself in the same
+  // formula elsewhere ("when my mind had become immersed"), so these three lines are brought into
+  // line with his own wording rather than given a new one.
+  {
+    id: 'mind-had-become-composed-past-lives',
+    kind: 'segment',
+    why: 'Evaṁ samāhite citte … pubbenivāsānussatiñāṇāya cittaṁ abhininnāmesiṁ — the first of the ' +
+      'three knowledges, told in the first person. Paired with the two below, which are the same ' +
+      'line ending in the other two knowledges.',
+    segments: ['mn85:34-37.5', 'mn100:34.1', 'mn19:18.1', 'mn36:38.1', 'an8.11:14.1'],
+    from: 'When my mind had composed in samādhi like this—purified, bright, flawless, rid of corruptions, pliable, workable, steady, and imperturbable—I extended it toward recollection of past lives. ',
+    to: 'When my mind had become composed in samādhi like this—purified, bright, flawless, rid of corruptions, pliable, workable, steady, and imperturbable—I extended it toward recollection of past lives. ',
+  },
+  {
+    id: 'mind-had-become-composed-rebirth',
+    kind: 'segment',
+    why: 'mind-had-become-composed-past-lives’s line, ending in the knowledge of death and rebirth.',
+    segments: ['mn85:38.1', 'mn100:36-38.1', 'mn36:40.1', 'an8.11:16.1'],
+    from: 'When my mind had composed in samādhi like this—purified, bright, flawless, rid of corruptions, pliable, workable, steady, and imperturbable—I extended it toward knowledge of the death and rebirth of sentient beings. ',
+    to: 'When my mind had become composed in samādhi like this—purified, bright, flawless, rid of corruptions, pliable, workable, steady, and imperturbable—I extended it toward knowledge of the death and rebirth of sentient beings. ',
+  },
+  {
+    id: 'mind-had-become-composed-defilements',
+    kind: 'segment',
+    why: 'mind-had-become-composed-past-lives’s line, ending in the knowledge of the ending of defilements.',
+    segments: ['mn85:40.1', 'mn100:39.1', 'mn36:42.1', 'mn112:19.1', 'an8.11:18.1'],
+    from: 'When my mind had composed in samādhi like this—purified, bright, flawless, rid of corruptions, pliable, workable, steady, and imperturbable—I extended it toward knowledge of the ending of defilements. ',
+    to: 'When my mind had become composed in samādhi like this—purified, bright, flawless, rid of corruptions, pliable, workable, steady, and imperturbable—I extended it toward knowledge of the ending of defilements. ',
+  },
+
+  // ·· one formula, two of samādhi's slots ··
+  // Bhikkhu Sujato uses "immerse" for the santhapeti/sannisādeti/ekodi-karoti/samādahati series,
+  // and the term rule gives that "collect" — except where he tells it in the past tense, which
+  // takes the participle "composed" instead and splits one stock formula across two English words.
+  // These three lines take "collected" so all seven read alike.
+  {
+    id: 'collected-my-mind-internally',
+    kind: 'segment',
+    why: 'ajjhattameva cittaṁ saṇṭhapesiṁ sannisādesiṁ ekodiṁ akāsiṁ samādahaṁ, first person — the ' +
+      'same series that reads "still, settle, unify, and collect their mind" elsewhere.',
+    segments: ['mn19:8.11', 'mn19:9-10.12'],
+    from: 'So I stilled, settled, unified, and composed my mind internally. ',
+    to: 'So I stilled, settled, unified, and collected my mind internally. ',
+  },
+  {
+    id: 'collected-my-mind-same-subject',
+    kind: 'segment',
+    why: 'collected-my-mind-internally’s series, as MN 36 has it: in samādhi, on the same meditation subject.',
+    segment: 'mn36:45.6',
+    from: 'When that talk was finished, I stilled, settled, unified, and composed my mind in samādhi internally in the same meditation subject as a basis of composure as before, in which I regularly meditate.” ',
+    to: 'When that talk was finished, I stilled, settled, unified, and collected my mind in samādhi internally in the same meditation subject as a basis of composure as before, in which I regularly meditate.” ',
+  },
+
+  // ·· a false positive sharing its line with a true one ··
+  // Denying a segment takes the whole line out of the rule's reach, which is right where every
+  // match on it is a false positive and wrong where the line carries both. MN 128's list of the
+  // mind's corruptions is the only place that happens here.
+  {
+    id: 'mn128-excessive-contemplation-of-forms',
+    kind: 'segment',
+    why: 'Bhikkhu Sujato\'s "excessive immersion on forms" is atinijjhāyitattaṁ rūpānaṁ, excessive ' +
+      'contemplation — no samādhi, and denied wherever it stands alone (mn128:26.8, 27.11, 30.11). ' +
+      'This line also carries the real term in "my immersion fell away" (samādhi cavi), so the ' +
+      'rule has to run and the false positive is put back afterwards.',
+    segment: 'mn128:26.6',
+    from: '‘Excessive composure on forms arose in me, and because of that my composure fell away. ',
+    to: '‘Excessive immersion on forms arose in me, and because of that my composure fell away. ',
   },
 ];

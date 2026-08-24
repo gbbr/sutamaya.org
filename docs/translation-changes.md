@@ -14,7 +14,7 @@ gloss a term in his wording while the line above it uses ours.
 | Pali | Bhikkhu Sujato | Here | Why |
 |---|---|---|---|
 | bhikkhu | mendicant | **bhikkhu** | The Pali word is widely known; "mendicant" suggests begging rather than the monastic life. |
-| samādhi | immersion | **concentration** | The standard rendering, and the one nearly every other translator uses. |
+| samādhi | immersion, immersed | **composure, composed** (and "collect" as a verb) | The dictionary's own gloss — "mental composure", "stillness of mind". Bhikkhu Sujato already writes "resolute and composed" for *pahitattā samāhitā*; this just makes it consistent. The verb is "collect" so it doesn't collide with composing verses. |
 | sati | mindfulness, mindful | **awareness, aware** | "Mindfulness" now carries a century of secular baggage the Pali doesn't. |
 | satipaṭṭhāna | mindfulness meditation | **the establishment of awareness** | The compound read literally (*sati* + *upaṭṭhāna*), rather than named as a practice. |
 | sampajañña | situational awareness, aware | **clear comprehension, clearly comprehending** | Bhikkhu Bodhi's rendering, and the dictionary's own first gloss. |

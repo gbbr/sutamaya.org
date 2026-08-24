@@ -132,7 +132,7 @@ describe('applyRuleToChunks / applyTermRules — the retranslation engine', () =
 
   it('leaves words merely built on the same stem alone (not a listed form)', () => {
     // "immerser" (MN40's "water immerser") isn't a listed word form, so it must survive untouched
-    // — this is the exact bug a blind "immers" -> "concentrat" substring swap would have.
+    // — this is the exact bug a blind "immers" -> "compos" substring swap would have.
     const result = apply('a water immerser dunks in water', CONCENTRATE_RULE);
     expect(result).toBe('a water immerser dunks in water');
     expect(count('a water immerser dunks in water', CONCENTRATE_RULE)).toBe(0);
@@ -239,9 +239,23 @@ describe('applyRuleToChunks / applyTermRules — the retranslation engine', () =
 describe('the shipped rules, one example each', () => {
   const EXAMPLES = [
     ['mendicant-bhikkhu', 'dn1:1.1', 'sujato/sutta', 'a mendicant and some mendicants', 'a bhikkhu and some bhikkhus'],
-    ['immersion-concentration', 'dn1:1.1', 'sujato/sutta', 'they enter that immersion', 'they enter that concentration'],
-    // The article travels with the word it agrees with, or DN 1 reads "an concentration".
-    ['immersion-concentration', 'dn1:1.31.1', 'sujato/sutta', 'experiences an immersion of the heart', 'experiences a concentration of the heart'],
+    ['immersion-concentration', 'dn1:1.1', 'sujato/sutta', 'they enter that immersion', 'they enter that composure'],
+    // The plural, in the one list that carries it.
+    ['immersion-concentration', 'dn1:1.2', 'sujato/sutta', 'the absorptions, liberations, immersions, and attainments', 'the absorptions, liberations, composures, and attainments'],
+    // The article goes with the noun it agrees with — here it is dropped, since "a composure of
+    // the heart" isn't English where "an immersion of the heart" was.
+    ['immersion-concentration', 'dn1:1.31.1', 'sujato/sutta', 'experiences an immersion of the heart', 'experiences composure of the heart'],
+    // The participle slot, which takes "composed" rather than the noun — matching Bhikkhu Sujato's
+    // own "resolute and composed" for pahitattā samāhitā at dn20:5.4.
+    ['immersion-concentration', 'dn2:77.6', 'sujato/sutta', 'When their mind has become immersed in samādhi like this', 'When their mind has become composed in samādhi like this'],
+    // The finite verb and the gerund, which take "collect" instead: the corpus already spends
+    // "compose"/"composes" on writing verses (dn21, mn56, an4.231).
+    ['immersion-concentration', 'mn122:7.2', 'sujato/sutta', 'they should still, settle, unify, and immerse their mind in samādhi internally. ', 'they should still, settle, unify, and collect their mind in samādhi internally. '],
+    ['immersion-concentration', 'mn62:28.3', 'sujato/sutta', '‘I’ll breathe in immersing the mind in samādhi.’', '‘I’ll breathe in collecting the mind in samādhi.’'],
+    // Denied: plain English "immerse on", for assādānupassino viharato — no samādhi in the line.
+    ['immersion-concentration', 'sn12.52:1.2', 'sujato/sutta', 'When you immerse on the gratification provided by these things', 'When you immerse on the gratification provided by these things'],
+    // Denied: literal immersion in water, udakorohaka.
+    ['immersion-concentration', 'mn40:5.4', 'sujato/sutta', 'just because you immerse yourself in water', 'just because you immerse yourself in water'],
     ['patisambhida-analytical-knowledge', 'an7.38:1.1', 'sujato/sutta', 'will soon realize the four kinds of textual analysis', 'will soon realize the four kinds of analytical knowledge'],
     // The heading slot: four of the term's occurrences are Title Case sutta names.
     ['patisambhida-analytical-knowledge', 'an4.172:0.3', 'sujato/sutta', 'Sāriputta’s Attainment of Textual Analysis', 'Sāriputta’s Attainment of Analytical Knowledge'],
@@ -293,7 +307,7 @@ describe('the shipped rules, one example each', () => {
     ['sampajanna-clear-comprehension', 'dn22:1.11', 'sujato/notes', '“Mind” (citta) is simple awareness.', '“Mind” (citta) is simple awareness.'],
     // vippasanna beside sampajañña: both of the rule's forms, prose and verse.
     ['vippasanna-calm', 'sn47.4:2.4', 'sujato/sutta', 'keen, aware, at one, with minds that are clear', 'ardent, clearly comprehending, at one, with minds that are calm'],
-    ['vippasanna-calm', 'iti47:4.2', 'sujato/sutta', 'immersed in samādhi, joyful and clear', 'concentrated in samādhi, joyful and calm'],
+    ['vippasanna-calm', 'iti47:4.2', 'sujato/sutta', 'immersed in samādhi, joyful and clear', 'composed in samādhi, joyful and calm'],
     // Denied by omission: the same word for the same term, where nothing collides with it.
     ['vippasanna-calm', 'dn20:5.8', 'sujato/sutta', 'clear and unclouded.”', 'clear and unclouded.”'],
     ['samudaya-arising', 'sn56.11:4.3', 'sujato/sutta', 'the noble truth of the origin of suffering', 'the noble truth of the arising of suffering'],
@@ -353,14 +367,14 @@ describe('the shipped rules, one example each', () => {
     // word and a form that fits one slot is ungrammatical in the next. The first also pins the
     // article: the longest form has to swallow "the" or 106 segments read "As the thought and
     // examination are stilled".
-    ['vitakka-vicara-thought-examination', 'sn53.1-12:1.6', 'sujato/sutta', 'As the placing of the mind and keeping it connected are stilled, they enter and remain in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. ', 'As thought and examination are stilled, they enter and remain in the second absorption, which has the rapture and bliss born of concentration, with internal clarity and mind at one, without thought or examination. '],
+    ['vitakka-vicara-thought-examination', 'sn53.1-12:1.6', 'sujato/sutta', 'As the placing of the mind and keeping it connected are stilled, they enter and remain in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. ', 'As thought and examination are stilled, they enter and remain in the second absorption, which has the rapture and bliss born of composure, with internal clarity and mind at one, without thought or examination. '],
     // Finite verbs, then the bare subject noun, in one line — a noun-only rule would give "First
     // you thought and examination".
     ['vitakka-vicara-thought-examination', 'sn41.6:2.4', 'sujato/sutta', 'First you place the mind and keep it connected, then you break into speech. That’s why placing the mind and keeping it connected are a verbal process. ', 'First you think and examine, then you break into speech. That’s why thought and examination are a verbal process. '],
     // Negated verbs (na vitakketi na vicāreti).
     ['vitakka-vicara-thought-examination', 'sn47.10:6.13', 'sujato/sutta', 'They relax, and neither place the mind nor keep it connected. ', 'They relax, and neither think nor examine. '],
     // The vicāramatta middle term, where the two halves take different treatments.
-    ['vitakka-vicara-thought-examination', 'sn43.12:3.5', 'sujato/sutta', 'Immersion without placing the mind, merely keeping it connected. … ', 'Concentration without thought, with just examination. … '],
+    ['vitakka-vicara-thought-examination', 'sn43.12:3.5', 'sujato/sutta', 'Immersion without placing the mind, merely keeping it connected. … ', 'Composure without thought, with just examination. … '],
     // The pair as a bare list of first-absorption factors, comma-joined rather than "and"-joined.
     ['vitakka-vicara-thought-examination', 'mn43:20.4', 'sujato/sutta', 'Placing the mind, keeping it connected, rapture, bliss, and unification of mind are present. ', 'Thought, examination, rapture, bliss, and unification of mind are present. '],
     // vitakka alone, positive and negated (avitakka), where "no thought" carries the negation the
