@@ -1,8 +1,8 @@
 # Translation changes
 
 The English here is Bhikkhu Sujato's translation, published by SuttaCentral under CC0. It is not
-reproduced verbatim: a small number of recurring terms are rendered differently, and about fifty
-individual lines are reworded. Everything else is his, word for word — and the Pali sits beside
+reproduced verbatim: a small number of recurring terms are rendered differently, and about
+sixty-five individual lines are reworded. Everything else is his, word for word — and the Pali sits beside
 every line, so you can always check.
 
 The changes are declared rather than typed in by hand, so they survive each refresh from upstream.
@@ -29,20 +29,26 @@ gloss a term in his wording while the line above it uses ours.
 | paṭisambhidā | textual analysis | **analytical knowledge** | The four *paṭisambhidās* are of meaning, the Dhamma, terminology and eloquence — "textual" names only one of them. |
 | dhamma (six lines only) | text | **the Dhamma** | These discourses were memorized and recited, not written, so "text" imports something that didn't exist. Bhikkhu Bodhi's rendering. |
 | paritassati | anxious, anxiety | **agitated, agitation** | Bhikkhu Sujato's own note gives the term as desire plus agitation; agitation is the half that survives. |
-| saṅkhāra | choices | **volitional formations** | Bhikkhu Bodhi's rendering, and the nearest thing the term has to a standard one. "Choices" narrows a word that covers much more than deliberate choosing. |
-| abhisaṅkharoti | make (choices) | **generate (volitional formations)** | The verb that goes with it — Bhikkhu Bodhi's too, and one of the dictionary's own glosses. |
+| saṅkhāra | choices | **action formations** | What is formed is *kamma*: SN 22.56 defines the aggregate as the six kinds of intention, and AN 6.63 says intention is *kamma*. "Choices" narrows a word that covers much more than deliberate choosing. |
+| abhisaṅkharoti | make (choices) | **generate (action formations)** | The verb that goes with it — Bhikkhu Bodhi's word, and one of the dictionary's own glosses. |
 
 A term is changed everywhere it appears, but only where it really is that Pali word — Bhikkhu Sujato's
 "aware" also translates ordinary things that have nothing to do with *sampajañña*, and those are
 left alone.
 
-*Saṅkhāra* is the longest phrase on this page, and the cost is real: 137 lines list the five
-aggregates, and "form, feeling, perception, volitional formations, and consciousness" puts a
-seven-syllable phrase after four short words. The shorter "volitions" was rejected because that is
-*cetanā*'s word, and the two terms stand side by side in one list in eight lines — "intentions,
-aims, wishes, and volitions" would read as two synonyms rather than two distinct terms. Fourteen
-lines keep "choices", where the Pali means something else or the English was never *saṅkhāra* at
-all; MN 120, on a rebirth one deliberately aspires to, is left alone entirely.
+*Saṅkhāra* is a two-word phrase where Bhikkhu Sujato has one, and the cost is real: 137 lines list
+the five aggregates, and "form, feeling, perception, action formations, and consciousness" puts a
+longer phrase after four short words. Bhikkhu Bodhi's "volitional formations" is longer still, and
+the shorter "volitions" was rejected because that is *cetanā*'s word — the two terms stand side by
+side in one list in eight lines, where "intentions, aims, wishes, and volitions" would read as two
+synonyms rather than two distinct terms. Fourteen lines keep "choices", where the Pali means
+something else or the English was never *saṅkhāra* at all; MN 120, on a rebirth one deliberately
+aspires to, is left alone entirely.
+
+"Action" is also Bhikkhu Sujato's word for *sammākammanta*, the path factor. The two share a line
+exactly once, in AN 10.104, a sentence apart — "right view, purpose, speech, action, livelihood…"
+and then "their intentions, aims, wishes, and action formations" — which is far enough apart to
+stand. The five lines where they came closer than that are reworded instead.
 
 This only ever touches the one sense of the word. Where Bhikkhu Sujato renders *saṅkhāra* as
 "conditions", "conditioned phenomena", "physical process" or "life force", his wording stands.
@@ -54,7 +60,7 @@ what it means of water, a gem, or someone's face.
 
 ## Reworded lines
 
-About sixty individual lines are rewritten by hand. Nearly all of them exist because a term
+About sixty-five individual lines are rewritten by hand. Nearly all of them exist because a term
 swap that reads well as an adjective doesn't work as a whole sentence — "how is a bhikkhu clearly
 comprehending?" becomes "how does a bhikkhu have clear comprehension?" — plus a handful where two
 different Pali terms would otherwise land on the same English word in one sentence.
