@@ -2,133 +2,105 @@
 
 Bhikkhu Sujato's English is the base text; this app ships an edited version of it. The edits are
 *declared*, not applied by hand — `scripts/update-data/retranslation.mjs` holds every rule, and
-`update-data post` applies them on every refresh. That's what makes an editorial decision survive
-the next upstream sync instead of being silently overwritten by it.
+`update-data post` reapplies them on every refresh, so an editorial decision survives the next
+upstream sync instead of being silently overwritten by it.
 
-Two kinds of edit are in scope: **terminology** (render a Pali term consistently the way this app
-prefers — *mendicant* → *bhikkhu*, *immersion* → *concentration*) and **per-segment** corrections
-(one specific line, reworded). [`data/README.md`](../data/README.md) covers the surrounding
-`update-data` pipeline; this document is only the editorial layer on top of it.
-[`translation-changes.md`](translation-changes.md) is the plain-language summary of what the layer
-currently does, for a reader rather than a maintainer.
+Two kinds of edit: **terminology** (render a Pali term consistently — *mendicant* → *bhikkhu*) and
+**per-segment** corrections (one line, reworded). [`data/README.md`](../data/README.md) covers the
+surrounding `update-data` pipeline; [`translation-changes.md`](translation-changes.md) is the
+plain-language summary written for a reader.
+
+## The two workflows
+
+**Adding or changing a rule:**
+
+```
+edit retranslation.mjs   →  npm run update-data triage <rule-id>   enumerate what it would touch
+edit the sidecar         →  npm run update-data post               apply, write data/diff/
+                         →  git diff data/diff/00-all.diff         read the result
+                         →  npm run update-data counts             record the footprint
+```
+
+Commit the rule, its sidecar, `data/diff/` and `retranslation.counts.json` together.
+
+**Reconciling after an upstream refresh:** `update-data plan` names every rule that broke, before
+anything is copied. Fix those, then `apply` — which is idempotent, so it's also the edit-check loop:
+
+```
+npm run update-data apply   →  git diff data/diff/00-all.diff  →  edit  →  apply again
+                            →  npm run update-data triage      →  … prune  →  accept
+```
 
 ## What settles a rendering
 
-The texts this app ships are the Early Buddhist Texts — the four main Nikāyas and six books of the
-Khuddaka — so a term means what those texts say it means. Where a passage defines one, that
-definition governs: SN 22.56 defines the *saṅkhāra* aggregate as the six classes of intention, and
-AN 6.63 calls intention *kamma*. The Abhidhamma and the commentaries — the Visuddhimagga above all
-— sit outside that basis, and a reading taken from them neither justifies a rendering nor rules one
-out. The gap is wide enough to change decisions: the commentarial *saṅkhārakkhandha* absorbs some
-fifty mental factors, which makes renderings that the suttas' own definition supports look too
-narrow.
-
-The DPD and the other translators inform a choice without settling it. A gloss list gives the range
-a word can carry, not which sense a passage is using, and Bodhi, Ñāṇamoli, Anālayo and Thanissaro
-disagree often enough that "the standard rendering" usually names one of them rather than a
-consensus.
+The texts here are the Early Buddhist Texts, so a term means what those texts say it means. Where a
+passage defines one, that definition governs: SN 22.56 defines the *saṅkhāra* aggregate as the six
+classes of intention. The Abhidhamma and the commentaries sit outside that basis — a reading taken
+from them neither justifies a rendering nor rules one out. The DPD and the other translators inform
+a choice without settling it; Bodhi, Ñāṇamoli, Anālayo and Thanissaro disagree often enough that
+"the standard rendering" usually names one of them rather than a consensus.
 
 ## Where it sits in the pipeline
 
 ```
-sc-data checkout ──copy──▶ data/sujato/  ──post + retranslation.mjs──▶ data/sujato.post/ ──build-corpus──▶ web/public/data/
-                           (tracked,                                    (generated,
-                            pristine upstream)                           gitignored)
+sc-data ──copy──▶ data/sujato/ ──post──▶ data/sujato.post/ ──build-corpus──▶ web/public/data/
+                  (tracked, pristine)     (generated, gitignored)
 ```
 
-**`data/sujato/` holds upstream's bytes, unmodified.** `post` never writes into its own input; it
-reads `data/sujato/` and writes `data/sujato.post/`, which `build-corpus.mjs` consumes in its place
-for the four trees it reads (`sutta`, `notes`, `name`, `blurb`). `data/pali/` and `data/html/` are
-unaffected — they have no translatable English prose.
+`post` never writes into its own input, which buys three things: it's a pure function of (upstream,
+rules), so re-running while authoring is always safe; `git diff data/sujato/` after a copy shows
+what upstream changed uncontaminated by our edits; and `retranslation.mjs` plus its sidecars is the
+complete delta, not changes spread across 5,396 data files. `data/pali/` and `data/html/` are
+untouched — no translatable English. `build:corpus` runs `post` first, since a fresh clone has no
+`sujato.post/`.
 
-Three things follow from that separation, and they're the reason for it:
+## Why explicit segment lists
 
-- **`post` is a pure function of (upstream text, rules).** Re-running it is always safe, and
-  editing a rule and re-running gives the same result as a clean run — which matters because
-  rule-writing is trial and error. Applying rules on top of already-rewritten text compounds them
-  (`mindful`→`aware`, then a later `aware`→`clearly comprehending`, and now you can't tell which
-  *aware* came from where).
-- **`git diff data/sujato/` after a copy shows exactly what upstream changed**, uncontaminated by
-  our own edits. That diff is the thing you actually read when reconciling a broken rule, so it
-  has to be honest.
-- **`retranslation.mjs` is the complete delta.** The entire editorial policy is one reviewable
-  file plus its sidecars, not a diffuse set of changes spread across 5,396 data files.
+A blind find-and-replace breaks on homonyms: Bhikkhu Sujato renders *sampajañña* as "aware", but
+"aware" also appears as ordinary English. So each rule **names the segments involved** — the ones it
+applies to, or the ones it must skip, whichever list is shorter and truer.
 
-`data/sujato.post/` is generated, so `build:corpus` runs `post` first — a fresh clone has no
-post-processed tree until it does.
-
-## Why this isn't find-and-replace
-
-The obvious approach — swap English word X for Y everywhere — breaks on homonyms. Bhikkhu Sujato renders
-*sampajañña* as "aware", but "aware" also appears as ordinary English translating nothing of the
-sort. A blind swap corrupts the second set.
-
-**The fix is to name the segments involved, explicitly** — either the ones a rule applies to, or
-the ones it must skip, whichever is the shorter and truer statement. This works because segment
-ids are effectively immutable upstream, while the text inside them is not:
-
-| Window | ids added | ids removed | values changed |
-|---|---|---|---|
-| 2 years → now | 741 | 2 | 24,502 |
-| 1 year → now | 11 | 0 | 16,241 |
-| 8 months → now | 2 | 0 | 9,175 |
-
-So a segment id is a stable address to hang an editorial decision on, even though what's written
-at that address changes constantly. That asymmetry is what the whole design rests on.
-
-An explicit list also settles two cases nothing else handles well. **Verse** breaks segment
-alignment — Bhikkhu Sujato reorders freely across lines, so `sn22.95:14.3`'s English ("with situational
-awareness and mindfulness") sits against Pali reading *Divā vā yadi vā rattiṁ* ("whether by day or
-by night"). And **`blurb`/`name` have no Pali counterpart at all.** Neither is a special case for
-a list; both are just judgment at review time.
+This works because segment ids are effectively immutable upstream while the text inside them is not
+(over two years: 741 ids added, 2 removed, 24,502 values changed). A segment id is a stable address
+to hang a decision on. It also handles the two cases nothing else does: **verse**, where Bhikkhu
+Sujato reorders freely across lines so English and Pali don't align, and **`blurb`/`name`**, which
+have no Pali counterpart at all.
 
 ### Notes are never retranslated
 
-`sujato/notes` is out of every rule's reach — the default scope omits it, and a rule naming it is
-rejected rather than ignored (`RETRANSLATABLE_TREES` in `../scripts/lib/retranslation.js`). A note
-is Bhikkhu Sujato writing *about* the text rather than translating it, so the same words appear as ordinary
-English and as quotations of his own renderings, and a rule that is right on the translation is
-routinely wrong on the note beside it: `sn47.35:3.2` explains which half of "mindfulness and
-awareness" is which and came out as *the "awareness" part of "awareness and awareness"*;
-`sn54.1:5.2`'s "gradual disappearance" became "gradual **disappearing**"; `sn47.40:2.2` quoted a
-phrase half-converted, matching neither his wording nor ours.
+`sujato/notes` is out of every rule's reach — a rule naming it is rejected, not ignored
+(`RETRANSLATABLE_TREES` in `../scripts/lib/retranslation.js`). A note is Bhikkhu Sujato writing
+*about* the text, so his renderings appear there as quotations, and a rule that is right on the
+translation is wrong on the note beside it: `sn47.35:3.2` explains which half of "mindfulness and
+awareness" is which, and came out as *the "awareness" part of "awareness and awareness"*.
 
-None of these can be corrected in place: a segment override resolves ids through a sutta-only
-index (see "Segment override" below), so there's no per-note escape hatch to pair with a rule that
-mostly works. **A note therefore reads in Bhikkhu Sujato's terms while the text beside it reads in this
-app's**, which is the accepted cost — MN 10's note glosses *satipaṭṭhāna* as "mindfulness
-meditation" where the translation above it says "the establishment of awareness".
+There's no per-note escape hatch — segment overrides resolve ids through a sutta-only index. **A
+note therefore reads in Bhikkhu Sujato's terms while the text beside it reads in this app's**, which
+is the accepted cost.
 
 ### The Pali predicate
 
-Something still has to *propose* the list. That's a regex over the aligned Pali root text — the
-translation is segment-aligned with `data/pali/`, an invariant `update-data plan` already
-enforces (`INTEGRITY_GROUPS` in `../scripts/lib/dataSync.js`), so "segments whose Pali contains
-*sampajañña*" is a good first approximation of "segments where 'aware' means *sampajañña*".
-
-**The predicate proposes; review disposes; the list executes.** It is recorded on the rule for
-provenance and re-derivation, and never consulted at build time. That matters because a predicate
-alone is not trustworthy: Pali is heavily inflected and compounds freely, so a substring `/sati/`
-matches 6,394 Pali segments of which 4,727 have no "mindful" in the English — they're `passati` /
-`samanupassati` ("sees") — while word boundaries instead lose `sammāsati` and `satipaṭṭhāna`. A
-curated stem pattern lands at 2,945. Good enough to propose from, nowhere near good enough to ship.
+A regex over the aligned Pali root text proposes candidates. **The predicate proposes; review
+disposes; the list executes** — it's recorded on the rule for re-derivation and never consulted at
+build time. It can't be trusted further than that: Pali is heavily inflected and compounds freely,
+so `/sati/` matches 6,394 segments of which 4,727 are `passati` ("sees"), while word boundaries
+instead lose `sammāsati` and `satipaṭṭhāna`.
 
 ## Rule shape
 
-`retranslation.mjs` exports an ordered array. Order is significant (see the pass, below). Two
-shapes: a **term rule**, which rewrites words wherever its list says it may, and a **segment
-override**, which replaces one line outright.
+`retranslation.mjs` exports an ordered array of **term rules**, which rewrite words wherever their
+list permits, and **segment overrides**, which replace one line outright.
 
-### 1. Term rule
+### Term rule
 
 ```js
 {
   id: 'sampajanna-clear-comprehension',
   why: 'Bhikkhu Sujato renders sampajañña as "aware"/"situational awareness"; this app prefers ' +
        '"clear comprehension". Closed because plain-English "aware" is common and unrelated.',
-  mode: 'allow',                       // 'allow' (closed) | 'deny' (open) — see below
+  mode: 'allow',                            // 'allow' (closed) | 'deny' (open)
   scope: ['sujato/sutta', 'sujato/blurb'],  // optional; defaults to sutta + name + blurb
-  predicate: /sampajañ|sampajān/i,     // proposes candidates; never runs at build time
+  predicate: /sampajañ|sampajān/i,          // proposes candidates; never runs at build time
   forms: [
     ['situational awareness', 'clear comprehension'],
     ['aware', 'clearly comprehending'],
@@ -148,33 +120,23 @@ with `scripts/update-data/rules/sampajanna-clear-comprehension.json`:
 }
 ```
 
-Sidecars are machine-written and sorted, so `retranslation.mjs` stays readable and a sidecar's diff
-across refreshes is a clean record of what review decided. **`deny` carries a reason for every
-entry** — without it, re-derivation re-proposes the same rejections forever and the queue never
-empties.
+Sidecars are machine-written and sorted. **`deny` carries a reason for every entry** — without it,
+re-derivation re-proposes the same rejections forever and the queue never empties.
 
-#### Closed or open
-
-`mode` decides what happens to text that doesn't exist yet, and that — not list length — is the
-choice being made:
+**Closed or open** decides what happens to text that doesn't exist yet:
 
 | | applies where | a new segment that gains the term | queue reports |
 |---|---|---|---|
 | `allow` (closed) | listed segments only | **not** rewritten, surfaces for review | stale + untriaged |
-| `deny` (open) | everywhere except listed | rewritten, no review | stale denials + an FYI list |
+| `deny` (open) | everywhere except listed | rewritten, no review | stale denials |
 
-Closed is safe and verbose; open is compact and trusts the term to stay unambiguous. **A rule with
-an empty `deny` list is simply a global rule** — the right shape for a term with no homonym problem
-at all, like `mendicant-bhikkhu`.
+Prefer whichever list is shorter, but read it as a signal about ambiguity rather than an
+optimization: two exceptions out of seven hundred means the term is essentially unambiguous; two
+hundred out of six hundred means you want every future occurrence to stop for review. Where the two
+are comparable, choose closed. **An open rule with an empty `deny` list is a global rule** — the
+right shape for a term with no homonym problem, like `mendicant-bhikkhu`.
 
-List length is a good *proxy* for the right mode, so prefer whichever list is shorter — but read it
-as a signal rather than an optimization. Two exceptions out of seven hundred means the term is
-essentially unambiguous; two hundred out of six hundred and fifty means ambiguity is real and you
-want every future occurrence to stop for review. Where the two are comparable, choose closed.
-Ambiguous terms tend to be the small ones anyway — `aware` is 656 segments (~13KB) — while
-`mendicant`'s 10,588 would have been 200KB of list solving a problem that doesn't exist.
-
-### 2. Segment override
+### Segment override
 
 ```js
 {
@@ -189,259 +151,167 @@ Ambiguous terms tend to be the small ones anyway — `aware` is 656 segments (~1
 ```
 
 `from` is verbatim and doubles as the rule's anchor. Segment rules run **after** all term rules,
-against their output — writing one means the term rules got that line wrong. That is routine where
-a swap changes a word's part of speech, because `forms` chooses one replacement per source word and
-a single English word can sit in more than one grammatical slot. Bhikkhu Sujato's adjectival "aware" is
-*sampajāna*, and it takes a participle so it can stand in a list of adjectives ("keen, fully
-comprehending, and aware"); the handful of lines where he used the same word as a whole predicate
-("a mendicant is aware") need their clause rebuilt around the noun instead, and that is what these
-rules do.
+against their output — writing one means the term rules got that line wrong. That's routine where a
+swap changes a word's part of speech: `forms` picks one replacement per source word, but a single
+English word can sit in more than one grammatical slot.
 
-`segments: ['thag1.31:1.3', 'thag3.9:2.3', …]` replaces `segment` where the corpus repeats a line
-verbatim — a stock verse recurring across three Theragāthā poems, say — so one `from`/`to` covers
-all of them instead of the same rule copied per id. Every named segment still has to match `from`
-on its own, and a broken anchor names the segment that drifted, not the rule.
-
-Segment ids resolve to files through a segment→file index built once per run, scoped to
-`sujato/sutta` only: range-batched files hold segments keyed by sub-uid (`an1.5:1.2` lives in
-`an1.1-10_translation-en-sujato.json`), so the filename can't be derived from the id, and
-`sujato/notes` reuses the exact same segment ids as the sutta text it annotates — a single index
-spanning both would resolve an id to whichever tree happened to be indexed last. A segment override
-therefore only ever targets the main translation, never a note/blurb/name entry.
+`segments` (plural) covers a line the corpus repeats verbatim; each named segment still has to match
+`from` on its own. Ids resolve through a segment→file index scoped to `sujato/sutta` only —
+range-batched files hold segments keyed by sub-uid, so the filename can't be derived from the id,
+and `sujato/notes` reuses the same ids as the text it annotates.
 
 ### Shared fields
 
 - **`id`** — stable, unique; names the sidecar and the diff file.
-- **`why`** — required prose. Which Pali term, and why this app departs from upstream. A 2,000-id
-  list says nothing about intent on its own; this is what carries it.
-- **`scope`** — which trees, from `sujato/{sutta,name,blurb}`. Defaults to all three. Naming
-  `sujato/notes` is an error, not an option — see above.
-- **`forms`** — `[from, to]` pairs, matched on English word boundaries, longest-first regardless
-  of array order so `situational awareness` isn't pre-empted by `awareness`. Every inflection is
-  listed explicitly rather than swapping stems: the corpus contains unrelated words on the same
-  stem, e.g. MN40's "water immerser" (someone who dunks themselves in water), which a substring
-  swap turns into the nonsense "water concentrater". A form may carry a neighbouring word where
-  that word depends on the one being replaced — the indefinite article agrees with it, so
-  `an immersion` → `a concentration` is one form rather than a stranded "an concentration".
+- **`why`** — required prose: which Pali term, and why this app departs from upstream. A 2,000-id
+  list says nothing about intent on its own.
+- **`scope`** — trees from `sujato/{sutta,name,blurb}`; defaults to all three. `sujato/notes` is an
+  error.
+- **`forms`** — `[from, to]` pairs on English word boundaries, longest-first regardless of array
+  order so `situational awareness` isn't pre-empted by `awareness`. **List every inflection
+  explicitly** rather than swapping stems — MN40's "water immerser" (someone who dunks themselves)
+  becomes "water concentrater" otherwise. A form may carry a neighbouring word that depends on it:
+  `an immersion` → `a concentration`, rather than a stranded "an concentration".
 
-  **The match's case *pattern* is preserved**, not just its first letter: lowercase stays
-  lowercase, a capitalized first word gives Sentence case, and a match whose every significant word
-  is capitalized is Title Case, which the replacement reproduces word by word (`of`, `the`, `on`
-  and the rest of a small closed set stay lowercase). Sentence case is all a single-word form ever
-  needs; Title Case is what a multi-word one does, or a heading comes out reading "The Longer
-  Discourse on Establishment of awareness". The replacement's own first word follows the *match's*
-  first word rather than the title rule, so a form carrying a leading preposition (`on mindfulness
-  meditation` → `on the establishment of awareness`) keeps the article after it lowercase, where a
-  bare one (`Mindfulness Meditation` → `The Establishment of Awareness`) capitalizes it.
+  The match's case *pattern* is preserved: lowercase stays lowercase, a capitalized first word gives
+  Sentence case, and an all-capitalized match gives Title Case word by word (`of`, `the`, `on` and a
+  small closed set stay lowercase) — without which a heading reads "The Longer Discourse on
+  Establishment of awareness". The replacement's first word follows the *match's* first word rather
+  than the title rule, so `on mindfulness meditation` → `on the establishment of awareness` keeps
+  its article lowercase.
 
 ## The pass
 
-Per file, per segment value:
+Per segment value: split into one unlocked chunk; for each rule in array order, skip unless this
+segment is permitted, then apply its `forms` to **unlocked chunks only**, splitting each match into
+its own locked chunk; rejoin.
 
-1. Split the string into a single unlocked chunk.
-2. For each rule in array order: skip unless this segment is permitted — in its `allow` list for a
-   closed rule, absent from its `deny` list for an open one. Otherwise apply its `forms` to
-   **unlocked chunks only**, splitting each match into its own chunk and marking it locked.
-3. Rejoin.
-
-Locked chunks make the pass order-safe: text a rule has already written is invisible to every
-later rule. Modelling this as a chunk list rather than offset arithmetic over a mutating string
-keeps it obviously correct.
-
-Explicit lists don't remove the need for this. Segments carrying two targeted Pali terms at once
-are common — 531 have both *sampajañña* and *sati* — so `dn22:1.9` appears on **both** rules'
-allow lists:
+Locking is what makes the pass order-safe — text a rule has written is invisible to every later
+rule. It matters because segments carrying two targeted terms at once are common (531 have both
+*sampajañña* and *sati*, so `dn22:1.9` is on both rules' allow lists):
 
 ```
 dn22:1.9  PLI: …viharati ātāpī sampajāno satimā vineyya…
           EN : …keen, aware, and mindful, rid of covetousness…
 ```
 
-That's benign, because the two rules never compete for the same word: one matches "aware", the
-other "mindful". In 472 of those 531 segments the English carries both words, one per rule.
-Locking is what keeps them from interfering — the *sati* rule produces "aware", the exact token
-the *sampajañña* rule consumes, and locking makes that new token invisible to it. The result is
-"keen, clearly comprehending, and aware" **whichever order the two rules run in**.
+The *sati* rule produces "aware", the exact token the *sampajañña* rule consumes; locking makes that
+new token invisible to it, so the result is "keen, clearly comprehending, and aware" whichever order
+they run in. Order therefore matters only when two rules match the *same* English word, where the
+earlier rule wins. Order rules deliberately anyway; rely on locking for correctness.
 
-Ordering therefore matters only when two rules match the *same* English word, where the earlier
-rule simply wins. Order rules deliberately anyway; rely on locking for correctness.
-
-Locking also bounds what a form can span: a multi-word form can't cross a chunk an earlier rule has
-already claimed, so no form of a later rule can contain the word `bhikkhu`.
-
-The remaining 3 segments carry both Pali terms but only one of the two English words, so no rule
-can tell which term it renders. Those need segment overrides — see the limits at the end.
-
-Keys are never touched, by any rule. Only values.
-
-Required tests: **idempotence** (`post` twice is byte-identical), the `dn22:1.9` collision as a
-pinned fixture, and a per-rule input/output example checked directly.
+Keys are never touched, by any rule. Only values. Required tests: **idempotence** (`post` twice is
+byte-identical), the `dn22:1.9` collision as a pinned fixture, and a per-rule input/output example.
 
 ## Anchors: how a rule announces that it broke
 
-Upstream is a moving target. Bhikkhu Sujato revises his own terminology continuously and in bulk — sweeps
-touching 500+ files land a few times a year — and the sync commits are machine-generated with
-identical messages (`[GHA] Nilakkhana transform and sync files from bilara-data repo.`), so the
-git log tells you nothing about what changed. Recent examples: `tradition` → `denomination`,
-`overexertion` → `exertion`, and in the eightfold path, `purpose` → `thought`. Rules breaking is
-routine maintenance, and the only signal is the one we build.
+Bhikkhu Sujato revises his terminology continuously and in bulk, and the sync commits are
+machine-generated with identical messages, so the git log tells you nothing. Rules breaking is
+routine maintenance; the only signal is the one we build.
 
 | Anchor | Applies to | On violation |
 |---|---|---|
 | `from` matches verbatim | segment rules | **Hard fail.** Upstream reworded a line you'd overridden. |
 | Rule matched at least once | term rules | **Hard fail.** The term is gone; the rule is dead. |
-| **Triage queue is empty** | term rules | **Review.** See below. |
+| `residue` matches nothing | term rules that declare one | **Hard fail.** Upstream wrote a shape the forms don't cover. |
+| Triage queue is empty | term rules | **Review.** See below. |
 
-`update-data plan` reports the first two **before** anything is copied, by resolving each rule
-against the upstream files. A broken segment rule prints as a derivation — upstream's raw line, what
-the term rules did to it (`↪`), then `expected` against `found` with the diverging words coloured,
-and `Would write:` for the rule's `to` — enough to decide without opening anything. When `found`
-already reads correctly, the override is obsolete rather than drifted.
+`update-data plan` reports the first two before anything is copied. A broken segment rule prints as
+a derivation — upstream's raw line, what the term rules did to it (`↪`), then `expected` against
+`found` with the diverging words coloured, and `Would write:` for the rule's `to`. **When `found`
+already reads correctly, the override is obsolete rather than drifted** — delete it.
 
-The third belongs to `update-data triage`, which needs the new text in place and so only answers
-fully after `apply`. `plan` previews its stale half against the upstream checkout, since a dead
-allow/deny entry is worth knowing about before the copy; it never fails the run either way.
+An **open rule with an empty deny list** has no queue to check, so its anchor is its match count in
+`retranslation.counts.json` (machine-owned, committed). Nothing verifies it for you; re-recording
+shows the movement as a git diff. That's where the half-dead case surfaces — upstream renames the
+term across part of the corpus, the rule still fires so zero-match stays silent, but its footprint
+drops sharply.
 
-The triage queue is the coverage check on a rule's list:
-
-- **Stale** — a listed segment whose English no longer contains any `forms` source word. Upstream
-  reworded the term out of it (or, for a closed rule, out from under an allow entry).
-- **Untriaged** — *closed rules only*: a segment whose English *does* contain a source word but
-  which is on neither list. Either upstream introduced the term there, or review missed it.
-- **Newly covered** — *open rules only*: a segment that gained the term and was rewritten without
-  review. Informational, and the price of the open default.
-
-Every entry names an exact segment id, which is why this replaces a percentage-drift anchor:
-`sati-aware: 3 stale, 11 untriaged` is directly actionable where "count drifted 1.4%" is not. The
-volumes are small — over the last 8 months `aware` moved 867→859 segments and `mendicant`
-10,657→10,588 — so expect **tens of segments per refresh**, not thousands.
-
-An **open rule with an empty deny list** has nothing to check against, so its anchor is its match
-count instead, recorded in `scripts/update-data/retranslation.counts.json` (machine-owned). Nothing
-verifies it for you: the file is committed, so re-recording the counts shows the movement as a git
-diff, one line per rule. That's where the half-dead case shows up — upstream renames the term across
-part of the corpus, the rule still fires so zero-match stays silent, but its footprint drops sharply.
-
-Two commands write that file, from one implementation (`update-data-counts.mjs`), because the two
-occasions to write it are not the same act:
-
-- **`update-data counts`** — after editing a rule. Records the new footprint and nothing else. A
-  rule added without it has no anchor at all.
-- **`update-data accept`** — after an upstream refresh, where re-recording counts is part of the
-  wider "this is now the new normal" that also rebaselines `snapshot.json` and
-  `manifest.snapshotCommit`.
-
-Keeping them separate is what stops a rule edit from quietly re-accepting the current `data/` tree
-as the upstream baseline, which would blind the *next* `update-data plan` to a real upstream change
-(see `update-data-accept.mjs`'s own warning about running it without review).
+Two commands write that file, because the occasions differ: **`counts`** records a new footprint
+after a rule edit, and nothing else; **`accept`** re-records it as part of the wider "this is the new
+normal" that also rebaselines `snapshot.json`. Keeping them separate stops a rule edit from quietly
+re-accepting the current `data/` tree as the upstream baseline, which would blind the next `plan` to
+a real upstream change.
 
 ## Working the queue: `update-data triage`
 
 ```
-npm run update-data triage                              # every rule: stale + untriaged counts
-npm run update-data triage sampajanna-clear-comprehension  # one rule, every case in full
+npm run update-data triage                                  # every rule: queue counts
+npm run update-data triage sampajanna-clear-comprehension   # one rule, every case in full
 npm run update-data triage immersion-concentration prune    # drop that rule's stale entries
 ```
 
-For one rule it lists every queued segment with its English, its aligned Pali, and its role (prose
-/ verse / heading, derived from `data/html` the same way `build-corpus.mjs` derives it). Untriaged
-segments are grouped by whether the rule's `predicate` matches — predicate-matching ones are
-usually allows, non-matching ones usually denies, and the disagreements are where the judgment
-actually is.
+For one rule it lists every queued segment with its English, aligned Pali and role. The queue has
+three kinds of entry:
 
-Each case resolves one of three ways: the term is genuinely there → add to `allow`; it's unrelated
-English → add to `deny` with a reason; upstream reworded a line you'd overridden → delete the
-segment rule if upstream's wording is now fine, otherwise re-derive `to` and re-anchor `from`. An
-empty queue means the rule is current.
+- **Stale** — a listed segment whose English no longer contains any `forms` source word. Upstream
+  reworded the term out from under it.
+- **Untriaged** — *closed rules only*: contains a source word, on neither list. Either upstream
+  introduced the term there, or review missed it. Grouped by whether the `predicate` matches —
+  matching ones are usually allows, and the disagreements are where the judgment is.
+- **Newly covered** — *open rules only*: gained the term and was rewritten without review.
+  Informational, and the price of the open default.
 
-**`prune` clears the stale half.** A stale entry names a segment that no longer contains any of
-the rule's forms, so allowing or denying it does nothing either way — there is no judgment left to
-make, only a dead line to delete. An upstream reword kills these in bulk (one refresh left 74 of
-`immersion-concentration`'s 88 denials dead), which is more than anyone should delete by hand.
-`prune` removes exactly those, prints the ids, and leaves `untriaged` — the half that does need
-judgment — untouched. It is the one thing `update-data triage` writes, and only when asked: the
-result is an ordinary `git diff` on the sidecar, reviewed like any other change.
+Each untriaged case resolves one of three ways: the term is genuinely there → `allow`; unrelated
+English → `deny` with a reason; upstream reworded a line you'd overridden → delete the segment rule
+if upstream now reads fine, otherwise re-derive `to` and re-anchor `from`.
 
-It's a positional word rather than a `--prune` flag on purpose: `npm run` drops anything starting
-with `--` unless a bare `--` precedes it, so a flag would be a documented command that silently
-did nothing.
+**`prune` clears the stale half**, which needs no decision at all — a stale entry has no subject
+left, and an upstream reword kills them in bulk (one refresh left 74 of `immersion-concentration`'s
+88 denials dead). It leaves `untriaged` untouched, and is the one thing `triage` writes. A positional
+word rather than a `--prune` flag because `npm run` drops anything starting with `--` unless a bare
+`--` precedes it, so the flag spelling would look like it ran and do nothing.
 
-**Authoring a new rule is the same command.** A closed rule with an empty `allow` list has its
-entire footprint untriaged, so the first triage run *is* the enumeration. There's no separate mode.
-It also tells you which `mode` the rule wants: if nearly everything lands in `allow`, the rule is
-better written open, with only the exceptions listed.
+**Authoring a new rule is the same command.** A closed rule with an empty `allow` list has its whole
+footprint untriaged, so the first triage run *is* the enumeration. It also tells you which `mode` the
+rule wants: if nearly everything lands in `allow`, write it open with only the exceptions listed.
 
 ## Auditing a run: `data/diff/`
 
-`npm run update-data post` always writes it — there's no separate flag or command, so the diffs
-can't be out of date with `data/sujato.post/`. The directory is wiped and fully rewritten each
-run:
+`post` always writes it — no separate flag, so the diffs can't be out of date with
+`data/sujato.post/`. Wiped and fully rewritten each run:
 
-- `00-summary.txt` — every rule with its match count and how many files it touched, and any rule
-  that matched zero.
-- `00-all.diff` — every rule's effect at once: `data/sujato/` against `data/sujato.post/`.
-- `<id>.diff` — one file per rule, every change it made.
+- **`00-all.diff`** — `data/sujato/` against `data/sujato.post/`. The plain before/after, and the
+  file to read.
+- `<id>.diff` — one per rule, attributing that result rule by rule.
+- `00-summary.txt` — each rule's match and file counts, and any rule that matched zero.
 
-Per change: the source file, the segment id, the **Pali** of that segment, then the before/after
-pair. Only this rule's own spans differ between the two lines — every other rule's work shows as
-already-final text on both sides — so the change reads at word level even though it's stored as a
-line pair. No cap on entries; auditing all 1,200-odd rewrites of a term is the actual use case.
+**A rule file's `-` side is not upstream.** Rules run in sequence and each `<id>.diff` records its
+own step, so its `-` side is whatever earlier rules had already made of the line. `sn36.7` is
+"mindful and aware" upstream and "aware and clearly comprehending" shipped, but in
+`sampajanna-clear-comprehension.diff` the `-` side reads "aware and aware" — an intermediate that
+never ships, because `sati-aware` had already rewritten *mindful*. Honest attribution, unreadable as
+a before/after; that's what `00-all.diff` is for.
 
-**The two kinds of file answer different questions, and a rule file's `-` side is not upstream.**
-Rules run in sequence over the same text, and each `<id>.diff` records that rule's own step, so its
-`-` side is whatever earlier rules had already made of the line. `sn36.7` reads "A mendicant should
-await their death mindful and aware" upstream and "A bhikkhu … aware and clearly comprehending"
-shipped, but in `sampajanna-clear-comprehension.diff` the `-` side is "aware and aware" — an
-intermediate that never ships, because `sati-aware` had already rewritten *mindful*. That's the
-honest way to attribute a change to a rule, and it's unreadable as a before/after. `00-all.diff` is
-the before/after: what this app ships differently from upstream, and the file to read after a
-refresh.
+`data/diff/` is **checked in**, which is what makes a refresh legible: `git diff data/diff/` next to
+`git diff data/sujato/`. Hence no colour, no timestamps, sorted paths — a run over unchanged input
+has to produce an unchanged tree.
 
-**`data/diff/` is checked in.** That's what makes an upstream refresh legible: after
-`update-data apply`, `git diff data/diff/` is the list of this app's own rewrites that upstream has
-moved under, rule by rule, next to `git diff data/sujato/` for what upstream itself changed.
-Which is also why the files carry no colour and no timestamps, and sort their source paths — a run
-over unchanged input has to produce an unchanged tree, or the signal drowns.
-
-Each rule file is a real unified diff, so the word-level highlight comes from the viewer instead
-of from the bytes:
+Each file is a real unified diff, so word-level highlighting comes from the viewer:
 
 ```
 riff < data/diff/sati-aware.diff      # inline highlight of the changed span
 git diff data/diff/00-all.diff        # what the shipped text gained or lost
-git diff data/diff/                   # the same, attributed rule by rule
 ```
 
-`riff` adds the highlight and leaves the layout alone, so the file still reads as plain text under
-your own pager. `delta` does the same job but decorates heavily by default;
-`delta --color-only --minus-style normal --plus-style normal` gets it back to the same place.
+`riff` highlights and leaves the layout alone; `delta --color-only --minus-style normal --plus-style
+normal` does the same. `mendicant-bhikkhu.diff` and `00-all.diff` are past GitHub's rendering limit,
+so those are local-only; `.gitattributes` marks the directory `linguist-generated` so GitHub
+collapses it by default.
 
-`mendicant-bhikkhu.diff` is ~4MB and past GitHub's rendering limit, so that one is local-only;
-the rest display fine. `.gitattributes` marks them `linguist-generated`, which collapses them by
-default in GitHub's diff view and leaves everything else — blob view, `git diff`, riff, delta —
-untouched.
-
-GitHub itself only word-highlights in a *commit* diff, where it has a real before/after pair to
-compare; its blob view runs a syntax lexer, which can colour a `-` line red but has no idea the
-next line is its counterpart. So change-over-time review works there, and auditing a rule's whole
-footprint is a local job.
-
-Reading these for *mechanical* correctness isn't enough. A swap that is right term-for-term can
-still leave English that no one would write — a stranded article, or a noun standing where the
-adjective it replaced used to. Read for what sounds wrong, not just for what matched wrong.
+Reading for *mechanical* correctness isn't enough. A swap that is right term-for-term can still leave
+English no one would write — a stranded article, or a noun standing where an adjective used to. Read
+for what sounds wrong, not just for what matched wrong.
 
 ## Limits
 
-- **Judgment errors are baked into data, not derivable.** A wrong regex is one line to fix; a
-  wrong list entry hides in 2,000 rows. The per-rule diff is the audit surface, and the recorded
+- **Judgment errors are baked into data, not derivable.** A wrong regex is one line to fix; a wrong
+  list entry hides in 2,000 rows. The per-rule diff is the audit surface, and the recorded
   `predicate` lets you re-derive a list and diff it against what's stored.
-- **A rule can't distinguish two occurrences within one segment** — if "aware" appears twice in a
-  segment, once for *sampajañña* and once as plain English, only a segment override separates
-  them.
-- **Upstream additions don't arrive.** `copy` iterates the files named in `snapshot.json`, so a
-  newly added sutta needs a deliberate snapshot regeneration. Rare: of 208 files added across
-  tracked paths in 2026, 207 were Chinese HTML and one was English.
-- **Already-cached readers don't see the change.** Per-sutta text is cached `CacheFirst` with a
-  one-year TTL and no cache-busting on the URL (see CLAUDE.md's "Known gaps"), so a retranslation
-  reaches an existing user only when that lapses or the cache evicts. Your own browser is not a
-  test of whether a rule shipped.
+- **A rule can't distinguish two occurrences within one segment.** If "aware" appears twice, once
+  for *sampajañña* and once as plain English, only a segment override separates them.
+- **Upstream additions don't arrive.** `apply` iterates the files named in `snapshot.json`, so a
+  newly added sutta needs a deliberate snapshot regeneration.
+- **Already-cached readers don't see the change.** Per-sutta text is `CacheFirst` with a one-year
+  TTL and no cache-busting (CLAUDE.md's "Known gaps"), so your own browser is not a test of whether
+  a rule shipped.

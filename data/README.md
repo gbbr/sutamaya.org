@@ -58,16 +58,13 @@ SC_DATA_PATH=/path/to/sc-data npm run update-data          # plan
                               npm run update-data accept
 ```
 
-**`plan`** is read-only. It reports what upstream changed and what that breaks here, and refuses
-nothing — it just tells you. **`apply`** copies the new text in and re-runs the retranslation rules,
-deliberately leaving the working tree dirty. **`accept`** re-bases drift detection onto that tree,
-and is you saying you've reviewed it.
+**`plan`** is read-only: what upstream changed, and what that breaks here. **`apply`** copies the
+new text in and re-runs the retranslation rules, deliberately leaving the tree dirty. **`accept`**
+re-bases drift detection onto that tree, and is you saying you've reviewed it. Each command ends by
+naming the next, and reads where you are from `manifest.json` — `sourceCommit` is what was last
+copied in, `snapshotCommit` what was last accepted.
 
-Each command ends by naming the next one, so the order never has to be remembered, and each knows
-where you are from `manifest.json` — `sourceCommit` is what was last copied in, `snapshotCommit`
-what was last accepted, and they differ exactly when a refresh is applied but unaccepted.
-
-**The review between `apply` and `accept` is the part that needs you**, and it deliberately isn't a
+**The review between `apply` and `accept` is the part that needs you**, and deliberately isn't a
 command:
 
 ```
@@ -76,39 +73,35 @@ git diff data/diff/00-all.diff      what this app ships differently as a result
 npm run update-data triage          what the refresh did to the rules themselves
 ```
 
-`plan` previews half of the triage queue before the copy: an allow/deny entry whose segment no
-longer contains the term upstream is dead, and it says so, one line per rule. `triage` itself can't
-see this until afterwards — it reads `data/sujato`, so it's judging the old text until `apply` lands
-the new one. Informational either way: those entries can only be removed once the copy has happened,
-with `npm run update-data triage <rule-id> prune`.
+`apply` is idempotent, so it's also the loop: fix a rule, `apply` again, re-read the diff. Then
+`npm test`, then `accept`.
 
-When `plan` reports a problem, it's one of two things — read what it prints before doing anything
-else:
+### What `plan` reports
 
-- a moved or restructured file upstream (segment ids changed, or a tracked file isn't where it's
-  expected). One shape of change is exempt: upstream periodically pads its English files out to the
-  root text's full segment id set, and blank additions under `sujato/` can't alter the built text —
-  `build-corpus` orders a sutta's segments by the *Pali* keys and drops any segment blank on both
-  sides. Those are counted into a one-line "Accepted" summary instead of failing. A removal, an
-  addition carrying text, or any addition under `pali/`/`html/` still refuses;
-- a **cross-category integrity problem**: the segment-id alignment described above, which
-  `update-data plan` verifies both against the upstream checkout and against the local trees. The
-  local pass is what catches a snapshot taken from an already-misaligned local state, which would
-  otherwise pass every other check. A Bhikkhu Sujato-only segment id is always worth flagging; a
-  Pali/html-only one usually isn't.
+A failure is one of two things:
 
-`plan` reports the same thing on every re-run, since it never changes anything — that's the point.
-Once you've confirmed the change is legitimate, `apply` copies it in and re-runs the rules
-(`sujato.post/`, and each rule's rewrites in the checked-in `data/diff/`), then `npm test` and the
-reader, then `accept` records the new baseline and each rule's match count so the next `plan` stops
-reporting this same change.
+- **A moved or restructured file upstream** — segment ids changed, or a tracked file isn't where
+  it's expected. One shape is exempt: upstream periodically pads its English files out to the root
+  text's full segment id set, and blank additions under `sujato/` can't alter the built text, since
+  `build-corpus` orders segments by the *Pali* keys and drops any blank on both sides. Those are
+  counted into a one-line "Accepted" summary. A removal, an addition carrying text, or any addition
+  under `pali/`/`html/` still fails.
+- **A cross-category integrity problem** — the segment-id alignment described above, verified both
+  against the upstream checkout and against the local trees. The local pass catches a snapshot taken
+  from an already-misaligned state, which would otherwise pass every other check. A Sujato-only
+  segment id is always worth flagging; a Pali/html-only one usually isn't.
 
-Nothing here runs automatically, by design. `scripts/update-data.mjs` is the entry point and owns
-the presentation; the steps themselves are in `scripts/update-data-*.mjs` and
-`scripts/lib/dataSync.js`, which it drives as libraries.
+It also previews the stale half of the triage queue: an allow/deny entry whose segment no longer
+contains the term upstream is dead, one line per rule. `triage` can't see this until after `apply` —
+it reads `data/sujato`, so it judges the old text until the copy lands — and the entries can only be
+removed afterwards, with `npm run update-data triage <rule-id> prune`.
 
-Two more subcommands serve rule authoring rather than a refresh, where none of the above applies —
-see [`../docs/retranslation.md`](../docs/retranslation.md):
+`plan` never changes anything, so it reports the same thing on every re-run. Nothing here runs
+automatically, by design: `scripts/update-data.mjs` is the entry point and owns the presentation,
+driving `scripts/update-data-*.mjs` and `scripts/lib/dataSync.js` as libraries.
+
+Two more subcommands serve rule authoring rather than a refresh — see
+[`../docs/retranslation.md`](../docs/retranslation.md):
 
 ```
 npm run update-data post            re-run the rules over the current data/sujato
