@@ -1,8 +1,9 @@
-import type { Shortcut } from '../lib/shortcuts';
 import type { ThemeColors } from '../lib/types';
 
 interface ShortcutsModalProps {
-  shortcuts: Shortcut[];
+  // Structural, not `Shortcut[]`, so a caller can append the pointer gestures (lib/shortcuts'
+  // POINTER_HINTS) to the same list — this only ever renders a cap row and a label.
+  shortcuts: Array<{ keys: string[]; label: string }>;
   onClose: () => void;
   // Present only from the Reader ("?" there uses `shortcutsForScope('reader')`) — the reader has
   // its own light/sepia/dark theme system, independent of the app shell's own dark/light mode

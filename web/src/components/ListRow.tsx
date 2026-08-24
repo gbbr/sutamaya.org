@@ -106,7 +106,10 @@ export const ListRow = memo(function ListRow({
   childrenOf: (parentId: string) => ListDef[];
   countFor: (l: ListDef) => number;
   listExpanded: Record<string, boolean>;
-  onToggle: (id: string) => void;
+  // `deep` is ⌥-click: collapse this group and every group nested inside it, rather than
+  // leaving them flagged open to reappear on the next expand. See TreePane's
+  // toggleListExpanded, and TreeRow for the corpus tree's identical gesture.
+  onToggle: (id: string, deep?: boolean) => void;
   onSelect: (id: string) => void;
   menu: ListRowMenuProps;
   edit: ListRowEditProps;
@@ -147,9 +150,9 @@ export const ListRow = memo(function ListRow({
         // their own distinct behavior (options menu, drag handle) stopPropagation so this
         // doesn't also fire for them — see their own onClick/onPointerDown below.
         className={`row flex items-center gap-[9px] w-full text-left pr-[10px] py-[8px] border-b border-ink/[.07] cursor-pointer ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
-        onClick={() => {
+        onClick={(e) => {
           if (editing) return;
-          if (isGroup) onToggle(list.id);
+          if (isGroup) onToggle(list.id, e.altKey);
           else onSelect(String(list.id));
         }}
         style={{
@@ -201,7 +204,7 @@ export const ListRow = memo(function ListRow({
             // an empty placeholder, the click passes through to the row's handler instead.
             if (isGroup) {
               e.stopPropagation();
-              onToggle(list.id);
+              onToggle(list.id, e.altKey);
             }
           }}
         >
@@ -257,7 +260,7 @@ export const ListRow = memo(function ListRow({
               // A group can't hold suttas itself, so clicking one has nothing to show in the
               // list pane — same as the corpus browse tree's own chapter rows (see TreeRow),
               // it just expands/collapses in place instead.
-              if (isGroup) onToggle(list.id);
+              if (isGroup) onToggle(list.id, e.altKey);
               else onSelect(String(list.id));
             }}
             // Desktop only — undefined (not just gated on click) rather than omitted, since on

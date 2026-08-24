@@ -6,7 +6,8 @@ import { TreeRow } from './TreeRow';
 interface CorpusTreeViewProps {
   corpus: Corpus;
   expanded: Record<string, boolean>;
-  onToggle: (id: string) => void;
+  // `deep` is ⌥-click — see TreeRow's own note and TreePane's toggleExpanded.
+  onToggle: (id: string, deep?: boolean) => void;
   onSelect: (nodeId: string) => void;
   nodeId?: string;
   flashNodeId?: string;
@@ -30,7 +31,7 @@ export function CorpusTreeView({ corpus, expanded, onToggle, onSelect, nodeId, f
               className={`row flex items-center gap-[13px] w-full text-left pl-[18px] pr-[22px] py-[11px] border-b border-ink/[.07] transition-colors duration-500 ${
                 nodeId === n.id || flashNodeId === n.id ? 'bg-ink/[.06]' : ''
               }`}
-              onClick={() => (expandableNode ? onToggle(n.id) : onSelect(n.id))}
+              onClick={(e) => (expandableNode ? onToggle(n.id, e.altKey) : onSelect(n.id))}
             >
               <span className="w-[17px] flex-none flex items-center justify-center text-ink-4">
                 {expandableNode ? open ? <ChevronDown size={17} strokeWidth={2} /> : <ChevronRight size={17} strokeWidth={2} /> : ''}

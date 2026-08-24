@@ -11,7 +11,15 @@ import { useListTreeIndex } from '../hooks/useListTreeIndex';
 import { useListCrud } from '../hooks/useListCrud';
 import { useListTreeDrag } from '../hooks/useListTreeDrag';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
-import { ancestorsOf, findNode, flatSuttaOrder, SEARCH_PLACEHOLDER, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
+import {
+  ancestorsOf,
+  descendantIdsOf,
+  findNode,
+  flatSuttaOrder,
+  SEARCH_PLACEHOLDER,
+  SEARCH_RESULTS_CAP,
+  type SearchHit,
+} from '../lib/corpus';
 import { ancestorsOfList, flattenListTree, suttaRowMeta } from '../lib/lists';
 import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
 import { derivePaneViewSync } from '../lib/paneView';
@@ -181,9 +189,21 @@ export function TreePane({
   // useCallback'd (only reading the setState function itself, which React guarantees is stable)
   // so TreeRow's own memoization isn't defeated by a freshly-allocated handler on every TreePane
   // render — see TreeRow.tsx's perf note.
-  const toggleExpanded = useCallback((id: string) => {
-    setExpanded((x) => ({ ...x, [id]: !x[id] }));
-  }, []);
+  // `deep` (⌥-click, see TreeRow) closes the row's whole subtree instead of just hiding it with
+  // its descendants still flagged open — the escape hatch for a tree left sprawling after a lot
+  // of browsing. Only ever collapses: ⌥-clicking a closed row opens just that row, since
+  // expanding a nikaya's entire subtree at once would bury the pane in rows.
+  const toggleExpanded = useCallback(
+    (id: string, deep = false) => {
+      setExpanded((x) => {
+        if (!deep || !x[id]) return { ...x, [id]: !x[id] };
+        const next = { ...x, [id]: false };
+        for (const d of descendantIdsOf(corpus, id)) next[d] = false;
+        return next;
+      });
+    },
+    [corpus]
+  );
   // Synchronous initial state for the same reason `expanded` above is: so the tree is already
   // expanded to nodeId on the very first render if TreePane mounts fresh already pointed at a
   // nested list.

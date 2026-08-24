@@ -86,7 +86,7 @@ describe('TreeRow', () => {
     );
     expect(screen.queryByText('Book of Ones')).not.toBeInTheDocument();
     await userEvent.click(screen.getByText('Numbered Discourses'));
-    expect(onToggle).toHaveBeenCalledWith('an1-parent');
+    expect(onToggle).toHaveBeenCalledWith('an1-parent', false);
     expect(onSelect).not.toHaveBeenCalled();
 
     rerender(
