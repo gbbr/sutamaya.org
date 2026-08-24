@@ -4,8 +4,8 @@ Rule: vitakka-vicara-thought-examination — 254 change(s), 114 file(s)
 +++ sujato/sutta/an/an10/an10.72_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an10.72:6.3
  PLI: Pavivekārāmassa saṅgaṇikārāmatā kaṇṭako, asubhanimittānuyogaṁ anuyuttassa subhanimittānuyogo kaṇṭako, indriyesu guttadvārassa visūkadassanaṁ kaṇṭako, brahmacariyassa mātugāmūpacāro kaṇṭako, paṭhamassa jhānassa saddo kaṇṭako, dutiyassa jhānassa vitakkavicārā kaṇṭakā, tatiyassa jhānassa pīti kaṇṭako, catutthassa jhānassa assāsapassāso kaṇṭako, saññāvedayitanirodhasamāpattiyā saññā ca vedanā ca kaṇṭako rāgo kaṇṭako doso kaṇṭako moho kaṇṭako. 
--Relishing company is a thorn for someone who loves seclusion. Focusing on the feature of beauty is a thorn for someone pursuing the meditation on the feature of ugliness. Seeing shows is a thorn to someone restraining the senses. Lingering in the neighborhood of females is a thorn to chastity. Sound is a thorn to the first absorption. Placing the mind and keeping it connected are a thorn to the second absorption. Rapture is a thorn to the third absorption. Breathing is a thorn to the fourth absorption. Perception and feeling are a thorn to the attainment of the cessation of perception and feeling. Greed, hate, and delusion are thorns. 
-+Relishing company is a thorn for someone who loves seclusion. Focusing on the feature of beauty is a thorn for someone pursuing the meditation on the feature of ugliness. Seeing shows is a thorn to someone restraining the senses. Lingering in the neighborhood of females is a thorn to chastity. Sound is a thorn to the first absorption. Thought and examination are a thorn to the second absorption. Rapture is a thorn to the third absorption. Breathing is a thorn to the fourth absorption. Perception and feeling are a thorn to the attainment of the cessation of perception and feeling. Greed, hate, and delusion are thorns. 
+-Relishing company is a thorn for someone who loves seclusion. Focusing on the feature of beauty is a thorn for someone pursuing the meditation on the feature of ugliness. Seeing shows is a thorn to someone restraining the senses. Lingering in the neighborhood of females is a thorn to chastity. Sound is a thorn to the first absorption. Placing the mind and keeping it connected are a thorn to the second absorption. Rapture is a thorn to the third absorption. Breathing is a thorn to the fourth absorption. Perception and sensation are a thorn to the attainment of the cessation of perception and sensation. Greed, hate, and delusion are thorns. 
++Relishing company is a thorn for someone who loves seclusion. Focusing on the feature of beauty is a thorn for someone pursuing the meditation on the feature of ugliness. Seeing shows is a thorn to someone restraining the senses. Lingering in the neighborhood of females is a thorn to chastity. Sound is a thorn to the first absorption. Thought and examination are a thorn to the second absorption. Rapture is a thorn to the third absorption. Breathing is a thorn to the fourth absorption. Perception and sensation are a thorn to the attainment of the cessation of perception and sensation. Greed, hate, and delusion are thorns. 
 --- sujato/sutta/an/an10/an10.99_translation-en-sujato.json
 +++ sujato/sutta/an/an10/an10.99_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an10.99:24.2
@@ -590,8 +590,8 @@ Rule: vitakka-vicara-thought-examination — 254 change(s), 114 file(s)
 +Quite secluded from sensual pleasures, secluded from unskillful qualities, he entered and remained in the first absorption, which has the rapture and bliss born of seclusion, with thought and examination. 
 @@ -1,2 +1,2 @@ mn111:4.1
  PLI: Ye ca paṭhame jhāne dhammā vitakko ca vicāro ca pīti ca sukhañca cittekaggatā ca, phasso vedanā saññā cetanā cittaṁ chando adhimokkho vīriyaṁ sati upekkhā manasikāro—tyāssa dhammā anupadavavatthitā honti. 
--And he distinguished the phenomena of the first absorption one by one: placing and keeping and rapture and bliss and unification of mind; contact, feeling, perception, intention, mind, enthusiasm, decision, energy, awareness, equanimity, and application of mind. 
-+And he distinguished the phenomena of the first absorption one by one: thought and examination and rapture and bliss and unification of mind; contact, feeling, perception, intention, mind, enthusiasm, decision, energy, awareness, equanimity, and application of mind. 
+-And he distinguished the phenomena of the first absorption one by one: placing and keeping and rapture and bliss and unification of mind; contact, sensation, perception, intention, mind, enthusiasm, decision, energy, awareness, equanimity, and application of mind. 
++And he distinguished the phenomena of the first absorption one by one: thought and examination and rapture and bliss and unification of mind; contact, sensation, perception, intention, mind, enthusiasm, decision, energy, awareness, equanimity, and application of mind. 
 @@ -1,2 +1,2 @@ mn111:5.1
  PLI: Puna caparaṁ, bhikkhave, sāriputto vitakkavicārānaṁ vūpasamā ajjhattaṁ sampasādanaṁ cetaso ekodibhāvaṁ avitakkaṁ avicāraṁ samādhijaṁ pītisukhaṁ dutiyaṁ jhānaṁ upasampajja viharati. 
 -Furthermore, as the placing of the mind and keeping it connected were stilled, he entered and remained in the second absorption, which has the rapture and bliss born of composure, with internal clarity and mind at one, without placing the mind and keeping it connected. 
@@ -790,12 +790,12 @@ Rule: vitakka-vicara-thought-examination — 254 change(s), 114 file(s)
 +++ sujato/sutta/mn/mn44_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn44:14.2
  PLI: “Assāsapassāsā kho, āvuso visākha, kāyasaṅkhāro, vitakkavicārā vacīsaṅkhāro, saññā ca vedanā ca cittasaṅkhāro”ti. 
--“Breathing is a physical process. Placing the mind and keeping it connected are a verbal process. Perception and feeling are a mental process.” 
-+“Breathing is a physical process. Thought and examination are a verbal process. Perception and feeling are a mental process.” 
+-“Breathing is a physical process. Placing the mind and keeping it connected are a verbal process. Perception and sensation are a mental process.” 
++“Breathing is a physical process. Thought and examination are a verbal process. Perception and sensation are a mental process.” 
 @@ -1,2 +1,2 @@ mn44:15.1
  PLI: “Kasmā panāyye, assāsapassāsā kāyasaṅkhāro, kasmā vitakkavicārā vacīsaṅkhāro, kasmā saññā ca vedanā ca cittasaṅkhāro”ti? 
--“But ma’am, why is breathing a physical process? Why are placing the mind and keeping it connected a verbal process? Why are perception and feeling a mental process?” 
-+“But ma’am, why is breathing a physical process? Why are thought and examination a verbal process? Why are perception and feeling a mental process?” 
+-“But ma’am, why is breathing a physical process? Why are placing the mind and keeping it connected a verbal process? Why are perception and sensation a mental process?” 
++“But ma’am, why is breathing a physical process? Why are thought and examination a verbal process? Why are perception and sensation a mental process?” 
 @@ -1,2 +1,2 @@ mn44:15.3
  PLI: Pubbe kho, āvuso visākha, vitakketvā vicāretvā pacchā vācaṁ bhindati, tasmā vitakkavicārā vacīsaṅkhāro. 
 -First you place the mind and keep it connected, then you break into speech. That’s why placing the mind and keeping it connected are a verbal process. 
@@ -1088,12 +1088,12 @@ Rule: vitakka-vicara-thought-examination — 254 change(s), 114 file(s)
 +++ sujato/sutta/sn/sn41/sn41.6_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn41.6:1.8
  PLI: “Assāsapassāsā kho, gahapati, kāyasaṅkhāro, vitakkavicārā vacīsaṅkhāro, saññā ca vedanā ca cittasaṅkhāro”ti. 
--“Breathing is a physical process. Placing the mind and keeping it connected are a verbal process. Perception and feeling are a mental process.” 
-+“Breathing is a physical process. Thought and examination are a verbal process. Perception and feeling are a mental process.” 
+-“Breathing is a physical process. Placing the mind and keeping it connected are a verbal process. Perception and sensation are a mental process.” 
++“Breathing is a physical process. Thought and examination are a verbal process. Perception and sensation are a mental process.” 
 @@ -1,2 +1,2 @@ sn41.6:2.2
  PLI: “kasmā pana, bhante, assāsapassāsā kāyasaṅkhāro, kasmā vitakkavicārā vacīsaṅkhāro, kasmā saññā ca vedanā ca cittasaṅkhāro”ti? 
--“But sir, why is breathing a physical process? Why are placing the mind and keeping it connected a verbal process? Why are perception and feeling a mental process?” 
-+“But sir, why is breathing a physical process? Why are thought and examination a verbal process? Why are perception and feeling a mental process?” 
+-“But sir, why is breathing a physical process? Why are placing the mind and keeping it connected a verbal process? Why are perception and sensation a mental process?” 
++“But sir, why is breathing a physical process? Why are thought and examination a verbal process? Why are perception and sensation a mental process?” 
 @@ -1,2 +1,2 @@ sn41.6:2.4
  PLI: Pubbe kho, gahapati, vitakketvā vicāretvā pacchā vācaṁ bhindati, tasmā vitakkavicārā vacīsaṅkhāro. 
 -First you place the mind and keep it connected, then you break into speech. That’s why placing the mind and keeping it connected are a verbal process. 

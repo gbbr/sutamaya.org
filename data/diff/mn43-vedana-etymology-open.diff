@@ -1,0 +1,8 @@
+Rule: mn43-vedana-etymology-open — 1 change(s), 1 file(s)
+
+--- sujato/sutta/mn/mn43_translation-en-sujato.json
++++ sujato/sutta/mn/mn43_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn43:7.3
+ PLI: “‘Vedeti vedetī’ti kho, āvuso, tasmā vedanāti vuccati. 
+-“It’s called sensation because it feels. 
++“It’s called sensation because it senses. 

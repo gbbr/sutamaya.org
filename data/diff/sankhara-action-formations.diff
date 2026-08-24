@@ -6,13 +6,13 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 -Hurtful or pleasing choices lead to hurtful or pleasing experiences in future lives.
 +Hurtful or pleasing action formations lead to hurtful or pleasing experiences in future lives.
 @@ -1 +1 @@ an-blurbs:an4.16
--Subtlety of form, feeling, perception, and choices.
-+Subtlety of form, feeling, perception, and action formations.
+-Subtlety of form, sensation, perception, and choices.
++Subtlety of form, sensation, perception, and action formations.
 --- sujato/blurb/sn-blurbs_root-en.json
 +++ sujato/blurb/sn-blurbs_root-en.json
 @@ -1 +1 @@ sn-blurbs:sn22
--The “Linked Discourses on the Aggregates” contains 159 discourses on the core doctrinal topic of the five aggregates. This term was introduced in the first sermon as the summary of the noble truth of suffering, and became a foundational teaching in all forms of Buddhism. The basic idea of an “aggregate” is a set or class of phenomena. The five are form (<i lang='pi' translate='no'>rūpa</i>, i.e. “physical phenomena”, or sometimes simply “body”; note that in Buddhism, <i lang='pi' translate='no'>rūpa</i> includes all things with material properties such as shape and color, including visions perceived only in the mind), feeling (<i lang='pi' translate='no'>vedanā</i>, i.e. the pleasant, painful, or neutral tone of experience), perception (<i lang='pi' translate='no'>saññā</i>, i.e. the recognition or interpretation of experience, <em>not</em> sense awareness), choices (<i lang='pi' translate='no'>saṅkhārā</i>, i.e. intention, will, or volition; the choice to perform an act, especially one with an ethical dimension), and consciousness (<i lang='pi' translate='no'>viññāṇa</i>, i.e. the subjective process of awareness itself). The “aggregates” are the various different phenomena so classified. Almost always, they are referred to as the “aggregates connected with grasping” (<i lang='pi' translate='no'>upādānakkhandha</i>). The relation between “grasping” and “aggregate” encompasses a number of aspects. The aggregates are the <em>subject</em> of grasping, in that they are the things that are normally attached to and taken to be the permanent “self”. But they are not merely passive spectators: they are also the <em>functional support</em> of grasping, the things that make grasping work. As active participants in the process of grasping, they <em>stimulate</em> grasping to themselves (<i lang='pi' translate='no'>upādāniya</i>). And finally, they are the <em>product</em> of grasping in the sense that attachments in past lives have given rise to the aggregates in this life (<i lang='pi' translate='no'>upādinna</i>). One of the key functions of the aggregates is to categorize theories of the self. From the discourses, non-Buddhists seem to be familiar with this, yet we cannot identify the aggregates in any pre-Buddhist texts. Regardless of whether the set of categories was pre-Buddhist, the Buddha treated them in his own distinctive way, emphasizing that nothing in the aggregates was a permanent self or soul. In this collection we find a large number of striking and lively narratives, showing how the aggregates could be a solace at the time of death, a guide to the knotty theoretical debates on identity, or a framework for insight meditation. Many of the short abbreviated texts are built from the same templates employed in the “Linked Discourses on the Six Sense Fields”.
-+The “Linked Discourses on the Aggregates” contains 159 discourses on the core doctrinal topic of the five aggregates. This term was introduced in the first sermon as the summary of the noble truth of suffering, and became a foundational teaching in all forms of Buddhism. The basic idea of an “aggregate” is a set or class of phenomena. The five are form (<i lang='pi' translate='no'>rūpa</i>, i.e. “physical phenomena”, or sometimes simply “body”; note that in Buddhism, <i lang='pi' translate='no'>rūpa</i> includes all things with material properties such as shape and color, including visions perceived only in the mind), feeling (<i lang='pi' translate='no'>vedanā</i>, i.e. the pleasant, painful, or neutral tone of experience), perception (<i lang='pi' translate='no'>saññā</i>, i.e. the recognition or interpretation of experience, <em>not</em> sense awareness), action formations (<i lang='pi' translate='no'>saṅkhārā</i>, i.e. intention, will, or volition; the decision to perform an act, especially one with an ethical dimension), and consciousness (<i lang='pi' translate='no'>viññāṇa</i>, i.e. the subjective process of awareness itself). The “aggregates” are the various different phenomena so classified. Almost always, they are referred to as the “aggregates connected with grasping” (<i lang='pi' translate='no'>upādānakkhandha</i>). The relation between “grasping” and “aggregate” encompasses a number of aspects. The aggregates are the <em>subject</em> of grasping, in that they are the things that are normally attached to and taken to be the permanent “self”. But they are not merely passive spectators: they are also the <em>functional support</em> of grasping, the things that make grasping work. As active participants in the process of grasping, they <em>stimulate</em> grasping to themselves (<i lang='pi' translate='no'>upādāniya</i>). And finally, they are the <em>product</em> of grasping in the sense that attachments in past lives have given rise to the aggregates in this life (<i lang='pi' translate='no'>upādinna</i>). One of the key functions of the aggregates is to categorize theories of the self. From the discourses, non-Buddhists seem to be familiar with this, yet we cannot identify the aggregates in any pre-Buddhist texts. Regardless of whether the set of categories was pre-Buddhist, the Buddha treated them in his own distinctive way, emphasizing that nothing in the aggregates was a permanent self or soul. In this collection we find a large number of striking and lively narratives, showing how the aggregates could be a solace at the time of death, a guide to the knotty theoretical debates on identity, or a framework for insight meditation. Many of the short abbreviated texts are built from the same templates employed in the “Linked Discourses on the Six Sense Fields”.
+-The “Linked Discourses on the Aggregates” contains 159 discourses on the core doctrinal topic of the five aggregates. This term was introduced in the first sermon as the summary of the noble truth of suffering, and became a foundational teaching in all forms of Buddhism. The basic idea of an “aggregate” is a set or class of phenomena. The five are form (<i lang='pi' translate='no'>rūpa</i>, i.e. “physical phenomena”, or sometimes simply “body”; note that in Buddhism, <i lang='pi' translate='no'>rūpa</i> includes all things with material properties such as shape and color, including visions perceived only in the mind), sensation (<i lang='pi' translate='no'>vedanā</i>, i.e. the pleasant, painful, or neutral tone of experience), perception (<i lang='pi' translate='no'>saññā</i>, i.e. the recognition or interpretation of experience, <em>not</em> sense awareness), choices (<i lang='pi' translate='no'>saṅkhārā</i>, i.e. intention, will, or volition; the choice to perform an act, especially one with an ethical dimension), and consciousness (<i lang='pi' translate='no'>viññāṇa</i>, i.e. the subjective process of awareness itself). The “aggregates” are the various different phenomena so classified. Almost always, they are referred to as the “aggregates connected with grasping” (<i lang='pi' translate='no'>upādānakkhandha</i>). The relation between “grasping” and “aggregate” encompasses a number of aspects. The aggregates are the <em>subject</em> of grasping, in that they are the things that are normally attached to and taken to be the permanent “self”. But they are not merely passive spectators: they are also the <em>functional support</em> of grasping, the things that make grasping work. As active participants in the process of grasping, they <em>stimulate</em> grasping to themselves (<i lang='pi' translate='no'>upādāniya</i>). And finally, they are the <em>product</em> of grasping in the sense that attachments in past lives have given rise to the aggregates in this life (<i lang='pi' translate='no'>upādinna</i>). One of the key functions of the aggregates is to categorize theories of the self. From the discourses, non-Buddhists seem to be familiar with this, yet we cannot identify the aggregates in any pre-Buddhist texts. Regardless of whether the set of categories was pre-Buddhist, the Buddha treated them in his own distinctive way, emphasizing that nothing in the aggregates was a permanent self or soul. In this collection we find a large number of striking and lively narratives, showing how the aggregates could be a solace at the time of death, a guide to the knotty theoretical debates on identity, or a framework for insight meditation. Many of the short abbreviated texts are built from the same templates employed in the “Linked Discourses on the Six Sense Fields”.
++The “Linked Discourses on the Aggregates” contains 159 discourses on the core doctrinal topic of the five aggregates. This term was introduced in the first sermon as the summary of the noble truth of suffering, and became a foundational teaching in all forms of Buddhism. The basic idea of an “aggregate” is a set or class of phenomena. The five are form (<i lang='pi' translate='no'>rūpa</i>, i.e. “physical phenomena”, or sometimes simply “body”; note that in Buddhism, <i lang='pi' translate='no'>rūpa</i> includes all things with material properties such as shape and color, including visions perceived only in the mind), sensation (<i lang='pi' translate='no'>vedanā</i>, i.e. the pleasant, painful, or neutral tone of experience), perception (<i lang='pi' translate='no'>saññā</i>, i.e. the recognition or interpretation of experience, <em>not</em> sense awareness), action formations (<i lang='pi' translate='no'>saṅkhārā</i>, i.e. intention, will, or volition; the decision to perform an act, especially one with an ethical dimension), and consciousness (<i lang='pi' translate='no'>viññāṇa</i>, i.e. the subjective process of awareness itself). The “aggregates” are the various different phenomena so classified. Almost always, they are referred to as the “aggregates connected with grasping” (<i lang='pi' translate='no'>upādānakkhandha</i>). The relation between “grasping” and “aggregate” encompasses a number of aspects. The aggregates are the <em>subject</em> of grasping, in that they are the things that are normally attached to and taken to be the permanent “self”. But they are not merely passive spectators: they are also the <em>functional support</em> of grasping, the things that make grasping work. As active participants in the process of grasping, they <em>stimulate</em> grasping to themselves (<i lang='pi' translate='no'>upādāniya</i>). And finally, they are the <em>product</em> of grasping in the sense that attachments in past lives have given rise to the aggregates in this life (<i lang='pi' translate='no'>upādinna</i>). One of the key functions of the aggregates is to categorize theories of the self. From the discourses, non-Buddhists seem to be familiar with this, yet we cannot identify the aggregates in any pre-Buddhist texts. Regardless of whether the set of categories was pre-Buddhist, the Buddha treated them in his own distinctive way, emphasizing that nothing in the aggregates was a permanent self or soul. In this collection we find a large number of striking and lively narratives, showing how the aggregates could be a solace at the time of death, a guide to the knotty theoretical debates on identity, or a framework for insight meditation. Many of the short abbreviated texts are built from the same templates employed in the “Linked Discourses on the Six Sense Fields”.
 @@ -1 +1 @@ sn-blurbs:sn12.37
 -The body is not yours, but is old kamma, generated by choices in past lives.
 +The body is not yours, but is old kamma, generated by action formations in past lives.
@@ -26,8 +26,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 -Intentions or choices are the force that propels consciousness from one life to the next.
 +Intentions or action formations are the force that propels consciousness from one life to the next.
 @@ -1 +1 @@ sn-blurbs:sn22.95
--The Buddha gives a series of similes for the aggregates: physical form is like foam, feeling is like a bubble, perception is like a mirage, choices are like a coreless tree, and consciousness is like an illusion. 
-+The Buddha gives a series of similes for the aggregates: physical form is like foam, feeling is like a bubble, perception is like a mirage, action formations are like a coreless tree, and consciousness is like an illusion. 
+-The Buddha gives a series of similes for the aggregates: physical form is like foam, sensation is like a bubble, perception is like a mirage, choices are like a coreless tree, and consciousness is like an illusion. 
++The Buddha gives a series of similes for the aggregates: physical form is like foam, sensation is like a bubble, perception is like a mirage, action formations are like a coreless tree, and consciousness is like an illusion. 
 @@ -1 +1 @@ sn-blurbs:sn33.4
 -The wanderer Vacchagotta asks the Buddha why the various speculative views come to be. The Buddha replies that it is because of not knowing choices.
 +The wanderer Vacchagotta asks the Buddha why the various speculative views come to be. The Buddha replies that it is because of not knowing action formations.
@@ -79,8 +79,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/an/an10/an10.60_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an10.60:4.3
  PLI: ‘rūpaṁ aniccaṁ, vedanā aniccā, saññā aniccā, saṅkhārā aniccā, viññāṇaṁ aniccan’ti. 
--‘Form, feeling, perception, choices, and consciousness are impermanent.’ 
-+‘Form, feeling, perception, action formations, and consciousness are impermanent.’ 
+-‘Form, sensation, perception, choices, and consciousness are impermanent.’ 
++‘Form, sensation, perception, action formations, and consciousness are impermanent.’ 
 --- sujato/sutta/an/an10/an10.81_translation-en-sujato.json
 +++ sujato/sutta/an/an10/an10.81_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an10.81:2.6
@@ -99,8 +99,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +Action formations are a requirement for consciousness. 
 @@ -1,2 +1,2 @@ an10.92:6.17
  PLI: avijjāya tveva asesavirāganirodhā saṅkhāranirodho …pe… 
--When ignorance fades away and ceases no residue left behind, choices cease. When choices cease, consciousness ceases. When consciousness ceases, name and form cease. When name and form cease, the six sense fields cease. When the six sense fields cease, contact ceases. When contact ceases, feeling ceases. When feeling ceases, craving ceases. When craving ceases, grasping ceases. When grasping ceases, continued existence ceases. When continued existence ceases, rebirth ceases. When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. 
-+When ignorance fades away and ceases no residue left behind, action formations cease. When action formations cease, consciousness ceases. When consciousness ceases, name and form cease. When name and form cease, the six sense fields cease. When the six sense fields cease, contact ceases. When contact ceases, feeling ceases. When feeling ceases, craving ceases. When craving ceases, grasping ceases. When grasping ceases, continued existence ceases. When continued existence ceases, rebirth ceases. When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. 
+-When ignorance fades away and ceases no residue left behind, choices cease. When choices cease, consciousness ceases. When consciousness ceases, name and form cease. When name and form cease, the six sense fields cease. When the six sense fields cease, contact ceases. When contact ceases, sensation ceases. When sensation ceases, craving ceases. When craving ceases, grasping ceases. When grasping ceases, continued existence ceases. When continued existence ceases, rebirth ceases. When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. 
++When ignorance fades away and ceases no residue left behind, action formations cease. When action formations cease, consciousness ceases. When consciousness ceases, name and form cease. When name and form cease, the six sense fields cease. When the six sense fields cease, contact ceases. When contact ceases, sensation ceases. When sensation ceases, craving ceases. When craving ceases, grasping ceases. When grasping ceases, continued existence ceases. When continued existence ceases, rebirth ceases. When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. 
 --- sujato/sutta/an/an11/an11.16_translation-en-sujato.json
 +++ sujato/sutta/an/an11/an11.16_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an11.16:4.4
@@ -185,22 +185,22 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/an/an4/an4.124_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.124:1.4
  PLI: So yadeva tattha hoti rūpagataṁ vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ, te dhamme aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato samanupassati. 
--They contemplate the phenomena there—included in form, feeling, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
-+They contemplate the phenomena there—included in form, feeling, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
+-They contemplate the phenomena there—included in form, sensation, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
++They contemplate the phenomena there—included in form, sensation, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
 @@ -1,2 +1,2 @@ an4.124:2.2
  PLI: So yadeva tattha hoti rūpagataṁ vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ, te dhamme aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato samanupassati. 
--They contemplate the phenomena there—included in form, feeling, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
-+They contemplate the phenomena there—included in form, feeling, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
+-They contemplate the phenomena there—included in form, sensation, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
++They contemplate the phenomena there—included in form, sensation, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
 --- sujato/sutta/an/an4/an4.126_translation-en-sujato.json
 +++ sujato/sutta/an/an4/an4.126_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.126:1.4
  PLI: So yadeva tattha hoti rūpagataṁ vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ te dhamme aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato samanupassati. 
--They contemplate the phenomena there—included in form, feeling, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
-+They contemplate the phenomena there—included in form, feeling, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
+-They contemplate the phenomena there—included in form, sensation, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
++They contemplate the phenomena there—included in form, sensation, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
 @@ -1,2 +1,2 @@ an4.126:2.4
  PLI: So yadeva tattha hoti rūpagataṁ vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ te dhamme aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato samanupassati. 
--They contemplate the phenomena there—included in form, feeling, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
-+They contemplate the phenomena there—included in form, feeling, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
+-They contemplate the phenomena there—included in form, sensation, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
++They contemplate the phenomena there—included in form, sensation, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
 --- sujato/sutta/an/an4/an4.16_translation-en-sujato.json
 +++ sujato/sutta/an/an4/an4.16_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.16:1.12
@@ -287,30 +287,30 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/an/an9/an9.36_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an9.36:2.4
  PLI: So yadeva tattha hoti rūpagataṁ vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ, te dhamme aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato samanupassati. 
--They contemplate the phenomena there—included in form, feeling, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
-+They contemplate the phenomena there—included in form, feeling, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
+-They contemplate the phenomena there—included in form, sensation, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
++They contemplate the phenomena there—included in form, sensation, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
 @@ -1,2 +1,2 @@ an9.36:3.3
  PLI: So yadeva tattha hoti rūpagataṁ vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ, te dhamme aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato samanupassati. 
--They contemplate the phenomena there—included in form, feeling, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
-+They contemplate the phenomena there—included in form, feeling, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
+-They contemplate the phenomena there—included in form, sensation, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
++They contemplate the phenomena there—included in form, sensation, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
 @@ -1,2 +1,2 @@ an9.36:6.4
  PLI: So yadeva tattha hoti vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ, te dhamme aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato samanupassati. 
--They contemplate the phenomena there—included in feeling, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
-+They contemplate the phenomena there—included in feeling, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
+-They contemplate the phenomena there—included in sensation, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
++They contemplate the phenomena there—included in sensation, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
 @@ -1,2 +1,2 @@ an9.36:8.5
  PLI: So yadeva tattha hoti vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ, te dhamme aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato samanupassati. 
--They contemplate the phenomena there—included in feeling, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
-+They contemplate the phenomena there—included in feeling, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
+-They contemplate the phenomena there—included in sensation, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
++They contemplate the phenomena there—included in sensation, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
 @@ -1,2 +1,2 @@ an9.36:9.3
  PLI: So yadeva tattha hoti vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ, te dhamme aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato samanupassati. 
--They contemplate the phenomena there—included in feeling, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
-+They contemplate the phenomena there—included in feeling, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
+-They contemplate the phenomena there—included in sensation, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
++They contemplate the phenomena there—included in sensation, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
 --- sujato/sutta/an/an9/an9.66_translation-en-sujato.json
 +++ sujato/sutta/an/an9/an9.66_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an9.66:1.3
  PLI: Rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho—
--The grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+The grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-The grasping aggregates of form, sensation, perception, choices, and consciousness. 
++The grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/dn/dn14_translation-en-sujato.json
 +++ sujato/sutta/dn/dn14_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn14:2.22.5
@@ -325,8 +325,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +Such are action formations, such is the arising of action formations, such is the disappearing of action formations. 
 @@ -1,2 +1,2 @@ dn22:18.49
  PLI: Seyyathidaṁ—rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho. 
--They are the grasping aggregates that consist of form, feeling, perception, choices, and consciousness. 
-+They are the grasping aggregates that consist of form, feeling, perception, action formations, and consciousness. 
+-They are the grasping aggregates that consist of form, sensation, perception, choices, and consciousness. 
++They are the grasping aggregates that consist of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/dn/dn33_translation-en-sujato.json
 +++ sujato/sutta/dn/dn33_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn33:1.10.77
@@ -347,18 +347,18 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +Or as long as consciousness continues, it gets involved with action formations, supported by action formations, established on action formations. And with a sprinkle of relishing, it grows, increases, and matures. 
 @@ -1,2 +1,2 @@ dn33:2.1.5
  PLI: Rūpakkhandho vedanākkhandho saññākkhandho saṅkhārakkhandho viññāṇakkhandho. 
--form, feeling, perception, choices, and consciousness. 
-+form, feeling, perception, action formations, and consciousness. 
+-form, sensation, perception, choices, and consciousness. 
++form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ dn33:2.1.7
  PLI: Rūpupādānakkhandho vedanupādānakkhandho saññupādānakkhandho saṅkhārupādānakkhandho viññāṇupādānakkhandho. 
--form, feeling, perception, choices, and consciousness. 
-+form, feeling, perception, action formations, and consciousness. 
+-form, sensation, perception, choices, and consciousness. 
++form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/dn/dn34_translation-en-sujato.json
 +++ sujato/sutta/dn/dn34_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn34:1.6.17
  PLI: rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho viññāṇupādānakkhandho. 
--form, feeling, perception, choices, and consciousness. 
-+form, feeling, perception, action formations, and consciousness. 
+-form, sensation, perception, choices, and consciousness. 
++form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ dn34:2.1.26
  PLI: iti saṅkhārā iti saṅkhārānaṁ samudayo iti saṅkhārānaṁ atthaṅgamo; 
 -Such are choices, such is the arising of choices, such is the disappearing of choices. 
@@ -437,18 +437,18 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/mn/mn102_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn102:7.4
  PLI: ‘ahamaññatra rūpā, aññatra vedanāya, aññatra saññāya, aññatra saṅkhārehi, viññāṇassa āgatiṁ vā gatiṁ vā cutiṁ vā upapattiṁ vā vuddhiṁ vā virūḷhiṁ vā vepullaṁ vā paññapessāmī’ti—
--‘Apart from form, feeling, perception, and choices, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ 
-+‘Apart from form, feeling, perception, and action formations, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ 
+-‘Apart from form, sensation, perception, and choices, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ 
++‘Apart from form, sensation, perception, and action formations, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ 
 --- sujato/sutta/mn/mn109_translation-en-sujato.json
 +++ sujato/sutta/mn/mn109_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn109:4.2
  PLI: rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho”ti? 
--form, feeling, perception, choices, and consciousness?” 
-+form, feeling, perception, action formations, and consciousness?” 
+-form, sensation, perception, choices, and consciousness?” 
++form, sensation, perception, action formations, and consciousness?” 
 @@ -1,2 +1,2 @@ mn109:7.4
  PLI: ‘evaṁrūpo siyaṁ anāgatamaddhānaṁ, evaṁvedano siyaṁ anāgatamaddhānaṁ, evaṁsañño siyaṁ anāgatamaddhānaṁ, evaṁsaṅkhāro siyaṁ anāgatamaddhānaṁ, evaṁviññāṇo siyaṁ anāgatamaddhānan’ti. 
--‘In the future, may I be of such form, such feeling, such perception, such choices, and such consciousness!’ 
-+‘In the future, may I be of such form, such feeling, such perception, such action formations, and such consciousness!’ 
+-‘In the future, may I be of such form, such sensation, such perception, such choices, and such consciousness!’ 
++‘In the future, may I be of such form, such sensation, such perception, such action formations, and such consciousness!’ 
 @@ -1,2 +1,2 @@ mn109:8.5
  PLI: Ye keci saṅkhārā—atītānāgatapaccuppannā ajjhattaṁ vā bahiddhā vā, oḷārikā vā sukhumā vā, hīnā vā paṇītā vā, ye dūre santike vā—ayaṁ saṅkhārakkhandho. 
 -Any kind of choices at all … 
@@ -483,12 +483,12 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +action formations … 
 @@ -1,2 +1,2 @@ mn109:14.2
  PLI: “iti kira, bho, rūpaṁ anattā, vedanā anattā, saññā anattā, saṅkhārā anattā, viññāṇaṁ anattā; 
--“So it seems, worthy sir, that form, feeling, perception, choices, and consciousness are not-self. 
-+“So it seems, worthy sir, that form, feeling, perception, action formations, and consciousness are not-self. 
+-“So it seems, worthy sir, that form, sensation, perception, choices, and consciousness are not-self. 
++“So it seems, worthy sir, that form, sensation, perception, action formations, and consciousness are not-self. 
 @@ -1,2 +1,2 @@ mn109:14.6
  PLI: ‘iti kira, bho, rūpaṁ anattā, vedanā anattā, saññā anattā, saṅkhārā anattā, viññāṇaṁ anattā; 
--‘So it seems, worthy sir, that form, feeling, perception, choices, and consciousness are not-self. 
-+‘So it seems, worthy sir, that form, feeling, perception, action formations, and consciousness are not-self. 
+-‘So it seems, worthy sir, that form, sensation, perception, choices, and consciousness are not-self. 
++‘So it seems, worthy sir, that form, sensation, perception, action formations, and consciousness are not-self. 
 @@ -1,2 +1,2 @@ mn109:16.4
  PLI: saṅkhārā … 
 -choices … 
@@ -499,8 +499,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +action formations … 
 @@ -1,2 +1,2 @@ mn109:17.5
  PLI: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi nibbindati, saññāyapi nibbindati, saṅkhāresupi nibbindati, viññāṇasmimpi nibbindati; 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/mn/mn10_translation-en-sujato.json
 +++ sujato/sutta/mn/mn10_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn10:38.7
@@ -511,8 +511,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/mn/mn112_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn112:5.5
  PLI: Seyyathidaṁ—rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho—
--That is: the grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+That is: the grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-That is: the grasping aggregates of form, sensation, perception, choices, and consciousness. 
++That is: the grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ mn112:6.5
  PLI: saṅkhāre kho ahaṁ, āvuso … 
 -choices … 
@@ -565,20 +565,20 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/mn/mn131_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn131:4.2
  PLI: ‘Evaṁrūpo ahosiṁ atītamaddhānan’ti tattha nandiṁ samanvāneti, ‘evaṁvedano ahosiṁ atītamaddhānan’ti tattha nandiṁ samanvāneti, ‘evaṁsañño ahosiṁ atītamaddhānan’ti tattha nandiṁ samanvāneti, ‘evaṁsaṅkhāro ahosiṁ atītamaddhānan’ti tattha nandiṁ samanvāneti, ‘evaṁviññāṇo ahosiṁ atītamaddhānan’ti tattha nandiṁ samanvāneti—
--You muster delight there, thinking: ‘I had such form in the past.’ … ‘I had such feeling … perception … choice … consciousness in the past.’ 
-+You muster delight there, thinking: ‘I had such form in the past.’ … ‘I had such feeling … perception … action formation … consciousness in the past.’ 
+-You muster delight there, thinking: ‘I had such form in the past.’ … ‘I had such sensation … perception … choice … consciousness in the past.’ 
++You muster delight there, thinking: ‘I had such form in the past.’ … ‘I had such sensation … perception … action formation … consciousness in the past.’ 
 @@ -1,2 +1,2 @@ mn131:5.2
  PLI: ‘Evaṁrūpo ahosiṁ atītamaddhānan’ti tattha nandiṁ na samanvāneti, ‘evaṁvedano ahosiṁ atītamaddhānan’ti tattha nandiṁ na samanvāneti, ‘evaṁsañño ahosiṁ atītamaddhānan’ti tattha nandiṁ na samanvāneti, ‘evaṁsaṅkhāro ahosiṁ atītamaddhānan’ti tattha nandiṁ na samanvāneti, ‘evaṁviññāṇo ahosiṁ atītamaddhānan’ti tattha nandiṁ na samanvāneti—
--You don’t muster delight there, thinking: ‘I had such form in the past.’ … ‘I had such feeling … perception … choice … consciousness in the past.’ 
-+You don’t muster delight there, thinking: ‘I had such form in the past.’ … ‘I had such feeling … perception … action formation … consciousness in the past.’ 
+-You don’t muster delight there, thinking: ‘I had such form in the past.’ … ‘I had such sensation … perception … choice … consciousness in the past.’ 
++You don’t muster delight there, thinking: ‘I had such form in the past.’ … ‘I had such sensation … perception … action formation … consciousness in the past.’ 
 @@ -1,2 +1,2 @@ mn131:6.2
  PLI: ‘Evaṁrūpo siyaṁ anāgatamaddhānan’ti tattha nandiṁ samanvāneti, evaṁvedano siyaṁ …pe… evaṁsañño siyaṁ … evaṁsaṅkhāro siyaṁ … evaṁviññāṇo siyaṁ anāgatamaddhānanti tattha nandiṁ samanvāneti—
--You muster delight there, thinking: ‘May I have such form in the future.’ … ‘May I have such feeling … perception … choice … consciousness in the future.’ 
-+You muster delight there, thinking: ‘May I have such form in the future.’ … ‘May I have such feeling … perception … action formation … consciousness in the future.’ 
+-You muster delight there, thinking: ‘May I have such form in the future.’ … ‘May I have such sensation … perception … choice … consciousness in the future.’ 
++You muster delight there, thinking: ‘May I have such form in the future.’ … ‘May I have such sensation … perception … action formation … consciousness in the future.’ 
 @@ -1,2 +1,2 @@ mn131:7.2
  PLI: ‘Evaṁrūpo siyaṁ anāgatamaddhānan’ti tattha nandiṁ na samanvāneti, evaṁvedano siyaṁ … evaṁsañño siyaṁ … evaṁsaṅkhāro siyaṁ … ‘evaṁviññāṇo siyaṁ anāgatamaddhānan’ti tattha nandiṁ na samanvāneti—
--You don’t muster delight there, thinking: ‘May I have such form in the future.’ … ‘May I have such feeling … perception … choice … consciousness in the future.’ 
-+You don’t muster delight there, thinking: ‘May I have such form in the future.’ … ‘May I have such feeling … perception … action formation … consciousness in the future.’ 
+-You don’t muster delight there, thinking: ‘May I have such form in the future.’ … ‘May I have such sensation … perception … choice … consciousness in the future.’ 
++You don’t muster delight there, thinking: ‘May I have such form in the future.’ … ‘May I have such sensation … perception … action formation … consciousness in the future.’ 
 @@ -1,2 +1,2 @@ mn131:8.6
  PLI: saṅkhāre … 
 -choices … 
@@ -601,8 +601,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/mn/mn141_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn141:20.2
  PLI: Seyyathidaṁ—rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho. 
--They are the grasping aggregates that consist of form, feeling, perception, choices, and consciousness. 
-+They are the grasping aggregates that consist of form, feeling, perception, action formations, and consciousness. 
+-They are the grasping aggregates that consist of form, sensation, perception, choices, and consciousness. 
++They are the grasping aggregates that consist of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/mn/mn143_translation-en-sujato.json
 +++ sujato/sutta/mn/mn143_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn143:11.7
@@ -613,26 +613,26 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/mn/mn147_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn147:3.26
  PLI: yamidaṁ cakkhusamphassapaccayā uppajjati vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ tampi niccaṁ vā aniccaṁ vā”ti? 
--Anything included in feeling, perception, choices, and consciousness that arises dependent on eye contact: is that permanent or impermanent?” 
-+Anything included in feeling, perception, action formations, and consciousness that arises dependent on eye contact: is that permanent or impermanent?” 
+-Anything included in sensation, perception, choices, and consciousness that arises dependent on eye contact: is that permanent or impermanent?” 
++Anything included in sensation, perception, action formations, and consciousness that arises dependent on eye contact: is that permanent or impermanent?” 
 @@ -1,2 +1,2 @@ mn147:4-8.38
  PLI: yamidaṁ manosamphassapaccayā uppajjati vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ, tampi niccaṁ vā aniccaṁ vā”ti? 
--Anything included in feeling, perception, choices, and consciousness that arises dependent on mind contact: is that permanent or impermanent?” 
-+Anything included in feeling, perception, action formations, and consciousness that arises dependent on mind contact: is that permanent or impermanent?” 
+-Anything included in sensation, perception, choices, and consciousness that arises dependent on mind contact: is that permanent or impermanent?” 
++Anything included in sensation, perception, action formations, and consciousness that arises dependent on mind contact: is that permanent or impermanent?” 
 @@ -1,2 +1,2 @@ mn147:9.1
  PLI: “Evaṁ passaṁ, rāhula, sutavā ariyasāvako cakkhusmiṁ nibbindati, rūpesu nibbindati, cakkhuviññāṇe nibbindati, cakkhusamphasse nibbindati, yamidaṁ cakkhusamphassapaccayā uppajjati vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ tasmimpi nibbindati. 
--“Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, and eye contact. And they grow disillusioned with anything included in feeling, perception, choices, and consciousness that arises dependent on eye contact. 
-+“Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, and eye contact. And they grow disillusioned with anything included in feeling, perception, action formations, and consciousness that arises dependent on eye contact. 
+-“Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, and eye contact. And they grow disillusioned with anything included in sensation, perception, choices, and consciousness that arises dependent on eye contact. 
++“Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, and eye contact. And they grow disillusioned with anything included in sensation, perception, action formations, and consciousness that arises dependent on eye contact. 
 @@ -1,2 +1,2 @@ mn147:9.6
  PLI: manasmiṁ nibbindati, dhammesu nibbindati, manoviññāṇe nibbindati, manosamphasse nibbindati, yamidaṁ manosamphassapaccayā uppajjati vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ tasmimpi nibbindati. 
--mind, ideas, mind consciousness, and mind contact. And they grow disillusioned with anything included in feeling, perception, choices, and consciousness that arises dependent on mind contact. 
-+mind, ideas, mind consciousness, and mind contact. And they grow disillusioned with anything included in feeling, perception, action formations, and consciousness that arises dependent on mind contact. 
+-mind, ideas, mind consciousness, and mind contact. And they grow disillusioned with anything included in sensation, perception, choices, and consciousness that arises dependent on mind contact. 
++mind, ideas, mind consciousness, and mind contact. And they grow disillusioned with anything included in sensation, perception, action formations, and consciousness that arises dependent on mind contact. 
 --- sujato/sutta/mn/mn149_translation-en-sujato.json
 +++ sujato/sutta/mn/mn149_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn149:11.3
  PLI: seyyathidaṁ—rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho. 
--That is: form, feeling, perception, choices, and consciousness. 
-+That is: form, feeling, perception, action formations, and consciousness. 
+-That is: form, sensation, perception, choices, and consciousness. 
++That is: form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/mn/mn22_translation-en-sujato.json
 +++ sujato/sutta/mn/mn22_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn22:15.7
@@ -653,8 +653,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +action formations … 
 @@ -1,2 +1,2 @@ mn22:28.1
  PLI: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako rūpasmiṁ nibbindati, vedanāya nibbindati, saññāya nibbindati, saṅkhāresu nibbindati, viññāṇasmiṁ nibbindati, 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ mn22:41.8
  PLI: Saṅkhārā, bhikkhave, na tumhākaṁ, te pajahatha; 
 -choices … 
@@ -667,60 +667,60 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/mn/mn23_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn23:4.24
  PLI: rūpupādānakkhandhassa, vedanupādānakkhandhassa, saññupādānakkhandhassa, saṅkhārupādānakkhandhassa, viññāṇupādānakkhandhassa. 
--form, feeling, perception, choices, and consciousness. 
-+form, feeling, perception, action formations, and consciousness. 
+-form, sensation, perception, choices, and consciousness. 
++form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/mn/mn28_translation-en-sujato.json
 +++ sujato/sutta/mn/mn28_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn28:3.4
  PLI: Seyyathidaṁ—rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho. 
--They are as follows: the grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+They are as follows: the grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-They are as follows: the grasping aggregates of form, sensation, perception, choices, and consciousness. 
++They are as follows: the grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ mn28:8.6
  PLI: So phasso aniccoti passati, vedanā aniccāti passati, saññā aniccāti passati, saṅkhārā aniccāti passati, viññāṇaṁ aniccanti passati. 
--They see that contact, feeling, perception, choices, and consciousness are impermanent. 
-+They see that contact, feeling, perception, action formations, and consciousness are impermanent. 
+-They see that contact, sensation, perception, choices, and consciousness are impermanent. 
++They see that contact, sensation, perception, action formations, and consciousness are impermanent. 
 @@ -1,2 +1,2 @@ mn28:23.6
  PLI: Sopi phasso aniccoti passati, vedanā aniccāti passati, saññā aniccāti passati, saṅkhārā aniccāti passati, viññāṇaṁ aniccanti passati. 
--They see that contact, feeling, perception, choices, and consciousness are impermanent. 
-+They see that contact, feeling, perception, action formations, and consciousness are impermanent. 
+-They see that contact, sensation, perception, choices, and consciousness are impermanent. 
++They see that contact, sensation, perception, action formations, and consciousness are impermanent. 
 @@ -1,2 +1,2 @@ mn28:28.1
  PLI: Yaṁ tathābhūtassa rūpaṁ taṁ rūpupādānakkhandhe saṅgahaṁ gacchati, yā tathābhūtassa vedanā sā vedanupādānakkhandhe saṅgahaṁ gacchati, yā tathābhūtassa saññā sā saññupādānakkhandhe saṅgahaṁ gacchati, ye tathābhūtassa saṅkhārā te saṅkhārupādānakkhandhe saṅgahaṁ gacchanti, yaṁ tathābhūtassa viññāṇaṁ taṁ viññāṇupādānakkhandhe saṅgahaṁ gacchati. 
--The form produced in this way is included in the grasping aggregate of form. The feeling, perception, choices, and consciousness produced in this way are each included in the corresponding grasping aggregate. 
-+The form produced in this way is included in the grasping aggregate of form. The feeling, perception, action formations, and consciousness produced in this way are each included in the corresponding grasping aggregate. 
+-The form produced in this way is included in the grasping aggregate of form. The sensation, perception, choices, and consciousness produced in this way are each included in the corresponding grasping aggregate. 
++The form produced in this way is included in the grasping aggregate of form. The sensation, perception, action formations, and consciousness produced in this way are each included in the corresponding grasping aggregate. 
 @@ -1,2 +1,2 @@ mn28:38.3
  PLI: Yaṁ tathābhūtassa rūpaṁ taṁ rūpupādānakkhandhe saṅgahaṁ gacchati, yā tathābhūtassa vedanā sā vedanupādānakkhandhe saṅgahaṁ gacchati, yā tathābhūtassa saññā sā saññupādānakkhandhe saṅgahaṁ gacchati, ye tathābhūtassa saṅkhārā te saṅkhārupādānakkhandhe saṅgahaṁ gacchanti, yaṁ tathābhūtassa viññāṇaṁ taṁ viññāṇupādānakkhandhe saṅgahaṁ gacchati. 
--The form produced in this way is included in the grasping aggregate of form. The feeling, perception, choices, and consciousness produced in this way are each included in the corresponding grasping aggregate. 
-+The form produced in this way is included in the grasping aggregate of form. The feeling, perception, action formations, and consciousness produced in this way are each included in the corresponding grasping aggregate. 
+-The form produced in this way is included in the grasping aggregate of form. The sensation, perception, choices, and consciousness produced in this way are each included in the corresponding grasping aggregate. 
++The form produced in this way is included in the grasping aggregate of form. The sensation, perception, action formations, and consciousness produced in this way are each included in the corresponding grasping aggregate. 
 --- sujato/sutta/mn/mn35_translation-en-sujato.json
 +++ sujato/sutta/mn/mn35_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn35:4.3
  PLI: ‘rūpaṁ, bhikkhave, aniccaṁ, vedanā aniccā, saññā aniccā, saṅkhārā aniccā, viññāṇaṁ aniccaṁ. 
--‘Form, feeling, perception, choices, and consciousness are impermanent. 
-+‘Form, feeling, perception, action formations, and consciousness are impermanent. 
+-‘Form, sensation, perception, choices, and consciousness are impermanent. 
++‘Form, sensation, perception, action formations, and consciousness are impermanent. 
 @@ -1,2 +1,2 @@ mn35:4.4
  PLI: Rūpaṁ, bhikkhave, anattā, vedanā anattā, saññā anattā, saṅkhārā anattā, viññāṇaṁ anattā. 
--Form, feeling, perception, choices, and consciousness are not-self. 
-+Form, feeling, perception, action formations, and consciousness are not-self. 
+-Form, sensation, perception, choices, and consciousness are not-self. 
++Form, sensation, perception, action formations, and consciousness are not-self. 
 @@ -1,2 +1,2 @@ mn35:9.6
  PLI: ‘rūpaṁ, bhikkhave, aniccaṁ, vedanā aniccā, saññā aniccā, saṅkhārā aniccā, viññāṇaṁ aniccaṁ. 
--‘Form, feeling, perception, choices, and consciousness are impermanent. 
-+‘Form, feeling, perception, action formations, and consciousness are impermanent. 
+-‘Form, sensation, perception, choices, and consciousness are impermanent. 
++‘Form, sensation, perception, action formations, and consciousness are impermanent. 
 @@ -1,2 +1,2 @@ mn35:9.7
  PLI: Rūpaṁ, bhikkhave, anattā, vedanā anattā, saññā anattā, saṅkhārā anattā, viññāṇaṁ anattā. 
--Form, feeling, perception, choices, and consciousness are not-self. 
-+Form, feeling, perception, action formations, and consciousness are not-self. 
+-Form, sensation, perception, choices, and consciousness are not-self. 
++Form, sensation, perception, action formations, and consciousness are not-self. 
 @@ -1,2 +1,2 @@ mn35:10.7
  PLI: Evameva kho, bho gotama, rūpattāyaṁ purisapuggalo rūpe patiṭṭhāya puññaṁ vā apuññaṁ vā pasavati, vedanattāyaṁ purisapuggalo vedanāyaṁ patiṭṭhāya puññaṁ vā apuññaṁ vā pasavati, saññattāyaṁ purisapuggalo saññāyaṁ patiṭṭhāya puññaṁ vā apuññaṁ vā pasavati, saṅkhārattāyaṁ purisapuggalo saṅkhāresu patiṭṭhāya puññaṁ vā apuññaṁ vā pasavati, viññāṇattāyaṁ purisapuggalo viññāṇe patiṭṭhāya puññaṁ vā apuññaṁ vā pasavatī”ti. 
--In the same way, an individual person’s self is form. Established on form they brim with merit and wickedness. An individual person’s self is feeling … perception … choices … consciousness. Established on consciousness they brim with merit and wickedness.” 
-+In the same way, an individual person’s self is form. Established on form they brim with merit and wickedness. An individual person’s self is feeling … perception … action formations … consciousness. Established on consciousness they brim with merit and wickedness.” 
+-In the same way, an individual person’s self is form. Established on form they brim with merit and wickedness. An individual person’s self is sensation … perception … choices … consciousness. Established on consciousness they brim with merit and wickedness.” 
++In the same way, an individual person’s self is form. Established on form they brim with merit and wickedness. An individual person’s self is sensation … perception … action formations … consciousness. Established on consciousness they brim with merit and wickedness.” 
 @@ -1,2 +1,2 @@ mn35:11.2
  PLI: ‘rūpaṁ me attā, vedanā me attā, saññā me attā, saṅkhārā me attā, viññāṇaṁ me attā’”ti? 
--‘Form is my self, feeling is my self, perception is my self, choices are my self, consciousness is my self’?” 
-+‘Form is my self, feeling is my self, perception is my self, action formations are my self, consciousness is my self’?” 
+-‘Form is my self, sensation is my self, perception is my self, choices are my self, consciousness is my self’?” 
++‘Form is my self, sensation is my self, perception is my self, action formations are my self, consciousness is my self’?” 
 @@ -1,2 +1,2 @@ mn35:11.8
  PLI: ‘rūpaṁ me attā, vedanā me attā, saññā me attā, saṅkhārā me attā, viññāṇaṁ me attā’”ti. 
--‘Form is my self, feeling is my self, perception is my self, choices are my self, consciousness is my self’.” 
-+‘Form is my self, feeling is my self, perception is my self, action formations are my self, consciousness is my self’.” 
+-‘Form is my self, sensation is my self, perception is my self, choices are my self, consciousness is my self’.” 
++‘Form is my self, sensation is my self, perception is my self, action formations are my self, consciousness is my self’.” 
 @@ -1,2 +1,2 @@ mn35:18.6
  PLI: ‘saṅkhārā me attā’ti, vattati te tesu saṅkhāresu vaso—
 -‘Choices are my self,’ do you have power over those choices to say: 
@@ -795,8 +795,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/mn/mn44_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn44:2.4
  PLI: seyyathidaṁ—rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho. 
--That is, the grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+That is, the grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-That is, the grasping aggregates of form, sensation, perception, choices, and consciousness. 
++That is, the grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ mn44:7.6
  PLI: saṅkhāre … 
 -choices … 
@@ -843,30 +843,30 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/mn/mn62_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn62:3.4
  PLI: “Rūpampi, rāhula, vedanāpi, rāhula, saññāpi, rāhula, saṅkhārāpi, rāhula, viññāṇampi, rāhulā”ti. 
--“Form, Rāhula, as well as feeling and perception and choices and consciousness.” 
-+“Form, Rāhula, as well as feeling and perception and action formations and consciousness.” 
+-“Form, Rāhula, as well as sensation and perception and choices and consciousness.” 
++“Form, Rāhula, as well as sensation and perception and action formations and consciousness.” 
 --- sujato/sutta/mn/mn64_translation-en-sujato.json
 +++ sujato/sutta/mn/mn64_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn64:9.3
  PLI: So yadeva tattha hoti rūpagataṁ vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ te dhamme aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato samanupassati. 
--They contemplate the phenomena there—included in form, feeling, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
-+They contemplate the phenomena there—included in form, feeling, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
+-They contemplate the phenomena there—included in form, sensation, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
++They contemplate the phenomena there—included in form, sensation, perception, action formations, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. 
 @@ -1,2 +1,2 @@ mn64:10-12.4
  PLI: So yadeva tattha hoti rūpagataṁ vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ … 
--They contemplate the phenomena there—included in form, feeling, perception, choices, and consciousness—as impermanent … 
-+They contemplate the phenomena there—included in form, feeling, perception, action formations, and consciousness—as impermanent … 
+-They contemplate the phenomena there—included in form, sensation, perception, choices, and consciousness—as impermanent … 
++They contemplate the phenomena there—included in form, sensation, perception, action formations, and consciousness—as impermanent … 
 @@ -1,2 +1,2 @@ mn64:13.2
  PLI: So yadeva tattha hoti vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ … 
--They contemplate the phenomena there—included in feeling, perception, choices, and consciousness—as impermanent … 
-+They contemplate the phenomena there—included in feeling, perception, action formations, and consciousness—as impermanent … 
+-They contemplate the phenomena there—included in sensation, perception, choices, and consciousness—as impermanent … 
++They contemplate the phenomena there—included in sensation, perception, action formations, and consciousness—as impermanent … 
 @@ -1,2 +1,2 @@ mn64:14.2
  PLI: So yadeva tattha hoti vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ … 
--They contemplate the phenomena there—included in feeling, perception, choices, and consciousness—as impermanent … 
-+They contemplate the phenomena there—included in feeling, perception, action formations, and consciousness—as impermanent … 
+-They contemplate the phenomena there—included in sensation, perception, choices, and consciousness—as impermanent … 
++They contemplate the phenomena there—included in sensation, perception, action formations, and consciousness—as impermanent … 
 @@ -1,2 +1,2 @@ mn64:15.2
  PLI: So yadeva tattha hoti vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ … 
--They contemplate the phenomena there—included in feeling, perception, choices, and consciousness—as impermanent … 
-+They contemplate the phenomena there—included in feeling, perception, action formations, and consciousness—as impermanent … 
+-They contemplate the phenomena there—included in sensation, perception, choices, and consciousness—as impermanent … 
++They contemplate the phenomena there—included in sensation, perception, action formations, and consciousness—as impermanent … 
 --- sujato/sutta/mn/mn72_translation-en-sujato.json
 +++ sujato/sutta/mn/mn72_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn72:15.7
@@ -881,8 +881,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/mn/mn75_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn75:24.7
  PLI: Ahañhi rūpaṁyeva upādiyamāno upādiyiṁ, vedanaṁyeva upādiyamāno upādiyiṁ, saññaṁyeva upādiyamāno upādiyiṁ, saṅkhāreyeva upādiyamāno upādiyiṁ, viññāṇaṁyeva upādiyamāno upādiyiṁ. 
--For what I have been grasping is only form, feeling, perception, choices, and consciousness. 
-+For what I have been grasping is only form, feeling, perception, action formations, and consciousness. 
+-For what I have been grasping is only form, sensation, perception, choices, and consciousness. 
++For what I have been grasping is only form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/mn/mn9_translation-en-sujato.json
 +++ sujato/sutta/mn/mn9_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn9:58.4
@@ -1555,8 +1555,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +When action formations exist consciousness comes to be. 
 @@ -1,2 +1,2 @@ sn12.49:3.4
  PLI: Kismiṁ asati saṅkhārā na honti, kismiṁ asati viññāṇaṁ na hoti, kismiṁ asati nāmarūpaṁ na hoti, kismiṁ asati saḷāyatanaṁ na hoti, kismiṁ asati phasso na hoti, kismiṁ asati vedanā na hoti, kismiṁ asati taṇhā na hoti, kismiṁ asati upādānaṁ na hoti, kismiṁ asati bhavo na hoti, kismiṁ asati jāti na hoti, kismiṁ asati jarāmaraṇaṁ na hotī’ti? 
--When what doesn’t exist do choices not come to be? When what doesn’t exist do name and form not come to be? When what doesn’t exist do the six sense fields … contact … feeling … craving … grasping … continued existence … rebirth … old age and death not come to be?’ 
-+When what doesn’t exist do action formations not come to be? When what doesn’t exist do name and form not come to be? When what doesn’t exist do the six sense fields … contact … feeling … craving … grasping … continued existence … rebirth … old age and death not come to be?’ 
+-When what doesn’t exist do choices not come to be? When what doesn’t exist do name and form not come to be? When what doesn’t exist do the six sense fields … contact … sensation … craving … grasping … continued existence … rebirth … old age and death not come to be?’ 
++When what doesn’t exist do action formations not come to be? When what doesn’t exist do name and form not come to be? When what doesn’t exist do the six sense fields … contact … sensation … craving … grasping … continued existence … rebirth … old age and death not come to be?’ 
 @@ -1,2 +1,2 @@ sn12.49:4.3
  PLI: Avijjāya asati saṅkhārā na honti; 
 -When ignorance doesn’t exist choices don’t come to be. 
@@ -1611,8 +1611,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn12/sn12.50_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn12.50:1.4
  PLI: Kismiṁ sati saṅkhārā honti, kismiṁ sati viññāṇaṁ hoti, kismiṁ sati nāmarūpaṁ hoti, kismiṁ sati saḷāyatanaṁ hoti, kismiṁ sati phasso hoti, kismiṁ sati vedanā hoti, kismiṁ sati taṇhā hoti, kismiṁ sati upādānaṁ hoti, kismiṁ sati bhavo hoti, kismiṁ sati jāti hoti, kismiṁ sati jarāmaraṇaṁ hotī’ti? 
--When what exists do choices come to be? When what exists does consciousness come to be? When what exists do name and form … the six sense fields … contact … feeling … craving … grasping … continued existence … rebirth … old age and death come to be?’ 
-+When what exists do action formations come to be? When what exists does consciousness come to be? When what exists do name and form … the six sense fields … contact … feeling … craving … grasping … continued existence … rebirth … old age and death come to be?’ 
+-When what exists do choices come to be? When what exists does consciousness come to be? When what exists do name and form … the six sense fields … contact … sensation … craving … grasping … continued existence … rebirth … old age and death come to be?’ 
++When what exists do action formations come to be? When what exists does consciousness come to be? When what exists do name and form … the six sense fields … contact … sensation … craving … grasping … continued existence … rebirth … old age and death come to be?’ 
 @@ -1,2 +1,2 @@ sn12.50:2.3
  PLI: Avijjāya sati saṅkhārā honti; 
 -When ignorance exists, choices come to be. 
@@ -1623,8 +1623,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +When action formations exist consciousness comes to be. 
 @@ -1,2 +1,2 @@ sn12.50:3.3
  PLI: Kismiṁ asati saṅkhārā na honti, kismiṁ asati viññāṇaṁ na hoti, kismiṁ asati nāmarūpaṁ na hoti, kismiṁ asati saḷāyatanaṁ na hoti, kismiṁ asati phasso na hoti, kismiṁ asati vedanā na hoti, kismiṁ asati taṇhā na hoti …pe… 
--When what doesn’t exist do choices not come to be? When what doesn’t exist does consciousness not come to be? When what doesn’t exist do name and form … the six sense fields … contact … feeling … craving … grasping … continued existence … rebirth … old age and death not come to be?’ 
-+When what doesn’t exist do action formations not come to be? When what doesn’t exist does consciousness not come to be? When what doesn’t exist do name and form … the six sense fields … contact … feeling … craving … grasping … continued existence … rebirth … old age and death not come to be?’ 
+-When what doesn’t exist do choices not come to be? When what doesn’t exist does consciousness not come to be? When what doesn’t exist do name and form … the six sense fields … contact … sensation … craving … grasping … continued existence … rebirth … old age and death not come to be?’ 
++When what doesn’t exist do action formations not come to be? When what doesn’t exist does consciousness not come to be? When what doesn’t exist do name and form … the six sense fields … contact … sensation … craving … grasping … continued existence … rebirth … old age and death not come to be?’ 
 @@ -1,2 +1,2 @@ sn12.50:4.3
  PLI: Avijjāya asati saṅkhārā na honti; 
 -When ignorance doesn’t exists, choices don’t come to be. 
@@ -1691,14 +1691,14 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +When action formations cease, consciousness ceases. … 
 @@ -1,2 +1,2 @@ sn12.61:6.1
  PLI: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi nibbindati, saññāyapi nibbindati, saṅkhāresupi nibbindati, viññāṇasmimpi nibbindati; 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn12/sn12.62_translation-en-sujato.json
 +++ sujato/sutta/sn/sn12/sn12.62_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn12.62:5.1
  PLI: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako phassepi nibbindati, vedanāyapi nibbindati, saññāyapi nibbindati, saṅkhāresupi nibbindati, viññāṇasmimpi nibbindati; 
--Seeing this, a learned noble disciple grows disillusioned with contact, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with contact, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with contact, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with contact, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn12/sn12.64_translation-en-sujato.json
 +++ sujato/sutta/sn/sn12/sn12.64_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn12.64:2.3
@@ -1799,12 +1799,12 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn12/sn12.69_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn12.69:1.5
  PLI: Evameva kho, bhikkhave, avijjā upayantī saṅkhāre upayāpeti, saṅkhārā upayantā viññāṇaṁ upayāpenti, viññāṇaṁ upayantaṁ nāmarūpaṁ upayāpeti, nāmarūpaṁ upayantaṁ saḷāyatanaṁ upayāpeti, saḷāyatanaṁ upayantaṁ phassaṁ upayāpeti, phasso upayanto vedanaṁ upayāpeti, vedanā upayantī taṇhaṁ upayāpeti, taṇhā upayantī upādānaṁ upayāpeti, upādānaṁ upayantaṁ bhavaṁ upayāpeti, bhavo upayanto jātiṁ upayāpeti, jāti upayantī jarāmaraṇaṁ upayāpeti. 
--In the same way, when ignorance surges it makes choices surge. When choices surge they make consciousness surge. When consciousness surges it makes name and form surge. When name and form surge they make the six sense fields surge. When the six sense fields surge they make contact surge. When contact surges it makes feeling surge. When feeling surges it makes craving surge. When craving surges it makes grasping surge. When grasping surges it makes continued existence surge. When continued existence surges it makes rebirth surge. When rebirth surges it makes old age and death surge. 
-+In the same way, when ignorance surges it makes action formations surge. When action formations surge they make consciousness surge. When consciousness surges it makes name and form surge. When name and form surge they make the six sense fields surge. When the six sense fields surge they make contact surge. When contact surges it makes feeling surge. When feeling surges it makes craving surge. When craving surges it makes grasping surge. When grasping surges it makes continued existence surge. When continued existence surges it makes rebirth surge. When rebirth surges it makes old age and death surge. 
+-In the same way, when ignorance surges it makes choices surge. When choices surge they make consciousness surge. When consciousness surges it makes name and form surge. When name and form surge they make the six sense fields surge. When the six sense fields surge they make contact surge. When contact surges it makes sensation surge. When sensation surges it makes craving surge. When craving surges it makes grasping surge. When grasping surges it makes continued existence surge. When continued existence surges it makes rebirth surge. When rebirth surges it makes old age and death surge. 
++In the same way, when ignorance surges it makes action formations surge. When action formations surge they make consciousness surge. When consciousness surges it makes name and form surge. When name and form surge they make the six sense fields surge. When the six sense fields surge they make contact surge. When contact surges it makes sensation surge. When sensation surges it makes craving surge. When craving surges it makes grasping surge. When grasping surges it makes continued existence surge. When continued existence surges it makes rebirth surge. When rebirth surges it makes old age and death surge. 
 @@ -1,2 +1,2 @@ sn12.69:2.2
  PLI: Evameva kho, bhikkhave, avijjā apayantī saṅkhāre apayāpeti, saṅkhārā apayantā viññāṇaṁ apayāpenti, viññāṇaṁ apayantaṁ nāmarūpaṁ apayāpeti, nāmarūpaṁ apayantaṁ saḷāyatanaṁ apayāpeti, saḷāyatanaṁ apayantaṁ phassaṁ apayāpeti, phasso apayanto vedanaṁ apayāpeti, vedanā apayantī taṇhaṁ apayāpeti, taṇhā apayantī upādānaṁ apayāpeti, upādānaṁ apayantaṁ bhavaṁ apayāpeti, bhavo apayanto jātiṁ apayāpeti, jāti apayantī jarāmaraṇaṁ apayāpetī”ti. 
--In the same way, when ignorance recedes it makes choices recede. When choices recede they make consciousness recede. When consciousness recedes it makes name and form recede. When name and form recede they make the six sense fields recede. When the six sense fields recede they make contact recede. When contact recedes it makes feeling recede. When feeling recedes it makes craving recede. When craving recedes it makes grasping recede. When grasping recedes it makes continued existence recede. When continued existence recedes it makes rebirth recede. When rebirth recedes it makes old age and death recede.” 
-+In the same way, when ignorance recedes it makes action formations recede. When action formations recede they make consciousness recede. When consciousness recedes it makes name and form recede. When name and form recede they make the six sense fields recede. When the six sense fields recede they make contact recede. When contact recedes it makes feeling recede. When feeling recedes it makes craving recede. When craving recedes it makes grasping recede. When grasping recedes it makes continued existence recede. When continued existence recedes it makes rebirth recede. When rebirth recedes it makes old age and death recede.” 
+-In the same way, when ignorance recedes it makes choices recede. When choices recede they make consciousness recede. When consciousness recedes it makes name and form recede. When name and form recede they make the six sense fields recede. When the six sense fields recede they make contact recede. When contact recedes it makes sensation recede. When sensation recedes it makes craving recede. When craving recedes it makes grasping recede. When grasping recedes it makes continued existence recede. When continued existence recedes it makes rebirth recede. When rebirth recedes it makes old age and death recede.” 
++In the same way, when ignorance recedes it makes action formations recede. When action formations recede they make consciousness recede. When consciousness recedes it makes name and form recede. When name and form recede they make the six sense fields recede. When the six sense fields recede they make contact recede. When contact recedes it makes sensation recede. When sensation recedes it makes craving recede. When craving recedes it makes grasping recede. When grasping recedes it makes continued existence recede. When continued existence recedes it makes rebirth recede. When rebirth recedes it makes old age and death recede.” 
 --- sujato/sutta/sn/sn12/sn12.70_translation-en-sujato.json
 +++ sujato/sutta/sn/sn12/sn12.70_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn12.70:15.18
@@ -1817,8 +1817,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +You should truly see any kind of action formations at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> action formations—with right understanding: ‘This is not mine, I am not this, this is not my self.’ 
 @@ -1,2 +1,2 @@ sn12.70:17.1
  PLI: Evaṁ passaṁ, susima, sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi nibbindati, saññāyapi nibbindati, saṅkhāresupi nibbindati, viññāṇasmimpi nibbindati. 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn12.70:18.14
  PLI: saṅkhārapaccayā viññāṇanti … 
 -choices are a requirement for consciousness … 
@@ -1855,8 +1855,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +action formations … 
 @@ -1,2 +1,2 @@ sn18.10:1.10
  PLI: “evaṁ passaṁ, rāhula, sutavā ariyasāvako rūpasmimpi nibbindati …pe… vedanāyapi nibbindati … saññāyapi nibbindati … saṅkhāresupi nibbindati … viññāṇasmimpi nibbindati; 
--“Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+“Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-“Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++“Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn18/sn18.12-20_translation-en-sujato.json
 +++ sujato/sutta/sn/sn18/sn18.12-20_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn18.12-20:9.4
@@ -1883,8 +1883,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +action formations … 
 @@ -1,2 +1,2 @@ sn22.100:4.2
  PLI: evameva kho, bhikkhave, assutavā puthujjano rūpaññeva abhinibbattento abhinibbatteti, vedanaññeva …pe… saññaññeva … saṅkhāreyeva … viññāṇaññeva abhinibbattento abhinibbatteti. 
--In the same way, when an unlearned ordinary person generates a future life, all they generate is form, feeling, perception, choices, and consciousness. 
-+In the same way, when an unlearned ordinary person generates a future life, all they generate is form, feeling, perception, action formations, and consciousness. 
+-In the same way, when an unlearned ordinary person generates a future life, all they generate is form, sensation, perception, choices, and consciousness. 
++In the same way, when an unlearned ordinary person generates a future life, all they generate is form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn22.100:4.8
  PLI: saṅkhārā … 
 -choices … 
@@ -1905,20 +1905,20 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn22/sn22.103_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.103:1.8
  PLI: Seyyathidaṁ—rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho—
--That is, the grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+That is, the grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-That is, the grasping aggregates of form, sensation, perception, choices, and consciousness. 
++That is, the grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.104_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.104_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.104:1.7
  PLI: Seyyathidaṁ—rūpupādānakkhandho …pe… viññāṇupādānakkhandho. 
--That is, the grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+That is, the grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-That is, the grasping aggregates of form, sensation, perception, choices, and consciousness. 
++That is, the grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.105_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.105_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.105:1.7
  PLI: Seyyathidaṁ—rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho. 
--That is, the grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+That is, the grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-That is, the grasping aggregates of form, sensation, perception, choices, and consciousness. 
++That is, the grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.106_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.106_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.106:1.8
@@ -1929,20 +1929,20 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn22/sn22.107_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.107:1.4
  PLI: Seyyathidaṁ—rūpupādānakkhandho …pe… viññāṇupādānakkhandho. 
--That is, the grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+That is, the grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-That is, the grasping aggregates of form, sensation, perception, choices, and consciousness. 
++That is, the grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.108_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.108_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.108:1.4
  PLI: Seyyathidaṁ—rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho. 
--That is, the grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+That is, the grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-That is, the grasping aggregates of form, sensation, perception, choices, and consciousness. 
++That is, the grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.109_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.109_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.109:1.4
  PLI: Seyyathidaṁ—rūpupādānakkhandho …pe… viññāṇupādānakkhandho. 
--That is, the grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+That is, the grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-That is, the grasping aggregates of form, sensation, perception, choices, and consciousness. 
++That is, the grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.10_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.10_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.10:1.9
@@ -1953,8 +1953,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn22/sn22.110_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.110:1.4
  PLI: Seyyathidaṁ—rūpupādānakkhandho …pe… viññāṇupādānakkhandho. 
--That is, the grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+That is, the grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-That is, the grasping aggregates of form, sensation, perception, choices, and consciousness. 
++That is, the grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.111_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.111_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.111:1.6
@@ -2035,14 +2035,14 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn22/sn22.122_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.122:1.6
  PLI: Seyyathidaṁ—rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho. 
--That is, the grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+That is, the grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-That is, the grasping aggregates of form, sensation, perception, choices, and consciousness. 
++That is, the grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.123_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.123_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.123:2.4
  PLI: Seyyathidaṁ—rūpupādānakkhandho …pe… viññāṇupādānakkhandho. 
--That is, the grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+That is, the grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-That is, the grasping aggregates of form, sensation, perception, choices, and consciousness. 
++That is, the grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.124_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.124_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.124:2.4
@@ -2087,12 +2087,12 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn22/sn22.12_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.12:1.4
  PLI: “rūpaṁ, bhikkhave, aniccaṁ, vedanā aniccā, saññā aniccā, saṅkhārā aniccā, viññāṇaṁ aniccaṁ. 
--“Bhikkhus, form, feeling, perception, choices, and consciousness are impermanent. 
-+“Bhikkhus, form, feeling, perception, action formations, and consciousness are impermanent. 
+-“Bhikkhus, form, sensation, perception, choices, and consciousness are impermanent. 
++“Bhikkhus, form, sensation, perception, action formations, and consciousness are impermanent. 
 @@ -1,2 +1,2 @@ sn22.12:1.5
  PLI: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi nibbindati, saññāyapi nibbindati, saṅkhāresupi nibbindati, viññāṇasmimpi nibbindati. 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.130_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.130_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.130:2.4
@@ -2145,12 +2145,12 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn22/sn22.136_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.136:1.2
  PLI: “Rūpaṁ, bhikkhave, kukkuḷaṁ, vedanā kukkuḷā, saññā kukkuḷā, saṅkhārā kukkuḷā, viññāṇaṁ kukkuḷaṁ. 
--“Bhikkhus, form, feeling, perception, choices, and consciousness are burning chaff. 
-+“Bhikkhus, form, feeling, perception, action formations, and consciousness are burning chaff. 
+-“Bhikkhus, form, sensation, perception, choices, and consciousness are burning chaff. 
++“Bhikkhus, form, sensation, perception, action formations, and consciousness are burning chaff. 
 @@ -1,2 +1,2 @@ sn22.136:1.3
  PLI: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi nibbindati, saññāyapi nibbindati, saṅkhāresupi nibbindati, viññāṇasmimpi nibbindati. 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.137_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.137_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.137:1.7
@@ -2173,22 +2173,22 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn22/sn22.13_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.13:1.2
  PLI: “Rūpaṁ, bhikkhave, dukkhaṁ, vedanā dukkhā, saññā dukkhā, saṅkhārā dukkhā, viññāṇaṁ dukkhaṁ. 
--“Bhikkhus, form, feeling, perception, choices, and consciousness are suffering. 
-+“Bhikkhus, form, feeling, perception, action formations, and consciousness are suffering. 
+-“Bhikkhus, form, sensation, perception, choices, and consciousness are suffering. 
++“Bhikkhus, form, sensation, perception, action formations, and consciousness are suffering. 
 --- sujato/sutta/sn/sn22/sn22.146_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.146_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.146:1.3
  PLI: yaṁ rūpe nibbidābahulo vihareyya. Vedanāya …pe… saññāya … saṅkhāresu … viññāṇe nibbidābahulo vihareyya. 
--They should live full of disillusionment for form, feeling, perception, choices, and consciousness. 
-+They should live full of disillusionment for form, feeling, perception, action formations, and consciousness. 
+-They should live full of disillusionment for form, sensation, perception, choices, and consciousness. 
++They should live full of disillusionment for form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn22.146:1.4
  PLI: Yo rūpe nibbidābahulo viharanto, vedanāya … saññāya … saṅkhāresu … viññāṇe nibbidābahulo viharanto rūpaṁ parijānāti, vedanaṁ … saññaṁ … saṅkhāre … viññāṇaṁ parijānāti; 
--Living in this way, they completely understand form, feeling, perception, choices, and consciousness. 
-+Living in this way, they completely understand form, feeling, perception, action formations, and consciousness. 
+-Living in this way, they completely understand form, sensation, perception, choices, and consciousness. 
++Living in this way, they completely understand form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn22.146:1.5
  PLI: so rūpaṁ parijānaṁ vedanaṁ parijānaṁ saññaṁ parijānaṁ saṅkhāre parijānaṁ viññāṇaṁ parijānaṁ parimuccati rūpamhā, parimuccati vedanāya, parimuccati saññāya, parimuccati saṅkhārehi, parimuccati viññāṇamhā, parimuccati jātiyā jarāya maraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi; ‘parimuccati dukkhasmā’ti vadāmī”ti. 
--Completely understanding form, feeling, perception, choices, and consciousness, they’re freed from these things. They’re freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They’re freed from suffering, I say.” 
-+Completely understanding form, feeling, perception, action formations, and consciousness, they’re freed from these things. They’re freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They’re freed from suffering, I say.” 
+-Completely understanding form, sensation, perception, choices, and consciousness, they’re freed from these things. They’re freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They’re freed from suffering, I say.” 
++Completely understanding form, sensation, perception, action formations, and consciousness, they’re freed from these things. They’re freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They’re freed from suffering, I say.” 
 --- sujato/sutta/sn/sn22/sn22.147_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.147_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.147:1.6
@@ -2211,12 +2211,12 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn22/sn22.14_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.14:1.2
  PLI: “Rūpaṁ, bhikkhave, anattā, vedanā anattā, saññā anattā, saṅkhārā anattā, viññāṇaṁ anattā. 
--“Bhikkhus, form, feeling, perception, choices, and consciousness are not-self. 
-+“Bhikkhus, form, feeling, perception, action formations, and consciousness are not-self. 
+-“Bhikkhus, form, sensation, perception, choices, and consciousness are not-self. 
++“Bhikkhus, form, sensation, perception, action formations, and consciousness are not-self. 
 @@ -1,2 +1,2 @@ sn22.14:1.3
  PLI: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi nibbindati, saññāyapi nibbindati, saṅkhāresupi nibbindati, viññāṇasmimpi nibbindati. 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.150_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.150_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.150:1.7
@@ -2373,14 +2373,14 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn22/sn22.22_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.22:1.7
  PLI: Rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho; 
--The grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+The grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-The grasping aggregates of form, sensation, perception, choices, and consciousness. 
++The grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.23_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.23_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.23:1.5
  PLI: Rūpaṁ, bhikkhave, pariññeyyo dhammo, vedanā pariññeyyo dhammo, saññā pariññeyyo dhammo, saṅkhārā pariññeyyo dhammo, viññāṇaṁ pariññeyyo dhammo. 
--Form, feeling, perception, choices, and consciousness. 
-+Form, feeling, perception, action formations, and consciousness. 
+-Form, sensation, perception, choices, and consciousness. 
++Form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.24_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.24_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.24:1.5
@@ -2473,8 +2473,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn22/sn22.31_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.31:1.5
  PLI: Rūpaṁ, bhikkhave, aghaṁ, vedanā aghaṁ, saññā aghaṁ, saṅkhārā aghaṁ, viññāṇaṁ aghaṁ. 
--Form, feeling, perception, choices, and consciousness are gloom. 
-+Form, feeling, perception, action formations, and consciousness are gloom. 
+-Form, sensation, perception, choices, and consciousness are gloom. 
++Form, sensation, perception, action formations, and consciousness are gloom. 
 --- sujato/sutta/sn/sn22/sn22.32_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.32_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.32:1.10
@@ -2573,16 +2573,16 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn22/sn22.39_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.39:1.3
  PLI: yaṁ rūpe nibbidābahulo vihareyya, vedanāya nibbidābahulo vihareyya, saññāya nibbidābahulo vihareyya, saṅkhāresu nibbidābahulo vihareyya, viññāṇe nibbidābahulo vihareyya. 
--They should live full of disillusionment for form, feeling, perception, choices, and consciousness. 
-+They should live full of disillusionment for form, feeling, perception, action formations, and consciousness. 
+-They should live full of disillusionment for form, sensation, perception, choices, and consciousness. 
++They should live full of disillusionment for form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn22.39:1.4
  PLI: Yo rūpe nibbidābahulo viharanto, vedanāya … saññāya … saṅkhāresu nibbidābahulo viharanto, viññāṇe nibbidābahulo viharanto rūpaṁ parijānāti, vedanaṁ … saññaṁ … saṅkhāre … viññāṇaṁ parijānāti, 
--Living in this way, they completely understand form, feeling, perception, choices, and consciousness. 
-+Living in this way, they completely understand form, feeling, perception, action formations, and consciousness. 
+-Living in this way, they completely understand form, sensation, perception, choices, and consciousness. 
++Living in this way, they completely understand form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn22.39:1.5
  PLI: so rūpaṁ parijānaṁ, vedanaṁ … saññaṁ … saṅkhāre … viññāṇaṁ parijānaṁ parimuccati rūpamhā, parimuccati vedanāya, parimuccati saññāya, parimuccati saṅkhārehi, parimuccati viññāṇamhā, 
--Completely understanding form, feeling, perception, choices, and consciousness, they’re freed from these things. 
-+Completely understanding form, feeling, perception, action formations, and consciousness, they’re freed from these things. 
+-Completely understanding form, sensation, perception, choices, and consciousness, they’re freed from these things. 
++Completely understanding form, sensation, perception, action formations, and consciousness, they’re freed from these things. 
 --- sujato/sutta/sn/sn22/sn22.3_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.3_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.3:4.7
@@ -2599,30 +2599,30 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +the action-formation element … 
 @@ -1,2 +1,2 @@ sn22.3:12.3
  PLI: ‘evaṁrūpo siyaṁ anāgatamaddhānaṁ, evaṁvedano siyaṁ anāgatamaddhānaṁ, evaṁsañño siyaṁ anāgatamaddhānaṁ, evaṁsaṅkhāro siyaṁ anāgatamaddhānaṁ, evaṁviññāṇo siyaṁ anāgatamaddhānan’ti. 
--‘In the future, may I be of such form, such feeling, such perception, such choices, and such consciousness!’ 
-+‘In the future, may I be of such form, such feeling, such perception, such action formations, and such consciousness!’ 
+-‘In the future, may I be of such form, such sensation, such perception, such choices, and such consciousness!’ 
++‘In the future, may I be of such form, such sensation, such perception, such action formations, and such consciousness!’ 
 @@ -1,2 +1,2 @@ sn22.3:13.3
  PLI: ‘evaṁrūpo siyaṁ anāgatamaddhānaṁ, evaṁvedano siyaṁ anāgatamaddhānaṁ, evaṁsañño siyaṁ anāgatamaddhānaṁ, evaṁsaṅkhāro siyaṁ anāgatamaddhānaṁ, evaṁviññāṇo siyaṁ anāgatamaddhānan’ti. 
--‘In the future, may I be of such form, such feeling, such perception, such choices, and such consciousness!’ 
-+‘In the future, may I be of such form, such feeling, such perception, such action formations, and such consciousness!’ 
+-‘In the future, may I be of such form, such sensation, such perception, such choices, and such consciousness!’ 
++‘In the future, may I be of such form, such sensation, such perception, such action formations, and such consciousness!’ 
 --- sujato/sutta/sn/sn22/sn22.40_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.40_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.40:1.2
  PLI: “Dhammānudhammappaṭipannassa, bhikkhave, bhikkhuno ayamanudhammo hoti yaṁ rūpe aniccānupassī vihareyya …pe… 
--“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing impermanence in form, feeling, perception, choices, and consciousness. … 
-+“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing impermanence in form, feeling, perception, action formations, and consciousness. … 
+-“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing impermanence in form, sensation, perception, choices, and consciousness. … 
++“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing impermanence in form, sensation, perception, action formations, and consciousness. … 
 --- sujato/sutta/sn/sn22/sn22.41_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.41_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.41:1.2
  PLI: “Dhammānudhammappaṭipannassa, bhikkhave, bhikkhuno ayamanudhammo hoti yaṁ rūpe dukkhānupassī vihareyya …pe… 
--“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing suffering in form, feeling, perception, choices, and consciousness. … 
-+“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing suffering in form, feeling, perception, action formations, and consciousness. … 
+-“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing suffering in form, sensation, perception, choices, and consciousness. … 
++“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing suffering in form, sensation, perception, action formations, and consciousness. … 
 --- sujato/sutta/sn/sn22/sn22.42_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.42_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.42:1.2
  PLI: “Dhammānudhammappaṭipannassa, bhikkhave, bhikkhuno ayamanudhammo hoti yaṁ rūpe anattānupassī vihareyya, vedanāya … saññāya … saṅkhāresu … viññāṇe anattānupassī vihareyya. 
--“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing not-self in form, feeling, perception, choices, and consciousness. … 
-+“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing not-self in form, feeling, perception, action formations, and consciousness. … 
+-“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing not-self in form, sensation, perception, choices, and consciousness. … 
++“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing not-self in form, sensation, perception, action formations, and consciousness. … 
 --- sujato/sutta/sn/sn22/sn22.43_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.43_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.43:2.10
@@ -2699,8 +2699,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +action formations … 
 @@ -1,2 +1,2 @@ sn22.49:7.1
  PLI: Evaṁ passaṁ, soṇa, sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi nibbindati, saññāyapi nibbindati, saṅkhāresupi nibbindati, viññāṇasmimpi nibbindati. 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.4_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.4_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.4:4.3
@@ -2737,8 +2737,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +Or should consciousness involved with action formations, supported by action formations, established on action formations continue to remain, with a sprinkling of relishing it would grow, increase, and mature. 
 @@ -1,2 +1,2 @@ sn22.53:2.2
  PLI: ‘ahamaññatra rūpā aññatra vedanāya aññatra saññāya aññatra saṅkhārehi viññāṇassa āgatiṁ vā gatiṁ vā cutiṁ vā upapattiṁ vā vuddhiṁ vā virūḷhiṁ vā vepullaṁ vā paññāpessāmī’ti, netaṁ ṭhānaṁ vijjati. 
--‘Apart from form, feeling, perception, and choices, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. 
-+‘Apart from form, feeling, perception, and action formations, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. 
+-‘Apart from form, sensation, perception, and choices, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. 
++‘Apart from form, sensation, perception, and action formations, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. 
 @@ -1,2 +1,2 @@ sn22.53:3.5
  PLI: saṅkhāradhātuyā ce, bhikkhave … 
 -choices element … 
@@ -2751,8 +2751,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +Or should consciousness involved with action formations, supported by action formations, established on action formations continue to remain, with a sprinkling of relishing it would grow, increase, and mature. 
 @@ -1,2 +1,2 @@ sn22.54:3.2
  PLI: ‘ahamaññatra rūpā aññatra vedanāya aññatra saññāya aññatra saṅkhārehi viññāṇassa āgatiṁ vā gatiṁ vā cutiṁ vā upapattiṁ vā vuddhiṁ vā virūḷhiṁ vā vepullaṁ vā paññāpessāmī’ti, netaṁ ṭhānaṁ vijjati. 
--‘Apart from form, feeling, perception, and choices, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. 
-+‘Apart from form, feeling, perception, and action formations, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. 
+-‘Apart from form, sensation, perception, and choices, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. 
++‘Apart from form, sensation, perception, and action formations, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. 
 @@ -1,2 +1,2 @@ sn22.54:4.5
  PLI: saṅkhāradhātuyā ce … 
 -choices element … 
@@ -2793,32 +2793,32 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +action formations … 
 @@ -1,2 +1,2 @@ sn22.55:8.6
  PLI: Dukkhaṁ rūpaṁ …pe… dukkhaṁ viññāṇaṁ … 
--They truly understand form … feeling … perception … choices … consciousness—which is suffering—as suffering. 
-+They truly understand form … feeling … perception … action formations … consciousness—which is suffering—as suffering. 
+-They truly understand form … sensation … perception … choices … consciousness—which is suffering—as suffering. 
++They truly understand form … sensation … perception … action formations … consciousness—which is suffering—as suffering. 
 @@ -1,2 +1,2 @@ sn22.55:8.7
  PLI: anattaṁ rūpaṁ …pe… anattaṁ viññāṇaṁ … 
--They truly understand form … feeling … perception … choices … consciousness—which is not-self—as not-self. 
-+They truly understand form … feeling … perception … action formations … consciousness—which is not-self—as not-self. 
+-They truly understand form … sensation … perception … choices … consciousness—which is not-self—as not-self. 
++They truly understand form … sensation … perception … action formations … consciousness—which is not-self—as not-self. 
 @@ -1,2 +1,2 @@ sn22.55:8.8
  PLI: saṅkhataṁ rūpaṁ …pe… saṅkhataṁ viññāṇaṁ ‘saṅkhataṁ viññāṇan’ti yathābhūtaṁ pajānāti. 
--They truly understand form … feeling … perception … choices … consciousness—which is conditioned—as conditioned. 
-+They truly understand form … feeling … perception … action formations … consciousness—which is conditioned—as conditioned. 
+-They truly understand form … sensation … perception … choices … consciousness—which is conditioned—as conditioned. 
++They truly understand form … sensation … perception … action formations … consciousness—which is conditioned—as conditioned. 
 @@ -1,2 +1,2 @@ sn22.55:8.12
  PLI: saṅkhārā … 
 -choices … 
 +action formations … 
 @@ -1,2 +1,2 @@ sn22.55:9.1
  PLI: So rūpassa vibhavā, vedanāya vibhavā, saññāya vibhavā, saṅkhārānaṁ vibhavā, viññāṇassa vibhavā, evaṁ kho, bhikkhu, 
--It’s because of the vanishing of form, feeling, perception, choices, and consciousness that a bhikkhu who makes such a resolution—
-+It’s because of the vanishing of form, feeling, perception, action formations, and consciousness that a bhikkhu who makes such a resolution—
+-It’s because of the vanishing of form, sensation, perception, choices, and consciousness that a bhikkhu who makes such a resolution—
++It’s because of the vanishing of form, sensation, perception, action formations, and consciousness that a bhikkhu who makes such a resolution—
 @@ -1,2 +1,2 @@ sn22.55:11.7
  PLI: saṅkhārupayaṁ vā, bhikkhu, viññāṇaṁ tiṭṭhamānaṁ tiṭṭheyya, saṅkhārārammaṇaṁ saṅkhārappatiṭṭhaṁ nandūpasecanaṁ vuddhiṁ virūḷhiṁ vepullaṁ āpajjeyya. 
 -Or should consciousness involved with choices, supported by choices, established on choices continue to remain, with a sprinkling of relishing it would grow, increase, and mature. 
 +Or should consciousness involved with action formations, supported by action formations, established on action formations continue to remain, with a sprinkling of relishing it would grow, increase, and mature. 
 @@ -1,2 +1,2 @@ sn22.55:12.2
  PLI: ‘ahamaññatra rūpā, aññatra vedanāya, aññatra saññāya, aññatra saṅkhārehi viññāṇassa āgatiṁ vā gatiṁ vā cutiṁ vā upapattiṁ vā vuddhiṁ vā virūḷhiṁ vā vepullaṁ vā paññāpessāmī’ti, netaṁ ṭhānaṁ vijjati. 
--‘Apart from form, feeling, perception, and choices, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. 
-+‘Apart from form, feeling, perception, and action formations, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. 
+-‘Apart from form, sensation, perception, and choices, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. 
++‘Apart from form, sensation, perception, and action formations, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. 
 @@ -1,2 +1,2 @@ sn22.55:13.4
  PLI: saṅkhāradhātuyā ce, bhikkhu, bhikkhuno … 
 -choices element … 
@@ -2827,8 +2827,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn22/sn22.56_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.56:1.4
  PLI: Rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho. 
--The grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+The grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-The grasping aggregates of form, sensation, perception, choices, and consciousness. 
++The grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn22.56:2.5
  PLI: saṅkhāre … 
 -choices … 
@@ -2901,18 +2901,18 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +Any kind of action formations at all … 
 @@ -1,2 +1,2 @@ sn22.59:11.1
  PLI: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi nibbindati, saññāyapi nibbindati, saṅkhāresupi nibbindati, viññāṇasmimpi nibbindati. 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.5_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.5_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.5:1.7
  PLI: Rūpassa samudayañca atthaṅgamañca, vedanāya samudayañca atthaṅgamañca, saññāya samudayañca atthaṅgamañca, saṅkhārānaṁ samudayañca atthaṅgamañca, viññāṇassa samudayañca atthaṅgamañca. 
--The arising and ending of form, feeling, perception, choices, and consciousness. 
-+The arising and ending of form, feeling, perception, action formations, and consciousness. 
+-The arising and ending of form, sensation, perception, choices, and consciousness. 
++The arising and ending of form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn22.5:2.1
  PLI: Ko ca, bhikkhave, rūpassa samudayo, ko vedanāya samudayo, ko saññāya samudayo, ko saṅkhārānaṁ samudayo, ko viññāṇassa samudayo? 
--And what is the arising of form, feeling, perception, choices, and consciousness? 
-+And what is the arising of form, feeling, perception, action formations, and consciousness? 
+-And what is the arising of form, sensation, perception, choices, and consciousness? 
++And what is the arising of form, sensation, perception, action formations, and consciousness? 
 @@ -1,2 +1,2 @@ sn22.5:4.3
  PLI: saṅkhāre abhinandati … 
 -choices … 
@@ -2931,8 +2931,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +action formations … 
 @@ -1,2 +1,2 @@ sn22.5:12.1
  PLI: Ayaṁ, bhikkhave, rūpassa atthaṅgamo, ayaṁ vedanāya atthaṅgamo, ayaṁ saññāya atthaṅgamo, ayaṁ saṅkhārānaṁ atthaṅgamo, ayaṁ viññāṇassa atthaṅgamo”ti. 
--This is the ending of form, feeling, perception, choices, and consciousness.” 
-+This is the ending of form, feeling, perception, action formations, and consciousness.” 
+-This is the ending of form, sensation, perception, choices, and consciousness.” 
++This is the ending of form, sensation, perception, action formations, and consciousness.” 
 --- sujato/sutta/sn/sn22/sn22.60_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.60_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.60:7.2
@@ -2947,12 +2947,12 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn22/sn22.61_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.61:1.2
  PLI: “Rūpaṁ, bhikkhave, ādittaṁ, vedanā ādittā, saññā ādittā, saṅkhārā ādittā, viññāṇaṁ ādittaṁ. 
--“Bhikkhus, form, feeling, perception, choices, and consciousness are burning. 
-+“Bhikkhus, form, feeling, perception, action formations, and consciousness are burning. 
+-“Bhikkhus, form, sensation, perception, choices, and consciousness are burning. 
++“Bhikkhus, form, sensation, perception, action formations, and consciousness are burning. 
 @@ -1,2 +1,2 @@ sn22.61:1.3
  PLI: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi … saññāyapi … saṅkhāresupi … viññāṇasmimpi nibbindati. 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.62_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.62_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.62:3.2
@@ -3041,8 +3041,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn22/sn22.6_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.6:1.5
  PLI: Rūpassa samudayañca atthaṅgamañca, vedanāya samudayañca atthaṅgamañca, saññāya samudayañca atthaṅgamañca, saṅkhārānaṁ samudayañca atthaṅgamañca, viññāṇassa samudayañca atthaṅgamañca …pe… 
--The arising and disappearing of form, feeling, perception, choices, and consciousness. …” 
-+The arising and disappearing of form, feeling, perception, action formations, and consciousness. …” 
+-The arising and disappearing of form, sensation, perception, choices, and consciousness. …” 
++The arising and disappearing of form, sensation, perception, action formations, and consciousness. …” 
 --- sujato/sutta/sn/sn22/sn22.70_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.70_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.70:2.5
@@ -3099,14 +3099,14 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +Action formations … 
 @@ -1,2 +1,2 @@ sn22.76:2.1
  PLI: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi … saññāyapi … saṅkhāresupi … viññāṇasmimpi nibbindati. 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.77_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.77_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.77:2.1
  PLI: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi … saññāyapi … saṅkhāresupi … viññāṇasmimpi nibbindati. 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn22/sn22.78_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.78_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.78:2.5
@@ -3129,8 +3129,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +Action formations produce conditioned phenomena; that’s why they’re called ‘action formations’. 
 @@ -1,2 +1,2 @@ sn22.79:5.4
  PLI: Rūpaṁ rūpattāya saṅkhatamabhisaṅkharonti, vedanaṁ vedanattāya saṅkhatamabhisaṅkharonti, saññaṁ saññattāya saṅkhatamabhisaṅkharonti, saṅkhāre saṅkhārattāya saṅkhatamabhisaṅkharonti, viññāṇaṁ viññāṇattāya saṅkhatamabhisaṅkharonti. 
--Form is a conditioned phenomenon; choices are what make it into form. Feeling is a conditioned phenomenon; choices are what make it into feeling. Perception is a conditioned phenomenon; choices are what make it into perception. Choices are conditioned phenomena; choices are what make them into choices. Consciousness is a conditioned phenomenon; choices are what make it into consciousness. 
-+Form is a conditioned phenomenon; action formations are what make it into form. Feeling is a conditioned phenomenon; action formations are what make it into feeling. Perception is a conditioned phenomenon; action formations are what make it into perception. Action formations are conditioned phenomena; action formations are what make them into action formations. Consciousness is a conditioned phenomenon; action formations are what make it into consciousness. 
+-Form is a conditioned phenomenon; choices are what make it into form. Sensation is a conditioned phenomenon; choices are what make it into sensation. Perception is a conditioned phenomenon; choices are what make it into perception. Choices are conditioned phenomena; choices are what make them into choices. Consciousness is a conditioned phenomenon; choices are what make it into consciousness. 
++Form is a conditioned phenomenon; action formations are what make it into form. Sensation is a conditioned phenomenon; action formations are what make it into sensation. Perception is a conditioned phenomenon; action formations are what make it into perception. Action formations are conditioned phenomena; action formations are what make them into action formations. Consciousness is a conditioned phenomenon; action formations are what make it into consciousness. 
 @@ -1,2 +1,2 @@ sn22.79:5.5
  PLI: Saṅkhatamabhisaṅkharontīti kho, bhikkhave, tasmā ‘saṅkhārā’ti vuccati. 
 -Choices produce conditioned phenomena; that’s why they’re called ‘choices’. 
@@ -3165,8 +3165,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +action formations … 
 @@ -1,2 +1,2 @@ sn22.79:13.1
  PLI: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi … saññāyapi … saṅkhāresupi … viññāṇasmimpi nibbindati. 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn22.79:14.6
  PLI: saṅkhāre … 
 -choices … 
@@ -3225,12 +3225,12 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn22/sn22.82_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.82:2.6
  PLI: rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho”ti. 
--form, feeling, perception, choices, and consciousness?” 
-+form, feeling, perception, action formations, and consciousness?” 
+-form, sensation, perception, choices, and consciousness?” 
++form, sensation, perception, action formations, and consciousness?” 
 @@ -1,2 +1,2 @@ sn22.82:5.4
  PLI: ‘evaṁrūpo siyaṁ anāgatamaddhānaṁ, evaṁvedano siyaṁ anāgatamaddhānaṁ, evaṁsañño siyaṁ anāgatamaddhānaṁ, evaṁsaṅkhāro siyaṁ anāgatamaddhānaṁ, evaṁviññāṇo siyaṁ anāgatamaddhānan’ti. 
--‘In the future, may I be of such form, such feeling, such perception, such choices, and such consciousness!’ 
-+‘In the future, may I be of such form, such feeling, such perception, such action formations, and such consciousness!’ 
+-‘In the future, may I be of such form, such sensation, such perception, such choices, and such consciousness!’ 
++‘In the future, may I be of such form, such sensation, such perception, such action formations, and such consciousness!’ 
 @@ -1,2 +1,2 @@ sn22.82:6.5
  PLI: ye keci saṅkhārā … 
 -Any kind of choices at all … 
@@ -3265,12 +3265,12 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +action formations … 
 @@ -1,2 +1,2 @@ sn22.82:12.2
  PLI: “iti kira bho rūpaṁ anattā, vedanā … saññā … saṅkhārā … viññāṇaṁ anattā; 
--“So it seems, worthy sir, that form, feeling, perception, choices, and consciousness are not-self. 
-+“So it seems, worthy sir, that form, feeling, perception, action formations, and consciousness are not-self. 
+-“So it seems, worthy sir, that form, sensation, perception, choices, and consciousness are not-self. 
++“So it seems, worthy sir, that form, sensation, perception, action formations, and consciousness are not-self. 
 @@ -1,2 +1,2 @@ sn22.82:13.2
  PLI: ‘Iti kira, bho, rūpaṁ anattā, vedanā … saññā … saṅkhārā … viññāṇaṁ anattā. 
--‘So it seems, worthy sir, that form, feeling, perception, choices, and consciousness are not-self. 
-+‘So it seems, worthy sir, that form, feeling, perception, action formations, and consciousness are not-self. 
+-‘So it seems, worthy sir, that form, sensation, perception, choices, and consciousness are not-self. 
++‘So it seems, worthy sir, that form, sensation, perception, action formations, and consciousness are not-self. 
 @@ -1,2 +1,2 @@ sn22.82:14.6
  PLI: saṅkhārā … 
 -choices … 
@@ -3323,12 +3323,12 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +“… apart from action formations?” … 
 @@ -1,2 +1,2 @@ sn22.85:10.2
  PLI: rūpaṁ … vedanaṁ … saññaṁ … saṅkhāre … viññāṇaṁ tathāgatoti samanupassasī”ti? 
--Do you consider that the label ‘realized one’ applies to one who has form?” … “… feeling?” … “… perception?” … “… choices?” … “… consciousness?” 
-+Do you consider that the label ‘realized one’ applies to one who has form?” … “… feeling?” … “… perception?” … “… action formations?” … “… consciousness?” 
+-Do you consider that the label ‘realized one’ applies to one who has form?” … “… sensation?” … “… perception?” … “… choices?” … “… consciousness?” 
++Do you consider that the label ‘realized one’ applies to one who has form?” … “… sensation?” … “… perception?” … “… action formations?” … “… consciousness?” 
 @@ -1,2 +1,2 @@ sn22.85:11.2
  PLI: ayaṁ so arūpī … avedano … asaññī … asaṅkhāro … aviññāṇo tathāgatoti samanupassasī”ti? 
--Do you consider that the label ‘realized one’ applies to that one who is without form?” … “… feeling?” … “… perception?” … “… choices?” … “… consciousness?” 
-+Do you consider that the label ‘realized one’ applies to that one who is without form?” … “… feeling?” … “… perception?” … “… action formations?” … “… consciousness?” 
+-Do you consider that the label ‘realized one’ applies to that one who is without form?” … “… sensation?” … “… perception?” … “… choices?” … “… consciousness?” 
++Do you consider that the label ‘realized one’ applies to that one who is without form?” … “… sensation?” … “… perception?” … “… action formations?” … “… consciousness?” 
 @@ -1,2 +1,2 @@ sn22.85:13.12
  PLI: saṅkhārā … 
 -choices … 
@@ -3409,12 +3409,12 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +“… apart from action formations?” … 
 @@ -1,2 +1,2 @@ sn22.86:10.2
  PLI: rūpaṁ … vedanā … saññā … saṅkhārā … viññāṇaṁ tathāgatoti samanupassasī”ti? 
--Do you consider that the label ‘realized one’ applies to one who has form?” … “… feeling?” … “… perception?” … “… choices?” … “… consciousness?” 
-+Do you consider that the label ‘realized one’ applies to one who has form?” … “… feeling?” … “… perception?” … “… action formations?” … “… consciousness?” 
+-Do you consider that the label ‘realized one’ applies to one who has form?” … “… sensation?” … “… perception?” … “… choices?” … “… consciousness?” 
++Do you consider that the label ‘realized one’ applies to one who has form?” … “… sensation?” … “… perception?” … “… action formations?” … “… consciousness?” 
 @@ -1,2 +1,2 @@ sn22.86:11.2
  PLI: ayaṁ so arūpī … avedano … asaññī … asaṅkhāro … aviññāṇo tathāgatoti samanupassasī”ti? 
--Do you consider that the label ‘realized one’ applies to that one who is without form?” … “… feeling?” … “… perception?” … “… choices?” … “… consciousness?” 
-+Do you consider that the label ‘realized one’ applies to that one who is without form?” … “… feeling?” … “… perception?” … “… action formations?” … “… consciousness?” 
+-Do you consider that the label ‘realized one’ applies to that one who is without form?” … “… sensation?” … “… perception?” … “… choices?” … “… consciousness?” 
++Do you consider that the label ‘realized one’ applies to that one who is without form?” … “… sensation?” … “… perception?” … “… action formations?” … “… consciousness?” 
 --- sujato/sutta/sn/sn22/sn22.87_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.87_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.87:4.11
@@ -3429,20 +3429,20 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn22/sn22.89_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.89:2.7
  PLI: rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho. 
--the grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+the grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-the grasping aggregates of form, sensation, perception, choices, and consciousness. 
++the grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn22.89:3.7
  PLI: rūpupādānakkhandho …pe… viññāṇupādānakkhandho. 
--the grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+the grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-the grasping aggregates of form, sensation, perception, choices, and consciousness. 
++the grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn22.89:4.9
  PLI: rūpupādānakkhandho …pe… viññāṇupādānakkhandho. 
--the grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+the grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-the grasping aggregates of form, sensation, perception, choices, and consciousness. 
++the grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn22.89:5.7
  PLI: rūpupādānakkhandho …pe… viññāṇupādānakkhandho. 
--the grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+the grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-the grasping aggregates of form, sensation, perception, choices, and consciousness. 
++the grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn22.89:7.7
  PLI: saṅkhāre … 
 -choices … 
@@ -3529,8 +3529,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +Action formations … 
 @@ -1,2 +1,2 @@ sn22.94:3.3
  PLI: Vedanā aniccā …pe… 
--Feeling … Perception … Choices … 
-+Feeling … Perception … Action formations … 
+-Sensation … Perception … Choices … 
++Sensation … Perception … Action formations … 
 @@ -1,2 +1,2 @@ sn22.94:6.4
  PLI: saṅkhārā, bhikkhave … 
 -Choices … 
@@ -3543,8 +3543,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +In the same way, a bhikkhu sees and contemplates any kind of action formations at all … examining them properly. And they appear to them as completely vacuous, hollow, and insubstantial. For what essence could there be in action formations? 
 @@ -1,2 +1,2 @@ sn22.95:7.1
  PLI: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi … saññāyapi … saṅkhāresupi … viññāṇasmimpi nibbindati. 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn22.95:9.4
  PLI: saṅkhārā kadalūpamā; 
 -choices like a banana plant; 
@@ -3595,24 +3595,24 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +action formations … 
 @@ -1,2 +1,2 @@ sn22.99:2.8
  PLI: So rūpaññeva anuparidhāvati anuparivattati, vedanaññeva …pe… saññaññeva … saṅkhāreyeva … viññāṇaññeva anuparidhāvati anuparivattati. 
--They just keep running and circling around form, feeling, perception, choices, and consciousness. 
-+They just keep running and circling around form, feeling, perception, action formations, and consciousness. 
+-They just keep running and circling around form, sensation, perception, choices, and consciousness. 
++They just keep running and circling around form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn22.99:2.9
  PLI: So rūpaṁ anuparidhāvaṁ anuparivattaṁ, vedanaṁ …pe… saññaṁ … saṅkhāre … viññāṇaṁ anuparidhāvaṁ anuparivattaṁ, na parimuccati rūpamhā, na parimuccati vedanāya, na parimuccati saññāya, na parimuccati saṅkhārehi, na parimuccati viññāṇamhā, na parimuccati jātiyā jarāmaraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi. 
--Doing so, they’re not freed from form, feeling, perception, choices, and consciousness. They’re not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. 
-+Doing so, they’re not freed from form, feeling, perception, action formations, and consciousness. They’re not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. 
+-Doing so, they’re not freed from form, sensation, perception, choices, and consciousness. They’re not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. 
++Doing so, they’re not freed from form, sensation, perception, action formations, and consciousness. They’re not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. 
 @@ -1,2 +1,2 @@ sn22.99:3.5
  PLI: na saṅkhāre … 
 -choices … 
 +action formations … 
 @@ -1,2 +1,2 @@ sn22.99:3.7
  PLI: So rūpaṁ nānuparidhāvati nānuparivattati, vedanaṁ … saññaṁ … saṅkhāre … viññāṇaṁ nānuparidhāvati nānuparivattati. 
--They don’t keep running and circling around form, feeling, perception, choices, and consciousness. 
-+They don’t keep running and circling around form, feeling, perception, action formations, and consciousness. 
+-They don’t keep running and circling around form, sensation, perception, choices, and consciousness. 
++They don’t keep running and circling around form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn22.99:3.8
  PLI: So rūpaṁ ananuparidhāvaṁ ananuparivattaṁ, vedanaṁ … saññaṁ … saṅkhāre … viññāṇaṁ ananuparidhāvaṁ ananuparivattaṁ; parimuccati rūpamhā, parimuccati vedanāya, parimuccati saññāya, parimuccati saṅkhārehi, parimuccati viññāṇamhā, parimuccati jātiyā jarāmaraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi. 
--By not doing so, they’re freed from form, feeling, perception, choices, and consciousness. They’re freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. 
-+By not doing so, they’re freed from form, feeling, perception, action formations, and consciousness. They’re freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. 
+-By not doing so, they’re freed from form, sensation, perception, choices, and consciousness. They’re freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. 
++By not doing so, they’re freed from form, sensation, perception, action formations, and consciousness. They’re freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. 
 --- sujato/sutta/sn/sn22/sn22.9_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.9_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.9:1.9
@@ -3629,60 +3629,60 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn23/sn23.11_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.11:1.5
  PLI: “Rūpaṁ kho, rādha, māro, vedanā māro, saññā māro, saṅkhārā māro, viññāṇaṁ māro. 
--“Rādha, form is Māra, feeling is Māra, perception is Māra, choices are Māra, consciousness is Māra. 
-+“Rādha, form is Māra, feeling is Māra, perception is Māra, action formations are Māra, consciousness is Māra. 
+-“Rādha, form is Māra, sensation is Māra, perception is Māra, choices are Māra, consciousness is Māra. 
++“Rādha, form is Māra, sensation is Māra, perception is Māra, action formations are Māra, consciousness is Māra. 
 @@ -1,2 +1,2 @@ sn23.11:1.6
  PLI: Evaṁ passaṁ, rādha, sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi nibbindati, saññāyapi nibbindati, saṅkhāresupi nibbindati, viññāṇasmimpi nibbindati. 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn23/sn23.12_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.12_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.12:1.5
  PLI: “Rūpaṁ kho, rādha, māradhammo, vedanā māradhammo, saññā māradhammo, saṅkhārā māradhammo, viññāṇaṁ māradhammo. 
--“Rādha, form is of Māra nature. Feeling, perception, choices, and consciousness are of Māra nature. 
-+“Rādha, form is of Māra nature. Feeling, perception, action formations, and consciousness are of Māra nature. 
+-“Rādha, form is of Māra nature. Sensation, perception, choices, and consciousness are of Māra nature. 
++“Rādha, form is of Māra nature. Sensation, perception, action formations, and consciousness are of Māra nature. 
 --- sujato/sutta/sn/sn23/sn23.13_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.13_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.13:1.5
  PLI: “Rūpaṁ kho, rādha, aniccaṁ, vedanā aniccā, saññā aniccā, saṅkhārā aniccā, viññāṇaṁ aniccaṁ. 
--“Rādha, form, feeling, perception, choices, and consciousness are impermanent. 
-+“Rādha, form, feeling, perception, action formations, and consciousness are impermanent. 
+-“Rādha, form, sensation, perception, choices, and consciousness are impermanent. 
++“Rādha, form, sensation, perception, action formations, and consciousness are impermanent. 
 --- sujato/sutta/sn/sn23/sn23.14_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.14_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.14:1.5
  PLI: “Rūpaṁ kho, rādha, aniccadhammo, vedanā aniccadhammo, saññā aniccadhammo, saṅkhārā aniccadhammo, viññāṇaṁ aniccadhammo. 
--“Rādha, form, feeling, perception, choices, and consciousness are of impermanent nature. 
-+“Rādha, form, feeling, perception, action formations, and consciousness are of impermanent nature. 
+-“Rādha, form, sensation, perception, choices, and consciousness are of impermanent nature. 
++“Rādha, form, sensation, perception, action formations, and consciousness are of impermanent nature. 
 --- sujato/sutta/sn/sn23/sn23.15_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.15_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.15:1.5
  PLI: “Rūpaṁ kho, rādha, dukkhaṁ, vedanā dukkhā, saññā dukkhā, saṅkhārā dukkhā, viññāṇaṁ dukkhaṁ. 
--“Rādha, form, feeling, perception, choices, and consciousness are suffering. 
-+“Rādha, form, feeling, perception, action formations, and consciousness are suffering. 
+-“Rādha, form, sensation, perception, choices, and consciousness are suffering. 
++“Rādha, form, sensation, perception, action formations, and consciousness are suffering. 
 --- sujato/sutta/sn/sn23/sn23.16_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.16_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.16:1.5
  PLI: “Rūpaṁ kho, rādha, dukkhadhammo, vedanā dukkhadhammo, saññā dukkhadhammo, saṅkhārā dukkhadhammo, viññāṇaṁ dukkhadhammo. 
--“Rādha, form, feeling, perception, choices, and consciousness are of a nature to suffer. 
-+“Rādha, form, feeling, perception, action formations, and consciousness are of a nature to suffer. 
+-“Rādha, form, sensation, perception, choices, and consciousness are of a nature to suffer. 
++“Rādha, form, sensation, perception, action formations, and consciousness are of a nature to suffer. 
 --- sujato/sutta/sn/sn23/sn23.17_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.17_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.17:1.5
  PLI: “Rūpaṁ kho, rādha, anattā, vedanā anattā, saññā anattā, saṅkhārā anattā, viññāṇaṁ anattā. 
--“Rādha, form, feeling, perception, choices, and consciousness are not-self. 
-+“Rādha, form, feeling, perception, action formations, and consciousness are not-self. 
+-“Rādha, form, sensation, perception, choices, and consciousness are not-self. 
++“Rādha, form, sensation, perception, action formations, and consciousness are not-self. 
 --- sujato/sutta/sn/sn23/sn23.18_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.18_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.18:1.5
  PLI: “Rūpaṁ kho, rādha, anattadhammo, vedanā anattadhammo, saññā anattadhammo, saṅkhārā anattadhammo, viññāṇaṁ anattadhammo. 
--“Rādha, form, feeling, perception, choices, and consciousness have a nature of not-self. 
-+“Rādha, form, feeling, perception, action formations, and consciousness have a nature of not-self. 
+-“Rādha, form, sensation, perception, choices, and consciousness have a nature of not-self. 
++“Rādha, form, sensation, perception, action formations, and consciousness have a nature of not-self. 
 --- sujato/sutta/sn/sn23/sn23.19_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.19_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.19:1.5
  PLI: “Rūpaṁ kho, rādha, khayadhammo, vedanā khayadhammo, saññā khayadhammo, saṅkhārā khayadhammo, viññāṇaṁ khayadhammo. 
--“Rādha, form, feeling, perception, choices, and consciousness have a liability to end. 
-+“Rādha, form, feeling, perception, action formations, and consciousness have a liability to end. 
+-“Rādha, form, sensation, perception, choices, and consciousness have a liability to end. 
++“Rādha, form, sensation, perception, action formations, and consciousness have a liability to end. 
 --- sujato/sutta/sn/sn23/sn23.1_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.1_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.1:2.8
@@ -3693,20 +3693,20 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn23/sn23.20_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.20:1.5
  PLI: “Rūpaṁ kho, rādha, vayadhammo, vedanā vayadhammo, saññā vayadhammo, saṅkhārā vayadhammo, viññāṇaṁ vayadhammo. 
--“Rādha, form, feeling, perception, choices, and consciousness have a liability to fall. 
-+“Rādha, form, feeling, perception, action formations, and consciousness have a liability to fall. 
+-“Rādha, form, sensation, perception, choices, and consciousness have a liability to fall. 
++“Rādha, form, sensation, perception, action formations, and consciousness have a liability to fall. 
 --- sujato/sutta/sn/sn23/sn23.21_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.21_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.21:1.5
  PLI: “Rūpaṁ kho, rādha, samudayadhammo, vedanā samudayadhammo, saññā samudayadhammo, saṅkhārā samudayadhammo, viññāṇaṁ samudayadhammo. 
--“Rādha, form, feeling, perception, choices, and consciousness have a liability to arise. 
-+“Rādha, form, feeling, perception, action formations, and consciousness have a liability to arise. 
+-“Rādha, form, sensation, perception, choices, and consciousness have a liability to arise. 
++“Rādha, form, sensation, perception, action formations, and consciousness have a liability to arise. 
 --- sujato/sutta/sn/sn23/sn23.22_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.22_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.22:1.5
  PLI: “Rūpaṁ kho, rādha, nirodhadhammo, vedanā nirodhadhammo, saññā nirodhadhammo, saṅkhārā nirodhadhammo, viññāṇaṁ nirodhadhammo. 
--“Rādha, form, feeling, perception, choices, and consciousness have a liability to cease. 
-+“Rādha, form, feeling, perception, action formations, and consciousness have a liability to cease. 
+-“Rādha, form, sensation, perception, choices, and consciousness have a liability to cease. 
++“Rādha, form, sensation, perception, action formations, and consciousness have a liability to cease. 
 --- sujato/sutta/sn/sn23/sn23.23-33_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.23-33_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.23:2.6
@@ -3745,32 +3745,32 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn23/sn23.4_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.4:2.6
  PLI: Rūpaṁ kho, rādha, pariññeyyo dhammo, vedanā pariññeyyo dhammo, saññā pariññeyyo dhammo, saṅkhārā pariññeyyo dhammo, viññāṇaṁ pariññeyyo dhammo. 
--Form, feeling, perception, choices, and consciousness. 
-+Form, feeling, perception, action formations, and consciousness. 
+-Form, sensation, perception, choices, and consciousness. 
++Form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn23/sn23.5_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.5_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.5:1.5
  PLI: Rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho. 
--The grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+The grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-The grasping aggregates of form, sensation, perception, choices, and consciousness. 
++The grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn23/sn23.6_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.6_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.6:1.5
  PLI: Rūpupādānakkhandho …pe… viññāṇupādānakkhandho. 
--The grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+The grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-The grasping aggregates of form, sensation, perception, choices, and consciousness. 
++The grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn23/sn23.7_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.7_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.7:1.5
  PLI: Rūpupādānakkhandho …pe… viññāṇupādānakkhandho. 
--The grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+The grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-The grasping aggregates of form, sensation, perception, choices, and consciousness. 
++The grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn23/sn23.8_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.8_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.8:1.5
  PLI: Rūpupādānakkhandho …pe… viññāṇupādānakkhandho. 
--The grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+The grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-The grasping aggregates of form, sensation, perception, choices, and consciousness. 
++The grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn23/sn23.9_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.9_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.9:1.8
@@ -3923,8 +3923,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +action formations … 
 @@ -1,2 +1,2 @@ sn24.96:5.1
  PLI: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi nibbindati, saññāyapi nibbindati, saṅkhāresupi nibbindati, viññāṇasmimpi nibbindati. 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn24/sn24.9_translation-en-sujato.json
 +++ sujato/sutta/sn/sn24/sn24.9_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn24.9:2.4
@@ -3951,8 +3951,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn27/sn27.10_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn27.10:1.2
  PLI: “Yo, bhikkhave, rūpasmiṁ chandarāgo, cittasseso upakkileso …pe… yo viññāṇasmiṁ chandarāgo, cittasseso upakkileso. 
--“Bhikkhus, desire and greed for form, feeling, perception, choices, or consciousness is a corruption of the mind. 
-+“Bhikkhus, desire and greed for form, feeling, perception, action formations, or consciousness is a corruption of the mind. 
+-“Bhikkhus, desire and greed for form, sensation, perception, choices, or consciousness is a corruption of the mind. 
++“Bhikkhus, desire and greed for form, sensation, perception, action formations, or consciousness is a corruption of the mind. 
 --- sujato/sutta/sn/sn33/sn33.11-15_translation-en-sujato.json
 +++ sujato/sutta/sn/sn33/sn33.11-15_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn33.14:1.2
@@ -3991,20 +3991,20 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn35/sn35.121_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn35.121:15.1
  PLI: “Yampidaṁ cakkhusamphassapaccayā uppajjati vedanāgataṁ, saññāgataṁ, saṅkhāragataṁ, viññāṇagataṁ, tampi niccaṁ vā aniccaṁ vā”ti? 
--“Anything included in feeling, perception, choices, and consciousness that arises dependent on eye contact: is that permanent or impermanent?” 
-+“Anything included in feeling, perception, action formations, and consciousness that arises dependent on eye contact: is that permanent or impermanent?” 
+-“Anything included in sensation, perception, choices, and consciousness that arises dependent on eye contact: is that permanent or impermanent?” 
++“Anything included in sensation, perception, action formations, and consciousness that arises dependent on eye contact: is that permanent or impermanent?” 
 @@ -1,2 +1,2 @@ sn35.121:45.1
  PLI: “Yampidaṁ manosamphassapaccayā uppajjati vedanāgataṁ, saññāgataṁ, saṅkhāragataṁ, viññāṇagataṁ, tampi niccaṁ vā aniccaṁ vā”ti? 
--“Anything included in feeling, perception, choices, and consciousness that arises dependent on mind contact: is that permanent or impermanent?” 
-+“Anything included in feeling, perception, action formations, and consciousness that arises dependent on mind contact: is that permanent or impermanent?” 
+-“Anything included in sensation, perception, choices, and consciousness that arises dependent on mind contact: is that permanent or impermanent?” 
++“Anything included in sensation, perception, action formations, and consciousness that arises dependent on mind contact: is that permanent or impermanent?” 
 @@ -1,2 +1,2 @@ sn35.121:51.1
  PLI: “Evaṁ passaṁ, rāhula, sutavā ariyasāvako cakkhusmimpi nibbindati, rūpesupi nibbindati, cakkhuviññāṇepi nibbindati, cakkhusamphassepi nibbindati, yampidaṁ cakkhusamphassapaccayā uppajjati vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ tasmimpi nibbindati …pe… 
--“Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, and eye contact. And they grow disillusioned with anything included in feeling, perception, choices, and consciousness that arises dependent on eye contact. 
-+“Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, and eye contact. And they grow disillusioned with anything included in feeling, perception, action formations, and consciousness that arises dependent on eye contact. 
+-“Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, and eye contact. And they grow disillusioned with anything included in sensation, perception, choices, and consciousness that arises dependent on eye contact. 
++“Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, and eye contact. And they grow disillusioned with anything included in sensation, perception, action formations, and consciousness that arises dependent on eye contact. 
 @@ -1,2 +1,2 @@ sn35.121:52.1
  PLI: Manasmimpi nibbindati, dhammesupi nibbindati, manoviññāṇepi nibbindati, manosamphassepi nibbindati, yampidaṁ manosamphassapaccayā uppajjati vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ tasmimpi nibbindati. 
--They grow disillusioned with the mind, ideas, mind consciousness, and mind contact. And they grow disillusioned with anything included in feeling, perception, choices, and consciousness that arises dependent on mind contact. 
-+They grow disillusioned with the mind, ideas, mind consciousness, and mind contact. And they grow disillusioned with anything included in feeling, perception, action formations, and consciousness that arises dependent on mind contact. 
+-They grow disillusioned with the mind, ideas, mind consciousness, and mind contact. And they grow disillusioned with anything included in sensation, perception, choices, and consciousness that arises dependent on mind contact. 
++They grow disillusioned with the mind, ideas, mind consciousness, and mind contact. And they grow disillusioned with anything included in sensation, perception, action formations, and consciousness that arises dependent on mind contact. 
 --- sujato/sutta/sn/sn35/sn35.146_translation-en-sujato.json
 +++ sujato/sutta/sn/sn35/sn35.146_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn35.146:1.4
@@ -4019,8 +4019,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn35/sn35.238_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn35.238:8.2
  PLI: rūpupādānakkhandhassa, vedanupādānakkhandhassa, saññupādānakkhandhassa, saṅkhārupādānakkhandhassa, viññāṇupādānakkhandhassa. 
--form, feeling, perception, choices, and consciousness. 
-+form, feeling, perception, action formations, and consciousness. 
+-form, sensation, perception, choices, and consciousness. 
++form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn35/sn35.244_translation-en-sujato.json
 +++ sujato/sutta/sn/sn35/sn35.244_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn35.244:2.5
@@ -4031,14 +4031,14 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn35/sn35.246_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn35.246:4.24
  PLI: Evameva kho, bhikkhave, bhikkhu rūpaṁ samanvesati yāvatā rūpassa gati, vedanaṁ samanvesati yāvatā vedanāya gati, saññaṁ samanvesati yāvatā saññāya gati, saṅkhāre samanvesati yāvatā saṅkhārānaṁ gati, viññāṇaṁ samanvesati yāvatā viññāṇassa gati. 
--In the same way, a bhikkhu searches for form, feeling, perception, choices, and consciousness anywhere they might be reborn. 
-+In the same way, a bhikkhu searches for form, feeling, perception, action formations, and consciousness anywhere they might be reborn. 
+-In the same way, a bhikkhu searches for form, sensation, perception, choices, and consciousness anywhere they might be reborn. 
++In the same way, a bhikkhu searches for form, sensation, perception, action formations, and consciousness anywhere they might be reborn. 
 --- sujato/sutta/sn/sn38/sn38.15_translation-en-sujato.json
 +++ sujato/sutta/sn/sn38/sn38.15_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn38.15:1.4
  PLI: rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho. 
--form, feeling, perception, choices, and consciousness. 
-+form, feeling, perception, action formations, and consciousness. 
+-form, sensation, perception, choices, and consciousness. 
++form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn41/sn41.3_translation-en-sujato.json
 +++ sujato/sutta/sn/sn41/sn41.3_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn41.3:5.6
@@ -4067,8 +4067,8 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +action formations … 
 @@ -1,2 +1,2 @@ sn44.2:15.6
  PLI: Evaṁ passaṁ, anurādha, sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi nibbindati, saññāyapi nibbindati, saṅkhāresupi nibbindati, viññāṇasmimpi nibbindati. 
--Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. 
-+Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, action formations, and consciousness. 
+-Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, choices, and consciousness. 
++Seeing this, a learned noble disciple grows disillusioned with form, sensation, perception, action formations, and consciousness. 
 @@ -1,2 +1,2 @@ sn44.2:16.8
  PLI: “Saṅkhāre tathāgatoti samanupassasī”ti? 
 -“… choices?” … 
@@ -4083,12 +4083,12 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +“… apart from action formations?” … 
 @@ -1,2 +1,2 @@ sn44.2:17.2
  PLI: rūpaṁ, vedanaṁ, saññaṁ, saṅkhāre, viññāṇaṁ tathāgatoti samanupassasī”ti? 
--Do you consider that the label ‘realized one’ applies to one who has form?” … “… feeling?” … “… perception?” … “… choices?” … “… consciousness?” 
-+Do you consider that the label ‘realized one’ applies to one who has form?” … “… feeling?” … “… perception?” … “… action formations?” … “… consciousness?” 
+-Do you consider that the label ‘realized one’ applies to one who has form?” … “… sensation?” … “… perception?” … “… choices?” … “… consciousness?” 
++Do you consider that the label ‘realized one’ applies to one who has form?” … “… sensation?” … “… perception?” … “… action formations?” … “… consciousness?” 
 @@ -1,2 +1,2 @@ sn44.2:17.5
  PLI: ayaṁ so arūpī avedano asaññī asaṅkhāro aviññāṇo tathāgatoti samanupassasī”ti? 
--Do you consider that the label ‘realized one’ applies to that one who is without form?” … “… feeling?” … “… perception?” … “… choices?” … “… consciousness?” 
-+Do you consider that the label ‘realized one’ applies to that one who is without form?” … “… feeling?” … “… perception?” … “… action formations?” … “… consciousness?” 
+-Do you consider that the label ‘realized one’ applies to that one who is without form?” … “… sensation?” … “… perception?” … “… choices?” … “… consciousness?” 
++Do you consider that the label ‘realized one’ applies to that one who is without form?” … “… sensation?” … “… perception?” … “… action formations?” … “… consciousness?” 
 --- sujato/sutta/sn/sn44/sn44.3_translation-en-sujato.json
 +++ sujato/sutta/sn/sn44/sn44.3_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn44.3:4.13
@@ -4139,14 +4139,14 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn45/sn45.159_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn45.159:2.4
  PLI: Seyyathidaṁ—rūpupādānakkhandho …pe… viññāṇupādānakkhandho. 
--That is: form, feeling, perception, choices, and consciousness. 
-+That is: form, feeling, perception, action formations, and consciousness. 
+-That is: form, sensation, perception, choices, and consciousness. 
++That is: form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn45/sn45.178_translation-en-sujato.json
 +++ sujato/sutta/sn/sn45/sn45.178_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn45.178:1.3
  PLI: Seyyathidaṁ—rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho. 
--The grasping aggregates of form, feeling, perception, choices, and consciousness. 
-+The grasping aggregates of form, feeling, perception, action formations, and consciousness. 
+-The grasping aggregates of form, sensation, perception, choices, and consciousness. 
++The grasping aggregates of form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn46/sn46.30_translation-en-sujato.json
 +++ sujato/sutta/sn/sn46/sn46.30_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn46.30:2.9
@@ -4157,18 +4157,18 @@ Rule: sankhara-action-formations — 890 change(s), 329 file(s)
 +++ sujato/sutta/sn/sn55/sn55.28_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn55.28:4.5
  PLI: yadidaṁ avijjāpaccayā saṅkhārā, saṅkhārapaccayā viññāṇaṁ …pe… 
--Ignorance is a requirement for choices. Choices are a requirement for consciousness. Consciousness is a requirement for name and form. Name and form are requirements for the six sense fields. The six sense fields are requirements for contact. Contact is a requirement for feeling. Feeling is a requirement for craving. Craving is a requirement for grasping. Grasping is a requirement for continued existence. Continued existence is a requirement for rebirth. Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. 
-+Ignorance is a requirement for action formations. Action formations are a requirement for consciousness. Consciousness is a requirement for name and form. Name and form are requirements for the six sense fields. The six sense fields are requirements for contact. Contact is a requirement for feeling. Feeling is a requirement for craving. Craving is a requirement for grasping. Grasping is a requirement for continued existence. Continued existence is a requirement for rebirth. Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. 
+-Ignorance is a requirement for choices. Choices are a requirement for consciousness. Consciousness is a requirement for name and form. Name and form are requirements for the six sense fields. The six sense fields are requirements for contact. Contact is a requirement for sensation. Sensation is a requirement for craving. Craving is a requirement for grasping. Grasping is a requirement for continued existence. Continued existence is a requirement for rebirth. Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. 
++Ignorance is a requirement for action formations. Action formations are a requirement for consciousness. Consciousness is a requirement for name and form. Name and form are requirements for the six sense fields. The six sense fields are requirements for contact. Contact is a requirement for sensation. Sensation is a requirement for craving. Craving is a requirement for grasping. Grasping is a requirement for continued existence. Continued existence is a requirement for rebirth. Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. 
 @@ -1,2 +1,2 @@ sn55.28:4.7
  PLI: Avijjāya tveva asesavirāganirodhā saṅkhāranirodho …pe… 
--When ignorance fades away and ceases no residue left behind, choices cease. When choices cease, consciousness ceases. When consciousness ceases, name and form cease. When name and form cease, the six sense fields cease. When the six sense fields cease, contact ceases. When contact ceases, feeling ceases. When feeling ceases, craving ceases. When craving ceases, grasping ceases. When grasping ceases, continued existence ceases. When continued existence ceases, rebirth ceases. When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. 
-+When ignorance fades away and ceases no residue left behind, action formations cease. When action formations cease, consciousness ceases. When consciousness ceases, name and form cease. When name and form cease, the six sense fields cease. When the six sense fields cease, contact ceases. When contact ceases, feeling ceases. When feeling ceases, craving ceases. When craving ceases, grasping ceases. When grasping ceases, continued existence ceases. When continued existence ceases, rebirth ceases. When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. 
+-When ignorance fades away and ceases no residue left behind, choices cease. When choices cease, consciousness ceases. When consciousness ceases, name and form cease. When name and form cease, the six sense fields cease. When the six sense fields cease, contact ceases. When contact ceases, sensation ceases. When sensation ceases, craving ceases. When craving ceases, grasping ceases. When grasping ceases, continued existence ceases. When continued existence ceases, rebirth ceases. When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. 
++When ignorance fades away and ceases no residue left behind, action formations cease. When action formations cease, consciousness ceases. When consciousness ceases, name and form cease. When name and form cease, the six sense fields cease. When the six sense fields cease, contact ceases. When contact ceases, sensation ceases. When sensation ceases, craving ceases. When craving ceases, grasping ceases. When grasping ceases, continued existence ceases. When continued existence ceases, rebirth ceases. When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. 
 --- sujato/sutta/sn/sn56/sn56.13_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.13_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn56.13:2.3
  PLI: rūpupādānakkhandho …pe… viññāṇupādānakkhandho. 
--That is: form, feeling, perception, choices, and consciousness. 
-+That is: form, feeling, perception, action formations, and consciousness. 
+-That is: form, sensation, perception, choices, and consciousness. 
++That is: form, sensation, perception, action formations, and consciousness. 
 --- sujato/sutta/sn/sn56/sn56.42_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.42_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn56.42:2.3

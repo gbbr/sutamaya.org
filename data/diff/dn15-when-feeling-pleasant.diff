@@ -1,0 +1,8 @@
+Rule: dn15-when-feeling-pleasant — 1 change(s), 1 file(s)
+
+--- sujato/sutta/dn/dn15_translation-en-sujato.json
++++ sujato/sutta/dn/dn15_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn15:29.4
+ PLI: Tassa sukhaṁ vedanaṁ vediyamānassa ‘eso me attā’ti hoti. 
+-When sensation a pleasant sensation they think: ‘This is my self.’ 
++When feeling a pleasant sensation they think: ‘This is my self.’ 
