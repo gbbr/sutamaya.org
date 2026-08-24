@@ -42,7 +42,7 @@ export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighli
   if (chips.length === 0 && hlCount === 0 && !onAddToList) return null;
   const ChipTag = onChipClick ? 'button' : 'span';
   const fontSize = fs ? fs - 7 : 14;
-  const height = fontSize + 9;
+  const height = fontSize + 11;
   // The add-to-list control runs a point above the chips: it has no fill or outline of its own, so
   // a little extra size is what keeps it from disappearing into the run of pills — but only a
   // little, since it sits at the end of that run rather than heading it.
@@ -94,16 +94,18 @@ export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighli
               step down in the shell where the ramp has a rung to spare. */}
           {c.parent && (
             <span
-              className={`flex items-center pl-[8px] pr-[6px] font-medium ${theme ? '' : 'bg-ink/10 text-ink-2'}`}
+              className={`flex items-center pl-[8px] pr-[9px] font-medium rounded-r-full ${
+                theme ? '' : 'bg-ink/10 text-ink-2'
+              }`}
               style={theme ? { background: theme.tint } : undefined}
             >
               {c.parent}
             </span>
           )}
-          {/* Tighter padding either side of the seam than at the pill's outer ends: the two
-              segments' padding meets there, so equal values read as a gap twice as wide as the
-              chip's own edges. */}
-          <span className={`flex items-center ${c.parent ? 'pl-[6px] pr-[9px]' : 'px-[9px]'}`}>{c.label}</span>
+          {/* The parent segment's own cap is the only fill on the seam — the label segment has
+              none — so rounding it carves a socket straight out of its own fill rather than
+              needing to overlap the label segment to fake a bulge into it. */}
+          <span className={`flex items-center ${c.parent ? 'pl-[3px] pr-[9px]' : 'px-[9px]'}`}>{c.label}</span>
         </ChipTag>
       ))}
       {/* No fill of any kind — unlike the highlight badge beside it and unlike the chips' own
