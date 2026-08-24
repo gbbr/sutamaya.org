@@ -2,7 +2,7 @@
 
 The English here is Bhikkhu Sujato's translation, published by SuttaCentral under CC0. It is not
 reproduced verbatim: a small number of recurring terms are rendered differently, and about
-sixty-five individual lines are reworded. Everything else is his, word for word — and the Pali sits beside
+a hundred individual lines are reworded. Everything else is his, word for word — and the Pali sits beside
 every line, so you can always check.
 
 The changes are declared rather than typed in by hand, so they survive each refresh from upstream.
@@ -28,6 +28,7 @@ gloss a term in his wording while the line above it uses ours.
 | yoniso manasikāra | rational application of mind | **proper attention** | *Yoniso* is "from the source", i.e. appropriately — not a claim about rationality. |
 | paṭisambhidā | textual analysis | **analytical knowledge** | The four *paṭisambhidās* are of meaning, the Dhamma, terminology and eloquence — "textual" names only one of them. |
 | dhamma (six lines only) | text | **the Dhamma** | These discourses were memorized and recited, not written, so "text" imports something that didn't exist. Bhikkhu Bodhi's rendering. |
+| vedanā | feeling | **sensation** | SN 12.2 defines it as what arises at each of the six senses; "feeling" in modern English has drifted towards emotion, which this is not. The dictionary lists "sensation (coming from six sense experience)". Only the noun changes — Bhikkhu Sujato's verb "feel" stands, as in "they feel a pleasant sensation". |
 | paritassati | anxious, anxiety | **agitated, agitation** | Bhikkhu Sujato's own note gives the term as desire plus agitation; agitation is the half that survives. |
 | saṅkhāra | choices | **action formations** | What is formed is *kamma*: SN 22.56 defines the aggregate as the six kinds of intention, and AN 6.63 says intention is *kamma*. "Choices" narrows a word that covers much more than deliberate choosing. |
 | abhisaṅkharoti | make (choices) | **generate (action formations)** | The verb that goes with it — Bhikkhu Bodhi's word, and one of the dictionary's own glosses. |
@@ -37,7 +38,7 @@ A term is changed everywhere it appears, but only where it really is that Pali w
 left alone.
 
 *Saṅkhāra* is a two-word phrase where Bhikkhu Sujato has one, and the cost is real: 137 lines list
-the five aggregates, and "form, feeling, perception, action formations, and consciousness" puts a
+the five aggregates, and "form, sensation, perception, action formations, and consciousness" puts a
 longer phrase after four short words. Bhikkhu Bodhi's "volitional formations" is longer still, and
 the shorter "volitions" was rejected because that is *cetanā*'s word — the two terms stand side by
 side in one list in eight lines, where "intentions, aims, wishes, and volitions" would read as two
@@ -60,10 +61,16 @@ what it means of water, a gem, or someone's face.
 
 ## Reworded lines
 
-About sixty-five individual lines are rewritten by hand. Nearly all of them exist because a term
+About a hundred individual lines are rewritten by hand. Nearly all of them exist because a term
 swap that reads well as an adjective doesn't work as a whole sentence — "how is a bhikkhu clearly
 comprehending?" becomes "how does a bhikkhu have clear comprehension?" — plus a handful where two
 different Pali terms would otherwise land on the same English word in one sentence.
+
+Nine are SN 22.79 and MN 43, where *vedanā* is derived from its own verb — "it feels; that's why
+it's called 'feeling'". Changing only the noun would strand the pun, so those paragraphs' verbs
+move with it: "it senses; that's why it's called 'sensation'". Another five are the lines where
+Bhikkhu Sujato uses "feeling" twice over, once for the noun and once for the verb beside it — "when
+feeling a pleasant sensation".
 
 Three of them are DN 9, where Bhikkhu Sujato's two English phrases sit on the opposite Pali words
 to everywhere else in the corpus, so the halves of the sentence are swapped back. One is Snp 3.12,

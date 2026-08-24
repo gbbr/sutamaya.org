@@ -214,8 +214,8 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +Firstly, a bhikkhu meditates by observing an aspect of the body—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ an4.274:1.4
  PLI: vedanāsu …pe… citte …pe… dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
--They meditate observing an aspect of feelings … mind … principles—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of feelings … mind … principles—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-They meditate observing an aspect of sensations … mind … principles—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of sensations … mind … principles—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 --- sujato/sutta/an/an4/an4.37_translation-en-sujato.json
 +++ sujato/sutta/an/an4/an4.37_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.37:7.1
@@ -540,8 +540,8 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +It’s when a bhikkhu meditates by observing an aspect of the body—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ dn22:1.10
  PLI: vedanāsu vedanānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ, 
--They meditate observing an aspect of feelings—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of feelings—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-They meditate observing an aspect of sensations—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of sensations—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ dn22:1.11
  PLI: citte cittānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ, 
 -They meditate observing an aspect of the mind—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
@@ -556,8 +556,8 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +It’s when a bhikkhu meditates by observing an aspect of the body—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ dn22:21.27
  PLI: vedanāsu vedanānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ; 
--They meditate observing an aspect of feelings—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of feelings—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-They meditate observing an aspect of sensations—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of sensations—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ dn22:21.28
  PLI: citte cittānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ; 
 -They meditate observing an aspect of the mind—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
@@ -910,8 +910,8 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +It’s when a bhikkhu meditates by observing an aspect of the body—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ mn10:3.3
  PLI: vedanāsu vedanānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
--They meditate observing an aspect of feelings—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of feelings—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-They meditate observing an aspect of sensations—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of sensations—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ mn10:3.4
  PLI: citte cittānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
 -They meditate observing an aspect of the mind—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
@@ -932,12 +932,12 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +That’s why at that time a bhikkhu is meditating by observing an aspect of the body—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ mn118:25.5
  PLI: vedanāsu vedanānupassī, bhikkhave, tasmiṁ samaye bhikkhu viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
--at that time they meditate observing an aspect of feelings—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+at that time they meditate observing an aspect of feelings—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-at that time they meditate observing an aspect of sensations—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
++at that time they meditate observing an aspect of sensations—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ mn118:25.7
  PLI: Tasmātiha, bhikkhave, vedanāsu vedanānupassī tasmiṁ samaye bhikkhu viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
--That’s why at that time a bhikkhu is meditating by observing an aspect of feelings—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+That’s why at that time a bhikkhu is meditating by observing an aspect of feelings—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-That’s why at that time a bhikkhu is meditating by observing an aspect of sensations—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
++That’s why at that time a bhikkhu is meditating by observing an aspect of sensations—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ mn118:26.5
  PLI: citte cittānupassī, bhikkhave, tasmiṁ samaye bhikkhu viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -at that time they meditate observing an aspect of the mind—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
@@ -1252,8 +1252,8 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +It’s when a bhikkhu meditates by observing an aspect of the body—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ mn51:3.11
  PLI: vedanāsu vedanānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
--They meditate observing an aspect of feelings—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of feelings—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-They meditate observing an aspect of sensations—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of sensations—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ mn51:3.12
  PLI: citte cittānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
 -They meditate observing an aspect of the mind—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
@@ -1604,16 +1604,16 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +They meditate observing an aspect of principles—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn36.7:5.1
  PLI: Tassa ce, bhikkhave, bhikkhuno evaṁ satassa sampajānassa appamattassa ātāpino pahitattassa viharato uppajjati sukhā vedanā, so evaṁ pajānāti: 
--While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, keen, and resolute—if pleasant feelings arise, they understand: 
-+While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, ardent, and resolute—if pleasant feelings arise, they understand: 
+-While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, keen, and resolute—if pleasant sensations arise, they understand: 
++While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, ardent, and resolute—if pleasant sensations arise, they understand: 
 @@ -1,2 +1,2 @@ sn36.7:6.1
  PLI: Tassa ce, bhikkhave, bhikkhuno evaṁ satassa sampajānassa appamattassa ātāpino pahitattassa viharato uppajjati dukkhā vedanā. 
--While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, keen, and resolute—if painful feelings arise, they understand: 
-+While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, ardent, and resolute—if painful feelings arise, they understand: 
+-While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, keen, and resolute—if painful sensations arise, they understand: 
++While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, ardent, and resolute—if painful sensations arise, they understand: 
 @@ -1,2 +1,2 @@ sn36.7:7.1
  PLI: Tassa ce, bhikkhave, bhikkhuno evaṁ satassa sampajānassa appamattassa ātāpino pahitattassa viharato uppajjati adukkhamasukhā vedanā, so evaṁ pajānāti: 
--While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, keen, and resolute—if neutral feelings arise, they understand: 
-+While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, ardent, and resolute—if neutral feelings arise, they understand: 
+-While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, keen, and resolute—if neutral sensations arise, they understand: 
++While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, ardent, and resolute—if neutral sensations arise, they understand: 
 --- sujato/sutta/sn/sn36/sn36.8_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.8_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.8:3.2
@@ -1626,12 +1626,12 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +They meditate observing an aspect of principles—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn36.8:5.1
  PLI: Tassa ce, bhikkhave, bhikkhuno evaṁ satassa sampajānassa appamattassa ātāpino pahitattassa viharato uppajjati sukhā vedanā. 
--While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, keen, and resolute—if pleasant feelings arise, they understand: 
-+While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, ardent, and resolute—if pleasant feelings arise, they understand: 
+-While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, keen, and resolute—if pleasant sensations arise, they understand: 
++While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, ardent, and resolute—if pleasant sensations arise, they understand: 
 @@ -1,2 +1,2 @@ sn36.8:6.1
  PLI: Tassa ce, bhikkhave, bhikkhuno evaṁ satassa …pe… 
--While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, keen, and resolute—if painful feelings arise … 
-+While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, ardent, and resolute—if painful feelings arise … 
+-While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, keen, and resolute—if painful sensations arise … 
++While a bhikkhu is meditating like this—aware, clearly comprehending, diligent, ardent, and resolute—if painful sensations arise … 
 --- sujato/sutta/sn/sn4/sn4.21_translation-en-sujato.json
 +++ sujato/sutta/sn/sn4/sn4.21_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn4.21:1.3
@@ -1678,8 +1678,8 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +It’s when a bhikkhu meditates by observing an aspect of the body—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn45.8:9.3
  PLI: vedanāsu vedanānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
--They meditate observing an aspect of feelings—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of feelings—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-They meditate observing an aspect of sensations—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of sensations—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn45.8:9.4
  PLI: citte cittānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
 -They meditate observing an aspect of the mind—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
@@ -1714,8 +1714,8 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +And they also understand: ‘I meditate observing an aspect of the body—ardent, clearly comprehending, aware; I am happy.’ 
 @@ -1,2 +1,2 @@ sn47.10:8.7
  PLI: Atha ca pana ‘vedanāsu vedanānupassī viharāmi ātāpī sampajāno satimā sukhamasmī’ti pajānāti. 
--And they also understand: ‘I meditate observing an aspect of feelings—keen, clearly comprehending, aware; I am happy.’ 
-+And they also understand: ‘I meditate observing an aspect of feelings—ardent, clearly comprehending, aware; I am happy.’ 
+-And they also understand: ‘I meditate observing an aspect of sensations—keen, clearly comprehending, aware; I am happy.’ 
++And they also understand: ‘I meditate observing an aspect of sensations—ardent, clearly comprehending, aware; I am happy.’ 
 @@ -1,2 +1,2 @@ sn47.10:8.10
  PLI: Atha ca pana ‘citte cittānupassī viharāmi ātāpī sampajāno satimā sukhamasmī’ti pajānāti. 
 -And they also understand: ‘I meditate observing an aspect of the mind—keen, clearly comprehending, aware; I am happy.’ 
@@ -1826,8 +1826,8 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +It’s when a bhikkhu meditates by observing an aspect of the body—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.1:2.4
  PLI: vedanāsu vedanānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
--They meditate observing an aspect of feelings—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of feelings—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-They meditate observing an aspect of sensations—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of sensations—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.1:2.5
  PLI: citte cittānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
 -They meditate observing an aspect of the mind—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
@@ -1948,8 +1948,8 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +++ sujato/sutta/sn/sn47/sn47.30_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.30:1.6
  PLI: Evarūpāya cāhaṁ, bhante, dukkhāya vedanāya phuṭṭho samāno kāye kāyānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
--When I experience such painful feelings I meditate observing an aspect of the body—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+When I experience such painful feelings I meditate observing an aspect of the body—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-When I experience such painful sensations I meditate observing an aspect of the body—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
++When I experience such painful sensations I meditate observing an aspect of the body—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.30:1.9
  PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
@@ -2012,8 +2012,8 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +It’s when a bhikkhu meditates by observing an aspect of the body—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.37:2.1
  PLI: Vedanāsu vedanānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
--They meditate observing an aspect of feelings—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of feelings—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-They meditate observing an aspect of sensations—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of sensations—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.37:3.1
  PLI: Citte cittānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of the mind—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
@@ -2030,8 +2030,8 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +It’s when a bhikkhu meditates by observing an aspect of the body—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.38:2.1
  PLI: Vedanāsu vedanānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
--They meditate observing an aspect of feelings—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of feelings—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-They meditate observing an aspect of sensations—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of sensations—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.38:3.1
  PLI: Citte cittānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of the mind—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
@@ -2210,8 +2210,8 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +Please, reverends, meditate observing an aspect of the body—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to truly know the body. 
 @@ -1,2 +1,2 @@ sn47.4:2.4
  PLI: vedanāsu vedanānupassino viharatha ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, vedanānaṁ yathābhūtaṁ ñāṇāya; 
--Meditate observing an aspect of feelings—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to truly know feelings. 
-+Meditate observing an aspect of feelings—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to truly know feelings. 
+-Meditate observing an aspect of sensations—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to truly know sensations. 
++Meditate observing an aspect of sensations—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to truly know sensations. 
 @@ -1,2 +1,2 @@ sn47.4:2.5
  PLI: citte cittānupassino viharatha ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, cittassa yathābhūtaṁ ñāṇāya; 
 -Meditate observing an aspect of the mind—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to truly know the mind. 
@@ -2226,8 +2226,8 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +Those bhikkhus who are trainees—who haven’t achieved their heart’s desire, but live aspiring to the supreme sanctuary from the yoke—also meditate observing an aspect of the body—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to fully understand the body. 
 @@ -1,2 +1,2 @@ sn47.4:3.2
  PLI: vedanāsu vedanānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, vedanānaṁ pariññāya; 
--They meditate observing an aspect of feelings—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to fully understand feelings. 
-+They meditate observing an aspect of feelings—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to fully understand feelings. 
+-They meditate observing an aspect of sensations—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to fully understand sensations. 
++They meditate observing an aspect of sensations—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to fully understand sensations. 
 @@ -1,2 +1,2 @@ sn47.4:3.3
  PLI: citte cittānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, cittassa pariññāya; 
 -They meditate observing an aspect of the mind—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to fully understand the mind. 
@@ -2242,8 +2242,8 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +Those bhikkhus who are perfected—who have ended the defilements, completed the spiritual journey, done what had to be done, laid down the burden, achieved their own goal, utterly ended the fetter of continued existence, and are rightly freed through enlightenment—also meditate observing an aspect of the body—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, detached from the body. 
 @@ -1,2 +1,2 @@ sn47.4:4.2
  PLI: vedanāsu vedanānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, vedanāhi visaṁyuttā; 
--They meditate observing an aspect of feelings—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, detached from feelings. 
-+They meditate observing an aspect of feelings—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, detached from feelings. 
+-They meditate observing an aspect of sensations—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, detached from sensations. 
++They meditate observing an aspect of sensations—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, detached from sensations. 
 @@ -1,2 +1,2 @@ sn47.4:4.3
  PLI: citte cittānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, cittena visaṁyuttā; 
 -They meditate observing an aspect of the mind—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, detached from the mind. 
@@ -2482,12 +2482,12 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +Therefore, at such a time a bhikkhu is meditating by observing an aspect of the body—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn54.10:6.5
  PLI: vedanāsu vedanānupassī, ānanda, bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
--At such a time a bhikkhu is meditating by observing an aspect of feelings—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+At such a time a bhikkhu is meditating by observing an aspect of feelings—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-At such a time a bhikkhu is meditating by observing an aspect of sensations—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
++At such a time a bhikkhu is meditating by observing an aspect of sensations—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn54.10:6.8
  PLI: Tasmātihānanda, vedanāsu vedanānupassī bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
--Therefore, at such a time a bhikkhu is meditating by observing an aspect of feelings—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+Therefore, at such a time a bhikkhu is meditating by observing an aspect of feelings—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-Therefore, at such a time a bhikkhu is meditating by observing an aspect of sensations—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
++Therefore, at such a time a bhikkhu is meditating by observing an aspect of sensations—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn54.10:7.5
  PLI: citte cittānupassī, ānanda, bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -At such a time a bhikkhu is meditating by observing an aspect of the mind—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
@@ -2516,12 +2516,12 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +Therefore, at such a time a bhikkhu is meditating by observing an aspect of the body—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn54.13:6.5
  PLI: vedanāsu vedanānupassī, ānanda, bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
--At such a time a bhikkhu is meditating by observing an aspect of feelings—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+At such a time a bhikkhu is meditating by observing an aspect of feelings—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-At such a time a bhikkhu is meditating by observing an aspect of sensations—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
++At such a time a bhikkhu is meditating by observing an aspect of sensations—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn54.13:6.8
  PLI: Tasmātihānanda, vedanāsu vedanānupassī bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
--Therefore, at such a time a bhikkhu is meditating by observing an aspect of feelings—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+Therefore, at such a time a bhikkhu is meditating by observing an aspect of feelings—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-Therefore, at such a time a bhikkhu is meditating by observing an aspect of sensations—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
++Therefore, at such a time a bhikkhu is meditating by observing an aspect of sensations—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn54.13:7.5
  PLI: citte cittānupassī, ānanda, bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -At such a time a bhikkhu is meditating by observing an aspect of the mind—keen, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 

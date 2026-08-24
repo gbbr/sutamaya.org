@@ -124,8 +124,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +‘Such is form, such is the arising of form, such is the disappearing of form. 
 @@ -1,2 +1,2 @@ an4.41:5.4
  PLI: iti vedanā, iti vedanāya samudayo, iti vedanāya atthaṅgamo; 
--Such is feeling, such is the arising of feeling, such is the disappearance of feeling. 
-+Such is feeling, such is the arising of feeling, such is the disappearing of feeling. 
+-Such is sensation, such is the arising of sensation, such is the disappearance of sensation. 
++Such is sensation, such is the arising of sensation, such is the disappearing of sensation. 
 @@ -1,2 +1,2 @@ an4.41:5.5
  PLI: iti saññā, iti saññāya samudayo, iti saññāya atthaṅgamo; 
 -Such is perception, such is the arising of perception, such is the disappearance of perception. 
@@ -222,8 +222,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +++ sujato/sutta/an/an8/an8.120_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an8.120:1.3
  PLI: Rūpī rūpāni passati, ajjhattaṁ arūpasaññī bahiddhā rūpāni passati, subhanteva adhimutto hoti, sabbaso rūpasaññānaṁ samatikkamā paṭighasaññānaṁ atthaṅgamā nānattasaññānaṁ amanasikārā ‘ananto ākāso’ti ākāsānañcāyatanaṁ upasampajja viharati, sabbaso ākāsānañcāyatanaṁ samatikkamma ‘anantaṁ viññāṇan’ti viññāṇañcāyatanaṁ upasampajja viharati, sabbaso viññāṇañcāyatanaṁ samatikkamma ‘natthi kiñcī’ti ākiñcaññāyatanaṁ upasampajja viharati, sabbaso ākiñcaññāyatanaṁ samatikkamma nevasaññānāsaññāyatanaṁ upasampajja viharati, sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati—
--Having physical form, they see forms … not perceiving form internally, they see forms externally … they’re focused only on beauty … going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, they enter and remain in the dimension of infinite space … going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, they enter and remain in the dimension of infinite consciousness … going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, they enter and remain in the dimension of nothingness … going totally beyond the dimension of nothingness, they enter and remain in the dimension of neither perception nor non-perception … going totally beyond the dimension of neither perception nor non-perception, they enter and remain in the cessation of perception and feeling … 
-+Having physical form, they see forms … not perceiving form internally, they see forms externally … they’re focused only on beauty … going totally beyond perceptions of form, with the disappearing of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, they enter and remain in the dimension of infinite space … going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, they enter and remain in the dimension of infinite consciousness … going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, they enter and remain in the dimension of nothingness … going totally beyond the dimension of nothingness, they enter and remain in the dimension of neither perception nor non-perception … going totally beyond the dimension of neither perception nor non-perception, they enter and remain in the cessation of perception and feeling … 
+-Having physical form, they see forms … not perceiving form internally, they see forms externally … they’re focused only on beauty … going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, they enter and remain in the dimension of infinite space … going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, they enter and remain in the dimension of infinite consciousness … going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, they enter and remain in the dimension of nothingness … going totally beyond the dimension of nothingness, they enter and remain in the dimension of neither perception nor non-perception … going totally beyond the dimension of neither perception nor non-perception, they enter and remain in the cessation of perception and sensation … 
++Having physical form, they see forms … not perceiving form internally, they see forms externally … they’re focused only on beauty … going totally beyond perceptions of form, with the disappearing of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, they enter and remain in the dimension of infinite space … going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, they enter and remain in the dimension of infinite consciousness … going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, they enter and remain in the dimension of nothingness … going totally beyond the dimension of nothingness, they enter and remain in the dimension of neither perception nor non-perception … going totally beyond the dimension of neither perception nor non-perception, they enter and remain in the cessation of perception and sensation … 
 --- sujato/sutta/an/an8/an8.2_translation-en-sujato.json
 +++ sujato/sutta/an/an8/an8.2_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an8.2:8.2
@@ -232,8 +232,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +‘Such is form, such is the arising of form, such is the disappearing of form. 
 @@ -1,2 +1,2 @@ an8.2:8.3
  PLI: iti vedanā, iti vedanāya samudayo, iti vedanāya atthaṅgamo; 
--Such is feeling, such is the arising of feeling, such is the disappearance of feeling. 
-+Such is feeling, such is the arising of feeling, such is the disappearing of feeling. 
+-Such is sensation, such is the arising of sensation, such is the disappearance of sensation. 
++Such is sensation, such is the arising of sensation, such is the disappearing of sensation. 
 @@ -1,2 +1,2 @@ an8.2:8.4
  PLI: iti saññā …pe… 
 -Such is perception, such is the arising of perception, such is the disappearance of perception. 
@@ -382,8 +382,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +‘Such is form, such is the arising of form, such is the disappearing of form. 
 @@ -1,2 +1,2 @@ dn14:2.22.3
  PLI: iti vedanā, iti vedanāya samudayo, iti vedanāya atthaṅgamo; 
--Such is feeling, such is the arising of feeling, such is the disappearance of feeling. 
-+Such is feeling, such is the arising of feeling, such is the disappearing of feeling. 
+-Such is sensation, such is the arising of sensation, such is the disappearance of sensation. 
++Such is sensation, such is the arising of sensation, such is the disappearing of sensation. 
 @@ -1,2 +1,2 @@ dn14:2.22.4
  PLI: iti saññā, iti saññāya samudayo, iti saññāya atthaṅgamo; 
 -Such is perception, such is the arising of perception, such is the disappearance of perception. 
@@ -430,20 +430,20 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +++ sujato/sutta/dn/dn1_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn1:1.36.4
  PLI: Vedanānaṁ samudayañca atthaṅgamañca assādañca ādīnavañca nissaraṇañca yathābhūtaṁ viditvā anupādāvimutto, bhikkhave, tathāgato. 
--Having truly understood the arising, disappearance, gratification, drawback, and escape from feelings, the Realized One is freed by not grasping. 
-+Having truly understood the arising, disappearing, gratification, drawback, and escape from feelings, the Realized One is freed by not grasping. 
+-Having truly understood the arising, disappearance, gratification, drawback, and escape from sensations, the Realized One is freed by not grasping. 
++Having truly understood the arising, disappearing, gratification, drawback, and escape from sensations, the Realized One is freed by not grasping. 
 @@ -1,2 +1,2 @@ dn1:2.15.4
  PLI: Vedanānaṁ samudayañca atthaṅgamañca assādañca ādīnavañca nissaraṇañca yathābhūtaṁ viditvā anupādāvimutto, bhikkhave, tathāgato. 
--Having truly understood the arising, disappearance, gratification, drawback, and escape from feelings, the Realized One is freed by not grasping. 
-+Having truly understood the arising, disappearing, gratification, drawback, and escape from feelings, the Realized One is freed by not grasping. 
+-Having truly understood the arising, disappearance, gratification, drawback, and escape from sensations, the Realized One is freed by not grasping. 
++Having truly understood the arising, disappearing, gratification, drawback, and escape from sensations, the Realized One is freed by not grasping. 
 @@ -1,2 +1,2 @@ dn1:2.22.4
  PLI: Vedanānaṁ samudayañca atthaṅgamañca assādañca ādīnavañca nissaraṇañca yathābhūtaṁ viditvā anupādāvimutto, bhikkhave, tathāgato. 
--Having truly understood the arising, disappearance, gratification, drawback, and escape from feelings, the Realized One is freed by not grasping. 
-+Having truly understood the arising, disappearing, gratification, drawback, and escape from feelings, the Realized One is freed by not grasping. 
+-Having truly understood the arising, disappearance, gratification, drawback, and escape from sensations, the Realized One is freed by not grasping. 
++Having truly understood the arising, disappearing, gratification, drawback, and escape from sensations, the Realized One is freed by not grasping. 
 @@ -1,2 +1,2 @@ dn1:2.36.4
  PLI: Vedanānaṁ samudayañca atthaṅgamañca assādañca ādīnavañca nissaraṇañca yathābhūtaṁ viditvā anupādāvimutto, bhikkhave, tathāgato. 
--Having truly understood the arising, disappearance, gratification, drawback, and escape from feelings, the Realized One is freed by not grasping. 
-+Having truly understood the arising, disappearing, gratification, drawback, and escape from feelings, the Realized One is freed by not grasping. 
+-Having truly understood the arising, disappearance, gratification, drawback, and escape from sensations, the Realized One is freed by not grasping. 
++Having truly understood the arising, disappearing, gratification, drawback, and escape from sensations, the Realized One is freed by not grasping. 
 @@ -1,2 +1,2 @@ dn1:3.13.4
  PLI: Atthi kho, bho, añño attā sabbaso rūpasaññānaṁ samatikkamā paṭighasaññānaṁ atthaṅgamā nānattasaññānaṁ amanasikārā “ananto ākāso”ti ākāsānañcāyatanūpago. 
 -There is another self which has gone totally beyond perceptions of form. With the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that “space is infinite”, it’s reborn in the dimension of infinite space. 
@@ -454,8 +454,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +But with the giving up of pleasure and pain and the disappearing of former happiness and sadness, this self enters and remains in the fourth absorption, without pleasure or pain, with pure equanimity and awareness. That’s how this self attains ultimate extinguishment in this life.’ 
 @@ -1,2 +1,2 @@ dn1:3.30.4
  PLI: Vedanānaṁ samudayañca atthaṅgamañca assādañca ādīnavañca nissaraṇañca yathābhūtaṁ viditvā anupādāvimutto, bhikkhave, tathāgato. 
--Having truly understood the arising, disappearance, gratification, drawback, and escape from feelings, the Realized One is freed by not grasping. 
-+Having truly understood the arising, disappearing, gratification, drawback, and escape from feelings, the Realized One is freed by not grasping. 
+-Having truly understood the arising, disappearance, gratification, drawback, and escape from sensations, the Realized One is freed by not grasping. 
++Having truly understood the arising, disappearing, gratification, drawback, and escape from sensations, the Realized One is freed by not grasping. 
 @@ -1,2 +1,2 @@ dn1:3.72.1
  PLI: Yato kho, bhikkhave, bhikkhu channaṁ phassāyatanānaṁ samudayañca atthaṅgamañca assādañca ādīnavañca nissaraṇañca yathābhūtaṁ pajānāti, ayaṁ imehi sabbeheva uttaritaraṁ pajānāti. 
 -When a bhikkhu truly understands the six fields of contact’s arising, disappearance, gratification, drawback, and escape, they understand what lies beyond all these things. 
@@ -468,8 +468,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +‘Such is form, such is the arising of form, such is the disappearing of form. 
 @@ -1,2 +1,2 @@ dn22:14.5
  PLI: iti vedanā, iti vedanāya samudayo, iti vedanāya atthaṅgamo; 
--Such is feeling, such is the arising of feeling, such is the disappearance of feeling. 
-+Such is feeling, such is the arising of feeling, such is the disappearing of feeling. 
+-Such is sensation, such is the arising of sensation, such is the disappearance of sensation. 
++Such is sensation, such is the arising of sensation, such is the disappearing of sensation. 
 @@ -1,2 +1,2 @@ dn22:14.6
  PLI: iti saññā, iti saññāya samudayo, iti saññāya atthaṅgamo; 
 -Such is perception, such is the arising of perception, such is the disappearance of perception. 
@@ -552,8 +552,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +‘Such is form, such is the arising of form, such is the disappearing of form. 
 @@ -1,2 +1,2 @@ dn34:2.1.24
  PLI: iti vedanā iti vedanāya samudayo iti vedanāya atthaṅgamo; 
--Such is feeling, such is the arising of feeling, such is the disappearance of feeling. 
-+Such is feeling, such is the arising of feeling, such is the disappearing of feeling. 
+-Such is sensation, such is the arising of sensation, such is the disappearance of sensation. 
++Such is sensation, such is the arising of sensation, such is the disappearing of sensation. 
 @@ -1,2 +1,2 @@ dn34:2.1.25
  PLI: iti saññā iti saññāya samudayo iti saññāya atthaṅgamo; 
 -Such is perception, such is the arising of perception, such is the disappearance of perception. 
@@ -630,8 +630,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +‘Such is form, such is the arising of form, such is the disappearing of form. 
 @@ -1,2 +1,2 @@ mn10:38.5
  PLI: iti vedanā, iti vedanāya samudayo, iti vedanāya atthaṅgamo; 
--Such is feeling, such is the arising of feeling, such is the disappearance of feeling. 
-+Such is feeling, such is the arising of feeling, such is the disappearing of feeling. 
+-Such is sensation, such is the arising of sensation, such is the disappearance of sensation. 
++Such is sensation, such is the arising of sensation, such is the disappearing of sensation. 
 @@ -1,2 +1,2 @@ mn10:38.6
  PLI: iti saññā, iti saññāya samudayo, iti saññāya atthaṅgamo; 
 -Such is perception, such is the arising of perception, such is the disappearance of perception. 
@@ -702,20 +702,20 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +++ sujato/sutta/mn/mn148_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn148:28.6
  PLI: Adukkhamasukhāya vedanāya phuṭṭho samāno tassā vedanāya samudayañca atthaṅgamañca assādañca ādīnavañca nissaraṇañca yathābhūtaṁ nappajānāti. 
--When you experience a neutral feeling, if you don’t truly understand that feeling’s arising, disappearance, gratification, drawback, and escape, 
-+When you experience a neutral feeling, if you don’t truly understand that feeling’s arising, disappearing, gratification, drawback, and escape, 
+-When you experience a neutral sensation, if you don’t truly understand that sensation’s arising, disappearance, gratification, drawback, and escape, 
++When you experience a neutral sensation, if you don’t truly understand that sensation’s arising, disappearing, gratification, drawback, and escape, 
 @@ -1,2 +1,2 @@ mn148:29-33.10
  PLI: Adukkhamasukhāya vedanāya phuṭṭho samāno tassā vedanāya samudayañca atthaṅgamañca assādañca ādīnavañca nissaraṇañca yathābhūtaṁ nappajānāti. 
--When you experience a neutral feeling, if you don’t truly understand that feeling’s arising, disappearance, gratification, drawback, and escape, 
-+When you experience a neutral feeling, if you don’t truly understand that feeling’s arising, disappearing, gratification, drawback, and escape, 
+-When you experience a neutral sensation, if you don’t truly understand that sensation’s arising, disappearance, gratification, drawback, and escape, 
++When you experience a neutral sensation, if you don’t truly understand that sensation’s arising, disappearing, gratification, drawback, and escape, 
 @@ -1,2 +1,2 @@ mn148:34.6
  PLI: Adukkhamasukhāya vedanāya phuṭṭho samāno tassā vedanāya samudayañca atthaṅgamañca assādañca ādīnavañca nissaraṇañca yathābhūtaṁ pajānāti. 
--When you experience a neutral feeling, if you truly understand that feeling’s arising, disappearance, gratification, drawback, and escape, 
-+When you experience a neutral feeling, if you truly understand that feeling’s arising, disappearing, gratification, drawback, and escape, 
+-When you experience a neutral sensation, if you truly understand that sensation’s arising, disappearance, gratification, drawback, and escape, 
++When you experience a neutral sensation, if you truly understand that sensation’s arising, disappearing, gratification, drawback, and escape, 
 @@ -1,2 +1,2 @@ mn148:39.6
  PLI: Adukkhamasukhāya vedanāya phuṭṭho samāno tassā vedanāya samudayañca atthaṅgamañca assādañca ādīnavañca nissaraṇañca yathābhūtaṁ pajānāti. 
--When you experience a neutral feeling, if you truly understand that feeling’s arising, disappearance, gratification, drawback, and escape, 
-+When you experience a neutral feeling, if you truly understand that feeling’s arising, disappearing, gratification, drawback, and escape, 
+-When you experience a neutral sensation, if you truly understand that sensation’s arising, disappearance, gratification, drawback, and escape, 
++When you experience a neutral sensation, if you truly understand that sensation’s arising, disappearing, gratification, drawback, and escape, 
 --- sujato/sutta/mn/mn19_translation-en-sujato.json
 +++ sujato/sutta/mn/mn19_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn19:17.1
@@ -846,8 +846,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +‘Such is form, such is the arising of form, such is the disappearing of form. 
 @@ -1,2 +1,2 @@ mn72:15.5
  PLI: iti vedanā, iti vedanāya samudayo, iti vedanāya atthaṅgamo; 
--Such is feeling, such is the arising of feeling, such is the disappearance of feeling. 
-+Such is feeling, such is the arising of feeling, such is the disappearing of feeling. 
+-Such is sensation, such is the arising of sensation, such is the disappearance of sensation. 
++Such is sensation, such is the arising of sensation, such is the disappearing of sensation. 
 @@ -1,2 +1,2 @@ mn72:15.6
  PLI: iti saññā, iti saññāya samudayo, iti saññāya atthaṅgamo; 
 -Such is perception, such is the arising of perception, such is the disappearance of perception. 
@@ -900,8 +900,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +Such is form, such is the arising of form, such is the disappearing of form. 
 @@ -1,2 +1,2 @@ sn12.21:1.4
  PLI: iti vedanā iti vedanāya samudayo iti vedanāya atthaṅgamo, 
--Such is feeling, such is the arising of feeling, such is the disappearance of feeling. 
-+Such is feeling, such is the arising of feeling, such is the disappearing of feeling. 
+-Such is sensation, such is the arising of sensation, such is the disappearance of sensation. 
++Such is sensation, such is the arising of sensation, such is the disappearing of sensation. 
 @@ -1,2 +1,2 @@ sn12.21:1.5
  PLI: iti saññā iti saññāya samudayo iti saññāya atthaṅgamo, 
 -Such is perception, such is the arising of perception, such is the disappearance of perception. 
@@ -922,8 +922,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +Such is form, such is the arising of form, such is the disappearing of form. 
 @@ -1,2 +1,2 @@ sn12.22:1.4
  PLI: iti vedanā iti vedanāya samudayo iti vedanāya atthaṅgamo, 
--Such is feeling, such is the arising of feeling, such is the disappearance of feeling. 
-+Such is feeling, such is the arising of feeling, such is the disappearing of feeling. 
+-Such is sensation, such is the arising of sensation, such is the disappearance of sensation. 
++Such is sensation, such is the arising of sensation, such is the disappearing of sensation. 
 @@ -1,2 +1,2 @@ sn12.22:1.5
  PLI: iti saññā iti saññāya samudayo iti saññāya atthaṅgamo, 
 -Such is perception, such is the arising of perception, such is the disappearance of perception. 
@@ -1094,8 +1094,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +The cessation, settling, and disappearing of form is the cessation of suffering, the settling of diseases, and the disappearing of old age and death. 
 @@ -1,2 +1,2 @@ sn22.30:1.8
  PLI: Yo vedanāya …pe… 
--The cessation, settling, and disappearance of feeling … 
-+The cessation, settling, and disappearing of feeling … 
+-The cessation, settling, and disappearance of sensation … 
++The cessation, settling, and disappearing of sensation … 
 @@ -1,2 +1,2 @@ sn22.30:1.11
  PLI: yo viññāṇassa nirodho vūpasamo atthaṅgamo, dukkhasseso nirodho rogānaṁ vūpasamo jarāmaraṇassa atthaṅgamo”ti. 
 -consciousness is the cessation of suffering, the settling of diseases, and the disappearance of old age and death.” 
@@ -1114,8 +1114,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +++ sujato/sutta/sn/sn22/sn22.6_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.6:1.5
  PLI: Rūpassa samudayañca atthaṅgamañca, vedanāya samudayañca atthaṅgamañca, saññāya samudayañca atthaṅgamañca, saṅkhārānaṁ samudayañca atthaṅgamañca, viññāṇassa samudayañca atthaṅgamañca …pe… 
--The arising and disappearance of form, feeling, perception, action formations, and consciousness. …” 
-+The arising and disappearing of form, feeling, perception, action formations, and consciousness. …” 
+-The arising and disappearance of form, sensation, perception, action formations, and consciousness. …” 
++The arising and disappearing of form, sensation, perception, action formations, and consciousness. …” 
 --- sujato/sutta/sn/sn22/sn22.74_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.74_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.74:1.2
@@ -1186,8 +1186,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +The cessation, settling, and disappearing of form is the cessation of suffering, the settling of diseases, and the disappearing of old age and death. 
 @@ -1,2 +1,2 @@ sn26.10:1.8
  PLI: Yo vedanāya … 
--The cessation, settling, and disappearance of feeling, 
-+The cessation, settling, and disappearing of feeling, 
+-The cessation, settling, and disappearance of sensation, 
++The cessation, settling, and disappearing of sensation, 
 @@ -1,2 +1,2 @@ sn26.10:1.11
  PLI: yo viññāṇassa nirodho vūpasamo atthaṅgamo, dukkhasseso nirodho, rogānaṁ vūpasamo, jarāmaraṇassa atthaṅgamo”ti. 
 -and consciousness is the cessation of suffering, the settling of diseases, and the disappearance of old age and death.” 
@@ -1232,8 +1232,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +++ sujato/sutta/sn/sn26/sn26.5_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn26.5:2.5
  PLI: yo manosamphassajāya vedanāya nirodho vūpasamo atthaṅgamo, dukkhasseso nirodho, rogānaṁ vūpasamo, jarāmaraṇassa atthaṅgamo”ti. 
--the cessation of feeling born of mind contact … is the disappearance of old age and death.” 
-+the cessation of feeling born of mind contact … is the disappearing of old age and death.” 
+-the cessation of sensation born of mind contact … is the disappearance of old age and death.” 
++the cessation of sensation born of mind contact … is the disappearing of old age and death.” 
 --- sujato/sutta/sn/sn26/sn26.6_translation-en-sujato.json
 +++ sujato/sutta/sn/sn26/sn26.6_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn26.6:1.7
@@ -1432,8 +1432,8 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +++ sujato/sutta/sn/sn36/sn36.28_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.28:1.4
  PLI: Ye hi keci, bhikkhave, samaṇā vā brāhmaṇā vā imāsaṁ tissannaṁ vedanānaṁ samudayañca atthaṅgamañca assādañca ādīnavañca nissaraṇañca yathābhūtaṁ nappajānanti …pe… 
--There are ascetics and brahmins who don’t truly understand these three feelings’ arising, disappearance, gratification, drawback, and escape. … 
-+There are ascetics and brahmins who don’t truly understand these three feelings’ arising, disappearing, gratification, drawback, and escape. … 
+-There are ascetics and brahmins who don’t truly understand these three sensations’ arising, disappearance, gratification, drawback, and escape. … 
++There are ascetics and brahmins who don’t truly understand these three sensations’ arising, disappearing, gratification, drawback, and escape. … 
 --- sujato/sutta/sn/sn36/sn36.31_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.31_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.31:8.2
@@ -1444,12 +1444,12 @@ Rule: atthangama-disappearing — 322 change(s), 171 file(s)
 +++ sujato/sutta/sn/sn36/sn36.6_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.6:1.20
  PLI: So tāsaṁ vedanānaṁ samudayañca atthaṅgamañca assādañca ādīnavañca nissaraṇañca yathābhūtaṁ nappajānāti. 
--They don’t truly understand feelings’ arising, disappearance, gratification, drawback, and escape. 
-+They don’t truly understand feelings’ arising, disappearing, gratification, drawback, and escape. 
+-They don’t truly understand sensations’ arising, disappearance, gratification, drawback, and escape. 
++They don’t truly understand sensations’ arising, disappearing, gratification, drawback, and escape. 
 @@ -1,2 +1,2 @@ sn36.6:3.13
  PLI: So tāsaṁ vedanānaṁ samudayañca atthaṅgamañca assādañca ādīnavaṁ ca nissaraṇañca yathābhūtaṁ pajānāti. 
--They truly understand feelings’ arising, disappearance, gratification, drawback, and escape. 
-+They truly understand feelings’ arising, disappearing, gratification, drawback, and escape. 
+-They truly understand sensations’ arising, disappearance, gratification, drawback, and escape. 
++They truly understand sensations’ arising, disappearing, gratification, drawback, and escape. 
 --- sujato/sutta/sn/sn38/sn38.5_translation-en-sujato.json
 +++ sujato/sutta/sn/sn38/sn38.5_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn38.5:1.3

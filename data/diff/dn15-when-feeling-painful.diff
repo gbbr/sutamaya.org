@@ -1,0 +1,8 @@
+Rule: dn15-when-feeling-painful — 1 change(s), 1 file(s)
+
+--- sujato/sutta/dn/dn15_translation-en-sujato.json
++++ sujato/sutta/dn/dn15_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn15:29.6
+ PLI: Dukkhaṁ vedanaṁ vediyamānassa ‘eso me attā’ti hoti. 
+-When sensation a painful sensation they think: ‘This is my self.’ 
++When feeling a painful sensation they think: ‘This is my self.’ 

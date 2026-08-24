@@ -155,8 +155,8 @@ Rule: vaya-passing-away — 132 change(s), 44 file(s)
 +++ sujato/sutta/dn/dn15_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn15:29.1
  PLI: Sukhāpi kho, ānanda, vedanā aniccā saṅkhatā paṭiccasamuppannā khayadhammā vayadhammā virāgadhammā nirodhadhammā. 
--Pleasant feelings, painful feelings, and neutral feelings are all impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. 
-+Pleasant feelings, painful feelings, and neutral feelings are all impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
+-Pleasant sensations, painful sensations, and neutral sensations are all impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. 
++Pleasant sensations, painful sensations, and neutral sensations are all impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
 --- sujato/sutta/dn/dn22_translation-en-sujato.json
 +++ sujato/sutta/dn/dn22_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn22:2.12
@@ -173,8 +173,8 @@ Rule: vaya-passing-away — 132 change(s), 44 file(s)
 +With respect to the body, they meditate observing the liability to arise, to pass away, and to arise and pass away. 
 @@ -1,2 +1,2 @@ dn22:11.12
  PLI: Samudayadhammānupassī vā vedanāsu viharati, vayadhammānupassī vā vedanāsu viharati, samudayavayadhammānupassī vā vedanāsu viharati. 
--With respect to feelings, they meditate observing the liability to arise, to vanish, and to arise and vanish. 
-+With respect to feelings, they meditate observing the liability to arise, to pass away, and to arise and pass away. 
+-With respect to sensations, they meditate observing the liability to arise, to vanish, and to arise and vanish. 
++With respect to sensations, they meditate observing the liability to arise, to pass away, and to arise and pass away. 
 @@ -1,2 +1,2 @@ dn22:12.19
  PLI: Samudayadhammānupassī vā cittasmiṁ viharati, vayadhammānupassī vā cittasmiṁ viharati, samudayavayadhammānupassī vā cittasmiṁ viharati. 
 -With respect to the mind, they meditate observing the liability to arise, to vanish, and to arise and vanish. 
@@ -195,8 +195,8 @@ Rule: vaya-passing-away — 132 change(s), 44 file(s)
 +++ sujato/sutta/kn/snp/vagga3/snp3.12_translation-en-sujato.json
 @@ -1,2 +1,2 @@ snp3.12:26.3
  PLI: Phussa phussa vayaṁ passaṁ, 
--seeing feelings vanish with every contact, 
-+seeing feelings pass away with every contact, 
+-seeing sensations vanish with every contact, 
++seeing sensations pass away with every contact, 
 --- sujato/sutta/mn/mn10_translation-en-sujato.json
 +++ sujato/sutta/mn/mn10_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn10:5.2
@@ -213,8 +213,8 @@ Rule: vaya-passing-away — 132 change(s), 44 file(s)
 +With respect to the body, they meditate observing the liability to arise, to pass away, and to arise and pass away. 
 @@ -1,2 +1,2 @@ mn10:33.2
  PLI: samudayadhammānupassī vā vedanāsu viharati, vayadhammānupassī vā vedanāsu viharati, samudayavayadhammānupassī vā vedanāsu viharati. 
--With respect to feelings, they meditate observing the liability to arise, to vanish, and to arise and vanish. 
-+With respect to feelings, they meditate observing the liability to arise, to pass away, and to arise and pass away. 
+-With respect to sensations, they meditate observing the liability to arise, to vanish, and to arise and vanish. 
++With respect to sensations, they meditate observing the liability to arise, to pass away, and to arise and pass away. 
 @@ -1,2 +1,2 @@ mn10:35.2
  PLI: samudayadhammānupassī vā cittasmiṁ viharati, vayadhammānupassī vā cittasmiṁ viharati, samudayavayadhammānupassī vā cittasmiṁ viharati. 
 -With respect to the mind, they meditate observing the liability to arise, to vanish, and to arise and vanish. 
@@ -267,8 +267,8 @@ Rule: vaya-passing-away — 132 change(s), 44 file(s)
 +so it would follow that one’s self arises and passes away. 
 @@ -1,2 +1,2 @@ mn148:10.26
  PLI: Vedanāya uppādopi vayopi paññāyati. 
--The arising and vanishing of feeling is evident, 
-+The arising and passing away of feeling is evident, 
+-The arising and vanishing of sensation is evident, 
++The arising and passing away of sensation is evident, 
 @@ -1,2 +1,2 @@ mn148:10.27
  PLI: Yassa kho pana uppādopi vayopi paññāyati, ‘attā me uppajjati ca veti cā’ti iccassa evamāgataṁ hoti. 
 -so it would follow that one’s self arises and vanishes. 
@@ -319,8 +319,8 @@ Rule: vaya-passing-away — 132 change(s), 44 file(s)
 +++ sujato/sutta/mn/mn74_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn74:11.1
  PLI: Sukhāpi kho, aggivessana, vedanā aniccā saṅkhatā paṭiccasamuppannā khayadhammā vayadhammā virāgadhammā nirodhadhammā; 
--Pleasant, painful, and neutral feelings are impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. 
-+Pleasant, painful, and neutral feelings are impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
+-Pleasant, painful, and neutral sensations are impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. 
++Pleasant, painful, and neutral sensations are impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
 --- sujato/sutta/sn/sn12/sn12.20_translation-en-sujato.json
 +++ sujato/sutta/sn/sn12/sn12.20_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn12.20:4.2
@@ -547,38 +547,38 @@ Rule: vaya-passing-away — 132 change(s), 44 file(s)
 +++ sujato/sutta/sn/sn36/sn36.2_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.2:3.3
  PLI: Phussa phussa vayaṁ passaṁ, 
--seeing feelings vanish with every contact, 
-+seeing feelings pass away with every contact, 
+-seeing sensations vanish with every contact, 
++seeing sensations pass away with every contact, 
 --- sujato/sutta/sn/sn36/sn36.7_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.7_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.7:5.8
  PLI: So kāye ca sukhāya ca vedanāya aniccānupassī viharati, vayānupassī viharati, virāgānupassī viharati, nirodhānupassī viharati, paṭinissaggānupassī viharati. 
--They meditate observing impermanence, vanishing, dispassion, cessation, and letting go in the body and pleasant feeling. 
-+They meditate observing impermanence, passing away, dispassion, cessation, and letting go in the body and pleasant feeling. 
+-They meditate observing impermanence, vanishing, dispassion, cessation, and letting go in the body and pleasant sensation. 
++They meditate observing impermanence, passing away, dispassion, cessation, and letting go in the body and pleasant sensation. 
 @@ -1,2 +1,2 @@ sn36.7:6.9
  PLI: So kāye ca dukkhāya ca vedanāya aniccānupassī viharati, vayānupassī viharati, virāgānupassī viharati, nirodhānupassī viharati, paṭinissaggānupassī viharati. 
--They meditate observing impermanence, vanishing, dispassion, cessation, and letting go in the body and painful feeling. 
-+They meditate observing impermanence, passing away, dispassion, cessation, and letting go in the body and painful feeling. 
+-They meditate observing impermanence, vanishing, dispassion, cessation, and letting go in the body and painful sensation. 
++They meditate observing impermanence, passing away, dispassion, cessation, and letting go in the body and painful sensation. 
 @@ -1,2 +1,2 @@ sn36.7:7.8
  PLI: So kāye ca adukkhamasukhāya ca vedanāya aniccānupassī viharati, vayānupassī viharati, virāgānupassī viharati, nirodhānupassī viharati, paṭinissaggānupassī viharati. 
--They meditate observing impermanence, vanishing, dispassion, cessation, and letting go in the body and neutral feeling. 
-+They meditate observing impermanence, passing away, dispassion, cessation, and letting go in the body and neutral feeling. 
+-They meditate observing impermanence, vanishing, dispassion, cessation, and letting go in the body and neutral sensation. 
++They meditate observing impermanence, passing away, dispassion, cessation, and letting go in the body and neutral sensation. 
 --- sujato/sutta/sn/sn36/sn36.8_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.8_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.8:5.9
  PLI: So phasse ca sukhāya ca vedanāya aniccānupassī viharati, vayānupassī viharati, virāgānupassī viharati, nirodhānupassī viharati, paṭinissaggānupassī viharati. 
--They meditate observing impermanence, vanishing, dispassion, cessation, and letting go in contact and pleasant feeling. 
-+They meditate observing impermanence, passing away, dispassion, cessation, and letting go in contact and pleasant feeling. 
+-They meditate observing impermanence, vanishing, dispassion, cessation, and letting go in contact and pleasant sensation. 
++They meditate observing impermanence, passing away, dispassion, cessation, and letting go in contact and pleasant sensation. 
 --- sujato/sutta/sn/sn36/sn36.9_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.9_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.9:1.1
  PLI: “Tisso imā, bhikkhave, vedanā aniccā saṅkhatā paṭiccasamuppannā khayadhammā vayadhammā virāgadhammā nirodhadhammā. 
--“Bhikkhus, these three feelings are impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. 
-+“Bhikkhus, these three feelings are impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
+-“Bhikkhus, these three sensations are impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. 
++“Bhikkhus, these three sensations are impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
 @@ -1,2 +1,2 @@ sn36.9:1.4
  PLI: imā kho, bhikkhave, tisso vedanā aniccā saṅkhatā paṭiccasamuppannā khayadhammā vayadhammā virāgadhammā nirodhadhammā”ti. 
--These are the three feelings that are impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease.” 
-+These are the three feelings that are impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease.” 
+-These are the three sensations that are impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease.” 
++These are the three sensations that are impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease.” 
 --- sujato/sutta/sn/sn47/sn47.40_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.40_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.40:2.2
