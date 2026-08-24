@@ -14,7 +14,13 @@
 // Settings page. Falls back to the current URL for someone who simply walked into Settings.
 export function GoogleSignInButton({ returnTo }: { returnTo?: string }) {
   const here = typeof window === 'undefined' ? '/settings' : window.location.pathname + window.location.search;
-  const href = `/api/auth/google/start?return=${encodeURIComponent(returnTo || here)}`;
+  // Absolute rather than a bare path: the origin is the half the Worker can't infer for itself
+  // (in dev it's behind Vite's proxy, which rewrites Host), and it's what lets one dev server
+  // serve both localhost and the hostname a phone reaches it by — see resolveWebOrigin. Only
+  // origins the Worker is configured for are honoured, so this stays a convenience either way.
+  const target =
+    typeof window === 'undefined' ? returnTo || here : new URL(returnTo || here, window.location.href).href;
+  const href = `/api/auth/google/start?return=${encodeURIComponent(target)}`;
 
   return (
     <a

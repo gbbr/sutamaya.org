@@ -226,6 +226,37 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
       expect((await me.json()).user).toMatchObject({ email: 'reader@example.com' });
     });
 
+    // Dev config only (production ships one origin): with two configured, whichever one the
+    // sign-in link was clicked on has to be the one Google is told about and the one the browser
+    // ends up back on — that's what lets a phone on local.sutamaya.org and a desktop on localhost
+    // share a dev server. See resolveWebOrigin.
+    it('keeps the whole round trip on whichever configured origin it started from', async () => {
+      const { default: app } = await import('../index.js');
+      const MULTI = { ...OAUTH_ENV, WEB_ORIGIN: 'http://localhost:5173,https://local.sutamaya.org' };
+
+      const start = await app.request(
+        `/api/auth/google/start?return=${encodeURIComponent('https://local.sutamaya.org/browse/dn/dn1')}`,
+        {},
+        MULTI
+      );
+      const location = new URL(start.headers.get('Location'));
+      expect(location.searchParams.get('redirect_uri')).toBe('https://local.sutamaya.org/api/auth/google/callback');
+
+      const state = location.searchParams.get('state');
+      const fetchMock = vi.fn(async () => Response.json({ id_token: 'id-tok' }));
+      globalThis.fetch = fetchMock;
+      jwtVerify.mockResolvedValue({ payload: mockPayload() });
+
+      const res = await app.request(
+        `/api/auth/google/callback?code=abc&state=${encodeURIComponent(state)}`,
+        { headers: { Cookie: nonceCookieFrom(start) } },
+        MULTI
+      );
+      expect(res.headers.get('Location')).toBe('https://local.sutamaya.org/browse/dn/dn1');
+      const posted = new URLSearchParams(fetchMock.mock.calls[0][1].body.toString());
+      expect(posted.get('redirect_uri')).toBe('https://local.sutamaya.org/api/auth/google/callback');
+    });
+
     it('rejects a state whose nonce does not match the browser cookie (login CSRF)', async () => {
       const { default: app } = await import('../index.js');
       const { state } = await beginFlow(app);

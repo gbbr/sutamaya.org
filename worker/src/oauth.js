@@ -72,6 +72,33 @@ export async function verifyState(token, secret) {
   return payload;
 }
 
+// WEB_ORIGIN is normally one origin, but it accepts a comma-separated list so a dev machine can
+// serve the same Worker to both `http://localhost:5173` and the LAN hostname a phone reaches it by
+// (see docs/deploy.md "Testing on mobile") without editing .dev.vars between the two. The first
+// entry is the canonical one — what every leg of the flow falls back to when the request doesn't
+// identify which of them it came in on.
+export function webOrigins(value) {
+  return String(value || '')
+    .split(',')
+    .map((o) => o.trim().replace(/\/+$/, ''))
+    .filter(Boolean);
+}
+
+// Picks the origin a redirect should be built on. `candidate` is attacker-controllable (it comes
+// from the `return` URL in a query parameter and then travels through the provider inside the
+// signed state), so it is only ever *matched* against the configured list, never trusted as a
+// value — anything not configured here falls back to the canonical origin.
+export function resolveWebOrigin(value, candidate) {
+  const origins = webOrigins(value);
+  let candidateOrigin;
+  try {
+    candidateOrigin = candidate ? new URL(candidate).origin : null;
+  } catch {
+    candidateOrigin = null; // relative path, or not a URL at all
+  }
+  return origins.find((o) => o === candidateOrigin) || origins[0] || '';
+}
+
 // Where the app is sent after the flow ends. The candidate arrives from a query parameter, so
 // this is the guard against turning /api/auth/google/start into an open redirect: resolve it
 // against our own origin and keep only the path, so anything absolute, protocol-relative

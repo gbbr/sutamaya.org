@@ -190,7 +190,9 @@ started with.
   `web/src/lib/autoLists.ts`. No module is shared between the two npm workspaces, and the client
   needs its own copies to derive the same view offline. Change one, change the other.
 - **`WEB_ORIGIN` is load-bearing beyond CORS** — the OAuth flow builds its redirect URI and return
-  URL from it, so in local dev it must be the *web* dev server, not wrangler's port.
+  URL from it, so in local dev it must be the *web* dev server, not wrangler's port. It accepts a
+  comma-separated list (one origin in production): the flow picks whichever entry the sign-in
+  started on, which is what lets one dev server serve both localhost and the phone-facing hostname.
 - **Reordering and drag-and-drop use Pointer Events, never HTML5 drag-and-drop**, which doesn't fire
   reliably on touch. The shared plumbing is `hooks/usePointerDragSession.ts`.
 - **Search does not cover sutta text** — `searchCorpus` scans ref, title, Pali, blurb, note and list

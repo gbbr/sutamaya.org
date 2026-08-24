@@ -6,6 +6,7 @@ import {
   googleRedirectUri,
   nonceCookie,
   OAUTH_NONCE_COOKIE,
+  resolveWebOrigin,
   safeReturnPath,
   signState,
   verifyState,
@@ -88,6 +89,26 @@ describe('withAuthError', () => {
 
   it('keeps the hash last', () => {
     expect(withAuthError('/read/dn1#seg')).toBe('/read/dn1?auth_error=1#seg');
+  });
+});
+
+describe('resolveWebOrigin', () => {
+  const DEV = 'http://localhost:5173, https://local.sutamaya.org';
+
+  it('returns the only configured origin whatever the candidate says', () => {
+    expect(resolveWebOrigin(WEB_ORIGIN, 'https://evil.example/settings')).toBe(WEB_ORIGIN);
+    expect(resolveWebOrigin(WEB_ORIGIN, undefined)).toBe(WEB_ORIGIN);
+  });
+
+  it('picks the configured origin the candidate URL is on', () => {
+    expect(resolveWebOrigin(DEV, 'https://local.sutamaya.org/browse/dn')).toBe('https://local.sutamaya.org');
+    expect(resolveWebOrigin(DEV, 'http://localhost:5173/settings')).toBe('http://localhost:5173');
+  });
+
+  it('falls back to the first origin for a relative path or an unconfigured one', () => {
+    expect(resolveWebOrigin(DEV, '/settings')).toBe('http://localhost:5173');
+    expect(resolveWebOrigin(DEV, 'https://evil.example/settings')).toBe('http://localhost:5173');
+    expect(resolveWebOrigin(DEV, 'https://local.sutamaya.org.evil.example/')).toBe('http://localhost:5173');
   });
 });
 
