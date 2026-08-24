@@ -57,28 +57,3 @@ export function runCopy({ bilaraRoot, gitInfo, dataDirs = DATA_DIRS, snapshotPat
 
   return manifest;
 }
-
-if (import.meta.url === `file://${process.argv[1]}`) {
-  let scDataPath, bilaraRoot, gitInfo;
-  try {
-    ({ scDataPath, bilaraRoot } = requireSourceRoot());
-    gitInfo = sourceGitInfo(scDataPath);
-  } catch (err) {
-    console.error(red(err.message));
-    process.exit(1);
-  }
-
-  if (gitInfo.dirty) {
-    console.warn(yellow(`Warning: SC_DATA_PATH (${scDataPath}) has uncommitted local changes — manifest.json's commit won't fully describe what was copied.`));
-  }
-
-  let manifest;
-  try {
-    manifest = runCopy({ bilaraRoot, gitInfo });
-  } catch (err) {
-    console.error(red(err.message));
-    process.exit(1);
-  }
-
-  console.log(green(`update-data copy done — ${manifest.fileCount} files copied from ${bilaraRoot} (sc-data @ ${gitInfo.commit.slice(0, 12)}).`));
-}

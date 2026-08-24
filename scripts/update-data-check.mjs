@@ -33,7 +33,7 @@ import {
   blue,
   dim,
 } from './lib/dataSync.js';
-import { RULES_DIR, RETRANSLATION_PATH, loadRules, loadSidecar, isTermRule, isSegmentRule, segmentsOf, scopeOf, formsMatch, applyTermRules, buildSegmentIndex, uidOf } from './lib/retranslation.js';
+import { RULES_DIR, RETRANSLATION_PATH, loadRules, loadSidecar, isTermRule, isSegmentRule, segmentsOf, scopeOf, formsMatch, applyTermRules, buildSegmentIndex } from './lib/retranslation.js';
 import { triageRule } from './update-data-triage.mjs';
 
 function diffKeys(oldKeys, newKeys) {
@@ -115,7 +115,7 @@ function rewritesByRule(chunks) {
 // replaced left to the reader — which pair was the actual comparison (the rule's `from` against the
 // term rules' output, never against raw upstream), and where a word in `found` that appears nowhere
 // upstream came from.
-function describeAnchorBreak({ rule, segment, upstreamNow, anchorNow, chunks, relatedStale }) {
+function describeAnchorBreak({ rule, segment, upstreamNow, anchorNow, chunks }) {
   const lines = [
     `${bold(rule.id)} · ${segment}`,
     `  Upstream changed the line this override is pinned to, so it no longer anchors.`,
@@ -142,39 +142,14 @@ function describeAnchorBreak({ rule, segment, upstreamNow, anchorNow, chunks, re
   // exactly what re-anchoring it would still change.
   lines.push(``, `  Would write:`, `      ${highlightAgainst(removedUpstream ? rule.from : anchorNow, rule.to, yellow)}`);
 
-  // Term-rule exclusions on the same sutta that upstream has also invalidated. Nearly always the
-  // same upstream edit as the one that broke this anchor — an override and its rule's deny entries
-  // are usually written together, in one pass over one passage — so removing the override without
-  // them leaves the dead half behind. The per-rule triage summary counts them but never names one.
-  if (relatedStale?.length) {
-    const MAX = 10;
-    const byRule = new Map();
-    for (const { ruleId, segmentId, kind } of relatedStale) {
-      if (!byRule.has(ruleId)) byRule.set(ruleId, { kind, ids: [] });
-      byRule.get(ruleId).ids.push(segmentId);
-    }
-    lines.push(``, `  Dead on this sutta too — ${kindsOf(byRule)} entries that no longer match upstream:`);
-    for (const [ruleId, { kind, ids }] of byRule) {
-      const shown = ids.slice(0, MAX).join(', ') + (ids.length > MAX ? `, … (${ids.length} total)` : '');
-      lines.push(`      ${ruleId}  ${dim(`(${kind})`)}  ${yellow(shown)}`);
-    }
-  }
-
   return lines.join('\n');
-}
-
-function kindsOf(byRule) {
-  const kinds = new Set([...byRule.values()].map((v) => v.kind));
-  return [...kinds].join('/');
 }
 
 // Term rules whose reviewed allow/deny entries upstream has since invalidated — a denied segment
 // that no longer contains the term (so the exclusion does nothing), or an allow-listed one that
-// doesn't either. Same computation update-data:triage does, resolved against the upstream checkout
+// doesn't either. Same computation update-data triage does, resolved against the upstream checkout
 // rather than data/sujato, which is the whole point of doing it here: triage reads the local tree,
-// so it can only see this *after* update-data:copy has landed the new text, and it runs last in the
-// `npm run update-data` chain behind a `|| true`. Dead entries would otherwise sit in a sidecar
-// unnoticed.
+// so it can only see this *after* the copy has landed the new text.
 //
 // Reported one line per rule, not per segment — 77 stale entries in one rule is a realistic refresh,
 // and listing them here would bury everything else. The per-segment queue is triage's job, and the
@@ -203,11 +178,6 @@ function checkStaleTriage(rules, sujatoUpstreamByRelPath, rulesDir) {
   };
 
   const notes = [];
-  // uid -> [{ ruleId, segmentId }], so a broken override can name the dead entries sitting on the
-  // same sutta (see describeAnchorBreak) — they are almost always the same upstream edit, and the
-  // per-rule summary below never names an individual segment.
-  const staleByUid = new Map();
-
   for (const rule of rules.filter(isTermRule)) {
     const sidecar = loadSidecar(rule.id, rulesDir);
     const t = triageRule(rule, sidecar, segmentsFor);
@@ -216,21 +186,16 @@ function checkStaleTriage(rules, sujatoUpstreamByRelPath, rulesDir) {
     if (!stale.length) continue;
     notes.push(
       `${bold(rule.id)}: ${stale.length} of ${listed} ${kind} entries no longer contain the term upstream.\n` +
-        `    ${dim(`dead after the copy — drop them with`)} ${blue(`update-data:triage -- ${rule.id} --prune`)}`,
+        `    ${dim(`dead after the copy — drop them with`)} ${blue(`update-data triage ${rule.id} prune`)}`,
     );
-    for (const seg of stale) {
-      const uid = uidOf(seg.segmentId);
-      if (!staleByUid.has(uid)) staleByUid.set(uid, []);
-      staleByUid.get(uid).push({ ruleId: rule.id, segmentId: seg.segmentId, kind });
-    }
   }
-  return { notes, staleByUid };
+  return notes;
 }
 
 // Every term rule that finds no match anywhere in `sujatoUpstreamByRelPath` (restricted to its own
 // scope), and every segment rule whose `from` no longer anchors — resolved against upstream (via
 // bilaraRoot), before anything is copied, so a broken rule surfaces at the same point a structural
-// problem would rather than only after `update-data:post` runs against already-copied-in local data.
+// problem would rather than only after `update-data post` runs against already-copied-in local data.
 // Segment rules resolve their file via the *local* segment index (data/sujato is expected to still
 // have every override's segment at its current relPath — a renamed/relocated file is what the
 // structural upstreamIssues pass above already catches).
@@ -240,7 +205,7 @@ function checkStaleTriage(rules, sujatoUpstreamByRelPath, rulesDir) {
 // upstream segment here before comparing. Comparing against raw upstream instead would fail every
 // override whose line contains a term any rule rewrites, which is most of them — an override usually
 // exists *because* a term rule got that line wrong.
-function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, rulesDir, staleByUid) {
+function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, rulesDir) {
   const issues = [];
   const sidecars = new Map(rules.filter(isTermRule).map((rule) => [rule.id, loadSidecar(rule.id, rulesDir)]));
 
@@ -278,16 +243,7 @@ function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, rul
           : null;
       const anchorNow = rewritten ? rewritten.result : upstreamNow;
       if (anchorNow !== rule.from) {
-        issues.push(
-          describeAnchorBreak({
-            rule,
-            segment,
-            upstreamNow,
-            anchorNow,
-            chunks: rewritten?.chunks ?? [],
-            relatedStale: (staleByUid.get(uidOf(segment)) ?? []).filter((s) => s.segmentId !== segment),
-          }),
-        );
+        issues.push(describeAnchorBreak({ rule, segment, upstreamNow, anchorNow, chunks: rewritten?.chunks ?? [] }));
       }
     }
   }
@@ -311,9 +267,9 @@ export async function runCheck({ bilaraRoot, dataDirs = DATA_DIRS, snapshotPath 
   }
 
   // Independent of bilaraRoot entirely — verifies data/{sujato,pali,html} itself still matches
-  // snapshot.json, catching a copy that got committed without a follow-up update-data:accept.
+  // snapshot.json, catching a copy that got committed without a follow-up update-data accept.
   // Kept separate from upstreamIssues below (rather than one merged list) since they're different
-  // questions with different fixes: local drift means "run update-data:accept", an upstream
+  // questions with different fixes: local drift means "run update-data accept", an upstream
   // issue means "review what changed in SC_DATA_PATH".
   const localIssues = checkSnapshotInSync({ dataDirs, snapshotPath }).issues;
   const upstreamIssues = [];
@@ -382,10 +338,8 @@ export async function runCheck({ bilaraRoot, dataDirs = DATA_DIRS, snapshotPath 
   // rather than importing SUJATO_DIR directly, so a fixture dataDirs override (tests) is honored.
   const rules = await loadRules(retranslationPath);
   const localSegmentIndex = buildSegmentIndex(dataDirs.sujato);
-  // Before checkRuleAnchors, which folds each broken override's same-sutta stale entries into its
-  // own block.
-  const { notes: staleTriage, staleByUid } = checkStaleTriage(rules, sujatoUpstreamByRelPath, rulesDir);
-  const ruleIssues = checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, rulesDir, staleByUid);
+  const ruleIssues = checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, rulesDir);
+  const staleTriage = checkStaleTriage(rules, sujatoUpstreamByRelPath, rulesDir);
 
   // staleTriage is deliberately not folded in — see checkStaleTriage: it's reported, not failed on.
   const issues = [...localIssues, ...upstreamIssues, ...integrityIssues, ...localIntegrityIssues, ...ruleIssues];
@@ -402,100 +356,4 @@ export async function runCheck({ bilaraRoot, dataDirs = DATA_DIRS, snapshotPath 
     checked,
     totalTracked: Object.keys(snapshot.files).length,
   };
-}
-
-if (import.meta.url === `file://${process.argv[1]}`) {
-  let bilaraRoot;
-  try {
-    ({ bilaraRoot } = requireSourceRoot());
-  } catch (err) {
-    console.error(red(err.message));
-    process.exit(1);
-  }
-
-  const result = await runCheck({ bilaraRoot });
-
-  // Printed whether or not anything failed: accepted, but the one trace that upstream resegmented
-  // at all, so it shouldn't vanish just because it needs no action.
-  const paddingTotals = Object.values(result.padding).reduce(
-    (acc, { files, segments }) => ({ files: acc.files + files, segments: acc.segments + segments }),
-    { files: 0, segments: 0 },
-  );
-  function reportStaleTriage() {
-    if (!result.staleTriage.length) return;
-    console.error(bold(yellow(`\nRetranslation triage — upstream moved terms out from under reviewed decisions (${result.staleTriage.length}):`)));
-    for (const note of result.staleTriage) console.error(`- ${note}`);
-  }
-
-  function reportPadding() {
-    if (!paddingTotals.files) return;
-    const n = (x) => x.toLocaleString('en-US');
-    const breakdown = Object.entries(result.padding)
-      .sort((a, b) => b[1].segments - a[1].segments)
-      .map(([category, { segments }]) => `${category} ${n(segments)}`)
-      .join(', ');
-    console.error(
-      dim(
-        `\nAccepted — ${n(paddingTotals.segments)} blank segment ids added across ${n(paddingTotals.files)} files ` +
-          `(${breakdown}). English side only, pali/html unchanged, so the built text is unaffected.`,
-      ),
-    );
-  }
-
-  if (!result.ok) {
-    console.error(bold(red(`update-data check FAILED — ${result.issues.length} problem(s) found (${result.totalTracked} tracked files):`)));
-
-    if (result.localIssues.length) {
-      console.error(bold(red(`\nLocal drift — data/{sujato,pali,html} vs snapshot.json (${result.localIssues.length}):`)));
-      console.error(red(`  did a previous update-data:copy forget to run update-data:accept afterward?`));
-      for (const issue of result.localIssues) console.error(red(`- ${issue}`));
-
-      if (fs.existsSync(MANIFEST_PATH)) {
-        const { sourceCommit, snapshotCommit } = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
-        console.error(`\ndata/manifest.json:\n\tsourceCommit   = ${sourceCommit ?? '(none)'}\n\tsnapshotCommit = ${snapshotCommit ?? '(none)'}`);
-      }
-    }
-
-    if (result.upstreamIssues.length) {
-      console.error(bold(yellow(`\nUpstream changes — ${bilaraRoot} vs snapshot.json (${result.upstreamIssues.length}):`)));
-      for (const issue of result.upstreamIssues) console.error(yellow(`- ${issue}`));
-    }
-
-    if (result.integrityIssues.length) {
-      console.error(bold(yellow(`\nUpstream cross-category integrity — Pali/Bhikkhu Sujato/HTML segment ids don't line up (${result.integrityIssues.length}):`)));
-      for (const issue of result.integrityIssues) console.error(yellow(`- ${issue}`));
-    }
-
-    if (result.localIntegrityIssues.length) {
-      console.error(bold(red(`\nLocal cross-category integrity — data/{sujato,pali,html} segment ids don't line up (${result.localIntegrityIssues.length}):`)));
-      for (const issue of result.localIntegrityIssues) console.error(red(`- ${issue}`));
-    }
-
-    if (result.ruleIssues.length) {
-      console.error(bold(yellow(`\nRetranslation rules — broken against upstream (${result.ruleIssues.length}):`)));
-      // Printed uncoloured: each issue paints its own spans (see describeAnchorBreak), and wrapping
-      // the whole block in one colour would end it at the first inner reset, leaving the rest of a
-      // multi-line issue a different colour than the lines above it.
-      for (const issue of result.ruleIssues) console.error(`\n- ${issue}`);
-      console.error(`\n  → docs/retranslation.md, "Reconciling an upstream change"`);
-    }
-
-    reportStaleTriage();
-    reportPadding();
-
-    console.error(
-      `\nReview the files, copy them over using ${blue('update-data:copy')}, test the post-processing using ${blue('update-data:post')} ` +
-        `(review the rewrites with ${blue('git diff data/diff/')}), work whatever ${blue('update-data:triage')} then queues up, and if all ` +
-        `looks well regenerate the snapshot using ${blue('update-data:accept')}.`,
-    );
-    process.exit(1);
-  }
-
-  console.log(
-    green(
-      `update-data check OK — ${result.checked} tracked files verified against ${bilaraRoot}, cross-category segment ids consistent (upstream and local).`,
-    ),
-  );
-  reportStaleTriage();
-  reportPadding();
 }

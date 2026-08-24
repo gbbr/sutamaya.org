@@ -1,4 +1,4 @@
-update-data:post summary
+update-data post summary
 
 mendicant-bhikkhu  11503 match(es), 2706 file(s)
 immersion-concentration  2190 match(es), 823 file(s)
