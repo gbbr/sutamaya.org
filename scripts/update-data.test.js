@@ -247,6 +247,13 @@ describe('the shipped rules, one example each', () => {
     ['patisambhida-analytical-knowledge', 'an4.172:0.3', 'sujato/sutta', 'Sāriputta’s Attainment of Textual Analysis', 'Sāriputta’s Attainment of Analytical Knowledge'],
     // Untouched, like every note: Bhikkhu Sujato's own gloss keeps his own wording.
     ['patisambhida-analytical-knowledge', 'mn43:1.3', 'sujato/notes', 'foremost in the methods of textual analysis', 'foremost in the methods of textual analysis'],
+    // The four-paṭisambhidā list is rebuilt whole, since "the Dhamma" can't stand as a bare item
+    // beside "meaning"; the attha–dhamma pair is a plain swap of the noun in two word orders.
+    ['dhamma-the-dhamma', 'an5.86:1.3', 'sujato/sutta', 'of meaning, text, definition, and eloquence', 'of meaning, of the Dhamma, of definition, and of eloquence'],
+    ['dhamma-the-dhamma', 'an4.186:4.9', 'sujato/sutta', 'understands the meaning and the text of', 'understands the meaning and the Dhamma of'],
+    ['dhamma-the-dhamma', 'dhp363:3', 'sujato/sutta', 'explains the text and its meaning,', 'explains the Dhamma and its meaning,'],
+    // Not listed: peyyāla chapter headings are "text" as ordinary English, not dhamma.
+    ['dhamma-the-dhamma', 'sn12.82:1.8', 'sujato/sutta', '(All the abbreviated texts should be told in full.)', '(All the abbreviated texts should be told in full.)'],
     // One example per grammatical slot ātāpī occupies. The adjective is the satipaṭṭhāna formula's
     // first word; the abstract noun ātappa is Bhikkhu Sujato's "keenness"; the adverb is his
     // "keenly"; and the article travels with the adjective, or SN 1.23 reads "a ardent bhikkhu".
