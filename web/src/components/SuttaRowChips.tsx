@@ -89,13 +89,16 @@ export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighli
         >
           {c.parent && (
             <span
-              className={`flex items-center px-[8px] font-medium ${theme ? '' : 'bg-ink/10 text-ink-3'}`}
+              className={`flex items-center pl-[8px] pr-[6px] font-medium ${theme ? '' : 'bg-ink/10 text-ink-3'}`}
               style={theme ? { background: theme.tint, color: theme.dim } : undefined}
             >
               {c.parent}
             </span>
           )}
-          <span className="flex items-center px-[9px]">{c.label}</span>
+          {/* Tighter padding either side of the seam than at the pill's outer ends: the two
+              segments' padding meets there, so equal values read as a gap twice as wide as the
+              chip's own edges. */}
+          <span className={`flex items-center ${c.parent ? 'pl-[6px] pr-[9px]' : 'px-[9px]'}`}>{c.label}</span>
         </ChipTag>
       ))}
       {/* No fill of any kind — unlike the highlight badge beside it and unlike the chips' own
