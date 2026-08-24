@@ -315,6 +315,15 @@ export function TreePane({
     reorderLists,
   });
 
+  // Reordering and nesting both need something to move a row relative to, so a tree of fewer than
+  // two lists has nothing the mode can do — the toggle is hidden below rather than disabled, and
+  // the mode is forced off if the user deletes their way down to one (which would otherwise leave
+  // it stuck on with no visible control to leave it by).
+  const canReorderLists = useMemo(() => lists.filter((l) => !l.auto).length >= 2, [lists]);
+  useEffect(() => {
+    if (!canReorderLists) setReorderMode(false);
+  }, [canReorderLists, setReorderMode]);
+
   const searching = query.trim().length > 0;
   // A short/common query can match hundreds of suttas — only render/keyboard-navigate the first
   // SEARCH_RESULTS_CAP (see its own comment); `hits.length` (uncapped) still drives the "N
@@ -644,6 +653,7 @@ export function TreePane({
             onSelect={onSelect}
             reorderMode={reorderMode}
             setReorderMode={setReorderMode}
+            canReorder={canReorderLists}
             setMenuOpenId={setMenuOpenId}
             toggleTopLevelDraft={toggleTopLevelDraft}
             creatingParentId={creatingParentId}

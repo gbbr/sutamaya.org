@@ -17,6 +17,8 @@ interface ListsTreeViewProps {
   onSelect: (nodeId: string) => void;
   reorderMode: boolean;
   setReorderMode: (updater: (m: boolean) => boolean) => void;
+  // False when the tree holds fewer than two lists — see TreePane's canReorderLists.
+  canReorder: boolean;
   setMenuOpenId: (id: string | null) => void;
   toggleTopLevelDraft: () => void;
   creatingParentId: string | null | undefined;
@@ -61,6 +63,7 @@ export function ListsTreeView({
   onSelect,
   reorderMode,
   setReorderMode,
+  canReorder,
   setMenuOpenId,
   toggleTopLevelDraft,
   creatingParentId,
@@ -92,19 +95,21 @@ export function ListsTreeView({
       <div className="flex items-center justify-between pl-[22px] pr-[10px] pt-2 pb-1">
         <span className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3">My lists</span>
         <div className="flex items-center gap-[7px]">
-          <button
-            aria-label={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
-            title={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
-            className={`w-[32px] h-[32px] rounded-full flex items-center justify-center ${
-              reorderMode ? 'bg-accent2 text-[#FBFAF7]' : 'text-ink-4 hover:bg-ink/[.08] hover:text-ink'
-            }`}
-            onClick={() => {
-              setReorderMode((m) => !m);
-              setMenuOpenId(null);
-            }}
-          >
-            <ArrowUpDown size={15} strokeWidth={2} />
-          </button>
+          {canReorder && (
+            <button
+              aria-label={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
+              title={reorderMode ? 'Done reordering' : 'Reorder & nest lists'}
+              className={`w-[32px] h-[32px] rounded-full flex items-center justify-center ${
+                reorderMode ? 'bg-accent2 text-[#FBFAF7]' : 'text-ink-4 hover:bg-ink/[.08] hover:text-ink'
+              }`}
+              onClick={() => {
+                setReorderMode((m) => !m);
+                setMenuOpenId(null);
+              }}
+            >
+              <ArrowUpDown size={15} strokeWidth={2} />
+            </button>
+          )}
           {/* A raw px font-size rather than a `text-ui-*` token: the `+` is an icon glyph sized to
               the 32px circle around it, not UI text, so it doesn't belong to the type scale and
               shouldn't grow when that scale is retuned. */}
