@@ -1,5 +1,6 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
+import { webOrigins } from './oauth.js';
 import { checkRateLimit } from './rateLimit.js';
 import { authRouter } from './routes/auth.js';
 import { listsRouter } from './routes/lists.js';
@@ -27,8 +28,9 @@ app.use('/api/*', async (c, next) => {
 
 // A no-op for the normal same-origin case — the Worker serves the SPA from the assets binding on
 // this very origin — but it guards against a stray cross-origin call. Built per request rather
-// than once at module scope because the allowed origin comes from the environment.
-app.use('/api/*', (c, next) => cors({ origin: c.env.WEB_ORIGIN, credentials: true })(c, next));
+// than once at module scope because the allowed origins come from the environment (WEB_ORIGIN is
+// one origin in production and may be a comma-separated list in dev — see webOrigins).
+app.use('/api/*', (c, next) => cors({ origin: webOrigins(c.env.WEB_ORIGIN), credentials: true })(c, next));
 
 app.get('/api/health', async (c) => {
   await c.env.DB.prepare('SELECT 1').first();

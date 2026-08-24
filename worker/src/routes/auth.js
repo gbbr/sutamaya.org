@@ -22,6 +22,7 @@ import {
   googleAuthUrl,
   googleRedirectUri,
   nonceCookie,
+  resolveWebOrigin,
   safeReturnPath,
   signState,
   verifyState,
@@ -44,14 +45,21 @@ export const authRouter = new Hono();
 // validated through safeReturnPath both on the way out and again on the way back in, since it
 // travels through the provider in between.
 authRouter.get('/google/start', async (c) => {
+  // GoogleSignInButton sends `return` as an absolute URL, so which of the configured origins the
+  // user is actually on travels with it — that's what lets one `npm run dev` serve both localhost
+  // and the hostname a phone reaches it by. Only origins in WEB_ORIGIN are honoured
+  // (resolveWebOrigin), and it's carried through the provider in the signed state so both legs of
+  // the flow — and the redirect_uri Google matches — agree on one origin.
+  const webOrigin = resolveWebOrigin(c.env.WEB_ORIGIN, c.req.query('return'));
+
   if (!c.env.GOOGLE_CLIENT_ID || !c.env.GOOGLE_CLIENT_SECRET) {
     console.error('Google OAuth is not configured: GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET are both required.');
-    return c.redirect(appUrl(c.env.WEB_ORIGIN, withAuthError('/settings')), 302);
+    return c.redirect(appUrl(webOrigin, withAuthError('/settings')), 302);
   }
 
   const nonce = crypto.randomUUID();
   const state = await signState(
-    { n: nonce, r: safeReturnPath(c.req.query('return'), c.env.WEB_ORIGIN), t: Date.now() },
+    { n: nonce, r: safeReturnPath(c.req.query('return'), webOrigin), o: webOrigin, t: Date.now() },
     c.env.SESSION_SECRET
   );
   const secure = new URL(c.req.url).protocol === 'https:';
@@ -59,7 +67,7 @@ authRouter.get('/google/start', async (c) => {
   return c.redirect(
     googleAuthUrl({
       clientId: c.env.GOOGLE_CLIENT_ID,
-      redirectUri: googleRedirectUri(c.env.WEB_ORIGIN),
+      redirectUri: googleRedirectUri(webOrigin),
       state,
     }),
     302
@@ -71,10 +79,14 @@ authRouter.get('/google/start', async (c) => {
 // watching, so a JSON error body would strand them on a blank page with no way back.
 authRouter.get('/google/callback', async (c) => {
   const secure = new URL(c.req.url).protocol === 'https:';
+  // Reassigned below once the state is verified, to whichever origin /google/start issued it for.
+  // Until then there's nothing trustworthy saying which one this browser came in on, so failures
+  // that early land on the canonical origin.
+  let webOrigin = resolveWebOrigin(c.env.WEB_ORIGIN);
   const fail = (reason, returnTo = '/settings') => {
     console.error(`Google OAuth callback failed: ${reason}`);
     c.header('Set-Cookie', clearNonceCookie(), { append: true });
-    return c.redirect(appUrl(c.env.WEB_ORIGIN, withAuthError(returnTo)), 302);
+    return c.redirect(appUrl(webOrigin, withAuthError(returnTo)), 302);
   };
 
   const state = await verifyState(c.req.query('state'), c.env.SESSION_SECRET);
@@ -82,8 +94,9 @@ authRouter.get('/google/callback', async (c) => {
   if (!state.n || state.n !== getCookie(c, OAUTH_NONCE_COOKIE)) {
     return fail('state nonce did not match this browser’s cookie');
   }
+  webOrigin = resolveWebOrigin(c.env.WEB_ORIGIN, state.o);
 
-  const returnTo = safeReturnPath(state.r, c.env.WEB_ORIGIN);
+  const returnTo = safeReturnPath(state.r, webOrigin);
   const providerError = c.req.query('error');
   if (providerError) return fail(`Google returned ${providerError}`, returnTo);
   const code = c.req.query('code');
@@ -95,7 +108,7 @@ authRouter.get('/google/callback', async (c) => {
       code,
       clientId: c.env.GOOGLE_CLIENT_ID,
       clientSecret: c.env.GOOGLE_CLIENT_SECRET,
-      redirectUri: googleRedirectUri(c.env.WEB_ORIGIN),
+      redirectUri: googleRedirectUri(webOrigin),
     });
     profile = await verifyGoogleCredential(idToken, c.env.GOOGLE_CLIENT_ID);
   } catch (err) {
@@ -105,7 +118,7 @@ authRouter.get('/google/callback', async (c) => {
   const user = await findOrCreateGoogleUser(c.env.DB, profile);
   c.header('Set-Cookie', clearNonceCookie(), { append: true });
   c.header('Set-Cookie', await createSessionCookie(user.id, c.env.SESSION_SECRET, { secure }), { append: true });
-  return c.redirect(appUrl(c.env.WEB_ORIGIN, returnTo), 302);
+  return c.redirect(appUrl(webOrigin, returnTo), 302);
 });
 
 // --- Sign in by emailed code ------------------------------------------------------------------

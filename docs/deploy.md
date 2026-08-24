@@ -185,9 +185,10 @@ per-device trust step, since it's a real publicly-trusted certificate. `/api/*` 
 through Vite's own proxy to the Worker on `:8787` unchanged. Add
 `https://local.sutamaya.org/api/auth/google/callback` to the OAuth client's authorized redirect
 URIs once (see above) — additive, so `http://localhost:5173/...` and the production one are
-unaffected — and set `WEB_ORIGIN=https://local.sutamaya.org` in `.dev.vars` for the session, since
-the flow builds its redirect URI from it and would otherwise send the phone to `localhost`. Then
-open `https://local.sutamaya.org` on the phone (same LAN) — sign-in should complete normally.
+unaffected. `.dev.vars` already lists both origins in `WEB_ORIGIN`, and the flow picks whichever
+one the sign-in started on, so nothing needs editing per session and a desktop browser on
+`localhost` keeps working at the same time. Then open `https://local.sutamaya.org` on the phone
+(same LAN) — sign-in should complete normally.
 
 **To test PWA install/standalone behavior** over `local.sutamaya.org` (rather than just sign-in),
 start Vite with `PWA_DEV=1 npm run dev` first — `vite-plugin-pwa` registers a service worker only
