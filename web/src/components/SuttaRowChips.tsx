@@ -87,10 +87,15 @@ export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighli
           }
           title={c.breadcrumb}
         >
+          {/* The fill and the medium weight are what set the parent apart, not a quieter text
+              colour: the quiet rungs of each palette (`--ink-3`, a theme's `dim`) are tuned for
+              text on the page's own ground, and this text sits on a tint that costs it about a
+              stop — sepia's `dim` landed near 3:1 there. Same colour as the list's own name, one
+              step down in the shell where the ramp has a rung to spare. */}
           {c.parent && (
             <span
-              className={`flex items-center pl-[8px] pr-[6px] font-medium ${theme ? '' : 'bg-ink/10 text-ink-3'}`}
-              style={theme ? { background: theme.tint, color: theme.dim } : undefined}
+              className={`flex items-center pl-[8px] pr-[6px] font-medium ${theme ? '' : 'bg-ink/10 text-ink-2'}`}
+              style={theme ? { background: theme.tint } : undefined}
             >
               {c.parent}
             </span>
