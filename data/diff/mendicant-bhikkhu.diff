@@ -1,4 +1,4 @@
-Rule: mendicant-bhikkhu — 10991 change(s), 2706 file(s)
+Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 
 --- sujato/blurb/an-blurbs_root-en.json
 +++ sujato/blurb/an-blurbs_root-en.json
@@ -692,9 +692,6 @@ Rule: mendicant-bhikkhu — 10991 change(s), 2706 file(s)
 @@ -1 +1 @@ sn-blurbs:sn17
 -The “Linked Discourses on Gains and Honor” contains 43 discourses warning the mendicants of the terrible dangers inherent in material possessions and love of popularity and honors.
 +The “Linked Discourses on Gains and Honor” contains 43 discourses warning the bhikkhus of the terrible dangers inherent in material possessions and love of popularity and honors.
-@@ -1 +1 @@ sn-blurbs:sn35
--The number of discourses in the “Linked Discourses on the Six Sense Fields” varies between editions, mainly due to the way repetitions are counted; SuttaCentral follows Mendicant Bodhi’s translation in counting 248 discourses. The six sense fields complement the five aggregates as the summary of the noble truth of suffering. Where the aggregates focus on the functional structure of experience as basis for views of self, the emphasis here is on how sense experience stimulates desire. Despite this difference in orientation, the two collections share much in common, and often the exact same template is applied in both cases. The six sense fields are the means through which the world is known, and so each of them has an “inner” and an “outer” aspect—the “eye” and “sights”, etc. Though common, it’s best to avoid thinking of the external sense field as the “object”, since in the suttas they are depicted in relation to the observing mind, and not as independently existing entities. This is straightforward until we come to the last sense, the “mind” and “thoughts” or “mental phenomena”. Just to clear up a possible confusion, this “sixth sense” is simply the mental faculty, and has nothing to do with psychic powers. The outer aspect is <i lang='pi' translate='no'>dhammā</i>, a term so ambiguous its translation is always difficult. Here it refers to anything that may be known directly by the mind, distinct from the five senses. The most technically correct translation is probably “mental phenomena”, but “thought’ may be used as a more colloquial rendering, so long as it includes ideas, imagination, and so on, not just verbalized cognition.
-+The number of discourses in the “Linked Discourses on the Six Sense Fields” varies between editions, mainly due to the way repetitions are counted; SuttaCentral follows Bhikkhu Bodhi’s translation in counting 248 discourses. The six sense fields complement the five aggregates as the summary of the noble truth of suffering. Where the aggregates focus on the functional structure of experience as basis for views of self, the emphasis here is on how sense experience stimulates desire. Despite this difference in orientation, the two collections share much in common, and often the exact same template is applied in both cases. The six sense fields are the means through which the world is known, and so each of them has an “inner” and an “outer” aspect—the “eye” and “sights”, etc. Though common, it’s best to avoid thinking of the external sense field as the “object”, since in the suttas they are depicted in relation to the observing mind, and not as independently existing entities. This is straightforward until we come to the last sense, the “mind” and “thoughts” or “mental phenomena”. Just to clear up a possible confusion, this “sixth sense” is simply the mental faculty, and has nothing to do with psychic powers. The outer aspect is <i lang='pi' translate='no'>dhammā</i>, a term so ambiguous its translation is always difficult. Here it refers to anything that may be known directly by the mind, distinct from the five senses. The most technically correct translation is probably “mental phenomena”, but “thought’ may be used as a more colloquial rendering, so long as it includes ideas, imagination, and so on, not just verbalized cognition.
 @@ -1 +1 @@ sn-blurbs:sn1.21
 -A mendicant should live as if their head was on fire.
 +A bhikkhu should live as if their head was on fire.
@@ -8033,8 +8030,8 @@ Rule: mendicant-bhikkhu — 10991 change(s), 2706 file(s)
 +And how does a bhikkhu listen? 
 @@ -1,2 +1,2 @@ an4.114:7.2
  PLI: Idha, bhikkhave, bhikkhu tathāgatappavedite dhammavinaye desiyamāne aṭṭhiṁ katvā manasi katvā sabbacetasā samannāharitvā ohitasoto dhammaṁ suṇāti. 
--It’s when a mendicant pays attention, applies the mind, immerses wholeheartedly, and actively listens when the teaching and training proclaimed by a Realized One is being taught. 
-+It’s when a bhikkhu pays attention, applies the mind, immerses wholeheartedly, and actively listens when the teaching and training proclaimed by a Realized One is being taught. 
+-It’s when a mendicant pays attention, applies the mind, concentrates wholeheartedly, and actively listens when the teaching and training proclaimed by a Realized One is being taught. 
++It’s when a bhikkhu pays attention, applies the mind, concentrates wholeheartedly, and actively listens when the teaching and training proclaimed by a Realized One is being taught. 
 @@ -1,2 +1,2 @@ an4.114:7.3
  PLI: Evaṁ kho, bhikkhave, bhikkhu sotā hoti. 
 -That’s how a mendicant listens. 
@@ -11405,8 +11402,8 @@ Rule: mendicant-bhikkhu — 10991 change(s), 2706 file(s)
 +And how does a bhikkhu listen? 
 @@ -1,2 +1,2 @@ an5.140:9.2
  PLI: Idha, bhikkhave, bhikkhu tathāgatappavedite dhammavinaye desiyamāne aṭṭhiṅkatvā manasi katvā sabbaṁ cetasā samannāharitvā ohitasoto dhammaṁ suṇāti. 
--It’s when a mendicant pays attention, applies the mind, immerses wholeheartedly, and actively listens when the teaching and training proclaimed by a Realized One is being taught. 
-+It’s when a bhikkhu pays attention, applies the mind, immerses wholeheartedly, and actively listens when the teaching and training proclaimed by a Realized One is being taught. 
+-It’s when a mendicant pays attention, applies the mind, concentrates wholeheartedly, and actively listens when the teaching and training proclaimed by a Realized One is being taught. 
++It’s when a bhikkhu pays attention, applies the mind, concentrates wholeheartedly, and actively listens when the teaching and training proclaimed by a Realized One is being taught. 
 @@ -1,2 +1,2 @@ an5.140:9.3
  PLI: Evaṁ kho, bhikkhave, bhikkhu sotā hoti. 
 -That’s how a mendicant listens. 
@@ -26551,8 +26548,8 @@ Rule: mendicant-bhikkhu — 10991 change(s), 2706 file(s)
 +Now at that time the Buddha was educating, encouraging, firing up, and inspiring the bhikkhus with a Dhamma talk about extinguishment. 
 @@ -1,2 +1,2 @@ ud8.1:1.4
  PLI: Tedha bhikkhū aṭṭhiṁ katvā manasi katvā sabbaṁ cetaso samannāharitvā ohitasotā dhammaṁ suṇanti. 
--And those mendicants were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
-+And those bhikkhus were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
+-And those mendicants were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
++And those bhikkhus were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
 @@ -1,2 +1,2 @@ ud8.1:3.1
  PLI: “Atthi, bhikkhave, tadāyatanaṁ, yattha neva pathavī, na āpo, na tejo, na vāyo, na ākāsānañcāyatanaṁ, na viññāṇañcāyatanaṁ, na ākiñcaññāyatanaṁ, na nevasaññānāsaññāyatanaṁ, nāyaṁ loko, na paraloko, na ubho candimasūriyā. 
 -“There is, mendicants, that dimension where there is no earth, no water, no fire, no wind; no dimension of infinite space, no dimension of infinite consciousness, no dimension of nothingness, no dimension of neither perception nor non-perception; no this world, no other world, no moon or sun. 
@@ -26569,8 +26566,8 @@ Rule: mendicant-bhikkhu — 10991 change(s), 2706 file(s)
 +Now at that time the Buddha was educating, encouraging, firing up, and inspiring the bhikkhus with a Dhamma talk about extinguishment. 
 @@ -1,2 +1,2 @@ ud8.2:1.4
  PLI: Tedha bhikkhū aṭṭhiṁ katvā manasi katvā sabbaṁ cetaso samannāharitvā ohitasotā dhammaṁ suṇanti. 
--And those mendicants were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
-+And those bhikkhus were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
+-And those mendicants were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
++And those bhikkhus were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
 --- sujato/sutta/kn/ud/vagga8/ud8.3_translation-en-sujato.json
 +++ sujato/sutta/kn/ud/vagga8/ud8.3_translation-en-sujato.json
 @@ -1,2 +1,2 @@ ud8.3:1.3
@@ -26579,8 +26576,8 @@ Rule: mendicant-bhikkhu — 10991 change(s), 2706 file(s)
 +Now at that time the Buddha was educating, encouraging, firing up, and inspiring the bhikkhus with a Dhamma talk about extinguishment. 
 @@ -1,2 +1,2 @@ ud8.3:1.4
  PLI: Tedha bhikkhū aṭṭhiṁ katvā, manasi katvā, sabbaṁ cetaso samannāharitvā, ohitasotā dhammaṁ suṇanti. 
--And those mendicants were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
-+And those bhikkhus were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
+-And those mendicants were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
++And those bhikkhus were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
 @@ -1,2 +1,2 @@ ud8.3:3.1
  PLI: “Atthi, bhikkhave, ajātaṁ abhūtaṁ akataṁ asaṅkhataṁ. 
 -“There is, mendicants, freedom from rebirth, freedom from what has been produced, made, and conditioned. 
@@ -26593,8 +26590,8 @@ Rule: mendicant-bhikkhu — 10991 change(s), 2706 file(s)
 +Now at that time the Buddha was educating, encouraging, firing up, and inspiring the bhikkhus with a Dhamma talk about extinguishment. 
 @@ -1,2 +1,2 @@ ud8.4:1.4
  PLI: Tedha bhikkhū aṭṭhiṁ katvā manasi katvā sabbaṁ cetaso samannāharitvā ohitasotā dhammaṁ suṇanti. 
--And those mendicants were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
-+And those bhikkhus were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
+-And those mendicants were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
++And those bhikkhus were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
 --- sujato/sutta/kn/ud/vagga8/ud8.5_translation-en-sujato.json
 +++ sujato/sutta/kn/ud/vagga8/ud8.5_translation-en-sujato.json
 @@ -1,2 +1,2 @@ ud8.5:2.5
@@ -34021,8 +34018,8 @@ Rule: mendicant-bhikkhu — 10991 change(s), 2706 file(s)
 +Now at that time the Buddha was educating, encouraging, firing up, and inspiring the bhikkhus with a Dhamma talk about extinguishment. 
 @@ -1,2 +1,2 @@ sn10.7:1.3
  PLI: Te ca bhikkhū aṭṭhiṁ katvā manasi katvā sabbacetasā samannāharitvā ohitasotā dhammaṁ suṇanti. 
--And those mendicants were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
-+And those bhikkhus were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
+-And those mendicants were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
++And those bhikkhus were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
 --- sujato/sutta/sn/sn11/sn11.10_translation-en-sujato.json
 +++ sujato/sutta/sn/sn11/sn11.10_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn11.10:1.2
@@ -41929,16 +41926,16 @@ Rule: mendicant-bhikkhu — 10991 change(s), 2706 file(s)
 +Now at that time the Buddha was educating, encouraging, firing up, and inspiring the bhikkhus with a Dhamma talk on the topic of the five grasping aggregates. 
 @@ -1,2 +1,2 @@ sn4.16:1.3
  PLI: Te ca bhikkhū aṭṭhiṁ katvā manasi katvā sabbacetasā samannāharitvā ohitasotā dhammaṁ suṇanti. 
--And those mendicants were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
-+And those bhikkhus were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
+-And those mendicants were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
++And those bhikkhus were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
 @@ -1,2 +1,2 @@ sn4.16:2.2
  PLI: “ayaṁ kho samaṇo gotamo pañcannaṁ upādānakkhandhānaṁ upādāya bhikkhūnaṁ dhammiyā kathāya sandasseti samādapeti samuttejeti sampahaṁseti. 
 -“This ascetic Gotama is educating, encouraging, firing up, and inspiring the mendicants with a Dhamma talk on the topic of the five grasping aggregates. 
 +“This ascetic Gotama is educating, encouraging, firing up, and inspiring the bhikkhus with a Dhamma talk on the topic of the five grasping aggregates. 
 @@ -1,2 +1,2 @@ sn4.16:2.3
  PLI: Te ca bhikkhū aṭṭhiṁ katvā manasi katvā sabbacetasā samannāharitvā ohitasotā dhammaṁ suṇanti. 
--And the mendicants are paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
-+And the bhikkhus are paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
+-And the mendicants are paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
++And the bhikkhus are paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
 @@ -1,2 +1,2 @@ sn4.16:3.3
  PLI: Atha kho aññataro bhikkhu aññataraṁ bhikkhuṁ etadavoca: 
 -One of the mendicants said to another, 
@@ -41963,16 +41960,16 @@ Rule: mendicant-bhikkhu — 10991 change(s), 2706 file(s)
 +Now at that time the Buddha was educating, encouraging, firing up, and inspiring the bhikkhus with a Dhamma talk on the topic of the six fields of contact. 
 @@ -1,2 +1,2 @@ sn4.17:1.3
  PLI: Te ca bhikkhū aṭṭhiṁ katvā manasi katvā sabbacetasā samannāharitvā ohitasotā dhammaṁ suṇanti. 
--And those mendicants were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
-+And those bhikkhus were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
+-And those mendicants were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
++And those bhikkhus were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
 @@ -1,2 +1,2 @@ sn4.17:2.2
  PLI: “ayaṁ kho samaṇo gotamo channaṁ phassāyatanānaṁ upādāya bhikkhūnaṁ dhammiyā kathāya sandasseti samādapeti samuttejeti sappahaṁseti. 
 -“This ascetic Gotama is educating, encouraging, firing up, and inspiring the mendicants with a Dhamma talk on the topic of the six fields of contact. 
 +“This ascetic Gotama is educating, encouraging, firing up, and inspiring the bhikkhus with a Dhamma talk on the topic of the six fields of contact. 
 @@ -1,2 +1,2 @@ sn4.17:2.3
  PLI: Te ca bhikkhū aṭṭhiṁ katvā manasi katvā sabbacetasā samannāharitvā ohitasotā dhammaṁ suṇanti. 
--And those mendicants are paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
-+And those bhikkhus are paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
+-And those mendicants are paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
++And those bhikkhus are paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
 @@ -1,2 +1,2 @@ sn4.17:2.5
  PLI: Atha kho māro pāpimā yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavato avidūre mahantaṁ bhayabheravaṁ saddamakāsi, apissudaṁ pathavī maññe undrīyati. Atha kho aññataro bhikkhu aññataraṁ bhikkhuṁ etadavoca: 
 -Then Māra the Wicked went up to the Buddha and made a terrifyingly loud noise close by him. It seemed as if the earth were shattering, so that one of the mendicants said to another, 
@@ -41997,8 +41994,8 @@ Rule: mendicant-bhikkhu — 10991 change(s), 2706 file(s)
 +Now at that time the Buddha was educating, encouraging, firing up, and inspiring the bhikkhus with a Dhamma talk about extinguishment. 
 @@ -1,2 +1,2 @@ sn4.19:1.3
  PLI: Te ca bhikkhū aṭṭhiṁ katvā manasi katvā sabbacetasā samannāharitvā ohitasotā dhammaṁ suṇanti. 
--And those mendicants were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
-+And those bhikkhus were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
+-And those mendicants were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
++And those bhikkhus were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
 @@ -1,2 +1,2 @@ sn4.19:2.2
  PLI: “ayaṁ kho samaṇo gotamo bhikkhūnaṁ nibbānapaṭisaṁyuttāya dhammiyā kathāya …pe… 
 -“The ascetic Gotama is giving a Dhamma talk about extinguishment … and the mendicants are listening well. 
@@ -44287,8 +44284,8 @@ Rule: mendicant-bhikkhu — 10991 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn46/sn46.38_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn46.38:1.1
  PLI: Yasmiṁ, bhikkhave, samaye ariyasāvako aṭṭhiṁ katvā manasi katvā sabbaṁ cetaso samannāharitvā ohitasoto dhammaṁ suṇāti, imassa pañca nīvaraṇā tasmiṁ samaye na honti. Satta bojjhaṅgā tasmiṁ samaye bhāvanāpāripūriṁ gacchanti. 
--“Mendicants, sometimes a noble disciple pays attention, applies the mind, immerses wholeheartedly, and actively listens to the teaching. At such a time the five hindrances are absent, and the seven awakening factors are fully developed. 
-+“Bhikkhus, sometimes a noble disciple pays attention, applies the mind, immerses wholeheartedly, and actively listens to the teaching. At such a time the five hindrances are absent, and the seven awakening factors are fully developed. 
+-“Mendicants, sometimes a noble disciple pays attention, applies the mind, concentrates wholeheartedly, and actively listens to the teaching. At such a time the five hindrances are absent, and the seven awakening factors are fully developed. 
++“Bhikkhus, sometimes a noble disciple pays attention, applies the mind, concentrates wholeheartedly, and actively listens to the teaching. At such a time the five hindrances are absent, and the seven awakening factors are fully developed. 
 --- sujato/sutta/sn/sn46/sn46.39_translation-en-sujato.json
 +++ sujato/sutta/sn/sn46/sn46.39_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn46.39:1.1
@@ -48747,16 +48744,16 @@ Rule: mendicant-bhikkhu — 10991 change(s), 2706 file(s)
 +Now at that time Venerable Sāriputta was educating, encouraging, firing up, and inspiring the bhikkhus in the assembly hall with a Dhamma talk. His words were polished, clear, articulate, and expressed the meaning. 
 @@ -1,2 +1,2 @@ sn8.6:1.3
  PLI: Te ca bhikkhū aṭṭhiṁ katvā manasi katvā sabbacetasā samannāharitvā ohitasotā dhammaṁ suṇanti. 
--And those mendicants were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
-+And those bhikkhus were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
+-And those mendicants were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
++And those bhikkhus were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
 @@ -1,2 +1,2 @@ sn8.6:1.5
  PLI: “ayaṁ kho āyasmā sāriputto bhikkhū dhammiyā kathāya sandasseti samādapeti samuttejeti sampahaṁseti poriyā vācāya vissaṭṭhāya anelagalāya atthassa viññāpaniyā. 
 -“This Venerable Sāriputta is educating the mendicants. … 
 +“This Venerable Sāriputta is educating the bhikkhus. … 
 @@ -1,2 +1,2 @@ sn8.6:1.6
  PLI: Te ca bhikkhū aṭṭhiṁ katvā manasi katvā sabbacetasā samannāharitvā ohitasotā dhammaṁ suṇanti. 
--And those mendicants are paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
-+And those bhikkhus are paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
+-And those mendicants are paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
++And those bhikkhus are paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
 @@ -1,2 +1,2 @@ sn8.6:3.4
  PLI: dhammaṁ deseti bhikkhunaṁ. 
 -teaches Dhamma to the mendicants. 
@@ -48777,16 +48774,16 @@ Rule: mendicant-bhikkhu — 10991 change(s), 2706 file(s)
 +Now at that time the Buddha was educating, encouraging, firing up, and inspiring the bhikkhus with a Dhamma talk about extinguishment. 
 @@ -1,2 +1,2 @@ sn8.8:1.3
  PLI: Te ca bhikkhū aṭṭhiṁ katvā manasi katvā sabbacetasā samannāharitvā ohitasotā dhammaṁ suṇanti. 
--And those mendicants were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
-+And those bhikkhus were paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
+-And those mendicants were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
++And those bhikkhus were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
 @@ -1,2 +1,2 @@ sn8.8:1.5
  PLI: “ayaṁ kho bhagavā bhikkhū nibbānapaṭisaṁyuttāya dhammiyā kathāya sandasseti samādapeti samuttejeti sampahaṁseti. 
 -“The Buddha is educating, encouraging, firing up, and inspiring the mendicants with a Dhamma talk about extinguishment. 
 +“The Buddha is educating, encouraging, firing up, and inspiring the bhikkhus with a Dhamma talk about extinguishment. 
 @@ -1,2 +1,2 @@ sn8.8:1.6
  PLI: Te ca bhikkhū aṭṭhiṁ katvā manasi katvā sabbacetasā samannāharitvā ohitasotā dhammaṁ suṇanti. 
--And those mendicants are paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
-+And those bhikkhus are paying attention, applying the mind, immersing wholeheartedly, and actively listening. 
+-And those mendicants are paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
++And those bhikkhus are paying attention, applying the mind, concentrating wholeheartedly, and actively listening. 
 @@ -1,2 +1,2 @@ sn8.8:3.1
  PLI: “Parosahassaṁ bhikkhūnaṁ, 
 -“Over a thousand mendicants 
