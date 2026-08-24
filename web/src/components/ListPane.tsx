@@ -58,6 +58,10 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
     [corpus, nodeId, lists, searching, hits]
   );
 
+  // Reordering is only offered for a user list — an auto list's membership is derived rather than
+  // stored — and only once it holds at least two suttas, since one row has nowhere to move to.
+  const canReorder = !!currentList && !currentList.auto && items.length >= 2;
+
   // A search hit's row is still keyed/displayed by the batch's own id (`items` above), but
   // opening it should land on the more specific inner sutta the hit actually matched, when there
   // is one (e.g. searching "dhp325" against the "dhp320-333" batch) — see SearchHit.matchedId.
@@ -86,8 +90,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
   const [dragOrder, setDragOrder] = useState<string[] | null>(null);
   // Off by default — the drag handles take up space every row would otherwise get, so they only
   // show once explicitly requested via the header toggle (mirrors TreePane's own reorder-mode
-  // toggle for the list tree). Never offered for an auto list, whose membership is derived rather
-  // than stored — see the header toggle's `!currentList.auto` guard.
+  // toggle for the list tree). Where the toggle appears at all is `canReorder` above.
   const [reorderMode, setReorderMode] = useState(false);
   // The row whose list-membership popover is open, with the screen-space rect of the control that
   // opened it. Held here rather than in the row so it outlives that row: unchecking the list
@@ -182,6 +185,12 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
     setPicker(null);
   }, [nodeId, searching, reorderMode, visible]);
 
+  // Removing suttas until only one is left takes the header toggle away with them, so the mode
+  // has to fall back off by itself or there'd be no visible way out of it.
+  useEffect(() => {
+    if (!canReorder) setReorderMode(false);
+  }, [canReorder]);
+
   // Reveals the sutta the user just came from — e.g. tapping a list-membership chip in the
   // Reader now opens this pane with `selectedId` set (see ReaderPage's chip onClick) rather than
   // just the tree row for the list itself. `block: 'nearest'` makes this a no-op if the row's
@@ -234,7 +243,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
             {title.ref && <span className="font-sans text-ink-4">{title.ref} · </span>}{meta}
           </div>
         </div>
-        {currentList && !currentList.auto && (
+        {canReorder && (
           <button
             // The bordered resting state is mobile-only, to match the back button beside it.
             // On desktop there's no back button to pair with, and hover already tells you the
@@ -272,7 +281,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
           const note = notes[id];
           const { chips, hlCount } = rowMeta.get(id) ?? { chips: [], hlCount: 0 };
           const dragging = dragIdRef.current === id;
-          const reordering = !!currentList && !currentList.auto && reorderMode;
+          const reordering = canReorder && reorderMode;
           return (
             <div
               key={id}
