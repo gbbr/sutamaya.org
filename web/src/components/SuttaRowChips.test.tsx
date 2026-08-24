@@ -108,13 +108,12 @@ describe('SuttaRowChips', () => {
       // HighlightCountBadge renders its own count text inside a themed span/button — it fills from
       // the theme's accent tint (not the neutral `tint` the chips' parent segments use) but keeps
       // the theme's muted ink for the number itself, so it can't be mistaken for the
-      // accent-coloured Pali line (see HighlightCountBadge's own theme branch).
+      // accent-coloured Pali line (see HighlightCountBadge's own theme branch). Both arrive as
+      // custom properties, which is what leaves room for the hover rule to restate them.
       const badge = screen.getByText('5').closest('span,button') as HTMLElement;
-      const probe = document.createElement('div');
-      probe.style.background = theme.paliTint;
-      probe.style.color = theme.dim;
-      expect(badge.style.background).toBe(probe.style.background);
-      expect(badge.style.color).toBe(probe.style.color);
+      expect(badge.style.getPropertyValue('--hl-fill')).toBe(theme.paliTint);
+      expect(badge.style.getPropertyValue('--hl-ink')).toBe(theme.dim);
+      expect(badge.style.getPropertyValue('--hl-ink-hover')).toBe(theme.fg);
     });
   });
 
