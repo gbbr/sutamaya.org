@@ -224,7 +224,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
           </button>
         )}
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-1.5 min-w-0">
+          <div className="flex items-center gap-2.5 min-w-0">
             {currentList && <List size={17} strokeWidth={2} className="flex-none text-ink" />}
             <div className="min-w-0 truncate">
               <span className="font-sans text-ui-2xl font-semibold tracking-[-.01em]">{title.label}</span>
