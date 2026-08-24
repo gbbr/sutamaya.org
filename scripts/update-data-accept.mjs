@@ -1,6 +1,8 @@
 #!/usr/bin/env node
-// Regenerates scripts/update-data/snapshot.json from the current data/{sujato,pali,html} — i.e.
-// resets the baseline update-data-check.mjs compares a prospective sc-data checkout against. Also
+// Accepts the current data/{sujato,pali,html} as the new normal: regenerates
+// scripts/update-data/snapshot.json from it — i.e. resets the baseline update-data-check.mjs
+// compares a prospective sc-data checkout against. Named for the act rather than the artifact
+// because the act is a decision — see the MANUAL, DELIBERATE USE warning below. Also
 // regenerates data/sujato.post/ and records each term rule's current match count, by delegating to
 // update-data-counts.mjs — the same "this is now the new normal" act, just for rule footprints
 // instead of segment ids.
@@ -23,7 +25,7 @@ import { runCounts, reportCounts } from './update-data-counts.mjs';
 
 // Core logic, callable directly with explicit paths (tests use this to point at fixture trees
 // instead of the real data/{sujato,pali,html} — see scripts/update-data.test.js).
-export async function runSnapshot({
+export async function runAccept({
   dataDirs = DATA_DIRS,
   snapshotPath = SNAPSHOT_PATH,
   manifestPath = MANIFEST_PATH,
@@ -42,7 +44,7 @@ export async function runSnapshot({
 
   const snapshot = {
     generatedAt: new Date().toISOString(),
-    note: 'Baseline snapshot of data/{sujato,pali,html}, used by update-data-check.mjs to verify a prospective sc-data checkout has not renamed files or changed segment ids before copying. Regenerated only manually (npm run update-data:snapshot), after reviewing a check failure by hand — never automatically.',
+    note: 'Baseline snapshot of data/{sujato,pali,html}, used by update-data-check.mjs to verify a prospective sc-data checkout has not renamed files or changed segment ids before copying. Regenerated only manually (npm run update-data:accept), after reviewing a check failure by hand — never automatically.',
     fileCount: relPaths.length,
     files,
   };
@@ -69,7 +71,7 @@ export async function runSnapshot({
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const snapshot = await runSnapshot();
+  const snapshot = await runAccept();
   console.log(green(`update-data snapshot regenerated — ${snapshot.fileCount} files recorded at ${path.relative(process.cwd(), SNAPSHOT_PATH)}.`));
   reportCounts(snapshot);
 }

@@ -39,7 +39,7 @@ export function runCopy({ bilaraRoot, gitInfo, dataDirs = DATA_DIRS, snapshotPat
     copied += 1;
   }
 
-  // Carried forward, not touched by copy itself — only update-data-snapshot.mjs updates it, so a
+  // Carried forward, not touched by copy itself — only update-data-accept.mjs updates it, so a
   // copy left un-snapshotted shows up as a visible sourceCommit/snapshotCommit mismatch in the
   // same file/diff hunk (see data/README.md).
   const previousSnapshotCommit = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, 'utf8')).snapshotCommit ?? null : null;

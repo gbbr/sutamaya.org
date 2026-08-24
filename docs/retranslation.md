@@ -323,19 +323,20 @@ occasions to write it are not the same act:
 
 - **`update-data:counts`** — after editing a rule. Records the new footprint and nothing else. A
   rule added without it has no anchor at all.
-- **`update-data:snapshot`** — after an upstream refresh, where re-recording counts is part of the
+- **`update-data:accept`** — after an upstream refresh, where re-recording counts is part of the
   wider "this is now the new normal" that also rebaselines `snapshot.json` and
   `manifest.snapshotCommit`.
 
 Keeping them separate is what stops a rule edit from quietly re-accepting the current `data/` tree
 as the upstream baseline, which would blind the *next* `update-data:check` to a real upstream change
-(see `update-data-snapshot.mjs`'s own warning about running it without review).
+(see `update-data-accept.mjs`'s own warning about running it without review).
 
 ## Working the queue: `update-data:triage`
 
 ```
 npm run update-data:triage                              # every rule: stale + untriaged counts
 npm run update-data:triage -- sampajanna-clear-comprehension  # one rule, every case in full
+npm run update-data:triage -- immersion-concentration --prune # drop that rule's stale entries
 ```
 
 For one rule it lists every queued segment with its English, its aligned Pali, and its role (prose
@@ -348,6 +349,14 @@ Each case resolves one of three ways: the term is genuinely there → add to `al
 English → add to `deny` with a reason; upstream reworded a line you'd overridden → delete the
 segment rule if upstream's wording is now fine, otherwise re-derive `to` and re-anchor `from`. An
 empty queue means the rule is current.
+
+**`--prune` clears the stale half.** A stale entry names a segment that no longer contains any of
+the rule's forms, so allowing or denying it does nothing either way — there is no judgment left to
+make, only a dead line to delete. An upstream reword kills these in bulk (one refresh left 74 of
+`immersion-concentration`'s 88 denials dead), which is more than anyone should delete by hand.
+`--prune` removes exactly those, prints the ids, and leaves `untriaged` — the half that does need
+judgment — untouched. It is the one thing `update-data:triage` writes, and only when asked: the
+result is an ordinary `git diff` on the sidecar, reviewed like any other change.
 
 **Authoring a new rule is the same command.** A closed rule with an empty `allow` list has its
 entire footprint untriaged, so the first triage run *is* the enumeration. There's no separate mode.

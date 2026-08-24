@@ -16,7 +16,7 @@ upstream) and writes `data/sujato.post/` (generated).
 
 - **Don't hand-edit `data/sujato/`.** It's upstream's bytes; every edit belongs in a rule, or the
   next refresh silently reverts it and the honest upstream diff is lost.
-- **Don't run `update-data:copy` or `update-data:snapshot`** unless the user explicitly asks.
+- **Don't run `update-data:copy` or `update-data:accept`** unless the user explicitly asks.
   `update-data:counts` is the one to run after a rule edit — see step 9 for why they're separate.
 - **Don't list what you don't have to.** Always take the shorter of `allow`/`deny` — a term with
   no homonym problem (`mendicant`) is an open rule with an empty deny list, not 10,588 ids.
@@ -113,7 +113,7 @@ upstream) and writes `data/sujato.post/` (generated).
    all when its deny list is empty — the count *is* what would catch it going half-dead after a
    future refresh — and the one-line-per-rule diff is the reviewable record of what the edit did.
 
-   **Not `update-data:snapshot`.** That command records counts too, but it also rebaselines
+   **Not `update-data:accept`.** That command records counts too, but it also rebaselines
    `snapshot.json` and `manifest.snapshotCommit`, the upstream segment-id drift detector — only
    ever right after a human has reviewed a real upstream change. Rebaselining it as a side effect
    of a rule edit silently blinds the *next* `update-data:check`. Same code, run through the
@@ -202,9 +202,17 @@ what keeps a file that will only keep growing navigable without `git blame`.
 
 ## Working a triage queue after a refresh
 
-Every case is `allow`, or `deny` with a reason, or (for a stale entry) a decision about the
-override that no longer matches. `update-data:check` prints three-way for broken segment rules:
-the rule's `from`, upstream now, and the rule's `to`.
+**Prune the stale half first — it needs no decision.** A stale `allow`/`deny` entry names a segment
+that no longer contains any of the rule's forms, so it does nothing either way, and an upstream
+reword kills them in bulk. `npm run update-data:triage -- <rule-id> --prune` deletes exactly those
+and leaves `untriaged` — the half that does need judgment — alone. What remains is `allow`, or
+`deny` with a reason.
+
+For a broken segment rule, `update-data:check` prints a derivation: upstream's raw line, what the
+term rules did to it (`↪`), then `expected` (the rule's `from`) against `found` (what upstream now
+produces) with the diverging words coloured, and `Would write:` for the rule's `to`. When `found`
+already reads correctly, the override is obsolete — delete it, together with any deny entries the
+same block names under "Dead on this sutta too".
 
 A **global** rule matching zero times is dead, not drifted — the term is gone from upstream
 entirely. Find what replaced it before rewriting the rule.
