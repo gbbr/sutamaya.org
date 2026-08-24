@@ -26,11 +26,26 @@ interface HighlightCountBadgeProps {
 // (`--accent-text`/`theme.pali`), and a count in that same colour reads as more of that. Muted
 // rather than full-strength because it is an indicator, not something to read — the fill is what
 // makes it findable. `theme` lets ReaderPage fill it from the active reading theme's own accent
-// wash (`paliTint`) and colour it with that theme's `dim`; ListPane passes no theme, so the
-// Tailwind classes (the app shell's own light/dark mode, a deliberately separate system — see
-// index.css) apply instead.
+// wash (`paliTint`) and colour it with that theme's `dim`; ListPane passes no theme, so the app
+// shell's own variables (its light/dark mode is a deliberately separate system — see index.css)
+// stand in. Either way the four colours arrive as CSS custom properties rather than as a resolved
+// inline `background`/`color`, so the hover rule below can restate them.
 export function HighlightCountBadge({ count, onClick, theme, fs, style }: HighlightCountBadgeProps) {
   const Tag = onClick ? 'button' : 'span';
+  // Hover moves *toward* the theme rather than fading the whole pill out: a stronger pour of the
+  // same accent behind full-strength ink. An opacity fade would have washed the badge into
+  // whatever it sits on, which on a dark ground means dimming — the opposite of the "this is live"
+  // signal a hover owes. Both ends are built from tokens that already follow the theme (`pali`,
+  // `fg`), so the badge darkens on a light ground and lightens on a dark one without either
+  // branch knowing which it's on. Same dim -> fg move as the neighbouring "+" control in
+  // SuttaRowChips, so the two respond alike.
+  const accent = theme ? theme.pali : 'rgb(var(--accent-text))';
+  const vars = {
+    '--hl-fill': theme ? theme.paliTint : 'rgb(var(--accent-text) / .15)',
+    '--hl-fill-hover': `color-mix(in srgb, ${accent} 28%, transparent)`,
+    '--hl-ink': theme ? theme.dim : 'rgb(var(--ink-3))',
+    '--hl-ink-hover': theme ? theme.fg : 'rgb(var(--ink))',
+  } as CSSProperties;
   // Same type size as the chips this sits beside (SuttaRowChips' own `fontSize`), so the icon and
   // the number read at their weight rather than shrinking away next to them. The pill itself is
   // deliberately a little shorter than those chips outside the reader, so its height is its own
@@ -40,12 +55,12 @@ export function HighlightCountBadge({ count, onClick, theme, fs, style }: Highli
   return (
     <Tag
       data-component="HighlightCountBadge"
-      // The hover fade only when this is actually clickable — as a plain <span> (ListPane, where
-      // the row itself is the target) it would suggest an affordance that isn't there.
-      className={`inline-flex items-center gap-1 whitespace-nowrap rounded-full px-[9px] font-sans font-semibold bg-accent-text/[.15] text-ink-3 ${
-        onClick ? 'hover:opacity-70' : ''
+      // The hover response only when this is actually clickable — as a plain <span> (ListPane,
+      // where the row itself is the target) it would suggest an affordance that isn't there.
+      className={`inline-flex items-center gap-1 whitespace-nowrap rounded-full px-[9px] font-sans font-semibold bg-[var(--hl-fill)] text-[color:var(--hl-ink)] transition-colors ${
+        onClick ? 'hover:bg-[var(--hl-fill-hover)] hover:text-[color:var(--hl-ink-hover)]' : ''
       }`}
-      style={theme ? { background: theme.paliTint, color: theme.dim, fontSize, height, ...style } : { fontSize, height, ...style }}
+      style={{ ...vars, fontSize, height, ...style }}
       onClick={onClick}
     >
       <Highlighter size={Math.round(fontSize)} strokeWidth={2.25} />
