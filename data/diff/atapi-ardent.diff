@@ -184,12 +184,12 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +++ sujato/sutta/an/an4/an4.12_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.12:2.1
  PLI: Carato cepi, bhikkhave, bhikkhuno abhijjhābyāpādo vigato hoti, thinamiddhaṁ … uddhaccakukkuccaṁ … vicikicchā pahīnā hoti, āraddhaṁ hoti vīriyaṁ asallīnaṁ, upaṭṭhitā sati asammuṭṭhā, passaddho kāyo asāraddho, samāhitaṁ cittaṁ ekaggaṁ, carampi, bhikkhave, bhikkhu evaṁbhūto ‘ātāpī ottāpī satataṁ samitaṁ āraddhavīriyo pahitatto’ti vuccati. 
--Suppose a bhikkhu has got rid of desire and ill will while walking, and has given up dullness and drowsiness, restlessness and remorse, and doubt. Their energy is roused up and unflagging, their awareness is established and lucid, their body is tranquil and undisturbed, and their mind is concentrated and unified in samādhi. Such a bhikkhu is said to be ‘keen and prudent, always energetic and resolute’ when walking. 
-+Suppose a bhikkhu has got rid of desire and ill will while walking, and has given up dullness and drowsiness, restlessness and remorse, and doubt. Their energy is roused up and unflagging, their awareness is established and lucid, their body is tranquil and undisturbed, and their mind is concentrated and unified in samādhi. Such a bhikkhu is said to be ‘ardent and prudent, always energetic and resolute’ when walking. 
+-Suppose a bhikkhu has got rid of desire and ill will while walking, and has given up dullness and drowsiness, restlessness and remorse, and doubt. Their energy is roused up and unflagging, their awareness is established and lucid, their body is tranquil and undisturbed, and their mind is composed and unified in samādhi. Such a bhikkhu is said to be ‘keen and prudent, always energetic and resolute’ when walking. 
++Suppose a bhikkhu has got rid of desire and ill will while walking, and has given up dullness and drowsiness, restlessness and remorse, and doubt. Their energy is roused up and unflagging, their awareness is established and lucid, their body is tranquil and undisturbed, and their mind is composed and unified in samādhi. Such a bhikkhu is said to be ‘ardent and prudent, always energetic and resolute’ when walking. 
 @@ -1,2 +1,2 @@ an4.12:5.1
  PLI: Sayānassa cepi, bhikkhave, bhikkhuno jāgarassa abhijjhābyāpādo vigato hoti, thinamiddhaṁ … uddhaccakukkuccaṁ … vicikicchā pahīnā hoti, āraddhaṁ hoti vīriyaṁ asallīnaṁ, upaṭṭhitā sati asammuṭṭhā, passaddho kāyo asāraddho, samāhitaṁ cittaṁ ekaggaṁ, sayānopi, bhikkhave, bhikkhu jāgaro evaṁbhūto ‘ātāpī ottāpī satataṁ samitaṁ āraddhavīriyo pahitatto’ti vuccatīti. 
--or when lying down while awake, and has given up dullness and drowsiness, restlessness and remorse, and doubt. Their energy is roused up and unflagging, their awareness is established and lucid, their body is tranquil and undisturbed, and their mind is concentrated and unified in samādhi. Such a bhikkhu is said to be ‘keen and prudent, always energetic and resolute’ when lying down while awake. 
-+or when lying down while awake, and has given up dullness and drowsiness, restlessness and remorse, and doubt. Their energy is roused up and unflagging, their awareness is established and lucid, their body is tranquil and undisturbed, and their mind is concentrated and unified in samādhi. Such a bhikkhu is said to be ‘ardent and prudent, always energetic and resolute’ when lying down while awake. 
+-or when lying down while awake, and has given up dullness and drowsiness, restlessness and remorse, and doubt. Their energy is roused up and unflagging, their awareness is established and lucid, their body is tranquil and undisturbed, and their mind is composed and unified in samādhi. Such a bhikkhu is said to be ‘keen and prudent, always energetic and resolute’ when lying down while awake. 
++or when lying down while awake, and has given up dullness and drowsiness, restlessness and remorse, and doubt. Their energy is roused up and unflagging, their awareness is established and lucid, their body is tranquil and undisturbed, and their mind is composed and unified in samādhi. Such a bhikkhu is said to be ‘ardent and prudent, always energetic and resolute’ when lying down while awake. 
 --- sujato/sutta/an/an4/an4.14_translation-en-sujato.json
 +++ sujato/sutta/an/an4/an4.14_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.14:5.5
@@ -460,68 +460,68 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +++ sujato/sutta/dn/dn1_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn1:1.31.1
  PLI: Idha, bhikkhave, ekacco samaṇo vā brāhmaṇo vā ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte (…) anekavihitaṁ pubbenivāsaṁ anussarati. 
--It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they recollect their many kinds of past lives. 
-+It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they recollect their many kinds of past lives. 
+-It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they recollect their many kinds of past lives. 
++It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they recollect their many kinds of past lives. 
 @@ -1,2 +1,2 @@ dn1:1.31.7
  PLI: Ahañhi ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusāmi, yathāsamāhite citte anekavihitaṁ pubbenivāsaṁ anussarāmi. 
--Because by dint of keen, resolute, committed, and diligent effort, and right application of mind I experience a concentration of the heart of such a kind that I recollect my many kinds of past lives, 
-+Because by dint of ardent, resolute, committed, and diligent effort, and right application of mind I experience a concentration of the heart of such a kind that I recollect my many kinds of past lives, 
+-Because by dint of keen, resolute, committed, and diligent effort, and right application of mind I experience composure of the heart of such a kind that I recollect my many kinds of past lives, 
++Because by dint of ardent, resolute, committed, and diligent effort, and right application of mind I experience composure of the heart of such a kind that I recollect my many kinds of past lives, 
 @@ -1,2 +1,2 @@ dn1:1.32.2
  PLI: Idha, bhikkhave, ekacco samaṇo vā brāhmaṇo vā ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte anekavihitaṁ pubbenivāsaṁ anussarati. 
--It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they recollect their many kinds of past lives. 
-+It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they recollect their many kinds of past lives. 
+-It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they recollect their many kinds of past lives. 
++It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they recollect their many kinds of past lives. 
 @@ -1,2 +1,2 @@ dn1:1.32.8
  PLI: Ahañhi ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusāmi yathāsamāhite citte anekavihitaṁ pubbenivāsaṁ anussarāmi. 
--Because by dint of keen, resolute, committed, and diligent effort, and right application of mind I experience a concentration of the heart of such a kind that I recollect my many kinds of past lives, 
-+Because by dint of ardent, resolute, committed, and diligent effort, and right application of mind I experience a concentration of the heart of such a kind that I recollect my many kinds of past lives, 
+-Because by dint of keen, resolute, committed, and diligent effort, and right application of mind I experience composure of the heart of such a kind that I recollect my many kinds of past lives, 
++Because by dint of ardent, resolute, committed, and diligent effort, and right application of mind I experience composure of the heart of such a kind that I recollect my many kinds of past lives, 
 @@ -1,2 +1,2 @@ dn1:1.33.2
  PLI: Idha, bhikkhave, ekacco samaṇo vā brāhmaṇo vā ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte anekavihitaṁ pubbenivāsaṁ anussarati. 
--It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they recollect their many kinds of past lives. 
-+It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they recollect their many kinds of past lives. 
+-It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they recollect their many kinds of past lives. 
++It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they recollect their many kinds of past lives. 
 @@ -1,2 +1,2 @@ dn1:1.33.8
  PLI: Ahañhi ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusāmi, yathāsamāhite citte anekavihitaṁ pubbenivāsaṁ anussarāmi. 
--Because by dint of keen, resolute, committed, and diligent effort, and right application of mind I experience a concentration of the heart of such a kind that I recollect my many kinds of past lives, 
-+Because by dint of ardent, resolute, committed, and diligent effort, and right application of mind I experience a concentration of the heart of such a kind that I recollect my many kinds of past lives, 
+-Because by dint of keen, resolute, committed, and diligent effort, and right application of mind I experience composure of the heart of such a kind that I recollect my many kinds of past lives, 
++Because by dint of ardent, resolute, committed, and diligent effort, and right application of mind I experience composure of the heart of such a kind that I recollect my many kinds of past lives, 
 @@ -1,2 +1,2 @@ dn1:2.6.5
  PLI: Agārasmā anagāriyaṁ pabbajito samāno ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte taṁ pubbenivāsaṁ anussarati, tato paraṁ nānussarati. 
--By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience a concentration of the heart of such a kind that they recollect that past life, but no further. 
-+By dint of ardent, resolute, committed, and diligent effort, and right application of mind, they experience a concentration of the heart of such a kind that they recollect that past life, but no further. 
+-By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience composure of the heart of such a kind that they recollect that past life, but no further. 
++By dint of ardent, resolute, committed, and diligent effort, and right application of mind, they experience composure of the heart of such a kind that they recollect that past life, but no further. 
 @@ -1,2 +1,2 @@ dn1:2.8.3
  PLI: Agārasmā anagāriyaṁ pabbajito samāno ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte taṁ pubbenivāsaṁ anussarati, tato paraṁ nānussarati. 
--By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience a concentration of the heart of such a kind that they recollect that past life, but no further. 
-+By dint of ardent, resolute, committed, and diligent effort, and right application of mind, they experience a concentration of the heart of such a kind that they recollect that past life, but no further. 
+-By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience composure of the heart of such a kind that they recollect that past life, but no further. 
++By dint of ardent, resolute, committed, and diligent effort, and right application of mind, they experience composure of the heart of such a kind that they recollect that past life, but no further. 
 @@ -1,2 +1,2 @@ dn1:2.11.3
  PLI: Agārasmā anagāriyaṁ pabbajito samāno ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte taṁ pubbenivāsaṁ anussarati, tato paraṁ nānussarati. 
--By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience a concentration of the heart of such a kind that they recollect that past life, but no further. 
-+By dint of ardent, resolute, committed, and diligent effort, and right application of mind, they experience a concentration of the heart of such a kind that they recollect that past life, but no further. 
+-By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience composure of the heart of such a kind that they recollect that past life, but no further. 
++By dint of ardent, resolute, committed, and diligent effort, and right application of mind, they experience composure of the heart of such a kind that they recollect that past life, but no further. 
 @@ -1,2 +1,2 @@ dn1:2.17.1
  PLI: Idha, bhikkhave, ekacco samaṇo vā brāhmaṇo vā ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte antasaññī lokasmiṁ viharati. 
--It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they meditate perceiving the cosmos as finite. 
-+It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they meditate perceiving the cosmos as finite. 
+-It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they meditate perceiving the cosmos as finite. 
++It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they meditate perceiving the cosmos as finite. 
 @@ -1,2 +1,2 @@ dn1:2.17.5
  PLI: Ahañhi ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusāmi, yathāsamāhite citte antasaññī lokasmiṁ viharāmi. 
--Because by dint of keen, resolute, committed, and diligent effort, and right application of mind I experience a concentration of the heart of such a kind that I meditate perceiving the cosmos as finite. 
-+Because by dint of ardent, resolute, committed, and diligent effort, and right application of mind I experience a concentration of the heart of such a kind that I meditate perceiving the cosmos as finite. 
+-Because by dint of keen, resolute, committed, and diligent effort, and right application of mind I experience composure of the heart of such a kind that I meditate perceiving the cosmos as finite. 
++Because by dint of ardent, resolute, committed, and diligent effort, and right application of mind I experience composure of the heart of such a kind that I meditate perceiving the cosmos as finite. 
 @@ -1,2 +1,2 @@ dn1:2.18.2
  PLI: Idha, bhikkhave, ekacco samaṇo vā brāhmaṇo vā ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte anantasaññī lokasmiṁ viharati. 
--It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they meditate perceiving the cosmos as infinite. 
-+It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they meditate perceiving the cosmos as infinite. 
+-It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they meditate perceiving the cosmos as infinite. 
++It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they meditate perceiving the cosmos as infinite. 
 @@ -1,2 +1,2 @@ dn1:2.18.9
  PLI: Ahañhi ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusāmi, yathāsamāhite citte anantasaññī lokasmiṁ viharāmi. 
--Because by dint of keen, resolute, committed, and diligent effort, and right application of mind I experience a concentration of the heart of such a kind that I meditate perceiving the cosmos as infinite. 
-+Because by dint of ardent, resolute, committed, and diligent effort, and right application of mind I experience a concentration of the heart of such a kind that I meditate perceiving the cosmos as infinite. 
+-Because by dint of keen, resolute, committed, and diligent effort, and right application of mind I experience composure of the heart of such a kind that I meditate perceiving the cosmos as infinite. 
++Because by dint of ardent, resolute, committed, and diligent effort, and right application of mind I experience composure of the heart of such a kind that I meditate perceiving the cosmos as infinite. 
 @@ -1,2 +1,2 @@ dn1:2.19.2
  PLI: Idha, bhikkhave, ekacco samaṇo vā brāhmaṇo vā ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte uddhamadho antasaññī lokasmiṁ viharati, tiriyaṁ anantasaññī. 
--It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they meditate perceiving the cosmos as finite vertically but infinite horizontally. 
-+It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they meditate perceiving the cosmos as finite vertically but infinite horizontally. 
+-It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they meditate perceiving the cosmos as finite vertically but infinite horizontally. 
++It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they meditate perceiving the cosmos as finite vertically but infinite horizontally. 
 @@ -1,2 +1,2 @@ dn1:2.19.11
  PLI: Ahañhi ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusāmi, yathāsamāhite citte uddhamadho antasaññī lokasmiṁ viharāmi, tiriyaṁ anantasaññī. 
--Because by dint of keen, resolute, committed, and diligent effort, and right application of mind I experience a concentration of the heart of such a kind that I meditate perceiving the cosmos as finite vertically but infinite horizontally. 
-+Because by dint of ardent, resolute, committed, and diligent effort, and right application of mind I experience a concentration of the heart of such a kind that I meditate perceiving the cosmos as finite vertically but infinite horizontally. 
+-Because by dint of keen, resolute, committed, and diligent effort, and right application of mind I experience composure of the heart of such a kind that I meditate perceiving the cosmos as finite vertically but infinite horizontally. 
++Because by dint of ardent, resolute, committed, and diligent effort, and right application of mind I experience composure of the heart of such a kind that I meditate perceiving the cosmos as finite vertically but infinite horizontally. 
 @@ -1,2 +1,2 @@ dn1:2.31.5
  PLI: Agārasmā anagāriyaṁ pabbajito samāno ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte saññuppādaṁ anussarati, tato paraṁ nānussarati. 
--By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience a concentration of the heart of such a kind that they recollect the arising of perception, but no further. 
-+By dint of ardent, resolute, committed, and diligent effort, and right application of mind, they experience a concentration of the heart of such a kind that they recollect the arising of perception, but no further. 
+-By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience composure of the heart of such a kind that they recollect the arising of perception, but no further. 
++By dint of ardent, resolute, committed, and diligent effort, and right application of mind, they experience composure of the heart of such a kind that they recollect the arising of perception, but no further. 
 --- sujato/sutta/dn/dn20_translation-en-sujato.json
 +++ sujato/sutta/dn/dn20_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn20:5.15
@@ -576,20 +576,20 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +++ sujato/sutta/dn/dn24_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn24:2.17.16
  PLI: Agārasmā anagāriyaṁ pabbajito samāno ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte taṁ pubbenivāsaṁ anussarati; tato paraṁ nānussarati. 
--By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience a concentration of the heart of such a kind that they recollect that past life, but no further. 
-+By dint of ardent, resolute, committed, and diligent effort, and right application of mind, they experience a concentration of the heart of such a kind that they recollect that past life, but no further. 
+-By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience composure of the heart of such a kind that they recollect that past life, but no further. 
++By dint of ardent, resolute, committed, and diligent effort, and right application of mind, they experience composure of the heart of such a kind that they recollect that past life, but no further. 
 @@ -1,2 +1,2 @@ dn24:2.18.12
  PLI: agārasmā anagāriyaṁ pabbajito samāno ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte taṁ pubbenivāsaṁ anussarati; tato paraṁ nānussarati. 
--By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience a concentration of the heart of such a kind that they recollect that past life, but no further. 
-+By dint of ardent, resolute, committed, and diligent effort, and right application of mind, they experience a concentration of the heart of such a kind that they recollect that past life, but no further. 
+-By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience composure of the heart of such a kind that they recollect that past life, but no further. 
++By dint of ardent, resolute, committed, and diligent effort, and right application of mind, they experience composure of the heart of such a kind that they recollect that past life, but no further. 
 @@ -1,2 +1,2 @@ dn24:2.19.12
  PLI: Agārasmā anagāriyaṁ pabbajito samāno ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte taṁ pubbenivāsaṁ anussarati, tato paraṁ nānussarati. 
--By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience a concentration of the heart of such a kind that they recollect that past life, but no further. 
-+By dint of ardent, resolute, committed, and diligent effort, and right application of mind, they experience a concentration of the heart of such a kind that they recollect that past life, but no further. 
+-By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience composure of the heart of such a kind that they recollect that past life, but no further. 
++By dint of ardent, resolute, committed, and diligent effort, and right application of mind, they experience composure of the heart of such a kind that they recollect that past life, but no further. 
 @@ -1,2 +1,2 @@ dn24:2.20.13
  PLI: Agārasmā anagāriyaṁ pabbajito samāno ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte taṁ saññuppādaṁ anussarati, tato paraṁ nānussarati’. 
--By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience a concentration of the heart of such a kind that they recollect the arising of perception, but no further. 
-+By dint of ardent, resolute, committed, and diligent effort, and right application of mind, they experience a concentration of the heart of such a kind that they recollect the arising of perception, but no further. 
+-By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience composure of the heart of such a kind that they recollect the arising of perception, but no further. 
++By dint of ardent, resolute, committed, and diligent effort, and right application of mind, they experience composure of the heart of such a kind that they recollect the arising of perception, but no further. 
 --- sujato/sutta/dn/dn26_translation-en-sujato.json
 +++ sujato/sutta/dn/dn26_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn26:1.9
@@ -616,32 +616,32 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +++ sujato/sutta/dn/dn28_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn28:7.3
  PLI: Idha, bhante, ekacco samaṇo vā brāhmaṇo vā ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte imameva kāyaṁ uddhaṁ pādatalā adho kesamatthakā tacapariyantaṁ pūraṁ nānappakārassa asucino paccavekkhati: 
--Firstly, some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they examine their own body up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. 
-+Firstly, some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they examine their own body up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. 
+-Firstly, some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they examine their own body up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. 
++Firstly, some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they examine their own body up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. 
 @@ -1,2 +1,2 @@ dn28:15.3
  PLI: Idha, bhante, ekacco samaṇo vā brāhmaṇo vā ātappamanvāya …pe… tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte anekavihitaṁ pubbenivāsaṁ anussarati. 
--Firstly, some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they recollect many hundreds of thousands of past lives, 
-+Firstly, some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they recollect many hundreds of thousands of past lives, 
+-Firstly, some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they recollect many hundreds of thousands of past lives, 
++Firstly, some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they recollect many hundreds of thousands of past lives, 
 @@ -1,2 +1,2 @@ dn28:15.10
  PLI: Puna caparaṁ, bhante, idhekacco samaṇo vā brāhmaṇo vā ātappamanvāya …pe… tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte anekavihitaṁ pubbenivāsaṁ anussarati. 
--Furthermore, some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they recollect their past lives for as many as ten eons of the expansion and contraction of the cosmos, 
-+Furthermore, some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they recollect their past lives for as many as ten eons of the expansion and contraction of the cosmos, 
+-Furthermore, some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they recollect their past lives for as many as ten eons of the expansion and contraction of the cosmos, 
++Furthermore, some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they recollect their past lives for as many as ten eons of the expansion and contraction of the cosmos, 
 @@ -1,2 +1,2 @@ dn28:15.18
  PLI: Puna caparaṁ, bhante, idhekacco samaṇo vā brāhmaṇo vā ātappamanvāya …pe… tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte anekavihitaṁ pubbenivāsaṁ anussarati. 
--Furthermore, some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they recollect their past lives for as many as forty eons of the expansion and contraction of the cosmos, 
-+Furthermore, some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they recollect their past lives for as many as forty eons of the expansion and contraction of the cosmos, 
+-Furthermore, some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they recollect their past lives for as many as forty eons of the expansion and contraction of the cosmos, 
++Furthermore, some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they recollect their past lives for as many as forty eons of the expansion and contraction of the cosmos, 
 @@ -1,2 +1,2 @@ dn28:16.2
  PLI: Idha, bhante, ekacco samaṇo vā brāhmaṇo vā ātappamanvāya …pe… tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte anekavihitaṁ pubbenivāsaṁ anussarati. 
--It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they recollect their many kinds of past lives. 
-+It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they recollect their many kinds of past lives. 
+-It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they recollect their many kinds of past lives. 
++It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they recollect their many kinds of past lives. 
 @@ -1,2 +1,2 @@ dn28:17.2
  PLI: Idha, bhante, ekacco samaṇo vā brāhmaṇo vā ātappamanvāya …pe… tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte dibbena cakkhunā visuddhena atikkantamānusakena satte passati cavamāne upapajjamāne 
--It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that with clairvoyance that is purified and superhuman, they see sentient beings passing away and being reborn— 
-+It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that with clairvoyance that is purified and superhuman, they see sentient beings passing away and being reborn— 
+-It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that with clairvoyance that is purified and superhuman, they see sentient beings passing away and being reborn— 
++It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that with clairvoyance that is purified and superhuman, they see sentient beings passing away and being reborn— 
 @@ -1,2 +1,2 @@ dn28:18.6
  PLI: idha, bhante, ekacco samaṇo vā brāhmaṇo vā ātappamanvāya …pe… tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte anekavihitaṁ iddhividhaṁ paccanubhoti—
--It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they wield the many kinds of psychic power: 
-+It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that they wield the many kinds of psychic power: 
+-It’s when some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they wield the many kinds of psychic power: 
++It’s when some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that they wield the many kinds of psychic power: 
 --- sujato/sutta/dn/dn29_translation-en-sujato.json
 +++ sujato/sutta/dn/dn29_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn29:40.3
@@ -1110,12 +1110,12 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +++ sujato/sutta/mn/mn136_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn136:9.1
  PLI: Idhānanda, ekacco samaṇo vā brāhmaṇo vā ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati yathāsamāhite citte dibbena cakkhunā visuddhena atikkantamānusakena amuṁ puggalaṁ passati—
--Now, some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that it gives rise to clairvoyance that is purified and superhuman. With that clairvoyance they see that individual 
-+Now, some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that it gives rise to clairvoyance that is purified and superhuman. With that clairvoyance they see that individual 
+-Now, some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that it gives rise to clairvoyance that is purified and superhuman. With that clairvoyance they see that individual 
++Now, some ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that it gives rise to clairvoyance that is purified and superhuman. With that clairvoyance they see that individual 
 @@ -1,2 +1,2 @@ mn136:10.1
  PLI: Idha panānanda, ekacco samaṇo vā brāhmaṇo vā ātappamanvāya padhānamanvāya anuyogamanvāya appamādamanvāya sammāmanasikāramanvāya tathārūpaṁ cetosamādhiṁ phusati yathāsamāhite citte dibbena cakkhunā visuddhena atikkantamānusakena amuṁ puggalaṁ passati—
--But some other ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that it gives rise to clairvoyance that is purified and superhuman. With that clairvoyance they see that individual 
-+But some other ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences a concentration of the heart of such a kind that it gives rise to clairvoyance that is purified and superhuman. With that clairvoyance they see that individual 
+-But some other ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that it gives rise to clairvoyance that is purified and superhuman. With that clairvoyance they see that individual 
++But some other ascetic or brahmin—by dint of ardent, resolute, committed, and diligent effort, and right application of mind—experiences composure of the heart of such a kind that it gives rise to clairvoyance that is purified and superhuman. With that clairvoyance they see that individual 
 --- sujato/sutta/mn/mn141_translation-en-sujato.json
 +++ sujato/sutta/mn/mn141_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn141:30.2
@@ -2206,52 +2206,52 @@ Rule: atapi-ardent — 536 change(s), 214 file(s)
 +++ sujato/sutta/sn/sn47/sn47.4_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.4:2.3
  PLI: Etha tumhe, āvuso, kāye kāyānupassino viharatha ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, kāyassa yathābhūtaṁ ñāṇāya; 
--Please, reverends, meditate observing an aspect of the body—keen, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, so as to truly know the body. 
-+Please, reverends, meditate observing an aspect of the body—ardent, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, so as to truly know the body. 
+-Please, reverends, meditate observing an aspect of the body—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to truly know the body. 
++Please, reverends, meditate observing an aspect of the body—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to truly know the body. 
 @@ -1,2 +1,2 @@ sn47.4:2.4
  PLI: vedanāsu vedanānupassino viharatha ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, vedanānaṁ yathābhūtaṁ ñāṇāya; 
--Meditate observing an aspect of feelings—keen, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, so as to truly know feelings. 
-+Meditate observing an aspect of feelings—ardent, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, so as to truly know feelings. 
+-Meditate observing an aspect of feelings—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to truly know feelings. 
++Meditate observing an aspect of feelings—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to truly know feelings. 
 @@ -1,2 +1,2 @@ sn47.4:2.5
  PLI: citte cittānupassino viharatha ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, cittassa yathābhūtaṁ ñāṇāya; 
--Meditate observing an aspect of the mind—keen, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, so as to truly know the mind. 
-+Meditate observing an aspect of the mind—ardent, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, so as to truly know the mind. 
+-Meditate observing an aspect of the mind—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to truly know the mind. 
++Meditate observing an aspect of the mind—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to truly know the mind. 
 @@ -1,2 +1,2 @@ sn47.4:2.6
  PLI: dhammesu dhammānupassino viharatha ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, dhammānaṁ yathābhūtaṁ ñāṇāya. 
--Meditate observing an aspect of principles—keen, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, so as to truly know principles. 
-+Meditate observing an aspect of principles—ardent, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, so as to truly know principles. 
+-Meditate observing an aspect of principles—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to truly know principles. 
++Meditate observing an aspect of principles—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to truly know principles. 
 @@ -1,2 +1,2 @@ sn47.4:3.1
  PLI: Yepi te, bhikkhave, bhikkhū sekhā appattamānasā anuttaraṁ yogakkhemaṁ patthayamānā viharanti, tepi kāye kāyānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, kāyassa pariññāya; 
--Those bhikkhus who are trainees—who haven’t achieved their heart’s desire, but live aspiring to the supreme sanctuary from the yoke—also meditate observing an aspect of the body—keen, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, so as to fully understand the body. 
-+Those bhikkhus who are trainees—who haven’t achieved their heart’s desire, but live aspiring to the supreme sanctuary from the yoke—also meditate observing an aspect of the body—ardent, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, so as to fully understand the body. 
+-Those bhikkhus who are trainees—who haven’t achieved their heart’s desire, but live aspiring to the supreme sanctuary from the yoke—also meditate observing an aspect of the body—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to fully understand the body. 
++Those bhikkhus who are trainees—who haven’t achieved their heart’s desire, but live aspiring to the supreme sanctuary from the yoke—also meditate observing an aspect of the body—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to fully understand the body. 
 @@ -1,2 +1,2 @@ sn47.4:3.2
  PLI: vedanāsu vedanānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, vedanānaṁ pariññāya; 
--They meditate observing an aspect of feelings—keen, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, so as to fully understand feelings. 
-+They meditate observing an aspect of feelings—ardent, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, so as to fully understand feelings. 
+-They meditate observing an aspect of feelings—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to fully understand feelings. 
++They meditate observing an aspect of feelings—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to fully understand feelings. 
 @@ -1,2 +1,2 @@ sn47.4:3.3
  PLI: citte cittānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, cittassa pariññāya; 
--They meditate observing an aspect of the mind—keen, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, so as to fully understand the mind. 
-+They meditate observing an aspect of the mind—ardent, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, so as to fully understand the mind. 
+-They meditate observing an aspect of the mind—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to fully understand the mind. 
++They meditate observing an aspect of the mind—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to fully understand the mind. 
 @@ -1,2 +1,2 @@ sn47.4:3.4
  PLI: dhammesu dhammānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, dhammānaṁ pariññāya. 
--They meditate observing an aspect of principles—keen, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, so as to fully understand principles. 
-+They meditate observing an aspect of principles—ardent, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, so as to fully understand principles. 
+-They meditate observing an aspect of principles—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to fully understand principles. 
++They meditate observing an aspect of principles—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, so as to fully understand principles. 
 @@ -1,2 +1,2 @@ sn47.4:4.1
  PLI: Yepi te, bhikkhave, bhikkhū arahanto khīṇāsavā vusitavanto katakaraṇīyā ohitabhārā anuppattasadatthā parikkhīṇabhavasaṁyojanā sammadaññāvimuttā, tepi kāye kāyānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, kāyena visaṁyuttā; 
--Those bhikkhus who are perfected—who have ended the defilements, completed the spiritual journey, done what had to be done, laid down the burden, achieved their own goal, utterly ended the fetter of continued existence, and are rightly freed through enlightenment—also meditate observing an aspect of the body—keen, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, detached from the body. 
-+Those bhikkhus who are perfected—who have ended the defilements, completed the spiritual journey, done what had to be done, laid down the burden, achieved their own goal, utterly ended the fetter of continued existence, and are rightly freed through enlightenment—also meditate observing an aspect of the body—ardent, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, detached from the body. 
+-Those bhikkhus who are perfected—who have ended the defilements, completed the spiritual journey, done what had to be done, laid down the burden, achieved their own goal, utterly ended the fetter of continued existence, and are rightly freed through enlightenment—also meditate observing an aspect of the body—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, detached from the body. 
++Those bhikkhus who are perfected—who have ended the defilements, completed the spiritual journey, done what had to be done, laid down the burden, achieved their own goal, utterly ended the fetter of continued existence, and are rightly freed through enlightenment—also meditate observing an aspect of the body—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, detached from the body. 
 @@ -1,2 +1,2 @@ sn47.4:4.2
  PLI: vedanāsu vedanānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, vedanāhi visaṁyuttā; 
--They meditate observing an aspect of feelings—keen, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, detached from feelings. 
-+They meditate observing an aspect of feelings—ardent, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, detached from feelings. 
+-They meditate observing an aspect of feelings—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, detached from feelings. 
++They meditate observing an aspect of feelings—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, detached from feelings. 
 @@ -1,2 +1,2 @@ sn47.4:4.3
  PLI: citte cittānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, cittena visaṁyuttā; 
--They meditate observing an aspect of the mind—keen, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, detached from the mind. 
-+They meditate observing an aspect of the mind—ardent, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, detached from the mind. 
+-They meditate observing an aspect of the mind—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, detached from the mind. 
++They meditate observing an aspect of the mind—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, detached from the mind. 
 @@ -1,2 +1,2 @@ sn47.4:4.4
  PLI: dhammesu dhammānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, dhammehi visaṁyuttā. 
--They meditate observing an aspect of principles—keen, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, detached from principles. 
-+They meditate observing an aspect of principles—ardent, clearly comprehending, at one, with minds that are calm, concentrated and unified in samādhi, detached from principles. 
+-They meditate observing an aspect of principles—keen, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, detached from principles. 
++They meditate observing an aspect of principles—ardent, clearly comprehending, at one, with minds that are calm, composed and unified in samādhi, detached from principles. 
 --- sujato/sutta/sn/sn47/sn47.50_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.50_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.50:2.2

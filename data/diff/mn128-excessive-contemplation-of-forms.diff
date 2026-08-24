@@ -1,0 +1,8 @@
+Rule: mn128-excessive-contemplation-of-forms — 1 change(s), 1 file(s)
+
+--- sujato/sutta/mn/mn128_translation-en-sujato.json
++++ sujato/sutta/mn/mn128_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn128:26.6
+ PLI: ‘atinijjhāyitattaṁ kho me rūpānaṁ udapādi, atinijjhāyitattādhikaraṇañca pana me rūpānaṁ samādhi cavi. 
+-‘Excessive composure on forms arose in me, and because of that my composure fell away. 
++‘Excessive immersion on forms arose in me, and because of that my composure fell away. 
