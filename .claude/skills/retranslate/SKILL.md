@@ -92,11 +92,12 @@ upstream) and writes `data/sujato.post/` (generated).
    reviewed a real upstream change. Rebaselining it as a side effect of a rule edit silently blinds
    the next `update-data plan`.
 
-10. **Update `docs/translation-changes.md`** — the plain-language summary written for a reader, not a
-    maintainer. A term rule earns a row in its table (Pali, his word, ours, one line of why); a
-    segment override usually earns only a bump to the approximate count in "Reworded lines", unless
-    it's a new *kind* of rewording. Nothing tests or anchors this file, so it goes in the same commit
-    as the rule. Keep it short — the full footprint is in `data/diff/`.
+10. **Update the table in `docs/translation-changes.md`** — the plain-language summary written for a
+    reader, not a maintainer. A term rule earns a row (Pali, his word, ours) and nothing else; a
+    segment override earns nothing at all. **Add no prose.** The reasoning belongs in the rule's own
+    comment in `retranslation.mjs`, and the full footprint in `data/diff/` — this page is a list of
+    what changed, deliberately kept to the table and the few paragraphs already framing it. Nothing
+    tests or anchors this file, so it goes in the same commit as the rule.
 
 ## Changing a term's rendering
 
