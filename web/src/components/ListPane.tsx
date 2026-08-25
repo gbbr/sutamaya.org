@@ -8,6 +8,7 @@ import { usePointerDragSession } from '../hooks/usePointerDragSession';
 import { listItemsFor, nodeBlurb, nodeLabel, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
+import { MatchedText } from './MatchedText';
 import { SuttaRowChips } from './SuttaRowChips';
 import { ListMembershipPopover } from './ListMembershipPopover';
 import type { Sutta } from '../lib/types';
@@ -40,6 +41,9 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
   const itemRowRefs = useRef<Map<string, HTMLDivElement>>(new Map());
 
   const searching = query.trim().length > 0;
+  // What the rows below mark up. Empty while browsing: this pane draws browse rows and search
+  // results through the same map, and only a result has words worth marking.
+  const rowQuery = searching ? query : '';
   const currentList = !searching ? lists.find((l) => String(l.id) === nodeId) : undefined;
   // "Highlights"/"Notes" membership is redundant here — a row already shows note text and
   // highlight-count circles directly, so the auto lists never appear as chips.
@@ -411,20 +415,26 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                 onClick={() => onOpen(openTargets.get(id) ?? id)}
               >
                 <span className={`block ${reordering ? '' : 'pr-14'}`}>
-                  <span className="font-sans text-ui-md font-bold tracking-[.02em] mr-2.5 text-ink-3">{s.ref}</span>
-                  <span className="text-ui-lg leading-[1.3] font-serif">{s.en}</span>
+                  <span className="font-sans text-ui-md font-bold tracking-[.02em] mr-2.5 text-ink-3">
+                    <MatchedText text={s.ref} query={rowQuery} />
+                  </span>
+                  <span className="text-ui-lg leading-[1.3] font-serif">
+                    <MatchedText text={s.en} query={rowQuery} />
+                  </span>
                 </span>
                 <span
                   className={`block font-serif text-ui-base italic mt-[3px] text-accent-text ${reordering ? '' : 'pr-14'}`}
                 >
-                  {s.pali}
+                  <MatchedText text={s.pali} query={rowQuery} />
                 </span>
                 {note ? (
                   <span className="block font-serif text-ui-md leading-[1.45] mt-[7px] pl-[10px] border-l-2 border-ink/30">
-                    {note}
+                    <MatchedText text={note} query={rowQuery} />
                   </span>
                 ) : (
-                  <span className="block text-ui-md leading-[1.5] mt-1.5 text-ink-2">{s.blurb}</span>
+                  <span className="block text-ui-md leading-[1.5] mt-1.5 text-ink-2">
+                    <MatchedText text={s.blurb} query={rowQuery} />
+                  </span>
                 )}
                 <SuttaRowChips chips={chips} hlCount={hlCount} />
               </button>

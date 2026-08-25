@@ -436,8 +436,11 @@ describe('search', () => {
     await userEvent.click(screen.getByLabelText('Search'));
     const input = screen.getByPlaceholderText(SEARCH_PLACEHOLDER);
     await userEvent.type(input, 'hindrance');
-    expect(screen.getByText('Overcoming the Hindrances')).toBeInTheDocument();
-    await userEvent.click(screen.getByText('Overcoming the Hindrances'));
+    // A result's title is split around the matched words (see MatchedText), so it is no longer
+    // one text node — match on the element's own text instead of a bare string.
+    const hitTitle = () => screen.getByText((_, el) => el?.tagName === 'SPAN' && el.textContent === 'Overcoming the Hindrances');
+    expect(hitTitle()).toBeInTheDocument();
+    await userEvent.click(hitTitle());
     expect(onOpenSutta).toHaveBeenCalledWith('an1.1-10');
     // Deliberately *not* cleared here — clearing it synchronously would flash the bare tree for
     // a frame before the (deferred) navigation actually replaces this page with the reader. It's

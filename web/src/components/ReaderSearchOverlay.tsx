@@ -5,6 +5,7 @@ import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
 import { SEARCH_PLACEHOLDER, SEARCH_RESULTS_CAP } from '../lib/corpus';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
+import { MatchedText } from './MatchedText';
 import { SuttaRowChips } from './SuttaRowChips';
 import type { ThemeColors } from '../lib/types';
 
@@ -106,19 +107,21 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
               >
                 <span>
                   <span className="font-sans text-ui-xs font-bold mr-2.5" style={{ color: theme.dim }}>
-                    {h.sutta.ref}
+                    <MatchedText text={h.sutta.ref} query={query} theme={theme} />
                   </span>
-                  <span className="text-ui-lg font-semibold leading-[1.3]">{h.sutta.en}</span>
+                  <span className="text-ui-lg font-semibold leading-[1.3]">
+                    <MatchedText text={h.sutta.en} query={query} theme={theme} />
+                  </span>
                 </span>
                 <span className="font-serif text-ui-base italic" style={{ color: theme.pali }}>
-                  {h.sutta.pali}
+                  <MatchedText text={h.sutta.pali} query={query} theme={theme} />
                 </span>
                 {(notes[h.id] || h.sutta.blurb) && (
                   <span
                     className={`text-ui-base leading-[1.45] mt-[3px] ${notes[h.id] ? 'pl-[8px] border-l-2' : 'italic'}`}
                     style={{ color: theme.dim, borderColor: notes[h.id] ? theme.rule : undefined }}
                   >
-                    {notes[h.id] || h.sutta.blurb}
+                    <MatchedText text={notes[h.id] || h.sutta.blurb} query={query} theme={theme} />
                   </span>
                 )}
                 <SuttaRowChips chips={chips} hlCount={hlCount} theme={theme} />
