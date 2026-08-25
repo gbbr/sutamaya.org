@@ -30,6 +30,18 @@ export const SN_GROUPS = [
   { id: 'sn-mahavaggasamyutta', label: 'The Great Chapter' },
 ];
 
+// Chapters whose only vagga is the chapter itself under a second name — Bhikkhu Sujato translates
+// the two levels independently, so the same Pali comes out worded differently at each ("Cloud Gods"
+// / "Gods of the Clouds") and they don't collapse on an equal-label test the way the other sole
+// vaggas do (see buildCategoryRows in build-corpus.mjs, which drops the vagga row either way).
+// The value is the label the chapter keeps: the more descriptive of the two names.
+export const RESTATED_CHAPTERS = {
+  sn8: 'Poet Vaṅgīsa', //           Vaṅgīsasaṁyutta   / Vaṅgīsavagga
+  sn32: 'Gods of the Clouds', //    Valāhakasaṁyutta  / Valāhakavagga
+  sn41: 'Citta the Householder', // Cittasaṁyutta     / Cittavagga
+  sn44: 'Undeclared Points', //     Abyākatasaṁyutta  / Abyākatavagga
+};
+
 // Selected 6 key Khuddaka Nikāya books, in canonical order. Each is flattened to its leaf documents
 // one level down (see flattenLeaves in build-corpus.mjs) — no intermediate vagga/nipāta rows.
 export const KN_BOOKS = [
