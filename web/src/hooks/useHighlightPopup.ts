@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useUserData } from '../context/UserDataContext';
 import { groupHighlights, buildCrossSegmentRanges, type HlRange } from '../lib/highlights';
 import type { SegmentFile } from '../lib/corpus';
@@ -54,6 +54,13 @@ function offsetWithin(seg: HTMLElement, container: Node, containerOffset: number
 export function useHighlightPopup(suttaId: string | undefined, highlights: Highlight[], segments: SegmentFile[] | null = null) {
   const { setHighlightRanges } = useUserData();
   const [pop, setPop] = useState<PopState | null>(null);
+
+  // Stepping to another sutta — by swipe, Prev/Next, keyboard or breadcrumb — leaves the popup
+  // anchored to text that is no longer on screen, and its ranges index into the sutta it was
+  // opened in, so picking a colour would write them into the new one.
+  useEffect(() => {
+    setPop(null);
+  }, [suttaId]);
 
   // Clicking directly on an already-highlighted span (as opposed to dragging a fresh selection)
   // means "act on this highlight" — for a cross-segment one, that has to be every segment it
