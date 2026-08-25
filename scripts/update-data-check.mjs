@@ -33,7 +33,7 @@ import {
   blue,
   dim,
 } from './lib/dataSync.js';
-import { RULES_DIR, RETRANSLATION_PATH, loadRules, loadSidecar, isTermRule, isSegmentRule, segmentsOf, scopeOf, formsMatch, applyTermRules, buildSegmentIndex } from './lib/retranslation.js';
+import { RULES_DIR, RETRANSLATION_PATH, loadRules, loadSidecar, isTermRule, isSegmentRule, isBlurbRule, segmentsOf, scopeOf, formsMatch, applyTermRules, buildSegmentIndex, buildBlurbIndex } from './lib/retranslation.js';
 import { triageRule } from './update-data-triage.mjs';
 
 function diffKeys(oldKeys, newKeys) {
@@ -193,10 +193,10 @@ function checkStaleTriage(rules, sujatoUpstreamByRelPath, rulesDir) {
 }
 
 // Every term rule that finds no match anywhere in `sujatoUpstreamByRelPath` (restricted to its own
-// scope), and every segment rule whose `from` no longer anchors — resolved against upstream (via
-// bilaraRoot), before anything is copied, so a broken rule surfaces at the same point a structural
-// problem would rather than only after `update-data post` runs against already-copied-in local data.
-// Segment rules resolve their file via the *local* segment index (data/sujato is expected to still
+// scope), and every segment rule or blurb opener whose `from` no longer anchors — resolved against
+// upstream (via bilaraRoot), before anything is copied, so a broken rule surfaces at the same point
+// a structural problem would rather than only after `update-data post` runs against already-copied-in
+// local data. Both kinds resolve their file via the *local* index (data/sujato is expected to still
 // have every override's segment at its current relPath — a renamed/relocated file is what the
 // structural upstreamIssues pass above already catches).
 //
@@ -205,7 +205,7 @@ function checkStaleTriage(rules, sujatoUpstreamByRelPath, rulesDir) {
 // upstream segment here before comparing. Comparing against raw upstream instead would fail every
 // override whose line contains a term any rule rewrites, which is most of them — an override usually
 // exists *because* a term rule got that line wrong.
-function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, rulesDir) {
+function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, localBlurbIndex, rulesDir) {
   const issues = [];
   const sidecars = new Map(rules.filter(isTermRule).map((rule) => [rule.id, loadSidecar(rule.id, rulesDir)]));
 
@@ -245,6 +245,39 @@ function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, rul
       if (anchorNow !== rule.from) {
         issues.push(describeAnchorBreak({ rule, segment, upstreamNow, anchorNow, chunks: rewritten?.chunks ?? [] }));
       }
+    }
+  }
+
+  // A blurb opener anchors on a prefix rather than the whole value, so the break is reported as the
+  // two openings side by side — the paragraph behind them is long, unchanged, and not what drifted.
+  for (const rule of rules.filter(isBlurbRule)) {
+    for (const opener of rule.openers) {
+      const relPath = localBlurbIndex.get(opener.blurb);
+      if (!relPath) {
+        issues.push(yellow(`${bold(rule.id)} · ${opener.blurb}: blurb not found in local data/sujato — can't verify against upstream.`));
+        continue;
+      }
+      const upstreamObj = sujatoUpstreamByRelPath.get(relPath);
+      if (!upstreamObj) continue; // relPath wasn't read this run (not in snapshot.files) — nothing to compare
+      const upstreamNow = upstreamObj[opener.blurb];
+      const anchorNow =
+        typeof upstreamNow === 'string'
+          ? applyTermRules(upstreamNow, { treeName: 'sujato/blurb', segmentId: opener.blurb, rules, sidecars }).result
+          : null;
+      if (typeof anchorNow !== 'string') {
+        issues.push([`${bold(rule.id)} · ${opener.blurb}`, `      expected  ${dim(opener.from)}`, `      found     ${red('(blurb removed upstream)')}`].join('\n'));
+        continue;
+      }
+      if (anchorNow.startsWith(opener.from)) continue;
+      issues.push(
+        [
+          `${bold(rule.id)} · ${opener.blurb}`,
+          `  Upstream reworded the opening this rule trims, so it no longer anchors.`,
+          ``,
+          `      expected  ${dim(opener.from)}`,
+          `      found     ${red(anchorNow.slice(0, Math.max(opener.from.length, 120)))}`,
+        ].join('\n'),
+      );
     }
   }
 
@@ -338,7 +371,8 @@ export async function runCheck({ bilaraRoot, dataDirs = DATA_DIRS, snapshotPath 
   // rather than importing SUJATO_DIR directly, so a fixture dataDirs override (tests) is honored.
   const rules = await loadRules(retranslationPath);
   const localSegmentIndex = buildSegmentIndex(dataDirs.sujato);
-  const ruleIssues = checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, rulesDir);
+  const localBlurbIndex = buildBlurbIndex(dataDirs.sujato);
+  const ruleIssues = checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, localBlurbIndex, rulesDir);
   const staleTriage = checkStaleTriage(rules, sujatoUpstreamByRelPath, rulesDir);
 
   // staleTriage is deliberately not folded in — see checkStaleTriage: it's reported, not failed on.

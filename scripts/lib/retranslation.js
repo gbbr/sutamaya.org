@@ -62,6 +62,23 @@ export async function loadRules(retranslationPath = RETRANSLATION_PATH) {
       if (rule.segment && rule.segments) {
         throw new Error(`Segment rule "${rule.id}" sets both segment and segments — use one.`);
       }
+    } else if (rule.kind === 'blurb') {
+      if (!Array.isArray(rule.openers) || rule.openers.length === 0) {
+        throw new Error(`Blurb rule "${rule.id}" needs a non-empty openers array.`);
+      }
+      const seenBlurbs = new Set();
+      for (const opener of rule.openers) {
+        if (!opener.blurb || !opener.from || typeof opener.to !== 'string') {
+          throw new Error(`Blurb rule "${rule.id}" has an opener without blurb, from and to.`);
+        }
+        if (opener.from === opener.to) {
+          throw new Error(`Blurb rule "${rule.id}" opener ${opener.blurb} rewrites its from to itself.`);
+        }
+        if (seenBlurbs.has(opener.blurb)) {
+          throw new Error(`Blurb rule "${rule.id}" names ${opener.blurb} twice — one opener per blurb.`);
+        }
+        seenBlurbs.add(opener.blurb);
+      }
     } else {
       if (!Array.isArray(rule.forms) || rule.forms.length === 0) {
         throw new Error(`Term rule "${rule.id}" needs a non-empty forms array.`);
@@ -79,8 +96,9 @@ export async function loadRules(retranslationPath = RETRANSLATION_PATH) {
   return rules;
 }
 
-export const isTermRule = (rule) => rule.kind !== 'segment';
+export const isTermRule = (rule) => rule.kind !== 'segment' && rule.kind !== 'blurb';
 export const isSegmentRule = (rule) => rule.kind === 'segment';
+export const isBlurbRule = (rule) => rule.kind === 'blurb';
 
 // The segments one override applies to. `segment: 'x'` and `segments: ['x', 'y']` are the same
 // thing, one entry versus several — the plural is for a line the corpus repeats verbatim (a stock
@@ -259,6 +277,16 @@ export function applySegmentOverride(value, rule) {
   return { result: rule.to, applied: true };
 }
 
+// One opener of a blurb rule, applied to that blurb's post-term-rule text. `from` anchors as a
+// *prefix* rather than the whole value, because a blurb is a paragraph and only its opening span
+// is being rewritten — quoting the rest of it into the rule would put a page of unchanged prose in
+// retranslation.mjs for every entry. Prefix and not a free-floating substring so the anchor stays
+// unambiguous: there is one place it can match.
+export function applyBlurbOpener(value, opener) {
+  if (typeof value !== 'string' || !value.startsWith(opener.from)) return { result: value, applied: false };
+  return { result: opener.to + value.slice(opener.from.length), applied: true };
+}
+
 // segment id ("dn22:1.9", "an1.5:1.2") -> its uid, i.e. everything before the first ':'.
 export function uidOf(segmentId) {
   return segmentId.slice(0, segmentId.indexOf(':'));
@@ -276,7 +304,8 @@ export function uidOf(segmentId) {
 // annotates (a note on dn1:1.1 is filed under the key 'dn1:1.1', same as the segment itself), so a
 // single id->file map spanning sutta+notes+name+blurb together would be ambiguous — whichever tree
 // happened to be walked last for a given id would silently win. A segment override therefore
-// targets the main translation only; retargeting a note or blurb isn't something this resolves.
+// targets the main translation only; retargeting a note isn't something this resolves. Blurbs are
+// addressable, but through their own index below rather than this one.
 //
 // relPath keys throughout this function (and this whole module) are logical, in the same
 // 'sujato/sutta/dn/dn1_translation-en-sujato.json' shape lib/dataSync.js's own relPath/localPathFor
@@ -289,6 +318,23 @@ export function buildSegmentIndex(sujatoDir = SUJATO_DIR) {
   if (!fs.existsSync(suttaDir)) return index;
   for (const fullPath of walkJsonFiles(suttaDir)) {
     const relPath = 'sujato/sutta/' + path.relative(suttaDir, fullPath).split(path.sep).join('/');
+    const obj = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+    for (const key of Object.keys(obj)) index.set(key, relPath);
+  }
+  return index;
+}
+
+// Maps every blurb id in sujato/blurb to its file, in the same logical relPath shape
+// buildSegmentIndex uses. Its own index rather than an entry in that one: blurb keys are
+// namespaced by collection ('sn-blurbs:sn12'), so they can't collide with a sutta segment id or
+// with each other, but keeping the two maps apart is what keeps the sutta index free of the
+// ambiguity the notes tree would introduce. Cheap — seven files.
+export function buildBlurbIndex(sujatoDir = SUJATO_DIR) {
+  const index = new Map();
+  const blurbDir = path.join(sujatoDir, 'blurb');
+  if (!fs.existsSync(blurbDir)) return index;
+  for (const fullPath of walkJsonFiles(blurbDir)) {
+    const relPath = 'sujato/blurb/' + path.relative(blurbDir, fullPath).split(path.sep).join('/');
     const obj = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
     for (const key of Object.keys(obj)) index.set(key, relPath);
   }

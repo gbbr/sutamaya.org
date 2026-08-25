@@ -17,11 +17,14 @@ import {
   loadRules,
   isTermRule,
   isSegmentRule,
+  isBlurbRule,
   segmentsOf,
   loadSidecar,
   applyTermRules,
   applySegmentOverride,
+  applyBlurbOpener,
   buildSegmentIndex,
+  buildBlurbIndex,
   paliTextFor,
 } from './lib/retranslation.js';
 
@@ -46,6 +49,7 @@ export async function runPost({
   const rules = await loadRules(retranslationPath);
   const termRules = rules.filter(isTermRule);
   const segmentRules = rules.filter(isSegmentRule);
+  const blurbRules = rules.filter(isBlurbRule);
   const sidecars = new Map(termRules.map((r) => [r.id, loadSidecar(r.id, rulesDir)]));
 
   // Load every tracked file up front, keyed by the same logical 'sujato/sutta/...' relPath
@@ -121,6 +125,34 @@ export async function runPost({
   }
   for (const rule of segmentRules) if (!ruleCounts.has(rule.id)) ruleCounts.set(rule.id, 0);
 
+  // Blurb openers, last of all and on the same terms as a segment override: an opener that no
+  // longer anchors is a hard fail, not a skip.
+  if (blurbRules.length > 0) {
+    const blurbIndex = buildBlurbIndex(sujatoDir);
+    for (const rule of blurbRules) {
+      for (const opener of rule.openers) {
+        const relPath = blurbIndex.get(opener.blurb);
+        if (!relPath) {
+          brokenOverrides.push({ id: rule.id, segment: opener.blurb, reason: 'blurb id not found in data/sujato' });
+          continue;
+        }
+        const obj = objects.get(relPath);
+        const current = obj[opener.blurb];
+        const { result, applied } = applyBlurbOpener(current, opener);
+        if (!applied) {
+          brokenOverrides.push({ id: rule.id, segment: opener.blurb, reason: "opener's from no longer opens the blurb", from: opener.from, current });
+          continue;
+        }
+        if (diff) recordOriginal(relPath, opener.blurb, current);
+        obj[opener.blurb] = result;
+        changedFiles.add(relPath);
+        ruleCounts.set(rule.id, (ruleCounts.get(rule.id) ?? 0) + 1);
+        if (diff) diffEntries.push({ ruleId: rule.id, relPath, segmentId: opener.blurb, from: current, to: result });
+      }
+    }
+  }
+  for (const rule of blurbRules) if (!ruleCounts.has(rule.id)) ruleCounts.set(rule.id, 0);
+
   const ok = deadRules.length === 0 && brokenOverrides.length === 0;
 
   if (ok) {
@@ -136,7 +168,7 @@ export async function runPost({
     writeDiffFiles({
       diffDir,
       diffEntries,
-      rules: [...termRules, ...segmentRules],
+      rules: [...termRules, ...segmentRules, ...blurbRules],
       ruleCounts,
       deadRules,
       originals,
@@ -245,9 +277,9 @@ function writeDiffFiles({ diffDir, diffEntries, rules, ruleCounts, deadRules, or
     const lines = [`Rule: ${ruleId} — ${entries.length} change(s), ${byFile.size} file(s)`, ''];
     for (const relPath of [...byFile.keys()].sort()) {
       lines.push(`--- ${relPath}`, `+++ ${relPath}`);
-      // Segment-override entries carry the whole before/after value directly (`from`/`to`) rather
-      // than chunks — the rule replaces the entire segment, so there's no surrounding context to
-      // isolate a span within.
+      // Segment-override and blurb-opener entries carry the whole before/after value directly
+      // (`from`/`to`) rather than chunks — the rule rewrites the value as a whole, so there's no
+      // surrounding context to isolate a span within.
       for (const { segmentId, chunks, from, to } of byFile.get(relPath)) {
         pushHunk(lines, {
           relPath,

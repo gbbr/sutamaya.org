@@ -8,7 +8,7 @@ import { runCheck } from './update-data-check.mjs';
 import { runCopy } from './update-data-copy.mjs';
 import { runPost } from './update-data-post.mjs';
 import { runAccept } from './update-data-accept.mjs';
-import { applyRuleToChunks, applyTermRules, applySegmentOverride, isPermitted, chunksToString, loadRules, loadSidecar, isTermRule, isSegmentRule, segmentsOf, scopeOf, RETRANSLATION_PATH } from './lib/retranslation.js';
+import { applyRuleToChunks, applyTermRules, applySegmentOverride, applyBlurbOpener, isPermitted, chunksToString, loadRules, loadSidecar, isTermRule, isSegmentRule, isBlurbRule, segmentsOf, scopeOf, RETRANSLATION_PATH } from './lib/retranslation.js';
 
 // Everything here runs against throwaway temp-dir fixtures, never the real data/{sujato,pali,html}
 // or a real SC_DATA_PATH checkout — check/copy/post/snapshot all accept explicit dataDirs/
@@ -591,6 +591,75 @@ describe('applySegmentOverride', () => {
 
   it('refuses (does not apply) when "from" no longer matches — the broken-anchor case', () => {
     expect(applySegmentOverride('different text', rule)).toEqual({ result: 'different text', applied: false });
+  });
+});
+
+describe('blurb openers', () => {
+  const opener = { blurb: 'sn-blurbs:sn13', from: 'The “Linked Discourses” contains 11 discourses on ', to: 'Discourses on ' };
+
+  it('replaces the opening prefix and keeps the rest of the paragraph', () => {
+    const value = `${opener.from}the value of realizing the Dhamma. Each discourse features a simile.`;
+    expect(applyBlurbOpener(value, opener)).toEqual({
+      result: 'Discourses on the value of realizing the Dhamma. Each discourse features a simile.',
+      applied: true,
+    });
+  });
+
+  it('refuses when "from" is no longer the opening — the broken-anchor case', () => {
+    // Present, but not at the start: an opener anchors on the prefix and nowhere else.
+    expect(applyBlurbOpener(`Note: ${opener.from}the value…`, opener).applied).toBe(false);
+    expect(applyBlurbOpener('Upstream reworded this opening.', opener).applied).toBe(false);
+  });
+
+  it('rejects a malformed rule', async () => {
+    const root = fs.mkdtempSync(path.join(os.tmpdir(), 'update-data-blurb-'));
+    const empty = writeRulesFixture(root, `[{ id: 'x', kind: 'blurb', why: 't', openers: [] }]`);
+    await expect(loadRules(empty)).rejects.toThrow(/non-empty openers array/);
+    const noFrom = writeRulesFixture(root, `[{ id: 'x', kind: 'blurb', why: 't', openers: [{ blurb: 'a:1', to: 'b' }] }]`);
+    await expect(loadRules(noFrom)).rejects.toThrow(/without blurb, from and to/);
+    const twice = writeRulesFixture(
+      root,
+      `[{ id: 'x', kind: 'blurb', why: 't', openers: [{ blurb: 'a:1', from: 'a', to: 'b' }, { blurb: 'a:1', from: 'c', to: 'd' }] }]`,
+    );
+    await expect(loadRules(twice)).rejects.toThrow(/twice — one opener per blurb/);
+    fs.rmSync(root, { recursive: true, force: true });
+  });
+
+  it('post trims a blurb opener, anchored on post-processed text', async () => {
+    const fx = makeFixture();
+    // The fixture blurb is 'A mendicant teaches immersion.', so `from` has to be what the two
+    // fixture term rules make of it — the same rule the shipped openers follow.
+    const retranslationPath = writeRulesFixture(
+      fx.root,
+      `[
+        { id: 'mendicant-bhikkhu', why: 'fixture', mode: 'deny', forms: [['mendicant', 'bhikkhu']] },
+        { id: 'immersion-concentration', why: 'fixture', mode: 'deny', forms: [['immersion', 'concentration']] },
+        { id: 'blurb-openers', kind: 'blurb', why: 'fixture', openers: [{ blurb: 'dn-blurbs:dn1', from: 'A bhikkhu teaches ', to: 'Teaching about ' }] },
+      ]`,
+    );
+
+    const result = await runPost({ sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir, retranslationPath });
+
+    expect(result.ok).toBe(true);
+    expect(readJson(path.join(fx.postDir, 'blurb/dn-blurbs_root-en.json'))).toEqual({ 'dn-blurbs:dn1': 'Teaching about concentration.' });
+
+    // Upstream rewording the opening is a hard fail, not a silent skip.
+    writeJson(path.join(fx.dataDirs.sujato, 'blurb/dn-blurbs_root-en.json'), { 'dn-blurbs:dn1': 'One mendicant teaches immersion.' });
+    const drifted = await runPost({ sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir, retranslationPath });
+    expect(drifted.ok).toBe(false);
+    expect(drifted.brokenOverrides).toMatchObject([{ id: 'blurb-openers', segment: 'dn-blurbs:dn1' }]);
+    fs.rmSync(fx.root, { recursive: true, force: true });
+  });
+
+  it('every shipped opener rewrites its own from to its own to', async () => {
+    const rules = await loadRules(RETRANSLATION_PATH);
+    const blurbRules = rules.filter(isBlurbRule);
+    expect(blurbRules.length).toBeGreaterThan(0);
+    for (const rule of blurbRules) {
+      for (const o of rule.openers) {
+        expect(applyBlurbOpener(o.from, o), `${rule.id} · ${o.blurb}`).toEqual({ result: o.to, applied: true });
+      }
+    }
   });
 });
 

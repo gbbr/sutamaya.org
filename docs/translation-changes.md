@@ -37,6 +37,14 @@ A term is changed everywhere it appears, but only where it really is that Pali w
 "aware" also translates ordinary things that have nothing to do with *sampajañña*, and those are
 left alone.
 
+## Collection descriptions
+
+The paragraph introducing a collection is his too. Sixty-one of them open by naming the collection
+and counting its discourses — "The “Linked Discourses on the Truths” contains 131 discourses on the
+four noble truths…" — which is what the heading directly above it already says. That opening frame
+is trimmed, and the sentence starts from what it goes on to say. Nothing after the frame is
+changed.
+
 ## Seeing the changes
 
 Every rewrite is recorded in [`data/diff/`](../data/diff/), one file per rule, with the Pali of
