@@ -526,6 +526,20 @@ describe('tree expansion persistence', () => {
     expect(screen.getByText('Book of Ones')).toBeInTheDocument();
     expect(screen.getByText('Vagga One')).toBeInTheDocument();
   });
+
+  it('a collapse survives remounting onto the same node — leaving for Settings and coming back', async () => {
+    const { unmount } = renderHarness('an1-v1');
+    expect(screen.getByText('Vagga One')).toBeInTheDocument();
+    await userEvent.click(screen.getByText('Numbered Discourses')); // collapse the revealed chain
+    expect(screen.queryByText('Vagga One')).not.toBeInTheDocument();
+    unmount();
+
+    // Same node as the one persisted: a return to the pane, not a navigation to it, so the
+    // ancestors of `an1-v1` must stay closed rather than being force-revealed again.
+    renderHarness('an1-v1');
+    expect(screen.queryByText('Vagga One')).not.toBeInTheDocument();
+    expect(screen.queryByText('Book of Ones')).not.toBeInTheDocument();
+  });
 });
 
 describe('keyboard: x toggles Library / My Lists', () => {
@@ -537,6 +551,19 @@ describe('keyboard: x toggles Library / My Lists', () => {
     expect(screen.getByText('Suttas to study')).toBeInTheDocument();
     fireEvent.keyDown(window, { key: 'x' });
     expect(screen.getByText('Long Discourses')).toBeInTheDocument();
+  });
+
+  it('My Lists survives a remount onto the same node — leaving for Settings and coming back', () => {
+    const { unmount } = renderHarness('an1-v1');
+    fireEvent.keyDown(window, { key: 'x' });
+    expect(screen.getByText('Suttas to study')).toBeInTheDocument();
+    unmount();
+
+    // Flipping the toggle doesn't change nodeId, so this mount still arrives pointed at a
+    // corpus node. It's a return, not a navigation, and must not snap the pane to Library.
+    renderHarness('an1-v1');
+    expect(screen.getByText('Suttas to study')).toBeInTheDocument();
+    expect(screen.queryByText('Long Discourses')).not.toBeInTheDocument();
   });
 });
 

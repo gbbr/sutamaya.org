@@ -37,16 +37,24 @@ import { ListsTreeView } from './ListsTreeView';
 interface PersistedExpansion {
   corpus: string[];
   lists: string[];
+  // The node being browsed when this expansion was written, so the next mount can tell a deep
+  // link (a different node — open its ancestors) from a plain return to the pane (the same
+  // node — restore verbatim). Without it, leaving for Settings and coming back would re-open
+  // the ancestors of the last-visited node and silently undo a collapse made by hand.
+  node?: string;
 }
 
-// What the user expanded by hand, one id list per tree. Unioned at mount with the selected
-// node's ancestor chain, so a deep link opens its own ancestors whatever this device had open.
+// What the user expanded by hand, one id list per tree.
 function loadPersistedExpansion(): PersistedExpansion {
   try {
     const raw = localStorage.getItem(TREE_EXPANDED_KEY);
     if (raw) {
       const parsed = JSON.parse(raw) as Partial<PersistedExpansion>;
-      return { corpus: Array.isArray(parsed.corpus) ? parsed.corpus : [], lists: Array.isArray(parsed.lists) ? parsed.lists : [] };
+      return {
+        corpus: Array.isArray(parsed.corpus) ? parsed.corpus : [],
+        lists: Array.isArray(parsed.lists) ? parsed.lists : [],
+        node: typeof parsed.node === 'string' ? parsed.node : undefined,
+      };
     }
   } catch {
     // storage unavailable/corrupt — ignore
@@ -118,9 +126,13 @@ export function TreePane({
   // Expanded synchronously at mount, never via an effect: useScrollMemory restores in a layout
   // effect, so a tree still collapsed at that point clamps the restored offset back to 0.
   const [persistedExpansion] = useState(loadPersistedExpansion);
+  // Only a mount pointed at a *different* node than the one last persisted is a navigation
+  // (a deep link, a membership chip, a breadcrumb) that should reveal its own ancestors.
+  // Mounting back onto the same node is a return to the pane, and restores it as it was left.
+  const revealAtMount = nodeId !== persistedExpansion.node;
   const [expanded, setExpanded] = useState<Record<string, boolean>>(() => ({
     ...toRecord(persistedExpansion.corpus),
-    ...ancestorsOf(corpus, nodeId),
+    ...(revealAtMount ? ancestorsOf(corpus, nodeId) : {}),
   }));
   // Which of the two trees gets the column — they don't share one scroll, where My lists would
   // sit below the long nikaya tree. Never gated on being signed in: a signed-out reader's lists
@@ -153,6 +165,7 @@ export function TreePane({
     const next = derivePaneViewSync({
       isFirstRun,
       restoreOrigin,
+      returningToSameNode: !revealAtMount,
       nodeId,
       nodeIsListId,
       nodeIsCorpusNode: !!(corpus && nodeId && findNode(corpus, nodeId)),
@@ -178,12 +191,27 @@ export function TreePane({
     });
   }
 
+  // The node each tree has already revealed. Seeded with `nodeId` on a return to the pane, so
+  // the effects below don't undo the mount-time suppression by revealing it a moment later;
+  // seeded empty otherwise, and only advanced once there was actually something to open — the
+  // corpus and the lists can both arrive after this pane first renders.
+  const revealedNodeRef = useRef<string | undefined>(revealAtMount ? undefined : nodeId);
+  const revealedListNodeRef = useRef<string | undefined>(revealAtMount ? undefined : nodeId);
+
   useEffect(() => {
-    expandIds(setExpanded, ancestorsOf(corpus, nodeId));
+    if (revealedNodeRef.current === nodeId) return;
+    const toOpen = ancestorsOf(corpus, nodeId);
+    if (!Object.keys(toOpen).length) return;
+    revealedNodeRef.current = nodeId;
+    expandIds(setExpanded, toOpen);
   }, [corpus, nodeId]);
 
   useEffect(() => {
-    expandIds(setListExpanded, ancestorsOfList(lists, nodeId));
+    if (revealedListNodeRef.current === nodeId) return;
+    const toOpen = ancestorsOfList(lists, nodeId);
+    if (!Object.keys(toOpen).length) return;
+    revealedListNodeRef.current = nodeId;
+    expandIds(setListExpanded, toOpen);
   }, [lists, nodeId]);
 
   // useCallback'd (only reading the setState function itself, which React guarantees is stable)
@@ -209,7 +237,7 @@ export function TreePane({
   // nested list.
   const [listExpanded, setListExpanded] = useState<Record<string, boolean>>(() => ({
     ...toRecord(persistedExpansion.lists),
-    ...ancestorsOfList(lists, nodeId),
+    ...(revealAtMount ? ancestorsOfList(lists, nodeId) : {}),
   }));
   // Persists both trees' expansion together under one key — low-frequency (click-driven, or the
   // ancestor-follow effects above firing on a nodeId change), so an un-debounced write here is
@@ -221,12 +249,13 @@ export function TreePane({
         JSON.stringify({
           corpus: Object.keys(expanded).filter((id) => expanded[id]),
           lists: Object.keys(listExpanded).filter((id) => listExpanded[id]),
+          node: nodeId,
         })
       );
     } catch {
       // storage unavailable — ignore
     }
-  }, [expanded, listExpanded]);
+  }, [expanded, listExpanded, nodeId]);
   // Closed by default — see the search icon button in the header. Initialized from whether a
   // query is already present (rather than always `false`) so a pre-populated `query` prop can't
   // leave the pane showing search results with no visible way to see/edit what's being searched.
