@@ -108,6 +108,8 @@ npm run update-data post            re-run the rules over the current data/sujat
 npm run update-data counts          re-record rule footprints, leaving the baseline alone
 ```
 
+`npm run update-data help` prints all of them, grouped the same way.
+
 ## License and attribution
 
 Everything under `data/` — Pali root text, Bhikkhu Sujato's English translations, titles, blurbs,
