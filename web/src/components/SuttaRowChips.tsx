@@ -64,8 +64,7 @@ export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighli
           chip-by-chip exactly as it did when they were plain pills, rather than needing a group
           to survive being split across two lines.
           `items-stretch` + `overflow-hidden` on the pill is what makes the parent segment's fill
-          reach both rounded ends; the horizontal padding moves onto the segments themselves, so a
-          parentless chip still renders exactly the pill it was before. */}
+          reach both rounded ends; the horizontal padding moves onto the segments themselves. */}
       {chips.map((c) => (
         <ChipTag
           key={c.id}
@@ -104,8 +103,27 @@ export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighli
           )}
           {/* The parent segment's own cap is the only fill on the seam — the label segment has
               none — so rounding it carves a socket straight out of its own fill rather than
-              needing to overlap the label segment to fake a bulge into it. */}
-          <span className={`flex items-center ${c.parent ? 'pl-[3px] pr-[9px]' : 'px-[9px]'}`}>{c.label}</span>
+              needing to overlap the label segment to fake a bulge into it.
+              A top-level list has no parent segment, so it would otherwise be the one chip on the
+              line with no weight and no fill anywhere — reading as the lesser of two chips when if
+              anything it is the higher. It takes the parent segment's own weight and rung, plus a
+              fill of its own at half that segment's strength and a little more room around the
+              word: the two things a nested chip has more of are mass reaching all four edges and
+              sheer area, and the border can't supply either. Half strength because this fill spans
+              the whole pill rather than a leading segment of it, and at the parent's own alpha a
+              row of top-level chips read as a strip of solid buttons. In the reader the chip
+              already carries `theme.fg`, which is what the parent segment shows too, so only the
+              weight is left to match there. */}
+          <span
+            className={`flex items-center ${
+              c.parent ? 'pl-[3px] pr-[9px]' : `px-[13px] font-medium ${theme ? '' : 'text-ink-2 bg-ink/[.05]'}`
+            }`}
+            style={
+              !c.parent && theme ? { background: `color-mix(in srgb, ${theme.tint} 50%, transparent)` } : undefined
+            }
+          >
+            {c.label}
+          </span>
         </ChipTag>
       ))}
       {/* No fill of any kind — unlike the highlight badge beside it and unlike the chips' own
