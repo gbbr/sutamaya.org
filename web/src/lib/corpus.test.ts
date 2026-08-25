@@ -338,6 +338,46 @@ describe('searchCorpus', () => {
       const lists = [list({ id: 'l1', label: 'mind', items: ['mn1'] })];
       expect(searchCorpus(corpus, 'mind', {}, lists).map((h) => h.id)).toEqual(['mn10', 'mn1']);
     });
+
+    it('narrows to the suttas in every named list when two list names are typed', () => {
+      const lists = [
+        list({ id: 'l1', label: 'Retreat', items: ['mn1', 'mn10'] }),
+        list({ id: 'l2', label: 'Memorize', items: ['mn10'] }),
+      ];
+      expect(searchCorpus(corpus, 'retreat memorize', {}, lists).map((h) => h.id)).toEqual(['mn10']);
+    });
+  });
+
+  describe('multi-word queries', () => {
+    it('matches words found apart, in any order', () => {
+      // "The Establishment of Mindfulness" holds both words, with two others between them.
+      expect(searchCorpus(corpus, 'mindfulness establishment', {}).map((h) => h.id)).toEqual(['mn10']);
+    });
+
+    it('matches words split across different fields', () => {
+      // "root" is in mn1's title, "apple" only in the reader's own note on it.
+      expect(searchCorpus(corpus, 'root apple', { mn1: 'tastes like an apple' }).map((h) => h.id)).toEqual(['mn1']);
+    });
+
+    it('requires every word, not just one of them', () => {
+      expect(searchCorpus(corpus, 'mindfulness nonexistent', {})).toEqual([]);
+    });
+
+    it('ranks the sutta whose title has the words together above one that merely has both', () => {
+      const both: Corpus = {
+        ...corpus,
+        suttas: {
+          // Holds "mind" and "four" apart, in the title and the blurb respectively.
+          scattered: { ref: 'X 1', node: 'x', en: 'The Mind', pali: 'x', blurb: 'On the four kinds.', min: 1 },
+          contiguous: { ref: 'X 2', node: 'x', en: 'The Four Minds', pali: 'x', blurb: '', min: 1 },
+        },
+      };
+      expect(searchCorpus(both, 'four mind', {}).map((h) => h.id)).toEqual(['contiguous', 'scattered']);
+    });
+
+    it('ignores surrounding and repeated whitespace', () => {
+      expect(searchCorpus(corpus, '  mindfulness   establishment  ', {}).map((h) => h.id)).toEqual(['mn10']);
+    });
   });
 });
 
