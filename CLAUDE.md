@@ -27,6 +27,7 @@ npm run deploy             # deploy to Cloudflare — see docs/deploy.md; runs n
 SC_DATA_PATH=/path/to/sc-data npm run update-data     # plan a refresh of data/ — see data/README.md
                               npm run update-data apply    # copy it in, re-run the rules
                               npm run update-data accept   # re-baseline, after reviewing the diffs
+                              npm run update-data help     # every subcommand, incl. the rule-authoring ones
 ```
 
 Run the two halves individually with `npm run dev:worker` / `npm run dev:web`. `dev:worker` is
