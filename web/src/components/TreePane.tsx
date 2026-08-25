@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { navigate } from '@reach/router';
-import { HelpCircle, Highlighter, StickyNote, History, Library, List, Search, X } from 'lucide-react';
+import { Highlighter, StickyNote, History, Library, List, Search, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
@@ -524,7 +524,45 @@ export function TreePane({
             title="Help"
             onClick={() => navigate('/help')}
           >
-            <HelpCircle size={mobile ? 21 : 19} strokeWidth={2} />
+            {/* A typeset question mark in a drawn ring, rather than an icon set's drawing of
+                one. An icon `?` is two arcs and a dot built on a 24px grid, and at this size its
+                hook closes up into a blob; Newsreader's is a resolved letterform with a tapered
+                hook and a real ball terminal — and it's the wordmark's own face, already loaded
+                and precached, sitting an inch to the left of it.
+
+                The ring is 1.25px against the other glyphs' 2px stroke on purpose: it's the
+                affordance saying "button", not the thing you read, so it stays quieter than the
+                mark inside it. `currentColor` keeps it on the button's own hover/ink transitions
+                with nothing extra to declare.
+
+                The nudge down corrects for the fact that centring a line box is not centring a
+                glyph. Newsreader puts the baseline 0.735em below the line box top (ascent .735,
+                descent .265, no line gap), while this `?` inks from −0.007em to 0.680em — so its
+                own centre lands 0.1015em above the box's. In em, so it survives a size change.
+
+                Sized against what the search icon beside it actually paints, not against its
+                nominal size: lucide's magnifier fills 18 of its 24 units, so at `size={18}` it
+                covers about 15px. A ring covers its full width, so matching the nominal 18 would
+                leave it half again as large as its neighbour. 20 is the compromise — a hair
+                larger in extent, but at a lighter stroke, which is about where the two settle
+                to the same weight. */}
+            <span
+              className="flex items-center justify-center rounded-full border-[1.25px] border-current"
+              style={{ width: mobile ? 22 : 20, height: mobile ? 22 : 20 }}
+            >
+              <span
+                className="block"
+                style={{
+                  fontFamily: 'Newsreader, Georgia, serif',
+                  fontWeight: 500,
+                  fontSize: mobile ? 14 : 13,
+                  lineHeight: 1,
+                  transform: 'translateY(.1015em)',
+                }}
+              >
+                ?
+              </span>
+            </span>
           </button>
           <button
             className="flex-none -ml-1 rounded-full flex items-center justify-center text-ink-3 hover:bg-ink/[.06]"
