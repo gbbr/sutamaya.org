@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowUpDown, ChevronDown, ChevronLeft, Feather, GripVertical, List, ListPlus, Pencil } from 'lucide-react';
+import { ArrowUpDown, ChevronDown, ChevronLeft, GripVertical, Info, List, ListPlus, Pencil } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -378,19 +378,22 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
             `blurb` carries the same inline HTML a translator note does — see SegmentedText. */}
         {blurb && (
           <div className="border-b border-ink/[.08] px-6 pb-[18px]">
-            {/* The glyph carries the block's kind on its own, which the uppercase label alone
-                had to do while a wash sat behind it. A quill rather than an info circle: this is
-                someone's writing about the group, not a system notice. Sized to the cap height
-                beside it and nudged up by a hair to sit on the label's optical centre. */}
-            <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-1 flex items-center gap-[6px]">
-              <Feather size={13} strokeWidth={2.25} className="flex-none -mt-[1px]" />
-              {blurbFrom ? `About ${blurbFrom}` : 'About'}
-            </div>
+            {/* The eyebrow appears only for a borrowed blurb, where it is the sole thing saying the
+                paragraph describes an ancestor rather than the group on screen — without it, a
+                vagga page reads as though the saṁyutta's description were its own. A blurb the node
+                owns discloses nothing, so it runs as a bare paragraph. The glyph is sized to the cap
+                height beside it and nudged up by a hair to sit on the label's optical centre. */}
+            {blurbFrom && (
+              <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-4 mb-1 flex items-center gap-[6px]">
+                <Info size={13} strokeWidth={2.25} className="flex-none -mt-[1px]" />
+                {blurbFrom}
+              </div>
+            )}
             {(() => {
               const text = (
                 <span
                   ref={blurbRef}
-                  className={`text-ui-sm leading-[1.6] text-ink-3 ${blurbOpen ? 'block' : 'line-clamp-2'}`}
+                  className={`text-ui-base leading-[1.6] text-ink-3 ${blurbOpen ? 'block' : 'line-clamp-2'}`}
                   dangerouslySetInnerHTML={{ __html: blurb }}
                 />
               );
