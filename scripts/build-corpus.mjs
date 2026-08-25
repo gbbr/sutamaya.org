@@ -7,7 +7,7 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import {
-  NIKAYA_META, AN_BOOK_NAMES, KN_BOOKS, SN_GROUPS, REF_ABBR,
+  NIKAYA_META, AN_BOOK_NAMES, KN_BOOKS, SN_GROUPS, REF_ABBR, RESTATED_CHAPTERS,
   formatRef, stripTitlePrefix, flattenLeaves, findChapterNodes, findNodeByKey, findLeafGroups, rangeNote, chapterSpanNote,
   headerTitle, buildBodySegments,
 } from './lib/collections.js';
@@ -207,26 +207,30 @@ function buildLeaf(uid, nodeId, collection) {
 // rather than a plain ref, since a vagga has no canonical short ref of its own — the range is
 // the most useful thing to show. `dotted` selects "{ref}.{n}" (sn/an) vs "{ref}{n}" (mn).
 //
-// Exception: if there's exactly one category and its label is identical to the *chapter's*
-// own label (e.g. SN13 "Comprehension" containing only a single "Comprehension" vagga — the
-// vagga name is a pointless restatement of the chapter it's the whole of), that extra nesting
-// level is redundant, so it's skipped: returns `undefined` (no `chapters` array, meaning the
-// chapter itself becomes the leaf) and tags the leaves with `chapterKey` directly instead of
-// the otherwise-identical category key.
+// Returns `{ rows, label }`: `rows` for the chapter's `chapters` array, and the label the
+// chapter should carry.
+//
+// Exception: if there's exactly one category and it just restates the *chapter* it's the whole
+// of, that extra nesting level is redundant, so it's skipped: `rows` comes back `undefined` (no
+// `chapters` array, meaning the chapter itself becomes the leaf) and the leaves are tagged with
+// `chapterKey` directly instead of the otherwise-identical category key. Two ways that happens —
+// the labels come out identical (SN13 "Comprehension" holding a single "Comprehension" vagga),
+// or the two levels were translated differently from the same Pali (RESTATED_CHAPTERS).
 function buildCategoryRows(categories, collection, chapterKey, chapterLabel, chapterRef, dotted) {
   const names = nameIndexFor(collection);
   const meta = categories.map(({ key, leaves }) => {
     const paliName = names.pali.get(key);
     return { key, leaves, paliName, label: stripTitlePrefix(names.en.get(key)) || paliName || key };
   });
-  if (meta.length === 1 && meta[0].label === chapterLabel) {
+  if (meta.length === 1 && (meta[0].label === chapterLabel || chapterKey in RESTATED_CHAPTERS)) {
     meta[0].leaves.forEach((uid) => buildLeaf(uid, chapterKey, collection));
-    return undefined;
+    return { rows: undefined, label: RESTATED_CHAPTERS[chapterKey] ?? chapterLabel };
   }
-  return meta.map(({ key, leaves, label, paliName }) => {
+  const rows = meta.map(({ key, leaves, label, paliName }) => {
     leaves.forEach((uid) => buildLeaf(uid, key, collection));
     return { id: key, ref: rangeNote(chapterRef, leaves, dotted), label, sub: paliName, count: leaves.length };
   });
+  return { rows, label: chapterLabel };
 }
 
 // Builds one chapter row (sn1, an3, …) from a findChapterNodes() entry: its own ref/label/sub,
@@ -241,8 +245,8 @@ function buildChapterRow({ key, node, leaves }, collection, dotted, labelOverrid
   const chapterRef = formatRef(key);
   const paliName = names.pali.get(key);
   const chapterLabel = labelOverride ?? (stripTitlePrefix(names.en.get(key)) || paliName || chapterRef);
-  const categoryRows = buildCategoryRows(findLeafGroups(node), collection, key, chapterLabel, chapterRef, dotted);
-  return { id: key, ref: chapterRef, label: chapterLabel, sub: paliName, count: leaves.length, chapters: categoryRows };
+  const { rows, label } = buildCategoryRows(findLeafGroups(node), collection, key, chapterLabel, chapterRef, dotted);
+  return { id: key, ref: chapterRef, label, sub: paliName, count: leaves.length, chapters: rows };
 }
 
 const nikayas = [];
@@ -258,7 +262,7 @@ const nikayas = [];
 // --- MN: vagga-level categories directly (MN has no numbered-chapter layer of its own), with
 // its 3 "fifty" (pannasa) wrapper groups flattened away structurally ---
 {
-  const categoryRows = buildCategoryRows(findLeafGroups(loadTree('mn')), 'mn', 'mn', NIKAYA_META.mn.label, 'MN', false);
+  const { rows: categoryRows } = buildCategoryRows(findLeafGroups(loadTree('mn')), 'mn', 'mn', NIKAYA_META.mn.label, 'MN', false);
   nikayas.push({ id: 'mn', label: NIKAYA_META.mn.label, sub: NIKAYA_META.mn.sub, count: categoryRows.length, chapters: categoryRows });
   console.log(`  mn: ${categoryRows.length} categories, ${categoryRows.reduce((n, c) => n + c.count, 0)} suttas`);
 }
