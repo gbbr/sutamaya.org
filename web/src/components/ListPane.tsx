@@ -424,11 +424,11 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
         )}
 
         {displayItems.map(([id, s]) => {
-          // Highlighted (subtle tint + left accent stripe) whenever this row is the sutta the
-          // current URL ends in (`/browse/:nodeId/:suttaId` — matches LibraryPage's Up/Down/
-          // Enter, which key off the same `suttaId`) or, while searching, the one TreePane's own
-          // arrow-key nav currently has active (see activeId's own comment).
-          const on = id === selectedId || (searching && id === activeId);
+          // Highlighted (subtle tint + left accent stripe) only while searching, for the hit
+          // TreePane's arrow-key nav currently has active (see activeId's own comment) — that
+          // highlight is what says which row Enter opens. Nothing marks the URL's `selectedId`:
+          // browsing has no keyboard cursor to show, and the row is revealed by scrolling to it.
+          const on = searching && id === activeId;
           const note = notes[id];
           const { chips, hlCount } = rowMeta.get(id) ?? { chips: [], hlCount: 0 };
           const dragging = dragIdRef.current === id;
@@ -449,7 +449,9 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   measure. While reordering the grip is vertically centred instead, and the whole
                   row has to clear it. */}
               <button
-                className={`block w-full text-left px-6 py-[16px] ${reordering ? 'pr-14' : ''} ${on ? 'bg-ink/[.05]' : ''}`}
+                className={`block w-full text-left px-6 py-[16px] ${reordering ? 'pr-14' : ''} ${
+                  on ? 'bg-ink/[.05]' : 'hover:bg-ink/[.015]'
+                }`}
                 style={on ? { boxShadow: 'inset 2px 0 0 rgb(var(--accent2))' } : undefined}
                 onClick={() => onOpen(openTargets.get(id) ?? id)}
               >
