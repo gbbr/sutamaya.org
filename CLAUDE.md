@@ -137,7 +137,7 @@ before there's any pane scroll to lose. `lastLocation`'s `VALID_PATH` deliberate
 **Group descriptions** (`ChapterRow.blurb`) come from `data/sujato.post/blurb/` and render above the
 sutta rows in `ListPane`. The source writes them at inconsistent depths — SN's sit on the saṁyutta,
 a level above the vaggas that display them — so `nodeBlurb()` (`web/src/lib/corpus.ts`) falls back to
-the nearest ancestor and labels a borrowed one "Part of SN12 · Causation" instead of "About". AN has
+the nearest ancestor and labels a borrowed one "About SN12 · Causation" instead of a bare "About". AN has
 none at any level, nor do the four KN books that hold their documents directly. Upstream opens 61 of
 them by naming the group and counting its suttas — both already on screen above the paragraph — so
 the `blurb-openers` rule in `scripts/update-data/retranslation.mjs` trims that frame and re-leads on
