@@ -5,7 +5,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { usePointerDragSession } from '../hooks/usePointerDragSession';
-import { listItemsFor, nodeLabel, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
+import { listItemsFor, nodeBlurb, nodeLabel, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
 import { SuttaRowChips } from './SuttaRowChips';
@@ -35,7 +35,7 @@ interface ListPaneProps {
 export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, onOpen, visible = true }: ListPaneProps) {
   const { corpus } = useCorpus();
   const { lists, membership, notes, highlights, reorderListItems } = useUserData();
-  const { mobile } = useLayout();
+  const { mobile, paneW } = useLayout();
   const scrollRef = useScrollMemory<HTMLDivElement>(`list:${query.trim() ? 'search' : nodeId || 'none'}`, visible);
   const itemRowRefs = useRef<Map<string, HTMLDivElement>>(new Map());
 
@@ -97,6 +97,13 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
   // you're currently viewing drops the sutta out of `items`, and the popover has to stay up so it
   // can be checked straight back on.
   const [picker, setPicker] = useState<{ suttaId: string; anchor: DOMRect } | null>(null);
+  // Whether the blurb above the rows is expanded past its 3-line clamp, and whether it has
+  // anything to expand *to*. Measured after layout rather than derived from character count,
+  // since where the text wraps depends on the pane width and the reader's type scale. Collapsed
+  // again on every navigation — an expanded blurb is a decision about the page you're on.
+  const [blurbOpen, setBlurbOpen] = useState(false);
+  const [blurbOverflows, setBlurbOverflows] = useState(false);
+  const blurbRef = useRef<HTMLDivElement | null>(null);
   const dragIdRef = useRef<string | null>(null);
   // Mirrors `dragOrder` so endDrag can read the live value. The window-level `onUp` listener
   // that calls endDrag is registered once, at drag-start, so the `endDrag` closure it holds is
@@ -185,6 +192,23 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
     setPicker(null);
   }, [nodeId, searching, reorderMode, visible]);
 
+  useEffect(() => {
+    setBlurbOpen(false);
+  }, [nodeId]);
+
+  // Runs after every render that could change the wrap: a new blurb, the clamp coming off, or
+  // the pane being resized/revealed. Reads the clamped height against the full one, which is
+  // what the clamp itself is doing — so the "More" affordance can never appear on text that
+  // already fits.
+  useEffect(() => {
+    const el = blurbRef.current;
+    if (!el) {
+      setBlurbOverflows(false);
+      return;
+    }
+    setBlurbOverflows(blurbOpen || el.scrollHeight > el.clientHeight + 1);
+  }, [nodeId, blurbOpen, paneW, visible, mobile]);
+
   // Removing suttas until only one is left takes the header toggle away with them, so the mode
   // has to fall back off by itself or there'd be no visible way out of it.
   useEffect(() => {
@@ -210,10 +234,19 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
 
   if (!corpus) return null;
 
-  const title = searching ? { label: 'Search' } : nodeLabel(corpus, nodeId || '', lists);
+  const title = searching
+    ? { label: 'Search' }
+    : nodeId
+      ? nodeLabel(corpus, nodeId, lists)
+      : { label: 'Library' };
+  // The corpus node's description. Skipped for a user list and while searching — neither is a
+  // corpus node, and a list id could collide with one only by accident.
+  const { blurb, from: blurbFrom } = searching || currentList ? { blurb: undefined, from: undefined } : nodeBlurb(corpus, nodeId);
   const meta = searching
     ? hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ results` : `${hits.length} ${hits.length === 1 ? 'result' : 'results'}`
-    : `${items.length} sutta${items.length === 1 ? '' : 's'}`;
+    : !nodeId
+      ? `${corpus.nikayas.length} collections`
+      : `${items.length} sutta${items.length === 1 ? '' : 's'}`;
 
   return (
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
@@ -272,6 +305,69 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
             : undefined
         }
       >
+        {/* The node's description, above its suttas — the collection-page convention, and the
+            only place it can go, since the group itself has no row of its own here. Inside the
+            scroller rather than the header so a long one scrolls away instead of permanently
+            eating the viewport.
+
+            The wash and a step down in size are the whole differentiator, and the wash is
+            deliberately faint — a sutta row's blurb is the same face, so an untitled paragraph
+            above the rows otherwise reads as a sutta whose title failed to load. Kept below the
+            selected-row tint (`bg-ink/[.06]`), which would read as a selection instead, and
+            neutral rather than a colour, so it darkens in light and lightens in dark.
+
+            The eyebrow says whose description this is. Only "About" claims it describes the page
+            you're on; SN writes its descriptions on the saṁyutta, a level above the vagga rows
+            that display them, so a borrowed one reads "Part of SN12 · Causation" instead. That
+            stops a description of 90 discourses being passed off as a description of these ten,
+            and it's the only place the page names the larger group it belongs to.
+
+            Clamped, because these are not short: 35 of the 92 run past 400 characters and SN
+            22's is 2827 — six screens on a phone before the first row. Three lines, and the
+            whole block toggles, so the target is the paragraph rather than a word at its foot.
+            The affordance appears only when the text actually overflows, measured after layout
+            rather than guessed from length — wrapping depends on pane width and type scale.
+
+            `line-clamp-3` sets `display:-webkit-box`, so the expanded state has to restore
+            `block` rather than the two being applied together — Tailwind emits `block` after the
+            clamp, and the pair silently cancels the clamp out.
+
+            `blurb` carries the same inline HTML a translator note does — see SegmentedText. */}
+        {blurb && (
+          <div className="bg-ink/[.03] border-b border-ink/[.08] px-6 pt-4 pb-[18px]">
+            <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">
+              {blurbFrom ? `Part of ${blurbFrom}` : 'About'}
+            </div>
+            {(() => {
+              const text = (
+                <span
+                  ref={blurbRef}
+                  className={`text-ui-base leading-[1.6] text-ink-2 ${blurbOpen ? 'block' : 'line-clamp-3'}`}
+                  dangerouslySetInnerHTML={{ __html: blurb }}
+                />
+              );
+              if (!blurbOverflows) return text;
+              return (
+                <button
+                  className="block w-full text-left"
+                  aria-expanded={blurbOpen}
+                  onClick={() => setBlurbOpen((o) => !o)}
+                >
+                  {text}
+                  {/* Chrome, not content: it takes the eyebrow's neutral rather than the accent
+                      the app gives inline text actions elsewhere (see SettingsPage). Partly
+                      because that accent is the Pali subtitle colour on every row below, but
+                      mainly because this isn't a link — the whole paragraph is the target and
+                      this only reports its state, so promising "this word navigates" is wrong. */}
+                  <span className="block font-sans text-ui-xs font-semibold text-ink-3 mt-2">
+                    {blurbOpen ? 'Less' : 'More'}
+                  </span>
+                </button>
+              );
+            })()}
+          </div>
+        )}
+
         {displayItems.map(([id, s]) => {
           // Highlighted (subtle tint + left accent stripe) whenever this row is the sutta the
           // current URL ends in (`/browse/:nodeId/:suttaId` — matches LibraryPage's Up/Down/
@@ -379,7 +475,15 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
         })}
         {items.length === 0 && (
           <div className="font-sans text-center text-ui-base text-ink-4 py-10 px-6">
-            {searching ? `Nothing matches "${query}".` : 'Nothing here yet.'}
+            {/* Nothing selected at all (bare /browse — a first visit) is waiting on the reader;
+                "Nothing here yet." is a statement about a thing they already picked, and saying
+                it here would read as a failure. Only the two-pane layout ever shows this one,
+                since on mobile a first visit is showing the tree. */}
+            {searching
+              ? `Nothing matches "${query}".`
+              : nodeId
+                ? 'Nothing here yet.'
+                : 'Choose a collection to begin.'}
           </div>
         )}
       </div>

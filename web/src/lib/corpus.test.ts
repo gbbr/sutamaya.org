@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ancestorsOf, compareIds, flatSuttaOrder, resolveCanonicalSuttaId, searchCorpus, sortByIdAsc } from './corpus';
+import { ancestorsOf, compareIds, flatSuttaOrder, nodeBlurb, resolveCanonicalSuttaId, searchCorpus, sortByIdAsc } from './corpus';
 import type { Corpus, ListDef, Sutta } from './types';
 
 // Only the fields compareIds/sortByIdAsc actually touch (the id key) matter here; the rest
@@ -87,6 +87,72 @@ describe('ancestorsOf', () => {
 
   it('returns an empty object for an id not found in the corpus', () => {
     expect(ancestorsOf(corpus, 'sn1')).toEqual({});
+  });
+});
+
+describe('nodeBlurb', () => {
+  // SN's shape, which is the whole reason the lookup walks up at all: the description sits on the
+  // saṁyutta, the page that displays it is the vagga below. `sn2` stands for the leaf that has
+  // its own, `sn1-v2` for one that has to borrow.
+  const corpus: Corpus = {
+    ...meta,
+    nikayas: [
+      {
+        id: 'sn',
+        label: 'Linked Discourses',
+        sub: '',
+        count: 3,
+        chapters: [
+          {
+            id: 'sn-book',
+            ref: 'SN1–11',
+            label: 'Verses',
+            count: 3,
+            blurb: 'the book',
+            chapters: [
+              {
+                id: 'sn1',
+                ref: 'SN1',
+                label: 'Deities',
+                count: 2,
+                blurb: 'the saṁyutta',
+                chapters: [
+                  { id: 'sn1-v1', ref: 'SN1.1–10', label: 'Reed', count: 1, blurb: 'the vagga' },
+                  { id: 'sn1-v2', ref: 'SN1.11–20', label: 'Garden', count: 1 },
+                ],
+              },
+              { id: 'sn2', ref: 'SN2', label: 'Godlings', count: 1, blurb: 'the other saṁyutta' },
+            ],
+          },
+        ],
+      },
+      { id: 'an', label: 'Numbered Discourses', sub: '', count: 0, chapters: [{ id: 'an1', ref: 'AN1', label: 'Ones', count: 0 }] },
+    ],
+    suttas: {},
+  };
+
+  it('prefers the node’s own blurb, unattributed', () => {
+    expect(nodeBlurb(corpus, 'sn1-v1')).toEqual({ blurb: 'the vagga' });
+    expect(nodeBlurb(corpus, 'sn2')).toEqual({ blurb: 'the other saṁyutta' });
+  });
+
+  it('borrows the nearest ancestor’s blurb and names where it came from', () => {
+    expect(nodeBlurb(corpus, 'sn1-v2')).toEqual({ blurb: 'the saṁyutta', from: 'SN1 · Deities' });
+  });
+
+  it('stops at the nearest ancestor, leaving a further-up blurb unused', () => {
+    // sn1 has its own, so the book's never reaches sn1-v2 — the more specific description wins.
+    expect(nodeBlurb(corpus, 'sn1-v2').blurb).not.toBe('the book');
+  });
+
+  it('returns nothing when neither the node nor any ancestor has one', () => {
+    expect(nodeBlurb(corpus, 'an1')).toEqual({});
+  });
+
+  it('returns nothing for an unknown id, a missing id or a missing corpus', () => {
+    expect(nodeBlurb(corpus, 'mn1')).toEqual({});
+    expect(nodeBlurb(corpus, undefined)).toEqual({});
+    expect(nodeBlurb(null, 'sn1-v2')).toEqual({});
   });
 });
 

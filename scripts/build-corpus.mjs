@@ -202,6 +202,10 @@ function buildLeaf(uid, nodeId, collection) {
   leafCount += 1;
 }
 
+// `chapterRef` may be a function of the category's own leaves, for a collection where each
+// category restarts its numbering (Snp's and Ud's vaggas number their documents snp1.1…, ud3.1…,
+// so there is no one ref shared across the book the way "SN35" is shared across its vaggas).
+//
 // Builds category rows (vagga-level) from findLeafGroups() output: one row per category, with
 // its member leaves built and its `ref` set to the sutta-range note ("SN35.1–12", "MN1–10")
 // rather than a plain ref, since a vagga has no canonical short ref of its own — the range is
@@ -218,6 +222,7 @@ function buildLeaf(uid, nodeId, collection) {
 // or the two levels were translated differently from the same Pali (RESTATED_CHAPTERS).
 function buildCategoryRows(categories, collection, chapterKey, chapterLabel, chapterRef, dotted) {
   const names = nameIndexFor(collection);
+  const blurbs = blurbIndexFor(collection);
   const meta = categories.map(({ key, leaves }) => {
     const paliName = names.pali.get(key);
     return { key, leaves, paliName, label: stripTitlePrefix(names.en.get(key)) || paliName || key };
@@ -228,7 +233,15 @@ function buildCategoryRows(categories, collection, chapterKey, chapterLabel, cha
   }
   const rows = meta.map(({ key, leaves, label, paliName }) => {
     leaves.forEach((uid) => buildLeaf(uid, key, collection));
-    return { id: key, ref: rangeNote(chapterRef, leaves, dotted), label, sub: paliName, count: leaves.length };
+    const blurb = blurbs.get(key);
+    return {
+      id: key,
+      ref: rangeNote(typeof chapterRef === 'function' ? chapterRef(leaves) : chapterRef, leaves, dotted),
+      label,
+      sub: paliName,
+      count: leaves.length,
+      ...(blurb ? { blurb } : null),
+    };
   });
   return { rows, label: chapterLabel };
 }
@@ -246,17 +259,26 @@ function buildChapterRow({ key, node, leaves }, collection, dotted, labelOverrid
   const paliName = names.pali.get(key);
   const chapterLabel = labelOverride ?? (stripTitlePrefix(names.en.get(key)) || paliName || chapterRef);
   const { rows, label } = buildCategoryRows(findLeafGroups(node), collection, key, chapterLabel, chapterRef, dotted);
-  return { id: key, ref: chapterRef, label, sub: paliName, count: leaves.length, chapters: rows };
+  const blurb = blurbIndexFor(collection).get(key);
+  return {
+    id: key,
+    ref: chapterRef,
+    label,
+    sub: paliName,
+    count: leaves.length,
+    ...(blurb ? { blurb } : null),
+    chapters: rows,
+  };
 }
 
 const nikayas = [];
 
-// --- DN: flatten straight to leaf suttas, no chapters ---
+// --- DN: its 3 vaggas, each holding its suttas directly (DN has no numbered-chapter layer of
+// its own, so this is the same shape as MN) ---
 {
-  const leaves = flattenLeaves(loadTree('dn'));
-  leaves.forEach((uid) => buildLeaf(uid, 'dn', 'dn'));
-  nikayas.push({ id: 'dn', label: NIKAYA_META.dn.label, sub: NIKAYA_META.dn.sub, count: leaves.length });
-  console.log(`  dn: ${leaves.length} suttas`);
+  const { rows: categoryRows } = buildCategoryRows(findLeafGroups(loadTree('dn')), 'dn', 'dn', NIKAYA_META.dn.label, 'DN', false);
+  nikayas.push({ id: 'dn', label: NIKAYA_META.dn.label, sub: NIKAYA_META.dn.sub, count: categoryRows.length, chapters: categoryRows });
+  console.log(`  dn: ${categoryRows.length} categories, ${categoryRows.reduce((n, c) => n + c.count, 0)} suttas`);
 }
 
 // --- MN: vagga-level categories directly (MN has no numbered-chapter layer of its own), with
@@ -273,6 +295,7 @@ const nikayas = [];
 {
   const tree = loadTree('sn');
   const names = nameIndexFor('sn');
+  const blurbs = blurbIndexFor('sn');
   const groupRows = SN_GROUPS.map((group) => {
     const groupNode = findNodeByKey(tree, group.id);
     const chapterNodes = findChapterNodes(groupNode, /^sn\d+$/);
@@ -285,6 +308,7 @@ const nikayas = [];
       label: group.label,
       sub: names.pali.get(group.id),
       count: totalSuttas,
+      ...(blurbs.get(group.id) ? { blurb: blurbs.get(group.id) } : null),
       chapters: chapterRows,
     };
   });
@@ -304,13 +328,23 @@ const nikayas = [];
   console.log(`  an: ${chapterRows.length} chapters, ${chapterRows.reduce((n, c) => n + c.count, 0)} suttas`);
 }
 
-// --- KN: all 20 books, each flattened one level down to its leaf documents ---
+// --- KN: 6 curated books, flattened one level down to their leaf documents — except Snp and Ud,
+// which keep their vagga rows (see KN_BOOKS) ---
 {
   const chapterRows = KN_BOOKS.map((book) => {
-    const leaves = flattenLeaves(loadTree(book.id));
-    leaves.forEach((uid) => buildLeaf(uid, book.id, book.id));
+    const tree = loadTree(book.id);
+    const leaves = flattenLeaves(tree);
     const ref = REF_ABBR[book.id] || book.id.toUpperCase();
-    return { id: book.id, ref, label: book.label, sub: book.pali, count: leaves.length };
+    const row = { id: book.id, ref, label: book.label, sub: book.pali, count: leaves.length };
+    if (!book.vaggas) {
+      leaves.forEach((uid) => buildLeaf(uid, book.id, book.id));
+      return row;
+    }
+    // Each vagga's range badge takes its prefix from that vagga's own leaves ("Snp3.1–12"),
+    // since the numbering restarts per vagga rather than running through the book.
+    const vaggaRef = (vaggaLeaves) => formatRef(vaggaLeaves[0].slice(0, vaggaLeaves[0].lastIndexOf('.')));
+    const { rows } = buildCategoryRows(findLeafGroups(tree), book.id, book.id, book.label, vaggaRef, true);
+    return { ...row, chapters: rows };
   });
   nikayas.push({ id: 'kn', label: NIKAYA_META.kn.label, sub: NIKAYA_META.kn.sub, count: chapterRows.length, chapters: chapterRows });
   console.log(`  kn: ${chapterRows.length} books, ${chapterRows.reduce((n, c) => n + c.count, 0)} leaf documents`);

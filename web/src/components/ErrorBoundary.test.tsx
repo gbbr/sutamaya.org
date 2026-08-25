@@ -89,7 +89,7 @@ describe('ErrorBoundary', () => {
     );
     await userEvent.click(screen.getByRole('button', { name: 'Go to the library' }));
 
-    expect(assign).toHaveBeenCalledWith('/browse/dn');
+    expect(assign).toHaveBeenCalledWith('/browse');
     consoleError.mockRestore();
     vi.unstubAllGlobals();
   });

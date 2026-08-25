@@ -78,8 +78,9 @@ Reads `data/tree/*.json`, `data/pali/`, `data/sujato.post/`, `data/html/`, `data
 and writes into `web/public/data/`:
 
 - **`corpus.json`** — the browse tree (`nikayas[]`, each optionally with recursively-nested
-  `chapters[]`) plus a flat `suttas` map (`uid -> {ref, node, en, pali, blurb, min}`). Also carries
-  `sujatoCommit`, `dataVersion` and `dictionaryVersion`.
+  `chapters[]`, a group row carrying `blurb` where the source data describes that group) plus a flat
+  `suttas` map (`uid -> {ref, node, en, pali, blurb, min}`). Also carries `sujatoCommit`,
+  `dataVersion` and `dictionaryVersion`.
 - **`text/{uid}.json`** — one file per leaf document: an ordered array of
   `{key, pali, en, role?, headingLevel?, note?}` segments. `role` is
   `'verse' | 'heading' | 'end' | 'speaker' | 'list-item'`, derived from SuttaCentral's own markup in
@@ -105,16 +106,39 @@ rules themselves live in `scripts/update-data/retranslation.mjs` so they survive
 
 | Collection | Top level shows | One level in | Two levels in |
 |---|---|---|---|
-| DN | — | suttas directly (all vagga grouping flattened) | — |
-| MN | — | vagga-level categories (its 3 pannasa wrappers flattened) | that vagga's suttas |
+| DN | its 3 vaggas | that vagga's suttas | — |
+| MN | its 15 vaggas (the 3 pannasa wrappers flattened) | that vagga's suttas | — |
 | SN | 5 super-vagga groups (`SN1–11 · Verses` … `SN45–56 · The Great Chapter`) | that group's chapters `SN1`…`SN56` | that saṁyutta's vaggas (pannasaka wrappers flattened) |
 | AN | nipātas `AN 1 · Book of Ones` … `AN 11` | that nipāta's vaggas (pannasaka wrappers flattened) | — |
-| KN | its 6 curated books (`dhp`, `ud`, `iti`, `snp`, `thag`, `thig`) | that book's leaf documents, whatever level that is | — |
+| KN | its 6 curated books (`dhp`, `ud`, `iti`, `snp`, `thag`, `thig`) | for `snp` and `ud`, that book's vaggas; for the rest, its leaf documents directly | that vagga's leaf documents |
+
+Vaggas are kept rather than flattened away wherever the source data writes a description at that
+level, because the description is what makes the grouping worth navigating: `KN_BOOKS` marks `snp`
+and `ud` with `vaggas: true` for exactly that reason, and it's why DN keeps its 3.
 
 "Fifty" wrapper nodes (pannasaka/pannasa) never appear as rows: `findLeafGroups()` only collects
 *terminal* named groups, so the walk passes straight through them. AN's nipāta names, the KN book
 list and SN's 5 super-vagga labels are hardcoded in `scripts/lib/collections.js`; everything else is
 looked up from the data files.
+
+**Only leaf groups are navigable.** A row with `chapters` expands in place and never opens a page,
+so a nikaya id like `dn` or a saṁyutta id like `sn12` addresses no sutta list. Nothing in the UI
+produces such a URL — the reader's breadcrumb navigates to `sutta.node` (always a leaf) and passes
+the clicked ancestor as `flashNodeId` — and anything needing a default destination must name a leaf
+group or select nothing at all.
+
+**Bare `/browse` is the library with nothing selected**, which is where `/` lands on a first visit
+(`getLastLocation()` restores the real location on every later one) and where `ErrorBoundary`'s
+escape hatch goes. Nothing selected means `ancestorsOf` forces nothing open, so the tree shows the
+five nikāyas collapsed; the list pane says "Choose a collection to begin." It's a second
+`<LibraryPage>` route element, so picking the first node remounts the page — a one-off cost, paid
+before there's any pane scroll to lose. `lastLocation`'s `VALID_PATH` deliberately rejects it.
+
+**Group descriptions** (`ChapterRow.blurb`) come from `data/sujato.post/blurb/` and render above the
+sutta rows in `ListPane`. The source writes them at inconsistent depths — SN's sit on the saṁyutta,
+a level above the vaggas that display them — so `nodeBlurb()` (`web/src/lib/corpus.ts`) falls back to
+the nearest ancestor and labels a borrowed one "Part of SN12 · Causation" instead of "About". AN has
+none at any level, nor do the four KN books that hold their documents directly.
 
 ## Backend (`worker/`)
 
@@ -231,3 +255,10 @@ started with.
   non-empty one — a list's suttas and a group's whole nested subtree go with it. The prompt names
   only the row itself; the row's own count badge is the sole indication of what's inside. Once
   confirmed, the only recovery is a device that hasn't synced yet.
+- **Some group descriptions quote a title upstream has since revised**, so the paragraph contradicts
+  the heading above it — SN 13 is titled "Comprehension" and described as "the Linked Discourses on
+  the Breakthrough". Blurbs and names live in separately maintained bilara trees (`root/en/blurb` vs
+  `translation/en/sujato/name/sutta`, see `dataSync.js`), nothing upstream checks they agree, and
+  `update-data check` doesn't either — it only cross-checks sutta text, which alone has a Pali
+  counterpart. 12 of the 92 group blurbs disagree; 7 are on pages that display. Refreshing won't fix
+  it; substituting the current name at build time would.

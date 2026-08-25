@@ -42,12 +42,18 @@ export const RESTATED_CHAPTERS = {
   sn44: 'Undeclared Points', //     Abyākatasaṁyutta  / Abyākatavagga
 };
 
-// Selected 6 key Khuddaka Nikāya books, in canonical order. Each is flattened to its leaf documents
-// one level down (see flattenLeaves in build-corpus.mjs) — no intermediate vagga/nipāta rows.
+// Selected 6 key Khuddaka Nikāya books, in canonical order. Flattened to their leaf documents one
+// level down (see flattenLeaves in build-corpus.mjs) unless `vaggas` is set, in which case the
+// book's vagga rows are kept as a level of their own.
+//
+// Snp and Ud keep theirs because that is the level their descriptions are written at — every one
+// of Snp's 5 and Ud's 8 vaggas has a blurb, and flattening them discards the only orientation the
+// source data offers for those books. The other four have no group blurbs at any level, and their
+// vaggas are bookbinding units rather than something a reader chooses between.
 export const KN_BOOKS = [
-  { id: 'snp', label: 'Anthology of Discourses', pali: 'Suttanipāta' },
+  { id: 'snp', label: 'Anthology of Discourses', pali: 'Suttanipāta', vaggas: true },
   { id: 'dhp', label: 'Sayings of Dhamma', pali: 'Dhammapada' },
-  { id: 'ud', label: 'Heartfelt Sayings', pali: 'Udāna' },
+  { id: 'ud', label: 'Heartfelt Sayings', pali: 'Udāna', vaggas: true },
   { id: 'iti', label: 'So It Was Said', pali: 'Itivuttaka' },
   { id: 'thag', label: 'Verses of Senior Monks', pali: 'Theragāthā' },
   { id: 'thig', label: 'Verses of Senior Nuns', pali: 'Therīgāthā' },
