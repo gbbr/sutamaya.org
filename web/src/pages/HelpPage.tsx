@@ -98,14 +98,16 @@ const SECTIONS: HelpSection[] = [
         name: 'library-mobile.webp',
         title: 'The library',
         marks: [
-          [79.3, 33.4],
-          [48.5, 2.4],
-          [75.3, 8.4],
-          [92.2, 8.4],
+          [81.5, 30.3],
+          [44.0, 11.6],
+          [56.7, 2.1],
+          [69.8, 2.1],
+          [82.4, 2.1],
         ],
         steps: [
           'Tap any node to see its contents.',
           'Switch between the Canon and your own Lists.',
+          'Display this help page',
           'Search by number, title, summary, your own notes or list names.',
           'Your account, and every setting.',
         ],
@@ -115,13 +117,15 @@ const SECTIONS: HelpSection[] = [
         name: 'library-items-mobile.webp',
         title: 'Inside a book',
         marks: [
-          [4.4, 2.5],
-          [48.4, 21.3],
-          [82.4, 12.0],
+          [4.4, 2.6],
+          [86.9, 15.3],
+          [60.2, 35.0],
+          [85.0, 32.6],
         ],
         steps: [
           'Go back.',
-          'Click a sutta to open it. A tick next to its title means you\'ve spent some time on it.',
+          'Information about this collection.',
+          'Click a sutta to open it.',
           'Add this sutta to a list.',
         ],
       },
@@ -184,16 +188,16 @@ const SECTIONS: HelpSection[] = [
         name: 'markup-mobile.webp',
         title: 'Marking a passage',
         marks: [
-          [4.5, 14.6],
-          [25.0, 21.9],
-          [60.7, 91.8],
-          [88.0, 22.5],
+          [4.7, 38.0],
+          [75.7, 43.0],
+          [52.1, 91.6],
+          [90.2, 39.5],
         ],
         steps: [
-          'Your notes show up after the sutta summary.',
-          'Highlight count. Clicking it takes you to Highlights.',
-          'Select text in the sutta and choose a colour to highlight it.',
-          'Any existing highlights show up on the right edge. Click the mark to scroll to them.',
+          'Your note shows up after the sutta summary. Click it to edit it.',
+          'Highlight count. Clicking it takes you to the Highlights tab in the menu panel.',
+          'Select text and choose a colour to highlight it.',
+          'Highlights show up on the right edge. Clicking the small mark takes you there.',
         ],
       },
       {
@@ -202,11 +206,13 @@ const SECTIONS: HelpSection[] = [
         title: 'Highlights Tab',
         marks: [
           [29.5, 11.3],
-          [66.7, 28.7],
+          [38.9, 28.9],
+          [86.0, 25.0],
         ],
         steps: [
           'Add or change your note.',
           'Tap a highlight to scroll to it in the Reader. Tap the bin on the right to remove it.',
+          'Delete the highlight.',
         ],
       },
     ],
@@ -221,10 +227,10 @@ const SECTIONS: HelpSection[] = [
         name: 'lists-mobile.webp',
         title: 'Your lists',
         marks: [
-          [82.0, 11.1],
-          [93.0, 11.1],
-          [86.3, 22.8],
-          [92.5, 39.7],
+          [77.9, 16.6],
+          [89.3, 16.6],
+          [88.5, 26.0],
+          [94.0, 38.8],
         ],
         steps: [
           'Re-order your lists and groups. You may drag lists or groups into other groups to nest them.',
@@ -239,7 +245,7 @@ const SECTIONS: HelpSection[] = [
         title: 'Inside a list',
         marks: [
           [82.6, 4.7],
-          [92.5, 32.2],
+          [91.5, 29.6],
         ],
         steps: [
           'Toggle the re-ordering of suttas within a list. Sort them by your own criteria.',
@@ -263,14 +269,14 @@ const SECTIONS: HelpSection[] = [
         name: 'reader-chips-mobile.webp',
         title: 'Where it already is',
         marks: [
-          [36.7, 10.9],
-          [91.9, 65.5],
-          [21.6, 68.7],
+          [33.1, 12.6],
+          [62.7, 54.8],
+          [34.4, 64.7],
         ],
         steps: [
           'The current list you are in. Navigating back and forth between suttas will be within this list (see tip below).',
-          'Open the list picker.',
-          'Number of highlights on page. Click it to open the highlight panel.',
+          'Lists show up as chips under the sutta. They follow the same order you give them in the tree.',
+          'Click the "+" sign to open the list picker.',
         ],
       },
       {
@@ -397,15 +403,23 @@ const CONTACT_LEAD =
 
 const CONTACT_URL = 'https://github.com/gbbr/sutamaya.org/issues/new';
 
-// Deliberately outside the app's palette. These are annotation drawn over a photograph of the
-// product, not part of the product, and a marker in the accent colour would read as another piece
-// of the UI it is pointing at. Solid with a pale ring so it holds an edge over screenshot pixels
-// of any colour, in either theme.
+// Deliberately outside the app's palette, and deliberately louder than anything in it. These are
+// annotation drawn over a photograph of the product, not part of the product: a marker in the
+// accent colour would read as another piece of the UI it is pointing at, and a dark neutral one
+// has to be hunted for against arbitrary screenshot pixels. A cool blue because it is the one hue
+// nothing in the warm palette holds, so it can't be mistaken for part of the shot underneath it —
+// and it carries none of the "something went wrong" a red marker would.
+// Solid with a pale ring so it holds an
+// edge over those pixels whatever their colour, in either theme — the shots are fixed images and
+// don't invert, so this value can't be theme-var-backed either.
+// Both call sites share this one colour on purpose — the number on the picture and the number in
+// the legend beside it are the same marker, and a reader matches them by sight before they read
+// the digit.
 // Its two call sites size the digit with a raw px font-size rather than a `text-ui-*` token,
 // because the numeral is artwork fitted to its own circle rather than UI text: the size that
 // works is whatever centres inside the diameter, so the two move together and neither belongs
 // on the shared type scale.
-const MARKER = 'flex items-center justify-center rounded-full bg-[#E23A2E] font-sans font-medium text-white tabular-nums';
+const MARKER = 'flex items-center justify-center rounded-full bg-[#1D4ED8] font-sans font-medium text-white tabular-nums';
 
 // `*emphasis*` inside a tip. A single asterisk, not Markdown's double, because a tip is a hand-
 // authored string in this file and never user input — there is nothing to escape and no other
@@ -449,7 +463,13 @@ function ShotColumn({ shot, startIndex, showTitle }: { shot: HelpShot; startInde
           <img
             src={shot.src}
             alt=""
-            className={`block w-full rounded-field border border-ink/[.12] ${import.meta.env.DEV ? 'cursor-crosshair' : ''}`}
+            // The shots are captured in dark mode, which on the light theme puts a hard black block
+            // in the middle of the page. The light-mode-only filters lift its blacks toward the
+            // page and let a little of the page through, so it reads as a picture rather than a
+            // hole; dark mode needs none of it and turns them all off.
+            // The hairline is dark-mode-only for the same reason inverted: against the light theme
+            // a mostly-black image draws its own edge, and a border there is doing nothing.
+            className={`block w-full rounded-field dark:border dark:border-ink/[.12] brightness-110 contrast-[.92] opacity-[.92] dark:brightness-100 dark:contrast-100 dark:opacity-100 ${import.meta.env.DEV ? 'cursor-crosshair' : ''}`}
             onClick={import.meta.env.DEV ? logMarkOnClick : undefined}
           />
         ) : (
