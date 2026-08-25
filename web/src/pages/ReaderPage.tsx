@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { X, Menu as MenuIcon, ChevronRight, List as ListIcon } from 'lucide-react';
+import { X, Menu as MenuIcon, ChevronRight, List as ListIcon, Pencil } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
@@ -426,16 +426,20 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           {notes[suttaId] && (
             <button
               type="button"
-              className="block w-full pl-[10px] text-left hover:opacity-100"
+              className="flex w-full gap-[7px] text-left hover:opacity-100"
               aria-label="Edit note"
-              style={{ fontSize: fs - 4, lineHeight: 1.6, marginTop: 9, color: theme.fg, opacity: 0.72, borderLeft: `2px solid ${theme.rule}` }}
+              style={{ fontSize: fs - 4, lineHeight: 1.6, marginTop: 9, color: theme.fg, opacity: 0.72 }}
               onClick={() => {
                 setTab('highlights');
                 setPanel(true);
                 setNoteFocusSignal((s) => s + 1);
               }}
             >
-              {notes[suttaId]}
+              {/* The pencil, not a quote rule, marks this as the reader's own note — a left rule
+                  reads as a passage quoted from the sutta. Matches the note on a Library list row.
+                  Nudged down so it sits on the first line's x-height rather than its ascenders. */}
+              <Pencil size={fs - 5} strokeWidth={2} className="flex-none" style={{ marginTop: 5 }} />
+              <span>{notes[suttaId]}</span>
             </button>
           )}
           <div className="mt-4">

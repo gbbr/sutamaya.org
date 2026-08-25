@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowUpDown, ChevronDown, ChevronLeft, Feather, GripVertical, List, ListPlus } from 'lucide-react';
+import { ArrowUpDown, ChevronDown, ChevronLeft, Feather, GripVertical, List, ListPlus, Pencil } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -469,11 +469,21 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   <MatchedText text={s.pali} query={rowQuery} />
                 </span>
                 {note ? (
-                  <span className="block font-serif text-ui-md leading-[1.45] mt-[7px] pl-[10px] border-l-2 border-ink/30">
-                    <MatchedText text={note} query={rowQuery} />
+                  // The icon, not a quote rule, is what marks this as the reader's own note: a
+                  // left rule reads as a passage quoted from the sutta. Nudged down a little so it
+                  // sits on the first line's x-height rather than its ascenders.
+                  <span className="flex gap-[7px] font-serif text-ui-md leading-[1.45] mt-[7px] text-ink-2">
+                    <Pencil size={14} strokeWidth={2} className="flex-none mt-[4px] text-ink-3" />
+                    {/* Clamped, like the blurb it stands in for: a row is a scannable line, not the
+                        place to read a long note — the reader has the whole of it. */}
+                    <span className="line-clamp-3">
+                      <MatchedText text={note} query={rowQuery} />
+                    </span>
                   </span>
                 ) : (
-                  <span className="block text-ui-md leading-[1.5] mt-1.5 text-ink-2">
+                  // No `block` alongside `line-clamp-3`: the clamp sets `display:-webkit-box` and
+                  // Tailwind emits it before `.block`, so `block` would silently win.
+                  <span className="text-ui-md leading-[1.5] mt-1.5 text-ink-2 line-clamp-3">
                     <MatchedText text={s.blurb} query={rowQuery} />
                   </span>
                 )}
