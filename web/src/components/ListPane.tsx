@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowUpDown, ChevronLeft, GripVertical, List, ListPlus } from 'lucide-react';
+import { ArrowUpDown, ChevronDown, ChevronLeft, Feather, GripVertical, List, ListPlus } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -101,13 +101,17 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
   // you're currently viewing drops the sutta out of `items`, and the popover has to stay up so it
   // can be checked straight back on.
   const [picker, setPicker] = useState<{ suttaId: string; anchor: DOMRect } | null>(null);
-  // Whether the blurb above the rows is expanded past its 3-line clamp, and whether it has
+  // Whether the blurb above the rows is expanded past its 2-line clamp, and whether it has
   // anything to expand *to*. Measured after layout rather than derived from character count,
   // since where the text wraps depends on the pane width and the reader's type scale. Collapsed
   // again on every navigation — an expanded blurb is a decision about the page you're on.
   const [blurbOpen, setBlurbOpen] = useState(false);
   const [blurbOverflows, setBlurbOverflows] = useState(false);
   const blurbRef = useRef<HTMLDivElement | null>(null);
+  // Whether the pane is scrolled off its top. The header's rule is held back while it isn't, so a
+  // page that opens with a description reads as one block of front matter rather than as a title
+  // boxed off from it; once anything is passing under the header the rule is what says so.
+  const [scrolled, setScrolled] = useState(false);
   const dragIdRef = useRef<string | null>(null);
   // Mirrors `dragOrder` so endDrag can read the live value. The window-level `onUp` listener
   // that calls endDrag is registered once, at drag-start, so the `endDrag` closure it holds is
@@ -213,6 +217,21 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
     setBlurbOverflows(blurbOpen || el.scrollHeight > el.clientHeight + 1);
   }, [nodeId, blurbOpen, paneW, visible, mobile]);
 
+  // Called on every scroll frame, so it settles to the same value it already holds rather than
+  // setting state — React bails out of an identical value, and the header only re-renders on the
+  // two frames where the pane actually leaves or returns to the top.
+  function syncScrolled() {
+    setScrolled((was) => {
+      const now = (scrollRef.current?.scrollTop ?? 0) > 0;
+      return now === was ? was : now;
+    });
+  }
+
+  // The same read on arrival, since navigating between nodes doesn't necessarily scroll: landing
+  // on a node whose remembered position is already 0 leaves the container untouched and fires no
+  // scroll event, so the flag from the node just left would otherwise persist.
+  useEffect(syncScrolled, [nodeId, searching, visible]);
+
   // Removing suttas until only one is left takes the header toggle away with them, so the mode
   // has to fall back off by itself or there'd be no visible way out of it.
   useEffect(() => {
@@ -254,7 +273,15 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
 
   return (
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
-      <header className="flex-none flex items-center gap-3.5 px-6 pt-5 pb-4 border-b border-ink/10">
+      {/* The rule is held back only where a description sits directly beneath it, and only until
+          the pane leaves its top: elsewhere the first row starts immediately under the header and
+          needs the line to sit against. `transition-colors` so it arrives rather than snaps, which
+          on a fling is the difference between a header settling and one flickering. */}
+      <header
+        className={`flex-none flex items-center gap-3.5 px-6 pt-5 pb-4 border-b transition-colors ${
+          blurb && !scrolled ? 'border-transparent' : 'border-ink/10'
+        }`}
+      >
         {mobile && (
           // Deliberately the same round icon button as the reorder toggle on the right, so the
           // header reads as icon / title / icon. The border and chip fill are what make it read
@@ -314,6 +341,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
       </header>
       <div
         ref={scrollRef}
+        onScroll={syncScrolled}
         className="sc flex-1"
         style={
           dragOrder
@@ -338,26 +366,31 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
             case in the corpus is this one: an SN vagga under its saṁyutta.
 
             Clamped, because these are not short: 35 of the 92 run past 400 characters and SN
-            22's is 2827 — six screens on a phone before the first row. Three lines, and the
+            22's is 2827 — six screens on a phone before the first row. Two lines, and the
             whole block toggles, so the target is the paragraph rather than a word at its foot.
             The affordance appears only when the text actually overflows, measured after layout
             rather than guessed from length — wrapping depends on pane width and type scale.
 
-            `line-clamp-3` sets `display:-webkit-box`, so the expanded state has to restore
+            `line-clamp-2` sets `display:-webkit-box`, so the expanded state has to restore
             `block` rather than the two being applied together — Tailwind emits `block` after the
             clamp, and the pair silently cancels the clamp out.
 
             `blurb` carries the same inline HTML a translator note does — see SegmentedText. */}
         {blurb && (
-          <div className="border-b border-ink/[.08] px-6 pt-4 pb-[18px]">
-            <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-1">
+          <div className="border-b border-ink/[.08] px-6 pb-[18px]">
+            {/* The glyph carries the block's kind on its own, which the uppercase label alone
+                had to do while a wash sat behind it. A quill rather than an info circle: this is
+                someone's writing about the group, not a system notice. Sized to the cap height
+                beside it and nudged up by a hair to sit on the label's optical centre. */}
+            <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-1 flex items-center gap-[6px]">
+              <Feather size={13} strokeWidth={2.25} className="flex-none -mt-[1px]" />
               {blurbFrom ? `About ${blurbFrom}` : 'About'}
             </div>
             {(() => {
               const text = (
                 <span
                   ref={blurbRef}
-                  className={`text-ui-sm leading-[1.6] text-ink-3 ${blurbOpen ? 'block' : 'line-clamp-3'}`}
+                  className={`text-ui-sm leading-[1.6] text-ink-3 ${blurbOpen ? 'block' : 'line-clamp-2'}`}
                   dangerouslySetInnerHTML={{ __html: blurb }}
                 />
               );
@@ -369,13 +402,20 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   onClick={() => setBlurbOpen((o) => !o)}
                 >
                   {text}
-                  {/* Chrome, not content: it takes the eyebrow's neutral rather than the accent
-                      the app gives inline text actions elsewhere (see SettingsPage). Partly
-                      because that accent is the Pali subtitle colour on every row below, but
-                      mainly because this isn't a link — the whole paragraph is the target and
-                      this only reports its state, so promising "this word navigates" is wrong. */}
-                  <span className="block font-sans text-ui-xs font-semibold text-ink-3 mt-2">
+                  {/* Chrome, not content: neutral rather than the accent the app gives inline
+                      text actions elsewhere (see SettingsPage). Partly because that accent is
+                      the Pali subtitle colour on every row below, but mainly because this isn't
+                      a link — the whole paragraph is the target and this only reports its state,
+                      so promising "this word navigates" is wrong. Quieter than the paragraph
+                      rather than louder, and the chevron is what tells it apart from the prose —
+                      a direction, which is exactly what the control does. */}
+                  <span className="flex items-center gap-1 font-sans text-ui-xs font-semibold text-ink-4 mt-1">
                     {blurbOpen ? 'Less' : 'More'}
+                    <ChevronDown
+                      size={14}
+                      strokeWidth={2.25}
+                      className={`flex-none transition-transform ${blurbOpen ? 'rotate-180' : ''}`}
+                    />
                   </span>
                 </button>
               );
