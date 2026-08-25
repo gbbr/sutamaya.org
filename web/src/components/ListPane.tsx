@@ -278,21 +278,33 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
         </div>
         {canReorder && (
           <button
-            // The bordered resting state is mobile-only, to match the back button beside it.
-            // On desktop there's no back button to pair with, and hover already tells you the
-            // icon is a control, so it stays bare until pointed at.
-            className={`flex-none rounded-full flex items-center justify-center ${mobile ? 'w-[34px] h-[34px]' : 'w-[38px] h-[38px] -mr-[2px]'} ${
+            // On desktop this is the same bare round icon button as the header controls beside
+            // the account badge in TreePane — one icon-button vocabulary across both panes.
+            // Mobile is the exception: it mirrors the back button beside it instead, bordered
+            // chip and all, so the header reads icon / title / icon rather than a control at one
+            // edge and a bare glyph at the other.
+            //
+            // Either way the negative right margin pulls it in from the header's own 24px padding
+            // so its centre lands on the 34px axis this pane's row controls sit on.
+            //
+            // Reorder mode is a mode you're left sitting in, so it fills rather than merely
+            // tinting under the pointer — that state overrides both resting treatments.
+            className={`flex-none rounded-full flex items-center justify-center ${mobile ? 'w-[34px] h-[34px] -mr-[7px]' : 'w-[38px] h-[38px] -mr-[9px]'} ${
               reorderMode
                 ? 'bg-accent2 text-[#FBFAF7]'
                 : mobile
                   ? 'border border-ink/[.12] bg-chip/40 text-ink-3 hover:text-ink active:bg-ink/[.08]'
-                  : 'text-ink-4 hover:bg-ink/[.08] hover:text-ink'
+                  : 'text-ink-3 hover:bg-ink/[.06]'
             }`}
             aria-label={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
             title={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
             onClick={() => setReorderMode((m) => !m)}
           >
-            <ArrowUpDown size={mobile ? 16 : 18} strokeWidth={2} />
+            {/* 16 on both, where the other header glyphs step up to 18–20 on desktop: this one
+                is two arrows stacked, so it fills its own box top to bottom where a chevron or a
+                magnifier leaves air, and matching their nominal size makes it read a size larger
+                than all of them. */}
+            <ArrowUpDown size={16} strokeWidth={2} />
           </button>
         )}
       </header>
@@ -394,16 +406,16 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   measure. While reordering the grip is vertically centred instead, and the whole
                   row has to clear it. */}
               <button
-                className={`block w-full text-left px-6 py-[16px] ${reordering ? 'pr-12' : ''} ${on ? 'bg-ink/[.05]' : ''}`}
+                className={`block w-full text-left px-6 py-[16px] ${reordering ? 'pr-14' : ''} ${on ? 'bg-ink/[.05]' : ''}`}
                 style={on ? { boxShadow: 'inset 2px 0 0 rgb(var(--accent2))' } : undefined}
                 onClick={() => onOpen(openTargets.get(id) ?? id)}
               >
-                <span className={`block ${reordering ? '' : 'pr-12'}`}>
+                <span className={`block ${reordering ? '' : 'pr-14'}`}>
                   <span className="font-sans text-ui-md font-bold tracking-[.02em] mr-2.5 text-ink-3">{s.ref}</span>
                   <span className="text-ui-lg leading-[1.3] font-serif">{s.en}</span>
                 </span>
                 <span
-                  className={`block font-serif text-ui-base italic mt-[3px] text-accent-text ${reordering ? '' : 'pr-12'}`}
+                  className={`block font-serif text-ui-base italic mt-[3px] text-accent-text ${reordering ? '' : 'pr-14'}`}
                 >
                   {s.pali}
                 </span>
@@ -420,28 +432,25 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   so the grip below has the gutter to itself — one control per row edge, never two,
                   and nobody manages memberships mid-drag. Held near the top of the row rather than
                   centred in it: a row runs three or four lines, so a centred button would float
-                  alongside the blurb instead of reading as the row's own action. `top-5` matches
-                  the `right-5` beside it, so the circle sits the same distance from both edges of
+                  alongside the blurb instead of reading as the row's own action. The `top` inset
+                  matches the `right` one, so the circle sits the same distance from both edges of
                   its corner. Visible at rest on every device, never hover-revealed: an iPad gets
                   the desktop layout but has no hover, so a hover-gated control would simply not
                   exist there.
 
-                  A 36px circle, borderless at rest: repeated down every row, the header reorder
-                  toggle's chip fill and border would read as a column of buttons competing with
-                  the text. Without the border it also needs to sit outboard of the row edge a bit
-                  further than a bordered chip would — a bordered chip's edge reads as the pane's
-                  margin, a bare glyph's doesn't. The
-                  `after` pseudo-element pads the tap target out to 48px — Material's recommended
-                  minimum, comfortably past Apple's 44 — without growing the circle: it overhangs
-                  the layout rather than taking part in it, so the box still ends exactly at the
-                  `pr-12` the rows already reserve and the title loses no width to any of this. */}
+                  Same bare round button as the header's reorder toggle and TreePane's header
+                  icons — borderless at rest matters most here, where it's repeated down every
+                  row: a chip fill and border would read as a column of buttons competing with the
+                  text. The insets put its centre on the 34px axis the toggle and the grip share,
+                  so nothing shifts sideways when reorder mode is turned on, and the rows reserve
+                  `pr-14` for the width the circle actually takes. */}
               {!reordering && (
                 <button
-                  className="absolute right-5 top-5 w-9 h-9 flex items-center justify-center rounded-full text-ink-4 hover:bg-ink/[.08] hover:text-ink active:bg-ink/[.12] after:content-[''] after:absolute after:-inset-1.5"
+                  className={`absolute ${mobile ? 'right-3 top-3 w-11 h-11' : 'right-[15px] top-[15px] w-[38px] h-[38px]'} flex items-center justify-center rounded-full text-ink-3 hover:bg-ink/[.06] active:bg-ink/[.10]`}
                   aria-label={`Add ${s.ref} to a list`}
                   onClick={(e) => setPicker({ suttaId: id, anchor: e.currentTarget.getBoundingClientRect() })}
                 >
-                  <ListPlus size={20} strokeWidth={2} />
+                  <ListPlus size={mobile ? 20 : 18} strokeWidth={2} />
                 </button>
               )}
               {reordering && (
@@ -449,7 +458,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   // `right-3` puts this target's centre on the same 34px-from-the-edge axis as the
                   // header's reorder toggle and the add-to-list button it replaces, so nothing
                   // shifts sideways when reorder mode is turned on. The target overhangs the rows'
-                  // `pr-12` text column, but only with empty space — the grip glyph itself is 19px
+                  // `pr-14` text column, but only with empty space — the grip glyph itself is 19px
                   // and stays well inside it.
                   //
                   // `inset-y-1` rather than a fixed height: a row runs three or four lines, and
@@ -457,7 +466,7 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   // inside it. Spanning the row's full height makes the whole right gutter grabbable
                   // while the glyph stays centred, which matters most on touch — there is nothing
                   // else to hit in that gutter while reordering, so there is nothing to steal from.
-                  className="absolute right-3 inset-y-1 w-11 flex items-center justify-center rounded text-ink-4"
+                  className="absolute right-3 inset-y-1 w-11 flex items-center justify-center rounded text-ink-3"
                   style={{
                     touchAction: 'none',
                     cursor: 'grab',
