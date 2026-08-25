@@ -5,8 +5,9 @@ Bhikkhu Sujato's English is the base text; this app ships an edited version of i
 `update-data post` reapplies them on every refresh, so an editorial decision survives the next
 upstream sync instead of being silently overwritten by it.
 
-Two kinds of edit: **terminology** (render a Pali term consistently — *mendicant* → *bhikkhu*) and
-**per-segment** corrections (one line, reworded). [`data/README.md`](../data/README.md) covers the
+Three kinds of edit: **terminology** (render a Pali term consistently — *mendicant* → *bhikkhu*),
+**per-segment** corrections (one line, reworded), and **blurb openers** (trim the redundant opening
+frame off a group description). [`data/README.md`](../data/README.md) covers the
 surrounding `update-data` pipeline; [`translation-changes.md`](translation-changes.md) is the
 plain-language summary written for a reader.
 
@@ -89,7 +90,8 @@ instead lose `sammāsati` and `satipaṭṭhāna`.
 ## Rule shape
 
 `retranslation.mjs` exports an ordered array of **term rules**, which rewrite words wherever their
-list permits, and **segment overrides**, which replace one line outright.
+list permits, **segment overrides**, which replace one line outright, and **blurb rules**, which
+rewrite the opening of a group description.
 
 ### Term rule
 
@@ -160,6 +162,34 @@ English word can sit in more than one grammatical slot.
 range-batched files hold segments keyed by sub-uid, so the filename can't be derived from the id,
 and `sujato/notes` reuses the same ids as the text it annotates.
 
+### Blurb rule
+
+```js
+{
+  id: 'blurb-openers',
+  kind: 'blurb',
+  why: 'Trims the "The “<name>” contains N discourses" frame from the group blurbs that carry one.',
+  openers: [
+    { blurb: 'sn-blurbs:sn13',
+      from: 'The “Linked Discourses on the Breakthrough” contains 11 discourses on ',
+      to:   'Discourses on ' },
+  ],
+}
+```
+
+A group blurb renders under the heading naming that group, so an opener that re-announces the name
+and counts the suttas repeats the page. One rule, one opener per blurb, applied after everything
+else.
+
+`from` anchors as a **prefix**, not the whole value — a blurb is a paragraph, and quoting the
+untouched rest of it into the rule for every entry would put pages of prose in `retranslation.mjs`.
+Prefix rather than a free-floating substring so there is exactly one place it can match. The anchor
+is otherwise the segment override's: post-processed text, verbatim, hard fail when it drifts.
+
+Blurb ids resolve through their own index (`buildBlurbIndex`), separate from the sutta one — blurb
+keys are namespaced per collection (`sn-blurbs:sn12`), so they collide with nothing, and keeping the
+maps apart is what keeps the sutta index free of the ambiguity `sujato/notes` would bring.
+
 ### Shared fields
 
 - **`id`** — stable, unique; names the sidecar and the diff file.
@@ -212,11 +242,12 @@ routine maintenance; the only signal is the one we build.
 | Anchor | Applies to | On violation |
 |---|---|---|
 | `from` matches verbatim | segment rules | **Hard fail.** Upstream reworded a line you'd overridden. |
+| `from` still opens the blurb | blurb rules | **Hard fail.** Upstream reworded an opening you'd trimmed. |
 | Rule matched at least once | term rules | **Hard fail.** The term is gone; the rule is dead. |
 | `residue` matches nothing | term rules that declare one | **Hard fail.** Upstream wrote a shape the forms don't cover. |
 | Triage queue is empty | term rules | **Review.** See below. |
 
-`update-data plan` reports the first two before anything is copied. A broken segment rule prints as
+`update-data plan` reports the three hard fails before anything is copied. A broken segment rule prints as
 a derivation — upstream's raw line, what the term rules did to it (`↪`), then `expected` against
 `found` with the diverging words coloured, and `Would write:` for the rule's `to`. **When `found`
 already reads correctly, the override is obsolete rather than drifted** — delete it.
