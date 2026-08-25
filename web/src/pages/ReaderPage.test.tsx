@@ -14,6 +14,8 @@ vi.mock('../context/UserDataContext', () => ({ useUserData: vi.fn() }));
 vi.mock('../context/AuthContext', () => ({ useAuth: vi.fn() }));
 vi.mock('../context/LayoutContext', () => ({ useLayout: vi.fn() }));
 vi.mock('../context/ReaderPrefsContext', () => ({ useReaderPrefs: vi.fn() }));
+// LibraryPage (rendered by the chip-navigation test) reads it only for the Shift+D theme toggle.
+vi.mock('../context/UiPrefsContext', () => ({ useUiPrefs: () => ({ toggleTheme: vi.fn() }) }));
 
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
@@ -115,6 +117,7 @@ describe('ReaderPage sutta header chips', () => {
       setFace: vi.fn(),
       toggleAllPali: vi.fn(),
       toggleShowNotes: vi.fn(),
+      cycleTheme: vi.fn(),
     });
   });
 

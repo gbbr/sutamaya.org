@@ -95,6 +95,7 @@ beforeEach(() => {
     resolvedTheme: 'light',
     setUiScale: vi.fn(),
     setTheme: vi.fn(),
+    toggleTheme: vi.fn(),
   });
   vi.mocked(useCorpus).mockReturnValue({
     corpus: { nikayas: [], suttas: {}, sujatoCommit: 'abc123', dataVersion: 'data-v2', dictionaryVersion: 'dict-v2' } as unknown as Corpus,

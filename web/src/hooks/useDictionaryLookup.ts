@@ -42,7 +42,7 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
   const [dict, setDict] = useState<DictState | null>(null);
 
   // Which lookup the dock is currently showing. Shard fetches settle out of order (holding
-  // Shift+Arrow walks words faster than a cold shard resolves), so a reply is only allowed to
+  // an Arrow key walks words faster than a cold shard resolves), so a reply is only allowed to
   // write state if it is still the one being waited on. Bumping it also cancels: closing the dock
   // or changing sutta invalidates every reply and timer still in flight.
   const currentLookup = useRef(0);

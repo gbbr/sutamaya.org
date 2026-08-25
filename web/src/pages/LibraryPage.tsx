@@ -3,6 +3,7 @@ import { navigate, type RouteComponentProps } from '@reach/router';
 import { useLayout } from '../context/LayoutContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
+import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { flatSuttaOrder, nodeLabel, sortByIdAsc, suttasFor } from '../lib/corpus';
 import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
@@ -30,6 +31,7 @@ export function LibraryPage({
   const { mobile, dragTree, resetTree, paneW } = useLayout();
   const { corpus } = useCorpus();
   const { lists, notes } = useUserData();
+  const { toggleTheme } = useUiPrefs();
   // @reach/router defers the route-param update by a microtask + rAF after navigate(), so
   // reading the ids straight off props would render a frame pairing new local state with a stale
   // id — a flash of the wrong list on mobile, a highlighted row that jumps back for a frame.
@@ -177,6 +179,11 @@ export function LibraryPage({
       if (isShortcut(e, SHORTCUTS.libraryHelp)) {
         e.preventDefault();
         setShortcutsOpen(true);
+        return;
+      }
+      if (isShortcut(e, SHORTCUTS.libraryTheme)) {
+        e.preventDefault();
+        toggleTheme();
         return;
       }
       if (!corpus) return;

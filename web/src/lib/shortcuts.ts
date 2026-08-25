@@ -11,6 +11,10 @@ export interface Shortcut {
   keys: string[];
   label: string;
   scope: ShortcutScope;
+  // Requires Shift to be held. Opt-in, because isShortcut() otherwise ignores Shift entirely
+  // (see its own comment) — set it on a shortcut whose action shouldn't be one stray keypress
+  // away, the way the theme toggle isn't.
+  shift?: true;
 }
 
 export const SHORTCUTS = {
@@ -21,15 +25,17 @@ export const SHORTCUTS = {
   libraryToggleLists: { match: ['x'], keys: ['X'], label: 'Switch Library / My Lists', scope: 'library' },
   librarySelectMove: { match: ['ArrowUp', 'ArrowDown'], keys: ['↑', '↓'], label: 'Move the highlighted row (or search result)', scope: 'library' },
   librarySelectOpen: { match: ['Enter'], keys: ['Enter'], label: 'Open the highlighted sutta', scope: 'library' },
+  libraryTheme: { match: ['d'], keys: ['⇧D'], label: 'Switch light / dark', scope: 'library', shift: true },
   libraryHelp: { match: ['?'], keys: ['?'], label: 'Show keyboard shortcuts', scope: 'library' },
 
   // Reader (ReaderPage.tsx)
   readerClose: { match: ['Escape'], keys: ['Esc'], label: 'Close the dictionary, panel, or the reader', scope: 'reader' },
   readerSearch: { match: ['/'], keys: ['/'], label: 'Search suttas (Esc to close)', scope: 'reader' },
-  // Same `match` on both — deliberately: it's Shift that distinguishes them, and isShortcut()
-  // itself doesn't check Shift (see its own comment), so the ReaderPage keydown handler checks
-  // e.shiftKey directly rather than relying on `match` to tell the two apart.
-  readerNav: { match: ['ArrowLeft', 'ArrowRight'], keys: ['⇧←', '⇧→'], label: 'Previous / next sutta', scope: 'reader' },
+  // Sutta-to-sutta nav is on K/J rather than the arrows: the arrows belong to the dictionary
+  // dock's own word stepping below, and Shift+Arrow — the obvious way to tell the two apart — is
+  // the browser's own extend-selection gesture, which is not something to fight on a page whose
+  // whole point is selectable text.
+  readerNav: { match: ['k', 'j'], keys: ['K', 'J'], label: 'Previous / next sutta', scope: 'reader' },
   readerDictNav: {
     match: ['ArrowLeft', 'ArrowRight'],
     keys: ['←', '→'],
@@ -40,6 +46,7 @@ export const SHORTCUTS = {
   readerLists: { match: ['l'], keys: ['L'], label: 'Open the lists panel', scope: 'reader' },
   readerNote: { match: ['n'], keys: ['N'], label: 'Add a note', scope: 'reader' },
   readerTheme: { match: ['t'], keys: ['T'], label: 'Open the display panel', scope: 'reader' },
+  readerThemeCycle: { match: ['d'], keys: ['⇧D'], label: 'Light / sepia / dark', scope: 'reader', shift: true },
   readerNotesToggle: { match: ['c'], keys: ['C'], label: 'Toggle translator notes', scope: 'reader' },
   readerHelp: { match: ['?'], keys: ['?'], label: 'Show keyboard shortcuts', scope: 'reader' },
 } satisfies Record<string, Shortcut>;
@@ -69,10 +76,15 @@ export function pointerHintsForScope(scope: ShortcutScope): PointerHint[] {
 // need to know (or repeat) whether a given shortcut is a case-insensitive letter ('h', 'x', ...)
 // or an exact key that must not be lowercased ('Enter', 'Escape', 'ArrowUp', '/', '?'). Ignores
 // Ctrl/Cmd/Alt combos (e.g. Cmd+L for the browser's own address-bar focus) so none of our
-// single-key shortcuts hijack a browser/OS chord that happens to share a letter; Shift is exempt
-// since '?' is only reachable as Shift+/.
-export function isShortcut(e: Pick<KeyboardEvent, 'key' | 'ctrlKey' | 'metaKey' | 'altKey'>, shortcut: Shortcut): boolean {
+// single-key shortcuts hijack a browser/OS chord that happens to share a letter. Shift is only
+// consulted for a shortcut that asks for it (`shift: true`): every other one stays Shift-agnostic,
+// since '?' is itself only reachable as Shift+/.
+export function isShortcut(
+  e: Pick<KeyboardEvent, 'key' | 'ctrlKey' | 'metaKey' | 'altKey' | 'shiftKey'>,
+  shortcut: Shortcut
+): boolean {
   if (e.ctrlKey || e.metaKey || e.altKey) return false;
+  if (shortcut.shift && !e.shiftKey) return false;
   return shortcut.match.includes(e.key) || shortcut.match.includes(e.key.toLowerCase());
 }
 

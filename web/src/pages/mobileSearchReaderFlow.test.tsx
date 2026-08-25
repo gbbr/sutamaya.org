@@ -14,6 +14,8 @@ vi.mock('../context/UserDataContext', () => ({ useUserData: vi.fn() }));
 vi.mock('../context/AuthContext', () => ({ useAuth: vi.fn() }));
 vi.mock('../context/LayoutContext', () => ({ useLayout: vi.fn() }));
 vi.mock('../context/ReaderPrefsContext', () => ({ useReaderPrefs: vi.fn() }));
+// LibraryPage reads it only for the Shift+D theme toggle; the real provider isn't mounted here.
+vi.mock('../context/UiPrefsContext', () => ({ useUiPrefs: () => ({ toggleTheme: vi.fn() }) }));
 
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
@@ -121,6 +123,7 @@ describe('mobile search -> reader -> close flow', () => {
       setFace: vi.fn(),
       toggleAllPali: vi.fn(),
       toggleShowNotes: vi.fn(),
+      cycleTheme: vi.fn(),
     });
   });
 
