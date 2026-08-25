@@ -15,6 +15,12 @@ export interface ChapterRow {
   label: string;
   sub?: string;
   count: number;
+  // Bhikkhu Sujato's description of this group, where the source data has one: DN's 3 vaggas,
+  // MN's 15, Snp's 5, Ud's 8, and in SN both the 5 books and all 56 saṁyuttas. AN has none at
+  // any level, nor do the four KN books that hold their documents directly. May contain inline
+  // HTML, like a sutta's translator note does. Read it with nodeBlurb() in lib/corpus.ts, which
+  // handles SN writing its descriptions a level above the rows that display them.
+  blurb?: string;
   // Recursive: SN nests groups > chapters > vagga categories, AN nests chapters > vagga
   // categories, MN nests categories directly — a row with `chapters` expands further, one
   // without is where suttas live (see isExpandable() in lib/corpus.ts).

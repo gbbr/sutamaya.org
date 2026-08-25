@@ -14,7 +14,9 @@ function maybePersist(pathname: string) {
   // clobber a genuinely valid last location with one `getLastLocation()`'s own VALID_PATH check
   // immediately rejects on read, losing the real one instead of falling back to it. '/' itself is
   // a transient bounce-off (about to be redirected away from) and would fail VALID_PATH anyway;
-  // Settings is deliberately excluded so reopening the app doesn't land back in it.
+  // Settings is deliberately excluded so reopening the app doesn't land back in it. Bare '/browse'
+  // fails VALID_PATH too, which is right: it's the first-visit screen with nothing selected, so
+  // there's no location there to come back to — reopening should just show it again.
   if (!VALID_PATH.test(pathname) || pathname.startsWith('/settings')) return;
   try {
     localStorage.setItem(LAST_LOCATION_KEY, pathname);

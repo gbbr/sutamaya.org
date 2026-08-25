@@ -31,12 +31,18 @@ function LoadFailed({ onRetry }: { onRetry: () => void }) {
 
 // What "/" resolves to. The bare origin is where both a fresh tab and a PWA relaunched from the
 // home-screen icon land (vite-plugin-pwa's manifest start_url defaults to "/"), so restoring the
-// last location here is what makes "close and reopen" return to wherever the user actually was
-// rather than always to DN. Navigates on mount, the same shape @reach/router's own <Redirect>
-// uses, so it behaves correctly under this app's deliberate no-StrictMode setup (see main.tsx).
+// last location here is what makes "close and reopen" return to wherever the user actually was.
+// Navigates on mount, the same shape @reach/router's own <Redirect> uses, so it behaves correctly
+// under this app's deliberate no-StrictMode setup (see main.tsx).
+//
+// With nothing stored — a genuine first visit — it falls through to bare /browse, which selects
+// no node. That's the point: TreePane force-expands the ancestors of whatever node is selected
+// (ancestorsOf), so landing on any real node would greet a first-time reader with a tree already
+// opened partway into one collection. Nothing selected means the whole canon collapsed to its
+// five nikāyas, which is the thing worth seeing first.
 function RestoreLastLocation(_props: RouteComponentProps) {
   useEffect(() => {
-    navigate(getLastLocation() ?? '/browse/dn', { replace: true });
+    navigate(getLastLocation() ?? '/browse', { replace: true });
   }, []);
   return null;
 }
@@ -69,6 +75,11 @@ function Routes() {
           position with it) every time a highlighted row is selected/deselected. `*suttaId` is a
           splat, giving '' (not undefined) when the segment is absent. */}
       <LibraryPage path="/browse/:nodeId/*suttaId" />
+      {/* The library with nothing selected — a first visit, before the reader has picked
+          anything. A second route element, so selecting the first node does remount LibraryPage
+          per the note above; that costs a pane scroll position which on this one transition
+          doesn't exist yet. */}
+      <LibraryPage path="/browse" />
       <ReaderPage path="/read/:suttaId" />
       <SettingsPage path="/settings" />
       <HelpPage path="/help" />

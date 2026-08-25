@@ -170,11 +170,42 @@ export function nodeLabel(corpus: Corpus | null, id: string, lists: ListDef[]): 
   return { label: list ? list.label : '' };
 }
 
-// A node "has children to expand" (nikaya rows only ever toggle open/closed, never
-// navigate directly) exactly when it carries a `chapters` array — DN/MN don't, so
-// clicking them goes straight to their flat sutta list; SN/AN/KN do.
+// A node "has children to expand" (rows that expand never navigate, they only toggle) exactly
+// when it carries a `chapters` array — DN/MN don't, so clicking them goes straight to their flat
+// sutta list; SN/AN/KN do.
 export function isExpandable(node: { chapters?: unknown }): boolean {
   return Array.isArray(node.chapters) && node.chapters.length > 0;
+}
+
+// The description to show above a node's sutta list, and where it came from.
+//
+// Only leaf groups open a page, but the source data doesn't write its descriptions at a uniform
+// depth: MN's are on the vagga, SN's are on the saṁyutta *above* the vagga. So a leaf without one
+// of its own borrows the nearest ancestor's, and `from` names that ancestor so the reader isn't
+// told a chapter of ten discourses is "about" something broader than what's listed. Undefined
+// `from` means the node's own — AN's vaggas and four of KN's books have neither and show nothing.
+//
+// Nearest wins, so SN's five book-level descriptions never surface: every saṁyutta under them has
+// its own, and the more specific one is the better answer to "what am I looking at".
+export function nodeBlurb(
+  corpus: Corpus | null,
+  nodeId: string | undefined
+): { blurb?: string; from?: string } {
+  if (!corpus || !nodeId) return {};
+  const found = findNode(corpus, nodeId);
+  if (!found) return {};
+  // Only ChapterRow carries a blurb; a nikaya never does, and neither does any node the data
+  // has nothing for.
+  const blurbOf = (n: Nikaya | ChapterRow) => ('blurb' in n ? n.blurb : undefined);
+  const own = blurbOf(found.node);
+  if (own) return { blurb: own };
+  if (found.kind !== 'chapter') return {};
+  for (let i = found.ancestors.length - 1; i >= 0; i--) {
+    const a = found.ancestors[i];
+    const blurb = blurbOf(a);
+    if (blurb) return { blurb, from: 'ref' in a ? `${a.ref} · ${a.label}` : a.label };
+  }
+  return {};
 }
 
 // The set of ancestor ids (nikaya > group > chapter > category, as deep as it goes) that need
