@@ -382,8 +382,8 @@ Rule: sati-aware — 2146 change(s), 834 file(s)
 +In the same way, consider an individual who has wrong view, purpose, speech, action, livelihood, effort, awareness, composure, knowledge, and freedom. 
 @@ -1,2 +1,2 @@ an10.104:3.1
  PLI: Sammādiṭṭhikassa, bhikkhave, purisapuggalassa sammāsaṅkappassa sammāvācassa sammākammantassa sammāājīvassa sammāvāyāmassa sammāsatissa sammāsamādhissa sammāñāṇissa sammāvimuttissa yañceva kāyakammaṁ yathādiṭṭhi samattaṁ samādinnaṁ yañca vacīkammaṁ yathādiṭṭhi samattaṁ samādinnaṁ yañca manokammaṁ yathādiṭṭhi samattaṁ samādinnaṁ yā ca cetanā yā ca patthanā yo ca paṇidhi ye ca saṅkhārā, sabbe te dhammā iṭṭhāya kantāya manāpāya hitāya sukhāya saṁvattanti. 
--Consider an individual who has right view, purpose, speech, action, livelihood, effort, mindfulness, composure, knowledge, and freedom. Whatever bodily, verbal, or mental deeds they undertake in line with that view, their intentions, aims, wishes, and action formations all lead to what is likable, desirable, agreeable, beneficial, and pleasant. 
-+Consider an individual who has right view, purpose, speech, action, livelihood, effort, awareness, composure, knowledge, and freedom. Whatever bodily, verbal, or mental deeds they undertake in line with that view, their intentions, aims, wishes, and action formations all lead to what is likable, desirable, agreeable, beneficial, and pleasant. 
+-Consider an individual who has right view, purpose, speech, action, livelihood, effort, mindfulness, composure, knowledge, and freedom. Whatever bodily, verbal, or mental deeds they undertake in line with that view, their intentions, aims, wishes, and volitional formations all lead to what is likable, desirable, agreeable, beneficial, and pleasant. 
++Consider an individual who has right view, purpose, speech, action, livelihood, effort, awareness, composure, knowledge, and freedom. Whatever bodily, verbal, or mental deeds they undertake in line with that view, their intentions, aims, wishes, and volitional formations all lead to what is likable, desirable, agreeable, beneficial, and pleasant. 
 @@ -1,2 +1,2 @@ an10.104:4.4
  PLI: Evamevaṁ kho, bhikkhave, sammādiṭṭhikassa …pe… sammāvimuttissa yañceva kāyakammaṁ yathādiṭṭhi samattaṁ samādinnaṁ yañca vacīkammaṁ … 
 -In the same way, consider an individual who has right view, purpose, speech, action, livelihood, effort, mindfulness, composure, knowledge, and freedom. 
@@ -7030,8 +7030,8 @@ Rule: sati-aware — 2146 change(s), 834 file(s)
 +++ sujato/sutta/sn/sn4/sn4.25_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn4.25:17.2
  PLI: Asaṅkharāno satimā anoko; 
--without generating action formations, mindful, homeless; 
-+without generating action formations, aware, homeless; 
+-without generating volitional formations, mindful, homeless; 
++without generating volitional formations, aware, homeless; 
 --- sujato/sutta/sn/sn4/sn4.7_translation-en-sujato.json
 +++ sujato/sutta/sn/sn4/sn4.7_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn4.7:1.3
