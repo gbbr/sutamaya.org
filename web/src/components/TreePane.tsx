@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { navigate } from '@reach/router';
-import { LifeBuoy, Highlighter, StickyNote, History, Library, List, Search, X } from 'lucide-react';
+import { HelpCircle, Highlighter, StickyNote, History, Library, List, Search, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
@@ -524,7 +524,7 @@ export function TreePane({
             title="Help"
             onClick={() => navigate('/help')}
           >
-            <LifeBuoy size={mobile ? 21 : 19} strokeWidth={2} />
+            <HelpCircle size={mobile ? 21 : 19} strokeWidth={2} />
           </button>
           <button
             className="flex-none -ml-1 rounded-full flex items-center justify-center text-ink-3 hover:bg-ink/[.06]"
