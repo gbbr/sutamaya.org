@@ -48,8 +48,8 @@ Rule: viparinama-annathatta-change-unstable — 90 change(s), 24 file(s)
 +++ sujato/sutta/dn/dn1_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn1:3.21.5
  PLI: Kāmā hi, bho, aniccā dukkhā vipariṇāmadhammā, tesaṁ vipariṇāmaññathābhāvā uppajjanti sokaparidevadukkhadomanassupāyāsā. 
--Because sensual pleasures are impermanent, stressful, and perishable. Their decay and perishing give rise to sorrow, lamentation, pain, sadness, and distress. 
-+Because sensual pleasures are impermanent, stressful, and perishable. Their change and alteration give rise to sorrow, lamentation, pain, sadness, and distress. 
+-Because sensual pleasures are impermanent, suffering, and perishable. Their decay and perishing give rise to sorrow, lamentation, pain, sadness, and distress. 
++Because sensual pleasures are impermanent, suffering, and perishable. Their change and alteration give rise to sorrow, lamentation, pain, sadness, and distress. 
 --- sujato/sutta/mn/mn122_translation-en-sujato.json
 +++ sujato/sutta/mn/mn122_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn122:5.1

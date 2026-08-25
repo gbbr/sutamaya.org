@@ -22,7 +22,6 @@
 //   thought            vitakka-vicara-thought-examination
 //   attention          yoniso-proper-attention
 //   saṅkhāra           abhisankharoti-generate, sankhara-action-formations
-//   dukkha             dukkha-stress
 //   segment overrides  one line each, applied last; sub-grouped by cause, order immaterial
 
 export const RULES = [
@@ -523,34 +522,6 @@ export const RULES = [
     ],
   },
 
-  // ── Dukkha ──────────────────────────────────────────────────────────────────
-  // The only rule here whose deny list is an editorial line rather than a list of homonyms:
-  // "suffering" almost always does render dukkha, and what the list separates is two senses of the
-  // Pali word, not two English words.
-  {
-    id: 'dukkha-stress',
-    why: 'Bhikkhu Sujato renders dukkha as "suffering"; this app prefers "stress" where dukkha is the ' +
-      'object of analysis, and keeps "suffering" where it is a condition befalling someone. SN 12.32 ' +
-      'settles which is wanted: whatever is felt counts as dukkha, pleasant feeling included, which ' +
-      '"suffering" cannot carry and "stress" can. Open, because the analytic sense is 2,386 of 2,778 ' +
-      'segments and the exceptions fall into a dozen namable formulas — ahitāya dukkhāya, dukkhito ' +
-      'bāḷhagilāno, dukkhotiṇṇo dukkhapareto, dukkhaṁ viharati, the sukhī/dukkhī self-theories, and ' +
-      'dukkha as a kammic result. The deny list also holds five segments sitting within a line or ' +
-      'two of Bhikkhu Sujato’s own "stress" for daratha, upāyāsa or vihaññati.',
-    mode: 'deny',
-    predicate: /dukkh/i,
-    forms: [
-      // The noun is the default, standing in the same slot as Bhikkhu Sujato's own noun predicate
-      // ("form is stress"). Only where dukkha sits in a list of *adjectives* does the noun fail,
-      // and those are the four fixed strings below; "impermanence, suffering, and not-self"
-      // (an3.136's blurb) is a list of nouns and deliberately does not match any of them.
-      ['as impermanent, as suffering', 'as impermanent, as stressful'],
-      ['impermanent, suffering', 'impermanent, stressful'],
-      ['suffering and not-self', 'stressful and not-self'],
-      ['suffering, painful', 'stressful, painful'],
-      ['suffering', 'stress'],
-    ],
-  },
   // ── Segment overrides ───────────────────────────────────────────────────────
   // These run last, over the term rules' output — so `from` is the post-processed text, not
   // upstream's. `segments: [...]` is for a line the corpus repeats verbatim, where one from/to is
@@ -906,8 +877,8 @@ export const RULES = [
       'verbatim as "When action formations has faded away". Every parallel line in the same ' +
       'poem uses the plural verb.',
     segment: 'snp3.12:14.4',
-    from: '‘When action formations has faded away and ceased with no residue left behind, there is no origination of stress’: this is the second contemplation. ',
-    to: '‘When action formations have faded away and ceased with no residue left behind, there is no origination of stress’: this is the second contemplation. ',
+    from: '‘When action formations has faded away and ceased with no residue left behind, there is no origination of suffering’: this is the second contemplation. ',
+    to: '‘When action formations have faded away and ceased with no residue left behind, there is no origination of suffering’: this is the second contemplation. ',
   },
 
   // ·· an idiom the replacement adjective cannot take ··
@@ -1084,60 +1055,5 @@ export const RULES = [
     segment: 'mn43:7.6',
     from: 'It’s called sensation because it feels.” ',
     to: 'It’s called sensation because it senses.” ',
-  },
-
-  // ·· a possessive the replacement noun will not carry ··
-  // Bhikkhu Sujato uses the Saxon genitive for dukkha in six verse lines — "suffering's origin",
-  // "suffering's end". It reads fine on a three-syllable word and badly on a sibilant one-syllable
-  // one: "stress's transcendence" stacks two /s/ clusters together. These six take the of-genitive
-  // instead, which is a syllable longer — each is one line of a stanza, and it carries.
-  {
-    id: 'dukkha-possessive-arising-lower',
-    kind: 'segment',
-    why: 'Dukkhaṁ dukkhasamuppādaṁ — the four truths in verse, opening a stanza mid-sentence.',
-    segments: ['dhp191:1', 'iti24:5.3', 'thig13.3:20.1', 'thig13.4:10.1', 'thig7.3:5.1', 'sn15.10:6.3'],
-    from: 'stress, stress’s arising, ',
-    to: 'stress, the arising of stress, ',
-  },
-  {
-    id: 'dukkha-possessive-arising-upper',
-    kind: 'segment',
-    why: 'The same line where it opens the stanza and takes a capital.',
-    segments: ['thag21.1:51.1', 'thig7.2:5.1'],
-    from: 'Stress, stress’s arising, ',
-    to: 'Stress, the arising of stress, ',
-  },
-  {
-    id: 'dukkha-possessive-transcendence',
-    kind: 'segment',
-    why: 'Dukkhassa ca atikkamaṁ — the next line of the same stanza.',
-    segments: ['dhp191:2', 'iti24:5.4', 'thag21.1:51.2', 'thig13.3:20.2', 'thig13.4:10.2', 'thig7.2:5.2', 'thig7.3:5.2', 'sn15.10:6.4'],
-    from: 'stress’s transcendence, ',
-    to: 'the transcendence of stress, ',
-  },
-  {
-    id: 'dukkha-possessive-cause',
-    kind: 'segment',
-    why: 'Atho dukkhassa sambhavaṁ — the dyad verses of Iti 103, Snp 3.12 and SN 56.22.',
-    segments: ['iti103:4.2', 'iti103:6.2', 'snp3.12:5.2', 'snp3.12:7.2', 'sn56.22:4.2', 'sn56.22:6.2'],
-    from: 'and stress’s cause, ',
-    to: 'and the cause of stress, ',
-  },
-  {
-    id: 'dukkha-possessive-end',
-    kind: 'segment',
-    why: 'Buddhena dukkhantagunā pakāsitaṁ — the sabbath verses, where the possessive falls on the ' +
-      'line’s last stress.',
-    segments: ['an3.70:36.4', 'an8.42:11.4', 'an8.43:8.4', 'an8.45:8.4', 'snp2.14:27.4'],
-    from: 'revealed by the Buddha, <j>who has gone to stress’s end. ',
-    to: 'revealed by the Buddha, <j>who has gone to the end of stress. ',
-  },
-  {
-    id: 'dukkha-possessive-root',
-    kind: 'segment',
-    why: 'Passi jahi upadhidukkhamūlaṁ — MN 116’s roll-call of the paccekabuddhas.',
-    segment: 'mn116:6.11',
-    from: 'Passin gave up attachment, stress’s root, ',
-    to: 'Passin gave up attachment, the root of stress, ',
   },
 ];

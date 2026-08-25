@@ -32,7 +32,6 @@ gloss a term in his wording while the line above it uses ours.
 | paritassati | anxious, anxiety | **agitated, agitation** | Bhikkhu Sujato's own note gives the term as desire plus agitation; agitation is the half that survives. |
 | saṅkhāra | choices | **action formations** | What is formed is *kamma*: SN 22.56 defines the aggregate as the six kinds of intention, and AN 6.63 says intention is *kamma*. "Choices" narrows a word that covers much more than deliberate choosing. |
 | abhisaṅkharoti | make (choices) | **generate (action formations)** | The verb that goes with it — Bhikkhu Bodhi's word, and one of the dictionary's own glosses. |
-| dukkha (most of it) | suffering | **stress** (and "stressful" in a list of adjectives) | SN 12.32 says "whatever is felt counts as *dukkha*" — pleasant feeling included — and SN 38.14 counts two of its three kinds as structural rather than felt. "Suffering" can't stretch that far; "stress" can, and it's one of the dictionary's own glosses. Thanissaro Bhikkhu's word. **"Suffering" is kept** where *dukkha* is something befalling a person rather than the thing being analysed: "harm and suffering" as the fruit of a deed, "sick, suffering, gravely ill", "swamped by suffering", and the self-theories that pair it against "happy". |
 
 A term is changed everywhere it appears, but only where it really is that Pali word — Bhikkhu Sujato's
 "aware" also translates ordinary things that have nothing to do with *sampajañña*, and those are
