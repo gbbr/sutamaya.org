@@ -90,8 +90,8 @@ Rule: sati-aware — 2146 change(s), 834 file(s)
 -The spirit Maṇibhadda speaks in praise of mindfulness, opining that a mindful one is free of hate. The Buddha responds that yes, mindfulness is wonderful, but only through developing love is one free of hate.
 +The spirit Maṇibhadda speaks in praise of awareness, opining that an aware one is free of hate. The Buddha responds that yes, awareness is wonderful, but only through developing love is one free of hate.
 @@ -1 +1 @@ sn-blurbs:sn35.244
--The Buddha defines the things that entail stress as the five aggregates, and urges bhikkhus to be free of desire for the six senses, giving a series of vivid similes. He then speaks of how even for a bhikkhu practicing restraint a lapse of mindfulness might occur from time to time.
-+The Buddha defines the things that entail stress as the five aggregates, and urges bhikkhus to be free of desire for the six senses, giving a series of vivid similes. He then speaks of how even for a bhikkhu practicing restraint a lapse of awareness might occur from time to time.
+-The Buddha defines the things that entail suffering as the five aggregates, and urges bhikkhus to be free of desire for the six senses, giving a series of vivid similes. He then speaks of how even for a bhikkhu practicing restraint a lapse of mindfulness might occur from time to time.
++The Buddha defines the things that entail suffering as the five aggregates, and urges bhikkhus to be free of desire for the six senses, giving a series of vivid similes. He then speaks of how even for a bhikkhu practicing restraint a lapse of awareness might occur from time to time.
 @@ -1 +1 @@ sn-blurbs:sn35.247
 -The senses are like a snake, a crocodile, a bird, a dog, a jackal, and a monkey all tied up together, pulling this way and that. Mindfulness is like a post that keeps them grounded.
 +The senses are like a snake, a crocodile, a bird, a dog, a jackal, and a monkey all tied up together, pulling this way and that. Awareness is like a post that keeps them grounded.
@@ -1324,8 +1324,8 @@ Rule: sati-aware — 2146 change(s), 834 file(s)
 +++ sujato/sutta/an/an3/an3.49_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an3.49:2.2
  PLI: Ayaṁ vuccati, bhikkhave, bhikkhu ātāpī nipako sato sammā dukkhassa antakiriyāyā”ti. 
--This is called a bhikkhu who is ardent, alert, and mindful so as to rightly make an end of stress.” 
-+This is called a bhikkhu who is ardent, alert, and aware so as to rightly make an end of stress.” 
+-This is called a bhikkhu who is ardent, alert, and mindful so as to rightly make an end of suffering.” 
++This is called a bhikkhu who is ardent, alert, and aware so as to rightly make an end of suffering.” 
 --- sujato/sutta/an/an3/an3.58_translation-en-sujato.json
 +++ sujato/sutta/an/an3/an3.58_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an3.58:4.3
@@ -4626,8 +4626,8 @@ Rule: sati-aware — 2146 change(s), 834 file(s)
 +++ sujato/sutta/kn/thag/thag9.1_translation-en-sujato.json
 @@ -1,2 +1,2 @@ thag9.1:1.3
  PLI: Dukkhaṁ pariññāya satova jhāyati, 
--completely understanding stress, being mindful, <j>practicing absorption: 
-+completely understanding stress, being aware, <j>practicing absorption: 
+-completely understanding suffering, being mindful, <j>practicing absorption: 
++completely understanding suffering, being aware, <j>practicing absorption: 
 @@ -1,2 +1,2 @@ thag9.1:2.3
  PLI: Taṇhaṁ pahantvāna satova jhāyati, 
 -are destroyed, and one is mindful, <j>practicing absorption: 

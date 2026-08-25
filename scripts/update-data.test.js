@@ -328,7 +328,7 @@ describe('the shipped rules, one example each', () => {
     ['vippasanna-calm', 'iti47:4.2', 'sujato/sutta', 'immersed in samādhi, joyful and clear', 'composed in samādhi, joyful and calm'],
     // Denied by omission: the same word for the same term, where nothing collides with it.
     ['vippasanna-calm', 'dn20:5.8', 'sujato/sutta', 'clear and unclouded.”', 'clear and unclouded.”'],
-    ['samudaya-arising', 'sn56.11:4.3', 'sujato/sutta', 'the noble truth of the origin of suffering', 'the noble truth of the arising of stress'],
+    ['samudaya-arising', 'sn56.11:4.3', 'sujato/sutta', 'the noble truth of the origin of suffering', 'the noble truth of the arising of suffering'],
     // Denied: aggañña, how the world began.
     ['samudaya-arising', 'dn24:2.14.1', 'sujato/sutta', 'I understand the origin of the world.', 'I understand the origin of the world.'],
     // samudaya's verb form and vaya in one line.
@@ -378,29 +378,6 @@ describe('the shipped rules, one example each', () => {
     // for a term it deliberately does not claim.
     ['paritassati-agitated', 'sn2.17:2.1', 'sujato/sutta', '“This mind is always anxious, ', '“This mind is always anxious, '],
     ['paritassati-agitated', 'thag16.8:22.4', 'sujato/sutta', 'my mind was anxious. ', 'my mind was anxious. '],
-    // dukkha's two slots. Bhikkhu Sujato uses "suffering" as a noun predicate ("what's impermanent
-    // is suffering"), and "stress" stands in the same slot, so the noun is the default and covers
-    // almost the whole footprint — including the possessive and the Title Case sutta names.
-    ['dukkha-stress', 'sn22.15:1.3', 'sujato/sutta', 'What’s impermanent is suffering. ', 'What’s impermanent is stress. '],
-    ['dukkha-stress', 'dhp191:2', 'sujato/sutta', 'suffering’s transcendence, ', 'stress’s transcendence, '],
-    ['dukkha-stress', 'mn-name:16.mn13', 'sujato/name', 'The Longer Discourse on the Mass of Suffering ', 'The Longer Discourse on the Mass of Stress '],
-    // The one slot the noun cannot take: a list of adjectives, where "impermanent, stress, and
-    // perishable" would be ungrammatical. Four fixed strings cover every occurrence of it.
-    ['dukkha-stress', 'mn109:15.6', 'sujato/sutta', '“But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: ', '“But if it’s impermanent, stressful, and perishable, is it fit to be regarded thus: '],
-    ['dukkha-stress', 'an9.36:6.4', 'sujato/sutta', 'as impermanent, as suffering, as diseased, as a boil', 'as impermanent, as stressful, as diseased, as a boil'],
-    // Denied: the English verb, which the Pali predicate cannot distinguish — a bare swap would
-    // give "stress painful, sharp, severe, acute sensations". vedanā's rule still runs on the line.
-    ['dukkha-stress', 'ud2.6:5.2', 'sujato/sutta', 'He rolled to and fro, suffering painful, sharp, severe, acute feelings. ', 'He rolled to and fro, suffering painful, sharp, severe, acute sensations. '],
-    // Denied: the four formulas that carry the editorial line — dukkha as something befalling
-    // someone rather than the object of analysis. ahitāya dukkhāya, dukkhito bāḷhagilāno, and the
-    // sukhī/dukkhī self-theories, where "suffering" is paired against "happy" as a person's state.
-    ['dukkha-stress', 'mn22:6.15', 'sujato/sutta', 'This will be for your lasting harm and suffering.” ', 'This will be for your lasting harm and suffering.” '],
-    ['dukkha-stress', 'sn22.87:1.2', 'sujato/sutta', 'and he was sick, suffering, gravely ill. ', 'and he was sick, suffering, gravely ill. '],
-    ['dukkha-stress', 'sn24.44:1.1', 'sujato/sutta', '“‘The self is neither happy nor suffering, and is healthy after death’?” … ', '“‘The self is neither happy nor suffering, and is healthy after death’?” … '],
-    // Denied for proximity, not sense: mn149:3.4, three lines earlier, is already Bhikkhu Sujato's
-    // "Their physical and mental stress" for darathā. Converting here would put one English word
-    // on two Pali terms in the same breath.
-    ['dukkha-stress', 'mn149:3.7', 'sujato/sutta', 'And they experience physical and mental suffering. ', 'And they experience physical and mental suffering. '],
     // Denied: plain English in a blurb, which has no Pali to check it against — "anxious to know"
     // is eagerness.
     ['paritassati-agitated', 'an-blurbs:an8.23', 'sujato/blurb', 'Hatthaka is anxious to know that no lay people were present.', 'Hatthaka is anxious to know that no lay people were present.'],
