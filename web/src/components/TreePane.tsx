@@ -29,6 +29,7 @@ import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
 import type { ListDef } from '../lib/types';
 import { SignedInBadge } from './SignedInBadge';
 import { HeaderBanner } from './HeaderBanner';
+import { MatchedText } from './MatchedText';
 import { SuttaRowChips } from './SuttaRowChips';
 import { type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
 import { CorpusTreeView } from './CorpusTreeView';
@@ -692,13 +693,19 @@ export function TreePane({
                       onClick={() => openHit(matchedId ?? id)}
                     >
                       <span>
-                        <span className="font-sans text-ui-xs font-bold text-ink-3 mr-2.5">{sutta.ref}</span>
-                        <span className="text-ui-lg font-semibold leading-[1.3]">{sutta.en}</span>
+                        <span className="font-sans text-ui-xs font-bold text-ink-3 mr-2.5">
+                          <MatchedText text={sutta.ref} query={query} />
+                        </span>
+                        <span className="text-ui-lg font-semibold leading-[1.3]">
+                          <MatchedText text={sutta.en} query={query} />
+                        </span>
                       </span>
-                      <span className="font-serif text-ui-base italic text-accent-text">{sutta.pali}</span>
+                      <span className="font-serif text-ui-base italic text-accent-text">
+                        <MatchedText text={sutta.pali} query={query} />
+                      </span>
                       {note && (
                         <span className="block font-serif text-ui-md leading-[1.4] mt-[6px] pl-[10px] border-l-2 border-ink/30">
-                          {note}
+                          <MatchedText text={note} query={query} />
                         </span>
                       )}
                       <SuttaRowChips chips={chips} hlCount={hlCount} />

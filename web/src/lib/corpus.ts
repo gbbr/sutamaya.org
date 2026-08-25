@@ -264,8 +264,9 @@ export const SEARCH_PLACEHOLDER = 'Search ID, title, blurb, note, list';
 // plain "a"/"n" should still match "ā"/"ñ". NFD splits each accented letter into its base letter
 // plus a separate combining-mark codepoint (all of which fall in the U+0300–U+036F "combining
 // diacritical marks" block), which stripping then discards — cheaper and more general than
-// hand-listing every Pali special character.
-function searchKey(s: string): string {
+// hand-listing every Pali special character. Exported for lib/searchMatch.ts, which marks the
+// matched words in a result row and so has to fold text exactly the way the match did.
+export function searchKey(s: string): string {
   return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 }
 
