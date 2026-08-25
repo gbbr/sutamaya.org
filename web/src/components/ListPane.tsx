@@ -326,17 +326,16 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
             scroller rather than the header so a long one scrolls away instead of permanently
             eating the viewport.
 
-            The wash and a step down in size are the whole differentiator, and the wash is
-            deliberately faint — a sutta row's blurb is the same face, so an untitled paragraph
-            above the rows otherwise reads as a sutta whose title failed to load. Kept below the
-            selected-row tint (`bg-ink/[.06]`), which would read as a selection instead, and
-            neutral rather than a colour, so it darkens in light and lightens in dark.
+            No wash behind it: the eyebrow, the step down in size and the rule beneath are what
+            separate it from the rows, and a tint here reads as a selected row rather than as a
+            different kind of content.
 
-            The eyebrow says whose description this is. Only "About" claims it describes the page
-            you're on; SN writes its descriptions on the saṁyutta, a level above the vagga rows
-            that display them, so a borrowed one reads "Part of SN12 · Causation" instead. That
+            The eyebrow names what the description is about. A bare "About" means the page you're
+            on; SN writes its descriptions on the saṁyutta, a level above the vagga rows that
+            display them, so a borrowed one names that ancestor — "About SN12 · Causation". That
             stops a description of 90 discourses being passed off as a description of these ten,
-            and it's the only place the page names the larger group it belongs to.
+            and it's the only place the page names the larger group it belongs to. Every borrowed
+            case in the corpus is this one: an SN vagga under its saṁyutta.
 
             Clamped, because these are not short: 35 of the 92 run past 400 characters and SN
             22's is 2827 — six screens on a phone before the first row. Three lines, and the
@@ -350,15 +349,15 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
 
             `blurb` carries the same inline HTML a translator note does — see SegmentedText. */}
         {blurb && (
-          <div className="bg-ink/[.03] border-b border-ink/[.08] px-6 pt-4 pb-[18px]">
-            <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">
-              {blurbFrom ? `Part of ${blurbFrom}` : 'About'}
+          <div className="border-b border-ink/[.08] px-6 pt-4 pb-[18px]">
+            <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-1">
+              {blurbFrom ? `About ${blurbFrom}` : 'About'}
             </div>
             {(() => {
               const text = (
                 <span
                   ref={blurbRef}
-                  className={`text-ui-base leading-[1.6] text-ink-2 ${blurbOpen ? 'block' : 'line-clamp-3'}`}
+                  className={`text-ui-sm leading-[1.6] text-ink-3 ${blurbOpen ? 'block' : 'line-clamp-3'}`}
                   dangerouslySetInnerHTML={{ __html: blurb }}
                 />
               );
