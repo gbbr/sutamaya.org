@@ -334,6 +334,22 @@ const SECTIONS: HelpSection[] = [
   },
 ];
 
+// Who wrote the words being read, and the one thing this app does to them. It sits after the tour
+// and before the housekeeping sections: it is about the text rather than the app, and it is the
+// question a reader is most likely to arrive with. The full account of every change stays in
+// docs/translation-changes.md — the same page the reader's "Source: SuttaCentral, modified" line
+// links to — so this is the credit and the disclosure, not the list.
+const TRANSLATION_TITLE = 'The translation';
+
+const TRANSLATION_LEAD =
+  'The English is Bhikkhu Sujato’s translation, published by SuttaCentral under CC0. It is not ' +
+  'reproduced verbatim here: a small number of recurring Pali terms are rendered differently — ' +
+  'bhikkhu rather than mendicant, awareness rather than mindfulness — and about a hundred ' +
+  'individual lines are reworded. Everything else is his, word for word, and his own footnotes ' +
+  'are never altered.';
+
+const TRANSLATION_URL = 'https://github.com/gbbr/sutamaya.org/blob/main/docs/translation-changes.md';
+
 // The one part of the page that can't be a screenshot tour, and so deliberately not a HelpSection:
 // installing happens in browser chrome — Safari's Share sheet, Chrome's ⋮ menu — which no capture
 // of this app can show, and which Apple and Google rename often enough that a picture would age
@@ -562,6 +578,16 @@ export function HelpPage(_props: RouteComponentProps) {
             <button
               className="font-sans text-ui-base text-left text-ink-4 hover:text-ink-2 py-[5px]"
               onClick={() =>
+                document
+                  .getElementById(anchorId(TRANSLATION_TITLE))
+                  ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            >
+              {TRANSLATION_TITLE}
+            </button>
+            <button
+              className="font-sans text-ui-base text-left text-ink-4 hover:text-ink-2 py-[5px]"
+              onClick={() =>
                 document.getElementById(anchorId(INSTALL_TITLE))?.scrollIntoView({ behavior: 'smooth', block: 'start' })
               }
             >
@@ -601,6 +627,26 @@ export function HelpPage(_props: RouteComponentProps) {
             </section>
           );
         })}
+
+        {/* Prose and one link, with the same section furniture as everything else so it lands in
+            "On this page". Plain prose rather than a tip card: nothing here is an aside to a
+            picture, and the tinted card is reserved for the thing a marker couldn't point at. */}
+        <section id={anchorId(TRANSLATION_TITLE)} className="mb-10 scroll-mt-6">
+          <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">
+            {TRANSLATION_TITLE}
+          </div>
+          <p className="font-serif text-ui-lg leading-[1.55] text-ink-2 mb-4">{TRANSLATION_LEAD}</p>
+          <a
+            href={TRANSLATION_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 font-sans text-ui-base text-ink-2 hover:text-ink underline decoration-ink/25 underline-offset-2"
+          >
+            What was changed, and why
+            <ExternalLink size={16} strokeWidth={1.75} className="flex-none text-ink-4" />
+          </a>
+          <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />
+        </section>
 
         {/* Written out here rather than driven from SECTIONS: it is the same section furniture
             around two plain numbered lists instead of a picture and its legend. The numbers are
