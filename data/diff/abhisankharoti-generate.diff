@@ -4,251 +4,251 @@ Rule: abhisankharoti-generate — 54 change(s), 19 file(s)
 +++ sujato/blurb/sn-blurbs_root-en.json
 @@ -1 +1 @@ sn-blurbs:sn12
 -The “Linked Discourses on Causation” is a major collection containing 93 discourses on the core Buddhist teaching of dependent origination. Dependent origination presents a series of conditional links laying bare how suffering arises and how it ends. As such, it is an extended treatment of the second and third noble truths. It integrates psychological and existential aspects of suffering, showing how when bound by attachment we make choices that bind us to transmigrating into future lives. One of the core purposes is to explain how rebirth takes place without having to invoke metaphysical concepts such as a “soul”. The collection begins by defining each of the terms in the standard 12-linked chain, definitions which are assumed to apply throughout. Remaining discourses iterate on this theme, introducing new perspectives and formulations. 
-+The “Linked Discourses on Causation” is a major collection containing 93 discourses on the core Buddhist teaching of dependent origination. Dependent origination presents a series of conditional links laying bare how suffering arises and how it ends. As such, it is an extended treatment of the second and third noble truths. It integrates psychological and existential aspects of suffering, showing how when bound by attachment we generate action formations that bind us to transmigrating into future lives. One of the core purposes is to explain how rebirth takes place without having to invoke metaphysical concepts such as a “soul”. The collection begins by defining each of the terms in the standard 12-linked chain, definitions which are assumed to apply throughout. Remaining discourses iterate on this theme, introducing new perspectives and formulations. 
++The “Linked Discourses on Causation” is a major collection containing 93 discourses on the core Buddhist teaching of dependent origination. Dependent origination presents a series of conditional links laying bare how suffering arises and how it ends. As such, it is an extended treatment of the second and third noble truths. It integrates psychological and existential aspects of suffering, showing how when bound by attachment we generate volitional formations that bind us to transmigrating into future lives. One of the core purposes is to explain how rebirth takes place without having to invoke metaphysical concepts such as a “soul”. The collection begins by defining each of the terms in the standard 12-linked chain, definitions which are assumed to apply throughout. Remaining discourses iterate on this theme, introducing new perspectives and formulations. 
 @@ -1 +1 @@ sn-blurbs:sn12.51
 -A bhikkhu should thoroughly investigate the causes of suffering in accordance with dependent origination. If someone who still has ignorance makes a choice, their consciousness fares on to a suitable state of existence. But one who has eradicated ignorance is detached and is not reborn anywhere.
-+A bhikkhu should thoroughly investigate the causes of suffering in accordance with dependent origination. If someone who still has ignorance generates an action formation, their consciousness fares on to a suitable state of existence. But one who has eradicated ignorance is detached and is not reborn anywhere.
++A bhikkhu should thoroughly investigate the causes of suffering in accordance with dependent origination. If someone who still has ignorance generates a volitional formation, their consciousness fares on to a suitable state of existence. But one who has eradicated ignorance is detached and is not reborn anywhere.
 --- sujato/sutta/an/an3/an3.23_translation-en-sujato.json
 +++ sujato/sutta/an/an3/an3.23_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an3.23:1.3
  PLI: Idha, bhikkhave, ekacco puggalo sabyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharoti, sabyābajjhaṁ vacīsaṅkhāraṁ abhisaṅkharoti, sabyābajjhaṁ manosaṅkhāraṁ abhisaṅkharoti. 
 -Firstly, a certain individual makes hurtful choices by way of body, speech, and mind. 
-+Firstly, a certain individual generates hurtful action formations by way of body, speech, and mind. 
++Firstly, a certain individual generates hurtful volitional formations by way of body, speech, and mind. 
 @@ -1,2 +1,2 @@ an3.23:1.4
  PLI: So sabyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharitvā, sabyābajjhaṁ vacīsaṅkhāraṁ abhisaṅkharitvā, sabyābajjhaṁ manosaṅkhāraṁ abhisaṅkharitvā sabyābajjhaṁ lokaṁ upapajjati. 
 -Having made these choices, they’re reborn in a hurtful world, 
-+Having generated these action formations, they’re reborn in a hurtful world, 
++Having generated these volitional formations, they’re reborn in a hurtful world, 
 @@ -1,2 +1,2 @@ an3.23:2.1
  PLI: Idha pana, bhikkhave, ekacco puggalo abyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharoti, abyābajjhaṁ vacīsaṅkhāraṁ abhisaṅkharoti, abyābajjhaṁ manosaṅkhāraṁ abhisaṅkharoti. 
 -Furthermore, another individual makes pleasing choices by way of body, speech, and mind. 
-+Furthermore, another individual generates pleasing action formations by way of body, speech, and mind. 
++Furthermore, another individual generates pleasing volitional formations by way of body, speech, and mind. 
 @@ -1,2 +1,2 @@ an3.23:2.2
  PLI: So abyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharitvā, abyābajjhaṁ vacīsaṅkhāraṁ abhisaṅkharitvā, abyābajjhaṁ manosaṅkhāraṁ abhisaṅkharitvā abyābajjhaṁ lokaṁ upapajjati. 
 -Having made these choices, they are reborn in a pleasing world, 
-+Having generated these action formations, they are reborn in a pleasing world, 
++Having generated these volitional formations, they are reborn in a pleasing world, 
 @@ -1,2 +1,2 @@ an3.23:3.1
  PLI: Idha pana, bhikkhave, ekacco puggalo sabyābajjhampi abyābajjhampi kāyasaṅkhāraṁ abhisaṅkharoti, sabyābajjhampi abyābajjhampi vacīsaṅkhāraṁ abhisaṅkharoti, sabyābajjhampi abyābajjhampi manosaṅkhāraṁ abhisaṅkharoti. 
 -Furthermore, another individual makes both hurtful and pleasing choices by way of body, speech, and mind. 
-+Furthermore, another individual generates both hurtful and pleasing action formations by way of body, speech, and mind. 
++Furthermore, another individual generates both hurtful and pleasing volitional formations by way of body, speech, and mind. 
 @@ -1,2 +1,2 @@ an3.23:3.2
  PLI: So sabyābajjhampi abyābajjhampi kāyasaṅkhāraṁ abhisaṅkharitvā, sabyābajjhampi abyābajjhampi vacīsaṅkhāraṁ abhisaṅkharitvā, sabyābajjhampi abyābajjhampi manosaṅkhāraṁ abhisaṅkharitvā sabyābajjhampi abyābajjhampi lokaṁ upapajjati. 
 -Having made these choices, they are reborn in a world that is both hurtful and pleasing, 
-+Having generated these action formations, they are reborn in a world that is both hurtful and pleasing, 
++Having generated these volitional formations, they are reborn in a world that is both hurtful and pleasing, 
 --- sujato/sutta/an/an4/an4.233_translation-en-sujato.json
 +++ sujato/sutta/an/an4/an4.233_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.233:2.2
  PLI: Idha, bhikkhave, ekacco sabyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharoti, sabyābajjhaṁ vacīsaṅkhāraṁ abhisaṅkharoti, sabyābajjhaṁ manosaṅkhāraṁ abhisaṅkharoti. 
 -It’s when someone makes hurtful choices by way of body, speech, and mind. 
-+It’s when someone generates hurtful action formations by way of body, speech, and mind. 
++It’s when someone generates hurtful volitional formations by way of body, speech, and mind. 
 @@ -1,2 +1,2 @@ an4.233:2.3
  PLI: So sabyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharitvā, sabyābajjhaṁ vacīsaṅkhāraṁ abhisaṅkharitvā, sabyābajjhaṁ manosaṅkhāraṁ abhisaṅkharitvā sabyābajjhaṁ lokaṁ upapajjati. 
 -Having made these choices, they’re reborn in a hurtful world, 
-+Having generated these action formations, they’re reborn in a hurtful world, 
++Having generated these volitional formations, they’re reborn in a hurtful world, 
 @@ -1,2 +1,2 @@ an4.233:3.2
  PLI: Idha, bhikkhave, ekacco abyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharoti, abyābajjhaṁ vacīsaṅkhāraṁ abhisaṅkharoti, abyābajjhaṁ manosaṅkhāraṁ abhisaṅkharoti. 
 -It’s when someone makes pleasing choices by way of body, speech, and mind. 
-+It’s when someone generates pleasing action formations by way of body, speech, and mind. 
++It’s when someone generates pleasing volitional formations by way of body, speech, and mind. 
 @@ -1,2 +1,2 @@ an4.233:3.3
  PLI: So abyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharitvā, abyābajjhaṁ vacīsaṅkhāraṁ abhisaṅkharitvā, abyābajjhaṁ manosaṅkhāraṁ abhisaṅkharitvā abyābajjhaṁ lokaṁ upapajjati. 
 -Having made these choices, they’re reborn in a pleasing world, 
-+Having generated these action formations, they’re reborn in a pleasing world, 
++Having generated these volitional formations, they’re reborn in a pleasing world, 
 @@ -1,2 +1,2 @@ an4.233:4.2
  PLI: Idha, bhikkhave, ekacco sabyābajjhampi abyābajjhampi kāyasaṅkhāraṁ abhisaṅkharoti, sabyābajjhampi abyābajjhampi vacīsaṅkhāraṁ abhisaṅkharoti, sabyābajjhampi abyābajjhampi manosaṅkhāraṁ abhisaṅkharoti. 
 -It’s when someone makes both hurtful and pleasing choices by way of body, speech, and mind. 
-+It’s when someone generates both hurtful and pleasing action formations by way of body, speech, and mind. 
++It’s when someone generates both hurtful and pleasing volitional formations by way of body, speech, and mind. 
 @@ -1,2 +1,2 @@ an4.233:4.3
  PLI: So sabyābajjhampi abyābajjhampi kāyasaṅkhāraṁ abhisaṅkharitvā, sabyābajjhampi abyābajjhampi vacīsaṅkhāraṁ abhisaṅkharitvā, sabyābajjhampi abyābajjhampi manosaṅkhāraṁ abhisaṅkharitvā sabyābajjhampi abyābajjhampi lokaṁ upapajjati. 
 -Having made these choices, they are reborn in a world that is both hurtful and pleasing, 
-+Having generated these action formations, they are reborn in a world that is both hurtful and pleasing, 
++Having generated these volitional formations, they are reborn in a world that is both hurtful and pleasing, 
 --- sujato/sutta/an/an4/an4.234_translation-en-sujato.json
 +++ sujato/sutta/an/an4/an4.234_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.234:4.2
  PLI: Idha, brāhmaṇa, ekacco sabyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharoti, sabyābajjhaṁ vacīsaṅkhāraṁ abhisaṅkharoti, sabyābajjhaṁ manosaṅkhāraṁ abhisaṅkharoti. 
 -It’s when someone makes hurtful choices by way of body, speech, and mind. … 
-+It’s when someone generates hurtful action formations by way of body, speech, and mind. … 
++It’s when someone generates hurtful volitional formations by way of body, speech, and mind. … 
 @@ -1,2 +1,2 @@ an4.234:5.2
  PLI: Idha, brāhmaṇa, ekacco abyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharoti, abyābajjhaṁ vacīsaṅkhāraṁ abhisaṅkharoti, abyābajjhaṁ manosaṅkhāraṁ abhisaṅkharoti. 
 -It’s when someone makes pleasing choices by way of body, speech, and mind. … 
-+It’s when someone generates pleasing action formations by way of body, speech, and mind. … 
++It’s when someone generates pleasing volitional formations by way of body, speech, and mind. … 
 @@ -1,2 +1,2 @@ an4.234:6.2
  PLI: Idha, brāhmaṇa, ekacco sabyābajjhampi abyābajjhampi kāyasaṅkhāraṁ abhisaṅkharoti, sabyābajjhampi abyābajjhampi vacīsaṅkhāraṁ abhisaṅkharoti, sabyābajjhampi abyābajjhampi manosaṅkhāraṁ abhisaṅkharoti. 
 -It’s when someone makes both hurtful and pleasing choices by way of body, speech, and mind. … 
-+It’s when someone generates both hurtful and pleasing action formations by way of body, speech, and mind. … 
++It’s when someone generates both hurtful and pleasing volitional formations by way of body, speech, and mind. … 
 --- sujato/sutta/an/an4/an4.235_translation-en-sujato.json
 +++ sujato/sutta/an/an4/an4.235_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.235:3.2
  PLI: Idha, bhikkhave, ekacco sabyābajjhampi abyābajjhampi kāyasaṅkhāraṁ abhisaṅkharoti …pe… idaṁ vuccati, bhikkhave, kammaṁ kaṇhasukkaṁ kaṇhasukkavipākaṁ. 
 -It’s when someone makes both hurtful and pleasing choices by way of body, speech, and mind. These are called dark and bright deeds with dark and bright results. 
-+It’s when someone generates both hurtful and pleasing action formations by way of body, speech, and mind. These are called dark and bright deeds with dark and bright results. 
++It’s when someone generates both hurtful and pleasing volitional formations by way of body, speech, and mind. These are called dark and bright deeds with dark and bright results. 
 --- sujato/sutta/an/an4/an4.236_translation-en-sujato.json
 +++ sujato/sutta/an/an4/an4.236_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.236:4.2
  PLI: Idha, bhikkhave, ekacco sabyābajjhampi abyābajjhampi kāyasaṅkhāraṁ abhisaṅkharoti …pe… idaṁ vuccati, bhikkhave, kammaṁ kaṇhasukkaṁ kaṇhasukkavipākaṁ. 
 -It’s when someone makes both hurtful and pleasing choices by way of body, speech, and mind. These are called dark and bright deeds with dark and bright results. 
-+It’s when someone generates both hurtful and pleasing action formations by way of body, speech, and mind. These are called dark and bright deeds with dark and bright results. 
++It’s when someone generates both hurtful and pleasing volitional formations by way of body, speech, and mind. These are called dark and bright deeds with dark and bright results. 
 --- sujato/sutta/an/an4/an4.237_translation-en-sujato.json
 +++ sujato/sutta/an/an4/an4.237_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.237:2.2
  PLI: Idha, bhikkhave, ekacco sabyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharoti …pe… idaṁ vuccati, bhikkhave, kammaṁ kaṇhaṁ kaṇhavipākaṁ. 
 -It’s when someone makes hurtful choices by way of body, speech, and mind. These are called dark deeds with dark results. 
-+It’s when someone generates hurtful action formations by way of body, speech, and mind. These are called dark deeds with dark results. 
++It’s when someone generates hurtful volitional formations by way of body, speech, and mind. These are called dark deeds with dark results. 
 @@ -1,2 +1,2 @@ an4.237:3.2
  PLI: Idha, bhikkhave, ekacco abyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharoti …pe… idaṁ vuccati, bhikkhave, kammaṁ sukkaṁ sukkavipākaṁ. 
 -It’s when someone makes pleasing choices by way of body, speech, and mind. These are called bright deeds with bright results. 
-+It’s when someone generates pleasing action formations by way of body, speech, and mind. These are called bright deeds with bright results. 
++It’s when someone generates pleasing volitional formations by way of body, speech, and mind. These are called bright deeds with bright results. 
 @@ -1,2 +1,2 @@ an4.237:4.2
  PLI: Idha, bhikkhave, ekacco sabyābajjhampi abyābajjhampi kāyasaṅkhāraṁ abhisaṅkharoti …pe… idaṁ vuccati, bhikkhave, kammaṁ kaṇhasukkaṁ kaṇhasukkavipākaṁ. 
 -It’s when someone makes both hurtful and pleasing choices by way of body, speech, and mind. These are called dark and bright deeds with dark and bright results. 
-+It’s when someone generates both hurtful and pleasing action formations by way of body, speech, and mind. These are called dark and bright deeds with dark and bright results. 
++It’s when someone generates both hurtful and pleasing volitional formations by way of body, speech, and mind. These are called dark and bright deeds with dark and bright results. 
 --- sujato/sutta/an/an4/an4.238_translation-en-sujato.json
 +++ sujato/sutta/an/an4/an4.238_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.238:1.2
  PLI: idha, bhikkhave, ekacco sabyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharoti …pe… idaṁ vuccati, bhikkhave, kammaṁ kaṇhaṁ kaṇhavipākaṁ. 
 -And what are dark deeds with dark results? It’s when someone makes hurtful choices by way of body, speech, and mind. These are called dark deeds with dark results. 
-+And what are dark deeds with dark results? It’s when someone generates hurtful action formations by way of body, speech, and mind. These are called dark deeds with dark results. 
++And what are dark deeds with dark results? It’s when someone generates hurtful volitional formations by way of body, speech, and mind. These are called dark deeds with dark results. 
 @@ -1,2 +1,2 @@ an4.238:2.2
  PLI: Idha, bhikkhave, ekacco abyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharoti …pe… idaṁ vuccati, bhikkhave, kammaṁ sukkaṁ sukkavipākaṁ. 
 -It’s when someone makes pleasing choices by way of body, speech, and mind. These are called bright deeds with bright results. 
-+It’s when someone generates pleasing action formations by way of body, speech, and mind. These are called bright deeds with bright results. 
++It’s when someone generates pleasing volitional formations by way of body, speech, and mind. These are called bright deeds with bright results. 
 @@ -1,2 +1,2 @@ an4.238:3.2
  PLI: Idha, bhikkhave, ekacco sabyābajjhampi abyābajjhampi kāyasaṅkhāraṁ abhisaṅkharoti …pe… idaṁ vuccati, bhikkhave, kammaṁ kaṇhasukkaṁ kaṇhasukkavipākaṁ. 
 -It’s when someone makes both hurtful and pleasing choices by way of body, speech, and mind. These are called dark and bright deeds with dark and bright results. 
-+It’s when someone generates both hurtful and pleasing action formations by way of body, speech, and mind. These are called dark and bright deeds with dark and bright results. 
++It’s when someone generates both hurtful and pleasing volitional formations by way of body, speech, and mind. These are called dark and bright deeds with dark and bright results. 
 --- sujato/sutta/kn/snp/vagga3/snp3.12_translation-en-sujato.json
 +++ sujato/sutta/kn/snp/vagga3/snp3.12_translation-en-sujato.json
 @@ -1,2 +1,2 @@ snp3.12:43.4
  PLI: Saṅkhāre uparundhiya; 
 -and stopped making karmic choices, 
-+and stopped generating action formations, 
++and stopped generating volitional formations, 
 --- sujato/sutta/mn/mn140_translation-en-sujato.json
 +++ sujato/sutta/mn/mn140_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn140:22.10
  PLI: So neva taṁ abhisaṅkharoti, na abhisañcetayati bhavāya vā vibhavāya vā. 
 -They neither make a choice nor form an intention for existence or nonexistence. 
-+They neither generate an action formation nor form an intention for existence or nonexistence. 
++They neither generate a volitional formation nor form an intention for existence or nonexistence. 
 --- sujato/sutta/mn/mn57_translation-en-sujato.json
 +++ sujato/sutta/mn/mn57_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn57:8.2
  PLI: Idha, puṇṇa, ekacco sabyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharoti, sabyābajjhaṁ vacīsaṅkhāraṁ abhisaṅkharoti, sabyābajjhaṁ manosaṅkhāraṁ abhisaṅkharoti. 
 -It’s when someone makes hurtful choices by way of body, speech, and mind. 
-+It’s when someone generates hurtful action formations by way of body, speech, and mind. 
++It’s when someone generates hurtful volitional formations by way of body, speech, and mind. 
 @@ -1,2 +1,2 @@ mn57:8.3
  PLI: So sabyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharitvā, sabyābajjhaṁ vacīsaṅkhāraṁ abhisaṅkharitvā, sabyābajjhaṁ manosaṅkhāraṁ abhisaṅkharitvā, sabyābajjhaṁ lokaṁ upapajjati. 
 -Having made these choices, they’re reborn in a hurtful world, 
-+Having generated these action formations, they’re reborn in a hurtful world, 
++Having generated these volitional formations, they’re reborn in a hurtful world, 
 @@ -1,2 +1,2 @@ mn57:9.2
  PLI: Idha, puṇṇa, ekacco abyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharoti, abyābajjhaṁ vacīsaṅkhāraṁ abhisaṅkharoti, abyābajjhaṁ manosaṅkhāraṁ abhisaṅkharoti. 
 -It’s when someone makes pleasing choices by way of body, speech, and mind. 
-+It’s when someone generates pleasing action formations by way of body, speech, and mind. 
++It’s when someone generates pleasing volitional formations by way of body, speech, and mind. 
 @@ -1,2 +1,2 @@ mn57:9.3
  PLI: So abyābajjhaṁ kāyasaṅkhāraṁ abhisaṅkharitvā, abyābajjhaṁ vacīsaṅkhāraṁ abhisaṅkharitvā, abyābajjhaṁ manosaṅkhāraṁ abhisaṅkharitvā abyābajjhaṁ lokaṁ upapajjati. 
 -Having made these choices, they are reborn in a pleasing world, 
-+Having generated these action formations, they are reborn in a pleasing world, 
++Having generated these volitional formations, they are reborn in a pleasing world, 
 @@ -1,2 +1,2 @@ mn57:10.2
  PLI: Idha, puṇṇa, ekacco sabyābajjhampi abyābajjhampi kāyasaṅkhāraṁ abhisaṅkharoti, sabyābajjhampi abyābajjhampi vacīsaṅkhāraṁ abhisaṅkharoti, sabyābajjhampi abyābajjhampi manosaṅkhāraṁ abhisaṅkharoti. 
 -It’s when someone makes both hurtful and pleasing choices by way of body, speech, and mind. 
-+It’s when someone generates both hurtful and pleasing action formations by way of body, speech, and mind. 
++It’s when someone generates both hurtful and pleasing volitional formations by way of body, speech, and mind. 
 @@ -1,2 +1,2 @@ mn57:10.3
  PLI: So sabyābajjhampi abyābajjhampi kāyasaṅkhāraṁ abhisaṅkharitvā, sabyābajjhampi abyābajjhampi vacīsaṅkhāraṁ abhisaṅkharitvā, sabyābajjhampi abyābajjhampi manosaṅkhāraṁ abhisaṅkharitvā sabyābajjhampi abyābajjhampi lokaṁ upapajjati. 
 -Having made these choices, they are reborn in a world that is both hurtful and pleasing, 
-+Having generated these action formations, they are reborn in a world that is both hurtful and pleasing, 
++Having generated these volitional formations, they are reborn in a world that is both hurtful and pleasing, 
 --- sujato/sutta/sn/sn12/sn12.51_translation-en-sujato.json
 +++ sujato/sutta/sn/sn12/sn12.51_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn12.51:9.1
  PLI: Avijjāgato yaṁ, bhikkhave, purisapuggalo puññañce saṅkhāraṁ abhisaṅkharoti, puññūpagaṁ hoti viññāṇaṁ. 
 -If an ignoramus makes a good choice, consciousness passes on by means of goodness. 
-+If an ignoramus generates a good action formation, consciousness passes on by means of goodness. 
++If an ignoramus generates a good volitional formation, consciousness passes on by means of goodness. 
 @@ -1,2 +1,2 @@ sn12.51:9.2
  PLI: Apuññañce saṅkhāraṁ abhisaṅkharoti, apuññūpagaṁ hoti viññāṇaṁ. 
 -If they make a bad choice, consciousness passes on by means of badness. 
-+If they generate a bad action formation, consciousness passes on by means of badness. 
++If they generate a bad volitional formation, consciousness passes on by means of badness. 
 @@ -1,2 +1,2 @@ sn12.51:9.3
  PLI: Āneñjañce saṅkhāraṁ abhisaṅkharoti āneñjūpagaṁ hoti viññāṇaṁ. 
 -If they make an imperturbable choice, consciousness passes on by means of imperturbability. 
-+If they generate an imperturbable action formation, consciousness passes on by means of imperturbability. 
++If they generate an imperturbable volitional formation, consciousness passes on by means of imperturbability. 
 @@ -1,2 +1,2 @@ sn12.51:9.4
  PLI: Yato kho, bhikkhave, bhikkhuno avijjā pahīnā hoti vijjā uppannā, so avijjāvirāgā vijjuppādā neva puññābhisaṅkhāraṁ abhisaṅkharoti na apuññābhisaṅkhāraṁ abhisaṅkharoti na āneñjābhisaṅkhāraṁ abhisaṅkharoti. 
--When a bhikkhu has given up ignorance and given rise to knowledge, with the fading away of ignorance and the arising of knowledge they don’t make a good choice, a bad action formation, or an imperturbable action formation. 
-+When a bhikkhu has given up ignorance and given rise to knowledge, with the fading away of ignorance and the arising of knowledge they don’t generate a good action formation, a bad action formation, or an imperturbable action formation. 
+-When a bhikkhu has given up ignorance and given rise to knowledge, with the fading away of ignorance and the arising of knowledge they don’t make a good choice, a bad volitional formation, or an imperturbable volitional formation. 
++When a bhikkhu has given up ignorance and given rise to knowledge, with the fading away of ignorance and the arising of knowledge they don’t generate a good volitional formation, a bad volitional formation, or an imperturbable volitional formation. 
 @@ -1,2 +1,2 @@ sn12.51:13.2
  PLI: api nu kho khīṇāsavo bhikkhu puññābhisaṅkhāraṁ vā abhisaṅkhareyya apuññābhisaṅkhāraṁ vā abhisaṅkhareyya āneñjābhisaṅkhāraṁ vā abhisaṅkhareyyā”ti? 
--Would a bhikkhu who has ended the defilements still make good choices, bad action formations, or imperturbable action formations?” 
-+Would a bhikkhu who has ended the defilements still generate good action formations, bad action formations, or imperturbable action formations?” 
+-Would a bhikkhu who has ended the defilements still make good choices, bad volitional formations, or imperturbable volitional formations?” 
++Would a bhikkhu who has ended the defilements still generate good volitional formations, bad volitional formations, or imperturbable volitional formations?” 
 --- sujato/sutta/sn/sn22/sn22.53_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.53_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.53:3.8
  PLI: Tadappatiṭṭhitaṁ viññāṇaṁ avirūḷhaṁ anabhisaṅkhacca vimuttaṁ. 
 -Since that consciousness does not become established and does not grow, not making choices, it is freed. 
-+Since that consciousness does not become established and does not grow, not generating action formations, it is freed. 
++Since that consciousness does not become established and does not grow, not generating volitional formations, it is freed. 
 --- sujato/sutta/sn/sn22/sn22.54_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.54_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.54:4.8
  PLI: Tadappatiṭṭhitaṁ viññāṇaṁ avirūḷhaṁ anabhisaṅkhacca vimuttaṁ. 
 -Since that consciousness does not become established and does not grow, not making choices, it is freed. 
-+Since that consciousness does not become established and does not grow, not generating action formations, it is freed. 
++Since that consciousness does not become established and does not grow, not generating volitional formations, it is freed. 
 --- sujato/sutta/sn/sn22/sn22.55_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.55_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.55:13.6
  PLI: Tadappatiṭṭhitaṁ viññāṇaṁ avirūḷhaṁ anabhisaṅkhacca vimuttaṁ. 
 -Since that consciousness does not become established and does not grow, not making choices, it is freed. 
-+Since that consciousness does not become established and does not grow, not generating action formations, it is freed. 
++Since that consciousness does not become established and does not grow, not generating volitional formations, it is freed. 
 --- sujato/sutta/sn/sn4/sn4.25_translation-en-sujato.json
 +++ sujato/sutta/sn/sn4/sn4.25_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn4.25:17.2
  PLI: Asaṅkharāno satimā anoko; 
 -without making choices, aware, homeless; 
-+without generating action formations, aware, homeless; 
++without generating volitional formations, aware, homeless; 
 --- sujato/sutta/sn/sn56/sn56.42_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.42_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn56.42:2.4
  PLI: Te jātisaṁvattanikesu saṅkhāresu abhiratā jarāsaṁvattanikesu saṅkhāresu abhiratā maraṇasaṁvattanikesu saṅkhāresu abhiratā sokaparidevadukkhadomanassupāyāsasaṁvattanikesu saṅkhāresu abhiratā jātisaṁvattanikepi saṅkhāre abhisaṅkharonti, jarāsaṁvattanikepi saṅkhāre abhisaṅkharonti, maraṇasaṁvattanikepi saṅkhāre abhisaṅkharonti, sokaparidevadukkhadomanassupāyāsasaṁvattanikepi saṅkhāre abhisaṅkharonti. 
--Since they take pleasure in such action formations, they continue to make them. 
-+Since they take pleasure in such action formations, they continue to generate them. 
+-Since they take pleasure in such volitional formations, they continue to make them. 
++Since they take pleasure in such volitional formations, they continue to generate them. 
 @@ -1,2 +1,2 @@ sn56.42:2.5
  PLI: Te jātisaṁvattanikepi saṅkhāre abhisaṅkharitvā jarāsaṁvattanikepi saṅkhāre abhisaṅkharitvā maraṇasaṁvattanikepi saṅkhāre abhisaṅkharitvā sokaparidevadukkhadomanassupāyāsasaṁvattanikepi saṅkhāre abhisaṅkharitvā jātipapātampi papatanti, jarāpapātampi papatanti, maraṇapapātampi papatanti, sokaparidevadukkhadomanassupāyāsapapātampi papatanti. 
 -Having made choices that lead to rebirth, old age, and death, to sorrow, lamentation, pain, sadness, and distress, they fall down the cliff of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
-+Having generated action formations that lead to rebirth, old age, and death, to sorrow, lamentation, pain, sadness, and distress, they fall down the cliff of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
++Having generated volitional formations that lead to rebirth, old age, and death, to sorrow, lamentation, pain, sadness, and distress, they fall down the cliff of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
 @@ -1,2 +1,2 @@ sn56.42:3.3
  PLI: Te jātisaṁvattanikesu saṅkhāresu anabhiratā, jarāsaṁvattanikesu saṅkhāresu anabhiratā, maraṇasaṁvattanikesu saṅkhāresu anabhiratā, sokaparidevadukkhadomanassupāyāsasaṁvattanikesu saṅkhāresu anabhiratā, jātisaṁvattanikepi saṅkhāre nābhisaṅkharonti, jarāsaṁvattanikepi saṅkhāre nābhisaṅkharonti, maraṇasaṁvattanikepi saṅkhāre nābhisaṅkharonti, sokaparidevadukkhadomanassupāyāsasaṁvattanikepi saṅkhāre nābhisaṅkharonti. 
--Since they don’t take pleasure in such action formations, they stop making them. 
-+Since they don’t take pleasure in such action formations, they stop generating them. 
+-Since they don’t take pleasure in such volitional formations, they stop making them. 
++Since they don’t take pleasure in such volitional formations, they stop generating them. 
 @@ -1,2 +1,2 @@ sn56.42:3.4
  PLI: Te jātisaṁvattanikepi saṅkhāre anabhisaṅkharitvā, jarāsaṁvattanikepi saṅkhāre anabhisaṅkharitvā, maraṇasaṁvattanikepi saṅkhāre anabhisaṅkharitvā, sokaparidevadukkhadomanassupāyāsasaṁvattanikepi saṅkhāre anabhisaṅkharitvā, jātipapātampi nappapatanti, jarāpapātampi nappapatanti, maraṇapapātampi nappapatanti, sokaparidevadukkhadomanassupāyāsapapātampi nappapatanti. 
 -Having stopped making choices that lead to rebirth, old age, and death, to sorrow, lamentation, pain, sadness, and distress, they don’t fall down the cliff of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
-+Having stopped generating action formations that lead to rebirth, old age, and death, to sorrow, lamentation, pain, sadness, and distress, they don’t fall down the cliff of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
++Having stopped generating volitional formations that lead to rebirth, old age, and death, to sorrow, lamentation, pain, sadness, and distress, they don’t fall down the cliff of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
 --- sujato/sutta/sn/sn56/sn56.43_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.43_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn56.43:3.4
  PLI: abhiratā …pe… abhisaṅkharonti …pe… 
 -They continue to make such choices … 
-+They continue to generate such action formations … 
++They continue to generate such volitional formations … 
 @@ -1,2 +1,2 @@ sn56.43:3.5
  PLI: abhisaṅkharitvā jātipariḷāhenapi pariḍayhanti, jarāpariḷāhenapi pariḍayhanti, maraṇapariḷāhenapi pariḍayhanti, sokaparidevadukkhadomanassupāyāsapariḷāhenapi pariḍayhanti. 
 -Having made such choices, they burn with the scorching of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
-+Having generated such action formations, they burn with the scorching of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
++Having generated such volitional formations, they burn with the scorching of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
 @@ -1,2 +1,2 @@ sn56.43:4.3
  PLI: anabhiratā …pe… nābhisaṅkharonti …pe… 
 -They stop making such choices … 
-+They stop generating such action formations … 
++They stop generating such volitional formations … 
 @@ -1,2 +1,2 @@ sn56.43:4.4
  PLI: anabhisaṅkharitvā jātipariḷāhenapi na pariḍayhanti, jarāpariḷāhenapi na pariḍayhanti, maraṇapariḷāhenapi na pariḍayhanti, sokaparidevadukkhadomanassupāyāsapariḷāhenapi na pariḍayhanti. 
 -Having stopped making such choices, they don’t burn with the scorching of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
-+Having stopped generating such action formations, they don’t burn with the scorching of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
++Having stopped generating such volitional formations, they don’t burn with the scorching of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
 --- sujato/sutta/sn/sn56/sn56.46_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.46_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn56.46:3.4
  PLI: abhiratā …pe… abhisaṅkharonti …pe… 
 -They continue to make such choices … 
-+They continue to generate such action formations … 
++They continue to generate such volitional formations … 
 @@ -1,2 +1,2 @@ sn56.46:3.5
  PLI: abhisaṅkharitvā jātandhakārampi papatanti, jarandhakārampi papatanti, maraṇandhakārampi papatanti, sokaparidevadukkhadomanassupāyāsandhakārampi papatanti. 
 -Having made such choices, they fall into the darkness of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
-+Having generated such action formations, they fall into the darkness of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
++Having generated such volitional formations, they fall into the darkness of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
 @@ -1,2 +1,2 @@ sn56.46:4.3
  PLI: anabhiratā …pe… nābhisaṅkharonti …pe… 
 -They stop making such choices … 
-+They stop generating such action formations … 
++They stop generating such volitional formations … 
 @@ -1,2 +1,2 @@ sn56.46:4.4
  PLI: anabhisaṅkharitvā jātandhakārampi nappapatanti, jarandhakārampi nappapatanti, maraṇandhakārampi nappapatanti, sokaparidevadukkhadomanassupāyāsandhakārampi nappapatanti. 
 -Having stopped making such choices, they don’t fall into the darkness of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
-+Having stopped generating such action formations, they don’t fall into the darkness of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
++Having stopped generating such volitional formations, they don’t fall into the darkness of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. 
