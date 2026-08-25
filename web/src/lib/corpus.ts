@@ -346,66 +346,81 @@ export function resolveCanonicalSuttaId(corpus: Corpus, id: string): string {
   return id;
 }
 
-// Every leaf ('list'-kind) list nested under `groupId`, recursing through any nested groups —
-// used to expand a group-name match into the suttas its member lists actually hold, since a
-// group's own `items` is always empty (see worker/src/lib/userData.js's schema notes).
-function listDescendants(lists: ListDef[], groupId: string): ListDef[] {
-  const children = lists.filter((l) => l.parentId === groupId);
-  return children.flatMap((c) => (c.kind === 'group' ? listDescendants(lists, c.id) : [c]));
-}
-
-// Suttas reachable by matching the query against a list/group's own name, searched at any depth
-// (not just top-level lists/groups) via flattenListTree's full "Group / List" breadcrumb —
-// collapsed to a bare "group/list" for matching so the breadcrumb's " / " spacing isn't required
-// (a query like "group/list" or just "list" both match). A group match expands to every sutta in
-// every list nested under it.
-function matchingListItemIds(lists: ListDef[], q: string): Set<string> {
-  const ids = new Set<string>();
+// Each sutta's list-name haystack: the normalized "group/list" paths of every list holding it,
+// searched at any depth (not just top-level lists) via flattenListTree's full "Group / List"
+// breadcrumb — collapsed to a bare "group/list" so the breadcrumb's " / " spacing isn't required
+// (a query like "group/list" or just "list" both match). Only leaf ('list'-kind) rows are walked:
+// a leaf's breadcrumb already names every ancestor group, so a group matches through the suttas
+// its member lists hold, which is the only way it can match at all — a group's own `items` is
+// always empty (see worker/src/lib/userData.js's schema notes). A sutta can sit in several lists,
+// so their paths are joined with a newline, which nothing in a query can span.
+function listHaystacks(lists: ListDef[]): Map<string, string> {
+  const byId = new Map<string, string>();
   for (const { list, breadcrumb } of flattenListTree(lists)) {
+    if (list.kind === 'group') continue;
     const pathKey = searchKey(breadcrumb).replace(/\s*\/\s*/g, '/');
-    if (!pathKey.includes(q)) continue;
-    for (const l of list.kind === 'group' ? listDescendants(lists, list.id) : [list]) {
-      for (const itemId of l.items) ids.add(itemId);
+    for (const itemId of list.items) {
+      const prev = byId.get(itemId);
+      byId.set(itemId, prev ? `${prev}\n${pathKey}` : pathKey);
     }
   }
-  return ids;
+  return byId;
 }
 
-// Ranks a ref/title/Pali match above a blurb/note/list-name-only match (e.g. searching "mind"
-// should surface a sutta titled "The Mind" before one that merely mentions "mind" in its blurb or
-// is filed in a list named "Mind") — ties (same rank) keep the corpus's own build order, since
-// `Array.prototype.sort` is a stable sort in every engine this app targets.
+// Rank buckets, best first. Two things order a hit: whether the query's words were found together
+// as typed, and whether they were found in the ref/title/Pali rather than in a blurb, note or list
+// name. So a sutta titled "Mindfulness of Breathing" beats one whose title merely holds both words
+// apart, which beats one whose blurb says the phrase, which beats one that only has the words
+// scattered across its blurb and a list name.
+const RANK_PHRASE_IN_TITLE = 0;
+const RANK_WORDS_IN_TITLE = 1;
+const RANK_PHRASE = 2;
+const RANK_WORDS = 3;
+
+// Ties (same rank) keep the corpus's own build order, since `Array.prototype.sort` is a stable
+// sort in every engine this app targets.
 export function searchCorpus(corpus: Corpus, query: string, notes: Record<string, string>, lists: ListDef[] = []): SearchHit[] {
   const q = searchKey(query.trim());
   if (!q) return [];
+  // Every word has to be found, but not adjacent and not in the same field — "raft simile" and
+  // "simile of the raft" should both reach a sutta the blurb calls "the simile of the raft", and
+  // a word from the title plus a word from the user's own note is a perfectly good way to
+  // remember a sutta. Contiguity is then a ranking signal rather than a requirement (see the rank
+  // buckets above). A one-word query makes the phrase and the word tests identical, collapsing
+  // this back to exactly the two buckets — title, then everything else — it has always had.
+  const words = q.split(/\s+/);
   const staticHaystacks = staticHaystacksFor(corpus);
   const rangeQuery = q.match(RANGE_QUERY);
   const ranges = rangeQuery ? rangesFor(corpus) : null;
-  const listMatchIds = matchingListItemIds(lists, q);
+  const listPathsById = listHaystacks(lists);
   const hits: Array<SearchHit & { rank: number }> = [];
   for (const [id, s] of suttaEntries(corpus)) {
     const { title, blurb } = staticHaystacks.get(id)!;
-    const note = notes[id];
-    let inTitle = title.includes(q);
-    const inRest = blurb.includes(q) || (!!note && searchKey(note).includes(q)) || listMatchIds.has(id);
+    const note = notes[id] ? searchKey(notes[id]) : '';
+    const listPaths = listPathsById.get(id) ?? '';
+    let rank = -1;
+    if (title.includes(q)) rank = RANK_PHRASE_IN_TITLE;
+    else if (words.every((w) => title.includes(w))) rank = RANK_WORDS_IN_TITLE;
+    else if (blurb.includes(q) || note.includes(q) || listPaths.includes(q)) rank = RANK_PHRASE;
+    else if (words.every((w) => title.includes(w) || blurb.includes(w) || note.includes(w) || listPaths.includes(w))) rank = RANK_WORDS;
     let matchedId: string | undefined;
-    // Checked unconditionally (not just when `!inTitle`) — a batch's own ref text is always
-    // exactly `${prefix}${start}` with no separator (e.g. "Dhp209–220"), so a query for a batch's
-    // very first inner uid ("dhp209") already satisfies `inTitle` via that literal substring,
-    // same as any other ref/title match. Gating this on `!inTitle` would then skip setting
-    // matchedId for that one case (every other inner uid doesn't literally appear in the ref, so
-    // only reaches matchedId through this branch), silently losing the sub-uid and opening the
-    // batch at its top instead of scrolling/highlighting the actually-requested first sutta.
+    // Checked unconditionally (not just when the query missed the title) — a batch's own ref text
+    // is always exactly `${prefix}${start}` with no separator (e.g. "Dhp209–220"), so a query for
+    // a batch's very first inner uid ("dhp209") already ranks as a title match via that literal
+    // substring, same as any other ref/title match. Gating this on a title miss would then skip
+    // setting matchedId for that one case (every other inner uid doesn't literally appear in the
+    // ref, so only reaches matchedId through this branch), silently losing the sub-uid and
+    // opening the batch at its top instead of scrolling/highlighting the requested first sutta.
     if (rangeQuery) {
       const range = ranges!.get(id);
       const num = Number(rangeQuery[2]);
       if (range && range.prefix === rangeQuery[1] && num >= range.start && num <= range.end) {
-        inTitle = true;
+        rank = RANK_PHRASE_IN_TITLE;
         matchedId = `${rangeQuery[1]}${rangeQuery[2]}`;
       }
     }
-    if (!inTitle && !inRest) continue;
-    hits.push({ id, sutta: s, matchedId, rank: inTitle ? 0 : 1 });
+    if (rank < 0) continue;
+    hits.push({ id, sutta: s, matchedId, rank });
   }
   hits.sort((a, b) => a.rank - b.rank);
   return hits;
