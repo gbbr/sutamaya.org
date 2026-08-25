@@ -18,13 +18,13 @@ export interface Shortcut {
 }
 
 export const SHORTCUTS = {
-  // Library (LibraryPage.tsx, TreePane.tsx) — librarySelectMove/librarySelectOpen are shared by
-  // TreePane's own search-hit navigation and LibraryPage's browse-row navigation, since both are
-  // the same "arrow to move the highlight, enter to open it" action applied to two different lists.
+  // Library (LibraryPage.tsx, TreePane.tsx) — librarySelectMove/librarySelectOpen belong to
+  // TreePane's search-hit navigation alone. Browsing the corpus rows is a pointer job; only a
+  // search result carries a highlight for the arrows to move and Enter to open.
   librarySearch: { match: ['/'], keys: ['/'], label: 'Search the library (Esc to close)', scope: 'library' },
   libraryToggleLists: { match: ['x'], keys: ['X'], label: 'Switch Library / My Lists', scope: 'library' },
-  librarySelectMove: { match: ['ArrowUp', 'ArrowDown'], keys: ['↑', '↓'], label: 'Move the highlighted row (or search result)', scope: 'library' },
-  librarySelectOpen: { match: ['Enter'], keys: ['Enter'], label: 'Open the highlighted sutta', scope: 'library' },
+  librarySelectMove: { match: ['ArrowUp', 'ArrowDown'], keys: ['↑', '↓'], label: 'Move through the search results', scope: 'library' },
+  librarySelectOpen: { match: ['Enter'], keys: ['Enter'], label: 'Open the highlighted search result', scope: 'library' },
   libraryTheme: { match: ['d'], keys: ['⇧D'], label: 'Switch light / dark', scope: 'library', shift: true },
   libraryHelp: { match: ['?'], keys: ['?'], label: 'Show keyboard shortcuts', scope: 'library' },
 

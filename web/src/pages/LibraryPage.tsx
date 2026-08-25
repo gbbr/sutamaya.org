@@ -1,11 +1,11 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
 import { useLayout } from '../context/LayoutContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
-import { flatSuttaOrder, nodeLabel, sortByIdAsc, suttasFor } from '../lib/corpus';
+import { nodeLabel } from '../lib/corpus';
 import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, type RouteIntent } from '../lib/routeIntent';
@@ -157,13 +157,10 @@ export function LibraryPage({
   const showTreePane = !mobile || view === 'tree';
   const showListPane = !mobile || view === 'list';
 
-  // Canonical browse order for the whole corpus — the same list ReaderPage's Prev/Next walks —
-  // so Up/Down can cross a category boundary instead of stopping at its edge.
-  const suttaOrder = useMemo(() => (corpus ? flatSuttaOrder(corpus) : []), [corpus]);
-
-  // Up/Down move the highlighted row, Enter opens it. Both key off `suttaId` rather than any
-  // pane's visibility: the URL's sutta is the only well-defined "current" item, and a sutta can
-  // be selected this way on mobile too.
+  // Page-level shortcuts only. Arrow keys don't walk the browse rows: moving a highlight from
+  // sutta to sutta duplicated what the panes already do with a pointer, and its tinted row read
+  // as a selection the app doesn't otherwise have. TreePane keeps its own arrow nav over search
+  // hits, where the highlight is the only way to tell which hit Enter would open.
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       // While open, the help modal owns every key itself — Esc or '?' again both close it,
@@ -186,69 +183,11 @@ export function LibraryPage({
         toggleTheme();
         return;
       }
-      if (!corpus) return;
-      if (isShortcut(e, SHORTCUTS.librarySelectOpen)) {
-        if (!suttaId) return;
-        e.preventDefault();
-        onOpen(suttaId);
-        return;
-      }
-      if (!isShortcut(e, SHORTCUTS.librarySelectMove)) return;
-      const dir = e.key === 'ArrowUp' ? -1 : 1;
-      // In a user list, Up/Down stays inside it, in its stored order, stopping dead at either
-      // end. Spilling into corpus order would defeat the point of a curated list.
-      const currentList = lists.find((l) => l.id === nodeId);
-      if (currentList) {
-        const items = currentList.items;
-        // Nothing selected yet — start at the first item whichever direction was pressed.
-        if (!suttaId) {
-          const first = items[0];
-          if (!first) return;
-          e.preventDefault();
-          setSuttaId(first);
-          navigate(`/browse/${encodeURIComponent(nodeId || '')}/${encodeURIComponent(first)}`);
-          return;
-        }
-        const i = items.indexOf(suttaId);
-        if (i === -1) return;
-        const next = items[i + dir];
-        if (!next) return;
-        e.preventDefault();
-        setSuttaId(next);
-        navigate(`/browse/${encodeURIComponent(nodeId || '')}/${encodeURIComponent(next)}`);
-        return;
-      }
-      // Browsing the corpus tree instead: step canonical order, which can leave the current
-      // category. Re-deriving `nodeId` from the landed-on sutta each time — as clicking it in
-      // the tree would — is what makes both panes follow along and scroll to the right place.
-      if (!suttaId) {
-        // Start from the browsed category's first row, not corpus order's very first sutta,
-        // which would read as teleporting away from wherever the tree already points.
-        const first = (nodeId && sortByIdAsc(suttasFor(corpus, nodeId))[0]?.[0]) || suttaOrder[0];
-        if (!first) return;
-        e.preventDefault();
-        const newNodeId = corpus.suttas[first].node;
-        setQuery('');
-        setNodeId(newNodeId);
-        setSuttaId(first);
-        navigate(`/browse/${encodeURIComponent(newNodeId)}/${encodeURIComponent(first)}`);
-        return;
-      }
-      const i = suttaOrder.indexOf(suttaId);
-      if (i === -1) return;
-      const next = suttaOrder[Math.min(suttaOrder.length - 1, Math.max(0, i + dir))];
-      if (!next || next === suttaId) return;
-      e.preventDefault();
-      const newNodeId = corpus.suttas[next].node;
-      setQuery('');
-      setNodeId(newNodeId);
-      setSuttaId(next);
-      navigate(`/browse/${encodeURIComponent(newNodeId)}/${encodeURIComponent(next)}`);
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [shortcutsOpen, suttaId, suttaOrder, corpus, lists, nodeId]);
+  }, [shortcutsOpen]);
 
   return (
     <div data-component="LibraryPage" className="relative flex overflow-hidden bg-paper h-full">
