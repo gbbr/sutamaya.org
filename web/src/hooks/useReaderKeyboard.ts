@@ -23,6 +23,7 @@ interface UseReaderKeyboardOptions {
   setTab: (tab: 'highlights' | 'lists' | 'text') => void;
   setNoteFocusSignal: (updater: (s: number) => number) => void;
   toggleShowNotes: () => void;
+  cycleTheme: () => void;
 }
 
 // All of the reader's single-key shortcuts (see lib/shortcuts.ts's SHORTCUTS.reader*), in one
@@ -48,6 +49,7 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
     setTab,
     setNoteFocusSignal,
     toggleShowNotes,
+    cycleTheme,
   } = opts;
 
   useEffect(() => {
@@ -89,16 +91,14 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
         e.preventDefault();
         setSearchOpen(true);
       } else if (isShortcut(e, SHORTCUTS.readerNav)) {
-        // Shift+Arrow steps sutta-to-sutta (readerNav); plain Arrow belongs to the dictionary
-        // dock's own prev/next word (readerDictNav) and does nothing with the dock closed. Both
-        // share the same `match`, so isShortcut() alone can't tell them apart (it deliberately
-        // ignores Shift — see its own comment); the split happens here.
-        if (e.shiftKey) {
-          step(e.key === 'ArrowLeft' ? -1 : 1);
-        } else if (dict) {
-          e.preventDefault();
-          goToAdjacentWord(e.key === 'ArrowLeft' ? -1 : 1);
-        }
+        e.preventDefault();
+        step(e.key.toLowerCase() === 'k' ? -1 : 1);
+      } else if (isShortcut(e, SHORTCUTS.readerDictNav)) {
+        // The arrows step the dictionary dock's own prev/next word, and do nothing with the dock
+        // closed — leaving the browser's own arrow scrolling alone there.
+        if (!dict) return;
+        e.preventDefault();
+        goToAdjacentWord(e.key === 'ArrowLeft' ? -1 : 1);
       } else if (isShortcut(e, SHORTCUTS.readerHighlights)) {
         e.preventDefault();
         setTab('highlights');
@@ -122,6 +122,9 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
         e.preventDefault();
         setTab('text');
         setPanel(true);
+      } else if (isShortcut(e, SHORTCUTS.readerThemeCycle)) {
+        e.preventDefault();
+        cycleTheme();
       }
     }
     window.addEventListener('keydown', onKey);

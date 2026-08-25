@@ -14,6 +14,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
   const setTab = vi.fn();
   const setNoteFocusSignal = vi.fn();
   const toggleShowNotes = vi.fn();
+  const cycleTheme = vi.fn();
 
   const opts: Parameters<typeof useReaderKeyboard>[0] = {
     shortcutsOpen: false,
@@ -34,6 +35,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     setTab,
     setNoteFocusSignal,
     toggleShowNotes,
+    cycleTheme,
     ...overrides,
   };
 
@@ -52,6 +54,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     setTab,
     setNoteFocusSignal,
     toggleShowNotes,
+    cycleTheme,
   };
 }
 
@@ -82,7 +85,7 @@ describe('useReaderKeyboard', () => {
     it('every other key is ignored while the modal is open', () => {
       const { setPanel, setTab, step } = setup({ shortcutsOpen: true });
       press('h');
-      press('ArrowLeft', { shiftKey: true });
+      press('k');
       expect(setPanel).not.toHaveBeenCalled();
       expect(setTab).not.toHaveBeenCalled();
       expect(step).not.toHaveBeenCalled();
@@ -212,11 +215,11 @@ describe('useReaderKeyboard', () => {
     });
   });
 
-  describe('readerNav (Shift+Arrow vs plain Arrow)', () => {
-    it('Shift+ArrowLeft/Right steps to the previous/next sutta', () => {
+  describe('readerNav (K/J) vs readerDictNav (Arrow)', () => {
+    it('K/J steps to the previous/next sutta', () => {
       const { step } = setup();
-      press('ArrowLeft', { shiftKey: true });
-      press('ArrowRight', { shiftKey: true });
+      press('k');
+      press('j');
       expect(step).toHaveBeenCalledWith(-1);
       expect(step).toHaveBeenCalledWith(1);
     });
@@ -238,6 +241,20 @@ describe('useReaderKeyboard', () => {
     });
   });
 
+  describe('readerThemeCycle (Shift+D)', () => {
+    it('Shift+D cycles the reader theme', () => {
+      const { cycleTheme } = setup();
+      press('D', { shiftKey: true });
+      expect(cycleTheme).toHaveBeenCalledTimes(1);
+    });
+
+    it('plain D does nothing — the Shift is what keeps it off the single-key set', () => {
+      const { cycleTheme } = setup();
+      press('d');
+      expect(cycleTheme).not.toHaveBeenCalled();
+    });
+  });
+
   describe('re-subscription cadence', () => {
     it('keeps using the same step()/goToAdjacentWord() closures across renders that only change unrelated state', () => {
       const initialStep = vi.fn();
@@ -248,7 +265,7 @@ describe('useReaderKeyboard', () => {
       // not tear down and re-add the listener — mirrors the original inline effect's own
       // dependency array, which deliberately tracked siblingIds/suttaId instead of `step` itself.
       rerender({ step: nextStep });
-      press('ArrowLeft', { shiftKey: true });
+      press('k');
       expect(initialStep).toHaveBeenCalledWith(-1);
       expect(nextStep).not.toHaveBeenCalled();
     });
@@ -258,7 +275,7 @@ describe('useReaderKeyboard', () => {
       const nextStep = vi.fn();
       const { rerender } = setup({ step: initialStep, suttaId: 'sn1.1' });
       rerender({ step: nextStep, suttaId: 'sn1.2' });
-      press('ArrowLeft', { shiftKey: true });
+      press('k');
       expect(nextStep).toHaveBeenCalledWith(-1);
       expect(initialStep).not.toHaveBeenCalled();
     });
@@ -267,7 +284,7 @@ describe('useReaderKeyboard', () => {
   it('removes its listener on unmount', () => {
     const { unmount, step } = setup();
     unmount();
-    press('ArrowLeft', { shiftKey: true });
+    press('k');
     expect(step).not.toHaveBeenCalled();
   });
 });

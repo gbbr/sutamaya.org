@@ -17,6 +17,9 @@ interface UiPrefsState extends UiPrefs {
   resolvedTheme: ResolvedAppTheme;
   setUiScale: (n: number) => void;
   setTheme: (t: AppTheme) => void;
+  // Flips to the opposite of what's on screen right now, so it also works from 'system' — and
+  // leaves an explicit choice behind, which is what the user asked for by pressing the key.
+  toggleTheme: () => void;
 }
 
 const UiPrefsContext = createContext<UiPrefsState | null>(null);
@@ -54,6 +57,11 @@ export function UiPrefsProvider({ children }: { children: ReactNode }) {
       resolvedTheme,
       setUiScale: (uiScale) => setPrefs((p) => ({ ...p, uiScale })),
       setTheme: (theme) => setPrefs((p) => ({ ...p, theme })),
+      // Resolves inside the updater rather than closing over `resolvedTheme`: the keydown
+      // listener that calls this (LibraryPage) subscribes on a deliberately partial dependency
+      // list, so it can be holding an older copy of this function than the current theme.
+      toggleTheme: () =>
+        setPrefs((p) => ({ ...p, theme: p.theme === 'dark' || (p.theme === 'system' && systemPrefersDark()) ? 'light' : 'dark' })),
     }),
     [prefs, resolvedTheme, setPrefs]
   );

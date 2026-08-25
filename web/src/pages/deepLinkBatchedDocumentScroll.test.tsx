@@ -125,6 +125,7 @@ describe('reader deep link into an already-visited batched document', () => {
       setFace: vi.fn(),
       toggleAllPali: vi.fn(),
       toggleShowNotes: vi.fn(),
+      cycleTheme: vi.fn(),
     });
   });
 

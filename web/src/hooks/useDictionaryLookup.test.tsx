@@ -206,7 +206,7 @@ describe('useDictionaryLookup', () => {
     expect(result.current.dict?.failed).toBeFalsy();
   });
 
-  // Holding Shift+Arrow walks words faster than a cold shard resolves, so replies land out of
+  // Holding an Arrow key walks words faster than a cold shard resolves, so replies land out of
   // order. Without the token guard the stale one wins and the dock shows the wrong definition.
   it('ignores a slow reply for a word the dock has already moved on from', async () => {
     let resolveFirst!: (v: string[] | null) => void;

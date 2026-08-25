@@ -22,6 +22,10 @@ interface ReaderPrefsState extends ReaderPrefs {
   // provider's own matchMedia tracking below); 'light'/'sepia'/'dark' pass through unchanged.
   resolvedTheme: ResolvedReaderTheme;
   setTheme: (t: ReaderTheme) => void;
+  // Steps light -> sepia -> dark -> light. Starts from what's actually on screen, so it also
+  // works from 'system', and always lands on an explicit theme — 'system' is a setting you pick
+  // in the panel, not a stop on a cycle.
+  cycleTheme: () => void;
   setFs: (n: number) => void;
   setLh: (n: number) => void;
   setFace: (f: ReaderFace) => void;
@@ -45,6 +49,9 @@ export const FS_MAX = 28;
 export const FS_STEP = 1;
 
 const DEFAULTS: ReaderPrefs = { theme: 'system', fs: 18, lh: 175, face: 'georgia', allPali: false, showNotes: false };
+
+// The order cycleTheme walks — light to dark by way of sepia, so each press is a small step.
+const THEME_CYCLE: Record<ResolvedReaderTheme, ResolvedReaderTheme> = { light: 'sepia', sepia: 'dark', dark: 'light' };
 
 const ReaderPrefsContext = createContext<ReaderPrefsState | null>(null);
 
@@ -80,6 +87,14 @@ export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
       face: prefs.face in READER_FACES ? prefs.face : DEFAULTS.face,
       resolvedTheme,
       setTheme: (theme) => setPrefs((p) => ({ ...p, theme })),
+      // Resolves inside the updater rather than closing over `resolvedTheme` — useReaderKeyboard's
+      // listener subscribes on a deliberately partial dependency list and can be holding an older
+      // copy of this function than the current theme.
+      cycleTheme: () =>
+        setPrefs((p) => ({
+          ...p,
+          theme: THEME_CYCLE[p.theme === 'system' ? (systemPrefersDark() ? 'dark' : 'light') : p.theme],
+        })),
       setFs: (fs) => setPrefs((p) => ({ ...p, fs })),
       setLh: (lh) => setPrefs((p) => ({ ...p, lh })),
       setFace: (face) => setPrefs((p) => ({ ...p, face })),

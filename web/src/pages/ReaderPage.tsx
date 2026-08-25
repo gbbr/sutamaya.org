@@ -45,7 +45,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   const suttaId = corpus && routeSuttaId ? resolveCanonicalSuttaId(corpus, routeSuttaId) : routeSuttaId;
   const requestedSubUid = routeSuttaId && routeSuttaId !== suttaId ? routeSuttaId : undefined;
   const { notes, membership, lists, markVisited } = useUserData();
-  const { resolvedTheme, fs, lh, face, allPali, showNotes, toggleShowNotes } = useReaderPrefs();
+  const { resolvedTheme, fs, lh, face, allPali, showNotes, toggleShowNotes, cycleTheme } = useReaderPrefs();
 
   // Where to return to on close — the exact pane/nodeId/scroll position the reader was opened
   // from (see LibraryPage's onOpen), not just the sutta's bare corpus location. Falls back to
@@ -283,6 +283,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     setTab,
     setNoteFocusSignal,
     toggleShowNotes,
+    cycleTheme,
   });
 
   if (!corpus || !sutta || !suttaId) {
