@@ -23,6 +23,11 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
   const { lists, notes, membership, highlights } = useUserData();
   const [query, setQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
+  // Hover only takes the selection over once the pointer has genuinely moved. Arrow keys scroll
+  // the active row into view and typing rebuilds the list, so rows slide under a stationary
+  // pointer and the browser fires enter/move events for them anyway — without this the selection
+  // would snap back to whatever ended up under the cursor.
+  const lastPointer = useRef<{ x: number; y: number } | null>(null);
 
   const hits = useCorpusSearch(corpus, query, notes, lists);
   // Only render/keyboard-navigate the first SEARCH_RESULTS_CAP — a short/common query can match
@@ -102,7 +107,12 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
                   background: i === activeIndex ? theme.tint : 'transparent',
                   borderBottom: `1px solid ${theme.rule}`,
                 }}
-                onMouseEnter={() => setActiveIndex(i)}
+                onMouseMove={(e) => {
+                  const prev = lastPointer.current;
+                  if (prev && prev.x === e.clientX && prev.y === e.clientY) return;
+                  lastPointer.current = { x: e.clientX, y: e.clientY };
+                  setActiveIndex(i);
+                }}
                 onClick={() => onOpenSutta(h.matchedId ?? h.id)}
               >
                 <span>
