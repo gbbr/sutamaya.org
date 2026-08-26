@@ -30,8 +30,9 @@ upstream) and writes `data/sujato.post/` (generated).
    Then **check the proposed rendering three ways and report all three** before drafting anything.
    The user proposes the English word, but wants the lexicography in front of him when he confirms:
 
-   - **DPD** — `data/pli2en_dpd.json`, in the repo, is a `[{entry, definition}]` array keyed by Pali
-     word (inflected forms and compounds included). Quote the gloss.
+   - **DPD** — `data/pli2en_dpd.json`, in the repo, is `{dpdVersion, entries: [{entry, definition}]}`
+     keyed by Pali word (inflected forms and compounds included), covering the words this corpus
+     uses. Quote the gloss.
    - **The suttas, not the commentaries** — quote the passage that defines the term. The Abhidhamma
      and the Visuddhimagga are not authorities here, and an objection sourced from them is not
      grounds for rejecting a rendering the suttas support.

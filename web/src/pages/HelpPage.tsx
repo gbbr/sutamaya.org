@@ -356,6 +356,20 @@ const TRANSLATION_LEAD =
 
 const TRANSLATION_URL = 'https://github.com/gbbr/sutamaya.org/blob/main/docs/translation-changes.md';
 
+// The dictionary behind every word tap is someone else's work, under a licence that asks to be
+// named — so it is named where a reader will meet it, next to the credit for the translation,
+// rather than only in the repo. Kept to what a reader needs: whose it is, and where to find it
+// whole. The version this build shipped is in corpus.json for anyone who needs that much.
+const DICTIONARY_TITLE = 'The dictionary';
+
+const DICTIONARY_LEAD =
+  'Tapping a Pali word looks it up in the Digital Pali Dictionary, Bodhirasa’s work, used here ' +
+  'under CC BY-NC-SA 4.0. What ships with Sutamaya is a small part of it: the words that appear ' +
+  'in these suttas, with their meanings and little else. The full dictionary is far larger, and ' +
+  'is worth visiting on its own.';
+
+const DICTIONARY_URL = 'https://www.dpdict.net/';
+
 // The one part of the page that can't be a screenshot tour, and so deliberately not a HelpSection:
 // installing happens in browser chrome — Safari's Share sheet, Chrome's ⋮ menu — which no capture
 // of this app can show, and which Apple and Google rename often enough that a picture would age
@@ -608,6 +622,14 @@ export function HelpPage(_props: RouteComponentProps) {
             <button
               className="font-sans text-ui-base text-left text-ink-4 hover:text-ink-2 py-[5px]"
               onClick={() =>
+                document.getElementById(anchorId(DICTIONARY_TITLE))?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            >
+              {DICTIONARY_TITLE}
+            </button>
+            <button
+              className="font-sans text-ui-base text-left text-ink-4 hover:text-ink-2 py-[5px]"
+              onClick={() =>
                 document.getElementById(anchorId(INSTALL_TITLE))?.scrollIntoView({ behavior: 'smooth', block: 'start' })
               }
             >
@@ -663,6 +685,25 @@ export function HelpPage(_props: RouteComponentProps) {
             className="inline-flex items-center gap-1.5 font-sans text-ui-base text-ink-2 hover:text-ink underline decoration-ink/25 underline-offset-2"
           >
             What was changed, and why
+            <ExternalLink size={16} strokeWidth={1.75} className="flex-none text-ink-4" />
+          </a>
+          <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />
+        </section>
+
+        {/* The same shape as the translation credit above, and directly after it: the two are one
+            answer to the same question — whose words are these. */}
+        <section id={anchorId(DICTIONARY_TITLE)} className="mb-10 scroll-mt-6">
+          <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">
+            {DICTIONARY_TITLE}
+          </div>
+          <p className="font-serif text-ui-lg leading-[1.55] text-ink-2 mb-4">{DICTIONARY_LEAD}</p>
+          <a
+            href={DICTIONARY_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 font-sans text-ui-base text-ink-2 hover:text-ink underline decoration-ink/25 underline-offset-2"
+          >
+            The Digital Pali Dictionary
             <ExternalLink size={16} strokeWidth={1.75} className="flex-none text-ink-4" />
           </a>
           <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />

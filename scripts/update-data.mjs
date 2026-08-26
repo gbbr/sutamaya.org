@@ -32,8 +32,9 @@ import { runPost } from './update-data-post.mjs';
 import { runAccept } from './update-data-accept.mjs';
 import { runCounts, reportCounts } from './update-data-counts.mjs';
 import { runTriage } from './update-data-triage.mjs';
+import { runDictionary, DICT_PATH } from './update-data-dictionary.mjs';
 
-const COMMANDS = ['plan', 'apply', 'accept', 'triage', 'post', 'counts', 'help'];
+const COMMANDS = ['plan', 'apply', 'accept', 'triage', 'post', 'counts', 'dictionary', 'help'];
 
 // Where the pipeline currently stands, from the provenance manifest copy and accept both write.
 // 'applied' is the only interesting one: a refresh is in the working tree and hasn't been accepted,
@@ -134,6 +135,29 @@ function reportRuleFailure(result) {
   if (result.brokenOverrides.length) block(dim('→ `npm run update-data` shows each broken anchor against what upstream now says'));
 }
 
+// The dictionary import is the one optional step in the pipeline, so it always reports — a step
+// that stays silent when it is off is a step nobody remembers exists. Both rows name DPD_DB_PATH
+// for the same reason: whichever way it went, the variable that decided it is on screen.
+function reportDictionary(result) {
+  if (result.skipped) {
+    row('note', 'Dictionary', `DPD_DB_PATH not set — keeping ${path.relative(process.cwd(), DICT_PATH)} as checked in`);
+    return;
+  }
+  const change = result.previousEntries === null ? null : result.entries - result.previousEntries;
+  const against = result.previousVersion ? `DPD ${result.previousVersion}` : 'the file it replaces';
+  const delta = change === null ? '' : change === 0 ? ` (unchanged from ${against})` : ` (${change > 0 ? '+' : '−'}${n(Math.abs(change))} vs ${against})`;
+  row('ok', 'Dictionary', `DPD ${result.version} → ${n(result.entries)} headwords${delta}, ${(result.bytes / 1e6).toFixed(1)} MB`);
+  row('note', 'Dictionary', `from DPD_DB_PATH=${result.dbPath}`);
+  // Scoped to data/pali/, which is a good deal more than the app renders — titles, structural
+  // labels and whole files the browse tree never reaches. Said plainly, because the number is
+  // large enough to read as alarming next to the one build:corpus prints for the shipped text.
+  row(
+    'note',
+    'Dictionary',
+    `${n(result.unresolved)} of ${n(result.words)} words in data/pali/ have no gloss — build:corpus reports what ships`
+  );
+}
+
 async function apply() {
   const { bilaraRoot, gitInfo } = source();
   banner('apply', sourceMeta(gitInfo));
@@ -154,6 +178,8 @@ async function apply() {
 
   row('ok', 'Rules', `${n(result.replacements)} replacement(s) across ${n(result.filesChanged)} file(s) → data/sujato.post/`);
   row('note', 'Diffs', 'data/diff/00-all.diff is upstream → shipped; the per-rule files attribute it');
+
+  reportDictionary(runDictionary());
 
   console.log();
   console.log(`${PAD}${bold('Review before accepting')}`);
@@ -204,6 +230,21 @@ async function post(args = []) {
   return 0;
 }
 
+// Standalone, for picking up a new DPD release without a corpus refresh — the two move on their
+// own schedules.
+// `force` is a positional word for the same reason `prune` is — npm swallows a leading `--`.
+async function dictionary(args = []) {
+  banner('dictionary');
+  const result = runDictionary({ force: args.includes('force') });
+  reportDictionary(result);
+  if (result.skipped) {
+    next('DPD_DB_PATH=/path/to/dpd.db npm run update-data dictionary', 'get dpd.db.tar.xz from the dpd-db releases page');
+    return 0;
+  }
+  next('npm run build:corpus', 'reshard the dictionary from the new file, then commit');
+  return 0;
+}
+
 async function counts() {
   banner('counts');
   reportCounts(await runCounts());
@@ -249,6 +290,10 @@ function help() {
   console.log(`\n${PAD}${bold('Authoring a rule')}`);
   line('npm run update-data post', 're-run the rules over the current data/sujato');
   line('npm run update-data counts', 're-record footprints without touching the baseline');
+  console.log(`\n${PAD}${bold('The dictionary')}`);
+  line('npm run update-data dictionary', 'rebuild data/pli2en_dpd.json from a DPD release');
+  line('  DPD_DB_PATH=…', 'full path to dpd.db — without it the step is skipped everywhere');
+  line('  … force', 'write even when the new file is much smaller than the old');
   console.log();
   return 0;
 }
@@ -261,7 +306,7 @@ if (!COMMANDS.includes(command)) {
   process.exit(2);
 }
 
-const run = { plan, apply, accept, triage, post, counts, help }[command];
+const run = { plan, apply, accept, triage, post, counts, dictionary, help }[command];
 
 try {
   process.exit(await run(args));
