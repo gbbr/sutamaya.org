@@ -11,8 +11,7 @@
 // Groups below, in array order; order inside and between them settles same-word collisions:
 //
 //   standalone terms   mendicant-bhikkhu, immersion-concentration,
-//                      patisambhida-analytical-knowledge, dhamma-the-dhamma, atapi-ardent,
-//                      vedana-sensation
+//                      patisambhida-analytical-knowledge, dhamma-the-dhamma, atapi-ardent
 //   mindfulness        satipatthana-establishment-of-mindfulness
 //   arising / passing  samudaya-arising, vaya-passing-away, atthangama-disappearing,
 //                      udayabbaya-arising-passing-away
@@ -108,23 +107,6 @@ export const RULES = [
       ['keenness', 'ardor'],
       ['keenly', 'ardently'],
       ['keen', 'ardent'],
-    ],
-  },
-  {
-    id: 'vedana-sensation',
-    why: 'Bhikkhu Sujato renders vedanā as "feeling"; this app prefers "sensation", since "feeling" ' +
-      'in ordinary English has drifted towards emotion, which vedanā is not. Only the noun is ' +
-      'rewritten: his verbs "feel"/"feels"/"felt" render vediyati and paṭisaṁvedeti, a different ' +
-      'grammatical slot that "sensation" has no form for, so leaving them gives grammatical English ' +
-      'throughout ("they feel a pleasant sensation"). Open: 37 denials out of 2,163 segments, ' +
-      'twenty-four of them ordinary English and thirteen vedanaṁ vedayamāno, where the participle ' +
-      'is the only match on the line. SN 22.79’s and MN 43’s etymology puns on the verb, which the ' +
-      'noun swap alone breaks, so those paragraphs are rebuilt by segment overrides.',
-    mode: 'deny',
-    predicate: /vedan|vedayit/i,
-    forms: [
-      ['feeling', 'sensation'],
-      ['feelings', 'sensations'],
     ],
   },
   // ── Mindfulness ─────────────────────────────────────────────────────────────
@@ -715,105 +697,6 @@ export const RULES = [
     to: 'When that talk was finished, I stilled, settled, unified, and collected my mind in samādhi internally in the same meditation subject as a basis of composure as before, in which I regularly meditate.” ',
   },
 
-  // ·· vedanā's participle standing beside its noun ··
-  // Bhikkhu Sujato writes both slots as "feeling", and DN 15's and MN 45's five lines are the only
-  // places the participle and the noun share one — vedanaṁ vedayamāno elsewhere is alone on its
-  // line, and denied instead.
-  {
-    id: 'dn15-when-feeling-pleasant',
-    kind: 'segment',
-    why: 'Sukhaṁ vedanaṁ vedayamāno — vedayamāno is the participle, which stays "feeling"; only ' +
-      'the vedanā beside it becomes "sensation".',
-    segment: 'dn15:29.4',
-    from: 'When sensation a pleasant sensation they think: ‘This is my self.’ ',
-    to: 'When feeling a pleasant sensation they think: ‘This is my self.’ ',
-  },
-  {
-    id: 'dn15-when-feeling-painful',
-    kind: 'segment',
-    why: 'Dukkhaṁ vedanaṁ vedayamāno — the painful member of the same three lines.',
-    segment: 'dn15:29.6',
-    from: 'When sensation a painful sensation they think: ‘This is my self.’ ',
-    to: 'When feeling a painful sensation they think: ‘This is my self.’ ',
-  },
-  {
-    id: 'dn15-when-feeling-neutral',
-    kind: 'segment',
-    why: 'Adukkhamasukhaṁ vedanaṁ vedayamāno — the neutral member of the same three lines.',
-    segment: 'dn15:29.8',
-    from: 'When sensation a neutral sensation they think: ‘This is my self.’ ',
-    to: 'When feeling a neutral sensation they think: ‘This is my self.’ ',
-  },
-  {
-    id: 'mn45-sensual-pleasures-feeling',
-    kind: 'segment',
-    why: 'Kāmahetu… dukkhā tibbā kaṭukā vedanā vediyāmi — vediyāmi is the finite verb, which stays ' +
-      '"feeling"; the vedanā it governs becomes "sensations".',
-    segment: 'mn45:3.12',
-    from: '‘This is that future danger that those ascetics and brahmins saw. For it is because of sensual pleasures that I’m sensation painful, sharp, severe, acute sensations.’ ',
-    to: '‘This is that future danger that those ascetics and brahmins saw. For it is because of sensual pleasures that I’m feeling painful, sharp, severe, acute sensations.’ ',
-  },
-  {
-    id: 'mn45-creeper-seed-feeling',
-    kind: 'segment',
-    why: 'The same sentence in the camel’s foot creeper simile that closes the sutta.',
-    segment: 'mn45:4.21',
-    from: 'It’s because of that camel’s foot creeper seed that I’m sensation painful, sharp, severe, acute sensations.’ ',
-    to: 'It’s because of that camel’s foot creeper seed that I’m feeling painful, sharp, severe, acute sensations.’ ',
-  },
-
-  // ·· a pun on the verb the noun swap leaves behind ··
-  // SN 22.79 and MN 43 both derive vedanā from its verb, which Bhikkhu Sujato's "It feels; that's
-  // why it's called 'feeling'" carries across intact. vedana-sensation rewrites only the noun,
-  // stranding the pun ("It feels… called 'sensation'"), so each paragraph's verb moves with it.
-  // MN 43's next paragraph is the identical derivation for saññā, so every line of the vedanā one
-  // has to hold the same shape.
-  {
-    id: 'vedana-etymology-derivation',
-    kind: 'segment',
-    why: 'Vedayatīti kho, bhikkhave, tasmā ‘vedanā’ti vuccati — the derivation itself, so the verb ' +
-      'has to share a root with the noun the rule now uses.',
-    segments: ['sn22.79:3.2', 'sn22.79:3.5'],
-    from: 'It feels; that’s why it’s called ‘sensation’. ',
-    to: 'It senses; that’s why it’s called ‘sensation’. ',
-  },
-  {
-    id: 'vedana-etymology-question',
-    kind: 'segment',
-    why: 'Kiñca vedayati / Kiñca vedeti — the question each derivation answers, kept in its verb. ' +
-      'MN 43 words it exactly as SN 22.79 does, so one rule covers both.',
-    segments: ['sn22.79:3.3', 'mn43:7.4'],
-    from: 'And what does it feel? ',
-    to: 'And what does it sense? ',
-  },
-  {
-    id: 'vedana-etymology-answer',
-    kind: 'segment',
-    why: 'Sukhampi vedayati / Sukhampi vedeti — the answer, in the same verb as its question, and ' +
-      'again worded identically in both suttas.',
-    segments: ['sn22.79:3.4', 'mn43:7.5'],
-    from: 'It feels pleasure, pain, and neutral. ',
-    to: 'It senses pleasure, pain, and neutral. ',
-  },
-  {
-    id: 'mn43-vedana-etymology-open',
-    kind: 'segment',
-    why: '‘Vedeti vedetī’ti kho, āvuso, tasmā vedanāti vuccati — Sāriputta’s derivation opening ' +
-      'the exchange. MN 43 puts the clauses the other way round from SN 22.79, so it needs its own ' +
-      'rule rather than joining the two above.',
-    segment: 'mn43:7.3',
-    from: '“It’s called sensation because it feels. ',
-    to: '“It’s called sensation because it senses. ',
-  },
-  {
-    id: 'mn43-vedana-etymology-close',
-    kind: 'segment',
-    why: 'The same derivation repeated to close the exchange, as mn43:8.6 does for saññā.',
-    segment: 'mn43:7.6',
-    from: 'It’s called sensation because it feels.” ',
-    to: 'It’s called sensation because it senses.” ',
-  },
-
   // ── Blurb openers ───────────────────────────────────────────────────────────
   // A group blurb renders in ListPane directly under the heading naming that group, so an opener
   // that re-announces the group by name and counts its suttas says twice over what the page has
@@ -961,7 +844,7 @@ export const RULES = [
         from: 'The “Linked Discourses on Absorption” (Jhānasaṁyutta) is also known as the “Linked Discourses on Composure” (Samādhisaṁyutta). It contains 55 discourses dealing with ',
         to: 'The Jhānasaṁyutta, also known as the Samādhisaṁyutta or “Linked Discourses on Composure”, contains discourses dealing with ' },
       { blurb: 'sn-blurbs:sn36',
-        from: 'The “Linked Discourses on Sensations” contains 31 discourses on ',
+        from: 'The “Linked Discourses on Feelings” contains 31 discourses on ',
         to: 'Discourses on ' },
       { blurb: 'sn-blurbs:sn37',
         from: 'The “Linked Discourses on Females” contains 34 discourses regarding ',

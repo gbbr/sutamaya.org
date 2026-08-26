@@ -1014,26 +1014,26 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 -A mendicant goes to a series of teachers and asks how vision is purified. Dissatisfied with all their answers, he complains to the Buddha, who illustrates his quandary with the famous simile of the Kiṁsuka tree. Just as the same Kiṁsuka tree might be described differently by people focusing on the leaves, or the fruit, or the bark, etc., so too the various teachers each speak of the aspect of Dhamma most meaningful to them. 
 +A bhikkhu goes to a series of teachers and asks how vision is purified. Dissatisfied with all their answers, he complains to the Buddha, who illustrates his quandary with the famous simile of the Kiṁsuka tree. Just as the same Kiṁsuka tree might be described differently by people focusing on the leaves, or the fruit, or the bark, etc., so too the various teachers each speak of the aspect of Dhamma most meaningful to them. 
 @@ -1 +1 @@ sn-blurbs:sn36.7
--A mendicant should await their death mindful and aware. They should bear the sensations of approaching death with wisdom and equanimity.
-+A bhikkhu should await their death mindful and aware. They should bear the sensations of approaching death with wisdom and equanimity.
+-A mendicant should await their death mindful and aware. They should bear the feelings of approaching death with wisdom and equanimity.
++A bhikkhu should await their death mindful and aware. They should bear the feelings of approaching death with wisdom and equanimity.
 @@ -1 +1 @@ sn-blurbs:sn36.8
--A mendicant should await their death mindful and aware. They should bear the sensations of approaching death with wisdom and equanimity.
-+A bhikkhu should await their death mindful and aware. They should bear the sensations of approaching death with wisdom and equanimity.
+-A mendicant should await their death mindful and aware. They should bear the feelings of approaching death with wisdom and equanimity.
++A bhikkhu should await their death mindful and aware. They should bear the feelings of approaching death with wisdom and equanimity.
 @@ -1 +1 @@ sn-blurbs:sn36.11
--A mendicant wonders how there can be three kinds of sensation, yet all of them are suffering.
-+A bhikkhu wonders how there can be three kinds of sensation, yet all of them are suffering.
+-A mendicant wonders how there can be three kinds of feeling, yet all of them are suffering.
++A bhikkhu wonders how there can be three kinds of feeling, yet all of them are suffering.
 @@ -1 +1 @@ sn-blurbs:sn36.17
--The Buddha explains the sensations to several mendicants in terms of arising, ending, gratification, drawback, and escape.
-+The Buddha explains the sensations to several bhikkhus in terms of arising, ending, gratification, drawback, and escape.
+-The Buddha explains the feelings to several mendicants in terms of arising, ending, gratification, drawback, and escape.
++The Buddha explains the feelings to several bhikkhus in terms of arising, ending, gratification, drawback, and escape.
 @@ -1 +1 @@ sn-blurbs:sn36.18
--The Buddha asks about the sensations to several mendicants in terms of arising, ending, gratification, drawback, and escape.
-+The Buddha asks about the sensations to several bhikkhus in terms of arising, ending, gratification, drawback, and escape.
+-The Buddha asks about the feelings to several mendicants in terms of arising, ending, gratification, drawback, and escape.
++The Buddha asks about the feelings to several bhikkhus in terms of arising, ending, gratification, drawback, and escape.
 @@ -1 +1 @@ sn-blurbs:sn36.23
--A mendicant asks the Buddha to explain the sensations in terms of the four noble truths.
-+A bhikkhu asks the Buddha to explain the sensations in terms of the four noble truths.
+-A mendicant asks the Buddha to explain the feelings in terms of the four noble truths.
++A bhikkhu asks the Buddha to explain the feelings in terms of the four noble truths.
 @@ -1 +1 @@ sn-blurbs:sn36.26
--Several mendicants ask the Buddha to explain the sensations in terms of the four noble truths.
-+Several bhikkhus ask the Buddha to explain the sensations in terms of the four noble truths.
+-Several mendicants ask the Buddha to explain the feelings in terms of the four noble truths.
++Several bhikkhus ask the Buddha to explain the feelings in terms of the four noble truths.
 @@ -1 +1 @@ sn-blurbs:sn40.1
 -Moggallāna speaks to the mendicants of a time when his practice of the first absorption was faltering. He expresses his gratitude for the Buddha, who urged him to stabilize that attainment.
 +Moggallāna speaks to the bhikkhus of a time when his practice of the first absorption was faltering. He expresses his gratitude for the Buddha, who urged him to stabilize that attainment.
@@ -6096,8 +6096,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +“Bad, unskillful qualities, bhikkhus, arise with form, not without form. 
 @@ -1,2 +1,2 @@ an2.83:1.1
  PLI: “Savedanā, bhikkhave, uppajjanti pāpakā akusalā dhammā, no avedanā. 
--“Bad, unskillful qualities, mendicants, arise with sensation, not without sensation. 
-+“Bad, unskillful qualities, bhikkhus, arise with sensation, not without sensation. 
+-“Bad, unskillful qualities, mendicants, arise with feeling, not without feeling. 
++“Bad, unskillful qualities, bhikkhus, arise with feeling, not without feeling. 
 @@ -1,2 +1,2 @@ an2.84:1.1
  PLI: “Sasaññā, bhikkhave, uppajjanti pāpakā akusalā dhammā, no asaññā. 
 -“Bad, unskillful qualities, mendicants, arise with perception, not without perception. 
@@ -8690,8 +8690,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +A bhikkhu has ultimate subtlety of form. 
 @@ -1,2 +1,2 @@ an4.16:1.6
  PLI: Vedanāsokhummena samannāgato hoti paramena; 
--A mendicant has ultimate subtlety of sensation. 
-+A bhikkhu has ultimate subtlety of sensation. 
+-A mendicant has ultimate subtlety of feeling. 
++A bhikkhu has ultimate subtlety of feeling. 
 @@ -1,2 +1,2 @@ an4.16:1.9
  PLI: Saññāsokhummena samannāgato hoti paramena; 
 -A mendicant has ultimate subtlety of perception. 
@@ -10128,8 +10128,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +It’s when a bhikkhu applies their mind to the perception of light, focusing on the perception of day: 
 @@ -1,2 +1,2 @@ an4.41:4.2
  PLI: Idha, bhikkhave, bhikkhuno viditā vedanā uppajjanti, viditā upaṭṭhahanti, viditā abbhatthaṁ gacchanti; 
--It’s when a mendicant knows sensations as they arise, as they remain, and as they go away. 
-+It’s when a bhikkhu knows sensations as they arise, as they remain, and as they go away. 
+-It’s when a mendicant knows feelings as they arise, as they remain, and as they go away. 
++It’s when a bhikkhu knows feelings as they arise, as they remain, and as they go away. 
 @@ -1,2 +1,2 @@ an4.41:5.2
  PLI: Idha, bhikkhave, bhikkhu pañcasu upādānakkhandhesu udayabbayānupassī viharati: 
 -It’s when a mendicant meditates observing arising and passing away in the five grasping aggregates. 
@@ -11848,8 +11848,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +There Venerable Sāriputta addressed the bhikkhus: 
 @@ -1,2 +1,2 @@ an5.166:1.2
  PLI: “idhāvuso, bhikkhu sīlasampanno samādhisampanno paññāsampanno saññāvedayitanirodhaṁ samāpajjeyyāpi vuṭṭhaheyyāpi—
--“Reverends, take a mendicant who is accomplished in ethics, composure, and wisdom. They might enter into and emerge from the cessation of perception and sensation. 
-+“Reverends, take a bhikkhu who is accomplished in ethics, composure, and wisdom. They might enter into and emerge from the cessation of perception and sensation. 
+-“Reverends, take a mendicant who is accomplished in ethics, composure, and wisdom. They might enter into and emerge from the cessation of perception and feeling. 
++“Reverends, take a bhikkhu who is accomplished in ethics, composure, and wisdom. They might enter into and emerge from the cessation of perception and feeling. 
 @@ -1,2 +1,2 @@ an5.166:5.2
  PLI: “yāvatatiyakampi kho me āyasmā udāyī paṭikkosati, na ca me koci bhikkhu anumodati. 
 -“Venerable Udāyī disagrees with me three times, and not one mendicant agrees with me. 
@@ -11860,8 +11860,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +and said to the bhikkhus: 
 @@ -1,2 +1,2 @@ an5.166:5.6
  PLI: “idhāvuso, bhikkhu sīlasampanno samādhisampanno paññāsampanno saññāvedayitanirodhaṁ samāpajjeyyāpi vuṭṭhaheyyāpi—
--“Reverends, take a mendicant who is accomplished in ethics, composure, and wisdom. They might enter into and emerge from the cessation of perception and sensation. 
-+“Reverends, take a bhikkhu who is accomplished in ethics, composure, and wisdom. They might enter into and emerge from the cessation of perception and sensation. 
+-“Reverends, take a mendicant who is accomplished in ethics, composure, and wisdom. They might enter into and emerge from the cessation of perception and feeling. 
++“Reverends, take a bhikkhu who is accomplished in ethics, composure, and wisdom. They might enter into and emerge from the cessation of perception and feeling. 
 @@ -1,2 +1,2 @@ an5.166:9.2
  PLI: “bhagavatopi kho me sammukhā āyasmā udāyī yāvatatiyakaṁ paṭikkosati, na ca me koci bhikkhu anumodati. 
 -“Even in front of the Buddha Venerable Udāyī disagrees with me three times, and not one mendicant agrees with me. 
@@ -11880,8 +11880,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +Then the Buddha addressed the bhikkhus: 
 @@ -1,2 +1,2 @@ an5.166:12.2
  PLI: “idha, bhikkhave, bhikkhu sīlasampanno samādhisampanno paññāsampanno saññāvedayitanirodhaṁ samāpajjeyyāpi vuṭṭhaheyyāpi—
--“Mendicants, take a mendicant who is accomplished in ethics, composure, and wisdom. They might enter into and emerge from the cessation of perception and sensation. 
-+“Bhikkhus, take a bhikkhu who is accomplished in ethics, composure, and wisdom. They might enter into and emerge from the cessation of perception and sensation. 
+-“Mendicants, take a mendicant who is accomplished in ethics, composure, and wisdom. They might enter into and emerge from the cessation of perception and feeling. 
++“Bhikkhus, take a bhikkhu who is accomplished in ethics, composure, and wisdom. They might enter into and emerge from the cessation of perception and feeling. 
 @@ -1,2 +1,2 @@ an5.166:13.2
  PLI: “idhāvuso upavāṇa, aññe there bhikkhū vihesenti. 
 -“Reverend Upavāṇa, they’ve been harassing other senior mendicants, 
@@ -19762,8 +19762,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +‘It’s when a bhikkhu, going totally beyond the dimension of nothingness, enters and remains in the dimension of neither perception nor non-perception. 
 @@ -1,2 +1,2 @@ an9.33:9.4
  PLI: ‘idhāvuso, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati. 
--‘It’s when a mendicant, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. 
-+‘It’s when a bhikkhu, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. 
+-‘It’s when a mendicant, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. 
++‘It’s when a bhikkhu, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. 
 --- sujato/sutta/an/an9/an9.34_translation-en-sujato.json
 +++ sujato/sutta/an/an9/an9.34_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an9.34:1.2
@@ -19836,8 +19836,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +While a bhikkhu is practicing such a meditation, if perception and focus accompanied by the dimension of nothingness beset them, that’s an affliction for them. 
 @@ -1,2 +1,2 @@ an9.34:10.1
  PLI: Puna caparaṁ, āvuso, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, paññāya cassa disvā āsavā parikkhīṇā honti. 
--Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
-+Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
+-Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
++Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
 --- sujato/sutta/an/an9/an9.35_translation-en-sujato.json
 +++ sujato/sutta/an/an9/an9.35_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an9.35:1.1
@@ -19948,8 +19948,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +This is called a bhikkhu who, having gone to the end of the world, meditates at the end of the world. 
 @@ -1,2 +1,2 @@ an9.38:10.1
  PLI: Puna caparaṁ, brāhmaṇā, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, paññāya cassa disvā āsavā parikkhīṇā honti. 
--Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
-+Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
+-Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
++Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
 @@ -1,2 +1,2 @@ an9.38:10.2
  PLI: Ayaṁ vuccati, brāhmaṇā, ‘bhikkhu lokassa antamāgamma lokassa ante viharati tiṇṇo loke visattikan’”ti. 
 -This is called a mendicant who, having gone to the end of the world, meditates at the end of the world. And they’ve crossed over clinging to the world.” 
@@ -20062,8 +20062,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +In the same way, when a bhikkhu lives crowded by monks, nuns, laymen, and laywomen; by rulers and their chief ministers, and by monastics of other religions and their disciples, they think: 
 @@ -1,2 +1,2 @@ an9.40:6.6
  PLI: sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, paññāya cassa disvā āsavā parikkhīṇā honti. 
--Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
-+Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
+-Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
++Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
 --- sujato/sutta/an/an9/an9.41_translation-en-sujato.json
 +++ sujato/sutta/an/an9/an9.41_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an9.41:3.3
@@ -20110,8 +20110,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +Furthermore, take a bhikkhu who, going totally beyond the dimension of nothingness, enters and remains in the dimension of neither perception nor non-perception. 
 @@ -1,2 +1,2 @@ an9.42:12.1
  PLI: Puna caparaṁ, āvuso, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, paññāya cassa disvā āsavā parikkhīṇā honti. 
--Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
-+Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
+-Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
++Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
 --- sujato/sutta/an/an9/an9.43_translation-en-sujato.json
 +++ sujato/sutta/an/an9/an9.43_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an9.43:2.1
@@ -20132,8 +20132,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +To this extent the Buddha spoke of the direct witness in a qualified sense. Furthermore, take a bhikkhu who enters and remains in the dimension of infinite consciousness … the dimension of nothingness … the dimension of neither perception nor non-perception … 
 @@ -1,2 +1,2 @@ an9.43:5.1
  PLI: Puna caparaṁ, āvuso, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, paññāya cassa disvā āsavā parikkhīṇā honti. 
--Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
-+Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
+-Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
++Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
 --- sujato/sutta/an/an9/an9.44_translation-en-sujato.json
 +++ sujato/sutta/an/an9/an9.44_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an9.44:2.1
@@ -20142,8 +20142,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +“First, take a bhikkhu who, quite secluded from sensual pleasures … enters and remains in the first absorption. 
 @@ -1,2 +1,2 @@ an9.44:3.1
  PLI: Puna caparaṁ, āvuso, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, paññāya cassa disvā āsavā parikkhīṇā honti, 
--Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
-+Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
+-Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
++Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
 --- sujato/sutta/an/an9/an9.45_translation-en-sujato.json
 +++ sujato/sutta/an/an9/an9.45_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an9.45:2.1
@@ -20152,8 +20152,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +“First, take a bhikkhu who, quite secluded from sensual pleasures … enters and remains in the first absorption. 
 @@ -1,2 +1,2 @@ an9.45:3.1
  PLI: Puna caparaṁ, āvuso, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, paññāya cassa disvā āsavā parikkhīṇā honti. 
--Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
-+Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
+-Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
++Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
 --- sujato/sutta/an/an9/an9.46_translation-en-sujato.json
 +++ sujato/sutta/an/an9/an9.46_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an9.46:2.1
@@ -20162,8 +20162,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +“First, take a bhikkhu who, quite secluded from sensual pleasures … enters and remains in the first absorption. 
 @@ -1,2 +1,2 @@ an9.46:3.1
  PLI: Puna caparaṁ, āvuso, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, paññāya cassa disvā āsavā parikkhīṇā honti. 
--Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
-+Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
+-Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
++Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
 --- sujato/sutta/an/an9/an9.47_translation-en-sujato.json
 +++ sujato/sutta/an/an9/an9.47_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an9.47:2.1
@@ -20172,8 +20172,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +“First, take a bhikkhu who, quite secluded from sensual pleasures … enters and remains in the first absorption. 
 @@ -1,2 +1,2 @@ an9.47:3.1
  PLI: Puna caparaṁ, āvuso, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, paññāya cassa disvā āsavā parikkhīṇā honti. 
--Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
-+Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
+-Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
++Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
 --- sujato/sutta/an/an9/an9.4_translation-en-sujato.json
 +++ sujato/sutta/an/an9/an9.4_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an9.4:1.2
@@ -20276,8 +20276,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +“First, take a bhikkhu who, quite secluded from sensual pleasures … enters and remains in the first absorption. 
 @@ -1,2 +1,2 @@ an9.51:3.1
  PLI: Puna caparaṁ, āvuso, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, paññāya cassa disvā āsavā parikkhīṇā honti. 
--Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
-+Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
+-Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
++Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
 --- sujato/sutta/an/an9/an9.52_translation-en-sujato.json
 +++ sujato/sutta/an/an9/an9.52_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an9.52:2.1
@@ -20286,8 +20286,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +“First, take a bhikkhu who, quite secluded from sensual pleasures … enters and remains in the first absorption. 
 @@ -1,2 +1,2 @@ an9.52:3.1
  PLI: Puna caparaṁ, āvuso, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, paññāya cassa disvā āsavā parikkhīṇā honti. 
--Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
-+Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
+-Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
++Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
 --- sujato/sutta/an/an9/an9.5_translation-en-sujato.json
 +++ sujato/sutta/an/an9/an9.5_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an9.5:1.1
@@ -20302,8 +20302,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +“First, take a bhikkhu who, quite secluded from sensual pleasures … enters and remains in the first absorption. 
 @@ -1,2 +1,2 @@ an9.61:3.1
  PLI: Puna caparaṁ, āvuso, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, paññāya cassa disvā āsavā parikkhīṇā honti. 
--Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
-+Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
+-Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
++Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
 --- sujato/sutta/an/an9/an9.62_translation-en-sujato.json
 +++ sujato/sutta/an/an9/an9.62_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an9.62:1.1
@@ -20980,8 +20980,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/dn/dn15_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn15:32.1
  PLI: Yato kho, ānanda, bhikkhu neva vedanaṁ attānaṁ samanupassati, nopi appaṭisaṁvedanaṁ attānaṁ samanupassati, nopi ‘attā me vediyati, vedanādhammo hi me attā’ti samanupassati. 
--When a mendicant does not regard sensation as self; does not regard self as not experiencing sensation; and does not regard it thus: ‘my self feels, for my self is liable to feel’—
-+When a bhikkhu does not regard sensation as self; does not regard self as not experiencing sensation; and does not regard it thus: ‘my self feels, for my self is liable to feel’—
+-When a mendicant does not regard feeling as self; does not regard self as not experiencing feeling; and does not regard it thus: ‘my self feels, for my self is liable to feel’—
++When a bhikkhu does not regard feeling as self; does not regard self as not experiencing feeling; and does not regard it thus: ‘my self feels, for my self is liable to feel’—
 @@ -1,2 +1,2 @@ dn15:32.5
  PLI: Evaṁ vimuttacittaṁ kho, ānanda, bhikkhuṁ yo evaṁ vadeyya: 
 -It wouldn’t be appropriate to say that a mendicant whose mind is freed like this holds the following views: 
@@ -21924,16 +21924,16 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +That too is how a bhikkhu meditates by observing an aspect of the body. 
 @@ -1,2 +1,2 @@ dn22:11.1
  PLI: Kathañca pana, bhikkhave, bhikkhu vedanāsu vedanānupassī viharati? 
--And how does a mendicant meditate observing an aspect of sensations? 
-+And how does a bhikkhu meditate observing an aspect of sensations? 
+-And how does a mendicant meditate observing an aspect of feelings? 
++And how does a bhikkhu meditate observing an aspect of feelings? 
 @@ -1,2 +1,2 @@ dn22:11.2
  PLI: Idha, bhikkhave, bhikkhu sukhaṁ vā vedanaṁ vedayamāno ‘sukhaṁ vedanaṁ vedayāmī’ti pajānāti. 
--It’s when a mendicant who feels a pleasant sensation knows: ‘I feel a pleasant sensation.’ 
-+It’s when a bhikkhu who feels a pleasant sensation knows: ‘I feel a pleasant sensation.’ 
+-It’s when a mendicant who feels a pleasant feeling knows: ‘I feel a pleasant feeling.’ 
++It’s when a bhikkhu who feels a pleasant feeling knows: ‘I feel a pleasant feeling.’ 
 @@ -1,2 +1,2 @@ dn22:11.14
  PLI: Evampi kho, bhikkhave, bhikkhu vedanāsu vedanānupassī viharati. 
--That’s how a mendicant meditates by observing an aspect of sensations. 
-+That’s how a bhikkhu meditates by observing an aspect of sensations. 
+-That’s how a mendicant meditates by observing an aspect of feelings. 
++That’s how a bhikkhu meditates by observing an aspect of feelings. 
 @@ -1,2 +1,2 @@ dn22:12.1
  PLI: Kathañca pana, bhikkhave, bhikkhu citte cittānupassī viharati? 
 -And how does a mendicant meditate observing an aspect of the mind? 
@@ -22592,8 +22592,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +A bhikkhu applies their mind to the perception of light, focusing on the perception of day regardless of whether it’s night or day. 
 @@ -1,2 +1,2 @@ dn33:1.11.39
  PLI: Idhāvuso, bhikkhuno viditā vedanā uppajjanti, viditā upaṭṭhahanti, viditā abbhatthaṁ gacchanti. 
--A mendicant knows sensations as they arise, as they remain, and as they go away. 
-+A bhikkhu knows sensations as they arise, as they remain, and as they go away. 
+-A mendicant knows feelings as they arise, as they remain, and as they go away. 
++A bhikkhu knows feelings as they arise, as they remain, and as they go away. 
 @@ -1,2 +1,2 @@ dn33:1.11.44
  PLI: Idhāvuso, bhikkhu pañcasu upādānakkhandhesu udayabbayānupassī viharati. 
 -A mendicant meditates observing arising and passing away in the five grasping aggregates. 
@@ -24678,22 +24678,22 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/kn/iti/vagga6/iti52_translation-en-sujato.json
 @@ -1,2 +1,2 @@ iti52:2.1
  PLI: “Tisso imā, bhikkhave, vedanā. 
--“Mendicants, there are these three sensations. 
-+“Bhikkhus, there are these three sensations. 
+-“Mendicants, there are these three feelings. 
++“Bhikkhus, there are these three feelings. 
 @@ -1,2 +1,2 @@ iti52:4.3
  PLI: Vedanānaṁ khayā bhikkhu, 
--With the ending of sensations, a mendicant 
-+With the ending of sensations, a bhikkhu 
+-With the ending of feelings, a mendicant 
++With the ending of feelings, a bhikkhu 
 --- sujato/sutta/kn/iti/vagga6/iti53_translation-en-sujato.json
 +++ sujato/sutta/kn/iti/vagga6/iti53_translation-en-sujato.json
 @@ -1,2 +1,2 @@ iti53:2.1
  PLI: “Tisso imā, bhikkhave, vedanā. 
--“Mendicants, there are these three sensations. 
-+“Bhikkhus, there are these three sensations. 
+-“Mendicants, there are these three feelings. 
++“Bhikkhus, there are these three feelings. 
 @@ -1,2 +1,2 @@ iti53:2.7
  PLI: Yato kho, bhikkhave, bhikkhuno sukhā vedanā dukkhato diṭṭhā hoti, dukkhā vedanā sallato diṭṭhā hoti, adukkhamasukhā vedanā aniccato diṭṭhā hoti; 
--When a mendicant has seen these three sensations in this way, 
-+When a bhikkhu has seen these three sensations in this way, 
+-When a mendicant has seen these three feelings in this way, 
++When a bhikkhu has seen these three feelings in this way, 
 @@ -1,2 +1,2 @@ iti53:2.8
  PLI: ayaṁ vuccati, bhikkhave, ‘bhikkhu ariyo, sammaddaso, acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassā’”ti. 
 -they’re called a noble mendicant who sees rightly, has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
@@ -25224,8 +25224,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +When a bhikkhu meditates in this way they can expect enlightenment or non-return.” 
 @@ -1,2 +1,2 @@ snp3.12:26.5
  PLI: Vedanānaṁ khayā bhikkhu, 
--With the ending of sensations, a mendicant 
-+With the ending of sensations, a bhikkhu 
+-With the ending of feelings, a mendicant 
++With the ending of feelings, a bhikkhu 
 @@ -1,2 +1,2 @@ snp3.12:27.5
  PLI: Evaṁ sammā …pe… 
 -When a mendicant meditates in this way they can expect enlightenment or non-return.” 
@@ -25914,8 +25914,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/kn/ud/vagga3/ud3.1_translation-en-sujato.json
 @@ -1,2 +1,2 @@ ud3.1:1.3
  PLI: Tena kho pana samayena aññataro bhikkhu bhagavato avidūre nisinno hoti pallaṅkaṁ ābhujitvā ujuṁ kāyaṁ paṇidhāya purāṇakammavipākajaṁ dukkhaṁ tibbaṁ kharaṁ kaṭukaṁ vedanaṁ adhivāsento sato sampajāno avihaññamāno. 
--Now, at that time a certain mendicant was sitting not far from the Buddha, cross-legged, with his body straight. As a result of past deeds, he suffered painful, sharp, severe, and acute sensations, which he endured unbothered, with mindfulness and awareness. 
-+Now, at that time a certain bhikkhu was sitting not far from the Buddha, cross-legged, with his body straight. As a result of past deeds, he suffered painful, sharp, severe, and acute sensations, which he endured unbothered, with mindfulness and awareness. 
+-Now, at that time a certain mendicant was sitting not far from the Buddha, cross-legged, with his body straight. As a result of past deeds, he suffered painful, sharp, severe, and acute feelings, which he endured unbothered, with mindfulness and awareness. 
++Now, at that time a certain bhikkhu was sitting not far from the Buddha, cross-legged, with his body straight. As a result of past deeds, he suffered painful, sharp, severe, and acute feelings, which he endured unbothered, with mindfulness and awareness. 
 @@ -1,2 +1,2 @@ ud3.1:4.1
  PLI: “Sabbakammajahassa bhikkhuno, 
 -“A mendicant who has left all deeds behind, 
@@ -27230,16 +27230,16 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +That too is how a bhikkhu meditates by observing an aspect of the body. 
 @@ -1,2 +1,2 @@ mn10:32.1
  PLI: Kathañca, bhikkhave, bhikkhu vedanāsu vedanānupassī viharati? 
--And how does a mendicant meditate observing an aspect of sensations? 
-+And how does a bhikkhu meditate observing an aspect of sensations? 
+-And how does a mendicant meditate observing an aspect of feelings? 
++And how does a bhikkhu meditate observing an aspect of feelings? 
 @@ -1,2 +1,2 @@ mn10:32.2
  PLI: Idha, bhikkhave, bhikkhu sukhaṁ vā vedanaṁ vedayamāno ‘sukhaṁ vedanaṁ vedayāmī’ti pajānāti. 
--It’s when a mendicant who feels a pleasant sensation knows: ‘I feel a pleasant sensation.’ 
-+It’s when a bhikkhu who feels a pleasant sensation knows: ‘I feel a pleasant sensation.’ 
+-It’s when a mendicant who feels a pleasant feeling knows: ‘I feel a pleasant feeling.’ 
++It’s when a bhikkhu who feels a pleasant feeling knows: ‘I feel a pleasant feeling.’ 
 @@ -1,2 +1,2 @@ mn10:33.4
  PLI: Evampi kho, bhikkhave, bhikkhu vedanāsu vedanānupassī viharati. 
--That’s how a mendicant meditates by observing an aspect of sensations. 
-+That’s how a bhikkhu meditates by observing an aspect of sensations. 
+-That’s how a mendicant meditates by observing an aspect of feelings. 
++That’s how a bhikkhu meditates by observing an aspect of feelings. 
 @@ -1,2 +1,2 @@ mn10:34.1
  PLI: Kathañca, bhikkhave, bhikkhu citte cittānupassī viharati? 
 -And how does a mendicant meditate observing an aspect of the mind? 
@@ -27706,8 +27706,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +Whenever a bhikkhu practices breathing while experiencing rapture, 
 @@ -1,2 +1,2 @@ mn118:25.7
  PLI: Tasmātiha, bhikkhave, vedanāsu vedanānupassī tasmiṁ samaye bhikkhu viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
--That’s why at that time a mendicant is meditating by observing an aspect of sensations—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
-+That’s why at that time a bhikkhu is meditating by observing an aspect of sensations—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
+-That’s why at that time a mendicant is meditating by observing an aspect of feelings—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
++That’s why at that time a bhikkhu is meditating by observing an aspect of feelings—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ mn118:26.1
  PLI: Yasmiṁ samaye, bhikkhave, bhikkhu ‘cittapaṭisaṁvedī assasissāmī’ti sikkhati, ‘cittapaṭisaṁvedī passasissāmī’ti sikkhati; 
 -Whenever a mendicant practices breathing while experiencing the mind, 
@@ -27758,8 +27758,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +At such a time, a bhikkhu has initiated the awakening factor of equanimity; they develop it and perfect it. 
 @@ -1,2 +1,2 @@ mn118:37.1
  PLI: Yasmiṁ samaye, bhikkhave, bhikkhu vedanāsu …pe… 
--Whenever a mendicant meditates by observing an aspect of sensations … 
-+Whenever a bhikkhu meditates by observing an aspect of sensations … 
+-Whenever a mendicant meditates by observing an aspect of feelings … 
++Whenever a bhikkhu meditates by observing an aspect of feelings … 
 @@ -1,2 +1,2 @@ mn118:38.3
  PLI: Yasmiṁ samaye, bhikkhave, bhikkhuno upaṭṭhitā sati hoti asammuṭṭhā, satisambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti, satisambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti, satisambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. 
 -At such a time, a mendicant has initiated the awakening factor of mindfulness … 
@@ -28932,20 +28932,20 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +Now, bhikkhus, this is the practice that leads to the arising of substantial reality. 
 @@ -1,2 +1,2 @@ mn148:28.8
  PLI: So vata, bhikkhave, sukhāya vedanāya rāgānusayaṁ appahāya dukkhāya vedanāya paṭighānusayaṁ appaṭivinodetvā adukkhamasukhāya vedanāya avijjānusayaṁ asamūhanitvā avijjaṁ appahāya vijjaṁ anuppādetvā diṭṭheva dhamme dukkhassantakaro bhavissatīti—netaṁ ṭhānaṁ vijjati. 
--Mendicants, without giving up the underlying tendency to greed for pleasant sensation, without dispelling the underlying tendency to aversion toward painful sensation, without eradicating ignorance in the case of neutral sensation, without giving up ignorance and without giving rise to knowledge, it is quite impossible to make an end of suffering in this very life. 
-+Bhikkhus, without giving up the underlying tendency to greed for pleasant sensation, without dispelling the underlying tendency to aversion toward painful sensation, without eradicating ignorance in the case of neutral sensation, without giving up ignorance and without giving rise to knowledge, it is quite impossible to make an end of suffering in this very life. 
+-Mendicants, without giving up the underlying tendency to greed for pleasant feeling, without dispelling the underlying tendency to aversion toward painful feeling, without eradicating ignorance in the case of neutral feeling, without giving up ignorance and without giving rise to knowledge, it is quite impossible to make an end of suffering in this very life. 
++Bhikkhus, without giving up the underlying tendency to greed for pleasant feeling, without dispelling the underlying tendency to aversion toward painful feeling, without eradicating ignorance in the case of neutral feeling, without giving up ignorance and without giving rise to knowledge, it is quite impossible to make an end of suffering in this very life. 
 @@ -1,2 +1,2 @@ mn148:29-33.12
  PLI: So vata, bhikkhave, sukhāya vedanāya rāgānusayaṁ appahāya dukkhāya vedanāya paṭighānusayaṁ appaṭivinodetvā adukkhamasukhāya vedanāya avijjānusayaṁ asamūhanitvā avijjaṁ appahāya vijjaṁ anuppādetvā diṭṭheva dhamme dukkhassantakaro bhavissatīti—netaṁ ṭhānaṁ vijjati. 
--Mendicants, without giving up the underlying tendency to greed for pleasant sensation, without dispelling the underlying tendency to aversion toward painful sensation, without eradicating ignorance in the case of neutral sensation, without giving up ignorance and without giving rise to knowledge, it is quite impossible to make an end of suffering in this very life. 
-+Bhikkhus, without giving up the underlying tendency to greed for pleasant sensation, without dispelling the underlying tendency to aversion toward painful sensation, without eradicating ignorance in the case of neutral sensation, without giving up ignorance and without giving rise to knowledge, it is quite impossible to make an end of suffering in this very life. 
+-Mendicants, without giving up the underlying tendency to greed for pleasant feeling, without dispelling the underlying tendency to aversion toward painful feeling, without eradicating ignorance in the case of neutral feeling, without giving up ignorance and without giving rise to knowledge, it is quite impossible to make an end of suffering in this very life. 
++Bhikkhus, without giving up the underlying tendency to greed for pleasant feeling, without dispelling the underlying tendency to aversion toward painful feeling, without eradicating ignorance in the case of neutral feeling, without giving up ignorance and without giving rise to knowledge, it is quite impossible to make an end of suffering in this very life. 
 @@ -1,2 +1,2 @@ mn148:34.8
  PLI: So vata, bhikkhave, sukhāya vedanāya rāgānusayaṁ pahāya dukkhāya vedanāya paṭighānusayaṁ paṭivinodetvā adukkhamasukhāya vedanāya avijjānusayaṁ samūhanitvā avijjaṁ pahāya vijjaṁ uppādetvā diṭṭheva dhamme dukkhassantakaro bhavissatīti—ṭhānametaṁ vijjati. 
--Mendicants, after giving up the underlying tendency to greed for pleasant sensation, after dispelling the underlying tendency to aversion toward painful sensation, after eradicating ignorance in the case of neutral sensation, after giving up ignorance and giving rise to knowledge, it’s quite possible to make an end of suffering in this very life. 
-+Bhikkhus, after giving up the underlying tendency to greed for pleasant sensation, after dispelling the underlying tendency to aversion toward painful sensation, after eradicating ignorance in the case of neutral sensation, after giving up ignorance and giving rise to knowledge, it’s quite possible to make an end of suffering in this very life. 
+-Mendicants, after giving up the underlying tendency to greed for pleasant feeling, after dispelling the underlying tendency to aversion toward painful feeling, after eradicating ignorance in the case of neutral feeling, after giving up ignorance and giving rise to knowledge, it’s quite possible to make an end of suffering in this very life. 
++Bhikkhus, after giving up the underlying tendency to greed for pleasant feeling, after dispelling the underlying tendency to aversion toward painful feeling, after eradicating ignorance in the case of neutral feeling, after giving up ignorance and giving rise to knowledge, it’s quite possible to make an end of suffering in this very life. 
 @@ -1,2 +1,2 @@ mn148:39.8
  PLI: So vata, bhikkhave, sukhāya vedanāya rāgānusayaṁ pahāya dukkhāya vedanāya paṭighānusayaṁ paṭivinodetvā adukkhamasukhāya vedanāya avijjānusayaṁ samūhanitvā avijjaṁ pahāya vijjaṁ uppādetvā diṭṭheva dhamme dukkhassantakaro bhavissatīti—ṭhānametaṁ vijjati. 
--Mendicants, after giving up the underlying tendency to greed for pleasant sensation, after dispelling the underlying tendency to aversion toward painful sensation, after eradicating ignorance in the case of neutral sensation, after giving up ignorance and giving rise to knowledge, it’s quite possible to make an end of suffering in this very life. 
-+Bhikkhus, after giving up the underlying tendency to greed for pleasant sensation, after dispelling the underlying tendency to aversion toward painful sensation, after eradicating ignorance in the case of neutral sensation, after giving up ignorance and giving rise to knowledge, it’s quite possible to make an end of suffering in this very life. 
+-Mendicants, after giving up the underlying tendency to greed for pleasant feeling, after dispelling the underlying tendency to aversion toward painful feeling, after eradicating ignorance in the case of neutral feeling, after giving up ignorance and giving rise to knowledge, it’s quite possible to make an end of suffering in this very life. 
++Bhikkhus, after giving up the underlying tendency to greed for pleasant feeling, after dispelling the underlying tendency to aversion toward painful feeling, after eradicating ignorance in the case of neutral feeling, after giving up ignorance and giving rise to knowledge, it’s quite possible to make an end of suffering in this very life. 
 @@ -1,2 +1,2 @@ mn148:41.9
  PLI: Attamanā te bhikkhū bhagavato bhāsitaṁ abhinandunti. 
 -Satisfied, the mendicants approved what the Buddha said. 
@@ -30060,8 +30060,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +This is called a bhikkhu who has blinded Māra … 
 @@ -1,2 +1,2 @@ mn25:20.1
  PLI: Puna caparaṁ, bhikkhave, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati. Paññāya cassa disvā āsavā parikkhīṇā honti. 
--Furthermore, a mendicant, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
-+Furthermore, a bhikkhu, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
+-Furthermore, a mendicant, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
++Furthermore, a bhikkhu, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
 @@ -1,2 +1,2 @@ mn25:20.2
  PLI: Ayaṁ vuccati, bhikkhave, bhikkhu andhamakāsi māraṁ, apadaṁ vadhitvā māracakkhuṁ adassanaṁ gato pāpimato tiṇṇo loke visattikan”ti. 
 -This is called a mendicant who has blinded Māra, put out his eyes without a trace, and gone where the Wicked One cannot see. And they’ve crossed over clinging to the world.” 
@@ -30234,8 +30234,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +This is called a bhikkhu who has blinded Māra … 
 @@ -1,2 +1,2 @@ mn26:42.1
  PLI: Puna caparaṁ, bhikkhave, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, paññāya cassa disvā āsavā parikkhīṇā honti. 
--Furthermore, a mendicant, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
-+Furthermore, a bhikkhu, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
+-Furthermore, a mendicant, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
++Furthermore, a bhikkhu, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
 @@ -1,2 +1,2 @@ mn26:42.2
  PLI: Ayaṁ vuccati, bhikkhave, bhikkhu andhamakāsi māraṁ apadaṁ, vadhitvā māracakkhuṁ adassanaṁ gato pāpimato. 
 -This is called a mendicant who has blinded Māra, put out his eyes without a trace, and gone where the Wicked One cannot see. 
@@ -30480,8 +30480,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +Furthermore, take a bhikkhu who, going totally beyond the dimension of nothingness, enters and remains in the dimension of neither perception nor non-perception. 
 @@ -1,2 +1,2 @@ mn30:21.1
  PLI: Puna caparaṁ, brāhmaṇa, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, paññāya cassa disvā āsavā parikkhīṇā honti. 
--Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
-+Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. And, having seen with wisdom, their defilements come to an end. 
+-Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
++Furthermore, take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
 --- sujato/sutta/mn/mn32_translation-en-sujato.json
 +++ sujato/sutta/mn/mn32_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn32:4.6
@@ -31496,24 +31496,24 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +When a bhikkhu has entered the first absorption, sensual desire, ill will, dullness and drowsiness, restlessness and remorse, and doubt are given up. 
 @@ -1,2 +1,2 @@ mn43:23.3
  PLI: Te ca hāvuso, āyusaṅkhārā abhaviṁsu te vedaniyā dhammā, na yidaṁ saññāvedayitanirodhaṁ samāpannassa bhikkhuno vuṭṭhānaṁ paññāyetha. 
--For if the vital forces and the phenomena that are felt were the same things, a mendicant who had attained the cessation of perception and sensation would not emerge from it. 
-+For if the vital forces and the phenomena that are felt were the same things, a bhikkhu who had attained the cessation of perception and sensation would not emerge from it. 
+-For if the vital forces and the phenomena that are felt were the same things, a mendicant who had attained the cessation of perception and feeling would not emerge from it. 
++For if the vital forces and the phenomena that are felt were the same things, a bhikkhu who had attained the cessation of perception and feeling would not emerge from it. 
 @@ -1,2 +1,2 @@ mn43:23.4
  PLI: Yasmā ca kho, āvuso, aññe āyusaṅkhārā aññe vedaniyā dhammā, tasmā saññāvedayitanirodhaṁ samāpannassa bhikkhuno vuṭṭhānaṁ paññāyatī”ti. 
--But because the vital forces and the phenomena that are felt are different things, a mendicant who has attained the cessation of perception and sensation can emerge from it.” 
-+But because the vital forces and the phenomena that are felt are different things, a bhikkhu who has attained the cessation of perception and sensation can emerge from it.” 
+-But because the vital forces and the phenomena that are felt are different things, a mendicant who has attained the cessation of perception and feeling can emerge from it.” 
++But because the vital forces and the phenomena that are felt are different things, a bhikkhu who has attained the cessation of perception and feeling can emerge from it.” 
 @@ -1,2 +1,2 @@ mn43:25.1
  PLI: “Yvāyaṁ, āvuso, mato kālaṅkato, yo cāyaṁ bhikkhu saññāvedayitanirodhaṁ samāpanno—imesaṁ kiṁ nānākaraṇan”ti? 
--“What’s the difference between someone who has passed away and a mendicant who has attained the cessation of perception and sensation?” 
-+“What’s the difference between someone who has passed away and a bhikkhu who has attained the cessation of perception and sensation?” 
+-“What’s the difference between someone who has passed away and a mendicant who has attained the cessation of perception and feeling?” 
++“What’s the difference between someone who has passed away and a bhikkhu who has attained the cessation of perception and feeling?” 
 @@ -1,2 +1,2 @@ mn43:25.3
  PLI: Yo cāyaṁ bhikkhu saññāvedayitanirodhaṁ samāpanno tassapi kāyasaṅkhārā niruddhā paṭippassaddhā, vacīsaṅkhārā niruddhā paṭippassaddhā, cittasaṅkhārā niruddhā paṭippassaddhā, āyu na parikkhīṇo, usmā avūpasantā, indriyāni vippasannāni. 
--When a mendicant has attained the cessation of perception and sensation, their physical, verbal, and mental processes have ceased and stilled. But their vitality is not spent; their warmth is not dissipated; and their faculties are very clear. 
-+When a bhikkhu has attained the cessation of perception and sensation, their physical, verbal, and mental processes have ceased and stilled. But their vitality is not spent; their warmth is not dissipated; and their faculties are very clear. 
+-When a mendicant has attained the cessation of perception and feeling, their physical, verbal, and mental processes have ceased and stilled. But their vitality is not spent; their warmth is not dissipated; and their faculties are very clear. 
++When a bhikkhu has attained the cessation of perception and feeling, their physical, verbal, and mental processes have ceased and stilled. But their vitality is not spent; their warmth is not dissipated; and their faculties are very clear. 
 @@ -1,2 +1,2 @@ mn43:25.4
  PLI: Yvāyaṁ, āvuso, mato kālaṅkato, yo cāyaṁ bhikkhu saññāvedayitanirodhaṁ samāpanno—idaṁ nesaṁ nānākaraṇan”ti. 
--That’s the difference between someone who has passed away and a mendicant who has attained the cessation of perception and sensation.” 
-+That’s the difference between someone who has passed away and a bhikkhu who has attained the cessation of perception and sensation.” 
+-That’s the difference between someone who has passed away and a mendicant who has attained the cessation of perception and feeling.” 
++That’s the difference between someone who has passed away and a bhikkhu who has attained the cessation of perception and feeling.” 
 @@ -1,2 +1,2 @@ mn43:26.3
  PLI: Idhāvuso, bhikkhu sukhassa ca pahānā dukkhassa ca pahānā pubbeva somanassadomanassānaṁ atthaṅgamā adukkhamasukhaṁ upekkhāsatipārisuddhiṁ catutthaṁ jhānaṁ upasampajja viharati. 
 -With the giving up of pleasure and pain and the disappearing of former happiness and sadness, a mendicant enters and remains in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. 
@@ -31554,24 +31554,24 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +“A bhikkhu who is entering such an attainment does not think: 
 @@ -1,2 +1,2 @@ mn44:17.1
  PLI: “Saññāvedayitanirodhaṁ samāpajjantassa panāyye, bhikkhuno katame dhammā paṭhamaṁ nirujjhanti—yadi vā kāyasaṅkhāro, yadi vā vacīsaṅkhāro, yadi vā cittasaṅkhāro”ti? 
--“But ma’am, which process ceases first for a mendicant who is entering the cessation of perception and sensation: physical, verbal, or mental?” 
-+“But ma’am, which process ceases first for a bhikkhu who is entering the cessation of perception and sensation: physical, verbal, or mental?” 
+-“But ma’am, which process ceases first for a mendicant who is entering the cessation of perception and feeling: physical, verbal, or mental?” 
++“But ma’am, which process ceases first for a bhikkhu who is entering the cessation of perception and feeling: physical, verbal, or mental?” 
 @@ -1,2 +1,2 @@ mn44:18.2
  PLI: “Na kho, āvuso visākha, saññāvedayitanirodhasamāpattiyā vuṭṭhahantassa bhikkhuno evaṁ hoti: 
 -“A mendicant who is emerging from such an attainment does not think: 
 +“A bhikkhu who is emerging from such an attainment does not think: 
 @@ -1,2 +1,2 @@ mn44:19.1
  PLI: “Saññāvedayitanirodhasamāpattiyā vuṭṭhahantassa panāyye, bhikkhuno katame dhammā paṭhamaṁ uppajjanti—yadi vā kāyasaṅkhāro, yadi vā vacīsaṅkhāro, yadi vā cittasaṅkhāro”ti? 
--“But ma’am, which process arises first for a mendicant who is emerging from the cessation of perception and sensation: physical, verbal, or mental?” 
-+“But ma’am, which process arises first for a bhikkhu who is emerging from the cessation of perception and sensation: physical, verbal, or mental?” 
+-“But ma’am, which process arises first for a mendicant who is emerging from the cessation of perception and feeling: physical, verbal, or mental?” 
++“But ma’am, which process arises first for a bhikkhu who is emerging from the cessation of perception and feeling: physical, verbal, or mental?” 
 @@ -1,2 +1,2 @@ mn44:20.1
  PLI: “Saññāvedayitanirodhasamāpattiyā vuṭṭhitaṁ panāyye, bhikkhuṁ kati phassā phusantī”ti? 
--“But ma’am, when a mendicant has emerged from the attainment of the cessation of perception and sensation, how many kinds of contact do they experience?” 
-+“But ma’am, when a bhikkhu has emerged from the attainment of the cessation of perception and sensation, how many kinds of contact do they experience?” 
+-“But ma’am, when a mendicant has emerged from the attainment of the cessation of perception and feeling, how many kinds of contact do they experience?” 
++“But ma’am, when a bhikkhu has emerged from the attainment of the cessation of perception and feeling, how many kinds of contact do they experience?” 
 @@ -1,2 +1,2 @@ mn44:21.1
  PLI: “Saññāvedayitanirodhasamāpattiyā vuṭṭhitassa panāyye, bhikkhuno kiṁninnaṁ cittaṁ hoti kiṁpoṇaṁ kiṁpabbhāran”ti? 
--“But ma’am, when a mendicant has emerged from the attainment of the cessation of perception and sensation, what does their mind slant, slope, and incline to?” 
-+“But ma’am, when a bhikkhu has emerged from the attainment of the cessation of perception and sensation, what does their mind slant, slope, and incline to?” 
+-“But ma’am, when a mendicant has emerged from the attainment of the cessation of perception and feeling, what does their mind slant, slope, and incline to?” 
++“But ma’am, when a bhikkhu has emerged from the attainment of the cessation of perception and feeling, what does their mind slant, slope, and incline to?” 
 @@ -1,2 +1,2 @@ mn44:28.3
  PLI: Idhāvuso visākha, bhikkhu vivicceva kāmehi vivicca akusalehi dhammehi savitakkaṁ savicāraṁ vivekajaṁ pītisukhaṁ paṭhamaṁ jhānaṁ upasampajja viharati. 
 -Take a mendicant who, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, with thought and examination. 
@@ -32180,8 +32180,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +It’s when a bhikkhu, going totally beyond the dimension of nothingness, enters and remains in the dimension of neither perception nor non-perception. 
 @@ -1,2 +1,2 @@ mn59:15.5
  PLI: Idhānanda, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati. 
--It’s when a mendicant, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. 
-+It’s when a bhikkhu, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. 
+-It’s when a mendicant, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. 
++It’s when a bhikkhu, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. 
 --- sujato/sutta/mn/mn5_translation-en-sujato.json
 +++ sujato/sutta/mn/mn5_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn5:1.3
@@ -32608,8 +32608,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +Take a bhikkhu who, going totally beyond the dimension of nothingness, enters and remains in the dimension of neither perception nor non-perception. That goes beyond it. 
 @@ -1,2 +1,2 @@ mn66:34.1
  PLI: Idhudāyi, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, ayaṁ tassa samatikkamo; 
--Take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. That goes beyond it. 
-+Take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. That goes beyond it. 
+-Take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. That goes beyond it. 
++Take a bhikkhu who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. That goes beyond it. 
 --- sujato/sutta/mn/mn67_translation-en-sujato.json
 +++ sujato/sutta/mn/mn67_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn67:2.1
@@ -35168,14 +35168,14 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn14/sn14.4_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn14.4:1.2
  PLI: “Dhātunānattaṁ, bhikkhave, paṭicca uppajjati phassanānattaṁ, phassanānattaṁ paṭicca uppajjati vedanānānattaṁ. 
--“Mendicants, diversity of elements gives rise to diversity of contacts, and diversity of contacts gives rise to diversity of sensations. 
-+“Bhikkhus, diversity of elements gives rise to diversity of contacts, and diversity of contacts gives rise to diversity of sensations. 
+-“Mendicants, diversity of elements gives rise to diversity of contacts, and diversity of contacts gives rise to diversity of feelings. 
++“Bhikkhus, diversity of elements gives rise to diversity of contacts, and diversity of contacts gives rise to diversity of feelings. 
 --- sujato/sutta/sn/sn14/sn14.5_translation-en-sujato.json
 +++ sujato/sutta/sn/sn14/sn14.5_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn14.5:1.2
  PLI: “Dhātunānattaṁ, bhikkhave, paṭicca uppajjati phassanānattaṁ, phassanānattaṁ paṭicca uppajjati vedanānānattaṁ, no vedanānānattaṁ paṭicca uppajjati phassanānattaṁ, no phassanānattaṁ paṭicca uppajjati dhātunānattaṁ. 
--“Mendicants, diversity of elements gives rise to diversity of contacts. Diversity of contacts gives rise to diversity of sensations. Diversity of sensations doesn’t give rise to diversity of contacts. Diversity of contacts doesn’t give rise to diversity of elements. 
-+“Bhikkhus, diversity of elements gives rise to diversity of contacts. Diversity of contacts gives rise to diversity of sensations. Diversity of sensations doesn’t give rise to diversity of contacts. Diversity of contacts doesn’t give rise to diversity of elements. 
+-“Mendicants, diversity of elements gives rise to diversity of contacts. Diversity of contacts gives rise to diversity of feelings. Diversity of feelings doesn’t give rise to diversity of contacts. Diversity of contacts doesn’t give rise to diversity of elements. 
++“Bhikkhus, diversity of elements gives rise to diversity of contacts. Diversity of contacts gives rise to diversity of feelings. Diversity of feelings doesn’t give rise to diversity of contacts. Diversity of contacts doesn’t give rise to diversity of elements. 
 --- sujato/sutta/sn/sn14/sn14.6_translation-en-sujato.json
 +++ sujato/sutta/sn/sn14/sn14.6_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn14.6:1.2
@@ -35198,8 +35198,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn14/sn14.9_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn14.9:1.2
  PLI: “Dhātunānattaṁ, bhikkhave, paṭicca uppajjati saññānānattaṁ, saññānānattaṁ paṭicca uppajjati saṅkappanānattaṁ, saṅkappanānattaṁ paṭicca uppajjati phassanānattaṁ, phassanānattaṁ paṭicca uppajjati vedanānānattaṁ, vedanānānattaṁ paṭicca uppajjati chandanānattaṁ, chandanānattaṁ paṭicca uppajjati pariḷāhanānattaṁ, pariḷāhanānattaṁ paṭicca uppajjati pariyesanānānattaṁ, pariyesanānānattaṁ paṭicca uppajjati lābhanānattaṁ. 
--“Mendicants, diversity of elements gives rise to diversity of perceptions. Diversity of perceptions gives rise to diversity of thoughts. Diversity of thoughts gives rise to diversity of contacts. Diversity of contacts gives rise to diversity of sensations. Diversity of sensations gives rise to diversity of desires. Diversity of desires gives rise to diversity of passions. Diversity of passions gives rise to diversity of searches. Diversity of searches gives rise to diversity of gains. 
-+“Bhikkhus, diversity of elements gives rise to diversity of perceptions. Diversity of perceptions gives rise to diversity of thoughts. Diversity of thoughts gives rise to diversity of contacts. Diversity of contacts gives rise to diversity of sensations. Diversity of sensations gives rise to diversity of desires. Diversity of desires gives rise to diversity of passions. Diversity of passions gives rise to diversity of searches. Diversity of searches gives rise to diversity of gains. 
+-“Mendicants, diversity of elements gives rise to diversity of perceptions. Diversity of perceptions gives rise to diversity of thoughts. Diversity of thoughts gives rise to diversity of contacts. Diversity of contacts gives rise to diversity of feelings. Diversity of feelings gives rise to diversity of desires. Diversity of desires gives rise to diversity of passions. Diversity of passions gives rise to diversity of searches. Diversity of searches gives rise to diversity of gains. 
++“Bhikkhus, diversity of elements gives rise to diversity of perceptions. Diversity of perceptions gives rise to diversity of thoughts. Diversity of thoughts gives rise to diversity of contacts. Diversity of contacts gives rise to diversity of feelings. Diversity of feelings gives rise to diversity of desires. Diversity of desires gives rise to diversity of passions. Diversity of passions gives rise to diversity of searches. Diversity of searches gives rise to diversity of gains. 
 --- sujato/sutta/sn/sn15/sn15.10_translation-en-sujato.json
 +++ sujato/sutta/sn/sn15/sn15.10_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn15.10:1.2
@@ -36384,8 +36384,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +If they’re freed by not grasping by disillusionment, dispassion, and cessation regarding form, they’re qualified to be called ‘a bhikkhu who has attained extinguishment in this very life’. 
 @@ -1,2 +1,2 @@ sn22.115:1.8
  PLI: Vedanāya ce, bhikkhu …pe… 
--If a mendicant teaches Dhamma for disillusionment with sensation … 
-+If a bhikkhu teaches Dhamma for disillusionment with sensation … 
+-If a mendicant teaches Dhamma for disillusionment with feeling … 
++If a bhikkhu teaches Dhamma for disillusionment with feeling … 
 @@ -1,2 +1,2 @@ sn22.115:1.11
  PLI: viññāṇassa ce, bhikkhu, nibbidāya virāgāya nirodhāya dhammaṁ deseti, ‘dhammakathiko bhikkhū’ti alaṁvacanāya. 
 -consciousness, for its fading away and cessation, they’re qualified to be called ‘a mendicant who speaks on Dhamma’. 
@@ -36422,8 +36422,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +If they’re freed by not grasping by disillusionment, dispassion, and cessation regarding form, they’re qualified to be called ‘a bhikkhu who has attained extinguishment in this very life’. 
 @@ -1,2 +1,2 @@ sn22.116:1.9
  PLI: Vedanāya ce, bhikkhu …pe… 
--If a mendicant teaches Dhamma for disillusionment with sensation … 
-+If a bhikkhu teaches Dhamma for disillusionment with sensation … 
+-If a mendicant teaches Dhamma for disillusionment with feeling … 
++If a bhikkhu teaches Dhamma for disillusionment with feeling … 
 @@ -1,2 +1,2 @@ sn22.116:1.12
  PLI: viññāṇassa ce, bhikkhu, nibbidāya virāgāya nirodhāya dhammaṁ deseti, ‘dhammakathiko bhikkhū’ti alaṁvacanāya. 
 -consciousness, for its fading away and cessation, they’re qualified to be called ‘a mendicant who speaks on Dhamma’. 
@@ -36606,14 +36606,14 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn22/sn22.12_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.12:1.4
  PLI: “rūpaṁ, bhikkhave, aniccaṁ, vedanā aniccā, saññā aniccā, saṅkhārā aniccā, viññāṇaṁ aniccaṁ. 
--“Mendicants, form, sensation, perception, volitional formations, and consciousness are impermanent. 
-+“Bhikkhus, form, sensation, perception, volitional formations, and consciousness are impermanent. 
+-“Mendicants, form, feeling, perception, volitional formations, and consciousness are impermanent. 
++“Bhikkhus, form, feeling, perception, volitional formations, and consciousness are impermanent. 
 --- sujato/sutta/sn/sn22/sn22.136_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.136_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.136:1.2
  PLI: “Rūpaṁ, bhikkhave, kukkuḷaṁ, vedanā kukkuḷā, saññā kukkuḷā, saṅkhārā kukkuḷā, viññāṇaṁ kukkuḷaṁ. 
--“Mendicants, form, sensation, perception, volitional formations, and consciousness are burning chaff. 
-+“Bhikkhus, form, sensation, perception, volitional formations, and consciousness are burning chaff. 
+-“Mendicants, form, feeling, perception, volitional formations, and consciousness are burning chaff. 
++“Bhikkhus, form, feeling, perception, volitional formations, and consciousness are burning chaff. 
 --- sujato/sutta/sn/sn22/sn22.137_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.137_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.137:1.2
@@ -36636,8 +36636,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn22/sn22.13_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.13:1.2
  PLI: “Rūpaṁ, bhikkhave, dukkhaṁ, vedanā dukkhā, saññā dukkhā, saṅkhārā dukkhā, viññāṇaṁ dukkhaṁ. 
--“Mendicants, form, sensation, perception, volitional formations, and consciousness are suffering. 
-+“Bhikkhus, form, sensation, perception, volitional formations, and consciousness are suffering. 
+-“Mendicants, form, feeling, perception, volitional formations, and consciousness are suffering. 
++“Bhikkhus, form, feeling, perception, volitional formations, and consciousness are suffering. 
 --- sujato/sutta/sn/sn22/sn22.140_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.140_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.140:1.2
@@ -36702,8 +36702,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn22/sn22.14_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.14:1.2
  PLI: “Rūpaṁ, bhikkhave, anattā, vedanā anattā, saññā anattā, saṅkhārā anattā, viññāṇaṁ anattā. 
--“Mendicants, form, sensation, perception, volitional formations, and consciousness are not-self. 
-+“Bhikkhus, form, sensation, perception, volitional formations, and consciousness are not-self. 
+-“Mendicants, form, feeling, perception, volitional formations, and consciousness are not-self. 
++“Bhikkhus, form, feeling, perception, volitional formations, and consciousness are not-self. 
 --- sujato/sutta/sn/sn22/sn22.150_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.150_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.150:1.2
@@ -37020,20 +37020,20 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn22/sn22.40_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.40:1.2
  PLI: “Dhammānudhammappaṭipannassa, bhikkhave, bhikkhuno ayamanudhammo hoti yaṁ rūpe aniccānupassī vihareyya …pe… 
--“Mendicants, when a mendicant is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing impermanence in form, sensation, perception, volitional formations, and consciousness. … 
-+“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing impermanence in form, sensation, perception, volitional formations, and consciousness. … 
+-“Mendicants, when a mendicant is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing impermanence in form, feeling, perception, volitional formations, and consciousness. … 
++“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing impermanence in form, feeling, perception, volitional formations, and consciousness. … 
 --- sujato/sutta/sn/sn22/sn22.41_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.41_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.41:1.2
  PLI: “Dhammānudhammappaṭipannassa, bhikkhave, bhikkhuno ayamanudhammo hoti yaṁ rūpe dukkhānupassī vihareyya …pe… 
--“Mendicants, when a mendicant is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing suffering in form, sensation, perception, volitional formations, and consciousness. … 
-+“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing suffering in form, sensation, perception, volitional formations, and consciousness. … 
+-“Mendicants, when a mendicant is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing suffering in form, feeling, perception, volitional formations, and consciousness. … 
++“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing suffering in form, feeling, perception, volitional formations, and consciousness. … 
 --- sujato/sutta/sn/sn22/sn22.42_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.42_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.42:1.2
  PLI: “Dhammānudhammappaṭipannassa, bhikkhave, bhikkhuno ayamanudhammo hoti yaṁ rūpe anattānupassī vihareyya, vedanāya … saññāya … saṅkhāresu … viññāṇe anattānupassī vihareyya. 
--“Mendicants, when a mendicant is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing not-self in form, sensation, perception, volitional formations, and consciousness. … 
-+“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing not-self in form, sensation, perception, volitional formations, and consciousness. … 
+-“Mendicants, when a mendicant is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing not-self in form, feeling, perception, volitional formations, and consciousness. … 
++“Bhikkhus, when a bhikkhu is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing not-self in form, feeling, perception, volitional formations, and consciousness. … 
 --- sujato/sutta/sn/sn22/sn22.43_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.43_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.43:1.2
@@ -37066,8 +37066,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +“Bhikkhus, form is impermanent. 
 @@ -1,2 +1,2 @@ sn22.45:1.15
  PLI: Rūpadhātuyā ce, bhikkhave, bhikkhuno cittaṁ virattaṁ vimuttaṁ hoti anupādāya āsavehi, vedanādhātuyā …pe… 
--If a mendicant’s mind is dispassionate toward the form element, the sensation element, 
-+If a bhikkhu’s mind is dispassionate toward the form element, the sensation element, 
+-If a mendicant’s mind is dispassionate toward the form element, the feeling element, 
++If a bhikkhu’s mind is dispassionate toward the form element, the feeling element, 
 --- sujato/sutta/sn/sn22/sn22.46_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.46_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.46:1.2
@@ -37126,8 +37126,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +If a bhikkhu has given up greed for the form element, 
 @@ -1,2 +1,2 @@ sn22.53:3.3
  PLI: Vedanādhātuyā ce, bhikkhave … 
--If a mendicant has given up greed for the sensation element … 
-+If a bhikkhu has given up greed for the sensation element … 
+-If a mendicant has given up greed for the feeling element … 
++If a bhikkhu has given up greed for the feeling element … 
 --- sujato/sutta/sn/sn22/sn22.54_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.54_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.54:1.2
@@ -37144,8 +37144,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +If a bhikkhu has given up greed for the form element, 
 @@ -1,2 +1,2 @@ sn22.54:4.3
  PLI: Vedanādhātuyā ce … 
--If a mendicant has given up greed for the sensation element … 
-+If a bhikkhu has given up greed for the sensation element … 
+-If a mendicant has given up greed for the feeling element … 
++If a bhikkhu has given up greed for the feeling element … 
 --- sujato/sutta/sn/sn22/sn22.55_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.55_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.55:1.4
@@ -37166,8 +37166,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +“Bhikkhu, take an unlearned ordinary person who has not seen the noble ones, and is neither skilled nor trained in their teaching. They’ve not seen true persons, and are neither skilled nor trained in their teaching. 
 @@ -1,2 +1,2 @@ sn22.55:9.1
  PLI: So rūpassa vibhavā, vedanāya vibhavā, saññāya vibhavā, saṅkhārānaṁ vibhavā, viññāṇassa vibhavā, evaṁ kho, bhikkhu, 
--It’s because of the vanishing of form, sensation, perception, volitional formations, and consciousness that a mendicant who makes such a resolution—
-+It’s because of the vanishing of form, sensation, perception, volitional formations, and consciousness that a bhikkhu who makes such a resolution—
+-It’s because of the vanishing of form, feeling, perception, volitional formations, and consciousness that a mendicant who makes such a resolution—
++It’s because of the vanishing of form, feeling, perception, volitional formations, and consciousness that a bhikkhu who makes such a resolution—
 @@ -1,2 +1,2 @@ sn22.55:9.4
  PLI: “‘Evaṁ adhimuccamāno,’ bhante, ‘bhikkhu chindeyya orambhāgiyāni saṁyojanānī’ti. 
 -“Sir, you say that a mendicant who makes such a resolution can cut off the lower fetters. 
@@ -37186,8 +37186,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +If a bhikkhu has given up greed for the form element, the support is cut off, and there is no establishment of consciousness. 
 @@ -1,2 +1,2 @@ sn22.55:13.2
  PLI: Vedanādhātuyā ce, bhikkhu, bhikkhuno … 
--If a mendicant has given up greed for the sensation element … 
-+If a bhikkhu has given up greed for the sensation element … 
+-If a mendicant has given up greed for the feeling element … 
++If a bhikkhu has given up greed for the feeling element … 
 --- sujato/sutta/sn/sn22/sn22.56_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.56_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.56:1.2
@@ -37306,8 +37306,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn22/sn22.61_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.61:1.2
  PLI: “Rūpaṁ, bhikkhave, ādittaṁ, vedanā ādittā, saññā ādittā, saṅkhārā ādittā, viññāṇaṁ ādittaṁ. 
--“Mendicants, form, sensation, perception, volitional formations, and consciousness are burning. 
-+“Bhikkhus, form, sensation, perception, volitional formations, and consciousness are burning. 
+-“Mendicants, form, feeling, perception, volitional formations, and consciousness are burning. 
++“Bhikkhus, form, feeling, perception, volitional formations, and consciousness are burning. 
 --- sujato/sutta/sn/sn22/sn22.62_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.62_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.62:1.2
@@ -37938,8 +37938,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +In the same way, a bhikkhu sees and contemplates any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near—examining it properly. And it appears to them completely vacuous, hollow, and insubstantial. For what essence could there be in form? 
 @@ -1,2 +1,2 @@ sn22.95:3.2
  PLI: Evameva kho, bhikkhave, yā kāci vedanā atītānāgatapaccuppannā …pe… yā dūre santike vā taṁ bhikkhu passati nijjhāyati yoniso upaparikkhati. Tassa taṁ passato nijjhāyato yoniso upaparikkhato rittakaññeva khāyati, tucchakaññeva khāyati, asārakaññeva khāyati. Kiñhi siyā, bhikkhave, vedanāya sāro? 
--In the same way, a mendicant sees and contemplates any kind of sensation at all … examining it properly. And it appears to them completely vacuous, hollow, and insubstantial. For what essence could there be in sensation? 
-+In the same way, a bhikkhu sees and contemplates any kind of sensation at all … examining it properly. And it appears to them completely vacuous, hollow, and insubstantial. For what essence could there be in sensation? 
+-In the same way, a mendicant sees and contemplates any kind of feeling at all … examining it properly. And it appears to them completely vacuous, hollow, and insubstantial. For what essence could there be in feeling? 
++In the same way, a bhikkhu sees and contemplates any kind of feeling at all … examining it properly. And it appears to them completely vacuous, hollow, and insubstantial. For what essence could there be in feeling? 
 @@ -1,2 +1,2 @@ sn22.95:4.2
  PLI: Evameva kho, bhikkhave, yā kāci saññā …pe…. 
 -In the same way, a mendicant sees and contemplates any kind of perception at all … examining it carefully. And it appears to them completely vacuous, hollow, and insubstantial. For what substance could there be in perception? 
@@ -38282,8 +38282,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn25/sn25.5_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn25.5:1.2
  PLI: “Cakkhusamphassajā, bhikkhave, vedanā aniccā vipariṇāmī aññathābhāvī; 
--“Mendicants, sensation born of eye contact is impermanent, changing, and becoming otherwise. 
-+“Bhikkhus, sensation born of eye contact is impermanent, changing, and becoming otherwise. 
+-“Mendicants, feeling born of eye contact is impermanent, changing, and becoming otherwise. 
++“Bhikkhus, feeling born of eye contact is impermanent, changing, and becoming otherwise. 
 --- sujato/sutta/sn/sn25/sn25.6_translation-en-sujato.json
 +++ sujato/sutta/sn/sn25/sn25.6_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn25.6:1.2
@@ -38342,8 +38342,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn26/sn26.5_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn26.5:1.2
  PLI: “Yo kho, bhikkhave, cakkhusamphassajāya vedanāya uppādo ṭhiti …pe… jarāmaraṇassa pātubhāvo …pe…. 
--“Mendicants, the arising of sensation born of eye contact … 
-+“Bhikkhus, the arising of sensation born of eye contact … 
+-“Mendicants, the arising of feeling born of eye contact … 
++“Bhikkhus, the arising of feeling born of eye contact … 
 --- sujato/sutta/sn/sn26/sn26.6_translation-en-sujato.json
 +++ sujato/sutta/sn/sn26/sn26.6_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn26.6:1.2
@@ -38372,8 +38372,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn27/sn27.10_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn27.10:1.2
  PLI: “Yo, bhikkhave, rūpasmiṁ chandarāgo, cittasseso upakkileso …pe… yo viññāṇasmiṁ chandarāgo, cittasseso upakkileso. 
--“Mendicants, desire and greed for form, sensation, perception, volitional formations, or consciousness is a corruption of the mind. 
-+“Bhikkhus, desire and greed for form, sensation, perception, volitional formations, or consciousness is a corruption of the mind. 
+-“Mendicants, desire and greed for form, feeling, perception, volitional formations, or consciousness is a corruption of the mind. 
++“Bhikkhus, desire and greed for form, feeling, perception, volitional formations, or consciousness is a corruption of the mind. 
 @@ -1,2 +1,2 @@ sn27.10:1.3
  PLI: Yato kho, bhikkhave, bhikkhuno imesu pañcasu ṭhānesu cetaso upakkileso pahīno hoti, nekkhammaninnañcassa cittaṁ hoti. 
 -When a mendicant has given up mental corruption in these five cases, their mind inclines to renunciation. 
@@ -38418,8 +38418,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn27/sn27.5_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn27.5:1.2
  PLI: “Yo, bhikkhave, cakkhusamphassajāya vedanāya chandarāgo, cittasseso upakkileso. 
--“Mendicants, desire and greed for sensation born of eye contact, 
-+“Bhikkhus, desire and greed for sensation born of eye contact, 
+-“Mendicants, desire and greed for feeling born of eye contact, 
++“Bhikkhus, desire and greed for feeling born of eye contact, 
 --- sujato/sutta/sn/sn27/sn27.6_translation-en-sujato.json
 +++ sujato/sutta/sn/sn27/sn27.6_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn27.6:1.2
@@ -39578,8 +39578,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +“Bhikkhus, I will teach you a practice that’s conducive to extinguishment. 
 @@ -1,2 +1,2 @@ sn35.147:1.4
  PLI: Idha, bhikkhave, bhikkhu cakkhuṁ aniccanti passati, rūpā aniccāti passati, cakkhuviññāṇaṁ aniccanti passati, cakkhusamphasso aniccoti passati. Yampidaṁ cakkhusamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi aniccanti passati …pe… 
--It’s when a mendicant sees that the eye, sights, eye consciousness, and eye contact are impermanent. And they see that the painful, pleasant, or neutral sensation that arises dependent on eye contact is also impermanent. 
-+It’s when a bhikkhu sees that the eye, sights, eye consciousness, and eye contact are impermanent. And they see that the painful, pleasant, or neutral sensation that arises dependent on eye contact is also impermanent. 
+-It’s when a mendicant sees that the eye, sights, eye consciousness, and eye contact are impermanent. And they see that the painful, pleasant, or neutral feeling that arises dependent on eye contact is also impermanent. 
++It’s when a bhikkhu sees that the eye, sights, eye consciousness, and eye contact are impermanent. And they see that the painful, pleasant, or neutral feeling that arises dependent on eye contact is also impermanent. 
 --- sujato/sutta/sn/sn35/sn35.148_translation-en-sujato.json
 +++ sujato/sutta/sn/sn35/sn35.148_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn35.148:1.1
@@ -39588,8 +39588,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +“Bhikkhus, I will teach you a practice that’s conducive to extinguishment. 
 @@ -1,2 +1,2 @@ sn35.148:1.4
  PLI: Idha, bhikkhave, cakkhuṁ dukkhanti passati, rūpā dukkhāti passati, cakkhuviññāṇaṁ dukkhanti passati, cakkhusamphasso dukkhoti passati, yampidaṁ cakkhusamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi dukkhanti passati …pe… 
--It’s when a mendicant sees that the eye, sights, eye consciousness, and eye contact are suffering. And they see that the painful, pleasant, or neutral sensation that arises dependent on eye contact is also suffering. 
-+It’s when a bhikkhu sees that the eye, sights, eye consciousness, and eye contact are suffering. And they see that the painful, pleasant, or neutral sensation that arises dependent on eye contact is also suffering. 
+-It’s when a mendicant sees that the eye, sights, eye consciousness, and eye contact are suffering. And they see that the painful, pleasant, or neutral feeling that arises dependent on eye contact is also suffering. 
++It’s when a bhikkhu sees that the eye, sights, eye consciousness, and eye contact are suffering. And they see that the painful, pleasant, or neutral feeling that arises dependent on eye contact is also suffering. 
 --- sujato/sutta/sn/sn35/sn35.149_translation-en-sujato.json
 +++ sujato/sutta/sn/sn35/sn35.149_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn35.149:1.1
@@ -39598,8 +39598,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +“Bhikkhus, I will teach you a practice that’s conducive to extinguishment. 
 @@ -1,2 +1,2 @@ sn35.149:1.4
  PLI: Idha, bhikkhave, bhikkhu cakkhuṁ anattāti passati, rūpā anattāti passati, cakkhuviññāṇaṁ anattāti passati, cakkhusamphasso anattāti passati, yampidaṁ cakkhusamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi anattāti passati …pe… 
--It’s when a mendicant sees that the eye, sights, eye consciousness, and eye contact are not-self. And they see that the painful, pleasant, or neutral sensation that arises dependent on eye contact is also not-self. 
-+It’s when a bhikkhu sees that the eye, sights, eye consciousness, and eye contact are not-self. And they see that the painful, pleasant, or neutral sensation that arises dependent on eye contact is also not-self. 
+-It’s when a mendicant sees that the eye, sights, eye consciousness, and eye contact are not-self. And they see that the painful, pleasant, or neutral feeling that arises dependent on eye contact is also not-self. 
++It’s when a bhikkhu sees that the eye, sights, eye consciousness, and eye contact are not-self. And they see that the painful, pleasant, or neutral feeling that arises dependent on eye contact is also not-self. 
 --- sujato/sutta/sn/sn35/sn35.14_translation-en-sujato.json
 +++ sujato/sutta/sn/sn35/sn35.14_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn35.14:1.1
@@ -40504,8 +40504,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +In the same way, when a bhikkhu’s mind is straightened up, well straightened up when it comes to the six fields of contact, becomes stilled internally; it settles, unifies, and becomes composed in samādhi. 
 @@ -1,2 +1,2 @@ sn35.246:4.24
  PLI: Evameva kho, bhikkhave, bhikkhu rūpaṁ samanvesati yāvatā rūpassa gati, vedanaṁ samanvesati yāvatā vedanāya gati, saññaṁ samanvesati yāvatā saññāya gati, saṅkhāre samanvesati yāvatā saṅkhārānaṁ gati, viññāṇaṁ samanvesati yāvatā viññāṇassa gati. 
--In the same way, a mendicant searches for form, sensation, perception, volitional formations, and consciousness anywhere they might be reborn. 
-+In the same way, a bhikkhu searches for form, sensation, perception, volitional formations, and consciousness anywhere they might be reborn. 
+-In the same way, a mendicant searches for form, feeling, perception, volitional formations, and consciousness anywhere they might be reborn. 
++In the same way, a bhikkhu searches for form, feeling, perception, volitional formations, and consciousness anywhere they might be reborn. 
 --- sujato/sutta/sn/sn35/sn35.247_translation-en-sujato.json
 +++ sujato/sutta/sn/sn35/sn35.247_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn35.247:1.1
@@ -41358,8 +41358,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn36/sn36.10_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.10:1.1
  PLI: “Tisso imā, bhikkhave, vedanā phassajā phassamūlakā phassanidānā phassapaccayā. 
--“Mendicants, these three sensations are born, rooted, sourced, and dependent on contact. 
-+“Bhikkhus, these three sensations are born, rooted, sourced, and dependent on contact. 
+-“Mendicants, these three feelings are born, rooted, sourced, and dependent on contact. 
++“Bhikkhus, these three feelings are born, rooted, sourced, and dependent on contact. 
 --- sujato/sutta/sn/sn36/sn36.11_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.11_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.11:1.1
@@ -41440,8 +41440,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +Then several bhikkhus went up to the Buddha, bowed, sat down to one side, and said to him: 
 @@ -1,2 +1,2 @@ sn36.17:1.4
  PLI: “Tisso imā, bhikkhave, vedanā—
--“Mendicants, there are these three sensations: 
-+“Bhikkhus, there are these three sensations: 
+-“Mendicants, there are these three feelings: 
++“Bhikkhus, there are these three feelings: 
 @@ -1,2 +1,2 @@ sn36.17:2.3
  PLI: khīṇāsavassa bhikkhuno rāgo niruddho hoti, doso niruddho hoti, moho niruddho hoti. 
 -For a mendicant who has ended the defilements, greed, hate, and delusion have ceased. 
@@ -41466,12 +41466,12 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +Then several bhikkhus went up to the Buddha … 
 @@ -1,2 +1,2 @@ sn36.18:1.3
  PLI: “katamā nu kho, bhikkhave, vedanā, katamo vedanāsamudayo, katamo vedanānirodho, katamā vedanānirodhagāminī paṭipadā? 
--“Mendicants, what is sensation? What’s the arising of sensation? What’s the cessation of sensation? What’s the practice that leads to the cessation of sensation? 
-+“Bhikkhus, what is sensation? What’s the arising of sensation? What’s the cessation of sensation? What’s the practice that leads to the cessation of sensation? 
+-“Mendicants, what is feeling? What’s the arising of feeling? What’s the cessation of feeling? What’s the practice that leads to the cessation of feeling? 
++“Bhikkhus, what is feeling? What’s the arising of feeling? What’s the cessation of feeling? What’s the practice that leads to the cessation of feeling? 
 @@ -1,2 +1,2 @@ sn36.18:1.6
  PLI: “tisso imā, bhikkhave, vedanā—
--“Mendicants, there are these three sensations: 
-+“Bhikkhus, there are these three sensations: 
+-“Mendicants, there are these three feelings: 
++“Bhikkhus, there are these three feelings: 
 --- sujato/sutta/sn/sn36/sn36.19_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.19_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.19:5.1
@@ -41512,18 +41512,18 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +It’s when a bhikkhu, going totally beyond the dimension of nothingness, enters and remains in the dimension of neither perception nor non-perception. 
 @@ -1,2 +1,2 @@ sn36.19:15.2
  PLI: Idhānanda, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati. 
--It’s when a mendicant, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. 
-+It’s when a bhikkhu, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. 
+-It’s when a mendicant, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. 
++It’s when a bhikkhu, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. 
 --- sujato/sutta/sn/sn36/sn36.1_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.1_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.1:1.1
  PLI: “Tisso imā, bhikkhave, vedanā. 
--“Mendicants, there are these three sensations. 
-+“Bhikkhus, there are these three sensations. 
+-“Mendicants, there are these three feelings. 
++“Bhikkhus, there are these three feelings. 
 @@ -1,2 +1,2 @@ sn36.1:3.3
  PLI: Vedanānaṁ khayā bhikkhu, 
--With the ending of sensations, a mendicant 
-+With the ending of sensations, a bhikkhu 
+-With the ending of feelings, a mendicant 
++With the ending of feelings, a bhikkhu 
 --- sujato/sutta/sn/sn36/sn36.20_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.20_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.20:0.3
@@ -41532,8 +41532,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +A Bhikkhu 
 @@ -1,2 +1,2 @@ sn36.20:1.1
  PLI: “Dvepi mayā, bhikkhave, vedanā vuttā pariyāyena, tissopi mayā vedanā vuttā pariyāyena, pañcapi mayā vedanā vuttā pariyāyena, chapi mayā vedanā vuttā pariyāyena, aṭṭhārasāpi mayā vedanā vuttā pariyāyena, chattiṁsāpi mayā vedanā vuttā pariyāyena, aṭṭhasatampi mayā vedanā vuttā pariyāyena. 
--“Mendicants, in one explanation I’ve spoken of two sensations. In another explanation I’ve spoken of three sensations, or five, six, eighteen, thirty-six, or a hundred and eight sensations. 
-+“Bhikkhus, in one explanation I’ve spoken of two sensations. In another explanation I’ve spoken of three sensations, or five, six, eighteen, thirty-six, or a hundred and eight sensations. 
+-“Mendicants, in one explanation I’ve spoken of two feelings. In another explanation I’ve spoken of three feelings, or five, six, eighteen, thirty-six, or a hundred and eight feelings. 
++“Bhikkhus, in one explanation I’ve spoken of two feelings. In another explanation I’ve spoken of three feelings, or five, six, eighteen, thirty-six, or a hundred and eight feelings. 
 @@ -1,2 +1,2 @@ sn36.20:2.5
  PLI: Evaṁvādino, bhikkhave, aññatitthiyā paribbājakā evamassu vacanīyā: 
 -Mendicants, when wanderers of other religions say this, you should say to them: 
@@ -41546,8 +41546,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +“Bhikkhus, I will teach you an exposition of the teaching on the hundred and eight. 
 @@ -1,2 +1,2 @@ sn36.22:1.4
  PLI: Dvepi mayā, bhikkhave, vedanā vuttā pariyāyena; 
--Mendicants, in one explanation I’ve spoken of two sensations. In another explanation I’ve spoken of three sensations, or five, six, eighteen, thirty-six, or a hundred and eight sensations. 
-+Bhikkhus, in one explanation I’ve spoken of two sensations. In another explanation I’ve spoken of three sensations, or five, six, eighteen, thirty-six, or a hundred and eight sensations. 
+-Mendicants, in one explanation I’ve spoken of two feelings. In another explanation I’ve spoken of three feelings, or five, six, eighteen, thirty-six, or a hundred and eight feelings. 
++Bhikkhus, in one explanation I’ve spoken of two feelings. In another explanation I’ve spoken of three feelings, or five, six, eighteen, thirty-six, or a hundred and eight feelings. 
 --- sujato/sutta/sn/sn36/sn36.23_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.23_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.23:0.3
@@ -41560,8 +41560,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +Then a bhikkhu went up to the Buddha, bowed, sat down to one side, and said to him: 
 @@ -1,2 +1,2 @@ sn36.23:2.1
  PLI: “Tisso imā, bhikkhu, vedanā—
--“Mendicant, there are these three sensations: 
-+“Bhikkhu, there are these three sensations: 
+-“Mendicant, there are these three feelings: 
++“Bhikkhu, there are these three feelings: 
 --- sujato/sutta/sn/sn36/sn36.24_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.24_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.24:1.1
@@ -41580,38 +41580,38 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +Then several bhikkhus went up to the Buddha, bowed, sat down to one side, and said to him: 
 @@ -1,2 +1,2 @@ sn36.26:1.5
  PLI: “Tisso imā, bhikkhave, vedanā—
--“Mendicants, there are these three sensations. 
-+“Bhikkhus, there are these three sensations. 
+-“Mendicants, there are these three feelings. 
++“Bhikkhus, there are these three feelings. 
 --- sujato/sutta/sn/sn36/sn36.27_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.27_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.27:1.1
  PLI: “Tisso imā, bhikkhave, vedanā. 
--“Mendicants, there are these three sensations. 
-+“Bhikkhus, there are these three sensations. 
+-“Mendicants, there are these three feelings. 
++“Bhikkhus, there are these three feelings. 
 --- sujato/sutta/sn/sn36/sn36.28_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.28_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.28:1.1
  PLI: “Tisso imā, bhikkhave, vedanā. 
--“Mendicants, there are these three sensations. 
-+“Bhikkhus, there are these three sensations. 
+-“Mendicants, there are these three feelings. 
++“Bhikkhus, there are these three feelings. 
 --- sujato/sutta/sn/sn36/sn36.29_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.29_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.29:1.1
  PLI: “Ye hi keci, bhikkhave, samaṇā vā brāhmaṇā vā vedanaṁ nappajānanti, vedanāsamudayaṁ nappajānanti, vedanānirodhaṁ nappajānanti, vedanānirodhagāminiṁ paṭipadaṁ nappajānanti …pe… 
--“Mendicants, there are ascetics and brahmins who don’t understand sensation, its arising, its cessation, and the practice that leads to its cessation. … 
-+“Bhikkhus, there are ascetics and brahmins who don’t understand sensation, its arising, its cessation, and the practice that leads to its cessation. … 
+-“Mendicants, there are ascetics and brahmins who don’t understand feeling, its arising, its cessation, and the practice that leads to its cessation. … 
++“Bhikkhus, there are ascetics and brahmins who don’t understand feeling, its arising, its cessation, and the practice that leads to its cessation. … 
 --- sujato/sutta/sn/sn36/sn36.2_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.2_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.2:1.1
  PLI: “Tisso imā, bhikkhave, vedanā. 
--“Mendicants, there are these three sensations. 
-+“Bhikkhus, there are these three sensations. 
+-“Mendicants, there are these three feelings. 
++“Bhikkhus, there are these three feelings. 
 --- sujato/sutta/sn/sn36/sn36.30_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.30_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.30:1.1
  PLI: “Tisso imā, bhikkhave, vedanā. 
--“Mendicants, there are these three sensations. 
-+“Bhikkhus, there are these three sensations. 
+-“Mendicants, there are these three feelings. 
++“Bhikkhus, there are these three feelings. 
 --- sujato/sutta/sn/sn36/sn36.31_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.31_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.31:1.1
@@ -41654,8 +41654,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn36/sn36.3_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.3:1.1
  PLI: “Tisso imā, bhikkhave, vedanā. 
--“Mendicants, there are these three sensations. 
-+“Bhikkhus, there are these three sensations. 
+-“Mendicants, there are these three feelings. 
++“Bhikkhus, there are these three feelings. 
 @@ -1,2 +1,2 @@ sn36.3:1.5
  PLI: Yato kho, bhikkhave, bhikkhuno sukhāya vedanāya rāgānusayo pahīno hoti, dukkhāya vedanāya paṭighānusayo pahīno hoti, adukkhamasukhāya vedanāya avijjānusayo pahīno hoti, ayaṁ vuccati, bhikkhave, ‘bhikkhu niranusayo sammaddaso acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassā’ti. 
 -When a mendicant has given up these underlying tendencies, they’re called a mendicant without underlying tendencies, who sees rightly, has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering. 
@@ -41674,12 +41674,12 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn36/sn36.5_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.5:1.1
  PLI: “Tisso imā, bhikkhave, vedanā. 
--“Mendicants, there are these three sensations. 
-+“Bhikkhus, there are these three sensations. 
+-“Mendicants, there are these three feelings. 
++“Bhikkhus, there are these three feelings. 
 @@ -1,2 +1,2 @@ sn36.5:1.5
  PLI: Yato kho, bhikkhave, bhikkhuno sukhā vedanā dukkhato diṭṭhā hoti, dukkhā vedanā sallato diṭṭhā hoti, adukkhamasukhā vedanā aniccato diṭṭhā hoti—
--When a mendicant has seen these three sensations in this way, 
-+When a bhikkhu has seen these three sensations in this way, 
+-When a mendicant has seen these three feelings in this way, 
++When a bhikkhu has seen these three feelings in this way, 
 @@ -1,2 +1,2 @@ sn36.5:1.6
  PLI: ayaṁ vuccati, bhikkhave, ‘bhikkhu sammaddaso acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassā’ti. 
 -they’re called a mendicant who sees rightly, has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering. 
@@ -41692,8 +41692,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn36/sn36.6_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.6:1.1
  PLI: “Assutavā, bhikkhave, puthujjano sukhampi vedanaṁ vedayati, dukkhampi vedanaṁ vedayati, adukkhamasukhampi vedanaṁ vedayati. 
--“Mendicants, an unlearned ordinary person feels pleasant, painful, and neutral sensations. 
-+“Bhikkhus, an unlearned ordinary person feels pleasant, painful, and neutral sensations. 
+-“Mendicants, an unlearned ordinary person feels pleasant, painful, and neutral feelings. 
++“Bhikkhus, an unlearned ordinary person feels pleasant, painful, and neutral feelings. 
 --- sujato/sutta/sn/sn36/sn36.7_translation-en-sujato.json
 +++ sujato/sutta/sn/sn36/sn36.7_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.7:1.3
@@ -41734,16 +41734,16 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +A bhikkhu should await their time mindful and aware. 
 @@ -1,2 +1,2 @@ sn36.7:5.1
  PLI: Tassa ce, bhikkhave, bhikkhuno evaṁ satassa sampajānassa appamattassa ātāpino pahitattassa viharato uppajjati sukhā vedanā, so evaṁ pajānāti: 
--While a mendicant is meditating like this—mindful, aware, diligent, ardent, and resolute—if pleasant sensations arise, they understand: 
-+While a bhikkhu is meditating like this—mindful, aware, diligent, ardent, and resolute—if pleasant sensations arise, they understand: 
+-While a mendicant is meditating like this—mindful, aware, diligent, ardent, and resolute—if pleasant feelings arise, they understand: 
++While a bhikkhu is meditating like this—mindful, aware, diligent, ardent, and resolute—if pleasant feelings arise, they understand: 
 @@ -1,2 +1,2 @@ sn36.7:6.1
  PLI: Tassa ce, bhikkhave, bhikkhuno evaṁ satassa sampajānassa appamattassa ātāpino pahitattassa viharato uppajjati dukkhā vedanā. 
--While a mendicant is meditating like this—mindful, aware, diligent, ardent, and resolute—if painful sensations arise, they understand: 
-+While a bhikkhu is meditating like this—mindful, aware, diligent, ardent, and resolute—if painful sensations arise, they understand: 
+-While a mendicant is meditating like this—mindful, aware, diligent, ardent, and resolute—if painful feelings arise, they understand: 
++While a bhikkhu is meditating like this—mindful, aware, diligent, ardent, and resolute—if painful feelings arise, they understand: 
 @@ -1,2 +1,2 @@ sn36.7:7.1
  PLI: Tassa ce, bhikkhave, bhikkhuno evaṁ satassa sampajānassa appamattassa ātāpino pahitattassa viharato uppajjati adukkhamasukhā vedanā, so evaṁ pajānāti: 
--While a mendicant is meditating like this—mindful, aware, diligent, ardent, and resolute—if neutral sensations arise, they understand: 
-+While a bhikkhu is meditating like this—mindful, aware, diligent, ardent, and resolute—if neutral sensations arise, they understand: 
+-While a mendicant is meditating like this—mindful, aware, diligent, ardent, and resolute—if neutral feelings arise, they understand: 
++While a bhikkhu is meditating like this—mindful, aware, diligent, ardent, and resolute—if neutral feelings arise, they understand: 
 @@ -1,2 +1,2 @@ sn36.7:9.3
  PLI: evameva kho, bhikkhave, bhikkhu kāyapariyantikaṁ vedanaṁ vedayamāno ‘kāyapariyantikaṁ vedanaṁ vedayāmī’ti pajānāti. Jīvitapariyantikaṁ vedanaṁ vedayamāno ‘jīvitapariyantikaṁ vedanaṁ vedayāmī’ti pajānāti. 
 -In the same way, feeling the end of the body draw close, a mendicant understands: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, a mendicant understands: ‘I feel the end of life draw close.’ 
@@ -41788,12 +41788,12 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +A bhikkhu should await their time mindful and aware. 
 @@ -1,2 +1,2 @@ sn36.8:5.1
  PLI: Tassa ce, bhikkhave, bhikkhuno evaṁ satassa sampajānassa appamattassa ātāpino pahitattassa viharato uppajjati sukhā vedanā. 
--While a mendicant is meditating like this—mindful, aware, diligent, ardent, and resolute—if pleasant sensations arise, they understand: 
-+While a bhikkhu is meditating like this—mindful, aware, diligent, ardent, and resolute—if pleasant sensations arise, they understand: 
+-While a mendicant is meditating like this—mindful, aware, diligent, ardent, and resolute—if pleasant feelings arise, they understand: 
++While a bhikkhu is meditating like this—mindful, aware, diligent, ardent, and resolute—if pleasant feelings arise, they understand: 
 @@ -1,2 +1,2 @@ sn36.8:6.1
  PLI: Tassa ce, bhikkhave, bhikkhuno evaṁ satassa …pe… 
--While a mendicant is meditating like this—mindful, aware, diligent, ardent, and resolute—if painful sensations arise … 
-+While a bhikkhu is meditating like this—mindful, aware, diligent, ardent, and resolute—if painful sensations arise … 
+-While a mendicant is meditating like this—mindful, aware, diligent, ardent, and resolute—if painful feelings arise … 
++While a bhikkhu is meditating like this—mindful, aware, diligent, ardent, and resolute—if painful feelings arise … 
 @@ -1,2 +1,2 @@ sn36.8:7.3
  PLI: evameva kho, bhikkhave, bhikkhu kāyapariyantikaṁ vedanaṁ vedayamāno ‘kāyapariyantikaṁ vedanaṁ vedayāmī’ti pajānāti. Jīvitapariyantikaṁ vedanaṁ vedayamāno ‘jīvitapariyantikaṁ vedanaṁ vedayāmī’ti pajānāti. 
 -In the same way, feeling the end of the body draw close, a mendicant understands: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, they understand: ‘I feel the end of life draw close.’ 
@@ -41802,8 +41802,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn36/sn36.9_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn36.9:1.1
  PLI: “Tisso imā, bhikkhave, vedanā aniccā saṅkhatā paṭiccasamuppannā khayadhammā vayadhammā virāgadhammā nirodhadhammā. 
--“Mendicants, these three sensations are impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
-+“Bhikkhus, these three sensations are impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
+-“Mendicants, these three feelings are impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
++“Bhikkhus, these three feelings are impermanent, conditioned, dependently originated, liable to end, pass away, fade away, and cease. 
 --- sujato/sutta/sn/sn37/sn37.1_translation-en-sujato.json
 +++ sujato/sutta/sn/sn37/sn37.1_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn37.1:1.1
@@ -42314,36 +42314,36 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +“A bhikkhu who is entering such an attainment does not think: 
 @@ -1,2 +1,2 @@ sn41.6:4.2
  PLI: “saññāvedayitanirodhaṁ samāpajjantassa pana, bhante, bhikkhuno katame dhammā paṭhamaṁ nirujjhanti, yadi vā kāyasaṅkhāro, yadi vā vacīsaṅkhāro, yadi vā cittasaṅkhāro”ti? 
--“But sir, which cease first for a mendicant who is entering the cessation of perception and sensation: the physical, verbal, or mental process?” 
-+“But sir, which cease first for a bhikkhu who is entering the cessation of perception and sensation: the physical, verbal, or mental process?” 
+-“But sir, which cease first for a mendicant who is entering the cessation of perception and feeling: the physical, verbal, or mental process?” 
++“But sir, which cease first for a bhikkhu who is entering the cessation of perception and feeling: the physical, verbal, or mental process?” 
 @@ -1,2 +1,2 @@ sn41.6:5.2
  PLI: “yvāyaṁ, bhante, mato kālaṅkato, yo cāyaṁ bhikkhu saññāvedayitanirodhaṁ samāpanno, imesaṁ kiṁ nānākaraṇan”ti? 
--“What’s the difference between someone who has passed away and a mendicant who has attained the cessation of perception and sensation?” 
-+“What’s the difference between someone who has passed away and a bhikkhu who has attained the cessation of perception and sensation?” 
+-“What’s the difference between someone who has passed away and a mendicant who has attained the cessation of perception and feeling?” 
++“What’s the difference between someone who has passed away and a bhikkhu who has attained the cessation of perception and feeling?” 
 @@ -1,2 +1,2 @@ sn41.6:5.4
  PLI: Yo ca khvāyaṁ, gahapati, bhikkhu saññāvedayitanirodhaṁ samāpanno, tassapi kāyasaṅkhāro niruddho paṭippassaddho, vacīsaṅkhāro niruddho paṭippassaddho, cittasaṅkhāro niruddho paṭippassaddho, āyu aparikkhīṇo, usmā avūpasantā, indriyāni vippasannāni. 
--When a mendicant has attained the cessation of perception and sensation, their physical, verbal, and mental processes have ceased and stilled. But their vitality is not spent; their warmth is not dissipated; and their faculties are very clear. 
-+When a bhikkhu has attained the cessation of perception and sensation, their physical, verbal, and mental processes have ceased and stilled. But their vitality is not spent; their warmth is not dissipated; and their faculties are very clear. 
+-When a mendicant has attained the cessation of perception and feeling, their physical, verbal, and mental processes have ceased and stilled. But their vitality is not spent; their warmth is not dissipated; and their faculties are very clear. 
++When a bhikkhu has attained the cessation of perception and feeling, their physical, verbal, and mental processes have ceased and stilled. But their vitality is not spent; their warmth is not dissipated; and their faculties are very clear. 
 @@ -1,2 +1,2 @@ sn41.6:5.5
  PLI: Yvāyaṁ, gahapati, mato kālaṅkato, yo cāyaṁ bhikkhu saññāvedayitanirodhaṁ samāpanno, idaṁ nesaṁ nānākaraṇan”ti. 
--That’s the difference between someone who has passed away and a mendicant who has attained the cessation of perception and sensation.” 
-+That’s the difference between someone who has passed away and a bhikkhu who has attained the cessation of perception and sensation.” 
+-That’s the difference between someone who has passed away and a mendicant who has attained the cessation of perception and feeling.” 
++That’s the difference between someone who has passed away and a bhikkhu who has attained the cessation of perception and feeling.” 
 @@ -1,2 +1,2 @@ sn41.6:6.3
  PLI: “Na kho, gahapati, saññāvedayitanirodhasamāpattiyā vuṭṭhahantassa bhikkhuno evaṁ hoti: 
 -“A mendicant who is emerging from such an attainment does not think: 
 +“A bhikkhu who is emerging from such an attainment does not think: 
 @@ -1,2 +1,2 @@ sn41.6:7.2
  PLI: “saññāvedayitanirodhasamāpattiyā vuṭṭhahantassa pana, bhante, bhikkhuno katame dhammā paṭhamaṁ uppajjanti, yadi vā kāyasaṅkhāro, yadi vā vacīsaṅkhāro, yadi vā cittasaṅkhāro”ti? 
--“But sir, which arise first for a mendicant who is emerging from the cessation of perception and sensation: the physical, verbal, or mental process?” 
-+“But sir, which arise first for a bhikkhu who is emerging from the cessation of perception and sensation: the physical, verbal, or mental process?” 
+-“But sir, which arise first for a mendicant who is emerging from the cessation of perception and feeling: the physical, verbal, or mental process?” 
++“But sir, which arise first for a bhikkhu who is emerging from the cessation of perception and feeling: the physical, verbal, or mental process?” 
 @@ -1,2 +1,2 @@ sn41.6:8.2
  PLI: “saññāvedayitanirodhasamāpattiyā vuṭṭhitaṁ pana, bhante, bhikkhuṁ kati phassā phusanti”? 
--“But sir, when a mendicant has emerged from the attainment of the cessation of perception and sensation, how many kinds of contact do they experience?” 
-+“But sir, when a bhikkhu has emerged from the attainment of the cessation of perception and sensation, how many kinds of contact do they experience?” 
+-“But sir, when a mendicant has emerged from the attainment of the cessation of perception and feeling, how many kinds of contact do they experience?” 
++“But sir, when a bhikkhu has emerged from the attainment of the cessation of perception and feeling, how many kinds of contact do they experience?” 
 @@ -1,2 +1,2 @@ sn41.6:9.2
  PLI: “saññāvedayitanirodhasamāpattiyā vuṭṭhitassa pana, bhante, bhikkhuno kiṁninnaṁ cittaṁ hoti, kiṁpoṇaṁ, kiṁpabbhāran”ti? 
--“But sir, when a mendicant has emerged from the attainment of the cessation of perception and sensation, what does their mind slant, slope, and incline to?” 
-+“But sir, when a bhikkhu has emerged from the attainment of the cessation of perception and sensation, what does their mind slant, slope, and incline to?” 
+-“But sir, when a mendicant has emerged from the attainment of the cessation of perception and feeling, what does their mind slant, slope, and incline to?” 
++“But sir, when a bhikkhu has emerged from the attainment of the cessation of perception and feeling, what does their mind slant, slope, and incline to?” 
 --- sujato/sutta/sn/sn41/sn41.7_translation-en-sujato.json
 +++ sujato/sutta/sn/sn41/sn41.7_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn41.7:2.2
@@ -42440,8 +42440,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +A bhikkhu meditates by observing an aspect of the body—ardent, aware, and mindful, rid of covetousness and displeasure for the world. … 
 @@ -1,2 +1,2 @@ sn43.12:5.5
  PLI: Idha, bhikkhave, bhikkhu vedanāsu vedanānupassī viharati …pe… 
--A mendicant meditates by observing an aspect of sensations … 
-+A bhikkhu meditates by observing an aspect of sensations … 
+-A mendicant meditates by observing an aspect of feelings … 
++A bhikkhu meditates by observing an aspect of feelings … 
 @@ -1,2 +1,2 @@ sn43.12:5.8
  PLI: Idha, bhikkhave, bhikkhu citte cittānupassī viharati …pe… 
 -A mendicant meditates by observing an aspect of the mind … 
@@ -43234,8 +43234,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn45/sn45.169_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn45.169:1.1
  PLI: “Tisso imā, bhikkhave, vedanā. 
--“Mendicants, there are these three sensations: 
-+“Bhikkhus, there are these three sensations: 
+-“Mendicants, there are these three feelings: 
++“Bhikkhus, there are these three feelings: 
 --- sujato/sutta/sn/sn45/sn45.16_translation-en-sujato.json
 +++ sujato/sutta/sn/sn45/sn45.16_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn45.16:1.2
@@ -43394,8 +43394,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn45/sn45.29_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn45.29:1.2
  PLI: “Tisso imā, bhikkhave, vedanā. 
--“Mendicants, there are these three sensations. 
-+“Bhikkhus, there are these three sensations. 
+-“Mendicants, there are these three feelings. 
++“Bhikkhus, there are these three feelings. 
 --- sujato/sutta/sn/sn45/sn45.2_translation-en-sujato.json
 +++ sujato/sutta/sn/sn45/sn45.2_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn45.2:2.3
@@ -44808,8 +44808,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +That bhikkhu should direct their mind toward an inspiring subject as a basis for meditation. 
 @@ -1,2 +1,2 @@ sn47.10:7.1
  PLI: Puna caparaṁ, ānanda, bhikkhu vedanāsu …pe… 
--Furthermore, a mendicant meditates by observing an aspect of sensations … 
-+Furthermore, a bhikkhu meditates by observing an aspect of sensations … 
+-Furthermore, a mendicant meditates by observing an aspect of feelings … 
++Furthermore, a bhikkhu meditates by observing an aspect of feelings … 
 @@ -1,2 +1,2 @@ sn47.10:7.5
  PLI: Tenānanda, bhikkhunā kismiñcideva pasādanīye nimitte cittaṁ paṇidahitabbaṁ. 
 -That mendicant should direct their mind toward an inspiring subject as a basis for meditation. 
@@ -45110,8 +45110,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +And how is a bhikkhu aware? 
 @@ -1,2 +1,2 @@ sn47.35:3.2
  PLI: Idha, bhikkhave, bhikkhuno viditā vedanā uppajjanti, viditā upaṭṭhahanti, viditā abbhatthaṁ gacchanti. 
--It’s when a mendicant knows sensations as they arise, as they remain, and as they go away. 
-+It’s when a bhikkhu knows sensations as they arise, as they remain, and as they go away. 
+-It’s when a mendicant knows feelings as they arise, as they remain, and as they go away. 
++It’s when a bhikkhu knows feelings as they arise, as they remain, and as they go away. 
 @@ -1,2 +1,2 @@ sn47.35:3.5
  PLI: Evaṁ kho, bhikkhave, bhikkhu sampajāno hoti. 
 -That’s how a mendicant is aware. 
@@ -45312,8 +45312,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +++ sujato/sutta/sn/sn47/sn47.49_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.49:1.1
  PLI: “Tisso imā, bhikkhave, vedanā. 
--“Mendicants, there are these three sensations. 
-+“Bhikkhus, there are these three sensations. 
+-“Mendicants, there are these three feelings. 
++“Bhikkhus, there are these three feelings. 
 @@ -1,2 +1,2 @@ sn47.49:2.2
  PLI: Idha, bhikkhave, bhikkhu kāye kāyānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
 -It’s when a mendicant meditates by observing an aspect of the body—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
@@ -45870,8 +45870,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +While a bhikkhu is meditating—diligent, ardent, and resolute—the faculty of equanimity arises. 
 @@ -1,2 +1,2 @@ sn48.40:5.7
  PLI: Idha, bhikkhave, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, 
--It’s when a mendicant, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. 
-+It’s when a bhikkhu, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and sensation. 
+-It’s when a mendicant, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. 
++It’s when a bhikkhu, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. 
 @@ -1,2 +1,2 @@ sn48.40:5.9
  PLI: Ayaṁ vuccati, bhikkhave, ‘bhikkhu aññāsi upekkhindriyassa nirodhaṁ, tadatthāya cittaṁ upasaṁharatī’”ti. 
 -They’re called a mendicant who understands the cessation of the faculty of equanimity, and who applies their mind to that end.” 
@@ -47096,12 +47096,12 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +There’s a time when a bhikkhu practices like this: ‘I’ll breathe in experiencing rapture.’ They practice like this: ‘I’ll breathe out experiencing rapture.’ 
 @@ -1,2 +1,2 @@ sn54.10:6.5
  PLI: vedanāsu vedanānupassī, ānanda, bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
--At such a time a mendicant is meditating by observing an aspect of sensations—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
-+At such a time a bhikkhu is meditating by observing an aspect of sensations—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
+-At such a time a mendicant is meditating by observing an aspect of feelings—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
++At such a time a bhikkhu is meditating by observing an aspect of feelings—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn54.10:6.8
  PLI: Tasmātihānanda, vedanāsu vedanānupassī bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
--Therefore, at such a time a mendicant is meditating by observing an aspect of sensations—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
-+Therefore, at such a time a bhikkhu is meditating by observing an aspect of sensations—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
+-Therefore, at such a time a mendicant is meditating by observing an aspect of feelings—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
++Therefore, at such a time a bhikkhu is meditating by observing an aspect of feelings—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn54.10:7.1
  PLI: Yasmiṁ samaye, ānanda, bhikkhu ‘cittappaṭisaṁvedī assasissāmī’ti sikkhati, ‘cittappaṭisaṁvedī passasissāmī’ti sikkhati; 
 -There’s a time when a mendicant practices like this: ‘I’ll breathe in experiencing the mind.’ They practice like this: ‘I’ll breathe out experiencing the mind.’ 
@@ -47230,12 +47230,12 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +There’s a time when a bhikkhu practices like this: ‘I’ll breathe in experiencing rapture … 
 @@ -1,2 +1,2 @@ sn54.13:6.5
  PLI: vedanāsu vedanānupassī, ānanda, bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
--At such a time a mendicant is meditating by observing an aspect of sensations—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
-+At such a time a bhikkhu is meditating by observing an aspect of sensations—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
+-At such a time a mendicant is meditating by observing an aspect of feelings—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
++At such a time a bhikkhu is meditating by observing an aspect of feelings—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn54.13:6.8
  PLI: Tasmātihānanda, vedanāsu vedanānupassī bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
--Therefore, at such a time a mendicant is meditating by observing an aspect of sensations—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
-+Therefore, at such a time a bhikkhu is meditating by observing an aspect of sensations—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
+-Therefore, at such a time a mendicant is meditating by observing an aspect of feelings—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
++Therefore, at such a time a bhikkhu is meditating by observing an aspect of feelings—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn54.13:7.1
  PLI: Yasmiṁ samaye, ānanda, bhikkhu ‘cittappaṭisaṁvedī assasissāmī’ti sikkhati, ‘cittappaṭisaṁvedī passasissāmī’ti sikkhati; 
 -There’s a time when a mendicant practices like this: ‘I’ll breathe in experiencing the mind.’ They practice like this: ‘I’ll breathe out experiencing the mind.’ 
@@ -47294,8 +47294,8 @@ Rule: mendicant-bhikkhu — 10990 change(s), 2706 file(s)
 +At such a time, a bhikkhu has activated the awakening factor of equanimity; they develop it and perfect it. 
 @@ -1,2 +1,2 @@ sn54.13:17.1
  PLI: Yasmiṁ samaye, ānanda, bhikkhu vedanāsu …pe… 
--Whenever a mendicant meditates by observing an aspect of sensations … 
-+Whenever a bhikkhu meditates by observing an aspect of sensations … 
+-Whenever a mendicant meditates by observing an aspect of feelings … 
++Whenever a bhikkhu meditates by observing an aspect of feelings … 
 @@ -1,2 +1,2 @@ sn54.13:17.5
  PLI: Yasmiṁ samaye, ānanda, bhikkhuno upaṭṭhitā sati hoti asammuṭṭhā—
 -At such a time, a mendicant has activated the awakening factor of mindfulness; they develop it and perfect it. … 

@@ -26,7 +26,6 @@ gloss a term in his wording while the line above it uses ours.
 | yoniso manasikāra | rational application of mind | **proper attention** |
 | paṭisambhidā | textual analysis | **analytical knowledge** |
 | dhamma (six lines only) | text | **the Dhamma** |
-| vedanā | feeling | **sensation** |
 | paritassati | anxious, anxiety | **agitated, agitation** |
 | saṅkhāra | choices | **volitional formations** |
 | abhisaṅkharoti | make (choices) | **generate (volitional formations)** |

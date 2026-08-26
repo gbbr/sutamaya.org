@@ -227,9 +227,8 @@ function pushHunk(lines, { relPath, segmentId, before, after, paliDir }) {
 // data/diff/00-all.diff — every rule's effect at once, upstream data/sujato/ against shipped
 // data/sujato.post/. The per-rule files each show one step of a sequence, so their `-` side is
 // whatever earlier rules had already made of the line, which is the honest way to attribute a
-// change to a rule but reads as an intermediate no one ships ("form, sensation, perception,
-// choices", mid-way between upstream's "feeling … choices" and the shipped "sensation …
-// volitional formations"). This file
+// change to a rule but reads as an intermediate no one ships ("a bhikkhu … keenly", mid-way
+// between upstream's "a mendicant … keenly" and the shipped "a bhikkhu … ardently"). This file
 // answers the other question — what does this app ship differently from upstream — and is the one
 // to read after a refresh.
 function writeCombinedDiff({ diffDir, originals, objects, paliDir }) {

@@ -1,8 +1,0 @@
-Rule: dn15-when-feeling-neutral — 1 change(s), 1 file(s)
-
---- sujato/sutta/dn/dn15_translation-en-sujato.json
-+++ sujato/sutta/dn/dn15_translation-en-sujato.json
-@@ -1,2 +1,2 @@ dn15:29.8
- PLI: Adukkhamasukhaṁ vedanaṁ vediyamānassa ‘eso me attā’ti hoti. 
--When sensation a neutral sensation they think: ‘This is my self.’ 
-+When feeling a neutral sensation they think: ‘This is my self.’ 
