@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { X, Menu as MenuIcon, ChevronRight, List as ListIcon, Pencil } from 'lucide-react';
+import { X, Menu as MenuIcon, ChevronRight, List as ListIcon } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
@@ -491,10 +491,11 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
                 setNoteFocusSignal((s) => s + 1);
               }}
             >
-              {/* The pencil, not a quote rule, marks this as the reader's own note — a left rule
-                  reads as a passage quoted from the sutta. Matches the note on a Library list row.
-                  Nudged down so it sits on the first line's x-height rather than its ascenders. */}
-              <Pencil size={fs - 5} strokeWidth={2} className="flex-none" style={{ marginTop: 5 }} />
+              {/* The em dash, not a quote rule, marks this as the reader's own note — a left rule
+                  reads as a passage quoted from the sutta. Matches the note on a Library list row. */}
+              <span aria-hidden className="flex-none">
+                —
+              </span>
               <span>{notes[suttaId]}</span>
             </button>
           )}

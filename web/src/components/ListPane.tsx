@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowUpDown, ChevronDown, ChevronLeft, GripVertical, List, ListPlus, Pencil } from 'lucide-react';
+import { ArrowUpDown, ChevronDown, ChevronLeft, GripVertical, List, ListPlus } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -440,11 +440,12 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
                   <MatchedText text={s.pali} query={rowQuery} />
                 </span>
                 {note ? (
-                  // The icon, not a quote rule, is what marks this as the reader's own note: a
-                  // left rule reads as a passage quoted from the sutta. Nudged down a little so it
-                  // sits on the first line's x-height rather than its ascenders.
+                  // The em dash, not a quote rule, is what marks this as the reader's own note: a
+                  // left rule reads as a passage quoted from the sutta.
                   <span className="flex gap-[7px] font-serif text-ui-md leading-[1.45] mt-[7px] text-ink-2">
-                    <Pencil size={14} strokeWidth={2} className="flex-none mt-[4px] text-ink-3" />
+                    <span aria-hidden className="flex-none text-ink-3">
+                      —
+                    </span>
                     {/* Clamped, like the blurb it stands in for: a row is a scannable line, not the
                         place to read a long note — the reader has the whole of it. */}
                     <span className="line-clamp-3">
