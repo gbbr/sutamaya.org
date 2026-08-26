@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Minus, Plus, Trash2, X } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
 import { FS_MAX, FS_MIN, FS_STEP, LH_MAX, LH_MIN, LH_STEP, useReaderPrefs } from '../context/ReaderPrefsContext';
@@ -212,50 +212,71 @@ export function ReaderMenuPanel({
     hasEnteredRef.current = true;
   }, []);
 
-  const panelStyle = isThemeSheet
-    ? {
-        position: 'absolute' as const,
+  // Where the panel sits and how it's dressed — one of three shapes. All three are `position:
+  // absolute` inside ReaderPage's `fixed inset-0` root and share the panel's own surface colours;
+  // what differs is which edges they're pinned to. Rebuilt on every render so it keeps tracking
+  // `theme`.
+  function panelStyle(): CSSProperties {
+    // The Display tab on mobile: a short bottom sheet, capped well under the viewport so the
+    // reader stays visible above it and type changes can be judged live.
+    if (isThemeSheet) {
+      return {
+        position: 'absolute',
         left: 0,
         right: 0,
         bottom: 0,
         maxHeight: '62dvh',
         display: 'flex',
-        flexDirection: 'column' as const,
+        flexDirection: 'column',
         background: theme.panel,
         color: theme.fg,
         padding: '14px 20px 18px',
         paddingBottom: 'calc(18px + env(safe-area-inset-bottom, 0px))',
-      }
-    : mobile
-    ? {
-        position: 'absolute' as const,
+      };
+    }
+    // Highlights and Lists on mobile: full-screen and top-anchored, so their inputs stay above the
+    // on-screen keyboard (see isThemeSheet's comment for why bottom-anchoring fails here).
+    if (mobile) {
+      return {
+        position: 'absolute',
         inset: 0,
         display: 'flex',
-        flexDirection: 'column' as const,
+        flexDirection: 'column',
         background: theme.panel,
         color: theme.fg,
         padding: '18px 20px 22px',
         paddingTop: 'calc(18px + env(safe-area-inset-top, 0px))',
-      }
-    : {
-        position: 'absolute' as const,
-        top: 0,
-        right: 0,
-        bottom: 0,
-        width: 410,
-        display: 'flex',
-        flexDirection: 'column' as const,
-        background: theme.panel,
-        color: theme.fg,
-        // A hairline plus a cast shadow, rather than the heavy 2px `fg` rule this drawer used to
-        // carry: the shadow is what separates it from the reading behind it, so the edge itself
-        // doesn't have to be a line dark enough to read as part of the page's own furniture.
-        borderLeft: `1px solid ${theme.rule}`,
-        boxShadow: '-10px 0 30px rgba(0,0,0,.12)',
-        padding: '18px 20px 22px',
       };
+    }
+    // Desktop, every tab: a fixed-width drawer down the right edge. A hairline plus a cast shadow
+    // rather than a heavy rule — the shadow is what separates it from the reading behind it, so
+    // the edge itself doesn't have to be a line dark enough to read as page furniture.
+    return {
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      width: 410,
+      display: 'flex',
+      flexDirection: 'column',
+      background: theme.panel,
+      color: theme.fg,
+      borderLeft: `1px solid ${theme.rule}`,
+      boxShadow: '-10px 0 30px rgba(0,0,0,.12)',
+      padding: '18px 20px 22px',
+    };
+  }
 
-  const entranceClass = hasEnteredRef.current ? '' : isThemeSheet ? 'animate-sheetUp' : 'animate-fadeIn';
+  // Which entrance the panel plays, if any.
+  function entranceAnimationClass(): string {
+    // Already mounted: switching tabs reshapes the panel live and should snap, not replay.
+    if (hasEnteredRef.current) return '';
+    // The mobile Display sheet rises from the bottom edge it's pinned to.
+    if (isThemeSheet) return 'animate-sheetUp';
+    // Everything else appears in place, so it fades.
+    return 'animate-fadeIn';
+  }
+  const entranceClass = entranceAnimationClass();
   const panelClassName = `${isThemeSheet ? 'rounded-t-sheet shadow-sheet' : ''} ${entranceClass}`.trim();
 
   // Every setting is one of these: label on the left, control on the right, split from the row
@@ -282,7 +303,7 @@ export function ReaderMenuPanel({
           an explicit close button in the header row instead (below). The Display sheet is partial-
           height, so it gets a backdrop too: tapping the dimmed reader text above it closes it. */}
       {(!mobile || isThemeSheet) && <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,.12)' }} onClick={onClose} />}
-      <div data-component="ReaderMenuPanel" style={panelStyle} className={panelClassName}>
+      <div data-component="ReaderMenuPanel" style={panelStyle()} className={panelClassName}>
         <div className="flex items-center gap-1.5 mb-5">
           <div className="flex-1 min-w-0">
             <Segmented
