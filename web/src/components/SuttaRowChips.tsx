@@ -7,6 +7,8 @@ import { HighlightCountBadge } from './HighlightCountBadge';
 interface SuttaRowChipsProps {
   chips: SuttaRowChip[];
   hlCount: number;
+  // The distinct colours those highlights use — the badge's swatches (see highlightColors).
+  hlColors: string[];
   // Present only in the Reader (search overlay, sutta header) — the reader has its own
   // light/sepia/dark theme system, independent of the app shell's own dark/light mode (see
   // index.css's --ink), so a reader caller passes its resolved theme to get inline-styled chips
@@ -38,7 +40,7 @@ interface SuttaRowChipsProps {
 // rows, TreePane's mobile search results, the Reader's own search overlay, and the Reader's sutta
 // header (see lib/lists.ts's suttaRowMeta for how `chips`/`hlCount` are computed) so all four stay
 // visually and behaviourally identical rather than drifting apart.
-export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighlightClick, onAddToList }: SuttaRowChipsProps) {
+export function SuttaRowChips({ chips, hlCount, hlColors, theme, fs, onChipClick, onHighlightClick, onAddToList }: SuttaRowChipsProps) {
   if (chips.length === 0 && hlCount === 0 && !onAddToList) return null;
   const ChipTag = onChipClick ? 'button' : 'span';
   const fontSize = fs ? fs - 7 : 14;
@@ -55,9 +57,11 @@ export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighli
     // After the add control, which carries no fill or outline of its own: it takes a clear step to
     // read as a break rather than as more of the same run.
     if (onAddToList) return 12;
-    // Straight after a chip's own edge, in the Library, where there's no add control on the line —
-    // a hard pill edge needs far less air to separate from.
-    if (chips.length > 0) return 4;
+    // Straight after a chip's own edge, in the Library, where there's no add control on the line.
+    // Less than after the add control — a hard pill edge is already a boundary — but not nothing:
+    // the badge carries no outline of its own, so without a little air its swatches read as
+    // hanging off the chip they follow.
+    if (chips.length > 0) return 8;
     // The badge is alone on the line, so there's nothing to separate from: flush with the row.
     return undefined;
   }
@@ -168,6 +172,7 @@ export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighli
       {hlCount > 0 && (
         <HighlightCountBadge
           count={hlCount}
+          colors={hlColors}
           theme={theme}
           fs={fs}
           onClick={onHighlightClick}

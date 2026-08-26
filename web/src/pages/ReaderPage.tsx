@@ -84,6 +84,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     hlForSutta,
     highlightGroups,
     hlCount,
+    hlColors,
     scrollRef,
     scrollToSegment,
     pop,
@@ -537,6 +538,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
             <SuttaRowChips
               chips={suttaChips}
               hlCount={hlCount}
+              hlColors={hlColors}
               theme={theme}
               fs={fs}
               onChipClick={(chipId) => {

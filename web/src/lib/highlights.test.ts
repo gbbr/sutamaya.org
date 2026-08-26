@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { groupHighlights, buildCrossSegmentRanges, displacedGroupIds, paintSegmentHighlights } from './highlights';
+import { groupHighlights, buildCrossSegmentRanges, displacedGroupIds, highlightColors, paintSegmentHighlights } from './highlights';
+import { HIGHLIGHT_COLORS } from './theme';
 import type { Highlight } from './types';
 
 function h(id: string, i: number, s: number, e: number, g: string, c = '#ffe08a', m = '2026-01-01T00:00:00.000Z|dev'): Highlight {
@@ -38,6 +39,21 @@ describe('groupHighlights', () => {
     const groups = groupHighlights([h('a1', 0, 0, 10, 'g1'), h('b1', 0, 5, 15, 'g2'), h('a2', 1, 0, 4, 'g1')]);
     expect(groups).toHaveLength(2);
     expect(groups.find((x) => x.items[0].g === 'g1')?.items.map((x) => x.id)).toEqual(['a1', 'a2']);
+  });
+});
+
+describe('highlightColors', () => {
+  it('lists each colour once, in palette order rather than in the order it was used', () => {
+    const [yellow, green, blue] = HIGHLIGHT_COLORS;
+    const hs = [h('a', 0, 0, 2, 'g1', blue), h('b', 1, 0, 2, 'g2', yellow), h('c', 2, 0, 2, 'g3', blue)];
+    expect(highlightColors(hs)).toEqual([yellow, blue]);
+    expect(highlightColors([h('a', 0, 0, 2, 'g1', green)])).toEqual([green]);
+    expect(highlightColors([])).toEqual([]);
+  });
+
+  it('keeps a colour that is no longer in the palette, after the ones that are', () => {
+    const hs = [h('a', 0, 0, 2, 'g1', '#ffe08a'), h('b', 1, 0, 2, 'g2', HIGHLIGHT_COLORS[2])];
+    expect(highlightColors(hs)).toEqual([HIGHLIGHT_COLORS[2], '#ffe08a']);
   });
 });
 

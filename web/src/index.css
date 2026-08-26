@@ -382,6 +382,14 @@
   --danger-text: 220 38 38;
   --warning-text: 161 98 7;
   --selection: 234 223 198;
+  /* The three highlight fills, index-aligned with HIGHLIGHT_COLORS (lib/theme.ts) and reached
+     through SHELL_THEME's highlightPalette — so the swatches on a Library row (the highlight
+     count badge) are painted by the same highlightPaint() the reader's own text is. Light mode is
+     the stored pastels themselves; the .dark block below carries dark's deeper renderings, which
+     is what keeps a swatch legible on a dark ground the way the reader's dark theme does. */
+  --hl-1: 240 227 168;
+  --hl-2: 203 224 194;
+  --hl-3: 207 220 238;
 }
 
 /* The UI type scale — every `text-ui-*` utility resolves to one of these (see tailwind.config.js,
@@ -436,6 +444,11 @@
   --danger-text: 248 113 113;
   --warning-text: 217 152 46;
   --selection: 74 62 40;
+  /* DARK_HIGHLIGHTS (lib/theme.ts) — the same three fills the reader's dark theme paints, so one
+     highlight looks like itself whichever surface it's shown on. */
+  --hl-1: 107 78 34;
+  --hl-2: 74 74 38;
+  --hl-3: 70 58 92;
 }
 
 /* --ui-scale (set from Settings > UI scale, see lib/uiPrefs.ts) is applied via CSS `zoom` on

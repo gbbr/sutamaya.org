@@ -1,5 +1,5 @@
 import { AUTO_LIST_IDS } from './autoLists';
-import { highlightCount } from './highlights';
+import { highlightColors, highlightCount } from './highlights';
 import type { HighlightsMap, ListDef, Membership } from './types';
 
 export interface ListPathOption {
@@ -56,6 +56,8 @@ export interface SuttaRowChip {
 export interface SuttaRowMeta {
   chips: SuttaRowChip[];
   hlCount: number;
+  // The distinct colours behind that count, drawn as swatches beside it — see highlightColors.
+  hlColors: string[];
 }
 
 // Per-sutta list-membership chips + total highlight count for a row's meta line — shared by
@@ -82,7 +84,8 @@ export function suttaRowMeta(ids: Iterable<string>, membership: Membership, high
         return { id: c, label: list?.label ?? breadcrumb, parent, breadcrumb };
       })
       .sort((a, b) => (listOrder.get(a.id) ?? Infinity) - (listOrder.get(b.id) ?? Infinity));
-    map.set(id, { chips, hlCount: highlightCount(highlights[id] || []) });
+    const hl = highlights[id] || [];
+    map.set(id, { chips, hlCount: highlightCount(hl), hlColors: highlightColors(hl) });
   }
   return map;
 }
