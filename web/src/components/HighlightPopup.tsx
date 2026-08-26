@@ -33,26 +33,29 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
   useLayoutEffect(() => {
     const el = ref.current;
     if (!el || mobile) return;
-    // `pop.x`/`pop.y` are real screen-space coordinates (from getClientRects on the selection),
-    // but this element renders inside the `zoom`-scaled <html> (see applyUiScale) — a CSS length
-    // assigned here gets multiplied by that zoom again at paint time, so it has to be
+    // `pop.x`/`pop.top`/`pop.bottom` are real screen-space coordinates (from getClientRects on the
+    // selection), but this element renders inside the `zoom`-scaled <html> (see applyUiScale) — a
+    // CSS length assigned here gets multiplied by that zoom again at paint time, so it has to be
     // pre-divided by the same scale to land at the intended screen position (same reasoning as
     // index.css's 100dvh compensation).
     const scale = getUiScale();
-    // Below by default — `pop.y` is the bottom edge of the line the selection ends on, so the
-    // picker sits clear of the text just selected. Only flips above if there's no room below the
-    // viewport.
-    el.style.transform = 'translate(-50%,0)';
-    el.style.marginTop = '10px';
+    // Above the selection by default, which is where every platform's selection menu puts itself:
+    // a drag ends with the pointer at the selection's tail, so a picker below would open under the
+    // cursor and take a stray click, and it would cover the text the reader hasn't got to yet.
+    // Flips below only when the selection is too near the top of the viewport to fit.
+    el.style.transform = 'translate(-50%,-100%)';
+    el.style.marginTop = '-10px';
+    el.style.top = `${pop.top / scale}px`;
     el.style.left = `${pop.x / scale}px`;
     const r = el.getBoundingClientRect();
     let dx = 0;
     if (r.right > window.innerWidth - 10) dx = window.innerWidth - 10 - r.right;
     if (r.left + dx < 10) dx = 10 - (r.left + dx);
     if (dx) el.style.left = `${(pop.x + dx) / scale}px`;
-    if (r.bottom > window.innerHeight - 10) {
-      el.style.transform = 'translate(-50%,-100%)';
-      el.style.marginTop = '-10px';
+    if (r.top < 10) {
+      el.style.transform = 'translate(-50%,0)';
+      el.style.marginTop = '10px';
+      el.style.top = `${pop.bottom / scale}px`;
     }
   }, [pop, mobile]);
 
@@ -125,7 +128,7 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
       ref={ref}
       data-component="HighlightPopup"
       className="fixed z-[60] flex items-center gap-[11px] px-[14px] py-[9px] rounded-chip shadow-popup animate-popIn"
-      style={{ left: pop.x / getUiScale(), top: pop.y / getUiScale(), background: theme.panel, border: `1px solid ${theme.rule}` }}
+      style={{ left: pop.x / getUiScale(), top: pop.top / getUiScale(), background: theme.panel, border: `1px solid ${theme.rule}` }}
       onPointerDown={onStop}
       onPointerUp={onStop}
       onMouseUp={onStop}

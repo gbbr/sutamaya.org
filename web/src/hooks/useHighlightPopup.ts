@@ -9,8 +9,20 @@ export type { HlRange };
 export interface PopState {
   ranges: HlRange[];
   x: number;
-  y: number;
+  // The selection's vertical extent in screen space. The popup sits above `top` and, when there
+  // isn't room for it up there, below `bottom` — so either way it clears the selected text.
+  top: number;
+  bottom: number;
   on: string | null;
+}
+
+// Whether the drag ran right-to-left / bottom-to-top: the focus is where the pointer lifted, the
+// anchor where it went down, so a focus that precedes the anchor in the document means backwards.
+function isBackwards(sel: Selection): boolean {
+  const { anchorNode, anchorOffset, focusNode, focusOffset } = sel;
+  if (!anchorNode || !focusNode) return false;
+  if (anchorNode === focusNode) return focusOffset < anchorOffset;
+  return (anchorNode.compareDocumentPosition(focusNode) & Node.DOCUMENT_POSITION_PRECEDING) !== 0;
 }
 
 function closestSeg(node: Node | null): HTMLElement | null {
@@ -70,7 +82,7 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
     (i: number, s: number, e: number, rect: DOMRect, on: string | null) => {
       const group = groupHighlights(highlights).find((g) => g.items.some((h) => h.i === i && h.s === s && h.e === e));
       const ranges: HlRange[] = group ? group.items.map((h) => ({ i: h.i, s: h.s, e: h.e })) : [{ i, s, e }];
-      setPop({ ranges, x: rect.left + rect.width / 2, y: rect.bottom, on });
+      setPop({ ranges, x: rect.left + rect.width / 2, top: rect.top, bottom: rect.bottom, on });
     },
     [highlights]
   );
@@ -86,13 +98,19 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
       const a = closestSeg(range.startContainer);
       const b = closestSeg(range.endContainer);
       if (!a || !b) return;
-      // Anchor at the end of the selection, not its horizontal center — the tail of the last
-      // visual line (getClientRects()' last entry covers wrapped multi-line selections too, not
-      // just the bounding box getBoundingClientRect() would give), so the colour picker lands
-      // right where the user's cursor lifted off. Only the desktop popup uses this; on mobile
+      // Anchor horizontally where the drag ended, not at the selection's center — its
+      // getClientRects() entries cover wrapped multi-line selections line by line, where the
+      // single bounding box getBoundingClientRect() gives wouldn't. A Range's start/end are in
+      // document order whichever way the user dragged, so which end the cursor lifted at comes
+      // from the Selection's focus instead: dragging backwards lands it on the first line's left
+      // edge. Vertically it's the selection's whole extent, so a popup placed above or below it
+      // never covers a line the user just selected. Only the desktop popup uses this; on mobile
       // HighlightPopup pins itself to the bottom edge and ignores the anchor.
       const rects = range.getClientRects();
-      const endRect = rects[rects.length - 1] || range.getBoundingClientRect();
+      const box = range.getBoundingClientRect();
+      const back = isBackwards(sel);
+      const focusRect = (back ? rects[0] : rects[rects.length - 1]) || box;
+      const anchorX = back ? focusRect.left : focusRect.right;
 
       if (a === b) {
         const st = offsetWithin(a, range.startContainer, range.startOffset);
@@ -103,7 +121,7 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
         if (en <= st) return;
         const i = Number(a.dataset.seg);
         const cur = highlights.filter((h) => h.i === i).find((h) => h.s < en && h.e > st);
-        setPop({ ranges: [{ i, s: st, e: en }], x: endRect.right, y: endRect.bottom, on: cur ? cur.c : null });
+        setPop({ ranges: [{ i, s: st, e: en }], x: anchorX, top: box.top, bottom: box.bottom, on: cur ? cur.c : null });
         return;
       }
 
@@ -138,7 +156,7 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
       // A fresh multi-segment selection is always a new highlight, never an edit of an
       // existing one (unlike the single-segment case, which can land inside one) — the color
       // swatches just start unselected.
-      setPop({ ranges, x: endRect.right, y: endRect.bottom, on: null });
+      setPop({ ranges, x: anchorX, top: box.top, bottom: box.bottom, on: null });
     }, 0);
   }, [highlights, segments]);
 
