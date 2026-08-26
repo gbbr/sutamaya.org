@@ -2,6 +2,8 @@ import { Fragment, useEffect, useMemo, useRef, useState, type KeyboardEvent } fr
 import { Check, ChevronDown, Plus } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
 import { flattenListTree, type ListPathOption } from '../lib/lists';
+import { searchKey } from '../lib/corpus';
+import { matchRuns } from '../lib/searchMatch';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits';
 import type { ThemeColors } from '../lib/types';
@@ -125,16 +127,17 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       ];
     }
     // Matching the whole breadcrumb, not just the label, so typing a group's name still finds the
-    // lists inside it even though the group itself no longer appears as a row.
-    const ql = query.toLowerCase();
+    // lists inside it even though the group itself no longer appears as a row. Folded with
+    // searchKey, the same key library search matches on, so "a" finds "ā" here too.
+    const ql = searchKey(query);
     const order = new Map(flatAll.map((f, i) => [f.list.id, i]));
     const matches = flatAll
-      .filter((f) => f.list.kind !== 'group' && f.breadcrumb.toLowerCase().includes(ql))
+      .filter((f) => f.list.kind !== 'group' && searchKey(f.breadcrumb).includes(ql))
       .sort((a, b) => {
         // A hit on the list's own name outranks one that only matched somewhere in its path, then
         // the shorter name (the closer the match is to being the whole name), then tree order.
-        const aName = a.list.label.toLowerCase().includes(ql) ? 0 : 1;
-        const bName = b.list.label.toLowerCase().includes(ql) ? 0 : 1;
+        const aName = searchKey(a.list.label).includes(ql) ? 0 : 1;
+        const bName = searchKey(b.list.label).includes(ql) ? 0 : 1;
         return aName - bName || a.list.label.length - b.list.label.length || order.get(a.list.id)! - order.get(b.list.id)!;
       });
     // The create row is always offered, never only when nothing matched — a new list can
@@ -364,17 +367,23 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
   );
 }
 
-// The matched run in bold, so a result explains why it's a result. Only the first occurrence and
-// only in the name: a match that landed in the parent path instead is already accounted for by
-// the path shown beside it.
+// The matched runs in bold, so a result explains why it's a result. Only in the name: a match that
+// landed in the parent path instead is already accounted for by the path shown beside it. matchRuns
+// does the marking, so what's bolded here folds diacritics exactly the way the filter above did —
+// typing "a" bolds the "ā" it matched.
 function MatchedLabel({ label, query }: { label: string; query: string }) {
-  const at = query ? label.toLowerCase().indexOf(query.toLowerCase()) : -1;
-  if (at < 0) return <span className="min-w-0 flex-1 truncate text-ui-md">{label}</span>;
+  const runs = matchRuns(label, query);
   return (
     <span className="min-w-0 flex-1 truncate text-ui-md">
-      {label.slice(0, at)}
-      <strong className="font-semibold">{label.slice(at, at + query.length)}</strong>
-      {label.slice(at + query.length)}
+      {runs.map((run, i) =>
+        run.hit ? (
+          <strong key={i} className="font-semibold">
+            {run.text}
+          </strong>
+        ) : (
+          <Fragment key={i}>{run.text}</Fragment>
+        )
+      )}
     </span>
   );
 }
