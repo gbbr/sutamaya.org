@@ -90,6 +90,13 @@ function buildBlurbIndex(filePath) {
   return map;
 }
 
+// Blurbs carry the same inline HTML a translator note does — mostly `<i lang='pi'>` around a Pali
+// term. A group's blurb renders as HTML in ListPane and keeps it; a sutta's is drawn as plain text
+// inside a search-highlighted row, so its markup would show as literal tags.
+function stripTags(html) {
+  return html.replace(/<[^>]+>/g, '');
+}
+
 function loadSegMap(filePath) {
   if (!filePath || !fs.existsSync(filePath)) return new Map();
   return new Map(Object.entries(readJSON(filePath)));
@@ -196,7 +203,7 @@ function buildLeaf(uid, nodeId, collection) {
     node: nodeId,
     en: headerTitle(sujatoMap, uid) || stripTitlePrefix(names.en.get(uid)) || formatRef(uid),
     pali: headerTitle(paliMap, uid) || names.pali.get(uid) || formatRef(uid),
-    blurb: blurbs.get(uid) || '',
+    blurb: stripTags(blurbs.get(uid) || ''),
     min,
   };
   leafCount += 1;
