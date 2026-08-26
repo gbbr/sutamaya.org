@@ -17,18 +17,18 @@ gloss a term in his wording while the line above it uses ours.
 | samādhi | immersion, immersed | **composure, composed** (and "collect" as a verb) |
 | satipaṭṭhāna | mindfulness meditation | **the establishment of mindfulness** |
 | ātāpī | keen | **ardent** |
+| saṅkhāra | choices | **volitional formations** |
+| abhisaṅkharoti | make (choices) | **generate (volitional formations)** |
 | samudaya | origin | **arising** |
 | atthaṅgama | disappearance | **disappearing** |
 | vaya | vanishing | **passing away** |
 | udayabbaya | rise and fall | **arising and passing away** |
-| vipariṇāma + aññathābhāva | decays and perishes | **changes and becomes otherwise** |
 | vitakka / vicāra | placing the mind / keeping it connected | **thought / examination** |
 | yoniso manasikāra | rational application of mind | **proper attention** |
+| vipariṇāma + aññathābhāva | decays and perishes | **changes and becomes otherwise** |
+| paritassati | anxious, anxiety | **agitated, agitation** |
 | paṭisambhidā | textual analysis | **analytical knowledge** |
 | dhamma (six lines only) | text | **the Dhamma** |
-| paritassati | anxious, anxiety | **agitated, agitation** |
-| saṅkhāra | choices | **volitional formations** |
-| abhisaṅkharoti | make (choices) | **generate (volitional formations)** |
 
 A term is changed everywhere it appears, but only where it really is that Pali word — Bhikkhu Sujato's
 "keen" also translates ordinary things that have nothing to do with *ātāpī*, and those are

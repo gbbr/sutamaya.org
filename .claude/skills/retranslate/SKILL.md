@@ -99,6 +99,13 @@ upstream) and writes `data/sujato.post/` (generated).
     what changed, deliberately kept to the table and the few paragraphs already framing it. Nothing
     tests or anchors this file, so it goes in the same commit as the rule.
 
+    **The rows are ordered by doctrinal weight and how often the term occurs, not by the order of
+    `RULES`** — a reader scanning the table should meet *bhikkhu*, *samādhi* and *saṅkhāra* before
+    the six-line *dhamma* fix. Use the rule's count in `retranslation.counts.json` as the occurrence
+    figure, and keep a derived pair adjacent to its parent (*abhisaṅkharoti* under *saṅkhāra*) and a
+    cluster together (*samudaya* / *atthaṅgama* / *vaya* / *udayabbaya*) even where the counts alone
+    would separate them. Slot a new row in rather than appending it.
+
 ## Changing a term's rendering
 
 Changing what an existing rule renders a term as is **not** substituting the new English into its
