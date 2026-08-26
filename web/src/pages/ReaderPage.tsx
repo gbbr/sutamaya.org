@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { X, Menu as MenuIcon, ChevronRight, List as ListIcon } from 'lucide-react';
+import { X, Menu as MenuIcon, ChevronRight, List as ListIcon, Search } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
@@ -275,7 +275,10 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     if (to && to.id === suttaId) animateStep(el, to.dir);
   }, [suttaId]);
 
-  useReaderSwipeNav({ root: rootEl, panel, step });
+  // The search overlay counts as "a panel is up" for the swipe: it's a full-screen child of this
+  // same root on mobile, so without it a horizontal drag across the results would step the sutta
+  // underneath.
+  useReaderSwipeNav({ root: rootEl, panel: panel || searchOpen, step });
 
   function jumpToHighlight(segIndex: number, highlightId?: string) {
     setPanel(false);
@@ -365,8 +368,16 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
       onPointerDown={onReaderPointerDown}
       onPointerUp={onReaderPointerUp}
     >
-      <header className="font-sans flex-none flex items-center gap-4 px-5 py-3 text-ui-base" style={{ borderBottom: `1px solid ${theme.rule}` }}>
-        <button className="flex items-center p-3 -m-3" title="Close" onClick={closeReader}>
+      {/* The title is positioned against the header rather than laid out between the buttons: the
+          right side carries two controls to the left's one, so a flex-centred title would sit off
+          to the left by half that difference. Absolute centring keeps it on the page's own centre
+          line however many buttons flank it. `max-w` keeps a long one clear of both groups, and
+          the flanking groups keep their own layout via `justify-between`. */}
+      <header className="font-sans flex-none relative flex items-center justify-between px-5 py-3.5 text-ui-base" style={{ borderBottom: `1px solid ${theme.rule}` }}>
+        {/* `p-3.5 -m-3.5` throughout: a 47px touch area around each 19px icon, clearing the 44px
+            minimum both platforms ask for, while the negative margin keeps the icons themselves
+            spaced as they look rather than as they're hit. */}
+        <button className="flex items-center p-3.5 -m-3.5" title="Close" onClick={closeReader}>
           <X size={19} strokeWidth={1.75} />
         </button>
         {/* Tapping the title bar scrolls back to the top of the sutta — the same "tap the top of
@@ -377,29 +388,45 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
             themselves never scroll — see index.css), which that native behavior never reaches,
             so it has to be done by hand here instead. */}
         <button
-          className="flex-1 text-center opacity-75 font-serif cursor-pointer"
+          className="absolute left-1/2 -translate-x-1/2 max-w-[calc(100%-14rem)] truncate opacity-75 font-serif cursor-pointer"
           aria-label="Scroll to top"
           title="Scroll to top"
           onClick={() => scrollRef.current && animateScrollTop(scrollRef.current, 0)}
         >
           {mobile ? sutta.ref : `${sutta.ref} · ${sutta.pali}`}
         </button>
-        <button
-          className="flex items-center p-3 -m-3"
-          aria-label="Menu"
-          title="Menu"
-          onClick={(e) => {
-            e.stopPropagation();
-            // Opening straight onto the Theme tab's mobile bottom sheet shouldn't leave an open
-            // DictionaryDock sitting underneath it wasting space — desktop's drawer never
-            // overlaps the dock, so this is mobile-only (see ReaderMenuPanel's `onTabChange` for
-            // the other path into the same state).
-            if (mobile && tab === 'text') closeDict();
-            setPanel(true);
-          }}
-        >
-          <MenuIcon size={19} strokeWidth={1.75} />
-        </button>
+        {/* The negative margins collapse each button's layout box to its 19px icon while its touch
+            area stays 47px, so this gap has to cover the 28px of padding they hide before it
+            separates anything: gap-8 is 4px of actual space between hit areas. */}
+        <div className="flex items-center gap-8">
+          <button
+            className="flex items-center p-3.5 -m-3.5"
+            aria-label="Search"
+            title="Search (/)"
+            onClick={(e) => {
+              e.stopPropagation();
+              setSearchOpen(true);
+            }}
+          >
+            <Search size={19} strokeWidth={1.75} />
+          </button>
+          <button
+            className="flex items-center p-3.5 -m-3.5"
+            aria-label="Menu"
+            title="Menu"
+            onClick={(e) => {
+              e.stopPropagation();
+              // Opening straight onto the Theme tab's mobile bottom sheet shouldn't leave an open
+              // DictionaryDock sitting underneath it wasting space — desktop's drawer never
+              // overlaps the dock, so this is mobile-only (see ReaderMenuPanel's `onTabChange` for
+              // the other path into the same state).
+              if (mobile && tab === 'text') closeDict();
+              setPanel(true);
+            }}
+          >
+            <MenuIcon size={19} strokeWidth={1.75} />
+          </button>
+        </div>
       </header>
 
       {/* `overflowX: hidden` so the step animation's translateX can't briefly make the pane

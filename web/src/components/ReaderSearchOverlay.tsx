@@ -1,5 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { Search, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
+import { useLayout } from '../context/LayoutContext';
 import { useUserData } from '../context/UserDataContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
@@ -7,7 +9,10 @@ import { SEARCH_PLACEHOLDER, SEARCH_RESULTS_CAP } from '../lib/corpus';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { MatchedText } from './MatchedText';
 import { SuttaRowChips } from './SuttaRowChips';
+import { getUiScale } from '../lib/uiPrefs';
 import type { ThemeColors } from '../lib/types';
+
+const SAFE_AREA_BOTTOM = 'env(safe-area-inset-bottom, 0px)';
 
 interface ReaderSearchOverlayProps {
   theme: ThemeColors;
@@ -20,6 +25,7 @@ interface ReaderSearchOverlayProps {
 // same blurb/note as ListPane, so results are identifiable without opening them.
 export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearchOverlayProps) {
   const { corpus } = useCorpus();
+  const { mobile } = useLayout();
   const { lists, notes, membership, highlights } = useUserData();
   const [query, setQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
@@ -47,6 +53,24 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
     inputRef.current?.focus();
   }, []);
 
+  // On touch the panel fills the layout viewport, which the software keyboard doesn't shrink, so
+  // the bottom of the results list would sit underneath it. Padding the panel by the keyboard's
+  // measured height gives the rows the space that's actually visible, and hands it back when the
+  // keyboard goes away. Same treatment as ListMembershipPopover's full-screen sheet.
+  const panelRef = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    const el = panelRef.current;
+    const vv = window.visualViewport;
+    if (!el || !mobile || !vv) return;
+    const apply = () => {
+      const keyboard = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+      el.style.paddingBottom = keyboard ? `${keyboard / getUiScale()}px` : SAFE_AREA_BOTTOM;
+    };
+    apply();
+    vv.addEventListener('resize', apply);
+    return () => vv.removeEventListener('resize', apply);
+  }, [mobile]);
+
   function onKeyDown(e: React.KeyboardEvent) {
     // Stops here — the reader's own window-level keydown handler already bails while this
     // overlay is open (see ReaderPage), but stopping propagation outright means that doesn't
@@ -68,34 +92,105 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
     }
   }
 
+  const input = (
+    <input
+      ref={inputRef}
+      type="search"
+      name="sutamaya-reader-search"
+      value={query}
+      onChange={(e) => setQuery(e.target.value)}
+      onKeyDown={onKeyDown}
+      placeholder={SEARCH_PLACEHOLDER}
+      autoComplete="off"
+      autoCorrect="off"
+      autoCapitalize="off"
+      spellCheck={false}
+      // `search` on iOS puts a Search key on the keyboard, which dismisses it and leaves the
+      // results — already filtered as the query was typed — filling the screen.
+      enterKeyHint="search"
+      className={
+        mobile
+          ? // WebKit's own clear button is suppressed because the row draws a themed, thumb-sized
+            // one beside the field; two of them side by side read as a mistake.
+            'font-sans flex-1 min-w-0 py-2 text-ui-lg outline-none bg-transparent [&::-webkit-search-cancel-button]:hidden'
+          : 'font-sans flex-none w-full px-5 py-4 text-ui-lg outline-none bg-transparent'
+      }
+      style={mobile ? { color: theme.fg } : { color: theme.fg, borderBottom: `1px solid ${theme.rule}` }}
+    />
+  );
+
   return (
     <div
-      className="fixed inset-0 z-50 flex justify-center animate-fadeIn"
-      style={{ background: 'rgba(0,0,0,.35)', paddingTop: '12dvh' }}
-      onClick={onClose}
+      className={
+        mobile
+          ? 'fixed inset-0 z-50 flex flex-col animate-fadeIn'
+          : 'fixed inset-0 z-50 flex justify-center animate-fadeIn'
+      }
+      style={mobile ? { background: theme.panel } : { background: 'rgba(0,0,0,.35)', paddingTop: '12dvh' }}
+      // No backdrop to tap on touch — the panel is the whole screen, so its Cancel button is the
+      // way out.
+      onClick={mobile ? undefined : onClose}
     >
+      {/* Full-screen on touch rather than the desktop floating card: the keyboard takes the lower
+          half of the display, so a card centred in what's left would show two or three results.
+          Filling the screen puts the field at the very top and gives every remaining pixel to the
+          rows. */}
       <div
+        ref={panelRef}
         data-component="ReaderSearchOverlay"
-        className="w-full mx-4 flex flex-col overflow-hidden rounded-2xl shadow-popup"
-        style={{ background: theme.panel, maxWidth: 560, maxHeight: '70dvh' }}
+        className={
+          mobile
+            ? // `touch-none` keeps a drag on the panel's own chrome — the field's row — from
+              // scrolling the reading pane it covers; the results opt back in to vertical panning.
+              'flex-1 min-h-0 flex flex-col overflow-hidden touch-none'
+            : 'w-full mx-4 flex flex-col overflow-hidden rounded-2xl shadow-popup'
+        }
+        style={
+          mobile
+            ? {
+                background: theme.panel,
+                paddingTop: 'env(safe-area-inset-top, 0px)',
+                paddingBottom: SAFE_AREA_BOTTOM,
+              }
+            : { background: theme.panel, maxWidth: 560, maxHeight: '70dvh' }
+        }
         onClick={(e) => e.stopPropagation()}
       >
-        <input
-          ref={inputRef}
-          type="search"
-          name="sutamaya-reader-search"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          onKeyDown={onKeyDown}
-          placeholder={SEARCH_PLACEHOLDER}
-          autoComplete="off"
-          autoCorrect="off"
-          autoCapitalize="off"
-          spellCheck={false}
-          className="font-sans flex-none w-full px-5 py-4 text-ui-lg outline-none bg-transparent"
-          style={{ color: theme.fg, borderBottom: `1px solid ${theme.rule}` }}
-        />
-        <div className="sc flex-1 overflow-y-auto">
+        {mobile ? (
+          <div
+            className="flex-none flex items-center gap-3 px-4 py-2"
+            style={{ borderBottom: `1px solid ${theme.rule}` }}
+          >
+            <Search size={18} strokeWidth={2} className="flex-none" style={{ color: theme.dim }} />
+            {input}
+            {query && (
+              <button
+                className="flex-none flex items-center justify-center w-9 h-9 -mr-1 rounded-full"
+                aria-label="Clear search"
+                style={{ color: theme.dim }}
+                // Keeps focus on the field, so clearing doesn't drop the keyboard the reader is
+                // mid-typing on.
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={() => {
+                  setQuery('');
+                  inputRef.current?.focus();
+                }}
+              >
+                <X size={18} strokeWidth={2} />
+              </button>
+            )}
+            <button
+              className="flex-none font-sans text-ui-base px-1 py-2"
+              style={{ color: theme.dim }}
+              onClick={onClose}
+            >
+              Cancel
+            </button>
+          </div>
+        ) : (
+          input
+        )}
+        <div className="sc flex-1 overflow-y-auto touch-pan-y">
           {displayHits.map((h, i) => {
             const { chips, hlCount } = rowMeta.get(h.id) ?? { chips: [], hlCount: 0 };
             return (
