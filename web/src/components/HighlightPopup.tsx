@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { Trash2, X } from 'lucide-react';
 import { HIGHLIGHT_COLORS, highlightPaint } from '../lib/theme';
 import { getUiScale } from '../lib/uiPrefs';
@@ -27,37 +27,40 @@ interface HighlightPopupProps {
 // keeps it from reading louder than the "Remove" label beside it, drawn at 65%.
 const swatchBorder = (theme: ThemeColors, selected: boolean) => (selected ? theme.dim : theme.rule);
 
+// The gap the popup keeps from the selection, and the margin it keeps from the viewport's edges.
+const GAP = 10;
+const EDGE = 10;
+
 export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, onStop }: HighlightPopupProps) {
   const ref = useRef<HTMLDivElement>(null);
+  // Null until the first measurement, which is the one render placed at the unshifted default.
+  const [place, setPlace] = useState<{ above: boolean; dx: number } | null>(null);
 
+  // Only the popup's own size is measured; where that size then goes is arithmetic on the anchor,
+  // so the effect never has to reason about the position it happens to be rendered at. It sets
+  // state rather than writing styles onto the node, which keeps the JSX below the single account
+  // of where the popup is — a re-render that doesn't change `pop` (a theme change, say) can't
+  // reset a position the effect isn't going to re-run and reapply. Being a layout effect, the
+  // second render lands before the browser paints, so nothing is seen at the default placement.
   useLayoutEffect(() => {
     const el = ref.current;
     if (!el || mobile) return;
-    // `pop.x`/`pop.top`/`pop.bottom` are real screen-space coordinates (from getClientRects on the
-    // selection), but this element renders inside the `zoom`-scaled <html> (see applyUiScale) — a
-    // CSS length assigned here gets multiplied by that zoom again at paint time, so it has to be
-    // pre-divided by the same scale to land at the intended screen position (same reasoning as
-    // index.css's 100dvh compensation).
-    const scale = getUiScale();
-    // Above the selection by default, which is where every platform's selection menu puts itself:
-    // a drag ends with the pointer at the selection's tail, so a picker below would open under the
-    // cursor and take a stray click, and it would cover the text the reader hasn't got to yet.
-    // Flips below only when the selection is too near the top of the viewport to fit.
-    el.style.transform = 'translate(-50%,-100%)';
-    el.style.marginTop = '-10px';
-    el.style.top = `${pop.top / scale}px`;
-    el.style.left = `${pop.x / scale}px`;
-    const r = el.getBoundingClientRect();
+    // Screen-space throughout, like `pop` itself and window.innerWidth: getBoundingClientRect
+    // reports the `zoom`-scaled box (see applyUiScale), so the division back into CSS pixels
+    // belongs at the point of assignment, in the style below.
+    const { width, height } = el.getBoundingClientRect();
+    const half = width / 2;
     let dx = 0;
-    if (r.right > window.innerWidth - 10) dx = window.innerWidth - 10 - r.right;
-    if (r.left + dx < 10) dx = 10 - (r.left + dx);
-    if (dx) el.style.left = `${(pop.x + dx) / scale}px`;
-    if (r.top < 10) {
-      el.style.transform = 'translate(-50%,0)';
-      el.style.marginTop = '10px';
-      el.style.top = `${pop.bottom / scale}px`;
-    }
+    if (pop.x + half > window.innerWidth - EDGE) dx = window.innerWidth - EDGE - (pop.x + half);
+    if (pop.x - half + dx < EDGE) dx = EDGE - (pop.x - half);
+    setPlace({ above: pop.top - height - GAP >= EDGE, dx });
   }, [pop, mobile]);
+
+  // Above the selection unless it sits too near the top of the viewport for the popup to fit —
+  // which is where every platform's selection menu puts itself: a drag ends with the pointer at
+  // the selection's tail, so a picker below would open under the cursor and take a stray click,
+  // and it would cover the text the reader hasn't got to yet.
+  const above = place?.above ?? true;
 
   // On a touch device the OS puts its own selection menu ("Copy | Look Up | …") next to the
   // selection and there is no way to suppress it, so anything anchored there gets covered. The
@@ -128,7 +131,14 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
       ref={ref}
       data-component="HighlightPopup"
       className="fixed z-[60] flex items-center gap-[11px] px-[14px] py-[9px] rounded-chip shadow-popup animate-popIn"
-      style={{ left: pop.x / getUiScale(), top: pop.top / getUiScale(), background: theme.panel, border: `1px solid ${theme.rule}` }}
+      style={{
+        left: (pop.x + (place?.dx ?? 0)) / getUiScale(),
+        top: (above ? pop.top : pop.bottom) / getUiScale(),
+        transform: above ? 'translate(-50%,-100%)' : 'translate(-50%,0)',
+        marginTop: above ? -GAP : GAP,
+        background: theme.panel,
+        border: `1px solid ${theme.rule}`,
+      }}
       onPointerDown={onStop}
       onPointerUp={onStop}
       onMouseUp={onStop}
