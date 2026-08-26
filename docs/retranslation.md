@@ -144,13 +144,14 @@ right shape for a term with no homonym problem, like `mendicant-bhikkhu`.
 
 ```js
 {
-  id: 'vedana-etymology-derivation',
+  id: 'samudaya-exclamation-arising',
   kind: 'segment',
-  why: 'Vedayatīti kho, bhikkhave, tasmā ‘vedanā’ti vuccati — the derivation itself, so the verb ' +
-       'has to share a root with the noun the rule now uses.',
-  segments: ['sn22.79:3.2', 'sn22.79:3.5'],
-  from: 'It feels; that’s why it’s called ‘sensation’. ',
-  to:   'It senses; that’s why it’s called ‘sensation’. ',
+  why: '‘Samudayo, samudayo’ — the awakening exclamation. Bhikkhu Sujato reaches for the noun ' +
+       '"origination" only here, so samudaya-arising doesn’t catch it and the line contradicts its ' +
+       'own sutta: sn12.65:3.7 already reads "this entire mass of suffering arises".',
+  segments: ['sn12.10:4.4', 'sn12.65:3.8'],
+  from: '‘Origination, origination.’ Such was the vision, knowledge, wisdom, … ',
+  to:   '‘Arising, arising.’ Such was the vision, knowledge, wisdom, … ',
 }
 ```
 
@@ -311,11 +312,11 @@ rule wants: if nearly everything lands in `allow`, write it open with only the e
 - `00-summary.txt` — each rule's match and file counts, and any rule that matched zero.
 
 **A rule file's `-` side is not upstream.** Rules run in sequence and each `<id>.diff` records its
-own step, so its `-` side is whatever earlier rules had already made of the line. `sn22.56:1.4` is
-"form, feeling, perception, choices, and consciousness" upstream, but in
-`sankhara-volitional-formations.diff` the `-` side reads "form, sensation, perception, choices…" —
-an intermediate that never ships, because `vedana-sensation` had already rewritten *feeling*.
-Honest attribution, unreadable as a before/after; that's what `00-all.diff` is for.
+own step, so its `-` side is whatever earlier rules had already made of the line. `mn125:2.5` is
+"a mendicant who meditates diligently, keenly…" upstream, but in `atapi-ardent.diff` the `-` side
+reads "a bhikkhu who meditates diligently, keenly…" — an intermediate that never ships, because
+`mendicant-bhikkhu` had already rewritten *mendicant*. Honest attribution, unreadable as a
+before/after; that's what `00-all.diff` is for.
 
 `data/diff/` is **checked in**, which is what makes a refresh legible: `git diff data/diff/` next to
 `git diff data/sujato/`. Hence no colour, no timestamps, sorted paths — a run over unchanged input
@@ -324,7 +325,7 @@ has to produce an unchanged tree.
 Each file is a real unified diff, so word-level highlighting comes from the viewer:
 
 ```
-riff < data/diff/vedana-sensation.diff   # inline highlight of the changed span
+riff < data/diff/atapi-ardent.diff     # inline highlight of the changed span
 git diff data/diff/00-all.diff        # what the shipped text gained or lost
 ```
 

@@ -283,18 +283,6 @@ describe('the shipped rules, one example each', () => {
     ['atapi-ardent', 'sn1.23:2.3', 'sujato/sutta', 'a keen and alert mendicant—', 'an ardent and alert bhikkhu—'],
     // Denied: tibbagārava, "keen respect" for the Saṅgha — an intensity word, nothing of ātāpī.
     ['atapi-ardent', 'sn1.49:7.2', 'sujato/sutta', 'with keen respect for the Saṅgha?', 'with keen respect for the Saṅgha?'],
-    // Both of vedanā's number slots, plus the Title Case one the sutta names use.
-    ['vedana-sensation', 'sn12.2:8.1', 'sujato/sutta', 'And what is feeling?', 'And what is sensation?'],
-    ['vedana-sensation', 'mn44:22.2', 'sujato/sutta', '“There are three feelings:', '“There are three sensations:'],
-    ['vedana-sensation', 'mn59:0.2', 'sujato/name', 'The Many Kinds of Feeling', 'The Many Kinds of Sensation'],
-    // The verb slot is out of scope, so Bhikkhu Sujato's "feel" stands beside the rewritten noun.
-    ['vedana-sensation', 'sn36.7:12.3', 'sujato/sutta', 'they feel a pleasant feeling', 'they feel a pleasant sensation'],
-    // Denied: "Feeling inspired" is atthapaṭisaṁvedino, a paṭisaṁvedī compound, not vedanā.
-    ['vedana-sensation', 'an5.26:2.4', 'sujato/sutta', 'Feeling inspired, joy springs up.', 'Feeling inspired, joy springs up.'],
-    // Denied: vedanaṁ vedayamāno, the participle — and the only word on the line it could match.
-    ['vedana-sensation', 'mn140:24.8', 'sujato/sutta', 'feeling the end of the body draw close', 'feeling the end of the body draw close'],
-    // Not denied: DN 1's vedayita is the term, and the sutta's conclusion already reads "sensation".
-    ['vedana-sensation', 'dn1:3.32.1', 'sujato/sutta', 'only the feeling of those who do not know or see', 'only the sensation of those who do not know or see'],
     // The plural form absorbs "kinds of", which the singular has no reason to.
     ['satipatthana-establishment-of-mindfulness', 'sn52.1:1.4', 'sujato/sutta', 'missed out on these four kinds of mindfulness meditation', 'missed out on these four establishments of mindfulness'],
     // The preposition form, so the title's article stays lowercase.
@@ -401,8 +389,8 @@ describe('the shipped rules, one example each', () => {
     ['yoniso-proper-attention', 'mn-blurbs:mn60', 'sujato/blurb', 'how to use a rational reflection to arrive at practices and principles', 'how to use a rational reflection to arrive at practices and principles'],
     // The plural noun mid-list, then sentence-initial — the case pattern the aggregates and the
     // dependent-origination links are stated in throughout.
-    // The aggregate list, where this rule and vedana-sensation each take their own word.
-    ['sankhara-volitional-formations', 'sn22.56:1.4', 'sujato/sutta', 'The grasping aggregates of form, feeling, perception, choices, and consciousness. ', 'The grasping aggregates of form, sensation, perception, volitional formations, and consciousness. '],
+    // The aggregate list, where this rule takes its word and leaves the rest of the list alone.
+    ['sankhara-volitional-formations', 'sn22.56:1.4', 'sujato/sutta', 'The grasping aggregates of form, feeling, perception, choices, and consciousness. ', 'The grasping aggregates of form, feeling, perception, volitional formations, and consciousness. '],
     ['sankhara-volitional-formations', 'sn12.2:2.3', 'sujato/sutta', 'Choices are a requirement for consciousness. ', 'Volitional formations are a requirement for consciousness. '],
     // The singular, which the plural form must not pre-empt.
     ['sankhara-volitional-formations', 'mn9:62.2', 'sujato/sutta', 'There are these three kinds of choice. ', 'There are these three kinds of volitional formation. '],
