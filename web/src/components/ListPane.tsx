@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowUpDown, ChevronDown, ChevronLeft, GripVertical, List, ListPlus } from 'lucide-react';
+import { ArrowUpDown, ChevronDown, ChevronLeft, GripVertical, Info, List, ListPlus } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -421,7 +421,12 @@ export function ListPane({
             `blurb` carries the same inline HTML a translator note does — see SegmentedText. */}
         {blurb && (
           <div className="bg-ink/[.015] border-b border-ink/[.08] px-6 pt-4 pb-[18px]">
-            <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">
+            {/* The icon is decorative — it marks the block as an aside rather than another row,
+                and carries no action, so it's hidden from the reader. Sized to the cap height of
+                the eyebrow beside it, and the negative top nudge sits its optical centre on the
+                text's, which uppercase tracking otherwise throws off. */}
+            <div className="flex items-center gap-1.5 font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">
+              <Info size={12} strokeWidth={2.25} className="flex-none -mt-px" aria-hidden />
               {blurbFrom ? `About ${blurbFrom}` : 'About'}
             </div>
             {(() => {
