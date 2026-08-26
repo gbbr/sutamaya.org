@@ -1,15 +1,15 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
 import { useLayout } from '../context/LayoutContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
-import { nodeLabel } from '../lib/corpus';
+import { nodeLabel, LIST_RESULTS_CAP } from '../lib/corpus';
 import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, type RouteIntent } from '../lib/routeIntent';
-import { TreePane } from '../components/TreePane';
+import { TreePane, type ActiveSearchRow } from '../components/TreePane';
 import { ListPane } from '../components/ListPane';
 import { ShortcutsModal } from '../components/ShortcutsModal';
 
@@ -95,10 +95,46 @@ export function LibraryPage({
   // Scanned once here and handed to both panes, so they show one result set from one scan per
   // keystroke. useCorpusSearch defers the scan off `query`, keeping the input responsive on a
   // slow device.
-  const hits = useCorpusSearch(corpus, query, notes, lists);
+  const { hits: allHits, listHits } = useCorpusSearch(corpus, query, notes, lists);
+  // When exactly one list matched, its row already stands for everything in it — so the members
+  // that got here only through its name are dropped rather than spelled out underneath it, which
+  // for a big list is the whole results pane restating one row.
+  //
+  // Only when it's *one* list, and never a sutta that matches the query in its own text. Two or
+  // more matching lists (a word several of them share) is where the old behaviour earns its keep:
+  // the results are then the one place their members appear together, and each list row would
+  // otherwise have to be visited in turn to see the same thing.
+  const hits = useMemo(() => {
+    if (listHits.length !== 1) return allHits;
+    const members = new Set(listHits[0].list.items);
+    return allHits.filter((h) => !(h.listOnly && members.has(h.id)));
+  }, [allHits, listHits]);
   // TreePane owns the arrow-key nav; mirrored here so ListPane, which renders the rows on
-  // desktop, can show the same highlight.
-  const [activeSearchId, setActiveSearchId] = useState<string | undefined>(undefined);
+  // desktop, can show the same highlight. Carries which kind of row the cursor is on, since it
+  // walks the lists block above the results as well as the results themselves.
+  const [activeRow, setActiveRow] = useState<ActiveSearchRow | undefined>(undefined);
+  // Stored by value, not by identity: TreePane rebuilds the row object on each of its own
+  // renders, and taking every one of them would re-render this page (and so hand TreePane a new
+  // `listHits` array, and so re-run its effect) forever.
+  const onActiveRowChange = useCallback((row: ActiveSearchRow | undefined) => {
+    setActiveRow((prev) => (prev?.kind === row?.kind && prev?.id === row?.id ? prev : row));
+  }, []);
+  // The lists block shows LIST_RESULTS_CAP rows until this is on. Owned here rather than in the
+  // pane that draws the block, because TreePane's arrow-key nav has to walk exactly the rows
+  // ListPane is drawing beside it.
+  const [listsExpanded, setListsExpanded] = useState(false);
+  // A new query gets a freshly collapsed block — otherwise expanding once would silently leave
+  // every later search with its whole list of matches on top of the results.
+  useEffect(() => {
+    setListsExpanded(false);
+  }, [query]);
+  // Memoized because TreePane's active-row effect depends on this array's identity — a fresh
+  // slice on every render would re-run that effect on every render.
+  const shownListHits = useMemo(
+    () => (listsExpanded ? listHits : listHits.slice(0, LIST_RESULTS_CAP)),
+    [listHits, listsExpanded]
+  );
+  const toggleListsExpanded = useCallback(() => setListsExpanded((v) => !v), []);
 
   const [nodeId, setNodeId] = useState(routeNodeId);
   useEffect(() => {
@@ -204,7 +240,11 @@ export function LibraryPage({
           onSearch={setQuery}
           query={query}
           hits={hits}
-          onActiveHitChange={setActiveSearchId}
+          listHits={shownListHits}
+          listHitTotal={listHits.length}
+          listsExpanded={listsExpanded}
+          onToggleListsExpanded={toggleListsExpanded}
+          onActiveHitChange={onActiveRowChange}
           visible={showTreePane}
           restoreOrigin={restoreOrigin}
           flashNodeId={flashNodeId}
@@ -234,7 +274,13 @@ export function LibraryPage({
           selectedId={suttaId}
           query={query}
           hits={hits}
-          activeId={activeSearchId}
+          listHits={shownListHits}
+          listHitTotal={listHits.length}
+          listsExpanded={listsExpanded}
+          onToggleListsExpanded={toggleListsExpanded}
+          onSelectList={onSelectNode}
+          activeId={activeRow?.kind === 'sutta' ? activeRow.id : undefined}
+          activeListId={activeRow?.kind === 'list' ? activeRow.id : undefined}
           onBack={() => setView('tree')}
           onOpen={onOpen}
           visible={showListPane}

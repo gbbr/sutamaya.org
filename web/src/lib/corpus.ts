@@ -260,6 +260,11 @@ export interface SearchHit {
   // batch at its top. Unset for a plain title/blurb/note match — the source dataset has no
   // per-inner-sutta blurb to attribute a text match to a specific one.
   matchedId?: string;
+  // True when the query reached this sutta only through the name of a list it's in — no word of
+  // it appears in the sutta's own ref, title, Pali, blurb or the reader's note. The library drops
+  // these when the list itself is the one thing that matched, since its row already stands for
+  // them; see LibraryPage.
+  listOnly?: boolean;
 }
 
 // A short/common query (a single letter, "the") can realistically match hundreds of suttas — every
@@ -436,10 +441,57 @@ export function searchCorpus(corpus: Corpus, query: string, notes: Record<string
       }
     }
     if (rank < 0) continue;
-    hits.push({ id, sutta: s, matchedId, rank });
+    // Deliberately word-level and strict: a sutta sharing even one word of the query with its own
+    // text got here on its own merits, and is never just a restatement of a list row above it.
+    const listOnly =
+      rank >= RANK_PHRASE &&
+      words.every((w) => listPaths.includes(w) && !title.includes(w) && !blurb.includes(w) && !note.includes(w));
+    hits.push({ id, sutta: s, matchedId, listOnly, rank });
   }
   hits.sort((a, b) => a.rank - b.rank);
   return hits;
+}
+
+// How many list hits the results block shows before "N more lists" expands it. Three because the
+// block sits *above* the sutta hits on both surfaces, and on a phone a fourth row pushes the first
+// sutta below the fold — the results are still what most queries are for.
+export const LIST_RESULTS_CAP = 3;
+
+export interface ListHit {
+  list: ListDef;
+  // The groups above this list ("Practice", "Practice / Mornings"), empty for a top-level one.
+  // Rendered beside the name, which is what tells two lists sharing a name under different groups
+  // apart — and the row is also a hit when the query only matched up here.
+  parents: string;
+}
+
+// The user's own lists whose name (or an ancestor group's name) matches — rendered as their own
+// section above the sutta hits, since a reader who types a list's name is looking for the list
+// itself, not only for what's in it.
+//
+// Only `kind: 'list'` rows: a group holds no suttas, so /browse/<groupId> shows an empty pane —
+// it can't be a destination, and appears here only as its children's breadcrumb. The auto-lists
+// are out too (flattenListTree drops them): they sit permanently at the top of the Lists tab, so
+// unlike a list buried three groups deep they're never something search has to find.
+export function searchLists(lists: ListDef[], query: string): ListHit[] {
+  const q = searchKey(query.trim());
+  if (!q) return [];
+  const words = q.split(/\s+/);
+  // Same two-tier idea as searchCorpus's rank buckets, one tier shorter: a list whose own name
+  // matches beats one reached only through the group it sits in.
+  const own: ListHit[] = [];
+  const viaGroup: ListHit[] = [];
+  for (const { list, breadcrumb } of flattenListTree(lists)) {
+    if (list.kind === 'group') continue;
+    // flattenListTree builds the breadcrumb as `${parents} / ${label}`, so trimming the list's own
+    // label off the end leaves the group path — robust where splitting on ' / ' wouldn't be, since
+    // nothing stops a user naming a list "Before / After".
+    const parents = breadcrumb.slice(0, -list.label.length).replace(/ \/ $/, '');
+    const name = searchKey(list.label);
+    if (name.includes(q) || words.every((w) => name.includes(w))) own.push({ list, parents });
+    else if (words.every((w) => searchKey(breadcrumb).includes(w))) viaGroup.push({ list, parents });
+  }
+  return [...own, ...viaGroup];
 }
 
 // The exact list of rows ListPane renders while browsing (not searching — see LibraryPage, which

@@ -18,6 +18,7 @@ import {
   flatSuttaOrder,
   SEARCH_PLACEHOLDER,
   SEARCH_RESULTS_CAP,
+  type ListHit,
   type SearchHit,
 } from '../lib/corpus';
 import { ancestorsOfList, flattenListTree, suttaRowMeta } from '../lib/lists';
@@ -30,6 +31,7 @@ import type { ListDef } from '../lib/types';
 import { SignedInBadge } from './SignedInBadge';
 import { HeaderBanner } from './HeaderBanner';
 import { MatchedText } from './MatchedText';
+import { SearchListHits } from './SearchListHits';
 import { SuttaRowChips } from './SuttaRowChips';
 import { type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
 import { CorpusTreeView } from './CorpusTreeView';
@@ -69,6 +71,13 @@ function toRecord(ids: string[]): Record<string, boolean> {
   return record;
 }
 
+// Which row the search cursor is on. The arrow keys walk the lists block and the sutta hits as
+// one column, so "the active row" can no longer be just a sutta id.
+export interface ActiveSearchRow {
+  kind: 'list' | 'sutta';
+  id: string;
+}
+
 interface TreePaneProps {
   nodeId?: string;
   onSelect: (nodeId: string) => void;
@@ -78,8 +87,14 @@ interface TreePaneProps {
   // Scanned once by LibraryPage and shared with ListPane, so both panes show one result set.
   // On desktop ListPane renders the rows; this pane keeps the input and the keyboard nav.
   hits: SearchHit[];
-  // The hit this pane's arrow-key nav has highlighted, so ListPane can mirror it on desktop.
-  onActiveHitChange?: (id: string | undefined) => void;
+  // Matching lists, already trimmed to what renders (LibraryPage owns the expansion, so both
+  // panes and this pane's keyboard nav agree on exactly which rows exist).
+  listHits: ListHit[];
+  listHitTotal: number;
+  listsExpanded: boolean;
+  onToggleListsExpanded: () => void;
+  // The row this pane's arrow-key nav has highlighted, so ListPane can mirror it on desktop.
+  onActiveHitChange?: (row: ActiveSearchRow | undefined) => void;
   // False while LibraryPage has this pane `display:none` on mobile rather than unmounted — see
   // useScrollMemory, which can't restore a scroll offset into a box with no scroll extent.
   visible?: boolean;
@@ -101,6 +116,10 @@ export function TreePane({
   onSearch,
   query,
   hits,
+  listHits,
+  listHitTotal,
+  listsExpanded,
+  onToggleListsExpanded,
   onActiveHitChange,
   visible = true,
   restoreOrigin = false,
@@ -261,6 +280,18 @@ export function TreePane({
   // query is already present (rather than always `false`) so a pre-populated `query` prop can't
   // leave the pane showing search results with no visible way to see/edit what's being searched.
   const [searchOpen, setSearchOpen] = useState(() => query.trim().length > 0);
+  // A list opened from the results is a destination, not a refinement, so the input goes away
+  // with the results — the same disappearance a sutta hit gets by opening the reader.
+  //
+  // Keyed on the browsed node rather than on the click, because the row can be clicked in either
+  // pane: on desktop ListPane draws the lists block, and the new node (with the query LibraryPage
+  // clears alongside it) is all that reaches this pane. Nothing else moves `nodeId` while results
+  // are showing — the tree they'd be clicked in isn't on screen. The empty-query guard is what
+  // keeps a first render with a query already in it from closing the input it just opened.
+  useEffect(() => {
+    if (!query.trim()) setSearchOpen(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [nodeId]);
   const searchInput = useRef<HTMLInputElement>(null);
   // Starts at 0, not -1, so Enter opens the first result without an arrow press first. The ref
   // mirrors the state so the keydown effect below reads a live index without resubscribing.
@@ -355,6 +386,14 @@ export function TreePane({
   }, [canReorderLists, setReorderMode]);
 
   const searching = query.trim().length > 0;
+  // The heading over the results. "Suttas" rather than "results" whenever the lists block sits
+  // above it, so the number names what it counts; `hits` is uncapped, so a huge result set says
+  // "80+" rather than a number of rows nobody is going to be shown.
+  function resultsHeading(): string {
+    const noun = listHitTotal > 0 ? 'sutta' : 'result';
+    if (hits.length > SEARCH_RESULTS_CAP) return `${SEARCH_RESULTS_CAP}+ ${noun}s`;
+    return `${hits.length} ${noun}${hits.length === 1 ? '' : 's'}`;
+  }
   // A short/common query can match hundreds of suttas — only render/keyboard-navigate the first
   // SEARCH_RESULTS_CAP (see its own comment); `hits.length` (uncapped) still drives the "N
   // results" label below so that count stays honest.
@@ -369,12 +408,37 @@ export function TreePane({
     [displayHits, membership, highlights, flatLists]
   );
 
-  // Mirrors the currently keyboard-highlighted hit up to LibraryPage so it can show the same
+  // The arrow keys walk one column: the lists block first, then the sutta hits, in the order both
+  // panes draw them. Built here because this pane owns the nav on both platforms, even on desktop
+  // where ListPane is the one rendering the rows.
+  // Ids are what each pane highlights by, so a batched hit carries its own uid here (`dhp320-333`)
+  // even though opening it navigates to the inner sutta the query actually named — see openRow.
+  const navRows: ActiveSearchRow[] = useMemo(
+    () => [
+      ...listHits.map((h) => ({ kind: 'list' as const, id: h.list.id })),
+      ...displayHits.map((h) => ({ kind: 'sutta' as const, id: h.id })),
+    ],
+    [listHits, displayHits]
+  );
+
+  // Opens whichever row index `i` is: a list selects it in the pane beside this one, a sutta
+  // opens the reader. Shared by Enter and by the mobile rows' own onClick.
+  function openRow(i: number) {
+    const listHit = listHits[i];
+    if (listHit) {
+      onSelect(String(listHit.list.id));
+      return;
+    }
+    const hit = displayHits[i - listHits.length];
+    if (hit) openHit(hit.matchedId ?? hit.id);
+  }
+
+  // Mirrors the currently keyboard-highlighted row up to LibraryPage so it can show the same
   // highlight on ListPane's own row for it (see this pane's own render below, which stops
   // rendering hit rows itself once ListPane is also visible).
   useEffect(() => {
-    onActiveHitChange?.(searching ? displayHits[searchActiveIndex]?.id : undefined);
-  }, [searching, searchActiveIndex, displayHits, onActiveHitChange]);
+    onActiveHitChange?.(searching ? navRows[searchActiveIndex] : undefined);
+  }, [searching, searchActiveIndex, navRows, onActiveHitChange]);
 
   // Hides the search input and clears its query — on Escape, the inline "x", or opening a hit
   // (see openHit below). Always resets `query` even though closing while empty is a no-op there,
@@ -403,16 +467,15 @@ export function TreePane({
       // focus. '/' and 'x' below are unrelated shortcuts and keep the plain bail: typing either
       // character into the search box (or any input) must never re-trigger them.
       const isSearchInput = e.target === searchInput.current;
-      if (searching && displayHits.length > 0 && !(tag === 'textarea' || (tag === 'input' && !isSearchInput))) {
+      if (searching && navRows.length > 0 && !(tag === 'textarea' || (tag === 'input' && !isSearchInput))) {
         if (isShortcut(e, SHORTCUTS.librarySelectMove)) {
           e.preventDefault();
-          moveSearchActiveIndexBy(e.key === 'ArrowDown' ? 1 : -1, displayHits.length);
+          moveSearchActiveIndexBy(e.key === 'ArrowDown' ? 1 : -1, navRows.length);
           return;
         }
-        if (isShortcut(e, SHORTCUTS.librarySelectOpen) && searchActiveIndexRef.current < displayHits.length) {
+        if (isShortcut(e, SHORTCUTS.librarySelectOpen) && searchActiveIndexRef.current < navRows.length) {
           e.preventDefault();
-          const hit = displayHits[searchActiveIndexRef.current];
-          openHit(hit.matchedId ?? hit.id);
+          openRow(searchActiveIndexRef.current);
           return;
         }
       }
@@ -432,7 +495,7 @@ export function TreePane({
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [searching, displayHits, searchOpen, onOpenSutta, shortcutsOpen]);
+  }, [searching, navRows, displayHits, listHits, searchOpen, onOpenSutta, onSelect, shortcutsOpen]);
 
   // The target row usually isn't in the DOM on the render nodeId changed on — the expand
   // effects above have to run first — so these retry on each of those state changes.
@@ -674,23 +737,44 @@ export function TreePane({
       >
         {searching ? (
           <div>
-            <div className="px-[22px] pt-3 pb-1.5 font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3">
-              {hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ results` : `${hits.length} ${hits.length === 1 ? 'result' : 'results'}`}
-            </div>
+            {/* Mobile-only, like the hit rows below: on desktop ListPane draws this same block
+                above its own results. */}
+            {mobile && (
+              <SearchListHits
+                hits={listHits}
+                total={listHitTotal}
+                expanded={listsExpanded}
+                onToggleExpanded={onToggleListsExpanded}
+                query={query}
+                activeId={navRows[searchActiveIndex]?.kind === 'list' ? navRows[searchActiveIndex].id : undefined}
+                onSelect={onSelect}
+                padX="px-[22px]"
+              />
+            )}
+            {/* Skipped entirely when the lists block is the whole answer: a "0 suttas" heading
+                under it reads as a failed search, which it isn't. */}
+            {(hits.length > 0 || listHitTotal === 0) && (
+              <div className="px-[22px] pt-3 pb-1.5 font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3">
+                {resultsHeading()}
+              </div>
+            )}
             {/* Mobile-only: on desktop ListPane renders the same hits beside this pane, with the
                 blurb too, and this pane contributes just the count, the input and the key nav.
                 No blurb here — the column is narrower and ref/title/Pali already identify a hit. */}
             {mobile && (
               <>
-                {displayHits.map(({ id, matchedId, sutta }, i) => {
+                {displayHits.map(({ id, sutta }, i) => {
                   const note = notes[id];
                   const { chips, hlCount } = searchRowMeta.get(id) ?? { chips: [], hlCount: 0 };
+                  // The keyboard cursor walks the lists block above these rows first, so a hit's
+                  // own row index sits that many places along the shared column.
+                  const navIndex = i + listHits.length;
                   return (
                     <button
                       key={id}
-                      ref={setHitRowRef(i)}
-                      className={`row flex flex-col w-full text-left gap-[2px] px-[22px] py-[14px] border-b border-ink/[.07] ${i === searchActiveIndex ? 'bg-ink/[.06]' : ''}`}
-                      onClick={() => openHit(matchedId ?? id)}
+                      ref={setHitRowRef(navIndex)}
+                      className={`row flex flex-col w-full text-left gap-[2px] px-[22px] py-[14px] border-b border-ink/[.07] ${navIndex === searchActiveIndex ? 'bg-ink/[.06]' : ''}`}
+                      onClick={() => openRow(navIndex)}
                     >
                       <span>
                         <span className="font-sans text-ui-xs font-bold text-ink-3 mr-2.5">
@@ -712,7 +796,7 @@ export function TreePane({
                     </button>
                   );
                 })}
-                {hits.length === 0 && (
+                {hits.length === 0 && listHitTotal === 0 && (
                   <div className="font-sans text-center text-ui-base text-ink-4 py-[30px] px-5">No matches.</div>
                 )}
               </>

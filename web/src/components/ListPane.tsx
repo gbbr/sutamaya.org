@@ -5,10 +5,11 @@ import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { usePointerDragSession } from '../hooks/usePointerDragSession';
-import { listItemsFor, nodeBlurb, nodeLabel, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/corpus';
+import { listItemsFor, nodeBlurb, nodeLabel, SEARCH_RESULTS_CAP, type ListHit, type SearchHit } from '../lib/corpus';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
 import { MatchedText } from './MatchedText';
+import { SearchListHits } from './SearchListHits';
 import { SuttaRowChips } from './SuttaRowChips';
 import { ListMembershipPopover } from './ListMembershipPopover';
 import type { Sutta } from '../lib/types';
@@ -21,10 +22,19 @@ interface ListPaneProps {
   // (avoids both panes independently running the same scan, and is what lets this pane be the
   // one place results actually render on desktop).
   hits: SearchHit[];
+  // Matching lists, shown as their own block above the results — already trimmed to what should
+  // render (LibraryPage owns the expansion; see SearchListHits).
+  listHits: ListHit[];
+  listHitTotal: number;
+  listsExpanded: boolean;
+  onToggleListsExpanded: () => void;
+  onSelectList: (nodeId: string) => void;
   // The hit TreePane's own arrow-key nav currently has highlighted, while searching — mirrored
   // onto that same row here so the keyboard-driven highlight is visible even though this pane
   // (not TreePane) is the one showing the row on desktop.
   activeId?: string;
+  // The same, for when that cursor is up in the lists block instead.
+  activeListId?: string;
   onBack: () => void;
   onOpen: (id: string) => void;
   // Whether this pane is currently the visible one (LibraryPage keeps both TreePane and
@@ -33,7 +43,24 @@ interface ListPaneProps {
   visible?: boolean;
 }
 
-export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, onOpen, visible = true }: ListPaneProps) {
+const plural = (n: number, noun: string) => `${n} ${noun}${n === 1 ? '' : 's'}`;
+
+export function ListPane({
+  nodeId,
+  selectedId,
+  query,
+  hits,
+  listHits,
+  listHitTotal,
+  listsExpanded,
+  onToggleListsExpanded,
+  onSelectList,
+  activeId,
+  activeListId,
+  onBack,
+  onOpen,
+  visible = true,
+}: ListPaneProps) {
   const { corpus } = useCorpus();
   const { lists, membership, notes, highlights, reorderListItems } = useUserData();
   const { mobile, paneW } = useLayout();
@@ -246,11 +273,27 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
   // The corpus node's description. Skipped for a user list and while searching — neither is a
   // corpus node, and a list id could collide with one only by accident.
   const { blurb, from: blurbFrom } = searching || currentList ? { blurb: undefined, from: undefined } : nodeBlurb(corpus, nodeId);
-  const meta = searching
-    ? hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ results` : `${hits.length} ${hits.length === 1 ? 'result' : 'results'}`
-    : !nodeId
-      ? `${corpus.nikayas.length} collections`
-      : `${items.length} sutta${items.length === 1 ? '' : 's'}`;
+  // The line under the pane's title: what it's showing, counted. Read off `corpus` out here
+  // rather than inside — TypeScript's `if (!corpus) return null` above doesn't reach into a
+  // nested function.
+  const collectionCount = corpus.nikayas.length;
+  function metaLine(): string {
+    if (!searching) {
+      if (!nodeId) return `${collectionCount} collections`;
+      return plural(items.length, 'sutta');
+    }
+    // A query that matched lists and no suttas still found something, so the header counts what
+    // it found rather than putting a "0" above a block that clearly isn't empty.
+    if (hits.length === 0 && listHitTotal > 0) return plural(listHitTotal, 'list');
+    // "suttas" rather than "results" whenever the lists block is on screen too, so the number
+    // names what it's counting instead of implying it covers the whole pane.
+    const noun = listHitTotal > 0 ? 'sutta' : 'result';
+    // `hits` is uncapped, so a huge result set says "80+" rather than a number of rows nobody
+    // is going to be shown.
+    if (hits.length > SEARCH_RESULTS_CAP) return `${SEARCH_RESULTS_CAP}+ ${noun}s`;
+    return plural(hits.length, noun);
+  }
+  const meta = metaLine();
 
   return (
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
@@ -321,6 +364,20 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
             : undefined
         }
       >
+        {/* Matching lists, above the results — on desktop this pane is where results render, so
+            it draws the block; on mobile TreePane does. */}
+        {searching && (
+          <SearchListHits
+            hits={listHits}
+            total={listHitTotal}
+            expanded={listsExpanded}
+            onToggleExpanded={onToggleListsExpanded}
+            query={query}
+            activeId={activeListId}
+            onSelect={onSelectList}
+            padX="px-6"
+          />
+        )}
         {/* The node's description, above its suttas — the collection-page convention, and the
             only place it can go, since the group itself has no row of its own here. Inside the
             scroller rather than the header so a long one scrolls away instead of permanently
@@ -515,7 +572,9 @@ export function ListPane({ nodeId, selectedId, query, hits, activeId, onBack, on
             </div>
           );
         })}
-        {items.length === 0 && (
+        {/* A query that matched only lists isn't a failed search — the block above says so, and
+            "Nothing matches" underneath it would contradict it. */}
+        {items.length === 0 && !(searching && listHitTotal > 0) && (
           <div className="font-sans text-center text-ui-base text-ink-4 py-10 px-6">
             {/* Nothing selected at all (bare /browse — a first visit) is waiting on the reader;
                 "Nothing here yet." is a statement about a thing they already picked, and saying

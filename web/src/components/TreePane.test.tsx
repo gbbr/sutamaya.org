@@ -59,7 +59,7 @@ import {
 import { estimateOfflineStatus, isOfflineTextStale } from '../lib/offline';
 import { dismissKeepSafe, isIosBrowserTab, isKeepSafeDismissed } from '../lib/localAccount';
 import { TreePane } from './TreePane';
-import { searchCorpus, SEARCH_PLACEHOLDER } from '../lib/corpus';
+import { searchCorpus, searchLists, LIST_RESULTS_CAP, SEARCH_PLACEHOLDER } from '../lib/corpus';
 import type { Corpus, ListDef, User } from '../lib/types';
 
 function buildCorpus(): Corpus {
@@ -170,9 +170,13 @@ function Harness({
 }) {
   const [query, setQuery] = useState('');
   const [nodeId, setNodeId] = useState(initialNodeId);
+  const [listsExpanded, setListsExpanded] = useState(false);
   const { corpus } = useCorpus();
-  const { notes } = useUserData();
-  const hits = useMemo(() => (corpus && query.trim() ? searchCorpus(corpus, query, notes) : []), [corpus, query, notes]);
+  const { notes, lists } = useUserData();
+  const hits = useMemo(() => (corpus && query.trim() ? searchCorpus(corpus, query, notes, lists) : []), [corpus, query, notes, lists]);
+  // Mirrors LibraryPage, which owns the expansion and hands both panes the trimmed block.
+  const listHits = useMemo(() => searchLists(lists, query), [lists, query]);
+  const shownListHits = listsExpanded ? listHits : listHits.slice(0, LIST_RESULTS_CAP);
   return (
     <TreePane
       nodeId={nodeId}
@@ -184,6 +188,10 @@ function Harness({
       onSearch={setQuery}
       query={query}
       hits={hits}
+      listHits={shownListHits}
+      listHitTotal={listHits.length}
+      listsExpanded={listsExpanded}
+      onToggleListsExpanded={() => setListsExpanded((v) => !v)}
       shortcutsOpen={shortcutsOpen}
     />
   );
