@@ -14,7 +14,7 @@ const FIELD =
 // into (ListRow's rename/draft fields) rather than the same resting outline as every other field.
 const FIELD_ACTIVE = 'border-accent ring-2 ring-accent/25';
 const SUBMIT =
-  'flex items-center justify-center gap-1.5 w-full py-[15px] rounded-field bg-accent text-[#FBFAF7] font-sans text-ui-base font-medium disabled:opacity-50';
+  'flex items-center justify-center gap-1.5 w-full py-[12px] rounded-field bg-accent text-[#FBFAF7] font-sans text-ui-base font-medium disabled:opacity-50';
 const LINK = 'font-sans text-ui-sm text-ink-4 underline decoration-ink/25 underline-offset-2';
 const LINK_SPENT = 'font-sans text-ui-sm text-ink-5';
 
