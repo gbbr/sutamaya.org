@@ -28,6 +28,8 @@ SC_DATA_PATH=/path/to/sc-data npm run update-data     # plan a refresh of data/ 
                               npm run update-data apply    # copy it in, re-run the rules
                               npm run update-data accept   # re-baseline, after reviewing the diffs
                               npm run update-data help     # every subcommand, incl. the rule-authoring ones
+DPD_DB_PATH=/path/to/dpd.db npm run update-data dictionary   # rebuild data/pli2en_dpd.json from a
+                              # DPD release; skipped, with a row saying so, whenever it's unset
 ```
 
 Run the two halves individually with `npm run dev:worker` / `npm run dev:web`. `dev:worker` is
@@ -70,6 +72,7 @@ scripts/
   update-data.mjs     the one entry point — plan / apply / accept, and the frame around them
   update-data-*.mjs   the steps it drives as libraries; `post` applies this app's editorial layer
   lib/collections.js  the hardcoded, canonical collection metadata (see the depth table below)
+  lib/paliWords.js    the build's copy of the reader's word tokenizer and shard search
 ```
 
 ## Data pipeline (`scripts/build-corpus.mjs`)
@@ -80,14 +83,16 @@ and writes into `web/public/data/`:
 - **`corpus.json`** — the browse tree (`nikayas[]`, each optionally with recursively-nested
   `chapters[]`, a group row carrying `blurb` where the source data describes that group) plus a flat
   `suttas` map (`uid -> {ref, node, en, pali, blurb, min}`). Also carries `sujatoCommit`,
-  `dataVersion` and `dictionaryVersion`.
+  `dataVersion`, `dictionaryVersion` and `dpdVersion`.
 - **`text/{uid}.json`** — one file per leaf document: an ordered array of
   `{key, pali, en, role?, headingLevel?, note?}` segments. `role` is
   `'verse' | 'heading' | 'end' | 'speaker' | 'list-item'`, derived from SuttaCentral's own markup in
   `data/html/`; `note` is Bhikkhu Sujato's translator footnote, which may contain inline HTML.
-- **`dict-shards/*.json` + `manifest.json`** — the DPD dictionary split into ~256KB range shards, so
-  a word tap fetches ~30KB instead of a ~20MB map. `web/src/lib/dictionaryShards.ts` binary-searches
-  the manifest; its comparison must match the builder's (plain `<`/`>`, never `localeCompare`).
+- **`dict-shards/*.json` + `manifest.json`** — the dictionary split into ~256KB range shards, so a
+  word tap fetches one shard instead of the whole map. `web/src/lib/dictionaryShards.ts`
+  binary-searches the manifest; its comparison must match the builder's (plain `<`/`>`, never
+  `localeCompare`). The build trims the dictionary to the words it actually emitted — see the
+  dictionary section below.
 - **`text-shards/*.json` + `manifest.json`** — the same per-sutta text repacked into ~1MB bundles
   for Settings' bulk offline download.
 
@@ -98,6 +103,29 @@ leaves a reviewable record of what changed in the shipped text: `00-all.diff` is
 against `data/sujato.post/` — the plain before/after — and one `<id>.diff` per retranslation rule
 attributes it. Rules run in sequence, so a rule file's `-` side is the text that rule saw, not
 upstream; read `00-all.diff` for the shipped result.
+
+**The dictionary is corpus-scoped, in two stages.** `update-data dictionary` reads a DPD release
+database (`DPD_DB_PATH`, optional — the step reports either way, and a clone without the database
+builds from the checked-in file) and writes `data/pli2en_dpd.json`: only the headwords a word in
+`data/pali/` can reach, and per headword only the gloss lines the dock renders — no examples,
+citations, frequencies or inflection tables. Sandhi compounds are resolved during the import, since
+DPD answers `jhāyathānanda` with the bare split `jhāyatha + ānanda` and nothing else; the split
+stays as the first line and each part's glosses follow it. Then `build-corpus.mjs` trims again, to
+exactly the words it emitted, and **replays every one of them through the same `lookupWord` and
+manifest binary search the client runs, failing the build if any word resolves differently than the
+file says it should**. That catches a tokenizer drifting from `web/src/lib/dictionary.ts`, which
+would otherwise silently drop entries the reader can still tap.
+
+It proves the shards agree with `data/pli2en_dpd.json`, not that the file is any good — a
+diminished file verifies perfectly. The import guards that end instead: it refuses to overwrite
+when the headword count falls more than 10% below the file it replaces, unless run as
+`update-data dictionary force`.
+
+**SuttaCentral and DPD spell the niggahita differently** — `ṁ` here, `ṃ` there, plus assimilated
+`ṅ`/`ñ` on this side — so the import tries a word's DPD spellings and converts what it gets back.
+Only orthographic equivalences: no vowel-length flipping or enclitic stripping, which do find
+matches and do find wrong ones. Roughly 80 forms across the canon (~120 occurrences) have no gloss
+anywhere and show as a bare headword.
 
 **Before touching a retranslation rule, read `docs/retranslation.md`** — it is the spec, and the
 rules themselves live in `scripts/update-data/retranslation.mjs` so they survive every refresh.

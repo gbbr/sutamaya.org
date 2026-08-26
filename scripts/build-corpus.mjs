@@ -11,6 +11,19 @@ import {
   formatRef, stripTitlePrefix, flattenLeaves, findChapterNodes, findNodeByKey, findLeafGroups, rangeNote, chapterSpanNote,
   headerTitle, buildBodySegments,
 } from './lib/collections.js';
+import { splitPaliWords, stripPunct, lookupWord, shardFor } from './lib/paliWords.js';
+import { red, green, bold, dim } from './lib/dataSync.js';
+
+// The build is a long, quiet wall of counts, and the one thing anyone needs to spot in it is a
+// failure — so a failure gets the only red in the output, and never a bare stack trace. `step` is
+// the heading of a phase, `detail` its counts, and `ok` the checks that had to pass.
+const step = (text) => console.log(bold(text));
+const detail = (text) => console.log(dim(`  ${text}`));
+const ok = (text) => console.log(`  ${green('✓')} ${text}`);
+process.on('uncaughtException', (err) => {
+  console.error(`\n  ${red('✗ build:corpus failed')}\n\n${err.message.replace(/^/gm, '  ')}\n`);
+  process.exit(1);
+});
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -104,13 +117,13 @@ function loadSegMap(filePath) {
 
 const sujatoManifest = readJSON(path.join(DATA, 'manifest.json'));
 
-console.log('Indexing source files…');
+step('Indexing source files…');
 const paliFiles = buildFileIndex(path.join(DATA, 'pali', 'sutta'));
 const sujatoFiles = buildFileIndex(path.join(SUJATO, 'sutta'), 'run `npm run update-data post` first');
 const htmlFiles = buildFileIndex(path.join(DATA, 'html', 'pli', 'ms', 'sutta'), 'run `node scripts/fetch-html-structure.mjs` first');
 const notesFiles = buildFileIndex(path.join(SUJATO, 'notes'));
-console.log(
-  `  ${paliFiles.size} pali files, ${sujatoFiles.size} sujato files, ${htmlFiles.size} html structure files, ${notesFiles.size} note files`
+detail(
+  `${paliFiles.size} pali files, ${sujatoFiles.size} sujato files, ${htmlFiles.size} html structure files, ${notesFiles.size} note files`
 );
 
 const nameIndexCache = new Map();
@@ -137,6 +150,10 @@ fs.mkdirSync(OUT_SHARDS, { recursive: true });
 
 const suttas = {};
 let leafCount = 0;
+
+// Every Pali token the reader can tap, gathered as the leaves are written. The dictionary section
+// below trims DPD down to exactly what these can look up.
+const tappableWords = new Set();
 
 // Per-uid digests of exactly the bytes written to web/public/data/text/, folded into corpus.json's
 // `dataVersion` below. That's what lets a client tell whether the sutta text it cached (under
@@ -178,6 +195,12 @@ function buildLeaf(uid, nodeId, collection) {
   const htmlMap = loadSegMap(htmlFiles.get(uid));
   const notesMap = loadSegMap(notesFiles.get(uid));
   const segs = buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap);
+  // Collected from the segments about to be written, not from data/pali, because these are the
+  // exact strings SegmentedText renders as tappable `.pw` spans — see the dictionary section,
+  // which ships only the headwords one of them can reach.
+  for (const seg of segs) {
+    if (seg.pali) for (const word of splitPaliWords(seg.pali)) tappableWords.add(word);
+  }
   const words = segs.reduce((n, s) => n + (s.en ? s.en.split(/\s+/).filter(Boolean).length : 0), 0);
   const min = Math.max(1, Math.round(words / 200));
 
@@ -285,7 +308,7 @@ const nikayas = [];
 {
   const { rows: categoryRows } = buildCategoryRows(findLeafGroups(loadTree('dn')), 'dn', 'dn', NIKAYA_META.dn.label, 'DN', false);
   nikayas.push({ id: 'dn', label: NIKAYA_META.dn.label, sub: NIKAYA_META.dn.sub, count: categoryRows.length, chapters: categoryRows });
-  console.log(`  dn: ${categoryRows.length} categories, ${categoryRows.reduce((n, c) => n + c.count, 0)} suttas`);
+  detail(`dn: ${categoryRows.length} categories, ${categoryRows.reduce((n, c) => n + c.count, 0)} suttas`);
 }
 
 // --- MN: vagga-level categories directly (MN has no numbered-chapter layer of its own), with
@@ -293,7 +316,7 @@ const nikayas = [];
 {
   const { rows: categoryRows } = buildCategoryRows(findLeafGroups(loadTree('mn')), 'mn', 'mn', NIKAYA_META.mn.label, 'MN', false);
   nikayas.push({ id: 'mn', label: NIKAYA_META.mn.label, sub: NIKAYA_META.mn.sub, count: categoryRows.length, chapters: categoryRows });
-  console.log(`  mn: ${categoryRows.length} categories, ${categoryRows.reduce((n, c) => n + c.count, 0)} suttas`);
+  detail(`mn: ${categoryRows.length} categories, ${categoryRows.reduce((n, c) => n + c.count, 0)} suttas`);
 }
 
 // --- SN: 5 super-vagga groups (Verses, Causation, …), each wrapping its sn1..sn56 chapters;
@@ -322,7 +345,7 @@ const nikayas = [];
   const totalChapters = groupRows.reduce((n, g) => n + g.chapters.length, 0);
   const totalSuttas = groupRows.reduce((n, g) => n + g.count, 0);
   nikayas.push({ id: 'sn', label: NIKAYA_META.sn.label, sub: NIKAYA_META.sn.sub, count: groupRows.length, chapters: groupRows });
-  console.log(`  sn: ${groupRows.length} groups, ${totalChapters} chapters, ${totalSuttas} suttas`);
+  detail(`sn: ${groupRows.length} groups, ${totalChapters} chapters, ${totalSuttas} suttas`);
 }
 
 // --- AN: nipātas (an1 "Book of Ones", …), each split into vagga-level categories, with any
@@ -332,7 +355,7 @@ const nikayas = [];
   chapters.sort((a, b) => +a.key.slice(2) - +b.key.slice(2));
   const chapterRows = chapters.map((c, i) => buildChapterRow(c, 'an', true, `Book of ${AN_BOOK_NAMES[i] || `Book ${i + 1}`}`));
   nikayas.push({ id: 'an', label: NIKAYA_META.an.label, sub: NIKAYA_META.an.sub, count: chapterRows.length, chapters: chapterRows });
-  console.log(`  an: ${chapterRows.length} chapters, ${chapterRows.reduce((n, c) => n + c.count, 0)} suttas`);
+  detail(`an: ${chapterRows.length} chapters, ${chapterRows.reduce((n, c) => n + c.count, 0)} suttas`);
 }
 
 // --- KN: 6 curated books, flattened one level down to their leaf documents — except Snp and Ud,
@@ -354,18 +377,50 @@ const nikayas = [];
     return { ...row, chapters: rows };
   });
   nikayas.push({ id: 'kn', label: NIKAYA_META.kn.label, sub: NIKAYA_META.kn.sub, count: chapterRows.length, chapters: chapterRows });
-  console.log(`  kn: ${chapterRows.length} books, ${chapterRows.reduce((n, c) => n + c.count, 0)} leaf documents`);
+  detail(`kn: ${chapterRows.length} books, ${chapterRows.reduce((n, c) => n + c.count, 0)} leaf documents`);
 }
 
-// --- Dictionary: flatten [{entry, definition:[...]}] into a headword-keyed object, then split it
-// into range shards. A word tap needs one headword, so shipping all ~142k of them (~20MB, ~2.6MB
-// compressed, and too large for Cloudflare to hold at the edge) to answer one lookup is the wrong
-// trade: the reader fetches only the shard covering the tapped word — see lib/dictionaryShards.ts.
-console.log('Building dictionary shards…');
-const dpdList = readJSON(path.join(DATA, 'pli2en_dpd.json'));
+// --- Dictionary: flatten [{entry, definition:[...]}] into a headword-keyed object, trim it to the
+// words this build actually emitted, then split it into range shards. A word tap needs one
+// headword, so shipping the whole thing to answer one lookup is the wrong trade: the reader
+// fetches only the shard covering the tapped word — see lib/dictionaryShards.ts.
+//
+// data/pli2en_dpd.json is already scoped to data/pali/ by update-data-dictionary.mjs, so the trim
+// here mostly removes words that live in source files this build doesn't emit. It stays because
+// it, and the verification pass under it, are what catch an import that went wrong — the reader's
+// own tokenizer is the only authority on what a tap can ask for.
+step('Building dictionary shards…');
+const dictPath = path.join(DATA, 'pli2en_dpd.json');
+const { dpdVersion, entries: dpdList } = readJSON(dictPath);
+// A file predating update-data-dictionary.mjs is a bare array, and destructuring one gives an
+// undefined `entries` and a crash three lines down that names neither the file nor the fix.
+if (!Array.isArray(dpdList)) {
+  throw new Error(
+    `${dictPath} is not in the expected {dpdVersion, entries: [...]} shape.\n` +
+      'Regenerate it: DPD_DB_PATH=/path/to/dpd.db npm run update-data dictionary'
+  );
+}
 const dpdMap = {};
 for (const { entry, definition } of dpdList) dpdMap[entry] = definition;
-const dpdJson = JSON.stringify(dpdMap);
+
+// Trim. DPD covers all of Pali, including the Apadāna, the commentaries and the Vinaya; a little
+// over half its headwords are forms nothing in this corpus uses, and no tap can ever reach them.
+// The keep-set is what lookupWord would consult for each token: the token itself and its lowercase
+// form, since that is the pair it tries.
+const reachable = new Set();
+for (const raw of tappableWords) {
+  const word = stripPunct(raw);
+  if (!word) continue;
+  reachable.add(word);
+  reachable.add(word.toLowerCase());
+}
+
+const shipped = {};
+for (const [key, def] of Object.entries(dpdMap)) {
+  if (reachable.has(key)) shipped[key] = def;
+}
+const dpdJson = JSON.stringify(shipped);
+detail(`${Object.keys(shipped).length} of ${dpdList.length} headwords reachable from this corpus`);
 
 const DICT_SHARD_TARGET_BYTES = 256 * 1024;
 // Shards are addressed by a lowercased key range, because lookupWord tries both the tapped word
@@ -373,7 +428,7 @@ const DICT_SHARD_TARGET_BYTES = 256 * 1024;
 // shard. Plain code-unit comparison, not localeCompare — lib/dictionaryShards.ts's binary search
 // has to reproduce this ordering exactly, and only `<`/`>` is portable between the two.
 const dictSortKey = (k) => k.toLowerCase();
-const headwords = Object.keys(dpdMap).sort((a, b) => {
+const headwords = Object.keys(shipped).sort((a, b) => {
   const ka = dictSortKey(a);
   const kb = dictSortKey(b);
   if (ka !== kb) return ka < kb ? -1 : 1;
@@ -384,7 +439,7 @@ const dictShards = [];
 let dictShardKeys = [];
 let dictShardBytes = 0;
 for (const key of headwords) {
-  const bytes = JSON.stringify(key).length + JSON.stringify(dpdMap[key]).length + 2;
+  const bytes = JSON.stringify(key).length + JSON.stringify(shipped[key]).length + 2;
   // Never break a run of headwords sharing a sort key ("Buddha"/"buddha"): one lookup consults
   // both spellings, so a boundary falling between them would make the lowercase form unreachable.
   const canSplit = dictShardKeys.length > 0 && dictSortKey(dictShardKeys[dictShardKeys.length - 1]) !== dictSortKey(key);
@@ -401,11 +456,64 @@ if (dictShardKeys.length) dictShards.push(dictShardKeys);
 fs.mkdirSync(path.join(OUT, 'dict-shards'), { recursive: true });
 const dictManifest = dictShards.map((keys, i) => {
   const file = `dict-shards/${String(i).padStart(3, '0')}.json`;
-  fs.writeFileSync(path.join(OUT, file), JSON.stringify(Object.fromEntries(keys.map((k) => [k, dpdMap[k]]))));
+  fs.writeFileSync(path.join(OUT, file), JSON.stringify(Object.fromEntries(keys.map((k) => [k, shipped[k]]))));
   return { file, first: dictSortKey(keys[0]), last: dictSortKey(keys[keys.length - 1]) };
 });
 fs.writeFileSync(path.join(OUT, 'dict-shards', 'manifest.json'), JSON.stringify({ shards: dictManifest }));
-console.log(`  ${dpdList.length} headwords in ${dictShards.length} shards`);
+detail(`${headwords.length} headwords in ${dictShards.length} shards`);
+
+// --- Verify the trim, by replaying it. Every word the reader can tap goes through the same
+// manifest binary search and the same lookupWord the client runs, against the shard files just
+// written, and the answer is compared with what data/pli2en_dpd.json gives for the same word. A
+// headword dropped by a tokenizer that drifted out of step with web/src/lib/dictionary.ts, or
+// stranded by a shard boundary, is otherwise invisible: the dock just says the word isn't there.
+//
+// It compares against that file, so it proves the shards say what the file says — not that the
+// file itself is any good. Whether the import produced a sound dictionary is a separate question,
+// and update-data-dictionary.mjs answers it there, against the file it replaces.
+{
+  const bodies = new Map();
+  const shardBody = (file) => {
+    if (!bodies.has(file)) bodies.set(file, readJSON(path.join(OUT, file)));
+    return bodies.get(file);
+  };
+  const lost = [];
+  for (const raw of tappableWords) {
+    const before = lookupWord(dpdMap, raw);
+    if (!before) continue;
+    const key = stripPunct(raw).toLowerCase();
+    const shard = key ? shardFor(dictManifest, key) : null;
+    const after = shard ? lookupWord(shardBody(shard.file), raw) : null;
+    if (!after) lost.push(`${raw} (was: ${before[0]})`);
+    else if (after[0] !== before[0]) lost.push(`${raw} (was: ${before[0]}, now: ${after[0]})`);
+  }
+  if (lost.length) {
+    throw new Error(
+      `Dictionary trim lost ${lost.length} word(s) the reader can tap:\n  ${lost.slice(0, 20).join('\n  ')}` +
+        (lost.length > 20 ? `\n  …and ${lost.length - 20} more` : '')
+    );
+  }
+  ok(`verified: all ${tappableWords.size} tappable words resolve exactly as data/pli2en_dpd.json defines them`);
+
+  // The coverage figure that describes what a reader meets: distinct words in the text this build
+  // emitted, not words in the source data. Numerals are counted apart — verse and list numbering
+  // are tappable, but nobody expects the dictionary to define "12".
+  const forms = new Set();
+  for (const raw of tappableWords) {
+    const word = stripPunct(raw);
+    if (word) forms.add(word);
+  }
+  let defined = 0;
+  let numerals = 0;
+  for (const form of forms) {
+    if (shipped[form] || shipped[form.toLowerCase()]) defined += 1;
+    else if (/^[0-9.–-]+$/.test(form)) numerals += 1;
+  }
+  ok(
+    `coverage: ${defined} of ${forms.size} distinct words have a definition ` +
+      dim(`(${forms.size - defined - numerals} have none, ${numerals} are numerals)`)
+  );
+}
 
 // Both versions are emitted in corpus.json (precached and revisioned with the app shell, so a new
 // build always delivers them) rather than derived from anything the client caches itself. They're
@@ -420,11 +528,12 @@ const dataVersion = sha256(
 );
 const dictionaryVersion = sha256(dpdJson);
 
+step('Writing the corpus…');
 fs.writeFileSync(
   path.join(OUT, 'corpus.json'),
-  JSON.stringify({ nikayas, suttas, sujatoCommit: sujatoManifest.sourceCommit, dataVersion, dictionaryVersion })
+  JSON.stringify({ nikayas, suttas, sujatoCommit: sujatoManifest.sourceCommit, dataVersion, dictionaryVersion, dpdVersion })
 );
-console.log(`Wrote corpus.json (${leafCount} leaf documents, ${nikayas.length} nikāyas, data ${dataVersion})`);
+detail(`corpus.json — ${leafCount} leaf documents, ${nikayas.length} nikāyas, data ${dataVersion}`);
 
 flushShard();
 const totalShardBytes = shardManifest.reduce((n, s) => n + s.bytes, 0);
@@ -432,6 +541,6 @@ fs.writeFileSync(
   path.join(OUT_SHARDS, 'manifest.json'),
   JSON.stringify({ totalBytes: totalShardBytes, totalUids: leafCount, shards: shardManifest })
 );
-console.log(`Wrote ${shardManifest.length} text shards (${(totalShardBytes / 1e6).toFixed(1)} MB) for offline bulk download`);
+detail(`${shardManifest.length} text shards (${(totalShardBytes / 1e6).toFixed(1)} MB) for offline bulk download`);
 
-console.log('Done.');
+console.log(`\n  ${green('✓ build:corpus complete')}\n`);
