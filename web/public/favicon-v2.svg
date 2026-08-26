@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- A serif "S" knocked out of the app's near-black ink, in the same rounded-square silhouette
+       browsers already draw around a tab icon. Georgia rather than the app's own Newsreader: an
+       SVG favicon can't carry a webfont, so the mark has to name a face the OS already has. The
+       dark ground is deliberate — it holds its shape against light and dark browser chrome alike,
+       which a light-on-light or thin-stroked mark doesn't at 16px. -->
+  <rect width="32" height="32" rx="7" fill="#1B1917"/>
+  <text x="16" y="23" text-anchor="middle" font-family="Georgia,serif" font-size="20" fill="#FDFCFA">S</text>
+</svg>
