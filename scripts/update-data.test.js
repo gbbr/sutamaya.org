@@ -390,40 +390,40 @@ describe('the shipped rules, one example each', () => {
     // The plural noun mid-list, then sentence-initial — the case pattern the aggregates and the
     // dependent-origination links are stated in throughout.
     // The aggregate list, where this rule takes its word and leaves the rest of the list alone.
-    ['sankhara-volitional-formations', 'sn22.56:1.4', 'sujato/sutta', 'The grasping aggregates of form, feeling, perception, choices, and consciousness. ', 'The grasping aggregates of form, feeling, perception, volitional formations, and consciousness. '],
-    ['sankhara-volitional-formations', 'sn12.2:2.3', 'sujato/sutta', 'Choices are a requirement for consciousness. ', 'Volitional formations are a requirement for consciousness. '],
+    ['sankhara-pali', 'sn22.56:1.4', 'sujato/sutta', 'The grasping aggregates of form, feeling, perception, choices, and consciousness. ', 'The grasping aggregates of form, feeling, perception, saṅkhāras, and consciousness. '],
+    ['sankhara-pali', 'sn12.2:2.3', 'sujato/sutta', 'Choices are a requirement for consciousness. ', 'Saṅkhāras are a requirement for consciousness. '],
     // The singular, which the plural form must not pre-empt.
-    ['sankhara-volitional-formations', 'mn9:62.2', 'sujato/sutta', 'There are these three kinds of choice. ', 'There are these three kinds of volitional formation. '],
+    ['sankhara-pali', 'mn9:62.2', 'sujato/sutta', 'There are these three kinds of choice. ', 'There are these three kinds of saṅkhāra. '],
     // saṅkhāradhātu, where the term stands in front of another noun and goes singular for it.
-    ['sankhara-volitional-formations', 'sn22.3:4.7', 'sujato/sutta', 'The choices element is a bastion for consciousness. ', 'The volitional-formation element is a bastion for consciousness. '],
+    ['sankhara-pali', 'sn22.3:4.7', 'sujato/sutta', 'The choices element is a bastion for consciousness. ', 'The saṅkhāra element is a bastion for consciousness. '],
     // The singular behind an indefinite article, which the replacement leaves alone — unlike the
     // plural slots, this one needs no form of its own, since both words start with a consonant.
-    ['sankhara-volitional-formations', 'sn12.2:2.3', 'sujato/sutta', 'That is a choice. ', 'That is a volitional formation. '],
-    // A title, pinning the case this rule *can't* get right on its own: caseAs reads Bhikkhu
-    // Sujato's one-word "Choices" as a capitalized sentence, so a two-word replacement comes back
-    // "Volitional formations". an3-23-volitional-formations-title and
-    // sn33-4-volitional-formations-title restore the Title Case afterwards.
-    ['sankhara-volitional-formations', 'sn33.4:0.3', 'sujato/sutta', 'Not Knowing Choices ', 'Not Knowing Volitional formations '],
+    ['sankhara-pali', 'sn12.2:2.3', 'sujato/sutta', 'That is a choice. ', 'That is a saṅkhāra. '],
+    // A title: caseAs reads Bhikkhu Sujato's one-word "Choices" as a capitalized sentence, and the
+    // one-word replacement takes that capital without help.
+    ['sankhara-pali', 'sn33.4:0.3', 'sujato/sutta', 'Not Knowing Choices ', 'Not Knowing Saṅkhāras '],
+    // The SN 12.38–40 blurb's doublet, where the longer form claims the phrase and drops the gloss.
+    ['sankhara-pali', 'sn-blurbs:sn12.38', 'sujato/blurb', 'Intentions or choices are the force that propels consciousness from one life to the next.', 'Intentions are the force that propels consciousness from one life to the next.'],
     // Denied: MN 120's saṅkhārupapatti, rebirth deliberately aspired to.
-    ['sankhara-volitional-formations', 'mn120:0.2', 'sujato/sutta', 'Rebirth by Choice ', 'Rebirth by Choice '],
+    ['sankhara-pali', 'mn120:0.2', 'sujato/sutta', 'Rebirth by Choice ', 'Rebirth by Choice '],
     // Denied: ordinary English, for pabbajjaṁ samarocayi.
-    ['sankhara-volitional-formations', 'snp3.1:1.4', 'sujato/sutta', 'his choice to go forth. ', 'his choice to go forth. '],
+    ['sankhara-pali', 'snp3.1:1.4', 'sujato/sutta', 'his choice to go forth. ', 'his choice to go forth. '],
     // One per slot Bhikkhu Sujato's verb stands in — third person, past participle, gerund, and the
     // bare infinitive after a modal, which also shows mendicant-bhikkhu running in the same line.
-    ['abhisankharoti-generate', 'an3.23:1.3', 'sujato/sutta', 'Firstly, a certain individual makes hurtful choices by way of body, speech, and mind. ', 'Firstly, a certain individual generates hurtful volitional formations by way of body, speech, and mind. '],
-    ['abhisankharoti-generate', 'an3.23:1.4', 'sujato/sutta', 'Having made these choices, they’re reborn in a hurtful world, ', 'Having generated these volitional formations, they’re reborn in a hurtful world, '],
-    ['abhisankharoti-generate', 'sn22.53:3.8', 'sujato/sutta', 'Since that consciousness does not become established and does not grow, not making choices, it is freed. ', 'Since that consciousness does not become established and does not grow, not generating volitional formations, it is freed. '],
-    ['abhisankharoti-generate', 'sn12.51:13.2', 'sujato/sutta', 'Would a mendicant who has ended the defilements still make good choices, bad choices, or imperturbable choices?” ', 'Would a bhikkhu who has ended the defilements still generate good volitional formations, bad volitional formations, or imperturbable volitional formations?” '],
+    ['abhisankharoti-generate', 'an3.23:1.3', 'sujato/sutta', 'Firstly, a certain individual makes hurtful choices by way of body, speech, and mind. ', 'Firstly, a certain individual generates hurtful saṅkhāras by way of body, speech, and mind. '],
+    ['abhisankharoti-generate', 'an3.23:1.4', 'sujato/sutta', 'Having made these choices, they’re reborn in a hurtful world, ', 'Having generated these saṅkhāras, they’re reborn in a hurtful world, '],
+    ['abhisankharoti-generate', 'sn22.53:3.8', 'sujato/sutta', 'Since that consciousness does not become established and does not grow, not making choices, it is freed. ', 'Since that consciousness does not become established and does not grow, not generating saṅkhāras, it is freed. '],
+    ['abhisankharoti-generate', 'sn12.51:13.2', 'sujato/sutta', 'Would a mendicant who has ended the defilements still make good choices, bad choices, or imperturbable choices?” ', 'Would a bhikkhu who has ended the defilements still generate good saṅkhāras, bad saṅkhāras, or imperturbable saṅkhāras?” '],
     // The singular slot, where the verb changes but the article doesn't.
-    ['abhisankharoti-generate', 'mn140:22.10', 'sujato/sutta', 'They neither make a choice nor form an intention for existence or nonexistence. ', 'They neither generate a volitional formation nor form an intention for existence or nonexistence. '],
+    ['abhisankharoti-generate', 'mn140:22.10', 'sujato/sutta', 'They neither make a choice nor form an intention for existence or nonexistence. ', 'They neither generate a saṅkhāra nor form an intention for existence or nonexistence. '],
     // Snp 3.12's "karmic" is dropped rather than carried over: the Pali is the bare Saṅkhāre
-    // uparundhiya, and "volitional formations" is already the kammic sense of the term.
-    ['abhisankharoti-generate', 'snp3.12:43.4', 'sujato/sutta', 'and stopped making karmic choices, ', 'and stopped generating volitional formations, '],
+    // uparundhiya, and saṅkhāra already carries the kammic sense.
+    ['abhisankharoti-generate', 'snp3.12:43.4', 'sujato/sutta', 'and stopped making karmic choices, ', 'and stopped generating saṅkhāras, '],
     // Denied: "make" is causative around the noun rather than governing it, so the noun moves and
     // the verb stays — eleven of them in this one segment.
-    ['abhisankharoti-generate', 'sn12.69:1.5', 'sujato/sutta', 'In the same way, when ignorance surges it makes choices surge. When choices surge they make consciousness surge. ', 'In the same way, when ignorance surges it makes volitional formations surge. When volitional formations surge they make consciousness surge. '],
+    ['abhisankharoti-generate', 'sn12.69:1.5', 'sujato/sutta', 'In the same way, when ignorance surges it makes choices surge. When choices surge they make consciousness surge. ', 'In the same way, when ignorance surges it makes saṅkhāras surge. When saṅkhāras surge they make consciousness surge. '],
     // Denied: SN 22.79's "what make it into form" renders saṅkhata, not abhisaṅkharoti.
-    ['abhisankharoti-generate', 'sn22.79:5.4', 'sujato/sutta', 'Form is a conditioned phenomenon; choices are what make it into form. ', 'Form is a conditioned phenomenon; volitional formations are what make it into form. '],
+    ['abhisankharoti-generate', 'sn22.79:5.4', 'sujato/sutta', 'Form is a conditioned phenomenon; choices are what make it into form. ', 'Form is a conditioned phenomenon; saṅkhāras are what make it into form. '],
   ];
 
   it('rewrites each rule’s example, and leaves its excluded example alone', async () => {

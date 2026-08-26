@@ -19,7 +19,7 @@
 //   agitation          paritassati-agitated
 //   thought            vitakka-vicara-thought-examination
 //   attention          yoniso-proper-attention
-//   saṅkhāra           abhisankharoti-generate, sankhara-volitional-formations
+//   saṅkhāra           abhisankharoti-generate, sankhara-pali
 //   segment overrides  one line each, applied after the term rules; sub-grouped by cause, order
 //                      immaterial
 //   blurb openers      blurb-openers, applied last — trims the redundant frame off a group
@@ -366,81 +366,93 @@ export const RULES = [
     ],
   },
   // ── Saṅkhāra ────────────────────────────────────────────────────────────────
-  // Where the group sits settles nothing — no rule above produces or consumes "choice", "volitional
-  // formation" or "make". The order *within* it does. abhisankharoti-generate has to run first,
+  // Where the group sits settles nothing — no rule above produces or consumes "choice", "saṅkhāra"
+  // or "make". The order *within* it does. abhisankharoti-generate has to run first,
   // because its forms span Bhikkhu Sujato's verb and the noun it governs together ("makes hurtful
-  // choices"), and once sankhara-volitional-formations has rewritten that noun the span is locked.
+  // choices"), and once sankhara-pali has rewritten that noun the span is locked.
   // The other way round would need a form of bare "make", putting the corpus's ~2,300 other "make"s
   // into the closed rule's untriaged queue at every refresh.
   {
     id: 'abhisankharoti-generate',
     why: 'Bhikkhu Sujato governs his "choices" with "make" ("makes hurtful choices", "stopped making ' +
-      'karmic choices"). Once sankhara-volitional-formations has turned that noun into "volitional ' +
-      'formations", "make" no longer governs it in English, so this rule moves the verb to ' +
+      'karmic choices"). Once sankhara-pali has turned that noun into "saṅkhāras", ' +
+      '"make" no longer governs it in English, so this rule moves the verb to ' +
       '"generate". Each form therefore carries the verb, the noun and whatever adjective sits ' +
       'between them, writing the finished phrase in one step — this rule, not ' +
-      'sankhara-volitional-formations, is what renders saṅkhāra in these 54 segments. Twenty forms ' +
+      'sankhara-pali, is what renders saṅkhāra in these 54 segments. Twenty forms ' +
       'because that is how many distinct shapes he uses; two have a pronoun where the others have ' +
       'the noun, SN 56.42 having already named it. Snp 3.12\'s "karmic choices" drops its ' +
-      'adjective, since the Pali is the bare Saṅkhāre uparundhiya and "volitional formations" is ' +
-      'already the kammic sense of the term. Closed, because a bare "make" form would claim one of ' +
+      'adjective, since the Pali is the bare Saṅkhāre uparundhiya and saṅkhāra already carries ' +
+      'the kammic sense. Closed, because a bare "make" form would claim one of ' +
       'the commonest verbs in the corpus, and so that a new shape stops for review.',
     mode: 'allow',
     predicate: /abhisaṅkhar/i,
     forms: [
-      ['makes both hurtful and pleasing choices', 'generates both hurtful and pleasing volitional formations'],
-      ['make an imperturbable choice', 'generate an imperturbable volitional formation'],
-      ['making karmic choices', 'generating volitional formations'],
-      ['makes hurtful choices', 'generates hurtful volitional formations'],
-      ['makes pleasing choices', 'generates pleasing volitional formations'],
+      ['makes both hurtful and pleasing choices', 'generates both hurtful and pleasing saṅkhāras'],
+      ['make an imperturbable choice', 'generate an imperturbable saṅkhāra'],
+      ['making karmic choices', 'generating saṅkhāras'],
+      ['makes hurtful choices', 'generates hurtful saṅkhāras'],
+      ['makes pleasing choices', 'generates pleasing saṅkhāras'],
       ['continue to make them', 'continue to generate them'],
-      ['made these choices', 'generated these volitional formations'],
-      ['making such choices', 'generating such volitional formations'],
-      ['make such choices', 'generate such volitional formations'],
-      ['made such choices', 'generated such volitional formations'],
-      ['makes a good choice', 'generates a good volitional formation'],
-      ['make good choices', 'generate good volitional formations'],
-      ['make a bad choice', 'generate a bad volitional formation'],
-      ['make a good choice', 'generate a good volitional formation'],
+      ['made these choices', 'generated these saṅkhāras'],
+      ['making such choices', 'generating such saṅkhāras'],
+      ['make such choices', 'generate such saṅkhāras'],
+      ['made such choices', 'generated such saṅkhāras'],
+      ['makes a good choice', 'generates a good saṅkhāra'],
+      ['make good choices', 'generate good saṅkhāras'],
+      ['make a bad choice', 'generate a bad saṅkhāra'],
+      ['make a good choice', 'generate a good saṅkhāra'],
       ['stop making them', 'stop generating them'],
-      ['making choices', 'generating volitional formations'],
-      ['makes a choice', 'generates a volitional formation'],
-      ['make a choice', 'generate a volitional formation'],
-      ['made choices', 'generated volitional formations'],
-      ['make choices', 'generate volitional formations'],
+      ['making choices', 'generating saṅkhāras'],
+      ['makes a choice', 'generates a saṅkhāra'],
+      ['make a choice', 'generate a saṅkhāra'],
+      ['made choices', 'generated saṅkhāras'],
+      ['make choices', 'generate saṅkhāras'],
     ],
   },
   {
-    id: 'sankhara-volitional-formations',
+    id: 'sankhara-pali',
     why: 'Bhikkhu Sujato renders saṅkhāra as "choices" in the aggregate and dependent-origination ' +
-      'senses; this app prefers "volitional formations". The suttas define the term both ways the ' +
-      'rendering needs: SN 22.79 derives the name from the forming ("they produce conditioned ' +
-      'phenomena, that\'s why they\'re called saṅkhārā"), and SN 22.56 makes the aggregate the six ' +
-      'classes of intention — cetanā, volition. It is also Bhikkhu Bodhi\'s rendering throughout ' +
-      'SN and AN. Only that sense moves; his other renderings of the word are left alone and this ' +
-      'rule never reaches them — "conditions"/"conditioned phenomena" for sabbe saṅkhārā, ' +
-      '"physical process" for kāyasaṅkhāra, "life force" for āyusaṅkhāra, "intentions" for ' +
-      'manosaṅkhāra. The plural is upstream\'s and the Pali\'s: saṅkhārā is the only one of the ' +
-      'five aggregates that is grammatically plural, and 244 sites already agree with it. Neither ' +
-      'replacement word is upstream\'s rendering of anything else in reach: "volition" is ' +
-      'attakāra in DN 2 and AN 6.38, "formation" is vitakkasaṅkhārasaṇṭhāna in MN 20, and none of ' +
-      'those three suttas contains a saṅkhāra this rule rewrites. Open: 17 denials out of 957 ' +
-      'segments, eleven of them mn120, where saṅkhārupapatti is rebirth deliberately aspired to ' +
-      'and the sutta turns on the choosing.',
+      'senses; this app keeps the Pali, as it does for bhikkhu and Dhamma. Every English candidate ' +
+      'takes one of the term\'s senses and drops the rest: "choices" is selective where saṁ + √kar ' +
+      'is productive, and cannot cover the breath or the life force; "volitional formations" and ' +
+      '"constructions" cover those but say nothing to a reader who has not already read Bhikkhu ' +
+      'Bodhi. The reader has inline Pali and a docked dictionary, so the untranslated word gives ' +
+      'them the whole range instead of one sense of it. Only that sense moves; his other ' +
+      'renderings of the word are left alone and this rule never reaches them — ' +
+      '"conditions"/"conditioned phenomena" for sabbe saṅkhārā, "physical process" for ' +
+      'kāyasaṅkhāra, "life force" for āyusaṅkhāra, "intentions" for manosaṅkhāra. The plural is ' +
+      'anglicised rather than the Pali saṅkhārā, because the corpus needs "a saṅkhāra", "such ' +
+      'saṅkhāras" and "the saṅkhāra element" — English determiners the Pali plural cannot take. ' +
+      'Open: 17 denials out of 957 segments, eleven of them mn120, where saṅkhārupapatti is ' +
+      'rebirth deliberately aspired to and the sutta turns on the choosing.',
     mode: 'deny',
     predicate: /saṅkhār/i,
     forms: [
       // SN 22's blurb names the aggregate and then glosses it — "…; the choice to perform an act)".
-      // That second "choices" is Bhikkhu Sujato explaining the term, and moving it too would make
-      // the gloss define the term with itself. Forms match longest-first, so this claims the phrase
-      // before the bare "choice" below. "Decision" rather than "volition" or "will", both of which
-      // the same sentence already uses.
+      // That second "choices" is Bhikkhu Sujato explaining the term, and leaving it in Pali would
+      // make the gloss define the term with itself. Forms match longest-first, so this claims the
+      // phrase before the bare "choice" below. "Decision" rather than "volition" or "will", both of
+      // which the same sentence already uses.
+      // SN 22's blurb walks the five aggregates as "English (Pali, i.e. gloss)" — "form (rūpa, …)",
+      // "feeling (vedanā, …)". Keeping the Pali would make this entry gloss saṅkhāra with saṅkhārā,
+      // so the parenthesised Pali goes and the gloss it introduces stays. The markup is upstream's
+      // own and is matched literally; should the blurb be reworded, this form stops matching and
+      // the bare "choices" form below produces the redundancy again, which nothing detects.
+      ['choices (<i lang=\'pi\' translate=\'no\'>saṅkhārā</i>, i.e. intention',
+        'saṅkhāras (i.e. intention'],
       ['the choice to perform', 'the decision to perform'],
-      // saṅkhāradhātu, 8 lines in SN 22. English puts an attributive noun in the singular, and
-      // hyphenates it when it is itself two words.
-      ['choices element', 'volitional-formation element'],
-      ['choices', 'volitional formations'],
-      ['choice', 'volitional formation'],
+      // The SN 12.38–40 blurb, three identical lines: "Intentions or choices are the force that
+      // propels consciousness from one life to the next." The doublet is Bhikkhu Sujato equating
+      // cetanā with the saṅkhāra link, which needs saying while saṅkhāra reads as "choices"; with
+      // the Pali kept it reads as two different things instead of one, so the gloss goes and the
+      // sutta's own word stands alone. A form rather than a segment override because overrides
+      // resolve through sutta-only ids and this line lives in the blurb tree.
+      ['intentions or choices', 'intentions'],
+      // saṅkhāradhātu, 8 lines in SN 22. English puts an attributive noun in the singular.
+      ['choices element', 'saṅkhāra element'],
+      ['choices', 'saṅkhāras'],
+      ['choice', 'saṅkhāra'],
     ],
   },
 
@@ -536,32 +548,6 @@ export const RULES = [
     from: 'Thought and examination ',
     to: 'Thought and Examination ',
   },
-  // The same set read from the other end: caseAs treats a *single-word* match as a capitalized
-  // sentence, so sankhara-volitional-formations' two-word replacement gives "Volitional formations"
-  // wherever Bhikkhu Sujato's one-word "Choices" heads a sutta. Two headings, since the name-tree
-  // copy of AN 3.23's title is unreachable — build-corpus prefers the sutta's own 0.N segment.
-  //
-  // sankhara-volitional-formations is open, so a sutta upstream retitles to "Choices" would land
-  // here sentence-cased without review. Nothing detects that; it is the known price of the open mode.
-  {
-    id: 'an3-23-volitional-formations-title',
-    kind: 'segment',
-    why: 'AN 3.23’s title, "Choices" — a one-word match whose two-word replacement needs Title ' +
-      'Case. This is the sutta’s displayed title, so the case shows in the browse tree.',
-    segment: 'an3.23:0.3',
-    from: 'Volitional formations ',
-    to: 'Volitional Formations ',
-  },
-  {
-    id: 'sn33-4-volitional-formations-title',
-    kind: 'segment',
-    why: 'an3-23-volitional-formations-title’s problem in SN 33.4, where the heading has a ' +
-      'preceding word ("Not Knowing Choices") and only the replaced half loses its case.',
-    segment: 'sn33.4:0.3',
-    from: 'Not Knowing Volitional formations ',
-    to: 'Not Knowing Volitional Formations ',
-  },
-
   // ·· saṅkhāra rendered the other way round ··
   // DN 9 pairs ceteti with abhisaṅkharoti, and Bhikkhu Sujato assigns them the opposite way to
   // every other passage in the corpus: his "make a choice" is ceteti here, and "form an intention"
@@ -575,7 +561,7 @@ export const RULES = [
     why: 'DN 9’s ceteti/abhisaṅkharoti pair, as the reflected question in single quotes.',
     segment: 'dn9:17.5',
     from: 'Why don’t I neither make a choice nor form an intention?’ ',
-    to: 'Why don’t I neither form an intention nor generate a volitional formation?’ ',
+    to: 'Why don’t I neither form an intention nor generate a saṅkhāra?’ ',
   },
   {
     id: 'dn9-cetana-sankhara-question-double',
@@ -583,7 +569,7 @@ export const RULES = [
     why: 'dn9-cetana-sankhara-question-single’s line, as the retold question in double quotes.',
     segment: 'dn9:18.9',
     from: 'Why don’t I neither make a choice nor form an intention?” ',
-    to: 'Why don’t I neither form an intention nor generate a volitional formation?” ',
+    to: 'Why don’t I neither form an intention nor generate a saṅkhāra?” ',
   },
   {
     id: 'dn9-cetana-sankhara-answer',
@@ -591,7 +577,111 @@ export const RULES = [
     why: 'dn9-cetana-sankhara-question-single’s line, as the narrated answer.',
     segment: 'dn9:17.6',
     from: 'They neither make a choice nor form an intention. ',
-    to: 'They neither form an intention nor generate a volitional formation. ',
+    to: 'They neither form an intention nor generate a saṅkhāra. ',
+  },
+
+  // ·· a definition that needs the Pali it derives from ··
+  {
+    id: 'sn22-79-sankhata-gloss',
+    kind: 'segment',
+    why: 'SN 22.79 derives the name of the aggregate from what it does — saṅkhataṁ abhisaṅkharonti, ' +
+      'they construct the constructed. With saṅkhāra kept in Pali the line reads "saṅkhāras produce ' +
+      'conditioned phenomena; that’s why they’re called saṅkhāras", which names the term twice and ' +
+      'explains it once, leaving the derivation invisible. Naming saṅkhata beside its English puts ' +
+      'the shared root back in front of the reader, which is the whole point of the passage. Twice, ' +
+      'since the sutta states it before the analysis and again after it.',
+    segments: ['sn22.79:5.2', 'sn22.79:5.5'],
+    from: 'Saṅkhāras produce conditioned phenomena; that’s why they’re called ‘saṅkhāras’. ',
+    to: 'Saṅkhāras produce the conditioned (saṅkhata); that’s why they’re called ‘saṅkhāras’. ',
+  },
+  {
+    id: 'sn22-79-even-sankharas',
+    kind: 'segment',
+    why: 'The fourth clause of SN 22.79’s analysis turns the term on itself — saṅkhāre ' +
+      'saṅkhārattāya saṅkhataṁ abhisaṅkharonti, saṅkhāras construct even saṅkhāras. Named three ' +
+      'times in one clause with nothing marking the recursion, it reads as a mistake rather than ' +
+      'as the point; "Even" says the sentence means what it says. The other four clauses are ' +
+      'untouched.',
+    segment: 'sn22.79:5.4',
+    from: 'Form is a conditioned phenomenon; saṅkhāras are what make it into form. Feeling is a conditioned phenomenon; saṅkhāras are what make it into feeling. Perception is a conditioned phenomenon; saṅkhāras are what make it into perception. Saṅkhāras are conditioned phenomena; saṅkhāras are what make them into saṅkhāras. Consciousness is a conditioned phenomenon; saṅkhāras are what make it into consciousness. ',
+    to: 'Form is a conditioned phenomenon; saṅkhāras are what make it into form. Feeling is a conditioned phenomenon; saṅkhāras are what make it into feeling. Perception is a conditioned phenomenon; saṅkhāras are what make it into perception. Even saṅkhāras are conditioned phenomena; saṅkhāras are what make them into saṅkhāras. Consciousness is a conditioned phenomenon; saṅkhāras are what make it into consciousness. ',
+  },
+
+  // ·· number the aggregate is stated in ··
+  // saṅkhārā is grammatically plural and the corpus says so everywhere but these lines, where
+  // Bhikkhu Sujato's own "choice"/"choices" varies. The Pali doesn't carry the slip the way an
+  // English abstract noun did, so these align the odd ones with their own parallels.
+  {
+    id: 'mn9-three-kinds-of-sankharas',
+    kind: 'segment',
+    why: 'MN 9 alone writes the singular in the formula that SN 12.2, 12.27, 12.28 and 12.33 all ' +
+      'state in the plural ("There are three kinds of saṅkhāras").',
+    segment: 'mn9:62.2',
+    from: 'There are these three kinds of saṅkhāra. ',
+    to: 'There are these three kinds of saṅkhāras. ',
+  },
+  {
+    id: 'mn131-aggregate-list-past-delight',
+    kind: 'segment',
+    why: 'MN 131’s abbreviated aggregate list drops to the singular where every other list in the ' +
+      'corpus is plural. Four rules, since the four lines differ by mustering or not and by past ' +
+      'or future.',
+    segment: 'mn131:4.2',
+    from: 'You muster delight there, thinking: ‘I had such form in the past.’ … ‘I had such feeling … perception … saṅkhāra … consciousness in the past.’ ',
+    to: 'You muster delight there, thinking: ‘I had such form in the past.’ … ‘I had such feeling … perception … saṅkhāras … consciousness in the past.’ ',
+  },
+  {
+    id: 'mn131-aggregate-list-past-no-delight',
+    kind: 'segment',
+    why: 'mn131-aggregate-list-past-delight’s line, where the delight is not mustered.',
+    segment: 'mn131:5.2',
+    from: 'You don’t muster delight there, thinking: ‘I had such form in the past.’ … ‘I had such feeling … perception … saṅkhāra … consciousness in the past.’ ',
+    to: 'You don’t muster delight there, thinking: ‘I had such form in the past.’ … ‘I had such feeling … perception … saṅkhāras … consciousness in the past.’ ',
+  },
+  {
+    id: 'mn131-aggregate-list-future-delight',
+    kind: 'segment',
+    why: 'mn131-aggregate-list-past-delight’s line, told of the future.',
+    segment: 'mn131:6.2',
+    from: 'You muster delight there, thinking: ‘May I have such form in the future.’ … ‘May I have such feeling … perception … saṅkhāra … consciousness in the future.’ ',
+    to: 'You muster delight there, thinking: ‘May I have such form in the future.’ … ‘May I have such feeling … perception … saṅkhāras … consciousness in the future.’ ',
+  },
+  {
+    id: 'mn131-aggregate-list-future-no-delight',
+    kind: 'segment',
+    why: 'mn131-aggregate-list-past-delight’s line, told of the future and not mustered.',
+    segment: 'mn131:7.2',
+    from: 'You don’t muster delight there, thinking: ‘May I have such form in the future.’ … ‘May I have such feeling … perception … saṅkhāra … consciousness in the future.’ ',
+    to: 'You don’t muster delight there, thinking: ‘May I have such form in the future.’ … ‘May I have such feeling … perception … saṅkhāras … consciousness in the future.’ ',
+  },
+  {
+    id: 'any-kind-of-sankhara-at-all',
+    kind: 'segment',
+    why: '"Any kind of X at all" takes the singular for every other aggregate — "any kind of form ' +
+      'at all", "any kind of feeling at all" — and only saṅkhāra reads plural after it. The ' +
+      'summing "all saṅkhāras" later in the same sentence stays plural, as it does there too. ' +
+      'SN 22.95 is deliberately left alone: its sentence carries on with "examining them ' +
+      'properly. And they appear to them…", so singularising only the head would leave the ' +
+      'pronouns disagreeing with it.',
+    segments: ['mn109:8.5', 'sn22.48:1.8', 'sn22.48:2.5', 'sn22.59:9.2', 'sn22.82:6.5'],
+    from: 'Any kind of saṅkhāras at all … ',
+    to: 'Any kind of saṅkhāra at all … ',
+  },
+  {
+    id: 'any-kind-of-sankhara-at-all-you-should-see',
+    kind: 'segment',
+    why: 'any-kind-of-sankhara-at-all’s phrase, in the full formula as an instruction.',
+    segment: 'sn12.70:16.4',
+    from: 'You should truly see any kind of saṅkhāras at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> saṅkhāras—with right understanding: ‘This is not mine, I am not this, this is not my self.’ ',
+    to: 'You should truly see any kind of saṅkhāra at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> saṅkhāras—with right understanding: ‘This is not mine, I am not this, this is not my self.’ ',
+  },
+  {
+    id: 'any-kind-of-sankhara-at-all-they-see',
+    kind: 'segment',
+    why: 'any-kind-of-sankhara-at-all-you-should-see’s formula, narrated rather than instructed.',
+    segment: 'an3.133:2.5',
+    from: 'They truly see any kind of saṅkhāras at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> saṅkhāras—with right understanding: ‘This is not mine, I am not this, this is not my self.’ ',
+    to: 'They truly see any kind of saṅkhāra at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> saṅkhāras—with right understanding: ‘This is not mine, I am not this, this is not my self.’ ',
   },
 
   // ·· a compound this rule is not meant to touch ··
@@ -600,10 +690,10 @@ export const RULES = [
     kind: 'segment',
     why: 'sabbasaṅkhārasamatha is "the stilling of all activities" in all thirty other places it ' +
       'appears; Snp 3.12 alone is where Bhikkhu Sujato wrote "choices" for it, so ' +
-      'sankhara-volitional-formations catches the one outlier. The compound is outside this app’s ' +
+      'sankhara-pali catches the one outlier. The compound is outside this app’s ' +
       'scope for saṅkhāra, so this restores upstream’s own majority wording.',
     segment: 'snp3.12:16.3',
-    from: 'through the stilling of all volitional formations, ',
+    from: 'through the stilling of all saṅkhāras, ',
     to: 'through the stilling of all activities, ',
   },
 
@@ -612,12 +702,12 @@ export const RULES = [
     id: 'snp3-12-sankhara-have-faded',
     kind: 'segment',
     why: 'Snp 3.12 reads "When choices has faded away" upstream — a number disagreement that ' +
-      'predates this app, and that sankhara-volitional-formations would otherwise carry forward ' +
-      'verbatim as "When volitional formations has faded away". Every parallel line in the same ' +
+      'predates this app, and that sankhara-pali would otherwise carry forward ' +
+      'verbatim as "When saṅkhāras has faded away". Every parallel line in the same ' +
       'poem uses the plural verb.',
     segment: 'snp3.12:14.4',
-    from: '‘When volitional formations has faded away and ceased with no residue left behind, there is no origination of suffering’: this is the second contemplation. ',
-    to: '‘When volitional formations have faded away and ceased with no residue left behind, there is no origination of suffering’: this is the second contemplation. ',
+    from: '‘When saṅkhāras has faded away and ceased with no residue left behind, there is no origination of suffering’: this is the second contemplation. ',
+    to: '‘When saṅkhāras have faded away and ceased with no residue left behind, there is no origination of suffering’: this is the second contemplation. ',
   },
 
   // ·· an idiom the replacement adjective cannot take ··

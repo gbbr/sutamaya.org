@@ -1,0 +1,8 @@
+Rule: mn131-aggregate-list-future-no-delight — 1 change(s), 1 file(s)
+
+--- sujato/sutta/mn/mn131_translation-en-sujato.json
++++ sujato/sutta/mn/mn131_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn131:7.2
+ PLI: ‘Evaṁrūpo siyaṁ anāgatamaddhānan’ti tattha nandiṁ na samanvāneti, evaṁvedano siyaṁ … evaṁsañño siyaṁ … evaṁsaṅkhāro siyaṁ … ‘evaṁviññāṇo siyaṁ anāgatamaddhānan’ti tattha nandiṁ na samanvāneti—
+-You don’t muster delight there, thinking: ‘May I have such form in the future.’ … ‘May I have such feeling … perception … saṅkhāra … consciousness in the future.’ 
++You don’t muster delight there, thinking: ‘May I have such form in the future.’ … ‘May I have such feeling … perception … saṅkhāras … consciousness in the future.’ 

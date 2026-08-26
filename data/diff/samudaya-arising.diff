@@ -3,8 +3,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 --- sujato/blurb/sn-blurbs_root-en.json
 +++ sujato/blurb/sn-blurbs_root-en.json
 @@ -1 +1 @@ sn-blurbs:sn12
--The “Linked Discourses on Causation” is a major collection containing 93 discourses on the core Buddhist teaching of dependent origination. Dependent origination presents a series of conditional links laying bare how suffering originates and how it ends. As such, it is an extended treatment of the second and third noble truths. It integrates psychological and existential aspects of suffering, showing how when bound by attachment we generate volitional formations that bind us to transmigrating into future lives. One of the core purposes is to explain how rebirth takes place without having to invoke metaphysical concepts such as a “soul”. The collection begins by defining each of the terms in the standard 12-linked chain, definitions which are assumed to apply throughout. Remaining discourses iterate on this theme, introducing new perspectives and formulations. 
-+The “Linked Discourses on Causation” is a major collection containing 93 discourses on the core Buddhist teaching of dependent origination. Dependent origination presents a series of conditional links laying bare how suffering arises and how it ends. As such, it is an extended treatment of the second and third noble truths. It integrates psychological and existential aspects of suffering, showing how when bound by attachment we generate volitional formations that bind us to transmigrating into future lives. One of the core purposes is to explain how rebirth takes place without having to invoke metaphysical concepts such as a “soul”. The collection begins by defining each of the terms in the standard 12-linked chain, definitions which are assumed to apply throughout. Remaining discourses iterate on this theme, introducing new perspectives and formulations. 
+-The “Linked Discourses on Causation” is a major collection containing 93 discourses on the core Buddhist teaching of dependent origination. Dependent origination presents a series of conditional links laying bare how suffering originates and how it ends. As such, it is an extended treatment of the second and third noble truths. It integrates psychological and existential aspects of suffering, showing how when bound by attachment we generate saṅkhāras that bind us to transmigrating into future lives. One of the core purposes is to explain how rebirth takes place without having to invoke metaphysical concepts such as a “soul”. The collection begins by defining each of the terms in the standard 12-linked chain, definitions which are assumed to apply throughout. Remaining discourses iterate on this theme, introducing new perspectives and formulations. 
++The “Linked Discourses on Causation” is a major collection containing 93 discourses on the core Buddhist teaching of dependent origination. Dependent origination presents a series of conditional links laying bare how suffering arises and how it ends. As such, it is an extended treatment of the second and third noble truths. It integrates psychological and existential aspects of suffering, showing how when bound by attachment we generate saṅkhāras that bind us to transmigrating into future lives. One of the core purposes is to explain how rebirth takes place without having to invoke metaphysical concepts such as a “soul”. The collection begins by defining each of the terms in the standard 12-linked chain, definitions which are assumed to apply throughout. Remaining discourses iterate on this theme, introducing new perspectives and formulations. 
 @@ -1 +1 @@ sn-blurbs:sn56
 -The “Linked Discourses on the Truths” contains 131 discourses on the four noble truths: suffering, its origin, its cessation, and the path. These formed the main subject of the Buddha’s first discourse, which is included here as SN 56.11. The Buddha said that all of his teaching was comprised within the four noble truths. Indeed, the overall structure of the main doctrinal Saṁyuttas can be seen as an expanded example of this: The sections on the Aggregates and the Sense Fields deal with the first noble truth; Dependent Origination deals with the second and third; and the chapters on the Path deal with the final truth. This chapter thus provides an overall perspective on the other teachings, and the chapter occurs at the end just as the realization of the four noble truths emerges from the path.
 +The “Linked Discourses on the Truths” contains 131 discourses on the four noble truths: suffering, its arising, its cessation, and the path. These formed the main subject of the Buddha’s first discourse, which is included here as SN 56.11. The Buddha said that all of his teaching was comprised within the four noble truths. Indeed, the overall structure of the main doctrinal Saṁyuttas can be seen as an expanded example of this: The sections on the Aggregates and the Sense Fields deal with the first noble truth; Dependent Origination deals with the second and third; and the chapters on the Path deal with the final truth. This chapter thus provides an overall perspective on the other teachings, and the chapter occurs at the end just as the realization of the four noble truths emerges from the path.
@@ -386,8 +386,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +Such is perception, such is the arising of perception, such is the disappearing of perception. 
 @@ -1,2 +1,2 @@ an4.41:5.6
  PLI: iti saṅkhārā, iti saṅkhārānaṁ samudayo, iti saṅkhārānaṁ atthaṅgamo; 
--Such are volitional formations, such is the origin of volitional formations, such is the disappearing of volitional formations. 
-+Such are volitional formations, such is the arising of volitional formations, such is the disappearing of volitional formations. 
+-Such are saṅkhāras, such is the origin of saṅkhāras, such is the disappearing of saṅkhāras. 
++Such are saṅkhāras, such is the arising of saṅkhāras, such is the disappearing of saṅkhāras. 
 @@ -1,2 +1,2 @@ an4.41:5.7
  PLI: iti viññāṇaṁ, iti viññāṇassa samudayo, iti viññāṇassa atthaṅgamo’ti. 
 -Such is consciousness, such is the origin of consciousness, such is the disappearing of consciousness.’ 
@@ -508,8 +508,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +Such is perception, such is the arising of perception, such is the disappearing of perception. 
 @@ -1,2 +1,2 @@ an8.2:8.5
  PLI: iti saṅkhārā … 
--Such are volitional formations, such is the origin of volitional formations, such is the disappearing of volitional formations. 
-+Such are volitional formations, such is the arising of volitional formations, such is the disappearing of volitional formations. 
+-Such are saṅkhāras, such is the origin of saṅkhāras, such is the disappearing of saṅkhāras. 
++Such are saṅkhāras, such is the arising of saṅkhāras, such is the disappearing of saṅkhāras. 
 @@ -1,2 +1,2 @@ an8.2:8.6
  PLI: iti viññāṇaṁ, iti viññāṇassa samudayo, iti viññāṇassa atthaṅgamo’ti. 
 -Such is consciousness, such is the origin of consciousness, such is the disappearing of consciousness.’ 
@@ -588,8 +588,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +Such is perception, such is the arising of perception, such is the disappearing of perception. 
 @@ -1,2 +1,2 @@ dn14:2.22.5
  PLI: iti saṅkhārā, iti saṅkhārānaṁ samudayo, iti saṅkhārānaṁ atthaṅgamo; 
--Such are volitional formations, such is the origin of volitional formations, such is the disappearing of volitional formations. 
-+Such are volitional formations, such is the arising of volitional formations, such is the disappearing of volitional formations. 
+-Such are saṅkhāras, such is the origin of saṅkhāras, such is the disappearing of saṅkhāras. 
++Such are saṅkhāras, such is the arising of saṅkhāras, such is the disappearing of saṅkhāras. 
 @@ -1,2 +1,2 @@ dn14:2.22.6
  PLI: iti viññāṇaṁ, iti viññāṇassa samudayo, iti viññāṇassa atthaṅgamo’ti, 
 -Such is consciousness, such is the origin of consciousness, such is the disappearing of consciousness.’ 
@@ -774,8 +774,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +Such is perception, such is the arising of perception, such is the disappearing of perception. 
 @@ -1,2 +1,2 @@ dn22:14.7
  PLI: iti saṅkhārā, iti saṅkhārānaṁ samudayo, iti saṅkhārānaṁ atthaṅgamo, 
--Such are volitional formations, such is the origin of volitional formations, such is the disappearing of volitional formations. 
-+Such are volitional formations, such is the arising of volitional formations, such is the disappearing of volitional formations. 
+-Such are saṅkhāras, such is the origin of saṅkhāras, such is the disappearing of saṅkhāras. 
++Such are saṅkhāras, such is the arising of saṅkhāras, such is the disappearing of saṅkhāras. 
 @@ -1,2 +1,2 @@ dn22:14.8
  PLI: iti viññāṇaṁ, iti viññāṇassa samudayo, iti viññāṇassa atthaṅgamo’ti, 
 -Such is consciousness, such is the origin of consciousness, such is the disappearing of consciousness.’ 
@@ -862,8 +862,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +Such is perception, such is the arising of perception, such is the disappearing of perception. 
 @@ -1,2 +1,2 @@ dn34:2.1.26
  PLI: iti saṅkhārā iti saṅkhārānaṁ samudayo iti saṅkhārānaṁ atthaṅgamo; 
--Such are volitional formations, such is the origin of volitional formations, such is the disappearing of volitional formations. 
-+Such are volitional formations, such is the arising of volitional formations, such is the disappearing of volitional formations. 
+-Such are saṅkhāras, such is the origin of saṅkhāras, such is the disappearing of saṅkhāras. 
++Such are saṅkhāras, such is the arising of saṅkhāras, such is the disappearing of saṅkhāras. 
 @@ -1,2 +1,2 @@ dn34:2.1.27
  PLI: iti viññāṇaṁ iti viññāṇassa samudayo iti viññāṇassa atthaṅgamo’ti. 
 -Such is consciousness, such is the origin of consciousness, such is the disappearing of consciousness.’ 
@@ -1072,8 +1072,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +Such is perception, such is the arising of perception, such is the disappearing of perception. 
 @@ -1,2 +1,2 @@ mn10:38.7
  PLI: iti saṅkhārā, iti saṅkhārānaṁ samudayo, iti saṅkhārānaṁ atthaṅgamo; 
--Such are volitional formations, such is the origin of volitional formations, such is the disappearing of volitional formations. 
-+Such are volitional formations, such is the arising of volitional formations, such is the disappearing of volitional formations. 
+-Such are saṅkhāras, such is the origin of saṅkhāras, such is the disappearing of saṅkhāras. 
++Such are saṅkhāras, such is the arising of saṅkhāras, such is the disappearing of saṅkhāras. 
 @@ -1,2 +1,2 @@ mn10:38.8
  PLI: iti viññāṇaṁ, iti viññāṇassa samudayo, iti viññāṇassa atthaṅgamo’ti; 
 -Such is consciousness, such is the origin of consciousness, such is the disappearing of consciousness.’ 
@@ -1400,8 +1400,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +Such is perception, such is the arising of perception, such is the disappearing of perception. 
 @@ -1,2 +1,2 @@ mn72:15.7
  PLI: iti saṅkhārā, iti saṅkhārānaṁ samudayo, iti saṅkhārānaṁ atthaṅgamo; 
--Such are volitional formations, such is the origin of volitional formations, such is the disappearing of volitional formations. 
-+Such are volitional formations, such is the arising of volitional formations, such is the disappearing of volitional formations. 
+-Such are saṅkhāras, such is the origin of saṅkhāras, such is the disappearing of saṅkhāras. 
++Such are saṅkhāras, such is the arising of saṅkhāras, such is the disappearing of saṅkhāras. 
 @@ -1,2 +1,2 @@ mn72:15.8
  PLI: iti viññāṇaṁ, iti viññāṇassa samudayo, iti viññāṇassa atthaṅgamo’ti. 
 -Such is consciousness, such is the origin of consciousness, such is the disappearing of consciousness.’ 
@@ -1650,20 +1650,20 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +But what is consciousness? What is its arising, its cessation, and the practice that leads to its cessation? 
 @@ -1,2 +1,2 @@ mn9:58.4
  PLI: Saṅkhārasamudayā viññāṇasamudayo, saṅkhāranirodhā viññāṇanirodho, ayameva ariyo aṭṭhaṅgiko maggo viññāṇanirodhagāminī paṭipadā, seyyathidaṁ—
--Consciousness originates from volitional formations. Consciousness ceases when volitional formations cease. The practice that leads to the cessation of consciousness is simply this noble eightfold path …” 
-+Consciousness arises from volitional formations. Consciousness ceases when volitional formations cease. The practice that leads to the cessation of consciousness is simply this noble eightfold path …” 
+-Consciousness originates from saṅkhāras. Consciousness ceases when saṅkhāras cease. The practice that leads to the cessation of consciousness is simply this noble eightfold path …” 
++Consciousness arises from saṅkhāras. Consciousness ceases when saṅkhāras cease. The practice that leads to the cessation of consciousness is simply this noble eightfold path …” 
 @@ -1,2 +1,2 @@ mn9:61.2
  PLI: Yato kho, āvuso, ariyasāvako saṅkhāre ca pajānāti, saṅkhārasamudayañca pajānāti, saṅkhāranirodhañca pajānāti, saṅkhāranirodhagāminiṁ paṭipadañca pajānāti—
--A noble disciple understands volitional formations, their origin, their cessation, and the practice that leads to their cessation … 
-+A noble disciple understands volitional formations, their arising, their cessation, and the practice that leads to their cessation … 
+-A noble disciple understands saṅkhāras, their origin, their cessation, and the practice that leads to their cessation … 
++A noble disciple understands saṅkhāras, their arising, their cessation, and the practice that leads to their cessation … 
 @@ -1,2 +1,2 @@ mn9:62.1
  PLI: Katame panāvuso, saṅkhārā, katamo saṅkhārasamudayo, katamo saṅkhāranirodho, katamā saṅkhāranirodhagāminī paṭipadā? 
--But what are volitional formations? What is their origin, their cessation, and the practice that leads to their cessation? 
-+But what are volitional formations? What is their arising, their cessation, and the practice that leads to their cessation? 
+-But what are saṅkhāras? What is their origin, their cessation, and the practice that leads to their cessation? 
++But what are saṅkhāras? What is their arising, their cessation, and the practice that leads to their cessation? 
 @@ -1,2 +1,2 @@ mn9:62.4
  PLI: Avijjāsamudayā saṅkhārasamudayo, avijjānirodhā saṅkhāranirodho, ayameva ariyo aṭṭhaṅgiko maggo saṅkhāranirodhagāminī paṭipadā, seyyathidaṁ—
--Volitional formations originate from ignorance. Volitional formations cease when ignorance ceases. The practice that leads to the cessation of volitional formations is simply this noble eightfold path …” 
-+Volitional formations arise from ignorance. Volitional formations cease when ignorance ceases. The practice that leads to the cessation of volitional formations is simply this noble eightfold path …” 
+-Saṅkhāras originate from ignorance. Saṅkhāras cease when ignorance ceases. The practice that leads to the cessation of saṅkhāras is simply this noble eightfold path …” 
++Saṅkhāras arise from ignorance. Saṅkhāras cease when ignorance ceases. The practice that leads to the cessation of saṅkhāras is simply this noble eightfold path …” 
 @@ -1,2 +1,2 @@ mn9:65.1
  PLI: Yato kho, āvuso, ariyasāvako avijjañca pajānāti, avijjāsamudayañca pajānāti, avijjānirodhañca pajānāti, avijjānirodhagāminiṁ paṭipadañca pajānāti—
 -A noble disciple understands ignorance, its origin, its cessation, and the practice that leads to its cessation … 
@@ -1730,16 +1730,16 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +“Bhikkhus, there are ascetics and brahmins who don’t understand old age and death, their arising, their cessation, and the practice that leads to their cessation. 
 @@ -1,2 +1,2 @@ sn12.13:1.12
  PLI: saṅkhāre nappajānanti, saṅkhārasamudayaṁ nappajānanti, saṅkhāranirodhaṁ nappajānanti, saṅkhāranirodhagāminiṁ paṭipadaṁ nappajānanti, 
--They don’t understand volitional formations, their origin, their cessation, and the practice that leads to their cessation. 
-+They don’t understand volitional formations, their arising, their cessation, and the practice that leads to their cessation. 
+-They don’t understand saṅkhāras, their origin, their cessation, and the practice that leads to their cessation. 
++They don’t understand saṅkhāras, their arising, their cessation, and the practice that leads to their cessation. 
 @@ -1,2 +1,2 @@ sn12.13:2.1
  PLI: Ye ca kho keci, bhikkhave, samaṇā vā brāhmaṇā vā jarāmaraṇaṁ pajānanti, jarāmaraṇasamudayaṁ pajānanti, jarāmaraṇanirodhaṁ pajānanti, jarāmaraṇanirodhagāminiṁ paṭipadaṁ pajānanti; 
 -There are ascetics and brahmins who do understand old age and death, their origin, their cessation, and the practice that leads to their cessation. 
 +There are ascetics and brahmins who do understand old age and death, their arising, their cessation, and the practice that leads to their cessation. 
 @@ -1,2 +1,2 @@ sn12.13:2.11
  PLI: saṅkhāre pajānanti, saṅkhārasamudayaṁ pajānanti, saṅkhāranirodhaṁ pajānanti, saṅkhāranirodhagāminiṁ paṭipadaṁ pajānanti, 
--They understand volitional formations, their origin, their cessation, and the practice that leads to their cessation. 
-+They understand volitional formations, their arising, their cessation, and the practice that leads to their cessation. 
+-They understand saṅkhāras, their origin, their cessation, and the practice that leads to their cessation. 
++They understand saṅkhāras, their arising, their cessation, and the practice that leads to their cessation. 
 --- sujato/sutta/sn/sn12/sn12.14_translation-en-sujato.json
 +++ sujato/sutta/sn/sn12/sn12.14_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn12.14:1.2
@@ -1752,8 +1752,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +They don’t understand old age and death, their arising, their cessation, and the practice that leads to their cessation. 
 @@ -1,2 +1,2 @@ sn12.14:2.11
  PLI: saṅkhāre nappajānanti, saṅkhārasamudayaṁ nappajānanti, saṅkhāranirodhaṁ nappajānanti, saṅkhāranirodhagāminiṁ paṭipadaṁ nappajānanti. 
--They don’t understand volitional formations, their origin, their cessation, and the practice that leads to their cessation. 
-+They don’t understand volitional formations, their arising, their cessation, and the practice that leads to their cessation. 
+-They don’t understand saṅkhāras, their origin, their cessation, and the practice that leads to their cessation. 
++They don’t understand saṅkhāras, their arising, their cessation, and the practice that leads to their cessation. 
 @@ -1,2 +1,2 @@ sn12.14:2.12
  PLI: Ime dhamme nappajānanti, imesaṁ dhammānaṁ samudayaṁ nappajānanti, imesaṁ dhammānaṁ nirodhaṁ nappajānanti, imesaṁ dhammānaṁ nirodhagāminiṁ paṭipadaṁ nappajānanti. 
 -They don’t understand these things, their origin, their cessation, and the practice that leads to their cessation. 
@@ -1768,8 +1768,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +They understand old age and death, their arising, their cessation, and the practice that leads to their cessation. 
 @@ -1,2 +1,2 @@ sn12.14:4.11
  PLI: saṅkhāre pajānanti, saṅkhārasamudayaṁ pajānanti, saṅkhāranirodhaṁ pajānanti, saṅkhāranirodhagāminiṁ paṭipadaṁ pajānanti. 
--They understand volitional formations, their origin, their cessation, and the practice that leads to their cessation. 
-+They understand volitional formations, their arising, their cessation, and the practice that leads to their cessation. 
+-They understand saṅkhāras, their origin, their cessation, and the practice that leads to their cessation. 
++They understand saṅkhāras, their arising, their cessation, and the practice that leads to their cessation. 
 @@ -1,2 +1,2 @@ sn12.14:4.12
  PLI: Ime dhamme pajānanti, imesaṁ dhammānaṁ samudayaṁ pajānanti, imesaṁ dhammānaṁ nirodhaṁ pajānanti, imesaṁ dhammānaṁ nirodhagāminiṁ paṭipadaṁ pajānanti. 
 -They understand these things, their origin, their cessation, and the practice that leads to their cessation. 
@@ -1818,8 +1818,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +Such is perception, such is the arising of perception, such is the disappearing of perception. 
 @@ -1,2 +1,2 @@ sn12.21:1.6
  PLI: iti saṅkhārā iti saṅkhārānaṁ samudayo iti saṅkhārānaṁ atthaṅgamo, 
--Such are volitional formations, such is the origin of volitional formations, such is the disappearing of volitional formations. 
-+Such are volitional formations, such is the arising of volitional formations, such is the disappearing of volitional formations. 
+-Such are saṅkhāras, such is the origin of saṅkhāras, such is the disappearing of saṅkhāras. 
++Such are saṅkhāras, such is the arising of saṅkhāras, such is the disappearing of saṅkhāras. 
 @@ -1,2 +1,2 @@ sn12.21:1.7
  PLI: iti viññāṇaṁ iti viññāṇassa samudayo iti viññāṇassa atthaṅgamo. 
 -Such is consciousness, such is the origin of consciousness, such is the disappearing of consciousness. 
@@ -1844,8 +1844,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +Such is perception, such is the arising of perception, such is the disappearing of perception. 
 @@ -1,2 +1,2 @@ sn12.22:1.6
  PLI: iti saṅkhārā iti saṅkhārānaṁ samudayo iti saṅkhārānaṁ atthaṅgamo, 
--Such are volitional formations, such is the origin of volitional formations, such is the disappearing of volitional formations. 
-+Such are volitional formations, such is the arising of volitional formations, such is the disappearing of volitional formations. 
+-Such are saṅkhāras, such is the origin of saṅkhāras, such is the disappearing of saṅkhāras. 
++Such are saṅkhāras, such is the arising of saṅkhāras, such is the disappearing of saṅkhāras. 
 @@ -1,2 +1,2 @@ sn12.22:1.7
  PLI: iti viññāṇaṁ iti viññāṇassa samudayo iti viññāṇassa atthaṅgamo. 
 -Such is consciousness, such is the origin of consciousness, such is the disappearing of consciousness. 
@@ -1890,8 +1890,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +Rebirth is the arising of old age and death. 
 @@ -1,2 +1,2 @@ sn12.27:4.5
  PLI: Avijjāsamudayā saṅkhārasamudayo; 
--Ignorance is the origin of volitional formations. 
-+Ignorance is the arising of volitional formations. 
+-Ignorance is the origin of saṅkhāras. 
++Ignorance is the arising of saṅkhāras. 
 @@ -1,2 +1,2 @@ sn12.27:5.1
  PLI: Yato kho, bhikkhave, ariyasāvako evaṁ paccayaṁ pajānāti, evaṁ paccayasamudayaṁ pajānāti, evaṁ paccayanirodhaṁ pajānāti, evaṁ paccayanirodhagāminiṁ paṭipadaṁ pajānāti. 
 -When a noble disciple thus understands dependency, its origin, its cessation, and the practice that leads to its cessation, 
@@ -1904,16 +1904,16 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +“A bhikkhu understands old age and death, their arising, their cessation, and the practice that leads to their cessation. They understand rebirth … 
 @@ -1,2 +1,2 @@ sn12.28:1.12
  PLI: saṅkhāre pajānāti, saṅkhārasamudayaṁ pajānāti, saṅkhāranirodhaṁ pajānāti, saṅkhāranirodhagāminiṁ paṭipadaṁ pajānāti. 
--They understand volitional formations, their origin, their cessation, and the practice that leads to their cessation. 
-+They understand volitional formations, their arising, their cessation, and the practice that leads to their cessation. 
+-They understand saṅkhāras, their origin, their cessation, and the practice that leads to their cessation. 
++They understand saṅkhāras, their arising, their cessation, and the practice that leads to their cessation. 
 @@ -1,2 +1,2 @@ sn12.28:2.8
  PLI: Jātisamudayā jarāmaraṇasamudayo; 
 -Rebirth is the origin of old age and death. 
 +Rebirth is the arising of old age and death. 
 @@ -1,2 +1,2 @@ sn12.28:4.5
  PLI: Avijjāsamudayā saṅkhārasamudayo; 
--Ignorance is the origin of volitional formations. 
-+Ignorance is the arising of volitional formations. 
+-Ignorance is the origin of saṅkhāras. 
++Ignorance is the arising of saṅkhāras. 
 @@ -1,2 +1,2 @@ sn12.28:5.1
  PLI: Yato kho, bhikkhave, bhikkhu evaṁ jarāmaraṇaṁ pajānāti, evaṁ jarāmaraṇasamudayaṁ pajānāti, evaṁ jarāmaraṇanirodhaṁ pajānāti, evaṁ jarāmaraṇanirodhagāminiṁ paṭipadaṁ pajānāti, evaṁ jātiṁ pajānāti …pe… 
 -A bhikkhu understands old age and death, their origin, their cessation, and the practice that leads to their cessation. They understand rebirth … 
@@ -1938,8 +1938,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +There are ascetics and brahmins who completely understand old age and death, their arising, their cessation, and the practice that leads to their cessation. They completely understand rebirth … 
 @@ -1,2 +1,2 @@ sn12.29:2.10
  PLI: saṅkhāre parijānanti, saṅkhārasamudayaṁ parijānanti, saṅkhāranirodhaṁ parijānanti, saṅkhāranirodhagāminiṁ paṭipadaṁ parijānanti. 
--They completely understand volitional formations, their origin, their cessation, and the practice that leads to their cessation. 
-+They completely understand volitional formations, their arising, their cessation, and the practice that leads to their cessation. 
+-They completely understand saṅkhāras, their origin, their cessation, and the practice that leads to their cessation. 
++They completely understand saṅkhāras, their arising, their cessation, and the practice that leads to their cessation. 
 --- sujato/sutta/sn/sn12/sn12.2_translation-en-sujato.json
 +++ sujato/sutta/sn/sn12/sn12.2_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn12.2:2.13
@@ -1962,16 +1962,16 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +“Bhikkhus, there are ascetics and brahmins who don’t understand old age and death, their arising, their cessation, and the practice that leads to their cessation. It’s impossible that they will abide having transcended old age and death. 
 @@ -1,2 +1,2 @@ sn12.30:1.13
  PLI: saṅkhāre nappajānanti, saṅkhārasamudayaṁ nappajānanti, saṅkhāranirodhaṁ nappajānanti, saṅkhāranirodhagāminiṁ paṭipadaṁ nappajānanti te vata saṅkhāre samatikkamma ṭhassantīti netaṁ ṭhānaṁ vijjati. 
--They don’t understand volitional formations, their origin, their cessation, and the practice that leads to their cessation. It’s impossible that they will abide having transcended volitional formations. 
-+They don’t understand volitional formations, their arising, their cessation, and the practice that leads to their cessation. It’s impossible that they will abide having transcended volitional formations. 
+-They don’t understand saṅkhāras, their origin, their cessation, and the practice that leads to their cessation. It’s impossible that they will abide having transcended saṅkhāras. 
++They don’t understand saṅkhāras, their arising, their cessation, and the practice that leads to their cessation. It’s impossible that they will abide having transcended saṅkhāras. 
 @@ -1,2 +1,2 @@ sn12.30:2.1
  PLI: Ye ca kho keci, bhikkhave, samaṇā vā brāhmaṇā vā jarāmaraṇaṁ pajānanti, jarāmaraṇasamudayaṁ pajānanti, jarāmaraṇanirodhaṁ pajānanti, jarāmaraṇanirodhagāminiṁ paṭipadaṁ pajānanti te vata jarāmaraṇaṁ samatikkamma ṭhassantīti ṭhānametaṁ vijjati. 
 -There are ascetics and brahmins who do understand old age and death, their origin, their cessation, and the practice that leads to their cessation. It’s possible that they will abide having transcended old age and death. 
 +There are ascetics and brahmins who do understand old age and death, their arising, their cessation, and the practice that leads to their cessation. It’s possible that they will abide having transcended old age and death. 
 @@ -1,2 +1,2 @@ sn12.30:2.11
  PLI: saṅkhāre pajānanti, saṅkhārasamudayaṁ pajānanti, saṅkhāranirodhaṁ pajānanti, saṅkhāranirodhagāminiṁ paṭipadaṁ pajānanti. 
--They understand volitional formations, their origin, their cessation, and the practice that leads to their cessation. 
-+They understand volitional formations, their arising, their cessation, and the practice that leads to their cessation. 
+-They understand saṅkhāras, their origin, their cessation, and the practice that leads to their cessation. 
++They understand saṅkhāras, their arising, their cessation, and the practice that leads to their cessation. 
 --- sujato/sutta/sn/sn12/sn12.32_translation-en-sujato.json
 +++ sujato/sutta/sn/sn12/sn12.32_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn12.32:9.2
@@ -1990,8 +1990,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +Knowledge of old age and death, knowledge of the arising of old age and death, knowledge of the cessation of old age and death, and knowledge of the practice that leads to the cessation of old age and death. 
 @@ -1,2 +1,2 @@ sn12.33:2.12
  PLI: saṅkhāresu ñāṇaṁ, saṅkhārasamudaye ñāṇaṁ, saṅkhāranirodhe ñāṇaṁ, saṅkhāranirodhagāminiyā paṭipadāya ñāṇaṁ. 
--Knowledge of volitional formations, knowledge of the origin of volitional formations, knowledge of the cessation of volitional formations, and knowledge of the practice that leads to the cessation of volitional formations. 
-+Knowledge of volitional formations, knowledge of the arising of volitional formations, knowledge of the cessation of volitional formations, and knowledge of the practice that leads to the cessation of volitional formations. 
+-Knowledge of saṅkhāras, knowledge of the origin of saṅkhāras, knowledge of the cessation of saṅkhāras, and knowledge of the practice that leads to the cessation of saṅkhāras. 
++Knowledge of saṅkhāras, knowledge of the arising of saṅkhāras, knowledge of the cessation of saṅkhāras, and knowledge of the practice that leads to the cessation of saṅkhāras. 
 @@ -1,2 +1,2 @@ sn12.33:4.1
  PLI: Jātisamudayā jarāmaraṇasamudayo; 
 -Rebirth is the origin of old age and death. 
@@ -2010,20 +2010,20 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +Whatever ascetics and brahmins in the future will directly know old age and death, their arising, their cessation, and the practice that leads to their cessation, all of them will directly know these things in exactly the same way that I do now. 
 @@ -1,2 +1,2 @@ sn12.33:10.1
  PLI: Avijjāsamudayā saṅkhārasamudayo; 
--Ignorance is the origin of volitional formations. 
-+Ignorance is the arising of volitional formations. 
+-Ignorance is the origin of saṅkhāras. 
++Ignorance is the arising of saṅkhāras. 
 @@ -1,2 +1,2 @@ sn12.33:11.1
  PLI: Yato kho, bhikkhave, ariyasāvako evaṁ saṅkhāre pajānāti, evaṁ saṅkhārasamudayaṁ pajānāti, evaṁ saṅkhāranirodhaṁ pajānāti, evaṁ saṅkhāranirodhagāminiṁ paṭipadaṁ pajānāti, idamassa dhamme ñāṇaṁ. 
--A noble disciple understands volitional formations, their origin, their cessation, and the practice that leads to their cessation. This is their knowledge of the teaching. 
-+A noble disciple understands volitional formations, their arising, their cessation, and the practice that leads to their cessation. This is their knowledge of the teaching. 
+-A noble disciple understands saṅkhāras, their origin, their cessation, and the practice that leads to their cessation. This is their knowledge of the teaching. 
++A noble disciple understands saṅkhāras, their arising, their cessation, and the practice that leads to their cessation. This is their knowledge of the teaching. 
 @@ -1,2 +1,2 @@ sn12.33:12.1
  PLI: Ye kho keci atītamaddhānaṁ samaṇā vā brāhmaṇā vā saṅkhāre abbhaññaṁsu, saṅkhārasamudayaṁ abbhaññaṁsu, saṅkhāranirodhaṁ abbhaññaṁsu, saṅkhāranirodhagāminiṁ paṭipadaṁ abbhaññaṁsu, sabbete evameva abbhaññaṁsu, seyyathāpāhaṁ etarahi. 
--Whatever ascetics and brahmins in the past directly knew volitional formations, their origin, their cessation, and the practice that leads to their cessation, all of them directly knew these things in exactly the same way that I do now. 
-+Whatever ascetics and brahmins in the past directly knew volitional formations, their arising, their cessation, and the practice that leads to their cessation, all of them directly knew these things in exactly the same way that I do now. 
+-Whatever ascetics and brahmins in the past directly knew saṅkhāras, their origin, their cessation, and the practice that leads to their cessation, all of them directly knew these things in exactly the same way that I do now. 
++Whatever ascetics and brahmins in the past directly knew saṅkhāras, their arising, their cessation, and the practice that leads to their cessation, all of them directly knew these things in exactly the same way that I do now. 
 @@ -1,2 +1,2 @@ sn12.33:13.1
  PLI: Ye hipi keci anāgatamaddhānaṁ samaṇā vā brāhmaṇā vā saṅkhāre abhijānissanti, saṅkhārasamudayaṁ abhijānissanti, saṅkhāranirodhaṁ abhijānissanti, saṅkhāranirodhagāminiṁ paṭipadaṁ abhijānissanti, sabbete evameva abhijānissanti, seyyathāpāhaṁ etarahi. 
--Whatever ascetics and brahmins in the future will directly know volitional formations, their origin, their cessation, and the practice that leads to their cessation, all of them will directly know these things in exactly the same way that I do now. 
-+Whatever ascetics and brahmins in the future will directly know volitional formations, their arising, their cessation, and the practice that leads to their cessation, all of them will directly know these things in exactly the same way that I do now. 
+-Whatever ascetics and brahmins in the future will directly know saṅkhāras, their origin, their cessation, and the practice that leads to their cessation, all of them will directly know these things in exactly the same way that I do now. 
++Whatever ascetics and brahmins in the future will directly know saṅkhāras, their arising, their cessation, and the practice that leads to their cessation, all of them will directly know these things in exactly the same way that I do now. 
 --- sujato/sutta/sn/sn12/sn12.35_translation-en-sujato.json
 +++ sujato/sutta/sn/sn12/sn12.35_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn12.35:1.4
@@ -2190,8 +2190,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +They understand rebirth, its arising, its cessation, and the fitting practice for its cessation. And they practice in line with that path. 
 @@ -1,2 +1,2 @@ sn12.51:8.1
  PLI: So saṅkhāre ca pajānāti, saṅkhārasamudayañca pajānāti, saṅkhāranirodhañca pajānāti, yā ca saṅkhāranirodhasāruppagāminī paṭipadā tañca pajānāti, tathā paṭipanno ca hoti anudhammacārī; 
--They understand volitional formations, their origin, their cessation, and the fitting practice for their cessation. And they practice in line with that path. 
-+They understand volitional formations, their arising, their cessation, and the fitting practice for their cessation. And they practice in line with that path. 
+-They understand saṅkhāras, their origin, their cessation, and the fitting practice for their cessation. And they practice in line with that path. 
++They understand saṅkhāras, their arising, their cessation, and the fitting practice for their cessation. And they practice in line with that path. 
 --- sujato/sutta/sn/sn12/sn12.52_translation-en-sujato.json
 +++ sujato/sutta/sn/sn12/sn12.52_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn12.52:1.7
@@ -2650,8 +2650,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +Perception arises from contact. 
 @@ -1,2 +1,2 @@ sn22.56:10.5
  PLI: Phassasamudayā saṅkhārasamudayo; 
--Volitional formations originate from contact. 
-+Volitional formations arise from contact. 
+-Saṅkhāras originate from contact. 
++Saṅkhāras arise from contact. 
 @@ -1,2 +1,2 @@ sn22.56:13.5
  PLI: Nāmarūpasamudayā viññāṇasamudayo; 
 -Consciousness originates from name and form. 
@@ -2696,8 +2696,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +Perception arises from contact. 
 @@ -1,2 +1,2 @@ sn22.57:11.6
  PLI: Phassasamudayā saṅkhārasamudayo; 
--Volitional formations originate from contact. 
-+Volitional formations arise from contact. 
+-Saṅkhāras originate from contact. 
++Saṅkhāras arise from contact. 
 @@ -1,2 +1,2 @@ sn22.57:14.5
  PLI: Nāmarūpasamudayā viññāṇasamudayo; 
 -Consciousness originates from name and form. 
@@ -2714,12 +2714,12 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +++ sujato/sutta/sn/sn22/sn22.5_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.5:1.7
  PLI: Rūpassa samudayañca atthaṅgamañca, vedanāya samudayañca atthaṅgamañca, saññāya samudayañca atthaṅgamañca, saṅkhārānaṁ samudayañca atthaṅgamañca, viññāṇassa samudayañca atthaṅgamañca. 
--The origin and ending of form, feeling, perception, volitional formations, and consciousness. 
-+The arising and ending of form, feeling, perception, volitional formations, and consciousness. 
+-The origin and ending of form, feeling, perception, saṅkhāras, and consciousness. 
++The arising and ending of form, feeling, perception, saṅkhāras, and consciousness. 
 @@ -1,2 +1,2 @@ sn22.5:2.1
  PLI: Ko ca, bhikkhave, rūpassa samudayo, ko vedanāya samudayo, ko saññāya samudayo, ko saṅkhārānaṁ samudayo, ko viññāṇassa samudayo? 
--And what is the origin of form, feeling, perception, volitional formations, and consciousness? 
-+And what is the arising of form, feeling, perception, volitional formations, and consciousness? 
+-And what is the origin of form, feeling, perception, saṅkhāras, and consciousness? 
++And what is the arising of form, feeling, perception, saṅkhāras, and consciousness? 
 @@ -1,2 +1,2 @@ sn22.5:3.8
  PLI: Evametassa kevalassa dukkhakkhandhassa samudayo hoti. 
 -That is how this entire mass of suffering originates. 
@@ -2736,8 +2736,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +++ sujato/sutta/sn/sn22/sn22.6_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.6:1.5
  PLI: Rūpassa samudayañca atthaṅgamañca, vedanāya samudayañca atthaṅgamañca, saññāya samudayañca atthaṅgamañca, saṅkhārānaṁ samudayañca atthaṅgamañca, viññāṇassa samudayañca atthaṅgamañca …pe… 
--The origin and disappearing of form, feeling, perception, volitional formations, and consciousness. …” 
-+The arising and disappearing of form, feeling, perception, volitional formations, and consciousness. …” 
+-The origin and disappearing of form, feeling, perception, saṅkhāras, and consciousness. …” 
++The arising and disappearing of form, feeling, perception, saṅkhāras, and consciousness. …” 
 --- sujato/sutta/sn/sn22/sn22.74_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.74_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.74:0.3
@@ -2828,8 +2828,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +What has a liability to arise?” 
 @@ -1,2 +1,2 @@ sn23.21:1.5
  PLI: “Rūpaṁ kho, rādha, samudayadhammo, vedanā samudayadhammo, saññā samudayadhammo, saṅkhārā samudayadhammo, viññāṇaṁ samudayadhammo. 
--“Rādha, form, feeling, perception, volitional formations, and consciousness have a liability to originate. 
-+“Rādha, form, feeling, perception, volitional formations, and consciousness have a liability to arise. 
+-“Rādha, form, feeling, perception, saṅkhāras, and consciousness have a liability to originate. 
++“Rādha, form, feeling, perception, saṅkhāras, and consciousness have a liability to arise. 
 --- sujato/sutta/sn/sn23/sn23.23-33_translation-en-sujato.json
 +++ sujato/sutta/sn/sn23/sn23.23-33_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn23.33:1.1
@@ -2948,8 +2948,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +++ sujato/sutta/sn/sn33/sn33.4_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn33.4:1.6
  PLI: “Saṅkhāresu kho, vaccha, aññāṇā, saṅkhārasamudaye aññāṇā, saṅkhāranirodhe aññāṇā, saṅkhāranirodhagāminiyā paṭipadāya aññāṇā; 
--“Vaccha, it is because of not knowing volitional formations, their origin, their cessation, and the practice that leads to their cessation …” 
-+“Vaccha, it is because of not knowing volitional formations, their arising, their cessation, and the practice that leads to their cessation …” 
+-“Vaccha, it is because of not knowing saṅkhāras, their origin, their cessation, and the practice that leads to their cessation …” 
++“Vaccha, it is because of not knowing saṅkhāras, their arising, their cessation, and the practice that leads to their cessation …” 
 --- sujato/sutta/sn/sn33/sn33.55_translation-en-sujato.json
 +++ sujato/sutta/sn/sn33/sn33.55_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn33.55:1.2
