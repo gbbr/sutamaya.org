@@ -65,8 +65,11 @@ upstream) and writes `data/sujato.post/` (generated).
 
 6. **Check what your replacement words already translate.** Step 5 is the source side; this is the
    output side, and nothing in the pipeline catches it — a word you introduce may already be Bhikkhu
-   Sujato's rendering of an unrelated Pali term, and the rule is working exactly as written. Grep the
-   corpus for each replacement word, look at what Pali sits behind the hits, and check whether those
+   Sujato's rendering of an unrelated Pali term, and the rule is working exactly as written. Grep
+   **`data/sujato.post/`, never `data/sujato/`** — this is the output side, so what matters is the
+   shipped text, and an earlier rule may already have cleared the word out of the way
+   (satipaṭṭhāna's rule removes every "mindfulness meditation", so upstream's count for "meditation"
+   overstates the collision by 269). Look at what Pali sits behind the hits, and check whether those
    segments ever share a **sutta** with the ones your rule rewrites. Distance is the whole question:
    the same word for two terms three hundred suttas apart costs nothing, two lines apart is a real
    ambiguity.
