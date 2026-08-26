@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#FBF9F5" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <!-- The `-vN` suffix is the only thing that gets a new tab icon onto a device that already
+         has one: the service worker precaches this path and the runtime rules cache it for a
+         year, so overwriting the file in place changes nothing until that lapses. Changing the
+         artwork means bumping the suffix and renaming the file, here and in vite.config.ts's
+         `includeAssets`. -->
+    <link rel="icon" href="/favicon-v2.svg" type="image/svg+xml" />
     <!-- Cloudflare Web Analytics — aggregate visit/pageview counts only (cookie-less, no
          personal data). Manually registered against the sutamaya.org site tag in the Cloudflare
          dashboard, not tied to any DNS/proxy change. Sees SPA route changes automatically (it
