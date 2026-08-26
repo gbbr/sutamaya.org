@@ -1,4 +1,5 @@
 import type { SegmentFile } from './corpus';
+import { HIGHLIGHT_COLORS } from './theme';
 import type { Highlight } from './types';
 
 export interface HighlightGroup {
@@ -111,10 +112,23 @@ export function paintSegmentHighlights(hlForSeg: Highlight[]): PaintedRange[] {
   return painted;
 }
 
-// Total number of merged highlights on a sutta (see groupHighlights), across every colour — for
-// ListPane's and ReaderPage's single icon+count highlight indicator.
+// Total number of merged highlights on a sutta (see groupHighlights), across every colour — the
+// number in ListPane's and ReaderPage's highlight indicator.
 export function highlightCount(highlights: Highlight[]): number {
   return groupHighlights(highlights).length;
+}
+
+// The distinct colours those highlights use — the swatches beside that count (see
+// HighlightCountBadge), which is what tells the two apart: the number says how much is marked,
+// these say what kind. Ordered by the palette itself rather than by when each colour was first
+// used, so a row's swatches sit in the same order on every sutta. A colour outside the palette
+// (a highlight made against an older build) still gets a swatch, at the end.
+export function highlightColors(highlights: Highlight[]): string[] {
+  const rank = (c: string) => {
+    const i = HIGHLIGHT_COLORS.indexOf(c);
+    return i < 0 ? HIGHLIGHT_COLORS.length : i;
+  };
+  return [...new Set(highlights.map((h) => h.c))].sort((a, b) => rank(a) - rank(b));
 }
 
 export function highlightGroupText(group: HighlightGroup, segments: SegmentFile[] | null): string {

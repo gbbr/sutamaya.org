@@ -72,7 +72,7 @@ describe('suttaRowMeta', () => {
 
   it('gives an empty-chips/zero-count entry for a sutta with no membership or highlights', () => {
     const map = suttaRowMeta(['dn1'], {}, {}, flatLists);
-    expect(map.get('dn1')).toEqual({ chips: [], hlCount: 0 });
+    expect(map.get('dn1')).toEqual({ chips: [], hlCount: 0, hlColors: [] });
   });
 
   it('produces one entry per requested id', () => {

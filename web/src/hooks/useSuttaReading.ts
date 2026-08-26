@@ -3,7 +3,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useSuttaText } from './useSuttaText';
 import { useHighlightPopup } from './useHighlightPopup';
 import { useScrollMemory, cancelPendingRestore } from './useScrollMemory';
-import { groupHighlights, highlightCount } from '../lib/highlights';
+import { groupHighlights, highlightColors, highlightCount } from '../lib/highlights';
 import { getUiScale } from '../lib/uiPrefs';
 import { computeSegmentScrollOffset, animateScrollTop } from '../lib/segmentScroll';
 
@@ -38,6 +38,7 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
   );
   const highlightGroups = useMemo(() => groupHighlights(hlForSutta), [hlForSutta]);
   const hlCount = useMemo(() => highlightCount(hlForSutta), [hlForSutta]);
+  const hlColors = useMemo(() => highlightColors(hlForSutta), [hlForSutta]);
 
   // useCallback (not a plain function, unlike this hook's other return values) since ReaderPage's
   // goToAdjacentWord wraps this in its own useCallback, which useReaderKeyboard's effect depends
@@ -79,5 +80,5 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
     animateScrollTop(container, container.scrollTop + offset);
   }, [scrollRef]);
 
-  return { segments, error, retry, hlForSutta, highlightGroups, hlCount, scrollRef, scrollToSegment, ...popup };
+  return { segments, error, retry, hlForSutta, highlightGroups, hlCount, hlColors, scrollRef, scrollToSegment, ...popup };
 }

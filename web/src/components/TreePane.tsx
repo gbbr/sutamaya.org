@@ -765,7 +765,7 @@ export function TreePane({
               <>
                 {displayHits.map(({ id, sutta }, i) => {
                   const note = notes[id];
-                  const { chips, hlCount } = searchRowMeta.get(id) ?? { chips: [], hlCount: 0 };
+                  const { chips, hlCount, hlColors } = searchRowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
                   // The keyboard cursor walks the lists block above these rows first, so a hit's
                   // own row index sits that many places along the shared column.
                   const navIndex = i + listHits.length;
@@ -792,7 +792,7 @@ export function TreePane({
                           <MatchedText text={note} query={query} />
                         </span>
                       )}
-                      <SuttaRowChips chips={chips} hlCount={hlCount} />
+                      <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} />
                     </button>
                   );
                 })}

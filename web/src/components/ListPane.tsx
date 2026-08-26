@@ -468,7 +468,7 @@ export function ListPane({
           // browsing has no keyboard cursor to show, and the row is revealed by scrolling to it.
           const on = searching && id === activeId;
           const note = notes[id];
-          const { chips, hlCount } = rowMeta.get(id) ?? { chips: [], hlCount: 0 };
+          const { chips, hlCount, hlColors } = rowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
           const dragging = dragIdRef.current === id;
           const reordering = canReorder && reorderMode;
           return (
@@ -529,7 +529,7 @@ export function ListPane({
                     <MatchedText text={s.blurb} query={rowQuery} />
                   </span>
                 )}
-                <SuttaRowChips chips={chips} hlCount={hlCount} />
+                <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} />
               </button>
               {/* Opens the list-membership picker for this sutta. Hidden entirely while reordering
                   so the grip below has the gutter to itself — one control per row edge, never two,

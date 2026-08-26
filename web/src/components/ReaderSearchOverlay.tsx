@@ -195,7 +195,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
         )}
         <div className="sc flex-1 overflow-y-auto touch-pan-y">
           {displayHits.map((h, i) => {
-            const { chips, hlCount } = rowMeta.get(h.id) ?? { chips: [], hlCount: 0 };
+            const { chips, hlCount, hlColors } = rowMeta.get(h.id) ?? { chips: [], hlCount: 0, hlColors: [] };
             return (
               <button
                 key={h.id}
@@ -232,7 +232,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
                     <MatchedText text={notes[h.id] || h.sutta.blurb} query={query} theme={theme} />
                   </span>
                 )}
-                <SuttaRowChips chips={chips} hlCount={hlCount} theme={theme} />
+                <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} theme={theme} />
               </button>
             );
           })}

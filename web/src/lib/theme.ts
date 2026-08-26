@@ -45,8 +45,11 @@ export const READER_THEMES: Record<ResolvedReaderTheme, ThemeColors> = {
 // component built for the reader can be dropped into the Library unchanged — ListMembershipPicker
 // is shared by both. Every entry is a live `var()` reference rather than a resolved colour, so it
 // follows Settings > Theme without anything here having to know which theme is active.
-// `highlightPalette`/`selection` are unused outside the reader and are here only to satisfy the
-// type.
+// `highlightPalette` points at the shell's own `--hl-*` (index.css): the Library's highlight-count
+// badge paints its swatches through highlightPaint like everything in the reader does, so those
+// variables are what make a swatch follow the shell's light/dark toggle instead of showing the
+// light-mode pastel on a dark Library. `selection` is unused outside the reader and is here only
+// to satisfy the type.
 export const SHELL_THEME: ThemeColors = {
   bg: 'rgb(var(--paper))',
   fg: 'rgb(var(--ink))',
@@ -62,7 +65,7 @@ export const SHELL_THEME: ThemeColors = {
   // has to lighten in dark mode, which `--accent` deliberately doesn't.
   paliTint: 'rgb(var(--accent-text) / .15)',
   focusTint: 'rgb(var(--ink) / .05)',
-  highlightPalette: null,
+  highlightPalette: ['rgb(var(--hl-1))', 'rgb(var(--hl-2))', 'rgb(var(--hl-3))'],
   selection: 'rgb(var(--selection))',
 };
 
