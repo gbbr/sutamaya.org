@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { HighlightPopup } from './HighlightPopup';
 import { HIGHLIGHT_COLORS } from '../lib/theme';
@@ -35,26 +35,32 @@ describe('HighlightPopup', () => {
     Element.prototype.getBoundingClientRect = realRect;
   });
 
-  // jsdom lays nothing out, so the measurement the placement turns on has to be supplied.
-  function stubMeasuredTop(top: number) {
-    Element.prototype.getBoundingClientRect = () => new DOMRect(100, top, 200, 40);
-  }
+  // jsdom lays nothing out, so the popup's own size — the only thing the placement measures — has
+  // to be supplied. The viewport it's placed within is jsdom's default 1024x768.
+  beforeEach(() => {
+    Element.prototype.getBoundingClientRect = () => new DOMRect(0, 0, 200, 40);
+  });
 
   it('sits above the selection on desktop', () => {
-    stubMeasuredTop(160);
     const { el } = renderPopup(false);
     expect(el.style.top).toBe('200px');
     expect(el.style.transform).toBe('translate(-50%,-100%)');
-    expect(el.style.left).not.toBe('');
+    expect(el.style.left).toBe('120px');
     expect(el.className).not.toContain('bottom-0');
   });
 
   // Above is the default, but a selection near the top of the viewport has no room up there.
   it('flips below the selection when it would clip the top of the viewport', () => {
-    stubMeasuredTop(2);
-    const { el } = renderPopup(false);
-    expect(el.style.top).toBe('220px');
+    const { el } = renderPopup(false, { top: 30, bottom: 50 });
+    expect(el.style.top).toBe('50px');
     expect(el.style.transform).toBe('translate(-50%,0)');
+  });
+
+  // The popup is centered on the anchor, so one within half its width of an edge has to be pushed
+  // back inside — otherwise a selection ending at the right margin opens a picker half off-screen.
+  it('shifts back inside the viewport when the anchor is near an edge', () => {
+    const { el } = renderPopup(false, { x: 1020 });
+    expect(el.style.left).toBe('914px');
   });
 
   // The mobile bar exists to stay out from under the OS's own selection menu, so what matters is
