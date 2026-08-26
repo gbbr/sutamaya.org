@@ -87,8 +87,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 -The Buddha did not claim to be awakened until he realized the origin, the passing, the gratification, the drawback, and the escape regarding the six faculties.
 +The Buddha did not claim to be awakened until he realized the arising, the passing, the gratification, the drawback, and the escape regarding the six faculties.
 @@ -1 +1 @@ sn-blurbs:sn52.1
--While meditating alone, Anuruddha reflected that one who has neglected the four establishments of awareness has neglected the path to the end of suffering. Moggallāna reads his mind and visits to question him on this. Anuruddha speaks of developing the four establishments of awareness internally and externally, in terms of origin and cessation, and developing power over perceptions.
-+While meditating alone, Anuruddha reflected that one who has neglected the four establishments of awareness has neglected the path to the end of suffering. Moggallāna reads his mind and visits to question him on this. Anuruddha speaks of developing the four establishments of awareness internally and externally, in terms of arising and cessation, and developing power over perceptions.
+-While meditating alone, Anuruddha reflected that one who has neglected the four establishments of mindfulness has neglected the path to the end of suffering. Moggallāna reads his mind and visits to question him on this. Anuruddha speaks of developing the four establishments of mindfulness internally and externally, in terms of origin and cessation, and developing power over perceptions.
++While meditating alone, Anuruddha reflected that one who has neglected the four establishments of mindfulness has neglected the path to the end of suffering. Moggallāna reads his mind and visits to question him on this. Anuruddha speaks of developing the four establishments of mindfulness internally and externally, in terms of arising and cessation, and developing power over perceptions.
 @@ -1 +1 @@ sn-blurbs:sn56.1
 -Bhikkhus should develop composure so as to understand the four noble truths: suffering, its origin, its cessation, and the path.
 +Bhikkhus should develop composure so as to understand the four noble truths: suffering, its arising, its cessation, and the path.
@@ -116,8 +116,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +‘Reverends, all things have what as their root? What produces them? What is their arising? What is their meeting place? What is their chief? What is their ruler? What is their overseer? What is their core? What is their objective? What is their culmination?’ 
 @@ -1,2 +1,2 @@ an10.58:3.4
  PLI: ‘chandamūlakā, āvuso, sabbe dhammā, manasikārasambhavā sabbe dhammā, phassasamudayā sabbe dhammā, vedanāsamosaraṇā sabbe dhammā, samādhippamukhā sabbe dhammā, satādhipateyyā sabbe dhammā, paññuttarā sabbe dhammā, vimuttisārā sabbe dhammā, amatogadhā sabbe dhammā, nibbānapariyosānā sabbe dhammā’ti. 
--‘Reverends, all things are rooted in desire. They are produced by application of mind. Contact is their origin. Sensation is their meeting place. Composure is their chief. Awareness is their ruler. Wisdom is their overseer. Freedom is their core. Their objective is freedom from death. And extinguishment is their culmination.’ 
-+‘Reverends, all things are rooted in desire. They are produced by application of mind. Contact is their arising. Sensation is their meeting place. Composure is their chief. Awareness is their ruler. Wisdom is their overseer. Freedom is their core. Their objective is freedom from death. And extinguishment is their culmination.’ 
+-‘Reverends, all things are rooted in desire. They are produced by application of mind. Contact is their origin. Sensation is their meeting place. Composure is their chief. Mindfulness is their ruler. Wisdom is their overseer. Freedom is their core. Their objective is freedom from death. And extinguishment is their culmination.’ 
++‘Reverends, all things are rooted in desire. They are produced by application of mind. Contact is their arising. Sensation is their meeting place. Composure is their chief. Mindfulness is their ruler. Wisdom is their overseer. Freedom is their core. Their objective is freedom from death. And extinguishment is their culmination.’ 
 --- sujato/sutta/an/an10/an10.59_translation-en-sujato.json
 +++ sujato/sutta/an/an10/an10.59_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an10.59:1.3
@@ -526,8 +526,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +‘Reverends, all things have what as their root? What produces them? What is their arising? What is their meeting place? What is their chief? What is their ruler? What is their overseer? What is their core?’ 
 @@ -1,2 +1,2 @@ an8.83:2.8
  PLI: ‘chandamūlakā, āvuso, sabbe dhammā, manasikārasambhavā sabbe dhammā, phassasamudayā sabbe dhammā, vedanāsamosaraṇā sabbe dhammā, samādhippamukhā sabbe dhammā, satādhipateyyā sabbe dhammā, paññuttarā sabbe dhammā, vimuttisārā sabbe dhammā’ti, 
--‘Reverends, all things are rooted in desire. They are produced by application of mind. Contact is their origin. Sensation is their meeting place. Composure is their chief. Awareness is their ruler. Wisdom is their overseer. Freedom is their core.’ 
-+‘Reverends, all things are rooted in desire. They are produced by application of mind. Contact is their arising. Sensation is their meeting place. Composure is their chief. Awareness is their ruler. Wisdom is their overseer. Freedom is their core.’ 
+-‘Reverends, all things are rooted in desire. They are produced by application of mind. Contact is their origin. Sensation is their meeting place. Composure is their chief. Mindfulness is their ruler. Wisdom is their overseer. Freedom is their core.’ 
++‘Reverends, all things are rooted in desire. They are produced by application of mind. Contact is their arising. Sensation is their meeting place. Composure is their chief. Mindfulness is their ruler. Wisdom is their overseer. Freedom is their core.’ 
 --- sujato/sutta/an/an9/an9.13_translation-en-sujato.json
 +++ sujato/sutta/an/an9/an9.13_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an9.13:21.5
@@ -3320,12 +3320,12 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +++ sujato/sutta/sn/sn47/sn47.40_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.40:2.2
  PLI: Idha, bhikkhave, bhikkhu samudayadhammānupassī kāyasmiṁ viharati, vayadhammānupassī kāyasmiṁ viharati, samudayavayadhammānupassī kāyasmiṁ viharati, ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
--It’s when a bhikkhu, with respect to the body, meditates observing the liability to originate, to pass away, and to originate and pass away—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+It’s when a bhikkhu, with respect to the body, meditates observing the liability to arise, to pass away, and to arise and pass away—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-It’s when a bhikkhu, with respect to the body, meditates observing the liability to originate, to pass away, and to originate and pass away—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
++It’s when a bhikkhu, with respect to the body, meditates observing the liability to arise, to pass away, and to arise and pass away—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.40:2.5
  PLI: samudayadhammānupassī dhammesu viharati, vayadhammānupassī dhammesu viharati, samudayavayadhammānupassī dhammesu viharati, ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
--principles, they meditate observing the liability to originate, to pass away, and to originate and pass away—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+principles, they meditate observing the liability to arise, to pass away, and to arise and pass away—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-principles, they meditate observing the liability to originate, to pass away, and to originate and pass away—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
++principles, they meditate observing the liability to arise, to pass away, and to arise and pass away—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
 --- sujato/sutta/sn/sn47/sn47.42_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.42_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.42:0.3
@@ -3334,8 +3334,8 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +Arising 
 @@ -1,2 +1,2 @@ sn47.42:1.1
  PLI: “Catunnaṁ, bhikkhave, satipaṭṭhānānaṁ samudayañca atthaṅgamañca desessāmi. 
--“Bhikkhus, I will teach you the origin and disappearing of the four establishments of awareness. 
-+“Bhikkhus, I will teach you the arising and disappearing of the four establishments of awareness. 
+-“Bhikkhus, I will teach you the origin and disappearing of the four establishments of mindfulness. 
++“Bhikkhus, I will teach you the arising and disappearing of the four establishments of mindfulness. 
 @@ -1,2 +1,2 @@ sn47.42:1.3
  PLI: Ko ca, bhikkhave, kāyassa samudayo? 
 -What is the origin of the body? 
@@ -3530,16 +3530,16 @@ Rule: samudaya-arising — 844 change(s), 342 file(s)
 +++ sujato/sutta/sn/sn52/sn52.1_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn52.1:3.1
  PLI: “Idhāvuso, bhikkhu ajjhattaṁ kāye samudayadhammānupassī viharati, ajjhattaṁ kāye vayadhammānupassī viharati, ajjhattaṁ kāye samudayavayadhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
--“Reverend, it’s when a bhikkhu, with respect to the body internally, meditates observing the liability to originate, to pass away, and to originate and pass away—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+“Reverend, it’s when a bhikkhu, with respect to the body internally, meditates observing the liability to arise, to pass away, and to arise and pass away—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-“Reverend, it’s when a bhikkhu, with respect to the body internally, meditates observing the liability to originate, to pass away, and to originate and pass away—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
++“Reverend, it’s when a bhikkhu, with respect to the body internally, meditates observing the liability to arise, to pass away, and to arise and pass away—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn52.1:3.2
  PLI: Bahiddhā kāye samudayadhammānupassī viharati, bahiddhā kāye vayadhammānupassī viharati, bahiddhā kāye samudayavayadhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
--With respect to the body externally, they meditate observing the liability to originate, to pass away, and to originate and pass away—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+With respect to the body externally, they meditate observing the liability to arise, to pass away, and to arise and pass away—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-With respect to the body externally, they meditate observing the liability to originate, to pass away, and to originate and pass away—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
++With respect to the body externally, they meditate observing the liability to arise, to pass away, and to arise and pass away—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn52.1:3.3
  PLI: Ajjhattabahiddhā kāye samudayadhammānupassī viharati, ajjhattabahiddhā kāye vayadhammānupassī viharati, ajjhattabahiddhā kāye samudayavayadhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
--With respect to the body internally and externally, they meditate observing the liability to originate, to pass away, and to originate and pass away—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
-+With respect to the body internally and externally, they meditate observing the liability to arise, to pass away, and to arise and pass away—ardent, clearly comprehending, and aware, rid of covetousness and displeasure for the world. 
+-With respect to the body internally and externally, they meditate observing the liability to originate, to pass away, and to originate and pass away—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
++With respect to the body internally and externally, they meditate observing the liability to arise, to pass away, and to arise and pass away—ardent, aware, and mindful, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn52.1:5.3
  PLI: Ajjhattabahiddhā vedanāsu samudayadhammānupassī viharati, ajjhattabahiddhā vedanāsu vayadhammānupassī viharati, ajjhattabahiddhā vedanāsu samudayavayadhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -internally and externally, they meditate observing the liability to originate, to pass away, and to originate and pass away … 

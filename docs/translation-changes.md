@@ -1,8 +1,8 @@
 # Translation changes
 
 The English here is Bhikkhu Sujato's translation, published by SuttaCentral under CC0. It is not
-reproduced verbatim: a small number of recurring terms are rendered differently, and about
-a hundred individual lines are reworded. Everything else is his, word for word — and the Pali sits beside
+reproduced verbatim: a small number of recurring terms are rendered differently, and a few dozen
+individual lines are reworded. Everything else is his, word for word — and the Pali sits beside
 every line, so you can always check.
 
 The changes are declared rather than typed in by hand, so they survive each refresh from upstream.
@@ -15,9 +15,7 @@ gloss a term in his wording while the line above it uses ours.
 |---|---|---|
 | bhikkhu | mendicant | **bhikkhu** |
 | samādhi | immersion, immersed | **composure, composed** (and "collect" as a verb) |
-| sati | mindfulness, mindful | **awareness, aware** |
-| satipaṭṭhāna | mindfulness meditation | **the establishment of awareness** |
-| sampajañña | situational awareness, aware | **clear comprehension, clearly comprehending** |
+| satipaṭṭhāna | mindfulness meditation | **the establishment of mindfulness** |
 | ātāpī | keen | **ardent** |
 | samudaya | origin | **arising** |
 | atthaṅgama | disappearance | **disappearing** |
@@ -34,7 +32,7 @@ gloss a term in his wording while the line above it uses ours.
 | abhisaṅkharoti | make (choices) | **generate (volitional formations)** |
 
 A term is changed everywhere it appears, but only where it really is that Pali word — Bhikkhu Sujato's
-"aware" also translates ordinary things that have nothing to do with *sampajañña*, and those are
+"keen" also translates ordinary things that have nothing to do with *ātāpī*, and those are
 left alone.
 
 ## Collection descriptions

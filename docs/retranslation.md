@@ -57,9 +57,10 @@ untouched — no translatable English. `build:corpus` runs `post` first, since a
 
 ## Why explicit segment lists
 
-A blind find-and-replace breaks on homonyms: Bhikkhu Sujato renders *sampajañña* as "aware", but
-"aware" also appears as ordinary English. So each rule **names the segments involved** — the ones it
-applies to, or the ones it must skip, whichever list is shorter and truer.
+A blind find-and-replace breaks on homonyms: Bhikkhu Sujato renders *vaya* as "vanish", but "vanish"
+is far more often *antaradhāyati*, a being disappearing from a scene. So each rule **names the
+segments involved** — the ones it applies to, or the ones it must skip, whichever list is shorter
+and truer.
 
 This works because segment ids are effectively immutable upstream while the text inside them is not
 (over two years: 741 ids added, 2 removed, 24,502 values changed). A segment id is a stable address
@@ -72,8 +73,9 @@ have no Pali counterpart at all.
 `sujato/notes` is out of every rule's reach — a rule naming it is rejected, not ignored
 (`RETRANSLATABLE_TREES` in `../scripts/lib/retranslation.js`). A note is Bhikkhu Sujato writing
 *about* the text, so his renderings appear there as quotations, and a rule that is right on the
-translation is wrong on the note beside it: `sn47.35:3.2` explains which half of "mindfulness and
-awareness" is which, and came out as *the "awareness" part of "awareness and awareness"*.
+translation is wrong on the note beside it: `mn10:1.1` argues for rendering *satipaṭṭhāna* as
+"mindfulness meditation" — the very wording `satipatthana-establishment-of-mindfulness` replaces —
+so a rule reaching it would rewrite the argument into its own conclusion.
 
 There's no per-note escape hatch — segment overrides resolve ids through a sutta-only index. **A
 note therefore reads in Bhikkhu Sujato's terms while the text beside it reads in this app's**, which
@@ -97,27 +99,27 @@ rewrite the opening of a group description.
 
 ```js
 {
-  id: 'sampajanna-clear-comprehension',
-  why: 'Bhikkhu Sujato renders sampajañña as "aware"/"situational awareness"; this app prefers ' +
-       '"clear comprehension". Closed because plain-English "aware" is common and unrelated.',
+  id: 'vaya-passing-away',
+  why: 'Bhikkhu Sujato renders vaya as "vanishing"/"vanish"; this app prefers "passing away". ' +
+       'Closed, because "vanish" in this corpus is overwhelmingly antaradhāyati.',
   mode: 'allow',                            // 'allow' (closed) | 'deny' (open)
   scope: ['sujato/sutta', 'sujato/blurb'],  // optional; defaults to sutta + name + blurb
-  predicate: /sampajañ|sampajān/i,          // proposes candidates; never runs at build time
+  predicate: /(^|[^a-zāīūṁṅñṭḍṇḷ])vay/i,    // proposes candidates; never runs at build time
   forms: [
-    ['situational awareness', 'clear comprehension'],
-    ['aware', 'clearly comprehending'],
+    ['vanishing', 'passing away'],
+    ['vanish', 'pass away'],
   ],
 }
 ```
 
-with `scripts/update-data/rules/sampajanna-clear-comprehension.json`:
+with `scripts/update-data/rules/vaya-passing-away.json`:
 
 ```json
 {
   "reviewedAt": "2026-08-17",
-  "allow": ["dn22:1.9", "dn22:1.10", "…"],
+  "allow": ["an11.26:1.1", "an3.47:1.3", "…"],
   "deny": {
-    "dn34:1.8.20": "plain English 'aware', translating a jhāna formula — no sampajañña"
+    "an10.89:12.5": "antaradhāyati — a being vanishing from a scene, nothing to do with impermanence"
   }
 }
 ```
@@ -142,13 +144,13 @@ right shape for a term with no homonym problem, like `mendicant-bhikkhu`.
 
 ```js
 {
-  id: 'sampajano-hoti-answer',
+  id: 'vedana-etymology-derivation',
   kind: 'segment',
-  why: 'Evaṁ kho bhikkhu sampajāno hoti — the section’s closing answer, worded to match the ' +
-       'opening question sampajano-hoti-question rebuilds.',
-  segments: ['sn47.35:3.5', 'sn36.8:4.3', 'dn16:2.13.3'],
-  from: 'That’s how a bhikkhu is clearly comprehending. ',
-  to:   'That’s how a bhikkhu has clear comprehension. ',
+  why: 'Vedayatīti kho, bhikkhave, tasmā ‘vedanā’ti vuccati — the derivation itself, so the verb ' +
+       'has to share a root with the noun the rule now uses.',
+  segments: ['sn22.79:3.2', 'sn22.79:3.5'],
+  from: 'It feels; that’s why it’s called ‘sensation’. ',
+  to:   'It senses; that’s why it’s called ‘sensation’. ',
 }
 ```
 
@@ -198,7 +200,7 @@ maps apart is what keeps the sutta index free of the ambiguity `sujato/notes` wo
 - **`scope`** — trees from `sujato/{sutta,name,blurb}`; defaults to all three. `sujato/notes` is an
   error.
 - **`forms`** — `[from, to]` pairs on English word boundaries, longest-first regardless of array
-  order so `situational awareness` isn't pre-empted by `awareness`. **List every inflection
+  order so `kinds of mindfulness meditation` isn't pre-empted by `mindfulness meditation`. **List every inflection
   explicitly** rather than swapping stems — MN40's "water immerser" (someone who dunks themselves)
   becomes "water concentrater" otherwise. A form may carry a neighbouring word that depends on it:
   `an immersion` → `a concentration`, rather than a stranded "an concentration".
@@ -206,8 +208,8 @@ maps apart is what keeps the sutta index free of the ambiguity `sujato/notes` wo
   The match's case *pattern* is preserved: lowercase stays lowercase, a capitalized first word gives
   Sentence case, and an all-capitalized match gives Title Case word by word (`of`, `the`, `on` and a
   small closed set stay lowercase) — without which a heading reads "The Longer Discourse on
-  Establishment of awareness". The replacement's first word follows the *match's* first word rather
-  than the title rule, so `on mindfulness meditation` → `on the establishment of awareness` keeps
+  Establishment of mindfulness". The replacement's first word follows the *match's* first word rather
+  than the title rule, so `on mindfulness meditation` → `on the establishment of mindfulness` keeps
   its article lowercase.
 
 ## The pass
@@ -217,21 +219,22 @@ segment is permitted, then apply its `forms` to **unlocked chunks only**, splitt
 its own locked chunk; rejoin.
 
 Locking is what makes the pass order-safe — text a rule has written is invisible to every later
-rule. It matters because segments carrying two targeted terms at once are common (531 have both
-*sampajañña* and *sati*, so `dn22:1.9` is on both rules' allow lists):
+rule. It matters because segments carrying two targeted terms at once are common, and because one
+rule's replacement can be another rule's source word. Take two rules over `ātāpī sampajāno satimā`,
+"keen, aware, and mindful":
 
 ```
-dn22:1.9  PLI: …viharati ātāpī sampajāno satimā vineyya…
-          EN : …keen, aware, and mindful, rid of covetousness…
+rule A:  aware   → understanding
+rule B:  mindful → aware
 ```
 
-The *sati* rule produces "aware", the exact token the *sampajañña* rule consumes; locking makes that
-new token invisible to it, so the result is "keen, clearly comprehending, and aware" whichever order
-they run in. Order therefore matters only when two rules match the *same* English word, where the
-earlier rule wins. Order rules deliberately anyway; rely on locking for correctness.
+Rule B produces "aware", the exact token rule A consumes. Locking makes that new token invisible to
+A, so the result is "keen, understanding, and aware" whichever order the two run in. Order therefore
+matters only when two rules match the *same* English word, where the earlier rule wins. Order rules
+deliberately anyway; rely on locking for correctness.
 
 Keys are never touched, by any rule. Only values. Required tests: **idempotence** (`post` twice is
-byte-identical), the `dn22:1.9` collision as a pinned fixture, and a per-rule input/output example.
+byte-identical), that chained rewrite as a pinned fixture, and a per-rule input/output example.
 
 ## Anchors: how a rule announces that it broke
 
@@ -268,7 +271,7 @@ a real upstream change.
 
 ```
 npm run update-data triage                                  # every rule: queue counts
-npm run update-data triage sampajanna-clear-comprehension   # one rule, every case in full
+npm run update-data triage vaya-passing-away                 # one rule, every case in full
 npm run update-data triage immersion-concentration prune    # drop that rule's stale entries
 ```
 
@@ -308,11 +311,11 @@ rule wants: if nearly everything lands in `allow`, write it open with only the e
 - `00-summary.txt` — each rule's match and file counts, and any rule that matched zero.
 
 **A rule file's `-` side is not upstream.** Rules run in sequence and each `<id>.diff` records its
-own step, so its `-` side is whatever earlier rules had already made of the line. `sn36.7` is
-"mindful and aware" upstream and "aware and clearly comprehending" shipped, but in
-`sampajanna-clear-comprehension.diff` the `-` side reads "aware and aware" — an intermediate that
-never ships, because `sati-aware` had already rewritten *mindful*. Honest attribution, unreadable as
-a before/after; that's what `00-all.diff` is for.
+own step, so its `-` side is whatever earlier rules had already made of the line. `sn22.56:1.4` is
+"form, feeling, perception, choices, and consciousness" upstream, but in
+`sankhara-volitional-formations.diff` the `-` side reads "form, sensation, perception, choices…" —
+an intermediate that never ships, because `vedana-sensation` had already rewritten *feeling*.
+Honest attribution, unreadable as a before/after; that's what `00-all.diff` is for.
 
 `data/diff/` is **checked in**, which is what makes a refresh legible: `git diff data/diff/` next to
 `git diff data/sujato/`. Hence no colour, no timestamps, sorted paths — a run over unchanged input
@@ -321,7 +324,7 @@ has to produce an unchanged tree.
 Each file is a real unified diff, so word-level highlighting comes from the viewer:
 
 ```
-riff < data/diff/sati-aware.diff      # inline highlight of the changed span
+riff < data/diff/vedana-sensation.diff   # inline highlight of the changed span
 git diff data/diff/00-all.diff        # what the shipped text gained or lost
 ```
 
@@ -339,8 +342,8 @@ for what sounds wrong, not just for what matched wrong.
 - **Judgment errors are baked into data, not derivable.** A wrong regex is one line to fix; a wrong
   list entry hides in 2,000 rows. The per-rule diff is the audit surface, and the recorded
   `predicate` lets you re-derive a list and diff it against what's stored.
-- **A rule can't distinguish two occurrences within one segment.** If "aware" appears twice, once
-  for *sampajañña* and once as plain English, only a segment override separates them.
+- **A rule can't distinguish two occurrences within one segment.** If "vanish" appears twice, once
+  for *vaya* and once for *antaradhāyati*, only a segment override separates them.
 - **Upstream additions don't arrive.** `apply` iterates the files named in `snapshot.json`, so a
   newly added sutta needs a deliberate snapshot regeneration.
 - **Already-cached readers don't see the change.** Per-sutta text is `CacheFirst` with a one-year

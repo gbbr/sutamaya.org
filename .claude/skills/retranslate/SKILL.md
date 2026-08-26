@@ -106,16 +106,15 @@ Changing what an existing rule renders a term as is **not** substituting the new
 rendering never needed.
 
 The reason is grammatical: a `forms` pair maps one source word to one replacement, but Bhikkhu
-Sujato's source word usually sits in more than one slot. "Clear comprehension" is a noun phrase that
-cannot stand in the satipaṭṭhāna formula's list of adjectives — "keen, aware, and mindful" would have
-become "keen, clear comprehension, and aware" across ~250 segments. The fix was to split his own
-vocabulary: the nouns "situational awareness"/"awareness" render *sampajañña* and take "clear
-comprehension", while bare "aware"/"unaware" render the adjective *sampajāna* and take "clearly
-comprehending", leaving a dozen predicative lines for segment overrides.
+Sujato's source word usually sits in more than one slot. `immersion-concentration` is the shipped
+example — no single English word covers *samādhi* everywhere, so the rule splits by slot: the noun
+and participle take "composure"/"composed", while the finite verb and gerund take
+"collect"/"collecting", which also keeps clear of the corpus's existing "compose" for writing verses.
+One form carries an article ("an immersion" → "composure") because the word it agrees with is the
+word being replaced.
 
-A rendering can also change without touching the slots — "full comprehension" → "clear
-comprehension" is one adjective swapped in every form. Dump the shapes anyway; that the split holds
-is a finding, not an assumption.
+A rendering can also change without touching the slots, one adjective swapped in every form. Dump
+the shapes anyway; that the split holds is a finding, not an assumption.
 
 **The method:** dump every rewritten segment's before/after with its aligned Pali, deduplicate by
 rewrite shape, and read all the distinct shapes (~700 rewrites collapse to ~200 shapes). Do this

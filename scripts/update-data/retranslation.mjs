@@ -13,8 +13,7 @@
 //   standalone terms   mendicant-bhikkhu, immersion-concentration,
 //                      patisambhida-analytical-knowledge, dhamma-the-dhamma, atapi-ardent,
 //                      vedana-sensation
-//   awareness          satipatthana-establishment-of-awareness, sati-aware,
-//                      sampajanna-clear-comprehension, vippasanna-calm
+//   mindfulness        satipatthana-establishment-of-mindfulness
 //   arising / passing  samudaya-arising, vaya-passing-away, atthangama-disappearing,
 //                      udayabbaya-arising-passing-away
 //   change             viparinama-annathatta-change-unstable, viparinama-anuparivatti-changing
@@ -128,88 +127,28 @@ export const RULES = [
       ['feelings', 'sensations'],
     ],
   },
-  // ── Awareness ───────────────────────────────────────────────────────────────
-  // sati-aware and sampajanna-clear-comprehension meet in the satipaṭṭhāna formula ("keen, aware,
-  // and mindful"), where sati-aware produces the very word the sampajañña rule consumes. Locking,
-  // not order, keeps them apart — see "The pass" in docs/retranslation.md.
-  // satipatthana-establishment-of-awareness runs ahead of both because it *is* a same-word
-  // collision: it claims the "mindfulness" of "mindfulness meditation". vippasanna-calm exists only
-  // because sampajañña became "clear comprehension".
+  // ── Mindfulness ─────────────────────────────────────────────────────────────
+  // sati itself is left as Bhikkhu Sujato has it ("mindfulness"/"mindful"), and so is sampajañña
+  // ("situational awareness"). Only the compound is retranslated, so this group holds one rule.
   {
-    id: 'satipatthana-establishment-of-awareness',
+    id: 'satipatthana-establishment-of-mindfulness',
     why: 'Bhikkhu Sujato renders satipaṭṭhāna as "mindfulness meditation"; this app prefers ' +
-      '"establishment of awareness", the compound read literally (sati-upaṭṭhāna). Open with an ' +
-      'empty deny list: all 382 segments carrying the phrase are the term. The plural form absorbs ' +
-      '"kinds of" rather than reading "the four kinds of establishments of awareness"; the bare ' +
-      'singular carries its own article, and the two preposition forms exist so a title keeps that ' +
-      'article lowercase ("The Longer Discourse on the Establishment of Awareness").',
+      '"establishment of mindfulness", the compound read literally (sati-upaṭṭhāna) and the ' +
+      'standard scholarly rendering — Bhikkhu Bodhi\'s in the Connected and Numerical Discourses, ' +
+      'and Anālayo\'s. Open with an empty deny list: all 382 segments carrying the phrase are the ' +
+      'term. The plural form absorbs "kinds of" rather than reading "the four kinds of ' +
+      'establishments of mindfulness"; the bare singular carries its own article, and the two ' +
+      'preposition forms exist so a title keeps that article lowercase ("The Longer Discourse on ' +
+      'the Establishment of Mindfulness").',
     mode: 'deny',
     predicate: /satipaṭṭhān/i,
     forms: [
-      ['kinds of mindfulness meditation', 'establishments of awareness'],
-      ['kind of mindfulness meditation', 'establishment of awareness'],
-      ['and mindfulness meditation', 'and the establishment of awareness'],
-      ['on mindfulness meditation', 'on the establishment of awareness'],
-      ['mindfulness meditations', 'establishments of awareness'],
-      ['mindfulness meditation', 'the establishment of awareness'],
-    ],
-  },
-  {
-    id: 'sati-aware',
-    why: 'Bhikkhu Sujato renders sati as "mindfulness"/"mindful"; this app prefers ' +
-      '"awareness"/"aware". Open: the only denials are the "walking mindfully" passages, where the ' +
-      'Pali is caṅkamati (walking meditation) with no sati in it. Leaves anussati/sarati alone — ' +
-      'those render as "recollection"/"remember". One form carries the indefinite article, since ' +
-      '"a mindful disciple of the Buddha" would otherwise read "a aware".',
-    mode: 'deny',
-    predicate: /(?<!s)sat[iīāo]|ānāpānassati|kāyagatāsati|upaṭṭhitassati|muṭṭhassa|patissat/i,
-    forms: [
-      ['a mindful', 'an aware'],
-      ['mindfulness', 'awareness'],
-      ['mindful', 'aware'],
-      ['mindfully', 'with awareness'],
-      ['unmindfulness', 'unawareness'],
-      ['unmindful', 'unaware'],
-      ['unmindfully', 'without awareness'],
-    ],
-  },
-  {
-    id: 'sampajanna-clear-comprehension',
-    why: 'Bhikkhu Sujato renders sampajañña as "situational awareness"/"awareness"/"aware"; this app ' +
-      'prefers "clear comprehension". Closed, because plain-English "aware" is common and ' +
-      'unrelated — the formless attainments alone account for ~150 segments of "aware that ‘space ' +
-      'is infinite’", which translates iti. The adjective takes the participle "clearly ' +
-      'comprehending" instead, since a noun phrase cannot stand in the satipaṭṭhāna formula\'s ' +
-      'adjective slot ("keen, aware, and mindful"), which is ~250 segments on its own.',
-    mode: 'allow',
-    predicate: /sampajañ|sampajān/i,
-    forms: [
-      ['situational awareness', 'clear comprehension'],
-      ['awareness', 'clear comprehension'],
-      ['aware', 'clearly comprehending'],
-      // asampajāna. All nine of its segments are the negated term. They matter for the one line
-      // with both terms negated at once — an5.210's "falling asleep unmindful and unaware" —
-      // which without them reads "unaware and unaware" once sati-aware has had it.
-      ['unawareness', 'lack of clear comprehension'],
-      ['unaware', 'without clear comprehension'],
-    ],
-  },
-  {
-    id: 'vippasanna-calm',
-    why: 'Bhikkhu Sujato renders vippasanna as "clear", which is right nearly everywhere it occurs, ' +
-      'so this is not a rule about the term. It covers only the 14 lines where his "clear" for ' +
-      'vippasanna sits beside this app’s "clear comprehension" for sampajañña: SN 47.4’s ' +
-      'satipaṭṭhāna formula and Iti 47’s wakefulness verse. "Calm" is the DPD’s gloss for the ' +
-      'compound and the one candidate not already spoken for — "tranquil" is his word for passaddhi ' +
-      'and "serene" his for samatha. Closed, so a line that gains one of these phrases for some ' +
-      'other term stops for review rather than being rewritten silently.',
-    mode: 'allow',
-    predicate: /vippasann/i,
-    // Both forms carry the neighbouring words rather than claiming "clear" on its own, which would
-    // take the gems and lakes with it.
-    forms: [
-      ['minds that are clear', 'minds that are calm'],
-      ['joyful and clear', 'joyful and calm'],
+      ['kinds of mindfulness meditation', 'establishments of mindfulness'],
+      ['kind of mindfulness meditation', 'establishment of mindfulness'],
+      ['and mindfulness meditation', 'and the establishment of mindfulness'],
+      ['on mindfulness meditation', 'on the establishment of mindfulness'],
+      ['mindfulness meditations', 'establishments of mindfulness'],
+      ['mindfulness meditation', 'the establishment of mindfulness'],
     ],
   },
   // ── Arising and passing away ────────────────────────────────────────────────
@@ -532,94 +471,6 @@ export const RULES = [
   // families above, this order carries nothing: a segment rule applies last whatever its array
   // position, so the sub-banners are navigation only and regrouping them costs nothing.
 
-  // ·· sampajañña predicate rebuilds ··
-  // Its adjective form is a participle, which stands in a list of adjectives but not as a whole
-  // predicate, so wherever Bhikkhu Sujato used his "aware" predicatively the clause has to be
-  // rebuilt around the noun — which a word-for-word form can't do, and a wider-spanning one can't
-  // either, since mendicant-bhikkhu has already locked the "bhikkhu" in the middle of two of them.
-  {
-    id: 'sampajano-hoti-question',
-    kind: 'segment',
-    why: 'Kathañca bhikkhu sampajāno hoti, opening the sampajañña section — "how is a bhikkhu ' +
-      'clearly comprehending?" reads as a progressive tense, where the noun carries the standing ' +
-      'quality. Paired with sampajano-hoti-answer, which closes the same section.',
-    segments: ['dn16:2.13.1', 'sn36.7:4.1', 'sn36.8:4.1', 'sn47.2:3.1', 'sn47.35:3.1'],
-    from: 'And how is a bhikkhu clearly comprehending? ',
-    to: 'And how does a bhikkhu have clear comprehension? ',
-  },
-  {
-    id: 'sampajano-hoti-answer',
-    kind: 'segment',
-    why: 'Evaṁ kho bhikkhu sampajāno hoti — sampajano-hoti-question’s line as the section’s ' +
-      'closing answer, and worded to match it.',
-    segments: ['sn47.35:3.5', 'sn36.8:4.3', 'dn16:2.13.3'],
-    from: 'That’s how a bhikkhu is clearly comprehending. ',
-    to: 'That’s how a bhikkhu has clear comprehension. ',
-  },
-  {
-    id: 'sampajano-situation-they',
-    kind: 'segment',
-    why: 'Itiha tattha sampajāno hoti. "They are clearly comprehending of the situation" is not a ' +
-      'construction English takes — the participle can\'t govern "of". The verb says it plainly ' +
-      'instead.',
-    segments: ['mn122:9.5', 'mn122:9.12', 'mn122:10.6', 'mn122:10.13', 'mn122:11.3', 'mn122:11.6',
-      'mn122:11.9', 'mn122:11.12', 'mn122:12.3', 'mn122:12.5', 'mn122:13.3', 'mn122:13.5',
-      'mn122:15.7', 'mn122:15.12', 'mn122:17.4', 'an7.49:3.3', 'an7.49:3.6', 'an7.49:15.3',
-      'an7.49:16.3'],
-    from: 'In this way they are clearly comprehending of the situation. ',
-    to: 'In this way they clearly comprehend the situation. ',
-  },
-  {
-    id: 'sampajano-situation-he',
-    kind: 'segment',
-    why: 'sampajano-situation-they’s line, as an8.9 has it: singular.',
-    segments: ['an8.9:1.9', 'an8.9:2.8'],
-    from: 'In this way he’s clearly comprehending of the situation. ',
-    to: 'In this way he clearly comprehends the situation. ',
-  },
-  {
-    id: 'sampajano-conception-second',
-    kind: 'segment',
-    why: 'The four kinds of conception (gabbhāvakkanti), whose Pali alternates sampajāna and ' +
-      'asampajāna across all three moments. "Has clear comprehension" pairs with the "without clear ' +
-      'comprehension" the negative already produces. The first kind needs no override — it is ' +
-      'negative throughout.',
-    segments: ['dn28:5.4', 'dn33:1.11.177'],
-    from: 'Furthermore, someone is clearly comprehending when conceived in their mother’s womb, but without clear comprehension as they remain there, and without clear comprehension as they emerge. This is the second kind of conception. ',
-    to: 'Furthermore, someone has clear comprehension when conceived in their mother’s womb, but without clear comprehension as they remain there, and without clear comprehension as they emerge. This is the second kind of conception. ',
-  },
-  {
-    id: 'sampajano-conception-third',
-    kind: 'segment',
-    why: 'sampajano-conception-second’s line, for the third kind: clear comprehension through ' +
-      'conception and gestation, not through birth.',
-    segments: ['dn28:5.5', 'dn33:1.11.178'],
-    from: 'Furthermore, someone is clearly comprehending when conceived in their mother’s womb, clearly comprehending as they remain there, but without clear comprehension as they emerge. This is the third kind of conception. ',
-    to: 'Furthermore, someone has clear comprehension when conceived in their mother’s womb, with clear comprehension as they remain there, but without clear comprehension as they emerge. This is the third kind of conception. ',
-  },
-  {
-    id: 'sampajano-conception-fourth',
-    kind: 'segment',
-    why: 'sampajano-conception-second’s line, for the fourth kind: clear comprehension throughout.',
-    segments: ['dn28:5.6', 'dn33:1.11.179'],
-    from: 'Furthermore, someone is clearly comprehending when conceived in their mother’s womb, clearly comprehending as they remain there, and clearly comprehending as they emerge. This is the fourth kind of conception. ',
-    to: 'Furthermore, someone has clear comprehension when conceived in their mother’s womb, with clear comprehension as they remain there, and with clear comprehension as they emerge. This is the fourth kind of conception. ',
-  },
-  // ·· sampajañña meeting Bhikkhu Sujato's own "comprehend" ··
-  // "Clear comprehension" lands beside Bhikkhu Sujato's "comprehend", which is his word for
-  // abhisamaya — a different term. Only this one segment has both in the same sentence.
-  {
-    id: 'sn56-34-abhisamaya-understand',
-    kind: 'segment',
-    why: 'yathābhūtaṁ abhisamayāya, which Bhikkhu Sujato renders "truly comprehending" — his word for ' +
-      'abhisamaya, unrelated to sampajañña. Once sampajañña is "clear comprehension" the two say ' +
-      'different things with the same root in one sentence, so abhisamaya moves rather than the ' +
-      'app’s own term. "In order to" makes the line parallel to 1.2, the same karaṇīyaṁ ' +
-      'construction in the Pali.',
-    segment: 'sn56.34:2.1',
-    from: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and clear comprehension to truly comprehending the four noble truths. ',
-    to: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and clear comprehension in order to truly understand the four noble truths. ',
-  },
   // ·· samudaya as a noun ··
   // The term rule leaves the noun "origination" alone (26 of its 30 segments are sambhava, not
   // samudaya); these lines are the exception it can't express.
@@ -648,54 +499,6 @@ export const RULES = [
     segment: 'dn14:2.19.6',
     from: '‘Origination, origination.’ Such was the vision, knowledge, wisdom, realization, and light that arose in Vipassī, the one intent on awakening, regarding teachings not learned before from another. ',
     to: '‘Arising, arising.’ Such was the vision, knowledge, wisdom, realization, and light that arose in Vipassī, the one intent on awakening, regarding teachings not learned before from another. ',
-  },
-  // ·· awareness word order ··
-  // Places where sati-aware's "mindfully" → "with awareness" lands in a word order English won't
-  // take; the phrase is fine, it just has to move.
-  {
-    id: 'enter-with-awareness',
-    kind: 'segment',
-    why: 'satova samāpajjāmi — "I with awareness enter into" isn’t English; the phrase moves to the ' +
-      'front. an5.27 carries the same line with a trailing elision mark, a different anchor — see ' +
-      'enter-with-awareness-elided.',
-    segment: 'dn34:1.6.74',
-    from: '‘I with awareness enter into and emerge from this composure.’ ',
-    to: '‘With awareness, I enter into and emerge from this composure.’ ',
-  },
-  {
-    id: 'enter-with-awareness-elided',
-    kind: 'segment',
-    why: 'enter-with-awareness’s line, as an5.27 has it: followed by an elision mark.',
-    segment: 'an5.27:1.8',
-    from: '‘I with awareness enter into and emerge from this composure.’ … ',
-    to: '‘With awareness, I enter into and emerge from this composure.’ … ',
-  },
-  {
-    id: 'thag16-10-walk-with-awareness',
-    kind: 'segment',
-    why: 'Satiṁ upaṭṭhapetvāna, which Bhikkhu Sujato compresses to "very mindfully" — "very with awareness" ' +
-      'is not a phrase, and the Pali is plainer than the intensifier anyway.',
-    segment: 'thag16.10:27.3',
-    from: 'very with awareness; ',
-    to: 'with awareness established; ',
-  },
-  {
-    id: 'mn12-step-with-awareness',
-    kind: 'segment',
-    why: 'satova abhikkamāmi, satova paṭikkamāmi — "ever so mindfully" carries an intensity "ever so ' +
-      'with awareness" can’t.',
-    segment: 'mn12:47.2',
-    from: 'I’d step forward or back ever so with awareness, so I was full of pity regarding even a drop of water, thinking: ',
-    to: 'I’d step forward or back with such care and awareness, so I was full of pity regarding even a drop of water, thinking: ',
-  },
-  {
-    id: 'endure-with-awareness',
-    kind: 'segment',
-    why: 'A verse line the Theragāthā repeats verbatim in three poems: the adverb has to follow the ' +
-      'verb.',
-    segments: ['thag1.31:1.3', 'thag3.9:2.3', 'thag15.1:12.3'],
-    from: 'one should with awareness endure, ',
-    to: 'one should endure with awareness, ',
   },
   // ·· paritassanā as a plural noun ··
   // The term rule already puts "Anxieties occupy the mind" into the singular. Its negated twin puts
@@ -1191,7 +994,7 @@ export const RULES = [
         from: 'The “Linked Discourses on the Awakening Factors” contains 184 discourses on ',
         to: 'Discourses on ' },
       { blurb: 'sn-blurbs:sn47',
-        from: 'The “Linked Discourses on the Establishment of Awareness” contains 104 discourses on ',
+        from: 'The “Linked Discourses on the Establishment of Mindfulness” contains 104 discourses on ',
         to: 'Discourses on ' },
       { blurb: 'sn-blurbs:sn48',
         from: 'The “Linked Discourses on the Faculties” contains 178 discourses on ',
