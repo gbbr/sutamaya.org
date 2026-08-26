@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
 import { X, Menu as MenuIcon, ChevronRight, List as ListIcon, Pencil } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
@@ -10,13 +10,14 @@ import { useReaderOrigin } from '../hooks/useReaderOrigin';
 import { useReaderKeyboard } from '../hooks/useReaderKeyboard';
 import { useReaderSwipeNav } from '../hooks/useReaderSwipeNav';
 import { useDictionaryLookup } from '../hooks/useDictionaryLookup';
-import { flatSuttaOrder, breadcrumbFor, resolveCanonicalSuttaId } from '../lib/corpus';
+import { flatSuttaOrder, breadcrumbFor, resolveCanonicalSuttaId, loadSuttaText } from '../lib/corpus';
 import { flattenListTree, resolveListById, suttaRowMeta } from '../lib/lists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { setReaderThemeColor } from '../lib/themeColor';
 import { shortcutsForScope } from '../lib/shortcuts';
 import { tagIntent } from '../lib/routeIntent';
 import { animateScrollTop } from '../lib/segmentScroll';
+import { animateStep, cancelStepAnimations } from '../lib/motion';
 import { markSuttaOpened } from '../lib/pwaNudge';
 import { getReaderPanelTab, setReaderPanelTab, type ReaderPanelTab } from '../lib/readerPanelTab';
 import { SegmentedText } from '../components/SegmentedText';
@@ -71,7 +72,9 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
   const { mobile } = useLayout();
   const tapRef = useRef<{ x: number; y: number } | null>(null);
-  const rootRef = useRef<HTMLDivElement>(null);
+  // Held as state, not a ref, so useReaderSwipeNav can depend on the node itself — it isn't
+  // rendered until the corpus has loaded (see the "Loading…" return below).
+  const [rootEl, setRootEl] = useState<HTMLDivElement | null>(null);
 
   const sutta = corpus && suttaId ? corpus.suttas[suttaId] : undefined;
   const {
@@ -204,24 +207,68 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     return nodeId ? lists.find((l) => l.id === decodeURIComponent(nodeId)) : undefined;
   }, [from, lists]);
 
-  function step(dir: 1 | -1) {
-    if (!suttaId) return;
-    // navigateToSutta carries `from`/`fromView` forward so closing after stepping through
-    // several suttas still returns to wherever the reader was originally opened from, not the
-    // last-stepped sutta's own location.
-    if (listOrigin) {
-      const items = listOrigin.items;
-      const i = items.indexOf(suttaId);
-      const next = i === -1 ? undefined : items[i + dir];
-      if (next && next !== suttaId) navigateToSutta(next);
-      return;
+  // The sutta one Prev/Next step from `base`, or undefined at either end of the run. A list
+  // origin stops dead at its own ends; the corpus order clamps instead, which is the same thing
+  // said differently (the clamped id equals the one stepped from).
+  const neighbourOf = useCallback(
+    (base: string | undefined, dir: 1 | -1) => {
+      if (!base) return undefined;
+      if (listOrigin) {
+        const i = listOrigin.items.indexOf(base);
+        const next = i === -1 ? undefined : listOrigin.items[i + dir];
+        return next === base ? undefined : next;
+      }
+      const i = siblingIds.indexOf(base);
+      const next = siblingIds[Math.min(siblingIds.length - 1, Math.max(0, i + dir))];
+      return next === base ? undefined : next;
+    },
+    [listOrigin, siblingIds]
+  );
+
+  // Fetch both neighbours once this sutta's own text has arrived, so stepping to either one has
+  // it in hand (see loadSuttaText's own module-level cache, and useSuttaText's synchronous read
+  // of it) rather than spending the step animation waiting on a request. Waiting on `segments`
+  // keeps these two off the wire while the sutta actually being read is still fetching, which on
+  // a slow connection is the request that matters.
+  useEffect(() => {
+    if (!segments) return;
+    for (const dir of [1, -1] as const) {
+      const id = neighbourOf(suttaId, dir);
+      if (id) loadSuttaText(id).catch(() => {});
     }
-    const i = siblingIds.indexOf(suttaId);
-    const next = siblingIds[Math.min(siblingIds.length - 1, Math.max(0, i + dir))];
-    if (next && next !== suttaId) navigateToSutta(next);
+  }, [neighbourOf, suttaId, segments]);
+
+  // The article element the step animation runs on — the measure column inside the scrolling
+  // pane, so the header and the highlight gutter stay put while the text itself travels.
+  const articleRef = useRef<HTMLDivElement>(null);
+  // The direction to animate in on arrival, read by the layout effect below. A ref rather than
+  // state because it's consumed exactly once, by the render that lands on `id`: as state it would
+  // linger, and returning to that sutta later by some other route (a search hit) would replay an
+  // entrance for a step nobody took.
+  const enterOnArrival = useRef<{ id: string; dir: 1 | -1 } | null>(null);
+
+  function step(dir: 1 | -1) {
+    const next = neighbourOf(suttaId, dir);
+    if (!next) return;
+    enterOnArrival.current = { id: next, dir };
+    // navigateToSutta carries `from`/`fromView` forward so closing after stepping through several
+    // suttas still returns to wherever the reader was originally opened from, not the last-stepped
+    // sutta's own location.
+    navigateToSutta(next);
   }
 
-  useReaderSwipeNav({ rootRef, panel, step, siblingIds, suttaId });
+  // Animate the arriving sutta in, on the render that lands on it. The navigation itself is never
+  // delayed for this — the step has already happened by the time anything moves.
+  useLayoutEffect(() => {
+    const to = enterOnArrival.current;
+    enterOnArrival.current = null;
+    const el = articleRef.current;
+    if (!el) return;
+    cancelStepAnimations(el);
+    if (to && to.id === suttaId) animateStep(el, to.dir);
+  }, [suttaId]);
+
+  useReaderSwipeNav({ root: rootEl, panel, step });
 
   function jumpToHighlight(segIndex: number, highlightId?: string) {
     setPanel(false);
@@ -277,8 +324,6 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     setPanel,
     closeReader,
     step,
-    siblingIds,
-    suttaId,
     goToAdjacentWord,
     setTab,
     setNoteFocusSignal,
@@ -299,7 +344,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
 
   return (
     <div
-      ref={rootRef}
+      ref={setRootEl}
       data-component="ReaderPage"
       className="fixed inset-0 z-40 flex flex-col animate-fadeIn"
       style={
@@ -350,8 +395,19 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
         </button>
       </header>
 
-      <div ref={scrollRef} className="sc flex-1" style={{ padding: '44px 22px 120px' }}>
-        <div style={{ maxWidth: measureWidth, margin: '0 auto' }}>
+      {/* `overflowX: hidden` so the step animation's translateX can't briefly make the pane
+          horizontally scrollable (or flash a scrollbar) as the incoming sutta slides in from
+          off to the right — `.sc` only sets overflow-y, and CSS resolves the other axis to
+          `auto` rather than leaving it visible. */}
+      <div ref={scrollRef} className="sc flex-1" style={{ padding: '44px 22px 120px', overflowX: 'hidden' }}>
+        {/* Stepping to another sutta carries this column off the way the reader is travelling and
+            brings the next one in behind it, so a swipe (or Prev/Next) reads as movement through
+            the canon rather than the screen silently becoming a different sutta — the whole
+            reason an accidental swipe is disorienting. Driven imperatively from `step` above
+            rather than by a class, since each step has to restart an animation on an element that
+            never unmounts, and the navigation between the two halves waits on the exit's own
+            completion. */}
+        <div ref={articleRef} style={{ maxWidth: measureWidth, margin: '0 auto' }}>
           {listOrigin && (
             <nav className="font-sans flex items-center gap-1" style={{ fontSize: fs - 6, marginBottom: 7, color: theme.dim }}>
               <button

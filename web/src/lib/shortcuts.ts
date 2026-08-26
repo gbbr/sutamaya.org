@@ -31,11 +31,13 @@ export const SHORTCUTS = {
   // Reader (ReaderPage.tsx)
   readerClose: { match: ['Escape'], keys: ['Esc'], label: 'Close the dictionary, panel, or the reader', scope: 'reader' },
   readerSearch: { match: ['/'], keys: ['/'], label: 'Search suttas (Esc to close)', scope: 'reader' },
-  // Sutta-to-sutta nav is on K/J rather than the arrows: the arrows belong to the dictionary
+  // Sutta-to-sutta nav is on J/K rather than the arrows: the arrows belong to the dictionary
   // dock's own word stepping below, and Shift+Arrow — the obvious way to tell the two apart — is
   // the browser's own extend-selection gesture, which is not something to fight on a page whose
-  // whole point is selectable text.
-  readerNav: { match: ['k', 'j'], keys: ['K', 'J'], label: 'Previous / next sutta', scope: 'reader' },
+  // whole point is selectable text. The two follow the keys' physical positions — J is left of K,
+  // so J goes back and K goes forward — rather than vim's own vertical j/k sense, because the
+  // movement they drive is a horizontal one the reader also sees animate left or right.
+  readerNav: { match: ['j', 'k'], keys: ['J', 'K'], label: 'Previous / next sutta', scope: 'reader' },
   readerDictNav: {
     match: ['ArrowLeft', 'ArrowRight'],
     keys: ['←', '→'],

@@ -31,20 +31,35 @@ export interface SegmentFile {
 }
 
 const textCache = new Map<string, Promise<SegmentFile[]>>();
+// The settled values of `textCache`, so an already-loaded sutta can be read synchronously. A
+// promise that has resolved still only hands its value back a microtask later, which is one
+// render with no text — enough to break the reader's step animation, and pointless for a sutta
+// the reader has already fetched. See peekSuttaText.
+const textResolved = new Map<string, SegmentFile[]>();
 
 export function loadSuttaText(uid: string): Promise<SegmentFile[]> {
   let p = textCache.get(uid);
   if (!p) {
-    p = fetch(`/data/text/${encodeURIComponent(uid)}.json`).then((r) => {
-      if (!r.ok) throw new Error(`Failed to load ${uid}.json (${r.status})`);
-      return r.json();
-    });
+    p = fetch(`/data/text/${encodeURIComponent(uid)}.json`)
+      .then((r) => {
+        if (!r.ok) throw new Error(`Failed to load ${uid}.json (${r.status})`);
+        return r.json();
+      })
+      .then((segs: SegmentFile[]) => {
+        textResolved.set(uid, segs);
+        return segs;
+      });
     // A failed fetch shouldn't stay cached forever — evict it so a later call (e.g. a retry)
     // re-fetches instead of replaying the same rejection.
     p.catch(() => textCache.delete(uid));
     textCache.set(uid, p);
   }
   return p;
+}
+
+// The text for `uid` if a previous loadSuttaText has already resolved it, else undefined.
+export function peekSuttaText(uid: string | undefined): SegmentFile[] | undefined {
+  return uid ? textResolved.get(uid) : undefined;
 }
 
 export function suttaEntries(corpus: Corpus): Array<[string, Sutta]> {
