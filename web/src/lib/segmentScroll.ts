@@ -1,3 +1,5 @@
+import { prefersReducedMotion } from './motion';
+
 // Pure position math for useSuttaReading's scrollToSegment, split out for the same reason
 // highlightGutterLayout.ts's computeGutterLayout was: this app applies Settings > UI scale via
 // CSS `zoom` on <html> (lib/uiPrefs.ts), and getBoundingClientRect() reports real, post-zoom
@@ -37,10 +39,10 @@ export function animateScrollTop(container: HTMLElement, targetScrollTop: number
   const delta = targetScrollTop - start;
   if (delta === 0) return;
 
-  // Same reasoning as uiPrefs.ts's systemPrefersDark: honor the OS-level motion preference
-  // rather than always animating, since this bypasses the browser's own `behavior:'smooth'`
-  // (which handles that natively) in favor of a hand-rolled rAF loop.
-  if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+  // Honor the OS-level motion preference rather than always animating, since this bypasses the
+  // browser's own `behavior:'smooth'` (which handles that natively) in favor of a hand-rolled
+  // rAF loop.
+  if (prefersReducedMotion()) {
     container.scrollTop = targetScrollTop;
     return;
   }

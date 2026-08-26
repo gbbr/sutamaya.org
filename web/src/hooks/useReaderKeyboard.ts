@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useLatest } from './useLatest';
 import { SHORTCUTS, isShortcut, isTypingTarget } from '../lib/shortcuts';
 
 interface UseReaderKeyboardOptions {
@@ -14,11 +15,6 @@ interface UseReaderKeyboardOptions {
   setPanel: (open: boolean) => void;
   closeReader: () => void;
   step: (dir: 1 | -1) => void;
-  // Only used below to decide when the listener needs re-subscribing (see the effect's own
-  // dependency array comment) — `step` itself closes over these but isn't memoized, so they
-  // stand in for it the same way ReaderPage's original inline effect did.
-  siblingIds: string[];
-  suttaId: string | undefined;
   goToAdjacentWord: (dir: 1 | -1) => void;
   setTab: (tab: 'highlights' | 'lists' | 'text') => void;
   setNoteFocusSignal: (updater: (s: number) => number) => void;
@@ -42,15 +38,16 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
     panel,
     setPanel,
     closeReader,
-    step,
-    siblingIds,
-    suttaId,
-    goToAdjacentWord,
     setTab,
     setNoteFocusSignal,
     toggleShowNotes,
     cycleTheme,
   } = opts;
+  // `step` and `goToAdjacentWord` are rebuilt on every ReaderPage render and close over the
+  // corpus order, the list being read from, and the dictionary's current word. Read through a
+  // latest ref so this listener subscribes once and still calls the current one — see useLatest.
+  const step = useLatest(opts.step);
+  const goToAdjacentWord = useLatest(opts.goToAdjacentWord);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -92,13 +89,13 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
         setSearchOpen(true);
       } else if (isShortcut(e, SHORTCUTS.readerNav)) {
         e.preventDefault();
-        step(e.key.toLowerCase() === 'k' ? -1 : 1);
+        step.current(e.key.toLowerCase() === 'j' ? -1 : 1);
       } else if (isShortcut(e, SHORTCUTS.readerDictNav)) {
         // The arrows step the dictionary dock's own prev/next word, and do nothing with the dock
         // closed — leaving the browser's own arrow scrolling alone there.
         if (!dict) return;
         e.preventDefault();
-        goToAdjacentWord(e.key === 'ArrowLeft' ? -1 : 1);
+        goToAdjacentWord.current(e.key === 'ArrowLeft' ? -1 : 1);
       } else if (isShortcut(e, SHORTCUTS.readerHighlights)) {
         e.preventDefault();
         setTab('highlights');
@@ -129,6 +126,9 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
+    // Only the values this handler actually branches on. The callbacks it invokes are reached
+    // through refs, so none of them belong here — and neither does anything they happen to close
+    // over.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [shortcutsOpen, dict, panel, pop, closePop, searchOpen, siblingIds, suttaId, goToAdjacentWord]);
+  }, [shortcutsOpen, dict, panel, pop, closePop, searchOpen]);
 }

@@ -29,8 +29,6 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     setPanel,
     closeReader,
     step,
-    siblingIds: ['sn1.1', 'sn1.2'],
-    suttaId: 'sn1.1',
     goToAdjacentWord,
     setTab,
     setNoteFocusSignal,
@@ -215,11 +213,11 @@ describe('useReaderKeyboard', () => {
     });
   });
 
-  describe('readerNav (K/J) vs readerDictNav (Arrow)', () => {
-    it('K/J steps to the previous/next sutta', () => {
+  describe('readerNav (J/K) vs readerDictNav (Arrow)', () => {
+    it('J/K steps to the previous/next sutta', () => {
       const { step } = setup();
-      press('k');
       press('j');
+      press('k');
       expect(step).toHaveBeenCalledWith(-1);
       expect(step).toHaveBeenCalledWith(1);
     });
@@ -256,28 +254,32 @@ describe('useReaderKeyboard', () => {
   });
 
   describe('re-subscription cadence', () => {
-    it('keeps using the same step()/goToAdjacentWord() closures across renders that only change unrelated state', () => {
+    it('calls the newest step()/goToAdjacentWord(), without re-subscribing for them', () => {
+      const addSpy = vi.spyOn(window, 'addEventListener');
       const initialStep = vi.fn();
       const nextStep = vi.fn();
       const { rerender } = setup({ step: initialStep });
-      // A render that changes something NOT in the effect's dependency array (e.g. a new `step`
-      // function identity from a parent re-render that didn't change siblingIds/suttaId) should
-      // not tear down and re-add the listener — mirrors the original inline effect's own
-      // dependency array, which deliberately tracked siblingIds/suttaId instead of `step` itself.
+      const subscriptions = () => addSpy.mock.calls.filter(([type]) => type === 'keydown').length;
+      const before = subscriptions();
+      // A new `step` identity arrives on every ReaderPage render. The listener must neither
+      // re-subscribe for it (it isn't a dependency) nor go on calling the one it first saw —
+      // a stale `step` steps through whichever corpus order and list it happened to close over.
       rerender({ step: nextStep });
-      press('k');
-      expect(initialStep).toHaveBeenCalledWith(-1);
-      expect(nextStep).not.toHaveBeenCalled();
-    });
-
-    it('picks up a fresh step() once suttaId changes', () => {
-      const initialStep = vi.fn();
-      const nextStep = vi.fn();
-      const { rerender } = setup({ step: initialStep, suttaId: 'sn1.1' });
-      rerender({ step: nextStep, suttaId: 'sn1.2' });
-      press('k');
+      expect(subscriptions()).toBe(before);
+      press('j');
       expect(nextStep).toHaveBeenCalledWith(-1);
       expect(initialStep).not.toHaveBeenCalled();
+      addSpy.mockRestore();
+    });
+
+    it('re-subscribes when a value the handler branches on changes', () => {
+      const addSpy = vi.spyOn(window, 'addEventListener');
+      const { rerender } = setup({ panel: false });
+      const subscriptions = () => addSpy.mock.calls.filter(([type]) => type === 'keydown').length;
+      const before = subscriptions();
+      rerender({ panel: true });
+      expect(subscriptions()).toBeGreaterThan(before);
+      addSpy.mockRestore();
     });
   });
 

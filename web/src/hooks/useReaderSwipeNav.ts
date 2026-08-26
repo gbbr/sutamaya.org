@@ -1,14 +1,14 @@
-import { useEffect, type RefObject } from 'react';
+import { useEffect } from 'react';
+import { useLatest } from './useLatest';
 
 interface UseReaderSwipeNavOptions {
-  rootRef: RefObject<HTMLElement | null>;
+  // The element itself, not a ref to it: ReaderPage renders a bare "Loading…" screen until the
+  // corpus arrives, so on a cold load this hook first runs with nothing to attach to. Taking the
+  // node as a dependency is what re-subscribes once it exists — a ref's `.current` filling in
+  // later changes nothing this effect would notice, leaving swipe navigation dead for the session.
+  root: HTMLElement | null;
   panel: boolean;
   step: (dir: 1 | -1) => void;
-  // Only used below to decide when the listener needs re-subscribing (see the effect's own
-  // dependency array comment) — `step` itself closes over these but isn't memoized, so they stand
-  // in for it the same way useReaderKeyboard's own options do.
-  siblingIds: string[];
-  suttaId: string | undefined;
 }
 
 // Swipe-left/right to go to the next/prev sutta on mobile. This has to bypass React's own
@@ -29,9 +29,13 @@ interface UseReaderSwipeNavOptions {
 // before committing to *any* touch-driven scroll, on the chance it calls preventDefault() — on a
 // slow device or first load (heavy initial `SegmentedText` rendering, corpus/text JSON parsing)
 // with the main thread busy, that reads as "can't scroll for a few seconds."
-export function useReaderSwipeNav({ rootRef, panel, step, siblingIds, suttaId }: UseReaderSwipeNavOptions) {
+export function useReaderSwipeNav({ root, panel, step }: UseReaderSwipeNavOptions) {
+  // Reached through a latest ref rather than named in the dependency array below, so the touch
+  // listeners subscribe once and still call the current `step` — see useLatest.
+  const stepRef = useLatest(step);
+
   useEffect(() => {
-    const el = rootRef.current;
+    const el = root;
     if (!el) return;
     let start: { x: number; y: number } | null = null;
     let lock: 'h' | 'v' | null = null;
@@ -68,21 +72,34 @@ export function useReaderSwipeNav({ rootRef, panel, step, siblingIds, suttaId }:
         const t = e.changedTouches[0];
         const dx = t.clientX - start.x;
         const dy = t.clientY - start.y;
-        if (Math.abs(dx) > 70 && Math.abs(dy) < 60) step(dx < 0 ? 1 : -1);
+        // Deliberately narrow: the horizontal travel has to be both long enough on its own and
+        // clearly dominant over the vertical. `touch-action: pan-y` means the browser scrolls the
+        // text natively on any vertical component of a drag, so a diagonal swipe both moves the
+        // sutta and leaves the reader's place shifted — and a diagonal drag is what an accidental
+        // sutta change tends to be in the first place. Requiring near-horizontal motion is what
+        // separates a swipe from a slightly-slanted scroll.
+        if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 2 && Math.abs(dy) < 60) stepRef.current(dx < 0 ? 1 : -1);
       }
+      start = null;
+      lock = null;
+    }
+    // A cancelled touch is the browser taking the gesture away — most often iOS's own
+    // swipe-from-the-edge to go back, which is a long rightward drag over this element and would
+    // otherwise be committed as a step to the previous sutta on top of the history navigation it
+    // already performed. The gesture is abandoned, not completed: drop it without evaluating.
+    function onTouchCancel() {
       start = null;
       lock = null;
     }
     el.addEventListener('touchstart', onTouchStart, { passive: true });
     el.addEventListener('touchmove', onTouchMove, { passive: true });
     el.addEventListener('touchend', onTouchEnd, { passive: true });
-    el.addEventListener('touchcancel', onTouchEnd, { passive: true });
+    el.addEventListener('touchcancel', onTouchCancel, { passive: true });
     return () => {
       el.removeEventListener('touchstart', onTouchStart);
       el.removeEventListener('touchmove', onTouchMove);
       el.removeEventListener('touchend', onTouchEnd);
-      el.removeEventListener('touchcancel', onTouchEnd);
+      el.removeEventListener('touchcancel', onTouchCancel);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [siblingIds, suttaId, panel]);
+  }, [root, panel, stepRef]);
 }

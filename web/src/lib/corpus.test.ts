@@ -1,5 +1,15 @@
-import { describe, expect, it } from 'vitest';
-import { ancestorsOf, compareIds, flatSuttaOrder, nodeBlurb, resolveCanonicalSuttaId, searchCorpus, sortByIdAsc } from './corpus';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import {
+  ancestorsOf,
+  compareIds,
+  flatSuttaOrder,
+  loadSuttaText,
+  nodeBlurb,
+  peekSuttaText,
+  resolveCanonicalSuttaId,
+  searchCorpus,
+  sortByIdAsc,
+} from './corpus';
 import type { Corpus, ListDef, Sutta } from './types';
 
 // Only the fields compareIds/sortByIdAsc actually touch (the id key) matter here; the rest
@@ -402,5 +412,46 @@ describe('resolveCanonicalSuttaId', () => {
   it('leaves an id matching no batch and no real entry unchanged', () => {
     expect(resolveCanonicalSuttaId(corpus, 'dhp999')).toBe('dhp999');
     expect(resolveCanonicalSuttaId(corpus, 'not-a-real-id')).toBe('not-a-real-id');
+  });
+});
+
+// The reader prefetches the suttas either side of the one being read, then takes them straight
+// out of this cache when the reader steps — synchronously, so the text lands in the same commit
+// as the title above it rather than a frame later. See useSuttaText.
+describe('peekSuttaText', () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  it('is empty until a load for that sutta has actually resolved', async () => {
+    const segments = [{ key: 'mn1:1.1', pali: 'evaṁ', en: 'so' }];
+    let release: (() => void) | undefined;
+    const gate = new Promise<void>((r) => {
+      release = r;
+    });
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => {
+        await gate;
+        return { ok: true, json: async () => segments } as Response;
+      })
+    );
+
+    const pending = loadSuttaText('mn1');
+    expect(peekSuttaText('mn1')).toBeUndefined();
+    release!();
+    await pending;
+    expect(peekSuttaText('mn1')).toEqual(segments);
+  });
+
+  it('has nothing for a sutta nobody asked for, or for no sutta at all', () => {
+    expect(peekSuttaText('an-id-never-loaded')).toBeUndefined();
+    expect(peekSuttaText(undefined)).toBeUndefined();
+  });
+
+  it('stays empty when the fetch failed, so a retry refetches', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => ({ ok: false, status: 404 }) as Response));
+    await expect(loadSuttaText('mn404')).rejects.toThrow();
+    expect(peekSuttaText('mn404')).toBeUndefined();
   });
 });
