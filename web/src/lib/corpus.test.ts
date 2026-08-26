@@ -8,6 +8,7 @@ import {
   peekSuttaText,
   resolveCanonicalSuttaId,
   searchCorpus,
+  searchLists,
   sortByIdAsc,
 } from './corpus';
 import type { Corpus, ListDef, Sutta } from './types';
@@ -349,12 +350,98 @@ describe('searchCorpus', () => {
       expect(searchCorpus(corpus, 'mind', {}, lists).map((h) => h.id)).toEqual(['mn10', 'mn1']);
     });
 
+    it('marks a hit that arrived only through a list name, so the library can drop it', () => {
+      const lists = [list({ id: 'l1', label: 'Morning', items: ['mn1'] })];
+      expect(searchCorpus(corpus, 'morning', {}, lists)[0]).toMatchObject({ id: 'mn1', listOnly: true });
+    });
+
+    it('does not mark a hit that also matches the query in its own text', () => {
+      // mn10's own title carries "Mindfulness"; being in a list of that name too doesn't make its
+      // row a restatement of the list's. mn1 is in the same list and has no claim of its own.
+      const lists = [list({ id: 'l1', label: 'Mindfulness', items: ['mn1', 'mn10'] })];
+      const byId = new Map(searchCorpus(corpus, 'mindfulness', {}, lists).map((h) => [h.id, h.listOnly]));
+      expect(byId.get('mn10')).toBe(false);
+      expect(byId.get('mn1')).toBe(true);
+    });
+
+    it('does not mark a hit whose note supplies one of the words', () => {
+      const lists = [list({ id: 'l1', label: 'Morning', items: ['mn1'] })];
+      expect(searchCorpus(corpus, 'morning apple', { mn1: 'tastes like an apple' }, lists)[0]).toMatchObject({
+        id: 'mn1',
+        listOnly: false,
+      });
+    });
+
     it('narrows to the suttas in every named list when two list names are typed', () => {
       const lists = [
         list({ id: 'l1', label: 'Retreat', items: ['mn1', 'mn10'] }),
         list({ id: 'l2', label: 'Memorize', items: ['mn10'] }),
       ];
       expect(searchCorpus(corpus, 'retreat memorize', {}, lists).map((h) => h.id)).toEqual(['mn10']);
+    });
+  });
+
+  describe('searchLists', () => {
+    const list = (over: Partial<ListDef>): ListDef => ({
+      id: 'x', label: 'x', parentId: null, kind: 'list', items: [], ...over,
+    });
+
+    it('matches a list by its own name', () => {
+      const lists = [list({ id: 'l1', label: 'Morning sits' }), list({ id: 'l2', label: 'Evening' })];
+      expect(searchLists(lists, 'morning').map((h) => h.list.id)).toEqual(['l1']);
+    });
+
+    it('carries the group path above the list, and nothing for a top-level one', () => {
+      const lists = [
+        list({ id: 'g1', label: 'Practice', kind: 'group' }),
+        list({ id: 'l1', label: 'Morning sits', parentId: 'g1' }),
+        list({ id: 'l2', label: 'Morning verses' }),
+      ];
+      expect(searchLists(lists, 'morning').map((h) => h.parents)).toEqual(['Practice', '']);
+    });
+
+    it('trims the label off the breadcrumb even when the label itself contains a slash', () => {
+      const lists = [
+        list({ id: 'g1', label: 'Practice', kind: 'group' }),
+        list({ id: 'l1', label: 'Before / After', parentId: 'g1' }),
+      ];
+      expect(searchLists(lists, 'before')[0].parents).toBe('Practice');
+    });
+
+    it('matches through an ancestor group name, ranked below a name match of its own', () => {
+      const lists = [
+        list({ id: 'g1', label: 'Morning', kind: 'group' }),
+        list({ id: 'l1', label: 'Chanting', parentId: 'g1' }),
+        list({ id: 'l2', label: 'Morning sits' }),
+      ];
+      expect(searchLists(lists, 'morning').map((h) => h.list.id)).toEqual(['l2', 'l1']);
+    });
+
+    it('never returns a group — a group holds no suttas, so it addresses no page', () => {
+      const lists = [
+        list({ id: 'g1', label: 'Morning', kind: 'group' }),
+        list({ id: 'l1', label: 'Sits', parentId: 'g1' }),
+      ];
+      expect(searchLists(lists, 'morning').map((h) => h.list.id)).toEqual(['l1']);
+    });
+
+    it('leaves the auto-lists out — they are always on screen in the Lists tab', () => {
+      const lists = [list({ id: 'auto-notes', label: 'Notes', auto: true })];
+      expect(searchLists(lists, 'notes')).toEqual([]);
+    });
+
+    it('is case- and diacritic-insensitive, same as the sutta scan', () => {
+      const lists = [list({ id: 'l1', label: 'Satipaṭṭhāna' })];
+      expect(searchLists(lists, 'SATIPATTHANA').map((h) => h.list.id)).toEqual(['l1']);
+    });
+
+    it('needs every word of a multi-word query, in any order', () => {
+      const lists = [list({ id: 'l1', label: 'Morning chanting' }), list({ id: 'l2', label: 'Morning sits' })];
+      expect(searchLists(lists, 'chanting morning').map((h) => h.list.id)).toEqual(['l1']);
+    });
+
+    it('returns nothing for a blank query', () => {
+      expect(searchLists([list({ id: 'l1', label: 'Morning' })], '   ')).toEqual([]);
     });
   });
 
