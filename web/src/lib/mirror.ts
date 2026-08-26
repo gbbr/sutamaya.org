@@ -383,17 +383,25 @@ function nextOp(state: MirrorState, op: NewOp): MirrorState {
   };
 }
 
+// One list's items with one sutta added or removed. Both add and remove are idempotent, which is
+// what lets the same op be replayed (see replayOps) without changing the answer.
+function nextMembership(items: string[], suttaId: string, add: boolean): string[] {
+  // Removing: everything but this sutta. `filter` is already a no-op when it isn't there.
+  if (!add) return items.filter((s) => s !== suttaId);
+  // Adding one that's already a member: hand back the very same array, so callers comparing by
+  // reference see no change at all.
+  if (items.includes(suttaId)) return items;
+  // Adding a new one: appended at the end, which is where a newly added sutta belongs in user order.
+  return [...items, suttaId];
+}
+
 // Adds or removes one sutta in one list, locally and as a queued op. Two pending ops for the same
 // pair that undo each other cancel: the local items array is then back to what the server already
 // has, so there is nothing left to push.
 export function queueMembership(state: MirrorState, listId: string, suttaId: string, add: boolean): MirrorState {
   const current = state.lists[listId];
   if (!current) return state;
-  const items = add
-    ? current.data.items.includes(suttaId)
-      ? current.data.items
-      : [...current.data.items, suttaId]
-    : current.data.items.filter((s) => s !== suttaId);
+  const items = nextMembership(current.data.items, suttaId, add);
   // Item membership isn't part of the record's own conditional write, so this doesn't touch mtime
   // or the dirty flag — the queued op is what carries it.
   const withItems = withList(state, listId, { ...current, data: { ...current.data, items } });
@@ -428,6 +436,17 @@ function reconcileItems(current: string[], order: string[]): string[] {
   return reconciled;
 }
 
+// One list's freshly pulled items with a single still-queued op replayed over them.
+function replayItemsOp(items: string[], op: Extract<QueuedOp, { type: 'add' | 'remove' | 'order' }>): string[] {
+  // The two membership ops go through the same helper the local write used, so a replay and the
+  // original edit can't disagree — including handing back the same array when nothing changes.
+  if (op.type === 'add') return nextMembership(items, op.suttaId, true);
+  if (op.type === 'remove') return nextMembership(items, op.suttaId, false);
+  // 'order': the queued order was decided against the items this device had, and the pull may have
+  // brought in ones it has never seen, so it's reconciled rather than applied wholesale.
+  return reconcileItems(items, op.order);
+}
+
 // Replays the still-queued ops over freshly pulled rows, so a change made offline doesn't blink out
 // of the UI for as long as it takes to land — a membership edit over the pulled `items`, and a
 // reorder over the pulled positions, which the snapshot would otherwise hand back in the server's
@@ -444,16 +463,7 @@ function replayOps(lists: Record<string, Stored<ListRecord>>, ops: QueuedOp[]): 
     }
     const target = lists[op.listId];
     if (!target) continue;
-    const items = target.data.items;
-    const next =
-      op.type === 'add'
-        ? items.includes(op.suttaId)
-          ? items
-          : [...items, op.suttaId]
-        : op.type === 'remove'
-          ? items.filter((s) => s !== op.suttaId)
-          : reconcileItems(items, op.order);
-    lists[op.listId] = { ...target, data: { ...target.data, items: next } };
+    lists[op.listId] = { ...target, data: { ...target.data, items: replayItemsOp(target.data.items, op) } };
   }
   return lists;
 }

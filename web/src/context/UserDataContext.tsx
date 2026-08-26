@@ -299,10 +299,21 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   const { lists, membership, notes, highlights, visited } = useMemo(() => deriveUserData(state), [state]);
 
   const { pending: pendingCount, stuck: stuckCount } = useMemo(() => syncCounts(state), [state]);
-  // 'offline' first — the browser itself says there's no network, which already explains why
-  // nothing is draining, regardless of anything else the queue is carrying. 'stuck' next: a
-  // permanently-refused record is a different problem than one merely waiting its turn.
-  const syncStatus: SyncStatus = !online ? 'offline' : stuckCount > 0 ? 'stuck' : pendingCount > 0 ? 'pending' : 'synced';
+  // What the sync indicator says. The order of these four is the point: each case explains away
+  // every case below it, so the first one that holds is the one worth showing.
+  function currentSyncStatus(): SyncStatus {
+    // The browser itself says there's no network, which already explains why nothing is draining —
+    // regardless of anything else the queue happens to be carrying.
+    if (!online) return 'offline';
+    // A permanently-refused record is a different problem from one merely waiting its turn, so it
+    // outranks a pending count that may well include it.
+    if (stuckCount > 0) return 'stuck';
+    // Ordinary work in the queue, online, draining.
+    if (pendingCount > 0) return 'pending';
+    // Nothing queued and nothing refused: everything local is on the server.
+    return 'synced';
+  }
+  const syncStatus: SyncStatus = currentSyncStatus();
 
   // Every mutator goes through this: apply to the mirror, then flush shortly after. The guard on
   // `userId` drops a write that lands after sign-out rather than filing it under nobody.

@@ -47,13 +47,21 @@ export function SuttaRowChips({ chips, hlCount, theme, fs, onChipClick, onHighli
   // a little extra size is what keeps it from disappearing into the run of pills — but only a
   // little, since it sits at the end of that run rather than heading it.
   const addFontSize = fontSize + 1;
-  // The add control keeps the plain chip-to-chip gap — it edits the memberships it sits at the end
-  // of, so it belongs to that run. The highlight badge is the odd one out on the line (a count,
-  // not a list), so it takes a wider gap to separate itself from whatever precedes it: a clear
-  // step away from the unfilled add control, or a small one from a chip's own edge in the Library,
-  // where there is no add control on the line at all. Nothing to separate from when the badge is
-  // alone, so it stays flush with the row's edge.
-  const badgeGap = onAddToList ? 12 : chips.length > 0 ? 4 : undefined;
+  // The gap before the highlight badge. The badge is the odd one out on the line — a count, not a
+  // list — so it separates itself from whatever precedes it, and how much depends on what that is.
+  // (The add control itself keeps the plain chip-to-chip gap: it edits the memberships it sits at
+  // the end of, so it belongs to that run.)
+  function badgeGapFor(): number | undefined {
+    // After the add control, which carries no fill or outline of its own: it takes a clear step to
+    // read as a break rather than as more of the same run.
+    if (onAddToList) return 12;
+    // Straight after a chip's own edge, in the Library, where there's no add control on the line —
+    // a hard pill edge needs far less air to separate from.
+    if (chips.length > 0) return 4;
+    // The badge is alone on the line, so there's nothing to separate from: flush with the row.
+    return undefined;
+  }
+  const badgeGap = badgeGapFor();
   return (
     <span data-component="SuttaRowChips" className="flex flex-wrap items-center gap-1.5 mt-3">
       {/* A chip for a list inside a group is segmented: a tinted leading segment naming the

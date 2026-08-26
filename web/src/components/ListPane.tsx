@@ -79,15 +79,15 @@ export function ListPane({
   // A short/common query can match hundreds of suttas (see SEARCH_RESULTS_CAP's own comment) —
   // rendered rows are capped the same way TreePane's own search list is, while `hits.length`
   // (uncapped) still drives the "N results" count below so it stays honest.
-  const items = useMemo(
-    () =>
-      corpus
-        ? searching
-          ? hits.slice(0, SEARCH_RESULTS_CAP).map(({ id, sutta }) => [id, sutta] as [string, Sutta])
-          : listItemsFor(corpus, nodeId, lists)
-        : [],
-    [corpus, nodeId, lists, searching, hits]
-  );
+  const items = useMemo<Array<[string, Sutta]>>(() => {
+    // No corpus yet: the pane renders nothing at all in that window (see `if (!corpus) return
+    // null` further down), so this is a placeholder rather than a real answer.
+    if (!corpus) return [];
+    // Searching: the capped hits, each already carrying the sutta it matched.
+    if (searching) return hits.slice(0, SEARCH_RESULTS_CAP).map(({ id, sutta }) => [id, sutta] as [string, Sutta]);
+    // Browsing: whatever the selected corpus node or user list holds, in its own order.
+    return listItemsFor(corpus, nodeId, lists);
+  }, [corpus, nodeId, lists, searching, hits]);
 
   // Reordering is only offered for a user list — an auto list's membership is derived rather than
   // stored — and only once it holds at least two suttas, since one row has nowhere to move to.
@@ -295,6 +295,33 @@ export function ListPane({
   }
   const meta = metaLine();
 
+  // The reorder toggle's colour treatment (its size and margins are on the button itself). Three
+  // cases rather than two, because the two *resting* treatments differ by platform.
+  function reorderToggleClass(): string {
+    // Reorder mode is a mode you're left sitting in, so it fills rather than merely tinting under
+    // the pointer — that state overrides both resting treatments below.
+    if (reorderMode) return 'bg-accent2 text-[#FBFAF7]';
+    // At rest on mobile it mirrors the back button beside it, bordered chip and all, so the header
+    // reads icon / title / icon rather than a control at one edge and a bare glyph at the other.
+    if (mobile) return 'border border-ink/[.12] bg-chip/40 text-ink-3 hover:text-ink active:bg-ink/[.08]';
+    // At rest on desktop it's the same bare round icon button as the header controls beside the
+    // account badge in TreePane — one icon-button vocabulary across both panes.
+    return 'text-ink-3 hover:bg-ink/[.06]';
+  }
+
+  // The empty state under the rows. Three cases, and the wrong one reads as a failure the reader
+  // didn't cause.
+  function emptyMessage(): string {
+    // A search that found nothing — quoting the query back so it's clear what was looked for.
+    if (searching) return `Nothing matches "${query}".`;
+    // A collection or list they picked that happens to hold nothing.
+    if (nodeId) return 'Nothing here yet.';
+    // Nothing selected at all (bare /browse — a first visit): this is waiting on the reader, not a
+    // statement about anything they chose. Only the two-pane layout ever shows it, since on mobile
+    // a first visit is showing the tree.
+    return 'Choose a collection to begin.';
+  }
+
   return (
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
       <header className="flex-none flex items-center gap-3.5 px-6 pt-5 pb-4 border-b border-ink/10">
@@ -325,24 +352,10 @@ export function ListPane({
         </div>
         {canReorder && (
           <button
-            // On desktop this is the same bare round icon button as the header controls beside
-            // the account badge in TreePane — one icon-button vocabulary across both panes.
-            // Mobile is the exception: it mirrors the back button beside it instead, bordered
-            // chip and all, so the header reads icon / title / icon rather than a control at one
-            // edge and a bare glyph at the other.
-            //
-            // Either way the negative right margin pulls it in from the header's own 24px padding
-            // so its centre lands on the 34px axis this pane's row controls sit on.
-            //
-            // Reorder mode is a mode you're left sitting in, so it fills rather than merely
-            // tinting under the pointer — that state overrides both resting treatments.
-            className={`flex-none rounded-full flex items-center justify-center ${mobile ? 'w-[34px] h-[34px] -mr-[7px]' : 'w-[38px] h-[38px] -mr-[9px]'} ${
-              reorderMode
-                ? 'bg-accent2 text-[#FBFAF7]'
-                : mobile
-                  ? 'border border-ink/[.12] bg-chip/40 text-ink-3 hover:text-ink active:bg-ink/[.08]'
-                  : 'text-ink-3 hover:bg-ink/[.06]'
-            }`}
+            // The negative right margin pulls it in from the header's own 24px padding so its
+            // centre lands on the 34px axis this pane's row controls sit on. Its colour treatment
+            // is reorderToggleClass() above.
+            className={`flex-none rounded-full flex items-center justify-center ${mobile ? 'w-[34px] h-[34px] -mr-[7px]' : 'w-[38px] h-[38px] -mr-[9px]'} ${reorderToggleClass()}`}
             aria-label={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
             title={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
             onClick={() => setReorderMode((m) => !m)}
@@ -575,17 +588,7 @@ export function ListPane({
         {/* A query that matched only lists isn't a failed search — the block above says so, and
             "Nothing matches" underneath it would contradict it. */}
         {items.length === 0 && !(searching && listHitTotal > 0) && (
-          <div className="font-sans text-center text-ui-base text-ink-4 py-10 px-6">
-            {/* Nothing selected at all (bare /browse — a first visit) is waiting on the reader;
-                "Nothing here yet." is a statement about a thing they already picked, and saying
-                it here would read as a failure. Only the two-pane layout ever shows this one,
-                since on mobile a first visit is showing the tree. */}
-            {searching
-              ? `Nothing matches "${query}".`
-              : nodeId
-                ? 'Nothing here yet.'
-                : 'Choose a collection to begin.'}
-          </div>
+          <div className="font-sans text-center text-ui-base text-ink-4 py-10 px-6">{emptyMessage()}</div>
         )}
       </div>
       {picker && (
