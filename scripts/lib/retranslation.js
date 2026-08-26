@@ -19,9 +19,9 @@ export const SUJATO_TREES = ['sujato/sutta', 'sujato/notes', 'sujato/name', 'suj
 // The three a rule may rewrite, and the default scope. **sujato/notes is never retranslated**: a
 // note is Bhikkhu Sujato writing *about* the text rather than translating it, so he quotes his own
 // renderings and uses the same words as ordinary English, and a rule that is right on the
-// translation is routinely wrong there — "mindfulness and awareness" (satisampajañña) collapsing to
-// "awareness and awareness", "its gradual disappearance" becoming "its gradual disappearing",
-// "mindfully lay down to rest" becoming "with awareness lay down to rest". A note can't be
+// translation is routinely wrong there — MN 10's note arguing for "mindfulness meditation" rewritten
+// into the "establishment of mindfulness" that replaces it, "its gradual disappearance" becoming
+// "its gradual disappearing". A note can't be
 // corrected by hand either, since a segment override resolves through sutta-only ids (see
 // buildSegmentIndex). Naming it in a `scope` is rejected rather than ignored, so the policy can't
 // be half-undone by one rule.
@@ -176,8 +176,8 @@ function isTitleCase(matched) {
 // The replacement, cased to match what it replaces: lowercase as written, Sentence case from a
 // capitalized first letter, or Title Case throughout. The replacement's own first word follows the
 // match's first word rather than the title rule, so a form that carries a leading preposition
-// ("on mindfulness meditation" → "on the establishment of awareness") stays lowercase there while
-// a bare one ("Mindfulness Meditation" → "The Establishment of Awareness") does not.
+// ("on mindfulness meditation" → "on the establishment of mindfulness") stays lowercase there while
+// a bare one ("Mindfulness Meditation" → "The Establishment of Mindfulness") does not.
 function caseAs(matched, replacement) {
   const firstUpper = matched[0] === matched[0].toUpperCase();
   if (!isTitleCase(matched)) return firstUpper ? capitalize(replacement) : replacement;
@@ -212,8 +212,9 @@ export function formsMatch(rule, text) {
 
 // The locked-chunk pass for one term rule against one segment's current chunk list — see
 // docs/retranslation.md's "The pass". A chunk is `{ text, locked }`; locked chunks are invisible to
-// every rule (this one and all later ones), which is what makes same-segment rules order-safe
-// (dn22:1.9's sampajañña/sati collision) while same-word collisions still resolve by array order.
+// every rule (this one and all later ones), which is what makes same-segment rules order-safe —
+// one rule's replacement can be another's source word — while same-word collisions between two
+// rules still resolve by array order.
 export function applyRuleToChunks(chunks, rule) {
   let count = 0;
   const { re, forms } = combinedFormsRegex(rule);

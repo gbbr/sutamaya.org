@@ -155,21 +155,21 @@ describe('applyRuleToChunks / applyTermRules — the retranslation engine', () =
   it('cases a multi-word replacement the way the text it replaces is cased', () => {
     // Lowercase and Sentence case both come out of the single-word behaviour; Title Case is what a
     // multi-word form needs, since capitalizing only the first letter would leave a heading reading
-    // "The Longer Discourse on Establishment of awareness".
-    const rule = { id: 'test-title', mode: 'deny', forms: [['mindfulness meditation', 'the establishment of awareness']] };
-    expect(apply('develop mindfulness meditation', rule)).toBe('develop the establishment of awareness');
-    expect(apply('Mindfulness meditation leads on.', rule)).toBe('The establishment of awareness leads on.');
-    expect(apply('Mindfulness Meditation', rule)).toBe('The Establishment of Awareness');
+    // "The Longer Discourse on Establishment of mindfulness".
+    const rule = { id: 'test-title', mode: 'deny', forms: [['mindfulness meditation', 'the establishment of mindfulness']] };
+    expect(apply('develop mindfulness meditation', rule)).toBe('develop the establishment of mindfulness');
+    expect(apply('Mindfulness meditation leads on.', rule)).toBe('The establishment of mindfulness leads on.');
+    expect(apply('Mindfulness Meditation', rule)).toBe('The Establishment of Mindfulness');
     // A form carrying its own leading preposition keeps that word's case, so the article after it
     // stays lowercase where a title would have capitalized a leading one.
-    const onRule = { id: 'test-title-on', mode: 'deny', forms: [['on mindfulness meditation', 'on the establishment of awareness']] };
-    expect(apply('The Longer Discourse on Mindfulness Meditation', onRule)).toBe('The Longer Discourse on the Establishment of Awareness');
+    const onRule = { id: 'test-title-on', mode: 'deny', forms: [['on mindfulness meditation', 'on the establishment of mindfulness']] };
+    expect(apply('The Longer Discourse on Mindfulness Meditation', onRule)).toBe('The Longer Discourse on the Establishment of Mindfulness');
   });
 
   it('locks matched spans so a later rule in the same pass cannot re-touch them', () => {
-    // The dn22:1.9 case from docs/retranslation.md: "keen, aware, and mindful" — a rule turning
-    // "aware" into "understanding" must not let a later rule (turning "mindful" into "aware")
-    // then have its own output re-caught by the first rule.
+    // The chained-rewrite case from docs/retranslation.md: "keen, aware, and mindful" — a rule
+    // turning "aware" into "understanding" must not let a later rule (turning "mindful" into
+    // "aware") then have its own output re-caught by the first rule.
     const awareRule = { id: 'test-aware-understanding', mode: 'deny', forms: [['aware', 'understanding']] };
     const mindfulRule = { id: 'test-mindful-aware', mode: 'deny', forms: [['mindful', 'aware']] };
     const sidecars = new Map(); // both open with no deny entries — always permitted
@@ -277,7 +277,7 @@ describe('the shipped rules, one example each', () => {
     // One example per grammatical slot ātāpī occupies. The adjective is the satipaṭṭhāna formula's
     // first word; the abstract noun ātappa is Bhikkhu Sujato's "keenness"; the adverb is his
     // "keenly"; and the article travels with the adjective, or SN 1.23 reads "a ardent bhikkhu".
-    ['atapi-ardent', 'sn36.7:5.1', 'sujato/sutta', 'keen, aware, and mindful', 'ardent, clearly comprehending, and aware'],
+    ['atapi-ardent', 'sn36.7:5.1', 'sujato/sutta', 'keen, aware, and mindful', 'ardent, aware, and mindful'],
     ['atapi-ardent', 'an10.14:2.3', 'sujato/sutta', 'incline toward keenness, commitment', 'incline toward ardor, commitment'],
     ['atapi-ardent', 'mn125:2.5', 'sujato/sutta', 'a mendicant who meditates diligently, keenly', 'a bhikkhu who meditates diligently, ardently'],
     ['atapi-ardent', 'sn1.23:2.3', 'sujato/sutta', 'a keen and alert mendicant—', 'an ardent and alert bhikkhu—'],
@@ -295,39 +295,13 @@ describe('the shipped rules, one example each', () => {
     ['vedana-sensation', 'mn140:24.8', 'sujato/sutta', 'feeling the end of the body draw close', 'feeling the end of the body draw close'],
     // Not denied: DN 1's vedayita is the term, and the sutta's conclusion already reads "sensation".
     ['vedana-sensation', 'dn1:3.32.1', 'sujato/sutta', 'only the feeling of those who do not know or see', 'only the sensation of those who do not know or see'],
-    // Runs ahead of sati-aware, which would otherwise take the "mindfulness" of this phrase on its
-    // own and leave "awareness meditation" behind.
-    ['satipatthana-establishment-of-awareness', 'sn52.1:1.4', 'sujato/sutta', 'missed out on these four kinds of mindfulness meditation', 'missed out on these four establishments of awareness'],
-    ['satipatthana-establishment-of-awareness', 'dn22:0.2', 'sujato/sutta', 'The Longer Discourse on Mindfulness Meditation', 'The Longer Discourse on the Establishment of Awareness'],
+    // The plural form absorbs "kinds of", which the singular has no reason to.
+    ['satipatthana-establishment-of-mindfulness', 'sn52.1:1.4', 'sujato/sutta', 'missed out on these four kinds of mindfulness meditation', 'missed out on these four establishments of mindfulness'],
+    // The preposition form, so the title's article stays lowercase.
+    ['satipatthana-establishment-of-mindfulness', 'dn22:0.2', 'sujato/sutta', 'The Longer Discourse on Mindfulness Meditation', 'The Longer Discourse on the Establishment of Mindfulness'],
     // No rule reaches a note, so MN 10's — which argues for the very rendering this one reverses —
     // stays word for word as Bhikkhu Sujato wrote it.
-    ['satipatthana-establishment-of-awareness', 'mn10:1.1', 'sujato/notes', 'i.e. “mindfulness meditation” or simply “meditation”', 'i.e. “mindfulness meditation” or simply “meditation”'],
-    ['sati-aware', 'sn9.1:3.1', 'sujato/sutta', 'Give up discontent; be mindful;', 'Give up discontent; be aware;'],
-    // Same, the other way round — "a mindful disciple" would become "a aware disciple".
-    ['sati-aware', 'sn4.17:4.1', 'sujato/sutta', 'But a mindful disciple of the Buddha', 'But an aware disciple of the Buddha'],
-    // "mindfully" needs more than the word swapped, hence the phrase.
-    ['sati-aware', 'an6.29:11.3', 'sujato/sutta', 'a mendicant goes out mindfully, returns mindfully', 'a bhikkhu goes out with awareness, returns with awareness'],
-    // Denied: caṅkamati, with no sati in the Pali at all.
-    ['sati-aware', 'dn25:6.2', 'sujato/sutta', 'he walked mindfully in the open air', 'he walked mindfully in the open air'],
-    // The dn22:1.9 collision from docs/retranslation.md, through the rules as shipped: sati-aware
-    // produces the very word sampajanna-clear-comprehension consumes, and locking keeps them apart.
-    // Also pins the adjective slot the participle exists for — a noun phrase cannot stand here.
-    ['sampajanna-clear-comprehension', 'sn54.10:5.5', 'sujato/sutta', 'keen, aware, and mindful', 'ardent, clearly comprehending, and aware'],
-    // The other half of the split: Bhikkhu Sujato's noun is sampajañña and takes the noun phrase.
-    ['sampajanna-clear-comprehension', 'an2.179:1.3', 'sujato/sutta', 'Mindfulness and situational awareness.', 'Awareness and clear comprehension.'],
-    // The negated slot, and the line both awareness rules negate at once (muṭṭhassatissa
-    // asampajānassa) — without its own forms this reads "unaware and unaware".
-    ['sampajanna-clear-comprehension', 'an5.210:1.1', 'sujato/sutta', 'falling asleep unmindful and unaware', 'falling asleep unaware and without clear comprehension'],
-    // Denied: plain-English "aware", introducing a perception rather than rendering sampajañña.
-    ['sampajanna-clear-comprehension', 'an1.451:1.1', 'sujato/sutta', 'aware that ‘consciousness is infinite’', 'aware that ‘consciousness is infinite’'],
-    // Same, for a term whose English is ordinary English in Bhikkhu Sujato's own prose: his gloss of citta
-    // is left alone, where "awareness" → "clear comprehension" would have made nonsense of it.
-    ['sampajanna-clear-comprehension', 'dn22:1.11', 'sujato/notes', '“Mind” (citta) is simple awareness.', '“Mind” (citta) is simple awareness.'],
-    // vippasanna beside sampajañña: both of the rule's forms, prose and verse.
-    ['vippasanna-calm', 'sn47.4:2.4', 'sujato/sutta', 'keen, aware, at one, with minds that are clear', 'ardent, clearly comprehending, at one, with minds that are calm'],
-    ['vippasanna-calm', 'iti47:4.2', 'sujato/sutta', 'immersed in samādhi, joyful and clear', 'composed in samādhi, joyful and calm'],
-    // Denied by omission: the same word for the same term, where nothing collides with it.
-    ['vippasanna-calm', 'dn20:5.8', 'sujato/sutta', 'clear and unclouded.”', 'clear and unclouded.”'],
+    ['satipatthana-establishment-of-mindfulness', 'mn10:1.1', 'sujato/notes', 'i.e. “mindfulness meditation” or simply “meditation”', 'i.e. “mindfulness meditation” or simply “meditation”'],
     ['samudaya-arising', 'sn56.11:4.3', 'sujato/sutta', 'the noble truth of the origin of suffering', 'the noble truth of the arising of suffering'],
     // Denied: aggañña, how the world began.
     ['samudaya-arising', 'dn24:2.14.1', 'sujato/sutta', 'I understand the origin of the world.', 'I understand the origin of the world.'],
@@ -512,9 +486,9 @@ describe('the shipped rules, one example each', () => {
       });
       // Reprocessing on its own has no lock history, so it re-consumes tokens the real pass had
       // already locked: a word one rule *produces* is invisible to a later rule listing the same
-      // word as a source, which is the whole of the sati-aware → sampajañña collision (see "The
-      // pass" in docs/retranslation.md). That difference is expected rather than a broken anchor,
-      // so a rewrite is only a failure when what it consumed is not an earlier rule's output.
+      // word as a source (see "The pass" in docs/retranslation.md). That difference is expected
+      // rather than a broken anchor, so a rewrite is only a failure when what it consumed is not
+      // an earlier rule's output.
       for (const chunk of chunks) {
         if (!chunk.locked || chunk.text === chunk.original) continue;
         expect(
