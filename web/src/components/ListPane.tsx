@@ -483,7 +483,7 @@ export function ListPane({
                 if (el) itemRowRefs.current.set(id, el);
                 else itemRowRefs.current.delete(id);
               }}
-              className="relative border-b border-ink/[.08]"
+              className="group relative border-b border-ink/[.08]"
               style={dragging ? { opacity: 0.5 } : undefined}
             >
               {/* The right gutter is only kept clear where a control actually sits. At rest the
@@ -542,9 +542,14 @@ export function ListPane({
                   centred in it: a row runs three or four lines, so a centred button would float
                   alongside the blurb instead of reading as the row's own action. The `top` inset
                   matches the `right` one, so the circle sits the same distance from both edges of
-                  its corner. Visible at rest on every device, never hover-revealed: an iPad gets
-                  the desktop layout but has no hover, so a hover-gated control would simply not
-                  exist there.
+                  its corner.
+
+                  Held back at rest and brought up to full strength when the pointer is anywhere
+                  over the row, or when the button takes keyboard focus: repeated down every row,
+                  at full strength the icons read as a column running alongside the prose. The dim
+                  itself sits inside `@media (hover: hover)`, so the control is never merely
+                  hover-*revealed* — an iPad gets the desktop layout but has no hover, and one that
+                  could only be restored by a pointer would simply not exist there.
 
                   Same bare round button as the header's reorder toggle and TreePane's header
                   icons — borderless at rest matters most here, where it's repeated down every
@@ -554,7 +559,7 @@ export function ListPane({
                   `pr-14` for the width the circle actually takes. */}
               {!reordering && (
                 <button
-                  className={`absolute ${mobile ? 'right-3 top-3 w-11 h-11' : 'right-[15px] top-[15px] w-[38px] h-[38px]'} flex items-center justify-center rounded-full text-ink-3 hover:bg-ink/[.06] active:bg-ink/[.10]`}
+                  className={`absolute ${mobile ? 'right-3 top-3 w-11 h-11' : 'right-[15px] top-[15px] w-[38px] h-[38px]'} flex items-center justify-center rounded-full text-ink-3 hover:bg-ink/[.06] active:bg-ink/[.10] transition-opacity [@media(hover:hover)]:opacity-45 group-hover:opacity-100 focus-visible:opacity-100`}
                   aria-label={`Add ${s.ref} to a list`}
                   onClick={(e) => setPicker({ suttaId: id, anchor: e.currentTarget.getBoundingClientRect() })}
                 >
