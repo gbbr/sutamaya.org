@@ -15,6 +15,7 @@ gloss a term in his wording while the line above it uses ours.
 |---|---|---|
 | bhikkhu | mendicant | **bhikkhu** |
 | samādhi | immersion, immersed | **composure, composed** (and "collect" as a verb) |
+| jhāna | absorption | **jhāna** (and "practice jhāna" for jhāyati) |
 | satipaṭṭhāna | mindfulness meditation | **the establishment of mindfulness** |
 | ātāpī | keen | **ardent** |
 | saṅkhāra | choices | **saṅkhāras** |

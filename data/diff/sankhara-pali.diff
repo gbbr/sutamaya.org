@@ -105,16 +105,16 @@ Rule: sankhara-pali — 890 change(s), 329 file(s)
 +++ sujato/sutta/an/an11/an11.16_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an11.16:4.4
  PLI: ‘idampi kho paṭhamaṁ jhānaṁ abhisaṅkhataṁ abhisañcetayitaṁ’. 
--‘Even this first absorption is produced by choices and intentions.’ 
-+‘Even this first absorption is produced by saṅkhāras and intentions.’ 
+-‘Even this first jhāna is produced by choices and intentions.’ 
++‘Even this first jhāna is produced by saṅkhāras and intentions.’ 
 @@ -1,2 +1,2 @@ an11.16:4.5
  PLI: ‘Yaṁ kho pana kiñci abhisaṅkhataṁ abhisañcetayitaṁ, tadaniccaṁ nirodhadhamman’ti pajānāti. 
 -They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ 
 +They understand: ‘But whatever is produced by saṅkhāras and intentions is impermanent and liable to cessation.’ 
 @@ -1,2 +1,2 @@ an11.16:5.5
  PLI: ‘idampi kho catutthaṁ jhānaṁ abhisaṅkhataṁ abhisañcetayitaṁ’. 
--‘Even this fourth absorption is produced by choices and intentions.’ 
-+‘Even this fourth absorption is produced by saṅkhāras and intentions.’ 
+-‘Even this fourth jhāna is produced by choices and intentions.’ 
++‘Even this fourth jhāna is produced by saṅkhāras and intentions.’ 
 @@ -1,2 +1,2 @@ an11.16:5.6
  PLI: ‘Yaṁ kho pana kiñci abhisaṅkhataṁ abhisañcetayitaṁ tadaniccaṁ nirodhadhamman’ti pajānāti. 
 -They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ 
@@ -809,8 +809,8 @@ Rule: sankhara-pali — 890 change(s), 329 file(s)
 +++ sujato/sutta/mn/mn52_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn52:4.3
  PLI: ‘idampi kho paṭhamaṁ jhānaṁ abhisaṅkhataṁ abhisañcetayitaṁ. 
--‘Even this first absorption is produced by choices and intentions.’ 
-+‘Even this first absorption is produced by saṅkhāras and intentions.’ 
+-‘Even this first jhāna is produced by choices and intentions.’ 
++‘Even this first jhāna is produced by saṅkhāras and intentions.’ 
 @@ -1,2 +1,2 @@ mn52:4.4
  PLI: Yaṁ kho pana kiñci abhisaṅkhataṁ abhisañcetayitaṁ tadaniccaṁ nirodhadhamman’ti pajānāti. 
 -They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ 

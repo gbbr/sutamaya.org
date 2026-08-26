@@ -240,8 +240,9 @@ describe('the shipped rules, one example each', () => {
   const EXAMPLES = [
     ['mendicant-bhikkhu', 'dn1:1.1', 'sujato/sutta', 'a mendicant and some mendicants', 'a bhikkhu and some bhikkhus'],
     ['immersion-concentration', 'dn1:1.1', 'sujato/sutta', 'they enter that immersion', 'they enter that composure'],
-    // The plural, in the one list that carries it.
-    ['immersion-concentration', 'dn1:1.2', 'sujato/sutta', 'the absorptions, liberations, immersions, and attainments', 'the absorptions, liberations, composures, and attainments'],
+    // The plural, in the one list that carries it. jhāna and samādhi meet in this line, each
+    // taking the word the other never matches.
+    ['immersion-concentration', 'dn1:1.2', 'sujato/sutta', 'the absorptions, liberations, immersions, and attainments', 'the jhānas, liberations, composures, and attainments'],
     // The article goes with the noun it agrees with — here it is dropped, since "a composure of
     // the heart" isn't English where "an immersion of the heart" was.
     ['immersion-concentration', 'dn1:1.31.1', 'sujato/sutta', 'experiences an immersion of the heart', 'experiences composure of the heart'],
@@ -262,6 +263,21 @@ describe('the shipped rules, one example each', () => {
     // where a phrasing call ("immerse on the gratification") is one refresh away from changing and
     // failing this test for a reason that has nothing to do with the code.
     ['immersion-concentration', 'mn40:5.4', 'sujato/sutta', 'just because you immerse yourself in water', 'just because you immerse yourself in water'],
+    // One per slot "absorption" occupies: the noun, the verb Bhikkhu Sujato builds out of
+    // jhāyati, and a Title Case heading (where the single-word form takes Sentence case).
+    ['jhana-pali', 'an9.36:1.2', 'sujato/sutta', 'The second absorption is also a basis for ending the defilements. ', 'The second jhāna is also a basis for ending the defilements. '],
+    ['jhana-pali', 'thag16.7:2.4', 'sujato/sutta', 'practices absorption without grasping. ', 'practices jhāna without grasping. '],
+    ['jhana-pali', 'dn28:19.0', 'sujato/sutta', '1.16. The Four Absorptions ', '1.16. The Four Jhānas '],
+    // His expansion of a bare jhāyanti. The longer form claims the phrase whole, so the reader
+    // gets "practice jhāna" rather than "practice jhāna meditation".
+    ['jhana-pali', 'an6.46:2.3', 'sujato/sutta', 'Why do they practice absorption meditation? In what way do they practice absorption meditation?', 'Why do they practice jhāna? In what way do they practice jhāna?'],
+    // The blurb gloss, which keeping the Pali would otherwise turn into "jhāna (jhāna)". The form
+    // carries the following word, since a form has to end on a word boundary and ")" is not one.
+    ['jhana-pali', 'sn-blurbs:sn53', 'sujato/blurb', 'discourses on the topic of absorption meditation (<i lang=\'pi\' translate=\'no\'>jhāna</i>), which however merely apply the standard repetition series to the formula for the four absorptions.', 'discourses on the topic of jhāna, which however merely apply the standard repetition series to the formula for the four jhānas.'],
+    // Left alone: "absorb"/"absorbed" is untouched, so the dye simile survives and the four verse
+    // lines that are jhāna keep the wording Bhikkhu Sujato already gives them.
+    ['jhana-pali', 'mn56:18.5', 'sujato/sutta', 'Just as a clean cloth rid of stains would properly absorb dye, ', 'Just as a clean cloth rid of stains would properly absorb dye, '],
+    ['jhana-pali', 'thag1.41:1.3', 'sujato/sutta', 'But in the mountain cleft he is absorbed in jhāna—', 'But in the mountain cleft he is absorbed in jhāna—'],
     ['patisambhida-analytical-knowledge', 'an7.38:1.1', 'sujato/sutta', 'will soon realize the four kinds of textual analysis', 'will soon realize the four kinds of analytical knowledge'],
     // The heading slot: four of the term's occurrences are Title Case sutta names.
     ['patisambhida-analytical-knowledge', 'an4.172:0.3', 'sujato/sutta', 'Sāriputta’s Attainment of Textual Analysis', 'Sāriputta’s Attainment of Analytical Knowledge'],
@@ -347,7 +363,7 @@ describe('the shipped rules, one example each', () => {
     // word and a form that fits one slot is ungrammatical in the next. The first also pins the
     // article: the longest form has to swallow "the" or 106 segments read "As the thought and
     // examination are stilled".
-    ['vitakka-vicara-thought-examination', 'sn53.1-12:1.6', 'sujato/sutta', 'As the placing of the mind and keeping it connected are stilled, they enter and remain in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. ', 'As thought and examination are stilled, they enter and remain in the second absorption, which has the rapture and bliss born of composure, with internal clarity and mind at one, without thought or examination. '],
+    ['vitakka-vicara-thought-examination', 'sn53.1-12:1.6', 'sujato/sutta', 'As the placing of the mind and keeping it connected are stilled, they enter and remain in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. ', 'As thought and examination are stilled, they enter and remain in the second jhāna, which has the rapture and bliss born of composure, with internal clarity and mind at one, without thought or examination. '],
     // Finite verbs, then the bare subject noun, in one line — a noun-only rule would give "First
     // you thought and examination".
     ['vitakka-vicara-thought-examination', 'sn41.6:2.4', 'sujato/sutta', 'First you place the mind and keep it connected, then you break into speech. That’s why placing the mind and keeping it connected are a verbal process. ', 'First you think and examine, then you break into speech. That’s why thought and examination are a verbal process. '],

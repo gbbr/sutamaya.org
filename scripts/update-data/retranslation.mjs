@@ -10,7 +10,7 @@
 //
 // Groups below, in array order; order inside and between them settles same-word collisions:
 //
-//   standalone terms   mendicant-bhikkhu, immersion-concentration,
+//   standalone terms   mendicant-bhikkhu, immersion-concentration, jhana-pali,
 //                      patisambhida-analytical-knowledge, dhamma-the-dhamma, atapi-ardent
 //   mindfulness        satipatthana-establishment-of-mindfulness
 //   arising / passing  samudaya-arising, vaya-passing-away, atthangama-disappearing,
@@ -58,6 +58,51 @@ export const RULES = [
       ['immersing', 'collecting'],
       ['immersion', 'composure'],
       ['immersions', 'composures'],
+    ],
+  },
+  {
+    id: 'jhana-pali',
+    why: 'Bhikkhu Sujato renders jhāna as "absorption" and the verb jhāyati as "practice ' +
+      'absorption"; this app keeps the Pali, as it does for bhikkhu, Dhamma and saṅkhāra. No sutta ' +
+      'glosses jhāna with a synonym — it is defined by the formula it stands in ("quite secluded ' +
+      'from sensual pleasures … rapture and bliss born of seclusion, with thought and examination"), ' +
+      'so every English candidate names what the translator takes the state to be like rather than ' +
+      'what the texts say it is. Bodhi, Ñāṇamoli and Thanissaro all leave the word untranslated; ' +
+      'with inline Pali and a docked dictionary on the page, so does this app. The verb goes with ' +
+      'the noun — iti78 and thag16.7 name "the four jhānas" and end lines with "who practice ' +
+      'absorption" otherwise — and takes the noun rather than "meditate", which the corpus already ' +
+      'spends some 2,000 times on viharati and others. The plural is anglicised (jhānas, not ' +
+      'jhānā) because the corpus needs "the four jhānas" and "these jhānas", determiners the Pali ' +
+      'plural cannot take; upstream writes it that way itself at an-blurbs:an4.124. Open with an ' +
+      'empty deny list: all 965 segments carrying "absorption"/"absorptions" translate jhāna or ' +
+      'jhāyati, with no homonym anywhere in the corpus. His "absorbed" is left alone — 10 of its ' +
+      '16 segments are the dye simile (rajanaṁ paṭiggaṇheyya), two are samādhi, and the four that ' +
+      'are jhāna already read as verse ("absorbed in jhāna", "Absorbed, rid of hopes").',
+    mode: 'deny',
+    predicate: /jhān|jhāy/i,
+    forms: [
+      // The SN 45 and SN 53 blurbs gloss the term with the Pali they are about to be given —
+      // "absorption meditation (jhāna)", "the four absorptions (jhānas)" — which with the Pali
+      // kept would define the word with itself, so the parenthesis goes. Forms match longest-first,
+      // so these claim their phrase before the bare ones below; each carries the following word
+      // because a form has to end on a word boundary and a closing parenthesis is not one. The
+      // markup is upstream's own and is matched literally: should either blurb be reworded, the
+      // form stops matching and the redundancy comes back, which nothing detects.
+      ['absorption meditation (<i lang=\'pi\' translate=\'no\'>jhāna</i>), which',
+        'jhāna, which'],
+      ['absorptions (<i lang=\'pi\' translate=\'no\'>jhānas</i>) enables',
+        'jhānas enables'],
+      // His expansion of a bare jhāyati/jhāyanti: MN 50 and AN 6.46's "We practice absorption
+      // meditation!", and three blurbs. "We practice jhāna!" says it without the gloss and leaves
+      // the fourfold pun that follows — jhāyanti pajjhāyanti nijjhāyanti apajjhāyanti, "they
+      // meditate and concentrate and contemplate and ruminate" — standing on its own.
+      ['absorption meditation', 'jhāna'],
+      // The same expansion the other way round, in two AN/MN blurbs — "profound meditation
+      // absorption", "a particular meditative absorption". The qualifier goes with the gloss.
+      ['meditation absorption', 'jhāna'],
+      ['meditative absorption', 'jhāna'],
+      ['absorptions', 'jhānas'],
+      ['absorption', 'jhāna'],
     ],
   },
   {
@@ -787,6 +832,44 @@ export const RULES = [
     to: 'When that talk was finished, I stilled, settled, unified, and collected my mind in samādhi internally in the same meditation subject as a basis of composure as before, in which I regularly meditate.” ',
   },
 
+  // ·· a preposition the noun cannot take ··
+  // DN 19's karuṇaṁ jhānaṁ jhāyati, the Great Steward's four-month retreat, is the only place in
+  // the corpus where a jhāna is named after its meditation subject. Bhikkhu Sujato governs it with
+  // "on" — "practices the absorption on compassion" — which an English noun of state does not take;
+  // jhana-pali swaps the noun and inherits the preposition, so these four lines set it to "of".
+  {
+    id: 'dn19-jhana-of-compassion-condition',
+    kind: 'segment',
+    why: 'The Divinity’s condition as the Great Steward first hears it reported.',
+    segment: 'dn19:38.8',
+    from: '‘Whoever goes on retreat for the four months of the rainy season and practices the jhāna on compassion sees the Divinity and discusses with him.’ ',
+    to: '‘Whoever goes on retreat for the four months of the rainy season and practices the jhāna of compassion sees the Divinity and discusses with him.’ ',
+  },
+  {
+    id: 'dn19-jhana-of-compassion-request',
+    kind: 'segment',
+    why: 'dn19-jhana-of-compassion-condition’s phrase, as the Steward asks the king’s leave — the infinitive.',
+    segment: 'dn19:39.7',
+    from: '“Sir, I wish to go on retreat for the four months of the rainy season and practice the jhāna on compassion. ',
+    to: '“Sir, I wish to go on retreat for the four months of the rainy season and practice the jhāna of compassion. ',
+  },
+  {
+    id: 'dn19-jhana-of-compassion-narration',
+    kind: 'segment',
+    why: 'dn19-jhana-of-compassion-condition’s phrase, narrated in the past tense once he does it.',
+    segment: 'dn19:43.1',
+    from: 'Then the Great Steward had a new ceremonial hall built to the east of his citadel, where he went on retreat for the four months of the rainy season and practiced the jhāna on compassion. ',
+    to: 'Then the Great Steward had a new ceremonial hall built to the east of his citadel, where he went on retreat for the four months of the rainy season and practiced the jhāna of compassion. ',
+  },
+  {
+    id: 'dn19-jhana-of-compassion-recollection',
+    kind: 'segment',
+    why: 'dn19-jhana-of-compassion-condition’s phrase again, unquoted, as the Steward recalls what he was told.',
+    segment: 'dn19:43.5',
+    from: 'whoever goes on retreat for the four months of the rainy season and practices the jhāna on compassion sees the Divinity and discusses with him. ',
+    to: 'whoever goes on retreat for the four months of the rainy season and practices the jhāna of compassion sees the Divinity and discusses with him. ',
+  },
+
   // ── Blurb openers ───────────────────────────────────────────────────────────
   // A group blurb renders in ListPane directly under the heading naming that group, so an opener
   // that re-announces the group by name and counts its suttas says twice over what the page has
@@ -929,9 +1012,9 @@ export const RULES = [
         from: 'The “Linked Discourses with Vacchagotta” contains 55 discourses, each with ',
         to: 'Discourses each with ' },
       // Keeps both Pali names: the Jhānasaṁyutta/Samādhisaṁyutta pair is what tells this section
-      // apart from SN 53, which the app also labels "Absorption".
+      // apart from SN 53, which the app also labels "Jhāna".
       { blurb: 'sn-blurbs:sn34',
-        from: 'The “Linked Discourses on Absorption” (Jhānasaṁyutta) is also known as the “Linked Discourses on Composure” (Samādhisaṁyutta). It contains 55 discourses dealing with ',
+        from: 'The “Linked Discourses on Jhāna” (Jhānasaṁyutta) is also known as the “Linked Discourses on Composure” (Samādhisaṁyutta). It contains 55 discourses dealing with ',
         to: 'The Jhānasaṁyutta, also known as the Samādhisaṁyutta or “Linked Discourses on Composure”, contains discourses dealing with ' },
       { blurb: 'sn-blurbs:sn36',
         from: 'The “Linked Discourses on Feelings” contains 31 discourses on ',
@@ -987,7 +1070,7 @@ export const RULES = [
         from: 'The “Linked Discourses with Anuruddha” contains 24 discourses with Anuruddha, ',
         to: 'Discourses with Anuruddha, ' },
       { blurb: 'sn-blurbs:sn53',
-        from: 'The “Linked Discourses on Absorption” contains 54 discourses on ',
+        from: 'The “Linked Discourses on Jhāna” contains 54 discourses on ',
         to: 'Fifty-four discourses on ' },
       { blurb: 'sn-blurbs:sn54',
         from: 'The “Linked Discourses on Breath Meditation” contains 20 discourses on ',
