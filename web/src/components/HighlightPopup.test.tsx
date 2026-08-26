@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { HighlightPopup } from './HighlightPopup';
 import { HIGHLIGHT_COLORS } from '../lib/theme';
@@ -15,7 +15,7 @@ function renderPopup(mobile: boolean, pop: Partial<PopState> = {}) {
   const onClose = vi.fn();
   render(
     <HighlightPopup
-      pop={{ ranges: [{ i: 0, s: 0, e: 4 }], x: 120, y: 200, on: null, ...pop }}
+      pop={{ ranges: [{ i: 0, s: 0, e: 4 }], x: 120, top: 200, bottom: 220, on: null, ...pop }}
       theme={theme}
       mobile={mobile}
       onPick={onPick}
@@ -30,11 +30,31 @@ function renderPopup(mobile: boolean, pop: Partial<PopState> = {}) {
 }
 
 describe('HighlightPopup', () => {
-  it('anchors to the selection on desktop', () => {
+  const realRect = Element.prototype.getBoundingClientRect;
+  afterEach(() => {
+    Element.prototype.getBoundingClientRect = realRect;
+  });
+
+  // jsdom lays nothing out, so the measurement the placement turns on has to be supplied.
+  function stubMeasuredTop(top: number) {
+    Element.prototype.getBoundingClientRect = () => new DOMRect(100, top, 200, 40);
+  }
+
+  it('sits above the selection on desktop', () => {
+    stubMeasuredTop(160);
     const { el } = renderPopup(false);
     expect(el.style.top).toBe('200px');
+    expect(el.style.transform).toBe('translate(-50%,-100%)');
     expect(el.style.left).not.toBe('');
     expect(el.className).not.toContain('bottom-0');
+  });
+
+  // Above is the default, but a selection near the top of the viewport has no room up there.
+  it('flips below the selection when it would clip the top of the viewport', () => {
+    stubMeasuredTop(2);
+    const { el } = renderPopup(false);
+    expect(el.style.top).toBe('220px');
+    expect(el.style.transform).toBe('translate(-50%,0)');
   });
 
   // The mobile bar exists to stay out from under the OS's own selection menu, so what matters is
