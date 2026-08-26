@@ -66,29 +66,29 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
       <div
         ref={ref}
         data-component="HighlightPopup"
-        className="fixed left-0 right-0 bottom-0 z-[60] flex items-center gap-2 px-4 pt-[10px] animate-sheetUp"
+        className="fixed left-0 right-0 bottom-0 z-[60] flex items-center gap-[10px] px-5 pt-[13px] animate-sheetUp"
         style={{
           background: theme.panel,
           color: theme.fg,
           borderTop: `1px solid ${theme.rule}`,
-          paddingBottom: 'calc(10px + env(safe-area-inset-bottom, 0px))',
+          paddingBottom: 'calc(13px + env(safe-area-inset-bottom, 0px))',
         }}
         onPointerDown={onStop}
         onPointerUp={onStop}
         onMouseUp={onStop}
       >
-        <div className="flex-1 flex items-center gap-3">
+        <div className="flex-1 flex items-center gap-[15px]">
           {HIGHLIGHT_COLORS.map((c) => (
             <button
               key={c}
-              className="w-11 h-9 flex items-center justify-center"
+              className="w-[55px] h-[45px] flex items-center justify-center"
               onClick={(e) => {
                 e.stopPropagation();
                 onPick(c);
               }}
             >
               <span
-                className="w-[26px] h-[26px] rounded-full border"
+                className="w-[33px] h-[33px] rounded-full border"
                 style={{ background: highlightPaint(c, theme), borderColor: swatchBorder(theme, pop.on === c) }}
               />
             </button>
@@ -96,25 +96,25 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
         </div>
         {pop.on && (
           <button
-            className="flex items-center gap-1 font-sans text-xs opacity-65 h-9 px-2"
+            className="flex items-center gap-[5px] font-sans text-ui-sm opacity-65 h-[45px] px-2.5"
             onClick={(e) => {
               e.stopPropagation();
               onRemove();
             }}
           >
-            <Trash2 size={17} strokeWidth={1.75} />
+            <Trash2 size={21} strokeWidth={1.75} />
             Remove
           </button>
         )}
         <button
           aria-label="Close"
-          className="w-9 h-9 flex items-center justify-center opacity-55"
+          className="w-[45px] h-[45px] flex items-center justify-center opacity-55"
           onClick={(e) => {
             e.stopPropagation();
             onClose();
           }}
         >
-          <X size={21} strokeWidth={1.75} />
+          <X size={26} strokeWidth={1.75} />
         </button>
       </div>
     );
@@ -124,7 +124,7 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
     <div
       ref={ref}
       data-component="HighlightPopup"
-      className="fixed z-[60] flex items-center gap-[9px] px-[11px] py-[7px] rounded-chip shadow-popup animate-popIn"
+      className="fixed z-[60] flex items-center gap-[11px] px-[14px] py-[9px] rounded-chip shadow-popup animate-popIn"
       style={{ left: pop.x / getUiScale(), top: pop.y / getUiScale(), background: theme.panel, border: `1px solid ${theme.rule}` }}
       onPointerDown={onStop}
       onPointerUp={onStop}
@@ -133,7 +133,7 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
       {HIGHLIGHT_COLORS.map((c) => (
         <button
           key={c}
-          className="w-5 h-5 rounded-full border"
+          className="w-[25px] h-[25px] rounded-full border"
           style={{ background: highlightPaint(c, theme), borderColor: swatchBorder(theme, pop.on === c) }}
           onClick={(e) => {
             e.stopPropagation();
@@ -143,13 +143,13 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
       ))}
       {pop.on && (
         <button
-          className="flex items-center gap-1 font-sans text-xs opacity-65 px-[3px]"
+          className="flex items-center gap-[5px] font-sans text-ui-sm opacity-65 px-1"
           onClick={(e) => {
             e.stopPropagation();
             onRemove();
           }}
         >
-          <Trash2 size={16} strokeWidth={1.75} />
+          <Trash2 size={20} strokeWidth={1.75} />
           Remove
         </button>
       )}
