@@ -202,10 +202,17 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   // narrowed Prev/Next scope visible rather than silently behaving differently. `from` is
   // `/browse/{nodeId}/{suttaId}` (see LibraryPage's onOpen), and stays constant across a Prev/Next
   // run (navigateToSutta carries it forward), so the list origin holds for the whole session.
+  //
+  // Conditional on the sutta on screen actually being in that list, because `from` is a return
+  // address rather than a description of what's being read: opening a search hit from inside the
+  // reader keeps the same origin, and without this check an unrelated sutta would claim
+  // membership in the header and get a Prev/Next scope with no position in it — dead in both
+  // directions. Falling back to the corpus order there is what the breadcrumb already shows.
   const listOrigin = useMemo(() => {
     const nodeId = from?.match(/^\/browse\/([^/]+)\//)?.[1];
-    return nodeId ? lists.find((l) => l.id === decodeURIComponent(nodeId)) : undefined;
-  }, [from, lists]);
+    const list = nodeId ? lists.find((l) => l.id === decodeURIComponent(nodeId)) : undefined;
+    return suttaId && list?.items.includes(suttaId) ? list : undefined;
+  }, [from, lists, suttaId]);
 
   // The sutta one Prev/Next step from `base`, or undefined at either end of the run. A list
   // origin stops dead at its own ends; the corpus order clamps instead, which is the same thing
