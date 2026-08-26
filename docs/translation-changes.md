@@ -17,8 +17,8 @@ gloss a term in his wording while the line above it uses ours.
 | samādhi | immersion, immersed | **composure, composed** (and "collect" as a verb) |
 | satipaṭṭhāna | mindfulness meditation | **the establishment of mindfulness** |
 | ātāpī | keen | **ardent** |
-| saṅkhāra | choices | **volitional formations** |
-| abhisaṅkharoti | make (choices) | **generate (volitional formations)** |
+| saṅkhāra | choices | **saṅkhāras** |
+| abhisaṅkharoti | make (choices) | **generate (saṅkhāras)** |
 | samudaya | origin | **arising** |
 | atthaṅgama | disappearance | **disappearing** |
 | vaya | vanishing | **passing away** |
