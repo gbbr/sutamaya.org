@@ -319,7 +319,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
 
   const createList = useCallback(
     async (label: string, parentId: string | null = null, kind: ListKind = 'list') => {
-      // Trimmed and capped the way POST /lists does, so the local label is the one the server will
+      // Trimmed and capped the way a `list.create` does, so the local label is the one the server will
       // store rather than one a later pull corrects.
       const capped = label.trim().slice(0, LIST_NAME_MAX_LENGTH);
       // Auto-lists are excluded: they share the shape of a top-level list, so a user creating a

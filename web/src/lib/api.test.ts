@@ -1,8 +1,8 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { ApiError, dataApi, notesApi } from './api';
+import { ApiError, dataApi } from './api';
 
 // These cover request()'s shared plumbing — the timeout wiring and how a failure is reported —
-// rather than any individual endpoint; notesApi.set is just the cheapest caller to drive it with.
+// rather than any individual endpoint; a one-item push is just the cheapest caller to drive it with.
 describe('request()', () => {
   afterEach(() => {
     vi.unstubAllGlobals();
@@ -16,10 +16,12 @@ describe('request()', () => {
     return fetchMock;
   }
 
+  const pushNote = () => dataApi.push([{ type: 'note', suttaId: 'dn1', text: 'a note', mtime: '2026-01-01T00:00:00.000Z|dev' }]);
+
   it('attaches an abort signal, so a stalled connection cannot hang for the browser default', async () => {
     const fetchMock = stubFetch(async () => new Response(JSON.stringify({ ok: true }), { status: 200 }));
 
-    await notesApi.set('dn1', 'a note', '2026-01-01T00:00:00.000Z|dev');
+    await pushNote();
 
     const init = fetchMock.mock.calls[0][1] as RequestInit;
     expect(init.signal).toBeInstanceOf(AbortSignal);
@@ -35,7 +37,7 @@ describe('request()', () => {
 
     // Every mutator logs its failure via console.error (see UserDataContext) — "signal timed out"
     // there says nothing about what actually happened.
-    await expect(notesApi.set('dn1', 'a note', '2026-01-01T00:00:00.000Z|dev')).rejects.toThrow(/timed out after 30s/);
+    await expect(pushNote()).rejects.toThrow(/timed out after 30s/);
   });
 
   it('reports a timeout that lands during the body read the same way', async () => {
@@ -59,19 +61,19 @@ describe('request()', () => {
       throw new TypeError('Failed to fetch');
     });
 
-    await expect(notesApi.set('dn1', 'a note', '2026-01-01T00:00:00.000Z|dev')).rejects.toThrow('Failed to fetch');
+    await expect(pushNote()).rejects.toThrow('Failed to fetch');
   });
 
   it('still surfaces the server error body on a non-ok response', async () => {
     stubFetch(async () => new Response(JSON.stringify({ error: 'rate_limited' }), { status: 429 }));
 
-    await expect(notesApi.set('dn1', 'a note', '2026-01-01T00:00:00.000Z|dev')).rejects.toThrow('rate_limited');
+    await expect(pushNote()).rejects.toThrow('rate_limited');
   });
 
   it('attaches the HTTP status to the thrown error, so callers can classify it', async () => {
     stubFetch(async () => new Response(JSON.stringify({ error: 'not_found' }), { status: 404 }));
 
-    const err = await notesApi.set('dn1', 'a note', '2026-01-01T00:00:00.000Z|dev').catch((e) => e);
+    const err = await pushNote().catch((e: unknown) => e);
     expect(err).toBeInstanceOf(ApiError);
     expect((err as ApiError).status).toBe(404);
   });

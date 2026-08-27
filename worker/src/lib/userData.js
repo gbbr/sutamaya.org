@@ -96,8 +96,8 @@ export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDoc
   );
 
   // notesCol doc ids *are* sutta ids, and a note doc only exists while its text is non-empty
-  // (see PUT /notes/:suttaId, which deletes on blank) — so "doc exists" already means "has a
-  // note", no extra filtering needed.
+  // (see lib/writes.js's setNote, which tombstones on blank) — so "doc exists" already means "has
+  // a note", no extra filtering needed.
   const notedIds = latestIds(
     noteDocs.map(({ id, data }) => ({ id, at: data.updatedAt || '' })),
     AUTO_LIST_CAP

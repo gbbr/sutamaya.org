@@ -36,7 +36,8 @@ export interface ListRecord {
   // on the next pull if the delete hadn't been pushed yet, and its descendants would be re-homed
   // to the root in the meantime instead of going with it.
   deleted: boolean;
-  // True until POST /lists has landed for this row, so the flush knows whether to create or patch.
+  // True until a `list.create` has landed for this row, so the flush knows whether to push a create
+  // or an update.
   pendingCreate: boolean;
   // True once a flush has dispatched this row's POST, whether or not the response came back. Read
   // only while `pendingCreate` is still set, and only by removeListRecord, which has to tell "the
@@ -446,7 +447,7 @@ export function applySnapshot(state: MirrorState, snapshot: UserData): MirrorSta
   // The snapshot arrives already repaired and in sibling order, but without positions of its own —
   // the server drops those, along with mtime and the tombstones — so each row takes its index among
   // its siblings. That keeps the order the server sent, and matches the dense indices the server
-  // itself assigns after a reorder (PUT /api/lists/order).
+  // itself assigns after a `sibling.order` operation.
   const seen = new Map<string | null, number>();
   for (const list of snapshot.lists) {
     // The three auto-lists are synthesized, not rows — the mirror derives its own (see

@@ -5,7 +5,7 @@ import 'fake-indexeddb/auto';
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { act, renderHook, waitFor } from '@testing-library/react';
 import { UserDataProvider, useUserData } from './UserDataContext';
-import type { UserData } from '../lib/api';
+import type { PushItem, PushResult, UserData } from '../lib/api';
 import type { ListDef } from '../lib/types';
 import { RECENT_AUTO_LIST_ID } from '../lib/autoLists';
 
@@ -31,42 +31,35 @@ vi.mock('./AuthContext', () => ({
   }),
 }));
 
-// Every network call the flush can make, plus the order they were made in — "records before
-// operations" is a correctness rule (an op naming a list the server has never seen is dropped), so
-// it is asserted rather than assumed.
+// The two calls a flush can make. Every write goes through `push`, so the order items arrive in is
+// visible in one place — "records before operations" is a correctness rule (an op naming a list the
+// server has never seen is dropped), so it is asserted rather than assumed.
 const calls: string[] = [];
 const dataApiAll = vi.fn();
-const listsApiCreate = vi.fn();
-const listsApiUpdate = vi.fn();
-const listsApiRemove = vi.fn();
-const listsApiAddItem = vi.fn();
-const listsApiRemoveItem = vi.fn();
-const listsApiReorderItems = vi.fn();
-const notesApiSet = vi.fn();
-const highlightsApiSetRanges = vi.fn();
-const visitedApiMark = vi.fn();
+const dataApiPush = vi.fn();
 
-function record<T extends (...args: never[]) => unknown>(name: string, fn: T) {
-  return (...args: Parameters<T>) => {
-    calls.push(name);
-    return fn(...args);
+vi.mock('../lib/api', () => ({
+  dataApi: {
+    all: (...args: unknown[]) => dataApiAll(...args),
+    push: (...args: unknown[]) => dataApiPush(...args),
+  },
+}));
+
+// The default push: notes what each item was, in order, and accepts it. `refuse` gives one test a
+// per-item verdict — which is the whole point of a batch that isn't atomic.
+function accepting(refuse: (item: PushItem) => PushResult | null = () => null) {
+  return async (items: PushItem[]) => {
+    for (const item of items) calls.push(item.type);
+    return { results: items.map((item) => refuse(item) ?? { ok: true }) };
   };
 }
 
-vi.mock('../lib/api', () => ({
-  dataApi: { all: (...args: unknown[]) => dataApiAll(...args) },
-  listsApi: {
-    create: (...args: unknown[]) => listsApiCreate(...args),
-    update: (...args: unknown[]) => listsApiUpdate(...args),
-    remove: (...args: unknown[]) => listsApiRemove(...args),
-    addItem: (...args: unknown[]) => listsApiAddItem(...args),
-    removeItem: (...args: unknown[]) => listsApiRemoveItem(...args),
-    reorderItems: (...args: unknown[]) => listsApiReorderItems(...args),
-  },
-  notesApi: { set: (...args: unknown[]) => notesApiSet(...args) },
-  highlightsApi: { setRanges: (...args: unknown[]) => highlightsApiSetRanges(...args) },
-  visitedApi: { mark: (...args: unknown[]) => visitedApiMark(...args) },
-}));
+// Every item of one kind the flush has pushed, across however many requests it took.
+function pushed<T extends PushItem['type']>(type: T): Extract<PushItem, { type: T }>[] {
+  return dataApiPush.mock.calls
+    .flatMap((call) => call[0] as PushItem[])
+    .filter((item): item is Extract<PushItem, { type: T }> => item.type === type);
+}
 
 // `membership` is derived from each list's own `items` client-side now (the mirror is the source of
 // truth, so it has to be derivable with no network), which is why the fixture's two agree.
@@ -118,15 +111,7 @@ beforeEach(() => {
   mockUser = { id: `u${seq}`, email: 'a@b.com', name: 'A', picture: '' };
   mockLocalId = `local-${seq}`;
   dataApiAll.mockResolvedValue(structuredClone(baseData));
-  listsApiCreate.mockImplementation(record('create', async () => ({ list: null })));
-  listsApiUpdate.mockImplementation(record('update', async () => ({ ok: true })));
-  listsApiRemove.mockImplementation(record('remove', async () => ({ ok: true })));
-  listsApiAddItem.mockImplementation(record('addItem', async () => ({ ok: true })));
-  listsApiRemoveItem.mockImplementation(record('removeItem', async () => ({ ok: true })));
-  listsApiReorderItems.mockImplementation(record('reorderItems', async () => ({ ok: true })));
-  notesApiSet.mockImplementation(record('note', async () => ({ ok: true })));
-  highlightsApiSetRanges.mockImplementation(record('highlight', async () => ({ ok: true })));
-  visitedApiMark.mockImplementation(record('visited', async () => ({ ok: true })));
+  dataApiPush.mockImplementation(accepting());
 });
 
 describe('UserDataProvider', () => {
@@ -173,7 +158,7 @@ describe('UserDataProvider', () => {
     await waitFor(() => expect(result.current.lists).toEqual(baseData.lists));
 
     dataApiAll.mockImplementation(offline);
-    notesApiSet.mockImplementation(record('note', offline));
+    dataApiPush.mockImplementation(offline);
 
     await act(async () => {
       await result.current.submitNote('dn1', 'written offline');
@@ -198,9 +183,7 @@ describe('UserDataProvider', () => {
     await waitFor(() => expect(result.current.lists).toEqual(baseData.lists));
 
     dataApiAll.mockImplementation(offline);
-    listsApiCreate.mockImplementation(record('create', offline));
-    listsApiAddItem.mockImplementation(record('addItem', offline));
-    notesApiSet.mockImplementation(record('note', offline));
+    dataApiPush.mockImplementation(offline);
 
     let created: ListDef = { id: '', label: '', parentId: null, kind: 'list', items: [] };
     await act(async () => {
@@ -217,17 +200,15 @@ describe('UserDataProvider', () => {
       notes: { dn2: { text: 'offline note', m: '2026-08-01T00:00:00.000Z|server' } },
     };
     dataApiAll.mockResolvedValue(withList);
-    listsApiCreate.mockImplementation(record('create', async () => ({ list: null })));
-    listsApiAddItem.mockImplementation(record('addItem', async () => ({ ok: true })));
-    notesApiSet.mockImplementation(record('note', async () => ({ ok: true })));
+    dataApiPush.mockImplementation(accepting());
     await reconnect();
 
-    expect(listsApiCreate).toHaveBeenCalledWith(expect.objectContaining({ id: created.id, label: 'Offline list' }));
-    expect(notesApiSet).toHaveBeenCalledWith('dn2', 'offline note', expect.any(String));
-    expect(listsApiAddItem).toHaveBeenCalledWith(created.id, 'dn2');
+    expect(pushed('list.create')).toContainEqual(expect.objectContaining({ id: created.id, label: 'Offline list' }));
+    expect(pushed('note')).toContainEqual(expect.objectContaining({ suttaId: 'dn2', text: 'offline note' }));
+    expect(pushed('item.add')).toContainEqual(expect.objectContaining({ listId: created.id, suttaId: 'dn2' }));
     // The add names a list the server only learns about in this same flush, so it has to go after
-    // the record that creates it or it 404s and the sutta is silently lost.
-    expect(calls.indexOf('create')).toBeLessThan(calls.indexOf('addItem'));
+    // the record that creates it or it is refused and the sutta is silently lost.
+    expect(calls.indexOf('list.create')).toBeLessThan(calls.indexOf('item.add'));
     // Nothing is left over to push once the flush has drained.
     calls.length = 0;
     await reconnect();
@@ -238,7 +219,7 @@ describe('UserDataProvider', () => {
     const { result, rerender } = setup();
     await waitFor(() => expect(result.current.lists).toEqual(baseData.lists));
 
-    notesApiSet.mockImplementation(record('note', () => httpError(401)));
+    dataApiPush.mockImplementation(() => httpError(401));
     await act(async () => {
       await result.current.submitNote('dn1', 'still mine');
     });
@@ -252,9 +233,9 @@ describe('UserDataProvider', () => {
     expect(result.current.notes.dn1).toBe('still mine');
 
     // Paused: further triggers stand down rather than retrying a cookie that has lapsed.
-    notesApiSet.mockImplementation(record('note', async () => ({ ok: true })));
+    dataApiPush.mockImplementation(accepting());
     await reconnect();
-    expect(notesApiSet).toHaveBeenCalledTimes(1);
+    expect(dataApiPush).toHaveBeenCalledTimes(1);
 
     // Signing back in re-loads the same mirror and clears the pause — the write is still there.
     dataApiAll.mockResolvedValue({
@@ -265,8 +246,8 @@ describe('UserDataProvider', () => {
     await act(async () => {
       rerender();
     });
-    await waitFor(() => expect(notesApiSet).toHaveBeenCalledTimes(2));
-    expect(notesApiSet).toHaveBeenLastCalledWith('dn1', 'still mine', expect.any(String));
+    await waitFor(() => expect(dataApiPush).toHaveBeenCalledTimes(2));
+    expect(pushed('note').at(-1)).toEqual(expect.objectContaining({ suttaId: 'dn1', text: 'still mine' }));
     expect(result.current.notes.dn1).toBe('still mine');
     expect(result.current.needsReauth).toBe(false);
   });
@@ -280,7 +261,7 @@ describe('UserDataProvider', () => {
     expect(result.current.lastSyncedAt).not.toBeNull();
 
     dataApiAll.mockImplementation(offline);
-    notesApiSet.mockImplementation(record('note', offline));
+    dataApiPush.mockImplementation(offline);
     await act(async () => {
       await result.current.submitNote('dn1', 'a note');
     });
@@ -290,7 +271,7 @@ describe('UserDataProvider', () => {
     expect(result.current.syncStatus).toBe('pending');
     expect(result.current.pendingCount).toBeGreaterThan(0);
 
-    notesApiSet.mockImplementation(record('note', async () => ({ ok: true })));
+    dataApiPush.mockImplementation(accepting());
     dataApiAll.mockResolvedValue({
       ...structuredClone(baseData),
       notes: { dn1: { text: 'a note', m: '2026-08-01T00:00:00.000Z|server' } },
@@ -324,15 +305,15 @@ describe('UserDataProvider', () => {
     const { result } = setup();
     await waitFor(() => expect(result.current.lists).toEqual(baseData.lists));
 
-    notesApiSet.mockImplementation(record('note', () => httpError(400)));
+    dataApiPush.mockImplementation(accepting((item) => (item.type === 'note' ? { error: 'bad_note', status: 400 } : null)));
     await act(async () => {
       await result.current.submitNote('dn1', 'a bad note');
     });
     await reconnect();
 
-    // A 400 means the two sides disagree about what's valid, which is a bug rather than anything
-    // the reader could act on — so the write is dropped, the queue drains, and the console carries
-    // the report (see docs/offline-sync.md's "Sync state").
+    // A refusal means the two sides disagree about what's valid, which is a bug rather than
+    // anything the reader could act on — so the write is dropped, the queue drains, and the console
+    // carries the report (see docs/offline-sync.md's "Sync state").
     expect(result.current.syncStatus).toBe('synced');
     calls.length = 0;
     await reconnect();
@@ -354,10 +335,12 @@ describe('UserDataProvider', () => {
 
     // The first id belongs to another account (lists.id is a global primary key and sign-in is
     // open to any Google account), so no retry under it could ever succeed.
-    listsApiCreate.mockImplementationOnce(record('create', () => httpError(409)));
+    dataApiPush.mockImplementationOnce(
+      accepting((item) => (item.type === 'list.create' ? { error: 'id_collision', status: 409 } : null))
+    );
     // The snapshot then comes back with the list under whichever id the create actually landed on.
     dataApiAll.mockImplementation(async () => {
-      const landed = listsApiCreate.mock.calls.at(-1)?.[0] as { id: string; label: string } | undefined;
+      const landed = pushed('list.create').at(-1);
       return {
         ...structuredClone(baseData),
         lists: [
@@ -368,13 +351,13 @@ describe('UserDataProvider', () => {
     });
     await reconnect();
 
-    const attempted = listsApiCreate.mock.calls.map((c) => (c[0] as { id: string }).id);
+    const attempted = pushed('list.create').map((item) => item.id);
     expect(attempted).toHaveLength(2);
     expect(attempted[0]).toBe(created.id);
     expect(attempted[1]).not.toBe(created.id);
     // The op queued against the old id has to follow it, or the add lands on a list that does not
     // exist and the sutta is lost.
-    expect(listsApiAddItem).toHaveBeenCalledWith(attempted[1], 'dn3');
+    expect(pushed('item.add').at(-1)).toEqual(expect.objectContaining({ listId: attempted[1], suttaId: 'dn3' }));
     expect(result.current.lists.some((l) => l.id === attempted[1])).toBe(true);
     expect(result.current.lists.some((l) => l.id === created.id)).toBe(false);
   });
@@ -418,7 +401,11 @@ describe('UserDataProvider', () => {
     expect(result.current.highlights.dn1.some((h) => h.g === 'g2')).toBe(true);
 
     await reconnect();
-    expect(highlightsApiSetRanges).toHaveBeenCalledWith('dn1', [{ i: 0, s: 5, e: 12 }], 'green', {
+    expect(pushed('highlight')).toContainEqual({
+      type: 'highlight',
+      suttaId: 'dn1',
+      ranges: [{ i: 0, s: 5, e: 12 }],
+      color: 'green',
       g: expect.any(String),
       mtime: expect.stringMatching(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z\|.+$/),
       erase: ['g1'],
@@ -485,7 +472,7 @@ describe('UserDataProvider', () => {
     });
     expect(result.current.notes.dn1).toBe('noted before signing in');
     expect(promptGoogleSignIn).not.toHaveBeenCalled();
-    expect(notesApiSet).not.toHaveBeenCalled();
+    expect(dataApiPush).not.toHaveBeenCalled();
 
     // What the server hands back once it has taken the adopted note — the pull at the end of the
     // same flush, so the round trip is exercised rather than stopping at the push.
@@ -496,9 +483,9 @@ describe('UserDataProvider', () => {
     mockUser = { id: `u${seq}`, email: 'a@b.com', name: 'A', picture: '' };
     rerender();
 
-    await waitFor(() => expect(notesApiSet).toHaveBeenCalled());
-    expect(notesApiSet.mock.calls[0][1]).toBe('noted before signing in');
-    await waitFor(() => expect(highlightsApiSetRanges).toHaveBeenCalled());
+    await waitFor(() => expect(pushed('note')).toHaveLength(1));
+    expect(pushed('note')[0].text).toBe('noted before signing in');
+    await waitFor(() => expect(pushed('highlight')).toHaveLength(1));
     await waitFor(() => expect(result.current.notes.dn1).toBe('noted before signing in'));
   });
 
@@ -523,6 +510,6 @@ describe('UserDataProvider', () => {
     const second = setup();
 
     await waitFor(() => expect(second.result.current.notes.dn1).toBe('written before the redirect'));
-    await waitFor(() => expect(notesApiSet).toHaveBeenCalled());
+    await waitFor(() => expect(pushed('note')).not.toHaveLength(0));
   });
 });

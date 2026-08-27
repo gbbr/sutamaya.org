@@ -13,12 +13,12 @@ import { AuthProvider, useAuth } from './AuthContext';
 import { UserDataProvider, useUserData } from './UserDataContext';
 import { LOCAL_USER_KEY } from '../lib/storageKeys';
 import type { User } from '../lib/types';
-import type { UserData } from '../lib/api';
+import type { PushItem, UserData } from '../lib/api';
 
 const authMe = vi.fn();
 const authLogout = vi.fn();
 const dataApiAll = vi.fn();
-const notesApiSet = vi.fn();
+const dataApiPush = vi.fn();
 
 vi.mock('../lib/api', () => ({
   authApi: {
@@ -27,19 +27,7 @@ vi.mock('../lib/api', () => ({
     requestEmailCode: vi.fn(),
     verifyEmailCode: vi.fn(),
   },
-  dataApi: { all: () => dataApiAll() },
-  listsApi: {
-    create: vi.fn(async () => ({ list: null })),
-    update: vi.fn(async () => ({ ok: true })),
-    remove: vi.fn(async () => ({ ok: true })),
-    addItem: vi.fn(async () => ({ ok: true })),
-    removeItem: vi.fn(async () => ({ ok: true })),
-    reorder: vi.fn(async () => ({ ok: true })),
-    reorderItems: vi.fn(async () => ({ ok: true })),
-  },
-  notesApi: { set: (...args: unknown[]) => notesApiSet(...args) },
-  highlightsApi: { setRanges: vi.fn(async () => ({ ok: true })) },
-  visitedApi: { mark: vi.fn(async () => ({ ok: true })) },
+  dataApi: { all: () => dataApiAll(), push: (...args: unknown[]) => dataApiPush(...args) },
 }));
 
 vi.mock('@reach/router', () => ({ navigate: vi.fn() }));
@@ -104,11 +92,20 @@ beforeEach(() => {
   authLogout.mockResolvedValue({ ok: true });
   serverNotes = {};
   dataApiAll.mockImplementation(async () => ({ ...structuredClone(emptyData), notes: { ...serverNotes } }));
-  notesApiSet.mockImplementation(async (suttaId: string, text: string, m: string) => {
-    serverNotes[suttaId] = { text, m };
-    return { ok: true };
-  });
+  dataApiPush.mockImplementation(async (items: PushItem[]) => ({
+    results: items.map((item) => {
+      if (item.type === 'note') serverNotes[item.suttaId] = { text: item.text, m: item.mtime };
+      return { ok: true as const };
+    }),
+  }));
 });
+
+// Every note the flush has pushed, across however many requests it took.
+function pushedNotes() {
+  return dataApiPush.mock.calls
+    .flatMap((call) => call[0] as PushItem[])
+    .filter((item): item is Extract<PushItem, { type: 'note' }> => item.type === 'note');
+}
 
 describe('deferred sign-in, across the real AuthProvider', () => {
   it('files a signed-out write under a local id and keeps it across a reload', async () => {
@@ -144,8 +141,8 @@ describe('deferred sign-in, across the real AuthProvider', () => {
     await waitFor(() => expect(screen.getByTestId('who')).toHaveTextContent(`signed-in:${ACCOUNT.id}`));
     await waitFor(() => expect(screen.getByTestId('note')).toHaveTextContent('made before signing in'));
     // And it actually reached the server, rather than merely surviving locally.
-    await waitFor(() => expect(notesApiSet).toHaveBeenCalled());
-    expect(notesApiSet.mock.calls[0][1]).toBe('made before signing in');
+    await waitFor(() => expect(pushedNotes()).not.toHaveLength(0));
+    expect(pushedNotes()[0].text).toBe('made before signing in');
     // Adopted records are pushed, not just carried: the queue drains rather than sitting dirty
     // forever with the note only ever living on this device.
     await waitFor(() => expect(screen.getByTestId('pending')).toHaveTextContent('0'));
