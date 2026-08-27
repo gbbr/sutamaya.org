@@ -213,13 +213,20 @@ describe('useReaderKeyboard', () => {
     });
   });
 
-  describe('readerNav (J/K) vs readerDictNav (Arrow)', () => {
-    it('J/K steps to the previous/next sutta', () => {
+  describe('readerNav (Shift+J/K) vs readerDictNav (Arrow)', () => {
+    it('Shift+J/K steps to the previous/next sutta', () => {
+      const { step } = setup();
+      press('J', { shiftKey: true });
+      press('K', { shiftKey: true });
+      expect(step).toHaveBeenCalledWith(-1);
+      expect(step).toHaveBeenCalledWith(1);
+    });
+
+    it('plain j/k does nothing — the Shift is what keeps it off the single-key set', () => {
       const { step } = setup();
       press('j');
       press('k');
-      expect(step).toHaveBeenCalledWith(-1);
-      expect(step).toHaveBeenCalledWith(1);
+      expect(step).not.toHaveBeenCalled();
     });
 
     it('plain ArrowLeft/Right walks the dictionary dock word-by-word when it is open', () => {
@@ -266,7 +273,7 @@ describe('useReaderKeyboard', () => {
       // a stale `step` steps through whichever corpus order and list it happened to close over.
       rerender({ step: nextStep });
       expect(subscriptions()).toBe(before);
-      press('j');
+      press('J', { shiftKey: true });
       expect(nextStep).toHaveBeenCalledWith(-1);
       expect(initialStep).not.toHaveBeenCalled();
       addSpy.mockRestore();
