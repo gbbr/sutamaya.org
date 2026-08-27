@@ -8,3 +8,12 @@ describe('GET /api/health', () => {
     expect(await res.json()).toEqual({ ok: true });
   });
 });
+
+describe('/api/* caching', () => {
+  // Signing out deletes this device's copy of the account's data, but the browser's HTTP cache is
+  // storage the app can't reach — so nothing under /api/* may be kept there.
+  it('tells the browser to keep no copy of an API response', async () => {
+    const res = await SELF.fetch('https://x/api/auth/me');
+    expect(res.headers.get('Cache-Control')).toBe('no-store');
+  });
+});

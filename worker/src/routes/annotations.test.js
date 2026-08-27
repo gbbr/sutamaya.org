@@ -420,7 +420,7 @@ describe('routes/annotations.js (D1)', () => {
       body: { suttaId: 'sn1.1', color: 'yellow', g: 'group-a', erase: [], ranges: [{ i: 0, s: 5 }] },
     });
     expect(res.status).toBe(400);
-    expect(await res.json()).toEqual({ error: 'each range needs integer i, s, e with s < e.' });
+    expect(await res.json()).toEqual({ error: 'invalid_range' });
   });
 
   it('rejects a missing suttaId or empty ranges array', async () => {
@@ -431,7 +431,7 @@ describe('routes/annotations.js (D1)', () => {
       body: { color: 'yellow', g: 'group-a', erase: [], ranges: [{ i: 0, s: 0, e: 1 }] },
     });
     expect(noSutta.status).toBe(400);
-    expect(await noSutta.json()).toEqual({ error: 'suttaId and a non-empty ranges array are required.' });
+    expect(await noSutta.json()).toEqual({ error: 'ranges_required' });
 
     const noRanges = await api('/api/highlights/ranges', {
       method: 'PUT',

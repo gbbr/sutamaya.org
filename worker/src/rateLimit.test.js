@@ -94,7 +94,7 @@ describe('rate limiter routing (which budget applies to which path)', () => {
     const bindings = { RATE_LIMIT_API: stubBinding(), RATE_LIMIT_AUTH: stubBinding(0), RATE_LIMIT_ME: stubBinding() };
     const blocked = await api('/api/auth/email/request', { method: 'POST', bindings });
     expect(blocked.status).toBe(429);
-    expect(await blocked.json()).toEqual({ error: 'Too many requests. Please try again in a moment.' });
+    expect(await blocked.json()).toEqual({ error: 'rate_limited' });
 
     const stillOk = await api('/api/auth/me', { bindings });
     expect(stillOk.status).toBe(200);

@@ -1,12 +1,12 @@
 // A ListGroup can hold other lists/groups; a plain list can't hold anything — so any non-null
 // parentId, for either kind of row, must point at an existing group. `row` is the candidate
 // parent's `lists` row (a plain object with a `kind` column) — or null if no such row exists.
-// Returns an error message string if invalid, or null if the parent checks out (including the
-// top-level `null` parentId case, where `row` is never even fetched — see routes/lists.js's
+// Returns an error code if invalid, or null if the parent checks out (including the top-level
+// `null` parentId case, where `row` is never even fetched — see routes/lists.js's
 // invalidParentReason).
 export function invalidParentReasonForRow(row) {
-  if (!row) return 'Parent not found.';
-  if (row.kind !== 'group') return 'Only a group can contain other lists.';
+  if (!row) return 'parent_not_found';
+  if (row.kind !== 'group') return 'parent_not_a_group';
   return null;
 }
 

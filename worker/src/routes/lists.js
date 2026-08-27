@@ -70,7 +70,7 @@ async function invalidReparentReason(db, userId, parentId, movingIds) {
   const { results } = await db.prepare('SELECT id, parent_id FROM lists WHERE user_id = ? AND deleted = 0').bind(userId).all();
   const allLists = results.map((row) => ({ id: row.id, parentId: row.parent_id ?? null }));
   for (const movingId of movingIds) {
-    if (wouldCreateCycle(movingId, parentId, allLists)) return 'Cannot move a list into its own descendant.';
+    if (wouldCreateCycle(movingId, parentId, allLists)) return 'parent_is_descendant';
   }
   return null;
 }
@@ -88,7 +88,7 @@ async function invalidReparentReason(db, userId, parentId, movingIds) {
 async function suttaListRow(db, userId, id) {
   const row = await db.prepare('SELECT items, kind FROM lists WHERE id = ? AND user_id = ?').bind(id, userId).first();
   if (!row) return { error: 'not_found', status: 404 };
-  if (row.kind === 'group') return { error: 'A group cannot hold suttas.', status: 400 };
+  if (row.kind === 'group') return { error: 'group_cannot_hold_suttas', status: 400 };
   return { row };
 }
 
@@ -127,7 +127,7 @@ listsRouter.post('/', async (c) => {
   const userId = c.get('userId');
   const body = await jsonBody(c);
   const label = ((body && body.label) || '').trim().slice(0, LIST_NAME_MAX_LENGTH);
-  if (!label) return c.json({ error: 'List name is required.' }, 400);
+  if (!label) return c.json({ error: 'label_required' }, 400);
   const kind = body?.kind === 'group' ? 'group' : 'list';
   const parentId = parentIdFromBody(body);
   const parentError = await invalidParentReason(c.env.DB, userId, parentId);
@@ -136,7 +136,7 @@ listsRouter.post('/', async (c) => {
   // before it has ever reached the server; falling back to a server-minted one keeps a client that
   // doesn't send one working unchanged.
   const id = typeof body?.id === 'string' && body.id ? body.id : crypto.randomUUID();
-  if (RESERVED_LIST_IDS.has(id)) return c.json({ error: 'That list id is reserved.' }, 400);
+  if (RESERVED_LIST_IDS.has(id)) return c.json({ error: 'reserved_id' }, 400);
   const mtime = resolveMtime(body?.mtime);
   const created = await c.env.DB.prepare(CREATE_LIST_SQL)
     .bind(id, userId, label, parentId, kind, new Date().toISOString(), mtime)
@@ -308,7 +308,7 @@ listsRouter.post('/:id/items', async (c) => {
   const id = c.req.param('id');
   const body = await jsonBody(c);
   const suttaId = body && body.suttaId;
-  if (!suttaId) return c.json({ error: 'suttaId is required.' }, 400);
+  if (!suttaId) return c.json({ error: 'sutta_id_required' }, 400);
   const found = await suttaListRow(db, userId, id);
   if (found.error) return c.json({ error: found.error }, found.status);
   await db.prepare(ADD_ITEM_SQL).bind(id, userId, suttaId).run();
