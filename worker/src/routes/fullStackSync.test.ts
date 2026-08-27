@@ -134,7 +134,7 @@ describe('client mirror against the real Worker', () => {
     // too large is the half that hurts — the server refuses the whole request as `too_many_items`,
     // the flush halts, and everything stays pending — and it fails here without needing its own
     // assertion, because the queue would not drain.
-    const total = PUSH_MAX_ITEMS + 50;
+    const total = PUSH_MAX_ITEMS + 3;
     let state = emptyMirror('u');
     for (let i = 0; i < total; i += 1) state = markVisitedRecord(state, `dn${i}`);
 

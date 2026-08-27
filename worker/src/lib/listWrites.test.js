@@ -477,6 +477,19 @@ describe('lib/writes.js — lists (D1)', () => {
     expect(result).toEqual({ error: 'not_found', status: 404 });
   });
 
+  // The one branch reorderSiblings answers off its own parent read rather than through
+  // invalidReparentReason, so nothing else here would notice it going missing. Distinct from the
+  // not-found case above: the row exists, so the gesture is invalid rather than moot.
+  it('sibling.order rejects a parent that is a plain list rather than a group', async () => {
+    const { cookie } = await signIn();
+    const plain = await createList(cookie, { label: 'Not a group' });
+    const a = await createList(cookie, { label: 'A' });
+
+    const result = await write(cookie, { type: 'sibling.order', parentId: plain.id, order: [a.id] });
+
+    expect(result).toEqual({ error: 'parent_not_a_group', status: 400 });
+  });
+
   // Sibling order moves as a unit on each row's own mtime — a stale offline reorder replayed
   // after a newer one must not win.
   it('does not let an older client mtime overwrite a sibling order set with a newer one', async () => {

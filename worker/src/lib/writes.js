@@ -47,10 +47,11 @@ async function invalidParentReason(db, userId, parentId) {
 }
 
 // Same parent-existence/kind check as invalidParentReason (delegated to it directly, so the two
-// can't drift apart), plus a cycle check for each id in `movingIds` being reparented to `parentId`
-// (see wouldCreateCycle's own comment) — used wherever an *existing* list's parentId is being
-// changed, unlike a fresh create.
-async function invalidReparentReason(db, userId, parentId, movingIds) {
+// can't drift apart), plus a cycle check for `movingId` being reparented to `parentId` (see
+// wouldCreateCycle's own comment) — updateList's check for an *existing* list's parentId changing,
+// unlike a fresh create. reorderSiblings makes both checks inline instead, off reads it already
+// needs for other reasons.
+async function invalidReparentReason(db, userId, parentId, movingId) {
   const kindError = await invalidParentReason(db, userId, parentId);
   if (kindError) return kindError;
   if (!parentId) return null;
@@ -60,10 +61,7 @@ async function invalidReparentReason(db, userId, parentId, movingIds) {
   // lib/listTree.js instead, which is the only place both devices can agree on the outcome.
   const { results } = await db.prepare('SELECT id, parent_id FROM lists WHERE user_id = ? AND deleted = 0').bind(userId).all();
   const allLists = results.map((row) => ({ id: row.id, parentId: row.parent_id ?? null }));
-  for (const movingId of movingIds) {
-    if (wouldCreateCycle(movingId, parentId, allLists)) return 'parent_is_descendant';
-  }
-  return null;
+  return wouldCreateCycle(movingId, parentId, allLists) ? 'parent_is_descendant' : null;
 }
 
 // The existence+kind check the two "this list's items" writes below both need, as one query.
@@ -146,7 +144,7 @@ async function updateList(db, userId, item) {
   // the key's presence rather than truthiness.
   if (item && 'parentId' in item) {
     const parentId = parentIdOf(item);
-    const parentError = await invalidReparentReason(db, userId, parentId, [id]);
+    const parentError = await invalidReparentReason(db, userId, parentId, id);
     if (parentError) return { error: parentError, status: 400 };
     assignments.push('parent_id = ?');
     values.push(parentId);
@@ -215,22 +213,35 @@ async function deleteList(db, userId, item) {
 async function reorderSiblings(db, userId, item) {
   const parentId = parentIdOf(item);
   const posted = orderOf(item);
+  // The parent row, read once and asked both questions, rather than through invalidReparentReason's
+  // wrappers — which fetch it a second time, and the whole live-list set a second time after that.
+  // Every D1 query counts against the Worker's per-request subrequest budget, and a push carries up
+  // to PUSH_MAX_ITEMS of these, so a duplicate read here is multiplied by the chunk size.
+  //
   // A parent this account has no row for at all makes the gesture moot rather than invalid — it is
   // a group created and deleted before it ever reached the server, which leaves no tombstone
   // behind (see removeListRecord in web/src/lib/mirror.ts). 404 is what lib/sync.ts reads as
-  // "gone", so the queued op retires; the 400 the reason check below would give it instead is
-  // permanent, and the op would be re-refused on every flush forever. Unfiltered on `deleted` like
-  // every other parent check here: a reorder under a tombstoned group still lands harmlessly.
+  // "gone", so the queued op retires; the 400 the kind check gives it instead is permanent, and the
+  // op would be re-refused on every flush forever. Unfiltered on `deleted` like every other parent
+  // check here: a reorder under a tombstoned group still lands harmlessly.
   if (parentId) {
-    const parent = await db.prepare('SELECT id FROM lists WHERE id = ? AND user_id = ?').bind(parentId, userId).first();
+    const parent = await db.prepare('SELECT kind FROM lists WHERE id = ? AND user_id = ?').bind(parentId, userId).first();
     if (!parent) return { error: 'not_found', status: 404 };
+    const kindError = invalidParentReasonForRow(parent);
+    if (kindError) return { error: kindError, status: 400 };
   }
-  const parentError = await invalidReparentReason(db, userId, parentId, posted);
-  if (parentError) return { error: parentError, status: 400 };
   // Live rows only: a tombstoned list is out of the tree, and a stale posted order naming one must
-  // not write a position back onto it. Fetched together so one round trip answers both "does this
-  // id still exist" and "what else lives in this parent that the client never saw".
+  // not write a position back onto it. This one read answers all three of "does this id still
+  // exist", "what else lives in this parent that the client never saw", and the cycle walk below —
+  // nothing writes in between, so they all see the same snapshot either way.
   const { results } = await db.prepare('SELECT id, parent_id FROM lists WHERE user_id = ? AND deleted = 0').bind(userId).all();
+  // Same cycle check invalidReparentReason makes for a single moved list, over every id the posted
+  // order would reparent into `parentId`. A null parent can't be anyone's descendant, so
+  // wouldCreateCycle answers false without walking.
+  const allLists = results.map((row) => ({ id: row.id, parentId: row.parent_id ?? null }));
+  for (const movingId of posted) {
+    if (wouldCreateCycle(movingId, parentId, allLists)) return { error: 'parent_is_descendant', status: 400 };
+  }
   const liveIds = new Set(results.map((row) => row.id));
   const currentChildIds = results.filter((row) => (row.parent_id ?? null) === parentId).map((row) => row.id);
   const order = reconcileSiblingOrder(posted, currentChildIds, liveIds);

@@ -31,9 +31,10 @@ interface Push {
   opId?: string;
 }
 
-// Matches PUSH_MAX_ITEMS in worker/src/routes/data.js, which refuses anything larger. The two
-// workspaces share no modules, so this is a deliberate second copy — change one, change the other.
-const CHUNK_SIZE = 100;
+// Matches PUSH_MAX_ITEMS in worker/src/routes/data.js, which refuses anything larger and where the
+// reasoning behind the number lives. The two workspaces share no modules, so this is a deliberate
+// second copy — change one, change the other.
+const CHUNK_SIZE = 10;
 
 // How many fresh ids to try before giving up on a colliding create. A v4 UUID won't collide by
 // chance, so this is about the failure staying legible, not about it being likely.
