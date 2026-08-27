@@ -27,8 +27,8 @@ export const PALI_DIR = path.join(DATA_ROOT, 'pali');
 export const HTML_DIR = path.join(DATA_ROOT, 'html');
 export const SNAPSHOT_PATH = path.join(ROOT, 'scripts', 'update-data', 'snapshot.json');
 // Provenance for all three dirs below comes from one sc-data checkout copied in one run, so one
-// manifest covers them together — deliberately outside all three (a sibling, not nested under any
-// of them), unlike the pre-multi-dir version where it lived inside data/sujato/.
+// manifest covers them together — and sits outside all three, as a sibling rather than nested
+// under any of them.
 export const MANIFEST_PATH = path.join(DATA_ROOT, 'manifest.json');
 
 // The three local top-level dirs this pipeline keeps in sync with sc-data, keyed the same way
@@ -79,9 +79,9 @@ export function sourcePathFor(bilaraRoot, relPath) {
   return null;
 }
 
-// The local counterpart of sourcePathFor: {dataDir}/{relPath}'s absolute path, resolved via the
-// relPath's own first segment ('sujato' | 'pali' | 'html') rather than a single fixed dir, since
-// this pipeline now spans three of them. Overridable dataDirs so tests can point at fixture dirs.
+// The local counterpart of sourcePathFor: {dataDir}/{relPath}'s absolute path, resolved through the
+// relPath's first segment ('sujato' | 'pali' | 'html') rather than a single fixed dir, since the
+// pipeline spans three. Overridable dataDirs, so tests can point at fixture dirs.
 export function localPathFor(relPath, dataDirs = DATA_DIRS) {
   const [dirName, ...rest] = relPath.split('/');
   const base = dataDirs[dirName];

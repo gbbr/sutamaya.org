@@ -43,10 +43,10 @@ interface ReaderPrefsState extends ReaderPrefs {
   revealHighlights: () => void;
 }
 
-// Line height, as a percentage. The floor is deliberately generous: the reader's measure is 34em
-// (~70 characters), and at that width anything below ~1.55 loses the line return — a setting nobody
-// would keep. `lh` also drives the paragraph gap and the gap above interleaved Pali
-// (see SegmentedText's paragraphGap), so the whole page breathes with it, not just the leading.
+// Line height, as a percentage. The floor is generous because the reader's measure is 34em, about
+// 70 characters, and at that width anything below ~1.55 loses the line return. `lh` also drives the
+// paragraph gap and the gap above interleaved Pali (SegmentedText's paragraphGap), so the whole
+// page breathes with it rather than just the leading.
 export const LH_MIN = 155;
 export const LH_MAX = 205;
 export const LH_STEP = 5;
@@ -94,20 +94,18 @@ export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
   const value = useMemo<ReaderPrefsState>(
     () => ({
       ...prefs,
-      // Clamped on read, not on write: a device that stored a value from an earlier, wider range
-      // would otherwise keep rendering at a size or leading the stepper can no longer reach or
-      // show — and its "−"/"+" would then sit disabled at a value outside their own range.
+      // Clamped on read rather than on write, so a device holding a value from a wider earlier
+      // range doesn't render at a size the stepper can't reach, with its "−"/"+" sitting disabled.
       fs: Math.min(FS_MAX, Math.max(FS_MIN, prefs.fs)),
       lh: Math.min(LH_MAX, Math.max(LH_MIN, prefs.lh)),
-      // Same reasoning one step further: a device holding a face id the picker no longer offers
-      // would look it up in READER_FACES, get `undefined`, and render the reader with no
-      // font-family at all — worse than any wrong-but-valid choice.
+      // The same, for a face id the picker no longer offers: READER_FACES would answer `undefined`
+      // and the reader would render with no font-family at all.
       face: prefs.face in READER_FACES ? prefs.face : DEFAULTS.face,
       resolvedTheme,
       setTheme: (theme) => setPrefs((p) => ({ ...p, theme })),
-      // Resolves inside the updater rather than closing over `resolvedTheme` — useReaderKeyboard's
-      // listener subscribes on a deliberately partial dependency list and can be holding an older
-      // copy of this function than the current theme.
+      // Resolves inside the updater rather than closing over `resolvedTheme`: useReaderKeyboard's
+      // listener subscribes on a partial dependency list and can hold an older copy of this
+      // function than the current theme.
       cycleTheme: () =>
         setPrefs((p) => ({
           ...p,

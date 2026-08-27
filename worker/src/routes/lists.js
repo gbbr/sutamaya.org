@@ -178,11 +178,11 @@ listsRouter.patch('/:id', async (c) => {
     values.push(parentId);
   }
   if (assignments.length) {
-    // Conditional on mtime, same as the annotation writes: a stale offline rename/move can't
-    // clobber a fresher edit made elsewhere. That also means `meta.changes === 0` is no longer
-    // purely "no such list" — it's also what a rejected stale write looks like — so a miss falls
-    // back to an existence check before deciding it's a 404. A rejected stale write is not an
-    // error: the loser of last-writer-wins is silently dropped, not surfaced.
+    // Conditional on mtime, like the annotation writes: a stale offline rename or move can't
+    // clobber a fresher edit made elsewhere. That makes `meta.changes === 0` cover both "no such
+    // list" and a rejected stale write, so a miss falls back to an existence check before deciding
+    // on a 404. A rejected stale write is not an error — the loser of last-writer-wins is dropped
+    // silently, not surfaced.
     const mtime = resolveMtime(body?.mtime);
     assignments.push('mtime = ?');
     values.push(mtime);
@@ -211,11 +211,11 @@ listsRouter.patch('/:id', async (c) => {
 // routes below: Hono matches in registration order, so static segments come first as a matter of
 // habit, even though nothing in this router actually collides.
 //
-// This is the client's whole reorder path, and it is one request per gesture by design: expressing
-// a drag as a PATCH per sibling instead meant dragging the 50th list of a group to the top fired 50
-// of them, which exhausts the Worker's per-minute rate limit in a couple of gestures and takes
-// GET /api/auth/me down with it. Like every other write here it has to survive being replayed from
-// an offline queue, which is what reconcileSiblingOrder is for.
+// This is the client's whole reorder path, and one request per gesture by design: a PATCH per
+// sibling would make dragging the 50th list of a group to the top fire 50 of them, which exhausts
+// the Worker's per-minute rate limit in a couple of gestures and takes GET /api/auth/me down with
+// it. Like every other write here it has to survive being replayed from an offline queue, which is
+// what reconcileSiblingOrder is for.
 listsRouter.put('/order', async (c) => {
   const db = c.env.DB;
   const userId = c.get('userId');
@@ -291,9 +291,8 @@ listsRouter.delete('/:id', async (c) => {
   return c.json({ ok: true });
 });
 
-// json_insert with the '$[#]' append path is a no-op-safe replacement for FieldValue.arrayUnion:
-// one atomic statement, no read-modify-write, and the EXISTS guard keeps a re-add from duplicating
-// an id that's already in the list.
+// Appends one sutta id to `items`. json_insert with the '$[#]' path is one atomic statement with no
+// read-modify-write, and the EXISTS guard keeps a re-add from duplicating an id already in the list.
 const ADD_ITEM_SQL = `
   UPDATE lists SET items = CASE
       WHEN EXISTS (SELECT 1 FROM json_each(items) WHERE value = ?3) THEN items
@@ -315,8 +314,8 @@ listsRouter.post('/:id/items', async (c) => {
   return c.json({ ok: true }, 201);
 });
 
-// FieldValue.arrayRemove's equivalent: rebuild `items` from json_each minus the removed value.
-// COALESCE covers the empty result json_group_array yields nothing for.
+// Removes one sutta id, rebuilding `items` from json_each minus that value. COALESCE covers the
+// empty result json_group_array yields nothing for.
 const REMOVE_ITEM_SQL = `
   UPDATE lists SET items = COALESCE(
       (SELECT json_group_array(j.value) FROM json_each(lists.items) AS j WHERE j.value <> ?3),

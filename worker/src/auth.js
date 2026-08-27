@@ -18,10 +18,10 @@ function rowToUser(row) {
   return { id: row.id, email: row.email, googleId: row.google_id, name: row.name, picture: row.picture };
 }
 
-// `users.google_id` is NOT NULL UNIQUE and predates multi-provider sign-in; dropping the
-// constraint would need a destructive table rebuild, which migrations here don't do (see
-// docs/deploy.md). An account created by any other provider therefore gets an opaque value that
-// carries no meaning and matches no real Google subject. `identities` is what to read instead.
+// `users.google_id` is NOT NULL UNIQUE, and dropping the constraint would need a destructive table
+// rebuild, which migrations here don't do (docs/deploy.md). An account created by any other
+// provider therefore gets an opaque value matching no real Google subject. Read `identities`
+// instead.
 function placeholderGoogleId() {
   return `no-google:${crypto.randomUUID()}`;
 }

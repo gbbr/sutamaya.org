@@ -27,9 +27,8 @@ const UiPrefsContext = createContext<UiPrefsState | null>(null);
 export function UiPrefsProvider({ children }: { children: ReactNode }) {
   const [prefs, setPrefs] = usePersistedState<UiPrefs>(UI_PREFS_KEY, UI_PREFS_DEFAULTS);
 
-  // main.tsx already applies the persisted values once, synchronously, before React mounts (so
-  // there's no flash of the default scale on load) — this effect just keeps the DOM in sync
-  // whenever the user actually changes a setting from here on.
+  // main.tsx applies the persisted values once, synchronously, before React mounts, so there is no
+  // flash of the default scale on load. This effect keeps the DOM in sync from then on.
   useEffect(() => {
     applyUiScale(prefs.uiScale);
   }, [prefs.uiScale]);
@@ -57,9 +56,9 @@ export function UiPrefsProvider({ children }: { children: ReactNode }) {
       resolvedTheme,
       setUiScale: (uiScale) => setPrefs((p) => ({ ...p, uiScale })),
       setTheme: (theme) => setPrefs((p) => ({ ...p, theme })),
-      // Resolves inside the updater rather than closing over `resolvedTheme`: the keydown
-      // listener that calls this (LibraryPage) subscribes on a deliberately partial dependency
-      // list, so it can be holding an older copy of this function than the current theme.
+      // Resolves inside the updater rather than closing over `resolvedTheme`: LibraryPage's keydown
+      // listener subscribes on a partial dependency list, so it can hold an older copy of this
+      // function than the current theme.
       toggleTheme: () =>
         setPrefs((p) => ({ ...p, theme: p.theme === 'dark' || (p.theme === 'system' && systemPrefersDark()) ? 'light' : 'dark' })),
     }),

@@ -16,41 +16,35 @@ import offlineSignedInShot from '../assets/help/offline-signed-in-mobile.webp';
 import readerShot from '../assets/help/reader-mobile.webp';
 
 // A single scrolling page of annotated screenshots: one section per thing the app does, built from
-// columns of picture + numbered legend. Each column carries its own legend directly beneath its own
-// screenshot, so a reader never has to scroll past two pictures to reach the words for the first
-// one, and the pairing survives the columns wrapping to a single stack on a phone. Every legend
-// line is kept to a handful of words — this page is read by someone looking for one specific
-// answer, not studying.
+// columns of picture plus numbered legend. Each column carries its legend directly beneath its own
+// screenshot, so the pairing survives the columns stacking on a phone. Every legend line is a
+// handful of words — this page is read by someone looking for one answer.
 //
-// **Phone-width captures serve every viewport.** A full 1280×800 desktop window shown in this
-// column renders its 16px UI text at about 6px — unreadable, and no marker placement rescues it.
-// The app's structure is the same either way, so a desktop set would be a second copy of the same
-// explanation, needing a per-section crop to stay legible.
+// **Phone-width captures serve every viewport.** A 1280×800 desktop window shown in this column
+// renders its 16px UI text at about 6px, and the app's structure is the same either way, so a
+// desktop set would be a second copy of the same explanation.
 //
-// **Markers number continuously across a section's columns** rather than restarting at 1 in each.
-// Side by side, two pictures each showing their own "1" would be genuinely ambiguous about which
-// legend a marker belongs to.
+// **Markers number continuously across a section's columns** rather than restarting at 1 in each,
+// so two pictures side by side can't both show a "1".
 //
 // **The markers are DOM, not painted into the image.** Each is an [x%, y%] pair positioned over the
-// `<img>`, so the screenshots stay clean, the numbers stay crisp at any size and DPR, and
-// repositioning one is a number edit rather than a re-export. They are deliberately *not* in the
-// app's palette: they are annotation laid over the product, not part of it.
+// `<img>`, so the screenshots stay clean, the numbers stay crisp at any DPR, and repositioning one
+// is a number edit rather than a re-export. They sit outside the app's palette: they are annotation
+// laid over the product, not part of it.
 //
 // ---------------------------------------------------------------------------------------------
 // ADDING OR REPLACING A SCREENSHOT
 //
 // 1. Capture. Chrome DevTools (`Cmd+Option+I`) → device toolbar (`Cmd+Shift+M`) → set the viewport
 //    to exactly **390×844** → `Cmd+Shift+P` → "Capture screenshot". That yields a 780×1688 PNG at
-//    2× DPR with no browser chrome, framed identically every time — consistent framing across the
-//    set matters more than any single shot.
+//    2× DPR with no browser chrome, framed identically every time.
 // 2. Convert. `cwebp -q 82 shot.png -o shot.webp` (`brew install webp`). At this size that lands
 //    well under 150KB with clean text. Bump to `-q 90` if small type shows fringing.
-// 3. Place. Drop it in `web/src/assets/help/` and `import` it at the top of this file. Imported
-//    rather than `public/`, because Vite content-hashes imported assets — so a re-captured
-//    screenshot actually reaches devices that already cached the old one, where an unversioned
-//    `/help/library.webp` would not (see CLAUDE.md, "Cache staleness"). PNG or WebP, never SVG:
-//    vite.config.ts precaches `**/*.svg`, which would push every screenshot into the install
-//    payload for people who never open this page.
+// 3. Place. Drop it in `web/src/assets/help/` and `import` it at the top of this file — imported
+//    rather than served from `public/`, because Vite content-hashes imported assets, so a
+//    re-captured screenshot reaches devices that cached the old one (see CLAUDE.md, "Cache
+//    staleness"). PNG or WebP, never SVG: vite.config.ts precaches `**/*.svg`, which would push
+//    every screenshot into the install payload.
 // 4. Mark it up. In a dev build, clicking anywhere on a shot prints the exact `[x, y]` pair to
 //    paste into that shot's `marks` — see logMarkOnClick below. Add one `steps` line per marker.
 //
@@ -63,15 +57,13 @@ interface HelpShot {
   src?: string;
   // Filename to capture. Also the key for this column, and what the empty slot displays.
   name: string;
-  // Names this column when a section has more than one, so the pair reads as two labelled halves
-  // rather than one picture and its sequel.
+  // Names this column when a section has more than one, so the pair reads as two labelled halves.
   title: string;
   // One [x%, y%] marker per `steps` line, measured from this image's own top-left.
   marks: Array<[number, number]>;
-  // What each of this column's markers points at, in order. Every line must correspond to
-  // something visible in this shot — anything that doesn't (a keyboard shortcut, a gesture that
-  // can't be photographed mid-flight, a state the screenshot isn't in) belongs in the section's
-  // `tips`, so a number never points at nothing.
+  // What each of this column's markers points at, in order. Every line must correspond to something
+  // visible in this shot; anything that doesn't — a keyboard shortcut, a gesture, a state the
+  // screenshot isn't in — belongs in the section's `tips`, so a number never points at nothing.
   steps: string[];
 }
 
@@ -80,9 +72,9 @@ interface HelpSection {
   // A one-line orientation before the pictures — what this section is about.
   lead: string;
   shots: HelpShot[];
-  // The things a marker can't point at — a keyboard shortcut, a gesture, a consequence that only
-  // shows up after the fact. One paragraph each, and at most two or three per section: they render
-  // as a tinted card, which stops reading as "worth stopping for" if it grows into a wall.
+  // The things a marker can't point at — a keyboard shortcut, a gesture, a consequence that shows
+  // up after the fact. One paragraph each, at most two or three per section: they render as a
+  // tinted card, which stops reading as "worth stopping for" once it grows into a wall.
   // `*asterisks*` emphasise a run within a tip — see withEmphasis.
   tips?: string[];
 }
@@ -341,10 +333,9 @@ const SECTIONS: HelpSection[] = [
 ];
 
 // Who wrote the words being read, and the one thing this app does to them. It sits after the tour
-// and the install steps: those are what a reader does next, while this is about the text rather
-// than the app. The full account of every change stays in
-// docs/translation-changes.md — the same page the reader's "Source: SuttaCentral, modified" line
-// links to — so this is the credit and the disclosure, not the list.
+// and the install steps, which are what a reader does next. The full account of every change is in
+// docs/translation-changes.md — the page the reader's "Source: SuttaCentral, modified" line links
+// to — so this is the credit and the disclosure, not the list.
 const TRANSLATION_TITLE = 'The translation';
 
 const TRANSLATION_LEAD =
@@ -357,9 +348,8 @@ const TRANSLATION_LEAD =
 const TRANSLATION_URL = 'https://github.com/gbbr/sutamaya.org/blob/main/docs/translation-changes.md';
 
 // The dictionary behind every word tap is someone else's work, under a licence that asks to be
-// named — so it is named where a reader will meet it, next to the credit for the translation,
-// rather than only in the repo. Kept to what a reader needs: whose it is, and where to find it
-// whole. The version this build shipped is in corpus.json for anyone who needs that much.
+// named, so it is named where a reader meets it rather than only in the repo. Kept to whose it is
+// and where to find it whole; the version this build shipped is in corpus.json.
 const DICTIONARY_TITLE = 'The dictionary';
 
 const DICTIONARY_LEAD =
@@ -370,10 +360,9 @@ const DICTIONARY_LEAD =
 
 const DICTIONARY_URL = 'https://www.dpdict.net/';
 
-// The one part of the page that can't be a screenshot tour, and so deliberately not a HelpSection:
-// installing happens in browser chrome — Safari's Share sheet, Chrome's ⋮ menu — which no capture
-// of this app can show, and which Apple and Google rename often enough that a picture would age
-// faster than a sentence does.
+// Not a HelpSection, because installing happens in browser chrome — Safari's Share sheet, Chrome's
+// ⋮ menu — which no capture of this app can show, and which Apple and Google rename often enough
+// that a picture would age faster than a sentence.
 const INSTALL_TITLE = 'Install the app';
 
 const INSTALL_LEAD =
@@ -408,56 +397,49 @@ const INSTALL_TIPS = [
 
 const CONTACT_TITLE = 'Get in touch';
 
-// The issue tracker rather than an email address: an address written into a public page is
-// harvested by crawlers within weeks, and a bug report is more useful where it can be answered in
-// the open and closed when it is fixed.
+// The issue tracker rather than an email address: an address on a public page is harvested by
+// crawlers, and a bug report is more useful where it can be answered in the open.
 const CONTACT_LEAD =
   'Bugs, questions and suggestions all go to the same place — the project’s issue tracker. ' +
   'Anything filed there is public, and posting needs a free GitHub account.';
 
 const CONTACT_URL = 'https://github.com/gbbr/sutamaya.org/issues/new';
 
-// Deliberately outside the app's palette, and deliberately louder than anything in it. These are
-// annotation drawn over a photograph of the product, not part of the product: a marker in the
-// accent colour would read as another piece of the UI it is pointing at, and a dark neutral one
-// has to be hunted for against arbitrary screenshot pixels. A cool blue because it is the one hue
-// nothing in the warm palette holds, so it can't be mistaken for part of the shot underneath it —
-// and it carries none of the "something went wrong" a red marker would.
-// Solid with a pale ring so it holds an
-// edge over those pixels whatever their colour, in either theme — the shots are fixed images and
-// don't invert, so this value can't be theme-var-backed either.
-// Both call sites share this one colour on purpose — the number on the picture and the number in
-// the legend beside it are the same marker, and a reader matches them by sight before they read
-// the digit.
-// Its two call sites size the digit with a raw px font-size rather than a `text-ui-*` token,
-// because the numeral is artwork fitted to its own circle rather than UI text: the size that
-// works is whatever centres inside the diameter, so the two move together and neither belongs
-// on the shared type scale.
+// Outside the app's palette, and louder than anything in it: these are annotation drawn over a
+// photograph of the product, so a marker in the accent colour would read as another piece of the UI
+// it points at, and a dark neutral one would have to be hunted for against arbitrary screenshot
+// pixels. A cool blue, the one hue nothing in the warm palette holds, and without the "something
+// went wrong" a red marker would carry. Solid with a pale ring, so it holds an edge over those
+// pixels in either theme — the shots are fixed images and don't invert, so this can't be
+// theme-var-backed.
+//
+// Both call sites share the colour: the number on the picture and the number in the legend are the
+// same marker, matched by sight before the digit is read. Both size the digit with a raw px
+// font-size rather than a `text-ui-*` token, since the numeral is artwork fitted to its circle
+// rather than UI text.
 const MARKER = 'flex items-center justify-center rounded-full bg-[#1D4ED8] font-sans font-medium text-white tabular-nums';
 
-// `*emphasis*` inside a tip. A single asterisk, not Markdown's double, because a tip is a hand-
-// authored string in this file and never user input — there is nothing to escape and no other
-// Markdown to be consistent with. Split on the delimiter rather than replacing into HTML, so the
-// text stays text and can't inject markup: the capture group puts every emphasised run on an odd
-// index. `font-semibold` rather than bold — the self-hosted IBM Plex Sans only carries 400–600, so
-// a 700 request gets a synthesised smear instead of a real weight.
+// `*emphasis*` inside a tip. A single asterisk rather than Markdown's double, since a tip is a
+// hand-authored string in this file and never user input. Split on the delimiter rather than
+// replaced into HTML, so the text stays text and can't inject markup — the capture group puts every
+// emphasised run on an odd index. `font-semibold` rather than bold, because the self-hosted IBM
+// Plex Sans carries only 400–600 and a 700 request gets a synthesised smear.
 function withEmphasis(tip: string) {
   return tip.split(/\*(.+?)\*/).map((part, i) =>
     i % 2 ? <span key={i} className="font-semibold text-ink">{part}</span> : part,
   );
 }
 
-// Section ids for the contents list, derived from the title rather than stored beside it so the
+// Section ids for the contents list, derived from the title rather than stored beside it, so the
 // two can't disagree about what a link points at.
 function anchorId(title: string): string {
   return `help-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
 }
 
 // Dev-only authoring aid: click anywhere on a shot and this prints the pair that puts a marker's
-// centre exactly there, ready to paste into that shot's `marks`. The numbers come out right with
-// no adjustment because a marker is translated by -50%/-50%, so its `left`/`top` *is* its centre —
-// the same percentage the click resolves to. `import.meta.env.DEV` is a compile-time constant, so
-// the handler and this function drop out of a production build entirely.
+// centre there, ready to paste into that shot's `marks`. A marker is translated by -50%/-50%, so
+// its `left`/`top` is its centre — the same percentage the click resolves to — and no adjustment is
+// needed. `import.meta.env.DEV` is a compile-time constant, so this drops out of a production build.
 function logMarkOnClick(e: React.MouseEvent<HTMLImageElement>) {
   const rect = e.currentTarget.getBoundingClientRect();
   const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -466,9 +448,8 @@ function logMarkOnClick(e: React.MouseEvent<HTMLImageElement>) {
 }
 
 // One column: the picture, its name, and the legend for its own markers. Columns share a row until
-// the page is too narrow to give each a usable width, at which point they stack — and because the
-// legend travels inside the column, a stacked reader still gets the words directly under the
-// picture they describe.
+// the page is too narrow to give each a usable width, then stack — and since the legend travels
+// inside the column, a stacked reader still gets the words directly under the picture.
 function ShotColumn({ shot, startIndex, showTitle }: { shot: HelpShot; startIndex: number; showTitle: boolean }) {
   return (
     <div className="flex-1 min-w-[190px]">
@@ -479,10 +460,9 @@ function ShotColumn({ shot, startIndex, showTitle }: { shot: HelpShot; startInde
             alt=""
             // The shots are captured in dark mode, which on the light theme puts a hard black block
             // in the middle of the page. The light-mode-only filters lift its blacks toward the
-            // page and let a little of the page through, so it reads as a picture rather than a
-            // hole; dark mode needs none of it and turns them all off.
-            // The hairline is dark-mode-only for the same reason inverted: against the light theme
-            // a mostly-black image draws its own edge, and a border there is doing nothing.
+            // page, so it reads as a picture rather than a hole; dark mode turns them all off. The
+            // hairline is dark-mode-only for the inverse reason: against the light theme a
+            // mostly-black image already draws its own edge.
             className={`block w-full rounded-field dark:border dark:border-ink/[.12] brightness-110 contrast-[.92] opacity-[.92] dark:brightness-100 dark:contrast-100 dark:opacity-100 ${import.meta.env.DEV ? 'cursor-crosshair' : ''}`}
             onClick={import.meta.env.DEV ? logMarkOnClick : undefined}
           />
@@ -518,12 +498,12 @@ function ShotColumn({ shot, startIndex, showTitle }: { shot: HelpShot; startInde
   );
 }
 
-// A tip is the part of a section a reader is least likely to already know, so it can't be set as
-// the quietest text on the page — it gets a tinted card instead, read at the legend's own size and
-// weight. The amber is `warning-text`, the same tone HeaderBanner and Settings already use for
-// "worth knowing", rather than the markers' red: that red is annotation drawn *over* a screenshot,
-// and letting it spread to the page's own furniture would stop it meaning that.
-// One card per section, not per tip, so two tips don't repeat the icon.
+// A tip is the part of a section a reader is least likely to know already, so it gets a tinted card
+// rather than the quietest text on the page, read at the legend's size and weight. The amber is
+// `warning-text`, the tone HeaderBanner and Settings already use for "worth knowing", rather than
+// the markers' red — that red means annotation drawn over a screenshot, and spreading it to the
+// page's own furniture would stop it meaning that. One card per section, not per tip, so two tips
+// don't repeat the icon.
 // The padding is asymmetric on purpose: the icon already holds the text well clear of the left
 // edge, while on the right nothing but the padding keeps a wrapped line off it.
 function TipCard({ tips }: { tips: string[] }) {

@@ -49,11 +49,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // at sign-out re-renders everything reading `dataUserId` — which is what swaps the UI over to the
   // fresh, empty local mirror.
   const [localId, setLocalId] = useState(localUserId);
-  // A failed sign-in comes back as ?auth_error=<reason> on the page the OAuth callback redirects
-  // to (worker/src/routes/auth.js) — the flow is a full-page round trip, so there's no live
-  // promise left to catch a rejection from. Seeded synchronously from the URL the app booted on,
-  // which is the only moment the marker can be there; stripped below so a reload doesn't show it
-  // again.
+  // A failed sign-in comes back as ?auth_error=<reason> on the page the OAuth callback redirects to
+  // (worker/src/routes/auth.js): the flow is a full-page round trip, so there is no live promise to
+  // catch a rejection from. Seeded synchronously from the URL the app booted on, the only moment
+  // the marker can be there, and stripped below so a reload doesn't show it again.
   const [authError, setAuthError] = useState<string | null>(() =>
     authErrorMessage(new URLSearchParams(window.location.search).get('auth_error'))
   );
@@ -67,18 +66,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [authError]);
 
   useEffect(() => {
-    // GET /auth/me returns 200 with { user: null } for a genuinely signed-out session — it
-    // never throws for that case (see routes/auth.js). So a thrown error here is always a
-    // transient problem (offline, a 429, a 5xx during e.g. a PWA relaunch right after airplane
-    // mode toggles back on) rather than a real "you're logged out" signal, and shouldn't wipe
-    // an otherwise-valid session cookie's user out of the UI on the first blip — retry with
-    // backoff before giving up.
+    // GET /auth/me answers 200 with { user: null } for a genuinely signed-out session and never
+    // throws for it, so a thrown error here is always transient — offline, a 429, a 5xx — and must
+    // not wipe a valid session's user out of the UI on the first blip.
     //
-    // retryWithBackoff exhausts in about five seconds, which is inside the Worker's own 60s
-    // rate-limit window — so a 429 is guaranteed to fail every one of those attempts, and treating
-    // that as the end of it would render the app signed-out until the user happened to reload. A
-    // transient failure keeps trying on a slow loop instead. `loading` still clears after the first
-    // attempt: this is an offline-first app, and it should render rather than hold a spinner.
+    // retryWithBackoff exhausts in about five seconds, inside the Worker's 60s rate-limit window,
+    // so a 429 fails every one of those attempts; a transient failure keeps trying on a slow loop
+    // instead. `loading` clears after the first attempt regardless: this is an offline-first app,
+    // and it should render rather than hold a spinner.
     let cancelled = false;
     let timer: ReturnType<typeof setTimeout> | undefined;
     async function loadUser() {
@@ -111,16 +106,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  // Called from arbitrary places a signed-out user tries something that needs an account (the
-  // list/note/highlight actions in UserDataContext, the account badge). It sends them to
+  // Called wherever a signed-out user does something that needs an account. It sends them to
   // Settings' sign-in section rather than starting the redirect itself: leaving the app is a big
-  // enough interruption that it should follow a click on something that says "Sign in", not a
-  // click on "add to list".
+  // enough interruption that it should follow a click on something saying "Sign in".
   //
   // `returnTo` is where they were when they hit the wall, carried through Settings and into the
-  // OAuth round trip so signing in puts them back on the sutta they were filing rather than
-  // stranding them on the Settings page. Captured here rather than read off the URL later —
-  // by the time the button is clicked, the URL *is* /settings.
+  // OAuth round trip so signing in puts them back on the sutta they were filing. Captured here
+  // rather than read off the URL later, since by the time the button is clicked the URL is
+  // /settings.
   const promptGoogleSignIn = useCallback(() => {
     const returnTo = window.location.pathname + window.location.search;
     navigate('/settings', { state: { scrollTo: 'auth', returnTo } });
@@ -141,12 +134,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(user);
   }, []);
 
-  // Signing out retires this device's copy of the account's data along with the session. The
-  // alternative — leaving it in place under a local id — would keep every note and highlight
-  // readable and editable by whoever signs in next, and would push a departed account's work back
-  // to the server the moment they did. Nothing is lost: the account's own data is on the server,
-  // which is the point of having signed in. Anything genuinely unsynced is warned about at the
-  // button (SettingsPage), not silently here.
+  // Signing out retires this device's copy of the account's data along with the session, so no note
+  // or highlight is left readable by whoever signs in next, and none of a departed account's work
+  // is pushed back to the server. Nothing is lost — the account's data is on the server — and
+  // anything genuinely unsynced is warned about at the button (SettingsPage).
   const logout = useCallback(async () => {
     const previousId = user?.id;
     await authApi.logout();

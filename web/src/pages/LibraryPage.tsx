@@ -32,23 +32,21 @@ export function LibraryPage({
   const { corpus } = useCorpus();
   const { lists, notes } = useUserData();
   const { toggleTheme } = useUiPrefs();
-  // @reach/router defers the route-param update by a microtask + rAF after navigate(), so
+  // @reach/router defers the route-param update by a microtask and a frame after navigate(), so
   // reading the ids straight off props would render a frame pairing new local state with a stale
-  // id — a flash of the wrong list on mobile, a highlighted row that jumps back for a frame.
-  // Mirroring them into state, set synchronously with everything else a handler changes, keeps
+  // id. Mirroring them into state, set synchronously with everything else a handler changes, keeps
   // each render consistent; the effects below cover navigation this page didn't initiate.
   const [suttaId, setSuttaId] = useState(rawSuttaId || undefined);
   useEffect(() => {
     setSuttaId(rawSuttaId || undefined);
   }, [rawSuttaId]);
-  // Only ever *suppresses* TreePane's corrective pane sync, so a stale value resurrected by a
-  // refresh is harmless (worst case it skips a no-op sync) — hence read straight off
-  // location.state, unlike the one-shot values below.
+  // Only suppresses TreePane's corrective pane sync, so a stale value resurrected by a refresh is
+  // harmless — hence read straight off location.state, unlike the one-shot values below.
   const restoreOrigin = !!(location?.state as { restoreOrigin?: boolean } | undefined)?.restoreOrigin;
-  // `fromView`/`flashNodeId` are meant for exactly one arrival, but location.state survives a
-  // same-tab refresh (the browser keeps history.state for the current entry), so trusting them
-  // unconditionally would let a reload override a pane switch made by hand since. Consumed once
-  // via a lazy initializer, so a stale resurrection reads as "no intent" instead.
+  // `fromView` and `flashNodeId` are meant for exactly one arrival, but location.state survives a
+  // same-tab refresh, so trusting them unconditionally would let a reload override a pane switch
+  // made by hand since. Consumed once through a lazy initializer, so a stale resurrection reads as
+  // no intent at all.
   const [consumedIntent] = useState(() =>
     consumeIntent(
       location?.state as ({ fromView?: 'tree' | 'list'; flashNodeId?: string } & RouteIntent) | null | undefined,
@@ -69,10 +67,10 @@ export function LibraryPage({
   const [view, setView] = useState<'tree' | 'list'>(() => {
     const fromView = consumedIntent?.fromView;
     if (fromView === 'tree' || fromView === 'list') return fromView;
-    // A suttaId with no router state at all is a fresh arrival that never went through one of
-    // this app's navigate() calls — a bookmark or a typed URL — where 'list' is the only way to
-    // reveal the highlighted row. A mount that carried state came from in-app navigation, so the
-    // persisted preference below is the better signal there.
+    // A suttaId with no router state is a fresh arrival that never went through one of this app's
+    // navigate() calls — a bookmark or a typed URL — where 'list' is the only way to reveal the
+    // highlighted row. A mount carrying state came from in-app navigation, where the persisted
+    // preference below is the better signal.
     if (suttaId && !location?.state) return 'list';
     try {
       const stored = localStorage.getItem(LIBRARY_VIEW_KEY);
@@ -96,14 +94,13 @@ export function LibraryPage({
   // keystroke. useCorpusSearch defers the scan off `query`, keeping the input responsive on a
   // slow device.
   const { hits: allHits, listHits } = useCorpusSearch(corpus, query, notes, lists);
-  // When exactly one list matched, its row already stands for everything in it — so the members
-  // that got here only through its name are dropped rather than spelled out underneath it, which
-  // for a big list is the whole results pane restating one row.
+  // When exactly one list matched, its row already stands for everything in it, so the members that
+  // got here only through its name are dropped rather than spelled out underneath — which for a big
+  // list is the whole results pane restating one row.
   //
-  // Only when it's *one* list, and never a sutta that matches the query in its own text. Two or
-  // more matching lists (a word several of them share) is where the old behaviour earns its keep:
-  // the results are then the one place their members appear together, and each list row would
-  // otherwise have to be visited in turn to see the same thing.
+  // Only for one list, and never for a sutta matching the query in its own text. With two or more
+  // matching lists the results are the one place their members appear together, and each list row
+  // would otherwise have to be visited in turn to see the same thing.
   const hits = useMemo(() => {
     if (listHits.length !== 1) return allHits;
     const members = new Set(listHits[0].list.items);
@@ -113,9 +110,9 @@ export function LibraryPage({
   // desktop, can show the same highlight. Carries which kind of row the cursor is on, since it
   // walks the lists block above the results as well as the results themselves.
   const [activeRow, setActiveRow] = useState<ActiveSearchRow | undefined>(undefined);
-  // Stored by value, not by identity: TreePane rebuilds the row object on each of its own
-  // renders, and taking every one of them would re-render this page (and so hand TreePane a new
-  // `listHits` array, and so re-run its effect) forever.
+  // Stored by value rather than by identity: TreePane rebuilds the row object on each of its
+  // renders, and taking every one would re-render this page, hand TreePane a new `listHits` array,
+  // and re-run its effect forever.
   const onActiveRowChange = useCallback((row: ActiveSearchRow | undefined) => {
     setActiveRow((prev) => (prev?.kind === row?.kind && prev?.id === row?.id ? prev : row));
   }, []);
@@ -123,8 +120,8 @@ export function LibraryPage({
   // pane that draws the block, because TreePane's arrow-key nav has to walk exactly the rows
   // ListPane is drawing beside it.
   const [listsExpanded, setListsExpanded] = useState(false);
-  // A new query gets a freshly collapsed block — otherwise expanding once would silently leave
-  // every later search with its whole list of matches on top of the results.
+  // A new query gets a freshly collapsed block, so expanding once doesn't leave every later search
+  // with its whole list of matches on top of the results.
   useEffect(() => {
     setListsExpanded(false);
   }, [query]);
@@ -155,8 +152,8 @@ export function LibraryPage({
     };
   }, [corpus, nodeId, lists, query]);
 
-  // useCallback'd, not inline arrows: TreePane's keydown effect depends on `onOpenSutta`, and
-  // typing in the search box re-renders this page per keystroke — a fresh identity each time
+  // useCallback'd rather than inline arrows: TreePane's keydown effect depends on `onOpenSutta`,
+  // and typing in the search box re-renders this page per keystroke, so a fresh identity each time
   // would tear down and re-add that window listener on every one.
   const onSelectNode = useCallback((id: string) => {
     setQuery('');
@@ -173,9 +170,8 @@ export function LibraryPage({
       // rather than the sutta's bare corpus location.
       //
       // A search hit is the one case where the opened id isn't a member of the current `nodeId`:
-      // search spans the whole corpus, so a hit found while browsing DN can live in MN. Returning
-      // there would leave the pane on a category the sutta doesn't belong to, so its own node is
-      // used instead — where a bare deep link would have landed.
+      // search spans the whole corpus, so a hit found while browsing DN can live in MN. Its own
+      // node is used instead — where a bare deep link would have landed.
       const returnNodeId = query.trim() && corpus?.suttas[id] ? corpus.suttas[id].node : nodeId;
       const from = `/browse/${encodeURIComponent(returnNodeId || '')}/${encodeURIComponent(id)}`;
       // Persisted as well as carried in router state, since a hard refresh drops location.state
@@ -193,14 +189,13 @@ export function LibraryPage({
   const showTreePane = !mobile || view === 'tree';
   const showListPane = !mobile || view === 'list';
 
-  // Page-level shortcuts only. Arrow keys don't walk the browse rows: moving a highlight from
-  // sutta to sutta duplicated what the panes already do with a pointer, and its tinted row read
-  // as a selection the app doesn't otherwise have. TreePane keeps its own arrow nav over search
+  // Page-level shortcuts only. The arrow keys don't walk the browse rows — a tinted row there
+  // reads as a selection the app doesn't otherwise have. TreePane keeps its arrow nav over search
   // hits, where the highlight is the only way to tell which hit Enter would open.
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      // While open, the help modal owns every key itself — Esc or '?' again both close it,
-      // mirroring how every other overlay in this app closes.
+      // While open, the help modal owns every key: Esc or '?' again both close it, as every other
+      // overlay in this app does.
       if (shortcutsOpen) {
         if (e.key === 'Escape' || isShortcut(e, SHORTCUTS.libraryHelp)) {
           e.preventDefault();
@@ -259,10 +254,10 @@ export function LibraryPage({
           className="absolute top-0 bottom-0 z-10 cursor-col-resize touch-none"
           style={{ left: paneW.tree - TREE_LIST_HIT_BEFORE, width: TREE_LIST_HIT_BEFORE + TREE_LIST_HIT_AFTER }}
           onPointerDown={dragTree}
-          // `touchend` is the only event WebKit reliably lets us cancel here (`touch-none` above
-          // makes `touchstart` arrive uncancelable), and cancelling it asks iOS not to synthesize
-          // the trailing click that would open whichever row the finger drifted over. See
-          // LayoutContext's `swallowNextClick` for why this alone isn't trusted.
+          // `touchend` is the only event WebKit reliably lets us cancel here — `touch-none` above
+          // makes `touchstart` arrive uncancelable — and cancelling it asks iOS not to synthesize
+          // the trailing click that would open whichever row the finger drifted over.
+          // LayoutContext's `swallowNextClick` is why this alone isn't trusted.
           onTouchEnd={(e) => e.preventDefault()}
           onDoubleClick={resetTree}
         />

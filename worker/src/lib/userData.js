@@ -12,12 +12,10 @@ export const RECENT_AUTO_LIST_ID = 'auto-recent';
 export const HIGHLIGHTS_AUTO_LIST_ID = 'auto-highlights';
 export const NOTES_AUTO_LIST_ID = 'auto-notes';
 
-// Bounds how many rows ListPane has to render for an auto-list — it renders every item as a
-// full DOM row, unvirtualized, so an unbounded list would get sluggish for a heavy user long
-// before hitting any D1 read-volume concern (the underlying highlights/notes tables are fetched
-// in full either way, for highlight-span and note-badge rendering elsewhere in the app).
-// All three share one cap, so "Visited" holding fewer than "Notes" is never something the user
-// has to discover. Nothing outside the "Visited" list reads `visited`.
+// Bounds how many rows ListPane renders for an auto-list: it draws every item as a full DOM row,
+// unvirtualized, so an unbounded list would get sluggish long before D1 read volume mattered — the
+// highlights and notes tables are fetched in full either way, for rendering elsewhere. All three
+// share one cap, so no auto-list quietly holds fewer than its neighbours.
 export const AUTO_LIST_CAP = 100;
 
 // Pure assembly of buildUserData's (routes/data.js) response shape from already-fetched D1 rows —
@@ -61,10 +59,9 @@ export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDoc
   });
 
   // `m` is the note's mtime, carried for the same reason a highlight row carries one: the client
-  // derives its own Notes auto-list over the mirror (web/src/lib/mirrorView.ts) so a sutta noted
-  // offline appears in it with no round trip, and it needs a timestamp to order that list by.
-  // Without it every pulled note compares equal and the list falls back to whatever order the
-  // SELECT happened to return.
+  // derives its own Notes auto-list over the mirror (web/src/lib/mirrorView.ts) and needs a
+  // timestamp to order it by, or every pulled note compares equal and the list falls back to
+  // whatever order the SELECT returned.
   const notes = {};
   noteDocs.forEach(({ id, data }) => {
     notes[id] = { text: data.text, m: data.updatedAt || '' };

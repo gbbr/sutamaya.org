@@ -3,12 +3,11 @@
 // conditional write compare a stored mtime against an incoming one with a plain `>`.
 const SERVER_DEVICE_ID = 'server';
 
-// Two writes from an old client — which never sends mtime — can land in the same millisecond
-// (nothing throttles it; a bulk sibling reorder alone issues one INSERT/UPDATE per row). Without
-// this guard, the second would generate a tying timestamp and its own conditional write would
-// silently reject it as "not newer" — the exact loss this column exists to prevent, self-inflicted
-// by the fallback generator. Same monotonic-clamp idea as A2's client-side guard, applied here to
-// this worker instance's own clock instead of one device's.
+// Two writes from a client that sends no mtime can land in the same millisecond — nothing throttles
+// them, and a bulk sibling reorder alone issues one INSERT/UPDATE per row. Without this guard the
+// second would generate a tying timestamp and its own conditional write would reject it as "not
+// newer". The same monotonic clamp as A2's client-side guard, applied to this worker instance's
+// clock rather than one device's.
 let lastMs = 0;
 
 function serverMtime() {
@@ -24,9 +23,8 @@ function serverMtime() {
 // access. Validating the shape here is what keeps a malformed mtime from becoming permanent.
 const MTIME_PATTERN = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z\|.+$/;
 
-// A write with no client-supplied mtime (every write from a client that predates offline sync)
-// still needs a real, ordered value rather than the '' migration default, which would always
-// lose a conflict.
+// A write with no client-supplied mtime still needs a real, ordered value rather than the ''
+// migration default, which would lose every conflict.
 export function resolveMtime(clientMtime) {
   return typeof clientMtime === 'string' && MTIME_PATTERN.test(clientMtime) ? clientMtime : serverMtime();
 }

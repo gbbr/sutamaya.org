@@ -142,8 +142,8 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
       if (!container) return;
       const word = container.querySelector(`[data-word-seg="${segIndex}"][data-word="${wordIndex}"]`);
       if (!word) {
-        // Segment not rendered yet for some reason (shouldn't normally happen once its reveal is
-        // open) — fall back to the old segment-level scroll rather than silently doing nothing.
+        // The word isn't in the DOM, which shouldn't happen once its segment's reveal is open —
+        // fall back to the coarser segment-level scroll rather than doing nothing.
         scrollToSegment(segIndex, 'center');
         return;
       }

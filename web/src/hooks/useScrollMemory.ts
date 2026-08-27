@@ -1,14 +1,11 @@
 import { useLayoutEffect, useRef } from 'react';
 import { SCROLL_POSITIONS_KEY } from '../lib/storageKeys';
 
-// Module-level so positions survive component unmount/remount within the same SPA session
-// (e.g. LibraryPage remounting when the route pattern changes) without needing extra state —
-// and persisted to localStorage so they also survive a full app close (tab close, or a PWA
-// force-quit and relaunch), which is what lets "/" restore not just the last screen but its
-// exact scroll offset too (see lib/lastLocation.ts). Shared across tabs/windows like every
-// other plain-localStorage key in this app (sutamaya.treeView, sutamaya.libraryView, the prefs
-// contexts) — two tabs open on different suttas at once will clobber each other's entries on
-// close, which is accepted here the same way it already is for those.
+// Module-level, so positions survive a component unmounting and remounting within one SPA session,
+// and persisted to localStorage so they survive a full app close too — which is what lets "/"
+// restore not just the last screen but its exact scroll offset (see lib/lastLocation.ts). Shared
+// across tabs like every other plain-localStorage key here, so two tabs open on different suttas
+// clobber each other's entries on close, accepted the same way it is for those.
 const STORAGE_KEY = SCROLL_POSITIONS_KEY;
 
 function loadPositions(): Map<string, number> {
@@ -59,12 +56,11 @@ export function clearScrollMemory() {
   window.removeEventListener('pagehide', persist);
 }
 
-// Lets a caller that performs its own deliberate scroll on a scroll-memory container (e.g.
-// useSuttaReading's scrollToSegment, jumping to one specific verse inside a batched document —
-// see its own call to this) cancel this hook's MutationObserver-based restore below for that same
-// element, so a stale remembered position can't silently overwrite the deliberate scroll later.
-// Keyed by element rather than by the hook's own `key` string since the caller only has the DOM
-// node (a scrollRef) to hand, not whatever string this mount happened to use.
+// Lets a caller performing its own deliberate scroll on a scroll-memory container —
+// useSuttaReading's scrollToSegment, jumping to one verse inside a batched document — cancel this
+// hook's MutationObserver-based restore for that element, so a stale remembered position can't
+// overwrite the deliberate scroll later. Keyed by element rather than by the hook's `key` string,
+// since the caller has only the DOM node to hand.
 const pendingRestoreCancel = new WeakMap<HTMLElement, () => void>();
 
 export function cancelPendingRestore(el: HTMLElement | null | undefined) {
@@ -81,12 +77,11 @@ const USER_INTENT_EVENTS = ['wheel', 'touchstart', 'pointerdown'] as const;
 // input either) doesn't leave a MutationObserver running forever.
 const RESTORE_GRACE_MS = 5000;
 
-// `active` lets a caller that's mounted-but-hidden (e.g. LibraryPage keeps both TreePane and
-// ListPane mounted on mobile, toggling `display:none` on the inactive one instead of
-// unmounting it, so its React/scroll state survives the toggle) skip restoring scroll while
-// hidden. A `display:none` element has no layout box (scrollHeight 0), so setting `scrollTop`
-// on it just clamps to 0 and silently loses the saved position — restoring only needs to
-// happen once the pane is actually visible again, which is exactly when `active` flips true.
+// `active` lets a mounted-but-hidden caller skip restoring while hidden — LibraryPage keeps both
+// panes mounted on mobile and toggles `display:none` on the inactive one, so its scroll state
+// survives. A `display:none` element has no layout box, so setting `scrollTop` on it clamps to 0
+// and loses the saved position; restoring belongs at the moment the pane becomes visible, which is
+// when `active` flips true.
 //
 // `restore` is where this mount starts. It only ever affects the restore-on-mount half: the
 // *recording* (the `onScroll` listener/`positions` map below) runs the same under all three, so a
@@ -108,19 +103,18 @@ const RESTORE_GRACE_MS = 5000;
 // Read once per key-mount, so it must only ever change together with `key` — it does: the reader
 // derives it per sutta id, which is what the key is built from.
 //
-// `readyToRestore` lets a caller with more than one async content source feeding this container
-// (the reader's sutta text and its separately-fetched notes/highlight/chip data — see
-// useSuttaReading) defer the restore until both have landed, instead of restoring against the
-// first one and getting shifted once the second lands (including via the browser's own CSS
-// scroll-anchoring compensating for content inserted above the current position). Defaults to
-// `true` so TreePane/ListPane, which have no second source, restore immediately as before.
+// `readyToRestore` lets a caller with more than one async content source feeding this container —
+// the reader's sutta text and its separately-fetched notes and chip data — defer the restore until
+// both have landed, rather than restoring against the first and being shifted when the second
+// arrives, including by CSS scroll anchoring compensating for content inserted above. Defaults to
+// `true`, so TreePane and ListPane, which have no second source, restore immediately.
 //
-// Not a dependency of the lifecycle effect below, even though it fluctuates within one mount:
-// the reader's segments go stale -> null -> new on every Prev/Next while the scroll-memory `key`
-// stays the same, so `readyToRestore` dips true -> false -> true right as this container's
-// content transiently collapses (SegmentedText -> "Loading…"). Tearing the effect down on that
-// dip would persist whatever scrollTop the collapse clamped to; `readyRef` below guards recording
-// directly instead, so the effect's own mount lifecycle can stay keyed on [key, active] alone.
+// Not a dependency of the lifecycle effect below, even though it fluctuates within one mount: the
+// reader's segments go stale -> null -> new on every Prev/Next while the scroll-memory `key` stays
+// the same, so `readyToRestore` dips true -> false -> true just as the container's content
+// collapses to "Loading…". Tearing the effect down on that dip would persist whatever scrollTop the
+// collapse clamped to, so `readyRef` below guards recording directly and the effect's mount
+// lifecycle stays keyed on [key, active] alone.
 export type ScrollRestore = 'stored' | 'top' | 'none';
 
 export interface ScrollMemoryOptions {
@@ -141,16 +135,14 @@ export function useScrollMemory<T extends HTMLElement>(
   // once against stale content during a readyToRestore dip and then block the real restore once
   // fresh content actually loads. Reset on every key/active mount and on every dip to not-ready.
   const restoreStateRef = useRef<{ restored: boolean }>({ restored: false });
-  // The last scrollTop this hook itself actually knows to be correct — set synchronously by our
-  // own restore writes and by real `scroll` events, never by an ad hoc `el.scrollTop` read. A read
-  // forces a synchronous layout, and on a Prev/Next the DOM can briefly be a hybrid of the new
-  // sutta's header (title/blurb — driven straight off the already-loaded corpus, so it swaps in a
-  // render before the body does) over the *previous* sutta's still-rendered body (segments only
-  // clear once useSuttaText's own effect runs). If the two headers differ in height, that hybrid
-  // frame is exactly the kind of above-the-fold content change the browser's own CSS scroll
-  // anchoring compensates for — and forcing layout via a raw `el.scrollTop` read during that
-  // window (as unmount/teardown below used to) bakes the anchoring nudge in as if it were the
-  // real, settled position, corrupting what gets persisted for the sutta being left.
+  // The last scrollTop this hook knows to be correct — set synchronously by its own restore writes
+  // and by real `scroll` events, never by an ad hoc `el.scrollTop` read. Such a read forces a
+  // synchronous layout, and on a Prev/Next the DOM is briefly a hybrid: the new sutta's header,
+  // driven off the already-loaded corpus, swaps in a render before the body does, while the
+  // previous sutta's segments are still rendered. If the two headers differ in height, that frame
+  // is exactly the above-the-fold change the browser's CSS scroll anchoring compensates for, and
+  // forcing layout during it would bake the anchoring nudge in as the settled position — corrupting
+  // what gets persisted for the sutta being left.
   const lastKnownScrollTopRef = useRef(0);
 
   useLayoutEffect(() => {

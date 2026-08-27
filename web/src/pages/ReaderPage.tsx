@@ -54,13 +54,11 @@ const NO_HIGHLIGHTS: Highlight[] = [];
 
 export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus } = useCorpus();
-  // A batched document (several inner suttas in one file, e.g. "dhp320-333") has no corpus entry
-  // of its own for any individual inner sutta ("dhp321") — resolving here means every other use
-  // of `suttaId` below (text fetch, highlights/notes/visited, Prev/Next, breadcrumb) transparently
-  // operates on the batch's own id, same as if the batch id had been requested directly.
-  // `requestedSubUid` is only set when that resolution actually changed something — i.e. this was
-  // a deep link/search hit for a specific inner sutta — and is used below purely to scroll to and
-  // softly mark that inner sutta's own segments once the batch loads.
+  // A batched document — several inner suttas in one file, "dhp320-333" — has no corpus entry for
+  // any individual inner sutta, so resolving here lets every other use of `suttaId` below (text
+  // fetch, annotations, Prev/Next, breadcrumb) operate on the batch's id as if that had been
+  // requested directly. `requestedSubUid` is set only when the resolution changed something, and is
+  // used purely to scroll to and softly mark that inner sutta's segments once the batch loads.
   const suttaId = corpus && routeSuttaId ? resolveCanonicalSuttaId(corpus, routeSuttaId) : routeSuttaId;
   const requestedSubUid = routeSuttaId && routeSuttaId !== suttaId ? routeSuttaId : undefined;
   const { notes, membership, lists, markVisited } = useUserData();
@@ -78,12 +76,11 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     cycleTheme,
   } = useReaderPrefs();
 
-  // Where to return to on close — the exact pane/nodeId/scroll position the reader was opened
-  // from (see LibraryPage's onOpen), not just the sutta's bare corpus location. Falls back to
-  // that bare location for a direct/bookmarked link to /read/:suttaId, which has no such origin.
-  // `fromView` rides alongside it (mobile only — LibraryPage shows one pane at a time there) so
-  // closing lands back on the actual tree/list pane the reader was opened from, not whichever one
-  // LibraryPage's own suttaId-present-on-mount default would otherwise guess.
+  // Where to return to on close: the exact pane, nodeId and scroll position the reader was opened
+  // from (LibraryPage's onOpen), not the sutta's bare corpus location — which is the fallback for a
+  // direct link to /read/:suttaId, having no such origin. `fromView` rides alongside it on mobile,
+  // where LibraryPage shows one pane at a time, so closing lands on the right pane rather than
+  // whichever LibraryPage's suttaId-present-on-mount default would guess.
   const readerLocationState = location?.state as { from?: string; fromView?: 'tree' | 'list' } | undefined;
   const { from, fromView, navigateToSutta, closeToOrigin } = useReaderOrigin(readerLocationState);
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
@@ -107,13 +104,12 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   const [rootEl, setRootEl] = useState<HTMLDivElement | null>(null);
 
   const sutta = corpus && suttaId ? corpus.suttas[suttaId] : undefined;
-  // Where this sutta opens. A *return* (back/forward, refresh, app relaunch) resumes the
-  // remembered position; anything the reader chose now (a row tap, a search hit, Prev/Next)
-  // starts at the top — see lib/entryKind.ts. A route that already names a segment to jump to
-  // takes neither. Sampled per sutta id rather than per mount, since ReaderPage stays mounted
-  // across Prev/Next and only its route param changes; held in a ref so it stays fixed for as
-  // long as that id is on screen, however often this re-renders before the (async, text- and
-  // user-data-gated) restore actually runs.
+  // Where this sutta opens. A return — back or forward, a refresh, an app relaunch — resumes the
+  // remembered position; anything the reader chose now starts at the top (lib/entryKind.ts). A
+  // route already naming a segment to jump to takes neither. Sampled per sutta id rather than per
+  // mount, since ReaderPage stays mounted across Prev/Next and only its route param changes, and
+  // held in a ref so it stays fixed while that id is on screen, however often this re-renders
+  // before the async restore runs.
   const restoreRef = useRef<{ id?: string; restore: ScrollRestore }>({ restore: 'stored' });
   if (restoreRef.current.id !== suttaId) {
     restoreRef.current = {
@@ -138,10 +134,9 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     popStop,
     openPop,
   } = useSuttaReading(suttaId, 'reader', restoreRef.current.restore);
-  // "Highlights"/"Notes" membership (see worker/src/routes/data.js's buildUserData) is redundant
-  // here — the highlight gutter and the note preview above already say as much — so they're
-  // filtered out of the chip row entirely (suttaRowMeta's own AUTO_LIST_IDS filter, same as
-  // ListPane/TreePane/ReaderSearchOverlay's use of it).
+  // Auto-list membership is redundant here, since the highlight gutter and the note preview above
+  // already say as much, so suttaRowMeta's AUTO_LIST_IDS filter drops it from the chip row — as it
+  // does for ListPane, TreePane and ReaderSearchOverlay.
   const flatLists = useMemo(() => flattenListTree(lists), [lists]);
   const suttaChips = useMemo(
     () => (suttaId ? suttaRowMeta([suttaId], membership, {}, flatLists).get(suttaId)?.chips ?? [] : []),
@@ -207,24 +202,21 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     setOpenSegs,
   });
 
-  // "Visited" means opened, and feeds the Recent auto-list — it makes no claim about having read
-  // anything, so it doesn't try to measure that. The delay is only a debounce: a Prev/Next
-  // flick-through shouldn't fill Recent with everything it passed. Cancelled if the sutta changes
-  // before it elapses.
+  // "Visited" means opened, and feeds the Recent auto-list; it makes no claim about having read
+  // anything. The delay is a debounce, so a Prev/Next flick-through doesn't fill Recent with
+  // everything it passed, and is cancelled if the sutta changes before it elapses.
   useEffect(() => {
     if (!suttaId || !sutta) return;
     const timer = window.setTimeout(() => markVisited(suttaId), VISIT_DEBOUNCE_MS);
     return () => window.clearTimeout(timer);
   }, [suttaId, sutta, markVisited]);
 
-  // Landed here via a deep link/search hit for one specific inner sutta of a batched document
-  // (see requestedSubUid above) — scroll to its first segment once the batch's text has loaded.
-  // Runs a frame after mount/load, same as jumpToHighlight below. Such a route opens with
-  // `restore: 'none'` (see restoreRef above), so useScrollMemory writes no scroll position at all
-  // for this mount, rather than this effect having to fight/override it (iOS Safari can otherwise land a `scrollBy({behavior:'smooth'})` call
-  // issued a few ms after that restore's own synchronous `scrollTop =` write well past the
-  // intended target — two scroll writes on the same container that close together can *stack*
-  // instead of the second one superseding the first).
+  // Landed here through a deep link or search hit for one inner sutta of a batched document (see
+  // requestedSubUid above) — scroll to its first segment once the batch's text has loaded, a frame
+  // after load, as jumpToHighlight below does. Such a route opens with `restore: 'none'` (see
+  // restoreRef), so useScrollMemory writes no scroll position for this mount and there is nothing
+  // to override: on iOS Safari two scroll writes to one container milliseconds apart can stack
+  // rather than the second superseding the first, landing well past the intended target.
   useEffect(() => {
     if (!requestedSubUid || !segments) return;
     const idx = segments.findIndex((s) => s.key.startsWith(`${requestedSubUid}:`));
@@ -238,20 +230,18 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   // the reader was entered from browsing, a search result, or a deep link.
   const siblingIds = useMemo(() => (corpus ? flatSuttaOrder(corpus) : []), [corpus]);
 
-  // Opened from a user list (My Lists, not the corpus browse tree) — Prev/Next should stay inside
-  // that list's own items and stop dead at either end, the same as LibraryPage's own Up/Down
-  // handling of this exact case (see its `currentList` there): jumping away to wherever a sutta
-  // happens to live in the corpus would defeat the point of viewing a curated list. Also drives
-  // the "viewing from list X" indicator above the breadcrumb below, so the reader makes that
-  // narrowed Prev/Next scope visible rather than silently behaving differently. `from` is
-  // `/browse/{nodeId}/{suttaId}` (see LibraryPage's onOpen), and stays constant across a Prev/Next
-  // run (navigateToSutta carries it forward), so the list origin holds for the whole session.
+  // Opened from a user list rather than the corpus browse tree, where Prev/Next stays inside that
+  // list's items and stops at either end: jumping away to wherever a sutta happens to live in the
+  // corpus would defeat the point of viewing a curated list. It also drives the "viewing from list
+  // X" indicator above the breadcrumb, so that narrowed scope is visible rather than silent.
+  // `from` is `/browse/{nodeId}/{suttaId}` (LibraryPage's onOpen) and stays constant across a
+  // Prev/Next run, since navigateToSutta carries it forward.
   //
   // Conditional on the sutta on screen actually being in that list, because `from` is a return
-  // address rather than a description of what's being read: opening a search hit from inside the
-  // reader keeps the same origin, and without this check an unrelated sutta would claim
-  // membership in the header and get a Prev/Next scope with no position in it — dead in both
-  // directions. Falling back to the corpus order there is what the breadcrumb already shows.
+  // address rather than a description of what is being read: opening a search hit from inside the
+  // reader keeps the same origin, and an unrelated sutta would otherwise claim membership in the
+  // header and get a Prev/Next scope with no position in it, dead in both directions. Falling back
+  // to the corpus order there is what the breadcrumb already shows.
   const listOrigin = useMemo(() => {
     const nodeId = from?.match(/^\/browse\/([^/]+)\//)?.[1];
     const list = nodeId ? lists.find((l) => l.id === decodeURIComponent(nodeId)) : undefined;
@@ -276,11 +266,10 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     [listOrigin, siblingIds]
   );
 
-  // Fetch both neighbours once this sutta's own text has arrived, so stepping to either one has
-  // it in hand (see loadSuttaText's own module-level cache, and useSuttaText's synchronous read
-  // of it) rather than spending the step animation waiting on a request. Waiting on `segments`
-  // keeps these two off the wire while the sutta actually being read is still fetching, which on
-  // a slow connection is the request that matters.
+  // Fetch both neighbours once this sutta's text has arrived, so stepping to either has it in hand
+  // — through loadSuttaText's module-level cache, which useSuttaText reads synchronously — rather
+  // than spending the step animation on a request. Waiting on `segments` keeps these off the wire
+  // while the sutta being read is still fetching, which on a slow connection is what matters.
   useEffect(() => {
     if (!segments) return;
     for (const dir of [1, -1] as const) {
@@ -304,9 +293,9 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   // pane, so the header and the highlight gutter stay put while the text itself travels.
   const articleRef = useRef<HTMLDivElement>(null);
   // The direction to animate in on arrival, read by the layout effect below. A ref rather than
-  // state because it's consumed exactly once, by the render that lands on `id`: as state it would
-  // linger, and returning to that sutta later by some other route (a search hit) would replay an
-  // entrance for a step nobody took.
+  // state, because it is consumed exactly once by the render that lands on `id`: as state it would
+  // linger, and returning to that sutta by another route would replay an entrance for a step nobody
+  // took.
   const enterOnArrival = useRef<{ id: string; dir: 1 | -1 } | null>(null);
 
   function step(dir: 1 | -1) {
@@ -354,11 +343,10 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     navigateToSutta(id);
   }
 
-  // Wrapped in useCallback (as is onToggleNote below) so SegmentedText's own per-segment
-  // memoization isn't defeated by a freshly-allocated function on every ReaderPage render — see
-  // SegmentedText.tsx's perf note. (onWordClick itself lives in useDictionaryLookup now.)
-  // Collapsing the Pali on the segment the dictionary dock's active word belongs to also closes
-  // the dock — otherwise it'd keep pointing at a word that's no longer visible.
+  // Wrapped in useCallback, as onToggleNote below is, so a freshly-allocated function on every
+  // ReaderPage render doesn't defeat SegmentedText's per-segment memoization. Collapsing the Pali
+  // on the segment holding the dictionary dock's active word also closes the dock, which would
+  // otherwise keep pointing at a word no longer visible.
   const onToggleSeg = useCallback(
     (i: number) => {
       setOpenSegs((s) => {

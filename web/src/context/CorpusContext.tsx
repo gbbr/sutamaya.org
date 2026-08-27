@@ -5,19 +5,17 @@ import type { Corpus } from '../lib/types';
 interface CorpusState {
   corpus: Corpus | null;
   loading: boolean;
-  // Set if the initial corpus.json fetch itself failed (offline first load, cold cache miss, a
-  // CDN hiccup) — without this, a failed fetch left `loading` true forever with no way out, since
-  // nothing else ever resolves `corpus`.
+  // Set when the initial corpus.json fetch failed — an offline first load, a cold cache miss, a CDN
+  // hiccup. Nothing else ever resolves `corpus`, so this is the only way out of `loading`.
   error: boolean;
   retry: () => void;
 }
 
 const CorpusContext = createContext<CorpusState | null>(null);
 
-// The dictionary is deliberately absent from this provider. It is fetched one ~30KB range shard
-// at a time, by the tap that needs it (lib/dictionaryShards.ts, via useDictionaryLookup), so
-// there is no app-wide dictionary state to hold, no boot-time load to gate or retry, and nothing
-// resident between lookups.
+// The dictionary is deliberately absent from this provider: it is fetched one range shard at a
+// time, by the tap that needs it (lib/dictionaryShards.ts, through useDictionaryLookup), so there
+// is no app-wide dictionary state, no boot-time load to gate, and nothing resident between lookups.
 export function CorpusProvider({ children }: { children: ReactNode }) {
   const [corpus, setCorpus] = useState<Corpus | null>(null);
   const [error, setError] = useState(false);

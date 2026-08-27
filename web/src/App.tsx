@@ -51,11 +51,11 @@ function RestoreLastLocation(_props: RouteComponentProps) {
   return null;
 }
 
-// A bare-uid deep link (e.g. a shared "/dn9" instead of "/read/dn9"). @reach/router ranks the
-// static "/browse", "/read", "/settings", "/help" routes above this dynamic one regardless of source
-// order, so it only ever matches a single unknown-to-those path segment. Redirects to the reader
-// when the id is a real sutta uid; otherwise falls through to the same NotFoundPage the router's
-// own `default` renders for anything else unmatched.
+// A bare-uid deep link — a shared "/dn9" rather than "/read/dn9". @reach/router ranks the static
+// "/browse", "/read", "/settings" and "/help" routes above this dynamic one whatever the source
+// order, so it only matches a single path segment none of those claim. Redirects to the reader when
+// the id is a real sutta uid, and otherwise falls through to the same NotFoundPage the router's
+// `default` renders.
 function RedirectToReader({ suttaId }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus } = useCorpus();
   const known = Boolean(suttaId && corpus?.suttas[suttaId]);

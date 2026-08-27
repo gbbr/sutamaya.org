@@ -5,16 +5,16 @@ import { clearScrollMemory } from '../hooks/useScrollMemory';
 // A development and demo-recording tool: there is no UI for it, and the name is what stops it being
 // typed by accident.
 //
-// Signing out is the first step and the load-bearing one. Wiping local storage alone changes almost
-// nothing visible while a session cookie survives: the next load simply pulls /api/data and puts the
-// account's lists, notes and highlights straight back.
+// Signing out is the first step and the load-bearing one: while a session cookie survives, wiping
+// local storage changes almost nothing, since the next load pulls /api/data and puts the account's
+// lists, notes and highlights straight back.
 //
 // **Nothing here is a sync operation.** It signs out, then deletes rows; it never marks them
-// deleted. That distinction is what keeps it safe to ship: lib/sync.ts pushes rows the mirror still
+// deleted. That distinction is what makes it safe to ship: lib/sync.ts pushes rows the mirror still
 // holds and marks `dirty`, and a delete travels as a row carrying `deleted: true`. Deleting the
 // database leaves nothing to push, so the account on the server is untouched and signing back in
-// restores it. Going through the ordinary mutators instead would replicate the erasure to the
-// server and to every other device.
+// restores it. Going through the ordinary mutators would replicate the erasure to the server and to
+// every other device.
 //
 // What it does destroy for good is local-only work: edits made offline that hadn't synced yet, and
 // — signed out, where there is no server copy at all — everything.
