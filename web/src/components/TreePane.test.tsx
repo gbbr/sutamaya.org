@@ -59,7 +59,7 @@ import {
 import { estimateOfflineStatus, isOfflineTextStale } from '../lib/offline';
 import { dismissKeepSafe, isIosBrowserTab, isKeepSafeDismissed } from '../lib/localAccount';
 import { TreePane } from './TreePane';
-import { searchCorpus, searchLists, LIST_RESULTS_CAP, SEARCH_PLACEHOLDER } from '../lib/corpus';
+import { searchCorpus, searchLists, LIST_RESULTS_CAP, SEARCH_NO_MATCHES, SEARCH_PLACEHOLDER } from '../lib/corpus';
 import type { Corpus, ListDef, User } from '../lib/types';
 
 function buildCorpus(): Corpus {
@@ -461,7 +461,7 @@ describe('search', () => {
     await userEvent.click(screen.getByLabelText('Search'));
     const input = screen.getByPlaceholderText(SEARCH_PLACEHOLDER);
     await userEvent.type(input, 'nonexistentquery');
-    expect(screen.getByText('No matches.')).toBeInTheDocument();
+    expect(screen.getByText(SEARCH_NO_MATCHES)).toBeInTheDocument();
   });
 
   it('typing without opening search first reaches nothing (no hidden input to type into)', async () => {
@@ -477,7 +477,7 @@ describe('search', () => {
     const input = screen.getByPlaceholderText(SEARCH_PLACEHOLDER) as HTMLInputElement;
     expect(input).toHaveFocus();
     await userEvent.type(input, 'hindrance');
-    expect(screen.queryByText('No matches.')).not.toBeInTheDocument();
+    expect(screen.queryByText(SEARCH_NO_MATCHES)).not.toBeInTheDocument();
     fireEvent.keyDown(input, { key: 'Escape' });
     expect(screen.queryByPlaceholderText(SEARCH_PLACEHOLDER)).not.toBeInTheDocument();
   });

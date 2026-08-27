@@ -53,6 +53,13 @@ export const SHORTCUTS = {
   readerHelp: { match: ['?'], keys: ['?'], label: 'Show keyboard shortcuts', scope: 'reader' },
 } satisfies Record<string, Shortcut>;
 
+// Whether to draw a key hint on a control that also has a shortcut. Keyed off pointer type, not
+// viewport width: a tablet gets the desktop layout at the size it usually runs, and advertising
+// keys there names something its reader has no way to press. Read once — a device doesn't change
+// pointer type mid-session, and a missing matchMedia (tests, SSR) falls through to showing them.
+export const SHOWS_KEY_HINTS =
+  typeof window === 'undefined' || !window.matchMedia?.('(pointer: coarse)').matches;
+
 export function shortcutsForScope(scope: ShortcutScope): Shortcut[] {
   return Object.values(SHORTCUTS).filter((s) => s.scope === scope);
 }

@@ -16,6 +16,7 @@ import {
   descendantIdsOf,
   findNode,
   flatSuttaOrder,
+  SEARCH_NO_MATCHES,
   SEARCH_PLACEHOLDER,
   SEARCH_RESULTS_CAP,
   type ListHit,
@@ -785,7 +786,9 @@ export function TreePane({
                   );
                 })}
                 {hits.length === 0 && listHitTotal === 0 && (
-                  <div className="font-sans text-center text-ui-base text-ink-4 py-[30px] px-5">No matches.</div>
+                  <div className="font-sans text-center text-ui-base text-ink-4 py-[30px] px-5 text-balance">
+                    {SEARCH_NO_MATCHES}
+                  </div>
                 )}
               </>
             )}

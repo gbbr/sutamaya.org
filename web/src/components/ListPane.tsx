@@ -5,7 +5,15 @@ import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { usePointerDragSession } from '../hooks/usePointerDragSession';
-import { listItemsFor, nodeBlurb, nodeLabel, SEARCH_RESULTS_CAP, type ListHit, type SearchHit } from '../lib/corpus';
+import {
+  listItemsFor,
+  nodeBlurb,
+  nodeLabel,
+  SEARCH_RESULTS_CAP,
+  SEARCH_SCOPE_NOTE,
+  type ListHit,
+  type SearchHit,
+} from '../lib/corpus';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
 import { MatchedText } from './MatchedText';
@@ -579,7 +587,12 @@ export function ListPane({
         {/* A query that matched only lists isn't a failed search — the block above says so, and
             "Nothing matches" underneath it would contradict it. */}
         {items.length === 0 && !(searching && listHitTotal > 0) && (
-          <div className="font-sans text-center text-ui-base text-ink-4 py-10 px-6">{emptyMessage()}</div>
+          <div className="font-sans text-center text-ui-base text-ink-4 py-10 px-6">
+            {emptyMessage()}
+            {/* What was searched, said only where a reader has just failed to find something —
+                which is where the limit actually matters. */}
+            {searching && <div className="mt-2 text-ui-sm text-balance">{SEARCH_SCOPE_NOTE}</div>}
+          </div>
         )}
       </div>
       {picker && (
