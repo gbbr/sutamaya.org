@@ -3,15 +3,15 @@ import { invalidParentReasonForRow, wouldCreateCycle } from './listParent.js';
 
 describe('invalidParentReasonForRow', () => {
   it('rejects a parent that does not exist', () => {
-    expect(invalidParentReasonForRow(null)).toBe('Parent not found.');
+    expect(invalidParentReasonForRow(null)).toBe('parent_not_found');
   });
 
   it('rejects a parent that is a plain list, not a group', () => {
-    expect(invalidParentReasonForRow({ kind: 'list' })).toBe('Only a group can contain other lists.');
+    expect(invalidParentReasonForRow({ kind: 'list' })).toBe('parent_not_a_group');
   });
 
   it('rejects a parent with no kind field (defaults to list)', () => {
-    expect(invalidParentReasonForRow({})).toBe('Only a group can contain other lists.');
+    expect(invalidParentReasonForRow({})).toBe('parent_not_a_group');
   });
 
   it('accepts a parent that is a group', () => {

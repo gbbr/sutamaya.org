@@ -15,7 +15,7 @@ const app = new Hono();
 // burn through the budget a genuine sign-in needs. Nothing else is mounted here: static assets
 // never reach the Worker.
 app.use('/api/*', async (c, next) => {
-  const tooMany = () => c.json({ error: 'Too many requests. Please try again in a moment.' }, 429);
+  const tooMany = () => c.json({ error: 'rate_limited' }, 429);
   const ip = c.req.header('cf-connecting-ip');
 
   if (!(await checkRateLimit(c.env.RATE_LIMIT_API, ip))) return tooMany();
@@ -32,6 +32,16 @@ app.use('/api/*', async (c, next) => {
 // one origin in production and may be a comma-separated list in dev — see webOrigins).
 app.use('/api/*', (c, next) => cors({ origin: webOrigins(c.env.WEB_ORIGIN), credentials: true })(c, next));
 
+// Everything under /api/* is scoped to one signed-in account, and signing out deletes this
+// device's copy of it (deleteMirror in context/AuthContext.tsx) — but the browser's own HTTP cache
+// is storage the app can't reach, so this says outright that no copy is to be kept there. Scoped
+// to /api/*: the corpus, dictionary and per-sutta text come from the assets binding, never reach
+// the Worker, and are meant to be cached hard.
+app.use('/api/*', async (c, next) => {
+  await next();
+  c.header('Cache-Control', 'no-store');
+});
+
 app.get('/api/health', async (c) => {
   await c.env.DB.prepare('SELECT 1').first();
   return c.json({ ok: true });
@@ -44,6 +54,10 @@ app.route('/api/lists', listsRouter);
 app.route('/api', annotationsRouter);
 app.route('/api/data', dataRouter);
 
+// Every error body is `{error: <snake_case code>}`. Nothing outside the sign-in form displays one —
+// the flush reads the status and logs the body — so a code is what a reader of a network log or a
+// console error wants. The exception is /api/auth/email/*, whose messages EmailCodeSignIn puts on
+// screen verbatim and which are therefore written as sentences.
 app.onError((err, c) => {
   console.error(err);
   return c.json({ error: 'internal_error' }, 500);

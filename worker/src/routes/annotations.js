@@ -77,15 +77,15 @@ annotationsRouter.put('/highlights/ranges', async (c) => {
   const userId = c.get('userId');
   const { suttaId, ranges, color, g, mtime: clientMtime, erase } = (await jsonBody(c)) || {};
   if (!suttaId || !Array.isArray(ranges) || !ranges.length) {
-    return c.json({ error: 'suttaId and a non-empty ranges array are required.' }, 400);
+    return c.json({ error: 'ranges_required' }, 400);
   }
   for (const r of ranges) {
     if (!Number.isInteger(r.i) || !Number.isInteger(r.s) || !Number.isInteger(r.e) || r.s >= r.e) {
-      return c.json({ error: 'each range needs integer i, s, e with s < e.' }, 400);
+      return c.json({ error: 'invalid_range' }, 400);
     }
   }
   if (!Array.isArray(erase) || erase.some((id) => typeof id !== 'string' || !id)) {
-    return c.json({ error: 'erase must be an array of group ids.' }, 400);
+    return c.json({ error: 'invalid_erase' }, 400);
   }
   // A server-minted id would cost the group its idempotence: a create re-sent after a lost
   // response would arrive under a second name and duplicate the highlight instead of colliding
@@ -93,7 +93,7 @@ annotationsRouter.put('/highlights/ranges', async (c) => {
   // unique index leads with user_id too, so one account's group id can't reach another's rows —
   // shape is all that's left to check.
   if (color && (typeof g !== 'string' || !g)) {
-    return c.json({ error: 'g must be a non-empty string.' }, 400);
+    return c.json({ error: 'group_id_required' }, 400);
   }
   // `created_at` takes the client's instant too, so the Highlights auto-list orders by when the
   // user highlighted rather than when the write reached the server.
