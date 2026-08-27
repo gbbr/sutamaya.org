@@ -408,9 +408,10 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           line however many buttons flank it. `max-w` keeps a long one clear of both groups, and
           the flanking groups keep their own layout via `justify-between`. */}
       <header className="font-sans flex-none relative flex items-center justify-between px-5 py-3.5 text-ui-base" style={{ borderBottom: `1px solid ${theme.rule}` }}>
-        {/* `p-3.5 -m-3.5` throughout: a 47px touch area around each 19px icon, clearing the 44px
-            minimum both platforms ask for, while the negative margin keeps the icons themselves
-            spaced as they look rather than as they're hit. */}
+        {/* `p-3.5 -m-3.5`: a 47px touch area around the 19px icon, clearing the 44px minimum both
+            platforms ask for, while the negative margin keeps the icon spaced as it looks rather
+            than as it's hit. The right-hand pair trades some of that padding away to sit closer
+            together — see below. */}
         <button className="flex items-center p-3.5 -m-3.5" title="Close" onClick={closeReader}>
           <X size={19} strokeWidth={1.75} />
         </button>
@@ -433,12 +434,15 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
               the bare ref and relies on the h1 below. */}
           {mobile ? sutta.ref : `${sutta.ref} · ${sutta.en}`}
         </button>
-        {/* The negative margins collapse each button's layout box to its 19px icon while its touch
-            area stays 47px, so this gap has to cover the 28px of padding they hide before it
-            separates anything: gap-8 is 4px of actual space between hit areas. */}
-        <div className="flex items-center gap-8">
+        {/* These two sit closer than the header's 47px touch areas allow, so they take a smaller
+            one: `p-3 -m-3` is 43px around each 19px icon. The negative margins collapse each
+            button's layout box back to the icon, so the gap has to cover the 24px of padding they
+            hide before it separates anything — gap-6 sits the two hit areas exactly edge to edge,
+            the closest the icons can be drawn without one button catching taps meant for the
+            other. */}
+        <div className="flex items-center gap-6">
           <button
-            className="flex items-center p-3.5 -m-3.5"
+            className="flex items-center p-3 -m-3"
             aria-label="Search"
             title="Search (/)"
             onClick={(e) => {
@@ -449,7 +453,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
             <Search size={19} strokeWidth={1.75} />
           </button>
           <button
-            className="flex items-center p-3.5 -m-3.5"
+            className="flex items-center p-3 -m-3"
             aria-label="Menu"
             title="Menu"
             onClick={(e) => {
