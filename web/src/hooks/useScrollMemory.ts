@@ -46,6 +46,19 @@ if (typeof window !== 'undefined') {
   window.addEventListener('pagehide', persist);
 }
 
+// Empties the in-memory map as well as its persisted copy. Clearing localStorage alone would not
+// do it: `positions` is module-level and loaded once, so the pending debounce — or the `pagehide`
+// flush that a reload itself fires — would write the whole map straight back. Called by
+// lib/localWipe.ts, which is the only thing that ever wants this.
+export function clearScrollMemory() {
+  if (persistTimer != null) {
+    clearTimeout(persistTimer);
+    persistTimer = null;
+  }
+  positions.clear();
+  window.removeEventListener('pagehide', persist);
+}
+
 // Lets a caller that performs its own deliberate scroll on a scroll-memory container (e.g.
 // useSuttaReading's scrollToSegment, jumping to one specific verse inside a batched document —
 // see its own call to this) cancel this hook's MutationObserver-based restore below for that same

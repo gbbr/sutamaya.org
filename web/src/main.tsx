@@ -1,6 +1,9 @@
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import { loadUiPrefs, applyUiScale, applyTheme } from './lib/uiPrefs';
+// Side-effect import: binds window.__dangerWipeLocal, the console-only reset to a cold, signed-out
+// first run. See lib/localWipe.ts.
+import './lib/localWipe';
 import './index.css';
 
 // Applied synchronously here, before React mounts, so there's no flash of the default
