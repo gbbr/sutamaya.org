@@ -121,9 +121,8 @@ because it needs none: those files come from the assets binding and never invoke
 
 - Workers: 100,000 requests/day, 10ms CPU per invocation, 3MB gzipped script, 50 subrequests.
   Static-asset requests are free, unlimited, and don't count against that daily budget.
-- Static assets: 20,000 files per version, 25MiB per file. The current build is ~4,100 files /
-  83MB — but `dictionary.json` alone is 19.7MiB, leaving only ~5MiB of headroom against the
-  per-file ceiling. Worth watching if the dictionary ever grows.
+- Static assets: 20,000 files per version, 25MiB per file. The current build is ~4,200 files /
+  87MB, and the largest single file is a ~1MB text shard — both ceilings are far off.
 - D1: 5,000,000 rows read/day, 100,000 rows written/day, 5GB storage.
 
 At this app's traffic level none of these are close to their ceiling, and there's no egress cost
@@ -145,9 +144,8 @@ The fix used here: a real subdomain of `sutamaya.org` — `local.sutamaya.org` �
 machine's LAN IP, served locally by [Caddy](https://caddyserver.com) with a genuine Let's
 Encrypt certificate obtained via a DNS-01 challenge against Cloudflare (sutamaya.org's DNS
 provider). DNS-01 only needs the ability to create a TXT record — the machine doesn't need to be
-reachable from the public internet — so this stays LAN-only the whole time, and nothing (no
-VPN, no tunnel, no relay) sits in front of your other traffic; Caddy is just a local reverse
-proxy in front of Vite, the same role nginx would play, only running when you start it.
+reachable from the public internet — so this stays LAN-only the whole time. Caddy is a local
+reverse proxy in front of Vite, running only when you start it.
 
 **One-time setup:**
 
@@ -196,7 +194,3 @@ under `devOptions.enabled`, which is off by default (a dev-mode SW can serve sta
 fight Vite's HMR), so without it Chrome's "Add to Home Screen" falls back to a bookmark-style
 shortcut that keeps showing the address bar instead of a true standalone app. Unregister the SW in
 DevTools → Application afterward so it doesn't linger into a later plain `npm run dev` session.
-
-## Notes / gaps
-
-- No CI — deploys are manual.
