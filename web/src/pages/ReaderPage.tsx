@@ -409,7 +409,11 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           title="Scroll to top"
           onClick={() => scrollRef.current && animateScrollTop(scrollRef.current, 0)}
         >
-          {mobile ? sutta.ref : `${sutta.ref} · ${sutta.pali}`}
+          {/* The English title is what identifies a sutta to a reader who has scrolled past the
+              h1, so it takes the header wherever it fits. Below `mobile` it can't: the flanking
+              buttons leave ~166px, which truncates most titles mid-word, so a narrow screen keeps
+              the bare ref and relies on the h1 below. */}
+          {mobile ? sutta.ref : `${sutta.ref} · ${sutta.en}`}
         </button>
         {/* The negative margins collapse each button's layout box to its 19px icon while its touch
             area stays 47px, so this gap has to cover the 28px of padding they hide before it
@@ -502,7 +506,11 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
               ))}
             </nav>
           )}
-          <h1 className="font-serif" style={{ margin: 0, fontSize: Math.round(fs * 1.72), fontWeight: 600, lineHeight: 1.12, letterSpacing: '-.015em' }}>
+          {/* Display leading, but not below the face's own glyph extent: Georgia's ascender plus
+              descender is ~1.136em, and the serif faces with longer extenders (Palatino,
+              Newsreader) want more still, so anything tighter overlaps a descender with the next
+              line's ascender on the long titles — the only ones that wrap. */}
+          <h1 className="font-serif" style={{ margin: 0, fontSize: Math.round(fs * 1.72), fontWeight: 600, lineHeight: 1.2, letterSpacing: '-.015em' }}>
             {sutta.en}
           </h1>
           <div className="font-serif italic" style={{ fontSize: fs - 2, marginTop: 5, color: theme.dim }}>
