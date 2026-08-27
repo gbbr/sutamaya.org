@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react';
 import { useUserData } from '../context/UserDataContext';
 import { useSuttaText } from './useSuttaText';
 import { useHighlightPopup } from './useHighlightPopup';
-import { useScrollMemory, cancelPendingRestore } from './useScrollMemory';
+import { useScrollMemory, cancelPendingRestore, type ScrollRestore } from './useScrollMemory';
 import { groupHighlights, highlightColors, highlightCount } from '../lib/highlights';
 import { getUiScale } from '../lib/uiPrefs';
 import { computeSegmentScrollOffset, animateScrollTop } from '../lib/segmentScroll';
@@ -11,15 +11,13 @@ import { computeSegmentScrollOffset, animateScrollTop } from '../lib/segmentScro
 // highlights through SegmentedText and needs the selection-popup, scroll-restoration, and
 // highlight-grouping plumbing around it. `scrollKeyPrefix` keeps the remembered scroll position
 // namespaced (`reader:{id}`) per sutta.
-// `hasDeepLinkTarget` — true when the caller (ReaderPage) already knows, from the route alone
-// and before text has even loaded, that it's about to jump to one specific segment (a deep
-// link/search hit for one inner sutta of a batched document — ReaderPage's `requestedSubUid`) —
-// see useScrollMemory's `skipRestore` for why this needs to suppress its scroll-memory restore
-// entirely up front rather than letting scrollToSegment try to override it after the fact.
+// `restore` — where this sutta opens, passed straight through to useScrollMemory (see its own
+// comment for the three values). ReaderPage decides: 'none' when the route alone already names a
+// segment to jump to, 'top' for a sutta opened fresh, 'stored' for one returned to.
 export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
   suttaId: string | undefined,
   scrollKeyPrefix: string,
-  hasDeepLinkTarget = false
+  restore: ScrollRestore = 'stored'
 ) {
   const { highlights, ready: userDataReady } = useUserData();
   const { segments, error, retry } = useSuttaText(suttaId);
@@ -30,12 +28,10 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
   // `segments` before ever touching scrollTop is what lets useScrollMemory restore once,
   // correctly, instead of reactively correcting for whichever of the two lands second (see its
   // own `readyToRestore` param comment).
-  const scrollRef = useScrollMemory<T>(
-    suttaId ? `${scrollKeyPrefix}:${suttaId}` : null,
-    true,
-    hasDeepLinkTarget,
-    !!segments && userDataReady
-  );
+  const scrollRef = useScrollMemory<T>(suttaId ? `${scrollKeyPrefix}:${suttaId}` : null, true, {
+    restore,
+    readyToRestore: !!segments && userDataReady,
+  });
   const highlightGroups = useMemo(() => groupHighlights(hlForSutta), [hlForSutta]);
   const hlCount = useMemo(() => highlightCount(hlForSutta), [hlForSutta]);
   const hlColors = useMemo(() => highlightColors(hlForSutta), [hlForSutta]);

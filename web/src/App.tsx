@@ -4,6 +4,7 @@ import { AppProviders } from './context/AppProviders';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { useCorpus } from './context/CorpusContext';
 import { getLastLocation } from './lib/lastLocation';
+import { markReturnNavigation } from './lib/entryKind';
 import { HelpPage } from './pages/HelpPage';
 import { LibraryPage } from './pages/LibraryPage';
 import { NotFoundPage } from './pages/NotFoundPage';
@@ -42,6 +43,9 @@ function LoadFailed({ onRetry }: { onRetry: () => void }) {
 // five nikāyas, which is the thing worth seeing first.
 function RestoreLastLocation(_props: RouteComponentProps) {
   useEffect(() => {
+    // A return, not a fresh choice of destination (see lib/entryKind.ts) — this *is* the user
+    // reopening the app on whatever they last had open, so the reader restores its scroll.
+    markReturnNavigation();
     navigate(getLastLocation() ?? '/browse', { replace: true });
   }, []);
   return null;
@@ -56,7 +60,12 @@ function RedirectToReader({ suttaId }: RouteComponentProps<{ suttaId: string }>)
   const { corpus } = useCorpus();
   const known = Boolean(suttaId && corpus?.suttas[suttaId]);
   useEffect(() => {
-    if (known) navigate(`/read/${suttaId}`, { replace: true });
+    // Same as RestoreLastLocation above: this redirect finishes the load the user arrived with,
+    // so it inherits that arrival's entry kind rather than counting as a fresh in-app navigation.
+    if (known) {
+      markReturnNavigation();
+      navigate(`/read/${suttaId}`, { replace: true });
+    }
   }, [known, suttaId]);
   if (!known) return <NotFoundPage />;
   return null;

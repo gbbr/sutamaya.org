@@ -6,6 +6,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { useLayout } from '../context/LayoutContext';
 import { useSuttaReading } from '../hooks/useSuttaReading';
+import { type ScrollRestore } from '../hooks/useScrollMemory';
 import { useReaderOrigin } from '../hooks/useReaderOrigin';
 import { useReaderKeyboard } from '../hooks/useReaderKeyboard';
 import { useReaderSwipeNav } from '../hooks/useReaderSwipeNav';
@@ -16,6 +17,7 @@ import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { setReaderThemeColor } from '../lib/themeColor';
 import { shortcutsForScope } from '../lib/shortcuts';
 import { tagIntent } from '../lib/routeIntent';
+import { enteredByReturn } from '../lib/entryKind';
 import { animateScrollTop } from '../lib/segmentScroll';
 import { animateStep, cancelStepAnimations } from '../lib/motion';
 import { markSuttaOpened } from '../lib/pwaNudge';
@@ -77,6 +79,20 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   const [rootEl, setRootEl] = useState<HTMLDivElement | null>(null);
 
   const sutta = corpus && suttaId ? corpus.suttas[suttaId] : undefined;
+  // Where this sutta opens. A *return* (back/forward, refresh, app relaunch) resumes the
+  // remembered position; anything the reader chose now (a row tap, a search hit, Prev/Next)
+  // starts at the top — see lib/entryKind.ts. A route that already names a segment to jump to
+  // takes neither. Sampled per sutta id rather than per mount, since ReaderPage stays mounted
+  // across Prev/Next and only its route param changes; held in a ref so it stays fixed for as
+  // long as that id is on screen, however often this re-renders before the (async, text- and
+  // user-data-gated) restore actually runs.
+  const restoreRef = useRef<{ id?: string; restore: ScrollRestore }>({ restore: 'stored' });
+  if (restoreRef.current.id !== suttaId) {
+    restoreRef.current = {
+      id: suttaId,
+      restore: requestedSubUid ? 'none' : enteredByReturn() ? 'stored' : 'top',
+    };
+  }
   const {
     segments,
     error: textError,
@@ -93,7 +109,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     close: closePop,
     popStop,
     openPop,
-  } = useSuttaReading(suttaId, 'reader', !!requestedSubUid);
+  } = useSuttaReading(suttaId, 'reader', restoreRef.current.restore);
   // "Highlights"/"Notes" membership (see worker/src/routes/data.js's buildUserData) is redundant
   // here — the highlight gutter and the note preview above already say as much — so they're
   // filtered out of the chip row entirely (suttaRowMeta's own AUTO_LIST_IDS filter, same as
@@ -175,10 +191,9 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
 
   // Landed here via a deep link/search hit for one specific inner sutta of a batched document
   // (see requestedSubUid above) — scroll to its first segment once the batch's text has loaded.
-  // Runs a frame after mount/load, same as jumpToHighlight below. `useSuttaReading` is told about
-  // `requestedSubUid` (see its own `hasDeepLinkTarget` param) so useScrollMemory skips its usual
-  // restore-a-remembered-position behavior for this mount entirely, rather than this effect having
-  // to fight/override it (iOS Safari can otherwise land a `scrollBy({behavior:'smooth'})` call
+  // Runs a frame after mount/load, same as jumpToHighlight below. Such a route opens with
+  // `restore: 'none'` (see restoreRef above), so useScrollMemory writes no scroll position at all
+  // for this mount, rather than this effect having to fight/override it (iOS Safari can otherwise land a `scrollBy({behavior:'smooth'})` call
   // issued a few ms after that restore's own synchronous `scrollTop =` write well past the
   // intended target — two scroll writes on the same container that close together can *stack*
   // instead of the second one superseding the first).
