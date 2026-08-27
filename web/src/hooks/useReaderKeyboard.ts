@@ -19,6 +19,7 @@ interface UseReaderKeyboardOptions {
   setTab: (tab: 'highlights' | 'lists' | 'text') => void;
   setNoteFocusSignal: (updater: (s: number) => number) => void;
   toggleShowNotes: () => void;
+  toggleShowHighlights: () => void;
   cycleTheme: () => void;
 }
 
@@ -41,6 +42,7 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
     setTab,
     setNoteFocusSignal,
     toggleShowNotes,
+    toggleShowHighlights,
     cycleTheme,
   } = opts;
   // `step` and `goToAdjacentWord` are rebuilt on every ReaderPage render and close over the
@@ -96,6 +98,10 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
         if (!dict) return;
         e.preventDefault();
         goToAdjacentWord.current(e.key === 'ArrowLeft' ? -1 : 1);
+      } else if (isShortcut(e, SHORTCUTS.readerHighlightsToggle)) {
+        // Before readerHighlights, which shares this letter and matches with or without Shift.
+        e.preventDefault();
+        toggleShowHighlights();
       } else if (isShortcut(e, SHORTCUTS.readerHighlights)) {
         e.preventDefault();
         setTab('highlights');

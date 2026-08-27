@@ -15,6 +15,11 @@ export interface ReaderPrefs {
   // at all; "c" in the reader and the Theme tab's checkbox both flip this (see ReaderPage,
   // ReaderMenuPanel).
   showNotes: boolean;
+  // Whether the user's own highlights are painted over the text. Off leaves the prose clean while
+  // the gutter marks (HighlightGutter) still show where they are — that strip is what says the
+  // highlights are only hidden, not gone, so nothing else indicates the state. The reader turns it
+  // back on by itself whenever an action creates or targets a specific highlight (see ReaderPage).
+  showHighlights: boolean;
 }
 
 interface ReaderPrefsState extends ReaderPrefs {
@@ -31,6 +36,11 @@ interface ReaderPrefsState extends ReaderPrefs {
   setFace: (f: ReaderFace) => void;
   toggleAllPali: () => void;
   toggleShowNotes: () => void;
+  toggleShowHighlights: () => void;
+  // Turns highlights back on unconditionally, for the paths that auto-reveal them. Separate from
+  // the toggle because those callers mean "make sure these are visible", not "flip whatever this
+  // is" — several of them fire on actions the user may repeat.
+  revealHighlights: () => void;
 }
 
 // Line height, as a percentage. The floor is deliberately generous: the reader's measure is 34em
@@ -48,7 +58,15 @@ export const FS_MIN = 15;
 export const FS_MAX = 28;
 export const FS_STEP = 1;
 
-const DEFAULTS: ReaderPrefs = { theme: 'system', fs: 18, lh: 175, face: 'georgia', allPali: false, showNotes: false };
+const DEFAULTS: ReaderPrefs = {
+  theme: 'system',
+  fs: 18,
+  lh: 175,
+  face: 'georgia',
+  allPali: false,
+  showNotes: false,
+  showHighlights: true,
+};
 
 // The order cycleTheme walks — light to dark by way of sepia, so each press is a small step.
 const THEME_CYCLE: Record<ResolvedReaderTheme, ResolvedReaderTheme> = { light: 'sepia', sepia: 'dark', dark: 'light' };
@@ -100,6 +118,8 @@ export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
       setFace: (face) => setPrefs((p) => ({ ...p, face })),
       toggleAllPali: () => setPrefs((p) => ({ ...p, allPali: !p.allPali })),
       toggleShowNotes: () => setPrefs((p) => ({ ...p, showNotes: !p.showNotes })),
+      toggleShowHighlights: () => setPrefs((p) => ({ ...p, showHighlights: !p.showHighlights })),
+      revealHighlights: () => setPrefs((p) => (p.showHighlights ? p : { ...p, showHighlights: true })),
     }),
     [prefs, resolvedTheme, setPrefs]
   );

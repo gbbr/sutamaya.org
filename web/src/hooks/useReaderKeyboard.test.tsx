@@ -14,6 +14,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
   const setTab = vi.fn();
   const setNoteFocusSignal = vi.fn();
   const toggleShowNotes = vi.fn();
+  const toggleShowHighlights = vi.fn();
   const cycleTheme = vi.fn();
 
   const opts: Parameters<typeof useReaderKeyboard>[0] = {
@@ -33,6 +34,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     setTab,
     setNoteFocusSignal,
     toggleShowNotes,
+    toggleShowHighlights,
     cycleTheme,
     ...overrides,
   };
@@ -52,6 +54,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     setTab,
     setNoteFocusSignal,
     toggleShowNotes,
+    toggleShowHighlights,
     cycleTheme,
   };
 }

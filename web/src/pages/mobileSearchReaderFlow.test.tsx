@@ -117,12 +117,15 @@ describe('mobile search -> reader -> close flow', () => {
       face: 'serif',
       allPali: false,
       showNotes: true,
+      showHighlights: true,
       setTheme: vi.fn(),
       setFs: vi.fn(),
       setLh: vi.fn(),
       setFace: vi.fn(),
       toggleAllPali: vi.fn(),
       toggleShowNotes: vi.fn(),
+      toggleShowHighlights: vi.fn(),
+      revealHighlights: vi.fn(),
       cycleTheme: vi.fn(),
     });
   });
