@@ -76,6 +76,7 @@ function Segmented<T extends string>({
   onChange,
   theme,
   grow,
+  compact,
 }: {
   value: T;
   options: Array<{ id: T; label: string }>;
@@ -83,10 +84,13 @@ function Segmented<T extends string>({
   theme: ThemeColors;
   // Tab bar: fill the panel's width, each tab sized by its own label. Setting rows: hug the labels.
   grow?: boolean;
+  // Sized to sit on a heading line rather than in a setting row of its own, where the full-size
+  // pill outweighs the label beside it.
+  compact?: boolean;
 }) {
   return (
     <div
-      className={`${grow ? 'flex' : 'inline-flex'} items-stretch rounded-full p-[4px]`}
+      className={`${grow ? 'flex' : 'inline-flex'} items-stretch rounded-full ${compact ? 'p-[2px]' : 'p-[4px]'}`}
       style={{ background: theme.tint }}
     >
       {options.map((o) => {
@@ -99,8 +103,8 @@ function Segmented<T extends string>({
             // shares of the track and their horizontal padding does nothing. Sizing from content
             // plus padding lets that padding set the air around each label, with the leftover width
             // still shared evenly.
-            className={`${grow ? 'flex-auto' : ''} rounded-full font-sans text-ui-sm whitespace-nowrap ${
-              grow ? 'px-5 py-[8px]' : 'px-3.5 py-[6px]'
+            className={`${grow ? 'flex-auto' : ''} rounded-full font-sans whitespace-nowrap ${
+              compact ? 'text-ui-xs px-2.5 py-[3px]' : `text-ui-sm ${grow ? 'px-5 py-[8px]' : 'px-3.5 py-[6px]'}`
             }`}
             style={{
               // The thumb is the panel's own surface lifted out of the recessed track, so it
@@ -191,8 +195,22 @@ export function ReaderMenuPanel({
 }: ReaderMenuPanelProps) {
   const [tab, setTab] = useState(initialTab);
   const { notes, submitNote, setHighlightRanges } = useUserData();
-  const { resolvedTheme, setTheme, fs, setFs, lh, setLh, face, setFace, allPali, toggleAllPali, showNotes, toggleShowNotes } =
-    useReaderPrefs();
+  const {
+    resolvedTheme,
+    setTheme,
+    fs,
+    setFs,
+    lh,
+    setLh,
+    face,
+    setFace,
+    allPali,
+    toggleAllPali,
+    showNotes,
+    toggleShowNotes,
+    showHighlights,
+    toggleShowHighlights,
+  } = useReaderPrefs();
 
   // The Display tab has no text inputs, so on mobile it is a short bottom sheet rather than
   // full-screen, leaving the reader visible above it while font, line-height and theme changes are
@@ -351,9 +369,32 @@ export function ReaderMenuPanel({
 
             {/* The count belongs beside the heading, not on the rows: it answers "how much have I
                 marked in this sutta" at a glance, which is most of why this tab gets opened. */}
-            <div className={`${rowLabel} flex items-baseline gap-1.5 mb-0.5`} style={{ color: theme.dim }}>
-              Highlights
-              {highlightGroups.length > 0 && <span className="tabular-nums">{highlightGroups.length}</span>}
+            <div className="flex items-center gap-1.5 mb-0.5 min-h-[26px]">
+              <span className={`${rowLabel} flex items-baseline gap-1.5`} style={{ color: theme.dim }}>
+                Highlights
+                {highlightGroups.length > 0 && <span className="tabular-nums">{highlightGroups.length}</span>}
+              </span>
+              {/* The Display tab's own control for this setting, repeated where someone looking at
+                  their highlights already is — the same pill rather than a second, differently
+                  worded affordance, so the two places read as one setting. Absent with nothing to
+                  hide, since its effect couldn't be seen. The row keeps the pill's height either
+                  way, so the list below doesn't shift as the first highlight lands. */}
+              {highlightGroups.length > 0 && (
+                <span className="ml-auto">
+                  <Segmented
+                    value={showHighlights ? 'shown' : 'hidden'}
+                    options={[
+                      { id: 'hidden', label: 'Hidden' },
+                      { id: 'shown', label: 'Shown' },
+                    ]}
+                    theme={theme}
+                    compact
+                    onChange={(id) => {
+                      if ((id === 'shown') !== showHighlights) toggleShowHighlights();
+                    }}
+                  />
+                </span>
+              )}
             </div>
 
             {highlightGroups.map((g) => {
@@ -543,6 +584,23 @@ export function ReaderMenuPanel({
                 theme={theme}
                 onChange={(id) => {
                   if ((id === 'shown') !== showNotes) toggleShowNotes();
+                }}
+              />
+            </div>
+
+            <div className={settingRow} style={hairline}>
+              <span className={rowLabel} style={{ color: theme.dim }}>
+                Highlights
+              </span>
+              <Segmented
+                value={showHighlights ? 'shown' : 'hidden'}
+                options={[
+                  { id: 'hidden', label: 'Hidden' },
+                  { id: 'shown', label: 'Shown' },
+                ]}
+                theme={theme}
+                onChange={(id) => {
+                  if ((id === 'shown') !== showHighlights) toggleShowHighlights();
                 }}
               />
             </div>

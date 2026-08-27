@@ -41,6 +41,10 @@ export const SHORTCUTS = {
     scope: 'reader',
   },
   readerHighlights: { match: ['h'], keys: ['H'], label: 'Open the highlights panel', scope: 'reader' },
+  // Shares H with the panel above, so the handler has to test this one first — isShortcut() ignores
+  // Shift for any shortcut that doesn't ask for it, which means plain `readerHighlights` matches
+  // Shift+H too (see useReaderKeyboard).
+  readerHighlightsToggle: { match: ['h'], keys: ['⇧H'], label: 'Show / hide highlights', scope: 'reader', shift: true },
   readerLists: { match: ['l'], keys: ['L'], label: 'Open the lists panel', scope: 'reader' },
   readerNote: { match: ['n'], keys: ['N'], label: 'Add a note', scope: 'reader' },
   readerTheme: { match: ['t'], keys: ['T'], label: 'Open the display panel', scope: 'reader' },

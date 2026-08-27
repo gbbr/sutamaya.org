@@ -19,6 +19,7 @@ import { shortcutsForScope } from '../lib/shortcuts';
 import { tagIntent } from '../lib/routeIntent';
 import { enteredByReturn } from '../lib/entryKind';
 import { animateScrollTop } from '../lib/segmentScroll';
+import type { Highlight } from '../lib/types';
 import { animateStep, cancelStepAnimations } from '../lib/motion';
 import { markSuttaOpened } from '../lib/pwaNudge';
 import { getReaderPanelTab, setReaderPanelTab, type ReaderPanelTab } from '../lib/readerPanelTab';
@@ -43,6 +44,12 @@ const VISIT_DEBOUNCE_MS = 5000;
 const FOOT_NAV_LABEL: CSSProperties = { fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' };
 const footNavLabelSize = (fs: number) => Math.min(11, fs - 6);
 
+// What SegmentedText gets while highlights are hidden. A stable identity, so hiding them doesn't
+// re-render every segment on each pass. Passing none rather than suppressing the paint inside
+// SegmentedText also drops the highlight spans themselves, so hidden text can't be tapped to open
+// a popup for a highlight that isn't on screen.
+const NO_HIGHLIGHTS: Highlight[] = [];
+
 export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus } = useCorpus();
   // A batched document (several inner suttas in one file, e.g. "dhp320-333") has no corpus entry
@@ -55,7 +62,19 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   const suttaId = corpus && routeSuttaId ? resolveCanonicalSuttaId(corpus, routeSuttaId) : routeSuttaId;
   const requestedSubUid = routeSuttaId && routeSuttaId !== suttaId ? routeSuttaId : undefined;
   const { notes, membership, lists, markVisited } = useUserData();
-  const { resolvedTheme, fs, lh, face, allPali, showNotes, toggleShowNotes, cycleTheme } = useReaderPrefs();
+  const {
+    resolvedTheme,
+    fs,
+    lh,
+    face,
+    allPali,
+    showNotes,
+    toggleShowNotes,
+    showHighlights,
+    toggleShowHighlights,
+    revealHighlights,
+    cycleTheme,
+  } = useReaderPrefs();
 
   // Where to return to on close — the exact pane/nodeId/scroll position the reader was opened
   // from (see LibraryPage's onOpen), not just the sutta's bare corpus location. Falls back to
@@ -314,8 +333,13 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   // underneath.
   useReaderSwipeNav({ root: rootEl, panel: panel || searchOpen, step });
 
+  // Going to a highlight is a deliberate act about highlights, so it turns them back on for good
+  // rather than revealing one transiently — landing on a state you have to leave again is worse.
+  // The reveal has rendered by the time the deferred scroll runs, so scrollToSegment can still find
+  // the `data-hl-id` span it centres on.
   function jumpToHighlight(segIndex: number, highlightId?: string) {
     setPanel(false);
+    revealHighlights();
     requestAnimationFrame(() => scrollToSegment(segIndex, 'center', highlightId));
   }
 
@@ -372,6 +396,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     setTab,
     setNoteFocusSignal,
     toggleShowNotes,
+    toggleShowHighlights,
     cycleTheme,
   });
 
@@ -651,7 +676,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           {segments ? (
             <SegmentedText
               segments={segments}
-              highlights={hlForSutta}
+              highlights={showHighlights ? hlForSutta : NO_HIGHLIGHTS}
               theme={theme}
               fontSize={fs}
               lineHeight={lh}
@@ -781,7 +806,12 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           pop={pop}
           theme={theme}
           mobile={mobile}
-          onPick={pick}
+          // Making a highlight while they're hidden turns them back on — otherwise the act
+          // produces nothing visible and reads as a failed save. Erasing one doesn't.
+          onPick={(color) => {
+            revealHighlights();
+            pick(color);
+          }}
           onRemove={() => pick(null)}
           onClose={closePop}
           onStop={popStop}
