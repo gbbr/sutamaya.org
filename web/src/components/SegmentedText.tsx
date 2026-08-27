@@ -93,6 +93,67 @@ function buildParts(text: string, hlForSeg: Highlight[]): Part[] {
   return parts;
 }
 
+// True for a closing colophon SuttaCentral left untranslated — "Mahāsaccakasuttaṁ niṭṭhitaṁ
+// chaṭṭhaṁ." stands in the English column as its own Pali. That is all but 137 of the corpus's
+// 4912 `end` segments; the translated remainder ("The Linked Discourses on chiefs are complete.")
+// fails the equality and reads as ordinary English. Such a line is rendered as tappable Pali words
+// in place, with no reveal of its own — the line the reveal would open is the line already on
+// screen. A segment carrying highlights keeps the ordinary treatment, so a range stored before this
+// existed still paints; `user-select: none` on `.pw` means no new one can be drawn here.
+function isUntranslatedColophon(seg: SegmentFile, hlForSeg: Highlight[]): boolean {
+  return seg.role === 'end' && hlForSeg.length === 0 && seg.pali.trim() === seg.en.trim();
+}
+
+// What `.pw` (index.css) applies to a tappable Pali word, for the line that holds those words: a
+// Pali line is looked up, never selected, so nothing in it — the gaps between words included —
+// should answer a selection drag or a long-press callout.
+const UNSELECTABLE: CSSProperties = {
+  userSelect: 'none',
+  WebkitUserSelect: 'none',
+  WebkitTouchCallout: 'none',
+};
+
+// Pali split into per-word spans the DictionaryDock can be opened from. Used both for the reveal
+// under an English segment and, for an untranslated colophon, for the visible line itself.
+function paliWordSpans(
+  pali: string,
+  segIndex: number,
+  activeWordIndex: number | null,
+  theme: ThemeColors,
+  onWordClick: (word: string, segIndex: number, wordIndex: number) => void
+) {
+  let wordIndex = -1;
+  // Splits on whitespace and on a bare dash (lib/dictionary.ts's WORD_BOUNDARY). The dash still
+  // renders — it is real text joining two words with no space — but as an inert span, like
+  // whitespace, rather than a word that can be tapped up.
+  return pali.split(WORD_BOUNDARY).map((t, j) => {
+    if (isWordBoundary(t)) return <span key={j}>{t}</span>;
+    const w = ++wordIndex;
+    // Driven by real state (the word currently shown in the DictionaryDock), not CSS :hover —
+    // needs to stay active once the dock's own prev/next arrows move the lookup to a word the
+    // pointer was never actually over, which :hover can't express.
+    const isActive = w === activeWordIndex;
+    return (
+      <span
+        key={j}
+        className="pw"
+        // Attribute names distinct from the ancestor's `data-seg`, which scrollToSegment queries,
+        // so ReaderPage's scrollToWordIfCovered can find this word's own rect without colliding
+        // with that per-segment query.
+        data-word-seg={segIndex}
+        data-word={w}
+        style={isActive ? { background: theme.tint } : undefined}
+        onClick={(e) => {
+          e.stopPropagation();
+          onWordClick(t, segIndex, w);
+        }}
+      >
+        {t}
+      </span>
+    );
+  });
+}
+
 interface SegmentRowProps {
   seg: SegmentFile;
   i: number;
@@ -165,6 +226,7 @@ const SegmentRow = memo(function SegmentRow({
   activeWordIndex,
 }: SegmentRowProps) {
   const parts = buildParts(seg.en, hlForSeg);
+  const colophon = isUntranslatedColophon(seg, hlForSeg);
   // A structural sub-heading (SuttaCentral's <h2>–<h5> nesting) renders as a real heading element
   // rather than a styled <p>, and takes the UI's sans font rather than the reading face, since it
   // is document structure rather than body prose.
@@ -187,12 +249,12 @@ const SegmentRow = memo(function SegmentRow({
         data-seg={i}
         className={seg.role === 'heading' ? 'font-sans' : undefined}
         onClick={() => {
-          if (String(window.getSelection())) return;
+          if (colophon || String(window.getSelection())) return;
           onToggleSeg(i);
         }}
         style={{
           margin: 0,
-          cursor: 'pointer',
+          cursor: colophon ? 'default' : 'pointer',
           fontSize,
           lineHeight: lineHeight / 100,
           color: theme.fg,
@@ -206,14 +268,20 @@ const SegmentRow = memo(function SegmentRow({
           // than set with a negative text-indent, which would put it left of every other
           // paragraph's edge instead of flush with it.
           ...(seg.role === 'list-item' ? { paddingLeft: 24, position: 'relative' } : null),
-        }}
+          // --pw-hover backs .pw:hover (index.css), which the words of a colophon rendered in place
+          // need just as much as those in a reveal below an English line. The line is unselectable
+          // as a whole rather than only word by word: `.pw` covers the words, but the whitespace
+          // between them is its own inert span, and a drag across an otherwise unselectable line
+          // that picks up only the gaps is the same stray-selection nuisance `.pw` exists to avoid.
+          ...(colophon ? { '--pw-hover': theme.tint, ...UNSELECTABLE } : null),
+        } as CSSProperties}
       >
         {seg.role === 'list-item' && (
           // data-seg-ignore: rendered text that isn't part of `seg.en`, so the selection offsets
           // useHighlightPopup takes inside this paragraph discount it (see its IGNORED_TEXT).
           <span data-seg-ignore style={{ position: 'absolute', left: 0, width: 20, userSelect: 'none' }}>{listIndex}.</span>
         )}
-        {parts.map((p, j) =>
+        {colophon ? paliWordSpans(seg.pali, i, activeWordIndex, theme, onWordClick) : parts.map((p, j) =>
           p.c ? (
             <span
               key={j}
@@ -280,7 +348,7 @@ const SegmentRow = memo(function SegmentRow({
           </sup>
         )}
       </HeadingTag>
-      {open && (
+      {open && !colophon && (
         <p
           className="animate-fadeUp"
           // --pw-hover backs .pw:hover (index.css). theme.tint rather than a fixed colour, so a
@@ -293,41 +361,11 @@ const SegmentRow = memo(function SegmentRow({
               fontFamily: face,
               color: theme.pali,
               '--pw-hover': theme.tint,
+              ...UNSELECTABLE,
             } as CSSProperties
           }
         >
-          {(() => {
-            let wordIndex = -1;
-            // Splits on whitespace and on a bare dash (lib/dictionary.ts's WORD_BOUNDARY). The dash
-            // still renders — it is real text joining two words with no space — but as an inert
-            // span, like whitespace, rather than a word that can be tapped up.
-            return seg.pali.split(WORD_BOUNDARY).map((t, j) => {
-              if (isWordBoundary(t)) return <span key={j}>{t}</span>;
-              const w = ++wordIndex;
-              // Driven by real state (the word currently shown in the DictionaryDock), not CSS
-              // :hover — needs to stay active once the dock's own prev/next arrows move the
-              // lookup to a word the pointer was never actually over, which :hover can't express.
-              const isActive = w === activeWordIndex;
-              return (
-                <span
-                  key={j}
-                  className="pw"
-                  // Attribute names distinct from the ancestor's `data-seg`, which scrollToSegment
-                  // queries, so ReaderPage's scrollToWordIfCovered can find this word's own rect
-                  // without colliding with that per-segment query.
-                  data-word-seg={i}
-                  data-word={w}
-                  style={isActive ? { background: theme.tint } : undefined}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onWordClick(t, i, w);
-                  }}
-                >
-                  {t}
-                </span>
-              );
-            });
-          })()}
+          {paliWordSpans(seg.pali, i, activeWordIndex, theme, onWordClick)}
         </p>
       )}
       {showNotes && seg.note && noteOpen && (
