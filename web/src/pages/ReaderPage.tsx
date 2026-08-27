@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { X, Menu as MenuIcon, ChevronRight, List as ListIcon, Search } from 'lucide-react';
+import { X, Menu as MenuIcon, ChevronLeft, ChevronRight, List as ListIcon, Search } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
@@ -35,6 +35,13 @@ import { SuttaRowChips } from '../components/SuttaRowChips';
 // through with Prev/Next doesn't fill the Recent list with everything it passed, short enough
 // that genuinely opening something always records it.
 const VISIT_DEBOUNCE_MS = 5000;
+
+// The PREVIOUS/NEXT caption over each half of the end-of-sutta nav — a label for the control
+// rather than part of the text, so it sits at the reader's "Contents" caption size instead of
+// riding the type scale. Capped rather than fixed at 11px: the titles beneath it are `fs - 4`,
+// which reaches 11 at FS_MIN, and a caption the same size as what it captions stops reading as one.
+const FOOT_NAV_LABEL: CSSProperties = { fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' };
+const footNavLabelSize = (fs: number) => Math.min(11, fs - 6);
 
 export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus } = useCorpus();
@@ -260,6 +267,17 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
       if (id) loadSuttaText(id).catch(() => {});
     }
   }, [neighbourOf, suttaId, segments]);
+
+  // The two neighbours, resolved to corpus entries so the foot of the sutta can name where
+  // Prev/Next actually goes. Either is undefined at the end of the run — a list origin's own ends,
+  // or the ends of the canon.
+  const footNeighbours = useMemo(() => {
+    const at = (dir: 1 | -1) => {
+      const id = neighbourOf(suttaId, dir);
+      return corpus && id ? corpus.suttas[id] : undefined;
+    };
+    return { prev: at(-1), next: at(1) };
+  }, [corpus, neighbourOf, suttaId]);
 
   // The article element the step animation runs on — the measure column inside the scrolling
   // pane, so the header and the highlight gutter stay put while the text itself travels.
@@ -664,6 +682,59 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           <div className="font-sans text-center" style={{ marginTop: 34, fontSize: 12.5, color: theme.dim }}>
             — end of excerpt —
           </div>
+
+          {/* Prev/Next where the reader actually finishes, rather than as two more icons in the
+              header — the step to a neighbouring sutta is wanted at the end of the text, not at
+              every moment the header's own controls are. Only shown once the text is on screen, so
+              it can't sit under a spinner. `step` carries the same entrance animation and origin
+              as the swipe. */}
+          {segments && (footNeighbours.prev || footNeighbours.next) && (
+            <nav className="font-sans" style={{ marginTop: 30 }}>
+              <div style={{ height: 1, background: theme.rule, marginBottom: 14 }} />
+              {/* One row, previous anchored left and next right, each captioned with the direction
+                  it goes. Each half takes an equal share and truncates within it; the empty spacer
+                  keeps `next` on the right when there is no `prev` to push it there. The flex row
+                  is each button's inner span, never the button itself: WebKit sizes a button's own
+                  content box to max-content, so a flex item inside one never shrinks and
+                  `truncate` has nothing narrower to clip to. */}
+              <div className="flex items-center gap-5" style={{ fontSize: fs - 4 }}>
+                {footNeighbours.prev ? (
+                  <button className="block flex-1 min-w-0 text-left hover:opacity-70" onClick={() => step(-1)}>
+                    {/* The label is inset by the chevron's own width plus the row gap, so it starts
+                        on the same vertical as the title beneath it rather than hanging left of it. */}
+                    <span style={{ display: 'block', marginLeft: fs, fontSize: footNavLabelSize(fs), ...FOOT_NAV_LABEL, color: theme.dim }}>
+                      Previous
+                    </span>
+                    <span className="flex items-center gap-1.5" style={{ marginTop: 3 }}>
+                      <ChevronLeft size={fs - 6} strokeWidth={2} className="flex-none" style={{ color: theme.dim }} />
+                      {/* Below `mobile` the two halves are ~150px each, which truncates every title
+                          to a few words — the bare ref identifies the destination better there. */}
+                      <span className="min-w-0 truncate" style={{ color: theme.fg }}>
+                        {mobile ? footNeighbours.prev.ref : `${footNeighbours.prev.ref} · ${footNeighbours.prev.en}`}
+                      </span>
+                    </span>
+                  </button>
+                ) : (
+                  <span className="flex-1" />
+                )}
+                {footNeighbours.next ? (
+                  <button className="block flex-1 min-w-0 text-right hover:opacity-70" onClick={() => step(1)}>
+                    <span style={{ display: 'block', marginRight: fs, fontSize: footNavLabelSize(fs), ...FOOT_NAV_LABEL, color: theme.dim }}>
+                      Next
+                    </span>
+                    <span className="flex items-center justify-end gap-1.5" style={{ marginTop: 3 }}>
+                      <span className="min-w-0 truncate" style={{ color: theme.fg }}>
+                        {mobile ? footNeighbours.next.ref : `${footNeighbours.next.ref} · ${footNeighbours.next.en}`}
+                      </span>
+                      <ChevronRight size={fs - 6} strokeWidth={2} className="flex-none" style={{ color: theme.dim }} />
+                    </span>
+                  </button>
+                ) : (
+                  <span className="flex-1" />
+                )}
+              </div>
+            </nav>
+          )}
         </div>
       </div>
 
