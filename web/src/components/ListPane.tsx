@@ -275,16 +275,18 @@ export function ListPane({
       if (!nodeId) return `${collectionCount} collections`;
       return plural(items.length, 'sutta');
     }
-    // A query that matched lists and no suttas still found something, so the header counts what
-    // it found rather than putting a "0" above a block that clearly isn't empty.
-    if (hits.length === 0 && listHitTotal > 0) return plural(listHitTotal, 'list');
-    // "suttas" rather than "results" whenever the lists block is on screen too, so the number
-    // names what it's counting instead of implying it covers the whole pane.
+    // "suttas" rather than "results" whenever lists matched too, so the number names what it's
+    // counting instead of implying it covers the whole pane, and the lists are counted beside it:
+    // the block above the results is capped, so its own rows don't say how many matched.
     const noun = listHitTotal > 0 ? 'sutta' : 'result';
     // `hits` is uncapped, so a huge result set says "80+" rather than a number of rows nobody
     // is going to be shown.
-    if (hits.length > SEARCH_RESULTS_CAP) return `${SEARCH_RESULTS_CAP}+ ${noun}s`;
-    return plural(hits.length, noun);
+    const suttas = hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ ${noun}s` : plural(hits.length, noun);
+    if (listHitTotal === 0) return suttas;
+    // A query that matched lists and no suttas drops the "0 suttas" half rather than putting a
+    // zero above a block that clearly isn't empty.
+    const matchedLists = plural(listHitTotal, 'list');
+    return hits.length === 0 ? matchedLists : `${suttas} · ${matchedLists}`;
   }
   const meta = metaLine();
 

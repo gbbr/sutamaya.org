@@ -383,13 +383,19 @@ export function TreePane({
   }, [canReorderLists, setReorderMode]);
 
   const searching = query.trim().length > 0;
-  // The heading over the results. "Suttas" rather than "results" whenever the lists block sits
-  // above it, so the number names what it counts; `hits` is uncapped, so a huge result set says
-  // "80+" rather than a number of rows nobody is going to be shown.
+  // The heading over the results. "Suttas" rather than "results" whenever lists matched too, so
+  // the number names what it counts, and the matching lists are counted beside it — on desktop
+  // this line is all this pane shows of the search, and the lists block over in ListPane is
+  // capped, so nothing else says how many there are. `hits` is uncapped, so a huge result set
+  // says "80+" rather than a number of rows nobody is going to be shown.
   function resultsHeading(): string {
     const noun = listHitTotal > 0 ? 'sutta' : 'result';
-    if (hits.length > SEARCH_RESULTS_CAP) return `${SEARCH_RESULTS_CAP}+ ${noun}s`;
-    return `${hits.length} ${noun}${hits.length === 1 ? '' : 's'}`;
+    const suttas =
+      hits.length > SEARCH_RESULTS_CAP
+        ? `${SEARCH_RESULTS_CAP}+ ${noun}s`
+        : `${hits.length} ${noun}${hits.length === 1 ? '' : 's'}`;
+    if (listHitTotal === 0) return suttas;
+    return `${suttas} · ${listHitTotal} list${listHitTotal === 1 ? '' : 's'}`;
   }
   // Only the first SEARCH_RESULTS_CAP hits are rendered and keyboard-navigable. `hits.length` is
   // uncapped and drives the "N results" label below, so that count stays honest.
