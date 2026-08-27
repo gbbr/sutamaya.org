@@ -1,13 +1,10 @@
 import { useEffect, useRef, type DependencyList, type RefObject } from 'react';
 
-// Scrolls the element carrying `data-node-id={nodeId}` inside `containerRef` into view the
-// first time it's findable after `nodeId` changes (`scrollIntoView({ block: 'nearest' })` is
-// already a no-op if it's already fully visible). The target row often doesn't exist in the DOM
-// yet on the very same render `nodeId` changed on — an "expand ancestors" effect elsewhere
-// (TreePane's `expanded`/`listExpanded` state) still needs to run and re-render first — so this
-// re-checks on every one of `retryOn`'s changes until it succeeds once per `nodeId`, then stays
-// quiet (it won't re-scroll just because the caller's retry deps changed for some unrelated
-// reason, e.g. the user manually toggling an unrelated branch).
+// Scrolls the element carrying `data-node-id={nodeId}` inside `containerRef` into view the first
+// time it is findable after `nodeId` changes; `scrollIntoView({ block: 'nearest' })` is already a
+// no-op for a row fully in view. The target row often isn't in the DOM on the render `nodeId`
+// changed on, since TreePane's expand-ancestors effects have to run first, so this re-checks on
+// every change of `retryOn` until it succeeds once per `nodeId` and then stays quiet.
 export function useScrollToNode(containerRef: RefObject<HTMLElement | null>, nodeId: string | undefined, retryOn: DependencyList) {
   const doneForRef = useRef<string | undefined>(undefined);
   useEffect(() => {

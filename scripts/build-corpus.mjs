@@ -34,8 +34,8 @@ const DATA = path.join(ROOT, 'data');
 // automatically as part of `npm run build:corpus`, since a fresh clone has no sujato.post/ yet).
 const SUJATO = path.join(DATA, 'sujato.post');
 // The build wipes and rewrites this directory, so build-corpus.counts.test.js points it at a
-// temporary one: a test run has no business deleting the corpus a dev server is serving, and two
-// builds racing over the same tree is what made that test intermittently fail.
+// temporary one: a test run must not delete the corpus a dev server is serving, and two builds
+// racing over one tree make that test flaky.
 const OUT = process.env.CORPUS_OUT || path.join(ROOT, 'web', 'public', 'data');
 const OUT_TEXT = path.join(OUT, 'text');
 const OUT_SHARDS = path.join(OUT, 'text-shards');
@@ -385,15 +385,15 @@ const nikayas = [];
 // headword, so shipping the whole thing to answer one lookup is the wrong trade: the reader
 // fetches only the shard covering the tapped word — see lib/dictionaryShards.ts.
 //
-// data/pli2en_dpd.json is already scoped to data/pali/ by update-data-dictionary.mjs, so the trim
-// here mostly removes words that live in source files this build doesn't emit. It stays because
-// it, and the verification pass under it, are what catch an import that went wrong — the reader's
-// own tokenizer is the only authority on what a tap can ask for.
+// data/pli2en_dpd.json is already scoped to data/pali/ by update-data-dictionary.mjs, so this trim
+// mostly removes words in source files the build doesn't emit. It stays because it, and the
+// verification pass below it, catch an import that went wrong: the reader's own tokenizer is the
+// only authority on what a tap can ask for.
 step('Building dictionary shards…');
 const dictPath = path.join(DATA, 'pli2en_dpd.json');
 const { dpdVersion, entries: dpdList } = readJSON(dictPath);
-// A file predating update-data-dictionary.mjs is a bare array, and destructuring one gives an
-// undefined `entries` and a crash three lines down that names neither the file nor the fix.
+// A bare array, rather than the `{entries}` object update-data-dictionary.mjs writes, would
+// destructure to an undefined `entries` and crash three lines down naming neither file nor fix.
 if (!Array.isArray(dpdList)) {
   throw new Error(
     `${dictPath} is not in the expected {dpdVersion, entries: [...]} shape.\n` +
@@ -515,11 +515,11 @@ detail(`${headwords.length} headwords in ${dictShards.length} shards`);
   );
 }
 
-// Both versions are emitted in corpus.json (precached and revisioned with the app shell, so a new
-// build always delivers them) rather than derived from anything the client caches itself. They're
-// kept apart because they're separately downloadable and wildly different sizes: a reworded
-// sentence in one sutta must not prompt a ~20MB dictionary re-fetch. Sorting by uid makes
-// dataVersion independent of directory-walk order, so an unchanged corpus rebuilds identically.
+// Both versions are emitted in corpus.json — precached and revisioned with the app shell, so a new
+// build always delivers them — rather than derived from anything the client caches itself. They are
+// kept apart because they are separately downloadable and very different sizes: a reworded sentence
+// in one sutta must not prompt a whole dictionary re-fetch. Sorting by uid makes dataVersion
+// independent of directory-walk order, so an unchanged corpus rebuilds identically.
 const dataVersion = sha256(
   [...textDigests]
     .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))

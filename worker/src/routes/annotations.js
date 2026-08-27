@@ -42,10 +42,10 @@ annotationsRouter.put('/notes/:suttaId', async (c) => {
 });
 
 // A highlight group is immutable. One selection mints one `g` (groupId) and writes one row per
-// segment it spans, and nothing ever updates those rows again: a recolour is a tombstone plus a
-// brand new group, an erase is a tombstone. That's what makes the write safe to replay — the old
-// "delete whatever currently overlaps, then insert" meant something different an hour later than
-// it did when the user acted, and took whole highlights another device had created in between.
+// segment it spans, and nothing updates those rows again: a recolour is a tombstone plus a brand
+// new group, an erase is a tombstone. That is what makes the write safe to replay, where a
+// "delete whatever currently overlaps, then insert" would mean something different an hour later
+// and take whole highlights another device had created in between.
 //
 // (user_id, g, i) is a group's natural key (migration 0002's unique index), so OR IGNORE makes
 // re-pushing a group a no-op rather than a duplicate row or a constraint error.

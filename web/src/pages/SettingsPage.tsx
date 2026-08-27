@@ -32,15 +32,13 @@ const UI_SCALE_STEP = 0.05;
 // refreshes and isn't worth a manifest round trip just to show a "~X MB" estimate.
 const TOTAL_DOWNLOAD_MB_ESTIMATE = 50;
 
-// Each theme is previewed as a miniature of the shell itself — a narrow tree-pane band of rows
-// beside the wider paper surface, drawn in that theme's own palette — rather than named in a
-// filled button, so the choice is made by looking rather than by reading. Same idea as the
-// reader's own swatch picker (ReaderMenuPanel's THEME_SWATCHES), with the shell's colours instead
-// of the reader's.
+// Each theme is previewed as a miniature of the shell — a narrow tree-pane band of rows beside the
+// wider paper surface, in that theme's palette — rather than named in a filled button, so the
+// choice is made by looking. The same idea as the reader's picker (ReaderMenuPanel's
+// THEME_SWATCHES), with the shell's colours.
 //
 // The colours are literals rather than the `--paper`/`--treepane`/`--ink` custom properties they
-// mirror, because every tile has to render in its own theme at once while the page as a whole is
-// in only one of them.
+// mirror, because every tile renders in its own theme at once while the page is in only one.
 interface ShellPalette {
   paper: string;
   pane: string;
@@ -60,14 +58,13 @@ const THEME_OPTIONS: Array<{ id: AppTheme; label: string; palettes: ShellPalette
   { id: 'system', label: 'System', palettes: [LIGHT_SHELL, DARK_SHELL] },
 ];
 
-// Every section is one of these: a panel holding rows split by hairlines. Each theme lifts the
-// card off the page from its own end of the brightness scale — light mode fills it with `field`,
-// which is whiter than `paper`; dark mode tints with `ink` at very low alpha, which lightens
-// there. Either way it stays barely distinct from the page on purpose: the border is what draws
-// the card, and the fill only has to keep it from reading as an empty outline. Border and
-// background are left to the caller: the flashed-on-arrival state (see cardClass) swaps both, and
-// transitioning them is why every card carries the transition here rather than only the two that
-// can flash.
+// Every section is one of these: a panel holding rows split by hairlines. Each theme lifts the card
+// off the page from its own end of the brightness scale — light mode fills it with `field`, whiter
+// than `paper`; dark mode tints with `ink` at very low alpha. Either way it stays barely distinct
+// from the page: the border draws the card, and the fill only keeps it from reading as an empty
+// outline. Border and background are left to the caller, since the flashed-on-arrival state
+// (cardClass) swaps both — which is why every card carries the transition rather than only the two
+// that can flash.
 const CARD = 'rounded-field border px-5 transition-colors duration-[1200ms] ease-out';
 // The two halves of that fill, as one class the flashed and unflashed paths can share.
 const CARD_FILL = 'bg-field dark:bg-ink/[.02]';
@@ -84,17 +81,16 @@ const SECONDARY_BUTTON =
 // rounded group (see the UI scale row), which draws the outline and the hairlines between them.
 const UI_SCALE_STEP_BTN =
   'flex items-center justify-center w-12 h-10 text-ink hover:bg-ink/[.04] disabled:opacity-35 disabled:hover:bg-transparent';
-// Underlined to match the app's existing convention for small inline actions (EmailCodeSignIn's
-// "Resend code"/"Use a different email") — without it, the icon was the only thing marking these
-// as clickable rather than descriptive text.
-// Held at ink-2 rather than the ink-3 used for this page's descriptive labels: these are the
-// two things someone comes to this section to *do*, and at label weight they read as disabled.
+// Underlined, matching the app's convention for small inline actions (EmailCodeSignIn's "Resend
+// code"), so the icon isn't the only thing marking these as clickable. Held at ink-2 rather than
+// the ink-3 this page's descriptive labels use: these are the two things someone comes to this
+// section to do, and at label weight they read as disabled.
 const LINK_ACTION = 'inline-flex items-center gap-1.5 font-sans text-ui-base text-ink-2 underline decoration-ink/40 hover:text-ink';
-// Danger-text is reserved on this page for something actually wrong right now (a lapsed session, a
-// failed download, the iOS eviction warning) — not a standing "this button is risky" tint, which
-// would fight with those real warnings when one is showing alongside it. Sign out only borrows it
-// once armed (confirmSignOut), matching the same-colored warning line that appears above it at
-// that point; at rest it reads the same as Export.
+// Danger-text is reserved on this page for something wrong right now — a lapsed session, a failed
+// download, the iOS eviction warning — rather than a standing "this button is risky" tint that
+// would fight with a real warning showing alongside it. Sign out borrows it only once armed
+// (confirmSignOut), matching the warning line that appears above it then; at rest it reads as
+// Export does.
 const LINK_DANGER =
   'inline-flex items-center gap-1.5 font-sans text-ui-base text-danger-text underline decoration-danger-text/40 hover:text-danger-text';
 
@@ -154,10 +150,9 @@ function formatSyncedAt(iso: string): string {
   return `${days} day${days === 1 ? '' : 's'} ago`;
 }
 
-// One line describing the offline-sync queue (see docs/offline-sync.md's "Sync state"). The full
+// One line describing the offline-sync queue (docs/offline-sync.md's "Sync state"). The full
 // sentences live here and nowhere else: the library's footer row (components/DataLocationRow.tsx)
-// carries the same states in two or three words and links here, so this is where someone who wants
-// to know what "Not synced" actually means finds out.
+// carries the same states in two or three words and links here.
 function syncStatusLine(
   status: SyncStatus,
   pendingCount: number,
@@ -187,11 +182,10 @@ export function SettingsPage({ location }: RouteComponentProps) {
   // made anything yet has nothing to lose, so none of them appear.
   const hasLocalWork = hasLocalWorkWorthKeeping(lists, notes, highlights);
 
-  // Stepped rather than dragged: applying a scale rewrites the viewport meta tag's
-  // `initial-scale` on iOS Safari (see applyUiScale in lib/uiPrefs.ts), and WebKit needs a frame
-  // to reflow against it — one discrete commit per tap gives it that, where a slider fired a
-  // dozen a second. Rounded back onto the step grid so repeated 0.05 additions can't drift off
-  // it in binary floating point.
+  // Stepped rather than dragged: applying a scale rewrites the viewport meta tag's `initial-scale`
+  // on iOS Safari (applyUiScale in lib/uiPrefs.ts), and WebKit needs a frame to reflow against it,
+  // which one discrete commit per tap gives it. Rounded back onto the step grid, so repeated 0.05
+  // additions can't drift off it in binary floating point.
   const stepUiScale = (delta: number) => {
     const next = Math.min(UI_SCALE_MAX, Math.max(UI_SCALE_MIN, uiScale + delta));
     setUiScale(Math.round(next / UI_SCALE_STEP) * UI_SCALE_STEP);
@@ -206,24 +200,20 @@ export function SettingsPage({ location }: RouteComponentProps) {
   // percentage does.
   const [progress, setProgress] = useState({ done: 0, total: 0 });
   const [cachedStatus, setCachedStatus] = useState<{ cached: number; total: number } | null>(null);
-  // Read during render rather than held in state: it's a synchronous localStorage compare, and
-  // every event that can change it (a finished download) already re-renders this page via
-  // setCachedStatus. Only ever true for a device that completed a bulk download — see
-  // cachedCorpusVersions.
+  // Read during render rather than held in state: it is a synchronous localStorage compare, and the
+  // one event that changes it — a finished download — already re-renders this page. Only ever true
+  // for a device that completed a bulk download (cachedCorpusVersions).
   const textStale = !!corpus && isOfflineTextStale(corpus.dataVersion);
   const [failedCount, setFailedCount] = useState(0);
   const [circuitTripped, setCircuitTripped] = useState(false);
   const [dictionaryFailed, setDictionaryFailed] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
 
-  // Lets an entry point elsewhere in the app — the offline-download nudge in TreePane, or a
-  // sign-in prompt (ReaderMenuPanel, ListMembershipPicker, the account badge — see
-  // promptGoogleSignIn in AuthContext) — land here already scrolled to, and briefly
-  // highlighting, the specific section it was actually about, rather than just the page top.
-  // Both refs are attached unconditionally (see the Offline/Authentication sections below, and
-  // note the Authentication section renders a stable placeholder rather than collapsing to
-  // nothing while `loading`), so the scroll effect further down never has to wait on anything
-  // async.
+  // Lets an entry point elsewhere in the app — TreePane's offline-download nudge, or a sign-in
+  // prompt via promptGoogleSignIn — land here already scrolled to, and briefly highlighting, the
+  // section it was about rather than the page top. Both refs are attached unconditionally, and the
+  // Authentication section renders a stable placeholder rather than collapsing while `loading`, so
+  // the scroll effect below never waits on anything async.
   const offlineSectionRef = useRef<HTMLDivElement>(null);
   const authSectionRef = useRef<HTMLDivElement>(null);
   const [flashTarget, setFlashTarget] = useState<ScrollTarget | null>(null);
@@ -236,10 +226,9 @@ export function SettingsPage({ location }: RouteComponentProps) {
       .then((s) => {
         if (!cancelled) setCachedStatus(s);
       })
-      // estimateOfflineStatus already treats "caches unsupported" as a non-throwing 0/total
-      // result — this only catches something genuinely unexpected. Without it, a failure here
-      // would leave "Checking offline availability…" showing forever instead of falling back to
-      // a real (if pessimistic) number.
+      // estimateOfflineStatus treats "caches unsupported" as a non-throwing 0/total result, so this
+      // catches only something unexpected — which would otherwise leave "Checking offline
+      // availability…" showing forever instead of falling back to a pessimistic number.
       .catch(() => {
         if (!cancelled) setCachedStatus({ cached: 0, total: uids.length });
       });
@@ -253,9 +242,8 @@ export function SettingsPage({ location }: RouteComponentProps) {
   // reason the scroll cue below is.
   const [signInReturnTo] = useState(() => (location?.state as { returnTo?: string } | undefined)?.returnTo);
 
-  // Scrolls to, and briefly highlights, whichever section this page was actually navigated here
-  // for. Deliberately only runs once on mount (not keyed on location.state) — it's a one-shot
-  // "you arrived here for a reason" cue, not something that should re-fire on unrelated re-renders.
+  // Scrolls to, and briefly highlights, whichever section this page was navigated here for. Runs
+  // once on mount rather than keyed on location.state: it is a one-shot arrival cue.
   useEffect(() => {
     const scrollTo = (location?.state as { scrollTo?: ScrollTarget } | undefined)?.scrollTo;
     if (!scrollTo) return;
@@ -266,20 +254,19 @@ export function SettingsPage({ location }: RouteComponentProps) {
     return () => window.clearTimeout(timer);
   }, []);
 
-  // The arrival highlight is the section's own card, tinted and outlined in the accent — so it's
-  // an even border all the way round by construction, with no inset padding to hand-balance, and
-  // nothing moves when it fades: both properties are colours the card already has, and CARD
-  // carries the transition that takes them back to rest.
+  // The arrival highlight is the section's own card, tinted and outlined in the accent, so it is an
+  // even border all the way round with no inset padding to balance, and nothing moves when it
+  // fades: both properties are colours the card already has, and CARD carries the transition back
+  // to rest.
   function cardClass(id: ScrollTarget): string {
     return `${CARD} ${flashTarget === id ? 'border-accent bg-accent/[.09]' : `border-ink/[.09] ${CARD_FILL}`}`;
   }
 
-  // Aborts an in-flight download if the user navigates away from Settings. Without this, leaving
-  // mid-download orphans it: abortRef is a ref, so it doesn't survive unmount, and returning to
-  // Settings mounts a fresh instance with its own empty ref — able to start a second, independent
-  // download racing the first, which is now unreachable by any Cancel button. Aborting on unmount
-  // means "leave the page" reliably pauses the download; the resumable design (prefetchAllSuttas
-  // skips whatever's already cached) makes returning and clicking again pick up where it left off.
+  // Aborts an in-flight download when the user navigates away from Settings. abortRef doesn't
+  // survive unmount, so leaving mid-download would otherwise orphan it: returning mounts a fresh
+  // instance with an empty ref, able to start a second download racing a first that no Cancel
+  // button can now reach. Aborting on unmount makes leaving the page pause the download, and
+  // prefetchAllSuttas skips whatever is already cached, so clicking again resumes.
   useEffect(() => {
     return () => {
       abortRef.current?.abort();
@@ -287,11 +274,10 @@ export function SettingsPage({ location }: RouteComponentProps) {
   }, []);
 
   async function handleDownloadOffline() {
-    // The ref check (not just offlineStatus) guards against a genuine re-entrant call — e.g. two
-    // click events landing before React re-renders the button away — since a ref updates
-    // synchronously where state doesn't. Overwriting abortRef.current with a second controller
-    // here would orphan the first download's Cancel button the same way skipping the unmount
-    // guard above would.
+    // The ref check, rather than offlineStatus alone, guards a re-entrant call — two clicks landing
+    // before React re-renders the button away — since a ref updates synchronously where state
+    // doesn't. Overwriting abortRef.current with a second controller would orphan the first
+    // download's Cancel button, as skipping the unmount guard above would.
     if (!corpus || abortRef.current) return;
     const uids = flatSuttaOrder(corpus);
     // Best-effort: tied to a real user gesture around meaningful storage use, which is what
@@ -305,31 +291,29 @@ export function SettingsPage({ location }: RouteComponentProps) {
     setFailedCount(0);
     setCircuitTripped(false);
     setDictionaryFailed(false);
-    // Whenever this device can't vouch for what's already cached being current — a known-stale
-    // recorded version, or no completed download to have verified it in the first place, since
-    // reactively-cached suttas from ordinary browsing may predate this build — every shard is
-    // refetched and overwritten in place rather than skipped. Without that, both prefetchers skip
-    // what they already hold and the "refresh" reports success without replacing a stale byte.
-    // Overwriting rather than deleting the cache first is what keeps a download that fails or is
-    // cancelled from leaving the device with *less* offline text than it started with. The two
-    // versions are tracked independently, so reworded sutta text doesn't cost a ~2.6MB dictionary
+    // Whenever this device can't vouch for what is cached being current — a known-stale recorded
+    // version, or no completed download to have verified it, since reactively-cached suttas may
+    // predate this build — every shard is refetched and overwritten in place rather than skipped.
+    // Otherwise both prefetchers skip what they hold and the refresh reports success without
+    // replacing a stale byte. Overwriting rather than deleting the cache first keeps a failed or
+    // cancelled download from leaving the device with less offline text than it started with. The
+    // two versions are tracked independently, so reworded sutta text doesn't cost a dictionary
     // refetch; a matching version means an interrupted download resumes instead of restarting.
     const versions = cachedCorpusVersions();
     const forceText = versions.data !== corpus.dataVersion;
     const forceDictionary = versions.dictionary !== corpus.dictionaryVersion;
-    // catch, not just finally — prefetchAllSuttas is designed to resolve normally even when
-    // individual suttas fail (that's what the returned `failed` list is for), but this still
-    // guards against something genuinely unexpected (e.g. Cache Storage itself unavailable)
-    // turning into an unhandled rejection instead of the UI cleanly recovering to idle.
+    // catch as well as finally: prefetchAllSuttas resolves normally when individual suttas fail —
+    // that is what the returned `failed` list is for — but something unexpected, Cache Storage
+    // being unavailable say, would otherwise become an unhandled rejection rather than the UI
+    // recovering to idle.
     try {
-      // Run alongside the sutta shards rather than after. The reader only fetches the dictionary
-      // shard each tapped word falls in, so unlike the sutta text this is rarely already complete
-      // — and "download all suttas for offline" has to guarantee it before reporting done, since
-      // without every shard the reader's word lookups fail in airplane mode either way.
+      // Alongside the sutta shards rather than after. The reader only fetches the dictionary shard
+      // each tapped word falls in, so unlike the sutta text this is rarely already complete, and
+      // the download has to guarantee it before reporting done or word lookups fail offline.
+      //
       // The help page's screenshots ride along in the same pass — a fraction of a percent of the
-      // total, and without them "download all content" would leave the guide showing broken
-      // images offline. Its result isn't surfaced: see prefetchHelpImages for why illustration
-      // failing doesn't deserve the same banner as missing sutta text.
+      // total, and without them the guide shows broken images offline. Its result isn't surfaced;
+      // see prefetchHelpImages.
       const [{ failed, circuitTripped: tripped }, dictionaryOk] = await Promise.all([
         prefetchAllSuttas(uids, {
           signal: controller.signal,
@@ -342,9 +326,9 @@ export function SettingsPage({ location }: RouteComponentProps) {
       setFailedCount(failed.length);
       setCircuitTripped(tripped);
       setDictionaryFailed(!dictionaryOk && !controller.signal.aborted);
-      // Recorded only on a clean finish, and each half on its own — a cancelled or partly failed
-      // download leaves the previous version in place, which is exactly the "your offline copy is
-      // behind" state the nudge should keep reporting until it's actually resolved.
+      // Recorded only on a clean finish, and each half on its own: a cancelled or partly failed
+      // download leaves the previous version in place, which is the "your offline copy is behind"
+      // state the nudge should keep reporting until it is resolved.
       if (failed.length === 0 && !controller.signal.aborted) recordCachedCorpusVersion('data', corpus.dataVersion);
       if (dictionaryOk) recordCachedCorpusVersion('dictionary', corpus.dictionaryVersion);
       setCachedStatus(await estimateOfflineStatus(uids));
@@ -360,10 +344,9 @@ export function SettingsPage({ location }: RouteComponentProps) {
     abortRef.current?.abort();
   }
 
-  // Same "return to wherever the user actually was" as the "Back" button above (see its own
-  // comment) — Escape is the conventional "leave this screen" key. It stands down while a text
-  // field has focus: the sign-in card's email and six-digit code inputs are both here, and
-  // abandoning the page mid-entry would throw away a code the user has to request again.
+  // The same return as the "Back" button above; Escape is the conventional "leave this screen" key.
+  // It stands down while a text field has focus, since the sign-in card's email and code inputs are
+  // both here and leaving mid-entry would throw away a code the user has to request again.
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape' && !isTypingTarget(e)) backToLastLocation();
@@ -372,9 +355,8 @@ export function SettingsPage({ location }: RouteComponentProps) {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  // Plain block layout + margin-auto centering, not flex(justify-center/items-start) — flex
-  // containers with overflow:auto have a history of scrollHeight bugs on some WebView builds;
-  // block layout's overflow handling is simpler and more universally correct.
+  // Block layout with margin-auto centring rather than flex: flex containers with overflow:auto
+  // have a history of scrollHeight bugs on some WebView builds.
   return (
     <div data-component="SettingsPage" className="sc h-full bg-paper px-5 pt-10">
       <div className="w-full max-w-[540px] pb-10 mx-auto">

@@ -141,10 +141,9 @@ authRouter.post('/email/request', async (c) => {
   const code = generateCode();
   const nowIso = new Date(now).toISOString();
   await c.env.DB.batch([
-    // A code that is requested and then never used would otherwise leave its row behind for good:
-    // the verify path is the only other place a row is removed, and it only runs if the user comes
-    // back. Sweeping here costs one statement in a round trip that was happening anyway, and means
-    // the table is tidied every time anyone signs in — which is exactly when it grows.
+    // A code requested and never used would otherwise leave its row behind for good, the verify
+    // path being the only other place one is removed. Sweeping here costs one statement in a round
+    // trip that was happening anyway, and tidies the table exactly when it grows.
     c.env.DB.prepare('DELETE FROM login_codes WHERE expires_at < ?').bind(nowIso),
     c.env.DB.prepare(
       `INSERT INTO login_codes (email, code_hash, expires_at, attempts, created_at)

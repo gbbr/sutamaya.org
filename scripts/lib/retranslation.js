@@ -17,14 +17,12 @@ export const COUNTS_PATH = path.join(ROOT, 'scripts', 'update-data', 'retranslat
 export const SUJATO_TREES = ['sujato/sutta', 'sujato/notes', 'sujato/name', 'sujato/blurb'];
 
 // The three a rule may rewrite, and the default scope. **sujato/notes is never retranslated**: a
-// note is Bhikkhu Sujato writing *about* the text rather than translating it, so he quotes his own
+// note is Bhikkhu Sujato writing about the text rather than translating it, so he quotes his own
 // renderings and uses the same words as ordinary English, and a rule that is right on the
-// translation is routinely wrong there — MN 10's note arguing for "mindfulness meditation" rewritten
-// into the "establishment of mindfulness" that replaces it, "its gradual disappearance" becoming
-// "its gradual disappearing". A note can't be
-// corrected by hand either, since a segment override resolves through sutta-only ids (see
-// buildSegmentIndex). Naming it in a `scope` is rejected rather than ignored, so the policy can't
-// be half-undone by one rule.
+// translation is routinely wrong there — MN 10's note arguing for "mindfulness meditation" would be
+// rewritten into the very term that replaces it. A note can't be corrected by hand either, since a
+// segment override resolves through sutta-only ids (see buildSegmentIndex). Naming it in a `scope`
+// is rejected rather than ignored, so the policy can't be half-undone by one rule.
 export const RETRANSLATABLE_TREES = ['sujato/sutta', 'sujato/name', 'sujato/blurb'];
 
 // Loads the rules array from retranslation.mjs, read as text and imported via a data: URL rather
@@ -163,9 +161,9 @@ const capitalize = (s) => s[0].toUpperCase() + s.slice(1);
 // Discourse on Mindfulness Meditation") and to set the ones this layer writes.
 const TITLE_LOWERCASE = new Set(['a', 'an', 'and', 'as', 'at', 'for', 'in', 'of', 'on', 'the', 'to']);
 
-// Whether a match is Title Case rather than a capitalized sentence — every word that a title would
+// Whether a match is Title Case rather than a capitalized sentence: every word a title would
 // capitalize does start with a capital, and there are at least two words to tell the two apart.
-// Single-word matches are never title case, so a one-word form behaves exactly as it always has.
+// A single-word match is never title case.
 function isTitleCase(matched) {
   const words = matched.split(/\s+/).filter(Boolean);
   if (words.length < 2) return false;

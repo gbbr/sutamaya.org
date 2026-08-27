@@ -55,11 +55,11 @@ function describeSetDiff({ removed, added }) {
 }
 
 // Upstream periodically pads its English files out to the root text's full segment id set, adding
-// blank entries in bulk — one refresh brought 87k of them across 5030 files. Such an addition
-// cannot change what the app ships: build-corpus orders a sutta's segments by the *Pali* keys and
-// drops any segment empty on both sides (see buildBodySegments), so a blank English entry against
-// a segment the Pali already carried produces byte-identical output. Reported as one summary line
-// rather than 5030 findings, since burying the ones that need a human is the greater risk.
+// blank entries in bulk — tens of thousands across thousands of files in a single refresh. Such an
+// addition cannot change what the app ships: build-corpus orders a sutta's segments by the Pali
+// keys and drops any segment empty on both sides (buildBodySegments), so a blank English entry
+// against a segment the Pali already carried produces byte-identical output. Reported as one
+// summary line rather than thousands of findings, which would bury the ones needing a human.
 //
 // Deliberately narrow — everything else stays a hard failure, because it moves segment indices and
 // so silently invalidates stored highlight offsets (`(i, s, e)`, see docs/offline-sync.md):
@@ -111,10 +111,9 @@ function rewritesByRule(chunks) {
 
 // A broken segment override, laid out as the derivation that produced the mismatch, top to bottom:
 // upstream's raw line, what the term rules did to it, and only then the expected/found pair that
-// had to be identical and wasn't. Reading downward answers the question the bare four-way dump this
-// replaced left to the reader — which pair was the actual comparison (the rule's `from` against the
-// term rules' output, never against raw upstream), and where a word in `found` that appears nowhere
-// upstream came from.
+// had to be identical and wasn't. Read downward, that shows which pair was the actual comparison —
+// the rule's `from` against the term rules' output, never against raw upstream — and where a word
+// in `found` that appears nowhere upstream came from.
 function describeAnchorBreak({ rule, segment, upstreamNow, anchorNow, chunks }) {
   const lines = [
     `${bold(rule.id)} · ${segment}`,

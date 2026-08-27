@@ -3,17 +3,16 @@ import { loadSuttaText, peekSuttaText, type SegmentFile } from '../lib/corpus';
 import { retryWithBackoff } from '../lib/retry';
 
 export function useSuttaText(uid: string | undefined) {
-  // Already-loaded text (this sutta was read earlier this session, or prefetched as a Prev/Next
-  // neighbour) is taken synchronously, so stepping to it renders the text in the same commit as
-  // the title and breadcrumb above it instead of one empty frame behind them.
+  // Already-loaded text — read earlier this session, or prefetched as a Prev/Next neighbour — is
+  // taken synchronously, so stepping to it renders the text in the same commit as the title and
+  // breadcrumb above it rather than one empty frame behind.
   const [segments, setSegments] = useState<SegmentFile[] | null>(() => peekSuttaText(uid) ?? null);
   const [error, setError] = useState(false);
   const [attempt, setAttempt] = useState(0);
 
-  // Swapping the text out during render rather than in the effect below (React's own
-  // "adjusting state when a prop changes" pattern): the effect runs after the commit, so
-  // resetting there would paint the *previous* sutta's segments under the new sutta's title for
-  // a frame — visible as a flicker every time the reader steps to the next sutta.
+  // Swapped during render rather than in the effect below — React's "adjusting state when a prop
+  // changes" pattern. The effect runs after the commit, so resetting there would paint the previous
+  // sutta's segments under the new sutta's title for a frame.
   const [renderedUid, setRenderedUid] = useState(uid);
   if (uid !== renderedUid) {
     setRenderedUid(uid);

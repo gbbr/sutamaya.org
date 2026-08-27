@@ -6,25 +6,22 @@ import { loadUiPrefs, applyUiScale, applyTheme } from './lib/uiPrefs';
 import './lib/localWipe';
 import './index.css';
 
-// Applied synchronously here, before React mounts, so there's no flash of the default
-// scale/theme before UiPrefsProvider's effects would otherwise catch up — see Settings >
-// UI scale/Theme (SettingsPage.tsx) for where these are actually changed and lib/uiPrefs.ts
-// for how each is applied.
+// Applied synchronously before React mounts, so there is no flash of the default scale or theme
+// before UiPrefsProvider's effects catch up. Settings changes them (SettingsPage.tsx);
+// lib/uiPrefs.ts applies them.
 const uiPrefs = loadUiPrefs();
 applyUiScale(uiPrefs.uiScale);
 applyTheme(uiPrefs.theme);
 
 // Returning from the background strands iPad Safari on a stale, too-short viewport: it collapses
 // its tab bar without telling the page, so `dvh` (index.css's <html> height) keeps resolving
-// against the pre-background height and the app renders ~95px short, showing a band of bare
-// canvas below it. Safari only recomputes the viewport in response to a *document-level* scroll,
-// and `overflow: hidden` on <html> (index.css, so the document itself never scrolls) is what
-// denies it one — which is why the bar persists until the user happens to touch the screen.
+// against the pre-background height and the app renders ~95px short, with a band of bare canvas
+// below it. Safari only recomputes the viewport in response to a document-level scroll, which
+// `overflow: hidden` on <html> denies it.
 //
-// So give it one: make the document briefly scrollable, scroll a pixel, and put everything back
-// on the next frame. Safari then recomputes the viewport, and `dvh` resolves correctly again. The
-// restore lands within a frame, which keeps mobile's address-bar hide animation (see index.css's
-// `overflow: hidden` comment) from being triggered.
+// So give it one: make the document briefly scrollable, scroll a pixel, and put everything back on
+// the next frame. Safari recomputes the viewport and `dvh` resolves correctly again. The restore
+// lands within a frame, which keeps mobile's address-bar hide animation from being triggered.
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState !== 'visible') return;
   const html = document.documentElement;

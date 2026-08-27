@@ -164,9 +164,8 @@ export function googleAuthUrl({ clientId, redirectUri, state }) {
   return `${GOOGLE_AUTH_URL}?${params}`;
 }
 
-// Exchanges the one-time code for Google's id_token, which is the same JWT the old in-page
-// Identity Services flow handed the client — so verifyGoogleCredential (auth.js) validates it
-// unchanged, and this is the only new step in the whole flow.
+// Exchanges the one-time code for Google's id_token — the same JWT shape verifyGoogleCredential
+// (auth.js) validates, so nothing downstream of this step has to know how it arrived.
 export async function exchangeGoogleCode({ code, clientId, clientSecret, redirectUri }) {
   const response = await fetch(GOOGLE_TOKEN_URL, {
     method: 'POST',

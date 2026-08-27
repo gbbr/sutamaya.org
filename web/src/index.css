@@ -8,23 +8,19 @@
    first paint, and (this being an offline-first app) means the fonts are covered by the same
    same-origin Service Worker precache as everything else, instead of silently falling back to
    the system font on an offline reload. Mirrors exactly what Google's own CSS2 API serves for
-   the same family/weight/subset request (fetched once and vendored here) — all four are genuine
-   variable fonts (verified via fontkit: IBM Plex Sans has a `wght` axis 100–700, Newsreader
-   `wght` 200–800 + `opsz` 6–72, Inter `wght` 100–900 + `opsz` 14–32), so one file per
-   (style, subset) legitimately covers every weight the app actually uses (400–600), same as
-   Google serves it. Each subset's `unicode-range` is unchanged from Google's own values, so a
-   browser still only downloads the subsets a page's actual text needs (Pali romanization only
-   needs latin + latin-ext; the rest exist for parity with what Google was already serving, in
-   case content ever needs them).
+   the same family/weight/subset request. All four are genuine variable fonts — IBM Plex Sans has a
+   `wght` axis 100–700, Newsreader `wght` 200–800 plus `opsz` 6–72, Inter `wght` 100–900 plus `opsz`
+   14–32 — so one file per (style, subset) covers every weight the app uses, 400–600. Each subset's
+   `unicode-range` is Google's own, so a browser downloads only the subsets a page's text needs;
+   Pali romanization needs latin and latin-ext, and the rest are there for parity. */
 
    Inter is fetched from Google's two-axis build (`family=Inter:ital,opsz,wght@…`), not the
    `wght`-only one: the `opsz` axis is what lets `font-optical-sizing: auto` — on by default in
-   every browser that reads the axis — tighten spacing as type gets larger, which is the specific
-   thing that made macOS's own SF Pro (this face's predecessor here) look right at both a 13px
-   label and a 21px sutta title from one file. Costs ~25KB/subset over the `wght`-only build.
-   The real italic is vendored rather than left to the browser's synthesized oblique because the
-   Pali subtitle under every sutta and collection row is italic — a slanted grotesk is exactly
-   where faking it looks worst. */
+   every browser that reads the axis — tighten spacing as type gets larger, so one file looks right
+   at both a 13px label and a 21px sutta title. Costs ~25KB per subset over the `wght`-only build.
+   The real italic is vendored rather than left to the browser's synthesized oblique, since the Pali
+   subtitle under every sutta and collection row is italic and a slanted grotesk is where faking it
+   looks worst. */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -363,25 +359,23 @@
   --ink-3: 92 84 76;
   --ink-4: 104 96 87;
   --ink-5: 127 118 109;
-  /* Warmed a few units off the near-white it was (253 252 250): the ink ramp above reads as
-     tinted paper rather than gray-on-white against it, and it sits closer to the reader's own
-     light ground, which the Settings theme tile shows directly beside it. */
+  /* A warm near-white rather than a neutral one, so the ink ramp above reads as tinted paper rather
+     than gray-on-white, and so it sits close to the reader's own light ground — which the Settings
+     theme tile shows directly beside it. */
   --paper: 251 249 245;
-  /* The surface ladder is deliberately wider than the near-white spread it replaced (240/246/255,
-     a 15-unit total range that read as three shades of the same white): treepane sits a clear step
-     below the page, listpane between the two, and field/chip go to pure white at the top. Light's
-     panels are muted *below* the page where dark's are elevated above it — see the .dark block. */
+  /* A wide surface ladder, so the three read as distinct rather than as three shades of one white:
+     treepane a clear step below the page, listpane between the two, field and chip at pure white.
+     Light's panels are muted *below* the page where dark's are elevated above it — see .dark. */
   --treepane: 233 228 218;
   --listpane: 243 240 232;
   --field: 255 255 255;
   --chip: 255 255 255;
   --accent: 146 114 67;
   --accent2: 138 106 59;
-  /* Same brown as --accent, used where the accent color sits directly on the page as small
-     italic Pali-subtitle text (TreePane/TreeRow/ListPane) rather than as a solid button fill —
-     see the --accent comment above for why button fills stay theme-invariant while this doesn't:
-     unlike a filled button, text-on-background contrast actually needs to respond to the theme.
-     Darker than --accent for that reason — the accent's own value only reached 4.3:1 as text. */
+  /* The accent where it sits directly on the page as small italic Pali-subtitle text
+     (TreePane/TreeRow/ListPane) rather than as a solid button fill. Text-on-background contrast has
+     to respond to the theme where a filled button doesn't, so this is darker than --accent, whose
+     own value reaches only 4.3:1 as text. */
   --accent-text: 122 91 46;
   --danger-text: 220 38 38;
   --warning-text: 161 98 7;
@@ -419,28 +413,24 @@
 
 :root.dark {
   --ink: 228 223 216;
-  /* Dark's own rungs of the ramp described on :root above. Unlike light's, these are not retuned
-     at all: each is the exact colour the alpha its role used to carry already composited to over
-     --paper here (.72, .58, .45 and .35 of --ink respectively). Dark's alphas were never the
-     problem, so nothing here is meant to look different than it did. */
+  /* Dark's own rungs of the ramp described on :root above. Each is what .72, .58, .45 and .35 of
+     --ink composite to over dark's --paper, written out as solid values. */
   --ink-2: 171 166 161;
   --ink-3: 142 138 133;
   --ink-4: 115 112 108;
   --ink-5: 95 92 88;
   --paper: 23 21 19;
-  /* Elevated *above* --paper (lighter, not darker) — the usual dark-theme convention for a panel
-     that sits on top of the page background, the reverse of light mode's own relationship (there
-     treepane/listpane read slightly *muted* against a near-white page) since "muted below" and
-     "elevated above" both read as "not the bare page" on their own end of the brightness scale. */
+  /* Elevated above --paper — lighter, not darker — the dark-theme convention for a panel sitting on
+     the page, and the reverse of light mode, where treepane and listpane read muted against a
+     near-white page. Both say "not the bare page" on their own end of the brightness scale. */
   --treepane: 30 27 23;
   --listpane: 26 24 20;
   --field: 36 33 28;
-  /* Deliberately much brighter than the --paper/--treepane/--listpane/--field elevation ladder
-     above — this is the only surface color that has to read as a distinct "active" mark sitting
-     on top of a translucent --ink track (TreePane.tsx's two toggle knobs), not just as "elevated
-     panel". A value that merely continued the ladder (~54 49 42) landed almost on top of that
-     track's own composited color, since the track itself lightens toward --ink; it needs to be
-     as far from the track as light mode's white knob is from its own (much lighter) track. */
+  /* Much brighter than the --paper/--treepane/--listpane/--field ladder above: this is the only
+     surface colour that has to read as a distinct "active" mark on top of a translucent --ink track
+     (TreePane's toggle knobs), not merely as an elevated panel. The track itself lightens toward
+     --ink, so a value continuing the ladder would land almost on it; this sits as far from the
+     track as light mode's white knob does from its own. */
   --chip: 84 77 65;
   --accent: 146 114 67;
   --accent2: 138 106 59;
@@ -467,9 +457,8 @@
    viewport itself) sets --ui-scale back to 1, so this is a no-op there — dvh is already correct
    on that path. */
 html {
-  /* main.tsx's visibilitychange nudge is a separate, still-necessary companion to this: iPad
-     Safari strands `dvh` at a stale height after the app returns from the background, and
-     removing the nudge brings the black band along the bottom edge straight back. */
+  /* main.tsx's visibilitychange nudge is the companion to this: iPad Safari strands `dvh` at a
+     stale height after the app returns from the background, leaving a band along the bottom. */
   height: calc(100dvh / var(--ui-scale, 1));
   /* x stops the standalone PWA's edge-swipe left/right from being interpreted as a browser
      back/forward navigation gesture (there's no browser chrome to go back/forward *in*, so it
@@ -479,14 +468,12 @@ html {
      here, not just on body, since this is the actual top-level scroller WebKit checks for
      standalone web apps. */
   overscroll-behavior: none;
-  /* Every page manages its own internal scroll region (TreePane/ListPane/ReaderPage are all
-     `h-full overflow-hidden` or `fixed inset-0`) — the document itself is never meant to scroll.
-     Without this, a single transient frame where content briefly exceeds the viewport (e.g. the
-     tree's `.sc` growing when a top-level node expands) can make mobile Chrome/Safari treat the
-     page as newly scrollable right as the tap lands, triggering their address-bar hide animation
-     — a visible up/then-down nudge of everything near the top edge — even though layout settles
-     back to non-overflowing a moment later. `overflow: hidden` here rules that out entirely;
-     desktop never showed this since desktop browser chrome doesn't auto-hide on scroll. */
+  /* Every page manages its own internal scroll region — TreePane, ListPane and ReaderPage are all
+     `h-full overflow-hidden` or `fixed inset-0` — so the document itself never scrolls. Without
+     this, a single transient frame where content exceeds the viewport (the tree's `.sc` growing as
+     a top-level node expands) makes mobile Chrome and Safari treat the page as newly scrollable
+     just as a tap lands, triggering their address-bar hide animation: a visible nudge of everything
+     near the top edge. Desktop chrome doesn't auto-hide on scroll, so it never shows this. */
   overflow: hidden;
 }
 body,
@@ -500,18 +487,15 @@ body {
   overscroll-behavior: none;
   background: rgb(var(--paper));
   color: rgb(var(--ink));
-  /* The shell's face, everywhere outside the reader. Fixed rather than user-selectable: this is
-     the app's voice, and the one setting readers actually want over it — size — is the UI scale
-     control right above where the picker used to be. The reader keeps its own face picker
-     (READER_FACES in lib/theme.ts), which is where choosing a face genuinely pays off. */
+  /* The shell's face, everywhere outside the reader. Fixed rather than user-selectable: this is the
+     app's voice, and the setting readers want over it — size — is Settings' UI scale control. The
+     reader has its own face picker (READER_FACES in lib/theme.ts), which is where choosing a face
+     pays off. */
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  /* Without this, iOS Safari holds every tap for ~300-350ms to check whether a second tap is
-     coming (double-tap-to-zoom), since this app's viewport allows pinch-zoom — `manipulation`
-     opts out of just that discrete gesture (pinch-zoom and normal panning/scrolling still work
-     fine everywhere) and removes the wait for every UI control, at the minor cost of losing
-     double-tap-to-zoom as a convenience gesture — a tradeoff, not an accessibility loss, since
-     pinch-zoom remains available regardless. */
+  /* Without this, iOS Safari holds every tap for ~300-350ms to check for a second one, since this
+     app's viewport allows pinch-zoom. `manipulation` opts out of double-tap-to-zoom alone —
+     pinch-zoom and ordinary panning still work — and removes the wait for every UI control. */
   touch-action: manipulation;
 }
 
@@ -519,8 +503,8 @@ a {
   color: rgb(var(--accent2));
 }
 a:hover {
-  /* Not theme-var-backed — a hover state, not a light/dark swap; same accent2-adjacent brown in
-     both themes today, same as accent2 itself (see the comment on :root above). */
+  /* Not theme-var-backed: a hover state rather than a light/dark swap, and the same
+     accent2-adjacent brown in both themes, as accent2 itself is. */
   color: #6b5230;
 }
 
@@ -528,12 +512,10 @@ button {
   font: inherit;
   color: inherit;
   background: none;
-  /* border-width only (not the `border` shorthand) — the shorthand also resets border-style to
-     `none`, which silently wins over Tailwind's own border-{width}/border-{color} utilities
-     (neither sets border-style, both rely on Tailwind's preflight default of `solid` on `*`) with
-     higher specificity than that `*` selector — so any button with e.g. `border-2 border-ink/25`
-     rendered zero visible border despite width/color being applied correctly. Plain buttons still
-     end up borderless either way, since border-width:0 alone already draws nothing. */
+  /* border-width only, never the `border` shorthand: the shorthand also resets border-style to
+     `none`, which beats Tailwind's border-{width}/border-{color} utilities — neither sets
+     border-style, both rely on preflight's `solid` on `*` — and would leave a button with
+     `border-2 border-ink/25` drawing nothing. border-width:0 alone already draws nothing. */
   border-width: 0;
   padding: 0;
   cursor: pointer;
@@ -566,10 +548,9 @@ textarea {
 
 .sc {
   overflow-y: auto;
-  /* `contain`, not the `none` used elsewhere for the edge-swipe-nav case: this keeps the native
-     bounce feel at the pane's own top/bottom, it just stops that bounce from chaining into the
-     parent document once the pane has no more scroll room of its own — which is what let a drag
-     inside the tree/list pane move the whole viewport instead. */
+  /* `contain`, not the `none` used elsewhere for the edge-swipe-nav case: it keeps the native
+     bounce at the pane's own top and bottom, and only stops that bounce chaining into the parent
+     document once the pane has no scroll room left, which would move the whole viewport. */
   overscroll-behavior: contain;
   scrollbar-width: thin;
   scrollbar-color: rgb(var(--ink) / 0.2) transparent;
@@ -578,13 +559,11 @@ textarea {
 .pw {
   cursor: pointer;
   border-radius: 2px;
-  /* A tap here is a single-shot dictionary lookup, never a selection — without this, iOS Safari
-     can read the tap as the start of its native text-selection gesture (word gets selected,
-     magnifier/callout appears) as often as it reads it as a plain click. When that happens the
-     selection UI outlives the click (and the DictionaryDock it opened), and a subsequent
-     touch-drag over/near that word gets eaten by the selection handles instead of scrolling the
-     reader — which is what shows up as "scroll is blocked" right after using the dictionary.
-     `-webkit-touch-callout: none` additionally suppresses the long-press callout menu itself. */
+  /* A tap here is a single-shot dictionary lookup, never a selection. Without this, iOS Safari
+     reads the tap as the start of its native text-selection gesture about as often as it reads it
+     as a plain click, and that selection UI outlives both the click and the DictionaryDock it
+     opened — a later touch-drag near the word is then eaten by the selection handles instead of
+     scrolling. `-webkit-touch-callout: none` also suppresses the long-press callout menu. */
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;

@@ -10,18 +10,17 @@ export const NIKAYA_META = {
   kn: { label: 'Khuddaka Nikāya', sub: 'Minor Collection' },
 };
 
-// AN's nipātas (an1..an11) are conventionally named "Book of Ones/Twos/..." in English,
-// not by their Pali vagga names — matches the user's explicit browse-tree spec.
+// AN's nipātas (an1..an11) are conventionally named "Book of Ones/Twos/…" in English rather than by
+// their Pali vagga names.
 export const AN_BOOK_NAMES = [
   'Ones', 'Twos', 'Threes', 'Fours', 'Fives', 'Sixes', 'Sevens', 'Eights', 'Nines', 'Tens', 'Elevens',
 ];
 
 // SN's 5 top-level "super-vaggas" — the tree wraps sn1..sn56 in these (see data/README.md's
 // "Layout" section for the tree/ shape).
-// Fixed, canonical, English glosses given by explicit product decision (matches the Bhikkhu Sujato
-// title's own gist word — "Verses", "Causation", ... — rather than deriving from name files,
-// since the raw titles ("The Group of Linked Discourses Beginning With …") don't abbreviate
-// cleanly via stripTitlePrefix for all five).
+// Fixed English glosses taking the gist word of Bhikkhu Sujato's title — "Verses", "Causation" —
+// rather than derived from the name files, whose raw titles ("The Group of Linked Discourses
+// Beginning With …") don't abbreviate cleanly through stripTitlePrefix for all five.
 export const SN_GROUPS = [
   { id: 'sn-sagathavaggasamyutta', label: 'Verses' },
   { id: 'sn-nidanavaggasamyutta', label: 'Causation' },

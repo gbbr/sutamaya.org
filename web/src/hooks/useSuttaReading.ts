@@ -7,10 +7,9 @@ import { groupHighlights, highlightColors, highlightCount } from '../lib/highlig
 import { getUiScale } from '../lib/uiPrefs';
 import { computeSegmentScrollOffset, animateScrollTop } from '../lib/segmentScroll';
 
-// The "load a sutta's reading state" boilerplate for ReaderPage (full-screen) — renders segments/
-// highlights through SegmentedText and needs the selection-popup, scroll-restoration, and
-// highlight-grouping plumbing around it. `scrollKeyPrefix` keeps the remembered scroll position
-// namespaced (`reader:{id}`) per sutta.
+// A sutta's reading state for ReaderPage: the segments and highlights SegmentedText renders, plus
+// the selection-popup, scroll-restoration and highlight-grouping plumbing around them.
+// `scrollKeyPrefix` namespaces the remembered scroll position per sutta (`reader:{id}`).
 // `restore` — where this sutta opens, passed straight through to useScrollMemory (see its own
 // comment for the three values). ReaderPage decides: 'none' when the route alone already names a
 // segment to jump to, 'top' for a sutta opened fresh, 'stored' for one returned to.
@@ -23,11 +22,9 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
   const { segments, error, retry } = useSuttaText(suttaId);
   const hlForSutta = (suttaId && highlights[suttaId]) || [];
   const popup = useHighlightPopup(suttaId, hlForSutta, segments);
-  // Notes/highlight-count/list-membership chips (rendered above the text — see ReaderPage.tsx)
-  // come from UserDataContext's own, separately-timed fetch — waiting for both this and
-  // `segments` before ever touching scrollTop is what lets useScrollMemory restore once,
-  // correctly, instead of reactively correcting for whichever of the two lands second (see its
-  // own `readyToRestore` param comment).
+  // The chips above the text come from UserDataContext's separately-timed fetch, so waiting for
+  // both this and `segments` before touching scrollTop is what lets useScrollMemory restore once
+  // and correctly, rather than correcting for whichever of the two lands second.
   const scrollRef = useScrollMemory<T>(suttaId ? `${scrollKeyPrefix}:${suttaId}` : null, true, {
     restore,
     readyToRestore: !!segments && userDataReady,
@@ -36,15 +33,13 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
   const hlCount = useMemo(() => highlightCount(hlForSutta), [hlForSutta]);
   const hlColors = useMemo(() => highlightColors(hlForSutta), [hlForSutta]);
 
-  // useCallback (not a plain function, unlike this hook's other return values) since ReaderPage's
-  // goToAdjacentWord wraps this in its own useCallback, which useReaderKeyboard's effect depends
-  // on — without a stable reference here, that effect would tear down and re-attach its `window`
-  // listener on every render. scrollRef is a plain useRef, so it never changes identity, which
-  // means this callback itself now stays stable for the component's whole lifetime.
+  // useCallback, unlike this hook's other return values, because ReaderPage's goToAdjacentWord
+  // wraps it in its own useCallback, which useReaderKeyboard's effect depends on: without a stable
+  // reference that effect would re-attach its `window` listener on every render. scrollRef is a
+  // plain useRef and never changes identity, so this stays stable for the component's lifetime.
   const scrollToSegment = useCallback((segIndex: number, block: ScrollLogicalPosition = 'start', highlightId?: string) => {
-    // 'start' rather than 'center' — a jump (TOC heading, highlight) reads as "go to this point
-    // and read on from there", so the target belongs near the top of the reading pane with the
-    // following text visible below it, not centered with half the context above it wasted.
+    // 'start' rather than 'center': a jump to a heading or highlight means "go to this point and
+    // read on", so the target belongs near the top of the pane with the text that follows visible.
     const container = scrollRef.current;
     const segEl = container?.querySelector<HTMLElement>(`[data-seg="${segIndex}"]`);
     if (!container || !segEl) return;
@@ -53,21 +48,17 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
     // MutationObserver-based reapply that can otherwise still be armed and fire later (see
     // cancelPendingRestore's own comment), clobbering the jump below once it lands.
     cancelPendingRestore(container);
-    // A highlight can cover only the tail of a long, multi-sentence segment (or start partway
-    // through one) — centering the *segment's* whole box in that case leaves the actually-
-    // highlighted text sitting well below the pane's true center, worse the further into the
-    // segment the highlight starts. jumpToHighlight passes the highlight's own id (matches the
-    // `data-hl-id` SegmentedText renders on its span — see that file) so this can center the
-    // highlighted text itself instead; TOC/sub-uid jumps pass no id and just get the segment.
+    // A highlight can cover only the tail of a long segment, where centring the segment's whole box
+    // leaves the highlighted text well below the pane's centre. jumpToHighlight passes the
+    // highlight's id — the `data-hl-id` SegmentedText renders on its span — so this centres the
+    // highlighted text itself; TOC and sub-uid jumps pass no id and get the segment.
     const hlEl = highlightId && Array.from(segEl.querySelectorAll<HTMLElement>('[data-hl-id]')).find((s) => s.dataset.hlId === highlightId);
     const el = hlEl || segEl;
-    // Computed by hand rather than via native scrollIntoView, for both alignments: this app
-    // applies its Settings > UI scale via CSS `zoom` on <html> (lib/uiPrefs.ts, active even at
-    // the default 1x on any Chromium desktop), and native scrollIntoView isn't zoom-aware. See
-    // computeSegmentScrollOffset (lib/segmentScroll.ts) for the actual unit conversion, the same
-    // fix already applied once in HighlightGutter/computeGutterLayout. The actual scroll write
-    // below goes through animateScrollTop rather than a native animated scrollBy/scrollTo — see
-    // that function's own comment for why.
+    // Computed by hand rather than through native scrollIntoView, for both alignments: this app
+    // applies Settings > UI scale via CSS `zoom` on <html> (lib/uiPrefs.ts, active even at the
+    // default 1x on Chromium desktop), and scrollIntoView isn't zoom-aware. computeSegmentScrollOffset
+    // (lib/segmentScroll.ts) does the unit conversion, as computeGutterLayout does for the gutter.
+    // The scroll write goes through animateScrollTop rather than a native animated scrollTo.
     const containerRect = container.getBoundingClientRect();
     const elRect = el.getBoundingClientRect();
     const scale = getUiScale();

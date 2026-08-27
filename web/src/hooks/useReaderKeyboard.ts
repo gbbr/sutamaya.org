@@ -45,16 +45,16 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
     toggleShowHighlights,
     cycleTheme,
   } = opts;
-  // `step` and `goToAdjacentWord` are rebuilt on every ReaderPage render and close over the
-  // corpus order, the list being read from, and the dictionary's current word. Read through a
-  // latest ref so this listener subscribes once and still calls the current one — see useLatest.
+  // `step` and `goToAdjacentWord` are rebuilt on every ReaderPage render and close over the corpus
+  // order, the list being read from and the dictionary's current word. Read through a latest ref, so
+  // this listener subscribes once and still calls the current one — see useLatest.
   const step = useLatest(opts.step);
   const goToAdjacentWord = useLatest(opts.goToAdjacentWord);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      // While open, the help modal owns every key itself — Esc or '?' again both close it,
-      // mirroring how every other overlay in this app closes.
+      // While open, the help modal owns every key: Esc or '?' again both close it, as every other
+      // overlay in this app does.
       if (shortcutsOpen) {
         if (e.key === 'Escape' || isShortcut(e, SHORTCUTS.readerHelp)) {
           e.preventDefault();
@@ -62,20 +62,19 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
         }
         return;
       }
-      // While the search overlay is open, it owns every key itself (see its own onKeyDown) —
-      // bail out before even the input/textarea tag check below, since a click on a result row
-      // (not the input) would otherwise let these fall through to the reader's own shortcuts.
+      // While the search overlay is open it owns every key (see its onKeyDown). Bail before the
+      // input/textarea check below, since a click on a result row rather than the input would
+      // otherwise let these fall through to the reader's shortcuts.
       if (searchOpen) return;
-      // Escape is handled before the input/textarea bail below (unlike every other shortcut
-      // here) — it's the "leave this" key even mid-edit (e.g. the highlights panel's own note
-      // textarea, which has no Escape handling of its own), not a text-insertion key like '/' or
-      // 'h'/'l'/'n' that would otherwise land in whatever's focused. A field with its own
-      // graduated Escape behavior (see ListMembershipPicker) calls stopPropagation() so this
-      // doesn't also fire on the same keypress and skip past its first step.
+      // Escape is handled before the input/textarea bail below, unlike every other shortcut here:
+      // it is the "leave this" key even mid-edit — the highlights panel's note textarea has no
+      // Escape handling of its own — rather than a text-insertion key that would land in whatever
+      // is focused. A field with graduated Escape behaviour (ListMembershipPicker) calls
+      // stopPropagation() so this doesn't fire on the same keypress and skip its first step.
       if (isShortcut(e, SHORTCUTS.readerClose)) {
-        // A live selection/highlight-color popup is the innermost thing to back out of — it
-        // takes priority even over the dictionary dock, since a word tap can't happen without
-        // first releasing whatever text was selected.
+        // A live selection or highlight-colour popup is the innermost thing to back out of, ahead
+        // even of the dictionary dock: a word tap can't happen without first releasing whatever
+        // text was selected.
         if (pop) closePop();
         else if (dict) closeDict();
         else if (panel) setPanel(false);
@@ -93,8 +92,8 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
         e.preventDefault();
         step.current(e.key.toLowerCase() === 'j' ? -1 : 1);
       } else if (isShortcut(e, SHORTCUTS.readerDictNav)) {
-        // The arrows step the dictionary dock's own prev/next word, and do nothing with the dock
-        // closed — leaving the browser's own arrow scrolling alone there.
+        // The arrows step the dictionary dock's prev/next word, and do nothing with the dock
+        // closed, leaving the browser's own arrow scrolling alone there.
         if (!dict) return;
         e.preventDefault();
         goToAdjacentWord.current(e.key === 'ArrowLeft' ? -1 : 1);
@@ -107,9 +106,8 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
         setTab('highlights');
         setPanel(true);
       } else if (isShortcut(e, SHORTCUTS.readerLists)) {
-        // Without this, the same keypress that opens the panel also lands in the Lists tab's
-        // now-focused filter input (it autoFocuses — see ListMembershipPicker) since nothing
-        // stopped the browser's own default text-insertion behavior for this key.
+        // Otherwise the same keypress that opens the panel also lands in the Lists tab's
+        // now-focused filter input, which autoFocuses (see ListMembershipPicker).
         e.preventDefault();
         setTab('lists');
         setPanel(true);
@@ -132,9 +130,8 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-    // Only the values this handler actually branches on. The callbacks it invokes are reached
-    // through refs, so none of them belong here — and neither does anything they happen to close
-    // over.
+    // Only the values this handler branches on. The callbacks it invokes are reached through refs,
+    // so neither they nor anything they close over belongs here.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shortcutsOpen, dict, panel, pop, closePop, searchOpen]);
 }
