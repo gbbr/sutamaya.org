@@ -43,6 +43,8 @@ const VISIT_DEBOUNCE_MS = 5000;
 // which reaches 11 at FS_MIN, and a caption the same size as what it captions stops reading as one.
 const FOOT_NAV_LABEL: CSSProperties = { fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' };
 const footNavLabelSize = (fs: number) => Math.min(11, fs - 6);
+// The key caps in those captions, held under the caption's own weight — see where it's applied.
+const FOOT_NAV_KEY_OPACITY = 0.72;
 
 // What SegmentedText gets while highlights are hidden. A stable identity, so hiding them doesn't
 // re-render every segment on each pass. Passing none rather than suppressing the paint inside
@@ -734,7 +736,13 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
                       style={{ marginLeft: fs, fontSize: footNavLabelSize(fs), ...FOOT_NAV_LABEL, color: theme.dim }}
                     >
                       Previous
-                      {SHOWS_KEY_HINTS && <KeyCap keyName={SHORTCUTS.readerNav.keys[0]} theme={theme} small />}
+                      {/* Paler than the caption it sits beside: the word names the destination,
+                          the cap only says how else to get there. */}
+                      {SHOWS_KEY_HINTS && (
+                        <span className="inline-flex" style={{ opacity: FOOT_NAV_KEY_OPACITY }}>
+                          <KeyCap keyName={SHORTCUTS.readerNav.keys[0]} theme={theme} small />
+                        </span>
+                      )}
                     </span>
                     <span className="flex items-center gap-1.5" style={{ marginTop: 3 }}>
                       <ChevronLeft size={fs - 6} strokeWidth={2} className="flex-none" style={{ color: theme.dim }} />
@@ -754,7 +762,11 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
                       className="flex items-center justify-end gap-1.5"
                       style={{ marginRight: fs, fontSize: footNavLabelSize(fs), ...FOOT_NAV_LABEL, color: theme.dim }}
                     >
-                      {SHOWS_KEY_HINTS && <KeyCap keyName={SHORTCUTS.readerNav.keys[1]} theme={theme} small />}
+                      {SHOWS_KEY_HINTS && (
+                        <span className="inline-flex" style={{ opacity: FOOT_NAV_KEY_OPACITY }}>
+                          <KeyCap keyName={SHORTCUTS.readerNav.keys[1]} theme={theme} small />
+                        </span>
+                      )}
                       Next
                     </span>
                     <span className="flex items-center justify-end gap-1.5" style={{ marginTop: 3 }}>

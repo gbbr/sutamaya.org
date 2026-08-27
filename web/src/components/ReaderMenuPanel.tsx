@@ -377,11 +377,17 @@ export function ReaderMenuPanel({
               {highlightGroups.length > 0 && <span className="tabular-nums">{highlightGroups.length}</span>}
             </div>
 
-            {highlightGroups.map((g) => {
+            {highlightGroups.map((g, gi) => {
               const text = highlightGroupText(g, segments);
               const preview = text.length > 120 ? `${text.slice(0, 120)}…` : text;
               return (
-                <div key={g.key} className="flex items-stretch gap-1" style={{ borderBottom: `1px solid ${theme.tint}` }}>
+                // The last row draws no rule of its own: the setting below closes the list with
+                // its own, and the two together read as a double line.
+                <div
+                  key={g.key}
+                  className="flex items-stretch gap-1"
+                  style={gi === highlightGroups.length - 1 ? undefined : { borderBottom: `1px solid ${theme.tint}` }}
+                >
                   <button className="flex flex-1 min-w-0 gap-2.5 items-start py-2.5 text-left" onClick={() => onJumpToHighlight(g.i, g.key)}>
                     <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: highlightPaint(g.c, theme) }} />
                     <span className="flex-1 text-ui-sm leading-[1.45]">{preview || `Segment ${g.i + 1}`}</span>
@@ -403,6 +409,34 @@ export function ReaderMenuPanel({
             {highlightGroups.length === 0 && (
               <div className="font-sans text-ui-sm py-1.5" style={{ color: theme.dim, opacity: 0.8 }}>
                 Select text in the reading, then pick a colour.
+              </div>
+            )}
+
+            {/* The Display tab's own row for this setting, repeated below the list it governs —
+                the same full-size row rather than a second kind of affordance, so the two places
+                read as one setting. Last, not beside the heading: it acts on the reading behind
+                the panel, not on the list, and putting it first would offer to hide the highlights
+                before showing them. Absent with nothing to hide, since its effect couldn't be
+                seen. */}
+            {highlightGroups.length > 0 && (
+              <div className={settingRow} style={hairline}>
+                <span className="flex items-center gap-1.5">
+                  <span className={rowLabel} style={{ color: theme.dim }}>
+                    Show in text
+                  </span>
+                  {rowKey(SHORTCUTS.readerHighlightsToggle.keys[0])}
+                </span>
+                <Segmented
+                  value={showHighlights ? 'shown' : 'hidden'}
+                  options={[
+                    { id: 'hidden', label: 'Hide' },
+                    { id: 'shown', label: 'Show' },
+                  ]}
+                  theme={theme}
+                  onChange={(id) => {
+                    if ((id === 'shown') !== showHighlights) toggleShowHighlights();
+                  }}
+                />
               </div>
             )}
           </div>
