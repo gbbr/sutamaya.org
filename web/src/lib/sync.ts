@@ -1,7 +1,7 @@
 import { dataApi, type PushItem, type PushResult } from './api';
 import { isRetryable, statusOf } from './retry';
 import { randomId } from './ids';
-import type { FlushAck, FlushOutcome, MirrorState, QueuedOp } from './mirror';
+import type { FlushAck, FlushOutcome, ListRecord, MirrorState, QueuedOp, Stored } from './mirror';
 import type { UserData } from './api';
 
 // The flush: everything the mirror holds that the server hasn't seen, pushed to POST /api/data/push
@@ -9,12 +9,15 @@ import type { UserData } from './api';
 // requests however much is queued — a first sign-in after a long signed-out session would otherwise
 // issue one request per edit and spend most of them being rate-limited.
 //
-// Two rules shape the order, and the push preserves it. **Records before operations**, because a
+// Three rules shape the order, and the push preserves it. **Records before operations**, because a
 // list created offline and then filled with suttas produces one record and several ops, and an op
-// naming a list the server has never seen is refused and thrown away. And **list creates in mtime
-// order**, because a child created after its parent must reach the server after it (an unknown
-// parent is refused), and because the server prepends each new list the same way the client does —
-// so pushing them in the order the user made them reproduces the order the user sees.
+// naming a list the server has never seen is refused and thrown away. **List records in mtime
+// order**, because the server prepends each new list the same way the client does — so pushing
+// them in the order the user made them reproduces the order the user sees. And **a list record
+// naming a still-uncreated parent always follows that parent's create**, enforced separately from
+// the mtime order above: mtime is when a row was last touched, not when it was created, so a group
+// renamed or moved after its children already exist would otherwise sort after them and get its
+// children's writes refused as naming an unknown parent — see orderListsForPush.
 //
 // Nothing here mutates the caller's state. It reports what landed, and lib/mirror.ts's
 // applyFlushOutcome folds that into whatever the mirror looks like by the time it returns — not
@@ -43,13 +46,42 @@ function opItem(op: QueuedOp): PushItem {
   return { type: 'item.order', listId: op.listId, order: op.order, mtime: op.mtime };
 }
 
+// Reorders `records` (already sorted by mtime) so that any record naming a `parentId` still
+// waiting on its own create — whether the record is that parent's new child or an existing list
+// being moved into it — comes after the parent's create. A rename or move that lands after both
+// (bumping the parent's mtime past them) would otherwise leave the mtime sort with the parent last,
+// and the parent's own history of edits since its creation is irrelevant to this — only whether it
+// has reached the server yet. A `list.delete` carries no `parentId`, so a deleted record is never
+// pulled forward. `visiting` guards a cycle no valid tree can produce, so this never loops.
+function orderListsForPush(records: Stored<ListRecord>[]): Stored<ListRecord>[] {
+  const byId = new Map(records.map((record) => [record.data.id, record]));
+  const ordered: Stored<ListRecord>[] = [];
+  const emitted = new Set<string>();
+  const visiting = new Set<string>();
+
+  const emit = (record: Stored<ListRecord>) => {
+    const id = record.data.id;
+    if (emitted.has(id) || visiting.has(id)) return;
+    visiting.add(id);
+    const parent = record.data.deleted || !record.data.parentId ? undefined : byId.get(record.data.parentId);
+    if (parent?.data.pendingCreate) emit(parent);
+    visiting.delete(id);
+    emitted.add(id);
+    ordered.push(record);
+  };
+  records.forEach(emit);
+  return ordered;
+}
+
 // Everything the mirror owes the server, in the order it has to arrive in.
 function buildQueue(state: MirrorState): Push[] {
   const queue: Push[] = [];
 
-  const dirtyLists = Object.values(state.lists)
-    .filter((record) => record.dirty)
-    .sort((a, b) => (a.data.mtime < b.data.mtime ? -1 : 1));
+  const dirtyLists = orderListsForPush(
+    Object.values(state.lists)
+      .filter((record) => record.dirty)
+      .sort((a, b) => (a.data.mtime < b.data.mtime ? -1 : 1))
+  );
   for (const { data } of dirtyLists) {
     const ack: FlushAck = { kind: 'list', id: data.id, mtime: data.mtime };
     if (data.deleted) queue.push({ ack, item: { type: 'list.delete', id: data.id, mtime: data.mtime } });
