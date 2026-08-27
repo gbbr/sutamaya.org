@@ -1,6 +1,7 @@
 import { env } from 'cloudflare:test';
 import { describe, expect, it } from 'vitest';
 import app from '../index.js';
+import { PUSH_MAX_ITEMS } from './data.js';
 import { createSessionCookie } from '../session.js';
 
 // Same harness as lib/listWrites.test.js (real signed session cookie, no explicit cleanup).
@@ -208,8 +209,8 @@ describe('POST /api/data/push', () => {
     expect(await missing.json()).toEqual({ error: 'items_required' });
 
     // The client chunks at the same number; anything larger is a client bug, and the cap is what
-    // keeps a long queue from becoming one request that outruns the Worker's time budget.
-    const tooMany = Array.from({ length: 101 }, (_, i) => ({ type: 'visited', suttaId: `sn1.${i}` }));
+    // keeps a long queue from becoming one request that runs past the Worker's subrequest budget.
+    const tooMany = Array.from({ length: PUSH_MAX_ITEMS + 1 }, (_, i) => ({ type: 'visited', suttaId: `sn1.${i}` }));
     const { status, body } = await push(cookie, tooMany);
     expect(status).toBe(400);
     expect(body).toEqual({ error: 'too_many_items' });

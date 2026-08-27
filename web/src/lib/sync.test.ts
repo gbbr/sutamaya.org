@@ -175,20 +175,20 @@ describe('flushMirror', () => {
 
   it('chunks a long queue and drains it before pulling', async () => {
     let state = emptyMirror('u1');
-    for (let i = 0; i < 250; i += 1) state = setNoteRecord(state, `dn${i}`, `note ${i}`);
+    for (let i = 0; i < 25; i += 1) state = setNoteRecord(state, `dn${i}`, `note ${i}`);
 
     const outcome = await flushMirror(state);
 
     // The Worker refuses more than PUSH_MAX_ITEMS at once, so the client loops until the queue
     // drains — and the pull happens once, at the end, not per chunk.
-    expect(dataApiPush.mock.calls.map((call) => (call[0] as PushItem[]).length)).toEqual([100, 100, 50]);
+    expect(dataApiPush.mock.calls.map((call) => (call[0] as PushItem[]).length)).toEqual([10, 10, 5]);
     expect(dataApiAll).toHaveBeenCalledTimes(1);
-    expect(outcome.acks).toHaveLength(250);
+    expect(outcome.acks).toHaveLength(25);
   });
 
   it('keeps the unsent remainder when a later chunk fails', async () => {
     let state = emptyMirror('u1');
-    for (let i = 0; i < 150; i += 1) state = setNoteRecord(state, `dn${i}`, `note ${i}`);
+    for (let i = 0; i < 15; i += 1) state = setNoteRecord(state, `dn${i}`, `note ${i}`);
     dataApiPush.mockImplementationOnce(respond()).mockImplementationOnce(() => httpError(503));
 
     const outcome = await flushMirror(state);
@@ -196,7 +196,7 @@ describe('flushMirror', () => {
     // The first chunk landed and is acked; the rest is still owed, and there is no pull, since the
     // snapshot would not yet reflect what is left to send.
     expect(outcome.status).toBe('offline');
-    expect(outcome.acks).toHaveLength(100);
+    expect(outcome.acks).toHaveLength(10);
     expect(outcome.snapshot).toBeNull();
   });
 

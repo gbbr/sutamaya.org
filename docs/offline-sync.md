@@ -221,7 +221,7 @@ costs at most a 401 on the next flush, which is already the re-auth path.
 
 Order, and what each outcome means, is A4. In summary: everything owed goes to `POST /api/data/push`
 as one ordered array — list records in `mtime` order, then notes, highlights and visits, then the ops
-in the order the user made them — chunked at 100 items a request and looped until the queue drains,
+in the order the user made them — chunked at 10 items a request and looped until the queue drains,
 then `GET /api/data`, a full snapshot with no delta protocol. **One sync is a couple of requests
 however much is queued.** Per-edit requests were the earlier shape, and they scaled sync cost with
 the number of edits rather than the number of syncs: a first sign-in after using the app signed out
@@ -426,7 +426,8 @@ Triggers: app load once the mirror is read, ~2s debounced after any mutation, th
 commits on Enter/blur.
 
 `buildQueue` (`lib/sync.ts`) assembles one ordered array, which goes to `POST /api/data/push` in
-chunks of `CHUNK_SIZE` (100, matching the Worker's `PUSH_MAX_ITEMS`) until it drains:
+chunks of `CHUNK_SIZE` (10, matching the Worker's `PUSH_MAX_ITEMS`, which is sized against the
+Workers subrequest budget — every D1 query the handler makes counts against it) until it drains:
 
 1. **List records, in `mtime` order** — so a parent reaches the server before the child naming it
    (a create naming an unknown parent is refused), and so the server's own prepend reproduces the

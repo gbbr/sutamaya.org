@@ -58,10 +58,13 @@ async function buildUserData(db, userId) {
 
 dataRouter.get('/', async (c) => c.json(await buildUserData(c.env.DB, c.get('userId'))));
 
-// How many items one push may carry. The Worker has a CPU budget and D1 a statement limit, and the
-// items run one at a time, so the cap is what keeps a queue of any size from turning into a request
-// that times out halfway. The client chunks at the same number and loops until its queue drains.
-export const PUSH_MAX_ITEMS = 100;
+// How many items one push may carry. The binding cap is what sets it: every D1 query counts as a
+// subrequest, the free plan allows 50 of them per request, and the items run one at a time — the
+// dearest of them (`sibling.order`) costs five queries, so ten items is the largest chunk that
+// fits whatever mix the client sends. Exceeding it throws mid-push, which surfaces as a 500 the
+// client reads as retryable, so an oversized chunk would be re-sent unchanged on every flush and
+// never drain. The client chunks at the same number and loops until its queue drains.
+export const PUSH_MAX_ITEMS = 10;
 
 // The app's only write endpoint: every record and operation the mirror owes the server, in the
 // order the user produced them, answered with one result per item. Paired with GET / above, one
