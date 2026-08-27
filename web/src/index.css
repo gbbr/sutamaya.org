@@ -344,9 +344,9 @@
    better. Four rungs by role, not by the alpha each replaced:
 
      --ink-2  body copy and prose            9.4:1 light / 7.6:1 dark
-     --ink-3  section eyebrows, setting labels  5.7 / 5.3
-     --ink-4  quiet controls, icons, counts     4.8 / 3.7
-     --ink-5  hints and decorative glyphs that repeat something already said   3.4 / 2.7
+     --ink-3  section eyebrows, setting labels  7.1 / 5.3
+     --ink-4  quiet controls, icons, counts     5.9 / 3.7
+     --ink-5  hints and decorative glyphs that repeat something already said   4.2 / 2.7
 
    Four rather than three because dark could always tell its five alphas apart and light never
    could: lifting light's lower rungs to a legible floor squeezes --ink-3 and --ink-4 within about
@@ -360,16 +360,20 @@
 :root {
   --ink: 27 25 23;
   --ink-2: 74 66 58;
-  --ink-3: 107 98 89;
-  --ink-4: 119 110 101;
-  --ink-5: 142 133 124;
+  --ink-3: 92 84 76;
+  --ink-4: 104 96 87;
+  --ink-5: 127 118 109;
   /* Warmed a few units off the near-white it was (253 252 250): the ink ramp above reads as
      tinted paper rather than gray-on-white against it, and it sits closer to the reader's own
      light ground, which the Settings theme tile shows directly beside it. */
   --paper: 251 249 245;
-  --treepane: 240 236 228;
-  --listpane: 246 243 237;
-  --field: 255 254 251;
+  /* The surface ladder is deliberately wider than the near-white spread it replaced (240/246/255,
+     a 15-unit total range that read as three shades of the same white): treepane sits a clear step
+     below the page, listpane between the two, and field/chip go to pure white at the top. Light's
+     panels are muted *below* the page where dark's are elevated above it — see the .dark block. */
+  --treepane: 233 228 218;
+  --listpane: 243 240 232;
+  --field: 255 255 255;
   --chip: 255 255 255;
   --accent: 146 114 67;
   --accent2: 138 106 59;

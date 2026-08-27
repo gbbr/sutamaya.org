@@ -47,7 +47,7 @@ interface ShellPalette {
   ink: string;
   accent: string;
 }
-const LIGHT_SHELL: ShellPalette = { paper: '#FBF9F5', pane: '#F0ECE4', ink: '#1B1917', accent: '#7A5B2E' };
+const LIGHT_SHELL: ShellPalette = { paper: '#FBF9F5', pane: '#E9E4DA', ink: '#1B1917', accent: '#7A5B2E' };
 const DARK_SHELL: ShellPalette = { paper: '#171513', pane: '#1E1B17', ink: '#E4DFD8', accent: '#C49A61' };
 
 // `palettes` is what the tile is drawn in: one for a pinned theme, two for System, which shows the
