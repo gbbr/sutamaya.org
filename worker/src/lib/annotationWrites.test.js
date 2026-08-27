@@ -3,9 +3,10 @@ import { describe, expect, it } from 'vitest';
 import app from '../index.js';
 import { createSessionCookie } from '../session.js';
 
-// Same harness as routes/lists.test.js: assertions read rows straight out of env.DB, a
-// signed-in caller is a real signed session cookie, and D1 rows need no explicit cleanup
-// (vitest-pool-workers rolls back each test's storage writes).
+// The notes/highlights/visited half of lib/writes.js, driven through the endpoint that dispatches
+// to it (POST /api/data/push). Same harness as listWrites.test.js: assertions read rows straight out
+// of env.DB, a signed-in caller is a real signed session cookie, and D1 rows need no explicit
+// cleanup (vitest-pool-workers rolls back each test's storage writes).
 
 async function signIn() {
   const userId = crypto.randomUUID();
@@ -28,6 +29,20 @@ function api(path, { method = 'GET', body, cookie } = {}) {
   );
 }
 
+const OK = { ok: true };
+
+// A push answers per item rather than per request, so a single write is one item in and one result
+// out: `{ok: true}`, or `{error, status}` for a refusal.
+async function write(cookie, item) {
+  const res = await api('/api/data/push', { method: 'POST', cookie, body: { items: [item] } });
+  if (!res.ok) throw new Error(`push itself failed: ${res.status} ${await res.text()}`);
+  return (await res.json()).results[0];
+}
+
+const note = (cookie, suttaId, text, mtime) => write(cookie, { type: 'note', suttaId, text, mtime });
+const highlight = (cookie, item) => write(cookie, { type: 'highlight', ...item });
+const visited = (cookie, suttaId, visitedAt) => write(cookie, { type: 'visited', suttaId, visitedAt });
+
 // Live rows only — a retired highlight stays in the table as a tombstone, so counting raw rows
 // would count highlights the user can no longer see. allHighlightsOf is for the tests that are
 // specifically about those tombstones.
@@ -45,25 +60,22 @@ async function allHighlightsOf(userId, suttaId) {
   return results;
 }
 
-describe('routes/annotations.js (D1)', () => {
-  it('requires authentication', async () => {
-    const res = await api('/api/visited/sn1.1', { method: 'POST' });
-    expect(res.status).toBe(401);
-    expect(await res.json()).toEqual({ error: 'not_authenticated' });
-  });
-
+describe('lib/writes.js — notes, highlights, visits (D1)', () => {
   it('sets and clears a note (blank text tombstones it)', async () => {
     const { cookie } = await signIn();
-    const set = await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'hello' } });
-    expect(set.status).toBe(200);
+    expect(await note(cookie, 'sn1.1', 'hello')).toEqual(OK);
 
     const data = await (await api('/api/data', { cookie })).json();
     expect(data.notes['sn1.1'].text).toBe('hello');
 
-    const clear = await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: '' } });
-    expect(clear.status).toBe(200);
+    expect(await note(cookie, 'sn1.1', '')).toEqual(OK);
     const data2 = await (await api('/api/data', { cookie })).json();
     expect(data2.notes['sn1.1']).toBeUndefined();
+  });
+
+  it('refuses a note with no sutta id', async () => {
+    const { cookie } = await signIn();
+    expect(await write(cookie, { type: 'note', text: 'orphan' })).toEqual({ error: 'sutta_id_required', status: 400 });
   });
 
   // The note case is the sharpest tombstone-filtering trap: assembleUserData's auto-notes list
@@ -71,8 +83,8 @@ describe('routes/annotations.js (D1)', () => {
   // would put a cleared note back on screen — in the notes map *and* the Notes auto-list.
   it('keeps a cleared note as a tombstone row, absent from both the notes map and the Notes auto-list', async () => {
     const { userId, cookie } = await signIn();
-    await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'hello' } });
-    await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: '' } });
+    await note(cookie, 'sn1.1', 'hello');
+    await note(cookie, 'sn1.1', '');
 
     const row = await env.DB.prepare('SELECT * FROM notes WHERE user_id = ? AND sutta_id = ?').bind(userId, 'sn1.1').first();
     expect(row).toBeTruthy();
@@ -87,17 +99,17 @@ describe('routes/annotations.js (D1)', () => {
   // an edit loses to a newer clear.
   it('does not let a stale clear tombstone a note edited more recently', async () => {
     const { cookie } = await signIn();
-    await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'newer', mtime: '2030-01-02T00:00:00.000Z|a' } });
-    await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: '', mtime: '2030-01-01T00:00:00.000Z|a' } });
+    await note(cookie, 'sn1.1', 'newer', '2030-01-02T00:00:00.000Z|a');
+    await note(cookie, 'sn1.1', '', '2030-01-01T00:00:00.000Z|a');
     const data = await (await api('/api/data', { cookie })).json();
     expect(data.notes['sn1.1'].text).toBe('newer');
   });
 
   it('does not let a stale edit undo a more recent clear', async () => {
     const { cookie } = await signIn();
-    await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'original', mtime: '2030-01-01T00:00:00.000Z|a' } });
-    await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: '', mtime: '2030-01-03T00:00:00.000Z|a' } });
-    await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'stale offline edit', mtime: '2030-01-02T00:00:00.000Z|a' } });
+    await note(cookie, 'sn1.1', 'original', '2030-01-01T00:00:00.000Z|a');
+    await note(cookie, 'sn1.1', '', '2030-01-03T00:00:00.000Z|a');
+    await note(cookie, 'sn1.1', 'stale offline edit', '2030-01-02T00:00:00.000Z|a');
     const data = await (await api('/api/data', { cookie })).json();
     expect(data.notes['sn1.1']).toBeUndefined();
   });
@@ -106,8 +118,8 @@ describe('routes/annotations.js (D1)', () => {
   // behind.
   it('overwrites an existing note', async () => {
     const { cookie } = await signIn();
-    await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'first' } });
-    await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'second' } });
+    await note(cookie, 'sn1.1', 'first');
+    await note(cookie, 'sn1.1', 'second');
     const data = await (await api('/api/data', { cookie })).json();
     expect(data.notes['sn1.1'].text).toBe('second');
   });
@@ -116,8 +128,8 @@ describe('routes/annotations.js (D1)', () => {
   // resolution: a stale offline edit replayed after a newer one must not win.
   it('does not let an older client mtime overwrite a note written with a newer one', async () => {
     const { cookie } = await signIn();
-    await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'newer', mtime: '2026-01-02T00:00:00.000Z|a' } });
-    await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'older', mtime: '2026-01-01T00:00:00.000Z|a' } });
+    await note(cookie, 'sn1.1', 'newer', '2026-01-02T00:00:00.000Z|a');
+    await note(cookie, 'sn1.1', 'older', '2026-01-01T00:00:00.000Z|a');
     const data = await (await api('/api/data', { cookie })).json();
     expect(data.notes['sn1.1'].text).toBe('newer');
   });
@@ -125,18 +137,18 @@ describe('routes/annotations.js (D1)', () => {
   it('does not let an equal client mtime overwrite a note either', async () => {
     const { cookie } = await signIn();
     const mtime = '2026-01-01T00:00:00.000Z|a';
-    await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'first', mtime } });
-    await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'second', mtime } });
+    await note(cookie, 'sn1.1', 'first', mtime);
+    await note(cookie, 'sn1.1', 'second', mtime);
     const data = await (await api('/api/data', { cookie })).json();
     expect(data.notes['sn1.1'].text).toBe('first');
   });
 
   // A note written with an explicit mtime still orders the Notes auto-list by that timestamp,
-  // not by which request happened to reach the server last.
+  // not by which item happened to reach the server last.
   it('orders the Notes auto-list by the client-supplied mtime rather than by arrival', async () => {
     const { cookie } = await signIn();
-    await api('/api/notes/sn1.1', { method: 'PUT', cookie, body: { text: 'written later, dated earlier', mtime: '2026-01-01T00:00:00.000Z|a' } });
-    await api('/api/notes/sn1.2', { method: 'PUT', cookie, body: { text: 'written first, dated later', mtime: '2026-01-02T00:00:00.000Z|a' } });
+    await note(cookie, 'sn1.1', 'written later, dated earlier', '2026-01-01T00:00:00.000Z|a');
+    await note(cookie, 'sn1.2', 'written first, dated later', '2026-01-02T00:00:00.000Z|a');
     const data = await (await api('/api/data', { cookie })).json();
     expect(data.lists.find((l) => l.id === 'auto-notes').items).toEqual(['sn1.2', 'sn1.1']);
   });
@@ -148,12 +160,8 @@ describe('routes/annotations.js (D1)', () => {
 
   it('writes a single-segment highlight range', async () => {
     const { userId, cookie } = await signIn();
-    const res = await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { suttaId: 'sn1.1', color: 'yellow', ranges: [{ i: 0, s: 5, e: 10 }], ...GROUP_A },
-    });
-    expect(res.status).toBe(200);
+    const result = await highlight(cookie, { suttaId: 'sn1.1', color: 'yellow', ranges: [{ i: 0, s: 5, e: 10 }], ...GROUP_A });
+    expect(result).toEqual(OK);
 
     const rows = await highlightsOf(userId, 'sn1.1');
     expect(rows).toHaveLength(1);
@@ -162,18 +170,14 @@ describe('routes/annotations.js (D1)', () => {
 
   it('writes a cross-segment highlight with all rows sharing one groupId', async () => {
     const { userId, cookie } = await signIn();
-    await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: {
-        suttaId: 'sn1.1',
-        color: 'blue',
-        ...GROUP_A,
-        ranges: [
-          { i: 0, s: 5, e: 10 },
-          { i: 1, s: 0, e: 3 },
-        ],
-      },
+    await highlight(cookie, {
+      suttaId: 'sn1.1',
+      color: 'blue',
+      ...GROUP_A,
+      ranges: [
+        { i: 0, s: 5, e: 10 },
+        { i: 1, s: 0, e: 3 },
+      ],
     });
 
     const rows = await highlightsOf(userId, 'sn1.1');
@@ -185,23 +189,15 @@ describe('routes/annotations.js (D1)', () => {
   // rather than two overlapping ones.
   it('replaces a highlight it says it displaces instead of leaving both', async () => {
     const { userId, cookie } = await signIn();
-    await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { suttaId: 'sn1.1', color: 'yellow', ranges: [{ i: 0, s: 0, e: 10 }], ...GROUP_A },
-    });
+    await highlight(cookie, { suttaId: 'sn1.1', color: 'yellow', ranges: [{ i: 0, s: 0, e: 10 }], ...GROUP_A });
 
-    await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: {
-        suttaId: 'sn1.1',
-        color: 'green',
-        g: 'group-b',
-        erase: ['group-a'],
-        mtime: '2026-01-02T00:00:00.000Z|a',
-        ranges: [{ i: 0, s: 5, e: 15 }],
-      },
+    await highlight(cookie, {
+      suttaId: 'sn1.1',
+      color: 'green',
+      g: 'group-b',
+      erase: ['group-a'],
+      mtime: '2026-01-02T00:00:00.000Z|a',
+      ranges: [{ i: 0, s: 5, e: 15 }],
     });
 
     const rows = await highlightsOf(userId, 'sn1.1');
@@ -211,19 +207,11 @@ describe('routes/annotations.js (D1)', () => {
 
   it('rejects a zero-width or inverted range instead of writing degenerate rows', async () => {
     const { userId, cookie } = await signIn();
-    const zeroWidth = await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { suttaId: 'sn1.1', color: 'yellow', ranges: [{ i: 0, s: 5, e: 5 }], ...GROUP_A },
-    });
-    expect(zeroWidth.status).toBe(400);
+    const zeroWidth = await highlight(cookie, { suttaId: 'sn1.1', color: 'yellow', ranges: [{ i: 0, s: 5, e: 5 }], ...GROUP_A });
+    expect(zeroWidth).toEqual({ error: 'invalid_range', status: 400 });
 
-    const inverted = await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { suttaId: 'sn1.1', color: 'yellow', ranges: [{ i: 0, s: 10, e: 5 }], ...GROUP_A },
-    });
-    expect(inverted.status).toBe(400);
+    const inverted = await highlight(cookie, { suttaId: 'sn1.1', color: 'yellow', ranges: [{ i: 0, s: 10, e: 5 }], ...GROUP_A });
+    expect(inverted).toEqual({ error: 'invalid_range', status: 400 });
 
     expect(await highlightsOf(userId, 'sn1.1')).toHaveLength(0);
   });
@@ -233,7 +221,7 @@ describe('routes/annotations.js (D1)', () => {
   // text. (user_id, g, i) is what makes the insert a no-op.
   it('is a no-op when a group the client already sent is pushed again', async () => {
     const { userId, cookie } = await signIn();
-    const body = {
+    const item = {
       suttaId: 'sn1.1',
       color: 'yellow',
       g: 'group-a',
@@ -244,11 +232,10 @@ describe('routes/annotations.js (D1)', () => {
         { i: 1, s: 0, e: 4 },
       ],
     };
-    await api('/api/highlights/ranges', { method: 'PUT', cookie, body });
+    await highlight(cookie, item);
     const first = await highlightsOf(userId, 'sn1.1');
 
-    const again = await api('/api/highlights/ranges', { method: 'PUT', cookie, body });
-    expect(again.status).toBe(200);
+    expect(await highlight(cookie, item)).toEqual(OK);
 
     const rows = await highlightsOf(userId, 'sn1.1');
     expect(rows).toHaveLength(2);
@@ -260,39 +247,34 @@ describe('routes/annotations.js (D1)', () => {
   // every segment it spans, not just the one the new selection happened to overlap.
   it('retires every segment of a displaced group and leaves an untouched group alone', async () => {
     const { userId, cookie } = await signIn();
-    await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: {
-        suttaId: 'sn1.1',
-        color: 'yellow',
-        g: 'group-a',
-        erase: [],
-        mtime: '2026-01-01T00:00:00.000Z|a',
-        ranges: [
-          { i: 0, s: 0, e: 10 },
-          { i: 1, s: 0, e: 4 },
-        ],
-      },
+    await highlight(cookie, {
+      suttaId: 'sn1.1',
+      color: 'yellow',
+      g: 'group-a',
+      erase: [],
+      mtime: '2026-01-01T00:00:00.000Z|a',
+      ranges: [
+        { i: 0, s: 0, e: 10 },
+        { i: 1, s: 0, e: 4 },
+      ],
     });
-    await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { suttaId: 'sn1.1', color: 'blue', g: 'group-b', erase: [], mtime: '2026-01-02T00:00:00.000Z|a', ranges: [{ i: 5, s: 0, e: 3 }] },
+    await highlight(cookie, {
+      suttaId: 'sn1.1',
+      color: 'blue',
+      g: 'group-b',
+      erase: [],
+      mtime: '2026-01-02T00:00:00.000Z|a',
+      ranges: [{ i: 5, s: 0, e: 3 }],
     });
 
     // Recolour: one tombstone for what it displaces, one brand new group.
-    await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: {
-        suttaId: 'sn1.1',
-        color: 'green',
-        g: 'group-c',
-        erase: ['group-a'],
-        mtime: '2026-01-03T00:00:00.000Z|a',
-        ranges: [{ i: 0, s: 2, e: 6 }],
-      },
+    await highlight(cookie, {
+      suttaId: 'sn1.1',
+      color: 'green',
+      g: 'group-c',
+      erase: ['group-a'],
+      mtime: '2026-01-03T00:00:00.000Z|a',
+      ranges: [{ i: 0, s: 2, e: 6 }],
     });
 
     const live = await highlightsOf(userId, 'sn1.1');
@@ -305,16 +287,21 @@ describe('routes/annotations.js (D1)', () => {
 
   it('erases a group without writing anything when color is null', async () => {
     const { userId, cookie } = await signIn();
-    await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { suttaId: 'sn1.1', color: 'yellow', g: 'group-a', erase: [], mtime: '2026-01-01T00:00:00.000Z|a', ranges: [{ i: 0, s: 0, e: 10 }] },
+    await highlight(cookie, {
+      suttaId: 'sn1.1',
+      color: 'yellow',
+      g: 'group-a',
+      erase: [],
+      mtime: '2026-01-01T00:00:00.000Z|a',
+      ranges: [{ i: 0, s: 0, e: 10 }],
     });
 
-    await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { suttaId: 'sn1.1', color: null, erase: ['group-a'], mtime: '2026-01-02T00:00:00.000Z|a', ranges: [{ i: 0, s: 0, e: 10 }] },
+    await highlight(cookie, {
+      suttaId: 'sn1.1',
+      color: null,
+      erase: ['group-a'],
+      mtime: '2026-01-02T00:00:00.000Z|a',
+      ranges: [{ i: 0, s: 0, e: 10 }],
     });
 
     expect(await highlightsOf(userId, 'sn1.1')).toHaveLength(0);
@@ -331,16 +318,21 @@ describe('routes/annotations.js (D1)', () => {
   // names was (re)created elsewhere must lose rather than retire newer work.
   it('does not let a stale erase retire a group created more recently', async () => {
     const { userId, cookie } = await signIn();
-    await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { suttaId: 'sn1.1', color: 'yellow', g: 'group-a', erase: [], mtime: '2026-01-05T00:00:00.000Z|a', ranges: [{ i: 0, s: 0, e: 10 }] },
+    await highlight(cookie, {
+      suttaId: 'sn1.1',
+      color: 'yellow',
+      g: 'group-a',
+      erase: [],
+      mtime: '2026-01-05T00:00:00.000Z|a',
+      ranges: [{ i: 0, s: 0, e: 10 }],
     });
 
-    await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { suttaId: 'sn1.1', color: null, erase: ['group-a'], mtime: '2026-01-01T00:00:00.000Z|a', ranges: [{ i: 0, s: 0, e: 10 }] },
+    await highlight(cookie, {
+      suttaId: 'sn1.1',
+      color: null,
+      erase: ['group-a'],
+      mtime: '2026-01-01T00:00:00.000Z|a',
+      ranges: [{ i: 0, s: 0, e: 10 }],
     });
 
     expect(await highlightsOf(userId, 'sn1.1')).toHaveLength(1);
@@ -350,15 +342,21 @@ describe('routes/annotations.js (D1)', () => {
   // paints the contested characters (see web/src/lib/highlights.ts), the server keeps both.
   it('keeps two overlapping groups when neither says it displaces the other', async () => {
     const { userId, cookie } = await signIn();
-    await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { suttaId: 'sn1.1', color: 'yellow', g: 'group-a', erase: [], mtime: '2026-01-01T00:00:00.000Z|a', ranges: [{ i: 0, s: 0, e: 10 }] },
+    await highlight(cookie, {
+      suttaId: 'sn1.1',
+      color: 'yellow',
+      g: 'group-a',
+      erase: [],
+      mtime: '2026-01-01T00:00:00.000Z|a',
+      ranges: [{ i: 0, s: 0, e: 10 }],
     });
-    await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { suttaId: 'sn1.1', color: 'green', g: 'group-b', erase: [], mtime: '2026-01-02T00:00:00.000Z|a', ranges: [{ i: 0, s: 5, e: 15 }] },
+    await highlight(cookie, {
+      suttaId: 'sn1.1',
+      color: 'green',
+      g: 'group-b',
+      erase: [],
+      mtime: '2026-01-02T00:00:00.000Z|a',
+      ranges: [{ i: 0, s: 5, e: 15 }],
     });
 
     expect(await highlightsOf(userId, 'sn1.1')).toHaveLength(2);
@@ -368,12 +366,7 @@ describe('routes/annotations.js (D1)', () => {
   // has nothing to run, and D1 rejects an empty batch.
   it('accepts an erase that displaces nothing', async () => {
     const { cookie } = await signIn();
-    const res = await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { suttaId: 'sn1.1', color: null, erase: [], ranges: [{ i: 0, s: 0, e: 5 }] },
-    });
-    expect(res.status).toBe(200);
+    expect(await highlight(cookie, { suttaId: 'sn1.1', color: null, erase: [], ranges: [{ i: 0, s: 0, e: 5 }] })).toEqual(OK);
   });
 
   // Both ids are the client's to supply, and a write missing one can't be honoured — a create
@@ -388,25 +381,31 @@ describe('routes/annotations.js (D1)', () => {
       { suttaId: 'sn1.1', color: null, erase: [42], ranges: [{ i: 0, s: 0, e: 5 }] },
       { suttaId: 'sn1.1', color: null, erase: 'group-a', ranges: [{ i: 0, s: 0, e: 5 }] },
     ];
-    for (const body of cases) {
-      expect((await api('/api/highlights/ranges', { method: 'PUT', cookie, body })).status).toBe(400);
+    for (const item of cases) {
+      expect((await highlight(cookie, item)).status).toBe(400);
     }
     expect(await allHighlightsOf(userId, 'sn1.1')).toHaveLength(0);
   });
 
   // `created_at`/`mtime` take the client's instant, so the Highlights auto-list orders by when
-  // the user highlighted rather than by which request reached the server last.
+  // the user highlighted rather than by which item reached the server last.
   it('orders the Highlights auto-list by the client-supplied mtime rather than by arrival', async () => {
     const { cookie } = await signIn();
-    await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { suttaId: 'sn1.1', color: 'yellow', g: 'group-a', erase: [], ranges: [{ i: 0, s: 0, e: 5 }], mtime: '2026-01-01T00:00:00.000Z|a' },
+    await highlight(cookie, {
+      suttaId: 'sn1.1',
+      color: 'yellow',
+      g: 'group-a',
+      erase: [],
+      ranges: [{ i: 0, s: 0, e: 5 }],
+      mtime: '2026-01-01T00:00:00.000Z|a',
     });
-    await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { suttaId: 'sn1.2', color: 'blue', g: 'group-b', erase: [], ranges: [{ i: 0, s: 0, e: 5 }], mtime: '2026-01-02T00:00:00.000Z|a' },
+    await highlight(cookie, {
+      suttaId: 'sn1.2',
+      color: 'blue',
+      g: 'group-b',
+      erase: [],
+      ranges: [{ i: 0, s: 0, e: 5 }],
+      mtime: '2026-01-02T00:00:00.000Z|a',
     });
     const data = await (await api('/api/data', { cookie })).json();
     expect(data.lists.find((l) => l.id === 'auto-highlights').items).toEqual(['sn1.2', 'sn1.1']);
@@ -414,53 +413,37 @@ describe('routes/annotations.js (D1)', () => {
 
   it('rejects a range missing integer i/s/e', async () => {
     const { cookie } = await signIn();
-    const res = await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { suttaId: 'sn1.1', color: 'yellow', g: 'group-a', erase: [], ranges: [{ i: 0, s: 5 }] },
-    });
-    expect(res.status).toBe(400);
-    expect(await res.json()).toEqual({ error: 'invalid_range' });
+    const result = await highlight(cookie, { suttaId: 'sn1.1', color: 'yellow', g: 'group-a', erase: [], ranges: [{ i: 0, s: 5 }] });
+    expect(result).toEqual({ error: 'invalid_range', status: 400 });
   });
 
   it('rejects a missing suttaId or empty ranges array', async () => {
     const { cookie } = await signIn();
-    const noSutta = await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { color: 'yellow', g: 'group-a', erase: [], ranges: [{ i: 0, s: 0, e: 1 }] },
-    });
-    expect(noSutta.status).toBe(400);
-    expect(await noSutta.json()).toEqual({ error: 'ranges_required' });
+    const noSutta = await highlight(cookie, { color: 'yellow', g: 'group-a', erase: [], ranges: [{ i: 0, s: 0, e: 1 }] });
+    expect(noSutta).toEqual({ error: 'ranges_required', status: 400 });
 
-    const noRanges = await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie,
-      body: { suttaId: 'sn1.1', g: 'group-a', erase: [], ranges: [] },
-    });
-    expect(noRanges.status).toBe(400);
+    const noRanges = await highlight(cookie, { suttaId: 'sn1.1', g: 'group-a', erase: [], ranges: [] });
+    expect(noRanges).toEqual({ error: 'ranges_required', status: 400 });
   });
 
   it('records a visited sutta', async () => {
     const { cookie } = await signIn();
-    const res = await api('/api/visited/sn1.1', { method: 'POST', cookie });
-    expect(res.status).toBe(200);
+    expect(await visited(cookie, 'sn1.1')).toEqual(OK);
     const data = await (await api('/api/data', { cookie })).json();
     expect(data.visited['sn1.1']).toBeTruthy();
   });
 
-  // POST /visited is fired on every qualifying read, so the second one has to refresh the
-  // timestamp rather than fail the primary key.
+  // A visit is recorded on every qualifying read, so the second one has to refresh the timestamp
+  // rather than fail the primary key.
   it('re-visiting a sutta updates its timestamp instead of conflicting', async () => {
     const { userId, cookie } = await signIn();
-    await api('/api/visited/sn1.1', { method: 'POST', cookie });
+    await visited(cookie, 'sn1.1');
     const first = await env.DB.prepare('SELECT visited_at FROM visited WHERE user_id = ? AND sutta_id = ?')
       .bind(userId, 'sn1.1')
       .first();
 
     await new Promise((r) => setTimeout(r, 5));
-    const res = await api('/api/visited/sn1.1', { method: 'POST', cookie });
-    expect(res.status).toBe(200);
+    expect(await visited(cookie, 'sn1.1')).toEqual(OK);
 
     const { results } = await env.DB.prepare('SELECT visited_at FROM visited WHERE user_id = ?').bind(userId).all();
     expect(results).toHaveLength(1);
@@ -470,47 +453,45 @@ describe('routes/annotations.js (D1)', () => {
   // A stale offline visit replayed after a newer one must not jump the sutta back up Recent.
   it('does not let an older client visitedAt overwrite a newer one', async () => {
     const { userId, cookie } = await signIn();
-    await api('/api/visited/sn1.1', { method: 'POST', cookie, body: { visitedAt: '2026-01-02T00:00:00.000Z|a' } });
-    await api('/api/visited/sn1.1', { method: 'POST', cookie, body: { visitedAt: '2026-01-01T00:00:00.000Z|a' } });
+    await visited(cookie, 'sn1.1', '2026-01-02T00:00:00.000Z|a');
+    await visited(cookie, 'sn1.1', '2026-01-01T00:00:00.000Z|a');
     const row = await env.DB.prepare('SELECT visited_at FROM visited WHERE user_id = ? AND sutta_id = ?')
       .bind(userId, 'sn1.1')
       .first();
     expect(row.visited_at).toBe('2026-01-02T00:00:00.000Z|a');
   });
 
-  // Client-supplied visitedAt values, not call order, drive the Recent auto-list.
+  // Client-supplied visitedAt values, not arrival order, drive the Recent auto-list.
   it('orders the Recent auto-list by the client-supplied visitedAt rather than by arrival', async () => {
     const { cookie } = await signIn();
-    await api('/api/visited/sn1.1', { method: 'POST', cookie, body: { visitedAt: '2026-01-01T00:00:00.000Z|a' } });
-    await api('/api/visited/sn1.2', { method: 'POST', cookie, body: { visitedAt: '2026-01-02T00:00:00.000Z|a' } });
+    await visited(cookie, 'sn1.1', '2026-01-01T00:00:00.000Z|a');
+    await visited(cookie, 'sn1.2', '2026-01-02T00:00:00.000Z|a');
     const data = await (await api('/api/data', { cookie })).json();
     expect(data.lists.find((l) => l.id === 'auto-recent').items).toEqual(['sn1.2', 'sn1.1']);
   });
 
-  // As in routes/lists.js, `AND user_id = ?` is the only thing isolating one user's annotations
+  // As with the list writes, `AND user_id = ?` is the only thing isolating one user's annotations
   // from another's.
   it("never reads or writes another user's annotations", async () => {
     const owner = await signIn();
     const other = await signIn();
-    await api('/api/notes/sn1.1', { method: 'PUT', cookie: owner.cookie, body: { text: 'private' } });
-    await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie: owner.cookie,
-      body: { suttaId: 'sn1.1', color: 'yellow', g: 'owner-group', erase: [], ranges: [{ i: 0, s: 0, e: 10 }] },
+    await note(owner.cookie, 'sn1.1', 'private');
+    await highlight(owner.cookie, {
+      suttaId: 'sn1.1',
+      color: 'yellow',
+      g: 'owner-group',
+      erase: [],
+      ranges: [{ i: 0, s: 0, e: 10 }],
     });
-    await api('/api/visited/sn1.1', { method: 'POST', cookie: owner.cookie });
+    await visited(owner.cookie, 'sn1.1');
 
     const otherData = await (await api('/api/data', { cookie: other.cookie })).json();
     expect(otherData).toEqual({ lists: [], membership: {}, notes: {}, highlights: {}, visited: {} });
 
     // Same-sutta writes by the other user must not touch the owner's rows — including an erase
     // naming the owner's own group id, which every statement's `AND user_id = ?` is what stops.
-    await api('/api/notes/sn1.1', { method: 'PUT', cookie: other.cookie, body: { text: '' } });
-    await api('/api/highlights/ranges', {
-      method: 'PUT',
-      cookie: other.cookie,
-      body: { suttaId: 'sn1.1', color: null, erase: ['owner-group'], ranges: [{ i: 0, s: 0, e: 10 }] },
-    });
+    await note(other.cookie, 'sn1.1', '');
+    await highlight(other.cookie, { suttaId: 'sn1.1', color: null, erase: ['owner-group'], ranges: [{ i: 0, s: 0, e: 10 }] });
 
     const ownerData = await (await api('/api/data', { cookie: owner.cookie })).json();
     expect(ownerData.notes['sn1.1'].text).toBe('private');

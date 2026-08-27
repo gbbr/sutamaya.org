@@ -17,11 +17,11 @@ import { describe, expect, it } from 'vitest';
 describe('asset vs API routing', () => {
   it('answers an unmatched /api path from the Worker, not the SPA shell', async () => {
     const res = await SELF.fetch('https://x/api/definitely-not-a-route');
-    // Deliberately not asserting the status: an unmatched /api/* path 401s rather than 404s,
-    // because annotationsRouter is mounted at /api and its requireAuth runs before Hono's own 404
-    // can. That is incidental to mount order. What matters is that a JSON body came back from the
-    // Worker at all, rather than index.html.
+    // A JSON error code from index.js's notFound handler, rather than index.html — which is the
+    // thing under test here: the request reached the Worker at all.
+    expect(res.status).toBe(404);
     expect(res.headers.get('content-type')).toMatch(/application\/json/);
+    expect(await res.json()).toEqual({ error: 'not_found' });
   });
 
   it('serves a static file from the assets binding', async () => {

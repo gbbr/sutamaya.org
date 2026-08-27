@@ -4,7 +4,6 @@ import { webOrigins } from './oauth.js';
 import { checkRateLimit } from './rateLimit.js';
 import { authRouter } from './routes/auth.js';
 import { listsRouter } from './routes/lists.js';
-import { annotationsRouter } from './routes/annotations.js';
 import { dataRouter } from './routes/data.js';
 
 const app = new Hono();
@@ -48,10 +47,9 @@ app.get('/api/health', async (c) => {
 });
 
 app.route('/api/auth', authRouter);
+// Reads only. Every write in the app — lists, notes, highlights, visits — goes to
+// POST /api/data/push under the router below.
 app.route('/api/lists', listsRouter);
-// Mounted at /api, not /api/annotations — its routes are /notes/*, /highlights/* and /visited/*,
-// which are the client's actual paths.
-app.route('/api', annotationsRouter);
 app.route('/api/data', dataRouter);
 
 // Every error body is `{error: <snake_case code>}`. Nothing outside the sign-in form displays one —
@@ -62,5 +60,11 @@ app.onError((err, c) => {
   console.error(err);
   return c.json({ error: 'internal_error' }, 500);
 });
+
+// An /api path matching no route answers in the same shape as every other error here, rather than
+// Hono's plain-text default. Non-/api paths don't normally get this far — `assets.run_worker_first`
+// keeps them at the asset router, which serves the SPA shell so deep links resolve (see
+// assetRouting.test.js) — so the plain text is only what a misconfiguration would surface.
+app.notFound((c) => (c.req.path.startsWith('/api/') ? c.json({ error: 'not_found' }, 404) : c.text('404 Not Found', 404)));
 
 export default app;

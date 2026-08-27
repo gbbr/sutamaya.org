@@ -1,6 +1,8 @@
 import { Hono } from 'hono';
 import { requireAuth, findUserById } from '../auth.js';
+import { jsonBody } from '../jsonBody.js';
 import { assembleUserData } from '../lib/userData.js';
+import { applyWrite } from '../lib/writes.js';
 
 export const dataRouter = new Hono();
 dataRouter.use(requireAuth);
@@ -55,6 +57,39 @@ async function buildUserData(db, userId) {
 }
 
 dataRouter.get('/', async (c) => c.json(await buildUserData(c.env.DB, c.get('userId'))));
+
+// How many items one push may carry. The Worker has a CPU budget and D1 a statement limit, and the
+// items run one at a time, so the cap is what keeps a queue of any size from turning into a request
+// that times out halfway. The client chunks at the same number and loops until its queue drains.
+export const PUSH_MAX_ITEMS = 100;
+
+// The app's only write endpoint: every record and operation the mirror owes the server, in the
+// order the user produced them, answered with one result per item. Paired with GET / above, one
+// sync is two requests no matter how much is queued — which is the point, since a first sign-in
+// after a long signed-out session used to issue one request per edit and trip the rate limiter.
+//
+// **Not atomic**, like CouchDB's `_bulk_docs`: `results[i]` corresponds to `items[i]`, and a
+// refused item neither rolls back the ones before it nor blocks the ones after it. A refusal is
+// permanent by definition (see docs/offline-sync.md's "Sync state"), so the client retires that one
+// item and lets the following pull rebase the row.
+//
+// **Order is preserved**, which is why the items run sequentially rather than as a `db.batch`: an
+// add and a later remove of the same sutta only mean what they should in that order, and a list
+// create must land before the child naming it as parent.
+//
+// Anything that stops the whole push — a lapsed session, the rate limiter, an unreachable
+// database — stays a whole-request status, so the client can keep its queue intact and try again.
+dataRouter.post('/push', async (c) => {
+  const body = await jsonBody(c);
+  const items = Array.isArray(body?.items) ? body.items : null;
+  if (!items) return c.json({ error: 'items_required' }, 400);
+  if (items.length > PUSH_MAX_ITEMS) return c.json({ error: 'too_many_items' }, 400);
+  const db = c.env.DB;
+  const userId = c.get('userId');
+  const results = [];
+  for (const item of items) results.push(await applyWrite(db, userId, item));
+  return c.json({ results });
+});
 
 dataRouter.get('/export', async (c) => {
   // requireAuth never reads the database (see its comment in auth.js) — this is the one route under

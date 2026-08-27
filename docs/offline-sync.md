@@ -24,17 +24,18 @@ conflict does happen, one side wins and the other is gone — see "Accepted loss
 
 ### 1. Client-generated ids
 
-`POST /lists` and `PUT /highlights/ranges` take an id minted by the client. That is what makes
-offline creation possible at all: the client names the thing, so every later reference to it —
-rename, move, file a sutta into it, delete it — is valid before the server has ever heard of it. It
-also makes a create idempotent, since a re-sent create carries the same primary key.
+A `list.create` and a `highlight` write carry an id minted by the client. That is what makes offline
+creation possible at all: the client names the thing, so every later reference to it — rename, move,
+file a sutta into it, delete it — is valid before the server has ever heard of it. It also makes a
+create idempotent, since a re-sent create carries the same primary key.
 
 `lists.id` is a global primary key rather than `(user_id, id)`, so `CREATE_LIST_SQL`'s
-`ON CONFLICT(id) DO NOTHING` can absorb a row belonging to *another account*. The handler inspects
-`meta.changes` and, on a skipped insert, does a user-scoped read to tell a retry (row is mine →
-`201`) from a genuine collision (row is someone else's → `409 id_collision`, and the client mints a
-fresh id). Returning `201` for the second case would hand the client an id it does not own, and every
-later write against it would 404 under the `AND user_id = ?` scope.
+`ON CONFLICT(id) DO NOTHING` can absorb a row belonging to *another account*. `createList` inspects
+`meta.changes` and, on a skipped insert, does a user-scoped read to tell a retry (row is mine → `ok`)
+from a genuine collision (row is someone else's → `409 id_collision`, and the client mints a fresh id
+and re-pushes every reference to it). Reporting success for the second case would hand the client an
+id it does not own, and every later write against it would be refused under the `AND user_id = ?`
+scope.
 
 ### 2. Tombstones
 
@@ -51,7 +52,7 @@ sharpest: "a row exists" *is* "this sutta has a note".
 
 Two write paths deliberately don't filter. `suttaListRow` accepts a tombstoned list, because a
 membership add queued offline may arrive after the list's own delete and must land on the dead row
-rather than 404 and be discarded. `invalidParentReason` likewise accepts a deleted parent, which the
+rather than be refused and discarded. `invalidParentReason` likewise accepts a deleted parent, which the
 read-time cascade then removes anyway. The cycle check in `invalidReparentReason` *does* filter, so a
 dead row can't manufacture a cycle out of a chain nothing renders.
 
@@ -88,11 +89,11 @@ should be true, so replaying one means the same thing an hour later as when the 
 
 **Operations** are the exception, for everything that edits a list's `items` and for sibling order:
 
-| Operation | Endpoint | Why an op |
+| Operation | Push item | Why an op |
 |---|---|---|
-| add / remove a sutta | `POST /lists/:id/items`, `DELETE /lists/:id/items/:suttaId` | Already idempotent and commuting (`ADD_ITEM_SQL` is `EXISTS`-guarded, `REMOVE_ITEM_SQL` is a set subtraction), so two devices each filing a different sutta into one list both stick |
-| a list's item order | `PUT /lists/:id/items/order` | Edits the same `items` column, and the server reconciles a posted order against what is stored |
-| sibling order | `PUT /lists/order` | As per-row records a single drag cost one `PATCH` per sibling — dragging the 50th list of a group to the top fired 50 requests, exhausting the `/api/*` rate limit in a couple of gestures and taking `GET /api/auth/me` down with it, which reads as a lapsed session |
+| add / remove a sutta | `item.add`, `item.remove` | Already idempotent and commuting (`ADD_ITEM_SQL` is `EXISTS`-guarded, `REMOVE_ITEM_SQL` is a set subtraction), so two devices each filing a different sutta into one list both stick |
+| a list's item order | `item.order` | Edits the same `items` column, and the server reconciles a posted order against what is stored |
+| sibling order | `sibling.order` | As per-row records a single drag cost one write per sibling — dragging the 50th list of a group to the top produced 50 of them |
 
 The test is whether an operation can be made to mean the same thing on replay. Both order endpoints
 **reconcile** rather than overwrite (`reconcileItemOrder`, `reconcileSiblingOrder`): a posted id that
@@ -103,15 +104,17 @@ kept — that is a cross-parent drop, and moving it in is the point.
 Two consequences the hybrid forces:
 
 - **A flush pushes records before operations.** A list created offline and then filled with suttas
-  produces one record and several ops, and an op naming a list the server has never seen 404s and is
-  discarded. Records first, then ops, is the whole dependency graph — ops only ever reference lists.
+  produces one record and several ops, and an op naming a list the server has never seen is refused
+  and discarded. Records first, then ops, is the whole dependency graph — ops only ever reference
+  lists. A push applies its items strictly in the order they arrive, which is what lets both this
+  and the ops' own order survive being batched into one request.
 - **Order ops are guarded against the row's own `mtime`**, the same column a rename or reparent
   writes. There is one clock on the row, and records flush ahead of ops, so a reorder queued before a
-  rename would arrive behind it and match nothing — while the endpoint still answers
-  `200 {ok:true}`, so the flush would retire the op as landed and the pull would restore the order
-  the user had just dragged away from. `editList` therefore re-stamps any queued order op naming the
-  row it stamps (`restampOrderOps`). This only moves an op ahead of *this* device's later edits;
-  against another device's it still carries the time the user acted.
+  rename would arrive behind it and match nothing — while the write still answers `{ok: true}`, so
+  the flush would retire the op as landed and the pull would restore the order the user had just
+  dragged away from. `editList` therefore re-stamps any queued order op naming the row it stamps
+  (`restampOrderOps`). This only moves an op ahead of *this* device's later edits; against another
+  device's it still carries the time the user acted.
 
 ## Highlights are immutable groups
 
@@ -130,7 +133,7 @@ missed.
 that doesn't say is a bug rather than a silent half-write, and a create without its own `g` would
 lose the idempotence the scheme rests on.
 
-The table keeps one row per segment; only the *record* is the group. `PUT /highlights/ranges` inserts
+The table keeps one row per segment; only the *record* is the group. A `highlight` write inserts
 under `INSERT OR IGNORE` on the unique `(user_id, g, i)` — so re-sending a group (a flush retried
 after a lost response) lands on the same rows rather than duplicating the highlight — and tombstones
 the displaced groups in the same `db.batch()`, tombstones first.
@@ -216,9 +219,14 @@ costs at most a 401 on the next flush, which is already the re-auth path.
 
 ### The flush
 
-Order, and what each outcome means, is A4. In summary: list records in `mtime` order, then notes,
-highlights and visits, then the ops in the order the user made them, then `GET /api/data` — a full
-snapshot, no delta protocol.
+Order, and what each outcome means, is A4. In summary: everything owed goes to `POST /api/data/push`
+as one ordered array — list records in `mtime` order, then notes, highlights and visits, then the ops
+in the order the user made them — chunked at 100 items a request and looped until the queue drains,
+then `GET /api/data`, a full snapshot with no delta protocol. **One sync is a couple of requests
+however much is queued.** Per-edit requests were the earlier shape, and they scaled sync cost with
+the number of edits rather than the number of syncs: a first sign-in after using the app signed out
+fired hundreds of them in a couple of seconds, tripping the 60/min per-IP rate limit and converging
+slowly with most of its requests refused.
 
 Nothing in the flush mutates state directly. It reports what landed, and `applyFlushOutcome` folds
 that into whatever the mirror looks like *by then*, matched on the exact `mtime` pushed — so a record
@@ -251,12 +259,17 @@ implying doubt about a write that is already durable locally works against the w
 model; `'offline'` is something the device already says, and changes nothing about whether the work
 is safe. `needsReauth` is the exception and gets a banner of its own — see below.
 
-**A write the server permanently refuses is given up on, not surfaced.** A 4xx is permanent by
-definition, so no later attempt would answer differently: the flush drops the write with a
+**A write the server permanently refuses is given up on, not surfaced.** A refused item is permanent
+by definition, so no later attempt would answer differently: the flush drops the write with a
 `console.error` and the pull hands back the account's own version of that row — the same rebase a
 write losing last-writer-wins already gets. That the two sides disagreed about validity at all is a
 bug in one of them, which is a developer's problem; the reader has nothing to decide, and there is
-no sync state, warning or discard action anywhere in the UI for them to decide it with.
+no sync state, warning or discard action anywhere in the UI for them to decide it with. There is no
+`rejected` state and no `'stuck'` status: a per-item refusal retires the item, it never re-queues it.
+
+This is also why the push is **not atomic** — per-item results, like CouchDB's `_bulk_docs`. One item
+the server won't take must not hold up everything queued behind it, and the items before it in the
+same request are not rolled back.
 
 A 401 sets `needsReauth` and pauses the flush with the queue intact. It deliberately does *not* call
 `promptGoogleSignIn()` itself: that navigates to Settings, and firing it from a background flush
@@ -318,8 +331,8 @@ Things a change here must not break:
 - **Membership resolves add-versus-remove by arrival order**, not by timestamp, since it stays
   operation-based. Giving `items` per-entry metadata to fix that would be a merge algorithm for a
   case worth less than it costs.
-- **A 404 retires a write.** The row is gone (deleted elsewhere, or cascaded out with an ancestor),
-  so the write is moot rather than failed.
+- **A `not_found` result retires a write.** The row is gone (deleted elsewhere, or cascaded out with
+  an ancestor), so the write is moot rather than failed.
 - **Cross-parent order and reparent share the row's one clock.** `restampOrderOps` widens local
   precedence slightly: an order op re-stamped after a local rename can beat another device's edit
   made in between. One clock per row is the deliberate simplification (per-field clocks cost three
@@ -412,27 +425,35 @@ Triggers: app load once the mirror is read, ~2s debounced after any mutation, th
 `visibilitychange` to visible, and a 5-minute poll as a backstop. Never per keystroke — note editing
 commits on Enter/blur.
 
-Order:
+`buildQueue` (`lib/sync.ts`) assembles one ordered array, which goes to `POST /api/data/push` in
+chunks of `CHUNK_SIZE` (100, matching the Worker's `PUSH_MAX_ITEMS`) until it drains:
 
 1. **List records, in `mtime` order** — so a parent reaches the server before the child naming it
-   (`POST /lists` rejects an unknown parent), and so the server's own prepend reproduces the order
-   the user created them in. Each record is a `DELETE`, a `POST` or a `PATCH` depending on
-   `deleted`/`pendingCreate`.
+   (a create naming an unknown parent is refused), and so the server's own prepend reproduces the
+   order the user created them in. Each record is a `list.delete`, a `list.create` or a
+   `list.update` depending on `deleted`/`pendingCreate`.
 2. Notes, highlights, visits.
 3. **Ops, by `seq`** — the order the user made them, so an add and a later remove of the same sutta
-   mean what they should.
-4. `GET /api/data`, applied by `applySnapshot`.
+   mean what they should. The server applies a push's items strictly in order, so batching preserves
+   this.
+4. `GET /api/data`, once, after the last chunk — applied by `applySnapshot`.
 
-Per-write outcomes:
+Per-item results (`results[i]` answers `items[i]`):
 
 | Result | Handling |
 |---|---|
-| `2xx` | Acked; the dirty flag clears if the record's `mtime` still matches what was pushed |
+| `{ok: true}` | Acked; the dirty flag clears if the record's `mtime` still matches what was pushed |
+| `not_found` (404) | Write retired — the row is gone, so it is moot rather than failed |
+| `id_collision` (409) on `list.create` | Re-mint the id, rewrite every reference still queued behind it (children, ops, the ack), and re-send from that item. `MAX_ID_ATTEMPTS` fresh ids, then it is given up on |
+| any other refusal | Write given up on and logged; the pull rebases the row onto the server's version |
+
+Whole-request outcomes, which say nothing about any individual item and so retire nothing:
+
+| Result | Handling |
+|---|---|
 | `401` | Flush pauses, queue intact, `needsReauth` set |
-| `404` | Write retired — the row is gone, so it is moot rather than failed |
-| `409` on `POST /lists` | Re-mint the id and rewrite every local reference (children, queued ops) |
-| retryable (429/5xx/network/timeout) | Flush stops partway; the rest goes next time |
-| other permanent (400) | Write given up on and logged; the pull rebases the row onto the server's version |
+| retryable (429/5xx/network/timeout) | Flush stops partway; the unsent remainder goes next time |
+| any other failure | A malformed push — a bug in this client. Logged; the queue is kept |
 
 Applying a pull is **replace clean, keep dirty**, plus two rules the record model alone doesn't give:
 still-queued ops are replayed over the pulled rows (or a change made offline blinks out of the UI on

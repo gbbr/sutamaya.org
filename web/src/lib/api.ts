@@ -68,59 +68,46 @@ export interface UserData {
   visited: VisitedMap;
 }
 
-export const dataApi = {
-  all: () => request<UserData>('/data'),
-  exportUrl: '/api/data/export',
-};
-
-// Every mutating call carries the `mtime` its record was stamped with when the user acted (see
-// lib/mtime.ts); the server stores the write only if that beats what it already has. The mirror's
-// flush (lib/sync.ts) is the only caller — it pushes a dirty record's desired state, not the
-// gesture that produced it.
-export const listsApi = {
+// One item of a push — a record's desired state, or an operation. Every one carries the `mtime` its
+// record was stamped with when the user acted (see lib/mtime.ts); the server stores the write only
+// if that beats what it already has. The mirror's flush (lib/sync.ts) is the only producer.
+export type PushItem =
   // `id` is minted by the client, so a list created offline can be renamed, filed into and moved
   // before it reaches the server. The insert is ON CONFLICT DO NOTHING, so replaying a create is a
-  // no-op — unless the id belongs to another account, which answers 409 `id_collision` and is the
-  // flush's cue to mint a fresh one.
-  create: (list: { id: string; label: string; parentId: string | null; kind: ListKind; mtime: string }) =>
-    request<{ list: ListDef }>('/lists', { method: 'POST', body: JSON.stringify(list) }),
-  // Carries a list's whole mutable row — label and parent. Sibling order is not part of it: that
-  // travels as one `reorder` call per gesture.
-  update: (id: string, patch: { label?: string; parentId?: string | null; mtime: string }) =>
-    request<{ ok: true }>(`/lists/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify(patch) }),
-  // One parent's children, in order. The server reconciles the posted order against the rows that
-  // actually exist, so this is safe to replay from an offline queue.
-  reorder: (parentId: string | null, order: string[], mtime: string) =>
-    request<{ ok: true }>('/lists/order', { method: 'PUT', body: JSON.stringify({ parentId, order, mtime }) }),
-  remove: (id: string, mtime: string) =>
-    request<{ ok: true }>(`/lists/${encodeURIComponent(id)}`, { method: 'DELETE', body: JSON.stringify({ mtime }) }),
-  addItem: (id: string, suttaId: string) => request<{ ok: true }>(`/lists/${encodeURIComponent(id)}/items`, { method: 'POST', body: JSON.stringify({ suttaId }) }),
-  removeItem: (id: string, suttaId: string) => request<{ ok: true }>(`/lists/${encodeURIComponent(id)}/items/${encodeURIComponent(suttaId)}`, { method: 'DELETE' }),
-  reorderItems: (id: string, order: string[], mtime: string) =>
-    request<{ ok: true }>(`/lists/${encodeURIComponent(id)}/items/order`, { method: 'PUT', body: JSON.stringify({ order, mtime }) }),
-};
-
-export const notesApi = {
-  set: (suttaId: string, text: string, mtime: string) =>
-    request<{ ok: true }>(`/notes/${encodeURIComponent(suttaId)}`, { method: 'PUT', body: JSON.stringify({ text, mtime }) }),
-};
-
-export const highlightsApi = {
-  // `group` makes the write replayable: `g` names the group being created, `erase` the groups this
-  // selection displaces, `mtime` when the user acted. See worker/src/routes/annotations.js.
-  setRanges: (
-    suttaId: string,
-    ranges: { i: number; s: number; e: number }[],
-    color: string | null,
-    group: { g: string; mtime: string; erase: string[] }
-  ) => request<{ ok: true }>('/highlights/ranges', { method: 'PUT', body: JSON.stringify({ suttaId, ranges, color, ...group }) }),
-};
-
-export const visitedApi = {
-  // `visited` has no separate mtime column: visited_at is both the value stored and the guard the
+  // no-op — unless the id belongs to another account, which is refused `id_collision` (409) and is
+  // the flush's cue to mint a fresh one.
+  | { type: 'list.create'; id: string; label: string; parentId: string | null; kind: ListKind; mtime: string }
+  // A list's whole mutable row — label and parent. Sibling order is not part of it: that travels as
+  // one `sibling.order` operation per gesture.
+  | { type: 'list.update'; id: string; label: string; parentId: string | null; mtime: string }
+  | { type: 'list.delete'; id: string; mtime: string }
+  | { type: 'item.add'; listId: string; suttaId: string }
+  | { type: 'item.remove'; listId: string; suttaId: string }
+  | { type: 'item.order'; listId: string; order: string[]; mtime: string }
+  // One parent's children, in order (`parentId: null` for the top level). The server reconciles the
+  // posted order against the rows that actually exist, so this is safe to replay from an offline
+  // queue.
+  | { type: 'sibling.order'; parentId: string | null; order: string[]; mtime: string }
+  | { type: 'note'; suttaId: string; text: string; mtime: string }
+  // Replayable because the client decides identity: `g` names the group being created, `erase` the
+  // groups this selection displaces. See worker/src/lib/writes.js.
+  | { type: 'highlight'; suttaId: string; ranges: { i: number; s: number; e: number }[]; color: string | null; g: string; erase: string[]; mtime: string }
+  // `visited` has no separate mtime column: visitedAt is both the value stored and the guard the
   // write is conditional on.
-  mark: (suttaId: string, visitedAt: string) =>
-    request<{ ok: true }>(`/visited/${encodeURIComponent(suttaId)}`, { method: 'POST', body: JSON.stringify({ visitedAt }) }),
+  | { type: 'visited'; suttaId: string; visitedAt: string };
+
+// What the server says about one pushed item. A refusal is permanent by definition, so `status` is
+// there to be logged and told apart from a row that has simply gone (404), never to be retried.
+export type PushResult = { ok: true } | { error: string; status: number };
+
+export const dataApi = {
+  all: () => request<UserData>('/data'),
+  // The app's only write. Results come back positionally — `results[i]` answers `items[i]` — and a
+  // refused item neither rolls back nor blocks the rest, which is what lets one sync be a couple of
+  // requests instead of one per edit. Anything that fails the request as a whole (401, 429, 5xx,
+  // no network) throws, leaving the caller's queue intact.
+  push: (items: PushItem[]) => request<{ results: PushResult[] }>('/data/push', { method: 'POST', body: JSON.stringify({ items }) }),
+  exportUrl: '/api/data/export',
 };
 
 export type { Highlight };
