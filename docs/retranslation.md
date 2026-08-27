@@ -347,6 +347,7 @@ for what sounds wrong, not just for what matched wrong.
   for *vaya* and once for *antaradhāyati*, only a segment override separates them.
 - **Upstream additions don't arrive.** `apply` iterates the files named in `snapshot.json`, so a
   newly added sutta needs a deliberate snapshot regeneration.
-- **Already-cached readers don't see the change.** Per-sutta text is `CacheFirst` with a one-year
-  TTL and no cache-busting (CLAUDE.md's "Known gaps"), so your own browser is not a test of whether
-  a rule shipped.
+- **Already-cached readers see the change one visit late.** Per-sutta text is
+  `StaleWhileRevalidate` on an unversioned URL (CLAUDE.md's "Known gaps"), so a sutta you have open
+  serves the copy you already had and fetches the new one behind it; it renders on the next app
+  start. Your own browser is therefore not a first-visit test of whether a rule shipped.

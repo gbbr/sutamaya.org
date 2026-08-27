@@ -347,7 +347,7 @@ Things a change here must not break:
   to the user rather than engineered around: the header banner prompts once there is something
   worth keeping, and Settings says it permanently where the eviction policy actually applies.
 - **Highlight offsets are content coordinates, not anchors.** `(i, s, e)` index into segment text, so
-  an `update-data` corpus refresh — or a device holding a stale `CacheFirst` copy of a sutta — can
+  an `update-data` corpus refresh — or a device still holding the pre-refresh copy of a sutta — can
   leave a stored range denoting different text. Out of scope here; fixing it needs anchoring on a
   quoted prefix/suffix.
 - **No hybrid logical clocks, no delta pull, no batch sync endpoint.** Device clocks all NTP-sync and

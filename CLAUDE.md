@@ -236,7 +236,10 @@ UI is gated on a session except the flush itself.
 
 `corpus.json`, the app shell, the self-hosted latin font subsets and `dict-shards/manifest.json` are
 precached. Dictionary shards and per-sutta text are **not** — `vite.config.ts`'s `runtimeCaching`
-caches them `CacheFirst` on first request, so a device holds whatever it has actually read.
+caches them on first request, so a device holds whatever it has actually read. Both are
+`StaleWhileRevalidate` rather than `CacheFirst`, since their URLs carry no version: a read is served
+from the cache at once and the background fetch refreshes the entry for the next app start. Help
+screenshots and fonts stay `CacheFirst` — those filenames are content-hashed or renamed by hand.
 `/api/*` is `NetworkOnly`.
 
 Settings has a "Download all suttas for offline" action (`web/src/lib/offline.ts`) that fetches the
@@ -287,16 +290,23 @@ started with.
   collection. It shows a "Source: SuttaCentral (modified)" line instead, linking to the `sc-data`
   commit and to `docs/translation-changes.md`, which is the plain-language summary written for a
   reader rather than a maintainer.
-- **Cache staleness has no revalidation path for unversioned URLs.** `data/dict-shards/*.json`,
-  `data/text/{uid}.json` and `/fonts/*.woff2` are `CacheFirst` with a 1-year expiration, so a data or
-  font fix never reaches a device that already cached that exact path until the TTL lapses, the
-  8000-entry cap evicts it, or site data is cleared. `/assets/*` is safe only because Vite
-  content-hashes those filenames.
+- **A corpus fix reaches a cached device one document at a time.** `data/dict-shards/*.json` and
+  `data/text/{uid}.json` are unversioned URLs on `StaleWhileRevalidate`, so a device catches up per
+  document, on that document's second online visit — the first serves the stale copy and refreshes
+  it in the background, and `loadSuttaText`'s per-session memo means the refreshed text appears at
+  the next app start. A device therefore holds a mix of versions for as long as it takes the reader
+  to revisit, which is accepted: the mix drains as they read. Versioning the URLs is the real fix,
+  and it needs per-sutta hashes — `dataVersion` is one hash over the whole corpus, so using it would
+  change all ~1,400 URLs on any change and cost every device its entire offline library.
 
-  Bulk downloaders have an opt-in way out: `corpus.json` carries `dataVersion` and
+  `/fonts/*.woff2` is still `CacheFirst` with no revalidation path; a font fix means renaming the
+  file, as the PWA icons already do. `/assets/*` is safe because Vite content-hashes those names.
+
+  Bulk downloaders get a stronger guarantee on top: `corpus.json` carries `dataVersion` and
   `dictionaryVersion`, `lib/offline.ts` records what a device last completed a full download at, and
   a mismatch surfaces an "Updated sutta text is available" banner plus a re-download action in
-  Settings. Nothing helps someone who never bulk-downloaded; versioning those URLs is the real fix.
+  Settings. Revalidation makes that marker approximate rather than exact — individual suttas refresh
+  as they are read, so a downloaded library drifts off its recorded version between re-downloads.
 - Deleting a list or group is a single inline confirmation with no undo, and nothing stops a
   non-empty one — a list's suttas and a group's whole nested subtree go with it. The prompt names
   only the row itself; the row's own count badge is the sole indication of what's inside. Once

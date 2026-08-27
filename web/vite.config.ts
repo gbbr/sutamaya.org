@@ -77,17 +77,25 @@ export default defineConfig({
         globIgnores: ['**/gelasio-*.woff2', '**/gentium-*.woff2'],
         navigateFallbackDenylist: [/^\/api\//],
         runtimeCaching: [
+          // These two paths are unversioned — a corrected sutta or gloss keeps its URL — so they
+          // revalidate rather than serving the cache forever. A read is answered from the cache
+          // immediately (offline included, which is the whole point), and the fresh copy that the
+          // background fetch brings back is what the *next* app start reads: loadSuttaText
+          // memoizes per session, so nothing is ever swapped under a reader mid-sutta. Each
+          // document therefore catches up on its own second online visit, so a device holds a mix
+          // of versions for as long as it takes the reader to revisit — accepted, because the mix
+          // drains as they read instead of persisting for the full year the entries live.
           {
             // One entry per dictionary range shard (see scripts/build-corpus.mjs) — the reader
             // fetches only the shard a tapped word falls in, so these accumulate as words are
             // looked up, and "download for offline" fills in the rest.
             urlPattern: /\/data\/dict-shards\/.*\.json$/,
-            handler: 'CacheFirst',
+            handler: 'StaleWhileRevalidate',
             options: { cacheName: 'dictionary', expiration: { maxEntries: 200, maxAgeSeconds: 60 * 60 * 24 * 365 } },
           },
           {
             urlPattern: /\/data\/text\/.*\.json$/,
-            handler: 'CacheFirst',
+            handler: 'StaleWhileRevalidate',
             options: {
               cacheName: 'sutta-text',
               expiration: { maxEntries: 8000, maxAgeSeconds: 60 * 60 * 24 * 365 },
@@ -98,9 +106,9 @@ export default defineConfig({
             // never open, so they are not precached; they land here on first view of /help, and
             // Settings' bulk offline download fills them in (prefetchHelpImages in lib/offline.ts)
             // so a device that has "downloaded all content" can still read the guide in airplane
-            // mode. CacheFirst with no revalidation is safe here, unlike the unversioned /data/
-            // paths (see CLAUDE.md "Cache staleness"), because Vite content-hashes these
-            // filenames: a re-captured screenshot arrives as a new URL rather than a stale hit.
+            // mode. CacheFirst is right here, rather than the revalidation the /data/ paths above
+            // need, because Vite content-hashes these filenames: a re-captured screenshot arrives
+            // as a new URL rather than a stale hit, so there is nothing to revalidate against.
             urlPattern: /\/assets\/.*\.webp$/,
             handler: 'CacheFirst',
             options: { cacheName: 'help-images', expiration: { maxEntries: 40, maxAgeSeconds: 60 * 60 * 24 * 365 } },
