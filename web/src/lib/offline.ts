@@ -3,24 +3,21 @@ import { OFFLINE_DATA_VERSION_KEY, OFFLINE_DICTIONARY_VERSION_KEY } from './stor
 
 const SUTTA_TEXT_CACHE = 'sutta-text';
 const MANIFEST_URL = '/data/text-shards/manifest.json';
-// Must match vite.config.ts's runtimeCaching cacheName/urlPattern for these URLs — writing here
-// under any other name/key would leave the SW's own CacheFirst rule unable to find them.
+// Must match vite.config.ts's runtimeCaching cacheName/urlPattern for these URLs, or the Service
+// Worker's CacheFirst rule can't find what this module writes.
 const DICTIONARY_CACHE = 'dictionary';
 const HELP_IMAGE_CACHE = 'help-images';
 
-// Every screenshot on the help page. Globbed rather than listed so this can't drift from what
-// HelpPage.tsx actually imports — the glob covers the whole directory, so a shot added there is
-// downloaded for offline use without anyone remembering to update a second list. Vite resolves
-// this at build time to the same content-hashed URLs the page requests, which is what lets a
-// cache entry written here satisfy the page's own <img> later.
+// Every screenshot on the help page. Globbed rather than listed so it can't drift from what
+// HelpPage.tsx imports. Vite resolves the glob at build time to the same content-hashed URLs the
+// page requests, so a cache entry written here satisfies the page's own <img>.
 const HELP_IMAGE_URLS = Object.values(
   import.meta.glob('../assets/help/*.webp', { eager: true, query: '?url', import: 'default' })
 ) as string[];
 
-// Exported so tests can advance fake timers by the real value instead of duplicating it. Shards
-// are ~1MB bundles of many suttas (see scripts/build-corpus.mjs's SHARD_TARGET_BYTES), not the
-// single small file a reactive per-sutta read fetches, so this budget is deliberately much
-// larger than a single-file fetch would need.
+// Generous, because a shard is a ~1MB bundle of many suttas (scripts/build-corpus.mjs's
+// SHARD_TARGET_BYTES), not the single small file a reactive per-sutta read fetches. Exported so
+// tests can advance fake timers by the real value.
 export const SHARD_FETCH_TIMEOUT_MS = 60_000;
 
 export interface ShardEntry {
@@ -50,10 +47,9 @@ async function fetchManifest(signal: AbortSignal | undefined): Promise<ShardMani
   return res.json();
 }
 
-// Resolves to `false` the moment `signal` fires abort — whether that's from SHARD_FETCH_TIMEOUT_MS
-// elapsing or the caller cancelling — without waiting for whatever it's racing against to notice.
-// The Cache API's put() takes no cancellation mechanism of its own, so this is what lets a stuck
-// cache.put() actually be abandoned instead of blocking.
+// Resolves to `false` the moment `signal` aborts, without waiting for whatever it is racing to
+// notice. The Cache API's put() has no cancellation of its own, so this is what lets a stuck
+// cache.put() be abandoned.
 function abortedAsFailure(signal: AbortSignal): Promise<false> {
   return new Promise((resolve) => {
     if (signal.aborted) {
@@ -64,21 +60,18 @@ function abortedAsFailure(signal: AbortSignal): Promise<false> {
   });
 }
 
-// Fetches one shard bundle and writes each of its suttas directly into the sutta-text Cache
-// Storage cache, under the exact same per-uid URL the reactive CacheFirst rule (vite.config.ts)
-// uses at read time — so a bulk download and an ordinary "open this sutta" populate the same
-// cache entries, and the reader never knows which path put something there. Written directly
-// from the page rather than trusting a resolved fetch() to imply the Service Worker's own
-// CacheFirst rule succeeded — Workbox swallows cache-write errors internally, which previously
-// let a failed cache.put() on the SW side report as "success" for items never actually persisted.
+// Fetches one shard bundle and writes each of its suttas into the sutta-text cache under the exact
+// per-uid URL the reactive CacheFirst rule (vite.config.ts) reads, so a bulk download and an
+// ordinary "open this sutta" produce identical entries. Written from the page rather than left to
+// the Service Worker: Workbox swallows cache-write errors internally, so a resolved fetch() there
+// doesn't mean the entry persisted.
 async function fetchAndCacheShard(cache: Cache, shard: ShardEntry, signal: AbortSignal | undefined): Promise<boolean> {
   const controller = new AbortController();
   const onAbort = () => controller.abort();
   signal?.addEventListener('abort', onAbort);
   if (signal?.aborted) controller.abort();
-  // Also aborts `controller` on timeout (not just rejecting independently of it) — so a stuck
-  // fetch() is actually cancelled rather than abandoned to keep consuming network in the
-  // background once this function has moved on.
+  // Aborts `controller` on timeout, so a stuck fetch() is cancelled rather than left consuming
+  // network after this function has moved on.
   const timer = setTimeout(() => controller.abort(), SHARD_FETCH_TIMEOUT_MS);
   try {
     const work = (async () => {
@@ -86,13 +79,10 @@ async function fetchAndCacheShard(cache: Cache, shard: ShardEntry, signal: Abort
       if (!res.ok) return false;
       const bundle = (await res.json()) as Record<string, unknown>;
       for (const uid of shard.uids) {
-        // Re-checked on every iteration, not just at the top — abortedAsFailure below can already
-        // have won the race by the time this loop is partway through, in which case
-        // fetchAndCacheShard has already returned `false` to its caller. Writing more entries to
-        // the cache anyway at that point would silently cache uids this function already reported
-        // as failed — the exact "reported state and real cache state disagree" problem this
-        // module exists to avoid. A retry re-fetches and overwrites the whole shard regardless, so
-        // any entries written before the abort are harmless, just redundant.
+        // Re-checked every iteration: abortedAsFailure can win the race partway through this loop,
+        // by which point this shard has already been reported as failed. Writing on would cache
+        // uids the caller was told about as failures. Entries written before the abort are
+        // harmless — a retry refetches and overwrites the whole shard.
         if (controller.signal.aborted) return false;
         const segs = bundle[uid];
         if (segs === undefined) return false; // malformed/stale shard — don't silently under-cache
@@ -120,10 +110,9 @@ async function cachedUidSet(cache: Cache, uids: string[]): Promise<Set<string>> 
   return cached;
 }
 
-// A shard can only be fetched whole — resumability is per shard, not per sutta, which is the
-// tradeoff for cutting ~4000 requests down to a few dozen. "Satisfied" means every uid this caller
-// actually wants out of that shard is already individually cached, so the shard can be skipped
-// entirely rather than re-downloaded.
+// A shard can only be fetched whole, so resumability is per shard rather than per sutta.
+// "Satisfied" means every uid this caller wants out of that shard is already individually cached,
+// and the shard can be skipped.
 function shardSatisfied(shard: ShardEntry, wanted: Set<string>, cached: Set<string>): boolean {
   return shard.uids.every((u) => !wanted.has(u) || cached.has(u));
 }
@@ -132,10 +121,9 @@ function failedUidsOf(shards: ShardEntry[], wanted: Set<string>): string[] {
   return [...new Set(shards.flatMap((s) => s.uids.filter((u) => wanted.has(u))))];
 }
 
-// Three full batches' worth of failures in a row, at the default concurrency — past this point,
-// it's no longer plausible this is ordinary flakiness (a device genuinely low on free storage,
-// say, where every new cache.put() from here on is doomed), so the circuit trips rather than
-// burning a full SHARD_FETCH_TIMEOUT_MS proving that for every remaining shard.
+// Three full batches' worth of failures in a row at the default concurrency, past which this is no
+// longer ordinary flakiness — a device out of storage, say, where every further cache.put() is
+// doomed. The circuit trips rather than burning a SHARD_FETCH_TIMEOUT_MS on every remaining shard.
 const SHARD_CONCURRENCY = 4;
 const MAX_CONSECUTIVE_FAILURES = SHARD_CONCURRENCY * 3;
 
@@ -165,8 +153,7 @@ async function runShardPass(
     });
     onProgress?.(doneBytes.n, totalBytes);
     if (consecutiveFailures >= MAX_CONSECUTIVE_FAILURES) {
-      // Whatever's left is presumed doomed too — reported as failed without spending another
-      // SHARD_FETCH_TIMEOUT_MS on each to prove it.
+      // Whatever is left is presumed doomed too, and reported as failed without being attempted.
       failed.push(...shards.slice(i + concurrency));
       return { failed, circuitTripped: true };
     }
@@ -174,10 +161,10 @@ async function runShardPass(
   return { failed, circuitTripped: false };
 }
 
-// `force` refetches every shard instead of skipping the uids already present, overwriting each
-// cache entry in place. That's how a device whose cached text can't be vouched for is brought up
-// to date — deleting the cache first would do the same thing, but a download that then fails or is
-// cancelled would leave it with less offline text than it started with (see SettingsPage).
+// `force` refetches every shard instead of skipping uids already present, overwriting each cache
+// entry in place. That is how a device whose cached text can't be vouched for is brought up to
+// date: clearing the cache first would leave a failed or cancelled run with less offline text than
+// it started with.
 export async function prefetchAllSuttas(
   uids: string[],
   opts: {
@@ -194,9 +181,8 @@ export async function prefetchAllSuttas(
   const wanted = new Set(uids);
   const cached = force ? new Set<string>() : await cachedUidSet(cache, uids);
 
-  // Restricted to shards that actually contain at least one wanted uid — irrelevant in practice
-  // ("download all suttas" always wants everything the manifest has), but keeps this correct if
-  // that ever changes without needing to special-case "download everything".
+  // Only shards holding at least one wanted uid. Today's caller wants everything the manifest has,
+  // but this keeps a narrower `uids` correct.
   const relevantShards = manifest.shards.filter((s) => s.uids.some((u) => wanted.has(u)));
   const totalBytes = relevantShards.reduce((n, s) => n + s.bytes, 0);
   const doneBytes = { n: relevantShards.filter((s) => shardSatisfied(s, wanted, cached)).reduce((n, s) => n + s.bytes, 0) };
@@ -209,20 +195,16 @@ export async function prefetchAllSuttas(
   }
 
   // One retry pass over whatever failed, reporting through the same onProgress callback so the UI
-  // keeps moving rather than looking frozen while this is still working.
+  // keeps moving.
   const second = await runShardPass(cache, first.failed, concurrency, signal, onProgress, doneBytes, totalBytes);
   return { failed: failedUidsOf(second.failed, wanted), circuitTripped: second.circuitTripped };
 }
 
-// Pulls every dictionary shard into Cache Storage. The reader only ever fetches the shard a tap
-// needs, so without this an offline device has whatever words it happened to look up online and
-// nothing else — where the reader is expected to work fully offline once a download has been
-// done. Written directly into Cache Storage the same way fetchAndCacheShard above writes sutta
-// text, for the same reason: don't trust a resolved fetch() to imply the Service Worker's own
-// cache write succeeded.
+// Pulls every dictionary shard into Cache Storage. The reader only fetches the shard a tap needs,
+// so without this an offline device holds whatever words it happened to look up online. Written
+// directly into Cache Storage, for the same reason fetchAndCacheShard above is.
 //
-// `force` refetches shards already present rather than skipping them, overwriting them in place —
-// see prefetchAllSuttas above for why that beats clearing the cache first.
+// `force` refetches shards already present, overwriting them in place — see prefetchAllSuttas.
 export async function prefetchDictionary(signal?: AbortSignal, force = false): Promise<boolean> {
   if (!('caches' in window)) return false;
   try {
@@ -254,17 +236,14 @@ export async function prefetchDictionary(signal?: AbortSignal, force = false): P
 }
 
 // Pulls the help page's screenshots into Cache Storage alongside the canon, so "download all
-// content" leaves a device that can still read the guide with no connection — a help page that
-// goes to broken images offline would be a poor joke in an app whose whole point is working
-// offline. Written directly into the same cache the Service Worker's own CacheFirst rule reads
-// (see vite.config.ts), the same way the two prefetchers above write theirs.
+// content" leaves a device that can still read the guide offline. Written into the same cache the
+// Service Worker's CacheFirst rule reads (vite.config.ts), like the two prefetchers above.
 //
-// Best-effort by design, and deliberately without a failure state of its own in Settings: these
-// are ~630KB of illustration for a page that reads perfectly well as text, so a missing one is
-// not worth a banner next to the ones that mean the reader has no sutta text.
+// Best-effort, with no failure state of its own in Settings: these illustrate a page that reads
+// fine as text, so a missing one isn't worth a banner beside the ones that mean no sutta text.
 //
-// No `force` parameter: the filenames are content-hashed, so a re-captured screenshot is a new URL
-// that simply isn't cached yet, and one already present can never be stale.
+// No `force` parameter — the filenames are content-hashed, so a re-captured screenshot is a new URL
+// and one already cached can never be stale.
 export async function prefetchHelpImages(signal?: AbortSignal): Promise<boolean> {
   if (!('caches' in window)) return false;
   try {
@@ -289,11 +268,10 @@ export async function prefetchHelpImages(signal?: AbortSignal): Promise<boolean>
   }
 }
 
-// The corpus versions this device last completed a full download at. Written only on a clean
-// finish (see SettingsPage's handleDownloadOffline) — a partial download leaves the previous
-// value, since a half-updated cache is exactly the stale state this is here to report. Absent for
-// anyone who has never bulk-downloaded, which is also who the update nudge deliberately skips:
-// their handful of reactively-cached suttas are cheap enough to just refresh on demand.
+// The corpus versions this device last completed a full download at. Written only on a clean finish
+// (SettingsPage's handleDownloadOffline): a partial download leaves the previous value, since a
+// half-updated cache is the stale state this reports. Absent for anyone who has never
+// bulk-downloaded, who is also who the update nudge skips.
 export function cachedCorpusVersions(): { data: string | null; dictionary: string | null } {
   try {
     return {

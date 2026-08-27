@@ -30,16 +30,15 @@ function closestSeg(node: Node | null): HTMLElement | null {
   return el ? el.closest<HTMLElement>('[data-seg]') : null;
 }
 
-// Text rendered inside a segment that isn't part of its stored `en` string — the list-item's
-// "1." marker and the translator-note asterisk (see SegmentedText, which marks both). Both are
-// `user-select: none`, but that only governs what the *user* can select: `Range.toString()`
-// counts them regardless, so they have to be discounted by hand or every offset taken inside a
-// numbered-list segment lands a couple of characters right of the selection.
+// Text rendered inside a segment that isn't part of its stored `en` string: the list-item's "1."
+// marker and the translator-note asterisk, both marked by SegmentedText. They carry
+// `user-select: none`, but that governs only what the user can select — `Range.toString()` counts
+// them regardless, so they are discounted by hand.
 const IGNORED_TEXT = '[data-seg-ignore]';
 
 // How much of `pre`'s text belongs to those non-content elements. Both ranges start at the same
-// point, so an element whose end yields a shorter-or-equal string ends at or before `pre`'s own
-// end — meaning its text was counted and has to come back off.
+// point, so an element whose end yields a shorter or equal string ends at or before `pre`'s end,
+// meaning its text was counted and has to come back off.
 function ignoredLengthWithin(seg: HTMLElement, pre: Range): number {
   const preLength = pre.toString().length;
   let ignored = 0;
@@ -67,17 +66,15 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
   const { setHighlightRanges } = useUserData();
   const [pop, setPop] = useState<PopState | null>(null);
 
-  // Stepping to another sutta — by swipe, Prev/Next, keyboard or breadcrumb — leaves the popup
-  // anchored to text that is no longer on screen, and its ranges index into the sutta it was
-  // opened in, so picking a colour would write them into the new one.
+  // Stepping to another sutta leaves the popup anchored to text no longer on screen, and its ranges
+  // index into the sutta it was opened in, so picking a colour would write them into the new one.
   useEffect(() => {
     setPop(null);
   }, [suttaId]);
 
-  // Clicking directly on an already-highlighted span (as opposed to dragging a fresh selection)
-  // means "act on this highlight" — for a cross-segment one, that has to be every segment it
-  // spans, not just the one clicked, or "remove"/recolor would only touch that one piece and
-  // leave the rest behind as a separate, now-shorter highlight.
+  // Clicking directly on an already-highlighted span, rather than dragging a fresh selection, acts
+  // on that highlight — and for a cross-segment one that means every segment it spans, or a remove
+  // or recolour would leave the rest behind as a shorter highlight.
   const openPop = useCallback(
     (i: number, s: number, e: number, rect: DOMRect, on: string | null) => {
       const group = groupHighlights(highlights).find((g) => g.items.some((h) => h.i === i && h.s === s && h.e === e));
@@ -98,14 +95,13 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
       const a = closestSeg(range.startContainer);
       const b = closestSeg(range.endContainer);
       if (!a || !b) return;
-      // Anchor horizontally where the drag ended, not at the selection's center — its
-      // getClientRects() entries cover wrapped multi-line selections line by line, where the
-      // single bounding box getBoundingClientRect() gives wouldn't. A Range's start/end are in
-      // document order whichever way the user dragged, so which end the cursor lifted at comes
-      // from the Selection's focus instead: dragging backwards lands it on the first line's left
-      // edge. Vertically it's the selection's whole extent, so a popup placed above or below it
-      // never covers a line the user just selected. Only the desktop popup uses this; on mobile
-      // HighlightPopup pins itself to the bottom edge and ignores the anchor.
+      // Anchored horizontally where the drag ended rather than at the selection's centre:
+      // getClientRects() covers a wrapped multi-line selection line by line, which the single
+      // bounding box of getBoundingClientRect() doesn't. A Range's start and end are in document
+      // order whichever way the drag went, so which end the cursor lifted at comes from the
+      // Selection's focus — dragging backwards lands on the first line's left edge. Vertically it
+      // is the selection's whole extent, so a popup above or below never covers a selected line.
+      // Only the desktop popup uses this; on mobile HighlightPopup pins itself to the bottom edge.
       const rects = range.getClientRects();
       const box = range.getBoundingClientRect();
       const back = isBackwards(sel);
@@ -114,9 +110,9 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
 
       if (a === b) {
         const st = offsetWithin(a, range.startContainer, range.startOffset);
-        // Measured the same way as the start rather than from the selection's own string length:
-        // whether a `user-select: none` run inside the paragraph lands in `String(sel)` varies by
-        // browser, where offsetWithin discounts it explicitly.
+        // Measured the same way as the start rather than from the selection's string length:
+        // whether a `user-select: none` run lands in `String(sel)` varies by browser, where
+        // offsetWithin discounts it explicitly.
         const en = offsetWithin(a, range.endContainer, range.endOffset);
         if (en <= st) return;
         const i = Number(a.dataset.seg);
@@ -125,12 +121,10 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
         return;
       }
 
-      // Cross-segment selection: a Range's start/end are always in document order regardless
-      // of which way the user dragged, so `a` is guaranteed at or before `b` here — walk every
-      // [data-seg] paragraph between them (the root's whole set, since segments are the only
-      // elements carrying that attribute) and build one range per segment: the tail of `a`
-      // (selection start to end-of-segment), each segment strictly in between in full, and the
-      // head of `b` (start-of-segment to selection end).
+      // Cross-segment selection. A Range's start and end are in document order whichever way the
+      // drag went, so `a` is at or before `b`: walk every [data-seg] paragraph between them and
+      // build one range per segment — the tail of `a`, each segment in between in full, and the
+      // head of `b`.
       const root = a.closest('[data-segroot]');
       if (!root) return;
       const allSegs = [...root.querySelectorAll<HTMLElement>('[data-seg]')];
@@ -141,11 +135,10 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
       const aStart = offsetWithin(a, range.startContainer, range.startOffset);
       const bEnd = offsetWithin(b, range.endContainer, range.endOffset);
 
-      // The segment's *data* length, not its rendered DOM textContent length — the `<p
-      // data-seg>` can contain extra rendered characters beyond seg.en itself (e.g. the
-      // translator-note asterisk, see SegmentedText), which would otherwise inflate a
-      // middle/first segment's stored `e` past the end of the very text those offsets index
-      // into. Falls back to textContent only if segment data isn't available to this hook.
+      // The segment's data length, not its rendered textContent length: a `<p data-seg>` can hold
+      // characters beyond seg.en — the translator-note asterisk — which would inflate a stored `e`
+      // past the end of the text those offsets index into. Falls back to textContent only where
+      // segment data isn't available to this hook.
       const segLengths = between.map((seg) => {
         const i = Number(seg.dataset.seg);
         return { i, fullLen: segments?.[i]?.en.length ?? seg.textContent?.length ?? 0 };

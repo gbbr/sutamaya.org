@@ -35,55 +35,47 @@ export interface ListRowDraftProps {
   onDraftChange: (v: string) => void;
   onDraftKey: (e: KeyboardEvent<HTMLInputElement>) => void;
   draftInputRef: (el: HTMLInputElement | null) => void;
-  // Set to this row's own id for the network round-trip after its draft input has already closed
-  // (see useListCrud's submitDraft) — keeps this row reserving the input's row height so the new
-  // list doesn't visibly collapse-then-jump when it lands.
+  // Set to this row's id for the network round-trip after its draft input has closed (useListCrud's
+  // submitDraft), so the row keeps reserving the input's height until the new list lands.
   submittingParentId: string | null | undefined;
 }
 
 // Left indent for a row at the given nesting depth — 22px base plus 16px per level, shared by the
-// row itself and the secondary rows (delete confirm, options menu, new-list draft) beneath it so
-// they stay visually aligned under the row they belong to. Nesting itself is unlimited, but the
-// indent stops growing past MAX_INDENT_DEPTH so a deep tree can't squeeze row content off a narrow
-// screen; levels below that are still distinguishable by their expand/collapse state.
+// row and the secondary rows beneath it (delete confirm, options menu, new-list draft) so they stay
+// aligned under it. Nesting is unlimited, but the indent stops growing past MAX_INDENT_DEPTH so a
+// deep tree can't squeeze row content off a narrow screen; deeper levels are still told apart by
+// their expand state.
 const MAX_INDENT_DEPTH = 3;
 const rowIndent = (depth: number) => 22 + Math.min(depth, MAX_INDENT_DEPTH) * 16;
 
-// One row of the "My lists" tree — a list can nest other lists as children (folder-like), with
-// button-based rename/delete/move controls that always work (touch included), plus Pointer
-// Events drag-and-drop reordering/nesting when "reorder mode" (see the toggle by "My lists") is
-// on. The drag surface is a dedicated handle on the row's left edge (icon + a 30px-wide, full
-// row height touch target), not the whole row: `touchAction: none` on the row itself would also
-// block vertical scrolling of the list pane past it, and would need `userSelect: none` smeared
-// across the row to stop text selection. Confining both to the handle keeps the rest of the row
-// (title, member count, options button) scrollable and selectable as normal, matching ListPane's
-// sutta-reorder grip. A press-and-drag on the handle
-// engages once it clears a small movement threshold (a plain tap still reaches the handle's
-// no-op — nothing else lives there — harmlessly). Dropping on the inner half of a group's row
-// nests it as a child, anywhere else resolves to a sibling position (see useListTreeDrag's
-// updateDropTarget for the zone math).
+// One row of the "My lists" tree. A list can nest other lists as children, with button-based
+// rename/delete/move controls that work on touch, plus Pointer Events drag-and-drop reordering and
+// nesting while "reorder mode" is on.
 //
-// Props are grouped by concern (menu/edit/del/draft) rather than flat — keeps this at ~15
-// top-level props instead of 35. The drag props (reorderMode/dragId/indicator/
-// onRowPointerDown/getRowRef) stay flat, passed straight through from TreePane's own
-// useListTreeDrag() (itself built on the shared usePointerDragSession) — they're a single
-// cohesive concern already, so bundling them wouldn't reduce the prop count in a meaningful way.
+// The drag surface is a dedicated handle on the row's left edge — an icon plus a 30px-wide,
+// full-height touch target — rather than the whole row: `touchAction: none` on the row would block
+// the list pane's vertical scrolling past it, and would need `userSelect: none` smeared across the
+// row to stop text selection. Confining both to the handle keeps the title, count and options
+// button scrollable and selectable, matching ListPane's sutta-reorder grip. A press-and-drag
+// engages once it clears a small movement threshold; a plain tap reaches the handle's no-op.
+// Dropping on the inner half of a group's row nests it as a child, anywhere else resolves to a
+// sibling position (see useListTreeDrag's updateDropTarget for the zone math).
 //
-// Wrapped in `memo` — same reasoning as TreeRow's own memoization (see its comment): a TreePane
-// re-render triggered by something unrelated to a given row (toggling paneView, expanding a
-// sibling, navigating) shouldn't force every list row to re-render too. Requires
-// onToggle/onSelect/countFor/onRowPointerDown and the menu/edit/del/draft prop bundles to stay
-// referentially stable across such renders — see TreePane's own useCallback/useMemo wrapping of
-// each.
+// Props are grouped by concern (menu/edit/del/draft) rather than flat, which keeps this at ~15
+// top-level props instead of 35. The drag props stay flat, passed straight through from TreePane's
+// useListTreeDrag(); they are already one cohesive concern.
+//
+// Wrapped in `memo`, like TreeRow: a TreePane re-render unrelated to a given row shouldn't force
+// every list row to re-render. That requires onToggle/onSelect/countFor/onRowPointerDown and the
+// prop bundles to stay referentially stable — see TreePane's useCallback/useMemo wrapping.
 export const ListRow = memo(function ListRow({
   list,
   depth,
   nodeId,
   childrenOf,
-  // The row's right-edge count badge: distinct sutta count for a `kind: 'list'` row (see
-  // `listMemberSets`), or the number of lists/groups nested underneath for a `kind: 'group'` row
-  // (see `listGroupCounts`) — a group holds no suttas of its own, so its own badge would always
-  // read 0 if it used the same sutta-count logic.
+  // The row's right-edge count badge: distinct suttas for a `kind: 'list'` row (`listMemberSets`),
+  // or lists and groups nested underneath for a `kind: 'group'` row (`listGroupCounts`), since a
+  // group holds no suttas of its own and would always read 0 on the sutta count.
   countFor,
   listExpanded,
   onToggle,
@@ -106,9 +98,8 @@ export const ListRow = memo(function ListRow({
   childrenOf: (parentId: string) => ListDef[];
   countFor: (l: ListDef) => number;
   listExpanded: Record<string, boolean>;
-  // `deep` is ⌥-click: collapse this group and every group nested inside it, rather than
-  // leaving them flagged open to reappear on the next expand. See TreePane's
-  // toggleListExpanded, and TreeRow for the corpus tree's identical gesture.
+  // `deep` is ⌥-click: collapse this group and every group inside it, rather than leaving them
+  // flagged open to reappear on the next expand. See TreePane's toggleListExpanded.
   onToggle: (id: string, deep?: boolean) => void;
   onSelect: (id: string) => void;
   menu: ListRowMenuProps;
@@ -143,12 +134,10 @@ export const ListRow = memo(function ListRow({
       <div
         ref={getRowRef(list.id)}
         data-node-id={list.id}
-        // The row itself carries the click (not just the label button inside it) so the
-        // indentation and inter-element gaps are clickable too, not just the label text — a
-        // plain <div> here (not <button>) since it wraps several of its own interactive
-        // children (chevron/label/options), which a <button> can't nest. Controls that need
-        // their own distinct behavior (options menu, drag handle) stopPropagation so this
-        // doesn't also fire for them — see their own onClick/onPointerDown below.
+        // The row itself carries the click, not just the label button inside it, so the indentation
+        // and the gaps between elements are clickable too. A <div> rather than a <button>, since it
+        // wraps interactive children a <button> can't nest. Controls with their own behaviour — the
+        // options menu, the drag handle — stopPropagation below.
         className={`row flex items-center gap-[9px] w-full text-left pr-[10px] py-[10px] border-b border-ink/[.07] cursor-pointer ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
         onClick={(e) => {
           if (editing) return;
@@ -159,13 +148,11 @@ export const ListRow = memo(function ListRow({
           paddingLeft: rowIndent(depth),
           opacity: dragging ? 0.4 : 1,
           background: myEdge === 'inside' ? 'rgb(var(--accent2) / .16)' : undefined,
-          // 'bottom' recolors (and thickens) this row's own permanent border-bottom rather than
-          // layering a second line next to it — see resolveDropIndicator for why a 'before'
-          // target already gets normalized to the *previous* row's bottom edge before it ever
-          // reaches here, so this row only ever needs to handle its own edge. 'top' is the one
-          // remaining case that still needs a drawn-on-top line (the box-shadow) — it only occurs
-          // for the very first row in the whole tree, where there's no row above to recolor
-          // instead, so there's nothing for it to double up with.
+          // 'bottom' recolours and thickens this row's permanent border-bottom rather than layering
+          // a second line beside it. resolveDropIndicator has already normalized a 'before' target
+          // to the previous row's bottom edge, so this row only handles its own. 'top' is the
+          // remaining case needing a drawn-on line (the box-shadow), and occurs only for the very
+          // first row in the tree, where there is no row above to recolour.
           borderBottomColor: myEdge === 'bottom' ? 'rgb(var(--accent2))' : undefined,
           borderBottomWidth: myEdge === 'bottom' ? 2 : undefined,
           boxShadow: myEdge === 'top' ? 'inset 0 2px 0 rgb(var(--accent2))' : undefined,
@@ -178,19 +165,18 @@ export const ListRow = memo(function ListRow({
               width: 36,
               alignSelf: 'stretch',
               cursor: 'grab',
-              // Scoped to just this handle (not the whole row, see the comment above) — blocks
-              // the browser's own scroll/text-selection/long-press-callout gestures from
-              // hijacking a press here before our own threshold-based drag detection engages,
-              // without affecting touch/scroll/selection anywhere else on the row.
+              // Scoped to the handle rather than the whole row: it blocks the browser's scroll,
+              // text-selection and long-press gestures from taking a press here before the
+              // threshold-based drag detection engages, and leaves the rest of the row alone.
               touchAction: 'none',
               userSelect: 'none',
               WebkitUserSelect: 'none',
               WebkitTouchCallout: 'none',
             }}
             onPointerDown={(e) => onRowPointerDown(e, list.id)}
-            // A drag that never clears the pointer session's own movement threshold still
-            // ends in a plain click on pointerup — stopped here so tapping the handle can't
-            // also fire the row's own click-to-select/toggle above.
+            // A drag that never clears the pointer session's movement threshold still ends in a
+            // plain click on pointerup, stopped here so tapping the handle can't also fire the
+            // row's click-to-select above.
             onClick={(e) => e.stopPropagation()}
           >
             {/* The circle is purely a hover cue, sized to match the other round icon buttons
@@ -204,9 +190,9 @@ export const ListRow = memo(function ListRow({
         <button
           className="w-[19px] -ml-1 flex-none flex items-center justify-center text-ink-4 hover:text-ink"
           onClick={(e) => {
-            // Only intercepts (and stops the row's own click from also firing) when it has its
-            // own effect, i.e. a group's toggle — for a plain list, where this chevron is just
-            // an empty placeholder, the click passes through to the row's handler instead.
+            // Intercepts, and stops the row's own click, only when it has an effect — a group's
+            // toggle. For a plain list, where the chevron is an empty placeholder, the click passes
+            // through to the row's handler.
             if (isGroup) {
               e.stopPropagation();
               onToggle(list.id, e.altKey);
@@ -232,21 +218,20 @@ export const ListRow = memo(function ListRow({
             }}
             onBlur={onCommitEdit}
             maxLength={LIST_NAME_MAX_LENGTH}
-            // A 38px field is the comfortable size to type in, but the static label it replaces
-            // occupies about 28px — 17px of Newsreader at its normal line height, plus 2px of
-            // padding each side — so at its natural height the field would push the row taller
-            // the moment a rename starts. The negative margin lets the extra 10px hang outside the
-            // line box, into the row's own vertical padding, so the field renders full size while
-            // contributing the label's height to layout. The label's height is font-metric
-            // dependent, so this pairing is tuned by eye: if a rename still resizes the row, this
-            // is the one number to move, in the direction that makes 38 minus twice it match.
-            // 7px of padding all round: at 38px tall with 17px type the text already sits about
-            // 7px below the top edge, so anything tighter horizontally reads as a field whose
-            // text is crammed against the left wall. The negative left margin then borrows 6 of
-            // the row's 9px gap back, which lands the characters within a couple of pixels of
-            // where the static label puts them while leaving the field's edge clear of the
-            // control before it — taking the exact 8 the inset would need closes that gap
-            // entirely and the field sits flush.
+            // A 38px field is comfortable to type in, but the static label it replaces occupies
+            // about 28px — 17px of Newsreader at its line height plus 2px of padding each side — so
+            // at its natural height the field would push the row taller the moment a rename starts.
+            // The negative margin lets the extra 10px hang outside the line box, into the row's
+            // vertical padding, so the field renders full size while contributing the label's height
+            // to layout. The label's height is font-metric dependent, so the pairing is tuned by
+            // eye: if a rename resizes the row, this is the number to move, so that 38 minus twice
+            // it matches.
+            //
+            // 7px of padding all round, since at 38px tall with 17px type the text already sits
+            // about 7px below the top edge and anything tighter horizontally reads as crammed. The
+            // negative left margin borrows 6 of the row's 9px gap back, landing the characters
+            // within a couple of pixels of the static label while leaving the field's edge clear of
+            // the control before it.
             className="font-serif flex-1 min-w-0 h-[38px] -my-[5px] -ml-[6px] border border-accent rounded px-[7px] bg-field text-ui-md outline-none"
             autoComplete="off"
             autoCorrect="off"
@@ -257,23 +242,20 @@ export const ListRow = memo(function ListRow({
           <button
             className="font-serif flex-1 min-w-0 text-left text-ui-md font-medium truncate py-[2px]"
             onClick={(e) => {
-              // Stops here so this doesn't also fire the identical logic on the row's own
-              // onClick via bubbling — kept as its own handler (rather than just relying on the
-              // row) so a keyboard user tabbed to the label can still activate it with
-              // Enter/Space, which only a real <button> gets for free.
+              // Stops here so the row's onClick doesn't run the identical logic again. Kept as its
+              // own handler rather than left to the row, so a keyboard user tabbed to the label can
+              // activate it with Enter or Space, which only a real <button> gets for free.
               e.stopPropagation();
-              // A group can't hold suttas itself, so clicking one has nothing to show in the
-              // list pane — same as the corpus browse tree's own chapter rows (see TreeRow),
-              // it just expands/collapses in place instead.
+              // A group holds no suttas, so clicking one has nothing to show in the list pane; like
+              // the corpus tree's chapter rows, it expands and collapses in place.
               if (isGroup) onToggle(list.id, e.altKey);
               else onSelect(String(list.id));
             }}
-            // Desktop only — undefined (not just gated on click) rather than omitted, since on
-            // iOS Safari the mere presence of a `dblclick` listener anywhere reachable makes
-            // WebKit hold every tap for ~300ms to disambiguate a possible second tap, and React
-            // delegates this listener to the app root the first time any element actually uses
-            // it, for the rest of that page load — see the perf investigation this came out of.
-            // Rename is still reachable via the "…" options menu's Pencil button on mobile.
+            // Desktop only, and undefined rather than a handler gated internally: on iOS Safari the
+            // mere presence of a reachable `dblclick` listener makes WebKit hold every tap for
+            // ~300ms to disambiguate a second one, and React delegates the listener to the app root
+            // for the rest of the page load the first time any element uses it. On mobile, rename
+            // is reached through the "…" options menu instead.
             onDoubleClick={mobile ? undefined : () => onStartEdit(list)}
           >
             {list.label}
@@ -395,9 +377,8 @@ export const ListRow = memo(function ListRow({
               spellCheck={false}
             />
           ) : (
-            // submitDraft() has already closed the input (creatingParentId reset) but the
-            // createList() network round-trip hasn't landed yet — keep reserving this row's
-            // height so the new list doesn't collapse-then-jump when it finally appears.
+            // submitDraft() has closed the input but createList() hasn't landed, so this row keeps
+            // reserving its height and the new list doesn't collapse and then jump when it appears.
             <div className="h-[32px]" />
           )}
         </div>

@@ -15,16 +15,14 @@ interface HighlightPopupProps {
   onStop: (e: React.SyntheticEvent) => void;
 }
 
-// Marks the swatch of the currently applied color. The ring sits *outside* the swatch, held off it
-// by a 1px band of the popup's own background, rather than being painted onto the swatch's border:
-// the swatches are the same pale pastels in every theme, so a rim drawn on the edge has to clear
-// both them and the panel behind, which no single color does — dark's cream `fg` sinks into the
-// pastel, an ink rim sinks into dark's brown panel. Held off the swatch, the ring only ever has the
-// panel to clear, so `fg` reads in all three themes.
-// Every swatch carries a hairline; the applied one's is brought up from `rule` to `dim`. That works
-// because a swatch is painted in its theme's own fill (highlightPaint), so it always contrasts with
-// the panel it sits on and a line between the two is visible in any theme. `dim` rather than `fg`
-// keeps it from reading louder than the "Remove" label beside it, drawn at 65%.
+// Marks the swatch of the currently applied colour. The ring sits outside the swatch, held off it
+// by a 1px band of the popup's background, rather than painted onto the swatch's border: held off,
+// the ring only has the panel to clear, so `fg` reads in all three themes, where a rim on the edge
+// would have to clear both the pastel and the panel and no single colour does.
+//
+// Every swatch carries a hairline, and the applied one's is brought up from `rule` to `dim` — a
+// swatch is painted in its theme's own fill (highlightPaint), so it always contrasts with the panel
+// beneath. `dim` rather than `fg` keeps it from reading louder than the "Remove" label beside it.
 const swatchBorder = (theme: ThemeColors, selected: boolean) => (selected ? theme.dim : theme.rule);
 
 // The gap the popup keeps from the selection, and the margin it keeps from the viewport's edges.
@@ -36,18 +34,17 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
   // Null until the first measurement, which is the one render placed at the unshifted default.
   const [place, setPlace] = useState<{ above: boolean; dx: number } | null>(null);
 
-  // Only the popup's own size is measured; where that size then goes is arithmetic on the anchor,
-  // so the effect never has to reason about the position it happens to be rendered at. It sets
-  // state rather than writing styles onto the node, which keeps the JSX below the single account
-  // of where the popup is — a re-render that doesn't change `pop` (a theme change, say) can't
-  // reset a position the effect isn't going to re-run and reapply. Being a layout effect, the
-  // second render lands before the browser paints, so nothing is seen at the default placement.
+  // Only the popup's own size is measured; where it then goes is arithmetic on the anchor, so the
+  // effect never reasons about the position it happens to be rendered at. It sets state rather than
+  // writing styles onto the node, which keeps the JSX below the single account of where the popup
+  // is — a re-render that doesn't change `pop` can't reset a position the effect won't reapply.
+  // Being a layout effect, the second render lands before paint, so the default placement is never
+  // seen.
   useLayoutEffect(() => {
     const el = ref.current;
     if (!el || mobile) return;
-    // Screen-space throughout, like `pop` itself and window.innerWidth: getBoundingClientRect
-    // reports the `zoom`-scaled box (see applyUiScale), so the division back into CSS pixels
-    // belongs at the point of assignment, in the style below.
+    // Screen-space throughout, like `pop` and window.innerWidth: getBoundingClientRect reports the
+    // `zoom`-scaled box, so the division back into CSS pixels happens in the style below.
     const { width, height } = el.getBoundingClientRect();
     const half = width / 2;
     let dx = 0;
@@ -56,17 +53,15 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
     setPlace({ above: pop.top - height - GAP >= EDGE, dx });
   }, [pop, mobile]);
 
-  // Above the selection unless it sits too near the top of the viewport for the popup to fit —
-  // which is where every platform's selection menu puts itself: a drag ends with the pointer at
-  // the selection's tail, so a picker below would open under the cursor and take a stray click,
-  // and it would cover the text the reader hasn't got to yet.
+  // Above the selection unless it sits too near the top of the viewport to fit — where every
+  // platform's selection menu puts itself. A drag ends with the pointer at the selection's tail, so
+  // a picker below would open under the cursor and cover the text the reader hasn't reached.
   const above = place?.above ?? true;
 
-  // On a touch device the OS puts its own selection menu ("Copy | Look Up | …") next to the
-  // selection and there is no way to suppress it, so anything anchored there gets covered. The
-  // picker moves to a bar pinned along the bottom edge instead, well clear of both the menu and
-  // the finger that made the selection. Dismissed by tapping the text (ReaderPage's tap handler)
-  // or by its own close button, since a full-width bar reads as more permanent than a popup.
+  // On a touch device the OS puts its own selection menu next to the selection and there is no way
+  // to suppress it, so anything anchored there is covered. The picker moves to a bar pinned along
+  // the bottom edge instead, clear of both the menu and the finger. Dismissed by tapping the text
+  // (ReaderPage's tap handler) or by its close button, since a full-width bar reads as permanent.
   if (mobile) {
     return (
       <div

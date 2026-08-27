@@ -1,26 +1,23 @@
 const RETRY_DELAYS_MS = [500, 1500, 3000];
 
-// A status-less failure (network error, or the app's own client-side request timeout — both
-// surface as a bare Error, see api.ts) is retryable: it says nothing about whether the same
-// request would fail again. An HTTP status is retryable only if it's the kind that can plausibly
-// succeed on its own next time — a rate limit, a server-side hiccup, or the server's own 408 — not
-// a 400/404 that will just fail identically forever.
+// A status-less failure — a network error, or the client-side request timeout (see api.ts) — says
+// nothing about whether the same request would fail again, so it counts as retryable. An HTTP
+// status is retryable only when the next attempt could plausibly succeed: a rate limit, a
+// server-side hiccup, or a 408.
 export function isRetryable(status: number | undefined): boolean {
   return status === undefined || status === 408 || status === 429 || status >= 500;
 }
 
-// Duck-typed rather than `instanceof ApiError` deliberately: importing the class here would couple
-// this module to api.ts, and every test that mocks '../lib/api' wholesale (AuthContext,
-// UserDataContext) would need to know to re-export it. A `status` field is all this needs.
+// Duck-typed rather than `instanceof ApiError`, so this module doesn't depend on api.ts — and so
+// tests that mock '../lib/api' wholesale don't have to re-export the class. A `status` field is all
+// it needs.
 export function statusOf(err: unknown): number | undefined {
   const status = (err as { status?: unknown } | null)?.status;
   return typeof status === 'number' ? status : undefined;
 }
 
-// Retries `fn` with the app's standard backoff schedule for a flaky network call: a couple of
-// silent retries first (offline blips, a cold CDN edge), rejecting with the last error only once
-// those are exhausted or the failure is permanent. Shared by AuthContext (loading the signed-in
-// session) and useSuttaText (loading a sutta's text).
+// Retries `fn` on the app's standard backoff schedule, rejecting with the last error once the
+// retries are exhausted or the failure is permanent.
 export async function retryWithBackoff<T>(fn: () => Promise<T>): Promise<T> {
   for (let attempt = 0; ; attempt += 1) {
     try {

@@ -5,17 +5,14 @@ interface ShortcutsModalProps {
   // POINTER_HINTS) to the same list — this only ever renders a cap row and a label.
   shortcuts: Array<{ keys: string[]; label: string }>;
   onClose: () => void;
-  // Present only from the Reader ("?" there uses `shortcutsForScope('reader')`) — the reader has
-  // its own light/sepia/dark theme system, independent of the app shell's own dark/light mode
-  // (see SuttaRowChips for the same split, and its own comment on why). LibraryPage's own "?"
-  // passes no theme and gets the app-shell Tailwind `ink` classes instead.
+  // Present only from the Reader, which has its own light/sepia/dark theme independent of the app
+  // shell's. LibraryPage's "?" passes no theme and gets the app-shell Tailwind `ink` classes.
   theme?: ThemeColors;
 }
 
-// The "?" keyboard-shortcuts help modal, shared by LibraryPage (app-shell themed) and ReaderPage
-// (reader-themed) — both render the same `Shortcut[]` from lib/shortcuts.ts through one
-// overlay/header/list/<kbd> structure. The only difference is how it's styled: Tailwind `ink`
-// tokens when no `theme` is passed, inline `theme.*` styles when one is.
+// The "?" keyboard-shortcuts help modal, shared by LibraryPage and ReaderPage: both render the same
+// `Shortcut[]` from lib/shortcuts.ts through one overlay/header/list/<kbd> structure. Only the
+// styling differs — Tailwind `ink` tokens when no `theme` is passed, inline `theme.*` when one is.
 export function ShortcutsModal({ shortcuts, onClose, theme }: ShortcutsModalProps) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center animate-fadeIn" style={{ background: 'rgba(0,0,0,.35)' }} onClick={onClose}>

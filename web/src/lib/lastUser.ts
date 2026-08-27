@@ -3,16 +3,15 @@ import type { User } from './types';
 
 // The last user the server confirmed a session for, remembered across reloads.
 //
-// Identity is the one thing the offline mirror can't answer for itself: it stores every list, note
-// and highlight under a user id (lib/mirrorDb.ts), but only `GET /api/auth/me` ever said what that
-// id is. Relaunching with no network — the PWA on a plane, which is the case this whole design
-// exists for — left that fetch failing, `user` null, and the provider mounting an empty mirror over
-// a full one: nothing to read, and nothing writable either.
+// Identity is the one thing the offline mirror can't answer for itself: it files every list, note
+// and highlight under a user id (lib/mirrorDb.ts), but only `GET /api/auth/me` says what that id
+// is. Without this, relaunching with no network — the PWA on a plane — leaves that fetch failing,
+// `user` null, and the provider mounting an empty mirror over a full one.
 //
-// This is a cache of who was signed in, not a credential. The signed session cookie is still the
-// only thing that authorizes anything, so the worst a stale entry does is show the user their own
-// local data and queue writes that the next flush answers with a 401 — which is exactly the
-// re-auth path (see UserDataContext's `needsReauth`).
+// A cache of who was signed in, not a credential. The signed session cookie is still the only
+// thing that authorizes anything, so a stale entry at worst shows the user their own local data and
+// queues writes the next flush answers with a 401 — the re-auth path (UserDataContext's
+// `needsReauth`).
 
 function isUser(value: unknown): value is User {
   const u = value as Partial<User> | null;
@@ -26,8 +25,7 @@ export function readLastUser(): User | null {
     const parsed: unknown = JSON.parse(raw);
     return isUser(parsed) ? parsed : null;
   } catch {
-    // Unavailable or unparseable storage is simply no cached identity — the app falls back to
-    // asking the server, which is what it did before this existed.
+    // Unavailable or unparseable storage is simply no cached identity — the app asks the server.
     return null;
   }
 }

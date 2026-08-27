@@ -29,23 +29,21 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
   const { lists, notes, membership, highlights } = useUserData();
   const [query, setQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
-  // Hover only takes the selection over once the pointer has genuinely moved. Arrow keys scroll
-  // the active row into view and typing rebuilds the list, so rows slide under a stationary
-  // pointer and the browser fires enter/move events for them anyway — without this the selection
-  // would snap back to whatever ended up under the cursor.
+  // Hover takes the selection over only once the pointer has genuinely moved. Arrow keys scroll the
+  // active row into view and typing rebuilds the list, so rows slide under a stationary pointer and
+  // the browser fires enter/move events for them anyway.
   const lastPointer = useRef<{ x: number; y: number } | null>(null);
 
-  // Suttas only: this overlay exists to jump somewhere else in the canon without leaving the
-  // reader, and a list hit's only destination is the library — a different surface entirely.
-  // The library's own search is where lists surface (see SearchListHits).
+  // Suttas only: this overlay exists to jump elsewhere in the canon without leaving the reader, and
+  // a list hit's only destination is the library. Lists surface there instead (SearchListHits).
   const { hits } = useCorpusSearch(corpus, query, notes, lists);
   // Only render/keyboard-navigate the first SEARCH_RESULTS_CAP — a short/common query can match
   // hundreds of suttas, and every hit is an unvirtualized row in a small scroll panel.
   const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);
   const { activeIndex, setActiveIndex, moveBy, setRowRef } = useActiveHitIndex(query);
 
-  // Same list-membership chips + highlight-count badge as ListPane/TreePane's own search results
-  // (see lib/lists.ts's suttaRowMeta), so a reader-search row is identifiable the same way.
+  // The same chips and highlight badge as ListPane and TreePane's search results (lib/lists.ts's
+  // suttaRowMeta), so a reader-search row is identifiable the same way.
   const flatLists = useMemo(() => flattenListTree(lists), [lists]);
   const rowMeta = useMemo(
     () => suttaRowMeta(displayHits.map((h) => h.id), membership, highlights, flatLists),
@@ -75,9 +73,9 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
   }, [mobile]);
 
   function onKeyDown(e: React.KeyboardEvent) {
-    // Stops here — the reader's own window-level keydown handler already bails while this
-    // overlay is open (see ReaderPage), but stopping propagation outright means that doesn't
-    // depend on state/timing at all: this modal owns every key while it's up, full stop.
+    // Stops here: this modal owns every key while it is up. The reader's window-level keydown
+    // handler already bails while the overlay is open (see ReaderPage), but stopping propagation
+    // makes that independent of state and timing.
     e.stopPropagation();
     if (e.key === 'Escape') {
       e.preventDefault();

@@ -26,14 +26,12 @@ interface StartDragOptions {
   onEnd: () => void;
 }
 
-// Shared Pointer Events plumbing behind both TreePane's list-tree drag (useListTreeDrag) and
-// ListPane's sutta-reorder drag: window-level pointermove/pointerup/pointercancel listeners (not
-// this row's own onPointerMove/HTML5 drag-and-drop, neither of which touch browsers fire
-// reliably), a rAF loop that auto-scrolls `scrollRef`'s container and calls back into the
-// caller's own per-frame drop-target logic, and unmount-safe cleanup of both. What differs
-// between the two callers — hit-testing rows for a drop zone vs. reshuffling a live order array,
-// and how each commits its result — stays in their own code; this hook owns only the mechanics
-// they have in common.
+// Shared Pointer Events plumbing behind TreePane's list-tree drag (useListTreeDrag) and ListPane's
+// sutta-reorder drag: window-level pointermove/pointerup/pointercancel listeners, rather than the
+// row's own onPointerMove or HTML5 drag-and-drop, neither of which touch browsers fire reliably; a
+// rAF loop that auto-scrolls `scrollRef`'s container and calls the caller's per-frame drop-target
+// logic; and unmount-safe cleanup of both. What differs between the two callers — hit-testing rows
+// for a drop zone against reshuffling a live order array, and how each commits — stays with them.
 export function usePointerDragSession({ scrollRef, onFrame }: UsePointerDragSessionParams) {
   const activeRef = useRef(false);
   const pointerYRef = useRef(0);
@@ -41,12 +39,10 @@ export function usePointerDragSession({ scrollRef, onFrame }: UsePointerDragSess
   // Set for the duration of a candidate/active drag so an unmount mid-drag can tear down the
   // window-level listeners it registered.
   const teardownRef = useRef<(() => void) | null>(null);
-  // Mirrors the latest `onFrame` into a ref, read by the rAF loop below, instead of the loop
-  // closing over the prop directly — this is what lets `start`/`cancel` (and the object this hook
-  // returns) be useCallback/useMemo'd with a stable identity regardless of `onFrame` being a
-  // fresh closure every caller render. Both this hook's callers (useListTreeDrag, ListPane) hand
-  // `start` down to a memoized row component as a prop, where a fresh reference every render
-  // would defeat that row's own memoization entirely (see ListRow/TreeRow's memo comments).
+  // Mirrors the latest `onFrame` into a ref for the rAF loop below, rather than having the loop
+  // close over the prop, so `start`, `cancel` and the returned object keep a stable identity even
+  // though `onFrame` is a fresh closure on every caller render. Both callers hand `start` down to a
+  // memoized row component, where a fresh reference each render would defeat its memoization.
   const onFrameRef = useRef(onFrame);
   onFrameRef.current = onFrame;
 
@@ -70,9 +66,8 @@ export function usePointerDragSession({ scrollRef, onFrame }: UsePointerDragSess
     rafRef.current = requestAnimationFrame(tick);
   }
 
-  // useCallback'd with no deps — only ever reads/writes refs (including onFrameRef above) or
-  // calls other functions in this closure that do the same, so its behavior doesn't depend on
-  // which render's closure is actually invoked.
+  // useCallback'd with no deps: it only reads and writes refs, or calls functions in this closure
+  // that do, so its behaviour doesn't depend on which render's closure is invoked.
   const start = useCallback((e: React.PointerEvent, { threshold = 0, onEngage, onEnd }: StartDragOptions) => {
     const pointerId = e.pointerId;
     const startX = e.clientX;
@@ -116,10 +111,9 @@ export function usePointerDragSession({ scrollRef, onFrame }: UsePointerDragSess
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Tears down a still-active drag's window listeners (and any live rAF loop) if the owning
-  // component unmounts mid-drag (e.g. navigating away while dragging) — without this the
-  // listeners registered in `start` above would never be removed. useCallback'd for the same
-  // reason `start` is — only touches refs, so identity can stay stable across renders.
+  // Tears down a still-active drag's window listeners and rAF loop when the owning component
+  // unmounts mid-drag; the listeners `start` registered would otherwise never be removed.
+  // useCallback'd for the same reason `start` is.
   const cancel = useCallback(() => {
     teardownRef.current?.();
     stopLoop();
@@ -128,9 +122,7 @@ export function usePointerDragSession({ scrollRef, onFrame }: UsePointerDragSess
 
   useEffect(() => cancel, [cancel]);
 
-  // Memoized so the object itself (not just start/cancel individually) is referentially stable —
-  // a caller destructuring `{ start }` from a fresh object every render would still see a stable
-  // function, but a caller passing the whole `dragSession` object through as a hook dependency
-  // (see useListTreeDrag) needs the object itself to be stable too.
+  // Memoized so the object itself is referentially stable, not just start and cancel: a caller
+  // passing the whole `dragSession` through as a hook dependency (useListTreeDrag) needs that.
   return useMemo(() => ({ start, cancel }), [start, cancel]);
 }

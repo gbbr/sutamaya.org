@@ -10,19 +10,18 @@ interface NoteEditorProps {
   textareaStyle?: CSSProperties;
   saveButtonClassName: string;
   saveButtonStyle?: CSSProperties;
-  // Bumped by a caller (see ReaderPage's "n" shortcut) to imperatively focus+select the
-  // textarea on demand — a plain `autoFocus` only fires once, on mount, which misses the case
-  // where this editor is already mounted (panel already open) and the shortcut fires again.
+  // Bumped by a caller (ReaderPage's "n" shortcut) to focus and select the textarea on demand.
+  // `autoFocus` only fires on mount, which misses a shortcut pressed while the panel is open.
   focusSignal?: number;
 }
 
-// A note is a discrete edit, not a live stream — Enter commits it (so there's no newline key at
-// all), leaving the field commits too, as does the editor going off screen with a draft pending,
-// and the Save button is there for anyone who'd rather not remember either shortcut. Nothing the
-// user has typed is ever dropped, which is why Escape out of the reader's panel saves rather than
-// cancels. Keeps its own draft state so nothing is written per keystroke, and
-// resyncs it whenever `value` changes: normally that's switching suttas, but a note edited on
-// another device and pulled in mid-edit replaces the draft too.
+// A note is a discrete edit, not a live stream. Enter commits it, so there is no newline key at
+// all; leaving the field commits, as does the editor going off screen with a draft pending, and the
+// Save button is there for anyone who'd rather not remember either. Nothing typed is ever dropped,
+// which is why Escape out of the reader's panel saves rather than cancels.
+//
+// Keeps its own draft state, so nothing is written per keystroke, and resyncs whenever `value`
+// changes — switching suttas, or a note edited on another device arriving mid-edit.
 export function NoteEditor({
   value,
   onSubmit,
@@ -54,12 +53,11 @@ export function NoteEditor({
     if (draft !== value) onSubmit(draft);
   }
 
-  // Enter, blur and the Save button all commit the draft, but none of them fire when the editor is
-  // simply taken off screen — and Escape closes the reader's panel (see useReaderKeyboard) without
-  // moving focus first, so a half-written note would go with it. Committing from the unmount
-  // cleanup covers that, and closing the reader outright along with it. The ref is what lets that
-  // cleanup stay mount-scoped and still see the final draft; `submit` already writes nothing when
-  // the draft matches what is stored, so an unmount with nothing pending costs nothing.
+  // Enter, blur and Save all commit the draft, but none of them fire when the editor is taken off
+  // screen — and Escape closes the reader's panel (see useReaderKeyboard) without moving focus
+  // first, so a half-written note would go with it. Committing from the unmount cleanup covers
+  // that, and closing the reader outright with it. The ref lets that cleanup stay mount-scoped and
+  // still see the final draft; `submit` writes nothing when the draft matches what is stored.
   const submitRef = useRef(submit);
   useEffect(() => {
     submitRef.current = submit;

@@ -3,16 +3,14 @@ import { DEVICE_ID_KEY } from './storageKeys';
 
 // `${ISO}|${deviceId}` — the timestamp every mutable write carries, and the whole of this app's
 // conflict resolution: the server stores a write only when its mtime is strictly newer than the
-// stored one (see worker/src/lib/mtime.js and docs/offline-sync.md's A2). ISO 8601 is fixed-width,
-// so plain lexicographic comparison is chronological comparison in both SQLite TEXT and
-// JavaScript `<`, with no parsing anywhere.
+// stored one (worker/src/lib/mtime.js, docs/offline-sync.md's A2). ISO 8601 is fixed-width, so
+// lexicographic comparison is chronological comparison in both SQLite TEXT and JavaScript `<`.
 //
-// Stamp it when the user acts, not when the write reaches the network. That distinction is the
-// entire point: a note edited offline on Monday and flushed on Friday has to lose to a Wednesday
-// edit made elsewhere, which it only does if it still carries Monday's timestamp.
+// Stamp it when the user acts, not when the write reaches the network: a note edited offline on
+// Monday and flushed on Friday has to lose to a Wednesday edit made elsewhere.
 
-// Random, per-device, persisted. It only ever breaks a tie between two devices writing in the
-// same millisecond, so the outcome is decided deterministically rather than by arrival order.
+// Random, per-device, persisted. Breaks a tie between two devices writing in the same millisecond,
+// so the outcome is deterministic rather than decided by arrival order.
 let cachedDeviceId: string | null = null;
 
 function deviceId(): string {
@@ -21,8 +19,7 @@ function deviceId(): string {
   try {
     id = localStorage.getItem(DEVICE_ID_KEY);
   } catch {
-    // storage unavailable — fall through to a fresh id, which is still a valid tiebreak for the
-    // life of this page.
+    // storage unavailable — a fresh id is still a valid tiebreak for the life of this page
   }
   if (!id) {
     id = randomId();
@@ -36,10 +33,9 @@ function deviceId(): string {
   return id;
 }
 
-// The last millisecond this device stamped a write with. Clamping against it guards two things:
-// a backwards clock adjustment producing a timestamp that sorts below this device's own previous
-// write, and two writes landing in the same millisecond — which would tie, and a tie loses a
-// conditional write.
+// The last millisecond this device stamped a write with. Clamping against it keeps a backwards
+// clock adjustment from sorting below this device's own previous write, and keeps two writes out
+// of the same millisecond — they would tie, and a tie loses a conditional write.
 let lastMs = 0;
 
 export function nextMtime(): string {

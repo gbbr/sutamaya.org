@@ -6,9 +6,8 @@ interface DictionaryDockProps {
   gloss: string;
   defs: string[] | null;
   loading?: boolean;
-  // Every attempt at the (~20MB, background-loaded) dictionary has failed — see CorpusContext.
-  // Without this the dock's `loading` copy is indistinguishable from a download that is still
-  // going, and the user has nothing to act on.
+  // Every attempt at the background-loaded dictionary has failed (see CorpusContext), which the
+  // dock's `loading` copy would otherwise be indistinguishable from.
   dictionaryFailed?: boolean;
   theme: ThemeColors;
   fontSize: number;

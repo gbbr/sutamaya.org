@@ -42,9 +42,8 @@ export function dismissOfflineNudge(): void {
   }
 }
 
-// The "updated text available" nudge dismisses per dataVersion rather than once and for all: it
-// recurs every time the corpus text actually changes, so a boolean would silence every future
-// update after the first dismissal.
+// The "updated text available" nudge dismisses per dataVersion rather than once and for all, so a
+// dismissal doesn't silence every later update.
 export function dismissedOfflineUpdateVersion(): string | null {
   try {
     return localStorage.getItem(OFFLINE_UPDATE_DISMISSED_KEY);

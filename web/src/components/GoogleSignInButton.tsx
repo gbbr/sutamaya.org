@@ -1,23 +1,20 @@
-// Starts the OAuth redirect flow (worker/src/routes/auth.js) — a plain same-origin link, so there
-// is no SDK to load, nothing to measure, and no cross-origin iframe for Safari's storage
-// partitioning to break. `return` is where the Worker sends the browser once the round trip ends;
-// it validates the value again on both legs (safeReturnPath), so this is a convenience, not a
-// trust boundary.
+// Starts the OAuth redirect flow (worker/src/routes/auth.js) as a plain same-origin link: no SDK to
+// load, and no cross-origin iframe for Safari's storage partitioning to break. `return` is where
+// the Worker sends the browser once the round trip ends, and the Worker validates it again on both
+// legs (safeReturnPath), so this is a convenience rather than a trust boundary.
 //
-// An <a> rather than a button with an onClick handler: this *is* a navigation, so it should behave
-// like one (visible target, works before hydration, middle-click opens a tab that also works).
-// Styled to match the page's own buttons rather than rendered by Google, since a plain link can't
-// use their iframe-based button anyway.
+// An <a> rather than a button with an onClick: this is a navigation, so it behaves like one —
+// visible target, works before hydration, middle-click opens a working tab.
 //
-// `returnTo` is where the user was when they were sent here to sign in (carried in router state by
-// promptGoogleSignIn), so the round trip ends on the sutta they were filing rather than on the
-// Settings page. Falls back to the current URL for someone who simply walked into Settings.
+// `returnTo` is where the user was when they were sent here to sign in, carried in router state by
+// promptGoogleSignIn, so the round trip ends on the sutta they were filing rather than on Settings.
+// Falls back to the current URL for someone who simply walked into Settings.
 export function GoogleSignInButton({ returnTo }: { returnTo?: string }) {
   const here = typeof window === 'undefined' ? '/settings' : window.location.pathname + window.location.search;
-  // Absolute rather than a bare path: the origin is the half the Worker can't infer for itself
-  // (in dev it's behind Vite's proxy, which rewrites Host), and it's what lets one dev server
-  // serve both localhost and the hostname a phone reaches it by — see resolveWebOrigin. Only
-  // origins the Worker is configured for are honoured, so this stays a convenience either way.
+  // Absolute rather than a bare path: the origin is the half the Worker can't infer, since in dev
+  // it sits behind Vite's proxy, which rewrites Host. It is what lets one dev server serve both
+  // localhost and the hostname a phone reaches it by (see resolveWebOrigin). Only origins the
+  // Worker is configured for are honoured.
   const target =
     typeof window === 'undefined' ? returnTo || here : new URL(returnTo || here, window.location.href).href;
   const href = `/api/auth/google/start?return=${encodeURIComponent(target)}`;

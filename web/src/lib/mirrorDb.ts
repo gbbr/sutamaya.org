@@ -1,23 +1,19 @@
 import { emptyMirror, type MirrorState } from './mirror';
 
-// Durable storage for the mirror. The whole of one account's mirror is a single IndexedDB record
-// keyed by user id — the dataset is tens of kilobytes, so a per-record store would buy nothing but
-// partial-write hazards, and one `put` per mutation is both atomic and trivially cheap. Keying by
-// user id is what stops an account switch from ever reading or overwriting the other account's
-// unsynced work.
+// Durable storage for the mirror. One account's whole mirror is a single IndexedDB record keyed by
+// user id — the dataset is tens of kilobytes, so one atomic `put` per mutation is cheap and avoids
+// partial-write hazards. Keying by user id is what stops an account switch from reading or
+// overwriting the other account's unsynced work.
 //
 // IndexedDB rather than localStorage because this is durable user data, not a display preference:
-// it is written off the main thread, survives a several-megabyte dataset without the 5MB string
-// cap, and never blocks paint. Where it isn't available at all (a locked-down or private browsing
-// context), the app falls back to an in-memory store: writes then last only for the session, which
-// is exactly what the app did before the mirror existed, rather than failing outright.
+// it is written off the main thread, has no 5MB string cap, and never blocks paint. Where it isn't
+// available at all (a locked-down or private browsing context), the app falls back to an in-memory
+// store, so writes last for the session rather than failing outright.
 
 const DB_NAME = 'sutamaya';
-// Bump this whenever MirrorState's shape changes. A record persisted under an older shape isn't
-// valid input for code written against the new one — see onupgradeneeded, which wipes rather than
-// migrates it, which is safe because the mirror is a cache: the server is the durable copy, so
-// losing it costs only a re-pull (and, for anything still dirty, replaying whatever local edits
-// hadn't synced yet).
+// Bump whenever MirrorState's shape changes: onupgradeneeded wipes rather than migrates, which is
+// safe because the mirror is a cache — losing it costs a re-pull, plus replaying whatever local
+// edits hadn't synced yet.
 const DB_VERSION = 2;
 const STORE = 'mirrors';
 
@@ -36,8 +32,8 @@ function openDb(): Promise<IDBDatabase | null> {
       return resolve(null);
     }
     request.onupgradeneeded = () => {
-      // A version bump means the shape changed since whatever wrote the existing store — delete
-      // and recreate rather than keep rows a newer MirrorState wasn't written to read.
+      // The shape changed since whatever wrote the existing store — delete and recreate rather
+      // than keep rows a newer MirrorState wasn't written to read.
       if (request.result.objectStoreNames.contains(STORE)) request.result.deleteObjectStore(STORE);
       request.result.createObjectStore(STORE, { keyPath: 'userId' });
     };
@@ -84,11 +80,10 @@ export async function saveMirror(state: MirrorState): Promise<void> {
   await transact(db, 'readwrite', (store) => store.put(state));
 }
 
-// Drops one id's mirror outright. Two callers, both of which mean "this device is done carrying
-// that identity's data": sign-out, where leaving a departed account's notes readable and writable
-// on the device is both a privacy leak and a lie about who the app belongs to now, and adoption,
-// which has just copied the signed-out mirror onto a real account and would otherwise leave a
-// duplicate behind for the next sign-out to resurrect.
+// Drops one id's mirror outright. Two callers, both meaning "this device is done carrying that
+// identity's data": sign-out, which must not leave a departed account's notes readable on the
+// device, and adoption, which has just copied the signed-out mirror onto a real account and would
+// otherwise leave a duplicate for the next sign-out to resurrect.
 export async function deleteMirror(userId: string): Promise<void> {
   memory.delete(userId);
   const db = await openDb();
@@ -96,8 +91,8 @@ export async function deleteMirror(userId: string): Promise<void> {
   try {
     await transact(db, 'readwrite', (store) => store.delete(userId));
   } catch (e) {
-    // Nothing downstream depends on this having worked — the record is unreachable either way once
-    // the id it was filed under is retired.
+    // Nothing downstream depends on this having worked: once the id is retired the record is
+    // unreachable either way.
     console.error('mirror delete failed', e);
   }
 }

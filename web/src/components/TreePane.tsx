@@ -40,10 +40,9 @@ import { ListsTreeView } from './ListsTreeView';
 interface PersistedExpansion {
   corpus: string[];
   lists: string[];
-  // The node being browsed when this expansion was written, so the next mount can tell a deep
-  // link (a different node — open its ancestors) from a plain return to the pane (the same
-  // node — restore verbatim). Without it, leaving for Settings and coming back would re-open
-  // the ancestors of the last-visited node and silently undo a collapse made by hand.
+  // The node being browsed when this expansion was written, so the next mount can tell a deep link
+  // — a different node, whose ancestors are opened — from a plain return to the pane, restored
+  // verbatim. Without it, leaving for Settings and coming back would undo a collapse made by hand.
   node?: string;
 }
 
@@ -71,8 +70,8 @@ function toRecord(ids: string[]): Record<string, boolean> {
   return record;
 }
 
-// Which row the search cursor is on. The arrow keys walk the lists block and the sutta hits as
-// one column, so "the active row" can no longer be just a sutta id.
+// Which row the search cursor is on. The arrow keys walk the lists block and the sutta hits as one
+// column, so the active row isn't necessarily a sutta.
 export interface ActiveSearchRow {
   kind: 'list' | 'sutta';
   id: string;
@@ -143,20 +142,20 @@ export function TreePane({
   const { mobile, paneW } = useLayout();
 
   const scrollRef = useScrollMemory<HTMLDivElement>('tree', visible);
-  // Expanded synchronously at mount, never via an effect: useScrollMemory restores in a layout
-  // effect, so a tree still collapsed at that point clamps the restored offset back to 0.
+  // Expanded synchronously at mount, never in an effect: useScrollMemory restores in a layout
+  // effect, and a tree still collapsed at that point clamps the restored offset back to 0.
   const [persistedExpansion] = useState(loadPersistedExpansion);
-  // Only a mount pointed at a *different* node than the one last persisted is a navigation
-  // (a deep link, a membership chip, a breadcrumb) that should reveal its own ancestors.
-  // Mounting back onto the same node is a return to the pane, and restores it as it was left.
+  // Only a mount pointed at a different node from the one last persisted is a navigation — a deep
+  // link, a membership chip, a breadcrumb — that should reveal its ancestors. Mounting back onto
+  // the same node is a return to the pane, and restores it as it was left.
   const revealAtMount = nodeId !== persistedExpansion.node;
   const [expanded, setExpanded] = useState<Record<string, boolean>>(() => ({
     ...toRecord(persistedExpansion.corpus),
     ...(revealAtMount ? ancestorsOf(corpus, nodeId) : {}),
   }));
-  // Which of the two trees gets the column — they don't share one scroll, where My lists would
-  // sit below the long nikaya tree. Never gated on being signed in: a signed-out reader's lists
-  // live in the local mirror, so My lists is always a real place to go.
+  // Which of the two trees gets the column; they don't share one scroll. Never gated on being
+  // signed in — a signed-out reader's lists live in the local mirror, so My lists is always a real
+  // place to go.
   const [paneView, setPaneView] = useState<'library' | 'lists'>(() => {
     try {
       return localStorage.getItem(TREE_VIEW_KEY) === 'lists' ? 'lists' : 'library';
@@ -172,11 +171,11 @@ export function TreePane({
     }
   }, [paneView]);
 
-  // Points the toggle at whichever tree `nodeId` actually lives in, so a deep link to a list (a
-  // membership chip) or to a corpus node (a breadcrumb) doesn't land on the other tree with
-  // nothing selected. Keyed on whether nodeId *is* a list id rather than on `lists`: a reorder
-  // or re-parent hands back a new `lists` reference with the same ids, and re-running on that
-  // would snap the pane to 'library' after every drag. Skipped at mount when `restoreOrigin`.
+  // Points the toggle at whichever tree `nodeId` lives in, so a deep link to a list or to a corpus
+  // node doesn't land on the other tree with nothing selected. Keyed on whether nodeId is a list id
+  // rather than on `lists`: a reorder or re-parent hands back a new `lists` reference with the same
+  // ids, and re-running on that would snap the pane to 'library' after every drag. Skipped at mount
+  // when `restoreOrigin`.
   const nodeIsListId = lists.some((l) => l.id === nodeId);
   const mountedRef = useRef(false);
   useEffect(() => {
@@ -211,10 +210,10 @@ export function TreePane({
     });
   }
 
-  // The node each tree has already revealed. Seeded with `nodeId` on a return to the pane, so
-  // the effects below don't undo the mount-time suppression by revealing it a moment later;
-  // seeded empty otherwise, and only advanced once there was actually something to open — the
-  // corpus and the lists can both arrive after this pane first renders.
+  // The node each tree has already revealed. Seeded with `nodeId` on a return to the pane, so the
+  // effects below don't undo the mount-time suppression by revealing it a moment later; seeded
+  // empty otherwise, and advanced only once there was something to open, since the corpus and the
+  // lists can both arrive after this pane first renders.
   const revealedNodeRef = useRef<string | undefined>(revealAtMount ? undefined : nodeId);
   const revealedListNodeRef = useRef<string | undefined>(revealAtMount ? undefined : nodeId);
 
@@ -234,13 +233,12 @@ export function TreePane({
     expandIds(setListExpanded, toOpen);
   }, [lists, nodeId]);
 
-  // useCallback'd (only reading the setState function itself, which React guarantees is stable)
-  // so TreeRow's own memoization isn't defeated by a freshly-allocated handler on every TreePane
-  // render — see TreeRow.tsx's perf note.
-  // `deep` (⌥-click, see TreeRow) closes the row's whole subtree instead of just hiding it with
-  // its descendants still flagged open — the escape hatch for a tree left sprawling after a lot
-  // of browsing. Only ever collapses: ⌥-clicking a closed row opens just that row, since
-  // expanding a nikaya's entire subtree at once would bury the pane in rows.
+  // useCallback'd, reading only the setState function React guarantees is stable, so a
+  // freshly-allocated handler on every TreePane render doesn't defeat TreeRow's memoization.
+  //
+  // `deep` (⌥-click) closes the row's whole subtree instead of hiding it with its descendants still
+  // flagged open — the escape hatch for a sprawling tree. It only ever collapses: ⌥-clicking a
+  // closed row opens just that row, since expanding a nikaya's whole subtree would bury the pane.
   const toggleExpanded = useCallback(
     (id: string, deep = false) => {
       setExpanded((x) => {
@@ -252,16 +250,15 @@ export function TreePane({
     },
     [corpus]
   );
-  // Synchronous initial state for the same reason `expanded` above is: so the tree is already
-  // expanded to nodeId on the very first render if TreePane mounts fresh already pointed at a
-  // nested list.
+  // Synchronous initial state for the same reason `expanded` above is, so a fresh mount already
+  // pointed at a nested list has the tree expanded to it on the first render.
   const [listExpanded, setListExpanded] = useState<Record<string, boolean>>(() => ({
     ...toRecord(persistedExpansion.lists),
     ...(revealAtMount ? ancestorsOfList(lists, nodeId) : {}),
   }));
-  // Persists both trees' expansion together under one key — low-frequency (click-driven, or the
-  // ancestor-follow effects above firing on a nodeId change), so an un-debounced write here is
-  // negligible, unlike a continuous/animation-driven event (see LayoutContext's drag handler).
+  // Persists both trees' expansion together under one key. Click-driven, or the ancestor-follow
+  // effects above firing on a nodeId change, so an un-debounced write is negligible here — unlike a
+  // continuous, animation-driven one (see LayoutContext's drag handler).
   useEffect(() => {
     try {
       localStorage.setItem(
@@ -276,18 +273,18 @@ export function TreePane({
       // storage unavailable — ignore
     }
   }, [expanded, listExpanded, nodeId]);
-  // Closed by default — see the search icon button in the header. Initialized from whether a
-  // query is already present (rather than always `false`) so a pre-populated `query` prop can't
-  // leave the pane showing search results with no visible way to see/edit what's being searched.
+  // Closed by default, opened by the search icon in the header. Initialized from whether a query is
+  // already present, so a pre-populated `query` prop can't leave the pane showing results with no
+  // way to see or edit what is being searched.
   const [searchOpen, setSearchOpen] = useState(() => query.trim().length > 0);
-  // A list opened from the results is a destination, not a refinement, so the input goes away
-  // with the results — the same disappearance a sutta hit gets by opening the reader.
+  // A list opened from the results is a destination rather than a refinement, so the input goes
+  // away with the results, the same way it does when a sutta hit opens the reader.
   //
-  // Keyed on the browsed node rather than on the click, because the row can be clicked in either
-  // pane: on desktop ListPane draws the lists block, and the new node (with the query LibraryPage
-  // clears alongside it) is all that reaches this pane. Nothing else moves `nodeId` while results
-  // are showing — the tree they'd be clicked in isn't on screen. The empty-query guard is what
-  // keeps a first render with a query already in it from closing the input it just opened.
+  // Keyed on the browsed node rather than the click, since the row can be clicked in either pane:
+  // on desktop ListPane draws the lists block, and only the new node — plus the query LibraryPage
+  // clears alongside it — reaches this pane. Nothing else moves `nodeId` while results are showing.
+  // The empty-query guard keeps a first render with a query in it from closing the input it just
+  // opened.
   useEffect(() => {
     if (!query.trim()) setSearchOpen(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -309,9 +306,8 @@ export function TreePane({
     [lists]
   );
 
-  // useCallback'd for the same reason toggleExpanded above is — passed straight through to
-  // ListRow, whose own memoization (mirroring TreeRow's) needs this to stay referentially stable
-  // across renders that don't actually change it.
+  // useCallback'd for the same reason toggleExpanded above is: it passes straight through to
+  // ListRow, whose memoization needs it referentially stable across unrelated renders.
   const toggleListExpanded = useCallback(
     (id: string, deep = false) => {
       setListExpanded((x) => {
@@ -377,9 +373,9 @@ export function TreePane({
   });
 
   // Reordering and nesting both need something to move a row relative to, so a tree of fewer than
-  // two lists has nothing the mode can do — the toggle is hidden below rather than disabled, and
-  // the mode is forced off if the user deletes their way down to one (which would otherwise leave
-  // it stuck on with no visible control to leave it by).
+  // two lists has nothing the mode can do. The toggle is hidden rather than disabled, and the mode
+  // is forced off if the user deletes their way down to one, which would otherwise leave it stuck
+  // on with no control to leave it by.
   const canReorderLists = useMemo(() => lists.filter((l) => !l.auto).length >= 2, [lists]);
   useEffect(() => {
     if (!canReorderLists) setReorderMode(false);
@@ -394,14 +390,12 @@ export function TreePane({
     if (hits.length > SEARCH_RESULTS_CAP) return `${SEARCH_RESULTS_CAP}+ ${noun}s`;
     return `${hits.length} ${noun}${hits.length === 1 ? '' : 's'}`;
   }
-  // A short/common query can match hundreds of suttas — only render/keyboard-navigate the first
-  // SEARCH_RESULTS_CAP (see its own comment); `hits.length` (uncapped) still drives the "N
-  // results" label below so that count stays honest.
+  // Only the first SEARCH_RESULTS_CAP hits are rendered and keyboard-navigable. `hits.length` is
+  // uncapped and drives the "N results" label below, so that count stays honest.
   const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);
 
-  // List-membership chips, highlight count, and note per hit — same lookup ListPane's own rows
-  // use (see suttaRowMeta), needed here too since mobile has no ListPane to show them instead
-  // (see the mobile search-row rendering below).
+  // List-membership chips, highlight count and note per hit — the same lookup ListPane's rows use
+  // (suttaRowMeta), needed here because mobile has no ListPane to show them.
   const flatLists = useMemo(() => flattenListTree(lists), [lists]);
   const searchRowMeta = useMemo(
     () => suttaRowMeta(displayHits.map((h) => h.id), membership, highlights, flatLists),
@@ -410,9 +404,8 @@ export function TreePane({
 
   // The arrow keys walk one column: the lists block first, then the sutta hits, in the order both
   // panes draw them. Built here because this pane owns the nav on both platforms, even on desktop
-  // where ListPane is the one rendering the rows.
-  // Ids are what each pane highlights by, so a batched hit carries its own uid here (`dhp320-333`)
-  // even though opening it navigates to the inner sutta the query actually named — see openRow.
+  // where ListPane renders the rows. Each pane highlights by id, so a batched hit carries its own
+  // uid ("dhp320-333") even though opening it navigates to the inner sutta — see openRow.
   const navRows: ActiveSearchRow[] = useMemo(
     () => [
       ...listHits.map((h) => ({ kind: 'list' as const, id: h.list.id })),
@@ -440,32 +433,30 @@ export function TreePane({
     onActiveHitChange?.(searching ? navRows[searchActiveIndex] : undefined);
   }, [searching, searchActiveIndex, navRows, onActiveHitChange]);
 
-  // Hides the search input and clears its query — on Escape, the inline "x", or opening a hit
-  // (see openHit below). Always resets `query` even though closing while empty is a no-op there,
-  // so every call site can just call this rather than deciding whether a reset is also needed.
+  // Hides the search input and clears its query, on Escape, the inline "x", or opening a hit. It
+  // always resets `query`, so no call site has to decide whether a reset is also needed.
   function closeSearch() {
     setSearchOpen(false);
     onSearch('');
   }
 
-  // Deliberately doesn't closeSearch() first: navigate() only lands a microtask+rAF later, so
-  // clearing the search UI here would paint a frame of the bare tree before the reader arrives.
-  // The route change unmounts this pane anyway, so there's no stale query to clean up.
+  // Doesn't closeSearch() first: navigate() lands a microtask and a frame later, so clearing the
+  // search UI here would paint a frame of the bare tree before the reader arrives. The route change
+  // unmounts this pane, so there is no stale query to clean up.
   function openHit(id: string) {
     onOpenSutta(id);
   }
 
   useEffect(() => {
     function onKey(e: globalThis.KeyboardEvent) {
-      // The shortcuts modal owns every key while it's open (see LibraryPage's own handler) —
-      // without this, '/' opens the search row behind it and steals focus into the autofocused
-      // input, and 'x' swaps panes out of sight.
+      // The shortcuts modal owns every key while it is open (see LibraryPage's handler): otherwise
+      // '/' opens the search row behind it and takes focus, and 'x' swaps panes out of sight.
       if (shortcutsOpen) return;
       const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
-      // Up/down/Enter over the search hits work while the search input itself has focus (the
-      // normal state while results are showing) — but not while some *other* input/textarea has
-      // focus. '/' and 'x' below are unrelated shortcuts and keep the plain bail: typing either
-      // character into the search box (or any input) must never re-trigger them.
+      // Up/down/Enter over the search hits work while the search input has focus, which is the
+      // normal state while results are showing, but not while another input or textarea does. '/'
+      // and 'x' below keep the plain bail: typing either character into any input must never
+      // re-trigger them.
       const isSearchInput = e.target === searchInput.current;
       if (searching && navRows.length > 0 && !(tag === 'textarea' || (tag === 'input' && !isSearchInput))) {
         if (isShortcut(e, SHORTCUTS.librarySelectMove)) {
@@ -504,8 +495,8 @@ export function TreePane({
   useScrollToNode(scrollRef, flashNodeId, [paneView, expanded, listExpanded, corpus, lists]);
 
   // ListRow's props, grouped by concern. Memoized so a fresh object on every TreePane render
-  // doesn't defeat ListRow's own memo; built above the `if (!corpus)` bail since hooks can't
-  // run conditionally.
+  // doesn't defeat ListRow's memo, and built above the `if (!corpus)` bail, since hooks can't run
+  // conditionally.
   const listRowMenu: ListRowMenuProps = useMemo(
     () => ({
       menuOpenId,
@@ -650,9 +641,8 @@ export function TreePane({
               value={query}
               onChange={(e) => onSearch(e.target.value)}
               onKeyDown={(e) => {
-                // Stops here rather than bubbling to any other Escape handler — closing the
-                // search box is a complete, self-contained action for this key while it has
-                // focus, not one step of some other component's own Escape handling.
+                // Stops here rather than bubbling to another Escape handler: closing the search box
+                // is a complete action for this key while the input has focus.
                 if (e.key === 'Escape') {
                   e.preventDefault();
                   e.stopPropagation();
@@ -681,26 +671,24 @@ export function TreePane({
             </button>
           </div>
         )}
-        {/* Named tabs rather than the icon toggle this used to be: two unlabelled glyphs in the
-            row above gave a reader nothing to guess from, and this is the only way to reach My
-            lists. Kept last in the header so the active tab's underline always meets the header's
-            own border, even with the search box open above it.
+        {/* Named tabs, since this is the only way to reach My lists and an unlabelled glyph gives a
+            reader nothing to guess from. Kept last in the header so the active tab's underline
+            meets the header's own border, even with the search box open above it.
 
-            Two buttons, not one control that flips: an underlined tab bar reads as "click the one
-            you want", and clicking the tab you're already on should do nothing. The `x` shortcut
-            still flips between them.
+            Two buttons rather than one control that flips: an underlined tab bar reads as "click
+            the one you want", and clicking the tab you are already on does nothing. The `x`
+            shortcut still flips between them.
 
             Gone entirely once a query has results below: hits are drawn from the whole corpus
-            regardless of which tab is active, so leaving a highlighted tab sitting above them
-            would claim they were filtered by it.
+            whichever tab is active, so a highlighted tab above them would claim they were filtered
+            by it.
 
-            The -mx-2 cancels 8px of the header's own 22px side padding. On the right the rows
-            below are inset 10px, but what sits at that edge is a round hover target with air
-            around its glyph, so ending the underline at 10px overshoots what the eye reads as
-            the edge and 22px falls short of it; 14px splits the two. The left gets the same 8px
-            so the bar stays centred under the header above it — both tabs are flex-1 in this one
-            row, so the margin moves the two outer ends together and the shared inner edge stays
-            put. */}
+            The -mx-2 cancels 8px of the header's 22px side padding. On the right the rows below are
+            inset 10px, but what sits at that edge is a round hover target with air around its
+            glyph, so ending the underline at 10px overshoots what the eye reads as the edge and
+            22px falls short; 14px splits the two. The left gets the same 8px so the bar stays
+            centred — both tabs are flex-1, so the margin moves the outer ends together and the
+            shared inner edge stays put. */}
         {!searching && (
           <div className="flex mt-4 -mx-2 font-sans text-ui-sm font-semibold">
             {(['library', 'lists'] as const).map((view) => (

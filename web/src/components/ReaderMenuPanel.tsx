@@ -17,8 +17,8 @@ interface ReaderMenuPanelProps {
   theme: ThemeColors;
   initialTab: Tab;
   segments: SegmentFile[] | null;
-  // ReaderPage/useSuttaReading already group this sutta's highlights once via groupHighlights —
-  // passed down rather than re-derived here so the same computation isn't done twice per render.
+  // useSuttaReading already groups this sutta's highlights via groupHighlights, so they're passed
+  // down rather than derived a second time per render.
   highlightGroups: HighlightGroup[];
   onClose: () => void;
   onJumpToHighlight: (segIndex: number, highlightId?: string) => void;
@@ -30,17 +30,16 @@ interface ReaderMenuPanelProps {
   onTabChange?: (tab: Tab) => void;
 }
 
-// Each theme is previewed as a miniature of the reading surface itself — lines of body text on
-// that theme's own paper, with one line in its Pali accent — rather than named on a flat colour
-// chip. Same device as the app shell's own picker (SettingsPage's THEME_OPTIONS), which draws a
-// miniature of the *shell* instead; here there is no tree pane to draw, so the tile is the page.
-// It also replaces that flat chip's mix-blend-mode label trick: the name now sits under the tile
-// in the panel's own ink, so it is legible at the same contrast on all three.
+// Each theme is previewed as a miniature of the reading surface — lines of body text on that
+// theme's paper, one of them in its Pali accent — rather than named on a flat colour chip. The same
+// device as the shell's picker (SettingsPage's THEME_OPTIONS), which draws a miniature of the shell
+// instead; here there is no tree pane to draw, so the tile is the page. The name sits under the
+// tile in the panel's own ink, legible at the same contrast on all three.
 //
-// The colours are literals rather than READER_THEMES lookups because all three tiles render in
-// their own palette at once while the panel around them is in only one of them.
-// 'system' is the default both this and the shell picker resolve *through* rather than a tile of
-// its own (see types.ts's ReaderTheme note), so selection is matched against the resolved theme.
+// The colours are literals rather than READER_THEMES lookups, because all three tiles render in
+// their own palette at once while the panel around them is in only one. 'system' is what both
+// pickers resolve through rather than a tile of its own (see types.ts's ReaderTheme), so selection
+// is matched against the resolved theme.
 const THEME_TILES: Array<{ id: ResolvedReaderTheme; label: string; bg: string; fg: string; pali: string }> = [
   { id: 'light', label: 'Light', bg: '#FAF8F3', fg: '#1B1917', pali: '#7A5B2E' },
   { id: 'dark', label: 'Dark', bg: '#2A241E', fg: '#EDE6D9', pali: '#C9A86F' },
@@ -48,10 +47,10 @@ const THEME_TILES: Array<{ id: ResolvedReaderTheme; label: string; bg: string; f
 ];
 
 // Six faces in reading order down the 3×2 grid below. Four are serifs of genuinely different
-// character — a reader who doesn't like one should be able to see, from the specimens alone, which
-// of the others is unlike it. Two (Newsreader, Literata) are vendored webfonts, so every device
-// has at least three real choices; Charter is Apple-only and Palatino is a different cut on each
-// platform, and both fall back to Georgia where they're missing (see READER_FACES).
+// character, so a reader who dislikes one can see from the specimens which others are unlike it.
+// Newsreader and Literata are vendored webfonts, so every device has at least three real choices;
+// Charter is Apple-only and Palatino is a different cut on each platform, and both fall back to
+// Georgia where missing (see READER_FACES).
 const FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
   { id: 'georgia', label: 'Georgia' },
   { id: 'serif', label: 'Newsreader' },
@@ -67,10 +66,10 @@ const TABS: Array<{ id: Tab; label: string }> = [
   { id: 'text', label: 'Display' },
 ];
 
-// A two-or-more-state segmented control: one recessed track with a raised thumb under the active
-// option. Used for this panel's tab bar and for the Display tab's Pali and translator-note rows —
-// the same shape at two sizes, so a setting with exactly two states shows *both* of them rather
-// than a single button whose label has to double as the current value and the action.
+// A segmented control: one recessed track with a raised thumb under the active option. Used for
+// this panel's tab bar and for the Display tab's Pali and translator-note rows — the same shape at
+// two sizes, so a two-state setting shows both states rather than one button whose label has to
+// double as the current value and the action.
 function Segmented<T extends string>({
   value,
   options,
@@ -97,9 +96,9 @@ function Segmented<T extends string>({
             key={o.id}
             aria-pressed={on}
             // `flex-auto`, not `flex-1`: `flex-1` zeroes the basis, so the tabs come out as equal
-            // shares of the track and their own horizontal padding never affects anything. Sizing
-            // from content plus padding instead lets that padding set how much air each label
-            // carries, with the leftover width still shared out evenly.
+            // shares of the track and their horizontal padding does nothing. Sizing from content
+            // plus padding lets that padding set the air around each label, with the leftover width
+            // still shared evenly.
             className={`${grow ? 'flex-auto' : ''} rounded-full font-sans text-ui-sm whitespace-nowrap ${
               grow ? 'px-5 py-[8px]' : 'px-3.5 py-[6px]'
             }`}
@@ -124,10 +123,10 @@ function Segmented<T extends string>({
   );
 }
 
-// One connected group — the two buttons and the value they change share a single outline, divided
-// by hairlines. Matches Settings' UI-scale stepper. A stepper rather than a slider because both of
-// these ranges are short and discrete, and landing on one stop of nine with a thumb on a phone is
-// far harder than tapping "+"; it also shows the value, which the bare range inputs never did.
+// One connected group: the two buttons and the value they change share a single outline, divided by
+// hairlines, matching Settings' UI-scale stepper. A stepper rather than a slider because both
+// ranges are short and discrete, and landing on one stop of nine with a thumb is far harder than
+// tapping "+"; it also shows the value.
 function Stepper({
   value,
   min,
@@ -195,26 +194,24 @@ export function ReaderMenuPanel({
   const { resolvedTheme, setTheme, fs, setFs, lh, setLh, face, setFace, allPali, toggleAllPali, showNotes, toggleShowNotes } =
     useReaderPrefs();
 
-  // The Display tab has no text inputs, so on mobile it renders as a short bottom sheet instead of
-  // going full-screen — leaving the reader visible above it so font/line-height/theme changes can
-  // be seen live while adjusting them (see below). Highlights and Lists stay full-screen and
-  // top-anchored (not a bottom sheet): their inputs (Lists' auto-focused search/create field;
-  // Highlights' note textarea) need to stay above the on-screen keyboard, and this container is
-  // `position: absolute` inside ReaderPage's `fixed inset-0` root, which stays pinned to the full
-  // layout-viewport height and doesn't shrink for the keyboard, so anything anchored to its
-  // *bottom* ends up hidden beneath the keyboard rather than pushed up above it.
+  // The Display tab has no text inputs, so on mobile it is a short bottom sheet rather than
+  // full-screen, leaving the reader visible above it while font, line-height and theme changes are
+  // judged live. Highlights and Lists stay full-screen and top-anchored, because their inputs —
+  // Lists' auto-focused search field, Highlights' note textarea — have to stay above the on-screen
+  // keyboard: this container is `position: absolute` inside ReaderPage's `fixed inset-0` root,
+  // which stays pinned to the full layout viewport and doesn't shrink for the keyboard, so anything
+  // anchored to its bottom ends up beneath the keyboard rather than above it.
   const isThemeSheet = mobile && tab === 'text';
-  // Only the initial mount should play an entrance animation — once mounted, switching tabs
-  // changes `panelStyle`/shape live (see below) and should snap instantly, not replay a
-  // slide-up/fade-in on every tab tap.
+  // Only the initial mount plays an entrance animation. Once mounted, switching tabs reshapes the
+  // panel live and snaps rather than replaying a slide-up on every tab tap.
   const hasEnteredRef = useRef(false);
   useEffect(() => {
     hasEnteredRef.current = true;
   }, []);
 
-  // Where the panel sits and how it's dressed — one of three shapes. All three are `position:
-  // absolute` inside ReaderPage's `fixed inset-0` root and share the panel's own surface colours;
-  // what differs is which edges they're pinned to. Rebuilt on every render so it keeps tracking
+  // Where the panel sits and how it is dressed — one of three shapes. All three are
+  // `position: absolute` inside ReaderPage's `fixed inset-0` root and share the panel's surface
+  // colours; what differs is which edges they are pinned to. Rebuilt every render, so it tracks
   // `theme`.
   function panelStyle(): CSSProperties {
     // The Display tab on mobile: a short bottom sheet, capped well under the viewport so the
@@ -249,8 +246,8 @@ export function ReaderMenuPanel({
       };
     }
     // Desktop, every tab: a fixed-width drawer down the right edge. A hairline plus a cast shadow
-    // rather than a heavy rule — the shadow is what separates it from the reading behind it, so
-    // the edge itself doesn't have to be a line dark enough to read as page furniture.
+    // rather than a heavy rule — the shadow separates it from the reading behind, so the edge
+    // itself needn't be dark enough to read as page furniture.
     return {
       position: 'absolute',
       top: 0,
@@ -286,10 +283,10 @@ export function ReaderMenuPanel({
   const hairline = { borderTop: `1px solid ${theme.tint}` };
   const rowLabel = 'font-sans text-ui-sm';
 
-  // Erasing from here goes through the same path as HighlightPopup's "Remove": a group is
-  // immutable and atomic, so re-writing its own ranges with a null colour retires the whole thing
-  // (see lib/mirror.ts's writeHighlightRecord). No confirmation, matching that popup — the trash
-  // sits in its own target, clear of the row's jump-to action.
+  // Erasing here takes the same path as HighlightPopup's "Remove": a group is immutable and atomic,
+  // so rewriting its ranges with a null colour retires the whole thing (lib/mirror.ts's
+  // writeHighlightRecord). No confirmation, matching that popup — the trash sits in its own target,
+  // clear of the row's jump-to action.
   const removeGroup = (g: HighlightGroup) =>
     setHighlightRanges(
       suttaId,

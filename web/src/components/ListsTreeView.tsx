@@ -8,10 +8,8 @@ import { SlidingPillToggle } from './SlidingPillToggle';
 import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits';
 
 interface ListsTreeViewProps {
-  // Gates the "You have no lists yet" empty state — false until the initial GET /api/data
-  // round-trip resolves (UserDataContext's own `ready`), so a signed-in user who actually has
-  // lists doesn't see that placeholder flash on screen for the fetch's duration before their
-  // real list rows land.
+  // Gates the "You have no lists yet" empty state: false until the initial GET /api/data resolves
+  // (UserDataContext's `ready`), so a user who does have lists never sees that placeholder flash.
   ready: boolean;
   nodeId?: string;
   onSelect: (nodeId: string) => void;
@@ -23,9 +21,8 @@ interface ListsTreeViewProps {
   toggleTopLevelDraft: () => void;
   creatingParentId: string | null | undefined;
   setCreatingParentId: (id: string | null | undefined) => void;
-  // `RefObject<HTMLInputElement>` rather than `RefObject<HTMLInputElement | null>` — a ref object
-  // is already nullable in its own `current`, and only this spelling is what React's `ref` prop
-  // accepts below.
+  // `RefObject<HTMLInputElement>` rather than `RefObject<HTMLInputElement | null>`: a ref object is
+  // already nullable in its `current`, and this is the spelling React's `ref` prop accepts.
   listInput: RefObject<HTMLInputElement>;
   draft: string;
   setDraft: (v: string) => void;
@@ -50,13 +47,11 @@ interface ListsTreeViewProps {
   autoLists: Array<{ list: ListDef; sub: string; Icon: typeof Highlighter }>;
 }
 
-// The "My lists" tree (TreePane's other view) — the reorder-mode/new-list header row, the
-// top-level new-list/group draft input, the list tree itself (ListRow, recursing into its own
-// children), and the read-only "Activity" section (Visited/Highlights/Notes). Its own component
-// rather than part of TreePane because it shares almost no JSX with the corpus browse tree it
-// alternates with (see CorpusTreeView). All the state driving this view — list CRUD,
-// drag-and-drop, expansion — lives in TreePane, via useListCrud/useListTreeDrag/useListTreeIndex;
-// this component only renders it.
+// The "My lists" tree (TreePane's other view): the reorder-mode/new-list header row, the top-level
+// draft input, the list tree itself (ListRow, recursing into its children), and the read-only
+// "Activity" section. Separate from TreePane because it shares almost no JSX with the corpus browse
+// tree it alternates with (CorpusTreeView). Every piece of state driving this — list CRUD,
+// drag-and-drop, expansion — lives in TreePane via useListCrud/useListTreeDrag/useListTreeIndex.
 export function ListsTreeView({
   ready,
   nodeId,

@@ -7,9 +7,9 @@ interface DictState {
   word: string;
   gloss: string;
   defs: string[] | null;
-  // Where this lookup's word sits in the sutta's own Pali — lets the DictionaryDock's prev/next
-  // arrows step to the adjacent word (see goToAdjacentWord below) without re-deriving position
-  // from the (not-unique-within-a-segment) word text itself.
+  // Where this lookup's word sits in the sutta's Pali, so DictionaryDock's prev/next arrows can
+  // step to the adjacent word without re-deriving the position from the word text, which isn't
+  // unique within a segment.
   segIndex: number;
   wordIndex: number;
   // This word's shard is still being fetched, and has been for long enough to be worth saying so
@@ -22,8 +22,7 @@ interface DictState {
 }
 
 // How long a lookup may take before the dock admits to waiting. A shard read that beats this never
-// renders a loading state at all, which is what stops the dock resizing twice — once to its
-// one-line "Loading…" body and again to the definitions — for every tapped word.
+// renders a loading state, which keeps the dock from resizing twice for every tapped word.
 const LOADING_DELAY_MS = 150;
 
 interface UseDictionaryLookupOptions {
@@ -41,10 +40,10 @@ interface UseDictionaryLookupOptions {
 export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegment, setOpenSegs }: UseDictionaryLookupOptions) {
   const [dict, setDict] = useState<DictState | null>(null);
 
-  // Which lookup the dock is currently showing. Shard fetches settle out of order (holding
-  // an Arrow key walks words faster than a cold shard resolves), so a reply is only allowed to
-  // write state if it is still the one being waited on. Bumping it also cancels: closing the dock
-  // or changing sutta invalidates every reply and timer still in flight.
+  // Which lookup the dock is showing. Shard fetches settle out of order — holding an Arrow key
+  // walks words faster than a cold shard resolves — so a reply may write state only while it is
+  // still the one being waited on. Bumping it also cancels: closing the dock or changing sutta
+  // invalidates every reply and timer in flight.
   const currentLookup = useRef(0);
   const loadingTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
@@ -78,9 +77,9 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
         return;
       }
 
-      // Not resident. Move the caret to the new word if the dock is already open, but leave its
-      // body — and so its height — exactly as it was; a dock that isn't open stays shut rather
-      // than opening empty. Either way nothing visibly changes size until the timer below fires.
+      // Not resident. Move the caret to the new word if the dock is open, leaving its body — and so
+      // its height — as it was; a dock that isn't open stays shut rather than opening empty.
+      // Nothing changes size until the timer below fires.
       setDict((d) => (d ? { ...d, word, segIndex, wordIndex } : d));
       loadingTimer.current = setTimeout(() => {
         if (token !== currentLookup.current) return;
@@ -107,15 +106,13 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
     if (dict) runLookup(dict.word, dict.segIndex, dict.wordIndex);
   }, [dict, runLookup]);
 
-  // Every segment's Pali word list, in the same order SegmentedText renders (and taps) them —
-  // shared by onWordClick (to record where a lookup came from) and goToAdjacentWord (to walk
-  // forward/backward across segment boundaries) below.
+  // Every segment's Pali word list, in the order SegmentedText renders them — used by onWordClick
+  // to record where a lookup came from, and by goToAdjacentWord to walk across segment boundaries.
   const segWords = useMemo(() => (segments ? segments.map((s) => splitPaliWords(s.pali)) : []), [segments]);
 
   // Warm the shards either neighbour of the open word would need. Consecutive words in a sutta
-  // share almost no alphabetical locality — stepping through dn4 crosses a shard boundary on 37
-  // of every 39 steps — so without this, prev/next would take the async path every single time
-  // and the dock could never step without waiting.
+  // share almost no alphabetical locality — stepping through dn4 crosses a shard boundary on 37 of
+  // every 39 steps — so without this, prev/next always takes the async path.
   const prefetchNeighbours = useCallback(
     (segIndex: number, wordIndex: number) => {
       for (const dir of [1, -1] as const) {
@@ -126,23 +123,19 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
     [segWords]
   );
 
-  // The word SegmentedText should render as persistently "active" (see its activeWordIndex prop)
-  // — kept referentially stable across renders where the position hasn't actually changed by
-  // depending on the primitives, not on `dict` itself (setDict always allocates a new object,
-  // including from goToAdjacentWord even when only the word text should visually update).
+  // The word SegmentedText renders as persistently active (its activeWordIndex prop). Kept
+  // referentially stable across renders where the position hasn't changed by depending on the
+  // primitives rather than on `dict`, which setDict always reallocates.
   const activeWord = useMemo(
     () => (dict ? { segIndex: dict.segIndex, wordIndex: dict.wordIndex } : null),
     [dict?.segIndex, dict?.wordIndex]
   );
 
-  // Only scrolls if the given word's DOM rect actually falls outside the reading pane's own
-  // visible bounds — above its top (stepped/jumped to a spot scrolled past already) or below its
-  // bottom (the DictionaryDock is a flex sibling of the scroll pane, not an overlay — see its
-  // render in ReaderPage — so when it mounts, grows, or shrinks with a new word's definition list,
-  // the scroll pane's own measured height already reflects however much room it's taking up, with
-  // no separate dock-height lookup needed). The check itself is strict (no padding) — padding a
-  // *trigger* zone around the edges just fires extra scrolls for words that are already fully
-  // visible; the "leave some breathing room" ask instead belongs on the destination below.
+  // Only scrolls if the word's DOM rect falls outside the reading pane's visible bounds. The
+  // DictionaryDock is a flex sibling of the scroll pane rather than an overlay, so as it mounts,
+  // grows or shrinks the pane's measured height already accounts for it and no dock-height lookup
+  // is needed. The check is strict, with no padding: padding the trigger zone would fire extra
+  // scrolls for words already fully visible, and the breathing room belongs on the destination.
   const scrollToWordIfCovered = useCallback(
     (segIndex: number, wordIndex: number) => {
       const container = scrollRef.current;
@@ -157,21 +150,18 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
       const wordRect = word.getBoundingClientRect();
       const containerRect = container.getBoundingClientRect();
       if (wordRect.top < containerRect.top || wordRect.bottom > containerRect.bottom) {
-        // Center the *word itself*, not the segment's heading (scrollToSegment's target) — a long
-        // paragraph or verse block can otherwise leave the actual word still covered (or still
-        // off-screen) even after "centering" its segment. Centering the word's own element also
-        // naturally leaves generous clearance above and below it, well past the "at least a line"
-        // ask, without needing a separate padded destination.
+        // Centre the word itself rather than its segment (scrollToSegment's target): a long
+        // paragraph or verse block can leave the word covered even after its segment is centred.
+        // Centring the word also leaves generous clearance above and below it.
         word.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     },
     [scrollRef, scrollToSegment]
   );
 
-  // Walks forward/backward from the currently-open dict word to the next Pali token, crossing
-  // into the next/previous segment (skipping any with no Pali tokens at all) once the current one
-  // runs out — used by DictionaryDock's own prev/next arrows and the reader's Left/Right shortcut
-  // (see useReaderKeyboard, which depends on this).
+  // Walks from the open dict word to the next Pali token, crossing into the adjacent segment —
+  // skipping any with no Pali tokens — once the current one runs out. Driven by DictionaryDock's
+  // prev/next arrows and the reader's Left/Right shortcut (useReaderKeyboard).
   const goToAdjacentWord = useCallback(
     (dir: 1 | -1) => {
       if (!dict || segWords.length === 0) return;
@@ -180,26 +170,22 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
       const { segIndex: si, wordIndex: wi, word: raw } = next;
       runLookup(raw, si, wi);
       prefetchNeighbours(si, wi);
-      // Reveal on an actual segment change — an already-open segment's words are all already
-      // rendered. Whether to scroll is then left entirely to scrollToWordIfCovered, which
-      // checks the *word's* own visibility rather than assuming a segment change always needs
-      // one (a short next segment can easily land fully in view on its own) or that staying
-      // within one never does (a taller definition list can still push the current word under
-      // the dock without the segment changing at all).
+      // Reveal on an actual segment change; an already-open segment's words are all rendered.
+      // Whether to scroll is left to scrollToWordIfCovered, which checks the word's own visibility
+      // — a short next segment can land fully in view, and a taller definition list can push the
+      // current word under the dock without the segment changing at all.
       if (si !== dict.segIndex) setOpenSegs((s) => (s[si] ? s : { ...s, [si]: true }));
       requestAnimationFrame(() => scrollToWordIfCovered(si, wi));
     },
     [dict, runLookup, prefetchNeighbours, segWords, scrollToWordIfCovered, setOpenSegs]
   );
 
-  // A word/note/highlight tap is a single-shot click, not a selection (see the matching
-  // `user-select: none` on those tap targets in SegmentedText/index.css) — but iOS Safari can
-  // still occasionally win the race and start its own native text-selection gesture on the same
-  // touch that fired this click, leaving a stray selection (and its handles/callout) sitting
-  // over the text after the dock closes. That stray selection is what then intercepts the next
-  // touch-drag as a selection-handle drag instead of a scroll, reading as "scroll is blocked".
-  // Clearing on every open/close, mirroring `pick()`/`close()` in useHighlightPopup.ts, forces
-  // that state to release regardless of which side won.
+  // A word, note or highlight tap is a single-shot click rather than a selection, and those tap
+  // targets carry `user-select: none` — but iOS Safari can still win the race and start a native
+  // text-selection gesture on the same touch, leaving a stray selection and its handles over the
+  // text. That selection then takes the next touch-drag as a handle drag instead of a scroll,
+  // which reads as scrolling being blocked. Clearing on every open and close, as `pick()` and
+  // `close()` in useHighlightPopup.ts do, releases it whichever side won.
   const closeDict = useCallback(() => {
     cancelPending();
     setDict(null);
@@ -213,8 +199,8 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
       prefetchNeighbours(segIndex, wordIndex);
       const sel = window.getSelection();
       if (sel) sel.removeAllRanges();
-      // The dock opening can cover the just-tapped word if it's near the bottom of the reading
-      // pane — scrollToWordIfCovered re-centers only when that's actually true, not on every tap.
+      // The dock opening can cover a word tapped near the bottom of the reading pane.
+      // scrollToWordIfCovered re-centres only when that is true, not on every tap.
       requestAnimationFrame(() => scrollToWordIfCovered(segIndex, wordIndex));
     },
     [runLookup, prefetchNeighbours, scrollToWordIfCovered]

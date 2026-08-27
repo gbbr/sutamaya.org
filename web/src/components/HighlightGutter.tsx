@@ -10,18 +10,16 @@ interface HighlightGutterProps {
   highlightGroups: HighlightGroup[];
   theme: ThemeColors;
   onJump: (segIndex: number, highlightId?: string) => void;
-  // Recomputed whenever this changes, in addition to on mount/highlight-change/resize — pass
-  // anything that can reflow the text without resizing the scroll container itself (font size,
-  // line height, face, Pali-always-shown, or the sutta's segments going from not-yet-loaded to
-  // loaded — the container's own box, fixed by the surrounding flex layout, doesn't change size
-  // either way), since a ResizeObserver on the container won't catch that on its own.
+  // Recomputed whenever this changes, on top of mount, highlight change and resize. Pass anything
+  // that reflows the text without resizing the scroll container — font size, line height, face,
+  // Pali-always-shown, or the sutta's segments arriving — since the container's own box is fixed by
+  // the surrounding flex layout and a ResizeObserver on it sees none of that.
   layoutKey?: string | number;
 }
 
-// RainDrop-style: a thin strip of colour marks along the edge of the scroll area, one per
-// highlight, positioned at the same relative height its text sits at in the scrollable content
-// — so a mark's position is where the scrollbar thumb would be if that highlight were on
-// screen. Clicking one jumps straight to it.
+// A thin strip of colour marks along the edge of the scroll area, one per highlight, each at the
+// relative height its text sits at in the scrollable content — where the scrollbar thumb would be
+// if that highlight were on screen. Clicking one jumps to it.
 export function HighlightGutter({ scrollRef, highlightGroups, theme, onJump, layoutKey }: HighlightGutterProps) {
   const [marks, setMarks] = useState<GutterMark[]>([]);
   const [track, setTrack] = useState<GutterTrack | null>(null);
@@ -36,10 +34,9 @@ export function HighlightGutter({ scrollRef, highlightGroups, theme, onJump, lay
 
     function recompute() {
       if (!container) return;
-      // getBoundingClientRect() reports real, post-`zoom` screen coordinates, but scrollTop/
-      // scrollHeight are local (pre-zoom) layout units — same distinction index.css's 100dvh
-      // compensation deals with (see applyUiScale). computeGutterLayout converts the rect values
-      // to local units before mixing them with scroll units — see its own comment.
+      // getBoundingClientRect() reports post-`zoom` screen coordinates, while scrollTop and
+      // scrollHeight are pre-zoom layout units; computeGutterLayout converts the rect values to
+      // local units before mixing the two.
       const { track, marks } = computeGutterLayout(
         highlightGroups,
         container.getBoundingClientRect(),

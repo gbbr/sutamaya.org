@@ -20,9 +20,8 @@ interface SlidingPillToggleProps {
 }
 
 // A two-state pill toggle with a sliding thumb behind whichever icon is active — ListsTreeView's
-// List/Group draft-kind picker. Colour is left to the caller rather than baked in, since this is a
-// choice made *inside* a form field rather than app navigation: the thumb stays neutral and only
-// the icon is tinted.
+// List/Group draft-kind picker. Colour is left to the caller: this is a choice made inside a form
+// field rather than app navigation, so the thumb stays neutral and only the icon is tinted.
 export function SlidingPillToggle({
   active,
   onClick,
