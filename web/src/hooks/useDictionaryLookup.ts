@@ -25,6 +25,13 @@ interface DictState {
 // renders a loading state, which keeps the dock from resizing twice for every tapped word.
 const LOADING_DELAY_MS = 150;
 
+// How long after a lookup starts the dock may still scroll the word it opened on into view. The
+// dock's height settles asynchronously — a cold shard resolves well after the tap — so the
+// visibility check has to run again when it does, and this bounds how late that can happen: past
+// the window (a fetch that hangs, then fails) the reader has moved on and yanking the pane back
+// would be the more surprising behaviour.
+const SCROLL_WINDOW_MS = 2000;
+
 interface UseDictionaryLookupOptions {
   suttaId: string | undefined;
   segments: SegmentFile[] | null;
@@ -46,6 +53,8 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
   // invalidates every reply and timer in flight.
   const currentLookup = useRef(0);
   const loadingTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  // When the lookup the dock is currently showing began — see SCROLL_WINDOW_MS.
+  const lookupStartedAt = useRef(0);
 
   const cancelPending = useCallback(() => {
     currentLookup.current += 1;
@@ -65,6 +74,7 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
     (raw: string, segIndex: number, wordIndex: number) => {
       const token = (currentLookup.current += 1);
       const word = stripPunct(raw);
+      lookupStartedAt.current = Date.now();
       clearTimeout(loadingTimer.current);
       const settle = (defs: string[] | null) =>
         setDict({ word, gloss: defs ? `${defs.length}` : 'Pali', defs, segIndex, wordIndex });
@@ -159,6 +169,20 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
     [scrollRef, scrollToSegment]
   );
 
+  // The dock is a flex sibling of the reading pane, so anything that changes its height shortens
+  // the pane and can hide the word the dock is about. Its height moves at three separate moments
+  // — it opens, it admits to loading, it fills with definitions — and only the first of those is
+  // synchronous with the tap, so the check runs off the dock's rendered content rather than off
+  // the tap. This is also what handles the tap itself: an effect runs after the commit, by which
+  // point the dock has mounted and any newly revealed segment is in the DOM.
+  useEffect(() => {
+    if (!dict) return;
+    if (Date.now() - lookupStartedAt.current > SCROLL_WINDOW_MS) return;
+    scrollToWordIfCovered(dict.segIndex, dict.wordIndex);
+    // `defs` by reference: a settled lookup yields one array, so this fires once per resize and
+    // not on the re-renders in between.
+  }, [dict?.segIndex, dict?.wordIndex, dict?.loading, dict?.defs, scrollToWordIfCovered]);
+
   // Walks from the open dict word to the next Pali token, crossing into the adjacent segment —
   // skipping any with no Pali tokens — once the current one runs out. Driven by DictionaryDock's
   // prev/next arrows and the reader's Left/Right shortcut (useReaderKeyboard).
@@ -171,13 +195,12 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
       runLookup(raw, si, wi);
       prefetchNeighbours(si, wi);
       // Reveal on an actual segment change; an already-open segment's words are all rendered.
-      // Whether to scroll is left to scrollToWordIfCovered, which checks the word's own visibility
-      // — a short next segment can land fully in view, and a taller definition list can push the
+      // Whether to scroll is left to the effect above, which checks the word's own visibility — a
+      // short next segment can land fully in view, and a taller definition list can push the
       // current word under the dock without the segment changing at all.
       if (si !== dict.segIndex) setOpenSegs((s) => (s[si] ? s : { ...s, [si]: true }));
-      requestAnimationFrame(() => scrollToWordIfCovered(si, wi));
     },
-    [dict, runLookup, prefetchNeighbours, segWords, scrollToWordIfCovered, setOpenSegs]
+    [dict, runLookup, prefetchNeighbours, segWords, setOpenSegs]
   );
 
   // A word, note or highlight tap is a single-shot click rather than a selection, and those tap
@@ -199,11 +222,8 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
       prefetchNeighbours(segIndex, wordIndex);
       const sel = window.getSelection();
       if (sel) sel.removeAllRanges();
-      // The dock opening can cover a word tapped near the bottom of the reading pane.
-      // scrollToWordIfCovered re-centres only when that is true, not on every tap.
-      requestAnimationFrame(() => scrollToWordIfCovered(segIndex, wordIndex));
     },
-    [runLookup, prefetchNeighbours, scrollToWordIfCovered]
+    [runLookup, prefetchNeighbours]
   );
 
   return { dict, activeWord, closeDict, onWordClick, goToAdjacentWord, retryLookup };
