@@ -214,6 +214,20 @@ describe('local collapses', () => {
     expect(state.ops).toEqual([]);
   });
 
+  it('drops a sibling order queued against a group that never left this device', () => {
+    let state = list(emptyMirror('u1'), 'g1', null, 'group');
+    state = list(state, 'a', 'g1');
+    state = list(state, 'b', 'g1');
+    state = queueSiblingOrder(state, 'g1', ['b', 'a']);
+    state = queueSiblingOrder(state, null, ['g1']);
+    state = removeListRecord(state, 'g1');
+
+    // The group is dropped rather than tombstoned, so the server will never hold a row for it: an
+    // order keyed on it can only ever come back 400 Parent not found, on every flush forever. The
+    // top-level order stays — that parent is not a row at all.
+    expect(state.ops.map((op) => op.type === 'siblingOrder' && op.parentId)).toEqual([null]);
+  });
+
   it('tombstones a list deleted while its own create is still in flight', () => {
     let state = list(emptyMirror('u1'), 'l1');
     // What a flush does to the records it is about to put on the wire.

@@ -222,6 +222,16 @@ listsRouter.put('/order', async (c) => {
   const body = await jsonBody(c);
   const parentId = parentIdFromBody(body);
   const posted = orderFromBody(body);
+  // A parent this account has no row for at all makes the gesture moot rather than invalid — it is
+  // a group created and deleted before it ever reached the server, which leaves no tombstone
+  // behind (see removeListRecord in web/src/lib/mirror.ts). 404 is what lib/sync.ts reads as
+  // "gone", so the queued op retires; the 400 the reason check below would give it instead is
+  // permanent, and the op would be re-refused on every flush forever. Unfiltered on `deleted` like
+  // every other parent check here: a reorder under a tombstoned group still lands harmlessly.
+  if (parentId) {
+    const parent = await db.prepare('SELECT id FROM lists WHERE id = ? AND user_id = ?').bind(parentId, userId).first();
+    if (!parent) return c.json({ error: 'not_found' }, 404);
+  }
   const parentError = await invalidReparentReason(db, userId, parentId, posted);
   if (parentError) return c.json({ error: parentError }, 400);
   // Live rows only: a tombstoned list is out of the tree, and a stale posted order naming one must
