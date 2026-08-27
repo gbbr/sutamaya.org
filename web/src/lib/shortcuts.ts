@@ -31,8 +31,9 @@ export const SHORTCUTS = {
   // Sutta-to-sutta nav is on J/K rather than the arrows, which belong to the dictionary dock's word
   // stepping below; Shift+Arrow is the browser's own extend-selection gesture. They follow the
   // keys' physical positions — J is left of K, so J goes back and K forward — matching the
-  // horizontal movement the reader sees animate.
-  readerNav: { match: ['j', 'k'], keys: ['J', 'K'], label: 'Previous / next sutta', scope: 'reader' },
+  // horizontal movement the reader sees animate. Shift is required: leaving the reader mid-sutta
+  // shouldn't be one stray keypress away.
+  readerNav: { match: ['j', 'k'], keys: ['⇧J', '⇧K'], label: 'Previous / next sutta', scope: 'reader', shift: true },
   readerDictNav: {
     match: ['ArrowLeft', 'ArrowRight'],
     keys: ['←', '→'],
