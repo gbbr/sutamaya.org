@@ -10,6 +10,39 @@ interface ShortcutsModalProps {
   theme?: ThemeColors;
 }
 
+// The Shift key, drawn rather than typed. The '⇧' character renders as a hairline outline at cap
+// size in the mono face, which all but disappears against the dimmed cap colour; a filled arrow
+// reads at a glance.
+function ShiftIcon() {
+  return (
+    <svg viewBox="0 0 12 12" width="10" height="10" fill="currentColor" aria-hidden="true" focusable="false">
+      {/* The stem is kept narrow against the head — at cap size a stem much wider than a third of
+          the head fills the square and stops reading as an arrow. */}
+      <path d="M6 1 10.8 6.6H8.45V11H3.55V6.6H1.2z" />
+    </svg>
+  );
+}
+
+// One key cap. A `keyName` leading with '⇧' draws the icon above followed by the rest of the label,
+// so lib/shortcuts.ts keeps writing the shortcut as plain text. `theme` styles it from the reader's
+// palette; without one it uses the app-shell ink tokens.
+export function KeyCap({ keyName, theme }: { keyName: string; theme?: ThemeColors }) {
+  const shift = keyName.startsWith('⇧');
+  return (
+    <kbd
+      // Spelled out for assistive tech, which would otherwise hear only the bare letter.
+      aria-label={shift ? `Shift ${keyName.slice(1)}` : keyName}
+      className={`inline-flex items-center justify-center gap-[2px] min-w-[24px] h-[24px] px-1.5 rounded-md font-mono text-ui-xs font-semibold ${
+        theme ? '' : 'border border-ink/20 bg-chip text-ink-2'
+      }`}
+      style={theme ? { border: `1px solid ${theme.rule}`, color: theme.dim } : undefined}
+    >
+      {shift && <ShiftIcon />}
+      {shift ? keyName.slice(1) : keyName}
+    </kbd>
+  );
+}
+
 // The "?" keyboard-shortcuts help modal, shared by LibraryPage and ReaderPage: both render the same
 // `Shortcut[]` from lib/shortcuts.ts through one overlay/header/list/<kbd> structure. Only the
 // styling differs — Tailwind `ink` tokens when no `theme` is passed, inline `theme.*` when one is.
@@ -46,15 +79,7 @@ export function ShortcutsModal({ shortcuts, onClose, theme }: ShortcutsModalProp
               </span>
               <span className="flex items-center gap-1 flex-none">
                 {s.keys.map((k) => (
-                  <kbd
-                    key={k}
-                    className={`inline-flex items-center justify-center min-w-[24px] h-[24px] px-1.5 rounded-md font-mono text-ui-xs font-semibold ${
-                      theme ? '' : 'border border-ink/20 bg-chip text-ink-2'
-                    }`}
-                    style={theme ? { border: `1px solid ${theme.rule}`, color: theme.dim } : undefined}
-                  >
-                    {k}
-                  </kbd>
+                  <KeyCap key={k} keyName={k} theme={theme} />
                 ))}
               </span>
             </li>

@@ -6,6 +6,8 @@ import { NoteEditor } from './NoteEditor';
 import { ListMembershipPicker } from './ListMembershipPicker';
 import type { SegmentFile } from '../lib/corpus';
 import { highlightGroupText, type HighlightGroup } from '../lib/highlights';
+import { KeyCap } from './ShortcutsModal';
+import { SHORTCUTS } from '../lib/shortcuts';
 import { highlightPaint, READER_FACES } from '../lib/theme';
 import type { ReaderFace, ResolvedReaderTheme, ThemeColors } from '../lib/types';
 
@@ -301,6 +303,11 @@ export function ReaderMenuPanel({
   const hairline = { borderTop: `1px solid ${theme.tint}` };
   const rowLabel = 'font-sans text-ui-sm';
 
+  // A setting that also has a keyboard shortcut names it beside the label, so someone who found the
+  // control here learns the key without opening "?". Read from SHORTCUTS so the two can't drift.
+  // Desktop only: there is no keyboard to press on the mobile sheet.
+  const rowKey = (keyName: string) => (mobile ? null : <KeyCap keyName={keyName} theme={theme} />);
+
   // Erasing here takes the same path as HighlightPopup's "Remove": a group is immutable and atomic,
   // so rewriting its ranges with a null colour retires the whole thing (lib/mirror.ts's
   // writeHighlightRecord). No confirmation, matching that popup — the trash sits in its own target,
@@ -572,8 +579,11 @@ export function ReaderMenuPanel({
             </div>
 
             <div className={settingRow} style={hairline}>
-              <span className={rowLabel} style={{ color: theme.dim }}>
-                Translator's notes
+              <span className="flex items-center gap-2">
+                <span className={rowLabel} style={{ color: theme.dim }}>
+                  Translator's notes
+                </span>
+                {rowKey(SHORTCUTS.readerNotesToggle.keys[0])}
               </span>
               <Segmented
                 value={showNotes ? 'shown' : 'hidden'}
@@ -589,8 +599,11 @@ export function ReaderMenuPanel({
             </div>
 
             <div className={settingRow} style={hairline}>
-              <span className={rowLabel} style={{ color: theme.dim }}>
-                Highlights
+              <span className="flex items-center gap-2">
+                <span className={rowLabel} style={{ color: theme.dim }}>
+                  Highlights
+                </span>
+                {rowKey(SHORTCUTS.readerHighlightsToggle.keys[0])}
               </span>
               <Segmented
                 value={showHighlights ? 'shown' : 'hidden'}
