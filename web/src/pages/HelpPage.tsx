@@ -296,8 +296,8 @@ const SECTIONS: HelpSection[] = [
       },
     ],
     tips: [
-      'When reading, swiping left or right — or pressing Shift+Left/Right — moves to the next or ' +
-        'previous sutta in the current collection.',
+      'When reading, swiping left or right — or pressing Shift+J / Shift+K — moves to the previous ' +
+        'or next sutta in the current collection.',
     ],
   },
   {
