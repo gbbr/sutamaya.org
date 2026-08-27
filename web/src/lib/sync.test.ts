@@ -1,5 +1,13 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { emptyMirror, queueMembership, createListRecord, setNoteRecord, type MirrorState } from './mirror';
+import {
+  emptyMirror,
+  queueMembership,
+  createListRecord,
+  renameListRecord,
+  setListParentRecord,
+  setNoteRecord,
+  type MirrorState,
+} from './mirror';
 import { flushMirror } from './sync';
 import type { PushItem, PushResult } from './api';
 
@@ -123,6 +131,35 @@ describe('flushMirror', () => {
     // A create naming an unknown parent is refused, so a child arriving first would be a permanent
     // refusal the queue could never recover from.
     expect(pushedItems().map((item) => (item.type === 'list.create' ? item.id : item.type))).toEqual(['g1', 'c1']);
+  });
+
+  it('keeps a parent create first even when the parent is edited again after its children exist', async () => {
+    let state = createListRecord(emptyMirror('u1'), { id: 'g1', label: 'Group', parentId: null, kind: 'group' });
+    state = createListRecord(state, { id: 'c1', label: 'Child 1', parentId: 'g1', kind: 'list' });
+    state = createListRecord(state, { id: 'c2', label: 'Child 2', parentId: 'g1', kind: 'list' });
+    // Touching the group after its children exist bumps its mtime past theirs — mtime order alone
+    // would now push the children first.
+    state = renameListRecord(state, 'g1', 'Renamed Group');
+
+    await flushMirror(state);
+
+    expect(pushedItems().map((item) => (item.type === 'list.create' ? item.id : item.type))).toEqual(['g1', 'c1', 'c2']);
+  });
+
+  it('orders an existing list moved into a still-uncreated group after that group\'s create', async () => {
+    let state = createListRecord(emptyMirror('u1'), { id: 'x1', label: 'Existing', parentId: null, kind: 'list' });
+    state = { ...state, lists: { x1: { dirty: false, data: { ...state.lists.x1.data, pendingCreate: false } } } };
+    state = createListRecord(state, { id: 'g1', label: 'Group', parentId: null, kind: 'group' });
+    state = setListParentRecord(state, 'x1', 'g1');
+    // Touching the group again after the move bumps its mtime past the move's.
+    state = renameListRecord(state, 'g1', 'Renamed Group');
+
+    await flushMirror(state);
+
+    const order = pushedItems().map((item) =>
+      item.type === 'list.create' ? `create:${item.id}` : item.type === 'list.update' ? `update:${item.id}` : item.type
+    );
+    expect(order.indexOf('create:g1')).toBeLessThan(order.indexOf('update:x1'));
   });
 
   it('sends records before operations, in one push', async () => {
