@@ -12,7 +12,7 @@
    `wght` axis 100–700, Newsreader `wght` 200–800 plus `opsz` 6–72, Inter `wght` 100–900 plus `opsz`
    14–32 — so one file per (style, subset) covers every weight the app uses, 400–600. Each subset's
    `unicode-range` is Google's own, so a browser downloads only the subsets a page's text needs;
-   Pali romanization needs latin and latin-ext, and the rest are there for parity. */
+   Pali romanization needs latin and latin-ext, and the rest are there for parity.
 
    Inter is fetched from Google's two-axis build (`family=Inter:ital,opsz,wght@…`), not the
    `wght`-only one: the `opsz` axis is what lets `font-optical-sizing: auto` — on by default in
