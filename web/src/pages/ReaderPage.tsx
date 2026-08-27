@@ -708,10 +708,6 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
             <div className="font-sans text-sm opacity-50">Loading…</div>
           )}
 
-          <div className="font-sans text-center" style={{ marginTop: 34, fontSize: 12.5, color: theme.dim }}>
-            — end of excerpt —
-          </div>
-
           {/* Prev/Next where the reader actually finishes, rather than as two more icons in the
               header — the step to a neighbouring sutta is wanted at the end of the text, not at
               every moment the header's own controls are. Only shown once the text is on screen, so
