@@ -564,18 +564,21 @@ export function ReaderMenuPanel({
             </div>
 
             <div className={settingRow} style={hairline}>
-              <span className={rowLabel} style={{ color: theme.dim }}>
-                Pali
+              <span className="flex items-center gap-1.5">
+                <span className={rowLabel} style={{ color: theme.dim }}>
+                  Highlights
+                </span>
+                {rowKey(SHORTCUTS.readerHighlightsToggle.keys[0])}
               </span>
               <Segmented
-                value={allPali ? 'always' : 'tap'}
+                value={showHighlights ? 'shown' : 'hidden'}
                 options={[
-                  { id: 'tap', label: 'On tap' },
-                  { id: 'always', label: 'Always' },
+                  { id: 'hidden', label: 'Hidden' },
+                  { id: 'shown', label: 'Shown' },
                 ]}
                 theme={theme}
                 onChange={(id) => {
-                  if ((id === 'always') !== allPali) toggleAllPali();
+                  if ((id === 'shown') !== showHighlights) toggleShowHighlights();
                 }}
               />
             </div>
@@ -601,21 +604,18 @@ export function ReaderMenuPanel({
             </div>
 
             <div className={settingRow} style={hairline}>
-              <span className="flex items-center gap-1.5">
-                <span className={rowLabel} style={{ color: theme.dim }}>
-                  Highlights
-                </span>
-                {rowKey(SHORTCUTS.readerHighlightsToggle.keys[0])}
+              <span className={rowLabel} style={{ color: theme.dim }}>
+                Pali
               </span>
               <Segmented
-                value={showHighlights ? 'shown' : 'hidden'}
+                value={allPali ? 'always' : 'tap'}
                 options={[
-                  { id: 'hidden', label: 'Hidden' },
-                  { id: 'shown', label: 'Shown' },
+                  { id: 'tap', label: 'On tap' },
+                  { id: 'always', label: 'Always' },
                 ]}
                 theme={theme}
                 onChange={(id) => {
-                  if ((id === 'shown') !== showHighlights) toggleShowHighlights();
+                  if ((id === 'always') !== allPali) toggleAllPali();
                 }}
               />
             </div>
