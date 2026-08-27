@@ -18,6 +18,7 @@ import {
 } from '../../../web/src/lib/mirror';
 import { flushMirror } from '../../../web/src/lib/sync';
 import { deriveUserData } from '../../../web/src/lib/mirrorView';
+import { PUSH_MAX_ITEMS } from './data.js';
 
 // The one test that crosses the client/server seam. Everywhere else the two halves are verified
 // against their own idea of the other: the web suite mocks lib/api.ts wholesale, and the worker
@@ -43,14 +44,22 @@ async function signIn() {
 // stub supplies both: an origin to resolve `/api/...` against, and the session cookie. Everything
 // else about the request — method, body, headers, the abort signal — is whatever api.ts built,
 // which is the whole point of going through it rather than around it.
+//
+// Returns the item count of every push the device sends, in order, for the one test that cares how
+// a flush was split rather than only what it landed.
 function asDevice(cookie: string) {
-  vi.stubGlobal('fetch', (path: string, init: RequestInit = {}) =>
-    app.request(
+  const pushSizes: number[] = [];
+  vi.stubGlobal('fetch', (path: string, init: RequestInit = {}) => {
+    if (path === '/api/data/push' && typeof init.body === 'string') {
+      pushSizes.push(JSON.parse(init.body).items.length);
+    }
+    return app.request(
       `https://sutamaya.test${path}`,
       { ...init, headers: { ...(init.headers as Record<string, string>), Cookie: cookie } },
       env
-    )
-  );
+    );
+  });
+  return pushSizes;
 }
 
 // What UserDataContext does around every flush. markDispatched *before* the first request is
@@ -113,6 +122,28 @@ describe('client mirror against the real Worker', () => {
     expect(view.notes.dn1).toBe('on virtue');
     expect(view.membership.dn1).toContain(listId);
     expect(view.highlights.mn10).toHaveLength(1);
+  });
+
+  it('splits a queue past the server’s limit into chunks, and lands every one of them', async () => {
+    const { cookie } = await signIn();
+    const pushSizes = asDevice(cookie);
+
+    // A first sign-in after a long signed-out session: more queued writes than one push may carry.
+    // The client's CHUNK_SIZE is a second copy of PUSH_MAX_ITEMS living in a workspace that shares
+    // no module with this one, so nothing but this test notices the two drifting apart. Chunking
+    // too large is the half that hurts — the server refuses the whole request as `too_many_items`,
+    // the flush halts, and everything stays pending — and it fails here without needing its own
+    // assertion, because the queue would not drain.
+    const total = PUSH_MAX_ITEMS + 50;
+    let state = emptyMirror('u');
+    for (let i = 0; i < total; i += 1) state = markVisitedRecord(state, `dn${i}`);
+
+    const { state: synced, outcome } = await flush(state);
+
+    expect(outcome.status).toBe('ok');
+    expect(pushSizes).toEqual([PUSH_MAX_ITEMS, total - PUSH_MAX_ITEMS]);
+    expect(syncCounts(synced)).toEqual({ pending: 0 });
+    expect(Object.keys((await serverData(cookie)).visited)).toHaveLength(total);
   });
 
   it('keeps a reorder queued before a rename, which the row’s own mtime would otherwise drop', async () => {
