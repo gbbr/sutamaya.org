@@ -13,9 +13,9 @@ interface ShortcutsModalProps {
 // The Shift key, drawn rather than typed. The '⇧' character renders as a hairline outline at cap
 // size in the mono face, which all but disappears against the dimmed cap colour; a filled arrow
 // reads at a glance.
-function ShiftIcon() {
+function ShiftIcon({ px }: { px: number }) {
   return (
-    <svg viewBox="0 0 12 12" width="10" height="10" fill="currentColor" aria-hidden="true" focusable="false">
+    <svg viewBox="0 0 12 12" width={px} height={px} fill="currentColor" aria-hidden="true" focusable="false">
       {/* The stem is kept narrow against the head — at cap size a stem much wider than a third of
           the head fills the square and stops reading as an arrow. */}
       <path d="M6 1 10.8 6.6H8.45V11H3.55V6.6H1.2z" />
@@ -25,19 +25,21 @@ function ShiftIcon() {
 
 // One key cap. A `keyName` leading with '⇧' draws the icon above followed by the rest of the label,
 // so lib/shortcuts.ts keeps writing the shortcut as plain text. `theme` styles it from the reader's
-// palette; without one it uses the app-shell ink tokens.
-export function KeyCap({ keyName, theme }: { keyName: string; theme?: ThemeColors }) {
+// palette; without one it uses the app-shell ink tokens. `small` is for a cap sitting beside body
+// or caption text rather than in the help modal's own list, where the full-size cap outweighs what
+// it annotates.
+export function KeyCap({ keyName, theme, small }: { keyName: string; theme?: ThemeColors; small?: boolean }) {
   const shift = keyName.startsWith('⇧');
   return (
     <kbd
       // Spelled out for assistive tech, which would otherwise hear only the bare letter.
       aria-label={shift ? `Shift ${keyName.slice(1)}` : keyName}
-      className={`inline-flex items-center justify-center gap-[2px] min-w-[24px] h-[24px] px-1.5 rounded-md font-mono text-ui-xs font-semibold ${
-        theme ? '' : 'border border-ink/20 bg-chip text-ink-2'
-      }`}
+      className={`inline-flex items-center justify-center gap-[2px] rounded-md font-mono font-semibold ${
+        small ? 'min-w-[18px] h-[18px] px-1 text-[10px] leading-none' : 'min-w-[24px] h-[24px] px-1.5 text-ui-xs'
+      } ${theme ? '' : 'border border-ink/20 bg-chip text-ink-2'}`}
       style={theme ? { border: `1px solid ${theme.rule}`, color: theme.dim } : undefined}
     >
-      {shift && <ShiftIcon />}
+      {shift && <ShiftIcon px={small ? 8 : 10} />}
       {shift ? keyName.slice(1) : keyName}
     </kbd>
   );

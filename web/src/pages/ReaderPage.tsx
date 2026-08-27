@@ -15,7 +15,7 @@ import { flatSuttaOrder, breadcrumbFor, resolveCanonicalSuttaId, loadSuttaText }
 import { flattenListTree, resolveListById, suttaRowMeta } from '../lib/lists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { setReaderThemeColor } from '../lib/themeColor';
-import { shortcutsForScope } from '../lib/shortcuts';
+import { SHORTCUTS, SHOWS_KEY_HINTS, shortcutsForScope } from '../lib/shortcuts';
 import { tagIntent } from '../lib/routeIntent';
 import { enteredByReturn } from '../lib/entryKind';
 import { animateScrollTop } from '../lib/segmentScroll';
@@ -29,7 +29,7 @@ import { HighlightGutter } from '../components/HighlightGutter';
 import { DictionaryDock } from '../components/DictionaryDock';
 import { ReaderMenuPanel } from '../components/ReaderMenuPanel';
 import { ReaderSearchOverlay } from '../components/ReaderSearchOverlay';
-import { ShortcutsModal } from '../components/ShortcutsModal';
+import { KeyCap, ShortcutsModal } from '../components/ShortcutsModal';
 import { SuttaRowChips } from '../components/SuttaRowChips';
 
 // How long a sutta has to stay open before it counts as visited. Long enough that stepping
@@ -731,8 +731,14 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
                   <button className="block flex-1 min-w-0 text-left hover:opacity-70" onClick={() => step(-1)}>
                     {/* The label is inset by the chevron's own width plus the row gap, so it starts
                         on the same vertical as the title beneath it rather than hanging left of it. */}
-                    <span style={{ display: 'block', marginLeft: fs, fontSize: footNavLabelSize(fs), ...FOOT_NAV_LABEL, color: theme.dim }}>
+                    {/* The caption doubles as where the keyboard step is named, since this is the
+                        one place in the reader that step is already on screen. */}
+                    <span
+                      className="flex items-center gap-1.5"
+                      style={{ marginLeft: fs, fontSize: footNavLabelSize(fs), ...FOOT_NAV_LABEL, color: theme.dim }}
+                    >
                       Previous
+                      {SHOWS_KEY_HINTS && <KeyCap keyName={SHORTCUTS.readerNav.keys[0]} theme={theme} small />}
                     </span>
                     <span className="flex items-center gap-1.5" style={{ marginTop: 3 }}>
                       <ChevronLeft size={fs - 6} strokeWidth={2} className="flex-none" style={{ color: theme.dim }} />
@@ -748,7 +754,11 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
                 )}
                 {footNeighbours.next ? (
                   <button className="block flex-1 min-w-0 text-right hover:opacity-70" onClick={() => step(1)}>
-                    <span style={{ display: 'block', marginRight: fs, fontSize: footNavLabelSize(fs), ...FOOT_NAV_LABEL, color: theme.dim }}>
+                    <span
+                      className="flex items-center justify-end gap-1.5"
+                      style={{ marginRight: fs, fontSize: footNavLabelSize(fs), ...FOOT_NAV_LABEL, color: theme.dim }}
+                    >
+                      {SHOWS_KEY_HINTS && <KeyCap keyName={SHORTCUTS.readerNav.keys[1]} theme={theme} small />}
                       Next
                     </span>
                     <span className="flex items-center justify-end gap-1.5" style={{ marginTop: 3 }}>

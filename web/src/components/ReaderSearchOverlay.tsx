@@ -5,7 +5,7 @@ import { useLayout } from '../context/LayoutContext';
 import { useUserData } from '../context/UserDataContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
-import { SEARCH_PLACEHOLDER, SEARCH_RESULTS_CAP } from '../lib/corpus';
+import { READER_SEARCH_PLACEHOLDER, SEARCH_NO_MATCHES, SEARCH_RESULTS_CAP } from '../lib/corpus';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { MatchedText } from './MatchedText';
 import { SuttaRowChips } from './SuttaRowChips';
@@ -101,7 +101,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
       value={query}
       onChange={(e) => setQuery(e.target.value)}
       onKeyDown={onKeyDown}
-      placeholder={SEARCH_PLACEHOLDER}
+      placeholder={READER_SEARCH_PLACEHOLDER}
       autoComplete="off"
       autoCorrect="off"
       autoCapitalize="off"
@@ -235,8 +235,8 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
             );
           })}
           {query.trim() && hits.length === 0 && (
-            <div className="font-sans text-center text-ui-base py-8 px-5" style={{ color: theme.dim }}>
-              No matches.
+            <div className="font-sans text-center text-ui-base py-8 px-5 text-balance" style={{ color: theme.dim }}>
+              {SEARCH_NO_MATCHES}
             </div>
           )}
           {!query.trim() && (

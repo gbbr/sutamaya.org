@@ -261,10 +261,15 @@ export interface SearchHit {
 // searchCorpus itself still returns every match, so a caller can show an accurate total.
 export const SEARCH_RESULTS_CAP = 80;
 
-// What both search inputs (TreePane's and ReaderSearchOverlay's) offer to match on. It sits beside
-// searchCorpus so the promise and the fields actually scanned can't drift apart. The sutta text is
-// not among them.
-export const SEARCH_PLACEHOLDER = 'Search ID, title, blurb, note, list';
+// What each search input offers to find. Named for what the reader is looking for rather than for
+// the fields searchCorpus scans; the library's also finds lists by name, which the reader's overlay
+// deliberately doesn't show. What is *not* searched — the sutta text itself — is said in the
+// no-matches line below instead, which is where someone who typed a remembered phrase ends up.
+export const SEARCH_PLACEHOLDER = 'Search suttas and lists';
+export const READER_SEARCH_PLACEHOLDER = 'Search suttas';
+export const SEARCH_SCOPE_NOTE =
+  'Search covers sutta numbers, titles, summaries and your own notes — not the text of the suttas.';
+export const SEARCH_NO_MATCHES = `No matches. ${SEARCH_SCOPE_NOTE}`;
 
 // Case- and diacritic-insensitive comparison key: Pali romanization leans on combining marks (ā, ī,
 // ñ, ṭ, ṁ, …) most people don't type, so plain "a" and "n" match "ā" and "ñ". NFD splits each

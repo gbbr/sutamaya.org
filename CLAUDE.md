@@ -257,8 +257,10 @@ started with.
 - **Reordering and drag-and-drop use Pointer Events, never HTML5 drag-and-drop**, which doesn't fire
   reliably on touch. The shared plumbing is `hooks/usePointerDragSession.ts`.
 - **Search does not cover sutta text** — `searchCorpus` scans ref, title, Pali, blurb, note and list
-  names only. `SEARCH_PLACEHOLDER` sits beside it in `lib/corpus.ts` so the promise and the fields
-  can't drift.
+  names only. The copy that admits this sits beside it in `lib/corpus.ts`: the two placeholders
+  (`SEARCH_PLACEHOLDER` for the library, `READER_SEARCH_PLACEHOLDER` for the reader's overlay, which
+  shows suttas only) name what is found, and `SEARCH_SCOPE_NOTE` — rendered under the empty state in
+  ListPane, and folded into `SEARCH_NO_MATCHES` for TreePane and the overlay — names what isn't.
 - **A library search returns two kinds of row.** `searchLists` matches the user's own lists by name
   (or an ancestor group's) and `SearchListHits` draws them as a capped block above the sutta hits —
   in ListPane on desktop, TreePane on mobile. `LibraryPage` owns the expansion state because
