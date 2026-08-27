@@ -49,17 +49,14 @@ const MAX_ID_ATTEMPTS = 4;
 
 export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
   const acks: FlushAck[] = [];
-  const rejected: FlushAck[] = [];
   const doneOps: string[] = [];
-  const rejectedOps: string[] = [];
   const remaps: { from: string; to: string }[] = [];
   let working = state;
   // Set by the first failure that means "stop": there is no point pushing the rest of the queue at
   // a network that isn't there or a session that has lapsed, and stopping keeps the ops in order.
   let halted: 'offline' | 'unauthorized' | null = null;
 
-  // Returns false when the flush should stop. A permanent rejection is neither acked nor retried
-  // blindly: the record stays dirty, which is what the sync indicator surfaces.
+  // Returns false when the flush should stop.
   async function push(ack: FlushAck, run: () => Promise<unknown>): Promise<boolean> {
     return settle(ack, await send(run));
   }
@@ -69,12 +66,17 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
       halted = verdict === 'unauthorized' ? 'unauthorized' : 'offline';
       return false;
     }
-    // 'collision' only reaches here after MAX_ID_ATTEMPTS fresh ids all collided. Acking it would
-    // clear the dirty flag for a create that never landed.
+    // Everything else retires the write, whether it landed or not. A 4xx is permanent by
+    // definition, so there is no version of it that a later attempt would answer differently: the
+    // write is given up on, and the pull at the end of this flush hands back the account's own
+    // version of that row — the same rebase a write losing last-writer-wins already gets. That
+    // client and server disagreed about validity at all is a bug in one of them, so it goes to the
+    // console for whoever is watching, and nowhere near the reader, who has nothing to decide.
+    // ('collision' only reaches here after MAX_ID_ATTEMPTS fresh ids all collided.)
     if (verdict === 'permanent' || verdict === 'collision') {
-      console.error('sync rejected a record permanently', ack);
-      rejected.push(ack);
-    } else acks.push(ack);
+      console.error('sync gave up on a permanently refused record', ack);
+    }
+    acks.push(ack);
     return true;
   }
 
@@ -145,12 +147,11 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
         halted = verdict === 'unauthorized' ? 'unauthorized' : 'offline';
         break;
       }
-      // 'gone' is the list having been deleted elsewhere, which retires the op rather than failing
-      // it. A permanent rejection stays queued, same as a rejected record.
-      if (verdict === 'permanent') {
-        console.error('sync rejected a list operation permanently', op);
-        rejectedOps.push(op.id);
-      } else doneOps.push(op.id);
+      // 'gone' is the list having been deleted elsewhere; 'permanent' is the server refusing the op
+      // outright. Neither is retryable, so both retire it — see settle above for why a permanent
+      // refusal is given up on rather than kept.
+      if (verdict === 'permanent') console.error('sync gave up on a permanently refused list operation', op);
+      doneOps.push(op.id);
     }
   }
 
@@ -165,15 +166,13 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
     }
   }
 
-  return { status: halted ?? 'ok', acks, rejected, doneOps, rejectedOps, remaps, snapshot };
+  return { status: halted ?? 'ok', acks, doneOps, remaps, snapshot };
 }
 
 const BLOCKED: FlushOutcome = {
   status: 'blocked',
   acks: [],
-  rejected: [],
   doneOps: [],
-  rejectedOps: [],
   remaps: [],
   snapshot: null,
 };

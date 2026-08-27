@@ -59,26 +59,26 @@ describe('flushMirror', () => {
     expect(outcome.snapshot).toBeNull();
   });
 
-  it('leaves a permanently rejected record unacked, and carries on with the rest', async () => {
+  it('gives up on a permanently refused record and carries on with the rest', async () => {
     const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     notesApiSet.mockImplementation(() => httpError(400));
     const state = setNoteRecord(withQueuedAdd(), 'dn1', 'a note');
 
     const outcome = await flushMirror(state);
 
-    // Retrying a 400 blindly cannot fix it, so the record stays dirty — a queue that never drains
-    // is a thing to surface, not to hide. Nothing else in the flush is held up by it.
+    // A 400 is permanent by definition, so no later attempt would answer differently: the write is
+    // retired like any other, and the pull rebases the row onto whatever the account has. Keeping
+    // it would leave a queue that can never drain and a warning the reader can do nothing about.
     expect(outcome.status).toBe('ok');
-    expect(outcome.acks).toEqual([]);
-    // Reported separately from `acks` so the mirror can mark it stuck rather than merely "still
-    // dirty" — see applyFlushOutcome/syncCounts, which is what the sync indicator reads.
-    expect(outcome.rejected).toEqual([{ kind: 'note', id: 'dn1', mtime: state.notes.dn1.data.mtime }]);
+    expect(outcome.acks).toEqual([{ kind: 'note', id: 'dn1', mtime: state.notes.dn1.data.mtime }]);
     expect(outcome.doneOps).toHaveLength(1);
+    // The disagreement about validity is a bug in one of the two sides, so it goes to whoever is
+    // watching the console.
     expect(errorSpy).toHaveBeenCalled();
     errorSpy.mockRestore();
   });
 
-  it('reports a permanently rejected list operation the same way, without retiring it', async () => {
+  it('gives up on a permanently refused list operation the same way', async () => {
     const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     listsApiAddItem.mockImplementation(() => httpError(400));
     const state = withQueuedAdd();
@@ -87,8 +87,8 @@ describe('flushMirror', () => {
     const outcome = await flushMirror(state);
 
     expect(outcome.status).toBe('ok');
-    expect(outcome.doneOps).toEqual([]);
-    expect(outcome.rejectedOps).toEqual([opId]);
+    expect(outcome.doneOps).toEqual([opId]);
+    expect(errorSpy).toHaveBeenCalled();
     errorSpy.mockRestore();
   });
 

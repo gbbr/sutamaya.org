@@ -99,7 +99,7 @@ describe('client mirror against the real Worker', () => {
     const { state: synced, outcome } = await flush(state);
 
     expect(outcome.status).toBe('ok');
-    expect(syncCounts(synced)).toEqual({ pending: 0, stuck: 0 });
+    expect(syncCounts(synced)).toEqual({ pending: 0 });
 
     const data = await serverData(cookie);
     expect(userLists(data)).toEqual([{ id: listId, label: 'Favorites', parentId: null, kind: 'list', items: ['dn1'] }]);
@@ -179,7 +179,7 @@ describe('client mirror against the real Worker', () => {
     // the list arrives empty and the sutta the user filed is silently gone.
     const lists = userLists(await serverData(cookie));
     expect(lists).toEqual([{ id: outcome.remaps[0].to, label: 'Mine', parentId: null, kind: 'list', items: ['dn1'] }]);
-    expect(syncCounts(synced)).toEqual({ pending: 0, stuck: 0 });
+    expect(syncCounts(synced)).toEqual({ pending: 0 });
     // The other account's row is untouched.
     const theirs = userLists(await serverData(other.cookie));
     expect(theirs.map((l) => l.label)).toEqual(['Theirs']);
