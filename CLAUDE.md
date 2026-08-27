@@ -57,7 +57,7 @@ Deploys handle the remote database themselves (`scripts/deploy.sh`).
 ```
 web/src/
   context/      one provider per concern — Auth, Corpus, UserData, ReaderPrefs, UiPrefs, Layout
-  pages/        LibraryPage (tree + list panes), ReaderPage (full-screen), SettingsPage
+  pages/        LibraryPage (tree + list panes), ReaderPage (full-screen), SettingsPage, HelpPage
   components/   SegmentedText is the reader's renderer; TreePane/ListPane/ListRow the library
   hooks/        reader keyboard, dictionary lookup, scroll memory, the two pointer-drag sessions
   lib/          pure helpers, no React — corpus/search, dictionary shards, the mirror and its flush

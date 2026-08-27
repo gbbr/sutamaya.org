@@ -7,9 +7,9 @@ highlighting, notes, lists, typography controls).
 ## Stack
 
 - **`web/`** — React + TypeScript + Tailwind CSS + Vite, packaged as a PWA.
-- **`worker/`** — a Cloudflare Worker (Hono) serving `/api/*`, backed by **D1** for storage and
-  Google sign-in for session auth. Also serves the built SPA and static corpus from the same
-  Worker via Cloudflare's assets binding — see `docs/deploy.md`.
+- **`worker/`** — a Cloudflare Worker (Hono) serving `/api/*`, backed by **D1** for storage, with
+  sessions from Google sign-in or an emailed code. Also serves the built SPA and static corpus from
+  the same Worker via Cloudflare's assets binding — see `docs/deploy.md`.
 - **`scripts/`** — builds the static corpus bundle the web app fetches at runtime, and keeps the
   underlying text data in sync with upstream sources.
 
@@ -40,8 +40,10 @@ at runtime.
 │   │                               rate limits, free-tier ceilings, mobile testing
 │   ├── offline-sync.md            local-first writes: the mirror, `mtime` conflict resolution,
 │   │                               tombstones, read-time tree repair
-│   └── retranslation.md           the editorial layer over Bhikkhu Sujato's English: rule shapes, the
-│                                   locked-chunk pass, anchors, triage and audit
+│   ├── retranslation.md           the editorial layer over Bhikkhu Sujato's English: rule shapes, the
+│   │                               locked-chunk pass, anchors, triage and audit
+│   └── translation-changes.md     the same editorial layer summarized for a reader, linked from
+│                                   the app
 └── .claude/skills/retranslate/
     └── SKILL.md                   the procedure for writing a rule (docs/retranslation.md is
                                     the spec it implements)
