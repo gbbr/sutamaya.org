@@ -213,12 +213,6 @@ describe('sync status line', () => {
     expect(screen.getByText(/Offline — changes are saved locally/)).toBeInTheDocument();
   });
 
-  it('reports a stuck queue', () => {
-    vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser() }));
-    vi.mocked(useUserData).mockReturnValue(mockUserData({ syncStatus: 'stuck' }));
-    renderSettings();
-    expect(screen.getByText(/couldn.t be synced/)).toBeInTheDocument();
-  });
 
   // `user` stays populated through a lapsed session (lib/lastUser.ts — clearing it would mount an
   // empty mirror over a full one), so without this branch the section renders as an ordinary

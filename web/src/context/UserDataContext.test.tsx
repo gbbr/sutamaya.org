@@ -319,7 +319,7 @@ describe('UserDataProvider', () => {
     expect(result.current.syncStatus).toBe('synced');
   });
 
-  it('reports stuck for a permanently rejected write, and keeps retrying it rather than dropping it', async () => {
+  it('gives up on a permanently refused write instead of queueing it forever', async () => {
     const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     const { result } = setup();
     await waitFor(() => expect(result.current.lists).toEqual(baseData.lists));
@@ -330,13 +330,14 @@ describe('UserDataProvider', () => {
     });
     await reconnect();
 
-    // The server has permanently refused this version, but the compromise this design accepts is
-    // last-writer-wins, not "give up" — the write stays queued and keeps being retried; 'stuck' is
-    // only about making that visible instead of silent (see docs/offline-sync.md's "Sync state").
-    expect(result.current.syncStatus).toBe('stuck');
+    // A 400 means the two sides disagree about what's valid, which is a bug rather than anything
+    // the reader could act on — so the write is dropped, the queue drains, and the console carries
+    // the report (see docs/offline-sync.md's "Sync state").
+    expect(result.current.syncStatus).toBe('synced');
     calls.length = 0;
     await reconnect();
-    expect(calls).toContain('note');
+    expect(calls).not.toContain('note');
+    expect(errorSpy).toHaveBeenCalled();
     errorSpy.mockRestore();
   });
 

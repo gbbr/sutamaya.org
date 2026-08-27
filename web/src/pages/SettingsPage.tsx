@@ -90,7 +90,7 @@ const UI_SCALE_STEP_BTN =
 // Held at ink-2 rather than the ink-3 used for this page's descriptive labels: these are the
 // two things someone comes to this section to *do*, and at label weight they read as disabled.
 const LINK_ACTION = 'inline-flex items-center gap-1.5 font-sans text-ui-base text-ink-2 underline decoration-ink/40 hover:text-ink';
-// Danger-text is reserved on this page for something actually wrong right now (a stuck sync, a
+// Danger-text is reserved on this page for something actually wrong right now (a lapsed session, a
 // failed download, the iOS eviction warning) — not a standing "this button is risky" tint, which
 // would fight with those real warnings when one is showing alongside it. Sign out only borrows it
 // once armed (confirmSignOut), matching the same-colored warning line that appears above it at
@@ -165,9 +165,6 @@ function syncStatusLine(
 ): { Icon: typeof RefreshCw; spin: boolean; text: string } {
   if (status === 'offline') {
     return { Icon: CloudOff, spin: false, text: "Offline — changes are saved locally and will sync when you're back online." };
-  }
-  if (status === 'stuck') {
-    return { Icon: AlertTriangle, spin: false, text: "Some changes couldn't be synced and will keep being retried." };
   }
   if (status === 'pending') {
     return { Icon: RefreshCw, spin: true, text: `Syncing ${pendingCount} change${pendingCount === 1 ? '' : 's'}…` };
@@ -434,7 +431,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                   (() => {
                     const { Icon, spin, text } = syncStatusLine(syncStatus, pendingCount, lastSyncedAt);
                     return (
-                      <div className={`flex items-start gap-1.5 py-3.5 font-sans text-ui-base ${syncStatus === 'stuck' ? 'text-danger-text' : 'text-ink-2'}`}>
+                      <div className="flex items-start gap-1.5 py-3.5 font-sans text-ui-base text-ink-2">
                         <Icon size={16} strokeWidth={1.75} className={`flex-none mt-[4px] ${spin ? 'animate-[spin_2s_linear_infinite]' : ''}`} />
                         {text}
                       </div>

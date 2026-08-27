@@ -240,22 +240,23 @@ collapses key off that.
 
 ### Sync state
 
-`syncCounts()` reports how many records/ops are dirty and how many of those the server has
-permanently rejected; `UserDataContext` combines that with the browser's `online`/`offline` events
-into `'synced' | 'pending' | 'offline' | 'stuck'`. `'offline'` wins over everything, then `'stuck'`,
-then a plain `'pending'` count. `SettingsPage` spells it out in words along with `lastSyncedAt` (set
-only when a flush fully drains and pulls), and that is the only place any of it is shown.
+`syncCounts()` reports how many records/ops are dirty; `UserDataContext` combines that with the
+browser's `online`/`offline` events into `'synced' | 'pending' | 'offline'`. `'offline'` wins over
+everything, then a plain `'pending'` count. `SettingsPage` spells it out in words along with
+`lastSyncedAt` (set only when a flush fully drains and pulls), and that is the only place any of it
+is shown.
 
 The app's chrome deliberately carries none of it. `'pending'` drains in a couple of seconds and
 implying doubt about a write that is already durable locally works against the whole local-first
 model; `'offline'` is something the device already says, and changes nothing about whether the work
-is safe; `'stuck'` retries forever and resolves itself once whatever refused it is fixed, so there
-is nothing for the user to do. `needsReauth` is the exception and gets a banner of its own — see
-below.
+is safe. `needsReauth` is the exception and gets a banner of its own — see below.
 
-A record or op the server permanently refuses (a 400, or an id collision that outlives every retry)
-is marked `rejected` — still dirty, still retried, but now something `'stuck'` can read, rather than
-being retried forever with only a `console.error` to show for it.
+**A write the server permanently refuses is given up on, not surfaced.** A 4xx is permanent by
+definition, so no later attempt would answer differently: the flush drops the write with a
+`console.error` and the pull hands back the account's own version of that row — the same rebase a
+write losing last-writer-wins already gets. That the two sides disagreed about validity at all is a
+bug in one of them, which is a developer's problem; the reader has nothing to decide, and there is
+no sync state, warning or discard action anywhere in the UI for them to decide it with.
 
 A 401 sets `needsReauth` and pauses the flush with the queue intact. It deliberately does *not* call
 `promptGoogleSignIn()` itself: that navigates to Settings, and firing it from a background flush
@@ -431,7 +432,7 @@ Per-write outcomes:
 | `404` | Write retired — the row is gone, so it is moot rather than failed |
 | `409` on `POST /lists` | Re-mint the id and rewrite every local reference (children, queued ops) |
 | retryable (429/5xx/network/timeout) | Flush stops partway; the rest goes next time |
-| other permanent (400) | Record stays dirty and is marked `rejected`, which is what `'stuck'` reads |
+| other permanent (400) | Write given up on and logged; the pull rebases the row onto the server's version |
 
 Applying a pull is **replace clean, keep dirty**, plus two rules the record model alone doesn't give:
 still-queued ops are replayed over the pulled rows (or a change made offline blinks out of the UI on

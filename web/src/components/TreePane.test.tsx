@@ -762,9 +762,9 @@ describe('offline text update nudge', () => {
 });
 
 describe('sync state', () => {
-  // Only a lapsed session gets chrome here. The rest resolve on their own (draining, offline) or
-  // can't be acted on (permanently refused), and are spelled out in Settings instead.
-  it.each(['pending', 'offline', 'stuck'] as const)('shows nothing for %s', (syncStatus) => {
+  // Only a lapsed session gets chrome here. The rest resolve on their own — draining, or offline —
+  // and are spelled out in Settings instead.
+  it.each(['pending', 'offline'] as const)('shows nothing for %s', (syncStatus) => {
     userData = mockUserData({ syncStatus, pendingCount: 2 });
     vi.mocked(useUserData).mockImplementation(() => userData);
     renderHarness();

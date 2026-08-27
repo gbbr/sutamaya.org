@@ -48,14 +48,12 @@ const FLUSH_DEBOUNCE_MS = 2000;
 // device that came back online without firing `online`.
 const FLUSH_POLL_MS = 5 * 60 * 1000;
 
-// How far the flush queue has got. Only 'stuck' and the separate `needsReauth` reach the UI (the
-// Account card in Settings, and HeaderBanner for the latter). 'offline' takes priority
-// over everything else — the browser itself says there's no network, which already explains why
-// nothing is draining. 'stuck' is next: a queue the server has permanently refused is a different
-// problem than one merely waiting its turn, and silently retrying it forever is the exact failure
-// mode offline sync exists to fix (see docs/offline-sync.md's "Sync state"). Otherwise it's 'pending' (queued,
-// still expected to land) or 'synced' (nothing owed).
-export type SyncStatus = 'synced' | 'pending' | 'offline' | 'stuck';
+// How far the flush queue has got (see docs/offline-sync.md's "Sync state"). 'offline' takes
+// priority — the browser itself says there's no network, which already explains why nothing is
+// draining. Otherwise it's 'pending' (queued, still expected to land) or 'synced' (nothing owed).
+// A write the server permanently refuses has no state of its own here: the flush gives up on it
+// and the pull replaces it, so the queue drains either way.
+export type SyncStatus = 'synced' | 'pending' | 'offline';
 
 interface UserDataState {
   ready: boolean;
@@ -298,19 +296,16 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
 
   const { lists, membership, notes, highlights, visited } = useMemo(() => deriveUserData(state), [state]);
 
-  const { pending: pendingCount, stuck: stuckCount } = useMemo(() => syncCounts(state), [state]);
-  // What the sync indicator says. The order of these four is the point: each case explains away
+  const { pending: pendingCount } = useMemo(() => syncCounts(state), [state]);
+  // What the sync indicator says. The order of these three is the point: each case explains away
   // every case below it, so the first one that holds is the one worth showing.
   function currentSyncStatus(): SyncStatus {
     // The browser itself says there's no network, which already explains why nothing is draining —
     // regardless of anything else the queue happens to be carrying.
     if (!online) return 'offline';
-    // A permanently-refused record is a different problem from one merely waiting its turn, so it
-    // outranks a pending count that may well include it.
-    if (stuckCount > 0) return 'stuck';
     // Ordinary work in the queue, online, draining.
     if (pendingCount > 0) return 'pending';
-    // Nothing queued and nothing refused: everything local is on the server.
+    // Nothing queued: everything local is on the server.
     return 'synced';
   }
   const syncStatus: SyncStatus = currentSyncStatus();
