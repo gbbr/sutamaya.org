@@ -1,15 +1,12 @@
-// <meta name="theme-color"> drives OS/browser chrome that CSS can't reach — an installed
-// desktop PWA's window title bar, and a mobile browser's status bar. Two independent things want
-// to own it: the app shell's own light/dark setting (UiPrefsContext, applied via applyTheme in
-// uiPrefs.ts) and, while it's open, the reader's own separately-themed background
-// (ReaderPrefsContext applies its palette as an explicit ThemeColors object rather than the
-// shell's `dark` class — see that context's own comment on why). The reader's color wins
-// whenever it's set (ReaderPage sets it on mount/theme-change, clears it on unmount); clearing it
-// falls back to the shell's last-applied color instead of a hardcoded default, so leaving the
-// reader restores whatever Library/Settings were already showing.
+// <meta name="theme-color"> drives OS/browser chrome that CSS can't reach — an installed desktop
+// PWA's window title bar, and a mobile browser's status bar. Two things set it: the app shell's
+// light/dark setting (applyTheme in uiPrefs.ts) and, while the reader is open, its own separately
+// themed background. The reader's color wins whenever it is set (ReaderPage sets it on mount and
+// theme change, clears it on unmount); clearing falls back to the shell's last-applied color, so
+// leaving the reader restores whatever Library or Settings were showing.
 
-// Hex twins of index.css's --paper var (#FBF9F5 light, rgb(23 21 19) dark) — duplicated here
-// since a meta attribute can't read a CSS custom property directly.
+// Hex twins of index.css's --paper var (#FBF9F5 light, rgb(23 21 19) dark), duplicated here since
+// a meta attribute can't read a CSS custom property.
 const SHELL_LIGHT = '#FBF9F5';
 const SHELL_DARK = '#171513';
 

@@ -8,15 +8,13 @@ import type { Highlight, HighlightsMap, ListDef, Membership, NotesMap, VisitedMa
 // assembleUserData (worker/src/lib/userData.js), ported rather than reimplemented so both produce
 // the same lists, membership and auto-lists from the same rows.
 //
-// It has to exist here because the mirror, not the server, is now the source of truth: a sutta
-// highlighted offline must appear under "Highlights" immediately, and a note written offline under
-// "Notes", neither of which can wait on a round trip. The server keeps its copy, which still
-// serves the pull.
+// It exists here because the mirror, not the server, is the source of truth the UI reads: a sutta
+// highlighted offline appears under "Highlights" immediately, and a note written offline under
+// "Notes", without waiting on a round trip. The server's own copy still serves the pull.
 
-// What the UI actually renders. The wire's `UserData` shape, except that each note is reduced to
-// its text: a note's mtime exists to order the Notes auto-list, which happens here, so nothing
-// downstream of this function ever wants it. Kept a distinct type rather than reusing `UserData`
-// so the compiler can still tell the two note shapes apart.
+// What the UI renders: the wire's `UserData` shape, except each note is reduced to its text — a
+// note's mtime exists to order the Notes auto-list, which happens here. A distinct type rather than
+// a reuse of `UserData`, so the compiler tells the two note shapes apart.
 export interface DerivedUserData extends Omit<UserData, 'notes'> {
   notes: NotesMap;
 }
@@ -35,9 +33,9 @@ function latestIds(entries: { id: string; at: string }[], limit: number): string
     .map(([id]) => id);
 }
 
-// One highlight group's stored rows, as the reader renders them. Row ids are synthetic — a group's
-// own `g` plus the segment index, which is exactly what makes them stable across a pull, since the
-// server's row ids are minted per insert and mean nothing to the client beyond being React keys.
+// One highlight group's stored rows, as the reader renders them. Row ids are synthetic — the
+// group's `g` plus the segment index — which is what keeps them stable across a pull, since the
+// server mints its own row ids per insert.
 function rowsOf(group: { g: string; ranges: { i: number; s: number; e: number }[]; color: string | null; mtime: string }): Highlight[] {
   if (!group.color) return [];
   return group.ranges.map((r) => ({ id: `${group.g}:${r.i}`, i: r.i, s: r.s, e: r.e, c: group.color!, g: group.g, m: group.mtime }));
@@ -53,9 +51,9 @@ export function highlightRowsFor(state: MirrorState, suttaId: string): Highlight
 
 export function deriveUserData(state: MirrorState): DerivedUserData {
   const membership: Membership = {};
-  // repairListTree decides which lists survive at all — dropping tombstones and everything beneath
-  // them — as well as their order and, where a stored parentId dangles, the parentId each is
-  // shaped with. `position`/`mtime`/`deleted` feed that repair and stop here.
+  // repairListTree decides which lists survive — dropping tombstones and everything beneath them —
+  // as well as their order and, where a stored parentId dangles, the parentId each is shaped with.
+  // `position`/`mtime`/`deleted` feed that repair and stop here.
   const lists: ListDef[] = repairListTree(Object.values(state.lists).map((record) => record.data)).map((row) => {
     row.items.forEach((suttaId) => {
       (membership[suttaId] = membership[suttaId] || []).push(row.id);
@@ -67,10 +65,9 @@ export function deriveUserData(state: MirrorState): DerivedUserData {
   const noteEntries: { id: string; at: string }[] = [];
   for (const { data } of Object.values(state.notes)) {
     // A cleared note is kept as a record so it can lose a merge against a stale device pushing the
-    // old body back — but "has a note" means non-empty text, here as on the server. The typeof
-    // guard is for a persisted mirror written by a different app version than the one reading it
-    // (mirrorDb.ts has no schema migration) — a malformed local record should drop the note, not
-    // crash the reader.
+    // old body back, but "has a note" means non-empty text, here as on the server. The typeof guard
+    // covers a mirror persisted by a different app version (mirrorDb.ts has no schema migration):
+    // a malformed record drops the note rather than crashing the reader.
     if (typeof data.text !== 'string' || !data.text) continue;
     notes[data.suttaId] = data.text;
     noteEntries.push({ id: data.suttaId, at: data.mtime });

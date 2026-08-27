@@ -15,38 +15,34 @@ interface HighlightCountBadgeProps {
   style?: CSSProperties;
 }
 
-// A sutta's highlights as swatches plus a total (all colours combined, see highlightCount) —
-// shared by ListPane and ReaderPage's header so a style tweak in one place stays consistent
-// everywhere. It carries no fill or outline of its own: the swatches are the only colour on the
-// line, which is what makes them findable among the outlined membership chips beside them without
-// a pill turning the row into a strip of buttons. It also keeps the accent hue for the Pali
-// subtitle a line above every row that shows one, and lets the swatches be the actual highlight
-// colours rather than a stand-in for them — the same fills the text carries in the reader, painted
-// through the same `highlightPaint`, so dark's deeper palette shows here too.
-// The number itself stays muted neutral ink, because it is an indicator rather than something to
-// read; the swatches are what carry it. Renders as a <button> (clickable, e.g. ReaderPage opening
-// the Highlights side-panel tab) when `onClick` is passed, otherwise a plain <span> (ListPane,
-// where the row itself isn't interactive). `theme` lets ReaderPage colour it from the active
-// reading theme; ListPane passes none, so the app shell's own variables (its light/dark mode is a
-// deliberately separate system — see index.css) stand in.
+// A sutta's highlights as swatches plus a total across every colour (see highlightCount), shared by
+// ListPane and ReaderPage's header.
+//
+// It carries no fill or outline of its own, so the swatches are the only colour on the line and stay
+// findable among the outlined membership chips beside them. They are painted through `highlightPaint`
+// in the actual highlight colours, so dark's deeper palette shows here too; the number stays muted
+// neutral ink, since it is an indicator rather than something to read.
+//
+// Renders as a <button> when `onClick` is passed — ReaderPage opens the Highlights panel tab — and
+// otherwise as a plain <span>, for ListPane, where the row itself isn't interactive. `theme` lets
+// ReaderPage colour it from the active reading theme; ListPane passes none and gets the app shell's
+// own variables.
 export function HighlightCountBadge({ count, colors, onClick, theme, fs, style }: HighlightCountBadgeProps) {
   const Tag = onClick ? 'button' : 'span';
   // Hover lifts the number to full-strength ink, the same dim -> fg move as the neighbouring "+"
-  // control in SuttaRowChips, so the two respond alike. Both ends are built from tokens that
-  // already follow the theme, so it darkens on a light ground and lightens on a dark one without
-  // either branch knowing which it's on, and they travel as custom properties rather than a
-  // resolved inline `color` because that's what leaves the hover rule something to restate.
+  // control in SuttaRowChips. Both ends are theme tokens, so it darkens on a light ground and
+  // lightens on a dark one; they travel as custom properties rather than a resolved inline `color`,
+  // which is what leaves the hover rule something to restate.
   const vars = {
     '--hl-ink': theme ? theme.dim : 'rgb(var(--ink-3))',
     '--hl-ink-hover': theme ? theme.fg : 'rgb(var(--ink))',
   } as CSSProperties;
-  // Same type size as the chips this sits beside (SuttaRowChips' own `fontSize`), so the number
-  // reads at their weight rather than shrinking away next to them, and a fixed height so it shares
-  // their baseline on a line that wraps.
+  // The same type size as the chips beside it (SuttaRowChips' `fontSize`), and a fixed height so it
+  // shares their baseline on a line that wraps.
   const fontSize = fs ? fs - 7 : 14;
   const height = fs ? fs + 2 : 20;
-  // A little over half the type size: big enough to read as a colour at a glance, small enough
-  // that three of them don't outweigh the count they belong to.
+  // A little over half the type size: readable as a colour at a glance, but small enough that three
+  // don't outweigh the count they belong to.
   const dot = Math.round(fontSize * 0.6);
   return (
     <Tag
@@ -54,10 +50,9 @@ export function HighlightCountBadge({ count, colors, onClick, theme, fs, style }
       // The swatches carry no text, so the count alone is what a screen reader would otherwise
       // announce for the control.
       aria-label={onClick ? `${count} highlights` : undefined}
-      // The hover response, and the enlarged touch target, only when this is actually clickable —
-      // as a plain <span> (ListPane, where the row itself is the target) they would suggest an
-      // affordance that isn't there. Hover states compile inside `@media (hover: hover)` (see
-      // tailwind.config.js), so an iOS tap can't leave this stuck lit.
+      // The hover response and the enlarged touch target only when this is clickable — as a plain
+      // <span> they would suggest an affordance that isn't there. Hover states compile inside
+      // `@media (hover: hover)` (tailwind.config.js), so an iOS tap can't leave this stuck lit.
       className={`relative inline-flex items-center gap-1.5 whitespace-nowrap font-sans font-semibold text-[color:var(--hl-ink)] transition-colors ${
         onClick ? "hover:text-[color:var(--hl-ink-hover)] after:content-[''] after:absolute after:-inset-[11px]" : ''
       }`}

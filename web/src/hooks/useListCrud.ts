@@ -28,22 +28,18 @@ export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, cr
   // Only meaningful (and only shown) for a top-level draft — a per-row "+" only ever appears on
   // a group row and always adds a plain list inside it (see ListRow), no choice to make there.
   const [draftKind, setDraftKind] = useState<ListKind>('list');
-  // Set only for the network round-trip inside submitDraft, to the same value `creatingParentId`
-  // held right before it was reset — `creatingParentId` itself resets to undefined immediately on
-  // submit for a snappy feel, but createList() itself awaits the API call, so without this the
-  // draft input's row would collapse to zero height for that gap before the new list lands
-  // (TreePane/ListsTreeView and ListRow both reserve that row's height while this is set, keyed to
-  // which parent — top-level vs. a specific group row — actually submitted).
+  // Set for the round-trip inside submitDraft, to the value `creatingParentId` held just before it
+  // was reset. `creatingParentId` clears immediately on submit so the input feels snappy, but
+  // createList() awaits the API call, and ListsTreeView and ListRow both reserve the draft row's
+  // height while this is set — keyed to which parent submitted, top-level or a specific group.
   const [submittingParentId, setSubmittingParentId] = useState<string | null | undefined>(undefined);
   const listInput = useRef<HTMLInputElement | null>(null);
 
-  // Every handler below is useCallback'd (mirroring TreePane's own toggleExpanded — see its
-  // comment) so ListRow's memoization isn't defeated by a freshly-allocated handler on every
-  // TreePane render (this hook is called fresh each time). Most only ever call setState
-  // functions (themselves stable), so they carry no deps; the few that read other state directly
-  // (commitEditList, submitDraft, ...) depend on it, but that state only changes while the
-  // relevant row is actively being edited/created — not during an ordinary toggle/expand/select —
-  // so the identity churn stays scoped to that one row.
+  // Every handler below is useCallback'd, so a freshly-allocated one on each TreePane render
+  // doesn't defeat ListRow's memoization. Most only call setState functions, which are stable, so
+  // they carry no deps; the few that read other state (commitEditList, submitDraft) depend on it,
+  // but that state only changes while the relevant row is being edited, so the identity churn stays
+  // scoped to that row.
   const toggleListMenu = useCallback((id: string) => {
     setMenuOpenId((m) => (m === id ? null : id));
   }, []);
@@ -129,8 +125,8 @@ export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, cr
       const list = await createList(name, parentId, kind);
       onCreated?.(list);
     } catch (e) {
-      // createList writes to the local mirror and can't fail on the network, so this only catches
-      // something genuinely unexpected — enough to keep the draft input from staying stuck open.
+      // createList writes to the local mirror and can't fail on the network, so this catches only
+      // something unexpected — enough to keep the draft input from staying stuck open.
       console.error('list create failed', e);
     } finally {
       setSubmittingParentId(undefined);

@@ -29,14 +29,13 @@ import {
 //   3. **Updated text** — a bulk-downloaded corpus has fallen behind this build.
 //   4. **Download** — the corpus isn't cached for offline reading yet.
 //
-// The dismissal state and `hasOpenedSutta` are read once per mount (not subscribed live) since this
-// remounts with TreePane on the route boundary that actually changes them (returning from
-// /read/:suttaId), and each dismiss button sets local state directly rather than waiting for one.
+// The dismissal state and `hasOpenedSutta` are read once per mount rather than subscribed live,
+// since this remounts with TreePane on the route boundary that changes them — returning from
+// /read/:suttaId — and each dismiss button sets local state directly.
 //
 // At most one banner is dismissed per mount: dismissing one leaves the slot empty rather than
-// swapping in the next one down the list, which — same card, same place, same shape — reads as the
-// dismiss having failed, so the second message gets closed unread. The successor waits for the next
-// mount, which is every return from the reader.
+// swapping in the next one down, which in the same card and place would read as the dismiss having
+// failed. The successor waits for the next mount, which is every return from the reader.
 
 // Exported so tests assert against the same strings this component actually renders, rather than
 // a copy that can drift out of sync with it.
@@ -44,18 +43,14 @@ export const OFFLINE_DOWNLOAD_TEXT = 'Keep reading offline';
 export const OFFLINE_UPDATE_TEXT = 'Updated sutta text available';
 export const REAUTH_TEXT = "Changes not syncing";
 export const KEEP_SAFE_TEXT = 'Save your changes';
-// This one is more drastic because Safari wipes in 7 days of inactivity (outside PWA).
-// But keep the text the same because this one shows in red.
+// Same wording as KEEP_SAFE_TEXT: the iOS browser-tab case, where WebKit wipes script-writable
+// storage after about seven days of inactivity, is escalated by tone rather than by words.
 export const KEEP_SAFE_IOS_TEXT = 'Save your changes';
 
 // Three tones for three kinds of message: red is broken and needs fixing, amber is data at risk,
-// accent is an optional improvement. They have to be told apart at a glance because they share one
-// slot and arrive one after another — dismissing a banner uncovers the next one down on the
-// following mount, in the same card, in the same place. Amber matches how Settings' Account card
-// already renders this same risk.
-//
-// The fills sit a touch above what a full-bleed bar needed: an inset card shows less of itself, and
-// this one lies on `treepane`, which is already darker than the page.
+// accent is an optional improvement. They have to be told apart at a glance, since they share one
+// slot and arrive one after another in the same card. Amber matches how Settings' Account card
+// renders this same risk.
 const TONES = {
   alert: { fill: 'bg-danger-text/[.09]', icon: 'text-danger-text', action: 'text-danger-text decoration-danger-text/40' },
   warn: { fill: 'bg-warning-text/[.10]', icon: 'text-warning-text', action: 'text-warning-text decoration-warning-text/40' },
@@ -80,14 +75,13 @@ function Banner({
 }) {
   const { fill, icon: iconClass, action: actionClass } = TONES[tone];
   return (
-    // A tinted card inset from both edges, not a full-bleed bar: the header now ends in the tab
-    // underline, and a second full-width band directly under it repeated that edge and left the
-    // active tab pointing at the message instead of at the list it labels. Inset, it reads as
-    // something sitting in the pane rather than as one more piece of header chrome.
+    // A tinted card inset from both edges rather than a full-bleed bar: the header ends in the tab
+    // underline, and a second full-width band under it would repeat that edge and leave the active
+    // tab pointing at the message instead of at the list it labels.
     //
     // 12px of margin plus 12px of padding puts the icon on the 24px the tree rows start their text
-    // from, so the card lines up with the column below it rather than with the header's own
-    // 22px padding. `rounded-field` is the app's one card radius (Settings, Help's tips).
+    // from, so the card lines up with the column below rather than with the header's own 22px
+    // padding. `rounded-field` is the app's one card radius.
     <div
       data-component="HeaderBanner"
       className={`flex-none flex items-center gap-2.5 mx-3 mt-3 px-3 py-3 rounded-field ${fill}`}
@@ -123,26 +117,24 @@ export function HeaderBanner() {
 
   const [nudgeDismissed, setNudgeDismissed] = useState(() => isOfflineNudgeDismissed());
   const [updateDismissedVersion, setUpdateDismissedVersion] = useState(() => dismissedOfflineUpdateVersion());
-  // Keyed by the local id, so signing out — which mints a fresh one — offers the prompt again for
-  // what is, as far as this device's unsynced work goes, a new body of work.
+  // Keyed by the local id, so signing out — which mints a fresh one — offers the prompt again.
   const [keepSafeDismissed, setKeepSafeDismissed] = useState(() => isKeepSafeDismissed(localUserId));
   // Set by any dismiss that can uncover a lower-priority banner, to hold the slot empty until the
   // next mount. Only "keep this safe" can, so far — the two offline nudges are mutually exclusive
   // and nothing ranks below them.
   const [dismissedThisMount, setDismissedThisMount] = useState(false);
   const [offlineCachedStatus, setOfflineCachedStatus] = useState<{ cached: number; total: number } | null>(null);
-  // The download nudge is PWA-only: asking for ~28MB in a passing browser tab is pushy, and it's
-  // an installed app that has any use for the whole canon. The update nudge isn't, because it can
-  // only fire for someone who already *finished* that download — they've committed to offline
-  // reading whether or not they installed the app, and CacheFirst serves them the same stale text
-  // in a tab as in the PWA, so hiding it there just leaves them silently a year behind.
+  // The download nudge is PWA-only: asking for ~28MB in a passing browser tab is pushy, and it is
+  // an installed app that has use for the whole canon. The update nudge is not, since it can only
+  // fire for someone who already finished that download — CacheFirst serves them the same stale
+  // text in a tab as in the PWA.
   const downloadNudgeEligible = isStandalone() && hasOpenedSutta();
   const textStale = !!corpus && isOfflineTextStale(corpus.dataVersion);
   useEffect(() => {
-    // Cache Storage membership over the whole corpus isn't free — only bother once the cheap,
-    // synchronous checks above already say a banner could plausibly show. `textStale` is one of
-    // those checks (a localStorage compare), and is false for anyone who never bulk-downloaded,
-    // which is what keeps this probe off the common path.
+    // Cache Storage membership over the whole corpus isn't free, so it runs only once the cheap
+    // synchronous checks above say a banner could plausibly show. `textStale` is a localStorage
+    // compare and is false for anyone who never bulk-downloaded, which keeps this off the common
+    // path.
     if (!corpus || !(downloadNudgeEligible || textStale)) return;
     let cancelled = false;
     estimateOfflineStatus(flatSuttaOrder(corpus)).then((s) => {
@@ -166,12 +158,10 @@ export function HeaderBanner() {
 
   if (needsReauth) {
     // A lapsed session is the one sync state worth interrupting for: the account badge still shows
-    // a signed-in user (seeded from lib/lastUser.ts) and every list/note/highlight still reads and
-    // writes against the local mirror, so the app looks entirely normal while nothing reaches the
-    // server. Every other state — draining, offline, permanently refused — either resolves on its
-    // own or can't be acted on, and are spelled out in Settings' Account card for whoever goes
-    // looking. This bar carries only the one that needs an answer. Not dismissible: the only thing that resolves it
-    // is signing in, which the button does.
+    // a signed-in user (seeded from lib/lastUser.ts) and everything still reads and writes against
+    // the local mirror, so the app looks normal while nothing reaches the server. Every other state
+    // either resolves on its own or can't be acted on, and Settings' Account card spells them out.
+    // Not dismissible — the only thing that resolves it is signing in, which the button does.
     return (
       <Banner
         tone="alert"
@@ -184,12 +174,10 @@ export function HeaderBanner() {
   }
 
   if (showKeepSafe) {
-    // Signed out, and now with something to lose. On iOS in a browser tab that isn't a figure of
-    // speech — WebKit evicts all script-writable storage for a site left unvisited for about a
-    // week — so that case gets the stronger, red tone rather than amber. Naming Safari specifically
-    // would be wrong on iOS Chrome and other non-Safari browsers, which share the same WebKit
-    // storage engine and eviction behavior, so the text itself stays the same and only the tone
-    // escalates.
+    // Signed out, with something to lose. On iOS in a browser tab that is literal — WebKit evicts
+    // all script-writable storage for a site left unvisited for about a week — so that case gets
+    // the red tone rather than amber. Naming Safari would be wrong on iOS Chrome and the other
+    // non-Safari browsers, which share the same WebKit storage engine, so only the tone escalates.
     const ios = isIosBrowserTab();
     return (
       <Banner

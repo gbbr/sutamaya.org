@@ -3,8 +3,8 @@ import type { Dictionary } from './types';
 
 export const DICT_MANIFEST_URL = '/data/dict-shards/manifest.json';
 
-// One shard's key range, lowercased — see build-corpus.mjs, which packs the headwords into
-// ~256KB range shards so a word tap fetches ~30KB instead of the whole ~20MB dictionary.
+// One shard's key range, lowercased. build-corpus.mjs packs the headwords into ~256KB range shards,
+// so a word tap fetches one shard instead of the whole dictionary.
 export interface DictShard {
   file: string;
   first: string;
@@ -27,8 +27,7 @@ export function loadDictShardManifest(): Promise<DictShard[]> {
         return m.shards;
       })
       .catch((error) => {
-        // A cached rejection would make the first failure permanent for the session, where the
-        // next tap is exactly when the user wants it retried.
+        // Clear it, so the next tap refetches rather than replaying a cached rejection.
         manifest = null;
         throw error;
       });
@@ -37,9 +36,9 @@ export function loadDictShardManifest(): Promise<DictShard[]> {
 }
 
 // The shard whose range covers `key`, or null when none does. Ranges are contiguous but not
-// exhaustive — a tapped word the dictionary simply doesn't have (most of them, given inflected
-// Pali) falls past the last shard's `last` or between two shards, and is answered without a fetch.
-// Plain `<=` reproduces build-corpus.mjs's own comparator; anything locale-aware would not.
+// exhaustive, so a word the dictionary doesn't have falls past the last shard or between two, and
+// is answered without a fetch. Plain `<=` reproduces build-corpus.mjs's comparator; anything
+// locale-aware would not.
 export function shardFor(shards: DictShard[], key: string): DictShard | null {
   let lo = 0;
   let hi = shards.length - 1;
@@ -56,11 +55,10 @@ export function shardFor(shards: DictShard[], key: string): DictShard | null {
   return found && key <= found.last ? found : null;
 }
 
-// Parsed shards are kept, but only a few: holding every shard a long reading session touches
-// would rebuild the whole dictionary in memory, which is the cost sharding exists to avoid. The
-// Map is insertion-ordered, so re-inserting on a hit and dropping from the front is a plain LRU.
-// `value` is the settled body, kept alongside the promise so peekHeadword can answer without
-// awaiting — a lookup that has to go through a microtask makes the reader's dock repaint.
+// Parsed shards are kept, but only a few — holding every shard a long session touches would
+// rebuild the whole dictionary in memory. The Map is insertion-ordered, so re-inserting on a hit
+// and dropping from the front is a plain LRU. `value` is the settled body, kept alongside the
+// promise so peekHeadword can answer without awaiting.
 const MAX_RESIDENT_SHARDS = 8;
 interface ResidentShard {
   body: Promise<Dictionary>;
@@ -85,7 +83,7 @@ function shardBody(file: string): Promise<Dictionary> {
   };
   entry.body.then(
     (dict) => {
-      // Only if this entry is still the resident one — an eviction in between must not resurrect it.
+      // Only if this entry is still the resident one, so an eviction in between isn't undone.
       if (resident.get(file) === entry) entry.value = dict;
     },
     // Don't leave a failure resident — the next tap on that shard should refetch, not replay it.
@@ -103,8 +101,8 @@ function shardBody(file: string): Promise<Dictionary> {
 }
 
 // Definitions for one tapped Pali word, or null when the dictionary has no entry for it. Rejects
-// only when the manifest or a shard could not be fetched — "no such word" is a null, not an error,
-// since the two mean very different things to the reader (see DictionaryDock).
+// only when the manifest or a shard could not be fetched: "no such word" is a null, not an error,
+// and DictionaryDock shows the two differently.
 export async function lookupHeadword(raw: string): Promise<string[] | null> {
   const key = stripPunct(raw).toLowerCase();
   if (!key) return null;
@@ -113,9 +111,9 @@ export async function lookupHeadword(raw: string): Promise<string[] | null> {
   return lookupWord(await shardBody(shard.file), raw);
 }
 
-// The same answer as lookupHeadword when it can be given without waiting — `undefined` means "not
-// known yet, go async". Lets the reader render a tap in the very commit that handled it, so the
-// dock doesn't paint a loading state and resize twice for a word that was already in memory.
+// The same answer as lookupHeadword when it can be given without waiting; `undefined` means "not
+// known yet, go async". Lets the reader render a tap in the commit that handled it, so the dock
+// doesn't paint a loading state and resize twice for a word already in memory.
 export function peekHeadword(raw: string): string[] | null | undefined {
   const key = stripPunct(raw).toLowerCase();
   if (!key) return null;
@@ -129,7 +127,7 @@ export function peekHeadword(raw: string): string[] | null | undefined {
 
 // Warms the shard a word would need, ignoring failures. Consecutive words in a sutta are unrelated
 // alphabetically, so stepping through them with the dock open almost always crosses a shard
-// boundary; warming the neighbours is what keeps that stepping on peekHeadword's synchronous path.
+// boundary; warming the neighbours keeps that stepping on peekHeadword's synchronous path.
 export function prefetchHeadwordShard(raw: string): void {
   const key = stripPunct(raw).toLowerCase();
   if (!key) return;

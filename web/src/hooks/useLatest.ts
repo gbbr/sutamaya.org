@@ -2,11 +2,11 @@ import { useRef } from 'react';
 
 // A ref that always holds the most recent value passed to it.
 //
-// For callbacks read from inside a long-lived `window`/element listener: subscribing once and
-// calling `ref.current(...)` keeps the listener off the re-subscription treadmill without it
-// closing over a stale callback. The alternative — naming whatever the callback happens to close
-// over in the effect's dependency array — re-subscribes on every one of those values *and*
-// silently goes stale the moment the callback grows a dependency nobody remembers to add.
+// For callbacks read from inside a long-lived window or element listener: subscribe once and call
+// `ref.current(...)`, so the listener neither re-subscribes on every render nor closes over a stale
+// callback. Naming what the callback closes over in the effect's dependency array instead
+// re-subscribes on all of those values, and goes stale as soon as the callback grows a dependency
+// nobody adds.
 export function useLatest<T>(value: T) {
   const ref = useRef(value);
   ref.current = value;

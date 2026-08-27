@@ -2,12 +2,10 @@ import { useDeferredValue, useMemo } from 'react';
 import { searchCorpus, searchLists, type ListHit, type SearchHit } from '../lib/corpus';
 import type { Corpus, ListDef, NotesMap } from '../lib/types';
 
-// Runs searchCorpus against a deferred copy of `query` — deferred rather than tied directly to
-// the input so typing itself always stays urgent and React can interrupt/restart a stale search
-// if the user keeps typing, without a hand-rolled debounce timer (searchCorpus scans every sutta
-// in the corpus on each call). Shared by LibraryPage (whose one result feeds both TreePane and
-// ListPane — see LibraryPage's own comment on why it isn't computed twice) and
-// ReaderSearchOverlay (which runs its own independent scan, having no sibling pane to share with).
+// Runs searchCorpus against a deferred copy of `query`, so typing stays urgent and React can
+// interrupt a stale search without a hand-rolled debounce — searchCorpus scans every sutta on each
+// call. Used by LibraryPage, whose one result feeds both TreePane and ListPane, and by
+// ReaderSearchOverlay, which has no sibling pane to share with and runs its own scan.
 export function useCorpusSearch(
   corpus: Corpus | null,
   query: string,

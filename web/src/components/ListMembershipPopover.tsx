@@ -82,18 +82,16 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
     el.style.top = `${top / scale}px`;
   }, [anchor, mobile]);
 
-  // A `position: fixed` element is laid out against the *layout* viewport, which the software
-  // keyboard does not shrink — so on touch the modal's content would run on underneath the
-  // keyboard, putting the last rows out of reach. `visualViewport` is the only thing that reports
-  // the region actually on screen; no CSS unit exposes it (`dvh` tracks browser chrome, not the
-  // keyboard, and Safari ignores `interactive-widget=resizes-content`).
+  // A `position: fixed` element is laid out against the layout viewport, which the software
+  // keyboard does not shrink, so on touch the modal's content would run underneath the keyboard.
+  // `visualViewport` is the only thing that reports the region actually on screen — no CSS unit
+  // exposes it (`dvh` tracks browser chrome, not the keyboard, and Safari ignores
+  // `interactive-widget=resizes-content`).
   //
-  // What gets adjusted is the modal's bottom *padding*, not its height. The modal stays
-  // full-screen, so its background always covers the whole display: iOS animates the keyboard in
-  // over ~250ms but reports the new viewport height on the first frame, and anything that resized
-  // itself to match would sit a keyboard's height short of the screen for a quarter second with
-  // the page showing through the gap. Padding moves the content up immediately and leaves the
-  // background where it is.
+  // What is adjusted is the modal's bottom padding, not its height, so the background keeps
+  // covering the whole display: iOS animates the keyboard in over ~250ms but reports the new
+  // viewport height on the first frame, so anything resizing to match would sit a keyboard's height
+  // short of the screen for a quarter second with the page showing through.
   useLayoutEffect(() => {
     const el = ref.current;
     const vv = window.visualViewport;
@@ -119,13 +117,11 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
     return () => window.removeEventListener('keydown', onKey);
   }, [onClose]);
 
-  // Full-screen on touch rather than a partial-height sheet: the keyboard comes up from the
-  // bottom and would eat most of a sheet, leaving a few rows visible between the two. Filling the
-  // screen puts the input at the very top, as far from the keyboard as the display allows, and
-  // gives the rows every pixel the keyboard isn't using — which is also what makes autofocusing
-  // the input reasonable here, since the keyboard covers rows rather than the field itself.
-  // There's no backdrop to tap, so the header's close button is the only way out and always has
-  // to be there.
+  // Full-screen on touch rather than a partial-height sheet: the keyboard would eat most of a
+  // sheet, leaving a few rows visible between the two. Filling the screen puts the input at the top,
+  // as far from the keyboard as the display allows, and gives the rows every pixel the keyboard
+  // isn't using — which is also what makes autofocusing the input reasonable here. There is no
+  // backdrop to tap, so the header's close button is the only way out.
   if (mobile) {
     return (
       <div
@@ -134,11 +130,11 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
         role="dialog"
         aria-modal="true"
         aria-labelledby={TITLE_ID}
-        // `touch-none` is what stops a drag on the modal's own chrome — the header, the gap beside
-        // the input — from panning the page underneath it. Those parts aren't scrollable, so iOS
-        // hands the gesture to the document instead, which both scrolls the page behind the modal
-        // and (because a fixed element is anchored to the layout viewport) makes the modal's top
-        // edge lag and gap. The rows opt back in to vertical panning below.
+        // `touch-none` stops a drag on the modal's chrome — the header, the gap beside the input —
+        // from panning the page underneath. Those parts aren't scrollable, so iOS hands the gesture
+        // to the document, which scrolls the page behind the modal and, since a fixed element is
+        // anchored to the layout viewport, makes the modal's top edge lag. The rows opt back in to
+        // vertical panning below.
         className="fixed left-0 right-0 top-0 z-50 flex flex-col bg-field animate-sheetUp touch-none"
         // Always the full layout viewport. `paddingBottom` is the resting value the effect above
         // swaps out while the keyboard is up, and the only value a browser without

@@ -1,8 +1,8 @@
 import type { DropZone, ListDef } from './types';
 
-// One row of the "My lists" tree as seen by the drag hit-test, already filtered down to valid
-// drop candidates (excludes the dragged row itself and any of its own descendants — see
-// useListTreeDrag's updateDropTarget, the only caller) and sorted by `top` ascending.
+// One row of the "My lists" tree as the drag hit-test sees it: already filtered to valid drop
+// candidates — the dragged row and its descendants excluded by useListTreeDrag's updateDropTarget,
+// the only caller — and sorted by `top` ascending.
 export interface DropRow {
   id: string;
   top: number;
@@ -11,33 +11,20 @@ export interface DropRow {
 }
 
 // Resolves what dropping at vertical position `y` would do, given the currently-rendered rows of
-// the list tree. Pure, so it's directly testable with plain geometry and no real DOM/jsdom layout
-// — see listTreeDrop.test.ts.
+// the list tree. Pure, so it is testable with plain geometry and no DOM layout.
 //
 // Two passes, in order:
-// 1) Nesting: the pointer sitting over the inner half of a *group* row nests as its child.
-//    Checked (and, if it matches, resolved) first — scoped to a band inside the row's own
-//    top/bottom edges, not those edges themselves, so it never competes with a neighboring row's
-//    own edge for the same pixel.
-// 2) Sibling position: resolved from each row's vertical midpoint, the same technique ListPane's
-//    own sutta reorder uses (see its updateDragTarget) — the first row whose midpoint sits below
-//    the pointer wins as "insert before it"; past every row's midpoint means "insert after the
-//    last one". This always resolves to *some* target for any y within the tree's rendered
-//    bounds, unlike independent top/bottom-quarter zones computed per row in isolation, which
-//    left a dead zone over the middle half of any plain (non-group) row — landing there was
-//    simply an invalid 'inside' zone with no fallback, so letting go reset the drag to its start
-//    position instead of dropping anywhere.
+// 1) Nesting: the pointer over the inner half of a group row nests as its child. Scoped to a band
+//    inside the row's top/bottom edges, not the edges themselves, so it never competes with a
+//    neighbouring row's edge for the same pixel.
+// 2) Sibling position: the first row whose vertical midpoint sits below the pointer wins as "insert
+//    before it"; past every midpoint means "insert after the last row". Same technique as
+//    ListPane's sutta reorder.
 //
-// Together these two passes are also what keeps a single drop-indicator line under an expanded
-// group's own name: with independent per-row zone math, the group's own bottom edge ("sibling
-// after the group, i.e. outside it") and its first child's top edge ("first inside the group") sit
-// on the same boundary pixel and can both look valid there. Here there's exactly one linear scan
-// producing exactly one answer for any given y — a group
-// row can only ever match 'inside' (pass 1) or 'before' (pass 2, only when the pointer is above
-// its own midpoint, e.g. because it has an even earlier sibling above it); it can never come out
-// as 'after', since pass 2 only assigns 'after' as the fallback for landing past *every* row's
-// midpoint, and an expanded group with a rendered child is by construction never the last row in
-// `rows` — so there is nothing left for its first child's own 'before' edge to conflict with.
+// One linear scan gives exactly one answer for any y within the tree's rendered bounds, so there is
+// no dead zone and no boundary where two zones both look valid. A group row can only come out as
+// 'inside' or 'before' — 'after' is the fallback for landing past every midpoint, and an expanded
+// group with a rendered child is never the last row in `rows`.
 export function resolveTreeDropTarget(y: number, rows: DropRow[]): { id: string; zone: DropZone } | null {
   for (const row of rows) {
     if (y < row.top || y > row.bottom) continue;
@@ -45,8 +32,7 @@ export function resolveTreeDropTarget(y: number, rows: DropRow[]): { id: string;
       const ratio = (y - row.top) / (row.bottom - row.top);
       if (ratio > 0.25 && ratio < 0.75) return { id: row.id, zone: 'inside' };
     }
-    // This is the row the pointer is vertically over, whether or not it just matched a nesting
-    // band above — no need to keep scanning the rest for one.
+    // The pointer is over this row, so no other row can match a nesting band.
     break;
   }
 
@@ -66,14 +52,11 @@ export interface DropIndicator {
   edge: 'top' | 'bottom' | 'inside';
 }
 
-// Where to actually paint the drop-target line, given the resolved target above and the same
-// `rows` it was resolved from. Every row already has its own permanent bottom separator (see
-// ListRow's static `border-b`), always drawn regardless of dragging — so a 'before' target is
-// re-expressed here as the *previous* row's bottom edge instead of drawing a brand-new line on
-// the target's own top edge: both sit on the exact same physical boundary, so recoloring the
-// separator that's already there means one boundary gets one line, not the plain grey separator
-// sitting immediately next to a brand-new accent one. Only the very first row in the whole tree
-// falls back to its own top edge, since there's no row above it to recolor instead.
+// Where to paint the drop-target line, given the resolved target and the same `rows` it came from.
+// Every row already carries a permanent bottom separator (ListRow's `border-b`), so a 'before'
+// target is re-expressed as the previous row's bottom edge: both sit on the same boundary, and
+// recolouring the separator already there gives one boundary one line rather than a grey separator
+// beside a new accent one. Only the first row in the tree falls back to its own top edge.
 export function resolveDropIndicator(target: { id: string; zone: DropZone } | null, rows: DropRow[]): DropIndicator | null {
   if (!target) return null;
   if (target.zone === 'inside') return { id: target.id, edge: 'inside' };
@@ -83,9 +66,8 @@ export function resolveDropIndicator(target: { id: string; zone: DropZone } | nu
   return { id: target.id, edge: 'top' };
 }
 
-// True if `candidateId` sits somewhere underneath `ofId` in the list tree — dropping `ofId` onto
-// (or as a new sibling within) a descendant of itself would create a cycle. See
-// isValidListDrop/planListDrop below, the decision functions that use it.
+// True if `candidateId` sits somewhere underneath `ofId` in the list tree — dropping `ofId` into a
+// descendant of itself would create a cycle.
 export function isDescendantOf(lists: ListDef[], candidateId: string, ofId: string): boolean {
   let cur = lists.find((l) => l.id === candidateId);
   while (cur?.parentId) {
@@ -95,10 +77,8 @@ export function isDescendantOf(lists: ListDef[], candidateId: string, ofId: stri
   return false;
 }
 
-// A list can't hold anything (no sub-lists, no sub-groups), so it's only ever a valid drop target
-// for the 'inside' zone when it's a group — true for both a dragged list and a dragged group. The
-// 'before'/'after' sibling zones are always valid regardless of kind: both a list and a group are
-// allowed to rest at the top level.
+// A list holds no sub-lists, so the 'inside' zone is only valid when the target is a group. The
+// 'before'/'after' sibling zones are valid for either kind — both may rest at the top level.
 export function isValidListDrop(lists: ListDef[], draggedId: string, targetId: string, zone: DropZone): boolean {
   const dragged = lists.find((l) => l.id === draggedId);
   const target = lists.find((l) => l.id === targetId);
@@ -128,13 +108,10 @@ export type ListDropPlan =
   | { type: 'reparent'; parentId: string; alreadyParented: boolean }
   | { type: 'reorder'; parentId: string | null; order: string[] };
 
-// What committing a drop should actually do — a pure decision function, like
-// resolveTreeDropTarget/resolveDropIndicator above, so it is testable without a DOM or pointer
-// events. reorderLists (queueSiblingOrder in lib/mirror.ts) sets parentId on every id in `order`
-// unconditionally, so a 'before'/'after' drop only ever needs the single 'reorder' plan, even
-// when it crosses into a different parent — pairing a setListParent with it would render the
-// moved row under its new parent and then move it again once the reorder landed. 'reparent' is
-// only for 'inside', which nests into a group with no sibling order to insert into.
+// What committing a drop does. reorderLists (queueSiblingOrder in lib/mirror.ts) sets parentId on
+// every id in `order`, so a 'before'/'after' drop needs only the 'reorder' plan even when it
+// crosses into a different parent. 'reparent' is for 'inside', which nests into a group with no
+// sibling order to insert into.
 export function planListDrop(
   lists: ListDef[],
   draggedId: string,

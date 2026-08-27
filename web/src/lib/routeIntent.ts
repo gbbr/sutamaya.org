@@ -1,15 +1,12 @@
-// Router `location.state` set by navigate() survives a same-tab hard refresh — the browser keeps
-// history.state for the current entry across a reload — but a manual change made *after* that
-// navigate() (e.g. flipping a toggle by hand) has no way to invalidate it, so a refresh can
-// resurrect a now-stale value and silently override what the user just did (e.g. a mobile pane
-// switch reverting itself on refresh, in TreePane/LibraryPage's own pane-toggle sync).
+// One-shot "do this on arrival" values carried in router `location.state`.
 //
-// A navigate() call carrying a one-shot "do this on arrival" value tags it with a fresh id
-// (tagIntent); the one mount meant to consume it does so exactly once via consumeIntent, which
-// remembers the last-consumed id in sessionStorage (survives a refresh, unlike an in-memory flag,
-// but starts empty on a genuinely new tab/session). A second consumeIntent() call for the same id
-// — exactly what a stale-but-preserved history.state produces on refresh — returns null, so the
-// caller falls back to persisted preference instead of trusting the stale value.
+// history.state survives a same-tab hard refresh, and a manual change made after the navigate()
+// can't invalidate it — so a refresh would otherwise resurrect a stale value and override what the
+// user just did (a mobile pane switch reverting itself, in TreePane/LibraryPage's pane-toggle
+// sync). tagIntent stamps the state with a fresh id; consumeIntent hands it back exactly once,
+// recording the last-consumed id in sessionStorage — which survives a refresh but starts empty in
+// a new tab. A second call for the same id returns null, so the caller falls back to persisted
+// preference.
 import { randomId } from './ids';
 
 export interface RouteIntent {
@@ -18,9 +15,8 @@ export interface RouteIntent {
 }
 
 export function tagIntent<T extends object>(state: T): T & RouteIntent {
-  // randomId() rather than crypto.randomUUID() directly — that throws outside a secure context,
-  // before navigate() ever runs, silently breaking every caller (the reader's close button among
-  // them). See lib/ids.ts.
+  // randomId() rather than crypto.randomUUID(), which throws outside a secure context — before
+  // navigate() ever runs. See lib/ids.ts.
   return { ...state, navId: randomId() };
 }
 

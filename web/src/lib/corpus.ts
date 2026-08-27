@@ -19,22 +19,20 @@ export interface SegmentFile {
   pali: string;
   en: string;
   role?: SegmentRole;
-  // Only set when role === 'heading' — SuttaCentral's own <h2>–<h5> nesting for this sub-heading
-  // (e.g. DN9's internal sections genuinely nest h3s under an h2, DN2's numbered sub-sections nest
-  // as deep as h5), preserved so the reader can render the real heading element instead of
-  // collapsing every level to one visual weight.
+  // Only set when role === 'heading': SuttaCentral's own <h2>–<h5> nesting for this sub-heading,
+  // preserved so the reader renders the real heading element rather than collapsing every level to
+  // one visual weight.
   headingLevel?: 2 | 3 | 4 | 5;
-  // Bhikkhu Sujato's own translator note for this segment (data/sujato/notes/), if any — may contain
-  // inline HTML (`<i>`/`<em>`/`<b>`/`<span>`); cross-reference links have already been stripped
-  // to plain text at build time (see build-corpus.mjs's cleanNote()).
+  // Bhikkhu Sujato's translator note for this segment (data/sujato/notes/), if any. May contain
+  // inline HTML; cross-reference links are stripped to plain text at build time (build-corpus.mjs's
+  // cleanNote()).
   note?: string;
 }
 
 const textCache = new Map<string, Promise<SegmentFile[]>>();
 // The settled values of `textCache`, so an already-loaded sutta can be read synchronously. A
-// promise that has resolved still only hands its value back a microtask later, which is one
-// render with no text — enough to break the reader's step animation, and pointless for a sutta
-// the reader has already fetched. See peekSuttaText.
+// resolved promise still hands its value back a microtask later, which costs one render with no
+// text — enough to break the reader's step animation. See peekSuttaText.
 const textResolved = new Map<string, SegmentFile[]>();
 
 export function loadSuttaText(uid: string): Promise<SegmentFile[]> {
@@ -49,8 +47,7 @@ export function loadSuttaText(uid: string): Promise<SegmentFile[]> {
         textResolved.set(uid, segs);
         return segs;
       });
-    // A failed fetch shouldn't stay cached forever — evict it so a later call (e.g. a retry)
-    // re-fetches instead of replaying the same rejection.
+    // Evict a failed fetch, so a retry refetches instead of replaying the same rejection.
     p.catch(() => textCache.delete(uid));
     textCache.set(uid, p);
   }
@@ -102,16 +99,14 @@ function collectLeafGroupIds(node: { id: string; chapters?: ChapterRow[] }, acc:
   }
 }
 
-// Every sutta in the whole corpus, in canonical browse order (nikaya by nikaya, leaf group by
-// leaf group, sutta id ascending within each) — lets the reader's Prev/Next walk across a
-// category boundary once the current one runs out, instead of stopping at its edge.
+// Every sutta in the corpus in canonical browse order — nikaya by nikaya, leaf group by leaf group,
+// sutta id ascending within each — so the reader's Prev/Next walks across a category boundary
+// rather than stopping at its edge.
 export function flatSuttaOrder(corpus: Corpus): string[] {
   const leafGroupIds: string[] = [];
   for (const n of corpus.nikayas) collectLeafGroupIds(n, leafGroupIds);
-  // Bucket every sutta by its node in one pass, rather than calling suttasFor() per leaf group.
-  // That would be ~440 leaf groups each re-running Object.entries() over all ~4000 suttas and
-  // filtering the result — 1.8M pair allocations, and ~550ms of blocked main thread at app boot,
-  // since LibraryPage calls this during its first render.
+  // One pass, rather than suttasFor() per leaf group — that would re-scan all ~4000 suttas for each
+  // of ~440 groups, and LibraryPage calls this during its first render.
   const byNode = new Map<string, Array<[string, Sutta]>>();
   for (const entry of suttaEntries(corpus)) {
     let bucket = byNode.get(entry[1].node);
@@ -158,12 +153,10 @@ export interface BreadcrumbEntry {
   label: string;
 }
 
-// The path from nikaya down to (and including) a sutta's own leaf group — e.g. "Saṁyutta
-// Nikāya > The Group on Feeling > SN36.1–11" — for a location breadcrumb above the reader's
-// title. Every entry navigates the same way regardless of depth — to the sutta's own enclosing
-// leaf group, with the sutta itself highlighted/scrolled-to there (see ReaderPage's breadcrumb
-// onClick) — rather than to that particular entry's own (possibly non-leaf) node, since a
-// breadcrumb segment further up the chain has no suttas of its own to land on.
+// The path from nikaya down to and including a sutta's leaf group — "Saṁyutta Nikāya > The Group on
+// Feeling > SN36.1–11" — for the breadcrumb above the reader's title. Every entry navigates to the
+// sutta's enclosing leaf group with the sutta highlighted there (ReaderPage's breadcrumb onClick),
+// not to that entry's own node: a segment further up the chain has no suttas to land on.
 export function breadcrumbFor(corpus: Corpus, nodeId: string): BreadcrumbEntry[] {
   const found = findNode(corpus, nodeId);
   if (!found) return [];
@@ -185,23 +178,22 @@ export function nodeLabel(corpus: Corpus | null, id: string, lists: ListDef[]): 
   return { label: list ? list.label : '' };
 }
 
-// A node "has children to expand" (rows that expand never navigate, they only toggle) exactly
-// when it carries a `chapters` array — DN/MN don't, so clicking them goes straight to their flat
-// sutta list; SN/AN/KN do.
+// A node has children to expand exactly when it carries a non-empty `chapters` array. Such a row
+// toggles and never navigates.
 export function isExpandable(node: { chapters?: unknown }): boolean {
   return Array.isArray(node.chapters) && node.chapters.length > 0;
 }
 
 // The description to show above a node's sutta list, and where it came from.
 //
-// Only leaf groups open a page, but the source data doesn't write its descriptions at a uniform
-// depth: MN's are on the vagga, SN's are on the saṁyutta *above* the vagga. So a leaf without one
-// of its own borrows the nearest ancestor's, and `from` names that ancestor so the reader isn't
-// told a chapter of ten discourses is "about" something broader than what's listed. Undefined
-// `from` means the node's own — AN's vaggas and four of KN's books have neither and show nothing.
+// Only leaf groups open a page, but the source data writes its descriptions at inconsistent depths:
+// MN's sit on the vagga, SN's on the saṁyutta above it. A leaf without one of its own borrows the
+// nearest ancestor's, and `from` names that ancestor, so the reader isn't told a chapter of ten
+// discourses is "about" something broader than what's listed. Undefined `from` means the node's
+// own; AN's vaggas and four of KN's books have neither and show nothing.
 //
-// Nearest wins, so SN's five book-level descriptions never surface: every saṁyutta under them has
-// its own, and the more specific one is the better answer to "what am I looking at".
+// Nearest wins, so SN's five book-level descriptions never surface — every saṁyutta under them has
+// one of its own.
 export function nodeBlurb(
   corpus: Corpus | null,
   nodeId: string | undefined
@@ -234,9 +226,9 @@ export function ancestorsOf(corpus: Corpus | null, nodeId: string | undefined): 
   return init;
 }
 
-// Every id below `nodeId`, at any depth, excluding `nodeId` itself — the inverse of ancestorsOf,
-// used by TreePane's ⌥-click deep collapse to close a whole subtree rather than just hiding it
-// with its children still flagged open.
+// Every id below `nodeId` at any depth, excluding `nodeId` itself — the inverse of ancestorsOf.
+// TreePane's ⌥-click deep collapse uses it to close a whole subtree rather than hide it with its
+// children still flagged open.
 export function descendantIdsOf(corpus: Corpus | null, nodeId: string): string[] {
   const found = corpus ? findNode(corpus, nodeId) : null;
   if (!found) return [];
@@ -253,51 +245,40 @@ export function descendantIdsOf(corpus: Corpus | null, nodeId: string): string[]
 export interface SearchHit {
   id: string;
   sutta: Sutta;
-  // Set only when the match came from the range-query fallback below (e.g. searching "dhp325"
-  // against the "dhp320-333" batch) — the specific inner sutta id a caller should actually open
-  // (via resolveCanonicalSuttaId, which resolves back to `id` for the fetch/lookup) instead of
-  // `id` itself, so the reader can scroll to/mark that inner sutta rather than just opening the
-  // batch at its top. Unset for a plain title/blurb/note match — the source dataset has no
-  // per-inner-sutta blurb to attribute a text match to a specific one.
+  // Set only when the match came from the range-query fallback below — searching "dhp325" against
+  // the "dhp320-333" batch. It is the inner sutta id the caller opens instead of `id`, so the
+  // reader scrolls to and marks that sutta rather than opening the batch at its top. Unset for a
+  // plain title/blurb/note match, which the data can't attribute to one inner sutta.
   matchedId?: string;
-  // True when the query reached this sutta only through the name of a list it's in — no word of
-  // it appears in the sutta's own ref, title, Pali, blurb or the reader's note. The library drops
-  // these when the list itself is the one thing that matched, since its row already stands for
-  // them; see LibraryPage.
+  // True when the query reached this sutta only through the name of a list it is in — no word of it
+  // appears in the sutta's own ref, title, Pali, blurb or note. LibraryPage drops these when the
+  // list itself is the one thing that matched, since its row already stands for them.
   listOnly?: boolean;
 }
 
-// A short/common query (a single letter, "the") can realistically match hundreds of suttas — every
-// searchCorpus consumer (TreePane's own search, ListPane, ReaderSearchOverlay) renders hits as
-// unvirtualized DOM rows in a scroll panel, so each caps how many it actually renders to this (same
-// AUTO_LIST_CAP pattern as worker/src/lib/userData.js's auto-lists) — searchCorpus itself still
-// returns every match so a caller can show an accurate total count.
+// How many hits a caller renders. A short query can match hundreds of suttas, and every consumer
+// (TreePane's search, ListPane, ReaderSearchOverlay) draws hits as unvirtualized DOM rows.
+// searchCorpus itself still returns every match, so a caller can show an accurate total.
 export const SEARCH_RESULTS_CAP = 80;
 
-// What both search inputs (TreePane's and ReaderSearchOverlay's) offer to match on. Named here,
-// beside searchCorpus itself, so the promise and the fields it actually scans can't drift apart —
-// note that the sutta *text* is not among them.
+// What both search inputs (TreePane's and ReaderSearchOverlay's) offer to match on. It sits beside
+// searchCorpus so the promise and the fields actually scanned can't drift apart. The sutta text is
+// not among them.
 export const SEARCH_PLACEHOLDER = 'Search ID, title, blurb, note, list';
 
-// Case- and diacritic-insensitive comparison key — Pali romanization leans heavily on combining
-// marks (ā, ī, ū, ñ, ṭ, ḍ, ṇ, ḷ, ṁ, …) that most people don't bother typing, so a search for
-// plain "a"/"n" should still match "ā"/"ñ". NFD splits each accented letter into its base letter
-// plus a separate combining-mark codepoint (all of which fall in the U+0300–U+036F "combining
-// diacritical marks" block), which stripping then discards — cheaper and more general than
-// hand-listing every Pali special character. Exported for lib/searchMatch.ts, which marks the
-// matched words in a result row and so has to fold text exactly the way the match did.
+// Case- and diacritic-insensitive comparison key: Pali romanization leans on combining marks (ā, ī,
+// ñ, ṭ, ṁ, …) most people don't type, so plain "a" and "n" match "ā" and "ñ". NFD splits each
+// accented letter into its base letter plus a combining mark in U+0300–U+036F, which the replace
+// then discards. Exported for lib/searchMatch.ts, which has to fold text exactly as the match did.
 export function searchKey(s: string): string {
   return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 }
 
-// Each sutta's normalized (searchKey'd) "static" haystack — everything except the user's own
-// note, which can change independently — cached per Corpus object. searchCorpus runs on every
-// keystroke in TreePane's own search, ListPane, and the reader's search overlay; without this, it
-// would re-run NFD-normalize + diacritic-strip + lowercase over all ~4000 suttas' ref/title/
-// Pali/blurb text on every single keystroke. corpus.json is fetched once and never mutated after
-// load, so a WeakMap keyed on the Corpus reference is safe for the app's lifetime. Kept as two
-// separate strings, not one joined haystack, so a hit can be ranked by *where* it matched (see
-// searchCorpus's `rank`) without re-deriving that from the combined string.
+// Each sutta's searchKey'd static haystack — everything except the user's note, which changes
+// independently — cached per Corpus object, since searchCorpus runs on every keystroke across all
+// ~4000 suttas. corpus.json is fetched once and never mutated, so a WeakMap keyed on the Corpus
+// reference is safe for the app's lifetime. Two strings rather than one joined haystack, so a hit
+// can be ranked by where it matched (searchCorpus's `rank`).
 const staticHaystackCache = new WeakMap<Corpus, Map<string, { title: string; blurb: string }>>();
 
 function staticHaystacksFor(corpus: Corpus): Map<string, { title: string; blurb: string }> {
@@ -318,12 +299,11 @@ interface UidRange {
   end: number;
 }
 
-// A batched leaf uid (e.g. "dhp320-333", covering Dhp verses 320 through 333 in one document —
-// see build-corpus.mjs) has no entry of its own for any individual number inside that range, so
-// a query for one of them (e.g. "dhp325") wouldn't otherwise match anything. Mirrors
-// scripts/lib/collections.js's suttaNumRange: `prefix` is everything up to the trailing
-// `start-end` (including a dotted chapter number, e.g. "sn35." or "an1."), so it lines up with
-// how a query for a number in that range would itself be typed ("sn35.181", "an1.5").
+// A batched leaf uid like "dhp320-333" covers Dhp verses 320–333 in one document and has no entry
+// of its own for any number inside the range, so a query for "dhp325" would otherwise match
+// nothing. Mirrors scripts/lib/collections.js's suttaNumRange: `prefix` is everything up to the
+// trailing `start-end`, including a dotted chapter number ("sn35.", "an1."), so it lines up with
+// how such a query is typed.
 const RANGE_UID = /^([a-z][a-z-]*(?:\d+\.)?)(\d+)-(\d+)$/;
 const RANGE_QUERY = /^([a-z][a-z-]*(?:\d+\.)?)(\d+)$/;
 
@@ -348,14 +328,10 @@ function rangesFor(corpus: Corpus): Map<string, UidRange> {
   return cache;
 }
 
-// A batched leaf uid has no `corpus.suttas` entry of its own for any individual sutta inside it
-// (see the doc comment above RANGE_UID) — so a route/deep-link id like "dhp321" (the batch
-// dhp320-333's own 4th verse) doesn't resolve directly. This finds the enclosing batch's id the
-// same way searchCorpus's own range-query fallback below already does, so `/read/dhp321` and a
-// search hit for "dhp321" both land on the right document. Identity for a real id (including one
-// that's coincidentally range-uid-shaped but already has its own entry — checked first) or an id
-// that matches no range at all (so a genuinely invalid id still resolves to itself and 404s, same
-// as today).
+// The enclosing batch's id for a deep-link id like "dhp321", which has no `corpus.suttas` entry of
+// its own (see RANGE_UID above), so `/read/dhp321` and a search hit for it land on the same
+// document. Identity for an id that already has an entry — checked first — and for one matching no
+// range, so a genuinely invalid id still resolves to itself and 404s.
 export function resolveCanonicalSuttaId(corpus: Corpus, id: string): string {
   if (corpus.suttas[id]) return id;
   const m = id.match(RANGE_QUERY);
@@ -367,14 +343,12 @@ export function resolveCanonicalSuttaId(corpus: Corpus, id: string): string {
   return id;
 }
 
-// Each sutta's list-name haystack: the normalized "group/list" paths of every list holding it,
-// searched at any depth (not just top-level lists) via flattenListTree's full "Group / List"
-// breadcrumb — collapsed to a bare "group/list" so the breadcrumb's " / " spacing isn't required
-// (a query like "group/list" or just "list" both match). Only leaf ('list'-kind) rows are walked:
-// a leaf's breadcrumb already names every ancestor group, so a group matches through the suttas
-// its member lists hold, which is the only way it can match at all — a group's own `items` is
-// always empty (see worker/src/lib/userData.js's schema notes). A sutta can sit in several lists,
-// so their paths are joined with a newline, which nothing in a query can span.
+// Each sutta's list-name haystack: the normalized paths of every list holding it, at any depth, via
+// flattenListTree's "Group / List" breadcrumb collapsed to a bare "group/list" so the breadcrumb's
+// spacing isn't required — "group/list" and "list" both match. Only 'list'-kind rows are walked; a
+// leaf's breadcrumb already names every ancestor group, and a group's own `items` is always empty.
+// A sutta can sit in several lists, so their paths are joined with a newline, which nothing in a
+// query can span.
 function listHaystacks(lists: ListDef[]): Map<string, string> {
   const byId = new Map<string, string>();
   for (const { list, breadcrumb } of flattenListTree(lists)) {
@@ -403,12 +377,12 @@ const RANK_WORDS = 3;
 export function searchCorpus(corpus: Corpus, query: string, notes: Record<string, string>, lists: ListDef[] = []): SearchHit[] {
   const q = searchKey(query.trim());
   if (!q) return [];
-  // Every word has to be found, but not adjacent and not in the same field — "raft simile" and
-  // "simile of the raft" should both reach a sutta the blurb calls "the simile of the raft", and
-  // a word from the title plus a word from the user's own note is a perfectly good way to
-  // remember a sutta. Contiguity is then a ranking signal rather than a requirement (see the rank
-  // buckets above). A one-word query makes the phrase and the word tests identical, collapsing
-  // this back to exactly the two buckets — title, then everything else — it has always had.
+  // Every word has to be found, but not adjacent and not in the same field: "raft simile" and
+  // "simile of the raft" both reach a sutta whose blurb calls it "the simile of the raft", and a
+  // word from the title plus a word from the reader's note is a good way to remember a sutta.
+  // Contiguity is a ranking signal rather than a requirement (see the rank buckets above). For a
+  // one-word query the phrase and word tests are identical, collapsing this to two buckets: title,
+  // then everything else.
   const words = q.split(/\s+/);
   const staticHaystacks = staticHaystacksFor(corpus);
   const rangeQuery = q.match(RANGE_QUERY);
@@ -425,13 +399,10 @@ export function searchCorpus(corpus: Corpus, query: string, notes: Record<string
     else if (blurb.includes(q) || note.includes(q) || listPaths.includes(q)) rank = RANK_PHRASE;
     else if (words.every((w) => title.includes(w) || blurb.includes(w) || note.includes(w) || listPaths.includes(w))) rank = RANK_WORDS;
     let matchedId: string | undefined;
-    // Checked unconditionally (not just when the query missed the title) — a batch's own ref text
-    // is always exactly `${prefix}${start}` with no separator (e.g. "Dhp209–220"), so a query for
-    // a batch's very first inner uid ("dhp209") already ranks as a title match via that literal
-    // substring, same as any other ref/title match. Gating this on a title miss would then skip
-    // setting matchedId for that one case (every other inner uid doesn't literally appear in the
-    // ref, so only reaches matchedId through this branch), silently losing the sub-uid and
-    // opening the batch at its top instead of scrolling/highlighting the requested first sutta.
+    // Checked unconditionally, not only when the query missed the title. A batch's ref starts with
+    // `${prefix}${start}` ("Dhp209–220"), so a query for its first inner uid already ranks as a
+    // title match — gating this on a title miss would leave that one case without a matchedId, and
+    // open the batch at its top instead of scrolling to the requested sutta.
     if (rangeQuery) {
       const range = ranges!.get(id);
       const num = Number(rangeQuery[2]);
@@ -441,8 +412,8 @@ export function searchCorpus(corpus: Corpus, query: string, notes: Record<string
       }
     }
     if (rank < 0) continue;
-    // Deliberately word-level and strict: a sutta sharing even one word of the query with its own
-    // text got here on its own merits, and is never just a restatement of a list row above it.
+    // Word-level and strict: a sutta sharing even one query word with its own text got here on its
+    // own merits, and isn't a restatement of a list row above it.
     const listOnly =
       rank >= RANK_PHRASE &&
       words.every((w) => listPaths.includes(w) && !title.includes(w) && !blurb.includes(w) && !note.includes(w));
@@ -452,27 +423,25 @@ export function searchCorpus(corpus: Corpus, query: string, notes: Record<string
   return hits;
 }
 
-// How many list hits the results block shows before "N more lists" expands it. Three because the
-// block sits *above* the sutta hits on both surfaces, and on a phone a fourth row pushes the first
-// sutta below the fold — the results are still what most queries are for.
+// How many list hits the results block shows before "N more lists" expands it. The block sits above
+// the sutta hits on both surfaces, and on a phone a fourth row pushes the first sutta below the
+// fold.
 export const LIST_RESULTS_CAP = 3;
 
 export interface ListHit {
   list: ListDef;
   // The groups above this list ("Practice", "Practice / Mornings"), empty for a top-level one.
-  // Rendered beside the name, which is what tells two lists sharing a name under different groups
-  // apart — and the row is also a hit when the query only matched up here.
+  // Rendered beside the name, which is what tells apart two lists sharing a name under different
+  // groups. The row is also a hit when the query matched only up here.
   parents: string;
 }
 
-// The user's own lists whose name (or an ancestor group's name) matches — rendered as their own
-// section above the sutta hits, since a reader who types a list's name is looking for the list
-// itself, not only for what's in it.
+// The user's lists whose name, or an ancestor group's name, matches — rendered as their own section
+// above the sutta hits, since a reader who types a list's name is looking for the list itself.
 //
-// Only `kind: 'list'` rows: a group holds no suttas, so /browse/<groupId> shows an empty pane —
-// it can't be a destination, and appears here only as its children's breadcrumb. The auto-lists
-// are out too (flattenListTree drops them): they sit permanently at the top of the Lists tab, so
-// unlike a list buried three groups deep they're never something search has to find.
+// Only `kind: 'list'` rows: a group holds no suttas, so /browse/<groupId> shows an empty pane and
+// can't be a destination; it appears here only as its children's breadcrumb. The auto-lists are out
+// too (flattenListTree drops them), since they sit permanently at the top of the Lists tab.
 export function searchLists(lists: ListDef[], query: string): ListHit[] {
   const q = searchKey(query.trim());
   if (!q) return [];
@@ -494,15 +463,14 @@ export function searchLists(lists: ListDef[], query: string): ListHit[] {
   return [...own, ...viaGroup];
 }
 
-// The exact list of rows ListPane renders while browsing (not searching — see LibraryPage, which
-// computes search hits itself and hands them to both TreePane and ListPane so they show one
-// consistent result set instead of each re-running searchCorpus independently).
+// The rows ListPane renders while browsing. Searching goes through LibraryPage, which computes the
+// hits once and hands them to both TreePane and ListPane so they show one consistent result set.
 export function listItemsFor(corpus: Corpus, nodeId: string | undefined, lists: ListDef[]): Array<[string, Sutta]> {
   if (!nodeId) return [];
   const list = lists.find((l) => String(l.id) === nodeId);
   if (list) {
-    // Stored order (user-arranged, see reorderListItems), not id order — a list is the one
-    // place in the corpus tree where the user's own sequencing wins over natural sutta order.
+    // Stored order (user-arranged, see reorderListItems), not id order — a list is the one place in
+    // the tree where the user's own sequencing wins over natural sutta order.
     return list.items
       .map((id) => (corpus.suttas[id] ? ([id, corpus.suttas[id]] as [string, Sutta]) : null))
       .filter((x): x is [string, Sutta] => x !== null);

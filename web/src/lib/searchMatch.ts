@@ -8,13 +8,11 @@ export interface TextRun {
 }
 
 // The same fold searchCorpus matches on (corpus.ts's searchKey), done one character at a time so
-// each character of the folded key remembers where it came from in the original: `map[i]` is the
-// original index the folded character `i` starts at, with a final entry for the end of the string.
-// Highlighting needs that because folding changes length — "ā" decomposes to two codepoints and
-// then loses one, so a match found at folded offset 4 is rarely at offset 4 in the text on screen.
-// Folding character by character matches the whole-string version because NFD decomposition and
-// lowercasing are per-character for everything this corpus contains; searchMatch.test.ts asserts
-// the two agree, so a change to searchKey can't silently drift from this.
+// each character of the folded key remembers where it came from: `map[i]` is the original index the
+// folded character `i` starts at, with a final entry for the end of the string. Highlighting needs
+// that because folding changes length — "ā" decomposes to two codepoints and then loses one.
+// Character-by-character folding agrees with the whole-string version for everything this corpus
+// contains, and searchMatch.test.ts asserts it, so searchKey can't drift from this unnoticed.
 function fold(s: string): { key: string; map: number[] } {
   let key = '';
   const map: number[] = [];
@@ -28,11 +26,10 @@ function fold(s: string): { key: string; map: number[] } {
   return { key, map };
 }
 
-// Splits `text` into runs, marking every occurrence of every word in `query` — the words
-// separately and anywhere, exactly as searchCorpus matched them, so what's marked is the reason
-// the row is on screen. Returns a single unmarked run when there's nothing to mark (no query, or
-// this particular field holds none of the words — a hit can match on its blurb while its title
-// shows nothing).
+// Splits `text` into runs, marking every occurrence of every word in `query` — separately and
+// anywhere, exactly as searchCorpus matched them. Returns a single unmarked run when there is
+// nothing to mark: no query, or a field holding none of the words (a hit can match on its blurb
+// while its title shows nothing).
 export function matchRuns(text: string, query: string): TextRun[] {
   const words = searchKey(query.trim()).split(/\s+/).filter(Boolean);
   if (!text || !words.length) return [{ text, hit: false }];

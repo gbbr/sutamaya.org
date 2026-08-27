@@ -15,8 +15,8 @@ import type { UserData } from './api';
 // the order the user made them reproduces the order the user sees.
 //
 // Nothing here mutates the caller's state. It reports what landed, and lib/mirror.ts's
-// applyFlushOutcome folds that into whatever the mirror looks like by the time it returns — which
-// is not necessarily what the flush started from, since the user keeps editing while it is out.
+// applyFlushOutcome folds that into whatever the mirror looks like by the time it returns — not
+// necessarily what the flush started from, since the user keeps editing while it is out.
 
 type Verdict = 'ok' | 'gone' | 'permanent' | 'unauthorized' | 'retryable' | 'collision';
 
@@ -43,8 +43,8 @@ function runOp(op: QueuedOp): Promise<unknown> {
   return listsApi.reorderItems(op.listId, op.order, op.mtime);
 }
 
-// How many fresh ids to try before giving up on a colliding create. A v4 UUID will not collide by
-// chance, so this is about the failure staying legible rather than about it being likely.
+// How many fresh ids to try before giving up on a colliding create. A v4 UUID won't collide by
+// chance, so this is about the failure staying legible, not about it being likely.
 const MAX_ID_ATTEMPTS = 4;
 
 export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
@@ -59,8 +59,7 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
   let halted: 'offline' | 'unauthorized' | null = null;
 
   // Returns false when the flush should stop. A permanent rejection is neither acked nor retried
-  // blindly: the record stays dirty, and a queue that never drains is what the sync indicator has
-  // to surface.
+  // blindly: the record stays dirty, which is what the sync indicator surfaces.
   async function push(ack: FlushAck, run: () => Promise<unknown>): Promise<boolean> {
     return settle(ack, await send(run));
   }
@@ -70,8 +69,8 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
       halted = verdict === 'unauthorized' ? 'unauthorized' : 'offline';
       return false;
     }
-    // 'collision' only reaches here after MAX_ID_ATTEMPTS fresh ids all collided, which is not a
-    // thing that happens — but acking it would clear the dirty flag for a create that never landed.
+    // 'collision' only reaches here after MAX_ID_ATTEMPTS fresh ids all collided. Acking it would
+    // clear the dirty flag for a create that never landed.
     if (verdict === 'permanent' || verdict === 'collision') {
       console.error('sync rejected a record permanently', ack);
       rejected.push(ack);
@@ -179,12 +178,11 @@ const BLOCKED: FlushOutcome = {
   snapshot: null,
 };
 
-// One flusher at a time across every tab and PWA window on the device. They all share the same
-// mirror, so two flushing at once would push the same records twice — harmless, since every write
-// is idempotent, but it doubles the traffic and lets two snapshots land out of order. `ifAvailable`
-// means a tab that loses the race skips this round rather than queueing behind the winner, which
-// is right for something that runs again in seconds anyway. Where Web Locks aren't available the
-// flush simply runs — the writes are still safe, and the alternative is not syncing at all.
+// One flusher at a time across every tab and PWA window on the device. They share one mirror, so
+// two flushing at once would push the same records twice — harmless, since every write is
+// idempotent, but it doubles the traffic and lets two snapshots land out of order. `ifAvailable`
+// means a tab that loses the race skips this round rather than queueing behind the winner. Where
+// Web Locks aren't available the flush simply runs; the writes are still safe.
 const FLUSH_LOCK = 'sutamaya.flush';
 
 export async function flushWithLock(state: MirrorState): Promise<FlushOutcome> {

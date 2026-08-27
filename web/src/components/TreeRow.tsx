@@ -4,15 +4,13 @@ import { useLayout } from '../context/LayoutContext';
 import { isExpandable } from '../lib/corpus';
 import type { ChapterRow } from '../lib/types';
 
-// One row of the nested chapter/group/category tree under a nikaya — recurses arbitrarily
-// deep (SN: group > chapter > category; AN: chapter > category; MN: category directly).
-// Wrapped in `memo` so a TreePane re-render triggered by something unrelated to the corpus tree
-// itself (e.g. UserDataContext updating elsewhere) doesn't force every expanded row to
-// re-render too. Requires `onToggle`/`onSelect` to stay referentially stable across such renders
-// (see TreePane's own useCallback wrapping of toggleExpanded) — an inline arrow recreated every
-// render would defeat this the same way SegmentedText's own memoization note describes.
-// Expanding/collapsing a row still re-renders every row regardless, since `expanded` is passed
-// as one whole map rather than a per-row boolean.
+// One row of the nested chapter/group/category tree under a nikaya, recursing arbitrarily deep
+// (SN: group > chapter > category; AN: chapter > category; MN: category directly).
+//
+// Wrapped in `memo`, so a TreePane re-render unrelated to the corpus tree doesn't force every
+// expanded row to re-render. That requires `onToggle`/`onSelect` to stay referentially stable
+// across those renders — see TreePane's useCallback around toggleExpanded. Expanding or collapsing
+// still re-renders every row, since `expanded` is passed as one map rather than a per-row boolean.
 export const TreeRow = memo(function TreeRow({
   node,
   depth,

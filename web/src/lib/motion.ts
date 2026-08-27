@@ -2,15 +2,14 @@
 // reader steps to it.
 
 // Read per call rather than cached, so a preference changed mid-session takes effect at the next
-// animation instead of at the next reload. Same reasoning as uiPrefs.ts's systemPrefersDark.
+// animation rather than at the next reload.
 export function prefersReducedMotion(): boolean {
   return !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 }
 
 // How far the text travels, and for how long. Reduced motion drops the travel and keeps the
-// duration: it also keeps the step visible — one that can't be seen happen is the problem this
-// animation exists to solve — and a fade is the only cue those readers get, so it is the last
-// thing to shorten.
+// duration: the fade is then the only cue that the step happened, so it is the last thing to
+// shorten.
 const STEP_TRAVEL_PX = 26;
 const STEP_MS = 220;
 
@@ -23,16 +22,11 @@ export function cancelStepAnimations(el: HTMLElement) {
 }
 
 // Brings a sutta in from the edge the reader is travelling from — `dir` is +1 for a step to the
-// next sutta, -1 for the previous — so the step reads as movement through the canon rather than
-// the screen silently becoming a different sutta.
+// next sutta, -1 for the previous — so the step reads as movement through the canon.
 //
-// Only the arriving sutta is animated. Carrying the outgoing one off as well would read more
-// clearly still, but it means holding the faded-out text in place across the navigation and
-// releasing it again on arrival, which is a lot of sequencing to get wrong for the difference it
-// makes. Nothing here fills beyond its own run, so nothing can be left applying to the pane.
-//
-// Returns null where the platform has no Web Animations API, which the caller can ignore: there
-// is nothing to wait for either way.
+// Only the arriving sutta is animated, and nothing here fills beyond its own run, so nothing can be
+// left applying to the pane. Returns null where the platform has no Web Animations API, which the
+// caller can ignore: there is nothing to wait for either way.
 export function animateStep(el: HTMLElement, dir: 1 | -1): Animation | null {
   if (typeof el.animate !== 'function') return null;
   const reduced = prefersReducedMotion();
@@ -44,8 +38,8 @@ export function animateStep(el: HTMLElement, dir: 1 | -1): Animation | null {
           { opacity: 1, transform: 'none' },
         ],
     // `backwards` so the opening keyframe applies from the moment the animation is created rather
-    // than from its first frame — the caller starts this in a layout effect, and without the fill
-    // the paint that follows can catch the new sutta fully opaque and un-offset.
+    // than from its first frame: the caller starts this in a layout effect, and the paint that
+    // follows would otherwise catch the new sutta fully opaque and un-offset.
     { duration: STEP_MS, easing: reduced ? 'ease' : 'cubic-bezier(.22,.61,.36,1)', fill: 'backwards' }
   );
 }

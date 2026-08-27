@@ -38,47 +38,40 @@ type Row =
 //   any input    -> search: a flat, ranked list of *lists only*, no indentation, each row naming
 //                   its parent path in dimmed text, plus a single "Create list" row at the end.
 //
-// Indentation and filtering are never mixed: an indented row that's been lifted out of its
-// subtree — a search result, or a checked row pinned to the top — has no parent above it to be
-// read against, so the path is spelled out instead. Groups drop out of the results entirely —
-// they can't hold this sutta, so a group row there would be an unselectable row in a list whose
-// whole purpose is selecting. Creating a *group*, or a list nested inside one, is the
-// Library tree's job (see ListRow's inline create); this picker only ever creates a top-level
-// list, which is the one thing it's open to do. Used by the reader's Lists tab.
+// Indentation and filtering are never mixed: a row lifted out of its subtree — a search result, or
+// a checked row pinned to the top — has no parent above it to be read against, so its path is
+// spelled out instead. Groups drop out of the results entirely, since they can't hold this sutta
+// and would be unselectable rows in a list whose purpose is selecting. Creating a group, or a list
+// nested inside one, is the Library tree's job (ListRow's inline create); this picker only creates
+// a top-level list. Used by the reader's Lists tab.
 export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose }: ListMembershipPickerProps) {
   const { ready, lists, membership, toggleMembership, addToList, createList } = useUserData();
   const [draft, setDraft] = useState('');
   const [activeIndex, setActiveIndex] = useState(0);
-  // Collapsed groups, by id. Starts empty on every open — the picker is mounted fresh each time,
-  // so nothing is ever collapsed when it appears. That's deliberate: a collapsed group would hide
-  // a nested list this sutta is already in, and the whole point of opening this is to see where
-  // the sutta currently sits.
+  // Collapsed groups, by id. Empty on every open, since the picker mounts fresh: a collapsed group
+  // would hide a nested list this sutta is already in, which is what opening this is for.
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const inputRef = useRef<HTMLInputElement>(null);
-  // Guards the create path against a double-tap (or a held Enter) while the POST is still out.
-  // createList() dedupes by label against `lists`, which can't yet contain a list whose create
-  // hasn't returned — so on a slow connection the second activation sails past that check and
-  // creates a duplicate. A ref, not state: this only needs to suppress the redundant call, and
-  // re-rendering the row mid-create would fight the input's own focus handling.
+  // Guards the create path against a double-tap or a held Enter while the POST is still out.
+  // createList() dedupes by label against `lists`, which can't yet hold a list whose create hasn't
+  // returned, so on a slow connection a second activation would sail past that check. A ref rather
+  // than state: re-rendering the row mid-create would fight the input's focus handling.
   const creatingRef = useRef(false);
 
   useEffect(() => {
     if (autoFocus) inputRef.current?.focus();
   }, [autoFocus]);
 
-  // membership[suttaId] includes the "Highlights"/"Notes" auto-list ids (see
-  // worker/src/routes/data.js's buildUserData) — those aren't real lists (no D1 row, no id to
-  // add/remove items against), so they're excluded here rather than rendered as a toggleable
-  // chip that would 404 against the API.
+  // membership[suttaId] includes the auto-list ids, which are synthesized rather than real rows and
+  // have nothing to add or remove items against, so they're excluded rather than rendered as a
+  // toggle that would 404.
   const suttaListIds = (membership[suttaId] || []).filter((id) => !AUTO_LIST_IDS.has(id));
-  // Membership as it stood when the picker opened, which is what fills the pinned section below.
-  // Filling it from *live* membership would make a row vanish from under the pointer the moment
-  // it was unchecked — leaving no way to undo a mistaken tap short of finding the list again in
-  // the tree — so the section is frozen and only the checkmarks follow live membership.
-  // Snapshotted during render rather than in an effect, so the first paint already carries the
-  // section; keyed on `ready` so a picker that opens before the mirror has loaded doesn't freeze
-  // an empty set, and on `suttaId` so it re-snapshots if a host ever reuses this component
-  // across suttas.
+  // Membership as it stood when the picker opened, which fills the pinned section below. Live
+  // membership would make a row vanish from under the pointer the moment it was unchecked, with no
+  // way to undo a mistaken tap short of finding the list again, so the section is frozen and only
+  // the checkmarks follow live membership. Snapshotted during render rather than in an effect, so
+  // the first paint carries the section; keyed on `ready` so a picker opened before the mirror
+  // loads doesn't freeze an empty set, and on `suttaId` in case a host reuses the component.
   const [openMembership, setOpenMembership] = useState<{ key: string | null; ids: Set<string> }>({ key: null, ids: new Set() });
   if (ready && openMembership.key !== suttaId) setOpenMembership({ key: suttaId, ids: new Set(suttaListIds) });
   const flatAll = useMemo(() => flattenListTree(lists), [lists]);
@@ -104,12 +97,10 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
   const rows: Row[] = useMemo(() => {
     if (!query) {
       // Browsing: the lists this sutta was in when the picker opened, lifted out of the tree and
-      // repeated flat at the top, so the checked ones are always among the first rows instead of
-      // sitting wherever their group happens to fall — which, in a deep tree, can be well below
-      // the fold. They keep their own tree order and name their parent path, since a lifted row
-      // has no parent above it. The tree below stays in plain depth-first order: with the section
-      // there, reordering it as well would buy nothing and cost the stable, learnable layout of
-      // the user's own tree.
+      // repeated flat at the top, so the checked ones are among the first rows rather than wherever
+      // their group falls — which in a deep tree can be well below the fold. They keep their tree
+      // order and name their parent path, a lifted row having no parent above it. The tree below
+      // stays in plain depth-first order, which is the layout the user already knows.
       const pinned = flatAll.filter((f) => f.list.kind !== 'group' && openMembership.ids.has(f.list.id));
       // Everything under a collapsed group drops out. flatAll is in depth-first
       // parent-then-children order, so one forward pass carries a collapse all the way down a
@@ -140,9 +131,9 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
         const bName = searchKey(b.list.label).includes(ql) ? 0 : 1;
         return aName - bName || a.list.label.length - b.list.label.length || order.get(a.list.id)! - order.get(b.list.id)!;
       });
-    // The create row is always offered, never only when nothing matched — a new list can
-    // legitimately be a substring (or superstring) of an existing name (e.g. typing "Te" when
-    // "Temp" already exists). createList() itself dedupes an exact same-label-same-parent create.
+    // The create row is always offered, not only when nothing matched: a new list can legitimately
+    // be a substring of an existing name — typing "Te" when "Temp" exists. createList() dedupes an
+    // exact same-label, same-parent create.
     return [
       ...matches.map((option) => ({ type: 'list' as const, option })),
       { type: 'create' as const, name: query.slice(0, LIST_NAME_MAX_LENGTH) },
@@ -184,18 +175,17 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       toggleMembership(suttaId, row.option.list.id);
       return;
     }
-    // Only the create path is guarded — toggleMembership above is idempotent server-side
+    // Only the create path is guarded: toggleMembership is idempotent server-side
     // (ADD_ITEM_SQL/REMOVE_ITEM_SQL in routes/lists.js), and tapping a membership row twice is a
-    // legitimate on-then-off, not something to swallow.
+    // legitimate on-then-off.
     if (creatingRef.current) return;
     creatingRef.current = true;
     try {
       const list = await createList(row.name, null, 'list');
       await addToList(suttaId, list);
-      // Creating is the one action that *does* rebuild the pinned section: clearing the key makes
-      // the next render re-snapshot from live membership, so the list just created joins it. The
-      // view is being rebuilt from search back to browse anyway, so there's no row under the
-      // pointer to yank away.
+      // Creating is the one action that rebuilds the pinned section: clearing the key makes the
+      // next render re-snapshot from live membership, so the new list joins it. The view is going
+      // from search back to browse anyway, so there is no row under the pointer to yank away.
       setOpenMembership({ key: null, ids: new Set() });
     } catch (e) {
       // Both write to the local mirror and can't fail on the network, so this only catches
@@ -219,9 +209,8 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       const row = rows[activeIdx];
       if (row) activateRow(row);
     } else if (e.key === 'Escape') {
-      // Stops here (doesn't bubble to the reader's own window-level Escape handler — see
-      // ReaderPage) so a first Escape clearing the draft doesn't also skip straight to closing
-      // the whole panel in the same keypress.
+      // Stops here rather than bubbling to the reader's window-level Escape handler, so a first
+      // Escape clearing the draft doesn't also close the whole panel in the same keypress.
       e.stopPropagation();
       if (draft) setDraft('');
       else onRequestClose?.();
@@ -367,10 +356,9 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
   );
 }
 
-// The matched runs in bold, so a result explains why it's a result. Only in the name: a match that
-// landed in the parent path instead is already accounted for by the path shown beside it. matchRuns
-// does the marking, so what's bolded here folds diacritics exactly the way the filter above did —
-// typing "a" bolds the "ā" it matched.
+// The matched runs in bold, so a result explains why it is one. Only in the name: a match in the
+// parent path is already accounted for by the path shown beside it. matchRuns does the marking, so
+// the bolding folds diacritics exactly the way the filter above did — typing "a" bolds an "ā".
 function MatchedLabel({ label, query }: { label: string; query: string }) {
   const runs = matchRuns(label, query);
   return (

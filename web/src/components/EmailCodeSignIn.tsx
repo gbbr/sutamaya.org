@@ -9,9 +9,9 @@ import { useAuth } from '../context/AuthContext';
 
 const FIELD =
   'w-full h-10 px-3 rounded-field border border-ink/[.18] bg-transparent font-sans text-ui-md placeholder:text-ink-5';
-// The code field arrives focused and is the only thing the user has to do on this card once the
-// mail lands, so it carries the accent border the app uses elsewhere for the input it wants typed
-// into (ListRow's rename/draft fields) rather than the same resting outline as every other field.
+// The code field arrives focused and is the only thing left to do on this card, so it carries the
+// accent border the app uses for an input it wants typed into (as ListRow's rename and draft fields
+// do) rather than the resting outline every other field has.
 const FIELD_ACTIVE = 'border-accent ring-2 ring-accent/25';
 const SUBMIT =
   'flex items-center justify-center gap-1.5 w-full py-[12px] rounded-field bg-accent text-[#FBFAF7] font-sans text-ui-base font-medium disabled:opacity-50';
@@ -20,8 +20,7 @@ const LINK_SPENT = 'font-sans text-ui-sm text-ink-5';
 
 // Matches RESEND_COOLDOWN_MS in worker/src/emailAuth.js, where a request inside the window is
 // accepted and deliberately not sent — the outstanding code is still valid, and a second one would
-// only make it ambiguous which to type. Counting down here is what makes that legible: without it
-// the button is live, does nothing visible, and reads as broken.
+// make it ambiguous which to type. Counting down here is what keeps the button from looking broken.
 const RESEND_COOLDOWN_SECONDS = 30;
 
 export function EmailCodeSignIn({ returnTo }: { returnTo?: string }) {

@@ -1,9 +1,8 @@
 // The client half of the read-time tree repair (docs/offline-sync.md's A3), ported from
 // worker/src/lib/listTree.js — same algorithm, same order, so both halves produce the same tree
-// from the same rows. It has to exist twice because the mirror is now the source of truth the UI
-// renders from: a group deleted offline has to take its contents with it immediately, with no
-// network, and that cascade is what expresses the delete. (There is no module shared between the
-// two npm workspaces — the same duplication autoLists.ts already lives with.)
+// from the same rows. It exists twice because the mirror is what the UI renders from: a group
+// deleted offline has to take its contents with it immediately, with no network, and that cascade
+// is what expresses the delete. No module is shared between the two npm workspaces.
 //
 // Tombstoned rows are passed in rather than filtered out beforehand: the cascade needs to know
 // which ancestors are dead in order to drop what hangs off them.
@@ -44,11 +43,11 @@ export function repairListTree<T extends TreeRow>(lists: T[]): T[] {
     lists.map((list) => [list.id, list.parentId && byId.has(list.parentId) ? list.parentId : null])
   );
 
-  // Break cycles, before anything walks an ancestor chain — otherwise these walks never terminate.
-  // Each row has at most one parent, so a walk up from any node enters at most one cycle: one break
-  // per walk is enough, and walking from every node finds every cycle. Iterated in id order, and
-  // the loser chosen as the global minimum of the cycle's members, so neither the input's order nor
-  // which node the walk entered the cycle from can change the outcome.
+  // Break cycles before anything walks an ancestor chain, or those walks never terminate. Each row
+  // has at most one parent, so a walk up from any node enters at most one cycle: one break per walk
+  // is enough, and walking from every node finds every cycle. Iterated in id order, with the loser
+  // chosen as the global minimum of the cycle's members, so neither the input's order nor which
+  // node the walk entered from changes the outcome.
   for (const { id } of [...lists].sort((a, b) => (a.id < b.id ? -1 : 1))) {
     const path: string[] = [];
     const seen = new Set<string>();

@@ -9,58 +9,51 @@ interface SuttaRowChipsProps {
   hlCount: number;
   // The distinct colours those highlights use — the badge's swatches (see highlightColors).
   hlColors: string[];
-  // Present only in the Reader (search overlay, sutta header) — the reader has its own
-  // light/sepia/dark theme system, independent of the app shell's own dark/light mode (see
-  // index.css's --ink), so a reader caller passes its resolved theme to get inline-styled chips
-  // matching it instead of the app-shell-tied `border-ink/25` Tailwind classes ListPane/TreePane
-  // fall back to when this is omitted. Also forwarded to HighlightCountBadge for the same reason.
+  // Present only in the Reader (search overlay, sutta header), which has its own light/sepia/dark
+  // theme independent of the app shell's. A reader caller passes its resolved theme to get
+  // inline-styled chips; omitting it falls back to the shell-tied `border-ink/25` Tailwind classes
+  // ListPane and TreePane use. Forwarded to HighlightCountBadge as well.
   theme?: ThemeColors;
   // The reader's body font size (ReaderPrefs' `fs`), passed only by the reader's sutta header, so
-  // the chips track the typography control the way everything else in that header does. The
-  // library panes have no such control and pass nothing, keeping the fixed size below — which is
-  // what `fs` at its default of 18 also produces, so the reader looks unchanged until the user
-  // moves the slider.
+  // the chips track its typography control. The library panes have no such control and pass
+  // nothing, keeping the fixed size below — which is also what `fs` at its default of 18 produces.
   fs?: number;
-  // Only the reader's sutta header passes these — its chips navigate to the clicked list, and its
-  // badge opens the Highlights side-panel tab. Without a click handler, a chip/badge renders as a
-  // plain (non-interactive) span, same as ListPane/TreePane's read-only search rows, where the row
-  // itself is already the click target and a nested <button> would be invalid HTML anyway.
+  // Only the reader's sutta header passes these: its chips navigate to the clicked list, its badge
+  // opens the Highlights side-panel tab. Without a handler a chip or badge renders as a plain span,
+  // as in ListPane and TreePane's rows, where the row itself is the click target and a nested
+  // <button> would be invalid HTML.
   onChipClick?: (chipId: string) => void;
   onHighlightClick?: (e: React.MouseEvent) => void;
-  // Adds an "add to list" control after the chips and before the highlight badge, opening the
-  // Lists side-panel tab. Only the reader's sutta header passes it — its chips are a live account
-  // of this sutta's memberships, so the control that edits them belongs beside them, matching the
-  // one on every row in the Library's list pane. Passing it also makes the row render for a sutta
-  // with no chips and no highlights, which would otherwise draw nothing at all: the point of the
-  // control is to be reachable before there is any membership to show.
+  // Adds an "add to list" control after the chips and before the highlight badge, opening the Lists
+  // side-panel tab. Only the reader's sutta header passes it, so the control that edits the
+  // memberships sits beside them, matching every row in the Library's list pane. Passing it also
+  // makes the row render for a sutta with no chips and no highlights, which would otherwise draw
+  // nothing — the control has to be reachable before there is any membership to show.
   onAddToList?: (e: React.MouseEvent) => void;
 }
 
-// List-membership chips + highlight-count badge for one sutta row — shared by ListPane's desktop
-// rows, TreePane's mobile search results, the Reader's own search overlay, and the Reader's sutta
-// header (see lib/lists.ts's suttaRowMeta for how `chips`/`hlCount` are computed) so all four stay
-// visually and behaviourally identical rather than drifting apart.
+// List-membership chips and highlight-count badge for one sutta row, shared by ListPane's desktop
+// rows, TreePane's mobile search results, the Reader's search overlay and the Reader's sutta header
+// so all four stay identical. See lib/lists.ts's suttaRowMeta for how `chips`/`hlCount` are built.
 export function SuttaRowChips({ chips, hlCount, hlColors, theme, fs, onChipClick, onHighlightClick, onAddToList }: SuttaRowChipsProps) {
   if (chips.length === 0 && hlCount === 0 && !onAddToList) return null;
   const ChipTag = onChipClick ? 'button' : 'span';
   const fontSize = fs ? fs - 7 : 14;
   const height = fontSize + 11;
   // The add-to-list control runs a point above the chips: it has no fill or outline of its own, so
-  // a little extra size is what keeps it from disappearing into the run of pills — but only a
-  // little, since it sits at the end of that run rather than heading it.
+  // a little extra size keeps it from disappearing into the run of pills — but only a little, since
+  // it sits at the end of that run rather than heading it.
   const addFontSize = fontSize + 1;
-  // The gap before the highlight badge. The badge is the odd one out on the line — a count, not a
-  // list — so it separates itself from whatever precedes it, and how much depends on what that is.
-  // (The add control itself keeps the plain chip-to-chip gap: it edits the memberships it sits at
-  // the end of, so it belongs to that run.)
+  // The gap before the highlight badge. The badge is a count rather than a list, so it separates
+  // itself from whatever precedes it, by an amount that depends on what that is. The add control
+  // keeps the plain chip-to-chip gap, since it edits the memberships it sits at the end of.
   function badgeGapFor(): number | undefined {
     // After the add control, which carries no fill or outline of its own: it takes a clear step to
     // read as a break rather than as more of the same run.
     if (onAddToList) return 12;
-    // Straight after a chip's own edge, in the Library, where there's no add control on the line.
-    // Less than after the add control — a hard pill edge is already a boundary — but not nothing:
-    // the badge carries no outline of its own, so without a little air its swatches read as
-    // hanging off the chip they follow.
+    // Straight after a chip's edge, in the Library, where the line has no add control. Less than
+    // after the add control, since a pill edge is already a boundary, but not nothing: the badge
+    // has no outline, so without a little air its swatches read as hanging off the chip.
     if (chips.length > 0) return 8;
     // The badge is alone on the line, so there's nothing to separate from: flush with the row.
     return undefined;

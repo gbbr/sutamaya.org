@@ -1,11 +1,9 @@
 import { prefersReducedMotion } from './motion';
 
-// Pure position math for useSuttaReading's scrollToSegment, split out for the same reason
-// highlightGutterLayout.ts's computeGutterLayout was: this app applies Settings > UI scale via
-// CSS `zoom` on <html> (lib/uiPrefs.ts), and getBoundingClientRect() reports real, post-zoom
-// screen coordinates while scrollBy's `top` is a local, pre-zoom scroll unit — dividing by
-// `scale` converts the former into the latter before it's used as a scroll delta. `containerRect`/
-// `elRect` are raw getBoundingClientRect() readings (post-zoom).
+// Position math for useSuttaReading's scrollToSegment. Settings > UI scale is applied via CSS
+// `zoom` on <html> (lib/uiPrefs.ts), so getBoundingClientRect() reports post-zoom screen
+// coordinates while scrollBy's `top` is a pre-zoom scroll unit — dividing by `scale` converts the
+// former into the latter. `containerRect`/`elRect` are raw getBoundingClientRect() readings.
 export function computeSegmentScrollOffset(
   containerRect: { top: number; height: number },
   elRect: { top: number; height: number },
@@ -18,19 +16,15 @@ export function computeSegmentScrollOffset(
     : (elRect.top - containerRect.top) / scale - START_MARGIN;
 }
 
-// Real-device iOS Safari (with CSS `zoom` active — see uiPrefs.ts's supportsZoom) applies an
-// *extra*, undocumented zoom division to the pixel argument of an animated
-// `scrollBy({behavior:'smooth'})`/`scrollTo({behavior:'smooth'})` call on top of the one already
-// applied above to convert the getBoundingClientRect (post-zoom) measurement into scrollTop's own
-// (pre-zoom) units — landing short of the target by a factor of `scale`, worse the farther the
-// jump. `scrollTop` itself has no such ambiguity (a plain property read/write, not an
-// animated-scroll API), so this drives the animation by hand instead of trusting the browser's
-// own "smooth" interpolation to use the same units on every engine.
+// iOS Safari with CSS `zoom` active applies an extra, undocumented zoom division to the pixel
+// argument of an animated `scrollBy`/`scrollTo`, on top of the one applied above — landing short of
+// the target by a factor of `scale`, worse the farther the jump. `scrollTop` is a plain property
+// write with no such ambiguity, so the animation is driven by hand rather than through the
+// browser's own "smooth" interpolation.
 const activeScrollAnimations = new WeakMap<HTMLElement, () => void>();
 
-// Cancel-on-user-input, same as native smooth scrolling would give us for free: without this, a
-// touch/wheel that starts mid-jump would otherwise get overwritten by the next animation frame,
-// fighting the very scroll the user is trying to do.
+// Cancel-on-user-input, which native smooth scrolling gives for free: a touch or wheel started
+// mid-jump would otherwise be overwritten by the next animation frame.
 const CANCEL_EVENTS = ['wheel', 'touchstart', 'pointerdown'] as const;
 
 export function animateScrollTop(container: HTMLElement, targetScrollTop: number, duration = 350) {
@@ -39,20 +33,17 @@ export function animateScrollTop(container: HTMLElement, targetScrollTop: number
   const delta = targetScrollTop - start;
   if (delta === 0) return;
 
-  // Honor the OS-level motion preference rather than always animating, since this bypasses the
-  // browser's own `behavior:'smooth'` (which handles that natively) in favor of a hand-rolled
-  // rAF loop.
+  // Honour the OS motion preference by hand, since this bypasses `behavior:'smooth'`, which does
+  // it natively.
   if (prefersReducedMotion()) {
     container.scrollTop = targetScrollTop;
     return;
   }
 
-  // `startTime` is seeded from the first rAF callback's own timestamp, not a `performance.now()`
-  // read taken here before scheduling it — jsdom's rAF clock runs independently of (and can lag
-  // well behind) `performance.now()`, so seeding from the latter made `t` go deeply negative on
-  // the opening frames under test, driving easeOutCubic far outside [0,1] and overshooting the
-  // target by a large, non-deterministic margin before self-correcting. Deriving both readings
-  // from the same rAF clock keeps `t` in [0,1] on every engine.
+  // `startTime` is seeded from the first rAF callback's own timestamp rather than a
+  // `performance.now()` read taken before scheduling: jsdom's rAF clock runs independently of
+  // `performance.now()`, which sends `t` negative on the opening frames. Deriving both readings
+  // from the same clock keeps `t` in [0,1] on every engine.
   let startTime: number | null = null;
   let cancelled = false;
   const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);

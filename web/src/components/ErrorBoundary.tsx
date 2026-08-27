@@ -1,16 +1,15 @@
 import { Component, type ErrorInfo, type ReactNode } from 'react';
 
-// The app's last line of defence: without it, a single throw anywhere in the tree unmounts
-// everything React has rendered and leaves a blank page with no way back — and this app is a
-// full-screen reader, so a blank page is the entire UI gone.
+// The app's last line of defence: a single throw anywhere in the tree otherwise unmounts everything
+// React has rendered and leaves a blank page with no way back.
 //
-// A React boundary only catches errors thrown while *rendering* (and in the lifecycle methods and
-// constructors underneath it). Event handlers, timers, and rejected promises — the mirror's flush,
-// every fetch — never reach it and still need their own handling where they happen. It is a class
-// because React exposes no hook equivalent.
+// A React boundary only catches errors thrown while rendering, and in the lifecycle methods and
+// constructors underneath it. Event handlers, timers and rejected promises — the mirror's flush,
+// every fetch — never reach it and need their own handling where they happen. A class because React
+// exposes no hook equivalent.
 //
-// Deliberately the outermost element in App.tsx, outside AppProviders, so a provider throwing
-// during its own render is caught too.
+// The outermost element in App.tsx, outside AppProviders, so a provider throwing during its own
+// render is caught too.
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -36,10 +35,9 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
   render() {
     if (!this.state.failed) return this.props.children;
 
-    // Recovery is a full page load, not a state reset: whatever produced the error is usually
-    // still in the state that produced it, so re-rendering the same tree would land straight back
-    // here. The fallback itself renders nothing but static markup for the same reason — it has to
-    // be the one thing in the app that cannot throw.
+    // Recovery is a full page load, not a state reset: whatever produced the error is usually still
+    // in the state that produced it, so re-rendering the same tree would land back here. The
+    // fallback renders nothing but static markup, since it has to be the one thing that can't throw.
     return (
       <div
         data-component="ErrorBoundaryFallback"

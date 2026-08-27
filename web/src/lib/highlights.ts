@@ -15,13 +15,11 @@ export interface HlRange {
   e: number;
 }
 
-// Pure range-building math for a cross-segment selection (useHighlightPopup's onTextUp): the
-// first segment gets the tail from the selection start to its own end, each segment strictly in
-// between gets its full length, and the last segment gets the head from its own start to the
-// selection end. `segs` must already be in document order, and each `fullLen` has to come from
-// the stored segment text rather than rendered DOM textContent, which carries characters that
-// aren't part of it (see useHighlightPopup's own `fullLen` comment). Kept out of the hook so it
-// is unit-testable without a DOM.
+// Range-building math for a cross-segment selection (useHighlightPopup's onTextUp): the first
+// segment gets the tail from the selection start to its own end, each segment in between its full
+// length, and the last the head from its own start to the selection end. `segs` must be in document
+// order, and each `fullLen` has to come from the stored segment text rather than rendered DOM
+// textContent, which carries characters that aren't part of it.
 export function buildCrossSegmentRanges(
   segs: { i: number; fullLen: number }[],
   startOffset: number,
@@ -36,11 +34,10 @@ export function buildCrossSegmentRanges(
     .filter((r) => r.e > r.s);
 }
 
-// A cross-segment highlight is stored as one Highlight document per segment (see
-// useHighlightPopup's `pick`), all sharing the same `g` (groupId, minted by the client when the
-// user picked the colour) — collected by that field rather than by segment/offset adjacency,
-// which two overlapping groups would interleave and split apart. Groups come back in document
-// order, keyed on their first row's id.
+// A cross-segment highlight is stored as one Highlight document per segment, all sharing the same
+// `g` — the group id the client mints when the user picks the colour. Collected by that field
+// rather than by segment/offset adjacency, which two overlapping groups would interleave and split
+// apart. Groups come back in document order, keyed on their first row's id.
 export function groupHighlights(highlights: Highlight[]): HighlightGroup[] {
   const byGroup = new Map<string, Highlight[]>();
   for (const h of [...highlights].sort((a, b) => a.i - b.i || a.s - b.s)) {
@@ -53,13 +50,13 @@ export function groupHighlights(highlights: Highlight[]): HighlightGroup[] {
     .map((items) => ({ key: items[0].id, c: items[0].c, i: items[0].i, items }));
 }
 
-// The groups a new selection displaces — every group with a row overlapping one of `ranges`
-// (same segment, `h.s < r.e && h.e > r.s`, so edge-touching isn't overlap). A group is
-// immutable and atomic: recolouring or erasing any part of one retires the whole thing, rather
-// than leaving the segments the selection happened to miss behind as a stranded remnant.
+// The groups a new selection displaces — every group with a row overlapping one of `ranges` (same
+// segment, `h.s < r.e && h.e > r.s`, so edge-touching isn't overlap). A group is immutable and
+// atomic: recolouring or erasing any part of one retires the whole thing, rather than leaving the
+// segments the selection missed behind as a stranded remnant.
 //
-// The client works this out from what it can already see and tells the server explicitly, so the
-// write means the same thing whenever it is replayed — a server-side "delete whatever currently
+// The client works this out from what it can see and tells the server explicitly, so the write
+// means the same thing whenever it is replayed — a server-side "delete whatever currently
 // overlaps" would take highlights another device created in the meantime.
 export function displacedGroupIds(highlights: Highlight[], ranges: HlRange[]): string[] {
   const ids = new Set<string>();
@@ -85,11 +82,10 @@ function precedes(a: Highlight, b: Highlight): boolean {
 
 // Resolves one segment's highlights into non-overlapping pieces to render, in document order.
 //
-// Stored ranges can genuinely overlap now that groups are immutable: two devices highlighting
-// overlapping spans offline both survive rather than one destroying the other, so the reader is
-// where the contest is settled — deterministically, by (mtime, g), the later group taking the
-// characters both cover. An earlier group overlapped in the middle comes back as two pieces,
-// both still carrying its own stored range.
+// Stored ranges can genuinely overlap, since groups are immutable: two devices highlighting
+// overlapping spans offline both survive, so the reader is where the contest is settled —
+// deterministically, by (mtime, g), the later group taking the characters both cover. An earlier
+// group overlapped in the middle comes back as two pieces, both carrying its own stored range.
 export function paintSegmentHighlights(hlForSeg: Highlight[]): PaintedRange[] {
   if (hlForSeg.length < 2) return hlForSeg.map((h) => ({ s: h.s, e: h.e, src: h }));
   // Ascending precedence, so the last covering highlight found for a slice is its winner.
@@ -113,16 +109,15 @@ export function paintSegmentHighlights(hlForSeg: Highlight[]): PaintedRange[] {
 }
 
 // Total number of merged highlights on a sutta (see groupHighlights), across every colour — the
-// number in ListPane's and ReaderPage's highlight indicator.
+// number in ListPane's and ReaderPage's highlight indicators.
 export function highlightCount(highlights: Highlight[]): number {
   return groupHighlights(highlights).length;
 }
 
-// The distinct colours those highlights use — the swatches beside that count (see
-// HighlightCountBadge), which is what tells the two apart: the number says how much is marked,
-// these say what kind. Ordered by the palette itself rather than by when each colour was first
-// used, so a row's swatches sit in the same order on every sutta. A colour outside the palette
-// (a highlight made against an older build) still gets a swatch, at the end.
+// The distinct colours those highlights use, drawn as the swatches beside that count (see
+// HighlightCountBadge). Ordered by the palette rather than by when each colour was first used, so a
+// row's swatches sit in the same order on every sutta. A colour outside the palette — a highlight
+// made against an older build — still gets a swatch, at the end.
 export function highlightColors(highlights: Highlight[]): string[] {
   const rank = (c: string) => {
     const i = HIGHLIGHT_COLORS.indexOf(c);

@@ -2,10 +2,9 @@ import type { Dictionary } from './types';
 
 const PUNCT = /[.,;:""''"'?!­‘’“”…()]/g;
 
-// Also used by ReaderPage to build the DictionaryDock's display headword, and when stepping to
-// an adjacent word (see splitPaliWords below) — one definition of "punctuation to strip off a
-// tapped Pali token" shared by both lookup and display. Does NOT include "—"/"-" (dashes) — see
-// WORD_BOUNDARY below for why those are handled at the word-splitting level instead.
+// One definition of "punctuation to strip off a tapped Pali token", shared by lookup and by
+// ReaderPage's display headword. Dashes are not included: WORD_BOUNDARY below handles those at the
+// word-splitting level instead.
 export function stripPunct(raw: string): string {
   return raw.replace(PUNCT, '');
 }
@@ -15,23 +14,19 @@ export function lookupWord(dict: Dictionary, raw: string): string[] | null {
   return dict[word] || dict[word.toLowerCase()] || null;
 }
 
-// A run of whitespace, or a single "—" (em dash) or "-" (hyphen) — all act as word boundaries in
-// this dataset's Pali text. SuttaCentral uses these to join what are, for dictionary-lookup
-// purposes, separate words with *no* surrounding space (e.g. "samudānetabbā—cīvarapiṇḍapātasenā
-// sanagilānappaccayabhesajjaparikkhārā—te" — MN17 and ~400 other suttas — is three words, not one
-// run-on compound; "Todeyya-kappā" is two).
-// Exported (along with isWordBoundary below) so SegmentedText's own render-time split — which
-// needs to keep the dash *visible* in the text, unlike this function — can't drift out of sync on
-// what counts as a word; its word index has to line up with this function's for goToAdjacentWord.
+// A run of whitespace, or a single em dash or hyphen — all word boundaries in this dataset's Pali,
+// where SuttaCentral joins separate words with no surrounding space ("Todeyya-kappā" is two words,
+// not one compound). Exported alongside isWordBoundary so SegmentedText's render-time split, which
+// keeps the dash visible, agrees on what counts as a word: its word index has to line up with this
+// one for goToAdjacentWord.
 export const WORD_BOUNDARY = /(\s+|—|-)/;
 
 export function isWordBoundary(token: string): boolean {
   return token.trim() === '' || token === '—' || token === '-';
 }
 
-// A segment's Pali word tokens in order, matching what SegmentedText renders as individual
-// clickable `.pw` spans — so a word's index here lines up with the `wordIndex` ReaderPage's
-// onWordClick receives from it.
+// A segment's Pali word tokens in order, matching the clickable `.pw` spans SegmentedText renders,
+// so a word's index here is the `wordIndex` ReaderPage's onWordClick receives.
 export function splitPaliWords(pali: string): string[] {
   return pali.split(WORD_BOUNDARY).filter((t) => !isWordBoundary(t));
 }
@@ -43,12 +38,10 @@ export interface AdjacentWord {
 }
 
 // Walks from (fromSegIndex, fromWordIndex) to the next Pali token in `dir`, crossing into the
-// next/previous segment (skipping any with no Pali tokens at all) once the current one runs out
-// — used by useDictionaryLookup's goToAdjacentWord (DictionaryDock's prev/next arrows, and the
-// reader's Left/Right shortcut with the dock open). Pure: `segWords` is each segment's own token
-// list, in the same order as the sutta itself — no DOM or state involved, so this is directly
-// unit-testable rather than only reachable through the component. Returns null once `dir` walks
-// past either end of the sutta with nothing found.
+// adjacent segment — skipping any with no Pali tokens — once the current one runs out. Drives
+// useDictionaryLookup's goToAdjacentWord: the dock's prev/next arrows and the reader's Left/Right
+// shortcut. `segWords` is each segment's token list in document order. Returns null once `dir`
+// walks past either end of the sutta.
 export function findAdjacentWord(segWords: string[][], fromSegIndex: number, fromWordIndex: number, dir: 1 | -1): AdjacentWord | null {
   let si = fromSegIndex;
   let wi = fromWordIndex + dir;
