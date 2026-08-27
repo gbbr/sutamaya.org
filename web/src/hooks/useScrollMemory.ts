@@ -75,17 +75,25 @@ const RESTORE_GRACE_MS = 5000;
 // on it just clamps to 0 and silently loses the saved position — restoring only needs to
 // happen once the pane is actually visible again, which is exactly when `active` flips true.
 //
-// `skipRestore` lets a caller that already knows, before this even mounts, that it has its own
-// deliberate scroll target for this mount (useSuttaReading passes this whenever ReaderPage has a
-// `requestedSubUid` — a deep link/search hit for one specific verse inside a batched document)
-// skip the synchronous `scrollTop =` set and the MutationObserver-based re-apply below entirely,
-// rather than performing them and then having the caller's own jump try to override the result
-// (see scrollToSegment, and cancelPendingRestore's own comment on why overriding after the fact
-// isn't reliable on iOS: two scroll writes on the same container milliseconds apart can *stack*
-// instead of the second one superseding the first, landing well past the intended target). The
-// scroll-memory *recording* (the `onScroll` listener/`positions` map below) still runs as normal
-// — this only skips the restore-on-mount half, so leaving/re-entering a plain, non-deep-linked
-// view of the same sutta still remembers and restores its own scroll position correctly.
+// `restore` is where this mount starts. It only ever affects the restore-on-mount half: the
+// *recording* (the `onScroll` listener/`positions` map below) runs the same under all three, so a
+// container that starts somewhere unusual still remembers wherever the user leaves it.
+//
+//   'stored' — the remembered offset for `key` (the default, and what a library pane always wants).
+//   'top'    — the top, ignoring what's remembered, for a document the user chose to open now
+//              rather than returned to (see lib/entryKind.ts and ReaderPage). Still *writes* 0,
+//              which the reader depends on: its scroll container isn't remounted between suttas,
+//              so without that write a Prev/Next would leave the new sutta sitting at the previous
+//              one's offset.
+//   'none'   — no scroll write at all, for a caller that already knows, before this even mounts,
+//              that it has its own deliberate target (useSuttaReading passes this whenever
+//              ReaderPage has a `requestedSubUid` — a deep link/search hit for one specific verse
+//              inside a batched document). Writing first and letting the caller's jump override
+//              the result isn't reliable: see scrollToSegment, and cancelPendingRestore's own
+//              comment on iOS stacking two scroll writes milliseconds apart instead of superseding.
+//
+// Read once per key-mount, so it must only ever change together with `key` — it does: the reader
+// derives it per sutta id, which is what the key is built from.
 //
 // `readyToRestore` lets a caller with more than one async content source feeding this container
 // (the reader's sutta text and its separately-fetched notes/highlight/chip data — see
@@ -100,11 +108,17 @@ const RESTORE_GRACE_MS = 5000;
 // content transiently collapses (SegmentedText -> "Loading…"). Tearing the effect down on that
 // dip would persist whatever scrollTop the collapse clamped to; `readyRef` below guards recording
 // directly instead, so the effect's own mount lifecycle can stay keyed on [key, active] alone.
+export type ScrollRestore = 'stored' | 'top' | 'none';
+
+export interface ScrollMemoryOptions {
+  restore?: ScrollRestore;
+  readyToRestore?: boolean;
+}
+
 export function useScrollMemory<T extends HTMLElement>(
   key: string | null | undefined,
   active = true,
-  skipRestore = false,
-  readyToRestore = true
+  { restore = 'stored', readyToRestore = true }: ScrollMemoryOptions = {}
 ) {
   const ref = useRef<T>(null);
   const readyRef = useRef(readyToRestore);
@@ -157,8 +171,8 @@ export function useScrollMemory<T extends HTMLElement>(
     doRestoreRef.current = () => {
       if (restoreState.restored) return;
       restoreState.restored = true;
-      const desired = skipRestore ? 0 : positions.get(key) ?? 0;
-      if (!skipRestore) {
+      const desired = restore === 'stored' ? positions.get(key) ?? 0 : 0;
+      if (restore !== 'none') {
         el.scrollTop = desired;
         lastKnownScrollTopRef.current = desired;
       }
@@ -172,7 +186,7 @@ export function useScrollMemory<T extends HTMLElement>(
       // change away from `desired`. Only real user scroll input (or an explicit
       // cancelPendingRestore — see its own comment) gives up this restore for good; a bare
       // timeout is just the last-resort backstop.
-      if (desired > 0 && !skipRestore) {
+      if (desired > 0) {
         // A prior restore within this same key-mount (readyToRestore can dip and recover more
         // than once — see this hook's own comment above) may still have its own MutationObserver/
         // timer/listeners armed; without disconnecting it first, reassigning `stop` below orphans

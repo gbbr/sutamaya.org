@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { act, render } from '@testing-library/react';
-import { useScrollMemory, cancelPendingRestore } from './useScrollMemory';
+import { useScrollMemory, cancelPendingRestore, type ScrollRestore } from './useScrollMemory';
 
 // `positions` (useScrollMemory.ts's module-level remembered-offset map) is a singleton shared by
 // every hook instance for the lifetime of this test file — each test below uses its own unique
@@ -13,15 +13,15 @@ function freshKey() {
 function TestBox({
   scrollKey,
   active,
-  skipRestore,
+  restore,
   readyToRestore,
 }: {
   scrollKey: string | null;
   active?: boolean;
-  skipRestore?: boolean;
+  restore?: ScrollRestore;
   readyToRestore?: boolean;
 }) {
-  const ref = useScrollMemory<HTMLDivElement>(scrollKey, active, skipRestore, readyToRestore);
+  const ref = useScrollMemory<HTMLDivElement>(scrollKey, active, { restore, readyToRestore });
   return <div ref={ref} data-testid="box" />;
 }
 
@@ -56,17 +56,42 @@ describe('useScrollMemory', () => {
     expect(second.getByTestId('box').scrollTop).toBe(240);
   });
 
-  it('skipRestore leaves scrollTop untouched even when a remembered position exists', () => {
+  it("restore='none' leaves scrollTop untouched even when a remembered position exists", () => {
     const key = freshKey();
     const first = render(<TestBox scrollKey={key} />);
     scrollTo(first.getByTestId('box'), 300);
     first.unmount();
 
-    // Same key still has 300 remembered — a caller passing skipRestore (ReaderPage's deep-link
-    // case, so its own jump-to-segment is the only scroll write on this mount) must not have that
+    // Same key still has 300 remembered — a caller passing 'none' (ReaderPage's deep-link case,
+    // so its own jump-to-segment is the only scroll write on this mount) must not have that
     // position silently applied underneath it.
-    const second = render(<TestBox scrollKey={key} skipRestore />);
+    const second = render(<TestBox scrollKey={key} restore="none" />);
     expect(second.getByTestId('box').scrollTop).toBe(0);
+  });
+
+  it("restore='top' opens at the top, ignoring the remembered position", () => {
+    const key = freshKey();
+    const first = render(<TestBox scrollKey={key} />);
+    scrollTo(first.getByTestId('box'), 300);
+    first.unmount();
+
+    // A fresh entry to a sutta (row tap / search hit / Prev/Next) starts at the top even though
+    // 300 is remembered for it — and, unlike 'none', actively *writes* 0 rather than leaving the
+    // container wherever it was. That write is what the reader depends on: the same scroll
+    // container is reused across Prev/Next, so without it the next sutta would open at the
+    // previous one's offset. Modelled here as a key change on a mounted container, which is
+    // exactly what a Prev/Next is.
+    const view = render(<TestBox scrollKey={freshKey()} />);
+    const el = view.getByTestId('box');
+    scrollTo(el, 120);
+    view.rerender(<TestBox scrollKey={key} restore="top" />);
+    expect(el.scrollTop).toBe(0);
+
+    // Same navigation classified as a return instead: the remembered position wins.
+    // `view` above is still mounted, so this scopes to its own container rather than the shared
+    // document body, where two boxes now match.
+    const returning = render(<TestBox scrollKey={key} />);
+    expect(returning.container.querySelector<HTMLDivElement>('[data-testid="box"]')!.scrollTop).toBe(300);
   });
 
   it('the MutationObserver reapplies a remembered position once enough content has loaded', async () => {

@@ -6,9 +6,9 @@ import { defineConfig } from 'vitest/config';
 // for speed. `.test.tsx` files render actual components, so those run under jsdom instead —
 // scoped via environmentMatchGlobs rather than flipping the whole suite to jsdom.
 //
-// routeIntent.test.ts, pwaNudge.test.ts and motion.test.ts are `.test.ts` exceptions: they
-// exercise real Web APIs (sessionStorage/localStorage, matchMedia) that only exist under jsdom
-// (or a browser) — not
+// routeIntent.test.ts, pwaNudge.test.ts, motion.test.ts and entryKind.test.ts are `.test.ts`
+// exceptions: they exercise real Web APIs (sessionStorage/localStorage, matchMedia, history and
+// its popstate event) that only exist under jsdom (or a browser) — not
 // in plain Node (Node's own global Web Storage is a recent, still-stabilizing addition some Node
 // versions lack, so relying on it would make the test's pass/fail depend on which Node the
 // runner happens to have rather than on the code under test; matchMedia has no Node equivalent
@@ -20,7 +20,12 @@ export default defineConfig({
         test: {
           name: 'node',
           include: ['web/src/**/*.test.ts', 'scripts/**/*.test.js'],
-          exclude: ['web/src/lib/routeIntent.test.ts', 'web/src/lib/pwaNudge.test.ts', 'web/src/lib/motion.test.ts'],
+          exclude: [
+            'web/src/lib/routeIntent.test.ts',
+            'web/src/lib/pwaNudge.test.ts',
+            'web/src/lib/motion.test.ts',
+            'web/src/lib/entryKind.test.ts',
+          ],
           environment: 'node',
         },
       },
@@ -32,6 +37,7 @@ export default defineConfig({
             'web/src/lib/routeIntent.test.ts',
             'web/src/lib/pwaNudge.test.ts',
             'web/src/lib/motion.test.ts',
+            'web/src/lib/entryKind.test.ts',
           ],
           environment: 'jsdom',
           setupFiles: ['web/src/setupTests.ts'],
