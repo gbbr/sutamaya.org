@@ -376,23 +376,24 @@ export function ReaderMenuPanel({
 
             {/* The count belongs beside the heading, not on the rows: it answers "how much have I
                 marked in this sutta" at a glance, which is most of why this tab gets opened. */}
-            <div className="flex items-center gap-1.5 mb-0.5 min-h-[26px]">
+            <div className="flex items-center gap-1.5 mb-2 min-h-[26px]">
               <span className={`${rowLabel} flex items-baseline gap-1.5`} style={{ color: theme.dim }}>
                 Highlights
                 {highlightGroups.length > 0 && <span className="tabular-nums">{highlightGroups.length}</span>}
               </span>
               {/* The Display tab's own control for this setting, repeated where someone looking at
-                  their highlights already is — the same pill rather than a second, differently
-                  worded affordance, so the two places read as one setting. Absent with nothing to
-                  hide, since its effect couldn't be seen. The row keeps the pill's height either
-                  way, so the list below doesn't shift as the first highlight lands. */}
+                  their highlights already is — the same pill rather than a second affordance, so
+                  the two places read as one setting. Labelled Hide/Show rather than Hidden/Shown
+                  because this header has far less width to spare than the Display row. Absent with
+                  nothing to hide, since its effect couldn't be seen. The row keeps the pill's
+                  height either way, so the list below doesn't shift as the first highlight lands. */}
               {highlightGroups.length > 0 && (
                 <span className="ml-auto">
                   <Segmented
                     value={showHighlights ? 'shown' : 'hidden'}
                     options={[
-                      { id: 'hidden', label: 'Hidden' },
-                      { id: 'shown', label: 'Shown' },
+                      { id: 'hidden', label: 'Hide' },
+                      { id: 'shown', label: 'Show' },
                     ]}
                     theme={theme}
                     compact
