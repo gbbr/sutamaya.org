@@ -457,6 +457,22 @@ describe('routes/lists.js (D1)', () => {
     expect((await listRow(a.id)).position).toBe(0);
   });
 
+  it('PUT /order answers 404, not 400, for a parent this account has no row for', async () => {
+    const { cookie } = await signIn();
+    const a = await createList(cookie, { label: 'A' });
+
+    const res = await api('/api/lists/order', {
+      method: 'PUT',
+      cookie,
+      body: { parentId: 'never-created', order: [a.id] },
+    });
+
+    // The group was created and deleted offline before it ever reached the server, leaving no
+    // tombstone. The client retires a 404 as moot; a 400 would keep the queued op re-failing on
+    // every flush forever.
+    expect(res.status).toBe(404);
+  });
+
   // Sibling order moves as a unit on each row's own mtime — a stale offline reorder replayed
   // after a newer one must not win.
   it('does not let an older client mtime overwrite a sibling order set with a newer one', async () => {

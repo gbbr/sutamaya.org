@@ -283,10 +283,18 @@ export function removeListRecord(state: MirrorState, id: string): MirrorState {
       next = editList(next, memberId, { deleted: true });
     }
   }
-  // A queued sibling order may still name a dropped id. Left alone rather than rewritten, since the
-  // server reconciles a posted order against the rows that exist and drops the rest.
+  // A queued sibling order may still *name* a dropped id. Left alone rather than rewritten, since
+  // the server reconciles a posted order against the rows that exist and drops the rest.
+  //
+  // One keyed *on* a dropped parent is a different matter: that group never reached the server and
+  // now never will, so the op could only ever be refused. It goes with the row.
   if (dropped.size === 0) return next;
-  return { ...next, ops: next.ops.filter((op) => !('listId' in op) || !dropped.has(op.listId)) };
+  return {
+    ...next,
+    ops: next.ops.filter((op) =>
+      op.type === 'siblingOrder' ? !op.parentId || !dropped.has(op.parentId) : !dropped.has(op.listId)
+    ),
+  };
 }
 
 export function setNoteRecord(state: MirrorState, suttaId: string, text: string): MirrorState {
