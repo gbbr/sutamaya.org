@@ -238,13 +238,19 @@ async function reorderSiblings(db, userId, item) {
   // Same cycle check invalidReparentReason makes for a single moved list, over every id the posted
   // order would reparent into `parentId`. A null parent can't be anyone's descendant, so
   // wouldCreateCycle answers false without walking.
+  //
+  // Dropped from the order rather than refusing the whole gesture, which is the same treatment
+  // reconcileSiblingOrder gives an id that has since been deleted, and for the same reason: a
+  // reorder replayed from an offline queue is a bulk gesture whose other ids are still perfectly
+  // valid, and a 400 is permanent — the op would be re-refused on every flush and the user's whole
+  // reorder lost. Reachable without either device doing anything wrong: this one reorders a group's
+  // children offline while another moves that group under one of them. updateList still rejects a
+  // cycle outright, since a single deliberate move has no remainder worth saving.
   const allLists = results.map((row) => ({ id: row.id, parentId: row.parent_id ?? null }));
-  for (const movingId of posted) {
-    if (wouldCreateCycle(movingId, parentId, allLists)) return { error: 'parent_is_descendant', status: 400 };
-  }
+  const acyclic = posted.filter((movingId) => !wouldCreateCycle(movingId, parentId, allLists));
   const liveIds = new Set(results.map((row) => row.id));
   const currentChildIds = results.filter((row) => (row.parent_id ?? null) === parentId).map((row) => row.id);
-  const order = reconcileSiblingOrder(posted, currentChildIds, liveIds);
+  const order = reconcileSiblingOrder(acyclic, currentChildIds, liveIds);
   if (order.length) {
     // One reorder gesture, one mtime, applied to every sibling it touches — each row still guarded
     // on its own stored mtime, so a list edited more recently elsewhere (e.g. renamed from another

@@ -511,13 +511,22 @@ describe('lib/writes.js — lists (D1)', () => {
     expect(positions).toEqual([0, 1, 2]);
   });
 
-  it('sibling.order rejects reparenting into a cycle the same way an update does', async () => {
+  // Reachable with neither device doing anything wrong: one reorders a group's children offline
+  // while another moves that group under one of them. Refusing the gesture would be permanent, and
+  // would cost the user every other id in the same reorder.
+  it('sibling.order drops an id that would form a cycle and keeps the rest of the order', async () => {
     const { cookie } = await signIn();
     const grandparent = await createList(cookie, { label: 'A', kind: 'group' });
     const parent = await createList(cookie, { label: 'B', kind: 'group', parentId: grandparent.id });
+    const sibling = await createList(cookie, { label: 'C', parentId: parent.id });
 
-    const result = await write(cookie, { type: 'sibling.order', parentId: parent.id, order: [grandparent.id] });
-    expect(result).toEqual({ error: 'parent_is_descendant', status: 400 });
+    const result = await write(cookie, { type: 'sibling.order', parentId: parent.id, order: [grandparent.id, sibling.id] });
+    expect(result).toEqual(OK);
+
+    // The ancestor keeps its own place in the tree; the valid half of the order still lands.
+    expect((await listRow(grandparent.id)).parent_id).toBeNull();
+    const row = await listRow(sibling.id);
+    expect({ parentId: row.parent_id, position: row.position }).toEqual({ parentId: parent.id, position: 0 });
   });
 
   // The `AND user_id = ?` predicate on every statement is the only thing isolating one user's
