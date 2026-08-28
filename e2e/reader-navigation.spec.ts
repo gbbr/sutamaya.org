@@ -181,3 +181,49 @@ test('closing the reader returns to where it was opened from, not the sutta’s 
   // Back to the Highlights list, not to dn1's vagga in the corpus tree.
   await expect(page).toHaveURL(/auto-highlights/);
 });
+
+// Tapping a segment reveals its Pali, and a reveal that opens below the bottom edge is scrolled up
+// to meet the reader. This is layout arithmetic against a real pane, which no unit test can reach —
+// jsdom has no layout, so every rect there is zero. mn130:2.2 is the corpus's longest segment, and
+// its Pali can be taller than the pane, which is the case that has to settle at the reveal's own
+// first line instead of chasing its bottom.
+test('a Pali reveal that opens below the fold is scrolled into view', async ({ page }) => {
+  await page.goto('/read/mn130');
+  const long = page.locator('[id="mn130:2.2"]');
+  await expect(long).toBeVisible();
+  const pane = page.locator('div.sc').first();
+
+  // A tap with nothing to un-clip leaves the page where it is. Asserted first, while the reader is
+  // still at the top: a reveal that always scrolls would be worse than one that never does.
+  const restingScrollTop = await pane.evaluate((el) => el.scrollTop);
+  await page.locator('[id="mn130:1.1"] [data-seg]').click();
+  await expect(page.locator('[id="mn130:1.1"] [data-reveal="pali"]')).toBeVisible();
+  expect(await pane.evaluate((el) => el.scrollTop)).toBe(restingScrollTop);
+
+  // Now a short pane, keeping this project's own width. The case worth testing is a reveal taller
+  // than the pane, and on a tall window even this segment fits, leaving the arithmetic untried.
+  await page.setViewportSize({ width: page.viewportSize()!.width, height: 420 });
+
+  // Park the long segment's *last* English line just above the bottom edge — the reader has read
+  // down to it and taps it. Its Pali then opens entirely off screen, and the segment's own top is
+  // already above the pane, which is what makes this different from tapping a short line.
+  await pane.evaluate((el) => {
+    const en = document.querySelector('[id="mn130:2.2"] [data-seg]')!;
+    el.scrollTop += en.getBoundingClientRect().bottom - el.getBoundingClientRect().bottom + 30;
+  });
+  await long.locator('[data-seg]').click();
+
+  const pali = long.locator('[data-reveal="pali"]');
+  await expect(pali).toBeVisible();
+  // Polled rather than asserted once: the scroll is animated (lib/segmentScroll.ts). What is
+  // demanded is the reveal's own first line inside the pane with a real amount of it showing —
+  // both halves matter, since the bug this guards left the whole reveal below the bottom edge.
+  await expect
+    .poll(async () => {
+      const p = (await pane.boundingBox())!;
+      const r = (await pali.boundingBox())!;
+      const visible = Math.min(r.y + r.height, p.y + p.height) - Math.max(r.y, p.y);
+      return r.y >= p.y - 1 && visible >= 60;
+    })
+    .toBe(true);
+});

@@ -353,6 +353,9 @@ const SegmentRow = memo(function SegmentRow({
       {open && !colophon && (
         <p
           className="animate-fadeUp"
+          // The pair ReaderPage's revealIntoView scrolls to, named as the word spans above are.
+          data-reveal="pali"
+          data-reveal-seg={i}
           // --pw-hover backs .pw:hover (index.css). theme.tint rather than a fixed colour, so a
           // hovered Pali word stays a subtle wash against theme.pali in every theme.
           style={
@@ -373,6 +376,8 @@ const SegmentRow = memo(function SegmentRow({
       {showNotes && seg.note && noteOpen && (
         <p
           className="animate-fadeUp"
+          data-reveal="note"
+          data-reveal-seg={i}
           style={{ margin: '0 0 6px', fontSize: Math.max(11, fontSize - 3), lineHeight: 1.5, fontFamily: face, color: theme.dim }}
           // Notes are static build-time data (build-corpus.mjs's cleanNote()) carrying inline
           // formatting, not user or runtime content, so rendering the markup is the same trust
