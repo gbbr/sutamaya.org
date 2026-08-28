@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useUserData } from '../context/UserDataContext';
+import { useLatest } from './useLatest';
 import { groupHighlights, buildCrossSegmentRanges, type HlRange } from '../lib/highlights';
 import type { SegmentFile } from '../lib/corpus';
 import type { Highlight } from '../lib/types';
@@ -62,6 +63,69 @@ function offsetWithin(seg: HTMLElement, container: Node, containerOffset: number
   return pre.toString().length - ignoredLengthWithin(seg, pre);
 }
 
+// The popup for a live, non-collapsed selection, or null when it isn't one the reader can act on:
+// either end outside the rendered segments, or offsets that resolve to an empty range.
+function popFromSelection(sel: Selection, highlights: Highlight[], segments: SegmentFile[] | null): PopState | null {
+  const range = sel.getRangeAt(0);
+  const a = closestSeg(range.startContainer);
+  const b = closestSeg(range.endContainer);
+  if (!a || !b) return null;
+  // Anchored horizontally where the drag ended rather than at the selection's centre:
+  // getClientRects() covers a wrapped multi-line selection line by line, which the single
+  // bounding box of getBoundingClientRect() doesn't. A Range's start and end are in document
+  // order whichever way the drag went, so which end the cursor lifted at comes from the
+  // Selection's focus — dragging backwards lands on the first line's left edge. Vertically it
+  // is the selection's whole extent, so a popup above or below never covers a selected line.
+  // Only the desktop popup uses this; on mobile HighlightPopup pins itself to the bottom edge.
+  const rects = range.getClientRects();
+  const box = range.getBoundingClientRect();
+  const back = isBackwards(sel);
+  const focusRect = (back ? rects[0] : rects[rects.length - 1]) || box;
+  const anchorX = back ? focusRect.left : focusRect.right;
+
+  if (a === b) {
+    const st = offsetWithin(a, range.startContainer, range.startOffset);
+    // Measured the same way as the start rather than from the selection's string length:
+    // whether a `user-select: none` run lands in `String(sel)` varies by browser, where
+    // offsetWithin discounts it explicitly.
+    const en = offsetWithin(a, range.endContainer, range.endOffset);
+    if (en <= st) return null;
+    const i = Number(a.dataset.seg);
+    const cur = highlights.filter((h) => h.i === i).find((h) => h.s < en && h.e > st);
+    return { ranges: [{ i, s: st, e: en }], x: anchorX, top: box.top, bottom: box.bottom, on: cur ? cur.c : null };
+  }
+
+  // Cross-segment selection. A Range's start and end are in document order whichever way the
+  // drag went, so `a` is at or before `b`: walk every [data-seg] paragraph between them and
+  // build one range per segment — the tail of `a`, each segment in between in full, and the
+  // head of `b`.
+  const root = a.closest('[data-segroot]');
+  if (!root) return null;
+  const allSegs = [...root.querySelectorAll<HTMLElement>('[data-seg]')];
+  const startIdx = allSegs.indexOf(a);
+  const endIdx = allSegs.indexOf(b);
+  if (startIdx === -1 || endIdx === -1 || endIdx <= startIdx) return null;
+  const between = allSegs.slice(startIdx, endIdx + 1);
+  const aStart = offsetWithin(a, range.startContainer, range.startOffset);
+  const bEnd = offsetWithin(b, range.endContainer, range.endOffset);
+
+  // The segment's data length, not its rendered textContent length: a `<p data-seg>` can hold
+  // characters beyond seg.en — the translator-note asterisk — which would inflate a stored `e`
+  // past the end of the text those offsets index into. Falls back to textContent only where
+  // segment data isn't available to this hook.
+  const segLengths = between.map((seg) => {
+    const i = Number(seg.dataset.seg);
+    return { i, fullLen: segments?.[i]?.en.length ?? seg.textContent?.length ?? 0 };
+  });
+  const ranges = buildCrossSegmentRanges(segLengths, aStart, bEnd);
+  if (!ranges.length) return null;
+
+  // A fresh multi-segment selection is always a new highlight, never an edit of an existing one
+  // (unlike the single-segment case, which can land inside one) — the color swatches just start
+  // unselected.
+  return { ranges, x: anchorX, top: box.top, bottom: box.bottom, on: null };
+}
+
 export function useHighlightPopup(suttaId: string | undefined, highlights: Highlight[], segments: SegmentFile[] | null = null) {
   const { setHighlightRanges } = useUserData();
   const [pop, setPop] = useState<PopState | null>(null);
@@ -91,67 +155,48 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
         setPop((p) => (p && !p.on ? null : p));
         return;
       }
-      const range = sel.getRangeAt(0);
-      const a = closestSeg(range.startContainer);
-      const b = closestSeg(range.endContainer);
-      if (!a || !b) return;
-      // Anchored horizontally where the drag ended rather than at the selection's centre:
-      // getClientRects() covers a wrapped multi-line selection line by line, which the single
-      // bounding box of getBoundingClientRect() doesn't. A Range's start and end are in document
-      // order whichever way the drag went, so which end the cursor lifted at comes from the
-      // Selection's focus — dragging backwards lands on the first line's left edge. Vertically it
-      // is the selection's whole extent, so a popup above or below never covers a selected line.
-      // Only the desktop popup uses this; on mobile HighlightPopup pins itself to the bottom edge.
-      const rects = range.getClientRects();
-      const box = range.getBoundingClientRect();
-      const back = isBackwards(sel);
-      const focusRect = (back ? rects[0] : rects[rects.length - 1]) || box;
-      const anchorX = back ? focusRect.left : focusRect.right;
-
-      if (a === b) {
-        const st = offsetWithin(a, range.startContainer, range.startOffset);
-        // Measured the same way as the start rather than from the selection's string length:
-        // whether a `user-select: none` run lands in `String(sel)` varies by browser, where
-        // offsetWithin discounts it explicitly.
-        const en = offsetWithin(a, range.endContainer, range.endOffset);
-        if (en <= st) return;
-        const i = Number(a.dataset.seg);
-        const cur = highlights.filter((h) => h.i === i).find((h) => h.s < en && h.e > st);
-        setPop({ ranges: [{ i, s: st, e: en }], x: anchorX, top: box.top, bottom: box.bottom, on: cur ? cur.c : null });
-        return;
-      }
-
-      // Cross-segment selection. A Range's start and end are in document order whichever way the
-      // drag went, so `a` is at or before `b`: walk every [data-seg] paragraph between them and
-      // build one range per segment — the tail of `a`, each segment in between in full, and the
-      // head of `b`.
-      const root = a.closest('[data-segroot]');
-      if (!root) return;
-      const allSegs = [...root.querySelectorAll<HTMLElement>('[data-seg]')];
-      const startIdx = allSegs.indexOf(a);
-      const endIdx = allSegs.indexOf(b);
-      if (startIdx === -1 || endIdx === -1 || endIdx <= startIdx) return;
-      const between = allSegs.slice(startIdx, endIdx + 1);
-      const aStart = offsetWithin(a, range.startContainer, range.startOffset);
-      const bEnd = offsetWithin(b, range.endContainer, range.endOffset);
-
-      // The segment's data length, not its rendered textContent length: a `<p data-seg>` can hold
-      // characters beyond seg.en — the translator-note asterisk — which would inflate a stored `e`
-      // past the end of the text those offsets index into. Falls back to textContent only where
-      // segment data isn't available to this hook.
-      const segLengths = between.map((seg) => {
-        const i = Number(seg.dataset.seg);
-        return { i, fullLen: segments?.[i]?.en.length ?? seg.textContent?.length ?? 0 };
-      });
-      const ranges = buildCrossSegmentRanges(segLengths, aStart, bEnd);
-      if (!ranges.length) return;
-
-      // A fresh multi-segment selection is always a new highlight, never an edit of an
-      // existing one (unlike the single-segment case, which can land inside one) — the color
-      // swatches just start unselected.
-      setPop({ ranges, x: anchorX, top: box.top, bottom: box.bottom, on: null });
+      const next = popFromSelection(sel, highlights, segments);
+      if (next) setPop(next);
     }, 0);
   }, [highlights, segments]);
+
+  // Firefox on Android draws its selection handles as browser chrome: dragging one to extend the
+  // selection fires no pointer, touch or mouse event on the page, only `selectionchange`. Without
+  // this the popup keeps the range `onTextUp` opened it with — the single word the long-press
+  // caught — and picking a colour highlights just that word.
+  //
+  // Deliberately only refreshes a popup that is already open, and only while no pointer is down:
+  // Chrome and Safari go on committing at `mouseup`/`touchend` exactly as before, a fresh drag
+  // can't make the popup appear before the pointer lifts, and a keyboard selection can't open one
+  // at all.
+  const latest = useLatest({ highlights, segments, open: pop !== null });
+  useEffect(() => {
+    let down = false;
+    const refresh = () => {
+      const { highlights: hl, segments: segs, open } = latest.current;
+      if (!open || down) return;
+      const sel = window.getSelection();
+      if (!sel || sel.isCollapsed || !String(sel).trim()) return;
+      const next = popFromSelection(sel, hl, segs);
+      if (next) setPop(next);
+    };
+    const onDown = () => {
+      down = true;
+    };
+    const onUp = () => {
+      down = false;
+    };
+    document.addEventListener('selectionchange', refresh);
+    window.addEventListener('pointerdown', onDown, true);
+    window.addEventListener('pointerup', onUp, true);
+    window.addEventListener('pointercancel', onUp, true);
+    return () => {
+      document.removeEventListener('selectionchange', refresh);
+      window.removeEventListener('pointerdown', onDown, true);
+      window.removeEventListener('pointerup', onUp, true);
+      window.removeEventListener('pointercancel', onUp, true);
+    };
+  }, [latest]);
 
   const pick = useCallback(
     async (color: string | null) => {
