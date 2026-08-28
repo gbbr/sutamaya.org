@@ -1,4 +1,11 @@
-import { test, expect, selectWithinSegment, segmentText, waitForLocalWrites } from './fixtures';
+import {
+  test,
+  expect,
+  selectAcrossSegments,
+  selectWithinSegment,
+  segmentText,
+  waitForLocalWrites,
+} from './fixtures';
 
 // The first journey: a reader arriving with nothing, finding a sutta by browsing, highlighting a
 // phrase, and finding it still there after a reload. Signed out throughout — which is a supported
@@ -59,6 +66,70 @@ test.describe('highlighting', () => {
     await waitForLocalWrites(page);
     await page.reload();
     await expect(page.locator('[data-seg="1"] [data-hl-id]')).toHaveText(phrase);
+  });
+
+  // A selection crossing a paragraph boundary is stored as one row per segment sharing a group id
+  // (buildCrossSegmentRanges), and the rows are only ever assembled back into one highlight at
+  // read time. Nothing but a real browser produces that selection: it is a DOM Range spanning two
+  // elements, which is what the unit tests have to supply by hand.
+  test('a highlight can run from one segment into the next', async ({ page }) => {
+    await page.goto('/read/dn1');
+    await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+
+    const first = await segmentText(page, 1);
+    const second = await segmentText(page, 2);
+
+    // From "I have heard." to the end of "At one time" in the paragraph below it.
+    await selectAcrossSegments(page, 1, 3, 2, 11);
+
+    await page.locator('[data-component="HighlightPopup"]').locator('button').first().click();
+
+    const head = page.locator('[data-seg="1"] [data-hl-id]');
+    const tail = page.locator('[data-seg="2"] [data-hl-id]');
+
+    // The first segment keeps everything from the selection start to its own end; the second gets
+    // its head. Neither is the whole segment.
+    await expect(head).toHaveText(first.slice(3));
+    await expect(tail).toHaveText(second.slice(0, 11));
+
+    // One highlight, not two that happen to abut. A row's id is `${group}:${segment}`
+    // (lib/mirrorView.ts), so the group is what the two share.
+    const group = async (span: typeof head) => ((await span.getAttribute('data-hl-id')) ?? '').split(':')[0];
+    expect(await group(head)).toBe(await group(tail));
+    expect(await group(head)).not.toBe('');
+
+    await waitForLocalWrites(page);
+    await page.reload();
+    await expect(page.locator('[data-seg="1"] [data-hl-id]')).toHaveText(first.slice(3));
+    await expect(page.locator('[data-seg="2"] [data-hl-id]')).toHaveText(second.slice(0, 11));
+
+    // Removing it from either end takes the whole group, not just the row that was clicked.
+    await page.locator('[data-seg="2"] [data-hl-id]').click();
+    await page.locator('[data-component="HighlightPopup"]').getByRole('button', { name: 'Remove' }).click();
+    await expect(page.locator('[data-seg="1"] [data-hl-id]')).toHaveCount(0);
+    await expect(page.locator('[data-seg="2"] [data-hl-id]')).toHaveCount(0);
+  });
+
+  // Three segments, so one of them is swallowed whole — the branch buildCrossSegmentRanges takes
+  // for a middle segment, which its unit tests cover as arithmetic but nothing drives through a
+  // real selection.
+  test('a highlight spanning three segments paints the middle one whole', async ({ page }) => {
+    await page.goto('/read/dn1');
+    await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+
+    const middle = await segmentText(page, 2);
+    await selectAcrossSegments(page, 1, 3, 3, 10);
+    await page.locator('[data-component="HighlightPopup"]').locator('button').first().click();
+
+    // The middle segment has no free end: all of it is inside the selection.
+    await expect(page.locator('[data-seg="2"] [data-hl-id]')).toHaveText(middle);
+    await expect(page.locator('[data-seg="3"] [data-hl-id]')).toHaveText((await segmentText(page, 3)).slice(0, 10));
+
+    // Still one highlight across all three.
+    const groups = await page
+      .locator('[data-seg] [data-hl-id]')
+      .evaluateAll((els) => [...new Set(els.map((el) => (el.getAttribute('data-hl-id') ?? '').split(':')[0]))]);
+    expect(groups).toHaveLength(1);
   });
 
   test('an existing highlight can be recoloured and removed', async ({ page }) => {

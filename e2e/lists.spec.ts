@@ -1,4 +1,4 @@
-import { test, expect, waitForLocalWrites, type Page } from './fixtures';
+import { test, expect, openListsTab, openSuttaList, waitForLocalWrites, type Page } from './fixtures';
 
 // Lists are the reader's own filing: create, fill, reorder, nest, rename, delete. All of it is
 // written to the local mirror first, so none of it needs an account.
@@ -99,9 +99,7 @@ test('a group holds a nested list', async ({ page }) => {
 });
 
 test('a sutta can be added to a list from the library and taken out again', async ({ page }) => {
-  await page.goto('/browse/dn-silakkhandhavagga');
-
-  const listPane = page.locator('[data-component="ListPane"]');
+  const listPane = await openSuttaList(page, 'dn-silakkhandhavagga');
   await listPane.getByRole('button', { name: 'Add DN1 to a list' }).click();
 
   // Created from inside the picker, which is the path a reader filing their first sutta takes.
@@ -110,7 +108,7 @@ test('a sutta can be added to a list from the library and taken out again', asyn
   await picker.getByRole('button', { name: /Create list/ }).click();
   await page.keyboard.press('Escape');
 
-  await page.getByRole('button', { name: 'Lists', exact: true }).click();
+  await openListsTab(page);
   await page.locator(listsTree).getByText('Favourites', { exact: true }).click();
   await expect(listPane).toContainText('The Divine Net');
 

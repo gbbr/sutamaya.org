@@ -42,7 +42,7 @@ export default defineConfig({
   globalSetup: external ? undefined : './e2e/global-setup.ts',
   globalTeardown: external ? undefined : './e2e/global-teardown.ts',
   projects: [
-    { name: 'chromium', use: { ...devices['Desktop Chrome'] }, testIgnore: '**/offline/**' },
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] }, testIgnore: ['**/offline/**', '**/mobile/**'] },
     // Playwright's WebKit, not Safari: close enough to catch WebKit-only rendering and JS
     // differences, but it is not iOS and does not reproduce ITP's cookie policies or PWA
     // standalone mode. Those still need a real device.
@@ -53,6 +53,18 @@ export default defineConfig({
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
+      testIgnore: ['**/offline/**', '**/sync/**', '**/mobile/**'],
+    },
+    // A phone-width viewport with touch, which is a different app: under LayoutContext's 860px
+    // breakpoint the library is one pane at a time rather than two, and every gesture arrives as
+    // a touch. Chromium rather than mobile WebKit — what this project is for is layout and touch,
+    // not iOS fidelity, which Playwright can't give at all (see docs/e2e.md); Chromium's touch
+    // emulation is the steadier of the two.
+    //
+    // Signed-out journeys only, like webkit: the sync specs are about data rather than layout.
+    {
+      name: 'mobile',
+      use: { ...devices['Pixel 5'] },
       testIgnore: ['**/offline/**', '**/sync/**'],
     },
     // Chromium only, against the built app: these drive the service worker, and nothing in them
