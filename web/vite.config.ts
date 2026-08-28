@@ -26,7 +26,14 @@ export default defineConfig({
       manifest: {
         name: 'Sutamaya',
         short_name: 'Sutamaya',
-        description: 'An offline-first reader for the Early Buddhist Texts.',
+        description:
+          'An offline reader and study app for the Pali suttas — lists, highlights, notes, ' +
+          'and a Pali dictionary a tap away.',
+        // Not "/", which is the static landing page written for people who have never opened the
+        // app (web/public/landing.html). An installed copy launched from its home-screen icon
+        // should go straight back to whatever was last open, which is what /app does — see
+        // RestoreLastLocation in src/App.tsx.
+        start_url: '/app',
         theme_color: '#FBF9F5',
         background_color: '#FBF9F5',
         display: 'standalone',
@@ -75,7 +82,14 @@ export default defineConfig({
         // serve nobody. XCharter, the third stand-in, needs no entry here: it's a whole font, so
         // its filenames don't carry a subset suffix and the patterns never matched them.
         globIgnores: ['**/gelasio-*.woff2', '**/gentium-*.woff2'],
-        navigateFallbackDenylist: [/^\/api\//],
+        // "/" is the static landing page, and both of these are needed to keep it that way once
+        // the service worker is installed. Without the denylist entry, a navigation to "/" is
+        // answered by the SPA shell like any other unknown path; without `directoryIndex: null`,
+        // Workbox's precache matches "/" against the precached "/index.html" and does the same
+        // thing one layer earlier. Between them an installed reader would never see the landing
+        // page again, and neither would anyone they sent the link to who already had the app.
+        navigateFallbackDenylist: [/^\/api\//, /^\/$/],
+        directoryIndex: null,
         runtimeCaching: [
           // These two paths are unversioned — a corrected sutta or gloss keeps its URL — so they
           // revalidate rather than serving the cache forever. A read is answered from the cache
@@ -122,12 +136,38 @@ export default defineConfig({
             options: { cacheName: 'fonts', expiration: { maxEntries: 40, maxAgeSeconds: 60 * 60 * 24 * 365 } },
           },
           {
+            // The landing page. Excluded from the precache and the navigation fallback above, so
+            // without this it would be the one URL on the origin that fails outright offline.
+            // NetworkFirst rather than the StaleWhileRevalidate the corpus paths use: it is a
+            // handful of KB on a page nobody is mid-read of, so paying for a fresh copy when the
+            // network is there costs nothing and avoids serving month-old marketing copy.
+            urlPattern: ({ url, sameOrigin }) => sameOrigin && url.pathname === '/',
+            handler: 'NetworkFirst',
+            options: { cacheName: 'landing', expiration: { maxEntries: 1, maxAgeSeconds: 60 * 60 * 24 * 30 } },
+          },
+          {
             urlPattern: /\/api\/.*/,
             handler: 'NetworkOnly',
           },
         ],
       },
     }),
+    {
+      // In production the Worker answers "/" with public/landing.html (see worker/src/index.js);
+      // the dev server has no Worker in front of it and would serve index.html — the app shell —
+      // for the bare origin instead. Rewriting the path here makes `npm run dev:web` show the
+      // same page at the same URL, so the landing page can be worked on without a deploy.
+      // Registered inside configureServer rather than as a returned hook, which is what puts it
+      // ahead of Vite's own HTML middleware rather than behind it.
+      name: 'serve-landing-at-root',
+      apply: 'serve',
+      configureServer(server) {
+        server.middlewares.use((req, _res, next) => {
+          if (req.url === '/') req.url = '/landing.html';
+          next();
+        });
+      },
+    },
     {
       name: 'log-dev-hosts',
       apply: 'serve',

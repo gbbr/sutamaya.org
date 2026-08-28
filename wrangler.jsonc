@@ -11,7 +11,10 @@
     "directory": "./web/dist",
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
-    "run_worker_first": ["/api/*"]
+    // "/" is here so the Worker can answer the bare origin with the landing page instead of the
+    // SPA shell `not_found_handling` would serve — see the route in worker/src/index.js. Every
+    // other path still goes straight to the asset router without invoking the Worker.
+    "run_worker_first": ["/api/*", "/"]
   },
   "d1_databases": [
     {

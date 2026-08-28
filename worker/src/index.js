@@ -52,6 +52,24 @@ app.route('/api/auth', authRouter);
 app.route('/api/lists', listsRouter);
 app.route('/api/data', dataRouter);
 
+// The bare origin serves the static landing page rather than the app. The assets binding can't do
+// this on its own: `not_found_handling: "single-page-application"` maps "/" to the SPA shell at
+// /index.html, which is right for every other path and wrong for this one. So "/" is listed in
+// `assets.run_worker_first` (wrangler.jsonc) to reach the Worker at all, and answered here with
+// the landing asset's bytes under the "/" URL — a rewrite, not a redirect, so the page Google
+// indexes and the URL people share are the same one.
+//
+// Cached for an hour rather than the immutable year the hashed assets get: the file's URL never
+// changes, so a copy in a CDN edge or a browser cache is the only thing standing between an edit
+// and the page people see.
+app.get('/', async (c) => {
+  const res = await c.env.ASSETS.fetch(new URL('/landing.html', c.req.url));
+  return new Response(res.body, {
+    status: res.status,
+    headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'public, max-age=3600' },
+  });
+});
+
 // Every error body is `{error: <snake_case code>}`. Nothing outside the sign-in form displays one —
 // the flush reads the status and logs the body — so a code is what a reader of a network log or a
 // console error wants. The exception is /api/auth/email/*, whose messages EmailCodeSignIn puts on

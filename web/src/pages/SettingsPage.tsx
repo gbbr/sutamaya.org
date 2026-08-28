@@ -130,11 +130,11 @@ function SignInDivider() {
 // scroll/flash effect below.
 type ScrollTarget = 'offline' | 'auth';
 
-// Delegates to '/', which RestoreLastLocation (App.tsx) already resolves to
-// getLastLocation() ?? '/browse/dn' — reusing that instead of duplicating the same fallback
+// Delegates to '/app', which RestoreLastLocation (App.tsx) already resolves to
+// getLastLocation() ?? '/browse' — reusing that instead of duplicating the same fallback
 // chain here.
 function backToLastLocation() {
-  navigate('/');
+  navigate('/app');
 }
 
 // A short, coarse "how stale might this be" readout for the sync line below — exact-to-the-minute
@@ -464,7 +464,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                           return;
                         }
                         await logout();
-                        navigate('/');
+                        navigate('/app');
                       }}
                     >
                       {/* Centring these geometrically leaves them reading high against the

@@ -191,7 +191,7 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
         { headers: { Cookie: nonce } },
         OAUTH_ENV
       );
-      expect(res.headers.get('Location')).toBe('https://sutamaya.org/');
+      expect(res.headers.get('Location')).toBe('https://sutamaya.org/app');
     });
 
     it('completes the round trip: exchanges the code, sets a session, returns to the app', async () => {

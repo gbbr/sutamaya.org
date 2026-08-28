@@ -30,11 +30,17 @@ function LoadFailed({ onRetry }: { onRetry: () => void }) {
   );
 }
 
-// What "/" resolves to. The bare origin is where both a fresh tab and a PWA relaunched from the
-// home-screen icon land (vite-plugin-pwa's manifest start_url defaults to "/"), so restoring the
-// last location here is what makes "close and reopen" return to wherever the user actually was.
-// Navigates on mount, the same shape @reach/router's own <Redirect> uses, so it behaves correctly
-// under this app's deliberate no-StrictMode setup (see main.tsx).
+// What "/app" resolves to — the app's entry point, and the manifest's `start_url`, so it is where
+// a PWA relaunched from the home-screen icon lands. Restoring the last location here is what makes
+// "close and reopen" return to wherever the user actually was. Navigates on mount, the same shape
+// @reach/router's own <Redirect> uses, so it behaves correctly under this app's deliberate
+// no-StrictMode setup (see main.tsx).
+//
+// "/" is deliberately not a route in this app any more: the bare origin serves the static landing
+// page instead (web/public/landing.html, served by the Worker), which is the one page written for
+// someone who has never opened Sutamaya. The service worker is configured to keep its hands off
+// "/" so that stays true once the app is installed — see the navigateFallbackDenylist and
+// directoryIndex notes in vite.config.ts.
 //
 // With nothing stored — a genuine first visit — it falls through to bare /browse, which selects
 // no node. That's the point: TreePane force-expands the ancestors of whatever node is selected
@@ -77,7 +83,7 @@ function Routes() {
   if (loading) return <Splash />;
   return (
     <Router style={{ height: '100%' }}>
-      <RestoreLastLocation path="/" />
+      <RestoreLastLocation path="/app" />
       {/* One route element (not two) so /browse/:nodeId and /browse/:nodeId/:suttaId share the
           same LibraryPage instance — see the comment on `suttaId` in LibraryPage.tsx for why:
           two separate route elements here would remount LibraryPage (and every pane's scroll
