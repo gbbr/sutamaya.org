@@ -73,6 +73,10 @@ migrations, then `npx wrangler deploy`. The build is not optional: `wrangler` up
 exactly as it finds it, so a stale directory ships a stale SPA and a stale corpus bundle. There's no
 CI/deploy-on-push — every deploy is this one command, run by hand.
 
+The end-to-end suite (`npm run test:e2e`, see `docs/e2e.md`) is **not** part of this. It is worth
+running before a deploy, by hand, but it does not gate one: a gate has to be trustworthy enough
+that a red run always means a real problem, and it is not there yet.
+
 Migrations run *before* the upload, which is what makes a **migration additive-only** — `ADD COLUMN`
 with a default, or a new index, never a rename or a drop. For the window between the two steps the
 previous Worker is still serving against the new schema, so anything it can't tolerate is an outage.

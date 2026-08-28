@@ -15,4 +15,8 @@ CLAUDE.local.md
 *.tsbuildinfo
 .dev.vars
 .wrangler/
+test-results/
+playwright-report/
+blob-report/
+.playwright/
 
