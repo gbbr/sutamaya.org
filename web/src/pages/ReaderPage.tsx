@@ -9,7 +9,6 @@ import { useSuttaReading } from '../hooks/useSuttaReading';
 import { type ScrollRestore } from '../hooks/useScrollMemory';
 import { useReaderOrigin } from '../hooks/useReaderOrigin';
 import { useReaderKeyboard } from '../hooks/useReaderKeyboard';
-import { useReaderSwipeNav } from '../hooks/useReaderSwipeNav';
 import { useDictionaryLookup } from '../hooks/useDictionaryLookup';
 import { flatSuttaOrder, breadcrumbFor, resolveCanonicalSuttaId, loadSuttaText } from '../lib/corpus';
 import { flattenListTree, resolveListById, suttaRowMeta } from '../lib/lists';
@@ -99,9 +98,6 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
   const { mobile } = useLayout();
   const tapRef = useRef<{ x: number; y: number } | null>(null);
-  // Held as state, not a ref, so useReaderSwipeNav can depend on the node itself — it isn't
-  // rendered until the corpus has loaded (see the "Loading…" return below).
-  const [rootEl, setRootEl] = useState<HTMLDivElement | null>(null);
 
   const sutta = corpus && suttaId ? corpus.suttas[suttaId] : undefined;
   // Where this sutta opens. A return — back or forward, a refresh, an app relaunch — resumes the
@@ -319,11 +315,6 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     if (to && to.id === suttaId) animateStep(el, to.dir);
   }, [suttaId]);
 
-  // The search overlay counts as "a panel is up" for the swipe: it's a full-screen child of this
-  // same root on mobile, so without it a horizontal drag across the results would step the sutta
-  // underneath.
-  useReaderSwipeNav({ root: rootEl, panel: panel || searchOpen, step });
-
   // Going to a highlight is a deliberate act about highlights, so it turns them back on for good
   // rather than revealing one transiently — landing on a state you have to leave again is worse.
   // The reveal has rendered by the time the deferred scroll runs, so scrollToSegment can still find
@@ -403,13 +394,15 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
 
   return (
     <div
-      ref={setRootEl}
       data-component="ReaderPage"
       className="fixed inset-0 z-40 flex flex-col animate-fadeIn"
       style={
         {
           background: theme.bg,
           color: theme.fg,
+          // Turns off pinch- and double-tap-zoom over the text, leaving vertical scrolling. Without
+          // it Safari delays every `click` to see whether a second tap follows, which is felt as a
+          // lag before the dictionary opens on a word tap.
           touchAction: 'pan-y',
           '--reader-selection': theme.selection,
         } as CSSProperties
@@ -499,12 +492,11 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           `auto` rather than leaving it visible. */}
       <div ref={scrollRef} className="sc flex-1" style={{ padding: '44px 22px 120px', overflowX: 'hidden' }}>
         {/* Stepping to another sutta carries this column off the way the reader is travelling and
-            brings the next one in behind it, so a swipe (or Prev/Next) reads as movement through
-            the canon rather than the screen silently becoming a different sutta — the whole
-            reason an accidental swipe is disorienting. Driven imperatively from `step` above
-            rather than by a class, since each step has to restart an animation on an element that
-            never unmounts, and the navigation between the two halves waits on the exit's own
-            completion. */}
+            brings the next one in behind it, so Prev/Next reads as movement through the canon
+            rather than the screen silently becoming a different sutta. Driven imperatively from
+            `step` above rather than by a class, since each step has to restart an animation on an
+            element that never unmounts, and the navigation between the two halves waits on the
+            exit's own completion. */}
         <div ref={articleRef} style={{ maxWidth: measureWidth, margin: '0 auto' }}>
           {listOrigin && (
             <nav className="font-sans flex items-center gap-1" style={{ fontSize: fs - 6, marginBottom: 7, color: theme.dim }}>
@@ -707,8 +699,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           {/* Prev/Next where the reader actually finishes, rather than as two more icons in the
               header — the step to a neighbouring sutta is wanted at the end of the text, not at
               every moment the header's own controls are. Only shown once the text is on screen, so
-              it can't sit under a spinner. `step` carries the same entrance animation and origin
-              as the swipe. */}
+              it can't sit under a spinner. */}
           {segments && (footNeighbours.prev || footNeighbours.next) && (
             <nav className="font-sans" style={{ marginTop: 30 }}>
               <div style={{ height: 1, background: theme.rule, marginBottom: 14 }} />
