@@ -26,3 +26,54 @@ jobs:
 
       - run: npm run build:corpus
       - run: npm test
+
+  # Separate from `test` so the unit suite and the type check still answer in a minute or two:
+  # this one downloads two browsers and builds the app twice (dev server plus the production
+  # build the offline project previews).
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      # The Worker runs entirely locally here — a fresh D1 wrangler creates on demand, and no
+      # Cloudflare account. So the session secret is a throwaway, not a repository secret: it
+      # signs cookies this run mints and this run verifies, and nothing else ever sees it. The
+      # blank Google secret is the signed-out dev configuration; the specs sign in by minting the
+      # cookie directly (see docs/e2e.md).
+      - run: |
+          cat > .dev.vars <<'EOF'
+          SESSION_SECRET=e2e-ci-throwaway-secret
+          GOOGLE_CLIENT_SECRET=
+          WEB_ORIGIN=http://localhost:5173
+          EOF
+
+      # The whole build, not just the corpus: `wrangler dev` refuses to start when
+      # `assets.directory` (web/dist) doesn't exist, and a clean checkout has never built it. The
+      # offline project rebuilds web/dist for itself later — deliberately, so a stale build can't
+      # stand in for the current code — but the Worker has to come up before any of that.
+      - run: npm run build
+
+      # A clean checkout has no local database, and the global setup writes the account pool with
+      # `wrangler d1 execute --local` before any server starts — against an unmigrated database
+      # that fails with `no such table: users` and takes the whole run with it. Locally this is
+      # the step you run by hand after adding a migration; here it's every run, since the database
+      # is created from nothing each time.
+      - run: npx wrangler d1 migrations apply sutamaya --local
+
+      - run: npx playwright install --with-deps chromium webkit
+
+      - run: npm run test:e2e
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7

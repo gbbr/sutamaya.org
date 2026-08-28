@@ -14,6 +14,16 @@ npx playwright show-report              # the last run's HTML report
 
 Deliberately not part of `npm test`, which stays the fast unit suite.
 
+## In CI
+
+`.github/workflows/ci.yml` runs the whole suite as its own job on pull requests and pushes to main,
+separate from the unit job so that one still answers in a minute or two. Two things a clean
+checkout needs that a dev machine already has: a `.dev.vars` with a throwaway `SESSION_SECRET` (the
+signed-in specs read it from there to mint their cookie) and `wrangler d1 migrations apply
+sutamaya --local`, because the global setup seeds accounts before any server starts and an
+unmigrated database answers with `no such table: users`. A failed run uploads `playwright-report/`
+as an artifact.
+
 `e2e/` is in three parts. The files at the top level are the signed-out journeys, run on Chromium
 and WebKit. `e2e/sync/` holds the ones that need an account: syncing between two devices, and
 edits made with the network cut. `e2e/offline/` holds the few that need the real service worker.

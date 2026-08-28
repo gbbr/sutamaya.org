@@ -22,7 +22,8 @@ npm run build:corpus      # regenerate web/public/data/ from data/ (run after ed
 npm run build              # production build (corpus + web/dist)
 npm test                   # the (deliberately small) Vitest suite
 npm run test:e2e           # Playwright journeys in a real browser — see docs/e2e.md. Starts
-                            # whichever dev server isn't already up. Not run by CI or npm test.
+                            # whichever dev server isn't already up. Not part of npm test; CI runs
+                            # it as its own job, on PRs and pushes to main.
 npm run typecheck          # tsc over web/src — the only place types are enforced, since the build
                             # transpiles with `tsc -b --noCheck`. CI runs it.
 npm run deploy             # deploy to Cloudflare — see docs/deploy.md; runs npm test first
