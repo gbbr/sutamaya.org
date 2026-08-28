@@ -6,10 +6,11 @@ import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { useLayout } from '../context/LayoutContext';
 import { useSuttaReading } from '../hooks/useSuttaReading';
-import { scrollPaneBy, scrollPaneTo, type ScrollRestore } from '../hooks/useScrollMemory';
+import { type ScrollRestore } from '../hooks/useScrollMemory';
 import { useReaderOrigin } from '../hooks/useReaderOrigin';
 import { useReaderKeyboard } from '../hooks/useReaderKeyboard';
 import { useDictionaryLookup } from '../hooks/useDictionaryLookup';
+import { animateScrollBy, animateScrollTop } from '../lib/segmentScroll';
 import { flatSuttaOrder, breadcrumbFor, resolveCanonicalSuttaId, loadSuttaText } from '../lib/corpus';
 import { flattenListTree, resolveListById, suttaRowMeta } from '../lib/lists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
@@ -102,15 +103,19 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   const sutta = corpus && suttaId ? corpus.suttas[suttaId] : undefined;
   // Where this sutta opens. A return — back or forward, a refresh, an app relaunch — resumes the
   // remembered position; anything the reader chose now starts at the top (lib/entryKind.ts). A
-  // route already naming a segment to jump to takes neither. Sampled per sutta id rather than per
-  // mount, since ReaderPage stays mounted across Prev/Next and only its route param changes, and
-  // held in a ref so it stays fixed while that id is on screen, however often this re-renders
-  // before the async restore runs.
-  const restoreRef = useRef<{ id?: string; restore: ScrollRestore }>({ restore: 'stored' });
+  // route already naming a segment to jump to takes neither, and scrolls itself instead (see the
+  // requestedSubUid effect below). Sampled per sutta id rather than per mount, since ReaderPage
+  // stays mounted across Prev/Next and only its route param changes, and held in a ref so it stays
+  // fixed while that id is on screen, however often this re-renders before the async restore runs.
+  const restoreRef = useRef<{ id?: string; restore: ScrollRestore; skipRestore: boolean }>({
+    restore: 'stored',
+    skipRestore: false,
+  });
   if (restoreRef.current.id !== suttaId) {
     restoreRef.current = {
       id: suttaId,
-      restore: requestedSubUid ? 'none' : enteredByReturn() ? 'stored' : 'top',
+      restore: enteredByReturn() ? 'stored' : 'top',
+      skipRestore: !!requestedSubUid,
     };
   }
   const {
@@ -129,7 +134,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     close: closePop,
     popStop,
     openPop,
-  } = useSuttaReading(suttaId, 'reader', restoreRef.current.restore);
+  } = useSuttaReading(suttaId, 'reader', restoreRef.current);
   // Auto-list membership is redundant here, since the highlight gutter and the note preview above
   // already say as much, so suttaRowMeta's AUTO_LIST_IDS filter drops it from the chip row — as it
   // does for ListPane, TreePane and ReaderSearchOverlay.
@@ -209,7 +214,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
 
   // Landed here through a deep link or search hit for one inner sutta of a batched document (see
   // requestedSubUid above) — scroll to its first segment once the batch's text has loaded, a frame
-  // after load, as jumpToHighlight below does. Such a route opens with `restore: 'none'` (see
+  // after load, as jumpToHighlight below does. Such a route opens with `skipRestore` (see
   // restoreRef), so useScrollMemory writes no scroll position for this mount and there is nothing
   // to override: on iOS Safari two scroll writes to one container milliseconds apart can stack
   // rather than the second superseding the first, landing well past the intended target.
@@ -356,7 +361,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
         const clipped = rect.bottom + MARGIN - containerRect.bottom;
         if (clipped <= 0) return;
         const cap = Math.max(0, rect.top - containerRect.top - MARGIN);
-        scrollPaneBy(container, Math.min(clipped, cap) / getUiScale());
+        animateScrollBy(container, Math.min(clipped, cap) / getUiScale());
       });
     },
     [scrollRef]
@@ -479,7 +484,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           className="absolute left-1/2 -translate-x-1/2 max-w-[calc(100%-14rem)] truncate opacity-75 font-serif cursor-pointer"
           aria-label="Scroll to top"
           title="Scroll to top"
-          onClick={() => scrollRef.current && scrollPaneTo(scrollRef.current, 0)}
+          onClick={() => scrollRef.current && animateScrollTop(scrollRef.current, 0)}
         >
           {/* The English title is what identifies a sutta to a reader who has scrolled past the
               h1, so it takes the header wherever it fits. Below `mobile` it can't: the flanking

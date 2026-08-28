@@ -67,9 +67,16 @@ export function ListPane({
   visible = true,
 }: ListPaneProps) {
   const { corpus } = useCorpus();
-  const { lists, membership, notes, highlights, reorderListItems } = useUserData();
+  const { ready, lists, membership, notes, highlights, reorderListItems } = useUserData();
   const { mobile, paneW } = useLayout();
-  const scrollRef = useScrollMemory<HTMLDivElement>(`list:${query.trim() ? 'search' : nodeId || 'none'}`, visible);
+  // Rows carry note text and highlight counts, which arrive from the mirror after the rows
+  // themselves — a row above the scroll position growing would otherwise shift it after the
+  // restore has already landed.
+  const scrollRef = useScrollMemory<HTMLDivElement>(
+    `list:${query.trim() ? 'search' : nodeId || 'none'}`,
+    visible,
+    { readyToRestore: ready }
+  );
   const itemRowRefs = useRef<Map<string, HTMLDivElement>>(new Map());
 
   const searching = query.trim().length > 0;

@@ -126,6 +126,35 @@ test('Prev/Next starts the next sutta at the top instead of resuming it', async 
   await expect(page.locator('[data-seg="40"]')).not.toBeInViewport();
 });
 
+// The other half of that distinction: leaving by Next and coming back by the browser's own Back is
+// a *return*, so the position is resumed. It is also the only spec that exercises persisting on a
+// key change rather than on a page unload — the reader's scroll container is not remounted between
+// suttas, so what dn1 remembers is written by the hook's teardown as the key changes, from the
+// value it last knew rather than a fresh scrollTop read (see useScrollMemory's
+// lastKnownScrollTopRef). The refresh spec above never changes the key, so it never runs that path.
+//
+// Stepped with the keyboard, not the Next button: that button sits at the foot of the text, so
+// clicking it scrolls the container to the bottom first and the position remembered for dn1 would
+// be the bottom rather than the marker — the test would then pass on the wrong value.
+test('a sutta left by Next resumes where it was when Back returns to it', async ({ page }) => {
+  await page.goto('/read/dn1');
+  await expect(page.locator('[data-seg="1"]')).toBeVisible();
+
+  const marker = page.locator('[data-seg="40"]');
+  await marker.scrollIntoViewIfNeeded();
+  const before = (await marker.boundingBox())?.y ?? 0;
+  expect((await page.locator('[data-seg="1"]').boundingBox())?.y ?? 0).toBeLessThan(0);
+
+  await page.keyboard.press('Shift+K');
+  await expect(page).toHaveURL(/\/read\/dn2/);
+
+  await page.goBack();
+  await expect(page).toHaveURL(/\/read\/dn1/);
+  await expect
+    .poll(async () => Math.abs(((await marker.boundingBox())?.y ?? 1e6) - before))
+    .toBeLessThan(8);
+});
+
 // A breadcrumb click's whole point is to show where the sutta sits, so the tapped row has to be
 // revealed — even when the tree was left collapsed over it on the previous visit, which used to
 // swallow it (TreePane restores a collapsed tree verbatim when a mount lands on the node it last

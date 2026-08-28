@@ -2,21 +2,21 @@ import { useCallback, useMemo } from 'react';
 import { useUserData } from '../context/UserDataContext';
 import { useSuttaText } from './useSuttaText';
 import { useHighlightPopup } from './useHighlightPopup';
-import { useScrollMemory, scrollPaneBy, type ScrollRestore } from './useScrollMemory';
+import { useScrollMemory, type ScrollRestore } from './useScrollMemory';
 import { groupHighlights, highlightColors, highlightCount } from '../lib/highlights';
 import { getUiScale } from '../lib/uiPrefs';
-import { computeSegmentScrollOffset } from '../lib/segmentScroll';
+import { animateScrollBy, computeSegmentScrollOffset } from '../lib/segmentScroll';
 
 // A sutta's reading state for ReaderPage: the segments and highlights SegmentedText renders, plus
 // the selection-popup, scroll-restoration and highlight-grouping plumbing around them.
 // `scrollKeyPrefix` namespaces the remembered scroll position per sutta (`reader:{id}`).
-// `restore` — where this sutta opens, passed straight through to useScrollMemory (see its own
-// comment for the three values). ReaderPage decides: 'none' when the route alone already names a
-// segment to jump to, 'top' for a sutta opened fresh, 'stored' for one returned to.
+// `restore` and `skipRestore` are passed straight through to useScrollMemory (see its own comment).
+// ReaderPage decides both: 'top' for a sutta opened fresh and 'stored' for one returned to, and
+// `skipRestore` when the route alone already names a segment to jump to.
 export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
   suttaId: string | undefined,
   scrollKeyPrefix: string,
-  restore: ScrollRestore = 'stored'
+  { restore = 'stored', skipRestore = false }: { restore?: ScrollRestore; skipRestore?: boolean } = {}
 ) {
   const { highlights, ready: userDataReady } = useUserData();
   const { segments, error, retry } = useSuttaText(suttaId);
@@ -27,6 +27,7 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
   // and correctly, rather than correcting for whichever of the two lands second.
   const scrollRef = useScrollMemory<T>(suttaId ? `${scrollKeyPrefix}:${suttaId}` : null, true, {
     restore,
+    skipRestore,
     readyToRestore: !!segments && userDataReady,
   });
   const highlightGroups = useMemo(() => groupHighlights(hlForSutta), [hlForSutta]);
@@ -57,7 +58,7 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
     const elRect = el.getBoundingClientRect();
     const offset = computeSegmentScrollOffset(containerRect, elRect, block, getUiScale());
 
-    scrollPaneBy(container, offset);
+    animateScrollBy(container, offset);
   }, [scrollRef]);
 
   return { segments, error, retry, hlForSutta, highlightGroups, hlCount, hlColors, scrollRef, scrollToSegment, ...popup };
