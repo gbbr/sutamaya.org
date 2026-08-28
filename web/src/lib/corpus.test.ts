@@ -11,7 +11,7 @@ import {
   searchLists,
   sortByIdAsc,
 } from './corpus';
-import type { Corpus, ListDef, Sutta } from './types';
+import type { Corpus, Highlight, ListDef, Sutta } from './types';
 
 // Only the fields compareIds/sortByIdAsc actually touch (the id key) matter here; the rest
 // of Sutta is irrelevant filler to satisfy the type.
@@ -378,6 +378,45 @@ describe('searchCorpus', () => {
         list({ id: 'l2', label: 'Memorize', items: ['mn10'] }),
       ];
       expect(searchCorpus(corpus, 'retreat memorize', {}, lists).map((h) => h.id)).toEqual(['mn10']);
+    });
+  });
+
+  describe('ranking the reader\'s own suttas first', () => {
+    const list = (over: Partial<ListDef>): ListDef => ({
+      id: 'x', label: 'x', parentId: null, kind: 'list', items: [], ...over,
+    });
+    const highlight = (id: string): Highlight => ({ id, i: 0, s: 0, e: 5, c: 'yellow', g: 'g1', m: 'm' });
+    // Both titles carry "the", so the two hits share a rank bucket and only the boost can reorder
+    // them. Unsaved, they come back in the corpus's own order: mn1, then mn10.
+    const tiedQuery = 'the';
+
+    it('leaves the corpus order alone when the reader has saved nothing', () => {
+      expect(searchCorpus(corpus, tiedQuery, {}).map((h) => h.id)).toEqual(['mn1', 'mn10']);
+    });
+
+    it('lifts a sutta filed in one of the reader\'s lists above one that isn\'t', () => {
+      const lists = [list({ id: 'l1', label: 'Favourites', items: ['mn10'] })];
+      expect(searchCorpus(corpus, tiedQuery, {}, lists).map((h) => h.id)).toEqual(['mn10', 'mn1']);
+    });
+
+    it('lifts a noted sutta, and ignores a note the reader has emptied out', () => {
+      expect(searchCorpus(corpus, tiedQuery, { mn10: 'worth rereading' }).map((h) => h.id)).toEqual(['mn10', 'mn1']);
+      expect(searchCorpus(corpus, tiedQuery, { mn10: '   ' }).map((h) => h.id)).toEqual(['mn1', 'mn10']);
+    });
+
+    it('lifts a highlighted sutta', () => {
+      expect(searchCorpus(corpus, tiedQuery, {}, [], { mn10: [highlight('h1')] }).map((h) => h.id)).toEqual(['mn10', 'mn1']);
+    });
+
+    it('does not count the auto-lists, which would make every visited sutta look saved', () => {
+      const lists = [list({ id: 'auto-recent', label: 'Visited', items: ['mn10'], auto: true })];
+      expect(searchCorpus(corpus, tiedQuery, {}, lists).map((h) => h.id)).toEqual(['mn1', 'mn10']);
+    });
+
+    it('never lifts a saved sutta past a better match', () => {
+      // mn1 matches "mind" in its blurb only; mn10 has it in its title. Saving mn1 reorders nothing.
+      const lists = [list({ id: 'l1', label: 'Favourites', items: ['mn1'] })];
+      expect(searchCorpus(corpus, 'mind', {}, lists).map((h) => h.id)).toEqual(['mn10', 'mn1']);
     });
   });
 

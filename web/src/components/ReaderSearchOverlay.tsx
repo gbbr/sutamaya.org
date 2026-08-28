@@ -36,7 +36,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
 
   // Suttas only: this overlay exists to jump elsewhere in the canon without leaving the reader, and
   // a list hit's only destination is the library. Lists surface there instead (SearchListHits).
-  const { hits } = useCorpusSearch(corpus, query, notes, lists);
+  const { hits } = useCorpusSearch(corpus, query, notes, lists, highlights);
   // Only render/keyboard-navigate the first SEARCH_RESULTS_CAP — a short/common query can match
   // hundreds of suttas, and every hit is an unvirtualized row in a small scroll panel.
   const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);
