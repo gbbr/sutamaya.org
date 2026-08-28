@@ -89,11 +89,12 @@ describe('useScrollMemory', () => {
     view.rerender(<TestBox scrollKey={key} restore="top" />);
     expect(el.scrollTop).toBe(0);
 
-    // Same navigation classified as a return instead: the remembered position wins.
-    // `view` above is still mounted, so this scopes to its own container rather than the shared
-    // document body, where two boxes now match.
+    // The 0 goes into the map too, not just onto the element: opening a sutta fresh replaces what
+    // was remembered for it, so a later return resumes at the top rather than at the offset the
+    // previous visit left behind. `view` above is still mounted, so this scopes to its own
+    // container rather than the shared document body, where two boxes now match.
     const returning = render(<TestBox scrollKey={key} />);
-    expect(returning.container.querySelector<HTMLDivElement>('[data-testid="box"]')!.scrollTop).toBe(300);
+    expect(returning.container.querySelector<HTMLDivElement>('[data-testid="box"]')!.scrollTop).toBe(0);
   });
 
   // The whole of the restore's timing: it waits for the caller to say every async source has
