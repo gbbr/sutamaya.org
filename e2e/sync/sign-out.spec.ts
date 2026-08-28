@@ -17,6 +17,14 @@ test('signing out puts the device back on its own data, and keeps reading workin
   await page.goto('/settings');
   await page.getByRole('button', { name: /^Sign out/ }).click();
 
+  // With changes still unsynced the first click only arms a confirmation — "Sign out anyway", over
+  // a warning that leaving now discards them. Whether that happens is a race against the flush,
+  // won on a dev machine and lost on a slower one, so both outcomes are handled rather than
+  // assumed. Clicking through it is the honest answer here: the note *is* still queued.
+  const anyway = page.getByRole('button', { name: 'Sign out anyway' });
+  await expect.poll(async () => !page.url().includes('/settings') || (await anyway.count()) > 0).toBe(true);
+  if (await anyway.count()) await anyway.click();
+
   // Sign-out goes to "/", which restores the last location rather than a fixed page — the reader,
   // here. The account's note is not this device's to show any more.
   await expect(page).toHaveURL(/\/read\/dn1/);
