@@ -20,10 +20,12 @@
     "usage-report": "node scripts/usage-report.mjs",
     "typecheck": "npm run typecheck --workspace web",
     "test": "npx vitest run",
+    "test:e2e": "E2E_OFFLINE=1 npx playwright test",
     "deploy": "bash scripts/deploy.sh"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.9.10",
+    "@playwright/test": "^1.62.1",
     "concurrently": "^9.1.0",
     "vite": "^6.4.3",
     "vitest": "^3.2.7",

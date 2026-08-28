@@ -165,4 +165,17 @@ export default defineConfig({
       },
     },
   },
+  // `vite preview` serves the built app — the real service worker with its real precache
+  // manifest, which the dev server cannot produce (it serves an unbundled module graph, so there
+  // is no app shell to precache). It needs the same /api proxy the dev server has, since the
+  // built app still talks to the Worker on its own port. Used by the end-to-end suite's offline
+  // project; see docs/e2e.md.
+  preview: {
+    proxy: {
+      '/api': {
+        target: process.env.API_ORIGIN || 'http://localhost:8787',
+        changeOrigin: true,
+      },
+    },
+  },
 });
