@@ -396,7 +396,6 @@ interface SegmentedTextProps {
   // splitPaliWords), so ReaderPage can step to the previous or next word from the DictionaryDock's
   // arrows without re-deriving it from the word text, which isn't unique within a segment.
   onWordClick: (word: string, segIndex: number, wordIndex: number) => void;
-  onTextUp: () => void;
   onSpanClick: (i: number, s: number, e: number, rect: DOMRect, color: string) => void;
   // Bhikkhu Sujato's translator notes (SegmentFile.note): whether the asterisk markers show at all
   // ("c" in the reader, or the Display tab's checkbox), and which are expanded inline — the same
@@ -433,7 +432,6 @@ function SegmentedTextInner({
   allPali,
   onToggleSeg,
   onWordClick,
-  onTextUp,
   onSpanClick,
   showNotes,
   openNotes,
@@ -471,7 +469,7 @@ function SegmentedTextInner({
   // iteration order inside the .map below rather than in a memoized pass of its own.
   let runningListIndex = 0;
   return (
-    <div data-component="SegmentedText" data-segroot onMouseUp={onTextUp} onTouchEnd={onTextUp}>
+    <div data-component="SegmentedText" data-segroot>
       {segments.map((seg, i) => {
         // No gap between segments within the same paragraph — the English `<p>` carries no margin
         // either, so nothing is left to collapse into a visible one. Only a real paragraph break,

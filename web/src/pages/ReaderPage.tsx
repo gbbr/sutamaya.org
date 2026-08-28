@@ -416,6 +416,13 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
       }
       onPointerDown={onReaderPointerDown}
       onPointerUp={onReaderPointerUp}
+      // The selection is read from the whole reader, not just the text: a drag that runs off the
+      // top or bottom of the viewport lifts over the scroll container or the header, and a handler
+      // bound to the segments themselves would never see it — leaving a live selection with no
+      // popup. Releases elsewhere are harmless, since a selection with either end outside the
+      // rendered segments yields no popup.
+      onMouseUp={onTextUp}
+      onTouchEnd={onTextUp}
     >
       {/* The title is positioned against the header rather than laid out between the buttons: the
           right side carries two controls to the left's one, so a flex-centred title would sit off
@@ -675,7 +682,6 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
               allPali={allPali}
               onToggleSeg={onToggleSeg}
               onWordClick={onWordClick}
-              onTextUp={onTextUp}
               onSpanClick={openPop}
               showNotes={showNotes}
               openNotes={openNotes}
