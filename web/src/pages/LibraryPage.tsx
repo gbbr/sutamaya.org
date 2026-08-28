@@ -30,7 +30,7 @@ export function LibraryPage({
   // across selecting and deselecting a row.
   const { mobile, dragTree, resetTree, paneW } = useLayout();
   const { corpus } = useCorpus();
-  const { lists, notes } = useUserData();
+  const { lists, notes, highlights } = useUserData();
   const { toggleTheme } = useUiPrefs();
   // @reach/router defers the route-param update by a microtask and a frame after navigate(), so
   // reading the ids straight off props would render a frame pairing new local state with a stale
@@ -93,7 +93,7 @@ export function LibraryPage({
   // Scanned once here and handed to both panes, so they show one result set from one scan per
   // keystroke. useCorpusSearch defers the scan off `query`, keeping the input responsive on a
   // slow device.
-  const { hits: allHits, listHits } = useCorpusSearch(corpus, query, notes, lists);
+  const { hits: allHits, listHits } = useCorpusSearch(corpus, query, notes, lists, highlights);
   // When exactly one list matched, its row already stands for everything in it, so the members that
   // got here only through its name are dropped rather than spelled out underneath — which for a big
   // list is the whole results pane restating one row.

@@ -1,6 +1,6 @@
 import { useDeferredValue, useMemo } from 'react';
 import { searchCorpus, searchLists, type ListHit, type SearchHit } from '../lib/corpus';
-import type { Corpus, ListDef, NotesMap } from '../lib/types';
+import type { Corpus, HighlightsMap, ListDef, NotesMap } from '../lib/types';
 
 // Runs searchCorpus against a deferred copy of `query`, so typing stays urgent and React can
 // interrupt a stale search without a hand-rolled debounce — searchCorpus scans every sutta on each
@@ -10,12 +10,13 @@ export function useCorpusSearch(
   corpus: Corpus | null,
   query: string,
   notes: NotesMap,
-  lists: ListDef[]
+  lists: ListDef[],
+  highlights: HighlightsMap
 ): { hits: SearchHit[]; listHits: ListHit[] } {
   const deferredQuery = useDeferredValue(query);
   const hits = useMemo(
-    () => (corpus && deferredQuery.trim() ? searchCorpus(corpus, deferredQuery, notes, lists) : []),
-    [corpus, deferredQuery, notes, lists]
+    () => (corpus && deferredQuery.trim() ? searchCorpus(corpus, deferredQuery, notes, lists, highlights) : []),
+    [corpus, deferredQuery, notes, lists, highlights]
   );
   // Off the same deferred query, so the lists block and the sutta hits below it always describe
   // the same keystroke rather than updating a frame apart.

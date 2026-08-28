@@ -1,5 +1,5 @@
 import { flattenListTree } from './lists';
-import type { ChapterRow, Corpus, ListDef, Nikaya, Sutta } from './types';
+import type { ChapterRow, Corpus, HighlightsMap, ListDef, Nikaya, Sutta } from './types';
 
 export async function loadCorpus(): Promise<Corpus> {
   const res = await fetch('/data/corpus.json');
@@ -367,6 +367,22 @@ function listHaystacks(lists: ListDef[]): Map<string, string> {
   return byId;
 }
 
+// The suttas the reader has made their own: filed in one of their lists, noted, or highlighted.
+// They sort ahead of untouched suttas within each rank bucket (see searchCorpus's sort). The three
+// auto-lists are skipped — "Notes" and "Highlights" restate the records checked here, and "Visited"
+// holds everything recently opened, which would mark most of a reader's canon as saved and leave
+// the boost meaning nothing.
+function savedIds(lists: ListDef[], notes: Record<string, string>, highlights: HighlightsMap): Set<string> {
+  const saved = new Set<string>();
+  for (const { list } of flattenListTree(lists)) {
+    if (list.kind === 'group' || list.auto) continue;
+    for (const itemId of list.items) saved.add(itemId);
+  }
+  for (const [id, text] of Object.entries(notes)) if (text.trim()) saved.add(id);
+  for (const [id, ranges] of Object.entries(highlights)) if (ranges.length) saved.add(id);
+  return saved;
+}
+
 // Rank buckets, best first. Two things order a hit: whether the query's words were found together
 // as typed, and whether they were found in the ref/title/Pali rather than in a blurb, note or list
 // name. So a sutta titled "Mindfulness of Breathing" beats one whose title merely holds both words
@@ -377,9 +393,17 @@ const RANK_WORDS_IN_TITLE = 1;
 const RANK_PHRASE = 2;
 const RANK_WORDS = 3;
 
-// Ties (same rank) keep the corpus's own build order, since `Array.prototype.sort` is a stable
-// sort in every engine this app targets.
-export function searchCorpus(corpus: Corpus, query: string, notes: Record<string, string>, lists: ListDef[] = []): SearchHit[] {
+// Within a bucket, a saved sutta (savedIds above) comes first; ties beyond that keep the corpus's
+// own build order, since `Array.prototype.sort` is a stable sort in every engine this app targets.
+// The boost never crosses buckets: a title match still beats a blurb match, saved or not, so the
+// reader's own library reorders the results it belongs in rather than burying the obvious answer.
+export function searchCorpus(
+  corpus: Corpus,
+  query: string,
+  notes: Record<string, string>,
+  lists: ListDef[] = [],
+  highlights: HighlightsMap = {}
+): SearchHit[] {
   const q = searchKey(query.trim());
   if (!q) return [];
   // Every word has to be found, but not adjacent and not in the same field: "raft simile" and
@@ -393,7 +417,8 @@ export function searchCorpus(corpus: Corpus, query: string, notes: Record<string
   const rangeQuery = q.match(RANGE_QUERY);
   const ranges = rangeQuery ? rangesFor(corpus) : null;
   const listPathsById = listHaystacks(lists);
-  const hits: Array<SearchHit & { rank: number }> = [];
+  const saved = savedIds(lists, notes, highlights);
+  const hits: Array<SearchHit & { rank: number; saved: boolean }> = [];
   for (const [id, s] of suttaEntries(corpus)) {
     const { title, blurb } = staticHaystacks.get(id)!;
     const note = notes[id] ? searchKey(notes[id]) : '';
@@ -422,9 +447,9 @@ export function searchCorpus(corpus: Corpus, query: string, notes: Record<string
     const listOnly =
       rank >= RANK_PHRASE &&
       words.every((w) => listPaths.includes(w) && !title.includes(w) && !blurb.includes(w) && !note.includes(w));
-    hits.push({ id, sutta: s, matchedId, listOnly, rank });
+    hits.push({ id, sutta: s, matchedId, listOnly, rank, saved: saved.has(id) });
   }
-  hits.sort((a, b) => a.rank - b.rank);
+  hits.sort((a, b) => a.rank - b.rank || Number(b.saved) - Number(a.saved));
   return hits;
 }
 
