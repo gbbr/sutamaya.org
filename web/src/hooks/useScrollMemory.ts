@@ -141,6 +141,12 @@ export function useScrollMemory<T extends HTMLElement>(
       const desired = restore === 'stored' ? positions.get(key) ?? 0 : 0;
       el.scrollTop = desired;
       lastKnownScrollTopRef.current = desired;
+      // Record the restored offset, don't just scroll to it. A 'top' restore that only moved the
+      // element would leave the previous visit's offset in the map, and a departure that runs no
+      // unmount cleanup — a reload, or leaving for a non-SPA URL, where `pagehide` flushes the map
+      // as it stands — would persist that stale offset and resume there next time.
+      positions.set(key, desired);
+      schedulePersist();
     };
     if (readyRef.current) doRestoreRef.current();
 
