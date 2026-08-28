@@ -75,7 +75,9 @@ CI/deploy-on-push — every deploy is this one command, run by hand.
 
 The end-to-end suite (`npm run test:e2e`, see `docs/e2e.md`) is **not** part of this. It is worth
 running before a deploy, by hand, but it does not gate one: a gate has to be trustworthy enough
-that a red run always means a real problem, and it is not there yet.
+that a red run always means a real problem, and it is not there yet. CI does run it on every push
+to main, so in practice a regression is usually already visible on the commit you're about to
+deploy — check it rather than assuming it.
 
 Migrations run *before* the upload, which is what makes a **migration additive-only** — `ADD COLUMN`
 with a default, or a new index, never a rename or a drop. For the window between the two steps the
