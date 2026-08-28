@@ -243,6 +243,7 @@ export function LibraryPage({
           visible={showTreePane}
           restoreOrigin={restoreOrigin}
           flashNodeId={flashNodeId}
+          breadcrumbArrival={!!locationFlashNodeId}
           shortcutsOpen={shortcutsOpen}
         />
       </div>
