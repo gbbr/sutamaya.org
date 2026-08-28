@@ -105,6 +105,9 @@ interface TreePaneProps {
   // The breadcrumb segment last clicked in the reader — may sit above `nodeId`. Briefly scrolled
   // to and highlighted; doesn't affect what's browsed.
   flashNodeId?: string;
+  // This mount came from a reader breadcrumb click. Set at mount, unlike `flashNodeId`, which
+  // LibraryPage raises a tick later so it can time the highlight out.
+  breadcrumbArrival?: boolean;
   // LibraryPage's "?" modal is open, so this pane's own '/' and 'x' shortcuts stand down.
   shortcutsOpen?: boolean;
 }
@@ -124,6 +127,7 @@ export function TreePane({
   visible = true,
   restoreOrigin = false,
   flashNodeId,
+  breadcrumbArrival = false,
   shortcutsOpen = false,
 }: TreePaneProps) {
   const { corpus } = useCorpus();
@@ -146,13 +150,16 @@ export function TreePane({
   // Expanded synchronously at mount, never in an effect: useScrollMemory restores in a layout
   // effect, and a tree still collapsed at that point clamps the restored offset back to 0.
   const [persistedExpansion] = useState(loadPersistedExpansion);
-  // Only a mount pointed at a different node from the one last persisted is a navigation — a deep
-  // link, a membership chip, a breadcrumb — that should reveal its ancestors. Mounting back onto
-  // the same node is a return to the pane, and restores it as it was left.
-  const revealAtMount = nodeId !== persistedExpansion.node;
+  // Whether this mount is a navigation — a deep link, a membership chip, a breadcrumb — whose
+  // node should be revealed, opening its ancestors and pointing the Library/My-lists toggle at the
+  // tree it lives in. A mount pointed at the node last persisted is otherwise a return to the pane
+  // (Settings and back, a refresh), restored exactly as it was left; a breadcrumb click is the
+  // exception, since showing that row in the tree is the whole point of the click, and neither a
+  // collapse made on a previous visit nor a pane left on My lists may swallow it.
+  const revealNow = nodeId !== persistedExpansion.node || breadcrumbArrival;
   const [expanded, setExpanded] = useState<Record<string, boolean>>(() => ({
     ...toRecord(persistedExpansion.corpus),
-    ...(revealAtMount ? ancestorsOf(corpus, nodeId) : {}),
+    ...(revealNow ? ancestorsOf(corpus, nodeId) : {}),
   }));
   // Which of the two trees gets the column; they don't share one scroll. Never gated on being
   // signed in — a signed-out reader's lists live in the local mirror, so My lists is always a real
@@ -185,7 +192,7 @@ export function TreePane({
     const next = derivePaneViewSync({
       isFirstRun,
       restoreOrigin,
-      returningToSameNode: !revealAtMount,
+      returningToSameNode: !revealNow,
       nodeId,
       nodeIsListId,
       nodeIsCorpusNode: !!(corpus && nodeId && findNode(corpus, nodeId)),
@@ -215,8 +222,8 @@ export function TreePane({
   // effects below don't undo the mount-time suppression by revealing it a moment later; seeded
   // empty otherwise, and advanced only once there was something to open, since the corpus and the
   // lists can both arrive after this pane first renders.
-  const revealedNodeRef = useRef<string | undefined>(revealAtMount ? undefined : nodeId);
-  const revealedListNodeRef = useRef<string | undefined>(revealAtMount ? undefined : nodeId);
+  const revealedNodeRef = useRef<string | undefined>(revealNow ? undefined : nodeId);
+  const revealedListNodeRef = useRef<string | undefined>(revealNow ? undefined : nodeId);
 
   useEffect(() => {
     if (revealedNodeRef.current === nodeId) return;
@@ -255,7 +262,7 @@ export function TreePane({
   // pointed at a nested list has the tree expanded to it on the first render.
   const [listExpanded, setListExpanded] = useState<Record<string, boolean>>(() => ({
     ...toRecord(persistedExpansion.lists),
-    ...(revealAtMount ? ancestorsOfList(lists, nodeId) : {}),
+    ...(revealNow ? ancestorsOfList(lists, nodeId) : {}),
   }));
   // Persists both trees' expansion together under one key. Click-driven, or the ancestor-follow
   // effects above firing on a nodeId change, so an un-debounced write is negligible here — unlike a
