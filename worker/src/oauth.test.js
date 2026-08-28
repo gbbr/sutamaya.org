@@ -63,7 +63,7 @@ describe('safeReturnPath', () => {
   });
 
   // The open-redirect cases: anything that would send the browser off our own origin collapses
-  // to '/', since this value arrives from a query parameter the attacker controls.
+  // to '/app', since this value arrives from a query parameter the attacker controls.
   it.each([
     'https://evil.example/phish',
     '//evil.example/phish',
@@ -74,7 +74,7 @@ describe('safeReturnPath', () => {
     null,
     42,
   ])('refuses %o', (candidate) => {
-    expect(safeReturnPath(candidate, WEB_ORIGIN)).toBe('/');
+    expect(safeReturnPath(candidate, WEB_ORIGIN)).toBe('/app');
   });
 });
 

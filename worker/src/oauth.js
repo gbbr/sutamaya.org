@@ -102,16 +102,18 @@ export function resolveWebOrigin(value, candidate) {
 // Where the app is sent after the flow ends. The candidate arrives from a query parameter, so
 // this is the guard against turning /api/auth/google/start into an open redirect: resolve it
 // against our own origin and keep only the path, so anything absolute, protocol-relative
-// (`//evil.example`) or otherwise off-origin collapses to '/'.
+// (`//evil.example`) or otherwise off-origin collapses to the app's own entry point. That is
+// '/app', not '/' — the bare origin is the static landing page, which is not where someone who
+// has just signed in wants to land.
 export function safeReturnPath(candidate, webOrigin) {
-  if (typeof candidate !== 'string' || !candidate) return '/';
+  if (typeof candidate !== 'string' || !candidate) return '/app';
   let resolved;
   try {
     resolved = new URL(candidate, webOrigin);
   } catch {
-    return '/';
+    return '/app';
   }
-  if (resolved.origin !== new URL(webOrigin).origin) return '/';
+  if (resolved.origin !== new URL(webOrigin).origin) return '/app';
   return `${resolved.pathname}${resolved.search}${resolved.hash}`;
 }
 

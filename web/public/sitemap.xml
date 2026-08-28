@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Only the two pages worth a search result: the landing page, and the help guide. The ~1,400
+  sutta URLs are deliberately absent — they render client-side with no per-document HTML, so
+  listing them would ask a crawler to render 1,400 pages to find the same translation it already
+  has from SuttaCentral.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://sutamaya.org/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sutamaya.org/help</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

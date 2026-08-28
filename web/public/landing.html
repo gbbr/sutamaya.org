@@ -1,0 +1,383 @@
+<!doctype html>
+<!--
+  The page served at https://sutamaya.org/ — the only part of the site written for someone who
+  has never used the app. It is a plain static file rather than a route in the SPA because a
+  crawler has to be able to read it without running JavaScript; worker/src/index.js serves it at
+  "/" and every other path goes to the app as before.
+
+  It duplicates the app's colours, wordmark and screenshots rather than importing them: nothing
+  here is part of the Vite graph, so there is no build step to resolve a token or hash an asset
+  name. The screenshots in /landing/ are copies of the ones web/src/assets/help/ ships to the
+  help page, and have to be re-copied when those are recaptured.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sutamaya — an offline reader and study app for the Pali suttas</title>
+    <meta
+      name="description"
+      content="An offline reader for the Pali suttas: browse the whole canon, keep lists, highlight passages, take notes, and tap any word for a dictionary. Synced across your devices."
+    />
+    <link rel="canonical" href="https://sutamaya.org/" />
+    <link rel="icon" href="/favicon-v2.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#FBF9F5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#171513" media="(prefers-color-scheme: dark)" />
+
+    <!-- What a link to the site looks like when it is pasted into a chat, a forum or a social
+         post. Without these it renders as a bare URL with no title or image. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sutamaya" />
+    <meta property="og:url" content="https://sutamaya.org/" />
+    <meta property="og:title" content="Sutamaya — an offline reader and study app for the Pali suttas" />
+    <meta
+      property="og:description"
+      content="Browse the whole Pali canon, keep your own lists, highlight passages, write notes, and tap any word for a dictionary. Works offline, on any device."
+    />
+    <meta property="og:image" content="https://sutamaya.org/icons/icon-512-v2.png" />
+    <meta name="twitter:card" content="summary" />
+
+    <!-- Tells a search engine this is an application rather than an article, which is what puts
+         it in front of someone searching for an app to read the suttas with. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Sutamaya",
+        "url": "https://sutamaya.org/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any web browser (iOS, Android, macOS, Windows, Linux)",
+        "description": "An offline reader and study app for the Pali suttas. Browse the whole canon, keep your own lists, highlight passages, write notes, and tap any Pali word for a dictionary definition.",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "screenshot": [
+          "https://sutamaya.org/landing/library-mobile.webp",
+          "https://sutamaya.org/landing/dictionary-mobile.webp",
+          "https://sutamaya.org/landing/markup-mobile.webp"
+        ]
+      }
+    </script>
+
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url('/fonts/inter-normal-latin.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: italic;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url('/fonts/inter-italic-latin.woff2') format('woff2');
+      }
+      /* The wordmark's face — matches TreePane's header. */
+      @font-face {
+        font-family: 'Newsreader';
+        font-style: normal;
+        font-weight: 200 800;
+        font-display: swap;
+        src: url('/fonts/newsreader-normal-latin.woff2') format('woff2');
+      }
+
+      :root {
+        --ink: 27 25 23;
+        --ink-2: 74 66 58;
+        --ink-3: 92 84 76;
+        --paper: 251 249 245;
+        --accent: 146 114 67;
+        --accent-text: 122 91 46;
+        --line: 27 25 23;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --ink: 228 223 216;
+          --ink-2: 171 166 161;
+          --ink-3: 142 138 133;
+          --paper: 23 21 19;
+          --accent: 146 114 67;
+          --accent-text: 196 154 97;
+          --line: 228 223 216;
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, sans-serif;
+        font-optical-sizing: auto;
+        background: rgb(var(--paper));
+        color: rgb(var(--ink));
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+      /* ---- header ---- */
+      header {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 22px 0;
+      }
+      /* Same wordmark the app's library header draws — see TreePane.tsx. */
+      .mark {
+        font-family: Newsreader, Georgia, serif;
+        font-size: 27px;
+        font-weight: 600;
+        letter-spacing: -.01em;
+        color: rgb(var(--ink));
+      }
+      .btn {
+        display: inline-block; text-decoration: none;
+        background: rgb(var(--accent)); color: #fff;
+        padding: 10px 20px; border-radius: 9px;
+        font-size: 15px; font-weight: 500;
+      }
+      .btn:hover { background: #6B5230; }
+      /* Smaller than the hero's, so that one still reads as the page's primary action. */
+      .btn-sm { padding: 7px 15px; font-size: 14px; }
+
+      /* ---- hero ---- */
+      .hero { padding: 64px 0 72px; max-width: 640px; }
+      h1 {
+        font-size: clamp(34px, 6vw, 52px);
+        line-height: 1.12; letter-spacing: -.02em;
+        font-weight: 600; margin: 0 0 20px;
+      }
+      .lede { font-size: clamp(17px, 2.4vw, 20px); color: rgb(var(--ink-2)); margin: 0 0 32px; }
+      .cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+      .fineprint { font-size: 14px; color: rgb(var(--ink-3)); margin: 18px 0 0; }
+
+      /* ---- features ---- */
+      .feature {
+        display: grid; grid-template-columns: 1fr 1fr;
+        gap: 56px; align-items: center;
+        padding: 56px 0;
+        border-top: 1px solid rgb(var(--line) / .09);
+      }
+      .feature:nth-child(even) .shot { order: -1; }
+      h2 {
+        font-size: clamp(23px, 3.2vw, 29px); line-height: 1.2;
+        letter-spacing: -.015em; font-weight: 600; margin: 0 0 14px;
+      }
+      .feature p { margin: 0; color: rgb(var(--ink-2)); font-size: 17px; }
+      .shot { display: flex; justify-content: center; }
+      .shot img {
+        width: 100%; max-width: 260px; height: auto; display: block;
+        border-radius: 18px;
+        border: 1px solid rgb(var(--line) / .12);
+        box-shadow: 0 12px 34px rgb(0 0 0 / .10);
+      }
+      /* `.spot` is a box drawn over one region of a screenshot, pointing at the part of the screen
+         the paragraph beside it describes. Its edges are percentages of the image, set inline per
+         box, so it stays on target at every width — the images are fluid up to their 260px cap.
+         `.frame` is what those percentages resolve against: `.shot` itself is a centring flex row
+         wider than the picture, so the box has to hang off a wrapper that hugs the image instead.
+         Kept quiet — a hairline at well under half opacity, since the fade below does the pointing
+         and the line only closes the shape. It is in the accent rather than a grey because grey at
+         this weight disappears into a screenshot that is itself mostly greys. Most of the emphasis
+         comes from the third shadow, an effectively unbounded spread that fades the whole picture
+         except this box. It fades toward the page's own paper rather than toward black, so the
+         muted part of the screenshot recedes into the section instead of turning into a dark
+         panel; the faint white ring between the two holds the line off the faded area.
+
+         Dimming that way is what `.frame` clips: the spread would otherwise cover the section
+         around the image. The drop shadow moves up here with it, since an image's own shadow falls
+         outside its border box and would be clipped away — the five unmarked shots keep theirs. */
+      .frame {
+        position: relative; width: 100%; max-width: 260px;
+        border-radius: 18px; overflow: hidden;
+        box-shadow: 0 12px 34px rgb(0 0 0 / .10);
+      }
+      .frame img { box-shadow: none; }
+      .spot {
+        position: absolute; pointer-events: none;
+        border: 1px solid rgb(var(--accent) / .45); border-radius: 8px;
+        box-shadow:
+          0 0 0 1px rgb(255 255 255 / .04),
+          0 0 0 9999px rgb(var(--paper) / .6);
+      }
+
+      /* ---- closing ---- */
+      .closing {
+        text-align: center; padding: 72px 0;
+        border-top: 1px solid rgb(var(--line) / .09);
+      }
+      .closing h2 { margin-bottom: 10px; }
+      .closing p { color: rgb(var(--ink-2)); margin: 0 0 26px; font-size: 17px; }
+
+      footer {
+        border-top: 1px solid rgb(var(--line) / .09);
+        padding: 30px 0 56px;
+        font-size: 14px; color: rgb(var(--ink-3));
+        text-align: center;
+      }
+      footer a { color: rgb(var(--accent-text)); }
+      footer p { margin: 0 0 10px; }
+      footer p:last-child { margin-bottom: 0; }
+
+      @media (max-width: 720px) {
+        .feature { grid-template-columns: 1fr; gap: 28px; padding: 44px 0; }
+        .feature:nth-child(even) .shot { order: 0; }
+        .hero { padding: 40px 0 48px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- The button here isn't the hero's CTA repeated: it's the way a reader who already uses
+           the app gets past this page, which is the only reason they'd be on it. -->
+      <header>
+        <div class="mark">sutamaya</div>
+        <a class="btn btn-sm" href="/app">Open the app</a>
+      </header>
+
+      <section class="hero">
+        <h1>A study app for the Pali suttas.</h1>
+        <p class="lede">
+          Sutamaya is a reader for the Early Buddhist Texts, built to work offline. Browse
+          the whole canon, keep your own lists, highlight passages, write notes, and tap any Pali
+          word to see what it means.
+        </p>
+        <div class="cta">
+          <a class="btn" href="/app">Open the app</a>
+        </div>
+        <!-- Every screenshot below is a phone, so the breadth is stated here in words. -->
+        <p class="fineprint">
+          Works in any browser — phone, tablet or desktop.
+        </p>
+      </section>
+
+      <section class="feature">
+        <div>
+          <h2>The whole canon, easy to move around in</h2>
+          <p>
+            The four main nikāyas and the Khuddaka books, arranged the way they are actually
+            read — collection, chapter, sutta. Search by reference, title or Pali. Your place is
+            kept in every text you open.
+          </p>
+        </div>
+        <div class="shot">
+          <img src="/landing/library-mobile.webp" width="780" height="1688" alt="Browsing the sutta collections in Sutamaya" />
+        </div>
+      </section>
+
+      <section class="feature">
+        <div>
+          <h2>Pali beside the English, word by word</h2>
+          <p>
+            Show the Pali line under each segment of translation, and tap any word to open a
+            dictionary definition in a dock at the bottom of the screen — from the Digital Pali
+            Dictionary, without leaving the text you're reading.
+          </p>
+        </div>
+        <div class="shot">
+          <img src="/landing/dictionary-mobile.webp" width="780" height="1688" loading="lazy" alt="The Pali dictionary dock open under a sutta" />
+        </div>
+      </section>
+
+      <section class="feature">
+        <div>
+          <h2>Set the page the way you read</h2>
+          <p>
+            Typeface, text size, line height, margins, light or dark. Verse, headings and
+            speakers are set the way the source marks them, so a long text stays readable for as
+            long as you want to stay in it.
+          </p>
+        </div>
+        <div class="shot">
+          <img src="/landing/reader-mobile.webp" width="780" height="1688" loading="lazy" alt="A sutta open in Sutamaya's reader" />
+        </div>
+      </section>
+
+      <section class="feature">
+        <div>
+          <h2>Highlights and notes</h2>
+          <p>
+            Select any passage and highlight it in one of three colours. Write a note on a sutta
+            and it stays with it. Tag a sutta with a word of your own and it becomes a way back
+            to it later.
+          </p>
+        </div>
+        <div class="shot">
+          <img src="/landing/markup-mobile.webp" width="780" height="1688" loading="lazy" alt="A highlighted passage and the colour picker in Sutamaya's reader" />
+        </div>
+      </section>
+
+      <section class="feature">
+        <div>
+          <h2>Your own lists</h2>
+          <p>
+            Save any sutta to a list, group your lists into folders, and reorder both by
+            dragging. Recently read, everything you've highlighted, and everything you've made a
+            note on are kept as lists of their own, automatically.
+          </p>
+        </div>
+        <div class="shot">
+          <img src="/landing/lists-mobile.webp" width="780" height="1688" loading="lazy" alt="The Lists tab in Sutamaya, with user-made lists and activity lists" />
+        </div>
+      </section>
+
+      <section class="feature">
+        <div>
+          <h2>On every device you read on</h2>
+          <p>
+            Sign in and your lists, notes, highlights and reading history are stored in the cloud
+            and follow you to your phone, tablet and laptop. Edits made offline sync the next time
+            that device connects.
+          </p>
+        </div>
+        <div class="shot">
+          <div class="frame">
+            <img src="/landing/offline-mobile.webp" width="780" height="1688" loading="lazy" alt="Sutamaya's offline download settings" />
+            <span class="spot" style="left: 2.3%; top: 18.1%; right: 2.3%; bottom: 36.5%"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature">
+        <div>
+          <h2>Built for reading offline</h2>
+          <p>
+            Every sutta you open is kept on your device, so anything you've read stays available
+            with no connection. One tap in Settings downloads the entire canon and dictionary in
+            advance — on a plane, on retreat, or in airplane mode, the app opens and behaves
+            exactly the same.
+          </p>
+        </div>
+        <div class="shot">
+          <div class="frame">
+            <img src="/landing/offline-signed-in-mobile.webp" width="780" height="1688" loading="lazy" alt="Sutamaya signed in and synced across devices" />
+            <span class="spot" style="left: 2.1%; top: 41.8%; right: 1.8%; bottom: 31.1%"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing">
+        <h2>Open it and start reading.</h2>
+        <p>Nothing to sign up for. Sign in later if you want your notes on more than one device.</p>
+        <a class="btn" href="/app">Open the app</a>
+      </section>
+
+      <footer>
+        <p>
+          English translations by Bhikkhu Sujato, from
+          <a href="https://suttacentral.net">SuttaCentral</a>, with
+          <a href="https://github.com/gbbr/sutamaya.org/blob/main/docs/translation-changes.md"
+            >some editorial changes</a
+          >. Pali definitions from the
+          <a href="https://digitalpalidictionary.github.io">Digital Pali Dictionary</a>.
+        </p>
+        <!-- The address is a Cloudflare Email Routing alias, not a real mailbox, so it can be
+             replaced if it ever attracts enough spam to be worth replacing. -->
+        <p>
+          Questions, or something not working? Write to
+          <a href="mailto:metta@sutamaya.org">metta@sutamaya.org</a>. Bugs and code live on
+          <a href="https://github.com/gbbr/sutamaya.org">GitHub</a>.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

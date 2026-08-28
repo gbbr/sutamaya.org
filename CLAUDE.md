@@ -159,9 +159,9 @@ produces such a URL — the reader's breadcrumb navigates to `sutta.node` (alway
 the clicked ancestor as `flashNodeId` — and anything needing a default destination must name a leaf
 group or select nothing at all.
 
-**Bare `/browse` is the library with nothing selected**, which is where `/` lands on a first visit
-(`getLastLocation()` restores the real location on every later one) and where `ErrorBoundary`'s
-escape hatch goes. Nothing selected means `ancestorsOf` forces nothing open, so the tree shows the
+**Bare `/browse` is the library with nothing selected**, which is where `/app` lands on a first
+visit (`getLastLocation()` restores the real location on every later one) and where
+`ErrorBoundary`'s escape hatch goes. Nothing selected means `ancestorsOf` forces nothing open, so the tree shows the
 five nikāyas collapsed; the list pane says "Choose a collection to begin." It's a second
 `<LibraryPage>` route element, so picking the first node remounts the page — a one-off cost, paid
 before there's any pane scroll to lose. `lastLocation`'s `VALID_PATH` deliberately rejects it.
@@ -253,6 +253,17 @@ started with.
 
 ## Rules that aren't obvious from reading one file
 
+- **`/` is a static landing page, not the app.** `web/public/landing.html` is plain HTML with no
+  JavaScript — the one page a search engine can read without rendering the SPA — and
+  `worker/src/index.js` serves it at `/` (which is why `assets.run_worker_first` lists `/` as well
+  as `/api/*`). The app's own entry is **`/app`**: it restores the last location, and it is the
+  manifest's `start_url`, so an installed copy launches into the reader rather than the landing
+  page. Three things conspire to hide the page once the service worker is installed, and
+  `vite.config.ts` disables all three — `navigateFallbackDenylist` and `directoryIndex: null` keep
+  Workbox off `/`, and a `NetworkFirst` rule caches it so the URL still resolves offline. Anything
+  in the app that used to `navigate('/')` now navigates to `/app`; `/` is no longer a route.
+  The landing page's screenshots are hand-copied from `web/src/assets/help/` into
+  `web/public/landing/`, since a static file can't reference Vite's content-hashed asset names.
 - **Every D1 query is scoped `AND user_id = ?`.** These are flat tables with no structural per-user
   isolation; that predicate is the only thing separating one user's data from another's, and it
   belongs on reads, writes and existence checks alike.
