@@ -6,7 +6,7 @@ import { Router, navigate } from '@reach/router';
 // into one specific inner sutta of a *batched* document (e.g. "dhp1", inside the batch "dhp1-20")
 // that was already visited via a different inner sutta in the same session. Both share one
 // scroll-memory key ("reader:dhp1-20" — see useSuttaReading.ts), so without ReaderPage turning
-// its `requestedSubUid` into useScrollMemory's `restore: 'none'`, the *second*
+// its `requestedSubUid` into useScrollMemory's `skipRestore`, the *second*
 // mount would restore the *first* visit's remembered scroll position before the deliberate
 // jump-to-segment ever got a chance to run — see useScrollMemory.test.tsx for direct coverage of
 // that mechanism in isolation; this test exercises the actual ReaderPage wiring that engages it.

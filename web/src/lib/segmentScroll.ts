@@ -64,3 +64,9 @@ export function animateScrollTop(container: HTMLElement, targetScrollTop: number
   CANCEL_EVENTS.forEach((type) => container.addEventListener(type, cancel, { passive: true, once: true }));
   requestAnimationFrame(step);
 }
+
+// `offset` is in scroll units rather than screen pixels: under Settings > UI scale the two differ,
+// and computeSegmentScrollOffset above is what converts between them.
+export function animateScrollBy(container: HTMLElement, offset: number) {
+  animateScrollTop(container, container.scrollTop + offset);
+}

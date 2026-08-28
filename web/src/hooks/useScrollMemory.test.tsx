@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { act, render } from '@testing-library/react';
-import { useScrollMemory, cancelPendingRestore, type ScrollRestore } from './useScrollMemory';
+import { render } from '@testing-library/react';
+import { useScrollMemory, type ScrollRestore } from './useScrollMemory';
 
 // `positions` (useScrollMemory.ts's module-level remembered-offset map) is a singleton shared by
 // every hook instance for the lifetime of this test file — each test below uses its own unique
@@ -14,14 +14,16 @@ function TestBox({
   scrollKey,
   active,
   restore,
+  skipRestore,
   readyToRestore,
 }: {
   scrollKey: string | null;
   active?: boolean;
   restore?: ScrollRestore;
+  skipRestore?: boolean;
   readyToRestore?: boolean;
 }) {
-  const ref = useScrollMemory<HTMLDivElement>(scrollKey, active, { restore, readyToRestore });
+  const ref = useScrollMemory<HTMLDivElement>(scrollKey, active, { restore, skipRestore, readyToRestore });
   return <div ref={ref} data-testid="box" />;
 }
 
@@ -56,16 +58,16 @@ describe('useScrollMemory', () => {
     expect(second.getByTestId('box').scrollTop).toBe(240);
   });
 
-  it("restore='none' leaves scrollTop untouched even when a remembered position exists", () => {
+  it('skipRestore leaves scrollTop untouched even when a remembered position exists', () => {
     const key = freshKey();
     const first = render(<TestBox scrollKey={key} />);
     scrollTo(first.getByTestId('box'), 300);
     first.unmount();
 
-    // Same key still has 300 remembered — a caller passing 'none' (ReaderPage's deep-link case,
-    // so its own jump-to-segment is the only scroll write on this mount) must not have that
+    // Same key still has 300 remembered — a caller passing skipRestore (ReaderPage's deep-link
+    // case, so its own jump-to-segment is the only scroll write on this mount) must not have that
     // position silently applied underneath it.
-    const second = render(<TestBox scrollKey={key} restore="none" />);
+    const second = render(<TestBox scrollKey={key} skipRestore />);
     expect(second.getByTestId('box').scrollTop).toBe(0);
   });
 
@@ -76,8 +78,8 @@ describe('useScrollMemory', () => {
     first.unmount();
 
     // A fresh entry to a sutta (row tap / search hit / Prev/Next) starts at the top even though
-    // 300 is remembered for it — and, unlike 'none', actively *writes* 0 rather than leaving the
-    // container wherever it was. That write is what the reader depends on: the same scroll
+    // 300 is remembered for it — and, unlike skipRestore, actively *writes* 0 rather than leaving
+    // the container wherever it was. That write is what the reader depends on: the same scroll
     // container is reused across Prev/Next, so without it the next sutta would open at the
     // previous one's offset. Modelled here as a key change on a mounted container, which is
     // exactly what a Prev/Next is.
@@ -94,92 +96,30 @@ describe('useScrollMemory', () => {
     expect(returning.container.querySelector<HTMLDivElement>('[data-testid="box"]')!.scrollTop).toBe(300);
   });
 
-  it('the MutationObserver reapplies a remembered position once enough content has loaded', async () => {
+  // The whole of the restore's timing: it waits for the caller to say every async source has
+  // landed, and then writes once. Deferring is the only thing standing between a remembered
+  // position and a container that is still growing — restoring against the first wave and
+  // correcting afterwards is what this hook used to do, and what a single well-timed write
+  // replaces.
+  it('waits for readyToRestore rather than writing against a container that is still filling', () => {
     const key = freshKey();
     const first = render(<TestBox scrollKey={key} />);
     scrollTo(first.getByTestId('box'), 800);
     first.unmount();
 
-    const second = render(<TestBox scrollKey={key} />);
+    // Mounted with the text (and the separately-fetched chips) still in flight.
+    const second = render(<TestBox scrollKey={key} readyToRestore={false} />);
     const el = second.getByTestId('box');
-    // Real browsers clamp `scrollTop = 800` back to 0 here since the container has no scrollable
-    // content yet (sutta text is still being fetched) — jsdom doesn't clamp, so this reproduces
-    // that starting condition by hand.
-    el.scrollTop = 0;
-    Object.defineProperty(el, 'clientHeight', { value: 100, configurable: true });
-    Object.defineProperty(el, 'scrollHeight', { value: 1000, configurable: true }); // 900 >= 800
+    // Nothing written yet: a real browser would clamp an 800 here back to 0 for lack of content,
+    // and then persist that 0 as the remembered position.
+    expect(el.scrollTop).toBe(0);
 
-    await act(async () => {
-      el.appendChild(document.createElement('span')); // simulates the sutta text finishing rendering
-      // MutationObserver callbacks fire as a microtask, after this synchronous block returns.
-      await Promise.resolve();
-    });
-
-    expect(el.scrollTop).toBe(800);
-  });
-
-  it('keeps correcting drift from a second, later content wave (e.g. notes/highlight chips loading after the text)', async () => {
-    const key = freshKey();
-    const first = render(<TestBox scrollKey={key} />);
-    scrollTo(first.getByTestId('box'), 800);
-    first.unmount();
-
-    const second = render(<TestBox scrollKey={key} />);
-    const el = second.getByTestId('box');
-    el.scrollTop = 0;
+    // Both sources land, the container now has the height to hold the position, and the restore
+    // happens — once.
     Object.defineProperty(el, 'clientHeight', { value: 100, configurable: true });
     Object.defineProperty(el, 'scrollHeight', { value: 1000, configurable: true });
-
-    await act(async () => {
-      el.appendChild(document.createElement('span')); // the sutta text finishing rendering
-      await Promise.resolve();
-    });
+    second.rerender(<TestBox scrollKey={key} readyToRestore />);
     expect(el.scrollTop).toBe(800);
-
-    // A separate, later fetch (ReaderPage's notes/highlight-count/list chips, from
-    // UserDataContext) inserts more content above the text, growing the container further and —
-    // in a real browser — nudging scrollTop via CSS scroll anchoring. Simulated here as an
-    // ordinary further mutation that also moves scrollTop away from `desired`, the same shape
-    // that anchoring compensation takes.
-    await act(async () => {
-      Object.defineProperty(el, 'scrollHeight', { value: 1080, configurable: true });
-      el.scrollTop = 880; // anchoring's own compensating bump, not a real user scroll
-      el.appendChild(document.createElement('div'));
-      await Promise.resolve();
-    });
-
-    expect(el.scrollTop).toBe(800);
-  });
-
-  it('stops correcting once real user scroll input arrives, even if content grows again afterward', async () => {
-    const key = freshKey();
-    const first = render(<TestBox scrollKey={key} />);
-    scrollTo(first.getByTestId('box'), 800);
-    first.unmount();
-
-    const second = render(<TestBox scrollKey={key} />);
-    const el = second.getByTestId('box');
-    el.scrollTop = 0;
-    Object.defineProperty(el, 'clientHeight', { value: 100, configurable: true });
-    Object.defineProperty(el, 'scrollHeight', { value: 1000, configurable: true });
-
-    await act(async () => {
-      el.appendChild(document.createElement('span'));
-      await Promise.resolve();
-    });
-    expect(el.scrollTop).toBe(800);
-
-    // The user actually scrolls themselves — this must give up the restore for good.
-    el.dispatchEvent(new Event('wheel'));
-    el.scrollTop = 500;
-
-    await act(async () => {
-      Object.defineProperty(el, 'scrollHeight', { value: 1080, configurable: true });
-      el.appendChild(document.createElement('div'));
-      await Promise.resolve();
-    });
-
-    expect(el.scrollTop).toBe(500);
   });
 
   it('a readyToRestore dip mid-mount (e.g. Prev/Next\'s segments -> null -> new gap) does not corrupt the saved position', () => {
@@ -221,7 +161,7 @@ describe('useScrollMemory', () => {
     expect(reopened.getByTestId('box').scrollTop).toBe(500);
   });
 
-  it('cancelPendingRestore stops that reapply from clobbering a scroll made in the meantime', async () => {
+  it('leaves a deliberate scroll made after the restore alone', () => {
     const key = freshKey();
     const first = render(<TestBox scrollKey={key} />);
     scrollTo(first.getByTestId('box'), 800);
@@ -229,21 +169,21 @@ describe('useScrollMemory', () => {
 
     const second = render(<TestBox scrollKey={key} />);
     const el = second.getByTestId('box');
-    el.scrollTop = 0;
+    expect(el.scrollTop).toBe(800);
+
+    // Sized so the container could hold 800 — the condition under which this hook used to keep
+    // re-applying the remembered position as content arrived, which is exactly what must not
+    // happen to a jump the reader asked for.
     Object.defineProperty(el, 'clientHeight', { value: 100, configurable: true });
     Object.defineProperty(el, 'scrollHeight', { value: 1000, configurable: true });
 
-    // A deliberate scroll elsewhere in the app (useSuttaReading's scrollToSegment) cancels the
-    // still-armed restore before landing its own jump — simulated here as a jump to 50.
-    cancelPendingRestore(el);
-    el.scrollTop = 50;
+    // A jump elsewhere in the app — useSuttaReading's scrollToSegment, the dictionary dock
+    // centring a word — lands after the restore has already happened, and nothing puts the
+    // remembered position back over it. Content arriving later doesn't either.
+    scrollTo(el, 50);
+    el.appendChild(document.createElement('span'));
+    second.rerender(<TestBox scrollKey={key} />);
 
-    await act(async () => {
-      el.appendChild(document.createElement('span'));
-      await Promise.resolve();
-    });
-
-    // Without the cancel, this would have been forced back to 800 (see the previous test).
     expect(el.scrollTop).toBe(50);
   });
 });

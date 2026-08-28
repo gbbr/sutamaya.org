@@ -146,7 +146,9 @@ export function TreePane({
   const { user } = useAuth();
   const { mobile, paneW } = useLayout();
 
-  const scrollRef = useScrollMemory<HTMLDivElement>('tree', visible);
+  // The My-lists block sits above the tree and arrives from the mirror a beat later, so restoring
+  // before it lands would leave the tree shifted down by its height.
+  const scrollRef = useScrollMemory<HTMLDivElement>('tree', visible, { readyToRestore: ready });
   // Expanded synchronously at mount, never in an effect: useScrollMemory restores in a layout
   // effect, and a tree still collapsed at that point clamps the restored offset back to 0.
   const [persistedExpansion] = useState(loadPersistedExpansion);

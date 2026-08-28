@@ -1,5 +1,4 @@
 import { useLayoutEffect, useRef } from 'react';
-import { animateScrollTop } from '../lib/segmentScroll';
 import { SCROLL_POSITIONS_KEY } from '../lib/storageKeys';
 
 // Module-level, so positions survive a component unmounting and remounting within one SPA session,
@@ -57,90 +56,32 @@ export function clearScrollMemory() {
   window.removeEventListener('pagehide', persist);
 }
 
-// Cancels this hook's MutationObserver-based restore for one element, so a stale remembered
-// position can't overwrite a deliberate scroll later. Keyed by element rather than by the hook's
-// `key` string, since a caller has only the DOM node to hand.
-const pendingRestoreCancel = new WeakMap<HTMLElement, () => void>();
-
-export function cancelPendingRestore(el: HTMLElement | null | undefined) {
-  if (!el) return;
-  pendingRestoreCancel.get(el)?.();
-  pendingRestoreCancel.delete(el);
-}
-
-// Every deliberate scroll of a scroll-memory container goes through these rather than calling
-// animateScrollTop itself. Giving up the armed restore is part of what moving one of these panes
-// means — the restore is driven by a MutationObserver that can still fire well after the jump has
-// landed, putting the pane back where the reader last left it — and leaving that to each caller to
-// remember is how a jump silently loses to a restore that arrives a moment later.
-export function scrollPaneTo(el: HTMLElement, top: number) {
-  cancelPendingRestore(el);
-  animateScrollTop(el, top);
-}
-
-// `offset` is in scroll units rather than screen pixels: under Settings > UI scale the two differ,
-// and computeSegmentScrollOffset (lib/segmentScroll.ts) is what converts between them.
-export function scrollPaneBy(el: HTMLElement, offset: number) {
-  scrollPaneTo(el, el.scrollTop + offset);
-}
-
-// Real user scroll input is the signal that gives up an in-progress restore for good (see
-// doRestore below) — same set animateScrollTop (lib/segmentScroll.ts) treats as cancelling input.
-const USER_INTENT_EVENTS = ['wheel', 'touchstart', 'pointerdown'] as const;
-
-// Backstop so a restore that never quite reaches `desired` (no more content growth, no user
-// input either) doesn't leave a MutationObserver running forever.
-const RESTORE_GRACE_MS = 5000;
-
 // `active` lets a mounted-but-hidden caller skip restoring while hidden — LibraryPage keeps both
 // panes mounted on mobile and toggles `display:none` on the inactive one, so its scroll state
 // survives. A `display:none` element has no layout box, so setting `scrollTop` on it clamps to 0
 // and loses the saved position; restoring belongs at the moment the pane becomes visible, which is
 // when `active` flips true.
 //
-// `restore` is where this mount starts. It only ever affects the restore-on-mount half: the
-// *recording* (the `onScroll` listener/`positions` map below) runs the same under all three, so a
-// container that starts somewhere unusual still remembers wherever the user leaves it.
-//
-//   'stored' — the remembered offset for `key` (the default, and what a library pane always wants).
-//   'top'    — the top, ignoring what's remembered, for a document the user chose to open now
-//              rather than returned to (see lib/entryKind.ts and ReaderPage). Still *writes* 0,
-//              which the reader depends on: its scroll container isn't remounted between suttas,
-//              so without that write a Prev/Next would leave the new sutta sitting at the previous
-//              one's offset.
-//   'none'   — no scroll write at all, for a caller that already knows, before this even mounts,
-//              that it has its own deliberate target (useSuttaReading passes this whenever
-//              ReaderPage has a `requestedSubUid` — a deep link/search hit for one specific verse
-//              inside a batched document). Writing first and letting the caller's jump override
-//              the result isn't reliable: see scrollToSegment, and cancelPendingRestore's own
-//              comment on iOS stacking two scroll writes milliseconds apart instead of superseding.
-//
-// Read once per key-mount, so it must only ever change together with `key` — it does: the reader
-// derives it per sutta id, which is what the key is built from.
-//
-// `readyToRestore` lets a caller with more than one async content source feeding this container —
-// the reader's sutta text and its separately-fetched notes and chip data — defer the restore until
-// both have landed, rather than restoring against the first and being shifted when the second
-// arrives, including by CSS scroll anchoring compensating for content inserted above. Defaults to
-// `true`, so TreePane and ListPane, which have no second source, restore immediately.
-//
-// Not a dependency of the lifecycle effect below, even though it fluctuates within one mount: the
-// reader's segments go stale -> null -> new on every Prev/Next while the scroll-memory `key` stays
-// the same, so `readyToRestore` dips true -> false -> true just as the container's content
-// collapses to "Loading…". Tearing the effect down on that dip would persist whatever scrollTop the
-// collapse clamped to, so `readyRef` below guards recording directly and the effect's mount
-// lifecycle stays keyed on [key, active] alone.
-export type ScrollRestore = 'stored' | 'top' | 'none';
+// None of the options below affect recording: the container always remembers where it is left.
+export type ScrollRestore = 'stored' | 'top';
 
 export interface ScrollMemoryOptions {
+  /**
+   * Where this mount opens: 'stored' at the remembered offset for `key`, 'top' at 0. Both write,
+   * so a container reused across documents can't keep the previous one's offset. Read once per
+   * key-mount, so it must only ever change together with `key`.
+   */
   restore?: ScrollRestore;
+  /** Don't write at all — the caller has its own target to scroll to. Read once, like `restore`. */
+  skipRestore?: boolean;
+  /** Hold the restore until the caller's async content has all landed. */
   readyToRestore?: boolean;
 }
 
 export function useScrollMemory<T extends HTMLElement>(
   key: string | null | undefined,
   active = true,
-  { restore = 'stored', readyToRestore = true }: ScrollMemoryOptions = {}
+  { restore = 'stored', skipRestore = false, readyToRestore = true }: ScrollMemoryOptions = {}
 ) {
   const ref = useRef<T>(null);
   const readyRef = useRef(readyToRestore);
@@ -166,11 +107,17 @@ export function useScrollMemory<T extends HTMLElement>(
   }, [readyToRestore]);
 
   // Owns the container's whole mount lifecycle — attaching/detaching `onScroll` and persisting
-  // the final position on unmount — keyed only on [key, active], deliberately not
-  // `readyToRestore` (see its own comment above for why). Exposes the actual one-time restore as
-  // `doRestoreRef.current` rather than performing it unconditionally here, so the effect below
-  // can trigger it once `readyToRestore` actually arrives without needing to be part of this
-  // effect's own teardown/re-run cycle.
+  // the final position on unmount. Exposes the actual one-time restore as `doRestoreRef.current`
+  // rather than performing it unconditionally here, so the effect below can trigger it once
+  // `readyToRestore` actually arrives without needing to be part of this effect's own
+  // teardown/re-run cycle.
+  //
+  // Keyed on [key, active] and deliberately not `readyToRestore`, even though that fluctuates
+  // within one mount: the reader's segments go stale -> null -> new on every Prev/Next while the
+  // scroll-memory `key` stays the same, so `readyToRestore` dips true -> false -> true just as the
+  // container's content collapses to "Loading…". Tearing this effect down on that dip would
+  // persist whatever scrollTop the collapse clamped to, so `readyRef` guards recording directly
+  // instead.
   useLayoutEffect(() => {
     const el = ref.current;
     if (!el || key == null || !active) return;
@@ -186,51 +133,14 @@ export function useScrollMemory<T extends HTMLElement>(
     };
     el.addEventListener('scroll', onScroll, { passive: true });
 
-    let stop: (() => void) | null = null;
     const restoreState = restoreStateRef.current;
     doRestoreRef.current = () => {
       if (restoreState.restored) return;
       restoreState.restored = true;
+      if (skipRestore) return;
       const desired = restore === 'stored' ? positions.get(key) ?? 0 : 0;
-      if (restore !== 'none') {
-        el.scrollTop = desired;
-        lastKnownScrollTopRef.current = desired;
-      }
-
-      // `el` itself doesn't resize when its content grows after this point (it's a
-      // flex/viewport-bound scroll container, so its own box stays fixed — only scrollHeight,
-      // the overflowing content inside it, grows), which is why this needs a MutationObserver on
-      // the subtree rather than a ResizeObserver on `el`. Stays armed rather than disconnecting
-      // after its first correction, so it can also catch the browser's own CSS scroll-anchoring
-      // compensating for any further, unanticipated content shift as an ordinary scrollTop
-      // change away from `desired`. Only real user scroll input (or an explicit
-      // cancelPendingRestore — see its own comment) gives up this restore for good; a bare
-      // timeout is just the last-resort backstop.
-      if (desired > 0) {
-        // A prior restore within this same key-mount (readyToRestore can dip and recover more
-        // than once — see this hook's own comment above) may still have its own MutationObserver/
-        // timer/listeners armed; without disconnecting it first, reassigning `stop` below orphans
-        // it running for up to RESTORE_GRACE_MS, fighting this new one over the same `el`.
-        stop?.();
-        const mo = new MutationObserver(() => {
-          if (el.scrollTop !== desired && el.scrollHeight - el.clientHeight >= desired) {
-            el.scrollTop = desired;
-            lastKnownScrollTopRef.current = desired;
-          }
-        });
-        mo.observe(el, { childList: true, subtree: true });
-        const onUserIntent = () => stop?.();
-        USER_INTENT_EVENTS.forEach((type) => el.addEventListener(type, onUserIntent, { passive: true, once: true }));
-        const graceTimer = setTimeout(() => stop?.(), RESTORE_GRACE_MS);
-        stop = () => {
-          mo.disconnect();
-          clearTimeout(graceTimer);
-          USER_INTENT_EVENTS.forEach((type) => el.removeEventListener(type, onUserIntent));
-          pendingRestoreCancel.delete(el);
-          stop = null;
-        };
-        pendingRestoreCancel.set(el, stop);
-      }
+      el.scrollTop = desired;
+      lastKnownScrollTopRef.current = desired;
     };
     if (readyRef.current) doRestoreRef.current();
 
@@ -244,7 +154,6 @@ export function useScrollMemory<T extends HTMLElement>(
         schedulePersist();
       }
       el.removeEventListener('scroll', onScroll);
-      stop?.();
       doRestoreRef.current = null;
     };
   }, [key, active]);

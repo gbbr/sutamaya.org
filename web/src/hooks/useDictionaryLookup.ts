@@ -1,8 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from 'react';
 import { splitPaliWords, stripPunct, findAdjacentWord } from '../lib/dictionary';
 import { lookupHeadword, peekHeadword, prefetchHeadwordShard } from '../lib/dictionaryShards';
-import { computeSegmentScrollOffset } from '../lib/segmentScroll';
-import { scrollPaneBy } from './useScrollMemory';
+import { animateScrollBy, computeSegmentScrollOffset } from '../lib/segmentScroll';
 import { getUiScale } from '../lib/uiPrefs';
 import type { SegmentFile } from '../lib/corpus';
 
@@ -171,7 +170,7 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
       // arbitrary element: Settings > UI scale is CSS `zoom` on <html>, which getBoundingClientRect
       // reports through and scroll writes don't, so computeSegmentScrollOffset divides the offset
       // by the scale.
-      scrollPaneBy(container, computeSegmentScrollOffset(containerRect, wordRect, 'center', getUiScale()));
+      animateScrollBy(container, computeSegmentScrollOffset(containerRect, wordRect, 'center', getUiScale()));
     },
     [scrollRef, scrollToSegment]
   );
