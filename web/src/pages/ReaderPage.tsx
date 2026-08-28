@@ -6,7 +6,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { useLayout } from '../context/LayoutContext';
 import { useSuttaReading } from '../hooks/useSuttaReading';
-import { type ScrollRestore } from '../hooks/useScrollMemory';
+import { scrollPaneBy, scrollPaneTo, type ScrollRestore } from '../hooks/useScrollMemory';
 import { useReaderOrigin } from '../hooks/useReaderOrigin';
 import { useReaderKeyboard } from '../hooks/useReaderKeyboard';
 import { useDictionaryLookup } from '../hooks/useDictionaryLookup';
@@ -17,7 +17,7 @@ import { setReaderThemeColor } from '../lib/themeColor';
 import { SHORTCUTS, SHOWS_KEY_HINTS, shortcutsForScope } from '../lib/shortcuts';
 import { tagIntent } from '../lib/routeIntent';
 import { enteredByReturn } from '../lib/entryKind';
-import { animateScrollTop } from '../lib/segmentScroll';
+import { getUiScale } from '../lib/uiPrefs';
 import type { Highlight } from '../lib/types';
 import { animateStep, cancelStepAnimations } from '../lib/motion';
 import { markSuttaOpened } from '../lib/pwaNudge';
@@ -334,6 +334,34 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     navigateToSutta(id);
   }
 
+  // Opening the Pali — or a footnote — under the last line on screen puts it below the fold, where
+  // the reader has to scroll for what they just asked to see. This brings it up by the least it
+  // can, and only when something is actually clipped, so a tap in the middle of the page moves
+  // nothing and the English line the reveal belongs to stays where the eye left it.
+  //
+  // This is `scrollIntoView({ block: 'nearest' })` on the reveal, done by hand for the reason
+  // scrollToSegment (useSuttaReading) gives: Settings > UI scale is CSS `zoom`, which
+  // getBoundingClientRect reports through while scroll writes don't, so the offset has to be
+  // divided by the scale — and scrollIntoView isn't zoom-aware at all. The cap is what makes a
+  // reveal taller than the pane settle at its own first line rather than chase its bottom.
+  const revealIntoView = useCallback(
+    (i: number, kind: 'pali' | 'note') => {
+      requestAnimationFrame(() => {
+        const container = scrollRef.current;
+        const reveal = container?.querySelector<HTMLElement>(`[data-reveal-seg="${i}"][data-reveal="${kind}"]`);
+        if (!container || !reveal) return;
+        const containerRect = container.getBoundingClientRect();
+        const rect = reveal.getBoundingClientRect();
+        const MARGIN = 14;
+        const clipped = rect.bottom + MARGIN - containerRect.bottom;
+        if (clipped <= 0) return;
+        const cap = Math.max(0, rect.top - containerRect.top - MARGIN);
+        scrollPaneBy(container, Math.min(clipped, cap) / getUiScale());
+      });
+    },
+    [scrollRef]
+  );
+
   // Wrapped in useCallback, as onToggleNote below is, so a freshly-allocated function on every
   // ReaderPage render doesn't defeat SegmentedText's per-segment memoization. Collapsing the Pali
   // on the segment holding the dictionary dock's active word also closes the dock, which would
@@ -343,12 +371,22 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
       setOpenSegs((s) => {
         const willOpen = !s[i];
         if (!willOpen && dict?.segIndex === i) closeDict();
+        if (willOpen && !allPali) revealIntoView(i, 'pali');
         return { ...s, [i]: willOpen };
       });
     },
-    [dict, closeDict]
+    [dict, closeDict, allPali, revealIntoView]
   );
-  const onToggleNote = useCallback((i: number) => setOpenNotes((s) => ({ ...s, [i]: !s[i] })), []);
+  const onToggleNote = useCallback(
+    (i: number) => {
+      setOpenNotes((s) => {
+        const willOpen = !s[i];
+        if (willOpen) revealIntoView(i, 'note');
+        return { ...s, [i]: willOpen };
+      });
+    },
+    [revealIntoView]
+  );
 
   function onReaderPointerDown(e: React.PointerEvent) {
     tapRef.current = { x: e.clientX, y: e.clientY };
@@ -441,7 +479,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           className="absolute left-1/2 -translate-x-1/2 max-w-[calc(100%-14rem)] truncate opacity-75 font-serif cursor-pointer"
           aria-label="Scroll to top"
           title="Scroll to top"
-          onClick={() => scrollRef.current && animateScrollTop(scrollRef.current, 0)}
+          onClick={() => scrollRef.current && scrollPaneTo(scrollRef.current, 0)}
         >
           {/* The English title is what identifies a sutta to a reader who has scrolled past the
               h1, so it takes the header wherever it fits. Below `mobile` it can't: the flanking

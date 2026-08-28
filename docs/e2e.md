@@ -14,6 +14,13 @@ npx playwright show-report              # the last run's HTML report
 
 Deliberately not part of `npm test`, which stays the fast unit suite.
 
+**The suite stays small on purpose.** A browser test costs seconds, and a top-level spec pays that
+three times over — Chromium, WebKit and phone width. So a test earns its place only by covering
+something no unit test can: real layout and scroll positions, pointer gestures, the service worker,
+two devices converging. Anything a jsdom test could answer belongs in `npm test` instead. The check
+that a new spec is worth keeping is whether it fails when the behaviour it describes is broken —
+worth actually running once against the broken version.
+
 ## In CI
 
 `.github/workflows/ci.yml` runs the whole suite as its own job on pull requests and pushes to main,

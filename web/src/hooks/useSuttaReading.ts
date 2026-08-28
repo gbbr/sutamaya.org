@@ -2,10 +2,10 @@ import { useCallback, useMemo } from 'react';
 import { useUserData } from '../context/UserDataContext';
 import { useSuttaText } from './useSuttaText';
 import { useHighlightPopup } from './useHighlightPopup';
-import { useScrollMemory, cancelPendingRestore, type ScrollRestore } from './useScrollMemory';
+import { useScrollMemory, scrollPaneBy, type ScrollRestore } from './useScrollMemory';
 import { groupHighlights, highlightColors, highlightCount } from '../lib/highlights';
 import { getUiScale } from '../lib/uiPrefs';
-import { computeSegmentScrollOffset, animateScrollTop } from '../lib/segmentScroll';
+import { computeSegmentScrollOffset } from '../lib/segmentScroll';
 
 // A sutta's reading state for ReaderPage: the segments and highlights SegmentedText renders, plus
 // the selection-popup, scroll-restoration and highlight-grouping plumbing around them.
@@ -43,11 +43,6 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
     const container = scrollRef.current;
     const segEl = container?.querySelector<HTMLElement>(`[data-seg="${segIndex}"]`);
     if (!container || !segEl) return;
-    // This is a deliberate jump to a specific segment — supersedes whatever scroll position
-    // useScrollMemory's own restore was trying to reach for this container, including a
-    // MutationObserver-based reapply that can otherwise still be armed and fire later (see
-    // cancelPendingRestore's own comment), clobbering the jump below once it lands.
-    cancelPendingRestore(container);
     // A highlight can cover only the tail of a long segment, where centring the segment's whole box
     // leaves the highlighted text well below the pane's centre. jumpToHighlight passes the
     // highlight's id — the `data-hl-id` SegmentedText renders on its span — so this centres the
@@ -58,13 +53,11 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
     // applies Settings > UI scale via CSS `zoom` on <html> (lib/uiPrefs.ts, active even at the
     // default 1x on Chromium desktop), and scrollIntoView isn't zoom-aware. computeSegmentScrollOffset
     // (lib/segmentScroll.ts) does the unit conversion, as computeGutterLayout does for the gutter.
-    // The scroll write goes through animateScrollTop rather than a native animated scrollTo.
     const containerRect = container.getBoundingClientRect();
     const elRect = el.getBoundingClientRect();
-    const scale = getUiScale();
-    const offset = computeSegmentScrollOffset(containerRect, elRect, block, scale);
+    const offset = computeSegmentScrollOffset(containerRect, elRect, block, getUiScale());
 
-    animateScrollTop(container, container.scrollTop + offset);
+    scrollPaneBy(container, offset);
   }, [scrollRef]);
 
   return { segments, error, retry, hlForSutta, highlightGroups, hlCount, hlColors, scrollRef, scrollToSegment, ...popup };

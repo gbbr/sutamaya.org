@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef } from 'react';
+import { animateScrollTop } from '../lib/segmentScroll';
 import { SCROLL_POSITIONS_KEY } from '../lib/storageKeys';
 
 // Module-level, so positions survive a component unmounting and remounting within one SPA session,
@@ -56,17 +57,31 @@ export function clearScrollMemory() {
   window.removeEventListener('pagehide', persist);
 }
 
-// Lets a caller performing its own deliberate scroll on a scroll-memory container —
-// useSuttaReading's scrollToSegment, jumping to one verse inside a batched document — cancel this
-// hook's MutationObserver-based restore for that element, so a stale remembered position can't
-// overwrite the deliberate scroll later. Keyed by element rather than by the hook's `key` string,
-// since the caller has only the DOM node to hand.
+// Cancels this hook's MutationObserver-based restore for one element, so a stale remembered
+// position can't overwrite a deliberate scroll later. Keyed by element rather than by the hook's
+// `key` string, since a caller has only the DOM node to hand.
 const pendingRestoreCancel = new WeakMap<HTMLElement, () => void>();
 
 export function cancelPendingRestore(el: HTMLElement | null | undefined) {
   if (!el) return;
   pendingRestoreCancel.get(el)?.();
   pendingRestoreCancel.delete(el);
+}
+
+// Every deliberate scroll of a scroll-memory container goes through these rather than calling
+// animateScrollTop itself. Giving up the armed restore is part of what moving one of these panes
+// means — the restore is driven by a MutationObserver that can still fire well after the jump has
+// landed, putting the pane back where the reader last left it — and leaving that to each caller to
+// remember is how a jump silently loses to a restore that arrives a moment later.
+export function scrollPaneTo(el: HTMLElement, top: number) {
+  cancelPendingRestore(el);
+  animateScrollTop(el, top);
+}
+
+// `offset` is in scroll units rather than screen pixels: under Settings > UI scale the two differ,
+// and computeSegmentScrollOffset (lib/segmentScroll.ts) is what converts between them.
+export function scrollPaneBy(el: HTMLElement, offset: number) {
+  scrollPaneTo(el, el.scrollTop + offset);
 }
 
 // Real user scroll input is the signal that gives up an in-progress restore for good (see

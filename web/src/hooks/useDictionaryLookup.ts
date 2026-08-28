@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from 'react';
 import { splitPaliWords, stripPunct, findAdjacentWord } from '../lib/dictionary';
 import { lookupHeadword, peekHeadword, prefetchHeadwordShard } from '../lib/dictionaryShards';
-import { computeSegmentScrollOffset, animateScrollTop } from '../lib/segmentScroll';
-import { cancelPendingRestore } from './useScrollMemory';
+import { computeSegmentScrollOffset } from '../lib/segmentScroll';
+import { scrollPaneBy } from './useScrollMemory';
 import { getUiScale } from '../lib/uiPrefs';
 import type { SegmentFile } from '../lib/corpus';
 
@@ -167,18 +167,11 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
       // paragraph or verse block can leave the word covered even after its segment is centred.
       // Centring the word also leaves generous clearance above and below it.
       //
-      // The same measure-convert-animate as scrollToSegment (useSuttaReading), inlined for an
+      // The same measure-convert-scroll as scrollToSegment (useSuttaReading), inlined for an
       // arbitrary element: Settings > UI scale is CSS `zoom` on <html>, which getBoundingClientRect
-      // reports through and scroll writes don't, so the offset has to be divided by the scale —
-      // and animateScrollTop does that write by hand because iOS Safari mis-scales an animated
-      // scrollTo under zoom. It also aborts on the reader's first wheel or touch, so this can't
-      // fight a scroll the reader starts while it runs. cancelPendingRestore stops useScrollMemory's
-      // armed reapply from later clobbering where this lands.
-      cancelPendingRestore(container);
-      animateScrollTop(
-        container,
-        container.scrollTop + computeSegmentScrollOffset(containerRect, wordRect, 'center', getUiScale())
-      );
+      // reports through and scroll writes don't, so computeSegmentScrollOffset divides the offset
+      // by the scale.
+      scrollPaneBy(container, computeSegmentScrollOffset(containerRect, wordRect, 'center', getUiScale()));
     },
     [scrollRef, scrollToSegment]
   );
