@@ -24,12 +24,30 @@ sutamaya --local`, because the global setup seeds accounts before any server sta
 unmigrated database answers with `no such table: users`. A failed run uploads `playwright-report/`
 as an artifact.
 
-`e2e/` is in three parts. The files at the top level are the signed-out journeys, run on Chromium
-and WebKit. `e2e/sync/` holds the ones that need an account: syncing between two devices, and
-edits made with the network cut. `e2e/offline/` holds the few that need the real service worker.
-The last two are Chromium only — they are about data and caching rather than rendering, and each
-sync spec drives two browser contexts, so a second engine would double the slowest specs in the
-suite for no new information.
+`e2e/` is in three parts. The files at the top level are the signed-out journeys, run on Chromium,
+WebKit and at phone width. `e2e/sync/` holds the ones that need an account: syncing between two
+devices, and edits made with the network cut. `e2e/offline/` holds the few that need the real
+service worker. The last two are Chromium desktop only — they are about data and caching rather
+than rendering, and each sync spec drives two browser contexts, so a second engine would double the
+slowest specs in the suite for no new information.
+
+## Phone width
+
+The `mobile` project runs the same signed-out journeys in a 393px Chromium with touch. Below
+`LayoutContext`'s 860px breakpoint the library is a different app: one pane at a time rather than
+two, so a sutta list has to be opened from the tree, the Library/Lists toggle is out of reach while
+that list is showing, and search results land in the tree pane instead of the list pane. Three
+fixtures absorb that — `openSuttaList`, `openListsTab` and `searchResults` — so one spec reads the
+same either way rather than branching on the viewport.
+
+Chromium rather than mobile WebKit: what the project is for is layout and touch, and Playwright
+can't give iOS fidelity in either engine (see below), so the steadier touch emulation wins.
+
+A test profile starts with no `localStorage`, which is what makes a deep link to a group land on
+the tree: the pane is restored from the last one used, and there isn't one yet.
+
+`e2e/mobile/` holds the journeys that exist only at this width — leaving the tree for a list and
+coming back — and the desktop projects ignore that directory.
 
 ## The servers
 

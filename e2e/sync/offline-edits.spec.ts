@@ -1,20 +1,10 @@
-import { test, expect, setOffline, waitForLocalWrites, type Page } from '../fixtures';
+import { test, expect, setOffline, writeNote } from '../fixtures';
 import { signIn } from '../session';
 
 // Edits made with the network genuinely cut, and what happens when it comes back. These need no
 // service worker — nothing reloads while offline — so they run against the ordinary dev server
 // alongside the rest of the suite. Serving a page with the network down is the service worker's
 // job and is tested separately, in e2e/offline/.
-
-async function writeNote(page: Page, text: string) {
-  await page.keyboard.press('n');
-  const note = page.getByPlaceholder('Add a note — return to save');
-  await note.fill(text);
-  await note.press('Enter');
-  await expect(page.getByRole('button', { name: 'Edit note' })).toContainText(text);
-  await page.keyboard.press('Escape');
-  await waitForLocalWrites(page);
-}
 
 test('an edit made offline reaches the account once the network is back', async ({ page, browser, errors }) => {
   const account = await signIn(page);

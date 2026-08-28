@@ -160,36 +160,105 @@ export async function setOffline(page: Page, errors: PageErrors, offline: boolea
 }
 
 /**
- * Select a character range inside one rendered segment and end the gesture the way a real drag
- * does, so the highlight popup opens.
+ * Whether this page is narrower than LayoutContext's MOBILE_BREAKPOINT (860), where the library
+ * shows one pane at a time instead of two. The number is duplicated rather than imported: pulling
+ * it from web/src would drag React into the test process for one integer.
+ */
+function isMobile(page: Page): boolean {
+  return (page.viewportSize()?.width ?? Number.POSITIVE_INFINITY) < 860;
+}
+
+/**
+ * Opens a leaf group's sutta list, and returns the pane holding it.
+ *
+ * On mobile the addressed node is shown highlighted in the tree rather than opened — LibraryPage
+ * restores the last pane from localStorage and a test profile has none, so it starts on the tree.
+ * Tapping the row is what reveals its suttas, which is the step a reader takes too.
+ */
+export async function openSuttaList(page: Page, nodeId: string) {
+  await page.goto(`/browse/${nodeId}`);
+  if (isMobile(page)) await page.locator(`[data-node-id="${nodeId}"]`).click();
+  const listPane = page.locator('[data-component="ListPane"]');
+  await expect(listPane).toBeVisible();
+  return listPane;
+}
+
+/**
+ * Switches the library to its "Lists" tab.
+ *
+ * The Library/Lists toggle sits in the tree pane's header, so on mobile — showing the sutta list,
+ * and so not the tree — the list has to be backed out of first. Unconditional rather than
+ * "click Back if it's there": every caller is on the list pane at this point, and a missing Back
+ * button should fail rather than be shrugged off.
+ */
+export async function openListsTab(page: Page) {
+  if (isMobile(page)) await page.getByRole('button', { name: 'Back' }).click();
+  await page.getByRole('button', { name: 'Lists', exact: true }).click();
+}
+
+/** The pane a library search puts its hits in: the list pane on desktop, the tree pane on mobile. */
+export function searchResults(page: Page) {
+  return page.locator(isMobile(page) ? '[data-component="TreePane"]' : '[data-component="ListPane"]');
+}
+
+/** The reader's rendered text size, in px — how a typography preference is observed from outside. */
+export const readerFontSize = (page: Page) =>
+  page.locator('[data-seg="1"]').evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
+
+/** The reader's paper colour — how the theme is observed from outside. */
+export const readerBackground = (page: Page) =>
+  page.locator('[data-component="ReaderPage"]').evaluate((el) => getComputedStyle(el).backgroundColor);
+
+/**
+ * Writes a note on the sutta the reader is showing, and waits for it to reach the local mirror.
+ * Opened with the keyboard, saved with return — the same path the shortcut documents.
+ */
+export async function writeNote(page: Page, text: string) {
+  await page.keyboard.press('n');
+  const note = page.getByPlaceholder('Add a note — return to save');
+  await note.fill(text);
+  await note.press('Enter');
+  await expect(page.getByRole('button', { name: 'Edit note' })).toContainText(text);
+  await page.keyboard.press('Escape');
+  await waitForLocalWrites(page);
+}
+
+/** One end of a selection: a character offset into the stored text of one segment. */
+interface SelectionPoint {
+  seg: number;
+  offset: number;
+}
+
+/**
+ * Select a character range and end the gesture the way a real drag does, so the highlight popup
+ * opens. The two ends may sit in different segments.
  *
  * The reader derives highlight offsets from the DOM selection (`useHighlightPopup`), so this
  * drives the same Selection API the browser would — building the range from the text nodes the
- * segment actually rendered, rather than from `seg.en`, keeps it honest about what is on screen.
+ * segments actually rendered, rather than from `seg.en`, keeps it honest about what is on screen.
  */
-export async function selectWithinSegment(page: Page, segIndex: number, start: number, end: number) {
+async function selectRange(page: Page, start: SelectionPoint, end: SelectionPoint) {
   // The popup anchors to the selection's screen rect, so a selection made off-screen opens it
   // off-screen — which is not a state a real drag can produce.
-  await page.locator(`[data-seg="${segIndex}"]`).scrollIntoViewIfNeeded();
+  await page.locator(`[data-seg="${start.seg}"]`).scrollIntoViewIfNeeded();
 
   await page.evaluate(
-    ({ segIndex, start, end }) => {
-      const seg = document.querySelector(`[data-seg="${segIndex}"]`);
-      if (!seg) throw new Error(`no segment ${segIndex} on the page`);
+    ({ start, end }) => {
+      const locate = (segIndex: number, offset: number): [Node, number] => {
+        const seg = document.querySelector(`[data-seg="${segIndex}"]`);
+        if (!seg) throw new Error(`no segment ${segIndex} on the page`);
 
-      // Walk the segment's text nodes, skipping the ones marked as not part of the stored text
-      // (the list-item marker and the note asterisk), so offsets line up with what gets stored.
-      const walker = document.createTreeWalker(seg, NodeFilter.SHOW_TEXT, {
-        acceptNode: (node) =>
-          (node.parentElement as HTMLElement | null)?.closest('[data-seg-ignore]')
-            ? NodeFilter.FILTER_REJECT
-            : NodeFilter.FILTER_ACCEPT,
-      });
+        // Walk the segment's text nodes, skipping the ones marked as not part of the stored text
+        // (the list-item marker and the note asterisk), so offsets line up with what gets stored.
+        const walker = document.createTreeWalker(seg, NodeFilter.SHOW_TEXT, {
+          acceptNode: (node) =>
+            (node.parentElement as HTMLElement | null)?.closest('[data-seg-ignore]')
+              ? NodeFilter.FILTER_REJECT
+              : NodeFilter.FILTER_ACCEPT,
+        });
 
-      const locate = (offset: number): [Node, number] => {
         let seen = 0;
         let node: Node | null;
-        walker.currentNode = seg;
         while ((node = walker.nextNode())) {
           const len = node.textContent?.length ?? 0;
           if (seen + len >= offset) return [node, offset - seen];
@@ -199,18 +268,37 @@ export async function selectWithinSegment(page: Page, segIndex: number, start: n
       };
 
       const range = document.createRange();
-      range.setStart(...locate(start));
-      range.setEnd(...locate(end));
+      range.setStart(...locate(start.seg, start.offset));
+      range.setEnd(...locate(end.seg, end.offset));
 
       const sel = window.getSelection();
       sel?.removeAllRanges();
       sel?.addRange(range);
     },
-    { segIndex, start, end }
+    { start, end }
   );
 
   // The popup opens on the gesture ending, not on the selection changing.
   await page.locator('[data-segroot]').dispatchEvent('mouseup');
+}
+
+/** A selection inside one segment, by character offsets into that segment's stored text. */
+export async function selectWithinSegment(page: Page, segIndex: number, start: number, end: number) {
+  await selectRange(page, { seg: segIndex, offset: start }, { seg: segIndex, offset: end });
+}
+
+/**
+ * A selection running from one segment into a later one — the gesture that produces a highlight
+ * stored as several rows sharing a group id (`buildCrossSegmentRanges`).
+ */
+export async function selectAcrossSegments(
+  page: Page,
+  startSeg: number,
+  startOffset: number,
+  endSeg: number,
+  endOffset: number
+) {
+  await selectRange(page, { seg: startSeg, offset: startOffset }, { seg: endSeg, offset: endOffset });
 }
 
 /** Text of the segment as the reader rendered it, minus the bits that aren't part of `seg.en`. */

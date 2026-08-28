@@ -285,10 +285,12 @@ const SegmentRow = memo(function SegmentRow({
           p.c ? (
             <span
               key={j}
-              // Which highlight this span belongs to, by its first segment's doc id — the same id
-              // HighlightGroup's `key` carries. A jump from the gutter or highlights panel
-              // (useSuttaReading's scrollToSegment) centres on the highlighted text rather than on
-              // the whole, possibly much longer, segment.
+              // The doc id of the row this span was painted from: `${group}:${segment}`
+              // (lib/mirrorView.ts). A highlight spanning several segments therefore renders a
+              // different id in each one, sharing the group prefix — the first of them being what
+              // HighlightGroup's `key` carries (highlights.ts), and so what a jump from the gutter
+              // or highlights panel (useSuttaReading's scrollToSegment) matches, centring on the
+              // highlighted text rather than on the whole, possibly much longer, segment.
               data-hl-id={p.id}
               // No user-select:none here, unlike `.pw` and the note asterisk below: this span sits
               // inside the same selectable English prose a highlight drag crosses, including a drag

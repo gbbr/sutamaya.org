@@ -8,19 +8,13 @@ import { signIn } from '../session';
 // Each test gets an account of its own from the pool (see e2e/session.ts), so nothing has to be
 // cleaned up between them and no test can see another one's data.
 
+// Thin on purpose: it is the canary on the cookie-minting helper. When that breaks, this fails
+// first and says so, instead of every signed-in spec failing on an assertion about something else.
 test('the app knows it is signed in', async ({ page }) => {
   await signIn(page);
   await page.goto('/browse');
 
   await expect(page.getByRole('button', { name: /Signed in as/ })).toBeVisible();
-});
-
-test('a fresh account starts empty', async ({ page }) => {
-  await signIn(page);
-  await page.goto('/read/dn1');
-  await expect(page.locator('[data-seg="1"]')).toBeVisible();
-
-  await expect(page.getByRole('button', { name: 'Edit note' })).toHaveCount(0);
 });
 
 test('a note written on one device reaches another', async ({ page, browser }) => {

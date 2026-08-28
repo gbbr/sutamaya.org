@@ -1,13 +1,8 @@
-import { test, expect, type Page } from './fixtures';
+import { test, expect, readerBackground, readerFontSize as fontSizeOf } from './fixtures';
 
 // The reader's Display panel is where typography and theme live. Every one of these settings is
 // a preference rather than user data, so it belongs to the device and has to survive a reload.
-
-const fontSizeOf = (page: Page) =>
-  page.locator('[data-seg="1"]').evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
-
-const readerBackground = (page: Page) =>
-  page.locator('[data-component="ReaderPage"]').evaluate((el) => getComputedStyle(el).backgroundColor);
+// That it belongs to the device and *not* to the account is asserted in sync/prefs-per-device.
 
 test('@smoke text size and line height change the text and stick', async ({ page }) => {
   await page.goto('/read/dn1');

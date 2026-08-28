@@ -1,11 +1,11 @@
-import { test, expect, waitForLocalWrites } from './fixtures';
+import { test, expect, openListsTab, openSuttaList, waitForLocalWrites } from './fixtures';
 
 // A note is a discrete edit — Enter commits it — and it belongs to the sutta, so it shows up on
 // that sutta's row back in the library and in the synthesized "Notes" auto-list.
 
 test('a note written in the reader shows on the sutta row and in the Notes list', async ({ page }) => {
-  await page.goto('/browse/dn-silakkhandhavagga');
-  await page.locator('[data-component="ListPane"]').getByRole('button', { name: /The Divine Net/ }).click();
+  const listPane = await openSuttaList(page, 'dn-silakkhandhavagga');
+  await listPane.getByRole('button', { name: /The Divine Net/ }).click();
   await expect(page).toHaveURL(/\/read\/dn1/);
   // The reader binds its key handling on mount, so wait for the text before pressing anything.
   await expect(page.locator('[data-seg="1"]')).toBeVisible();
@@ -26,7 +26,7 @@ test('a note written in the reader shows on the sutta row and in the Notes list'
   await expect(page.locator('[data-component="ListPane"]')).toContainText('the sixty-two views');
 
   // And the sutta is now in the Notes auto-list, which is derived rather than stored.
-  await page.getByRole('button', { name: 'Lists', exact: true }).click();
+  await openListsTab(page);
   await page.getByRole('button', { name: /Notes/ }).click();
   await expect(page.locator('[data-component="ListPane"]')).toContainText('The Divine Net');
 });

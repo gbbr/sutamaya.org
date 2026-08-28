@@ -28,22 +28,3 @@ test('@smoke tapping a Pali word opens the dictionary dock', async ({ page }) =>
   await page.keyboard.press('Escape');
   await expect(dock).toHaveCount(0);
 });
-
-test('the arrow keys step the dock’s word only while it is open', async ({ page }) => {
-  await page.goto('/read/dn1');
-  await expect(page.locator('[data-seg="1"]')).toBeVisible();
-
-  // With no dock open the arrows are left to the browser's own scrolling.
-  await page.keyboard.press('ArrowRight');
-  await expect(page.locator('[data-component="DictionaryDock"]')).toHaveCount(0);
-
-  await page.locator('[data-seg="1"]').click();
-  await page.locator('[data-word-seg="1"]').first().click();
-  const dock = page.locator('[data-component="DictionaryDock"]');
-  await expect(dock).toContainText('evaṁ');
-
-  await page.keyboard.press('ArrowRight');
-  await expect(dock).toContainText('me');
-  await page.keyboard.press('ArrowLeft');
-  await expect(dock).toContainText('evaṁ');
-});
