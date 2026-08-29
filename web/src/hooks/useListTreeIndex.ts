@@ -60,7 +60,16 @@ export function useListTreeIndex(lists: ListDef[]) {
     [listGroupCounts, listMemberSets]
   );
 
+  // What a delete takes with it: every list nested underneath the row, and every distinct sutta at
+  // or below it. Both are the same recursive indexes the row's count badge reads, so the number in
+  // the confirmation and the number on the badge can't disagree. The delete has no undo, and the
+  // badge alone doesn't say what a group is hiding, so the prompt names it.
+  const deleteScopeFor = useCallback(
+    (l: ListDef) => ({ lists: listGroupCounts.get(l.id) ?? 0, suttas: listMemberSets.get(l.id)?.size ?? 0 }),
+    [listGroupCounts, listMemberSets]
+  );
+
   const topLevelLists = useMemo(() => lists.filter((l) => !l.parentId && !l.auto), [lists]);
 
-  return { listChildrenOf, listMemberSets, listGroupCounts, countFor, topLevelLists };
+  return { listChildrenOf, listMemberSets, listGroupCounts, countFor, deleteScopeFor, topLevelLists };
 }

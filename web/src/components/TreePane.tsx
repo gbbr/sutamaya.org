@@ -304,7 +304,7 @@ export function TreePane({
   const { activeIndex: searchActiveIndex, activeIndexRef: searchActiveIndexRef, moveBy: moveSearchActiveIndexBy, setRowRef: setHitRowRef } =
     useActiveHitIndex(query);
 
-  const { listChildrenOf, countFor, topLevelLists } = useListTreeIndex(lists);
+  const { listChildrenOf, countFor, deleteScopeFor, topLevelLists } = useListTreeIndex(lists);
 
   const autoLists = useMemo(
     () =>
@@ -544,8 +544,9 @@ export function TreePane({
       confirmDeleteId,
       onDelete: deleteList,
       onCancelDelete: cancelDeleteList,
+      deleteScopeFor,
     }),
-    [confirmDeleteId, deleteList, cancelDeleteList]
+    [confirmDeleteId, deleteList, cancelDeleteList, deleteScopeFor]
   );
   const draftInputRef = useCallback(
     (el: HTMLInputElement | null) => {
