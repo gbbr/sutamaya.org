@@ -27,6 +27,9 @@ export interface ListRowDeleteProps {
   confirmDeleteId: string | null;
   onDelete: (l: ListDef) => void;
   onCancelDelete: () => void;
+  // Lists nested underneath the row and distinct suttas at or below it — what the delete takes with
+  // it, named in the confirmation. See useListTreeIndex's deleteScopeFor.
+  deleteScopeFor: (l: ListDef) => { lists: number; suttas: number };
 }
 
 export interface ListRowDraftProps {
@@ -116,7 +119,7 @@ export const ListRow = memo(function ListRow({
 }) {
   const { menuOpenId, onToggleMenu, onMove, onAddChild, onStartEdit, onArmDelete } = menu;
   const { editingId, editDraft, onEditDraftChange, onCommitEdit, onCancelEdit } = edit;
-  const { confirmDeleteId, onDelete, onCancelDelete } = del;
+  const { confirmDeleteId, onDelete, onCancelDelete, deleteScopeFor } = del;
   const { creatingParentId, draft, onDraftChange, onDraftKey, draftInputRef, submittingParentId } = draftProps;
 
   const { mobile } = useLayout();
@@ -133,6 +136,33 @@ export const ListRow = memo(function ListRow({
   // group's last child and a line under the whole tree look identical while meaning different
   // parents.
   const landsInMe = myEdge === 'inside' || indicator?.insideId === list.id;
+
+  // What deleting this row would take with it, as its own line under the prompt — the delete has no
+  // undo, and nothing else on screen says what a collapsed group is holding. Only while the
+  // confirmation is up, and null for an empty row, which keeps the ordinary case on one line.
+  const confirming = confirmDeleteId === list.id;
+  const deleteScope = confirming ? deleteScopeFor(list) : null;
+  const deleteScopeText =
+    deleteScope &&
+    [
+      deleteScope.lists ? `${deleteScope.lists} ${deleteScope.lists === 1 ? 'list' : 'lists'}` : null,
+      deleteScope.suttas ? `${deleteScope.suttas} ${deleteScope.suttas === 1 ? 'sutta' : 'suttas'}` : null,
+    ]
+      .filter(Boolean)
+      .join(' · ');
+  const actions = (
+    <>
+      <button
+        onClick={() => onDelete(list)}
+        className="flex-none font-sans text-ui-sm font-semibold px-2 py-[3px] rounded border border-danger-text/40 text-danger-text hover:bg-danger-text/10"
+      >
+        Delete
+      </button>
+      <button onClick={onCancelDelete} className="flex-none font-sans text-ui-sm px-2 py-[3px] rounded border border-ink/[.18] text-ink-4 hover:bg-ink/[.08]">
+        Cancel
+      </button>
+    </>
+  );
 
   return (
     <div data-component="ListRow">
@@ -287,29 +317,32 @@ export const ListRow = memo(function ListRow({
           </button>
         )}
       </div>
-      {confirmDeleteId === list.id ? (
-        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: rowIndent(depth) + 11 }}>
+      {confirming ? (
+        <div data-component="DeleteConfirm" className="pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: rowIndent(depth) + 11 }}>
           {/* Two things keep the buttons on screen in a pane that can be dragged down to 250px
-              and indents another 16px per nesting level. `flex-1` gives the prompt a flex basis
+              and indents another 16px per nesting level. `flex-1` gives the text a flex basis
               of 0, so it contributes nothing to the line-breaking decision — the buttons stay on
               this line as long as they themselves fit, and a long name shrinks the truncating
               label rather than displacing them. `flex-wrap` covers the remaining case, where even
               the two buttons alone are wider than what's left: they drop to their own line
-              instead of being clipped by TreePane's `overflow-hidden`. */}
-          <span className="flex-1 min-w-0 flex items-baseline font-sans text-ui-sm text-ink-3">
-            <span className="flex-none">Delete&nbsp;"</span>
-            <span className="min-w-0 truncate">{list.label}</span>
-            <span className="flex-none">"?</span>
-          </span>
-          <button
-            onClick={() => onDelete(list)}
-            className="flex-none font-sans text-ui-sm font-semibold px-2 py-[3px] rounded border border-danger-text/40 text-danger-text hover:bg-danger-text/10"
-          >
-            Delete
-          </button>
-          <button onClick={onCancelDelete} className="flex-none font-sans text-ui-sm px-2 py-[3px] rounded border border-ink/[.18] text-ink-4 hover:bg-ink/[.08]">
-            Cancel
-          </button>
+              instead of being clipped by TreePane's `overflow-hidden`.
+
+              The buttons ride whichever line is last, so an empty row still confirms on one line
+              and only a row with something to lose grows to two. */}
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span className="flex-1 min-w-0 flex items-baseline font-sans text-ui-sm text-ink-3">
+              <span className="flex-none">Delete&nbsp;"</span>
+              <span className="min-w-0 truncate">{list.label}</span>
+              <span className="flex-none">"?</span>
+            </span>
+            {!deleteScopeText && actions}
+          </div>
+          {deleteScopeText && (
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 pt-[3px]">
+              <span className="flex-1 min-w-0 truncate font-sans text-ui-sm text-ink-3">{deleteScopeText}</span>
+              {actions}
+            </div>
+          )}
         </div>
       ) : (
         menuOpen &&

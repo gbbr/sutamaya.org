@@ -284,13 +284,24 @@ function switchToMyLists() {
   return userEvent.click(screen.getByRole('button', { name: 'Lists' }));
 }
 
-// The armed delete row's prompt, reassembled. It's split across spans so only the list's own
+// The armed delete row, whose two lines the helpers below read separately.
+function deleteConfirmBox() {
+  return screen.getByRole('button', { name: 'Cancel' }).closest('[data-component="DeleteConfirm"]') as HTMLElement;
+}
+
+// The second line, naming what the delete takes with it. Absent entirely when the row holds
+// nothing, which is what keeps an empty list confirming on a single line.
+function deleteScopeText() {
+  const lines = deleteConfirmBox().children;
+  return lines.length > 1 ? (lines[1].querySelector('span')?.textContent ?? '') : null;
+}
+
+// The first line, the prompt itself, reassembled. It's split across spans so only the list's own
 // label truncates (see ListRow), which puts it out of reach of a plain getByText — that matches
 // on an element's *direct* text children. The nbsp holding "Delete" to the opening quote is
 // normalized back to a plain space so the expectations below read normally.
 function deletePromptText() {
-  const row = screen.getByRole('button', { name: 'Cancel' }).parentElement as HTMLElement;
-  return (row.querySelector('span')?.textContent ?? '').replace(/ /g, ' ');
+  return (deleteConfirmBox().querySelector('span')?.textContent ?? '').replace(/ /g, ' ');
 }
 
 describe('My Lists tree', () => {
@@ -349,6 +360,8 @@ describe('My Lists tree', () => {
     await userEvent.click(within(row).getByLabelText('List options'));
     await userEvent.click(screen.getByLabelText('Delete'));
     expect(deletePromptText()).toBe('Delete "Read later"?');
+    // Empty, so the prompt stays a single line — nothing to warn about.
+    expect(deleteScopeText()).toBeNull();
     await userEvent.click(screen.getByRole('button', { name: 'Delete' }));
     expect(userData.removeList).toHaveBeenCalledWith('l2');
   });
@@ -372,6 +385,7 @@ describe('My Lists tree', () => {
     await userEvent.click(within(row).getByLabelText('List options'));
     await userEvent.click(screen.getByLabelText('Delete'));
     expect(deletePromptText()).toBe('Delete "Favorites"?');
+    expect(deleteScopeText()).toBe('1 sutta');
     await userEvent.click(screen.getByRole('button', { name: 'Delete' }));
     expect(userData.removeList).toHaveBeenCalledWith('l1');
   });
@@ -383,6 +397,9 @@ describe('My Lists tree', () => {
     await userEvent.click(within(row).getByLabelText('List options'));
     await userEvent.click(screen.getByLabelText('Delete'));
     expect(deletePromptText()).toBe('Delete "Suttas to study"?');
+    // The group's own row shows only the nested-list count, so the prompt is the one place the
+    // suttas going with it are named.
+    expect(deleteScopeText()).toBe('1 list · 1 sutta');
     await userEvent.click(screen.getByRole('button', { name: 'Delete' }));
     expect(userData.removeList).toHaveBeenCalledWith('g1');
   });
