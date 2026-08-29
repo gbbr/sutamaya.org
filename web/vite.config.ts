@@ -16,7 +16,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       // Versioned filename — see the note beside the <link rel="icon"> in index.html.
-      includeAssets: ['favicon-v2.svg'],
+      includeAssets: ['favicon-32-v3.png', 'favicon-16-v3.png'],
       // Off by default (the plugin's own default) since a dev-mode service worker can serve
       // stale responses and fight Vite's HMR. Opt in with PWA_DEV=1 when specifically testing
       // install/standalone behavior (e.g. via local.sutamaya.org — see docs/deploy.md "Testing on
