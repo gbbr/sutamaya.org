@@ -59,7 +59,6 @@ const userDataDefaults = {
   },
   renameList: async () => {},
   removeList: async () => {},
-  setListParent: async () => {},
   reorderLists: async () => {},
   reorderListItems: async () => {},
   toggleMembership: async () => {},

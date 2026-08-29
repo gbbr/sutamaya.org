@@ -57,7 +57,6 @@ const userDataDefaults: ReturnType<typeof useUserData> = {
   },
   renameList: async () => {},
   removeList: async () => {},
-  setListParent: async () => {},
   reorderLists: async () => {},
   reorderListItems: async () => {},
   toggleMembership: async () => {},

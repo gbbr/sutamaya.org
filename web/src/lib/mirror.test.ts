@@ -13,7 +13,6 @@ import {
   queueMembership,
   removeListRecord,
   renameListRecord,
-  setListParentRecord,
   queueSiblingOrder,
   setNoteRecord,
   syncCounts,
@@ -189,7 +188,8 @@ describe('local collapses', () => {
   it('tombstones a synced list sitting under a group deleted before its own create was sent', () => {
     let state = pulled(emptyMirror('u1'), 'l1');
     state = list(state, 'g1', null, 'group');
-    state = setListParentRecord(state, 'l1', 'g1');
+    // A drop into a group travels as that group's sibling order, which re-parents every id in it.
+    state = queueSiblingOrder(state, 'g1', ['l1']);
     state = removeListRecord(state, 'g1');
 
     // The group is this device's own invention and goes without trace, but the server holds `l1` —

@@ -13,7 +13,6 @@ import {
   removeListRecord,
   renameListRecord,
   queueSiblingOrder,
-  setListParentRecord,
   setNoteRecord,
   syncCounts,
   writeHighlightRecord,
@@ -73,7 +72,6 @@ interface UserDataState {
   createList: (label: string, parentId?: string | null, kind?: ListKind) => Promise<ListDef>;
   renameList: (id: string, label: string) => Promise<void>;
   removeList: (id: string) => Promise<void>;
-  setListParent: (id: string, parentId: string | null) => Promise<void>;
   reorderLists: (parentId: string | null, order: string[]) => Promise<void>;
   reorderListItems: (id: string, order: string[]) => Promise<void>;
   toggleMembership: (suttaId: string, listId: string) => Promise<void>;
@@ -102,7 +100,6 @@ const EMPTY: UserDataState = {
   },
   renameList: async () => {},
   removeList: async () => {},
-  setListParent: async () => {},
   reorderLists: async () => {},
   reorderListItems: async () => {},
   toggleMembership: async () => {},
@@ -356,13 +353,6 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     [mutate]
   );
 
-  const setListParent = useCallback(
-    async (id: string, parentId: string | null) => {
-      mutate((s) => setListParentRecord(s, id, parentId));
-    },
-    [mutate]
-  );
-
   const reorderLists = useCallback(
     async (parentId: string | null, order: string[]) => {
       // One operation for the whole gesture rather than a write per sibling (queueSiblingOrder). It
@@ -441,7 +431,6 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       createList,
       renameList,
       removeList,
-      setListParent,
       reorderLists,
       reorderListItems,
       toggleMembership,
@@ -465,7 +454,6 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       createList,
       renameList,
       removeList,
-      setListParent,
       reorderLists,
       reorderListItems,
       toggleMembership,
