@@ -128,6 +128,11 @@ export const ListRow = memo(function ListRow({
   const menuOpen = menuOpenId === list.id;
   const dragging = dragId === list.id;
   const myEdge = indicator?.id === list.id ? indicator.edge : null;
+  // Either this row is the group being nested into, or it is the group a sibling drop happens to
+  // land inside — the same destination either way, so the same tint. Without it, a line under a
+  // group's last child and a line under the whole tree look identical while meaning different
+  // parents.
+  const landsInMe = myEdge === 'inside' || indicator?.insideId === list.id;
 
   return (
     <div data-component="ListRow">
@@ -147,7 +152,7 @@ export const ListRow = memo(function ListRow({
         style={{
           paddingLeft: rowIndent(depth),
           opacity: dragging ? 0.4 : 1,
-          background: myEdge === 'inside' ? 'rgb(var(--accent2) / .16)' : undefined,
+          background: landsInMe ? 'rgb(var(--accent2) / .16)' : undefined,
           // 'bottom' recolours and thickens this row's permanent border-bottom rather than layering
           // a second line beside it. resolveDropIndicator has already normalized a 'before' target
           // to the previous row's bottom edge, so this row only handles its own. 'top' is the
@@ -160,6 +165,10 @@ export const ListRow = memo(function ListRow({
       >
         {reorderMode && (
           <span
+            // The drag surface, named so an end-to-end test can grab it: the gesture is the one
+            // part of reordering that only a real browser can exercise (jsdom reports every rect
+            // as 0x0), and this span carries no text or role to find it by.
+            data-drag-handle
             className="flex-none flex items-center justify-center text-ink-5 -my-[7px] -ml-1.5"
             style={{
               width: 36,

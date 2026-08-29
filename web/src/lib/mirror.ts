@@ -199,8 +199,8 @@ export function setListParentRecord(state: MirrorState, id: string, parentId: st
 // sibling, which exhausts the Worker's per-minute rate limit in a couple of gestures.
 //
 // `order` is the parent's full sibling sequence with the moved row already in place, and every id in
-// it is re-parented to `parentId` — which is what lets a cross-parent drop stay a single call rather
-// than a setListParent followed by a reorder (see planListDrop in lib/listTreeDrop.ts).
+// it is re-parented to `parentId` — which is what lets every drop in the tree, nesting into a group
+// included, be this one call (see planListDrop in lib/listTreeDrop.ts).
 //
 // Positions are applied locally so the tree renders the new order with no round trip, but without
 // marking the rows dirty: sibling order is not part of a record's conditional write, so dirtying

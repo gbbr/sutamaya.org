@@ -16,16 +16,16 @@ interface UseListTreeDragParams {
   topLevelLists: ListDef[];
   scrollRef: RefObject<HTMLElement | null>;
   setListExpanded: (updater: (x: Record<string, boolean>) => Record<string, boolean>) => void;
-  setListParent: (id: string, parentId: string | null) => Promise<void>;
   reorderLists: (parentId: string | null, order: string[]) => Promise<void>;
 }
 
 // Pointer Events drive the list-tree drag, mirroring ListPane's sutta-reorder drag, since HTML5
 // drag-and-drop doesn't fire reliably on touch browsers; the shared window-listener, rAF and
 // auto-scroll plumbing lives in usePointerDragSession. A list can nest other lists as well as
-// reorder among siblings: dropping on the inner half of a group's row nests it as a child, anywhere
-// else resolves to a sibling position (updateDropTarget below runs the two-pass hit-test).
-export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRef, setListExpanded, setListParent, reorderLists }: UseListTreeDragParams) {
+// reorder among siblings: dropping on the inner half of a group's row nests it as a child, the
+// blank space below the tree means the top level, and anywhere else resolves to a sibling position
+// (updateDropTarget below runs the hit-test).
+export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRef, setListExpanded, reorderLists }: UseListTreeDragParams) {
   const [reorderMode, setReorderMode] = useState(false);
   const [dragId, setDragId] = useState<string | null>(null);
   // The row/edge ListRow actually renders a highlight on — see resolveDropIndicator for why this
@@ -80,13 +80,14 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
         if (isDescendantOf(lists, l.id, draggedId)) invalid.add(l.id);
       }
 
-      const rows: DropRow[] = Array.from(rowElRefs.current.entries())
-        .filter(([id]) => !invalid.has(id))
-        .map(([id, el]) => {
-          const rect = el.getBoundingClientRect();
-          return { id, top: rect.top, bottom: rect.bottom, isGroup: lists.find((l) => l.id === id)?.kind === 'group' };
-        })
-        .sort((a, b) => a.top - b.top);
+      const rows: DropRow[] = [];
+      for (const [id, el] of rowElRefs.current.entries()) {
+        if (invalid.has(id)) continue;
+        const rect = el.getBoundingClientRect();
+        const list = lists.find((l) => l.id === id);
+        rows.push({ id, top: rect.top, bottom: rect.bottom, isGroup: list?.kind === 'group', parentId: list?.parentId ?? null });
+      }
+      rows.sort((a, b) => a.top - b.top);
 
       const target = resolveTreeDropTarget(y, rows);
       overIdRef.current = target?.id ?? null;
@@ -96,21 +97,18 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
     [lists]
   );
 
-  // planListDrop (lib/listTreeDrop.ts) decides what a drop does. A cross-parent 'before'/'after'
-  // drop needs only the single reorderLists call: that endpoint re-parents every id in the order it
-  // is given, so a separate setListParent first would add a round trip and a two-step flicker.
+  // planListDrop (lib/listTreeDrop.ts) decides what a drop does; every zone resolves to one
+  // reorderLists call, which re-parents every id in the order it is given as well as positioning
+  // them — so even a drop crossing into another parent is a single write with no two-step flicker.
   const commitDrop = useCallback(
     async (draggedId: string, target: ListDef, zone: DropZone) => {
       const plan = planListDrop(lists, draggedId, target, zone, listChildrenOf, topLevelLists);
       if (plan.type === 'invalid') return;
-      if (plan.type === 'reparent') {
-        if (!plan.alreadyParented) await setListParent(draggedId, plan.parentId);
-        setListExpanded((x) => ({ ...x, [plan.parentId]: true }));
-        return;
-      }
       await reorderLists(plan.parentId, plan.order);
+      // Dropped into a group: open it, so the row can be seen where it landed.
+      if (zone === 'inside') setListExpanded((x) => ({ ...x, [target.id]: true }));
     },
-    [lists, listChildrenOf, topLevelLists, setListParent, setListExpanded, reorderLists]
+    [lists, listChildrenOf, topLevelLists, setListExpanded, reorderLists]
   );
 
   const finishTreeDrag = useCallback(() => {

@@ -141,7 +141,6 @@ export function TreePane({
     renameList,
     removeList,
     reorderLists,
-    setListParent,
   } = useUserData();
   const { user } = useAuth();
   const { mobile, paneW } = useLayout();
@@ -378,7 +377,6 @@ export function TreePane({
     topLevelLists,
     scrollRef,
     setListExpanded,
-    setListParent,
     reorderLists,
   });
 
