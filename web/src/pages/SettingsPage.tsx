@@ -131,11 +131,11 @@ function SignInDivider() {
 // scroll/flash effect below.
 type ScrollTarget = 'offline' | 'auth';
 
-// Delegates to '/app', which RestoreLastLocation (App.tsx) already resolves to
+// Delegates to '/', which RestoreLastLocation (App.tsx) already resolves to
 // getLastLocation() ?? '/browse' — reusing that instead of duplicating the same fallback
 // chain here.
 function backToLastLocation() {
-  navigate('/app');
+  navigate('/');
 }
 
 // A short, coarse "how stale might this be" readout for the sync line below — exact-to-the-minute
@@ -365,7 +365,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
   return (
     <div data-component="SettingsPage" className="sc h-full bg-paper px-5 pt-10">
       <div className="w-full max-w-[540px] pb-10 mx-auto">
-        {/* Goes to '/app', which restores wherever the user actually was (see RestoreLastLocation
+        {/* Goes to '/', which restores wherever the user actually was (see RestoreLastLocation
             in App.tsx) rather than a fixed default — and, since it doesn't rely on genuine
             browser history the way navigate(-1) would, also works when there's no in-app
             history to go back to: a fresh tab/PWA relaunch landing straight on /settings, or a
@@ -469,7 +469,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                           return;
                         }
                         await logout();
-                        navigate('/app');
+                        navigate('/');
                       }}
                     >
                       {/* Centring these geometrically leaves them reading high against the

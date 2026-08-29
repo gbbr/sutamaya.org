@@ -329,7 +329,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   }
 
   function closeReader() {
-    closeToOrigin(suttaId, sutta ? `/browse/${sutta.node}/${suttaId}` : '/app');
+    closeToOrigin(suttaId, sutta ? `/browse/${sutta.node}/${suttaId}` : '/');
   }
 
   function onSearchOpenSutta(id: string) {

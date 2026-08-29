@@ -52,21 +52,33 @@ app.route('/api/auth', authRouter);
 app.route('/api/lists', listsRouter);
 app.route('/api/data', dataRouter);
 
-// The bare origin serves the static landing page rather than the app. The assets binding can't do
-// this on its own: `not_found_handling: "single-page-application"` maps "/" to the SPA shell at
-// /index.html, which is right for every other path and wrong for this one. So "/" is listed in
-// `assets.run_worker_first` (wrangler.jsonc) to reach the Worker at all, and answered here with
-// the landing asset's bytes under the "/" URL — a rewrite, not a redirect, so the page Google
-// indexes and the URL people share are the same one.
+// What the bare origin is depends on which hostname it was asked for. One Worker answers both
+// (see the two routes in wrangler.jsonc): the marketing site serves the static landing page,
+// and the app serves the app. "/" is listed in `assets.run_worker_first` so both reach the Worker
+// at all rather than being answered by the asset router.
 //
-// Cached for an hour rather than the immutable year the hashed assets get: the file's URL never
-// changes, so a copy in a CDN edge or a browser cache is the only thing standing between an edit
-// and the page people see.
+// Anything other than the apex is the app — `app.sutamaya.org` in production, and in local
+// development `localhost` and `app.local.sutamaya.org` (see docs/deploy.md). Naming the one
+// marketing hostname rather than the app's keeps every development host working without listing
+// them here.
+const MARKETING_HOSTS = new Set(['sutamaya.org', 'www.sutamaya.org', 'local.sutamaya.org']);
+
 app.get('/', async (c) => {
-  const res = await c.env.ASSETS.fetch(new URL('/landing.html', c.req.url));
+  const marketing = MARKETING_HOSTS.has(new URL(c.req.url).hostname);
+  // The landing asset's bytes under the "/" URL — a rewrite, not a redirect, so the page Google
+  // indexes and the URL people share are the same one. The app side asks for the shell by its
+  // real path for the same reason `html_handling` is "none": that is the path the service worker
+  // precached it under.
+  const res = await c.env.ASSETS.fetch(new URL(marketing ? '/landing.html' : '/index.html', c.req.url));
   return new Response(res.body, {
     status: res.status,
-    headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'public, max-age=3600' },
+    headers: {
+      'Content-Type': 'text/html; charset=utf-8',
+      // An hour rather than the immutable year the hashed assets get: neither file's URL ever
+      // changes, so a copy in a CDN edge or a browser cache is the only thing standing between an
+      // edit and the page people see.
+      'Cache-Control': 'public, max-age=3600',
+    },
   });
 });
 

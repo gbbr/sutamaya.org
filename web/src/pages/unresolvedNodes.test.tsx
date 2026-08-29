@@ -159,7 +159,7 @@ describe('an id that no longer resolves to anything', () => {
   it('says so for a /read/ link naming a sutta this corpus does not have', async () => {
     // A shared link with a typo, or a bookmark from before a corpus refresh renamed the uid. The
     // reader used to sit on its "Loading…" placeholder for good: no title, no close button, no
-    // keyboard way out — and /app restores the last location, so relaunching came straight back
+    // keyboard way out — and / restores the last location, so relaunching came straight back
     // to it.
     renderApp('/read/dn9999');
 

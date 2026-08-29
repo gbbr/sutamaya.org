@@ -38,8 +38,8 @@ describe('asset vs API routing', () => {
 
   // The service worker precaches the shell under this exact path and serves it for every in-app
   // navigation, so /index.html has to answer with the shell and not redirect. Cloudflare's default
-  // `html_handling` redirects it to '/' — the landing page — which the precache would then store
-  // as the shell, leaving the app rendering the landing page on every device that has the worker.
+  // `html_handling` redirects it to '/', whose meaning depends on the hostname it was asked for —
+  // and the precache would store whatever came back as the shell.
   it('serves the app shell at /index.html rather than redirecting to /', async () => {
     const res = await SELF.fetch('https://x/index.html', { redirect: 'manual' });
     expect(res.status).toBe(200);
@@ -48,23 +48,33 @@ describe('asset vs API routing', () => {
     expect(await res.text()).toBe(await shell.text());
   });
 
-  // '/' is the one path that must NOT get the SPA shell — it is the static landing page, the only
-  // page a search engine can read without rendering the app. Two things have to hold for that, and
-  // only one of them is in this file's code: wrangler.jsonc has to list '/' in `run_worker_first`
-  // (without it the asset router answers first and `not_found_handling` hands back index.html),
-  // and index.js's route has to fetch landing.html from the binding. Either one regressing puts
-  // the app shell back at the origin's front door, where nothing but JavaScript is indexable.
+  // '/' means one thing on the marketing hostname and another on the app's, which is the whole
+  // point of running them as separate origins: the landing page has to stay outside the installed
+  // app's scope, and a manifest cannot exclude a path. Two things have to hold for the marketing
+  // side, and only one of them is in this file's code: wrangler.jsonc has to list '/' in
+  // `run_worker_first` (without it the asset router answers first and `not_found_handling` hands
+  // back index.html), and index.js's route has to fetch landing.html from the binding. Either one
+  // regressing puts the app shell at the origin's front door, where nothing but JavaScript is
+  // indexable.
   //
-  // Asserted on the two things that hold whether web/dist is a real build or the config's
-  // placeholders: the Cache-Control header, which only the Worker route sets, and the body being
-  // a different document from the shell. Both regressions collapse the two into one response.
-  it('serves the static landing page at /, not the SPA shell', async () => {
-    const res = await SELF.fetch('https://x/');
+  // Asserted on what holds whether web/dist is a real build or the config's placeholders: the
+  // Cache-Control header, which only the Worker route sets, and whether the body is the same
+  // document as the shell.
+  it('serves the static landing page at / on the marketing hostname', async () => {
+    const res = await SELF.fetch('https://sutamaya.org/');
     expect(res.status).toBe(200);
     expect(res.headers.get('content-type')).toMatch(/text\/html/);
     expect(res.headers.get('cache-control')).toMatch(/max-age=3600/);
 
-    const shell = await SELF.fetch('https://x/read/dn16');
+    const shell = await SELF.fetch('https://sutamaya.org/read/dn16');
     expect(await res.text()).not.toBe(await shell.text());
+  });
+
+  it('serves the app shell at / on every other hostname', async () => {
+    const res = await SELF.fetch('https://app.sutamaya.org/');
+    expect(res.status).toBe(200);
+
+    const shell = await SELF.fetch('https://app.sutamaya.org/read/dn16');
+    expect(await res.text()).toBe(await shell.text());
   });
 });

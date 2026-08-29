@@ -48,7 +48,7 @@ function sessionCookieFrom(res) {
 
 // `WEB_ORIGIN` is pinned rather than taken from .dev.vars so the redirect assertions don't depend
 // on local config.
-const OAUTH_ENV = { ...env, WEB_ORIGIN: 'https://sutamaya.org', GOOGLE_CLIENT_SECRET: 'client-secret' };
+const OAUTH_ENV = { ...env, WEB_ORIGIN: 'https://app.sutamaya.org', GOOGLE_CLIENT_SECRET: 'client-secret' };
 
 // Drives the whole Google round trip the way a browser does — start, then callback carrying both
 // the state and the nonce cookie the start handed out. Sign-in has no other entry point now, so
@@ -124,7 +124,7 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
     const { default: app } = await import('../index.js');
     const signIn = await signInWithGoogle(app, mockPayload({ email_verified: false }));
 
-    expect(signIn.headers.get('Location')).toBe('https://sutamaya.org/settings?auth_error=1');
+    expect(signIn.headers.get('Location')).toBe('https://app.sutamaya.org/settings?auth_error=1');
     expect(sessionCookieFrom(signIn)).toBeUndefined();
 
     const me = await app.request('/api/auth/me', {}, OAUTH_ENV);
@@ -143,7 +143,7 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
       { headers: { Cookie: nonceCookieFrom(start) } },
       OAUTH_ENV
     );
-    expect(res.headers.get('Location')).toBe('https://sutamaya.org/settings?auth_error=1');
+    expect(res.headers.get('Location')).toBe('https://app.sutamaya.org/settings?auth_error=1');
     expect(sessionCookieFrom(res)).toBeUndefined();
   });
 
@@ -175,7 +175,7 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
       expect(res.status).toBe(302);
       const location = new URL(res.headers.get('Location'));
       expect(location.origin + location.pathname).toBe('https://accounts.google.com/o/oauth2/v2/auth');
-      expect(location.searchParams.get('redirect_uri')).toBe('https://sutamaya.org/api/auth/google/callback');
+      expect(location.searchParams.get('redirect_uri')).toBe('https://app.sutamaya.org/api/auth/google/callback');
       expect(location.searchParams.get('state')).toBeTruthy();
       expect(nonceCookieFrom(res)).toBeTruthy();
     });
@@ -191,7 +191,7 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
         { headers: { Cookie: nonce } },
         OAUTH_ENV
       );
-      expect(res.headers.get('Location')).toBe('https://sutamaya.org/app');
+      expect(res.headers.get('Location')).toBe('https://app.sutamaya.org/');
     });
 
     it('completes the round trip: exchanges the code, sets a session, returns to the app', async () => {
@@ -208,7 +208,7 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
       );
 
       expect(res.status).toBe(302);
-      expect(res.headers.get('Location')).toBe('https://sutamaya.org/browse/dn/dn1');
+      expect(res.headers.get('Location')).toBe('https://app.sutamaya.org/browse/dn/dn1');
 
       // The code went to Google's token endpoint with the client secret and the same redirect URI.
       expect(fetchMock).toHaveBeenCalledTimes(1);
@@ -218,7 +218,7 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
       expect(posted.get('code')).toBe('auth-code');
       expect(posted.get('client_secret')).toBe('client-secret');
       expect(posted.get('grant_type')).toBe('authorization_code');
-      expect(posted.get('redirect_uri')).toBe('https://sutamaya.org/api/auth/google/callback');
+      expect(posted.get('redirect_uri')).toBe('https://app.sutamaya.org/api/auth/google/callback');
 
       const session = sessionCookieFrom(res);
       expect(session).toBeTruthy();
@@ -269,7 +269,7 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
         OAUTH_ENV
       );
 
-      expect(res.headers.get('Location')).toBe('https://sutamaya.org/settings?auth_error=1');
+      expect(res.headers.get('Location')).toBe('https://app.sutamaya.org/settings?auth_error=1');
       expect(sessionCookieFrom(res)).toBeUndefined();
       expect(globalThis.fetch).not.toHaveBeenCalled();
     });
@@ -285,7 +285,7 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
         OAUTH_ENV
       );
 
-      expect(res.headers.get('Location')).toBe('https://sutamaya.org/settings?auth_error=1');
+      expect(res.headers.get('Location')).toBe('https://app.sutamaya.org/settings?auth_error=1');
       expect(globalThis.fetch).not.toHaveBeenCalled();
     });
 
@@ -299,7 +299,7 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
         OAUTH_ENV
       );
 
-      expect(res.headers.get('Location')).toBe('https://sutamaya.org/read/dn1?auth_error=1');
+      expect(res.headers.get('Location')).toBe('https://app.sutamaya.org/read/dn1?auth_error=1');
       expect(sessionCookieFrom(res)).toBeUndefined();
     });
 
@@ -314,14 +314,14 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
         OAUTH_ENV
       );
 
-      expect(res.headers.get('Location')).toBe('https://sutamaya.org/settings?auth_error=1');
+      expect(res.headers.get('Location')).toBe('https://app.sutamaya.org/settings?auth_error=1');
       expect(sessionCookieFrom(res)).toBeUndefined();
     });
 
     it('redirects with an error rather than starting a flow it cannot finish, when unconfigured', async () => {
       const { default: app } = await import('../index.js');
       const res = await app.request('/api/auth/google/start', {}, { ...OAUTH_ENV, GOOGLE_CLIENT_SECRET: '' });
-      expect(res.headers.get('Location')).toBe('https://sutamaya.org/settings?auth_error=1');
+      expect(res.headers.get('Location')).toBe('https://app.sutamaya.org/settings?auth_error=1');
     });
   });
 
