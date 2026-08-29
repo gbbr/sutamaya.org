@@ -36,6 +36,18 @@ describe('asset vs API routing', () => {
     expect(res.headers.get('content-type')).toMatch(/text\/html/);
   });
 
+  // The service worker precaches the shell under this exact path and serves it for every in-app
+  // navigation, so /index.html has to answer with the shell and not redirect. Cloudflare's default
+  // `html_handling` redirects it to '/' — the landing page — which the precache would then store
+  // as the shell, leaving the app rendering the landing page on every device that has the worker.
+  it('serves the app shell at /index.html rather than redirecting to /', async () => {
+    const res = await SELF.fetch('https://x/index.html', { redirect: 'manual' });
+    expect(res.status).toBe(200);
+
+    const shell = await SELF.fetch('https://x/read/dn16');
+    expect(await res.text()).toBe(await shell.text());
+  });
+
   // '/' is the one path that must NOT get the SPA shell — it is the static landing page, the only
   // page a search engine can read without rendering the app. Two things have to hold for that, and
   // only one of them is in this file's code: wrangler.jsonc has to list '/' in `run_worker_first`

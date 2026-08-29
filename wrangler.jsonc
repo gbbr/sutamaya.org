@@ -11,6 +11,12 @@
     "directory": "./web/dist",
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
+    // Asset paths are matched exactly. The default ("auto-trailing-slash") instead redirects
+    // /index.html to /, which here is the landing page — and the service worker precaches the app
+    // shell *by that path*, so it would follow the redirect and store the landing page as the
+    // shell. Every in-app navigation then renders the landing page, on every device that has
+    // installed the worker, until its next revision.
+    "html_handling": "none",
     // "/" is here so the Worker can answer the bare origin with the landing page instead of the
     // SPA shell `not_found_handling` would serve — see the route in worker/src/index.js. Every
     // other path still goes straight to the asset router without invoking the Worker.
