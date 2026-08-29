@@ -19,7 +19,7 @@ let returned = true; // the very first load of the app is a return by this defin
 let nextIsReturn = false;
 
 // Marks the *next* navigate() as a return even though it's a fresh history entry. For the two
-// redirects that continue the load the user already started ("/" restoring the last location, and
+// redirects that continue the load the user already started ("/app" restoring the last location, and
 // a bare-uid link resolving to /read/:id — both in App.tsx) rather than choosing a new place to
 // go. @reach/router reports every navigate() as "PUSH", `replace: true` included, so there's
 // nothing in the navigation itself to tell those apart from a real one.

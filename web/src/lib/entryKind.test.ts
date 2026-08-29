@@ -25,7 +25,7 @@ describe('entryKind', () => {
     navigate('/read/dn2');
     expect(enteredByReturn()).toBe(false);
 
-    // The redirects that finish the load the user already started ("/" restoring the last
+    // The redirects that finish the load the user already started ("/app" restoring the last
     // location, a bare-uid link resolving to /read/:id) opt back in explicitly, since a
     // `replace: true` navigate is indistinguishable from any other on the way through.
     markReturnNavigation();
