@@ -1,7 +1,7 @@
 import { globalHistory } from '@reach/router';
 import { LAST_LOCATION_KEY } from './storageKeys';
 
-// Lets `/` — a fresh tab, or a PWA relaunched from its home-screen icon — restore whatever screen
+// Lets `/app` — a fresh tab, or a PWA relaunched from its home-screen icon — restore whatever screen
 // the user was last on instead of bouncing to /browse/dn. `globalHistory.listen` sees every
 // navigate() call in the app, so this needs no per-page wiring.
 

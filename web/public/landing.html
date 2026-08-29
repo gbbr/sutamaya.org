@@ -26,6 +26,19 @@
     <meta name="theme-color" content="#FBF9F5" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#171513" media="(prefers-color-scheme: dark)" />
 
+    <!-- The only script on the page, and the one thing here that isn't static markup. The web app
+         manifest sets no `scope`, so it defaults to "/" and this page falls inside the installed
+         app — which is what makes Chrome offer "Open in app" on the landing page and then open
+         *this* page in the app window, a dead end with no way into the app. Narrowing the scope
+         isn't an option: the app's routes are /browse, /read, /settings and /help, all of which
+         would drop out of the app window with it. So the page sends itself to /app whenever it
+         finds it is running installed rather than in a browser tab. -->
+    <script>
+      if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+        location.replace('/app');
+      }
+    </script>
+
     <!-- What a link to the site looks like when it is pasted into a chat, a forum or a social
          post. Without these it renders as a bare URL with no title or image. -->
     <meta property="og:type" content="website" />
