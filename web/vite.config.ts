@@ -15,8 +15,11 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      // Versioned filename — see the note beside the <link rel="icon"> in index.html.
-      includeAssets: ['favicon-32-v3.png', 'favicon-16-v3.png'],
+      // The favicons carry a versioned filename — see the note beside the <link rel="icon"> in
+      // index.html. leaf.png is the wordmark's leaf on the landing page, which is cached offline
+      // (see the "landing" runtime rule below) and would otherwise render as a broken image
+      // there; it is a few KB, unlike the page's screenshots, which stay uncached.
+      includeAssets: ['favicon-32-v3.png', 'favicon-16-v3.png', 'landing/leaf.png'],
       // Off by default (the plugin's own default) since a dev-mode service worker can serve
       // stale responses and fight Vite's HMR. Opt in with PWA_DEV=1 when specifically testing
       // install/standalone behavior (e.g. via local.sutamaya.org — see docs/deploy.md "Testing on
