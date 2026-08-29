@@ -8,7 +8,8 @@
   It duplicates the app's colours, wordmark and screenshots rather than importing them: nothing
   here is part of the Vite graph, so there is no build step to resolve a token or hash an asset
   name. The screenshots in /landing/ are copies of the ones web/src/assets/help/ ships to the
-  help page, and have to be re-copied when those are recaptured.
+  help page, and have to be re-copied when those are recaptured — except lists-mobile.webp,
+  which is captured for this page alone and has no counterpart there.
 -->
 <html lang="en">
   <head>
@@ -157,6 +158,8 @@
       .lede { font-size: clamp(17px, 2.4vw, 20px); color: rgb(var(--ink-2)); margin: 0 0 32px; }
       .cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
       .fineprint { font-size: 14px; color: rgb(var(--ink-3)); margin: 18px 0 0; }
+      .watch { font-size: 15px; margin: 18px 0 0; }
+      .watch a { color: rgb(var(--accent-text)); }
 
       /* ---- features ---- */
       .feature {
@@ -252,6 +255,11 @@
         <div class="cta">
           <a class="btn" href="/app">Open the app</a>
         </div>
+        <!-- The walkthrough is on YouTube and stays there: a link costs the page nothing, where
+             an embedded player would put YouTube's own chrome in the middle of the layout. -->
+        <p class="watch">
+          <a href="https://www.youtube.com/watch?v=teNMmoVf5Y0">Watch a 4-minute walkthrough</a>
+        </p>
         <!-- Every screenshot below is a phone, so the breadth is stated here in words. -->
         <p class="fineprint">
           Works in any browser — phone, tablet or desktop.
