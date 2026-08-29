@@ -20,7 +20,8 @@
       content="An offline reader for the Pali suttas: browse the whole canon, keep lists, highlight passages, take notes, and tap any word for a dictionary. Synced across your devices."
     />
     <link rel="canonical" href="https://sutamaya.org/" />
-    <link rel="icon" href="/favicon-v2.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32-v3.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16-v3.png" />
     <meta name="theme-color" content="#FBF9F5" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#171513" media="(prefers-color-scheme: dark)" />
 
@@ -121,14 +122,21 @@
         display: flex; align-items: center; justify-content: space-between;
         padding: 22px 0;
       }
-      /* Same wordmark the app's library header draws — see TreePane.tsx. */
+      /* Same wordmark the app's library header draws — see TreePane.tsx — with the leaf added
+         alongside it. The leaf is this page only: the app's own header has the whole chrome
+         around it to say where you are, whereas this page is where someone meets the name for
+         the first time. */
       .mark {
+        display: flex; align-items: center; gap: 10px;
         font-family: Newsreader, Georgia, serif;
         font-size: 27px;
         font-weight: 600;
         letter-spacing: -.01em;
         color: rgb(var(--ink));
       }
+      /* Nudged up a touch: the wordmark is all lowercase, so its optical centre sits above the
+         line box's, and a leaf centred on the box reads as hanging below the word. */
+      .mark img { width: 30px; height: 30px; margin-top: -3px; }
       .btn {
         display: inline-block; text-decoration: none;
         background: rgb(var(--accent)); color: #fff;
@@ -230,7 +238,7 @@
       <!-- The button here isn't the hero's CTA repeated: it's the way a reader who already uses
            the app gets past this page, which is the only reason they'd be on it. -->
       <header>
-        <div class="mark">sutamaya</div>
+        <div class="mark"><img src="/landing/leaf.png" width="30" height="30" alt="" />sutamaya</div>
         <a class="btn btn-sm" href="/app">Open the app</a>
       </header>
 

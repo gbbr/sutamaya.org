@@ -16,9 +16,12 @@
     <!-- The `-vN` suffix is the only thing that gets a new tab icon onto a device that already
          has one: the service worker precaches this path and the runtime rules cache it for a
          year, so overwriting the file in place changes nothing until that lapses. Changing the
-         artwork means bumping the suffix and renaming the file, here and in vite.config.ts's
-         `includeAssets`. -->
-    <link rel="icon" href="/favicon-v2.svg" type="image/svg+xml" />
+         artwork means bumping the suffix and renaming the files, here, in landing.html and in
+         vite.config.ts's `includeAssets`. Two sizes rather than one scalable file: the mark is a
+         painted leaf, and downscaling it to 16px is a lossy enough step that it's worth shipping
+         a copy resampled for that size instead of leaving it to the browser. -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32-v3.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16-v3.png" />
     <!-- Cloudflare Web Analytics — aggregate visit/pageview counts only (cookie-less, no
          personal data). Manually registered against the sutamaya.org site tag in the Cloudflare
          dashboard, not tied to any DNS/proxy change. Sees SPA route changes automatically (it
