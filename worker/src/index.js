@@ -57,11 +57,15 @@ app.route('/api/data', dataRouter);
 // and the app serves the app. "/" is listed in `assets.run_worker_first` so both reach the Worker
 // at all rather than being answered by the asset router.
 //
-// Anything other than the apex is the app — `app.sutamaya.org` in production, and in local
-// development `localhost` and `app.local.sutamaya.org` (see docs/deploy.md). Naming the one
-// marketing hostname rather than the app's keeps every development host working without listing
-// them here.
-const MARKETING_HOSTS = new Set(['sutamaya.org', 'www.sutamaya.org', 'local.sutamaya.org']);
+// Anything other than these is the app — `app.sutamaya.org` in production, and in local
+// development `localhost` and `app.local.sutamaya.org` (see docs/deploy.md). Naming the marketing
+// hostnames rather than the app's keeps every development host working without listing them here.
+// Each maps to where its app lives, for the redirect below.
+const MARKETING_HOSTS = new Map([
+  ['sutamaya.org', 'https://app.sutamaya.org'],
+  ['www.sutamaya.org', 'https://app.sutamaya.org'],
+  ['local.sutamaya.org', 'https://app.local.sutamaya.org'],
+]);
 
 app.get('/', async (c) => {
   const marketing = MARKETING_HOSTS.has(new URL(c.req.url).hostname);
@@ -80,6 +84,38 @@ app.get('/', async (c) => {
       'Cache-Control': 'public, max-age=3600',
     },
   });
+});
+
+// The app's own paths, kept off the marketing hostname. The assets binding backs both hostnames,
+// so without this `sutamaya.org/browse/dn` would serve the app there too — signed out, since the
+// session cookie belongs to the app's origin, and with its API calls cross-origin. Worse, a
+// service worker registering on the marketing hostname would precache the shell and serve it at
+// "/", putting the app back over the landing page: the exact failure the two hostnames exist to
+// prevent.
+//
+// Listing sw.js, registerSW.js and the manifest is what makes that impossible rather than merely
+// unlikely — an install needs all three, and none of them resolves here. The page paths are
+// listed so an old link still arrives somewhere useful, one redirect later.
+//
+// Every path here is also in `assets.run_worker_first` (wrangler.jsonc); without that the asset
+// router answers first and the Worker never sees them. Which means the app's side has to serve
+// them from the binding by hand, since a Worker that runs first is the whole response.
+const APP_PATHS = [
+  '/index.html',
+  '/sw.js',
+  '/registerSW.js',
+  '/manifest.webmanifest',
+  '/browse/*',
+  '/read/*',
+  '/settings',
+  '/help',
+];
+
+app.on(['GET', 'HEAD'], APP_PATHS, async (c) => {
+  const url = new URL(c.req.url);
+  const appOrigin = MARKETING_HOSTS.get(url.hostname);
+  if (appOrigin) return c.redirect(`${appOrigin}${url.pathname}${url.search}`, 301);
+  return c.env.ASSETS.fetch(c.req.raw);
 });
 
 // Every error body is `{error: <snake_case code>}`. Nothing outside the sign-in form displays one —
