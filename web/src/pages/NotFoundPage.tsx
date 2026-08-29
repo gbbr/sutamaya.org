@@ -10,7 +10,7 @@ export function NotFoundPage(_props: RouteComponentProps) {
       <div className="font-serif text-ui-xl text-ink-2">This page doesn't exist.</div>
       <button
         className="font-sans text-ui-md px-4 py-2 rounded-md border border-ink/25 hover:bg-ink/[.06]"
-        onClick={() => navigate('/app')}
+        onClick={() => navigate('/')}
       >
         Back to the library
       </button>

@@ -1,6 +1,7 @@
-# /api/* is user data behind a session cookie — nothing there is a page, and a crawler asking for
-# it only burns rate limit. Everything else is public and safe to index, though only "/" is static
-# HTML; the rest is the SPA, which a crawler has to render JavaScript to read.
+# Served on both hostnames, the marketing site and the app. /api/* is user data behind a session
+# cookie — nothing there is a page, and a crawler asking for it only burns rate limit. Everything
+# else is public and safe to index, though the landing page is the only static HTML; the rest is
+# the SPA, which a crawler has to render JavaScript to read.
 User-agent: *
 Allow: /
 Disallow: /api/

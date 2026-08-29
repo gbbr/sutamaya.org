@@ -2,24 +2,32 @@
   "name": "sutamaya",
   "main": "./worker/src/index.js",
   "compatibility_date": "2025-10-11",
-  // Cutover lives here rather than in the dashboard so it's diffable and repeatable. Cloudflare
-  // creates and manages the apex DNS record and its certificate; the Google A/AAAA records this
-  // replaces must be deleted first (they're recorded in the migration plan — restoring them is
-  // the rollback). Takes effect on the next `wrangler deploy`, not before.
-  "routes": [{ "pattern": "sutamaya.org", "custom_domain": true }],
+  // Two hostnames, one Worker. `sutamaya.org` is the marketing site and serves exactly one page,
+  // the static landing page; `app.sutamaya.org` is the app and the API. The split is what keeps
+  // the two apart in the browser as well as on the server: a web app manifest's scope cannot
+  // exclude a path, so while the landing page shared an origin with the app it sat inside the
+  // installed app's scope, and Chrome offered "Open in app" on it and then opened that page in
+  // the app window — a dead end. On its own hostname it is simply outside the app.
+  //
+  // Cloudflare creates and manages both DNS records and their certificates. Takes effect on the
+  // next `wrangler deploy`, not before.
+  "routes": [
+    { "pattern": "sutamaya.org", "custom_domain": true },
+    { "pattern": "app.sutamaya.org", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./web/dist",
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
     // Asset paths are matched exactly. The default ("auto-trailing-slash") instead redirects
-    // /index.html to /, which here is the landing page — and the service worker precaches the app
-    // shell *by that path*, so it would follow the redirect and store the landing page as the
-    // shell. Every in-app navigation then renders the landing page, on every device that has
-    // installed the worker, until its next revision.
+    // /index.html to /, and the service worker precaches the app shell *by that path* — so the
+    // shell would be stored under whatever "/" happens to resolve to on the hostname it was
+    // fetched from. Keeping the path direct removes the question.
     "html_handling": "none",
-    // "/" is here so the Worker can answer the bare origin with the landing page instead of the
-    // SPA shell `not_found_handling` would serve — see the route in worker/src/index.js. Every
-    // other path still goes straight to the asset router without invoking the Worker.
+    // "/" is here so the Worker sees the bare origin on both hostnames and can answer with the
+    // landing page or the app shell depending on which one it is — see the route in
+    // worker/src/index.js. Every other path still goes straight to the asset router without
+    // invoking the Worker.
     "run_worker_first": ["/api/*", "/"]
   },
   "d1_databases": [
@@ -46,7 +54,9 @@
   // Sign-in codes go out through Resend (`RESEND_API_KEY`, a Worker secret) rather than
   // Cloudflare's own Email Sending, which needs a Workers Paid plan — see docs/deploy.md.
   "vars": {
-    "WEB_ORIGIN": "https://sutamaya.org",
+    // The app's own origin, not the marketing site's: this is what the OAuth flow builds its
+    // redirect URI and return URL from, and the app never runs on the apex.
+    "WEB_ORIGIN": "https://app.sutamaya.org",
     "GOOGLE_CLIENT_ID": "45956701911-0a93js1du42ia6vtno0n4bh36crkn5f6.apps.googleusercontent.com",
     "MAIL_FROM": "no-reply@sutamaya.org"
   },

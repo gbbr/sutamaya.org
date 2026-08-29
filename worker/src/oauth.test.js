@@ -14,7 +14,7 @@ import {
 } from './oauth.js';
 
 const SECRET = 'test-secret-not-for-prod';
-const WEB_ORIGIN = 'https://sutamaya.org';
+const WEB_ORIGIN = 'https://app.sutamaya.org';
 
 afterEach(() => {
   vi.useRealTimers();
@@ -63,7 +63,7 @@ describe('safeReturnPath', () => {
   });
 
   // The open-redirect cases: anything that would send the browser off our own origin collapses
-  // to '/app', since this value arrives from a query parameter the attacker controls.
+  // to '/', since this value arrives from a query parameter the attacker controls.
   it.each([
     'https://evil.example/phish',
     '//evil.example/phish',
@@ -74,7 +74,7 @@ describe('safeReturnPath', () => {
     null,
     42,
   ])('refuses %o', (candidate) => {
-    expect(safeReturnPath(candidate, WEB_ORIGIN)).toBe('/app');
+    expect(safeReturnPath(candidate, WEB_ORIGIN)).toBe('/');
   });
 });
 
@@ -93,7 +93,7 @@ describe('withAuthError', () => {
 });
 
 describe('resolveWebOrigin', () => {
-  const DEV = 'http://localhost:5173, https://local.sutamaya.org';
+  const DEV = 'http://localhost:5173, https://app.local.sutamaya.org';
 
   it('returns the only configured origin whatever the candidate says', () => {
     expect(resolveWebOrigin(WEB_ORIGIN, 'https://evil.example/settings')).toBe(WEB_ORIGIN);
@@ -101,24 +101,24 @@ describe('resolveWebOrigin', () => {
   });
 
   it('picks the configured origin the candidate URL is on', () => {
-    expect(resolveWebOrigin(DEV, 'https://local.sutamaya.org/browse/dn')).toBe('https://local.sutamaya.org');
+    expect(resolveWebOrigin(DEV, 'https://app.local.sutamaya.org/browse/dn')).toBe('https://app.local.sutamaya.org');
     expect(resolveWebOrigin(DEV, 'http://localhost:5173/settings')).toBe('http://localhost:5173');
   });
 
   it('falls back to the first origin for a relative path or an unconfigured one', () => {
     expect(resolveWebOrigin(DEV, '/settings')).toBe('http://localhost:5173');
     expect(resolveWebOrigin(DEV, 'https://evil.example/settings')).toBe('http://localhost:5173');
-    expect(resolveWebOrigin(DEV, 'https://local.sutamaya.org.evil.example/')).toBe('http://localhost:5173');
+    expect(resolveWebOrigin(DEV, 'https://app.local.sutamaya.org.evil.example/')).toBe('http://localhost:5173');
   });
 });
 
 describe('urls and cookies', () => {
   it('builds app URLs without doubling the slash', () => {
-    expect(appUrl('https://sutamaya.org/', '/settings')).toBe('https://sutamaya.org/settings');
+    expect(appUrl('https://app.sutamaya.org/', '/settings')).toBe('https://app.sutamaya.org/settings');
   });
 
   it('points the redirect URI at the callback route', () => {
-    expect(googleRedirectUri(WEB_ORIGIN)).toBe('https://sutamaya.org/api/auth/google/callback');
+    expect(googleRedirectUri(WEB_ORIGIN)).toBe('https://app.sutamaya.org/api/auth/google/callback');
   });
 
   it('builds an authorization URL carrying the state and our redirect URI', () => {
@@ -127,7 +127,7 @@ describe('urls and cookies', () => {
     expect(url.searchParams.get('client_id')).toBe('cid');
     expect(url.searchParams.get('response_type')).toBe('code');
     expect(url.searchParams.get('state')).toBe('st');
-    expect(url.searchParams.get('redirect_uri')).toBe('https://sutamaya.org/api/auth/google/callback');
+    expect(url.searchParams.get('redirect_uri')).toBe('https://app.sutamaya.org/api/auth/google/callback');
     expect(url.searchParams.get('scope')).toContain('email');
   });
 

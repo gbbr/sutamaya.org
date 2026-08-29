@@ -89,11 +89,10 @@ async function wipeLocalData(): Promise<void> {
 // hand back a pending Promise and need `await` in front of every call to read as anything useful.
 if (typeof window !== 'undefined') {
   window.__dangerWipeLocal = () => {
-    // Land on "/app" rather than reloading in place: a cold start means the app's entry point,
-    // which resolves to the first-visit route (getLastLocation() has just been cleared with the
-    // rest of localStorage), not wherever the console happened to be open. "/" is the static
-    // landing page, not the app.
-    wipeLocalData().then(() => location.replace('/app'));
-    return 'wiping — the page will reload at /app';
+    // Land on "/" rather than reloading in place: a cold start means the first-visit route
+    // (getLastLocation() has just been cleared with the rest of localStorage), not wherever the
+    // console happened to be open.
+    wipeLocalData().then(() => location.replace('/'));
+    return 'wiping — the page will reload at /';
   };
 }

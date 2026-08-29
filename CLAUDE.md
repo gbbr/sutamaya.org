@@ -159,7 +159,7 @@ produces such a URL — the reader's breadcrumb navigates to `sutta.node` (alway
 the clicked ancestor as `flashNodeId` — and anything needing a default destination must name a leaf
 group or select nothing at all.
 
-**Bare `/browse` is the library with nothing selected**, which is where `/app` lands on a first
+**Bare `/browse` is the library with nothing selected**, which is where `/` lands on a first
 visit (`getLastLocation()` restores the real location on every later one) and where
 `ErrorBoundary`'s escape hatch goes. Nothing selected means `ancestorsOf` forces nothing open, so the tree shows the
 five nikāyas collapsed; the list pane says "Choose a collection to begin." It's a second
@@ -253,17 +253,26 @@ started with.
 
 ## Rules that aren't obvious from reading one file
 
-- **`/` is a static landing page, not the app.** `web/public/landing.html` is plain HTML with no
-  JavaScript — the one page a search engine can read without rendering the SPA — and
-  `worker/src/index.js` serves it at `/` (which is why `assets.run_worker_first` lists `/` as well
-  as `/api/*`). The app's own entry is **`/app`**: it restores the last location, and it is the
-  manifest's `start_url`, so an installed copy launches into the reader rather than the landing
-  page. Three things conspire to hide the page once the service worker is installed, and
-  `vite.config.ts` disables all three — `navigateFallbackDenylist` and `directoryIndex: null` keep
-  Workbox off `/`, and a `NetworkFirst` rule caches it so the URL still resolves offline. Anything
-  in the app that used to `navigate('/')` now navigates to `/app`; `/` is no longer a route.
+- **The marketing site and the app are separate origins.** `sutamaya.org` serves one page,
+  `web/public/landing.html` — plain HTML with no JavaScript, the one page a search engine can read
+  without rendering the SPA. `app.sutamaya.org` is the app and the API, and `/` there is the app's
+  entry point as it always was. One Worker answers both (two `routes` in `wrangler.jsonc`) and
+  tells them apart by hostname: `MARKETING_HOSTS` in `worker/src/index.js` decides whether `/`
+  returns `landing.html` or the app shell, which is why `assets.run_worker_first` lists `/` as well
+  as `/api/*`. `web/vite.config.ts`'s `serve-landing-at-root` plugin makes the dev server do the
+  same, so `local.sutamaya.org` and `app.local.sutamaya.org` mirror the split locally.
+
+  The split exists because a web app manifest's scope cannot exclude a path: sharing an origin put
+  the landing page inside the installed app's scope, so Chrome offered "Open in app" on it and then
+  opened that JavaScript-free page in the app window. Narrowing the scope was impossible with
+  `/browse`, `/read`, `/settings` and `/help` as siblings of `/`. Keeping the app off the apex
+  takes one Cloudflare Redirect Rule, which is the only part of the setup not in the repo — see
+  `docs/deploy.md`.
+
   The landing page's screenshots are hand-copied from `web/src/assets/help/` into
   `web/public/landing/`, since a static file can't reference Vite's content-hashed asset names.
+  Its links into the app are absolute for the same reason a relative one would fail: they leave
+  the hostname.
 - **Every D1 query is scoped `AND user_id = ?`.** These are flat tables with no structural per-user
   isolation; that predicate is the only thing separating one user's data from another's, and it
   belongs on reads, writes and existence checks alike.
@@ -275,9 +284,10 @@ started with.
   `web/src/lib/autoLists.ts`. No module is shared between the two npm workspaces, and the client
   needs its own copies to derive the same view offline. Change one, change the other.
 - **`WEB_ORIGIN` is load-bearing beyond CORS** — the OAuth flow builds its redirect URI and return
-  URL from it, so in local dev it must be the *web* dev server, not wrangler's port. It accepts a
-  comma-separated list (one origin in production): the flow picks whichever entry the sign-in
-  started on, which is what lets one dev server serve both localhost and the phone-facing hostname.
+  URL from it, so in local dev it must be the *web* dev server, not wrangler's port, and it is
+  always the app's hostname, never the marketing site's. It accepts a comma-separated list (one
+  origin in production): the flow picks whichever entry the sign-in started on, which is what lets
+  one dev server serve both localhost and the phone-facing hostname.
 - **Reordering and drag-and-drop use Pointer Events, never HTML5 drag-and-drop**, which doesn't fire
   reliably on touch. The shared plumbing is `hooks/usePointerDragSession.ts`.
 - **Search does not cover sutta text** — `searchCorpus` scans ref, title, Pali, blurb, note and list

@@ -1,13 +1,24 @@
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
+const landingPath = fileURLToPath(new URL('./public/landing.html', import.meta.url));
+
 // Extra hostnames the dev server's Host-header guard accepts beyond localhost/LAN IPs (see
 // `allowedHosts` below), paired with how to actually reach the app through each one — printed
 // on `npm run dev` startup so it doesn't have to be remembered/looked up each time.
+//
+// They are the two production hostnames' local stand-ins, so a dev session reproduces the split
+// the deployed site has: the marketing site and the app on separate origins. Both need
+// `caddy run` in a separate terminal — see docs/deploy.md "Testing on mobile".
+const LANDING_HOST = 'local.sutamaya.org';
+const APP_HOST = 'app.local.sutamaya.org';
+
 const devHosts: Record<string, string> = {
-  'local.sutamaya.org':
-    'https://local.sutamaya.org  (needs `caddy run` in a separate terminal — see docs/deploy.md "Testing on mobile")',
+  [LANDING_HOST]: `https://${LANDING_HOST}  (the landing page — stands in for sutamaya.org)`,
+  [APP_HOST]: `https://${APP_HOST}  (the app — stands in for app.sutamaya.org)`,
 };
 
 export default defineConfig({
@@ -15,11 +26,8 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      // The favicons carry a versioned filename — see the note beside the <link rel="icon"> in
-      // index.html. leaf.png is the wordmark's leaf on the landing page, which is cached offline
-      // (see the "landing" runtime rule below) and would otherwise render as a broken image
-      // there; it is a few KB, unlike the page's screenshots, which stay uncached.
-      includeAssets: ['favicon-32-v3.png', 'favicon-16-v3.png', 'landing/leaf.png'],
+      // Versioned filename — see the note beside the <link rel="icon"> in index.html.
+      includeAssets: ['favicon-32-v3.png', 'favicon-16-v3.png'],
       // Off by default (the plugin's own default) since a dev-mode service worker can serve
       // stale responses and fight Vite's HMR. Opt in with PWA_DEV=1 when specifically testing
       // install/standalone behavior (e.g. via local.sutamaya.org — see docs/deploy.md "Testing on
@@ -32,11 +40,12 @@ export default defineConfig({
         description:
           'An offline reader and study app for the Pali suttas — lists, highlights, notes, ' +
           'and a Pali dictionary a tap away.',
-        // Not "/", which is the static landing page written for people who have never opened the
-        // app (web/public/landing.html). An installed copy launched from its home-screen icon
-        // should go straight back to whatever was last open, which is what /app does — see
-        // RestoreLastLocation in src/App.tsx.
-        start_url: '/app',
+        // "/" — the default, and the app's own entry point on its own hostname. It restores
+        // whatever was last open, which is what makes relaunching from the home-screen icon
+        // return the reader to where they were; see RestoreLastLocation in src/App.tsx. The
+        // landing page is not a path this manifest has to work around, because it is on the
+        // marketing hostname and so outside this scope entirely (see wrangler.jsonc).
+        start_url: '/',
         theme_color: '#FBF9F5',
         background_color: '#FBF9F5',
         display: 'standalone',
@@ -84,15 +93,11 @@ export default defineConfig({
         // never requests a byte of either. Precaching them would put ~280KB into every install to
         // serve nobody. XCharter, the third stand-in, needs no entry here: it's a whole font, so
         // its filenames don't carry a subset suffix and the patterns never matched them.
-        globIgnores: ['**/gelasio-*.woff2', '**/gentium-*.woff2'],
-        // "/" is the static landing page, and both of these are needed to keep it that way once
-        // the service worker is installed. Without the denylist entry, a navigation to "/" is
-        // answered by the SPA shell like any other unknown path; without `directoryIndex: null`,
-        // Workbox's precache matches "/" against the precached "/index.html" and does the same
-        // thing one layer earlier. Between them an installed reader would never see the landing
-        // page again, and neither would anyone they sent the link to who already had the app.
-        navigateFallbackDenylist: [/^\/api\//, /^\/$/],
-        directoryIndex: null,
+        // The landing page belongs to the marketing hostname, which runs no service worker at all
+        // (see wrangler.jsonc); precaching it here would put a page this origin never serves into
+        // every install. Its images under landing/ match none of the patterns above already.
+        globIgnores: ['**/gelasio-*.woff2', '**/gentium-*.woff2', 'landing.html'],
+        navigateFallbackDenylist: [/^\/api\//],
         runtimeCaching: [
           // These two paths are unversioned — a corrected sutta or gloss keeps its URL — so they
           // revalidate rather than serving the cache forever. A read is answered from the cache
@@ -139,16 +144,6 @@ export default defineConfig({
             options: { cacheName: 'fonts', expiration: { maxEntries: 40, maxAgeSeconds: 60 * 60 * 24 * 365 } },
           },
           {
-            // The landing page. Excluded from the precache and the navigation fallback above, so
-            // without this it would be the one URL on the origin that fails outright offline.
-            // NetworkFirst rather than the StaleWhileRevalidate the corpus paths use: it is a
-            // handful of KB on a page nobody is mid-read of, so paying for a fresh copy when the
-            // network is there costs nothing and avoids serving month-old marketing copy.
-            urlPattern: ({ url, sameOrigin }) => sameOrigin && url.pathname === '/',
-            handler: 'NetworkFirst',
-            options: { cacheName: 'landing', expiration: { maxEntries: 1, maxAgeSeconds: 60 * 60 * 24 * 30 } },
-          },
-          {
             urlPattern: /\/api\/.*/,
             handler: 'NetworkOnly',
           },
@@ -156,18 +151,33 @@ export default defineConfig({
       },
     }),
     {
-      // In production the Worker answers "/" with public/landing.html (see worker/src/index.js);
-      // the dev server has no Worker in front of it and would serve index.html — the app shell —
-      // for the bare origin instead. Rewriting the path here makes `npm run dev:web` show the
-      // same page at the same URL, so the landing page can be worked on without a deploy.
+      // The dev server stands in for both production hostnames, and which one it is playing is
+      // decided the same way the Worker decides it — by the Host header (see MARKETING_HOSTS in
+      // worker/src/index.js). Only LANDING_HOST is the marketing site, so "/" there is the
+      // landing page; on `localhost` and APP_HOST "/" is the app, exactly as it is on
+      // app.sutamaya.org. The landing page is also reachable on any host at /landing.html, which
+      // is how to work on it without the Caddy setup in docs/deploy.md.
+      //
+      // It is served here rather than by Vite's static middleware because its links into the app
+      // are absolute (they have to cross to the app's hostname, so a relative href would stay on
+      // the marketing site) — and left alone, clicking one in dev would open the *production*
+      // app. Rewriting them to this machine is what makes the landing → app hop testable locally.
+      //
       // Registered inside configureServer rather than as a returned hook, which is what puts it
       // ahead of Vite's own HTML middleware rather than behind it.
       name: 'serve-landing-at-root',
       apply: 'serve',
       configureServer(server) {
-        server.middlewares.use((req, _res, next) => {
-          if (req.url === '/') req.url = '/landing.html';
-          next();
+        server.middlewares.use((req, res, next) => {
+          const host = req.headers.host?.split(':')[0];
+          const wantsLanding = req.url === '/landing.html' || (req.url === '/' && host === LANDING_HOST);
+          if (!wantsLanding) return next();
+          // Over Caddy the app is on APP_HOST; opened straight on localhost there is no second
+          // hostname, so the app is wherever this page was asked for.
+          const appOrigin = host === LANDING_HOST ? `https://${APP_HOST}` : `http://${req.headers.host}`;
+          const html = readFileSync(landingPath, 'utf8').replaceAll('https://app.sutamaya.org', appOrigin);
+          res.setHeader('Content-Type', 'text/html; charset=utf-8');
+          res.end(html);
         });
       },
     },

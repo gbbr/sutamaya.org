@@ -33,8 +33,13 @@ GCP services enabled):
    redirect URIs** (not JavaScript origins, which this flow doesn't use) to
    `/api/auth/google/callback` on every origin you sign in from:
    - `http://localhost:5173/api/auth/google/callback` — local dev
-   - `https://sutamaya.org/api/auth/google/callback` — production
+   - `https://app.local.sutamaya.org/api/auth/google/callback` — local dev over HTTPS, for testing
+     on a phone (see "Testing on mobile" below)
+   - `https://app.sutamaya.org/api/auth/google/callback` — production
    - the same path on any preview URL you deploy to
+
+   Always the **app's** hostname, never the marketing site's: the app is the only thing that signs
+   anyone in, and `WEB_ORIGIN` is what the flow builds this URI from.
 
    These must match byte for byte, or Google fails the round trip with `redirect_uri_mismatch`
    before the user ever gets back to the app.
@@ -91,19 +96,50 @@ narrow it once nothing reads the old shape.
 Open the deployed URL, sign in with Google, and confirm lists/notes/highlights save and survive a
 refresh — that round-trips through D1, so it's the real end-to-end check.
 
-## Custom domain
+## Custom domains
 
-`sutamaya.org` is wired up via `routes` in `wrangler.jsonc`:
+Two hostnames, one Worker, wired up via `routes` in `wrangler.jsonc`:
 
 ```jsonc
-"routes": [{ "pattern": "sutamaya.org", "custom_domain": true }]
+"routes": [
+  { "pattern": "sutamaya.org", "custom_domain": true },
+  { "pattern": "app.sutamaya.org", "custom_domain": true }
+]
 ```
 
-Cloudflare creates and manages the apex DNS record and its TLS certificate — nothing to configure
+`sutamaya.org` is the marketing site and serves one page, the static landing page.
+`app.sutamaya.org` is the app and the API, and is what `WEB_ORIGIN` points at.
+
+**Why they are separate origins.** A web app manifest's scope cannot exclude a path. While the
+landing page shared an origin with the app it therefore sat inside the installed app's scope, and
+Chrome offered "Open in app" on it — which opened the landing page itself in the app window, a
+page with no JavaScript and no way through to the app. Narrowing the scope was not an option
+either, since the app's routes (`/browse`, `/read`, `/settings`, `/help`) are siblings of `/`
+rather than sitting under a prefix. On its own hostname the landing page is simply outside the
+app, and the service worker, the manifest and `/` all mean one thing each again.
+
+Cloudflare creates and manages both DNS records and their TLS certificates — nothing to configure
 at a DNS provider by hand, since Cloudflare already runs `sutamaya.org`'s nameservers. Takes
-effect on the next `wrangler deploy`. Add the domain's `/api/auth/google/callback` to the OAuth
-client's authorized redirect URIs too, and point `WEB_ORIGIN` at it (see above) — the client id and
-secret themselves don't change.
+effect on the next `wrangler deploy`.
+
+### Keeping the app off the marketing hostname
+
+The assets binding backs both hostnames, so without a rule `sutamaya.org/browse/dn` would serve
+the app as well — and a service worker registering there would put the app's shell back at `/`,
+hiding the landing page exactly as before. One **Redirect Rule** (Cloudflare dashboard → the
+`sutamaya.org` zone → Rules → Redirect Rules) sends everything but the landing page's own files to
+the app:
+
+- **When**: `http.host eq "sutamaya.org" and not http.request.uri.path in {"/" "/robots.txt"
+  "/sitemap.xml" "/favicon-16-v3.png" "/favicon-32-v3.png"} and not
+  starts_with(http.request.uri.path, "/landing/")`
+- **Then**: dynamic redirect, `concat("https://app.sutamaya.org", http.request.uri.path)`, status
+  301, preserve query string.
+
+The allowlist is what the landing page itself loads. Adding a file to that page means adding it
+here, which is the one piece of this setup that lives in a dashboard rather than in the repo.
+
+Old links into the app on the apex keep working through this rule, one redirect later.
 
 ## Rate limiting
 
@@ -146,22 +182,31 @@ on the OAuth client, and Google only accepts hosts on a real, public top-level d
 what's serving it. Deploying just to test a login-gated feature isn't practical for day-to-day
 iteration.
 
-The fix used here: a real subdomain of `sutamaya.org` — `local.sutamaya.org` — pointed at this
-machine's LAN IP, served locally by [Caddy](https://caddyserver.com) with a genuine Let's
-Encrypt certificate obtained via a DNS-01 challenge against Cloudflare (sutamaya.org's DNS
-provider). DNS-01 only needs the ability to create a TXT record — the machine doesn't need to be
-reachable from the public internet — so this stays LAN-only the whole time. Caddy is a local
-reverse proxy in front of Vite, running only when you start it.
+The fix used here: real subdomains of `sutamaya.org` pointed at this machine's LAN IP, served
+locally by [Caddy](https://caddyserver.com) with genuine Let's Encrypt certificates obtained via a
+DNS-01 challenge against Cloudflare (sutamaya.org's DNS provider). DNS-01 only needs the ability
+to create a TXT record — the machine doesn't need to be reachable from the public internet — so
+this stays LAN-only the whole time. Caddy is a local reverse proxy in front of Vite, running only
+when you start it.
+
+**There are two of them, mirroring the two production hostnames**: `local.sutamaya.org` is the
+marketing site and `app.local.sutamaya.org` is the app. The split is the whole mechanism that
+keeps the landing page out of the installed app's scope, so a single local hostname could not
+reproduce — or catch a regression in — the thing it exists to fix. Both point at the same Vite
+server on `:5173`, which decides which one it is playing from the Host header, the same way the
+Worker does (see `MARKETING_HOSTS` in `worker/src/index.js` and the `serve-landing-at-root` plugin
+in `web/vite.config.ts`). Plain `localhost:5173` is the app, so day-to-day development needs none
+of this; the landing page is reachable on any host at `/landing.html`.
 
 **One-time setup:**
 
 1. Cloudflare dashboard → My Profile → API Tokens → Create Token → "Edit zone DNS" template,
    scoped to the `sutamaya.org` zone only. Save the token somewhere local (not in the repo).
-2. Cloudflare dashboard → DNS → add an **A record**: `local` → this machine's current LAN IP
-   (e.g. `192.168.1.50`), proxy status **DNS only** (grey cloud — a proxied/orange-cloud record
-   would route through Cloudflare's edge, which can't reach a private IP). A DHCP reservation
-   for this machine on your router keeps that IP from changing later; otherwise update the
-   record if it does.
+2. Cloudflare dashboard → DNS → add two **A records**, `local` and `app.local`, both → this
+   machine's current LAN IP (e.g. `192.168.1.50`), proxy status **DNS only** (grey cloud — a
+   proxied/orange-cloud record would route through Cloudflare's edge, which can't reach a private
+   IP). A DHCP reservation for this machine on your router keeps that IP from changing later;
+   otherwise update the records if it does.
 3. Standard `brew install caddy` does **not** include DNS provider plugins — download a build
    with the Cloudflare module from
    [caddyserver.com/download](https://caddyserver.com/download?package=github.com%2Fcaddy-dns%2Fcloudflare)
@@ -170,13 +215,15 @@ reverse proxy in front of Vite, running only when you start it.
 4. Create a `Caddyfile` **outside the repo** (it's machine-specific, not shared config —
    e.g. `~/caddy/sutamaya-local/Caddyfile`):
    ```
-   local.sutamaya.org {
+   local.sutamaya.org, app.local.sutamaya.org {
        reverse_proxy localhost:5173
        tls {
            dns cloudflare {env.CLOUDFLARE_API_TOKEN}
        }
    }
    ```
+   One block for both names: they proxy to the same Vite server, which tells them apart by the
+   Host header Caddy passes through.
 
 **Each time you want to test on mobile:** with `npm run dev` running (Vite on `:5173`), start
 Caddy from that directory —
@@ -187,14 +234,16 @@ CLOUDFLARE_API_TOKEN=your-token sudo --preserve-env=CLOUDFLARE_API_TOKEN caddy r
 the cert on first run and renews automatically on later runs — no local CA, no cert warnings, no
 per-device trust step, since it's a real publicly-trusted certificate. `/api/*` keeps going
 through Vite's own proxy to the Worker on `:8787` unchanged. Add
-`https://local.sutamaya.org/api/auth/google/callback` to the OAuth client's authorized redirect
+`https://app.local.sutamaya.org/api/auth/google/callback` to the OAuth client's authorized redirect
 URIs once (see above) — additive, so `http://localhost:5173/...` and the production one are
-unaffected. `.dev.vars` already lists both origins in `WEB_ORIGIN`, and the flow picks whichever
-one the sign-in started on, so nothing needs editing per session and a desktop browser on
-`localhost` keeps working at the same time. Then open `https://local.sutamaya.org` on the phone
-(same LAN) — sign-in should complete normally.
+unaffected. Only the app hostname needs one; nobody signs in from the marketing site. `.dev.vars`
+lists both app origins in `WEB_ORIGIN` (`http://localhost:5173,https://app.local.sutamaya.org`),
+and the flow picks whichever one the sign-in started on, so nothing needs editing per session and
+a desktop browser on `localhost` keeps working at the same time. Then open
+`https://app.local.sutamaya.org` on the phone (same LAN) — sign-in should complete normally, and
+`https://local.sutamaya.org` shows the landing page beside it.
 
-**To test PWA install/standalone behavior** over `local.sutamaya.org` (rather than just sign-in),
+**To test PWA install/standalone behavior** over `app.local.sutamaya.org` (rather than just sign-in),
 start Vite with `PWA_DEV=1 npm run dev` first — `vite-plugin-pwa` registers a service worker only
 under `devOptions.enabled`, which is off by default (a dev-mode SW can serve stale responses and
 fight Vite's HMR), so without it Chrome's "Add to Home Screen" falls back to a bookmark-style

@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef } from 'react';
 import { SCROLL_POSITIONS_KEY } from '../lib/storageKeys';
 
 // Module-level, so positions survive a component unmounting and remounting within one SPA session,
-// and persisted to localStorage so they survive a full app close too — which is what lets "/app"
+// and persisted to localStorage so they survive a full app close too — which is what lets "/"
 // restore not just the last screen but its exact scroll offset (see lib/lastLocation.ts). Shared
 // across tabs like every other plain-localStorage key here, so two tabs open on different suttas
 // clobber each other's entries on close, accepted the same way it is for those.

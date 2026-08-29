@@ -2,8 +2,11 @@
 <!--
   The page served at https://sutamaya.org/ — the only part of the site written for someone who
   has never used the app. It is a plain static file rather than a route in the SPA because a
-  crawler has to be able to read it without running JavaScript; worker/src/index.js serves it at
-  "/" and every other path goes to the app as before.
+  crawler has to be able to read it without running JavaScript.
+
+  It is the only thing this hostname serves. The app lives on app.sutamaya.org, a separate origin,
+  which is what keeps this page out of the installed app's scope — see wrangler.jsonc. Every link
+  into the app is therefore absolute; a relative "/browse" here would stay on the marketing site.
 
   It duplicates the app's colours, wordmark and screenshots rather than importing them: nothing
   here is part of the Vite graph, so there is no build step to resolve a token or hash an asset
@@ -25,19 +28,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16-v3.png" />
     <meta name="theme-color" content="#FBF9F5" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#171513" media="(prefers-color-scheme: dark)" />
-
-    <!-- The only script on the page, and the one thing here that isn't static markup. The web app
-         manifest sets no `scope`, so it defaults to "/" and this page falls inside the installed
-         app — which is what makes Chrome offer "Open in app" on the landing page and then open
-         *this* page in the app window, a dead end with no way into the app. Narrowing the scope
-         isn't an option: the app's routes are /browse, /read, /settings and /help, all of which
-         would drop out of the app window with it. So the page sends itself to /app whenever it
-         finds it is running installed rather than in a browser tab. -->
-    <script>
-      if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
-        location.replace('/app');
-      }
-    </script>
 
     <!-- What a link to the site looks like when it is pasted into a chat, a forum or a social
          post. Without these it renders as a bare URL with no title or image. -->
@@ -255,7 +245,7 @@
            the app gets past this page, which is the only reason they'd be on it. -->
       <header>
         <div class="mark"><img src="/landing/leaf.png" width="30" height="30" alt="" />sutamaya</div>
-        <a class="btn btn-sm" href="/app">Open the app</a>
+        <a class="btn btn-sm" href="https://app.sutamaya.org/">Open the app</a>
       </header>
 
       <section class="hero">
@@ -266,7 +256,7 @@
           word to see what it means.
         </p>
         <div class="cta">
-          <a class="btn" href="/app">Open the app</a>
+          <a class="btn" href="https://app.sutamaya.org/">Open the app</a>
         </div>
         <!-- The walkthrough is on YouTube and stays there: a link costs the page nothing, where
              an embedded player would put YouTube's own chrome in the middle of the layout. -->
@@ -387,7 +377,7 @@
       <section class="closing">
         <h2>Open it and start reading.</h2>
         <p>Nothing to sign up for. Sign in later if you want your notes on more than one device.</p>
-        <a class="btn" href="/app">Open the app</a>
+        <a class="btn" href="https://app.sutamaya.org/">Open the app</a>
       </section>
 
       <footer>
