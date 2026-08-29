@@ -95,9 +95,11 @@ export interface ListDef {
 }
 
 // A dragged list row's position relative to a drop-target row in TreePane's "My lists" tree:
-// 'before'/'after' reorders it as a sibling, 'inside' nests it as a child of a group. Shared by
+// 'before' reorders it as that row's sibling, 'inside' nests it at the end of a group. 'end' is
+// everything past the last row's midpoint, which means the end of the top level rather than a
+// position relative to any row — the gesture that pulls a list out of the group it is in. Shared by
 // ListRow.tsx, which paints the drop-target highlight, and useListTreeDrag.ts, which computes it.
-export type DropZone = 'before' | 'after' | 'inside';
+export type DropZone = 'before' | 'inside' | 'end';
 
 export type Membership = Record<string, string[]>;
 export type NotesMap = Record<string, string>;

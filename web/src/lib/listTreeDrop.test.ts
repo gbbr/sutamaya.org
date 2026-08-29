@@ -15,8 +15,14 @@ import type { ListDef } from './types';
 const ROW_H = 36;
 
 // Builds a stack of contiguous rows (no gaps, matching real DOM layout) from a compact spec.
-function stack(spec: Array<{ id: string; isGroup?: boolean }>): DropRow[] {
-  return spec.map((s, i) => ({ id: s.id, isGroup: !!s.isGroup, top: i * ROW_H, bottom: (i + 1) * ROW_H }));
+function stack(spec: Array<{ id: string; isGroup?: boolean; parentId?: string | null }>): DropRow[] {
+  return spec.map((s, i) => ({
+    id: s.id,
+    isGroup: !!s.isGroup,
+    parentId: s.parentId ?? null,
+    top: i * ROW_H,
+    bottom: (i + 1) * ROW_H,
+  }));
 }
 
 describe('resolveTreeDropTarget', () => {
@@ -37,8 +43,9 @@ describe('resolveTreeDropTarget', () => {
     // position as "after this row" whenever they're siblings (see resolveDropIndicator for how
     // that's turned into a single rendered line rather than two).
     expect(resolveTreeDropTarget(ROW_H * 0.6, rows)).toEqual({ id: 'b', zone: 'before' });
-    // Past every row's midpoint: insert after the last one.
-    expect(resolveTreeDropTarget(ROW_H * 1.9, rows)).toEqual({ id: 'b', zone: 'after' });
+    // Past every row's midpoint: the end of the top level, which for a flat tree is the same
+    // position "after the last row" named.
+    expect(resolveTreeDropTarget(ROW_H * 1.9, rows)).toEqual({ id: 'b', zone: 'end' });
   });
 
   it('nests into a group only in its inner half, never at its own edges', () => {
@@ -57,8 +64,8 @@ describe('resolveTreeDropTarget', () => {
       const target = resolveTreeDropTarget(y, rows);
       expect(target).not.toBeNull();
       // Never "after the group" — an expanded group with a rendered child can never be the last
-      // row, so it can never fall out the 'after' end of the sibling pass.
-      expect(target).not.toEqual({ id: 'group', zone: 'after' });
+      // row, so it can never fall out the far end of the sibling pass.
+      expect(target).not.toEqual({ id: 'group', zone: 'end' });
     }
     // Specifically: from just past the group's own nesting band (its lower quarter, including
     // right at its own bottom edge) through into its first child's own upper half, it always
@@ -79,7 +86,23 @@ describe('resolveTreeDropTarget', () => {
   it('is unaffected by a collapsed group (no rendered children to disambiguate against)', () => {
     const rows = stack([{ id: 'group', isGroup: true }, { id: 'next' }]);
     expect(resolveTreeDropTarget(ROW_H * 0.9, rows)).toEqual({ id: 'next', zone: 'before' });
-    expect(resolveTreeDropTarget(ROW_H * 1.9, rows)).toEqual({ id: 'next', zone: 'after' });
+    expect(resolveTreeDropTarget(ROW_H * 1.9, rows)).toEqual({ id: 'next', zone: 'end' });
+  });
+
+  it('reads the empty space below the tree as the top level, not as the last row\'s parent', () => {
+    // The reported bug: with an expanded group as the last thing in the tree, its children are
+    // the last rendered rows, so dragging one down into the blank space below resolved to "after
+    // my own sibling" — putting the row straight back in the group it was being dragged out of,
+    // with no gesture left that means "out here, at the end".
+    const rows = stack([{ id: 'group', isGroup: true }, { id: 'child' }]);
+    expect(resolveTreeDropTarget(ROW_H * 2 + 40, rows)).toEqual({ id: 'child', zone: 'end' });
+  });
+
+  it('still means the end of the top level when the last row is already top-level', () => {
+    // Same gesture over a flat tree: 'end' and "after the last row" name the same position, so
+    // nothing about dropping at the bottom of an unnested list changes.
+    const rows = stack([{ id: 'a' }, { id: 'b' }]);
+    expect(resolveTreeDropTarget(ROW_H * 2 + 40, rows)).toEqual({ id: 'b', zone: 'end' });
   });
 
   it('returns null with no rows', () => {
@@ -94,10 +117,6 @@ describe('resolveDropIndicator', () => {
     expect(resolveDropIndicator({ id: 'b', zone: 'before' }, rows)).toEqual({ id: 'a', edge: 'bottom' });
   });
 
-  it('renders an "after" target as its own bottom edge', () => {
-    expect(resolveDropIndicator({ id: 'b', zone: 'after' }, rows)).toEqual({ id: 'b', edge: 'bottom' });
-  });
-
   it('falls back to its own top edge only for the very first row (nothing above to recolor)', () => {
     expect(resolveDropIndicator({ id: 'a', zone: 'before' }, rows)).toEqual({ id: 'a', edge: 'top' });
   });
@@ -106,14 +125,39 @@ describe('resolveDropIndicator', () => {
     expect(resolveDropIndicator({ id: 'b', zone: 'inside' }, rows)).toEqual({ id: 'b', edge: 'inside' });
   });
 
-  it('never produces two indicators for adjacent before/after targets on the same boundary', () => {
-    // "before b" and "after a" describe the same physical boundary — both must resolve to the
-    // exact same rendered indicator, or the doubled-line bug is back.
-    expect(resolveDropIndicator({ id: 'b', zone: 'before' }, rows)).toEqual(resolveDropIndicator({ id: 'a', zone: 'after' }, rows));
+  it('renders an "end" target as the last rendered row\'s bottom edge', () => {
+    // Where the pointer actually is — the very bottom of the tree — rather than on whichever row
+    // happens to be the last top-level one, which for an expanded group is its own title row
+    // well above the children.
+    expect(resolveDropIndicator({ id: 'c', zone: 'end' }, rows)).toEqual({ id: 'c', edge: 'bottom' });
   });
 
   it('passes null through', () => {
     expect(resolveDropIndicator(null, rows)).toBeNull();
+  });
+
+  it('draws on the target\'s own top edge when the row above it is not touching it', () => {
+    // The dragged row still occupies its place on screen while being excluded from the
+    // candidates, so the row above a target may be a ghost's height away. Recolouring that row's
+    // separator put the line above the gap, well clear of the pointer — which reads as no line at
+    // all, and was the whole of the reported "dragging the inner group down reveals no line".
+    const gapped: DropRow[] = [
+      { id: 'g1', top: 0, bottom: ROW_H, isGroup: true, parentId: null },
+      // g2's ghost occupies the row between these two.
+      { id: 'g3', top: ROW_H * 2, bottom: ROW_H * 3, isGroup: true, parentId: null },
+    ];
+    expect(resolveDropIndicator({ id: 'g3', zone: 'before' }, gapped)).toEqual({ id: 'g3', edge: 'top', insideId: undefined });
+  });
+
+  it('names the group a sibling drop lands in, so the line is not the only signal', () => {
+    // A line under a group's last child and a line under the whole tree sit on the same boundary
+    // and mean different parents; the tint is what tells them apart.
+    const nested = stack([{ id: 'g', isGroup: true }, { id: 'child', parentId: 'g' }]);
+    expect(resolveDropIndicator({ id: 'child', zone: 'before' }, nested)?.insideId).toBe('g');
+    // 'end' is the top level, so nothing is tinted.
+    expect(resolveDropIndicator({ id: 'child', zone: 'end' }, nested)?.insideId).toBeUndefined();
+    // And a top-level sibling drop lands in no group either.
+    expect(resolveDropIndicator({ id: 'g', zone: 'before' }, nested)?.insideId).toBeUndefined();
   });
 });
 
@@ -150,9 +194,9 @@ describe('isDescendantOf', () => {
 });
 
 describe('isValidListDrop', () => {
-  it('allows a before/after sibling drop regardless of kind', () => {
+  it('allows a sibling drop regardless of kind', () => {
     expect(isValidListDrop(tree, 'l1', 'l2', 'before')).toBe(true);
-    expect(isValidListDrop(tree, 'l1', 'g2', 'after')).toBe(true);
+    expect(isValidListDrop(tree, 'l1', 'g2', 'before')).toBe(true);
   });
 
   it('allows nesting inside a group', () => {
@@ -172,6 +216,13 @@ describe('isValidListDrop', () => {
     expect(isValidListDrop(tree, 'missing', 'g2', 'inside')).toBe(false);
     expect(isValidListDrop(tree, 'l1', 'missing', 'inside')).toBe(false);
   });
+
+  it('allows "end" for anything, including a group dragged past its own descendants', () => {
+    // 'end' is the top level, which is somewhere every row may rest — so the descendant guard
+    // that makes 'inside' and 'before' unsafe near your own subtree doesn't apply.
+    expect(isValidListDrop(tree, 'l1', 'l2', 'end')).toBe(true);
+    expect(isValidListDrop(tree, 'g1', 'g3', 'end')).toBe(true);
+  });
 });
 
 describe('siblingIdsWithInsert', () => {
@@ -179,20 +230,16 @@ describe('siblingIdsWithInsert', () => {
   const topLevelLists = tree.filter((l) => !l.parentId);
 
   it('inserts before the target among top-level lists', () => {
-    expect(siblingIdsWithInsert(childrenOf, topLevelLists, null, 'l1', 'l2', false)).toEqual(['g1', 'l1', 'l2']);
-  });
-
-  it('inserts after the target among top-level lists', () => {
-    expect(siblingIdsWithInsert(childrenOf, topLevelLists, null, 'l1', 'l2', true)).toEqual(['g1', 'l2', 'l1']);
+    expect(siblingIdsWithInsert(childrenOf, topLevelLists, null, 'l1', 'l2')).toEqual(['g1', 'l1', 'l2']);
   });
 
   it('inserts within a named parent\'s own children', () => {
-    expect(siblingIdsWithInsert(childrenOf, topLevelLists, 'g1', 'x', 'g2', true)).toEqual(['g2', 'x', 'l1']);
+    expect(siblingIdsWithInsert(childrenOf, topLevelLists, 'g1', 'x', 'g2')).toEqual(['x', 'g2', 'l1']);
   });
 
   it('excludes the inserted id from its old position when it was already a sibling in scope', () => {
     // l1 dropped back among g1's own children (its current parent), reordered before g2.
-    expect(siblingIdsWithInsert(childrenOf, topLevelLists, 'g1', 'l1', 'g2', false)).toEqual(['l1', 'g2']);
+    expect(siblingIdsWithInsert(childrenOf, topLevelLists, 'g1', 'l1', 'g2')).toEqual(['l1', 'g2']);
   });
 });
 
@@ -203,33 +250,49 @@ describe('planListDrop', () => {
   const g1 = tree.find((l) => l.id === 'g1')!;
   const l2 = tree.find((l) => l.id === 'l2')!;
 
-  it('plans a reparent when dropping inside a group the dragged item is not already in', () => {
+  it('plans a nest as a reorder onto the end of the group\'s own children', () => {
+    // A group's row carries no position indicator — dropping on it says "in here", not "in here,
+    // third" — so the row lands at the end, where the eye looks for the thing just added. Carried
+    // by the same reorder the sibling zones use, which re-parents every id in the order it is
+    // given, rather than a bare parent change that would leave the row at whatever position
+    // number it happened to hold in the group it came from.
     expect(planListDrop(tree, 'l2', g2, 'inside', childrenOf, topLevelLists)).toEqual({
-      type: 'reparent',
+      type: 'reorder',
       parentId: 'g2',
-      alreadyParented: false,
+      order: ['g3', 'l2'],
     });
   });
 
-  it('marks alreadyParented when the dragged item is already that group\'s direct child', () => {
+  it('re-drops a row inside the group it is already in as a move to the end', () => {
     const g1AsTarget = tree.find((l) => l.id === 'g1')!;
     expect(planListDrop(tree, 'l1', g1AsTarget, 'inside', childrenOf, topLevelLists)).toEqual({
-      type: 'reparent',
+      type: 'reorder',
       parentId: 'g1',
-      alreadyParented: true,
+      order: ['g2', 'l1'],
     });
   });
 
-  it('plans a single reorder for a before/after drop, even one crossing into a new parent', () => {
-    // l2 (currently top-level) dropped after l1, which lives inside g1 — one 'reorder' plan
+  it('plans an "end" drop as the end of the top level, whatever row the pointer was past', () => {
+    // The de-nesting gesture: l1 lives inside g1, and the pointer ended up below every rendered
+    // row — including g1's own children. The plan has to be about the top level, not about
+    // whichever row the pointer happened to pass last.
+    expect(planListDrop(tree, 'l1', g2, 'end', childrenOf, topLevelLists)).toEqual({
+      type: 'reorder',
+      parentId: null,
+      order: ['g1', 'l2', 'l1'],
+    });
+  });
+
+  it('plans a single reorder for a sibling drop, even one crossing into a new parent', () => {
+    // l2 (currently top-level) dropped before l1, which lives inside g1 — one 'reorder' plan
     // targeting g1 covers both the re-parent and the position, matching the server's own PUT
     // /order semantics (see queueSiblingOrder in lib/mirror.ts) and avoiding the two-step-flicker
     // bug (a55e1ecc) a separate 'reparent' call first used to cause.
     const l1 = tree.find((l) => l.id === 'l1')!;
-    expect(planListDrop(tree, 'l2', l1, 'after', childrenOf, topLevelLists)).toEqual({
+    expect(planListDrop(tree, 'l2', l1, 'before', childrenOf, topLevelLists)).toEqual({
       type: 'reorder',
       parentId: 'g1',
-      order: ['g2', 'l1', 'l2'],
+      order: ['g2', 'l2', 'l1'],
     });
   });
 

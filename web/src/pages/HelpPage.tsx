@@ -247,10 +247,8 @@ const SECTIONS: HelpSection[] = [
       },
     ],
     tips: [
-      'To take a sutta out of a list, open the sutta, go to its "Lists" panel and uncheck the list ' +
-        '(see "Lists while reading").',
-      'Deleting a list takes the suttas in it with it, and deleting a group takes every list nested ' +
-        'inside it. There is one confirmation and no undo.',
+      'Dropping a list at the end of a group moves it outside. To put a list last in its group, ' +
+        'drag it onto that same group.',
     ],
   },
   {
