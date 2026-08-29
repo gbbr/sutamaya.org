@@ -3,8 +3,8 @@ import {
   emptyMirror,
   queueMembership,
   createListRecord,
+  queueSiblingOrder,
   renameListRecord,
-  setListParentRecord,
   setNoteRecord,
   type MirrorState,
 } from './mirror';
@@ -150,7 +150,11 @@ describe('flushMirror', () => {
     let state = createListRecord(emptyMirror('u1'), { id: 'x1', label: 'Existing', parentId: null, kind: 'list' });
     state = { ...state, lists: { x1: { dirty: false, data: { ...state.lists.x1.data, pendingCreate: false } } } };
     state = createListRecord(state, { id: 'g1', label: 'Group', parentId: null, kind: 'group' });
-    state = setListParentRecord(state, 'x1', 'g1');
+    // A move into a group travels as that group's sibling order, which re-parents the row without
+    // dirtying it; the rename after it is what turns x1 into a record update still carrying the
+    // new parent.
+    state = queueSiblingOrder(state, 'g1', ['x1']);
+    state = renameListRecord(state, 'x1', 'Moved');
     // Touching the group again after the move bumps its mtime past the move's.
     state = renameListRecord(state, 'g1', 'Renamed Group');
 

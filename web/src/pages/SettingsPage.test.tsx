@@ -55,7 +55,6 @@ function mockUserData(overrides: Partial<ReturnType<typeof useUserData>> = {}): 
     }),
     renameList: vi.fn(async () => {}),
     removeList: vi.fn(async () => {}),
-    setListParent: vi.fn(async () => {}),
     reorderLists: vi.fn(async () => {}),
     reorderListItems: vi.fn(async () => {}),
     toggleMembership: vi.fn(async () => {}),

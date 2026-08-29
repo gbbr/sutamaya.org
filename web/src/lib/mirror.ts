@@ -190,10 +190,6 @@ export function renameListRecord(state: MirrorState, id: string, label: string):
   return editList(state, id, { label });
 }
 
-export function setListParentRecord(state: MirrorState, id: string, parentId: string | null): MirrorState {
-  return editList(state, id, { parentId });
-}
-
 // Sibling order — the whole of one drag or one Move-up/down click, as a single queued operation, so
 // one gesture costs one request whatever the group's size. As per-row records it cost one PATCH per
 // sibling, which exhausts the Worker's per-minute rate limit in a couple of gestures.
