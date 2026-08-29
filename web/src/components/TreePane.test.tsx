@@ -388,6 +388,22 @@ describe('My Lists tree', () => {
     expect(userData.removeList).toHaveBeenCalledWith('g1');
   });
 
+  it('deleting the list being shown navigates nowhere, leaving the pane to explain itself', async () => {
+    // However a list goes away — deleted here, deleted on another device, a link that outlived it
+    // — the reader gets the same pane saying so (see ListPane's empty state). Moving them
+    // somewhere else on the one route that could would make this device the odd one out.
+    vi.mocked(navigate).mockClear();
+    renderHarness('l2');
+    await switchToMyLists();
+    const row = screen.getByText('Read later').closest('[data-node-id]') as HTMLElement;
+    await userEvent.click(within(row).getByLabelText('List options'));
+    await userEvent.click(screen.getByLabelText('Delete'));
+    await userEvent.click(screen.getByRole('button', { name: 'Delete' }));
+
+    expect(userData.removeList).toHaveBeenCalledWith('l2');
+    expect(navigate).not.toHaveBeenCalled();
+  });
+
   it('the top-level "+" opens a List/Group picker defaulting to List, with the input autofocused', async () => {
     renderHarness();
     await switchToMyLists();
@@ -420,6 +436,38 @@ describe('My Lists tree', () => {
     await userEvent.click(screen.getByLabelText('Switch to Group'));
     await userEvent.type(input, 'New Group{Enter}');
     expect(userData.createList).toHaveBeenCalledWith('New Group', null, 'group');
+  });
+
+  it('opens a newly created list, since a list is a page', async () => {
+    userData = mockUserData({
+      createList: vi.fn(async (label: string) => ({ id: 'new-1', label, parentId: null, kind: 'list' as const, items: [] })),
+    });
+    vi.mocked(navigate).mockClear();
+    renderHarness();
+    await switchToMyLists();
+    await userEvent.click(screen.getByLabelText('New list or group'));
+    await userEvent.type(screen.getByPlaceholderText('List name — return to create'), 'New List{Enter}');
+
+    expect(navigate).toHaveBeenCalledWith('/browse/new-1');
+  });
+
+  it('leaves the list pane alone when the new row is a group', async () => {
+    // A group holds lists, not suttas: its row expands in place and never opens a page, so there
+    // is nothing for the pane to show. Navigating to it anyway replaced whatever was being read
+    // with an untitled empty page that no click could get back to — and left that URL as the
+    // app's remembered last location.
+    userData = mockUserData({
+      createList: vi.fn(async (label: string) => ({ id: 'new-g', label, parentId: null, kind: 'group' as const, items: [] })),
+    });
+    vi.mocked(navigate).mockClear();
+    renderHarness();
+    await switchToMyLists();
+    await userEvent.click(screen.getByLabelText('New list or group'));
+    await userEvent.click(screen.getByLabelText('Switch to Group'));
+    await userEvent.type(screen.getByPlaceholderText('Group name — return to create'), 'New Group{Enter}');
+
+    expect(userData.createList).toHaveBeenCalledWith('New Group', null, 'group');
+    expect(navigate).not.toHaveBeenCalled();
   });
 });
 

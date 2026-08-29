@@ -305,6 +305,7 @@ export function TreePane({
     useActiveHitIndex(query);
 
   const { listChildrenOf, countFor, topLevelLists } = useListTreeIndex(lists);
+
   const autoLists = useMemo(
     () =>
       [
@@ -368,7 +369,13 @@ export function TreePane({
     renameList,
     removeList,
     reorderLists,
-    onCreated: (list) => navigate(`/browse/${list.id}`),
+    // A new list is a place to go; a new group isn't. A group's row expands in place and never
+    // opens a page (see ListRow), so navigating to one replaced whatever the list pane was showing
+    // with an empty page that no later click could return to — and left that URL as the app's
+    // remembered last location.
+    onCreated: (list) => {
+      if (list.kind !== 'group') navigate(`/browse/${list.id}`);
+    },
   });
 
   const { reorderMode, setReorderMode, dragId, indicator, onRowPointerDown, getRowRef } = useListTreeDrag({

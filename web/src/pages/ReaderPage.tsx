@@ -32,6 +32,7 @@ import { ReaderMenuPanel } from '../components/ReaderMenuPanel';
 import { ReaderSearchOverlay } from '../components/ReaderSearchOverlay';
 import { KeyCap, ShortcutsModal } from '../components/ShortcutsModal';
 import { SuttaRowChips } from '../components/SuttaRowChips';
+import { NotFoundPage } from './NotFoundPage';
 
 // How long a sutta has to stay open before it counts as visited. Long enough that stepping
 // through with Prev/Next doesn't fill the Recent list with everything it passed, short enough
@@ -421,13 +422,11 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     cycleTheme,
   });
 
-  if (!corpus || !sutta || !suttaId) {
-    return (
-      <div className="fixed inset-0 z-40 flex items-center justify-center" style={{ background: theme.bg, color: theme.fg }}>
-        <span className="font-sans text-sm opacity-60">Loading…</span>
-      </div>
-    );
-  }
+  // App.tsx renders no route at all until the corpus has loaded, so this is never "still
+  // fetching" — it is a uid this corpus doesn't have: a shared link with a typo, or a bookmark
+  // from before a refresh renamed it. A placeholder here was permanent, with no title, no close
+  // button and no keyboard way out.
+  if (!corpus || !sutta || !suttaId) return <NotFoundPage />;
 
   const faceFamily = READER_FACES[face];
   const measureWidth = fs * 34;

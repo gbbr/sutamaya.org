@@ -4,6 +4,7 @@ import { AppProviders } from './context/AppProviders';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { useCorpus } from './context/CorpusContext';
 import { getLastLocation } from './lib/lastLocation';
+import { resolveCanonicalSuttaId } from './lib/corpus';
 import { markReturnNavigation } from './lib/entryKind';
 import { HelpPage } from './pages/HelpPage';
 import { LibraryPage } from './pages/LibraryPage';
@@ -48,11 +49,22 @@ function LoadFailed({ onRetry }: { onRetry: () => void }) {
 // opened partway into one collection. Nothing selected means the whole canon collapsed to its
 // five nikāyas, which is the thing worth seeing first.
 function RestoreLastLocation(_props: RouteComponentProps) {
+  const { corpus } = useCorpus();
   useEffect(() => {
+    // A stored reader location whose uid this corpus no longer has — a refresh renamed or dropped
+    // it — would restore a Not found page, and NotFoundPage's own way out comes back through here.
+    // Checked at the restore rather than at the write: lib/lastLocation.ts knows nothing about the
+    // corpus and is better off keeping it that way, and this runs once per launch with the corpus
+    // already in hand (Routes renders nothing until it has loaded).
+    const stored = getLastLocation();
+    const uid = stored?.match(/^\/read\/([^/]+)$/)?.[1];
+    // Through resolveCanonicalSuttaId, so a link naming one sutta of a batched document is judged
+    // the same way the reader itself judges it.
+    const restorable = uid && corpus ? !!corpus.suttas[resolveCanonicalSuttaId(corpus, decodeURIComponent(uid))] : !!stored;
     // A return, not a fresh choice of destination (see lib/entryKind.ts) — this *is* the user
     // reopening the app on whatever they last had open, so the reader restores its scroll.
     markReturnNavigation();
-    navigate(getLastLocation() ?? '/browse', { replace: true });
+    navigate(restorable ? stored! : '/browse', { replace: true });
   }, []);
   return null;
 }
