@@ -6,6 +6,8 @@ import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { usePointerDragSession } from '../hooks/usePointerDragSession';
 import {
+  findNode,
+  isExpandable,
   listItemsFor,
   nodeBlurb,
   nodeLabel,
@@ -270,6 +272,14 @@ export function ListPane({
     : nodeId
       ? nodeLabel(corpus, nodeId, lists)
       : { label: 'Library' };
+  // What `nodeId` actually names, for the header and empty state below: a corpus row (and whether
+  // that row expands rather than holding suttas), a user list (`currentList`), or — once a list has
+  // been deleted — neither. `ready` is what tells "this account has no such list" from "the mirror
+  // hasn't loaded yet"; without it a deep link to a list reads as deleted for the moment before its
+  // own data arrives.
+  const corpusNode = nodeId ? findNode(corpus, nodeId) : null;
+  const expandableNode = !!corpusNode && isExpandable(corpusNode.node);
+  const goneList = !!nodeId && !searching && ready && !currentList && !corpusNode;
   // The corpus node's description, skipped for a user list and while searching: neither is a corpus
   // node, and a list id could match one only by accident.
   const { blurb, from: blurbFrom } = searching || currentList ? { blurb: undefined, from: undefined } : nodeBlurb(corpus, nodeId);
@@ -280,6 +290,9 @@ export function ListPane({
   function metaLine(): string {
     if (!searching) {
       if (!nodeId) return `${collectionCount} collections`;
+      // A list that is gone holds nothing rather than holding zero things, and "0 suttas" under a
+      // blank title reads as an empty list rather than an absent one.
+      if (goneList) return '';
       return plural(items.length, 'sutta');
     }
     // "suttas" rather than "results" whenever lists matched too, so the number names what it's
@@ -311,10 +324,18 @@ export function ListPane({
     return 'text-ink-3 hover:bg-ink/[.06]';
   }
 
-  // The empty state under the rows, in three cases.
+  // The empty state under the rows.
   function emptyMessage(): string {
     // A search that found nothing — quoting the query back so it's clear what was looked for.
     if (searching) return `Nothing matches "${query}".`;
+    // A corpus row that expands rather than holding suttas of its own — /browse/mn and the like.
+    // Nothing in the UI links to one, but a typed or shared URL reaches it, and "Nothing here yet."
+    // reads as "MN is empty" rather than "its suttas are a level down".
+    if (expandableNode) return 'Choose a chapter to see its suttas.';
+    // Named a list that has gone — deleted here, on another device, or a link that outlived it.
+    // Every route to that is the same screen, deliberately: deleting the row being shown navigates
+    // nowhere, so it explains itself where the reader is rather than moving them somewhere else.
+    if (goneList) return 'This list is no longer here.';
     // A collection or list they picked that happens to hold nothing.
     if (nodeId) return 'Nothing here yet.';
     // Nothing selected at all — bare /browse, a first visit. Only the two-pane layout shows it,
