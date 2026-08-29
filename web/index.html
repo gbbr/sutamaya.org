@@ -1,4 +1,9 @@
 <!doctype html>
+<!-- The app shell. The service worker precaches it under the path /index.html and hands it back
+     for every in-app navigation, so that path has to return this file itself rather than redirect
+     anywhere — which is what `assets.html_handling: "none"` in wrangler.jsonc is for. Left on
+     Cloudflare's default, /index.html redirects to /, the precache stores the landing page under
+     this file's name, and the whole app renders as the landing page. -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
