@@ -77,4 +77,34 @@ describe('asset vs API routing', () => {
     const shell = await SELF.fetch('https://app.sutamaya.org/read/dn16');
     expect(await res.text()).toBe(await shell.text());
   });
+
+  // The app's paths belong to the app's hostname. Two of these matter more than the rest: without
+  // sw.js and the manifest a service worker cannot register on the marketing hostname, and it is a
+  // service worker registering there that would put the app's shell back at "/" and bury the
+  // landing page.
+  it.each(['/browse/dn', '/read/dn16', '/settings', '/help', '/index.html', '/sw.js', '/manifest.webmanifest'])(
+    'redirects %s to the app when asked for on the marketing hostname',
+    async (path) => {
+      const res = await SELF.fetch(`https://sutamaya.org${path}`, { redirect: 'manual' });
+      expect(res.status).toBe(301);
+      expect(res.headers.get('Location')).toBe(`https://app.sutamaya.org${path}`);
+    }
+  );
+
+  it('keeps the query string on that redirect', async () => {
+    const res = await SELF.fetch('https://sutamaya.org/settings?scrollTo=offline', { redirect: 'manual' });
+    expect(res.headers.get('Location')).toBe('https://app.sutamaya.org/settings?scrollTo=offline');
+  });
+
+  // The landing page's own files stay put, or the page it is redirecting away from would break.
+  it.each(['/favicon-32-v3.png', '/robots.txt', '/sitemap.xml'])('serves %s on the marketing hostname', async (path) => {
+    const res = await SELF.fetch(`https://sutamaya.org${path}`, { redirect: 'manual' });
+    expect(res.status).toBe(200);
+  });
+
+  it('serves those same app paths normally on the app hostname', async () => {
+    const res = await SELF.fetch('https://app.sutamaya.org/settings');
+    expect(res.status).toBe(200);
+    expect(res.headers.get('content-type')).toMatch(/text\/html/);
+  });
 });

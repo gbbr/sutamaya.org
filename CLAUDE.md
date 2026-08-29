@@ -265,9 +265,11 @@ started with.
   The split exists because a web app manifest's scope cannot exclude a path: sharing an origin put
   the landing page inside the installed app's scope, so Chrome offered "Open in app" on it and then
   opened that JavaScript-free page in the app window. Narrowing the scope was impossible with
-  `/browse`, `/read`, `/settings` and `/help` as siblings of `/`. Keeping the app off the apex
-  takes one Cloudflare Redirect Rule, which is the only part of the setup not in the repo — see
-  `docs/deploy.md`.
+  `/browse`, `/read`, `/settings` and `/help` as siblings of `/`. `APP_PATHS` keeps the app off the
+  marketing hostname by answering `301` for those paths there — `sw.js`, `registerSW.js` and
+  `manifest.webmanifest` above all, since without them no service worker can register and undo the
+  split. It has to stay in step with `assets.run_worker_first`, which is what makes the Worker see
+  those paths at all.
 
   The landing page's screenshots are hand-copied from `web/src/assets/help/` into
   `web/public/landing/`, since a static file can't reference Vite's content-hashed asset names.

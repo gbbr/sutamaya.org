@@ -25,10 +25,23 @@
     // fetched from. Keeping the path direct removes the question.
     "html_handling": "none",
     // "/" is here so the Worker sees the bare origin on both hostnames and can answer with the
-    // landing page or the app shell depending on which one it is — see the route in
-    // worker/src/index.js. Every other path still goes straight to the asset router without
-    // invoking the Worker.
-    "run_worker_first": ["/api/*", "/"]
+    // landing page or the app shell depending on which one it is. The rest are the app's own
+    // paths, which the Worker redirects to the app when they are asked for on the marketing
+    // hostname — see MARKETING_HOSTS and APP_PATHS in worker/src/index.js, which this list has to
+    // stay in step with. Everything else (the corpus, the hashed assets, the landing page's own
+    // files) still goes straight to the asset router without invoking the Worker.
+    "run_worker_first": [
+      "/api/*",
+      "/",
+      "/index.html",
+      "/sw.js",
+      "/registerSW.js",
+      "/manifest.webmanifest",
+      "/browse/*",
+      "/read/*",
+      "/settings",
+      "/help"
+    ]
   },
   "d1_databases": [
     {

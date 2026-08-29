@@ -124,22 +124,24 @@ effect on the next `wrangler deploy`.
 
 ### Keeping the app off the marketing hostname
 
-The assets binding backs both hostnames, so without a rule `sutamaya.org/browse/dn` would serve
-the app as well — and a service worker registering there would put the app's shell back at `/`,
-hiding the landing page exactly as before. One **Redirect Rule** (Cloudflare dashboard → the
-`sutamaya.org` zone → Rules → Redirect Rules) sends everything but the landing page's own files to
-the app:
+The assets binding backs both hostnames, so without something in the way `sutamaya.org/browse/dn`
+would serve the app there too — signed out, since the session cookie belongs to the app's origin.
+Worse, a service worker registering on the marketing hostname would precache the shell and serve
+it at `/`, burying the landing page exactly as before.
 
-- **When**: `http.host eq "sutamaya.org" and not http.request.uri.path in {"/" "/robots.txt"
-  "/sitemap.xml" "/favicon-16-v3.png" "/favicon-32-v3.png"} and not
-  starts_with(http.request.uri.path, "/landing/")`
-- **Then**: dynamic redirect, `concat("https://app.sutamaya.org", http.request.uri.path)`, status
-  301, preserve query string.
+The Worker handles it: `APP_PATHS` in `worker/src/index.js` lists the app's own paths, and asked
+for one of them on a marketing hostname it answers `301` to the same path on the app. The list is
+mirrored in `assets.run_worker_first` (`wrangler.jsonc`) — without an entry there the asset router
+answers first and the Worker never sees the request, so **the two lists have to change together**.
 
-The allowlist is what the landing page itself loads. Adding a file to that page means adding it
-here, which is the one piece of this setup that lives in a dashboard rather than in the repo.
+`sw.js`, `registerSW.js` and `manifest.webmanifest` are the load-bearing entries: an install needs
+all three, and none of them resolves on the marketing hostname. The page paths (`/browse/*`,
+`/read/*`, `/settings`, `/help`, `/index.html`) are there so an old link still arrives somewhere
+useful, one redirect later. Everything else — the corpus, the hashed assets, the landing page's own
+files — is untouched and never invokes the Worker.
 
-Old links into the app on the apex keep working through this rule, one redirect later.
+This is deliberately not a Cloudflare Redirect Rule: the same behaviour in a dashboard would be
+invisible to the test suite and impossible to diff.
 
 ## Rate limiting
 
