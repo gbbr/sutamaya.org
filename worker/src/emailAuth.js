@@ -66,11 +66,11 @@ export function timingSafeEqual(a, b) {
 export function codeEmail({ code }) {
   const minutes = Math.round(CODE_TTL_MS / 60000);
   return {
-    subject: `${code} is your Sutamaya sign-in code`,
+    subject: `${code} is your sutamaya sign-in code`,
     // The code is in the subject line as well as the body: on a phone that often means it can be
     // read straight from the notification, without leaving the app at all.
     text: [
-      `Your Sutamaya sign-in code is ${code}.`,
+      `Your sutamaya sign-in code is ${code}.`,
       '',
       `Enter it in the app to finish signing in. It expires in ${minutes} minutes.`,
       '',
@@ -78,7 +78,7 @@ export function codeEmail({ code }) {
     ].join('\n'),
     html: [
       '<div style="font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:15px;line-height:1.5;color:#222">',
-      '<p>Your Sutamaya sign-in code is:</p>',
+      '<p>Your sutamaya sign-in code is:</p>',
       `<p style="font-size:30px;letter-spacing:.18em;font-weight:600;margin:20px 0">${code}</p>`,
       `<p>Enter it in the app to finish signing in. It expires in ${minutes} minutes.</p>`,
       '<p style="color:#666;font-size:13px">If you didn’t ask to sign in, you can ignore this —',

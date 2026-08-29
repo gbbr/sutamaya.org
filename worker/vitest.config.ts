@@ -13,13 +13,16 @@ export default defineWorkersProject(async () => {
   // answered": one page for the SPA fallback to return, one plain file to serve directly. Only
   // written when absent, so a real build is never clobbered — the test asserts on how the request
   // was *routed*, not on what these contain, so placeholders serve it as well as the real build.
+  // The two HTML pages carry different titles for the same reason: '/' and a client-side route
+  // both answer 200 text/html, so only the body distinguishes the landing page from the SPA shell.
   const distDir = path.join(__dirname, '..', 'web', 'dist');
   fs.mkdirSync(distDir, { recursive: true });
   const seed = (name: string, contents: string) => {
     const file = path.join(distDir, name);
     if (!fs.existsSync(file)) fs.writeFileSync(file, contents);
   };
-  seed('index.html', '<!doctype html><title>test placeholder</title>\n');
+  seed('index.html', '<!doctype html><title>app shell placeholder</title>\n');
+  seed('landing.html', '<!doctype html><title>landing placeholder</title>\n');
   seed('favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"/>\n');
 
   return {

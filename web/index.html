@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#FBF9F5" />
+    <!-- The starting values for the tab title and the description a search result shows. Each page
+         rewrites both for its own subject once React mounts (hooks/useDocumentMeta.ts) — Google
+         renders the app before indexing it, so what that hook writes is what reaches the result
+         page. These stay as the fallback for a page with nothing of its own to say, and must match
+         DEFAULT_TITLE / DEFAULT_DESCRIPTION in lib/documentMeta.ts. -->
+    <meta
+      name="description"
+      content="An offline reader for the Pali suttas: browse the whole canon, keep lists, highlight passages, take notes, and tap any word for a dictionary."
+    />
     <!-- The `-vN` suffix is the only thing that gets a new tab icon onto a device that already
          has one: the service worker precaches this path and the runtime rules cache it for a
          year, so overwriting the file in place changes nothing until that lapses. Changing the
@@ -29,7 +38,7 @@
          need safe-area-inset-top padding threaded through the reader/library headers to
          compensate; nothing in this app currently does that. -->
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="Sutamaya" />
+    <meta name="apple-mobile-web-app-title" content="sutamaya" />
     <!-- Its own file rather than the manifest's icon-192: iOS renders this artwork at 180px on
          the home screen and applies its own rounded-corner mask, while the manifest icons are
          sized and padded for Android's circular adaptive-icon crop. -->
@@ -42,7 +51,7 @@
          whatever's left after preload, same-origin, instead of a full cross-origin+CSS+font
          round trip. -->
     <link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <title>Sutamaya</title>
+    <title>sutamaya</title>
     <!--
       A blank #root is otherwise what paints first, for however long the JS bundle takes to
       download/parse/execute on a cold, mobile-network PWA launch — index.css's own

@@ -5,7 +5,8 @@ import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
-import { nodeLabel, LIST_RESULTS_CAP } from '../lib/corpus';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
+import { nodeBlurb, nodeLabel, LIST_RESULTS_CAP } from '../lib/corpus';
 import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, type RouteIntent } from '../lib/routeIntent';
@@ -138,19 +139,19 @@ export function LibraryPage({
     setNodeId(routeNodeId);
   }, [routeNodeId]);
 
-  // Tab title mirrors what the right pane shows, via the same `nodeLabel` lookup ListPane's own
-  // header uses, so it's right on a fresh reload and not only after an in-app navigation.
-  useEffect(() => {
-    if (query.trim().length > 0) {
-      document.title = 'Search';
-    } else {
-      const { ref, label } = nodeLabel(corpus, nodeId || '', lists);
-      document.title = label ? (ref ? `${ref} · ${label}` : label) : 'Sutamaya';
-    }
-    return () => {
-      document.title = 'Sutamaya';
+  // Tab title and search-result description mirror what the right pane shows, via the same
+  // `nodeLabel` and `nodeBlurb` lookups ListPane's own header uses, so both are right on a fresh
+  // reload and not only after an in-app navigation. A search has no subject to describe, and
+  // neither does a user list, so those fall back to the app-wide description.
+  const { title, description } = useMemo(() => {
+    if (query.trim().length > 0) return { title: 'Search', description: null };
+    const { ref, label } = nodeLabel(corpus, nodeId || '', lists);
+    return {
+      title: label ? (ref ? `${ref} · ${label}` : label) : '',
+      description: nodeBlurb(corpus, nodeId || undefined).blurb ?? null,
     };
   }, [corpus, nodeId, lists, query]);
+  useDocumentMeta(title, description);
 
   // useCallback'd rather than inline arrows: TreePane's keydown effect depends on `onOpenSutta`,
   // and typing in the search box re-renders this page per keystroke, so a fresh identity each time

@@ -10,6 +10,7 @@ import { type ScrollRestore } from '../hooks/useScrollMemory';
 import { useReaderOrigin } from '../hooks/useReaderOrigin';
 import { useReaderKeyboard } from '../hooks/useReaderKeyboard';
 import { useDictionaryLookup } from '../hooks/useDictionaryLookup';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { animateScrollBy, animateScrollTop } from '../lib/segmentScroll';
 import { flatSuttaOrder, breadcrumbFor, resolveCanonicalSuttaId, loadSuttaText } from '../lib/corpus';
 import { flattenListTree, resolveListById, suttaRowMeta } from '../lib/lists';
@@ -171,14 +172,10 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     return () => setReaderThemeColor(null);
   }, [theme.bg]);
 
-  // Tab title tracks whatever sutta is actually open, so switching suttas or reopening the tab
-  // after a refresh both show the right title without a round trip through the tree.
-  useEffect(() => {
-    document.title = sutta ? `${sutta.ref} · ${sutta.en}` : 'Sutamaya';
-    return () => {
-      document.title = 'Sutamaya';
-    };
-  }, [sutta]);
+  // Tab title and search-result description track whatever sutta is actually open, so switching
+  // suttas or reopening the tab after a refresh both show the right ones without a round trip
+  // through the tree.
+  useDocumentMeta(sutta ? `${sutta.ref} · ${sutta.en}` : '', sutta?.blurb);
 
   // Drives the offline-download nudge banner in TreePane, which only makes sense to show once
   // someone has actually opened a sutta — not the very first thing a fresh PWA install sees.
