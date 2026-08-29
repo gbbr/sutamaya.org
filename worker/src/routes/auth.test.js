@@ -370,7 +370,7 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
       expect(res.status).toBe(200);
       expect(sent).toHaveLength(1);
       expect(sent[0].to).toEqual(['reader@example.com']); // normalized before sending
-      expect(sent[0].from).toBe('Sutamaya <no-reply@sutamaya.org>');
+      expect(sent[0].from).toBe('sutamaya <no-reply@sutamaya.org>');
       expect(sent[0].text).toContain(codeFromMail());
 
       const row = await env.DB.prepare('SELECT * FROM login_codes WHERE email = ?').bind('reader@example.com').first();

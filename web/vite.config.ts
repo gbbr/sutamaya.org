@@ -24,8 +24,8 @@ export default defineConfig({
       // and cause unrelated stale-content confusion in later dev sessions.
       devOptions: { enabled: !!process.env.PWA_DEV },
       manifest: {
-        name: 'Sutamaya',
-        short_name: 'Sutamaya',
+        name: 'sutamaya',
+        short_name: 'sutamaya',
         description:
           'An offline reader and study app for the Pali suttas — lists, highlights, notes, ' +
           'and a Pali dictionary a tap away.',

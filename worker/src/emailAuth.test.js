@@ -102,7 +102,7 @@ describe('sendEmail', () => {
 
     await sendEmail({
       apiKey: 'key-1',
-      from: 'Sutamaya <no-reply@sutamaya.org>',
+      from: 'sutamaya <no-reply@sutamaya.org>',
       to: 'reader@example.com',
       message: codeEmail({ code: '123456' }),
     });
@@ -112,7 +112,7 @@ describe('sendEmail', () => {
     expect(init.headers.Authorization).toBe('Bearer key-1');
     const body = JSON.parse(init.body);
     expect(body.to).toEqual(['reader@example.com']);
-    expect(body.from).toBe('Sutamaya <no-reply@sutamaya.org>');
+    expect(body.from).toBe('sutamaya <no-reply@sutamaya.org>');
     expect(body.text).toContain('123456');
     expect(body.html).toContain('123456');
   });

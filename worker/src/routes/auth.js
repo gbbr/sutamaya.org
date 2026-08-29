@@ -156,7 +156,7 @@ authRouter.post('/email/request', async (c) => {
   try {
     await sendEmail({
       apiKey: c.env.RESEND_API_KEY,
-      from: `Sutamaya <${c.env.MAIL_FROM}>`,
+      from: `sutamaya <${c.env.MAIL_FROM}>`,
       to: email,
       message: codeEmail({ code }),
     });

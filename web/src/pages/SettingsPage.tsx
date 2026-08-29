@@ -5,6 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData, type SyncStatus } from '../context/UserDataContext';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { GoogleSignInButton } from '../components/GoogleSignInButton';
 import { EmailCodeSignIn } from '../components/EmailCodeSignIn';
 import { dataApi } from '../lib/api';
@@ -172,6 +173,10 @@ function syncStatusLine(
 }
 
 export function SettingsPage({ location }: RouteComponentProps) {
+  // Title only: this page is one reader's own account and preferences, so there is nothing here
+  // for a search result to describe and it keeps the app-wide description.
+  useDocumentMeta('Settings');
+
   const { user, logout, loading, authError } = useAuth();
   const { uiScale, theme, setUiScale, setTheme } = useUiPrefs();
   const { corpus } = useCorpus();

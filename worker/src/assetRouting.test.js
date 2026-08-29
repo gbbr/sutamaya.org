@@ -35,4 +35,24 @@ describe('asset vs API routing', () => {
     expect(res.status).toBe(200);
     expect(res.headers.get('content-type')).toMatch(/text\/html/);
   });
+
+  // '/' is the one path that must NOT get the SPA shell — it is the static landing page, the only
+  // page a search engine can read without rendering the app. Two things have to hold for that, and
+  // only one of them is in this file's code: wrangler.jsonc has to list '/' in `run_worker_first`
+  // (without it the asset router answers first and `not_found_handling` hands back index.html),
+  // and index.js's route has to fetch landing.html from the binding. Either one regressing puts
+  // the app shell back at the origin's front door, where nothing but JavaScript is indexable.
+  //
+  // Asserted on the two things that hold whether web/dist is a real build or the config's
+  // placeholders: the Cache-Control header, which only the Worker route sets, and the body being
+  // a different document from the shell. Both regressions collapse the two into one response.
+  it('serves the static landing page at /, not the SPA shell', async () => {
+    const res = await SELF.fetch('https://x/');
+    expect(res.status).toBe(200);
+    expect(res.headers.get('content-type')).toMatch(/text\/html/);
+    expect(res.headers.get('cache-control')).toMatch(/max-age=3600/);
+
+    const shell = await SELF.fetch('https://x/read/dn16');
+    expect(await res.text()).not.toBe(await shell.text());
+  });
 });

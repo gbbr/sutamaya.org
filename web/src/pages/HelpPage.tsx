@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
 import { ArrowLeft, ArrowUp, ExternalLink, Lightbulb } from 'lucide-react';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { isTypingTarget } from '../lib/shortcuts';
 import dictionaryShot from '../assets/help/dictionary-mobile.webp';
 import libraryShot from '../assets/help/library-mobile.webp';
@@ -354,7 +355,7 @@ const DICTIONARY_TITLE = 'The dictionary';
 
 const DICTIONARY_LEAD =
   'Tapping a Pali word looks it up in the Digital Pali Dictionary, Bodhirasa’s work, used here ' +
-  'under CC BY-NC-SA 4.0. What ships with Sutamaya is a small part of it: the words that appear ' +
+  'under CC BY-NC-SA 4.0. What ships with sutamaya is a small part of it: the words that appear ' +
   'in these suttas, with their meanings and little else. The full dictionary is far larger, and ' +
   'is worth visiting on its own.';
 
@@ -366,7 +367,7 @@ const DICTIONARY_URL = 'https://www.dpdict.net/';
 const INSTALL_TITLE = 'Install the app';
 
 const INSTALL_LEAD =
-  'Adding Sutamaya to your home screen gives it its own icon and a full screen with no address ' +
+  'Adding sutamaya to your home screen gives it its own icon and a full screen with no address ' +
   'bar. It is the same app, with everything you have saved.';
 
 const INSTALL_PLATFORMS: Array<{ title: string; steps: string[] }> = [
@@ -536,6 +537,13 @@ function BackToTop({ onClick }: { onClick: () => void }) {
 }
 
 export function HelpPage(_props: RouteComponentProps) {
+  // The one app page listed in the sitemap, so it gets a description written for a search result
+  // rather than the app-wide default.
+  useDocumentMeta(
+    'Help',
+    'How to use sutamaya: browsing the canon, reading with the Pali and dictionary, highlighting and taking notes, keeping your own lists, and reading offline.'
+  );
+
   // The page's own scroll container, so "Back to top" can return to it. The document itself never
   // scrolls here — the app shell is a fixed-height layout and this `.sc` div is what moves.
   const scrollRef = useRef<HTMLDivElement>(null);
