@@ -1,0 +1,193 @@
+<!doctype html>
+<!--
+  https://sutamaya.org/terms.html — the terms of service, and the second of the two URLs Google's
+  OAuth consent screen requires. See the note at the top of privacy.html: same shape, same
+  reasoning, same exclusion from the service worker's precache.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Terms — sutamaya</title>
+    <meta
+      name="description"
+      content="The terms sutamaya is offered under: what you may do with it, where its texts come from, and what is not guaranteed."
+    />
+    <link rel="canonical" href="https://sutamaya.org/terms.html" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32-v3.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16-v3.png" />
+    <meta name="theme-color" content="#FBF9F5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#171513" media="(prefers-color-scheme: dark)" />
+
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url('/fonts/inter-normal-latin.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Newsreader';
+        font-style: normal;
+        font-weight: 200 800;
+        font-display: swap;
+        src: url('/fonts/newsreader-normal-latin.woff2') format('woff2');
+      }
+
+      :root {
+        --ink: 27 25 23;
+        --ink-2: 74 66 58;
+        --ink-3: 92 84 76;
+        --paper: 251 249 245;
+        --accent-text: 122 91 46;
+        --line: 27 25 23;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --ink: 228 223 216;
+          --ink-2: 171 166 161;
+          --ink-3: 142 138 133;
+          --paper: 23 21 19;
+          --accent-text: 196 154 97;
+          --line: 228 223 216;
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, sans-serif;
+        font-optical-sizing: auto;
+        background: rgb(var(--paper));
+        color: rgb(var(--ink));
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+      header { padding: 22px 0; }
+      .mark {
+        display: inline-flex; align-items: center; gap: 10px;
+        font-family: Newsreader, Georgia, serif;
+        font-size: 27px; font-weight: 600; letter-spacing: -.01em;
+        color: rgb(var(--ink)); text-decoration: none;
+      }
+      .mark img { width: 30px; height: 30px; margin-top: -3px; }
+
+      h1 {
+        font-size: clamp(30px, 5vw, 40px);
+        line-height: 1.15; letter-spacing: -.02em;
+        font-weight: 600; margin: 40px 0 16px;
+      }
+      .lede { font-size: 18px; color: rgb(var(--ink-2)); margin: 0 0 8px; }
+      h2 {
+        font-size: 20px; line-height: 1.3; letter-spacing: -.01em;
+        font-weight: 600; margin: 44px 0 12px;
+        padding-top: 28px;
+        border-top: 1px solid rgb(var(--line) / .09);
+      }
+      p, li { font-size: 16px; color: rgb(var(--ink-2)); }
+      p { margin: 0 0 14px; }
+      ul { margin: 0 0 14px; padding-left: 22px; }
+      li { margin: 0 0 7px; }
+      strong { color: rgb(var(--ink)); font-weight: 600; }
+      a { color: rgb(var(--accent-text)); }
+      .updated { font-size: 14px; color: rgb(var(--ink-3)); margin: 36px 0 0; }
+
+      footer {
+        border-top: 1px solid rgb(var(--line) / .09);
+        margin-top: 48px; padding: 26px 0 56px;
+        font-size: 14px; color: rgb(var(--ink-3));
+      }
+      footer a { color: rgb(var(--accent-text)); }
+      footer p { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <a class="mark" href="/"><img src="/landing/leaf.png" width="30" height="30" alt="" />sutamaya</a>
+      </header>
+
+      <h1>Terms</h1>
+      <p class="lede">
+        Sutamaya is a personal project, offered as it is. No money changes hands: there is nothing
+        to buy, no subscription, and no plan to add either.
+      </p>
+
+      <h2>Using it</h2>
+      <p>
+        Read, search, make lists, write notes and mark up passages, on as many devices as you
+        like. Nothing is asked in return.
+      </p>
+
+      <h2>Your account</h2>
+      <p>
+        The email address you sign in with is yours to look after — anyone who can read that inbox
+        can reach your account. An account that is being used to attack or abuse the service can be
+        suspended or removed.
+      </p>
+
+      <h2>What you write stays yours</h2>
+      <p>
+        Your lists, notes and highlights belong to you. They are stored so they can be shown back
+        to you and kept in step across your devices, and for no other purpose. You can export them
+        at any time from Settings, and ask for them to be deleted — see the
+        <a href="/privacy.html">privacy policy</a>.
+      </p>
+
+      <h2>Where the texts come from</h2>
+      <ul>
+        <li>
+          The Pali and the English translations are from
+          <a href="https://suttacentral.net">SuttaCentral</a>, dedicated to the public domain under
+          CC0. Bhikkhu Sujato's English is edited in places —
+          <a href="https://github.com/gbbr/sutamaya.org/blob/main/docs/translation-changes.md"
+            >the changes are listed here</a
+          >.
+        </li>
+        <li>
+          The Pali definitions are from the
+          <a href="https://digitalpalidictionary.github.io">Digital Pali Dictionary</a> by
+          Bodhirasa, under CC BY-NC-SA 4.0. Its non-commercial terms are one of the reasons nothing
+          here will ever be sold.
+        </li>
+        <li>
+          The app's own code is MIT-licensed and lives on
+          <a href="https://github.com/gbbr/sutamaya.org">GitHub</a>.
+        </li>
+      </ul>
+
+      <h2>No warranty</h2>
+      <p>
+        Sutamaya is provided as it is, with no warranty of any kind. There is no promise that it
+        will be available, that it will be free of errors, or that what you have written will
+        survive — so if a note matters to you, keep an exported copy of it. To the fullest extent
+        the law allows, no liability is accepted for any loss arising from using it.
+      </p>
+      <p>
+        None of which is indifference. I read in this app every day, and my own lists and notes sit
+        in the same database as yours, so I will do everything I can to keep it running and to keep
+        what you have written safe. I just can't promise it.
+      </p>
+
+      <h2>Changes, and stopping</h2>
+      <p>
+        Features may change, and the service may one day be shut down. If it is being shut down,
+        this site will say so with enough notice to export your data first. You may stop using it
+        whenever you like; deleting your account ends these terms.
+      </p>
+
+      <h2>Getting in touch</h2>
+      <p>Anything at all: <a href="mailto:metta@sutamaya.org">metta@sutamaya.org</a>.</p>
+
+      <p class="updated">Last updated 30 August 2026.</p>
+
+      <footer>
+        <p><a href="/">Home</a> &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
