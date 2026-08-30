@@ -287,8 +287,8 @@ const SECTIONS: HelpSection[] = [
       },
     ],
     tips: [
-      'When reading, swiping left or right — or pressing Shift+J / Shift+K — moves to the previous ' +
-        'or next sutta in the current collection.',
+      'On a keyboard, Shift+J and Shift+K move to the previous and next sutta in the current ' +
+        'collection.',
     ],
   },
   {
@@ -372,7 +372,7 @@ const INSTALL_PLATFORMS: Array<{ title: string; steps: string[] }> = [
   {
     title: 'iPhone and iPad',
     steps: [
-      'Open sutamaya.org in Safari. It has to be Safari — Chrome and Firefox on iOS cannot install it.',
+      'Open app.sutamaya.org in Safari. It has to be Safari — Chrome and Firefox on iOS cannot install it.',
       'Tap the Share button in the toolbar.',
       'Scroll down the list and tap "Add to Home Screen".',
       'Tap "Add", top right.',
@@ -381,7 +381,7 @@ const INSTALL_PLATFORMS: Array<{ title: string; steps: string[] }> = [
   {
     title: 'Android',
     steps: [
-      'Open sutamaya.org in Chrome.',
+      'Open app.sutamaya.org in Chrome.',
       'Tap the ⋮ menu, top right.',
       'Tap "Add to Home screen", then "Install".',
       'Chrome may offer to install it for you instead — either way works.',
@@ -538,7 +538,7 @@ export function HelpPage(_props: RouteComponentProps) {
   // The one app page listed in the sitemap, so it gets a description written for a search result
   // rather than the app-wide default.
   useDocumentMeta(
-    'Help',
+    'How to use sutamaya',
     'How to use sutamaya: browsing the canon, reading with the Pali and dictionary, highlighting and taking notes, keeping your own lists, and reading offline.'
   );
 
