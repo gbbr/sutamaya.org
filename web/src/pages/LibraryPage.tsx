@@ -6,7 +6,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
-import { nodeBlurb, nodeLabel, normalizeRouteId, LIST_RESULTS_CAP } from '../lib/corpus';
+import { nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId, LIST_RESULTS_CAP } from '../lib/corpus';
 import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, type RouteIntent } from '../lib/routeIntent';
@@ -30,21 +30,24 @@ export function LibraryPage({
   // are one route element and this page stays mounted — with every pane's scroll position —
   // across selecting and deselecting a row.
   //
-  // Both segments are case-folded (see normalizeRouteId), so a URL carrying the capitalization the
-  // app displays resolves, and the address bar is rewritten to the canonical lowercase form. Only
-  // a link from outside the app can be capitalized — every link it builds itself already is.
-  const routeNodeId = urlNodeId ? normalizeRouteId(urlNodeId) : urlNodeId;
+  // The sutta segment always names a corpus document, so it is case-folded outright; the node
+  // segment names a corpus node or a user list, and only the former is folded (see
+  // normalizeBrowseNodeId — a list id is opaque, and lowercasing one names a different list).
+  // Whatever the fold changes, the address bar is rewritten to match, so a capitalized link from
+  // outside the app settles on the canonical URL. Every link the app builds itself already is
+  // canonical.
   const rawSuttaId = urlSuttaId ? normalizeRouteId(urlSuttaId) : urlSuttaId;
+  const { mobile, dragTree, resetTree, paneW } = useLayout();
+  const { corpus } = useCorpus();
+  const { lists, notes, highlights } = useUserData();
+  const { toggleTheme } = useUiPrefs();
+  const routeNodeId = urlNodeId ? normalizeBrowseNodeId(corpus, urlNodeId) : urlNodeId;
   useEffect(() => {
     if (routeNodeId && (routeNodeId !== urlNodeId || rawSuttaId !== urlSuttaId)) {
       const tail = rawSuttaId ? `/${encodeURIComponent(rawSuttaId)}` : '';
       navigate(`/browse/${encodeURIComponent(routeNodeId)}${tail}`, { replace: true });
     }
   }, [urlNodeId, urlSuttaId, routeNodeId, rawSuttaId]);
-  const { mobile, dragTree, resetTree, paneW } = useLayout();
-  const { corpus } = useCorpus();
-  const { lists, notes, highlights } = useUserData();
-  const { toggleTheme } = useUiPrefs();
   // @reach/router defers the route-param update by a microtask and a frame after navigate(), so
   // reading the ids straight off props would render a frame pairing new local state with a stale
   // id. Mirroring them into state, set synchronously with everything else a handler changes, keeps
