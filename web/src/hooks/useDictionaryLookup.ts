@@ -3,7 +3,7 @@ import { splitPaliWords, stripPunct, findAdjacentWord } from '../lib/dictionary'
 import { lookupHeadword, peekHeadword, prefetchHeadwordShard } from '../lib/dictionaryShards';
 import { animateScrollBy, computeSegmentScrollOffset } from '../lib/segmentScroll';
 import { getUiScale } from '../lib/uiPrefs';
-import type { SegmentFile } from '../lib/corpus';
+import { isUntranslated, type SegmentFile } from '../lib/corpus';
 
 interface DictState {
   word: string;
@@ -120,7 +120,13 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
 
   // Every segment's Pali word list, in the order SegmentedText renders them — used by onWordClick
   // to record where a lookup came from, and by goToAdjacentWord to walk across segment boundaries.
-  const segWords = useMemo(() => (segments ? segments.map((s) => splitPaliWords(s.pali)) : []), [segments]);
+  // An untranslated segment (lib/corpus.ts) renders no Pali at all, so it contributes no words and
+  // the walk steps straight over it: prev/next only ever opens Pali the reader could have opened
+  // themselves by tapping an English line.
+  const segWords = useMemo(
+    () => (segments ? segments.map((s) => (isUntranslated(s) ? [] : splitPaliWords(s.pali))) : []),
+    [segments]
+  );
 
   // Warm the shards either neighbour of the open word would need. Consecutive words in a sutta
   // share almost no alphabetical locality — stepping through dn4 crosses a shard boundary on 37 of

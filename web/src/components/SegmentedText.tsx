@@ -1,5 +1,5 @@
 import { memo, useMemo, type CSSProperties } from 'react';
-import type { SegmentFile, SegmentRole } from '../lib/corpus';
+import { isUntranslated, type SegmentFile, type SegmentRole } from '../lib/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
 import { highlightPaint } from '../lib/theme';
 import { paintSegmentHighlights } from '../lib/highlights';
@@ -98,10 +98,10 @@ function buildParts(text: string, hlForSeg: Highlight[]): Part[] {
 // 4912 `end` segments; the translated remainder ("The Linked Discourses on chiefs are complete.")
 // fails the equality and reads as ordinary English. Such a line is rendered as tappable Pali words
 // in place, with no reveal of its own — the line the reveal would open is the line already on
-// screen. A segment carrying highlights keeps the ordinary treatment, so a range stored before this
-// existed still paints; `user-select: none` on `.pw` means no new one can be drawn here.
-function isUntranslatedColophon(seg: SegmentFile, hlForSeg: Highlight[]): boolean {
-  return seg.role === 'end' && hlForSeg.length === 0 && seg.pali.trim() === seg.en.trim();
+// screen. `user-select: none` on `.pw` makes the line unhighlightable, so it never carries a
+// highlight to paint.
+function isUntranslatedColophon(seg: SegmentFile): boolean {
+  return seg.role === 'end' && seg.pali.trim() === seg.en.trim();
 }
 
 // What `.pw` (index.css) applies to a tappable Pali word, for the line that holds those words: a
@@ -226,7 +226,7 @@ const SegmentRow = memo(function SegmentRow({
   activeWordIndex,
 }: SegmentRowProps) {
   const parts = buildParts(seg.en, hlForSeg);
-  const colophon = isUntranslatedColophon(seg, hlForSeg);
+  const colophon = isUntranslatedColophon(seg);
   // A structural sub-heading (SuttaCentral's <h2>–<h5> nesting) renders as a real heading element
   // rather than a styled <p>, and takes the UI's sans font rather than the reading face, since it
   // is document structure rather than body prose.
@@ -350,7 +350,7 @@ const SegmentRow = memo(function SegmentRow({
           </sup>
         )}
       </HeadingTag>
-      {open && !colophon && (
+      {open && !colophon && !isUntranslated(seg) && (
         <p
           className="animate-fadeUp"
           // The pair ReaderPage's revealIntoView scrolls to, named as the word spans above are.

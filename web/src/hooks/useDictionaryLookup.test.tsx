@@ -265,4 +265,33 @@ describe('useDictionaryLookup', () => {
     rerender({ suttaId: 'dn2' });
     expect(result.current.dict).toBeNull();
   });
+
+  // A segment SuttaCentral left with no English renders no Pali at all (SegmentedText), so walking
+  // into one would show the reader Pali they never opened and could not have opened.
+  it('steps over a segment with no English rather than opening its Pali', () => {
+    vi.mocked(peekHeadword).mockReturnValue(['x']);
+    const withUntranslated: SegmentFile[] = [
+      { key: 'sn35.33:1.1', pali: 'Sāvatthinidānaṁ.', en: 'At Sāvatthī.' },
+      { key: 'sn35.33:1.2', pali: 'Tatra kho …pe…', en: '' },
+      { key: 'sn35.33:1.3', pali: 'sabbaṁ bhikkhave', en: '“Bhikkhus, all is liable to be reborn.' },
+    ];
+    const { result } = renderHook(() =>
+      useDictionaryLookup({
+        suttaId: 'sn35.33-42',
+        segments: withUntranslated,
+        scrollRef: createRef<HTMLElement>(),
+        scrollToSegment: vi.fn(),
+        setOpenSegs: vi.fn(),
+      })
+    );
+
+    act(() => {
+      result.current.onWordClick('Sāvatthinidānaṁ.', 0, 0);
+    });
+    act(() => {
+      result.current.goToAdjacentWord(1);
+    });
+
+    expect(result.current.dict).toMatchObject({ word: 'sabbaṁ', segIndex: 2, wordIndex: 0 });
+  });
 });
