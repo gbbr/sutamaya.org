@@ -4,7 +4,7 @@ import { AppProviders } from './context/AppProviders';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { useCorpus } from './context/CorpusContext';
 import { getLastLocation } from './lib/lastLocation';
-import { resolveCanonicalSuttaId } from './lib/corpus';
+import { normalizeRouteId, resolveCanonicalSuttaId } from './lib/corpus';
 import { markReturnNavigation } from './lib/entryKind';
 import { HelpPage } from './pages/HelpPage';
 import { LibraryPage } from './pages/LibraryPage';
@@ -73,15 +73,18 @@ function RestoreLastLocation(_props: RouteComponentProps) {
 // `default` renders.
 function RedirectToReader({ suttaId }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus } = useCorpus();
-  const known = Boolean(suttaId && corpus?.suttas[suttaId]);
+  // Case-folded, since a link is usually copied from a reference the app displays in caps, and
+  // redirected to the lowercase uid so the reader's own URL is the canonical one.
+  const id = suttaId ? normalizeRouteId(suttaId) : suttaId;
+  const known = Boolean(id && corpus?.suttas[id]);
   useEffect(() => {
     // Same as RestoreLastLocation above: this redirect finishes the load the user arrived with,
     // so it inherits that arrival's entry kind rather than counting as a fresh in-app navigation.
     if (known) {
       markReturnNavigation();
-      navigate(`/read/${suttaId}`, { replace: true });
+      navigate(`/read/${id}`, { replace: true });
     }
-  }, [known, suttaId]);
+  }, [known, id]);
   if (!known) return <NotFoundPage />;
   return null;
 }

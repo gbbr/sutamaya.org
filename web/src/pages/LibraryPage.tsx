@@ -6,7 +6,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
-import { nodeBlurb, nodeLabel, LIST_RESULTS_CAP } from '../lib/corpus';
+import { nodeBlurb, nodeLabel, normalizeRouteId, LIST_RESULTS_CAP } from '../lib/corpus';
 import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, type RouteIntent } from '../lib/routeIntent';
@@ -22,13 +22,25 @@ const TREE_LIST_HIT_BEFORE = 8;
 const TREE_LIST_HIT_AFTER = 14;
 
 export function LibraryPage({
-  nodeId: routeNodeId,
-  suttaId: rawSuttaId,
+  nodeId: urlNodeId,
+  suttaId: urlSuttaId,
   location,
 }: RouteComponentProps<{ nodeId: string; suttaId?: string }>) {
   // `suttaId` is a splat segment (see App.tsx), so /browse/:nodeId and /browse/:nodeId/:suttaId
   // are one route element and this page stays mounted — with every pane's scroll position —
   // across selecting and deselecting a row.
+  //
+  // Both segments are case-folded (see normalizeRouteId), so a URL carrying the capitalization the
+  // app displays resolves, and the address bar is rewritten to the canonical lowercase form. Only
+  // a link from outside the app can be capitalized — every link it builds itself already is.
+  const routeNodeId = urlNodeId ? normalizeRouteId(urlNodeId) : urlNodeId;
+  const rawSuttaId = urlSuttaId ? normalizeRouteId(urlSuttaId) : urlSuttaId;
+  useEffect(() => {
+    if (routeNodeId && (routeNodeId !== urlNodeId || rawSuttaId !== urlSuttaId)) {
+      const tail = rawSuttaId ? `/${encodeURIComponent(rawSuttaId)}` : '';
+      navigate(`/browse/${encodeURIComponent(routeNodeId)}${tail}`, { replace: true });
+    }
+  }, [urlNodeId, urlSuttaId, routeNodeId, rawSuttaId]);
   const { mobile, dragTree, resetTree, paneW } = useLayout();
   const { corpus } = useCorpus();
   const { lists, notes, highlights } = useUserData();

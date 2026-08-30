@@ -12,7 +12,7 @@ import { useReaderKeyboard } from '../hooks/useReaderKeyboard';
 import { useDictionaryLookup } from '../hooks/useDictionaryLookup';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { animateScrollBy, animateScrollTop } from '../lib/segmentScroll';
-import { flatSuttaOrder, breadcrumbFor, resolveCanonicalSuttaId, loadSuttaText } from '../lib/corpus';
+import { flatSuttaOrder, breadcrumbFor, normalizeRouteId, resolveCanonicalSuttaId, loadSuttaText } from '../lib/corpus';
 import { flattenListTree, resolveListById, suttaRowMeta } from '../lib/lists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { setReaderThemeColor } from '../lib/themeColor';
@@ -61,8 +61,18 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   // fetch, annotations, Prev/Next, breadcrumb) operate on the batch's id as if that had been
   // requested directly. `requestedSubUid` is set only when the resolution changed something, and is
   // used purely to scroll to and softly mark that inner sutta's segments once the batch loads.
-  const suttaId = corpus && routeSuttaId ? resolveCanonicalSuttaId(corpus, routeSuttaId) : routeSuttaId;
-  const requestedSubUid = routeSuttaId && routeSuttaId !== suttaId ? routeSuttaId : undefined;
+  // Case-folded before anything looks at it (see normalizeRouteId), so a link carrying the
+  // capitalization the app itself displays — "/read/SN35.33-42" — reads as the uid it names.
+  const requestedId = routeSuttaId ? normalizeRouteId(routeSuttaId) : routeSuttaId;
+  const suttaId = corpus && requestedId ? resolveCanonicalSuttaId(corpus, requestedId) : requestedId;
+  const requestedSubUid = requestedId && requestedId !== suttaId ? requestedId : undefined;
+  // The address bar is rewritten to match, replacing the entry rather than adding one, so what
+  // ends up bookmarked, shared on from here, or stored as the last location is the canonical form.
+  useEffect(() => {
+    if (requestedId && requestedId !== routeSuttaId) {
+      navigate(`/read/${encodeURIComponent(requestedId)}`, { replace: true });
+    }
+  }, [routeSuttaId, requestedId]);
   const { notes, membership, lists, markVisited } = useUserData();
   const {
     resolvedTheme,
