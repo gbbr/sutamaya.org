@@ -29,6 +29,15 @@ export interface SegmentFile {
   note?: string;
 }
 
+// True for a segment SuttaCentral left with no English at all — an elided repetition ("Tatra kho
+// …pe…", "saṅkhittaṁ.") or an untranslated uddāna summary verse. Around 14,000 segments across a
+// third of the corpus. Its English line renders empty, so there is nothing on screen to tap and no
+// way for a reader to ask for this segment's Pali: SegmentedText gives it no reveal, and the
+// dictionary's word walk steps over it (useDictionaryLookup), so its Pali never appears unbidden.
+export function isUntranslated(seg: SegmentFile): boolean {
+  return seg.en.trim() === '';
+}
+
 const textCache = new Map<string, Promise<SegmentFile[]>>();
 // The settled values of `textCache`, so an already-loaded sutta can be read synchronously. A
 // resolved promise still hands its value back a microtask later, which costs one render with no
