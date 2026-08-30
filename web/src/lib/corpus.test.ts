@@ -539,6 +539,15 @@ describe('resolveCanonicalSuttaId', () => {
     expect(resolveCanonicalSuttaId(corpus, 'dhp999')).toBe('dhp999');
     expect(resolveCanonicalSuttaId(corpus, 'not-a-real-id')).toBe('not-a-real-id');
   });
+
+  // A URL typed or shared from a reference the app displays ("MN 1", "Dhp320–333") carries that
+  // capitalization, and every uid in the corpus is lowercase.
+  it('resolves a capitalized id, and answers in the corpus’s own case', () => {
+    expect(resolveCanonicalSuttaId(corpus, 'MN1')).toBe('mn1');
+    expect(resolveCanonicalSuttaId(corpus, 'Dhp320-333')).toBe('dhp320-333');
+    expect(resolveCanonicalSuttaId(corpus, 'DHP321')).toBe('dhp320-333');
+    expect(resolveCanonicalSuttaId(corpus, 'DHP999')).toBe('dhp999');
+  });
 });
 
 // The reader prefetches the suttas either side of the one being read, then takes them straight

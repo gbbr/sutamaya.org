@@ -333,19 +333,29 @@ function rangesFor(corpus: Corpus): Map<string, UidRange> {
   return cache;
 }
 
+// Ids are lowercase everywhere in the corpus, but every reference the app shows is capitalized
+// ("SN 35.33–42"), so a URL typed or shared from what's on screen arrives capitalized and would
+// otherwise miss every lookup. Any id entering the app from a URL is folded through here first;
+// list and node ids are lowercase too (randomId(), and the hardcoded auto-list ids), so the same
+// fold is safe for a `/browse` segment.
+export function normalizeRouteId(id: string): string {
+  return id.toLowerCase();
+}
+
 // The enclosing batch's id for a deep-link id like "dhp321", which has no `corpus.suttas` entry of
 // its own (see RANGE_UID above), so `/read/dhp321` and a search hit for it land on the same
 // document. Identity for an id that already has an entry — checked first — and for one matching no
 // range, so a genuinely invalid id still resolves to itself and 404s.
 export function resolveCanonicalSuttaId(corpus: Corpus, id: string): string {
-  if (corpus.suttas[id]) return id;
-  const m = id.match(RANGE_QUERY);
-  if (!m) return id;
+  const lower = normalizeRouteId(id);
+  if (corpus.suttas[lower]) return lower;
+  const m = lower.match(RANGE_QUERY);
+  if (!m) return lower;
   const num = Number(m[2]);
   for (const [batchId, range] of rangesFor(corpus)) {
     if (range.prefix === m[1] && num >= range.start && num <= range.end) return batchId;
   }
-  return id;
+  return lower;
 }
 
 // Each sutta's list-name haystack: the normalized paths of every list holding it, at any depth, via

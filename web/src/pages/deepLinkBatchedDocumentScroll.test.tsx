@@ -1,7 +1,10 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
-import { Router, navigate } from '@reach/router';
+import { Router, navigate, globalHistory } from '@reach/router';
 
+// Two things a deep link straight into the reader has to get right, both exercised through the
+// real ReaderPage wiring rather than the helpers underneath it.
+//
 // Regression test for the reader landing far from the requested verse when opening a deep link
 // into one specific inner sutta of a *batched* document (e.g. "dhp1", inside the batch "dhp1-20")
 // that was already visited via a different inner sutta in the same session. Both share one
@@ -65,7 +68,7 @@ const userDataDefaults: ReturnType<typeof useUserData> = {
   markVisited: () => {},
 };
 
-describe('reader deep link into an already-visited batched document', () => {
+describe('reader deep links into a batched document', () => {
   beforeEach(() => {
     const store = new Map<string, string>();
     vi.stubGlobal('localStorage', {
@@ -158,5 +161,14 @@ describe('reader deep link into an already-visited batched document', () => {
     await screen.findByText('Mind precedes all things');
     await waitFor(() => expect(second.scrollBox.scrollTop).not.toBe(900));
     expect(second.scrollBox.scrollTop).toBe(0);
+  });
+
+  // A link copied from a reference as the app displays it ("Dhp 14") carries capitals that no uid
+  // in the corpus has. It has to open the same document — here, still resolving the inner verse to
+  // its enclosing batch — and settle the address bar on the canonical lowercase path.
+  it('opens a capitalized deep link, and rewrites the URL to the canonical id', async () => {
+    renderReaderAt('/read/DHP14');
+    await screen.findByText('As a well-roofed house');
+    await waitFor(() => expect(globalHistory.location.pathname).toBe('/read/dhp14'));
   });
 });
