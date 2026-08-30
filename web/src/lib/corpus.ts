@@ -344,11 +344,21 @@ function rangesFor(corpus: Corpus): Map<string, UidRange> {
 
 // Ids are lowercase everywhere in the corpus, but every reference the app shows is capitalized
 // ("SN 35.33–42"), so a URL typed or shared from what's on screen arrives capitalized and would
-// otherwise miss every lookup. Any id entering the app from a URL is folded through here first;
-// list and node ids are lowercase too (randomId(), and the hardcoded auto-list ids), so the same
-// fold is safe for a `/browse` segment.
+// otherwise miss every lookup. Any sutta id entering the app from a URL is folded through here
+// first.
 export function normalizeRouteId(id: string): string {
   return id.toLowerCase();
+}
+
+// A `/browse` segment names either a corpus node or one of the reader's own lists, and only the
+// first is folded. A corpus id is a reference someone types or shares with the capitals the app
+// displays; a list id is opaque — minted, never written down — so folding it names a different
+// list, or none at all. Only the corpus can say which kind this is, so an id arriving before it
+// loads is left alone and reconsidered once it has.
+export function normalizeBrowseNodeId(corpus: Corpus | null, id: string): string {
+  const lower = normalizeRouteId(id);
+  if (lower === id || !corpus) return id;
+  return findNode(corpus, lower) ? lower : id;
 }
 
 // The enclosing batch's id for a deep-link id like "dhp321", which has no `corpus.suttas` entry of
