@@ -93,10 +93,17 @@ export default defineConfig({
         // never requests a byte of either. Precaching them would put ~280KB into every install to
         // serve nobody. XCharter, the third stand-in, needs no entry here: it's a whole font, so
         // its filenames don't carry a subset suffix and the patterns never matched them.
-        // The landing page belongs to the marketing hostname, which runs no service worker at all
-        // (see wrangler.jsonc); precaching it here would put a page this origin never serves into
-        // every install. Its images under landing/ match none of the patterns above already.
-        globIgnores: ['**/gelasio-*.woff2', '**/gentium-*.woff2', 'landing.html'],
+        // The landing page and the two policy pages belong to the marketing hostname, which runs
+        // no service worker at all (see wrangler.jsonc); precaching them here would put pages this
+        // origin never serves into every install. The images under landing/ match none of the
+        // patterns above already.
+        globIgnores: [
+          '**/gelasio-*.woff2',
+          '**/gentium-*.woff2',
+          'landing.html',
+          'privacy.html',
+          'terms.html',
+        ],
         navigateFallbackDenylist: [/^\/api\//],
         runtimeCaching: [
           // These two paths are unversioned — a corrected sutta or gloss keeps its URL — so they

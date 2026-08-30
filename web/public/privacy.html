@@ -1,0 +1,238 @@
+<!doctype html>
+<!--
+  https://sutamaya.org/privacy.html — the privacy policy, and one of the two URLs Google's OAuth
+  consent screen requires.
+
+  A static file beside landing.html, sharing its palette and faces by copy rather than by import:
+  nothing here is part of the Vite graph. Unlike that page it links nowhere into the app, so there
+  are no absolute cross-hostname hrefs for the dev server's serve-landing-at-root plugin to
+  rewrite — the wordmark and the footer go back to the marketing site's own root.
+
+  The asset router serves it on both hostnames; the canonical below names the marketing one.
+  Excluded from the service worker's precache (globIgnores in web/vite.config.ts) for the same
+  reason landing.html is: it belongs to a hostname that runs no service worker.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy — sutamaya</title>
+    <meta
+      name="description"
+      content="What sutamaya stores, what it never does, and how to get a copy of your data or have it deleted."
+    />
+    <link rel="canonical" href="https://sutamaya.org/privacy.html" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32-v3.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16-v3.png" />
+    <meta name="theme-color" content="#FBF9F5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#171513" media="(prefers-color-scheme: dark)" />
+
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url('/fonts/inter-normal-latin.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Newsreader';
+        font-style: normal;
+        font-weight: 200 800;
+        font-display: swap;
+        src: url('/fonts/newsreader-normal-latin.woff2') format('woff2');
+      }
+
+      :root {
+        --ink: 27 25 23;
+        --ink-2: 74 66 58;
+        --ink-3: 92 84 76;
+        --paper: 251 249 245;
+        --accent-text: 122 91 46;
+        --line: 27 25 23;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --ink: 228 223 216;
+          --ink-2: 171 166 161;
+          --ink-3: 142 138 133;
+          --paper: 23 21 19;
+          --accent-text: 196 154 97;
+          --line: 228 223 216;
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, sans-serif;
+        font-optical-sizing: auto;
+        background: rgb(var(--paper));
+        color: rgb(var(--ink));
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      /* Narrower than the landing page's 980px: this is a column of prose, not a layout. */
+      .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+      header { padding: 22px 0; }
+      .mark {
+        display: inline-flex; align-items: center; gap: 10px;
+        font-family: Newsreader, Georgia, serif;
+        font-size: 27px; font-weight: 600; letter-spacing: -.01em;
+        color: rgb(var(--ink)); text-decoration: none;
+      }
+      .mark img { width: 30px; height: 30px; margin-top: -3px; }
+
+      h1 {
+        font-size: clamp(30px, 5vw, 40px);
+        line-height: 1.15; letter-spacing: -.02em;
+        font-weight: 600; margin: 40px 0 16px;
+      }
+      .lede { font-size: 18px; color: rgb(var(--ink-2)); margin: 0 0 8px; }
+      h2 {
+        font-size: 20px; line-height: 1.3; letter-spacing: -.01em;
+        font-weight: 600; margin: 44px 0 12px;
+        padding-top: 28px;
+        border-top: 1px solid rgb(var(--line) / .09);
+      }
+      p, li { font-size: 16px; color: rgb(var(--ink-2)); }
+      p { margin: 0 0 14px; }
+      ul { margin: 0 0 14px; padding-left: 22px; }
+      li { margin: 0 0 7px; }
+      strong { color: rgb(var(--ink)); font-weight: 600; }
+      a { color: rgb(var(--accent-text)); }
+      .updated { font-size: 14px; color: rgb(var(--ink-3)); margin: 36px 0 0; }
+
+      footer {
+        border-top: 1px solid rgb(var(--line) / .09);
+        margin-top: 48px; padding: 26px 0 56px;
+        font-size: 14px; color: rgb(var(--ink-3));
+      }
+      footer a { color: rgb(var(--accent-text)); }
+      footer p { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <a class="mark" href="/"><img src="/landing/leaf.png" width="30" height="30" alt="" />sutamaya</a>
+      </header>
+
+      <h1>Privacy</h1>
+      <p class="lede">
+        Sutamaya keeps as little about you as it can. You can read the entire canon without an
+        account, and until you sign in nothing you do here leaves your device.
+      </p>
+
+      <h2>If you don't sign in</h2>
+      <p>
+        Your lists, notes, highlights, reading position and display settings are stored only in
+        your browser, on that device. None of it is sent anywhere, and clearing the site's data in
+        your browser erases it for good.
+      </p>
+
+      <h2>If you sign in</h2>
+      <p>There are two ways in, and each one takes only what it needs to identify you:</p>
+      <ul>
+        <li>
+          <strong>Google.</strong> Your email address, your name, your profile picture and your
+          Google account identifier. Nothing else — no contacts, no calendar, no files.
+        </li>
+        <li>
+          <strong>A six-digit code by email.</strong> Your email address, and the code itself,
+          which is stored scrambled and expires shortly after it is sent.
+        </li>
+      </ul>
+      <p>From then on, what you write in the app is stored on the server against your account:</p>
+      <ul>
+        <li>your lists and the folders you put them in</li>
+        <li>your notes</li>
+        <li>your highlights — which sutta, which passage, which colour</li>
+        <li>which suttas you have opened, and when</li>
+        <li>
+          a random identifier for each device you sign in on, which is how two devices work out
+          whose version of an edit is the newer one
+        </li>
+      </ul>
+      <p>
+        Signing in also sets one cookie, which identifies your account and nothing else. There are
+        no tracking cookies.
+      </p>
+
+      <h2>What never happens</h2>
+      <p>
+        There is no advertising here and no tracking of you between sites. Nothing about you is
+        sold, rented or shared. Your notes and highlights are not read, mined or profiled — they
+        are stored so they can be shown back to you and kept in step across your devices, and for
+        nothing else.
+      </p>
+
+      <h2>What is counted</h2>
+      <p>
+        The app runs Cloudflare Web Analytics, which counts how often each page is opened. It sets
+        no cookie, stores nothing on your device, and follows nobody from one site to another: it
+        records that a page was opened, never who opened it, so it cannot say which suttas you in
+        particular have read. It also only runs while you are online, so anything you read offline
+        is counted nowhere at all. Only the app is counted this way; these public pages run no
+        measurement whatsoever.
+      </p>
+
+      <h2>Who else is involved</h2>
+      <ul>
+        <li>
+          <strong>Cloudflare</strong> hosts the site, holds the database, and provides the page
+          counting described above. Like any web host it sees the ordinary details of a request,
+          including your IP address.
+        </li>
+        <li><strong>Google</strong>, only if you choose the Google button.</li>
+        <li><strong>Resend</strong> delivers the sign-in code, so it sees your email address.</li>
+      </ul>
+      <p>
+        That is the whole list. The walkthrough on the home page is a link to YouTube rather than
+        an embedded player, so YouTube learns nothing unless you follow it.
+      </p>
+
+      <h2>Getting a copy, and getting rid of it</h2>
+      <ul>
+        <li>
+          <strong>Export.</strong> Settings → <em>Export my data</em> downloads everything held
+          against your account as a single file.
+        </li>
+        <li>
+          <strong>Delete.</strong> Write to
+          <a href="mailto:metta@sutamaya.org">metta@sutamaya.org</a> and your account and
+          everything in it will be deleted. There is no button for this yet.
+        </li>
+        <li>
+          <strong>Just this device.</strong> Settings has an option to erase the copy held locally,
+          which leaves the account untouched.
+        </li>
+      </ul>
+      <p>
+        When you delete a note, a list or a highlight, its contents go and a small marker is kept
+        saying that it was deleted — that marker is what stops a device that was offline at the
+        time from putting it back. Everything else is kept for as long as the account exists.
+      </p>
+
+      <h2>Children</h2>
+      <p>
+        Sutamaya is not aimed at children, and accounts are not knowingly created for anyone under
+        13.
+      </p>
+
+      <h2>Changes, and getting in touch</h2>
+      <p>
+        If any of this changes, this page changes with it and the date below says when. Questions
+        about any of it go to <a href="mailto:metta@sutamaya.org">metta@sutamaya.org</a>.
+      </p>
+
+      <p class="updated">Last updated 30 August 2026.</p>
+
+      <footer>
+        <p><a href="/">Home</a> &nbsp;·&nbsp; <a href="/terms.html">Terms</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
