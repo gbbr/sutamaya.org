@@ -543,8 +543,8 @@ export function ListPane({
                     </span>
                     {/* Clamped, like the blurb it stands in for: a row is a scannable line, not the
                         place to read a long note — the reader has the whole of it. */}
-                    <span className="line-clamp-3">
-                      <MatchedText text={note} query={rowQuery} />
+                    <span className="line-clamp-3 whitespace-pre-wrap">
+                      <MatchedText text={note} query={rowQuery} notation />
                     </span>
                   </span>
                 ) : (

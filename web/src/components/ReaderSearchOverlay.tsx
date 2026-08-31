@@ -224,10 +224,10 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
                 </span>
                 {(notes[h.id] || h.sutta.blurb) && (
                   <span
-                    className={`text-ui-base leading-[1.45] mt-[3px] ${notes[h.id] ? 'pl-[8px] border-l-2' : 'italic'}`}
+                    className={`text-ui-base leading-[1.45] mt-[3px] ${notes[h.id] ? 'pl-[8px] border-l-2 whitespace-pre-wrap' : 'italic'}`}
                     style={{ color: theme.dim, borderColor: notes[h.id] ? theme.rule : undefined }}
                   >
-                    <MatchedText text={notes[h.id] || h.sutta.blurb} query={query} theme={theme} />
+                    <MatchedText text={notes[h.id] || h.sutta.blurb} query={query} theme={theme} notation={!!notes[h.id]} />
                   </span>
                 )}
                 <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} theme={theme} />

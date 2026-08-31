@@ -1,24 +1,28 @@
 import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react';
 import { NOTE_MAX_LENGTH } from '../lib/textLimits';
 
+// How close to the cap the count starts showing. A running score over every note would make the
+// limit the point of the box; near the end it's a warning, which is the only time it's useful.
+const COUNT_FROM_REMAINING = 100;
+
 interface NoteEditorProps {
   value: string;
   onSubmit: (text: string) => void;
   placeholder?: string;
+  // Fixed: a note is an annotation — a line or two to recognise the sutta by later — and a box
+  // that stays that size says so. Longer notes scroll rather than growing the field.
   rows?: number;
   textareaClassName: string;
   textareaStyle?: CSSProperties;
-  saveButtonClassName: string;
-  saveButtonStyle?: CSSProperties;
   // Bumped by a caller (ReaderPage's "n" shortcut) to focus and select the textarea on demand.
   // `autoFocus` only fires on mount, which misses a shortcut pressed while the panel is open.
   focusSignal?: number;
 }
 
-// A note is a discrete edit, not a live stream. Enter commits it, so there is no newline key at
-// all; leaving the field commits, as does the editor going off screen with a draft pending, and the
-// Save button is there for anyone who'd rather not remember either. Nothing typed is ever dropped,
-// which is why Escape out of the reader's panel saves rather than cancels.
+// A note is written like a note, not sent like a message: Enter is a new line, and saving happens
+// on its own — leaving the field commits, as does the editor going off screen with a draft pending.
+// Cmd/Ctrl+Enter commits on the spot for anyone who wants a deliberate keystroke. Nothing typed is
+// ever dropped, which is why Escape out of the reader's panel saves rather than cancels.
 //
 // Keeps its own draft state, so nothing is written per keystroke, and resyncs whenever `value`
 // changes — switching suttas, or a note edited on another device arriving mid-edit.
@@ -29,8 +33,6 @@ export function NoteEditor({
   rows = 2,
   textareaClassName,
   textareaStyle,
-  saveButtonClassName,
-  saveButtonStyle,
   focusSignal,
 }: NoteEditorProps) {
   const [draft, setDraft] = useState(value);
@@ -48,12 +50,13 @@ export function NoteEditor({
 
   const dirty = draft !== value;
   const remaining = NOTE_MAX_LENGTH - draft.length;
+  const counting = dirty && remaining <= COUNT_FROM_REMAINING;
 
   function submit() {
     if (draft !== value) onSubmit(draft);
   }
 
-  // Enter, blur and Save all commit the draft, but none of them fire when the editor is taken off
+  // Cmd/Ctrl+Enter and blur both commit the draft, but neither fires when the editor is taken off
   // screen — and Escape closes the reader's panel (see useReaderKeyboard) without moving focus
   // first, so a half-written note would go with it. Committing from the unmount cleanup covers
   // that, and closing the reader outright with it. The ref lets that cleanup stay mount-scoped and
@@ -65,7 +68,7 @@ export function NoteEditor({
   useEffect(() => () => submitRef.current(), []);
 
   function onKeyDown(e: KeyboardEvent<HTMLTextAreaElement>) {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) {
       e.preventDefault();
       submit();
     }
@@ -85,14 +88,12 @@ export function NoteEditor({
         className={textareaClassName}
         style={textareaStyle}
       />
-      {dirty && (
-        <div className="flex items-center justify-between gap-2 mt-1.5">
-          <span className="font-sans text-ui-xs" style={{ opacity: 0.5 }}>
-            {remaining} character{remaining === 1 ? '' : 's'} left
-          </span>
-          <button type="button" className={saveButtonClassName} style={saveButtonStyle} onMouseDown={(e) => e.preventDefault()} onClick={submit}>
-            Save
-          </button>
+      {/* Nothing is said about saving, in either direction: the note saves itself, and a word about
+          it — a Save button, or a "Saved" afterwards — would only make a question of something the
+          reader never has to think about. The one thing worth saying is that the cap is close. */}
+      {counting && (
+        <div className="mt-1.5 font-sans text-ui-xs" style={{ opacity: 0.5 }}>
+          {remaining} character{remaining === 1 ? '' : 's'} left
         </div>
       )}
     </div>

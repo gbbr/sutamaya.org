@@ -32,6 +32,7 @@ import { ReaderMenuPanel } from '../components/ReaderMenuPanel';
 import { ReaderSearchOverlay } from '../components/ReaderSearchOverlay';
 import { KeyCap, ShortcutsModal } from '../components/ShortcutsModal';
 import { SuttaRowChips } from '../components/SuttaRowChips';
+import { MatchedText } from '../components/MatchedText';
 import { NotFoundPage } from './NotFoundPage';
 
 // How long a sutta has to stay open before it counts as visited. Long enough that stepping
@@ -638,7 +639,13 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
               <span aria-hidden className="flex-none">
                 —
               </span>
-              <span>{notes[suttaId]}</span>
+              {/* Five lines at most, so a long note can't push the sutta itself off the screen.
+                  Tapping it opens the note box, where the whole thing is there to read and edit. */}
+              {/* No query here — nothing is being searched. MatchedText is what renders a note's
+                  own `*bold*`, and it draws the text plainly when there are no words to mark. */}
+              <span className="line-clamp-5 whitespace-pre-wrap">
+                <MatchedText text={notes[suttaId]} query="" notation />
+              </span>
             </button>
           )}
           <div className="mt-4">

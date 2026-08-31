@@ -1,7 +1,7 @@
 import { test, expect, openListsTab, openSuttaList, waitForLocalWrites } from './fixtures';
 
-// A note is a discrete edit — Enter commits it — and it belongs to the sutta, so it shows up on
-// that sutta's row back in the library and in the synthesized "Notes" auto-list.
+// A note is a discrete edit — Cmd/Ctrl+Enter commits it, as does leaving the field — and it belongs
+// to the sutta, so it shows up on that sutta's row back in the library and in the "Notes" auto-list.
 
 test('a note written in the reader shows on the sutta row and in the Notes list', async ({ page }) => {
   const listPane = await openSuttaList(page, 'dn-silakkhandhavagga');
@@ -12,11 +12,11 @@ test('a note written in the reader shows on the sutta row and in the Notes list'
 
   // "n" opens the panel on the note and focuses it.
   await page.keyboard.press('n');
-  const note = page.getByPlaceholder('Add a note — return to save');
+  const note = page.getByPlaceholder('Something to remember this by');
   await expect(note).toBeFocused();
 
   await note.fill('the sixty-two views');
-  await note.press('Enter');
+  await note.press('ControlOrMeta+Enter');
 
   await page.keyboard.press('Escape');
 
@@ -36,9 +36,9 @@ test('a note survives a reload and can be edited', async ({ page }) => {
   // that the write reached the store rather than sitting in the editor's draft state.
   const write = async (text: string) => {
     await page.keyboard.press('n');
-    const note = page.getByPlaceholder('Add a note — return to save');
+    const note = page.getByPlaceholder('Something to remember this by');
     await note.fill(text);
-    await note.press('Enter');
+    await note.press('ControlOrMeta+Enter');
     await expect(page.getByRole('button', { name: 'Edit note' })).toContainText(text);
     await page.keyboard.press('Escape');
     await waitForLocalWrites(page);
