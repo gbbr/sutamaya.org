@@ -539,7 +539,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           horizontally scrollable (or flash a scrollbar) as the incoming sutta slides in from
           off to the right — `.sc` only sets overflow-y, and CSS resolves the other axis to
           `auto` rather than leaving it visible. */}
-      <div ref={scrollRef} className="sc flex-1" style={{ padding: '44px 22px 120px', overflowX: 'hidden' }}>
+      <div ref={scrollRef} className="sc flex-1" style={{ padding: '32px 22px 120px', overflowX: 'hidden' }}>
         {/* Stepping to another sutta carries this column off the way the reader is travelling and
             brings the next one in behind it, so Prev/Next reads as movement through the canon
             rather than the screen silently becoming a different sutta. Driven imperatively from
