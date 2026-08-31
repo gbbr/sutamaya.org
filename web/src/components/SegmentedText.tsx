@@ -366,6 +366,9 @@ const SegmentRow = memo(function SegmentRow({
               color: theme.pali,
               '--pw-hover': theme.tint,
               ...UNSELECTABLE,
+              // A closing line's English is centred (roleStyle), so the Pali under it has to be
+              // centred too — the two halves of one line, otherwise sitting on different axes.
+              ...(seg.role === 'end' ? { textAlign: 'center' } : null),
             } as CSSProperties
           }
         >
