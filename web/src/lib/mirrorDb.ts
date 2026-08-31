@@ -1,4 +1,4 @@
-import { emptyMirror, type MirrorState } from './mirror';
+import { emptyMirror, upgradeStoredMirror, type MirrorState } from './mirror';
 
 // Durable storage for the mirror. One account's whole mirror is a single IndexedDB record keyed by
 // user id — the dataset is tens of kilobytes, so one atomic `put` per mutation is cheap and avoids
@@ -59,12 +59,16 @@ function transact<T>(db: IDBDatabase, mode: IDBTransactionMode, run: (store: IDB
 // The account's mirror as it was last saved, or a fresh empty one for a device that has never held
 // this account's data. A storage failure is not fatal: an empty mirror repopulates from the first
 // pull, so the app opens rather than refusing to.
+//
+// Everything that comes back out goes through upgradeStoredMirror first — this is the one door
+// records written by an older build come in through, and the rest of the app only handles the
+// current shape.
 export async function loadMirror(userId: string): Promise<MirrorState> {
   const db = await openDb();
-  if (!db) return memory.get(userId) ?? emptyMirror(userId);
+  if (!db) return upgradeStoredMirror(memory.get(userId) ?? emptyMirror(userId));
   try {
     const stored = await transact<MirrorState | undefined>(db, 'readonly', (store) => store.get(userId));
-    return stored ?? emptyMirror(userId);
+    return upgradeStoredMirror(stored ?? emptyMirror(userId));
   } catch {
     return emptyMirror(userId);
   }

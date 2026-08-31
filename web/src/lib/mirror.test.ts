@@ -16,6 +16,7 @@ import {
   queueSiblingOrder,
   setNoteRecord,
   syncCounts,
+  upgradeStoredMirror,
   writeHighlightRecord,
   type FlushOutcome,
   type MirrorState,
@@ -84,14 +85,14 @@ describe('applySnapshot', () => {
   it('does not resurrect a group a pending erase names', () => {
     let state = applySnapshot(
       emptyMirror('u1'),
-      snapshot({ highlights: { dn1: [{ id: 'h1', i: 0, s: 0, e: 5, c: 'yellow', g: 'g1', m: '2026-01-01T00:00:00.000Z|d' }] } })
+      snapshot({ highlights: { dn1: [{ id: 'g1', i0: 0, o0: 0, i1: 0, o1: 5, c: 'yellow', m: '2026-01-01T00:00:00.000Z|d' }] } })
     );
-    state = writeHighlightRecord(state, 'dn1', [{ i: 0, s: 0, e: 5 }], null);
+    state = writeHighlightRecord(state, 'dn1', { i0: 0, o0: 0, i1: 0, o1: 5 }, null);
     expect(state.highlights.g1).toBeUndefined();
 
     state = applySnapshot(
       state,
-      snapshot({ highlights: { dn1: [{ id: 'h1', i: 0, s: 0, e: 5, c: 'yellow', g: 'g1', m: '2026-01-01T00:00:00.000Z|d' }] } })
+      snapshot({ highlights: { dn1: [{ id: 'g1', i0: 0, o0: 0, i1: 0, o1: 5, c: 'yellow', m: '2026-01-01T00:00:00.000Z|d' }] } })
     );
 
     // The erase is still queued, so the server still has the group — dropping it here is what keeps
@@ -99,36 +100,31 @@ describe('applySnapshot', () => {
     expect(state.highlights.g1).toBeUndefined();
   });
 
-  it('recombines a pulled group into one record per `g`', () => {
+  it('takes a pulled highlight in as one record, keyed by its own id', () => {
     const state = applySnapshot(
       emptyMirror('u1'),
       snapshot({
         highlights: {
           dn1: [
-            { id: 'h2', i: 1, s: 0, e: 4, c: 'yellow', g: 'g1', m: '2026-01-01T00:00:00.000Z|d' },
-            { id: 'h1', i: 0, s: 3, e: 9, c: 'yellow', g: 'g1', m: '2026-01-01T00:00:00.000Z|d' },
+            { id: 'g2', i0: 4, o0: 0, i1: 4, o1: 4, c: 'yellow', m: '2026-01-01T00:00:00.000Z|d' },
+            { id: 'g1', i0: 0, o0: 3, i1: 1, o1: 9, c: 'yellow', m: '2026-01-01T00:00:00.000Z|d' },
           ],
         },
       })
     );
 
-    // One row per segment on the wire, one record per group in the mirror — and in segment order,
-    // whatever order the rows arrived in.
-    expect(Object.keys(state.highlights)).toEqual(['g1']);
-    expect(state.highlights.g1.data.ranges).toEqual([
-      { i: 0, s: 3, e: 9 },
-      { i: 1, s: 0, e: 4 },
-    ]);
+    expect(Object.keys(state.highlights).sort()).toEqual(['g1', 'g2']);
+    expect(state.highlights.g1.data).toMatchObject({ suttaId: 'dn1', span: { i0: 0, o0: 3, i1: 1, o1: 9 }, sent: true });
   });
 });
 
 describe('local collapses', () => {
   it('drops a highlight group created and erased before either ever synced', () => {
-    let state = writeHighlightRecord(emptyMirror('u1'), 'dn1', [{ i: 0, s: 0, e: 5 }], 'yellow');
+    let state = writeHighlightRecord(emptyMirror('u1'), 'dn1', { i0: 0, o0: 0, i1: 0, o1: 5 }, 'yellow');
     const created = Object.keys(state.highlights);
     expect(created).toHaveLength(1);
 
-    state = writeHighlightRecord(state, 'dn1', [{ i: 0, s: 0, e: 5 }], null);
+    state = writeHighlightRecord(state, 'dn1', { i0: 0, o0: 0, i1: 0, o1: 5 }, null);
 
     // Pushed as a create-then-tombstone pair the tombstone matches nothing if it lands first, and
     // the create then resurrects a highlight the user already erased. Nothing to push is both
@@ -140,10 +136,10 @@ describe('local collapses', () => {
     // A synced group, recoloured offline, then erased offline before either write went out.
     let state = applySnapshot(
       emptyMirror('u1'),
-      snapshot({ highlights: { dn1: [{ id: 'h1', i: 0, s: 0, e: 5, c: 'yellow', g: 'synced', m: '2026-01-01T00:00:00.000Z|d' }] } })
+      snapshot({ highlights: { dn1: [{ id: 'synced', i0: 0, o0: 0, i1: 0, o1: 5, c: 'yellow', m: '2026-01-01T00:00:00.000Z|d' }] } })
     );
-    state = writeHighlightRecord(state, 'dn1', [{ i: 0, s: 0, e: 5 }], 'green');
-    state = writeHighlightRecord(state, 'dn1', [{ i: 0, s: 0, e: 5 }], null);
+    state = writeHighlightRecord(state, 'dn1', { i0: 0, o0: 0, i1: 0, o1: 5 }, 'green');
+    state = writeHighlightRecord(state, 'dn1', { i0: 0, o0: 0, i1: 0, o1: 5 }, null);
 
     // The recolour is dropped as never-synced, but the group it displaced is one the server still
     // holds — losing that tombstone with it would bring the original highlight back on the next pull.
@@ -242,10 +238,10 @@ describe('local collapses', () => {
   });
 
   it('tombstones a highlight group erased while its own create is still in flight', () => {
-    let state = writeHighlightRecord(emptyMirror('u1'), 'dn1', [{ i: 0, s: 0, e: 5 }], 'yellow');
+    let state = writeHighlightRecord(emptyMirror('u1'), 'dn1', { i0: 0, o0: 0, i1: 0, o1: 5 }, 'yellow');
     const [g] = Object.keys(state.highlights);
     state = markDispatched(state, state);
-    state = writeHighlightRecord(state, 'dn1', [{ i: 0, s: 0, e: 5 }], null);
+    state = writeHighlightRecord(state, 'dn1', { i0: 0, o0: 0, i1: 0, o1: 5 }, null);
 
     // Same race as the list above: the group the server may already hold has to be named as a
     // tombstone, or the erase quietly undoes itself on the next pull.
@@ -422,9 +418,9 @@ describe('applyFlushOutcome', () => {
   it('retires a pushed erase-only write, which has no rows of its own to keep', () => {
     let state = applySnapshot(
       emptyMirror('u1'),
-      snapshot({ highlights: { dn1: [{ id: 'h1', i: 0, s: 0, e: 5, c: 'yellow', g: 'g1', m: '2026-01-01T00:00:00.000Z|d' }] } })
+      snapshot({ highlights: { dn1: [{ id: 'g1', i0: 0, o0: 0, i1: 0, o1: 5, c: 'yellow', m: '2026-01-01T00:00:00.000Z|d' }] } })
     );
-    state = writeHighlightRecord(state, 'dn1', [{ i: 0, s: 0, e: 5 }], null);
+    state = writeHighlightRecord(state, 'dn1', { i0: 0, o0: 0, i1: 0, o1: 5 }, null);
     const [g, record] = Object.entries(state.highlights)[0];
     state = applyFlushOutcome(state, outcome({ acks: [{ kind: 'highlight', id: g, mtime: record.data.mtime }] }));
 
@@ -516,5 +512,91 @@ describe('adoptMirror', () => {
     expect(hasContent(emptyMirror('local-1'))).toBe(false);
     const account = list(emptyMirror('u1'), 'a1');
     expect(adoptMirror(account, emptyMirror('local-1'))).toEqual(account);
+  });
+});
+
+// A highlight used to be stored as one range per segment it covered. The collapse runs on the way
+// out of IndexedDB (lib/mirrorDb.ts), and it is the only path by which a reader who has never
+// signed in keeps the highlights they made — nothing else re-pulls their mirror from anywhere.
+describe('upgradeStoredMirror', () => {
+  const legacy = (g: string, ranges: { i: number; s: number; e: number }[], over = {}) => ({
+    dirty: false,
+    data: { g, suttaId: 'dn1', ranges, color: 'yellow', erase: [], mtime: '2026-01-01T00:00:00.000Z|d', sent: true, ...over },
+  });
+  const stored = (highlights: Record<string, unknown>) => ({ ...emptyMirror('u1'), highlights } as unknown as MirrorState);
+
+  it('collapses a cross-segment highlight to the first range\'s start and the last one\'s end', () => {
+    const state = upgradeStoredMirror(
+      stored({
+        g1: legacy('g1', [
+          { i: 4, s: 0, e: 6 },
+          { i: 2, s: 3, e: 11 },
+          { i: 3, s: 0, e: 20 },
+        ]),
+      })
+    );
+
+    // Sorted first, so a record persisted out of segment order still yields the right two ends.
+    expect(state.highlights.g1.data.span).toEqual({ i0: 2, o0: 3, i1: 4, o1: 6 });
+    expect('ranges' in state.highlights.g1.data).toBe(false);
+  });
+
+  it('collapses a single-segment highlight to the one range it had', () => {
+    const state = upgradeStoredMirror(stored({ g1: legacy('g1', [{ i: 7, s: 2, e: 9 }]) }));
+    expect(state.highlights.g1.data.span).toEqual({ i0: 7, o0: 2, i1: 7, o1: 9 });
+  });
+
+  it('keeps everything else about the record, dirty flag included', () => {
+    const state = upgradeStoredMirror(
+      stored({ g1: { ...legacy('g1', [{ i: 0, s: 0, e: 4 }], { color: null, erase: ['old'], sent: false }), dirty: true } })
+    );
+    expect(state.highlights.g1.dirty).toBe(true);
+    expect(state.highlights.g1.data).toMatchObject({ g: 'g1', suttaId: 'dn1', color: null, erase: ['old'], sent: false });
+  });
+
+  // The worst failure this function could have is not failing to convert an old record but damaging
+  // a good one, so the checks below are on identity rather than equality: the same object back means
+  // nothing was touched at all.
+  it('leaves a mirror already in the current shape untouched, by identity', () => {
+    const current = writeHighlightRecord(emptyMirror('u1'), 'dn1', { i0: 0, o0: 0, i1: 0, o1: 5 }, 'yellow');
+    expect(upgradeStoredMirror(current)).toBe(current);
+    expect(upgradeStoredMirror(emptyMirror('u1'))).toEqual(emptyMirror('u1'));
+  });
+
+  // The mixed mirror: a record still in the old shape sitting beside ones already converted. This is
+  // the case where the function does rebuild the map, so it is where a good record could be caught
+  // up in the rebuild and damaged.
+  it('leaves current-shape records untouched while collapsing a legacy one beside them', () => {
+    let current = writeHighlightRecord(emptyMirror('u1'), 'dn1', { i0: 0, o0: 0, i1: 0, o1: 5 }, 'yellow');
+    current = writeHighlightRecord(current, 'mn1', { i0: 7, o0: 2, i1: 9, o1: 4 }, 'green');
+    const [keepA, keepB] = Object.keys(current.highlights);
+    const mixed = stored({ ...current.highlights, legacy: legacy('legacy', [{ i: 3, s: 1, e: 8 }]) });
+
+    const state = upgradeStoredMirror(mixed);
+
+    expect(state.highlights[keepA]).toBe(mixed.highlights[keepA]);
+    expect(state.highlights[keepB]).toBe(mixed.highlights[keepB]);
+    expect(state.highlights.legacy.data.span).toEqual({ i0: 3, o0: 1, i1: 3, o1: 8 });
+  });
+
+  it('carries the rest of the mirror through by identity when it does collapse', () => {
+    const base = { ...emptyMirror('u1'), nextSeq: 4 };
+    const before = { ...base, highlights: { legacy: legacy('legacy', [{ i: 0, s: 0, e: 3 }]) } } as unknown as MirrorState;
+
+    const state = upgradeStoredMirror(before);
+
+    expect(state.userId).toBe('u1');
+    expect(state.nextSeq).toBe(4);
+    for (const key of ['lists', 'notes', 'visited', 'ops'] as const) expect(state[key]).toBe(before[key]);
+  });
+
+  it('is idempotent — a second pass changes nothing', () => {
+    const once = upgradeStoredMirror(stored({ g1: legacy('g1', [{ i: 1, s: 2, e: 9 }, { i: 2, s: 0, e: 4 }]) }));
+    expect(upgradeStoredMirror(once)).toBe(once);
+  });
+
+  it('drops a record with no ranges at all rather than inventing a span for it', () => {
+    const state = upgradeStoredMirror(stored({ g1: legacy('g1', []), g2: legacy('g2', [{ i: 1, s: 0, e: 2 }]) }));
+    expect(Object.keys(state.highlights)).toEqual(['g2']);
   });
 });

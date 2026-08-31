@@ -27,8 +27,8 @@ describe('ancestorsOfList', () => {
   });
 });
 
-function h(id: string, i: number, s: number, e: number, g: string, c = '#ffe08a'): Highlight {
-  return { id, i, s, e, c, g, m: '2026-01-01T00:00:00.000Z|dev' };
+function h(id: string, i0: number, o0: number, i1: number, o1: number, c = '#ffe08a'): Highlight {
+  return { id, i0, o0, i1, o1, c, m: '2026-01-01T00:00:00.000Z|dev' };
 }
 
 describe('suttaRowMeta', () => {
@@ -64,8 +64,10 @@ describe('suttaRowMeta', () => {
     expect(map.get('dn1')?.chips).toEqual([{ id: 'l2', label: 'Read later', breadcrumb: 'Read later' }]);
   });
 
-  it('counts merged highlight groups (by shared groupId), not raw highlight docs', () => {
-    const highlights = { dn1: [h('a', 0, 2, 5, 'g1'), h('b', 1, 0, 3, 'g1'), h('c', 2, 0, 4, 'g2')] };
+  // A cross-segment highlight is one row, so the badge counts what the reader made rather than how
+  // many segments it happens to reach across.
+  it('counts each highlight once, however many segments it spans', () => {
+    const highlights = { dn1: [h('a', 0, 2, 1, 3), h('b', 2, 0, 2, 4)] };
     const map = suttaRowMeta(['dn1'], {}, highlights, flatLists);
     expect(map.get('dn1')?.hlCount).toBe(2);
   });

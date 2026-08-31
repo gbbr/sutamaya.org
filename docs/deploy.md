@@ -90,6 +90,13 @@ previous Worker is still serving against the new schema, so anything it can't to
 A destructive change needs two deploys: widen the schema and ship code tolerating both shapes, then
 narrow it once nothing reads the old shape.
 
+`0004_highlight_endpoints.sql` is the one exception, taken deliberately. It rebuilds `highlights`
+rather than widening it, because the columns it replaces are `NOT NULL` with no default — a
+new-shape insert that left them out would fail, so there is no both-shapes state to ship. For the
+seconds between the migration and the upload the previous Worker reads highlight rows it doesn't
+understand, and an un-updated tab left open renders highlights wrong until it reloads. That was
+accepted rather than carrying dual-shape code through two deploys.
+
 (Local dev is not covered by this — a new migration has to be applied to your own D1 by hand, see
 `CLAUDE.md`.)
 

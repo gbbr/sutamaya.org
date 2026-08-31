@@ -67,17 +67,17 @@ export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDoc
     notes[id] = { text: data.text, m: data.updatedAt || '' };
   });
 
-  // `m` is the row's mtime, the tiebreak the reader paints overlapping groups by (see
-  // web/src/lib/highlights.ts) — short-keyed like `c`/`g` since this map is sent in full.
+  // `m` is the row's mtime, the tiebreak the reader paints overlapping highlights by (see
+  // web/src/lib/highlights.ts) — short-keyed like `c` since this map is sent in full.
   const highlights = {};
   highlightDocs.forEach(({ id, data }) => {
     (highlights[data.suttaId] = highlights[data.suttaId] || []).push({
       id,
-      i: data.i,
-      s: data.s,
-      e: data.e,
+      i0: data.i0,
+      o0: data.o0,
+      i1: data.i1,
+      o1: data.o1,
       c: data.color,
-      g: data.g,
       m: data.mtime ?? '',
     });
   });

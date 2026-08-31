@@ -15,8 +15,8 @@ interface HighlightCountBadgeProps {
   style?: CSSProperties;
 }
 
-// A sutta's highlights as swatches plus a total across every colour (see highlightCount), shared by
-// ListPane and ReaderPage's header.
+// A sutta's highlights as swatches plus a total across every colour, shared by ListPane and
+// ReaderPage's header.
 //
 // It carries no fill or outline of its own, so the swatches are the only colour on the line and stay
 // findable among the outlined membership chips beside them. They are painted through `highlightPaint`

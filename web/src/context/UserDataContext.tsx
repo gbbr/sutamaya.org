@@ -19,6 +19,7 @@ import {
   type MirrorState,
 } from '../lib/mirror';
 import { deriveUserData } from '../lib/mirrorView';
+import type { HlSpan } from '../lib/highlights';
 import { isLocalUserId } from '../lib/localAccount';
 import { deleteMirror, loadMirror, saveMirror } from '../lib/mirrorDb';
 import { flushWithLock } from '../lib/sync';
@@ -77,7 +78,7 @@ interface UserDataState {
   toggleMembership: (suttaId: string, listId: string) => Promise<void>;
   addToList: (suttaId: string, list: ListDef) => Promise<void>;
   submitNote: (suttaId: string, text: string) => Promise<void>;
-  setHighlightRanges: (suttaId: string, ranges: { i: number; s: number; e: number }[], color: string | null) => Promise<void>;
+  setHighlightSpan: (suttaId: string, span: HlSpan, color: string | null) => Promise<void>;
   markVisited: (suttaId: string) => void;
 }
 
@@ -105,7 +106,7 @@ const EMPTY: UserDataState = {
   toggleMembership: async () => {},
   addToList: async () => {},
   submitNote: async () => {},
-  setHighlightRanges: async () => {},
+  setHighlightSpan: async () => {},
   markVisited: () => {},
 };
 
@@ -397,13 +398,12 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     [mutate]
   );
 
-  // A highlight group is immutable, so this doesn't edit anything: it mints a new group and names
-  // the groups the selection displaces (see lib/mirror.ts's writeHighlightRecord). A recolour is a
-  // tombstone plus a new group; an erase (color === null) is a tombstone alone.
-  const setHighlightRanges = useCallback(
-    async (suttaId: string, ranges: { i: number; s: number; e: number }[], color: string | null) => {
-      if (!ranges.length) return;
-      mutate((s) => writeHighlightRecord(s, suttaId, ranges, color));
+  // A highlight is immutable, so this doesn't edit anything: it mints a new one and names those the
+  // selection displaces (see lib/mirror.ts's writeHighlightRecord). A recolour is a tombstone plus a
+  // new highlight; an erase (color === null) is a tombstone alone.
+  const setHighlightSpan = useCallback(
+    async (suttaId: string, span: HlSpan, color: string | null) => {
+      mutate((s) => writeHighlightRecord(s, suttaId, span, color));
     },
     [mutate]
   );
@@ -436,7 +436,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       toggleMembership,
       addToList,
       submitNote,
-      setHighlightRanges,
+      setHighlightSpan,
       markVisited,
     }),
     [
@@ -459,7 +459,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       toggleMembership,
       addToList,
       submitNote,
-      setHighlightRanges,
+      setHighlightSpan,
       markVisited,
     ]
   );

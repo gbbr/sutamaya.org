@@ -5,11 +5,11 @@ import { FS_MAX, FS_MIN, FS_STEP, LH_MAX, LH_MIN, LH_STEP, useReaderPrefs } from
 import { NoteEditor } from './NoteEditor';
 import { ListMembershipPicker } from './ListMembershipPicker';
 import type { SegmentFile } from '../lib/corpus';
-import { highlightGroupText, type HighlightGroup } from '../lib/highlights';
+import { highlightText } from '../lib/highlights';
 import { KeyCap } from './ShortcutsModal';
 import { SHORTCUTS, SHOWS_KEY_HINTS } from '../lib/shortcuts';
 import { highlightPaint, READER_FACES } from '../lib/theme';
-import type { ReaderFace, ResolvedReaderTheme, ThemeColors } from '../lib/types';
+import type { Highlight, ReaderFace, ResolvedReaderTheme, ThemeColors } from '../lib/types';
 
 type Tab = 'highlights' | 'lists' | 'text';
 
@@ -19,9 +19,9 @@ interface ReaderMenuPanelProps {
   theme: ThemeColors;
   initialTab: Tab;
   segments: SegmentFile[] | null;
-  // useSuttaReading already groups this sutta's highlights via groupHighlights, so they're passed
-  // down rather than derived a second time per render.
-  highlightGroups: HighlightGroup[];
+  // This sutta's highlights, in document order (lib/mirrorView.ts) — the order this panel lists
+  // them in.
+  highlights: Highlight[];
   onClose: () => void;
   onJumpToHighlight: (segIndex: number, highlightId?: string) => void;
   // See NoteEditor's `focusSignal` — bumped by ReaderPage's "n" shortcut to focus the note box
@@ -185,14 +185,14 @@ export function ReaderMenuPanel({
   theme,
   initialTab,
   segments,
-  highlightGroups,
+  highlights,
   onClose,
   onJumpToHighlight,
   noteFocusSignal,
   onTabChange,
 }: ReaderMenuPanelProps) {
   const [tab, setTab] = useState(initialTab);
-  const { notes, submitNote, setHighlightRanges } = useUserData();
+  const { notes, submitNote, setHighlightSpan } = useUserData();
   const {
     resolvedTheme,
     setTheme,
@@ -303,16 +303,11 @@ export function ReaderMenuPanel({
   // control here learns the key without opening "?". Read from SHORTCUTS so the two can't drift.
   const rowKey = (keyName: string) => (SHOWS_KEY_HINTS ? <KeyCap keyName={keyName} theme={theme} small /> : null);
 
-  // Erasing here takes the same path as HighlightPopup's "Remove": a group is immutable and atomic,
-  // so rewriting its ranges with a null colour retires the whole thing (lib/mirror.ts's
+  // Erasing here takes the same path as HighlightPopup's "Remove": a highlight is immutable and
+  // atomic, so rewriting its span with a null colour retires the whole thing (lib/mirror.ts's
   // writeHighlightRecord). No confirmation, matching that popup — the trash sits in its own target,
   // clear of the row's jump-to action.
-  const removeGroup = (g: HighlightGroup) =>
-    setHighlightRanges(
-      suttaId,
-      g.items.map(({ i, s, e }) => ({ i, s, e })),
-      null
-    );
+  const removeHighlight = ({ i0, o0, i1, o1 }: Highlight) => setHighlightSpan(suttaId, { i0, o0, i1, o1 }, null);
 
   return (
     <>
@@ -374,23 +369,23 @@ export function ReaderMenuPanel({
                 marked in this sutta" at a glance, which is most of why this tab gets opened. */}
             <div className={`${rowLabel} flex items-baseline gap-1.5 mb-2`} style={{ color: theme.dim }}>
               Highlights
-              {highlightGroups.length > 0 && <span className="tabular-nums">{highlightGroups.length}</span>}
+              {highlights.length > 0 && <span className="tabular-nums">{highlights.length}</span>}
             </div>
 
-            {highlightGroups.map((g, gi) => {
-              const text = highlightGroupText(g, segments);
+            {highlights.map((h, gi) => {
+              const text = highlightText(h, segments);
               const preview = text.length > 120 ? `${text.slice(0, 120)}…` : text;
               return (
                 // The last row draws no rule of its own: the setting below closes the list with
                 // its own, and the two together read as a double line.
                 <div
-                  key={g.key}
+                  key={h.id}
                   className="flex items-stretch gap-1"
-                  style={gi === highlightGroups.length - 1 ? undefined : { borderBottom: `1px solid ${theme.tint}` }}
+                  style={gi === highlights.length - 1 ? undefined : { borderBottom: `1px solid ${theme.tint}` }}
                 >
-                  <button className="flex flex-1 min-w-0 gap-2.5 items-start py-2.5 text-left" onClick={() => onJumpToHighlight(g.i, g.key)}>
-                    <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: highlightPaint(g.c, theme) }} />
-                    <span className="flex-1 text-ui-sm leading-[1.45]">{preview || `Segment ${g.i + 1}`}</span>
+                  <button className="flex flex-1 min-w-0 gap-2.5 items-start py-2.5 text-left" onClick={() => onJumpToHighlight(h.i0, h.id)}>
+                    <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: highlightPaint(h.c, theme) }} />
+                    <span className="flex-1 text-ui-sm leading-[1.45]">{preview || `Segment ${h.i0 + 1}`}</span>
                   </button>
                   {/* Always visible, never hover-revealed: this panel is used on touch, where
                       there is no hover state to reveal it with. Faded instead, so it reads as
@@ -399,14 +394,14 @@ export function ReaderMenuPanel({
                     className="flex-none flex items-start justify-center w-9 pt-[11px] opacity-45 hover:opacity-100"
                     style={{ color: theme.fg }}
                     aria-label="Remove highlight"
-                    onClick={() => removeGroup(g)}
+                    onClick={() => removeHighlight(h)}
                   >
                     <Trash2 size={17} strokeWidth={1.75} />
                   </button>
                 </div>
               );
             })}
-            {highlightGroups.length === 0 && (
+            {highlights.length === 0 && (
               <div className="font-sans text-ui-sm py-1.5" style={{ color: theme.dim, opacity: 0.8 }}>
                 Select text in the reading, then pick a colour.
               </div>
@@ -418,7 +413,7 @@ export function ReaderMenuPanel({
                 the panel, not on the list, and putting it first would offer to hide the highlights
                 before showing them. Absent with nothing to hide, since its effect couldn't be
                 seen. */}
-            {highlightGroups.length > 0 && (
+            {highlights.length > 0 && (
               <div className={settingRow} style={hairline}>
                 <span className="flex items-center gap-1.5">
                   <span className={rowLabel} style={{ color: theme.dim }}>

@@ -1,14 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useUserData } from '../context/UserDataContext';
 import { useLatest } from './useLatest';
-import { groupHighlights, buildCrossSegmentRanges, type HlRange } from '../lib/highlights';
-import type { SegmentFile } from '../lib/corpus';
+import { spansOverlap, type HlSpan } from '../lib/highlights';
 import type { Highlight } from '../lib/types';
 
-export type { HlRange };
-
 export interface PopState {
-  ranges: HlRange[];
+  span: HlSpan;
   x: number;
   // The selection's vertical extent in screen space. The popup sits above `top` and, when there
   // isn't room for it up there, below `bottom` — so either way it clears the selected text.
@@ -64,8 +61,8 @@ function offsetWithin(seg: HTMLElement, container: Node, containerOffset: number
 }
 
 // The popup for a live, non-collapsed selection, or null when it isn't one the reader can act on:
-// either end outside the rendered segments, or offsets that resolve to an empty range.
-function popFromSelection(sel: Selection, highlights: Highlight[], segments: SegmentFile[] | null): PopState | null {
+// either end outside the rendered segments, or offsets that resolve to an empty span.
+function popFromSelection(sel: Selection, highlights: Highlight[]): PopState | null {
   const range = sel.getRangeAt(0);
   const a = closestSeg(range.startContainer);
   const b = closestSeg(range.endContainer);
@@ -91,59 +88,54 @@ function popFromSelection(sel: Selection, highlights: Highlight[], segments: Seg
     const en = offsetWithin(a, range.endContainer, range.endOffset);
     if (en <= st) return null;
     const i = Number(a.dataset.seg);
-    const cur = highlights.filter((h) => h.i === i).find((h) => h.s < en && h.e > st);
-    return { ranges: [{ i, s: st, e: en }], x: anchorX, top: box.top, bottom: box.bottom, on: cur ? cur.c : null };
+    const span = { i0: i, o0: st, i1: i, o1: en };
+    const cur = highlights.find((h) => spansOverlap(h, span));
+    return { span, x: anchorX, top: box.top, bottom: box.bottom, on: cur ? cur.c : null };
   }
 
-  // Cross-segment selection. A Range's start and end are in document order whichever way the
-  // drag went, so `a` is at or before `b`: walk every [data-seg] paragraph between them and
-  // build one range per segment — the tail of `a`, each segment in between in full, and the
-  // head of `b`.
+  // Cross-segment selection. A Range's start and end are in document order whichever way the drag
+  // went, so `a` is at or before `b` — the two ends are the span, and every segment between them is
+  // covered by definition. Their positions among the rendered paragraphs are checked rather than
+  // trusted: a selection reaching outside [data-segroot] isn't one this reader can act on.
   const root = a.closest('[data-segroot]');
   if (!root) return null;
   const allSegs = [...root.querySelectorAll<HTMLElement>('[data-seg]')];
   const startIdx = allSegs.indexOf(a);
   const endIdx = allSegs.indexOf(b);
   if (startIdx === -1 || endIdx === -1 || endIdx <= startIdx) return null;
-  const between = allSegs.slice(startIdx, endIdx + 1);
-  const aStart = offsetWithin(a, range.startContainer, range.startOffset);
-  const bEnd = offsetWithin(b, range.endContainer, range.endOffset);
-
-  // The segment's data length, not its rendered textContent length: a `<p data-seg>` can hold
-  // characters beyond seg.en — the translator-note asterisk — which would inflate a stored `e`
-  // past the end of the text those offsets index into. Falls back to textContent only where
-  // segment data isn't available to this hook.
-  const segLengths = between.map((seg) => {
-    const i = Number(seg.dataset.seg);
-    return { i, fullLen: segments?.[i]?.en.length ?? seg.textContent?.length ?? 0 };
-  });
-  const ranges = buildCrossSegmentRanges(segLengths, aStart, bEnd);
-  if (!ranges.length) return null;
+  const span = {
+    i0: Number(a.dataset.seg),
+    o0: offsetWithin(a, range.startContainer, range.startOffset),
+    i1: Number(b.dataset.seg),
+    o1: offsetWithin(b, range.endContainer, range.endOffset),
+  };
 
   // A fresh multi-segment selection is always a new highlight, never an edit of an existing one
   // (unlike the single-segment case, which can land inside one) — the color swatches just start
   // unselected.
-  return { ranges, x: anchorX, top: box.top, bottom: box.bottom, on: null };
+  return { span, x: anchorX, top: box.top, bottom: box.bottom, on: null };
 }
 
-export function useHighlightPopup(suttaId: string | undefined, highlights: Highlight[], segments: SegmentFile[] | null = null) {
-  const { setHighlightRanges } = useUserData();
+export function useHighlightPopup(suttaId: string | undefined, highlights: Highlight[]) {
+  const { setHighlightSpan } = useUserData();
   const [pop, setPop] = useState<PopState | null>(null);
 
-  // Stepping to another sutta leaves the popup anchored to text no longer on screen, and its ranges
-  // index into the sutta it was opened in, so picking a colour would write them into the new one.
+  // Stepping to another sutta leaves the popup anchored to text no longer on screen, and its span
+  // indexes into the sutta it was opened in, so picking a colour would write it into the new one.
   useEffect(() => {
     setPop(null);
   }, [suttaId]);
 
   // Clicking directly on an already-highlighted span, rather than dragging a fresh selection, acts
-  // on that highlight — and for a cross-segment one that means every segment it spans, or a remove
-  // or recolour would leave the rest behind as a shorter highlight.
+  // on that whole highlight — the click hands back its id, so clicking one segment of a highlight
+  // spanning several, or the visible half of a partly-covered one, still recolours or erases all
+  // of it.
   const openPop = useCallback(
-    (i: number, s: number, e: number, rect: DOMRect, on: string | null) => {
-      const group = groupHighlights(highlights).find((g) => g.items.some((h) => h.i === i && h.s === s && h.e === e));
-      const ranges: HlRange[] = group ? group.items.map((h) => ({ i: h.i, s: h.s, e: h.e })) : [{ i, s, e }];
-      setPop({ ranges, x: rect.left + rect.width / 2, top: rect.top, bottom: rect.bottom, on });
+    (highlightId: string, rect: DOMRect, on: string | null) => {
+      const hit = highlights.find((h) => h.id === highlightId);
+      if (!hit) return;
+      const { i0, o0, i1, o1 } = hit;
+      setPop({ span: { i0, o0, i1, o1 }, x: rect.left + rect.width / 2, top: rect.top, bottom: rect.bottom, on });
     },
     [highlights]
   );
@@ -155,10 +147,10 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
         setPop((p) => (p && !p.on ? null : p));
         return;
       }
-      const next = popFromSelection(sel, highlights, segments);
+      const next = popFromSelection(sel, highlights);
       if (next) setPop(next);
     }, 0);
-  }, [highlights, segments]);
+  }, [highlights]);
 
   // Firefox on Android draws its selection handles as browser chrome: dragging one to extend the
   // selection fires no pointer, touch or mouse event on the page, only `selectionchange`. Without
@@ -169,15 +161,15 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
   // Chrome and Safari go on committing at `mouseup`/`touchend` exactly as before, a fresh drag
   // can't make the popup appear before the pointer lifts, and a keyboard selection can't open one
   // at all.
-  const latest = useLatest({ highlights, segments, open: pop !== null });
+  const latest = useLatest({ highlights, open: pop !== null });
   useEffect(() => {
     let down = false;
     const refresh = () => {
-      const { highlights: hl, segments: segs, open } = latest.current;
+      const { highlights: hl, open } = latest.current;
       if (!open || down) return;
       const sel = window.getSelection();
       if (!sel || sel.isCollapsed || !String(sel).trim()) return;
-      const next = popFromSelection(sel, hl, segs);
+      const next = popFromSelection(sel, hl);
       if (next) setPop(next);
     };
     const onDown = () => {
@@ -203,12 +195,12 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
       if (!pop || !suttaId) return;
       // Writes to the offline mirror, so it can't fail on the network — the flush owns everything
       // that can (see UserDataContext).
-      await setHighlightRanges(suttaId, pop.ranges, color);
+      await setHighlightSpan(suttaId, pop.span, color);
       setPop(null);
       const sel = window.getSelection();
       if (sel) sel.removeAllRanges();
     },
-    [pop, suttaId, setHighlightRanges]
+    [pop, suttaId, setHighlightSpan]
   );
 
   const close = useCallback(() => {

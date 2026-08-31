@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { createListRecord, emptyMirror, queueMembership, removeListRecord, setNoteRecord, writeHighlightRecord, markVisitedRecord, type MirrorState } from './mirror';
-import { deriveUserData, highlightRowsFor } from './mirrorView';
+import { deriveUserData, highlightsFor } from './mirrorView';
 import { HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID, RECENT_AUTO_LIST_ID } from './autoLists';
 
 function list(state: MirrorState, id: string, parentId: string | null = null, kind: 'list' | 'group' = 'list'): MirrorState {
@@ -45,7 +45,7 @@ describe('deriveUserData', () => {
 
   it('synthesizes the three auto-lists from the mirror, so they work offline', () => {
     let state = setNoteRecord(emptyMirror('u1'), 'dn1', 'a note');
-    state = writeHighlightRecord(state, 'dn2', [{ i: 0, s: 0, e: 4 }], 'yellow');
+    state = writeHighlightRecord(state, 'dn2', { i0: 0, o0: 0, i1: 0, o1: 4 }, 'yellow');
     state = markVisitedRecord(state, 'dn3');
 
     const { lists, membership } = deriveUserData(state);
@@ -66,33 +66,62 @@ describe('deriveUserData', () => {
     expect(state.notes.dn1.data.text).toBe('');
   });
 
-  it('renders one row per segment of a group, keyed stably by its group id', () => {
-    const state = writeHighlightRecord(
-      emptyMirror('u1'),
-      'dn1',
-      [
-        { i: 0, s: 3, e: 9 },
-        { i: 1, s: 0, e: 4 },
-      ],
-      'green'
-    );
-    const rows = deriveUserData(state).highlights.dn1;
-    const g = rows[0].g;
+  it('renders a cross-segment highlight as one row carrying both ends', () => {
+    const state = writeHighlightRecord(emptyMirror('u1'), 'dn1', { i0: 0, o0: 3, i1: 1, o1: 4 }, 'green');
+    const [row, ...rest] = deriveUserData(state).highlights.dn1;
 
-    // Row ids are derived from (g, segment), not minted by the server, so they survive a pull
-    // unchanged — they only ever serve as React keys and scroll targets.
-    expect(rows.map((r) => r.id)).toEqual([`${g}:0`, `${g}:1`]);
-    expect(rows.every((r) => r.c === 'green')).toBe(true);
-    expect(highlightRowsFor(state, 'dn1')).toHaveLength(2);
+    expect(rest).toEqual([]);
+    // The row's id is the id the client minted, not one the server assigned, so it survives a pull
+    // unchanged — it serves as a React key, a scroll target and the handle a click acts on.
+    expect(row).toMatchObject({ id: Object.keys(state.highlights)[0], i0: 0, o0: 3, i1: 1, o1: 4, c: 'green' });
+    expect(highlightsFor(state, 'dn1')).toHaveLength(1);
   });
 
-  it('reports no rows for an erase-only write', () => {
-    let state = writeHighlightRecord(emptyMirror('u1'), 'dn1', [{ i: 0, s: 0, e: 4 }], 'yellow');
-    state = { ...state, highlights: Object.fromEntries(Object.entries(state.highlights).map(([g, r]) => [g, { dirty: false, data: r.data }])) };
-    state = writeHighlightRecord(state, 'dn1', [{ i: 0, s: 0, e: 4 }], null);
+  // The reader's highlights panel lists them top to bottom, and the gutter draws its marks from the
+  // same array — neither has an order of its own to impose.
+  it('puts a sutta\'s highlights in document order, not mirror order', () => {
+    let state = writeHighlightRecord(emptyMirror('u1'), 'dn1', { i0: 8, o0: 0, i1: 8, o1: 4 }, 'green');
+    state = writeHighlightRecord(state, 'dn1', { i0: 2, o0: 5, i1: 3, o1: 1 }, 'yellow');
+    state = writeHighlightRecord(state, 'dn1', { i0: 2, o0: 0, i1: 2, o1: 4 }, 'blue');
 
-    // The write still has to be pushed (it names the group it tombstones), but it paints nothing.
+    expect(deriveUserData(state).highlights.dn1.map((r) => [r.i0, r.o0])).toEqual([
+      [2, 0],
+      [2, 5],
+      [8, 0],
+    ]);
+  });
+
+  // Only reachable through a mirror persisted by an app version upgradeStoredMirror doesn't cover.
+  // Losing the highlight is the right failure; taking the reader down with it is not.
+  it('drops a record with no span rather than throwing', () => {
+    const state = writeHighlightRecord(emptyMirror('u1'), 'dn1', { i0: 0, o0: 0, i1: 0, o1: 4 }, 'yellow');
+    const [g] = Object.keys(state.highlights);
+    const { span: _dropped, ...rest } = state.highlights[g].data;
+    const malformed = { ...state, highlights: { [g]: { dirty: false, data: rest } } } as unknown as MirrorState;
+
+    expect(deriveUserData(malformed).highlights.dn1).toBeUndefined();
+    expect(highlightsFor(malformed, 'dn1')).toEqual([]);
+  });
+
+  it('reports no row for an erase-only write', () => {
+    let state = writeHighlightRecord(emptyMirror('u1'), 'dn1', { i0: 0, o0: 0, i1: 0, o1: 4 }, 'yellow');
+    state = { ...state, highlights: Object.fromEntries(Object.entries(state.highlights).map(([g, r]) => [g, { dirty: false, data: r.data }])) };
+    state = writeHighlightRecord(state, 'dn1', { i0: 0, o0: 0, i1: 0, o1: 4 }, null);
+
+    // The write still has to be pushed (it names the highlight it tombstones), but it paints
+    // nothing.
     expect(Object.keys(state.highlights)).toHaveLength(1);
     expect(deriveUserData(state).highlights.dn1).toBeUndefined();
+  });
+
+  // Displacement is decided on (segment, offset) pairs alone, which is what lets the mirror work it
+  // out with no sutta text loaded — including where the overlap is in a segment neither end sits in.
+  it('displaces a cross-segment highlight overlapped only in the middle of its span', () => {
+    let state = writeHighlightRecord(emptyMirror('u1'), 'dn1', { i0: 0, o0: 2, i1: 5, o1: 3 }, 'yellow');
+    const [first] = Object.keys(state.highlights);
+    state = writeHighlightRecord(state, 'dn1', { i0: 3, o0: 0, i1: 3, o1: 6 }, 'green');
+
+    expect(state.highlights[first]).toBeUndefined();
+    expect(deriveUserData(state).highlights.dn1.map((r) => r.c)).toEqual(['green']);
   });
 });

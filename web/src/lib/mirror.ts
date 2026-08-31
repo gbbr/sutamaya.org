@@ -1,6 +1,6 @@
-import { displacedGroupIds, type HlRange } from './highlights';
+import { displacedIds, type HlSpan } from './highlights';
 import { AUTO_LIST_IDS } from './autoLists';
-import { highlightRowsFor } from './mirrorView';
+import { highlightsFor } from './mirrorView';
 import { nextMtime } from './mtime';
 import { randomId } from './ids';
 import type { UserData } from './api';
@@ -57,18 +57,18 @@ export interface NoteRecord {
   mtime: string;
 }
 
-// One immutable highlight group, keyed by the `g` the client minted when the user picked the
-// colour. `erase` names the groups this write displaces — worked out on the device where the user
-// acted, so the server never has to infer it from rows that may have changed since. A pure erase
-// is `color: null` with a non-empty `erase` and no rows of its own.
+// One immutable highlight, keyed by the `g` the client minted when the user picked the colour.
+// `erase` names the highlights this write displaces — worked out on the device where the user
+// acted, so the server never has to infer it from rows that may have changed since. A pure erase is
+// `color: null`, whose `span` only records what the user selected.
 export interface HighlightRecord {
   g: string;
   suttaId: string;
-  ranges: HlRange[];
+  span: HlSpan;
   color: string | null;
   erase: string[];
   mtime: string;
-  // As ListRecord.createSent: true once a flush has dispatched this group's write. A group erased
+  // As ListRecord.createSent: true once a flush has dispatched this highlight's write. One erased
   // while its own create is in flight has to be tombstoned rather than dropped, or the create the
   // server already accepted comes straight back on the next pull.
   sent: boolean;
@@ -113,6 +113,44 @@ export interface MirrorState {
 
 export function emptyMirror(userId: string | null = null): MirrorState {
   return { userId, lists: {}, notes: {}, highlights: {}, visited: {}, ops: [], nextSeq: 1 };
+}
+
+// A highlight record as an older build persisted it: one stored range per segment the highlight
+// covered, rather than the two endpoints of the whole span.
+interface LegacyHighlightRecord {
+  ranges?: { i: number; s: number; e: number }[];
+}
+
+// Brings a mirror persisted by an older build up to the current shape, on the way in from
+// mirrorDb.ts — so nothing downstream ever sees more than one shape. Today that means collapsing a
+// highlight's per-segment ranges into the endpoints that replaced them (see lib/types.ts's
+// Highlight).
+//
+// It has no removal date, and can't be given one: a reader who has never signed in has no server
+// copy to re-pull from, so this mirror is their only one and there is no point at which every
+// device is known to have loaded once and converted.
+//
+// **Leaving a good record alone matters more here than converting an old one.** A device converts
+// once and then takes the do-nothing path on every load for the rest of its life, so that path is
+// read-only by construction: `ranges` is tested before anything is read off the record, nothing is
+// copied until a record needing conversion is actually found, and a mirror with none comes back as
+// the very object it was given.
+export function upgradeStoredMirror(state: MirrorState): MirrorState {
+  let highlights: Record<string, Stored<HighlightRecord>> | null = null;
+  for (const [g, record] of Object.entries(state.highlights ?? {})) {
+    const data = record.data as HighlightRecord & LegacyHighlightRecord;
+    if (!Array.isArray(data.ranges)) continue;
+    const { ranges, ...rest } = data;
+    highlights = highlights ?? { ...state.highlights };
+    const ordered = [...ranges].sort((a, b) => a.i - b.i || a.s - b.s);
+    const first = ordered[0];
+    const last = ordered[ordered.length - 1];
+    // No ranges at all is a record no write path could have produced. Dropped rather than carried
+    // forward with an invented span, which would paint somewhere the user never selected.
+    if (!first) delete highlights[g];
+    else highlights[g] = { ...record, data: { ...rest, span: { i0: first.i, o0: first.s, i1: last.i, o1: last.e } } };
+  }
+  return highlights ? { ...state, highlights } : state;
 }
 
 // Position for a newly created list: one less than its lowest sibling, seeded at 1 so an empty
@@ -303,27 +341,27 @@ export function markVisitedRecord(state: MirrorState, suttaId: string): MirrorSt
   };
 }
 
-// One highlight write: a new group over `ranges` (or nothing at all, for a plain erase), plus the
-// groups it displaces. A group is immutable, so a recolour is a tombstone and a brand new group,
-// never an update — which is what makes the write safe to replay.
+// One highlight write: a new highlight over `span` (or nothing at all, for a plain erase), plus the
+// ones it displaces. A highlight is immutable, so a recolour is a tombstone and a brand new
+// highlight, never an update — which is what makes the write safe to replay.
 export function writeHighlightRecord(
   state: MirrorState,
   suttaId: string,
-  ranges: HlRange[],
+  span: HlSpan,
   color: string | null
 ): MirrorState {
-  const displaced = displacedGroupIds(highlightRowsFor(state, suttaId), ranges);
+  const displaced = displacedIds(highlightsFor(state, suttaId), span);
   const highlights = { ...state.highlights };
   const erase: string[] = [];
   for (const g of displaced) {
     const record = highlights[g];
-    // A group created and erased before either left this device drops out entirely rather than
-    // pushing a create followed by a tombstone, which the create could land after and resurrect.
-    // Its own tombstones still come along: a recolour made offline and then undone offline has to
-    // retire the group it displaced, which the server does hold.
+    // One created and erased before either left this device drops out entirely rather than pushing
+    // a create followed by a tombstone, which the create could land after and resurrect. Its own
+    // tombstones still come along: a recolour made offline and then undone offline has to retire
+    // the highlight it displaced, which the server does hold.
     if (record?.dirty) erase.push(...record.data.erase);
-    // Anything the server might hold is named as a tombstone, covering a group whose own write is
-    // still in flight (`sent`) as well as one already synced. Tombstoning a group the server never
+    // Anything the server might hold is named as a tombstone, covering a highlight whose own write
+    // is still in flight (`sent`) as well as one already synced. Tombstoning one the server never
     // received matches no rows and costs nothing; missing one it did receive means the erase undoes
     // itself on the next pull.
     if (!record?.dirty || record.data.sent) erase.push(g);
@@ -332,7 +370,7 @@ export function writeHighlightRecord(
   const pushable = [...new Set(erase)];
   if (!color && !pushable.length) return { ...state, highlights };
   const g = randomId();
-  highlights[g] = { dirty: true, data: { g, suttaId, ranges, color, erase: pushable, mtime: nextMtime(), sent: false } };
+  highlights[g] = { dirty: true, data: { g, suttaId, span, color, erase: pushable, mtime: nextMtime(), sent: false } };
   return { ...state, highlights };
 }
 
@@ -489,26 +527,22 @@ export function applySnapshot(state: MirrorState, snapshot: UserData): MirrorSta
   }
   for (const [id, record] of Object.entries(state.visited)) if (record.dirty) visited[id] = record;
 
-  // A group this device has erased but not yet pushed is still live on the server and comes back in
-  // the snapshot. Dropping it here keeps an erase made offline from visibly undoing itself on every
-  // pull until the write lands.
+  // A highlight this device has erased but not yet pushed is still live on the server and comes
+  // back in the snapshot. Dropping it here keeps an erase made offline from visibly undoing itself
+  // on every pull until the write lands.
   const pendingErase = new Set(
     Object.values(state.highlights).flatMap((record) => (record.dirty ? record.data.erase : []))
   );
   const highlights: Record<string, Stored<HighlightRecord>> = {};
   for (const [suttaId, rows] of Object.entries(snapshot.highlights)) {
-    for (const row of rows) {
-      if (pendingErase.has(row.g)) continue;
-      // One row per segment; the group is the record, so they're recombined by `g` on the way in.
-      const group = highlights[row.g] ?? {
+    for (const { id, i0, o0, i1, o1, c, m } of rows) {
+      if (pendingErase.has(id)) continue;
+      highlights[id] = {
         dirty: false,
-        data: { g: row.g, suttaId, ranges: [], color: row.c, erase: [], mtime: row.m, sent: true },
+        data: { g: id, suttaId, span: { i0, o0, i1, o1 }, color: c, erase: [], mtime: m, sent: true },
       };
-      group.data.ranges.push({ i: row.i, s: row.s, e: row.e });
-      highlights[row.g] = group;
     }
   }
-  for (const group of Object.values(highlights)) group.data.ranges.sort((a, b) => a.i - b.i || a.s - b.s);
   for (const [id, record] of Object.entries(state.highlights)) if (record.dirty) highlights[id] = record;
 
   return { ...state, lists: replayOps(lists, state.ops), notes, highlights, visited };

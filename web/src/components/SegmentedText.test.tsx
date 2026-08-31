@@ -149,18 +149,18 @@ describe('SegmentedText — focusUid marks one inner sutta within a batched docu
   });
 });
 
-// Groups are immutable, so two devices highlighting overlapping spans offline both survive and
-// arrive together — the reader is where the contest is settled, deterministically by (mtime, g).
-describe('SegmentedText — overlapping highlight groups', () => {
+// Highlights are immutable, so two devices highlighting overlapping spans offline both survive and
+// arrive together — the reader is where the contest is settled, deterministically by (mtime, id).
+describe('SegmentedText — overlapping highlights', () => {
   const segments: SegmentFile[] = [{ key: 'dn1:1.1', pali: 'p', en: '0123456789abcde' }];
-  const older: Highlight = { id: 'h1', i: 0, s: 0, e: 10, c: '#ffe08a', g: 'g1', m: '2026-01-01T00:00:00.000Z|dev' };
-  const newer: Highlight = { id: 'h2', i: 0, s: 5, e: 15, c: '#a8d8f0', g: 'g2', m: '2026-01-02T00:00:00.000Z|dev' };
+  const older: Highlight = { id: 'h1', i0: 0, o0: 0, i1: 0, o1: 10, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' };
+  const newer: Highlight = { id: 'h2', i0: 0, o0: 5, i1: 0, o1: 15, c: '#a8d8f0', m: '2026-01-02T00:00:00.000Z|dev' };
 
   function highlightSpans(container: HTMLElement) {
     return [...container.querySelectorAll<HTMLElement>('[data-hl-id]')].map((el) => [el.dataset.hlId, el.textContent]);
   }
 
-  it('gives the contested characters to the later group', () => {
+  it('gives the contested characters to the later highlight', () => {
     const { container } = render(<SegmentedText {...baseProps(segments, { highlights: [older, newer] })} />);
     expect(highlightSpans(container)).toEqual([
       ['h1', '01234'],
@@ -176,15 +176,47 @@ describe('SegmentedText — overlapping highlight groups', () => {
     ]);
   });
 
-  // A click reports the highlight's *stored* range, not the visible fragment — openPop resolves a
-  // group by exact stored offsets, so clipping the click's coordinates would leave the rest of the
-  // partly-covered highlight untouched.
-  it('reports the loser\'s whole stored range when its surviving fragment is clicked', () => {
+  // A click reports the highlight it was painted from, not the visible fragment — openPop resolves
+  // the whole of it by id, so clicking the surviving sliver of a partly-covered highlight still
+  // acts on all of it.
+  it('reports the loser\'s own id when its surviving fragment is clicked', () => {
     const onSpanClick = vi.fn();
     const { container } = render(<SegmentedText {...baseProps(segments, { highlights: [older, newer], onSpanClick })} />);
     const [fragment] = container.querySelectorAll('[data-hl-id]');
     fragment.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-    expect(onSpanClick).toHaveBeenCalledWith(0, 0, 10, expect.anything(), older.c);
+    expect(onSpanClick).toHaveBeenCalledWith('h1', expect.anything(), older.c);
+  });
+
+  // The bug endpoints exist to prevent: an interior segment used to store the length it had when
+  // the highlight was made, so a rewording left its tail unpainted.
+  it('paints a middle segment in full, however long it has since become', () => {
+    const threeSegments: SegmentFile[] = [
+      { key: 'dn1:1.1', pali: 'p', en: 'one two' },
+      { key: 'dn1:1.2', pali: 'p', en: 'a much longer middle line than before' },
+      { key: 'dn1:1.3', pali: 'p', en: 'three four' },
+    ];
+    const across: Highlight = { id: 'h9', i0: 0, o0: 4, i1: 2, o1: 5, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' };
+    const { container } = render(<SegmentedText {...baseProps(threeSegments, { highlights: [across] })} />);
+    expect(highlightSpans(container)).toEqual([
+      ['h9', 'two'],
+      ['h9', 'a much longer middle line than before'],
+      ['h9', 'three'],
+    ]);
+  });
+
+  // A device holding an older, shorter copy of the sutta than the one the highlight was made
+  // against: the end anchor names a segment that isn't there.
+  it('stops at the last segment when the end anchor is past the end of the document', () => {
+    const shorter: SegmentFile[] = [
+      { key: 'dn1:1.1', pali: 'p', en: 'one two' },
+      { key: 'dn1:1.2', pali: 'p', en: 'three four' },
+    ];
+    const overrun: Highlight = { id: 'h9', i0: 0, o0: 4, i1: 6, o1: 2, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' };
+    const { container } = render(<SegmentedText {...baseProps(shorter, { highlights: [overrun] })} />);
+    expect(highlightSpans(container)).toEqual([
+      ['h9', 'two'],
+      ['h9', 'three four'],
+    ]);
   });
 });
 
@@ -216,7 +248,7 @@ describe('SegmentedText — untranslated colophon', () => {
   const segments: SegmentFile[] = [{ key: 'sn35.42:1.3', pali: 'Dasamaṁ.', en: 'Dasamaṁ.', role: 'end' }];
 
   it('renders its Pali once, with no reveal beneath it, even when it carries a highlight', () => {
-    const highlights: Highlight[] = [{ id: 'h1', i: 0, s: 0, e: 4, c: '#ffe08a', g: 'g1', m: '2026-01-01T00:00:00.000Z|dev' }];
+    const highlights: Highlight[] = [{ id: 'h1', i0: 0, o0: 0, i1: 0, o1: 4, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' }];
     const { container } = render(<SegmentedText {...baseProps(segments, { highlights })} />);
     expect(container.querySelector('[data-reveal="pali"]')).toBeNull();
     expect([...container.querySelectorAll('.pw')].map((el) => el.textContent)).toEqual(['Dasamaṁ.']);
