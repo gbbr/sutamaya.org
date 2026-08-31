@@ -254,3 +254,24 @@ describe('SegmentedText — untranslated colophon', () => {
     expect([...container.querySelectorAll('.pw')].map((el) => el.textContent)).toEqual(['Dasamaṁ.']);
   });
 });
+
+// A translated closing line ("The Middle Discourses are complete.", MN152's last segment) is
+// centred; its Pali reveal has to follow, or the same line reads half centred and half flush left.
+describe('SegmentedText — the reveal under a closing line', () => {
+  const segments: SegmentFile[] = [
+    { key: 'mn152:20.7', pali: 'majjhimanikāyo samatto.', en: 'The Middle Discourses are complete.', role: 'end' },
+  ];
+
+  it('is centred, as the English above it is', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments)} />);
+    const reveal = container.querySelector('[data-reveal="pali"]') as HTMLElement;
+    expect(reveal.style.textAlign).toBe('center');
+  });
+
+  it('leaves an ordinary segment flush left', () => {
+    const plain: SegmentFile[] = [{ key: 'mn152:18.3', pali: 'Idamavoca bhagavā.', en: 'That is what the Buddha said.' }];
+    const { container } = render(<SegmentedText {...baseProps(plain)} />);
+    const reveal = container.querySelector('[data-reveal="pali"]') as HTMLElement;
+    expect(reveal.style.textAlign).toBe('');
+  });
+});
