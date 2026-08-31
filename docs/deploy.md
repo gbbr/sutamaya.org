@@ -141,8 +141,8 @@ for one of them on a marketing hostname it answers `301` to the same path on the
 mirrored in `assets.run_worker_first` (`wrangler.jsonc`) — without an entry there the asset router
 answers first and the Worker never sees the request, so **the two lists have to change together**.
 
-`sw.js`, `registerSW.js` and `manifest.webmanifest` are the load-bearing entries: an install needs
-all three, and none of them resolves on the marketing hostname. The page paths (`/browse/*`,
+`sw.js` and `manifest.webmanifest` are the load-bearing entries: an install needs both, and neither
+resolves on the marketing hostname. The page paths (`/browse/*`,
 `/read/*`, `/settings`, `/help`, `/index.html`) are there so an old link still arrives somewhere
 useful, one redirect later. Everything else — the corpus, the hashed assets, the landing page's own
 files — is untouched and never invokes the Worker.
