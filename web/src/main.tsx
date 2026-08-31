@@ -1,4 +1,5 @@
 import { createRoot } from 'react-dom/client';
+import { registerSW } from 'virtual:pwa-register';
 import App from './App';
 import { loadUiPrefs, applyUiScale, applyTheme } from './lib/uiPrefs';
 // Side-effect import: binds window.__dangerWipeLocal, the console-only reset to a cold, signed-out
@@ -12,6 +13,20 @@ import './index.css';
 const uiPrefs = loadUiPrefs();
 applyUiScale(uiPrefs.uiScale);
 applyTheme(uiPrefs.theme);
+
+// The service worker holds the whole app — shell, bundles, fonts, the corpus tree — so a returning
+// reader always renders from the copy already on their device. Registering through the plugin's own
+// helper (rather than by hand) is what supplies the acting half of `registerType: 'autoUpdate'`:
+// once a new build has downloaded and installed in full, this reloads the page once, served
+// entirely from local storage. Without it the new build only appears at the launch *after* the one
+// that fetched it, which leaves an installed app — the kind that resumes rather than restarts —
+// showing an old version for as long as it is never cold-started.
+//
+// An update is looked for only at registration, which is on the window's `load` event, so the
+// reload lands seconds into a launch and never mid-read. It costs the reader nothing but a flash:
+// the sutta and its scroll offset are restored across a reload (hooks/useScrollMemory.ts). Offline,
+// nothing is found and nothing reloads. A no-op in dev unless PWA_DEV=1 (see vite.config.ts).
+registerSW();
 
 // Returning from the background strands iPad Safari on a stale, too-short viewport: it collapses
 // its tab bar without telling the page, so `dvh` (index.css's <html> height) keeps resolving

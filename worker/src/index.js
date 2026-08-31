@@ -93,9 +93,9 @@ app.get('/', async (c) => {
 // "/", putting the app back over the landing page: the exact failure the two hostnames exist to
 // prevent.
 //
-// Listing sw.js, registerSW.js and the manifest is what makes that impossible rather than merely
-// unlikely — an install needs all three, and none of them resolves here. The page paths are
-// listed so an old link still arrives somewhere useful, one redirect later.
+// Listing sw.js and the manifest is what makes that impossible rather than merely unlikely — an
+// install needs both, and neither resolves here. The page paths are listed so an old link still
+// arrives somewhere useful, one redirect later.
 //
 // Every path here is also in `assets.run_worker_first` (wrangler.jsonc); without that the asset
 // router answers first and the Worker never sees them. Which means the app's side has to serve
@@ -103,7 +103,6 @@ app.get('/', async (c) => {
 const APP_PATHS = [
   '/index.html',
   '/sw.js',
-  '/registerSW.js',
   '/manifest.webmanifest',
   '/browse/*',
   '/read/*',
