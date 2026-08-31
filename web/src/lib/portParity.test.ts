@@ -125,10 +125,7 @@ function workerDocsFrom(state: MirrorState) {
     })),
     highlightDocs: Object.values(state.highlights).flatMap(({ data }) =>
       data.color
-        ? data.ranges.map((r) => ({
-            id: `${data.g}:${r.i}`,
-            data: { suttaId: data.suttaId, i: r.i, s: r.s, e: r.e, color: data.color, g: data.g, mtime: data.mtime, createdAt: data.mtime },
-          }))
+        ? [{ id: data.g, data: { suttaId: data.suttaId, ...data.span, color: data.color, mtime: data.mtime, createdAt: data.mtime } }]
         : []
     ),
     visitedDocs: Object.values(state.visited).map(({ data }) => ({ id: data.suttaId, data: { visitedAt: data.visitedAt } })),
@@ -170,7 +167,7 @@ describe('deriveUserData agrees with the worker’s assembleUserData', () => {
       highlights: {
         g1: {
           dirty: false,
-          data: { g: 'g1', suttaId: 'sn1.1', ranges: [{ i: 0, s: 0, e: 4 }], color: 'yellow', erase: [], mtime: '2025-01-03T00:00:00.000Z|d', sent: true },
+          data: { g: 'g1', suttaId: 'sn1.1', span: { i0: 0, o0: 0, i1: 0, o1: 4 }, color: 'yellow', erase: [], mtime: '2025-01-03T00:00:00.000Z|d', sent: true },
         },
       },
       visited: {

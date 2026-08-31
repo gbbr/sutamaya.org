@@ -80,7 +80,7 @@ async function serverData(cookie: string) {
     lists: { id: string; label: string; parentId: string | null; kind: string; items: string[]; auto?: boolean }[];
     membership: Record<string, string[]>;
     notes: Record<string, { text: string; m: string }>;
-    highlights: Record<string, { id: string; i: number; s: number; e: number; c: string; g: string; m: string }[]>;
+    highlights: Record<string, { id: string; i0: number; o0: number; i1: number; o1: number; c: string; m: string }[]>;
     visited: Record<string, string>;
   }>;
 }
@@ -102,7 +102,7 @@ describe('client mirror against the real Worker', () => {
     const listId = Object.keys(state.lists)[0];
     state = queueMembership(state, listId, 'dn1', true);
     state = setNoteRecord(state, 'dn1', 'on virtue');
-    state = writeHighlightRecord(state, 'mn10', [{ i: 3, s: 0, e: 12 }], 'yellow');
+    state = writeHighlightRecord(state, 'mn10', { i0: 3, o0: 0, i1: 4, o1: 12 }, 'yellow');
     state = markVisitedRecord(state, 'dn2');
 
     const { state: synced, outcome } = await flush(state);
@@ -113,7 +113,7 @@ describe('client mirror against the real Worker', () => {
     const data = await serverData(cookie);
     expect(userLists(data)).toEqual([{ id: listId, label: 'Favorites', parentId: null, kind: 'list', items: ['dn1'] }]);
     expect(data.notes.dn1.text).toBe('on virtue');
-    expect(data.highlights.mn10).toMatchObject([{ i: 3, s: 0, e: 12, c: 'yellow' }]);
+    expect(data.highlights.mn10).toMatchObject([{ i0: 3, o0: 0, i1: 4, o1: 12, c: 'yellow' }]);
     expect(data.visited.dn2).toBeTruthy();
 
     // And the pull the flush ends with leaves the client rendering the same thing, rather than a
@@ -220,16 +220,16 @@ describe('client mirror against the real Worker', () => {
     const { cookie } = await signIn();
     asDevice(cookie);
 
-    let state = writeHighlightRecord(emptyMirror('u'), 'mn10', [{ i: 1, s: 0, e: 5 }], 'yellow');
+    let state = writeHighlightRecord(emptyMirror('u'), 'mn10', { i0: 1, o0: 0, i1: 1, o1: 5 }, 'yellow');
     state = (await flush(state)).state;
     expect((await serverData(cookie)).highlights.mn10).toHaveLength(1);
 
-    // A recolour is a tombstone plus a brand new group; the erase that follows tombstones that one
-    // in turn. Both travel as `erase` lists the client works out, so this is also the check that
-    // the server never had to infer what a selection displaced.
-    state = writeHighlightRecord(state, 'mn10', [{ i: 1, s: 0, e: 5 }], 'green');
+    // A recolour is a tombstone plus a brand new highlight; the erase that follows tombstones that
+    // one in turn. Both travel as `erase` lists the client works out, so this is also the check
+    // that the server never had to infer what a selection displaced.
+    state = writeHighlightRecord(state, 'mn10', { i0: 1, o0: 0, i1: 1, o1: 5 }, 'green');
     state = (await flush(state)).state;
-    state = writeHighlightRecord(state, 'mn10', [{ i: 1, s: 0, e: 5 }], null);
+    state = writeHighlightRecord(state, 'mn10', { i0: 1, o0: 0, i1: 1, o1: 5 }, null);
     const { state: synced } = await flush(state);
 
     expect((await serverData(cookie)).highlights.mn10 ?? []).toEqual([]);

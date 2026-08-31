@@ -289,7 +289,7 @@ export async function selectWithinSegment(page: Page, segIndex: number, start: n
 
 /**
  * A selection running from one segment into a later one — the gesture that produces a highlight
- * stored as several rows sharing a group id (`buildCrossSegmentRanges`).
+ * whose two stored endpoints sit in different segments.
  */
 export async function selectAcrossSegments(
   page: Page,

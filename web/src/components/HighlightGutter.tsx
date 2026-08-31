@@ -1,13 +1,12 @@
 import { useEffect, useState, type RefObject } from 'react';
-import type { HighlightGroup } from '../lib/highlights';
 import { getUiScale } from '../lib/uiPrefs';
 import { highlightPaint } from '../lib/theme';
-import type { ThemeColors } from '../lib/types';
+import type { Highlight, ThemeColors } from '../lib/types';
 import { computeGutterLayout, type GutterMark, type GutterTrack } from '../lib/highlightGutterLayout';
 
 interface HighlightGutterProps {
   scrollRef: RefObject<HTMLElement>;
-  highlightGroups: HighlightGroup[];
+  highlights: Highlight[];
   theme: ThemeColors;
   onJump: (segIndex: number, highlightId?: string) => void;
   // Recomputed whenever this changes, on top of mount, highlight change and resize. Pass anything
@@ -20,13 +19,13 @@ interface HighlightGutterProps {
 // A thin strip of colour marks along the edge of the scroll area, one per highlight, each at the
 // relative height its text sits at in the scrollable content — where the scrollbar thumb would be
 // if that highlight were on screen. Clicking one jumps to it.
-export function HighlightGutter({ scrollRef, highlightGroups, theme, onJump, layoutKey }: HighlightGutterProps) {
+export function HighlightGutter({ scrollRef, highlights, theme, onJump, layoutKey }: HighlightGutterProps) {
   const [marks, setMarks] = useState<GutterMark[]>([]);
   const [track, setTrack] = useState<GutterTrack | null>(null);
 
   useEffect(() => {
     const container = scrollRef.current;
-    if (!container || highlightGroups.length === 0) {
+    if (!container || highlights.length === 0) {
       setMarks([]);
       setTrack(null);
       return;
@@ -38,7 +37,7 @@ export function HighlightGutter({ scrollRef, highlightGroups, theme, onJump, lay
       // scrollHeight are pre-zoom layout units; computeGutterLayout converts the rect values to
       // local units before mixing the two.
       const { track, marks } = computeGutterLayout(
-        highlightGroups,
+        highlights,
         container.getBoundingClientRect(),
         container.scrollHeight,
         container.scrollTop,
@@ -58,7 +57,7 @@ export function HighlightGutter({ scrollRef, highlightGroups, theme, onJump, lay
       window.removeEventListener('resize', recompute);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [scrollRef, highlightGroups, layoutKey]);
+  }, [scrollRef, highlights, layoutKey]);
 
   if (!track || marks.length === 0) return null;
 

@@ -10,6 +10,6 @@ export function hasLocalWorkWorthKeeping(lists: ListDef[], notes: NotesMap, high
   return (
     lists.some((l) => !l.auto) ||
     Object.keys(notes).length > 0 ||
-    new Set(Object.values(highlights).flatMap((rows) => rows.map((h) => h.g))).size >= KEEP_SAFE_HIGHLIGHTS
+    Object.values(highlights).reduce((n, rows) => n + rows.length, 0) >= KEEP_SAFE_HIGHLIGHTS
   );
 }

@@ -1,5 +1,5 @@
 import { AUTO_LIST_IDS } from './autoLists';
-import { highlightColors, highlightCount } from './highlights';
+import { highlightColors } from './highlights';
 import type { HighlightsMap, ListDef, Membership } from './types';
 
 export interface ListPathOption {
@@ -77,7 +77,7 @@ export function suttaRowMeta(ids: Iterable<string>, membership: Membership, high
       })
       .sort((a, b) => (listOrder.get(a.id) ?? Infinity) - (listOrder.get(b.id) ?? Infinity));
     const hl = highlights[id] || [];
-    map.set(id, { chips, hlCount: highlightCount(hl), hlColors: highlightColors(hl) });
+    map.set(id, { chips, hlCount: hl.length, hlColors: highlightColors(hl) });
   }
   return map;
 }

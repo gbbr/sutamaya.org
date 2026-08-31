@@ -59,19 +59,27 @@ export interface Segment {
 
 export type Dictionary = Record<string, string[]>;
 
+// One highlight: the span from (i0, o0) up to but not including (i1, o1), where `i` is a segment
+// index and `o` a character offset into that segment's English text. A selection inside a single
+// segment has i0 === i1.
+//
+// Endpoints rather than one stored range per segment covered: everything between them is covered by
+// definition, so a segment reworded longer upstream can't leave an unhighlighted gap in the middle
+// of a highlight, and a segment inserted mid-span is covered too. The two endpoint segments still
+// carry offsets that a rewording moves — see docs/offline-sync.md.
 export interface Highlight {
+  // Minted by the client when the user picks the colour, so a highlight made offline already has
+  // its final identity. One selection is one highlight, so this is both the row's id and the group
+  // id a later erase names.
   id: string;
-  i: number;
-  s: number;
-  e: number;
+  i0: number;
+  o0: number;
+  i1: number;
+  o1: number;
   c: string;
-  // The group this row belongs to — one selection, one group, one row per segment it spans (see
-  // lib/highlights.ts's groupHighlights). Minted by the client when the user picks the colour, so a
-  // highlight made offline already has its final identity.
-  g: string;
-  // The group's mtime (`${ISO}|${deviceId}`, see lib/mtime.ts). Two devices' overlapping highlights
-  // can both survive, so this — with `g` as the tiebreak — decides which one paints the characters
-  // they contest (paintSegmentHighlights).
+  // The mtime (`${ISO}|${deviceId}`, see lib/mtime.ts). Two devices' overlapping highlights can
+  // both survive, so this — with `id` as the tiebreak — decides which one paints the characters
+  // they contest (lib/highlights.ts's paintSegmentRanges).
   m: string;
 }
 

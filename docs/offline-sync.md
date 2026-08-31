@@ -84,7 +84,7 @@ its clock.
 
 The mirror holds two kinds of pending work.
 
-**Records** are desired state — a list row, a note, a visit, a highlight group. The flush pushes what
+**Records** are desired state — a list row, a note, a visit, a highlight. The flush pushes what
 should be true, so replaying one means the same thing an hour later as when the user acted.
 
 **Operations** are the exception, for everything that edits a list's `items` and for sibling order:
@@ -116,33 +116,57 @@ Two consequences the hybrid forces:
   (`restampOrderOps`). This only moves an op ahead of *this* device's later edits; against another
   device's it still carries the time the user acted.
 
-## Highlights are immutable groups
+## Highlights are immutable spans
 
 The one place the mechanism is shaped differently, because "delete whatever currently overlaps" is
 unsafe to replay: an hour later it means something else, and it took whole highlights another device
 had created in between.
 
-A group is keyed by a client-minted `g` and never updated. A recolour is a tombstone plus a brand new
-group; an erase is a tombstone alone. The **client** works out which existing groups a new selection
-displaces (`displacedGroupIds` in `web/src/lib/highlights.ts`: same segment, `h.s < r.e && h.e > r.s`,
-edge-touching isn't overlap) and names them in the write's `erase` list. A group is atomic there — a
-selection touching any part of one displaces the whole thing, rather than stranding the segments it
-missed.
+A highlight is keyed by a client-minted id and never updated. A recolour is a tombstone plus a brand
+new highlight; an erase is a tombstone alone. The **client** works out which existing highlights a
+new selection displaces (`displacedIds` in `web/src/lib/highlights.ts`) and names them in the write's
+`erase` list. A highlight is atomic there — a selection touching any part of one displaces the whole
+thing, rather than stranding the part it missed.
 
 `g` and `erase` are both **required**. The server never infers what a selection displaces, so a write
 that doesn't say is a bug rather than a silent half-write, and a create without its own `g` would
 lose the idempotence the scheme rests on.
 
-The table keeps one row per segment; only the *record* is the group. A `highlight` write inserts
-under `INSERT OR IGNORE` on the unique `(user_id, g, i)` — so re-sending a group (a flush retried
-after a lost response) lands on the same rows rather than duplicating the highlight — and tombstones
-the displaced groups in the same `db.batch()`, tombstones first.
+### Endpoints, not one row per segment
 
-Two devices can therefore both highlight overlapping spans offline and both survive, so **stored
-ranges may overlap**. The reader settles which one paints the contested characters, by `(mtime, g)`
-(`paintSegmentHighlights`), which is why `GET /api/data` sends each highlight's `mtime` as `m`. A
-group overlapped in the middle renders as two spans, each still carrying the group's own stored
-range, so clicking either half acts on the whole highlight.
+One row holds the whole highlight: the half-open span from `(i0, o0)` to `(i1, o1)`, where `i` is a
+segment index and `o` a character offset into that segment's English text. Everything between the two
+ends is covered by definition, and `highlightRanges` resolves that into per-segment ranges at render
+time, against the text the device currently holds.
+
+This is what an earlier per-segment layout got wrong. An interior row stored `e` = that segment's
+length *at the time of highlighting*, so when SuttaCentral reworded the segment longer, the tail of
+that line went unhighlighted — a gap in the middle of a highlight. Upstream rewords on the order of
+20,000 segments every couple of years, touching most suttas, so it recurs.
+
+What still drifts: the two endpoint segments carry offsets a rewording moves, so a highlight's first
+and last few characters can shift. That is accepted — there is no text anchoring and no fuzzy
+re-anchoring. Both ends are also **clamped** to what exists, since a device can hold an older,
+shorter copy of a sutta than the one the highlight was made against (text files revalidate in the
+background): an end anchor past the last segment stops at the last segment, an offset past a
+segment's length stops at its end, and a start anchor past the end of the document paints nothing.
+
+A `highlight` write inserts under `INSERT OR IGNORE` on the primary key `(user_id, id)` — so
+re-sending one (a flush retried after a lost response) lands on the same row rather than duplicating
+the highlight — and tombstones the displaced ones in the same `db.batch()`, tombstones first. The key
+leads with `user_id`, so one account's ids can never reach another's rows.
+
+A mirror written by a build that stored per-segment ranges is collapsed to endpoints on the way out
+of IndexedDB (`upgradeStoredMirror`, called by `loadMirror`). It has no removal date: a reader who
+has never signed in has no server copy to re-pull, so that mirror is their only one.
+
+### Overlaps
+
+Two devices can both highlight overlapping spans offline and both survive, so **stored spans may
+overlap**. The reader settles which one paints the contested characters, by `(mtime, id)`
+(`paintSegmentRanges`), which is why `GET /api/data` sends each highlight's `mtime` as `m`. One
+overlapped in the middle renders as two spans, both carrying its own id, so clicking either half acts
+on the whole highlight.
 
 ## Tree repair at read time
 
@@ -167,7 +191,7 @@ the network; every mutator is a pure state transition that marks what it touched
 | `lib/mirror.ts` | The `MirrorState` — `lists`/`notes`/`highlights`/`visited` records plus an `ops` queue — namespaced by `userId`, and every mutator over it |
 | `lib/mirrorView.ts` | Derives what the UI renders, including the three auto-lists. A port of the worker's `assembleUserData` |
 | `lib/listTree.ts` | Read-time tree repair. A port of the worker's `repairListTree` |
-| `lib/mirrorDb.ts` | Persists the whole mirror as one IndexedDB value per user id, versioned by `DB_VERSION` |
+| `lib/mirrorDb.ts` | Persists the whole mirror as one IndexedDB value per user id, versioned by `DB_VERSION`; runs `upgradeStoredMirror` on the way out |
 | `lib/sync.ts` | The flush |
 | `lib/mtime.ts` | `nextMtime()` |
 | `lib/lastUser.ts` | Who was signed in, in `localStorage` |
@@ -182,7 +206,7 @@ only thing signing out of the model was an id to file under.
 
 Two things differ from a real account, and only two. The flush stands down (`isLocalUserId` guards
 it: there is no session, so every request would 401). And on sign-in, `adoptMirror` moves the whole
-local mirror onto the account — every record marked dirty, lists and highlight groups reset to
+local mirror onto the account — every record marked dirty, lists and highlights reset to
 `pendingCreate`/`sent: false` since that account's server has genuinely never seen them — after
 which the ordinary flush carries it up. Adoption keeps each record's own `mtime` rather than
 re-stamping: that timestamp is when the user acted, and a fresh one would let a week-old local note
@@ -204,7 +228,7 @@ workspaces — and the server's copies still shape the pull.
 
 **Deriving the auto-lists client-side is why every pulled row carries the timestamp they order by.** A
 sutta noted or highlighted offline has to appear under Notes/Highlights with no round trip, so the
-wire sends each note as `{text, m}` (not a bare string) and each highlight row's `m`; `visited` is its
+wire sends each note as `{text, m}` (not a bare string) and each highlight's `m`; `visited` is its
 own clock. Without it the entries compare equal and the list falls back to whatever order the
 server's `SELECT` returned. The server still synthesizes its own copies, and `applySnapshot` drops
 them.
@@ -235,7 +259,7 @@ losing tab skips the round rather than queueing).
 
 ### Local collapses
 
-All in `lib/mirror.ts`. A highlight group created and erased before either left the device is dropped
+All in `lib/mirror.ts`. A highlight created and erased before either left the device is dropped
 rather than pushed as a create-then-tombstone pair (whose order can't be guaranteed); a list deleted
 before its create ever left goes outright along with its queued ops; an add and a remove of the same
 sutta in the same list cancel; only the latest order per list (and per parent) is kept.
@@ -297,7 +321,7 @@ Things a change here must not break:
    reads, writes and existence checks alike.
 4. **Records flush before operations.**
 5. **A dirty flag clears only against the exact `mtime` that was pushed.**
-6. **A highlight group is never updated.** Recolour = tombstone + new group.
+6. **A highlight is never updated.** Recolour = tombstone + new highlight.
 7. **`g` and `erase` are required on a highlight write.**
 8. **A local collapse keys off `createSent`/`sent`, never `dirty`/`pendingCreate`.**
 9. **Both order ops stay ahead of local edits to the rows they name** (`restampOrderOps`).
@@ -370,9 +394,11 @@ ALTER TABLE notes      ADD COLUMN mtime   TEXT    NOT NULL DEFAULT '';
 ALTER TABLE notes      ADD COLUMN deleted INTEGER NOT NULL DEFAULT 0;
 ALTER TABLE highlights ADD COLUMN mtime   TEXT    NOT NULL DEFAULT '';
 ALTER TABLE highlights ADD COLUMN deleted INTEGER NOT NULL DEFAULT 0;
-
-CREATE UNIQUE INDEX highlights_user_group_seg ON highlights(user_id, g, i);
 ```
+
+`worker/migrations/0004_highlight_endpoints.sql` then rebuilds `highlights` as one row per highlight
+— `(i0, o0, i1, o1)` in place of `(i, s, e)`, the client-minted id as the row id, and
+`PRIMARY KEY (user_id, id)` doing the job the old `(user_id, g, i)` unique index did.
 
 `''` sorts below every real timestamp, so an un-backfilled row always loses a merge rather than
 winning by accident; the migration backfills from each table's existing timestamp column anyway. The

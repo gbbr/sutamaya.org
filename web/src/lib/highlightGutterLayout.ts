@@ -1,4 +1,4 @@
-import type { HighlightGroup } from './highlights';
+import type { Highlight } from './types';
 
 export interface GutterTrack {
   top: number;
@@ -19,7 +19,7 @@ export interface GutterMark {
 // are raw getBoundingClientRect() readings; `scrollHeight`/`scrollTop` are the container's own
 // scroll properties.
 export function computeGutterLayout(
-  groups: HighlightGroup[],
+  highlights: Highlight[],
   containerRect: { top: number; height: number },
   scrollHeight: number,
   scrollTop: number,
@@ -29,13 +29,14 @@ export function computeGutterLayout(
   const top = containerRect.top / scale;
   const height = containerRect.height / scale;
   const track: GutterTrack = { top, height };
-  const marks: GutterMark[] = groups.map((g) => {
-    const rawTop = segTop(g.i);
+  // Positioned by the segment the highlight starts in, which is where a jump from the gutter lands.
+  const marks: GutterMark[] = highlights.map((h) => {
+    const rawTop = segTop(h.i0);
     // Distance from the top of the scrollable content: adding scrollTop back cancels out the way a
     // raw top reading moves as the container scrolls.
     const contentTop = rawTop !== undefined ? rawTop / scale - top + scrollTop : 0;
     const ratio = scrollHeight > 0 ? Math.min(1, Math.max(0, contentTop / scrollHeight)) : 0;
-    return { key: g.key, i: g.i, c: g.c, top: ratio * height };
+    return { key: h.id, i: h.i0, c: h.c, top: ratio * height };
   });
   return { track, marks };
 }

@@ -385,26 +385,26 @@ describe('UserDataProvider', () => {
     expect(result.current.membership.dn1 ?? []).toEqual([]);
   });
 
-  it('setHighlightRanges mints the group and names the groups it displaces', async () => {
-    const existing = { id: 'h1', i: 0, s: 0, e: 10, c: 'yellow', g: 'g1', m: '2026-01-01T00:00:00.000Z|dev' };
-    const untouched = { id: 'h2', i: 4, s: 0, e: 4, c: 'blue', g: 'g2', m: '2026-01-01T00:00:00.000Z|dev' };
+  it('setHighlightSpan mints a new highlight and names the ones it displaces', async () => {
+    const existing = { id: 'g1', i0: 0, o0: 0, i1: 0, o1: 10, c: 'yellow', m: '2026-01-01T00:00:00.000Z|dev' };
+    const untouched = { id: 'g2', i0: 4, o0: 0, i1: 4, o1: 4, c: 'blue', m: '2026-01-01T00:00:00.000Z|dev' };
     dataApiAll.mockResolvedValue({ ...structuredClone(baseData), highlights: { dn1: [existing, untouched] } });
     const { result } = setup();
     await waitFor(() => expect(result.current.highlights.dn1).toHaveLength(2));
 
     await act(async () => {
-      await result.current.setHighlightRanges('dn1', [{ i: 0, s: 5, e: 12 }], 'green');
+      await result.current.setHighlightSpan('dn1', { i0: 0, o0: 5, i1: 0, o1: 12 }, 'green');
     });
-    // The displaced group is gone locally at once, and the untouched one is left alone.
+    // The displaced highlight is gone locally at once, and the untouched one is left alone.
     expect(result.current.highlights.dn1).toHaveLength(2);
-    expect(result.current.highlights.dn1.some((h) => h.g === 'g1')).toBe(false);
-    expect(result.current.highlights.dn1.some((h) => h.g === 'g2')).toBe(true);
+    expect(result.current.highlights.dn1.some((h) => h.id === 'g1')).toBe(false);
+    expect(result.current.highlights.dn1.some((h) => h.id === 'g2')).toBe(true);
 
     await reconnect();
     expect(pushed('highlight')).toContainEqual({
       type: 'highlight',
       suttaId: 'dn1',
-      ranges: [{ i: 0, s: 5, e: 12 }],
+      span: { i0: 0, o0: 5, i1: 0, o1: 12 },
       color: 'green',
       g: expect.any(String),
       mtime: expect.stringMatching(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z\|.+$/),
@@ -468,7 +468,7 @@ describe('UserDataProvider', () => {
     // No sign-in prompt, no thrown error, no request: the local write is the durable write.
     await act(async () => {
       await result.current.submitNote('dn1', 'noted before signing in');
-      await result.current.setHighlightRanges('dn1', [{ i: 0, s: 0, e: 4 }], '#ff0');
+      await result.current.setHighlightSpan('dn1', { i0: 0, o0: 0, i1: 0, o1: 4 }, '#ff0');
     });
     expect(result.current.notes.dn1).toBe('noted before signing in');
     expect(promptGoogleSignIn).not.toHaveBeenCalled();

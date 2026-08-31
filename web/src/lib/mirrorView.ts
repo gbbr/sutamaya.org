@@ -1,7 +1,7 @@
 import { repairListTree } from './listTree';
 import { AUTO_LIST_CAP, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID, RECENT_AUTO_LIST_ID } from './autoLists';
 import type { UserData } from './api';
-import type { MirrorState } from './mirror';
+import type { HighlightRecord, MirrorState } from './mirror';
 import type { Highlight, HighlightsMap, ListDef, Membership, NotesMap, VisitedMap } from './types';
 
 // Derives what the UI renders from the mirror — the client-side half of the worker's
@@ -33,20 +33,30 @@ function latestIds(entries: { id: string; at: string }[], limit: number): string
     .map(([id]) => id);
 }
 
-// One highlight group's stored rows, as the reader renders them. Row ids are synthetic — the
-// group's `g` plus the segment index — which is what keeps them stable across a pull, since the
-// server mints its own row ids per insert.
-function rowsOf(group: { g: string; ranges: { i: number; s: number; e: number }[]; color: string | null; mtime: string }): Highlight[] {
-  if (!group.color) return [];
-  return group.ranges.map((r) => ({ id: `${group.g}:${r.i}`, i: r.i, s: r.s, e: r.e, c: group.color!, g: group.g, m: group.mtime }));
+// One record as the reader renders it, or nothing at all where the record is a pure erase — which
+// has a span only to record what the user selected, and paints nothing.
+//
+// A record with no span at all is dropped rather than rendered, as a cleared note is above: the only
+// way to hold one is a mirror persisted by another app version that upgradeStoredMirror didn't
+// cover, and losing one highlight is a far better failure than taking the reader down with it.
+function highlightOf(record: HighlightRecord): Highlight[] {
+  if (!record.color || !record.span) return [];
+  const { i0, o0, i1, o1 } = record.span;
+  return [{ id: record.g, i0, o0, i1, o1, c: record.color, m: record.mtime }];
 }
 
-// Every stored highlight row for one sutta — what displacedGroupIds needs in order to work out
-// which groups a fresh selection displaces (see lib/mirror.ts's writeHighlightRecord).
-export function highlightRowsFor(state: MirrorState, suttaId: string): Highlight[] {
+// Document order, which the reader's highlights panel lists in and the gutter's marks are drawn
+// from. Stable under a re-pull, unlike the order records happen to sit in the mirror.
+function inDocumentOrder(highlights: Highlight[]): Highlight[] {
+  return highlights.sort((a, b) => a.i0 - b.i0 || a.o0 - b.o0 || (a.id < b.id ? -1 : 1));
+}
+
+// One sutta's highlights — what displacedIds needs in order to work out which a fresh selection
+// displaces (see lib/mirror.ts's writeHighlightRecord).
+export function highlightsFor(state: MirrorState, suttaId: string): Highlight[] {
   return Object.values(state.highlights)
     .filter((record) => record.data.suttaId === suttaId)
-    .flatMap((record) => rowsOf(record.data));
+    .flatMap((record) => highlightOf(record.data));
 }
 
 export function deriveUserData(state: MirrorState): DerivedUserData {
@@ -76,11 +86,12 @@ export function deriveUserData(state: MirrorState): DerivedUserData {
   const highlights: HighlightsMap = {};
   const highlightEntries: { id: string; at: string }[] = [];
   for (const { data } of Object.values(state.highlights)) {
-    const rows = rowsOf(data);
+    const rows = highlightOf(data);
     if (!rows.length) continue;
     (highlights[data.suttaId] = highlights[data.suttaId] || []).push(...rows);
     highlightEntries.push({ id: data.suttaId, at: data.mtime });
   }
+  for (const [suttaId, rows] of Object.entries(highlights)) highlights[suttaId] = inDocumentOrder(rows);
 
   const visited: VisitedMap = {};
   const visitedEntries: { id: string; at: string }[] = [];

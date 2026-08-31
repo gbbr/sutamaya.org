@@ -192,10 +192,10 @@ describe('multi-device convergence (D1)', () => {
   });
 
   // Two devices each highlight an overlapping span in the same segment, offline and unaware of each
-  // other, so neither names the other's group in `erase`. Per docs/offline-sync.md, both survive as
-  // stored rows (the reader settles the contested characters by mtime/g at render time) — this must
-  // hold regardless of which device's write the server saw first.
-  it('two devices highlighting overlapping spans converge on both groups surviving, either order', async () => {
+  // other, so neither names the other in `erase`. Per docs/offline-sync.md, both survive as stored
+  // rows (the reader settles the contested characters by mtime/id at render time) — this must hold
+  // regardless of which device's write the server saw first.
+  it('two devices highlighting overlapping spans converge on both surviving, either order', async () => {
     const groupA = {
       type: 'highlight',
       suttaId: 'sn1.1',
@@ -203,7 +203,7 @@ describe('multi-device convergence (D1)', () => {
       erase: [],
       mtime: '2030-01-01T00:00:01.000Z|phone',
       color: 'yellow',
-      ranges: [{ i: 0, s: 0, e: 10 }],
+      span: { i0: 0, o0: 0, i1: 0, o1: 10 },
     };
     const groupB = {
       type: 'highlight',
@@ -212,7 +212,7 @@ describe('multi-device convergence (D1)', () => {
       erase: [],
       mtime: '2030-01-01T00:00:02.000Z|laptop',
       color: 'green',
-      ranges: [{ i: 0, s: 5, e: 15 }],
+      span: { i0: 0, o0: 5, i1: 0, o1: 15 },
     };
 
     const { userId: userAFirst, cookie: cookieAFirst } = await signIn();
@@ -224,8 +224,8 @@ describe('multi-device convergence (D1)', () => {
     await flush(cookieBFirst, groupA);
 
     for (const userId of [userAFirst, userBFirst]) {
-      const { results } = await env.DB.prepare('SELECT g FROM highlights WHERE user_id = ? AND deleted = 0').bind(userId).all();
-      expect(new Set(results.map((r) => r.g))).toEqual(new Set(['group-a', 'group-b']));
+      const { results } = await env.DB.prepare('SELECT id FROM highlights WHERE user_id = ? AND deleted = 0').bind(userId).all();
+      expect(new Set(results.map((r) => r.id))).toEqual(new Set(['group-a', 'group-b']));
     }
   });
 });

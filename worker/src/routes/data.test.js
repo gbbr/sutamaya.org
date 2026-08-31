@@ -65,12 +65,12 @@ describe('routes/data.js (D1)', () => {
   it('synthesizes "Highlights" and "Notes" auto-lists, most-recent first', async () => {
     const { cookie } = await signIn();
     await push(cookie, [
-      { type: 'highlight', suttaId: 'sn1.1', color: 'yellow', g: 'group-a', erase: [], ranges: [{ i: 0, s: 0, e: 5 }] },
+      { type: 'highlight', suttaId: 'sn1.1', color: 'yellow', g: 'group-a', erase: [], span: { i0: 0, o0: 0, i1: 0, o1: 5 } },
       { type: 'note', suttaId: 'sn1.1', text: 'older note' },
     ]);
     await new Promise((r) => setTimeout(r, 5));
     await push(cookie, [
-      { type: 'highlight', suttaId: 'sn1.2', color: 'blue', g: 'group-b', erase: [], ranges: [{ i: 0, s: 0, e: 5 }] },
+      { type: 'highlight', suttaId: 'sn1.2', color: 'blue', g: 'group-b', erase: [], span: { i0: 0, o0: 0, i1: 0, o1: 5 } },
       { type: 'note', suttaId: 'sn1.2', text: 'newer note' },
     ]);
 
@@ -82,13 +82,13 @@ describe('routes/data.js (D1)', () => {
 
   it('returns highlights keyed by suttaId in the client-side shape', async () => {
     const { cookie } = await signIn();
-    await write(cookie, { type: 'highlight', suttaId: 'sn1.1', color: 'yellow', g: 'group-a', erase: [], ranges: [{ i: 2, s: 5, e: 10 }] });
+    await write(cookie, { type: 'highlight', suttaId: 'sn1.1', color: 'yellow', g: 'group-a', erase: [], span: { i0: 2, o0: 5, i1: 3, o1: 10 } });
 
     const body = await (await api('/api/data', { cookie })).json();
     expect(body.highlights['sn1.1']).toHaveLength(1);
     // `m` (the row's mtime) is part of that shape too — the reader needs it to decide which of two
     // overlapping groups paints the characters they contest.
-    expect(body.highlights['sn1.1'][0]).toMatchObject({ i: 2, s: 5, e: 10, c: 'yellow', g: 'group-a' });
+    expect(body.highlights['sn1.1'][0]).toMatchObject({ id: 'group-a', i0: 2, o0: 5, i1: 3, o1: 10, c: 'yellow' });
     expect(body.highlights['sn1.1'][0].m).toBeTruthy();
   });
 

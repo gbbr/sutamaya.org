@@ -1,3 +1,4 @@
+import type { HlSpan } from './highlights';
 import type { Highlight, ListDef, ListKind, Membership, HighlightsMap, VisitedMap, User } from './types';
 
 // A backstop for a dead connection, not a latency budget: /api/data carries the user's whole
@@ -89,9 +90,9 @@ export type PushItem =
   // queue.
   | { type: 'sibling.order'; parentId: string | null; order: string[]; mtime: string }
   | { type: 'note'; suttaId: string; text: string; mtime: string }
-  // Replayable because the client decides identity: `g` names the group being created, `erase` the
-  // groups this selection displaces. See worker/src/lib/writes.js.
-  | { type: 'highlight'; suttaId: string; ranges: { i: number; s: number; e: number }[]; color: string | null; g: string; erase: string[]; mtime: string }
+  // Replayable because the client decides identity: `g` names the highlight being created, `erase`
+  // the ones this selection displaces. See worker/src/lib/writes.js.
+  | { type: 'highlight'; suttaId: string; span: HlSpan; color: string | null; g: string; erase: string[]; mtime: string }
   // `visited` has no separate mtime column: visitedAt is both the value stored and the guard the
   // write is conditional on.
   | { type: 'visited'; suttaId: string; visitedAt: string };

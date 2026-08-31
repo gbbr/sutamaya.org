@@ -3,12 +3,15 @@ import { useUserData } from '../context/UserDataContext';
 import { useSuttaText } from './useSuttaText';
 import { useHighlightPopup } from './useHighlightPopup';
 import { useScrollMemory, type ScrollRestore } from './useScrollMemory';
-import { groupHighlights, highlightColors, highlightCount } from '../lib/highlights';
+import { highlightColors } from '../lib/highlights';
+import type { Highlight } from '../lib/types';
 import { getUiScale } from '../lib/uiPrefs';
 import { animateScrollBy, computeSegmentScrollOffset } from '../lib/segmentScroll';
 
+const EMPTY_HIGHLIGHTS: Highlight[] = [];
+
 // A sutta's reading state for ReaderPage: the segments and highlights SegmentedText renders, plus
-// the selection-popup, scroll-restoration and highlight-grouping plumbing around them.
+// the selection-popup and scroll-restoration plumbing around them.
 // `scrollKeyPrefix` namespaces the remembered scroll position per sutta (`reader:{id}`).
 // `restore` and `skipRestore` are passed straight through to useScrollMemory (see its own comment).
 // ReaderPage decides both: 'top' for a sutta opened fresh and 'stored' for one returned to, and
@@ -20,8 +23,10 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
 ) {
   const { highlights, ready: userDataReady } = useUserData();
   const { segments, error, retry } = useSuttaText(suttaId);
-  const hlForSutta = (suttaId && highlights[suttaId]) || [];
-  const popup = useHighlightPopup(suttaId, hlForSutta, segments);
+  // Memoized on the map rather than read inline: an empty sutta would otherwise hand a fresh array
+  // to the gutter on every render, re-running its layout effect for nothing.
+  const hlForSutta = useMemo(() => (suttaId && highlights[suttaId]) || EMPTY_HIGHLIGHTS, [suttaId, highlights]);
+  const popup = useHighlightPopup(suttaId, hlForSutta);
   // The chips above the text come from UserDataContext's separately-timed fetch, so waiting for
   // both this and `segments` before touching scrollTop is what lets useScrollMemory restore once
   // and correctly, rather than correcting for whichever of the two lands second.
@@ -30,8 +35,6 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
     skipRestore,
     readyToRestore: !!segments && userDataReady,
   });
-  const highlightGroups = useMemo(() => groupHighlights(hlForSutta), [hlForSutta]);
-  const hlCount = useMemo(() => highlightCount(hlForSutta), [hlForSutta]);
   const hlColors = useMemo(() => highlightColors(hlForSutta), [hlForSutta]);
 
   // useCallback, unlike this hook's other return values, because ReaderPage's goToAdjacentWord
@@ -61,5 +64,5 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
     animateScrollBy(container, offset);
   }, [scrollRef]);
 
-  return { segments, error, retry, hlForSutta, highlightGroups, hlCount, hlColors, scrollRef, scrollToSegment, ...popup };
+  return { segments, error, retry, hlForSutta, hlCount: hlForSutta.length, hlColors, scrollRef, scrollToSegment, ...popup };
 }

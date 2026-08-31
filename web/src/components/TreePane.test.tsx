@@ -133,7 +133,7 @@ function mockUserData(overrides: Partial<ReturnType<typeof useUserData>> = {}): 
     toggleMembership: vi.fn(async () => {}),
     addToList: vi.fn(async () => {}),
     submitNote: vi.fn(async () => {}),
-    setHighlightRanges: vi.fn(async () => {}),
+    setHighlightSpan: vi.fn(async () => {}),
     markVisited: vi.fn(),
     ...overrides,
   };
@@ -931,21 +931,17 @@ describe('deferred sign-in', () => {
     expect(screen.getByText(keepSafeText)).toBeInTheDocument();
   });
 
-  it('counts highlight groups, not rows, and waits for the second', () => {
-    // One selection spanning two segments is one group — it must not count as two.
-    const twoSegmentGroup = [
-      { id: 'h1', i: 0, s: 0, e: 5, c: '#ff0', g: 'g1', m: '1|d' },
-      { id: 'h2', i: 1, s: 0, e: 5, c: '#ff0', g: 'g1', m: '1|d' },
-    ];
-    signedOut({ highlights: { dn1: twoSegmentGroup } });
+  it('waits for a second highlight, counting a cross-segment one as one', () => {
+    const crossSegment = [{ id: 'g1', i0: 0, o0: 0, i1: 1, o1: 5, c: '#ff0', m: '1|d' }];
+    signedOut({ highlights: { dn1: crossSegment } });
     const { unmount } = renderHarness();
     expect(screen.queryByText(keepSafeText)).not.toBeInTheDocument();
     unmount();
 
     signedOut({
       highlights: {
-        dn1: twoSegmentGroup,
-        dn2: [{ id: 'h3', i: 0, s: 0, e: 5, c: '#ff0', g: 'g2', m: '2|d' }],
+        dn1: crossSegment,
+        dn2: [{ id: 'g2', i0: 0, o0: 0, i1: 0, o1: 5, c: '#ff0', m: '2|d' }],
       },
     });
     renderHarness();

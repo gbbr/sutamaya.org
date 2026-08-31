@@ -2,14 +2,12 @@ import { memo, useMemo, type CSSProperties } from 'react';
 import { isUntranslated, type SegmentFile, type SegmentRole } from '../lib/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
 import { highlightPaint } from '../lib/theme';
-import { paintSegmentHighlights } from '../lib/highlights';
+import { expandHighlights, paintSegmentRanges, type SegmentRange } from '../lib/highlights';
 import { WORD_BOUNDARY, isWordBoundary } from '../lib/dictionary';
 
 interface Part {
   text: string;
   c?: string;
-  s?: number;
-  e?: number;
   id?: string;
 }
 
@@ -74,19 +72,19 @@ function stripTags(html: string): string {
 }
 
 // Slices a segment's text into rendered runs, highlighted and plain alternating. Overlaps between
-// two groups are resolved by paintSegmentHighlights (lib/highlights.ts) rather than here, since
+// two highlights are resolved by paintSegmentRanges (lib/highlights.ts) rather than here, since
 // which one wins the contested characters is a rule shared with the rest of the app, not a
 // rendering detail.
 //
-// A part's `s`/`e` are the winning highlight's stored range, not the piece being drawn — they are
-// what a click hands back to openPop, which locates the group by exact stored offsets, so clicking
-// the visible half of a partly-covered highlight acts on the whole of it.
-function buildParts(text: string, hlForSeg: Highlight[]): Part[] {
+// A part carries the id of the highlight it was painted from, which is what a click hands back to
+// openPop — so clicking the visible half of a partly-covered highlight, or any one segment of a
+// highlight spanning several, acts on the whole of it.
+function buildParts(text: string, rangesForSeg: SegmentRange[]): Part[] {
   const parts: Part[] = [];
   let cur = 0;
-  for (const { s, e, src } of paintSegmentHighlights(hlForSeg)) {
+  for (const { s, e, src } of paintSegmentRanges(rangesForSeg)) {
     if (s > cur) parts.push({ text: text.slice(cur, s) });
-    parts.push({ text: text.slice(s, e), c: src.c, s: src.s, e: src.e, id: src.id });
+    parts.push({ text: text.slice(s, e), c: src.c, id: src.id });
     cur = e;
   }
   if (cur < text.length) parts.push({ text: text.slice(cur) });
@@ -157,7 +155,9 @@ function paliWordSpans(
 interface SegmentRowProps {
   seg: SegmentFile;
   i: number;
-  hlForSeg: Highlight[];
+  // This segment's slice of every highlight covering it (lib/highlights.ts's expandHighlights),
+  // already resolved against the segment text.
+  rangesForSeg: SegmentRange[];
   open: boolean;
   lastInParagraph: boolean;
   // Only meaningful when seg.role === 'list-item': this item's 1-based ordinal within its run of
@@ -187,7 +187,7 @@ interface SegmentRowProps {
   // splitPaliWords), so ReaderPage can step to the previous or next word from the DictionaryDock's
   // arrows without re-deriving it from the word text, which isn't unique within a segment.
   onWordClick: (word: string, segIndex: number, wordIndex: number) => void;
-  onSpanClick: (i: number, s: number, e: number, rect: DOMRect, color: string) => void;
+  onSpanClick: (highlightId: string, rect: DOMRect, color: string) => void;
   showNotes: boolean;
   noteOpen: boolean;
   onToggleNote: (i: number) => void;
@@ -203,7 +203,7 @@ interface SegmentRowProps {
 const SegmentRow = memo(function SegmentRow({
   seg,
   i,
-  hlForSeg,
+  rangesForSeg,
   open,
   lastInParagraph,
   afterVerse,
@@ -225,7 +225,7 @@ const SegmentRow = memo(function SegmentRow({
   onToggleNote,
   activeWordIndex,
 }: SegmentRowProps) {
-  const parts = buildParts(seg.en, hlForSeg);
+  const parts = buildParts(seg.en, rangesForSeg);
   const colophon = isUntranslatedColophon(seg);
   // A structural sub-heading (SuttaCentral's <h2>–<h5> nesting) renders as a real heading element
   // rather than a styled <p>, and takes the UI's sans font rather than the reading face, since it
@@ -285,12 +285,11 @@ const SegmentRow = memo(function SegmentRow({
           p.c ? (
             <span
               key={j}
-              // The doc id of the row this span was painted from: `${group}:${segment}`
-              // (lib/mirrorView.ts). A highlight spanning several segments therefore renders a
-              // different id in each one, sharing the group prefix — the first of them being what
-              // HighlightGroup's `key` carries (highlights.ts), and so what a jump from the gutter
-              // or highlights panel (useSuttaReading's scrollToSegment) matches, centring on the
-              // highlighted text rather than on the whole, possibly much longer, segment.
+              // The id of the highlight this span was painted from, which a jump from the gutter or
+              // the highlights panel matches (useSuttaReading's scrollToSegment) so it centres on
+              // the highlighted text rather than on the whole, possibly much longer, segment. A
+              // highlight spanning several segments renders the same id in each; the jump looks
+              // only inside the segment it is scrolling to, which is the one it starts in.
               data-hl-id={p.id}
               // No user-select:none here, unlike `.pw` and the note asterisk below: this span sits
               // inside the same selectable English prose a highlight drag crosses, including a drag
@@ -305,7 +304,7 @@ const SegmentRow = memo(function SegmentRow({
               }}
               onClick={(e) => {
                 e.stopPropagation();
-                onSpanClick(i, p.s!, p.e!, (e.target as HTMLElement).getBoundingClientRect(), p.c!);
+                onSpanClick(p.id!, (e.target as HTMLElement).getBoundingClientRect(), p.c!);
               }}
             >
               {p.text}
@@ -403,7 +402,7 @@ interface SegmentedTextProps {
   // splitPaliWords), so ReaderPage can step to the previous or next word from the DictionaryDock's
   // arrows without re-deriving it from the word text, which isn't unique within a segment.
   onWordClick: (word: string, segIndex: number, wordIndex: number) => void;
-  onSpanClick: (i: number, s: number, e: number, rect: DOMRect, color: string) => void;
+  onSpanClick: (highlightId: string, rect: DOMRect, color: string) => void;
   // Bhikkhu Sujato's translator notes (SegmentFile.note): whether the asterisk markers show at all
   // ("c" in the reader, or the Display tab's checkbox), and which are expanded inline — the same
   // per-segment-index shape as openSegs/onToggleSeg.
@@ -421,7 +420,7 @@ interface SegmentedTextProps {
   focusUid?: string;
 }
 
-const EMPTY_HIGHLIGHTS: Highlight[] = [];
+const EMPTY_RANGES: SegmentRange[] = [];
 
 // The reader's paragraph renderer. Wrapped in `memo`, as is each `SegmentRow` below, so state
 // unrelated to the text — the word-lookup dock, the side panel, the mobile breakpoint — doesn't
@@ -460,17 +459,11 @@ function SegmentedTextInner({
   // break would get no extra room at all.
   const headingGapTop = Math.round(line * 1.8);
   const headingGapBottom = Math.round(line * 0.6);
-  // Grouped once per `highlights` change (O(segments + highlights)) rather than every segment
-  // re-scanning the whole array (O(segments × highlights)).
-  const highlightsBySeg = useMemo(() => {
-    const map = new Map<number, Highlight[]>();
-    for (const h of highlights) {
-      const arr = map.get(h.i);
-      if (arr) arr.push(h);
-      else map.set(h.i, [h]);
-    }
-    return map;
-  }, [highlights]);
+  // Stored spans resolved into per-segment ranges once per change (O(segments + highlights)) rather
+  // than every segment re-scanning the whole array (O(segments × highlights)). It depends on the
+  // text as well as the highlights, since everything between a span's two endpoints is covered in
+  // full — see lib/highlights.ts's highlightRanges.
+  const rangesBySeg = useMemo(() => expandHighlights(highlights, segments), [highlights, segments]);
   // A list-item's ordinal within its run of consecutive list-item segments, reset to 0 whenever the
   // previous segment wasn't one, so a second list further down the sutta restarts at 1. Mutated in
   // iteration order inside the .map below rather than in a memoized pass of its own.
@@ -489,7 +482,7 @@ function SegmentedTextInner({
             key={seg.key}
             seg={seg}
             i={i}
-            hlForSeg={highlightsBySeg.get(i) ?? EMPTY_HIGHLIGHTS}
+            rangesForSeg={rangesBySeg.get(i) ?? EMPTY_RANGES}
             open={allPali || !!openSegs[i]}
             lastInParagraph={lastInParagraph}
             afterVerse={segments[i - 1]?.role === 'verse'}

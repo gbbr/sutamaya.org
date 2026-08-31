@@ -77,7 +77,7 @@ function mockUserData(overrides: Partial<ReturnType<typeof useUserData>> = {}): 
     toggleMembership: async () => {},
     addToList: async () => {},
     submitNote: async () => {},
-    setHighlightRanges: async () => {},
+    setHighlightSpan: async () => {},
     markVisited: () => {},
     ...overrides,
   };

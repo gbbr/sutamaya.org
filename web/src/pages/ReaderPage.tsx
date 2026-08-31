@@ -135,7 +135,6 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     error: textError,
     retry: retryText,
     hlForSutta,
-    highlightGroups,
     hlCount,
     hlColors,
     scrollRef,
@@ -842,7 +841,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           theme={theme}
           initialTab={tab}
           segments={segments}
-          highlightGroups={highlightGroups}
+          highlights={hlForSutta}
           onClose={() => setPanel(false)}
           onJumpToHighlight={jumpToHighlight}
           noteFocusSignal={noteFocusSignal}
@@ -873,7 +872,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
       {!panel && (
         <HighlightGutter
           scrollRef={scrollRef}
-          highlightGroups={highlightGroups}
+          highlights={hlForSutta}
           theme={theme}
           onJump={jumpToHighlight}
           layoutKey={`${fs}-${lh}-${face}-${allPali}-${segments ? segments.length : 'loading'}`}

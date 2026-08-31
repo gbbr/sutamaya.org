@@ -64,7 +64,7 @@ const userDataDefaults = {
   toggleMembership: async () => {},
   addToList: async () => {},
   submitNote: async () => {},
-  setHighlightRanges: async () => {},
+  setHighlightSpan: async () => {},
   markVisited: () => {},
 } as unknown as ReturnType<typeof useUserData>;
 

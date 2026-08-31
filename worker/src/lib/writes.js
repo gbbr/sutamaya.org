@@ -347,64 +347,59 @@ async function setNote(db, userId, item) {
   return OK;
 }
 
-// A highlight group is immutable. One selection mints one `g` (groupId) and writes one row per
-// segment it spans, and nothing updates those rows again: a recolour is a tombstone plus a brand
-// new group, an erase is a tombstone. That is what makes the write safe to replay, where a
-// "delete whatever currently overlaps, then insert" would mean something different an hour later
-// and take whole highlights another device had created in between.
+// A highlight is immutable. One selection mints one id and writes one row — the span's two
+// endpoints — and nothing updates that row again: a recolour is a tombstone plus a brand new
+// highlight, an erase is a tombstone. That is what makes the write safe to replay, where a "delete
+// whatever currently overlaps, then insert" would mean something different an hour later and take
+// whole highlights another device had created in between.
 //
-// (user_id, g, i) is a group's natural key (migration 0002's unique index), so OR IGNORE makes
-// re-pushing a group a no-op rather than a duplicate row or a constraint error.
+// (user_id, id) is the primary key, so OR IGNORE makes re-pushing a highlight a no-op rather than a
+// duplicate row or a constraint error.
 const INSERT_HIGHLIGHT_SQL = `
-  INSERT OR IGNORE INTO highlights (id, user_id, sutta_id, i, s, e, color, g, created_at, mtime)
+  INSERT OR IGNORE INTO highlights (id, user_id, sutta_id, i0, o0, i1, o1, color, created_at, mtime)
   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 `;
 
-// Retires a whole group — every segment it spans — in one statement. Conditional on mtime like
-// every other write here, so a stale erase can't retire a group created more recently.
-const TOMBSTONE_GROUP_SQL = `
-  UPDATE highlights SET deleted = 1, mtime = ?3 WHERE user_id = ?1 AND g = ?2 AND mtime < ?3
+// Retires one highlight. Conditional on mtime like every other write here, so a stale erase can't
+// retire a highlight created more recently.
+const TOMBSTONE_HIGHLIGHT_SQL = `
+  UPDATE highlights SET deleted = 1, mtime = ?3 WHERE user_id = ?1 AND id = ?2 AND mtime < ?3
 `;
 
-// Writes one highlight group over the given [s,e) ranges (each in its own segment i) of suttaId —
-// a single-range array covers the common single-segment selection, a multi-entry one covers a
-// cross-segment selection (see useHighlightPopup), so one item always maps to one atomic write
-// regardless of how many segments it spans.
+// Writes one highlight over `span` — from (i0, o0) up to but not including (i1, o1), in segment
+// indices and character offsets (see web/src/lib/types.ts's Highlight). One item is one atomic
+// write however many segments the span covers, since what is stored is its two ends rather than the
+// segments between them.
 //
-// The client decides everything about identity: `g` names the group being created and `erase`
-// names the groups this selection displaces, worked out from what that device can already see
-// (lib/highlights.ts's displacedGroupIds). The server never infers either from live rows — that is
-// what an hour-old replayed write would get wrong. Both are required, so an item that omits them
-// is a bug rather than a silent half-write; `color: null` is a plain erase, decided by `erase`
-// alone (its `ranges` only record what the user selected). Tombstones go into the batch before the
-// inserts, so a recolour can't retire the group it just created.
+// The client decides everything about identity: `g` names the highlight being created and `erase`
+// names the ones this selection displaces, worked out from what that device can already see
+// (lib/highlights.ts's displacedIds). The server never infers either from live rows — that is what
+// an hour-old replayed write would get wrong. Both are required, so an item that omits them is a
+// bug rather than a silent half-write; `color: null` is a plain erase, decided by `erase` alone (its
+// `span` only records what the user selected). Tombstones go into the batch before the insert, so a
+// recolour can't retire the highlight it just created.
 async function setHighlight(db, userId, item) {
-  const { suttaId, ranges, color, g, erase } = item || {};
-  if (!suttaId || !Array.isArray(ranges) || !ranges.length) return { error: 'ranges_required', status: 400 };
-  for (const r of ranges) {
-    if (!Number.isInteger(r.i) || !Number.isInteger(r.s) || !Number.isInteger(r.e) || r.s >= r.e) {
-      return { error: 'invalid_range', status: 400 };
-    }
+  const { suttaId, span, color, g, erase } = item || {};
+  if (!suttaId || !span) return { error: 'span_required', status: 400 };
+  const { i0, o0, i1, o1 } = span;
+  if (![i0, o0, i1, o1].every(Number.isInteger) || i0 < 0 || o0 < 0 || o1 < 0 || i1 < i0 || (i1 === i0 && o1 <= o0)) {
+    return { error: 'invalid_span', status: 400 };
   }
   if (!Array.isArray(erase) || erase.some((id) => typeof id !== 'string' || !id)) {
     return { error: 'invalid_erase', status: 400 };
   }
-  // A server-minted id would cost the group its idempotence: a create re-sent after a lost
-  // response would arrive under a second name and duplicate the highlight instead of colliding
-  // with itself on (user_id, g, i). Every statement below is scoped `AND user_id = ?` and the
-  // unique index leads with user_id too, so one account's group id can't reach another's rows —
-  // shape is all that's left to check.
+  // A server-minted id would cost the highlight its idempotence: a create re-sent after a lost
+  // response would arrive under a second name and duplicate the highlight instead of colliding with
+  // itself on (user_id, id). That key leads with user_id, as does every statement's `AND user_id =
+  // ?`, so one account's highlight id can't reach another's rows — shape is all that's left to
+  // check.
   if (color && (typeof g !== 'string' || !g)) return { error: 'group_id_required', status: 400 };
   // `created_at` takes the client's instant too, so the Highlights auto-list orders by when the
   // user highlighted rather than when the write reached the server.
   const mtime = resolveMtime(item?.mtime);
-  const statements = erase.map((groupId) => db.prepare(TOMBSTONE_GROUP_SQL).bind(userId, groupId, mtime));
+  const statements = erase.map((id) => db.prepare(TOMBSTONE_HIGHLIGHT_SQL).bind(userId, id, mtime));
   if (color) {
-    for (const r of ranges) {
-      statements.push(
-        db.prepare(INSERT_HIGHLIGHT_SQL).bind(crypto.randomUUID(), userId, suttaId, r.i, r.s, r.e, color, g, mtime, mtime)
-      );
-    }
+    statements.push(db.prepare(INSERT_HIGHLIGHT_SQL).bind(g, userId, suttaId, i0, o0, i1, o1, color, mtime, mtime));
   }
   // An erase that displaces nothing leaves nothing to run, and D1 rejects an empty batch.
   if (statements.length) await db.batch(statements);

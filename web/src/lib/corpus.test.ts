@@ -385,7 +385,7 @@ describe('searchCorpus', () => {
     const list = (over: Partial<ListDef>): ListDef => ({
       id: 'x', label: 'x', parentId: null, kind: 'list', items: [], ...over,
     });
-    const highlight = (id: string): Highlight => ({ id, i: 0, s: 0, e: 5, c: 'yellow', g: 'g1', m: 'm' });
+    const highlight = (id: string): Highlight => ({ id, i0: 0, o0: 0, i1: 0, o1: 5, c: 'yellow', m: 'm' });
     // Both titles carry "the", so the two hits share a rank bucket and only the boost can reorder
     // them. Unsaved, they come back in the corpus's own order: mn1, then mn10.
     const tiedQuery = 'the';
