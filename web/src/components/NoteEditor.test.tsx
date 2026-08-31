@@ -82,6 +82,18 @@ describe('NoteEditor', () => {
     expect(onSubmit).toHaveBeenCalledExactlyOnceWith('a thought');
   });
 
+  // Tapping the note in the reader focuses this box on an existing note. Selecting it all would
+  // put the whole note one keystroke from gone.
+  it('puts the cursor at the end of an existing note rather than selecting it', async () => {
+    renderEditor({ value: 'a thought', focusSignal: 1 });
+    const box = screen.getByRole('textbox') as HTMLTextAreaElement;
+    expect(box).toHaveFocus();
+    expect(box.selectionStart).toBe('a thought'.length);
+    expect(box.selectionEnd).toBe('a thought'.length);
+    await userEvent.keyboard(' more');
+    expect(box).toHaveValue('a thought more');
+  });
+
   it('clears a note when the draft is emptied', async () => {
     const { onSubmit } = renderEditor({ value: 'old note' });
     await userEvent.clear(screen.getByRole('textbox'));

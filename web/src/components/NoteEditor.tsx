@@ -14,7 +14,8 @@ interface NoteEditorProps {
   rows?: number;
   textareaClassName: string;
   textareaStyle?: CSSProperties;
-  // Bumped by a caller (ReaderPage's "n" shortcut) to focus and select the textarea on demand.
+  // Bumped by a caller (ReaderPage's "n" shortcut, or tapping the note in the text) to put the
+  // cursor in the textarea on demand.
   // `autoFocus` only fires on mount, which misses a shortcut pressed while the panel is open.
   focusSignal?: number;
 }
@@ -44,8 +45,15 @@ export function NoteEditor({
 
   useEffect(() => {
     if (!focusSignal) return;
-    textareaRef.current?.focus();
-    textareaRef.current?.select();
+    const box = textareaRef.current;
+    if (!box) return;
+    box.focus();
+    // Caret at the end, never a selection over the whole note: this box is usually opened on an
+    // existing note to add to it, and a selected note is one keystroke from being wiped.
+    box.setSelectionRange(box.value.length, box.value.length);
+    // A note longer than the box would leave that caret off screen; scrolling to the bottom keeps
+    // it in view. Stays at 0 for a note that fits.
+    box.scrollTop = box.scrollHeight;
   }, [focusSignal]);
 
   const dirty = draft !== value;
