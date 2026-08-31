@@ -23,9 +23,9 @@ test('a note written on one device reaches another', async ({ page, browser }) =
   await expect(page.locator('[data-seg="1"]')).toBeVisible();
 
   await page.keyboard.press('n');
-  const note = page.getByPlaceholder('Add a note — return to save');
+  const note = page.getByPlaceholder('Something to remember this by');
   await note.fill('written on the first device');
-  await note.press('Enter');
+  await note.press('ControlOrMeta+Enter');
   await expect(page.getByRole('button', { name: 'Edit note' })).toContainText('written on the first device');
 
   // A second, independent device on the same account: its own mirror, so anything it shows had to

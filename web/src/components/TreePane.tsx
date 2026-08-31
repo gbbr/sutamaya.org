@@ -798,8 +798,8 @@ export function TreePane({
                         <MatchedText text={sutta.pali} query={query} />
                       </span>
                       {note && (
-                        <span className="block font-serif text-ui-md leading-[1.4] mt-[6px] pl-[10px] border-l-2 border-ink/30">
-                          <MatchedText text={note} query={query} />
+                        <span className="block font-serif text-ui-md leading-[1.4] mt-[6px] pl-[10px] border-l-2 border-ink/30 whitespace-pre-wrap">
+                          <MatchedText text={note} query={query} notation />
                         </span>
                       )}
                       <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} />

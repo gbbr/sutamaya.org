@@ -211,13 +211,13 @@ export const readerBackground = (page: Page) =>
 
 /**
  * Writes a note on the sutta the reader is showing, and waits for it to reach the local mirror.
- * Opened with the keyboard, saved with return — the same path the shortcut documents.
+ * Opened with the keyboard, committed with Cmd/Ctrl+Return — the same path the shortcut documents.
  */
 export async function writeNote(page: Page, text: string) {
   await page.keyboard.press('n');
-  const note = page.getByPlaceholder('Add a note — return to save');
+  const note = page.getByPlaceholder('Something to remember this by');
   await note.fill(text);
-  await note.press('Enter');
+  await note.press('ControlOrMeta+Enter');
   await expect(page.getByRole('button', { name: 'Edit note' })).toContainText(text);
   await page.keyboard.press('Escape');
   await waitForLocalWrites(page);
