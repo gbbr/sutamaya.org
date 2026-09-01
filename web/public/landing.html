@@ -214,6 +214,56 @@
           0 0 0 9999px rgb(var(--paper) / .6);
       }
 
+      /* ---- the name, defined ---- */
+      /* Set as a lexicon page rather than as another feature: the headword is the heading, the
+         senses hang off their numbers, and the citation is a live link into the sutta. */
+      .entry { padding: 56px 0; border-top: 1px solid rgb(var(--line) / .09); }
+      .entry-card { max-width: 560px; margin: 0 auto; }
+      /* The language label sits beside the headword, not across from it — a full-width rule and a
+         far-flung label would both read as another section break, and this is one section. */
+      .entry-head { display: flex; align-items: baseline; gap: 12px; }
+      .entry-word {
+        font-family: Newsreader, Georgia, serif;
+        font-size: clamp(30px, 5vw, 40px);
+        font-weight: 500; letter-spacing: -.015em; line-height: 1; margin: 0;
+      }
+      .entry-lang {
+        font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+        color: rgb(var(--ink-3));
+      }
+      .entry-pron { margin: 9px 0 0; font-size: 14px; color: rgb(var(--ink-3)); }
+      .entry-pron i { font-family: Newsreader, Georgia, serif; font-size: 18px; }
+      .senses {
+        list-style: none; margin: 16px 0 0; padding: 0;
+        display: flex; flex-direction: column; gap: 11px;
+      }
+      .senses li {
+        display: grid; grid-template-columns: 18px 1fr; gap: 10px;
+        font-size: 17px; line-height: 1.55;
+      }
+      .senses .n {
+        color: rgb(var(--ink-3)); font-size: 13px; font-weight: 600; padding-top: 3px;
+      }
+      .etymology { margin: 8px 0 0 28px; font-size: 15px; color: rgb(var(--ink-3)); }
+      /* Relative, because the serif sits optically smaller than the sans it runs inside — the same
+         correction the wordmark's gloss makes. */
+      .pali { font-family: Newsreader, Georgia, serif; font-style: italic; font-size: 1.3em; }
+      /* The senses run at a larger size than the etymology, so the serif needs less of a lift here. */
+      .senses .pali { font-size: 1.14em; }
+      /* Marked as a quotation with a left rule rather than a horizontal one, so it reads as part
+         of the entry instead of as the start of something new. */
+      .cite {
+        margin: 24px 0 0 28px; padding-left: 18px;
+        border-left: 2px solid rgb(var(--line) / .22);
+      }
+      .cite-pali {
+        margin: 0; font-family: Newsreader, Georgia, serif; font-style: italic;
+        font-size: 17px; color: rgb(var(--ink-2));
+      }
+      .cite-en { margin: 5px 0 0; font-size: 16px; }
+      .cite-ref { margin: 10px 0 0; font-size: 14px; color: rgb(var(--ink-3)); }
+      .cite-ref a { color: rgb(var(--accent-text)); }
+
       /* ---- closing ---- */
       .closing {
         text-align: center; padding: 72px 0;
@@ -236,6 +286,7 @@
         .feature { grid-template-columns: 1fr; gap: 28px; padding: 44px 0; }
         .feature:nth-child(even) .shot { order: 0; }
         .hero { padding: 40px 0 48px; }
+        .entry { padding: 44px 0; }
       }
     </style>
   </head>
@@ -377,6 +428,39 @@
         <h2>Open it and start reading.</h2>
         <p>Nothing to sign up for. Sign in later if you want your notes on more than one device.</p>
         <a class="btn" href="https://app.sutamaya.org/">Open the app</a>
+      </section>
+
+      <!-- Below the call to action, as a colophon: the name is worth explaining but it is not an
+           argument for using the app, so it sits where a curious reader finds it without it
+           interrupting the run from the features to "open it". Its citation is also the one link
+           on the page that lands someone inside a sutta with a reason to be there. -->
+      <section class="entry">
+        <div class="entry-card">
+          <div class="entry-head">
+            <h2 class="entry-word">sutamaya</h2>
+            <span class="entry-lang">Pali</span>
+          </div>
+          <p class="entry-pron"><i>su·ta·ma·ya</i> &nbsp;·&nbsp; adjective</p>
+          <ol class="senses">
+            <li><span class="n">1</span><span>made of what has been heard; formed from learning.</span></li>
+            <li>
+              <span class="n">2</span>
+              <span>of wisdom (<span class="pali">sutamayā paññā</span>): developed by listening and
+                study, as distinct from reasoning or meditation.</span>
+            </li>
+          </ol>
+          <p class="etymology">
+            from <span class="pali">suta</span>, “heard”, past participle of
+            <span class="pali">suṇāti</span> + <span class="pali">maya</span>, “made of”.
+          </p>
+          <div class="cite">
+            <p class="cite-pali">cintāmayā paññā, sutamayā paññā, bhāvanāmayā paññā.</p>
+            <p class="cite-en">Wisdom produced by thought, learning, and meditation.</p>
+            <p class="cite-ref">
+              <a href="https://app.sutamaya.org/read/dn33">DN 33 · Reciting in Concert</a>
+            </p>
+          </div>
+        </div>
       </section>
 
       <footer>
