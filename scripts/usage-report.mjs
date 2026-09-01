@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 // Prints an aggregate usage report (registered/active users, reading volume) to the terminal.
-// Run manually by the maintainer — nothing here is wired into the app or any schedule.
+// Run manually by the maintainer — nothing here is wired into the app or any schedule. Every
+// figure excludes the maintainer's own accounts (MAINTAINER_USER_IDS below), so the report is
+// about other people's use of the app.
 //
 // Privacy: this script only ever computes and prints *aggregate* numbers (counts, sums, totals
 // across all users). It never prints a per-user row, a uid, an email/name, or the content of any
@@ -40,18 +42,27 @@ async function loadSuttaMinutes() {
 
 const esc = (iso) => iso.replace(/'/g, "''");
 
+// The maintainer's own accounts. Every number in the report excludes them, so what it shows is
+// other people's usage rather than the developer's own reading and testing — which is otherwise
+// the largest share of it. Identified by opaque user id rather than email address: this
+// repository is public, and a checked-in address is a spam magnet.
+const MAINTAINER_USER_IDS = ['ZOKS5yCDqDito7JH8Ose', '7962a2d9-130b-4265-b76e-aa231fb87a27'];
+const MAINTAINER_IDS_SQL = MAINTAINER_USER_IDS.map((id) => `'${esc(id)}'`).join(', ');
+const NOT_MAINTAINER = `user_id NOT IN (${MAINTAINER_IDS_SQL})`;
+const NOT_MAINTAINER_USERS = `id NOT IN (${MAINTAINER_IDS_SQL})`;
+
 // One batch, executed as a single `wrangler d1 execute`; the result array comes back in this
 // same order.
 const STATEMENTS = [
-  `SELECT COUNT(*) AS c FROM users;`,
-  `SELECT COUNT(*) AS c FROM users WHERE created_at >= '${esc(CUTOFF_7D)}';`,
-  `SELECT COUNT(*) AS c FROM users WHERE created_at >= '${esc(CUTOFF_30D)}';`,
-  `SELECT COUNT(DISTINCT user_id) AS c FROM visited WHERE visited_at >= '${esc(CUTOFF_7D)}';`,
-  `SELECT COUNT(DISTINCT user_id) AS c FROM visited WHERE visited_at >= '${esc(CUTOFF_30D)}';`,
-  `SELECT sutta_id, visited_at FROM visited;`,
-  `SELECT COUNT(*) AS c FROM notes;`,
-  `SELECT COUNT(*) AS c FROM highlights;`,
-  `SELECT COUNT(*) AS c FROM lists;`,
+  `SELECT COUNT(*) AS c FROM users WHERE ${NOT_MAINTAINER_USERS};`,
+  `SELECT COUNT(*) AS c FROM users WHERE created_at >= '${esc(CUTOFF_7D)}' AND ${NOT_MAINTAINER_USERS};`,
+  `SELECT COUNT(*) AS c FROM users WHERE created_at >= '${esc(CUTOFF_30D)}' AND ${NOT_MAINTAINER_USERS};`,
+  `SELECT COUNT(DISTINCT user_id) AS c FROM visited WHERE visited_at >= '${esc(CUTOFF_7D)}' AND ${NOT_MAINTAINER};`,
+  `SELECT COUNT(DISTINCT user_id) AS c FROM visited WHERE visited_at >= '${esc(CUTOFF_30D)}' AND ${NOT_MAINTAINER};`,
+  `SELECT sutta_id, visited_at FROM visited WHERE ${NOT_MAINTAINER};`,
+  `SELECT COUNT(*) AS c FROM notes WHERE ${NOT_MAINTAINER};`,
+  `SELECT COUNT(*) AS c FROM highlights WHERE ${NOT_MAINTAINER};`,
+  `SELECT COUNT(*) AS c FROM lists WHERE ${NOT_MAINTAINER};`,
 ];
 
 function queryD1() {
@@ -109,8 +120,8 @@ async function main() {
 
   const fmtMin = (m) => `${Math.round(m)} min (~${(m / 60).toFixed(1)} h)`;
 
-  console.log('Sutamaya usage report');
-  console.log('======================');
+  console.log('Sutamaya usage report (excluding maintainers)');
+  console.log('=============================================');
   console.log(`Registered users:        ${totalUsers}`);
   console.log(`  new in last 7 days:    ${newUsers7d}`);
   console.log(`  new in last 30 days:   ${newUsers30d}`);
