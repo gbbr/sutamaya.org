@@ -5,6 +5,7 @@ import {
   HIGHLIGHTS_AUTO_LIST_ID,
   NOTES_AUTO_LIST_ID,
   AUTO_LIST_CAP,
+  VISITED_AUTO_LIST_CAP,
 } from './userData.js';
 
 const empty = { listDocs: [], noteDocs: [], highlightDocs: [], visitedDocs: [] };
@@ -131,8 +132,8 @@ describe('assembleUserData', () => {
     expect(result.lists.some((l) => l.auto)).toBe(false);
   });
 
-  it('caps every auto-list at AUTO_LIST_CAP', () => {
-    const visitedDocs = Array.from({ length: AUTO_LIST_CAP + 5 }, (_, i) => ({
+  it('caps each auto-list at its own cap, and reports the uncapped total', () => {
+    const visitedDocs = Array.from({ length: VISITED_AUTO_LIST_CAP + 5 }, (_, i) => ({
       id: `s${i}`,
       data: { visitedAt: String(i).padStart(4, '0') },
     }));
@@ -141,8 +142,25 @@ describe('assembleUserData', () => {
       data: { suttaId: `s${i}`, createdAt: String(i).padStart(4, '0') },
     }));
     const result = assembleUserData({ ...empty, visitedDocs, highlightDocs });
-    expect(result.lists.find((l) => l.id === RECENT_AUTO_LIST_ID).items).toHaveLength(AUTO_LIST_CAP);
-    expect(result.lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID).items).toHaveLength(AUTO_LIST_CAP);
+    const recent = result.lists.find((l) => l.id === RECENT_AUTO_LIST_ID);
+    const highlights = result.lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID);
+    expect(recent.items).toHaveLength(VISITED_AUTO_LIST_CAP);
+    expect(highlights.items).toHaveLength(AUTO_LIST_CAP);
+    // What the reader has, which is what the tree's count badge and ListPane's "Showing N of M"
+    // are drawn from — so a cap that bites can't quietly become the number displayed.
+    expect(recent.total).toBe(VISITED_AUTO_LIST_CAP + 5);
+    expect(highlights.total).toBe(AUTO_LIST_CAP + 5);
+  });
+
+  it('counts a sutta once in Highlights however many times it is highlighted', () => {
+    const highlightDocs = Array.from({ length: 6 }, (_, i) => ({
+      id: `h${i}`,
+      data: { suttaId: 'mn1', createdAt: String(i).padStart(4, '0') },
+    }));
+    const result = assembleUserData({ ...empty, highlightDocs });
+    const highlights = result.lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID);
+    expect(highlights.items).toEqual(['mn1']);
+    expect(highlights.total).toBe(1);
   });
 
   it('dedupes a sutta highlighted multiple times into one Highlights entry', () => {

@@ -361,8 +361,10 @@ Things a change here must not break:
   precedence slightly: an order op re-stamped after a local rename can beat another device's edit
   made in between. One clock per row is the deliberate simplification (per-field clocks cost three
   columns and three conditional updates to serve two devices being offline simultaneously).
-- **Auto-list caps evict.** `Recent` keeps 20, `Highlights`/`Notes` 100 each, so a large flush can
-  push genuinely recent entries out.
+- **Auto-list caps evict.** `Visited` keeps 100, `Highlights`/`Notes` 300 each, so a large flush can
+  push genuinely recent entries out. Nothing is lost — the rows are all still there, and a note or
+  highlight past the cap still renders in its sutta — but the list stops naming them, and says so
+  at its foot.
 - **A long-offline device meets a lapsed cookie.** The session cookie's 90-day max age means the
   queue must survive re-auth, which is what `needsReauth` and the pause are for.
 - **Work made signed out lives only on that device.** There is no server copy until the user signs

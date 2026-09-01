@@ -4,12 +4,14 @@ import {
   HIGHLIGHTS_AUTO_LIST_ID,
   NOTES_AUTO_LIST_ID,
   RECENT_AUTO_LIST_ID,
+  VISITED_AUTO_LIST_CAP,
 } from './autoLists';
 import {
   AUTO_LIST_CAP as WORKER_AUTO_LIST_CAP,
   HIGHLIGHTS_AUTO_LIST_ID as WORKER_HIGHLIGHTS_AUTO_LIST_ID,
   NOTES_AUTO_LIST_ID as WORKER_NOTES_AUTO_LIST_ID,
   RECENT_AUTO_LIST_ID as WORKER_RECENT_AUTO_LIST_ID,
+  VISITED_AUTO_LIST_CAP as WORKER_VISITED_AUTO_LIST_CAP,
   // @ts-expect-error -- plain-JS worker module, no .d.ts across the workspace boundary
 } from '../../../worker/src/lib/userData.js';
 
@@ -25,7 +27,8 @@ describe('auto-list constants stay in sync between web and worker', () => {
     expect(NOTES_AUTO_LIST_ID).toBe(WORKER_NOTES_AUTO_LIST_ID);
   });
 
-  it('uses the same cap', () => {
+  it('uses the same caps', () => {
     expect(AUTO_LIST_CAP).toBe(WORKER_AUTO_LIST_CAP);
+    expect(VISITED_AUTO_LIST_CAP).toBe(WORKER_VISITED_AUTO_LIST_CAP);
   });
 });

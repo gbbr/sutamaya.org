@@ -293,7 +293,9 @@ export function ListPane({
       // A list that is gone holds nothing rather than holding zero things, and "0 suttas" under a
       // blank title reads as an empty list rather than an absent one.
       if (goneList) return '';
-      return plural(items.length, 'sutta');
+      // An auto-list counts what the reader has, not what survived the cap: this line says how long
+      // the list is, and the foot of the rows is where the shortfall is explained.
+      return plural(currentList?.total ?? items.length, 'sutta');
     }
     // "suttas" rather than "results" whenever lists matched too, so the number names what it's
     // counting instead of implying it covers the whole pane, and the lists are counted beside it:
@@ -614,6 +616,15 @@ export function ListPane({
             </div>
           );
         })}
+        {/* Why an auto-list stopped where it did, said at the foot of the rows because that is
+            where the reader meets the boundary — a count in the header is read on the way in,
+            before there is any question to answer. Centred and quiet: it is a footnote about the
+            list, not another row in it. */}
+        {currentList?.total !== undefined && currentList.total > items.length && (
+          <div className="font-sans text-center text-ui-sm text-ink-4 py-6 px-6">
+            Showing {items.length} of {currentList.total}
+          </div>
+        )}
         {/* A query that matched only lists isn't a failed search — the block above says so, and
             "Nothing matches" underneath it would contradict it. */}
         {items.length === 0 && !(searching && listHitTotal > 0) && (

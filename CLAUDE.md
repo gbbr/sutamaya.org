@@ -288,9 +288,10 @@ started with.
   on class-lifecycle timing that React 18's dev-mode double-invoke breaks, so `/` → `/browse/dn`
   silently never fires under it. Re-enabling it means re-testing every `navigate()`-on-mount path.
 - **Some logic exists twice on purpose.** `web/src/lib/listTree.ts` and `web/src/lib/mirrorView.ts`
-  are ports of `worker/src/lib/listTree.js` and `userData.js`; the auto-list ids are duplicated in
-  `web/src/lib/autoLists.ts`. No module is shared between the two npm workspaces, and the client
-  needs its own copies to derive the same view offline. Change one, change the other.
+  are ports of `worker/src/lib/listTree.js` and `userData.js`; the auto-list ids and caps are
+  duplicated in `web/src/lib/autoLists.ts`. No module is shared between the two npm workspaces, and
+  the client needs its own copies to derive the same view offline. Change one, change the other —
+  `autoLists.test.ts` is the tripwire that fails when one side moves alone.
 - **`WEB_ORIGIN` is load-bearing beyond CORS** — the OAuth flow builds its redirect URI and return
   URL from it, so in local dev it must be the *web* dev server, not wrangler's port, and it is
   always the app's hostname, never the marketing site's. It accepts a comma-separated list (one
