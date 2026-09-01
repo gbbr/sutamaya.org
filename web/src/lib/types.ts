@@ -100,6 +100,12 @@ export interface ListDef {
   // visited/highlights/notes records rather than stored as `lists` rows — so they can't be renamed,
   // deleted, reparented, or reordered. See lib/autoLists.ts.
   auto?: boolean;
+  // Auto-lists only: how many suttas the reader has visited, highlighted or noted, before
+  // AUTO_LIST_CAP trimmed `items` to the most recent of them. Equal to `items.length` until the cap
+  // bites. It is what the header counts — the list is that many suttas long whether or not every
+  // one has a row — and comparing the two is what tells ListPane to say "Showing 100 of 340"
+  // under the last row.
+  total?: number;
 }
 
 // A dragged list row's position relative to a drop-target row in TreePane's "My lists" tree:

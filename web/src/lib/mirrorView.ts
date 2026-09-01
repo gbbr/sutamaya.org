@@ -1,5 +1,11 @@
 import { repairListTree } from './listTree';
-import { AUTO_LIST_CAP, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID, RECENT_AUTO_LIST_ID } from './autoLists';
+import {
+  AUTO_LIST_CAP,
+  HIGHLIGHTS_AUTO_LIST_ID,
+  NOTES_AUTO_LIST_ID,
+  RECENT_AUTO_LIST_ID,
+  VISITED_AUTO_LIST_CAP,
+} from './autoLists';
 import type { UserData } from './api';
 import type { HighlightRecord, MirrorState } from './mirror';
 import type { Highlight, HighlightsMap, ListDef, Membership, NotesMap, VisitedMap } from './types';
@@ -102,20 +108,24 @@ export function deriveUserData(state: MirrorState): DerivedUserData {
 
   // Most-recent first, since an auto-list has no stored order the way a real list has, and capped
   // because ListPane renders every item as an unvirtualized DOM row.
-  const recentIds = latestIds(visitedEntries, AUTO_LIST_CAP);
+  const recentIds = latestIds(visitedEntries, VISITED_AUTO_LIST_CAP);
   const highlightedIds = latestIds(highlightEntries, AUTO_LIST_CAP);
   const notedIds = latestIds(noteEntries, AUTO_LIST_CAP);
 
+  // How many suttas the cap left out, so the header can own up to it. Counted over distinct suttas,
+  // matching what latestIds returns — a sutta with four highlights is one row in that list, not four.
+  const totalOf = (entries: { id: string; at: string }[]) => new Set(entries.map((e) => e.id)).size;
+
   if (recentIds.length) {
-    lists.push({ id: RECENT_AUTO_LIST_ID, label: 'Visited', parentId: null, kind: 'list', items: recentIds, auto: true });
+    lists.push({ id: RECENT_AUTO_LIST_ID, label: 'Visited', parentId: null, kind: 'list', items: recentIds, auto: true, total: totalOf(visitedEntries) });
     recentIds.forEach((id) => (membership[id] = [...(membership[id] || []), RECENT_AUTO_LIST_ID]));
   }
   if (highlightedIds.length) {
-    lists.push({ id: HIGHLIGHTS_AUTO_LIST_ID, label: 'Highlights', parentId: null, kind: 'list', items: highlightedIds, auto: true });
+    lists.push({ id: HIGHLIGHTS_AUTO_LIST_ID, label: 'Highlights', parentId: null, kind: 'list', items: highlightedIds, auto: true, total: totalOf(highlightEntries) });
     highlightedIds.forEach((id) => (membership[id] = [...(membership[id] || []), HIGHLIGHTS_AUTO_LIST_ID]));
   }
   if (notedIds.length) {
-    lists.push({ id: NOTES_AUTO_LIST_ID, label: 'Notes', parentId: null, kind: 'list', items: notedIds, auto: true });
+    lists.push({ id: NOTES_AUTO_LIST_ID, label: 'Notes', parentId: null, kind: 'list', items: notedIds, auto: true, total: totalOf(noteEntries) });
     notedIds.forEach((id) => (membership[id] = [...(membership[id] || []), NOTES_AUTO_LIST_ID]));
   }
 

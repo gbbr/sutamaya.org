@@ -309,7 +309,10 @@ export function TreePane({
   const autoLists = useMemo(
     () =>
       [
-        { list: lists.find((l) => l.id === RECENT_AUTO_LIST_ID), sub: "Suttas you've opened", Icon: History },
+        // "Recently" rather than the "Suttas you've …" the other two use: this is the one list that
+        // holds a window rather than the whole of what the reader has done, and the line under the
+        // label is where that is worth saying.
+        { list: lists.find((l) => l.id === RECENT_AUTO_LIST_ID), sub: 'Recently opened suttas', Icon: History },
         { list: lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID), sub: "Suttas you've highlighted", Icon: Highlighter },
         { list: lists.find((l) => l.id === NOTES_AUTO_LIST_ID), sub: "Suttas you've written notes in", Icon: StickyNote },
       ].filter((x): x is { list: ListDef; sub: string; Icon: typeof Highlighter } => !!x.list),

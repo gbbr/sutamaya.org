@@ -1,7 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { createListRecord, emptyMirror, queueMembership, removeListRecord, setNoteRecord, writeHighlightRecord, markVisitedRecord, type MirrorState } from './mirror';
 import { deriveUserData, highlightsFor } from './mirrorView';
-import { HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID, RECENT_AUTO_LIST_ID } from './autoLists';
+import {
+  AUTO_LIST_CAP,
+  HIGHLIGHTS_AUTO_LIST_ID,
+  NOTES_AUTO_LIST_ID,
+  RECENT_AUTO_LIST_ID,
+  VISITED_AUTO_LIST_CAP,
+} from './autoLists';
 
 function list(state: MirrorState, id: string, parentId: string | null = null, kind: 'list' | 'group' = 'list'): MirrorState {
   return createListRecord(state, { id, label: id, parentId, kind });
@@ -53,6 +59,54 @@ describe('deriveUserData', () => {
     expect(lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID)?.items).toEqual(['dn2']);
     expect(lists.find((l) => l.id === RECENT_AUTO_LIST_ID)?.items).toEqual(['dn3']);
     expect(membership.dn1).toEqual([NOTES_AUTO_LIST_ID]);
+  });
+
+  it('trims each auto-list to its own cap, keeping the most recent', () => {
+    let state = emptyMirror('u1');
+    for (let i = 0; i < VISITED_AUTO_LIST_CAP + 5; i++) state = markVisitedRecord(state, `v${i}`);
+    for (let i = 0; i < AUTO_LIST_CAP + 5; i++) state = setNoteRecord(state, `n${i}`, 'a note');
+
+    const { lists } = deriveUserData(state);
+    const recent = lists.find((l) => l.id === RECENT_AUTO_LIST_ID);
+    const noted = lists.find((l) => l.id === NOTES_AUTO_LIST_ID);
+    expect(recent?.items).toHaveLength(VISITED_AUTO_LIST_CAP);
+    expect(noted?.items).toHaveLength(AUTO_LIST_CAP);
+    // Visited is capped lower than the other two, which is the whole reason it has a cap of its
+    // own — a shared one would either truncate the reader's notes or let a recency list run long.
+    expect(VISITED_AUTO_LIST_CAP).toBeLessThan(AUTO_LIST_CAP);
+    // The newest write survives the trim and leads the list; the oldest is the one dropped.
+    expect(recent?.items[0]).toBe(`v${VISITED_AUTO_LIST_CAP + 4}`);
+    expect(recent?.items).not.toContain('v0');
+  });
+
+  it('reports the total the cap trimmed away, so the count badge can say what the reader has', () => {
+    let state = emptyMirror('u1');
+    for (let i = 0; i < VISITED_AUTO_LIST_CAP + 5; i++) state = markVisitedRecord(state, `v${i}`);
+
+    const recent = deriveUserData(state).lists.find((l) => l.id === RECENT_AUTO_LIST_ID);
+    expect(recent?.items).toHaveLength(VISITED_AUTO_LIST_CAP);
+    expect(recent?.total).toBe(VISITED_AUTO_LIST_CAP + 5);
+  });
+
+  it('counts a sutta once in Highlights however many times it is highlighted', () => {
+    let state = writeHighlightRecord(emptyMirror('u1'), 'dn1', { i0: 0, o0: 0, i1: 0, o1: 4 }, 'yellow');
+    state = writeHighlightRecord(state, 'dn1', { i0: 2, o0: 0, i1: 2, o1: 4 }, 'blue');
+    state = writeHighlightRecord(state, 'dn1', { i0: 4, o0: 0, i1: 4, o1: 4 }, 'green');
+
+    // Three highlights, one row — so `total` has to count distinct suttas, or a reader with a
+    // heavily marked-up sutta sees a badge that counts their marks instead of their suttas.
+    const highlighted = deriveUserData(state).lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID);
+    expect(highlighted?.items).toEqual(['dn1']);
+    expect(highlighted?.total).toBe(1);
+  });
+
+  it('leaves `total` equal to the rows when nothing was trimmed', () => {
+    const state = markVisitedRecord(emptyMirror('u1'), 'dn1');
+
+    // ListPane shows the footer only where the two disagree, so an uncapped list has to report a
+    // total that matches its own length rather than omitting it.
+    const recent = deriveUserData(state).lists.find((l) => l.id === RECENT_AUTO_LIST_ID);
+    expect(recent?.total).toBe(recent?.items.length);
   });
 
   it('leaves a cleared note out, while keeping the record that has to lose the merge', () => {

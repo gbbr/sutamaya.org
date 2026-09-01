@@ -222,7 +222,10 @@ export function ListsTreeView({
                 <span className="block text-ui-md font-medium leading-[1.3]">{list.label}</span>
                 <span className="block font-sans text-ui-sm font-medium text-ink-3 mt-[1px]">{sub}</span>
               </span>
-              <span className="font-sans text-ui-xs font-medium text-ink-4">{list.items.length}</span>
+              {/* What the reader has, not what the cap left — `items` is trimmed to the most recent,
+                  and a badge reading 300 beside "Suttas you've highlighted" would be answering a
+                  different question from the one it looks like it's answering. */}
+              <span className="font-sans text-ui-xs font-medium text-ink-4">{list.total ?? list.items.length}</span>
             </button>
           ))}
         </div>

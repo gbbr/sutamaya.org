@@ -12,11 +12,17 @@ export const RECENT_AUTO_LIST_ID = 'auto-recent';
 export const HIGHLIGHTS_AUTO_LIST_ID = 'auto-highlights';
 export const NOTES_AUTO_LIST_ID = 'auto-notes';
 
-// Bounds how many rows ListPane renders for an auto-list: it draws every item as a full DOM row,
-// unvirtualized, so an unbounded list would get sluggish long before D1 read volume mattered — the
-// highlights and notes tables are fetched in full either way, for rendering elsewhere. All three
-// share one cap, so no auto-list quietly holds fewer than its neighbours.
-export const AUTO_LIST_CAP = 100;
+// Bounds how many rows ListPane renders for the Highlights and Notes lists: it draws every item as
+// a full DOM row, unvirtualized, so an unbounded list would get sluggish long before D1 read volume
+// mattered — the highlights and notes tables are fetched in full either way, for rendering
+// elsewhere. Set where it stops mattering rather than where it starts to pinch; each list says
+// "Showing 300 of N" at its foot when it bites, so a reader past it is told rather than left to
+// wonder. Duplicated in web/src/lib/autoLists.ts — see the note on the ids above.
+export const AUTO_LIST_CAP = 300;
+
+// Visited is capped lower: a recency list rather than a record of the reader's own work, so its
+// tail is worth less and it grows far faster than the other two.
+export const VISITED_AUTO_LIST_CAP = 100;
 
 // Pure assembly of buildUserData's (routes/data.js) response shape from already-fetched D1 rows —
 // pulled out so the shaping/auto-list-synthesis logic is unit-testable without a live database.
@@ -107,19 +113,26 @@ export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDoc
   // visited first.
   const recentIds = latestIds(
     visitedDocs.map(({ id, data }) => ({ id, at: data.visitedAt })),
-    AUTO_LIST_CAP
+    VISITED_AUTO_LIST_CAP
   );
 
+  // `total` is how many suttas the reader actually has, before the cap trimmed `items` to the most
+  // recent of them — the figure the tree's count badge shows and the one ListPane counts against to
+  // say "Showing 300 of N". A note or visit doc *is* one sutta (both are keyed by sutta id), but a
+  // sutta can carry several highlights and is still one row in that list, so those are counted
+  // distinct.
+  const highlightedTotal = new Set(highlightDocs.map(({ data }) => data.suttaId)).size;
+
   if (recentIds.length) {
-    lists.push({ id: RECENT_AUTO_LIST_ID, label: 'Visited', parentId: null, kind: 'list', items: recentIds, auto: true });
+    lists.push({ id: RECENT_AUTO_LIST_ID, label: 'Visited', parentId: null, kind: 'list', items: recentIds, auto: true, total: visitedDocs.length });
     recentIds.forEach((id) => (membership[id] = [...(membership[id] || []), RECENT_AUTO_LIST_ID]));
   }
   if (highlightedIds.length) {
-    lists.push({ id: HIGHLIGHTS_AUTO_LIST_ID, label: 'Highlights', parentId: null, kind: 'list', items: highlightedIds, auto: true });
+    lists.push({ id: HIGHLIGHTS_AUTO_LIST_ID, label: 'Highlights', parentId: null, kind: 'list', items: highlightedIds, auto: true, total: highlightedTotal });
     highlightedIds.forEach((id) => (membership[id] = [...(membership[id] || []), HIGHLIGHTS_AUTO_LIST_ID]));
   }
   if (notedIds.length) {
-    lists.push({ id: NOTES_AUTO_LIST_ID, label: 'Notes', parentId: null, kind: 'list', items: notedIds, auto: true });
+    lists.push({ id: NOTES_AUTO_LIST_ID, label: 'Notes', parentId: null, kind: 'list', items: notedIds, auto: true, total: noteDocs.length });
     notedIds.forEach((id) => (membership[id] = [...(membership[id] || []), NOTES_AUTO_LIST_ID]));
   }
 
