@@ -16,6 +16,7 @@ function baseProps(segments: SegmentFile[], overrides: Partial<Parameters<typeof
     face: 'serif',
     openSegs: { 0: true },
     allPali: false,
+    paliAbove: false,
     onToggleSeg: vi.fn(),
     onWordClick: vi.fn(),
     onTextUp: vi.fn(),
@@ -273,5 +274,96 @@ describe('SegmentedText — the reveal under a closing line', () => {
     const { container } = render(<SegmentedText {...baseProps(plain)} />);
     const reveal = container.querySelector('[data-reveal="pali"]') as HTMLElement;
     expect(reveal.style.textAlign).toBe('');
+  });
+});
+
+// The Pali-first layout (ReaderPrefs' paliAbove). It is a property of "show all Pali" only: a tap
+// reveal belongs under the line it explains, and inserting one above the tapped line would push
+// that line down under the reader's eye.
+describe('SegmentedText — Pali above the English', () => {
+  const segments: SegmentFile[] = [
+    { key: 'mn1:1.1', pali: 'Evaṁ me sutaṁ—', en: 'So I have heard.' },
+  ];
+
+  // Which of the two lines comes first in the DOM is the whole feature, so it is asserted on
+  // document order rather than on any style the ordering happens to carry.
+  function order(container: HTMLElement) {
+    return [...container.querySelectorAll('[data-seg], [data-reveal="pali"]')].map((el) =>
+      el.hasAttribute('data-reveal') ? 'pali' : 'en'
+    );
+  }
+
+  it('puts the Pali first when every segment shows it', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {}, allPali: true, paliAbove: true })} />);
+    expect(order(container)).toEqual(['pali', 'en']);
+  });
+
+  it('keeps the English first without the setting', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {}, allPali: true })} />);
+    expect(order(container)).toEqual(['en', 'pali']);
+  });
+
+  it('leaves a tap reveal below the line it opens, whatever the setting says', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: { 0: true }, allPali: false, paliAbove: true })} />);
+    expect(order(container)).toEqual(['en', 'pali']);
+  });
+
+  it('steps the English down a size, so the Pali leads the hierarchy', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {}, allPali: true, paliAbove: true })} />);
+    const en = container.querySelector('[data-seg]') as HTMLElement;
+    const pali = container.querySelector('[data-reveal="pali"]') as HTMLElement;
+    expect(pali.style.fontSize).toBe('18px');
+    expect(en.style.fontSize).toBe('16px');
+  });
+
+  // Not the mirror image: a Pali line under the English is the one the reader taps words in, so it
+  // keeps the reading size and is set apart by its colour alone.
+  it('leaves both lines at the reading size when the English leads', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {}, allPali: true })} />);
+    const en = container.querySelector('[data-seg]') as HTMLElement;
+    const pali = container.querySelector('[data-reveal="pali"]') as HTMLElement;
+    expect(en.style.fontSize).toBe('18px');
+    expect(pali.style.fontSize).toBe('18px');
+  });
+
+  // An untranslated colophon stands in the English column as its own Pali — the line itself, not a
+  // gloss on anything, and with no second line to lead — so the setting must not touch its size.
+  // Asserted against the same segment rendered without it, since a colophon's `end` role steps its
+  // own size down for reasons of its own.
+  it('leaves an untranslated colophon exactly as it renders without the setting', () => {
+    const colophon: SegmentFile[] = [{ key: 'sn35.42:1.3', pali: 'Dasamaṁ.', en: 'Dasamaṁ.', role: 'end' }];
+    const sizeOf = (paliAbove: boolean) => {
+      const { container } = render(<SegmentedText {...baseProps(colophon, { openSegs: {}, allPali: true, paliAbove })} />);
+      return (container.querySelector('[data-seg]') as HTMLElement).style.fontSize;
+    };
+    expect(sizeOf(true)).toBe(sizeOf(false));
+  });
+});
+
+// A heading and a list item each carry spacing that belongs to the segment as a whole, not to the
+// English line — the gap that binds a heading to the section it opens, and a list item's "N.".
+// Both have to move to whichever line leads, or the heading drifts toward the paragraph above it
+// and the number ends up beside the item's second line.
+describe('SegmentedText — Pali above, for headings and list items', () => {
+  it('gives the heading gap to the Pali and takes it off the English', () => {
+    const segments: SegmentFile[] = [
+      { key: 'dn1:1.1', pali: 'Paṭhamabhāṇavāro.', en: 'The first recitation section.', role: 'heading', headingLevel: 3 },
+    ];
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {}, allPali: true, paliAbove: true })} />);
+    const pali = container.querySelector('[data-reveal="pali"]') as HTMLElement;
+    const heading = container.querySelector('[data-seg]') as HTMLElement;
+    expect(parseInt(pali.style.marginTop, 10)).toBeGreaterThan(0);
+    expect(heading.style.marginTop).toBe('0px');
+  });
+
+  it('renders the list marker in the Pali line, indented to match', () => {
+    const segments: SegmentFile[] = [
+      { key: 'an10.1:2.1', pali: 'Katame dasa?', en: 'What ten?', role: 'list-item' },
+    ];
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {}, allPali: true, paliAbove: true })} />);
+    const pali = container.querySelector('[data-reveal="pali"]') as HTMLElement;
+    expect(pali.style.paddingLeft).toBe('24px');
+    expect(pali.querySelector('[data-seg-ignore]')?.textContent).toBe('1.');
+    expect(container.querySelector('[data-seg] [data-seg-ignore]')).toBeNull();
   });
 });
