@@ -576,11 +576,4 @@ textarea {
   .pw:hover {
     background: var(--pw-hover, #eadfc6);
   }
-  /* The reader menu's rows highlight under the pointer. Written here rather than as a Tailwind
-     `hover:` class because the colour is the active reader theme's, which only exists as an inline
-     custom property (ReaderOverflowMenu.tsx). Scoped to real pointers for the same reason as
-     `.pw` above. */
-  [data-component='ReaderOverflowMenu'] button:hover {
-    background: var(--menu-hover);
-  }
 }
