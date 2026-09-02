@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { ArrowLeft, ArrowUp, ExternalLink, Lightbulb } from 'lucide-react';
+import { ArrowLeft, ArrowUp, ExternalLink, Lightbulb, Mail } from 'lucide-react';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { isTypingTarget } from '../lib/shortcuts';
 import dictionaryShot from '../assets/help/dictionary-mobile.webp';
@@ -336,6 +336,19 @@ const DICTIONARY_LEAD =
 
 const DICTIONARY_URL = 'https://www.dpdict.net/';
 
+// The index credit, in the same shape as the two above it: whose work it is and where to find it
+// whole.
+const INDEX_TITLE = 'The topic index';
+
+const INDEX_LEAD =
+  'Search also looks through the Comprehensive Index of Pali Suttas, the work of ' +
+  'ReadingFaithfully.org, used here with permission. It is what finds a sutta about jealousy or ' +
+  'about money when neither word is in the title — a result that comes from it says which topic ' +
+  'the sutta was filed under. Only the topic names travel with sutamaya; the index itself goes ' +
+  'much deeper.';
+
+const INDEX_URL = 'https://index.readingfaithfully.org/';
+
 // The install steps, written rather than captured: they happen in browser chrome, which no
 // screenshot of this app can show.
 const INSTALL_TITLE = 'Install the app';
@@ -372,12 +385,20 @@ const INSTALL_TIPS = [
 
 const CONTACT_TITLE = 'Get in touch';
 
-// Points at the issue tracker; no email address, which a public page would expose to crawlers.
 const CONTACT_LEAD =
-  'Bugs, questions and suggestions all go to the same place — the project’s issue tracker. ' +
-  'Anything filed there is public, and posting needs a free GitHub account.';
+  'Bugs, questions and suggestions are welcome at metta@sutamaya.org. They can also go to the ' +
+  'project’s issue tracker, where anything filed is public and posting needs a free GitHub ' +
+  'account.';
+
+const CONTACT_EMAIL = 'metta@sutamaya.org';
 
 const CONTACT_URL = 'https://github.com/gbbr/sutamaya.org/issues/new';
+
+// The contents list, in page order: each group's label over the titles it links to.
+const CONTENTS: Array<{ label: string; titles: string[] }> = [
+  { label: 'Using the app', titles: [...SECTIONS.map((section) => section.title), INSTALL_TITLE] },
+  { label: 'About', titles: [TRANSLATION_TITLE, DICTIONARY_TITLE, INDEX_TITLE, CONTACT_TITLE] },
+];
 
 // A numbered marker, on the picture and in the legend alike. A fixed cool blue outside the app's
 // palette, since the shots are images and don't invert with the theme. Both call sites size the
@@ -512,58 +533,30 @@ export function HelpPage(_props: RouteComponentProps) {
           A tour of the app in pictures. Nothing here needs an account, and nothing you've already visited needs a connection.
           For complete offline access, download all content from the Settings page.
         </p>
-        {/* The contents list: a micro-label over an indented column of links, the shape the lists
-            pane uses for MY LISTS and AUTOMATIC. Scrolled with scrollIntoView rather than an href,
-            which would put a hash URL into @reach/router's history. */}
-        <nav className="mb-8">
-          <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-4 mb-1">On this page</div>
-          <div className="flex flex-col items-start pl-3.5">
-            {SECTIONS.map((section) => (
-              <button
-                key={section.title}
-                className="font-sans text-ui-base text-left text-ink-4 hover:text-ink-2 py-[5px]"
-                onClick={() =>
-                  document.getElementById(anchorId(section.title))?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                }
-              >
-                {section.title}
-              </button>
-            ))}
-            <button
-              className="font-sans text-ui-base text-left text-ink-4 hover:text-ink-2 py-[5px]"
-              onClick={() =>
-                document.getElementById(anchorId(INSTALL_TITLE))?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-              }
-            >
-              {INSTALL_TITLE}
-            </button>
-            <button
-              className="font-sans text-ui-base text-left text-ink-4 hover:text-ink-2 py-[5px]"
-              onClick={() =>
-                document
-                  .getElementById(anchorId(TRANSLATION_TITLE))
-                  ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-              }
-            >
-              {TRANSLATION_TITLE}
-            </button>
-            <button
-              className="font-sans text-ui-base text-left text-ink-4 hover:text-ink-2 py-[5px]"
-              onClick={() =>
-                document.getElementById(anchorId(DICTIONARY_TITLE))?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-              }
-            >
-              {DICTIONARY_TITLE}
-            </button>
-            <button
-              className="font-sans text-ui-base text-left text-ink-4 hover:text-ink-2 py-[5px]"
-              onClick={() =>
-                document.getElementById(anchorId(CONTACT_TITLE))?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-              }
-            >
-              {CONTACT_TITLE}
-            </button>
-          </div>
+        {/* The contents list: a micro-label over an indented column of links per group, the shape
+            the lists pane uses for MY LISTS and AUTOMATIC. Scrolled with scrollIntoView rather than
+            an href, which would put a hash URL into @reach/router's history. */}
+        <nav className="flex flex-col gap-4 mb-8">
+          {CONTENTS.map((group) => (
+            <div key={group.label}>
+              <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-4 mb-1">
+                {group.label}
+              </div>
+              <div className="flex flex-col items-start pl-3.5">
+                {group.titles.map((title) => (
+                  <button
+                    key={title}
+                    className="font-sans text-ui-base text-left text-ink-4 hover:text-ink-2 py-[5px]"
+                    onClick={() =>
+                      document.getElementById(anchorId(title))?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                    }
+                  >
+                    {title}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ))}
         </nav>
 
         {SECTIONS.map((section) => {
@@ -652,21 +645,46 @@ export function HelpPage(_props: RouteComponentProps) {
           <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />
         </section>
 
+        {/* The index credit, in the same shape as the two credits above it. */}
+        <section id={anchorId(INDEX_TITLE)} className="mb-10 scroll-mt-6">
+          <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">{INDEX_TITLE}</div>
+          <p className="font-serif text-ui-lg leading-[1.55] text-ink-2 mb-4">{INDEX_LEAD}</p>
+          <a
+            href={INDEX_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 font-sans text-ui-base text-ink-2 hover:text-ink underline decoration-ink/25 underline-offset-2"
+          >
+            The Comprehensive Index of Pali Suttas
+            <ExternalLink size={16} strokeWidth={1.75} className="flex-none text-ink-4" />
+          </a>
+          <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />
+        </section>
+
         {/* The contact section, last on the page and so without a back-to-top of its own. */}
         <section id={anchorId(CONTACT_TITLE)} className="mb-10 scroll-mt-6">
           <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">
             {CONTACT_TITLE}
           </div>
           <p className="font-serif text-ui-lg leading-[1.55] text-ink-2 mb-4">{CONTACT_LEAD}</p>
-          <a
-            href={CONTACT_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 font-sans text-ui-base text-ink-2 hover:text-ink underline decoration-ink/25 underline-offset-2"
-          >
-            Open an issue on GitHub
-            <ExternalLink size={16} strokeWidth={1.75} className="flex-none text-ink-4" />
-          </a>
+          <div className="flex flex-col items-start gap-2">
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="inline-flex items-center gap-1.5 font-sans text-ui-base text-ink-2 hover:text-ink underline decoration-ink/25 underline-offset-2"
+            >
+              {CONTACT_EMAIL}
+              <Mail size={16} strokeWidth={1.75} className="flex-none text-ink-4" />
+            </a>
+            <a
+              href={CONTACT_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 font-sans text-ui-base text-ink-2 hover:text-ink underline decoration-ink/25 underline-offset-2"
+            >
+              Open an issue on GitHub
+              <ExternalLink size={16} strokeWidth={1.75} className="flex-none text-ink-4" />
+            </a>
+          </div>
         </section>
       </div>
     </div>
