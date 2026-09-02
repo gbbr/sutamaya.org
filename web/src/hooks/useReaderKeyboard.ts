@@ -7,6 +7,8 @@ interface UseReaderKeyboardOptions {
   setShortcutsOpen: (open: boolean) => void;
   searchOpen: boolean;
   setSearchOpen: (open: boolean) => void;
+  menuOpen: boolean;
+  setMenuOpen: (open: boolean) => void;
   pop: unknown;
   closePop: () => void;
   dict: unknown;
@@ -32,6 +34,8 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
     setShortcutsOpen,
     searchOpen,
     setSearchOpen,
+    menuOpen,
+    setMenuOpen,
     pop,
     closePop,
     dict,
@@ -59,6 +63,16 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
         if (e.key === 'Escape' || isShortcut(e, SHORTCUTS.readerHelp)) {
           e.preventDefault();
           setShortcutsOpen(false);
+        }
+        return;
+      }
+      // The overflow menu owns every key while it is open, as the help modal above does: Escape
+      // closes it, and the shortcuts it lists do nothing until it is — otherwise "t" would open the
+      // Display panel behind a menu still sitting over it.
+      if (menuOpen) {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          setMenuOpen(false);
         }
         return;
       }
@@ -133,5 +147,5 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
     // Only the values this handler branches on. The callbacks it invokes are reached through refs,
     // so neither they nor anything they close over belongs here.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [shortcutsOpen, dict, panel, pop, closePop, searchOpen]);
+  }, [shortcutsOpen, dict, panel, pop, closePop, searchOpen, menuOpen]);
 }

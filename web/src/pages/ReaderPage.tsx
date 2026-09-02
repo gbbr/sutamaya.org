@@ -29,6 +29,7 @@ import { HighlightPopup } from '../components/HighlightPopup';
 import { HighlightGutter } from '../components/HighlightGutter';
 import { DictionaryDock } from '../components/DictionaryDock';
 import { ReaderMenuPanel } from '../components/ReaderMenuPanel';
+import { ReaderOverflowMenu } from '../components/ReaderOverflowMenu';
 import { ReaderSearchOverlay } from '../components/ReaderSearchOverlay';
 import { KeyCap, ShortcutsModal } from '../components/ShortcutsModal';
 import { SuttaRowChips } from '../components/SuttaRowChips';
@@ -110,6 +111,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   const [noteFocusSignal, setNoteFocusSignal] = useState(0);
   const [searchOpen, setSearchOpen] = useState(false);
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const { mobile } = useLayout();
   const tapRef = useRef<{ x: number; y: number } | null>(null);
 
@@ -416,6 +418,8 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     setShortcutsOpen,
     searchOpen,
     setSearchOpen,
+    menuOpen,
+    setMenuOpen,
     pop,
     closePop,
     dict,
@@ -522,12 +526,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
             title="Menu"
             onClick={(e) => {
               e.stopPropagation();
-              // Opening straight onto the Theme tab's mobile bottom sheet shouldn't leave an open
-              // DictionaryDock sitting underneath it wasting space — desktop's drawer never
-              // overlaps the dock, so this is mobile-only (see ReaderMenuPanel's `onTabChange` for
-              // the other path into the same state).
-              if (mobile && tab === 'text') closeDict();
-              setPanel(true);
+              setMenuOpen(true);
             }}
           >
             <MenuIcon size={19} strokeWidth={1.75} />
@@ -838,6 +837,30 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           onPrev={() => goToAdjacentWord(-1)}
           onNext={() => goToAdjacentWord(1)}
           onRetryDictionary={retryLookup}
+        />
+      )}
+
+      {menuOpen && (
+        <ReaderOverflowMenu
+          mobile={mobile}
+          theme={theme}
+          onClose={() => setMenuOpen(false)}
+          onOpenTab={(t) => {
+            // Opening straight onto the Appearance tab's mobile bottom sheet shouldn't leave an open
+            // DictionaryDock sitting underneath it wasting space — desktop's drawer never overlaps
+            // the dock, so this is mobile-only (see ReaderMenuPanel's `onTabChange` for the other
+            // path into the same state).
+            if (mobile && t === 'text') closeDict();
+            setTab(t);
+            setPanel(true);
+          }}
+          // The canonical id rather than whatever the address bar holds: a reader arrives here by
+          // several routes — a capitalized reference, a verse number inside a batched document —
+          // and the link that travels should be the one this page settled on. The Worker gives that
+          // path its own title and description on a cold load, so the preview names the sutta
+          // (worker/src/shareMeta.js).
+          shareUrl={`${window.location.origin}/read/${encodeURIComponent(suttaId)}`}
+          shareTitle={`${sutta.ref} · ${sutta.en}`}
         />
       )}
 
