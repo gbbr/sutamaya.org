@@ -9,19 +9,13 @@ import { HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID, RECENT_AUTO_LIST_ID } from
 // (routes/data.js) is the only caller and the only write endpoint — see docs/offline-sync.md.
 //
 // Each handler answers with data rather than a response: `{ok: true}`, or `{error, status}` for a
-// refusal. A push is deliberately **not** atomic, so one refused item has to be reportable on its
-// own without disturbing the rest of the batch.
+// refusal, since a push is not atomic and each item's outcome is reported on its own.
 //
-// Every statement here is scoped `AND user_id = ?`: D1 is one flat table per entity, with no
-// structural isolation between users — the predicate *is* the isolation. A missing scope would leak
-// or overwrite another user's row, so it belongs on reads, writes and existence checks alike.
+// Every statement is scoped `AND user_id = ?` — reads, writes and existence checks alike.
 
 const OK = { ok: true };
 
-// assembleUserData synthesizes the three auto-lists into its response by these ids without
-// consulting the `lists` table, so a stored row sharing one would be returned alongside its
-// synthetic twin — same id, twice, the stored one first. The client resolves auto-lists with
-// `lists.find(...)` and would render the impostor in the "Activity" section.
+// The auto-list ids, which a stored list may not claim.
 const RESERVED_LIST_IDS = new Set([RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID]);
 
 function parentIdOf(item) {
@@ -32,47 +26,29 @@ function orderOf(item) {
   return Array.isArray(item?.order) ? item.order : [];
 }
 
-// Fetches the candidate parent and checks it via invalidParentReasonForRow (see that function's
-// own comment for the actual validity rule) — the top-level `null` case short-circuits before ever
-// hitting D1. Used for creating a new list, which can never be its own ancestor, so no cycle check
-// is needed here — see invalidReparentReason below for moving an *existing* list.
-//
-// Deliberately unfiltered on `deleted`: nesting under a group deleted elsewhere is accepted rather
-// than rejected 400, because rejecting throws the user's move away, and lib/listTree.js re-homes the
-// child to the root on read anyway. Only the kind check still rejects.
+// Returns why `parentId` can't hold a list, or null if it can. Unfiltered on `deleted`: a parent
+// tombstoned elsewhere is accepted, and lib/listTree.js re-homes the child on read.
 async function invalidParentReason(db, userId, parentId) {
   if (!parentId) return null;
   const row = await db.prepare('SELECT kind FROM lists WHERE id = ? AND user_id = ?').bind(parentId, userId).first();
   return invalidParentReasonForRow(row);
 }
 
-// Same parent-existence/kind check as invalidParentReason (delegated to it directly, so the two
-// can't drift apart), plus a cycle check for `movingId` being reparented to `parentId` (see
-// wouldCreateCycle's own comment) — updateList's check for an *existing* list's parentId changing,
-// unlike a fresh create. reorderSiblings makes both checks inline instead, off reads it already
-// needs for other reasons.
+// Returns why `movingId` can't be moved under `parentId`, or null if it can: invalidParentReason's
+// check plus a cycle check.
 async function invalidReparentReason(db, userId, parentId, movingId) {
   const kindError = await invalidParentReason(db, userId, parentId);
   if (kindError) return kindError;
   if (!parentId) return null;
-  // Live rows only: a tombstoned list is no longer part of the tree, so counting it here could
-  // manufacture a cycle out of a chain that no read path ever renders. The cycles that survive
-  // this check — two devices each making a locally-valid move — are broken at read time by
-  // lib/listTree.js instead, which is the only place both devices can agree on the outcome.
+  // Live rows only; a cycle through a tombstone is one no read path renders.
   const { results } = await db.prepare('SELECT id, parent_id FROM lists WHERE user_id = ? AND deleted = 0').bind(userId).all();
   const allLists = results.map((row) => ({ id: row.id, parentId: row.parent_id ?? null }));
   return wouldCreateCycle(movingId, parentId, allLists) ? 'parent_is_descendant' : null;
 }
 
-// The existence+kind check the two "this list's items" writes below both need, as one query.
-// Returns `{row}` for a plain list that can hold suttas, or `{error, status}` for the two
-// rejections — 404 for a list that doesn't exist (for this user), 400 for a group.
-//
-// Deliberately unfiltered on `deleted`, and load-bearingly so: membership travels as operations
-// rather than as record state (see docs/offline-sync.md), so an add queued offline can arrive
-// after the list's own delete. Treating the tombstone as not-found would 404 and discard the add —
-// the exact silent loss this all exists to prevent. It lands on the dead row instead, invisible to
-// every read path, and returns with the list if that is ever un-deleted.
+// Returns `{row}` with a list's `items` and `kind` if it can hold suttas, else `{error, status}` —
+// 404 for no such list under this user, 400 for a group. Unfiltered on `deleted`, so a membership
+// operation queued before the list's delete still lands, harmlessly, on the tombstoned row.
 async function suttaListRow(db, userId, id) {
   const row = await db.prepare('SELECT items, kind FROM lists WHERE id = ? AND user_id = ?').bind(id, userId).first();
   if (!row) return { error: 'not_found', status: 404 };
@@ -80,18 +56,10 @@ async function suttaListRow(db, userId, id) {
   return { row };
 }
 
-// Reads the current min position among true siblings and writes the new row in one statement
-// (rather than a SELECT then an INSERT) so two near-simultaneous creates can't both compute the
-// same `min - 1` and land on colliding positions. A new list/group is meant to appear at the front
-// of its parent's children (per product decision), not the back, so the position expression is
-// lib/listPositions.js's `firstPosition` in SQL: COALESCE turns an empty sibling set into 1, then
-// the two-argument scalar `MIN(x, 1) - 1` reproduces its `Math.min(min, p) - 1` reduce seeded at 1
-// — which is why an empty parent yields 0 rather than -1. The aggregate MIN and the scalar MIN sit
-// at separate query levels precisely so that parse is unambiguous.
-//
-// ON CONFLICT(id) DO NOTHING is what makes a client-chosen id idempotent: a create whose response
-// was lost and got retried lands on the same id and becomes a no-op instead of a duplicate row or
-// a constraint error.
+// Inserts a list at the front of its parent's children, in one statement. The position expression
+// is lib/listPositions.js's `firstPosition` in SQL — the aggregate MIN and the scalar MIN sit at
+// separate query levels so the two-argument form parses unambiguously. ON CONFLICT(id) DO NOTHING
+// makes a retried create a no-op.
 const CREATE_LIST_SQL = `
   INSERT INTO lists (id, user_id, label, parent_id, kind, position, items, created_at, mtime)
   SELECT ?1, ?2, ?3, ?4, ?5,
@@ -102,8 +70,7 @@ const CREATE_LIST_SQL = `
   ON CONFLICT(id) DO NOTHING
 `;
 
-// A client-chosen id is what lets an offline create be referenced (renamed, filed into, moved)
-// before it has ever reached the server.
+// Creates a list or group under the client-chosen id `item.id`.
 async function createList(db, userId, item) {
   const label = (item?.label || '').trim().slice(0, LIST_NAME_MAX_LENGTH);
   if (!label) return { error: 'label_required', status: 400 };
@@ -118,11 +85,8 @@ async function createList(db, userId, item) {
     .prepare(CREATE_LIST_SQL)
     .bind(id, userId, label, parentId, kind, new Date().toISOString(), resolveMtime(item?.mtime))
     .run();
-  // `lists.id` is a global PRIMARY KEY, so ON CONFLICT(id) fires on *any* user's row with this id,
-  // not just this user's. A skipped insert is therefore two different situations: the retry the
-  // conflict clause exists to absorb, or another account having claimed the id first. Only a
-  // user-scoped read tells them apart, and getting it wrong would report success for a row that
-  // does not exist under this account — every later write against that id then 404s.
+  // `lists.id` is a global primary key, so a skipped insert is either this user's own retry or
+  // another account holding the id; only a user-scoped read tells them apart.
   if (created.meta?.changes === 0) {
     const mine = await db.prepare('SELECT id FROM lists WHERE id = ? AND user_id = ?').bind(id, userId).first();
     if (!mine) return { error: 'id_collision', status: 409 };
@@ -130,8 +94,8 @@ async function createList(db, userId, item) {
   return OK;
 }
 
-// A list's whole mutable row — label and parent. Position is not part of it: sibling order travels
-// as its own operation.
+// Updates a list's label and parent. Position is not part of it — sibling order is its own
+// operation.
 async function updateList(db, userId, item) {
   const id = item?.id;
   const assignments = [];
@@ -140,8 +104,7 @@ async function updateList(db, userId, item) {
     assignments.push('label = ?');
     values.push(item.label.trim().slice(0, LIST_NAME_MAX_LENGTH));
   }
-  // `parentId` is a legitimate value to explicitly set to null (move to top level), so check for
-  // the key's presence rather than truthiness.
+  // Key presence, not truthiness: null is a move to the top level.
   if (item && 'parentId' in item) {
     const parentId = parentIdOf(item);
     const parentError = await invalidReparentReason(db, userId, parentId, id);
@@ -150,16 +113,12 @@ async function updateList(db, userId, item) {
     values.push(parentId);
   }
   if (!assignments.length) {
-    // Nothing to write — fall back to a plain existence check so an update naming no recognized
-    // field still 404s for a bogus id instead of silently succeeding.
+    // Nothing to write, so an existence check decides between success and 404.
     const row = await db.prepare('SELECT id FROM lists WHERE id = ? AND user_id = ?').bind(id, userId).first();
     return row ? OK : { error: 'not_found', status: 404 };
   }
-  // Conditional on mtime, like the annotation writes: a stale offline rename or move can't clobber
-  // a fresher edit made elsewhere. That makes `meta.changes === 0` cover both "no such list" and a
-  // rejected stale write, so a miss falls back to an existence check before deciding on a 404. A
-  // rejected stale write is not an error — the loser of last-writer-wins is dropped silently, not
-  // surfaced.
+  // Conditional on mtime, so `meta.changes === 0` covers both no such list and a stale write the
+  // row won; only the first is a 404.
   const mtime = resolveMtime(item?.mtime);
   assignments.push('mtime = ?');
   values.push(mtime);
@@ -174,20 +133,8 @@ async function updateList(db, userId, item) {
   return OK;
 }
 
-// Tombstones the list instead of removing it, so a device that was offline when the delete
-// happened can't resurrect it on reconnect by pushing its still-live copy — against a hard-deleted
-// row that push is indistinguishable from a fresh creation.
-//
-// A deleted group's children are left pointing at the dead row rather than re-parented here: the
-// read-time repair in lib/listTree.js cascades them out, which is the only outcome two devices can
-// agree on without talking to each other. It also keeps this to a single statement — a subtree walk
-// would need a read-then-write that D1 can't make atomic, having no interactive transactions.
-//
-// Conditional on mtime like every other write, so a stale offline delete can't take out a list
-// renamed or refilled more recently elsewhere. `meta.changes === 0` therefore covers both "no such
-// list" and "a newer write already won", so a miss falls back to an existence check for the 404 —
-// and re-deleting an already-tombstoned list is a no-op success, which is what makes a replayed
-// delete safe.
+// Tombstones a list, conditional on mtime. A deleted group's children keep pointing at the dead
+// row; lib/listTree.js cascades them out at read time.
 async function deleteList(db, userId, item) {
   const id = item?.id;
   const mtime = resolveMtime(item?.mtime);
@@ -202,59 +149,32 @@ async function deleteList(db, userId, item) {
   return OK;
 }
 
-// Bulk-reorders one parent's direct children (parentId: null for top-level lists) — the sibling
-// counterpart to reorderItems below. `order` positions are only meaningful relative to siblings
-// sharing the same parent (see buildUserData in routes/data.js, which the client filters by
-// parentId), so this never needs to touch — or even know about — any other parent's lists.
-//
-// One operation per gesture by design: an update per sibling would make dragging the 50th list of a
-// group to the top produce 50 of them. Like every other write here it has to survive being replayed
-// from an offline queue, which is what reconcileSiblingOrder is for.
+// Reorders one parent's direct children in a single operation — `parentId` null for the top level.
+// Positions are only meaningful among siblings, so no other parent's lists are touched.
 async function reorderSiblings(db, userId, item) {
   const parentId = parentIdOf(item);
   const posted = orderOf(item);
-  // The parent row, read once and asked both questions, rather than through invalidReparentReason's
-  // wrappers — which fetch it a second time, and the whole live-list set a second time after that.
-  // Every D1 query counts against the Worker's per-request subrequest budget, and a push carries up
-  // to PUSH_MAX_ITEMS of these, so a duplicate read here is multiplied by the chunk size.
-  //
-  // A parent this account has no row for at all makes the gesture moot rather than invalid — it is
-  // a group created and deleted before it ever reached the server, which leaves no tombstone
-  // behind (see removeListRecord in web/src/lib/mirror.ts). 404 is what lib/sync.ts reads as
-  // "gone", so the queued op retires; the 400 the kind check gives it instead is permanent, and the
-  // op would be re-refused on every flush forever. Unfiltered on `deleted` like every other parent
-  // check here: a reorder under a tombstoned group still lands harmlessly.
+  // The parent row, read once and asked both questions, rather than through
+  // invalidReparentReason's wrappers, which would read it and the live-list set twice. A parent
+  // with no row at all is 404 rather than 400, so lib/sync.ts retires the queued op instead of
+  // re-refusing it on every flush.
   if (parentId) {
     const parent = await db.prepare('SELECT kind FROM lists WHERE id = ? AND user_id = ?').bind(parentId, userId).first();
     if (!parent) return { error: 'not_found', status: 404 };
     const kindError = invalidParentReasonForRow(parent);
     if (kindError) return { error: kindError, status: 400 };
   }
-  // Live rows only: a tombstoned list is out of the tree, and a stale posted order naming one must
-  // not write a position back onto it. This one read answers all three of "does this id still
-  // exist", "what else lives in this parent that the client never saw", and the cycle walk below —
-  // nothing writes in between, so they all see the same snapshot either way.
+  // The live tree, read once for the id set, this parent's current children and the cycle walk.
   const { results } = await db.prepare('SELECT id, parent_id FROM lists WHERE user_id = ? AND deleted = 0').bind(userId).all();
-  // Same cycle check invalidReparentReason makes for a single moved list, over every id the posted
-  // order would reparent into `parentId`. A null parent can't be anyone's descendant, so
-  // wouldCreateCycle answers false without walking.
-  //
-  // Dropped from the order rather than refusing the whole gesture, which is the same treatment
-  // reconcileSiblingOrder gives an id that has since been deleted, and for the same reason: a
-  // reorder replayed from an offline queue is a bulk gesture whose other ids are still perfectly
-  // valid, and a 400 is permanent — the op would be re-refused on every flush and the user's whole
-  // reorder lost. Reachable without either device doing anything wrong: this one reorders a group's
-  // children offline while another moves that group under one of them. updateList still rejects a
-  // cycle outright, since a single deliberate move has no remainder worth saving.
+  // Ids the posted order would move into a cycle are dropped from it, the whole gesture standing —
+  // the same treatment reconcileSiblingOrder gives a since-deleted id.
   const allLists = results.map((row) => ({ id: row.id, parentId: row.parent_id ?? null }));
   const acyclic = posted.filter((movingId) => !wouldCreateCycle(movingId, parentId, allLists));
   const liveIds = new Set(results.map((row) => row.id));
   const currentChildIds = results.filter((row) => (row.parent_id ?? null) === parentId).map((row) => row.id);
   const order = reconcileSiblingOrder(acyclic, currentChildIds, liveIds);
   if (order.length) {
-    // One reorder gesture, one mtime, applied to every sibling it touches — each row still guarded
-    // on its own stored mtime, so a list edited more recently elsewhere (e.g. renamed from another
-    // device) keeps that edit instead of being dragged back by a stale reorder.
+    // One gesture, one mtime, every row still guarded on its own stored one.
     const mtime = resolveMtime(item?.mtime);
     await db.batch(
       order.map((id, position) =>
@@ -267,8 +187,7 @@ async function reorderSiblings(db, userId, item) {
   return OK;
 }
 
-// Appends one sutta id to `items`. json_insert with the '$[#]' path is one atomic statement with no
-// read-modify-write, and the EXISTS guard keeps a re-add from duplicating an id already in the list.
+// Appends one sutta id to `items`, in one statement, the EXISTS guard making a re-add a no-op.
 const ADD_ITEM_SQL = `
   UPDATE lists SET items = CASE
       WHEN EXISTS (SELECT 1 FROM json_each(items) WHERE value = ?3) THEN items
@@ -286,8 +205,7 @@ async function addItem(db, userId, item) {
   return OK;
 }
 
-// Removes one sutta id, rebuilding `items` from json_each minus that value. COALESCE covers the
-// empty result json_group_array yields nothing for.
+// Removes one sutta id, rebuilding `items` without it. COALESCE covers the empty result.
 const REMOVE_ITEM_SQL = `
   UPDATE lists SET items = COALESCE(
       (SELECT json_group_array(j.value) FROM json_each(lists.items) AS j WHERE j.value <> ?3),
@@ -296,20 +214,19 @@ const REMOVE_ITEM_SQL = `
 `;
 
 async function removeItem(db, userId, item) {
-  // No kind check here: removing an item from a group is harmless (it has none) and only the
-  // list's existence matters, which `meta.changes` already reports.
+  // No kind check: a group holds no items, so only the row's existence matters.
   const result = await db.prepare(REMOVE_ITEM_SQL).bind(item?.listId, userId, item?.suttaId).run();
   if (result.meta.changes === 0) return { error: 'not_found', status: 404 };
   return OK;
 }
 
+// Reorders one list's suttas.
 async function reorderItems(db, userId, item) {
   const found = await suttaListRow(db, userId, item?.listId);
   if (found.error) return found;
   const current = JSON.parse(found.row.items || '[]');
   const reconciled = reconcileItemOrder(current, orderOf(item));
-  // Item order moves as a unit on the list's own mtime, same as sibling order — a stale offline
-  // reorder can't overwrite a fresher one made elsewhere.
+  // Item order moves as a unit on the list's own mtime, same as sibling order.
   const mtime = resolveMtime(item?.mtime);
   await db
     .prepare('UPDATE lists SET items = ?, mtime = ? WHERE id = ? AND user_id = ? AND mtime < ?')
@@ -318,66 +235,46 @@ async function reorderItems(db, userId, item) {
   return OK;
 }
 
-// Blank text tombstones the note (`deleted = 1`, text emptied) rather than storing an empty string
-// or removing the row. lib/userData.js's auto-notes list treats "row exists" as "has a note", so an
-// empty note left visible would keep showing up there — and a hard delete would let a device that
-// was offline when the clear happened push its stale copy back, which against a missing row is
-// indistinguishable from writing a brand new note. The tombstone stays behind to lose that merge.
-//
-// Setting and clearing are the same conditional upsert, differing only in `deleted`: both are just
-// a state the note is in at a given mtime, so a stale clear can no more erase a newer edit than a
-// stale edit can undo a newer clear.
+// Writes a note, conditional on mtime. Setting and clearing are the same statement, differing only
+// in `deleted` — blank text tombstones the row rather than removing it.
 const UPSERT_NOTE_SQL = `
   INSERT INTO notes (user_id, sutta_id, text, updated_at, mtime, deleted) VALUES (?1, ?2, ?3, ?4, ?4, ?5)
     ON CONFLICT(user_id, sutta_id) DO UPDATE SET text = ?3, updated_at = ?4, mtime = ?4, deleted = ?5
     WHERE ?4 > notes.mtime
 `;
 
+// Sets or clears one sutta's note.
 async function setNote(db, userId, item) {
   const suttaId = item?.suttaId;
   if (!suttaId) return { error: 'sutta_id_required', status: 400 };
   const text = (item?.text || '').slice(0, NOTE_MAX_LENGTH);
   const cleared = text.trim() === '';
-  // Conditional on mtime so a stale offline edit can't overwrite newer work made elsewhere in the
-  // meantime — the entire conflict resolution is this WHERE clause. `updated_at` takes the same
-  // client-supplied instant as `mtime`, so the Notes auto-list orders by when the user wrote the
-  // note rather than by when the write happened to reach the server.
+  // `updated_at` takes the same client instant as `mtime`, so the Notes auto-list orders by when
+  // the note was written rather than when it arrived.
   const mtime = resolveMtime(item?.mtime);
   await db.prepare(UPSERT_NOTE_SQL).bind(userId, suttaId, cleared ? '' : text, mtime, cleared ? 1 : 0).run();
   return OK;
 }
 
-// A highlight is immutable. One selection mints one id and writes one row — the span's two
-// endpoints — and nothing updates that row again: a recolour is a tombstone plus a brand new
-// highlight, an erase is a tombstone. That is what makes the write safe to replay, where a "delete
-// whatever currently overlaps, then insert" would mean something different an hour later and take
-// whole highlights another device had created in between.
-//
-// (user_id, id) is the primary key, so OR IGNORE makes re-pushing a highlight a no-op rather than a
-// duplicate row or a constraint error.
+// Inserts one highlight — the span's two endpoints — and never updates it again: a recolour is a
+// tombstone plus a new row. OR IGNORE on (user_id, id) makes a re-push a no-op.
 const INSERT_HIGHLIGHT_SQL = `
   INSERT OR IGNORE INTO highlights (id, user_id, sutta_id, i0, o0, i1, o1, color, created_at, mtime)
   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 `;
 
-// Retires one highlight. Conditional on mtime like every other write here, so a stale erase can't
-// retire a highlight created more recently.
+// Retires one highlight, conditional on mtime.
 const TOMBSTONE_HIGHLIGHT_SQL = `
   UPDATE highlights SET deleted = 1, mtime = ?3 WHERE user_id = ?1 AND id = ?2 AND mtime < ?3
 `;
 
-// Writes one highlight over `span` — from (i0, o0) up to but not including (i1, o1), in segment
-// indices and character offsets (see web/src/lib/types.ts's Highlight). One item is one atomic
-// write however many segments the span covers, since what is stored is its two ends rather than the
-// segments between them.
-//
-// The client decides everything about identity: `g` names the highlight being created and `erase`
-// names the ones this selection displaces, worked out from what that device can already see
-// (lib/highlights.ts's displacedIds). The server never infers either from live rows — that is what
-// an hour-old replayed write would get wrong. Both are required, so an item that omits them is a
-// bug rather than a silent half-write; `color: null` is a plain erase, decided by `erase` alone (its
-// `span` only records what the user selected). Tombstones go into the batch before the insert, so a
-// recolour can't retire the highlight it just created.
+// Applies one highlight gesture over `span` — from (i0, o0) up to but not including (i1, o1), in
+// segment indices and character offsets (web/src/lib/types.ts's Highlight) — as one batch.
+//   g      – the id of the highlight to create; required unless this is an erase
+//   erase  – the ids this gesture displaces, tombstoned before the insert
+//   color  – null for a plain erase, where `span` only records what the user selected
+// Both ids come from the client and are never inferred from live rows, so the write means the same
+// thing whenever it is replayed.
 async function setHighlight(db, userId, item) {
   const { suttaId, span, color, g, erase } = item || {};
   if (!suttaId || !span) return { error: 'span_required', status: 400 };
@@ -388,30 +285,24 @@ async function setHighlight(db, userId, item) {
   if (!Array.isArray(erase) || erase.some((id) => typeof id !== 'string' || !id)) {
     return { error: 'invalid_erase', status: 400 };
   }
-  // A server-minted id would cost the highlight its idempotence: a create re-sent after a lost
-  // response would arrive under a second name and duplicate the highlight instead of colliding with
-  // itself on (user_id, id). That key leads with user_id, as does every statement's `AND user_id =
-  // ?`, so one account's highlight id can't reach another's rows — shape is all that's left to
-  // check.
   if (color && (typeof g !== 'string' || !g)) return { error: 'group_id_required', status: 400 };
-  // `created_at` takes the client's instant too, so the Highlights auto-list orders by when the
-  // user highlighted rather than when the write reached the server.
+  // `created_at` takes the client instant too, so the Highlights auto-list orders by when the user
+  // highlighted rather than when the write arrived.
   const mtime = resolveMtime(item?.mtime);
   const statements = erase.map((id) => db.prepare(TOMBSTONE_HIGHLIGHT_SQL).bind(userId, id, mtime));
   if (color) {
     statements.push(db.prepare(INSERT_HIGHLIGHT_SQL).bind(g, userId, suttaId, i0, o0, i1, o1, color, mtime, mtime));
   }
-  // An erase that displaces nothing leaves nothing to run, and D1 rejects an empty batch.
+  // D1 rejects an empty batch, which an erase displacing nothing would produce.
   if (statements.length) await db.batch(statements);
   return OK;
 }
 
+// Records a visit to one sutta.
 async function markVisited(db, userId, item) {
   const suttaId = item?.suttaId;
   if (!suttaId) return { error: 'sutta_id_required', status: 400 };
-  // `visited` has no separate mtime column — visited_at already is the clock, so it's the one the
-  // client supplies and the conditional write compares against. A stale offline visit can then no
-  // longer jump ahead of a newer visit recorded elsewhere.
+  // `visited` has no mtime column: visited_at is the clock the conditional write compares against.
   const visitedAt = resolveMtime(item?.visitedAt);
   await db
     .prepare(
@@ -424,9 +315,8 @@ async function markVisited(db, userId, item) {
   return OK;
 }
 
-// The wire names, and the whole vocabulary of a push. `list.*` and the annotations carry a record's
-// desired state; `item.*` and `sibling.order` are operations, which is why membership and order are
-// safe to replay in the order the user made them (docs/offline-sync.md, mechanism 4).
+// The wire names a push may carry. `list.*` and the annotations are records — a desired state;
+// `item.*` and `sibling.order` are operations (docs/offline-sync.md, mechanism 4).
 const HANDLERS = {
   'list.create': createList,
   'list.update': updateList,
@@ -440,6 +330,7 @@ const HANDLERS = {
   visited: markVisited,
 };
 
+// Applies one pushed item, returning `{ok: true}` or `{error, status}`.
 export async function applyWrite(db, userId, item) {
   const handler = HANDLERS[item?.type];
   if (!handler) return { error: 'unknown_type', status: 400 };

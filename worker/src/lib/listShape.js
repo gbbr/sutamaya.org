@@ -1,6 +1,5 @@
-// Shapes one list row's raw field data into the response object sent to the client. Shared by
-// routes/lists.js's serializeList and lib/userData.js's assembleUserData, so the two can't drift
-// apart on a field rename.
+// Returns one list row as the object sent to the client. Shared by routes/lists.js and
+// lib/userData.js, so the two can't drift apart.
 export function shapeList(id, data) {
   return {
     id,

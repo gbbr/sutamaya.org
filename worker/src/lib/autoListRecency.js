@@ -1,6 +1,5 @@
-// Dedupes `entries` by id keeping each one's most recent `at`, sorts descending by `at`, and
-// caps to `limit` — shared by the auto-highlights/auto-notes list synthesis in routes/data.js so
-// those lists (and the DOM rows ListPane renders for them, unvirtualized) can't grow unbounded.
+// Returns at most `limit` ids from `entries`, deduped on each id's most recent `at` and ordered
+// most recent first. The three auto-lists are built with it.
 export function latestIds(entries, limit) {
   const mostRecent = new Map();
   entries.forEach(({ id, at }) => {

@@ -30,6 +30,7 @@ import {
 } from '../oauth.js';
 import { clearSessionCookie, createSessionCookie, readSessionCookie } from '../session.js';
 
+// Returns the fields of a user row the client is given.
 function publicUser(user) {
   return {
     id: user.id,
@@ -41,15 +42,12 @@ function publicUser(user) {
 
 export const authRouter = new Hono();
 
-// Sends the browser off to Google. `?return=` is where to come back to once the flow ends —
-// validated through safeReturnPath both on the way out and again on the way back in, since it
-// travels through the provider in between.
+// Sends the browser off to Google. `?return=` is where to come back to once the flow ends, checked
+// by safeReturnPath on the way out and again on the way back in.
 authRouter.get('/google/start', async (c) => {
-  // GoogleSignInButton sends `return` as an absolute URL, so which of the configured origins the
-  // user is actually on travels with it — that's what lets one `npm run dev` serve both localhost
-  // and the hostname a phone reaches it by. Only origins in WEB_ORIGIN are honoured
-  // (resolveWebOrigin), and it's carried through the provider in the signed state so both legs of
-  // the flow — and the redirect_uri Google matches — agree on one origin.
+  // The origin the sign-in started on, taken from `return`'s absolute URL and honoured only if
+  // WEB_ORIGIN lists it. It rides through the provider in the signed state, so both legs of the
+  // flow and the redirect_uri Google matches agree on one origin.
   const webOrigin = resolveWebOrigin(c.env.WEB_ORIGIN, c.req.query('return'));
 
   if (!c.env.GOOGLE_CLIENT_ID || !c.env.GOOGLE_CLIENT_SECRET) {
@@ -74,14 +72,12 @@ authRouter.get('/google/start', async (c) => {
   );
 });
 
-// Where Google sends the browser back. Every failure path ends the same way — clear the nonce and
-// redirect into the app with ?auth_error=1 — because this is a top-level navigation the user is
-// watching, so a JSON error body would strand them on a blank page with no way back.
+// Where Google sends the browser back. Every failure clears the nonce and redirects into the app
+// with ?auth_error=1, this being a top-level navigation rather than a fetch.
 authRouter.get('/google/callback', async (c) => {
   const secure = new URL(c.req.url).protocol === 'https:';
-  // Reassigned below once the state is verified, to whichever origin /google/start issued it for.
-  // Until then there's nothing trustworthy saying which one this browser came in on, so failures
-  // that early land on the canonical origin.
+  // The canonical origin until the state is verified, then whichever origin /google/start issued
+  // it for.
   let webOrigin = resolveWebOrigin(c.env.WEB_ORIGIN);
   const fail = (reason, returnTo = '/settings') => {
     console.error(`Google OAuth callback failed: ${reason}`);
@@ -124,8 +120,7 @@ authRouter.get('/google/callback', async (c) => {
 // --- Sign in by emailed code ------------------------------------------------------------------
 
 // Sends a fresh six-digit code, replacing whatever was outstanding for that address. Answers
-// {ok:true} for any plausible address whether or not an account exists — an endpoint that says
-// otherwise is a way to ask this app which addresses have accounts.
+// {ok:true} for any plausible address, whether or not an account exists.
 authRouter.post('/email/request', async (c) => {
   const email = normalizeEmail((await jsonBody(c))?.email);
   if (!isPlausibleEmail(email)) return c.json({ error: 'Enter a valid email address.' }, 400);
@@ -133,17 +128,14 @@ authRouter.post('/email/request', async (c) => {
   const now = Date.now();
   const pending = await c.env.DB.prepare('SELECT created_at FROM login_codes WHERE email = ?').bind(email).first();
   if (pending && now - Date.parse(pending.created_at) < RESEND_COOLDOWN_MS) {
-    // Still ok:true — from the user's side a code is on its way, which is true; the one already
-    // sent is still valid. Sending a second would only make it ambiguous which to type.
+    // Within the cooldown: the code already sent is still valid, so nothing is sent.
     return c.json({ ok: true });
   }
 
   const code = generateCode();
   const nowIso = new Date(now).toISOString();
   await c.env.DB.batch([
-    // A code requested and never used would otherwise leave its row behind for good, the verify
-    // path being the only other place one is removed. Sweeping here costs one statement in a round
-    // trip that was happening anyway, and tidies the table exactly when it grows.
+    // Sweeps expired codes, which nothing else removes once requested and never used.
     c.env.DB.prepare('DELETE FROM login_codes WHERE expires_at < ?').bind(nowIso),
     c.env.DB.prepare(
       `INSERT INTO login_codes (email, code_hash, expires_at, attempts, created_at)
@@ -161,17 +153,14 @@ authRouter.post('/email/request', async (c) => {
       message: codeEmail({ code }),
     });
   } catch (err) {
-    // The row is already written, so a retry from the user re-sends against the same code rather
-    // than stranding them. Reported as a failure because nothing arrived and they'd otherwise sit
-    // waiting for mail that isn't coming.
+    // The row stands, so a retry re-sends the same code.
     console.error('Failed to send sign-in code:', err);
     return c.json({ error: 'Could not send the code. Please try again.' }, 502);
   }
   return c.json({ ok: true });
 });
 
-// Checks a code and, on success, establishes the session. The account is created here rather than
-// at request time, so asking for a code for an address never creates anything.
+// Checks a code and, on success, creates the account if it is new and establishes the session.
 authRouter.post('/email/verify', async (c) => {
   const body = (await jsonBody(c)) || {};
   const email = normalizeEmail(body.email);
@@ -181,8 +170,7 @@ authRouter.post('/email/verify', async (c) => {
   }
 
   const row = await c.env.DB.prepare('SELECT * FROM login_codes WHERE email = ?').bind(email).first();
-  // One message for every failure below: which of "no code was asked for", "it expired" and "that
-  // is the wrong code" applies is not something to tell whoever is typing.
+  // One message for every failure below — no code asked for, expired, or wrong.
   const reject = () => c.json({ error: 'That code is not valid. Request a new one.' }, 401);
   if (!row) return reject();
 
@@ -192,8 +180,7 @@ authRouter.post('/email/verify', async (c) => {
   }
 
   if (!timingSafeEqual(row.code_hash, await hashCode(code, email, c.env.SESSION_SECRET))) {
-    // Counted in the row rather than in a limiter, so the budget belongs to this code and is gone
-    // for good when it's spent — a new IP doesn't buy five more guesses at the same code.
+    // Counted in the row, so the guess budget belongs to the code rather than to the caller.
     await c.env.DB.prepare('UPDATE login_codes SET attempts = attempts + 1 WHERE email = ?').bind(email).run();
     return reject();
   }

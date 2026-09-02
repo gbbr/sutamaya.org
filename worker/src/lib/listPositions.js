@@ -1,14 +1,11 @@
-// Next sibling `position` to append after — the max of `positions` plus one, or 0 for an empty
-// group. Shared by list creation (append to the end of the target parent's children) and
-// delete-reparenting (append re-parented children after the new parent's existing children,
-// instead of leaving their stale positions to collide with the new siblings').
+// Returns the `position` that appends after `positions` — their max plus one, or 0 for an empty
+// parent.
 export function nextPosition(positions) {
   return positions.reduce((max, p) => Math.max(max, p ?? 0), -1) + 1;
 }
 
-// Next sibling `position` to prepend before — one less than the min of `positions`, or 0 for an
-// empty group. Used by list/group creation, which puts a newly-created entry at the front of its
-// parent's children rather than the back.
+// Returns the `position` that prepends before `positions` — their min less one, or 0 for an empty
+// parent. lib/writes.js's CREATE_LIST_SQL is this expression in SQL.
 export function firstPosition(positions) {
   return positions.reduce((min, p) => Math.min(min, p ?? 0), 1) - 1;
 }

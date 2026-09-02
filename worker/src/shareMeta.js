@@ -1,53 +1,39 @@
-// The title and description a link preview shows when someone shares a sutta or a browse group.
+// The title and description a link preview shows when someone shares a sutta or a browse group,
+// written into the served HTML — a crawler never runs the app, so the tags
+// web/src/hooks/useDocumentMeta.ts writes at mount arrive too late.
 //
-// WhatsApp, Slack, iMessage and the rest fetch the URL and read the HTML that comes back; none of
-// them run the app, so the tags web/src/hooks/useDocumentMeta.ts writes once React mounts arrive
-// far too late, and every link previews as the app's own generic title and description. This puts
-// the same two values into the served HTML.
+// Only /read/* and /browse/* are rewritten; /index.html is left as the build produced it, since the
+// service worker precaches that path and serves it for every in-app navigation.
 //
-// Only /read/* and /browse/* are rewritten. /index.html above all is left exactly as the build
-// produced it: the service worker precaches that path and hands the stored copy back for every
-// in-app navigation, so a copy carrying one sutta's title would put that title on every page in
-// the app. The paths rewritten here are only ever fetched on a cold load, which is why this is
-// safe — see the navigation fallback in web/vite.config.ts.
-//
-// The lookups are ports of web/src/lib/corpus.ts (findNode, resolveCanonicalSuttaId) and the
-// 155-character trim in web/src/lib/documentMeta.ts, and the titles are what ReaderPage and
-// LibraryPage pass to useDocumentMeta, so a shared link previews as the page it opens. No module
-// is shared between the two npm workspaces — change one, change the other. The descriptions
-// deliberately don't match the page everywhere: see nodeMeta on what a card can't say.
+// The lookups port web/src/lib/corpus.ts (findNode, resolveCanonicalSuttaId) and the trim in
+// web/src/lib/documentMeta.ts, and the titles match what ReaderPage and LibraryPage pass to
+// useDocumentMeta. No module is shared between the two workspaces — change one, change the other.
 
-// Only these two carry a subject of their own. A user list also lives under /browse, but its id is
-// opaque and names nothing in the corpus, so it falls out of findNode below and the shell is left
-// alone: a list is one reader's own and has no preview to show.
+// The paths that carry a subject of their own. A user list also lives under /browse, but its
+// opaque id names nothing in the corpus, so findNode drops it and the shell is left alone.
 const SHAREABLE = /^\/(read|browse)\/([^/]+)/;
 
-// Roughly what a preview card and a search result render before truncating, so a long blurb is cut
-// at a word boundary here rather than chopped mid-word by whoever displays it.
+// Longest description a card is given, in characters, cut at a word boundary.
 const MAX_LENGTH = 155;
 
-// A batched leaf uid like "dhp320-333" holds several verses in one document and has no entry for
-// any single number inside the range, so "/read/dhp321" — a link the app itself produces and keeps
-// in the address bar — has to resolve to the batch that contains it.
+// A batched leaf uid ("dhp320-333") and a single number inside one ("dhp321"), which resolves to
+// the batch holding it.
 const RANGE_UID = /^([a-z][a-z-]*(?:\d+\.)?)(\d+)-(\d+)$/;
 const RANGE_QUERY = /^([a-z][a-z-]*(?:\d+\.)?)(\d+)$/;
 
-// Whatever the shell already says. A page with no subject of its own keeps it; a group with a
-// title but no description has it removed, so the card shows the title alone rather than repeating
-// the app's boilerplate under every one.
+// The shell's own description tag, rewritten or removed per page.
 const DESCRIPTION_META = 'meta[name="description"]';
 
-// web/public/share-card.png — the flat leaf mark from the landing page's wordmark, at the size a
-// preview thumbnail wants. The app icon is the same leaf painted for a home screen, and at 512px
-// square it fills the whole card instead of sitting beside the title.
+// The preview thumbnail: the flat leaf mark, at the size a card wants.
 const SHARE_IMAGE = '/share-card.png';
 
-// The parsed corpus, for the life of the isolate. It is ~1MB of JSON and never changes between
-// deploys, so parsing it once and holding it costs one slow request per isolate; a failure isn't
-// held, so a request during a deploy doesn't poison every request after it.
+// The parsed corpus, held for the life of the isolate. A failed load is not held, so a request
+// during a deploy doesn't poison the ones after it.
 let corpusCache = null;
 let corpusInFlight = null;
 
+// Returns the parsed corpus, fetching it from the assets binding on first use, or null if it can't
+// be read.
 export function loadCorpus(env, url) {
   if (corpusCache) return Promise.resolve(corpusCache);
   if (!corpusInFlight) {
@@ -66,9 +52,8 @@ export function loadCorpus(env, url) {
   return corpusInFlight;
 }
 
-// The app shell with this URL's own title and description written into it, or the shell untouched
-// when the path names nothing the corpus knows about — an unknown id, a user list, or any page
-// outside /read and /browse.
+// Returns the app shell with this URL's title and description written into it, or the shell
+// untouched when the path names nothing in the corpus.
 export async function withShareMeta(shell, url, env) {
   if (!SHAREABLE.test(url.pathname)) return shell;
   const meta = shareMetaFor(await loadCorpus(env, url), url.pathname);
@@ -83,11 +68,7 @@ export function applyShareMeta(shell, meta, url) {
     ['og:url', `${url.origin}${url.pathname}`],
     ['og:title', meta.title],
     ...(meta.description ? [['og:description', meta.description]] : []),
-    // The leaf mark, small and square, which is what puts it beside the text as a thumbnail
-    // rather than across the top of the card: WhatsApp and the rest pick that layout from the
-    // image's proportions, and the dimensions are declared so they can pick it without
-    // downloading the file first. 256px because Facebook's crawler — WhatsApp's too — drops an
-    // image below 200px square outright.
+    // Square and declared, so a crawler picks the thumbnail layout without fetching the file.
     ['og:image', `${url.origin}${SHARE_IMAGE}`],
     ['og:image:width', '256'],
     ['og:image:height', '256'],
@@ -103,23 +84,22 @@ export function applyShareMeta(shell, meta, url) {
     })
     .on(DESCRIPTION_META, {
       element(el) {
-        // Removed rather than left at the default in the one case that reaches here with nothing —
-        // a whole collection, which has no group above it to name. A bare title beats the same
-        // sentence about the app appearing under every page on the site.
+        // Removed rather than left at the shell's default, so a page with no description of its
+        // own shows the title alone.
         if (meta.description) el.setAttribute('content', meta.description);
         else el.remove();
       },
     })
     .on('head', {
       element(el) {
-        // A summary card with no image — the tags every platform reads, and nothing beyond them.
+        // A summary card, the layout every platform reads the same way.
         el.append(`${tags}<meta name="twitter:card" content="summary" />`, { html: true });
       },
     })
     .transform(shell);
 }
 
-// What this path's page calls itself, or null when nothing in the corpus answers to it.
+// Returns `{title, description}` for a path, or null when nothing in the corpus answers to it.
 export function shareMetaFor(corpus, pathname) {
   const match = corpus && SHAREABLE.exec(pathname);
   if (!match) return null;
@@ -133,55 +113,40 @@ export function shareMetaFor(corpus, pathname) {
   return section === 'read' ? suttaMeta(corpus, id) : nodeMeta(corpus, id);
 }
 
-// Ids are lowercase throughout the corpus while every reference on screen is capitalized, so a
-// link shared from what someone is reading arrives as "/read/SN35.33-42" and has to be folded
-// before any lookup — the same fold ReaderPage and LibraryPage apply to their own route ids.
+// Returns one sutta's title and description. Corpus ids are lowercase and shared links carry the
+// capitalized reference ("/read/SN35.33-42"), so the id is folded before the lookup.
 function suttaMeta(corpus, id) {
   const sutta = corpus.suttas[resolveSuttaId(corpus, id.toLowerCase())];
   if (!sutta) return null;
   const found = sutta.node ? findNode(corpus, sutta.node) : null;
   return {
     title: `${sutta.ref} · ${sutta.en}`,
-    // A sutta's title is its own name, so the leaf group holding it is still worth naming.
+    // Its own blurb, else where it sits, the chain running down to the leaf group holding it.
     description: summarize(sutta.blurb) ?? placeOf(found && [...found.ancestors, found.node], sutta.en),
   };
 }
 
+// Returns a browse group's title and description.
 function nodeMeta(corpus, id) {
   const found = findNode(corpus, id) ?? findNode(corpus, id.toLowerCase());
   if (!found) return null;
   const { node } = found;
   return {
     title: node.ref ? `${node.ref} · ${node.label}` : node.label,
-    // Its own description only. The page itself falls back to the nearest ancestor's and labels
-    // what it borrowed — "About SN35 · The Six Sense Fields" — because a paragraph about the
-    // saṁyutta above is not a description of these ten discourses. A card has nowhere to put that
-    // label, so the borrowed paragraph would read as though it described the group named right
-    // above it, and every vagga of a saṁyutta would preview identically. Saying where the group
-    // sits is the honest thing the card can say instead.
-    //
-    // A group is named in the title already, so that comes from the levels above it — and a whole
-    // collection, which has no levels above it, falls to its own English name ("Long Discourses"),
-    // the one thing left to say about a title written in Pali.
+    // Its own blurb only — never an ancestor's, which a card has nowhere to label as borrowed —
+    // then where it sits, then a collection's English name.
     description: summarize(node.blurb) ?? placeOf(found.ancestors) ?? node.sub ?? null,
   };
 }
 
-// Where a document or a group sits in the canon — "Saṁyutta Nikāya · Six Sense Fields" — for the
-// suttas and groups the source data describes nowhere. It is the one thing the card can say that
-// the title above it doesn't already: which part of the canon someone is being sent into.
+// Returns where something sits in the canon — "Saṁyutta Nikāya · Six Sense Fields" — as two
+// levels: the collection, and the deepest level under it carrying a blurb, else the nearest one.
+// Returns null for a chain with nothing above the collection.
 //
-// Two levels: the collection, and the closest one under it the source data thought worth
-// describing. Picking by description rather than by depth is what keeps the useful level — SN's
-// saṁyuttas are described and their vaggas are not, so "Six Sense Fields" survives and "Sixty
-// Abbreviated Texts" is passed over — and it sidesteps the pairs whose labels nearly repeat ("The
-// Aggregates" above "Aggregates"), since only one of the two can be chosen. Where nothing under
-// the collection is described, the nearest level stands in; where the title already carries a
-// level's name, that level is skipped, since 37 of AN's documents are named after the very vagga
-// holding them. A whole collection has nothing above it and gets no description at all.
+// `chain` runs top-down from the collection; whether it ends at the node or at its parent is the
+// caller's choice.
 //
-// `chain` runs top-down from the collection, and whether it ends at the node itself or at its
-// parent is the caller's decision — see the two above.
+// `exclude` is a label to skip, so a document named after its own vagga isn't placed in itself.
 function placeOf(chain, exclude) {
   if (!chain?.length) return null;
   const [collection, ...inner] = chain;
@@ -190,6 +155,7 @@ function placeOf(chain, exclude) {
   return [...new Set([collection.label, chosen?.label].filter(Boolean))].join(' · ') || null;
 }
 
+// Returns the uid of the document holding `id`, folding a single number into the batch it falls in.
 function resolveSuttaId(corpus, id) {
   if (corpus.suttas[id]) return id;
   const m = RANGE_QUERY.exec(id);
@@ -201,8 +167,10 @@ function resolveSuttaId(corpus, id) {
   return id;
 }
 
+// Each corpus's parsed batch ranges, built once.
 const rangeCache = new WeakMap();
 
+// Returns a map of batched uid to `{prefix, start, end}`.
 function rangesFor(corpus) {
   let cache = rangeCache.get(corpus);
   if (!cache) {
@@ -216,9 +184,8 @@ function rangesFor(corpus) {
   return cache;
 }
 
-// Every browsable id — a nikaya, or a group at any depth under it. `ancestors` runs top-down from
-// the nikaya to (but not including) the node itself, which is what lets a group borrow a
-// description from the level that has one.
+// Returns `{node, ancestors}` for a browsable id — a nikaya or a group at any depth under one — or
+// null. `ancestors` runs top-down from the nikaya, not including the node itself.
 function findNode(corpus, id) {
   for (const nikaya of corpus.nikayas) {
     if (nikaya.id === id) return { node: nikaya, ancestors: [] };
@@ -228,6 +195,7 @@ function findNode(corpus, id) {
   return null;
 }
 
+// findNode's recursive walk over one level of chapters.
 function findInChapters(chapters, id, ancestors) {
   for (const chapter of chapters ?? []) {
     if (chapter.id === id) return { node: chapter, ancestors };
@@ -237,8 +205,7 @@ function findInChapters(chapters, id, ancestors) {
   return null;
 }
 
-// Blurbs may carry inline HTML and run several sentences, so they are flattened to plain text and
-// trimmed at a word boundary.
+// Flattens a blurb's inline HTML to plain text and trims it to MAX_LENGTH at a word boundary.
 function summarize(html) {
   if (!html) return null;
   const text = html
@@ -252,6 +219,7 @@ function summarize(html) {
   return `${(lastSpace > 0 ? cut.slice(0, lastSpace) : cut).trimEnd()}…`;
 }
 
+// Escapes a value for use inside a double-quoted HTML attribute.
 function escapeAttr(value) {
   return value
     .replace(/&/g, '&amp;')
