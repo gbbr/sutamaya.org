@@ -1,8 +1,7 @@
 import { navigate, type RouteComponentProps } from '@reach/router';
 
-// Rendered both as the Router's `default`, for any path with no matching route, and directly by
-// RedirectToReader in App.tsx, for a single-segment path that isn't a known sutta uid — so it takes
-// no props beyond RouteComponentProps.
+// The page for an unrecognized path: the Router's `default`, and what App.tsx's RedirectToReader
+// falls back to for a single-segment path that isn't a known sutta uid.
 export function NotFoundPage(_props: RouteComponentProps) {
   return (
     <div data-component="NotFoundPage" className="flex flex-col items-center justify-center gap-4 h-full bg-paper px-6 text-center">

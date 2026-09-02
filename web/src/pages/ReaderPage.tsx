@@ -36,40 +36,32 @@ import { SuttaRowChips } from '../components/SuttaRowChips';
 import { MatchedText } from '../components/MatchedText';
 import { NotFoundPage } from './NotFoundPage';
 
-// How long a sutta has to stay open before it counts as visited. Long enough that stepping
-// through with Prev/Next doesn't fill the Recent list with everything it passed, short enough
-// that genuinely opening something always records it.
+// How long a sutta has to stay open before it counts as visited.
 const VISIT_DEBOUNCE_MS = 5000;
 
-// The PREVIOUS/NEXT caption over each half of the end-of-sutta nav — a label for the control
-// rather than part of the text, so it sits at the reader's "Contents" caption size instead of
-// riding the type scale. Capped rather than fixed at 11px: the titles beneath it are `fs - 4`,
-// which reaches 11 at FS_MIN, and a caption the same size as what it captions stops reading as one.
+// Type treatment of the PREVIOUS/NEXT captions in the end-of-sutta nav.
 const FOOT_NAV_LABEL: CSSProperties = { fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' };
+// Returns the size of those captions, capped so they stay under the titles they caption.
 const footNavLabelSize = (fs: number) => Math.min(11, fs - 6);
-// The key caps in those captions, held under the caption's own weight — see where it's applied.
+// Opacity of the key caps inside those captions.
 const FOOT_NAV_KEY_OPACITY = 0.72;
 
-// What SegmentedText gets while highlights are hidden. A stable identity, so hiding them doesn't
-// re-render every segment on each pass. Passing none rather than suppressing the paint inside
-// SegmentedText also drops the highlight spans themselves, so hidden text can't be tapped to open
-// a popup for a highlight that isn't on screen.
+// The highlights SegmentedText gets while they are hidden: none, and a stable identity so the
+// segments don't re-render.
 const NO_HIGHLIGHTS: Highlight[] = [];
 
 export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus } = useCorpus();
-  // A batched document — several inner suttas in one file, "dhp320-333" — has no corpus entry for
-  // any individual inner sutta, so resolving here lets every other use of `suttaId` below (text
-  // fetch, annotations, Prev/Next, breadcrumb) operate on the batch's id as if that had been
-  // requested directly. `requestedSubUid` is set only when the resolution changed something, and is
-  // used purely to scroll to and softly mark that inner sutta's segments once the batch loads.
-  // Case-folded before anything looks at it (see normalizeRouteId), so a link carrying the
-  // capitalization the app itself displays — "/read/SN35.33-42" — reads as the uid it names.
+  // The uid the URL asked for, case-folded (normalizeRouteId).
   const requestedId = routeSuttaId ? normalizeRouteId(routeSuttaId) : routeSuttaId;
+  // The document actually read: a batched document ("dhp320-333") has no corpus entry per inner
+  // sutta, so everything below — text fetch, annotations, Prev/Next, breadcrumb — works on the
+  // batch.
   const suttaId = corpus && requestedId ? resolveCanonicalSuttaId(corpus, requestedId) : requestedId;
+  // The inner sutta asked for, when the resolution above changed the id; its segments are scrolled
+  // to and washed once the batch loads.
   const requestedSubUid = requestedId && requestedId !== suttaId ? requestedId : undefined;
-  // The address bar is rewritten to match, replacing the entry rather than adding one, so what
-  // ends up bookmarked, shared on from here, or stored as the last location is the canonical form.
+  // Rewrite the address bar to the case-folded uid, replacing the history entry.
   useEffect(() => {
     if (requestedId && requestedId !== routeSuttaId) {
       navigate(`/read/${encodeURIComponent(requestedId)}`, { replace: true });
@@ -91,19 +83,15 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     cycleTheme,
   } = useReaderPrefs();
 
-  // Where to return to on close: the exact pane, nodeId and scroll position the reader was opened
-  // from (LibraryPage's onOpen), not the sutta's bare corpus location — which is the fallback for a
-  // direct link to /read/:suttaId, having no such origin. `fromView` rides alongside it on mobile,
-  // where LibraryPage shows one pane at a time, so closing lands on the right pane rather than
-  // whichever LibraryPage's suttaId-present-on-mount default would guess.
+  // Where the reader was opened from (LibraryPage's onOpen): `from` is the pane and node to close
+  // back to, `fromView` which pane to show there. Absent for a direct link to /read/:suttaId.
   const readerLocationState = location?.state as { from?: string; fromView?: 'tree' | 'list' } | undefined;
   const { from, fromView, navigateToSutta, closeToOrigin } = useReaderOrigin(readerLocationState);
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
   const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
   const [panel, setPanel] = useState(false);
-  // The panel remembers its tab across suttas and sessions (lib/readerPanelTab.ts), so every path
-  // that lands on a tab — the header's Menu button, the chips, the keyboard shortcuts, switching
-  // tab from inside the open panel — records it.
+  // The menu panel's tab, persisted across suttas and sessions (lib/readerPanelTab.ts) by every
+  // path that lands on one.
   const [tab, setTabState] = useState<ReaderPanelTab>(getReaderPanelTab);
   const setTab = useCallback((t: ReaderPanelTab) => {
     setTabState(t);
@@ -117,12 +105,9 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   const tapRef = useRef<{ x: number; y: number } | null>(null);
 
   const sutta = corpus && suttaId ? corpus.suttas[suttaId] : undefined;
-  // Where this sutta opens. A return — back or forward, a refresh, an app relaunch — resumes the
-  // remembered position; anything the reader chose now starts at the top (lib/entryKind.ts). A
-  // route already naming a segment to jump to takes neither, and scrolls itself instead (see the
-  // requestedSubUid effect below). Sampled per sutta id rather than per mount, since ReaderPage
-  // stays mounted across Prev/Next and only its route param changes, and held in a ref so it stays
-  // fixed while that id is on screen, however often this re-renders before the async restore runs.
+  // Where this sutta opens, sampled once per sutta id: 'stored' on a return — back or forward, a
+  // refresh, a relaunch (lib/entryKind.ts) — 'top' otherwise, and no restore at all when the route
+  // names an inner sutta to scroll to.
   const restoreRef = useRef<{ id?: string; restore: ScrollRestore; skipRestore: boolean }>({
     restore: 'stored',
     skipRestore: false,
@@ -150,23 +135,16 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     popStop,
     openPop,
   } = useSuttaReading(suttaId, 'reader', restoreRef.current);
-  // Auto-list membership is redundant here, since the highlight gutter and the note preview above
-  // already say as much, so suttaRowMeta's AUTO_LIST_IDS filter drops it from the chip row — as it
-  // does for ListPane, TreePane and ReaderSearchOverlay.
   const flatLists = useMemo(() => flattenListTree(lists), [lists]);
+  // The user lists this sutta belongs to, as chips. Auto-lists are filtered out by suttaRowMeta.
   const suttaChips = useMemo(
     () => (suttaId ? suttaRowMeta([suttaId], membership, {}, flatLists).get(suttaId)?.chips ?? [] : []),
     [suttaId, membership, flatLists]
   );
-  // Where this sutta lives in the browse tree (nikaya, any intermediate groups, down to its own
-  // leaf group) — shown above the title, each segment navigating via /browse/{id}, which already
-  // expands every ancestor and scrolls to it (see TreePane's useScrollToNode).
+  // This sutta's place in the browse tree, from nikaya down to its own leaf group.
   const breadcrumb = useMemo(() => (corpus && sutta ? breadcrumbFor(corpus, sutta.node) : []), [corpus, sutta]);
-  // Only DN9-style suttas with internal `<h2>`–`<h5>` structure (see build-corpus.mjs's
-  // `roleFor()`) have any of these — empty for most suttas, which is why the block that renders
-  // this is conditional on it below. The Contents list steps indentation/size/weight down one
-  // notch per level (h2 top-level, h5 deepest — e.g. DN2's numbered sub-sections), so the jump
-  // menu reads as the same 4-deep hierarchy the headings themselves render as in the body.
+  // The sutta's internal headings, for the Contents list. Empty for most suttas — only those with
+  // `<h2>`–`<h5>` structure of their own (build-corpus.mjs's `roleFor()`) have any.
   const headings = useMemo(
     () =>
       (segments || []).reduce<Array<{ i: number; text: string; level: 2 | 3 | 4 | 5 }>>((acc, s, i) => {
@@ -178,21 +156,17 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
 
   const theme = READER_THEMES[resolvedTheme];
 
-  // Drives the OS/browser chrome (mobile status bar, desktop PWA title bar) with the reader's own
-  // background while it's open — otherwise that chrome stays stuck on the shell's theme (see
-  // lib/themeColor.ts). Cleared on unmount so it falls back to whatever the shell was showing.
+  // Paints the OS chrome — mobile status bar, desktop PWA title bar — with the reader's own
+  // background while it is open (lib/themeColor.ts), and hands it back to the shell on unmount.
   useEffect(() => {
     setReaderThemeColor(theme.bg);
     return () => setReaderThemeColor(null);
   }, [theme.bg]);
 
-  // Tab title and search-result description track whatever sutta is actually open, so switching
-  // suttas or reopening the tab after a refresh both show the right ones without a round trip
-  // through the tree.
+  // The document title and meta description, tracking whichever sutta is open.
   useDocumentMeta(sutta ? `${sutta.ref} · ${sutta.en}` : '', sutta?.blurb);
 
-  // Drives the offline-download nudge banner in TreePane, which only makes sense to show once
-  // someone has actually opened a sutta — not the very first thing a fresh PWA install sees.
+  // Records that a sutta has been opened, which is what TreePane's offline-download nudge waits on.
   useEffect(() => {
     markSuttaOpened();
   }, []);
@@ -200,9 +174,8 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   useEffect(() => {
     setOpenSegs({});
     setOpenNotes({});
-    // A stray native selection can outlive the tap that opened this sutta (e.g. the list-row tap
-    // that navigated here) — clearing it on every fresh mount stops it from carrying over and
-    // blocking the first touch-scroll in the newly-opened reader.
+    // Clears a selection outliving the tap that opened this sutta, which would otherwise block the
+    // first touch-scroll.
     window.getSelection()?.removeAllRanges();
   }, [suttaId]);
 
@@ -214,21 +187,15 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     setOpenSegs,
   });
 
-  // "Visited" means opened, and feeds the Recent auto-list; it makes no claim about having read
-  // anything. The delay is a debounce, so a Prev/Next flick-through doesn't fill Recent with
-  // everything it passed, and is cancelled if the sutta changes before it elapses.
+  // Records the sutta as visited, feeding the Recent auto-list, once it has been open for
+  // VISIT_DEBOUNCE_MS.
   useEffect(() => {
     if (!suttaId || !sutta) return;
     const timer = window.setTimeout(() => markVisited(suttaId), VISIT_DEBOUNCE_MS);
     return () => window.clearTimeout(timer);
   }, [suttaId, sutta, markVisited]);
 
-  // Landed here through a deep link or search hit for one inner sutta of a batched document (see
-  // requestedSubUid above) — scroll to its first segment once the batch's text has loaded, a frame
-  // after load, as jumpToHighlight below does. Such a route opens with `skipRestore` (see
-  // restoreRef), so useScrollMemory writes no scroll position for this mount and there is nothing
-  // to override: on iOS Safari two scroll writes to one container milliseconds apart can stack
-  // rather than the second superseding the first, landing well past the intended target.
+  // Scrolls to the requested inner sutta's first segment, a frame after the batch's text loads.
   useEffect(() => {
     if (!requestedSubUid || !segments) return;
     const idx = segments.findIndex((s) => s.key.startsWith(`${requestedSubUid}:`));
@@ -236,33 +203,21 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     requestAnimationFrame(() => scrollToSegment(idx, 'start'));
   }, [requestedSubUid, segments, scrollToSegment]);
 
-  // The whole corpus in canonical browse order, not just the current category's siblings — so
-  // Prev/Next carries on into the next/previous category once the current one runs out, rather
-  // than stopping at its edge. Depends only on `corpus` (not `sutta`), so it's correct whether
-  // the reader was entered from browsing, a search result, or a deep link.
+  // The whole corpus in canonical browse order, which Prev/Next steps through across category
+  // boundaries.
   const siblingIds = useMemo(() => (corpus ? flatSuttaOrder(corpus) : []), [corpus]);
 
-  // Opened from a user list rather than the corpus browse tree, where Prev/Next stays inside that
-  // list's items and stops at either end: jumping away to wherever a sutta happens to live in the
-  // corpus would defeat the point of viewing a curated list. It also drives the "viewing from list
-  // X" indicator above the breadcrumb, so that narrowed scope is visible rather than silent.
-  // `from` is `/browse/{nodeId}/{suttaId}` (LibraryPage's onOpen) and stays constant across a
-  // Prev/Next run, since navigateToSutta carries it forward.
-  //
-  // Conditional on the sutta on screen actually being in that list, because `from` is a return
-  // address rather than a description of what is being read: opening a search hit from inside the
-  // reader keeps the same origin, and an unrelated sutta would otherwise claim membership in the
-  // header and get a Prev/Next scope with no position in it, dead in both directions. Falling back
-  // to the corpus order there is what the breadcrumb already shows.
+  // The user list the reader was opened from, when the sutta on screen is one of its items: it
+  // scopes Prev/Next to that list and shows above the breadcrumb. Undefined otherwise, including
+  // for a sutta reached from inside the reader that the list doesn't hold.
   const listOrigin = useMemo(() => {
     const nodeId = from?.match(/^\/browse\/([^/]+)\//)?.[1];
     const list = nodeId ? lists.find((l) => l.id === decodeURIComponent(nodeId)) : undefined;
     return suttaId && list?.items.includes(suttaId) ? list : undefined;
   }, [from, lists, suttaId]);
 
-  // The sutta one Prev/Next step from `base`, or undefined at either end of the run. A list
-  // origin stops dead at its own ends; the corpus order clamps instead, which is the same thing
-  // said differently (the clamped id equals the one stepped from).
+  // Returns the sutta one Prev/Next step from `base`, or undefined at either end of the run —
+  // the list origin's ends, or the ends of the canon.
   const neighbourOf = useCallback(
     (base: string | undefined, dir: 1 | -1) => {
       if (!base) return undefined;
@@ -278,10 +233,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     [listOrigin, siblingIds]
   );
 
-  // Fetch both neighbours once this sutta's text has arrived, so stepping to either has it in hand
-  // — through loadSuttaText's module-level cache, which useSuttaText reads synchronously — rather
-  // than spending the step animation on a request. Waiting on `segments` keeps these off the wire
-  // while the sutta being read is still fetching, which on a slow connection is what matters.
+  // Prefetches both neighbours into loadSuttaText's cache, once this sutta's own text has arrived.
   useEffect(() => {
     if (!segments) return;
     for (const dir of [1, -1] as const) {
@@ -290,9 +242,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     }
   }, [neighbourOf, suttaId, segments]);
 
-  // The two neighbours, resolved to corpus entries so the foot of the sutta can name where
-  // Prev/Next actually goes. Either is undefined at the end of the run — a list origin's own ends,
-  // or the ends of the canon.
+  // The two neighbours as corpus entries, so the foot of the sutta can name where Prev/Next goes.
   const footNeighbours = useMemo(() => {
     const at = (dir: 1 | -1) => {
       const id = neighbourOf(suttaId, dir);
@@ -301,27 +251,21 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     return { prev: at(-1), next: at(1) };
   }, [corpus, neighbourOf, suttaId]);
 
-  // The article element the step animation runs on — the measure column inside the scrolling
-  // pane, so the header and the highlight gutter stay put while the text itself travels.
+  // The measure column the step animation runs on, inside the scrolling pane.
   const articleRef = useRef<HTMLDivElement>(null);
-  // The direction to animate in on arrival, read by the layout effect below. A ref rather than
-  // state, because it is consumed exactly once by the render that lands on `id`: as state it would
-  // linger, and returning to that sutta by another route would replay an entrance for a step nobody
-  // took.
+  // The sutta a Prev/Next step is heading to and the direction it travels, consumed once by the
+  // render that lands on it.
   const enterOnArrival = useRef<{ id: string; dir: 1 | -1 } | null>(null);
 
+  // Steps one sutta forward or back, carrying the reader's origin along (navigateToSutta).
   function step(dir: 1 | -1) {
     const next = neighbourOf(suttaId, dir);
     if (!next) return;
     enterOnArrival.current = { id: next, dir };
-    // navigateToSutta carries `from`/`fromView` forward so closing after stepping through several
-    // suttas still returns to wherever the reader was originally opened from, not the last-stepped
-    // sutta's own location.
     navigateToSutta(next);
   }
 
-  // Animate the arriving sutta in, on the render that lands on it. The navigation itself is never
-  // delayed for this — the step has already happened by the time anything moves.
+  // Animates the arriving sutta in, on the render that lands on it.
   useLayoutEffect(() => {
     const to = enterOnArrival.current;
     enterOnArrival.current = null;
@@ -331,10 +275,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     if (to && to.id === suttaId) animateStep(el, to.dir);
   }, [suttaId]);
 
-  // Going to a highlight is a deliberate act about highlights, so it turns them back on for good
-  // rather than revealing one transiently — landing on a state you have to leave again is worse.
-  // The reveal has rendered by the time the deferred scroll runs, so scrollToSegment can still find
-  // the `data-hl-id` span it centres on.
+  // Scrolls to a highlight, closing the panel and turning highlights back on if they were hidden.
   function jumpToHighlight(segIndex: number, highlightId?: string) {
     setPanel(false);
     revealHighlights();
@@ -350,16 +291,9 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     navigateToSutta(id);
   }
 
-  // Opening the Pali — or a footnote — under the last line on screen puts it below the fold, where
-  // the reader has to scroll for what they just asked to see. This brings it up by the least it
-  // can, and only when something is actually clipped, so a tap in the middle of the page moves
-  // nothing and the English line the reveal belongs to stays where the eye left it.
-  //
-  // This is `scrollIntoView({ block: 'nearest' })` on the reveal, done by hand for the reason
-  // scrollToSegment (useSuttaReading) gives: Settings > UI scale is CSS `zoom`, which
-  // getBoundingClientRect reports through while scroll writes don't, so the offset has to be
-  // divided by the scale — and scrollIntoView isn't zoom-aware at all. The cap is what makes a
-  // reveal taller than the pane settle at its own first line rather than chase its bottom.
+  // Scrolls a just-opened Pali line or footnote into view, by the least it takes and only when it
+  // is clipped. `scrollIntoView({ block: 'nearest' })` by hand, since that isn't aware of the CSS
+  // `zoom` Settings' UI scale applies — see scrollToSegment (useSuttaReading).
   const revealIntoView = useCallback(
     (i: number, kind: 'pali' | 'note') => {
       requestAnimationFrame(() => {
@@ -378,10 +312,8 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     [scrollRef]
   );
 
-  // Wrapped in useCallback, as onToggleNote below is, so a freshly-allocated function on every
-  // ReaderPage render doesn't defeat SegmentedText's per-segment memoization. Collapsing the Pali
-  // on the segment holding the dictionary dock's active word also closes the dock, which would
-  // otherwise keep pointing at a word no longer visible.
+  // Shows or hides one segment's Pali, closing the dictionary dock when it collapses the segment
+  // the dock's word is in. Stable, as onToggleNote is, so SegmentedText's memoization holds.
   const onToggleSeg = useCallback(
     (i: number) => {
       setOpenSegs((s) => {
@@ -437,10 +369,8 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     cycleTheme,
   });
 
-  // App.tsx renders no route at all until the corpus has loaded, so this is never "still
-  // fetching" — it is a uid this corpus doesn't have: a shared link with a typo, or a bookmark
-  // from before a refresh renamed it. A placeholder here was permanent, with no title, no close
-  // button and no keyboard way out.
+  // A uid this corpus doesn't have — never a pending load, since App.tsx renders no route until
+  // the corpus is in.
   if (!corpus || !sutta || !suttaId) return <NotFoundPage />;
 
   const faceFamily = READER_FACES[face];
@@ -454,61 +384,41 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
         {
           background: theme.bg,
           color: theme.fg,
-          // Turns off pinch- and double-tap-zoom over the text, leaving vertical scrolling. Without
-          // it Safari delays every `click` to see whether a second tap follows, which is felt as a
-          // lag before the dictionary opens on a word tap.
+          // Vertical scrolling only: no pinch or double-tap zoom, and no Safari click delay.
           touchAction: 'pan-y',
           '--reader-selection': theme.selection,
         } as CSSProperties
       }
       onPointerDown={onReaderPointerDown}
       onPointerUp={onReaderPointerUp}
-      // The selection is read from the whole reader, not just the text: a drag that runs off the
-      // top or bottom of the viewport lifts over the scroll container or the header, and a handler
-      // bound to the segments themselves would never see it — leaving a live selection with no
-      // popup. Releases elsewhere are harmless, since a selection with either end outside the
-      // rendered segments yields no popup.
+      // Bound to the whole reader, not the text, so a drag that lifts over the header or the
+      // scroll container still opens the highlight popup.
       onMouseUp={onTextUp}
       onTouchEnd={onTextUp}
     >
-      {/* The title is positioned against the header rather than laid out between the buttons: the
-          right side carries two controls to the left's one, so a flex-centred title would sit off
-          to the left by half that difference. Absolute centring keeps it on the page's own centre
-          line however many buttons flank it. `max-w` keeps a long one clear of both groups, and
-          the flanking groups keep their own layout via `justify-between`. */}
+      {/* The header: close on the left, search and menu on the right, and the title absolutely
+          centred on the page rather than between them, since the two sides carry different
+          numbers of buttons. */}
       <header className="font-sans flex-none relative flex items-center justify-between px-5 py-3.5 text-ui-base" style={{ borderBottom: `1px solid ${theme.rule}` }}>
-        {/* `p-3.5 -m-3.5`: a 47px touch area around the 19px icon, clearing the 44px minimum both
-            platforms ask for, while the negative margin keeps the icon spaced as it looks rather
-            than as it's hit. The right-hand pair trades some of that padding away to sit closer
-            together — see below. */}
+        {/* `p-3.5 -m-3.5`: a 47px touch area around the 19px icon, with the negative margin
+            collapsing the button's layout box back to the icon. */}
         <button className="flex items-center p-3.5 -m-3.5" title="Close" onClick={closeReader}>
           <X size={19} strokeWidth={1.75} />
         </button>
-        {/* Tapping the title bar scrolls back to the top of the sutta — the same "tap the top of
-            the screen" convention most native iOS apps use. That convention is normally free
-            (UIScrollView's own scrollsToTop, wired to a tap on the physical status bar), but it
-            only ever applies to a page's own document-level scroll; this reader's actual
-            scrolling happens in `scrollRef`'s nested div (`.fixed inset-0` root, `html`/`body`
-            themselves never scroll — see index.css), which that native behavior never reaches,
-            so it has to be done by hand here instead. */}
+        {/* Tapping the title scrolls back to the top of the sutta, the iOS status-bar convention.
+            Done by hand, since the reader scrolls in a nested div rather than the document. */}
         <button
           className="absolute left-1/2 -translate-x-1/2 max-w-[calc(100%-14rem)] truncate opacity-75 font-serif cursor-pointer"
           aria-label="Scroll to top"
           title="Scroll to top"
           onClick={() => scrollRef.current && animateScrollTop(scrollRef.current, 0)}
         >
-          {/* The English title is what identifies a sutta to a reader who has scrolled past the
-              h1, so it takes the header wherever it fits. Below `mobile` it can't: the flanking
-              buttons leave ~166px, which truncates most titles mid-word, so a narrow screen keeps
-              the bare ref and relies on the h1 below. */}
+          {/* The bare ref on mobile, where the flanking buttons leave too little room for the
+              English title. */}
           {mobile ? sutta.ref : `${sutta.ref} · ${sutta.en}`}
         </button>
-        {/* These two sit closer than the header's 47px touch areas allow, so they take a smaller
-            one: `p-3 -m-3` is 43px around each 19px icon. The negative margins collapse each
-            button's layout box back to the icon, so the gap has to cover the 24px of padding they
-            hide before it separates anything — gap-6 sits the two hit areas exactly edge to edge,
-            the closest the icons can be drawn without one button catching taps meant for the
-            other. */}
+        {/* Search and Menu, on a smaller 43px touch area (`p-3 -m-3`) so they can sit closer;
+            `gap-6` puts the two hit areas edge to edge. */}
         <div className="flex items-center gap-6">
           <button
             className="flex items-center p-3 -m-3"
@@ -535,17 +445,11 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
         </div>
       </header>
 
-      {/* `overflowX: hidden` so the step animation's translateX can't briefly make the pane
-          horizontally scrollable (or flash a scrollbar) as the incoming sutta slides in from
-          off to the right — `.sc` only sets overflow-y, and CSS resolves the other axis to
-          `auto` rather than leaving it visible. */}
+      {/* The scrolling pane. `overflowX: hidden` keeps the step animation's translateX from making
+          it horizontally scrollable, which `.sc` alone doesn't cover. */}
       <div ref={scrollRef} className="sc flex-1" style={{ padding: '32px 22px 120px', overflowX: 'hidden' }}>
-        {/* Stepping to another sutta carries this column off the way the reader is travelling and
-            brings the next one in behind it, so Prev/Next reads as movement through the canon
-            rather than the screen silently becoming a different sutta. Driven imperatively from
-            `step` above rather than by a class, since each step has to restart an animation on an
-            element that never unmounts, and the navigation between the two halves waits on the
-            exit's own completion. */}
+        {/* The measure column. A Prev/Next step animates it out and the next sutta in, driven
+            imperatively from `step` above, since this element never unmounts. */}
         <div ref={articleRef} style={{ maxWidth: measureWidth, margin: '0 auto' }}>
           {listOrigin && (
             <nav className="font-sans flex items-center gap-1" style={{ fontSize: fs - 6, marginBottom: 7, color: theme.dim }}>
@@ -570,16 +474,9 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
                   <button
                     className="hover:underline"
                     onClick={() =>
-                      // Every segment lands the same place — the sutta's own enclosing leaf
-                      // group, with the sutta itself highlighted/scrolled-to there — regardless of
-                      // which ancestor in the chain was actually clicked. `flashNodeId` carries
-                      // which segment was actually clicked through to the tree pane, which briefly
-                      // scrolls to and highlights that exact row (it may be an ancestor above the
-                      // sutta's own leaf group) — see LibraryPage/TreePane. On mobile (single pane
-                      // at a time), the flash only lives in the tree pane, so clicking the sutta's
-                      // own leaf category (already the list pane's contents) opens the list as
-                      // before, but clicking any ancestor above that opens the tree pane instead —
-                      // otherwise the flash would land on a pane that isn't shown.
+                      // Every segment navigates to the sutta's own leaf group, and names the
+                      // clicked one as `flashNodeId` for the tree pane to scroll to and highlight.
+                      // The pane opened is the one that flash will land in.
                       navigate(`/browse/${encodeURIComponent(sutta.node)}/${encodeURIComponent(suttaId)}`, {
                         state: tagIntent({ fromView: b.id === sutta.node ? 'list' : 'tree', flashNodeId: b.id }),
                       })
@@ -591,20 +488,16 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
               ))}
             </nav>
           )}
-          {/* Display leading, but not below the face's own glyph extent: Georgia's ascender plus
-              descender is ~1.136em, and the serif faces with longer extenders (Palatino,
-              Newsreader) want more still, so anything tighter overlaps a descender with the next
-              line's ascender on the long titles — the only ones that wrap. */}
+          {/* The sutta's English title. Display leading, held above the serif faces' own glyph
+              extent so a wrapped title's descenders clear the next line. */}
           <h1 className="font-serif" style={{ margin: 0, fontSize: Math.round(fs * 1.72), fontWeight: 600, lineHeight: 1.2, letterSpacing: '-.015em' }}>
             {sutta.en}
           </h1>
           <div className="font-serif italic" style={{ fontSize: fs - 2, marginTop: 5, color: theme.dim }}>
             {sutta.pali}
           </div>
-          {/* Light's `theme.dim` is tuned for menu-row labels, which sit at a larger size; on this
-              small metadata line it reads louder than the title it sits under. Paled to the lightest
-              warm gray that still clears 4.5:1 on light's paper. Sepia and dark's own `dim` are
-              already alpha-composited well below their `fg`, so they need no equivalent. */}
+          {/* Reading time and source. The light theme takes a paler gray than its own `theme.dim`,
+              which is tuned for larger menu labels; it is the lightest that clears 4.5:1 there. */}
           <div className="font-sans" style={{ fontSize: fs - 6, marginTop: 9, color: resolvedTheme === 'light' ? '#7A7168' : theme.dim }}>
             {sutta.min} min read ·{' '}
             Source:{' '}
@@ -634,15 +527,12 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
                 setNoteFocusSignal((s) => s + 1);
               }}
             >
-              {/* The em dash, not a quote rule, marks this as the reader's own note — a left rule
-                  reads as a passage quoted from the sutta. Matches the note on a Library list row. */}
+              {/* The em dash marking this as the reader's own note, as a Library list row does. */}
               <span aria-hidden className="flex-none">
                 —
               </span>
-              {/* Five lines at most, so a long note can't push the sutta itself off the screen.
-                  Tapping it opens the note box, where the whole thing is there to read and edit. */}
-              {/* No query here — nothing is being searched. MatchedText is what renders a note's
-                  own `*bold*`, and it draws the text plainly when there are no words to mark. */}
+              {/* The note itself, clamped to five lines. MatchedText renders its `*bold*`; the
+                  empty query marks no words. */}
               <span className="line-clamp-5 whitespace-pre-wrap">
                 <MatchedText text={notes[suttaId]} query="" notation />
               </span>
@@ -657,13 +547,9 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
               fs={fs}
               onChipClick={(chipId) => {
                 const { list } = resolveListById(chipId, flatLists);
-                // Must explicitly tag `fromView: 'list'` rather than relying on LibraryPage's own
-                // "no router state at all -> fresh arrival" fallback (see its `view` init) —
-                // @reach/router's navigate() always stamps a `{key}` onto location.state even when
-                // no state is passed, so that fallback never actually fires for this (or any other)
-                // in-app navigate() call; without this, the pane shown depended on whatever view
-                // happened to be persisted from last time (works by accident when that was already
-                // 'list', shows the tree instead when it wasn't).
+                // `fromView` is tagged explicitly: @reach/router stamps a `{key}` onto
+                // location.state even when none is passed, so LibraryPage's no-state fallback
+                // never fires for an in-app navigate().
                 if (list) navigate(`/browse/${list.id}/${suttaId}`, { state: tagIntent({ fromView: 'list' }) });
               }}
               onHighlightClick={(e) => {
@@ -687,12 +573,8 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
                   Contents
                 </div>
                 {headings.map((h) => {
-                  // Step size for each level below the top (h2): one indent/size/opacity notch
-                  // per level, so h2→h5 read as a real 4-deep hierarchy rather than 2 flat tiers.
-                  // Anchored to the reader's own Size preference (`fs`, same value driving
-                  // SegmentedText's fontSize below) rather than a fixed pixel value, so the
-                  // Contents list scales along with the body text instead of staying fixed while
-                  // everything else in the reader grows/shrinks.
+                  // How many levels below h2 this heading sits; each one steps the indent, size
+                  // and opacity down a notch.
                   const step = h.level - 2;
                   return (
                     <button
@@ -752,33 +634,24 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
             <div className="font-sans text-sm opacity-50">Loading…</div>
           )}
 
-          {/* Prev/Next where the reader actually finishes, rather than as two more icons in the
-              header — the step to a neighbouring sutta is wanted at the end of the text, not at
-              every moment the header's own controls are. Only shown once the text is on screen, so
-              it can't sit under a spinner. */}
+          {/* Prev/Next at the foot of the text, shown once the text itself is on screen. */}
           {segments && (footNeighbours.prev || footNeighbours.next) && (
             <nav className="font-sans" style={{ marginTop: 30 }}>
               <div style={{ height: 1, background: theme.rule, marginBottom: 14 }} />
-              {/* One row, previous anchored left and next right, each captioned with the direction
-                  it goes. Each half takes an equal share and truncates within it; the empty spacer
-                  keeps `next` on the right when there is no `prev` to push it there. The flex row
-                  is each button's inner span, never the button itself: WebKit sizes a button's own
-                  content box to max-content, so a flex item inside one never shrinks and
-                  `truncate` has nothing narrower to clip to. */}
+              {/* One row: previous left, next right, each half an equal share that truncates
+                  within it, with an empty spacer standing in for a missing neighbour. Each
+                  button's inner span carries the flex row, since WebKit sizes a button's own
+                  content box to max-content and `truncate` would have nothing to clip to. */}
               <div className="flex items-center gap-5" style={{ fontSize: fs - 4 }}>
                 {footNeighbours.prev ? (
                   <button className="block flex-1 min-w-0 text-left hover:opacity-70" onClick={() => step(-1)}>
-                    {/* The label is inset by the chevron's own width plus the row gap, so it starts
-                        on the same vertical as the title beneath it rather than hanging left of it. */}
-                    {/* The caption doubles as where the keyboard step is named, since this is the
-                        one place in the reader that step is already on screen. */}
+                    {/* The caption, inset by the chevron's width plus the row gap so it starts
+                        above the title, and carrying the keyboard step's key cap. */}
                     <span
                       className="flex items-center gap-1.5"
                       style={{ marginLeft: fs, fontSize: footNavLabelSize(fs), ...FOOT_NAV_LABEL, color: theme.dim }}
                     >
                       Previous
-                      {/* Paler than the caption it sits beside: the word names the destination,
-                          the cap only says how else to get there. */}
                       {SHOWS_KEY_HINTS && (
                         <span className="inline-flex" style={{ opacity: FOOT_NAV_KEY_OPACITY }}>
                           <KeyCap keyName={SHORTCUTS.readerNav.keys[0]} theme={theme} small />
@@ -787,8 +660,8 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
                     </span>
                     <span className="flex items-center gap-1.5" style={{ marginTop: 3 }}>
                       <ChevronLeft size={fs - 6} strokeWidth={2} className="flex-none" style={{ color: theme.dim }} />
-                      {/* Below `mobile` the two halves are ~150px each, which truncates every title
-                          to a few words — the bare ref identifies the destination better there. */}
+                      {/* The bare ref on mobile, where each half is ~150px and every title
+                          truncates to a few words. */}
                       <span className="min-w-0 truncate" style={{ color: theme.fg }}>
                         {mobile ? footNeighbours.prev.ref : `${footNeighbours.prev.ref} · ${footNeighbours.prev.en}`}
                       </span>
@@ -848,19 +721,14 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           theme={theme}
           onClose={() => setMenuOpen(false)}
           onOpenTab={(t) => {
-            // Opening straight onto the Appearance tab's mobile bottom sheet shouldn't leave an open
-            // DictionaryDock sitting underneath it wasting space — desktop's drawer never overlaps
-            // the dock, so this is mobile-only (see ReaderMenuPanel's `onTabChange` for the other
-            // path into the same state).
+            // The Appearance tab's mobile bottom sheet closes the dictionary dock it would
+            // otherwise sit on top of; desktop's drawer never overlaps it.
             if (mobile && t === 'text') closeDict();
             setTab(t);
             setPanel(true);
           }}
-          // The canonical id rather than whatever the address bar holds: a reader arrives here by
-          // several routes — a capitalized reference, a verse number inside a batched document —
-          // and the link that travels should be the one this page settled on. The Worker gives that
-          // path its own title and description on a cold load, so the preview names the sutta
-          // (worker/src/shareMeta.js).
+          // The canonical id rather than whatever the address bar holds. The Worker gives that
+          // path its own title and description on a cold load (worker/src/shareMeta.js).
           shareUrl={`${window.location.origin}/read/${encodeURIComponent(suttaId)}`}
           shareTitle={`${sutta.ref} · ${sutta.en}`}
         />
@@ -889,8 +757,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           pop={pop}
           theme={theme}
           mobile={mobile}
-          // Making a highlight while they're hidden turns them back on — otherwise the act
-          // produces nothing visible and reads as a failed save. Erasing one doesn't.
+          // Making a highlight while they are hidden turns them back on; erasing one doesn't.
           onPick={(color) => {
             revealHighlights();
             pick(color);
