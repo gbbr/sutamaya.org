@@ -19,28 +19,19 @@ interface LayoutState extends LayoutPrefs {
   dragTree: (e: ReactPointerEvent) => void;
 }
 
-// The tree pane's width before the user drags the divider, and what "Reset" restores. Exported so
-// the drag test starts from this value rather than a copy of it.
+// The tree pane's width before the divider is dragged, and what "Reset" restores.
 export const DEFAULT_TREE_W = 360;
 
 const DEFAULTS: LayoutPrefs = { treeW: DEFAULT_TREE_W };
 
-// Also read by lib/uiPrefs.ts (mobile gets a baked-in UI scale boost) — kept as one exported
-// constant rather than two literals so the two can't drift apart.
+// Viewport width below which the app is in its mobile layout. Also read by lib/uiPrefs.ts.
 export const MOBILE_BREAKPOINT = 860;
 
 const LayoutContext = createContext<LayoutState | null>(null);
 
-// Eats the one synthetic compatibility click a touch device fires after the divider drag ends. That
-// click hit-tests at the lift-off point rather than at the divider, and the divider stops tracking
-// the finger once the drag clamps at its min or max — so an overshoot past either end lands the
-// click on whichever row is under the finger and opens a sutta nobody tapped. Cancelling
-// `pointerdown` and `touchend` is meant to suppress it, but WebKit in a standalone PWA honours
-// neither reliably: touchstart arrives uncancelable there, and identical gestures sometimes
-// synthesize the click anyway. Swallowing it here doesn't depend on the browser cooperating.
-//
-// Disarmed by the next `pointerdown` as well as by the timeout, so a real tap — which always begins
-// with one — can never be the click that gets eaten.
+// Eats the compatibility click a touch device synthesizes after the divider drag ends, which would
+// otherwise open whichever row the finger lifted over. Disarmed by the next `pointerdown` as well
+// as by its timeout, so a real tap can never be the click that gets eaten.
 function swallowNextClick() {
   const onClick = (e: MouseEvent) => {
     e.preventDefault();
@@ -61,10 +52,9 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
   const [prefs, setPrefs] = usePersistedState<LayoutPrefs>(LAYOUT_PREFS_KEY, DEFAULTS);
   const [w, setW] = useState(() => (typeof window !== 'undefined' ? window.innerWidth : 1440));
   const drag = useRef<{ key: 'treeW'; x0: number; w0: number; min: number; max: number; moved: boolean } | null>(null);
-  // Live width while dragging the tree-pane divider, kept out of `prefs` — and so out of
-  // usePersistedState's un-debounced `localStorage.setItem` — until the drag ends, since committing
-  // per `pointermove` would mean a synchronous storage write on every tick. The ref mirror lets
-  // `onUp`, a stable closure registered once below, read the latest value.
+  // Live width while the divider is being dragged, held out of `prefs` — and so out of
+  // usePersistedState's storage write — until the drag ends. The ref mirror is what `onUp`, a
+  // stable closure, reads.
   const [liveTreeW, setLiveTreeW] = useState<number | null>(null);
   const liveTreeWRef = useRef<number | null>(null);
 
@@ -84,8 +74,8 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
         const committed = liveTreeWRef.current;
         setPrefs((p) => ({ ...p, treeW: committed }));
       }
-      // Only a drag that actually moved displaces what's under the finger — a bare tap on the
-      // strip has nothing to swallow, and arming for it would eat a click the user does want.
+      // Only a drag that moved displaces what is under the finger; a bare tap on the strip has no
+      // click worth eating.
       if (drag.current?.moved) swallowNextClick();
       drag.current = null;
       liveTreeWRef.current = null;
@@ -117,9 +107,8 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
       paneW,
       resetTree: () => setPrefs((p) => ({ ...p, treeW: DEFAULTS.treeW })),
       dragTree: (e) => {
-        // Asks the browser to suppress the compatibility mouse events a touch gesture synthesizes,
-        // and stops a mouse drag selecting text as it sweeps across both panes. `swallowNextClick`
-        // above is the fallback for browsers that don't honour it.
+        // Asks the browser to suppress the mouse events a touch gesture synthesizes, and stops a
+        // mouse drag selecting text across both panes. `swallowNextClick` is the fallback.
         e.preventDefault();
         drag.current = { key: 'treeW', x0: e.clientX, w0: paneW.tree, min: 250, max: paneW.treeMax, moved: false };
         document.body.style.userSelect = 'none';
