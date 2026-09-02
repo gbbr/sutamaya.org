@@ -1,13 +1,17 @@
 // The corpus: loading corpus.json and per-sutta text, walking the browse tree, and search.
 //
-// **Search** covers a sutta's ref, title, Pali, blurb, the reader's own note, and the names of the
-// lists holding it — never the sutta text itself. A query is folded to a diacritic-insensitive key
-// (searchKey), and every word must be found, though not adjacent and not in one field, so "raft
-// simile" reaches a blurb reading "the simile of the raft". Contiguity and field are ranking
-// signals instead, in four buckets: the phrase in the ref/title/Pali, then every word there, then
-// the phrase anywhere, then every word anywhere. Within a bucket, a sutta the reader has filed,
-// noted or highlighted sorts first, and the rest keep the corpus's build order. The boost never
-// crosses buckets, so a title match always beats a blurb match.
+// **Search** covers a sutta's ref, title, Pali, blurb, the reader's own note, the names of the
+// lists holding it, and the topics it is indexed under — never the sutta text itself. A query is
+// folded to a diacritic-insensitive key (searchKey), and every word must be found, though not
+// adjacent and not in one field, so "raft simile" reaches a blurb reading "the simile of the raft".
+// Contiguity and field are ranking signals instead, in five buckets: the phrase in the
+// ref/title/Pali, then every word there, then the phrase anywhere, then every word anywhere, then a
+// topic. Within a bucket, a sutta the reader has filed, noted or highlighted sorts first, and the
+// rest keep the corpus's build order. The boost never crosses buckets, so a title match always
+// beats a blurb match.
+//
+// A topic hit is last because it is the one match a reader can't see in the row: `SearchHit.topics`
+// names the terms that matched, and a caller that shows a match at all must show those.
 //
 // A query naming one sutta of a batched document ("dhp325" inside "dhp320-333") matches the batch
 // and carries the inner uid as `matchedId`, since the corpus has no entry of its own for it.
@@ -245,6 +249,9 @@ export interface SearchHit {
   matchedId?: string;
   // True when the query reached this sutta only through the name of a list holding it.
   listOnly?: boolean;
+  // The topics the query matched, set only when nothing else in the row did — the row has to say
+  // why it is in the results, or a topic hit reads as a bug.
+  topics?: string[];
 }
 
 // How many hits a caller renders; searchCorpus still returns every match, so a total can be shown.
@@ -254,7 +261,7 @@ export const SEARCH_RESULTS_CAP = 80;
 export const SEARCH_PLACEHOLDER = 'Search suttas and lists';
 export const READER_SEARCH_PLACEHOLDER = 'Search suttas';
 export const SEARCH_SCOPE_NOTE =
-  'Search covers sutta numbers, titles, summaries and your own notes — not the text of the suttas.';
+  'Search covers sutta numbers, titles, summaries, topics and your own notes — not the text of the suttas.';
 export const SEARCH_NO_MATCHES = `No matches. ${SEARCH_SCOPE_NOTE}`;
 
 // Folds text to a case- and diacritic-insensitive key, so a typed "a" matches "ā". Exported for
@@ -279,6 +286,61 @@ function staticHaystacksFor(corpus: Corpus): Map<string, { title: string; blurb:
     staticHaystackCache.set(corpus, cache);
   }
   return cache;
+}
+
+// A topic as search reads it: the label the reader sees, and the two folded keys it matches on. A
+// headword is English with the Pali in parentheses ("composure (samādhi)"), and the two halves take
+// different rules — see topicMatches. `en` also carries whatever wording CIPS used for a term this
+// app renames, so "concentration" and "composure" reach the same row.
+interface TopicKey {
+  label: string;
+  en: string;
+  pali: string;
+}
+
+const topicCache = new WeakMap<Corpus, Map<string, TopicKey[]>>();
+
+const PARENTHESIZED = /\(([^)]*)\)/g;
+
+function topicsFor(corpus: Corpus): Map<string, TopicKey[]> {
+  let cache = topicCache.get(corpus);
+  if (!cache) {
+    cache = new Map();
+    const aliases = corpus.topicAliases ?? {};
+    for (const [id, s] of suttaEntries(corpus)) {
+      if (!s.topics?.length) continue;
+      cache.set(
+        id,
+        s.topics.map((label) => {
+          const text = aliases[label] ? `${label} ${aliases[label]}` : label;
+          return {
+            label,
+            en: searchKey(text.replace(PARENTHESIZED, ' ')),
+            pali: searchKey([...text.matchAll(PARENTHESIZED)].map((m) => m[1]).join(' ')),
+          };
+        })
+      );
+    }
+    topicCache.set(corpus, cache);
+  }
+  return cache;
+}
+
+// Whether `word` matches a word in `key`, either from its start or in full. `whole` is what keeps a
+// topic's Pali from answering an English query: "money" prefixes the Pali "moneyya" without being
+// any part of what that word means, where prefixing the English is just the reader still typing.
+function matchesWordIn(key: string, word: string, whole: boolean): boolean {
+  for (let i = key.indexOf(word); i >= 0; i = key.indexOf(word, i + 1)) {
+    if (i > 0 && /[a-z0-9]/.test(key[i - 1])) continue;
+    if (!whole || !/[a-z0-9]/.test(key[i + word.length] ?? '')) return true;
+  }
+  return false;
+}
+
+// Whether a topic answers `q` as typed, or every one of its `words` apart.
+function topicMatches({ en, pali }: TopicKey, q: string, words: string[]): boolean {
+  const has = (w: string) => matchesWordIn(en, w, false) || matchesWordIn(pali, w, true);
+  return has(q) || words.every(has);
 }
 
 interface UidRange {
@@ -378,10 +440,12 @@ function savedIds(lists: ListDef[], notes: Record<string, string>, highlights: H
 //   words in title  – every word there, apart
 //   phrase          – the query as typed in a blurb, note or list name
 //   words           – every word, anywhere search reads
+//   topic           – a topic the sutta is indexed under, when nothing above matched
 const RANK_PHRASE_IN_TITLE = 0;
 const RANK_WORDS_IN_TITLE = 1;
 const RANK_PHRASE = 2;
 const RANK_WORDS = 3;
+const RANK_TOPIC = 4;
 
 // Returns every sutta matching `query`, best first.
 export function searchCorpus(
@@ -397,6 +461,7 @@ export function searchCorpus(
   // two: title, then everything else.
   const words = q.split(/\s+/);
   const staticHaystacks = staticHaystacksFor(corpus);
+  const topicsById = topicsFor(corpus);
   const rangeQuery = q.match(RANGE_QUERY);
   const ranges = rangeQuery ? rangesFor(corpus) : null;
   const listPathsById = listHaystacks(lists);
@@ -411,6 +476,16 @@ export function searchCorpus(
     else if (words.every((w) => title.includes(w))) rank = RANK_WORDS_IN_TITLE;
     else if (blurb.includes(q) || note.includes(q) || listPaths.includes(q)) rank = RANK_PHRASE;
     else if (words.every((w) => title.includes(w) || blurb.includes(w) || note.includes(w) || listPaths.includes(w))) rank = RANK_WORDS;
+    // Only where nothing the reader can see in the row matched, so a topic never displaces a title
+    // or summary hit, and `topics` is set exactly when the row has to explain itself.
+    let topics: string[] | undefined;
+    if (rank < 0) {
+      const matched = (topicsById.get(id) ?? []).filter((t) => topicMatches(t, q, words)).map((t) => t.label);
+      if (matched.length) {
+        rank = RANK_TOPIC;
+        topics = matched;
+      }
+    }
     let matchedId: string | undefined;
     // Checked even for a sutta that already ranked, since a query for a batch's first inner uid
     // matches its ref too and still needs the `matchedId` to scroll to.
@@ -420,6 +495,7 @@ export function searchCorpus(
       if (range && range.prefix === rangeQuery[1] && num >= range.start && num <= range.end) {
         rank = RANK_PHRASE_IN_TITLE;
         matchedId = `${rangeQuery[1]}${rangeQuery[2]}`;
+        topics = undefined;
       }
     }
     if (rank < 0) continue;
@@ -428,7 +504,7 @@ export function searchCorpus(
     const listOnly =
       rank >= RANK_PHRASE &&
       words.every((w) => listPaths.includes(w) && !title.includes(w) && !blurb.includes(w) && !note.includes(w));
-    hits.push({ id, sutta: s, matchedId, listOnly, rank, saved: saved.has(id) });
+    hits.push({ id, sutta: s, matchedId, listOnly, topics, rank, saved: saved.has(id) });
   }
   hits.sort((a, b) => a.rank - b.rank || Number(b.saved) - Number(a.saved));
   return hits;

@@ -1,7 +1,8 @@
 import { test, expect, searchResults } from './fixtures';
 
 // Search is how a reader who knows what they want gets there without walking the tree. It matches
-// ref, title, Pali, blurb, note and list names — not sutta text — and the UI says so.
+// ref, title, Pali, blurb, note, list names and the topic index — not sutta text — and the UI says
+// so.
 
 test('@smoke a search finds a sutta by its English title and opens it', async ({ page }) => {
   await page.goto('/browse');

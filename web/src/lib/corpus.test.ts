@@ -248,6 +248,50 @@ describe('searchCorpus', () => {
     expect(searchCorpus(corpus, '   ', {})).toEqual([]);
   });
 
+  describe('the topic index', () => {
+    const indexed: Corpus = {
+      ...meta,
+      nikayas: [],
+      topicAliases: { 'composure (samādhi)': 'concentration (samādhi)' },
+      suttas: {
+        'mn1': { ref: 'MN 1', node: 'x', en: 'The Root of All Things', pali: 'Mūla', blurb: 'On the mind.', min: 30 },
+        'an7.64': {
+          ref: 'AN 7.64',
+          node: 'x',
+          en: 'Angry',
+          pali: 'Kodhana',
+          blurb: '',
+          topics: ['jealousy (issā)', 'composure (samādhi)', 'sagacity/perfection (moneyya)'],
+          min: 4,
+        },
+      },
+    };
+
+    it('finds a sutta by a topic nothing else in the row mentions, and says which', () => {
+      expect(searchCorpus(indexed, 'jealousy', {})).toMatchObject([{ id: 'an7.64', topics: ['jealousy (issā)'] }]);
+    });
+
+    it('finds a topic by the wording CIPS used as well as the app\'s own', () => {
+      for (const query of ['composure', 'concentration']) {
+        expect(searchCorpus(indexed, query, {}).map((h) => h.id)).toEqual(['an7.64']);
+      }
+    });
+
+    it('matches a topic at a word start only, so "money" misses "(moneyya)"', () => {
+      expect(searchCorpus(indexed, 'money', {})).toEqual([]);
+    });
+
+    it('ranks a topic below everything visible in the row, and leaves those rows unmarked', () => {
+      const hits = searchCorpus(indexed, 'mind', {});
+      expect(hits.map((h) => h.id)).toEqual(['mn1']);
+      expect(hits[0].topics).toBeUndefined();
+    });
+
+    it('searches nothing extra for a corpus built without the index', () => {
+      expect(searchCorpus(corpus, 'jealousy', {})).toEqual([]);
+    });
+  });
+
   it('finds a batched range document by an individual number inside its range', () => {
     const batched: Corpus = {
       ...meta,
