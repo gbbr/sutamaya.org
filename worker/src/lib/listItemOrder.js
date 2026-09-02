@@ -1,9 +1,6 @@
-// Reconciles a client-submitted item order against a list's current stored items — used by
-// PUT /:id/items/order (routes/lists.js). Blind-replacing `items` with the posted `order` would
-// silently drop a sutta another tab added (arrayUnion) after this client snapshotted `order`, and
-// resurrect one removed the same way — so this filters `order` down to ids that still exist in
-// `current`, then appends any id in `current` that's missing from `order` (arrived after the
-// snapshot) at the end, in its existing relative order.
+// Returns the order to write for one list's suttas, reconciling a posted order against what is
+// stored: ids no longer in `current` are dropped, and ids added since the client's snapshot are
+// appended in their existing relative order.
 export function reconcileItemOrder(current, order) {
   const currentSet = new Set(current);
   const reconciled = order.filter((id) => currentSet.has(id));

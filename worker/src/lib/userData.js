@@ -2,50 +2,30 @@ import { latestIds } from './autoListRecency.js';
 import { shapeList } from './listShape.js';
 import { repairListTree } from './listTree.js';
 
-// Fixed, non-persisted ids for the three auto-managed lists below — never written to the `lists`
-// table, so they can't drift from the highlights/notes/visited rows they're derived from
-// (unlike a stored list, which needs its own explicit add/remove call kept in sync with every
-// highlight or note change) and can't be renamed, deleted, or manually reordered.
-// These string literals are duplicated in web/src/lib/autoLists.ts (no module shared between the
-// two npm workspaces) — keep both in sync if either ever changes.
+// Ids of the three synthesized auto-lists, never written to the `lists` table. Duplicated in
+// web/src/lib/autoLists.ts, no module being shared between the two workspaces.
 export const RECENT_AUTO_LIST_ID = 'auto-recent';
 export const HIGHLIGHTS_AUTO_LIST_ID = 'auto-highlights';
 export const NOTES_AUTO_LIST_ID = 'auto-notes';
 
-// Bounds how many rows ListPane renders for the Highlights and Notes lists: it draws every item as
-// a full DOM row, unvirtualized, so an unbounded list would get sluggish long before D1 read volume
-// mattered — the highlights and notes tables are fetched in full either way, for rendering
-// elsewhere. Set where it stops mattering rather than where it starts to pinch; each list says
-// "Showing 300 of N" at its foot when it bites, so a reader past it is told rather than left to
-// wonder. Duplicated in web/src/lib/autoLists.ts — see the note on the ids above.
+// Most items the Highlights and Notes lists carry, each saying "Showing 300 of N" past it.
+// Duplicated in web/src/lib/autoLists.ts — see the note on the ids above.
 export const AUTO_LIST_CAP = 300;
 
-// Visited is capped lower: a recency list rather than a record of the reader's own work, so its
-// tail is worth less and it grows far faster than the other two.
+// Most items the Visited list carries.
 export const VISITED_AUTO_LIST_CAP = 100;
 
-// Pure assembly of buildUserData's (routes/data.js) response shape from already-fetched D1 rows —
-// pulled out so the shaping/auto-list-synthesis logic is unit-testable without a live database.
-// Each `*Docs` array is `{id, data}` pairs, `data` being each row's own field object, matching
-// how routes/data.js maps its query results.
+// Assembles buildUserData's (routes/data.js) response from already-fetched D1 rows, synthesizing
+// the three auto-lists. Each `*Docs` array is `{id, data}` pairs, `data` being one row's fields.
 //
-// Tombstoned notes/highlights/visited rows are filtered out in SQL before they get here (see
-// buildUserData). `listDocs` is the exception and arrives with its tombstones, because lib/listTree.js
-// needs them to cascade a deleted group's descendants out — it does that filtering itself.
+// Tombstoned notes, highlights and visits are filtered out in SQL before they arrive; `listDocs`
+// keeps its tombstones, which repairListTree needs to cascade a deleted group's descendants out.
 export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDocs }) {
-  // Keyed by list id, not label — two lists can share a label (e.g. same-named lists nested
-  // under different parents), and an id is the only thing that identifies one unambiguously.
+  // Which lists hold each sutta, keyed by list id — two lists can share a label.
   const membership = {};
-  // `parentId`/`items` (in stored order) let the client render lists as a tree (groups
-  // nested under their parent) and show/reorder each list's own suttas in the order the user
-  // put them in, instead of re-deriving both from the flatter `membership` map, which only
-  // tells you *which* lists a sutta belongs to, not their relative order within one list.
-  // `kind` distinguishes a plain list (holds suttas) from a ListGroup (holds only other
-  // lists/groups, never items — see routes/lists.js's invalidParentReason).
-  //
-  // repairListTree (lib/listTree.js) decides which lists survive at all — dropping tombstones and
-  // everything beneath them — as well as their order and, where a stored `parentId` dangles, the
-  // parentId each is shaped with. `position`/`mtime`/`deleted` feed that repair and stop here.
+  // The lists, in tree order. repairListTree (lib/listTree.js) decides which survive, their order,
+  // and the parentId each is shaped with where a stored one dangles; `position`, `mtime` and
+  // `deleted` feed that repair and stop here.
   const dataById = new Map(listDocs.map(({ id, data }) => [id, data]));
   const ordered = repairListTree(
     listDocs.map(({ id, data }) => ({
@@ -64,17 +44,14 @@ export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDoc
     return shaped;
   });
 
-  // `m` is the note's mtime, carried for the same reason a highlight row carries one: the client
-  // derives its own Notes auto-list over the mirror (web/src/lib/mirrorView.ts) and needs a
-  // timestamp to order it by, or every pulled note compares equal and the list falls back to
-  // whatever order the SELECT returned.
+  // Each note's text and `m`, its mtime, which the client's own Notes auto-list orders by.
   const notes = {};
   noteDocs.forEach(({ id, data }) => {
     notes[id] = { text: data.text, m: data.updatedAt || '' };
   });
 
-  // `m` is the row's mtime, the tiebreak the reader paints overlapping highlights by (see
-  // web/src/lib/highlights.ts) — short-keyed like `c` since this map is sent in full.
+  // The highlights on each sutta. `c` is the colour and `m` the mtime, the tiebreak the reader
+  // paints overlapping highlights by; both are short-keyed, this map being sent in full.
   const highlights = {};
   highlightDocs.forEach(({ id, data }) => {
     (highlights[data.suttaId] = highlights[data.suttaId] || []).push({
@@ -93,34 +70,27 @@ export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDoc
     visited[id] = data.visitedAt;
   });
 
-  // Every suttaId with at least one highlight, most-recently-highlighted first (there's no
-  // stored order to preserve the way a real list has, so recency is the most useful default),
-  // capped to AUTO_LIST_CAP.
+  // Every sutta with a highlight, most recent first — an auto-list has no stored order.
   const highlightedIds = latestIds(
     highlightDocs.map(({ data }) => ({ id: data.suttaId, at: data.createdAt })),
     AUTO_LIST_CAP
   );
 
-  // notesCol doc ids *are* sutta ids, and a note doc only exists while its text is non-empty
-  // (see lib/writes.js's setNote, which tombstones on blank) — so "doc exists" already means "has
-  // a note", no extra filtering needed.
+  // Every sutta with a note, most recently written first. A note doc's id is its sutta id, and a
+  // cleared note is tombstoned, so no further filtering is needed.
   const notedIds = latestIds(
     noteDocs.map(({ id, data }) => ({ id, at: data.updatedAt || '' })),
     AUTO_LIST_CAP
   );
 
-  // visitedCol doc ids *are* sutta ids too (see the `visited` schema note above), most-recently-
-  // visited first.
+  // Every sutta visited, most recent first.
   const recentIds = latestIds(
     visitedDocs.map(({ id, data }) => ({ id, at: data.visitedAt })),
     VISITED_AUTO_LIST_CAP
   );
 
-  // `total` is how many suttas the reader actually has, before the cap trimmed `items` to the most
-  // recent of them — the figure the tree's count badge shows and the one ListPane counts against to
-  // say "Showing 300 of N". A note or visit doc *is* one sutta (both are keyed by sutta id), but a
-  // sutta can carry several highlights and is still one row in that list, so those are counted
-  // distinct.
+  // How many suttas carry a highlight, counted distinct — a sutta may hold several, and each
+  // list's `total` is the uncapped figure the count badge shows.
   const highlightedTotal = new Set(highlightDocs.map(({ data }) => data.suttaId)).size;
 
   if (recentIds.length) {

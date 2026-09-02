@@ -1,12 +1,13 @@
 import { generateSignedCookie } from 'hono/cookie';
 import { parseSigned } from 'hono/utils/cookie';
 
+// The cookie holding the signed session.
 export const SESSION_COOKIE_NAME = 'sutamaya_session';
-const MAX_AGE = 90 * 24 * 60 * 60; // seconds
+// How long a session lasts, in seconds.
+const MAX_AGE = 90 * 24 * 60 * 60;
 
-// Builds the Set-Cookie header value for a signed session cookie carrying `userId` (HMAC-SHA256
-// via Web Crypto, through Hono's own cookie helpers). The caller derives `secure` from whether
-// the request came in over https, so this still works over plain http under `wrangler dev`.
+// Returns the Set-Cookie for a signed session cookie carrying `userId`. `secure` comes from
+// whether the request arrived over https, so this works over plain http under `wrangler dev`.
 export async function createSessionCookie(userId, secret, { secure = true } = {}) {
   return generateSignedCookie(SESSION_COOKIE_NAME, userId, secret, {
     httpOnly: true,
@@ -17,8 +18,8 @@ export async function createSessionCookie(userId, secret, { secure = true } = {}
   });
 }
 
-// Reads and verifies the signed session cookie off `request`, returning the userId or null (no
-// cookie, or a signature that fails verification — parseSigned returns `false` for that case).
+// Returns the userId in a request's signed session cookie, or null if there is none or its
+// signature doesn't verify.
 export async function readSessionCookie(request, secret) {
   const cookieHeader = request.headers.get('Cookie');
   if (!cookieHeader) return null;
@@ -27,7 +28,7 @@ export async function readSessionCookie(request, secret) {
   return typeof value === 'string' ? value : null;
 }
 
-// Set-Cookie header value that clears the session cookie (logout) — same name/path/flags, expired.
+// Returns the Set-Cookie that expires the session cookie.
 export function clearSessionCookie() {
   return `${SESSION_COOKIE_NAME}=; Max-Age=0; Path=/; HttpOnly; SameSite=Lax`;
 }

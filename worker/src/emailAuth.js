@@ -1,38 +1,31 @@
-// Sign-in by a six-digit code emailed to the user — the provider-less option, and the one that
-// works everywhere the others don't.
-//
-// A code rather than a magic link, deliberately. A link is opened from the mail client, which on
-// iOS means Safari rather than the installed PWA: the session cookie would land in the browser's
-// cookie jar while the app the user actually opens stays signed out, with nothing on screen to
-// explain why. A code never leaves the app — the user reads six digits in their mail client and
-// types them into the page they started on, so the session is established by a fetch from inside
-// the PWA and lands where it belongs by construction.
+// Sign-in by a six-digit code emailed to the user: the code is typed into the page it was asked
+// for from, so the session is established from inside the installed PWA rather than in whichever
+// browser a link would have opened.
 
+// How long a code stays valid.
 export const CODE_TTL_MS = 10 * 60 * 1000;
-// Wrong guesses before the code is spent. Six digits is a million combinations, so this is what
-// makes guessing hopeless; the short TTL alone would not.
+// Wrong guesses before the code is spent.
 export const MAX_CODE_ATTEMPTS = 5;
-// A resend inside this window returns success without sending again, so the button can't be used
-// to send someone a stream of mail.
+// How long after a send a resend is answered without sending again.
 export const RESEND_COOLDOWN_MS = 30 * 1000;
 
 const encoder = new TextEncoder();
 
-// Deliberately permissive: this only has to reject obvious nonsense before we spend a send on it.
-// Whether the address exists is settled by whether the code ever comes back.
+// The shape an address must have to be worth a send. Permissive by design; only a delivered code
+// settles whether the address is real.
 const EMAIL_SHAPE = /^[^\s@]+@[^\s@.]+\.[^\s@]+$/;
 
+// Lowercases and trims a submitted address, or returns '' for anything that isn't a string.
 export function normalizeEmail(value) {
   return typeof value === 'string' ? value.trim().toLowerCase() : '';
 }
 
+// Reports whether an address is worth sending a code to.
 export function isPlausibleEmail(value) {
   return value.length <= 254 && EMAIL_SHAPE.test(value);
 }
 
-// Uniform over 000000-999999. Rejection sampling rather than a modulo of a random 32-bit value:
-// the bias there is tiny but there's no reason to accept any in the one number guarding an
-// account.
+// Returns a six-digit code, uniform over 000000-999999 by rejection sampling.
 export function generateCode() {
   const buffer = new Uint32Array(1);
   const limit = Math.floor(0xffffffff / 1_000_000) * 1_000_000;
@@ -44,7 +37,7 @@ export function generateCode() {
   return String(value % 1_000_000).padStart(6, '0');
 }
 
-// Bound to the address as well as the code, so a hash can't be replayed against a different one.
+// Returns the stored hex digest for a code, bound to the address it was sent to.
 export async function hashCode(code, email, secret) {
   const key = await crypto.subtle.importKey('raw', encoder.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, [
     'sign',
@@ -53,9 +46,7 @@ export async function hashCode(code, email, secret) {
   return [...new Uint8Array(signature)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
 }
 
-// Length-independent comparison of two hex digests. They're the same length in every real call,
-// so this is belt and braces, but a hash comparison that leaks timing is not worth keeping around
-// to reason about later.
+// Compares two hex digests in time independent of where they differ.
 export function timingSafeEqual(a, b) {
   if (typeof a !== 'string' || typeof b !== 'string' || a.length !== b.length) return false;
   let diff = 0;
@@ -63,12 +54,12 @@ export function timingSafeEqual(a, b) {
   return diff === 0;
 }
 
+// Returns the sign-in email's subject and both bodies. The code leads the subject line, so a phone
+// shows it in the notification.
 export function codeEmail({ code }) {
   const minutes = Math.round(CODE_TTL_MS / 60000);
   return {
     subject: `${code} is your sutamaya sign-in code`,
-    // The code is in the subject line as well as the body: on a phone that often means it can be
-    // read straight from the notification, without leaving the app at all.
     text: [
       `Your sutamaya sign-in code is ${code}.`,
       '',
@@ -88,15 +79,12 @@ export function codeEmail({ code }) {
   };
 }
 
-// Sent through Resend rather than Cloudflare's own Email Sending binding, which needs a Workers
-// Paid plan; Resend's free tier covers this app's volume many times over. It's a plain REST call,
-// so there's no SDK and nothing to mock beyond fetch.
+// Sends one message through Resend, throwing if it is rejected.
 export async function sendEmail({ apiKey, from, to, message }) {
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-    // `text` alongside `html` isn't optional politeness: some clients only render the plain part,
-    // and its absence reads as a spam signal.
+    // Both bodies: some clients render only the plain one, and its absence reads as spam.
     body: JSON.stringify({ from, to: [to], subject: message.subject, text: message.text, html: message.html }),
   });
   if (!response.ok) {

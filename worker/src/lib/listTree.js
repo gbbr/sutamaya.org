@@ -1,47 +1,34 @@
-// A4: repairs the list set into a renderable tree at read time, rather than rewriting rows when a
-// delete happens. Deleting a group has to take everything inside it, and two devices can each make
-// a valid move that together form a cycle — neither is fixable at write time, because whichever
-// write lands second never sees the other. Repairing on read instead means both devices converge on
-// the same tree without communicating, which is why every step here has to be deterministic given
-// identical input rather than dependent on row order.
-//
-// Tombstoned rows are passed in rather than filtered out in SQL: the cascade needs to know which
-// ancestors are dead in order to drop what hangs off them.
+// Repairs the stored lists into a renderable tree at read time — cascading a deleted group's
+// descendants out, breaking cycles and re-homing danglers (docs/offline-sync.md, mechanism 4).
+// Every step is deterministic given identical input, so two devices converge without
+// communicating; tombstones are passed in rather than filtered in SQL, the cascade needing them.
 
-// Lowest (mtime, id) first. `id` breaks the tie so two rows written in the same millisecond still
-// order identically on every device.
+// Orders by (mtime, id), lowest first.
 function olderFirst(a, b) {
   if (a.mtime !== b.mtime) return a.mtime < b.mtime ? -1 : 1;
   return a.id < b.id ? -1 : 1;
 }
 
-// Siblings render in `position` order; `id` breaks the tie, which the negative-prepend scheme
-// (lib/listPositions.js's firstPosition) can genuinely produce — two devices each prepending
-// offline both compute the same next position.
+// Orders siblings by (position, id); two devices prepending offline do compute the same position.
 function bySiblingOrder(a, b) {
   if (a.position !== b.position) return a.position - b.position;
   return a.id < b.id ? -1 : 1;
 }
 
-// `lists` is `{id, parentId, position, mtime, deleted}` per entry, tombstones included (extra fields
-// pass through untouched). Returns a new array of just the live, reachable lists — sorted, with any
-// dangling `parentId` re-homed.
+// Returns the live, reachable lists in sibling order, each with a valid `parentId`. `lists` is
+// `{id, parentId, position, mtime, deleted}` per entry, tombstones included; other fields pass
+// through untouched.
 export function repairListTree(lists) {
   const byId = new Map(lists.map((list) => [list.id, list]));
 
-  // Re-home danglers: a parentId pointing at no row *at all* becomes top-level. This is a safety
-  // net, not delete semantics — `parent_id` has no foreign key, so a client that pushes a child
-  // before its parent would otherwise leave a list that exists but renders nowhere. A parentId
-  // pointing at a *tombstoned* row is the different case the cascade below handles.
+  // Each list's parent, a parentId naming no row at all becoming top-level.
   const parentOf = new Map(
     lists.map((list) => [list.id, list.parentId && byId.has(list.parentId) ? list.parentId : null])
   );
 
-  // Break cycles, before anything walks an ancestor chain — otherwise these walks never terminate.
-  // Each row has at most one parent, so a walk up from any node enters at most one cycle: one break
-  // per walk is enough, and walking from every node finds every cycle. Iterated in id order, and
-  // the loser chosen as the global minimum of the cycle's members, so neither the input's order nor
-  // which node the walk entered the cycle from can change the outcome.
+  // Break cycles, before anything else walks an ancestor chain. Walking up from every node in id
+  // order finds every cycle, each node having one parent, and the loser is the cycle's global
+  // minimum, so neither input order nor the entry point changes the outcome.
   for (const { id } of [...lists].sort((a, b) => (a.id < b.id ? -1 : 1))) {
     const path = [];
     const seen = new Set();
@@ -52,18 +39,15 @@ export function repairListTree(lists) {
       cur = parentOf.get(cur) ?? null;
     }
     if (!cur) continue; // reached the root — no cycle on this chain
-    // `cur` is where the walk re-entered itself, so everything from there on is the cycle proper
-    // (any nodes before it merely lead into it and stay put).
+    // The cycle proper: from where the walk re-entered itself onward.
     const cycle = path.slice(path.indexOf(cur)).map((memberId) => byId.get(memberId));
-    // The lowest mtime is re-homed, so the most recent move is the one that survives.
+    // The oldest member is re-homed, so the most recent move survives.
     const loser = cycle.reduce((lowest, candidate) => (olderFirst(candidate, lowest) < 0 ? candidate : lowest));
     parentOf.set(loser.id, null);
   }
 
-  // Cascade: a list is gone if it is tombstoned or anything above it is. Deleting a group deletes
-  // what's inside it, the way deleting a folder does — so one UPDATE on the group makes its whole
-  // subtree disappear here, with no descendant walk at write time. Survivors form a closed forest
-  // (a live list can never point at a dropped parent), since anything whose parent went went too.
+  // Reports whether a list survives: it is gone if it is tombstoned or anything above it is, so
+  // the survivors form a closed forest.
   const survives = (id) => {
     let cur = id;
     while (cur) {

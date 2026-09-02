@@ -3,32 +3,34 @@
 // server-side. Everything here is provider-agnostic except the Google constants at the bottom, so
 // a second provider is a start/callback pair plus its own URLs and profile mapping.
 //
-// Two things guard the round trip, and both are needed:
-//   - the `state` parameter is signed with SESSION_SECRET, so a callback can only carry a state
-//     this Worker issued (and one issued no more than STATE_MAX_AGE_MS ago);
-//   - a nonce inside that state is *also* set as a short-lived HttpOnly cookie, so the state can
-//     only be redeemed by the same browser it was issued to. Without it an attacker could run the
-//     flow to the point of holding a valid code for their own account and then trick a victim into
-//     loading the callback, silently signing the victim into the attacker's account.
+// Two things guard the round trip:
+//   state – signed with SESSION_SECRET, so a callback can only carry a state this Worker issued
+//   nonce – inside that state and also set as a cookie, so only the browser it was issued to can
+//           redeem it
 
+// How long a signed state stays redeemable.
 const STATE_MAX_AGE_MS = 10 * 60 * 1000;
 
+// The cookie holding the in-flight state's nonce.
 export const OAUTH_NONCE_COOKIE = 'sutamaya_oauth';
 
 const encoder = new TextEncoder();
 
+// Encodes bytes as base64url.
 function toBase64Url(bytes) {
   let binary = '';
   for (const byte of bytes) binary += String.fromCharCode(byte);
   return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 }
 
+// Decodes a base64url string to bytes.
 function fromBase64Url(value) {
   const padded = value.replace(/-/g, '+').replace(/_/g, '/').padEnd(Math.ceil(value.length / 4) * 4, '=');
   const binary = atob(padded);
   return Uint8Array.from(binary, (ch) => ch.charCodeAt(0));
 }
 
+// Imports the secret as an HMAC-SHA-256 key.
 function hmacKey(secret) {
   return crypto.subtle.importKey('raw', encoder.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, [
     'sign',
@@ -36,18 +38,16 @@ function hmacKey(secret) {
   ]);
 }
 
-// `${base64url(json)}.${base64url(hmac)}` — the payload is readable by anyone holding the URL (it
-// travels through the provider), so it carries only a nonce, a return path and a timestamp.
+// Returns the payload signed as `${base64url(json)}.${base64url(hmac)}`. It travels through the
+// provider in plain sight, so it carries only a nonce, a return path, an origin and a timestamp.
 export async function signState(payload, secret) {
   const body = toBase64Url(encoder.encode(JSON.stringify(payload)));
   const signature = await crypto.subtle.sign('HMAC', await hmacKey(secret), encoder.encode(body));
   return `${body}.${toBase64Url(new Uint8Array(signature))}`;
 }
 
-// Returns the payload, or null for anything that isn't a currently-valid state we issued —
-// tampered, forged, malformed or older than STATE_MAX_AGE_MS. Verification goes through
-// crypto.subtle.verify rather than comparing strings, so there's no timing-comparison to get
-// wrong here.
+// Returns a state's payload, or null if it was tampered with, forged, malformed or is older than
+// STATE_MAX_AGE_MS.
 export async function verifyState(token, secret) {
   if (typeof token !== 'string') return null;
   const [body, signature] = token.split('.');
@@ -72,11 +72,7 @@ export async function verifyState(token, secret) {
   return payload;
 }
 
-// WEB_ORIGIN is normally one origin, but it accepts a comma-separated list so a dev machine can
-// serve the same Worker to both `http://localhost:5173` and the LAN hostname a phone reaches it by
-// (see docs/deploy.md "Testing on mobile") without editing .dev.vars between the two. The first
-// entry is the canonical one — what every leg of the flow falls back to when the request doesn't
-// identify which of them it came in on.
+// Parses WEB_ORIGIN's comma-separated list into trimmed origins. The first is the canonical one.
 export function webOrigins(value) {
   return String(value || '')
     .split(',')
@@ -84,10 +80,8 @@ export function webOrigins(value) {
     .filter(Boolean);
 }
 
-// Picks the origin a redirect should be built on. `candidate` is attacker-controllable (it comes
-// from the `return` URL in a query parameter and then travels through the provider inside the
-// signed state), so it is only ever *matched* against the configured list, never trusted as a
-// value — anything not configured here falls back to the canonical origin.
+// Returns the origin a redirect should be built on: `candidate` if WEB_ORIGIN lists it, else the
+// canonical one. The candidate is only ever matched against the list, never trusted as a value.
 export function resolveWebOrigin(value, candidate) {
   const origins = webOrigins(value);
   let candidateOrigin;
@@ -99,11 +93,8 @@ export function resolveWebOrigin(value, candidate) {
   return origins.find((o) => o === candidateOrigin) || origins[0] || '';
 }
 
-// Where the app is sent after the flow ends. The candidate arrives from a query parameter, so
-// this is the guard against turning /api/auth/google/start into an open redirect: resolve it
-// against our own origin and keep only the path, so anything absolute, protocol-relative
-// (`//evil.example`) or otherwise off-origin collapses to '/'. `webOrigin` is always the app's
-// own hostname, never the marketing site's, so '/' here is the app's entry point.
+// Returns the path to send the app to after the flow, as a same-origin path only: anything
+// absolute, protocol-relative or off-origin collapses to '/', the app's own entry point.
 export function safeReturnPath(candidate, webOrigin) {
   if (typeof candidate !== 'string' || !candidate) return '/';
   let resolved;
@@ -116,25 +107,26 @@ export function safeReturnPath(candidate, webOrigin) {
   return `${resolved.pathname}${resolved.search}${resolved.hash}`;
 }
 
-// Adds the marker AuthContext turns into a visible "sign-in failed" message on the page the user
-// lands back on, without clobbering a return path that already carries a query of its own.
+// Adds `auth_error=1` to a return path, keeping any query and hash it already carries. AuthContext
+// turns it into a visible "sign-in failed" message.
 export function withAuthError(path) {
   const [beforeHash, hash = ''] = path.split('#');
   const separator = beforeHash.includes('?') ? '&' : '?';
   return `${beforeHash}${separator}auth_error=1${hash ? `#${hash}` : ''}`;
 }
 
+// Joins an origin and a path into an absolute URL.
 export function appUrl(webOrigin, path) {
   return `${webOrigin.replace(/\/+$/, '')}${path}`;
 }
 
-// Short-lived, HttpOnly, and SameSite=Lax so it survives the provider's top-level GET redirect
-// back to us — which is exactly the navigation Lax permits, and why the redirect flow needs no
-// third-party cookie access at all.
+// Returns the Set-Cookie for the state's nonce: short-lived, HttpOnly, and SameSite=Lax, which the
+// provider's top-level redirect back here still carries.
 export function nonceCookie(nonce, { secure = true } = {}) {
   return `${OAUTH_NONCE_COOKIE}=${nonce}; Max-Age=600; Path=/api/auth; HttpOnly; SameSite=Lax${secure ? '; Secure' : ''}`;
 }
 
+// Returns the Set-Cookie that expires the nonce cookie.
 export function clearNonceCookie() {
   return `${OAUTH_NONCE_COOKIE}=; Max-Age=0; Path=/api/auth; HttpOnly; SameSite=Lax`;
 }
@@ -144,12 +136,13 @@ export function clearNonceCookie() {
 const GOOGLE_AUTH_URL = 'https://accounts.google.com/o/oauth2/v2/auth';
 const GOOGLE_TOKEN_URL = 'https://oauth2.googleapis.com/token';
 
-// Must match a redirect URI registered on the OAuth client in the Google Cloud console, exactly —
-// mismatches fail at the provider with redirect_uri_mismatch, before the user ever gets back here.
+// Returns the callback URL Google redirects back to, which must match one registered on the OAuth
+// client exactly.
 export function googleRedirectUri(webOrigin) {
   return appUrl(webOrigin, '/api/auth/google/callback');
 }
 
+// Returns the URL that starts the flow at Google.
 export function googleAuthUrl({ clientId, redirectUri, state }) {
   const params = new URLSearchParams({
     client_id: clientId,
@@ -157,16 +150,14 @@ export function googleAuthUrl({ clientId, redirectUri, state }) {
     response_type: 'code',
     scope: 'openid email profile',
     state,
-    // Show the account chooser rather than silently reusing whichever Google account the browser
-    // happens to be signed into — signing in as the wrong person is tedious to undo here, since
-    // the account is what the whole local mirror is keyed by.
+    // Always show the account chooser rather than reusing the browser's signed-in account.
     prompt: 'select_account',
   });
   return `${GOOGLE_AUTH_URL}?${params}`;
 }
 
-// Exchanges the one-time code for Google's id_token — the same JWT shape verifyGoogleCredential
-// (auth.js) validates, so nothing downstream of this step has to know how it arrived.
+// Exchanges the one-time code for Google's id_token, which verifyGoogleCredential (auth.js) then
+// validates. Throws if the exchange fails or returns no token.
 export async function exchangeGoogleCode({ code, clientId, clientSecret, redirectUri }) {
   const response = await fetch(GOOGLE_TOKEN_URL, {
     method: 'POST',
