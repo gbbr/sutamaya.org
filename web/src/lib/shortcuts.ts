@@ -47,7 +47,7 @@ export const SHORTCUTS = {
   readerHighlightsToggle: { match: ['h'], keys: ['⇧H'], label: 'Show / hide highlights', scope: 'reader', shift: true },
   readerLists: { match: ['l'], keys: ['L'], label: 'Open the lists panel', scope: 'reader' },
   readerNote: { match: ['n'], keys: ['N'], label: 'Add a note', scope: 'reader' },
-  readerTheme: { match: ['t'], keys: ['T'], label: 'Open the display panel', scope: 'reader' },
+  readerTheme: { match: ['t'], keys: ['T'], label: 'Open the appearance panel', scope: 'reader' },
   readerThemeCycle: { match: ['d'], keys: ['⇧D'], label: 'Light / sepia / dark', scope: 'reader', shift: true },
   readerNotesToggle: { match: ['c'], keys: ['C'], label: 'Toggle translator notes', scope: 'reader' },
   readerHelp: { match: ['?'], keys: ['?'], label: 'Show keyboard shortcuts', scope: 'reader' },

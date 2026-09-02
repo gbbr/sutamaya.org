@@ -28,7 +28,7 @@ interface ReaderMenuPanelProps {
   // even if this panel (and its highlights tab) is already open.
   noteFocusSignal?: number;
   // Lets ReaderPage react when the user switches tab from inside the already-open panel (e.g. to
-  // dismiss an open DictionaryDock when landing on the Display tab's mobile sheet — see ReaderPage).
+  // dismiss an open DictionaryDock when landing on the Appearance tab's mobile sheet — see ReaderPage).
   onTabChange?: (tab: Tab) => void;
 }
 
@@ -65,11 +65,11 @@ const FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
 const TABS: Array<{ id: Tab; label: string }> = [
   { id: 'highlights', label: 'Highlights' },
   { id: 'lists', label: 'Lists' },
-  { id: 'text', label: 'Display' },
+  { id: 'text', label: 'Appearance' },
 ];
 
 // A segmented control: one recessed track with a raised thumb under the active option. Used for
-// this panel's tab bar and for the Display tab's Pali and translator-note rows — the same shape at
+// this panel's tab bar and for the Appearance tab's Pali and translator-note rows — the same shape at
 // two sizes, so a two-state setting shows both states rather than one button whose label has to
 // double as the current value and the action.
 function Segmented<T extends string>({
@@ -210,7 +210,7 @@ export function ReaderMenuPanel({
     toggleShowHighlights,
   } = useReaderPrefs();
 
-  // The Display tab has no text inputs, so on mobile it is a short bottom sheet rather than
+  // The Appearance tab has no text inputs, so on mobile it is a short bottom sheet rather than
   // full-screen, leaving the reader visible above it while font, line-height and theme changes are
   // judged live. Highlights and Lists stay full-screen and top-anchored, because their inputs —
   // Lists' auto-focused search field, Highlights' note textarea — have to stay above the on-screen
@@ -230,7 +230,7 @@ export function ReaderMenuPanel({
   // colours; what differs is which edges they are pinned to. Rebuilt every render, so it tracks
   // `theme`.
   function panelStyle(): CSSProperties {
-    // The Display tab on mobile: a short bottom sheet, capped well under the viewport so the
+    // The Appearance tab on mobile: a short bottom sheet, capped well under the viewport so the
     // reader stays visible above it and type changes can be judged live.
     if (isThemeSheet) {
       return {
@@ -284,7 +284,7 @@ export function ReaderMenuPanel({
   function entranceAnimationClass(): string {
     // Already mounted: switching tabs reshapes the panel live and should snap, not replay.
     if (hasEnteredRef.current) return '';
-    // The mobile Display sheet rises from the bottom edge it's pinned to.
+    // The mobile Appearance sheet rises from the bottom edge it's pinned to.
     if (isThemeSheet) return 'animate-sheetUp';
     // Everything else appears in place, so it fades.
     return 'animate-fadeIn';
@@ -405,7 +405,7 @@ export function ReaderMenuPanel({
               </div>
             )}
 
-            {/* The Display tab's own row for this setting, repeated below the list it governs —
+            {/* The Appearance tab's own row for this setting, repeated below the list it governs —
                 the same full-size row rather than a second kind of affordance, so the two places
                 read as one setting. Last, not beside the heading: it acts on the reading behind
                 the panel, not on the list, and putting it first would offer to hide the highlights

@@ -5,6 +5,7 @@ import { useReaderKeyboard } from './useReaderKeyboard';
 function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {}) {
   const setShortcutsOpen = vi.fn();
   const setSearchOpen = vi.fn();
+  const setMenuOpen = vi.fn();
   const closePop = vi.fn();
   const closeDict = vi.fn();
   const setPanel = vi.fn();
@@ -22,6 +23,8 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     setShortcutsOpen,
     searchOpen: false,
     setSearchOpen,
+    menuOpen: false,
+    setMenuOpen,
     pop: null,
     closePop,
     dict: null,
@@ -45,6 +48,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     unmount,
     setShortcutsOpen,
     setSearchOpen,
+    setMenuOpen,
     closePop,
     closeDict,
     setPanel,
@@ -90,6 +94,23 @@ describe('useReaderKeyboard', () => {
       expect(setPanel).not.toHaveBeenCalled();
       expect(setTab).not.toHaveBeenCalled();
       expect(step).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('overflow menu open', () => {
+    it('Escape closes the menu, leaving the reader open', () => {
+      const { setMenuOpen, closeReader } = setup({ menuOpen: true });
+      press('Escape');
+      expect(setMenuOpen).toHaveBeenCalledWith(false);
+      expect(closeReader).not.toHaveBeenCalled();
+    });
+
+    it('the shortcuts the menu lists do nothing until it is closed', () => {
+      const { setPanel, setTab } = setup({ menuOpen: true });
+      press('t');
+      press('l');
+      expect(setPanel).not.toHaveBeenCalled();
+      expect(setTab).not.toHaveBeenCalled();
     });
   });
 
