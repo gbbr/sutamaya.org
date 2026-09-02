@@ -101,7 +101,10 @@ function Segmented<T extends string>({
             // shares of the track and their horizontal padding does nothing. Sizing from content
             // plus padding lets that padding set the air around each label, with the leftover width
             // still shared evenly.
-            className={`${grow ? 'flex-auto' : ''} rounded-full font-sans whitespace-nowrap text-ui-sm ${
+            // A setting row's halves carry a minimum wide enough for the longest label any of them
+            // uses, so every toggle down the column comes out the same size — "Below"/"Above"
+            // beside "On tap"/"Always" — while a longer label than that would still fit.
+            className={`${grow ? 'flex-auto' : 'min-w-[84px] text-center'} rounded-full font-sans whitespace-nowrap text-ui-sm ${
               grow ? 'px-5 py-[8px]' : 'px-3.5 py-[6px]'
             }`}
             style={{
@@ -204,6 +207,8 @@ export function ReaderMenuPanel({
     setFace,
     allPali,
     toggleAllPali,
+    paliAbove,
+    togglePaliAbove,
     showNotes,
     toggleShowNotes,
     showHighlights,
@@ -618,6 +623,29 @@ export function ReaderMenuPanel({
                 }}
               />
             </div>
+
+            {/* Only with the Pali always shown: a tap reveal belongs under the line it explains,
+                so there is no position to choose in that mode. The setting is remembered while
+                hidden, so switching back to Always restores the layout the reader picked. */}
+            {allPali && (
+              // No hairline: this is the Pali row's own sub-setting, so the two read as one group.
+              <div className={settingRow} style={{ paddingTop: 0 }}>
+                <span className={rowLabel} style={{ color: theme.dim }}>
+                  Pali position
+                </span>
+                <Segmented
+                  value={paliAbove ? 'above' : 'below'}
+                  options={[
+                    { id: 'below', label: 'Below' },
+                    { id: 'above', label: 'Above' },
+                  ]}
+                  theme={theme}
+                  onChange={(id) => {
+                    if ((id === 'above') !== paliAbove) togglePaliAbove();
+                  }}
+                />
+              </div>
+            )}
           </div>
         )}
       </div>

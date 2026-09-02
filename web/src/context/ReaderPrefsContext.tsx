@@ -7,53 +7,44 @@ import { systemPrefersDark } from '../lib/uiPrefs';
 
 export interface ReaderPrefs {
   theme: ReaderTheme;
+  // Body text size, in px.
   fs: number;
+  // Line height, as a percentage.
   lh: number;
   face: ReaderFace;
+  // Show every segment's Pali, rather than only the ones the reader taps.
   allPali: boolean;
-  // Whether the note-asterisk markers (Bhikkhu Sujato's translator notes — see SegmentedText.tsx) show
-  // at all; "c" in the reader and the Theme tab's checkbox both flip this (see ReaderPage,
-  // ReaderMenuPanel).
+  // Put the Pali above the English. Applies only with `allPali` on.
+  paliAbove: boolean;
+  // Show the asterisk markers for the translator's notes.
   showNotes: boolean;
-  // Whether the user's own highlights are painted over the text. Off leaves the prose clean while
-  // the gutter marks (HighlightGutter) still show where they are — that strip is what says the
-  // highlights are only hidden, not gone, so nothing else indicates the state. The reader turns it
-  // back on by itself whenever an action creates or targets a specific highlight (see ReaderPage).
+  // Paint the reader's highlights over the text.
   showHighlights: boolean;
 }
 
 interface ReaderPrefsState extends ReaderPrefs {
-  // The theme actually rendered — 'system' resolved live against the OS preference (see the
-  // provider's own matchMedia tracking below); 'light'/'sepia'/'dark' pass through unchanged.
+  // The theme on screen, with 'system' resolved against the OS preference.
   resolvedTheme: ResolvedReaderTheme;
   setTheme: (t: ReaderTheme) => void;
-  // Steps light -> sepia -> dark -> light. Starts from what's actually on screen, so it also
-  // works from 'system', and always lands on an explicit theme — 'system' is a setting you pick
-  // in the panel, not a stop on a cycle.
+  // Steps the theme light -> sepia -> dark -> light, from whichever is on screen.
   cycleTheme: () => void;
   setFs: (n: number) => void;
   setLh: (n: number) => void;
   setFace: (f: ReaderFace) => void;
   toggleAllPali: () => void;
+  togglePaliAbove: () => void;
   toggleShowNotes: () => void;
   toggleShowHighlights: () => void;
-  // Turns highlights back on unconditionally, for the paths that auto-reveal them. Separate from
-  // the toggle because those callers mean "make sure these are visible", not "flip whatever this
-  // is" — several of them fire on actions the user may repeat.
+  // Turns highlights on, whatever the current setting.
   revealHighlights: () => void;
 }
 
-// Line height, as a percentage. The floor is generous because the reader's measure is 34em, about
-// 70 characters, and at that width anything below ~1.55 loses the line return. `lh` also drives the
-// paragraph gap and the gap above interleaved Pali (SegmentedText's paragraphGap), so the whole
-// page breathes with it rather than just the leading.
+// Range of the reader's line-height control, as a percentage.
 export const LH_MIN = 155;
 export const LH_MAX = 205;
 export const LH_STEP = 5;
 
-// Body text size, in px. The floor is where the reader's 34em measure still holds a comfortable
-// line on a phone; the ceiling reaches far enough for a tablet at arm's length or a reader who
-// needs large text, and stops before the docked dictionary and the interleaved Pali crowd.
+// Range of the reader's text-size control, in px.
 export const FS_MIN = 15;
 export const FS_MAX = 28;
 export const FS_STEP = 1;
@@ -64,11 +55,12 @@ const DEFAULTS: ReaderPrefs = {
   lh: 175,
   face: 'georgia',
   allPali: false,
+  paliAbove: false,
   showNotes: false,
   showHighlights: true,
 };
 
-// The order cycleTheme walks — light to dark by way of sepia, so each press is a small step.
+// The order cycleTheme walks.
 const THEME_CYCLE: Record<ResolvedReaderTheme, ResolvedReaderTheme> = { light: 'sepia', sepia: 'dark', dark: 'light' };
 
 const ReaderPrefsContext = createContext<ReaderPrefsState | null>(null);
@@ -76,9 +68,7 @@ const ReaderPrefsContext = createContext<ReaderPrefsState | null>(null);
 export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
   const [prefs, setPrefs] = usePersistedState<ReaderPrefs>(READER_PREFS_KEY, DEFAULTS);
 
-  // Tracks the OS preference live (not just once at selection time) so a 'system' theme keeps
-  // following it — mirrors UiPrefsContext's own system-theme tracking for the app shell, kept
-  // separate since the reader applies explicit ThemeColors objects rather than a CSS class.
+  // The OS dark-mode preference, tracked live while the theme is 'system'.
   const [systemDark, setSystemDark] = useState(() => systemPrefersDark());
   useEffect(() => {
     if (prefs.theme !== 'system') return;
@@ -94,18 +84,12 @@ export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
   const value = useMemo<ReaderPrefsState>(
     () => ({
       ...prefs,
-      // Clamped on read rather than on write, so a device holding a value from a wider earlier
-      // range doesn't render at a size the stepper can't reach, with its "−"/"+" sitting disabled.
+      // Stored size, leading and face, held to what the controls can currently reach.
       fs: Math.min(FS_MAX, Math.max(FS_MIN, prefs.fs)),
       lh: Math.min(LH_MAX, Math.max(LH_MIN, prefs.lh)),
-      // The same, for a face id the picker no longer offers: READER_FACES would answer `undefined`
-      // and the reader would render with no font-family at all.
       face: prefs.face in READER_FACES ? prefs.face : DEFAULTS.face,
       resolvedTheme,
       setTheme: (theme) => setPrefs((p) => ({ ...p, theme })),
-      // Resolves inside the updater rather than closing over `resolvedTheme`: useReaderKeyboard's
-      // listener subscribes on a partial dependency list and can hold an older copy of this
-      // function than the current theme.
       cycleTheme: () =>
         setPrefs((p) => ({
           ...p,
@@ -115,6 +99,7 @@ export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
       setLh: (lh) => setPrefs((p) => ({ ...p, lh })),
       setFace: (face) => setPrefs((p) => ({ ...p, face })),
       toggleAllPali: () => setPrefs((p) => ({ ...p, allPali: !p.allPali })),
+      togglePaliAbove: () => setPrefs((p) => ({ ...p, paliAbove: !p.paliAbove })),
       toggleShowNotes: () => setPrefs((p) => ({ ...p, showNotes: !p.showNotes })),
       toggleShowHighlights: () => setPrefs((p) => ({ ...p, showHighlights: !p.showHighlights })),
       revealHighlights: () => setPrefs((p) => (p.showHighlights ? p : { ...p, showHighlights: true })),

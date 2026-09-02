@@ -82,6 +82,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     lh,
     face,
     allPali,
+    paliAbove,
     showNotes,
     toggleShowNotes,
     showHighlights,
@@ -726,6 +727,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
               face={faceFamily}
               openSegs={openSegs}
               allPali={allPali}
+              paliAbove={paliAbove}
               onToggleSeg={onToggleSeg}
               onWordClick={onWordClick}
               onSpanClick={openPop}
@@ -905,7 +907,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           highlights={hlForSutta}
           theme={theme}
           onJump={jumpToHighlight}
-          layoutKey={`${fs}-${lh}-${face}-${allPali}-${segments ? segments.length : 'loading'}`}
+          layoutKey={`${fs}-${lh}-${face}-${allPali}-${paliAbove}-${segments ? segments.length : 'loading'}`}
         />
       )}
 
