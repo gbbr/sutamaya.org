@@ -51,11 +51,11 @@ const FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
 const TABS: Array<{ id: Tab; label: string }> = [
   { id: 'highlights', label: 'Highlights' },
   { id: 'lists', label: 'Lists' },
-  { id: 'text', label: 'Appearance' },
+  { id: 'text', label: 'Style' },
 ];
 
 // A segmented control: a recessed track with a raised thumb under the active option. Drawn at two
-// sizes, for the panel's tab bar and for the Appearance tab's two-state settings.
+// sizes, for the panel's tab bar and for the Style tab's two-state settings.
 function Segmented<T extends string>({
   value,
   options,
@@ -82,10 +82,12 @@ function Segmented<T extends string>({
             key={o.id}
             aria-pressed={on}
             // `flex-auto` rather than `flex-1`, which would zero the basis and leave the tabs'
-            // horizontal padding doing nothing. A setting row's halves instead take a minimum wide
-            // enough for the longest label any of them uses, so the column's toggles all match.
-            className={`${grow ? 'flex-auto' : 'min-w-[84px] text-center'} rounded-full font-sans whitespace-nowrap text-ui-sm ${
-              grow ? 'px-5 py-[8px]' : 'px-3.5 py-[6px]'
+            // horizontal padding doing nothing. `min-w-0` with a clipped label lets a tab give up
+            // its padding at a large UI scale rather than push the track past the panel. A setting
+            // row's halves instead take a minimum wide enough for the longest label any of them
+            // uses, so the column's toggles all match.
+            className={`${grow ? 'flex-auto min-w-0 overflow-hidden text-ellipsis' : 'min-w-[84px] text-center'} rounded-full font-sans whitespace-nowrap text-ui-sm ${
+              grow ? 'px-3 py-[8px]' : 'px-3.5 py-[6px]'
             }`}
             style={{
               // The thumb is the panel's own surface, lifted out of the recessed track.
@@ -191,7 +193,7 @@ export function ReaderMenuPanel({
     toggleShowHighlights,
   } = useReaderPrefs();
 
-  // True where the panel is a short bottom sheet: the Appearance tab on mobile, which has no text
+  // True where the panel is a short bottom sheet: the Style tab on mobile, which has no text
   // inputs and leaves the reader visible above it while a change is judged. The other two stay
   // full-screen and top-anchored, their inputs having to clear the on-screen keyboard, which this
   // container's own bottom edge does not.
@@ -208,7 +210,7 @@ export function ReaderMenuPanel({
   // colours; what differs is which edges they are pinned to. Rebuilt every render, so it tracks
   // `theme`.
   function panelStyle(): CSSProperties {
-    // The Appearance tab on mobile: a short bottom sheet, capped well under the viewport so the
+    // The Style tab on mobile: a short bottom sheet, capped well under the viewport so the
     // reader stays visible above it and type changes can be judged live.
     if (isThemeSheet) {
       return {
@@ -261,7 +263,7 @@ export function ReaderMenuPanel({
   function entranceAnimationClass(): string {
     // Already mounted: switching tabs reshapes the panel live and should snap, not replay.
     if (hasEnteredRef.current) return '';
-    // The mobile Appearance sheet rises from the bottom edge it's pinned to.
+    // The mobile Style sheet rises from the bottom edge it's pinned to.
     if (isThemeSheet) return 'animate-sheetUp';
     // Everything else appears in place, so it fades.
     return 'animate-fadeIn';
@@ -374,7 +376,7 @@ export function ReaderMenuPanel({
               </div>
             )}
 
-            {/* The Appearance tab's own show-highlights row, repeated below the list it governs.
+            {/* The Style tab's own show-highlights row, repeated below the list it governs.
                 Last rather than beside the heading, since it acts on the reading behind the panel,
                 and absent with nothing to hide. */}
             {highlights.length > 0 && (
