@@ -33,8 +33,9 @@ import { runAccept } from './update-data-accept.mjs';
 import { runCounts, reportCounts } from './update-data-counts.mjs';
 import { runTriage } from './update-data-triage.mjs';
 import { runDictionary, DICT_PATH } from './update-data-dictionary.mjs';
+import { runIndex, INDEX_PATH } from './update-data-index.mjs';
 
-const COMMANDS = ['plan', 'apply', 'accept', 'triage', 'post', 'counts', 'dictionary', 'help'];
+const COMMANDS = ['plan', 'apply', 'accept', 'triage', 'post', 'counts', 'dictionary', 'index', 'help'];
 
 // Where the pipeline currently stands, from the provenance manifest copy and accept both write.
 // 'applied' is the only interesting one: a refresh is in the working tree and hasn't been accepted,
@@ -180,6 +181,7 @@ async function apply() {
   row('note', 'Diffs', 'data/diff/00-all.diff is upstream → shipped; the per-rule files attribute it');
 
   reportDictionary(runDictionary());
+  reportIndex(runIndex());
 
   console.log();
   console.log(`${PAD}${bold('Review before accepting')}`);
@@ -245,6 +247,33 @@ async function dictionary(args = []) {
   return 0;
 }
 
+// Reports whether it ran for the same reason the dictionary does — an optional step that says
+// nothing when it is off is a step nobody remembers exists.
+function reportIndex(result) {
+  if (result.skipped) {
+    row('note', 'Index', `CIPS_PATH not set — keeping ${path.relative(process.cwd(), INDEX_PATH)} as checked in`);
+    return;
+  }
+  const change = result.previousCitations === null ? null : result.citations - result.previousCitations;
+  const delta =
+    change === null ? '' : change === 0 ? ' (unchanged)' : ` (${change > 0 ? '+' : '−'}${n(Math.abs(change))})`;
+  row('ok', 'Index', `${n(result.citations)} citations${delta} across ${n(result.suttas)} suttas, ${(result.bytes / 1e6).toFixed(1)} MB`);
+  row('note', 'Index', `${n(result.unresolved)} citations name texts this corpus doesn't carry; ${result.aliases} terms reworded`);
+}
+
+// Standalone, like the dictionary: CIPS and the sutta text move on their own schedules.
+async function index(args = []) {
+  banner('index');
+  const result = runIndex({ force: args.includes('force') });
+  reportIndex(result);
+  if (result.skipped) {
+    next('CIPS_PATH=/path/to/CIPS npm run update-data index', 'clone github.com/thesunshade/CIPS');
+    return 0;
+  }
+  next('npm run build:corpus', 'fold the new index into corpus.json, then commit');
+  return 0;
+}
+
 async function counts() {
   banner('counts');
   reportCounts(await runCounts());
@@ -294,6 +323,10 @@ function help() {
   line('npm run update-data dictionary', 'rebuild data/pli2en_dpd.json from a DPD release');
   line('  DPD_DB_PATH=…', 'full path to dpd.db — without it the step is skipped everywhere');
   line('  … force', 'write even when the new file is much smaller than the old');
+  console.log(`\n${PAD}${bold('The topic index')}`);
+  line('npm run update-data index', 'rebuild data/cips-index.json from a CIPS checkout');
+  line('  CIPS_PATH=…', 'the checkout root — without it the step is skipped everywhere');
+  line('  … force', 'write even when the new index is much smaller than the old');
   console.log();
   return 0;
 }
@@ -306,7 +339,7 @@ if (!COMMANDS.includes(command)) {
   process.exit(2);
 }
 
-const run = { plan, apply, accept, triage, post, counts, dictionary, help }[command];
+const run = { plan, apply, accept, triage, post, counts, dictionary, index, help }[command];
 
 try {
   process.exit(await run(args));

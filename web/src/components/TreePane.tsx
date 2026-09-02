@@ -711,7 +711,7 @@ export function TreePane({
                 the blurb this narrower column leaves out. */}
             {mobile && (
               <>
-                {displayHits.map(({ id, sutta }, i) => {
+                {displayHits.map(({ id, sutta, topics }, i) => {
                   const note = notes[id];
                   const { chips, hlCount, hlColors } = searchRowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
                   // This row's place in the shared column, past the lists block above it.
@@ -734,6 +734,13 @@ export function TreePane({
                       <span className="font-serif text-ui-base italic text-accent-text">
                         <MatchedText text={sutta.pali} query={query} />
                       </span>
+                      {/* Why this row is in the results, when nothing visible in it matched. */}
+                      {!!topics?.length && (
+                        <span className="block text-ui-base leading-[1.45] mt-[6px] text-ink-3">
+                          <span className="text-ink-4">Indexed under</span>{' '}
+                          <MatchedText text={topics.join(' · ')} query={query} />
+                        </span>
+                      )}
                       {note && (
                         <span className="block font-serif text-ui-md leading-[1.4] mt-[6px] pl-[10px] border-l-2 border-ink/30 whitespace-pre-wrap">
                           <MatchedText text={note} query={query} notation />
