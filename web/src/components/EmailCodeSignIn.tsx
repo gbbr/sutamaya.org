@@ -3,21 +3,18 @@ import { navigate } from '@reach/router';
 import { useAuth } from '../context/AuthContext';
 
 // Signing in with an emailed code: two steps on one card, the address and then the six digits.
-// Nothing here navigates away, which is why it exists alongside the OAuth button — an installed
-// PWA can complete it without the OS handing the session to a browser.
+// Nothing here leaves the page, so an installed PWA completes the flow in its own window.
 
 const FIELD =
   'w-full h-10 px-3 rounded-field border border-ink/[.18] bg-transparent font-sans text-ui-md placeholder:text-ink-5';
-// The accent border the app puts on an input it wants typed into, which the code field carries,
-// being the only thing left to do on the card.
+// The accent border on the input the card is waiting to have typed into.
 const FIELD_ACTIVE = 'border-accent ring-2 ring-accent/25';
 const SUBMIT =
   'flex items-center justify-center gap-1.5 w-full py-[12px] rounded-field bg-accent text-[#FBFAF7] font-sans text-ui-base font-medium disabled:opacity-50';
 const LINK = 'font-sans text-ui-sm text-ink-4 underline decoration-ink/25 underline-offset-2';
 const LINK_SPENT = 'font-sans text-ui-sm text-ink-5';
 
-// How long "Resend" stays disabled, matching the server's own cooldown, inside which it accepts a
-// request and deliberately sends nothing — the outstanding code is still the valid one.
+// How long "Resend" stays disabled, matching the server's own cooldown.
 const RESEND_COOLDOWN_SECONDS = 30;
 
 export function EmailCodeSignIn({ returnTo }: { returnTo?: string }) {
@@ -52,7 +49,7 @@ export function EmailCodeSignIn({ returnTo }: { returnTo?: string }) {
         setStep('code');
       } else {
         await signInWithEmailCode(email.trim(), code.trim());
-        // Nothing has navigated, this flow never leaving the page, so the return is made here.
+        // The flow never leaves the page, so the return is made here.
         if (returnTo) navigate(returnTo);
       }
     } catch (err) {
@@ -91,7 +88,7 @@ export function EmailCodeSignIn({ returnTo }: { returnTo?: string }) {
             onChange={(e) => setCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
             placeholder="123456"
             aria-label="Six-digit code"
-            // What lets a phone offer the code from its own notification.
+            // Lets a phone offer the code from its own notification.
             inputMode="numeric"
             autoComplete="one-time-code"
             required
