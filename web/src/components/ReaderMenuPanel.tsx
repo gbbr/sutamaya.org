@@ -193,6 +193,12 @@ export function ReaderMenuPanel({
     toggleShowHighlights,
   } = useReaderPrefs();
 
+  // The Pali position row, scrolled into view when turning Pali on reveals it below the fold.
+  const paliPositionRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (allPali) paliPositionRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }, [allPali]);
+
   // True where the panel is a short bottom sheet: the Style tab on mobile, which has no text
   // inputs and leaves the reader visible above it while a change is judged. The other two stay
   // full-screen and top-anchored, their inputs having to clear the on-screen keyboard, which this
@@ -585,7 +591,7 @@ export function ReaderMenuPanel({
                 explains. The setting is remembered while hidden. */}
             {allPali && (
               // No hairline: this is the Pali row's own sub-setting, so the two read as one group.
-              <div className={settingRow} style={{ paddingTop: 0 }}>
+              <div ref={paliPositionRef} className={settingRow} style={{ paddingTop: 0 }}>
                 <span className={rowLabel} style={{ color: theme.dim }}>
                   Pali position
                 </span>
