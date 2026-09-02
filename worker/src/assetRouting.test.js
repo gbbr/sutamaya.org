@@ -40,11 +40,32 @@ describe('asset vs API routing', () => {
   // navigation, so /index.html has to answer with the shell and not redirect. Cloudflare's default
   // `html_handling` redirects it to '/', whose meaning depends on the hostname it was asked for —
   // and the precache would store whatever came back as the shell.
+  // Compared against /settings rather than a sutta: /read/* and /browse/* have their title and
+  // description rewritten for link previews (shareMeta.js), so those two are the one pair of paths
+  // whose bodies are allowed to differ from the shell's.
   it('serves the app shell at /index.html rather than redirecting to /', async () => {
     const res = await SELF.fetch('https://x/index.html', { redirect: 'manual' });
     expect(res.status).toBe(200);
 
-    const shell = await SELF.fetch('https://x/read/dn16');
+    const shell = await SELF.fetch('https://x/settings');
+    expect(await res.text()).toBe(await shell.text());
+  });
+
+  // A link previewed on WhatsApp or Slack is fetched, never run, so the title and description the
+  // app writes once React mounts arrive too late — these have to be in the served HTML. Asserted
+  // on the reference alone, which is the same in a real build as in the config's seeded corpus.
+  it('writes a sutta’s own title and preview tags into the shell', async () => {
+    const html = await (await SELF.fetch('https://app.sutamaya.org/read/dn16')).text();
+    expect(html).toMatch(/<title>DN\s?16 · /);
+    expect(html).toMatch(/<meta property="og:title" content="DN\s?16 · /);
+    expect(html).toMatch(/<meta property="og:url" content="https:\/\/app\.sutamaya\.org\/read\/dn16"/);
+    expect(html).toMatch(/<meta name="twitter:card" content="summary"/);
+  });
+
+  // A list id names nothing in the corpus, and a reader's own list is not something to preview.
+  it('leaves the shell untouched for a browse path that is a user list', async () => {
+    const res = await SELF.fetch('https://app.sutamaya.org/browse/l-7f3a91c2');
+    const shell = await SELF.fetch('https://app.sutamaya.org/settings');
     expect(await res.text()).toBe(await shell.text());
   });
 
@@ -66,7 +87,7 @@ describe('asset vs API routing', () => {
     expect(res.headers.get('content-type')).toMatch(/text\/html/);
     expect(res.headers.get('cache-control')).toMatch(/max-age=3600/);
 
-    const shell = await SELF.fetch('https://sutamaya.org/read/dn16');
+    const shell = await SELF.fetch('https://app.sutamaya.org/settings');
     expect(await res.text()).not.toBe(await shell.text());
   });
 
@@ -74,7 +95,7 @@ describe('asset vs API routing', () => {
     const res = await SELF.fetch('https://app.sutamaya.org/');
     expect(res.status).toBe(200);
 
-    const shell = await SELF.fetch('https://app.sutamaya.org/read/dn16');
+    const shell = await SELF.fetch('https://app.sutamaya.org/settings');
     expect(await res.text()).toBe(await shell.text());
   });
 

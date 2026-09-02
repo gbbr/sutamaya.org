@@ -5,6 +5,7 @@ import { checkRateLimit } from './rateLimit.js';
 import { authRouter } from './routes/auth.js';
 import { listsRouter } from './routes/lists.js';
 import { dataRouter } from './routes/data.js';
+import { withShareMeta } from './shareMeta.js';
 
 const app = new Hono();
 
@@ -114,7 +115,10 @@ app.on(['GET', 'HEAD'], APP_PATHS, async (c) => {
   const url = new URL(c.req.url);
   const appOrigin = MARKETING_HOSTS.get(url.hostname);
   if (appOrigin) return c.redirect(`${appOrigin}${url.pathname}${url.search}`, 301);
-  return c.env.ASSETS.fetch(c.req.raw);
+  // A sutta or group link gets that sutta's or group's title and description written into the
+  // shell, so sharing one previews as what it opens rather than as the app. Every other path here
+  // — /index.html most of all — is handed back exactly as built; see shareMeta.js.
+  return withShareMeta(await c.env.ASSETS.fetch(c.req.raw), url, c.env);
 });
 
 // Every error body is `{error: <snake_case code>}`. Nothing outside the sign-in form displays one —
