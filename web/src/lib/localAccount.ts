@@ -1,23 +1,20 @@
 import { randomId } from './ids';
 import { KEEP_SAFE_DISMISSED_KEY, LOCAL_USER_KEY } from './storageKeys';
 
-// Identity for a reader who hasn't signed in: an id to file their work under, so the mirror, its
-// IndexedDB record and the auto-lists all behave exactly as they do for a real account. Signing in
-// adopts the whole thing onto the server (adoptMirror in lib/mirror.ts).
-//
-// The prefix tells the two apart — server ids are `crypto.randomUUID()` (worker/src/auth.js), which
-// can never start with a letter run like this, so the namespaces can't collide.
+// Identity for a reader who hasn't signed in: an id to file their work under, so the mirror and
+// the auto-lists behave as they do for a real account, and signing in adopts the whole thing onto
+// the server. The prefix keeps the two namespaces apart, a server id being a UUID.
 const LOCAL_PREFIX = 'local-';
 
+// True for an id belonging to a signed-out reader rather than an account.
 export function isLocalUserId(id: string | null | undefined): boolean {
   return !!id && id.startsWith(LOCAL_PREFIX);
 }
 
-// The id this device files signed-out work under, minted on first use and stable thereafter, so a
-// reload lands on the same mirror. Without localStorage it is per-session instead: the work lasts
-// as long as the tab does, the same bargain lib/mirrorDb.ts makes for storage.
+// The id used when localStorage is unavailable, which lasts only as long as the tab.
 let sessionFallback: string | null = null;
 
+// The id this device files signed-out work under, minted on first use and stable thereafter.
 export function localUserId(): string {
   try {
     const stored = localStorage.getItem(LOCAL_USER_KEY);
@@ -31,18 +28,19 @@ export function localUserId(): string {
   }
 }
 
-// Retires the current local id and mints a fresh one, on sign-out: a new namespace means an empty
-// mirror, and it resets the "keep this safe" prompt, which is keyed by local id.
+// Retires this device's local id and mints a fresh one, giving an empty mirror and resetting the
+// "keep this safe" prompt, which is keyed by local id.
 export function resetLocalUserId(): string {
   try {
     localStorage.removeItem(LOCAL_USER_KEY);
   } catch {
-    // ignore — the mint below still produces a usable id for this session
+    // The mint below still produces a usable id for this session.
   }
   sessionFallback = null;
   return localUserId();
 }
 
+// True once the "keep this safe" prompt has been dismissed for this local id.
 export function isKeepSafeDismissed(localId: string): boolean {
   try {
     return localStorage.getItem(KEEP_SAFE_DISMISSED_KEY) === localId;
@@ -51,6 +49,7 @@ export function isKeepSafeDismissed(localId: string): boolean {
   }
 }
 
+// Dismisses that prompt for this local id.
 export function dismissKeepSafe(localId: string): void {
   try {
     localStorage.setItem(KEEP_SAFE_DISMISSED_KEY, localId);
@@ -59,15 +58,10 @@ export function dismissKeepSafe(localId: string): void {
   }
 }
 
-// iOS/iPadOS WebKit running in a browser tab rather than as an installed app — the one platform
-// where local-only data is genuinely temporary. Safari evicts all script-writable storage,
-// IndexedDB included, for a site not visited in about seven days, and a home-screen install is the
-// documented exemption. Every browser on iOS is WebKit, so Chrome and Firefox there are subject to
-// it too.
-//
-// iPadOS 13+ reports itself as "MacIntel", hence the touch-point count; a real Mac reports 0. A
-// heuristic, used only to choose wording — a wrong answer shows a slightly more alarming sentence
-// to someone who is safe, never the reverse.
+// True on iOS in a browser tab rather than an installed app — the one platform where local-only
+// data is genuinely temporary, WebKit evicting a site's storage after about seven days away, with
+// a home-screen install as the documented exemption. A heuristic, used only to choose wording: a
+// wrong answer shows a more alarming sentence to someone who is safe, never the reverse.
 export function isIosBrowserTab(): boolean {
   if (typeof navigator === 'undefined') return false;
   const iosLike =

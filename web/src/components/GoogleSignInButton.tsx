@@ -1,20 +1,15 @@
-// Starts the OAuth redirect flow (worker/src/routes/auth.js) as a plain same-origin link: no SDK to
-// load, and no cross-origin iframe for Safari's storage partitioning to break. `return` is where
-// the Worker sends the browser once the round trip ends, and the Worker validates it again on both
-// legs (safeReturnPath), so this is a convenience rather than a trust boundary.
+// Starts the OAuth redirect flow as a plain same-origin link: no SDK to load, and no cross-origin
+// iframe for Safari's storage partitioning to break. An <a> rather than a button, this being a
+// navigation, so it behaves like one — a visible target, and a middle-click opens a working tab.
 //
-// An <a> rather than a button with an onClick: this is a navigation, so it behaves like one —
-// visible target, works before hydration, middle-click opens a working tab.
-//
-// `returnTo` is where the user was when they were sent here to sign in, carried in router state by
-// promptGoogleSignIn, so the round trip ends on the sutta they were filing rather than on Settings.
-// Falls back to the current URL for someone who simply walked into Settings.
+// `returnTo` is where the reader was when they were sent to sign in, so the round trip ends there
+// rather than on Settings; it falls back to the current URL. The Worker validates it on both legs,
+// so this is a convenience rather than a trust boundary.
 export function GoogleSignInButton({ returnTo }: { returnTo?: string }) {
   const here = typeof window === 'undefined' ? '/settings' : window.location.pathname + window.location.search;
-  // Absolute rather than a bare path: the origin is the half the Worker can't infer, since in dev
-  // it sits behind Vite's proxy, which rewrites Host. It is what lets one dev server serve both
-  // localhost and the hostname a phone reaches it by (see resolveWebOrigin). Only origins the
-  // Worker is configured for are honoured.
+  // Absolute, the origin being the half the Worker can't infer — in dev it sits behind Vite's
+  // proxy, which rewrites Host — and what lets one dev server serve both localhost and the
+  // hostname a phone reaches it by. Only configured origins are honoured.
   const target =
     typeof window === 'undefined' ? returnTo || here : new URL(returnTo || here, window.location.href).href;
   const href = `/api/auth/google/start?return=${encodeURIComponent(target)}`;

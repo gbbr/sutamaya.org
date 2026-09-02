@@ -15,36 +15,29 @@ interface HighlightPopupProps {
   onStop: (e: React.SyntheticEvent) => void;
 }
 
-// Marks the swatch of the currently applied colour. The ring sits outside the swatch, held off it
-// by a 1px band of the popup's background, rather than painted onto the swatch's border: held off,
-// the ring only has the panel to clear, so `fg` reads in all three themes, where a rim on the edge
-// would have to clear both the pastel and the panel and no single colour does.
-//
-// Every swatch carries a hairline, and the applied one's is brought up from `rule` to `dim` — a
-// swatch is painted in its theme's own fill (highlightPaint), so it always contrasts with the panel
-// beneath. `dim` rather than `fg` keeps it from reading louder than the "Remove" label beside it.
+// A swatch's hairline, brought up from `rule` to `dim` on the applied colour — `dim` rather than
+// `fg`, which would read louder than the "Remove" label beside it. The selected ring itself sits
+// outside the swatch, held off by a band of the popup's own background, so it has only the panel
+// to clear rather than the pastel as well.
 const swatchBorder = (theme: ThemeColors, selected: boolean) => (selected ? theme.dim : theme.rule);
 
-// The gap the popup keeps from the selection, and the margin it keeps from the viewport's edges.
+// The gap the popup keeps from the selection.
 const GAP = 10;
+// The margin it keeps from the viewport's edges.
 const EDGE = 10;
 
 export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, onStop }: HighlightPopupProps) {
   const ref = useRef<HTMLDivElement>(null);
-  // Null until the first measurement, which is the one render placed at the unshifted default.
+  // Where the popup goes, or null before the first measurement, which the one unplaced render is.
   const [place, setPlace] = useState<{ above: boolean; dx: number } | null>(null);
 
-  // Only the popup's own size is measured; where it then goes is arithmetic on the anchor, so the
-  // effect never reasons about the position it happens to be rendered at. It sets state rather than
-  // writing styles onto the node, which keeps the JSX below the single account of where the popup
-  // is — a re-render that doesn't change `pop` can't reset a position the effect won't reapply.
-  // Being a layout effect, the second render lands before paint, so the default placement is never
-  // seen.
+  // Places the popup from its own measured size and the anchor, never from where it currently
+  // happens to be. It sets state rather than writing styles onto the node, so the JSX below stays
+  // the single account of the position; as a layout effect, the default is never painted.
   useLayoutEffect(() => {
     const el = ref.current;
     if (!el || mobile) return;
-    // Screen-space throughout, like `pop` and window.innerWidth: getBoundingClientRect reports the
-    // `zoom`-scaled box, so the division back into CSS pixels happens in the style below.
+    // Screen-space throughout, as `pop` is; the division back into CSS pixels is in the style.
     const { width, height } = el.getBoundingClientRect();
     const half = width / 2;
     let dx = 0;
@@ -53,15 +46,13 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
     setPlace({ above: pop.top - height - GAP >= EDGE, dx });
   }, [pop, mobile]);
 
-  // Above the selection unless it sits too near the top of the viewport to fit — where every
-  // platform's selection menu puts itself. A drag ends with the pointer at the selection's tail, so
-  // a picker below would open under the cursor and cover the text the reader hasn't reached.
+  // Above the selection unless it sits too near the top to fit — where every platform's selection
+  // menu puts itself, and clear of the pointer, which ends a drag at the selection's tail.
   const above = place?.above ?? true;
 
-  // On a touch device the OS puts its own selection menu next to the selection and there is no way
-  // to suppress it, so anything anchored there is covered. The picker moves to a bar pinned along
-  // the bottom edge instead, clear of both the menu and the finger. Dismissed by tapping the text
-  // (ReaderPage's tap handler) or by its close button, since a full-width bar reads as permanent.
+  // On touch, a bar pinned along the bottom edge instead: the OS puts its own unsuppressable
+  // selection menu beside the selection, and the finger covers the rest. It carries a close button,
+  // a full-width bar reading as permanent, and a tap on the text dismisses it too.
   if (mobile) {
     return (
       <div

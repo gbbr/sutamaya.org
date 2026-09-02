@@ -4,13 +4,9 @@ import { useLayout } from '../context/LayoutContext';
 import { isExpandable } from '../lib/corpus';
 import type { ChapterRow } from '../lib/types';
 
-// One row of the nested chapter/group/category tree under a nikaya, recursing arbitrarily deep
-// (SN: group > chapter > category; AN: chapter > category; MN: category directly).
-//
-// Wrapped in `memo`, so a TreePane re-render unrelated to the corpus tree doesn't force every
-// expanded row to re-render. That requires `onToggle`/`onSelect` to stay referentially stable
-// across those renders — see TreePane's useCallback around toggleExpanded. Expanding or collapsing
-// still re-renders every row, since `expanded` is passed as one map rather than a per-row boolean.
+// One row of the tree under a nikaya, recursing as deep as the collection nests. Memoized, so a
+// TreePane render unrelated to the corpus tree costs nothing here — which requires `onToggle` and
+// `onSelect` to be stable. Expanding still re-renders every row, `expanded` being one map.
 export const TreeRow = memo(function TreeRow({
   node,
   depth,
@@ -23,12 +19,11 @@ export const TreeRow = memo(function TreeRow({
   node: ChapterRow;
   depth: number;
   nodeId?: string;
-  // A breadcrumb segment last clicked in the reader (see TreePane) — may be an ancestor above
-  // `nodeId` itself, briefly highlighted the same way `nodeId`'s own row is.
+  // The row a reader breadcrumb click named, briefly highlighted; it may be an ancestor of
+  // `nodeId`.
   flashNodeId?: string;
   expanded: Record<string, boolean>;
-  // `deep` is ⌥-click: collapse this row and everything under it, rather than leaving the
-  // descendants flagged open to reappear on the next expand. See TreePane's toggleExpanded.
+  // `deep` is ⌥-click, which collapses everything under this row too.
   onToggle: (id: string, deep?: boolean) => void;
   onSelect: (id: string) => void;
 }) {
@@ -48,8 +43,8 @@ export const TreeRow = memo(function TreeRow({
           {expandable && (open ? <ChevronDown size={15} strokeWidth={2} /> : <ChevronRight size={15} strokeWidth={2} />)}
         </span>
         <span className="flex-1 min-w-0">
-          {/* A step below CorpusTreeView's own `text-ui-lg` label, which is the nikaya this row
-              sits under: these are its chapters, and reading as the same size flattens that. */}
+          {/* A step below the nikaya label this row sits under, which the same size would
+              flatten. */}
           <span className="text-ui-md font-medium leading-[1.3]">{node.label}</span>
           {node.sub && <span className="block font-serif text-ui-sm italic text-accent-text mt-[1px]">{node.sub}</span>}
           <span className="block font-sans text-ui-sm text-ink-4 mt-[2px]">

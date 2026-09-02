@@ -1,9 +1,9 @@
 import { globalHistory } from '@reach/router';
 import { LAST_LOCATION_KEY } from './storageKeys';
 
-// Lets `/` — a fresh tab, or a PWA relaunched from its home-screen icon — restore whatever screen
-// the user was last on instead of bouncing to /browse/dn. `globalHistory.listen` sees every
-// navigate() call in the app, so this needs no per-page wiring.
+// The last screen the reader was on, which "/" restores — a fresh tab, or a relaunch from the
+// home-screen icon. `globalHistory.listen` sees every navigate() in the app, so no page wires this
+// up itself.
 
 const VALID_PATH = /^\/browse\/[^/]+(\/[^/]*)?$|^\/read\/[^/]+$/;
 

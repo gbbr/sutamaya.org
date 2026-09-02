@@ -31,55 +31,40 @@ function LoadFailed({ onRetry }: { onRetry: () => void }) {
   );
 }
 
-// What "/" resolves to. The bare origin is where both a fresh tab and a PWA relaunched from the
-// home-screen icon land (it is the manifest's `start_url`), so restoring the last location here is
-// what makes "close and reopen" return to wherever the user actually was. Navigates on mount, the
-// same shape @reach/router's own <Redirect> uses, so it behaves correctly under this app's
-// deliberate no-StrictMode setup (see main.tsx).
-//
-// The static landing page does not compete for this path: it is served on the marketing hostname,
-// a different origin from the app entirely (see wrangler.jsonc).
-//
-// With nothing stored — a genuine first visit — it falls through to bare /browse, which selects
-// no node. That's the point: TreePane force-expands the ancestors of whatever node is selected
-// (ancestorsOf), so landing on any real node would greet a first-time reader with a tree already
-// opened partway into one collection. Nothing selected means the whole canon collapsed to its
-// five nikāyas, which is the thing worth seeing first.
+// What "/" resolves to — the path a fresh tab and a home-screen relaunch both land on (the
+// manifest's `start_url`): the reader's last location, or bare /browse with nothing selected on a
+// first visit. Navigates on mount, as @reach/router's own <Redirect> does, which works under this
+// app's no-StrictMode setup (main.tsx).
 function RestoreLastLocation(_props: RouteComponentProps) {
   const { corpus } = useCorpus();
   useEffect(() => {
-    // A stored reader location whose uid this corpus no longer has — a refresh renamed or dropped
-    // it — would restore a Not found page, and NotFoundPage's own way out comes back through here.
-    // Checked at the restore rather than at the write: lib/lastLocation.ts knows nothing about the
-    // corpus and is better off keeping it that way, and this runs once per launch with the corpus
-    // already in hand (Routes renders nothing until it has loaded).
+    // A stored reader location is restorable only while this corpus still has the uid; a refresh
+    // may have renamed or dropped it. Checked here rather than at the write, since
+    // lib/lastLocation.ts knows nothing about the corpus.
     const stored = getLastLocation();
     const uid = stored?.match(/^\/read\/([^/]+)$/)?.[1];
-    // Through resolveCanonicalSuttaId, so a link naming one sutta of a batched document is judged
-    // the same way the reader itself judges it.
+    // Through resolveCanonicalSuttaId, so a uid naming one sutta of a batched document is judged
+    // as the reader judges it.
     const restorable = uid && corpus ? !!corpus.suttas[resolveCanonicalSuttaId(corpus, decodeURIComponent(uid))] : !!stored;
-    // A return, not a fresh choice of destination (see lib/entryKind.ts) — this *is* the user
-    // reopening the app on whatever they last had open, so the reader restores its scroll.
+    // A return rather than a fresh destination (lib/entryKind.ts), so the reader restores its
+    // scroll.
     markReturnNavigation();
     navigate(restorable ? stored! : '/browse', { replace: true });
   }, []);
   return null;
 }
 
-// A bare-uid deep link — a shared "/dn9" rather than "/read/dn9". @reach/router ranks the static
-// "/browse", "/read", "/settings" and "/help" routes above this dynamic one whatever the source
-// order, so it only matches a single path segment none of those claim. Redirects to the reader when
-// the id is a real sutta uid, and otherwise falls through to the same NotFoundPage the router's
-// `default` renders.
+// Sends a bare-uid deep link — a shared "/dn9" rather than "/read/dn9" — to the reader, and
+// renders NotFoundPage for anything else. @reach/router ranks the static routes above this one, so
+// it sees only a single segment none of them claim.
 function RedirectToReader({ suttaId }: RouteComponentProps<{ suttaId: string }>) {
   const { corpus } = useCorpus();
-  // Case-folded, since a link is usually copied from a reference the app displays in caps, and
-  // redirected to the lowercase uid so the reader's own URL is the canonical one.
+  // Case-folded, since such a link is usually copied from a reference the app displays in caps.
   const id = suttaId ? normalizeRouteId(suttaId) : suttaId;
   const known = Boolean(id && corpus?.suttas[id]);
   useEffect(() => {
-    // Same as RestoreLastLocation above: this redirect finishes the load the user arrived with,
-    // so it inherits that arrival's entry kind rather than counting as a fresh in-app navigation.
+    // The redirect finishes the arrival it came in on, so it inherits that entry kind rather than
+    // counting as a fresh in-app navigation.
     if (known) {
       markReturnNavigation();
       navigate(`/read/${id}`, { replace: true });
@@ -96,16 +81,12 @@ function Routes() {
   return (
     <Router style={{ height: '100%' }}>
       <RestoreLastLocation path="/" />
-      {/* One route element (not two) so /browse/:nodeId and /browse/:nodeId/:suttaId share the
-          same LibraryPage instance — see the comment on `suttaId` in LibraryPage.tsx for why:
-          two separate route elements here would remount LibraryPage (and every pane's scroll
-          position with it) every time a highlighted row is selected/deselected. `*suttaId` is a
-          splat, giving '' (not undefined) when the segment is absent. */}
+      {/* One route element, so selecting and deselecting a sutta keeps the same LibraryPage
+          instance and every pane's scroll position. `*suttaId` is a splat, giving '' rather than
+          undefined when the segment is absent. */}
       <LibraryPage path="/browse/:nodeId/*suttaId" />
-      {/* The library with nothing selected — a first visit, before the reader has picked
-          anything. A second route element, so selecting the first node does remount LibraryPage
-          per the note above; that costs a pane scroll position which on this one transition
-          doesn't exist yet. */}
+      {/* The library with nothing selected. A second route element, so picking the first node
+          remounts the page — before there is any pane scroll to lose. */}
       <LibraryPage path="/browse" />
       <ReaderPage path="/read/:suttaId" />
       <SettingsPage path="/settings" />

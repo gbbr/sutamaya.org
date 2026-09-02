@@ -1,11 +1,8 @@
-// The client half of the read-time tree repair (docs/offline-sync.md's A3), ported from
-// worker/src/lib/listTree.js — same algorithm, same order, so both halves produce the same tree
-// from the same rows. It exists twice because the mirror is what the UI renders from: a group
-// deleted offline has to take its contents with it immediately, with no network, and that cascade
-// is what expresses the delete. No module is shared between the two npm workspaces.
-//
-// Tombstoned rows are passed in rather than filtered out beforehand: the cascade needs to know
-// which ancestors are dead in order to drop what hangs off them.
+// The client half of the read-time list-tree repair (docs/offline-sync.md's A3), a port of
+// worker/src/lib/listTree.js — same algorithm and order, so both halves build the same tree from
+// the same rows. It exists twice because the mirror is what the UI renders from, and a group
+// deleted offline has to take its contents with it at once, with no network. Tombstoned rows are
+// passed in rather than filtered out first: the cascade needs to know which ancestors are dead.
 
 export interface TreeRow {
   id: string;
@@ -15,16 +12,13 @@ export interface TreeRow {
   deleted: boolean;
 }
 
-// Lowest (mtime, id) first. `id` breaks the tie so two rows written in the same millisecond still
-// order identically on every device.
+// Lowest (mtime, id) first, `id` breaking a same-millisecond tie identically on every device.
 function olderFirst(a: TreeRow, b: TreeRow): number {
   if (a.mtime !== b.mtime) return a.mtime < b.mtime ? -1 : 1;
   return a.id < b.id ? -1 : 1;
 }
 
-// Siblings render in `position` order; `id` breaks the tie, which the negative-prepend scheme
-// (firstPosition in lib/mirror.ts) can genuinely produce — two devices each prepending offline
-// both compute the same next position.
+// Siblings in `position` order, `id` breaking the tie two devices prepending offline both produce.
 function bySiblingOrder(a: TreeRow, b: TreeRow): number {
   if (a.position !== b.position) return a.position - b.position;
   return a.id < b.id ? -1 : 1;
@@ -35,19 +29,17 @@ function bySiblingOrder(a: TreeRow, b: TreeRow): number {
 export function repairListTree<T extends TreeRow>(lists: T[]): T[] {
   const byId = new Map(lists.map((list) => [list.id, list]));
 
-  // Re-home danglers: a parentId pointing at no row *at all* becomes top-level. This is a safety
-  // net, not delete semantics — a list whose parent simply hasn't been pulled yet would otherwise
-  // exist but render nowhere. A parentId pointing at a *tombstoned* row is the different case the
-  // cascade below handles.
+  // Each row's parent, with a parentId naming no row at all re-homed to the top level — a safety
+  // net for a parent not yet pulled, which would otherwise exist but render nowhere. A parentId
+  // naming a tombstoned row is the cascade's business below.
   const parentOf = new Map<string, string | null>(
     lists.map((list) => [list.id, list.parentId && byId.has(list.parentId) ? list.parentId : null])
   );
 
-  // Break cycles before anything walks an ancestor chain, or those walks never terminate. Each row
-  // has at most one parent, so a walk up from any node enters at most one cycle: one break per walk
-  // is enough, and walking from every node finds every cycle. Iterated in id order, with the loser
-  // chosen as the global minimum of the cycle's members, so neither the input's order nor which
-  // node the walk entered from changes the outcome.
+  // Break every cycle, before anything walks an ancestor chain. A row has at most one parent, so a
+  // walk up from any node enters at most one cycle, and walking from every node finds them all.
+  // Iterated in id order with the loser taken as the cycle's global minimum, so neither the input
+  // order nor where the walk entered changes the outcome.
   for (const { id } of [...lists].sort((a, b) => (a.id < b.id ? -1 : 1))) {
     const path: string[] = [];
     const seen = new Set<string>();
@@ -58,17 +50,16 @@ export function repairListTree<T extends TreeRow>(lists: T[]): T[] {
       cur = parentOf.get(cur) ?? null;
     }
     if (!cur) continue; // reached the root — no cycle on this chain
-    // `cur` is where the walk re-entered itself, so everything from there on is the cycle proper
-    // (any nodes before it merely lead into it and stay put).
+    // The walk re-entered itself at `cur`, so the cycle proper is everything from there on;
+    // anything before it merely leads in and stays put.
     const cycle = path.slice(path.indexOf(cur)).map((memberId) => byId.get(memberId)!);
     // The lowest mtime is re-homed, so the most recent move is the one that survives.
     const loser = cycle.reduce((lowest, candidate) => (olderFirst(candidate, lowest) < 0 ? candidate : lowest));
     parentOf.set(loser.id, null);
   }
 
-  // Cascade: a list is gone if it is tombstoned or anything above it is. Deleting a group deletes
-  // what's inside it, the way deleting a folder does. Survivors form a closed forest (a live list
-  // can never point at a dropped parent), since anything whose parent went went too.
+  // True while neither this row nor anything above it is tombstoned — deleting a group deletes
+  // what is inside it, as deleting a folder does. The survivors form a closed forest.
   const survives = (id: string): boolean => {
     let cur: string | null = id;
     while (cur) {

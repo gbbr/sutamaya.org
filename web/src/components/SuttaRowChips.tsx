@@ -9,67 +9,47 @@ interface SuttaRowChipsProps {
   hlCount: number;
   // The distinct colours those highlights use — the badge's swatches (see highlightColors).
   hlColors: string[];
-  // Present only in the Reader (search overlay, sutta header), which has its own light/sepia/dark
-  // theme independent of the app shell's. A reader caller passes its resolved theme to get
-  // inline-styled chips; omitting it falls back to the shell-tied `border-ink/25` Tailwind classes
-  // ListPane and TreePane use. Forwarded to HighlightCountBadge as well.
+  // The reader's own theme, which styles the chips inline. The library omits it and takes the
+  // shell-tied Tailwind classes.
   theme?: ThemeColors;
-  // The reader's body font size (ReaderPrefs' `fs`), passed only by the reader's sutta header, so
-  // the chips track its typography control. The library panes have no such control and pass
-  // nothing, keeping the fixed size below — which is also what `fs` at its default of 18 produces.
+  // The reader's body font size, so the chips track its typography control. The library has none
+  // and keeps the fixed size below, which is what `fs` at its default produces anyway.
   fs?: number;
-  // Only the reader's sutta header passes these: its chips navigate to the clicked list, its badge
-  // opens the Highlights side-panel tab. Without a handler a chip or badge renders as a plain span,
-  // as in ListPane and TreePane's rows, where the row itself is the click target and a nested
-  // <button> would be invalid HTML.
+  // Passed where a chip or the badge is interactive — only the reader's sutta header. Without one
+  // each renders as a span, the Library's rows being the click target themselves.
   onChipClick?: (chipId: string) => void;
   onHighlightClick?: (e: React.MouseEvent) => void;
-  // Adds an "add to list" control after the chips and before the highlight badge, opening the Lists
-  // side-panel tab. Only the reader's sutta header passes it, so the control that edits the
-  // memberships sits beside them, matching every row in the Library's list pane. Passing it also
-  // makes the row render for a sutta with no chips and no highlights, which would otherwise draw
-  // nothing — the control has to be reachable before there is any membership to show.
+  // Adds the "add to list" control after the chips. Passing it also renders the row for a sutta
+  // with neither chips nor highlights, the control having to be reachable before there are any.
   onAddToList?: (e: React.MouseEvent) => void;
 }
 
-// List-membership chips and highlight-count badge for one sutta row, shared by ListPane's desktop
-// rows, TreePane's mobile search results, the Reader's search overlay and the Reader's sutta header
-// so all four stay identical. See lib/lists.ts's suttaRowMeta for how `chips`/`hlCount` are built.
+// One sutta's list-membership chips and highlight badge, shared by the Library's rows, both search
+// surfaces and the reader's sutta header, so all four stay identical.
 export function SuttaRowChips({ chips, hlCount, hlColors, theme, fs, onChipClick, onHighlightClick, onAddToList }: SuttaRowChipsProps) {
   if (chips.length === 0 && hlCount === 0 && !onAddToList) return null;
   const ChipTag = onChipClick ? 'button' : 'span';
   const fontSize = fs ? fs - 7 : 14;
   const height = fontSize + 11;
-  // The add-to-list control runs a point above the chips: it has no fill or outline of its own, so
-  // a little extra size keeps it from disappearing into the run of pills — but only a little, since
-  // it sits at the end of that run rather than heading it.
+  // The add control runs a point above the chips, having no fill or outline to be found by.
   const addFontSize = fontSize + 1;
-  // The gap before the highlight badge. The badge is a count rather than a list, so it separates
-  // itself from whatever precedes it, by an amount that depends on what that is. The add control
-  // keeps the plain chip-to-chip gap, since it edits the memberships it sits at the end of.
+  // The gap before the highlight badge, which as a count rather than a list separates itself from
+  // whatever precedes it — by more after the outline-less add control than after a chip's own
+  // edge, and by nothing at all when it is alone on the line.
   function badgeGapFor(): number | undefined {
-    // After the add control, which carries no fill or outline of its own: it takes a clear step to
-    // read as a break rather than as more of the same run.
     if (onAddToList) return 12;
-    // Straight after a chip's edge, in the Library, where the line has no add control. Less than
-    // after the add control, since a pill edge is already a boundary, but not nothing: the badge
-    // has no outline, so without a little air its swatches read as hanging off the chip.
     if (chips.length > 0) return 8;
-    // The badge is alone on the line, so there's nothing to separate from: flush with the row.
     return undefined;
   }
   const badgeGap = badgeGapFor();
   return (
     <span data-component="SuttaRowChips" className="flex flex-wrap items-center gap-1.5 mt-3">
       {/* A chip for a list inside a group is segmented: a tinted leading segment naming the
-          immediate parent, then the list's own name. The parent is part of what identifies the
-          list — several groups can hold a "#anicca" — and a segment carries it on touch, where a
-          hover title says nothing. Repeating the parent on each of that group's chips is the cost
-          of every chip staying a self-contained unit: nothing has to line up, and the row wraps
-          chip-by-chip exactly as it did when they were plain pills, rather than needing a group
-          to survive being split across two lines.
-          `items-stretch` + `overflow-hidden` on the pill is what makes the parent segment's fill
-          reach both rounded ends; the horizontal padding moves onto the segments themselves. */}
+          immediate parent, then the list's own name. The parent identifies the list — several
+          groups can hold a "#anicca" — and a segment carries it on touch, where a hover title says
+          nothing. Every chip stays a self-contained unit, so the row wraps chip by chip, at the
+          cost of repeating a parent across its group's chips. `items-stretch` and
+          `overflow-hidden` are what let the segment's fill reach the rounded end. */}
       {chips.map((c) => (
         <ChipTag
           key={c.id}
@@ -91,11 +71,9 @@ export function SuttaRowChips({ chips, hlCount, hlColors, theme, fs, onChipClick
           }
           title={c.breadcrumb}
         >
-          {/* The fill and the medium weight are what set the parent apart, not a quieter text
-              colour: the quiet rungs of each palette (`--ink-3`, a theme's `dim`) are tuned for
-              text on the page's own ground, and this text sits on a tint that costs it about a
-              stop — sepia's `dim` landed near 3:1 there. Same colour as the list's own name, one
-              step down in the shell where the ramp has a rung to spare. */}
+          {/* The parent segment, set apart by its fill and weight rather than a quieter colour —
+              each palette's quiet rungs are tuned for the page's own ground and lose about a stop
+              on this tint. */}
           {c.parent && (
             <span
               className={`flex items-center pl-[8px] pr-[9px] font-medium rounded-r-full ${

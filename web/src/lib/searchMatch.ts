@@ -1,18 +1,17 @@
 import { searchKey } from './corpus';
 
-// One stretch of a rendered string, marked as matched or not — matchRuns' output, painted by
-// components/MatchedText.
+// Marking a search query's words inside the text a result displays.
+
+// One stretch of a rendered string, matched or not, painted by components/MatchedText.
 export interface TextRun {
   text: string;
   hit: boolean;
 }
 
-// The same fold searchCorpus matches on (corpus.ts's searchKey), done one character at a time so
-// each character of the folded key remembers where it came from: `map[i]` is the original index the
-// folded character `i` starts at, with a final entry for the end of the string. Highlighting needs
-// that because folding changes length — "ā" decomposes to two codepoints and then loses one.
-// Character-by-character folding agrees with the whole-string version for everything this corpus
-// contains, and searchMatch.test.ts asserts it, so searchKey can't drift from this unnoticed.
+// The same fold search matches on (searchKey), one character at a time so the result can be mapped
+// back: `map[i]` is the original index the folded character `i` starts at, with a final entry for
+// the end of the string. Folding changes length, so marking needs it. searchMatch.test.ts asserts
+// this agrees with the whole-string fold, so searchKey can't drift from it unnoticed.
 function fold(s: string): { key: string; map: number[] } {
   let key = '';
   const map: number[] = [];
@@ -26,10 +25,9 @@ function fold(s: string): { key: string; map: number[] } {
   return { key, map };
 }
 
-// Splits `text` into runs, marking every occurrence of every word in `query` — separately and
-// anywhere, exactly as searchCorpus matched them. Returns a single unmarked run when there is
-// nothing to mark: no query, or a field holding none of the words (a hit can match on its blurb
-// while its title shows nothing).
+// Splits `text` into runs, marking every occurrence of every word in `query`, separately and
+// anywhere, as search matched them. One unmarked run where there is nothing to mark — no query, or
+// a field holding none of the words, a hit being able to match on its blurb alone.
 export function matchRuns(text: string, query: string): TextRun[] {
   const words = searchKey(query.trim()).split(/\s+/).filter(Boolean);
   if (!text || !words.length) return [{ text, hit: false }];
@@ -39,8 +37,7 @@ export function matchRuns(text: string, query: string): TextRun[] {
     for (let i = key.indexOf(w); i !== -1; i = key.indexOf(w, i + w.length)) found.push([i, i + w.length]);
   }
   if (!found.length) return [{ text, hit: false }];
-  // Two words can overlap in the text ("mind" and "mindful" both matching "mindfulness") or sit
-  // flush against each other; either way that's one mark, not two abutting ones with a seam.
+  // Overlapping or abutting matches merge into one mark rather than two with a seam between them.
   found.sort((a, b) => a[0] - b[0]);
   const merged: Array<[number, number]> = [];
   for (const [start, end] of found) {

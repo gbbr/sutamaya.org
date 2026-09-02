@@ -1,38 +1,34 @@
 import type { ThemeColors } from '../lib/types';
 
 interface ShortcutsModalProps {
-  // Structural, not `Shortcut[]`, so a caller can append the pointer gestures (lib/shortcuts'
-  // POINTER_HINTS) to the same list — this only ever renders a cap row and a label.
+  // Structural rather than `Shortcut[]`, so the pointer gestures can be appended to the same list;
+  // this only ever draws caps and a label.
   shortcuts: Array<{ keys: string[]; label: string }>;
   onClose: () => void;
-  // Present only from the Reader, which has its own light/sepia/dark theme independent of the app
-  // shell's. LibraryPage's "?" passes no theme and gets the app-shell Tailwind `ink` classes.
+  // The reader's own theme. The library passes none and takes the shell's ink classes.
   theme?: ThemeColors;
 }
 
-// The Shift key, drawn rather than typed. The '⇧' character renders as a hairline outline at cap
-// size in the mono face, which all but disappears against the dimmed cap colour; a filled arrow
-// reads at a glance.
+// The Shift arrow, drawn rather than typed: the '⇧' character is a hairline outline at cap size in
+// the mono face, which all but disappears in the dimmed cap colour.
 function ShiftIcon({ px }: { px: number }) {
   return (
     <svg viewBox="0 0 12 12" width={px} height={px} fill="currentColor" aria-hidden="true" focusable="false">
-      {/* The stem is kept narrow against the head — at cap size a stem much wider than a third of
-          the head fills the square and stops reading as an arrow. */}
+      {/* A narrow stem: much past a third of the head's width it fills the square and stops
+          reading as an arrow. */}
       <path d="M6 1 10.8 6.6H8.45V11H3.55V6.6H1.2z" />
     </svg>
   );
 }
 
-// One key cap. A `keyName` leading with '⇧' draws the icon above followed by the rest of the label,
-// so lib/shortcuts.ts keeps writing the shortcut as plain text. `theme` styles it from the reader's
-// palette; without one it uses the app-shell ink tokens. `small` is for a cap sitting beside body
-// or caption text rather than in the help modal's own list, where the full-size cap outweighs what
-// it annotates.
+// One key cap. A `keyName` leading with '⇧' draws the icon above and then the rest, so
+// lib/shortcuts.ts can keep writing shortcuts as plain text. `small` is for a cap beside body or
+// caption text, which a full-size one would outweigh.
 export function KeyCap({ keyName, theme, small }: { keyName: string; theme?: ThemeColors; small?: boolean }) {
   const shift = keyName.startsWith('⇧');
   return (
     <kbd
-      // Spelled out for assistive tech, which would otherwise hear only the bare letter.
+      // Spelled out, assistive tech otherwise hearing only the bare letter.
       aria-label={shift ? `Shift ${keyName.slice(1)}` : keyName}
       className={`inline-flex items-center justify-center gap-[2px] rounded-md font-mono font-semibold ${
         small ? 'min-w-[18px] h-[18px] px-1 text-[10px] leading-none' : 'min-w-[24px] h-[24px] px-1.5 text-ui-xs'
@@ -45,9 +41,8 @@ export function KeyCap({ keyName, theme, small }: { keyName: string; theme?: The
   );
 }
 
-// The "?" keyboard-shortcuts help modal, shared by LibraryPage and ReaderPage: both render the same
-// `Shortcut[]` from lib/shortcuts.ts through one overlay/header/list/<kbd> structure. Only the
-// styling differs — Tailwind `ink` tokens when no `theme` is passed, inline `theme.*` when one is.
+// The "?" keyboard-shortcuts modal, shared by the library and the reader, which differ only in
+// whether they pass a theme.
 export function ShortcutsModal({ shortcuts, onClose, theme }: ShortcutsModalProps) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center animate-fadeIn" style={{ background: 'rgba(0,0,0,.35)' }} onClick={onClose}>

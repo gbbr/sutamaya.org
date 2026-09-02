@@ -53,10 +53,9 @@ export const SHORTCUTS = {
   readerHelp: { match: ['?'], keys: ['?'], label: 'Show keyboard shortcuts', scope: 'reader' },
 } satisfies Record<string, Shortcut>;
 
-// Whether to draw a key hint on a control that also has a shortcut. Keyed off pointer type, not
-// viewport width: a tablet gets the desktop layout at the size it usually runs, and advertising
-// keys there names something its reader has no way to press. Read once — a device doesn't change
-// pointer type mid-session, and a missing matchMedia (tests, SSR) falls through to showing them.
+// Whether to draw key hints on the controls that have shortcuts. Keyed off pointer type rather
+// than viewport width, since a tablet gets the desktop layout but has no keys to press. Read once,
+// a device not changing pointer type mid-session.
 export const SHOWS_KEY_HINTS =
   typeof window === 'undefined' || !window.matchMedia?.('(pointer: coarse)').matches;
 
@@ -64,8 +63,8 @@ export function shortcutsForScope(scope: ShortcutScope): Shortcut[] {
   return Object.values(SHORTCUTS).filter((s) => s.scope === scope);
 }
 
-// Modifier-click gestures listed in the same "?" modal as the key shortcuts above. Not part of
-// SHORTCUTS: they carry no `match`, since a pointer handler reads `e.altKey` directly instead.
+// A modifier-click gesture, listed in the same "?" modal as the key shortcuts. Separate from
+// SHORTCUTS, since a pointer handler reads `e.altKey` itself and needs no `match`.
 export interface PointerHint {
   keys: string[];
   label: string;
@@ -80,11 +79,10 @@ export function pointerHintsForScope(scope: ShortcutScope): PointerHint[] {
   return POINTER_HINTS.filter((h) => h.scope === scope);
 }
 
-// True if `e` triggers `shortcut`. Checks `e.key` both as-is and lowercased, so call sites don't
-// need to know whether a shortcut is a case-insensitive letter ('h', 'x') or an exact key
-// ('Enter', 'Escape', 'ArrowUp', '/', '?'). Ignores Ctrl/Cmd/Alt combos, so a single-key shortcut
-// can't hijack a browser or OS chord sharing its letter. Shift is consulted only for a shortcut
-// that asks for it: every other one stays Shift-agnostic, since '?' is only reachable as Shift+/.
+// True if `e` triggers `shortcut`, matching `e.key` as-is and lowercased so a call site needn't
+// know whether the shortcut is a letter or an exact key name. A Ctrl/Cmd/Alt combo never matches,
+// so no single-key shortcut can hijack a browser chord; Shift is consulted only where a shortcut
+// asks for it, '?' being reachable only as Shift+/.
 export function isShortcut(
   e: Pick<KeyboardEvent, 'key' | 'ctrlKey' | 'metaKey' | 'altKey' | 'shiftKey'>,
   shortcut: Shortcut
@@ -94,8 +92,7 @@ export function isShortcut(
   return shortcut.match.includes(e.key) || shortcut.match.includes(e.key.toLowerCase());
 }
 
-// True if `e` targets a text input or textarea — the bail-out that keeps a single-key shortcut from
-// firing while the user is typing into a field.
+// True if `e` targets a text input or textarea, which is where a single-key shortcut stands down.
 export function isTypingTarget(e: Pick<KeyboardEvent, 'target'>): boolean {
   const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
   return tag === 'input' || tag === 'textarea';

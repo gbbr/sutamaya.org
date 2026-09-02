@@ -8,10 +8,8 @@ interface PersistedReaderOrigin {
   fromView?: 'tree' | 'list';
 }
 
-// A hard refresh drops location.state entirely, losing `from`/`fromView` even for a reader opened
-// moments earlier through LibraryPage.onOpen, which persists this alongside the router state it
-// sets. Scoped by `suttaId`, so a direct link to a different /read/:id can't resurrect a stale
-// origin from an unrelated reading session.
+// Reads the origin LibraryPage.onOpen persisted alongside its router state, which a hard refresh
+// drops. Scoped by `suttaId`, so a link to a different sutta can't resurrect a stale origin.
 function readPersistedReaderOrigin(suttaId: string | undefined): PersistedReaderOrigin | null {
   if (!suttaId) return null;
   try {
@@ -24,10 +22,8 @@ function readPersistedReaderOrigin(suttaId: string | undefined): PersistedReader
   }
 }
 
-// Re-keys the persisted origin to whichever sutta is now being read, carrying `from`/`fromView`
-// forward as router state already does (navigateToSutta below). Without it, a refresh partway
-// through a Prev/Next run finds the entry still scoped to the original sutta and falls back to the
-// bare corpus location instead of the origin pane.
+// Re-keys the persisted origin to the sutta now being read, so a refresh partway through a
+// Prev/Next run still finds it.
 function persistReaderOrigin(suttaId: string, from: string | undefined, fromView: 'tree' | 'list' | undefined) {
   if (!from) return;
   try {
@@ -37,28 +33,24 @@ function persistReaderOrigin(suttaId: string, from: string | undefined, fromView
   }
 }
 
-// Where to return to on close: the exact pane, nodeId and scroll position the reader was opened
-// from (LibraryPage's onOpen), not the sutta's bare corpus location. `fromView` rides alongside it
-// on mobile, where LibraryPage shows one pane at a time, so closing lands on the right pane.
+// Tracks where the reader was opened from and navigates back there. `from` is the pane and node to
+// return to (LibraryPage's onOpen), `fromView` which pane to show on mobile; both survive a
+// Prev/Next run and a hard refresh.
 export function useReaderOrigin(locationState: { from?: string; fromView?: 'tree' | 'list' } | undefined) {
   const from = locationState?.from;
   const fromView = locationState?.fromView;
 
-  // Navigates to another sutta's reader — Prev/Next, or opening a search result — persisting the
-  // origin under the new sutta id first, so a refresh partway through a run still finds it.
+  // Opens another sutta in the reader, carrying the origin forward.
   function navigateToSutta(nextSuttaId: string) {
     persistReaderOrigin(nextSuttaId, from, fromView);
     navigate(`/read/${encodeURIComponent(nextSuttaId)}`, { state: { from, fromView } });
   }
 
-  // Closes the reader: router state first, then the persisted fallback (survives a hard
-  // refresh), then `fallbackPath` for a direct/bookmarked link that never had an origin at all.
+  // Closes the reader, to the router state, else the persisted origin, else `fallbackPath` for a
+  // link that never had an origin.
   function closeToOrigin(suttaId: string | undefined, fallbackPath: string) {
-    // `restoreOrigin: true` marks a return-to-origin round trip rather than a fresh deep link,
-    // which TreePane's Library/My-lists toggle has to tell apart. Only meaningful alongside `from`:
-    // the fallback path below is a bare corpus location, not a return to anywhere the user was.
-    // Tagged (lib/routeIntent.ts) so LibraryPage consumes `fromView` exactly once, and a later
-    // refresh of the same URL can't resurrect it over a manual pane switch made since.
+    // `restoreOrigin` marks a return rather than a fresh deep link, which TreePane's Library/My
+    // lists toggle tells apart. Tagged (lib/routeIntent.ts) so LibraryPage consumes it once.
     if (from) {
       navigate(from, { state: tagIntent({ fromView, restoreOrigin: true }) });
       return;

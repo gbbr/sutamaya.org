@@ -2,25 +2,22 @@ import { useEffect, useRef, useState } from 'react';
 import { navigate } from '@reach/router';
 import { useAuth } from '../context/AuthContext';
 
-// Sign in with a code emailed to the user — two steps on one card: address, then the six digits
-// that arrive. Nothing here navigates away, which is the whole reason this exists alongside the
-// OAuth button: an installed PWA can complete it without the OS handing the session to a browser
-// (see worker/src/emailAuth.js).
+// Signing in with an emailed code: two steps on one card, the address and then the six digits.
+// Nothing here navigates away, which is why it exists alongside the OAuth button — an installed
+// PWA can complete it without the OS handing the session to a browser.
 
 const FIELD =
   'w-full h-10 px-3 rounded-field border border-ink/[.18] bg-transparent font-sans text-ui-md placeholder:text-ink-5';
-// The code field arrives focused and is the only thing left to do on this card, so it carries the
-// accent border the app uses for an input it wants typed into (as ListRow's rename and draft fields
-// do) rather than the resting outline every other field has.
+// The accent border the app puts on an input it wants typed into, which the code field carries,
+// being the only thing left to do on the card.
 const FIELD_ACTIVE = 'border-accent ring-2 ring-accent/25';
 const SUBMIT =
   'flex items-center justify-center gap-1.5 w-full py-[12px] rounded-field bg-accent text-[#FBFAF7] font-sans text-ui-base font-medium disabled:opacity-50';
 const LINK = 'font-sans text-ui-sm text-ink-4 underline decoration-ink/25 underline-offset-2';
 const LINK_SPENT = 'font-sans text-ui-sm text-ink-5';
 
-// Matches RESEND_COOLDOWN_MS in worker/src/emailAuth.js, where a request inside the window is
-// accepted and deliberately not sent — the outstanding code is still valid, and a second one would
-// make it ambiguous which to type. Counting down here is what keeps the button from looking broken.
+// How long "Resend" stays disabled, matching the server's own cooldown, inside which it accepts a
+// request and deliberately sends nothing — the outstanding code is still the valid one.
 const RESEND_COOLDOWN_SECONDS = 30;
 
 export function EmailCodeSignIn({ returnTo }: { returnTo?: string }) {
@@ -55,8 +52,7 @@ export function EmailCodeSignIn({ returnTo }: { returnTo?: string }) {
         setStep('code');
       } else {
         await signInWithEmailCode(email.trim(), code.trim());
-        // Signed in without ever leaving the page, so nothing has moved us off Settings — go
-        // where the user was when they were sent here.
+        // Nothing has navigated, this flow never leaving the page, so the return is made here.
         if (returnTo) navigate(returnTo);
       }
     } catch (err) {
@@ -95,8 +91,7 @@ export function EmailCodeSignIn({ returnTo }: { returnTo?: string }) {
             onChange={(e) => setCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
             placeholder="123456"
             aria-label="Six-digit code"
-            // inputMode/autoComplete are what let a phone offer the code from the notification
-            // rather than making the user switch to their mail app and back.
+            // What lets a phone offer the code from its own notification.
             inputMode="numeric"
             autoComplete="one-time-code"
             required

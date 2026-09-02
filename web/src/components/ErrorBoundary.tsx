@@ -1,15 +1,11 @@
 import { Component, type ErrorInfo, type ReactNode } from 'react';
 
-// The app's last line of defence: a single throw anywhere in the tree otherwise unmounts everything
-// React has rendered and leaves a blank page with no way back.
+// The app's last line of defence, against a throw that would otherwise unmount everything React
+// has rendered and leave a blank page. The outermost element in App.tsx, outside the providers, so
+// one throwing during its own render is caught too. A class, React exposing no hook equivalent.
 //
-// A React boundary only catches errors thrown while rendering, and in the lifecycle methods and
-// constructors underneath it. Event handlers, timers and rejected promises — the mirror's flush,
-// every fetch — never reach it and need their own handling where they happen. A class because React
-// exposes no hook equivalent.
-//
-// The outermost element in App.tsx, outside AppProviders, so a provider throwing during its own
-// render is caught too.
+// It catches only what is thrown while rendering, and in the lifecycle methods beneath it: an
+// event handler, a timer or a rejected promise needs its own handling where it happens.
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -27,17 +23,15 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
   }
 
   componentDidCatch(error: Error, info: ErrorInfo) {
-    // One string rather than several arguments, so the whole thing can be copied out of the
-    // console in a single selection when someone reports a crash.
+    // One string rather than several arguments, so a crash report can be copied in one selection.
     console.error(`Unhandled render error: ${error.stack || error.message}\nComponent stack:${info.componentStack}`);
   }
 
   render() {
     if (!this.state.failed) return this.props.children;
 
-    // Recovery is a full page load, not a state reset: whatever produced the error is usually still
-    // in the state that produced it, so re-rendering the same tree would land back here. The
-    // fallback renders nothing but static markup, since it has to be the one thing that can't throw.
+    // The fallback: static markup only, this being the one thing that can't itself throw. Recovery
+    // is a full page load rather than a state reset, which would land back here.
     return (
       <div
         data-component="ErrorBoundaryFallback"
@@ -53,11 +47,9 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
           >
             Reload
           </button>
-          {/* The escape hatch from a page that crashes every time it loads — a sutta whose text
-              trips the reader, say, which reloading alone would only reproduce. Goes to the
-              library with nothing selected rather than anywhere the user was: "back" is exactly
-              what must not happen here, and selecting nothing also can't re-enter whichever node
-              did the crashing. The label says where it lands rather than implying a return. */}
+          {/* The escape hatch from a page that crashes on every load, which reloading would only
+              reproduce. It lands on the library with nothing selected, so it can't re-enter
+              whatever crashed, and the label says so rather than implying a return. */}
           <button
             className="font-sans text-ui-md px-4 py-2 rounded-md border border-ink/25 hover:bg-ink/[.06]"
             onClick={() => window.location.assign('/browse')}

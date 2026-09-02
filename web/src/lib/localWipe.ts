@@ -1,23 +1,17 @@
 import { authApi } from './api';
 import { clearScrollMemory } from '../hooks/useScrollMemory';
 
-// `window.__dangerWipeLocal()` — put this device back to a cold, signed-out first run, and reload.
-// A development and demo-recording tool: there is no UI for it, and the name is what stops it being
+// `window.__dangerWipeLocal()` — puts this device back to a cold, signed-out first run and
+// reloads. A development and demo-recording tool, with no UI; the name is what keeps it from being
 // typed by accident.
 //
-// Signing out is the first step and the load-bearing one: while a session cookie survives, wiping
-// local storage changes almost nothing, since the next load pulls /api/data and puts the account's
-// lists, notes and highlights straight back.
+// It signs out first, which is load-bearing: while a session cookie survives, the next load pulls
+// /api/data and puts the account's data straight back.
 //
-// **Nothing here is a sync operation.** It signs out, then deletes rows; it never marks them
-// deleted. That distinction is what makes it safe to ship: lib/sync.ts pushes rows the mirror still
-// holds and marks `dirty`, and a delete travels as a row carrying `deleted: true`. Deleting the
-// database leaves nothing to push, so the account on the server is untouched and signing back in
-// restores it. Going through the ordinary mutators would replicate the erasure to the server and to
-// every other device.
-//
-// What it does destroy for good is local-only work: edits made offline that hadn't synced yet, and
-// — signed out, where there is no server copy at all — everything.
+// **Nothing here is a sync operation.** It deletes rows rather than marking them deleted, so
+// there is nothing left for a flush to push and the account on the server is untouched — signing
+// back in restores it. What it destroys for good is local-only work: offline edits that hadn't
+// synced, and, signed out, everything.
 
 declare global {
   interface Window {
@@ -25,9 +19,9 @@ declare global {
   }
 }
 
-// Resolves on success, error *or* `blocked` rather than only on success. The mirror holds an open
-// connection, so `blocked` is the expected answer: awaiting only `onsuccess` would hang here and the
-// reload that closes the connection — and so lets the deletion finish — would never happen.
+// Deletes one IndexedDB database, resolving on `blocked` as well as on success or error: the
+// mirror holds an open connection, so blocked is the expected answer, and it is the reload that
+// closes the connection and lets the deletion finish.
 function deleteDatabase(name: string): Promise<void> {
   return new Promise((resolve) => {
     let request: IDBOpenDBRequest;
@@ -42,18 +36,17 @@ function deleteDatabase(name: string): Promise<void> {
   });
 }
 
-// Every step is independently guarded: this is a reset, so getting most of the way is strictly
-// better than stopping at the first thing this browser happens to refuse.
+// Clears the session, service worker, caches, IndexedDB and both storages. Every step is guarded
+// on its own, so a browser refusing one still gets the rest of the reset.
 async function wipeLocalData(): Promise<void> {
-  // The session first — see the note above on why the rest is close to pointless without it.
+  // The session first: the rest is close to pointless without it.
   try {
     await authApi.logout();
   } catch (e) {
     console.warn('__dangerWipeLocal: sign-out failed, wiping anyway', e);
   }
 
-  // Before the storage clear, so nothing still in memory can outlive it. The scroll positions in
-  // particular would otherwise be written straight back by the `pagehide` that the reload fires.
+  // Before the storage clear, or the reload's `pagehide` writes the scroll positions straight back.
   clearScrollMemory();
 
   try {
@@ -85,13 +78,11 @@ async function wipeLocalData(): Promise<void> {
   }
 }
 
-// Bound as a *synchronous* wrapper so it can be called bare in the console. An async function would
-// hand back a pending Promise and need `await` in front of every call to read as anything useful.
+// Bound as a synchronous wrapper, so it can be called bare in the console rather than awaited.
 if (typeof window !== 'undefined') {
   window.__dangerWipeLocal = () => {
-    // Land on "/" rather than reloading in place: a cold start means the first-visit route
-    // (getLastLocation() has just been cleared with the rest of localStorage), not wherever the
-    // console happened to be open.
+    // Lands on "/" rather than reloading in place, a cold start meaning the first-visit route
+    // rather than wherever the console happened to be open.
     wipeLocalData().then(() => location.replace('/'));
     return 'wiping — the page will reload at /';
   };

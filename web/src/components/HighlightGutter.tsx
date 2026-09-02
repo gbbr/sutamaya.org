@@ -9,16 +9,13 @@ interface HighlightGutterProps {
   highlights: Highlight[];
   theme: ThemeColors;
   onJump: (segIndex: number, highlightId?: string) => void;
-  // Recomputed whenever this changes, on top of mount, highlight change and resize. Pass anything
-  // that reflows the text without resizing the scroll container — font size, line height, face,
-  // Pali-always-shown, or the sutta's segments arriving — since the container's own box is fixed by
-  // the surrounding flex layout and a ResizeObserver on it sees none of that.
+  // Anything that reflows the text without resizing the scroll container — type size, face, the
+  // segments arriving — which a ResizeObserver on a flex-fixed box would never see.
   layoutKey?: string | number;
 }
 
-// A thin strip of colour marks along the edge of the scroll area, one per highlight, each at the
-// relative height its text sits at in the scrollable content — where the scrollbar thumb would be
-// if that highlight were on screen. Clicking one jumps to it.
+// A strip of marks along the edge of the scroll area, one per highlight, each at the height its
+// text sits at in the whole document. Clicking one jumps to it.
 export function HighlightGutter({ scrollRef, highlights, theme, onJump, layoutKey }: HighlightGutterProps) {
   const [marks, setMarks] = useState<GutterMark[]>([]);
   const [track, setTrack] = useState<GutterTrack | null>(null);
@@ -33,9 +30,8 @@ export function HighlightGutter({ scrollRef, highlights, theme, onJump, layoutKe
 
     function recompute() {
       if (!container) return;
-      // getBoundingClientRect() reports post-`zoom` screen coordinates, while scrollTop and
-      // scrollHeight are pre-zoom layout units; computeGutterLayout converts the rect values to
-      // local units before mixing the two.
+      // The rects are post-`zoom` and the scroll properties aren't; computeGutterLayout converts
+      // before mixing them.
       const { track, marks } = computeGutterLayout(
         highlights,
         container.getBoundingClientRect(),

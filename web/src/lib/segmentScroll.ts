@@ -1,9 +1,14 @@
 import { prefersReducedMotion } from './motion';
 
-// Position math for useSuttaReading's scrollToSegment. Settings > UI scale is applied via CSS
-// `zoom` on <html> (lib/uiPrefs.ts), so getBoundingClientRect() reports post-zoom screen
-// coordinates while scrollBy's `top` is a pre-zoom scroll unit — dividing by `scale` converts the
-// former into the latter. `containerRect`/`elRect` are raw getBoundingClientRect() readings.
+// Scrolling one element into view inside the reading pane, and the animation that gets there.
+//
+// Every offset here is in scroll units, not screen pixels: the UI scale is CSS `zoom`, which
+// getBoundingClientRect() reports through and a scroll write doesn't, so a rect reading is divided
+// by the scale before the two are mixed. iOS Safari compounds this by applying the same division
+// again to an animated `scrollBy`, so the animation is driven by hand through `scrollTop` rather
+// than through the browser's own smooth scrolling.
+
+// How far to scroll to bring `elRect` to `block` within `containerRect`, both raw rect readings.
 export function computeSegmentScrollOffset(
   containerRect: { top: number; height: number },
   elRect: { top: number; height: number },
@@ -16,17 +21,13 @@ export function computeSegmentScrollOffset(
     : (elRect.top - containerRect.top) / scale - START_MARGIN;
 }
 
-// iOS Safari with CSS `zoom` active applies an extra, undocumented zoom division to the pixel
-// argument of an animated `scrollBy`/`scrollTo`, on top of the one applied above — landing short of
-// the target by a factor of `scale`, worse the farther the jump. `scrollTop` is a plain property
-// write with no such ambiguity, so the animation is driven by hand rather than through the
-// browser's own "smooth" interpolation.
+// Each container's running scroll animation, so a new one cancels it.
 const activeScrollAnimations = new WeakMap<HTMLElement, () => void>();
 
-// Cancel-on-user-input, which native smooth scrolling gives for free: a touch or wheel started
-// mid-jump would otherwise be overwritten by the next animation frame.
+// The inputs that cancel a running scroll, which native smooth scrolling gives for free.
 const CANCEL_EVENTS = ['wheel', 'touchstart', 'pointerdown'] as const;
 
+// Animates a container to an absolute scroll position, cancelling on any user input.
 export function animateScrollTop(container: HTMLElement, targetScrollTop: number, duration = 350) {
   activeScrollAnimations.get(container)?.();
   const start = container.scrollTop;
@@ -65,8 +66,7 @@ export function animateScrollTop(container: HTMLElement, targetScrollTop: number
   requestAnimationFrame(step);
 }
 
-// `offset` is in scroll units rather than screen pixels: under Settings > UI scale the two differ,
-// and computeSegmentScrollOffset above is what converts between them.
+// Animates a container by a relative offset, in scroll units.
 export function animateScrollBy(container: HTMLElement, offset: number) {
   animateScrollTop(container, container.scrollTop + offset);
 }

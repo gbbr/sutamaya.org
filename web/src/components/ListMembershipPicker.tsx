@@ -8,9 +8,8 @@ import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits';
 import type { ThemeColors } from '../lib/types';
 
-// Matches ListRow's own cap (see its MAX_INDENT_DEPTH) — nesting itself is unlimited, but the
-// indent stops growing past this depth so a deep tree can't squeeze row content off a narrow
-// screen.
+// The depth past which the indent stops growing, as ListRow caps it, so a deep tree can't squeeze
+// row content off a narrow screen.
 const MAX_INDENT_DEPTH = 3;
 
 interface ListMembershipPickerProps {
@@ -21,64 +20,53 @@ interface ListMembershipPickerProps {
 }
 
 type Row =
-  // Browse mode only: a group can't hold a sutta, so activating one collapses or expands its
-  // subtree rather than selecting anything.
+  // Browse mode only, and never selectable: activating a group expands or collapses its subtree.
   | { type: 'group'; option: ListPathOption }
-  // `pinned` marks a copy in the browse mode's checked-only section at the top; the same list also
-  // appears in its place in the tree below, and both rows toggle the one membership.
+  // `pinned` marks the copy in the checked-only section at the top; the list also appears in its
+  // place in the tree below, and both rows toggle the one membership.
   | { type: 'list'; option: ListPathOption; pinned?: boolean }
   | { type: 'create'; name: string };
 
-// An "add to lists" widget with two distinct modes in one popover, the way a label/folder picker
-// conventionally works:
+// The "add to lists" picker, with two modes in one popover as a label picker conventionally has:
+//   empty input – browse: the lists this sutta is already in, flat at the top, then the whole tree
+//                 indented by depth, its group rows expanding and collapsing
+//   any input   – search: a flat ranked list of lists only, each naming its parent path, and a
+//                 "Create list" row at the end
 //
-//   empty input  -> browse: the lists this sutta is already in, flat and unindented at the top,
-//                   then a rule, then the whole list tree indented by depth, with group rows that
-//                   collapse and expand their subtree.
-//   any input    -> search: a flat, ranked list of *lists only*, no indentation, each row naming
-//                   its parent path in dimmed text, plus a single "Create list" row at the end.
-//
-// Indentation and filtering are never mixed: a row lifted out of its subtree — a search result, or
-// a checked row pinned to the top — has no parent above it to be read against, so its path is
-// spelled out instead. Groups drop out of the results entirely, since they can't hold this sutta
-// and would be unselectable rows in a list whose purpose is selecting. Creating a group, or a list
-// nested inside one, is the Library tree's job (ListRow's inline create); this picker only creates
-// a top-level list. Used by the reader's Lists tab.
+// Indentation and filtering are never mixed: a row lifted out of its subtree has no parent above
+// it to be read against, so its path is spelled out instead. Groups drop out of the results, being
+// unselectable, and only a top-level list can be created here — a group, or a list inside one, is
+// the Library tree's job.
 export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose }: ListMembershipPickerProps) {
   const { ready, lists, membership, toggleMembership, addToList, createList } = useUserData();
   const [draft, setDraft] = useState('');
   const [activeIndex, setActiveIndex] = useState(0);
-  // Collapsed groups, by id. Empty on every open, since the picker mounts fresh: a collapsed group
-  // would hide a nested list this sutta is already in, which is what opening this is for.
+  // Which groups are collapsed. Empty on every open, since a collapsed group could hide a list
+  // this sutta is already in.
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const inputRef = useRef<HTMLInputElement>(null);
-  // Guards the create path against a double-tap or a held Enter while the POST is still out.
-  // createList() dedupes by label against `lists`, which can't yet hold a list whose create hasn't
-  // returned, so on a slow connection a second activation would sail past that check. A ref rather
-  // than state: re-rendering the row mid-create would fight the input's focus handling.
+  // Guards a create already in flight against a double-tap or a held Enter, which would sail past
+  // createList's own dedupe. A ref, since re-rendering mid-create would fight the input's focus.
   const creatingRef = useRef(false);
 
   useEffect(() => {
     if (autoFocus) inputRef.current?.focus();
   }, [autoFocus]);
 
-  // membership[suttaId] includes the auto-list ids, which are synthesized rather than real rows and
-  // have nothing to add or remove items against, so they're excluded rather than rendered as a
-  // toggle that would 404.
+  // The real lists this sutta is in; an auto-list has nothing to add or remove against.
   const suttaListIds = (membership[suttaId] || []).filter((id) => !AUTO_LIST_IDS.has(id));
-  // Membership as it stood when the picker opened, which fills the pinned section below. Live
-  // membership would make a row vanish from under the pointer the moment it was unchecked, with no
-  // way to undo a mistaken tap short of finding the list again, so the section is frozen and only
-  // the checkmarks follow live membership. Snapshotted during render rather than in an effect, so
-  // the first paint carries the section; keyed on `ready` so a picker opened before the mirror
-  // loads doesn't freeze an empty set, and on `suttaId` in case a host reuses the component.
+  // Membership as it stood when the picker opened, which is what the pinned section shows —
+  // following live membership would make a row vanish from under the pointer as it was unchecked,
+  // with no way back to it. Only the checkmarks follow. Snapshotted during render, so the first
+  // paint carries the section, and keyed so a picker opened before the mirror loads doesn't freeze
+  // an empty set.
   const [openMembership, setOpenMembership] = useState<{ key: string | null; ids: Set<string> }>({ key: null, ids: new Set() });
   if (ready && openMembership.key !== suttaId) setOpenMembership({ key: suttaId, ids: new Set(suttaListIds) });
   const flatAll = useMemo(() => flattenListTree(lists), [lists]);
   const query = draft.trim();
 
-  // Ancestor chain per list, for the dimmed path a search result carries. Walked from each list
-  // rather than sliced off its breadcrumb string, since a label is free to contain " / " itself.
+  // Each list's ancestor path, for the dimmed text a lifted row carries. Walked rather than sliced
+  // off the breadcrumb, a label being free to contain " / " itself.
   const parentPathById = useMemo(() => {
     const byId = new Map(lists.map((l) => [l.id, l]));
     const out = new Map<string, string>();
@@ -96,15 +84,11 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
 
   const rows: Row[] = useMemo(() => {
     if (!query) {
-      // Browsing: the lists this sutta was in when the picker opened, lifted out of the tree and
-      // repeated flat at the top, so the checked ones are among the first rows rather than wherever
-      // their group falls — which in a deep tree can be well below the fold. They keep their tree
-      // order and name their parent path, a lifted row having no parent above it. The tree below
-      // stays in plain depth-first order, which is the layout the user already knows.
+      // The checked lists, repeated flat at the top in tree order, so they are among the first
+      // rows rather than wherever their group falls.
       const pinned = flatAll.filter((f) => f.list.kind !== 'group' && openMembership.ids.has(f.list.id));
-      // Everything under a collapsed group drops out. flatAll is in depth-first
-      // parent-then-children order, so one forward pass carries a collapse all the way down a
-      // subtree.
+      // Everything under a collapsed group. `flatAll` is parent-then-children, so one forward pass
+      // carries a collapse all the way down a subtree.
       const hidden = new Set<string>();
       for (const f of flatAll) {
         const parentId = f.list.parentId;
@@ -117,23 +101,20 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
           .map((option) => ({ type: option.list.kind === 'group' ? ('group' as const) : ('list' as const), option })),
       ];
     }
-    // Matching the whole breadcrumb, not just the label, so typing a group's name still finds the
-    // lists inside it even though the group itself no longer appears as a row. Folded with
-    // searchKey, the same key library search matches on, so "a" finds "ā" here too.
+    // Matched against the whole breadcrumb, so a group's name still finds the lists inside it, and
+    // folded with the same searchKey the library's search uses, so "a" finds "ā" here too.
     const ql = searchKey(query);
     const order = new Map(flatAll.map((f, i) => [f.list.id, i]));
     const matches = flatAll
       .filter((f) => f.list.kind !== 'group' && searchKey(f.breadcrumb).includes(ql))
       .sort((a, b) => {
-        // A hit on the list's own name outranks one that only matched somewhere in its path, then
-        // the shorter name (the closer the match is to being the whole name), then tree order.
+        // A hit on the name outranks one only in the path, then the shorter name, then tree order.
         const aName = searchKey(a.list.label).includes(ql) ? 0 : 1;
         const bName = searchKey(b.list.label).includes(ql) ? 0 : 1;
         return aName - bName || a.list.label.length - b.list.label.length || order.get(a.list.id)! - order.get(b.list.id)!;
       });
-    // The create row is always offered, not only when nothing matched: a new list can legitimately
-    // be a substring of an existing name — typing "Te" when "Temp" exists. createList() dedupes an
-    // exact same-label, same-parent create.
+    // The create row is offered even when something matched, a new name being free to be a
+    // substring of an existing one; createList dedupes an exact repeat.
     return [
       ...matches.map((option) => ({ type: 'list' as const, option })),
       { type: 'create' as const, name: query.slice(0, LIST_NAME_MAX_LENGTH) },
@@ -144,13 +125,12 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
     setActiveIndex(0);
   }, [draft]);
 
-  // Clamped rather than stored back, so collapsing a group out from under the cursor lands it on
-  // the last row instead of on nothing.
+  // The cursor's row, clamped rather than stored back, so collapsing a group out from under it
+  // lands on the last row rather than on nothing.
   const activeIdx = rows.length ? Math.min(activeIndex, rows.length - 1) : -1;
 
-  // Where the pinned section ends and the tree begins — the rule is drawn above that row rather
-  // than as a row of its own, so the keyboard cursor can't land on it. -1 when nothing is pinned,
-  // and in search mode, which has no section.
+  // The row the section rule is drawn above, so the cursor can't land on it. -1 with nothing
+  // pinned, and in search mode, which has no sections.
   const firstTreeRow = rows.findIndex((r) => r.type !== 'list' || !r.pinned);
   const dividerAt = firstTreeRow > 0 ? firstTreeRow : -1;
 
@@ -175,21 +155,18 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       toggleMembership(suttaId, row.option.list.id);
       return;
     }
-    // Only the create path is guarded: toggleMembership is idempotent server-side
-    // (ADD_ITEM_SQL/REMOVE_ITEM_SQL in routes/lists.js), and tapping a membership row twice is a
-    // legitimate on-then-off.
+    // Only creating is guarded; toggling membership is idempotent, and twice is an on-then-off.
     if (creatingRef.current) return;
     creatingRef.current = true;
     try {
       const list = await createList(row.name, null, 'list');
       await addToList(suttaId, list);
-      // Creating is the one action that rebuilds the pinned section: clearing the key makes the
-      // next render re-snapshot from live membership, so the new list joins it. The view is going
-      // from search back to browse anyway, so there is no row under the pointer to yank away.
+      // Rebuilds the pinned section, so the new list joins it. The one action that does, and safe
+      // here, the view going back from search to browse with no row under the pointer.
       setOpenMembership({ key: null, ids: new Set() });
     } catch (e) {
-      // Both write to the local mirror and can't fail on the network, so this only catches
-      // something genuinely unexpected — enough to release the re-entrancy guard below.
+      // Both write to the local mirror and can't fail on the network, so only something
+      // unexpected lands here; the guard still has to be released.
       console.error('list create failed', e);
     } finally {
       creatingRef.current = false;
@@ -209,16 +186,16 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       const row = rows[activeIdx];
       if (row) activateRow(row);
     } else if (e.key === 'Escape') {
-      // Stops here rather than bubbling to the reader's window-level Escape handler, so a first
-      // Escape clearing the draft doesn't also close the whole panel in the same keypress.
+      // Stopped here, so the Escape that clears the draft doesn't also reach the reader's own
+      // handler and close the panel in the same keypress.
       e.stopPropagation();
       if (draft) setDraft('');
       else onRequestClose?.();
     }
   }
 
-  // `tint`, not `rule` — `rule` is a border tone, and spread across a whole row it reads as a
-  // selected row rather than as the pointer/keyboard cursor it actually is.
+  // One row's cursor styling. `tint` rather than `rule`, a border tone, which across a whole row
+  // would read as a selection rather than a cursor.
   const rowStyle = (active: boolean) => ({
     borderRadius: 9,
     background: active ? theme.tint : 'transparent',
@@ -226,19 +203,15 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
 
   return (
     <div data-component="ListMembershipPicker" className="flex min-h-0 flex-1 flex-col">
-      {/* The input sits outside the scroll area rather than sticking to the top of it, so a row
-          scrolling past simply ends at the field's edge with nothing showing above it. (A sticky
-          header pins to its scroller's *padding* box, so every host that padded the scroller left
-          a strip above the field where the rows stayed visible.) It has to stay on screen either
-          way: focus lives in the input while ArrowUp/Down walks the rows, so it's the control the
-          user is actually driving. Hosts therefore lay this component out as a flex column of its
-          own height and leave the scrolling to it. */}
+      {/* The filter input, outside the scroll area rather than sticking to the top of it, so a row
+          scrolling past ends at its edge — a sticky header pins to the scroller's padding box, and
+          a host that padded the scroller left a strip above it where rows stayed visible. It has
+          to stay on screen either way, focus living here while the arrows walk the rows, so hosts
+          lay this out as a flex column and leave the scrolling to it. */}
       <div className="flex-none pb-1.5">
-        {/* Matches the rows' own 14.5px, so the input doesn't read as a heavier element than the
-            list it filters — except on a touch pointer, where it goes back to 16px: iOS Safari
-            zooms the whole page when an input with a smaller font takes focus, and
-            web/index.html deliberately leaves pinch-zoom enabled, so the usual `maximum-scale`
-            escape isn't open to us. The 16px only ever applies where that zoom is a risk. */}
+        {/* The rows' own 14.5px, so the input doesn't outweigh the list it filters — but 16px on a
+            touch pointer, below which iOS Safari zooms the page on focus, and this app leaves
+            pinch-zoom enabled rather than taking the `maximum-scale` escape. */}
         <input
           ref={inputRef}
           value={draft}
@@ -253,8 +226,8 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
           spellCheck={false}
         />
       </div>
-      {/* `touch-pan-y`: the Library's mobile modal sets `touch-none` on itself to keep a drag on
-          its chrome from panning the page behind it, so the rows have to opt back in here. */}
+      {/* `touch-pan-y` opts the rows back into scrolling, the Library's mobile modal setting
+          `touch-none` on itself to keep a drag on its chrome from panning the page behind. */}
       <div className="sc min-h-0 flex-1 touch-pan-y">
         {rows.map((row, idx) => {
           const active = idx === activeIdx;
@@ -286,9 +259,8 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
                   onMouseEnter={() => setActiveIndex(idx)}
                   onClick={() => activateRow(row)}
                 >
-                  {/* Points down when the group's lists are showing, right when they're hidden —
-                      matching the tree pane's own groups, which use a chevron rather than a folder
-                      icon. */}
+                  {/* Down while the group's lists show, right while they are hidden, as the tree
+                      pane's own groups do. */}
                   <ChevronDown
                     size={17}
                     strokeWidth={2}
@@ -304,8 +276,8 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
           }
           const checked = suttaListIds.includes(list.id);
           const parentPath = parentPathById.get(list.id) ?? '';
-          // Flat and path-labelled in both the modes that lift a row out of its subtree: a search
-          // result and a pinned copy of a checked list.
+          // True for a row lifted out of its subtree — a search result, or a pinned copy — which
+          // is drawn flat and labelled with its path instead.
           const flat = Boolean(query) || Boolean(row.pinned);
           return (
             <Fragment key={row.pinned ? `pin:${list.id}` : list.id}>
@@ -316,10 +288,8 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
                 onMouseEnter={() => setActiveIndex(idx)}
               >
                 <button className="flex flex-1 min-w-0 items-center gap-2 py-[8px] pr-2 text-left" onClick={() => activateRow(row)}>
-                  {/* Checked fills with the theme's accent rather than with full-strength `fg`,
-                      matching every other selected state in the reader's panel; unchecked draws in
-                      `dim` rather than `fg`, which at 16px read as a heavier mark than the name
-                      beside it. */}
+                  {/* The checkbox: filled in the accent when checked, as every other selected
+                      state in the panel is, and outlined in `dim` when not. */}
                   <span
                     className="flex-none w-[16px] h-[16px] rounded-[5px] flex items-center justify-center"
                     style={{

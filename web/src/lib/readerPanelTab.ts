@@ -4,9 +4,8 @@ export type ReaderPanelTab = 'highlights' | 'lists' | 'text';
 
 const TABS: ReaderPanelTab[] = ['highlights', 'lists', 'text'];
 
-// Which tab the reader's menu panel opens on when nothing asks for a specific one (the header's
-// Menu button). Display is the first-run answer; after that the panel reopens wherever the reader
-// last left it, on any sutta — a per-device preference, not per-sutta state.
+// The tab the reader's menu panel opens on when nothing asks for a specific one: wherever it was
+// last left, on any sutta, and Display on a first run. A per-device preference, not per-sutta.
 export function getReaderPanelTab(): ReaderPanelTab {
   try {
     const stored = localStorage.getItem(READER_PANEL_TAB_KEY) as ReaderPanelTab | null;
