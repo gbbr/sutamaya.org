@@ -16,67 +16,47 @@ import offlineShot from '../assets/help/offline-mobile.webp';
 import offlineSignedInShot from '../assets/help/offline-signed-in-mobile.webp';
 import readerShot from '../assets/help/reader-mobile.webp';
 
-// A single scrolling page of annotated screenshots: one section per thing the app does, built from
-// columns of picture plus numbered legend. Each column carries its legend directly beneath its own
-// screenshot, so the pairing survives the columns stacking on a phone. Every legend line is a
-// handful of words — this page is read by someone looking for one answer.
-//
-// **Phone-width captures serve every viewport.** A 1280×800 desktop window shown in this column
-// renders its 16px UI text at about 6px, and the app's structure is the same either way, so a
-// desktop set would be a second copy of the same explanation.
-//
-// **Markers number continuously across a section's columns** rather than restarting at 1 in each,
-// so two pictures side by side can't both show a "1".
-//
-// **The markers are DOM, not painted into the image.** Each is an [x%, y%] pair positioned over the
-// `<img>`, so the screenshots stay clean, the numbers stay crisp at any DPR, and repositioning one
-// is a number edit rather than a re-export. They sit outside the app's palette: they are annotation
-// laid over the product, not part of it.
+// A single scrolling page of annotated screenshots: one section per thing the app does, each a
+// column of picture plus the numbered legend for its own markers. Captures are phone-width at
+// every viewport, markers number continuously across a section's columns, and every marker is DOM
+// positioned over the `<img>` rather than painted into it.
 //
 // ---------------------------------------------------------------------------------------------
 // ADDING OR REPLACING A SCREENSHOT
 //
 // 1. Capture. Chrome DevTools (`Cmd+Option+I`) → device toolbar (`Cmd+Shift+M`) → set the viewport
-//    to exactly **390×844** → `Cmd+Shift+P` → "Capture screenshot". That yields a 780×1688 PNG at
-//    2× DPR with no browser chrome, framed identically every time.
-// 2. Convert. `cwebp -q 82 shot.png -o shot.webp` (`brew install webp`). At this size that lands
-//    well under 150KB with clean text. Bump to `-q 90` if small type shows fringing.
-// 3. Place. Drop it in `web/src/assets/help/` and `import` it at the top of this file — imported
-//    rather than served from `public/`, because Vite content-hashes imported assets, so a
-//    re-captured screenshot reaches devices that cached the old one (see CLAUDE.md, "Cache
-//    staleness"). PNG or WebP, never SVG: vite.config.ts precaches `**/*.svg`, which would push
-//    every screenshot into the install payload.
-// 4. Mark it up. In a dev build, clicking anywhere on a shot prints the exact `[x, y]` pair to
-//    paste into that shot's `marks` — see logMarkOnClick below. Add one `steps` line per marker.
+//    to exactly **390×844** → `Cmd+Shift+P` → "Capture screenshot", for a 780×1688 PNG at 2× DPR.
+// 2. Convert. `cwebp -q 82 shot.png -o shot.webp` (`brew install webp`); `-q 90` if small type
+//    shows fringing.
+// 3. Place. Drop it in `web/src/assets/help/` and `import` it at the top of this file, so Vite
+//    content-hashes it. PNG or WebP, never SVG, which vite.config.ts precaches.
+// 4. Mark it up. In a dev build, clicking a shot prints the `[x, y]` pair to paste into its
+//    `marks` — see logMarkOnClick below. Add one `steps` line per marker.
 //
-// A shot with no `src` yet renders as a labelled slot naming the file it is waiting for, so a
-// half-finished page is still a usable one.
+// A shot with no `src` yet renders as a labelled slot naming the file it is waiting for.
 // ---------------------------------------------------------------------------------------------
 
 interface HelpShot {
   // The imported image URL. Undefined until the screenshot exists.
   src?: string;
-  // Filename to capture. Also the key for this column, and what the empty slot displays.
+  // Filename to capture. Also this column's key, and what the empty slot displays.
   name: string;
-  // Names this column when a section has more than one, so the pair reads as two labelled halves.
+  // Names this column when a section has more than one.
   title: string;
   // One [x%, y%] marker per `steps` line, measured from this image's own top-left.
   marks: Array<[number, number]>;
-  // What each of this column's markers points at, in order. Every line must correspond to something
-  // visible in this shot; anything that doesn't — a keyboard shortcut, a gesture, a state the
-  // screenshot isn't in — belongs in the section's `tips`, so a number never points at nothing.
+  // What each of this column's markers points at, in order. Every line must name something visible
+  // in this shot; anything else belongs in the section's `tips`.
   steps: string[];
 }
 
 interface HelpSection {
   title: string;
-  // A one-line orientation before the pictures — what this section is about.
+  // A one-line orientation before the pictures.
   lead: string;
   shots: HelpShot[];
-  // The things a marker can't point at — a keyboard shortcut, a gesture, a consequence that shows
-  // up after the fact. One paragraph each, at most two or three per section: they render as a
-  // tinted card, which stops reading as "worth stopping for" once it grows into a wall.
-  // `*asterisks*` emphasise a run within a tip — see withEmphasis.
+  // The things a marker can't point at — a shortcut, a gesture, a consequence after the fact —
+  // one paragraph each, rendered as one tinted card. `*asterisks*` emphasise a run (withEmphasis).
   tips?: string[];
 }
 
@@ -331,10 +311,8 @@ const SECTIONS: HelpSection[] = [
   },
 ];
 
-// Who wrote the words being read, and the one thing this app does to them. It sits after the tour
-// and the install steps, which are what a reader does next. The full account of every change is in
-// docs/translation-changes.md — the page the reader's "Source: SuttaCentral, modified" line links
-// to — so this is the credit and the disclosure, not the list.
+// The translation credit and the disclosure that the text is modified; docs/translation-changes.md
+// holds the list itself.
 const TRANSLATION_TITLE = 'The translation';
 
 const TRANSLATION_LEAD =
@@ -346,9 +324,8 @@ const TRANSLATION_LEAD =
 
 const TRANSLATION_URL = 'https://github.com/gbbr/sutamaya.org/blob/main/docs/translation-changes.md';
 
-// The dictionary behind every word tap is someone else's work, under a licence that asks to be
-// named, so it is named where a reader meets it rather than only in the repo. Kept to whose it is
-// and where to find it whole; the version this build shipped is in corpus.json.
+// The dictionary credit its licence asks for: whose work it is and where to find it whole. The
+// version this build shipped is in corpus.json.
 const DICTIONARY_TITLE = 'The dictionary';
 
 const DICTIONARY_LEAD =
@@ -359,9 +336,8 @@ const DICTIONARY_LEAD =
 
 const DICTIONARY_URL = 'https://www.dpdict.net/';
 
-// Not a HelpSection, because installing happens in browser chrome — Safari's Share sheet, Chrome's
-// ⋮ menu — which no capture of this app can show, and which Apple and Google rename often enough
-// that a picture would age faster than a sentence.
+// The install steps, written rather than captured: they happen in browser chrome, which no
+// screenshot of this app can show.
 const INSTALL_TITLE = 'Install the app';
 
 const INSTALL_LEAD =
@@ -396,49 +372,34 @@ const INSTALL_TIPS = [
 
 const CONTACT_TITLE = 'Get in touch';
 
-// The issue tracker rather than an email address: an address on a public page is harvested by
-// crawlers, and a bug report is more useful where it can be answered in the open.
+// Points at the issue tracker; no email address, which a public page would expose to crawlers.
 const CONTACT_LEAD =
   'Bugs, questions and suggestions all go to the same place — the project’s issue tracker. ' +
   'Anything filed there is public, and posting needs a free GitHub account.';
 
 const CONTACT_URL = 'https://github.com/gbbr/sutamaya.org/issues/new';
 
-// Outside the app's palette, and louder than anything in it: these are annotation drawn over a
-// photograph of the product, so a marker in the accent colour would read as another piece of the UI
-// it points at, and a dark neutral one would have to be hunted for against arbitrary screenshot
-// pixels. A cool blue, the one hue nothing in the warm palette holds, and without the "something
-// went wrong" a red marker would carry. Solid with a pale ring, so it holds an edge over those
-// pixels in either theme — the shots are fixed images and don't invert, so this can't be
-// theme-var-backed.
-//
-// Both call sites share the colour: the number on the picture and the number in the legend are the
-// same marker, matched by sight before the digit is read. Both size the digit with a raw px
-// font-size rather than a `text-ui-*` token, since the numeral is artwork fitted to its circle
-// rather than UI text.
+// A numbered marker, on the picture and in the legend alike. A fixed cool blue outside the app's
+// palette, since the shots are images and don't invert with the theme. Both call sites size the
+// digit in raw px, as artwork fitted to its circle rather than UI text.
 const MARKER = 'flex items-center justify-center rounded-full bg-[#1D4ED8] font-sans font-medium text-white tabular-nums';
 
-// `*emphasis*` inside a tip. A single asterisk rather than Markdown's double, since a tip is a
-// hand-authored string in this file and never user input. Split on the delimiter rather than
-// replaced into HTML, so the text stays text and can't inject markup — the capture group puts every
-// emphasised run on an odd index. `font-semibold` rather than bold, because the self-hosted IBM
-// Plex Sans carries only 400–600 and a 700 request gets a synthesised smear.
+// Renders a tip's `*emphasis*` runs, splitting on the markers so the text stays text; the capture
+// group puts every emphasised run on an odd index. Semibold, the heaviest weight IBM Plex Sans
+// ships here.
 function withEmphasis(tip: string) {
   return tip.split(/\*(.+?)\*/).map((part, i) =>
     i % 2 ? <span key={i} className="font-semibold text-ink">{part}</span> : part,
   );
 }
 
-// Section ids for the contents list, derived from the title rather than stored beside it, so the
-// two can't disagree about what a link points at.
+// Returns a section's anchor id, derived from its title so the contents list can't disagree with it.
 function anchorId(title: string): string {
   return `help-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
 }
 
-// Dev-only authoring aid: click anywhere on a shot and this prints the pair that puts a marker's
-// centre there, ready to paste into that shot's `marks`. A marker is translated by -50%/-50%, so
-// its `left`/`top` is its centre — the same percentage the click resolves to — and no adjustment is
-// needed. `import.meta.env.DEV` is a compile-time constant, so this drops out of a production build.
+// Prints the `[x, y]` pair that puts a marker's centre where a shot was clicked, to paste into its
+// `marks`. Wired up only under `import.meta.env.DEV`, so it drops out of a production build.
 function logMarkOnClick(e: React.MouseEvent<HTMLImageElement>) {
   const rect = e.currentTarget.getBoundingClientRect();
   const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -446,9 +407,8 @@ function logMarkOnClick(e: React.MouseEvent<HTMLImageElement>) {
   console.log(`[${x.toFixed(1)}, ${y.toFixed(1)}]`);
 }
 
-// One column: the picture, its name, and the legend for its own markers. Columns share a row until
-// the page is too narrow to give each a usable width, then stack — and since the legend travels
-// inside the column, a stacked reader still gets the words directly under the picture.
+// Renders one column of a section: the picture, its name, and the legend for its own markers.
+// Columns share a row until the page is too narrow, then stack, legend and picture together.
 function ShotColumn({ shot, startIndex, showTitle }: { shot: HelpShot; startIndex: number; showTitle: boolean }) {
   return (
     <div className="flex-1 min-w-[190px]">
@@ -457,11 +417,8 @@ function ShotColumn({ shot, startIndex, showTitle }: { shot: HelpShot; startInde
           <img
             src={shot.src}
             alt=""
-            // The shots are captured in dark mode, which on the light theme puts a hard black block
-            // in the middle of the page. The light-mode-only filters lift its blacks toward the
-            // page, so it reads as a picture rather than a hole; dark mode turns them all off. The
-            // hairline is dark-mode-only for the inverse reason: against the light theme a
-            // mostly-black image already draws its own edge.
+            // The shots are captured in dark mode: the light theme lifts their blacks toward the
+            // page, and dark mode instead draws the hairline the image can't draw for itself.
             className={`block w-full rounded-field dark:border dark:border-ink/[.12] brightness-110 contrast-[.92] opacity-[.92] dark:brightness-100 dark:contrast-100 dark:opacity-100 ${import.meta.env.DEV ? 'cursor-crosshair' : ''}`}
             onClick={import.meta.env.DEV ? logMarkOnClick : undefined}
           />
@@ -470,9 +427,8 @@ function ShotColumn({ shot, startIndex, showTitle }: { shot: HelpShot; startInde
             <span className="font-sans text-ui-xs text-center leading-[1.4] text-ink-5 px-3">{shot.name}</span>
           </div>
         )}
-        {/* Decorative: the legend below repeats every marker as a number, so nothing is lost when
-            the image isn't seen. `pointer-events-none` so a marker sitting over the spot you want
-            to click doesn't swallow the dev coordinate readout above. */}
+        {/* The markers over the image. Decorative, since the legend below repeats each as a
+            number, and `pointer-events-none` so one can't swallow the dev readout's click. */}
         {shot.marks.map(([x, y], i) => (
           <span
             key={i}
@@ -497,14 +453,8 @@ function ShotColumn({ shot, startIndex, showTitle }: { shot: HelpShot; startInde
   );
 }
 
-// A tip is the part of a section a reader is least likely to know already, so it gets a tinted card
-// rather than the quietest text on the page, read at the legend's size and weight. The amber is
-// `warning-text`, the tone HeaderBanner and Settings already use for "worth knowing", rather than
-// the markers' red — that red means annotation drawn over a screenshot, and spreading it to the
-// page's own furniture would stop it meaning that. One card per section, not per tip, so two tips
-// don't repeat the icon.
-// The padding is asymmetric on purpose: the icon already holds the text well clear of the left
-// edge, while on the right nothing but the padding keeps a wrapped line off it.
+// Renders a section's tips as one amber card with a single icon, in the `warning-text` tone
+// HeaderBanner and Settings use for "worth knowing".
 function TipCard({ tips }: { tips: string[] }) {
   return (
     <div className="flex items-start gap-2 rounded-field bg-warning-text/[.09] pl-2.5 pr-[18px] py-3 mt-4">
@@ -518,10 +468,7 @@ function TipCard({ tips }: { tips: string[] }) {
   );
 }
 
-// A section runs to several screens on a phone, so the way back to "On this page" — the only route
-// to a different section — is a long swipe up from wherever the reader finished. Dimmer than the
-// section's own text and set to the right margin, off the left edge every other line starts from,
-// so it reads as the end of the section rather than as one more thing to read.
+// The link back to "On this page" that closes each section, set to the right margin.
 function BackToTop({ onClick }: { onClick: () => void }) {
   return (
     <button
@@ -535,20 +482,16 @@ function BackToTop({ onClick }: { onClick: () => void }) {
 }
 
 export function HelpPage(_props: RouteComponentProps) {
-  // The one app page listed in the sitemap, so it gets a description written for a search result
-  // rather than the app-wide default.
+  // Its own description rather than the app-wide default: this is the one app page in the sitemap.
   useDocumentMeta(
     'How to use sutamaya',
     'How to use sutamaya: browsing the canon, reading with the Pali and dictionary, highlighting and taking notes, keeping your own lists, and reading offline.'
   );
 
-  // The page's own scroll container, so "Back to top" can return to it. The document itself never
-  // scrolls here — the app shell is a fixed-height layout and this `.sc` div is what moves.
+  // The page's scroll container, which "Back to top" returns to; the document itself never scrolls.
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Escape leaves the page, matching Settings — both are side trips off whatever the reader was
-  // actually doing, and '/' restores that rather than relying on browser history (see
-  // RestoreLastLocation in App.tsx).
+  // Escape leaves the page, as it does in Settings, via '/' rather than browser history.
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape' && !isTypingTarget(e)) navigate('/');
@@ -569,18 +512,9 @@ export function HelpPage(_props: RouteComponentProps) {
           A tour of the app in pictures. Nothing here needs an account, and nothing you've already visited needs a connection.
           For complete offline access, download all content from the Settings page.
         </p>
-        {/* Stacked on a phone the sections run to several screens each, so without this the one
-            answer someone came for is a long scroll away with no sign of how far.
-            A labelled, indented column rather than a wrapped inline run or a bordered card: the
-            app already says "a group of rows you can go to" exactly this way — a quiet uppercase
-            micro-label with its rows indented beneath it, the same shape as MY LISTS and AUTOMATIC
-            in the lists pane — so this needs no new visual device. The links threaded into one
-            wrapped line would also sit close enough together to be mis-tapped on a phone, and a
-            card would give a signpost more weight than the sections it points at. The label is
-            dimmer than a real section header, so this reads as a way in rather than as a seventh
-            section. Unnumbered: numbers here would compete with the markers on the pictures.
-            Scrolled with scrollIntoView rather than an href, since a real hash link would put a
-            URL into @reach/router's history that means nothing to the router. */}
+        {/* The contents list: a micro-label over an indented column of links, the shape the lists
+            pane uses for MY LISTS and AUTOMATIC. Scrolled with scrollIntoView rather than an href,
+            which would put a hash URL into @reach/router's history. */}
         <nav className="mb-8">
           <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-4 mb-1">On this page</div>
           <div className="flex flex-col items-start pl-3.5">
@@ -656,10 +590,8 @@ export function HelpPage(_props: RouteComponentProps) {
           );
         })}
 
-        {/* Written out here rather than driven from SECTIONS: it is the same section furniture
-            around two plain numbered lists instead of a picture and its legend. The numbers are
-            the page's own quiet ink, not the markers' red — nothing here is annotation over a
-            screenshot, and reusing that red would blunt what it means everywhere else. */}
+        {/* The install section: the same section furniture as the rest, around one plain numbered
+            list per platform rather than a picture and its legend. */}
         <section id={anchorId(INSTALL_TITLE)} className="mb-10 scroll-mt-6">
           <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">
             {INSTALL_TITLE}
@@ -683,9 +615,8 @@ export function HelpPage(_props: RouteComponentProps) {
           <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />
         </section>
 
-        {/* Prose and one link, with the same section furniture as everything else so it lands in
-            "On this page". Plain prose rather than a tip card: nothing here is an aside to a
-            picture, and the tinted card is reserved for the thing a marker couldn't point at. */}
+        {/* The translation credit: prose and one link, with the section furniture that puts it in
+            "On this page". */}
         <section id={anchorId(TRANSLATION_TITLE)} className="mb-10 scroll-mt-6">
           <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">
             {TRANSLATION_TITLE}
@@ -703,8 +634,7 @@ export function HelpPage(_props: RouteComponentProps) {
           <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />
         </section>
 
-        {/* The same shape as the translation credit above, and directly after it: the two are one
-            answer to the same question — whose words are these. */}
+        {/* The dictionary credit, in the same shape as the translation credit above it. */}
         <section id={anchorId(DICTIONARY_TITLE)} className="mb-10 scroll-mt-6">
           <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">
             {DICTIONARY_TITLE}
@@ -722,9 +652,7 @@ export function HelpPage(_props: RouteComponentProps) {
           <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />
         </section>
 
-        {/* Last section on the page, and the shortest: a lead and one link. It keeps the section
-            furniture so it appears in "On this page" like everything else, but it gets no tip card
-            and no back-to-top — the page ends here, so there is nothing further to return from. */}
+        {/* The contact section, last on the page and so without a back-to-top of its own. */}
         <section id={anchorId(CONTACT_TITLE)} className="mb-10 scroll-mt-6">
           <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">
             {CONTACT_TITLE}

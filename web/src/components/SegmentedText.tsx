@@ -28,19 +28,19 @@ function roleStyle(
   headingLevel?: 2 | 3 | 4 | 5
 ): CSSProperties {
   switch (role) {
-    // A verse line: no type change of its own; the indent and left rule live on the wrapper.
+    // A verse line: no type change; the indent and left rule live on the wrapper.
     case 'verse':
       return { fontStyle: 'normal' };
-    // A sutta's internal sub-heading: bold, and a size up per level from <h5> to <h2>.
+    // A sub-heading: bold, and a size up per level from <h5> to <h2>.
     case 'heading':
       return { fontWeight: 700, fontSize: fontSize + (5 - (headingLevel ?? 2)) };
-    // A closing colophon ("The Tevijja Sutta is finished"): centred, muted, italic, a size down.
+    // A closing colophon: centred, muted, italic, a size down.
     case 'end':
       return { fontSize: Math.max(11, fontSize - 2), color: theme.dim, fontStyle: 'italic', textAlign: 'center' };
-    // A dialogue attribution mid-verse ("said the Buddha,"): muted and a size down.
+    // A dialogue attribution: muted, a size down.
     case 'speaker':
       return { fontSize: Math.max(11, fontSize - 3), color: theme.dim };
-    // Body prose, and a numbered list item — whose indent and "N." marker are set in the JSX.
+    // Body prose and list items: no type change; a list item's indent and marker are set in the JSX.
     default:
       return {};
   }
@@ -89,7 +89,6 @@ function paliWordSpans(
   return pali.split(WORD_BOUNDARY).map((t, j) => {
     if (isWordBoundary(t)) return <span key={j}>{t}</span>;
     const w = ++wordIndex;
-    // True for the word the DictionaryDock is currently showing.
     const isActive = w === activeWordIndex;
     return (
       <span
@@ -178,21 +177,14 @@ const SegmentRow = memo(function SegmentRow({
 }: SegmentRowProps) {
   const parts = buildParts(seg.en, rangesForSeg);
   const colophon = isUntranslatedColophon(seg);
-  // A structural sub-heading (SuttaCentral's <h2>–<h5> nesting) renders as a real heading element
-  // rather than a styled <p>, and takes the UI's sans font rather than the reading face, since it
-  // is document structure rather than body prose.
+  // The element a segment renders as: <h2>–<h5> for a sub-heading, <p> for everything else.
   const HeadingTag: 'h2' | 'h3' | 'h4' | 'h5' | 'p' =
     seg.role === 'heading' ? (`h${seg.headingLevel ?? 2}` as 'h2' | 'h3' | 'h4' | 'h5') : 'p';
-  // With the Pali leading, the English reads as the gloss under it and drops a step, which is what
-  // puts the Pali at the top of the hierarchy. Size rather than colour: the accent brown the Pali
-  // is set in can't out-weigh a near-black on a light ground however far the English is dimmed, and
-  // dimming it far enough to try reads as broken rather than secondary. The reverse doesn't hold —
-  // a Pali line under the English carries the accent colour and stays at the reading size, since it
-  // is the line the reader taps words in.
+  // English size when the Pali leads, a step under the reading size.
   const glossFontSize = Math.round(fontSize * 0.9);
-  // A list-item's "N.", pulled out of flow into the gutter its line's padding opens. It belongs to
-  // the item as a whole, so it is rendered into whichever of the two lines comes first — the Pali
-  // when that leads, the English otherwise — rather than stranded beside the item's second line.
+  // A list item's "N.", absolutely positioned into the gutter its line's padding opens, and
+  // rendered into whichever of the two lines comes first — the Pali when that leads, else the
+  // English.
   const listMarker = seg.role === 'list-item' && (
     // data-seg-ignore: rendered text that isn't part of `seg.en`, so the selection offsets
     // useHighlightPopup takes inside this paragraph discount it (see its IGNORED_TEXT).
@@ -206,13 +198,10 @@ const SegmentRow = memo(function SegmentRow({
       // The pair ReaderPage's revealIntoView scrolls to, named as the word spans above are.
       data-reveal="pali"
       data-reveal-seg={i}
-      // --pw-hover backs .pw:hover (index.css). theme.tint rather than a fixed colour, so a
-      // hovered Pali word stays a subtle wash against theme.pali in every theme.
+      // --pw-hover backs .pw:hover (index.css).
       style={
         {
-          // Leading, the Pali holds to the English under it at 2px and takes `pairGap` above to
-          // separate the pair from the one before — segments within a paragraph sit flush, so
-          // without it nothing says which English belongs to which Pali.
+          // Margins: `pairGap` above and 2px below when the Pali leads, 6px/12px when it follows.
           margin: above ? `${pairGap}px 0 2px` : '6px 0 12px',
           fontSize,
           lineHeight: lineHeight / 100,
@@ -220,12 +209,11 @@ const SegmentRow = memo(function SegmentRow({
           color: theme.pali,
           '--pw-hover': theme.tint,
           ...UNSELECTABLE,
-          // A closing line's English is centred (roleStyle), so the Pali beside it has to be
-          // centred too — the two halves of one line, otherwise sitting on different axes.
+          // A closing colophon is centred, matching its English line (roleStyle).
           ...(seg.role === 'end' ? { textAlign: 'center' } : null),
-          // Leading the segment, the Pali takes on what the English line carries when it leads: a
-          // heading's top gap (which has to bind the pair to the section they open, not to the
-          // paragraph above) and a list item's hanging indent and marker.
+          // Leading the segment, the Pali carries what the English line otherwise would:
+          //   heading   – the section's top gap
+          //   list-item – the hanging indent the marker sits in
           ...(above && seg.role === 'heading' ? { marginTop: afterHeading ? 0 : headingGapTop } : null),
           ...(above && seg.role === 'list-item' ? { paddingLeft: 24, position: 'relative' } : null),
         } as CSSProperties
@@ -235,9 +223,7 @@ const SegmentRow = memo(function SegmentRow({
       {paliWordSpans(seg.pali, i, activeWordIndex, theme, onWordClick)}
     </p>
   );
-  // True when the Pali is actually rendered above — `above` alone isn't enough, since a segment
-  // with no Pali of its own (an untranslated line, a colophon) renders none and leaves the English
-  // to carry the segment's own spacing.
+  // True when a Pali line is actually rendered above the English, not merely requested.
   const paliLeads = above && !!paliLine;
   const enFontSize = paliLeads ? glossFontSize : fontSize;
   return (
@@ -247,9 +233,7 @@ const SegmentRow = memo(function SegmentRow({
         marginBottom: lastInParagraph ? paragraphGap : 0,
         ...(focused ? { background: theme.focusTint } : null),
         ...(seg.role === 'verse' ? { paddingLeft: 14, borderLeft: `2px solid ${theme.rule}` } : null),
-        // A speaker attribution ("said the Buddha,") immediately after a verse line reads as
-        // part of that verse, so it should sit at the verse's own indentation and quote rule
-        // rather than snapping back to the margin.
+        // A speaker attribution following a verse keeps the verse's indent and rule.
         ...(seg.role === 'speaker' && afterVerse ? { paddingLeft: 28, borderLeft: `2px solid ${theme.rule}` } : null),
       }}
     >
@@ -272,16 +256,11 @@ const SegmentRow = memo(function SegmentRow({
           ...(seg.role === 'heading'
             ? { marginTop: paliLeads || afterHeading ? 0 : headingGapTop, marginBottom: headingGapBottom }
             : null),
-          // Indents the item's text so every wrapped line lines up under the first. The "N." marker
-          // is pulled out of flow, absolutely positioned into the gutter this padding opens, rather
-          // than set with a negative text-indent, which would put it left of every other
-          // paragraph's edge instead of flush with it.
+          // A list item's hanging indent: wrapped lines align under the first, and the "N." marker
+          // sits in the gutter this padding opens.
           ...(seg.role === 'list-item' ? { paddingLeft: 24, position: 'relative' } : null),
-          // --pw-hover backs .pw:hover (index.css), which the words of a colophon rendered in place
-          // need just as much as those in a reveal below an English line. The line is unselectable
-          // as a whole rather than only word by word: `.pw` covers the words, but the whitespace
-          // between them is its own inert span, and a drag across an otherwise unselectable line
-          // that picks up only the gaps is the same stray-selection nuisance `.pw` exists to avoid.
+          // A colophon renders its Pali in place, so this line takes the Pali treatment:
+          // --pw-hover backs .pw:hover (index.css), and the line as a whole is unselectable.
           ...(colophon ? { '--pw-hover': theme.tint, ...UNSELECTABLE } : null),
         } as CSSProperties}
       >
@@ -290,17 +269,12 @@ const SegmentRow = memo(function SegmentRow({
           p.c ? (
             <span
               key={j}
-              // The id of the highlight this span was painted from, which a jump from the gutter or
-              // the highlights panel matches (useSuttaReading's scrollToSegment) so it centres on
-              // the highlighted text rather than on the whole, possibly much longer, segment. A
-              // highlight spanning several segments renders the same id in each; the jump looks
-              // only inside the segment it is scrolling to, which is the one it starts in.
+              // The id of the highlight this span was painted from, which useSuttaReading's
+              // scrollToSegment jumps to. A highlight spanning several segments repeats it in each.
               data-hl-id={p.id}
-              // No user-select:none here, unlike `.pw` and the note asterisk below: this span sits
-              // inside the same selectable English prose a highlight drag crosses, including a drag
-              // through an existing highlight to extend it, so suppressing selection would break
-              // that gesture. The text colour switches to theme.fg wherever the theme paints its
-              // own fills — the near-black below assumes the light themes' pale pastel.
+              // The span stays selectable, unlike `.pw` and the note asterisk, so a drag can cross
+              // or extend an existing highlight. The text colour is theme.fg wherever the theme
+              // paints its own fills, and a near-black otherwise.
               style={{
                 background: highlightPaint(p.c, theme),
                 borderRadius: 2,
@@ -323,12 +297,8 @@ const SegmentRow = memo(function SegmentRow({
             // As the list-item marker above: rendered text that isn't part of `seg.en`, so
             // useHighlightPopup's offsets discount it.
             data-seg-ignore
-            // Padding rather than a bigger glyph is what grows the tap target, since a bare
-            // `<sup>*</sup>` hit-tests to its own tiny painted glyph. Vertical padding on an inline,
-            // non-replaced element doesn't affect line-height, so it is free; the horizontal
-            // padding does add real space, which is fine at the end of a paragraph.
-            // `verticalAlign`/`top` replace the browser's default `sup` raise, which sits the
-            // asterisk near the line above, with a smaller fixed one just above the baseline.
+            // Padding grows the asterisk's tap target beyond its painted glyph; `verticalAlign`
+            // and `top` replace the browser's default `sup` raise with a smaller one.
             style={{
               marginLeft: 2,
               padding: '8px 8px 8px 4px',
@@ -361,9 +331,8 @@ const SegmentRow = memo(function SegmentRow({
           data-reveal="note"
           data-reveal-seg={i}
           style={{ margin: '0 0 6px', fontSize: Math.max(11, fontSize - 3), lineHeight: 1.5, fontFamily: face, color: theme.dim }}
-          // Notes are static build-time data (build-corpus.mjs's cleanNote()) carrying inline
-          // formatting, not user or runtime content, so rendering the markup is the same trust
-          // level as rendering the sutta text itself.
+          // A note's inline formatting is static build-time data (build-corpus.mjs's cleanNote()),
+          // never user or runtime content.
           dangerouslySetInnerHTML={{ __html: seg.note }}
         />
       )}
@@ -380,39 +349,29 @@ interface SegmentedTextProps {
   face: string;
   openSegs: Record<number, boolean>;
   allPali: boolean;
-  // Pali above the English rather than under it (ReaderPrefs' paliAbove) — ignored unless
-  // `allPali` is on, since a tap reveal always belongs under the line it explains.
+  // Pali above the English rather than under it; applies only while `allPali` is on.
   paliAbove: boolean;
   onToggleSeg: (i: number) => void;
-  // wordIndex is the tapped word's position among this segment's Pali tokens (lib/dictionary.ts's
-  // splitPaliWords), so ReaderPage can step to the previous or next word from the DictionaryDock's
-  // arrows without re-deriving it from the word text, which isn't unique within a segment.
+  // Called with the tapped word and its position among this segment's Pali tokens
+  // (lib/dictionary.ts's splitPaliWords).
   onWordClick: (word: string, segIndex: number, wordIndex: number) => void;
   onSpanClick: (highlightId: string, rect: DOMRect, color: string) => void;
-  // Bhikkhu Sujato's translator notes (SegmentFile.note): whether the asterisk markers show at all
-  // ("c" in the reader, or the Display tab's checkbox), and which are expanded inline — the same
-  // per-segment-index shape as openSegs/onToggleSeg.
+  // Whether the translator-note asterisks show at all.
   showNotes: boolean;
+  // Which notes are expanded inline, by segment index.
   openNotes: Record<number, boolean>;
   onToggleNote: (i: number) => void;
-  // The word currently shown in the DictionaryDock, or null. ReaderPage memoizes it on
-  // {segIndex, wordIndex} rather than the whole dict-state object, so it stays referentially stable
-  // across renders where the active word hasn't changed — see SegmentRowProps' activeWordIndex.
+  // The word currently shown in the DictionaryDock, or null.
   activeWord: { segIndex: number; wordIndex: number } | null;
-  // The inner sutta a deep link/search hit pointed at within a batched document (e.g. "dhp321"
-  // within the loaded "dhp320-333" document) — every segment whose key starts with `${focusUid}:`
-  // gets a background wash (see SegmentRowProps.focused) so it's identifiable among the rest of
-  // the batch. Undefined for a normal, non-batched sutta or a bare visit to the batch itself.
+  // The inner sutta a deep link or search hit pointed at within a batched document (e.g. "dhp321"
+  // within "dhp320-333"); its segments get a background wash. Undefined for a normal sutta.
   focusUid?: string;
 }
 
 const EMPTY_RANGES: SegmentRange[] = [];
 
-// The reader's paragraph renderer. Wrapped in `memo`, as is each `SegmentRow` below, so state
-// unrelated to the text — the word-lookup dock, the side panel, the mobile breakpoint — doesn't
-// rebuild a segment list that can run past 1000 rows, and a toggle scoped to one segment
-// re-renders only that row. This requires the callbacks ReaderPage passes in to be stable across
-// unrelated renders (see its useCallback wrapping).
+// Renders a sutta's segments. Memoized, as is each SegmentRow, which requires every callback
+// ReaderPage passes in to be stable across unrelated renders.
 function SegmentedTextInner({
   segments,
   highlights,
@@ -432,38 +391,26 @@ function SegmentedTextInner({
   activeWord,
   focusUid,
 }: SegmentedTextProps) {
-  // One line box at the current size and leading. Every vertical gap below is a fraction of it, so
-  // the page's whole rhythm scales with both the Size and Line height reader controls rather than
-  // being a fixed pixel value.
+  // One line box at the current size and leading; every gap below is a fraction of it.
   const line = (fontSize * lineHeight) / 100;
-  // Paragraph breaks sit a little under a full line: at a full line, baseline-to-baseline across a
-  // break is exactly twice the leading, which at the airy end of the line-height scale reads as
-  // disconnected blocks rather than one continuous text.
+  // Space below a segment that ends a paragraph.
   const paragraphGap = Math.round(line * 0.8);
-  // Above a leading Pali line: comfortably more than the 2px holding a pair together, comfortably
-  // less than the paragraph break, so the pairs read as pairs without breaking the paragraph up.
+  // Space above a leading Pali line.
   const pairGap = Math.round(line * 0.45);
-  // A section heading has to bind downward, to the section it opens. Its top margin therefore has
-  // to beat the preceding paragraph's own bottom margin outright rather than add to it — adjacent
-  // margins collapse to the larger of the two, so a heading carrying the same value as a paragraph
-  // break would get no extra room at all.
+  // Space above a heading, which must exceed paragraphGap to survive margin collapsing.
   const headingGapTop = Math.round(line * 1.8);
+  // Space below a heading.
   const headingGapBottom = Math.round(line * 0.6);
-  // Stored spans resolved into per-segment ranges once per change (O(segments + highlights)) rather
-  // than every segment re-scanning the whole array (O(segments × highlights)). It depends on the
-  // text as well as the highlights, since everything between a span's two endpoints is covered in
-  // full — see lib/highlights.ts's highlightRanges.
+  // Every highlight's stored span resolved into the ranges falling in each segment, by segment
+  // index — see lib/highlights.ts's highlightRanges.
   const rangesBySeg = useMemo(() => expandHighlights(highlights, segments), [highlights, segments]);
-  // A list-item's ordinal within its run of consecutive list-item segments, reset to 0 whenever the
-  // previous segment wasn't one, so a second list further down the sutta restarts at 1. Mutated in
-  // iteration order inside the .map below rather than in a memoized pass of its own.
+  // A list item's ordinal within its run of consecutive list-item segments, reset to 0 by any
+  // other segment so a later list restarts at 1.
   let runningListIndex = 0;
   return (
     <div data-component="SegmentedText" data-segroot>
       {segments.map((seg, i) => {
-        // No gap between segments within the same paragraph — the English `<p>` carries no margin
-        // either, so nothing is left to collapse into a visible one. Only a real paragraph break,
-        // where the next segment's paragraph number differs, gets space.
+        // A paragraph break: the next segment's paragraph number differs, or there is none.
         const next = segments[i + 1];
         const lastInParagraph = !next || paragraphOf(next.key) !== paragraphOf(seg.key);
         runningListIndex = seg.role === 'list-item' ? runningListIndex + 1 : 0;

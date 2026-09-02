@@ -14,11 +14,9 @@ import { TreePane, type ActiveSearchRow } from '../components/TreePane';
 import { ListPane } from '../components/ListPane';
 import { ShortcutsModal } from '../components/ShortcutsModal';
 
-// Tree/list divider hit area. Asymmetric around the boundary because the two edges differ:
-// backwards it must stay inside TreePane's 10px right padding, where the "List options" button
-// sits flush; forwards it can reach further, since ListPane's rows are `px-5`. Nothing is drawn
-// here — the strip carries only the resize cursor and the drag.
+// Width of the tree/list divider's undrawn drag strip, left of the boundary.
 const TREE_LIST_HIT_BEFORE = 8;
+// Width of the same strip right of the boundary.
 const TREE_LIST_HIT_AFTER = 14;
 
 export function LibraryPage({
@@ -26,16 +24,9 @@ export function LibraryPage({
   suttaId: urlSuttaId,
   location,
 }: RouteComponentProps<{ nodeId: string; suttaId?: string }>) {
-  // `suttaId` is a splat segment (see App.tsx), so /browse/:nodeId and /browse/:nodeId/:suttaId
-  // are one route element and this page stays mounted — with every pane's scroll position —
-  // across selecting and deselecting a row.
-  //
-  // The sutta segment always names a corpus document, so it is case-folded outright; the node
-  // segment names a corpus node or a user list, and only the former is folded (see
-  // normalizeBrowseNodeId — a list id is opaque, and lowercasing one names a different list).
-  // Whatever the fold changes, the address bar is rewritten to match, so a capitalized link from
-  // outside the app settles on the canonical URL. Every link the app builds itself already is
-  // canonical.
+  // The URL's sutta segment, case-folded — it always names a corpus document. The node segment
+  // may name a user list, so only its corpus ids are folded (normalizeBrowseNodeId). The effect
+  // below rewrites the address bar to whatever either fold changed.
   const rawSuttaId = urlSuttaId ? normalizeRouteId(urlSuttaId) : urlSuttaId;
   const { mobile, dragTree, resetTree, paneW } = useLayout();
   const { corpus } = useCorpus();
@@ -48,30 +39,27 @@ export function LibraryPage({
       navigate(`/browse/${encodeURIComponent(routeNodeId)}${tail}`, { replace: true });
     }
   }, [urlNodeId, urlSuttaId, routeNodeId, rawSuttaId]);
-  // @reach/router defers the route-param update by a microtask and a frame after navigate(), so
-  // reading the ids straight off props would render a frame pairing new local state with a stale
-  // id. Mirroring them into state, set synchronously with everything else a handler changes, keeps
-  // each render consistent; the effects below cover navigation this page didn't initiate.
+  // The selected sutta, mirrored into state so a handler can set it in the same render as
+  // everything else it changes; @reach/router updates the route param a frame later. The effect
+  // covers navigation this page didn't initiate.
   const [suttaId, setSuttaId] = useState(rawSuttaId || undefined);
   useEffect(() => {
     setSuttaId(rawSuttaId || undefined);
   }, [rawSuttaId]);
-  // Only suppresses TreePane's corrective pane sync, so a stale value resurrected by a refresh is
-  // harmless — hence read straight off location.state, unlike the one-shot values below.
+  // Whether the arrival is a reader close returning to its origin, which suppresses TreePane's
+  // corrective pane sync. Read straight off location.state, since a refresh resurrecting it is
+  // harmless.
   const restoreOrigin = !!(location?.state as { restoreOrigin?: boolean } | undefined)?.restoreOrigin;
-  // `fromView` and `flashNodeId` are meant for exactly one arrival, but location.state survives a
-  // same-tab refresh, so trusting them unconditionally would let a reload override a pane switch
-  // made by hand since. Consumed once through a lazy initializer, so a stale resurrection reads as
-  // no intent at all.
+  // `fromView` and `flashNodeId` for this arrival, taken once — location.state survives a same-tab
+  // refresh, and consumeIntent reads a resurrected one as no intent at all.
   const [consumedIntent] = useState(() =>
     consumeIntent(
       location?.state as ({ fromView?: 'tree' | 'list'; flashNodeId?: string } & RouteIntent) | null | undefined,
       ROUTE_INTENT_KEY
     )
   );
-  // A reader breadcrumb click always lands on the sutta's own leaf group, but names the ancestor
-  // segment actually clicked so the tree pane can briefly scroll to and highlight that row.
-  // Timed out rather than left standing — it points at where something is, it isn't a selection.
+  // The ancestor row a reader breadcrumb click named, which the tree pane scrolls to and
+  // highlights for 1600ms.
   const locationFlashNodeId = consumedIntent?.flashNodeId as string | undefined;
   const [flashNodeId, setFlashNodeId] = useState<string | undefined>(undefined);
   useEffect(() => {
@@ -83,10 +71,8 @@ export function LibraryPage({
   const [view, setView] = useState<'tree' | 'list'>(() => {
     const fromView = consumedIntent?.fromView;
     if (fromView === 'tree' || fromView === 'list') return fromView;
-    // A suttaId with no router state is a fresh arrival that never went through one of this app's
-    // navigate() calls — a bookmark or a typed URL — where 'list' is the only way to reveal the
-    // highlighted row. A mount carrying state came from in-app navigation, where the persisted
-    // preference below is the better signal.
+    // A bookmark or typed URL naming a sutta: no router state, and only the list pane shows the
+    // row.
     if (suttaId && !location?.state) return 'list';
     try {
       const stored = localStorage.getItem(LIBRARY_VIEW_KEY);
@@ -106,43 +92,31 @@ export function LibraryPage({
   const [query, setQuery] = useState('');
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
 
-  // Scanned once here and handed to both panes, so they show one result set from one scan per
-  // keystroke. useCorpusSearch defers the scan off `query`, keeping the input responsive on a
-  // slow device.
+  // One scan per keystroke, shared by both panes.
   const { hits: allHits, listHits } = useCorpusSearch(corpus, query, notes, lists, highlights);
-  // When exactly one list matched, its row already stands for everything in it, so the members that
-  // got here only through its name are dropped rather than spelled out underneath — which for a big
-  // list is the whole results pane restating one row.
-  //
-  // Only for one list, and never for a sutta matching the query in its own text. With two or more
-  // matching lists the results are the one place their members appear together, and each list row
-  // would otherwise have to be visited in turn to see the same thing.
+  // The sutta hits to show: when exactly one list matched, the members that qualified only through
+  // its name are dropped, since its own row already stands for them.
   const hits = useMemo(() => {
     if (listHits.length !== 1) return allHits;
     const members = new Set(listHits[0].list.items);
     return allHits.filter((h) => !(h.listOnly && members.has(h.id)));
   }, [allHits, listHits]);
-  // TreePane owns the arrow-key nav; mirrored here so ListPane, which renders the rows on
-  // desktop, can show the same highlight. Carries which kind of row the cursor is on, since it
-  // walks the lists block above the results as well as the results themselves.
+  // The search row TreePane's arrow-key cursor is on — a sutta hit or a list hit — mirrored here
+  // so ListPane can draw the same highlight.
   const [activeRow, setActiveRow] = useState<ActiveSearchRow | undefined>(undefined);
-  // Stored by value rather than by identity: TreePane rebuilds the row object on each of its
-  // renders, and taking every one would re-render this page, hand TreePane a new `listHits` array,
-  // and re-run its effect forever.
+  // Takes TreePane's cursor row by value, since it rebuilds the object on every render.
   const onActiveRowChange = useCallback((row: ActiveSearchRow | undefined) => {
     setActiveRow((prev) => (prev?.kind === row?.kind && prev?.id === row?.id ? prev : row));
   }, []);
-  // The lists block shows LIST_RESULTS_CAP rows until this is on. Owned here rather than in the
-  // pane that draws the block, because TreePane's arrow-key nav has to walk exactly the rows
-  // ListPane is drawing beside it.
+  // Whether the lists block shows every match rather than the first LIST_RESULTS_CAP. Owned here
+  // because TreePane's arrow-key nav walks exactly the rows ListPane draws.
   const [listsExpanded, setListsExpanded] = useState(false);
-  // A new query gets a freshly collapsed block, so expanding once doesn't leave every later search
-  // with its whole list of matches on top of the results.
+  // Collapse the lists block again whenever the query changes.
   useEffect(() => {
     setListsExpanded(false);
   }, [query]);
-  // Memoized because TreePane's active-row effect depends on this array's identity — a fresh
-  // slice on every render would re-run that effect on every render.
+  // The list hits actually drawn. Memoized, since TreePane's active-row effect depends on this
+  // array's identity.
   const shownListHits = useMemo(
     () => (listsExpanded ? listHits : listHits.slice(0, LIST_RESULTS_CAP)),
     [listHits, listsExpanded]
@@ -154,10 +128,9 @@ export function LibraryPage({
     setNodeId(routeNodeId);
   }, [routeNodeId]);
 
-  // Tab title and search-result description mirror what the right pane shows, via the same
-  // `nodeLabel` and `nodeBlurb` lookups ListPane's own header uses, so both are right on a fresh
-  // reload and not only after an in-app navigation. A search has no subject to describe, and
-  // neither does a user list, so those fall back to the app-wide description.
+  // The document title and meta description, from the same `nodeLabel` and `nodeBlurb` lookups
+  // ListPane's header uses. A search, and a user list, describe nothing and fall back to the
+  // app-wide description.
   const { title, description } = useMemo(() => {
     if (query.trim().length > 0) return { title: 'Search', description: null };
     const { ref, label } = nodeLabel(corpus, nodeId || '', lists);
@@ -168,9 +141,7 @@ export function LibraryPage({
   }, [corpus, nodeId, lists, query]);
   useDocumentMeta(title, description);
 
-  // useCallback'd rather than inline arrows: TreePane's keydown effect depends on `onOpenSutta`,
-  // and typing in the search box re-renders this page per keystroke, so a fresh identity each time
-  // would tear down and re-add that window listener on every one.
+  // Selects a browse node or user list. Stable, since TreePane's keydown effect depends on it.
   const onSelectNode = useCallback((id: string) => {
     setQuery('');
     setView('list');
@@ -181,17 +152,12 @@ export function LibraryPage({
 
   const onOpen = useCallback(
     (id: string) => {
-      // `from`/`fromView` ride along through the reader's own navigate() calls, so closing it —
-      // however many Prev/Next steps later — returns to this exact pane, node and scroll offset
-      // rather than the sutta's bare corpus location.
-      //
-      // A search hit is the one case where the opened id isn't a member of the current `nodeId`:
-      // search spans the whole corpus, so a hit found while browsing DN can live in MN. Its own
-      // node is used instead — where a bare deep link would have landed.
+      // The node the reader returns to on close: the current one, or a search hit's own node,
+      // since search spans the whole corpus.
       const returnNodeId = query.trim() && corpus?.suttas[id] ? corpus.suttas[id].node : nodeId;
       const from = `/browse/${encodeURIComponent(returnNodeId || '')}/${encodeURIComponent(id)}`;
-      // Persisted as well as carried in router state, since a hard refresh drops location.state
-      // entirely — see ReaderPage's closeReader for the fallback that reads this back.
+      // Persisted as well as carried in router state, which a hard refresh drops — see
+      // ReaderPage's closeReader.
       try {
         localStorage.setItem(READER_ORIGIN_KEY, JSON.stringify({ suttaId: id, from, fromView: view }));
       } catch {
@@ -205,13 +171,11 @@ export function LibraryPage({
   const showTreePane = !mobile || view === 'tree';
   const showListPane = !mobile || view === 'list';
 
-  // Page-level shortcuts only. The arrow keys don't walk the browse rows — a tinted row there
-  // reads as a selection the app doesn't otherwise have. TreePane keeps its arrow nav over search
-  // hits, where the highlight is the only way to tell which hit Enter would open.
+  // Page-level shortcuts: the help modal and the theme toggle. Arrow-key nav over search hits
+  // belongs to TreePane.
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      // While open, the help modal owns every key: Esc or '?' again both close it, as every other
-      // overlay in this app does.
+      // While the help modal is open it owns every key; Esc and '?' both close it.
       if (shortcutsOpen) {
         if (e.key === 'Escape' || isShortcut(e, SHORTCUTS.libraryHelp)) {
           e.preventDefault();
@@ -238,11 +202,10 @@ export function LibraryPage({
 
   return (
     <div data-component="LibraryPage" className="relative flex overflow-hidden bg-paper h-full">
-      {/* Both panes stay mounted on mobile and hide, so a tree<->list toggle keeps each one's
-          scroll offset and expansion state. `display:contents` leaves this wrapper transparent
-          to the flex layout. The `visible` prop covers the other half: a `display:none` box has
-          no scroll extent, so a pane that mounts while hidden can only restore its scroll once
-          `visible` flips true — see useScrollMemory. */}
+      {/* Both panes stay mounted on mobile and hide, keeping each one's scroll offset and
+          expansion state across a tree/list toggle. `display:contents` leaves this wrapper
+          transparent to the flex layout, and `visible` tells the pane when it has a scroll extent
+          to restore into — see useScrollMemory. */}
       <div style={{ display: showTreePane ? 'contents' : 'none' }}>
         <TreePane
           nodeId={nodeId}
@@ -264,17 +227,15 @@ export function LibraryPage({
         />
       </div>
 
-      {/* Absolute, so the hit area can overhang both panes without changing either one's width
-          or depending on paint order; z-10 keeps it grabbable above their content. */}
+      {/* The divider's drag strip, positioned absolutely so it overhangs both panes without
+          changing either one's width. */}
       {!mobile && (
         <div
           className="absolute top-0 bottom-0 z-10 cursor-col-resize touch-none"
           style={{ left: paneW.tree - TREE_LIST_HIT_BEFORE, width: TREE_LIST_HIT_BEFORE + TREE_LIST_HIT_AFTER }}
           onPointerDown={dragTree}
-          // `touchend` is the only event WebKit reliably lets us cancel here — `touch-none` above
-          // makes `touchstart` arrive uncancelable — and cancelling it asks iOS not to synthesize
-          // the trailing click that would open whichever row the finger drifted over.
-          // LayoutContext's `swallowNextClick` is why this alone isn't trusted.
+          // Cancelling `touchend` asks iOS not to synthesize the click that would open whichever
+          // row the finger drifted over; LayoutContext's `swallowNextClick` backs it up.
           onTouchEnd={(e) => e.preventDefault()}
           onDoubleClick={resetTree}
         />
