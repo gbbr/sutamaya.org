@@ -20,30 +20,26 @@ interface ReaderSearchOverlayProps {
   onClose: () => void;
 }
 
-// Alfred/Spotlight-style: a floating input with results directly underneath, triggered by "/"
-// from anywhere in the reader (see the keydown handler in ReaderPage.tsx). Each row shows the
-// same blurb/note as ListPane, so results are identifiable without opening them.
+// The reader's search overlay: a floating input with results directly underneath, opened with "/"
+// from anywhere in the reader. Each row shows the same blurb and note as ListPane's.
 export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearchOverlayProps) {
   const { corpus } = useCorpus();
   const { mobile } = useLayout();
   const { lists, notes, membership, highlights } = useUserData();
   const [query, setQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
-  // Hover takes the selection over only once the pointer has genuinely moved. Arrow keys scroll the
-  // active row into view and typing rebuilds the list, so rows slide under a stationary pointer and
-  // the browser fires enter/move events for them anyway.
+  // Hover takes the selection over only once the pointer has moved: arrow keys and typing slide
+  // rows under a stationary pointer, and the browser fires enter/move events for them anyway.
   const lastPointer = useRef<{ x: number; y: number } | null>(null);
 
-  // Suttas only: this overlay exists to jump elsewhere in the canon without leaving the reader, and
-  // a list hit's only destination is the library. Lists surface there instead (SearchListHits).
+  // Suttas only: a list hit's only destination is the library, which is where lists surface.
   const { hits } = useCorpusSearch(corpus, query, notes, lists, highlights);
-  // Only render/keyboard-navigate the first SEARCH_RESULTS_CAP — a short/common query can match
-  // hundreds of suttas, and every hit is an unvirtualized row in a small scroll panel.
+  // The rows drawn and walked by the arrow keys: the first SEARCH_RESULTS_CAP hits, the panel
+  // being unvirtualized.
   const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);
   const { activeIndex, setActiveIndex, moveBy, setRowRef } = useActiveHitIndex(query);
 
-  // The same chips and highlight badge as ListPane and TreePane's search results (lib/lists.ts's
-  // suttaRowMeta), so a reader-search row is identifiable the same way.
+  // The same chips and highlight badge each row carries in ListPane and TreePane.
   const flatLists = useMemo(() => flattenListTree(lists), [lists]);
   const rowMeta = useMemo(
     () => suttaRowMeta(displayHits.map((h) => h.id), membership, highlights, flatLists),
@@ -54,10 +50,8 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
     inputRef.current?.focus();
   }, []);
 
-  // On touch the panel fills the layout viewport, which the software keyboard doesn't shrink, so
-  // the bottom of the results list would sit underneath it. Padding the panel by the keyboard's
-  // measured height gives the rows the space that's actually visible, and hands it back when the
-  // keyboard goes away. Same treatment as ListMembershipPopover's full-screen sheet.
+  // The height of the software keyboard, which the panel pads itself by on touch: it fills the
+  // layout viewport, which the keyboard doesn't shrink, so the last rows would sit underneath it.
   const panelRef = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {
     const el = panelRef.current;
@@ -73,9 +67,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
   }, [mobile]);
 
   function onKeyDown(e: React.KeyboardEvent) {
-    // Stops here: this modal owns every key while it is up. The reader's window-level keydown
-    // handler already bails while the overlay is open (see ReaderPage), but stopping propagation
-    // makes that independent of state and timing.
+    // Stops here: this modal owns every key while it is up.
     e.stopPropagation();
     if (e.key === 'Escape') {
       e.preventDefault();
@@ -106,13 +98,12 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
       autoCorrect="off"
       autoCapitalize="off"
       spellCheck={false}
-      // `search` on iOS puts a Search key on the keyboard, which dismisses it and leaves the
-      // results — already filtered as the query was typed — filling the screen.
+      // `search` puts a Search key on the iOS keyboard, which dismisses it and leaves the
+      // results filling the screen.
       enterKeyHint="search"
       className={
         mobile
-          ? // WebKit's own clear button is suppressed because the row draws a themed, thumb-sized
-            // one beside the field; two of them side by side read as a mistake.
+          ? // Suppresses WebKit's own clear button, the row drawing a themed one beside the field.
             'font-sans flex-1 min-w-0 py-2 text-ui-lg outline-none bg-transparent [&::-webkit-search-cancel-button]:hidden'
           : 'font-sans flex-none w-full px-5 py-4 text-ui-lg outline-none bg-transparent'
       }
@@ -128,11 +119,10 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
           : 'fixed inset-0 z-50 flex justify-center animate-fadeIn'
       }
       style={mobile ? { background: theme.panel } : { background: 'rgba(0,0,0,.35)', paddingTop: '12dvh' }}
-      // No backdrop to tap on touch — the panel is the whole screen, so its Cancel button is the
-      // way out.
+      // No backdrop to tap on touch: the panel is the whole screen, and Cancel is the way out.
       onClick={mobile ? undefined : onClose}
     >
-      {/* Full-screen on touch rather than the desktop floating card: the keyboard takes the lower
+      {/* Full-screen on touch rather than the desktop floating card, the keyboard taking the lower
           half of the display, so a card centred in what's left would show two or three results.
           Filling the screen puts the field at the very top and gives every remaining pixel to the
           rows. */}

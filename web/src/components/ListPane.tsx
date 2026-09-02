@@ -120,8 +120,7 @@ export function ListPane({
   );
 
   // The live order while a row is being dragged, rendered in place of `items` and reshuffled as
-  // the pointer crosses row midpoints. Over Pointer Events, which touch browsers do fire, sharing
-  // usePointerDragSession's window listeners and auto-scroll with the list-tree drag.
+  // the pointer crosses row midpoints.
   const [dragOrder, setDragOrder] = useState<string[] | null>(null);
   // Whether the drag handles are showing, which takes space from every row, so they wait for the
   // header's toggle — itself shown only when `canReorder`.
@@ -205,11 +204,8 @@ export function ListPane({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // The popover is anchored to a rect captured at open, so anything that moves the rows under it
-  // has to dismiss it: switching what the pane shows, entering reorder mode (where the control it
-  // points at becomes a drag handle), or the pane being swapped away on mobile — LibraryPage hides
-  // it with `display:none` rather than unmounting, which would leave a fixed-position popover
-  // sitting over TreePane.
+  // Dismisses the membership popover, which is anchored to a rect captured at open, whenever
+  // anything moves the rows under it: the pane's contents, reorder mode, or the pane being hidden.
   useEffect(() => {
     setPicker(null);
   }, [nodeId, searching, reorderMode, visible]);
@@ -218,9 +214,8 @@ export function ListPane({
     setBlurbOpen(false);
   }, [nodeId]);
 
-  // Runs after every render that could change the wrap: a new blurb, the clamp coming off, the pane
-  // being resized or revealed. Compares the clamped height against the full one, so the "More"
-  // affordance can never appear on text that already fits.
+  // Measures whether the blurb overflows its clamp, after every render that could change the wrap:
+  // a new blurb, the clamp coming off, the pane being resized or revealed.
   useEffect(() => {
     const el = blurbRef.current;
     if (!el) {
@@ -230,15 +225,13 @@ export function ListPane({
     setBlurbOverflows(blurbOpen || el.scrollHeight > el.clientHeight + 1);
   }, [nodeId, blurbOpen, paneW, visible, mobile]);
 
-  // Removing suttas until one is left takes the header toggle away with them, so the mode has to
-  // fall back off by itself or there is no way out of it.
+  // Leaves reorder mode when the toggle that turns it off stops being shown.
   useEffect(() => {
     if (!canReorder) setReorderMode(false);
   }, [canReorder]);
 
-  // Reveals the sutta the user came from: tapping a list-membership chip in the Reader opens this
-  // pane with `selectedId` set. `block: 'nearest'` makes it a no-op when the row is already in
-  // view, so it doesn't fight ordinary browsing.
+  // Reveals the sutta the reader came from, a list-membership chip in the Reader opening this pane
+  // with `selectedId` set. `block: 'nearest'` keeps it a no-op when the row is already in view.
   useEffect(() => {
     if (!selectedId) return;
     itemRowRefs.current.get(selectedId)?.scrollIntoView({ block: 'nearest' });
@@ -258,76 +251,58 @@ export function ListPane({
     : nodeId
       ? nodeLabel(corpus, nodeId, lists)
       : { label: 'Library' };
-  // What `nodeId` actually names, for the header and empty state below: a corpus row (and whether
-  // that row expands rather than holding suttas), a user list (`currentList`), or — once a list has
-  // been deleted — neither. `ready` is what tells "this account has no such list" from "the mirror
-  // hasn't loaded yet"; without it a deep link to a list reads as deleted for the moment before its
-  // own data arrives.
+  // What `nodeId` names, for the header and empty state below: a corpus row (and whether it
+  // expands rather than holding suttas), a user list, or — once a list is deleted — neither.
+  // `ready` is what separates "no such list" from "the mirror hasn't loaded yet".
   const corpusNode = nodeId ? findNode(corpus, nodeId) : null;
   const expandableNode = !!corpusNode && isExpandable(corpusNode.node);
   const goneList = !!nodeId && !searching && ready && !currentList && !corpusNode;
-  // The corpus node's description, skipped for a user list and while searching: neither is a corpus
-  // node, and a list id could match one only by accident.
+  // The corpus node's description, skipped for a user list and while searching.
   const { blurb, from: blurbFrom } = searching || currentList ? { blurb: undefined, from: undefined } : nodeBlurb(corpus, nodeId);
-  // The line under the pane's title: what it is showing, counted. Read off `corpus` here rather
-  // than inside, since the `if (!corpus) return null` above doesn't narrow inside a nested
-  // function.
+  // Read off `corpus` here because `if (!corpus) return null` doesn't narrow inside metaLine.
   const collectionCount = corpus.nikayas.length;
+  // metaLine returns the counted line under the pane's title, naming what the pane is showing.
+  //   nothing selected  – the number of collections
+  //   a deleted list    – empty, since it holds nothing rather than zero things
+  //   a node or list    – its sutta count, an auto-list's being what the reader has, uncapped
+  //   a search          – the sutta count, "80+" past the cap, and the matched lists beside it
   function metaLine(): string {
     if (!searching) {
       if (!nodeId) return `${collectionCount} collections`;
-      // A list that is gone holds nothing rather than holding zero things, and "0 suttas" under a
-      // blank title reads as an empty list rather than an absent one.
       if (goneList) return '';
-      // An auto-list counts what the reader has, not what survived the cap: this line says how long
-      // the list is, and the foot of the rows is where the shortfall is explained.
       return plural(currentList?.total ?? items.length, 'sutta');
     }
-    // "suttas" rather than "results" whenever lists matched too, so the number names what it's
-    // counting instead of implying it covers the whole pane, and the lists are counted beside it:
-    // the block above the results is capped, so its own rows don't say how many matched.
+    // "suttas" rather than "results" whenever lists matched too, so the number names what it counts.
     const noun = listHitTotal > 0 ? 'sutta' : 'result';
-    // `hits` is uncapped, so a huge result set says "80+" rather than a number of rows nobody
-    // is going to be shown.
     const suttas = hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ ${noun}s` : plural(hits.length, noun);
     if (listHitTotal === 0) return suttas;
-    // A query that matched lists and no suttas drops the "0 suttas" half rather than putting a
-    // zero above a block that clearly isn't empty.
     const matchedLists = plural(listHitTotal, 'list');
     return hits.length === 0 ? matchedLists : `${suttas} · ${matchedLists}`;
   }
   const meta = metaLine();
 
-  // The reorder toggle's colour treatment; its size and margins are on the button itself. Three
-  // cases rather than two, because the two resting treatments differ by platform.
+  // reorderToggleClass returns the reorder toggle's colour treatment; size and margins are on the
+  // button itself.
+  //   reorder mode on – filled accent
+  //   at rest, mobile – bordered chip, matching the back button beside it
+  //   at rest, desktop – a bare round icon button, matching TreePane's header controls
   function reorderToggleClass(): string {
-    // Reorder mode is one you sit in, so it fills rather than tinting under the pointer, and
-    // overrides both resting treatments below.
     if (reorderMode) return 'bg-accent2 text-[#FBFAF7]';
-    // At rest on mobile it mirrors the back button beside it, bordered chip and all, so the header
-    // reads icon / title / icon rather than a control at one edge and a bare glyph at the other.
     if (mobile) return 'border border-ink/[.12] bg-chip/40 text-ink-3 hover:text-ink active:bg-ink/[.08]';
-    // At rest on desktop it's the same bare round icon button as the header controls beside the
-    // account badge in TreePane — one icon-button vocabulary across both panes.
     return 'text-ink-3 hover:bg-ink/[.06]';
   }
 
-  // The empty state under the rows.
+  // emptyMessage returns the empty state under the rows.
+  //   searching       – a query that matched nothing, quoted back
+  //   expandable node – a corpus row whose suttas are a level down, reached by URL only
+  //   gone list       – a list deleted here, on another device, or an outlived link
+  //   node or list    – one the reader picked that holds nothing
+  //   nothing chosen  – bare /browse, which only the two-pane layout shows
   function emptyMessage(): string {
-    // A search that found nothing — quoting the query back so it's clear what was looked for.
     if (searching) return `Nothing matches "${query}".`;
-    // A corpus row that expands rather than holding suttas of its own — /browse/mn and the like.
-    // Nothing in the UI links to one, but a typed or shared URL reaches it, and "Nothing here yet."
-    // reads as "MN is empty" rather than "its suttas are a level down".
     if (expandableNode) return 'Choose a chapter to see its suttas.';
-    // Named a list that has gone — deleted here, on another device, or a link that outlived it.
-    // Every route to that is the same screen, deliberately: deleting the row being shown navigates
-    // nowhere, so it explains itself where the reader is rather than moving them somewhere else.
     if (goneList) return 'This list is no longer here.';
-    // A collection or list they picked that happens to hold nothing.
     if (nodeId) return 'Nothing here yet.';
-    // Nothing selected at all — bare /browse, a first visit. Only the two-pane layout shows it,
-    // since on mobile a first visit is showing the tree.
     return 'Choose a collection to begin.';
   }
 
@@ -335,9 +310,7 @@ export function ListPane({
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
       <header className="flex-none flex items-center gap-3.5 px-6 pt-5 pb-4 border-b border-ink/10">
         {mobile && (
-          // The same round icon button as the reorder toggle on the right, so the header reads as
-          // icon / title / icon. The border and chip fill are what make it read as a control at
-          // rest, matching the pill toggle's thumb in TreePane's header. The `after`
+          // The same round icon button as the reorder toggle on the right. Its `after`
           // pseudo-element pads the tap target to ~44px without growing the circle.
           <button
             className="relative flex-none w-[34px] h-[34px] rounded-full flex items-center justify-center border border-ink/[.12] bg-chip/40 text-ink-3 hover:text-ink active:bg-ink/[.08] after:content-[''] after:absolute after:-inset-[5px]"
@@ -360,18 +333,14 @@ export function ListPane({
         </div>
         {canReorder && (
           <button
-            // The negative right margin pulls it in from the header's own 24px padding so its
-            // centre lands on the 34px axis this pane's row controls sit on. Its colour treatment
-            // is reorderToggleClass() above.
+            // The negative right margin lands its centre on the axis the row controls sit on.
             className={`flex-none rounded-full flex items-center justify-center ${mobile ? 'w-[34px] h-[34px] -mr-[7px]' : 'w-[38px] h-[38px] -mr-[9px]'} ${reorderToggleClass()}`}
             aria-label={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
             title={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
             onClick={() => setReorderMode((m) => !m)}
           >
-            {/* 16 on both, where the other header glyphs step up to 18–20 on desktop: this one
-                is two arrows stacked, so it fills its own box top to bottom where a chevron or a
-                magnifier leaves air, and matching their nominal size makes it read a size larger
-                than all of them. */}
+            {/* 16 on both platforms, where the other header glyphs step up to 18–20 on desktop:
+                two stacked arrows fill their box where a chevron leaves air. */}
             <ArrowUpDown size={16} strokeWidth={2} />
           </button>
         )}
@@ -385,8 +354,8 @@ export function ListPane({
             : undefined
         }
       >
-        {/* Matching lists, above the results — on desktop this pane is where results render, so
-            it draws the block; on mobile TreePane does. */}
+        {/* Matching lists, above the results. This pane draws the block on desktop; TreePane
+            draws it on mobile. */}
         {searching && (
           <SearchListHits
             hits={listHits}
@@ -399,32 +368,15 @@ export function ListPane({
             padX="px-6"
           />
         )}
-        {/* The node's description, above its suttas — the collection-page convention, and the
-            only place it can go, since the group itself has no row of its own here. Inside the
-            scroller rather than the header so a long one scrolls away instead of permanently
-            eating the viewport.
+        {/* The node's description, above its suttas and inside the scroller, so a long one
+            scrolls away. A wash and the rules above and below set it off from the rows.
 
-            A wash and the rules above and below make it a block of its own, distinct from the
-            rows and from the header's title. The lightest wash the app draws, and far below the
-            selected-row tint (`bg-ink/[.06]`), which would read as a selection instead; neutral
-            rather than a colour, so it darkens in light and lightens in dark.
+            The eyebrow names what the description is about: a bare "About" for this page, or
+            "About SN12 · Causation" for one borrowed from an ancestor, which every SN vagga's is.
 
-            The eyebrow names what the description is about. A bare "About" means the page you're
-            on; SN writes its descriptions on the saṁyutta, a level above the vagga rows that
-            display them, so a borrowed one names that ancestor — "About SN12 · Causation". That
-            stops a description of 90 discourses being passed off as a description of these ten,
-            and it's the only place the page names the larger group it belongs to. Every borrowed
-            case in the corpus is this one: an SN vagga under its saṁyutta.
-
-            Clamped, because these are not short: 35 of the 92 run past 400 characters and SN
-            22's is 2827 — six screens on a phone before the first row. Three lines, and the
-            whole block toggles, so the target is the paragraph rather than a word at its foot.
-            The affordance appears only when the text actually overflows, measured after layout
-            rather than guessed from length — wrapping depends on pane width and type scale.
-
-            `line-clamp-3` sets `display:-webkit-box`, so the expanded state has to restore
-            `block` rather than the two being applied together — Tailwind emits `block` after the
-            clamp, and the pair silently cancels the clamp out.
+            Clamped to three lines, the whole block toggling, with the "More" affordance shown
+            only once the text is measured to overflow. The expanded state restores `display:
+            block`, which `line-clamp-3`'s `-webkit-box` would otherwise hold.
 
             `blurb` carries the same inline HTML a translator note does — see SegmentedText. */}
         {blurb && (
@@ -453,13 +405,9 @@ export function ListPane({
                   onClick={() => setBlurbOpen((o) => !o)}
                 >
                   {text}
-                  {/* Chrome, not content: neutral rather than the accent the app gives inline
-                      text actions elsewhere (see SettingsPage). Partly because that accent is
-                      the Pali subtitle colour on every row below, but mainly because this isn't
-                      a link — the whole paragraph is the target and this only reports its state,
-                      so promising "this word navigates" is wrong. Quieter than the paragraph
-                      rather than louder, and the chevron is what tells it apart from the prose —
-                      a direction, which is exactly what the control does. */}
+                  {/* Chrome, not content: neutral rather than the accent inline text actions
+                      carry elsewhere, since the paragraph is the target and this only reports
+                      its state. */}
                   <span className="flex items-center gap-1 font-sans text-ui-xs font-semibold text-ink-4 mt-1">
                     {blurbOpen ? 'Less' : 'More'}
                     <ChevronDown
@@ -475,10 +423,8 @@ export function ListPane({
         )}
 
         {displayItems.map(([id, s]) => {
-          // Highlighted — a subtle tint plus a left accent stripe — only while searching, for the
-          // hit TreePane's arrow-key nav has active, since that is what says which row Enter opens.
-          // Nothing marks the URL's `selectedId`: browsing has no keyboard cursor, and the row is
-          // revealed by scrolling to it.
+          // Highlighted — a tint plus a left accent stripe — only while searching, for the hit
+          // TreePane's arrow-key nav has active. Nothing marks the URL's `selectedId`.
           const on = searching && id === activeId;
           const note = notes[id];
           const { chips, hlCount, hlColors } = rowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
@@ -494,14 +440,10 @@ export function ListPane({
               className="group relative border-b border-ink/[.08]"
               style={dragging ? { opacity: 0.5 } : undefined}
             >
-              {/* The right gutter is only kept clear where a control actually sits. At rest the
-                  add-to-list button is anchored to the top of the row, so only the title and the
-                  Pali line beneath it give up the width — the blurb and chips run the row's full
-                  measure. While reordering the grip is vertically centred instead, and the whole
-                  row has to clear it. */}
-              {/* No hover state: the rows are prose, and a wash passing under the pointer competes
-                  with the description block above them, which is painted in the faintest tint the
-                  app has. Nothing is lost on touch, which never had one. */}
+              {/* The right gutter is kept clear only where a control sits: at rest the add-to-list
+                  button holds the top of the row, so the title and Pali line give up the width
+                  while the blurb and chips run its full measure; while reordering the grip is
+                  centred and the whole row clears it. The rows carry no hover state. */}
               <button
                 className={`block w-full text-left px-6 py-[16px] ${reordering ? 'pr-14' : ''} ${
                   on ? 'bg-ink/[.05]' : ''
@@ -531,14 +473,12 @@ export function ListPane({
                   </span>
                 )}
                 {note ? (
-                  // An em dash rather than a quote rule marks this as the reader's own note; a left
-                  // rule would read as a passage quoted from the sutta.
+                  // An em dash rather than a quote rule marks this as the reader's own note.
                   <span className="flex gap-[7px] font-serif text-ui-md leading-[1.45] mt-[7px] text-ink-2">
                     <span aria-hidden className="flex-none text-ink-3">
                       —
                     </span>
-                    {/* Clamped, like the blurb it stands in for: a row is a scannable line, not the
-                        place to read a long note — the reader has the whole of it. */}
+                    {/* Clamped, like the blurb it stands in for. */}
                     <span className="line-clamp-3 whitespace-pre-wrap">
                       <MatchedText text={note} query={rowQuery} notation />
                     </span>
@@ -552,27 +492,16 @@ export function ListPane({
                 )}
                 <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} />
               </button>
-              {/* Opens the list-membership picker for this sutta. Hidden entirely while reordering
-                  so the grip below has the gutter to itself — one control per row edge, never two,
-                  and nobody manages memberships mid-drag. Held near the top of the row rather than
-                  centred in it: a row runs three or four lines, so a centred button would float
-                  alongside the blurb instead of reading as the row's own action. The `top` inset
-                  matches the `right` one, so the circle sits the same distance from both edges of
-                  its corner.
+              {/* Opens the list-membership picker for this sutta. Hidden while reordering, so the
+                  grip has the gutter to itself, and held at the top corner of the row, its `top`
+                  inset matching its `right` one.
 
-                  Held back at rest and brought up to full strength when the pointer is anywhere
-                  over the row, or when the button takes keyboard focus: repeated down every row,
-                  at full strength the icons read as a column running alongside the prose. The dim
-                  itself sits inside `@media (hover: hover)`, so the control is never merely
-                  hover-*revealed* — an iPad gets the desktop layout but has no hover, and one that
-                  could only be restored by a pointer would simply not exist there.
+                  Dimmed at rest and brought to full strength on row hover or keyboard focus. The
+                  dim sits inside `@media (hover: hover)`, so a touch device that gets the desktop
+                  layout shows it at full strength rather than needing a pointer to reveal it.
 
-                  Same bare round button as the header's reorder toggle and TreePane's header
-                  icons — borderless at rest matters most here, where it's repeated down every
-                  row: a chip fill and border would read as a column of buttons competing with the
-                  text. The insets put its centre on the 34px axis the toggle and the grip share,
-                  so nothing shifts sideways when reorder mode is turned on, and the rows reserve
-                  `pr-14` for the width the circle actually takes. */}
+                  Its centre is on the same axis as the header's reorder toggle and the grip, which
+                  is the width the rows reserve with `pr-14`. */}
               {!reordering && (
                 <button
                   className={`absolute ${mobile ? 'right-3 top-3 w-11 h-11' : 'right-[15px] top-[15px] w-[38px] h-[38px]'} flex items-center justify-center rounded-full text-ink-3 hover:bg-ink/[.06] active:bg-ink/[.10] transition-opacity [@media(hover:hover)]:opacity-45 group-hover:opacity-100 focus-visible:opacity-100`}
@@ -584,16 +513,9 @@ export function ListPane({
               )}
               {reordering && (
                 <span
-                  // `right-3` puts this target's centre on the same 34px-from-the-edge axis as the
-                  // header's reorder toggle and the add-to-list button it replaces, so nothing
-                  // shifts sideways when reorder mode comes on. The target overhangs the rows'
-                  // `pr-14` text column with empty space only; the grip glyph is 19px and stays
-                  // inside it.
-                  //
-                  // `inset-y-1` rather than a fixed height: a row runs three or four lines, and
-                  // grabbing one to drag is a gesture aimed at the row rather than at a 44px dot
-                  // inside it. Spanning the full height makes the whole right gutter grabbable while
-                  // the glyph stays centred, and nothing else sits in that gutter while reordering.
+                  // `right-3` puts the drag target's centre on the same axis as the add-to-list
+                  // button it replaces, so nothing shifts sideways when reorder mode comes on, and
+                  // `inset-y-1` makes the whole right gutter of the row grabbable.
                   className="absolute right-3 inset-y-1 w-11 flex items-center justify-center rounded text-ink-3"
                   style={{
                     touchAction: 'none',
@@ -610,22 +532,18 @@ export function ListPane({
             </div>
           );
         })}
-        {/* Why an auto-list stopped where it did, said at the foot of the rows because that is
-            where the reader meets the boundary — a count in the header is read on the way in,
-            before there is any question to answer. Centred and quiet: it is a footnote about the
-            list, not another row in it. */}
+        {/* Where an auto-list stopped, said at the foot of the rows, where the reader meets the
+            boundary. */}
         {currentList?.total !== undefined && currentList.total > items.length && (
           <div className="font-sans text-center text-ui-sm text-ink-4 py-6 px-6">
             Showing {items.length} of {currentList.total}
           </div>
         )}
-        {/* A query that matched only lists isn't a failed search — the block above says so, and
-            "Nothing matches" underneath it would contradict it. */}
+        {/* A query that matched only lists isn't a failed search, so it keeps its empty state. */}
         {items.length === 0 && !(searching && listHitTotal > 0) && (
           <div className="font-sans text-center text-ui-base text-ink-4 py-10 px-6">
             {emptyMessage()}
-            {/* What was searched, said only where a reader has just failed to find something —
-                which is where the limit actually matters. */}
+            {/* What search covers, said only where a reader has just failed to find something. */}
             {searching && <div className="mt-2 text-ui-sm text-balance">{SEARCH_SCOPE_NOTE}</div>}
           </div>
         )}

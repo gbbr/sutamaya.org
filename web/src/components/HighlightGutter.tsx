@@ -9,8 +9,8 @@ interface HighlightGutterProps {
   highlights: Highlight[];
   theme: ThemeColors;
   onJump: (segIndex: number, highlightId?: string) => void;
-  // Anything that reflows the text without resizing the scroll container — type size, face, the
-  // segments arriving — which a ResizeObserver on a flex-fixed box would never see.
+  // Changes whenever the text reflows without the scroll container resizing — type size, face,
+  // the segments arriving.
   layoutKey?: string | number;
 }
 
