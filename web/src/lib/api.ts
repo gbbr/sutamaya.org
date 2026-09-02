@@ -1,13 +1,12 @@
 import type { HlSpan } from './highlights';
 import type { Highlight, ListDef, ListKind, Membership, HighlightsMap, VisitedMap, User } from './types';
 
-// A backstop for a dead connection, not a latency budget: /api/data carries the user's whole
-// dataset, so a slow mobile connection can legitimately take a while.
+// How long a request may take. A backstop for a dead connection rather than a latency budget:
+// /api/data carries the whole dataset, which a slow connection can legitimately take a while over.
 const REQUEST_TIMEOUT_MS = 30_000;
 
-// Carries the HTTP status alongside the message, so retryWithBackoff can tell a permanent rejection
-// (400, 404) from one worth retrying (429, 5xx). Thrown only for a non-ok response; a network
-// failure or timeout has no status, which isRetryable() treats as retryable.
+// An error carrying the HTTP status, so a permanent rejection can be told from one worth retrying.
+// Thrown only for a non-ok response; a network failure or timeout has no status.
 export class ApiError extends Error {
   readonly status: number;
 
@@ -69,9 +68,8 @@ export interface UserData {
   visited: VisitedMap;
 }
 
-// One item of a push — a record's desired state, or an operation. Every one carries the `mtime` its
-// record was stamped with when the user acted (see lib/mtime.ts); the server stores the write only
-// if that beats what it already has. The mirror's flush (lib/sync.ts) is the only producer.
+// One item of a push: a record's desired state, or an operation. Each carries the `mtime` stamped
+// when the user acted, and the server stores the write only if that beats what it holds.
 export type PushItem =
   // `id` is minted by the client, so a list created offline can be renamed, filed into and moved
   // before it reaches the server. The insert is ON CONFLICT DO NOTHING, so replaying a create is a
@@ -97,8 +95,8 @@ export type PushItem =
   // write is conditional on.
   | { type: 'visited'; suttaId: string; visitedAt: string };
 
-// What the server says about one pushed item. A refusal is permanent by definition, so `status` is
-// there to be logged and told apart from a row that has simply gone (404), never to be retried.
+// What the server says about one pushed item. A refusal is permanent, so `status` is there to be
+// logged and to tell a row that has simply gone (404) apart, never to be retried on.
 export type PushResult = { ok: true } | { error: string; status: number };
 
 export const dataApi = {

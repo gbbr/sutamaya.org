@@ -305,8 +305,8 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     [lists, mutate]
   );
 
-  // Tombstoned rather than removed, and its contents go with it — which the mirror's tree repair
-  // (lib/listTree.ts) works out on read, exactly as the server does.
+  // Tombstones a list, its contents going with it — which the mirror's tree repair
+  // (lib/listTree.ts) works out on read, as the server does.
   const removeList = useCallback(
     async (id: string) => {
       mutate((s) => removeListRecord(s, id));
@@ -316,9 +316,8 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
 
   const reorderLists = useCallback(
     async (parentId: string | null, order: string[]) => {
-      // One operation for the whole gesture rather than a write per sibling (queueSiblingOrder). It
-      // sets `parentId` on every id in `order` as well as its position, which is what lets
-      // useListTreeDrag's commitDrop fold a cross-parent drop into this single call.
+      // One operation for the whole gesture (queueSiblingOrder), setting `parentId` as well as
+      // position on every id in `order`, so a cross-parent drop is this one call.
       mutate((s) => queueSiblingOrder(s, parentId, order));
     },
     [mutate]
@@ -341,9 +340,8 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     [lists, membership, mutate]
   );
 
-  // toggleMembership's "add" branch, but taking the list directly rather than looking it up in
-  // `lists` — for a list the caller just created, which isn't in this component's `lists` closure
-  // until the next render.
+  // Adds a sutta to a list given directly rather than looked up in `lists` — for one the caller
+  // just created, which this render's closure doesn't hold yet.
   const addToList = useCallback(
     async (suttaId: string, list: ListDef) => {
       mutate((s) => queueMembership(s, list.id, suttaId, true));
@@ -358,9 +356,9 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     [mutate]
   );
 
-  // A highlight is immutable, so this doesn't edit anything: it mints a new one and names those the
-  // selection displaces (see lib/mirror.ts's writeHighlightRecord). A recolour is a tombstone plus a
-  // new highlight; an erase (color === null) is a tombstone alone.
+  // Writes a highlight over a span. Highlights are immutable, so this mints a new one and
+  // tombstones those the span displaces (lib/mirror.ts's writeHighlightRecord); an erase
+  // (color === null) is the tombstones alone.
   const setHighlightSpan = useCallback(
     async (suttaId: string, span: HlSpan, color: string | null) => {
       mutate((s) => writeHighlightRecord(s, suttaId, span, color));

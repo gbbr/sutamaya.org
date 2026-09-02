@@ -5,41 +5,35 @@ import type { FlushAck, FlushOutcome, ListRecord, MirrorState, QueuedOp, Stored 
 import type { UserData } from './api';
 
 // The flush: everything the mirror holds that the server hasn't seen, pushed to POST /api/data/push
-// in chunks, followed by a pull that folds the merged result back in. One sync is a couple of
-// requests however much is queued — a first sign-in after a long signed-out session would otherwise
-// issue one request per edit and spend most of them being rate-limited.
+// in chunks, then a pull that folds the merged result back in. One sync costs a couple of requests
+// however much is queued.
 //
-// Three rules shape the order, and the push preserves it. **Records before operations**, because a
-// list created offline and then filled with suttas produces one record and several ops, and an op
-// naming a list the server has never seen is refused and thrown away. **List records in mtime
-// order**, because the server prepends each new list the same way the client does — so pushing
-// them in the order the user made them reproduces the order the user sees. And **a list record
-// naming a still-uncreated parent always follows that parent's create**, enforced separately from
-// the mtime order above: mtime is when a row was last touched, not when it was created, so a group
-// renamed or moved after its children already exist would otherwise sort after them and get its
-// children's writes refused as naming an unknown parent — see orderListsForPush.
+// Three rules order the queue, and the push preserves that order:
+//   records before ops    – an op naming a list the server has never seen is refused
+//   lists by mtime        – the server prepends a new list as the client does, so pushing them in
+//                           the order the user made them reproduces the order the user sees
+//   parents before children – enforced separately from mtime, which says when a row was last
+//                           touched, not when it was created (orderListsForPush)
 //
-// Nothing here mutates the caller's state. It reports what landed, and lib/mirror.ts's
-// applyFlushOutcome folds that into whatever the mirror looks like by the time it returns — not
-// necessarily what the flush started from, since the user keeps editing while it is out.
+// Nothing here mutates the caller's state: it reports what landed, and applyFlushOutcome folds that
+// into whatever the mirror looks like by the time it returns.
 
-// One queued write, with what the mirror needs back once the server has answered it: a record
-// carries the `ack` that clears its dirty flag, an operation the `opId` that retires it.
+// One queued write, with what the mirror needs back once the server answers: a record carries the
+// `ack` that clears its dirty flag, an op the `opId` that retires it.
 interface Push {
   item: PushItem;
   ack?: FlushAck;
   opId?: string;
 }
 
-// Matches PUSH_MAX_ITEMS in worker/src/routes/data.js, which refuses anything larger and where the
-// reasoning behind the number lives. The two workspaces share no modules, so this is a deliberate
-// second copy — change one, change the other.
+// Items per push request. Matches PUSH_MAX_ITEMS in worker/src/routes/data.js, which refuses
+// anything larger; the two workspaces share no modules, so change one and change the other.
 const CHUNK_SIZE = 10;
 
-// How many fresh ids to try before giving up on a colliding create. A v4 UUID won't collide by
-// chance, so this is about the failure staying legible, not about it being likely.
+// How many fresh ids to try before giving up on a colliding create.
 const MAX_ID_ATTEMPTS = 4;
 
+// Returns the push item for one queued op.
 function opItem(op: QueuedOp): PushItem {
   if (op.type === 'add') return { type: 'item.add', listId: op.listId, suttaId: op.suttaId };
   if (op.type === 'remove') return { type: 'item.remove', listId: op.listId, suttaId: op.suttaId };
@@ -47,13 +41,10 @@ function opItem(op: QueuedOp): PushItem {
   return { type: 'item.order', listId: op.listId, order: op.order, mtime: op.mtime };
 }
 
-// Reorders `records` (already sorted by mtime) so that any record naming a `parentId` still
-// waiting on its own create — whether the record is that parent's new child or an existing list
-// being moved into it — comes after the parent's create. A rename or move that lands after both
-// (bumping the parent's mtime past them) would otherwise leave the mtime sort with the parent last,
-// and the parent's own history of edits since its creation is irrelevant to this — only whether it
-// has reached the server yet. A `list.delete` carries no `parentId`, so a deleted record is never
-// pulled forward. `visiting` guards a cycle no valid tree can produce, so this never loops.
+// Reorders mtime-sorted records so any naming a parent still waiting on its own create comes after
+// that create — a rename bumping the parent's mtime past its children would otherwise leave it
+// last. A deleted record carries no `parentId` and is never pulled forward, and `visiting` guards a
+// cycle no valid tree can produce.
 function orderListsForPush(records: Stored<ListRecord>[]): Stored<ListRecord>[] {
   const byId = new Map(records.map((record) => [record.data.id, record]));
   const ordered: Stored<ListRecord>[] = [];
@@ -86,8 +77,8 @@ function buildQueue(state: MirrorState): Push[] {
   for (const { data } of dirtyLists) {
     const ack: FlushAck = { kind: 'list', id: data.id, mtime: data.mtime };
     if (data.deleted) queue.push({ ack, item: { type: 'list.delete', id: data.id, mtime: data.mtime } });
-    // The create carries the record's current state, not the state it was created with — a list
-    // renamed or moved before it ever reached the server needs one item, not two.
+    // A create carries the record's current state, so a list renamed before it ever reached the
+    // server costs one item rather than two.
     else if (data.pendingCreate)
       queue.push({
         ack,
@@ -132,17 +123,15 @@ function buildQueue(state: MirrorState): Push[] {
     });
   }
 
-  // Item ops last, and in the order the user made them — an add and a later remove of the same
-  // sutta only mean what they should if they arrive that way round.
+  // Ops last, in the order the user made them: an add and a later remove of the same sutta only
+  // mean what they should that way round.
   for (const op of [...state.ops].sort((a, b) => a.seq - b.seq)) queue.push({ opId: op.id, item: opItem(op) });
 
   return queue;
 }
 
-// Renames every reference to a list id in one queued write, for a create whose id turned out to
-// belong to another account. Applied to the colliding create and everything still behind it — a
-// child naming it as parent, an add filing a sutta into it, an order listing it among siblings —
-// so the rest of the queue can go out under the new id without being rebuilt.
+// Renames every reference to a list id within one queued write, so the rest of the queue can go
+// out under a fresh id without being rebuilt.
 function remapPush(push: Push, from: string, to: string): Push {
   const swap = (id: string | null) => (id === from ? to : id);
   const { item, ack } = push;
@@ -158,19 +147,18 @@ function remapPush(push: Push, from: string, to: string): Push {
   return { ...push, item: next, ack: ack?.kind === 'list' && ack.id === from ? { ...ack, id: to } : ack };
 }
 
+// Pushes everything the mirror owes the server, then pulls a fresh snapshot.
 export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
   const acks: FlushAck[] = [];
   const doneOps: string[] = [];
   const remaps: { from: string; to: string }[] = [];
-  // Set by the first failure that means "stop": there is no point pushing the rest of the queue at
-  // a network that isn't there or a session that has lapsed, and stopping keeps the ops in order.
+  // Set by the first failure meaning "stop", which leaves the rest of the queue in order.
   let halted: 'offline' | 'unauthorized' | null = null;
 
   let queue = buildQueue(state);
   let cursor = 0;
-  // Fresh ids tried so far on the create at `collisionAt`, so a create that somehow keeps colliding
-  // is given up on rather than looping. Counted per position, since a later create in the same
-  // flush colliding is a separate failure with its own budget.
+  // Where a create is colliding and how many fresh ids it has been given, counted per position so
+  // a second collision later in the flush has its own budget.
   let collisionAt: number | null = null;
   let idAttempts = 0;
 
@@ -181,9 +169,8 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
       ({ results } = await dataApi.push(chunk.map((push) => push.item)));
     } catch (err) {
       const status = statusOf(err);
-      // A whole-request refusal that isn't a lapsed session or a retryable failure means this
-      // client built a push the server won't parse — a bug here, and one that can't be pinned on
-      // any single item, so nothing is retired. It is logged and the queue is left intact.
+      // A whole-request refusal that is neither a lapsed session nor retryable means this client
+      // built a push the server won't parse. It can't be pinned on one item, so nothing is retired.
       if (status !== 401 && !isRetryable(status)) console.error('sync could not push a batch', err);
       halted = status === 401 ? 'unauthorized' : 'offline';
       break;
@@ -199,9 +186,8 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
       const { item, ack, opId } = chunk[i];
       const result = results[i];
 
-      // The id belongs to another account, so no retry under it can ever succeed. Mint a fresh one
-      // and rewrite every reference to it — the create itself, children, queued ops — or this
-      // record could never drain. The rest of this chunk goes out again under the new id.
+      // A 409 means the id belongs to another account, so no retry under it can succeed: the row
+      // gets a fresh id, every reference to it is rewritten, and the chunk goes out again.
       const at = cursor + i;
       const attempts = collisionAt === at ? idAttempts : 0;
       if (!('ok' in result) && result.status === 409 && item.type === 'list.create' && attempts < MAX_ID_ATTEMPTS) {
@@ -216,14 +202,11 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
         break;
       }
 
-      // Everything else retires the write, whether it landed or not. A refusal is permanent by
-      // definition, so there is no version of it that a later attempt would answer differently: the
-      // write is given up on, and the pull at the end of this flush hands back the account's own
-      // version of that row — the same rebase a write losing last-writer-wins already gets. That
-      // client and server disagreed about validity at all is a bug in one of them, so it goes to
-      // the console for whoever is watching, and nowhere near the reader, who has nothing to
-      // decide. A 404 is the exception: the row is gone — deleted on another device, or cascaded
-      // out with a deleted ancestor — so the write is moot rather than failed.
+      // Everything else retires the write, landed or refused: a refusal is permanent, and the pull
+      // at the end of this flush hands back the account's own version of that row — the same
+      // rebase a write losing last-writer-wins gets. A refusal goes to the console, being a bug on
+      // one side or the other, and never to the reader, who has nothing to decide. A 404 is not
+      // one: the row is simply gone, so the write is moot rather than failed.
       if (!('ok' in result) && result.status !== 404) {
         console.error('sync gave up on a permanently refused write', { item, error: result.error });
       }
@@ -234,8 +217,8 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
     if (!collided) cursor += chunk.length;
   }
 
-  // A full snapshot, not a delta: at this scale the payload is small enough that a sequence cursor
-  // would be pure cost. Skipped when the flush already stopped — the pull would fail the same way.
+  // A full snapshot rather than a delta, the payload being small at this scale. Skipped when the
+  // push already stopped, since the pull would fail the same way.
   let snapshot: UserData | null = null;
   if (!halted) {
     try {
@@ -256,13 +239,12 @@ const BLOCKED: FlushOutcome = {
   snapshot: null,
 };
 
-// One flusher at a time across every tab and PWA window on the device. They share one mirror, so
-// two flushing at once would push the same records twice — harmless, since every write is
-// idempotent, but it doubles the traffic and lets two snapshots land out of order. `ifAvailable`
-// means a tab that loses the race skips this round rather than queueing behind the winner. Where
-// Web Locks aren't available the flush simply runs; the writes are still safe.
+// The lock holding one flusher at a time across every tab on the device; they share one mirror,
+// and two at once would double the traffic and let two snapshots land out of order.
 const FLUSH_LOCK = 'sutamaya.flush';
 
+// Flushes unless another tab is already flushing, in which case this round is skipped rather than
+// queued. Where Web Locks aren't available the flush simply runs; every write is idempotent.
 export async function flushWithLock(state: MirrorState): Promise<FlushOutcome> {
   const locks = typeof navigator !== 'undefined' ? navigator.locks : undefined;
   if (!locks) return flushMirror(state);

@@ -19,29 +19,25 @@ interface UseListTreeDragParams {
   reorderLists: (parentId: string | null, order: string[]) => Promise<void>;
 }
 
-// Pointer Events drive the list-tree drag, mirroring ListPane's sutta-reorder drag, since HTML5
-// drag-and-drop doesn't fire reliably on touch browsers; the shared window-listener, rAF and
-// auto-scroll plumbing lives in usePointerDragSession. A list can nest other lists as well as
-// reorder among siblings: dropping on the inner half of a group's row nests it as a child, the
-// blank space below the tree means the top level, and anywhere else resolves to a sibling position
-// (updateDropTarget below runs the hit-test).
+// Dragging a list or group to a new place in the tree, over Pointer Events (usePointerDragSession)
+// rather than HTML5 drag-and-drop, which touch browsers don't fire reliably.
+//
+// Each frame, the pointer's Y is hit-tested against every visible row's live rect: the inner half
+// of a group's row nests the dragged list inside it, the blank space below the tree means the top
+// level, and anywhere else is a sibling position. The dragged row's own descendants are excluded,
+// so a group can't be dropped into itself. Every zone commits as one reorderLists call, which
+// re-parents as well as positions, so a drop across parents is a single write.
 export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRef, setListExpanded, reorderLists }: UseListTreeDragParams) {
   const [reorderMode, setReorderMode] = useState(false);
   const [dragId, setDragId] = useState<string | null>(null);
-  // The row/edge ListRow actually renders a highlight on — see resolveDropIndicator for why this
-  // is normalized away from the raw {overId, overZone} target (kept only in the refs below, for
-  // committing the drop) rather than rendered directly.
+  // The row or edge ListRow draws the drop highlight on, normalized from the raw target below.
   const [indicator, setIndicator] = useState<DropIndicator | null>(null);
-  // Refs rather than state: the drag session's window-level pointermove listener registers once, at
-  // drag-start, and keeps calling that same closure for the rest of the drag, so anything read
-  // through a plain state variable would see its drag-start value. finishTreeDrag reads these live
-  // at drop time.
+  // Every visible row's element, and the live drop target. Refs, since the drag's window-level
+  // listener registers once and would otherwise read drag-start values for the whole drag.
   const rowElRefs = useRef<Map<string, HTMLElement>>(new Map());
-  // One stable ref-callback per row id, cached here, so ListRow's `ref={...}` never sees a new
-  // function identity across unrelated renders. An inline `(el) => registerRowEl(id, el)` would be
-  // a fresh closure every render, making React detach and reattach the DOM ref for every visible
-  // row on every TreePane re-render. Never evicted on list deletion: a stale closure for a deleted
-  // id is simply never invoked again.
+  // One cached ref-callback per row id, so ListRow's `ref` never sees a new function identity and
+  // React doesn't reattach every row's DOM ref on each render. A callback for a deleted id is
+  // simply never invoked again.
   const rowRefCallbacks = useRef<Map<string, (el: HTMLElement | null) => void>>(new Map());
   const dragIdRef = useRef<string | null>(null);
   const overIdRef = useRef<string | null>(null);
@@ -59,22 +55,15 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
     return cb;
   }, []);
 
-  // Which row the pointer sits vertically over, and what dropping there would do. Hit-tested by
-  // rect rather than by native dragover targeting, since the window-level pointermove listener
-  // doesn't know which row it is above. The zone math lives in resolveTreeDropTarget
-  // (lib/listTreeDrop.ts); this gathers each visible row's current rect into that shape.
-  //
-  // Rows are sorted by actual screen position rather than by `rowElRefs`' Map insertion order: that
-  // order is fixed at each row's first mount, but a prior drag can reorder the `lists` array — and
-  // so the rows' visual order — without remounting any of them, leaving the Map's order stale.
+  // Resolves which row the pointer is over and what dropping there would do, from each visible
+  // row's current rect (resolveTreeDropTarget, lib/listTreeDrop.ts). Rows are sorted by screen
+  // position, since a prior drag can reorder them without remounting any.
   const updateDropTarget = useCallback(
     (y: number) => {
       const draggedId = dragIdRef.current;
       if (!draggedId) return;
 
-      // A row nested under the dragged item (only relevant while dragging a group) can't itself
-      // be a valid target — dropping the group inside/around its own descendant would create a
-      // cycle.
+      // The dragged row and its own descendants, which dropping into would make a cycle.
       const invalid = new Set<string>([draggedId]);
       for (const l of lists) {
         if (isDescendantOf(lists, l.id, draggedId)) invalid.add(l.id);
@@ -97,15 +86,13 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
     [lists]
   );
 
-  // planListDrop (lib/listTreeDrop.ts) decides what a drop does; every zone resolves to one
-  // reorderLists call, which re-parents every id in the order it is given as well as positioning
-  // them — so even a drop crossing into another parent is a single write with no two-step flicker.
+  // Applies a drop, through the plan planListDrop (lib/listTreeDrop.ts) works out for its zone.
   const commitDrop = useCallback(
     async (draggedId: string, target: ListDef, zone: DropZone) => {
       const plan = planListDrop(lists, draggedId, target, zone, listChildrenOf, topLevelLists);
       if (plan.type === 'invalid') return;
       await reorderLists(plan.parentId, plan.order);
-      // Dropped into a group: open it, so the row can be seen where it landed.
+      // Opens a group dropped into, so the row is visible where it landed.
       if (zone === 'inside') setListExpanded((x) => ({ ...x, [target.id]: true }));
     },
     [lists, listChildrenOf, topLevelLists, setListExpanded, reorderLists]
@@ -128,10 +115,8 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
 
   const dragSession = usePointerDragSession({ scrollRef, onFrame: updateDropTarget });
 
-  // Engages a drag only once the pointer clears a small movement threshold, so a plain tap still
-  // reaches the row's own button clicks: nothing here calls preventDefault or pointer-capture until
-  // a real drag is underway. useCallback'd, since it passes straight through to ListRow, whose
-  // memoization needs it referentially stable across unrelated renders.
+  // Starts a drag from a row, engaging only once the pointer clears a small threshold, so a plain
+  // tap still reaches the row's own buttons.
   const onRowPointerDown = useCallback(
     (e: React.PointerEvent, id: string) => {
       dragSession.start(e, {

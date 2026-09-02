@@ -7,21 +7,19 @@ interface SlidingPillToggleProps {
   title?: string;
   leftIcon: ReactNode;
   rightIcon: ReactNode;
-  // Just the color (and any extra) classes for that side's icon — `transition-colors` and layout
-  // are already applied by this component to both sides, since every caller wants those anyway.
+  // Colour classes for each side's icon; the layout and transition are applied here.
   leftIconClassName: string;
   rightIconClassName: string;
-  // Icon slot size in px, shared by both sides (each caller only ever needs one size for itself).
+  // Icon slot size in px, shared by both sides.
   slotSize: number;
-  // The thumb's own bg/border/shadow/transition/duration, supplied whole rather than broken into
-  // more granular props.
+  // The thumb's whole appearance — background, border, shadow and transition.
   thumbClassName: string;
   onMouseDown?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-// A two-state pill toggle with a sliding thumb behind whichever icon is active — ListsTreeView's
-// List/Group draft-kind picker. Colour is left to the caller: this is a choice made inside a form
-// field rather than app navigation, so the thumb stays neutral and only the icon is tinted.
+// A two-state pill toggle, its thumb sliding behind whichever icon is active. Colour is left to
+// the caller: this is a choice inside a form field rather than navigation, so the thumb stays
+// neutral and only the icon is tinted.
 export function SlidingPillToggle({
   active,
   onClick,

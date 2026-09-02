@@ -1,28 +1,23 @@
-// The title and description a search result shows. Google renders the app before indexing it — a
-// crawl of /browse/dn comes back with the whole sutta list — so the tags rewritten here are the
-// ones that reach the result page.
-//
-// index.html carries this same pair as its static default, for a page that sets nothing of its own
-// and for the moment before React mounts. Keep the two in step.
+// The title and description a search result shows. Google renders the app before indexing it, so
+// the tags rewritten here are what reaches the result page. index.html carries the same pair as
+// its static default, for the moment before React mounts — keep the two in step.
 export const DEFAULT_TITLE = 'sutamaya';
 
 export const DEFAULT_DESCRIPTION =
   'An offline reader for the Pali suttas: browse the whole canon, keep lists, highlight passages, take notes, and tap any word for a dictionary.';
 
-// Google renders about this much of a description before truncating it, so a blurb is cut here
-// rather than left for the search page to chop mid-word.
+// How much of a description survives on a search page, so a blurb is cut here at a word boundary
+// rather than chopped there mid-word.
 const MAX_LENGTH = 155;
 
-// Pass a group or sutta description to use it, or null to restore the app-wide default. Called
-// through hooks/useDocumentMeta.ts rather than directly.
+// Sets the meta description to a group or sutta blurb, or restores the app-wide default with null.
 export function setMetaDescription(text: string | null | undefined): void {
   const el = document.querySelector('meta[name="description"]');
   if (!el) return;
   el.setAttribute('content', text ? summarize(text) : DEFAULT_DESCRIPTION);
 }
 
-// Blurbs may carry inline HTML (see ChapterRow.blurb) and run several sentences long, so they are
-// flattened to plain text and trimmed at a word boundary.
+// Flattens a blurb's inline HTML to plain text and trims it to MAX_LENGTH at a word boundary.
 function summarize(html: string): string {
   const text = html
     .replace(/<[^>]*>/g, '')

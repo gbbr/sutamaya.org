@@ -28,25 +28,22 @@ interface ListPaneProps {
   nodeId?: string;
   selectedId?: string;
   query: string;
-  // Search hits, computed once by LibraryPage and shared with TreePane, so both panes show one
-  // result set and this pane can be the only place they render on desktop.
+  // The sutta hits, scanned once by LibraryPage and shared with TreePane, so both panes show one
+  // result set.
   hits: SearchHit[];
-  // Matching lists, shown as their own block above the results — already trimmed to what should
-  // render (LibraryPage owns the expansion; see SearchListHits).
+  // The list hits, drawn as their own block above the results, already trimmed to what renders.
   listHits: ListHit[];
   listHitTotal: number;
   listsExpanded: boolean;
   onToggleListsExpanded: () => void;
   onSelectList: (nodeId: string) => void;
-  // The hit TreePane's arrow-key nav has highlighted while searching, mirrored onto that row here,
-  // since on desktop this pane is the one showing it.
+  // The sutta hit TreePane's arrow-key cursor is on, mirrored onto that row here.
   activeId?: string;
-  // The same, for when that cursor is up in the lists block instead.
+  // The same, while that cursor is up in the lists block instead.
   activeListId?: string;
   onBack: () => void;
   onOpen: (id: string) => void;
-  // Whether this pane is the visible one. LibraryPage keeps both panes mounted on mobile and
-  // toggles `display:none`, and scroll restoration has to know (see useScrollMemory).
+  // False while this pane is mounted but hidden on mobile, which scroll restoration has to know.
   visible?: boolean;
 }
 
@@ -71,9 +68,8 @@ export function ListPane({
   const { corpus } = useCorpus();
   const { ready, lists, membership, notes, highlights, reorderListItems } = useUserData();
   const { mobile, paneW } = useLayout();
-  // Rows carry note text and highlight counts, which arrive from the mirror after the rows
-  // themselves — a row above the scroll position growing would otherwise shift it after the
-  // restore has already landed.
+  // The pane's scroll, held until the mirror lands: a row's note text and highlight count arrive
+  // after the row, and one growing above the scroll position would shift it post-restore.
   const scrollRef = useScrollMemory<HTMLDivElement>(
     `list:${query.trim() ? 'search' : nodeId || 'none'}`,
     visible,
@@ -82,72 +78,58 @@ export function ListPane({
   const itemRowRefs = useRef<Map<string, HTMLDivElement>>(new Map());
 
   const searching = query.trim().length > 0;
-  // What the rows below mark up. Empty while browsing: this pane draws browse rows and search
-  // results through the same map, and only a result has words worth marking.
+  // What the rows mark up: nothing while browsing, this pane drawing browse rows and results
+  // through the same map.
   const rowQuery = searching ? query : '';
   const currentList = !searching ? lists.find((l) => String(l.id) === nodeId) : undefined;
-  // Auto-list membership is redundant here: a row already shows its note text and highlight count
-  // directly, so those lists never appear as chips.
   const flatLists = useMemo(() => flattenListTree(lists), [lists]);
 
-  // Rendered rows are capped at SEARCH_RESULTS_CAP, as TreePane's search list is. `hits.length` is
-  // uncapped and drives the "N results" count below, so that stays honest.
+  // The rows to draw: the capped hits while searching, else whatever the selected node or list
+  // holds, in its own order. `hits` stays uncapped, so the count below is honest.
   const items = useMemo<Array<[string, Sutta]>>(() => {
-    // No corpus yet: the pane renders nothing at all in that window (see `if (!corpus) return
-    // null` further down), so this is a placeholder rather than a real answer.
+    // A placeholder for the window before the corpus lands, in which the pane renders nothing.
     if (!corpus) return [];
-    // Searching: the capped hits, each already carrying the sutta it matched.
     if (searching) return hits.slice(0, SEARCH_RESULTS_CAP).map(({ id, sutta }) => [id, sutta] as [string, Sutta]);
-    // Browsing: whatever the selected corpus node or user list holds, in its own order.
     return listItemsFor(corpus, nodeId, lists);
   }, [corpus, nodeId, lists, searching, hits]);
 
-  // Reordering is offered only for a user list, an auto list's membership being derived rather than
-  // stored, and only once it holds two suttas, since one row has nowhere to move to.
+  // Whether these rows can be reordered: only a user list's, an auto-list's membership being
+  // derived, and only once two of them have somewhere to move.
   const canReorder = !!currentList && !currentList.auto && items.length >= 2;
 
-  // A search hit's row is keyed and displayed by the batch's own id, but opening it lands on the
-  // inner sutta the hit matched, where there is one — see SearchHit.matchedId.
+  // Where a row opens to, when that isn't the row's own id — a hit inside a batched document is
+  // keyed by the batch and opens on the inner sutta it matched.
   const openTargets = useMemo(() => {
     const map = new Map<string, string>();
     for (const h of hits) if (h.matchedId) map.set(h.id, h.matchedId);
     return map;
   }, [hits]);
 
-  // Chips and highlight count per row, keyed off `items` rather than the drag's `displayItems`:
-  // `items` doesn't change while a drag reshuffles display order, so this map survives the whole
-  // gesture instead of being rebuilt on every rAF tick.
+  // Each row's chips and highlight count, keyed off `items` rather than the drag's own order, so
+  // the map survives a whole gesture rather than being rebuilt on every frame.
   const rowMeta = useMemo(
     () => suttaRowMeta(items.map(([id]) => id), membership, highlights, flatLists, currentList?.id),
     [items, membership, flatLists, highlights, currentList?.id]
   );
 
-  // Pointer Events, not HTML5 drag-and-drop, which touch browsers largely don't fire. The dragged
-  // item's id and a live working copy of the order live here; `dragOrder`, rendered instead of
-  // `items` while set, shifts as the pointer crosses row midpoints. The window-listener, rAF and
-  // auto-scroll plumbing is shared with TreePane's list-tree drag via usePointerDragSession, which
-  // re-evaluates the drop target while the pointer sits in the edge band, so this still reorders
-  // correctly when content scrolls under a stationary finger.
+  // The live order while a row is being dragged, rendered in place of `items` and reshuffled as
+  // the pointer crosses row midpoints. Over Pointer Events, which touch browsers do fire, sharing
+  // usePointerDragSession's window listeners and auto-scroll with the list-tree drag.
   const [dragOrder, setDragOrder] = useState<string[] | null>(null);
-  // Off by default: the drag handles take space every row would otherwise get, so they appear only
-  // on the header toggle, which mirrors TreePane's reorder mode. `canReorder` above decides whether
-  // that toggle shows at all.
+  // Whether the drag handles are showing, which takes space from every row, so they wait for the
+  // header's toggle — itself shown only when `canReorder`.
   const [reorderMode, setReorderMode] = useState(false);
-  // The row whose list-membership popover is open, with the screen-space rect of the control that
-  // opened it. Held here rather than in the row, so it outlives that row: unchecking the list being
-  // viewed drops the sutta out of `items`, and the popover has to stay up to be checked back on.
+  // The row whose membership popover is open, and the rect of the control that opened it. Held
+  // here so it outlives the row: unchecking the list being viewed drops that sutta out of `items`.
   const [picker, setPicker] = useState<{ suttaId: string; anchor: DOMRect } | null>(null);
-  // Whether the blurb above the rows is expanded past its 3-line clamp, and whether it has anything
-  // to expand to. Measured after layout rather than derived from character count, since where the
-  // text wraps depends on the pane width and the type scale. Collapsed again on every navigation,
-  // since an expanded blurb is a decision about the page you are on.
+  // Whether the blurb is expanded past its clamp, and whether it has anything to expand to —
+  // measured after layout, where the text wraps depending on the pane's width and the type scale.
   const [blurbOpen, setBlurbOpen] = useState(false);
   const [blurbOverflows, setBlurbOverflows] = useState(false);
   const blurbRef = useRef<HTMLDivElement | null>(null);
   const dragIdRef = useRef<string | null>(null);
-  // Mirrors `dragOrder` so endDrag can read the live value. The window-level `onUp` listener that
-  // calls endDrag is registered once at drag-start, so its closure is fixed to that render and
-  // would read `dragOrder` as it was then (null) rather than the in-progress order.
+  // Mirrors `dragOrder` for endDrag, whose window listener is registered once at drag-start and
+  // would otherwise read the order as it was then — null.
   const dragOrderRef = useRef<string[] | null>(null);
 
   const displayItems: Array<[string, Sutta]> =
@@ -178,13 +160,12 @@ export function ListPane({
   const dragSession = usePointerDragSession({ scrollRef, onFrame: updateDragTarget });
 
   function endDrag() {
-    // Idempotent: a no-op if the session already tore itself down on pointerup, and the only
-    // teardown path when this is called from a bail-out — a nodeId change, or unmount.
+    // Idempotent: a no-op once the session tore itself down on pointerup, and the only teardown
+    // path when this is called from a bail-out.
     dragSession.cancel();
     dragIdRef.current = null;
-    // Read the live value through the ref rather than committing inside setDragOrder's updater: an
-    // updater has to be pure, and reorderListItems triggers UserDataContext's setState, which React
-    // flags as an invalid render-phase update.
+    // Read through the ref rather than committed inside setDragOrder's updater, which has to be
+    // pure — reorderListItems sets state, which React flags as a render-phase update.
     const order = dragOrderRef.current;
     dragOrderRef.current = null;
     setDragOrder(null);
@@ -202,16 +183,14 @@ export function ListPane({
     dragSession.start(e, { onEngage: () => {}, onEnd: endDrag });
   }
 
-  // Bails out of an in-flight drag when the list changes under it — a deep link or Prev/Next
-  // navigation mid-drag — rather than leaving stale refs and a running rAF loop.
+  // Ends an in-flight drag when the list changes under it, rather than leaving stale refs and a
+  // running rAF loop.
   useEffect(() => {
     if (dragIdRef.current) endDrag();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nodeId]);
 
-  // The same, for the component unmounting mid-drag. The effect above fires on a `nodeId` change
-  // rather than on unmount, so without this the rAF loop's only exit condition
-  // (`!dragIdRef.current`) never fires and it runs on against a detached pane.
+  // The same on unmount, which the effect above, keyed on `nodeId`, doesn't cover.
   useEffect(() => {
     return () => {
       if (dragIdRef.current) endDrag();

@@ -1,13 +1,8 @@
 export type PaneView = 'library' | 'lists';
 
-// The decision behind TreePane's Library/My-lists toggle sync effect, kept out of the component so
-// it can be unit-tested on its own.
-//
-// Returns the pane view to switch to, or null to leave it alone. Null covers: the first mount of a
-// reader-close round trip, whose `nodeId` can be a sutta's corpus node even though "My lists" was
-// showing throughout; the first mount of a return to the node already being browsed (Settings and
-// back, a refresh), where `nodeId` expresses no intent to change pane; no `nodeId` yet; and a
-// `nodeId` that is neither a list id nor a resolvable corpus node.
+// Which pane TreePane's Library/My lists toggle should switch to, or null to leave it alone —
+// which covers a return where `nodeId` expresses no intent to change pane, no `nodeId` at all, and
+// one that names neither a list nor a corpus node. Kept out of the component so it is unit-testable.
 export function derivePaneViewSync(params: {
   isFirstRun: boolean;
   restoreOrigin: boolean;

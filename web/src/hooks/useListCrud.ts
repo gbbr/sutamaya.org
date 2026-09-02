@@ -9,37 +9,28 @@ interface UseListCrudParams {
   renameList: (id: string, label: string) => Promise<void>;
   removeList: (id: string) => Promise<void>;
   reorderLists: (parentId: string | null, order: string[]) => Promise<void>;
-  // Called after a new list/group is actually created (submitDraft) — routing to it stays the
-  // caller's job (TreePane navigates there) rather than this hook importing `navigate` directly.
+  // Called once a new list or group exists; routing to it is the caller's job.
   onCreated?: (list: ListDef) => void;
 }
 
-// List CRUD state (menu/edit/delete/draft) and the handlers that operate on it — everything
-// TreePane's "My lists" tree needs beyond the pure derivations in useListTreeIndex.
+// The row menu, rename, delete-confirm and new-list draft state behind TreePane's "My lists" tree,
+// and the handlers that drive them. Every one is stable, so ListRow's memoization holds.
 export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, createList, renameList, removeList, reorderLists, onCreated }: UseListCrudParams) {
   const [menuOpenId, setMenuOpenId] = useState<string | null>(null);
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editDraft, setEditDraft] = useState('');
-  // `undefined` = no draft input open; `null` = creating a top-level entry; a list id = creating
-  // a sub-list under that list.
+  // Where a draft input is open: `undefined` for none, `null` for top level, or the id of the
+  // group it is inside.
   const [creatingParentId, setCreatingParentId] = useState<string | null | undefined>(undefined);
   const [draft, setDraft] = useState('');
-  // Only meaningful (and only shown) for a top-level draft — a per-row "+" only ever appears on
-  // a group row and always adds a plain list inside it (see ListRow), no choice to make there.
+  // List or group, for a top-level draft. A per-row "+" always adds a plain list.
   const [draftKind, setDraftKind] = useState<ListKind>('list');
-  // Set for the round-trip inside submitDraft, to the value `creatingParentId` held just before it
-  // was reset. `creatingParentId` clears immediately on submit so the input feels snappy, but
-  // createList() awaits the API call, and ListsTreeView and ListRow both reserve the draft row's
-  // height while this is set — keyed to which parent submitted, top-level or a specific group.
+  // Which parent has a submitted draft still in flight. `creatingParentId` clears at once so the
+  // input feels snappy, and this is what reserves the row's height until the list exists.
   const [submittingParentId, setSubmittingParentId] = useState<string | null | undefined>(undefined);
   const listInput = useRef<HTMLInputElement | null>(null);
 
-  // Every handler below is useCallback'd, so a freshly-allocated one on each TreePane render
-  // doesn't defeat ListRow's memoization. Most only call setState functions, which are stable, so
-  // they carry no deps; the few that read other state (commitEditList, submitDraft) depend on it,
-  // but that state only changes while the relevant row is being edited, so the identity churn stays
-  // scoped to that row.
   const toggleListMenu = useCallback((id: string) => {
     setMenuOpenId((m) => (m === id ? null : id));
   }, []);
@@ -89,8 +80,7 @@ export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, cr
     [setListExpanded]
   );
 
-  // The header's own "+" — toggles a top-level draft open/closed, defaulting the kind picker
-  // back to 'list' each time it opens fresh (not whatever was last picked).
+  // Opens or closes the header's top-level draft, with the kind picker back at 'list'.
   const toggleTopLevelDraft = useCallback(() => {
     setCreatingParentId((c) => (c === undefined ? null : undefined));
     setDraft('');
@@ -113,9 +103,7 @@ export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, cr
   const submitDraft = useCallback(async () => {
     const name = draft.trim();
     const parentId = creatingParentId ?? null;
-    // The header's own "+" (parentId null, top level) lets the user pick list vs. group via
-    // `draftKind`; every per-row "+" only ever appears on a group row (see ListRow) and always
-    // adds a plain list inside it, no choice to make there.
+    // Only a top-level draft offers the list/group choice; a per-row "+" always adds a list.
     const kind = parentId === null ? draftKind : 'list';
     setCreatingParentId(undefined);
     setDraft('');
@@ -125,8 +113,8 @@ export function useListCrud({ listChildrenOf, topLevelLists, setListExpanded, cr
       const list = await createList(name, parentId, kind);
       onCreated?.(list);
     } catch (e) {
-      // createList writes to the local mirror and can't fail on the network, so this catches only
-      // something unexpected — enough to keep the draft input from staying stuck open.
+      // createList writes to the local mirror and can't fail on the network, so only something
+      // unexpected lands here; the draft row still has to be released.
       console.error('list create failed', e);
     } finally {
       setSubmittingParentId(undefined);

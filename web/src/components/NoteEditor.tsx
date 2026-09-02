@@ -1,32 +1,30 @@
 import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react';
 import { NOTE_MAX_LENGTH } from '../lib/textLimits';
 
-// How close to the cap the count starts showing. A running score over every note would make the
-// limit the point of the box; near the end it's a warning, which is the only time it's useful.
+// How many characters from the cap the count appears, where it reads as a warning rather than as a
+// running score over every note.
 const COUNT_FROM_REMAINING = 100;
 
 interface NoteEditorProps {
   value: string;
   onSubmit: (text: string) => void;
   placeholder?: string;
-  // Fixed: a note is an annotation — a line or two to recognise the sutta by later — and a box
-  // that stays that size says so. Longer notes scroll rather than growing the field.
+  // The box's height, fixed: a note is a line or two, and a longer one scrolls.
   rows?: number;
   textareaClassName: string;
   textareaStyle?: CSSProperties;
-  // Bumped by a caller (ReaderPage's "n" shortcut, or tapping the note in the text) to put the
-  // cursor in the textarea on demand.
-  // `autoFocus` only fires on mount, which misses a shortcut pressed while the panel is open.
+  // Bumped to put the cursor in the box on demand; `autoFocus` fires only on mount, which misses
+  // a shortcut pressed while the panel is already open.
   focusSignal?: number;
 }
 
-// A note is written like a note, not sent like a message: Enter is a new line, and saving happens
-// on its own — leaving the field commits, as does the editor going off screen with a draft pending.
-// Cmd/Ctrl+Enter commits on the spot for anyone who wants a deliberate keystroke. Nothing typed is
-// ever dropped, which is why Escape out of the reader's panel saves rather than cancels.
+// A note is written like a note rather than sent like a message: Enter is a new line, and saving
+// happens on its own — leaving the field commits, as does the editor going off screen with a draft
+// pending, and Cmd/Ctrl+Enter for anyone who wants a deliberate keystroke. Nothing typed is ever
+// dropped, which is why Escape out of the reader's panel saves rather than cancels.
 //
-// Keeps its own draft state, so nothing is written per keystroke, and resyncs whenever `value`
-// changes — switching suttas, or a note edited on another device arriving mid-edit.
+// The draft is held here rather than written per keystroke, and resyncs whenever `value` changes —
+// a sutta switch, or another device's edit arriving mid-write.
 export function NoteEditor({
   value,
   onSubmit,
@@ -48,11 +46,9 @@ export function NoteEditor({
     const box = textareaRef.current;
     if (!box) return;
     box.focus();
-    // Caret at the end, never a selection over the whole note: this box is usually opened on an
-    // existing note to add to it, and a selected note is one keystroke from being wiped.
+    // The caret at the end, never a selection over the whole note, which one keystroke would wipe.
     box.setSelectionRange(box.value.length, box.value.length);
-    // A note longer than the box would leave that caret off screen; scrolling to the bottom keeps
-    // it in view. Stays at 0 for a note that fits.
+    // Scrolled to the caret, which a note longer than the box would leave off screen.
     box.scrollTop = box.scrollHeight;
   }, [focusSignal]);
 
@@ -64,11 +60,9 @@ export function NoteEditor({
     if (draft !== value) onSubmit(draft);
   }
 
-  // Cmd/Ctrl+Enter and blur both commit the draft, but neither fires when the editor is taken off
-  // screen — and Escape closes the reader's panel (see useReaderKeyboard) without moving focus
-  // first, so a half-written note would go with it. Committing from the unmount cleanup covers
-  // that, and closing the reader outright with it. The ref lets that cleanup stay mount-scoped and
-  // still see the final draft; `submit` writes nothing when the draft matches what is stored.
+  // Commits the draft on unmount, which is what catches the panel being closed with a note
+  // half-written — neither blur nor the shortcut fires there. Through a ref, so the cleanup stays
+  // mount-scoped and still sees the final draft; `submit` writes nothing when it matches.
   const submitRef = useRef(submit);
   useEffect(() => {
     submitRef.current = submit;

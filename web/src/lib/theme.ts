@@ -1,24 +1,17 @@
 import type { ReaderFace, ResolvedReaderTheme, ThemeColors } from './types';
 
-// Dark's own highlight fills, index-aligned with HIGHLIGHT_COLORS below. Deeper and warmer than the
-// pastels they stand in for, so the three stay tellable apart on a brown ground while cream body
-// text keeps 5.2:1 or better contrast over them.
+// Dark's own highlight fills, index-aligned with HIGHLIGHT_COLORS below; the stored pastels would
+// not hold cream body text at 5.2:1 on a brown ground.
 const DARK_HIGHLIGHTS = ['#6B4E22', '#4A4A26', '#463A5C'];
 
 export const READER_THEMES: Record<ResolvedReaderTheme, ThemeColors> = {
-  // `selection` for light and dark reuses the app shell's own `--selection` (index.css); sepia has
-  // no shell equivalent and is tinted from `pali` instead. Light's `focusTint` is built from `pali`
-  // too, so the wash reads warm rather than as a flat gray smudge — sepia's and dark's `fg` are
-  // already warm-toned, light's is a near-neutral near-black. `dim` is a solid warm gray, not an
-  // alpha of `fg`: half of a near-black over a near-white ground composites to 3.3:1, and `dim` is
-  // the color of every row label in the menu panel's Display tab and of the tab bar's inactive
-  // labels. Each `paliTint` is that theme's own `pali` at 15%.
+  // Light's `dim` is a solid warm gray rather than an alpha of `fg`, which would composite to
+  // 3.3:1 on this ground, and its `focusTint` is built from `pali` so the wash reads warm. Every
+  // `paliTint` is that theme's own `pali` at 15%.
   light: { bg: '#FAF8F3', fg: '#1B1917', dim: '#6B6259', rule: 'rgba(27,25,23,.18)', panel: '#FFFEFB', pali: '#7A5B2E', tint: 'rgba(27,25,23,.1)', paliTint: 'rgba(122,91,46,.15)', focusTint: 'rgba(122,91,46,.09)', highlightPalette: null, selection: '#EADFC6' },
   sepia: { bg: '#F3E7D3', fg: '#3A2E1E', dim: 'rgba(58,46,30,.55)', rule: 'rgba(58,46,30,.2)', panel: '#F8EEDD', pali: '#8C6222', tint: 'rgba(58,46,30,.1)', paliTint: 'rgba(140,98,34,.15)', focusTint: 'rgba(58,46,30,.05)', highlightPalette: null, selection: 'rgba(140,98,34,.32)' },
-  // A warm dark brown, like reading by lamplight, rather than a near-black. `fg` is deliberately
-  // held short of a bright cream: light-on-dark type haloes at small sizes, so the body text sits
-  // at 10.3:1 rather than the 12.4:1 a brighter cream would give — comfortably past WCAG AAA's 7:1
-  // while keeping 18px from blooming.
+  // A warm dark brown rather than a near-black, with `fg` held short of a bright cream: at 10.3:1
+  // it clears WCAG AAA while keeping 18px type from blooming, which light-on-dark does.
   dark: {
     bg: '#2A241E',
     fg: '#DCD3C3',
@@ -34,12 +27,10 @@ export const READER_THEMES: Record<ResolvedReaderTheme, ThemeColors> = {
   },
 };
 
-// The app shell's palette (index.css's `:root`/`:root.dark`) expressed as a ThemeColors, so a
-// component built for the reader can be dropped into the Library unchanged — ListMembershipPicker
-// is shared by both. Every entry is a live `var()` reference rather than a resolved colour, so it
-// follows Settings > Theme without anything here knowing which theme is active. `highlightPalette`
-// points at the shell's `--hl-*`, which is what makes the Library's highlight-count swatches follow
-// the light/dark toggle. `selection` is unused outside the reader and is here to satisfy the type.
+// The app shell's palette as a ThemeColors, so a component built for the reader renders unchanged
+// in the Library. Every entry is a live `var()` rather than a resolved colour, so it follows
+// Settings > Theme without anything here knowing which theme is active. `selection` is unused
+// outside the reader and present only to satisfy the type.
 export const SHELL_THEME: ThemeColors = {
   bg: 'rgb(var(--paper))',
   fg: 'rgb(var(--ink))',
@@ -51,18 +42,17 @@ export const SHELL_THEME: ThemeColors = {
   // deliberately doesn't.
   pali: 'rgb(var(--accent-text))',
   tint: 'rgb(var(--ink) / .1)',
-  // Built from `--accent-text` for the same reason as `pali`: a wash on the page has to lighten in
-  // dark mode.
+  // Built from `--accent-text`, as `pali` is, so the wash lightens in dark mode.
   paliTint: 'rgb(var(--accent-text) / .15)',
   focusTint: 'rgb(var(--ink) / .05)',
   highlightPalette: ['rgb(var(--hl-1))', 'rgb(var(--hl-2))', 'rgb(var(--hl-3))'],
   selection: 'rgb(var(--selection))',
 };
 
-// Three of these name a face the OS may or may not ship, each followed by a self-hosted clone (see
-// index.css) so the picker never offers a tile that renders as something else: Georgia falls to
-// Gelasio, Charter to XCharter, Palatino to Gentium Book Plus. Ordinary font-family fallback does
-// the work, so a device that has the genuine font downloads none of them.
+// The reading faces. Three name a font the OS may not ship, each backed by a self-hosted clone —
+// Georgia by Gelasio, Charter by XCharter, Palatino by Gentium Book Plus — so the picker never
+// offers a tile that renders as something else. Ordinary font-family fallback does the work, so a
+// device with the genuine font downloads none of them.
 export const READER_FACES: Record<ReaderFace, string> = {
   georgia: 'Georgia,Gelasio,serif',
   serif: "'Newsreader',Georgia,Gelasio,serif",
@@ -72,16 +62,13 @@ export const READER_FACES: Record<ReaderFace, string> = {
   sans: "'IBM Plex Sans',system-ui,sans-serif",
 };
 
-// The three highlight colors, and the identity a highlight is stored under: `highlights.c` holds
-// one of these hexes whatever theme it was made in, so changing a device's theme never rewrites a
-// row. These are the light/sepia fills; DARK_HIGHLIGHTS at the top of this file is dark's rendering
-// of the same three.
+// The three highlight colours, and the identity a highlight is stored under whatever theme it was
+// made in, so changing the theme never rewrites a row. These are also the light and sepia fills;
+// DARK_HIGHLIGHTS is dark's rendering of the same three.
 export const HIGHLIGHT_COLORS = ['#F0E3A8', '#CBE0C2', '#CFDCEE'];
 
-// Paints a stored highlight color as an actual background: light and sepia use the stored pastel,
-// dark substitutes its own fill for the same index. Used everywhere a highlight is painted — the
-// inline text span and the color swatches (SegmentedText, HighlightPopup), the highlight-list chip
-// (ReaderMenuPanel) and the scroll-edge marks (HighlightGutter).
+// The background to paint a stored highlight colour as, substituting the theme's own fill where it
+// has one.
 export function highlightPaint(color: string, theme: ThemeColors): string {
   const i = HIGHLIGHT_COLORS.indexOf(color);
   return theme.highlightPalette && i >= 0 ? theme.highlightPalette[i] : color;

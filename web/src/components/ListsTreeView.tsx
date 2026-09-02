@@ -8,14 +8,14 @@ import { SlidingPillToggle } from './SlidingPillToggle';
 import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits';
 
 interface ListsTreeViewProps {
-  // Gates the "You have no lists yet" empty state: false until the initial GET /api/data resolves
-  // (UserDataContext's `ready`), so a user who does have lists never sees that placeholder flash.
+  // Whether the local dataset is known, which gates the empty state so it can't flash for someone
+  // who does have lists.
   ready: boolean;
   nodeId?: string;
   onSelect: (nodeId: string) => void;
   reorderMode: boolean;
   setReorderMode: (updater: (m: boolean) => boolean) => void;
-  // False when the tree holds fewer than two lists — see TreePane's canReorderLists.
+  // False with fewer than two lists in the tree, where there is no order to change.
   canReorder: boolean;
   setMenuOpenId: (id: string | null) => void;
   toggleTopLevelDraft: () => void;
@@ -47,11 +47,9 @@ interface ListsTreeViewProps {
   autoLists: Array<{ list: ListDef; sub: string; Icon: typeof Highlighter }>;
 }
 
-// The "My lists" tree (TreePane's other view): the reorder-mode/new-list header row, the top-level
-// draft input, the list tree itself (ListRow, recursing into its children), and the read-only
-// "Activity" section. Separate from TreePane because it shares almost no JSX with the corpus browse
-// tree it alternates with (CorpusTreeView). Every piece of state driving this — list CRUD,
-// drag-and-drop, expansion — lives in TreePane via useListCrud/useListTreeDrag/useListTreeIndex.
+// The "My lists" tree: the header row, the top-level draft input, the tree itself, and the
+// read-only "Activity" section of auto-lists. Separate from TreePane, which owns every piece of
+// state this needs, since it shares almost no JSX with the corpus tree it alternates with.
 export function ListsTreeView({
   ready,
   nodeId,
@@ -105,9 +103,8 @@ export function ListsTreeView({
               <ArrowUpDown size={15} strokeWidth={2} />
             </button>
           )}
-          {/* A raw px font-size rather than a `text-ui-*` token: the `+` is an icon glyph sized to
-              the 32px circle around it, not UI text, so it doesn't belong to the type scale and
-              shouldn't grow when that scale is retuned. */}
+          {/* A raw px size: the `+` is a glyph sized to the circle around it rather than UI text,
+              so it doesn't belong to the type scale. */}
           <button
             aria-label="New list or group"
             title="New list or group"
@@ -138,12 +135,9 @@ export function ListsTreeView({
             autoCapitalize="off"
             spellCheck={false}
           />
-          {/* Icon-only List/Group toggle (no text labels — the input's own placeholder
-              already says which one is picked) — a single control spanning both icons, so
-              a click anywhere on it flips draftKind, not just on whichever side happens to
-              be inactive. onMouseDown preventDefault keeps focus on the input instead of
-              shifting it here, so flipping kind mid-type doesn't trigger the input's own
-              onBlur (which cancels the whole draft). */}
+          {/* The list/group toggle: icons only, the input's placeholder already naming the pick,
+              and one control spanning both, so a click anywhere on it flips. The preventDefault
+              keeps focus in the input, whose blur would otherwise cancel the draft. */}
           <SlidingPillToggle
             active={draftKind === 'list' ? 'left' : 'right'}
             onClick={() => setDraftKind((k) => (k === 'list' ? 'group' : 'list'))}
@@ -159,12 +153,8 @@ export function ListsTreeView({
           />
         </div>
       )}
-      {/* Reserves the draft input row's own height (pt-1.5 + h-36 + pb-2 = 50px) during the
-          submitDraft() network round-trip, so the pane doesn't visibly collapse to just the
-          header between the input closing (see submitDraft's comment) and the new row landing.
-          Scoped to a top-level submission specifically (submittingParentId === null) — a nested
-          submission under a group reserves its own row's height in ListRow instead, keyed to
-          that group's id, not this one. */}
+      {/* Holds the closed draft input's height while a top-level create is in flight, so the pane
+          doesn't collapse to its header and back. A nested one reserves its own row in ListRow. */}
       {submittingParentId === null && <div className="h-[50px]" />}
       {ready && topLevelLists.length === 0 && creatingParentId !== null && submittingParentId === undefined && (
         <div className="flex flex-col items-center gap-2.5 px-[22px] pt-16 pb-8 text-center">
@@ -222,9 +212,7 @@ export function ListsTreeView({
                 <span className="block text-ui-md font-medium leading-[1.3]">{list.label}</span>
                 <span className="block font-sans text-ui-sm font-medium text-ink-3 mt-[1px]">{sub}</span>
               </span>
-              {/* What the reader has, not what the cap left — `items` is trimmed to the most recent,
-                  and a badge reading 300 beside "Suttas you've highlighted" would be answering a
-                  different question from the one it looks like it's answering. */}
+              {/* How many suttas qualify, not how many the cap left in `items`. */}
               <span className="font-sans text-ui-xs font-medium text-ink-4">{list.total ?? list.items.length}</span>
             </button>
           ))}

@@ -4,18 +4,24 @@ import { useLatest } from './useLatest';
 import { spansOverlap, type HlSpan } from '../lib/highlights';
 import type { Highlight } from '../lib/types';
 
+// The colour popup over a selection or an existing highlight.
+//
+// A selection's two ends are resolved to character offsets into the segments' stored `en` text —
+// the same coordinates highlights are stored and painted in — by measuring a Range against each
+// segment and discounting the rendered text that isn't part of `en` (IGNORED_TEXT below). A
+// cross-segment selection keeps only its two endpoints, everything between being covered by
+// definition. Picking a colour writes through UserDataContext to the offline mirror.
 export interface PopState {
   span: HlSpan;
   x: number;
-  // The selection's vertical extent in screen space. The popup sits above `top` and, when there
-  // isn't room for it up there, below `bottom` — so either way it clears the selected text.
+  // The selection's vertical extent, which the popup sits above or below.
   top: number;
   bottom: number;
   on: string | null;
 }
 
-// Whether the drag ran right-to-left / bottom-to-top: the focus is where the pointer lifted, the
-// anchor where it went down, so a focus that precedes the anchor in the document means backwards.
+// True when the drag ran backwards: the focus is where the pointer lifted and the anchor where it
+// went down, so a focus preceding the anchor in the document means right-to-left or bottom-to-top.
 function isBackwards(sel: Selection): boolean {
   const { anchorNode, anchorOffset, focusNode, focusOffset } = sel;
   if (!anchorNode || !focusNode) return false;
@@ -28,15 +34,12 @@ function closestSeg(node: Node | null): HTMLElement | null {
   return el ? el.closest<HTMLElement>('[data-seg]') : null;
 }
 
-// Text rendered inside a segment that isn't part of its stored `en` string: the list-item's "1."
-// marker and the translator-note asterisk, both marked by SegmentedText. They carry
-// `user-select: none`, but that governs only what the user can select — `Range.toString()` counts
-// them regardless, so they are discounted by hand.
+// Selector for text rendered inside a segment that isn't part of its stored `en`: the list-item
+// marker and the note asterisk, which `Range.toString()` counts regardless of `user-select`.
 const IGNORED_TEXT = '[data-seg-ignore]';
 
-// How much of `pre`'s text belongs to those non-content elements. Both ranges start at the same
-// point, so an element whose end yields a shorter or equal string ends at or before `pre`'s end,
-// meaning its text was counted and has to come back off.
+// Returns how much of `pre`'s text belongs to those elements. Both ranges start at the same point,
+// so an element whose end yields no longer a string ends within `pre` and was counted.
 function ignoredLengthWithin(seg: HTMLElement, pre: Range): number {
   const preLength = pre.toString().length;
   let ignored = 0;
@@ -49,10 +52,7 @@ function ignoredLengthWithin(seg: HTMLElement, pre: Range): number {
   return ignored;
 }
 
-// Character offset into `seg`'s stored text for a point inside its rendered DOM — used for both
-// ends of a selection, single- or multi-segment, so they are always consistent with each other
-// and with how highlighted spans are rendered (SegmentedText slices `seg.en` by these same
-// offsets).
+// Returns the character offset into `seg`'s stored text for a point in its rendered DOM.
 function offsetWithin(seg: HTMLElement, container: Node, containerOffset: number): number {
   const pre = document.createRange();
   pre.selectNodeContents(seg);
@@ -60,20 +60,17 @@ function offsetWithin(seg: HTMLElement, container: Node, containerOffset: number
   return pre.toString().length - ignoredLengthWithin(seg, pre);
 }
 
-// The popup for a live, non-collapsed selection, or null when it isn't one the reader can act on:
-// either end outside the rendered segments, or offsets that resolve to an empty span.
+// Returns the popup state for a live selection, or null when it isn't one the reader can act on:
+// an end outside the rendered segments, or offsets resolving to an empty span.
 function popFromSelection(sel: Selection, highlights: Highlight[]): PopState | null {
   const range = sel.getRangeAt(0);
   const a = closestSeg(range.startContainer);
   const b = closestSeg(range.endContainer);
   if (!a || !b) return null;
-  // Anchored horizontally where the drag ended rather than at the selection's centre:
-  // getClientRects() covers a wrapped multi-line selection line by line, which the single
-  // bounding box of getBoundingClientRect() doesn't. A Range's start and end are in document
-  // order whichever way the drag went, so which end the cursor lifted at comes from the
-  // Selection's focus — dragging backwards lands on the first line's left edge. Vertically it
-  // is the selection's whole extent, so a popup above or below never covers a selected line.
-  // Only the desktop popup uses this; on mobile HighlightPopup pins itself to the bottom edge.
+  // Anchored horizontally where the drag ended, taken from the Selection's focus and the matching
+  // client rect, so a wrapped selection anchors on the line the pointer lifted on. Vertically it
+  // is the whole extent, so a popup above or below never covers a selected line. Desktop only;
+  // HighlightPopup pins itself to the bottom edge on mobile.
   const rects = range.getClientRects();
   const box = range.getBoundingClientRect();
   const back = isBackwards(sel);
@@ -82,9 +79,8 @@ function popFromSelection(sel: Selection, highlights: Highlight[]): PopState | n
 
   if (a === b) {
     const st = offsetWithin(a, range.startContainer, range.startOffset);
-    // Measured the same way as the start rather than from the selection's string length:
-    // whether a `user-select: none` run lands in `String(sel)` varies by browser, where
-    // offsetWithin discounts it explicitly.
+    // Measured as the start is, rather than from the selection's string length: whether a
+    // `user-select: none` run lands in `String(sel)` varies by browser.
     const en = offsetWithin(a, range.endContainer, range.endOffset);
     if (en <= st) return null;
     const i = Number(a.dataset.seg);
@@ -93,10 +89,8 @@ function popFromSelection(sel: Selection, highlights: Highlight[]): PopState | n
     return { span, x: anchorX, top: box.top, bottom: box.bottom, on: cur ? cur.c : null };
   }
 
-  // Cross-segment selection. A Range's start and end are in document order whichever way the drag
-  // went, so `a` is at or before `b` — the two ends are the span, and every segment between them is
-  // covered by definition. Their positions among the rendered paragraphs are checked rather than
-  // trusted: a selection reaching outside [data-segroot] isn't one this reader can act on.
+  // A cross-segment selection. A Range's ends are in document order whichever way the drag went,
+  // so `a` is at or before `b`; both are checked to be rendered paragraphs of this sutta.
   const root = a.closest('[data-segroot]');
   if (!root) return null;
   const allSegs = [...root.querySelectorAll<HTMLElement>('[data-seg]')];
@@ -110,9 +104,8 @@ function popFromSelection(sel: Selection, highlights: Highlight[]): PopState | n
     o1: offsetWithin(b, range.endContainer, range.endOffset),
   };
 
-  // A fresh multi-segment selection is always a new highlight, never an edit of an existing one
-  // (unlike the single-segment case, which can land inside one) — the color swatches just start
-  // unselected.
+  // Always a new highlight, never an edit of an existing one as the single-segment case can be, so
+  // the swatches start unselected.
   return { span, x: anchorX, top: box.top, bottom: box.bottom, on: null };
 }
 
@@ -120,16 +113,13 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
   const { setHighlightSpan } = useUserData();
   const [pop, setPop] = useState<PopState | null>(null);
 
-  // Stepping to another sutta leaves the popup anchored to text no longer on screen, and its span
-  // indexes into the sutta it was opened in, so picking a colour would write it into the new one.
+  // Closes the popup on a sutta change: its span indexes into the sutta it was opened in.
   useEffect(() => {
     setPop(null);
   }, [suttaId]);
 
-  // Clicking directly on an already-highlighted span, rather than dragging a fresh selection, acts
-  // on that whole highlight — the click hands back its id, so clicking one segment of a highlight
-  // spanning several, or the visible half of a partly-covered one, still recolours or erases all
-  // of it.
+  // Opens the popup on an existing highlight, given its id, so a click anywhere in one recolours
+  // or erases the whole of it — including a highlight spanning several segments.
   const openPop = useCallback(
     (highlightId: string, rect: DOMRect, on: string | null) => {
       const hit = highlights.find((h) => h.id === highlightId);
@@ -152,15 +142,9 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
     }, 0);
   }, [highlights]);
 
-  // Firefox on Android draws its selection handles as browser chrome: dragging one to extend the
-  // selection fires no pointer, touch or mouse event on the page, only `selectionchange`. Without
-  // this the popup keeps the range `onTextUp` opened it with — the single word the long-press
-  // caught — and picking a colour highlights just that word.
-  //
-  // Deliberately only refreshes a popup that is already open, and only while no pointer is down:
-  // Chrome and Safari go on committing at `mouseup`/`touchend` exactly as before, a fresh drag
-  // can't make the popup appear before the pointer lifts, and a keyboard selection can't open one
-  // at all.
+  // Follows a selection extended by Firefox on Android's own handles, which fire nothing but
+  // `selectionchange`. Only refreshes an open popup, and only while no pointer is down, so every
+  // other browser goes on committing at `mouseup`/`touchend`.
   const latest = useLatest({ highlights, open: pop !== null });
   useEffect(() => {
     let down = false;
@@ -193,8 +177,7 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
   const pick = useCallback(
     async (color: string | null) => {
       if (!pop || !suttaId) return;
-      // Writes to the offline mirror, so it can't fail on the network — the flush owns everything
-      // that can (see UserDataContext).
+      // Writes to the offline mirror, so it can't fail on the network.
       await setHighlightSpan(suttaId, pop.span, color);
       setPop(null);
       const sel = window.getSelection();

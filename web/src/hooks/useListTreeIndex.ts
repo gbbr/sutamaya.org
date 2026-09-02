@@ -1,9 +1,8 @@
 import { useCallback, useMemo } from 'react';
 import type { ListDef } from '../lib/types';
 
-// Derivations over the user's list tree, shared by TreePane's render, useListCrud's moveList and
-// the drag cluster's siblingIdsWithInsert. All depend only on `lists`, so one hook computes them
-// once for all three.
+// Derivations over the user's list tree — children by parent, the row count badges, and what a
+// delete would take — computed once for TreePane's render, useListCrud and the drag cluster.
 export function useListTreeIndex(lists: ListDef[]) {
   const listChildrenOf = useMemo(() => {
     const byParent = new Map<string | null, ListDef[]>();
@@ -15,10 +14,8 @@ export function useListTreeIndex(lists: ListDef[]) {
     return (parentId: string) => byParent.get(parentId) || [];
   }, [lists]);
 
-  // Total distinct sutta count for a list — the library's own `node.count`, but computed at render
-  // time rather than baked into corpus.json, since a user list's `items` change at any moment.
-  // Recurses through `listChildrenOf` and unions each level's `items` into a Set: the same sutta
-  // can belong to a parent list and one of its sub-lists, so a plain sum would double-count.
+  // Every list's distinct suttas, its own and its descendants' unioned — a sutta can belong to
+  // both a list and one of its sub-lists, which a plain sum would double-count.
   const listMemberSets = useMemo(() => {
     const byId = new Map(lists.map((l) => [l.id, l] as const));
     const cache = new Map<string, Set<string>>();
@@ -36,8 +33,8 @@ export function useListTreeIndex(lists: ListDef[]) {
     return cache;
   }, [lists, listChildrenOf]);
 
-  // A group holds no items, so its badge counts how many lists and groups sit anywhere underneath
-  // it, recursing through `listChildrenOf` the way listMemberSets does.
+  // Every group's count of the lists and groups anywhere underneath it, a group holding no items
+  // of its own.
   const listGroupCounts = useMemo(() => {
     const cache = new Map<string, number>();
     function collect(id: string): number {
@@ -53,17 +50,14 @@ export function useListTreeIndex(lists: ListDef[]) {
     for (const l of lists) collect(l.id);
     return cache;
   }, [lists, listChildrenOf]);
-  // useCallback'd, since it passes straight through to ListRow, whose memoization needs it
-  // referentially stable across renders that don't change the underlying counts.
+  // Returns the number a row's count badge shows.
   const countFor = useCallback(
     (l: ListDef) => (l.kind === 'group' ? (listGroupCounts.get(l.id) ?? 0) : (listMemberSets.get(l.id)?.size ?? 0)),
     [listGroupCounts, listMemberSets]
   );
 
-  // What a delete takes with it: every list nested underneath the row, and every distinct sutta at
-  // or below it. Both are the same recursive indexes the row's count badge reads, so the number in
-  // the confirmation and the number on the badge can't disagree. The delete has no undo, and the
-  // badge alone doesn't say what a group is hiding, so the prompt names it.
+  // Returns what deleting a row would take with it — the lists nested underneath and the distinct
+  // suttas at or below it — for the confirmation prompt, off the same indexes the badge reads.
   const deleteScopeFor = useCallback(
     (l: ListDef) => ({ lists: listGroupCounts.get(l.id) ?? 0, suttas: listMemberSets.get(l.id)?.size ?? 0 }),
     [listGroupCounts, listMemberSets]

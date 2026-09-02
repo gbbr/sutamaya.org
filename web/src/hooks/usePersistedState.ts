@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+// State backed by one localStorage key, written on every change. A stored object is merged over
+// `initial`, so a key gaining a field reads back with that field's default rather than undefined.
 export function usePersistedState<T>(key: string, initial: T): [T, React.Dispatch<React.SetStateAction<T>>] {
   const [state, setState] = useState<T>(() => {
     try {

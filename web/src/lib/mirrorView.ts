@@ -10,23 +10,18 @@ import type { UserData } from './api';
 import type { HighlightRecord, MirrorState } from './mirror';
 import type { Highlight, HighlightsMap, ListDef, Membership, NotesMap, VisitedMap } from './types';
 
-// Derives what the UI renders from the mirror — the client-side half of the worker's
-// assembleUserData (worker/src/lib/userData.js), ported rather than reimplemented so both produce
-// the same lists, membership and auto-lists from the same rows.
-//
-// It exists here because the mirror, not the server, is the source of truth the UI reads: a sutta
-// highlighted offline appears under "Highlights" immediately, and a note written offline under
-// "Notes", without waiting on a round trip. The server's own copy still serves the pull.
+// Derives what the UI renders from the mirror: the lists, membership and the three auto-lists. A
+// port of the worker's assembleUserData, so both produce the same view from the same rows — it
+// exists here because the mirror rather than the server is what the UI reads, so a sutta
+// highlighted offline appears under "Highlights" at once.
 
-// What the UI renders: the wire's `UserData` shape, except each note is reduced to its text — a
-// note's mtime exists to order the Notes auto-list, which happens here. A distinct type rather than
-// a reuse of `UserData`, so the compiler tells the two note shapes apart.
+// What the UI renders: the wire's `UserData`, with each note reduced to its text, the mtime having
+// been used here to order the Notes auto-list.
 export interface DerivedUserData extends Omit<UserData, 'notes'> {
   notes: NotesMap;
 }
 
-// Dedupes `entries` by id keeping each one's most recent `at`, sorts descending, caps to `limit`.
-// The worker's lib/autoListRecency.js, ported.
+// Dedupes `entries` by id keeping each one's most recent `at`, newest first, capped to `limit`.
 function latestIds(entries: { id: string; at: string }[], limit: number): string[] {
   const mostRecent = new Map<string, string>();
   entries.forEach(({ id, at }) => {
@@ -39,25 +34,21 @@ function latestIds(entries: { id: string; at: string }[], limit: number): string
     .map(([id]) => id);
 }
 
-// One record as the reader renders it, or nothing at all where the record is a pure erase — which
-// has a span only to record what the user selected, and paints nothing.
-//
-// A record with no span at all is dropped rather than rendered, as a cleared note is above: the only
-// way to hold one is a mirror persisted by another app version that upgradeStoredMirror didn't
-// cover, and losing one highlight is a far better failure than taking the reader down with it.
+// One record as the reader renders it, or nothing at all — a pure erase paints nothing, and a
+// record with no span is dropped rather than risking the render.
 function highlightOf(record: HighlightRecord): Highlight[] {
   if (!record.color || !record.span) return [];
   const { i0, o0, i1, o1 } = record.span;
   return [{ id: record.g, i0, o0, i1, o1, c: record.color, m: record.mtime }];
 }
 
-// Document order, which the reader's highlights panel lists in and the gutter's marks are drawn
-// from. Stable under a re-pull, unlike the order records happen to sit in the mirror.
+// Document order, which the highlights panel lists in and the gutter's marks are drawn from, and
+// which is stable under a re-pull where the mirror's own order is not.
 function inDocumentOrder(highlights: Highlight[]): Highlight[] {
   return highlights.sort((a, b) => a.i0 - b.i0 || a.o0 - b.o0 || (a.id < b.id ? -1 : 1));
 }
 
-// One sutta's highlights — what displacedIds needs in order to work out which a fresh selection
+// One sutta's highlights, which displacedIds needs to work out what a fresh selection
 // displaces (see lib/mirror.ts's writeHighlightRecord).
 export function highlightsFor(state: MirrorState, suttaId: string): Highlight[] {
   return Object.values(state.highlights)
@@ -65,11 +56,11 @@ export function highlightsFor(state: MirrorState, suttaId: string): Highlight[] 
     .flatMap((record) => highlightOf(record.data));
 }
 
+// The whole view the UI renders, derived from the mirror.
 export function deriveUserData(state: MirrorState): DerivedUserData {
   const membership: Membership = {};
-  // repairListTree decides which lists survive — dropping tombstones and everything beneath them —
-  // as well as their order and, where a stored parentId dangles, the parentId each is shaped with.
-  // `position`/`mtime`/`deleted` feed that repair and stop here.
+  // The surviving lists, in order, with any dangling parentId re-homed. `position`, `mtime` and
+  // `deleted` feed that repair and stop here.
   const lists: ListDef[] = repairListTree(Object.values(state.lists).map((record) => record.data)).map((row) => {
     row.items.forEach((suttaId) => {
       (membership[suttaId] = membership[suttaId] || []).push(row.id);
@@ -80,10 +71,8 @@ export function deriveUserData(state: MirrorState): DerivedUserData {
   const notes: NotesMap = {};
   const noteEntries: { id: string; at: string }[] = [];
   for (const { data } of Object.values(state.notes)) {
-    // A cleared note is kept as a record so it can lose a merge against a stale device pushing the
-    // old body back, but "has a note" means non-empty text, here as on the server. The typeof guard
-    // covers a mirror persisted by a different app version (mirrorDb.ts has no schema migration):
-    // a malformed record drops the note rather than crashing the reader.
+    // "Has a note" means non-empty text, here as on the server; a cleared note is kept as a record
+    // only so it can win a merge. The typeof guard drops a malformed record rather than crashing.
     if (typeof data.text !== 'string' || !data.text) continue;
     notes[data.suttaId] = data.text;
     noteEntries.push({ id: data.suttaId, at: data.mtime });
@@ -106,14 +95,13 @@ export function deriveUserData(state: MirrorState): DerivedUserData {
     visitedEntries.push({ id: data.suttaId, at: data.visitedAt });
   }
 
-  // Most-recent first, since an auto-list has no stored order the way a real list has, and capped
-  // because ListPane renders every item as an unvirtualized DOM row.
+  // The three auto-lists' items, most recent first — an auto-list has no stored order — and capped.
   const recentIds = latestIds(visitedEntries, VISITED_AUTO_LIST_CAP);
   const highlightedIds = latestIds(highlightEntries, AUTO_LIST_CAP);
   const notedIds = latestIds(noteEntries, AUTO_LIST_CAP);
 
-  // How many suttas the cap left out, so the header can own up to it. Counted over distinct suttas,
-  // matching what latestIds returns — a sutta with four highlights is one row in that list, not four.
+  // How many suttas qualify before the cap, over distinct suttas as latestIds counts them — a
+  // sutta with four highlights is one row, not four.
   const totalOf = (entries: { id: string; at: string }[]) => new Set(entries.map((e) => e.id)).size;
 
   if (recentIds.length) {

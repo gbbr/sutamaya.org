@@ -6,35 +6,29 @@ import { LIST_RESULTS_CAP, type ListHit } from '../lib/corpus';
 import { MatchedText } from './MatchedText';
 
 interface SearchListHitsProps {
-  // Already trimmed to what should render — LibraryPage owns the expansion, since TreePane's
-  // arrow-key nav has to walk exactly the rows ListPane is drawing.
+  // The rows to draw, already trimmed; LibraryPage owns the expansion, so TreePane's arrow-key nav
+  // walks exactly what is drawn.
   hits: ListHit[];
-  // Every match, capped or not, so the toggle below can name what's still hidden.
+  // How many matched in all, so the toggle can name what is hidden.
   total: number;
   expanded: boolean;
   onToggleExpanded: () => void;
   query: string;
-  // The list row TreePane's arrow-key nav currently has highlighted, if the cursor is in this
-  // block rather than down among the sutta hits.
+  // The row the arrow-key cursor is on, while it is in this block rather than among the sutta hits.
   activeId?: string;
   onSelect: (nodeId: string) => void;
-  // The horizontal padding of the surrounding pane's own rows — 'px-[22px]' in TreePane,
-  // 'px-6' in ListPane — so these rows line up with the results underneath them.
+  // The surrounding pane's own row padding, so these line up with the results beneath them.
   padX: string;
 }
 
-// The user's own lists that match the query, as a labelled block above the sutta hits, since a
-// reader who types a list's name is looking for the list itself. The same query still reaches its
-// members through searchCorpus's list-path haystack.
-//
-// Rendered by whichever pane is showing results: ListPane on desktop, TreePane on mobile. One line
-// per list, so a list never outweighs a sutta hit.
+// The user's own lists matching the query, as a labelled block above the sutta hits — a reader who
+// types a list's name is looking for the list itself. One line each, so a list never outweighs a
+// sutta hit. Drawn by whichever pane is showing results: ListPane on desktop, TreePane on mobile.
 export function SearchListHits({ hits, total, expanded, onToggleExpanded, query, activeId, onSelect, padX }: SearchListHitsProps) {
   const { lists } = useUserData();
   const { countFor } = useListTreeIndex(lists);
-  // Keeps the keyboard cursor visible when it walks up into this block from the results below.
-  // Done here rather than through the index-keyed refs the hit rows use, since this block renders
-  // in two panes that track their result rows differently.
+  // The active row, scrolled into view as the cursor walks up into this block. Kept here rather
+  // than in the panes' own index-keyed refs, the two tracking their result rows differently.
   const activeRef = useRef<HTMLButtonElement | null>(null);
   useEffect(() => {
     if (activeId) activeRef.current?.scrollIntoView({ block: 'nearest' });
@@ -71,7 +65,7 @@ export function SearchListHits({ hits, total, expanded, onToggleExpanded, query,
         );
       })}
       {total > LIST_RESULTS_CAP && (
-        // The same affordance the description block above the results uses for its own "More".
+        // The expand toggle, as the description block above the results draws its own "More".
         <button className={`flex items-center gap-1 pt-1 pb-2 ${padX} font-sans text-ui-xs font-semibold text-ink-4`} onClick={onToggleExpanded}>
           {expanded ? 'Fewer' : `${total - LIST_RESULTS_CAP} more list${total - LIST_RESULTS_CAP === 1 ? '' : 's'}`}
           <ChevronDown size={14} strokeWidth={2.25} className={`flex-none transition-transform ${expanded ? 'rotate-180' : ''}`} />

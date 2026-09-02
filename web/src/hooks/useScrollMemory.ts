@@ -1,11 +1,12 @@
 import { useLayoutEffect, useRef } from 'react';
 import { SCROLL_POSITIONS_KEY } from '../lib/storageKeys';
 
-// Module-level, so positions survive a component unmounting and remounting within one SPA session,
-// and persisted to localStorage so they survive a full app close too — which is what lets "/"
-// restore not just the last screen but its exact scroll offset (see lib/lastLocation.ts). Shared
-// across tabs like every other plain-localStorage key here, so two tabs open on different suttas
-// clobber each other's entries on close, accepted the same way it is for those.
+// Remembers where each scrolling container was left, by key.
+//
+// The map is module-level, so a position survives an unmount within the session, and persisted to
+// localStorage, so it survives a full app close — which is what lets "/" restore the last screen's
+// exact offset. Writes are debounced and flushed on `pagehide`. Like every other localStorage key
+// here it is shared across tabs, so two tabs on different suttas clobber each other on close.
 const STORAGE_KEY = SCROLL_POSITIONS_KEY;
 
 function loadPositions(): Map<string, number> {
@@ -28,9 +29,7 @@ function persist() {
   }
 }
 
-// Writing to localStorage on every scroll tick would be a lot of synchronous main-thread work
-// during a fling — debounce it, and flush immediately on pagehide (fires for reloads too, not
-// just navigating away) so the very last position isn't lost to an unfired debounce.
+// Debounces the write, so a fling doesn't put a synchronous storage write on every scroll tick.
 let persistTimer: ReturnType<typeof setTimeout> | null = null;
 function schedulePersist() {
   if (persistTimer != null) return;
@@ -43,10 +42,8 @@ if (typeof window !== 'undefined') {
   window.addEventListener('pagehide', persist);
 }
 
-// Empties the in-memory map as well as its persisted copy. Clearing localStorage alone would not
-// do it: `positions` is module-level and loaded once, so the pending debounce — or the `pagehide`
-// flush that a reload itself fires — would write the whole map straight back. Called by
-// lib/localWipe.ts, which is the only thing that ever wants this.
+// Empties the remembered positions, in memory as well as in storage — clearing localStorage alone
+// would let the pending debounce, or the `pagehide` flush, write the map straight back.
 export function clearScrollMemory() {
   if (persistTimer != null) {
     clearTimeout(persistTimer);
@@ -56,20 +53,15 @@ export function clearScrollMemory() {
   window.removeEventListener('pagehide', persist);
 }
 
-// `active` lets a mounted-but-hidden caller skip restoring while hidden — LibraryPage keeps both
-// panes mounted on mobile and toggles `display:none` on the inactive one, so its scroll state
-// survives. A `display:none` element has no layout box, so setting `scrollTop` on it clamps to 0
-// and loses the saved position; restoring belongs at the moment the pane becomes visible, which is
-// when `active` flips true.
-//
-// None of the options below affect recording: the container always remembers where it is left.
+// Where a mount opens. None of the options affect recording: a container always remembers where it
+// is left.
 export type ScrollRestore = 'stored' | 'top';
 
 export interface ScrollMemoryOptions {
   /**
    * Where this mount opens: 'stored' at the remembered offset for `key`, 'top' at 0. Both write,
    * so a container reused across documents can't keep the previous one's offset. Read once per
-   * key-mount, so it must only ever change together with `key`.
+   * key-mount, so it must change only together with `key`.
    */
   restore?: ScrollRestore;
   /** Don't write at all — the caller has its own target to scroll to. Read once, like `restore`. */
@@ -78,6 +70,9 @@ export interface ScrollMemoryOptions {
   readyToRestore?: boolean;
 }
 
+// Returns a ref for a scrolling container that records its offset under `key` and restores it on
+// the next mount. `active` is false for a mounted-but-hidden container — a `display:none` element
+// has no layout box, so a restore there would clamp to 0 — and the restore runs when it flips true.
 export function useScrollMemory<T extends HTMLElement>(
   key: string | null | undefined,
   active = true,
@@ -86,19 +81,12 @@ export function useScrollMemory<T extends HTMLElement>(
   const ref = useRef<T>(null);
   const readyRef = useRef(readyToRestore);
   const doRestoreRef = useRef<(() => void) | null>(null);
-  // Whether the *current* streak of readiness has already been restored — a ref object rather
-  // than a plain flag local to the lifecycle effect below, since a one-shot flag could succeed
-  // once against stale content during a readyToRestore dip and then block the real restore once
-  // fresh content actually loads. Reset on every key/active mount and on every dip to not-ready.
+  // Whether the current streak of readiness has been restored. Reset on every key/active mount and
+  // on every dip to not-ready, so a restore against stale content can't block the real one.
   const restoreStateRef = useRef<{ restored: boolean }>({ restored: false });
-  // The last scrollTop this hook knows to be correct — set synchronously by its own restore writes
-  // and by real `scroll` events, never by an ad hoc `el.scrollTop` read. Such a read forces a
-  // synchronous layout, and on a Prev/Next the DOM is briefly a hybrid: the new sutta's header,
-  // driven off the already-loaded corpus, swaps in a render before the body does, while the
-  // previous sutta's segments are still rendered. If the two headers differ in height, that frame
-  // is exactly the above-the-fold change the browser's CSS scroll anchoring compensates for, and
-  // forcing layout during it would bake the anchoring nudge in as the settled position — corrupting
-  // what gets persisted for the sutta being left.
+  // The last scrollTop known to be correct, set by this hook's own restore writes and by real
+  // `scroll` events. Never by an ad hoc `el.scrollTop` read, which forces a synchronous layout and
+  // mid-transition would bake in the browser's scroll-anchoring nudge.
   const lastKnownScrollTopRef = useRef(0);
 
   useLayoutEffect(() => {
@@ -106,26 +94,17 @@ export function useScrollMemory<T extends HTMLElement>(
     if (!readyToRestore) restoreStateRef.current.restored = false;
   }, [readyToRestore]);
 
-  // Owns the container's whole mount lifecycle — attaching/detaching `onScroll` and persisting
-  // the final position on unmount. Exposes the actual one-time restore as `doRestoreRef.current`
-  // rather than performing it unconditionally here, so the effect below can trigger it once
-  // `readyToRestore` actually arrives without needing to be part of this effect's own
-  // teardown/re-run cycle.
-  //
-  // Keyed on [key, active] and deliberately not `readyToRestore`, even though that fluctuates
-  // within one mount: the reader's segments go stale -> null -> new on every Prev/Next while the
-  // scroll-memory `key` stays the same, so `readyToRestore` dips true -> false -> true just as the
-  // container's content collapses to "Loading…". Tearing this effect down on that dip would
-  // persist whatever scrollTop the collapse clamped to, so `readyRef` guards recording directly
-  // instead.
+  // Owns the container's mount lifecycle: the `scroll` listener, the persist on unmount, and the
+  // one-time restore, which it exposes as `doRestoreRef.current` for the effect below to trigger
+  // when readiness lands later. Keyed on [key, active] and never on `readyToRestore`, which dips
+  // within one mount as content reloads and would persist the collapsed scrollTop.
   useLayoutEffect(() => {
     const el = ref.current;
     if (!el || key == null || !active) return;
     restoreStateRef.current = { restored: false };
     const onScroll = () => {
-      // Don't trust scrollTop while the caller says this container isn't in a real, final state
-      // yet (see readyToRestore's own comment above) — a native 'scroll' event fires just as
-      // readily for a collapse-driven clamp as for a real user scroll.
+      // scrollTop isn't trustworthy while the content is still settling: a 'scroll' event fires
+      // for a collapse-driven clamp as readily as for a real scroll.
       if (!readyRef.current) return;
       lastKnownScrollTopRef.current = el.scrollTop;
       positions.set(key, el.scrollTop);
@@ -141,20 +120,17 @@ export function useScrollMemory<T extends HTMLElement>(
       const desired = restore === 'stored' ? positions.get(key) ?? 0 : 0;
       el.scrollTop = desired;
       lastKnownScrollTopRef.current = desired;
-      // Record the restored offset, don't just scroll to it. A 'top' restore that only moved the
-      // element would leave the previous visit's offset in the map, and a departure that runs no
-      // unmount cleanup — a reload, or leaving for a non-SPA URL, where `pagehide` flushes the map
-      // as it stands — would persist that stale offset and resume there next time.
+      // The restored offset is recorded, not merely scrolled to: a departure running no unmount
+      // cleanup — a reload, where `pagehide` flushes the map as it stands — would otherwise
+      // persist the previous visit's offset.
       positions.set(key, desired);
       schedulePersist();
     };
     if (readyRef.current) doRestoreRef.current();
 
     return () => {
-      // Same guard as onScroll's — a container mid-transition (readyToRestore false) that
-      // unmounts or changes key shouldn't persist whatever transiently-collapsed scrollTop it
-      // happens to have. Persists `lastKnownScrollTopRef` rather than reading `el.scrollTop` fresh
-      // here — see that ref's own comment for why a fresh read at this exact moment isn't safe.
+      // The same guard as onScroll's, and the same last-known offset rather than a fresh
+      // `el.scrollTop` read.
       if (readyRef.current) {
         positions.set(key, lastKnownScrollTopRef.current);
         schedulePersist();
@@ -164,12 +140,8 @@ export function useScrollMemory<T extends HTMLElement>(
     };
   }, [key, active]);
 
-  // Triggers the restore once `readyToRestore` actually arrives for the current key — the effect
-  // above already calls it immediately if ready at mount time; this covers readiness landing
-  // later (the common case: useSuttaText/UserDataContext still loading at mount). `key` is in
-  // these deps too, not just `readyToRestore`, so a key change that lands while `readyToRestore`
-  // stays continuously true (no intervening dip) still triggers a restore for the *new* mount,
-  // rather than being skipped because the boolean itself never flipped.
+  // Triggers the restore when readiness lands after mount, which is the common case. `key` is a
+  // dependency too, so a key change while readiness stays true still restores.
   useLayoutEffect(() => {
     if (readyToRestore) doRestoreRef.current?.();
   }, [key, readyToRestore]);

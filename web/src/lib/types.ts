@@ -15,15 +15,11 @@ export interface ChapterRow {
   label: string;
   sub?: string;
   count: number;
-  // Bhikkhu Sujato's description of this group, where the source data has one: DN's 3 vaggas,
-  // MN's 15, Snp's 5, Ud's 8, and in SN both the 5 books and all 56 saṁyuttas. AN has none at
-  // any level, nor do the four KN books that hold their documents directly. May contain inline
-  // HTML, like a sutta's translator note does. Read it with nodeBlurb() in lib/corpus.ts, which
-  // handles SN writing its descriptions a level above the rows that display them.
+  // Bhikkhu Sujato's description of this group, where the source data has one; may contain inline
+  // HTML. Read it with nodeBlurb() (lib/corpus.ts), which handles the inconsistent depths.
   blurb?: string;
-  // Recursive: SN nests groups > chapters > vagga categories, AN nests chapters > vagga
-  // categories, MN nests categories directly. A row with `chapters` expands further; one without is
-  // where suttas live (see isExpandable() in lib/corpus.ts).
+  // This row's children, at whatever depth the collection nests to. A row with them expands
+  // further; one without is where suttas live.
   chapters?: ChapterRow[];
 }
 
@@ -38,16 +34,14 @@ export interface Nikaya {
 export interface Corpus {
   nikayas: Nikaya[];
   suttas: SuttaMap;
-  // The suttacentral/sc-data commit data/{sujato,pali,html}/ were last synced from
-  // (data/manifest.json's sourceCommit) — used to link the reader's translation attribution to
-  // the exact source revision.
+  // The suttacentral/sc-data commit the text was last synced from, which the reader's translation
+  // attribution links to.
   sujatoCommit: string;
-  // Digest of the built sutta text (scripts/build-corpus.mjs), changing whenever any sutta's
-  // rendered text does. Per-sutta text is cached under unversioned CacheFirst URLs, so this is the
-  // only way a device can tell its offline copy has fallen behind (see lib/offline.ts).
+  // Digest of the built sutta text, changing whenever any sutta's rendered text does. Per-sutta
+  // text is cached under unversioned URLs, so this is how a device tells its copy has fallen
+  // behind.
   dataVersion: string;
-  // The same, for the dictionary — kept separate so a text-only change doesn't prompt a full
-  // dictionary re-download.
+  // The same for the dictionary, kept separate so a text change costs no dictionary re-download.
   dictionaryVersion: string;
 }
 
@@ -59,32 +53,29 @@ export interface Segment {
 
 export type Dictionary = Record<string, string[]>;
 
-// One highlight: the span from (i0, o0) up to but not including (i1, o1), where `i` is a segment
-// index and `o` a character offset into that segment's English text. A selection inside a single
-// segment has i0 === i1.
+// One highlight: the span from (i0, o0) up to but not including (i1, o1), `i` being a segment
+// index and `o` a character offset into that segment's English. A selection within one segment has
+// i0 === i1.
 //
-// Endpoints rather than one stored range per segment covered: everything between them is covered by
-// definition, so a segment reworded longer upstream can't leave an unhighlighted gap in the middle
-// of a highlight, and a segment inserted mid-span is covered too. The two endpoint segments still
-// carry offsets that a rewording moves — see docs/offline-sync.md.
+// Two endpoints rather than a range per segment covered, so everything between is covered by
+// definition and a segment reworded or inserted upstream can't leave a gap mid-highlight. Only the
+// two endpoints drift — see docs/offline-sync.md.
 export interface Highlight {
-  // Minted by the client when the user picks the colour, so a highlight made offline already has
-  // its final identity. One selection is one highlight, so this is both the row's id and the group
-  // id a later erase names.
+  // Minted by the client when the colour is picked, so a highlight made offline has its final
+  // identity at once.
   id: string;
   i0: number;
   o0: number;
   i1: number;
   o1: number;
   c: string;
-  // The mtime (`${ISO}|${deviceId}`, see lib/mtime.ts). Two devices' overlapping highlights can
-  // both survive, so this — with `id` as the tiebreak — decides which one paints the characters
-  // they contest (lib/highlights.ts's paintSegmentRanges).
+  // The mtime (lib/mtime.ts), which with `id` decides which of two overlapping highlights paints
+  // the characters they contest.
   m: string;
 }
 
-// 'list' holds suttas (`items`) and can't have children; 'group' is the reverse, holding only other
-// lists and groups. worker/src/routes/lists.js's invalidParentReason enforces this server-side too.
+// 'list' holds suttas and no children; 'group' holds only other lists and groups. The server
+// enforces this too.
 export type ListKind = 'list' | 'group';
 
 export interface ListDef {
@@ -92,27 +83,20 @@ export interface ListDef {
   label: string;
   parentId: string | null;
   kind: ListKind;
-  // Ordered array of sutta uids, in the order the user put them in. lib/corpus.ts's listItemsFor
-  // keeps this order rather than re-sorting by sutta id the way browsing a nikaya does. Always
-  // empty for a `kind: 'group'` entry.
+  // The list's suttas, in the order the reader put them in. Always empty for a group.
   items: string[];
-  // True for the auto-managed lists ("Visited", "Highlights", "Notes"), synthesized from the
-  // visited/highlights/notes records rather than stored as `lists` rows — so they can't be renamed,
-  // deleted, reparented, or reordered. See lib/autoLists.ts.
+  // True for an auto-managed list, which can't be renamed, deleted, reparented or reordered. See
+  // lib/autoLists.ts.
   auto?: boolean;
-  // Auto-lists only: how many suttas the reader has visited, highlighted or noted, before
-  // AUTO_LIST_CAP trimmed `items` to the most recent of them. Equal to `items.length` until the cap
-  // bites. It is what the header counts — the list is that many suttas long whether or not every
-  // one has a row — and comparing the two is what tells ListPane to say "Showing 100 of 340"
-  // under the last row.
+  // Auto-lists only: how many suttas qualify, before the cap trimmed `items` to the most recent.
+  // Equal to `items.length` until the cap bites, and what ListPane's "Showing 100 of 340" reads.
   total?: number;
 }
 
-// A dragged list row's position relative to a drop-target row in TreePane's "My lists" tree:
-// 'before' reorders it as that row's sibling, 'inside' nests it at the end of a group. 'end' is
-// everything past the last row's midpoint, which means the end of the top level rather than a
-// position relative to any row — the gesture that pulls a list out of the group it is in. Shared by
-// ListRow.tsx, which paints the drop-target highlight, and useListTreeDrag.ts, which computes it.
+// Where a dragged list row would land relative to the row under the pointer.
+//   before – as that row's sibling, above it
+//   inside – nested at the end of that group
+//   end    – the end of the top level, which is how a list leaves the group it is in
 export type DropZone = 'before' | 'inside' | 'end';
 
 export type Membership = Record<string, string[]>;
@@ -127,21 +111,17 @@ export interface User {
   picture?: string | null;
 }
 
-// 'system' is the starting value, and the reader's picker doesn't list it: it shows whichever theme
-// 'system' currently resolves to as the selected one, so a reader who has never touched the setting
-// follows the OS and one who has picked stays put. Settings' shell picker does offer System — see
-// AppTheme.
+// The reader's own theme. 'system' is the starting value and the reader's picker doesn't list it,
+// showing whichever theme it resolves to as the selected one; Settings' shell picker does offer it.
 export type ReaderTheme = 'light' | 'dark' | 'sepia' | 'system';
-// What 'system' resolves to at render time — see ReaderPrefsContext's prefers-color-scheme tracking.
+// What 'system' resolves to at render time.
 export type ResolvedReaderTheme = Exclude<ReaderTheme, 'system'>;
-// Six faces, laid out by the reader's picker as a 3×2 grid of specimen tiles — see
-// ReaderMenuPanel's FACE_OPTIONS.
+// The reading faces, drawn as specimen tiles in the reader's picker.
 export type ReaderFace = 'georgia' | 'serif' | 'literata' | 'charter' | 'palatino' | 'sans';
 
-// The app shell's light/dark mode (Settings > Theme), separate from ReaderTheme and unaffected by
-// it. 'system' follows the OS's prefers-color-scheme; see lib/uiPrefs.ts's applyTheme().
+// The app shell's light/dark mode (Settings > Theme), separate from the reader's own.
 export type AppTheme = 'light' | 'dark' | 'system';
-// The counterpart to ResolvedReaderTheme for the shell — see UiPrefsContext's matchMedia tracking.
+// What that 'system' resolves to at render time.
 export type ResolvedAppTheme = Exclude<AppTheme, 'system'>;
 
 export interface ThemeColors {
@@ -151,23 +131,16 @@ export interface ThemeColors {
   rule: string;
   panel: string;
   pali: string;
-  // A lighter, lower-alpha fill than `rule`, for a pill or badge background that should read as a
-  // subtle tint rather than a border tone.
+  // A pill or badge fill in this theme's ink, lighter than `rule`.
   tint: string;
-  // The same, in this theme's accent hue rather than its ink — for a pill that has to be told apart
-  // from the neutral `tint` fills beside it, which is what HighlightCountBadge needs next to the
-  // list-membership chips.
+  // The same in the accent hue, for a pill that has to be told from the neutral ones beside it.
   paliTint: string;
-  // More washed than `tint`, for a wash spanning a large block rather than a badge or word —
-  // SegmentedText's focusUid marker covers a whole verse, where `tint`'s alpha would read as a real
-  // highlight instead of a quiet "you are here".
+  // A wash for a whole block rather than a badge, more washed than `tint`.
   focusTint: string;
   // This theme's own highlight fills, index-aligned with HIGHLIGHT_COLORS, or null to paint the
-  // stored color itself. Only dark carries a palette — see lib/theme.ts's highlightPaint().
+  // stored colour itself. Only dark carries a palette.
   highlightPalette: readonly string[] | null;
-  // The native text-selection background, scoped to the reader (index.css's
-  // `[data-component="ReaderPage"] ::selection` and ReaderPage's `--reader-selection`). Separate
-  // from the shell's `--selection`, which follows the UI's light/dark toggle rather than the
-  // reader's theme.
+  // The native text-selection background inside the reader, separate from the shell's, which
+  // follows the UI theme rather than the reader's.
   selection: string;
 }

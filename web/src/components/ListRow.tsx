@@ -27,8 +27,7 @@ export interface ListRowDeleteProps {
   confirmDeleteId: string | null;
   onDelete: (l: ListDef) => void;
   onCancelDelete: () => void;
-  // Lists nested underneath the row and distinct suttas at or below it — what the delete takes with
-  // it, named in the confirmation. See useListTreeIndex's deleteScopeFor.
+  // What deleting the row would take with it, named in the confirmation.
   deleteScopeFor: (l: ListDef) => { lists: number; suttas: number };
 }
 
@@ -38,47 +37,33 @@ export interface ListRowDraftProps {
   onDraftChange: (v: string) => void;
   onDraftKey: (e: KeyboardEvent<HTMLInputElement>) => void;
   draftInputRef: (el: HTMLInputElement | null) => void;
-  // Set to this row's id for the network round-trip after its draft input has closed (useListCrud's
-  // submitDraft), so the row keeps reserving the input's height until the new list lands.
+  // This row's id while its submitted draft is in flight, so the row keeps reserving the input's
+  // height until the new list lands.
   submittingParentId: string | null | undefined;
 }
 
-// Left indent for a row at the given nesting depth — 22px base plus 16px per level, shared by the
-// row and the secondary rows beneath it (delete confirm, options menu, new-list draft) so they stay
-// aligned under it. Nesting is unlimited, but the indent stops growing past MAX_INDENT_DEPTH so a
-// deep tree can't squeeze row content off a narrow screen; deeper levels are still told apart by
-// their expand state.
+// The depth past which the indent stops growing, so a deep tree can't squeeze row content off a
+// narrow screen; those levels are still told apart by their expand state.
 const MAX_INDENT_DEPTH = 3;
+// A row's left indent, shared by the secondary rows beneath it so they stay aligned under it.
 const rowIndent = (depth: number) => 22 + Math.min(depth, MAX_INDENT_DEPTH) * 16;
 
-// One row of the "My lists" tree. A list can nest other lists as children, with button-based
-// rename/delete/move controls that work on touch, plus Pointer Events drag-and-drop reordering and
-// nesting while "reorder mode" is on.
+// One row of the "My lists" tree: the list or group itself, its children, and the secondary rows
+// its own controls open — rename, delete confirmation, options menu, new-list draft.
 //
-// The drag surface is a dedicated handle on the row's left edge — an icon plus a 30px-wide,
-// full-height touch target — rather than the whole row: `touchAction: none` on the row would block
-// the list pane's vertical scrolling past it, and would need `userSelect: none` smeared across the
-// row to stop text selection. Confining both to the handle keeps the title, count and options
-// button scrollable and selectable, matching ListPane's sutta-reorder grip. A press-and-drag
-// engages once it clears a small movement threshold; a plain tap reaches the handle's no-op.
-// Dropping on the inner half of a group's row nests it as a child, anywhere else resolves to a
-// sibling position (see useListTreeDrag's updateDropTarget for the zone math).
+// Rename, delete and move are buttons, so they work on touch. Dragging is confined to a handle on
+// the left edge rather than the whole row, which would need `touchAction: none` across it and so
+// block the pane's own scrolling; the drag itself lives in useListTreeDrag.
 //
-// Props are grouped by concern (menu/edit/del/draft) rather than flat, which keeps this at ~15
-// top-level props instead of 35. The drag props stay flat, passed straight through from TreePane's
-// useListTreeDrag(); they are already one cohesive concern.
-//
-// Wrapped in `memo`, like TreeRow: a TreePane re-render unrelated to a given row shouldn't force
-// every list row to re-render. That requires onToggle/onSelect/countFor/onRowPointerDown and the
-// prop bundles to stay referentially stable — see TreePane's useCallback/useMemo wrapping.
+// Props are bundled by concern (menu/edit/del/draft) rather than passed flat, which keeps this at
+// around fifteen top-level props instead of thirty-five. Memoized, so a TreePane render unrelated
+// to this row costs nothing here — which requires every callback and bundle to be stable.
 export const ListRow = memo(function ListRow({
   list,
   depth,
   nodeId,
   childrenOf,
-  // The row's right-edge count badge: distinct suttas for a `kind: 'list'` row (`listMemberSets`),
-  // or lists and groups nested underneath for a `kind: 'group'` row (`listGroupCounts`), since a
-  // group holds no suttas of its own and would always read 0 on the sutta count.
+  // The number for the row's count badge.
   countFor,
   listExpanded,
   onToggle,
@@ -101,8 +86,7 @@ export const ListRow = memo(function ListRow({
   childrenOf: (parentId: string) => ListDef[];
   countFor: (l: ListDef) => number;
   listExpanded: Record<string, boolean>;
-  // `deep` is ⌥-click: collapse this group and every group inside it, rather than leaving them
-  // flagged open to reappear on the next expand. See TreePane's toggleListExpanded.
+  // `deep` is ⌥-click, which collapses every group inside this one too.
   onToggle: (id: string, deep?: boolean) => void;
   onSelect: (id: string) => void;
   menu: ListRowMenuProps;
@@ -131,15 +115,12 @@ export const ListRow = memo(function ListRow({
   const menuOpen = menuOpenId === list.id;
   const dragging = dragId === list.id;
   const myEdge = indicator?.id === list.id ? indicator.edge : null;
-  // Either this row is the group being nested into, or it is the group a sibling drop happens to
-  // land inside — the same destination either way, so the same tint. Without it, a line under a
-  // group's last child and a line under the whole tree look identical while meaning different
-  // parents.
+  // True when the drop lands in this group, whether by nesting into it or as a sibling of its
+  // children — the same destination, so the same tint.
   const landsInMe = myEdge === 'inside' || indicator?.insideId === list.id;
 
-  // What deleting this row would take with it, as its own line under the prompt — the delete has no
-  // undo, and nothing else on screen says what a collapsed group is holding. Only while the
-  // confirmation is up, and null for an empty row, which keeps the ordinary case on one line.
+  // What deleting this row would take with it, for a second line under the prompt; null for an
+  // empty row, which keeps the ordinary case on one line.
   const confirming = confirmDeleteId === list.id;
   const deleteScope = confirming ? deleteScopeFor(list) : null;
   const deleteScopeText =
@@ -169,10 +150,9 @@ export const ListRow = memo(function ListRow({
       <div
         ref={getRowRef(list.id)}
         data-node-id={list.id}
-        // The row itself carries the click, not just the label button inside it, so the indentation
-        // and the gaps between elements are clickable too. A <div> rather than a <button>, since it
-        // wraps interactive children a <button> can't nest. Controls with their own behaviour — the
-        // options menu, the drag handle — stopPropagation below.
+        // The whole row carries the click, indentation and gaps included, so a <div> rather than a
+        // <button>, which can't nest the interactive children. The controls with behaviour of
+        // their own stopPropagation below.
         className={`row flex items-center gap-[9px] w-full text-left pr-[10px] py-[10px] border-b border-ink/[.07] cursor-pointer ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
         onClick={(e) => {
           if (editing) return;
@@ -183,11 +163,8 @@ export const ListRow = memo(function ListRow({
           paddingLeft: rowIndent(depth),
           opacity: dragging ? 0.4 : 1,
           background: landsInMe ? 'rgb(var(--accent2) / .16)' : undefined,
-          // 'bottom' recolours and thickens this row's permanent border-bottom rather than layering
-          // a second line beside it. resolveDropIndicator has already normalized a 'before' target
-          // to the previous row's bottom edge, so this row only handles its own. 'top' is the
-          // remaining case needing a drawn-on line (the box-shadow), and occurs only for the very
-          // first row in the tree, where there is no row above to recolour.
+          // The drop line: 'bottom' recolours this row's own permanent border rather than layering
+          // a second line beside it; 'top' draws one, which only the tree's first row needs.
           borderBottomColor: myEdge === 'bottom' ? 'rgb(var(--accent2))' : undefined,
           borderBottomWidth: myEdge === 'bottom' ? 2 : undefined,
           boxShadow: myEdge === 'top' ? 'inset 0 2px 0 rgb(var(--accent2))' : undefined,
@@ -195,32 +172,28 @@ export const ListRow = memo(function ListRow({
       >
         {reorderMode && (
           <span
-            // The drag surface, named so an end-to-end test can grab it: the gesture is the one
-            // part of reordering that only a real browser can exercise (jsdom reports every rect
-            // as 0x0), and this span carries no text or role to find it by.
+            // Named so an end-to-end test can grab it: the gesture needs a real browser, jsdom
+            // reporting every rect as 0x0, and this span carries no text or role to find it by.
             data-drag-handle
             className="flex-none flex items-center justify-center text-ink-5 -my-[7px] -ml-1.5"
             style={{
               width: 36,
               alignSelf: 'stretch',
               cursor: 'grab',
-              // Scoped to the handle rather than the whole row: it blocks the browser's scroll,
-              // text-selection and long-press gestures from taking a press here before the
-              // threshold-based drag detection engages, and leaves the rest of the row alone.
+              // Scoped to the handle, so the browser's scroll, selection and long-press gestures
+              // can't take a press here, while the rest of the row keeps all three.
               touchAction: 'none',
               userSelect: 'none',
               WebkitUserSelect: 'none',
               WebkitTouchCallout: 'none',
             }}
             onPointerDown={(e) => onRowPointerDown(e, list.id)}
-            // A drag that never clears the pointer session's movement threshold still ends in a
-            // plain click on pointerup, stopped here so tapping the handle can't also fire the
-            // row's click-to-select above.
+            // A drag that never clears the movement threshold still ends in a click, stopped here
+            // so tapping the handle can't select the row.
             onClick={(e) => e.stopPropagation()}
           >
-            {/* The circle is purely a hover cue, sized to match the other round icon buttons
-                (e.g. ListPane's add-to-list button) — the actual grab target is the full-height
-                span around it, so the circle doesn't need its own touch-target padding. */}
+            {/* A hover cue only — the grab target is the full-height span around it, so this
+                needs no touch-target padding of its own. */}
             <span className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-ink/[.08]">
               <GripVertical size={16} strokeWidth={2} />
             </span>
@@ -229,19 +202,16 @@ export const ListRow = memo(function ListRow({
         <button
           className="w-[19px] -ml-1 flex-none flex items-center justify-center text-ink-4 hover:text-ink"
           onClick={(e) => {
-            // Intercepts, and stops the row's own click, only when it has an effect — a group's
-            // toggle. For a plain list, where the chevron is an empty placeholder, the click passes
-            // through to the row's handler.
+            // Stops the row's own click only where this one does something; on a list, where the
+            // chevron is an empty placeholder, it passes through.
             if (isGroup) {
               e.stopPropagation();
               onToggle(list.id, e.altKey);
             }
           }}
         >
-          {/* A group always shows its chevron — even empty, before it has any children — since
-              the chevron is the only thing distinguishing a group row from a list row (no
-              separate folder icon; see the comment on ListRow above). A list never shows one:
-              it can't hold anything to expand into. */}
+          {/* A group always shows its chevron, empty or not, that being the only thing marking it
+              as a group; a list never does, having nothing to expand into. */}
           {isGroup ? open ? <ChevronDown size={17} strokeWidth={2} /> : <ChevronRight size={17} strokeWidth={2} /> : null}
         </button>
         {editing ? (
@@ -257,20 +227,12 @@ export const ListRow = memo(function ListRow({
             }}
             onBlur={onCommitEdit}
             maxLength={LIST_NAME_MAX_LENGTH}
-            // A 38px field is comfortable to type in, but the static label it replaces occupies
-            // about 28px — 17px of Newsreader at its line height plus 2px of padding each side — so
-            // at its natural height the field would push the row taller the moment a rename starts.
-            // The negative margin lets the extra 10px hang outside the line box, into the row's
-            // vertical padding, so the field renders full size while contributing the label's height
-            // to layout. The label's height is font-metric dependent, so the pairing is tuned by
-            // eye: if a rename resizes the row, this is the number to move, so that 38 minus twice
-            // it matches.
-            //
-            // 7px of padding all round, since at 38px tall with 17px type the text already sits
-            // about 7px below the top edge and anything tighter horizontally reads as crammed. The
-            // negative left margin borrows 6 of the row's 9px gap back, landing the characters
-            // within a couple of pixels of the static label while leaving the field's edge clear of
-            // the control before it.
+            // The rename field is 38px tall but contributes the ~28px static label's height to
+            // layout, the negative vertical margin hanging the difference in the row's own padding
+            // — so a rename doesn't resize the row. The label's height is font-metric dependent,
+            // so if it ever does, this is the number to move: 38 minus twice it. The negative left
+            // margin borrows back most of the row's gap, landing the characters where the label's
+            // were.
             className="font-serif flex-1 min-w-0 h-[38px] -my-[5px] -ml-[6px] border border-accent rounded px-[7px] bg-field text-ui-md outline-none"
             autoComplete="off"
             autoCorrect="off"
@@ -281,20 +243,17 @@ export const ListRow = memo(function ListRow({
           <button
             className="font-serif flex-1 min-w-0 text-left text-ui-md font-medium truncate py-[2px]"
             onClick={(e) => {
-              // Stops here so the row's onClick doesn't run the identical logic again. Kept as its
-              // own handler rather than left to the row, so a keyboard user tabbed to the label can
-              // activate it with Enter or Space, which only a real <button> gets for free.
+              // The label repeats the row's own behaviour rather than deferring to it, so a
+              // keyboard user tabbed here can activate it with Enter or Space.
               e.stopPropagation();
-              // A group holds no suttas, so clicking one has nothing to show in the list pane; like
-              // the corpus tree's chapter rows, it expands and collapses in place.
+              // A group holds no suttas, so it expands in place as a corpus chapter row does.
               if (isGroup) onToggle(list.id, e.altKey);
               else onSelect(String(list.id));
             }}
-            // Desktop only, and undefined rather than a handler gated internally: on iOS Safari the
-            // mere presence of a reachable `dblclick` listener makes WebKit hold every tap for
-            // ~300ms to disambiguate a second one, and React delegates the listener to the app root
-            // for the rest of the page load the first time any element uses it. On mobile, rename
-            // is reached through the "…" options menu instead.
+            // Undefined on mobile rather than gated inside the handler: the mere presence of a
+            // `dblclick` listener makes WebKit hold every tap ~300ms to disambiguate, and React
+            // delegates it to the app root for the rest of the page load. Rename is in the "…"
+            // menu there.
             onDoubleClick={mobile ? undefined : () => onStartEdit(list)}
           >
             {list.label}
@@ -319,16 +278,10 @@ export const ListRow = memo(function ListRow({
       </div>
       {confirming ? (
         <div data-component="DeleteConfirm" className="pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: rowIndent(depth) + 11 }}>
-          {/* Two things keep the buttons on screen in a pane that can be dragged down to 250px
-              and indents another 16px per nesting level. `flex-1` gives the text a flex basis
-              of 0, so it contributes nothing to the line-breaking decision — the buttons stay on
-              this line as long as they themselves fit, and a long name shrinks the truncating
-              label rather than displacing them. `flex-wrap` covers the remaining case, where even
-              the two buttons alone are wider than what's left: they drop to their own line
-              instead of being clipped by TreePane's `overflow-hidden`.
-
-              The buttons ride whichever line is last, so an empty row still confirms on one line
-              and only a row with something to lose grows to two. */}
+          {/* The delete confirmation. `flex-1` gives the name a basis of 0, so it truncates rather
+              than pushing the buttons off a pane narrowed to 250px, and `flex-wrap` drops them to
+              their own line where even they don't fit. The buttons ride whichever line is last, so
+              an empty row confirms on one. */}
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <span className="flex-1 min-w-0 flex items-baseline font-sans text-ui-sm text-ink-3">
               <span className="flex-none">Delete&nbsp;"</span>
@@ -348,9 +301,7 @@ export const ListRow = memo(function ListRow({
         menuOpen &&
         !editing && (
           <div className="flex pr-[18px] pb-[7px] pt-[2px]" style={{ paddingLeft: rowIndent(depth) + 11 }}>
-            {/* One pill holding borderless icons, rather than a row of individually bordered
-                boxes — it reads as a single popped-out toolbar belonging to the row above it,
-                and matches the rounded-full vocabulary the rest of the app uses. */}
+            {/* The options menu, as one pill of borderless icons belonging to the row above it. */}
             <div className="flex items-center gap-[2px] rounded-full bg-ink/[.06] p-[3px]">
               <button
                 aria-label="Move up"
@@ -419,8 +370,8 @@ export const ListRow = memo(function ListRow({
               spellCheck={false}
             />
           ) : (
-            // submitDraft() has closed the input but createList() hasn't landed, so this row keeps
-            // reserving its height and the new list doesn't collapse and then jump when it appears.
+            // Holds the closed draft input's height while the create is in flight, so the row
+            // doesn't collapse and then jump when the new list appears.
             <div className="h-[32px]" />
           )}
         </div>
