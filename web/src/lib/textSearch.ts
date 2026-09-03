@@ -516,7 +516,7 @@ export function textSearchSnapshot(): { status: TextSearchStatus; index: TextInd
 }
 
 // Starts the one fetch of the search text, if it hasn't been started. Called when a search field is
-// focused, and again on the first keystroke — never on app start, since this is ~1.7 MB compressed
+// focused, and again on the first keystroke — never on app start, since this is ~2.4 MB served
 // that a reader who doesn't search should not pay for.
 export function beginTextSearchLoad(corpus: Corpus | null): void {
   if (!corpus || inFlight || status === 'ready') return;

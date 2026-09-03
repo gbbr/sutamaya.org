@@ -33,9 +33,25 @@ cd web/public/data/search
 for f in en.*.txt pa.*.txt map.*.json; do printf "%s  " "$f"; brotli -c -q 11 "$f" | wc -c; done
 ```
 
-Production is the honest test: Cloudflare compresses `text/plain` and `application/json` itself.
-After a deploy, the same Network panel on `app.sutamaya.org` should show `br` under
-Content-Encoding and roughly **856 KB + 938 KB + 37 KB**.
+Production compresses, but not that hard. `brotli -q 11` is the best case; Cloudflare compresses on
+the fly at something nearer q5. Measured against what it already serves:
+
+```
+curl -sS -H 'Accept-Encoding: br' -o /dev/null -w '%{size_download}\n' \
+  https://app.sutamaya.org/data/corpus.json      # 194809 on the wire
+curl -sS --compressed -o /dev/null -w '%{size_download}\n' \
+  https://app.sutamaya.org/data/corpus.json      # 948267 decoded
+```
+
+948 KB down to 195 KB, against 152 KB at q11 — so expect **about 1.28× the q11 figures**, which
+puts the three search files near **1.1 MB + 1.2 MB + 48 KB, call it 2.4 MB**.
+
+**One thing only the deploy can answer:** whether Cloudflare compresses a response this large at
+all. Everything it serves today is under 1 MB, and the search blobs are 8.8 MB and 10.7 MB. If it
+declines them, the first search costs 19.5 MB instead of 2.4 MB. So on the first deploy, check
+Content-Encoding on `en.<version>.txt` before anything else — `br` means it worked, its absence
+means these files need pre-compressing at build time and serving with an explicit
+`Content-Encoding`.
 
 ## Then, the network speeds
 
