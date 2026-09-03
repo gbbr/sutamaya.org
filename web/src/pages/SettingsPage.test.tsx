@@ -245,7 +245,7 @@ describe('refreshing a stale offline copy', () => {
   it('announces the update and offers a re-download instead of the first-time download', async () => {
     vi.mocked(isOfflineTextStale).mockReturnValue(true);
     renderSettings();
-    expect(await screen.findByText('Updated content is available (9 MB).')).toBeInTheDocument();
+    expect(await screen.findByText('Updated content is available (10 MB).')).toBeInTheDocument();
     expect(screen.getByText('Download updated content')).toBeInTheDocument();
     // The ordinary availability line is replaced, not shown alongside it.
     expect(screen.queryByText('All suttas available offline.')).not.toBeInTheDocument();

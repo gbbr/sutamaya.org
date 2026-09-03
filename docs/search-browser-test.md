@@ -33,25 +33,26 @@ cd web/public/data/search
 for f in en.*.txt pa.*.txt map.*.json; do printf "%s  " "$f"; brotli -c -q 11 "$f" | wc -c; done
 ```
 
-Production compresses, but not that hard. `brotli -q 11` is the best case; Cloudflare compresses on
-the fly at something nearer q5. Measured against what it already serves:
+**Cloudflare compresses these files, and pre-compressing them ourselves is worse.** Both were
+measured on the real edge, so neither is left for the deploy to answer.
+
+The edge compresses an 8.8 MB response like any other, and picks the best encoding the browser
+accepts rather than the first one it lists — `zstd` for a current browser, `br` for a client that
+asks only for that:
 
 ```
-curl -sS -H 'Accept-Encoding: br' -o /dev/null -w '%{size_download}\n' \
-  https://app.sutamaya.org/data/corpus.json      # 194809 on the wire
-curl -sS --compressed -o /dev/null -w '%{size_download}\n' \
-  https://app.sutamaya.org/data/corpus.json      # 948267 decoded
+curl -sI -H 'Accept-Encoding: gzip, deflate, br, zstd' \
+  https://app.sutamaya.org/data/corpus.json      # content-encoding: zstd
 ```
 
-948 KB down to 195 KB, against 152 KB at q11 — so expect **about 1.28× the q11 figures**, which
-puts the three search files near **1.1 MB + 1.2 MB + 48 KB, call it 2.4 MB**.
+Pre-compressing at `brotli -q 11` and returning the file with `encodeBody: 'manual'` produces a
+smaller body — 0.90 MB against 1.38 MB for the English blob — but the edge does not forward it. It
+decodes the response and re-encodes it as gzip, so a browser receives **1.72 MB where doing nothing
+gets 1.38 MB**. Pass-through survives only for a client sending `Accept-Encoding: br` alone, which no
+browser does; the Worker cannot detect that either, since the edge normalizes the header to
+`gzip, br` before the Worker runs.
 
-**One thing only the deploy can answer:** whether Cloudflare compresses a response this large at
-all. Everything it serves today is under 1 MB, and the search blobs are 8.8 MB and 10.7 MB. If it
-declines them, the first search costs 19.5 MB instead of 2.4 MB. So on the first deploy, check
-Content-Encoding on `en.<version>.txt` before anything else — `br` means it worked, its absence
-means these files need pre-compressing at build time and serving with an explicit
-`Content-Encoding`.
+So the three files cost **~1.4 MB + ~1.5 MB + 38 KB, about 2.9 MB**, and the build emits plain text.
 
 ## Then, the network speeds
 
