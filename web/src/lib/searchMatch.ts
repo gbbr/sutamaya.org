@@ -37,12 +37,15 @@ export function matchRuns(text: string, query: string): TextRun[] {
     for (let i = key.indexOf(w); i !== -1; i = key.indexOf(w, i + w.length)) found.push([i, i + w.length]);
   }
   if (!found.length) return [{ text, hit: false }];
-  // Overlapping or abutting matches merge into one mark rather than two with a seam between them.
+  // Overlapping matches, abutting ones, and ones separated only by the space between two words all
+  // merge into a single mark: a phrase the text carries whole is marked whole, rather than as one
+  // mark per word with unmarked gaps punched through it.
   found.sort((a, b) => a[0] - b[0]);
   const merged: Array<[number, number]> = [];
   for (const [start, end] of found) {
     const last = merged[merged.length - 1];
-    if (last && start <= last[1]) last[1] = Math.max(last[1], end);
+    const onlySpaceBetween = last && start > last[1] && !key.slice(last[1], start).trim();
+    if (last && (start <= last[1] || onlySpaceBetween)) last[1] = Math.max(last[1], end);
     else merged.push([start, end]);
   }
   const runs: TextRun[] = [];
