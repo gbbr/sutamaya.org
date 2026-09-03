@@ -582,13 +582,16 @@ export function watchTextSearchIdle(): () => void {
   };
 }
 
-// Said while the text is on its way, in the place the scope note otherwise sits.
+// Said under the last result while the text is on its way, where the hits it brings will append.
 export const SEARCH_TEXT_LOADING_NOTE = 'Searching sutta text…';
 
-// The line under the results. Null once the text is searchable — there is nothing left to say.
+// How long the text may take before the results admit to waiting for it.
+export const TEXT_LOADING_DELAY_MS = 400;
+
+// The line in the empty state. Null while the text is loading — the line under the results carries
+// that — and once it is searchable, when there is nothing left to say.
 export function searchScopeNote(state: TextSearchStatus): string | null {
-  if (state === 'ready') return null;
-  if (state === 'loading') return SEARCH_TEXT_LOADING_NOTE;
+  if (state === 'ready' || state === 'loading') return null;
   return SEARCH_SCOPE_NOTE;
 }
 

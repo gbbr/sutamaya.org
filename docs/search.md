@@ -263,13 +263,15 @@ as it always did, because there is nothing in the text for it to point at.
 **Search never waits on the text.** The blob is fetched lazily — on first focus of a search field —
 and every stage below is a valid resting state:
 
-- **Before it loads.** Metadata results render on the keystroke, exactly as today. A quiet line under
-  the results reads "Searching sutta text…".
+- **Before it loads.** Metadata results render on the keystroke, exactly as today. A spinner and
+  "Searching sutta text…" sit under the last row, where the hits still coming will append, held back
+  for `TEXT_LOADING_DELAY_MS` so a load that lands in a blink says nothing at all. The field starts
+  the fetch on focus, so on a fast connection it never appears.
 - **When it lands.** Text hits append below the metadata hits. Cached from then on.
-- **If it never arrives** — offline, never fetched, fetch failed — that line becomes the existing
-  `SEARCH_SCOPE_NOTE`. The feature degrades to today's behaviour, labelled honestly, with no error
-  state and nothing blocked. A failed fetch is not remembered, so the next search tries again and a
-  reader who searched offline gets the text as soon as they are back.
+- **If it never arrives** — offline, never fetched, fetch failed — the empty state carries the
+  existing `SEARCH_SCOPE_NOTE`. The feature degrades to today's behaviour, labelled honestly, with
+  no error state and nothing blocked. A failed fetch is not remembered, so the next search tries
+  again and a reader who searched offline gets the text as soon as they are back.
 
 Bucket membership never changes when the text arrives, so no result moves between buckets; order
 *within* the metadata buckets refines once occurrence counts are available.
