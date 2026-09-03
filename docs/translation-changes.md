@@ -17,6 +17,7 @@ gloss a term in his wording while the line above it uses ours.
 | samādhi | immersion, immersed | **composure, composed** (and "collect" as a verb) |
 | jhāna | absorption | **jhāna** (and "practice jhāna" for jhāyati) |
 | satipaṭṭhāna | mindfulness meditation | **the establishment of mindfulness** |
+| sampajañña | situational awareness, aware | **attentiveness, attentive** |
 | ātāpī | keen | **ardent** |
 | saṅkhāra | choices | **saṅkhāras** |
 | abhisaṅkharoti | make (choices) | **generate (saṅkhāras)** |

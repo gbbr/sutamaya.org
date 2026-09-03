@@ -293,7 +293,8 @@ describe('the shipped rules, one example each', () => {
     // One example per grammatical slot ātāpī occupies. The adjective is the satipaṭṭhāna formula's
     // first word; the abstract noun ātappa is Bhikkhu Sujato's "keenness"; the adverb is his
     // "keenly"; and the article travels with the adjective, or SN 1.23 reads "a ardent bhikkhu".
-    ['atapi-ardent', 'sn36.7:5.1', 'sujato/sutta', 'keen, aware, and mindful', 'ardent, aware, and mindful'],
+    // ātāpī and sampajāna stand side by side in the satipaṭṭhāna formula, each taking its own rule.
+    ['atapi-ardent', 'sn36.7:5.1', 'sujato/sutta', 'keen, aware, and mindful', 'ardent, attentive, and mindful'],
     ['atapi-ardent', 'an10.14:2.3', 'sujato/sutta', 'incline toward keenness, commitment', 'incline toward ardor, commitment'],
     ['atapi-ardent', 'mn125:2.5', 'sujato/sutta', 'a mendicant who meditates diligently, keenly', 'a bhikkhu who meditates diligently, ardently'],
     ['atapi-ardent', 'sn1.23:2.3', 'sujato/sutta', 'a keen and alert mendicant—', 'an ardent and alert bhikkhu—'],
@@ -306,6 +307,18 @@ describe('the shipped rules, one example each', () => {
     // No rule reaches a note, so MN 10's — which argues for the very rendering this one reverses —
     // stays word for word as Bhikkhu Sujato wrote it.
     ['satipatthana-establishment-of-mindfulness', 'mn10:1.1', 'sujato/notes', 'i.e. “mindfulness meditation” or simply “meditation”', 'i.e. “mindfulness meditation” or simply “meditation”'],
+    // The adjective sampajāna, which Bhikkhu Sujato leaves as bare "aware".
+    ['sampajanna-attentive', 'sn47.2:2.1', 'sujato/sutta', 'a mendicant should live mindful and aware', 'a bhikkhu should live mindful and attentive'],
+    // Its negation, which the bare adjective form cannot reach across the word boundary.
+    ['sampajanna-attentive', 'an5.210:1.1', 'sujato/sutta', 'falling asleep unmindful and unaware', 'falling asleep unmindful and inattentive'],
+    // The noun sampajañña.
+    ['sampajanna-attentive', 'an10.61:2.12', 'sujato/sutta', 'Lack of mindfulness and situational awareness.', 'Lack of mindfulness and attentiveness.'],
+    // The same noun where he drops "situational".
+    ['sampajanna-attentive', 'an4.41:1.5', 'sujato/sutta', 'leads to mindfulness and awareness', 'leads to mindfulness and attentiveness'],
+    // sampajānakārī, the -kārī compound, which keeps its verb and takes the adverb.
+    ['sampajanna-attentive', 'sn47.2:3.2', 'sujato/sutta', 'a mendicant acts with situational awareness when going out', 'a bhikkhu acts attentively when going out'],
+    // Denied: iti before a quoted perception, the formless attainments' "aware that …".
+    ['sampajanna-attentive', 'an1.450:1.1', 'sujato/sutta', 'aware that ‘space is infinite’', 'aware that ‘space is infinite’'],
     ['samudaya-arising', 'sn56.11:4.3', 'sujato/sutta', 'the noble truth of the origin of suffering', 'the noble truth of the arising of suffering'],
     // Denied: aggañña, how the world began.
     ['samudaya-arising', 'dn24:2.14.1', 'sujato/sutta', 'I understand the origin of the world.', 'I understand the origin of the world.'],

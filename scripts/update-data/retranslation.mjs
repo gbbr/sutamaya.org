@@ -12,7 +12,7 @@
 //
 //   standalone terms   mendicant-bhikkhu, immersion-concentration, jhana-pali,
 //                      patisambhida-analytical-knowledge, dhamma-the-dhamma, atapi-ardent
-//   mindfulness        satipatthana-establishment-of-mindfulness
+//   mindfulness        satipatthana-establishment-of-mindfulness, sampajanna-attentive
 //   arising / passing  samudaya-arising, vaya-passing-away, atthangama-disappearing,
 //                      udayabbaya-arising-passing-away
 //   change             viparinama-annathatta-change-unstable, viparinama-anuparivatti-changing
@@ -155,8 +155,9 @@ export const RULES = [
     ],
   },
   // ── Mindfulness ─────────────────────────────────────────────────────────────
-  // sati itself is left as Bhikkhu Sujato has it ("mindfulness"/"mindful"), and so is sampajañña
-  // ("situational awareness"). Only the compound is retranslated, so this group holds one rule.
+  // sati itself is left as Bhikkhu Sujato has it ("mindfulness"/"mindful"); the compound and its
+  // companion term sampajañña are both retranslated. The two rules share no English word, so their
+  // order settles nothing.
   {
     id: 'satipatthana-establishment-of-mindfulness',
     why: 'Bhikkhu Sujato renders satipaṭṭhāna as "mindfulness meditation"; this app prefers ' +
@@ -176,6 +177,31 @@ export const RULES = [
       ['on mindfulness meditation', 'on the establishment of mindfulness'],
       ['mindfulness meditations', 'establishments of mindfulness'],
       ['mindfulness meditation', 'the establishment of mindfulness'],
+    ],
+  },
+  {
+    id: 'sampajanna-attentive',
+    why: 'Bhikkhu Sujato renders sampajañña as "situational awareness" but the adjective sampajāna ' +
+      'as plain "aware"; this app uses "attentiveness"/"attentive" for both, the DPD\'s first gloss. ' +
+      'One English root across every slot, because the definition passage asks with the adjective ' +
+      'and answers with the compound — SN 47.2\'s "And how is a bhikkhu attentive? It\'s when a ' +
+      'bhikkhu acts attentively when going out and coming back" — and a split rendering leaves the ' +
+      'answer answering a different question. sampajānakārī keeps its verb ("acts attentively" ' +
+      'rather than "acts with attentiveness"), since kārī is in the Pali and the formula is about ' +
+      'awareness applied while doing. Closed, because plain-English "aware" is common and ' +
+      'unrelated — the formless attainments alone account for ~150 segments of "aware that ‘space ' +
+      'is infinite’", which translates iti.',
+    mode: 'allow',
+    predicate: /sampajañ|sampajān/i,
+    forms: [
+      ['acted with situational awareness', 'acted attentively'],
+      ['acts with situational awareness', 'acts attentively'],
+      ['act with situational awareness', 'act attentively'],
+      ['situational awareness', 'attentiveness'],
+      ['unawareness', 'inattentiveness'],
+      ['awareness', 'attentiveness'],
+      ['unaware', 'inattentive'],
+      ['aware', 'attentive'],
     ],
   },
   // ── Arising and passing away ────────────────────────────────────────────────
@@ -868,6 +894,82 @@ export const RULES = [
     segment: 'dn19:43.5',
     from: 'whoever goes on retreat for the four months of the rainy season and practices the jhāna on compassion sees the Divinity and discusses with him. ',
     to: 'whoever goes on retreat for the four months of the rainy season and practices the jhāna of compassion sees the Divinity and discusses with him. ',
+  },
+
+  // ·· a preposition the replacement adjective cannot take ··
+  // Itiha tattha sampajāno hoti closes each step of the sequence in MN 122, AN 7.49 and AN 8.9.
+  // Bhikkhu Sujato spells the compound out as "aware of the situation"; "attentive" takes "to", not
+  // "of", so these two lines carry the preposition sampajanna-attentive leaves behind.
+  {
+    id: 'sampajana-attentive-to-the-situation-plural',
+    kind: 'segment',
+    why: 'The refrain as MN 122 and AN 7.49 write it, in the plural.',
+    segments: [
+      'an7.49:3.3', 'an7.49:3.6', 'an7.49:15.3', 'an7.49:16.3',
+      'mn122:9.5', 'mn122:9.12', 'mn122:10.6', 'mn122:10.13', 'mn122:11.3', 'mn122:11.6',
+      'mn122:11.9', 'mn122:11.12', 'mn122:12.3', 'mn122:12.5', 'mn122:13.3', 'mn122:13.5',
+      'mn122:15.7', 'mn122:15.12', 'mn122:17.4',
+    ],
+    from: 'In this way they are attentive of the situation. ',
+    to: 'In this way they are attentive to the situation. ',
+  },
+  {
+    id: 'sampajana-attentive-to-the-situation-singular',
+    kind: 'segment',
+    why: 'The same refrain in AN 8.9, which narrates Nanda in the singular.',
+    segments: ['an8.9:1.9', 'an8.9:2.8'],
+    from: 'In this way he’s attentive of the situation. ',
+    to: 'In this way he’s attentive to the situation. ',
+  },
+
+  // ·· dhīra beside the word that now renders sampajāna ··
+  // "Attentive" is also Bhikkhu Sujato's word for dhīra, about a hundred times, almost all of it
+  // verse far from any sampajañña. AN 4.28 is the one sutta where the two meet close enough to be
+  // read as one: its prose has a bhikkhu "deft, tireless, attentive, and mindful" (sampajāno), and
+  // its closing verse then says "the attentive" five times over, of dhīra. These five take "the
+  // wise" — DPD's dhīra 2 (√dhī, "wise, intelligent, sage"), and Norman's and Bhikkhu Bodhi's
+  // reading of the word in verse. The corpus spends "wise" on paññavā elsewhere, but no paññā word
+  // appears anywhere in AN 4.28. Ud 8.5, AN 3.58, DN 16 and Dhp 290 put the two far enough apart
+  // to leave alone.
+  {
+    id: 'an4-28-dhira-wise-reason',
+    kind: 'segment',
+    why: 'The prose line answering "Why is that?", which the verse then restates.',
+    segment: 'an4.28:5.6',
+    from: 'Because the attentive prevail over desire and discontent. ',
+    to: 'Because the wise prevail over desire and discontent. ',
+  },
+  {
+    id: 'an4-28-dhira-wise-verse-first',
+    kind: 'segment',
+    why: 'The verse’s first line, discontent as the subject.',
+    segment: 'an4.28:6.1',
+    from: 'Discontent cannot prevail over the attentive; ',
+    to: 'Discontent cannot prevail over the wise; ',
+  },
+  {
+    id: 'an4-28-dhira-wise-verse-second',
+    kind: 'segment',
+    why: 'The same claim in the passive, as the verse doubles it.',
+    segment: 'an4.28:6.2',
+    from: 'the attentive are not prevailed over by discontent. ',
+    to: 'the wise are not prevailed over by discontent. ',
+  },
+  {
+    id: 'an4-28-dhira-wise-verse-third',
+    kind: 'segment',
+    why: 'The turn, with the dhīra as the subject.',
+    segment: 'an4.28:6.3',
+    from: 'The attentive can prevail over discontent, ',
+    to: 'The wise can prevail over discontent, ',
+  },
+  {
+    id: 'an4-28-dhira-wise-verse-fourth',
+    kind: 'segment',
+    why: 'The closing line, which names the dhīra by what they do.',
+    segment: 'an4.28:6.4',
+    from: 'for the attentive are those who prevail over discontent. ',
+    to: 'for the wise are those who prevail over discontent. ',
   },
 
   // ── Blurb openers ───────────────────────────────────────────────────────────
