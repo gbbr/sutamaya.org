@@ -252,7 +252,7 @@ export interface SearchHit {
   // The paragraph of sutta text the query was found in, its English where that paragraph was Pali,
   // and the segment to open the reader at. Filled in by lib/textSearch.ts for the hits that render;
   // absent on a metadata-only hit.
-  snippet?: { text: string; under?: string; segment: number };
+  snippet?: { text: string; under?: string; query: string; segment: number };
 }
 
 // How many hits a caller renders; searchCorpus still returns every match, so a total can be shown.

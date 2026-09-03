@@ -34,6 +34,12 @@ describe('matchRuns', () => {
     expect(marks('Mindfulness', 'mind fulness')).toEqual(['Mindfulness']);
   });
 
+  it('marks the singular of a typed plural, which is what search matched', () => {
+    expect(marks('the noble truth of suffering', 'noble truths')).toEqual(['noble truth']);
+    // A short word keeps its "s": "is" is not a plural of "i".
+    expect(marks('It is so', 'is')).toEqual(['is']);
+  });
+
   it('marks every occurrence, not just the first', () => {
     expect(marks('Mind over mind', 'mind')).toEqual(['Mind', 'mind']);
   });

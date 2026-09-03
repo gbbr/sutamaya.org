@@ -25,6 +25,13 @@ function fold(s: string): { key: string; map: number[] } {
   return { key, map };
 }
 
+// The forms of a query word to mark: the word, and the singular of a typed plural, which is the
+// stemming lib/textSearch.ts matched on — "truths" finds "the noble truth of", and the row has to
+// show the reader why it is there.
+function forms(word: string): string[] {
+  return word.length >= 4 && word.endsWith('s') ? [word, word.slice(0, -1)] : [word];
+}
+
 // Splits `text` into runs, marking every occurrence of every word in `query`, separately and
 // anywhere, as search matched them. One unmarked run where there is nothing to mark — no query, or
 // a field holding none of the words, a hit being able to match on its blurb alone.
@@ -33,7 +40,7 @@ export function matchRuns(text: string, query: string): TextRun[] {
   if (!text || !words.length) return [{ text, hit: false }];
   const { key, map } = fold(text);
   const found: Array<[number, number]> = [];
-  for (const w of words) {
+  for (const w of words.flatMap(forms)) {
     for (let i = key.indexOf(w); i !== -1; i = key.indexOf(w, i + w.length)) found.push([i, i + w.length]);
   }
   if (!found.length) return [{ text, hit: false }];

@@ -479,11 +479,11 @@ export function ListPane({
                   // own note. A Pali paragraph carries its English underneath, inside the one rule.
                   <span className="block font-serif text-ui-md leading-[1.5] mt-[7px] pl-[10px] border-l-2 border-ink/25 text-ink-2">
                     <span className={`block line-clamp-3 ${snippet.under ? 'italic text-accent-text' : ''}`}>
-                      <MatchedText text={snippet.text} query={rowQuery} />
+                      <MatchedText text={snippet.text} query={snippet.query} />
                     </span>
                     {snippet.under && (
                       <span className="block line-clamp-2 mt-[3px]">
-                        <MatchedText text={snippet.under} query={rowQuery} />
+                        <MatchedText text={snippet.under} query={snippet.query} />
                       </span>
                     )}
                   </span>
