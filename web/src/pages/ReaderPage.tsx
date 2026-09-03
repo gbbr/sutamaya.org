@@ -17,7 +17,8 @@ import { flattenListTree, resolveListById, suttaRowMeta } from '../lib/lists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { setReaderThemeColor } from '../lib/themeColor';
 import { SHORTCUTS, SHOWS_KEY_HINTS, shortcutsForScope } from '../lib/shortcuts';
-import { tagIntent } from '../lib/routeIntent';
+import { consumeIntent, tagIntent, type RouteIntent } from '../lib/routeIntent';
+import { READER_INTENT_KEY } from '../lib/storageKeys';
 import { enteredByReturn } from '../lib/entryKind';
 import { getUiScale } from '../lib/uiPrefs';
 import type { Highlight } from '../lib/types';
@@ -85,6 +86,15 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   // Where the reader was opened from (LibraryPage's onOpen): `from` is the pane and node to close
   // back to, `fromView` which pane to show there. Absent for a direct link to /read/:suttaId.
   const readerLocationState = location?.state as { from?: string; fromView?: 'tree' | 'list' } | undefined;
+  // The segment a search hit was found in, taken once: location.state survives a same-tab refresh,
+  // and a jump the reader has since scrolled away from must not fire again.
+  const [searchSegment] = useState(
+    () =>
+      consumeIntent(
+        location?.state as ({ segment?: number } & RouteIntent) | null | undefined,
+        READER_INTENT_KEY
+      )?.segment
+  );
   const { from, fromView, navigateToSutta, closeToOrigin } = useReaderOrigin(readerLocationState);
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
   const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
@@ -114,7 +124,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     restoreRef.current = {
       id: suttaId,
       restore: enteredByReturn() ? 'stored' : 'top',
-      skipRestore: !!requestedSubUid,
+      skipRestore: !!requestedSubUid || searchSegment !== undefined,
     };
   }
   const {
@@ -201,6 +211,15 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     requestAnimationFrame(() => scrollToSegment(idx, 'start'));
   }, [requestedSubUid, segments, scrollToSegment]);
 
+  // Scrolls to the segment a search hit's snippet was drawn from, so the words the reader searched
+  // for are what they land on. Centred rather than at the top: a segment is a clause, and the
+  // passage around it is what makes it read as an answer.
+  useEffect(() => {
+    if (searchSegment === undefined || requestedSubUid || !segments) return;
+    if (searchSegment >= segments.length) return;
+    requestAnimationFrame(() => scrollToSegment(searchSegment, 'center'));
+  }, [searchSegment, requestedSubUid, segments, scrollToSegment]);
+
   // The whole corpus in canonical browse order, which Prev/Next steps through across category
   // boundaries.
   const siblingIds = useMemo(() => (corpus ? flatSuttaOrder(corpus) : []), [corpus]);
@@ -284,9 +303,9 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     closeToOrigin(suttaId, sutta ? `/browse/${sutta.node}/${suttaId}` : '/');
   }
 
-  function onSearchOpenSutta(id: string) {
+  function onSearchOpenSutta(id: string, segment?: number) {
     setSearchOpen(false);
-    navigateToSutta(id);
+    navigateToSutta(id, segment);
   }
 
   // Scrolls a just-opened Pali line or footnote into view, by the least it takes and only when it

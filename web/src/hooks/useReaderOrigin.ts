@@ -41,9 +41,12 @@ export function useReaderOrigin(locationState: { from?: string; fromView?: 'tree
   const fromView = locationState?.fromView;
 
   // Opens another sutta in the reader, carrying the origin forward.
-  function navigateToSutta(nextSuttaId: string) {
+  // `segment` is where a search hit was found, and where the reader opens; Prev/Next pass none, and
+  // carry the plain origin they always did rather than a one-shot intent with nothing in it.
+  function navigateToSutta(nextSuttaId: string, segment?: number) {
     persistReaderOrigin(nextSuttaId, from, fromView);
-    navigate(`/read/${encodeURIComponent(nextSuttaId)}`, { state: { from, fromView } });
+    const state = segment === undefined ? { from, fromView } : tagIntent({ from, fromView, segment });
+    navigate(`/read/${encodeURIComponent(nextSuttaId)}`, { state });
   }
 
   // Closes the reader, to the router state, else the persisted origin, else `fallbackPath` for a

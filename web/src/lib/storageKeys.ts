@@ -6,6 +6,9 @@ export const SCROLL_POSITIONS_KEY = 'sutamaya.scrollPositions';
 export const LAST_LOCATION_KEY = 'sutamaya.lastLocation';
 export const READER_ORIGIN_KEY = 'sutamaya.readerOrigin';
 export const ROUTE_INTENT_KEY = 'sutamaya.routeIntent';
+// The reader's own one-shot intents, kept apart from the library's so an arrival at each consumes
+// its own.
+export const READER_INTENT_KEY = 'sutamaya.readerIntent';
 export const UI_PREFS_KEY = 'sutamaya.uiPrefs';
 export const READER_PREFS_KEY = 'sutamaya.readerPrefs';
 // The reader menu panel's last-used tab, so it reopens where the reader left off (see

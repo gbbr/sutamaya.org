@@ -9,7 +9,7 @@ import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId, LIST_RESULTS_CAP } from '../lib/corpus';
 import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
-import { consumeIntent, type RouteIntent } from '../lib/routeIntent';
+import { consumeIntent, tagIntent, type RouteIntent } from '../lib/routeIntent';
 import { TreePane, type ActiveSearchRow } from '../components/TreePane';
 import { ListPane } from '../components/ListPane';
 import { ShortcutsModal } from '../components/ShortcutsModal';
@@ -150,8 +150,10 @@ export function LibraryPage({
     navigate(`/browse/${encodeURIComponent(id)}`);
   }, []);
 
+  // `segment` is set only where the query was answered by the sutta's text, and is where the reader
+  // opens: a title or description match has nothing to jump to and opens at the top, as always.
   const onOpen = useCallback(
-    (id: string) => {
+    (id: string, segment?: number) => {
       // The node the reader returns to on close: the current one, or a search hit's own node,
       // since search spans the whole corpus.
       const returnNodeId = query.trim() && corpus?.suttas[id] ? corpus.suttas[id].node : nodeId;
@@ -163,7 +165,10 @@ export function LibraryPage({
       } catch {
         // storage unavailable — ignore
       }
-      navigate(`/read/${encodeURIComponent(id)}`, { state: { from, fromView: view } });
+      // Tagged as a one-shot intent only when there is a segment to jump to, so an ordinary open
+      // carries the plain origin it always did.
+      const state = segment === undefined ? { from, fromView: view } : tagIntent({ from, fromView: view, segment });
+      navigate(`/read/${encodeURIComponent(id)}`, { state });
     },
     [nodeId, view, query, corpus]
   );
