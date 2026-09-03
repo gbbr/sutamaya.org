@@ -28,8 +28,11 @@ const UI_SCALE_MIN = 0.85;
 const UI_SCALE_MAX = 1.4;
 const UI_SCALE_STEP = 0.05;
 
-// Rough size of the whole offline download — sutta text plus dictionary shards.
-const TOTAL_DOWNLOAD_MB_ESTIMATE = 50;
+// Rough size of the whole offline download over the wire — sutta text, dictionary and search text,
+// as the compressed bundles they are fetched in.
+const TOTAL_DOWNLOAD_MB_ESTIMATE = 9;
+// Rough size the same content occupies on the device, where it is held uncompressed.
+const TOTAL_STORED_MB_ESTIMATE = 60;
 
 // The shell colours one theme tile is drawn in, as literals rather than the `--paper`/`--treepane`/
 // `--ink` custom properties they mirror, since every tile renders in its own theme at once.
@@ -480,8 +483,9 @@ export function SettingsPage({ location }: RouteComponentProps) {
                   <div className="font-sans text-ui-base text-ink-2 mb-3">
                     <p>Currently {Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% is available offline.</p>
                     <p className="mt-2">
-                      Downloading all content enables the app to work fully offline. Total size is approx.{' '}
-                      {TOTAL_DOWNLOAD_MB_ESTIMATE} MB.
+                      Downloading all content enables the app to work fully offline. It downloads about{' '}
+                      {TOTAL_DOWNLOAD_MB_ESTIMATE} MB and uses about {TOTAL_STORED_MB_ESTIMATE} MB on this
+                      device.
                     </p>
                   </div>
                 )}
