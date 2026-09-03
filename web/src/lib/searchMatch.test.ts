@@ -21,6 +21,14 @@ describe('matchRuns', () => {
     expect(marks('Mūlapariyāya', 'mu')).toEqual(['Mū']);
   });
 
+  it('marks consecutive matched words as one stretch, spaces and all', () => {
+    // Not "four" | " " | "noble" | " " | "truths": the phrase is in the text whole, and marking it
+    // in pieces punches unmarked gaps through it.
+    expect(marks('The four noble truths', 'four noble truths')).toEqual(['four noble truths']);
+    // Only where they really are consecutive — a word between them is not swept in.
+    expect(marks('four of the noble truths', 'four noble')).toEqual(['four', 'noble']);
+  });
+
   it('merges overlapping and adjacent matches into one mark', () => {
     expect(marks('Mindfulness', 'mind mindful')).toEqual(['Mindful']);
     expect(marks('Mindfulness', 'mind fulness')).toEqual(['Mindfulness']);
@@ -53,8 +61,8 @@ describe('matchRuns', () => {
   // searchCorpus folds the whole string at once. They must agree, or a row would be marked
   // somewhere other than where the match was found — or not marked at all.
   it('folds text the same way searchCorpus matches it', () => {
-    // Searching a string for its own folded self marks all of it — word by word, since the query
-    // splits on whitespace and the spaces between words are not themselves matched.
+    // Searching a string for its own folded self marks all of it, consecutive words included —
+    // except where something the query never had, such as "·", separates two of them.
     for (const text of ['Satipaṭṭhānasutta', 'MN10 · Mūlapariyāya', 'ÄÖÜ ñ ṁ ḷ', 'Dhp320–333', "a note with 'quotes' & symbols"]) {
       expect(marks(text, searchKey(text)).join(' ')).toBe(text);
     }
