@@ -20,6 +20,7 @@ import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
 import { MatchedText } from './MatchedText';
 import { SearchListHits } from './SearchListHits';
+import { TextSearchProgress } from './TextSearchProgress';
 import { SuttaRowChips } from './SuttaRowChips';
 import { ListMembershipPopover } from './ListMembershipPopover';
 import type { Sutta } from '../lib/types';
@@ -36,6 +37,8 @@ interface ListPaneProps {
   listHitTotal: number;
   // Whether the sutta text is searchable yet, which is what the line under an empty result says.
   textStatus: TextSearchStatus;
+  // Whether it is still downloading, said in a line under the rows.
+  textLoading: boolean;
   listsExpanded: boolean;
   onToggleListsExpanded: () => void;
   onSelectList: (nodeId: string) => void;
@@ -60,6 +63,7 @@ export function ListPane({
   listHits,
   listHitTotal,
   textStatus,
+  textLoading,
   listsExpanded,
   onToggleListsExpanded,
   onSelectList,
@@ -561,6 +565,8 @@ export function ListPane({
             )}
           </div>
         )}
+        {/* Last, under the rows, where the hits it is still waiting on will append. */}
+        {searching && textLoading && <TextSearchProgress />}
       </div>
       {picker && (
         <ListMembershipPopover

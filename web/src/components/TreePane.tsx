@@ -32,6 +32,7 @@ import type { ListDef } from '../lib/types';
 import { SignedInBadge } from './SignedInBadge';
 import { HeaderBanner } from './HeaderBanner';
 import { MatchedText } from './MatchedText';
+import { TextSearchProgress } from './TextSearchProgress';
 import { SearchListHits } from './SearchListHits';
 import { SuttaRowChips } from './SuttaRowChips';
 import { type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
@@ -92,6 +93,8 @@ interface TreePaneProps {
   listHitTotal: number;
   // Whether the sutta text is searchable yet, which is all the empty state says about it.
   textStatus: TextSearchStatus;
+  // Whether it is still downloading, said in a line under the rows.
+  textLoading: boolean;
   listsExpanded: boolean;
   onToggleListsExpanded: () => void;
   // Reports the arrow-key cursor's row, so ListPane can mirror it on desktop.
@@ -122,6 +125,7 @@ export function TreePane({
   listHits,
   listHitTotal,
   textStatus,
+  textLoading,
   listsExpanded,
   onToggleListsExpanded,
   onActiveHitChange,
@@ -776,6 +780,8 @@ export function TreePane({
                     {searchNoMatches(textStatus)}
                   </div>
                 )}
+                {/* Last, under the rows, where the hits it is still waiting on will append. */}
+                {textLoading && <TextSearchProgress />}
               </>
             )}
           </div>

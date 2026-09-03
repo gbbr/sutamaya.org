@@ -62,13 +62,15 @@ For each, load the app fresh (`⌘⇧R`), then search:
 
 | Profile | What to check |
 |---|---|
-| **No throttling** | Results appear as you type. The line under the results never appears at all, or flashes once. |
-| **Fast 4G** | Metadata hits appear instantly; "Searching sutta text…" shows underneath; text hits and their snippets append a moment later without the list jumping under your cursor. |
+| **No throttling** | Results appear as you type, and the spinner beside the count never appears at all. |
+| **Fast 4G** | Metadata hits appear instantly; a spinner and "Searching sutta text…" sit beside the result count; text hits and their snippets append a moment later without the list jumping under your cursor. |
 | **Slow 4G** | The same, but the wait is long enough to read. Type a second query while it loads — it must stay responsive and keep answering from the metadata. |
 | **Offline** | See the next section. |
 
-The thing to watch for in all of them: **the results you already have must never disappear or
-reorder under you** when the text lands. New rows append below.
+The thing to watch for in all of them: **no result you already have may disappear, and none may
+drop below the text hits that arrive.** New rows append below. Rows already on screen can swap
+places among themselves, which is expected — the tie-break inside a rank is how often the word
+occurs in the sutta's text, and that is zero for everyone until the text lands.
 
 ## Offline, and coming back
 
