@@ -80,7 +80,8 @@ export interface ActiveSearchRow {
 interface TreePaneProps {
   nodeId?: string;
   onSelect: (nodeId: string) => void;
-  onOpenSutta: (suttaId: string) => void;
+  // `segment` is where a text hit was found, and where the reader opens; absent for every other row.
+  onOpenSutta: (suttaId: string, segment?: number) => void;
   onSearch: (query: string) => void;
   query: string;
   // The sutta hits, scanned once by LibraryPage and shared with ListPane, which draws the rows on
@@ -417,7 +418,7 @@ export function TreePane({
       return;
     }
     const hit = displayHits[i - listHits.length];
-    if (hit) openHit(hit.matchedId ?? hit.id);
+    if (hit) openHit(hit.matchedId ?? hit.id, hit.snippet?.segment);
   }
 
   // Reports the cursor's row up to LibraryPage, so ListPane can draw the same highlight.
@@ -433,8 +434,8 @@ export function TreePane({
 
   // Opens a hit in the reader, leaving the search as it is: navigate() lands a frame later, so
   // clearing it here would paint a frame of the bare tree, and the route change unmounts this pane.
-  function openHit(id: string) {
-    onOpenSutta(id);
+  function openHit(id: string, segment?: number) {
+    onOpenSutta(id, segment);
   }
 
   useEffect(() => {

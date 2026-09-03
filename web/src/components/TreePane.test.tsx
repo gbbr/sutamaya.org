@@ -515,7 +515,8 @@ describe('search', () => {
     const hitTitle = () => screen.getByText((_, el) => el?.tagName === 'SPAN' && el.textContent === 'Overcoming the Hindrances');
     expect(hitTitle()).toBeInTheDocument();
     await userEvent.click(hitTitle());
-    expect(onOpenSutta).toHaveBeenCalledWith('an1.1-10');
+    // No segment: this hit matched a title, and only a text hit has one to open at.
+    expect(onOpenSutta).toHaveBeenCalledWith('an1.1-10', undefined);
     // Deliberately *not* cleared here — clearing it synchronously would flash the bare tree for
     // a frame before the (deferred) navigation actually replaces this page with the reader. It's
     // left for the real component to unmount along with the rest of this page once that happens.

@@ -228,6 +228,11 @@ broad query matches thousands of suttas and the cap is what is drawn. A metadata
 snippet and keeps the description; so does every hit while the text is still loading, or if it never
 arrives.
 
+**A snippet carries the segment it was cut from, and clicking the row opens the reader there** — a
+one-shot route intent, consumed once so a refresh doesn't jump again, and it suppresses the usual
+scroll restore. Only a text hit has one: a title or description match opens at the top of the sutta
+as it always did, because there is nothing in the text for it to point at.
+
 ## Late, or never
 
 **Search never waits on the text.** The blob is fetched lazily — on first focus of a search field —

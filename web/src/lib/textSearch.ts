@@ -200,6 +200,8 @@ interface LangScore {
   count: number;
   // The paragraph the snippet is drawn from: the one holding the most of the query's words.
   para: number;
+  // Which sutta, as an index into the map — what the snippet counts segments from.
+  doc: number;
 }
 
 // One language's result per sutta index: the best bucket the query reaches it in, and how often its
@@ -261,7 +263,7 @@ function scoreLanguage(
       bucket = RANK_TEXT_PHRASE;
       para = phraseAt;
     }
-    out.set(si, { bucket, count: Math.min(...rec.counts), para });
+    out.set(si, { bucket, count: Math.min(...rec.counts), para, doc: si });
   }
   return out;
 }
@@ -272,6 +274,8 @@ export interface TextScore {
   count: number;
   // The paragraph the snippet comes from, counted the same way in both blobs.
   para: number;
+  // Which sutta, as an index into the map — what the snippet counts segments from.
+  doc: number;
   // Which blob matched there, and so which line the snippet leads with.
   lang: 'en' | 'pa';
   // The query that found it, which may be one the expansion table added rather than what was typed.
@@ -329,6 +333,9 @@ export function searchSuttaText(index: TextIndex, query: string): Map<string, Te
 export interface Snippet {
   text: string;
   under?: string;
+  // The segment this was found in, indexing the array in text/{uid}.json — what the reader opens
+  // at when the row is clicked.
+  segment: number;
 }
 
 // How much of a paragraph a snippet shows, and how much of it precedes the matched word. A
@@ -337,10 +344,21 @@ export interface Snippet {
 const SNIPPET_MAX = 220;
 const SNIPPET_LEAD = 60;
 
-// One paragraph of a blob, its segments run together as the reader sees them.
-function paragraphAt(blob: string, paras: number[], p: number): string {
+// One paragraph of a blob, its segments run together as the reader sees them. The newlines become
+// spaces rather than being collapsed away, so an offset into `text` is `start` plus that offset in
+// the blob — which is what locates the segment to open at.
+function paragraphAt(blob: string, paras: number[], p: number): { text: string; start: number } {
+  const start = paras[p] + 1;
   const end = p + 1 < paras.length ? paras[p + 1] : blob.length;
-  return blob.slice(paras[p] + 1, end).replace(/\n/g, ' ');
+  return { text: blob.slice(start, end).replace(/\n/g, ' '), start };
+}
+
+// The index, within its sutta, of the segment holding `offset` — the line it falls on, less the
+// paragraph markers above it, each of which occupies a line of its own.
+function segmentAt(blob: string, suttaStart: number, paras: number[], para: number, offset: number): number {
+  let lines = 0;
+  for (let i = blob.indexOf('\n', suttaStart); i !== -1 && i < offset; i = blob.indexOf('\n', i + 1)) lines += 1;
+  return Math.max(0, lines - (para - slotOf(paras, suttaStart) + 1));
 }
 
 // Where in `text` the snippet should centre: the phrase as typed if it is there, else the query's
@@ -380,20 +398,24 @@ function windowAround(text: string, at: number): string {
   return `${start > 0 ? '…' : ''}${tidy(text.slice(start, end))}${end < text.length ? '…' : ''}`;
 }
 
-// The paragraph a text hit was found in, windowed around the match. The two blobs hold the same
-// paragraphs in the same order, so a Pali hit can show its Pali with that paragraph's English
-// beneath it.
+// The paragraph a text hit was found in, windowed around the match, with the segment the reader
+// should open at. The two blobs hold the same paragraphs in the same order, so a Pali hit can show
+// its Pali with that paragraph's English beneath it.
 export function snippetOf(index: TextIndex, score: TextScore): Snippet | null {
   const pali = score.lang === 'pa';
-  const para = paragraphAt(pali ? index.pa : index.en, pali ? index.paParas : index.enParas, score.para);
-  if (!para.trim()) return null;
+  const blob = pali ? index.pa : index.en;
+  const paras = pali ? index.paParas : index.enParas;
+  const para = paragraphAt(blob, paras, score.para);
+  if (!para.text.trim()) return null;
 
-  const text = windowAround(para, firstMatch(para, score.query, score.lang));
-  if (!pali) return { text };
+  const at = firstMatch(para.text, score.query, score.lang);
+  const segment = segmentAt(blob, (pali ? index.paStarts : index.enStarts)[score.doc], paras, score.para, para.start + at);
+  const text = windowAround(para.text, at);
+  if (!pali) return { text, segment };
 
   const english = paragraphAt(index.en, index.enParas, score.para);
-  if (!english.trim()) return { text };
-  return { text, under: windowAround(english, firstMatch(english, score.query, 'en')) };
+  if (!english.text.trim()) return { text, segment };
+  return { text, under: windowAround(english.text, firstMatch(english.text, score.query, 'en')), segment };
 }
 
 // ── The whole search ────────────────────────────────────────────────────────
