@@ -212,12 +212,6 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
                 <span className="font-serif text-ui-base italic" style={{ color: theme.pali }}>
                   <MatchedText text={h.sutta.pali} query={query} theme={theme} />
                 </span>
-                {/* Why this row is in the results, when nothing visible in it matched. */}
-                {!!h.topics?.length && (
-                  <span className="block text-ui-sm leading-[1.45] mt-[3px]" style={{ color: theme.dim }}>
-                    Indexed under <MatchedText text={h.topics.join(' · ')} query={query} theme={theme} />
-                  </span>
-                )}
                 {(notes[h.id] || h.sutta.blurb) && (
                   <span
                     className={`text-ui-base leading-[1.45] mt-[3px] ${notes[h.id] ? 'pl-[8px] border-l-2 whitespace-pre-wrap' : 'italic'}`}

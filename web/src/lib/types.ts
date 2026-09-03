@@ -4,9 +4,6 @@ export interface Sutta {
   en: string;
   pali: string;
   blurb: string;
-  // The headwords the Comprehensive Index of Pali Suttas files this sutta under, worded as this app
-  // words them; absent for a sutta the index doesn't cite.
-  topics?: string[];
   min: number;
 }
 
@@ -37,9 +34,6 @@ export interface Nikaya {
 export interface Corpus {
   nikayas: Nikaya[];
   suttas: SuttaMap;
-  // For each topic this app words differently from CIPS, the wording CIPS used — searched alongside
-  // the label so a reader finds the sutta under either term.
-  topicAliases?: Record<string, string>;
   // The suttacentral/sc-data commit the text was last synced from, which the reader's translation
   // attribution links to.
   sujatoCommit: string;

@@ -336,19 +336,6 @@ const DICTIONARY_LEAD =
 
 const DICTIONARY_URL = 'https://www.dpdict.net/';
 
-// The index credit, in the same shape as the two above it: whose work it is and where to find it
-// whole.
-const INDEX_TITLE = 'The topic index';
-
-const INDEX_LEAD =
-  'Search also looks through the Comprehensive Index of Pali Suttas, the work of ' +
-  'ReadingFaithfully.org, used here with permission. It is what finds a sutta about jealousy or ' +
-  'about money when neither word is in the title — a result that comes from it says which topic ' +
-  'the sutta was filed under. Only the topic names travel with sutamaya; the index itself goes ' +
-  'much deeper.';
-
-const INDEX_URL = 'https://index.readingfaithfully.org/';
-
 // The install steps, written rather than captured: they happen in browser chrome, which no
 // screenshot of this app can show.
 const INSTALL_TITLE = 'Install the app';
@@ -397,7 +384,7 @@ const CONTACT_URL = 'https://github.com/gbbr/sutamaya.org/issues/new';
 // The contents list, in page order: each group's label over the titles it links to.
 const CONTENTS: Array<{ label: string; titles: string[] }> = [
   { label: 'Using the app', titles: [...SECTIONS.map((section) => section.title), INSTALL_TITLE] },
-  { label: 'About', titles: [TRANSLATION_TITLE, DICTIONARY_TITLE, INDEX_TITLE, CONTACT_TITLE] },
+  { label: 'About', titles: [TRANSLATION_TITLE, DICTIONARY_TITLE, CONTACT_TITLE] },
 ];
 
 // A numbered marker, on the picture and in the legend alike. A fixed cool blue outside the app's
@@ -640,22 +627,6 @@ export function HelpPage(_props: RouteComponentProps) {
             className="inline-flex items-center gap-1.5 font-sans text-ui-base text-ink-2 hover:text-ink underline decoration-ink/25 underline-offset-2"
           >
             The Digital Pali Dictionary
-            <ExternalLink size={16} strokeWidth={1.75} className="flex-none text-ink-4" />
-          </a>
-          <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />
-        </section>
-
-        {/* The index credit, in the same shape as the two credits above it. */}
-        <section id={anchorId(INDEX_TITLE)} className="mb-10 scroll-mt-6">
-          <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">{INDEX_TITLE}</div>
-          <p className="font-serif text-ui-lg leading-[1.55] text-ink-2 mb-4">{INDEX_LEAD}</p>
-          <a
-            href={INDEX_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 font-sans text-ui-base text-ink-2 hover:text-ink underline decoration-ink/25 underline-offset-2"
-          >
-            The Comprehensive Index of Pali Suttas
             <ExternalLink size={16} strokeWidth={1.75} className="flex-none text-ink-4" />
           </a>
           <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />

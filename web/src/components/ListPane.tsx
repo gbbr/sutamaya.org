@@ -105,13 +105,6 @@ export function ListPane({
     return map;
   }, [hits]);
 
-  // The topics that put a row in the results, for the rows nothing else in them matched.
-  const matchedTopics = useMemo(() => {
-    const map = new Map<string, string>();
-    for (const h of hits) if (h.topics?.length) map.set(h.id, h.topics.join(' · '));
-    return map;
-  }, [hits]);
-
   // Each row's chips and highlight count, keyed off `items` rather than the drag's own order, so
   // the map survives a whole gesture rather than being rebuilt on every frame.
   const rowMeta = useMemo(
@@ -464,14 +457,6 @@ export function ListPane({
                 >
                   <MatchedText text={s.pali} query={rowQuery} />
                 </span>
-                {/* Why this row is in the results, when nothing visible in it matched the query.
-                    The label itself is never marked: it is the app talking, not the index. */}
-                {matchedTopics.has(id) && (
-                  <span className="block text-ui-base leading-[1.45] mt-[7px] text-ink-3">
-                    <span className="text-ink-4">Indexed under</span>{' '}
-                    <MatchedText text={matchedTopics.get(id)!} query={rowQuery} />
-                  </span>
-                )}
                 {note ? (
                   // An em dash rather than a quote rule marks this as the reader's own note.
                   <span className="flex gap-[7px] font-serif text-ui-md leading-[1.45] mt-[7px] text-ink-2">
