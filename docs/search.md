@@ -25,7 +25,7 @@ The corpus is small enough that the conventional apparatus is unnecessary. Measu
 | English blob | 8.8 MB raw · **~1.1 MB served** |
 | Pali blob | 10.7 MB raw · **~1.2 MB served** |
 | distinct English word types | 13,523 |
-| one keystroke, expansions included | **8–80 ms** |
+| one keystroke, expansions included | **9–150 ms**, median 43 ms |
 
 A brute-force scan of the whole canon is faster than a keystroke, so there is no index, no stemmer,
 no stored statistics and nothing to keep in step with the corpus build. **The text is the index.**
@@ -114,6 +114,17 @@ readers type: `nibbana`, `karma` and `absorption` match no English at all, and `
 matches one sutta, because the shipped text says "extinguishment", "deeds", "jhāna" and "composure".
 The Pali side answers those queries.
 
+### Function words
+
+An ordinary English stopword list — `the`, `of`, `is`, `to` and some fifty others — is dropped from
+the query's **required words** and from the **occurrence count** that orders a bucket, in both
+languages. `mind is luminous` is a search for "mind" and "luminous", scored on those two.
+
+Three things it deliberately does not do. The **phrase keeps every word**, so bucket 4 still matches
+"mind is radiant" as typed and ranks it above the suttas that merely hold the two words. A query
+holding nothing but function words searches for them literally, so `the` still finds "the". And
+**`not` and `no` are not on the list** — they are the whole of "not-self".
+
 ### Both languages
 
 English and Pali are scanned and scored **independently**, and a sutta keeps its better result. A
@@ -168,10 +179,19 @@ words, and it holds two kinds of entry.
 ```
 loving-kindness → love, mettā          arahant       → perfected
 enlightenment   → awakening            concentration → composure
+wholesome       → skillful, kusala     monk          → bhikkhu
 ```
 
 `scripts/update-data/retranslation.mjs` already lists the upstream-to-shipped pairs for every term
-this app rewrote, and supplies a good part of these.
+this app rewrote, and supplies a good part of these. The rest is ordinary Buddhist English and the
+vocabulary of other translations — "stress", "cankers", "sloth and torpor", "sympathetic joy" — read
+against what this corpus says.
+
+**A vocabulary entry names the Pali term too**, where the term of art is the stable one:
+`wholesome → skillful, kusala`. The English rendering is what varies between translations, so it is
+the half that misses; the Pali is written the same way in every sutta that discusses the subject,
+and the Pali blob is line-aligned with the English, so the Pali alternative reaches the passage
+whatever the English calls it.
 
 **Sutta names**, where a discourse is known by a traditional name that is neither its English title
 nor its Pali title:
@@ -187,8 +207,13 @@ rather than something imperfect.
 
 The table is hand-written and reviewable in `web/src/lib/searchExpansion.ts`. One query adds at most
 `MAX_EXPANSIONS` alternatives, because each one costs a scan of both blobs and past a handful the
-results stop being about what was typed. The table is short of the few hundred entries the two kinds
-deserve; adding to it is what moves the golden set's pending queries.
+results stop being about what was typed.
+
+**An entry fires wherever its key appears**, including inside a longer query, where substituting a
+Pali term into an English phrase leaves something neither blob can match — `right view` would gain
+"right ditthi" from the `view` entry. Two rules keep those out: the table is walked **longest key
+first**, and an entry whose key sits inside one that has already matched is skipped. A phrase
+readers are likely to type whole earns its own entry for the same reason.
 
 ## Golden query set
 
@@ -259,9 +284,9 @@ Replaying 16,467 topic-to-sutta citations from a curated index of this canon (in
 
 | | |
 |---|---|
-| curated citations found | **69.5%** |
-| first correct answer at rank | **~2** (MRR 0.495) |
-| precision@10 | 18.7%, against a 39.7% ceiling |
+| curated citations found | **75.9%** |
+| first correct answer at rank | **~2** (MRR 0.516) |
+| precision@10 | 19.5%, against a 39.7% ceiling |
 
 Of the citations missed, about a fifth are suttas containing no word of the topic in either language
 — unreachable by text search of any kind. Every constant in Matching and Ranking was chosen by this
@@ -277,8 +302,6 @@ disk outside it, and the golden query set above is what ships.
   expansion narrows this; it does not close it.
 - **Broad queries are broad.** "suffering" is in 819 suttas. The cap and the ranking are what make
   that usable; there is no filtering by collection.
-- **No stopword list.** "is", "of" and "the" are required words like any other, so `mind is
-  luminous` is scored partly on "is".
 - **No stemming on the English side** beyond plurals. "arise" does not find "arising", and
   "friendship" does not find "friend".
 - **No typo tolerance.** With 13,523 word types a Levenshtein pass over the vocabulary on a

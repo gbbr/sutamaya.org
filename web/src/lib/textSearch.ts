@@ -79,6 +79,23 @@ function englishPhraseRe(words: string[]): RegExp {
   return new RegExp(`${BEFORE}${words.map(englishBody).join('\\s+')}${AFTER}`, 'giu');
 }
 
+// English function words, dropped from a query's required words and from its occurrence count.
+// "not" and "no" are deliberately absent — they are the whole of "not-self".
+const STOPWORDS = new Set([
+  'a', 'an', 'and', 'are', 'as', 'at', 'be', 'been', 'but', 'by', 'for', 'from', 'had', 'has',
+  'have', 'he', 'her', 'him', 'his', 'i', 'in', 'into', 'is', 'it', 'its', 'me', 'my', 'of', 'on',
+  'or', 'our', 'she', 'that', 'the', 'their', 'them', 'then', 'there', 'these', 'they', 'this',
+  'those', 'to', 'was', 'we', 'were', 'what', 'when', 'which', 'who', 'whom', 'will', 'with',
+  'you', 'your',
+]);
+
+// The words of `words` a sutta must carry, and whose occurrences order it — the whole query when
+// it holds nothing but function words, so `the` still searches for "the".
+function contentWords(words: string[]): string[] {
+  const kept = words.filter((w) => !STOPWORDS.has(w));
+  return kept.length ? kept : words;
+}
+
 // Shortest prefix that may match Pali as a prefix. Below it a query is too broad to be useful —
 // "sa" is in 3,770 suttas — so short words match whole instead, which keeps "ko" and "na" working.
 const PALI_PREFIX_MIN = 4;
@@ -291,26 +308,31 @@ export function searchSuttaText(index: TextIndex, query: string): Map<string, Te
   if (!q) return out;
   const words = q.split(/\s+/);
   const multi = words.length > 1;
+  // Function words are dropped from the required words, but not from the phrase: "mind is
+  // luminous" is scored on "mind" and "luminous", and still ranks the sutta saying it as typed
+  // above them.
+  const content = contentWords(words);
 
   const en = scoreLanguage(
     index.en,
     index.enStarts,
     index.enParas,
-    words.map(englishWordRe),
+    content.map(englishWordRe),
     multi ? englishPhraseRe(words) : null
   );
   const pa = scoreLanguage(
     index.pa,
     index.paStarts,
     index.paParas,
-    words.map(paliWordRe),
+    content.map(paliWordRe),
     multi ? paliPhraseRe(words) : null
   );
   // The corpus writes compounds joined — "mahākassapa", never "mahā kassapa" — so a multi-word
   // query is scanned again as one Pali word, which is the only way that sutta is found at all.
-  const joined = multi
-    ? scoreLanguage(index.pa, index.paStarts, index.paParas, [paliWordRe(words.join(''))], null)
-    : null;
+  const joined =
+    content.length > 1
+      ? scoreLanguage(index.pa, index.paStarts, index.paParas, [paliWordRe(content.join(''))], null)
+      : null;
 
   for (const [si, score] of en) out.set(index.uids[si], { ...score, lang: 'en', query: q });
   for (const pass of joined ? [pa, joined] : [pa]) {
@@ -361,10 +383,10 @@ function segmentAt(blob: string, suttaStart: number, paras: number[], para: numb
   return Math.max(0, lines - (para - slotOf(paras, suttaStart) + 1));
 }
 
-// Where in `text` the snippet should centre: the phrase as typed if it is there, else the query's
-// rarest word — never simply the earliest word, because "the" and "of" are in every opening line
-// and would pin every snippet to the top of the paragraph. 0 when nothing is found, as happens on
-// the English line paired with a Pali hit.
+// Where in `text` the snippet should centre: the phrase as typed if it is there, else the rarest
+// of the query's content words — never simply the earliest word matched, which would pin every
+// snippet to the top of the paragraph. 0 when nothing is found, as happens on the English line
+// paired with a Pali hit.
 function firstMatch(text: string, query: string, lang: 'en' | 'pa'): number {
   const words = query.split(/\s+/);
   const wordRe = (w: string) => (lang === 'en' ? englishWordRe(w) : paliWordRe(w));
@@ -376,7 +398,7 @@ function firstMatch(text: string, query: string, lang: 'en' | 'pa'): number {
 
   let at = 0;
   let rarest = Infinity;
-  for (const word of words) {
+  for (const word of contentWords(words)) {
     const hits = offsetsOf(text, wordRe(word));
     if (hits.length && hits.length < rarest) {
       rarest = hits.length;

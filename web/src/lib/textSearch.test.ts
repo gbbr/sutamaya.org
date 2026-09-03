@@ -106,14 +106,28 @@ describe('searchSuttaText — ranking', () => {
 
   it('counts the query\'s rarest word, not the sum of all of them', () => {
     const Y = index([
-      // "is" many times over, "radiant" once.
-      { uid: 'long', paras: one([['this is a thing and it is a thing and it is radiant', '']]) },
+      // "thing" three times over, "radiant" once.
+      { uid: 'long', paras: one([['a thing and a thing and a thing that is radiant', '']]) },
       // Both words twice.
-      { uid: 'apt', paras: one([['the mind is radiant, is radiant indeed', '']]) },
+      { uid: 'apt', paras: one([['a radiant thing, a radiant thing', '']]) },
     ]);
-    const hits = searchSuttaText(Y, 'is radiant');
+    const hits = searchSuttaText(Y, 'thing radiant');
     expect(hits.get('long')?.count).toBe(1);
     expect(hits.get('apt')?.count).toBe(2);
+  });
+
+  it('drops function words from the required words and from the count', () => {
+    const Y = index([
+      { uid: 'a', paras: one([['This mind, bhikkhus, is radiant.', '']]) },
+      { uid: 'b', paras: one([['It is what it is, and that is that.', '']]) },
+    ]);
+    const hits = searchSuttaText(Y, 'mind is radiant');
+    // "is" is neither required nor counted, so the sutta full of it is not a hit and the one
+    // that answers the query is scored on "mind" and "radiant".
+    expect(hits.has('b')).toBe(false);
+    expect(hits.get('a')?.count).toBe(1);
+    // A query with nothing else in it still searches for the function words themselves.
+    expect(searchSuttaText(Y, 'is that').has('b')).toBe(true);
   });
 
   it('does not run a phrase across a paragraph or a sutta boundary', () => {
