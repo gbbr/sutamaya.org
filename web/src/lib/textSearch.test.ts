@@ -1,0 +1,192 @@
+// The matching, ranking and snippet rules of lib/textSearch.ts, over a blob built by hand.
+//
+// The golden query set (searchGolden.test.ts) runs the same code against the real corpus and says
+// whether the results are good; these say which rule broke when they stop being good.
+import { describe, expect, it } from 'vitest';
+import {
+  buildTextIndex,
+  searchSuttaText,
+  snippetOf,
+  RANK_TEXT_PHRASE,
+  RANK_TEXT_PARAGRAPH,
+  RANK_TEXT_ANYWHERE,
+  type SearchMap,
+} from './textSearch';
+
+const MARK = '\x1e';
+
+// Builds the two blobs the way scripts/build-corpus.mjs does: a marker line opening each sutta and
+// each paragraph, one line per segment, the two languages line-aligned.
+function index(docs: Array<{ uid: string; paras: Array<Array<[string, string]>> }>) {
+  const en: string[] = [];
+  const pa: string[] = [];
+  const map: SearchMap = [];
+  let enChars = 0;
+  let paChars = 0;
+  const push = (e: string, p: string) => {
+    en.push(e);
+    pa.push(p);
+    enChars += e.length + 1;
+    paChars += p.length + 1;
+  };
+  for (const doc of docs) {
+    map.push([doc.uid, enChars, paChars]);
+    push(MARK, MARK);
+    doc.paras.forEach((para, i) => {
+      if (i > 0) push(MARK, MARK);
+      for (const [e, p] of para) push(e, p);
+    });
+  }
+  return buildTextIndex(en.join('\n'), pa.join('\n'), map);
+}
+
+const one = (segs: Array<[string, string]>) => [segs];
+
+describe('searchSuttaText — matching', () => {
+  it('matches an English word whole, and through its plural', () => {
+    const X = index([{ uid: 'a', paras: one([['The noble truth of suffering.', '']]) }]);
+    expect(searchSuttaText(X, 'truths').has('a')).toBe(true);
+    expect(searchSuttaText(X, 'truth').has('a')).toBe(true);
+    // Whole words only: "nob" is not a word of it.
+    expect(searchSuttaText(X, 'nob').has('a')).toBe(false);
+  });
+
+  it('folds diacritics and the curly apostrophe out of the query', () => {
+    const X = index([{ uid: 'a', paras: one([['The elephant’s footprint.', 'nibbānaṁ paramaṁ']]) }]);
+    expect(searchSuttaText(X, "elephant's footprint").has('a')).toBe(true);
+    expect(searchSuttaText(X, 'nibbana').has('a')).toBe(true);
+  });
+
+  it('matches Pali as a prefix, so a headword finds its inflections', () => {
+    const X = index([{ uid: 'a', paras: one([['', 'satipaṭṭhānaṁ bhāveti']]) }]);
+    expect(searchSuttaText(X, 'satipatthana').has('a')).toBe(true);
+    // Below four characters a prefix is too broad, so short words match whole.
+    const Y = index([{ uid: 'b', paras: one([['', 'nadī gacchati']]) }]);
+    expect(searchSuttaText(Y, 'na').has('b')).toBe(false);
+  });
+
+  it('does not treat a Pali letter as a word boundary', () => {
+    const X = index([{ uid: 'a', paras: one([['', 'mahānibbāna']]) }]);
+    expect(searchSuttaText(X, 'nibbana').has('a')).toBe(false);
+  });
+
+  it('strips an English plural a reader typed onto a Pali word', () => {
+    const X = index([{ uid: 'a', paras: one([['', 'arahanto vuccanti']]) }]);
+    expect(searchSuttaText(X, 'arahants').has('a')).toBe(true);
+  });
+
+  it('probes the space-joined form of a Pali compound', () => {
+    const X = index([{ uid: 'a', paras: one([['', 'mahākassapassa thero']]) }]);
+    expect(searchSuttaText(X, 'maha kassapa').has('a')).toBe(true);
+  });
+
+  it('requires every word of the query', () => {
+    const X = index([{ uid: 'a', paras: one([['Only mindfulness here.', '']]) }]);
+    expect(searchSuttaText(X, 'mindfulness breathing').has('a')).toBe(false);
+  });
+});
+
+describe('searchSuttaText — ranking', () => {
+  const X = index([
+    // The phrase as typed.
+    { uid: 'phrase', paras: one([['a lump of foam drifting', '']]) },
+    // Both words, one paragraph, not adjacent.
+    { uid: 'para', paras: one([['a lump of drifting sea foam', '']]) },
+    // Both words, different paragraphs.
+    { uid: 'apart', paras: [[['a lump of clay', '']], [['sea foam', '']]] },
+  ]);
+
+  it('ranks the phrase, then the paragraph, then anywhere in the sutta', () => {
+    const hits = searchSuttaText(X, 'lump foam');
+    expect(hits.get('phrase')?.bucket).toBe(RANK_TEXT_PARAGRAPH);
+    expect(hits.get('para')?.bucket).toBe(RANK_TEXT_PARAGRAPH);
+    expect(hits.get('apart')?.bucket).toBe(RANK_TEXT_ANYWHERE);
+    expect(searchSuttaText(X, 'lump of foam').get('phrase')?.bucket).toBe(RANK_TEXT_PHRASE);
+  });
+
+  it('counts the query\'s rarest word, not the sum of all of them', () => {
+    const Y = index([
+      // "is" many times over, "radiant" once.
+      { uid: 'long', paras: one([['this is a thing and it is a thing and it is radiant', '']]) },
+      // Both words twice.
+      { uid: 'apt', paras: one([['the mind is radiant, is radiant indeed', '']]) },
+    ]);
+    const hits = searchSuttaText(Y, 'is radiant');
+    expect(hits.get('long')?.count).toBe(1);
+    expect(hits.get('apt')?.count).toBe(2);
+  });
+
+  it('does not run a phrase across a paragraph or a sutta boundary', () => {
+    const Y = index([
+      { uid: 'a', paras: [[['ending in lump', '']], [['foam opening', '']]] },
+      { uid: 'b', paras: one([['lump', '']]) },
+      { uid: 'c', paras: one([['foam', '']]) },
+    ]);
+    expect(searchSuttaText(Y, 'lump foam').get('a')?.bucket).toBe(RANK_TEXT_ANYWHERE);
+    expect(searchSuttaText(Y, 'lump foam').has('b')).toBe(false);
+  });
+});
+
+describe('snippetOf', () => {
+  const X = index([
+    {
+      uid: 'a',
+      paras: [
+        [['A first paragraph.', 'paṭhamo']],
+        [
+          ['The mind is radiant.', 'pabhassaraṁ cittaṁ'],
+          ['So it is said.', 'iti vuccati'],
+        ],
+      ],
+    },
+  ]);
+
+  it('returns the paragraph the query was found in, its segments run together', () => {
+    const score = searchSuttaText(X, 'radiant').get('a')!;
+    expect(snippetOf(X, score)).toEqual({ text: 'The mind is radiant. So it is said.' });
+  });
+
+  it('gives a Pali hit its English underneath', () => {
+    const score = searchSuttaText(X, 'pabhassara').get('a')!;
+    expect(snippetOf(X, score)).toEqual({
+      text: 'pabhassaraṁ cittaṁ iti vuccati',
+      under: 'The mind is radiant. So it is said.',
+    });
+  });
+
+  it('windows a long paragraph around the match, so the marked word is inside the clamp', () => {
+    const filler = 'and so it went on at some length. '.repeat(30);
+    const Y = index([{ uid: 'a', paras: one([[`${filler}Then a radiant thing. ${filler}`, '']]) }]);
+    const snippet = snippetOf(Y, searchSuttaText(Y, 'radiant').get('a')!)!;
+    expect(snippet.text).toContain('radiant');
+    expect(snippet.text.length).toBeLessThan(260);
+    expect(snippet.text.startsWith('…')).toBe(true);
+    expect(snippet.text.endsWith('…')).toBe(true);
+  });
+
+  it('centres on the phrase, not on a common word that opens the paragraph', () => {
+    // "the" is in the first line and in every line; the phrase is far down it.
+    const filler = 'and the thing and the other thing. '.repeat(30);
+    const Y = index([{ uid: 'a', paras: one([[`${filler}The fires of greed. ${filler}`, '']]) }]);
+    const snippet = snippetOf(Y, searchSuttaText(Y, 'the fires of greed').get('a')!)!;
+    expect(snippet.text).toContain('fires of greed');
+  });
+
+  it('centres on the rarest word when the phrase is not there as typed', () => {
+    const filler = 'and the thing and the other thing. '.repeat(30);
+    const Y = index([{ uid: 'a', paras: one([[`${filler}A greed of sorts. ${filler}`, '']]) }]);
+    const snippet = snippetOf(Y, searchSuttaText(Y, 'the greed').get('a')!)!;
+    expect(snippet.text).toContain('greed');
+  });
+
+  it('picks the paragraph holding the most of the query\'s words', () => {
+    const Y = index([
+      {
+        uid: 'a',
+        paras: [[['mind alone', '']], [['a radiant mind', '']]],
+      },
+    ]);
+    const score = searchSuttaText(Y, 'radiant mind').get('a')!;
+    expect(snippetOf(Y, score)?.text).toBe('a radiant mind');
+  });
+});

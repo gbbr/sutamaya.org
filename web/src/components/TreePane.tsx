@@ -16,12 +16,12 @@ import {
   descendantIdsOf,
   findNode,
   flatSuttaOrder,
-  SEARCH_NO_MATCHES,
   SEARCH_PLACEHOLDER,
   SEARCH_RESULTS_CAP,
   type ListHit,
   type SearchHit,
 } from '../lib/corpus';
+import { beginTextSearchLoad, searchNoMatches, type TextSearchStatus } from '../lib/textSearch';
 import { ancestorsOfList, flattenListTree, suttaRowMeta } from '../lib/lists';
 import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
 import { derivePaneViewSync } from '../lib/paneView';
@@ -89,6 +89,8 @@ interface TreePaneProps {
   // The list hits, already trimmed to what renders, so both panes agree on which rows exist.
   listHits: ListHit[];
   listHitTotal: number;
+  // Whether the sutta text is searchable yet, which is all the empty state says about it.
+  textStatus: TextSearchStatus;
   listsExpanded: boolean;
   onToggleListsExpanded: () => void;
   // Reports the arrow-key cursor's row, so ListPane can mirror it on desktop.
@@ -118,6 +120,7 @@ export function TreePane({
   hits,
   listHits,
   listHitTotal,
+  textStatus,
   listsExpanded,
   onToggleListsExpanded,
   onActiveHitChange,
@@ -623,6 +626,9 @@ export function TreePane({
                   closeSearch();
                 }
               }}
+              // The search text is fetched on the first focus of a search field, so it is usually
+              // there by the time anything has been typed.
+              onFocus={() => beginTextSearchLoad(corpus)}
               placeholder={SEARCH_PLACEHOLDER}
               className="w-full h-[38px] border border-ink/[.22] rounded-field pl-3 pr-8 bg-field text-ui-md outline-none"
               autoComplete="off"
@@ -711,7 +717,7 @@ export function TreePane({
                 the blurb this narrower column leaves out. */}
             {mobile && (
               <>
-                {displayHits.map(({ id, sutta }, i) => {
+                {displayHits.map(({ id, sutta, snippet }, i) => {
                   const note = notes[id];
                   const { chips, hlCount, hlColors } = searchRowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
                   // This row's place in the shared column, past the lists block above it.
@@ -734,10 +740,31 @@ export function TreePane({
                       <span className="font-serif text-ui-base italic text-accent-text">
                         <MatchedText text={sutta.pali} query={query} />
                       </span>
-                      {note && (
-                        <span className="block font-serif text-ui-md leading-[1.4] mt-[6px] pl-[10px] border-l-2 border-ink/30 whitespace-pre-wrap">
-                          <MatchedText text={note} query={query} notation />
+                      {snippet ? (
+                        // Quoted from the sutta: a left rule, which is what marks the sutta's own
+                        // words apart from anything written about it.
+                        <span className="block font-serif text-ui-md leading-[1.45] mt-[6px] pl-[10px] border-l-2 border-ink/25 text-ink-2">
+                          <span className={`block line-clamp-2 ${snippet.under ? 'italic text-accent-text' : ''}`}>
+                            <MatchedText text={snippet.text} query={query} />
+                          </span>
+                          {snippet.under && (
+                            <span className="block line-clamp-2 mt-[3px]">
+                              <MatchedText text={snippet.under} query={query} />
+                            </span>
+                          )}
                         </span>
+                      ) : (
+                        note && (
+                          // An em dash rather than a quote rule marks this as the reader's own note.
+                          <span className="flex gap-[7px] font-serif text-ui-md leading-[1.4] mt-[6px] text-ink-2">
+                            <span aria-hidden className="flex-none text-ink-3">
+                              —
+                            </span>
+                            <span className="whitespace-pre-wrap">
+                              <MatchedText text={note} query={query} notation />
+                            </span>
+                          </span>
+                        )
                       )}
                       <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} />
                     </button>
@@ -745,7 +772,7 @@ export function TreePane({
                 })}
                 {hits.length === 0 && listHitTotal === 0 && (
                   <div className="font-sans text-center text-ui-base text-ink-4 py-[30px] px-5 text-balance">
-                    {SEARCH_NO_MATCHES}
+                    {searchNoMatches(textStatus)}
                   </div>
                 )}
               </>

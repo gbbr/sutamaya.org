@@ -39,6 +39,7 @@ const SUJATO = path.join(DATA, 'sujato.post');
 const OUT = process.env.CORPUS_OUT || path.join(ROOT, 'web', 'public', 'data');
 const OUT_TEXT = path.join(OUT, 'text');
 const OUT_SHARDS = path.join(OUT, 'text-shards');
+const OUT_SEARCH = path.join(OUT, 'search');
 
 function readJSON(p) {
   return JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -147,6 +148,7 @@ function blurbIndexFor(collection) {
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(OUT_TEXT, { recursive: true });
 fs.mkdirSync(OUT_SHARDS, { recursive: true });
+fs.mkdirSync(OUT_SEARCH, { recursive: true });
 
 const suttas = {};
 let leafCount = 0;
@@ -185,6 +187,56 @@ function flushShard() {
   shardBufBytes = 0;
 }
 
+// Full-text search reads two line-per-segment blobs of the whole canon rather than an index — see
+// docs/search.md. Both languages carry the same lines in the same order, so an offset in one
+// addresses the same segment in the other, and `searchMap` resolves an offset to its sutta.
+//
+// A line holding only PARA_MARK opens each paragraph, and each sutta. It is what the ranking's
+// "every word in one paragraph" bucket counts, and being neither a letter nor whitespace it also
+// stops a phrase match running across a paragraph or a sutta boundary.
+const PARA_MARK = '\x1e';
+const searchEnLines = [];
+const searchPaLines = [];
+const searchMap = [];
+let searchEnChars = 0;
+let searchPaChars = 0;
+
+// Appends one line to each blob, keeping the two aligned. Offsets are UTF-16 code units, which is
+// how the client indexes the string it downloads.
+function pushSearchLine(en, pa) {
+  searchEnLines.push(en);
+  searchPaLines.push(pa);
+  searchEnChars += en.length + 1;
+  searchPaChars += pa.length + 1;
+}
+
+// A line's own separators would break the line-per-segment structure the offsets rely on.
+function searchLine(s) {
+  return s.replace(/[\r\n\x1e]+/g, ' ');
+}
+
+// The paragraph a segment key names — the middle field, so "mn10:2.1" is paragraph "2".
+function paragraphOf(key) {
+  const afterColon = key.slice(key.indexOf(':') + 1);
+  const dot = afterColon.indexOf('.');
+  return dot === -1 ? afterColon : afterColon.slice(0, dot);
+}
+
+// Adds one sutta's segments to the search blobs, and records where it starts in each.
+function addToSearchBlobs(uid, segs) {
+  searchMap.push([uid, searchEnChars, searchPaChars]);
+  pushSearchLine(PARA_MARK, PARA_MARK);
+  let para = segs.length ? paragraphOf(segs[0].key) : null;
+  for (const seg of segs) {
+    const p = paragraphOf(seg.key);
+    if (p !== para) {
+      pushSearchLine(PARA_MARK, PARA_MARK);
+      para = p;
+    }
+    pushSearchLine(searchLine(seg.en || ''), searchLine(seg.pali || ''));
+  }
+}
+
 function buildLeaf(uid, nodeId, collection) {
   const names = nameIndexFor(collection);
   const blurbs = blurbIndexFor(collection);
@@ -216,6 +268,7 @@ function buildLeaf(uid, nodeId, collection) {
   );
   fs.writeFileSync(path.join(OUT_TEXT, `${uid}.json`), segsJson);
   textDigests.set(uid, sha256(segsJson));
+  addToSearchBlobs(uid, segs);
 
   shardBuf.push([uid, segsJson]);
   shardBufBytes += Buffer.byteLength(segsJson);
@@ -527,6 +580,21 @@ const dataVersion = sha256(
     .join('\n')
 );
 const dictionaryVersion = sha256(dpdJson);
+
+// --- Search blobs. Named with dataVersion so they can be cached and never revalidated: one file
+// per corpus means a corrected sutta arrives as a new URL rather than as a stale hit.
+step('Writing the search text…');
+{
+  const en = searchEnLines.join('\n');
+  const pa = searchPaLines.join('\n');
+  fs.writeFileSync(path.join(OUT_SEARCH, `en.${dataVersion}.txt`), en);
+  fs.writeFileSync(path.join(OUT_SEARCH, `pa.${dataVersion}.txt`), pa);
+  fs.writeFileSync(path.join(OUT_SEARCH, `map.${dataVersion}.json`), JSON.stringify(searchMap));
+  detail(
+    `${searchMap.length} suttas, ${searchEnLines.length} lines — ` +
+      `en ${(en.length / 1e6).toFixed(1)} MB, pali ${(pa.length / 1e6).toFixed(1)} MB`
+  );
+}
 
 step('Writing the corpus…');
 fs.writeFileSync(
