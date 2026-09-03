@@ -1,11 +1,17 @@
 # Full-text search
 
-**Status: specified, not built.** What ships today is `searchCorpus()` in `web/src/lib/corpus.ts`,
-which reads sutta numbers, titles, Pali titles, group descriptions, the reader's own notes and their
-list names — everything *about* a sutta and nothing *in* it. `SEARCH_SCOPE_NOTE` says so on screen.
+The reader types a word or a phrase and finds the suttas that contain it, in either language,
+offline. It extends `searchCorpus()` in `web/src/lib/corpus.ts`, which reads everything *about* a
+sutta — numbers, titles, Pali titles, group descriptions, the reader's own notes and list names —
+with the text *in* it.
 
-This document specifies the addition: the reader types a word or a phrase and finds the suttas that
-contain it, in either language, offline.
+```
+web/src/lib/textSearch.ts         matching, ranking, snippets, and the lazy load of the text
+web/src/lib/searchExpansion.ts    the query-expansion table
+web/src/lib/textSearch.test.ts    the matching, ranking and snippet rules, over a hand-built blob
+web/src/lib/searchGolden.test.ts  the golden query set, run against a real corpus build
+scripts/build-corpus.mjs          writes the three files the search reads
+```
 
 ## Scale
 
@@ -16,10 +22,10 @@ The corpus is small enough that the conventional apparatus is unnecessary. Measu
 |---|---|
 | suttas | 4,041 |
 | segments | 125,439 · median 8 words |
-| English text | 8.5 MB raw · **830 KB brotli** |
-| Pali text | 10.2 MB raw · **920 KB brotli** |
+| English blob | 8.8 MB raw · **856 KB brotli** |
+| Pali blob | 10.7 MB raw · **938 KB brotli** |
 | distinct English word types | 13,523 |
-| scanning all English for a phrase | **2–10 ms** |
+| one keystroke, expansions included | **8–80 ms** |
 
 A brute-force scan of the whole canon is faster than a keystroke, so there is no index, no stemmer,
 no stored statistics and nothing to keep in step with the corpus build. **The text is the index.**
@@ -32,16 +38,19 @@ Three files, written by `scripts/build-corpus.mjs` from the segments it already 
 ```
 web/public/data/search/en.<dataVersion>.txt     segment strings, "\n"-joined, canonical sutta order
 web/public/data/search/pa.<dataVersion>.txt     the same segments' Pali
-web/public/data/search/map.<dataVersion>.json   [[uid, charOffset], …] — one entry per sutta
+web/public/data/search/map.<dataVersion>.json   [[uid, enOffset, paOffset], …] — one entry per sutta
 ```
 
-Plain UTF-8, served compressed. Both languages carry one line per segment in the same order, so an
-offset in one file addresses the same segment in the other.
+Plain UTF-8, served compressed. Both languages carry one line per segment in the same order, so a
+line number in one file addresses the same segment in the other. **Offsets are per language**: the
+two blobs hold the same lines at different lengths, so one number cannot address both.
 
-`map` is ~4,000 entries (~20 KB brotli). A match at character offset *N* resolves by binary search
-to the sutta whose range contains it; counting newlines from that sutta's start gives the segment
-index, which indexes the array already loaded from `text/{uid}.json` to produce the segment `key`
-for a deep link.
+**A line holding only `\x1e` opens each paragraph, and each sutta.** It is what the "every word in
+one paragraph" bucket counts, and being neither a letter nor whitespace it is also what stops a
+phrase match running from the end of one paragraph into the next, or out of one sutta into another.
+
+`map` is ~4,000 entries (37 KB brotli). A match at character offset *N* resolves by binary search to
+the sutta whose range contains it, and to the paragraph opened by the last marker before it.
 
 **The filename carries `dataVersion`.** One file per corpus means versioning costs one URL, so these
 can be `CacheFirst` and never go stale — the per-document staleness described in CLAUDE.md's "A
@@ -49,18 +58,22 @@ corpus fix reaches a cached device one document at a time" does not apply here.
 
 ## Matching
 
-The query is folded with the existing `searchKey()` — NFD, combining marks stripped, lowercased —
-then compiled to a regular expression run against the **unfolded** text. One copy of the text stays
-in memory (~16 MB per language) and match offsets are exact, which a parallel folded copy would not
-guarantee.
+The query is folded with the existing `searchKey()` — NFD, combining marks stripped, the curly
+apostrophe folded to the straight one, lowercased — then compiled to a regular expression run
+against the **unfolded** text. One copy of the text stays in memory and match offsets are exact,
+which a parallel folded copy would not guarantee.
 
 Folding is inverted per character when the expression is built, so a typed ASCII letter matches its
 Pali forms. Regex metacharacters in the query are escaped first.
 
 ```
 a → [aā]   i → [iī]   u → [uū]   m → [mṁṃ]
-n → [nñṅṇ] t → [tṭ]   d → [dḍ]   l → [lḷ]
+n → [nñṅṇ] t → [tṭ]   d → [dḍ]   l → [lḷ]   ' → ['‘’]
 ```
+
+The apostrophe belongs there because the corpus writes `’` and a keyboard types `'`: without it
+`elephant's footprint` misses the sutta titled with it. The fold is one character for one, so the
+offsets `lib/searchMatch.ts` paints its highlights at stay aligned.
 
 **Word boundaries are `(?<!\p{L})` and `(?!\p{L})` with the `u` flag, never `\b`.** JavaScript's `\b`
 is ASCII-only, so it treats `ā` as a non-word character and would match "nibbāna" inside
@@ -68,8 +81,10 @@ is ASCII-only, so it treats `ā` as a non-word character and would match "nibbā
 
 ### English
 
-Whole words, with an optional trailing `(?:s|es)?`. Without the plural, `four noble truths` misses
-"the noble truth of…" and the results look plainly broken.
+Whole words. A trailing `s` is stripped from the query word and an optional `(?:s|es)?` added back,
+so the query and the text may each be singular or plural: `four noble truths` finds "the noble truth
+of…", and `truth` finds "the noble truths". Stripping only on one side leaves half the queries
+looking plainly broken.
 
 ### Pali
 
@@ -89,8 +104,10 @@ Three rules follow from that:
 - **Strip a trailing English plural** (5+ characters ending in `s`) before prefix matching. Readers
   type English plurals of Pali words: `arahants` matches nothing against *arahanto*, and finding 102
   suttas instead of 0 costs one `slice`.
-- **Probe the space-joined form too** for a multi-word query. The corpus writes Pali compounds
-  joined — *mahākassapa*, never "mahā kassapa" — so `Maha Kassapa` otherwise finds nothing.
+- **Scan the space-joined form as its own query** when more than one word was typed. The corpus
+  writes Pali compounds joined — *mahākassapa*, never "mahā kassapa" — and the parts of a compound
+  are not words in their own right, so requiring each of them separately finds nothing. The joined
+  form has to be a scan of its own, not an alternative inside the phrase pattern.
 
 **Searching the Pali is not optional.** The editorial layer moved the English away from the words
 readers type: `nibbana`, `karma` and `absorption` match no English at all, and `concentration`
@@ -117,17 +134,26 @@ keep their order and their meaning:
 6  every word of the query, anywhere in the sutta
 ```
 
-A paragraph is the segment key's middle field — `mn10:2.1` is paragraph 2. Segments are clause-level
-(median 8 words), far too fine to require both query words inside one; the paragraph is the unit a
-reader sees as a block.
+A paragraph is what the build's markers delimit, taken from the segment key's middle field —
+`mn10:2.1` is paragraph 2. Segments are clause-level (median 8 words), far too fine to require both
+query words inside one; the paragraph is the unit a reader sees as a block.
 
-**Within every bucket, sort by raw occurrence count in the sutta text**, then the existing `saved`
-tie-break. No length normalisation: measured against a curated topic index, plain occurrence count
-beats `1/√length` and every BM25 setting swept, on both precision@10 and MRR. Length-normalised
-scores promote short stock passages — a 40-word verse above the sutta that discusses the subject.
+**It is a coarse unit, and for some suttas no unit at all.** The median sutta has 3 paragraphs of 6
+segments, but **29% of suttas are a single paragraph** — SN 35.28 numbers its every segment `1.n`,
+so the whole fire sermon is paragraph 1. For those, bucket 5 collapses into bucket 6 and only the
+phrase distinguishes anything. Nothing in the source data marks a finer division.
 
-The occurrence count is what orders suttas that share a title: four are titled "Right View", and it
-is the count that puts MN 9 first.
+**Within every bucket, sort by how often the query's rarest word occurs in the sutta** — the
+smallest of the per-word counts, not their sum — then the existing `saved` tie-break. The minimum is
+what makes a sutta carry every word of the query rather than many of its commonest one: summed,
+`mind is radiant` puts DN 1 first on 221 occurrences of "is".
+
+No length normalisation: measured against a curated topic index, the plain count beats `1/√length`
+and every BM25 setting swept, on both precision@10 and MRR. Length-normalised scores promote short
+stock passages — a 40-word verse above the sutta that discusses the subject.
+
+The count is also what orders suttas that share a title: four are titled "Right View", and it is the
+count that puts MN 9 first.
 
 `SEARCH_RESULTS_CAP` is unchanged.
 
@@ -157,8 +183,12 @@ honeyball       → The Honey-Cake       ant-hill        → The Ant-Hill
 ```
 
 These are how readers name suttas to each other, and without them the queries return nothing at all
-rather than something imperfect. A few hundred entries between the two kinds, hand-written and
-reviewable.
+rather than something imperfect.
+
+The table is hand-written and reviewable in `web/src/lib/searchExpansion.ts`. One query adds at most
+`MAX_EXPANSIONS` alternatives, because each one costs a scan of both blobs and past a handful the
+results stop being about what was typed. The table is short of the few hundred entries the two kinds
+deserve; adding to it is what moves the golden set's pending queries.
 
 ## Golden query set
 
@@ -168,13 +198,35 @@ Pali terms, and the vocabulary cases that fail until query expansion exists (mar
 the measure of whether that table is working). Expectations are drawn from the canon and from this
 corpus's own titles, so the file depends on nothing outside the repo.
 
-Run it against any change to Matching, Ranking or Query expansion.
+`web/src/lib/searchGolden.test.ts` runs it as part of `npm test`, against a corpus built into a
+temporary directory rather than a fixture, since a fixture tree cannot catch a ranking regression.
+Queries split in two: most must put an expected sutta in the top five or the suite fails, and the
+rest are **pending** — the file's own `known_gap` entries plus the test's `UNMET` list, which the
+ranking as specified does not reach. Pending queries are reported rather than asserted one by one,
+but every one that *is* reached today is held, so slipping back still fails.
 
 ## Snippets
 
-The snippet is the paragraph containing the most distinct query words; earliest wins ties, so a
-one-word query gets the first occurrence. Because the two blobs are line-aligned, a Pali hit can show
-the Pali line and its English underneath.
+A hit found in the text shows the paragraph it was found in, in place of the group description a
+metadata hit shows. It is the paragraph containing the most of the query's distinct words; the
+earliest wins ties, so a one-word query gets the first occurrence.
+
+**The paragraph is windowed around the match**, broken on spaces and elided at each trimmed end. A
+paragraph is often the whole sutta (see Ranking) and the row clamps to three lines, so without the
+window the reader is shown the opening line of every result with nothing marked in it.
+
+The window centres on **the phrase as typed, or failing that the query's rarest word** — never
+simply the earliest word matched. `the` and `of` are in every opening line, so centring on the
+earliest pins every snippet to the top of the paragraph, which is the bug the window exists to
+avoid.
+
+Because the two blobs are line-aligned, a hit found in the Pali shows the Pali paragraph with that
+paragraph's English underneath it. A hit found in the English shows English alone.
+
+Snippets are cut for the first `SEARCH_RESULTS_CAP` hits only, which is every row that renders — a
+broad query matches thousands of suttas and the cap is what is drawn. A metadata-only hit has no
+snippet and keeps the description; so does every hit while the text is still loading, or if it never
+arrives.
 
 ## Late, or never
 
@@ -186,7 +238,8 @@ and every stage below is a valid resting state:
 - **When it lands.** Text hits append below the metadata hits. Cached from then on.
 - **If it never arrives** — offline, never fetched, fetch failed — that line becomes the existing
   `SEARCH_SCOPE_NOTE`. The feature degrades to today's behaviour, labelled honestly, with no error
-  state and nothing blocked.
+  state and nothing blocked. A failed fetch is not remembered, so the next search tries again and a
+  reader who searched offline gets the text as soon as they are back.
 
 Bucket membership never changes when the text arrives, so no result moves between buckets; order
 *within* the metadata buckets refines once occurrence counts are available.
@@ -197,12 +250,12 @@ Bucket membership never changes when the text arrives, so no result moves betwee
 ## Measured baseline
 
 Replaying 16,467 topic-to-sutta citations from a curated index of this canon (in git history at
-`e6380de6^:data/cips-index.json`) against this design:
+`e6380de6^:data/cips-index.json`) through the shipped module:
 
 | | |
 |---|---|
-| curated citations found | **68.8%** |
-| first correct answer at rank | **~2** (MRR 0.500) |
+| curated citations found | **69.5%** |
+| first correct answer at rank | **~2** (MRR 0.495) |
 | precision@10 | 18.7%, against a 39.7% ceiling |
 
 Of the citations missed, about a fifth are suttas containing no word of the topic in either language
@@ -219,8 +272,28 @@ disk outside it, and the golden query set above is what ships.
   expansion narrows this; it does not close it.
 - **Broad queries are broad.** "suffering" is in 819 suttas. The cap and the ranking are what make
   that usable; there is no filtering by collection.
-- **~16 MB of memory per language while search is open**, released when it closes.
+- **No stopword list.** "is", "of" and "the" are required words like any other, so `mind is
+  luminous` is scored partly on "is".
 - **No stemming on the English side** beyond plurals. "arise" does not find "arising", and
   "friendship" does not find "friend".
 - **No typo tolerance.** With 13,523 word types a Levenshtein pass over the vocabulary on a
   zero-result query would be instant, but it is not part of this design.
+
+## What it costs the device
+
+Nothing until the reader searches; the text is fetched on the first focus of a search field.
+
+| | |
+|---|---|
+| that first fetch | **1.8 MB** compressed |
+| held in Cache Storage | **19 MB** decoded, ×2 corpus versions at `maxEntries: 6` |
+| held in memory | **34 MB**, for as long as the app is open |
+
+The two blobs are `CacheFirst` in `web/vite.config.ts` — their filenames carry `dataVersion`, so a
+corrected sutta arrives as a new URL and there is nothing to revalidate. Three entries, because only
+the current version's URLs are ever requested.
+
+**The memory is released a minute after the app goes out of sight** (`watchTextSearchIdle`, armed in
+`main.tsx`). The next search fetches again and is served from Cache Storage, so it costs a pause
+rather than a download — and an idle tab holding 34 MB is a bigger target for iOS to discard
+outright, which would cost a whole reload instead.

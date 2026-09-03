@@ -12,10 +12,10 @@ import {
   nodeBlurb,
   nodeLabel,
   SEARCH_RESULTS_CAP,
-  SEARCH_SCOPE_NOTE,
   type ListHit,
   type SearchHit,
 } from '../lib/corpus';
+import { searchScopeNote, type TextSearchStatus } from '../lib/textSearch';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
 import { MatchedText } from './MatchedText';
@@ -34,6 +34,8 @@ interface ListPaneProps {
   // The list hits, drawn as their own block above the results, already trimmed to what renders.
   listHits: ListHit[];
   listHitTotal: number;
+  // Whether the sutta text is searchable yet, which is what the line under an empty result says.
+  textStatus: TextSearchStatus;
   listsExpanded: boolean;
   onToggleListsExpanded: () => void;
   onSelectList: (nodeId: string) => void;
@@ -56,6 +58,7 @@ export function ListPane({
   hits,
   listHits,
   listHitTotal,
+  textStatus,
   listsExpanded,
   onToggleListsExpanded,
   onSelectList,
@@ -102,6 +105,14 @@ export function ListPane({
   const openTargets = useMemo(() => {
     const map = new Map<string, string>();
     for (const h of hits) if (h.matchedId) map.set(h.id, h.matchedId);
+    return map;
+  }, [hits]);
+
+  // The paragraph each hit was found in, where the query was answered by the sutta's text rather
+  // than by anything about it.
+  const snippets = useMemo(() => {
+    const map = new Map<string, NonNullable<SearchHit['snippet']>>();
+    for (const h of hits) if (h.snippet) map.set(h.id, h.snippet);
     return map;
   }, [hits]);
 
@@ -420,6 +431,7 @@ export function ListPane({
           // TreePane's arrow-key nav has active. Nothing marks the URL's `selectedId`.
           const on = searching && id === activeId;
           const note = notes[id];
+          const snippet = snippets.get(id);
           const { chips, hlCount, hlColors } = rowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
           const dragging = dragIdRef.current === id;
           const reordering = canReorder && reorderMode;
@@ -457,7 +469,20 @@ export function ListPane({
                 >
                   <MatchedText text={s.pali} query={rowQuery} />
                 </span>
-                {note ? (
+                {snippet ? (
+                  // Quoted from the sutta: a left rule, against the em dash that marks the reader's
+                  // own note. A Pali paragraph carries its English underneath, inside the one rule.
+                  <span className="block font-serif text-ui-md leading-[1.5] mt-[7px] pl-[10px] border-l-2 border-ink/25 text-ink-2">
+                    <span className={`block line-clamp-3 ${snippet.under ? 'italic text-accent-text' : ''}`}>
+                      <MatchedText text={snippet.text} query={rowQuery} />
+                    </span>
+                    {snippet.under && (
+                      <span className="block line-clamp-2 mt-[3px]">
+                        <MatchedText text={snippet.under} query={rowQuery} />
+                      </span>
+                    )}
+                  </span>
+                ) : note ? (
                   // An em dash rather than a quote rule marks this as the reader's own note.
                   <span className="flex gap-[7px] font-serif text-ui-md leading-[1.45] mt-[7px] text-ink-2">
                     <span aria-hidden className="flex-none text-ink-3">
@@ -528,8 +553,11 @@ export function ListPane({
         {items.length === 0 && !(searching && listHitTotal > 0) && (
           <div className="font-sans text-center text-ui-base text-ink-4 py-10 px-6">
             {emptyMessage()}
-            {/* What search covers, said only where a reader has just failed to find something. */}
-            {searching && <div className="mt-2 text-ui-sm text-balance">{SEARCH_SCOPE_NOTE}</div>}
+            {/* What search covers, said only where a reader has just failed to find something —
+                and nothing at all once the sutta text is in and there is nothing left to admit. */}
+            {searching && searchScopeNote(textStatus) && (
+              <div className="mt-2 text-ui-sm text-balance">{searchScopeNote(textStatus)}</div>
+            )}
           </div>
         )}
       </div>

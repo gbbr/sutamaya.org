@@ -1,4 +1,5 @@
 import { loadDictShardManifest } from './dictionaryShards';
+import { searchTextUrls } from './textSearch';
 import { OFFLINE_DATA_VERSION_KEY, OFFLINE_DICTIONARY_VERSION_KEY } from './storageKeys';
 
 // Settings' bulk offline download: the whole canon fetched as ~1MB shard bundles and unpacked into
@@ -15,6 +16,7 @@ const MANIFEST_URL = '/data/text-shards/manifest.json';
 // Worker can't find what this module writes.
 const DICTIONARY_CACHE = 'dictionary';
 const HELP_IMAGE_CACHE = 'help-images';
+const SEARCH_TEXT_CACHE = 'search-text';
 
 // Every screenshot on the help page, globbed so it can't drift from what HelpPage.tsx imports.
 const HELP_IMAGE_URLS = Object.values(
@@ -163,7 +165,36 @@ async function runShardPass(
   return { failed, circuitTripped: false };
 }
 
-// Downloads the sutta text for `uids`, one failed pass retried once.
+// Pulls the two search blobs and their map into Cache Storage, so a device that has downloaded the
+// canon can search inside it offline rather than falling back to metadata alone. Best effort: the
+// blobs are an addition to search, never a requirement, so a failure here is not reported.
+export async function prefetchSearchText(dataVersion: string, signal?: AbortSignal): Promise<boolean> {
+  if (!('caches' in window)) return false;
+  try {
+    const cache = await caches.open(SEARCH_TEXT_CACHE);
+    const results = await Promise.all(
+      searchTextUrls(dataVersion).map(async (url) => {
+        if (signal?.aborted) return false;
+        try {
+          // The URLs carry dataVersion, so a cached one can never be stale and is never refetched.
+          if (await cache.match(url)) return true;
+          const res = await fetch(url, { signal });
+          if (!res.ok) return false;
+          await cache.put(new Request(url), res);
+          return true;
+        } catch {
+          return false;
+        }
+      })
+    );
+    return results.every(Boolean);
+  } catch {
+    return false;
+  }
+}
+
+// Downloads the sutta text for `uids`, one failed pass retried once. `dataVersion` also brings the
+// search blobs down, so a downloaded canon is searchable offline as well as readable.
 export async function prefetchAllSuttas(
   uids: string[],
   opts: {
@@ -172,10 +203,13 @@ export async function prefetchAllSuttas(
     // Refetch every shard rather than skipping what is cached, overwriting each entry in place.
     force?: boolean;
     onProgress?: (doneBytes: number, totalBytes: number) => void;
+    // The corpus version whose search text to fetch alongside; omitted, none is.
+    dataVersion?: string;
   } = {}
 ): Promise<{ failed: string[]; circuitTripped: boolean }> {
-  const { concurrency = SHARD_CONCURRENCY, signal, force = false, onProgress } = opts;
+  const { concurrency = SHARD_CONCURRENCY, signal, force = false, onProgress, dataVersion } = opts;
   if (signal?.aborted) return { failed: [], circuitTripped: false };
+  const searchText = dataVersion ? prefetchSearchText(dataVersion, signal) : null;
 
   const [manifest, cache] = await Promise.all([fetchManifest(signal), caches.open(SUTTA_TEXT_CACHE)]);
   const wanted = new Set(uids);
@@ -190,11 +224,13 @@ export async function prefetchAllSuttas(
   const remaining = relevantShards.filter((s) => !shardSatisfied(s, wanted, cached));
   const first = await runShardPass(cache, remaining, concurrency, signal, onProgress, doneBytes, totalBytes);
   if (signal?.aborted || first.failed.length === 0 || first.circuitTripped) {
+    await searchText;
     return { failed: failedUidsOf(first.failed, wanted), circuitTripped: first.circuitTripped };
   }
 
   // One retry pass over whatever failed, through the same onProgress so the bar keeps moving.
   const second = await runShardPass(cache, first.failed, concurrency, signal, onProgress, doneBytes, totalBytes);
+  await searchText;
   return { failed: failedUidsOf(second.failed, wanted), circuitTripped: second.circuitTripped };
 }
 

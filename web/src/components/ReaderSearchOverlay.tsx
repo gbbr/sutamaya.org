@@ -5,7 +5,8 @@ import { useLayout } from '../context/LayoutContext';
 import { useUserData } from '../context/UserDataContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
-import { READER_SEARCH_PLACEHOLDER, SEARCH_NO_MATCHES, SEARCH_RESULTS_CAP } from '../lib/corpus';
+import { READER_SEARCH_PLACEHOLDER, SEARCH_RESULTS_CAP } from '../lib/corpus';
+import { beginTextSearchLoad, searchNoMatches } from '../lib/textSearch';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { MatchedText } from './MatchedText';
 import { SuttaRowChips } from './SuttaRowChips';
@@ -32,8 +33,14 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
   // rows under a stationary pointer, and the browser fires enter/move events for them anyway.
   const lastPointer = useRef<{ x: number; y: number } | null>(null);
 
+  // Opening this overlay is the reader's equivalent of focusing a search field, so the sutta text
+  // starts downloading before anything has been typed.
+  useEffect(() => {
+    beginTextSearchLoad(corpus);
+  }, [corpus]);
+
   // Suttas only: a list hit's only destination is the library, which is where lists surface.
-  const { hits } = useCorpusSearch(corpus, query, notes, lists, highlights);
+  const { hits, textStatus } = useCorpusSearch(corpus, query, notes, lists, highlights);
   // The rows drawn and walked by the arrow keys: the first SEARCH_RESULTS_CAP hits, the panel
   // being unvirtualized.
   const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);
@@ -212,13 +219,38 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
                 <span className="font-serif text-ui-base italic" style={{ color: theme.pali }}>
                   <MatchedText text={h.sutta.pali} query={query} theme={theme} />
                 </span>
-                {(notes[h.id] || h.sutta.blurb) && (
+                {h.snippet ? (
+                  // Quoted from the sutta: a left rule, which is what marks the sutta's own words
+                  // apart from anything written about it.
                   <span
-                    className={`text-ui-base leading-[1.45] mt-[3px] ${notes[h.id] ? 'pl-[8px] border-l-2 whitespace-pre-wrap' : 'italic'}`}
-                    style={{ color: theme.dim, borderColor: notes[h.id] ? theme.rule : undefined }}
+                    className="block font-serif text-ui-base leading-[1.45] mt-[3px] pl-[8px] border-l-2"
+                    style={{ color: theme.dim, borderColor: theme.rule }}
                   >
-                    <MatchedText text={notes[h.id] || h.sutta.blurb} query={query} theme={theme} notation={!!notes[h.id]} />
+                    <span className="block line-clamp-2" style={h.snippet.under ? { color: theme.pali } : undefined}>
+                      <MatchedText text={h.snippet.text} query={query} theme={theme} />
+                    </span>
+                    {h.snippet.under && (
+                      <span className="block line-clamp-2 mt-[2px]">
+                        <MatchedText text={h.snippet.under} query={query} theme={theme} />
+                      </span>
+                    )}
                   </span>
+                ) : notes[h.id] ? (
+                  // An em dash rather than a quote rule marks this as the reader's own note.
+                  <span className="flex gap-[7px] text-ui-base leading-[1.45] mt-[3px]" style={{ color: theme.dim }}>
+                    <span aria-hidden className="flex-none">
+                      —
+                    </span>
+                    <span className="whitespace-pre-wrap">
+                      <MatchedText text={notes[h.id]} query={query} theme={theme} notation />
+                    </span>
+                  </span>
+                ) : (
+                  h.sutta.blurb && (
+                    <span className="text-ui-base leading-[1.45] mt-[3px] italic" style={{ color: theme.dim }}>
+                      <MatchedText text={h.sutta.blurb} query={query} theme={theme} />
+                    </span>
+                  )
                 )}
                 <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} theme={theme} />
               </button>
@@ -226,7 +258,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
           })}
           {query.trim() && hits.length === 0 && (
             <div className="font-sans text-center text-ui-base py-8 px-5 text-balance" style={{ color: theme.dim }}>
-              {SEARCH_NO_MATCHES}
+              {searchNoMatches(textStatus)}
             </div>
           )}
           {!query.trim() && (

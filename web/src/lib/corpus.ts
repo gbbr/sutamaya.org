@@ -245,6 +245,13 @@ export interface SearchHit {
   matchedId?: string;
   // True when the query reached this sutta only through the name of a list holding it.
   listOnly?: boolean;
+  // The bucket this hit ranked in, so lib/textSearch.ts can extend the ladder past bucket 3.
+  rank: number;
+  // Whether the reader has filed, noted or highlighted it — the tie-break within a bucket.
+  saved: boolean;
+  // The paragraph of sutta text the query was found in, and its English where that paragraph was
+  // Pali. Filled in by lib/textSearch.ts for the hits that render; absent on a metadata-only hit.
+  snippet?: { text: string; under?: string };
 }
 
 // How many hits a caller renders; searchCorpus still returns every match, so a total can be shown.
@@ -259,8 +266,10 @@ export const SEARCH_NO_MATCHES = `No matches. ${SEARCH_SCOPE_NOTE}`;
 
 // Folds text to a case- and diacritic-insensitive key, so a typed "a" matches "ā". Exported for
 // lib/searchMatch.ts, which has to fold exactly as the match did.
+// The corpus writes the typographic apostrophe and a keyboard types the straight one, so the two
+// fold together — otherwise "elephant's footprint" misses the sutta titled with it.
 export function searchKey(s: string): string {
-  return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[\u2018\u2019\u02bc]/g, "'").toLowerCase();
 }
 
 // Each sutta's folded ref/title/Pali and blurb, everything search reads that doesn't change.
@@ -401,7 +410,7 @@ export function searchCorpus(
   const ranges = rangeQuery ? rangesFor(corpus) : null;
   const listPathsById = listHaystacks(lists);
   const saved = savedIds(lists, notes, highlights);
-  const hits: Array<SearchHit & { rank: number; saved: boolean }> = [];
+  const hits: SearchHit[] = [];
   for (const [id, s] of suttaEntries(corpus)) {
     const { title, blurb } = staticHaystacks.get(id)!;
     const note = notes[id] ? searchKey(notes[id]) : '';

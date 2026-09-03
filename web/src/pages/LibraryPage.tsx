@@ -93,7 +93,7 @@ export function LibraryPage({
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
 
   // One scan per keystroke, shared by both panes.
-  const { hits: allHits, listHits } = useCorpusSearch(corpus, query, notes, lists, highlights);
+  const { hits: allHits, listHits, textStatus } = useCorpusSearch(corpus, query, notes, lists, highlights);
   // The sutta hits to show: when exactly one list matched, the members that qualified only through
   // its name are dropped, since its own row already stands for them.
   const hits = useMemo(() => {
@@ -216,6 +216,7 @@ export function LibraryPage({
           hits={hits}
           listHits={shownListHits}
           listHitTotal={listHits.length}
+          textStatus={textStatus}
           listsExpanded={listsExpanded}
           onToggleListsExpanded={toggleListsExpanded}
           onActiveHitChange={onActiveRowChange}
@@ -249,6 +250,7 @@ export function LibraryPage({
           hits={hits}
           listHits={shownListHits}
           listHitTotal={listHits.length}
+          textStatus={textStatus}
           listsExpanded={listsExpanded}
           onToggleListsExpanded={toggleListsExpanded}
           onSelectList={onSelectNode}

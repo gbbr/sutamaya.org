@@ -131,6 +131,16 @@ export default defineConfig({
             },
           },
           {
+            // The two search blobs and their map (see docs/search.md), fetched when a search field
+            // is first focused. CacheFirst, unlike the /data/ paths above, because their filenames
+            // carry the corpus's dataVersion: a corrected sutta arrives as a new URL, so there is
+            // nothing to revalidate. Three entries, one corpus: only the current version's URLs are
+            // ever requested, so a previous version's copies would sit unread until eviction.
+            urlPattern: /\/data\/search\/.*\.(txt|json)$/,
+            handler: 'CacheFirst',
+            options: { cacheName: 'search-text', expiration: { maxEntries: 3, maxAgeSeconds: 60 * 60 * 24 * 365 } },
+          },
+          {
             // The help page's screenshots (see pages/HelpPage.tsx) — ~630KB that most installs
             // never open, so they are not precached; they land here on first view of /help, and
             // Settings' bulk offline download fills them in (prefetchHelpImages in lib/offline.ts)

@@ -59,7 +59,7 @@
     { "q": "arahants", "expect": ["sn22.76", "an6.49"] },
     { "q": "the fire sermon", "expect": ["sn35.28"], "known_gap": "the corpus titles it \"Burning\"" },
     { "q": "loving-kindness", "expect": ["snp1.8", "an11.15"], "known_gap": "the corpus says \"love\" and mettā" },
-    { "q": "mind is luminous", "expect": ["an1.41-50"], "known_gap": "the corpus words it differently" },
+    { "q": "mind is luminous", "expect": ["an1.51-60"], "known_gap": "the corpus says \"this mind is radiant\"" },
     { "q": "enlightenment", "expect": ["sn56.11", "mn26"], "known_gap": "the corpus says \"awakening\"" },
     { "q": "concentration", "expect": ["sn45.8", "an5.28"], "known_gap": "the corpus says \"composure\"" }
   ]
