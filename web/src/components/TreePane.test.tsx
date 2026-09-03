@@ -89,7 +89,6 @@ function buildCorpus(): Corpus {
         en: 'Overcoming the Hindrances',
         pali: 'Nīvaraṇapahānavaggo',
         blurb: 'On overcoming the five hindrances',
-        topics: ['jealousy (issā)'],
         min: 4,
       },
     },
@@ -519,21 +518,6 @@ describe('search', () => {
     // a frame before the (deferred) navigation actually replaces this page with the reader. It's
     // left for the real component to unmount along with the rest of this page once that happens.
     expect(screen.getByPlaceholderText(SEARCH_PLACEHOLDER)).toHaveValue('hindrance');
-  });
-
-  it('says which topic put a row in the results, and says nothing when the row matched on its own', async () => {
-    renderHarness();
-    await userEvent.click(screen.getByLabelText('Search'));
-    const input = screen.getByPlaceholderText(SEARCH_PLACEHOLDER);
-    await userEvent.type(input, 'jealousy');
-    // MatchedText splits the term around the query, so match on the whole line's text.
-    expect(
-      screen.getByText((_, el) => el?.tagName === 'SPAN' && el.textContent === 'Indexed under jealousy (issā)')
-    ).toBeInTheDocument();
-
-    await userEvent.clear(input);
-    await userEvent.type(input, 'hindrance');
-    expect(screen.queryByText('Indexed under')).not.toBeInTheDocument();
   });
 
   it('shows a no-matches state for a query with no hits', async () => {

@@ -33,8 +33,6 @@ SC_DATA_PATH=/path/to/sc-data npm run update-data     # plan a refresh of data/ 
                               npm run update-data help     # every subcommand, incl. the rule-authoring ones
 DPD_DB_PATH=/path/to/dpd.db npm run update-data dictionary   # rebuild data/pli2en_dpd.json from a
                               # DPD release; skipped, with a row saying so, whenever it's unset
-CIPS_PATH=/path/to/CIPS npm run update-data index            # rebuild data/cips-index.json from a
-                              # CIPS checkout; skipped the same way whenever it's unset
 ```
 
 Run the two halves individually with `npm run dev:worker` / `npm run dev:web`. `dev:worker` is
@@ -301,20 +299,11 @@ started with.
   one dev server serve both localhost and the phone-facing hostname.
 - **Reordering and drag-and-drop use Pointer Events, never HTML5 drag-and-drop**, which doesn't fire
   reliably on touch. The shared plumbing is `hooks/usePointerDragSession.ts`.
-- **Search does not cover sutta text** — `searchCorpus` scans ref, title, Pali, blurb, note, list
-  names and the topic index only. The copy that admits this sits beside it in `lib/corpus.ts`: the two placeholders
+- **Search does not cover sutta text** — `searchCorpus` scans ref, title, Pali, blurb, note and list
+  names only. The copy that admits this sits beside it in `lib/corpus.ts`: the two placeholders
   (`SEARCH_PLACEHOLDER` for the library, `READER_SEARCH_PLACEHOLDER` for the reader's overlay, which
   shows suttas only) name what is found, and `SEARCH_SCOPE_NOTE` — rendered under the empty state in
   ListPane, and folded into `SEARCH_NO_MATCHES` for TreePane and the overlay — names what isn't.
-- **The topic index is invisible until it is the only thing that matched.** `data/cips-index.json`
-  (the Comprehensive Index of Pali Suttas, rebuilt by `update-data index`) rides into `corpus.json`
-  as each sutta's `topics`, and `searchCorpus` reads it in a fifth rank bucket below every other
-  match, setting `SearchHit.topics` to the terms that hit. Every pane drawing a hit must render
-  those as an "Indexed under" line — a topic match is the one match a reader cannot see in the row.
-  Terms are stored in this app's English (`scripts/update-data/index-terms.mjs`, the counterpart to
-  the retranslation rules, since CIPS is written in Bhikkhu Bodhi's), with CIPS's own wording kept
-  searchable in `corpus.topicAliases`. A headword's English matches by word prefix and its
-  parenthesized Pali only in whole — otherwise "money" answers with *moneyya*.
 - **A library search returns two kinds of row.** `searchLists` matches the user's own lists by name
   (or an ancestor group's) and `SearchListHits` draws them as a capped block above the sutta hits —
   in ListPane on desktop, TreePane on mobile. `LibraryPage` owns the expansion state because

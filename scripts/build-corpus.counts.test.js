@@ -98,19 +98,6 @@ describe('build-corpus text shards (real data)', () => {
     expect(allUids.sort()).toEqual(Object.keys(corpus.suttas).sort());
   });
 
-  // The one check on the whole update-data index → build-corpus path. A CIPS refresh moves these
-  // numbers, so they're floors rather than exact counts; what would break them is the index
-  // failing to reach corpus.json at all, or its citations ceasing to resolve to uids.
-  it('carries the topic index into corpus.json, worded as this app words it', () => {
-    const indexed = Object.values(corpus.suttas).filter((s) => s.topics?.length);
-    expect(indexed.length).toBeGreaterThan(3000);
-    expect(corpus.suttas['an7.64'].topics).toContain('anger (kodha)');
-    // The reworded terms and their CIPS wording travel together, or search loses one of the two.
-    expect(corpus.topicAliases['composure (samādhi)']).toBe('concentration (samādhi)');
-    const labels = new Set(indexed.flatMap((s) => s.topics));
-    expect([...labels].filter((l) => /\bconcentration\b|\bmonks?\b|\bmendicants?\b/i.test(l))).toEqual([]);
-  });
-
   it('totalBytes is the sum of each shard entry\'s own byte count', () => {
     expect(manifest.shards.reduce((n, s) => n + s.bytes, 0)).toBe(manifest.totalBytes);
   });
