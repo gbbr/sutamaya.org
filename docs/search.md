@@ -22,8 +22,8 @@ The corpus is small enough that the conventional apparatus is unnecessary. Measu
 |---|---|
 | suttas | 4,041 |
 | segments | 125,439 · median 8 words |
-| English blob | 8.8 MB raw · **~1.1 MB served** |
-| Pali blob | 10.7 MB raw · **~1.2 MB served** |
+| English blob | 8.8 MB raw · **~1.4 MB served** |
+| Pali blob | 10.7 MB raw · **~1.5 MB served** |
 | distinct English word types | 13,523 |
 | one keystroke, expansions included | **9–150 ms**, median 43 ms |
 
@@ -315,7 +315,7 @@ Nothing until the reader searches; the text is fetched on the first focus of a s
 
 | | |
 |---|---|
-| that first fetch | **~2.4 MB** over the wire |
+| that first fetch | **~2.9 MB** over the wire |
 | held in Cache Storage | **19 MB** decoded, ×2 corpus versions at `maxEntries: 6` |
 | held in memory | **34 MB**, for as long as the app is open |
 

@@ -30,7 +30,7 @@ const UI_SCALE_STEP = 0.05;
 
 // Rough size of the whole offline download over the wire — sutta text, dictionary and search text,
 // as the compressed bundles they are fetched in.
-const TOTAL_DOWNLOAD_MB_ESTIMATE = 9;
+const TOTAL_DOWNLOAD_MB_ESTIMATE = 10;
 // Rough size the same content occupies on the device, where it is held uncompressed.
 const TOTAL_STORED_MB_ESTIMATE = 60;
 
