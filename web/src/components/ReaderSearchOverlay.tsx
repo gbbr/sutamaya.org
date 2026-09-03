@@ -228,11 +228,11 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
                     style={{ color: theme.dim, borderColor: theme.rule }}
                   >
                     <span className="block line-clamp-2" style={h.snippet.under ? { color: theme.pali } : undefined}>
-                      <MatchedText text={h.snippet.text} query={query} theme={theme} />
+                      <MatchedText text={h.snippet.text} query={h.snippet.query} theme={theme} />
                     </span>
                     {h.snippet.under && (
                       <span className="block line-clamp-2 mt-[2px]">
-                        <MatchedText text={h.snippet.under} query={query} theme={theme} />
+                        <MatchedText text={h.snippet.under} query={h.snippet.query} theme={theme} />
                       </span>
                     )}
                   </span>

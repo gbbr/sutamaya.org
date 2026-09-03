@@ -11,6 +11,7 @@ import {
   RANK_TEXT_PARAGRAPH,
   RANK_TEXT_ANYWHERE,
   type SearchMap,
+  type TextScore,
 } from './textSearch';
 
 const MARK = '\x1e';
@@ -139,9 +140,23 @@ describe('searchSuttaText — ranking', () => {
     expect(searchSuttaText(Y, 'lump foam').get('a')?.bucket).toBe(RANK_TEXT_ANYWHERE);
     expect(searchSuttaText(Y, 'lump foam').has('b')).toBe(false);
   });
+
+  it('keeps the English result where both languages answer in the same bucket', () => {
+    const Y = index([
+      { uid: 'a', paras: one([['The first jhāna.', 'paṭhamaṁ jhānaṁ jhānaṁ jhānaṁ']]) },
+      { uid: 'b', paras: one([['The first absorption.', 'paṭhamaṁ jhānaṁ']]) },
+    ]);
+    // Both languages hold the word, the Pali more often — but a count in one language does not
+    // order a result in the other, and the English is what the reader can read.
+    expect(searchSuttaText(Y, 'jhana').get('a')?.lang).toBe('en');
+    expect(searchSuttaText(Y, 'jhana').get('b')?.lang).toBe('pa');
+  });
 });
 
 describe('snippetOf', () => {
+  // Everything here searches with what the reader typed; the expansion cases pass the two apart.
+  const snip = (i: ReturnType<typeof index>, score: TextScore) => snippetOf(i, score, score.query);
+
   const X = index([
     {
       uid: 'a',
@@ -158,14 +173,19 @@ describe('snippetOf', () => {
   it('returns the paragraph the query was found in, its segments run together', () => {
     const score = searchSuttaText(X, 'radiant').get('a')!;
     // Segment 1: the sutta's second, the first paragraph holding only segment 0.
-    expect(snippetOf(X, score)).toEqual({ text: 'The mind is radiant. So it is said.', segment: 1 });
+    expect(snip(X, score)).toEqual({
+      text: 'The mind is radiant. So it is said.',
+      query: 'radiant',
+      segment: 1,
+    });
   });
 
   it('gives a Pali hit its English underneath', () => {
     const score = searchSuttaText(X, 'pabhassara').get('a')!;
-    expect(snippetOf(X, score)).toEqual({
+    expect(snip(X, score)).toEqual({
       text: 'pabhassaraṁ cittaṁ iti vuccati',
       under: 'The mind is radiant. So it is said.',
+      query: 'pabhassara',
       segment: 1,
     });
   });
@@ -184,13 +204,13 @@ describe('snippetOf', () => {
         ],
       },
     ]);
-    expect(snippetOf(Y, searchSuttaText(Y, 'radiant').get('a')!)?.segment).toBe(3);
+    expect(snip(Y, searchSuttaText(Y, 'radiant').get('a')!)?.segment).toBe(3);
   });
 
   it('windows a long paragraph around the match, so the marked word is inside the clamp', () => {
     const filler = 'and so it went on at some length. '.repeat(30);
     const Y = index([{ uid: 'a', paras: one([[`${filler}Then a radiant thing. ${filler}`, '']]) }]);
-    const snippet = snippetOf(Y, searchSuttaText(Y, 'radiant').get('a')!)!;
+    const snippet = snip(Y, searchSuttaText(Y, 'radiant').get('a')!)!;
     expect(snippet.text).toContain('radiant');
     expect(snippet.text.length).toBeLessThan(260);
     expect(snippet.text.startsWith('…')).toBe(true);
@@ -201,14 +221,14 @@ describe('snippetOf', () => {
     // "the" is in the first line and in every line; the phrase is far down it.
     const filler = 'and the thing and the other thing. '.repeat(30);
     const Y = index([{ uid: 'a', paras: one([[`${filler}The fires of greed. ${filler}`, '']]) }]);
-    const snippet = snippetOf(Y, searchSuttaText(Y, 'the fires of greed').get('a')!)!;
+    const snippet = snip(Y, searchSuttaText(Y, 'the fires of greed').get('a')!)!;
     expect(snippet.text).toContain('fires of greed');
   });
 
   it('centres on the rarest word when the phrase is not there as typed', () => {
     const filler = 'and the thing and the other thing. '.repeat(30);
     const Y = index([{ uid: 'a', paras: one([[`${filler}A greed of sorts. ${filler}`, '']]) }]);
-    const snippet = snippetOf(Y, searchSuttaText(Y, 'the greed').get('a')!)!;
+    const snippet = snip(Y, searchSuttaText(Y, 'the greed').get('a')!)!;
     expect(snippet.text).toContain('greed');
   });
 
@@ -220,6 +240,20 @@ describe('snippetOf', () => {
       },
     ]);
     const score = searchSuttaText(Y, 'radiant mind').get('a')!;
-    expect(snippetOf(Y, score)?.text).toBe('a radiant mind');
+    expect(snip(Y, score)?.text).toBe('a radiant mind');
+  });
+
+  it('windows the English line on what the reader typed, not on the Pali the expansion found', () => {
+    const filler = 'and the thing and the other thing. '.repeat(30);
+    const Y = index([
+      {
+        uid: 'a',
+        paras: one([[`${filler}The four noble truths. ${filler}`, 'cattāri ariyasaccāni']]),
+      },
+    ]);
+    const snippet = snippetOf(Y, searchSuttaText(Y, 'ariyasacca').get('a')!, 'noble truths')!;
+    expect(snippet.under).toContain('noble truths');
+    // Both queries mark: the Pali line carries the one that found the row, the English the typed one.
+    expect(snippet.query).toBe('noble truths ariyasacca');
   });
 });

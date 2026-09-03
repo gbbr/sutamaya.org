@@ -130,6 +130,11 @@ holding nothing but function words searches for them literally, so `the` still f
 English and Pali are scanned and scored **independently**, and a sutta keeps its better result. A
 query is written in one language or the other; mixing a word from each would match noise.
 
+**The English result wins a tie**, in the same bucket and across every query the expansion table
+adds — the occurrence count only orders one language against itself, and the reader reads the
+English. So the Pali is shown where it is the only thing that answered the query, or answered it in
+a better bucket, and never where the English says the same thing.
+
 ## Ranking
 
 Text hits extend the existing bucket ladder in `searchCorpus()`. The four buckets that exist today
@@ -247,6 +252,13 @@ avoid.
 
 Because the two blobs are line-aligned, a hit found in the Pali shows the Pali paragraph with that
 paragraph's English underneath it. A hit found in the English shows English alone.
+
+**A row marks the query that found it**, which is not always the one that was typed: a hit the
+expansion table found on `ariyasacca` marks that word in the Pali line and the typed "noble truths"
+in the English. The English line is windowed on the typed query too, so the words that answer the
+query are inside the window rather than past the end of it. Marking follows the matching's
+stemming, so a typed plural marks the singular the text carries: "truths" marks "the noble truth
+of".
 
 Snippets are cut for the first `SEARCH_RESULTS_CAP` hits only, which is every row that renders — a
 broad query matches thousands of suttas and the cap is what is drawn. A metadata-only hit has no

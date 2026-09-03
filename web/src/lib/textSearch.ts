@@ -339,13 +339,21 @@ export function searchSuttaText(index: TextIndex, query: string): Map<string, Te
     for (const [si, langScore] of pass) {
       const score = { ...langScore, lang: 'pa' as const, query: q };
       const uid = index.uids[si];
-      const prev = out.get(uid);
-      if (!prev || score.bucket < prev.bucket || (score.bucket === prev.bucket && score.count > prev.count)) {
-        out.set(uid, score);
-      }
+      if (better(score, out.get(uid))) out.set(uid, score);
     }
   }
   return out;
+}
+
+// Whether `next` is the better result for a sutta than `prev`: the better bucket, then English,
+// then the occurrence count. English wins a tie of buckets because a count in one language says
+// nothing about a count in the other, and because the reader is reading the language they typed —
+// the Pali is shown only where it is the only thing that answered the query, or answered it better.
+function better(next: TextScore, prev: TextScore | undefined): boolean {
+  if (!prev) return true;
+  if (next.bucket !== prev.bucket) return next.bucket < prev.bucket;
+  if (next.lang !== prev.lang) return next.lang === 'en';
+  return next.count > prev.count;
 }
 
 // ── Snippets ────────────────────────────────────────────────────────────────
@@ -355,6 +363,9 @@ export function searchSuttaText(index: TextIndex, query: string): Map<string, Te
 export interface Snippet {
   text: string;
   under?: string;
+  // The words to mark in the two lines: what the reader typed, and the query that found the row
+  // where the expansion table is what found it.
+  query: string;
   // The segment this was found in, indexing the array in text/{uid}.json — what the reader opens
   // at when the row is clicked.
   segment: number;
@@ -385,8 +396,8 @@ function segmentAt(blob: string, suttaStart: number, paras: number[], para: numb
 
 // Where in `text` the snippet should centre: the phrase as typed if it is there, else the rarest
 // of the query's content words — never simply the earliest word matched, which would pin every
-// snippet to the top of the paragraph. 0 when nothing is found, as happens on the English line
-// paired with a Pali hit.
+// snippet to the top of the paragraph. -1 when the query is nowhere in `text`, as happens on the
+// English line paired with a Pali hit.
 function firstMatch(text: string, query: string, lang: 'en' | 'pa'): number {
   const words = query.split(/\s+/);
   const wordRe = (w: string) => (lang === 'en' ? englishWordRe(w) : paliWordRe(w));
@@ -396,7 +407,7 @@ function firstMatch(text: string, query: string, lang: 'en' | 'pa'): number {
     if (phrase) return phrase.index;
   }
 
-  let at = 0;
+  let at = -1;
   let rarest = Infinity;
   for (const word of contentWords(words)) {
     const hits = offsetsOf(text, wordRe(word));
@@ -423,21 +434,28 @@ function windowAround(text: string, at: number): string {
 // The paragraph a text hit was found in, windowed around the match, with the segment the reader
 // should open at. The two blobs hold the same paragraphs in the same order, so a Pali hit can show
 // its Pali with that paragraph's English beneath it.
-export function snippetOf(index: TextIndex, score: TextScore): Snippet | null {
+//
+// `typed` is the reader's own query, which is not `score.query` where an expansion is what found
+// the row: the Pali line is windowed and marked on the query that found it, the English line on
+// what was typed.
+export function snippetOf(index: TextIndex, score: TextScore, typed: string): Snippet | null {
   const pali = score.lang === 'pa';
   const blob = pali ? index.pa : index.en;
   const paras = pali ? index.paParas : index.enParas;
   const para = paragraphAt(blob, paras, score.para);
   if (!para.text.trim()) return null;
+  const query = score.query === typed ? typed : `${typed} ${score.query}`;
 
-  const at = firstMatch(para.text, score.query, score.lang);
+  const at = Math.max(0, firstMatch(para.text, score.query, score.lang));
   const segment = segmentAt(blob, (pali ? index.paStarts : index.enStarts)[score.doc], paras, score.para, para.start + at);
   const text = windowAround(para.text, at);
-  if (!pali) return { text, segment };
+  if (!pali) return { text, query, segment };
 
   const english = paragraphAt(index.en, index.enParas, score.para);
-  if (!english.text.trim()) return { text, segment };
-  return { text, under: windowAround(english.text, firstMatch(english.text, score.query, 'en')), segment };
+  if (!english.text.trim()) return { text, query, segment };
+  const enAt = firstMatch(english.text, typed, 'en');
+  const under = windowAround(english.text, Math.max(0, enAt >= 0 ? enAt : firstMatch(english.text, score.query, 'en')));
+  return { text, under, query, segment };
 }
 
 // ── The whole search ────────────────────────────────────────────────────────
@@ -445,10 +463,7 @@ export function snippetOf(index: TextIndex, score: TextScore): Snippet | null {
 // A sutta's best result across the query and its expansions.
 function keepBest(into: Map<string, TextScore>, from: Map<string, TextScore>): void {
   for (const [uid, score] of from) {
-    const prev = into.get(uid);
-    if (!prev || score.bucket < prev.bucket || (score.bucket === prev.bucket && score.count > prev.count)) {
-      into.set(uid, score);
-    }
+    if (better(score, into.get(uid))) into.set(uid, score);
   }
 }
 
@@ -499,7 +514,7 @@ export function searchCorpusAndText(
   if (index) {
     for (const hit of hits.slice(0, SEARCH_RESULTS_CAP)) {
       const score = text.get(hit.id);
-      const snippet = score && snippetOf(index, score);
+      const snippet = score && snippetOf(index, score, q);
       if (snippet) hit.snippet = snippet;
     }
   }
