@@ -38,7 +38,7 @@ export default {
         accent: 'rgb(var(--accent) / <alpha-value>)',
         accent2: 'rgb(var(--accent2) / <alpha-value>)',
         'accent-text': 'rgb(var(--accent-text) / <alpha-value>)',
-        'accent-hover': '#6B5230',
+        'accent-hover': 'rgb(var(--accent-hover) / <alpha-value>)',
         'danger-text': 'rgb(var(--danger-text) / <alpha-value>)',
         'warning-text': 'rgb(var(--warning-text) / <alpha-value>)',
         'staging-text': 'rgb(var(--staging-text) / <alpha-value>)',
