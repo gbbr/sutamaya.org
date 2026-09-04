@@ -95,7 +95,13 @@ export function useCorpusSearch(
     let live = true;
     const ask = meta.map(({ id, rank, saved }) => ({ id, rank, saved }));
     void searchText(deferredQuery, ask).then((ranked) => {
-      if (!live || !ranked) return;
+      if (!live) return;
+      // The worker died mid-search: the metadata half is the whole answer from here, so nothing
+      // is held over it.
+      if (!ranked) {
+        setMerged(null);
+        return;
+      }
       const hits = hydrate(corpus, meta, ranked);
       lastCompleted = { query: deferredQuery, hits };
       setMerged({ meta, hits });
@@ -105,10 +111,15 @@ export function useCorpusSearch(
     };
   }, [corpus, searching, status, deferredQuery, meta]);
 
-  const hits = merged?.meta === meta ? merged.hits : meta;
+  const answered = merged?.meta === meta;
+  // The results while the worker answers the newest keystroke: the previous answer, held, rather
+  // than this keystroke's metadata half. The rows keep their text hits and their snippets, and
+  // only the marked words move, until the new answer replaces them. Held only where an answer is
+  // coming — with the text unloaded or gone, the metadata half is the answer.
+  const hits = merged && (answered || (searching && status === 'ready')) ? merged.hits : meta;
   // Whether `hits` is the complete answer to this query, which a scroll restore waits for. True
   // while the search text is still loading, a wait nothing can be held back for.
-  const hitsSettled = !searching || status !== 'ready' || merged?.meta === meta;
+  const hitsSettled = !searching || status !== 'ready' || answered;
   // Off the same deferred query, so both halves of the results describe one keystroke.
   const listHits = useMemo(() => searchLists(lists, deferredQuery), [lists, deferredQuery]);
   return { hits, listHits, textStatus: status, textLoading: searching && slow, hitsSettled };

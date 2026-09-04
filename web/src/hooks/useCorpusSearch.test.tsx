@@ -57,6 +57,21 @@ describe('a search that has already been answered', () => {
     expect(back[0].hits.map((hit) => hit.id)).toEqual(answered);
   });
 
+  it('stays on screen while the next keystroke is answered', async () => {
+    const seen: Result[] = [];
+    const view = render(<Probe query="lon" onRender={(r) => seen.push(r)} />);
+    await waitFor(() => expect(seen.at(-1)!.hitsSettled).toBe(true));
+
+    // Every render from the keystroke on. Dropping to the metadata half here would take the text
+    // hit and every snippet off the screen for a frame, and rebuild the list on the next one.
+    const typed = seen.length;
+    view.rerender(<Probe query="long" onRender={(r) => seen.push(r)} />);
+    await waitFor(() => expect(seen.at(-1)!.hitsSettled).toBe(true));
+    for (const render of seen.slice(typed)) {
+      expect(render.hits.map((hit) => hit.id)).toContain('dn9');
+    }
+  });
+
   it('leaves a mount on a different query to wait for its own answer', async () => {
     const first: Result[] = [];
     const one = render(<Probe query="long" onRender={(r) => first.push(r)} />);
