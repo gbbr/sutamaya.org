@@ -271,7 +271,7 @@ Pali terms, and the vocabulary cases that fail until query expansion exists (mar
 the measure of whether that table is working). Expectations are drawn from the canon and from this
 corpus's own titles, so the file depends on nothing outside the repo.
 
-`web/src/lib/searchGolden.test.ts` runs it as part of `npm test`, against a corpus built into a
+`web/src/lib/search/golden.test.ts` runs it as part of `npm test`, against a corpus built into a
 temporary directory rather than a fixture, since a fixture tree cannot catch a ranking regression.
 Queries split in two: most must put an expected sutta in the top five or the suite fails, and the
 rest are **pending** — the file's own `known_gap` entries plus the test's `UNMET` list, which the
@@ -379,7 +379,7 @@ Nothing until the reader searches; the text is fetched on the first focus of a s
 | | |
 |---|---|
 | that first fetch | **~2.9 MB** over the wire |
-| held in Cache Storage | **19 MB** decoded, ×2 corpus versions at `maxEntries: 6` |
+| held in Cache Storage | **19.7 MB** decoded — one corpus version's three files, at `maxEntries: 3` |
 | held in memory | **34 MB** in the worker, for as long as the app is open |
 
 The two blobs are `CacheFirst` in `web/vite.config.ts` — their filenames carry `dataVersion`, so a
