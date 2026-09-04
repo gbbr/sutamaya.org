@@ -31,6 +31,13 @@ function hydrate(corpus: Corpus, meta: SearchHit[], ranked: RankedHit[]): Search
   return hits;
 }
 
+// The last search the worker finished answering. A mount whose query matches opens on those hits
+// rather than on the metadata half alone, so returning to a search — closing the reader on one of
+// its results — has its complete list, and its scroll position, in the first frame. One entry: the
+// only search worth returning to is the one just left. Refreshed by the search this seeds, which
+// runs anyway, so data edited while away corrects itself a moment later.
+let lastCompleted: { query: string; hits: SearchHit[] } | null = null;
+
 // Returns the sutta hits and list hits for a query, scanned off a deferred copy of it so typing
 // stays responsive.
 //
@@ -80,13 +87,18 @@ export function useCorpusSearch(
   );
   // Keyed on the metadata hits themselves, so an answer to an earlier keystroke — or to the same
   // one before the reader's own data changed — is never shown against a later query.
-  const [merged, setMerged] = useState<{ meta: SearchHit[]; hits: SearchHit[] } | null>(null);
+  const [merged, setMerged] = useState<{ meta: SearchHit[]; hits: SearchHit[] } | null>(() =>
+    lastCompleted?.query === deferredQuery ? { meta, hits: lastCompleted.hits } : null
+  );
   useEffect(() => {
     if (!corpus || !searching || status !== 'ready') return;
     let live = true;
     const ask = meta.map(({ id, rank, saved }) => ({ id, rank, saved }));
     void searchText(deferredQuery, ask).then((ranked) => {
-      if (live && ranked) setMerged({ meta, hits: hydrate(corpus, meta, ranked) });
+      if (!live || !ranked) return;
+      const hits = hydrate(corpus, meta, ranked);
+      lastCompleted = { query: deferredQuery, hits };
+      setMerged({ meta, hits });
     });
     return () => {
       live = false;
