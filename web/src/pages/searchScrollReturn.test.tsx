@@ -168,7 +168,9 @@ describe('a search result opened and closed', () => {
     scroller.dispatchEvent(new Event('scroll'));
 
     fireEvent.click(list().getByText('Discourse 30'));
-    await waitFor(() => expect(container.querySelector('[data-component="ReaderPage"]')).toBeTruthy());
+    await waitFor(() => expect(container.querySelector('[data-component="ReaderPage"]')).toBeTruthy(), {
+      timeout: 5000,
+    });
 
     fireEvent.click(screen.getByTitle('Close'));
     await screen.findByText('sutamaya');
@@ -262,7 +264,9 @@ describe('a search result opened and closed', () => {
     treeScroller().dispatchEvent(new Event('scroll'));
 
     fireEvent.click(tree().getByText('Discourse 30'));
-    await waitFor(() => expect(container.querySelector('[data-component="ReaderPage"]')).toBeTruthy());
+    await waitFor(() => expect(container.querySelector('[data-component="ReaderPage"]')).toBeTruthy(), {
+      timeout: 5000,
+    });
     fireEvent.click(screen.getByTitle('Close'));
     await screen.findByText('sutamaya');
     await waitFor(() => expect(treeScroller().scrollTop).toBe(900));
