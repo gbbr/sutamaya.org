@@ -22,6 +22,7 @@
     "test": "npx vitest run",
     "test:e2e": "E2E_OFFLINE=1 npx playwright test",
     "deploy": "bash scripts/deploy.sh",
+    "deploy:prod": "bash scripts/deploy.sh --env production",
     "deploy:staging": "bash scripts/deploy.sh --env staging",
     "seed:staging": "bash scripts/seed-staging.sh"
   },

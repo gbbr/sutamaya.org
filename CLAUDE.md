@@ -26,8 +26,9 @@ npm run test:e2e           # Playwright journeys in a real browser — see docs/
                             # it as its own job, on PRs and pushes to main.
 npm run typecheck          # tsc over web/src — the only place types are enforced, since the build
                             # transpiles with `tsc -b --noCheck`. CI runs it.
-npm run deploy             # deploy to Cloudflare — see docs/deploy.md; runs npm test first
+npm run deploy:prod        # deploy to Cloudflare — see docs/deploy.md; runs npm test first
 npm run deploy:staging     # the same, to the staging environment — see docs/deploy.md
+                            # (bare `npm run deploy` names no environment and refuses to run)
 npm run seed:staging       # replace staging's database with a copy of the local one
 SC_DATA_PATH=/path/to/sc-data npm run update-data     # plan a refresh of data/ — see data/README.md
                               npm run update-data apply    # copy it in, re-run the rules

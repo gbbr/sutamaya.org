@@ -3,38 +3,55 @@
 # (the assets binding, from web/dist) and /api/*, backed by D1. See docs/deploy.md for the one-time
 # setup this assumes (wrangler login, the D1 database, the SESSION_SECRET secret).
 #
-# Usage: deploy.sh [--env staging] [--skip-tests]
+# Usage: deploy.sh --env production|staging [--skip-tests]
 #
-# With no --env this is production. `--env staging` deploys the second Worker declared under `env`
-# in wrangler.jsonc — its own hostnames, its own D1 database, its own secrets.
+# The environment is never implied. Named none, this refuses to do anything, so production is only
+# ever deployed by asking for it — `npm run deploy` alone stops here rather than shipping.
 set -euo pipefail
 
+# Only when stderr is a terminal, so a piped or logged run stays plain text.
+if [ -t 2 ]; then
+  RED=$'\033[31m'
+  BOLD=$'\033[1m'
+  OFF=$'\033[0m'
+else
+  RED='' BOLD='' OFF=''
+fi
+
 SKIP_TESTS=0
-TARGET="production"
-# Passed through to every wrangler command below. Production is the config's top-level environment,
-# which wrangler wants named explicitly now that a second one exists — left unnamed it warns on
-# every deploy that it is guessing.
-ENV_FLAG="--env="
+TARGET=""
 while [ $# -gt 0 ]; do
   case "$1" in
     --skip-tests) SKIP_TESTS=1 ;;
     --env)
       TARGET="${2:-}"
-      if [ -z "$TARGET" ]; then echo "error: --env needs an environment name" >&2; exit 1; fi
-      ENV_FLAG="--env $TARGET"
+      if [ -z "$TARGET" ]; then echo "${RED}error:${OFF} --env needs an environment name" >&2; exit 1; fi
       shift
       ;;
-    *) echo "error: unknown argument '$1'. Usage: deploy.sh [--env staging] [--skip-tests]" >&2; exit 1 ;;
+    *) echo "${RED}error:${OFF} unknown argument '$1'. Usage: deploy.sh --env production|staging [--skip-tests]" >&2; exit 1 ;;
   esac
   shift
 done
+
+# Passed through to every wrangler command below.
+case "$TARGET" in
+  # Production is the config's top-level environment, which wrangler wants named explicitly now
+  # that a second one exists — left unnamed it warns on every deploy that it is guessing.
+  production) ENV_FLAG="--env=" ;;
+  staging) ENV_FLAG="--env staging" ;;
+  '')
+    echo "${RED}error:${OFF} name an environment — ${BOLD}npm run deploy:prod${OFF}, or ${BOLD}npm run deploy:staging${OFF}." >&2
+    exit 1
+    ;;
+  *) echo "${RED}error:${OFF} unknown environment '$TARGET'. Expected production or staging." >&2; exit 1 ;;
+esac
 
 echo "Deploying to: $TARGET"
 
 # Fail fast, before the test/build cycle, if wrangler isn't authenticated. `wrangler whoami`
 # always exits 0, even when logged out, so check its output instead of its exit code.
 if npx wrangler whoami 2>&1 | grep -q "You are not authenticated"; then
-  echo "error: not logged in to Cloudflare. Run: npx wrangler login" >&2
+  echo "${RED}error:${OFF} not logged in to Cloudflare. Run: ${BOLD}npx wrangler login${OFF}" >&2
   exit 1
 fi
 
@@ -43,7 +60,7 @@ if [ "$SKIP_TESTS" = "1" ]; then
 else
   echo "Running tests before deploy (pass --skip-tests to override)…"
   if ! npm test --silent; then
-    echo "error: tests failed. Fix them, or re-run with --skip-tests to deploy anyway." >&2
+    echo "${RED}error:${OFF} tests failed. Fix them, or re-run with ${BOLD}--skip-tests${OFF} to deploy anyway." >&2
     exit 1
   fi
 fi

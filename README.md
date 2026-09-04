@@ -36,7 +36,7 @@ at runtime.
 │   └── README.md                  the dataset — layout, uid/segment-id keying and the alignment
 │                                   it rests on, coverage, refreshing from sc-data, licence
 ├── docs/
-│   ├── deploy.md                  one-time Cloudflare + Google setup, what `npm run deploy` does,
+│   ├── deploy.md                  one-time Cloudflare + Google setup, what a deploy does, staging,
 │   │                               rate limits, free-tier ceilings, mobile testing
 │   ├── offline-sync.md            local-first writes: the mirror, `mtime` conflict resolution,
 │   │                               tombstones, read-time tree repair
