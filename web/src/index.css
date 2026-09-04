@@ -379,6 +379,8 @@
   --accent-text: 122 91 46;
   --danger-text: 220 38 38;
   --warning-text: 161 98 7;
+  /* The staging badge blue, matching the band on the staging app icon (scripts/make-staging-icons.mjs). */
+  --staging-text: 29 78 216;
   --selection: 234 223 198;
   /* The three highlight fills, index-aligned with HIGHLIGHT_COLORS (lib/theme.ts) and reached
      through SHELL_THEME's highlightPalette — so the swatches on a Library row (the highlight
@@ -437,6 +439,7 @@
   --accent-text: 196 154 97;
   --danger-text: 248 113 113;
   --warning-text: 217 152 46;
+  --staging-text: 125 160 240;
   --selection: 74 62 40;
   /* DARK_HIGHLIGHTS (lib/theme.ts) — the same three fills the reader's dark theme paints, so one
      highlight looks like itself whichever surface it's shown on. */

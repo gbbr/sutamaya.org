@@ -21,7 +21,9 @@
     "typecheck": "npm run typecheck --workspace web",
     "test": "npx vitest run",
     "test:e2e": "E2E_OFFLINE=1 npx playwright test",
-    "deploy": "bash scripts/deploy.sh"
+    "deploy": "bash scripts/deploy.sh",
+    "deploy:staging": "bash scripts/deploy.sh --env staging",
+    "seed:staging": "bash scripts/seed-staging.sh"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.9.10",

@@ -72,5 +72,40 @@
     "GOOGLE_CLIENT_ID": "45956701911-0a93js1du42ia6vtno0n4bh36crkn5f6.apps.googleusercontent.com",
     "MAIL_FROM": "no-reply@sutamaya.org"
   },
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
+  // A second copy of the same Worker, on its own hostnames and its own D1 database, for exercising
+  // a change end to end — sign-in included — before it reaches readers. `npm run deploy:staging`
+  // deploys it and `npm run seed:staging` fills its database from the local one. See docs/deploy.md.
+  //
+  // Only the keys that differ are here: wrangler inherits `main`, `compatibility_date`, `assets`
+  // and `observability` from above, so the asset routing staging exercises is production's, not a
+  // copy that can drift from it. Bindings and `vars` are not inherited and are repeated in full.
+  "env": {
+    "staging": {
+      "name": "sutamaya-staging",
+      "routes": [
+        { "pattern": "staging.sutamaya.org", "custom_domain": true },
+        { "pattern": "app.staging.sutamaya.org", "custom_domain": true }
+      ],
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "sutamaya-staging",
+          "database_id": "7018ade7-a84e-443d-bc0e-baeb72f24f06",
+          "migrations_dir": "worker/migrations"
+        }
+      ],
+      // Their own namespaces, so a burst of staging traffic can't spend production's budget.
+      "ratelimits": [
+        { "name": "RATE_LIMIT_API", "namespace_id": "2001", "simple": { "limit": 60, "period": 60 } },
+        { "name": "RATE_LIMIT_AUTH", "namespace_id": "2002", "simple": { "limit": 15, "period": 60 } },
+        { "name": "RATE_LIMIT_ME", "namespace_id": "2003", "simple": { "limit": 20, "period": 60 } }
+      ],
+      "vars": {
+        "WEB_ORIGIN": "https://app.staging.sutamaya.org",
+        "GOOGLE_CLIENT_ID": "45956701911-0a93js1du42ia6vtno0n4bh36crkn5f6.apps.googleusercontent.com",
+        "MAIL_FROM": "no-reply@sutamaya.org"
+      }
+    }
+  }
 }

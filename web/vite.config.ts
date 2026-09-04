@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
@@ -5,6 +6,23 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 const landingPath = fileURLToPath(new URL('./public/landing.html', import.meta.url));
+
+// Returns the commit this build was made from, as its short id and its subject line. The id carries
+// a trailing "*" when the working tree was dirty, so a build made over uncommitted edits says so.
+// Only staging displays them (see lib/buildInfo.ts); empty strings where git can't answer.
+function buildCommit(): { id: string; subject: string } {
+  const git = (...args: string[]) => execFileSync('git', args, { encoding: 'utf8' }).trim();
+  try {
+    return {
+      id: `${git('log', '-1', '--pretty=%h')}${git('status', '--porcelain') ? '*' : ''}`,
+      subject: git('log', '-1', '--pretty=%s'),
+    };
+  } catch {
+    return { id: '', subject: '' };
+  }
+}
+
+const commit = buildCommit();
 
 // Extra hostnames the dev server's Host-header guard accepts beyond localhost/LAN IPs (see
 // `allowedHosts` below), paired with how to actually reach the app through each one — printed
@@ -22,6 +40,10 @@ const devHosts: Record<string, string> = {
 };
 
 export default defineConfig({
+  define: {
+    __BUILD_COMMIT_ID__: JSON.stringify(commit.id),
+    __BUILD_COMMIT_SUBJECT__: JSON.stringify(commit.subject),
+  },
   plugins: [
     react(),
     VitePWA({

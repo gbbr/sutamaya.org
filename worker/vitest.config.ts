@@ -22,9 +22,29 @@ export default defineWorkersProject(async () => {
     fs.mkdirSync(path.dirname(file), { recursive: true });
     if (!fs.existsSync(file)) fs.writeFileSync(file, contents);
   };
-  seed('index.html', '<!doctype html><head><title>app shell placeholder</title><meta name="description" content="placeholder" /></head>\n');
-  seed('landing.html', '<!doctype html><title>landing placeholder</title>\n');
+  // Both pages carry the icon links, the iOS name and (on the landing page) a link into the app
+  // that src/stagingBrand.test.js asserts are rewritten on staging — the real build has all of
+  // them, so the placeholders have to as well or that suite passes vacuously in CI.
+  seed(
+    'index.html',
+    '<!doctype html><head><title>app shell placeholder</title><meta name="description" content="placeholder" />' +
+      '<link rel="icon" href="/favicon-32-v3.png" /><link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />' +
+      '<meta name="apple-mobile-web-app-title" content="sutamaya" /></head>\n'
+  );
+  seed(
+    'landing.html',
+    '<!doctype html><title>landing placeholder</title><link rel="icon" href="/favicon-32-v3.png" />' +
+      '<a href="https://app.sutamaya.org/">Open the app</a>\n'
+  );
   seed('favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"/>\n');
+  seed(
+    'manifest.webmanifest',
+    JSON.stringify({
+      name: 'sutamaya',
+      short_name: 'sutamaya',
+      icons: [{ src: 'icons/icon-192-v2.png', sizes: '192x192', type: 'image/png' }],
+    })
+  );
   // src/shareMeta.js reads this to give a shared /read or /browse link its own preview title, so
   // the test asserting that has a corpus to look DN16 up in. Only the fields it reads, and the
   // same reference the real build carries for that sutta, so the assertion holds either way.

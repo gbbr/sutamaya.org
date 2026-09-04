@@ -103,6 +103,55 @@ accepted rather than carrying dual-shape code through two deploys.
 Open the deployed URL, sign in with Google, and confirm lists/notes/highlights save and survive a
 refresh — that round-trips through D1, so it's the real end-to-end check.
 
+## Staging
+
+A second copy of the whole thing — `staging.sutamaya.org` and `app.staging.sutamaya.org`, its own
+D1 database, its own secrets, its own sessions — for exercising a change end to end, sign-in
+included, before it reaches readers.
+
+```bash
+npm run deploy:staging    # the same script, with --env staging
+npm run seed:staging      # replace staging's database with a copy of the local one
+```
+
+It is declared as `env.staging` in `wrangler.jsonc`, which repeats only what differs: the name, the
+hostnames, the D1 database, the rate-limit namespaces and `WEB_ORIGIN`. `main`, the assets
+configuration and the compatibility date are inherited, so the asset routing staging exercises is
+production's rather than a copy that can drift from it.
+
+**The build is production's build.** Nothing is compiled differently; what differs is written by the
+Worker on the way out, decided from the hostname (`worker/src/stagingBrand.js`):
+
+- the icon set and the installed name, so a browser tab, a dock and a home screen all say which of
+  the two they point at. The artwork lives in `web/public/icons/staging/` and is regenerated from
+  the production icons with `node scripts/make-staging-icons.mjs`.
+- the landing page's links into the app, which are absolute and would otherwise walk the reader
+  straight back to production.
+- `X-Robots-Tag: noindex` on every page, so the staging hostnames stay out of search results. A
+  header rather than a `robots.txt` rule: a crawler told not to fetch the page can still list its
+  URL, having never been allowed to read the page that says not to.
+
+The commit the deployment is running is shown at the foot of the tree pane, with a trailing `*`
+when the build was made over an uncommitted working tree.
+
+**Seeding.** `npm run seed:staging` exports the local development database and writes it over
+staging's, tables and all. Destructive on staging by design, and only on staging — the environment
+is hardcoded in `scripts/seed-staging.sh`. Signing in to staging with the same Google account
+lands on the copied row, which is the point: real lists, notes and highlights to read.
+
+**One-time setup**, per environment and already done for this one:
+
+```bash
+npx wrangler d1 create sutamaya-staging                  # database_id goes into wrangler.jsonc
+npx wrangler secret put SESSION_SECRET --env staging     # its own, so staging sessions aren't production's
+npx wrangler secret put GOOGLE_CLIENT_SECRET --env staging
+npx wrangler secret put RESEND_API_KEY --env staging
+```
+
+The OAuth client is production's, with `https://app.staging.sutamaya.org/api/auth/google/callback`
+added to its authorized redirect URIs — a second client would need its own consent screen for no
+gain. `MAIL_FROM` is production's too, the Resend domain being the same.
+
 ## Custom domains
 
 Two hostnames, one Worker, wired up via `routes` in `wrangler.jsonc`:
