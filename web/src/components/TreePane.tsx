@@ -787,11 +787,13 @@ export function TreePane({
                         // Quoted from the sutta: a left rule, which is what marks the sutta's own
                         // words apart from anything written about it.
                         <span className="block font-serif text-ui-md leading-[1.45] mt-[6px] pl-[10px] border-l-2 border-ink/25 text-ink-2">
-                          <span className={`block line-clamp-2 ${snippet.under ? 'italic text-accent-text' : ''}`}>
+                          {/* No `block` alongside a clamp: the clamp sets `display:-webkit-box` and
+                              Tailwind emits it before `.block`, so `block` would silently win. */}
+                          <span className={`line-clamp-3 ${snippet.under ? 'italic text-accent-text' : ''}`}>
                             <MatchedText text={snippet.text} query={snippet.query} />
                           </span>
                           {snippet.under && (
-                            <span className="block line-clamp-2 mt-[3px]">
+                            <span className="line-clamp-2 mt-[3px]">
                               <MatchedText text={snippet.under} query={snippet.query} />
                             </span>
                           )}

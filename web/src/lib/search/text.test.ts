@@ -217,6 +217,13 @@ describe('snippetOf', () => {
     expect(snippet.text.endsWith('…')).toBe(true);
   });
 
+  it('keeps the match near the top when it ends the paragraph, rather than filling the window', () => {
+    const filler = 'and so it went on at some length. '.repeat(30);
+    const Y = index([{ uid: 'a', paras: one([[`${filler}Then a radiant thing.`, '']]) }]);
+    const snippet = snip(Y, searchSuttaText(Y, 'radiant').get('a')!)!;
+    expect(snippet.text.indexOf('radiant')).toBeLessThan(80);
+  });
+
   it('centres on the phrase, not on a common word that opens the paragraph', () => {
     // "the" is in the first line and in every line; the phrase is far down it.
     const filler = 'and the thing and the other thing. '.repeat(30);

@@ -423,12 +423,14 @@ function firstMatch(text: string, query: string, lang: 'en' | 'pa'): number {
   return at;
 }
 
-// `text` cut to a window around `at`, broken on spaces, marked with an ellipsis at each end it
-// trims, and with the runs of space an empty segment leaves squeezed out.
+// `text` cut to a window opening one lead before `at`, broken on spaces, marked with an ellipsis at
+// each end it trims, and with the runs of space an empty segment leaves squeezed out. A window near
+// the end of a paragraph is shorter than the rest, since the match holds its place at the top
+// rather than the snippet holding its length.
 function windowAround(text: string, at: number): string {
   const tidy = (s: string) => s.replace(/\s+/g, ' ').trim();
-  if (text.length <= SNIPPET_MAX) return tidy(text);
-  let start = Math.max(0, Math.min(at - SNIPPET_LEAD, text.length - SNIPPET_MAX));
+  if (at <= SNIPPET_LEAD && text.length <= SNIPPET_MAX) return tidy(text);
+  let start = Math.max(0, at - SNIPPET_LEAD);
   if (start > 0) start = text.indexOf(' ', start) + 1 || start;
   let end = Math.min(text.length, start + SNIPPET_MAX);
   if (end < text.length) end = text.lastIndexOf(' ', end) + 1 || end;
