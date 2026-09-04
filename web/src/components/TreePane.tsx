@@ -606,16 +606,8 @@ export function TreePane({
             title="Help"
             onClick={() => navigate('/help')}
           >
-            {/* A typeset question mark in a drawn ring, in the wordmark's own face — an icon `?`
-                closes its hook into a blob at this size. `currentColor` puts both on the button's
-                own hover.
-
-                The nudge down corrects a line box centred where the glyph is not: Newsreader's
-                baseline sits 0.735em down and this `?` inks from −0.007em to 0.680em, leaving its
-                centre 0.1015em high. In em, so it survives a size change.
-
-                The size matches what the search icon actually paints rather than its nominal size:
-                lucide fills 18 of its 24 units, and a ring fills its own width. */}
+            {/* A typeset question mark in a drawn ring, in the shell's own face. `currentColor`
+                puts both on the button's own hover. */}
             <span
               className="flex items-center justify-center rounded-full border-[1.75px] border-current"
               style={{ width: mobile ? 22 : 20, height: mobile ? 22 : 20 }}
@@ -623,11 +615,10 @@ export function TreePane({
               <span
                 className="block"
                 style={{
-                  fontFamily: 'Newsreader, Georgia, serif',
+                  fontFamily: 'Inter, system-ui, sans-serif',
                   fontWeight: 600,
                   fontSize: mobile ? 15 : 14,
                   lineHeight: 1,
-                  transform: 'translateY(.1015em)',
                 }}
               >
                 ?
