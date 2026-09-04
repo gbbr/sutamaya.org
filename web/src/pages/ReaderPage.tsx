@@ -88,7 +88,9 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
 
   // Where the reader was opened from (LibraryPage's onOpen): `from` is the pane and node to close
   // back to, `fromView` which pane to show there. Absent for a direct link to /read/:suttaId.
-  const readerLocationState = location?.state as { from?: string; fromView?: 'tree' | 'list' } | undefined;
+  const readerLocationState = location?.state as
+    | { from?: string; fromView?: 'tree' | 'list'; searchIds?: string[] }
+    | undefined;
   // The segment a search hit was found in, taken once: location.state survives a same-tab refresh,
   // and a jump the reader has since scrolled away from must not fire again.
   const [searchSegment] = useState(
@@ -98,7 +100,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
         READER_INTENT_KEY
       )?.segment
   );
-  const { from, fromView, navigateToSutta, closeToOrigin } = useReaderOrigin(readerLocationState);
+  const { from, fromView, searchIds, navigateToSutta, closeToOrigin } = useReaderOrigin(readerLocationState);
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
   const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
   const [panel, setPanel] = useState(false);
@@ -243,21 +245,34 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     return suttaId && list?.items.includes(suttaId) ? list : undefined;
   }, [from, lists, suttaId]);
 
+  // The library search the reader was opened from, when the sutta on screen is one of its hits: it
+  // scopes Prev/Next to the results and shows above the breadcrumb. Undefined otherwise, including
+  // for a sutta reached from inside the reader, which leaves the run behind.
+  const searchOrigin = useMemo(() => {
+    const query = new URLSearchParams(from?.split('?')[1] ?? '').get('q') ?? '';
+    if (!query || !suttaId || !searchIds?.includes(suttaId)) return undefined;
+    return { query, items: searchIds };
+  }, [from, searchIds, suttaId]);
+
+  // The suttas Prev/Next steps through: the search results, else the list the reader was opened
+  // from, else the whole canon in browse order.
+  const run = searchOrigin?.items ?? listOrigin?.items;
+
   // Returns the sutta one Prev/Next step from `base`, or undefined at either end of the run —
-  // the list origin's ends, or the ends of the canon.
+  // the search results' or list's ends, or the ends of the canon.
   const neighbourOf = useCallback(
     (base: string | undefined, dir: 1 | -1) => {
       if (!base) return undefined;
-      if (listOrigin) {
-        const i = listOrigin.items.indexOf(base);
-        const next = i === -1 ? undefined : listOrigin.items[i + dir];
+      if (run) {
+        const i = run.indexOf(base);
+        const next = i === -1 ? undefined : run[i + dir];
         return next === base ? undefined : next;
       }
       const i = siblingIds.indexOf(base);
       const next = siblingIds[Math.min(siblingIds.length - 1, Math.max(0, i + dir))];
       return next === base ? undefined : next;
     },
-    [listOrigin, siblingIds]
+    [run, siblingIds]
   );
 
   // Prefetches both neighbours into loadSuttaText's cache, once this sutta's own text has arrived.
@@ -277,6 +292,21 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     };
     return { prev: at(-1), next: at(1) };
   }, [corpus, neighbourOf, suttaId]);
+
+  // What the foot of the sutta says Prev/Next is stepping through, and where this sutta sits in it:
+  // the search results, the list the reader was opened from, or the sutta's own collection.
+  const footContext = useMemo(() => {
+    if (!suttaId) return undefined;
+    const place = (kind: 'search' | 'list' | 'collection', label: string, items: string[]) => {
+      const i = items.indexOf(suttaId);
+      return i === -1 ? undefined : { kind, label, position: `${i + 1} of ${items.length}` };
+    };
+    if (searchOrigin) return place('search', searchOrigin.query, searchOrigin.items);
+    if (listOrigin) return place('list', listOrigin.label, listOrigin.items);
+    if (!corpus || !sutta) return undefined;
+    const group = siblingIds.filter((id) => corpus.suttas[id]?.node === sutta.node);
+    return place('collection', breadcrumb[breadcrumb.length - 1]?.label ?? '', group);
+  }, [suttaId, searchOrigin, listOrigin, corpus, sutta, siblingIds, breadcrumb]);
 
   // The measure column the step animation runs on, inside the scrolling pane.
   const articleRef = useRef<HTMLDivElement>(null);
@@ -315,7 +345,8 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
 
   function onSearchOpenSutta(id: string, segment?: number) {
     setSearchOpen(false);
-    navigateToSutta(id, segment);
+    // Leaves the library search's run behind: this jump is the reader's own search, not that one.
+    navigateToSutta(id, segment, true);
   }
 
   // Scrolls a just-opened Pali line or footnote into view, by the least it takes and only when it
@@ -481,20 +512,30 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
         {/* The measure column. A Prev/Next step animates it out and the next sutta in, driven
             imperatively from `step` above, since this element never unmounts. */}
         <div ref={articleRef} style={{ maxWidth: measureWidth, margin: '0 auto' }}>
-          {listOrigin && (
+          {searchOrigin ? (
             <nav className="font-sans flex items-center gap-1" style={{ fontSize: fs - 6, marginBottom: 7, color: theme.dim }}>
-              <button
-                className="flex items-center gap-1 hover:underline"
-                onClick={() =>
-                  navigate(`/browse/${encodeURIComponent(listOrigin.id)}/${encodeURIComponent(suttaId)}`, {
-                    state: tagIntent({ fromView: 'list' }),
-                  })
-                }
-              >
-                <ListIcon size={fs - 7} strokeWidth={2} />
-                {listOrigin.label}
+              {/* Back to the results, the same place closing the reader lands. */}
+              <button className="flex items-center gap-1 hover:underline" onClick={closeReader}>
+                <Search size={fs - 7} strokeWidth={2} />
+                {searchOrigin.query}
               </button>
             </nav>
+          ) : (
+            listOrigin && (
+              <nav className="font-sans flex items-center gap-1" style={{ fontSize: fs - 6, marginBottom: 7, color: theme.dim }}>
+                <button
+                  className="flex items-center gap-1 hover:underline"
+                  onClick={() =>
+                    navigate(`/browse/${encodeURIComponent(listOrigin.id)}/${encodeURIComponent(suttaId)}`, {
+                      state: tagIntent({ fromView: 'list' }),
+                    })
+                  }
+                >
+                  <ListIcon size={fs - 7} strokeWidth={2} />
+                  {listOrigin.label}
+                </button>
+              </nav>
+            )
           )}
           {breadcrumb.length > 0 && (
             <nav className="font-sans flex flex-wrap items-center gap-1" style={{ fontSize: fs - 6, marginBottom: 7, color: theme.dim }}>
@@ -669,6 +710,18 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           {segments && (footNeighbours.prev || footNeighbours.next) && (
             <nav className="font-sans" style={{ marginTop: 30 }}>
               <div style={{ height: 1, background: theme.rule, marginBottom: 14 }} />
+              {/* What Prev/Next is stepping through, and where in it this sutta sits. */}
+              {footContext && (
+                <div
+                  className="flex items-center justify-center gap-1.5"
+                  style={{ fontSize: fs - 5, color: theme.dim, marginBottom: 14 }}
+                >
+                  {footContext.kind === 'search' && <Search size={fs - 6} strokeWidth={2} className="flex-none" />}
+                  {footContext.kind === 'list' && <ListIcon size={fs - 6} strokeWidth={2} className="flex-none" />}
+                  <span className="min-w-0 truncate">{footContext.label}</span>
+                  <span className="flex-none">· {footContext.position}</span>
+                </div>
+              )}
               {/* One row: previous left, next right, each half an equal share that truncates
                   within it, with an empty spacer standing in for a missing neighbour. Each
                   button's inner span carries the flex row, since WebKit sizes a button's own
