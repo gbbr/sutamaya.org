@@ -37,8 +37,8 @@ export interface SearchHit {
 export const SEARCH_RESULTS_CAP = 80;
 
 // The search inputs' placeholders and the note naming what search doesn't cover.
-export const SEARCH_PLACEHOLDER = 'Search suttas and lists';
-export const READER_SEARCH_PLACEHOLDER = 'Search suttas';
+export const SEARCH_PLACEHOLDER = 'Search suttas, text and lists';
+export const READER_SEARCH_PLACEHOLDER = 'Search suttas and text';
 export const SEARCH_SCOPE_NOTE =
   'Search covers sutta numbers, titles, summaries and your own notes — not the text of the suttas.';
 export const SEARCH_NO_MATCHES = `No matches. ${SEARCH_SCOPE_NOTE}`;

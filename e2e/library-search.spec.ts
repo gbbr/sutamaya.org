@@ -8,7 +8,7 @@ test('@smoke a search finds a sutta by its English title and opens it', async ({
   await page.goto('/browse');
 
   await page.getByRole('button', { name: 'Search', exact: true }).click();
-  const box = page.getByPlaceholder('Search suttas and lists');
+  const box = page.getByPlaceholder('Search suttas, text and lists');
   await box.fill('Divine Net');
 
   // Matched on the ref and title together: other suttas mention the Brahmajāla in their text and
@@ -27,7 +27,7 @@ test('@smoke a search finds a phrase that is only in the sutta text', async ({ p
   await page.getByRole('button', { name: 'Search', exact: true }).click();
   // In the text of the fire sermon and in no title, ref or blurb — unfindable before the text
   // was searchable.
-  await page.getByPlaceholder('Search suttas and lists').fill('burning with the fires of greed');
+  await page.getByPlaceholder('Search suttas, text and lists').fill('burning with the fires of greed');
 
   // The snippet is the row's own evidence: the passage the phrase was found in, centred on it.
   const hits = searchResults(page);
@@ -44,10 +44,10 @@ test('@smoke without the sutta text, search says so and still answers', async ({
   await page.goto('/browse');
 
   await page.getByRole('button', { name: 'Search', exact: true }).click();
-  await page.getByPlaceholder('Search suttas and lists').fill('zzzznotasutta');
+  await page.getByPlaceholder('Search suttas, text and lists').fill('zzzznotasutta');
   await expect(searchResults(page)).toContainText('not the text of the suttas');
 
   // Degraded, not broken — a title still finds its sutta.
-  await page.getByPlaceholder('Search suttas and lists').fill('Divine Net');
+  await page.getByPlaceholder('Search suttas, text and lists').fill('Divine Net');
   await expect(searchResults(page).getByRole('button', { name: /^DN1The Divine Net/ })).toBeVisible();
 });
