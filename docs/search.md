@@ -390,4 +390,5 @@ the current version's URLs are ever requested.
 `main.tsx`), by terminating the worker, which takes the blobs with it whatever else is holding them.
 The next search starts a fresh worker, which fetches again and is served from Cache Storage, so it
 costs a pause rather than a download — and an idle tab holding 34 MB is a bigger target for iOS to discard
-outright, which would cost a whole reload instead.
+outright, which would cost a whole reload instead. A search left on screen asks for the text back the
+moment it goes; that load is held until the app is in sight again, so the release stands.

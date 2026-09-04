@@ -107,6 +107,25 @@ describe('the search text, loaded and released', () => {
     expect(textSearchStatus()).toBe('ready');
   });
 
+  // The release is worth nothing if the search still on screen pulls the text straight back into a
+  // tab nobody is looking at.
+  it('does not load again while the app is still out of sight', async () => {
+    const worker = load();
+
+    visibility('hidden');
+    await vi.advanceTimersByTimeAsync(10 * 60 * 1000);
+    expect(worker.terminated).toBe(true);
+
+    // What a search left on screen asks for the moment the text goes.
+    beginTextSearchLoad(corpus);
+    expect(textSearchStatus()).toBe('idle');
+    expect(FakeWorker.live.length).toBe(1);
+
+    visibility('visible');
+    expect(textSearchStatus()).toBe('loading');
+    expect(FakeWorker.live.length).toBe(2);
+  });
+
   it('loads again after a release, and after a failure', () => {
     beginTextSearchLoad(corpus);
     expect(textSearchStatus()).toBe('loading');
