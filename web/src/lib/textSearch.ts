@@ -476,7 +476,9 @@ function variantsOf(query: string, q: string): string[] {
   return [query, ...expandQuery(q)];
 }
 
-// The metadata hits for `query` and its expansions, each sutta keeping its best bucket.
+// The metadata hits for `query` and its expansions, each sutta keeping its best bucket, ordered as
+// searchCorpus orders one query's own hits. Sorted here rather than left to the merge, because this
+// is the whole result until the sutta text answers, and where it never does.
 export function searchCorpusVariants(
   corpus: Corpus,
   query: string,
@@ -493,7 +495,7 @@ export function searchCorpusVariants(
       if (!prev || hit.rank < prev.rank) best.set(hit.id, hit);
     }
   }
-  return [...best.values()];
+  return [...best.values()].sort((a, b) => a.rank - b.rank || Number(b.saved) - Number(a.saved));
 }
 
 // The text hits for `query` and its expansions, each sutta keeping its best result.
