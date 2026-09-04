@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client';
 import { registerSW } from 'virtual:pwa-register';
 import App from './App';
 import { loadUiPrefs, applyUiScale, applyTheme } from './lib/uiPrefs';
-import { watchTextSearchIdle } from './lib/textSearchClient';
+import { watchTextSearchIdle } from './lib/search/textClient';
 // Side-effect import: binds window.__dangerWipeLocal, the console-only reset to a cold, signed-out
 // first run. See lib/localWipe.ts.
 import './lib/localWipe';

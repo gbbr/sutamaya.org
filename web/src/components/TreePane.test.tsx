@@ -59,7 +59,7 @@ import {
 import { estimateOfflineStatus, isOfflineTextStale } from '../lib/offline';
 import { dismissKeepSafe, isIosBrowserTab, isKeepSafeDismissed } from '../lib/localAccount';
 import { TreePane } from './TreePane';
-import { searchCorpus, searchLists, LIST_RESULTS_CAP, SEARCH_NO_MATCHES, SEARCH_PLACEHOLDER } from '../lib/corpus';
+import { searchCorpus, searchLists, LIST_RESULTS_CAP, SEARCH_NO_MATCHES, SEARCH_PLACEHOLDER } from '../lib/search/metadata';
 import type { Corpus, ListDef, User } from '../lib/types';
 
 function buildCorpus(): Corpus {

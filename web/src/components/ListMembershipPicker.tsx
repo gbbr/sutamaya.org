@@ -2,8 +2,8 @@ import { Fragment, useEffect, useMemo, useRef, useState, type KeyboardEvent } fr
 import { Check, ChevronDown, Plus } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
 import { flattenListTree, type ListPathOption } from '../lib/lists';
-import { searchKey } from '../lib/corpus';
-import { matchRuns } from '../lib/searchMatch';
+import { searchKey } from '../lib/search/metadata';
+import { matchRuns } from '../lib/search/match';
 import { AUTO_LIST_IDS } from '../lib/autoLists';
 import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits';
 import type { ThemeColors } from '../lib/types';

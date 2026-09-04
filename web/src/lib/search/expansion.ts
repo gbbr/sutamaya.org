@@ -16,7 +16,7 @@
 // into it: "right view" gains "right ditthi" from the `view` entry. Those mixed-language phrases
 // match nothing and cost a scan, which is why the table is walked longest key first and why a
 // phrase a reader is likely to type whole earns its own entry.
-import { searchKey } from './corpus';
+import { searchKey } from './metadata';
 
 interface Expansion {
   // The folded phrase a reader types.

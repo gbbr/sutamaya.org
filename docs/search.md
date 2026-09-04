@@ -1,18 +1,20 @@
 # Full-text search
 
 The reader types a word or a phrase and finds the suttas that contain it, in either language,
-offline. It extends `searchCorpus()` in `web/src/lib/corpus.ts`, which reads everything *about* a
+offline. It extends `searchCorpus()` in `web/src/lib/search/metadata.ts`, which reads everything *about* a
 sutta — numbers, titles, Pali titles, group descriptions, the reader's own notes and list names —
 with the text *in* it.
 
 ```
-web/src/lib/textSearch.ts            matching, ranking and snippets — pure, over a TextIndex
-web/src/lib/searchWorker.ts          the Web Worker that holds the text and scans it
-web/src/lib/textSearchClient.ts      the main thread's side: the worker's lifecycle and status
-web/src/lib/searchExpansion.ts       the query-expansion table
-web/src/lib/textSearch.test.ts       the matching, ranking and snippet rules, over a hand-built blob
-web/src/lib/textSearchClient.test.ts loading, releasing and one-search-at-a-time, over a stub worker
-web/src/lib/searchGolden.test.ts     the golden query set, run against a real corpus build
+web/src/lib/search/metadata.ts       search over everything *about* a sutta, and the shared copy
+web/src/lib/search/text.ts           matching, ranking and snippets — pure, over a TextIndex
+web/src/lib/search/worker.ts         the Web Worker that holds the text and scans it
+web/src/lib/search/textClient.ts     the main thread's side: the worker's lifecycle and status
+web/src/lib/search/expansion.ts      the query-expansion table
+web/src/lib/search/match.ts          the folded offsets a hit's highlighting is painted at
+web/src/lib/search/text.test.ts      the matching, ranking and snippet rules, over a hand-built blob
+web/src/lib/search/textClient.test.ts loading, releasing and one-search-at-a-time, over a stub worker
+web/src/lib/search/golden.test.ts    the golden query set, run against a real corpus build
 scripts/build-corpus.mjs             writes the three files the search reads
 ```
 
@@ -76,7 +78,7 @@ n → [nñṅṇ] t → [tṭ]   d → [dḍ]   l → [lḷ]   ' → ['‘’]
 
 The apostrophe belongs there because the corpus writes `’` and a keyboard types `'`: without it
 `elephant's footprint` misses the sutta titled with it. The fold is one character for one, so the
-offsets `lib/searchMatch.ts` paints its highlights at stay aligned.
+offsets `lib/search/match.ts` paints its highlights at stay aligned.
 
 **Word boundaries are `(?<!\p{L})` and `(?!\p{L})` with the `u` flag, never `\b`.** JavaScript's `\b`
 is ASCII-only, so it treats `ā` as a non-word character and would match "nibbāna" inside
@@ -213,7 +215,7 @@ honeyball       → The Honey-Cake       ant-hill        → The Ant-Hill
 These are how readers name suttas to each other, and without them the queries return nothing at all
 rather than something imperfect.
 
-The table is hand-written and reviewable in `web/src/lib/searchExpansion.ts`. One query adds at most
+The table is hand-written and reviewable in `web/src/lib/search/expansion.ts`. One query adds at most
 `MAX_EXPANSIONS` alternatives, because each one costs a scan of both blobs and past a handful the
 results stop being about what was typed.
 
@@ -242,7 +244,7 @@ The split follows what each side holds:
   search in a single call, over an index the caller holds — still exists for the tests and the
   offline evaluation harness, and still produces exactly what the app shows.
 
-`lib/textSearchClient.ts` owns the worker and publishes the load status the UI renders. **Only the
+`lib/search/textClient.ts` owns the worker and publishes the load status the UI renders. **Only the
 newest waiting search is run**: a reader types faster than a scan, so a queue would answer each
 keystroke long after it was typed. The search in flight finishes, the newest waiting one goes next,
 and the ones typed over are dropped.

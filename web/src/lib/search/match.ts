@@ -1,4 +1,4 @@
-import { searchKey } from './corpus';
+import { searchKey } from './metadata';
 
 // Marking a search query's words inside the text a result displays.
 
@@ -10,7 +10,7 @@ export interface TextRun {
 
 // The same fold search matches on (searchKey), one character at a time so the result can be mapped
 // back: `map[i]` is the original index the folded character `i` starts at, with a final entry for
-// the end of the string. Folding changes length, so marking needs it. searchMatch.test.ts asserts
+// the end of the string. Folding changes length, so marking needs it. match.test.ts asserts
 // this agrees with the whole-string fold, so searchKey can't drift from it unnoticed.
 function fold(s: string): { key: string; map: number[] } {
   let key = '';
@@ -26,7 +26,7 @@ function fold(s: string): { key: string; map: number[] } {
 }
 
 // The forms of a query word to mark: the word, and the singular of a typed plural, which is the
-// stemming lib/textSearch.ts matched on — "truths" finds "the noble truth of", and the row has to
+// stemming lib/search/text.ts matched on — "truths" finds "the noble truth of", and the row has to
 // show the reader why it is there.
 function forms(word: string): string[] {
   return word.length >= 4 && word.endsWith('s') ? [word, word.slice(0, -1)] : [word];

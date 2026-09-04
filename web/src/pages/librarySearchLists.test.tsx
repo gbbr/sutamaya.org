@@ -19,7 +19,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
 import { useLayout } from '../context/LayoutContext';
 import { LibraryPage } from './LibraryPage';
-import { SEARCH_PLACEHOLDER } from '../lib/corpus';
+import { SEARCH_PLACEHOLDER } from '../lib/search/metadata';
 import type { Corpus, ListDef } from '../lib/types';
 
 // dn1's own blurb carries the word the lists below are named after; mn1's text has nothing to do

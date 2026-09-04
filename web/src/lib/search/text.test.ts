@@ -1,6 +1,6 @@
-// The matching, ranking and snippet rules of lib/textSearch.ts, over a blob built by hand.
+// The matching, ranking and snippet rules of lib/search/text.ts, over a blob built by hand.
 //
-// The golden query set (searchGolden.test.ts) runs the same code against the real corpus and says
+// The golden query set (golden.test.ts) runs the same code against the real corpus and says
 // whether the results are good; these say which rule broke when they stop being good.
 import { describe, expect, it } from 'vitest';
 import {
@@ -12,7 +12,7 @@ import {
   RANK_TEXT_ANYWHERE,
   type SearchMap,
   type TextScore,
-} from './textSearch';
+} from './text';
 
 const MARK = '\x1e';
 

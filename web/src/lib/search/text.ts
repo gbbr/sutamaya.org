@@ -16,11 +16,11 @@
 // blobs arrive, and if they never do, searchCorpus answers alone.
 //
 // Everything here is a pure function over a TextIndex. The blobs live in a Web Worker
-// (lib/searchWorker.ts) and lib/textSearchClient.ts is what the app talks to; this module holds no
+// (lib/search/worker.ts) and lib/search/textClient.ts is what the app talks to; this module holds no
 // state and never learns which side of the message boundary it is running on.
-import { searchCorpus, searchKey, SEARCH_RESULTS_CAP, SEARCH_SCOPE_NOTE, type SearchHit } from './corpus';
-import { expandQuery } from './searchExpansion';
-import type { Corpus, HighlightsMap, ListDef } from './types';
+import { searchCorpus, searchKey, SEARCH_RESULTS_CAP, SEARCH_SCOPE_NOTE, type SearchHit } from './metadata';
+import { expandQuery } from './expansion';
+import type { Corpus, HighlightsMap, ListDef } from '../types';
 
 // Opens each paragraph, and each sutta, on a line of its own — see build-corpus.mjs. Being neither
 // a letter nor whitespace, it is also what stops a phrase match running across a paragraph.
@@ -584,7 +584,7 @@ export function searchCorpusAndText(
 
 // 'idle' before anything asked for the text, 'unavailable' where it was asked for and didn't
 // arrive — offline, the fetch failed, or the device gave no worker to scan it in. All read the same
-// on screen: today's behaviour, labelled honestly. lib/textSearchClient.ts owns the transitions.
+// on screen: today's behaviour, labelled honestly. lib/search/textClient.ts owns the transitions.
 export type TextSearchStatus = 'idle' | 'loading' | 'ready' | 'unavailable';
 
 // Said under the last result while the text is on its way, where the hits it brings will append.

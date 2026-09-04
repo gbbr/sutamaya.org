@@ -7,7 +7,7 @@ import { defineConfig } from 'vitest/config';
 // scoped via environmentMatchGlobs rather than flipping the whole suite to jsdom.
 //
 // routeIntent.test.ts, pwaNudge.test.ts, motion.test.ts, entryKind.test.ts, documentMeta.test.ts
-// and textSearchClient.test.ts are `.test.ts`
+// and search/textClient.test.ts are `.test.ts`
 // exceptions: they exercise real Web APIs (sessionStorage/localStorage, matchMedia, the document's
 // own head and its visibilitychange event, history and its popstate event) that only exist under
 // jsdom (or a browser) — not
@@ -28,7 +28,7 @@ export default defineConfig({
             'web/src/lib/motion.test.ts',
             'web/src/lib/entryKind.test.ts',
             'web/src/lib/documentMeta.test.ts',
-            'web/src/lib/textSearchClient.test.ts',
+            'web/src/lib/search/textClient.test.ts',
           ],
           environment: 'node',
         },
@@ -43,7 +43,7 @@ export default defineConfig({
             'web/src/lib/motion.test.ts',
             'web/src/lib/entryKind.test.ts',
             'web/src/lib/documentMeta.test.ts',
-            'web/src/lib/textSearchClient.test.ts',
+            'web/src/lib/search/textClient.test.ts',
           ],
           environment: 'jsdom',
           setupFiles: ['web/src/setupTests.ts'],

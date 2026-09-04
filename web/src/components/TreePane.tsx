@@ -11,18 +11,15 @@ import { useListTreeIndex } from '../hooks/useListTreeIndex';
 import { useListCrud } from '../hooks/useListCrud';
 import { useListTreeDrag } from '../hooks/useListTreeDrag';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
+import { ancestorsOf, descendantIdsOf, findNode, flatSuttaOrder } from '../lib/corpus';
 import {
-  ancestorsOf,
-  descendantIdsOf,
-  findNode,
-  flatSuttaOrder,
   SEARCH_PLACEHOLDER,
   SEARCH_RESULTS_CAP,
   type ListHit,
   type SearchHit,
-} from '../lib/corpus';
-import { searchNoMatches, type TextSearchStatus } from '../lib/textSearch';
-import { beginTextSearchLoad } from '../lib/textSearchClient';
+} from '../lib/search/metadata';
+import { searchNoMatches, type TextSearchStatus } from '../lib/search/text';
+import { beginTextSearchLoad } from '../lib/search/textClient';
 import { ancestorsOfList, flattenListTree, suttaRowMeta } from '../lib/lists';
 import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
 import { derivePaneViewSync } from '../lib/paneView';

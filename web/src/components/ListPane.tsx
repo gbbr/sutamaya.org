@@ -5,17 +5,9 @@ import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
 import { useScrollMemory } from '../hooks/useScrollMemory';
 import { usePointerDragSession } from '../hooks/usePointerDragSession';
-import {
-  findNode,
-  isExpandable,
-  listItemsFor,
-  nodeBlurb,
-  nodeLabel,
-  SEARCH_RESULTS_CAP,
-  type ListHit,
-  type SearchHit,
-} from '../lib/corpus';
-import { searchScopeNote, type TextSearchStatus } from '../lib/textSearch';
+import { findNode, isExpandable, listItemsFor, nodeBlurb, nodeLabel } from '../lib/corpus';
+import { SEARCH_RESULTS_CAP, type ListHit, type SearchHit } from '../lib/search/metadata';
+import { searchScopeNote, type TextSearchStatus } from '../lib/search/text';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
 import { MatchedText } from './MatchedText';

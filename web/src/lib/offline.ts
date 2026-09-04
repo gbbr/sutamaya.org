@@ -1,5 +1,5 @@
 import { loadDictShardManifest } from './dictionaryShards';
-import { searchTextUrls } from './textSearch';
+import { searchTextUrls } from './search/text';
 import { OFFLINE_DATA_VERSION_KEY, OFFLINE_DICTIONARY_VERSION_KEY } from './storageKeys';
 
 // Settings' bulk offline download: the whole canon fetched as ~1MB shard bundles and unpacked into

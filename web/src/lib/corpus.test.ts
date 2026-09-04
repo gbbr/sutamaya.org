@@ -7,10 +7,9 @@ import {
   nodeBlurb,
   peekSuttaText,
   resolveCanonicalSuttaId,
-  searchCorpus,
-  searchLists,
   sortByIdAsc,
 } from './corpus';
+import { searchCorpus, searchLists } from './search/metadata';
 import type { Corpus, Highlight, ListDef, Sutta } from './types';
 
 // Only the fields compareIds/sortByIdAsc actually touch (the id key) matter here; the rest

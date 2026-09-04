@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { ChevronDown, List } from 'lucide-react';
 import { useListTreeIndex } from '../hooks/useListTreeIndex';
 import { useUserData } from '../context/UserDataContext';
-import { LIST_RESULTS_CAP, type ListHit } from '../lib/corpus';
+import { LIST_RESULTS_CAP, type ListHit } from '../lib/search/metadata';
 import { MatchedText } from './MatchedText';
 
 interface SearchListHitsProps {

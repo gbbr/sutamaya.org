@@ -16,10 +16,10 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildTextIndex, searchCorpusAndText, type TextIndex, type SearchMap } from './textSearch';
-import type { Corpus } from './types';
+import { buildTextIndex, searchCorpusAndText, type TextIndex, type SearchMap } from './text';
+import type { Corpus } from '../types';
 
-const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
+const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..', '..');
 
 // Golden queries this implementation does not answer, and why. Each is a sutta the query set names
 // on aboutness rather than on words: the expected sutta either doesn't contain the query's words at

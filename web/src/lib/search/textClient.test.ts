@@ -11,13 +11,13 @@ import {
   searchText,
   textSearchStatus,
   watchTextSearchIdle,
-} from './textSearchClient';
-import type { RankedHit } from './textSearch';
-import type { Corpus } from './types';
+} from './textClient';
+import type { RankedHit } from './text';
+import type { Corpus } from '../types';
 
 const corpus = { dataVersion: 'v1' } as Corpus;
 
-// Stands in for lib/searchWorker.ts: it records what was posted to it and answers only when a test
+// Stands in for lib/search/worker.ts: it records what was posted to it and answers only when a test
 // says so, which is what lets a search be observed while it is still in flight.
 class FakeWorker {
   static live: FakeWorker[] = [];
@@ -37,7 +37,7 @@ class FakeWorker {
   terminate() {
     this.terminated = true;
   }
-  // Delivers one of lib/searchWorker.ts's replies.
+  // Delivers one of lib/search/worker.ts's replies.
   reply(data: unknown) {
     for (const fn of this.listeners) fn({ data } as MessageEvent);
   }

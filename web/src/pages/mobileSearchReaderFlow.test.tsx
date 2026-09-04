@@ -24,7 +24,7 @@ import { useLayout } from '../context/LayoutContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { LibraryPage } from './LibraryPage';
 import { ReaderPage } from './ReaderPage';
-import { SEARCH_PLACEHOLDER } from '../lib/corpus';
+import { SEARCH_PLACEHOLDER } from '../lib/search/metadata';
 import type { Corpus } from '../lib/types';
 
 function buildCorpus(): Corpus {
