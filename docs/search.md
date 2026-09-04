@@ -318,14 +318,18 @@ as it always did, because there is nothing in the text for it to point at.
 The blob is fetched lazily — on first focus of a search field — and every stage below is a valid
 resting state:
 
-- **Before it loads.** No results. A spinner and "Searching sutta text…" stand where the results
-  will be, from the first frame, since a load that hasn't landed is seconds away rather than
-  milliseconds. The metadata half is not shown on its own: it ranks the suttas differently, so
-  putting it on screen means the whole visible list reorders under the reader when the text arrives.
-  A search whose complete answer is already on screen — returning to it from the reader — keeps that
-  answer rather than blanking, even if the text has since been released.
-- **When it lands.** The full, ranked list appears at once. Cached from then on, so every later
-  search in the sitting answers immediately and shows no spinner.
+- **Before the first answer.** No results. A spinner and "Searching sutta text…" stand where the
+  results will be. The metadata half is not shown on its own: it ranks the suttas differently, so
+  putting it on screen means the whole visible list reorders under the reader when the text answers.
+  This covers the scan as well as the load — a scan of the whole canon is tens of milliseconds on a
+  laptop but seconds on a phone, and a list that appears and then rearranges is the same problem
+  either way. The row takes its place immediately but fades in 150ms later, so a scan that answers
+  in a blink shows nothing at all. A search whose complete answer is already on screen — returning
+  to it from the reader — keeps that answer rather than blanking, even if the text has since been
+  released.
+- **Once it has answered.** The full, ranked list appears at once. Every later keystroke in the
+  sitting holds the previous list still while the next is scanned, so the spinner is shown roughly
+  once per sitting.
 - **If it never arrives** — offline, never fetched, fetch failed, or the device gave no worker to
   scan it in — the empty state carries the
   existing `SEARCH_SCOPE_NOTE`. The feature degrades to today's behaviour, labelled honestly, with

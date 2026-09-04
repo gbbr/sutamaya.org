@@ -58,6 +58,21 @@ describe('a search waiting on the sutta text', () => {
     expect(seen.at(-1)!.hits.map((hit) => hit.id)).toContain('dn9');
     view.unmount();
   });
+
+  it('holds the first search of a sitting while the loaded text is scanned', async () => {
+    state.status = 'ready';
+    const seen: Result[] = [];
+    const view = render(<Probe query="fruits" onRender={(r) => seen.push(r)} />);
+    // The scan runs off the main thread and is seconds on a phone, so this frame is what the reader
+    // looks at; the metadata half here would be replaced by a differently ordered list.
+    expect(seen[0].textPending).toBe(true);
+    expect(seen[0].hits).toEqual([]);
+
+    await waitFor(() => expect(seen.at(-1)!.hitsSettled).toBe(true));
+    expect(seen.at(-1)!.textPending).toBe(false);
+    expect(seen.at(-1)!.hits.map((hit) => hit.id)).toContain('dn9');
+    view.unmount();
+  });
 });
 
 describe('a search that has already been answered', () => {
@@ -67,7 +82,7 @@ describe('a search that has already been answered', () => {
     await waitFor(() => expect(first.at(-1)!.hitsSettled).toBe(true));
     const answered = first.at(-1)!.hits.map((hit) => hit.id);
     expect(answered).toContain('dn9');
-    // The first render had the metadata half only, which is the frame a return must not show.
+    // The first render was still waiting on the scan, which is the frame a return must not show.
     expect(first[0].hitsSettled).toBe(false);
     one.unmount();
 
