@@ -42,6 +42,13 @@ if (typeof window !== 'undefined') {
   window.addEventListener('pagehide', persist);
 }
 
+// Forgets the offset remembered for `key`, so a container keyed on it opens at the top. For a key
+// whose content is replaced rather than revisited — a search's results, once the query changes.
+export function forgetScrollPosition(key: string) {
+  positions.delete(key);
+  schedulePersist();
+}
+
 // Empties the remembered positions, in memory as well as in storage — clearing localStorage alone
 // would let the pending debounce, or the `pagehide` flush, write the map straight back.
 export function clearScrollMemory() {

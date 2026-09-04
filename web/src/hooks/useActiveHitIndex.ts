@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
 // Tracks which search-hit row is highlighted, for TreePane's results and ReaderSearchOverlay —
-// both of which move with up/down, open with Enter, and scroll the active row into view. The index
-// returns to 0 whenever `resetKey` changes; callers pass the query, so an in-place update to the
-// hits doesn't disturb the selection.
+// both of which move with up/down, open with Enter, and scroll the moved-to row into view. The
+// index returns to 0 whenever `resetKey` changes; callers pass the query, so an in-place update to
+// the hits doesn't disturb the selection.
 export function useActiveHitIndex(resetKey: unknown) {
   const [activeIndex, setActiveIndex] = useState(0);
   // Mirrors `activeIndex` for a window-level keydown listener, whose closure would otherwise hold
@@ -11,16 +11,20 @@ export function useActiveHitIndex(resetKey: unknown) {
   const activeIndexRef = useRef(0);
   activeIndexRef.current = activeIndex;
   const rowRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  // Whether an index change scrolls its row into view. Only a cursor the reader has moved does: one
+  // placed — on arrival, or under the pointer — leaves the scroll where it is.
+  const revealRef = useRef(false);
 
   useEffect(() => {
     setActiveIndex(0);
   }, [resetKey]);
 
   useEffect(() => {
-    rowRefs.current[activeIndex]?.scrollIntoView({ block: 'nearest' });
+    if (revealRef.current) rowRefs.current[activeIndex]?.scrollIntoView({ block: 'nearest' });
   }, [activeIndex]);
 
   function moveBy(delta: number, length: number) {
+    revealRef.current = true;
     setActiveIndex((i) => Math.min(length - 1, Math.max(0, i + delta)));
   }
 

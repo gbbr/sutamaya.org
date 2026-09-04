@@ -168,8 +168,10 @@ describe('mobile search -> reader -> close flow', () => {
     fireEvent.click(screen.getByTitle('Close'));
 
     // Should land back on the tree pane, expanded/scrolled to MN (mn1's own node) — not DN,
-    // the category that happened to be browsed before the search.
+    // the category that happened to be browsed before the search. The results come back with the
+    // close, so the tree is behind them until the search is cleared.
     await screen.findByText('sutamaya');
+    fireEvent.click(tree().getByRole('button', { name: 'Clear search' }));
     const mnRow = tree().getByRole('button', { name: /Middle Discourses/ });
     expect(mnRow.className).toContain('bg-ink/[.06]');
     const dnRow = tree().getByRole('button', { name: /Long Discourses/ });
@@ -218,10 +220,40 @@ describe('mobile search -> reader -> close flow', () => {
     await waitFor(() => expect(screen.getByText(/MN 1/)).toBeTruthy());
 
     // Close the reader — should land back on "My lists", not get bounced to the corpus tree just
-    // because the reopened sutta's own node ('mn') happens to be a real corpus category.
+    // because the reopened sutta's own node ('mn') happens to be a real corpus category. The
+    // results come back with the close, so the tabs are behind them until the search is cleared.
     fireEvent.click(screen.getByTitle('Close'));
     await screen.findByText('sutamaya');
+    fireEvent.click(tree().getByRole('button', { name: 'Clear search' }));
     expect(tree().getByText('Favorites')).toBeTruthy();
+  });
+
+  it('closing a search result returns to the results, on the row it was opened from', async () => {
+    navigate('/browse/dn');
+    const { container } = render(
+      <Router style={{ height: '100%' }}>
+        <LibraryPage path="/browse/:nodeId/*suttaId" />
+        <ReaderPage path="/read/:suttaId" />
+      </Router>
+    );
+    const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
+    await screen.findByText('sutamaya');
+
+    // A query both suttas match, so the second one can't be the row the cursor starts on anyway.
+    fireEvent.click(tree().getByRole('button', { name: 'Search' }));
+    fireEvent.change(tree().getByPlaceholderText(SEARCH_PLACEHOLDER), { target: { value: 'sutta' } });
+    fireEvent.click(await tree().findByText('Mulapariyaya'));
+    await waitFor(() => expect(screen.getByText(/MN 1/)).toBeTruthy());
+
+    fireEvent.click(screen.getByTitle('Close'));
+    await screen.findByText('sutamaya');
+
+    // The query is in the address bar and back in the box, with the results below it.
+    expect(window.location.search).toBe('?q=sutta');
+    expect((tree().getByPlaceholderText(SEARCH_PLACEHOLDER) as HTMLInputElement).value).toBe('sutta');
+    // The opened hit is the marked row, not the first one.
+    expect(tree().getByText('Mulapariyaya').closest('button')!.className).toContain('bg-ink/[.06]');
+    expect(tree().getByText('Brahmajala').closest('button')!.className).not.toContain('bg-ink/[.06]');
   });
 
   // TreePane and ListPane are both *always* mounted on mobile (LibraryPage toggles `display:none`
