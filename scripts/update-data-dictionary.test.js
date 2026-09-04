@@ -5,12 +5,10 @@ import { DatabaseSync } from 'node:sqlite';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { defineWord, dpdSpellings, isVariantOf, variantsClosestFirst } from './update-data-dictionary.mjs';
 
-// The resolution chain is the one piece of this import with real judgement in it: a word is
-// answered by its own headwords, else by its parts, else by a spelling DPD points at, else by a
-// manuscript variant its editors recorded — and each of those branches is reached only by words
-// the corpus happens to contain, so a refresh could stop exercising one without anyone noticing.
-// A fixture database is small enough to state the whole shape here and read it as documentation of
-// what DPD's tables actually look like.
+// The resolution chain, which is where the import's judgement sits: a word is answered by its own
+// headwords, else by its parts, else by a spelling DPD points at, else by a manuscript variant its
+// editors recorded. Each branch is reached only by words the corpus happens to contain, so a
+// fixture database keeps every one of them exercised.
 
 let dbPath;
 let db;

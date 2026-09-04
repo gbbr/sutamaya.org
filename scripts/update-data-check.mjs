@@ -1,15 +1,14 @@
 #!/usr/bin/env node
-// Verifies a checked-out sc-data repo (SC_DATA_PATH) is safe to copy from before
-// update-data-copy.mjs overwrites data/{sujato,pali,html} with it: every file we currently track
-// must still exist at its expected path (see CATEGORY_SOURCE_PREFIXES in lib/dataSync.js), with
-// the same set of segment ids it had when scripts/update-data/snapshot.json was taken — only the
-// translated/structural values, and the blank English-side additions isInertPadding accepts, are
-// allowed to differ. It also cross-checks that a
-// sutta's Pali root text, Bhikkhu Sujato translation, and HTML structure stay aligned with each other
-// (pali/html exactly, sujato as a subset of pali — see INTEGRITY_GROUPS in lib/dataSync.js), both
-// upstream and against the local data/{sujato,pali,html} trees — the local pass is what catches a
-// snapshot taken from an already-misaligned local state, which would otherwise pass every other
-// check here. See data/README.md.
+// Verifies a checked-out sc-data repo (SC_DATA_PATH) is safe to copy from, before
+// update-data-copy.mjs overwrites data/{sujato,pali,html} with it. Four passes:
+//   structure  – every tracked file still at its expected path, with the segment ids
+//                scripts/update-data/snapshot.json recorded (bar the blank English-side additions
+//                isInertPadding accepts)
+//   integrity  – a sutta's Pali, Sujato and HTML stay aligned (see INTEGRITY_GROUPS)
+//   local      – the same two checks over data/{sujato,pali,html}, catching a snapshot taken from
+//                an already-misaligned tree
+//   rules      – every term rule still matches, every override and blurb opener still anchors
+// See data/README.md.
 import fs from 'node:fs';
 import path from 'node:path';
 import {
@@ -54,37 +53,25 @@ function describeSetDiff({ removed, added }) {
   return parts.join('; ');
 }
 
-// Upstream periodically pads its English files out to the root text's full segment id set, adding
-// blank entries in bulk — tens of thousands across thousands of files in a single refresh. Such an
-// addition cannot change what the app ships: build-corpus orders a sutta's segments by the Pali
-// keys and drops any segment empty on both sides (buildBodySegments), so a blank English entry
-// against a segment the Pali already carried produces byte-identical output. Reported as one
-// summary line rather than thousands of findings, which would bury the ones needing a human.
-//
-// Deliberately narrow — everything else stays a hard failure, because it moves segment indices and
-// so silently invalidates stored highlight offsets (`(i, s, e)`, see docs/offline-sync.md):
-// a removal, an addition carrying text, and any addition under pali/ or html/, which is where
-// segment order is actually decided. Cross-category integrity still runs over these files
-// regardless, so padding that has no Pali counterpart at all fails there instead.
+// Whether a file's segment-id change is upstream padding its English out to the root text's id
+// set — an English-side addition, every added value blank. Such an addition cannot change what the
+// app ships, since build-corpus orders by the Pali keys and drops segments empty on both sides.
+// Everything else stays a hard failure: a removal, an addition carrying text, and any addition
+// under pali/ or html/, where segment order is decided.
 function isInertPadding(relPath, { removed, added }, upstream) {
   if (!relPath.startsWith('sujato/')) return false;
   if (removed.length) return false;
   return added.every((key) => typeof upstream[key] === 'string' && upstream[key].trim() === '');
 }
 
-// Splits into words, each keeping its own trailing whitespace, so joining the pieces back is
-// lossless and a token boundary is always a word boundary.
+// Splits `text` into words, each keeping its trailing whitespace, so rejoining is lossless.
 function tokenizeWords(text) {
   return text.match(/\S+\s*/g) ?? [];
 }
 
-// Paints `text` for display beside `reference`: the words the two share at the head and tail are
-// dimmed and the span between them is coloured. These lines are long sentences usually differing in
-// a single word, and dimming everything but that word is what makes the difference findable without
-// reading both end to end. Purely a common prefix/suffix trim — not a real diff — which is exact for
-// the substitution and reword cases that break an anchor, and degrades to "the whole middle is
-// highlighted" for anything larger. Colour rather than an underline caret because these lines wrap
-// in a terminal, and a caret on a separate line lands under the wrong words once they do.
+// Returns `text` painted for display beside `reference`: the words the two share at head and tail
+// dimmed, the span between them in `color`. A common prefix/suffix trim rather than a real diff, so
+// anything larger than a substitution or reword highlights the whole middle.
 function highlightAgainst(reference, text, color) {
   const a = tokenizeWords(reference);
   const b = tokenizeWords(text);
@@ -97,8 +84,7 @@ function highlightAgainst(reference, text, color) {
   return shared(b.slice(0, head)) + (middle.length ? color(middle.join('')) : '') + shared(b.slice(b.length - tail));
 }
 
-// ruleId -> the distinct '"was" → "now"' rewrites it made, read off the locked chunks
-// applyTermRules hands back (each carries the rule that produced it and the text it replaced).
+// Returns ruleId -> the distinct '"was" → "now"' rewrites it made, read off applyTermRules' chunks.
 function rewritesByRule(chunks) {
   const byRule = new Map();
   for (const chunk of chunks) {
@@ -109,11 +95,9 @@ function rewritesByRule(chunks) {
   return byRule;
 }
 
-// A broken segment override, laid out as the derivation that produced the mismatch, top to bottom:
-// upstream's raw line, what the term rules did to it, and only then the expected/found pair that
-// had to be identical and wasn't. Read downward, that shows which pair was the actual comparison —
-// the rule's `from` against the term rules' output, never against raw upstream — and where a word
-// in `found` that appears nowhere upstream came from.
+// Renders a broken segment override as the derivation that produced the mismatch, top to bottom:
+// upstream's raw line, what the term rules made of it, then the expected/found pair that had to be
+// identical — the rule's `from` against the term rules' output, never against raw upstream.
 function describeAnchorBreak({ rule, segment, upstreamNow, anchorNow, chunks }) {
   const lines = [
     `${bold(rule.id)} · ${segment}`,
@@ -125,8 +109,7 @@ function describeAnchorBreak({ rule, segment, upstreamNow, anchorNow, chunks }) 
   if (removedUpstream) {
     lines.push(`      expected  ${dim(rule.from)}`, `      found     ${red('(segment removed upstream)')}`);
   } else {
-    // Only when a term rule actually rewrote the line — otherwise `found` is upstream verbatim and
-    // showing it twice says nothing.
+    // Shown only when a term rule rewrote the line; otherwise `found` is upstream verbatim.
     if (anchorNow !== upstreamNow) {
       lines.push(`      upstream  ${dim(upstreamNow)}`);
       for (const [ruleId, edits] of rewritesByRule(chunks)) lines.push(`        ↪ ${ruleId}  ${[...edits].join(', ')}`);
@@ -134,33 +117,20 @@ function describeAnchorBreak({ rule, segment, upstreamNow, anchorNow, chunks }) 
     lines.push(`      expected  ${highlightAgainst(anchorNow, rule.from, red)}`, `      found     ${highlightAgainst(rule.from, anchorNow, green)}`);
   }
 
-  // The override's whole purpose, and what deciding between re-anchoring it and deleting it turns
-  // on: seeing that upstream now says by itself what the override was written to say makes it
-  // obvious the rule is obsolete rather than merely drifted. Diffed against `found` (what ships
-  // while the rule is broken) rather than against the dead anchor, so the coloured words are
-  // exactly what re-anchoring it would still change.
+  // What the override would still write, coloured against `found` — what ships while it is broken —
+  // so the highlighted words are what re-anchoring it would change.
   lines.push(``, `  Would write:`, `      ${highlightAgainst(removedUpstream ? rule.from : anchorNow, rule.to, yellow)}`);
 
   return lines.join('\n');
 }
 
-// Term rules whose reviewed allow/deny entries upstream has since invalidated — a denied segment
-// that no longer contains the term (so the exclusion does nothing), or an allow-listed one that
-// doesn't either. Same computation update-data triage does, resolved against the upstream checkout
-// rather than data/sujato, which is the whole point of doing it here: triage reads the local tree,
-// so it can only see this *after* the copy has landed the new text.
-//
-// Reported one line per rule, not per segment — 77 stale entries in one rule is a realistic refresh,
-// and listing them here would bury everything else. The per-segment queue is triage's job, and the
-// message says so.
-//
-// Informational, never a failure: nothing about a dead entry makes the copy unsafe, and it can only
-// actually be worked after the copy. Matches data/README.md's "a non-empty queue doesn't fail the
-// run". Untriaged/newly-active segments are deliberately not reported — that's new work rather than
-// an invalidated decision, and it runs to thousands of segments on a normal refresh.
+// Returns one note per term rule whose reviewed allow/deny entries upstream has invalidated — a
+// listed segment that no longer contains the term. The same computation update-data triage does,
+// resolved against the upstream checkout, which triage cannot see until after the copy.
+// Informational, never a failure: a dead entry doesn't make the copy unsafe, and it can only be
+// worked afterwards. Newly-active segments are triage's queue, not an invalidated decision.
 function checkStaleTriage(rules, sujatoUpstreamByRelPath, rulesDir) {
-  // treeName -> [{ segmentId, value, relPath }], built once and shared by every rule, from the
-  // upstream content the caller has already parsed (no second read of the checkout).
+  // treeName -> [{ segmentId, value, relPath }], built once from content the caller already parsed.
   const cache = new Map();
   const segmentsFor = (treeName) => {
     if (!cache.has(treeName)) {
@@ -191,19 +161,11 @@ function checkStaleTriage(rules, sujatoUpstreamByRelPath, rulesDir) {
   return notes;
 }
 
-// Every term rule that finds no match anywhere in `sujatoUpstreamByRelPath` (restricted to its own
-// scope), and every segment rule or blurb opener whose `from` no longer anchors — resolved against
-// upstream (via bilaraRoot), before anything is copied, so a broken rule surfaces at the same point
-// a structural problem would rather than only after `update-data post` runs against already-copied-in
-// local data. Both kinds resolve their file via the *local* index (data/sujato is expected to still
-// have every override's segment at its current relPath — a renamed/relocated file is what the
-// structural upstreamIssues pass above already catches).
-//
-// An override's `from` is post-processed text, not upstream's own: overrides run last, over the term
-// rules' output (see docs/retranslation.md's "Segment override"), so the term rules are applied to the
-// upstream segment here before comparing. Comparing against raw upstream instead would fail every
-// override whose line contains a term any rule rewrites, which is most of them — an override usually
-// exists *because* a term rule got that line wrong.
+// Returns a finding for every term rule that matches nowhere upstream, and every segment rule or
+// blurb opener whose `from` no longer anchors — all resolved against upstream, before anything is
+// copied. Each override's file comes from the *local* index; a relocated file is upstreamIssues'
+// business. An override's `from` is post-processed text, so the term rules are applied to the
+// upstream segment before comparing (see docs/retranslation.md's "Segment override").
 function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, localBlurbIndex, rulesDir) {
   const issues = [];
   const sidecars = new Map(rules.filter(isTermRule).map((rule) => [rule.id, loadSidecar(rule.id, rulesDir)]));
@@ -225,8 +187,8 @@ function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, loc
   }
 
   for (const rule of rules.filter(isSegmentRule)) {
-    // Each named segment is checked on its own, so an override covering a repeated line reports the
-    // one repeat that drifted rather than the whole rule.
+    // Checked one segment at a time, so an override covering a repeated line reports the repeat
+    // that drifted rather than the whole rule.
     for (const segment of segmentsOf(rule)) {
       const relPath = localSegmentIndex.get(segment);
       if (!relPath) {
@@ -247,8 +209,8 @@ function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, loc
     }
   }
 
-  // A blurb opener anchors on a prefix rather than the whole value, so the break is reported as the
-  // two openings side by side — the paragraph behind them is long, unchanged, and not what drifted.
+  // A blurb opener anchors on a prefix, so a break is reported as the two openings side by side
+  // rather than the whole paragraph.
   for (const rule of rules.filter(isBlurbRule)) {
     for (const opener of rule.openers) {
       const relPath = localBlurbIndex.get(opener.blurb);
@@ -283,38 +245,30 @@ function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, loc
   return issues;
 }
 
-// Core logic, callable directly with an explicit bilaraRoot/dataDirs/snapshotPath (tests use this
-// to point at fixture trees instead of the real data/{sujato,pali,html} — see
-// scripts/update-data.test.js). Returns a result object instead of printing/exiting so callers
-// (the CLI entry point below, or a test) decide what to do with it.
+// Runs every pass and returns the findings, grouped, rather than printing or exiting. Every path is
+// a parameter so a test can point it at fixture trees.
 export async function runCheck({ bilaraRoot, dataDirs = DATA_DIRS, snapshotPath = SNAPSHOT_PATH, rulesDir = RULES_DIR, retranslationPath = RETRANSLATION_PATH }) {
   const snapshot = loadSnapshot(snapshotPath);
 
-  // Built lazily on the first missing file — a full-tree scan, so not worth doing unless
-  // something has actually gone missing from its expected path.
+  // A full-tree scan, so built lazily on the first file missing from its expected path.
   let basenameIndex = null;
   function possibleRelocations(relPath) {
     if (!basenameIndex) basenameIndex = buildBasenameIndex(bilaraRoot);
     return basenameIndex.get(path.basename(relPath)) || [];
   }
 
-  // Independent of bilaraRoot entirely — verifies data/{sujato,pali,html} itself still matches
-  // snapshot.json, catching a copy that got committed without a follow-up update-data accept.
-  // Kept separate from upstreamIssues below (rather than one merged list) since they're different
-  // questions with different fixes: local drift means "run update-data accept", an upstream
-  // issue means "review what changed in SC_DATA_PATH".
+  // Local drift from snapshot.json, independent of bilaraRoot. Kept apart from upstreamIssues
+  // because the fix differs: local drift means "run update-data accept", an upstream issue means
+  // "review what changed in SC_DATA_PATH".
   const localIssues = checkSnapshotInSync({ dataDirs, snapshotPath }).issues;
   const upstreamIssues = [];
-  // category -> { files, segments } for the inert blank-segment additions isInertPadding waves
-  // through. Accepted, not an issue — reported as one summary line so the refresh is still visible.
+  // category -> { files, segments } for the additions isInertPadding waves through.
   const padding = new Map();
   let checked = 0;
 
-  // Reused below for the upstream integrity cross-check, so every tracked file is only read once.
+  // Every tracked file's keys, so the integrity cross-check below re-reads nothing.
   const upstreamKeysByRelPath = new Map();
-  // Full parsed content (not just keys), but only for sujato/* categories — pali/html have no
-  // translatable prose, so rules never touch them and there's no reason to hold their content in
-  // memory here. Feeds checkRuleAnchors below.
+  // Full parsed content, for sujato/* only — rules never touch pali/html. Feeds checkRuleAnchors.
   const sujatoUpstreamByRelPath = new Map();
 
   for (const [relPath, expected] of Object.entries(snapshot.files)) {
@@ -359,22 +313,19 @@ export async function runCheck({ bilaraRoot, dataDirs = DATA_DIRS, snapshotPath 
 
   const integrityIssues = checkCrossCategoryIntegrity(Object.keys(snapshot.files), (relPath) => upstreamKeysByRelPath.get(relPath) ?? null);
 
-  // Cheap (a few hundred ms even over the full corpus) and catches something upstreamIssues/
-  // localIssues together can't: a snapshot taken from an already cross-category-misaligned local
-  // state, which matches itself and matches upstream just fine on a per-file basis.
+  // Catches what neither pass above can: a snapshot taken from an already-misaligned local tree,
+  // which matches itself and upstream file by file.
   const localIntegrityIssues = checkCrossCategoryIntegrity(listLocalRelPaths(dataDirs), (relPath) => readKeysSafe(localPathFor(relPath, dataDirs)));
 
-  // Independent of every check above — a retranslation rule can be perfectly fine structurally
-  // (segment ids untouched, cross-category alignment intact) while still being dead or stale, so
-  // this runs regardless of whether anything else failed. sujatoDir defaults from dataDirs.sujato
-  // rather than importing SUJATO_DIR directly, so a fixture dataDirs override (tests) is honored.
+  // Run whatever the passes above found: a rule can be dead or stale while every segment id and
+  // every alignment is intact.
   const rules = await loadRules(retranslationPath);
   const localSegmentIndex = buildSegmentIndex(dataDirs.sujato);
   const localBlurbIndex = buildBlurbIndex(dataDirs.sujato);
   const ruleIssues = checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, localBlurbIndex, rulesDir);
   const staleTriage = checkStaleTriage(rules, sujatoUpstreamByRelPath, rulesDir);
 
-  // staleTriage is deliberately not folded in — see checkStaleTriage: it's reported, not failed on.
+  // staleTriage is not folded in: it is reported, never failed on.
   const issues = [...localIssues, ...upstreamIssues, ...integrityIssues, ...localIntegrityIssues, ...ruleIssues];
   return {
     ok: issues.length === 0,

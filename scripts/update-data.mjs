@@ -1,27 +1,22 @@
 #!/usr/bin/env node
 // The one entry point for refreshing data/ from a checked-out sc-data (SC_DATA_PATH). Three verbs,
-// in the order you run them, modelled on plan/apply/accept because the shape is the same — propose,
-// review, commit:
+// in the order they are run:
 //
 //   npm run update-data           plan    read-only: what upstream changed, and what it breaks here
 //   npm run update-data apply     apply   copy it in and re-run the rules, leaving the tree dirty
 //   npm run update-data accept    accept  re-baseline, once you've reviewed that dirty tree
 //
-// The review between apply and accept is the part that needs a human, and it is deliberately not a
-// command: it's `git diff data/sujato/` (what upstream changed), `git diff data/diff/` (what this
-// app's rules did differently as a result), and `update-data triage` for what the refresh did to
-// the rules themselves. Everything else here is plumbing that should stay out of the way.
+// The review between apply and accept is a human's, not a command: `git diff data/sujato/`,
+// `git diff data/diff/`, and `update-data triage`.
 //
-// Two more subcommands serve rule authoring rather than a refresh, where the pipeline above doesn't
-// apply — see docs/retranslation.md:
+// Two more subcommands serve rule authoring rather than a refresh — see docs/retranslation.md:
 //
 //   npm run update-data post      re-run the rules over the current data/sujato (iterate on a rule)
 //   npm run update-data counts    re-record rule footprints without touching the segment baseline
 //
-// Each subcommand ends by naming the next one, so the sequence never has to be remembered. Which
-// step you're on is read from data/manifest.json rather than assumed: `sourceCommit` is what was
-// last copied in, `snapshotCommit` what was last accepted, and they differ exactly when a refresh
-// is applied but not yet accepted.
+// Each subcommand ends by naming the next one. Which step the tree is on is read from
+// data/manifest.json: `sourceCommit` is what was last copied in, `snapshotCommit` what was last
+// accepted.
 import fs from 'node:fs';
 import path from 'node:path';
 import { requireSourceRoot, sourceGitInfo, MANIFEST_PATH, SNAPSHOT_PATH, red, green, yellow, bold, dim } from './lib/dataSync.js';
@@ -36,9 +31,8 @@ import { runDictionary, DICT_PATH } from './update-data-dictionary.mjs';
 
 const COMMANDS = ['plan', 'apply', 'accept', 'triage', 'post', 'counts', 'dictionary', 'help'];
 
-// Where the pipeline currently stands, from the provenance manifest copy and accept both write.
-// 'applied' is the only interesting one: a refresh is in the working tree and hasn't been accepted,
-// which is the state the review happens in.
+// Returns where the pipeline stands, from the manifest copy and accept both write: 'applied' when a
+// refresh is in the working tree awaiting review, 'accepted' once it has been re-baselined.
 function pipelineState() {
   if (!fs.existsSync(MANIFEST_PATH)) return { phase: 'unknown' };
   const { sourceCommit = null, snapshotCommit = null } = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
@@ -57,8 +51,7 @@ function sourceMeta(gitInfo) {
 
 // ── plan ───────────────────────────────────────────────────────────────────────────────────────
 
-// runCheck's findings, grouped so the rows read as a checklist of what was verified rather than as
-// a list of whatever happened to fail. Each group prints as one row, with its findings below it.
+// The checklist plan prints: one row per group of runCheck findings, with its findings below it.
 function planSections(result, bilaraRoot) {
   return [
     { key: 'localIssues', kind: 'fail', label: 'Local tree', pass: 'matches the accepted baseline', fail: (c) => `${c} file(s) drifted from snapshot.json` },
@@ -88,8 +81,7 @@ async function plan() {
     console.log();
   }
 
-  // Neither of the next two is a failure: both are things you should know about that need no
-  // decision before applying.
+  // Neither of the next two is a failure: both need knowing about, neither needs a decision.
   if (result.staleTriage.length) {
     row('warn', 'Triage', `${result.staleTriage.length} rule(s) have entries upstream has invalidated`);
     for (const note of result.staleTriage) block(note);
@@ -116,18 +108,16 @@ async function plan() {
     return 0;
   }
 
-  // Nothing failed and nothing is pending: either there is genuinely nothing new upstream, or the
-  // changes are all value-level (rewordings), which is the ordinary case and still worth applying.
+  // Nothing failed and nothing is pending: either nothing is new upstream, or the changes are all
+  // rewordings.
   next('npm run update-data apply', 'no structural changes — any reworded text will come in with it');
   return 0;
 }
 
 // ── apply ──────────────────────────────────────────────────────────────────────────────────────
 
-// What a failing post run has to say. Names each broken rule and stops there: the anchor itself —
-// upstream's line, what the term rules made of it, and the recorded `from` against it, word-diffed
-// — is `plan`'s job, and reproducing a worse version of it here would only invite reading the
-// worse one.
+// Reports a failing post run: each dead rule and broken override by name, the anchors themselves
+// being `plan`'s job.
 function reportRuleFailure(result) {
   row('fail', 'Rules', 'data/sujato.post/ was NOT written');
   for (const id of result.deadRules) block(red(`${id}: matched nowhere`));
@@ -135,9 +125,8 @@ function reportRuleFailure(result) {
   if (result.brokenOverrides.length) block(dim('→ `npm run update-data` shows each broken anchor against what upstream now says'));
 }
 
-// The dictionary import is the one optional step in the pipeline, so it always reports — a step
-// that stays silent when it is off is a step nobody remembers exists. Both rows name DPD_DB_PATH
-// for the same reason: whichever way it went, the variable that decided it is on screen.
+// Reports the dictionary import, which is optional: it prints a row either way, naming DPD_DB_PATH
+// in both.
 function reportDictionary(result) {
   if (result.skipped) {
     row('note', 'Dictionary', `DPD_DB_PATH not set — keeping ${path.relative(process.cwd(), DICT_PATH)} as checked in`);
@@ -148,9 +137,8 @@ function reportDictionary(result) {
   const delta = change === null ? '' : change === 0 ? ` (unchanged from ${against})` : ` (${change > 0 ? '+' : '−'}${n(Math.abs(change))} vs ${against})`;
   row('ok', 'Dictionary', `DPD ${result.version} → ${n(result.entries)} headwords${delta}, ${(result.bytes / 1e6).toFixed(1)} MB`);
   row('note', 'Dictionary', `from DPD_DB_PATH=${result.dbPath}`);
-  // Scoped to data/pali/, which is a good deal more than the app renders — titles, structural
-  // labels and whole files the browse tree never reaches. Said plainly, because the number is
-  // large enough to read as alarming next to the one build:corpus prints for the shipped text.
+  // Counted over all of data/pali/, which is more than the app renders — titles, structural labels
+  // and whole files the browse tree never reaches.
   row(
     'note',
     'Dictionary',
@@ -206,8 +194,8 @@ async function accept() {
 
 // ── the rule-authoring subcommands ─────────────────────────────────────────────────────────────
 
-// `--quiet` drops the frame: build:corpus runs post as a build step, where a banner and a "next
-// command" would be answering a question nobody asked. Failures still print in full.
+// Re-runs the rules over data/sujato. `--quiet` drops the banner and the next-command hint, for the
+// build step that runs this; a failure still prints in full.
 async function post(args = []) {
   const quiet = args.includes('--quiet');
   if (!quiet) banner('post');
@@ -230,8 +218,7 @@ async function post(args = []) {
   return 0;
 }
 
-// Standalone, for picking up a new DPD release without a corpus refresh — the two move on their
-// own schedules.
+// Rebuilds data/pli2en_dpd.json from a DPD release, on its own schedule rather than a refresh's.
 // `force` is a positional word for the same reason `prune` is — npm swallows a leading `--`.
 async function dictionary(args = []) {
   banner('dictionary');
@@ -252,9 +239,8 @@ async function counts() {
   return 0;
 }
 
-// `prune` is a positional word, not a flag, because `npm run` silently swallows anything starting
-// with `--` unless it is preceded by a bare `--`. A flag here would be a command the printed hints
-// could tell you to run and that would then quietly do nothing.
+// Shows what a refresh did to the term rules, for one rule or all of them. `prune` is a positional
+// word, not a flag: `npm run` swallows anything starting with `--` unless a bare `--` precedes it.
 async function triage(args) {
   const words = args.filter((a) => !a.startsWith('--'));
   const prune = words.includes('prune');
@@ -262,10 +248,8 @@ async function triage(args) {
   banner('triage', ruleId ? `${ruleId}${prune ? ' · prune' : ''}` : 'every term rule');
   const code = await runTriage({ ruleId, prune });
 
-  // Triage is where rules get edited, so it has to close the loop back to whatever re-runs them.
-  // Which command that is depends on where the pipeline stands: mid-refresh, `apply` re-copies the
-  // same upstream commit and re-runs the rules, so it's idempotent and there's no reason to reach
-  // past it for `post`.
+  // The command that re-runs an edited rule, which mid-refresh is `apply` — it re-copies the same
+  // upstream commit and re-runs the rules.
   if (pipelineState().phase === 'applied') {
     next('npm run update-data apply', 'changed a rule? re-runs them over the refreshed text — then read git diff data/diff/00-all.diff');
   } else {

@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 // Applies the declared editorial layer over Bhikkhu Sujato's English (scripts/update-data/
-// retranslation.mjs) to data/sujato/ and writes the result to data/sujato.post/ — never mutating
-// data/sujato/ itself, so it stays pristine upstream text and `post` is a pure function of
-// (upstream, rules), safely re-runnable while rules are being authored. See
-// docs/retranslation.md for the full design; this is the mechanism.
+// retranslation.mjs) to data/sujato/ and writes the result to data/sujato.post/, leaving
+// data/sujato/ as pristine upstream text. See docs/retranslation.md for the design; this is the
+// mechanism.
 //
-// Pali/HTML have no translatable English prose, so this step only ever touches sujato/*.
+// Pali and HTML hold no English prose, so this step only ever touches sujato/*.
 import fs from 'node:fs';
 import path from 'node:path';
 import { walkJsonFiles, ROOT, red, green, yellow, bold } from './lib/dataSync.js';
@@ -30,14 +29,11 @@ import {
 
 const DIFF_DIR = path.join(ROOT, 'data', 'diff');
 
-// Core logic, callable directly with explicit dirs/paths (tests point these at fixture trees
-// instead of the real data/sujato(.post) — see scripts/update-data.test.js). Never touches
-// `sujatoDir`; only reads it. Writes `postDir` (wiped and fully rewritten each run) only when
-// every anchor holds — a dead term rule or a segment override whose `from` no longer matches
-// verbatim is a hard fail, and a hard-failing run must not silently produce a degraded build (see
-// docs/retranslation.md's anchors table).
-// `diff` is off by default so programmatic callers (the tests, update-data counts) don't write
-// over the checked-in data/diff/; the CLI below always turns it on.
+// Applies every rule and returns what it did. `sujatoDir` is only read; `postDir` is wiped and
+// rewritten, but only when every anchor holds — a dead term rule or an override whose `from` no
+// longer matches is a hard fail (see docs/retranslation.md's anchors table). `diff` is off by
+// default so a programmatic caller doesn't write over the checked-in data/diff/. Every path is a
+// parameter so a test can point it at fixture trees.
 export async function runPost({
   sujatoDir = SUJATO_DIR,
   postDir = SUJATO_POST_DIR,
@@ -52,9 +48,8 @@ export async function runPost({
   const blurbRules = rules.filter(isBlurbRule);
   const sidecars = new Map(termRules.map((r) => [r.id, loadSidecar(r.id, rulesDir)]));
 
-  // Load every tracked file up front, keyed by the same logical 'sujato/sutta/...' relPath
-  // lib/dataSync.js uses — cheap (a few thousand small JSON files) and lets segment-override
-  // resolution and the diff writer share this same in-memory tree rather than re-reading.
+  // Every tracked file, keyed by the logical 'sujato/sutta/…' relPath lib/dataSync.js uses. Rule
+  // application, segment-override resolution and the diff writer all work over this one tree.
   const objects = new Map(); // relPath -> parsed object (mutated in place as rules apply)
   for (const fullPath of walkJsonFiles(sujatoDir)) {
     const relPath = 'sujato/' + path.relative(sujatoDir, fullPath).split(path.sep).join('/');
@@ -63,9 +58,8 @@ export async function runPost({
 
   const ruleCounts = new Map(); // ruleId -> total match count across the whole run
   const diffEntries = []; // { ruleId, relPath, segmentId, chunks } — only populated when diff
-  // `${relPath}\0${segmentId}` -> the pristine upstream value, recorded the first time anything
-  // rewrites that segment. `objects` is mutated in place as rules apply, so by the time the diff
-  // writer runs the upstream side is otherwise gone — and it's the side 00-all.diff is about.
+  // `${relPath}\0${segmentId}` -> the upstream value, recorded the first time anything rewrites
+  // that segment. It is the `-` side of 00-all.diff, and `objects` no longer holds it by then.
   const originals = new Map();
   const recordOriginal = (relPath, segmentId, value) => {
     const key = `${relPath}\0${segmentId}`;
@@ -91,9 +85,8 @@ export async function runPost({
     }
   }
 
-  // Every term rule gets an entry in ruleCounts, including ones that matched nowhere — that's
-  // exactly the zero-match anchor below, and it's how a rule with real matches elsewhere still
-  // shows 0 rather than being silently absent from the summary.
+  // Every term rule gets an entry, including one that matched nowhere — that zero is the anchor
+  // the next line reads, and the summary's way of naming a rule that stopped working.
   for (const rule of termRules) if (!ruleCounts.has(rule.id)) ruleCounts.set(rule.id, 0);
 
   const deadRules = termRules.filter((r) => ruleCounts.get(r.id) === 0).map((r) => r.id);
@@ -125,8 +118,8 @@ export async function runPost({
   }
   for (const rule of segmentRules) if (!ruleCounts.has(rule.id)) ruleCounts.set(rule.id, 0);
 
-  // Blurb openers, last of all and on the same terms as a segment override: an opener that no
-  // longer anchors is a hard fail, not a skip.
+  // Blurb openers, last, and on a segment override's terms: one that no longer anchors is a hard
+  // fail, not a skip.
   if (blurbRules.length > 0) {
     const blurbIndex = buildBlurbIndex(sujatoDir);
     for (const rule of blurbRules) {
@@ -189,34 +182,22 @@ export async function runPost({
 
 // --- Diff writer -----------------------------------------------------------------------------
 // Writes data/diff/{00-summary.txt,00-all.diff,<id>.diff}, wiped and fully rewritten on every
-// `post` run.
-// These files are **checked in**: `git diff data/diff/` after an `update-data` refresh is what
-// shows which of this app's own rewrites upstream has moved under, rule by rule. That makes
-// byte-stability the requirement — no colour, no timestamps, source files in sorted order — so a
-// run over unchanged input produces an unchanged tree and any diff at all is real.
-//
-// Each rule file is a genuine unified diff, which is what pays for the plain bytes: `riff <
-// data/diff/<id>.diff` (or delta) recomputes the changed span and highlights it inline, so the
-// word-level view lives in the viewer instead of in the file, and the same file still reads
-// cleanly through `git diff` and on GitHub.
+// `post` run. These files are checked in, so they are byte-stable — no colour, no timestamps,
+// source files in sorted order — and each is a genuine unified diff, which `git diff`, GitHub and
+// a word-level viewer such as `riff` all read.
 
-// A segment value is normally a single line; three in the whole corpus aren't, and a raw newline
-// would break the diff grammar around it.
+// Returns `s` as one line: a raw newline would break the diff grammar around it.
 const oneLine = (s) => String(s).replace(/\r?\n/g, ' ⏎ ');
 
-// Renders one rule's contribution to a segment's final text: `variant` picks whether each of this
-// rule's own chunks shows its pre-image (`original`) or post-image (`text`) — chunks from every
-// other rule (or never touched at all) always show their already-final text, since the point is
-// to see this rule's change in the context it actually landed in, not to re-derive the whole
-// segment's history. It's also what keeps a viewer's inline highlight honest: the two rendered
-// lines differ in this rule's spans and nowhere else.
+// Renders a segment with one rule's own chunks as their pre-image ('before') or post-image
+// ('after'), every other chunk staying final — so the two variants differ in this rule's spans and
+// nowhere else.
 function renderChunks(chunks, ruleId, variant) {
   return chunks.map((c) => (c.locked && c.ruleId === ruleId ? (variant === 'before' ? c.original : c.text) : c.text)).join('');
 }
 
-// One hunk per changed segment: the segment id goes in the header's section field and the Pali is
-// the hunk's single context line, both plain unified-diff grammar so every viewer parses them. The
-// line numbers are nominal — nothing ever applies these patches.
+// Appends one hunk for a changed segment: its id in the header's section field, its Pali as the one
+// context line. The line numbers are nominal — nothing applies these patches.
 function pushHunk(lines, { relPath, segmentId, before, after, paliDir }) {
   const pali = relPath.startsWith('sujato/sutta/') ? paliTextFor(segmentId, relPath, paliDir) : null;
   lines.push(`@@ -1${pali ? ',2' : ''} +1${pali ? ',2' : ''} @@ ${segmentId}`);
@@ -224,13 +205,9 @@ function pushHunk(lines, { relPath, segmentId, before, after, paliDir }) {
   lines.push(`-${oneLine(before)}`, `+${oneLine(after)}`);
 }
 
-// data/diff/00-all.diff — every rule's effect at once, upstream data/sujato/ against shipped
-// data/sujato.post/. The per-rule files each show one step of a sequence, so their `-` side is
-// whatever earlier rules had already made of the line, which is the honest way to attribute a
-// change to a rule but reads as an intermediate no one ships ("a bhikkhu … keenly", mid-way
-// between upstream's "a mendicant … keenly" and the shipped "a bhikkhu … ardently"). This file
-// answers the other question — what does this app ship differently from upstream — and is the one
-// to read after a refresh.
+// Writes data/diff/00-all.diff: every rule's effect at once, upstream data/sujato/ against shipped
+// data/sujato.post/. It is the file to read after a refresh — a per-rule file's `-` side is
+// whatever earlier rules had already made of the line, an intermediate nobody ships.
 function writeCombinedDiff({ diffDir, originals, objects, paliDir }) {
   const byFile = new Map();
   for (const [key, before] of originals) {
@@ -265,9 +242,8 @@ function writeDiffFiles({ diffDir, diffEntries, rules, ruleCounts, deadRules, or
   fs.writeFileSync(path.join(diffDir, '00-summary.txt'), summaryLines.join('\n') + '\n');
 
   for (const [ruleId, entries] of byRule) {
-    // Group by source file so one `---`/`+++` header covers every segment changed in it, and sort
-    // the paths: entries arrive in walkJsonFiles' readdir order, which isn't stable across
-    // machines, and these files are committed.
+    // Grouped by source file so one `---`/`+++` header covers every segment changed in it, and
+    // sorted, readdir order not being stable across machines.
     const byFile = new Map();
     for (const entry of entries) {
       if (!byFile.has(entry.relPath)) byFile.set(entry.relPath, []);
@@ -277,9 +253,8 @@ function writeDiffFiles({ diffDir, diffEntries, rules, ruleCounts, deadRules, or
     const lines = [`Rule: ${ruleId} — ${entries.length} change(s), ${byFile.size} file(s)`, ''];
     for (const relPath of [...byFile.keys()].sort()) {
       lines.push(`--- ${relPath}`, `+++ ${relPath}`);
-      // Segment-override and blurb-opener entries carry the whole before/after value directly
-      // (`from`/`to`) rather than chunks — the rule rewrites the value as a whole, so there's no
-      // surrounding context to isolate a span within.
+      // Segment-override and blurb-opener entries carry the whole value as `from`/`to` rather than
+      // chunks — those rules rewrite a value entire.
       for (const { segmentId, chunks, from, to } of byFile.get(relPath)) {
         pushHunk(lines, {
           relPath,

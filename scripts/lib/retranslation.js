@@ -12,29 +12,19 @@ export const RETRANSLATION_PATH = path.join(ROOT, 'scripts', 'update-data', 'ret
 export const RULES_DIR = path.join(ROOT, 'scripts', 'update-data', 'rules');
 export const COUNTS_PATH = path.join(ROOT, 'scripts', 'update-data', 'retranslation.counts.json');
 
-// The four sujato trees post copies — matches CATEGORY_SOURCE_PREFIXES's sujato/* entries in
-// lib/dataSync.js.
+// The four sujato trees post copies.
 export const SUJATO_TREES = ['sujato/sutta', 'sujato/notes', 'sujato/name', 'sujato/blurb'];
 
-// The three a rule may rewrite, and the default scope. **sujato/notes is never retranslated**: a
-// note is Bhikkhu Sujato writing about the text rather than translating it, so he quotes his own
-// renderings and uses the same words as ordinary English, and a rule that is right on the
-// translation is routinely wrong there — MN 10's note arguing for "mindfulness meditation" would be
-// rewritten into the very term that replaces it. A note can't be corrected by hand either, since a
-// segment override resolves through sutta-only ids (see buildSegmentIndex). Naming it in a `scope`
-// is rejected rather than ignored, so the policy can't be half-undone by one rule.
+// The three a rule may rewrite, and the default scope. sujato/notes is never retranslated — a note
+// is Bhikkhu Sujato writing *about* the text, quoting his own renderings — and naming it in a
+// `scope` is rejected rather than ignored.
 export const RETRANSLATABLE_TREES = ['sujato/sutta', 'sujato/name', 'sujato/blurb'];
 
-// Loads the rules array from retranslation.mjs, read as text and imported via a data: URL rather
-// than `import('file://...')` — the file's own content decides freshness (no ESM module-cache
-// staleness to fight, so no cache-busting query string needed either), and it's also what lets
-// this work under Vitest at all: Vite's dev server restricts filesystem module loads to the
-// project root by default, which a test's tmp-dir fixture rules file falls outside of; a data:
-// URL never touches that allow-list. The one constraint this puts on retranslation.mjs itself: it
-// must be self-contained (no imports of its own), since a data: URL has no base to resolve a
-// relative specifier against — true today and expected to stay true (it's a plain array literal).
-// Validates ids are unique and every id/kind combination is well-formed, since a bad id silently
-// corrupts sidecar/count/diff filenames otherwise.
+// Loads and validates the rules array from retranslation.mjs, throwing on a malformed rule — a bad
+// id would otherwise corrupt sidecar, count and diff filenames. Imported through a data: URL, which
+// keeps the file's own content the only freshness question and works under Vitest's module-load
+// restrictions; retranslation.mjs must therefore stay self-contained, a data: URL having no base to
+// resolve a relative import against.
 export async function loadRules(retranslationPath = RETRANSLATION_PATH) {
   const source = fs.readFileSync(retranslationPath, 'utf8');
   const url = `data:text/javascript;base64,${Buffer.from(source, 'utf8').toString('base64')}`;
@@ -98,12 +88,8 @@ export const isTermRule = (rule) => rule.kind !== 'segment' && rule.kind !== 'bl
 export const isSegmentRule = (rule) => rule.kind === 'segment';
 export const isBlurbRule = (rule) => rule.kind === 'blurb';
 
-// The segments one override applies to. `segment: 'x'` and `segments: ['x', 'y']` are the same
-// thing, one entry versus several — the plural is for a line the corpus repeats verbatim (a stock
-// verse recurring across three Theragāthā poems, say), where one `from`/`to` is the whole decision
-// and spelling it out per segment would be the same rule copied. Every named segment must still
-// match `from` on its own, so a repeat that has since drifted breaks the anchor instead of being
-// quietly skipped.
+// The segments one override applies to, from either `segment` or `segments` — the plural being for
+// a line the corpus repeats verbatim. Each must still match `from` on its own.
 export function segmentsOf(rule) {
   if (rule.segments) return rule.segments;
   return rule.segment ? [rule.segment] : [];
@@ -127,8 +113,7 @@ export function loadSidecar(ruleId, rulesDir = RULES_DIR) {
   return { reviewedAt: raw.reviewedAt ?? null, allow: raw.allow ?? [], deny: raw.deny ?? {} };
 }
 
-// Machine-written, deterministically sorted so a re-write's diff shows only the actual change —
-// see docs/retranslation.md's "Sidecars are machine-written and sorted".
+// Writes a rule's sidecar, sorted, so a re-write's diff shows only the actual change.
 export function saveSidecar(ruleId, sidecar, rulesDir = RULES_DIR) {
   fs.mkdirSync(rulesDir, { recursive: true });
   const sorted = {
@@ -140,16 +125,14 @@ export function saveSidecar(ruleId, sidecar, rulesDir = RULES_DIR) {
   return sorted;
 }
 
-// Whether `rule` may touch `segmentId` at all — the allow/deny gate described in docs/retranslation.md
-// under "Closed or open". Independent of whether the rule's forms actually match the text there;
-// callers combine this with a forms match to decide what to do.
+// Whether `rule` may touch `segmentId` at all: the allow/deny gate, independent of whether its
+// forms match the text there.
 export function isPermitted(rule, sidecar, segmentId) {
   if (rule.mode === 'allow') return sidecar.allow.includes(segmentId);
   return !(segmentId in sidecar.deny); // mode === 'deny'
 }
 
-// Longest-first so e.g. "situational awareness" is tried before "awareness" would otherwise
-// shadow it — see docs/retranslation.md's "forms" field.
+// A rule's forms, longest first, so "situational awareness" is tried before "awareness".
 export function sortedForms(rule) {
   return [...rule.forms].sort((a, b) => b[0].length - a[0].length);
 }
@@ -157,13 +140,11 @@ export function sortedForms(rule) {
 const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const capitalize = (s) => s[0].toUpperCase() + s.slice(1);
 
-// Words a title leaves lowercase — enough to classify the corpus's own headings ("The Longer
-// Discourse on Mindfulness Meditation") and to set the ones this layer writes.
+// Words a title leaves lowercase.
 const TITLE_LOWERCASE = new Set(['a', 'an', 'and', 'as', 'at', 'for', 'in', 'of', 'on', 'the', 'to']);
 
 // Whether a match is Title Case rather than a capitalized sentence: every word a title would
-// capitalize does start with a capital, and there are at least two words to tell the two apart.
-// A single-word match is never title case.
+// capitalize starts with a capital, over at least two words. A single-word match never is.
 function isTitleCase(matched) {
   const words = matched.split(/\s+/).filter(Boolean);
   if (words.length < 2) return false;
@@ -171,11 +152,9 @@ function isTitleCase(matched) {
   return significant.length > 0 && significant.every((w) => w[0] === w[0].toUpperCase());
 }
 
-// The replacement, cased to match what it replaces: lowercase as written, Sentence case from a
-// capitalized first letter, or Title Case throughout. The replacement's own first word follows the
-// match's first word rather than the title rule, so a form that carries a leading preposition
-// ("on mindfulness meditation" → "on the establishment of mindfulness") stays lowercase there while
-// a bare one ("Mindfulness Meditation" → "The Establishment of Mindfulness") does not.
+// Returns `replacement` cased as `matched`: lowercase as written, Sentence case from a capitalized
+// first letter, or Title Case throughout. Its first word follows the match's first word rather than
+// the title rule, so a form carrying a leading preposition stays lowercase there.
 function caseAs(matched, replacement) {
   const firstUpper = matched[0] === matched[0].toUpperCase();
   if (!isTitleCase(matched)) return firstUpper ? capitalize(replacement) : replacement;
@@ -188,31 +167,25 @@ function caseAs(matched, replacement) {
     .join(' ');
 }
 
-// One combined alternation regex for a rule's forms, longest-first so e.g. "situational
-// awareness" is offered before "awareness" — JS regex alternation tries alternatives left to
-// right at each position, so ordering the alternatives this way is what makes the longer phrase
-// win when both could start at the same point.
+// One alternation regex over a rule's forms, longest first — JS tries alternatives left to right at
+// each position, so that ordering is what makes the longer phrase win.
 function combinedFormsRegex(rule) {
   const forms = sortedForms(rule);
   const pattern = forms.map(([from]) => escapeRe(from)).join('|');
   return { re: new RegExp(`\\b(?:${pattern})\\b`, 'gi'), forms };
 }
 
-// Whether any of a rule's forms occur in `text` at all — independent of allow/deny permission.
-// This is the membership test triage uses to find candidates and to detect staleness; it's
-// deliberately the same word-boundary matching applyRuleToChunks uses, so "the form is present"
-// means the same thing everywhere in this module.
+// Whether any of a rule's forms occur in `text`, ignoring allow/deny permission. The same
+// word-boundary matching applyRuleToChunks does, so "the form is present" means one thing here.
 export function formsMatch(rule, text) {
   const { re } = combinedFormsRegex(rule);
   re.lastIndex = 0;
   return re.test(text);
 }
 
-// The locked-chunk pass for one term rule against one segment's current chunk list — see
-// docs/retranslation.md's "The pass". A chunk is `{ text, locked }`; locked chunks are invisible to
-// every rule (this one and all later ones), which is what makes same-segment rules order-safe —
-// one rule's replacement can be another's source word — while same-word collisions between two
-// rules still resolve by array order.
+// Runs one term rule over a segment's chunk list and returns the new list and its match count. A
+// chunk is `{ text, locked }`, and a locked chunk is invisible to every later rule, so one rule's
+// replacement can be another's source word; same-word collisions resolve by array order.
 export function applyRuleToChunks(chunks, rule) {
   let count = 0;
   const { re, forms } = combinedFormsRegex(rule);
@@ -244,11 +217,9 @@ export function chunksToString(chunks) {
   return chunks.map((c) => c.text).join('');
 }
 
-// Applies every term rule (in array order) to one segment's value, respecting each rule's
-// scope/mode/sidecar permission. Returns the rewritten text and a Map<ruleId, matchCount> of only
-// the rules that actually matched here (used by post to accumulate totals and by triage's stale
-// check). `treeName` is one of SUJATO_TREES; `paliText` isn't consulted here — the predicate never
-// runs at build time (see docs/retranslation.md) — it's only used by triage/report tooling.
+// Applies every term rule, in array order, to one segment's value, respecting each rule's scope,
+// mode and sidecar permission. Returns the rewritten text, a Map<ruleId, matchCount> of the rules
+// that matched here, and the chunks behind it. `treeName` is one of SUJATO_TREES.
 export function applyTermRules(value, { treeName, segmentId, rules, sidecars }) {
   let chunks = [{ text: value, locked: false }];
   const counts = new Map();
@@ -261,26 +232,20 @@ export function applyTermRules(value, { treeName, segmentId, rules, sidecars }) 
     if (count > 0) counts.set(rule.id, count);
     chunks = next;
   }
-  // `chunks` is returned alongside the joined string so a diff writer can isolate exactly which
-  // span each rule touched (each locked chunk carries the ruleId that produced it and the
-  // original matched text) without re-deriving that from a generic text diff — see
-  // update-data-post.mjs's --diff writer.
+  // Each locked chunk carries the rule that produced it and the text it replaced, which is how the
+  // diff writer attributes a span without re-deriving it from a text diff.
   return { result: chunksToString(chunks), counts, chunks };
 }
 
-// Segment override rules run after all term rules, against their output — see docs/retranslation.md.
-// Returns { result, applied } where applied is false (with no change made) if `from` doesn't match
-// verbatim, so callers can treat that as the anchor-broken case rather than silently no-op'ing.
+// Applies one segment override to `value`, which is the term rules' output — overrides run last.
+// `applied` is false, with no change made, when `from` doesn't match verbatim: the anchor is broken.
 export function applySegmentOverride(value, rule) {
   if (value !== rule.from) return { result: value, applied: false };
   return { result: rule.to, applied: true };
 }
 
-// One opener of a blurb rule, applied to that blurb's post-term-rule text. `from` anchors as a
-// *prefix* rather than the whole value, because a blurb is a paragraph and only its opening span
-// is being rewritten — quoting the rest of it into the rule would put a page of unchanged prose in
-// retranslation.mjs for every entry. Prefix and not a free-floating substring so the anchor stays
-// unambiguous: there is one place it can match.
+// Applies one blurb opener to that blurb's post-term-rule text. `from` anchors as a prefix, not the
+// whole paragraph and not a free-floating substring, so there is exactly one place it can match.
 export function applyBlurbOpener(value, opener) {
   if (typeof value !== 'string' || !value.startsWith(opener.from)) return { result: value, applied: false };
   return { result: opener.to + value.slice(opener.from.length), applied: true };
@@ -291,26 +256,10 @@ export function uidOf(segmentId) {
   return segmentId.slice(0, segmentId.indexOf(':'));
 }
 
-// Maps every segment id in sujato/sutta (only — see below) to the file it lives in, relative to
-// DATA_ROOT (e.g. 'sujato/sutta/an/an1/an1.1-10_translation-en-sujato.json'). Built by walking
-// every sutta file once — necessary because range-batched files key their segments by sub-uid,
-// not by the batch uid the filename carries, so the file can't be derived from a segment id alone
-// (see docs/retranslation.md's "Segment ids resolve to files through a segment→file index"). Cheap
-// (~4,000 files, a few hundred ms) and only needed for segment-override rules, so callers build it
-// once per run rather than per rule.
-//
-// Deliberately sutta-only: sujato/notes is keyed by the *same* segment ids as the sutta text it
-// annotates (a note on dn1:1.1 is filed under the key 'dn1:1.1', same as the segment itself), so a
-// single id->file map spanning sutta+notes+name+blurb together would be ambiguous — whichever tree
-// happened to be walked last for a given id would silently win. A segment override therefore
-// targets the main translation only; retargeting a note isn't something this resolves. Blurbs are
-// addressable, but through their own index below rather than this one.
-//
-// relPath keys throughout this function (and this whole module) are logical, in the same
-// 'sujato/sutta/dn/dn1_translation-en-sujato.json' shape lib/dataSync.js's own relPath/localPathFor
-// use — not literal filesystem-relative paths from some shared root. That's what lets a fixture
-// sujatoDir (unrelated to a real DATA_ROOT) still produce paths paliTextFor/localPathFor can
-// resolve.
+// Maps every segment id in sujato/sutta to the logical relPath of the file holding it. Built by
+// walking the tree, since a range-batched file keys its segments by sub-uid rather than the batch
+// uid its filename carries. Sutta-only: sujato/notes reuses the sutta's segment ids, so one map
+// spanning both would be ambiguous, and blurbs have their own index below.
 export function buildSegmentIndex(sujatoDir = SUJATO_DIR) {
   const index = new Map();
   const suttaDir = path.join(sujatoDir, 'sutta');
@@ -324,10 +273,7 @@ export function buildSegmentIndex(sujatoDir = SUJATO_DIR) {
 }
 
 // Maps every blurb id in sujato/blurb to its file, in the same logical relPath shape
-// buildSegmentIndex uses. Its own index rather than an entry in that one: blurb keys are
-// namespaced by collection ('sn-blurbs:sn12'), so they can't collide with a sutta segment id or
-// with each other, but keeping the two maps apart is what keeps the sutta index free of the
-// ambiguity the notes tree would introduce. Cheap — seven files.
+// buildSegmentIndex uses, and kept apart from that index so it stays sutta-only.
 export function buildBlurbIndex(sujatoDir = SUJATO_DIR) {
   const index = new Map();
   const blurbDir = path.join(sujatoDir, 'blurb');
@@ -340,16 +286,16 @@ export function buildBlurbIndex(sujatoDir = SUJATO_DIR) {
   return index;
 }
 
-// The Pali root text segment aligned with a given sujato/sutta segment id — used only by
-// triage/report/diff tooling (never at build time; see the predicate note above). Bhikkhu Sujato's
-// sutta/notes files share their relative path (minus filename suffix) with pali/sutta, so this is
-// a pure path transform, not a lookup through buildSegmentIndex.
+// The pali/sutta relPath holding the Pali counterpart of a sujato/sutta file. A path transform
+// rather than an index lookup: the two trees share their relative path, filename suffix aside.
 export function paliCounterpartPath(sujatoSuttaRelPath) {
   if (!sujatoSuttaRelPath.startsWith('sujato/sutta/')) return null;
   return sujatoSuttaRelPath.replace(/^sujato\/sutta\//, 'pali/sutta/').replace(/_translation-en-sujato\.json$/, '_root-pli-ms.json');
 }
 
 const paliMapCache = new Map();
+// The Pali root text aligned with one sujato/sutta segment, or null. Used by the triage, report and
+// diff tooling; nothing at build time consults it.
 export function paliTextFor(segmentId, sujatoSuttaRelPath, paliDir = PALI_DIR) {
   const paliRel = paliCounterpartPath(sujatoSuttaRelPath); // 'pali/sutta/...'
   if (!paliRel) return null;
@@ -360,10 +306,8 @@ export function paliTextFor(segmentId, sujatoSuttaRelPath, paliDir = PALI_DIR) {
   return paliMapCache.get(paliPath)[segmentId] ?? null;
 }
 
-// SuttaCentral's structural HTML template for the same segment (see lib/collections.js's roleFor)
-// — used only to classify a segment's role (prose/verse/heading/…) for triage's role partition.
-// 'html/pli/ms/sutta/...' mirrors 'pali/sutta/...' 1:1 (see CATEGORY_SOURCE_PREFIXES), so this is
-// the same path transform as paliCounterpartPath, one level further.
+// The html/pli/ms/sutta relPath holding a sujato/sutta file's structural HTML — the same path
+// transform as paliCounterpartPath, one tree further, html/ mirroring pali/sutta 1:1.
 function htmlCounterpartPath(sujatoSuttaRelPath) {
   const paliRel = paliCounterpartPath(sujatoSuttaRelPath);
   if (!paliRel) return null;
@@ -371,6 +315,7 @@ function htmlCounterpartPath(sujatoSuttaRelPath) {
 }
 
 const htmlMapCache = new Map();
+// One segment's structural role (prose, verse, heading, …), for triage's role partition.
 export function roleOf(segmentId, sujatoSuttaRelPath, htmlDir = HTML_DIR) {
   const htmlRel = htmlCounterpartPath(sujatoSuttaRelPath); // 'html/pli/ms/sutta/...'
   if (!htmlRel) return undefined;

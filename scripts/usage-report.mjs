@@ -5,26 +5,19 @@
 // figure excludes the maintainer's own accounts (MAINTAINER_USER_IDS below), so the report is
 // about other people's use of the app.
 //
-// Privacy: this script only ever computes and prints *aggregate* numbers — counts, sums, and
-// per-sutta totals across all users. It never prints a per-user row, a uid, an email/name, or the
-// content of any note or highlight; it only counts whether those rows exist. That's a deliberate
-// constraint, not an incidental one: see the per-user D1 table shapes in CLAUDE.md ("Backend
-// (worker/)"). If you're extending this file, keep new metrics to that shape — a total, or a
-// breakdown by sutta, never a breakdown by person. The two result sets read in full carry no user
-// identifier out of the database: every account's `created_at`, and every `visited` row's
-// `sutta_id` and `visited_at`.
+// Privacy is a standing constraint on this file: every metric is a total or a breakdown by sutta,
+// never one by person. Nothing prints a per-user row, a uid, an email or name, or the content of a
+// note or highlight, and the two result sets read in full carry no user identifier out of the
+// database — every account's `created_at`, and every `visited` row's `sutta_id` and `visited_at`.
 //
-// What the reading figures actually mean: `visited` holds one row per (user, sutta), and its
-// `visited_at` is the *most recent* read, so re-reading a sutta replaces the earlier timestamp
-// rather than adding to it. Every reading figure is therefore "suttas opened, counted once per
-// reader, at their latest read" — not a visit count, which this schema cannot answer. For the same
-// reason only windows ending now (the last 7 or 30 days) are exact: any earlier window undercounts,
-// because a later re-read moved rows out of it. That is why signups — whose `created_at` never
-// moves — are the only figures shown against the previous period.
+// What the reading figures mean: `visited` holds one row per (user, sutta) and its `visited_at` is
+// the most recent read, so every reading figure is "suttas opened, counted once per reader, at
+// their latest read" — a visit count is not something this schema can answer. Only windows ending
+// now are exact, a later re-read having moved rows out of any earlier one, which is why signups are
+// the only figures shown against the previous period.
 //
-// Runs every query in one batch against the remote D1 database via `wrangler d1 execute --remote
-// --json`; this script has no D1 access of its own, same as every other admin action against it.
-// Needs `wrangler login` first.
+// Every query runs in one batch through `wrangler d1 execute --remote --json`, so `wrangler login`
+// comes first.
 import { execFileSync } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 import { styleText } from 'node:util';
@@ -39,14 +32,12 @@ const CUTOFF_14D = cutoffIso(14);
 const CUTOFF_30D = cutoffIso(30);
 const CUTOFF_60D = cutoffIso(60);
 
-// Weeks of signup history drawn as a sparkline. One block per week, so this is also the width of
-// that cell — keep it equal to VALUE_W and the sparkline lines up with the numbers above it.
+// Weeks of signup history in the sparkline, one block each. Keep it equal to VALUE_W so the
+// sparkline lines up with the numbers above it.
 const SPARK_WEEKS = 10;
 
-// The maintainer's own accounts. Every number in the report excludes them, so what it shows is
-// other people's usage rather than the developer's own reading and testing — which is otherwise
-// the largest share of it. Identified by opaque user id rather than email address: this
-// repository is public, and a checked-in address is a spam magnet.
+// The maintainer's own accounts, excluded from every figure. Named by opaque user id rather than
+// email address, this repository being public.
 const MAINTAINER_USER_IDS = ['ZOKS5yCDqDito7JH8Ose', '7962a2d9-130b-4265-b76e-aa231fb87a27'];
 
 const esc = (value) => String(value).replace(/'/g, "''");
@@ -54,15 +45,13 @@ const MAINTAINER_IDS_SQL = MAINTAINER_USER_IDS.map((id) => `'${esc(id)}'`).join(
 // `users` names the column `id`; every other table names it `user_id`.
 const notMaintainer = (column = 'user_id') => `${column} NOT IN (${MAINTAINER_IDS_SQL})`;
 
-// Lists, notes and highlights are deleted by tombstone, never by removing the row (see
-// docs/offline-sync.md), so every count of them has to exclude the tombstones.
+// Lists, notes and highlights are deleted by tombstone, so every count of them excludes those.
 const LIVE = 'deleted = 0';
 
-// One batch, executed as a single `wrangler d1 execute`; the result array comes back in this
-// same order.
+// The queries, run as one batch; the results come back in this order.
 const STATEMENTS = [
-  // Every account's signup time, with no identifier beside it: the total, both new-user windows
-  // and the sparkline are all counted from this one list.
+  // Every account's signup time, with no identifier beside it — the total, both new-user windows
+  // and the sparkline all count from this one list.
   `SELECT created_at FROM users WHERE ${notMaintainer('id')};`,
 
   // Active readers. Both windows end now, so both are exact.
@@ -108,19 +97,16 @@ function queryD1() {
     {
       encoding: 'utf8',
       maxBuffer: 64 * 1024 * 1024,
-      // Capture wrangler's own stderr instead of letting it print: its progress chatter would
-      // otherwise land in the middle of the report, and on a failure it is shown by the handler
-      // at the bottom of this file.
+      // Captures wrangler's own stderr, which would otherwise print its progress chatter into the
+      // middle of the report; on a failure the handler at the foot of this file shows it.
       stdio: ['ignore', 'pipe', 'pipe'],
     }
   );
   return JSON.parse(out);
 }
 
-// Estimated reading minutes and display titles, keyed by uid. Optional: the corpus bundle is
-// git-ignored (see CLAUDE.md's "Data pipeline"), so a clone that hasn't run `npm run build:corpus`
-// gets a report without the reading-time and canon-coverage lines, and bare uids in the most-read
-// table.
+// Reading minutes and display titles keyed by uid, or null: the corpus bundle is git-ignored, so a
+// clone that hasn't built it gets a report without reading times, canon coverage or sutta titles.
 async function loadCorpus() {
   const corpusPath = fileURLToPath(new URL('../web/public/data/corpus.json', import.meta.url));
   try {
@@ -145,8 +131,7 @@ const VALUE_W = 10;
 const RULE_W = 68;
 
 const num = (n) => Number(n || 0).toLocaleString('en-US');
-// A share that rounds to nothing still isn't nothing — the corpus is large enough that early
-// reading rounds to 0%, which reads as "none has been opened".
+// A percentage, shown as "<1%" rather than "0%" for a share that rounds to nothing.
 const pct = (n, of) => {
   if (of <= 0) return '—';
   const share = (n / of) * 100;
@@ -169,8 +154,8 @@ function row(label, value, note = '') {
   out('  ' + cells + (note ? '   ' + dim(note) : ''));
 }
 
-// A signed comparison against the previous period of the same length. Only ever shown for
-// signups, the one figure the schema can compare honestly.
+// A signed comparison against the previous period of the same length — shown for signups alone,
+// the one figure this schema can compare honestly.
 function delta(now, previous, period) {
   const change = now - previous;
   if (change === 0) return dim(`unchanged from the previous ${period}`);
@@ -194,6 +179,7 @@ function duration(minutes) {
 
 // ---------------------------------------------------------------------------- report
 
+// Turns the query results into the report object, which --json prints as it stands.
 function buildReport(rows, corpus) {
   const [signupRows, activeRow, returnedRow, singleRow, visitedRows, noteRow, highlightRow, listRow] =
     rows;
@@ -282,6 +268,7 @@ function buildReport(rows, corpus) {
   };
 }
 
+// Prints the report to the terminal, section by section.
 function print(report, corpus) {
   const { people, engagement, reading, library } = report;
   const title = 'sutamaya · usage report';
@@ -340,9 +327,8 @@ function print(report, corpus) {
   out();
 }
 
-// The wrangler round trip takes a few seconds. Say so on stderr while it runs, then wipe the line
-// so it leaves nothing behind; a redirected stderr gets no status line at all rather than a stray
-// one it can't erase.
+// Runs `work`, holding `message` on stderr while it goes and wiping the line afterwards. A
+// redirected stderr gets no status line at all, rather than a stray one it can't erase.
 function withStatus(message, work) {
   const live = process.stderr.isTTY;
   if (live) process.stderr.write(dim(message));

@@ -1,10 +1,8 @@
 #!/usr/bin/env node
-// Copies every file update-data-check.mjs verified into place, overwriting data/sujato,
-// data/pali, and data/html as-is (byte-for-byte — no reformatting) with today's sc-data checkout,
-// and records which sc-data commit that was in data/manifest.json. Run update-data-check.mjs
-// first; this trusts that it passed and fails loudly rather than skipping if a file that used to
-// exist at its expected path (see CATEGORY_SOURCE_PREFIXES in lib/dataSync.js) somehow doesn't
-// anymore. See data/README.md.
+// Overwrites data/{sujato,pali,html} byte-for-byte from the sc-data checkout and records which
+// commit that was in data/manifest.json. Run update-data-check.mjs first: this trusts that it
+// passed, and throws rather than skipping a file missing from its expected source path.
+// See data/README.md.
 import fs from 'node:fs';
 import {
   requireSourceRoot,
@@ -21,9 +19,8 @@ import {
 } from './lib/dataSync.js';
 import path from 'node:path';
 
-// Core logic, callable directly with explicit paths/gitInfo (tests use this to point at fixture
-// trees instead of the real data/{sujato,pali,html} — see scripts/update-data.test.js). Returns
-// the manifest it wrote instead of just printing, so callers can assert on it.
+// Copies the snapshot's files in from `bilaraRoot` and returns the manifest it wrote. Every path is
+// a parameter so a test can point it at fixture trees.
 export function runCopy({ bilaraRoot, gitInfo, dataDirs = DATA_DIRS, snapshotPath = SNAPSHOT_PATH, manifestPath = MANIFEST_PATH }) {
   const snapshot = loadSnapshot(snapshotPath);
 
@@ -39,9 +36,8 @@ export function runCopy({ bilaraRoot, gitInfo, dataDirs = DATA_DIRS, snapshotPat
     copied += 1;
   }
 
-  // Carried forward, not touched by copy itself — only update-data-accept.mjs updates it, so a
-  // copy left un-snapshotted shows up as a visible sourceCommit/snapshotCommit mismatch in the
-  // same file/diff hunk (see data/README.md).
+  // Carried forward untouched — only accept moves it, so a copy left un-snapshotted shows as a
+  // sourceCommit/snapshotCommit mismatch.
   const previousSnapshotCommit = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, 'utf8')).snapshotCommit ?? null : null;
 
   const manifest = {

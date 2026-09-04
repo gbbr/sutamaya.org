@@ -11,9 +11,7 @@ import { runAccept } from './update-data-accept.mjs';
 import { applyRuleToChunks, applyTermRules, applySegmentOverride, applyBlurbOpener, isPermitted, chunksToString, loadRules, loadSidecar, isTermRule, isSegmentRule, isBlurbRule, segmentsOf, scopeOf, RETRANSLATION_PATH } from './lib/retranslation.js';
 
 // Everything here runs against throwaway temp-dir fixtures, never the real data/{sujato,pali,html}
-// or a real SC_DATA_PATH checkout — check/copy/post/snapshot all accept explicit dataDirs/
-// bilaraRoot/snapshotPath/manifestPath overrides for exactly this reason (see each script's
-// runXxx export).
+// or an SC_DATA_PATH checkout — which is what every runXxx export's path parameters are for.
 
 function writeJson(filePath, obj) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
@@ -24,11 +22,9 @@ function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
-// A miniature stand-in for data/{sujato,pali,html} + a matching sc_bilara_data checkout, covering
-// all six tracked categories at their real CATEGORY_SOURCE_PREFIXES locations, starting identical
-// (and cross-category-aligned) on both sides — individual tests mutate one side or the other from
-// here. dn1's sutta-text and dn's name-index segment ids deliberately line up across
-// sujato/pali/html, matching what INTEGRITY_GROUPS expects of the real data.
+// A miniature stand-in for data/{sujato,pali,html} and a matching sc_bilara_data checkout: all six
+// tracked categories at their real source paths, identical and cross-category-aligned on both
+// sides, which each test then mutates from.
 const FIXTURE_FILES = {
   'sujato/blurb/dn-blurbs_root-en.json': {
     sourceRel: 'root/en/blurb/dn-blurbs_root-en.json',
@@ -66,20 +62,14 @@ function makeFixture() {
   const bilaraRoot = path.join(root, 'bilara');
   const snapshotPath = path.join(root, 'snapshot.json');
   const manifestPath = path.join(root, 'manifest.json');
-  // Passed to every runAccept below, because its own default is the *real*
-  // scripts/update-data/retranslation.counts.json — a fixture snapshot that doesn't override it
-  // rewrites the repo's rule baseline with two fixture-scale numbers, and green tests are the only
-  // sign of it.
+  // Passed to every runAccept below: its default is the repo's own rule baseline, which a fixture
+  // run would silently overwrite with two fixture-scale numbers.
   const countsPath = path.join(root, 'retranslation.counts.json');
   const postDir = path.join(root, 'sujato.post');
   const rulesDir = path.join(root, 'rules');
-  // Every pipeline test here runs against its own rules file, never the shipped
-  // scripts/update-data/retranslation.mjs: two global rules whose terms FIXTURE_FILES contains,
-  // which is all runPost/runCheck/runAccept need to exercise. Defaulting to the real file instead
-  // would tie this five-file fixture to whatever segments the shipped rules happen to name — a
-  // segment override anchored on mn10:0.2 has nothing to resolve against here, and would fail every
-  // test in this block the day someone adds one. Tests needing a different rule set (a dead rule, a
-  // broken override, a same-segment collision) write their own via writeRulesFixture below.
+  // Two rules over terms FIXTURE_FILES contains, rather than the shipped rules file, which names
+  // segments this five-file fixture has nothing to resolve against. A test needing a different set
+  // writes its own through writeRulesFixture.
   const retranslationPath = writeRulesFixture(
     root,
     `[
@@ -97,16 +87,14 @@ function makeFixture() {
   return { root, dataDirs, bilaraRoot, snapshotPath, manifestPath, countsPath, postDir, rulesDir, retranslationPath };
 }
 
-// Writes a throwaway retranslation.mjs exporting `rules` (an array literal source string, e.g.
-// "[{ id: 'x', ... }]") — for tests that need a rule set other than the two real global rules.
+// Writes a throwaway retranslation.mjs exporting `rulesSource`, an array-literal source string.
 function writeRulesFixture(root, rulesSource) {
   const retranslationPath = path.join(root, 'retranslation.mjs');
   fs.writeFileSync(retranslationPath, `export const RULES = ${rulesSource};\n`);
   return retranslationPath;
 }
 
-// A minimal open (deny) rule shaped like the real mendicant-bhikkhu/immersion-concentration rules
-// — used to test the engine's own mechanics directly, independent of the shipped rules file.
+// A minimal open (deny) rule, for exercising the engine's mechanics directly.
 const BHIKKHU_RULE = {
   id: 'test-mendicant-bhikkhu',
   mode: 'deny',
@@ -501,11 +489,9 @@ describe('the shipped rules, one example each', () => {
         rules,
         sidecars: new Map(rules.filter(isTermRule).map((r) => [r.id, loadSidecar(r.id)])),
       });
-      // Reprocessing on its own has no lock history, so it re-consumes tokens the real pass had
-      // already locked: a word one rule *produces* is invisible to a later rule listing the same
-      // word as a source (see "The pass" in docs/retranslation.md). That difference is expected
-      // rather than a broken anchor, so a rewrite is only a failure when what it consumed is not
-      // an earlier rule's output.
+      // Reprocessing carries no lock history, so it re-consumes tokens the real pass had already
+      // locked. That is expected; only a rewrite consuming something no earlier rule produced
+      // means the anchor is wrong.
       for (const chunk of chunks) {
         if (!chunk.locked || chunk.text === chunk.original) continue;
         expect(
@@ -757,20 +743,17 @@ describe('checkSnapshotInSync', () => {
     expect(issue).toMatch(/missing locally/);
   });
 
-  // Both checks below read every file under data/{sujato,pali,html} — a few thousand of them.
-  // That is well under a second on an idle machine, but they run alongside the rest of the suite,
-  // and a loaded CI runner needs more room for that much I/O than the default 5s timeout gives.
+  // Both checks below read every file under data/{sujato,pali,html} — a few thousand of them, and
+  // past the default timeout on a loaded machine.
   it('the real repo: data/{sujato,pali,html} and snapshot.json are in sync', () => {
-    // No overrides — this is the one guard that actually protects the repo: if copy/post ran and
-    // got committed without a follow-up update-data accept, this fails on the next `npm test`.
+    // The guard on the repo itself: a copy committed without a follow-up update-data accept fails
+    // here on the next `npm test`.
     expect(checkSnapshotInSync()).toEqual({ ok: true, issues: [] });
   }, 30_000);
 
   it('the real repo: pali/html match exactly and sujato is a subset of pali', () => {
-    // No overrides — unlike checkSnapshotInSync above (which only catches a per-file drift from
-    // snapshot.json), this is what actually protects the repo from a cross-category misalignment:
-    // build-corpus.mjs degrades silently (dropped/unstyled segments, not a build failure) when
-    // pali/sujato/html disagree — see INTEGRITY_GROUPS in lib/dataSync.js.
+    // The other guard on the repo: build-corpus degrades silently — dropped and unstyled segments,
+    // not a build failure — when pali, sujato and html disagree.
     const keysFor = (relPath) => readKeysSafe(localPathFor(relPath));
     expect(checkCrossCategoryIntegrity(listLocalRelPaths(), keysFor)).toEqual([]);
   }, 30_000);
@@ -952,10 +935,8 @@ describe('update-data pipeline (fixture)', () => {
   });
 
   it('catches a snapshot taken from an already cross-category-misaligned local state', async () => {
-    // Simulate a hand-edit: sujato gains a segment locally that pali/html never had, and the
-    // snapshot gets regenerated from that already-broken state — so local-vs-snapshot and
-    // upstream-vs-snapshot both pass individually (nothing has "drifted" since), and this local
-    // integrity pass is the only thing that still catches it.
+    // A hand-edit gives sujato a segment pali/html never had, and the snapshot is taken from that
+    // state — so nothing has drifted since, and only the local integrity pass sees it.
     const localSujatoPath = path.join(fx.dataDirs.sujato, 'sutta/dn/dn1_translation-en-sujato.json');
     const local = readJson(localSujatoPath);
     local['dn1:1.3'] = 'A segment with no Pali counterpart.';
