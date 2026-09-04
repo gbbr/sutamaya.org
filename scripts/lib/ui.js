@@ -1,7 +1,5 @@
-// Shared presentation for the `update-data` commands. They're read as a sequence — plan, then
-// apply, then accept — rather than in isolation, so they share one frame: a banner naming the step
-// you're in, aligned status rows, and a closing line naming the one command to run next. Nobody
-// should have to remember the order.
+// The frame every `update-data` command prints in: a banner naming the step, aligned status rows,
+// and a closing line naming the command to run next.
 //
 // Colour carries meaning and is never decoration:
 //
@@ -10,13 +8,12 @@
 //   !  yellow  needs a decision from you
 //   ·  dim     accepted as-is, recorded so it isn't invisible
 //
-// Everything is indented off the left margin so a wall of output still has a spine, and detail
-// blocks sit one level deeper than the row they belong to.
+// Everything is indented off the left margin, and a detail block sits one level deeper than its row.
 import { red, green, yellow, blue, bold, dim } from './dataSync.js';
 
+// One level of indentation.
 export const PAD = '  ';
-// Status rows align their detail into one column, so the marks and labels read as a list rather
-// than as prose of varying length.
+// Width a status row's label is padded to, so every row's detail starts in the same column.
 const LABEL_WIDTH = 12;
 
 export const MARKS = {
@@ -26,46 +23,45 @@ export const MARKS = {
   note: () => dim('·'),
 };
 
+// A number with thousands separators.
 export function n(value) {
   return value.toLocaleString('en-US');
 }
 
-// The step you're in, plus whatever identifies this run (the sc-data commit, a file count).
+// Prints the heading for a step, with `meta` naming whatever identifies this run.
 export function banner(step, meta) {
   const left = `${bold('update-data')} ${dim('·')} ${bold(blue(step))}`;
   console.log(`\n${PAD}${left}${meta ? `   ${dim(meta)}` : ''}\n`);
 }
 
+// Prints one status row: its mark (see MARKS), its label, and its detail.
 export function row(kind, label, detail) {
   const mark = MARKS[kind]();
   const name = kind === 'note' ? dim(label.padEnd(LABEL_WIDTH)) : label.padEnd(LABEL_WIDTH);
   console.log(`${PAD}${mark}  ${name}  ${kind === 'fail' ? detail : dim(detail)}`);
 }
 
-// A row's supporting detail: indented one level past the row, blank-line separated so consecutive
-// blocks don't run together. `text` may be multi-line and may carry its own colour.
+// Prints a row's supporting detail, indented a level past it. `text` may be multi-line and carry
+// its own colour.
 export function block(text) {
   console.log();
   for (const line of String(text).split('\n')) console.log(line ? `${PAD}${PAD}${PAD}${line}` : '');
 }
 
-// The closing line — the whole point of the frame. `command` is what to run; `why` is the one-line
-// reason, which is usually the more useful half.
+// Prints the closing line: the command to run next, and the one-line reason to run it.
 export function next(command, why) {
   console.log(`\n${PAD}${bold('Next')}  ${dim('→')}  ${green(command)}`);
   if (why) console.log(`${PAD}${' '.repeat(9)}${dim(why)}`);
   console.log();
 }
 
-// For a step that ends the sequence rather than pointing at another command.
+// Prints the closing line for a step that ends the sequence rather than naming another command.
 export function done(message) {
   console.log(`\n${PAD}${green(message)}\n`);
 }
 
-// Hard-wraps a paragraph into lines, for prose the pipeline prints verbatim rather than composes —
-// a retranslation rule's `why` runs to a few hundred words, and one unwrapped line of it is the
-// least readable thing any of these commands emit. Capped well below a wide terminal's full width,
-// since a 200-column line is no easier to read than an unwrapped one.
+// Hard-wraps a paragraph into lines, for prose the pipeline prints verbatim — a rule's `why`, which
+// runs to a few hundred words. Capped below a wide terminal's full width.
 export function wrap(text, width = Math.min((process.stdout.columns || 100) - PAD.length * 2, 96)) {
   const lines = [];
   let line = '';

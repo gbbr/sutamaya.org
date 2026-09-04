@@ -2,8 +2,7 @@
 // wash, with a band across the foot. One treatment, two sets — see scripts/make-brand-icons.mjs,
 // its only caller.
 //
-// Headless Chrome does the compositing because this machine has no image toolchain; the whole
-// treatment is therefore CSS, and the badge colour and band are the two things worth editing.
+// The treatment is CSS, composited by headless Chrome, this machine having no image toolchain.
 import { execFileSync } from 'node:child_process';
 import { basename, dirname, resolve } from 'node:path';
 import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
@@ -14,8 +13,8 @@ export const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..'
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const TMP = resolve(repoRoot, 'node_modules/.cache/brand-icons');
 
-// source — the production icon to treat, repo-relative; band — whether a badge band runs across the
-// foot, which a maskable icon can't carry because a round mask would crop it away.
+// The icons a set is made of: `source` is the production icon to treat, `band` whether a band runs
+// across its foot — which a maskable icon can't carry, a round mask cropping it away.
 export const BRAND_ICONS = [
   { out: 'icon-512.png', size: 512, source: 'web/public/icons/icon-512-v2.png', band: true },
   { out: 'icon-512-maskable.png', size: 512, source: 'web/public/icons/icon-512-maskable-v2.png', band: false },
@@ -25,9 +24,8 @@ export const BRAND_ICONS = [
   { out: 'favicon-16.png', size: 16, source: 'web/public/favicon-16-v3.png', band: true },
 ];
 
-// Returns the page rendered for one icon: the artwork under a wash, and on top of it the band. The
-// band is lettered only above 128px; below that the word is unreadable and the bare stripe reads
-// better.
+// The page rendered for one icon: the artwork under a wash, and the band over it. The band is
+// lettered only above 128px, the word being unreadable below that.
 function page({ size, source, band }, colour, label) {
   const bandHeight = Math.round(size * 0.28);
   return `<!doctype html>
@@ -71,8 +69,8 @@ export function renderBrandIcon(icon, { colour, label, out }) {
       '--hide-scrollbars',
       '--force-device-scale-factor=1',
       '--default-background-color=00000000',
-      // Hold the screenshot until the artwork has actually painted. Without it a cold Chrome
-      // start can capture the page before the background image decodes, writing a blank icon.
+      // Holds the screenshot until the artwork has painted; a cold Chrome start otherwise captures
+      // the page before the background image decodes.
       '--virtual-time-budget=2000',
       `--window-size=${icon.size},${icon.size}`,
       `--screenshot=${out}`,

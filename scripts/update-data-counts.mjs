@@ -4,26 +4,18 @@
 // allow/deny queue to check against — an open rule with an empty deny list — so a rule missing from
 // this file has nothing watching it (see docs/retranslation.md's anchors table).
 //
-// Two entry points, one implementation:
+// Two entry points:
 //
-//   npm run update-data counts    — after adding or changing a rule. Records the new footprint and
-//                                   nothing else; the committed diff is one line per rule and is
-//                                   the reviewable record of what the edit did.
-//   npm run update-data accept  — the upstream-refresh baseline, which calls runCounts() as its
-//                                   last step (see update-data-accept.mjs).
-//
-// The two are deliberately separable: `snapshot` also rebaselines the segment-id drift detector,
-// which is only ever right after reviewing a real upstream change by hand. Editing a rule is not
-// that, and re-accepting the upstream baseline as a side effect of it would silently blind the
-// *next* update-data plan.
+//   npm run update-data counts    after adding or changing a rule: records the new footprint alone
+//   npm run update-data accept    the upstream-refresh baseline, which calls runCounts() last
 import fs from 'node:fs';
 import path from 'node:path';
 import { SUJATO_DIR, SUJATO_POST_DIR, RULES_DIR, RETRANSLATION_PATH, COUNTS_PATH } from './lib/retranslation.js';
 import { green, yellow } from './lib/dataSync.js';
 import { runPost } from './update-data-post.mjs';
 
-// Core logic, callable directly with explicit paths (tests point these at fixture trees — see
-// scripts/update-data.test.js).
+// Writes the counts file and returns what was recorded. Every path is a parameter so a test can
+// point it at fixture trees.
 export async function runCounts({
   sujatoDir = SUJATO_DIR,
   postDir = SUJATO_POST_DIR,
@@ -31,8 +23,8 @@ export async function runCounts({
   retranslationPath = RETRANSLATION_PATH,
   countsPath = COUNTS_PATH,
 } = {}) {
-  // ruleCounts is populated even when a rule is currently broken (post returns it regardless of
-  // `ok`), so a run taken mid-repair records honest current counts rather than keeping stale ones.
+  // ruleCounts comes back whether or not post succeeded, so a run taken mid-repair records the
+  // current counts rather than keeping stale ones.
   const postResult = await runPost({ sujatoDir, postDir, rulesDir, retranslationPath });
   const counts = {
     generatedAt: new Date().toISOString(),
@@ -45,7 +37,7 @@ export async function runCounts({
   return { ruleCounts: postResult.ruleCounts, postOk: postResult.ok, countsPath };
 }
 
-// Shared by both entry points so the two commands report the counts step identically.
+// Prints the counts step's outcome, for both entry points.
 export function reportCounts({ postOk, countsPath }) {
   const rel = path.relative(process.cwd(), countsPath);
   if (!postOk) {

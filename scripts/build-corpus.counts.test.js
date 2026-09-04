@@ -9,18 +9,14 @@ import { KN_BOOKS } from './lib/collections.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 
-// Somewhere disposable, via CORPUS_OUT (see build-corpus.mjs), because the build deletes and
-// rewrites its whole output directory: running the tests has no business wiping the
-// web/public/data a dev server is serving, or racing whatever else is writing there.
+// A disposable output directory, the build wiping and rewriting whatever CORPUS_OUT names.
 const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'build-corpus-'));
 afterAll(() => fs.rmSync(dataDir, { recursive: true, force: true }));
 
 let corpus;
 
-// Runs the real build against the real data/ (not a synthetic fixture) — this is deliberately an
-// integration check, not a unit test: the whole point is to catch a regression in the real
-// extracted counts, which a fixture tree couldn't do. Costs ~2s (thousands of source files
-// indexed), which is why it's isolated in this file rather than folded into collections.test.js.
+// Runs the real build against the real data/, the counts below being about what this dataset
+// actually contains. Costs a couple of seconds, which is why it sits in its own file.
 beforeAll(() => {
   const result = spawnSync(process.execPath, ['scripts/build-corpus.mjs'], {
     cwd: ROOT,
@@ -35,12 +31,9 @@ function countMatching(prefixPattern) {
   return Object.keys(corpus.suttas).filter((id) => prefixPattern.test(id)).length;
 }
 
-// DN/MN/SN/AN are complete in this dataset per CLAUDE.md's data pipeline notes — their sutta
-// counts are fixed canon facts, not something that grows over time the way KN's book list does.
-// A change here means the browse-tree/flattening logic regressed, not that new suttas appeared.
-// Matched by uid prefix directly against the flat `suttas` map (not via the nested chapter/
-// category tree, whose shape these counts shouldn't depend on) — `\d` right after the two-letter
-// prefix is what tells e.g. real "sn1.2" apart from Sutta Nipāta's "snp1.1".
+// DN, MN, SN and AN are complete here, so their counts are fixed and a change means the tree
+// logic regressed. Counted over the flat `suttas` map rather than the nested tree; the `\d` after
+// the prefix is what tells "sn1.2" from Sutta Nipāta's "snp1.1".
 describe('build-corpus sutta counts (real data)', () => {
   it('DN has a fixed 34 suttas', () => {
     expect(countMatching(/^dn\d/)).toBe(34);
@@ -58,15 +51,11 @@ describe('build-corpus sutta counts (real data)', () => {
     expect(countMatching(/^an\d/)).toBe(1408);
   });
 
-  // KN itself is deliberately NOT checked as a whole — only some of its 20 books are populated
-  // in this dataset by design (see CLAUDE.md), so its total is expected to grow as more are
-  // added. Each *currently populated* book's own count is still fixed, though.
+  // Per book, KN carrying only some of its 20 and its total being free to grow.
   const KN_EXPECTED_COUNTS = { snp: 73, dhp: 26, ud: 80, iti: 112, thag: 264, thig: 73 };
 
   it('KN_BOOKS matches exactly the books this test has expectations for', () => {
-    // Guards against this test silently going stale: if a book is added to/removed from
-    // KN_BOOKS without updating KN_EXPECTED_COUNTS above, fail loudly here instead of the new
-    // book just never being checked.
+    // Fails when a book joins or leaves KN_BOOKS, rather than letting it go unchecked.
     expect(KN_BOOKS.map((b) => b.id).sort()).toEqual(Object.keys(KN_EXPECTED_COUNTS).sort());
   });
 
@@ -78,12 +67,8 @@ describe('build-corpus sutta counts (real data)', () => {
   }
 });
 
-// web/src/lib/offline.test.ts covers the shard-download logic itself against fakes, but not
-// whether build-corpus.mjs's shard files are actually well-formed — in particular, each shard's
-// body is hand-built by string-concatenating already-serialized per-uid JSON (see flushShard())
-// rather than going through JSON.stringify() again, which is fast but has no safety net against a
-// malformed separator/comma or a uid needing escaping. These tests catch that against the real
-// build output instead.
+// The shard files themselves, which flushShard builds by concatenating already-serialized JSON
+// rather than re-stringifying — so nothing else would catch a bad separator or an unescaped uid.
 describe('build-corpus text shards (real data)', () => {
   let manifest;
 
@@ -102,8 +87,7 @@ describe('build-corpus text shards (real data)', () => {
     expect(manifest.shards.reduce((n, s) => n + s.bytes, 0)).toBe(manifest.totalBytes);
   });
 
-  // Reads every shard plus all 4000-odd per-uid files — the heaviest read in the suite, and well
-  // past the default 5s timeout whenever the machine is busy.
+  // Reads every shard plus all 4000-odd per-uid files, the heaviest read in the suite.
   it('every shard file is valid JSON, its byte length matches its manifest entry, its keys match the manifest\'s uid list, and each uid\'s content matches that uid\'s own text/{uid}.json byte-for-byte', () => {
     for (const shard of manifest.shards) {
       const raw = fs.readFileSync(path.join(dataDir, shard.file), 'utf8');

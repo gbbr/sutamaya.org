@@ -4,11 +4,9 @@
 // clone without the database builds from it unchanged. Get one from
 // https://github.com/digitalpalidictionary/dpd-db/releases (the dpd.db.tar.xz asset).
 //
-// What comes out is not DPD. It is only the headwords a tap in *this* corpus can reach, and per
-// headword only the gloss lines the reader's dictionary dock renders — no examples, citations,
-// frequencies, inflection tables or other scripts. That is what keeps a ~2.3GB database down to a
-// file the app can ship, and it is why the import scans data/pali/ rather than taking the
-// dictionary whole.
+// What comes out is not DPD: only the headwords a tap in this corpus can reach, and per headword
+// only the gloss lines the dictionary dock renders — no examples, citations, frequencies,
+// inflection tables or other scripts. That is what fits a ~2.3GB database into a file the app ships.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -20,17 +18,15 @@ const DATA = path.join(__dirname, '..', 'data');
 const PALI = path.join(DATA, 'pali');
 export const DICT_PATH = path.join(DATA, 'pli2en_dpd.json');
 
-// SuttaCentral writes the niggahita as ṁ, and writes it assimilated as ṅ before a velar and ñ
-// before h; DPD keys all of them as ṃ. The two projects spell the same word differently — this is
-// orthographic conversion, not a search for a word that might be close enough, which is why the
-// candidates are tried as spellings of the tapped word rather than scored against it.
+// Returns the DPD spellings of a SuttaCentral word: SuttaCentral writes the niggahita as ṁ, and
+// assimilated as ṅ before a velar and ñ before h, where DPD keys all of them as ṃ. Orthographic
+// conversion only — every candidate is a spelling of the same word, not a near match to it.
 export function dpdSpellings(word) {
   const niggahita = word.replace(/ṁ/g, 'ṃ');
   return [...new Set([word, niggahita, niggahita.replace(/ṅ(?=[kg])/g, 'ṃ'), niggahita.replace(/ñ(?=h)/g, 'ṃ')])];
 }
 
-// The reverse, for anything DPD hands back that gets displayed: the dock sits beside the sutta, and
-// a lemma spelled ṃ next to a text spelled ṁ reads as a different word.
+// The reverse, for anything DPD hands back that the dock displays beside the sutta's own spelling.
 const scSpelling = (text) => text.replace(/ṃ/g, 'ṁ');
 
 const niggahita = (text) => text.toLowerCase().replace(/ṁ/g, 'ṃ');
@@ -47,26 +43,20 @@ function editDistance(a, b) {
   return previous[b.length];
 }
 
-// A manuscript variant is the same word spelled another way, and that is the whole test a candidate
-// reading has to pass. It matters because DPD's `variant` field is free-form editorial prose in
-// abbreviated Pali — "ma. itisaddo na dissati." ("the word iti is absent in the Burmese edition"),
-// "saṅgahabalantipi pāṭho." ("saṅgahabalaṁ is also read") — and any word in a sentence like that
-// can happen to be a headword in its own right. Without this, `ayamidamarahatīti` is defined as
-// "itisaddo" and `saṅgāhabalaṁ` as "pāṭho" ("a reading"), each perfectly confidently.
+// Whether `candidate` is `word` spelled another way — the test a reading pulled out of DPD's
+// free-form `variant` prose has to pass before it is treated as this word at all.
 export const isVariantOf = (word, candidate) =>
   editDistance(niggahita(word), niggahita(candidate)) <= Math.max(2, Math.round(niggahita(word).length * 0.3));
 
-// Closest first, because a word often has several readings across the editions and they are stored
-// in no useful order. AN 9.20's `dukūlasandhanāni` lists five, of which `duhasandanāni` ("with milk
-// flowing") sits above `dukūlasandanāni` ("with halters of fine cloth") — and only the latter is
-// the word this text is spelling, as its own English says. Nearest reading wins.
+// The candidates that are variants of `word`, nearest spelling first — the editions store their
+// readings in no useful order.
 export const variantsClosestFirst = (word, candidates) =>
   candidates
     .filter((candidate) => isVariantOf(word, candidate))
     .sort((a, b) => editDistance(niggahita(word), niggahita(a)) - editDistance(niggahita(word), niggahita(b)));
 
-// Every Pali word in the source data — a superset of what the reader can tap, since build-corpus
-// emits a subset of these segments and trims the dictionary again to exactly what it emitted.
+// Returns every Pali word in data/pali/ — a superset of what the reader can tap, which build-corpus
+// trims again to exactly what it emitted.
 function corpusWords() {
   const words = new Set();
   const files = [];
@@ -102,15 +92,12 @@ const asArray = (raw) => {
   return Array.isArray(value) ? value : [];
 };
 
-// How far the headword count may fall before the import refuses to write. A new DPD release moving
-// a few hundred words either way is ordinary; losing a tenth of the dictionary means something is
-// wrong with the database or with this script, and overwriting a good file with it is the one
-// failure here that a later build cannot detect — build-corpus verifies the shards against this
-// file, so a diminished file verifies perfectly.
+// How far the headword count may fall against the file being replaced before the import refuses to
+// write. Nothing downstream can catch the loss: build-corpus verifies the shards against this file,
+// so a diminished file verifies perfectly.
 const MAX_SHRINK = 0.1;
 
-// Prepared once per database rather than per word: the import asks these two questions a few
-// hundred thousand times, and re-preparing them each time is most of the run.
+// The two queries the import asks a few hundred thousand times, prepared once per database.
 const prepared = new WeakMap();
 function statements(db) {
   let cached = prepared.get(db);
@@ -124,8 +111,8 @@ function statements(db) {
   return cached;
 }
 
-// Definitions for one word as the dock will render them, or null when nothing in DPD glosses it.
-// Exported for its own test: this is where all the judgement in the import lives.
+// Returns one word's definition lines as the dock renders them, or null when nothing in DPD glosses
+// it. All of the import's judgement lives here.
 export function defineWord(db, word) {
   const { lookupRow, headword } = statements(db);
 
@@ -137,9 +124,9 @@ export function defineWord(db, word) {
     return null;
   };
 
-  // One rendered definition, in the shape the dock already displays: lemma, part of speech, the
-  // meaning in bold, then the literal reading and the word's construction. A headword with no
-  // meaning at all (DPD carries some as pure cross-references) contributes nothing.
+  // One rendered definition: lemma, part of speech, the meaning in bold, then the literal reading
+  // and the construction. A headword with no meaning — DPD carries some as pure cross-references —
+  // contributes nothing.
   function glossLine(id) {
     const h = headword.get(Number(id));
     if (!h) return null;
@@ -152,10 +139,9 @@ export function defineWord(db, word) {
 
   const glossLines = (row) => asArray(row?.headwords).map(glossLine).filter(Boolean);
 
-  // DPD records a manuscript variant as {edition: {text: [[context, "reading (sigla)"]]}} — the
-  // editions disagreeing about a word this corpus happens to spell the losing way. A reading is
-  // accepted only when it is itself a glossed headword, so what gets shown is DPD's own alternative
-  // rather than a spelling this script talked itself into.
+  // The readings in a row's manuscript variants, which DPD records as
+  // {edition: {text: [[context, "reading (sigla)"]]}}. Each is only a candidate here — a reading is
+  // used only if it is itself a glossed headword.
   function variantReadings(row) {
     const variants = parseJson(row?.variant);
     if (!variants || typeof variants !== 'object' || Array.isArray(variants)) return [];
@@ -172,25 +158,22 @@ export function defineWord(db, word) {
     return [...readings];
   }
 
-  // A part's gloss is attributed to the part it came from, so a five-part compound doesn't read as
-  // one word with fifteen meanings. Not when the lemma is that same word already, though —
-  // "ānanda → ānanda 1: masc. …" points at itself, and the arrow only adds width.
+  // Prefixes a gloss with the compound part it came from, unless the lemma is already that part.
   const attribute = (part, line) => {
     const lemma = line.slice(0, line.indexOf(':')).replace(/ \d+(\.\d+)?$/, '');
     return lemma === part ? line : `${part} → ${line}`;
   };
 
-  // The order is the order of confidence: the word itself, then its parts, then the spellings
-  // DPD's own editors point at.
+  // In order of confidence: the word itself, then its parts, then the spellings DPD's editors point
+  // at.
   const row = rowFor(word);
   if (!row) return null;
 
   const direct = glossLines(row);
   if (direct.length) return direct;
 
-  // A sandhi compound. DPD answers with the split alone, which on its own renders as a line of
-  // Pali and no meaning — the reason this import exists at all. The split stays as the first
-  // line, since it is the word's structure, and each part brings its own glosses in behind it.
+  // A sandhi compound, which DPD answers with the split alone. The split stays as the first line,
+  // and each part brings its own glosses in behind it.
   for (const split of asArray(row.deconstructor)) {
     const parts = split.split(' + ').map((part) => scSpelling(part.trim()));
     const lines = [scSpelling(split)];
@@ -200,11 +183,9 @@ export function defineWord(db, word) {
     if (lines.length > 1) return lines;
   }
 
-  // A spelling DPD holds as a misspelling or a cross-reference of another, and then the manuscript
-  // variants. Both resolve to a differently-spelled headword whose own lemma is displayed, so the
-  // reader can see which word they were sent to. `spelling` and `see` are structured corrections
-  // and stand as they are; the variants are prose, and only the readings that are recognisably
-  // this word survive isVariantOf.
+  // A differently-spelled headword, whose own lemma is displayed so the reader sees where they were
+  // sent. `spelling` and `see` are DPD's structured corrections; the variants are prose, so only
+  // the readings isVariantOf recognises as this word survive.
   const variants = variantsClosestFirst(word, variantReadings(row));
   for (const candidate of [...asArray(row.spelling), ...asArray(row.see), ...variants]) {
     const lines = glossLines(rowFor(candidate));
@@ -213,6 +194,8 @@ export function defineWord(db, word) {
   return null;
 }
 
+// Writes data/pli2en_dpd.json from the DPD database and returns what it did, or `{ skipped: true }`
+// when no database is named. `force` accepts a shrink beyond MAX_SHRINK.
 export function runDictionary({ dbPath = process.env.DPD_DB_PATH || '', force = false } = {}) {
   if (!dbPath) return { skipped: true };
   if (!fs.existsSync(dbPath)) throw new Error(`DPD_DB_PATH does not exist: ${dbPath}`);
@@ -238,9 +221,7 @@ export function runDictionary({ dbPath = process.env.DPD_DB_PATH || '', force = 
   }
   db.close();
 
-  // What this replaces, so the step can say whether it was a gain or a loss, and refuse the
-  // losses that can only be a mistake. A count on its own answers neither question anyone actually
-  // has about a regenerated file.
+  // The file being replaced, so the step can report the change and refuse a loss beyond MAX_SHRINK.
   const previous = fs.existsSync(DICT_PATH) ? JSON.parse(fs.readFileSync(DICT_PATH, 'utf8')) : null;
   const previousEntries = Array.isArray(previous?.entries) ? previous.entries.length : null;
   if (previousEntries && entries.length < previousEntries * (1 - MAX_SHRINK) && !force) {
