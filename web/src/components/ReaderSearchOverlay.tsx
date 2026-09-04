@@ -11,6 +11,7 @@ import { beginTextSearchLoad } from '../lib/search/textClient';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { MatchedText } from './MatchedText';
 import { SuttaRowChips } from './SuttaRowChips';
+import { TextSearchProgress } from './TextSearchProgress';
 import { getUiScale } from '../lib/uiPrefs';
 import type { ThemeColors } from '../lib/types';
 
@@ -42,7 +43,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
   }, [corpus]);
 
   // Suttas only: a list hit's only destination is the library, which is where lists surface.
-  const { hits, textStatus } = useCorpusSearch(corpus, query, notes, lists, highlights);
+  const { hits, textStatus, textPending } = useCorpusSearch(corpus, query, notes, lists, highlights);
   // The rows drawn and walked by the arrow keys: the first SEARCH_RESULTS_CAP hits, the panel
   // being unvirtualized.
   const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);
@@ -260,7 +261,9 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
               </button>
             );
           })}
-          {query.trim() && hits.length === 0 && (
+          {/* Where the results are, until the sutta text lands and the ranking they wait on with it. */}
+          {textPending && <TextSearchProgress theme={theme} />}
+          {query.trim() && hits.length === 0 && !textPending && (
             <div className="font-sans text-center text-ui-base py-8 px-5 text-balance" style={{ color: theme.dim }}>
               {searchNoMatches(textStatus)}
             </div>

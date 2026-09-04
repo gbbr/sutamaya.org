@@ -117,7 +117,7 @@ export function LibraryPage({
   }, [query, location?.pathname, location?.search]);
 
   // One scan per keystroke, shared by both panes.
-  const { hits: allHits, listHits, textStatus, textLoading, hitsSettled } = useCorpusSearch(
+  const { hits: allHits, listHits, textStatus, textPending, hitsSettled } = useCorpusSearch(
     corpus,
     query,
     notes,
@@ -260,7 +260,7 @@ export function LibraryPage({
           listHits={shownListHits}
           listHitTotal={listHits.length}
           textStatus={textStatus}
-          textLoading={textLoading}
+          textPending={textPending}
           hitsSettled={hitsSettled}
           listsExpanded={listsExpanded}
           onToggleListsExpanded={toggleListsExpanded}
@@ -297,7 +297,7 @@ export function LibraryPage({
           listHits={shownListHits}
           listHitTotal={listHits.length}
           textStatus={textStatus}
-          textLoading={textLoading}
+          textPending={textPending}
           hitsSettled={hitsSettled}
           listsExpanded={listsExpanded}
           onToggleListsExpanded={toggleListsExpanded}

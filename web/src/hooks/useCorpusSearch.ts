@@ -1,11 +1,6 @@
 import { useDeferredValue, useEffect, useMemo, useState, useSyncExternalStore } from 'react';
 import { searchLists, type ListHit, type SearchHit } from '../lib/search/metadata';
-import {
-  searchCorpusVariants,
-  TEXT_LOADING_DELAY_MS,
-  type RankedHit,
-  type TextSearchStatus,
-} from '../lib/search/text';
+import { searchCorpusVariants, type RankedHit, type TextSearchStatus } from '../lib/search/text';
 import {
   beginTextSearchLoad,
   searchText,
@@ -45,9 +40,9 @@ let lastCompleted: { query: string; hits: SearchHit[] } | null = null;
 // highlights live on this thread. The sutta text is scanned in a Web Worker, so its hits arrive a
 // moment later and below the metadata hits, which is where they belong anyway — see docs/search.md.
 //
-// `textStatus` is what the caller says in an empty result and `textLoading` whether it draws the
-// spinner under the rows: the search text is fetched lazily, hits in it append when it lands, and
-// search works without it — see docs/search.md's "Late, or never".
+// `textStatus` is what the caller says in an empty result and `textPending` whether it draws the
+// "Searching sutta text…" state in place of the results: the search text is fetched lazily, and
+// until it lands there is no ranked list to show — see docs/search.md's "Late, or never".
 export function useCorpusSearch(
   corpus: Corpus | null,
   query: string,
@@ -58,28 +53,18 @@ export function useCorpusSearch(
   hits: SearchHit[];
   listHits: ListHit[];
   textStatus: TextSearchStatus;
-  textLoading: boolean;
+  textPending: boolean;
   hitsSettled: boolean;
 } {
   const deferredQuery = useDeferredValue(query);
   const searching = deferredQuery.trim() !== '';
   // A field the reader has focused has usually already started this; a query typed into one that
-  // hasn't (the reader's overlay opened straight onto a pasted query) starts it here.
-  useEffect(() => {
-    if (searching) beginTextSearchLoad(corpus);
-  }, [searching, corpus]);
+  // hasn't (the reader's overlay opened straight onto a pasted query) starts it here, as does a
+  // search still on screen when the idle release drops the text.
   const status = useSyncExternalStore(subscribeTextSearch, textSearchStatus, textSearchStatus);
-  // Set only once the fetch has run past TEXT_LOADING_DELAY_MS, so a load that lands in a blink —
-  // every load on a fast connection, the field having started it on focus — says nothing at all.
-  const [slow, setSlow] = useState(false);
   useEffect(() => {
-    if (status !== 'loading') {
-      setSlow(false);
-      return;
-    }
-    const timer = setTimeout(() => setSlow(true), TEXT_LOADING_DELAY_MS);
-    return () => clearTimeout(timer);
-  }, [status]);
+    if (searching && status === 'idle') beginTextSearchLoad(corpus);
+  }, [searching, corpus, status]);
 
   const meta = useMemo(
     () => (corpus && searching ? searchCorpusVariants(corpus, deferredQuery, notes, lists, highlights) : []),
@@ -112,15 +97,18 @@ export function useCorpusSearch(
   }, [corpus, searching, status, deferredQuery, meta]);
 
   const answered = merged?.meta === meta;
+  // Whether the results are waiting on the text to arrive at all: no rows, and the caller says so
+  // instead. The metadata half alone ranks the suttas differently, so showing it would put a list
+  // on screen that reorders under the reader a second or two later.
+  const textPending = searching && (status === 'idle' || status === 'loading') && !answered;
   // The results while the worker answers the newest keystroke: the previous answer, held, rather
   // than this keystroke's metadata half. The rows keep their text hits and their snippets, and
   // only the marked words move, until the new answer replaces them. Held only where an answer is
-  // coming — with the text unloaded or gone, the metadata half is the answer.
-  const hits = merged && (answered || (searching && status === 'ready')) ? merged.hits : meta;
-  // Whether `hits` is the complete answer to this query, which a scroll restore waits for. True
-  // while the search text is still loading, a wait nothing can be held back for.
-  const hitsSettled = !searching || status !== 'ready' || answered;
+  // coming — with the text gone for good, the metadata half is the answer.
+  const hits = textPending ? [] : merged && (answered || (searching && status === 'ready')) ? merged.hits : meta;
+  // Whether `hits` is the complete answer to this query, which a scroll restore waits for.
+  const hitsSettled = !searching || (!textPending && (status !== 'ready' || answered));
   // Off the same deferred query, so both halves of the results describe one keystroke.
   const listHits = useMemo(() => searchLists(lists, deferredQuery), [lists, deferredQuery]);
-  return { hits, listHits, textStatus: status, textLoading: searching && slow, hitsSettled };
+  return { hits, listHits, textStatus: status, textPending, hitsSettled };
 }

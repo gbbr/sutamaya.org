@@ -3,12 +3,15 @@ import { render, waitFor } from '@testing-library/react';
 import { useCorpusSearch } from './useCorpusSearch';
 import type { Corpus } from '../lib/types';
 
+// The text search's state, so a test can put the load mid-flight.
+const state = vi.hoisted(() => ({ status: 'ready' as const as string }));
+
 // A loaded text search that answers with the metadata hits plus one sutta only the text reaches,
 // so a complete answer is visibly different from the metadata half on its own.
 vi.mock('../lib/search/textClient', () => ({
   beginTextSearchLoad: vi.fn(),
   subscribeTextSearch: () => () => {},
-  textSearchStatus: () => 'ready',
+  textSearchStatus: () => state.status,
   searchText: (_query: string, meta: Array<{ id: string; rank: number }>) =>
     Promise.resolve([...meta.map(({ id, rank }) => ({ id, rank })), { id: 'dn9', rank: 1 }]),
 }));
@@ -37,6 +40,25 @@ function Probe({ query, onRender }: { query: string; onRender: (result: Result) 
   onRender(useCorpusSearch(corpus, query, noNotes, noLists, noHighlights));
   return null;
 }
+
+describe('a search waiting on the sutta text', () => {
+  it('shows nothing rather than the metadata half, which would reorder when the text lands', async () => {
+    state.status = 'loading';
+    const seen: Result[] = [];
+    const view = render(<Probe query="prime" onRender={(r) => seen.push(r)} />);
+    // The metadata half has a hit for this query; the point is that it is not what renders.
+    expect(seen.at(-1)!.textPending).toBe(true);
+    expect(seen.at(-1)!.hits).toEqual([]);
+    expect(seen.at(-1)!.hitsSettled).toBe(false);
+
+    state.status = 'ready';
+    view.rerender(<Probe query="prime" onRender={(r) => seen.push(r)} />);
+    await waitFor(() => expect(seen.at(-1)!.hitsSettled).toBe(true));
+    expect(seen.at(-1)!.textPending).toBe(false);
+    expect(seen.at(-1)!.hits.map((hit) => hit.id)).toContain('dn9');
+    view.unmount();
+  });
+});
 
 describe('a search that has already been answered', () => {
   it('opens a later mount on its complete results, in the first render', async () => {
