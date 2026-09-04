@@ -93,14 +93,14 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   const readerLocationState = location?.state as
     | { from?: string; fromView?: 'tree' | 'list'; searchIds?: string[] }
     | undefined;
-  // The segment a search hit was found in, taken once: location.state survives a same-tab refresh,
-  // and a jump the reader has since scrolled away from must not fire again.
-  const [searchSegment] = useState(
+  // The segments a search hit's snippet was drawn from, taken once: location.state survives a
+  // same-tab refresh, and a jump the reader has since scrolled away from must not fire again.
+  const [searchSegments] = useState(
     () =>
       consumeIntent(
-        location?.state as ({ segment?: number } & RouteIntent) | null | undefined,
+        location?.state as ({ segments?: [number, number] } & RouteIntent) | null | undefined,
         READER_INTENT_KEY
-      )?.segment
+      )?.segments
   );
   const { from, fromView, searchIds, navigateToSutta, closeToOrigin } = useReaderOrigin(readerLocationState);
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
@@ -131,7 +131,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     restoreRef.current = {
       id: suttaId,
       restore: enteredByReturn() ? 'stored' : 'top',
-      skipRestore: !!requestedSubUid || searchSegment !== undefined,
+      skipRestore: !!requestedSubUid || searchSegments !== undefined,
     };
   }
   const {
@@ -218,21 +218,22 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     requestAnimationFrame(() => scrollToSegment(idx, 'start'));
   }, [requestedSubUid, segments, scrollToSegment]);
 
-  // The segment washed on arrival, cleared when the flash ends.
-  const [flashSeg, setFlashSeg] = useState<number | undefined>(undefined);
+  // The segments washed on arrival, cleared when the flash ends.
+  const [flashRange, setFlashRange] = useState<[number, number] | undefined>(undefined);
 
-  // Scrolls to the segment a search hit's snippet was drawn from, so the words the reader searched
-  // for are what they land on, and washes it for SEARCH_FLASH_MS so the eye finds it in the
-  // passage. Centred rather than at the top: a segment is a clause, and the passage around it is
+  // Scrolls to the passage a search hit's snippet was drawn from, so the line the reader picked out
+  // of the results is what they land on, and washes the whole of it for SEARCH_FLASH_MS so the eye
+  // finds it. Centred rather than at the top: a snippet is a fragment, and the passage around it is
   // what makes it read as an answer.
   useEffect(() => {
-    if (searchSegment === undefined || requestedSubUid || !segments) return;
-    if (searchSegment >= segments.length) return;
-    requestAnimationFrame(() => scrollToSegment(searchSegment, 'center'));
-    setFlashSeg(searchSegment);
-    const timer = window.setTimeout(() => setFlashSeg(undefined), SEARCH_FLASH_MS);
+    if (searchSegments === undefined || requestedSubUid || !segments) return;
+    const [first, last] = searchSegments;
+    if (first >= segments.length) return;
+    requestAnimationFrame(() => scrollToSegment(first, 'center'));
+    setFlashRange([first, Math.min(last, segments.length - 1)]);
+    const timer = window.setTimeout(() => setFlashRange(undefined), SEARCH_FLASH_MS);
     return () => window.clearTimeout(timer);
-  }, [searchSegment, requestedSubUid, segments, scrollToSegment]);
+  }, [searchSegments, requestedSubUid, segments, scrollToSegment]);
 
   // The whole corpus in canonical browse order, which Prev/Next steps through across category
   // boundaries.
@@ -360,10 +361,10 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     closeToOrigin(suttaId, sutta ? `/browse/${sutta.node}/${suttaId}` : '/');
   }
 
-  function onSearchOpenSutta(id: string, segment?: number) {
+  function onSearchOpenSutta(id: string, segments?: [number, number]) {
     setSearchOpen(false);
     // Leaves the library search's run behind: this jump is the reader's own search, not that one.
-    navigateToSutta(id, segment, true);
+    navigateToSutta(id, segments, true);
   }
 
   // Scrolls a just-opened Pali line or footnote into view, by the least it takes and only when it
@@ -710,7 +711,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
               onToggleNote={onToggleNote}
               activeWord={activeWord}
               focusUid={requestedSubUid}
-              flashSeg={flashSeg}
+              flashRange={flashRange}
             />
           ) : textError ? (
             <div className="flex flex-col items-center gap-3 font-sans text-sm text-center" style={{ padding: '24px 0' }}>

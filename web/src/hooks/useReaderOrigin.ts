@@ -50,16 +50,17 @@ export function useReaderOrigin(
   const searchIds = locationState?.searchIds;
 
   // Opens another sutta in the reader, carrying the origin forward.
-  // `segment` is where a search hit was found, and where the reader opens; Prev/Next pass none, and
-  // carry the plain origin they always did rather than a one-shot intent with nothing in it.
+  // `segments` are the ones a search hit's snippet was drawn from, where the reader opens; Prev/Next
+  // pass none, and carry the plain origin they always did rather than a one-shot intent with
+  // nothing in it.
   // `leaveSearch` drops the library search's run, for a jump made from inside the reader.
-  function navigateToSutta(nextSuttaId: string, segment?: number, leaveSearch = false) {
+  function navigateToSutta(nextSuttaId: string, segments?: [number, number], leaveSearch = false) {
     const ids = leaveSearch ? undefined : searchIds;
     persistReaderOrigin(nextSuttaId, from, fromView, ids);
     const state =
-      segment === undefined
+      segments === undefined
         ? { from, fromView, searchIds: ids }
-        : tagIntent({ from, fromView, searchIds: ids, segment });
+        : tagIntent({ from, fromView, searchIds: ids, segments });
     navigate(`/read/${encodeURIComponent(nextSuttaId)}`, { state });
   }
 

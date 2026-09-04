@@ -2,9 +2,9 @@ import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import { Router, navigate } from '@reach/router';
 
-// The wash on the segment a search hit was found in: on while the reader arrives, off a moment
-// later. It is an orientation cue, not an annotation — a segment that stayed washed would read as
-// one of the reader's own highlights.
+// The wash on the passage a search hit's snippet was drawn from: on while the reader arrives, off a
+// moment later. It is an orientation cue, not an annotation — a passage that stayed washed would
+// read as one of the reader's own highlights.
 
 vi.mock('../context/CorpusContext', () => ({ useCorpus: vi.fn() }));
 vi.mock('../context/UserDataContext', () => ({ useUserData: vi.fn() }));
@@ -68,7 +68,7 @@ function segmentWrapper(container: HTMLElement, i: number): HTMLElement {
   return container.querySelector(`[data-seg="${i}"]`)!.parentElement as HTMLElement;
 }
 
-describe('the segment a search hit was found in', () => {
+describe('the passage a search hit was drawn from', () => {
   beforeEach(() => {
     // Real time still runs, so the render's own awaits resolve; the flash's timer is what this
     // test advances by hand.
@@ -140,7 +140,9 @@ describe('the segment a search hit was found in', () => {
   });
 
   it('is washed on arrival, and only until the flash ends', async () => {
-    navigate('/read/dn1', { state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segment: 2 }) });
+    navigate('/read/dn1', {
+      state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
+    });
     const { container } = render(
       <Router style={{ height: '100%' }}>
         <ReaderPage path="/read/:suttaId" />
@@ -149,13 +151,15 @@ describe('the segment a search hit was found in', () => {
     await screen.findByText('They spoke in dispraise of the Buddha');
 
     await waitFor(() => expect(segmentWrapper(container, 2).style.background).not.toBe(''));
-    // The rest of the passage is untouched, so the wash says which segment answered the search.
+    // Every segment the snippet was cut from, so the wash matches the line the reader picked.
+    expect(segmentWrapper(container, 1).style.background).not.toBe('');
+    // The rest of the sutta is untouched, so the wash says which passage answered the search.
     expect(segmentWrapper(container, 0).style.background).toBe('');
 
     await act(async () => {
       vi.advanceTimersByTime(2000);
     });
-    expect(segmentWrapper(container, 2).style.background).toBe('');
+    for (const i of [1, 2]) expect(segmentWrapper(container, i).style.background).toBe('');
   });
 
   it('is not washed when the reader was not sent to a segment', async () => {
