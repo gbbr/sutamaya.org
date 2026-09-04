@@ -377,6 +377,8 @@
      to respond to the theme where a filled button doesn't, so this is darker than --accent, whose
      own value reaches only 4.3:1 as text. */
   --accent-text: 122 91 46;
+  /* A link's hover colour: a step darker than --accent2 here, a step lighter in dark. */
+  --accent-hover: 107 82 48;
   --danger-text: 220 38 38;
   --warning-text: 161 98 7;
   /* The staging badge blue, matching the band on the staging app icon (scripts/make-staging-icons.mjs). */
@@ -437,6 +439,7 @@
   --accent: 146 114 67;
   --accent2: 138 106 59;
   --accent-text: 196 154 97;
+  --accent-hover: 196 154 97;
   --danger-text: 248 113 113;
   --warning-text: 217 152 46;
   --staging-text: 125 160 240;
@@ -505,10 +508,12 @@ body {
 a {
   color: rgb(var(--accent2));
 }
-a:hover {
-  /* Not theme-var-backed: a hover state rather than a light/dark swap, and the same
-     accent2-adjacent brown in both themes, as accent2 itself is. */
-  color: #6b5230;
+/* Guarded like every Tailwind `hover:` utility (see hoverOnlyWhenSupported in tailwind.config.js),
+   so a tap doesn't leave the hover colour stuck on a touch screen. */
+@media (hover: hover) {
+  a:hover {
+    color: rgb(var(--accent-hover));
+  }
 }
 
 button {
