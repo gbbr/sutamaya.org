@@ -249,8 +249,16 @@ newest waiting search is run**: a reader types faster than a scan, so a queue wo
 keystroke long after it was typed. The search in flight finishes, the newest waiting one goes next,
 and the ones typed over are dropped.
 
-Text hits therefore arrive a moment after the metadata hits on every keystroke, not just on the
-first one — which is where they sort anyway, below every metadata bucket.
+Text hits therefore arrive a moment after the metadata hits — where they sort anyway, below every
+metadata bucket.
+
+**Only the first search shows that gap.** Once a search has been answered, the answer stays on
+screen while the worker answers the next keystroke, rather than being replaced by that keystroke's
+metadata half: the rows keep their text hits and their snippets, and only the marked words move,
+until the new answer arrives some tens of milliseconds later. Falling back to the metadata half
+takes every text hit off the list and every snippet out of the rows it did keep, so each keystroke
+collapses the results and rebuilds them — the whole pane flickering under a reader typing a word
+whose results are barely changing. `useCorpusSearch` holds them.
 
 The worker inherits the page's service worker, so the `CacheFirst` rule for `/data/search/` in
 `web/vite.config.ts` serves its fetches exactly as it served the main thread's.
