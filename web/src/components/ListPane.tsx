@@ -29,8 +29,8 @@ interface ListPaneProps {
   listHitTotal: number;
   // Whether the sutta text is searchable yet, which is what the line under an empty result says.
   textStatus: TextSearchStatus;
-  // Whether it is still downloading, said in a line under the rows.
-  textLoading: boolean;
+  // Whether the results are waiting on that text, said in place of the rows.
+  textPending: boolean;
   // Whether `hits` is the complete answer to the query, which the scroll restore waits for.
   hitsSettled?: boolean;
   listsExpanded: boolean;
@@ -60,7 +60,7 @@ export function ListPane({
   listHits,
   listHitTotal,
   textStatus,
-  textLoading,
+  textPending,
   hitsSettled = true,
   listsExpanded,
   onToggleListsExpanded,
@@ -572,8 +572,10 @@ export function ListPane({
             Showing {items.length} of {currentList.total}
           </div>
         )}
+        {/* Where the results are, until the sutta text lands and the ranking they wait on with it. */}
+        {textPending && <TextSearchProgress />}
         {/* A query that matched only lists isn't a failed search, so it keeps its empty state. */}
-        {items.length === 0 && !(searching && listHitTotal > 0) && (
+        {items.length === 0 && !textPending && !(searching && listHitTotal > 0) && (
           <div className="font-sans text-center text-ui-base text-ink-4 py-10 px-6">
             {emptyMessage()}
             {/* What search covers, said only where a reader has just failed to find something —
@@ -583,8 +585,6 @@ export function ListPane({
             )}
           </div>
         )}
-        {/* Last, under the rows, where the hits it is still waiting on will append. */}
-        {searching && textLoading && <TextSearchProgress />}
       </div>
       {picker && (
         <ListMembershipPopover

@@ -92,8 +92,8 @@ interface TreePaneProps {
   listHitTotal: number;
   // Whether the sutta text is searchable yet, which is all the empty state says about it.
   textStatus: TextSearchStatus;
-  // Whether it is still downloading, said in a line under the rows.
-  textLoading: boolean;
+  // Whether the results are waiting on that text, said in place of the rows.
+  textPending: boolean;
   // Whether `hits` is the complete answer to the query, which the scroll restore waits for.
   hitsSettled?: boolean;
   listsExpanded: boolean;
@@ -129,7 +129,7 @@ export function TreePane({
   listHits,
   listHitTotal,
   textStatus,
-  textLoading,
+  textPending,
   hitsSettled = true,
   listsExpanded,
   onToggleListsExpanded,
@@ -815,13 +815,14 @@ export function TreePane({
                     </button>
                   );
                 })}
-                {hits.length === 0 && listHitTotal === 0 && (
+                {/* Where the results are, until the sutta text lands and the ranking they wait on
+                    with it. */}
+                {textPending && <TextSearchProgress />}
+                {hits.length === 0 && listHitTotal === 0 && !textPending && (
                   <div className="font-sans text-center text-ui-base text-ink-4 py-[30px] px-5 text-balance">
                     {searchNoMatches(textStatus)}
                   </div>
                 )}
-                {/* Last, under the rows, where the hits it is still waiting on will append. */}
-                {textLoading && <TextSearchProgress />}
               </>
             )}
           </div>

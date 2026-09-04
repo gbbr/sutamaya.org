@@ -191,7 +191,7 @@ function Harness({
       listHitTotal={listHits.length}
       // Nothing here fetches the search text, so this pane draws the metadata-only empty state.
       textStatus="idle"
-      textLoading={false}
+      textPending={false}
       listsExpanded={listsExpanded}
       onToggleListsExpanded={() => setListsExpanded((v) => !v)}
       shortcutsOpen={shortcutsOpen}

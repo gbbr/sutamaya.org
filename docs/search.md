@@ -315,14 +315,17 @@ as it always did, because there is nothing in the text for it to point at.
 
 ## Late, or never
 
-**Search never waits on the text.** The blob is fetched lazily — on first focus of a search field —
-and every stage below is a valid resting state:
+The blob is fetched lazily — on first focus of a search field — and every stage below is a valid
+resting state:
 
-- **Before it loads.** Metadata results render on the keystroke, exactly as today. A spinner and
-  "Searching sutta text…" sit under the last row, where the hits still coming will append, held back
-  for `TEXT_LOADING_DELAY_MS` so a load that lands in a blink says nothing at all. The field starts
-  the fetch on focus, so on a fast connection it never appears.
-- **When it lands.** Text hits append below the metadata hits. Cached from then on.
+- **Before it loads.** No results. A spinner and "Searching sutta text…" stand where the results
+  will be, from the first frame, since a load that hasn't landed is seconds away rather than
+  milliseconds. The metadata half is not shown on its own: it ranks the suttas differently, so
+  putting it on screen means the whole visible list reorders under the reader when the text arrives.
+  A search whose complete answer is already on screen — returning to it from the reader — keeps that
+  answer rather than blanking, even if the text has since been released.
+- **When it lands.** The full, ranked list appears at once. Cached from then on, so every later
+  search in the sitting answers immediately and shows no spinner.
 - **If it never arrives** — offline, never fetched, fetch failed, or the device gave no worker to
   scan it in — the empty state carries the
   existing `SEARCH_SCOPE_NOTE`. The feature degrades to today's behaviour, labelled honestly, with

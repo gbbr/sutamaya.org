@@ -589,14 +589,11 @@ export function searchCorpusAndText(
 // on screen: today's behaviour, labelled honestly. lib/search/textClient.ts owns the transitions.
 export type TextSearchStatus = 'idle' | 'loading' | 'ready' | 'unavailable';
 
-// Said under the last result while the text is on its way, where the hits it brings will append.
+// Said in place of the results while the text is on its way and there is nothing to rank without it.
 export const SEARCH_TEXT_LOADING_NOTE = 'Searching sutta text…';
 
-// How long the text may take before the results admit to waiting for it.
-export const TEXT_LOADING_DELAY_MS = 400;
-
-// The line in the empty state. Null while the text is loading — the line under the results carries
-// that — and once it is searchable, when there is nothing left to say.
+// The line in the empty state. Null while the text is loading — that state says its own line — and
+// once it is searchable, when there is nothing left to say.
 export function searchScopeNote(state: TextSearchStatus): string | null {
   if (state === 'ready' || state === 'loading') return null;
   return SEARCH_SCOPE_NOTE;
