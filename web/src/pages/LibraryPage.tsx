@@ -124,12 +124,14 @@ export function LibraryPage({
     lists,
     highlights
   );
-  // The sutta hits to show: when exactly one list matched, the members that qualified only through
-  // its name are dropped, since its own row already stands for them.
+  // The sutta hits to show: a member that qualified only through a matched list's name is dropped,
+  // since that list's own row already stands for it. Every list that matched, not only the ones
+  // the capped block draws. A snippet means the sutta's own text answered the query too —
+  // `listOnly` is decided before the text is scanned, so that claim is checked here.
   const hits = useMemo(() => {
-    if (listHits.length !== 1) return allHits;
-    const members = new Set(listHits[0].list.items);
-    return allHits.filter((h) => !(h.listOnly && members.has(h.id)));
+    if (!listHits.length) return allHits;
+    const members = new Set(listHits.flatMap((h) => h.list.items));
+    return allHits.filter((h) => !(h.listOnly && !h.snippet && members.has(h.id)));
   }, [allHits, listHits]);
   // The search row TreePane's arrow-key cursor is on — a sutta hit or a list hit — mirrored here
   // so ListPane can draw the same highlight.

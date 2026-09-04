@@ -3,10 +3,26 @@ import { render, screen, fireEvent, within } from '@testing-library/react';
 import { Router, navigate } from '@reach/router';
 
 // Covers the one thing this feature changes about search results that already worked: when a
-// query matches exactly one list, the suttas that got there *only* through that list's name stop
-// being listed, because the list's own row now stands for them. The rule lives in LibraryPage,
+// query matches a list, the suttas that got there *only* through that list's name stop being
+// listed, because the list's own row now stands for them. The rule lives in LibraryPage,
 // which is why this is a rendered test rather than a unit one — searchCorpus still returns those
 // hits, and searchLists knows nothing about them.
+
+// The suttas the text search is standing in for this test. Empty by default, so the results are
+// the metadata half alone — what a browser with no search text loaded shows.
+const textMatched = new Set<string>();
+
+vi.mock('../lib/search/textClient', () => ({
+  subscribeTextSearch: () => () => {},
+  textSearchStatus: () => 'ready',
+  beginTextSearchLoad: () => {},
+  searchText: async (_query: string, meta: Array<{ id: string }>) =>
+    meta.map((hit) =>
+      textMatched.has(hit.id)
+        ? { ...hit, snippet: { text: 'a paragraph of the sutta', query: 'divine', segments: [0, 0] } }
+        : hit
+    ),
+}));
 
 vi.mock('../context/CorpusContext', () => ({ useCorpus: vi.fn() }));
 vi.mock('../context/UserDataContext', () => ({ useUserData: vi.fn() }));
@@ -87,6 +103,7 @@ function searchFor(query: string, lists: ListDef[]) {
 
 describe('a library search that matches the user\'s lists', () => {
   beforeEach(() => {
+    textMatched.clear();
     const store = new Map<string, string>();
     vi.stubGlobal('localStorage', {
       getItem: (k: string) => store.get(k) ?? null,
@@ -138,7 +155,7 @@ describe('a library search that matches the user\'s lists', () => {
     expect(tree.queryByPlaceholderText(SEARCH_PLACEHOLDER)).toBeNull();
   });
 
-  it('keeps every member when the query matches more than one list', async () => {
+  it('drops the members of every matched list, not just of a single one', async () => {
     const tree = searchFor('divine', [
       list({ id: 'l1', label: 'Divine mornings', items: ['mn1'] }),
       list({ id: 'l2', label: 'Divine evenings', items: [] }),
@@ -147,8 +164,17 @@ describe('a library search that matches the user\'s lists', () => {
     // Queried by role, not by text: the matched word is wrapped in its own <mark>, so the row's
     // label is split across elements and only its accessible name reads as one string.
     expect(await tree.findByRole('button', { name: /Divine mornings/ })).toBeTruthy();
-    // Two list rows means the results are the one place their members appear together, so
-    // nothing is dropped — visiting each list in turn shouldn't be the only way to see them.
-    expect(tree.getByText('Mulapariyaya')).toBeTruthy();
+    // dn1 says "Divine" in its own blurb and stays; mn1 is only here through the list above it.
+    expect(tree.getByText('Brahmajala')).toBeTruthy();
+    expect(tree.queryByText('Mulapariyaya')).toBeNull();
+  });
+
+  it('keeps a member whose own text answered the query', async () => {
+    textMatched.add('mn1');
+    const tree = searchFor('divine', [list({ id: 'l1', label: 'Divine', items: ['mn1'] })]);
+
+    // mn1 is in the matched list, and nothing in its title or blurb says "divine" — but the word is
+    // in the sutta itself, which is a claim of its own that the list's row doesn't stand for.
+    expect(await tree.findByText('Mulapariyaya')).toBeTruthy();
   });
 });
