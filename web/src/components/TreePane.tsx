@@ -751,8 +751,9 @@ export function TreePane({
               />
             )}
             {/* Skipped where the lists block is the whole answer, a "0 suttas" heading under it
-                reading as a failed search. */}
-            {(hits.length > 0 || listHitTotal === 0) && (
+                reading as a failed search, and while the scan is still running, where the count
+                would be a zero nothing has counted yet. */}
+            {!textPending && (hits.length > 0 || listHitTotal === 0) && (
               <div className="px-[22px] pt-3 pb-1.5 font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3">
                 {resultsHeading()}
               </div>

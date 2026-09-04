@@ -297,6 +297,7 @@ export function ListPane({
   //   nothing selected  – the number of collections
   //   a deleted list    – empty, since it holds nothing rather than zero things
   //   a node or list    – its sutta count, an auto-list's being what the reader has, uncapped
+  //   a running search  – empty, nothing having been counted yet
   //   a search          – the sutta count, "80+" past the cap, and the matched lists beside it
   function metaLine(): string {
     if (!searching) {
@@ -304,6 +305,7 @@ export function ListPane({
       if (goneList) return '';
       return plural(currentList?.total ?? items.length, 'sutta');
     }
+    if (textPending) return '';
     // "suttas" rather than "results" whenever lists matched too, so the number names what it counts.
     const noun = listHitTotal > 0 ? 'sutta' : 'result';
     const suttas = hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ ${noun}s` : plural(hits.length, noun);
@@ -359,8 +361,11 @@ export function ListPane({
               <span className="font-sans text-ui-2xl font-semibold tracking-[-.01em]">{title.label}</span>
             </div>
           </div>
+          {/* An empty line box where there is nothing to count, so the header keeps its height
+              while a search runs rather than growing one when the count lands. */}
           <div className="font-sans text-ui-xs text-ink-4 mt-[2px]">
-            {title.ref && <span className="font-sans text-ink-4">{title.ref} · </span>}{meta}
+            {title.ref && <span className="font-sans text-ink-4">{title.ref} · </span>}
+            {meta || <>&nbsp;</>}
           </div>
         </div>
         {canReorder && (

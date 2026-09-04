@@ -121,3 +121,22 @@ describe('a search that has already been answered', () => {
     await waitFor(() => expect(other.at(-1)!.hitsSettled).toBe(true));
   });
 });
+
+describe('the first keystroke of a search', () => {
+  it('waits rather than reporting an empty result the scan has not reached yet', async () => {
+    state.status = 'ready';
+    const seen: Result[] = [];
+    const view = render(<Probe query="" onRender={(r) => seen.push(r)} />);
+
+    // Every render from the keystroke on. The query is a render ahead of the results here, so a
+    // pane drawing its empty state off `hits` alone would say nothing matched before anything was
+    // scanned.
+    const typed = seen.length;
+    view.rerender(<Probe query="prime" onRender={(r) => seen.push(r)} />);
+    await waitFor(() => expect(seen.at(-1)!.hitsSettled).toBe(true));
+    for (const render of seen.slice(typed)) {
+      if (render.hits.length === 0 && render.listHits.length === 0) expect(render.textPending).toBe(true);
+    }
+    view.unmount();
+  });
+});

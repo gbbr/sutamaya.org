@@ -59,6 +59,9 @@ export function useCorpusSearch(
 } {
   const deferredQuery = useDeferredValue(query);
   const searching = deferredQuery.trim() !== '';
+  // The opening keystroke of a search, where the box holds a query these results know nothing
+  // about: `deferredQuery` lags it by a render, so nothing has been scanned yet.
+  const starting = !searching && query.trim() !== '';
   // A field the reader has focused has usually already started this; a query typed into one that
   // hasn't (the reader's overlay opened straight onto a pasted query) starts it here, as does a
   // search still on screen when the idle release drops the text.
@@ -98,19 +101,21 @@ export function useCorpusSearch(
   }, [corpus, searching, status, deferredQuery, meta]);
 
   const answered = merged?.meta === meta;
-  // Whether the results are waiting on the text: still on its way, or here and still being scanned
-  // for a search that has nothing on screen yet. No rows, and the caller says so instead. The
-  // metadata half alone ranks the suttas differently, so showing it would put a list on screen that
-  // reorders under the reader a second or two later.
+  // Whether the results are waiting: on the opening keystroke, on the text still on its way, or on
+  // the loaded text being scanned for a search that has nothing on screen yet. No rows, and the
+  // caller says so instead — an empty state here would tell a reader nothing matched before
+  // anything had been scanned. The metadata half alone ranks the suttas differently, so showing it
+  // would put a list on screen that reorders under the reader a second or two later.
   const textPending =
-    searching && !answered && (status === 'idle' || status === 'loading' || (status === 'ready' && !merged));
+    starting ||
+    (searching && !answered && (status === 'idle' || status === 'loading' || (status === 'ready' && !merged)));
   // The results while the worker answers the newest keystroke: the previous answer, held, rather
   // than this keystroke's metadata half. The rows keep their text hits and their snippets, and
   // only the marked words move, until the new answer replaces them. Held only where an answer is
   // coming — with the text gone for good, the metadata half is the answer.
   const hits = textPending ? [] : merged && (answered || (searching && status === 'ready')) ? merged.hits : meta;
   // Whether `hits` is the complete answer to this query, which a scroll restore waits for.
-  const hitsSettled = !searching || (!textPending && (status !== 'ready' || answered));
+  const hitsSettled = !textPending && (!searching || status !== 'ready' || answered);
   // Off the same deferred query, so both halves of the results describe one keystroke.
   const listHits = useMemo(() => searchLists(lists, deferredQuery), [lists, deferredQuery]);
   return { hits, listHits, textStatus: status, textPending, hitsSettled };
