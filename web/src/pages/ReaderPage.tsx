@@ -39,6 +39,9 @@ import { NotFoundPage } from './NotFoundPage';
 // How long a sutta has to stay open before it counts as visited.
 const VISIT_DEBOUNCE_MS = 5000;
 
+// How long the segment a search hit was found in stays washed on arrival.
+const SEARCH_FLASH_MS = 1600;
+
 // Type treatment of the PREVIOUS/NEXT captions in the end-of-sutta nav.
 const FOOT_NAV_LABEL: CSSProperties = { fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' };
 // Returns the size of those captions, capped so they stay under the titles they caption.
@@ -211,13 +214,20 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     requestAnimationFrame(() => scrollToSegment(idx, 'start'));
   }, [requestedSubUid, segments, scrollToSegment]);
 
+  // The segment washed on arrival, cleared when the flash ends.
+  const [flashSeg, setFlashSeg] = useState<number | undefined>(undefined);
+
   // Scrolls to the segment a search hit's snippet was drawn from, so the words the reader searched
-  // for are what they land on. Centred rather than at the top: a segment is a clause, and the
-  // passage around it is what makes it read as an answer.
+  // for are what they land on, and washes it for SEARCH_FLASH_MS so the eye finds it in the
+  // passage. Centred rather than at the top: a segment is a clause, and the passage around it is
+  // what makes it read as an answer.
   useEffect(() => {
     if (searchSegment === undefined || requestedSubUid || !segments) return;
     if (searchSegment >= segments.length) return;
     requestAnimationFrame(() => scrollToSegment(searchSegment, 'center'));
+    setFlashSeg(searchSegment);
+    const timer = window.setTimeout(() => setFlashSeg(undefined), SEARCH_FLASH_MS);
+    return () => window.clearTimeout(timer);
   }, [searchSegment, requestedSubUid, segments, scrollToSegment]);
 
   // The whole corpus in canonical browse order, which Prev/Next steps through across category
@@ -638,6 +648,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
               onToggleNote={onToggleNote}
               activeWord={activeWord}
               focusUid={requestedSubUid}
+              flashSeg={flashSeg}
             />
           ) : textError ? (
             <div className="flex flex-col items-center gap-3 font-sans text-sm text-center" style={{ padding: '24px 0' }}>
