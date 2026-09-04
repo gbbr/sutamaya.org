@@ -25,6 +25,7 @@ const corpus: Corpus = {
   nikayas: [{ id: 'dn', label: 'Long Discourses', sub: 'Dīgha Nikāya', count: 1 }],
   suttas: {
     dn1: { ref: 'DN 1', node: 'dn', en: 'The Prime Net', pali: 'Brahmajāla', blurb: '', min: 5 },
+    dn2: { ref: 'DN 2', node: 'dn', en: 'The Fruits of the Ascetic Life', pali: 'Sāmaññaphala', blurb: '', min: 5 },
   },
   sujatoCommit: 'abc1234',
   dataVersion: 'data-v1',
@@ -35,6 +36,13 @@ const segments = [
   { key: 'dn1:1.1', pali: 'Evaṁ me sutaṁ', en: 'So I have heard' },
   { key: 'dn1:1.2', pali: 'Atha kho', en: 'A wanderer was walking' },
   { key: 'dn1:1.3', pali: 'Tena kho pana', en: 'They spoke in dispraise of the Buddha' },
+];
+
+// The sutta a step, or a second jump, lands on.
+const segments2 = [
+  { key: 'dn2:1.1', pali: 'Rājagahe viharati', en: 'He was staying at Rājagaha' },
+  { key: 'dn2:1.2', pali: 'Tadavasari', en: 'The moon was full that night' },
+  { key: 'dn2:1.3', pali: 'Atha kho rājā', en: 'Then the king spoke' },
 ];
 
 const userDataDefaults: ReturnType<typeof useUserData> = {
@@ -87,7 +95,9 @@ describe('the passage a search hit was drawn from', () => {
       vi.fn((url: string) =>
         url.includes('dn1.json')
           ? Promise.resolve({ ok: true, json: async () => segments })
-          : Promise.reject(new Error(`unexpected fetch: ${url}`))
+          : url.includes('dn2.json')
+            ? Promise.resolve({ ok: true, json: async () => segments2 })
+            : Promise.reject(new Error(`unexpected fetch: ${url}`))
       )
     );
     vi.mocked(useCorpus).mockReturnValue({ corpus, loading: false, error: false, retry: vi.fn() });
@@ -159,6 +169,53 @@ describe('the passage a search hit was drawn from', () => {
     await act(async () => {
       vi.advanceTimersByTime(2000);
     });
+    for (const i of [1, 2]) expect(segmentWrapper(container, i).style.background).toBe('');
+  });
+
+  // This page never unmounts between suttas, so the arrival's paragraph numbers have to go with
+  // the navigation that carried them. Held any longer they wash a passage of the next sutta that
+  // has nothing to do with the query — and, past its end, wash nothing and leave the scroll where
+  // it was.
+  it('does not follow a Prev/Next step into the next sutta', async () => {
+    navigate('/read/dn1', {
+      state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
+    });
+    const { container } = render(
+      <Router style={{ height: '100%' }}>
+        <ReaderPage path="/read/:suttaId" />
+      </Router>
+    );
+    await screen.findByText('They spoke in dispraise of the Buddha');
+
+    // What step() sends: the origin it always carried, and no passage of its own.
+    await act(async () => {
+      navigate('/read/dn2', { state: { from: '/browse/dn/dn1?q=dispraise', fromView: 'list' } });
+    });
+    await screen.findByText('Then the king spoke');
+
+    for (const i of [0, 1, 2]) expect(segmentWrapper(container, i).style.background).toBe('');
+  });
+
+  // The reader's own search overlay jumps to a passage too, so a second intent has to replace the
+  // one the reader arrived on rather than being held off behind it.
+  it('is replaced by a later jump rather than held behind it', async () => {
+    navigate('/read/dn1', {
+      state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
+    });
+    const { container } = render(
+      <Router style={{ height: '100%' }}>
+        <ReaderPage path="/read/:suttaId" />
+      </Router>
+    );
+    await screen.findByText('They spoke in dispraise of the Buddha');
+
+    await act(async () => {
+      navigate('/read/dn2', { state: tagIntent({ segments: [0, 0] }) });
+    });
+    await screen.findByText('Then the king spoke');
+
+    await waitFor(() => expect(segmentWrapper(container, 0).style.background).not.toBe(''));
+    // Not the passage the reader arrived on, which names nothing in this sutta.
     for (const i of [1, 2]) expect(segmentWrapper(container, i).style.background).toBe('');
   });
 

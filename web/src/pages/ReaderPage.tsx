@@ -93,15 +93,20 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   const readerLocationState = location?.state as
     | { from?: string; fromView?: 'tree' | 'list'; searchIds?: string[] }
     | undefined;
-  // The segments a search hit's snippet was drawn from, taken once: location.state survives a
-  // same-tab refresh, and a jump the reader has since scrolled away from must not fire again.
-  const [searchSegments] = useState(
-    () =>
-      consumeIntent(
-        location?.state as ({ segments?: [number, number] } & RouteIntent) | null | undefined,
-        READER_INTENT_KEY
-      )?.segments
-  );
+  // The segments a search hit's snippet was drawn from, sampled once per navigation rather than
+  // once per mount: this page never unmounts between suttas, so a value held for its lifetime
+  // would fire again on every later one and leave a new jump no way in. consumeIntent hands a
+  // navId back a single time, which is what keeps a same-tab refresh from jumping twice; a
+  // Prev/Next step carries no intent at all and so clears this.
+  const arrivalState = location?.state as ({ segments?: [number, number] } & RouteIntent) | null | undefined;
+  const arrivalRef = useRef<{ navId?: string; segments?: [number, number] }>({});
+  if (arrivalRef.current.navId !== arrivalState?.navId) {
+    arrivalRef.current = {
+      navId: arrivalState?.navId,
+      segments: consumeIntent(arrivalState, READER_INTENT_KEY)?.segments,
+    };
+  }
+  const searchSegments = arrivalRef.current.segments;
   const { from, fromView, searchIds, navigateToSutta, closeToOrigin } = useReaderOrigin(readerLocationState);
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
   const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
@@ -226,9 +231,18 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   // finds it. Centred rather than at the top: a snippet is a fragment, and the passage around it is
   // what makes it read as an answer.
   useEffect(() => {
-    if (searchSegments === undefined || requestedSubUid || !segments) return;
+    // The wash belongs to the arrival that asked for it, so anything else — a Prev/Next step, a
+    // deep link to an inner sutta — takes it off rather than leaving it painted over whatever is
+    // on screen now.
+    if (searchSegments === undefined || requestedSubUid || !segments) {
+      setFlashRange(undefined);
+      return;
+    }
     const [first, last] = searchSegments;
-    if (first >= segments.length) return;
+    if (first >= segments.length) {
+      setFlashRange(undefined);
+      return;
+    }
     requestAnimationFrame(() => scrollToSegment(first, 'center'));
     setFlashRange([first, Math.min(last, segments.length - 1)]);
     const timer = window.setTimeout(() => setFlashRange(undefined), SEARCH_FLASH_MS);
