@@ -223,29 +223,29 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     requestAnimationFrame(() => scrollToSegment(idx, 'start'));
   }, [requestedSubUid, segments, scrollToSegment]);
 
-  // The segments washed on arrival, cleared when the flash ends.
-  const [flashRange, setFlashRange] = useState<[number, number] | undefined>(undefined);
+  // Whether the passage the reader arrived on is still washed.
+  const [flashing, setFlashing] = useState(false);
+
+  // The segments the wash covers, clamped to the text that has loaded. Derived rather than held, so
+  // it leaves with the arrival it belongs to in that same render: a Prev/Next step lands on text
+  // that is often already fetched, and a range held a commit longer paints over it.
+  const flashRange = useMemo<[number, number] | undefined>(() => {
+    if (!flashing || !searchSegments || requestedSubUid || !segments) return undefined;
+    const [first, last] = searchSegments;
+    return first >= segments.length ? undefined : [first, Math.min(last, segments.length - 1)];
+  }, [flashing, searchSegments, requestedSubUid, segments]);
 
   // Scrolls to the passage a search hit's snippet was drawn from, so the line the reader picked out
   // of the results is what they land on, and washes the whole of it for SEARCH_FLASH_MS so the eye
   // finds it. Centred rather than at the top: a snippet is a fragment, and the passage around it is
   // what makes it read as an answer.
   useEffect(() => {
-    // The wash belongs to the arrival that asked for it, so anything else — a Prev/Next step, a
-    // deep link to an inner sutta — takes it off rather than leaving it painted over whatever is
-    // on screen now.
-    if (searchSegments === undefined || requestedSubUid || !segments) {
-      setFlashRange(undefined);
-      return;
-    }
-    const [first, last] = searchSegments;
-    if (first >= segments.length) {
-      setFlashRange(undefined);
-      return;
-    }
+    if (searchSegments === undefined || requestedSubUid || !segments) return;
+    const [first] = searchSegments;
+    if (first >= segments.length) return;
     requestAnimationFrame(() => scrollToSegment(first, 'center'));
-    setFlashRange([first, Math.min(last, segments.length - 1)]);
-    const timer = window.setTimeout(() => setFlashRange(undefined), SEARCH_FLASH_MS);
+    setFlashing(true);
+    const timer = window.setTimeout(() => setFlashing(false), SEARCH_FLASH_MS);
     return () => window.clearTimeout(timer);
   }, [searchSegments, requestedSubUid, segments, scrollToSegment]);
 
