@@ -180,10 +180,11 @@ export function LibraryPage({
     navigate(`/browse/${encodeURIComponent(id)}`);
   }, []);
 
-  // `segment` is set only where the query was answered by the sutta's text, and is where the reader
-  // opens: a title or description match has nothing to jump to and opens at the top, as always.
+  // `segments` are set only where the query was answered by the sutta's text, and are where the
+  // reader opens: a title or description match has nothing to jump to and opens at the top, as
+  // always.
   const onOpen = useCallback(
-    (id: string, segment?: number) => {
+    (id: string, segments?: [number, number]) => {
       // The node the reader returns to on close: the current one, or a search hit's own node,
       // since search spans the whole corpus.
       const returnNodeId = query.trim() && corpus?.suttas[id] ? corpus.suttas[id].node : nodeId;
@@ -200,12 +201,12 @@ export function LibraryPage({
       } catch {
         // storage unavailable — ignore
       }
-      // Tagged as a one-shot intent only when there is a segment to jump to, so an ordinary open
+      // Tagged as a one-shot intent only when there is a passage to jump to, so an ordinary open
       // carries the plain origin it always did.
       const state =
-        segment === undefined
+        segments === undefined
           ? { from, fromView: view, searchIds }
-          : tagIntent({ from, fromView: view, searchIds, segment });
+          : tagIntent({ from, fromView: view, searchIds, segments });
       navigate(`/read/${encodeURIComponent(id)}`, { state });
     },
     [nodeId, view, query, corpus, hits]

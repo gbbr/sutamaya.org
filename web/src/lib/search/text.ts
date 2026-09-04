@@ -370,9 +370,9 @@ export interface Snippet {
   // The words to mark in the two lines: what the reader typed, and the query that found the row
   // where the expansion table is what found it.
   query: string;
-  // The segment this was found in, indexing the array in text/{uid}.json — what the reader opens
-  // at when the row is clicked.
-  segment: number;
+  // The first and last segment this line was drawn from, indexing the array in text/{uid}.json —
+  // what the reader opens at, and washes, when the row is clicked.
+  segments: [number, number];
 }
 
 // How much of a paragraph a snippet shows, and how much of it precedes the matched word. A
@@ -383,9 +383,11 @@ const SNIPPET_LEAD = 60;
 
 // One paragraph of a blob, its segments run together as the reader sees them. The newlines become
 // spaces rather than being collapsed away, so an offset into `text` is `start` plus that offset in
-// the blob — which is what locates the segment to open at.
+// the blob — which is what locates the segments to open at.
 function paragraphAt(blob: string, paras: number[], p: number): { text: string; start: number } {
-  const start = paras[p] + 1;
+  // Past the mark and the newline ending its line, so offset 0 is the paragraph's first character
+  // and not the line break above it.
+  const start = paras[p] + 2;
   const end = p + 1 < paras.length ? paras[p + 1] : blob.length;
   return { text: blob.slice(start, end).replace(/\n/g, ' '), start };
 }
@@ -424,22 +426,25 @@ function firstMatch(text: string, query: string, lang: 'en' | 'pa'): number {
 }
 
 // `text` cut to a window opening one lead before `at`, broken on spaces, marked with an ellipsis at
-// each end it trims, and with the runs of space an empty segment leaves squeezed out. A window near
-// the end of a paragraph is shorter than the rest, since the match holds its place at the top
-// rather than the snippet holding its length.
-function windowAround(text: string, at: number): string {
+// each end it trims, and with the runs of space an empty segment leaves squeezed out; `start` and
+// `end` are the half-open range of `text` it was cut from, which is what locates the segments it
+// spans. A window near the end of a paragraph is shorter than the rest, since the match holds its
+// place at the top rather than the snippet holding its length.
+function windowAround(text: string, at: number): { text: string; start: number; end: number } {
   const tidy = (s: string) => s.replace(/\s+/g, ' ').trim();
-  if (at <= SNIPPET_LEAD && text.length <= SNIPPET_MAX) return tidy(text);
+  if (at <= SNIPPET_LEAD && text.length <= SNIPPET_MAX) return { text: tidy(text), start: 0, end: text.length };
   let start = Math.max(0, at - SNIPPET_LEAD);
   if (start > 0) start = text.indexOf(' ', start) + 1 || start;
   let end = Math.min(text.length, start + SNIPPET_MAX);
   if (end < text.length) end = text.lastIndexOf(' ', end) + 1 || end;
-  return `${start > 0 ? '…' : ''}${tidy(text.slice(start, end))}${end < text.length ? '…' : ''}`;
+  const cut = `${start > 0 ? '…' : ''}${tidy(text.slice(start, end))}${end < text.length ? '…' : ''}`;
+  return { text: cut, start, end };
 }
 
-// The paragraph a text hit was found in, windowed around the match, with the segment the reader
-// should open at. The two blobs hold the same paragraphs in the same order, so a Pali hit can show
-// its Pali with that paragraph's English beneath it.
+// The paragraph a text hit was found in, windowed around the match, with the segments the window
+// spans — what the reader opens at and washes, so the passage it lands on is the one the row
+// showed. The two blobs hold the same paragraphs in the same order, so a Pali hit can show its
+// Pali with that paragraph's English beneath it.
 //
 // `typed` is the reader's own query, which is not `score.query` where an expansion is what found
 // the row: the Pali line is windowed and marked on the query that found it, the English line on
@@ -453,15 +458,19 @@ export function snippetOf(index: TextIndex, score: TextScore, typed: string): Sn
   const query = score.query === typed ? typed : `${typed} ${score.query}`;
 
   const at = Math.max(0, firstMatch(para.text, score.query, score.lang));
-  const segment = segmentAt(blob, (pali ? index.paStarts : index.enStarts)[score.doc], paras, score.para, para.start + at);
-  const text = windowAround(para.text, at);
-  if (!pali) return { text, query, segment };
+  const window = windowAround(para.text, at);
+  const suttaStart = (pali ? index.paStarts : index.enStarts)[score.doc];
+  const segmentOf = (offset: number) => segmentAt(blob, suttaStart, paras, score.para, para.start + offset);
+  // `end` is exclusive, so the last segment is the one holding the character before it.
+  const segments: [number, number] = [segmentOf(window.start), segmentOf(Math.max(window.start, window.end - 1))];
+  const text = window.text;
+  if (!pali) return { text, query, segments };
 
   const english = paragraphAt(index.en, index.enParas, score.para);
-  if (!english.text.trim()) return { text, query, segment };
+  if (!english.text.trim()) return { text, query, segments };
   const enAt = firstMatch(english.text, typed, 'en');
   const under = windowAround(english.text, Math.max(0, enAt >= 0 ? enAt : firstMatch(english.text, score.query, 'en')));
-  return { text, under, query, segment };
+  return { text, under: under.text, query, segments };
 }
 
 // ── The whole search ────────────────────────────────────────────────────────

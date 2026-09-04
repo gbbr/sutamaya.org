@@ -172,11 +172,11 @@ describe('snippetOf', () => {
 
   it('returns the paragraph the query was found in, its segments run together', () => {
     const score = searchSuttaText(X, 'radiant').get('a')!;
-    // Segment 1: the sutta's second, the first paragraph holding only segment 0.
+    // Segments 1 and 2: the sutta's second and third, the first paragraph holding only segment 0.
     expect(snip(X, score)).toEqual({
       text: 'The mind is radiant. So it is said.',
       query: 'radiant',
-      segment: 1,
+      segments: [1, 2],
     });
   });
 
@@ -186,11 +186,11 @@ describe('snippetOf', () => {
       text: 'pabhassaraṁ cittaṁ iti vuccati',
       under: 'The mind is radiant. So it is said.',
       query: 'pabhassara',
-      segment: 1,
+      segments: [1, 2],
     });
   });
 
-  it('names the segment the match is in, not the one the paragraph opens with', () => {
+  it('names the segments its text spans, counted from the sutta rather than the paragraph', () => {
     const Y = index([
       {
         uid: 'a',
@@ -204,7 +204,7 @@ describe('snippetOf', () => {
         ],
       },
     ]);
-    expect(snip(Y, searchSuttaText(Y, 'radiant').get('a')!)?.segment).toBe(3);
+    expect(snip(Y, searchSuttaText(Y, 'radiant').get('a')!)?.segments).toEqual([1, 3]);
   });
 
   it('windows a long paragraph around the match, so the marked word is inside the clamp', () => {

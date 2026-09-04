@@ -20,7 +20,7 @@ const SAFE_AREA_BOTTOM = 'env(safe-area-inset-bottom, 0px)';
 interface ReaderSearchOverlayProps {
   theme: ThemeColors;
   // `segment` is where a text hit was found, and where the reader opens; absent for every other row.
-  onOpenSutta: (id: string, segment?: number) => void;
+  onOpenSutta: (id: string, segments?: [number, number]) => void;
   onClose: () => void;
 }
 
@@ -91,7 +91,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
     } else if (e.key === 'Enter' && displayHits[activeIndex]) {
       e.preventDefault();
       const hit = displayHits[activeIndex];
-      onOpenSutta(hit.matchedId ?? hit.id, hit.snippet?.segment);
+      onOpenSutta(hit.matchedId ?? hit.id, hit.snippet?.segments);
     }
   }
 
@@ -209,7 +209,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
                   lastPointer.current = { x: e.clientX, y: e.clientY };
                   setActiveIndex(i);
                 }}
-                onClick={() => onOpenSutta(h.matchedId ?? h.id, h.snippet?.segment)}
+                onClick={() => onOpenSutta(h.matchedId ?? h.id, h.snippet?.segments)}
               >
                 <span>
                   <span className="font-sans text-ui-xs font-bold mr-2.5" style={{ color: theme.dim }}>

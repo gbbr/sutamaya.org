@@ -125,7 +125,8 @@ interface SegmentRowProps {
   afterHeading: boolean;
   // Whether this segment belongs to the inner sutta a link pointed at within a batched document.
   focused: boolean;
-  // Whether this is the segment an arriving search hit was found in, washed until it fades.
+  // Whether this segment is part of the passage an arriving search hit was drawn from, washed
+  // until it fades.
   flash: boolean;
   theme: ThemeColors;
   fontSize: number;
@@ -372,8 +373,9 @@ interface SegmentedTextProps {
   // The inner sutta a deep link or search hit pointed at within a batched document (e.g. "dhp321"
   // within "dhp320-333"); its segments get a background wash. Undefined for a normal sutta.
   focusUid?: string;
-  // The segment an arriving search hit was found in, washed while the reader lands on it.
-  flashSeg?: number;
+  // The first and last segment an arriving search hit's snippet was drawn from, washed while the
+  // reader lands on them.
+  flashRange?: [number, number];
 }
 
 const EMPTY_RANGES: SegmentRange[] = [];
@@ -398,7 +400,7 @@ function SegmentedTextInner({
   onToggleNote,
   activeWord,
   focusUid,
-  flashSeg,
+  flashRange,
 }: SegmentedTextProps) {
   // One line box at the current size and leading; every gap below is a fraction of it.
   const line = (fontSize * lineHeight) / 100;
@@ -436,7 +438,7 @@ function SegmentedTextInner({
             above={allPali && paliAbove}
             listIndex={seg.role === 'list-item' ? runningListIndex : undefined}
             focused={!!focusUid && seg.key.startsWith(`${focusUid}:`)}
-            flash={flashSeg === i}
+            flash={!!flashRange && i >= flashRange[0] && i <= flashRange[1]}
             theme={theme}
             fontSize={fontSize}
             lineHeight={lineHeight}
