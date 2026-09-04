@@ -132,7 +132,7 @@ describe('mobile search -> reader -> close flow', () => {
     });
   });
 
-  it('returns to the searched sutta\'s own tree location, not the stale pre-search category', async () => {
+  it('returns to the collection that was being browsed, not the opened hit\'s own', async () => {
     navigate('/browse/dn');
     const { container } = render(
       <Router style={{ height: '100%' }}>
@@ -170,15 +170,16 @@ describe('mobile search -> reader -> close flow', () => {
     // Close the reader.
     fireEvent.click(screen.getByTitle('Close'));
 
-    // Should land back on the tree pane, expanded/scrolled to MN (mn1's own node) — not DN,
-    // the category that happened to be browsed before the search. The results come back with the
-    // close, so the tree is behind them until the search is cleared.
+    // Should land back on the tree pane, still on DN — the collection being browsed when the
+    // search started, which the search itself never moved. Opening MN 1 from the results doesn't
+    // re-scope the tree to MN. The results come back with the close, so the tree is behind them
+    // until the search is cleared.
     await screen.findByText('sutamaya');
     fireEvent.click(tree().getByRole('button', { name: 'Clear search' }));
-    const mnRow = tree().getByRole('button', { name: /Middle Discourses/ });
-    expect(mnRow.className).toContain('bg-ink/[.06]');
     const dnRow = tree().getByRole('button', { name: /Long Discourses/ });
-    expect(dnRow.className).not.toContain('bg-ink/[.06]');
+    expect(dnRow.className).toContain('bg-ink/[.06]');
+    const mnRow = tree().getByRole('button', { name: /Middle Discourses/ });
+    expect(mnRow.className).not.toContain('bg-ink/[.06]');
   });
 
   it("keeps TreePane on 'My lists' after a search result is opened and the reader is closed", async () => {
