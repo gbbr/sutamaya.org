@@ -102,7 +102,7 @@ export function beginTextSearchLoad(corpus: Corpus | null): void {
     }
   }
   publish('loading');
-  send({ type: 'load', dataVersion: corpus.dataVersion });
+  send({ type: 'load', searchVersion: corpus.searchVersion });
 }
 
 // Forgets the loaded text, back to the state before anything asked for it. The next search starts a

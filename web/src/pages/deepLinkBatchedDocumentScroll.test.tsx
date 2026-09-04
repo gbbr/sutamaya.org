@@ -38,6 +38,7 @@ function buildCorpus(): Corpus {
     },
     sujatoCommit: 'abc1234',
     dataVersion: 'data-v1',
+    searchVersion: 'search-v1',
     dictionaryVersion: 'dict-v1',
   };
 }

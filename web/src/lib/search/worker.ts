@@ -19,7 +19,7 @@ import {
 
 // Sent to load the text, and to run one search once it is loaded.
 export type SearchRequest =
-  | { type: 'load'; dataVersion: string }
+  | { type: 'load'; searchVersion: string }
   | { type: 'search'; id: number; query: string; meta: RankedHit[] };
 
 // The load's outcome, and one answer per search. `hits` is null where the text isn't loaded, which
@@ -33,10 +33,10 @@ let loading = false;
 
 const post = (msg: SearchResponse) => (self as unknown as Worker).postMessage(msg);
 
-function load(dataVersion: string): void {
+function load(searchVersion: string): void {
   if (index || loading) return;
   loading = true;
-  fetchTextIndex(dataVersion)
+  fetchTextIndex(searchVersion)
     .then((loaded) => {
       index = loaded;
       post({ type: 'status', status: 'ready' });
@@ -62,6 +62,6 @@ function search(query: string, meta: RankedHit[]): RankedHit[] | null {
 
 self.addEventListener('message', (event: MessageEvent<SearchRequest>) => {
   const msg = event.data;
-  if (msg.type === 'load') load(msg.dataVersion);
+  if (msg.type === 'load') load(msg.searchVersion);
   else post({ type: 'result', id: msg.id, hits: search(msg.query, msg.meta) });
 });

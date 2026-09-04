@@ -18,7 +18,7 @@ const stub = (id: string): Sutta => ({ ref: id, node: 'x', en: id, pali: id, blu
 
 // The build's provenance/versioning fields, spread into each fixture below. Nothing here reads
 // them — they exist for the reader's source attribution and the offline staleness check.
-const meta = { sujatoCommit: 'abc1234', dataVersion: 'd1', dictionaryVersion: 'k1' };
+const meta = { sujatoCommit: 'abc1234', dataVersion: 'd1', searchVersion: 's1', dictionaryVersion: 'k1' };
 
 describe('compareIds', () => {
   it('sorts a double-digit chapter after a single-digit one numerically, not lexically', () => {
@@ -200,6 +200,7 @@ describe('flatSuttaOrder', () => {
     },
     sujatoCommit: '',
     dataVersion: '',
+    searchVersion: '',
     dictionaryVersion: '',
   };
 
