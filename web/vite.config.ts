@@ -1,9 +1,12 @@
 import { execFileSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+
+import { BRAND_ICONS, renderBrandIcon, repoRoot } from '../scripts/lib/brandIcons.mjs';
 
 const landingPath = fileURLToPath(new URL('./public/landing.html', import.meta.url));
 
@@ -38,6 +41,26 @@ const devHosts: Record<string, string> = {
   [LANDING_HOST]: `https://${LANDING_HOST}  (the landing page — stands in for sutamaya.org)`,
   [APP_HOST]: `https://${APP_HOST}  (the app — stands in for app.sutamaya.org)`,
 };
+
+// The dev server's own icon set: staging's treatment (scripts/lib/brandIcons.mjs) in green, so a
+// tab, a dock and a home screen say which of the three — local, staging, production — they point
+// at. Rendered on first request into node_modules rather than committed, so a build ships nothing
+// for it; delete the directory to re-render after the production artwork changes.
+const LOCAL_ICON_BASE = '/icons/local/';
+const LOCAL_ICON_DIR = resolve(repoRoot, 'node_modules/.cache/local-icons');
+const LOCAL_BADGE = '#15803D';
+
+// Production icon URL -> its local counterpart, read off the icon list so the two can't drift.
+const localIcons = new Map(
+  BRAND_ICONS.map((icon) => [icon.source.replace('web/public', ''), `${LOCAL_ICON_BASE}${icon.out}`])
+);
+
+// Returns HTML — the app shell or the landing page — with its icons pointed at the local set.
+function localIconHtml(html: string): string {
+  let out = html;
+  for (const [from, to] of localIcons) out = out.replaceAll(from, to);
+  return out;
+}
 
 export default defineConfig({
   define: {
@@ -216,7 +239,36 @@ export default defineConfig({
           const appOrigin = host === LANDING_HOST ? `https://${APP_HOST}` : `http://${req.headers.host}`;
           const html = readFileSync(landingPath, 'utf8').replaceAll('https://app.sutamaya.org', appOrigin);
           res.setHeader('Content-Type', 'text/html; charset=utf-8');
-          res.end(html);
+          res.end(localIconHtml(html));
+        });
+      },
+    },
+    {
+      // Serves the local icon set, rendering each file the first time it is asked for — see
+      // localIcons above. Only the dev server ever answers these paths; nothing writes them into
+      // web/public, so `apply: 'serve'` is what keeps them out of a production build.
+      name: 'serve-local-icons',
+      apply: 'serve',
+      transformIndexHtml: { order: 'post', handler: localIconHtml },
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          const path = req.url?.split('?')[0] ?? '';
+          const icon = path.startsWith(LOCAL_ICON_BASE)
+            ? BRAND_ICONS.find((candidate) => candidate.out === path.slice(LOCAL_ICON_BASE.length))
+            : undefined;
+          if (!icon) return next();
+          const file = resolve(LOCAL_ICON_DIR, icon.out);
+          let body;
+          try {
+            if (!existsSync(file)) renderBrandIcon(icon, { colour: LOCAL_BADGE, label: 'LOCAL', out: file });
+            body = readFileSync(file);
+          } catch {
+            // Nothing to render with — the generator needs Chrome. The production artwork rather
+            // than a broken icon.
+            body = readFileSync(resolve(repoRoot, icon.source));
+          }
+          res.setHeader('Content-Type', 'image/png');
+          res.end(body);
         });
       },
     },
