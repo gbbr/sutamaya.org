@@ -14,6 +14,10 @@
 // Text hits extend searchCorpus's bucket ladder rather than replacing it: buckets 0–3 stay the
 // metadata behaviour, 4–6 are the text. Nothing here is required for search to work — until the
 // blobs arrive, and if they never do, searchCorpus answers alone.
+//
+// Everything here is a pure function over a TextIndex. The blobs live in a Web Worker
+// (lib/searchWorker.ts) and lib/textSearchClient.ts is what the app talks to; this module holds no
+// state and never learns which side of the message boundary it is running on.
 import { searchCorpus, searchKey, SEARCH_RESULTS_CAP, SEARCH_SCOPE_NOTE, type SearchHit } from './corpus';
 import { expandQuery } from './searchExpansion';
 import type { Corpus, HighlightsMap, ListDef } from './types';
@@ -467,38 +471,69 @@ function keepBest(into: Map<string, TextScore>, from: Map<string, TextScore>): v
   }
 }
 
-// Returns every sutta matching `query`, best first — the metadata hits searchCorpus finds, the
-// suttas whose text matches, and both again for each query the expansion table adds. A sutta keeps
-// its best bucket across all of them; within a bucket the order is occurrence count in the sutta
-// text, then the saved tie-break, then the corpus's build order.
-export function searchCorpusAndText(
+// A query and every query the expansion table adds for it.
+function variantsOf(query: string, q: string): string[] {
+  return [query, ...expandQuery(q)];
+}
+
+// The metadata hits for `query` and its expansions, each sutta keeping its best bucket.
+export function searchCorpusVariants(
   corpus: Corpus,
   query: string,
   notes: Record<string, string>,
   lists: ListDef[],
-  highlights: HighlightsMap,
-  index: TextIndex | null
+  highlights: HighlightsMap
 ): SearchHit[] {
   const q = searchKey(query.trim());
   if (!q) return [];
-  const queries = [query, ...expandQuery(q)];
-
   const best = new Map<string, SearchHit>();
-  const text = new Map<string, TextScore>();
-  for (const variant of queries) {
+  for (const variant of variantsOf(query, q)) {
     for (const hit of searchCorpus(corpus, variant, notes, lists, highlights)) {
       const prev = best.get(hit.id);
       if (!prev || hit.rank < prev.rank) best.set(hit.id, hit);
     }
-    if (index) keepBest(text, searchSuttaText(index, variant));
   }
+  return [...best.values()];
+}
+
+// The text hits for `query` and its expansions, each sutta keeping its best result.
+export function searchTextVariants(index: TextIndex, query: string): Map<string, TextScore> {
+  const q = searchKey(query.trim());
+  const text = new Map<string, TextScore>();
+  if (!q) return text;
+  for (const variant of variantsOf(query, q)) keepBest(text, searchSuttaText(index, variant));
+  return text;
+}
+
+// A hit as the merge orders it, with no corpus behind it — everything ranking and rendering need,
+// and nothing the worker doesn't hold. `SearchHit` is this plus the sutta itself.
+export interface RankedHit {
+  id: string;
+  rank: number;
+  saved: boolean;
+  snippet?: Snippet;
+}
+
+// Metadata hits and text hits merged into one ordered result, best first. A sutta keeps its best
+// bucket across both passes; within a bucket the order is occurrence count in the sutta text, then
+// the saved tie-break, then the corpus's build order.
+//
+// `make` builds the hit for a sutta reached by its text alone, and returns null where the caller
+// has no such sutta; `typed` is the folded query, which the snippets are cut and marked on.
+export function mergeSearchHits<T extends RankedHit>(
+  meta: T[],
+  text: Map<string, TextScore>,
+  index: TextIndex | null,
+  typed: string,
+  make: (uid: string, bucket: number) => T | null
+): T[] {
+  const best = new Map<string, T>();
+  for (const hit of meta) best.set(hit.id, hit);
 
   for (const [uid, score] of text) {
-    const prev = best.get(uid);
-    if (prev) continue;
-    const sutta = corpus.suttas[uid];
-    if (!sutta) continue;
-    best.set(uid, { id: uid, sutta, rank: score.bucket, saved: false });
+    if (best.has(uid)) continue;
+    const hit = make(uid, score.bucket);
+    if (hit) best.set(uid, hit);
   }
 
   const hits = [...best.values()];
@@ -514,88 +549,41 @@ export function searchCorpusAndText(
   if (index) {
     for (const hit of hits.slice(0, SEARCH_RESULTS_CAP)) {
       const score = text.get(hit.id);
-      const snippet = score && snippetOf(index, score, q);
+      const snippet = score && snippetOf(index, score, typed);
       if (snippet) hit.snippet = snippet;
     }
   }
   return hits;
 }
 
-// ── Loading, and doing without ──────────────────────────────────────────────
+// Returns every sutta matching `query`, best first — the metadata hits searchCorpus finds and the
+// suttas whose text matches, merged. The whole search in one call, over an index this thread holds:
+// what the tests and the offline evaluation harness run, and what the worker path assembles from
+// the three functions above.
+export function searchCorpusAndText(
+  corpus: Corpus,
+  query: string,
+  notes: Record<string, string>,
+  lists: ListDef[],
+  highlights: HighlightsMap,
+  index: TextIndex | null
+): SearchHit[] {
+  const q = searchKey(query.trim());
+  if (!q) return [];
+  const meta = searchCorpusVariants(corpus, query, notes, lists, highlights);
+  const text = index ? searchTextVariants(index, query) : new Map<string, TextScore>();
+  return mergeSearchHits(meta, text, index, q, (uid, bucket) => {
+    const sutta = corpus.suttas[uid];
+    return sutta ? { id: uid, sutta, rank: bucket, saved: false } : null;
+  });
+}
+
+// ── Doing without ───────────────────────────────────────────────────────────
 
 // 'idle' before anything asked for the text, 'unavailable' where it was asked for and didn't
-// arrive — offline, or the fetch failed. Both read the same on screen: today's behaviour, labelled
-// honestly.
+// arrive — offline, the fetch failed, or the device gave no worker to scan it in. All read the same
+// on screen: today's behaviour, labelled honestly. lib/textSearchClient.ts owns the transitions.
 export type TextSearchStatus = 'idle' | 'loading' | 'ready' | 'unavailable';
-
-let status: TextSearchStatus = 'idle';
-let loaded: TextIndex | null = null;
-let inFlight: Promise<void> | null = null;
-const listeners = new Set<() => void>();
-
-// Recreated only when something changed, so useSyncExternalStore doesn't re-render on every read.
-let snapshot: { status: TextSearchStatus; index: TextIndex | null } = { status, index: loaded };
-
-function publish(next: TextSearchStatus, index: TextIndex | null): void {
-  status = next;
-  loaded = index;
-  snapshot = { status: next, index };
-  for (const fn of listeners) fn();
-}
-
-export function subscribeTextSearch(fn: () => void): () => void {
-  listeners.add(fn);
-  return () => listeners.delete(fn);
-}
-
-export function textSearchSnapshot(): { status: TextSearchStatus; index: TextIndex | null } {
-  return snapshot;
-}
-
-// Starts the one fetch of the search text, if it hasn't been started. Called when a search field is
-// focused, and again on the first keystroke — never on app start, since this is ~2.4 MB served
-// that a reader who doesn't search should not pay for.
-export function beginTextSearchLoad(corpus: Corpus | null): void {
-  if (!corpus || inFlight || status === 'ready') return;
-  publish('loading', null);
-  inFlight = fetchTextIndex(corpus.dataVersion)
-    .then((index) => publish('ready', index))
-    // Cleared on failure, so the next search tries again: a reader who searched offline gets the
-    // sutta text as soon as they are back, rather than at the next app start.
-    .catch(() => {
-      inFlight = null;
-      publish('unavailable', null);
-    });
-}
-
-// Forgets the loaded text, back to the state before anything asked for it. The next search fetches
-// again, and gets it from Cache Storage rather than the network.
-export function resetTextSearch(): void {
-  inFlight = null;
-  publish('idle', null);
-}
-
-// Drops the text once the app has been out of sight for `IDLE_RELEASE_MS`. It is ~34 MB of strings,
-// which is worth holding while the reader is searching and not worth holding while they are
-// elsewhere — an idle tab carrying it is a bigger target for iOS to discard outright, and that
-// costs a whole reload rather than the re-read this costs.
-const IDLE_RELEASE_MS = 60_000;
-let releaseTimer: ReturnType<typeof setTimeout> | undefined;
-
-// Starts releasing the text when the page is hidden, and stops if it comes back first.
-export function watchTextSearchIdle(): () => void {
-  const onChange = () => {
-    clearTimeout(releaseTimer);
-    if (document.visibilityState === 'hidden' && status === 'ready') {
-      releaseTimer = setTimeout(resetTextSearch, IDLE_RELEASE_MS);
-    }
-  };
-  document.addEventListener('visibilitychange', onChange);
-  return () => {
-    clearTimeout(releaseTimer);
-    document.removeEventListener('visibilitychange', onChange);
-  };
-}
 
 // Said under the last result while the text is on its way, where the hits it brings will append.
 export const SEARCH_TEXT_LOADING_NOTE = 'Searching sutta text…';

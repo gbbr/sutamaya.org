@@ -21,7 +21,8 @@ import {
   type ListHit,
   type SearchHit,
 } from '../lib/corpus';
-import { beginTextSearchLoad, searchNoMatches, type TextSearchStatus } from '../lib/textSearch';
+import { searchNoMatches, type TextSearchStatus } from '../lib/textSearch';
+import { beginTextSearchLoad } from '../lib/textSearchClient';
 import { ancestorsOfList, flattenListTree, suttaRowMeta } from '../lib/lists';
 import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
 import { derivePaneViewSync } from '../lib/paneView';

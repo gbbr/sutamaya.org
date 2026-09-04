@@ -6,11 +6,14 @@ sutta — numbers, titles, Pali titles, group descriptions, the reader's own not
 with the text *in* it.
 
 ```
-web/src/lib/textSearch.ts         matching, ranking, snippets, and the lazy load of the text
-web/src/lib/searchExpansion.ts    the query-expansion table
-web/src/lib/textSearch.test.ts    the matching, ranking and snippet rules, over a hand-built blob
-web/src/lib/searchGolden.test.ts  the golden query set, run against a real corpus build
-scripts/build-corpus.mjs          writes the three files the search reads
+web/src/lib/textSearch.ts            matching, ranking and snippets — pure, over a TextIndex
+web/src/lib/searchWorker.ts          the Web Worker that holds the text and scans it
+web/src/lib/textSearchClient.ts      the main thread's side: the worker's lifecycle and status
+web/src/lib/searchExpansion.ts       the query-expansion table
+web/src/lib/textSearch.test.ts       the matching, ranking and snippet rules, over a hand-built blob
+web/src/lib/textSearchClient.test.ts loading, releasing and one-search-at-a-time, over a stub worker
+web/src/lib/searchGolden.test.ts     the golden query set, run against a real corpus build
+scripts/build-corpus.mjs             writes the three files the search reads
 ```
 
 ## Scale
@@ -220,6 +223,36 @@ Pali term into an English phrase leaves something neither blob can match — `ri
 first**, and an entry whose key sits inside one that has already matched is skipped. A phrase
 readers are likely to type whole earns its own entry for the same reason.
 
+## Off the main thread
+
+**The blobs live in a Web Worker and are never on the main thread.** A scan is a few milliseconds
+on a fast machine but up to ~150 ms for the worst query, and several times that on a mid-range
+phone — long enough, run on the keystroke, to hold up the character the reader is typing. The 34 MB
+is the bigger reason: the main heap never carries it, which is what an iOS tab is judged on.
+
+The split follows what each side holds:
+
+- **The main thread** scans the metadata — `searchCorpusVariants()` — because the reader's notes,
+  lists and highlights are here, and that pass is fast. Those hits render on the keystroke, as they
+  always have.
+- **The worker** fetches the three files, holds them, and answers one search at a time. A request
+  carries the query and the metadata hits' ids; the worker scans the text and returns the merged,
+  ordered result, with the snippets already cut.
+- **`mergeSearchHits()` is one function used on both sides**, so `searchCorpusAndText()` — the whole
+  search in a single call, over an index the caller holds — still exists for the tests and the
+  offline evaluation harness, and still produces exactly what the app shows.
+
+`lib/textSearchClient.ts` owns the worker and publishes the load status the UI renders. **Only the
+newest waiting search is run**: a reader types faster than a scan, so a queue would answer each
+keystroke long after it was typed. The search in flight finishes, the newest waiting one goes next,
+and the ones typed over are dropped.
+
+Text hits therefore arrive a moment after the metadata hits on every keystroke, not just on the
+first one — which is where they sort anyway, below every metadata bucket.
+
+The worker inherits the page's service worker, so the `CacheFirst` rule for `/data/search/` in
+`web/vite.config.ts` serves its fetches exactly as it served the main thread's.
+
 ## Golden query set
 
 `scripts/search-golden.json` holds the queries this search is expected to answer and the suttas each
@@ -280,7 +313,8 @@ and every stage below is a valid resting state:
   for `TEXT_LOADING_DELAY_MS` so a load that lands in a blink says nothing at all. The field starts
   the fetch on focus, so on a fast connection it never appears.
 - **When it lands.** Text hits append below the metadata hits. Cached from then on.
-- **If it never arrives** — offline, never fetched, fetch failed — the empty state carries the
+- **If it never arrives** — offline, never fetched, fetch failed, or the device gave no worker to
+  scan it in — the empty state carries the
   existing `SEARCH_SCOPE_NOTE`. The feature degrades to today's behaviour, labelled honestly, with
   no error state and nothing blocked. A failed fetch is not remembered, so the next search tries
   again and a reader who searched offline gets the text as soon as they are back.
@@ -329,13 +363,14 @@ Nothing until the reader searches; the text is fetched on the first focus of a s
 |---|---|
 | that first fetch | **~2.9 MB** over the wire |
 | held in Cache Storage | **19 MB** decoded, ×2 corpus versions at `maxEntries: 6` |
-| held in memory | **34 MB**, for as long as the app is open |
+| held in memory | **34 MB** in the worker, for as long as the app is open |
 
 The two blobs are `CacheFirst` in `web/vite.config.ts` — their filenames carry `dataVersion`, so a
 corrected sutta arrives as a new URL and there is nothing to revalidate. Three entries, because only
 the current version's URLs are ever requested.
 
 **The memory is released a minute after the app goes out of sight** (`watchTextSearchIdle`, armed in
-`main.tsx`). The next search fetches again and is served from Cache Storage, so it costs a pause
-rather than a download — and an idle tab holding 34 MB is a bigger target for iOS to discard
+`main.tsx`), by terminating the worker, which takes the blobs with it whatever else is holding them.
+The next search starts a fresh worker, which fetches again and is served from Cache Storage, so it
+costs a pause rather than a download — and an idle tab holding 34 MB is a bigger target for iOS to discard
 outright, which would cost a whole reload instead.
