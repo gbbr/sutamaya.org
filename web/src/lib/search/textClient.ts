@@ -71,11 +71,21 @@ function send(msg: SearchRequest): void {
   worker?.postMessage(msg);
 }
 
+// A load asked for while the app was out of sight, started when it comes back.
+let deferred: Corpus | null = null;
+
 // Starts the one fetch of the search text, if it hasn't been started. Called when a search field is
 // focused, and again on the first keystroke — never on app start, since this is ~2.4 MB served
 // that a reader who doesn't search should not pay for.
 export function beginTextSearchLoad(corpus: Corpus | null): void {
   if (!corpus || status === 'loading' || status === 'ready') return;
+  // A search left on screen asks again the moment the release below drops the text, which would
+  // undo it: the tab is still hidden, so the load waits for the reader to come back.
+  if (document.visibilityState === 'hidden') {
+    deferred = corpus;
+    return;
+  }
+  deferred = null;
   if (!worker) {
     try {
       worker = new Worker(new URL('./worker.ts', import.meta.url), { type: 'module' });
@@ -121,13 +131,16 @@ export function searchText(query: string, meta: RankedHit[]): Promise<RankedHit[
 const IDLE_RELEASE_MS = 60_000;
 let releaseTimer: ReturnType<typeof setTimeout> | undefined;
 
-// Starts releasing the text when the page is hidden, and stops if it comes back first.
+// Starts releasing the text when the page is hidden, stops if it comes back first, and starts a
+// load the page was too far out of sight to run.
 export function watchTextSearchIdle(): () => void {
   const onChange = () => {
     clearTimeout(releaseTimer);
-    if (document.visibilityState === 'hidden' && status === 'ready') {
-      releaseTimer = setTimeout(resetTextSearch, IDLE_RELEASE_MS);
+    if (document.visibilityState === 'hidden') {
+      if (status === 'ready') releaseTimer = setTimeout(resetTextSearch, IDLE_RELEASE_MS);
+      return;
     }
+    if (deferred) beginTextSearchLoad(deferred);
   };
   document.addEventListener('visibilitychange', onChange);
   return () => {
