@@ -17,11 +17,26 @@ test('@smoke Prev/Next step through the collection', async ({ page }) => {
   await expect(page).toHaveURL(/\/read\/dn1/);
 });
 
+// Scoped to the breadcrumb: the foot of the sutta offers the same destination, so the label alone
+// matches two buttons.
 test('@smoke the breadcrumb goes back to the sutta list it belongs to', async ({ page }) => {
   await page.goto('/read/dn1');
   await expect(page.locator('[data-seg="1"]')).toBeVisible();
 
-  await page.getByRole('button', { name: 'Entire Spectrum of Ethics' }).click();
+  await page
+    .getByRole('navigation', { name: 'Breadcrumb' })
+    .getByRole('button', { name: 'Entire Spectrum of Ethics' })
+    .click();
+  await expect(page).toHaveURL(/\/browse\/dn-silakkhandhavagga/);
+  await expect(page.locator('[data-component="ListPane"]')).toContainText('The Divine Net');
+});
+
+// The other way back, and the one a reader who has just finished reading is next to.
+test('the foot of the sutta goes back to the collection it belongs to', async ({ page }) => {
+  await page.goto('/read/dn1');
+  await expect(page.locator('[data-seg="1"]')).toBeVisible();
+
+  await page.getByRole('button', { name: 'Back to Entire Spectrum of Ethics' }).click();
   await expect(page).toHaveURL(/\/browse\/dn-silakkhandhavagga/);
   await expect(page.locator('[data-component="ListPane"]')).toContainText('The Divine Net');
 });
