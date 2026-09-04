@@ -47,7 +47,13 @@ export function useCorpusSearch(
   notes: NotesMap,
   lists: ListDef[],
   highlights: HighlightsMap
-): { hits: SearchHit[]; listHits: ListHit[]; textStatus: TextSearchStatus; textLoading: boolean } {
+): {
+  hits: SearchHit[];
+  listHits: ListHit[];
+  textStatus: TextSearchStatus;
+  textLoading: boolean;
+  hitsSettled: boolean;
+} {
   const deferredQuery = useDeferredValue(query);
   const searching = deferredQuery.trim() !== '';
   // A field the reader has focused has usually already started this; a query typed into one that
@@ -88,7 +94,10 @@ export function useCorpusSearch(
   }, [corpus, searching, status, deferredQuery, meta]);
 
   const hits = merged?.meta === meta ? merged.hits : meta;
+  // Whether `hits` is the complete answer to this query, which a scroll restore waits for. True
+  // while the search text is still loading, a wait nothing can be held back for.
+  const hitsSettled = !searching || status !== 'ready' || merged?.meta === meta;
   // Off the same deferred query, so both halves of the results describe one keystroke.
   const listHits = useMemo(() => searchLists(lists, deferredQuery), [lists, deferredQuery]);
-  return { hits, listHits, textStatus: status, textLoading: searching && slow };
+  return { hits, listHits, textStatus: status, textLoading: searching && slow, hitsSettled };
 }

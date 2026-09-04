@@ -320,6 +320,19 @@ started with.
   TreePane's arrow-key nav walks both kinds as one column, and the reader's own search overlay
   deliberately shows suttas only. A list-name query still also surfaces the list's *members*, via
   `searchCorpus`'s list-path haystack — the two are independent.
+- **A library search is a place, not a mode.** The query lives in the address bar as `?q=`, written
+  on a typing pause and always in place of the current entry, and `LibraryPage.onOpen` puts it in
+  the `from` the reader closes back to — so closing a result returns to the results rather than to
+  the sutta's own collection. `lastLocation` stores pathnames only, so a relaunch never reopens a
+  search.
+- **The results' scroll position is the search's, not the pane's.** Each pane keeps results under
+  their own `useScrollMemory` key (`list:search`, `tree:search`), so a search can't take over where
+  the tree or the browsed list was left; a new query forgets that key and opens at the top. Both
+  panes hold the restore until the text hits have landed (`hitsSettled`) — a position restored
+  against a half-filled list is no position at all — and nothing scrolls the cursor's *opening* row
+  into view, on arrival or on the first row, since that would drag the pane off the position just
+  restored. Only a cursor the reader has moved is revealed; `restoreHitId` is the row an arrival
+  put it on.
 - **A note carries one piece of markup, `*bold*`, and the box it's written in never renders it.**
   `lib/noteFormat.ts` turns the markers into runs and `MatchedText`'s `notation` prop paints them,
   which covers all four places a note is displayed — the reader's inline note, the Library row, the

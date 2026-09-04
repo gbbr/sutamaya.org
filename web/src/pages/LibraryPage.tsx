@@ -19,6 +19,8 @@ import { ShortcutsModal } from '../components/ShortcutsModal';
 const TREE_LIST_HIT_BEFORE = 8;
 // Width of the same strip right of the boundary.
 const TREE_LIST_HIT_AFTER = 14;
+// How long typing pauses before the query is written to the address bar.
+const QUERY_URL_DELAY = 400;
 
 export function LibraryPage({
   nodeId: urlNodeId,
@@ -37,9 +39,11 @@ export function LibraryPage({
   useEffect(() => {
     if (routeNodeId && (routeNodeId !== urlNodeId || rawSuttaId !== urlSuttaId)) {
       const tail = rawSuttaId ? `/${encodeURIComponent(rawSuttaId)}` : '';
-      navigate(`/browse/${encodeURIComponent(routeNodeId)}${tail}`, { replace: true });
+      // Carries the query across, a fold being a correction to the address rather than a departure
+      // from the search.
+      navigate(`/browse/${encodeURIComponent(routeNodeId)}${tail}${location?.search ?? ''}`, { replace: true });
     }
-  }, [urlNodeId, urlSuttaId, routeNodeId, rawSuttaId]);
+  }, [urlNodeId, urlSuttaId, routeNodeId, rawSuttaId, location?.search]);
   // The selected sutta, mirrored into state so a handler can set it in the same render as
   // everything else it changes; @reach/router updates the route param a frame later. The effect
   // covers navigation this page didn't initiate.
@@ -90,11 +94,36 @@ export function LibraryPage({
       // storage unavailable — ignore
     }
   }, [view]);
-  const [query, setQuery] = useState('');
+  // The search this page arrived on, taken from the address bar's `?q=`.
+  const [arrivedQuery] = useState(() => new URLSearchParams(location?.search ?? '').get('q') ?? '');
+  const [query, setQuery] = useState(arrivedQuery);
+  // The hit the search cursor starts on: the one the reader opened, on the way back from it. Read
+  // from the arriving URL, so typing a query while a sutta is selected still starts at the top hit.
+  const [restoreHitId] = useState(() => (arrivedQuery.trim() && rawSuttaId ? rawSuttaId : undefined));
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
 
+  // Mirrors the query into the address bar, which is what a closed reader returns to. Written on a
+  // pause rather than a keystroke, and in place of the current entry, so a search leaves no trail
+  // for Back to walk.
+  useEffect(() => {
+    const path = location?.pathname;
+    if (!path) return;
+    const current = new URLSearchParams(location.search ?? '').get('q') ?? '';
+    if (current === query) return;
+    const t = window.setTimeout(() => {
+      navigate(query.trim() ? `${path}?q=${encodeURIComponent(query)}` : path, { replace: true });
+    }, QUERY_URL_DELAY);
+    return () => window.clearTimeout(t);
+  }, [query, location?.pathname, location?.search]);
+
   // One scan per keystroke, shared by both panes.
-  const { hits: allHits, listHits, textStatus, textLoading } = useCorpusSearch(corpus, query, notes, lists, highlights);
+  const { hits: allHits, listHits, textStatus, textLoading, hitsSettled } = useCorpusSearch(
+    corpus,
+    query,
+    notes,
+    lists,
+    highlights
+  );
   // The sutta hits to show: when exactly one list matched, the members that qualified only through
   // its name are dropped, since its own row already stands for them.
   const hits = useMemo(() => {
@@ -158,7 +187,10 @@ export function LibraryPage({
       // The node the reader returns to on close: the current one, or a search hit's own node,
       // since search spans the whole corpus.
       const returnNodeId = query.trim() && corpus?.suttas[id] ? corpus.suttas[id].node : nodeId;
-      const from = `/browse/${encodeURIComponent(returnNodeId || '')}/${encodeURIComponent(id)}`;
+      // The search travels with it, so closing the reader puts the results back rather than the
+      // hit's own collection.
+      const search = query.trim() ? `?q=${encodeURIComponent(query)}` : '';
+      const from = `/browse/${encodeURIComponent(returnNodeId || '')}/${encodeURIComponent(id)}${search}`;
       // Persisted as well as carried in router state, which a hard refresh drops — see
       // ReaderPage's closeReader.
       try {
@@ -224,9 +256,11 @@ export function LibraryPage({
           listHitTotal={listHits.length}
           textStatus={textStatus}
           textLoading={textLoading}
+          hitsSettled={hitsSettled}
           listsExpanded={listsExpanded}
           onToggleListsExpanded={toggleListsExpanded}
           onActiveHitChange={onActiveRowChange}
+          restoreHitId={restoreHitId}
           visible={showTreePane}
           restoreOrigin={restoreOrigin}
           flashNodeId={flashNodeId}
@@ -259,10 +293,12 @@ export function LibraryPage({
           listHitTotal={listHits.length}
           textStatus={textStatus}
           textLoading={textLoading}
+          hitsSettled={hitsSettled}
           listsExpanded={listsExpanded}
           onToggleListsExpanded={toggleListsExpanded}
           onSelectList={onSelectNode}
           activeId={activeRow?.kind === 'sutta' ? activeRow.id : undefined}
+          restoreHitId={restoreHitId}
           activeListId={activeRow?.kind === 'list' ? activeRow.id : undefined}
           onBack={() => setView('tree')}
           onOpen={onOpen}

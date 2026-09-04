@@ -3,7 +3,7 @@ import { ArrowUpDown, ChevronDown, ChevronLeft, GripVertical, Info, List, ListPl
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
-import { useScrollMemory } from '../hooks/useScrollMemory';
+import { forgetScrollPosition, useScrollMemory } from '../hooks/useScrollMemory';
 import { usePointerDragSession } from '../hooks/usePointerDragSession';
 import { findNode, isExpandable, listItemsFor, nodeBlurb, nodeLabel } from '../lib/corpus';
 import { SEARCH_RESULTS_CAP, type ListHit, type SearchHit } from '../lib/search/metadata';
@@ -31,11 +31,16 @@ interface ListPaneProps {
   textStatus: TextSearchStatus;
   // Whether it is still downloading, said in a line under the rows.
   textLoading: boolean;
+  // Whether `hits` is the complete answer to the query, which the scroll restore waits for.
+  hitsSettled?: boolean;
   listsExpanded: boolean;
   onToggleListsExpanded: () => void;
   onSelectList: (nodeId: string) => void;
   // The sutta hit TreePane's arrow-key cursor is on, mirrored onto that row here.
   activeId?: string;
+  // The hit the cursor was placed on for this mount, rather than moved to: the result this mount is
+  // a return from.
+  restoreHitId?: string;
   // The same, while that cursor is up in the lists block instead.
   activeListId?: string;
   onBack: () => void;
@@ -56,10 +61,12 @@ export function ListPane({
   listHitTotal,
   textStatus,
   textLoading,
+  hitsSettled = true,
   listsExpanded,
   onToggleListsExpanded,
   onSelectList,
   activeId,
+  restoreHitId,
   activeListId,
   onBack,
   onOpen,
@@ -68,14 +75,25 @@ export function ListPane({
   const { corpus } = useCorpus();
   const { ready, lists, membership, notes, highlights, reorderListItems } = useUserData();
   const { mobile, paneW } = useLayout();
-  // The pane's scroll, held until the mirror lands: a row's note text and highlight count arrive
-  // after the row, and one growing above the scroll position would shift it post-restore.
-  const scrollRef = useScrollMemory<HTMLDivElement>(
-    `list:${query.trim() ? 'search' : nodeId || 'none'}`,
-    visible,
-    { readyToRestore: ready }
-  );
+  // The pane's scroll, held until the mirror lands and the results are complete: a row's note text
+  // and highlight count arrive after the row, and the sutta text's hits after the metadata ones,
+  // either of them shifting or shortening the list under a restored position.
+  const scrollKey = `list:${query.trim() ? 'search' : nodeId || 'none'}`;
+  const scrollRef = useScrollMemory<HTMLDivElement>(scrollKey, visible, { readyToRestore: ready && hitsSettled });
   const itemRowRefs = useRef<Map<string, HTMLDivElement>>(new Map());
+  // A new query opens at the top, and forgets where the query before it was left: its rows are a
+  // different set, and an offset against them means nothing. Not the query this mount arrived on,
+  // whose offset is what the restore above is putting back, and not a cleared one, which hands the
+  // pane back to the browsed node and its own offset.
+  const lastQueryRef = useRef(query.trim());
+  useEffect(() => {
+    const q = query.trim();
+    if (q === lastQueryRef.current) return;
+    lastQueryRef.current = q;
+    if (!q) return;
+    forgetScrollPosition(scrollKey);
+    if (scrollRef.current) scrollRef.current.scrollTop = 0;
+  }, [query, scrollKey, scrollRef]);
 
   const searching = query.trim().length > 0;
   // What the rows mark up: nothing while browsing, this pane drawing browse rows and results
@@ -233,17 +251,25 @@ export function ListPane({
 
   // Reveals the sutta the reader came from, a list-membership chip in the Reader opening this pane
   // with `selectedId` set. `block: 'nearest'` keeps it a no-op when the row is already in view.
+  // Stands down while searching, where the restored scroll position owns where the pane opens.
   useEffect(() => {
-    if (!selectedId) return;
+    if (!selectedId || searching) return;
     itemRowRefs.current.get(selectedId)?.scrollIntoView({ block: 'nearest' });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedId, nodeId]);
 
   // Mirrors TreePane's keyboard-highlighted hit onto its row here. `block: 'nearest'` keeps it a
-  // no-op once the row is in view, matching the `selectedId` effect above.
+  // no-op once the row is in view, matching the `selectedId` effect above. Only a cursor the reader
+  // has moved is scrolled to: where the pane opens is the restored scroll position's to say,
+  // whether the cursor lands on the first row or on the hit being returned to.
+  const cursorSeenRef = useRef(false);
   useEffect(() => {
     if (!searching || !activeId) return;
+    const placing = !cursorSeenRef.current || activeId === restoreHitId;
+    cursorSeenRef.current = true;
+    if (placing) return;
     itemRowRefs.current.get(activeId)?.scrollIntoView({ block: 'nearest' });
-  }, [searching, activeId]);
+  }, [searching, activeId, restoreHitId]);
 
   if (!corpus) return null;
 

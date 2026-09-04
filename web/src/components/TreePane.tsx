@@ -5,7 +5,7 @@ import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
 import { useLayout } from '../context/LayoutContext';
-import { useScrollMemory } from '../hooks/useScrollMemory';
+import { forgetScrollPosition, useScrollMemory } from '../hooks/useScrollMemory';
 import { useScrollToNode } from '../hooks/useScrollToNode';
 import { useListTreeIndex } from '../hooks/useListTreeIndex';
 import { useListCrud } from '../hooks/useListCrud';
@@ -94,10 +94,15 @@ interface TreePaneProps {
   textStatus: TextSearchStatus;
   // Whether it is still downloading, said in a line under the rows.
   textLoading: boolean;
+  // Whether `hits` is the complete answer to the query, which the scroll restore waits for.
+  hitsSettled?: boolean;
   listsExpanded: boolean;
   onToggleListsExpanded: () => void;
   // Reports the arrow-key cursor's row, so ListPane can mirror it on desktop.
   onActiveHitChange?: (row: ActiveSearchRow | undefined) => void;
+  // The hit to start the search cursor on, rather than the first: the result this mount is a
+  // return from.
+  restoreHitId?: string;
   // False while this pane is mounted but hidden on mobile, which useScrollMemory needs to know:
   // a box with no scroll extent can't be restored into.
   visible?: boolean;
@@ -125,9 +130,11 @@ export function TreePane({
   listHitTotal,
   textStatus,
   textLoading,
+  hitsSettled = true,
   listsExpanded,
   onToggleListsExpanded,
   onActiveHitChange,
+  restoreHitId,
   visible = true,
   restoreOrigin = false,
   flashNodeId,
@@ -149,9 +156,24 @@ export function TreePane({
   const { user } = useAuth();
   const { mobile, paneW } = useLayout();
 
-  // The pane's scroll, held until the mirror lands: the My lists block sits above the tree and
-  // would otherwise shift it down after the restore.
-  const scrollRef = useScrollMemory<HTMLDivElement>('tree', visible, { readyToRestore: ready });
+  // The pane's scroll, held until the mirror lands and the results are complete: the My lists block
+  // sits above the tree, and the sutta text's hits arrive under the metadata ones, either of them
+  // moving the rows under a restored position. Results are remembered apart from the tree, the two
+  // sharing this one column but not each other's places in it.
+  const scrollKey = query.trim() ? 'tree:search' : 'tree';
+  const scrollRef = useScrollMemory<HTMLDivElement>(scrollKey, visible, { readyToRestore: ready && hitsSettled });
+  // A new query opens at the top, and forgets where the query before it was left. Not the query
+  // this mount arrived on, whose offset is what the restore above is putting back, and not a
+  // cleared one, which hands the column back to the tree and its own offset.
+  const lastQueryRef = useRef(query.trim());
+  useEffect(() => {
+    const q = query.trim();
+    if (q === lastQueryRef.current) return;
+    lastQueryRef.current = q;
+    if (!q) return;
+    forgetScrollPosition(scrollKey);
+    if (scrollRef.current) scrollRef.current.scrollTop = 0;
+  }, [query, scrollKey, scrollRef]);
   // Read synchronously at mount rather than in an effect: useScrollMemory restores in a layout
   // effect, and a tree still collapsed then clamps the restored offset to 0.
   const [persistedExpansion] = useState(loadPersistedExpansion);
@@ -286,8 +308,13 @@ export function TreePane({
   }, [nodeId]);
   const searchInput = useRef<HTMLInputElement>(null);
   // The search cursor. It starts at 0, so Enter opens the first result with no arrow press first.
-  const { activeIndex: searchActiveIndex, activeIndexRef: searchActiveIndexRef, moveBy: moveSearchActiveIndexBy, setRowRef: setHitRowRef } =
-    useActiveHitIndex(query);
+  const {
+    activeIndex: searchActiveIndex,
+    activeIndexRef: searchActiveIndexRef,
+    setActiveIndex: setSearchActiveIndex,
+    moveBy: moveSearchActiveIndexBy,
+    setRowRef: setHitRowRef,
+  } = useActiveHitIndex(query);
 
   const { listChildrenOf, countFor, deleteScopeFor, topLevelLists } = useListTreeIndex(lists);
 
@@ -412,6 +439,18 @@ export function TreePane({
     ],
     [listHits, displayHits]
   );
+
+  // Puts the cursor on the result the reader opened, so a closed reader lands back on the row it
+  // was opened from. Set once, when that row appears: a hit the sutta text alone found arrives
+  // after the metadata ones.
+  const [cursorSeeded, setCursorSeeded] = useState(!restoreHitId);
+  useEffect(() => {
+    if (cursorSeeded) return;
+    const i = navRows.findIndex((row) => row.kind === 'sutta' && row.id === restoreHitId);
+    if (i < 0) return;
+    setSearchActiveIndex(i);
+    setCursorSeeded(true);
+  }, [cursorSeeded, navRows, restoreHitId, setSearchActiveIndex]);
 
   // Opens row `i`: a list selects it in the pane beside this one, a sutta opens the reader.
   function openRow(i: number) {
