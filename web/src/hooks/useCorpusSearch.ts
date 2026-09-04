@@ -41,8 +41,9 @@ let lastCompleted: { query: string; hits: SearchHit[] } | null = null;
 // moment later and below the metadata hits, which is where they belong anyway — see docs/search.md.
 //
 // `textStatus` is what the caller says in an empty result and `textPending` whether it draws the
-// "Searching sutta text…" state in place of the results: the search text is fetched lazily, and
-// until it lands there is no ranked list to show — see docs/search.md's "Late, or never".
+// "Searching sutta text…" state in place of the results: the search text is fetched lazily and
+// scanned off the main thread, and until that first answer arrives there is no ranked list to show
+// — see docs/search.md's "Late, or never".
 export function useCorpusSearch(
   corpus: Corpus | null,
   query: string,
@@ -97,10 +98,12 @@ export function useCorpusSearch(
   }, [corpus, searching, status, deferredQuery, meta]);
 
   const answered = merged?.meta === meta;
-  // Whether the results are waiting on the text to arrive at all: no rows, and the caller says so
-  // instead. The metadata half alone ranks the suttas differently, so showing it would put a list
-  // on screen that reorders under the reader a second or two later.
-  const textPending = searching && (status === 'idle' || status === 'loading') && !answered;
+  // Whether the results are waiting on the text: still on its way, or here and still being scanned
+  // for a search that has nothing on screen yet. No rows, and the caller says so instead. The
+  // metadata half alone ranks the suttas differently, so showing it would put a list on screen that
+  // reorders under the reader a second or two later.
+  const textPending =
+    searching && !answered && (status === 'idle' || status === 'loading' || (status === 'ready' && !merged));
   // The results while the worker answers the newest keystroke: the previous answer, held, rather
   // than this keystroke's metadata half. The rows keep their text hits and their snippets, and
   // only the marked words move, until the new answer replaces them. Held only where an answer is
