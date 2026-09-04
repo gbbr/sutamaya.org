@@ -30,8 +30,16 @@ export function SearchListHits({ hits, total, expanded, onToggleExpanded, query,
   // The active row, scrolled into view as the cursor walks up into this block. Kept here rather
   // than in the panes' own index-keyed refs, the two tracking their result rows differently.
   const activeRef = useRef<HTMLButtonElement | null>(null);
+  // Whether the cursor has been on a row here before, which is what separates a cursor the reader
+  // moved from the one an arrival places on the first row — revealing that one would scroll the
+  // restored results back to the top.
+  const cursorSeenRef = useRef(false);
   useEffect(() => {
-    if (activeId) activeRef.current?.scrollIntoView({ block: 'nearest' });
+    if (!activeId) return;
+    const placing = !cursorSeenRef.current;
+    cursorSeenRef.current = true;
+    if (placing) return;
+    activeRef.current?.scrollIntoView({ block: 'nearest' });
   }, [activeId]);
   if (total === 0) return null;
   return (
