@@ -128,7 +128,9 @@ Worker on the way out, decided from the hostname (`worker/src/stagingBrand.js`):
 
 - the icon set and the installed name, so a browser tab, a dock and a home screen all say which of
   the two they point at. The artwork lives in `web/public/icons/staging/` and is regenerated from
-  the production icons with `node scripts/make-staging-icons.mjs`.
+  the production icons with `node scripts/make-brand-icons.mjs`, which writes the dev server's own
+  green set (`web/public/icons/local/`) in the same run. Both ship with every deploy and neither is
+  referenced by a production build, so no reader fetches either.
 - the landing page's links into the app, which are absolute and would otherwise walk the reader
   straight back to production.
 - `X-Robots-Tag: noindex` on every page, so the staging hostnames stay out of search results. A
