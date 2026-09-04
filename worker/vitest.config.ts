@@ -11,16 +11,22 @@ export default defineWorkersProject(async () => {
   // CI, where `npm test` runs without a web build. Create it, and seed the two files
   // src/assetRouting.test.js needs to tell "the assets binding answered" from "the Worker
   // answered": one page for the SPA fallback to return, one plain file to serve directly. Only
-  // written when absent, so a real build is never clobbered — the test asserts on how the request
-  // was *routed*, not on what these contain, so placeholders serve it as well as the real build.
-  // The two HTML pages carry different titles for the same reason: '/' and a client-side route
-  // both answer 200 text/html, so only the body distinguishes the landing page from the SPA shell.
+  // written where a real build hasn't put the file there already, so a build is never clobbered —
+  // the test asserts on how the request was *routed*, not on what these contain, so placeholders
+  // serve it as well as the real build. The two HTML pages carry different titles for the same
+  // reason: '/' and a client-side route both answer 200 text/html, so only the body distinguishes
+  // the landing page from the SPA shell.
   const distDir = path.join(__dirname, '..', 'web', 'dist');
   fs.mkdirSync(distDir, { recursive: true });
+  // A real build writes hashed files into dist/assets; without it, whatever is in dist came from an
+  // earlier run of this and is rewritten, so placeholders that have since gained content the tests
+  // need don't go stale.
+  const realBuild = fs.existsSync(path.join(distDir, 'assets'));
   const seed = (name: string, contents: string) => {
     const file = path.join(distDir, name);
     fs.mkdirSync(path.dirname(file), { recursive: true });
-    if (!fs.existsSync(file)) fs.writeFileSync(file, contents);
+    if (realBuild && fs.existsSync(file)) return;
+    fs.writeFileSync(file, contents);
   };
   // Both pages carry the icon links, the iOS name and (on the landing page) a link into the app
   // that src/stagingBrand.test.js asserts are rewritten on staging — the real build has all of
