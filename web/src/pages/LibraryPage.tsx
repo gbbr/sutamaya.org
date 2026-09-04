@@ -7,7 +7,7 @@ import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId } from '../lib/corpus';
-import { LIST_RESULTS_CAP } from '../lib/search/metadata';
+import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP } from '../lib/search/metadata';
 import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, tagIntent, type RouteIntent } from '../lib/routeIntent';
@@ -194,8 +194,9 @@ export function LibraryPage({
       // hit's own collection.
       const search = query.trim() ? `?q=${encodeURIComponent(query)}` : '';
       const from = `/browse/${encodeURIComponent(returnNodeId || '')}/${encodeURIComponent(id)}${search}`;
-      // The hits in the order they are drawn, which is the run the reader's Prev/Next steps.
-      const searchIds = query.trim() ? hits.map((h) => h.id) : undefined;
+      // The hits the panes draw, in order, which is the run the reader's Prev/Next steps — capped
+      // with them, so a step can't leave the results the reader can see.
+      const searchIds = query.trim() ? hits.slice(0, SEARCH_RESULTS_CAP).map((h) => h.id) : undefined;
       // Persisted as well as carried in router state, which a hard refresh drops — see
       // ReaderPage's closeReader.
       try {
