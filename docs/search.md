@@ -332,7 +332,10 @@ resting state:
   released.
 - **Once it has answered.** The full, ranked list appears at once. Every later keystroke in the
   sitting holds the previous list still while the next is scanned, so the spinner is shown roughly
-  once per sitting.
+  once per sitting. The held list says so: a small spinner sits beside the results count in the
+  library panes, and in the reader's overlay takes the search field's own glyph, faded in on the
+  same 150ms delay so a quick answer shows nothing. Nothing dims and nothing moves — the rows are
+  still the reader's to read and open while the newer answer is scanned.
 - **If it never arrives** — offline, never fetched, fetch failed, or the device gave no worker to
   scan it in — the empty state carries the
   existing `SEARCH_SCOPE_NOTE`. The feature degrades to today's behaviour, labelled honestly, with

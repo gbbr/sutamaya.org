@@ -12,6 +12,7 @@ import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { MatchedText } from './MatchedText';
 import { SuttaRowChips } from './SuttaRowChips';
 import { TextSearchProgress } from './TextSearchProgress';
+import { SearchUpdating } from './SearchUpdating';
 import { getUiScale } from '../lib/uiPrefs';
 import type { ThemeColors } from '../lib/types';
 
@@ -43,7 +44,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
   }, [corpus]);
 
   // Suttas only: a list hit's only destination is the library, which is where lists surface.
-  const { hits, textStatus, textPending } = useCorpusSearch(corpus, query, notes, lists, highlights);
+  const { hits, textStatus, textPending, updating } = useCorpusSearch(corpus, query, notes, lists, highlights);
   // The rows drawn and walked by the arrow keys: the first SEARCH_RESULTS_CAP hits, the panel
   // being unvirtualized.
   const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);
@@ -162,7 +163,16 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
             className="flex-none flex items-center gap-3 px-4 py-2"
             style={{ borderBottom: `1px solid ${theme.rule}` }}
           >
-            <Search size={18} strokeWidth={2} className="flex-none" style={{ color: theme.dim }} />
+            {/* The field's own glyph, which becomes the spinner while the rows below are the
+                previous answer and a newer one is being scanned. Boxed to the glyph's width, so
+                the field doesn't shift when the two swap. */}
+            <span className="flex-none w-[18px] flex items-center justify-center">
+              {updating ? (
+                <SearchUpdating theme={theme} />
+              ) : (
+                <Search size={18} strokeWidth={2} style={{ color: theme.dim }} />
+              )}
+            </span>
             {input}
             {query && (
               <button
@@ -189,9 +199,18 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
             </button>
           </div>
         ) : (
-          input
+          // Relative for the spinner, which sits in the field's trailing edge while the rows below
+          // are the previous answer and a newer one is being scanned.
+          <div className="relative flex-none">
+            {input}
+            {updating && (
+              <span className="absolute right-5 top-1/2 -translate-y-1/2">
+                <SearchUpdating theme={theme} />
+              </span>
+            )}
+          </div>
         )}
-        <div className="sc flex-1 overflow-y-auto touch-pan-y">
+        <div className="sc flex-1 overflow-y-auto touch-pan-y" aria-busy={updating}>
           {displayHits.map((h, i) => {
             const { chips, hlCount, hlColors } = rowMeta.get(h.id) ?? { chips: [], hlCount: 0, hlColors: [] };
             return (

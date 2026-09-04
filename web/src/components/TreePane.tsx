@@ -32,6 +32,7 @@ import { SignedInBadge } from './SignedInBadge';
 import { HeaderBanner } from './HeaderBanner';
 import { MatchedText } from './MatchedText';
 import { TextSearchProgress } from './TextSearchProgress';
+import { SearchUpdating } from './SearchUpdating';
 import { SearchListHits } from './SearchListHits';
 import { SuttaRowChips } from './SuttaRowChips';
 import { StagingCommit } from './StagingCommit';
@@ -97,6 +98,8 @@ interface TreePaneProps {
   textPending: boolean;
   // Whether `hits` is the complete answer to the query, which the scroll restore waits for.
   hitsSettled?: boolean;
+  // Whether the rows on screen are the previous answer, held while a newer one is scanned.
+  updating?: boolean;
   listsExpanded: boolean;
   onToggleListsExpanded: () => void;
   // Reports the arrow-key cursor's row, so ListPane can mirror it on desktop.
@@ -132,6 +135,7 @@ export function TreePane({
   textStatus,
   textPending,
   hitsSettled = true,
+  updating = false,
   listsExpanded,
   onToggleListsExpanded,
   onActiveHitChange,
@@ -725,6 +729,7 @@ export function TreePane({
       <div
         ref={scrollRef}
         className="sc flex-1 pt-3"
+        aria-busy={updating}
         style={{ paddingBottom: 'calc(1.5rem + env(safe-area-inset-bottom, 0px))' }}
       >
         {searching ? (
@@ -746,8 +751,11 @@ export function TreePane({
                 reading as a failed search, and while the scan is still running, where the count
                 would be a zero nothing has counted yet. */}
             {!textPending && (hits.length > 0 || listHitTotal === 0) && (
-              <div className="px-[22px] pt-3 pb-1.5 font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3">
+              <div className="flex items-center gap-2 px-[22px] pt-3 pb-1.5 font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3">
                 {resultsHeading()}
+                {/* The count still stands for the answer before this keystroke's, so it spins
+                    beside it until the new one replaces it. */}
+                {updating && <SearchUpdating />}
               </div>
             )}
             {/* The hit rows, mobile only — on desktop ListPane draws them beside this pane, with

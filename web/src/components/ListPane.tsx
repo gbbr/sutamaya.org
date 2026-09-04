@@ -13,6 +13,7 @@ import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
 import { MatchedText } from './MatchedText';
 import { SearchListHits } from './SearchListHits';
 import { TextSearchProgress } from './TextSearchProgress';
+import { SearchUpdating } from './SearchUpdating';
 import { SuttaRowChips } from './SuttaRowChips';
 import { ListMembershipPopover } from './ListMembershipPopover';
 import type { Sutta } from '../lib/types';
@@ -33,6 +34,8 @@ interface ListPaneProps {
   textPending: boolean;
   // Whether `hits` is the complete answer to the query, which the scroll restore waits for.
   hitsSettled?: boolean;
+  // Whether the rows on screen are the previous answer, held while a newer one is scanned.
+  updating?: boolean;
   listsExpanded: boolean;
   onToggleListsExpanded: () => void;
   onSelectList: (nodeId: string) => void;
@@ -62,6 +65,7 @@ export function ListPane({
   textStatus,
   textPending,
   hitsSettled = true,
+  updating = false,
   listsExpanded,
   onToggleListsExpanded,
   onSelectList,
@@ -363,9 +367,14 @@ export function ListPane({
           </div>
           {/* An empty line box where there is nothing to count, so the header keeps its height
               while a search runs rather than growing one when the count lands. */}
-          <div className="font-sans text-ui-xs text-ink-4 mt-[2px]">
-            {title.ref && <span className="font-sans text-ink-4">{title.ref} · </span>}
-            {meta || <>&nbsp;</>}
+          <div className="flex items-center gap-1.5 font-sans text-ui-xs text-ink-4 mt-[2px]">
+            <span className="min-w-0 truncate">
+              {title.ref && <span className="font-sans text-ink-4">{title.ref} · </span>}
+              {meta || <>&nbsp;</>}
+            </span>
+            {/* The count still stands for the answer before this keystroke's, so it spins beside
+                it until the new one replaces it. */}
+            {updating && <SearchUpdating />}
           </div>
         </div>
         {canReorder && (
@@ -385,6 +394,7 @@ export function ListPane({
       <div
         ref={scrollRef}
         className="sc flex-1"
+        aria-busy={updating}
         style={
           dragOrder
             ? { userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none' }

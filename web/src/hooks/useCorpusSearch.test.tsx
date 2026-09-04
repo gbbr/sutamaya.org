@@ -110,6 +110,24 @@ describe('a search that has already been answered', () => {
     }
   });
 
+  it('reports the held results as updating, until its own answer replaces them', async () => {
+    const seen: Result[] = [];
+    const view = render(<Probe query="lon" onRender={(r) => seen.push(r)} />);
+    await waitFor(() => expect(seen.at(-1)!.hitsSettled).toBe(true));
+    expect(seen.at(-1)!.updating).toBe(false);
+
+    // Rows on screen, but the previous query's: what the spinner beside the results count stands
+    // for. Never both — a pane drawing the "Searching sutta text…" state has no rows to mark.
+    const typed = seen.length;
+    view.rerender(<Probe query="long" onRender={(r) => seen.push(r)} />);
+    expect(seen.at(-1)!.updating).toBe(true);
+    await waitFor(() => expect(seen.at(-1)!.hitsSettled).toBe(true));
+    expect(seen.at(-1)!.updating).toBe(false);
+    for (const render of seen.slice(typed)) {
+      expect(render.updating && render.textPending).toBe(false);
+    }
+  });
+
   it('leaves a mount on a different query to wait for its own answer', async () => {
     const first: Result[] = [];
     const one = render(<Probe query="long" onRender={(r) => first.push(r)} />);

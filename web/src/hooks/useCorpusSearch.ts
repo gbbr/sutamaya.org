@@ -56,6 +56,7 @@ export function useCorpusSearch(
   textStatus: TextSearchStatus;
   textPending: boolean;
   hitsSettled: boolean;
+  updating: boolean;
 } {
   const deferredQuery = useDeferredValue(query);
   const searching = deferredQuery.trim() !== '';
@@ -116,7 +117,10 @@ export function useCorpusSearch(
   const hits = textPending ? [] : merged && (answered || (searching && status === 'ready')) ? merged.hits : meta;
   // Whether `hits` is the complete answer to this query, which a scroll restore waits for.
   const hitsSettled = !textPending && (!searching || status !== 'ready' || answered);
+  // Whether the rows on screen are the held previous answer, with the newest keystroke's still
+  // being scanned: rows, but not this query's, which the caller marks as updating.
+  const updating = !hitsSettled && !textPending;
   // Off the same deferred query, so both halves of the results describe one keystroke.
   const listHits = useMemo(() => searchLists(lists, deferredQuery), [lists, deferredQuery]);
-  return { hits, listHits, textStatus: status, textPending, hitsSettled };
+  return { hits, listHits, textStatus: status, textPending, hitsSettled, updating };
 }
