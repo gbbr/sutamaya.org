@@ -194,11 +194,13 @@ function searchLine(s) {
   return s.replace(/[\r\n\x1e]+/g, ' ');
 }
 
-// The paragraph a segment key names — the middle field, so "mn10:2.1" is paragraph "2".
+// The paragraph a segment key names, qualified by the sutta it belongs to — "mn10:2.1" is
+// "mn10:2". A batched document's inner suttas each restart at paragraph 1.
 function paragraphOf(key) {
-  const afterColon = key.slice(key.indexOf(':') + 1);
+  const colon = key.indexOf(':');
+  const afterColon = key.slice(colon + 1);
   const dot = afterColon.indexOf('.');
-  return dot === -1 ? afterColon : afterColon.slice(0, dot);
+  return key.slice(0, colon + 1) + (dot === -1 ? afterColon : afterColon.slice(0, dot));
 }
 
 // Adds one sutta's segments to the search blobs, and records where it starts in each.
