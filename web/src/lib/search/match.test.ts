@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { searchKey } from './corpus';
-import { matchRuns } from './searchMatch';
+import { searchKey } from './metadata';
+import { matchRuns } from './match';
 
 // The marked stretches only, in order — what a reader actually sees highlighted.
 const marks = (text: string, query: string) => matchRuns(text, query).filter((r) => r.hit).map((r) => r.text);

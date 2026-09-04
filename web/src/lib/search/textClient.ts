@@ -4,9 +4,9 @@
 //
 // Nothing here scans anything. The blobs are the worker's, and the only thing this module holds of
 // them is whether they are loaded.
-import type { Corpus } from './types';
-import type { RankedHit, TextSearchStatus } from './textSearch';
-import type { SearchRequest, SearchResponse } from './searchWorker';
+import type { Corpus } from '../types';
+import type { RankedHit, TextSearchStatus } from './text';
+import type { SearchRequest, SearchResponse } from './worker';
 
 let worker: Worker | null = null;
 let status: TextSearchStatus = 'idle';
@@ -78,7 +78,7 @@ export function beginTextSearchLoad(corpus: Corpus | null): void {
   if (!corpus || status === 'loading' || status === 'ready') return;
   if (!worker) {
     try {
-      worker = new Worker(new URL('./searchWorker.ts', import.meta.url), { type: 'module' });
+      worker = new Worker(new URL('./worker.ts', import.meta.url), { type: 'module' });
       worker.addEventListener('message', onMessage);
       // A worker that dies takes the text with it, and search carries on without it.
       worker.addEventListener('error', () => {

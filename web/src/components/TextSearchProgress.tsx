@@ -1,5 +1,5 @@
 import { Loader2 } from 'lucide-react';
-import { SEARCH_TEXT_LOADING_NOTE } from '../lib/textSearch';
+import { SEARCH_TEXT_LOADING_NOTE } from '../lib/search/text';
 
 // The line saying the sutta text is still on its way, drawn at the foot of the results, where the
 // hits it brings will append.

@@ -63,7 +63,8 @@ web/src/
   pages/        LibraryPage (tree + list panes), ReaderPage (full-screen), SettingsPage, HelpPage
   components/   SegmentedText is the reader's renderer; TreePane/ListPane/ListRow the library
   hooks/        reader keyboard, dictionary lookup, scroll memory, the two pointer-drag sessions
-  lib/          pure helpers, no React — corpus/search, dictionary shards, the mirror and its flush
+  lib/          pure helpers, no React — corpus, dictionary shards, the mirror and its flush
+  lib/search/   metadata search, full-text search and its worker, query expansion, hit marking
 
 worker/src/
   index.js      rate limiting, CORS, route mounting
@@ -300,7 +301,7 @@ started with.
 - **Reordering and drag-and-drop use Pointer Events, never HTML5 drag-and-drop**, which doesn't fire
   reliably on touch. The shared plumbing is `hooks/usePointerDragSession.ts`.
 - **Search does not cover sutta text** — `searchCorpus` scans ref, title, Pali, blurb, note and list
-  names only. The copy that admits this sits beside it in `lib/corpus.ts`: the two placeholders
+  names only. The copy that admits this sits beside it in `lib/search/metadata.ts`: the two placeholders
   (`SEARCH_PLACEHOLDER` for the library, `READER_SEARCH_PLACEHOLDER` for the reader's overlay, which
   shows suttas only) name what is found, and `SEARCH_SCOPE_NOTE` — rendered under the empty state in
   ListPane, and folded into `SEARCH_NO_MATCHES` for TreePane and the overlay — names what isn't.

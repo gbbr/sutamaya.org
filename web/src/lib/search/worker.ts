@@ -3,11 +3,11 @@
 //
 // It owns the two blobs from the moment they are fetched to the moment the worker is terminated, so
 // the ~34 MB never reaches the main thread's heap and the ~150 ms worst-case scan never blocks a
-// keystroke. Everything it does is lib/textSearch.ts, unchanged; this file is the transport.
+// keystroke. Everything it does is lib/search/text.ts, unchanged; this file is the transport.
 //
 // The metadata half of a search stays on the main thread, which is where the reader's notes, lists
 // and highlights live, and arrives here as the ranked ids to merge the text hits into.
-import { searchKey } from './corpus';
+import { searchKey } from './metadata';
 import {
   fetchTextIndex,
   mergeSearchHits,
@@ -15,7 +15,7 @@ import {
   type RankedHit,
   type TextIndex,
   type TextSearchStatus,
-} from './textSearch';
+} from './text';
 
 // Sent to load the text, and to run one search once it is loaded.
 export type SearchRequest =

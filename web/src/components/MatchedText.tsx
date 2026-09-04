@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { matchRuns } from '../lib/searchMatch';
+import { matchRuns } from '../lib/search/match';
 import { boldRuns } from '../lib/noteFormat';
 import type { ThemeColors } from '../lib/types';
 

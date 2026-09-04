@@ -1,17 +1,17 @@
 import { useDeferredValue, useEffect, useMemo, useState, useSyncExternalStore } from 'react';
-import { searchLists, type ListHit, type SearchHit } from '../lib/corpus';
+import { searchLists, type ListHit, type SearchHit } from '../lib/search/metadata';
 import {
   searchCorpusVariants,
   TEXT_LOADING_DELAY_MS,
   type RankedHit,
   type TextSearchStatus,
-} from '../lib/textSearch';
+} from '../lib/search/text';
 import {
   beginTextSearchLoad,
   searchText,
   subscribeTextSearch,
   textSearchStatus,
-} from '../lib/textSearchClient';
+} from '../lib/search/textClient';
 import type { Corpus, HighlightsMap, ListDef, NotesMap } from '../lib/types';
 
 // The worker's answer turned back into hits: a sutta the metadata found keeps the hit it already
