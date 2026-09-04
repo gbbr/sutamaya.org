@@ -8,10 +8,10 @@ export interface TextRun {
   hit: boolean;
 }
 
-// The same fold search matches on (searchKey), one character at a time so the result can be mapped
-// back: `map[i]` is the original index the folded character `i` starts at, with a final entry for
-// the end of the string. Folding changes length, so marking needs it. match.test.ts asserts
-// this agrees with the whole-string fold, so searchKey can't drift from it unnoticed.
+// fold returns `s` folded by searchKey, and `map`, where `map[i]` is the index in `s` at which
+// folded character `i` starts and the last entry is the end of `s`. Folded one character at a
+// time, since the fold changes length and a match found in the key is sliced out of `s` as
+// written.
 function fold(s: string): { key: string; map: number[] } {
   let key = '';
   const map: number[] = [];

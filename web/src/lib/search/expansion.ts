@@ -430,6 +430,10 @@ export function expandQuery(q: string, limit = MAX_EXPANSIONS): string[] {
   const out: string[] = [];
   const matched: string[] = [];
   for (const { from, to } of QUERY_EXPANSIONS) {
+    // The pattern is the key itself between two boundaries, so a query not containing the key
+    // cannot match it. Checked before the regex, which is otherwise compiled for all 363 entries
+    // on every keystroke.
+    if (!q.includes(from)) continue;
     // A key inside a key that has already matched names the same part of the query, less
     // precisely: "hindrances" under "five hindrances". Substituting it there only produces the
     // half-replaced phrase the longer entry exists to avoid.
