@@ -29,8 +29,12 @@ test('@smoke a search finds a phrase that is only in the sutta text', async ({ p
   // was searchable.
   await page.getByPlaceholder('Search suttas, text and lists').fill('burning with the fires of greed');
 
-  // The snippet is the row's own evidence: the passage the phrase was found in, centred on it.
+  // The text index has to load and get scanned before the hit shows up, which can outrun the
+  // suite's default timeout on a cold CI runner.
   const hits = searchResults(page);
+  await expect(hits.getByText('Searching sutta text…')).toBeHidden({ timeout: 15000 });
+
+  // The snippet is the row's own evidence: the passage the phrase was found in, centred on it.
   await expect(hits.getByRole('button', { name: /^SN35\.28/ })).toContainText(
     /burning with the fires of greed/i
   );
