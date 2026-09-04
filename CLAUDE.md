@@ -309,11 +309,14 @@ started with.
   one dev server serve both localhost and the phone-facing hostname.
 - **Reordering and drag-and-drop use Pointer Events, never HTML5 drag-and-drop**, which doesn't fire
   reliably on touch. The shared plumbing is `hooks/usePointerDragSession.ts`.
-- **Search does not cover sutta text** — `searchCorpus` scans ref, title, Pali, blurb, note and list
-  names only. The copy that admits this sits beside it in `lib/search/metadata.ts`: the two placeholders
-  (`SEARCH_PLACEHOLDER` for the library, `READER_SEARCH_PLACEHOLDER` for the reader's overlay, which
-  shows suttas only) name what is found, and `SEARCH_SCOPE_NOTE` — rendered under the empty state in
-  ListPane, and folded into `SEARCH_NO_MATCHES` for TreePane and the overlay — names what isn't.
+- **Search covers the sutta text as well as everything about it** — `searchCorpus` scans ref, title,
+  Pali, blurb, note and list names, and `lib/search/text.ts` scans the text of the whole canon in a
+  worker; `docs/search.md` is the design. The copy sits in `lib/search/metadata.ts`: the two
+  placeholders (`SEARCH_PLACEHOLDER` for the library, `READER_SEARCH_PLACEHOLDER` for the reader's
+  overlay, which shows suttas only) name what is found, and `SEARCH_SCOPE_NOTE` names what a search
+  without the text misses. That note shows only where it is true — `searchScopeNote(status)` returns
+  null once the text is loading or ready, and `searchNoMatches(status)` folds it into the empty state
+  for ListPane, TreePane and the overlay.
 - **A library search returns two kinds of row.** `searchLists` matches the user's own lists by name
   (or an ancestor group's) and `SearchListHits` draws them as a capped block above the sutta hits —
   in ListPane on desktop, TreePane on mobile. `LibraryPage` owns the expansion state because
