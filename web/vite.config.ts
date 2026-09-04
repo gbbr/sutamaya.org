@@ -1,12 +1,11 @@
 import { execFileSync } from 'node:child_process';
-import { existsSync, readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
-import { BRAND_ICONS, renderBrandIcon, repoRoot } from '../scripts/lib/brandIcons.mjs';
+import { BRAND_ICONS } from '../scripts/lib/brandIcons.mjs';
 
 const landingPath = fileURLToPath(new URL('./public/landing.html', import.meta.url));
 
@@ -42,13 +41,11 @@ const devHosts: Record<string, string> = {
   [APP_HOST]: `https://${APP_HOST}  (the app — stands in for app.sutamaya.org)`,
 };
 
-// The dev server's own icon set: staging's treatment (scripts/lib/brandIcons.mjs) in green, so a
+// The dev server's own icon set: staging's treatment in green (scripts/make-brand-icons.mjs), so a
 // tab, a dock and a home screen say which of the three — local, staging, production — they point
-// at. Rendered on first request into node_modules rather than committed, so a build ships nothing
-// for it; delete the directory to re-render after the production artwork changes.
+// at. The files sit in public/ like any other asset; only the rewrite below reaches them, so a
+// production build references none of them.
 const LOCAL_ICON_BASE = '/icons/local/';
-const LOCAL_ICON_DIR = resolve(repoRoot, 'node_modules/.cache/local-icons');
-const LOCAL_BADGE = '#15803D';
 
 // Production icon URL -> its local counterpart, read off the icon list so the two can't drift.
 const localIcons = new Map(
@@ -244,33 +241,11 @@ export default defineConfig({
       },
     },
     {
-      // Serves the local icon set, rendering each file the first time it is asked for — see
-      // localIcons above. Only the dev server ever answers these paths; nothing writes them into
-      // web/public, so `apply: 'serve'` is what keeps them out of a production build.
+      // Points the app shell at the local icon set — see localIcons above. `apply: 'serve'` is
+      // what keeps the rewrite out of a production build.
       name: 'serve-local-icons',
       apply: 'serve',
       transformIndexHtml: { order: 'post', handler: localIconHtml },
-      configureServer(server) {
-        server.middlewares.use((req, res, next) => {
-          const path = req.url?.split('?')[0] ?? '';
-          const icon = path.startsWith(LOCAL_ICON_BASE)
-            ? BRAND_ICONS.find((candidate) => candidate.out === path.slice(LOCAL_ICON_BASE.length))
-            : undefined;
-          if (!icon) return next();
-          const file = resolve(LOCAL_ICON_DIR, icon.out);
-          let body;
-          try {
-            if (!existsSync(file)) renderBrandIcon(icon, { colour: LOCAL_BADGE, label: 'LOCAL', out: file });
-            body = readFileSync(file);
-          } catch {
-            // Nothing to render with — the generator needs Chrome. The production artwork rather
-            // than a broken icon.
-            body = readFileSync(resolve(repoRoot, icon.source));
-          }
-          res.setHeader('Content-Type', 'image/png');
-          res.end(body);
-        });
-      },
     },
     {
       name: 'log-dev-hosts',

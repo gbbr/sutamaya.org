@@ -1,7 +1,6 @@
 // Renders a branded variant of the production icon set: the same mark, desaturated under a colour
-// wash, with a band across the foot. Two callers, one treatment — make-staging-icons.mjs writes the
-// blue set that ships and is served by the deployed Worker, and the dev server renders a green one
-// on demand (web/vite.config.ts).
+// wash, with a band across the foot. One treatment, two sets — see scripts/make-brand-icons.mjs,
+// its only caller.
 //
 // Headless Chrome does the compositing because this machine has no image toolchain; the whole
 // treatment is therefore CSS, and the badge colour and band are the two things worth editing.
