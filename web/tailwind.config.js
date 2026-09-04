@@ -41,6 +41,7 @@ export default {
         'accent-hover': '#6B5230',
         'danger-text': 'rgb(var(--danger-text) / <alpha-value>)',
         'warning-text': 'rgb(var(--warning-text) / <alpha-value>)',
+        'staging-text': 'rgb(var(--staging-text) / <alpha-value>)',
         selection: 'rgb(var(--selection) / <alpha-value>)',
         'hl-amber': '#F0E3A8',
         'hl-green': '#CBE0C2',

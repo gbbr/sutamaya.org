@@ -27,6 +27,8 @@ npm run test:e2e           # Playwright journeys in a real browser — see docs/
 npm run typecheck          # tsc over web/src — the only place types are enforced, since the build
                             # transpiles with `tsc -b --noCheck`. CI runs it.
 npm run deploy             # deploy to Cloudflare — see docs/deploy.md; runs npm test first
+npm run deploy:staging     # the same, to the staging environment — see docs/deploy.md
+npm run seed:staging       # replace staging's database with a copy of the local one
 SC_DATA_PATH=/path/to/sc-data npm run update-data     # plan a refresh of data/ — see data/README.md
                               npm run update-data apply    # copy it in, re-run the rules
                               npm run update-data accept   # re-baseline, after reviewing the diffs
@@ -282,6 +284,12 @@ started with.
   `web/public/landing/`, since a static file can't reference Vite's content-hashed asset names.
   Its links into the app are absolute for the same reason a relative one would fail: they leave
   the hostname.
+- **Staging runs production's build.** `env.staging` in `wrangler.jsonc` is a second Worker on
+  `staging.sutamaya.org` / `app.staging.sutamaya.org` with its own D1 database and secrets, and
+  nothing is compiled differently for it. What tells the two apart is written by the Worker on the
+  way out — the icon set, the installed name, the landing page's links and a `noindex` header, all
+  in `worker/src/stagingBrand.js` and all decided from the hostname, which is how
+  `web/src/lib/buildInfo.ts` decides it on the client too. See `docs/deploy.md`.
 - **Every D1 query is scoped `AND user_id = ?`.** These are flat tables with no structural per-user
   isolation; that predicate is the only thing separating one user's data from another's, and it
   belongs on reads, writes and existence checks alike.

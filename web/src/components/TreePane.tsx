@@ -33,6 +33,7 @@ import { MatchedText } from './MatchedText';
 import { TextSearchProgress } from './TextSearchProgress';
 import { SearchListHits } from './SearchListHits';
 import { SuttaRowChips } from './SuttaRowChips';
+import { StagingCommit } from './StagingCommit';
 import { type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
 import { CorpusTreeView } from './CorpusTreeView';
 import { ListsTreeView } from './ListsTreeView';
@@ -822,6 +823,7 @@ export function TreePane({
         )}
       </div>
 
+      <StagingCommit />
     </aside>
   );
 }

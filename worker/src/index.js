@@ -6,6 +6,14 @@ import { authRouter } from './routes/auth.js';
 import { listsRouter } from './routes/lists.js';
 import { dataRouter } from './routes/data.js';
 import { withShareMeta } from './shareMeta.js';
+import {
+  brandHtml,
+  brandHtmlResponse,
+  brandManifest,
+  isStaging,
+  STAGING_APP_HOST,
+  STAGING_MARKETING_HOST,
+} from './stagingBrand.js';
 
 const app = new Hono();
 
@@ -36,6 +44,14 @@ app.use('/api/*', async (c, next) => {
   c.header('Cache-Control', 'no-store');
 });
 
+// Staging serves the same pages as production on public hostnames, so every page it answers says
+// it is not to be indexed. A header rather than a robots.txt rule: a disallowed crawl can still
+// list the URL, having never been allowed to read the page that says not to.
+app.use('*', async (c, next) => {
+  await next();
+  if (isStaging(new URL(c.req.url).hostname)) c.header('X-Robots-Tag', 'noindex');
+});
+
 app.get('/api/health', async (c) => {
   await c.env.DB.prepare('SELECT 1').first();
   return c.json({ ok: true });
@@ -51,15 +67,31 @@ app.route('/api/data', dataRouter);
 const MARKETING_HOSTS = new Map([
   ['sutamaya.org', 'https://app.sutamaya.org'],
   ['www.sutamaya.org', 'https://app.sutamaya.org'],
+  [STAGING_MARKETING_HOST, `https://${STAGING_APP_HOST}`],
   ['local.sutamaya.org', 'https://app.local.sutamaya.org'],
 ]);
 
+// The app origin written into the landing page's own links, which are absolute because they have
+// to cross to a different hostname. Rewritten to the hostname's own app wherever it differs, so
+// staging's landing page doesn't hand the reader to production.
+const LANDING_APP_ORIGIN = 'https://app.sutamaya.org';
+
 // The bare origin: the landing page on a marketing hostname, the app shell everywhere else.
 app.get('/', async (c) => {
-  const marketing = MARKETING_HOSTS.has(new URL(c.req.url).hostname);
+  const { hostname } = new URL(c.req.url);
+  const appOrigin = MARKETING_HOSTS.get(hostname);
+  const marketing = appOrigin !== undefined;
   // A rewrite rather than a redirect, so the indexed page and the shared URL are the same one.
   const res = await c.env.ASSETS.fetch(new URL(marketing ? '/landing.html' : '/index.html', c.req.url));
-  return new Response(res.body, {
+  const rewriteOrigin = marketing && appOrigin !== LANDING_APP_ORIGIN;
+  const staging = isStaging(hostname);
+  let body = res.body;
+  if (rewriteOrigin || staging) {
+    let html = await res.text();
+    if (rewriteOrigin) html = html.replaceAll(LANDING_APP_ORIGIN, appOrigin);
+    body = staging ? brandHtml(html) : html;
+  }
+  return new Response(body, {
     status: res.status,
     headers: {
       'Content-Type': 'text/html; charset=utf-8',
@@ -88,9 +120,18 @@ app.on(['GET', 'HEAD'], APP_PATHS, async (c) => {
   const url = new URL(c.req.url);
   const appOrigin = MARKETING_HOSTS.get(url.hostname);
   if (appOrigin) return c.redirect(`${appOrigin}${url.pathname}${url.search}`, 301);
-  // A sutta or group link gets its own title and description written into the shell; every other
-  // path is handed back as built. See shareMeta.js.
-  return withShareMeta(await c.env.ASSETS.fetch(c.req.raw), url, c.env);
+
+  const res = await c.env.ASSETS.fetch(c.req.raw);
+  if (!isStaging(url.hostname)) {
+    // A sutta or group link gets its own title and description written into the shell; every other
+    // path is handed back as built. See shareMeta.js.
+    return withShareMeta(res, url, c.env);
+  }
+  // Staging serves its own icons and installs under its own name — see stagingBrand.js. sw.js is
+  // the one path here that isn't HTML or the manifest, and is left alone.
+  if (url.pathname === '/manifest.webmanifest') return brandManifest(res);
+  if (url.pathname === '/sw.js') return res;
+  return brandHtmlResponse(await withShareMeta(res, url, c.env));
 });
 
 // Every error body is `{error: <snake_case code>}`, read from a network log rather than displayed.
