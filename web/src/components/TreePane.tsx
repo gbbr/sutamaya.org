@@ -674,7 +674,10 @@ export function TreePane({
               // there by the time anything has been typed.
               onFocus={() => beginTextSearchLoad(corpus)}
               placeholder={SEARCH_PLACEHOLDER}
-              className="w-full h-[38px] border border-ink/[.22] rounded-field pl-3 pr-8 bg-field text-ui-md outline-none"
+              // A tint of the ink over whichever ground the pane has, so the field reads as
+              // recessed into it rather than as pure white glaring on top. Dark keeps --field,
+              // where a panel is elevated instead.
+              className="w-full h-[38px] border border-ink/[.22] rounded-field pl-3 pr-8 bg-ink/[.05] dark:bg-field text-ui-md outline-none placeholder:text-ink/[.42]"
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="off"
