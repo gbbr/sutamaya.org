@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { X, Menu as MenuIcon, ChevronLeft, ChevronRight, List as ListIcon, Search } from 'lucide-react';
+import { X, Menu as MenuIcon, ChevronLeft, ChevronRight, Library, List as ListIcon, Search } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
@@ -16,7 +16,7 @@ import { flatSuttaOrder, breadcrumbFor, normalizeRouteId, resolveCanonicalSuttaI
 import { flattenListTree, resolveListById, suttaRowMeta } from '../lib/lists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { setReaderThemeColor } from '../lib/themeColor';
-import { SHORTCUTS, SHOWS_KEY_HINTS, shortcutsForScope } from '../lib/shortcuts';
+import { shortcutsForScope } from '../lib/shortcuts';
 import { consumeIntent, tagIntent, type RouteIntent } from '../lib/routeIntent';
 import { READER_INTENT_KEY } from '../lib/storageKeys';
 import { enteredByReturn } from '../lib/entryKind';
@@ -31,7 +31,7 @@ import { HighlightGutter } from '../components/HighlightGutter';
 import { DictionaryDock } from '../components/DictionaryDock';
 import { ReaderMenuPanel } from '../components/ReaderMenuPanel';
 import { ReaderSearchOverlay } from '../components/ReaderSearchOverlay';
-import { KeyCap, ShortcutsModal } from '../components/ShortcutsModal';
+import { ShortcutsModal } from '../components/ShortcutsModal';
 import { SuttaRowChips } from '../components/SuttaRowChips';
 import { MatchedText } from '../components/MatchedText';
 import { NotFoundPage } from './NotFoundPage';
@@ -46,8 +46,10 @@ const SEARCH_FLASH_MS = 1600;
 const FOOT_NAV_LABEL: CSSProperties = { fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' };
 // Returns the size of those captions, capped so they stay under the titles they caption.
 const footNavLabelSize = (fs: number) => Math.min(11, fs - 6);
-// Opacity of the key caps inside those captions.
-const FOOT_NAV_KEY_OPACITY = 0.72;
+
+// How a library search is named where the reader shows the run it was opened from — above the
+// breadcrumb and at the foot of the sutta.
+const searchRunLabel = (query: string) => `Results for: “${query}”`;
 
 // The highlights SegmentedText gets while they are hidden: none, and a stable identity so the
 // segments don't re-render.
@@ -322,6 +324,21 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     navigateToSutta(next);
   }
 
+  // Opens the run the foot of the sutta names: the search results, the list the reader was opened
+  // from, or the sutta's own collection.
+  function goToRun() {
+    if (!suttaId) return;
+    if (searchOrigin) {
+      closeReader();
+      return;
+    }
+    const node = listOrigin?.id ?? sutta?.node;
+    if (!node) return;
+    navigate(`/browse/${encodeURIComponent(node)}/${encodeURIComponent(suttaId)}`, {
+      state: tagIntent({ fromView: 'list' }),
+    });
+  }
+
   // Animates the arriving sutta in, on the render that lands on it.
   useLayoutEffect(() => {
     const to = enterOnArrival.current;
@@ -515,9 +532,9 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
           {searchOrigin ? (
             <nav className="font-sans flex items-center gap-1" style={{ fontSize: fs - 6, marginBottom: 7, color: theme.dim }}>
               {/* Back to the results, the same place closing the reader lands. */}
-              <button className="flex items-center gap-1 hover:underline" onClick={closeReader}>
-                <Search size={fs - 7} strokeWidth={2} />
-                {searchOrigin.query}
+              <button className="flex min-w-0 items-center gap-1 hover:underline" onClick={closeReader}>
+                <Search size={fs - 7} strokeWidth={2} className="flex-none" />
+                <span className="min-w-0 truncate">{searchRunLabel(searchOrigin.query)}</span>
               </button>
             </nav>
           ) : (
@@ -538,7 +555,11 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
             )
           )}
           {breadcrumb.length > 0 && (
-            <nav className="font-sans flex flex-wrap items-center gap-1" style={{ fontSize: fs - 6, marginBottom: 7, color: theme.dim }}>
+            <nav
+              className="font-sans flex flex-wrap items-center gap-1"
+              aria-label="Breadcrumb"
+              style={{ fontSize: fs - 6, marginBottom: 7, color: theme.dim }}
+            >
               {breadcrumb.map((b, i) => (
                 <span key={b.id} className="flex items-center gap-1">
                   {i > 0 && <ChevronRight size={fs - 7} strokeWidth={2} />}
@@ -708,17 +729,29 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
 
           {/* Prev/Next at the foot of the text, shown once the text itself is on screen. */}
           {segments && (footNeighbours.prev || footNeighbours.next) && (
-            <nav className="font-sans" style={{ marginTop: 30 }}>
+            <nav className="font-sans" aria-label="Continue reading" style={{ marginTop: 30 }}>
               <div style={{ height: 1, background: theme.rule, marginBottom: 14 }} />
-              {/* What Prev/Next is stepping through, and where in it this sutta sits. */}
+              {/* What Prev/Next is stepping through, and where in it this sutta sits. The label is
+                  the way back to it — the same destination the breadcrumb's last segment and
+                  closing the reader reach. */}
               {footContext && (
                 <div
                   className="flex items-center justify-center gap-1.5"
                   style={{ fontSize: fs - 5, color: theme.dim, marginBottom: 14 }}
                 >
-                  {footContext.kind === 'search' && <Search size={fs - 6} strokeWidth={2} className="flex-none" />}
-                  {footContext.kind === 'list' && <ListIcon size={fs - 6} strokeWidth={2} className="flex-none" />}
-                  <span className="min-w-0 truncate">{footContext.label}</span>
+                  <button
+                    className="flex min-w-0 items-center gap-1.5 hover:opacity-70"
+                    aria-label={footContext.kind === 'search' ? 'Back to results' : `Back to ${footContext.label}`}
+                    title={footContext.kind === 'search' ? 'Back to results' : `Back to ${footContext.label}`}
+                    onClick={goToRun}
+                  >
+                    {footContext.kind === 'search' && <Search size={fs - 6} strokeWidth={2} className="flex-none" />}
+                    {footContext.kind === 'list' && <ListIcon size={fs - 6} strokeWidth={2} className="flex-none" />}
+                    {footContext.kind === 'collection' && <Library size={fs - 6} strokeWidth={2} className="flex-none" />}
+                    <span className="min-w-0 truncate">
+                      {footContext.kind === 'search' ? searchRunLabel(footContext.label) : footContext.label}
+                    </span>
+                  </button>
                   <span className="flex-none">· {footContext.position}</span>
                 </div>
               )}
@@ -730,17 +763,12 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
                 {footNeighbours.prev ? (
                   <button className="block flex-1 min-w-0 text-left hover:opacity-70" onClick={() => step(-1)}>
                     {/* The caption, inset by the chevron's width plus the row gap so it starts
-                        above the title, and carrying the keyboard step's key cap. */}
+                        above the title. */}
                     <span
                       className="flex items-center gap-1.5"
                       style={{ marginLeft: fs, fontSize: footNavLabelSize(fs), ...FOOT_NAV_LABEL, color: theme.dim }}
                     >
                       Previous
-                      {SHOWS_KEY_HINTS && (
-                        <span className="inline-flex" style={{ opacity: FOOT_NAV_KEY_OPACITY }}>
-                          <KeyCap keyName={SHORTCUTS.readerNav.keys[0]} theme={theme} small />
-                        </span>
-                      )}
                     </span>
                     <span className="flex items-center gap-1.5" style={{ marginTop: 3 }}>
                       <ChevronLeft size={fs - 6} strokeWidth={2} className="flex-none" style={{ color: theme.dim }} />
@@ -760,11 +788,6 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
                       className="flex items-center justify-end gap-1.5"
                       style={{ marginRight: fs, fontSize: footNavLabelSize(fs), ...FOOT_NAV_LABEL, color: theme.dim }}
                     >
-                      {SHOWS_KEY_HINTS && (
-                        <span className="inline-flex" style={{ opacity: FOOT_NAV_KEY_OPACITY }}>
-                          <KeyCap keyName={SHORTCUTS.readerNav.keys[1]} theme={theme} small />
-                        </span>
-                      )}
                       Next
                     </span>
                     <span className="flex items-center justify-end gap-1.5" style={{ marginTop: 3 }}>
