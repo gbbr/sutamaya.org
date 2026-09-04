@@ -6,7 +6,7 @@ import { useLayout } from '../context/LayoutContext';
 import { forgetScrollPosition, useScrollMemory } from '../hooks/useScrollMemory';
 import { usePointerDragSession } from '../hooks/usePointerDragSession';
 import { findNode, isExpandable, listItemsFor, nodeBlurb, nodeLabel } from '../lib/corpus';
-import { SEARCH_RESULTS_CAP, type ListHit, type SearchHit } from '../lib/search/metadata';
+import { SEARCH_CAP_NOTE, SEARCH_RESULTS_CAP, type ListHit, type SearchHit } from '../lib/search/metadata';
 import { searchScopeNote, type TextSearchStatus } from '../lib/search/text';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
@@ -103,13 +103,18 @@ export function ListPane({
   const flatLists = useMemo(() => flattenListTree(lists), [lists]);
 
   // The rows to draw: the capped hits while searching, else whatever the selected node or list
-  // holds, in its own order. `hits` stays uncapped, so the count below is honest.
+  // holds, in its own order. `hits` stays uncapped, so the count below is honest. A pane hidden
+  // behind the other one draws no results — on mobile both stay mounted, and the hidden one would
+  // otherwise rebuild every row on each keystroke for a screen nobody is looking at.
   const items = useMemo<Array<[string, Sutta]>>(() => {
     // A placeholder for the window before the corpus lands, in which the pane renders nothing.
     if (!corpus) return [];
-    if (searching) return hits.slice(0, SEARCH_RESULTS_CAP).map(({ id, sutta }) => [id, sutta] as [string, Sutta]);
+    if (searching) {
+      if (!visible) return [];
+      return hits.slice(0, SEARCH_RESULTS_CAP).map(({ id, sutta }) => [id, sutta] as [string, Sutta]);
+    }
     return listItemsFor(corpus, nodeId, lists);
-  }, [corpus, nodeId, lists, searching, hits]);
+  }, [corpus, nodeId, lists, searching, hits, visible]);
 
   // Whether these rows can be reordered: only a user list's, an auto-list's membership being
   // derived, and only once two of them have somewhere to move.
@@ -571,6 +576,10 @@ export function ListPane({
           <div className="font-sans text-center text-ui-sm text-ink-4 py-6 px-6">
             Showing {items.length} of {currentList.total}
           </div>
+        )}
+        {/* Where the results stopped, said in the same place an auto-list says it. */}
+        {searching && hits.length > SEARCH_RESULTS_CAP && (
+          <div className="font-sans text-center text-ui-sm text-ink-4 py-6 px-6 text-balance">{SEARCH_CAP_NOTE}</div>
         )}
         {/* Where the results are, until the sutta text lands and the ranking they wait on with it. */}
         {textPending && <TextSearchProgress />}
