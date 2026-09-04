@@ -187,9 +187,10 @@ export function LibraryPage({
   // always.
   const onOpen = useCallback(
     (id: string, segments?: [number, number]) => {
-      // The node the reader returns to on close: the current one, or a search hit's own node,
-      // since search spans the whole corpus.
-      const returnNodeId = query.trim() && corpus?.suttas[id] ? corpus.suttas[id].node : nodeId;
+      // The node the reader returns to on close: the one being browsed, which a search leaves
+      // untouched, so clearing the search hands the tree and the list back the place they were
+      // left. A hit's own node stands in only where nothing was selected to return to.
+      const returnNodeId = nodeId || (query.trim() ? corpus?.suttas[id]?.node : undefined);
       // The search travels with it, so closing the reader puts the results back rather than the
       // hit's own collection.
       const search = query.trim() ? `?q=${encodeURIComponent(query)}` : '';
