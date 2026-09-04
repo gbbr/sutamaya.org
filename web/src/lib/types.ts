@@ -41,6 +41,10 @@ export interface Corpus {
   // text is cached under unversioned URLs, so this is how a device tells its copy has fallen
   // behind.
   dataVersion: string;
+  // Digest of the search blobs themselves, which is what their filenames carry. Separate from
+  // `dataVersion` because the blobs hold the same segments as the per-sutta text but not the same
+  // bytes, so a change to how they are written moves this alone.
+  searchVersion: string;
   // The same for the dictionary, kept separate so a text change costs no dictionary re-download.
   dictionaryVersion: string;
 }

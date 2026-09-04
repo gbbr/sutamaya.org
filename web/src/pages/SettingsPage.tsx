@@ -267,7 +267,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
         prefetchAllSuttas(uids, {
           signal: controller.signal,
           force: forceText,
-          dataVersion: corpus.dataVersion,
+          searchVersion: corpus.searchVersion,
           onProgress: (done, total) => setProgress({ done, total }),
         }),
         prefetchDictionary(controller.signal, forceDictionary),

@@ -162,16 +162,16 @@ export function buildTextIndex(en: string, pa: string, map: SearchMap): TextInde
   };
 }
 
-export function searchTextUrls(dataVersion: string): string[] {
+export function searchTextUrls(searchVersion: string): string[] {
   return [
-    `/data/search/en.${dataVersion}.txt`,
-    `/data/search/pa.${dataVersion}.txt`,
-    `/data/search/map.${dataVersion}.json`,
+    `/data/search/en.${searchVersion}.txt`,
+    `/data/search/pa.${searchVersion}.txt`,
+    `/data/search/map.${searchVersion}.json`,
   ];
 }
 
-export async function fetchTextIndex(dataVersion: string, signal?: AbortSignal): Promise<TextIndex> {
-  const [enUrl, paUrl, mapUrl] = searchTextUrls(dataVersion);
+export async function fetchTextIndex(searchVersion: string, signal?: AbortSignal): Promise<TextIndex> {
+  const [enUrl, paUrl, mapUrl] = searchTextUrls(searchVersion);
   const get = async (url: string) => {
     const res = await fetch(url, { signal });
     if (!res.ok) throw new Error(`Failed to load ${url} (${res.status})`);

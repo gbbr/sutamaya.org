@@ -168,15 +168,15 @@ async function runShardPass(
 // Pulls the two search blobs and their map into Cache Storage, so a device that has downloaded the
 // canon can search inside it offline rather than falling back to metadata alone. Best effort: the
 // blobs are an addition to search, never a requirement, so a failure here is not reported.
-export async function prefetchSearchText(dataVersion: string, signal?: AbortSignal): Promise<boolean> {
+export async function prefetchSearchText(searchVersion: string, signal?: AbortSignal): Promise<boolean> {
   if (!('caches' in window)) return false;
   try {
     const cache = await caches.open(SEARCH_TEXT_CACHE);
     const results = await Promise.all(
-      searchTextUrls(dataVersion).map(async (url) => {
+      searchTextUrls(searchVersion).map(async (url) => {
         if (signal?.aborted) return false;
         try {
-          // The URLs carry dataVersion, so a cached one can never be stale and is never refetched.
+          // The URLs carry searchVersion, so a cached one can never be stale and is never refetched.
           if (await cache.match(url)) return true;
           const res = await fetch(url, { signal });
           if (!res.ok) return false;
@@ -193,7 +193,7 @@ export async function prefetchSearchText(dataVersion: string, signal?: AbortSign
   }
 }
 
-// Downloads the sutta text for `uids`, one failed pass retried once. `dataVersion` also brings the
+// Downloads the sutta text for `uids`, one failed pass retried once. `searchVersion` also brings the
 // search blobs down, so a downloaded canon is searchable offline as well as readable.
 export async function prefetchAllSuttas(
   uids: string[],
@@ -203,13 +203,13 @@ export async function prefetchAllSuttas(
     // Refetch every shard rather than skipping what is cached, overwriting each entry in place.
     force?: boolean;
     onProgress?: (doneBytes: number, totalBytes: number) => void;
-    // The corpus version whose search text to fetch alongside; omitted, none is.
-    dataVersion?: string;
+    // The version of the search blobs to fetch alongside; omitted, none are.
+    searchVersion?: string;
   } = {}
 ): Promise<{ failed: string[]; circuitTripped: boolean }> {
-  const { concurrency = SHARD_CONCURRENCY, signal, force = false, onProgress, dataVersion } = opts;
+  const { concurrency = SHARD_CONCURRENCY, signal, force = false, onProgress, searchVersion } = opts;
   if (signal?.aborted) return { failed: [], circuitTripped: false };
-  const searchText = dataVersion ? prefetchSearchText(dataVersion, signal) : null;
+  const searchText = searchVersion ? prefetchSearchText(searchVersion, signal) : null;
 
   const [manifest, cache] = await Promise.all([fetchManifest(signal), caches.open(SUTTA_TEXT_CACHE)]);
   const wanted = new Set(uids);

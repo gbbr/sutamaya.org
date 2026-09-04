@@ -41,9 +41,9 @@ Three files, written by `scripts/build-corpus.mjs` from the segments it already 
 `web/public/data/text/`:
 
 ```
-web/public/data/search/en.<dataVersion>.txt     segment strings, "\n"-joined, canonical sutta order
-web/public/data/search/pa.<dataVersion>.txt     the same segments' Pali
-web/public/data/search/map.<dataVersion>.json   [[uid, enOffset, paOffset], …] — one entry per sutta
+web/public/data/search/en.<searchVersion>.txt     segment strings, "\n"-joined, canonical sutta order
+web/public/data/search/pa.<searchVersion>.txt     the same segments' Pali
+web/public/data/search/map.<searchVersion>.json   [[uid, enOffset, paOffset], …] — one entry per sutta
 ```
 
 Plain UTF-8, served compressed. Both languages carry one line per segment in the same order, so a
@@ -57,9 +57,12 @@ phrase match running from the end of one paragraph into the next, or out of one 
 `map` is ~4,000 entries (37 KB brotli). A match at character offset *N* resolves by binary search to
 the sutta whose range contains it, and to the paragraph opened by the last marker before it.
 
-**The filename carries `dataVersion`.** One file per corpus means versioning costs one URL, so these
-can be `CacheFirst` and never go stale — the per-document staleness described in CLAUDE.md's "A
-corpus fix reaches a cached device one document at a time" does not apply here.
+**The filename carries `searchVersion`, a hash of the three files' own bytes.** One file per corpus
+means versioning costs one URL, so these can be `CacheFirst` and never go stale — the per-document
+staleness described in CLAUDE.md's "A corpus fix reaches a cached device one document at a time"
+does not apply here. Hashed over themselves rather than over `dataVersion`, because they hold the
+same segments as `text/` without holding the same bytes: a change to how they are written must move
+the URL even when every `text/` file is identical.
 
 ## Matching
 
@@ -382,7 +385,7 @@ Nothing until the reader searches; the text is fetched on the first focus of a s
 | held in Cache Storage | **19.7 MB** decoded — one corpus version's three files, at `maxEntries: 3` |
 | held in memory | **34 MB** in the worker, for as long as the app is open |
 
-The two blobs are `CacheFirst` in `web/vite.config.ts` — their filenames carry `dataVersion`, so a
+The two blobs are `CacheFirst` in `web/vite.config.ts` — their filenames carry `searchVersion`, so a
 corrected sutta arrives as a new URL and there is nothing to revalidate. Three entries, because only
 the current version's URLs are ever requested.
 

@@ -515,8 +515,8 @@ detail(`${headwords.length} headwords in ${dictShards.length} shards`);
   );
 }
 
-// The two versions corpus.json carries, kept apart so a reworded sutta doesn't invalidate the
-// dictionary. Sorting by uid keeps dataVersion independent of directory-walk order.
+// Two of the three versions corpus.json carries, kept apart so a reworded sutta doesn't invalidate
+// the dictionary. Sorting by uid keeps dataVersion independent of directory-walk order.
 const dataVersion = sha256(
   [...textDigests]
     .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
@@ -525,25 +525,36 @@ const dataVersion = sha256(
 );
 const dictionaryVersion = sha256(dpdJson);
 
-// --- Search blobs, named with dataVersion so a corrected corpus arrives as a new URL rather than
-// as a stale hit ---
+// --- Search blobs, named with a hash of themselves so a corrected corpus arrives as a new URL
+// rather than as a stale hit ---
 step('Writing the search text…');
-{
-  const en = searchEnLines.join('\n');
-  const pa = searchPaLines.join('\n');
-  fs.writeFileSync(path.join(OUT_SEARCH, `en.${dataVersion}.txt`), en);
-  fs.writeFileSync(path.join(OUT_SEARCH, `pa.${dataVersion}.txt`), pa);
-  fs.writeFileSync(path.join(OUT_SEARCH, `map.${dataVersion}.json`), JSON.stringify(searchMap));
-  detail(
-    `${searchMap.length} suttas, ${searchEnLines.length} lines — ` +
-      `en ${(en.length / 1e6).toFixed(1)} MB, pali ${(pa.length / 1e6).toFixed(1)} MB`
-  );
-}
+const searchEn = searchEnLines.join('\n');
+const searchPa = searchPaLines.join('\n');
+const searchMapJson = JSON.stringify(searchMap);
+// Over the blobs' own bytes rather than over text/: they carry the same segments but not the same
+// bytes, so how they are written can change while every text/ file stays identical.
+const searchVersion = sha256(`${searchEn}\n${searchPa}\n${searchMapJson}`);
+fs.writeFileSync(path.join(OUT_SEARCH, `en.${searchVersion}.txt`), searchEn);
+fs.writeFileSync(path.join(OUT_SEARCH, `pa.${searchVersion}.txt`), searchPa);
+fs.writeFileSync(path.join(OUT_SEARCH, `map.${searchVersion}.json`), searchMapJson);
+detail(
+  `${searchMap.length} suttas, ${searchEnLines.length} lines — ` +
+    `en ${(searchEn.length / 1e6).toFixed(1)} MB, pali ${(searchPa.length / 1e6).toFixed(1)} MB, ` +
+    `search ${searchVersion}`
+);
 
 step('Writing the corpus…');
 fs.writeFileSync(
   path.join(OUT, 'corpus.json'),
-  JSON.stringify({ nikayas, suttas, sujatoCommit: sujatoManifest.sourceCommit, dataVersion, dictionaryVersion, dpdVersion })
+  JSON.stringify({
+    nikayas,
+    suttas,
+    sujatoCommit: sujatoManifest.sourceCommit,
+    dataVersion,
+    searchVersion,
+    dictionaryVersion,
+    dpdVersion,
+  })
 );
 detail(`corpus.json — ${leafCount} leaf documents, ${nikayas.length} nikāyas, data ${dataVersion}`);
 

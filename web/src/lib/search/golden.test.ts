@@ -57,8 +57,8 @@ beforeAll(() => {
   if (result.status !== 0) throw new Error(`build-corpus.mjs failed:\n${result.stdout}\n${result.stderr}`);
   corpus = JSON.parse(fs.readFileSync(path.join(out, 'corpus.json'), 'utf8'));
   const search = path.join(out, 'search');
-  const read = (name: string) => fs.readFileSync(path.join(search, `${name}.${corpus.dataVersion}.txt`), 'utf8');
-  const map = JSON.parse(fs.readFileSync(path.join(search, `map.${corpus.dataVersion}.json`), 'utf8')) as SearchMap;
+  const read = (name: string) => fs.readFileSync(path.join(search, `${name}.${corpus.searchVersion}.txt`), 'utf8');
+  const map = JSON.parse(fs.readFileSync(path.join(search, `map.${corpus.searchVersion}.json`), 'utf8')) as SearchMap;
   index = buildTextIndex(read('en'), read('pa'), map);
   fs.rmSync(out, { recursive: true, force: true });
 }, 60000);

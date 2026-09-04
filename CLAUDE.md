@@ -91,7 +91,9 @@ and writes into `web/public/data/`:
 - **`corpus.json`** — the browse tree (`nikayas[]`, each optionally with recursively-nested
   `chapters[]`, a group row carrying `blurb` where the source data describes that group) plus a flat
   `suttas` map (`uid -> {ref, node, en, pali, blurb, min}`). Also carries `sujatoCommit`,
-  `dataVersion`, `dictionaryVersion` and `dpdVersion`.
+  `dataVersion`, `searchVersion`, `dictionaryVersion` and `dpdVersion`. `searchVersion` is a hash of
+  the search blobs' own bytes, not of `text/`, so a change to how they are written moves their URL
+  on its own.
 - **`text/{uid}.json`** — one file per leaf document: an ordered array of
   `{key, pali, en, role?, headingLevel?, note?}` segments. `role` is
   `'verse' | 'heading' | 'end' | 'speaker' | 'list-item'`, derived from SuttaCentral's own markup in
