@@ -496,11 +496,13 @@ export function ListPane({
                   // Quoted from the sutta: a left rule, against the em dash that marks the reader's
                   // own note. A Pali paragraph carries its English underneath, inside the one rule.
                   <span className="block font-serif text-ui-md leading-[1.5] mt-[7px] pl-[10px] border-l-2 border-ink/25 text-ink-2">
-                    <span className={`block line-clamp-3 ${snippet.under ? 'italic text-accent-text' : ''}`}>
+                    {/* No `block` alongside a clamp: the clamp sets `display:-webkit-box` and
+                        Tailwind emits it before `.block`, so `block` would silently win. */}
+                    <span className={`line-clamp-3 ${snippet.under ? 'italic text-accent-text' : ''}`}>
                       <MatchedText text={snippet.text} query={snippet.query} />
                     </span>
                     {snippet.under && (
-                      <span className="block line-clamp-2 mt-[3px]">
+                      <span className="line-clamp-2 mt-[3px]">
                         <MatchedText text={snippet.under} query={snippet.query} />
                       </span>
                     )}
@@ -517,8 +519,6 @@ export function ListPane({
                     </span>
                   </span>
                 ) : (
-                  // No `block` alongside `line-clamp-3`: the clamp sets `display:-webkit-box` and
-                  // Tailwind emits it before `.block`, so `block` would silently win.
                   <span className="text-ui-md leading-[1.5] mt-1.5 text-ink-2 line-clamp-3">
                     <MatchedText text={s.blurb} query={rowQuery} />
                   </span>
