@@ -191,19 +191,24 @@ export function LibraryPage({
       // hit's own collection.
       const search = query.trim() ? `?q=${encodeURIComponent(query)}` : '';
       const from = `/browse/${encodeURIComponent(returnNodeId || '')}/${encodeURIComponent(id)}${search}`;
+      // The hits in the order they are drawn, which is the run the reader's Prev/Next steps.
+      const searchIds = query.trim() ? hits.map((h) => h.id) : undefined;
       // Persisted as well as carried in router state, which a hard refresh drops — see
       // ReaderPage's closeReader.
       try {
-        localStorage.setItem(READER_ORIGIN_KEY, JSON.stringify({ suttaId: id, from, fromView: view }));
+        localStorage.setItem(READER_ORIGIN_KEY, JSON.stringify({ suttaId: id, from, fromView: view, searchIds }));
       } catch {
         // storage unavailable — ignore
       }
       // Tagged as a one-shot intent only when there is a segment to jump to, so an ordinary open
       // carries the plain origin it always did.
-      const state = segment === undefined ? { from, fromView: view } : tagIntent({ from, fromView: view, segment });
+      const state =
+        segment === undefined
+          ? { from, fromView: view, searchIds }
+          : tagIntent({ from, fromView: view, searchIds, segment });
       navigate(`/read/${encodeURIComponent(id)}`, { state });
     },
-    [nodeId, view, query, corpus]
+    [nodeId, view, query, corpus, hits]
   );
 
   const showTreePane = !mobile || view === 'tree';

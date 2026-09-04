@@ -6,6 +6,7 @@ interface PersistedReaderOrigin {
   suttaId: string;
   from: string;
   fromView?: 'tree' | 'list';
+  searchIds?: string[];
 }
 
 // Reads the origin LibraryPage.onOpen persisted alongside its router state, which a hard refresh
@@ -24,28 +25,41 @@ function readPersistedReaderOrigin(suttaId: string | undefined): PersistedReader
 
 // Re-keys the persisted origin to the sutta now being read, so a refresh partway through a
 // Prev/Next run still finds it.
-function persistReaderOrigin(suttaId: string, from: string | undefined, fromView: 'tree' | 'list' | undefined) {
+function persistReaderOrigin(
+  suttaId: string,
+  from: string | undefined,
+  fromView: 'tree' | 'list' | undefined,
+  searchIds: string[] | undefined
+) {
   if (!from) return;
   try {
-    localStorage.setItem(READER_ORIGIN_KEY, JSON.stringify({ suttaId, from, fromView }));
+    localStorage.setItem(READER_ORIGIN_KEY, JSON.stringify({ suttaId, from, fromView, searchIds }));
   } catch {
     // storage unavailable — ignore
   }
 }
 
 // Tracks where the reader was opened from and navigates back there. `from` is the pane and node to
-// return to (LibraryPage's onOpen), `fromView` which pane to show on mobile; both survive a
-// Prev/Next run and a hard refresh.
-export function useReaderOrigin(locationState: { from?: string; fromView?: 'tree' | 'list' } | undefined) {
+// return to (LibraryPage's onOpen), `fromView` which pane to show on mobile, `searchIds` the hits a
+// library search opened this sutta from; all survive a Prev/Next run and a hard refresh.
+export function useReaderOrigin(
+  locationState: { from?: string; fromView?: 'tree' | 'list'; searchIds?: string[] } | undefined
+) {
   const from = locationState?.from;
   const fromView = locationState?.fromView;
+  const searchIds = locationState?.searchIds;
 
   // Opens another sutta in the reader, carrying the origin forward.
   // `segment` is where a search hit was found, and where the reader opens; Prev/Next pass none, and
   // carry the plain origin they always did rather than a one-shot intent with nothing in it.
-  function navigateToSutta(nextSuttaId: string, segment?: number) {
-    persistReaderOrigin(nextSuttaId, from, fromView);
-    const state = segment === undefined ? { from, fromView } : tagIntent({ from, fromView, segment });
+  // `leaveSearch` drops the library search's run, for a jump made from inside the reader.
+  function navigateToSutta(nextSuttaId: string, segment?: number, leaveSearch = false) {
+    const ids = leaveSearch ? undefined : searchIds;
+    persistReaderOrigin(nextSuttaId, from, fromView, ids);
+    const state =
+      segment === undefined
+        ? { from, fromView, searchIds: ids }
+        : tagIntent({ from, fromView, searchIds: ids, segment });
     navigate(`/read/${encodeURIComponent(nextSuttaId)}`, { state });
   }
 
@@ -66,5 +80,5 @@ export function useReaderOrigin(locationState: { from?: string; fromView?: 'tree
     navigate(fallbackPath);
   }
 
-  return { from, fromView, navigateToSutta, closeToOrigin };
+  return { from, fromView, searchIds, navigateToSutta, closeToOrigin };
 }
