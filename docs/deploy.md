@@ -69,14 +69,18 @@ sends real mail to real inboxes, so test with an address you own.
 ## Deploy
 
 ```bash
-npm run deploy
+npm run deploy:prod
 ```
 
-`npm run deploy` (root `scripts/deploy.sh`) runs `npm test`, refuses to continue if it fails
-(`npm run deploy -- --skip-tests` overrides), then `npm run build`, then applies any pending D1
+`npm run deploy:prod` (root `scripts/deploy.sh`) runs `npm test`, refuses to continue if it fails
+(`npm run deploy:prod -- --skip-tests` overrides), then `npm run build`, then applies any pending D1
 migrations, then `npx wrangler deploy`. The build is not optional: `wrangler` uploads `web/dist`
 exactly as it finds it, so a stale directory ships a stale SPA and a stale corpus bundle. There's no
 CI/deploy-on-push — every deploy is this one command, run by hand.
+
+**The environment is always named.** Bare `npm run deploy` reaches the script with no `--env` and
+stops there, so the only way to reach production is to ask for it by name — worth the extra word,
+now that a second environment exists and the two commands differ by one.
 
 The end-to-end suite (`npm run test:e2e`, see `docs/e2e.md`) is **not** part of this. It is worth
 running before a deploy, by hand, but it does not gate one: a gate has to be trustworthy enough
