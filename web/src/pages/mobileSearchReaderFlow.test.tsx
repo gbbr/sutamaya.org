@@ -162,7 +162,9 @@ describe('mobile search -> reader -> close flow', () => {
     fireEvent.click(hit);
 
     // Now in the reader for mn1.
-    await waitFor(() => expect(screen.getByText(/MN 1/)).toBeTruthy());
+    // Waited for on the reader's own chrome: the hit row behind it carries "MN 1" too, so a text
+    // query would pass before the route had changed.
+    await screen.findByTitle('Close');
 
     // Close the reader.
     fireEvent.click(screen.getByTitle('Close'));
@@ -217,7 +219,9 @@ describe('mobile search -> reader -> close flow', () => {
       target: { value: 'Mulapariyaya' },
     });
     fireEvent.click(await tree().findByText('Mulapariyaya'));
-    await waitFor(() => expect(screen.getByText(/MN 1/)).toBeTruthy());
+    // Waited for on the reader's own chrome: the hit row behind it carries "MN 1" too, so a text
+    // query would pass before the route had changed.
+    await screen.findByTitle('Close');
 
     // Close the reader — should land back on "My lists", not get bounced to the corpus tree just
     // because the reopened sutta's own node ('mn') happens to be a real corpus category. The
@@ -243,7 +247,9 @@ describe('mobile search -> reader -> close flow', () => {
     fireEvent.click(tree().getByRole('button', { name: 'Search' }));
     fireEvent.change(tree().getByPlaceholderText(SEARCH_PLACEHOLDER), { target: { value: 'sutta' } });
     fireEvent.click(await tree().findByText('Mulapariyaya'));
-    await waitFor(() => expect(screen.getByText(/MN 1/)).toBeTruthy());
+    // Waited for on the reader's own chrome: the hit row behind it carries "MN 1" too, so a text
+    // query would pass before the route had changed.
+    await screen.findByTitle('Close');
 
     fireEvent.click(screen.getByTitle('Close'));
     await screen.findByText('sutamaya');

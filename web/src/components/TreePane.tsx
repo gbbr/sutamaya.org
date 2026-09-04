@@ -13,6 +13,7 @@ import { useListTreeDrag } from '../hooks/useListTreeDrag';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
 import { ancestorsOf, descendantIdsOf, findNode, flatSuttaOrder } from '../lib/corpus';
 import {
+  SEARCH_CAP_NOTE,
   SEARCH_PLACEHOLDER,
   SEARCH_RESULTS_CAP,
   type ListHit,
@@ -757,8 +758,11 @@ export function TreePane({
               </div>
             )}
             {/* The hit rows, mobile only — on desktop ListPane draws them beside this pane, with
-                the blurb this narrower column leaves out. */}
-            {mobile && (
+                the blurb this narrower column leaves out. Skipped while this pane is the hidden
+                one of the two, which would otherwise rebuild every row on each keystroke for a
+                screen nobody is looking at. The cursor above is built either way, so returning to
+                this pane finds it where it was left. */}
+            {mobile && visible && (
               <>
                 {displayHits.map(({ id, sutta, snippet }, i) => {
                   const note = notes[id];
@@ -815,6 +819,12 @@ export function TreePane({
                     </button>
                   );
                 })}
+                {/* Where the results stopped, said in the same place an auto-list says it. */}
+                {hits.length > SEARCH_RESULTS_CAP && (
+                  <div className="font-sans text-center text-ui-sm text-ink-4 py-6 px-5 text-balance">
+                    {SEARCH_CAP_NOTE}
+                  </div>
+                )}
                 {/* Where the results are, until the sutta text lands and the ranking they wait on
                     with it. */}
                 {textPending && <TextSearchProgress />}

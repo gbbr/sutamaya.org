@@ -43,6 +43,9 @@ export const SEARCH_SCOPE_NOTE =
   'Search covers sutta numbers, titles, summaries and your own notes — not the text of the suttas.';
 export const SEARCH_NO_MATCHES = `No matches. ${SEARCH_SCOPE_NOTE}`;
 
+// Said at the foot of the results when the query matched more than the cap draws.
+export const SEARCH_CAP_NOTE = `Showing the first ${SEARCH_RESULTS_CAP} results. Try a more specific search.`;
+
 // Folds text to a case- and diacritic-insensitive key, so a typed "a" matches "ā". Exported for
 // lib/search/match.ts, which has to fold exactly as the match did.
 // The corpus writes the typographic apostrophe and a keyboard types the straight one, so the two
