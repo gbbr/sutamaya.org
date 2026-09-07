@@ -4,6 +4,12 @@
 //
 // Nothing here scans anything. The blobs are the worker's, and the only thing this module holds of
 // them is whether they are loaded.
+//
+// Once loaded they stay loaded, for as long as the page lives. They used to be released a minute
+// after the app went out of sight, on the theory that an idle tab holding ~34 MB is a likelier
+// candidate for iOS to discard outright — but that charged a re-read to every ordinary return (an
+// app switch, a call, a notification) to hedge against a discard that is both rarer and cheaper: the
+// app relaunches from the precache and restores its location and its scroll.
 import type { Corpus } from '../types';
 import type { RankedHit, TextSearchStatus } from './text';
 import type { SearchRequest, SearchResponse } from './worker';
@@ -71,21 +77,11 @@ function send(msg: SearchRequest): void {
   worker?.postMessage(msg);
 }
 
-// A load asked for while the app was out of sight, started when it comes back.
-let deferred: Corpus | null = null;
-
 // Starts the one fetch of the search text, if it hasn't been started. Called when a search field is
 // focused, and again on the first keystroke — never on app start, since this is ~2.4 MB served
 // that a reader who doesn't search should not pay for.
 export function beginTextSearchLoad(corpus: Corpus | null): void {
   if (!corpus || status === 'loading' || status === 'ready') return;
-  // A search left on screen asks again the moment the release below drops the text, which would
-  // undo it: the tab is still hidden, so the load waits for the reader to come back.
-  if (document.visibilityState === 'hidden') {
-    deferred = corpus;
-    return;
-  }
-  deferred = null;
   if (!worker) {
     try {
       worker = new Worker(new URL('./worker.ts', import.meta.url), { type: 'module' });
@@ -105,13 +101,6 @@ export function beginTextSearchLoad(corpus: Corpus | null): void {
   send({ type: 'load', searchVersion: corpus.searchVersion });
 }
 
-// Forgets the loaded text, back to the state before anything asked for it. The next search starts a
-// new worker, which fetches again and is served from Cache Storage rather than the network.
-export function resetTextSearch(): void {
-  stopWorker();
-  publish('idle');
-}
-
 // The suttas whose text answers `query`, merged into `meta` and ordered — null where the worker has
 // no text to scan, which leaves `meta` the whole result.
 export function searchText(query: string, meta: RankedHit[]): Promise<RankedHit[] | null> {
@@ -122,29 +111,4 @@ export function searchText(query: string, meta: RankedHit[]): Promise<RankedHit[
     queued = { query, meta, resolve };
     pump();
   });
-}
-
-// Drops the text once the app has been out of sight for `IDLE_RELEASE_MS`. It is ~34 MB of strings,
-// which is worth holding while the reader is searching and not worth holding while they are
-// elsewhere — an idle tab carrying it is a bigger target for iOS to discard outright, and that
-// costs a whole reload rather than the re-read this costs.
-const IDLE_RELEASE_MS = 60_000;
-let releaseTimer: ReturnType<typeof setTimeout> | undefined;
-
-// Starts releasing the text when the page is hidden, stops if it comes back first, and starts a
-// load the page was too far out of sight to run.
-export function watchTextSearchIdle(): () => void {
-  const onChange = () => {
-    clearTimeout(releaseTimer);
-    if (document.visibilityState === 'hidden') {
-      if (status === 'ready') releaseTimer = setTimeout(resetTextSearch, IDLE_RELEASE_MS);
-      return;
-    }
-    if (deferred) beginTextSearchLoad(deferred);
-  };
-  document.addEventListener('visibilitychange', onChange);
-  return () => {
-    clearTimeout(releaseTimer);
-    document.removeEventListener('visibilitychange', onChange);
-  };
 }

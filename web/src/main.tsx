@@ -2,7 +2,6 @@ import { createRoot } from 'react-dom/client';
 import { registerSW } from 'virtual:pwa-register';
 import App from './App';
 import { loadUiPrefs, applyUiScale, applyTheme } from './lib/uiPrefs';
-import { watchTextSearchIdle } from './lib/search/textClient';
 import { loadAnalytics } from './lib/analytics';
 // Side-effect import: binds window.__dangerWipeLocal, the console-only reset to a cold, signed-out
 // first run. See lib/localWipe.ts.
@@ -21,10 +20,6 @@ applyTheme(uiPrefs.theme);
 // registration, on the window's `load` event, so that reload lands seconds into a launch and never
 // mid-read. A no-op in dev unless PWA_DEV=1 (vite.config.ts).
 registerSW();
-
-// Releases the search text after the app has been out of sight for a while — see docs/search.md's
-// "What it costs the device".
-watchTextSearchIdle();
 
 // Cloudflare Web Analytics, injected once the load event is behind us. Deliberately not a <script>
 // in index.html: it is the only thing on the startup path the precache doesn't serve, and a lossy

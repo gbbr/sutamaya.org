@@ -20,8 +20,9 @@ interface NoteEditorProps {
 
 // A note is written like a note rather than sent like a message: Enter is a new line, and saving
 // happens on its own — leaving the field commits, as does the editor going off screen with a draft
-// pending, and Cmd/Ctrl+Enter for anyone who wants a deliberate keystroke. Nothing typed is ever
-// dropped, which is why Escape out of the reader's panel saves rather than cancels.
+// pending, the app going to the background, and Cmd/Ctrl+Enter for anyone who wants a deliberate
+// keystroke. Nothing typed is ever dropped, which is why Escape out of the reader's panel saves
+// rather than cancels.
 //
 // The draft is held here rather than written per keystroke, and resyncs whenever `value` changes —
 // a sutta switch, or another device's edit arriving mid-write.
@@ -68,6 +69,18 @@ export function NoteEditor({
     submitRef.current = submit;
   });
   useEffect(() => () => submitRef.current(), []);
+
+  // And on the app going out of sight, which is the last moment anything here is guaranteed to run:
+  // switching apps leaves the box focused, so neither blur nor unmount fires, and a phone that
+  // discards the page while it is away runs nothing at all. Committing here means the note is
+  // already written by the time that can happen.
+  useEffect(() => {
+    const onHide = () => {
+      if (document.visibilityState === 'hidden') submitRef.current();
+    };
+    document.addEventListener('visibilitychange', onHide);
+    return () => document.removeEventListener('visibilitychange', onHide);
+  }, []);
 
   function onKeyDown(e: KeyboardEvent<HTMLTextAreaElement>) {
     if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) {
