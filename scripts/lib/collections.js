@@ -218,6 +218,14 @@ const LIST_ITEM_RE = /<li>/;
 const GATHA_OPEN_RE = /<blockquote class=['"](?:gatha|uddanagatha|vagguddanagatha)['"]>/;
 const BLOCKQUOTE_CLOSE_RE = /<\/blockquote>/;
 
+// An uddāna: the mnemonic verse listing a vagga's suttas by catchword, and the line introducing it.
+// It is a table of contents for reciters, not teaching — the words in it are the sutta titles
+// already on screen in the list pane — so it is dropped from the reader and from search alike.
+// Its continuation lines carry no marker of their own, hence the same open/close tracking verse
+// needs.
+const UDDANA_INTRO_RE = /class=['"]uddana(?:-intro)?['"]/;
+const UDDANA_OPEN_RE = /<blockquote class=['"](?:uddanagatha|vagguddanagatha)['"]>/;
+
 // A segment's structural role from its HTML template, or undefined for ordinary prose.
 export function roleFor(template) {
   if (!template) return undefined;
@@ -245,13 +253,15 @@ export function stripHtmlTags(text) {
 }
 
 // One document's body segments, in Pali key order, each with its English, role and note. Title
-// lines and segments blank on both sides are left out.
+// lines, uddāna verses and anything with no English are left out — a colophon counts as translated,
+// standing in the English column as its own Pali.
 export function buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap) {
   const orderedKeys = paliMap.size ? [...paliMap.keys()] : [...sujatoMap.keys()];
   const segs = [];
   // Whether this segment falls inside an unclosed gatha blockquote, for the stanzas whose
   // continuation lines carry no marker of their own.
   let insideGathaBlockquote = false;
+  let insideUddana = false;
   for (const key of orderedKeys) {
     const segId = key.slice(key.indexOf(':') + 1);
     if (segId === '0' || segId.startsWith('0.')) continue; // nikaya/book/vagga/sutta title lines
@@ -264,12 +274,27 @@ export function buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap) {
     if (template && GATHA_OPEN_RE.test(template)) insideGathaBlockquote = true;
     const stillInsideGatha = insideGathaBlockquote;
     if (template && BLOCKQUOTE_CLOSE_RE.test(template)) insideGathaBlockquote = false;
-    if (!pali && !en) continue;
+    if (template && UDDANA_OPEN_RE.test(template)) insideUddana = true;
+    const uddana = insideUddana || (template && UDDANA_INTRO_RE.test(template));
+    if (template && BLOCKQUOTE_CLOSE_RE.test(template)) insideUddana = false;
+    if (uddana) continue;
     let roleInfo = roleFor(template);
     if (!roleInfo && stillInsideGatha) roleInfo = { role: 'verse' };
-    // A colophon is often Pali-only, being a scribal marker rather than teaching; showing the Pali
-    // beats a blank paragraph.
-    if (roleInfo?.role === 'end' && !en) en = pali;
+    // Nothing untranslated ships. Bhikkhu Sujato leaves a segment's English empty where he elides a
+    // passage the Pali repeats in full — dn32 restates its whole first recitation section, mn15 the
+    // clause before each refrain — and the English above such a run already says so ("repeating all
+    // the verses spoken"). Shipping the Pali alone put a wall of it mid-page for a reader who asked
+    // for English; hiding it while keeping it left search hits that scrolled nowhere.
+    //
+    // The test is the English itself, not a list of known passages, so nothing has to be revisited
+    // when upstream translates one: the segment reappears in the reader, in search and in the
+    // dictionary on the next data refresh, by having become translated.
+    //
+    // Colophons go with the rest. A Pali-only one is scribal bookkeeping rather than teaching —
+    // 3,040 are the bare ordinal ("Paṭhamaṁ.", the sutta's number within its chapter, which the ref
+    // above the text already gives) and the remainder close a vagga or saṁyutta the library tree
+    // already draws.
+    if (!en) continue;
     const seg = { key, pali, en };
     if (roleInfo) {
       seg.role = roleInfo.role;

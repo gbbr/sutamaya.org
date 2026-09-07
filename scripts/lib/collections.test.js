@@ -292,22 +292,70 @@ describe('buildBodySegments', () => {
     expect(seg).toMatchObject({ role: 'heading', headingLevel: 2 });
   });
 
-  it('falls back to pali for an "end" (colophon) segment with no english translation', () => {
+  it('drops an "end" (colophon) segment with no english translation', () => {
     const [pali, en, html, notes] = maps({
       pali: [['sn1.1:9.9', 'Suttaṁ niṭṭhitaṁ.']],
       html: [['sn1.1:9.9', "<p class='endsutta'>{}</p>"]],
     });
+    expect(buildBodySegments(pali, en, html, notes)).toEqual([]);
+  });
+
+  it('keeps a translated colophon, as its "end" role', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:9.9', 'Paṭhamo bhāṇavāro niṭṭhito.']],
+      en: [['sn1.1:9.9', 'The first recitation section is complete.']],
+      html: [['sn1.1:9.9', "<p class='endsutta'>{}</p>"]],
+    });
     const [seg] = buildBodySegments(pali, en, html, notes);
-    expect(seg.en).toBe('Suttaṁ niṭṭhitaṁ.');
+    expect(seg.en).toBe('The first recitation section is complete.');
     expect(seg.role).toBe('end');
   });
 
-  it('does not fall back to pali for a non-"end" segment missing english', () => {
+  it('drops a non-"end" segment missing english rather than falling back to its pali', () => {
     const [pali, en, html, notes] = maps({
       pali: [['sn1.1:1.1', 'Pali only']],
     });
+    expect(buildBodySegments(pali, en, html, notes)).toEqual([]);
+  });
+
+  it('keeps a segment whose english arrives later, the test being the english itself', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:1.1', 'Pali only']],
+      en: [['sn1.1:1.1', 'Translated at last.']],
+    });
     const [seg] = buildBodySegments(pali, en, html, notes);
-    expect(seg.en).toBe('');
+    expect(seg.en).toBe('Translated at last.');
+  });
+
+  it('drops an uddana, its intro line and the verses under it alike', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [
+        ['sn1.1:9.1', 'Vaggo paṭhamo.'],
+        ['sn1.1:9.2', 'Tassuddānaṁ'],
+        ['sn1.1:9.3', 'Oghaṁ nimokkho upaneyyaṁ,'],
+        ['sn1.1:9.4', 'accenti katichindi ca.'],
+      ],
+      en: [['sn1.1:9.1', 'The first chapter is complete.']],
+      html: [
+        ['sn1.1:9.1', "<p class='endsection'>{}</p>"],
+        ['sn1.1:9.2', "<p class='uddana-intro'>{}</p>"],
+        ['sn1.1:9.3', "<blockquote class='uddanagatha'><p>{}"],
+        ['sn1.1:9.4', '{}</p></blockquote>'],
+      ],
+    });
+    expect(buildBodySegments(pali, en, html, notes).map((s) => s.key)).toEqual(['sn1.1:9.1']);
+  });
+
+  it('drops an uddana even where it has been translated', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:9.2', 'Tassuddānaṁ'], ['sn1.1:9.3', 'Oghaṁ nimokkho upaneyyaṁ,']],
+      en: [['sn1.1:9.3', 'A flood, liberation, and one to be led,']],
+      html: [
+        ['sn1.1:9.2', "<p class='uddana-intro'>{}</p>"],
+        ['sn1.1:9.3', "<blockquote class='uddanagatha'><p>{}</p></blockquote>"],
+      ],
+    });
+    expect(buildBodySegments(pali, en, html, notes)).toEqual([]);
   });
 
   it('strips inline HTML from the english text (unlike a note, en is sliced by character offset for highlighting)', () => {

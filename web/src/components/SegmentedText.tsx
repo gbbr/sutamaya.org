@@ -1,5 +1,5 @@
 import { memo, useMemo, type CSSProperties } from 'react';
-import { isUntranslated, type SegmentFile, type SegmentRole } from '../lib/corpus';
+import type { SegmentFile, SegmentRole } from '../lib/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
 import { highlightPaint } from '../lib/theme';
 import { expandHighlights, paintSegmentRanges, type SegmentRange } from '../lib/highlights';
@@ -62,11 +62,6 @@ function buildParts(text: string, rangesForSeg: SegmentRange[]): Part[] {
   }
   if (cur < text.length) parts.push({ text: text.slice(cur) });
   return parts;
-}
-
-/** True for a closing line left untranslated, standing in the English column as its own Pali. */
-function isUntranslatedColophon(seg: SegmentFile): boolean {
-  return seg.role === 'end' && seg.pali.trim() === seg.en.trim();
 }
 
 // Makes a whole Pali line unselectable, as `.pw` (index.css) does for its words.
@@ -180,7 +175,6 @@ const SegmentRow = memo(function SegmentRow({
   activeWordIndex,
 }: SegmentRowProps) {
   const parts = buildParts(seg.en, rangesForSeg);
-  const colophon = isUntranslatedColophon(seg);
   // The element a segment renders as: <h2>–<h5> for a sub-heading, <p> for everything else.
   const HeadingTag: 'h2' | 'h3' | 'h4' | 'h5' | 'p' =
     seg.role === 'heading' ? (`h${seg.headingLevel ?? 2}` as 'h2' | 'h3' | 'h4' | 'h5') : 'p';
@@ -196,7 +190,7 @@ const SegmentRow = memo(function SegmentRow({
       {listIndex}.
     </span>
   );
-  const paliLine = open && !colophon && !isUntranslated(seg) && (
+  const paliLine = open && (
     <p
       className="animate-fadeUp"
       // The pair ReaderPage's revealIntoView scrolls to, named as the word spans above are.
@@ -249,12 +243,12 @@ const SegmentRow = memo(function SegmentRow({
         data-seg={i}
         className={seg.role === 'heading' ? 'font-sans' : undefined}
         onClick={() => {
-          if (colophon || String(window.getSelection())) return;
+          if (String(window.getSelection())) return;
           onToggleSeg(i);
         }}
         style={{
           margin: 0,
-          cursor: colophon ? 'default' : 'pointer',
+          cursor: 'pointer',
           fontSize: enFontSize,
           lineHeight: lineHeight / 100,
           color: theme.fg,
@@ -266,13 +260,10 @@ const SegmentRow = memo(function SegmentRow({
           // A list item's hanging indent: wrapped lines align under the first, and the "N." marker
           // sits in the gutter this padding opens.
           ...(seg.role === 'list-item' ? { paddingLeft: 24, position: 'relative' } : null),
-          // A colophon renders its Pali in place, so this line takes the Pali treatment:
-          // --pw-hover backs .pw:hover (index.css), and the line as a whole is unselectable.
-          ...(colophon ? { '--pw-hover': theme.tint, ...UNSELECTABLE } : null),
         } as CSSProperties}
       >
         {!paliLeads && listMarker}
-        {colophon ? paliWordSpans(seg.pali, i, activeWordIndex, theme, onWordClick) : parts.map((p, j) =>
+        {parts.map((p, j) =>
           p.c ? (
             <span
               key={j}
