@@ -1,4 +1,5 @@
 import { repairListTree } from './listTree';
+import { compareSegmentKeys } from './segmentKeys';
 import {
   AUTO_LIST_CAP,
   HIGHLIGHTS_AUTO_LIST_ID,
@@ -35,17 +36,22 @@ function latestIds(entries: { id: string; at: string }[], limit: number): string
 }
 
 // One record as the reader renders it, or nothing at all — a pure erase paints nothing, and a
-// record with no span is dropped rather than risking the render.
+// record with no span, or one anchored on segment positions, is dropped rather than risking the
+// render — such a record lasts only until its sutta's text loads (mirror.ts's anchorHighlights),
+// which happens before the reader can see it.
 function highlightOf(record: HighlightRecord): Highlight[] {
-  if (!record.color || !record.span) return [];
-  const { i0, o0, i1, o1 } = record.span;
-  return [{ id: record.g, i0, o0, i1, o1, c: record.color, m: record.mtime }];
+  if (!record.color || typeof record.span?.k0 !== 'string') return [];
+  const { k0, o0, k1, o1 } = record.span;
+  return [{ id: record.g, k0, o0, k1, o1, c: record.color, m: record.mtime }];
 }
 
 // Document order, which the highlights panel lists in and the gutter's marks are drawn from, and
-// which is stable under a re-pull where the mirror's own order is not.
+// which is stable under a re-pull where the mirror's own order is not. Read from the keys alone,
+// no sutta text being loaded here.
 function inDocumentOrder(highlights: Highlight[]): Highlight[] {
-  return highlights.sort((a, b) => a.i0 - b.i0 || a.o0 - b.o0 || (a.id < b.id ? -1 : 1));
+  return highlights.sort(
+    (a, b) => compareSegmentKeys(a.k0, b.k0) || a.o0 - b.o0 || (a.id < b.id ? -1 : 1)
+  );
 }
 
 // One sutta's highlights, which displacedIds needs to work out what a fresh selection

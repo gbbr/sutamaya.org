@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { act, render, screen } from '@testing-library/react';
 import { HighlightGutter } from './HighlightGutter';
+import type { SegmentFile } from '../lib/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
 
 vi.mock('../lib/uiPrefs', () => ({ getUiScale: vi.fn(() => 1) }));
@@ -8,8 +9,13 @@ import { getUiScale } from '../lib/uiPrefs';
 
 const theme: ThemeColors = { bg: '#fff', fg: '#000', dim: '#888', rule: '#ccc', panel: '#fff', pali: '#333', tint: '#eee', paliTint: '#e8dcc8', focusTint: '#f5f5f5', highlightPalette: null, selection: '#ddd' };
 
-function group(overrides: Partial<Highlight> = {}): Highlight {
-  return { id: 'g1', c: 'yellow', i0: 0, o0: 0, i1: 0, o1: 5, m: '1|d', ...overrides };
+// The loaded text a mark's position is resolved against, and the key of the segment at position `i`.
+const key = (i: number) => `dn1:1.${i + 1}`;
+const segments: SegmentFile[] = Array.from({ length: 8 }, (_, i) => ({ key: key(i), pali: '', en: 'x'.repeat(10) }));
+
+// `at` is the position the highlight sits on, named as the key of the segment there.
+function group({ at = 0, ...overrides }: Partial<Highlight> & { at?: number } = {}): Highlight {
+  return { id: 'g1', c: 'yellow', k0: key(at), o0: 0, k1: key(at), o1: 5, m: '1|d', ...overrides };
 }
 
 // Builds a fake scrollable container with `[data-seg]` children, each with a controllable
@@ -45,7 +51,7 @@ describe('HighlightGutter', () => {
   it('renders nothing when there are no highlights', () => {
     const container = buildContainer({ containerRect: { top: 0, height: 500 }, scrollHeight: 1000, segRects: {} });
     const { container: root } = render(
-      <HighlightGutter scrollRef={{ current: container }} highlights={[]} theme={theme} onJump={vi.fn()} />
+      <HighlightGutter scrollRef={{ current: container }} highlights={[]} segments={segments} theme={theme} onJump={vi.fn()} />
     );
     expect(root.querySelector('[data-component="HighlightGutter"]')).toBeNull();
   });
@@ -60,7 +66,7 @@ describe('HighlightGutter', () => {
       segRects: { 0: { top: 100 + 250 } }, // screen-space: container top (100) + 250 into content
     });
     render(
-      <HighlightGutter scrollRef={{ current: container }} highlights={[group({ i0: 0 })]} theme={theme} onJump={vi.fn()} />
+      <HighlightGutter scrollRef={{ current: container }} highlights={[group({ at: 0 })]} segments={segments} theme={theme} onJump={vi.fn()} />
     );
     const mark = screen.getByTitle('Jump to highlight') as HTMLElement;
     expect(mark.style.top).toBe('121px'); // ratio(0.25) * height(500) - 4 (half the mark's own height)
@@ -78,7 +84,7 @@ describe('HighlightGutter', () => {
       segRects: { 0: { top: 200 + 500 } }, // logical 250 into content, doubled to 500 on screen
     });
     render(
-      <HighlightGutter scrollRef={{ current: container }} highlights={[group({ i0: 0 })]} theme={theme} onJump={vi.fn()} />
+      <HighlightGutter scrollRef={{ current: container }} highlights={[group({ at: 0 })]} segments={segments} theme={theme} onJump={vi.fn()} />
     );
     const mark = screen.getByTitle('Jump to highlight') as HTMLElement;
     // Same logical ratio (0.25) as the 1x test above, against the logical (post-division) track
@@ -94,7 +100,7 @@ describe('HighlightGutter', () => {
       segRects: {}, // segment 3 has no matching [data-seg] element in the container
     });
     render(
-      <HighlightGutter scrollRef={{ current: container }} highlights={[group({ i0: 3 })]} theme={theme} onJump={vi.fn()} />
+      <HighlightGutter scrollRef={{ current: container }} highlights={[group({ at: 3 })]} segments={segments} theme={theme} onJump={vi.fn()} />
     );
     const mark = screen.getByTitle('Jump to highlight') as HTMLElement;
     expect(mark.style.top).toBe('-4px'); // ratio 0 * height - 4
@@ -108,7 +114,7 @@ describe('HighlightGutter', () => {
       segRects: { 7: { top: 0 } },
     });
     render(
-      <HighlightGutter scrollRef={{ current: container }} highlights={[group({ i0: 7 })]} theme={theme} onJump={onJump} />
+      <HighlightGutter scrollRef={{ current: container }} highlights={[group({ at: 7 })]} segments={segments} theme={theme} onJump={onJump} />
     );
     const mark = screen.getByTitle('Jump to highlight');
     await act(async () => {

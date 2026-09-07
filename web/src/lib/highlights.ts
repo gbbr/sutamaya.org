@@ -1,35 +1,37 @@
 import type { SegmentFile } from './corpus';
+import { compareSegmentKeys, segmentIndex } from './segmentKeys';
 import { HIGHLIGHT_COLORS } from './theme';
 import type { Highlight } from './types';
 
 // Highlight geometry: which highlights a new selection displaces, and how overlapping ones resolve
 // into the pieces the reader actually paints.
 //
-// A highlight is one half-open span from (i0, o0) to (i1, o1) in segment-and-offset coordinates,
-// immutable and atomic — a selection touching any part of one retires the whole of it, and the
-// client names what it displaced so the write means the same thing whenever it is replayed.
+// A highlight is one half-open span from (k0, o0) to (k1, o1) in segment-key-and-offset
+// coordinates, immutable and atomic — a selection touching any part of one retires the whole of it,
+// and the client names what it displaced so the write means the same thing whenever it is replayed.
 // Highlights can still genuinely overlap, two devices having made them offline, so the reader is
 // where that contest is settled: deterministically by (mtime, id), the later one taking the
 // characters both cover.
 
 // A highlight's stored extent on its own. See Highlight in lib/types.ts.
 export interface HlSpan {
-  i0: number;
+  k0: string;
   o0: number;
-  i1: number;
+  k1: string;
   o1: number;
 }
 
 // Document order over two (segment, offset) points. Everything about how spans relate is decided
 // with this alone, so it holds in the mirror, where no sutta text is loaded.
-function before(iA: number, oA: number, iB: number, oB: number): boolean {
-  return iA < iB || (iA === iB && oA < oB);
+function before(kA: string, oA: number, kB: string, oB: number): boolean {
+  const seg = compareSegmentKeys(kA, kB);
+  return seg < 0 || (seg === 0 && oA < oB);
 }
 
 // True when two spans share at least one character. Edge-touching isn't overlap: a selection that
 // starts exactly where a highlight ends displaces nothing.
 export function spansOverlap(a: HlSpan, b: HlSpan): boolean {
-  return before(a.i0, a.o0, b.i1, b.o1) && before(b.i0, b.o0, a.i1, a.o1);
+  return before(a.k0, a.o0, b.k1, b.o1) && before(b.k0, b.o0, a.k1, a.o1);
 }
 
 // The ids of every highlight a new selection displaces.
@@ -47,27 +49,47 @@ export interface SegmentRange {
 
 // One highlight's coverage segment by segment, against the text this device holds. The endpoints
 // contribute the offsets selected and everything between is covered in full, so text reworded
-// longer since can't leave a gap. Both ends are clamped to what exists, this device possibly
-// holding an older, shorter copy than the highlight was made against.
-export function highlightRanges(h: Highlight, segments: SegmentFile[]): { i: number; s: number; e: number }[] {
-  if (h.i0 >= segments.length) return [];
-  const last = Math.min(h.i1, segments.length - 1);
+// longer since can't leave a gap, and both offsets are clamped to the segment they land in.
+//
+// A span naming a segment this copy of the sutta doesn't have resolves to nothing and paints
+// nothing. The highlight is untouched in the account and paints again as soon as the text has that
+// segment.
+export function highlightRanges(
+  h: Highlight,
+  segments: SegmentFile[],
+  index: Map<string, number> = segmentIndex(segments)
+): { i: number; s: number; e: number }[] {
+  const i0 = index.get(h.k0);
+  const i1 = index.get(h.k1);
+  if (i0 === undefined || i1 === undefined || i1 < i0) return [];
   const ranges: { i: number; s: number; e: number }[] = [];
-  for (let i = h.i0; i <= last; i++) {
+  for (let i = i0; i <= i1; i++) {
     const len = segments[i].en.length;
-    const s = i === h.i0 ? Math.min(h.o0, len) : 0;
-    const e = i === h.i1 ? Math.min(h.o1, len) : len;
+    const s = i === i0 ? Math.min(h.o0, len) : 0;
+    const e = i === i1 ? Math.min(h.o1, len) : len;
     if (e > s) ranges.push({ i, s, e });
   }
   return ranges;
 }
 
+// The segment a highlight begins on in this copy of the text — where a jump from the gutter or the
+// panel lands — or null for one naming a segment the text doesn't have.
+export function highlightStart(
+  h: Highlight,
+  segments: SegmentFile[],
+  index: Map<string, number> = segmentIndex(segments)
+): number | null {
+  const ranges = highlightRanges(h, segments, index);
+  return ranges.length ? ranges[0].i : null;
+}
+
 // Every highlight's ranges, bucketed by segment index — what the renderer walks. Built once per
 // change rather than having each segment re-scan the whole array.
 export function expandHighlights(highlights: Highlight[], segments: SegmentFile[]): Map<number, SegmentRange[]> {
+  const index = segmentIndex(segments);
   const bySeg = new Map<number, SegmentRange[]>();
   for (const h of highlights) {
-    for (const { i, s, e } of highlightRanges(h, segments)) {
+    for (const { i, s, e } of highlightRanges(h, segments, index)) {
       const ranges = bySeg.get(i);
       if (ranges) ranges.push({ s, e, src: h });
       else bySeg.set(i, [{ s, e, src: h }]);
@@ -117,9 +139,9 @@ export function highlightColors(highlights: Highlight[]): string[] {
 
 // The highlighted text itself, for the reader panel's list. Segments are joined with a space,
 // being separate lines of the document rather than one continuous string.
-export function highlightText(h: Highlight, segments: SegmentFile[] | null): string {
+export function highlightText(h: Highlight, segments: SegmentFile[] | null, index?: Map<string, number>): string {
   if (!segments) return '';
-  return highlightRanges(h, segments)
+  return highlightRanges(h, segments, index ?? segmentIndex(segments))
     .map(({ i, s, e }) => segments[i].en.slice(s, e))
     .join(' ')
     .trim();

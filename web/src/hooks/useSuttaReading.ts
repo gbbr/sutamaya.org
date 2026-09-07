@@ -1,9 +1,10 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useLayoutEffect, useMemo } from 'react';
 import { useUserData } from '../context/UserDataContext';
 import { useSuttaText } from './useSuttaText';
 import { useHighlightPopup } from './useHighlightPopup';
 import { useScrollMemory, type ScrollRestore } from './useScrollMemory';
-import { highlightColors } from '../lib/highlights';
+import { highlightColors, highlightStart } from '../lib/highlights';
+import { segmentIndex } from '../lib/segmentKeys';
 import type { Highlight } from '../lib/types';
 import { getUiScale } from '../lib/uiPrefs';
 import { animateScrollBy, computeSegmentScrollOffset } from '../lib/segmentScroll';
@@ -17,11 +18,28 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
   scrollKeyPrefix: string,
   { restore = 'stored', skipRestore = false }: { restore?: ScrollRestore; skipRestore?: boolean } = {}
 ) {
-  const { highlights, ready: userDataReady } = useUserData();
+  const { highlights, ready: userDataReady, anchorHighlights } = useUserData();
   const { segments, error, retry } = useSuttaText(suttaId);
-  // This sutta's highlights, stable across renders.
-  const hlForSutta = useMemo(() => (suttaId && highlights[suttaId]) || EMPTY_HIGHLIGHTS, [suttaId, highlights]);
-  const popup = useHighlightPopup(suttaId, hlForSutta);
+  // Re-anchors any highlight addressed by segment position, this being the moment the device holds
+  // both those positions and the text they name. A no-op for a sutta whose highlights are keyed,
+  // which is every sutta once read. Before paint rather than after, so a converted highlight is
+  // never briefly missing from a reading that has already drawn.
+  useLayoutEffect(() => {
+    if (suttaId && segments) anchorHighlights(suttaId, segments);
+  }, [suttaId, segments, anchorHighlights]);
+  // This sutta's highlights, stable across renders, and only those naming segments this copy of
+  // the sutta has: one naming a segment it lacks is kept in the account but shown nowhere, rather
+  // than drawn somewhere its reader never put it, and appears whole on a copy that has it.
+  // One map per loaded text rather than one per highlight, this running again on every edit the
+  // reader makes anywhere in their data.
+  const segIndex = useMemo(() => (segments ? segmentIndex(segments) : null), [segments]);
+  const hlForSutta = useMemo(() => {
+    const all = (suttaId && highlights[suttaId]) || EMPTY_HIGHLIGHTS;
+    if (!segments || !segIndex || !all.length) return all;
+    const resolvable = all.filter((h) => highlightStart(h, segments, segIndex) !== null);
+    return resolvable.length === all.length ? all : resolvable;
+  }, [suttaId, highlights, segments, segIndex]);
+  const popup = useHighlightPopup(suttaId, hlForSutta, segments);
   // The reading pane's scroll container, restored once the text and user data are both in.
   const scrollRef = useScrollMemory<T>(suttaId ? `${scrollKeyPrefix}:${suttaId}` : null, true, {
     restore,

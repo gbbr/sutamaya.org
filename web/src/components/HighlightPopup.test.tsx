@@ -15,7 +15,7 @@ function renderPopup(mobile: boolean, pop: Partial<PopState> = {}) {
   const onClose = vi.fn();
   render(
     <HighlightPopup
-      pop={{ span: { i0: 0, o0: 0, i1: 0, o1: 4 }, x: 120, top: 200, bottom: 220, on: null, ...pop }}
+      pop={{ span: { k0: 'dn1:1.1', o0: 0, k1: 'dn1:1.1', o1: 4 }, x: 120, top: 200, bottom: 220, on: null, ...pop }}
       theme={theme}
       mobile={mobile}
       onPick={onPick}

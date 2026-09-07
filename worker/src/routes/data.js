@@ -42,9 +42,9 @@ async function buildUserData(db, userId) {
       // by (mtime, id) — see lib/highlights.ts.
       data: {
         suttaId: row.sutta_id,
-        i0: row.i0,
+        k0: row.k0,
         o0: row.o0,
-        i1: row.i1,
+        k1: row.k1,
         o1: row.o1,
         color: row.color,
         createdAt: row.created_at,

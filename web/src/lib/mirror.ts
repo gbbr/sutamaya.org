@@ -1,6 +1,7 @@
 import { displacedIds, type HlSpan } from './highlights';
 import { AUTO_LIST_IDS } from './autoLists';
 import { highlightsFor } from './mirrorView';
+import type { SegmentFile } from './corpus';
 import { nextMtime } from './mtime';
 import { randomId } from './ids';
 import type { UserData } from './api';
@@ -102,34 +103,70 @@ export function emptyMirror(userId: string | null = null): MirrorState {
   return { userId, lists: {}, notes: {}, highlights: {}, visited: {}, ops: [], nextSeq: 1 };
 }
 
-// A highlight as an older build persisted it: one range per segment covered, rather than the two
-// endpoints of the whole span.
+// The two shapes that address a segment by its position in the document rather than by its key:
+// one range per segment covered, and the whole span's two endpoints. A mirror persisted by an
+// older build holds one of them.
+interface LegacySpan {
+  i0: number;
+  o0: number;
+  i1: number;
+  o1: number;
+}
 interface LegacyHighlightRecord {
+  span?: HlSpan | LegacySpan;
   ranges?: { i: number; s: number; e: number }[];
 }
 
-// Normalizes a mirror persisted by an older build on the way in from mirrorDb.ts, so nothing
-// downstream sees more than one shape. Today that means collapsing a highlight's per-segment
-// ranges to its two endpoints.
-//
-// It is permanent: a reader who never signs in has no server copy to re-pull from, so there is no
-// point at which every device is known to have converted. The do-nothing path is therefore the hot
-// one and is read-only by construction — a mirror needing no conversion comes back as the very
-// object it was given.
-export function upgradeStoredMirror(state: MirrorState): MirrorState {
-  let highlights: Record<string, Stored<HighlightRecord>> | null = null;
-  for (const [g, record] of Object.entries(state.highlights ?? {})) {
-    const data = record.data as HighlightRecord & LegacyHighlightRecord;
-    if (!Array.isArray(data.ranges)) continue;
-    const { ranges, ...rest } = data;
-    highlights = highlights ?? { ...state.highlights };
-    const ordered = [...ranges].sort((a, b) => a.i - b.i || a.s - b.s);
+// The stored span as endpoints, whichever of the two shapes a record is in, or null for a record no
+// write path could have produced — an empty `ranges` — which names no segment to convert to.
+function legacyEndpoints(data: LegacyHighlightRecord): LegacySpan | null {
+  if (Array.isArray(data.ranges)) {
+    const ordered = [...data.ranges].sort((a, b) => a.i - b.i || a.s - b.s);
     const first = ordered[0];
     const last = ordered[ordered.length - 1];
-    // An empty `ranges` is a record no write path could have produced, dropped rather than carried
-    // forward with an invented span.
-    if (!first) delete highlights[g];
-    else highlights[g] = { ...record, data: { ...rest, span: { i0: first.i, o0: first.s, i1: last.i, o1: last.e } } };
+    return first ? { i0: first.i, o0: first.s, i1: last.i, o1: last.e } : null;
+  }
+  const span = data.span as LegacySpan | undefined;
+  return span && typeof span.i0 === 'number' ? span : null;
+}
+
+// True for a record anchored on segment positions rather than keys. One property read, so a record
+// already keyed costs nothing to pass over.
+function isLegacy(data: HighlightRecord): boolean {
+  return typeof data.span?.k0 !== 'string';
+}
+
+// Re-anchors this sutta's highlights onto segment keys, called with the text as it loads (see
+// hooks/useSuttaReading.ts) — the one moment a device holds both the stored positions and the
+// segments they name.
+//
+// It is permanent: a reader who never signs in has no server copy to re-pull from, so no point
+// exists at which every device is known to be converted. The do-nothing path is therefore the hot
+// one and is read-only by construction — a mirror with nothing to convert comes back as the very
+// object it was given, before any allocation, so a sutta whose highlights are already keyed costs
+// one pass and no render.
+export function anchorHighlights(state: MirrorState, suttaId: string, segments: SegmentFile[]): MirrorState {
+  let highlights: Record<string, Stored<HighlightRecord>> | null = null;
+  for (const [g, record] of Object.entries(state.highlights)) {
+    if (record.data.suttaId !== suttaId || !isLegacy(record.data)) continue;
+    const endpoints = legacyEndpoints(record.data as LegacyHighlightRecord);
+    // A start past the end of the text this device holds, or a record with no usable span at all:
+    // no key names it, and inventing one would move the highlight somewhere its reader never put
+    // it. The record is left as it stands — unconverted, painted by nothing, deleted by nothing —
+    // and is converted if the text later has that segment.
+    const from = endpoints && segments[endpoints.i0];
+    // The end is clamped as the reader clamps it: a highlight running past the end of a text this
+    // build made shorter still ends at the last line it has.
+    const to = endpoints && segments[Math.min(endpoints.i1, segments.length - 1)];
+    if (!from || !to) continue;
+    const { g: id, suttaId: on, color, erase, mtime, sent } = record.data;
+    // Rebuilt field by field rather than spread, so the per-segment shape's `ranges` is left behind
+    // rather than carried along beside the span that replaces it.
+    const span: HlSpan = { k0: from.key, o0: endpoints.o0, k1: to.key, o1: endpoints.o1 };
+    highlights = highlights ?? { ...state.highlights };
+    // `dirty` is carried, not set: the account's own rows are keyed by scripts/anchor-highlights.mjs,
+    // and a push naming an id the server already holds does nothing.
+    highlights[g] = { dirty: record.dirty, data: { g: id, suttaId: on, span, color, erase, mtime, sent } };
   }
   return highlights ? { ...state, highlights } : state;
 }
@@ -472,11 +509,14 @@ export function applySnapshot(state: MirrorState, snapshot: UserData): MirrorSta
   );
   const highlights: Record<string, Stored<HighlightRecord>> = {};
   for (const [suttaId, rows] of Object.entries(snapshot.highlights)) {
-    for (const { id, i0, o0, i1, o1, c, m } of rows) {
+    for (const { id, c, m, ...span } of rows) {
       if (pendingErase.has(id)) continue;
+      // `span` is taken whole rather than field by field, so a row the account has not been
+      // re-anchored yet arrives in the shape the server stored it in and anchorHighlights converts
+      // it, exactly as one written by an older build on this device does.
       highlights[id] = {
         dirty: false,
-        data: { g: id, suttaId, span: { i0, o0, i1, o1 }, color: c, erase: [], mtime: m, sent: true },
+        data: { g: id, suttaId, span: span as HlSpan, color: c, erase: [], mtime: m, sent: true },
       };
     }
   }

@@ -78,6 +78,7 @@ const userDataDefaults: ReturnType<typeof useUserData> = {
   addToList: async () => {},
   submitNote: async () => {},
   setHighlightSpan: async () => {},
+  anchorHighlights: () => {},
   markVisited: () => {},
 };
 
@@ -176,7 +177,9 @@ describe('a search result opened and closed', () => {
     fireEvent.click(screen.getByTitle('Close'));
     await screen.findByText('sutamaya');
     revealed = [];
-    await waitFor(() => expect(listScroller().scrollTop).toBe(900));
+    // The same budget the reader mount above takes: this test opens and closes a whole reader, and
+    // the default one second is inside the range the suite runs it in.
+    await waitFor(() => expect(listScroller().scrollTop).toBe(900), { timeout: 5000 });
 
     // The cursor lands on the hit that was opened, but nothing scrolls to it — the row would be
     // dragged to the edge of the pane, which is not where it was left.
@@ -270,11 +273,12 @@ describe('a search result opened and closed', () => {
     });
     fireEvent.click(screen.getByTitle('Close'));
     await screen.findByText('sutamaya');
-    await waitFor(() => expect(treeScroller().scrollTop).toBe(900));
+    // The same budget the reader mount above takes, this test opening and closing a whole reader.
+    await waitFor(() => expect(treeScroller().scrollTop).toBe(900), { timeout: 5000 });
 
     // The tree's own place, which the search never took over. In a real browser TreePane's node
     // reveal can move it on from here — this is where the column opens, not where it settles.
     fireEvent.click(tree().getByRole('button', { name: 'Clear search' }));
-    await waitFor(() => expect(treeScroller().scrollTop).toBe(300));
+    await waitFor(() => expect(treeScroller().scrollTop).toBe(300), { timeout: 5000 });
   });
 });

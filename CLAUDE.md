@@ -195,16 +195,19 @@ identities  { provider, subject, user_id, created_at }            -- PK (provide
 login_codes { email, code_hash, expires_at, attempts, created_at } -- PK email
 lists       { id, user_id, label, parent_id, kind, position, items, created_at, mtime, deleted }
 notes       { user_id, sutta_id, text, updated_at, mtime, deleted }   -- PK (user_id, sutta_id)
-highlights  { id, user_id, sutta_id, i0, o0, i1, o1, color, created_at, mtime, deleted } -- PK (user_id, id)
+highlights  { id, user_id, sutta_id, k0, o0, k1, o1, color, created_at, mtime, deleted } -- PK (user_id, id)
 visited     { user_id, sutta_id, visited_at }                 -- PK (user_id, sutta_id)
 ```
 
 `lists.kind` is `'list'` (holds suttas) or `'group'` (holds other lists, `items` always `'[]'`).
 `items` is a JSON array of sutta uids in user order, stored as `TEXT` and edited with SQLite's JSON1
-functions. A highlight is one row holding the half-open span from `(i0, o0)` to `(i1, o1)` — segment
-index and character offset — with the client-minted id as its own row id; everything between the two
-ends is covered, so a segment reworded upstream can't leave a gap mid-highlight. `membership` is not
-stored — `assembleUserData()`
+functions. A highlight is one row holding the half-open span from `(k0, o0)` to `(k1, o1)` — segment
+key and character offset — with the client-minted id as its own row id; everything between the two
+ends is covered, so a segment reworded upstream can't leave a gap mid-highlight. A key is
+SuttaCentral's own segment id (`mn10:2.7`), so a line added to or dropped from the corpus moves no
+highlight but its own, and document order is read from the keys alone (`compareSegmentKeys`) — which
+is what lets the offline mirror decide what a selection overlaps with no text loaded. `membership` is
+not stored — `assembleUserData()`
 (`worker/src/lib/userData.js`) derives it at read time, along with the three synthesized auto-lists
 (`auto-recent`, `auto-highlights`, `auto-notes`).
 
@@ -242,9 +245,11 @@ read path must therefore exclude tombstones**. A list, note, visit and highlight
 highlight. The list tree is repaired at read time rather than at delete time, so two devices
 converge without communicating.
 
-A mirror written by an older build is normalized on the way out of IndexedDB
-(`upgradeStoredMirror`) — today that means collapsing a highlight's old per-segment ranges to the two
-endpoints. It is permanent: a reader who never signs in has no server copy to re-pull from.
+A mirror holding highlights addressed by segment position is re-anchored onto segment keys as each
+sutta's text loads (`anchorHighlights`), that text being what the conversion needs and neither
+IndexedDB nor the server having it. It is permanent: a reader who never signs in has no server copy
+to re-pull from. Stored rows are converted by `scripts/anchor-highlights.mjs`, which reads the
+positions before migration 0005 and writes the keys after it.
 
 **Signing in is never required.** A reader who hasn't signed in gets a `local-…` id
 (`lib/localAccount.ts`) and their own mirror; signing in adopts it onto the account. Nothing in the
@@ -356,11 +361,16 @@ started with.
 
 - Last-writer-wins discards the losing edit silently, by design — see `docs/offline-sync.md`'s
   "Accepted losses", which also rules out the conflict UI that would surface it.
-- A highlight's two endpoints are content coordinates, not anchors: `(i0, o0)` and `(i1, o1)` index
-  into segment text, so a corpus refresh (or a stale cached copy of a sutta) can move a highlight's
-  first and last few characters. Only the ends drift — everything between them is covered by
-  definition, and both ends are clamped to what the loaded text actually has. Fixing the remaining
-  drift needs anchoring on a quoted prefix/suffix, which is not planned.
+- A highlight's endpoints name a segment exactly but a character offset only approximately: `o0` and
+  `o1` index into segment text, so a corpus refresh (or a stale cached copy of a sutta) can move a
+  highlight's first and last few characters. Only the ends drift — everything between them is
+  covered by definition, and both offsets are clamped to the segment's current length. Fixing the
+  remaining drift needs anchoring on a quoted prefix/suffix, which is not planned.
+- A highlight naming a segment the loaded text has no key for paints nothing, and is left out of the
+  reader's panel and gutter so it offers no jump that goes nowhere. It stays in the account and is
+  deleted by nothing, so it paints again on a copy of the text that has the segment. The Library
+  row's badge counts from the account rather than the text, so it can name a highlight the reading
+  doesn't show.
 - The reader has no translation-source picker — this dataset has one English translation per
   collection. It shows a "Source: SuttaCentral (modified)" line instead, linking to the `sc-data`
   commit and to `docs/translation-changes.md`, which is the plain-language summary written for a

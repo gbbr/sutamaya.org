@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 import type { Highlight, HighlightsMap, ListDef, ListKind, Membership, NotesMap, VisitedMap } from '../lib/types';
 import {
   adoptMirror,
+  anchorHighlights as anchorHighlightRecords,
   applyFlushOutcome,
   createListRecord,
   emptyMirror,
@@ -19,6 +20,7 @@ import {
   type MirrorState,
 } from '../lib/mirror';
 import { deriveUserData } from '../lib/mirrorView';
+import type { SegmentFile } from '../lib/corpus';
 import type { HlSpan } from '../lib/highlights';
 import { isLocalUserId } from '../lib/localAccount';
 import { deleteMirror, loadMirror, saveMirror } from '../lib/mirrorDb';
@@ -68,6 +70,7 @@ interface UserDataState {
   addToList: (suttaId: string, list: ListDef) => Promise<void>;
   submitNote: (suttaId: string, text: string) => Promise<void>;
   setHighlightSpan: (suttaId: string, span: HlSpan, color: string | null) => Promise<void>;
+  anchorHighlights: (suttaId: string, segments: SegmentFile[]) => void;
   markVisited: (suttaId: string) => void;
 }
 
@@ -96,6 +99,7 @@ const EMPTY: UserDataState = {
   addToList: async () => {},
   submitNote: async () => {},
   setHighlightSpan: async () => {},
+  anchorHighlights: () => {},
   markVisited: () => {},
 };
 
@@ -366,6 +370,14 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     [mutate]
   );
 
+  // Re-anchors one sutta's highlights from segment positions onto segment keys, as its text loads.
+  // Not routed through `mutate`: nothing here is pushed — the account's own copy is re-anchored by
+  // scripts/anchor-highlights.mjs — so a flush would be scheduled for no reason, and a mirror with
+  // nothing to convert returns the state object it was given, which React renders through untouched.
+  const anchorHighlights = useCallback((suttaId: string, segments: SegmentFile[]) => {
+    setState((s) => (s.userId ? anchorHighlightRecords(s, suttaId, segments) : s));
+  }, []);
+
   const markVisited = useCallback(
     (suttaId: string) => {
       mutate((s) => markVisitedRecord(s, suttaId));
@@ -395,6 +407,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       addToList,
       submitNote,
       setHighlightSpan,
+      anchorHighlights,
       markVisited,
     }),
     [
@@ -418,6 +431,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       addToList,
       submitNote,
       setHighlightSpan,
+      anchorHighlights,
       markVisited,
     ]
   );

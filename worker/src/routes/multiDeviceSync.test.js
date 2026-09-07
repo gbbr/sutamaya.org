@@ -203,7 +203,7 @@ describe('multi-device convergence (D1)', () => {
       erase: [],
       mtime: '2030-01-01T00:00:01.000Z|phone',
       color: 'yellow',
-      span: { i0: 0, o0: 0, i1: 0, o1: 10 },
+      span: { k0: 'sn1.1:1.1', o0: 0, k1: 'sn1.1:1.1', o1: 10 },
     };
     const groupB = {
       type: 'highlight',
@@ -212,7 +212,7 @@ describe('multi-device convergence (D1)', () => {
       erase: [],
       mtime: '2030-01-01T00:00:02.000Z|laptop',
       color: 'green',
-      span: { i0: 0, o0: 5, i1: 0, o1: 15 },
+      span: { k0: 'sn1.1:1.1', o0: 5, k1: 'sn1.1:1.1', o1: 15 },
     };
 
     const { userId: userAFirst, cookie: cookieAFirst } = await signIn();

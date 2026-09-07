@@ -317,7 +317,88 @@ test.describe('highlighting', () => {
           };
         })
     );
-    expect(stored.span).toEqual({ i0: 1, o0: 3, i1: 3, o1: 10 });
+    expect(stored.span).toEqual({ k0: 'dn1:1.1.1', o0: 3, k1: 'dn1:1.1.3', o1: 10 });
     expect(stored.ranges).toBeUndefined();
+  });
+
+  // The other shape a stored mirror can hold: the two endpoints as segment positions. It is what
+  // every highlight made before this build is in, so it is the conversion most real devices run,
+  // and it is checked here in real browser storage for the same reason as the one above.
+  test('a highlight persisted as segment positions is re-anchored onto segment keys', async ({ page }) => {
+    await page.goto('/read/dn1');
+    await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+
+    const first = await segmentText(page, 1);
+    const last = await segmentText(page, 2);
+    await waitForLocalWrites(page);
+
+    await page.evaluate(() => {
+      return new Promise<void>((resolve, reject) => {
+        const userId = localStorage.getItem('sutamaya.localUserId');
+        if (!userId) return reject(new Error('no local user id yet'));
+        const open = indexedDB.open('sutamaya');
+        open.onerror = () => reject(open.error);
+        open.onsuccess = () => {
+          const put = open.result
+            .transaction('mirrors', 'readwrite')
+            .objectStore('mirrors')
+            .put({
+              userId,
+              lists: {},
+              notes: {},
+              visited: {},
+              ops: [],
+              nextSeq: 1,
+              highlights: {
+                'positioned-highlight': {
+                  dirty: false,
+                  data: {
+                    g: 'positioned-highlight',
+                    suttaId: 'dn1',
+                    // The shape the previous build persisted: endpoints as positions, not keys.
+                    span: { i0: 1, o0: 3, i1: 2, o1: 10 },
+                    color: '#F0E3A8',
+                    erase: [],
+                    mtime: '2026-01-01T00:00:00.000Z|old-device',
+                    sent: true,
+                  },
+                },
+              },
+            });
+          put.onerror = () => reject(put.error);
+          put.onsuccess = () => resolve();
+        };
+      });
+    });
+
+    await page.reload();
+    await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+
+    // Painted exactly where the positions had it, under the id it was stored with.
+    await expect(page.locator('[data-seg="1"] [data-hl-id]')).toHaveText(first.slice(3));
+    await expect(page.locator('[data-seg="2"] [data-hl-id]')).toHaveText(last.slice(0, 10));
+    const ids = await page
+      .locator('[data-seg] [data-hl-id]')
+      .evaluateAll((els) => [...new Set(els.map((el) => el.getAttribute('data-hl-id')))]);
+    expect(ids).toEqual(['positioned-highlight']);
+
+    // And stored naming the segments themselves, so the next corpus change moves it nowhere.
+    await waitForLocalWrites(page);
+    const stored = await page.evaluate(
+      () =>
+        new Promise<{ span?: unknown }>((resolve, reject) => {
+          const open = indexedDB.open('sutamaya');
+          open.onerror = () => reject(open.error);
+          open.onsuccess = () => {
+            const all = open.result.transaction('mirrors', 'readonly').objectStore('mirrors').getAll();
+            all.onerror = () => reject(all.error);
+            all.onsuccess = () => {
+              const mirror = all.result.find((m) => m.highlights?.['positioned-highlight']);
+              resolve(mirror?.highlights['positioned-highlight'].data ?? {});
+            };
+          };
+        })
+    );
+    expect(stored.span).toEqual({ k0: 'dn1:1.1.1', o0: 3, k1: 'dn1:1.1.2', o1: 10 });
   });
 });

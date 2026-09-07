@@ -28,7 +28,7 @@ describe('ancestorsOfList', () => {
 });
 
 function h(id: string, i0: number, o0: number, i1: number, o1: number, c = '#ffe08a'): Highlight {
-  return { id, i0, o0, i1, o1, c, m: '2026-01-01T00:00:00.000Z|dev' };
+  return { id, k0: `dn1:${i0}`, o0, k1: `dn1:${i1}`, o1, c, m: '2026-01-01T00:00:00.000Z|dev' };
 }
 
 describe('suttaRowMeta', () => {

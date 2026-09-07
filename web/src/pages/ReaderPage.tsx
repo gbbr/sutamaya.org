@@ -871,10 +871,11 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
         />
       )}
 
-      {!panel && (
+      {!panel && segments && (
         <HighlightGutter
           scrollRef={scrollRef}
           highlights={hlForSutta}
+          segments={segments}
           theme={theme}
           onJump={jumpToHighlight}
           layoutKey={`${fs}-${lh}-${face}-${allPali}-${paliAbove}-${segments ? segments.length : 'loading'}`}

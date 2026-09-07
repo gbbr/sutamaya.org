@@ -39,7 +39,7 @@ function buildCorpus(): Corpus {
   };
 }
 
-const highlight: Highlight = { id: 'h1', i0: 0, o0: 0, i1: 0, o1: 5, c: '#F0E3A8', m: '2026-01-01T00:00:00.000Z|dev' };
+const highlight: Highlight = { id: 'h1', k0: 'dn1:1.1', o0: 0, k1: 'dn1:1.1', o1: 5, c: '#F0E3A8', m: '2026-01-01T00:00:00.000Z|dev' };
 
 const userDataDefaults: ReturnType<typeof useUserData> = {
   ready: true,
@@ -64,6 +64,7 @@ const userDataDefaults: ReturnType<typeof useUserData> = {
   addToList: async () => {},
   submitNote: async () => {},
   setHighlightSpan: async () => {},
+  anchorHighlights: () => {},
   markVisited: () => {},
 };
 
@@ -164,9 +165,9 @@ describe('ReaderPage sutta header chips', () => {
     fireEvent.click(screen.getByText('1'));
 
     // "Sutta note" only renders under the Highlights tab for a signed-in user (ReaderMenuPanel);
-    // the one seeded highlight (no fetched segment text, since fetch never resolves) renders as
-    // "Segment 1", its own no-text fallback.
+    // the one seeded highlight has no text to preview, this reader's fetch never resolving, so it
+    // renders as the no-text fallback.
     expect(await screen.findByText('Sutta note')).toBeTruthy();
-    expect(screen.getByText('Segment 1')).toBeTruthy();
+    expect(screen.getByText('Highlighted text')).toBeTruthy();
   });
 });

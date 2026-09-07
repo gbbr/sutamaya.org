@@ -1,12 +1,16 @@
 import { useEffect, useState, type RefObject } from 'react';
 import { getUiScale } from '../lib/uiPrefs';
 import { highlightPaint } from '../lib/theme';
+import type { SegmentFile } from '../lib/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
 import { computeGutterLayout, type GutterMark, type GutterTrack } from '../lib/highlightGutterLayout';
 
 interface HighlightGutterProps {
   scrollRef: RefObject<HTMLElement>;
   highlights: Highlight[];
+  // The loaded text, which is what turns a highlight's stored segment keys back into the positions
+  // its mark is placed at.
+  segments: SegmentFile[];
   theme: ThemeColors;
   onJump: (segIndex: number, highlightId?: string) => void;
   // Changes whenever the text reflows without the scroll container resizing — type size, face,
@@ -16,7 +20,7 @@ interface HighlightGutterProps {
 
 // A strip of marks along the edge of the scroll area, one per highlight, each at the height its
 // text sits at in the whole document. Clicking one jumps to it.
-export function HighlightGutter({ scrollRef, highlights, theme, onJump, layoutKey }: HighlightGutterProps) {
+export function HighlightGutter({ scrollRef, highlights, segments, theme, onJump, layoutKey }: HighlightGutterProps) {
   const [marks, setMarks] = useState<GutterMark[]>([]);
   const [track, setTrack] = useState<GutterTrack | null>(null);
 
@@ -34,6 +38,7 @@ export function HighlightGutter({ scrollRef, highlights, theme, onJump, layoutKe
       // before mixing them.
       const { track, marks } = computeGutterLayout(
         highlights,
+        segments,
         container.getBoundingClientRect(),
         container.scrollHeight,
         container.scrollTop,
@@ -53,7 +58,7 @@ export function HighlightGutter({ scrollRef, highlights, theme, onJump, layoutKe
       window.removeEventListener('resize', recompute);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [scrollRef, highlights, layoutKey]);
+  }, [scrollRef, highlights, segments, layoutKey]);
 
   if (!track || marks.length === 0) return null;
 
