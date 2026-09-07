@@ -43,20 +43,23 @@ Run the two halves individually with `npm run dev:worker` / `npm run dev:web`. `
 separate database to start. The web dev server proxies `/api/*` to `http://localhost:8787`
 (override with `API_ORIGIN`).
 
-No Cloudflare account is needed for local dev, but `.dev.vars` needs `GOOGLE_CLIENT_SECRET` and
-`WEB_ORIGIN=http://localhost:5173` — Google sign-in needs a real OAuth client even in dev. Leave the
-secret blank to develop signed out; the sign-in link then bounces back with `?auth_error=1`.
+No Cloudflare account is needed for local dev, but `.dev.vars` needs `GOOGLE_CLIENT_SECRET`,
+`SESSION_SECRET` (any long random string — it signs both the session cookie and the OAuth state) and
+`WEB_ORIGIN=http://localhost:5173` — Google sign-in needs a real OAuth client even in dev. Leave a
+secret blank to develop signed out; the sign-in link then bounces back with `?auth_error=1`, and the
+emailed-code form says it couldn't send one.
 
-**Adding a migration means applying it to your local D1 by hand.** Wrangler only migrates that
-database when it first creates it, not when `worker/migrations/` gains a file:
+**`dev:worker` applies pending migrations to your local D1 before starting.** Wrangler itself only
+migrates that database when it first creates it, not when `worker/migrations/` gains a file, so
+`npm run migrate:local` (`wrangler d1 migrations apply DB --local`) runs first — a no-op once
+everything is applied. Without it every affected route 500s with `D1_ERROR: no such table: …` while
+`npm test` stays green, since `worker/vitest.config.ts` applies the full set to a fresh database on
+every run.
 
-```
-npx wrangler d1 migrations apply sutamaya --local     # stop dev:worker first
-```
-
-Skip it and every affected route 500s with `D1_ERROR: no such column: …` while `npm test` stays
-green — `worker/vitest.config.ts` applies the full migration set to a fresh database on every run.
-Deploys handle the remote database themselves (`scripts/deploy.sh`).
+It is `--local` and takes no `--env`, so it can only ever touch the on-disk database under
+`.wrangler/`. Remote databases are migrated by the deploy (`scripts/deploy.sh`), never from here.
+Adding a migration while the worker is already running still means restarting it — or running
+`npm run migrate:local` by hand once it's stopped.
 
 ## Where things live
 

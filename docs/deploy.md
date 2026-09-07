@@ -46,7 +46,8 @@ GCP services enabled):
 3. Put the Client ID in `GOOGLE_CLIENT_ID` under `vars` in `wrangler.jsonc` (a public identifier,
    safe to commit), and the Client Secret in the `GOOGLE_CLIENT_SECRET` Worker secret above. For
    local dev both go in `.dev.vars`, along with `WEB_ORIGIN=http://localhost:5173` — the
-   production `WEB_ORIGIN` in `wrangler.jsonc` would otherwise send the dev flow to the live site.
+   production `WEB_ORIGIN` in `wrangler.jsonc` would otherwise send the dev flow to the live site —
+   and `SESSION_SECRET`, which signs the state Google hands back as well as the session cookie.
 
 ### Sign-in by emailed code
 

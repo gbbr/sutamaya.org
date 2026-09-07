@@ -50,8 +50,11 @@ authRouter.get('/google/start', async (c) => {
   // flow and the redirect_uri Google matches agree on one origin.
   const webOrigin = resolveWebOrigin(c.env.WEB_ORIGIN, c.req.query('return'));
 
-  if (!c.env.GOOGLE_CLIENT_ID || !c.env.GOOGLE_CLIENT_SECRET) {
-    console.error('Google OAuth is not configured: GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET are both required.');
+  if (!c.env.GOOGLE_CLIENT_ID || !c.env.GOOGLE_CLIENT_SECRET || !c.env.SESSION_SECRET) {
+    // SESSION_SECRET signs the state Google hands back, so the flow can't start without it either.
+    console.error(
+      'Google OAuth is not configured: GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET and SESSION_SECRET are all required.'
+    );
     return c.redirect(appUrl(webOrigin, withAuthError('/settings')), 302);
   }
 
@@ -124,6 +127,11 @@ authRouter.get('/google/callback', async (c) => {
 authRouter.post('/email/request', async (c) => {
   const email = normalizeEmail((await jsonBody(c))?.email);
   if (!isPlausibleEmail(email)) return c.json({ error: 'Enter a valid email address.' }, 400);
+  if (!c.env.SESSION_SECRET) {
+    // The code is stored hashed with it, so there is nothing to send without it.
+    console.error('Email sign-in is not configured: SESSION_SECRET is required.');
+    return c.json({ error: 'Could not send the code. Please try again.' }, 503);
+  }
 
   const now = Date.now();
   const pending = await c.env.DB.prepare('SELECT created_at FROM login_codes WHERE email = ?').bind(email).first();
@@ -167,6 +175,11 @@ authRouter.post('/email/verify', async (c) => {
   const code = typeof body.code === 'string' ? body.code.trim() : '';
   if (!isPlausibleEmail(email) || !/^\d{6}$/.test(code)) {
     return c.json({ error: 'Enter the six-digit code from your email.' }, 400);
+  }
+  if (!c.env.SESSION_SECRET) {
+    // No code can have been issued without it, so this says so rather than calling the code wrong.
+    console.error('Email sign-in is not configured: SESSION_SECRET is required.');
+    return c.json({ error: 'Could not sign you in. Please try again.' }, 503);
   }
 
   const row = await c.env.DB.prepare('SELECT * FROM login_codes WHERE email = ?').bind(email).first();
