@@ -195,6 +195,23 @@ function slotOf(starts: number[], offset: number): number {
   return ans;
 }
 
+// One search is the typed query and every query the expansion table adds for it, and they overlap:
+// "mind is luminous" scans four distinct words twenty-one times over. A word's offsets depend on
+// nothing but the blob and the pattern, so they are memoised for the life of one search and thrown
+// away with it — the whole cache is a handful of arrays, and the blobs are what hold the memory.
+type ScanCache = Map<string, number[]>;
+
+function offsetsCached(text: string, re: RegExp, lang: string, cache: ScanCache | null): number[] {
+  if (!cache) return offsetsOf(text, re);
+  const key = `${lang} ${re.source}`;
+  let offsets = cache.get(key);
+  if (!offsets) {
+    offsets = offsetsOf(text, re);
+    cache.set(key, offsets);
+  }
+  return offsets;
+}
+
 function offsetsOf(text: string, re: RegExp): number[] {
   re.lastIndex = 0;
   const out: number[] = [];
@@ -223,11 +240,19 @@ function scoreLanguage(
   suttaStarts: number[],
   paraStarts: number[],
   wordRes: RegExp[],
-  phraseRe: RegExp | null
+  phraseRe: RegExp | null,
+  lang: string,
+  cache: ScanCache | null
 ): Map<number, LangScore> {
   const perSutta = new Map<number, { counts: number[]; paras: Array<Set<number> | null> }>();
-  wordRes.forEach((re, wi) => {
-    for (const off of offsetsOf(text, re)) {
+  for (let wi = 0; wi < wordRes.length; wi += 1) {
+    const offsets = offsetsCached(text, wordRes[wi], lang, cache);
+    // Every word is required, so one word this language never says settles the whole language:
+    // the words after it, and the phrase, are scans of nine megabytes that cannot change the
+    // answer. A query is written in one language or the other, so this is the common case, not
+    // the exceptional one.
+    if (offsets.length === 0) return new Map();
+    for (const off of offsets) {
       const si = slotOf(suttaStarts, off);
       let rec = perSutta.get(si);
       if (!rec) {
@@ -237,13 +262,13 @@ function scoreLanguage(
       rec.counts[wi] += 1;
       (rec.paras[wi] ??= new Set()).add(slotOf(paraStarts, off));
     }
-  });
+  }
 
   // A one-word query makes the phrase and the word the same scan, so it is not run twice. The
   // earliest paragraph the phrase fell in is the one worth showing.
   const phrasePara = new Map<number, number>();
   if (phraseRe) {
-    for (const off of offsetsOf(text, phraseRe)) {
+    for (const off of offsetsCached(text, phraseRe, lang, cache)) {
       const si = slotOf(suttaStarts, off);
       if (!phrasePara.has(si)) phrasePara.set(si, slotOf(paraStarts, off));
     }
@@ -296,7 +321,13 @@ export interface TextScore {
 // Every sutta whose text answers `query`, keyed by uid. English and Pali are scanned and scored
 // independently and a sutta keeps its better result: a query is written in one language or the
 // other, and mixing a word from each would match noise.
-export function searchSuttaText(index: TextIndex, query: string): Map<string, TextScore> {
+// `cache` is one search's memo of what each pattern found in each blob, shared across the query's
+// expansions; null scans afresh every time.
+export function searchSuttaText(
+  index: TextIndex,
+  query: string,
+  cache: ScanCache | null = null
+): Map<string, TextScore> {
   const q = searchKey(query.trim());
   const out = new Map<string, TextScore>();
   if (!q) return out;
@@ -312,20 +343,32 @@ export function searchSuttaText(index: TextIndex, query: string): Map<string, Te
     index.enStarts,
     index.enParas,
     content.map(englishWordRe),
-    multi ? englishPhraseRe(words) : null
+    multi ? englishPhraseRe(words) : null,
+    'en',
+    cache
   );
   const pa = scoreLanguage(
     index.pa,
     index.paStarts,
     index.paParas,
     content.map(paliWordRe),
-    multi ? paliPhraseRe(words) : null
+    multi ? paliPhraseRe(words) : null,
+    'pa',
+    cache
   );
   // The corpus writes compounds joined — "mahākassapa", never "mahā kassapa" — so a multi-word
   // query is scanned again as one Pali word, which is the only way that sutta is found at all.
   const joined =
     content.length > 1
-      ? scoreLanguage(index.pa, index.paStarts, index.paParas, [paliWordRe(content.join(''))], null)
+      ? scoreLanguage(
+          index.pa,
+          index.paStarts,
+          index.paParas,
+          [paliWordRe(content.join(''))],
+          null,
+          'pa',
+          cache
+        )
       : null;
 
   for (const [si, score] of en) out.set(index.uids[si], { ...score, lang: 'en', query: q });
@@ -515,7 +558,9 @@ export function searchTextVariants(index: TextIndex, query: string): Map<string,
   const q = searchKey(query.trim());
   const text = new Map<string, TextScore>();
   if (!q) return text;
-  for (const variant of variantsOf(query, q)) keepBest(text, searchSuttaText(index, variant));
+  // One cache for the query and its expansions, which repeat each other's words.
+  const cache: ScanCache = new Map();
+  for (const variant of variantsOf(query, q)) keepBest(text, searchSuttaText(index, variant, cache));
   return text;
 }
 
