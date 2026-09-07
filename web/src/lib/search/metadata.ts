@@ -27,6 +27,14 @@ export interface SearchHit {
   rank: number;
   // Whether the reader has filed, noted or highlighted it — the tie-break within a bucket.
   saved: boolean;
+  // Which line of the row carries the query, where something written *about* the sutta does: the
+  // reader's own note, or the group description. That line leads the row and the snippet follows
+  // it, so a hit ranked on a note doesn't explain itself with a paragraph holding one of its words.
+  // Unset where nothing the row writes matched — a title or list-name hit, or a text-only one.
+  //
+  // `query` is what the line is marked with, which is not always what was typed: where the
+  // expansion table is what matched, it carries both, as `snippet.query` does.
+  explains?: { line: 'note' | 'blurb'; query: string };
   // The paragraph of sutta text the query was found in, its English where that paragraph was Pali,
   // and the first and last segment it was drawn from. Filled in by lib/search/text.ts for the hits
   // that render; absent on a metadata-only hit.
@@ -52,6 +60,26 @@ export const SEARCH_CAP_NOTE = `Showing the first ${SEARCH_RESULTS_CAP} results.
 // fold together — otherwise "elephant's footprint" misses the sutta titled with it.
 export function searchKey(s: string): string {
   return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[\u2018\u2019\u02bc]/g, "'").toLowerCase();
+}
+
+// English function words, dropped from a query's required words and from its occurrence count, and
+// from what counts as a line carrying the query — a blurb holding "the" answers nothing.
+// "not" and "no" are deliberately absent — they are the whole of "not-self".
+// Here rather than in lib/search/text.ts, which is where they are used most, because this module is
+// the one both sides of the search import.
+const STOPWORDS = new Set([
+  'a', 'an', 'and', 'are', 'as', 'at', 'be', 'been', 'but', 'by', 'for', 'from', 'had', 'has',
+  'have', 'he', 'her', 'him', 'his', 'i', 'in', 'into', 'is', 'it', 'its', 'me', 'my', 'of', 'on',
+  'or', 'our', 'she', 'that', 'the', 'their', 'them', 'then', 'there', 'these', 'they', 'this',
+  'those', 'to', 'was', 'we', 'were', 'what', 'when', 'which', 'who', 'whom', 'will', 'with',
+  'you', 'your',
+]);
+
+// The words of `words` a sutta must carry, and whose occurrences order it — the whole query when
+// it holds nothing but function words, so `the` still searches for "the".
+export function contentWords(words: string[]): string[] {
+  const kept = words.filter((w) => !STOPWORDS.has(w));
+  return kept.length ? kept : words;
 }
 
 // Each sutta's folded ref/title/Pali and blurb, everything search reads that doesn't change.
@@ -130,6 +158,12 @@ export function searchCorpus(
   const ranges = rangeQuery ? rangesFor(corpus) : null;
   const listPathsById = listHaystacks(lists);
   const saved = savedIds(lists, notes, highlights);
+  // Whether a line of the row holds the query. Word by word as well as whole, since bucket 3 spreads
+  // the query across fields and one of its words is enough for the line to mark something — but not
+  // a function word, which every line holds and which would put an unmarked line on the row.
+  const content = contentWords(words);
+  const carries = (haystack: string) =>
+    !!haystack && (haystack.includes(q) || content.some((w) => haystack.includes(w)));
   const hits: SearchHit[] = [];
   for (const [id, s] of suttaEntries(corpus)) {
     const { title, blurb } = staticHaystacks.get(id)!;
@@ -157,7 +191,11 @@ export function searchCorpus(
     const listOnly =
       rank >= RANK_PHRASE &&
       words.every((w) => listPaths.includes(w) && !title.includes(w) && !blurb.includes(w) && !note.includes(w));
-    hits.push({ id, sutta: s, matchedId, listOnly, rank, saved: saved.has(id) });
+    // The note before the description, which is the order a row prefers them in anyway. Marked with
+    // this call's own query; searchCorpusVariants widens it where an expansion is what matched.
+    const line: 'note' | 'blurb' | undefined = carries(note) ? 'note' : carries(blurb) ? 'blurb' : undefined;
+    const explains = line ? { line, query: q } : undefined;
+    hits.push({ id, sutta: s, matchedId, listOnly, rank, saved: saved.has(id), explains });
   }
   hits.sort((a, b) => a.rank - b.rank || Number(b.saved) - Number(a.saved));
   return hits;

@@ -765,8 +765,15 @@ export function TreePane({
                 this pane finds it where it was left. */}
             {mobile && visible && (
               <>
-                {displayHits.map(({ id, sutta, snippet }, i) => {
+                {displayHits.map(({ id, sutta, snippet, explains }, i) => {
                   const note = notes[id];
+                  // The line that carried the query leads the quote — see ListPane. This pane draws
+                  // no description at rest, the column being half the width, but it draws one that
+                  // answered the query: without it a row explained by its blurb shows the reader
+                  // nothing that matched.
+                  const showNote = !!note && (explains?.line === 'note' || (!snippet && explains?.line !== 'blurb'));
+                  const showBlurb = !showNote && explains?.line === 'blurb';
+                  const lineQuery = (line: 'note' | 'blurb') => (explains?.line === line ? explains.query : query);
                   const { chips, hlCount, hlColors } = searchRowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
                   // This row's place in the shared column, past the lists block above it.
                   const navIndex = i + listHits.length;
@@ -788,7 +795,23 @@ export function TreePane({
                       <span className="font-serif text-ui-base italic text-accent-text">
                         <MatchedText text={sutta.pali} query={query} />
                       </span>
-                      {snippet ? (
+                      {showNote && (
+                        // An em dash rather than a quote rule marks this as the reader's own note.
+                        <span className="flex gap-[7px] font-serif text-ui-md leading-[1.4] mt-[6px] text-ink-2">
+                          <span aria-hidden className="flex-none text-ink-3">
+                            —
+                          </span>
+                          <span className="whitespace-pre-wrap">
+                            <MatchedText text={note} query={lineQuery('note')} notation />
+                          </span>
+                        </span>
+                      )}
+                      {showBlurb && (
+                        <span className="text-ui-md leading-[1.4] mt-[6px] text-ink-2 line-clamp-3">
+                          <MatchedText text={sutta.blurb} query={lineQuery('blurb')} />
+                        </span>
+                      )}
+                      {snippet && (
                         // Quoted from the sutta: a left rule, which is what marks the sutta's own
                         // words apart from anything written about it.
                         <span className="block font-serif text-ui-md leading-[1.45] mt-[6px] pl-[10px] border-l-2 border-ink/25 text-ink-2">
@@ -803,18 +826,6 @@ export function TreePane({
                             </span>
                           )}
                         </span>
-                      ) : (
-                        note && (
-                          // An em dash rather than a quote rule marks this as the reader's own note.
-                          <span className="flex gap-[7px] font-serif text-ui-md leading-[1.4] mt-[6px] text-ink-2">
-                            <span aria-hidden className="flex-none text-ink-3">
-                              —
-                            </span>
-                            <span className="whitespace-pre-wrap">
-                              <MatchedText text={note} query={query} notation />
-                            </span>
-                          </span>
-                        )
                       )}
                       <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} />
                     </button>

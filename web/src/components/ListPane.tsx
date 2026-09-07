@@ -132,11 +132,11 @@ export function ListPane({
     return map;
   }, [hits]);
 
-  // The paragraph each hit was found in, where the query was answered by the sutta's text rather
-  // than by anything about it.
-  const snippets = useMemo(() => {
-    const map = new Map<string, NonNullable<SearchHit['snippet']>>();
-    for (const h of hits) if (h.snippet) map.set(h.id, h.snippet);
+  // What each hit found, and where: the paragraph of the sutta's own text the query was answered in,
+  // and which of the row's own lines — the reader's note, the group description — carried it too.
+  const found = useMemo(() => {
+    const map = new Map<string, Pick<SearchHit, 'snippet' | 'explains'>>();
+    for (const h of hits) if (h.snippet || h.explains) map.set(h.id, { snippet: h.snippet, explains: h.explains });
     return map;
   }, [hits]);
 
@@ -474,7 +474,16 @@ export function ListPane({
           // TreePane's arrow-key nav has active. Nothing marks the URL's `selectedId`.
           const on = searching && id === activeId;
           const note = notes[id];
-          const snippet = snippets.get(id);
+          const { snippet, explains } = found.get(id) ?? {};
+          // The line that carried the query leads, and the quote from the sutta follows it: a hit
+          // ranked on a note or a description is explained by that line, not by a paragraph that
+          // holds one word of the query. Where neither matched, the row's usual line stands —
+          // unless the quote takes its place, as it did before.
+          const showNote = !!note && (explains?.line === 'note' || (!snippet && explains?.line !== 'blurb'));
+          const showBlurb = !showNote && (explains?.line === 'blurb' || !snippet);
+          // The line that matched is marked with the query that found it, which the expansion table
+          // may have written; a line standing here on nothing but its usual turn takes the typed one.
+          const lineQuery = (line: 'note' | 'blurb') => (explains?.line === line ? explains.query : rowQuery);
           const { chips, hlCount, hlColors } = rowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
           const dragging = dragIdRef.current === id;
           const reordering = canReorder && reorderMode;
@@ -512,7 +521,24 @@ export function ListPane({
                 >
                   <MatchedText text={s.pali} query={rowQuery} />
                 </span>
-                {snippet ? (
+                {showNote && (
+                  // An em dash rather than a quote rule marks this as the reader's own note.
+                  <span className="flex gap-[7px] font-serif text-ui-md leading-[1.45] mt-[7px] text-ink-2">
+                    <span aria-hidden className="flex-none text-ink-3">
+                      —
+                    </span>
+                    {/* Clamped, like the blurb it stands in for. */}
+                    <span className="line-clamp-3 whitespace-pre-wrap">
+                      <MatchedText text={note} query={lineQuery('note')} notation />
+                    </span>
+                  </span>
+                )}
+                {showBlurb && (
+                  <span className="text-ui-md leading-[1.5] mt-1.5 text-ink-2 line-clamp-3">
+                    <MatchedText text={s.blurb} query={lineQuery('blurb')} />
+                  </span>
+                )}
+                {snippet && (
                   // Quoted from the sutta: a left rule, against the em dash that marks the reader's
                   // own note. A Pali paragraph carries its English underneath, inside the one rule.
                   <span className="block font-serif text-ui-md leading-[1.5] mt-[7px] pl-[10px] border-l-2 border-ink/25 text-ink-2">
@@ -526,21 +552,6 @@ export function ListPane({
                         <MatchedText text={snippet.under} query={snippet.query} />
                       </span>
                     )}
-                  </span>
-                ) : note ? (
-                  // An em dash rather than a quote rule marks this as the reader's own note.
-                  <span className="flex gap-[7px] font-serif text-ui-md leading-[1.45] mt-[7px] text-ink-2">
-                    <span aria-hidden className="flex-none text-ink-3">
-                      —
-                    </span>
-                    {/* Clamped, like the blurb it stands in for. */}
-                    <span className="line-clamp-3 whitespace-pre-wrap">
-                      <MatchedText text={note} query={rowQuery} notation />
-                    </span>
-                  </span>
-                ) : (
-                  <span className="text-ui-md leading-[1.5] mt-1.5 text-ink-2 line-clamp-3">
-                    <MatchedText text={s.blurb} query={rowQuery} />
                   </span>
                 )}
                 <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} />

@@ -5,6 +5,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   buildTextIndex,
+  searchCorpusVariants,
   searchSuttaText,
   snippetOf,
   RANK_TEXT_PHRASE,
@@ -13,6 +14,7 @@ import {
   type SearchMap,
   type TextScore,
 } from './text';
+import type { Corpus } from '../types';
 
 const MARK = '\x1e';
 
@@ -262,5 +264,36 @@ describe('snippetOf', () => {
     expect(snippet.under).toContain('noble truths');
     // Both queries mark: the Pali line carries the one that found the row, the English the typed one.
     expect(snippet.query).toBe('noble truths ariyasacca');
+  });
+});
+
+describe('searchCorpusVariants', () => {
+  // Nothing here says "satipatthana" — the expansion table's "establishment of mindfulness" is the
+  // only way in, which is the case the marking rule exists for.
+  const corpus: Corpus = {
+    nikayas: [],
+    suttas: {
+      mn10: {
+        ref: 'MN 10',
+        node: 'x',
+        en: 'Mindfulness Meditation',
+        pali: 'Kāyagatāsatisutta',
+        blurb: 'On the establishment of mindfulness.',
+        min: 20,
+      },
+    },
+    sujatoCommit: 'abc1234',
+    dataVersion: 'd1',
+    searchVersion: 's1',
+    dictionaryVersion: 'k1',
+  };
+
+  it('marks the explaining line with the query that found it, function words dropped', () => {
+    const [hit] = searchCorpusVariants(corpus, 'satipatthana', {}, [], {});
+    expect(hit.explains?.line).toBe('blurb');
+    // Both, as a snippet's own query carries both: the typed word marks nothing here, and the row
+    // would otherwise show a description with nothing marked in it. "of" is left out — it is in
+    // every line, and the matching didn't require it either.
+    expect(hit.explains?.query).toBe('satipatthana establishment mindfulness');
   });
 });

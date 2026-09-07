@@ -213,6 +213,12 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
         <div className="sc flex-1 overflow-y-auto touch-pan-y" aria-busy={updating}>
           {displayHits.map((h, i) => {
             const { chips, hlCount, hlColors } = rowMeta.get(h.id) ?? { chips: [], hlCount: 0, hlColors: [] };
+            const note = notes[h.id];
+            // The line that carried the query leads the quote from the sutta — see ListPane.
+            const explains = h.explains;
+            const showNote = !!note && (explains?.line === 'note' || (!h.snippet && explains?.line !== 'blurb'));
+            const showBlurb = !showNote && !!h.sutta.blurb && (explains?.line === 'blurb' || !h.snippet);
+            const lineQuery = (line: 'note' | 'blurb') => (explains?.line === line ? explains.query : query);
             return (
               <button
                 key={h.id}
@@ -241,7 +247,23 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
                 <span className="font-serif text-ui-base italic" style={{ color: theme.pali }}>
                   <MatchedText text={h.sutta.pali} query={query} theme={theme} />
                 </span>
-                {h.snippet ? (
+                {showNote && (
+                  // An em dash rather than a quote rule marks this as the reader's own note.
+                  <span className="flex gap-[7px] text-ui-base leading-[1.45] mt-[3px]" style={{ color: theme.dim }}>
+                    <span aria-hidden className="flex-none">
+                      —
+                    </span>
+                    <span className="whitespace-pre-wrap">
+                      <MatchedText text={note} query={lineQuery('note')} theme={theme} notation />
+                    </span>
+                  </span>
+                )}
+                {showBlurb && (
+                  <span className="text-ui-base leading-[1.45] mt-[3px] italic" style={{ color: theme.dim }}>
+                    <MatchedText text={h.sutta.blurb} query={lineQuery('blurb')} theme={theme} />
+                  </span>
+                )}
+                {h.snippet && (
                   // Quoted from the sutta: a left rule, which is what marks the sutta's own words
                   // apart from anything written about it.
                   <span
@@ -259,22 +281,6 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
                       </span>
                     )}
                   </span>
-                ) : notes[h.id] ? (
-                  // An em dash rather than a quote rule marks this as the reader's own note.
-                  <span className="flex gap-[7px] text-ui-base leading-[1.45] mt-[3px]" style={{ color: theme.dim }}>
-                    <span aria-hidden className="flex-none">
-                      —
-                    </span>
-                    <span className="whitespace-pre-wrap">
-                      <MatchedText text={notes[h.id]} query={query} theme={theme} notation />
-                    </span>
-                  </span>
-                ) : (
-                  h.sutta.blurb && (
-                    <span className="text-ui-base leading-[1.45] mt-[3px] italic" style={{ color: theme.dim }}>
-                      <MatchedText text={h.sutta.blurb} query={query} theme={theme} />
-                    </span>
-                  )
                 )}
                 <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} theme={theme} />
               </button>

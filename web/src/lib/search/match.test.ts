@@ -40,6 +40,16 @@ describe('matchRuns', () => {
     expect(marks('It is so', 'is')).toEqual(['is']);
   });
 
+  it('marks the plural of a typed singular, whole rather than up to its ending', () => {
+    // Search matches it with an optional plural, so the row marks it the same way — not
+    // "establishment" with the "s" left outside the highlight.
+    expect(marks('the establishments of mindfulness', 'establishment')).toEqual(['establishments']);
+    expect(marks('the noble truths', 'noble truth')).toEqual(['noble truths']);
+    expect(marks('the boxes', 'box')).toEqual(['boxes']);
+    // Only where the ending finishes the word: this "s" opens "sutta".
+    expect(marks('Satipaṭṭhānasutta', 'satipatthana')).toEqual(['Satipaṭṭhāna']);
+  });
+
   it('marks every occurrence, not just the first', () => {
     expect(marks('Mind over mind', 'mind')).toEqual(['Mind', 'mind']);
   });

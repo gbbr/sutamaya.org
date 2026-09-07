@@ -18,7 +18,14 @@
 // Everything here is a pure function over a TextIndex. The blobs live in a Web Worker
 // (lib/search/worker.ts) and lib/search/textClient.ts is what the app talks to; this module holds no
 // state and never learns which side of the message boundary it is running on.
-import { searchCorpus, searchKey, SEARCH_RESULTS_CAP, SEARCH_SCOPE_NOTE, type SearchHit } from './metadata';
+import {
+  contentWords,
+  searchCorpus,
+  searchKey,
+  SEARCH_RESULTS_CAP,
+  SEARCH_SCOPE_NOTE,
+  type SearchHit,
+} from './metadata';
 import { expandQuery } from './expansion';
 import type { Corpus, HighlightsMap, ListDef } from '../types';
 
@@ -81,23 +88,6 @@ function englishWordRe(word: string): RegExp {
 
 function englishPhraseRe(words: string[]): RegExp {
   return new RegExp(`${BEFORE}${words.map(englishBody).join('\\s+')}${AFTER}`, 'giu');
-}
-
-// English function words, dropped from a query's required words and from its occurrence count.
-// "not" and "no" are deliberately absent — they are the whole of "not-self".
-const STOPWORDS = new Set([
-  'a', 'an', 'and', 'are', 'as', 'at', 'be', 'been', 'but', 'by', 'for', 'from', 'had', 'has',
-  'have', 'he', 'her', 'him', 'his', 'i', 'in', 'into', 'is', 'it', 'its', 'me', 'my', 'of', 'on',
-  'or', 'our', 'she', 'that', 'the', 'their', 'them', 'then', 'there', 'these', 'they', 'this',
-  'those', 'to', 'was', 'we', 'were', 'what', 'when', 'which', 'who', 'whom', 'will', 'with',
-  'you', 'your',
-]);
-
-// The words of `words` a sutta must carry, and whose occurrences order it — the whole query when
-// it holds nothing but function words, so `the` still searches for "the".
-function contentWords(words: string[]): string[] {
-  const kept = words.filter((w) => !STOPWORDS.has(w));
-  return kept.length ? kept : words;
 }
 
 // Shortest prefix that may match Pali as a prefix. Below it a query is too broad to be useful —
@@ -487,6 +477,17 @@ function variantsOf(query: string, q: string): string[] {
   return [query, ...expandQuery(q)];
 }
 
+// A hit whose explaining line was found by an expansion rather than by what was typed, marked with
+// both — the rule `snippetOf` already follows, so a row reading "the establishment of mindfulness"
+// shows why `satipatthana` reached it rather than a line with nothing marked in it. The expansion's
+// function words are dropped: they are in every line, and matching didn't require them either.
+function markedWith(hit: SearchHit, typed: string): SearchHit {
+  const found = hit.explains?.query;
+  if (!found || found === typed) return hit;
+  const query = `${typed} ${contentWords(found.split(/\s+/)).join(' ')}`;
+  return { ...hit, explains: { line: hit.explains!.line, query } };
+}
+
 // The metadata hits for `query` and its expansions, each sutta keeping its best bucket, ordered as
 // searchCorpus orders one query's own hits. Sorted here rather than left to the merge, because this
 // is the whole result until the sutta text answers, and where it never does.
@@ -503,7 +504,7 @@ export function searchCorpusVariants(
   for (const variant of variantsOf(query, q)) {
     for (const hit of searchCorpus(corpus, variant, notes, lists, highlights)) {
       const prev = best.get(hit.id);
-      if (!prev || hit.rank < prev.rank) best.set(hit.id, hit);
+      if (!prev || hit.rank < prev.rank) best.set(hit.id, markedWith(hit, q));
     }
   }
   return [...best.values()].sort((a, b) => a.rank - b.rank || Number(b.saved) - Number(a.saved));

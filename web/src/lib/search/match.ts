@@ -32,6 +32,20 @@ function forms(word: string): string[] {
   return word.length >= 4 && word.endsWith('s') ? [word, word.slice(0, -1)] : [word];
 }
 
+const LETTER = /\p{L}/u;
+
+// The other half of that stemming: matching adds an optional `(?:s|es)?` to every English word, so
+// a typed singular finds "the noble truths" — and the mark has to cover the ending rather than stop
+// short of it. Only where the ending finishes the word, a mark being a plain substring: without that
+// test "satipatthana" would take the "s" of "satipaṭṭhānasutta" with it.
+function throughPlural(key: string, end: number): number {
+  for (const suffix of ['es', 's']) {
+    const after = end + suffix.length;
+    if (key.startsWith(suffix, end) && !LETTER.test(key[after] ?? '')) return after;
+  }
+  return end;
+}
+
 // Splits `text` into runs, marking every occurrence of every word in `query`, separately and
 // anywhere, as search matched them. One unmarked run where there is nothing to mark — no query, or
 // a field holding none of the words, a hit being able to match on its blurb alone.
@@ -41,7 +55,9 @@ export function matchRuns(text: string, query: string): TextRun[] {
   const { key, map } = fold(text);
   const found: Array<[number, number]> = [];
   for (const w of words.flatMap(forms)) {
-    for (let i = key.indexOf(w); i !== -1; i = key.indexOf(w, i + w.length)) found.push([i, i + w.length]);
+    for (let i = key.indexOf(w); i !== -1; i = key.indexOf(w, i + w.length)) {
+      found.push([i, throughPlural(key, i + w.length)]);
+    }
   }
   if (!found.length) return [{ text, hit: false }];
   // Overlapping matches, abutting ones, and ones separated only by the space between two words all
