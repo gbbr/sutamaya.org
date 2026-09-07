@@ -3,6 +3,7 @@ import { registerSW } from 'virtual:pwa-register';
 import App from './App';
 import { loadUiPrefs, applyUiScale, applyTheme } from './lib/uiPrefs';
 import { watchTextSearchIdle } from './lib/search/textClient';
+import { loadAnalytics } from './lib/analytics';
 // Side-effect import: binds window.__dangerWipeLocal, the console-only reset to a cold, signed-out
 // first run. See lib/localWipe.ts.
 import './lib/localWipe';
@@ -24,6 +25,11 @@ registerSW();
 // Releases the search text after the app has been out of sight for a while — see docs/search.md's
 // "What it costs the device".
 watchTextSearchIdle();
+
+// Cloudflare Web Analytics, injected once the load event is behind us. Deliberately not a <script>
+// in index.html: it is the only thing on the startup path the precache doesn't serve, and a lossy
+// network stalled the whole launch behind it. See lib/analytics.ts.
+loadAnalytics();
 
 // Forces iPad Safari to recompute its viewport on return from the background, where it collapses
 // its tab bar without telling the page and leaves `dvh` resolving ~95px short. Only a
