@@ -221,41 +221,6 @@ describe('SegmentedText — overlapping highlights', () => {
   });
 });
 
-// A segment SuttaCentral left with no English at all — an elided repetition, an untranslated
-// uddāna verse — has no visible line to tap, so its Pali is never the reader's to open. Rendering
-// it put Pali on screen that the reader had not asked for and could not have asked for.
-describe('SegmentedText — segments with no English', () => {
-  const segments: SegmentFile[] = [
-    { key: 'sn35.33:1.1', pali: 'Sāvatthinidānaṁ.', en: 'At Sāvatthī.' },
-    { key: 'sn35.33:1.2', pali: 'Tatra kho …pe…', en: '' },
-  ];
-
-  it('renders no Pali for one whose reveal has been opened', () => {
-    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: { 0: true, 1: true } })} />);
-    const words = [...container.querySelectorAll('.pw')].map((el) => el.textContent);
-    expect(words).toEqual(['Sāvatthinidānaṁ.']);
-  });
-
-  it('renders no Pali for one under "show all Pali" either', () => {
-    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {}, allPali: true })} />);
-    const words = [...container.querySelectorAll('.pw')].map((el) => el.textContent);
-    expect(words).toEqual(['Sāvatthinidānaṁ.']);
-  });
-});
-
-// An untranslated closing colophon ("Dasamaṁ.") stands in the English column as its own Pali, and
-// renders as tappable words in place. Opening a reveal under it would print the same line twice.
-describe('SegmentedText — untranslated colophon', () => {
-  const segments: SegmentFile[] = [{ key: 'sn35.42:1.3', pali: 'Dasamaṁ.', en: 'Dasamaṁ.', role: 'end' }];
-
-  it('renders its Pali once, with no reveal beneath it, even when it carries a highlight', () => {
-    const highlights: Highlight[] = [{ id: 'h1', i0: 0, o0: 0, i1: 0, o1: 4, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' }];
-    const { container } = render(<SegmentedText {...baseProps(segments, { highlights })} />);
-    expect(container.querySelector('[data-reveal="pali"]')).toBeNull();
-    expect([...container.querySelectorAll('.pw')].map((el) => el.textContent)).toEqual(['Dasamaṁ.']);
-  });
-});
-
 // A translated closing line ("The Middle Discourses are complete.", MN152's last segment) is
 // centred; its Pali reveal has to follow, or the same line reads half centred and half flush left.
 describe('SegmentedText — the reveal under a closing line', () => {
@@ -324,19 +289,6 @@ describe('SegmentedText — Pali above the English', () => {
     const pali = container.querySelector('[data-reveal="pali"]') as HTMLElement;
     expect(en.style.fontSize).toBe('18px');
     expect(pali.style.fontSize).toBe('18px');
-  });
-
-  // An untranslated colophon stands in the English column as its own Pali — the line itself, not a
-  // gloss on anything, and with no second line to lead — so the setting must not touch its size.
-  // Asserted against the same segment rendered without it, since a colophon's `end` role steps its
-  // own size down for reasons of its own.
-  it('leaves an untranslated colophon exactly as it renders without the setting', () => {
-    const colophon: SegmentFile[] = [{ key: 'sn35.42:1.3', pali: 'Dasamaṁ.', en: 'Dasamaṁ.', role: 'end' }];
-    const sizeOf = (paliAbove: boolean) => {
-      const { container } = render(<SegmentedText {...baseProps(colophon, { openSegs: {}, allPali: true, paliAbove })} />);
-      return (container.querySelector('[data-seg]') as HTMLElement).style.fontSize;
-    };
-    expect(sizeOf(true)).toBe(sizeOf(false));
   });
 });
 

@@ -3,7 +3,7 @@ import { splitPaliWords, stripPunct, findAdjacentWord } from '../lib/dictionary'
 import { lookupHeadword, peekHeadword, prefetchHeadwordShard } from '../lib/dictionaryShards';
 import { animateScrollBy, computeSegmentScrollOffset } from '../lib/segmentScroll';
 import { getUiScale } from '../lib/uiPrefs';
-import { isUntranslated, type SegmentFile } from '../lib/corpus';
+import type { SegmentFile } from '../lib/corpus';
 
 interface DictState {
   word: string;
@@ -110,10 +110,9 @@ export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegm
     if (dict) runLookup(dict.word, dict.segIndex, dict.wordIndex);
   }, [dict, runLookup]);
 
-  // Every segment's Pali words, in the order SegmentedText renders them. An untranslated segment
-  // renders no Pali, so it contributes none and the prev/next walk steps over it.
+  // Every segment's Pali words, in the order SegmentedText renders them.
   const segWords = useMemo(
-    () => (segments ? segments.map((s) => (isUntranslated(s) ? [] : splitPaliWords(s.pali))) : []),
+    () => (segments ? segments.map((s) => splitPaliWords(s.pali)) : []),
     [segments]
   );
 
