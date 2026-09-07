@@ -58,7 +58,10 @@ test('a refresh resumes the reading, even as notes and highlights land after the
   await expect(page.locator('[data-seg="1"] [data-hl-id]')).toBeVisible();
   await waitForLocalWrites(page);
 
-  const marker = page.locator('[data-seg="40"]');
+  // A multi-line paragraph, deliberately: the drift below is measured in lines, so a marker one or
+  // two lines tall can be carried clear off the edge by a correct restore and would be testing the
+  // segment's height rather than the position.
+  const marker = page.locator('[data-seg="43"]');
   await marker.evaluate((el) => el.scrollIntoView({ block: 'center' }));
 
   // The reader really is scrolled: the first segment is above the top edge. Without this the
@@ -69,9 +72,10 @@ test('a refresh resumes the reading, even as notes and highlights land after the
   await expect(page.locator('[data-seg="1"]')).toBeVisible();
 
   // Back at the reading position rather than at the top or the bottom — which is the promise, and
-  // all of it. What is stored is a scroll *offset*, so when the annotations render after the
-  // restore (a slower device, a colder cache) the text above the position grows and the same offset
-  // shows text a line or two earlier. Demanding the exact pixel would be asserting the speed of
+  // all of it. What is stored is a scroll *offset*, so the text above the position is whatever has
+  // rendered by the time the restore runs: the annotations landing after it (a slower device, a
+  // colder cache) leave less above than there was when the offset was saved, and the same offset
+  // then shows text a line or two later. Demanding the exact pixel would be asserting the speed of
   // IndexedDB, not the behaviour.
   await expect(marker).toBeInViewport();
 });
