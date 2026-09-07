@@ -282,7 +282,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
                     )}
                   </span>
                 )}
-                <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} theme={theme} />
+                <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} theme={theme} query={query} />
               </button>
             );
           })}

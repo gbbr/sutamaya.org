@@ -3,6 +3,7 @@ import { Plus } from 'lucide-react';
 import type { SuttaRowChip } from '../lib/lists';
 import type { ThemeColors } from '../lib/types';
 import { HighlightCountBadge } from './HighlightCountBadge';
+import { MatchedText } from './MatchedText';
 
 interface SuttaRowChipsProps {
   chips: SuttaRowChip[];
@@ -22,11 +23,14 @@ interface SuttaRowChipsProps {
   // Adds the "add to list" control after the chips. Passing it also renders the row for a sutta
   // with neither chips nor highlights, the control having to be reachable before there are any.
   onAddToList?: (e: React.MouseEvent) => void;
+  // The live search query, passed by the three search surfaces and by nothing else. A chip whose
+  // name carries it is why the row is there, so it marks its words as every other field does.
+  query?: string;
 }
 
 // One sutta's list-membership chips and highlight badge, shared by the Library's rows, both search
 // surfaces and the reader's sutta header, so all four stay identical.
-export function SuttaRowChips({ chips, hlCount, hlColors, theme, fs, onChipClick, onHighlightClick, onAddToList }: SuttaRowChipsProps) {
+export function SuttaRowChips({ chips, hlCount, hlColors, theme, fs, onChipClick, onHighlightClick, onAddToList, query = '' }: SuttaRowChipsProps) {
   if (chips.length === 0 && hlCount === 0 && !onAddToList) return null;
   const ChipTag = onChipClick ? 'button' : 'span';
   const fontSize = fs ? fs - 7 : 14;
@@ -81,7 +85,7 @@ export function SuttaRowChips({ chips, hlCount, hlColors, theme, fs, onChipClick
               }`}
               style={theme ? { background: theme.tint } : undefined}
             >
-              {c.parent}
+              <MatchedText text={c.parent} query={query} theme={theme} />
             </span>
           )}
           {/* The parent segment's own cap is the only fill on the seam — the label segment has
@@ -105,7 +109,7 @@ export function SuttaRowChips({ chips, hlCount, hlColors, theme, fs, onChipClick
               !c.parent && theme ? { background: `color-mix(in srgb, ${theme.tint} 50%, transparent)` } : undefined
             }
           >
-            {c.label}
+            <MatchedText text={c.label} query={query} theme={theme} />
           </span>
         </ChipTag>
       ))}

@@ -554,7 +554,7 @@ export function ListPane({
                     )}
                   </span>
                 )}
-                <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} />
+                <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} query={rowQuery} />
               </button>
               {/* Opens the list-membership picker for this sutta. Hidden while reordering, so the
                   grip has the gutter to itself, and held at the top corner of the row, its `top`

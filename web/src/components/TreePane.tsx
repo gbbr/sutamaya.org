@@ -827,7 +827,7 @@ export function TreePane({
                           )}
                         </span>
                       )}
-                      <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} />
+                      <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} query={query} />
                     </button>
                   );
                 })}
