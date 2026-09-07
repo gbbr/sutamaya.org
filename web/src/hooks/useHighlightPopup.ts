@@ -2,15 +2,17 @@ import { useCallback, useEffect, useState } from 'react';
 import { useUserData } from '../context/UserDataContext';
 import { useLatest } from './useLatest';
 import { spansOverlap, type HlSpan } from '../lib/highlights';
+import type { SegmentFile } from '../lib/corpus';
 import type { Highlight } from '../lib/types';
 
 // The colour popup over a selection or an existing highlight.
 //
-// A selection's two ends are resolved to character offsets into the segments' stored `en` text —
-// the same coordinates highlights are stored and painted in — by measuring a Range against each
-// segment and discounting the rendered text that isn't part of `en` (IGNORED_TEXT below). A
-// cross-segment selection keeps only its two endpoints, everything between being covered by
-// definition. Picking a colour writes through UserDataContext to the offline mirror.
+// A selection's two ends are resolved to a segment key and a character offset into that segment's
+// stored `en` text — the same coordinates highlights are stored and painted in — by measuring a
+// Range against each segment and discounting the rendered text that isn't part of `en`
+// (IGNORED_TEXT below). A cross-segment selection keeps only its two endpoints, everything between
+// being covered by definition. Picking a colour writes through UserDataContext to the offline
+// mirror.
 export interface PopState {
   span: HlSpan;
   x: number;
@@ -62,7 +64,7 @@ function offsetWithin(seg: HTMLElement, container: Node, containerOffset: number
 
 // Returns the popup state for a live selection, or null when it isn't one the reader can act on:
 // an end outside the rendered segments, or offsets resolving to an empty span.
-function popFromSelection(sel: Selection, highlights: Highlight[]): PopState | null {
+function popFromSelection(sel: Selection, highlights: Highlight[], segments: SegmentFile[]): PopState | null {
   const range = sel.getRangeAt(0);
   const a = closestSeg(range.startContainer);
   const b = closestSeg(range.endContainer);
@@ -83,8 +85,9 @@ function popFromSelection(sel: Selection, highlights: Highlight[]): PopState | n
     // `user-select: none` run lands in `String(sel)` varies by browser.
     const en = offsetWithin(a, range.endContainer, range.endOffset);
     if (en <= st) return null;
-    const i = Number(a.dataset.seg);
-    const span = { i0: i, o0: st, i1: i, o1: en };
+    const key = segments[Number(a.dataset.seg)]?.key;
+    if (!key) return null;
+    const span = { k0: key, o0: st, k1: key, o1: en };
     const cur = highlights.find((h) => spansOverlap(h, span));
     return { span, x: anchorX, top: box.top, bottom: box.bottom, on: cur ? cur.c : null };
   }
@@ -97,10 +100,13 @@ function popFromSelection(sel: Selection, highlights: Highlight[]): PopState | n
   const startIdx = allSegs.indexOf(a);
   const endIdx = allSegs.indexOf(b);
   if (startIdx === -1 || endIdx === -1 || endIdx <= startIdx) return null;
+  const k0 = segments[Number(a.dataset.seg)]?.key;
+  const k1 = segments[Number(b.dataset.seg)]?.key;
+  if (!k0 || !k1) return null;
   const span = {
-    i0: Number(a.dataset.seg),
+    k0,
     o0: offsetWithin(a, range.startContainer, range.startOffset),
-    i1: Number(b.dataset.seg),
+    k1,
     o1: offsetWithin(b, range.endContainer, range.endOffset),
   };
 
@@ -109,11 +115,11 @@ function popFromSelection(sel: Selection, highlights: Highlight[]): PopState | n
   return { span, x: anchorX, top: box.top, bottom: box.bottom, on: null };
 }
 
-export function useHighlightPopup(suttaId: string | undefined, highlights: Highlight[]) {
+export function useHighlightPopup(suttaId: string | undefined, highlights: Highlight[], segments: SegmentFile[] | null) {
   const { setHighlightSpan } = useUserData();
   const [pop, setPop] = useState<PopState | null>(null);
 
-  // Closes the popup on a sutta change: its span indexes into the sutta it was opened in.
+  // Closes the popup on a sutta change: its span names segments of the sutta it was opened in.
   useEffect(() => {
     setPop(null);
   }, [suttaId]);
@@ -124,8 +130,8 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
     (highlightId: string, rect: DOMRect, on: string | null) => {
       const hit = highlights.find((h) => h.id === highlightId);
       if (!hit) return;
-      const { i0, o0, i1, o1 } = hit;
-      setPop({ span: { i0, o0, i1, o1 }, x: rect.left + rect.width / 2, top: rect.top, bottom: rect.bottom, on });
+      const { k0, o0, k1, o1 } = hit;
+      setPop({ span: { k0, o0, k1, o1 }, x: rect.left + rect.width / 2, top: rect.top, bottom: rect.bottom, on });
     },
     [highlights]
   );
@@ -137,23 +143,24 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
         setPop((p) => (p && !p.on ? null : p));
         return;
       }
-      const next = popFromSelection(sel, highlights);
+      if (!segments) return;
+      const next = popFromSelection(sel, highlights, segments);
       if (next) setPop(next);
     }, 0);
-  }, [highlights]);
+  }, [highlights, segments]);
 
   // Follows a selection extended by Firefox on Android's own handles, which fire nothing but
   // `selectionchange`. Only refreshes an open popup, and only while no pointer is down, so every
   // other browser goes on committing at `mouseup`/`touchend`.
-  const latest = useLatest({ highlights, open: pop !== null });
+  const latest = useLatest({ highlights, segments, open: pop !== null });
   useEffect(() => {
     let down = false;
     const refresh = () => {
-      const { highlights: hl, open } = latest.current;
-      if (!open || down) return;
+      const { highlights: hl, segments: segs, open } = latest.current;
+      if (!open || down || !segs) return;
       const sel = window.getSelection();
       if (!sel || sel.isCollapsed || !String(sel).trim()) return;
-      const next = popFromSelection(sel, hl);
+      const next = popFromSelection(sel, hl, segs);
       if (next) setPop(next);
     };
     const onDown = () => {

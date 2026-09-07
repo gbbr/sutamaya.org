@@ -167,7 +167,7 @@ describe('deriveUserData agrees with the worker’s assembleUserData', () => {
       highlights: {
         g1: {
           dirty: false,
-          data: { g: 'g1', suttaId: 'sn1.1', span: { i0: 0, o0: 0, i1: 0, o1: 4 }, color: 'yellow', erase: [], mtime: '2025-01-03T00:00:00.000Z|d', sent: true },
+          data: { g: 'g1', suttaId: 'sn1.1', span: { k0: 'sn1.1:1.1', o0: 0, k1: 'sn1.1:1.1', o1: 4 }, color: 'yellow', erase: [], mtime: '2025-01-03T00:00:00.000Z|d', sent: true },
         },
       },
       visited: {

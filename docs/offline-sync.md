@@ -134,8 +134,8 @@ lose the idempotence the scheme rests on.
 
 ### Endpoints, not one row per segment
 
-One row holds the whole highlight: the half-open span from `(i0, o0)` to `(i1, o1)`, where `i` is a
-segment index and `o` a character offset into that segment's English text. Everything between the two
+One row holds the whole highlight: the half-open span from `(k0, o0)` to `(k1, o1)`, where `k` is a
+segment key and `o` a character offset into that segment's English text. Everything between the two
 ends is covered by definition, and `highlightRanges` resolves that into per-segment ranges at render
 time, against the text the device currently holds.
 
@@ -144,21 +144,43 @@ length *at the time of highlighting*, so when SuttaCentral reworded the segment 
 that line went unhighlighted — a gap in the middle of a highlight. Upstream rewords on the order of
 20,000 segments every couple of years, touching most suttas, so it recurs.
 
+### Keys, not positions
+
+`k` is SuttaCentral's own segment id (`mn10:2.7`), not the segment's position in the document. A
+position addresses a different line the moment the corpus gains or loses one, and the corpus does:
+dropping the untranslated Pali moved 38% of the canon's segments and took every highlight past the
+first dropped line in 1,032 suttas with it, silently. A key addresses the line itself.
+
+Upstream keys are effectively immutable — across three years of bilara-data, one key was removed
+from the whole Pali canon and none from Sujato's English, against thousands added. What does remove
+one is this app's own editorial layer dropping a line from the build.
+
+**Document order is read from the keys alone**, by `compareSegmentKeys`
+(`web/src/lib/segmentKeys.ts`), comparing digit runs as numbers so `1.10` follows `1.2`. That is
+what lets the mirror decide what a new selection overlaps while holding no sutta text — the whole
+of `displacedIds` and the panel's ordering rest on it. `build-corpus.mjs` asserts every document it
+emits is in that order, against `scripts/lib/segmentKeys.js`, its own copy of the comparator.
+
 What still drifts: the two endpoint segments carry offsets a rewording moves, so a highlight's first
 and last few characters can shift. That is accepted — there is no text anchoring and no fuzzy
-re-anchoring. Both ends are also **clamped** to what exists, since a device can hold an older,
-shorter copy of a sutta than the one the highlight was made against (text files revalidate in the
-background): an end anchor past the last segment stops at the last segment, an offset past a
-segment's length stops at its end, and a start anchor past the end of the document paints nothing.
+re-anchoring. Offsets are **clamped** to the segment's current length. A span naming a segment the
+loaded text has no key for resolves to nothing and **paints nothing** — it is kept in the account,
+deleted by nothing, and paints again on a copy of the text that has the segment. `useSuttaReading`
+filters those out of the panel and the gutter too, so a row can't offer a jump that goes nowhere.
 
-A `highlight` write inserts under `INSERT OR IGNORE` on the primary key `(user_id, id)` — so
-re-sending one (a flush retried after a lost response) lands on the same row rather than duplicating
-the highlight — and tombstones the displaced ones in the same `db.batch()`, tombstones first. The key
-leads with `user_id`, so one account's ids can never reach another's rows.
+A `highlight` write inserts with `ON CONFLICT (user_id, id) DO NOTHING` — so re-sending one (a flush
+retried after a lost response) lands on the same row rather than duplicating the highlight — and
+tombstones the displaced ones in the same `db.batch()`, tombstones first. The key leads with
+`user_id`, so one account's ids can never reach another's rows. `DO NOTHING` names that one conflict
+rather than `OR IGNORE`, which would also swallow a constraint failure and report a write that never
+landed as a success.
 
-A mirror written by a build that stored per-segment ranges is collapsed to endpoints on the way out
-of IndexedDB (`upgradeStoredMirror`, called by `loadMirror`). It has no removal date: a reader who
-has never signed in has no server copy to re-pull, so that mirror is their only one.
+A mirror holding either older shape — per-segment ranges, or endpoints as positions — is re-anchored
+onto keys by `anchorHighlights` (`lib/mirror.ts`) as each sutta's text loads, that text being what
+the conversion needs. It has no removal date: a reader who has never signed in has no server copy to
+re-pull, so that mirror is their only one. Stored rows are converted by
+`scripts/anchor-highlights.mjs`, which reads the positions before migration 0005 and writes the keys
+after it.
 
 ### Overlaps
 
@@ -191,7 +213,7 @@ the network; every mutator is a pure state transition that marks what it touched
 | `lib/mirror.ts` | The `MirrorState` — `lists`/`notes`/`highlights`/`visited` records plus an `ops` queue — namespaced by `userId`, and every mutator over it |
 | `lib/mirrorView.ts` | Derives what the UI renders, including the three auto-lists. A port of the worker's `assembleUserData` |
 | `lib/listTree.ts` | Read-time tree repair. A port of the worker's `repairListTree` |
-| `lib/mirrorDb.ts` | Persists the whole mirror as one IndexedDB value per user id, versioned by `DB_VERSION`; runs `upgradeStoredMirror` on the way out |
+| `lib/mirrorDb.ts` | Persists the whole mirror as one IndexedDB value per user id, versioned by `DB_VERSION` |
 | `lib/sync.ts` | The flush |
 | `lib/mtime.ts` | `nextMtime()` |
 | `lib/lastUser.ts` | Who was signed in, in `localStorage` |
@@ -401,6 +423,8 @@ ALTER TABLE highlights ADD COLUMN deleted INTEGER NOT NULL DEFAULT 0;
 `worker/migrations/0004_highlight_endpoints.sql` then rebuilds `highlights` as one row per highlight
 — `(i0, o0, i1, o1)` in place of `(i, s, e)`, the client-minted id as the row id, and
 `PRIMARY KEY (user_id, id)` doing the job the old `(user_id, g, i)` unique index did.
+`0005_highlight_segment_keys.sql` rebuilds it once more, `(k0, o0, k1, o1)` replacing the positions
+— see "Keys, not positions".
 
 `''` sorts below every real timestamp, so an un-backfilled row always loses a merge rather than
 winning by accident; the migration backfills from each table's existing timestamp column anyway. The

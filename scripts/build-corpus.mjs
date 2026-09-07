@@ -13,6 +13,7 @@ import {
   headerTitle, buildBodySegments,
 } from './lib/collections.js';
 import { splitPaliWords, stripPunct, lookupWord, shardFor } from './lib/paliWords.js';
+import { compareSegmentKeys } from './lib/segmentKeys.js';
 import { red, green, bold, dim } from './lib/dataSync.js';
 
 // The build's output vocabulary: `step` heads a phase, `detail` reports its counts, `ok` marks a
@@ -228,6 +229,18 @@ function buildLeaf(uid, nodeId, collection) {
   const htmlMap = loadSegMap(htmlFiles.get(uid));
   const notesMap = loadSegMap(notesFiles.get(uid));
   const segs = buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap);
+  // A highlight is stored as the keys of the segments it starts and ends on, and the reader decides
+  // what a new selection overlaps by comparing those keys alone — it has no text loaded in the
+  // offline mirror, only the highlights. That only works while a document's keys ascend in the
+  // order it is read in, so the build refuses to emit one where they don't.
+  for (let i = 1; i < segs.length; i++) {
+    if (compareSegmentKeys(segs[i - 1].key, segs[i].key) >= 0) {
+      throw new Error(
+        `${uid}: segment keys are out of document order — ${segs[i - 1].key} is not before ${segs[i].key}.\n` +
+          'Highlights compare keys to decide what a selection overlaps (web/src/lib/segmentKeys.ts).'
+      );
+    }
+  }
   // The exact strings SegmentedText renders as tappable `.pw` spans.
   for (const seg of segs) {
     if (seg.pali) for (const word of splitPaliWords(seg.pali)) tappableWords.add(word);

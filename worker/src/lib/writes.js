@@ -257,10 +257,13 @@ async function setNote(db, userId, item) {
 }
 
 // Inserts one highlight — the span's two endpoints — and never updates it again: a recolour is a
-// tombstone plus a new row. OR IGNORE on (user_id, id) makes a re-push a no-op.
+// tombstone plus a new row. DO NOTHING on the primary key makes a re-push a no-op; it names that
+// conflict rather than using OR IGNORE, which would swallow every other constraint failure too and
+// report a write that never landed as a success.
 const INSERT_HIGHLIGHT_SQL = `
-  INSERT OR IGNORE INTO highlights (id, user_id, sutta_id, i0, o0, i1, o1, color, created_at, mtime)
+  INSERT INTO highlights (id, user_id, sutta_id, k0, o0, k1, o1, color, created_at, mtime)
   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  ON CONFLICT (user_id, id) DO NOTHING
 `;
 
 // Retires one highlight, conditional on mtime.
@@ -268,8 +271,8 @@ const TOMBSTONE_HIGHLIGHT_SQL = `
   UPDATE highlights SET deleted = 1, mtime = ?3 WHERE user_id = ?1 AND id = ?2 AND mtime < ?3
 `;
 
-// Applies one highlight gesture over `span` — from (i0, o0) up to but not including (i1, o1), in
-// segment indices and character offsets (web/src/lib/types.ts's Highlight) — as one batch.
+// Applies one highlight gesture over `span` — from (k0, o0) up to but not including (k1, o1), in
+// segment keys and character offsets (web/src/lib/types.ts's Highlight) — as one batch.
 //   g      – the id of the highlight to create; required unless this is an erase
 //   erase  – the ids this gesture displaces, tombstoned before the insert
 //   color  – null for a plain erase, where `span` only records what the user selected
@@ -278,8 +281,12 @@ const TOMBSTONE_HIGHLIGHT_SQL = `
 async function setHighlight(db, userId, item) {
   const { suttaId, span, color, g, erase } = item || {};
   if (!suttaId || !span) return { error: 'span_required', status: 400 };
-  const { i0, o0, i1, o1 } = span;
-  if (![i0, o0, i1, o1].every(Number.isInteger) || i0 < 0 || o0 < 0 || o1 < 0 || i1 < i0 || (i1 === i0 && o1 <= o0)) {
+  const { k0, o0, k1, o1 } = span;
+  // Which of two keys comes first in the document is a question only the corpus answers, and the
+  // server holds none of it — so the ordering checked here is the one that needs no corpus: within
+  // a single segment. The client owns the geometry either way (docs/offline-sync.md).
+  const keyed = typeof k0 === 'string' && k0 !== '' && typeof k1 === 'string' && k1 !== '';
+  if (!keyed || !Number.isInteger(o0) || !Number.isInteger(o1) || o0 < 0 || o1 < 0 || (k0 === k1 && o1 <= o0)) {
     return { error: 'invalid_span', status: 400 };
   }
   if (!Array.isArray(erase) || erase.some((id) => typeof id !== 'string' || !id)) {
@@ -291,7 +298,7 @@ async function setHighlight(db, userId, item) {
   const mtime = resolveMtime(item?.mtime);
   const statements = erase.map((id) => db.prepare(TOMBSTONE_HIGHLIGHT_SQL).bind(userId, id, mtime));
   if (color) {
-    statements.push(db.prepare(INSERT_HIGHLIGHT_SQL).bind(g, userId, suttaId, i0, o0, i1, o1, color, mtime, mtime));
+    statements.push(db.prepare(INSERT_HIGHLIGHT_SQL).bind(g, userId, suttaId, k0, o0, k1, o1, color, mtime, mtime));
   }
   // D1 rejects an empty batch, which an erase displacing nothing would produce.
   if (statements.length) await db.batch(statements);

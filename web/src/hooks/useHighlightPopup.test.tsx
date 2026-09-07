@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { act, renderHook } from '@testing-library/react';
 import { useHighlightPopup } from './useHighlightPopup';
+import type { SegmentFile } from '../lib/corpus';
 import type { Highlight } from '../lib/types';
 
 vi.mock('../context/UserDataContext', () => ({ useUserData: vi.fn() }));
@@ -12,6 +13,14 @@ function mockUserData() {
   const setHighlightSpan = vi.fn(async () => {});
   vi.mocked(useUserData).mockReturnValue({ setHighlightSpan } as unknown as ReturnType<typeof useUserData>);
   return { setHighlightSpan };
+}
+
+// The key of the segment at position `i`, which the hook reads off the loaded text to turn a
+// selection into a span.
+const key = (i: number) => `sn1.1:1.${i + 1}`;
+
+function segmentsFor(texts: string[]): SegmentFile[] {
+  return texts.map((en, i) => ({ key: key(i), pali: '', en }));
 }
 
 // Builds a `[data-segroot]` containing one `[data-seg]` paragraph per string, attached to
@@ -28,7 +37,7 @@ function buildSegRoot(texts: string[]) {
     return p;
   });
   document.body.appendChild(root);
-  return { root, segs };
+  return { root, segs, segments: segmentsFor(texts) };
 }
 
 function selectAcross(startEl: HTMLElement, startOffset: number, endEl: HTMLElement, endOffset: number) {
@@ -58,13 +67,13 @@ describe('useHighlightPopup', () => {
   describe('single-segment selection', () => {
     it('takes both ends of the span from the selection offsets within that segment', async () => {
       mockUserData();
-      const { segs } = buildSegRoot(['Hello world']);
-      const { result } = renderHook(() => useHighlightPopup('sn1.1', []));
+      const { segs, segments } = buildSegRoot(['Hello world']);
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', [], segments));
 
       selectAcross(segs[0], 0, segs[0], 5); // "Hello"
       await triggerTextUp(result.current.onTextUp);
 
-      expect(result.current.pop?.span).toEqual({ i0: 0, o0: 0, i1: 0, o1: 5 });
+      expect(result.current.pop?.span).toEqual({ k0: key(0), o0: 0, k1: key(0), o1: 5 });
       expect(result.current.pop?.on).toBeNull();
     });
 
@@ -89,7 +98,7 @@ describe('useHighlightPopup', () => {
       p.append(marker, body, note);
       root.appendChild(p);
       document.body.appendChild(root);
-      const { result } = renderHook(() => useHighlightPopup('sn1.1', []));
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', [], segmentsFor(['Hello world'])));
 
       const range = document.createRange();
       range.setStart(body, 0);
@@ -99,13 +108,13 @@ describe('useHighlightPopup', () => {
       sel?.addRange(range);
       await triggerTextUp(result.current.onTextUp);
 
-      expect(result.current.pop?.span).toEqual({ i0: 0, o0: 0, i1: 0, o1: 5 });
+      expect(result.current.pop?.span).toEqual({ k0: key(0), o0: 0, k1: key(0), o1: 5 });
     });
 
     it('collapses to null when the selection is empty', async () => {
       mockUserData();
-      const { segs } = buildSegRoot(['Hello world']);
-      const { result } = renderHook(() => useHighlightPopup('sn1.1', []));
+      const { segs, segments } = buildSegRoot(['Hello world']);
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', [], segments));
 
       selectAcross(segs[0], 3, segs[0], 3);
       await triggerTextUp(result.current.onTextUp);
@@ -115,9 +124,9 @@ describe('useHighlightPopup', () => {
 
     it('reports the existing highlight color when the selection lands inside one', async () => {
       mockUserData();
-      const { segs } = buildSegRoot(['Hello world']);
-      const highlights: Highlight[] = [{ id: 'h1', i0: 0, o0: 0, i1: 0, o1: 5, c: 'yellow', m: MTIME }];
-      const { result } = renderHook(() => useHighlightPopup('sn1.1', highlights));
+      const { segs, segments } = buildSegRoot(['Hello world']);
+      const highlights: Highlight[] = [{ id: 'h1', k0: key(0), o0: 0, k1: key(0), o1: 5, c: 'yellow', m: MTIME }];
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', highlights, segments));
 
       selectAcross(segs[0], 1, segs[0], 4); // inside the existing [0,5) highlight
       await triggerTextUp(result.current.onTextUp);
@@ -129,9 +138,9 @@ describe('useHighlightPopup', () => {
     // overlap can only be seen by comparing (segment, offset) pairs.
     it('reports the colour of a cross-segment highlight the selection lands in the middle of', async () => {
       mockUserData();
-      const { segs } = buildSegRoot(['Alpha', 'Beta', 'Gamma']);
-      const highlights: Highlight[] = [{ id: 'h1', i0: 0, o0: 2, i1: 2, o1: 3, c: 'blue', m: MTIME }];
-      const { result } = renderHook(() => useHighlightPopup('sn1.1', highlights));
+      const { segs, segments } = buildSegRoot(['Alpha', 'Beta', 'Gamma']);
+      const highlights: Highlight[] = [{ id: 'h1', k0: key(0), o0: 2, k1: key(2), o1: 3, c: 'blue', m: MTIME }];
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', highlights, segments));
 
       selectAcross(segs[1], 0, segs[1], 4);
       await triggerTextUp(result.current.onTextUp);
@@ -147,26 +156,26 @@ describe('useHighlightPopup', () => {
     // impossible to get wrong, and what leaves no stored length to go stale when the text changes.
     it('records the two ends and nothing about the segments between them', async () => {
       mockUserData();
-      const { segs } = buildSegRoot(['Alpha text', 'Beta text*', 'Gamma text']);
-      const { result } = renderHook(() => useHighlightPopup('sn1.1', []));
+      const { segs, segments } = buildSegRoot(['Alpha text', 'Beta text*', 'Gamma text']);
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', [], segments));
 
       selectAcross(segs[0], 6, segs[2], 5); // "text" of seg0 through "Gamma" of seg2
       await triggerTextUp(result.current.onTextUp);
 
-      expect(result.current.pop?.span).toEqual({ i0: 0, o0: 6, i1: 2, o1: 5 });
+      expect(result.current.pop?.span).toEqual({ k0: key(0), o0: 6, k1: key(2), o1: 5 });
     });
 
     it('records an edge-aligned end as offset 0 of the segment the selection reached', async () => {
       mockUserData();
-      const { segs } = buildSegRoot(['Alpha', 'Beta']);
-      const { result } = renderHook(() => useHighlightPopup('sn1.1', []));
+      const { segs, segments } = buildSegRoot(['Alpha', 'Beta']);
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', [], segments));
 
       selectAcross(segs[0], 0, segs[1], 0);
       await triggerTextUp(result.current.onTextUp);
 
       // Nothing of the second segment is covered — highlightRanges drops that empty tail when it
       // paints (see lib/highlights.ts).
-      expect(result.current.pop?.span).toEqual({ i0: 0, o0: 0, i1: 1, o1: 0 });
+      expect(result.current.pop?.span).toEqual({ k0: key(0), o0: 0, k1: key(1), o1: 0 });
     });
   });
 
@@ -174,21 +183,21 @@ describe('useHighlightPopup', () => {
     it('opens on the whole of a cross-segment highlight, from a click on any part of it', () => {
       mockUserData();
       const highlights: Highlight[] = [
-        { id: 'group-1', i0: 0, o0: 5, i1: 1, o1: 3, c: 'blue', m: MTIME },
-        { id: 'group-2', i0: 5, o0: 0, i1: 5, o1: 3, c: 'red', m: MTIME },
+        { id: 'group-1', k0: key(0), o0: 5, k1: key(1), o1: 3, c: 'blue', m: MTIME },
+        { id: 'group-2', k0: key(5), o0: 0, k1: key(5), o1: 3, c: 'red', m: MTIME },
       ];
-      const { result } = renderHook(() => useHighlightPopup('sn1.1', highlights));
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', highlights, segmentsFor([])));
 
       act(() => {
         result.current.openPop('group-1', new DOMRect(0, 0, 0, 0), 'blue');
       });
 
-      expect(result.current.pop?.span).toEqual({ i0: 0, o0: 5, i1: 1, o1: 3 });
+      expect(result.current.pop?.span).toEqual({ k0: key(0), o0: 5, k1: key(1), o1: 3 });
     });
 
     it('opens nothing for an id no longer among this sutta\'s highlights', () => {
       mockUserData();
-      const { result } = renderHook(() => useHighlightPopup('sn1.1', []));
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', [], segmentsFor([])));
 
       act(() => {
         result.current.openPop('gone', new DOMRect(0, 0, 0, 0), 'blue');
@@ -201,8 +210,8 @@ describe('useHighlightPopup', () => {
   describe('pick', () => {
     it('saves the current span and clears the popup', async () => {
       const { setHighlightSpan } = mockUserData();
-      const { segs } = buildSegRoot(['Hello world']);
-      const { result } = renderHook(() => useHighlightPopup('sn1.1', []));
+      const { segs, segments } = buildSegRoot(['Hello world']);
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', [], segments));
 
       selectAcross(segs[0], 0, segs[0], 5);
       await triggerTextUp(result.current.onTextUp);
@@ -211,7 +220,7 @@ describe('useHighlightPopup', () => {
         await result.current.pick('yellow');
       });
 
-      expect(setHighlightSpan).toHaveBeenCalledWith('sn1.1', { i0: 0, o0: 0, i1: 0, o1: 5 }, 'yellow');
+      expect(setHighlightSpan).toHaveBeenCalledWith('sn1.1', { k0: key(0), o0: 0, k1: key(0), o1: 5 }, 'yellow');
       expect(result.current.pop).toBeNull();
     });
   });

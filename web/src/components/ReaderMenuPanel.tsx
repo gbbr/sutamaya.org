@@ -1,11 +1,12 @@
-import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { Minus, Plus, Trash2, X } from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
 import { FS_MAX, FS_MIN, FS_STEP, LH_MAX, LH_MIN, LH_STEP, useReaderPrefs } from '../context/ReaderPrefsContext';
 import { NoteEditor } from './NoteEditor';
 import { ListMembershipPicker } from './ListMembershipPicker';
 import type { SegmentFile } from '../lib/corpus';
-import { highlightText } from '../lib/highlights';
+import { highlightStart, highlightText } from '../lib/highlights';
+import { segmentIndex } from '../lib/segmentKeys';
 import { KeyCap } from './ShortcutsModal';
 import { SHORTCUTS, SHOWS_KEY_HINTS } from '../lib/shortcuts';
 import { highlightPaint, READER_FACES } from '../lib/theme';
@@ -289,7 +290,11 @@ export function ReaderMenuPanel({
 
   // Erases a highlight, the same path HighlightPopup's "Remove" takes. No confirmation, matching
   // that popup; the trash sits in its own target, clear of the row's jump-to.
-  const removeHighlight = ({ i0, o0, i1, o1 }: Highlight) => setHighlightSpan(suttaId, { i0, o0, i1, o1 }, null);
+  const removeHighlight = ({ k0, o0, k1, o1 }: Highlight) => setHighlightSpan(suttaId, { k0, o0, k1, o1 }, null);
+
+  // One map for the whole list, each row otherwise rebuilding it for its preview and again for its
+  // jump target.
+  const segIndex = useMemo(() => (segments ? segmentIndex(segments) : null), [segments]);
 
   return (
     <>
@@ -350,8 +355,9 @@ export function ReaderMenuPanel({
             </div>
 
             {highlights.map((h, gi) => {
-              const text = highlightText(h, segments);
+              const text = highlightText(h, segments, segIndex ?? undefined);
               const preview = text.length > 120 ? `${text.slice(0, 120)}…` : text;
+              const start = segments && segIndex ? highlightStart(h, segments, segIndex) : null;
               return (
                 // The last row draws no rule, the setting below closing the list with its own.
                 <div
@@ -359,9 +365,12 @@ export function ReaderMenuPanel({
                   className="flex items-stretch gap-1"
                   style={gi === highlights.length - 1 ? undefined : { borderBottom: `1px solid ${theme.tint}` }}
                 >
-                  <button className="flex flex-1 min-w-0 gap-2.5 items-start py-2.5 text-left" onClick={() => onJumpToHighlight(h.i0, h.id)}>
+                  <button
+                    className="flex flex-1 min-w-0 gap-2.5 items-start py-2.5 text-left"
+                    onClick={() => start !== null && onJumpToHighlight(start, h.id)}
+                  >
                     <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: highlightPaint(h.c, theme) }} />
-                    <span className="flex-1 text-ui-sm leading-[1.45]">{preview || `Segment ${h.i0 + 1}`}</span>
+                    <span className="flex-1 text-ui-sm leading-[1.45]">{preview || 'Highlighted text'}</span>
                   </button>
                   {/* Always visible, this panel being used on touch, and faded so it reads as
                       secondary to the row's jump-to. */}

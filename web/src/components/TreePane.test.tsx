@@ -135,6 +135,7 @@ function mockUserData(overrides: Partial<ReturnType<typeof useUserData>> = {}): 
     addToList: vi.fn(async () => {}),
     submitNote: vi.fn(async () => {}),
     setHighlightSpan: vi.fn(async () => {}),
+    anchorHighlights: vi.fn(),
     markVisited: vi.fn(),
     ...overrides,
   };
@@ -937,7 +938,7 @@ describe('deferred sign-in', () => {
   });
 
   it('waits for a second highlight, counting a cross-segment one as one', () => {
-    const crossSegment = [{ id: 'g1', i0: 0, o0: 0, i1: 1, o1: 5, c: '#ff0', m: '1|d' }];
+    const crossSegment = [{ id: 'g1', k0: 'dn1:1.1', o0: 0, k1: 'dn1:1.2', o1: 5, c: '#ff0', m: '1|d' }];
     signedOut({ highlights: { dn1: crossSegment } });
     const { unmount } = renderHarness();
     expect(screen.queryByText(keepSafeText)).not.toBeInTheDocument();
@@ -946,7 +947,7 @@ describe('deferred sign-in', () => {
     signedOut({
       highlights: {
         dn1: crossSegment,
-        dn2: [{ id: 'g2', i0: 0, o0: 0, i1: 0, o1: 5, c: '#ff0', m: '2|d' }],
+        dn2: [{ id: 'g2', k0: 'dn2:1.1', o0: 0, k1: 'dn2:1.1', o1: 5, c: '#ff0', m: '2|d' }],
       },
     });
     renderHarness();

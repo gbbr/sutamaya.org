@@ -154,8 +154,8 @@ describe('SegmentedText — focusUid marks one inner sutta within a batched docu
 // arrive together — the reader is where the contest is settled, deterministically by (mtime, id).
 describe('SegmentedText — overlapping highlights', () => {
   const segments: SegmentFile[] = [{ key: 'dn1:1.1', pali: 'p', en: '0123456789abcde' }];
-  const older: Highlight = { id: 'h1', i0: 0, o0: 0, i1: 0, o1: 10, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' };
-  const newer: Highlight = { id: 'h2', i0: 0, o0: 5, i1: 0, o1: 15, c: '#a8d8f0', m: '2026-01-02T00:00:00.000Z|dev' };
+  const older: Highlight = { id: 'h1', k0: 'dn1:1.1', o0: 0, k1: 'dn1:1.1', o1: 10, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' };
+  const newer: Highlight = { id: 'h2', k0: 'dn1:1.1', o0: 5, k1: 'dn1:1.1', o1: 15, c: '#a8d8f0', m: '2026-01-02T00:00:00.000Z|dev' };
 
   function highlightSpans(container: HTMLElement) {
     return [...container.querySelectorAll<HTMLElement>('[data-hl-id]')].map((el) => [el.dataset.hlId, el.textContent]);
@@ -196,7 +196,7 @@ describe('SegmentedText — overlapping highlights', () => {
       { key: 'dn1:1.2', pali: 'p', en: 'a much longer middle line than before' },
       { key: 'dn1:1.3', pali: 'p', en: 'three four' },
     ];
-    const across: Highlight = { id: 'h9', i0: 0, o0: 4, i1: 2, o1: 5, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' };
+    const across: Highlight = { id: 'h9', k0: 'dn1:1.1', o0: 4, k1: 'dn1:1.3', o1: 5, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' };
     const { container } = render(<SegmentedText {...baseProps(threeSegments, { highlights: [across] })} />);
     expect(highlightSpans(container)).toEqual([
       ['h9', 'two'],
@@ -205,19 +205,26 @@ describe('SegmentedText — overlapping highlights', () => {
     ]);
   });
 
-  // A device holding an older, shorter copy of the sutta than the one the highlight was made
-  // against: the end anchor names a segment that isn't there.
-  it('stops at the last segment when the end anchor is past the end of the document', () => {
+  // A device holding a copy of the sutta without the segment an end names paints nothing for that
+  // highlight, rather than a guess at where it belongs. Nothing deletes it, so it paints again on
+  // the copy that has the segment.
+  it('paints nothing when an end names a segment the loaded text lacks', () => {
     const shorter: SegmentFile[] = [
       { key: 'dn1:1.1', pali: 'p', en: 'one two' },
       { key: 'dn1:1.2', pali: 'p', en: 'three four' },
     ];
-    const overrun: Highlight = { id: 'h9', i0: 0, o0: 4, i1: 6, o1: 2, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' };
+    const overrun: Highlight = { id: 'h9', k0: 'dn1:1.1', o0: 4, k1: 'dn1:1.6', o1: 2, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' };
     const { container } = render(<SegmentedText {...baseProps(shorter, { highlights: [overrun] })} />);
-    expect(highlightSpans(container)).toEqual([
-      ['h9', 'two'],
-      ['h9', 'three four'],
-    ]);
+    expect(highlightSpans(container)).toEqual([]);
+  });
+
+  // An offset past the end of a segment reworded shorter still clamps: the segment is there, only
+  // the text inside it moved.
+  it('clamps an offset to the length the segment now has', () => {
+    const segment: SegmentFile[] = [{ key: 'dn1:1.1', pali: 'p', en: 'one two' }];
+    const overrun: Highlight = { id: 'h9', k0: 'dn1:1.1', o0: 4, k1: 'dn1:1.1', o1: 99, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' };
+    const { container } = render(<SegmentedText {...baseProps(segment, { highlights: [overrun] })} />);
+    expect(highlightSpans(container)).toEqual([['h9', 'two']]);
   });
 });
 

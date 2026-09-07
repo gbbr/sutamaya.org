@@ -1,4 +1,4 @@
-import { emptyMirror, upgradeStoredMirror, type MirrorState } from './mirror';
+import { emptyMirror, type MirrorState } from './mirror';
 
 // Durable storage for the mirror: one account's whole mirror as a single IndexedDB record keyed by
 // user id, so an account switch can't read or overwrite the other's unsynced work. The dataset is
@@ -49,15 +49,16 @@ function transact<T>(db: IDBDatabase, mode: IDBTransactionMode, run: (store: IDB
 }
 
 // The account's mirror as last saved, or an empty one for a device that has never held it — which
-// a storage failure also yields, an empty mirror repopulating from the first pull. Everything
-// comes back through upgradeStoredMirror, this being the one door an older build's records enter
-// by.
+// a storage failure also yields, an empty mirror repopulating from the first pull. Records come
+// back as they were stored: a highlight anchored on segment positions is re-anchored when its
+// sutta's text loads (mirror.ts's anchorHighlights), that text being what the conversion needs and
+// nothing here has.
 export async function loadMirror(userId: string): Promise<MirrorState> {
   const db = await openDb();
-  if (!db) return upgradeStoredMirror(memory.get(userId) ?? emptyMirror(userId));
+  if (!db) return memory.get(userId) ?? emptyMirror(userId);
   try {
     const stored = await transact<MirrorState | undefined>(db, 'readonly', (store) => store.get(userId));
-    return upgradeStoredMirror(stored ?? emptyMirror(userId));
+    return stored ?? emptyMirror(userId);
   } catch {
     return emptyMirror(userId);
   }

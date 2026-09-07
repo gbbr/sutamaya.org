@@ -158,32 +158,37 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
   // works either out from live rows, since that is exactly what a replayed write gets wrong.
   const GROUP_A = { g: 'group-a', erase: [], mtime: '2026-01-01T00:00:00.000Z|a' };
 
+  // A span names the segments it starts and ends on. These tests read more clearly in positions, so
+  // a helper says which key each position belongs to.
+  const segKey = (i) => `sn1.1:1.${i + 1}`;
+  const span = (i0, o0, i1, o1) => ({ k0: segKey(i0), o0, k1: segKey(i1), o1 });
+
   it('writes a highlight inside one segment', async () => {
     const { userId, cookie } = await signIn();
-    const result = await highlight(cookie, { suttaId: 'sn1.1', color: 'yellow', span: { i0: 0, o0: 5, i1: 0, o1: 10 }, ...GROUP_A });
+    const result = await highlight(cookie, { suttaId: 'sn1.1', color: 'yellow', span: span(0, 5, 0, 10), ...GROUP_A });
     expect(result).toEqual(OK);
 
     const rows = await highlightsOf(userId, 'sn1.1');
     expect(rows).toHaveLength(1);
-    expect(rows[0]).toMatchObject({ id: 'group-a', sutta_id: 'sn1.1', i0: 0, o0: 5, i1: 0, o1: 10, color: 'yellow' });
+    expect(rows[0]).toMatchObject({ id: 'group-a', sutta_id: 'sn1.1', k0: segKey(0), o0: 5, k1: segKey(0), o1: 10, color: 'yellow' });
   });
 
   // However many segments it reaches across, a highlight is one row: only its two ends are stored,
   // so nothing about the segments between them is written down to go stale.
   it('writes a cross-segment highlight as a single row carrying both ends', async () => {
     const { userId, cookie } = await signIn();
-    await highlight(cookie, { suttaId: 'sn1.1', color: 'blue', ...GROUP_A, span: { i0: 0, o0: 5, i1: 4, o1: 3 } });
+    await highlight(cookie, { suttaId: 'sn1.1', color: 'blue', ...GROUP_A, span: span(0, 5, 4, 3) });
 
     const rows = await highlightsOf(userId, 'sn1.1');
     expect(rows).toHaveLength(1);
-    expect(rows[0]).toMatchObject({ id: 'group-a', i0: 0, o0: 5, i1: 4, o1: 3 });
+    expect(rows[0]).toMatchObject({ id: 'group-a', k0: segKey(0), o0: 5, k1: segKey(4), o1: 3 });
   });
 
   // A recolour is a tombstone plus a brand new highlight, so the sutta is left with one live
   // highlight rather than two overlapping ones.
   it('replaces a highlight it says it displaces instead of leaving both', async () => {
     const { userId, cookie } = await signIn();
-    await highlight(cookie, { suttaId: 'sn1.1', color: 'yellow', span: { i0: 0, o0: 0, i1: 0, o1: 10 }, ...GROUP_A });
+    await highlight(cookie, { suttaId: 'sn1.1', color: 'yellow', span: span(0, 0, 0, 10), ...GROUP_A });
 
     await highlight(cookie, {
       suttaId: 'sn1.1',
@@ -191,7 +196,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
       g: 'group-b',
       erase: ['group-a'],
       mtime: '2026-01-02T00:00:00.000Z|a',
-      span: { i0: 0, o0: 5, i1: 0, o1: 15 },
+      span: span(0, 5, 0, 15),
     });
 
     const rows = await highlightsOf(userId, 'sn1.1');
@@ -199,19 +204,24 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
     expect(rows[0]).toMatchObject({ o0: 5, o1: 15, color: 'green' });
   });
 
-  it('rejects a zero-width, inverted or backwards-across-segments span', async () => {
+  // Which of two segment keys comes first is a question only the corpus answers, and the server
+  // holds none of it, so the ordering checked here is the one that needs no corpus: within a single
+  // segment. A span running backwards across two segments is stored as sent — the client owns the
+  // geometry.
+  it('rejects a zero-width or inverted span, and one with an endpoint missing', async () => {
     const { userId, cookie } = await signIn();
     const invalid = [
-      { i0: 0, o0: 5, i1: 0, o1: 5 }, // zero width
-      { i0: 0, o0: 10, i1: 0, o1: 5 }, // inverted within one segment
-      { i0: 3, o0: 0, i1: 1, o1: 5 }, // ends in an earlier segment than it starts
-      { i0: -1, o0: 0, i1: 0, o1: 5 }, // negative segment index
-      { i0: 0, o0: -2, i1: 0, o1: 5 }, // negative start offset
-      { i0: 0, o0: 0, i1: 2, o1: -5 }, // negative end offset
-      { i0: 0, o0: 0, i1: 0 }, // missing an end
+      span(0, 5, 0, 5), // zero width
+      span(0, 10, 0, 5), // inverted within one segment
+      { k0: segKey(0), o0: -2, k1: segKey(0), o1: 5 }, // negative start offset
+      { k0: segKey(0), o0: 0, k1: segKey(2), o1: -5 }, // negative end offset
+      { k0: segKey(0), o0: 0, k1: segKey(0) }, // missing an offset
+      { k0: segKey(0), o0: 0, k1: '', o1: 5 }, // empty end key
+      { o0: 0, o1: 5 }, // no keys at all
+      { k0: segKey(0), o0: 1.5, k1: segKey(0), o1: 5 }, // fractional offset
     ];
-    for (const span of invalid) {
-      expect(await highlight(cookie, { suttaId: 'sn1.1', color: 'yellow', span, ...GROUP_A })).toEqual({
+    for (const bad of invalid) {
+      expect(await highlight(cookie, { suttaId: 'sn1.1', color: 'yellow', span: bad, ...GROUP_A })).toEqual({
         error: 'invalid_span',
         status: 400,
       });
@@ -230,14 +240,14 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
       g: 'group-a',
       erase: [],
       mtime: '2026-01-01T00:00:00.000Z|a',
-      span: { i0: 0, o0: 0, i1: 1, o1: 4 },
+      span: span(0, 0, 1, 4),
     };
     await highlight(cookie, item);
     expect(await highlight(cookie, item)).toEqual(OK);
 
     const rows = await highlightsOf(userId, 'sn1.1');
     expect(rows).toHaveLength(1);
-    expect(rows[0]).toMatchObject({ id: 'group-a', i0: 0, o0: 0, i1: 1, o1: 4 });
+    expect(rows[0]).toMatchObject({ id: 'group-a', k0: segKey(0), o0: 0, k1: segKey(1), o1: 4 });
   });
 
   // The client names what its selection displaces, and a highlight is atomic: erasing it takes the
@@ -250,7 +260,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
       g: 'group-a',
       erase: [],
       mtime: '2026-01-01T00:00:00.000Z|a',
-      span: { i0: 0, o0: 0, i1: 1, o1: 4 },
+      span: span(0, 0, 1, 4),
     });
     await highlight(cookie, {
       suttaId: 'sn1.1',
@@ -258,7 +268,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
       g: 'group-b',
       erase: [],
       mtime: '2026-01-02T00:00:00.000Z|a',
-      span: { i0: 5, o0: 0, i1: 5, o1: 3 },
+      span: span(5, 0, 5, 3),
     });
 
     // Recolour: one tombstone for what it displaces, one brand new highlight. The selection only
@@ -269,7 +279,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
       g: 'group-c',
       erase: ['group-a'],
       mtime: '2026-01-03T00:00:00.000Z|a',
-      span: { i0: 0, o0: 2, i1: 0, o1: 6 },
+      span: span(0, 2, 0, 6),
     });
 
     const live = await highlightsOf(userId, 'sn1.1');
@@ -286,7 +296,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
       g: 'group-a',
       erase: [],
       mtime: '2026-01-01T00:00:00.000Z|a',
-      span: { i0: 0, o0: 0, i1: 0, o1: 10 },
+      span: span(0, 0, 0, 10),
     });
 
     await highlight(cookie, {
@@ -294,7 +304,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
       color: null,
       erase: ['group-a'],
       mtime: '2026-01-02T00:00:00.000Z|a',
-      span: { i0: 0, o0: 0, i1: 0, o1: 10 },
+      span: span(0, 0, 0, 10),
     });
 
     expect(await highlightsOf(userId, 'sn1.1')).toHaveLength(0);
@@ -317,7 +327,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
       g: 'group-a',
       erase: [],
       mtime: '2026-01-05T00:00:00.000Z|a',
-      span: { i0: 0, o0: 0, i1: 0, o1: 10 },
+      span: span(0, 0, 0, 10),
     });
 
     await highlight(cookie, {
@@ -325,7 +335,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
       color: null,
       erase: ['group-a'],
       mtime: '2026-01-01T00:00:00.000Z|a',
-      span: { i0: 0, o0: 0, i1: 0, o1: 10 },
+      span: span(0, 0, 0, 10),
     });
 
     expect(await highlightsOf(userId, 'sn1.1')).toHaveLength(1);
@@ -341,7 +351,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
       g: 'group-a',
       erase: [],
       mtime: '2026-01-01T00:00:00.000Z|a',
-      span: { i0: 0, o0: 0, i1: 0, o1: 10 },
+      span: span(0, 0, 0, 10),
     });
     await highlight(cookie, {
       suttaId: 'sn1.1',
@@ -349,7 +359,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
       g: 'group-b',
       erase: [],
       mtime: '2026-01-02T00:00:00.000Z|a',
-      span: { i0: 0, o0: 5, i1: 0, o1: 15 },
+      span: span(0, 5, 0, 15),
     });
 
     expect(await highlightsOf(userId, 'sn1.1')).toHaveLength(2);
@@ -359,7 +369,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
   // nothing to run, and D1 rejects an empty batch.
   it('accepts an erase that displaces nothing', async () => {
     const { cookie } = await signIn();
-    expect(await highlight(cookie, { suttaId: 'sn1.1', color: null, erase: [], span: { i0: 0, o0: 0, i1: 0, o1: 5 } })).toEqual(OK);
+    expect(await highlight(cookie, { suttaId: 'sn1.1', color: null, erase: [], span: span(0, 0, 0, 5) })).toEqual(OK);
   });
 
   // Both ids are the client's to supply, and a write missing one can't be honoured — a create
@@ -367,13 +377,13 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
   // leave the old highlight underneath the new one.
   it('rejects a write that omits or malforms the highlight id or the erase list', async () => {
     const { userId, cookie } = await signIn();
-    const span = { i0: 0, o0: 0, i1: 0, o1: 5 };
+    const valid = span(0, 0, 0, 5);
     const cases = [
-      { suttaId: 'sn1.1', color: 'yellow', erase: [], span }, // no g
-      { suttaId: 'sn1.1', color: 'yellow', g: '', erase: [], span },
-      { suttaId: 'sn1.1', color: 'yellow', g: 'group-a', span }, // no erase
-      { suttaId: 'sn1.1', color: null, erase: [42], span },
-      { suttaId: 'sn1.1', color: null, erase: 'group-a', span },
+      { suttaId: 'sn1.1', color: 'yellow', erase: [], span: valid }, // no g
+      { suttaId: 'sn1.1', color: 'yellow', g: '', erase: [], span: valid },
+      { suttaId: 'sn1.1', color: 'yellow', g: 'group-a', span: valid }, // no erase
+      { suttaId: 'sn1.1', color: null, erase: [42], span: valid },
+      { suttaId: 'sn1.1', color: null, erase: 'group-a', span: valid },
     ];
     for (const item of cases) {
       expect((await highlight(cookie, item)).status).toBe(400);
@@ -390,7 +400,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
       color: 'yellow',
       g: 'group-a',
       erase: [],
-      span: { i0: 0, o0: 0, i1: 0, o1: 5 },
+      span: span(0, 0, 0, 5),
       mtime: '2026-01-01T00:00:00.000Z|a',
     });
     await highlight(cookie, {
@@ -398,7 +408,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
       color: 'blue',
       g: 'group-b',
       erase: [],
-      span: { i0: 0, o0: 0, i1: 0, o1: 5 },
+      span: span(0, 0, 0, 5),
       mtime: '2026-01-02T00:00:00.000Z|a',
     });
     const data = await (await api('/api/data', { cookie })).json();
@@ -407,7 +417,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
 
   it('rejects a missing suttaId or a missing span', async () => {
     const { cookie } = await signIn();
-    const noSutta = await highlight(cookie, { color: 'yellow', g: 'group-a', erase: [], span: { i0: 0, o0: 0, i1: 0, o1: 1 } });
+    const noSutta = await highlight(cookie, { color: 'yellow', g: 'group-a', erase: [], span: span(0, 0, 0, 1) });
     expect(noSutta).toEqual({ error: 'span_required', status: 400 });
 
     const noSpan = await highlight(cookie, { suttaId: 'sn1.1', g: 'group-a', erase: [] });
@@ -419,7 +429,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
   it('lets two accounts hold the same highlight id independently', async () => {
     const a = await signIn();
     const b = await signIn();
-    const item = { suttaId: 'sn1.1', color: 'yellow', g: 'same-id', erase: [], mtime: '2026-01-01T00:00:00.000Z|a', span: { i0: 0, o0: 0, i1: 0, o1: 5 } };
+    const item = { suttaId: 'sn1.1', color: 'yellow', g: 'same-id', erase: [], mtime: '2026-01-01T00:00:00.000Z|a', span: span(0, 0, 0, 5) };
 
     expect(await highlight(a.cookie, item)).toEqual(OK);
     expect(await highlight(b.cookie, { ...item, color: 'green' })).toEqual(OK);
@@ -483,7 +493,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
       color: 'yellow',
       g: 'owner-group',
       erase: [],
-      span: { i0: 0, o0: 0, i1: 0, o1: 10 },
+      span: span(0, 0, 0, 10),
     });
     await visited(owner.cookie, 'sn1.1');
 
@@ -493,7 +503,7 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
     // Same-sutta writes by the other user must not touch the owner's rows — including an erase
     // naming the owner's own group id, which every statement's `AND user_id = ?` is what stops.
     await note(other.cookie, 'sn1.1', '');
-    await highlight(other.cookie, { suttaId: 'sn1.1', color: null, erase: ['owner-group'], span: { i0: 0, o0: 0, i1: 0, o1: 10 } });
+    await highlight(other.cookie, { suttaId: 'sn1.1', color: null, erase: ['owner-group'], span: span(0, 0, 0, 10) });
 
     const ownerData = await (await api('/api/data', { cookie: owner.cookie })).json();
     expect(ownerData.notes['sn1.1'].text).toBe('private');

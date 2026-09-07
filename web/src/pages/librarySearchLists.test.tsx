@@ -82,6 +82,7 @@ const userDataDefaults = {
   addToList: async () => {},
   submitNote: async () => {},
   setHighlightSpan: async () => {},
+  anchorHighlights: () => {},
   markVisited: () => {},
 } as unknown as ReturnType<typeof useUserData>;
 

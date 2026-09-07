@@ -57,20 +57,21 @@ export interface Segment {
 
 export type Dictionary = Record<string, string[]>;
 
-// One highlight: the span from (i0, o0) up to but not including (i1, o1), `i` being a segment
-// index and `o` a character offset into that segment's English. A selection within one segment has
-// i0 === i1.
+// One highlight: the span from (k0, o0) up to but not including (k1, o1), `k` being a segment key
+// and `o` a character offset into that segment's English. A selection within one segment has
+// k0 === k1.
 //
-// Two endpoints rather than a range per segment covered, so everything between is covered by
-// definition and a segment reworded or inserted upstream can't leave a gap mid-highlight. Only the
-// two endpoints drift — see docs/offline-sync.md.
+// Keys rather than positions, so a line added to or dropped from the corpus moves no highlight but
+// its own; two endpoints rather than a range per segment covered, so everything between is covered
+// by definition and a segment reworded or inserted upstream can't leave a gap mid-highlight. Only
+// the offsets within the two endpoint segments drift — see docs/offline-sync.md.
 export interface Highlight {
   // Minted by the client when the colour is picked, so a highlight made offline has its final
   // identity at once.
   id: string;
-  i0: number;
+  k0: string;
   o0: number;
-  i1: number;
+  k1: string;
   o1: number;
   c: string;
   // The mtime (lib/mtime.ts), which with `id` decides which of two overlapping highlights paints
