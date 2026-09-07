@@ -371,9 +371,9 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   );
 
   // Re-anchors one sutta's highlights from segment positions onto segment keys, as its text loads.
-  // Not routed through `mutate`: nothing here is pushed — the account's own copy is re-anchored by
-  // scripts/anchor-highlights.mjs — so a flush would be scheduled for no reason, and a mirror with
-  // nothing to convert returns the state object it was given, which React renders through untouched.
+  // Not routed through `mutate`: nothing here is pushed — the account's own rows carry their keys
+  // already — so a flush would be scheduled for no reason, and a mirror with nothing to convert
+  // returns the state object it was given, which React renders through untouched.
   const anchorHighlights = useCallback((suttaId: string, segments: SegmentFile[]) => {
     setState((s) => (s.userId ? anchorHighlightRecords(s, suttaId, segments) : s));
   }, []);

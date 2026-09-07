@@ -248,8 +248,7 @@ converge without communicating.
 A mirror holding highlights addressed by segment position is re-anchored onto segment keys as each
 sutta's text loads (`anchorHighlights`), that text being what the conversion needs and neither
 IndexedDB nor the server having it. It is permanent: a reader who never signs in has no server copy
-to re-pull from. Stored rows are converted by `scripts/anchor-highlights.mjs`, which reads the
-positions before migration 0005 and writes the keys after it.
+to re-pull from.
 
 **Signing in is never required.** A reader who hasn't signed in gets a `local-…` id
 (`lib/localAccount.ts`) and their own mirror; signing in adopts it onto the account. Nothing in the

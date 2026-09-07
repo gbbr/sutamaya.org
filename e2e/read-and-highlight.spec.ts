@@ -214,9 +214,9 @@ test.describe('highlighting', () => {
     await expect(page.locator('[data-seg="1"] [data-hl-id]')).toHaveCount(0);
   });
 
-  // A highlight used to be stored as one range per segment it covered, each interior range holding
-  // that segment's length at the time of highlighting. `upgradeStoredMirror` collapses those to the
-  // span's two endpoints as the mirror comes out of IndexedDB (lib/mirrorDb.ts).
+  // The oldest shape a stored mirror can hold: one range per segment the highlight covered, each
+  // interior range holding that segment's length at the time of highlighting. `anchorHighlights`
+  // reads those as a single span and keys it, as the sutta's text loads.
   //
   // This is the one path that runs exactly once per device and can never be re-run, and for a
   // reader who has never signed in there is no server copy to fall back on — so it is checked

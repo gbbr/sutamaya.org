@@ -178,9 +178,7 @@ landed as a success.
 A mirror holding either older shape — per-segment ranges, or endpoints as positions — is re-anchored
 onto keys by `anchorHighlights` (`lib/mirror.ts`) as each sutta's text loads, that text being what
 the conversion needs. It has no removal date: a reader who has never signed in has no server copy to
-re-pull, so that mirror is their only one. Stored rows are converted by
-`scripts/anchor-highlights.mjs`, which reads the positions before migration 0005 and writes the keys
-after it.
+re-pull, so that mirror is their only one.
 
 ### Overlaps
 

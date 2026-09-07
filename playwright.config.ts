@@ -30,7 +30,9 @@ export default defineConfig({
   workers: 1,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
-  reporter: process.env.CI ? [['github'], ['html', { open: 'never' }]] : [['list'], ['html', { open: 'never' }]],
+  reporter: process.env.CI
+    ? [['github'], ['list'], ['html', { open: 'never' }]]
+    : [['list'], ['html', { open: 'never' }]],
   use: {
     baseURL,
     // Kept on the first retry rather than every run: a trace is the thing that actually explains a
@@ -84,6 +86,11 @@ export default defineConfig({
   // running is reused and only the missing one is started — a web dev server up on its own is the
   // normal state of this machine, and starting `npm run dev` over it would fight for port 5173
   // while every /api/* call 500s against a proxy with nothing behind it.
+  //
+  // On CI the servers are always started here, and wrangler logs every request — `GET /api/auth/me`
+  // fires on every page load and reload — which buries the test output. Drop their stdout there;
+  // stderr stays piped, so a server that fails to start still says why. Locally a server is
+  // usually reused, so `pipe` keeps a cold start visible in the rare run that isn't.
   webServer: external
     ? undefined
     : [
@@ -93,7 +100,7 @@ export default defineConfig({
           url: 'http://localhost:8787/api/auth/me',
           timeout: 60 * 1000,
           reuseExistingServer: !process.env.CI,
-          stdout: 'pipe',
+          stdout: process.env.CI ? 'ignore' : 'pipe',
           stderr: 'pipe',
         },
         {
@@ -106,7 +113,7 @@ export default defineConfig({
           // Minutes from cold, almost all of it the corpus build.
           timeout: 5 * 60 * 1000,
           reuseExistingServer: !process.env.CI,
-          stdout: 'pipe',
+          stdout: process.env.CI ? 'ignore' : 'pipe',
           stderr: 'pipe',
         },
         // Only for the offline project. It builds first, every run: `web/dist` is not this
@@ -126,7 +133,7 @@ export default defineConfig({
                 url: PREVIEW_BASE_URL,
                 timeout: 2 * 60 * 1000,
                 reuseExistingServer: false,
-                stdout: 'pipe' as const,
+                stdout: (process.env.CI ? 'ignore' : 'pipe') as const,
                 stderr: 'pipe' as const,
               },
             ]

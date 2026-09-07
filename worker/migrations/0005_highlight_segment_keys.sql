@@ -5,9 +5,9 @@
 -- the line itself, so a line added or removed moves no highlight but the one on it.
 --
 -- `k0`/`k1` land empty on the rows that predate them, because the conversion needs the corpus and
--- SQL has none of it: nothing here can turn position 42 into `mn10:2.7`. scripts/anchor-highlights.mjs
--- reads those positions before this migration runs and writes the keys after it, and a client
--- holding a mirror written against the positions re-anchors it as the sutta's text loads
+-- SQL has none of it: nothing here can turn position 42 into `mn10:2.7`. Those rows are keyed from
+-- outside the database, from the positions read before this ran, and a client holding a mirror
+-- written against the positions re-anchors it as the sutta's text loads
 -- (web/src/lib/mirror.ts's anchorHighlights). A highlight with no key yet paints nothing and is
 -- deleted by nothing.
 --

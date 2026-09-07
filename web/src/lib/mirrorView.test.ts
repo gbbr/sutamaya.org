@@ -150,8 +150,9 @@ describe('deriveUserData', () => {
     ]);
   });
 
-  // Only reachable through a mirror persisted by an app version upgradeStoredMirror doesn't cover.
-  // Losing the highlight is the right failure; taking the reader down with it is not.
+  // A record carrying no span at all — a shape nothing persists, and one anchorHighlights leaves
+  // alone rather than inventing a key for. Losing the highlight is the right failure; taking the
+  // reader down with it is not.
   it('drops a record with no span rather than throwing', () => {
     const state = writeHighlightRecord(emptyMirror('u1'), 'dn1', span(0, 0, 0, 4), 'yellow');
     const [g] = Object.keys(state.highlights);
