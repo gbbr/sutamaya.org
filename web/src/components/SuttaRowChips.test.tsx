@@ -55,6 +55,30 @@ describe('SuttaRowChips', () => {
     expect(screen.queryByText('0')).toBeNull();
   });
 
+  // A chip naming a list is often the only reason a search row is there, so it accounts for itself
+  // the way every other field of the row does. The three search surfaces pass the query; nothing
+  // else does.
+  describe('a search query', () => {
+    const marks = (c: HTMLElement) => [...c.querySelectorAll('mark')].map((m) => m.textContent);
+
+    it('marks the query inside a chip\'s own name', () => {
+      const { container } = render(<SuttaRowChips chips={chips} hlCount={0} hlColors={[]} query="favor" />);
+      expect(marks(container)).toEqual(['Favor']);
+      // Split into runs, but the chip still reads as the whole name.
+      expect(pillOf('ites').textContent).toBe('Favorites');
+    });
+
+    it('marks it inside the parent segment too, either half being what search matched', () => {
+      const { container } = render(<SuttaRowChips chips={chips} hlCount={0} hlColors={[]} query="study" />);
+      expect(marks(container)).toEqual(['Study']);
+    });
+
+    it('leaves the chips unmarked with no query, which is every surface but search', () => {
+      const { container } = render(<SuttaRowChips chips={chips} hlCount={0} hlColors={[]} />);
+      expect(marks(container)).toEqual([]);
+    });
+  });
+
   describe('without a theme (ListPane/TreePane/read-only rows)', () => {
     it('renders chips as plain non-interactive spans, not buttons', () => {
       render(<SuttaRowChips chips={chips} hlCount={0} hlColors={[]} />);
