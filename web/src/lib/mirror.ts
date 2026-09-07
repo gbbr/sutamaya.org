@@ -164,8 +164,8 @@ export function anchorHighlights(state: MirrorState, suttaId: string, segments: 
     // rather than carried along beside the span that replaces it.
     const span: HlSpan = { k0: from.key, o0: endpoints.o0, k1: to.key, o1: endpoints.o1 };
     highlights = highlights ?? { ...state.highlights };
-    // `dirty` is carried, not set: the account's own rows are keyed by scripts/anchor-highlights.mjs,
-    // and a push naming an id the server already holds does nothing.
+    // `dirty` is carried, not set: the account's own rows carry their keys already, and a push
+    // naming an id the server already holds does nothing.
     highlights[g] = { dirty: record.dirty, data: { g: id, suttaId: on, span, color, erase, mtime, sent } };
   }
   return highlights ? { ...state, highlights } : state;

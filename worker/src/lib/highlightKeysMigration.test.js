@@ -9,8 +9,8 @@ import { describe, expect, it } from 'vitest';
 // because vitest-pool-workers rolls back every test's storage writes.
 //
 // What matters here is that a rebuild carrying no conversion of its own still carries every row and
-// every column it is not replacing: the keys arrive empty and are written afterwards by
-// scripts/anchor-highlights.mjs, so anything this drops is lost outright.
+// every column it is not replacing: the keys arrive empty and are filled in afterwards, from
+// outside the database, so anything this drops is lost outright.
 
 const MIGRATION = '0005_highlight_segment_keys';
 
@@ -93,8 +93,8 @@ describe('migration 0005 — highlights anchored on segment keys', () => {
   });
 
   // The keys are the one thing the migration cannot supply: turning a position into `mn10:2.7` takes
-  // the corpus, which the database does not hold. They arrive empty and are written by
-  // scripts/anchor-highlights.mjs from the positions it read before this ran.
+  // the corpus, which the database does not hold. They arrive empty and are filled in afterwards,
+  // from the positions read before this ran.
   it('leaves the keys empty rather than inventing them', async () => {
     const userId = await user(crypto.randomUUID());
     await positionedRows([{ id: 'a', userId, i0: 3, o0: 1, i1: 3, o1: 8 }]);
