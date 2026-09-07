@@ -155,6 +155,31 @@ describe('searchSuttaText — ranking', () => {
   });
 });
 
+// A search shares one cache of what each pattern found in each blob across the typed query and
+// every expansion of it, so a cache that answered for the wrong word — a key colliding across the
+// two languages, or across two patterns of the same word — would be invisible to every other test
+// here, which reads its results through that same cache.
+describe('the scan cache', () => {
+  const Y = index([
+    { uid: 'a', paras: one([['This mind is radiant.', 'pabhassaramidaṁ cittaṁ']]) },
+    { uid: 'b', paras: one([['Thought and thinking.', 'cittaṁ vitakko']]) },
+    { uid: 'c', paras: one([['The first absorption.', 'paṭhamaṁ jhānaṁ']]) },
+  ]);
+  // Queries that reuse each other's words within a language and across the two: "citta" is Pali in
+  // one and typed as an English word in another, and "mind" is scanned against both blobs.
+  const QUERIES = ['mind', 'citta', 'radiant mind', 'mind citta', 'citta radiant', 'jhana', 'mind'];
+
+  it('answers a query the same as an uncached search, however many ran before it', () => {
+    const cold = QUERIES.map((q) => searchSuttaText(Y, q));
+    const cache = new Map<string, number[]>();
+    expect(QUERIES.map((q) => searchSuttaText(Y, q, cache))).toEqual(cold);
+    // The other way round: a cache filled in a different order answers the same.
+    const reverse = new Map<string, number[]>();
+    const warm = [...QUERIES].reverse().map((q) => searchSuttaText(Y, q, reverse));
+    expect(warm).toEqual([...cold].reverse());
+  });
+});
+
 describe('snippetOf', () => {
   // Everything here searches with what the reader typed; the expansion cases pass the two apart.
   const snip = (i: ReturnType<typeof index>, score: TextScore) => snippetOf(i, score, score.query);
