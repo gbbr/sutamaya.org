@@ -17,6 +17,13 @@ function renderEditor(overrides: Partial<Parameters<typeof NoteEditor>[0]> = {})
   return { onSubmit, ...utils };
 }
 
+// The app going out of sight and coming back, as the browser reports it.
+function hide() {
+  Object.defineProperty(document, 'visibilityState', { value: 'hidden', configurable: true });
+  document.dispatchEvent(new Event('visibilitychange'));
+  Object.defineProperty(document, 'visibilityState', { value: 'visible', configurable: true });
+}
+
 describe('NoteEditor', () => {
   it('makes a new line on Enter rather than committing', async () => {
     const { onSubmit } = renderEditor();
@@ -57,6 +64,15 @@ describe('NoteEditor', () => {
     await userEvent.type(screen.getByRole('textbox'), 'a thought');
     expect(onSubmit).not.toHaveBeenCalled();
     unmount();
+    expect(onSubmit).toHaveBeenCalledExactlyOnceWith('a thought');
+  });
+
+  // Switching apps leaves the box focused and the component mounted, so this is the last thing
+  // that runs before a phone may discard the page with the note still only in the box.
+  it('commits a pending draft when the app goes to the background', async () => {
+    const { onSubmit } = renderEditor();
+    await userEvent.type(screen.getByRole('textbox'), 'a thought');
+    hide();
     expect(onSubmit).toHaveBeenCalledExactlyOnceWith('a thought');
   });
 

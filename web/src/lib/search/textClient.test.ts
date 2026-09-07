@@ -1,17 +1,9 @@
-// The worker's lifecycle as the app drives it: loading the search text, doing without it, running
-// one search at a time, and releasing the text once the app has been out of sight — the memory half
-// of docs/search.md's "What it costs the device", and its "Late, or never".
+// The worker's lifecycle as the app drives it: loading the search text, doing without it, and
+// running one search at a time — docs/search.md's "Late, or never".
 //
-// Its own file, and a jsdom one, because it drives `visibilitychange` on a real document and a
-// stubbed `Worker`; the rest of search's tests are pure and stay on Node.
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import {
-  beginTextSearchLoad,
-  resetTextSearch,
-  searchText,
-  textSearchStatus,
-  watchTextSearchIdle,
-} from './textClient';
+// The module holds the worker in module state, so each test imports it fresh rather than resetting
+// it through an export the app itself would never call.
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { RankedHit } from './text';
 import type { Corpus } from '../types';
 
@@ -46,111 +38,63 @@ class FakeWorker {
   }
 }
 
-// The last worker created, loaded and ready to answer searches.
-function load() {
-  beginTextSearchLoad(corpus);
-  FakeWorker.latest().reply({ type: 'status', status: 'ready' });
-  return FakeWorker.latest();
-}
-
 // The searches a worker has been given, in order.
 const searches = (w: FakeWorker) => w.posted.filter((m) => m.type === 'search');
 
-function visibility(state: 'hidden' | 'visible') {
-  Object.defineProperty(document, 'visibilityState', { value: state, configurable: true });
-  document.dispatchEvent(new Event('visibilitychange'));
-}
+describe('the search text, loaded and searched', () => {
+  let client: typeof import('./textClient');
 
-describe('the search text, loaded and released', () => {
-  let stop: () => void;
-
-  beforeEach(() => {
-    vi.useFakeTimers();
+  beforeEach(async () => {
+    vi.resetModules();
     FakeWorker.live = [];
     vi.stubGlobal('Worker', FakeWorker);
-    stop = watchTextSearchIdle();
+    client = await import('./textClient');
   });
 
-  afterEach(() => {
-    stop();
-    visibility('visible');
-    resetTextSearch();
-    vi.unstubAllGlobals();
-    vi.useRealTimers();
-  });
+  // The last worker created, loaded and ready to answer searches.
+  function load() {
+    client.beginTextSearchLoad(corpus);
+    FakeWorker.latest().reply({ type: 'status', status: 'ready' });
+    return FakeWorker.latest();
+  }
 
-  it('holds the text while the app is on screen', async () => {
-    load();
-    expect(textSearchStatus()).toBe('ready');
-
-    visibility('visible');
-    await vi.advanceTimersByTimeAsync(10 * 60 * 1000);
-    expect(textSearchStatus()).toBe('ready');
-  });
-
-  it('releases it once the app has been hidden long enough', async () => {
+  it('fetches the text once, and holds it for the life of the page', () => {
     const worker = load();
+    expect(client.textSearchStatus()).toBe('ready');
 
-    visibility('hidden');
-    await vi.advanceTimersByTimeAsync(10 * 60 * 1000);
-    expect(textSearchStatus()).toBe('idle');
-    expect(worker.terminated).toBe(true);
+    // Every later focus and keystroke asks again; none of them refetches.
+    client.beginTextSearchLoad(corpus);
+    client.beginTextSearchLoad(corpus);
+    expect(FakeWorker.live).toHaveLength(1);
+    expect(worker.terminated).toBe(false);
+    expect(client.textSearchStatus()).toBe('ready');
   });
 
-  it('keeps it when the app comes back before the delay is up', async () => {
-    load();
-
-    visibility('hidden');
-    await vi.advanceTimersByTimeAsync(1000);
-    visibility('visible');
-    await vi.advanceTimersByTimeAsync(10 * 60 * 1000);
-    expect(textSearchStatus()).toBe('ready');
-  });
-
-  // The release is worth nothing if the search still on screen pulls the text straight back into a
-  // tab nobody is looking at.
-  it('does not load again while the app is still out of sight', async () => {
-    const worker = load();
-
-    visibility('hidden');
-    await vi.advanceTimersByTimeAsync(10 * 60 * 1000);
-    expect(worker.terminated).toBe(true);
-
-    // What a search left on screen asks for the moment the text goes.
-    beginTextSearchLoad(corpus);
-    expect(textSearchStatus()).toBe('idle');
-    expect(FakeWorker.live.length).toBe(1);
-
-    visibility('visible');
-    expect(textSearchStatus()).toBe('loading');
-    expect(FakeWorker.live.length).toBe(2);
-  });
-
-  it('loads again after a release, and after a failure', () => {
-    beginTextSearchLoad(corpus);
-    expect(textSearchStatus()).toBe('loading');
+  it('loads again after a failure', () => {
+    client.beginTextSearchLoad(corpus);
+    expect(client.textSearchStatus()).toBe('loading');
     FakeWorker.latest().reply({ type: 'status', status: 'unavailable' });
-    expect(textSearchStatus()).toBe('unavailable');
+    expect(client.textSearchStatus()).toBe('unavailable');
 
     // A failed load is not remembered: the reader who searched offline gets the text once back.
     load();
-    expect(textSearchStatus()).toBe('ready');
+    expect(client.textSearchStatus()).toBe('ready');
   });
 
   it('searches without the text, and without a worker at all', async () => {
-    expect(await searchText('greed', [])).toBe(null);
+    expect(await client.searchText('greed', [])).toBe(null);
 
     vi.stubGlobal('Worker', undefined);
-    beginTextSearchLoad(corpus);
-    expect(textSearchStatus()).toBe('unavailable');
-    expect(await searchText('greed', [])).toBe(null);
+    client.beginTextSearchLoad(corpus);
+    expect(client.textSearchStatus()).toBe('unavailable');
+    expect(await client.searchText('greed', [])).toBe(null);
   });
 
   it("answers a search with the worker's merged hits", async () => {
     const worker = load();
     const hits: RankedHit[] = [{ id: 'sn56.11', rank: 4, saved: false }];
 
-    const answer = searchText('greed', []);
+    const answer = client.searchText('greed', []);
     const [sent] = searches(worker);
     worker.reply({ type: 'result', id: sent.id, hits });
     expect(await answer).toEqual(hits);
@@ -159,9 +103,9 @@ describe('the search text, loaded and released', () => {
   it('runs one search at a time, and drops the ones typed over', async () => {
     const worker = load();
 
-    const first = searchText('gre', []);
-    const dropped = searchText('gree', []);
-    const latest = searchText('greed', []);
+    const first = client.searchText('gre', []);
+    const dropped = client.searchText('gree', []);
+    const latest = client.searchText('greed', []);
     expect(searches(worker)).toHaveLength(1);
     // The one in flight is answered, and the newest of those waiting goes next; the middle
     // keystroke is never scanned.

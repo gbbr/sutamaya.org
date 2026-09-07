@@ -356,8 +356,7 @@ resting state:
   laptop but seconds on a phone, and a list that appears and then rearranges is the same problem
   either way. The row takes its place immediately but fades in 150ms later, so a scan that answers
   in a blink shows nothing at all. A search whose complete answer is already on screen — returning
-  to it from the reader — keeps that answer rather than blanking, even if the text has since been
-  released.
+  to it from the reader — keeps that answer rather than blanking, even if the text is gone.
 - **Once it has answered.** The full, ranked list appears at once. Every later keystroke in the
   sitting holds the previous list still while the next is scanned, so the spinner is shown roughly
   once per sitting. The held list says so: a small spinner sits beside the results count in the
@@ -420,9 +419,10 @@ The two blobs are `CacheFirst` in `web/vite.config.ts` — their filenames carry
 corrected sutta arrives as a new URL and there is nothing to revalidate. Three entries, because only
 the current version's URLs are ever requested.
 
-**The memory is released a minute after the app goes out of sight** (`watchTextSearchIdle`, armed in
-`main.tsx`), by terminating the worker, which takes the blobs with it whatever else is holding them.
-The next search starts a fresh worker, which fetches again and is served from Cache Storage, so it
-costs a pause rather than a download — and an idle tab holding 34 MB is a bigger target for iOS to discard
-outright, which would cost a whole reload instead. A search left on screen asks for the text back the
-moment it goes; that load is held until the app is in sight again, so the release stands.
+**The memory is never released while the page lives.** It was, once — a minute after the app went
+out of sight, on the theory that an idle tab holding 34 MB is a bigger target for iOS to discard
+outright. But the release fired on every ordinary return (an app switch, a call, a notification),
+and each one put "Searching sutta text…" back on screen for the reader's next search, while the
+discard it hedged against is both rarer and cheaper: the app relaunches from the precache and
+restores its location and its scroll. So the blobs are held until the page goes away, and the
+platform reclaims them the one way that is certain to be necessary.
