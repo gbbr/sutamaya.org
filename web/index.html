@@ -27,12 +27,11 @@
          a copy resampled for that size instead of leaving it to the browser. -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32-v3.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16-v3.png" />
-    <!-- Cloudflare Web Analytics — aggregate visit/pageview counts only (cookie-less, no
-         personal data). Manually registered against the sutamaya.org site tag in the Cloudflare
-         dashboard, not tied to any DNS/proxy change. Sees SPA route changes automatically (it
-         hooks History API pushState/popstate), so it reports real in-app navigation, not just
-         the entry URL. Only fires while online — offline PWA sessions aren't counted. -->
-    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "9ccb5acc36b045d1a2ae008a1c61e694"}'></script>
+    <!-- Cloudflare Web Analytics is NOT loaded here — it is injected after the load event, from
+         lib/analytics.ts. A <script> tag in this file, however it is written, is on the startup
+         path; this is the one thing in the app shell that is not served from the precache, and a
+         network that drops packets rather than refusing them stalls the launch behind it. See
+         that file for the full reasoning. -->
     <!--
       iPadOS Safari's "Add to Home Screen" only offers a full standalone web app (rather than a
       plain bookmark) when these Apple-specific tags are present — the web manifest alone isn't
