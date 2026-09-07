@@ -248,6 +248,20 @@ describe('searchCorpus', () => {
     expect(searchCorpus(corpus, '   ', {})).toEqual([]);
   });
 
+  // Which line the row leads with, and so keeps rather than giving up to a quote from the sutta
+  // text — see docs/search.md's "Snippets". A hit ranked on a note that showed a paragraph holding
+  // one word of the query is what this exists to stop.
+  it('names the line that carried the query, the note before the description', () => {
+    const line = (query: string, notes: Record<string, string> = {}) =>
+      searchCorpus(corpus, query, notes).find((h) => h.id === 'mn1')?.explains?.line;
+    expect(line('apple', { mn1: 'tastes like an apple' })).toBe('note');
+    expect(line('experience')).toBe('blurb');
+    // A note that doesn't carry the query doesn't stand for it: the blurb that does is the line.
+    expect(line('experience', { mn1: 'nothing to do with it' })).toBe('blurb');
+    // Nothing the row writes matched — the title did, and it is marked above either way.
+    expect(line('mulapariyaya')).toBeUndefined();
+  });
+
   it('finds a batched range document by an individual number inside its range', () => {
     const batched: Corpus = {
       ...meta,

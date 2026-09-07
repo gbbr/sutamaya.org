@@ -6,7 +6,7 @@ sutta — numbers, titles, Pali titles, group descriptions, the reader's own not
 with the text *in* it.
 
 ```
-web/src/lib/search/metadata.ts       search over everything *about* a sutta, and the shared copy
+web/src/lib/search/metadata.ts       search over everything *about* a sutta, the shared copy, the stopwords
 web/src/lib/search/text.ts           matching, ranking and snippets — pure, over a TextIndex
 web/src/lib/search/worker.ts         the Web Worker that holds the text and scans it
 web/src/lib/search/textClient.ts     the main thread's side: the worker's lifecycle and status
@@ -126,7 +126,10 @@ The Pali side answers those queries.
 
 An ordinary English stopword list — `the`, `of`, `is`, `to` and some fifty others — is dropped from
 the query's **required words** and from the **occurrence count** that orders a bucket, in both
-languages. `mind is luminous` is a search for "mind" and "luminous", scored on those two.
+languages. `mind is luminous` is a search for "mind" and "luminous", scored on those two. It is also what
+decides whether a row's own line carries the query (see Snippets): a blurb holding "the" answers
+nothing, and would put a line with nothing marked in it on the row. The list lives in `metadata.ts`,
+which both sides of the search import.
 
 Three things it deliberately does not do. The **phrase keeps every word**, so bucket 4 still matches
 "mind is radiant" as typed and ranks it above the suttas that merely hold the two words. A query
@@ -287,6 +290,29 @@ A hit found in the text shows the paragraph it was found in, in place of the gro
 metadata hit shows. It is the paragraph containing the most of the query's distinct words; the
 earliest wins ties, so a one-word query gets the first occurrence.
 
+**A row leads with the strongest thing it matched.** A sutta the text reached is often one the
+reader's own note or its group description also answered, in a better bucket — that line is *why* it
+ranked where it did, and a paragraph holding one word of the query is what ranked below it. So where
+one of the row's own lines carries the query (`SearchHit.explains`, decided in `metadata.ts`
+alongside the bucket), that line stays and the quote follows it, rather than being replaced by it;
+where nothing written about the sutta matched, the quote stands alone as before. Otherwise a sutta
+found by every word of a note explains itself with the one word of it the text happens to repeat.
+
+Both blocks keep their own three-line clamp, so a row that shows both is twice the height. It is
+about a third of the rows on a topical query, and the alternative — the quote alone — is the row
+that prompted the rule.
+
+**That line is marked with the query that found it**, the rule a snippet's own `query` already
+follows: `satipatthana` reaches MN 51 through the expansion table's "establishment of mindfulness",
+and marking only what was typed would put a line on the row with nothing marked in it — a quarter of
+them, measured over the golden queries. The expansion's function words are dropped from the marking,
+being in every line and not required by the matching either. `searchCorpusVariants` widens it, that
+being the one place both queries are known.
+
+TreePane's mobile rows draw no description at rest, the column being half the width, but they draw
+one that answered the query: without it a hit explained by its blurb shows the reader nothing that
+matched.
+
 **The paragraph is windowed around the match**, broken on spaces and elided at each trimmed end. A
 paragraph is often the whole sutta (see Ranking) and the row clamps to three lines, so without the
 window the reader is shown the opening line of every result with nothing marked in it.
@@ -303,8 +329,10 @@ paragraph's English underneath it. A hit found in the English shows English alon
 expansion table found on `ariyasacca` marks that word in the Pali line and the typed "noble truths"
 in the English. The English line is windowed on the typed query too, so the words that answer the
 query are inside the window rather than past the end of it. Marking follows the matching's
-stemming, so a typed plural marks the singular the text carries: "truths" marks "the noble truth
-of".
+stemming, in both directions: "truths" marks "the noble truth of", and "truth" marks "the noble
+truths" whole rather than stopping short of the ending. A mark is a plain substring, so the plural is
+taken only where it finishes the word — otherwise "satipatthana" would take the "s" of
+"satipaṭṭhānasutta" with it.
 
 Snippets are cut for the first `SEARCH_RESULTS_CAP` hits only, which is every row that renders — a
 broad query matches thousands of suttas and the cap is what is drawn. A metadata-only hit has no
@@ -313,8 +341,8 @@ arrives.
 
 **A snippet carries the segment it was cut from, and clicking the row opens the reader there** — a
 one-shot route intent, consumed once so a refresh doesn't jump again, and it suppresses the usual
-scroll restore. Only a text hit has one: a title or description match opens at the top of the sutta
-as it always did, because there is nothing in the text for it to point at.
+scroll restore. Only a row showing a quote has one: a hit whose text never matched opens at the top
+of the sutta as it always did, because there is nothing in the text for it to point at.
 
 ## Late, or never
 
