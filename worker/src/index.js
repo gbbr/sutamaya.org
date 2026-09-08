@@ -60,10 +60,10 @@ app.route('/api/auth', authRouter);
 app.route('/api/data', dataRouter);
 
 // The hostnames serving the landing page, each mapped to where its app lives. Every other
-// hostname is the app, so no development host has to be listed.
+// hostname is the app, so no development host has to be listed. `www` is not among them: a
+// Cloudflare redirect rule answers it with a 301 to the apex, before any request reaches here.
 const MARKETING_HOSTS = new Map([
   ['sutamaya.org', 'https://app.sutamaya.org'],
-  ['www.sutamaya.org', 'https://app.sutamaya.org'],
   [STAGING_MARKETING_HOST, `https://${STAGING_APP_HOST}`],
   ['local.sutamaya.org', 'https://app.local.sutamaya.org'],
 ]);
