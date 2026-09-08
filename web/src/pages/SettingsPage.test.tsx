@@ -13,6 +13,10 @@ vi.mock('../context/AuthContext', () => ({ useAuth: vi.fn() }));
 vi.mock('../context/UiPrefsContext', () => ({ useUiPrefs: vi.fn() }));
 vi.mock('../context/CorpusContext', () => ({ useCorpus: vi.fn() }));
 vi.mock('../context/UserDataContext', () => ({ useUserData: vi.fn() }));
+// The page asks `/api/data` whether an account is already gone when a deletion reports failure.
+vi.mock('../lib/api', () => ({
+  dataApi: { all: vi.fn(), exportUrl: '/api/data/export' },
+}));
 vi.mock('../lib/offline', () => ({
   estimateOfflineStatus: vi.fn(async () => ({ cached: 0, total: 10 })),
   prefetchAllSuttas: vi.fn(async () => ({ failed: [], circuitTripped: false })),
@@ -27,6 +31,7 @@ import { useAuth } from '../context/AuthContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
+import { dataApi } from '../lib/api';
 import {
   cachedCorpusVersions,
   isOfflineTextStale,
@@ -80,6 +85,8 @@ function mockAuth(overrides: Partial<ReturnType<typeof useAuth>> = {}): ReturnTy
     signInWithEmailCode: vi.fn(async () => {}),
     promptGoogleSignIn: vi.fn(),
     logout: vi.fn(async () => {}),
+    deleteAccount: vi.fn(async () => {}),
+    forgetAccount: vi.fn(async () => {}),
     ...overrides,
   };
   // Derived from `user` rather than passed in, so a test that signs someone in by overriding
@@ -87,7 +94,15 @@ function mockAuth(overrides: Partial<ReturnType<typeof useAuth>> = {}): ReturnTy
   return { ...merged, isSignedIn: !!merged.user, dataUserId: merged.user?.id ?? 'local-test', localUserId: 'local-test' };
 }
 
+/** An ApiError as lib/api throws one — `statusOf` reads the status off it. */
+function httpError(status: number) {
+  return Object.assign(new Error(`Request failed (${status})`), { status });
+}
+
 beforeEach(() => {
+  // Unreachable by default: a network failure carries no status, so it says nothing either way
+  // about whether the account survived.
+  vi.mocked(dataApi.all).mockRejectedValue(new Error('offline'));
   vi.mocked(useAuth).mockReturnValue(mockAuth());
   vi.mocked(useUiPrefs).mockReturnValue({
     uiScale: 1,
@@ -225,8 +240,10 @@ describe('sync status line', () => {
     expect(screen.getByText(/Your session expired/)).toBeInTheDocument();
     expect(document.querySelector('[data-component="GoogleSignInButton"]')).toBeInTheDocument();
     expect(screen.queryByText('Syncing 2 changes…')).not.toBeInTheDocument();
-    // A plain link to a requireAuth route would only answer 401 and download an error body.
+    // A plain link to a requireAuth route would only answer 401 and download an error body — which
+    // takes the Danger zone's copy of it, and the whole card, with it.
     expect(screen.queryByText('Export my data')).not.toBeInTheDocument();
+    expect(screen.queryByText('Delete my account')).not.toBeInTheDocument();
     // Still their account, and POST /api/auth/logout is unauthenticated, so leaving still works.
     expect(screen.getByText(/Signed in as/)).toBeInTheDocument();
     expect(screen.getByText('Sign out')).toBeInTheDocument();
@@ -297,5 +314,204 @@ describe('refreshing a stale offline copy', () => {
     await userEvent.click(screen.getByText('Download all content'));
     expect(recordCachedCorpusVersion).not.toHaveBeenCalledWith('data', 'data-v2');
     expect(recordCachedCorpusVersion).toHaveBeenCalledWith('dictionary', 'dict-v2');
+  });
+});
+
+// Everything here guards one property: the account cannot be deleted by a single tap. Two steps,
+// and the second one has to be typed.
+describe('deleting the account', () => {
+  it('is offered only when signed in, and only from the last section of the page', () => {
+    vi.mocked(useAuth).mockReturnValue(mockAuth({ user: null }));
+    const { container: signedOut } = renderSettings();
+    expect(signedOut.textContent).not.toContain('Delete my account');
+
+    vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser() }));
+    const { container } = renderSettings();
+    const text = container.textContent!;
+    expect(text.indexOf('Display')).toBeLessThan(text.indexOf('Danger zone'));
+    // Below Display, above the footer links, and nowhere near Sign out.
+    expect(text.indexOf('Danger zone')).toBeLessThan(text.indexOf('Report an issue'));
+  });
+
+  it('is absent while the session check is still loading', () => {
+    vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser(), loading: true }));
+    renderSettings();
+    expect(screen.queryByText('Delete my account')).not.toBeInTheDocument();
+  });
+
+  it('carries an export of its own, so the data can be kept without leaving the card', async () => {
+    vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser() }));
+    const { container } = renderSettings();
+    // Twice on the page now — the Account card's and this card's; the second is the one here.
+    const links = [...container.querySelectorAll('a')].filter((a) => a.textContent === 'Export my data');
+    expect(links).toHaveLength(2);
+    expect(links[1].getAttribute('href')).toBe('/api/data/export');
+  });
+
+  it('asks for a typed confirmation, and does nothing until it matches', async () => {
+    const deleteAccount = vi.fn(async () => {});
+    vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser(), deleteAccount }));
+    renderSettings();
+
+    // Step one only arms the confirmation; nothing has been asked of the server.
+    await userEvent.click(screen.getByText('Delete my account'));
+    expect(deleteAccount).not.toHaveBeenCalled();
+    expect(screen.getByText(/lists, notes, highlights and reading history, on every device/)).toBeInTheDocument();
+
+    const button = screen.getByRole('button', { name: /Delete my account/ });
+    expect(button).toBeDisabled();
+
+    const field = screen.getByLabelText(/to confirm/);
+    await userEvent.type(field, 'delete me');
+    expect(button).toBeDisabled();
+
+    await userEvent.clear(field);
+    await userEvent.type(field, 'DELETE');
+    expect(button).toBeEnabled();
+
+    await userEvent.click(button);
+    expect(deleteAccount).toHaveBeenCalledTimes(1);
+  });
+
+  // Reports the pointer the page is being driven with, for the two tests below. Restored by each
+  // of them: nothing else in this file stubs matchMedia, and a leaked stub would answer every
+  // media query in the tests that follow.
+  function stubPointer(coarse: boolean) {
+    return vi
+      .spyOn(window, 'matchMedia')
+      .mockImplementation((query: string) => ({ matches: coarse && query.includes('coarse'), media: query }) as MediaQueryList);
+  }
+
+  it('puts the cursor in the confirmation field where focusing raises no keyboard', async () => {
+    const pointer = stubPointer(false);
+    try {
+      vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser() }));
+      renderSettings();
+      await userEvent.click(screen.getByText('Delete my account'));
+      expect(screen.getByLabelText(/to confirm/)).toHaveFocus();
+    } finally {
+      pointer.mockRestore();
+    }
+  });
+
+  // The keyboard an on-screen focus raises would cover the card this step just scrolled into view,
+  // and the browser's own scroll-on-focus — suppressed so it can't fight that scroll — is what
+  // would otherwise lift the field back above it. So the reader taps the field themselves, and the
+  // OS places it.
+  it('leaves the confirmation field unfocused on a touch screen', async () => {
+    const pointer = stubPointer(true);
+    try {
+      vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser() }));
+      renderSettings();
+      await userEvent.click(screen.getByText('Delete my account'));
+      expect(screen.getByLabelText(/to confirm/)).not.toHaveFocus();
+    } finally {
+      pointer.mockRestore();
+    }
+  });
+
+  // The word is the reader's proof of intent, not a spelling test, and a phone capitalises the
+  // first letter on its own.
+  it('accepts the word whatever case it was typed in', async () => {
+    const deleteAccount = vi.fn(async () => {});
+    vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser(), deleteAccount }));
+    renderSettings();
+
+    await userEvent.click(screen.getByText('Delete my account'));
+    await userEvent.type(screen.getByLabelText(/to confirm/), 'Delete');
+    await userEvent.click(screen.getByRole('button', { name: /Delete my account/ }));
+    expect(deleteAccount).toHaveBeenCalledTimes(1);
+  });
+
+  it('backs out cleanly, forgetting what was typed', async () => {
+    const deleteAccount = vi.fn(async () => {});
+    vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser(), deleteAccount }));
+    renderSettings();
+
+    await userEvent.click(screen.getByText('Delete my account'));
+    await userEvent.type(screen.getByLabelText(/to confirm/), 'DELETE');
+    await userEvent.click(screen.getByText('Cancel'));
+    expect(deleteAccount).not.toHaveBeenCalled();
+
+    await userEvent.click(screen.getByText('Delete my account'));
+    expect(screen.getByRole('button', { name: /Delete my account/ })).toBeDisabled();
+  });
+
+  it('keeps the reader on the page, with the typed word intact, when the request fails', async () => {
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const deleteAccount = vi.fn(async () => {
+      throw new Error('nope');
+    });
+    vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser(), deleteAccount }));
+    renderSettings();
+
+    await userEvent.click(screen.getByText('Delete my account'));
+    await userEvent.type(screen.getByLabelText(/to confirm/), 'DELETE');
+    await userEvent.click(screen.getByRole('button', { name: /Delete my account/ }));
+
+    expect(await screen.findByText('Could not delete your account. Please try again.')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Delete my account/ })).toBeEnabled();
+    errorSpy.mockRestore();
+  });
+
+  // A reply lost on the way back is indistinguishable, at the client, from a deletion that never
+  // happened — and telling someone their account survived when it did not is the wrong way round to
+  // be wrong about something permanent. `/api/data` answers 410 for an account that is gone, which
+  // is what separates this from a lapsed session.
+  it('finishes the job when the request failed but the account is already gone', async () => {
+    const deleteAccount = vi.fn(async () => {
+      throw new Error('the reply never arrived');
+    });
+    const forgetAccount = vi.fn(async () => {});
+    vi.mocked(dataApi.all).mockRejectedValue(httpError(410));
+    vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser(), deleteAccount, forgetAccount }));
+    renderSettings();
+
+    await userEvent.click(screen.getByText('Delete my account'));
+    await userEvent.type(screen.getByLabelText(/to confirm/), 'DELETE');
+    await userEvent.click(screen.getByRole('button', { name: /Delete my account/ }));
+
+    // Retired here as a successful deletion would have done, and nothing is claimed to have failed.
+    await vi.waitFor(() => expect(forgetAccount).toHaveBeenCalled());
+    expect(screen.queryByText('Could not delete your account. Please try again.')).not.toBeInTheDocument();
+  });
+
+  // The opposite reading of the same failure: the account answers, so it is still there and the
+  // deletion really did fail.
+  it('reports failure when the account answers for itself', async () => {
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const forgetAccount = vi.fn(async () => {});
+    const deleteAccount = vi.fn(async () => {
+      throw new Error('nope');
+    });
+    vi.mocked(dataApi.all).mockResolvedValue({} as Awaited<ReturnType<typeof dataApi.all>>);
+    vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser(), deleteAccount, forgetAccount }));
+    renderSettings();
+
+    await userEvent.click(screen.getByText('Delete my account'));
+    await userEvent.type(screen.getByLabelText(/to confirm/), 'DELETE');
+    await userEvent.click(screen.getByRole('button', { name: /Delete my account/ }));
+
+    expect(await screen.findByText('Could not delete your account. Please try again.')).toBeInTheDocument();
+    expect(forgetAccount).not.toHaveBeenCalled();
+    errorSpy.mockRestore();
+  });
+
+  it('says so plainly when the session lapsed before the confirmation was typed', async () => {
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const deleteAccount = vi.fn(async () => {
+      throw Object.assign(new Error('Request failed (401)'), { status: 401 });
+    });
+    vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser(), deleteAccount }));
+    renderSettings();
+
+    await userEvent.click(screen.getByText('Delete my account'));
+    await userEvent.type(screen.getByLabelText(/to confirm/), 'DELETE');
+    await userEvent.click(screen.getByRole('button', { name: /Delete my account/ }));
+
+    expect(
+      await screen.findByText('Your session has expired. Sign in again to delete your account.')
+    ).toBeInTheDocument();
+    errorSpy.mockRestore();
   });
 });

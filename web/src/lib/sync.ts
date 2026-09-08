@@ -147,13 +147,21 @@ function remapPush(push: Push, from: string, to: string): Push {
   return { ...push, item: next, ack: ack?.kind === 'list' && ack.id === from ? { ...ack, id: to } : ack };
 }
 
+// What a whole-request failure means for the flush: a lapsed session, an account that has been
+// deleted, or something worth trying again.
+function haltFor(status: number | undefined): 'offline' | 'unauthorized' | 'deleted' {
+  if (status === 401) return 'unauthorized';
+  if (status === 410) return 'deleted';
+  return 'offline';
+}
+
 // Pushes everything the mirror owes the server, then pulls a fresh snapshot.
 export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
   const acks: FlushAck[] = [];
   const doneOps: string[] = [];
   const remaps: { from: string; to: string }[] = [];
   // Set by the first failure meaning "stop", which leaves the rest of the queue in order.
-  let halted: 'offline' | 'unauthorized' | null = null;
+  let halted: 'offline' | 'unauthorized' | 'deleted' | null = null;
 
   let queue = buildQueue(state);
   let cursor = 0;
@@ -169,10 +177,11 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
       ({ results } = await dataApi.push(chunk.map((push) => push.item)));
     } catch (err) {
       const status = statusOf(err);
-      // A whole-request refusal that is neither a lapsed session nor retryable means this client
-      // built a push the server won't parse. It can't be pinned on one item, so nothing is retired.
-      if (status !== 401 && !isRetryable(status)) console.error('sync could not push a batch', err);
-      halted = status === 401 ? 'unauthorized' : 'offline';
+      halted = haltFor(status);
+      // A whole-request refusal that is none of a lapsed session, a deleted account or something
+      // retryable means this client built a push the server won't parse. It can't be pinned on one
+      // item, so nothing is retired.
+      if (halted === 'offline' && !isRetryable(status)) console.error('sync could not push a batch', err);
       break;
     }
     if (results.length !== chunk.length) {
@@ -224,7 +233,7 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
     try {
       snapshot = await dataApi.all();
     } catch (err) {
-      halted = statusOf(err) === 401 ? 'unauthorized' : 'offline';
+      halted = haltFor(statusOf(err));
     }
   }
 

@@ -26,6 +26,12 @@ interface AuthState {
   requestEmailCode: (email: string) => Promise<void>;
   signInWithEmailCode: (email: string, code: string) => Promise<void>;
   logout: () => Promise<void>;
+  // Erases the account on the server, then this device's copy of it.
+  deleteAccount: () => Promise<void>;
+  // Drops this device's copy of the account without touching the server — for a device that has
+  // learnt the account is already gone (UserDataContext's flush). `accountId` names the mirror to
+  // delete, for a caller that knows it better than this context does.
+  forgetAccount: (accountId?: string) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthState | null>(null);
@@ -112,17 +118,33 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(user);
   }, []);
 
-  // Ends the session and deletes this device's copy of the account's data, so nothing is left for
-  // whoever signs in next. Unsynced work is warned about at the button (SettingsPage).
-  const logout = useCallback(async () => {
-    const previousId = user?.id;
-    await authApi.logout();
+  // Deletes this device's copy of the account's data and returns the reader to a signed-out state,
+  // so nothing is left for whoever uses the device next.
+  // `accountId` is passed by a caller holding the id already: the session check can blank `user`
+  // first — it answers `{user: null}` for a deleted account — and this closure would then have
+  // nothing left to name the mirror it has to delete.
+  const forgetAccount = useCallback(async (accountId?: string) => {
+    const previousId = accountId ?? user?.id;
     writeLastUser(null);
     setUser(null);
     // A fresh local id, so whatever the reader does next starts empty.
     setLocalId(resetLocalUserId());
     if (previousId) await deleteMirror(previousId);
   }, [user]);
+
+  // Ends the session and forgets the account here. Unsynced work is warned about at the button
+  // (SettingsPage).
+  const logout = useCallback(async () => {
+    await authApi.logout();
+    await forgetAccount();
+  }, [forgetAccount]);
+
+  // Erases the account itself, then forgets it here as a sign-out would. The other devices holding
+  // it find out on their next sync, which answers 410 (UserDataContext's flush).
+  const deleteAccount = useCallback(async () => {
+    await authApi.deleteAccount();
+    await forgetAccount();
+  }, [forgetAccount]);
 
   const dataUserId = user?.id ?? localId;
 
@@ -138,8 +160,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       requestEmailCode,
       signInWithEmailCode,
       logout,
+      deleteAccount,
+      forgetAccount,
     }),
-    [user, loading, dataUserId, localId, authError, promptGoogleSignIn, requestEmailCode, signInWithEmailCode, logout]
+    [
+      user,
+      loading,
+      dataUserId,
+      localId,
+      authError,
+      promptGoogleSignIn,
+      requestEmailCode,
+      signInWithEmailCode,
+      logout,
+      deleteAccount,
+      forgetAccount,
+    ]
   );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

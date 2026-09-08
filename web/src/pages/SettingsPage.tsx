@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { AlertTriangle, ArrowLeft, Check, CloudOff, Download, Info, LogOut, Minus, Plus, RefreshCw } from 'lucide-react';
+import { AlertTriangle, ArrowLeft, Check, CloudOff, Download, Info, LogOut, Minus, Plus, RefreshCw, Trash2 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpus } from '../context/CorpusContext';
@@ -11,6 +11,7 @@ import { EmailCodeSignIn } from '../components/EmailCodeSignIn';
 import { dataApi } from '../lib/api';
 import { flatSuttaOrder } from '../lib/corpus';
 import { isTypingTarget } from '../lib/shortcuts';
+import { statusOf } from '../lib/retry';
 import { isIosBrowserTab } from '../lib/localAccount';
 import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
 import {
@@ -27,6 +28,30 @@ import type { AppTheme } from '../lib/types';
 const UI_SCALE_MIN = 0.85;
 const UI_SCALE_MAX = 1.4;
 const UI_SCALE_STEP = 0.05;
+
+// The word that enables the delete button. There is no password on these accounts, so typing it is
+// the reader's one proof of intent; a short word rather than the account's own address, which is
+// long and fights a phone keyboard.
+const DELETE_CONFIRMATION = 'DELETE';
+
+// Whether opening the delete confirmation should focus its field. Not on a touch pointer, where
+// the keyboard that raises would cover the card the confirmation is written in.
+const wantsAutoFocus = () => !window.matchMedia?.('(pointer: coarse)').matches;
+
+/**
+ * Whether the account has already been erased, asked of the one endpoint that tells that apart
+ * from a lapsed session: `/api/data` answers 410 for a session naming an account that is gone,
+ * which is the same signal a sync reads (docs/offline-sync.md). False whenever it cannot be
+ * established, so an unanswerable question reports failure rather than success.
+ */
+async function accountAlreadyGone(): Promise<boolean> {
+  try {
+    await dataApi.all();
+    return false;
+  } catch (e) {
+    return statusOf(e) === 410;
+  }
+}
 
 // Rough size of the whole offline download over the wire — sutta text, dictionary and search text,
 // as the compressed bundles they are fetched in.
@@ -58,6 +83,8 @@ const THEME_OPTIONS: Array<{ id: AppTheme; label: string; palettes: ShellPalette
 const CARD = 'rounded-field border px-5 transition-colors duration-[1200ms] ease-out';
 // A card's fill, in both themes.
 const CARD_FILL = 'bg-field dark:bg-ink/[.02]';
+// The heading naming the card below it.
+const SECTION_LABEL = 'font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2';
 
 // The filled full-width button, for the one action a card is asking for.
 const PRIMARY_BUTTON =
@@ -67,6 +94,20 @@ const SECONDARY_BUTTON =
 // One UI-scale stepper, a segment inside the bordered group that draws the outline around them.
 const UI_SCALE_STEP_BTN =
   'flex items-center justify-center w-12 h-10 text-ink hover:bg-ink/[.04] disabled:opacity-35 disabled:hover:bg-transparent';
+// The last card on the page, outlined in the danger tint: everything it holds is destructive. Only
+// the border carries that, over the same fill every other card has, so the section reads as serious
+// without the page ending on a block of colour.
+const DANGER_CARD = `${CARD} ${CARD_FILL} border-danger-text/25 py-4 mb-5`;
+// The deed itself, filled — in `danger-fill` rather than `danger-text`, which is lifted to a salmon
+// in the dark theme to stay legible as text and glares at button size.
+const DANGER_BUTTON =
+  'flex items-center justify-center gap-1.5 w-full py-[12px] rounded-field bg-danger-fill hover:opacity-90 text-[#FBFAF7] font-sans text-ui-base font-medium disabled:opacity-40 disabled:hover:opacity-40';
+// The confirmation's text field, matching the sign-in card's. Focus is drawn the way that card
+// draws the input it is waiting on — a coloured border and a soft ring, in place of the OS ring the
+// rest of the app already suppresses — but in this card's own tint rather than the accent.
+const FIELD =
+  'w-full h-10 px-3 rounded-field border border-ink/[.18] bg-transparent font-sans text-ui-md placeholder:text-ink-5 ' +
+  'focus:outline-none focus:border-danger-text/50 focus:ring-2 focus:ring-danger-text/20';
 // A small inline action — Export, Sign out — underlined as the app's inline actions are.
 const LINK_ACTION = 'inline-flex items-center gap-1.5 font-sans text-ui-base text-ink-2 underline decoration-ink/40 hover:text-ink';
 // The same action once armed, in the danger tint this page otherwise keeps for something that is
@@ -149,7 +190,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
   // description.
   useDocumentMeta('Settings');
 
-  const { user, logout, loading, authError } = useAuth();
+  const { user, logout, deleteAccount, forgetAccount, loading, authError } = useAuth();
   const { uiScale, theme, setUiScale, setTheme } = useUiPrefs();
   const { corpus } = useCorpus();
   const { syncStatus, pendingCount, lastSyncedAt, needsReauth, lists, notes, highlights } = useUserData();
@@ -167,6 +208,67 @@ export function SettingsPage({ location }: RouteComponentProps) {
 
   // Whether the sign-out button is armed, which a first click does when there is unsynced work.
   const [confirmSignOut, setConfirmSignOut] = useState(false);
+
+  // The Delete account card's second step: what it is being asked, what the reader has typed into
+  // it, and whether the request is out. Reset together by `cancelDelete`.
+  const [confirmDelete, setConfirmDelete] = useState(false);
+  const [deleteTyped, setDeleteTyped] = useState('');
+  const [deleting, setDeleting] = useState(false);
+  const [deleteError, setDeleteError] = useState<string | null>(null);
+  // Case-insensitive: a phone's own capitalisation shouldn't decide whether the button works.
+  const deleteArmed = deleteTyped.trim().toUpperCase() === DELETE_CONFIRMATION;
+  const dangerSectionRef = useRef<HTMLDivElement>(null);
+  const deleteFieldRef = useRef<HTMLInputElement>(null);
+
+  // Opening the confirmation brings the whole card into view: it is the last thing on the page, so
+  // on a short window it expands mostly below the fold — over the one paragraph naming what is
+  // about to be destroyed. `nearest` moves the minimum needed and does nothing when the card
+  // already fits.
+  //
+  // The cursor follows only where focusing summons no keyboard, as ListMembershipPopover's field
+  // does. On a touch device the keyboard would cover the card this just revealed, and taking the
+  // browser's own scroll-on-focus out of the way (which is what keeps it off this smooth one)
+  // leaves nothing to lift the field clear of it. Tapping the field still works, and the OS then
+  // places it correctly.
+  useEffect(() => {
+    if (!confirmDelete) return;
+    dangerSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    if (wantsAutoFocus()) deleteFieldRef.current?.focus({ preventScroll: true });
+  }, [confirmDelete]);
+
+  function cancelDelete() {
+    setConfirmDelete(false);
+    setDeleteTyped('');
+    setDeleteError(null);
+  }
+
+  // Erases the account, then leaves Settings for wherever the reader was — signed out, on a fresh
+  // local account, with this device's copy of the data gone (AuthContext's deleteAccount).
+  async function handleDeleteAccount() {
+    if (deleting || !deleteArmed) return;
+    setDeleting(true);
+    setDeleteError(null);
+    try {
+      await deleteAccount();
+      backToLastLocation();
+    } catch (e) {
+      // A failed request is not a failed deletion: a reply lost on the way back leaves the account
+      // erased with nothing here to say so. Ask before reporting failure, and where it is already
+      // gone, finish the teardown the lost reply owed us.
+      if (statusOf(e) !== 401 && (await accountAlreadyGone())) {
+        await forgetAccount();
+        backToLastLocation();
+        return;
+      }
+      console.error('account deletion failed', e);
+      setDeleteError(
+        statusOf(e) === 401
+          ? 'Your session has expired. Sign in again to delete your account.'
+          : 'Could not delete your account. Please try again.'
+      );
+      setDeleting(false);
+    }
+  }
 
   const [offlineStatus, setOfflineStatus] = useState<'idle' | 'downloading'>('idle');
   // Progress of the offline download, shown as a percentage (see lib/offline.ts).
@@ -319,7 +421,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
             signed in. Keeps a placeholder while `loading`, so it always has height for the scroll
             target above to land on. */}
         <div ref={authSectionRef}>
-          <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">Account</div>
+          <div className={SECTION_LABEL}>Account</div>
           <div className={`${cardClass('auth')} mb-5`}>
             {loading ? (
               <div className="font-sans text-ui-base text-ink-4 py-4">Checking sign-in status…</div>
@@ -440,7 +542,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
         {/* The Offline section. Renders whatever the corpus and cache state, so its position and
             height stay fixed for the scroll target above. */}
         <div ref={offlineSectionRef}>
-          <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">Offline</div>
+          <div className={SECTION_LABEL}>Offline</div>
 
           <div className={`${cardClass('offline')} py-4 mb-5`}>
             {offlineStatus === 'downloading' ? (
@@ -513,7 +615,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
         </div>
 
         {/* The Display section: theme tiles and the UI scale. */}
-        <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">Display</div>
+        <div className={SECTION_LABEL}>Display</div>
 
         <div className={`${CARD} border-ink/[.09] ${CARD_FILL} mb-5`}>
           <div className="py-3.5">
@@ -597,6 +699,90 @@ export function SettingsPage({ location }: RouteComponentProps) {
           </div>
 
         </div>
+
+        {/* The Danger zone: last on the page and deliberately far from Sign out and Export, so it
+            can't be reached for by accident. Signed in only — there is no account to delete
+            otherwise, a local reader's data being theirs alone. Hidden on a lapsed session, which
+            has nothing left to delete with: the export link would answer 401 and download the
+            error body, and the deletion itself would be refused. The Account card above is already
+            asking for a fresh sign-in. */}
+        {!loading && user && !needsReauth && (
+          <div ref={dangerSectionRef}>
+            <div className={SECTION_LABEL}>
+              Danger zone
+            </div>
+            <div className={DANGER_CARD}>
+              {!confirmDelete ? (
+                <>
+                  <div className="font-sans text-ui-base text-ink-2 mb-3">
+                    Permanently delete your account and everything in it. Download a copy first if you want to keep
+                    it.
+                  </div>
+                  {/* Export on the left, the deletion on the right — the way out is read before
+                      the way that ends it. */}
+                  <div className="flex items-center justify-between">
+                    <a href={dataApi.exportUrl} className={LINK_ACTION}>
+                      <Download size={16} strokeWidth={1.75} className="translate-y-[1px]" />
+                      Export my data
+                    </a>
+                    <button className={LINK_DANGER} onClick={() => setConfirmDelete(true)}>
+                      <Trash2 size={16} strokeWidth={1.75} className="translate-y-[1px]" />
+                      Delete my account
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  {/* Names what goes, and that it goes everywhere: the account is the copy every
+                      device syncs against. */}
+                  <div className="flex items-start gap-1.5 font-sans text-ui-base text-danger-text mb-3">
+                    <AlertTriangle size={16} strokeWidth={1.75} className="flex-none mt-[3px]" />
+                    <span>
+                      This deletes your lists, notes, highlights and reading history, on every device. It happens
+                      immediately and can’t be undone.
+                    </span>
+                  </div>
+                  {/* A form, so the one field's keyboard carries a working Go/Done key rather than
+                      leaving a phone to dismiss itself before the button underneath can be reached. */}
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      handleDeleteAccount();
+                    }}
+                  >
+                    <label htmlFor="delete-confirm" className="block font-sans text-ui-sm text-ink-4 mb-1.5">
+                      Type <span className="font-medium text-ink">{DELETE_CONFIRMATION}</span> to confirm
+                    </label>
+                    <input
+                      id="delete-confirm"
+                      ref={deleteFieldRef}
+                      value={deleteTyped}
+                      onChange={(e) => setDeleteTyped(e.target.value)}
+                      placeholder={DELETE_CONFIRMATION}
+                      autoComplete="off"
+                      autoCorrect="off"
+                      spellCheck={false}
+                      className={`${FIELD} mb-2.5`}
+                    />
+                    <button type="submit" className={DANGER_BUTTON} disabled={!deleteArmed || deleting}>
+                      <Trash2 size={16} strokeWidth={1.75} />
+                      {deleting ? 'Deleting…' : 'Delete my account'}
+                    </button>
+                    <button
+                      type="button"
+                      className="w-full mt-2.5 font-sans text-ui-base text-ink-4 underline decoration-ink/25 underline-offset-2"
+                      disabled={deleting}
+                      onClick={cancelDelete}
+                    >
+                      Cancel
+                    </button>
+                  </form>
+                  {deleteError && <div className="font-sans text-ui-base text-danger-text mt-2">{deleteError}</div>}
+                </>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* The footer's two occasional links, Help and Report an issue. */}
         <div className="flex items-center justify-center gap-2.5 font-sans text-ui-sm text-ink-4 mt-6">

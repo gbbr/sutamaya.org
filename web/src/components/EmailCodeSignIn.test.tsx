@@ -26,6 +26,8 @@ beforeEach(() => {
     signInWithEmailCode,
     promptGoogleSignIn: vi.fn(),
     logout: vi.fn(async () => {}),
+    deleteAccount: vi.fn(async () => {}),
+    forgetAccount: vi.fn(async () => {}),
   });
 });
 

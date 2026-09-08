@@ -321,6 +321,16 @@ would yank the reader away mid-sutta for a lapse they haven't noticed. It fires 
 instead — on the banner `TreePane` shows below its header, sharing the slot the two offline nudges
 use and taking priority over both.
 
+**A 410 means the account itself is gone**, and is the one outcome that resets the device instead of
+retrying or pausing. The session cookie is signed and self-contained, so a device whose account was
+deleted elsewhere still holds a perfectly valid one and would otherwise push its whole mirror back
+onto an account that no longer exists; `dataRouter`'s account check is what turns that into a `410`,
+and a `401` is deliberately not reused for it — that means "sign in again", which is the opposite of
+what should happen here. The client's answer is `forgetAccount()`: this device's mirror is deleted,
+`lastUser` cleared, and the reader lands on a fresh local account, exactly as the device the deletion
+was made on does. Nothing is announced; there is nothing for the reader to decide, and the account
+was deleted by them.
+
 That banner is the only sync state the app's chrome shows, because a lapsed session is the only one
 the UI otherwise misrepresents: `AuthContext` seeds `user` from `lib/lastUser.ts`, so the account
 badge still shows a signed-in user, and every list, note and highlight still reads and writes
@@ -385,6 +395,10 @@ Things a change here must not break:
   push genuinely recent entries out. Nothing is lost — the rows are all still there, and a note or
   highlight past the cap still renders in its sutta — but the list stops naming them, and says so
   at its foot.
+- **Deleting the account discards whatever the other devices had not synced.** Their queues are
+  dropped along with their mirrors when the `410` lands, which is the point: there is no account
+  left to push them to. A device that is offline when the deletion happens keeps its copy readable
+  until it next reaches the network.
 - **A long-offline device meets a lapsed cookie.** The session cookie's 90-day max age means the
   queue must survive re-auth, which is what `needsReauth` and the pause are for.
 - **Work made signed out lives only on that device.** There is no server copy until the user signs
@@ -503,6 +517,7 @@ Whole-request outcomes, which say nothing about any individual item and so retir
 | Result | Handling |
 |---|---|
 | `401` | Flush pauses, queue intact, `needsReauth` set |
+| `410` | The account has been deleted; this device drops its mirror and returns to a local account |
 | retryable (429/5xx/network/timeout) | Flush stops partway; the unsent remainder goes next time |
 | any other failure | A malformed push — a bug in this client. Logged; the queue is kept |
 
