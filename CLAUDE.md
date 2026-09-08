@@ -217,9 +217,8 @@ only write: it takes the records and operations the client's flush assembles, in
 request, and answers with one result per item. It is deliberately **not atomic** — a refused item
 neither rolls back the ones before it nor blocks the ones after it — so a sync costs two requests
 however many edits are queued. Every write's actual logic lives in `worker/src/lib/writes.js`, which
-that route dispatches over; `routes/lists.js` is a single read (`GET /api/lists`).
-`worker/src/index.js` mounts rate limiting and CORS on `/api/*`, then routes to `auth`, `lists` and
-`data`, with a JSON `not_found` for any unmatched `/api` path.
+that route dispatches over. `worker/src/index.js` mounts rate limiting and CORS on `/api/*`, then
+routes to `auth` and `data`, with a JSON `not_found` for any unmatched `/api` path.
 
 **Auth.** Two ways in, both in `worker/src/routes/auth.js`: a server-side Google **OAuth
 authorization-code redirect** (`oauth.js` — the browser loads no Google JavaScript, which is what

@@ -57,11 +57,11 @@ function api(path, { method = 'GET', bindings = {}, ip = '203.0.113.7' } = {}) {
 }
 
 describe('rate limiter routing (which budget applies to which path)', () => {
-  it('GET /api/lists draws only from the general budget', async () => {
+  it('GET /api/data draws only from the general budget', async () => {
     const general = stubBinding();
     const auth = stubBinding();
     const me = stubBinding();
-    await api('/api/lists', { bindings: { RATE_LIMIT_API: general, RATE_LIMIT_AUTH: auth, RATE_LIMIT_ME: me } });
+    await api('/api/data', { bindings: { RATE_LIMIT_API: general, RATE_LIMIT_AUTH: auth, RATE_LIMIT_ME: me } });
     expect(general.calls).toHaveLength(1);
     expect(auth.calls).toHaveLength(0);
     expect(me.calls).toHaveLength(0);
@@ -112,8 +112,8 @@ describe('rate limiter routing (which budget applies to which path)', () => {
     // bucket is untouched.
     const spent = new Set(['198.51.100.4']);
     const binding = { async limit({ key }) { return { success: !spent.has(key) }; } };
-    expect((await api('/api/lists', { ip: '198.51.100.4', bindings: { RATE_LIMIT_API: binding } })).status).toBe(429);
-    expect((await api('/api/lists', { ip: '203.0.113.7', bindings: { RATE_LIMIT_API: binding } })).status).not.toBe(429);
+    expect((await api('/api/data', { ip: '198.51.100.4', bindings: { RATE_LIMIT_API: binding } })).status).toBe(429);
+    expect((await api('/api/data', { ip: '203.0.113.7', bindings: { RATE_LIMIT_API: binding } })).status).not.toBe(429);
   });
 });
 

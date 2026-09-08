@@ -1,5 +1,4 @@
-// Returns one list row as the object sent to the client. Shared by routes/lists.js and
-// lib/userData.js, so the two can't drift apart.
+// Returns one list row as the object sent to the client.
 export function shapeList(id, data) {
   return {
     id,
