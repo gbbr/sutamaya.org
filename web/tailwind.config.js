@@ -40,6 +40,7 @@ export default {
         'accent-text': 'rgb(var(--accent-text) / <alpha-value>)',
         'accent-hover': 'rgb(var(--accent-hover) / <alpha-value>)',
         'danger-text': 'rgb(var(--danger-text) / <alpha-value>)',
+        'danger-fill': 'rgb(var(--danger-fill) / <alpha-value>)',
         'warning-text': 'rgb(var(--warning-text) / <alpha-value>)',
         'staging-text': 'rgb(var(--staging-text) / <alpha-value>)',
         selection: 'rgb(var(--selection) / <alpha-value>)',

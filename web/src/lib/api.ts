@@ -56,6 +56,9 @@ export const authApi = {
   verifyEmailCode: (email: string, code: string) =>
     request<{ user: User }>('/auth/email/verify', { method: 'POST', body: JSON.stringify({ email, code }) }),
   logout: () => request<{ ok: true }>('/auth/logout', { method: 'POST' }),
+  // Erases the account and everything filed under it, and ends the session. There is no undo, and
+  // no grace period in which it could be reclaimed.
+  deleteAccount: () => request<{ ok: true }>('/auth/account', { method: 'DELETE' }),
 };
 
 export interface UserData {

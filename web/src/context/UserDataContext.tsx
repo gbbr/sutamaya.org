@@ -104,7 +104,7 @@ const EMPTY: UserDataState = {
 };
 
 export function UserDataProvider({ children }: { children: ReactNode }) {
-  const { user, isSignedIn, dataUserId, localUserId } = useAuth();
+  const { user, isSignedIn, dataUserId, localUserId, forgetAccount } = useAuth();
   const [state, setState] = useState<MirrorState>(emptyMirror);
   const [ready, setReady] = useState(false);
   // Whether the flush triggers have stood down after a 401. Exposed as `needsReauth`.
@@ -131,6 +131,9 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   const pausedRef = useRef(paused);
   const flushing = useRef(false);
   const flushTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Held in a ref for the same reason the mirror is: `flush` keeps a stable identity, so the effect
+  // driving it doesn't re-run — and re-flush — every time AuthContext hands out a new `user`.
+  const forgetAccountRef = useRef(forgetAccount);
 
   useEffect(() => {
     stateRef.current = state;
@@ -138,6 +141,9 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     pausedRef.current = paused;
   }, [paused]);
+  useEffect(() => {
+    forgetAccountRef.current = forgetAccount;
+  }, [forgetAccount]);
 
   // Whose mirror is in use. An id rather than the `user` object, which AuthContext replaces with a
   // fresh one for the same account once /api/auth/me answers. Never null.
@@ -205,6 +211,15 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       const outcome = await flushWithLock(current);
       // Another tab is flushing this same mirror — it will apply the result for both of us.
       if (outcome.status === 'blocked') return;
+      // The account was deleted from another device. This device's copy goes with it, rather than
+      // being pushed back onto an account that no longer exists, leaving the reader signed out on a
+      // fresh local account.
+      if (outcome.status === 'deleted') {
+        // Named explicitly: the session check may already have blanked `user`, this being the same
+        // relaunch it runs on.
+        await forgetAccountRef.current(current.userId);
+        return;
+      }
       // Applied to the mirror as it is now, not as the flush found it: editing continues while a
       // flush is out, and applyFlushOutcome only clears what was acknowledged.
       setState((s) => (s.userId === current.userId ? applyFlushOutcome(s, outcome) : s));

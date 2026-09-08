@@ -122,6 +122,32 @@ describe('flushMirror', () => {
     expect(outcome.acks).toEqual([]);
   });
 
+  it('reports a 410 as a deleted account, told apart from a lapsed session', async () => {
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    dataApiPush.mockImplementation(() => httpError(410));
+
+    const outcome = await flushMirror(setNoteRecord(emptyMirror('u1'), 'dn1', 'a note'));
+
+    // The queue is not the reader's problem here: the account it was owed to is gone, and
+    // UserDataContext drops this device's copy rather than retrying.
+    expect(outcome.status).toBe('deleted');
+    expect(outcome.acks).toEqual([]);
+    // A refusal this client understands, so it isn't logged as a malformed push.
+    expect(errorSpy).not.toHaveBeenCalled();
+    errorSpy.mockRestore();
+  });
+
+  it('reports a 410 on the pull as a deleted account, after a push that landed', async () => {
+    dataApiAll.mockImplementation(() => httpError(410));
+
+    const outcome = await flushMirror(setNoteRecord(emptyMirror('u1'), 'dn1', 'a note'));
+
+    // The note landed before the pull refused, so the name of this test holds.
+    expect(outcome.acks).toEqual([{ kind: 'note', id: 'dn1', mtime: expect.any(String) }]);
+    expect(outcome.status).toBe('deleted');
+    expect(outcome.snapshot).toBeNull();
+  });
+
   it('pushes list creates oldest first, so a parent always precedes its child', async () => {
     let state = createListRecord(emptyMirror('u1'), { id: 'g1', label: 'Group', parentId: null, kind: 'group' });
     state = createListRecord(state, { id: 'c1', label: 'Child', parentId: 'g1', kind: 'list' });

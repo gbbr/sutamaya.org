@@ -220,6 +220,15 @@ however many edits are queued. Every write's actual logic lives in `worker/src/l
 that route dispatches over. `worker/src/index.js` mounts rate limiting and CORS on `/api/*`, then
 routes to `auth` and `data`, with a JSON `not_found` for any unmatched `/api` path.
 
+**`DELETE /api/auth/account` is the one thing that removes user data wholesale**, and it lives in
+`auth` rather than `data` because it destroys the account itself: one batch clearing `lists`,
+`notes`, `highlights`, `visited`, `identities`, `login_codes` and `users`, then a cleared session
+cookie. Immediate, with no grace period and no deactivated state. Settings puts an export and a
+typed `DELETE` in front of it (`SettingsPage`'s Danger zone) and wipes the local mirror after it.
+Because `requireAuth` reads no D1, every other device keeps a valid session cookie: `dataRouter`
+checks the account still exists and answers `410 account_deleted`, which the flush turns into a
+device reset rather than a re-auth prompt — see `docs/offline-sync.md`.
+
 **Auth.** Two ways in, both in `worker/src/routes/auth.js`: a server-side Google **OAuth
 authorization-code redirect** (`oauth.js` — the browser loads no Google JavaScript, which is what
 makes it survive Safari ITP and iOS PWAs) and an **emailed six-digit code** (`emailAuth.js`, sent via

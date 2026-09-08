@@ -21,6 +21,13 @@ let mockUser: { id: string; email: string; name: string; picture: string } | nul
 // the whole file, and a shared local id would leak one test's signed-out mirror into the next.
 let mockLocalId = 'local-test';
 const promptGoogleSignIn = vi.fn();
+// The teardown a deleted account triggers. Stubbed to do what the real one does from this
+// provider's side — retire the account and hand the device a fresh local id — so the flush's
+// `deleted` outcome can be followed all the way to an empty library.
+const forgetAccount = vi.fn(async (_accountId?: string) => {
+  mockUser = null;
+  mockLocalId = `local-after-delete-${seq}`;
+});
 vi.mock('./AuthContext', () => ({
   useAuth: () => ({
     user: mockUser,
@@ -28,6 +35,7 @@ vi.mock('./AuthContext', () => ({
     dataUserId: mockUser?.id ?? mockLocalId,
     localUserId: mockLocalId,
     promptGoogleSignIn,
+    forgetAccount,
   }),
 }));
 
@@ -250,6 +258,35 @@ describe('UserDataProvider', () => {
     expect(pushed('note').at(-1)).toEqual(expect.objectContaining({ suttaId: 'dn1', text: 'still mine' }));
     expect(result.current.notes.dn1).toBe('still mine');
     expect(result.current.needsReauth).toBe(false);
+  });
+
+  // The account was deleted from another device. A 410 is the only thing that says so — the session
+  // cookie is signed and self-contained, so this device's is still perfectly valid — and it is the
+  // one outcome that resets the device rather than retrying or pausing.
+  it('drops this device’s copy on a 410 instead of pushing it back onto a deleted account', async () => {
+    const { result, rerender } = setup();
+    await waitFor(() => expect(result.current.lists).toEqual(baseData.lists));
+    const accountId = mockUser!.id;
+
+    dataApiPush.mockImplementation(() => httpError(410));
+    await act(async () => {
+      await result.current.submitNote('dn1', 'written before the account went');
+    });
+    await reconnect();
+
+    // Named explicitly, not read from `user`: the session check runs on this same relaunch and may
+    // already have blanked it, and then nothing would say which mirror to delete.
+    expect(forgetAccount).toHaveBeenCalledWith(accountId);
+    // Not a lapsed session: no banner, and nothing asks the reader to sign in again.
+    expect(result.current.needsReauth).toBe(false);
+    expect(promptGoogleSignIn).not.toHaveBeenCalled();
+
+    // The queue is gone with the account rather than draining onto it.
+    dataApiPush.mockImplementation(accepting());
+    rerender();
+    await waitFor(() => expect(result.current.lists).toEqual([]));
+    expect(result.current.notes).toEqual({});
+    expect(pushed('note')).toHaveLength(1);
   });
 
   it('reports pending while a write is queued, and synced once the flush drains it', async () => {

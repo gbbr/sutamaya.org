@@ -678,8 +678,10 @@ export interface FlushOutcome {
   //   ok           – everything drained and the pull applied
   //   offline      – a retryable failure stopped it partway; the rest goes next time
   //   unauthorized – the session lapsed, so it paused with the queue intact
+  //   deleted      – the account no longer exists, so this device drops its copy rather than
+  //                  pushing it back
   //   blocked      – another tab holds the flush lock
-  status: 'ok' | 'offline' | 'unauthorized' | 'blocked';
+  status: 'ok' | 'offline' | 'unauthorized' | 'deleted' | 'blocked';
   // Everything the flush is done with, taken or permanently refused alike — either way there is
   // nothing left to send.
   acks: FlushAck[];

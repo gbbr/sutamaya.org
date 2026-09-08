@@ -94,6 +94,25 @@ export async function findUserById(db, id) {
   return row ? rowToUser(row) : null;
 }
 
+// Erases an account and everything filed under it — lists, notes, highlights, visits, and the
+// identities it can be signed into with. One batch, so nothing can be left orphaned under an id
+// that no longer names an account.
+export async function deleteAccount(db, id) {
+  const row = await db.prepare('SELECT email FROM users WHERE id = ?').bind(id).first();
+  const statements = [
+    db.prepare('DELETE FROM highlights WHERE user_id = ?').bind(id),
+    db.prepare('DELETE FROM notes WHERE user_id = ?').bind(id),
+    db.prepare('DELETE FROM visited WHERE user_id = ?').bind(id),
+    db.prepare('DELETE FROM lists WHERE user_id = ?').bind(id),
+    db.prepare('DELETE FROM identities WHERE user_id = ?').bind(id),
+    db.prepare('DELETE FROM users WHERE id = ?').bind(id),
+  ];
+  // An outstanding sign-in code is keyed by address rather than by account, so it would otherwise
+  // outlive the row it was requested for.
+  if (row?.email) statements.push(db.prepare('DELETE FROM login_codes WHERE email = ?').bind(row.email));
+  await db.batch(statements);
+}
+
 // Rejects a request with no valid session and otherwise sets `userId` on the context. The cookie
 // is signed, so nothing is read from D1 here; a route needing the profile calls findUserById.
 export const requireAuth = async (c, next) => {

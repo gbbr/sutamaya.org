@@ -101,6 +101,8 @@ describe('mobile search -> reader -> close flow', () => {
       signInWithEmailCode: vi.fn(async () => {}),
       promptGoogleSignIn: vi.fn(),
       logout: vi.fn(async () => {}),
+      deleteAccount: vi.fn(async () => {}),
+      forgetAccount: vi.fn(async () => {}),
     });
     vi.mocked(useLayout).mockReturnValue({
       mobile: true,
@@ -195,6 +197,8 @@ describe('mobile search -> reader -> close flow', () => {
       signInWithEmailCode: vi.fn(async () => {}),
       promptGoogleSignIn: vi.fn(),
       logout: vi.fn(async () => {}),
+      deleteAccount: vi.fn(async () => {}),
+      forgetAccount: vi.fn(async () => {}),
     });
     vi.mocked(useUserData).mockReturnValue({
       ...userDataDefaults,

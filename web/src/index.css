@@ -380,6 +380,10 @@
   /* A link's hover colour: a step darker than --accent2 here, a step lighter in dark. */
   --accent-hover: 107 82 48;
   --danger-text: 220 38 38;
+  /* The danger colour as a solid button fill rather than as text, split from --danger-text the way
+     --accent is split from --accent-text and for the mirror-image reason: text has to lighten
+     against a dark ground, where a fill carrying a near-white label has to darken. */
+  --danger-fill: 220 38 38;
   --warning-text: 161 98 7;
   /* The staging badge blue, matching the band on the staging app icon (scripts/make-staging-icons.mjs). */
   --staging-text: 29 78 216;
@@ -441,6 +445,10 @@
   --accent-text: 196 154 97;
   --accent-hover: 196 154 97;
   --danger-text: 248 113 113;
+  /* Deeper and more muted than light's, not lighter: a button-sized area of red glares off the dark
+     ground where the same value reads as ordinary on paper. Still unmistakably red, and it holds
+     the same near-white label comfortably past 7:1. */
+  --danger-fill: 128 45 45;
   --warning-text: 217 152 46;
   --staging-text: 125 160 240;
   --selection: 74 62 40;

@@ -5,8 +5,11 @@ import type { User } from '../lib/types';
 
 vi.mock('@reach/router', () => ({ navigate: vi.fn() }));
 vi.mock('../lib/api', () => ({
-  authApi: { me: vi.fn(), logout: vi.fn() },
+  authApi: { me: vi.fn(), logout: vi.fn(), deleteAccount: vi.fn() },
 }));
+// Retiring an identity's mirror is the observable half of a sign-out or a deletion, and IndexedDB
+// is not what these tests are about.
+vi.mock('../lib/mirrorDb', () => ({ deleteMirror: vi.fn(async () => {}) }));
 
 // AuthContext.tsx is imported dynamically (not statically at the top of this file) so each test
 // can `vi.resetModules()` first — the provider reads ?auth_error=1 off the URL as it initialises,
@@ -23,6 +26,21 @@ function Probe({ useAuthHook }: { useAuthHook: () => ReturnType<typeof import('.
       <span data-testid="user">{user ? user.email : 'none'}</span>
       <span data-testid="loading">{String(loading)}</span>
       <span data-testid="authError">{authError ?? 'none'}</span>
+    </div>
+  );
+}
+
+// Exposes the account teardown and the ids it moves — `dataUserId` is what the rest of the app
+// reads and writes under, so "left on a fresh local account" is a statement about it.
+function AccountProbe({ useAuthHook }: { useAuthHook: () => ReturnType<typeof import('./AuthContext').useAuth> }) {
+  const { user, dataUserId, localUserId, deleteAccount, forgetAccount } = useAuthHook();
+  return (
+    <div>
+      <span data-testid="user">{user ? user.email : 'none'}</span>
+      <span data-testid="dataUserId">{dataUserId}</span>
+      <span data-testid="localUserId">{localUserId}</span>
+      <button onClick={() => void deleteAccount()}>delete</button>
+      <button onClick={() => void forgetAccount('u-elsewhere')}>forget-elsewhere</button>
     </div>
   );
 }
@@ -243,6 +261,71 @@ describe('AuthContext', () => {
     });
 
     expect(window.location.search).toBe('?q=metta');
+  });
+
+  it('deleting the account retires the session, the remembered user and this device’s mirror', async () => {
+    localStorage.setItem(LAST_USER_KEY, JSON.stringify(testUser));
+    const { AuthProvider, useAuth } = await loadAuthContext();
+    const { authApi } = await import('../lib/api');
+    const { deleteMirror } = await import('../lib/mirrorDb');
+    vi.mocked(authApi.me).mockResolvedValue({ user: testUser });
+    vi.mocked(authApi.deleteAccount).mockResolvedValue({ ok: true });
+
+    render(
+      <AuthProvider>
+        <AccountProbe useAuthHook={useAuth} />
+      </AuthProvider>
+    );
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(0);
+    });
+    const localBefore = screen.getByTestId('localUserId').textContent;
+
+    await act(async () => {
+      screen.getByText('delete').click();
+      await vi.advanceTimersByTimeAsync(0);
+    });
+
+    expect(authApi.deleteAccount).toHaveBeenCalled();
+    expect(screen.getByTestId('user').textContent).toBe('none');
+    expect(localStorage.getItem(LAST_USER_KEY)).toBeNull();
+    expect(deleteMirror).toHaveBeenCalledWith('u1');
+    // A *fresh* local account, not the one this device used before it signed in: nothing of the
+    // deleted account is left for whoever picks the device up next.
+    const localAfter = screen.getByTestId('localUserId').textContent;
+    expect(localAfter).not.toBe(localBefore);
+    expect(screen.getByTestId('dataUserId').textContent).toBe(localAfter);
+  });
+
+  // The case that made forgetAccount take an id at all. On a device relaunched after the account
+  // was deleted elsewhere, /auth/me and the first flush race: /me is a small GET and the flush waits
+  // on the mirror plus a whole snapshot, so `user` is usually already null by the time the 410
+  // lands. Reading the id from `user` there deletes nothing, and the deleted account's lists, notes
+  // and highlights stay in IndexedDB with nothing left that could ever reach them.
+  it('forgets the mirror it is handed, even once the session check has blanked the user', async () => {
+    localStorage.setItem(LAST_USER_KEY, JSON.stringify(testUser));
+    const { AuthProvider, useAuth } = await loadAuthContext();
+    const { authApi } = await import('../lib/api');
+    const { deleteMirror } = await import('../lib/mirrorDb');
+    // What a deleted account's own /auth/me answers: the cookie still verifies, the row is gone.
+    vi.mocked(authApi.me).mockResolvedValue({ user: null });
+
+    render(
+      <AuthProvider>
+        <AccountProbe useAuthHook={useAuth} />
+      </AuthProvider>
+    );
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(0);
+    });
+    expect(screen.getByTestId('user').textContent).toBe('none');
+
+    await act(async () => {
+      screen.getByText('forget-elsewhere').click();
+      await vi.advanceTimersByTimeAsync(0);
+    });
+
+    expect(deleteMirror).toHaveBeenCalledWith('u-elsewhere');
   });
 
   it('reports no error for an ordinary load', async () => {

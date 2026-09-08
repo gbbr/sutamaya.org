@@ -7,6 +7,17 @@ import { applyWrite } from '../lib/writes.js';
 export const dataRouter = new Hono();
 dataRouter.use(requireAuth);
 
+// A deleted account leaves valid session cookies behind on its other devices, requireAuth reading
+// nothing from D1. `410` rather than `401` tells that apart from a lapsed session: the client wipes
+// its copy and returns to a local account instead of pausing its queue to ask for a fresh sign-in.
+// The row is kept on the context, so the export doesn't ask for it a second time.
+dataRouter.use(async (c, next) => {
+  const user = await findUserById(c.env.DB, c.get('userId'));
+  if (!user) return c.json({ error: 'account_deleted' }, 410);
+  c.set('user', user);
+  await next();
+});
+
 // Returns everything one user's client needs — lists, membership, notes, highlights, visited — by
 // running the four queries as one batched snapshot and handing the rows to assembleUserData, which
 // does the shaping. Columns are mapped from snake_case to the camelCase the client uses.
@@ -57,8 +68,10 @@ async function buildUserData(db, userId) {
 
 dataRouter.get('/', async (c) => c.json(await buildUserData(c.env.DB, c.get('userId'))));
 
-// Most items one push may carry, set by the Worker's 50-subrequest budget and the five D1 queries
-// the dearest item costs. The client chunks at the same number and loops until its queue drains.
+// Most items one push may carry, set by the Worker's 50-subrequest budget. The dearest item — a
+// `list.update` that reparents — costs four D1 queries, and the account check above spends one more
+// before the loop starts, so a full chunk fits with room over. The client chunks at the same number
+// and loops until its queue drains.
 export const PUSH_MAX_ITEMS = 10;
 
 // The app's only write endpoint: the records and operations the mirror owes the server, in the
@@ -82,10 +95,13 @@ dataRouter.post('/push', async (c) => {
 
 // The same payload as GET /, plus the account's email, as a download.
 dataRouter.get('/export', async (c) => {
-  // requireAuth never reads the database, so the email is fetched here.
-  const userId = c.get('userId');
-  const user = await findUserById(c.env.DB, userId);
-  const payload = { email: user?.email, exportedAt: new Date().toISOString(), ...(await buildUserData(c.env.DB, userId)) };
+  // The account row the check above already read; requireAuth itself never touches the database.
+  const user = c.get('user');
+  const payload = {
+    email: user.email,
+    exportedAt: new Date().toISOString(),
+    ...(await buildUserData(c.env.DB, c.get('userId'))),
+  };
   c.header('Content-Disposition', 'attachment; filename="sutamaya-export.json"');
   return c.json(payload);
 });

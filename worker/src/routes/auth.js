@@ -1,6 +1,13 @@
 import { Hono } from 'hono';
 import { getCookie } from 'hono/cookie';
-import { findOrCreateEmailUser, findOrCreateGoogleUser, findUserById, verifyGoogleCredential } from '../auth.js';
+import {
+  deleteAccount,
+  findOrCreateEmailUser,
+  findOrCreateGoogleUser,
+  findUserById,
+  requireAuth,
+  verifyGoogleCredential,
+} from '../auth.js';
 import {
   CODE_TTL_MS,
   MAX_CODE_ATTEMPTS,
@@ -206,6 +213,15 @@ authRouter.post('/email/verify', async (c) => {
 });
 
 authRouter.post('/logout', (c) => {
+  c.header('Set-Cookie', clearSessionCookie(), { append: true });
+  return c.json({ ok: true });
+});
+
+// Erases the account behind this session and ends it. Immediate and unrecoverable — the export and
+// the typed confirmation that stand in front of it are the client's (SettingsPage). Idempotent: a
+// session whose account is already gone still clears the cookie and answers ok.
+authRouter.delete('/account', requireAuth, async (c) => {
+  await deleteAccount(c.env.DB, c.get('userId'));
   c.header('Set-Cookie', clearSessionCookie(), { append: true });
   return c.json({ ok: true });
 });

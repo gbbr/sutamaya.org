@@ -238,6 +238,8 @@ beforeEach(() => {
     signInWithEmailCode: vi.fn(async () => {}),
     promptGoogleSignIn: vi.fn(),
     logout: vi.fn(async () => {}),
+    deleteAccount: vi.fn(async () => {}),
+    forgetAccount: vi.fn(async () => {}),
   });
   vi.mocked(useLayout).mockReturnValue(mockLayout());
   // Default to "neither nudge can show" for every test that isn't specifically about them — see
@@ -855,6 +857,8 @@ describe('sync state', () => {
       signInWithEmailCode: vi.fn(async () => {}),
       promptGoogleSignIn,
       logout: vi.fn(async () => {}),
+      deleteAccount: vi.fn(async () => {}),
+      forgetAccount: vi.fn(async () => {}),
     });
     userData = mockUserData({ needsReauth: true });
     vi.mocked(useUserData).mockImplementation(() => userData);
@@ -896,6 +900,8 @@ describe('deferred sign-in', () => {
       signInWithEmailCode: vi.fn(async () => {}),
       promptGoogleSignIn: vi.fn(),
       logout: vi.fn(async () => {}),
+      deleteAccount: vi.fn(async () => {}),
+      forgetAccount: vi.fn(async () => {}),
     });
     userData = mockUserData({ lists: [], ...userDataOverrides });
     vi.mocked(useUserData).mockImplementation(() => userData);

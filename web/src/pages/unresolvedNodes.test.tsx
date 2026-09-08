@@ -128,6 +128,8 @@ describe('an id that no longer resolves to anything', () => {
       signInWithEmailCode: vi.fn(async () => {}),
       promptGoogleSignIn: vi.fn(),
       logout: vi.fn(async () => {}),
+      deleteAccount: vi.fn(async () => {}),
+      forgetAccount: vi.fn(async () => {}),
     });
     vi.mocked(useLayout).mockReturnValue({
       mobile: false,
