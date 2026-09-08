@@ -57,9 +57,9 @@ async function suttaListRow(db, userId, id) {
 }
 
 // Inserts a list at the front of its parent's children, in one statement. The position expression
-// is lib/listPositions.js's `firstPosition` in SQL — the aggregate MIN and the scalar MIN sit at
-// separate query levels so the two-argument form parses unambiguously. ON CONFLICT(id) DO NOTHING
-// makes a retried create a no-op.
+// is the siblings' minimum less one, seeded at 1 so an empty parent yields 0 — the aggregate MIN
+// and the scalar MIN sit at separate query levels so the two-argument form parses unambiguously.
+// ON CONFLICT(id) DO NOTHING makes a retried create a no-op.
 const CREATE_LIST_SQL = `
   INSERT INTO lists (id, user_id, label, parent_id, kind, position, items, created_at, mtime)
   SELECT ?1, ?2, ?3, ?4, ?5,

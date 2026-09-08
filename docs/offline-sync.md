@@ -45,8 +45,8 @@ indistinguishable from a fresh creation — and silently resurrects it. Applies 
 `highlights`. `visited` needs none: it is monotonic and never deleted.
 
 **Every read path therefore filters tombstones.** `notes`/`highlights` filter `deleted = 0` in SQL,
-`GET /api/lists` likewise, and `buildUserData`'s `lists` read deliberately *fetches* them so
-`repairListTree` can cascade, dropping them itself. Miss one and deleted notes reappear in the Notes
+and `buildUserData`'s `lists` read deliberately *fetches* them so `repairListTree` can cascade,
+dropping them itself. Miss one and deleted notes reappear in the Notes
 auto-list, deleted highlights render, deleted lists show as membership chips. The note case is the
 sharpest: "a row exists" *is* "this sutta has a note".
 

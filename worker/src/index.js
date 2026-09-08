@@ -3,7 +3,6 @@ import { cors } from 'hono/cors';
 import { webOrigins } from './oauth.js';
 import { checkRateLimit } from './rateLimit.js';
 import { authRouter } from './routes/auth.js';
-import { listsRouter } from './routes/lists.js';
 import { dataRouter } from './routes/data.js';
 import { withShareMeta } from './shareMeta.js';
 import {
@@ -58,8 +57,6 @@ app.get('/api/health', async (c) => {
 });
 
 app.route('/api/auth', authRouter);
-// Reads only; every write goes to POST /api/data/push under the router below.
-app.route('/api/lists', listsRouter);
 app.route('/api/data', dataRouter);
 
 // The hostnames serving the landing page, each mapped to where its app lives. Every other

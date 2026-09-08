@@ -159,9 +159,8 @@ describe('lib/writes.js — lists (D1)', () => {
     expect(await siblingIds(userId, group.id)).toEqual([second.id, first.id]);
   });
 
-  // The create statement computes its position in SQL (CREATE_LIST_SQL) rather than through
-  // lib/listPositions.js's firstPosition(), so this pins the one non-obvious bit of that reduce:
-  // seeded at 1, an empty sibling set yields 0 and not -1.
+  // The create statement computes its position in SQL (CREATE_LIST_SQL), so this pins the one
+  // non-obvious bit of that expression: seeded at 1, an empty sibling set yields 0 and not -1.
   it('positions the first list in an empty parent at 0 and the next at -1', async () => {
     const { cookie } = await signIn();
     const first = await createList(cookie, { label: 'First' });
@@ -537,7 +536,7 @@ describe('lib/writes.js — lists (D1)', () => {
     const list = await createList(owner.cookie, { label: 'Private' });
     await write(owner.cookie, { type: 'item.add', listId: list.id, suttaId: 'sn1.1' });
 
-    const visible = await api('/api/lists', { cookie: other.cookie });
+    const visible = await api('/api/data', { cookie: other.cookie });
     expect((await visible.json()).lists).toEqual([]);
 
     const notFound = { error: 'not_found', status: 404 };
