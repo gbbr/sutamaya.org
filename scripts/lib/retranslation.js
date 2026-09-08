@@ -251,11 +251,6 @@ export function applyBlurbOpener(value, opener) {
   return { result: opener.to + value.slice(opener.from.length), applied: true };
 }
 
-// segment id ("dn22:1.9", "an1.5:1.2") -> its uid, i.e. everything before the first ':'.
-export function uidOf(segmentId) {
-  return segmentId.slice(0, segmentId.indexOf(':'));
-}
-
 // Maps every segment id in sujato/sutta to the logical relPath of the file holding it. Built by
 // walking the tree, since a range-batched file keys its segments by sub-uid rather than the batch
 // uid its filename carries. Sutta-only: sujato/notes reuses the sutta's segment ids, so one map

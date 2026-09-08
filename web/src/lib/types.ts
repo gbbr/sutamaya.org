@@ -49,12 +49,6 @@ export interface Corpus {
   dictionaryVersion: string;
 }
 
-export interface Segment {
-  key: string;
-  pali: string;
-  en: string;
-}
-
 export type Dictionary = Record<string, string[]>;
 
 // One highlight: the span from (k0, o0) up to but not including (k1, o1), `k` being a segment key
