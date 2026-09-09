@@ -8,8 +8,14 @@ project(':capacitor-app').projectDir = new File('../../node_modules/@capacitor/a
 include ':capacitor-browser'
 project(':capacitor-browser').projectDir = new File('../../node_modules/@capacitor/browser/android')
 
+include ':capacitor-filesystem'
+project(':capacitor-filesystem').projectDir = new File('../../node_modules/@capacitor/filesystem/android')
+
 include ':capacitor-preferences'
 project(':capacitor-preferences').projectDir = new File('../../node_modules/@capacitor/preferences/android')
+
+include ':capacitor-share'
+project(':capacitor-share').projectDir = new File('../../node_modules/@capacitor/share/android')
 
 include ':capacitor-splash-screen'
 project(':capacitor-splash-screen').projectDir = new File('../../node_modules/@capacitor/splash-screen/android')

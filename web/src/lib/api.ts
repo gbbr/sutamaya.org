@@ -125,6 +125,10 @@ export const dataApi = {
   // no network) throws, leaving the caller's queue intact.
   push: (items: PushItem[]) => request<{ results: PushResult[] }>('/data/push', { method: 'POST', body: JSON.stringify({ items }) }),
   exportUrl: `${API_BASE}/api/data/export`,
+  // The same payload `exportUrl` downloads, fetched rather than navigated to — for the native
+  // build, which has to authenticate the request and hand the file to the OS itself
+  // (lib/exportData.ts). The browser uses the link.
+  exportPayload: () => request<unknown>('/data/export'),
 };
 
 export type { Highlight };
