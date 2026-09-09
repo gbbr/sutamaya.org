@@ -1,5 +1,5 @@
 import { createRemoteJWKSet, jwtVerify } from 'jose';
-import { readSessionCookie } from './session.js';
+import { readSessionCookie, readSessionToken } from './session.js';
 
 // Google's public keys, cached for the life of the isolate and re-fetched only on an unseen key id.
 const GOOGLE_JWKS = createRemoteJWKSet(new URL('https://www.googleapis.com/oauth2/v3/certs'));
@@ -113,11 +113,27 @@ export async function deleteAccount(db, id) {
   await db.batch(statements);
 }
 
-// Rejects a request with no valid session and otherwise sets `userId` on the context. The cookie
-// is signed, so nothing is read from D1 here; a route needing the profile calls findUserById.
-export const requireAuth = async (c, next) => {
+// The account behind a request: a `Authorization: Bearer` token from a Capacitor client, or the
+// signed cookie from a browser. Returns `{ userId }` or null. Both credentials are self-contained,
+// so nothing is read from D1 here. When a bearer token is past halfway to expiry a fresh one is
+// set on the `X-Session-Token` response header for the client to store (session.js).
+export async function readSession(c) {
+  const header = c.req.header('Authorization');
+  if (header?.startsWith('Bearer ')) {
+    const result = await readSessionToken(header.slice('Bearer '.length).trim(), c.env.SESSION_SECRET);
+    if (!result) return null;
+    if (result.refreshed) c.header('X-Session-Token', result.refreshed);
+    return { userId: result.userId };
+  }
   const userId = await readSessionCookie(c.req.raw, c.env.SESSION_SECRET);
-  if (!userId) return c.json({ error: 'not_authenticated' }, 401);
-  c.set('userId', userId);
+  return userId ? { userId } : null;
+}
+
+// Rejects a request with no valid session and otherwise sets `userId` on the context. A route
+// needing the profile calls findUserById.
+export const requireAuth = async (c, next) => {
+  const session = await readSession(c);
+  if (!session) return c.json({ error: 'not_authenticated' }, 401);
+  c.set('userId', session.userId);
   await next();
 };

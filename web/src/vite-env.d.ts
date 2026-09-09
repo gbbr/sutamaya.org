@@ -6,6 +6,9 @@
 declare const __BUILD_COMMIT_ID__: string;
 declare const __BUILD_COMMIT_SUBJECT__: string;
 
+// A local-testing override for lib/platform.ts's API_BASE; empty string in every normal build.
+declare const __API_BASE_OVERRIDE__: string;
+
 // Empty on purpose: the OAuth client id and secret are the Worker's business — the browser only
 // navigates to /api/auth/google/start — so the frontend build takes no auth config.
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type

@@ -9,6 +9,7 @@ import { useSuttaReading } from '../hooks/useSuttaReading';
 import { type ScrollRestore } from '../hooks/useScrollMemory';
 import { useReaderOrigin } from '../hooks/useReaderOrigin';
 import { useReaderKeyboard } from '../hooks/useReaderKeyboard';
+import { useBackHandler } from '../hooks/useBackHandler';
 import { useDictionaryLookup } from '../hooks/useDictionaryLookup';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { animateScrollBy, animateScrollTop } from '../lib/segmentScroll';
@@ -179,9 +180,9 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   // Paints the OS chrome — mobile status bar, desktop PWA title bar — with the reader's own
   // background while it is open (lib/themeColor.ts), and hands it back to the shell on unmount.
   useEffect(() => {
-    setReaderThemeColor(theme.bg);
+    setReaderThemeColor(theme.bg, resolvedTheme === 'dark');
     return () => setReaderThemeColor(null);
-  }, [theme.bg]);
+  }, [theme.bg, resolvedTheme]);
 
   // The document title and meta description, tracking whichever sutta is open.
   useDocumentMeta(sutta ? `${sutta.ref} · ${sutta.en}` : '', sutta?.blurb);
@@ -457,6 +458,18 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     cycleTheme,
   });
 
+  // Android's back button, one step at a time, in the same order Escape backs out (useReaderKeyboard):
+  // the help and search overlays, then the selection popup, the dictionary and the panel, then the
+  // reader itself. A no-op on web and iOS.
+  useBackHandler(true, () => {
+    if (shortcutsOpen) setShortcutsOpen(false);
+    else if (searchOpen) setSearchOpen(false);
+    else if (pop) closePop();
+    else if (dict) closeDict();
+    else if (panel) setPanel(false);
+    else closeReader();
+  });
+
   // A uid this corpus doesn't have — never a pending load, since App.tsx renders no route until
   // the corpus is in.
   if (!corpus || !sutta || !suttaId) return <NotFoundPage />;
@@ -487,7 +500,10 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
       {/* The header: close on the left, search and menu on the right, and the title absolutely
           centred on the page rather than between them, since the two sides carry different
           numbers of buttons. */}
-      <header className="font-sans flex-none relative flex items-center justify-between px-5 py-3.5 text-ui-base" style={{ borderBottom: `1px solid ${theme.rule}` }}>
+      <header
+        className="font-sans flex-none relative flex items-center justify-between px-5 py-3.5 text-ui-base"
+        style={{ borderBottom: `1px solid ${theme.rule}`, paddingTop: 'calc(0.875rem + var(--safe-top))' }}
+      >
         {/* `p-3.5 -m-3.5`: a 47px touch area around the 19px icon, with the negative margin
             collapsing the button's layout box back to the icon. */}
         <button className="flex items-center p-3.5 -m-3.5" title="Close" onClick={closeReader}>

@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 import { ListMembershipPicker } from './ListMembershipPicker';
+import { useBackHandler } from '../hooks/useBackHandler';
 import { useCorpus } from '../context/CorpusContext';
 import { SHELL_THEME } from '../lib/theme';
 import { getUiScale } from '../lib/uiPrefs';
@@ -15,7 +16,7 @@ const MAX_POPOVER_HEIGHT = 420;
 
 const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(v, hi));
 
-const SAFE_AREA_BOTTOM = 'env(safe-area-inset-bottom, 0px)';
+const SAFE_AREA_BOTTOM = 'var(--safe-bottom)';
 
 // Whether opening the popover should focus its input. Not on a touch pointer: a wide touch device
 // gets the anchored popover, positioned against a layout viewport the keyboard doesn't shrink, so
@@ -98,6 +99,9 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
     return () => window.removeEventListener('keydown', onKey);
   }, [onClose]);
 
+  // Android's back button closes the popover rather than leaving the library. A no-op on web and iOS.
+  useBackHandler(true, onClose);
+
   // The touch presentation: full-screen rather than a sheet, which the keyboard would leave a few
   // rows of. The input sits at the top, as far from the keyboard as the display allows, and the
   // header's close button is the only way out, there being no backdrop to tap.
@@ -115,7 +119,7 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
         className="fixed left-0 right-0 top-0 z-50 flex flex-col bg-field animate-sheetUp touch-none"
         // The full layout viewport. `paddingBottom` is the resting value the effect above swaps
         // out while the keyboard is up, and all a browser without `visualViewport` ever sees.
-        style={{ height: '100%', paddingTop: 'env(safe-area-inset-top, 0px)', paddingBottom: SAFE_AREA_BOTTOM }}
+        style={{ height: '100%', paddingTop: 'var(--safe-top)', paddingBottom: SAFE_AREA_BOTTOM }}
       >
         <div className="flex-none flex items-center gap-2 px-4 pt-3.5 pb-2.5 border-b border-ink/10">
           {/* The heading, at ListPane's own header size — this is a whole screen — with the sutta

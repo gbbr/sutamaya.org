@@ -5,6 +5,7 @@ import {
   findOrCreateEmailUser,
   findOrCreateGoogleUser,
   findUserById,
+  readSession,
   requireAuth,
   verifyGoogleCredential,
 } from '../auth.js';
@@ -35,7 +36,7 @@ import {
   verifyState,
   withAuthError,
 } from '../oauth.js';
-import { clearSessionCookie, createSessionCookie, readSessionCookie } from '../session.js';
+import { clearSessionCookie, createSessionCookie, signSessionToken } from '../session.js';
 
 // Returns the fields of a user row the client is given.
 function publicUser(user) {
@@ -45,6 +46,14 @@ function publicUser(user) {
     name: user.name || null,
     picture: user.picture || null,
   };
+}
+
+// The custom-scheme URL a Capacitor build registers and catches, used by the Google callback in
+// place of a redirect back into the WebView (which Google blocks OAuth inside). Kept in step with
+// the scheme registered in web/ios and web/android. `?token=` on success, `?error=1` otherwise.
+const APP_AUTH_LINK = 'sutamaya://auth';
+function appAuthLink(params) {
+  return `${APP_AUTH_LINK}?${new URLSearchParams(params)}`;
 }
 
 export const authRouter = new Hono();
@@ -65,9 +74,12 @@ authRouter.get('/google/start', async (c) => {
     return c.redirect(appUrl(webOrigin, withAuthError('/settings')), 302);
   }
 
+  // A Capacitor build opens this in the system browser with `?app=1`; the callback then returns a
+  // signed token on the custom-scheme deep link instead of setting a cookie and redirecting.
+  const native = c.req.query('app') === '1';
   const nonce = crypto.randomUUID();
   const state = await signState(
-    { n: nonce, r: safeReturnPath(c.req.query('return'), webOrigin), o: webOrigin, t: Date.now() },
+    { n: nonce, r: safeReturnPath(c.req.query('return'), webOrigin), o: webOrigin, a: native, t: Date.now() },
     c.env.SESSION_SECRET
   );
   const secure = new URL(c.req.url).protocol === 'https:';
@@ -89,9 +101,13 @@ authRouter.get('/google/callback', async (c) => {
   // The canonical origin until the state is verified, then whichever origin /google/start issued
   // it for.
   let webOrigin = resolveWebOrigin(c.env.WEB_ORIGIN);
+  // Set from the verified state: a flow a Capacitor build started (?app=1) ends on a deep link
+  // rather than an app redirect, on both the success and the failure path.
+  let native = false;
   const fail = (reason, returnTo = '/settings') => {
     console.error(`Google OAuth callback failed: ${reason}`);
     c.header('Set-Cookie', clearNonceCookie(), { append: true });
+    if (native) return c.redirect(appAuthLink({ error: '1' }), 302);
     return c.redirect(appUrl(webOrigin, withAuthError(returnTo)), 302);
   };
 
@@ -100,6 +116,7 @@ authRouter.get('/google/callback', async (c) => {
   if (!state.n || state.n !== getCookie(c, OAUTH_NONCE_COOKIE)) {
     return fail('state nonce did not match this browser’s cookie');
   }
+  native = state.a === true;
   webOrigin = resolveWebOrigin(c.env.WEB_ORIGIN, state.o);
 
   const returnTo = safeReturnPath(state.r, webOrigin);
@@ -123,6 +140,11 @@ authRouter.get('/google/callback', async (c) => {
 
   const user = await findOrCreateGoogleUser(c.env.DB, profile);
   c.header('Set-Cookie', clearNonceCookie(), { append: true });
+  if (native) {
+    // The system browser hands the token to the app through the deep link; there is no WebView
+    // session here to set a cookie on.
+    return c.redirect(appAuthLink({ token: await signSessionToken(user.id, c.env.SESSION_SECRET) }), 302);
+  }
   c.header('Set-Cookie', await createSessionCookie(user.id, c.env.SESSION_SECRET, { secure }), { append: true });
   return c.redirect(appUrl(webOrigin, returnTo), 302);
 });
@@ -209,7 +231,10 @@ authRouter.post('/email/verify', async (c) => {
   const user = await findOrCreateEmailUser(c.env.DB, email);
   const secure = new URL(c.req.url).protocol === 'https:';
   c.header('Set-Cookie', await createSessionCookie(user.id, c.env.SESSION_SECRET, { secure }), { append: true });
-  return c.json({ user: publicUser(user) });
+  // The flow runs in the WebView, so the cookie is set for web; a Capacitor client can't keep it
+  // cross-origin and reads the token from the body instead. Harmless for a browser to receive.
+  const token = await signSessionToken(user.id, c.env.SESSION_SECRET);
+  return c.json({ user: publicUser(user), token });
 });
 
 authRouter.post('/logout', (c) => {
@@ -227,7 +252,7 @@ authRouter.delete('/account', requireAuth, async (c) => {
 });
 
 authRouter.get('/me', async (c) => {
-  const userId = await readSessionCookie(c.req.raw, c.env.SESSION_SECRET);
-  const user = userId ? await findUserById(c.env.DB, userId) : null;
+  const session = await readSession(c);
+  const user = session ? await findUserById(c.env.DB, session.userId) : null;
   return c.json({ user: user ? publicUser(user) : null });
 });

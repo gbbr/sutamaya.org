@@ -16,7 +16,7 @@ import { SearchUpdating } from './SearchUpdating';
 import { getUiScale } from '../lib/uiPrefs';
 import type { ThemeColors } from '../lib/types';
 
-const SAFE_AREA_BOTTOM = 'env(safe-area-inset-bottom, 0px)';
+const SAFE_AREA_BOTTOM = 'var(--safe-bottom)';
 
 // The wash on the row under the cursor: half the strength of the selection tint the panes use,
 // since here it sits on a panel over the reading itself and marks a cursor rather than a choice.
@@ -163,7 +163,7 @@ export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: 
           mobile
             ? {
                 background: theme.panel,
-                paddingTop: 'env(safe-area-inset-top, 0px)',
+                paddingTop: 'var(--safe-top)',
                 paddingBottom: SAFE_AREA_BOTTOM,
               }
             : { background: theme.panel, maxWidth: 560, maxHeight: '70dvh' }

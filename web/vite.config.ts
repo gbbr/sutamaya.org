@@ -26,6 +26,15 @@ function buildCommit(): { id: string; subject: string } {
 
 const commit = buildCommit();
 
+// Set by `npm run build:native`. A Capacitor shell serves the bundled assets from its own local
+// origin and cannot run a service worker (iOS WKWebView has no support; Android's is unreliable),
+// so the native build ships without one — the bundle itself is the offline store.
+const NATIVE_BUILD = !!process.env.SUTAMAYA_NATIVE;
+
+// Overrides lib/platform.ts's API_BASE so a native test build can point at a local Worker instead
+// of production. Local testing only — production and staging builds leave it unset.
+const API_BASE_OVERRIDE = process.env.SUTAMAYA_API_BASE ?? '';
+
 // Extra hostnames the dev server's Host-header guard accepts beyond localhost/LAN IPs (see
 // `allowedHosts` below), paired with how to actually reach the app through each one — printed
 // on `npm run dev` startup so it doesn't have to be remembered/looked up each time.
@@ -63,10 +72,15 @@ export default defineConfig({
   define: {
     __BUILD_COMMIT_ID__: JSON.stringify(commit.id),
     __BUILD_COMMIT_SUBJECT__: JSON.stringify(commit.subject),
+    __API_BASE_OVERRIDE__: JSON.stringify(API_BASE_OVERRIDE),
   },
   plugins: [
     react(),
     VitePWA({
+      // The native build has no service worker (see NATIVE_BUILD above); every runtime asset it
+      // needs is in the bundle. `virtual:pwa-register` stays importable and its `registerSW`
+      // becomes a no-op, which main.tsx also guards on `isNativeApp()`.
+      disable: NATIVE_BUILD,
       registerType: 'autoUpdate',
       // Versioned filename — see the note beside the <link rel="icon"> in index.html.
       includeAssets: ['favicon-32-v3.png', 'favicon-16-v3.png'],

@@ -104,6 +104,7 @@ describe('reader deep links into a batched document', () => {
       authError: null,
       requestEmailCode: vi.fn(async () => {}),
       signInWithEmailCode: vi.fn(async () => {}),
+      signInWithGoogleNative: vi.fn(async () => {}),
       promptGoogleSignIn: vi.fn(),
       logout: vi.fn(async () => {}),
       deleteAccount: vi.fn(async () => {}),

@@ -419,6 +419,18 @@
   --ui-text-3xl: 27px;
 }
 
+/* Safe-area insets, folding the browser's own `env(safe-area-inset-*)` (iOS, and the iOS PWA under
+   `viewport-fit=cover`) together with the `--safe-area-inset-*` custom properties Capacitor's
+   Android shell injects on <html> — older Android WebViews expose only the latter. Zero in a plain
+   browser tab. Every top/bottom-bar and full-screen surface reads these rather than `env()`
+   directly. */
+:root {
+  --safe-top: max(env(safe-area-inset-top, 0px), var(--safe-area-inset-top, 0px));
+  --safe-right: max(env(safe-area-inset-right, 0px), var(--safe-area-inset-right, 0px));
+  --safe-bottom: max(env(safe-area-inset-bottom, 0px), var(--safe-area-inset-bottom, 0px));
+  --safe-left: max(env(safe-area-inset-left, 0px), var(--safe-area-inset-left, 0px));
+}
+
 :root.dark {
   --ink: 228 223 216;
   /* Dark's own rungs of the ramp described on :root above. Each is what .72, .58, .45 and .35 of

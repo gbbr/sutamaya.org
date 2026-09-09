@@ -55,7 +55,7 @@ export function HighlightPopup({ pop, theme, mobile, onPick, onRemove, onClose, 
           background: theme.panel,
           color: theme.fg,
           borderTop: `1px solid ${theme.rule}`,
-          paddingBottom: 'calc(13px + env(safe-area-inset-bottom, 0px))',
+          paddingBottom: 'calc(13px + var(--safe-bottom))',
         }}
         onPointerDown={onStop}
         onPointerUp={onStop}

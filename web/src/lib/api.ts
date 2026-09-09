@@ -1,3 +1,5 @@
+import { API_BASE } from './platform';
+import { getNativeToken, setNativeToken } from './nativeAuth';
 import type { HlSpan } from './highlights';
 import type { Highlight, ListDef, ListKind, Membership, HighlightsMap, VisitedMap, User } from './types';
 
@@ -19,13 +21,23 @@ export class ApiError extends Error {
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   try {
-    const res = await fetch(`/api${path}`, {
+    // The cookie authenticates the web app; a Capacitor build has no cookie cross-origin and
+    // sends a bearer token instead (lib/nativeAuth.ts). Both are inert on the other platform.
+    const token = getNativeToken();
+    const res = await fetch(`${API_BASE}/api${path}`, {
       credentials: 'include',
-      headers: init?.body ? { 'Content-Type': 'application/json' } : undefined,
+      headers: {
+        ...(init?.body ? { 'Content-Type': 'application/json' } : undefined),
+        ...(token ? { Authorization: `Bearer ${token}` } : undefined),
+      },
       ...init,
       // After the spread, so the timeout always applies rather than being replaced by init's signal.
       signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
     });
+    // The server re-mints a bearer token once it is past halfway to expiry; storing it here is
+    // what slides the native session forward so an active app is never signed out. No-op on web.
+    const refreshed = res.headers.get('X-Session-Token');
+    if (refreshed) void setNativeToken(refreshed);
     if (!res.ok) {
       let error = `Request failed (${res.status})`;
       try {
@@ -54,7 +66,10 @@ export const authApi = {
   requestEmailCode: (email: string) =>
     request<{ ok: true }>('/auth/email/request', { method: 'POST', body: JSON.stringify({ email }) }),
   verifyEmailCode: (email: string, code: string) =>
-    request<{ user: User }>('/auth/email/verify', { method: 'POST', body: JSON.stringify({ email, code }) }),
+    request<{ user: User; token: string }>('/auth/email/verify', {
+      method: 'POST',
+      body: JSON.stringify({ email, code }),
+    }),
   logout: () => request<{ ok: true }>('/auth/logout', { method: 'POST' }),
   // Erases the account and everything filed under it, and ends the session. There is no undo, and
   // no grace period in which it could be reclaimed.
@@ -109,7 +124,7 @@ export const dataApi = {
   // requests instead of one per edit. Anything that fails the request as a whole (401, 429, 5xx,
   // no network) throws, leaving the caller's queue intact.
   push: (items: PushItem[]) => request<{ results: PushResult[] }>('/data/push', { method: 'POST', body: JSON.stringify({ items }) }),
-  exportUrl: '/api/data/export',
+  exportUrl: `${API_BASE}/api/data/export`,
 };
 
 export type { Highlight };

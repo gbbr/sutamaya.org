@@ -2,7 +2,7 @@ import { env } from 'cloudflare:test';
 import { Hono } from 'hono';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { findOrCreateGoogleUser, findUserById, requireAuth } from './auth.js';
-import { createSessionCookie } from './session.js';
+import { createSessionCookie, signSessionToken } from './session.js';
 
 // vi.mock()/vi.doMock() only take effect on modules imported *after* they're registered, and this
 // project's worker/test/apply-migrations.js setupFile imports from 'cloudflare:test', which is a
@@ -140,5 +140,43 @@ describe('requireAuth', () => {
       env
     );
     expect(res.status).toBe(401);
+  });
+
+  it('accepts a valid Authorization: Bearer token in place of the cookie', async () => {
+    const token = await signSessionToken('user-1', env.SESSION_SECRET);
+    const res = await buildTestApp().request(
+      '/protected',
+      { headers: { Authorization: `Bearer ${token}` } },
+      env
+    );
+    expect(res.status).toBe(200);
+    expect(await res.json()).toEqual({ userId: 'user-1' });
+  });
+
+  it('rejects a Bearer token signed with a different secret', async () => {
+    const token = await signSessionToken('user-1', 'a-different-secret');
+    const res = await buildTestApp().request(
+      '/protected',
+      { headers: { Authorization: `Bearer ${token}` } },
+      env
+    );
+    expect(res.status).toBe(401);
+  });
+
+  it('re-mints a stale Bearer token onto the X-Session-Token response header', async () => {
+    const token = await signSessionToken('user-1', env.SESSION_SECRET);
+    vi.spyOn(Date, 'now').mockReturnValue(Date.now() + 60 * 24 * 60 * 60 * 1000);
+    try {
+      const res = await buildTestApp().request(
+        '/protected',
+        { headers: { Authorization: `Bearer ${token}` } },
+        env
+      );
+      expect(res.status).toBe(200);
+      expect(res.headers.get('X-Session-Token')).toBeTruthy();
+      expect(res.headers.get('X-Session-Token')).not.toBe(token);
+    } finally {
+      vi.restoreAllMocks();
+    }
   });
 });
