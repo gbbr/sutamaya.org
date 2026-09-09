@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Router, navigate, type RouteComponentProps } from '@reach/router';
 import { AppProviders } from './context/AppProviders';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { useAndroidBackButton } from './hooks/useAndroidBackButton';
 import { useCorpus } from './context/CorpusContext';
 import { getLastLocation } from './lib/lastLocation';
 import { normalizeRouteId, resolveCanonicalSuttaId } from './lib/corpus';
@@ -98,6 +99,7 @@ function Routes() {
 }
 
 export default function App() {
+  useAndroidBackButton();
   return (
     <ErrorBoundary>
       <AppProviders>

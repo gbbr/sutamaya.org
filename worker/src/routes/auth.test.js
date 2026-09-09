@@ -555,6 +555,96 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
     });
   });
 
+  // --- Native (Capacitor) auth: a bearer token instead of the cookie ------------------------
+  //
+  // The WebView is not same-origin with the Worker, so the session travels as an Authorization
+  // header. The email flow returns the token in its JSON body; the Google flow, which runs in the
+  // system browser, hands it back on a `sutamaya://auth` deep link.
+  describe('bearer token', () => {
+    const realFetch = globalThis.fetch;
+    afterEach(() => {
+      globalThis.fetch = realFetch;
+    });
+
+    function emailEnv() {
+      const sent = [];
+      globalThis.fetch = vi.fn(async (url, init) => {
+        if (url === 'https://api.resend.com/emails') {
+          sent.push(JSON.parse(init.body));
+          return Response.json({ id: 'msg-1' });
+        }
+        return realFetch(url, init);
+      });
+      return { env: { ...OAUTH_ENV, MAIL_FROM: 'no-reply@sutamaya.org', RESEND_API_KEY: 'k' }, sent };
+    }
+
+    it('POST /email/verify returns a token that authenticates GET /me via Authorization header', async () => {
+      const { default: app } = await import('../index.js');
+      const { env: testEnv, sent } = emailEnv();
+      await app.request(
+        '/api/auth/email/request',
+        { method: 'POST', body: JSON.stringify({ email: 'native@example.com' }), headers: { 'Content-Type': 'application/json' } },
+        testEnv
+      );
+      const code = sent.at(-1).subject.match(/\d{6}/)[0];
+      const verify = await app.request(
+        '/api/auth/email/verify',
+        { method: 'POST', body: JSON.stringify({ email: 'native@example.com', code }), headers: { 'Content-Type': 'application/json' } },
+        testEnv
+      );
+      const { user, token } = await verify.json();
+      expect(token).toBeTruthy();
+
+      const me = await app.request('/api/auth/me', { headers: { Authorization: `Bearer ${token}` } }, testEnv);
+      expect((await me.json()).user.id).toBe(user.id);
+    });
+
+    it('GET /google/start?app=1 → callback returns the token on a sutamaya://auth deep link', async () => {
+      const { default: app } = await import('../index.js');
+      const start = await app.request('/api/auth/google/start?app=1&return=%2Fsettings', {}, OAUTH_ENV);
+      const state = new URL(start.headers.get('Location')).searchParams.get('state');
+      globalThis.fetch = vi.fn(async () => Response.json({ id_token: 'id-tok' }));
+      jwtVerify.mockResolvedValue({ payload: mockPayload() });
+
+      const res = await app.request(
+        `/api/auth/google/callback?code=abc&state=${encodeURIComponent(state)}`,
+        { headers: { Cookie: nonceCookieFrom(start) } },
+        OAUTH_ENV
+      );
+
+      expect(res.status).toBe(302);
+      const location = res.headers.get('Location');
+      expect(location.startsWith('sutamaya://auth?')).toBe(true);
+      expect(sessionCookieFrom(res)).toBeUndefined();
+
+      const token = new URL(location).searchParams.get('token');
+      const me = await app.request('/api/auth/me', { headers: { Authorization: `Bearer ${token}` } }, OAUTH_ENV);
+      expect((await me.json()).user).toMatchObject({ email: 'reader@example.com' });
+    });
+
+    it('a failed native Google callback returns to sutamaya://auth?error=1', async () => {
+      const { default: app } = await import('../index.js');
+      const start = await app.request('/api/auth/google/start?app=1', {}, OAUTH_ENV);
+      const state = new URL(start.headers.get('Location')).searchParams.get('state');
+      globalThis.fetch = vi.fn(async () => Response.json({ id_token: 'id-tok' }));
+      jwtVerify.mockResolvedValue({ payload: mockPayload({ email_verified: false }) });
+
+      const res = await app.request(
+        `/api/auth/google/callback?code=abc&state=${encodeURIComponent(state)}`,
+        { headers: { Cookie: nonceCookieFrom(start) } },
+        OAUTH_ENV
+      );
+      expect(res.headers.get('Location')).toBe('sutamaya://auth?error=1');
+    });
+
+    it('a browser Google flow (no app=1) still sets the cookie and redirects into the app', async () => {
+      const { default: app } = await import('../index.js');
+      const signIn = await signInWithGoogle(app);
+      expect(sessionCookieFrom(signIn)).toBeTruthy();
+      expect(signIn.headers.get('Location')).toBe('https://app.sutamaya.org/settings');
+    });
+  });
+
   it('POST /logout clears an established session', async () => {
     const { default: app } = await import('../index.js');
     const signIn = await signInWithGoogle(app);

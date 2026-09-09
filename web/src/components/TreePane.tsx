@@ -11,6 +11,7 @@ import { useListTreeIndex } from '../hooks/useListTreeIndex';
 import { useListCrud } from '../hooks/useListCrud';
 import { useListTreeDrag } from '../hooks/useListTreeDrag';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
+import { useBackHandler } from '../hooks/useBackHandler';
 import { ancestorsOf, descendantIdsOf, findNode, flatSuttaOrder } from '../lib/corpus';
 import {
   SEARCH_CAP_NOTE,
@@ -479,6 +480,9 @@ export function TreePane({
     onSearch('');
   }
 
+  // Android's back button closes an open search before it leaves the library. A no-op on web and iOS.
+  useBackHandler(searchOpen, closeSearch);
+
   // Opens a hit in the reader, leaving the search as it is: navigate() lands a frame later, so
   // clearing it here would paint a frame of the bare tree, and the route change unmounts this pane.
   function openHit(id: string, segments?: [number, number]) {
@@ -593,7 +597,10 @@ export function TreePane({
       {/* No bottom padding while the tabs are up, their underline having to land on this border
           for the two to read as one edge; without them the padding comes back, or the search box
           sits on the rule. */}
-      <header className={`flex-none px-[22px] pt-5 border-b border-ink/10 ${searching ? 'pb-4' : ''}`}>
+      <header
+        className={`flex-none px-[22px] pt-5 border-b border-ink/10 ${searching ? 'pb-4' : ''}`}
+        style={{ paddingTop: 'calc(1.25rem + var(--safe-top))' }}
+      >
         {/* The wordmark and the destinations away from the two trees: help, search, the account.
             The Library/My lists switch gets its own row below rather than joining them, being the
             navigation the app lives behind rather than more chrome. */}
@@ -730,7 +737,7 @@ export function TreePane({
         ref={scrollRef}
         className="sc flex-1 pt-3"
         aria-busy={updating}
-        style={{ paddingBottom: 'calc(1.5rem + env(safe-area-inset-bottom, 0px))' }}
+        style={{ paddingBottom: 'calc(1.5rem + var(--safe-bottom))' }}
       >
         {searching ? (
           <div>

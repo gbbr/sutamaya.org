@@ -1,4 +1,5 @@
 import { randomId } from './ids';
+import { isNativeApp, isStandaloneDisplay } from './platform';
 import { KEEP_SAFE_DISMISSED_KEY, LOCAL_USER_KEY } from './storageKeys';
 
 // Identity for a reader who hasn't signed in: an id to file their work under, so the mirror and
@@ -64,13 +65,12 @@ export function dismissKeepSafe(localId: string): void {
 // wrong answer shows a more alarming sentence to someone who is safe, never the reverse.
 export function isIosBrowserTab(): boolean {
   if (typeof navigator === 'undefined') return false;
+  // A native shell stores its data in the app container, which WebKit's eviction never reaches.
+  if (isNativeApp()) return false;
   const iosLike =
     /iP(hone|ad|od)/.test(navigator.platform || '') ||
     (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ||
     /iPhone|iPad|iPod/.test(navigator.userAgent || '');
   if (!iosLike) return false;
-  const standalone =
-    window.matchMedia?.('(display-mode: standalone)').matches === true ||
-    (navigator as Navigator & { standalone?: boolean }).standalone === true;
-  return !standalone;
+  return !isStandaloneDisplay();
 }

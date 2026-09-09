@@ -22,12 +22,17 @@ vi.mock('../context/AuthContext', () => ({ useAuth: vi.fn() }));
 vi.mock('../context/LayoutContext', () => ({ useLayout: vi.fn() }));
 vi.mock('@reach/router', () => ({ navigate: vi.fn() }));
 vi.mock('../lib/pwaNudge', () => ({
-  isStandalone: vi.fn(),
   hasOpenedSutta: vi.fn(),
   isOfflineNudgeDismissed: vi.fn(),
   dismissOfflineNudge: vi.fn(),
   dismissedOfflineUpdateVersion: vi.fn(),
   dismissOfflineUpdate: vi.fn(),
+}));
+vi.mock('../lib/platform', () => ({
+  isNativeApp: vi.fn(() => false),
+  platformName: vi.fn(() => 'web'),
+  isStandaloneDisplay: vi.fn(),
+  API_BASE: '',
 }));
 vi.mock('../lib/offline', () => ({ estimateOfflineStatus: vi.fn(), isOfflineTextStale: vi.fn() }));
 vi.mock('../lib/localAccount', () => ({
@@ -49,13 +54,13 @@ import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
 import { useLayout } from '../context/LayoutContext';
 import {
-  isStandalone,
   hasOpenedSutta,
   isOfflineNudgeDismissed,
   dismissOfflineNudge,
   dismissedOfflineUpdateVersion,
   dismissOfflineUpdate,
 } from '../lib/pwaNudge';
+import { isStandaloneDisplay } from '../lib/platform';
 import { estimateOfflineStatus, isOfflineTextStale } from '../lib/offline';
 import { dismissKeepSafe, isIosBrowserTab, isKeepSafeDismissed } from '../lib/localAccount';
 import { TreePane } from './TreePane';
@@ -236,6 +241,7 @@ beforeEach(() => {
     authError: null,
     requestEmailCode: vi.fn(async () => {}),
     signInWithEmailCode: vi.fn(async () => {}),
+    signInWithGoogleNative: vi.fn(async () => {}),
     promptGoogleSignIn: vi.fn(),
     logout: vi.fn(async () => {}),
     deleteAccount: vi.fn(async () => {}),
@@ -245,7 +251,7 @@ beforeEach(() => {
   // Default to "neither nudge can show" for every test that isn't specifically about them — see
   // the 'offline download nudge' / 'offline text update nudge' blocks for the cases overriding
   // these.
-  vi.mocked(isStandalone).mockReturnValue(false);
+  vi.mocked(isStandaloneDisplay).mockReturnValue(false);
   vi.mocked(hasOpenedSutta).mockReturnValue(false);
   vi.mocked(isOfflineNudgeDismissed).mockReturnValue(false);
   // Cleared, not just re-stubbed: several tests below assert this *wasn't* called (the cheap
@@ -669,7 +675,7 @@ describe('offline download nudge', () => {
   const nudgeText = OFFLINE_DOWNLOAD_TEXT;
 
   it('stays hidden in a regular (non-PWA) browser tab even once a sutta has been opened and the corpus is incomplete', async () => {
-    vi.mocked(isStandalone).mockReturnValue(false);
+    vi.mocked(isStandaloneDisplay).mockReturnValue(false);
     vi.mocked(hasOpenedSutta).mockReturnValue(true);
     vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 3, total: 10 });
     renderHarness();
@@ -681,7 +687,7 @@ describe('offline download nudge', () => {
   });
 
   it('stays hidden until a sutta has actually been opened, even when standalone', () => {
-    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(isStandaloneDisplay).mockReturnValue(true);
     vi.mocked(hasOpenedSutta).mockReturnValue(false);
     renderHarness();
     expect(screen.queryByText(nudgeText)).not.toBeInTheDocument();
@@ -689,7 +695,7 @@ describe('offline download nudge', () => {
   });
 
   it('stays hidden once already dismissed', async () => {
-    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(isStandaloneDisplay).mockReturnValue(true);
     vi.mocked(hasOpenedSutta).mockReturnValue(true);
     vi.mocked(isOfflineNudgeDismissed).mockReturnValue(true);
     vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 3, total: 10 });
@@ -702,7 +708,7 @@ describe('offline download nudge', () => {
   });
 
   it('stays hidden once the corpus is already fully cached for offline', async () => {
-    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(isStandaloneDisplay).mockReturnValue(true);
     vi.mocked(hasOpenedSutta).mockReturnValue(true);
     vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 10, total: 10 });
     renderHarness();
@@ -711,7 +717,7 @@ describe('offline download nudge', () => {
   });
 
   it('shows once standalone, a sutta has been opened, and the corpus is incomplete', async () => {
-    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(isStandaloneDisplay).mockReturnValue(true);
     vi.mocked(hasOpenedSutta).mockReturnValue(true);
     vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 3, total: 10 });
     renderHarness();
@@ -719,7 +725,7 @@ describe('offline download nudge', () => {
   });
 
   it('its Download button navigates to Settings scrolled to the offline section', async () => {
-    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(isStandaloneDisplay).mockReturnValue(true);
     vi.mocked(hasOpenedSutta).mockReturnValue(true);
     vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 3, total: 10 });
     renderHarness();
@@ -729,7 +735,7 @@ describe('offline download nudge', () => {
   });
 
   it('dismissing hides it and persists the dismissal', async () => {
-    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(isStandaloneDisplay).mockReturnValue(true);
     vi.mocked(hasOpenedSutta).mockReturnValue(true);
     vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 3, total: 10 });
     renderHarness();
@@ -745,8 +751,9 @@ describe('offline text update nudge', () => {
   const downloadText = OFFLINE_DOWNLOAD_TEXT;
 
   // The state this banner is actually for: a device that finished a bulk download, whose cached
-  // text has since fallen behind the corpus this build serves. Deliberately leaves isStandalone
-  // at its `false` default — unlike the download nudge, this one is not PWA-gated.
+  // text has since fallen behind the corpus this build serves. Deliberately leaves
+  // isStandaloneDisplay at its `false` default — unlike the download nudge, this one is not
+  // PWA-gated.
   function stale() {
     vi.mocked(hasOpenedSutta).mockReturnValue(true);
     vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 10, total: 10 });
@@ -763,7 +770,7 @@ describe('offline text update nudge', () => {
   // because the copy is current, not because nothing was ever checked.
   it('stays hidden while the cached text still matches the build', async () => {
     stale();
-    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(isStandaloneDisplay).mockReturnValue(true);
     vi.mocked(isOfflineTextStale).mockReturnValue(false);
     renderHarness();
     await vi.waitFor(() => expect(estimateOfflineStatus).toHaveBeenCalled());
@@ -774,7 +781,7 @@ describe('offline text update nudge', () => {
   // copy is out of date is meaningless when they haven't got a complete one.
   it('defers to the download nudge while the corpus is still incomplete', async () => {
     stale();
-    vi.mocked(isStandalone).mockReturnValue(true); // the download nudge it defers to is PWA-only
+    vi.mocked(isStandaloneDisplay).mockReturnValue(true); // the download nudge it defers to is PWA-only
     vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 3, total: 10 });
     renderHarness();
     expect(await screen.findByText(downloadText)).toBeInTheDocument();
@@ -786,7 +793,7 @@ describe('offline text update nudge', () => {
   // the whole canon.
   it('shows in a regular browser tab too', async () => {
     stale();
-    vi.mocked(isStandalone).mockReturnValue(false);
+    vi.mocked(isStandaloneDisplay).mockReturnValue(false);
     vi.mocked(hasOpenedSutta).mockReturnValue(false);
     renderHarness();
     expect(await screen.findByText(updateText)).toBeInTheDocument();
@@ -855,6 +862,7 @@ describe('sync state', () => {
       authError: null,
       requestEmailCode: vi.fn(async () => {}),
       signInWithEmailCode: vi.fn(async () => {}),
+      signInWithGoogleNative: vi.fn(async () => {}),
       promptGoogleSignIn,
       logout: vi.fn(async () => {}),
       deleteAccount: vi.fn(async () => {}),
@@ -872,7 +880,7 @@ describe('sync state', () => {
   });
 
   it('takes the banner slot from an offline nudge that would otherwise show', async () => {
-    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(isStandaloneDisplay).mockReturnValue(true);
     vi.mocked(hasOpenedSutta).mockReturnValue(true);
     vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 0, total: 10 });
     userData = mockUserData({ needsReauth: true });
@@ -898,6 +906,7 @@ describe('deferred sign-in', () => {
       authError: null,
       requestEmailCode: vi.fn(async () => {}),
       signInWithEmailCode: vi.fn(async () => {}),
+      signInWithGoogleNative: vi.fn(async () => {}),
       promptGoogleSignIn: vi.fn(),
       logout: vi.fn(async () => {}),
       deleteAccount: vi.fn(async () => {}),
@@ -984,7 +993,7 @@ describe('deferred sign-in', () => {
   });
 
   it('takes the banner slot from an offline nudge, and yields it to re-auth', async () => {
-    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(isStandaloneDisplay).mockReturnValue(true);
     vi.mocked(hasOpenedSutta).mockReturnValue(true);
     vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 0, total: 10 });
     signedOut({ notes: { dn1: 'a thought' } });
@@ -1000,7 +1009,7 @@ describe('deferred sign-in', () => {
   });
 
   it('leaves the slot empty on dismiss rather than swapping in the download nudge, which returns on the next mount', async () => {
-    vi.mocked(isStandalone).mockReturnValue(true);
+    vi.mocked(isStandaloneDisplay).mockReturnValue(true);
     vi.mocked(hasOpenedSutta).mockReturnValue(true);
     vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 0, total: 10 });
     signedOut({ notes: { dn1: 'a thought' } });

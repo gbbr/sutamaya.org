@@ -13,6 +13,7 @@ import { flatSuttaOrder } from '../lib/corpus';
 import { isTypingTarget } from '../lib/shortcuts';
 import { statusOf } from '../lib/retry';
 import { isIosBrowserTab } from '../lib/localAccount';
+import { isNativeApp } from '../lib/platform';
 import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
 import {
   cachedCorpusVersions,
@@ -407,7 +408,11 @@ export function SettingsPage({ location }: RouteComponentProps) {
   // Block layout with margin-auto centring rather than flex, which has scrollHeight bugs under
   // overflow:auto on some WebView builds.
   return (
-    <div data-component="SettingsPage" className="sc h-full bg-paper px-5 pt-10">
+    <div
+      data-component="SettingsPage"
+      className="sc h-full bg-paper px-5 pt-10"
+      style={{ paddingTop: 'calc(2.5rem + var(--safe-top))' }}
+    >
       <div className="w-full max-w-[540px] pb-10 mx-auto">
         {/* Back to wherever the reader was, via '/' rather than browser history, which a relaunch
             or a hard refresh onto /settings would leave empty. */}
@@ -540,10 +545,18 @@ export function SettingsPage({ location }: RouteComponentProps) {
         </div>
 
         {/* The Offline section. Renders whatever the corpus and cache state, so its position and
-            height stay fixed for the scroll target above. */}
+            height stay fixed for the scroll target above. In the native app the whole corpus ships
+            in the bundle, so there is nothing to download — a plain line stands in its place. */}
         <div ref={offlineSectionRef}>
           <div className={SECTION_LABEL}>Offline</div>
 
+          {isNativeApp() ? (
+            <div className={`${cardClass('offline')} py-4 mb-5`}>
+              <div className="font-sans text-ui-base text-ink-2">
+                All suttas, the dictionary and search are built into the app and work offline.
+              </div>
+            </div>
+          ) : (
           <div className={`${cardClass('offline')} py-4 mb-5`}>
             {offlineStatus === 'downloading' ? (
               <>
@@ -612,6 +625,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
               </>
             )}
           </div>
+          )}
         </div>
 
         {/* The Display section: theme tiles and the UI scale. */}

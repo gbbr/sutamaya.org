@@ -26,6 +26,8 @@
 // The trade is that a session ending within a second or so of launch may go uncounted. On the slow
 // networks this exists to fix, such a session was never counted anyway.
 
+import { isNativeApp } from './platform';
+
 const BEACON_SRC = 'https://static.cloudflareinsights.com/beacon.min.js';
 const TOKEN = '9ccb5acc36b045d1a2ae008a1c61e694';
 
@@ -44,6 +46,9 @@ function afterLoad(fn: () => void): void {
 // classic script too.
 export function loadAnalytics(): void {
   if (typeof document === 'undefined') return;
+  // Cloudflare Web Analytics is bound to the sutamaya.org zone; a native shell's local WebView
+  // origin reports nothing it can attribute, so the beacon is left out of native builds.
+  if (isNativeApp()) return;
   afterLoad(() => {
     // A dropped request is the case this whole module is about, and there is no offline queue to
     // put it in — the beacon reports a visit as it happens or not at all. Skipping a launch the

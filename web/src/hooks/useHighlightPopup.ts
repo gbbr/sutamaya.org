@@ -2,8 +2,15 @@ import { useCallback, useEffect, useState } from 'react';
 import { useUserData } from '../context/UserDataContext';
 import { useLatest } from './useLatest';
 import { spansOverlap, type HlSpan } from '../lib/highlights';
+import { platformName } from '../lib/platform';
 import type { SegmentFile } from '../lib/corpus';
 import type { Highlight } from '../lib/types';
+
+// Android's WebView commits a selection through its own `ActionMode` bar and fires no usable
+// `touchend` on the text, so there the popup is opened from `selectionchange` once the pointer is
+// up — the same path Firefox on Android's handles already need, widened to open and not only
+// refresh. The native Copy / Share bar shows alongside it.
+const SELECTION_DRIVEN = platformName() === 'android';
 
 // The colour popup over a selection or an existing highlight.
 //
@@ -149,17 +156,22 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
     }, 0);
   }, [highlights, segments]);
 
-  // Follows a selection extended by Firefox on Android's own handles, which fire nothing but
-  // `selectionchange`. Only refreshes an open popup, and only while no pointer is down, so every
-  // other browser goes on committing at `mouseup`/`touchend`.
+  // Follows a selection through `selectionchange`, the only event Firefox on Android's drag handles
+  // fire and the only reliable one on Android's WebView. Elsewhere it just refreshes an already-open
+  // popup while every browser goes on committing at `mouseup`/`touchend`; on Android's WebView
+  // (SELECTION_DRIVEN) it also opens the popup, and clears it when the selection collapses. Both
+  // only act while no pointer is down.
   const latest = useLatest({ highlights, segments, open: pop !== null });
   useEffect(() => {
     let down = false;
     const refresh = () => {
       const { highlights: hl, segments: segs, open } = latest.current;
-      if (!open || down || !segs) return;
+      if (down || !segs || (!SELECTION_DRIVEN && !open)) return;
       const sel = window.getSelection();
-      if (!sel || sel.isCollapsed || !String(sel).trim()) return;
+      if (!sel || sel.isCollapsed || !String(sel).trim()) {
+        if (SELECTION_DRIVEN) setPop((p) => (p && !p.on ? null : p));
+        return;
+      }
       const next = popFromSelection(sel, hl, segs);
       if (next) setPop(next);
     };
@@ -168,6 +180,8 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
     };
     const onUp = () => {
       down = false;
+      // A selection finished on Android may settle without a trailing `selectionchange`.
+      if (SELECTION_DRIVEN) setTimeout(refresh, 0);
     };
     document.addEventListener('selectionchange', refresh);
     window.addEventListener('pointerdown', onDown, true);

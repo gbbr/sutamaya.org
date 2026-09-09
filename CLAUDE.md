@@ -43,6 +43,12 @@ Run the two halves individually with `npm run dev:worker` / `npm run dev:web`. `
 separate database to start. The web dev server proxies `/api/*` to `http://localhost:8787`
 (override with `API_ORIGIN`).
 
+`npm run dev:ios` / `npm run dev:android` (or `dev:native` for both, heavy) run the Worker and the
+web dev server, then launch the native app in live-reload mode against them — web edits reload with
+no rebuild. Boot a simulator / emulator first, and run `npm run build:native` once so the `web/ios`
+and `web/android` projects have the current bundle (`-- --no-sync` stops at the bundle, no native
+toolchain needed). See `docs/native-apps.md`.
+
 No Cloudflare account is needed for local dev, but `.dev.vars` needs `GOOGLE_CLIENT_SECRET`,
 `SESSION_SECRET` (any long random string — it signs both the session cookie and the OAuth state) and
 `WEB_ORIGIN=http://localhost:5173` — Google sign-in needs a real OAuth client even in dev. Leave a

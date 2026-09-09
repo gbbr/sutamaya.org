@@ -8,6 +8,9 @@ node_modules/
 web/dist/
 web/dev-dist/
 web/public/data/
+# Derived from web/public/icons/ by scripts/make-native-assets.mjs; the generated native
+# resources under web/ios/ and web/android/ are what's committed.
+web/assets/
 data/sujato.post/
 .env
 *.local

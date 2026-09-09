@@ -24,6 +24,7 @@ beforeEach(() => {
     authError: null,
     requestEmailCode,
     signInWithEmailCode,
+    signInWithGoogleNative: vi.fn(async () => {}),
     promptGoogleSignIn: vi.fn(),
     logout: vi.fn(async () => {}),
     deleteAccount: vi.fn(async () => {}),

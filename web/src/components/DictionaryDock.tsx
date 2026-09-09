@@ -40,7 +40,10 @@ export function DictionaryDock({
       style={{
         borderTop: `2px solid ${theme.fg}`,
         background: theme.panel,
-        padding: '14px 22px 18px',
+        // No bottom padding on the section: its background runs to the screen edge, under Android's
+        // gesture pill / iOS's home indicator, and the scroll area below carries the inset so the
+        // list ends clear of them rather than behind a dead band.
+        padding: '14px 22px 0',
         maxHeight: '45dvh',
       }}
     >
@@ -81,7 +84,10 @@ export function DictionaryDock({
           <X size={19} strokeWidth={1.75} />
         </button>
       </div>
-      <div className="flex-1 min-h-0 overflow-y-auto flex flex-col gap-[9px] mt-[7px] opacity-[.82]" style={{ fontSize: defSize }}>
+      <div
+        className="flex-1 min-h-0 overflow-y-auto flex flex-col gap-[9px] mt-[7px] opacity-[.82]"
+        style={{ fontSize: defSize, paddingBottom: 'max(18px, var(--safe-bottom))' }}
+      >
         {loading && dictionaryFailed ? (
           <div className="leading-[1.55] flex items-baseline gap-[10px]">
             <span className="opacity-70">Couldn't download the dictionary.</span>

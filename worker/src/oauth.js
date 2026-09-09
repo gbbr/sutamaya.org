@@ -38,17 +38,18 @@ function hmacKey(secret) {
   ]);
 }
 
-// Returns the payload signed as `${base64url(json)}.${base64url(hmac)}`. It travels through the
-// provider in plain sight, so it carries only a nonce, a return path, an origin and a timestamp.
-export async function signState(payload, secret) {
+// Returns `payload` signed as `${base64url(json)}.${base64url(hmac)}`. The caller puts a `t`
+// timestamp in the payload; verifyPayload checks it against a max age. Also used for the native
+// bearer session token (session.js), which rides an Authorization header rather than the provider.
+export async function signPayload(payload, secret) {
   const body = toBase64Url(encoder.encode(JSON.stringify(payload)));
   const signature = await crypto.subtle.sign('HMAC', await hmacKey(secret), encoder.encode(body));
   return `${body}.${toBase64Url(new Uint8Array(signature))}`;
 }
 
-// Returns a state's payload, or null if it was tampered with, forged, malformed or is older than
-// STATE_MAX_AGE_MS.
-export async function verifyState(token, secret) {
+// Returns a signed payload's contents, or null if it was tampered with, forged, malformed, or its
+// `t` timestamp is older than `maxAgeMs`.
+export async function verifyPayload(token, secret, maxAgeMs) {
   if (typeof token !== 'string') return null;
   const [body, signature] = token.split('.');
   if (!body || !signature) return null;
@@ -68,8 +69,20 @@ export async function verifyState(token, secret) {
     return null;
   }
   if (!payload || typeof payload !== 'object') return null;
-  if (typeof payload.t !== 'number' || Date.now() - payload.t > STATE_MAX_AGE_MS) return null;
+  if (typeof payload.t !== 'number' || Date.now() - payload.t > maxAgeMs) return null;
   return payload;
+}
+
+// The OAuth round trip's signed state. It travels through the provider in plain sight, so it
+// carries only a nonce, a return path, an origin, a native flag and a timestamp.
+export function signState(payload, secret) {
+  return signPayload(payload, secret);
+}
+
+// Returns a state's payload, or null if it was tampered with, forged, malformed or is older than
+// STATE_MAX_AGE_MS.
+export function verifyState(token, secret) {
+  return verifyPayload(token, secret, STATE_MAX_AGE_MS);
 }
 
 // Parses WEB_ORIGIN's comma-separated list into trimmed origins. The first is the canonical one.

@@ -1,10 +1,13 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { navigate } from '@reach/router';
+import { App } from '@capacitor/app';
 import { authApi } from '../lib/api';
 import { isRetryable, retryWithBackoff, statusOf } from '../lib/retry';
 import { readLastUser, writeLastUser } from '../lib/lastUser';
 import { localUserId, resetLocalUserId } from '../lib/localAccount';
 import { deleteMirror } from '../lib/mirrorDb';
+import { API_BASE } from '../lib/platform';
+import { clearNativeToken, hydrateNativeToken, setNativeToken } from '../lib/nativeAuth';
 import type { User } from '../lib/types';
 
 // Delay before retrying a transient session check, held above the Worker's 60s rate-limit period.
@@ -23,6 +26,10 @@ interface AuthState {
   localUserId: string;
   authError: string | null;
   promptGoogleSignIn: () => void;
+  // Native only: runs the Google round trip in the system browser (Google blocks OAuth in a
+  // WebView) and stores the token the deep-link return carries. A no-op on web, which uses the
+  // plain redirect link in GoogleSignInButton.
+  signInWithGoogleNative: (returnTo?: string) => Promise<void>;
   requestEmailCode: (email: string) => Promise<void>;
   signInWithEmailCode: (email: string, code: string) => Promise<void>;
   logout: () => Promise<void>;
@@ -71,6 +78,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     let timer: ReturnType<typeof setTimeout> | undefined;
     async function loadUser() {
       try {
+        // On native the bearer token has to be in hand before the first request carries it; this
+        // resolves at once on web and is time-boxed on native.
+        await hydrateNativeToken();
         const r = await retryWithBackoff(() => authApi.me());
         // The remembered identity follows the server exactly, including to null.
         writeLastUser(r.user);
@@ -104,15 +114,68 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     navigate('/settings', { state: { scrollTo: 'auth', returnTo } });
   }, []);
 
+  // Native Google sign-in: the WebView can't run Google's OAuth, so the round trip happens in the
+  // system browser and returns to a `sutamaya://auth` deep link carrying a bearer token. The
+  // browser sheet closing without a deep link (the reader backed out) resolves quietly.
+  const signInWithGoogleNative = useCallback(async (returnTo?: string) => {
+    setAuthError(null);
+    // App is imported statically (useAndroidBackButton needs it on the startup path); only Browser
+    // stays dynamic.
+    const { Browser } = await import('@capacitor/browser');
+
+    let settled = false;
+    const handles: { remove: () => void }[] = [];
+    let resolveOutcome!: (value: { token: string | null; failed: boolean }) => void;
+    const outcome = new Promise<{ token: string | null; failed: boolean }>((resolve) => {
+      resolveOutcome = resolve;
+    });
+    const settle = (value: { token: string | null; failed: boolean }) => {
+      if (settled) return;
+      settled = true;
+      handles.forEach((h) => h.remove());
+      resolveOutcome(value);
+    };
+
+    // Listeners are attached before the browser opens, so no return can be missed.
+    handles.push(
+      await App.addListener('appUrlOpen', ({ url }) => {
+        if (!url.startsWith('sutamaya://auth')) return;
+        void Browser.close();
+        const token = new URL(url).searchParams.get('token');
+        settle({ token, failed: !token });
+      }),
+      // Fires when the reader dismisses the sheet. On iOS it can also fire as the deep link
+      // dismisses it, so give appUrlOpen a moment to win before calling it a cancellation.
+      await Browser.addListener('browserFinished', () => {
+        setTimeout(() => settle({ token: null, failed: false }), 600);
+      })
+    );
+
+    await Browser.open({ url: `${API_BASE}/api/auth/google/start?app=1` });
+    const result = await outcome;
+
+    if (result.token) {
+      await setNativeToken(result.token);
+      const { user } = await authApi.me();
+      writeLastUser(user);
+      setUser(user);
+      if (returnTo) navigate(returnTo);
+    } else if (result.failed) {
+      setAuthError(authErrorMessage('1'));
+    }
+  }, []);
+
   const requestEmailCode = useCallback(async (email: string) => {
     setAuthError(null);
     await authApi.requestEmailCode(email);
   }, []);
 
   // Establishes the session in place, without the page unloading as the OAuth redirect does, so it
-  // works the same inside an installed PWA.
+  // works the same inside an installed PWA. On native the response body carries the bearer token,
+  // the cookie it also sets being unusable cross-origin.
   const signInWithEmailCode = useCallback(async (email: string, code: string) => {
-    const { user } = await authApi.verifyEmailCode(email, code);
+    const { user, token } = await authApi.verifyEmailCode(email, code);
+    await setNativeToken(token);
     setAuthError(null);
     writeLastUser(user);
     setUser(user);
@@ -125,6 +188,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // nothing left to name the mirror it has to delete.
   const forgetAccount = useCallback(async (accountId?: string) => {
     const previousId = accountId ?? user?.id;
+    await clearNativeToken();
     writeLastUser(null);
     setUser(null);
     // A fresh local id, so whatever the reader does next starts empty.
@@ -157,6 +221,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       localUserId: localId,
       authError,
       promptGoogleSignIn,
+      signInWithGoogleNative,
       requestEmailCode,
       signInWithEmailCode,
       logout,
@@ -170,6 +235,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       localId,
       authError,
       promptGoogleSignIn,
+      signInWithGoogleNative,
       requestEmailCode,
       signInWithEmailCode,
       logout,

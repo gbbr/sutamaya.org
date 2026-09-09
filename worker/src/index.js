@@ -4,6 +4,7 @@ import { webOrigins } from './oauth.js';
 import { checkRateLimit } from './rateLimit.js';
 import { authRouter } from './routes/auth.js';
 import { dataRouter } from './routes/data.js';
+import { wellKnownRouter } from './wellKnown.js';
 import { withShareMeta } from './shareMeta.js';
 import {
   brandHtml,
@@ -32,9 +33,23 @@ app.use('/api/*', async (c, next) => {
   return next();
 });
 
-// CORS, built per request since the allowed origins come from WEB_ORIGIN. A no-op in the normal
-// same-origin case, the app being served from this origin.
-app.use('/api/*', (c, next) => cors({ origin: webOrigins(c.env.WEB_ORIGIN), credentials: true })(c, next));
+// The origins a Capacitor WebView serves the bundled app from — iOS uses capacitor://localhost,
+// Android https://localhost, falling back to http://localhost where the https scheme is off.
+// Fixed by Capacitor and the same in every environment, so they are hardcoded rather than an env
+// var, and kept out of WEB_ORIGIN because none is a valid OAuth return target.
+const NATIVE_ORIGINS = ['capacitor://localhost', 'https://localhost', 'http://localhost'];
+
+// CORS, built per request since the web origins come from WEB_ORIGIN. A no-op for the browser app,
+// which shares this origin; it lets a Capacitor build reach the API cross-origin, sending the
+// bearer token and reading a re-minted one back.
+app.use('/api/*', (c, next) =>
+  cors({
+    origin: [...webOrigins(c.env.WEB_ORIGIN), ...NATIVE_ORIGINS],
+    credentials: true,
+    allowHeaders: ['Content-Type', 'Authorization'],
+    exposeHeaders: ['X-Session-Token'],
+  })(c, next)
+);
 
 // Keeps one account's data out of the browser's HTTP cache, which the app can't clear on sign-out.
 // Scoped to /api/*: the corpus and text come from the assets binding and are cached hard.
@@ -58,6 +73,7 @@ app.get('/api/health', async (c) => {
 
 app.route('/api/auth', authRouter);
 app.route('/api/data', dataRouter);
+app.route('/.well-known', wellKnownRouter);
 
 // The hostnames serving the landing page, each mapped to where its app lives. Every other
 // hostname is the app, so no development host has to be listed. `www` is not among them: a

@@ -1,11 +1,19 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { ApiError, dataApi } from './api';
+import { getNativeToken, setNativeToken } from './nativeAuth';
+
+vi.mock('./nativeAuth', () => ({
+  getNativeToken: vi.fn(() => null),
+  setNativeToken: vi.fn(async () => {}),
+}));
 
 // These cover request()'s shared plumbing — the timeout wiring and how a failure is reported —
 // rather than any individual endpoint; a one-item push is just the cheapest caller to drive it with.
 describe('request()', () => {
   afterEach(() => {
     vi.unstubAllGlobals();
+    vi.mocked(getNativeToken).mockReturnValue(null);
+    vi.mocked(setNativeToken).mockClear();
   });
 
   // Typed with fetch's own parameters (rather than as a bare thunk) so the recorded calls carry
@@ -30,6 +38,25 @@ describe('request()', () => {
     expect(init.signal?.aborted).toBe(false);
   });
 
+  it('sends no Authorization header on web, where there is no stored token', async () => {
+    const fetchMock = stubFetch(async () => new Response('{}', { status: 200 }));
+    await pushNote();
+    expect(new Headers(fetchMock.mock.calls[0][1]?.headers).get('Authorization')).toBeNull();
+  });
+
+  it('sends the stored bearer token as an Authorization header when a native build has one', async () => {
+    vi.mocked(getNativeToken).mockReturnValue('tok-abc');
+    const fetchMock = stubFetch(async () => new Response('{}', { status: 200 }));
+    await pushNote();
+    expect(new Headers(fetchMock.mock.calls[0][1]?.headers).get('Authorization')).toBe('Bearer tok-abc');
+  });
+
+  it('stores a re-minted token the server hands back on X-Session-Token', async () => {
+    stubFetch(async () => new Response('{}', { status: 200, headers: { 'X-Session-Token': 'fresh-tok' } }));
+    await pushNote();
+    expect(setNativeToken).toHaveBeenCalledWith('fresh-tok');
+  });
+
   it('reports a timed-out request as a legible error rather than a bare DOMException', async () => {
     stubFetch(async () => {
       throw new DOMException('signal timed out', 'TimeoutError');
@@ -49,6 +76,7 @@ describe('request()', () => {
         ({
           ok: true,
           status: 200,
+          headers: new Headers(),
           json: () => Promise.reject(new DOMException('signal timed out', 'TimeoutError')),
         }) as unknown as Response
     );

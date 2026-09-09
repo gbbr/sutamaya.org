@@ -231,7 +231,7 @@ export function ReaderMenuPanel({
         background: theme.panel,
         color: theme.fg,
         padding: '14px 20px 18px',
-        paddingBottom: 'calc(18px + env(safe-area-inset-bottom, 0px))',
+        paddingBottom: 'calc(18px + var(--safe-bottom))',
       };
     }
     // Highlights and Lists on mobile: full-screen and top-anchored, so their inputs clear the
@@ -245,7 +245,7 @@ export function ReaderMenuPanel({
         background: theme.panel,
         color: theme.fg,
         padding: '18px 20px 22px',
-        paddingTop: 'calc(18px + env(safe-area-inset-top, 0px))',
+        paddingTop: 'calc(18px + var(--safe-top))',
       };
     }
     // Desktop, every tab: a fixed-width drawer down the right edge, separated from the reading

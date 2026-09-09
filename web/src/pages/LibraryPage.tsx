@@ -6,6 +6,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
+import { useBackHandler } from '../hooks/useBackHandler';
 import { nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId } from '../lib/corpus';
 import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP } from '../lib/search/metadata';
 import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
@@ -218,6 +219,11 @@ export function LibraryPage({
 
   const showTreePane = !mobile || view === 'tree';
   const showListPane = !mobile || view === 'list';
+
+  // Android's back button: close the shortcuts modal, else step the mobile sutta list back to the
+  // collection tree. A no-op on web and iOS. (TreePane registers its own for an open search.)
+  useBackHandler(mobile && view === 'list', () => setView('tree'));
+  useBackHandler(shortcutsOpen, () => setShortcutsOpen(false));
 
   // Page-level shortcuts: the help modal and the theme toggle. Arrow-key nav over search hits
   // belongs to TreePane.

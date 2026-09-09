@@ -8,8 +8,8 @@ import { flatSuttaOrder } from '../lib/corpus';
 import { estimateOfflineStatus, isOfflineTextStale } from '../lib/offline';
 import { dismissKeepSafe, isIosBrowserTab, isKeepSafeDismissed } from '../lib/localAccount';
 import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
+import { isNativeApp, isStandaloneDisplay } from '../lib/platform';
 import {
-  isStandalone,
   hasOpenedSutta,
   isOfflineNudgeDismissed,
   dismissOfflineNudge,
@@ -113,9 +113,10 @@ export function HeaderBanner() {
   const [offlineCachedStatus, setOfflineCachedStatus] = useState<{ cached: number; total: number } | null>(null);
   // The download nudge is for an installed app that has opened a sutta; asking a passing browser
   // tab for the whole canon is pushy. The update nudge has no such gate, only ever firing for
-  // someone who already finished that download.
-  const downloadNudgeEligible = isStandalone() && hasOpenedSutta();
-  const textStale = !!corpus && isOfflineTextStale(corpus.dataVersion);
+  // someone who already finished that download. Neither shows in the native app, whose bundled
+  // corpus is the offline store — there is nothing to download or refresh.
+  const downloadNudgeEligible = !isNativeApp() && isStandaloneDisplay() && hasOpenedSutta();
+  const textStale = !isNativeApp() && !!corpus && isOfflineTextStale(corpus.dataVersion);
   useEffect(() => {
     // Walking Cache Storage isn't free, so it waits until the synchronous checks above say a
     // banner could plausibly show.

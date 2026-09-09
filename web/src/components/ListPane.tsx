@@ -346,7 +346,10 @@ export function ListPane({
 
   return (
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
-      <header className="flex-none flex items-center gap-3.5 px-6 pt-5 pb-4 border-b border-ink/10">
+      <header
+        className="flex-none flex items-center gap-3.5 px-6 pt-5 pb-4 border-b border-ink/10"
+        style={{ paddingTop: 'calc(1.25rem + var(--safe-top))' }}
+      >
         {mobile && (
           // The same round icon button as the reorder toggle on the right. Its `after`
           // pseudo-element pads the tap target to ~44px without growing the circle.
