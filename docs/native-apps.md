@@ -21,6 +21,7 @@ new module is `web/src/lib/platform.ts`.
 | Session credential | bearer token | server reads `Authorization: Bearer` or the cookie via `readSession`; client keeps the token in `@capacitor/preferences` (`lib/nativeAuth.ts`) |
 | `isNativeApp()` / `platformName()` | true / `'ios'`\|`'android'` | `lib/platform.ts`, off the injected `Capacitor` global |
 | Offline download UI | hidden | `HeaderBanner` drops both nudges; `SettingsPage`'s Offline card is a one-line placeholder |
+| Data export | OS share sheet | `lib/exportData.ts` fetches the payload with the token, writes it to the cache directory and shares the file; the browser downloads `dataApi.exportUrl` as a link |
 | Status bar / safe area | edge-to-edge | see below |
 | Android back button | handled | see below |
 | Reader text selection (Android) | `selectionchange`-driven | see below |
@@ -64,7 +65,7 @@ up. The native Copy/Share bar shows alongside it.
 
 ## The shell
 
-- **Plugins:** `@capacitor/{app,browser,preferences,status-bar,splash-screen}`.
+- **Plugins:** `@capacitor/{app,browser,preferences,status-bar,splash-screen,filesystem,share}`.
 - **Deep link:** custom scheme `sutamaya://auth`, registered in `web/ios` (`CFBundleURLTypes`) and
   `web/android` (an `intent-filter` on the singleTask activity). Android also has an `autoVerify`
   App Links `intent-filter` for `https://app.sutamaya.org`, verified against

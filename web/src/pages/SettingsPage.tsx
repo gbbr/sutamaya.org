@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { AlertTriangle, ArrowLeft, Check, CloudOff, Download, Info, LogOut, Minus, Plus, RefreshCw, Trash2 } from 'lucide-react';
+import { AlertTriangle, ArrowLeft, Check, CloudOff, Download, Info, Loader2, LogOut, Minus, Plus, RefreshCw, Trash2 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpus } from '../context/CorpusContext';
@@ -9,6 +9,7 @@ import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { GoogleSignInButton } from '../components/GoogleSignInButton';
 import { EmailCodeSignIn } from '../components/EmailCodeSignIn';
 import { dataApi } from '../lib/api';
+import { shareUserDataExport } from '../lib/exportData';
 import { flatSuttaOrder } from '../lib/corpus';
 import { isTypingTarget } from '../lib/shortcuts';
 import { statusOf } from '../lib/retry';
@@ -115,6 +116,48 @@ const LINK_ACTION = 'inline-flex items-center gap-1.5 font-sans text-ui-base tex
 // wrong right now.
 const LINK_DANGER =
   'inline-flex items-center gap-1.5 font-sans text-ui-base text-danger-text underline decoration-danger-text/40 hover:text-danger-text';
+
+// Downloads the account export. In the browser it is what it looks like — a link to the export
+// route, which the browser saves. The native build has no such download (lib/exportData.ts), so
+// there it is a button that fetches the file and passes it to the OS share sheet, saying so while
+// it works. Appears twice: beside Sign out, and beside the account deletion it is the way out of.
+function ExportAction() {
+  const [state, setState] = useState<'idle' | 'working' | 'failed'>('idle');
+
+  if (!isNativeApp()) {
+    return (
+      <a href={dataApi.exportUrl} className={LINK_ACTION}>
+        {/* Nudged down a pixel, to the label's optical centre. */}
+        <Download size={16} strokeWidth={1.75} className="translate-y-[1px]" />
+        Export my data
+      </a>
+    );
+  }
+
+  return (
+    <button
+      className={state === 'failed' ? LINK_DANGER : LINK_ACTION}
+      disabled={state === 'working'}
+      onClick={async () => {
+        setState('working');
+        try {
+          await shareUserDataExport();
+          setState('idle');
+        } catch (e) {
+          console.error('Export failed', e);
+          setState('failed');
+        }
+      }}
+    >
+      {state === 'working' ? (
+        <Loader2 size={16} strokeWidth={1.75} className="translate-y-[1px] animate-spin" />
+      ) : (
+        <Download size={16} strokeWidth={1.75} className="translate-y-[1px]" />
+      )}
+      {state === 'working' ? 'Preparing…' : state === 'failed' ? 'Export failed — try again' : 'Export my data'}
+    </button>
+  );
+}
 
 // Draws one theme tile's miniature of the shell: a tree-pane band beside the paper surface. Laid
 // out at the tile's full width, so the System tile's two clipped halves line up across the seam.
@@ -502,14 +545,9 @@ export function SettingsPage({ location }: RouteComponentProps) {
                       <LogOut size={16} strokeWidth={1.75} className="translate-y-[1px]" />
                       {confirmSignOut ? 'Sign out anyway' : 'Sign out'}
                     </button>
-                    {/* Export, hidden on a lapsed session: it is a plain link to a requireAuth
-                        route, which would answer 401 and download the error body. */}
-                    {!needsReauth && (
-                      <a href={dataApi.exportUrl} className={LINK_ACTION}>
-                        <Download size={16} strokeWidth={1.75} className="translate-y-[1px]" />
-                        Export my data
-                      </a>
-                    )}
+                    {/* Export, hidden on a lapsed session: the request would answer 401, which in
+                        the browser downloads the error body. */}
+                    {!needsReauth && <ExportAction />}
                   </div>
                 </div>
               </>
@@ -717,9 +755,8 @@ export function SettingsPage({ location }: RouteComponentProps) {
         {/* The Danger zone: last on the page and deliberately far from Sign out and Export, so it
             can't be reached for by accident. Signed in only — there is no account to delete
             otherwise, a local reader's data being theirs alone. Hidden on a lapsed session, which
-            has nothing left to delete with: the export link would answer 401 and download the
-            error body, and the deletion itself would be refused. The Account card above is already
-            asking for a fresh sign-in. */}
+            has nothing left to delete with: the export would answer 401 and the deletion itself
+            would be refused. The Account card above is already asking for a fresh sign-in. */}
         {!loading && user && !needsReauth && (
           <div ref={dangerSectionRef}>
             <div className={SECTION_LABEL}>
@@ -735,10 +772,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
                   {/* Export on the left, the deletion on the right — the way out is read before
                       the way that ends it. */}
                   <div className="flex items-center justify-between">
-                    <a href={dataApi.exportUrl} className={LINK_ACTION}>
-                      <Download size={16} strokeWidth={1.75} className="translate-y-[1px]" />
-                      Export my data
-                    </a>
+                    <ExportAction />
                     <button className={LINK_DANGER} onClick={() => setConfirmDelete(true)}>
                       <Trash2 size={16} strokeWidth={1.75} className="translate-y-[1px]" />
                       Delete my account
