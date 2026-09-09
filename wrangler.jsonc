@@ -72,6 +72,9 @@
     "WEB_ORIGIN": "https://app.sutamaya.org",
     "GOOGLE_CLIENT_ID": "45956701911-0a93js1du42ia6vtno0n4bh36crkn5f6.apps.googleusercontent.com",
     "MAIL_FROM": "no-reply@sutamaya.org"
+    // The enrolled Apple Team ID, added here once it exists: it is what turns on
+    // /.well-known/apple-app-site-association (worker/src/wellKnown.js), which 404s without it.
+    // "APPLE_TEAM_ID": "..."
   },
   "observability": { "enabled": true },
   // A second copy of the same Worker, on its own hostnames and its own D1 database, for exercising

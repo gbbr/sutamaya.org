@@ -1,4 +1,4 @@
-import { API_BASE } from './platform';
+import { API_BASE, isNativeApp } from './platform';
 import { getNativeToken, setNativeToken } from './nativeAuth';
 import type { HlSpan } from './highlights';
 import type { Highlight, ListDef, ListKind, Membership, HighlightsMap, VisitedMap, User } from './types';
@@ -65,8 +65,11 @@ export const authApi = {
   me: () => request<{ user: User | null }>('/auth/me'),
   requestEmailCode: (email: string) =>
     request<{ ok: true }>('/auth/email/request', { method: 'POST', body: JSON.stringify({ email }) }),
+  // `?app=1` asks for the bearer token in the body, the signal the Google flow also starts on. A
+  // browser leaves it off and is answered with the session cookie alone, which its scripts cannot
+  // read; only a native build, which carries no cookie, is handed a credential of its own.
   verifyEmailCode: (email: string, code: string) =>
-    request<{ user: User; token: string }>('/auth/email/verify', {
+    request<{ user: User; token?: string }>(`/auth/email/verify${isNativeApp() ? '?app=1' : ''}`, {
       method: 'POST',
       body: JSON.stringify({ email, code }),
     }),

@@ -30,13 +30,21 @@
                 <data android:scheme="sutamaya" android:host="auth" />
             </intent-filter>
 
-            <!-- Android App Links: shared https://app.sutamaya.org/... links open the app,
-                 verified against /.well-known/assetlinks.json on that host. -->
+            <!-- Android App Links: the app's own screens on https://app.sutamaya.org open in
+                 the app, verified against /.well-known/assetlinks.json on that host. The paths are
+                 listed rather than the bare host so /api/* stays in the browser, keeping the OAuth
+                 round trip out of the app. Same set as DEEP_LINK_PATHS in worker/src/wellKnown.js,
+                 which writes it again for iOS. -->
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" android:host="app.sutamaya.org" />
+                <data android:path="/" />
+                <data android:pathPrefix="/browse" />
+                <data android:pathPrefix="/read" />
+                <data android:path="/settings" />
+                <data android:path="/help" />
             </intent-filter>
 
         </activity>

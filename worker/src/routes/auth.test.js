@@ -578,25 +578,34 @@ describe('routes/auth.js (D1, real signed cookies)', () => {
       return { env: { ...OAUTH_ENV, MAIL_FROM: 'no-reply@sutamaya.org', RESEND_API_KEY: 'k' }, sent };
     }
 
-    it('POST /email/verify returns a token that authenticates GET /me via Authorization header', async () => {
+    it('POST /email/verify?app=1 returns a token that authenticates GET /me via Authorization header', async () => {
       const { default: app } = await import('../index.js');
       const { env: testEnv, sent } = emailEnv();
-      await app.request(
-        '/api/auth/email/request',
-        { method: 'POST', body: JSON.stringify({ email: 'native@example.com' }), headers: { 'Content-Type': 'application/json' } },
-        testEnv
-      );
-      const code = sent.at(-1).subject.match(/\d{6}/)[0];
-      const verify = await app.request(
-        '/api/auth/email/verify',
-        { method: 'POST', body: JSON.stringify({ email: 'native@example.com', code }), headers: { 'Content-Type': 'application/json' } },
-        testEnv
-      );
-      const { user, token } = await verify.json();
+      const verifyAs = async (email, query) => {
+        await app.request(
+          '/api/auth/email/request',
+          { method: 'POST', body: JSON.stringify({ email }), headers: { 'Content-Type': 'application/json' } },
+          testEnv
+        );
+        const code = sent.at(-1).subject.match(/\d{6}/)[0];
+        return app.request(
+          `/api/auth/email/verify${query}`,
+          { method: 'POST', body: JSON.stringify({ email, code }), headers: { 'Content-Type': 'application/json' } },
+          testEnv
+        );
+      };
+
+      const { user, token } = await (await verifyAs('native@example.com', '?app=1')).json();
       expect(token).toBeTruthy();
 
       const me = await app.request('/api/auth/me', { headers: { Authorization: `Bearer ${token}` } }, testEnv);
       expect((await me.json()).user.id).toBe(user.id);
+
+      // Without the signal it is a browser signing in, whose session is the HttpOnly cookie: a
+      // token in the body would be a credential the page's own scripts could read.
+      const web = await verifyAs('browser@example.com', '');
+      expect(await web.json()).not.toHaveProperty('token');
+      expect(sessionCookieFrom(web)).toBeTruthy();
     });
 
     it('GET /google/start?app=1 → callback returns the token on a sutamaya://auth deep link', async () => {

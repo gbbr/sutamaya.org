@@ -231,8 +231,10 @@ authRouter.post('/email/verify', async (c) => {
   const user = await findOrCreateEmailUser(c.env.DB, email);
   const secure = new URL(c.req.url).protocol === 'https:';
   c.header('Set-Cookie', await createSessionCookie(user.id, c.env.SESSION_SECRET, { secure }), { append: true });
-  // The flow runs in the WebView, so the cookie is set for web; a Capacitor client can't keep it
-  // cross-origin and reads the token from the body instead. Harmless for a browser to receive.
+  // A Capacitor build asks for the bearer token with `?app=1`, the same signal the Google flow
+  // starts on: it runs cross-origin and can keep no cookie. A browser is answered with the cookie
+  // alone, so its session stays HttpOnly and out of reach of the page's own scripts.
+  if (c.req.query('app') !== '1') return c.json({ user: publicUser(user) });
   const token = await signSessionToken(user.id, c.env.SESSION_SECRET);
   return c.json({ user: publicUser(user), token });
 });

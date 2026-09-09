@@ -24,6 +24,7 @@ import type { SegmentFile } from '../lib/corpus';
 import type { HlSpan } from '../lib/highlights';
 import { isLocalUserId } from '../lib/localAccount';
 import { deleteMirror, loadMirror, saveMirror } from '../lib/mirrorDb';
+import { hydrateNativeToken } from '../lib/nativeAuth';
 import { flushWithLock } from '../lib/sync';
 import { randomId } from '../lib/ids';
 import { LIST_NAME_MAX_LENGTH, NOTE_MAX_LENGTH } from '../lib/textLimits';
@@ -204,10 +205,14 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     // A local mirror has no account behind it, so nothing to push to until sign-in adopts it.
     if (!current.userId || isLocalUserId(current.userId) || flushing.current) return;
     flushing.current = true;
-    // Marked before the first request goes out: from here on the server may hold these rows, so a
-    // delete made while the flush is out has to travel as a tombstone (markDispatched).
-    setState((s) => (s.userId === current.userId ? markDispatched(s, current) : s));
     try {
+      // `isSignedIn` is true from the remembered user, before the stored bearer token is read back:
+      // a push that went out first would carry no credential and pause the queue as if the session
+      // had lapsed. Settled already on web and on every flush after the first.
+      await hydrateNativeToken();
+      // Marked before the first request goes out: from here on the server may hold these rows, so a
+      // delete made while the flush is out has to travel as a tombstone (markDispatched).
+      setState((s) => (s.userId === current.userId ? markDispatched(s, current) : s));
       const outcome = await flushWithLock(current);
       // Another tab is flushing this same mirror — it will apply the result for both of us.
       if (outcome.status === 'blocked') return;

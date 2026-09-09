@@ -243,11 +243,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   // Establishes the session in place, without the page unloading as the OAuth redirect does, so it
-  // works the same inside an installed PWA. On native the response body carries the bearer token,
-  // the cookie it also sets being unusable cross-origin.
+  // works the same inside an installed PWA. The response carries a bearer token only for a native
+  // build, whose cross-origin WebView can keep no cookie; in a browser the cookie is the session.
   const signInWithEmailCode = useCallback(async (email: string, code: string) => {
     const { user, token } = await authApi.verifyEmailCode(email, code);
-    await setNativeToken(token);
+    if (token) await setNativeToken(token);
     setAuthError(null);
     writeLastUser(user);
     setUser(user);
