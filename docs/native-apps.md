@@ -30,11 +30,11 @@ new module is `web/src/lib/platform.ts`.
 
 `signSessionToken` (`worker/src/session.js`) mints an HMAC-signed `{ uid, t }` on the same primitive
 as the OAuth state, checked against a 90-day max age with **sliding re-issue** — a token past
-halfway comes back re-minted on the `X-Session-Token` response header. `/email/verify` returns the
-token in its JSON body; `/google/start?app=1` marks the flow native and its callback returns
-`sutamaya://auth?token=…` instead of setting a cookie. No database, no revocation table; an expired
-token falls into the existing `needsReauth` path. Web is untouched — still the browser-enforced
-cookie.
+halfway comes back re-minted on the `X-Session-Token` response header. `?app=1` is what marks a flow native, on both
+routes: `/email/verify?app=1` returns the token in its JSON body, and `/google/start?app=1` has its
+callback return `sutamaya://auth?token=…` instead of setting a cookie. No database, no revocation
+table; an expired token falls into the existing `needsReauth` path. Without that signal no token is
+issued, so web is untouched — still the browser-enforced cookie.
 
 `AuthContext.signInWithGoogleNative` only opens `@capacitor/browser`. The return is owned by an
 `appUrlOpen` listener registered for the app's whole life, plus an `App.getLaunchUrl()` check —
@@ -71,10 +71,14 @@ up. The native Copy/Share bar shows alongside it.
 
 - **Plugins:** `@capacitor/{app,browser,preferences,status-bar,splash-screen,filesystem,share}`.
 - **Deep link:** custom scheme `sutamaya://auth`, registered in `web/ios` (`CFBundleURLTypes`) and
-  `web/android` (an `intent-filter` on the singleTask activity). Android also has an `autoVerify`
-  App Links `intent-filter` for `https://app.sutamaya.org`, verified against
-  `/.well-known/assetlinks.json` (`worker/src/wellKnown.js`, listed in `run_worker_first`), so
-  shared reader links open the app.
+  `web/android` (an `intent-filter` on the singleTask activity).
+- **Verified links:** `/`, `/browse/*`, `/read/*`, `/settings` and `/help` on
+  `https://app.sutamaya.org` open in the app; `/api/*` is outside the set, so the OAuth round trip
+  finishes in the browser that started it. The set is written twice — as the `autoVerify`
+  `intent-filter`'s path list in `web/android/app/src/main/AndroidManifest.xml`, and as
+  `DEEP_LINK_PATHS` in `worker/src/wellKnown.js`, which serves both
+  `/.well-known/assetlinks.json` (Android, live) and `/.well-known/apple-app-site-association`
+  (iOS, answered only once `APPLE_TEAM_ID` is set). Both are listed in `run_worker_first`.
 - **Icons and splash:** `scripts/make-native-assets.mjs` derives `web/assets/` (git-ignored) from
   the production PWA icons; `npx @capacitor/assets generate --ios --android` crops them into the
   committed native resources. The splash is a flat `#171513` screen — `main.tsx` calls
@@ -143,9 +147,9 @@ The **deep-link tail** lands here:
   (`wellKnown.js`), then on a device `adb shell pm verify-app-links --re-verify org.sutamaya.app` /
   `pm get-app-links` should report `verified`, and a `https://app.sutamaya.org/read/…` link should
   open the app.
-- iOS (needs the enrolled Apple Team ID): serve `/.well-known/apple-app-site-association` —
-  `applinks` with `<TeamID>.org.sutamaya.app`, `components` excluding `/api/*`; sketch is in
-  `wellKnown.js`, not served until the Team ID is real since iOS caches a wrong association.
+- iOS: set `APPLE_TEAM_ID` in `wrangler.jsonc` once the account is enrolled, which is all that
+  `/.well-known/apple-app-site-association` waits on, and add the Associated Domains entitlement
+  (`applinks:app.sutamaya.org`) to the Xcode project.
 - Switch the OAuth return from `sutamaya://auth` to a verified Universal/App Link on both platforms.
 - Real-device checks: `/read/…` links opening the installed iOS app; whether the mirror survives
   OS-level eviction (iOS offload, Android archive) + reinstall.
@@ -163,6 +167,16 @@ management, pointer and keyboard — is a separate post-launch decision. `lib/pl
 
 CI native build jobs; a version-bump script across web + iOS + Android; the OTA update channel's
 build and staged-rollout controls.
+
+## Known gaps / deliberate simplifications
+
+- **The session token rides a device backup.** It is kept in `@capacitor/preferences` —
+  UserDefaults on iOS, SharedPreferences on Android under `allowBackup="true"` — so an iCloud or
+  Auto Backup restore carries it. The Keychain is not the answer: the mirror it authenticates sits
+  unencrypted in that same container, so a credential held apart from it protects nothing the data
+  does not already expose. What a backup adds is reach rather than exposure — a restored token
+  reaches the live account, not just a snapshot — bounded by the token's 90-day expiry and by the
+  backup being the reader's own. Excluding the store from backup is the fix if that stops holding.
 
 ## Left open
 
