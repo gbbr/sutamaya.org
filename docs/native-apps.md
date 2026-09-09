@@ -36,9 +36,13 @@ token in its JSON body; `/google/start?app=1` marks the flow native and its call
 token falls into the existing `needsReauth` path. Web is untouched — still the browser-enforced
 cookie.
 
-`AuthContext.signInWithGoogleNative` drives `@capacitor/browser` + the `@capacitor/app` `appUrlOpen`
-deep link; `forgetAccount` clears the stored token, covering sign-out, deletion and the 410 reset.
-Every native branch is gated on `isNativeApp()` and inert on web.
+`AuthContext.signInWithGoogleNative` only opens `@capacitor/browser`. The return is owned by an
+`appUrlOpen` listener registered for the app's whole life, plus an `App.getLaunchUrl()` check —
+the token is valid whenever it lands, so a return that arrives after the sheet has closed, or that
+cold-starts an app the OS killed mid-flow, still signs the reader in. The sheet closing decides
+nothing; it only drops the button out of its pending state. `forgetAccount` clears the stored token,
+covering sign-out, deletion and the 410 reset. Every native branch is gated on `isNativeApp()` and
+inert on web.
 
 ### Status bar and safe area
 

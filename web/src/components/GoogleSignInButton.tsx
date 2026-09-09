@@ -1,3 +1,4 @@
+import { Loader2 } from 'lucide-react';
 import { isNativeApp } from '../lib/platform';
 import { useAuth } from '../context/AuthContext';
 
@@ -14,7 +15,7 @@ import { useAuth } from '../context/AuthContext';
 // return. The face is identical.
 
 const CLASSES =
-  'flex items-center justify-center gap-2 w-full py-[12px] rounded-field border border-ink/[.18] font-sans text-ui-base font-medium text-ink hover:text-ink hover:bg-ink/[.04]';
+  'flex items-center justify-center gap-2 w-full py-[12px] rounded-field border border-ink/[.18] font-sans text-ui-base font-medium text-ink hover:text-ink hover:bg-ink/[.04] disabled:opacity-60 disabled:hover:bg-transparent';
 
 function GoogleMark() {
   return (
@@ -40,18 +41,22 @@ function GoogleMark() {
 }
 
 export function GoogleSignInButton({ returnTo }: { returnTo?: string }) {
-  const { signInWithGoogleNative } = useAuth();
+  const { signInWithGoogleNative, signingIn } = useAuth();
 
   if (isNativeApp()) {
+    // The round trip leaves the app for a browser sheet and comes back through a deep link, so the
+    // button says it is waiting the whole time — including the moment after the sheet closes, while
+    // the return is being turned into a session and the app would otherwise look idle.
     return (
       <button
         type="button"
         data-component="GoogleSignInButton"
         onClick={() => void signInWithGoogleNative(returnTo)}
+        disabled={signingIn}
         className={CLASSES}
       >
-        <GoogleMark />
-        Sign in with Google
+        {signingIn ? <Loader2 size={16} strokeWidth={2.25} className="flex-none animate-spin" aria-hidden /> : <GoogleMark />}
+        {signingIn ? 'Signing in…' : 'Sign in with Google'}
       </button>
     );
   }

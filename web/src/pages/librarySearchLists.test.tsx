@@ -122,6 +122,7 @@ describe('a library search that matches the user\'s lists', () => {
       localUserId: 'local-test',
       loading: false,
       authError: null,
+      signingIn: false,
       requestEmailCode: vi.fn(async () => {}),
       signInWithEmailCode: vi.fn(async () => {}),
       signInWithGoogleNative: vi.fn(async () => {}),

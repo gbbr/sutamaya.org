@@ -96,6 +96,7 @@ describe('capitalization in a /browse id', () => {
       localUserId: 'local-test',
       loading: false,
       authError: null,
+      signingIn: false,
       requestEmailCode: vi.fn(async () => {}),
       signInWithEmailCode: vi.fn(async () => {}),
       signInWithGoogleNative: vi.fn(async () => {}),
