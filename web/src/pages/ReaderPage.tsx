@@ -882,7 +882,14 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
         />
       )}
 
-      {searchOpen && <ReaderSearchOverlay theme={theme} onOpenSutta={onSearchOpenSutta} onClose={() => setSearchOpen(false)} />}
+      {searchOpen && (
+        <ReaderSearchOverlay
+          theme={theme}
+          currentId={suttaId}
+          onOpenSutta={onSearchOpenSutta}
+          onClose={() => setSearchOpen(false)}
+        />
+      )}
 
       {shortcutsOpen && (
         <ShortcutsModal shortcuts={shortcutsForScope('reader')} theme={theme} onClose={() => setShortcutsOpen(false)} />
