@@ -18,8 +18,14 @@ import type { ThemeColors } from '../lib/types';
 
 const SAFE_AREA_BOTTOM = 'env(safe-area-inset-bottom, 0px)';
 
+// The wash on the row under the cursor: half the strength of the selection tint the panes use,
+// since here it sits on a panel over the reading itself and marks a cursor rather than a choice.
+const ROW_TINT = (tint: string) => `color-mix(in srgb, ${tint} 50%, transparent)`;
+
 interface ReaderSearchOverlayProps {
   theme: ThemeColors;
+  // The sutta on screen, whose own text hit leads the results.
+  currentId?: string;
   // `segment` is where a text hit was found, and where the reader opens; absent for every other row.
   onOpenSutta: (id: string, segments?: [number, number]) => void;
   onClose: () => void;
@@ -27,7 +33,7 @@ interface ReaderSearchOverlayProps {
 
 // The reader's search overlay: a floating input with results directly underneath, opened with "/"
 // from anywhere in the reader. Each row shows the same blurb and note as ListPane's.
-export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearchOverlayProps) {
+export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: ReaderSearchOverlayProps) {
   const { corpus } = useCorpus();
   const { mobile } = useLayout();
   const { lists, notes, membership, highlights } = useUserData();
@@ -46,8 +52,14 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
   // Suttas only: a list hit's only destination is the library, which is where lists surface.
   const { hits, textStatus, textPending, updating } = useCorpusSearch(corpus, query, notes, lists, highlights);
   // The rows drawn and walked by the arrow keys: the first SEARCH_RESULTS_CAP hits, the panel
-  // being unvirtualized.
-  const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);
+  // being unvirtualized. The sutta being read leads them when the query is somewhere in its own
+  // text — a find on the page in hand, before the rest of the canon. Its snippet is what makes it
+  // one: a hit on the title or a note opens the sutta already on screen and names no passage.
+  const displayHits = useMemo(() => {
+    const at = hits.findIndex((h) => h.id === currentId && h.snippet);
+    const ordered = at > 0 ? [hits[at], ...hits.slice(0, at), ...hits.slice(at + 1)] : hits;
+    return ordered.slice(0, SEARCH_RESULTS_CAP);
+  }, [hits, currentId]);
   const { activeIndex, setActiveIndex, moveBy, setRowRef } = useActiveHitIndex(query);
 
   // The same chips and highlight badge each row carries in ListPane and TreePane.
@@ -225,7 +237,7 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
                 ref={setRowRef(i)}
                 className="row flex flex-col w-full text-left gap-[1px] px-5 py-3"
                 style={{
-                  background: i === activeIndex ? theme.tint : 'transparent',
+                  background: i === activeIndex ? ROW_TINT(theme.tint) : 'transparent',
                   borderBottom: `1px solid ${theme.rule}`,
                 }}
                 onMouseMove={(e) => {
@@ -240,6 +252,16 @@ export function ReaderSearchOverlay({ theme, onOpenSutta, onClose }: ReaderSearc
                   <span className="font-sans text-ui-xs font-bold mr-2.5" style={{ color: theme.dim }}>
                     <MatchedText text={h.sutta.ref} query={query} theme={theme} />
                   </span>
+                  {h.id === currentId && (
+                    // Marks the sutta already open, whose row leads the results.
+                    <span
+                      className="inline-block w-[6px] h-[6px] rounded-full mr-2 align-[0.15em]"
+                      style={{ background: theme.pali }}
+                      role="img"
+                      aria-label="The sutta you're reading"
+                      title="The sutta you're reading"
+                    />
+                  )}
                   <span className="text-ui-lg font-semibold leading-[1.3]">
                     <MatchedText text={h.sutta.en} query={query} theme={theme} />
                   </span>
