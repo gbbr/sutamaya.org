@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { navigate } from '@reach/router';
 import { App } from '@capacitor/app';
 import { authApi } from '../lib/api';
@@ -6,12 +6,21 @@ import { isRetryable, retryWithBackoff, statusOf } from '../lib/retry';
 import { readLastUser, writeLastUser } from '../lib/lastUser';
 import { localUserId, resetLocalUserId } from '../lib/localAccount';
 import { deleteMirror } from '../lib/mirrorDb';
-import { API_BASE } from '../lib/platform';
+import { API_BASE, isNativeApp } from '../lib/platform';
 import { clearNativeToken, hydrateNativeToken, setNativeToken } from '../lib/nativeAuth';
 import type { User } from '../lib/types';
 
 // Delay before retrying a transient session check, held above the Worker's 60s rate-limit period.
 const SESSION_RETRY_MS = 65_000;
+
+// The custom-scheme URL the native Google flow returns to, carrying `?token=` or `?error=1`. Kept
+// in step with worker/src/routes/auth.js and the scheme registered in web/ios and web/android.
+const APP_AUTH_LINK = 'sutamaya://auth';
+
+// How long the button keeps its pending look after the browser sheet closes. Cosmetic only — the
+// deep link decides the outcome — and it exists so the button doesn't flick back to idle in the
+// moment between the sheet closing and the return landing.
+const SHEET_SETTLE_MS = 400;
 
 interface AuthState {
   user: User | null;
@@ -25,10 +34,14 @@ interface AuthState {
   // it left behind (UserDataContext's adoption) after `dataUserId` has moved on to the account.
   localUserId: string;
   authError: string | null;
+  // Native only: a Google sign-in is in flight — the browser sheet is open, or its return is being
+  // turned into a session. Always false on web, where signing in is a page navigation.
+  signingIn: boolean;
   promptGoogleSignIn: () => void;
-  // Native only: runs the Google round trip in the system browser (Google blocks OAuth in a
-  // WebView) and stores the token the deep-link return carries. A no-op on web, which uses the
-  // plain redirect link in GoogleSignInButton.
+  // Native only: opens the Google round trip in the system browser (Google blocks OAuth in a
+  // WebView). It resolves once the browser is open, not when the flow ends — the deep-link
+  // listener below owns the outcome. A no-op on web, which uses the plain redirect link in
+  // GoogleSignInButton.
   signInWithGoogleNative: (returnTo?: string) => Promise<void>;
   requestEmailCode: (email: string) => Promise<void>;
   signInWithEmailCode: (email: string, code: string) => Promise<void>;
@@ -61,6 +74,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [authError, setAuthError] = useState<string | null>(() =>
     authErrorMessage(new URLSearchParams(window.location.search).get('auth_error'))
   );
+  // Native Google sign-in in flight, from the moment the browser opens to the moment its return
+  // has been turned into a session.
+  const [signingIn, setSigningIn] = useState(false);
+  // Where the sign-in that opened the browser wants to end up. Held here rather than closed over,
+  // since the return is handled by a listener that outlives the call.
+  const pendingReturnTo = useRef<string | undefined>(undefined);
+  // The Browser plugin, kept from the sign-in that opened the sheet so the return can close it.
+  // Null when the return arrives on a cold start, where there is no sheet left to close — and the
+  // plugin must not be imported there, a dynamic plugin import on the startup path deadlocking the
+  // WebView.
+  const browserRef = useRef<{ close: () => Promise<void> } | null>(null);
+  // True while a return is being turned into a session, so the browser sheet closing underneath it
+  // doesn't clear the pending state early.
+  const completing = useRef(false);
+  // The last return acted on. A cold-started return arrives twice — once as the launch URL, once
+  // on the listener — and signing in twice would fetch and navigate twice.
+  const handledAuthUrl = useRef<string | null>(null);
 
   useEffect(() => {
     if (!authError) return;
@@ -114,53 +144,95 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     navigate('/settings', { state: { scrollTo: 'auth', returnTo } });
   }, []);
 
-  // Native Google sign-in: the WebView can't run Google's OAuth, so the round trip happens in the
-  // system browser and returns to a `sutamaya://auth` deep link carrying a bearer token. The
-  // browser sheet closing without a deep link (the reader backed out) resolves quietly.
-  const signInWithGoogleNative = useCallback(async (returnTo?: string) => {
+  // Turns a `sutamaya://auth` return into a session. The token it carries is valid whenever it
+  // lands, so this is not scoped to the sign-in that started the flow: a return that arrives after
+  // the browser sheet has closed, or that cold-starts the app the OS killed while the sheet was
+  // open, still signs the reader in.
+  const completeNativeSignIn = useCallback(async (url: string) => {
+    if (handledAuthUrl.current === url) return;
+    handledAuthUrl.current = url;
+
+    void browserRef.current?.close().catch(() => {});
+    browserRef.current = null;
+    const returnTo = pendingReturnTo.current;
+    pendingReturnTo.current = undefined;
+
+    const token = new URL(url).searchParams.get('token');
+    if (!token) {
+      setSigningIn(false);
+      setAuthError(authErrorMessage('1'));
+      return;
+    }
+
+    completing.current = true;
+    // Set again rather than assumed: a cold-started return has no sign-in behind it to have set it.
+    setSigningIn(true);
     setAuthError(null);
-    // App is imported statically (useAndroidBackButton needs it on the startup path); only Browser
-    // stays dynamic.
-    const { Browser } = await import('@capacitor/browser');
-
-    let settled = false;
-    const handles: { remove: () => void }[] = [];
-    let resolveOutcome!: (value: { token: string | null; failed: boolean }) => void;
-    const outcome = new Promise<{ token: string | null; failed: boolean }>((resolve) => {
-      resolveOutcome = resolve;
-    });
-    const settle = (value: { token: string | null; failed: boolean }) => {
-      if (settled) return;
-      settled = true;
-      handles.forEach((h) => h.remove());
-      resolveOutcome(value);
-    };
-
-    // Listeners are attached before the browser opens, so no return can be missed.
-    handles.push(
-      await App.addListener('appUrlOpen', ({ url }) => {
-        if (!url.startsWith('sutamaya://auth')) return;
-        void Browser.close();
-        const token = new URL(url).searchParams.get('token');
-        settle({ token, failed: !token });
-      }),
-      // Fires when the reader dismisses the sheet. On iOS it can also fire as the deep link
-      // dismisses it, so give appUrlOpen a moment to win before calling it a cancellation.
-      await Browser.addListener('browserFinished', () => {
-        setTimeout(() => settle({ token: null, failed: false }), 600);
-      })
-    );
-
-    await Browser.open({ url: `${API_BASE}/api/auth/google/start?app=1` });
-    const result = await outcome;
-
-    if (result.token) {
-      await setNativeToken(result.token);
-      const { user } = await authApi.me();
+    await setNativeToken(token);
+    try {
+      const { user } = await retryWithBackoff(() => authApi.me());
       writeLastUser(user);
       setUser(user);
       if (returnTo) navigate(returnTo);
-    } else if (result.failed) {
+    } catch (err) {
+      // The token is stored and good — this is the account's details failing to arrive, not the
+      // sign-in. The session check picks them up on the next launch.
+      console.error('Signed in, but the account could not be loaded:', err);
+      setAuthError('Signed in, but your account could not be loaded. Check your connection.');
+    } finally {
+      completing.current = false;
+      setSigningIn(false);
+    }
+  }, []);
+
+  // Listens for the OAuth return for the app's whole life, rather than for the length of one
+  // sign-in — see completeNativeSignIn. Inert on web, which has no deep links.
+  useEffect(() => {
+    if (!isNativeApp()) return;
+    let cancelled = false;
+    let handle: { remove: () => void } | undefined;
+    void App.addListener('appUrlOpen', ({ url }) => {
+      if (url.startsWith(APP_AUTH_LINK)) void completeNativeSignIn(url);
+    }).then((h) => {
+      if (cancelled) h.remove();
+      else handle = h;
+    });
+    // A return that launched the app is delivered as the launch URL; the listener above is
+    // registered too late to be told about it.
+    void App.getLaunchUrl().then((r) => {
+      if (!cancelled && r?.url?.startsWith(APP_AUTH_LINK)) void completeNativeSignIn(r.url);
+    });
+    return () => {
+      cancelled = true;
+      handle?.remove();
+    };
+  }, [completeNativeSignIn]);
+
+  // Native Google sign-in: the WebView can't run Google's OAuth, so the round trip happens in the
+  // system browser and returns to a `sutamaya://auth` deep link. This only opens that browser —
+  // the listener above owns what comes back.
+  const signInWithGoogleNative = useCallback(async (returnTo?: string) => {
+    setAuthError(null);
+    setSigningIn(true);
+    pendingReturnTo.current = returnTo;
+    // App is imported statically (useAndroidBackButton needs it on the startup path); only Browser
+    // stays dynamic, being reached from this gesture alone.
+    const { Browser } = await import('@capacitor/browser');
+    browserRef.current = Browser;
+    try {
+      // The sheet closing is not an outcome — backing out and completing look the same here — so
+      // it only drops the button out of its pending state, and only if no return is being handled.
+      const finished = await Browser.addListener('browserFinished', () => {
+        finished.remove();
+        setTimeout(() => {
+          if (!completing.current) setSigningIn(false);
+        }, SHEET_SETTLE_MS);
+      });
+      await Browser.open({ url: `${API_BASE}/api/auth/google/start?app=1` });
+    } catch (err) {
+      console.error('Could not open the sign-in browser:', err);
+      browserRef.current = null;
+      setSigningIn(false);
       setAuthError(authErrorMessage('1'));
     }
   }, []);
@@ -220,6 +292,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       dataUserId,
       localUserId: localId,
       authError,
+      signingIn,
       promptGoogleSignIn,
       signInWithGoogleNative,
       requestEmailCode,
@@ -234,6 +307,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       dataUserId,
       localId,
       authError,
+      signingIn,
       promptGoogleSignIn,
       signInWithGoogleNative,
       requestEmailCode,

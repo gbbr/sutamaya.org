@@ -124,6 +124,7 @@ describe('an id that no longer resolves to anything', () => {
       localUserId: 'local-test',
       loading: false,
       authError: null,
+      signingIn: false,
       requestEmailCode: vi.fn(async () => {}),
       signInWithEmailCode: vi.fn(async () => {}),
       signInWithGoogleNative: vi.fn(async () => {}),

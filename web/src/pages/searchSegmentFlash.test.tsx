@@ -111,6 +111,7 @@ describe('the passage a search hit was drawn from', () => {
       localUserId: 'local-test',
       loading: false,
       authError: null,
+      signingIn: false,
       requestEmailCode: vi.fn(async () => {}),
       signInWithEmailCode: vi.fn(async () => {}),
       signInWithGoogleNative: vi.fn(async () => {}),

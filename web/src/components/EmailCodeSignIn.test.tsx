@@ -22,6 +22,7 @@ beforeEach(() => {
     localUserId: 'local-test',
     loading: false,
     authError: null,
+    signingIn: false,
     requestEmailCode,
     signInWithEmailCode,
     signInWithGoogleNative: vi.fn(async () => {}),
