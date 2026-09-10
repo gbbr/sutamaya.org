@@ -275,6 +275,17 @@ export default defineConfig({
       },
     },
   ],
+  build: {
+    // The app ships as one chunk on purpose. Both surfaces share most of what they load — the
+    // corpus, search, the mirror — and the service worker precaches the shell either way, so a
+    // split moves bytes between files a device fetches regardless. On native there is no service
+    // worker and the bundle *is* the offline store.
+    //
+    // The limit is set just above what that chunk currently weighs, so it still fires on the thing
+    // it is good for: a dependency that arrives far heavier than expected. Raise it deliberately
+    // after checking what grew, never to quiet it.
+    chunkSizeWarningLimit: 600,
+  },
   server: {
     port: 5173,
     // Listen on all interfaces (not just localhost) so the dev server is reachable from a

@@ -313,6 +313,12 @@ uses, so both paths produce identical entries. It never deletes: when the device
 what's cached, it refetches and overwrites in place, so a cancelled run can't leave less than it
 started with.
 
+**The app is one JS chunk, deliberately** — ~510 KB, ~163 KB gzipped, of which two thirds is
+React and React Router. Route-level splitting buys a precaching PWA nothing: the service worker
+fetches every chunk at install either way, and the native build has no service worker at all, so
+the bundle is the offline store. `build.chunkSizeWarningLimit` in `web/vite.config.ts` sits just
+above the current weight so the warning still catches a dependency arriving heavier than expected.
+
 ## Rules that aren't obvious from reading one file
 
 - **The marketing site and the app are separate origins.** `sutamaya.org` serves one page,
