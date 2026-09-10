@@ -86,8 +86,8 @@ if (`${whoami.stdout ?? ''}${whoami.stderr ?? ''}`.includes('You are not authent
 
 // A staging bundle talks to the staging API (and so shows the tree-pane build stamp); a
 // production bundle uses the default origin baked into lib/platform.ts.
-const buildEnv =
-  env === 'staging' ? { ...process.env, SUTAMAYA_API_BASE: 'https://app.staging.sutamaya.org' } : process.env;
+const apiBase = env === 'staging' ? 'https://app.staging.sutamaya.org' : 'https://app.sutamaya.org';
+const buildEnv = env === 'staging' ? { ...process.env, SUTAMAYA_API_BASE: apiBase } : process.env;
 sh('node', ['scripts/build-native.mjs', '--ota'], { env: buildEnv });
 const manifest = JSON.parse(readFileSync('web/ota/manifest.json', 'utf8'));
 const { version, checksum, zip } = manifest;
@@ -96,6 +96,7 @@ console.log(`\nAbout to publish to ${env}:`);
 console.log(`  bundle   web/ota/${zip}`);
 console.log(`  version  ${version}`);
 console.log(`  sha256   ${checksum}`);
+console.log(`  api base ${apiBase}`);
 console.log(`  bucket   ${bucket}`);
 console.log(`  deploy   npm run ${deployScript}\n`);
 if (!(await confirm('Upload, point wrangler.jsonc at it, and deploy? [y/N] '))) {

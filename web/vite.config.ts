@@ -35,6 +35,17 @@ const NATIVE_BUILD = !!process.env.SUTAMAYA_NATIVE;
 // of production. Local testing only — production and staging builds leave it unset.
 const API_BASE_OVERRIDE = process.env.SUTAMAYA_API_BASE ?? '';
 
+// The API origin a native bundle is baked to talk to is invisible once it is in the bundle, and a
+// forgotten SUTAMAYA_API_BASE silently ships a production-pointing build. Echo it wherever it is
+// load-bearing: a native build, or any run that set the override.
+if (NATIVE_BUILD || API_BASE_OVERRIDE) {
+  console.log(
+    API_BASE_OVERRIDE
+      ? `API base: ${API_BASE_OVERRIDE}  (SUTAMAYA_API_BASE)`
+      : 'API base: https://app.sutamaya.org  (default — SUTAMAYA_API_BASE unset)'
+  );
+}
+
 // Extra hostnames the dev server's Host-header guard accepts beyond localhost/LAN IPs (see
 // `allowedHosts` below), paired with how to actually reach the app through each one — printed
 // on `npm run dev` startup so it doesn't have to be remembered/looked up each time.
