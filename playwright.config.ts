@@ -100,6 +100,9 @@ export default defineConfig({
           url: 'http://localhost:8787/api/auth/me',
           timeout: 60 * 1000,
           reuseExistingServer: !process.env.CI,
+          // Warnings and up only: keeps the per-request log out of the run while the Worker's own
+          // errors and uncaught throws still print.
+          env: { WRANGLER_LOG: 'warn' },
           stdout: process.env.CI ? 'ignore' : 'pipe',
           stderr: 'pipe',
         },
