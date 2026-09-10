@@ -26,6 +26,7 @@ new module is `web/src/lib/platform.ts`.
 | Status bar / safe area | edge-to-edge | see below |
 | Android back button | handled | see below |
 | Reader text selection (Android) | `selectionchange`-driven | see below |
+| App updates | over-the-air bundle | `@capgo/capacitor-updater` pulls new web + corpus bundles from the Worker; the browser updates through the service worker. See below |
 
 ### Session token
 
@@ -68,9 +69,48 @@ Android's WebView commits a selection through its own `ActionMode` bar and fires
 `touchend`, so `useHighlightPopup` opens the colour popup from `selectionchange` once the pointer is
 up. The native Copy/Share bar shows alongside it.
 
+### Over-the-air updates
+
+The native binary carries the whole app — web bundle and corpus — but that bundle is replaceable
+without a store release. `@capgo/capacitor-updater`, configured in `capacitor.config.ts`, POSTs to
+`/api/updates/check` on the Worker each time the app foregrounds; when the returned `version`
+differs from the running bundle it downloads the zip in the background and swaps it in the next
+time the app is backgrounded (`autoUpdate: 'atBackground'`), so the reader meets it on the next
+cold start with no visible reload. The download is verified against the SHA-256 the check returned.
+`statsUrl` is emptied so nothing is sent to Capgo's hosted backend — only `updateUrl`, which is
+ours, is used.
+
+`main.tsx` calls `notifyBundleReady()` (`lib/otaUpdate.ts`) at first paint. This is load-bearing:
+until it runs the plugin treats the running bundle as provisional, and if `appReadyTimeout`
+(10 s) elapses first it rolls the device back to the previous bundle. It guards the built-in
+bundle too, so it runs on every native launch.
+
+Worker side: `worker/src/routes/updates.js` serves the check and streams the bundle from an R2
+bucket (`OTA_BUCKET`) at `/api/updates/bundle/*`, `immutable`-cached since the filename carries
+the version. The live bundle is named by the `OTA_VERSION` / `OTA_CHECKSUM` vars in
+`wrangler.jsonc`, one pair per environment — so staging and production are separate channels, and
+"what is live" is a line in a committed diff. Empty vars mean the check reports no update.
+
+**Native-version floor.** A third var, `OTA_MIN_NATIVE`, is the native build number below which
+the current bundle is withheld — the check reads `version_code` from the request (the plugin sends
+it as the build number on both platforms) and returns nothing when the device is under the floor
+or sends no readable version. It exists for the one case OTA can't safely cover on its own: a web
+change that needs a matching native piece — a new Capacitor plugin, a permission, a new
+deep-link path. That release bumps the native build number *and* `OTA_MIN_NATIVE` together, so
+binaries without the native half stop pulling bundles they can't run and wait for a store update.
+An OTA-only release never touches it; empty means no floor. It assumes iOS and Android build
+numbers move in lockstep — Phase 6's version-bump script is what keeps them there.
+
+Publishing is `npm run release:ota --env production|staging`: it builds the bundle
+(`build-native.mjs --ota` → `web/ota/`), uploads the zip to R2 **first**, rewrites the two vars,
+then runs the environment's deploy — so a device is never pointed at a bundle that isn't there
+yet. It is a superset of `deploy:prod`; a plain `deploy:prod` ships the web app and leaves native
+readers on the current bundle until a `release:ota` follows.
+
 ## The shell
 
-- **Plugins:** `@capacitor/{app,browser,preferences,status-bar,splash-screen,filesystem,share}`.
+- **Plugins:** `@capacitor/{app,browser,preferences,status-bar,splash-screen,filesystem,share}`,
+  `@capgo/capacitor-updater`.
 - **Deep link:** custom scheme `sutamaya://auth`, registered in `web/ios` (`CFBundleURLTypes`) and
   `web/android` (an `intent-filter` on the singleTask activity).
 - **Verified links:** `/`, `/browse/*`, `/read/*`, `/settings` and `/help` on
@@ -90,6 +130,9 @@ up. The native Copy/Share bar shows alongside it.
 ```
 npm run build:native       # corpus + web bundle (service worker off), then cap sync into ios/android
 npm run build:native -- --no-sync   # stop at the bundle — no Xcode / Android SDK needed (CI, OTA)
+npm run build:native -- --ota       # also zip the bundle to web/ota/ for an OTA release (implies --no-sync)
+npm run release:ota -- --env staging      # build, upload to R2, point wrangler.jsonc at it, deploy
+npm run release:ota -- --env production   # the same, to production
 npm run dev:ios            # Worker + web dev server, then the app in live-reload against them
 npm run dev:android        # same, Android
 npm run dev:native         # both at once (heavy)
@@ -115,24 +158,25 @@ talks to production and native sign-in returns to the website instead of the app
   plus `http://localhost`, are in the Worker's `NATIVE_ORIGINS`; a missing one fails every
   authenticated request as an opaque CORS error.
 - **`.well-known` paths must be in `assets.run_worker_first`** or the asset router answers them with
-  the SPA shell.
+  the SPA shell. `/api/*` already is, so the OTA check and bundle routes need nothing added.
+- **`notifyBundleReady()` must run on every native launch.** Skip it — or move it behind async work
+  that can stall — and `@capgo/capacitor-updater` rolls every update back after `appReadyTimeout`,
+  not just broken ones.
+- **`OTA_VERSION` and `OTA_CHECKSUM` are set together or not at all.** The check treats either one
+  missing as "nothing published"; `release:ota` always writes both. `OTA_MIN_NATIVE` is separate —
+  it moves only with a store release that adds a native piece, and `release:ota` leaves it alone.
 
 ## Status
 
-Phases 0–3 are done: the platform seam, the bearer-token auth path, the two native projects, and
-the shell (back button, safe area, splash, icons, offline UI, text selection). Both projects build;
-all of it was checked on the simulator and emulator. `assetlinks.json` is live and valid on staging;
-the prod deploy, the Play-signing fingerprint and the on-device App Links check are Phase 5 (below).
-One pass of the whole app offline against a bundled build is still worth doing.
+Phases 0–4 are done: the platform seam, the bearer-token auth path, the two native projects, the
+shell (back button, safe area, splash, icons, offline UI, text selection), and the over-the-air
+update channel (self-hosted on R2, silent, rollback on a bundle that never signals ready). Both
+projects build; all of it was checked on the simulator and emulator. `assetlinks.json` is live and
+valid on staging; the prod deploy, the Play-signing fingerprint and the on-device App Links check
+are Phase 5 (below). Still worth doing: one pass of the whole app offline against a bundled build,
+and the on-device OTA update + rollback check (needs the R2 buckets created and a staging deploy).
 
 ## Remaining work
-
-### Phase 4 — Over-the-air updates
-
-Self-host `@capgo/capacitor-updater` on Cloudflare (an R2 bucket plus a version-check endpoint) to
-push web and corpus changes without a store release; rollback-on-failed-boot comes with it. It
-ships in the first binary so it can be tested before submission. Bundle format and check cadence:
-decide with Gabriel.
 
 ### Phase 5 — Store submission
 
@@ -166,11 +210,24 @@ management, pointer and keyboard — is a separate post-launch decision. `lib/pl
 
 ### Phase 6 — Release plumbing
 
-CI native build jobs; a version-bump script across web + iOS + Android; the OTA update channel's
-build and staged-rollout controls.
+CI native build jobs; a version-bump script across web + iOS + Android; staged-rollout control for
+the OTA channel (another `wrangler.jsonc` var plus bucketing on a stable device id in
+`updates.js` — still no KV).
 
 ## Known gaps / deliberate simplifications
 
+- **An OTA bundle is the whole app — web build and corpus, ~15 MB compressed — never a delta.**
+  The plugin supports partial downloads via a `manifest`; the check endpoint doesn't emit one.
+  A corpus typo fix therefore re-ships everything. Accepted: it is one background download per
+  update, on Wi-Fi or cell at the OS's discretion, and the bundle swaps atomically rather than
+  draining document-by-document the way the browser's revalidating cache does.
+- **A web change that needs a matching native change must not go out as OTA alone.** A new
+  Capacitor plugin, a permission, a deep-link path — push the web half to an old binary and the
+  app breaks. Those go through a store release first, then OTA. `release:ota` ships whatever the
+  working tree holds and can't detect this; the `OTA_MIN_NATIVE` floor (above) is the guard, but
+  it's opt-in — you have to remember to raise it in the same release, and until you do a bad
+  bundle reaches every device. A store update always resets a device to its built-in bundle, so a
+  bad OTA stays recoverable.
 - **The session token rides a device backup.** It is kept in `@capacitor/preferences` —
   UserDefaults on iOS, SharedPreferences on Android under `allowBackup="true"` — so an iCloud or
   Auto Backup restore carries it. The Keychain is not the answer: the mirror it authenticates sits
@@ -183,5 +240,4 @@ build and staged-rollout controls.
 
 - Whether `text-shards/` (the bulk-download shard bundles) stays excluded from the native bundle.
 - CI runner for native builds — GitHub-hosted macOS, self-hosted, or a cloud build service.
-- The OTA updater's bundle format and version-check shape — with Gabriel in Phase 4.
 - Splash and icon art beyond the current derived set.

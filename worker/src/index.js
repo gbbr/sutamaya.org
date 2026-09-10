@@ -4,6 +4,7 @@ import { webOrigins } from './oauth.js';
 import { checkRateLimit } from './rateLimit.js';
 import { authRouter } from './routes/auth.js';
 import { dataRouter } from './routes/data.js';
+import { updatesRouter } from './routes/updates.js';
 import { wellKnownRouter } from './wellKnown.js';
 import { withShareMeta } from './shareMeta.js';
 import {
@@ -52,10 +53,12 @@ app.use('/api/*', (c, next) =>
 );
 
 // Keeps one account's data out of the browser's HTTP cache, which the app can't clear on sign-out.
-// Scoped to /api/*: the corpus and text come from the assets binding and are cached hard.
+// Scoped to /api/*: the corpus and text come from the assets binding and are cached hard. The OTA
+// bundle download is exempt — its URL carries the bundle version, so the body is immutable and the
+// route sets its own long-lived Cache-Control.
 app.use('/api/*', async (c, next) => {
   await next();
-  c.header('Cache-Control', 'no-store');
+  if (!c.req.path.startsWith('/api/updates/bundle/')) c.header('Cache-Control', 'no-store');
 });
 
 // Staging serves the same pages as production on public hostnames, so every page it answers says
@@ -73,6 +76,7 @@ app.get('/api/health', async (c) => {
 
 app.route('/api/auth', authRouter);
 app.route('/api/data', dataRouter);
+app.route('/api/updates', updatesRouter);
 app.route('/.well-known', wellKnownRouter);
 
 // The hostnames serving the landing page, each mapped to where its app lives. Every other

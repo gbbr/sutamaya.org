@@ -22,6 +22,7 @@
     "dev:native": "npm run build:corpus && concurrently -k -n worker,web,ios,android -c blue,green,magenta,yellow \"npm run dev:worker\" \"SUTAMAYA_API_BASE=http://localhost:5173 npm run dev:web\" \"node scripts/native-live-reload.mjs ios\" \"node scripts/native-live-reload.mjs android\"",
     "build": "npm run build:corpus && npm run build --workspace web",
     "build:native": "node scripts/build-native.mjs",
+  "release:ota": "node scripts/release-ota.mjs",
     "usage-report": "node scripts/usage-report.mjs",
     "typecheck": "npm run typecheck --workspace web",
     "test": "npx vitest run",

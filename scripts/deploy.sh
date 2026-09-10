@@ -81,6 +81,10 @@ npx wrangler d1 migrations apply DB --remote $ENV_FLAG
 
 npx wrangler deploy $ENV_FLAG
 
+# A web deploy doesn't move the native apps' over-the-air bundle — that's `npm run release:ota`.
+# Point it out when this deploy has pulled ahead of the published bundle. Never fatal.
+node scripts/check-ota-drift.mjs "$TARGET" || true
+
 # Audible confirmation once the whole deploy (tests + build + upload) has actually succeeded —
 # `set -e` means we never reach here on failure. macOS-only; silently skipped elsewhere since
 # deploys can also run from CI/Linux.
