@@ -510,6 +510,11 @@ body,
 
 body {
   margin: 0;
+  /* Horizontal safe-area insets, so content and edge controls (the reader's close button, the pane
+     header rows) stay clear of a display cutout in landscape. Zero in portrait and in a plain
+     browser tab. The vertical insets are added per top bar instead. A fixed, viewport-filling
+     layer (ReaderPage) sits outside this and insets itself. */
+  padding-inline: var(--safe-left) var(--safe-right);
   overscroll-behavior: none;
   background: rgb(var(--paper));
   color: rgb(var(--ink));

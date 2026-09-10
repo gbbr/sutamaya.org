@@ -493,6 +493,10 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
         {
           background: theme.bg,
           color: theme.fg,
+          // A fixed, viewport-filling layer, so it insets its own content past a landscape display
+          // cutout rather than inheriting body's padding. The background still fills edge to edge.
+          paddingLeft: 'var(--safe-left)',
+          paddingRight: 'var(--safe-right)',
           // Vertical scrolling only: no pinch or double-tap zoom, and no Safari click delay.
           touchAction: 'pan-y',
           '--reader-selection': theme.selection,
