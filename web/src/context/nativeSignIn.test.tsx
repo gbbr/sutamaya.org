@@ -162,6 +162,22 @@ describe('native Google sign-in', () => {
     expect(stored.token).toBeNull();
   });
 
+  it('reports a repeat failed return, not just the first', async () => {
+    await mount();
+    await userEvent.click(screen.getByText('Sign in'));
+    await waitFor(() => expect(browser.opened).toBe(1));
+    deepLink.fire('sutamaya://auth?error=1');
+    await waitFor(() => expect(screen.getByTestId('pending')).toHaveTextContent('idle'));
+
+    // The second attempt returns the byte-identical `sutamaya://auth?error=1`; it must still
+    // clear the pending state rather than be deduped as a repeat of the first.
+    await userEvent.click(screen.getByText('Sign in'));
+    await waitFor(() => expect(screen.getByTestId('pending')).toHaveTextContent('signing in'));
+    deepLink.fire('sutamaya://auth?error=1');
+    await waitFor(() => expect(screen.getByTestId('pending')).toHaveTextContent('idle'));
+    expect(screen.getByTestId('error')).toHaveTextContent('Sign-in did not complete');
+  });
+
   it('keeps the token when the account details fail to arrive, and says so', async () => {
     await mount();
     await userEvent.click(screen.getByText('Sign in'));
