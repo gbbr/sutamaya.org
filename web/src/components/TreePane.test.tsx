@@ -20,7 +20,11 @@ vi.mock('../context/CorpusContext', () => ({ useCorpus: vi.fn() }));
 vi.mock('../context/UserDataContext', () => ({ useUserData: vi.fn() }));
 vi.mock('../context/AuthContext', () => ({ useAuth: vi.fn() }));
 vi.mock('../context/LayoutContext', () => ({ useLayout: vi.fn() }));
-vi.mock('@reach/router', () => ({ navigate: vi.fn() }));
+const navigate = vi.hoisted(() => vi.fn());
+vi.mock('react-router', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('react-router')>()),
+  useNavigate: () => navigate,
+}));
 vi.mock('../lib/pwaNudge', () => ({
   hasOpenedSutta: vi.fn(),
   isOfflineNudgeDismissed: vi.fn(),
@@ -41,7 +45,6 @@ vi.mock('../lib/localAccount', () => ({
   dismissKeepSafe: vi.fn(),
 }));
 
-import { navigate } from '@reach/router';
 import {
   OFFLINE_DOWNLOAD_TEXT,
   OFFLINE_UPDATE_TEXT,

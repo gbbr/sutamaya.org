@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
-import { navigate, type RouteComponentProps } from '@reach/router';
+import { useLocation, useNavigate, useNavigationType, useParams } from 'react-router';
 import { X, Menu as MenuIcon, ChevronLeft, ChevronRight, Library, List as ListIcon, Search, Share, Share2 } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
@@ -64,7 +64,11 @@ const searchRunLabel = (query: string) => `Results for: “${query}”`;
 // segments don't re-render.
 const NO_HIGHLIGHTS: Highlight[] = [];
 
-export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentProps<{ suttaId: string }>) {
+export function ReaderPage() {
+  const { suttaId: routeSuttaId } = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const navigationType = useNavigationType();
   const { corpus } = useCorpus();
   // The uid the URL asked for, case-folded (normalizeRouteId).
   const requestedId = routeSuttaId ? normalizeRouteId(routeSuttaId) : routeSuttaId;
@@ -80,7 +84,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
     if (requestedId && requestedId !== routeSuttaId) {
       navigate(`/read/${encodeURIComponent(requestedId)}`, { replace: true });
     }
-  }, [routeSuttaId, requestedId]);
+  }, [routeSuttaId, requestedId, navigate]);
   const { notes, membership, lists, markVisited } = useUserData();
   const {
     resolvedTheme,
@@ -144,7 +148,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
   if (restoreRef.current.id !== suttaId) {
     restoreRef.current = {
       id: suttaId,
-      restore: enteredByReturn() ? 'stored' : 'top',
+      restore: enteredByReturn(navigationType, location.state) ? 'stored' : 'top',
       skipRestore: !!requestedSubUid || searchSegments !== undefined,
     };
   }
@@ -695,9 +699,8 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
               fs={fs}
               onChipClick={(chipId) => {
                 const { list } = resolveListById(chipId, flatLists);
-                // `fromView` is tagged explicitly: @reach/router stamps a `{key}` onto
-                // location.state even when none is passed, so LibraryPage's no-state fallback
-                // never fires for an in-app navigate().
+                // `fromView` is tagged explicitly: an arrival from inside the app otherwise opens
+                // LibraryPage on whichever pane it was last left on, and this chip names a list.
                 if (list) navigate(`/browse/${list.id}/${suttaId}`, { state: tagIntent({ fromView: 'list' }) });
               }}
               onHighlightClick={(e) => {

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { navigate, type RouteComponentProps } from '@reach/router';
+import { useLocation, useNavigate, useParams } from 'react-router';
 import { useLayout } from '../context/LayoutContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
@@ -23,11 +23,12 @@ const TREE_LIST_HIT_AFTER = 14;
 // How long typing pauses before the query is written to the address bar.
 const QUERY_URL_DELAY = 400;
 
-export function LibraryPage({
-  nodeId: urlNodeId,
-  suttaId: urlSuttaId,
-  location,
-}: RouteComponentProps<{ nodeId: string; suttaId?: string }>) {
+export function LibraryPage() {
+  // The URL's node segment, and its sutta segment — the splat, '' where the address names none.
+  // Both are absent on bare /browse.
+  const { nodeId: urlNodeId, '*': urlSuttaId } = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
   // The URL's sutta segment, case-folded — it always names a corpus document. The node segment
   // may name a user list, so only its corpus ids are folded (normalizeBrowseNodeId). The effect
   // below rewrites the address bar to whatever either fold changed.
@@ -44,10 +45,9 @@ export function LibraryPage({
       // from the search.
       navigate(`/browse/${encodeURIComponent(routeNodeId)}${tail}${location?.search ?? ''}`, { replace: true });
     }
-  }, [urlNodeId, urlSuttaId, routeNodeId, rawSuttaId, location?.search]);
-  // The selected sutta, mirrored into state so a handler can set it in the same render as
-  // everything else it changes; @reach/router updates the route param a frame later. The effect
-  // covers navigation this page didn't initiate.
+  }, [urlNodeId, urlSuttaId, routeNodeId, rawSuttaId, location?.search, navigate]);
+  // The selected sutta, as state rather than read off the route, so a handler sets it alongside
+  // everything else it changes. The effect covers navigation this page didn't initiate.
   const [suttaId, setSuttaId] = useState(rawSuttaId || undefined);
   useEffect(() => {
     setSuttaId(rawSuttaId || undefined);
@@ -74,12 +74,12 @@ export function LibraryPage({
     const t = window.setTimeout(() => setFlashNodeId(undefined), 1600);
     return () => window.clearTimeout(t);
   }, [locationFlashNodeId]);
-  const [view, setView] = useState<'tree' | 'list'>(() => {
+  const [view, setViewState] = useState<'tree' | 'list'>(() => {
     const fromView = consumedIntent?.fromView;
     if (fromView === 'tree' || fromView === 'list') return fromView;
-    // A bookmark or typed URL naming a sutta: no router state, and only the list pane shows the
-    // row.
-    if (suttaId && !location?.state) return 'list';
+    // A bookmark or typed URL naming a sutta — the entry the tab opened on, which no navigation in
+    // the app made — and only the list pane shows the row.
+    if (suttaId && location.key === 'default') return 'list';
     try {
       const stored = localStorage.getItem(LIBRARY_VIEW_KEY);
       if (stored === 'list' || stored === 'tree') return stored;
@@ -88,13 +88,17 @@ export function LibraryPage({
     }
     return 'tree';
   });
-  useEffect(() => {
+  // The pane in use, stored as it is chosen rather than after the render that shows it: a choice
+  // that navigates in the same breath leaves with the page it was made on, and the page arriving
+  // in its place reads it back above.
+  const setView = useCallback((next: 'tree' | 'list') => {
+    setViewState(next);
     try {
-      localStorage.setItem(LIBRARY_VIEW_KEY, view);
+      localStorage.setItem(LIBRARY_VIEW_KEY, next);
     } catch {
       // storage unavailable — ignore
     }
-  }, [view]);
+  }, []);
   // The search this page arrived on, taken from the address bar's `?q=`.
   const [arrivedQuery] = useState(() => new URLSearchParams(location?.search ?? '').get('q') ?? '');
   const [query, setQuery] = useState(arrivedQuery);
@@ -115,7 +119,7 @@ export function LibraryPage({
       navigate(query.trim() ? `${path}?q=${encodeURIComponent(query)}` : path, { replace: true });
     }, QUERY_URL_DELAY);
     return () => window.clearTimeout(t);
-  }, [query, location?.pathname, location?.search]);
+  }, [query, location?.pathname, location?.search, navigate]);
 
   // One scan per keystroke, shared by both panes.
   const { hits: allHits, listHits, textStatus, textPending, hitsSettled, updating } = useCorpusSearch(
@@ -181,7 +185,7 @@ export function LibraryPage({
     setNodeId(id);
     setSuttaId(undefined);
     navigate(`/browse/${encodeURIComponent(id)}`);
-  }, []);
+  }, [navigate, setView]);
 
   // `segments` are set only where the query was answered by the sutta's text, and are where the
   // reader opens: a title or description match has nothing to jump to and opens at the top, as
@@ -214,7 +218,7 @@ export function LibraryPage({
           : tagIntent({ from, fromView: view, searchIds, segments });
       navigate(`/read/${encodeURIComponent(id)}`, { state });
     },
-    [nodeId, view, query, corpus, hits]
+    [nodeId, view, query, corpus, hits, navigate]
   );
 
   const showTreePane = !mobile || view === 'tree';

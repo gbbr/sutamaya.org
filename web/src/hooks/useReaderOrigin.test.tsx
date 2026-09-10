@@ -2,8 +2,11 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { renderHook } from '@testing-library/react';
 import { useReaderOrigin } from './useReaderOrigin';
 
-vi.mock('@reach/router', () => ({ navigate: vi.fn() }));
-import { navigate } from '@reach/router';
+const navigate = vi.hoisted(() => vi.fn());
+vi.mock('react-router', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('react-router')>()),
+  useNavigate: () => navigate,
+}));
 
 beforeEach(() => {
   // Node's own built-in `localStorage` global shadows jsdom's here in a way that leaves it

@@ -1,6 +1,6 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { render, waitFor, within } from '@testing-library/react';
-import { Router, globalHistory, navigate } from '@reach/router';
+import { waitFor, within } from '@testing-library/react';
+import { renderRoutes } from '../testRouter';
 
 // What a `/browse` segment's capitalization is allowed to mean. A corpus id is a reference someone
 // types or shares with the capitals the app displays ("SN 12.1"), so it is case-folded and the
@@ -62,12 +62,12 @@ function mockUserData() {
 }
 
 function renderAt(path: string) {
-  navigate(path);
-  const utils = render(
-    <Router style={{ height: '100%' }}>
-      <LibraryPage path="/browse/:nodeId/*suttaId" />
-      <LibraryPage path="/browse" />
-    </Router>
+  const utils = renderRoutes(
+    [
+      { path: '/browse/:nodeId/*', element: <LibraryPage key="node" /> },
+      { path: '/browse', element: <LibraryPage key="none" /> },
+    ],
+    path
   );
   const pane = utils.container.querySelector('[data-component="ListPane"]') as HTMLElement;
   return { ...utils, inListPane: within(pane) };
@@ -116,20 +116,20 @@ describe('capitalization in a /browse id', () => {
   });
 
   it('opens a list whose id carries capitals, and leaves its URL alone', async () => {
-    const { inListPane } = renderAt(`/browse/${LEGACY_ID}`);
+    const { inListPane, router } = renderAt(`/browse/${LEGACY_ID}`);
 
     expect(await inListPane.findByText('Favourites')).toBeTruthy();
     expect(inListPane.queryByText('This list is no longer here.')).toBeNull();
     // Rewriting this to lowercase names no list at all — which is the failure the reader saw as a
     // list flashing up and vanishing on the first click.
     await new Promise((r) => setTimeout(r, 0));
-    expect(globalHistory.location.pathname).toBe(`/browse/${LEGACY_ID}`);
+    expect(router.state.location.pathname).toBe(`/browse/${LEGACY_ID}`);
   });
 
   it('still folds a capitalized corpus id and settles the URL on it', async () => {
-    const { inListPane } = renderAt('/browse/DN');
+    const { inListPane, router } = renderAt('/browse/DN');
 
     expect(await inListPane.findByText('Long Discourses')).toBeTruthy();
-    await waitFor(() => expect(globalHistory.location.pathname).toBe('/browse/dn'));
+    await waitFor(() => expect(router.state.location.pathname).toBe('/browse/dn'));
   });
 });

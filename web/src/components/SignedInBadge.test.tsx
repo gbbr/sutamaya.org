@@ -2,9 +2,12 @@ import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-vi.mock('@reach/router', () => ({ navigate: vi.fn() }));
+const navigate = vi.hoisted(() => vi.fn());
+vi.mock('react-router', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('react-router')>()),
+  useNavigate: () => navigate,
+}));
 
-import { navigate } from '@reach/router';
 import { SignedInBadge } from './SignedInBadge';
 import type { User } from '../lib/types';
 

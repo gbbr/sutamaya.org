@@ -1,6 +1,6 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent, waitFor, within } from '@testing-library/react';
-import { Router, navigate } from '@reach/router';
+import { act, screen, fireEvent, waitFor, within } from '@testing-library/react';
+import { renderRoutes } from '../testRouter';
 
 // Reproduces (and guards against regressing) a mobile-only bug: switching between the tree/list
 // pane, then opening a *search* result into the reader, then closing the reader again used to
@@ -25,7 +25,17 @@ import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { LibraryPage } from './LibraryPage';
 import { ReaderPage } from './ReaderPage';
 import { SEARCH_PLACEHOLDER } from '../lib/search/metadata';
+import { LIBRARY_VIEW_KEY } from '../lib/storageKeys';
 import type { Corpus } from '../lib/types';
+
+// The pages a reader round trip crosses, routed as App.tsx routes them — the library with nothing
+// selected keyed apart from the library on a node, so picking the first node remounts the page
+// there too.
+const routes = [
+  { path: '/browse/:nodeId/*', element: <LibraryPage key="node" /> },
+  { path: '/browse', element: <LibraryPage key="none" /> },
+  { path: '/read/:suttaId', element: <ReaderPage /> },
+];
 
 function buildCorpus(): Corpus {
   return {
@@ -138,13 +148,7 @@ describe('mobile search -> reader -> close flow', () => {
   });
 
   it('returns to the collection that was being browsed, not the opened hit\'s own', async () => {
-    navigate('/browse/dn');
-    const { container } = render(
-      <Router style={{ height: '100%' }}>
-        <LibraryPage path="/browse/:nodeId/*suttaId" />
-        <ReaderPage path="/read/:suttaId" />
-      </Router>
-    );
+    const { container } = renderRoutes(routes, '/browse/dn');
     // TreePane and ListPane are both always mounted on mobile (one hidden via display:none — see
     // LibraryPage), so plain `screen` queries can match the same label in both; scope to
     // TreePane specifically wherever a query would otherwise be ambiguous.
@@ -209,13 +213,7 @@ describe('mobile search -> reader -> close flow', () => {
       lists: [{ id: 'l1', label: 'Favorites', parentId: null, kind: 'list', items: [] }],
     });
 
-    navigate('/browse/dn');
-    const { container } = render(
-      <Router style={{ height: '100%' }}>
-        <LibraryPage path="/browse/:nodeId/*suttaId" />
-        <ReaderPage path="/read/:suttaId" />
-      </Router>
-    );
+    const { container } = renderRoutes(routes, '/browse/dn');
     const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
 
     // Switch TreePane's own Library <-> My lists tabs to "My lists" — this doesn't touch
@@ -244,13 +242,7 @@ describe('mobile search -> reader -> close flow', () => {
   });
 
   it('closing a search result returns to the results, on the row it was opened from', async () => {
-    navigate('/browse/dn');
-    const { container } = render(
-      <Router style={{ height: '100%' }}>
-        <LibraryPage path="/browse/:nodeId/*suttaId" />
-        <ReaderPage path="/read/:suttaId" />
-      </Router>
-    );
+    const { container, router } = renderRoutes(routes, '/browse/dn');
     const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
     await screen.findByText('sutamaya');
 
@@ -266,7 +258,7 @@ describe('mobile search -> reader -> close flow', () => {
     await screen.findByText('sutamaya');
 
     // The query is in the address bar and back in the box, with the results below it.
-    expect(window.location.search).toBe('?q=sutta');
+    expect(router.state.location.search).toBe('?q=sutta');
     expect((tree().getByPlaceholderText(SEARCH_PLACEHOLDER) as HTMLInputElement).value).toBe('sutta');
     // The opened hit is the marked row, not the first one.
     expect(tree().getByText('Mulapariyaya').closest('button')!.className).toContain('bg-ink/[.06]');
@@ -285,18 +277,12 @@ describe('mobile search -> reader -> close flow', () => {
   // Regression test for 729d0be9 ("Fix mobile library refresh reverting tree->list toggle"): a
   // reader-close round trip carries `fromView` back in router state; ListPane's mobile "Back"
   // button then flips the pane locally *without* navigating, so that state is left stale relative
-  // to the manual switch. A same-tab refresh preserves history.state (unlike a fresh
-  // navigation), so simulating one here means unmounting and re-rendering a fresh <Router> against
-  // the *same*, unchanged location — no navigate() call in between — the same way a real F5
-  // leaves the URL and its history.state exactly as they were.
+  // to the manual switch. A same-tab refresh restores the whole history entry — its state, and the
+  // key the router stored alongside it — so simulating one here means unmounting and starting a
+  // fresh router on the entry the old one ended on, with no navigation in between, the same way a
+  // real F5 leaves the URL and its history entry exactly as they were.
   it('a manual pane switch after closing the reader survives a simulated refresh', async () => {
-    navigate('/browse/dn');
-    const { container, unmount } = render(
-      <Router style={{ height: '100%' }}>
-        <LibraryPage path="/browse/:nodeId/*suttaId" />
-        <ReaderPage path="/read/:suttaId" />
-      </Router>
-    );
+    const { container, unmount, router } = renderRoutes(routes, '/browse/dn');
     const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
 
     // Browse into DN (-> list pane), open its sutta, then close the reader — round trips back
@@ -316,14 +302,10 @@ describe('mobile search -> reader -> close flow', () => {
     expect(isPaneVisible(container, 'TreePane')).toBe(true);
     expect(isPaneVisible(container, 'ListPane')).toBe(false);
 
-    // Simulated refresh: fresh mount, same (now-stale) location/history.state, no navigate().
+    // Simulated refresh: fresh router on the same (now-stale) history entry, no navigation.
+    const entry = router.state.location;
     unmount();
-    const remounted = render(
-      <Router style={{ height: '100%' }}>
-        <LibraryPage path="/browse/:nodeId/*suttaId" />
-        <ReaderPage path="/read/:suttaId" />
-      </Router>
-    );
+    const remounted = renderRoutes(routes, entry);
     await remounted.findByText('sutamaya');
 
     // Must still show the tree pane — a revert back to 'list' here is exactly the bug.
@@ -337,29 +319,17 @@ describe('mobile search -> reader -> close flow', () => {
   // ReaderPage's readPersistedReaderOrigin fallback, which LibraryPage.onOpen persists alongside
   // the router state it also sets.
   it("closing the reader falls back to the persisted origin when location.state was lost (refresh)", async () => {
-    navigate('/browse/dn');
-    const { container, unmount } = render(
-      <Router style={{ height: '100%' }}>
-        <LibraryPage path="/browse/:nodeId/*suttaId" />
-        <ReaderPage path="/read/:suttaId" />
-      </Router>
-    );
+    const { container, unmount } = renderRoutes(routes, '/browse/dn');
     const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
 
     fireEvent.click(tree().getByRole('button', { name: /Long Discourses/ }));
     fireEvent.click(await screen.findByText('Brahmajala'));
     await waitFor(() => expect(container.querySelector('[data-component="ReaderPage"]')).toBeTruthy());
 
-    // Simulated refresh while still on /read/dn1: unmount, then re-navigate to the same path with
-    // no `state` at all (mirroring what a real hard refresh leaves behind), and remount fresh.
+    // Simulated refresh while still on /read/dn1: unmount, then start a fresh router on that same
+    // address as a bare path — no `state` at all, mirroring what a real hard refresh leaves behind.
     unmount();
-    navigate('/read/dn1', { replace: true });
-    const remounted = render(
-      <Router style={{ height: '100%' }}>
-        <LibraryPage path="/browse/:nodeId/*suttaId" />
-        <ReaderPage path="/read/:suttaId" />
-      </Router>
-    );
+    const remounted = renderRoutes(routes, '/read/dn1');
     await waitFor(() => expect(remounted.container.querySelector('[data-component="ReaderPage"]')).toBeTruthy());
 
     fireEvent.click(remounted.getByTitle('Close'));
@@ -369,5 +339,47 @@ describe('mobile search -> reader -> close flow', () => {
     await remounted.findByText('sutamaya');
     expect(isPaneVisible(remounted.container, 'ListPane')).toBe(true);
     expect(remounted.getByText('Brahmajala')).toBeTruthy();
+  });
+
+  // The first collection picked on a first visit, which crosses from the library with nothing
+  // selected to the library on a node — a different page, so the one showing the tree goes and a
+  // fresh one arrives, and the list is what the pick asked for.
+  it('shows the list pane for the first collection picked from a bare /browse', async () => {
+    const { container } = renderRoutes(routes, '/browse');
+    const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
+
+    fireEvent.click(await tree().findByRole('button', { name: /Long Discourses/ }));
+
+    await waitFor(() => expect(isPaneVisible(container, 'ListPane')).toBe(true));
+    expect(isPaneVisible(container, 'TreePane')).toBe(false);
+    expect(within(container.querySelector('[data-component="ListPane"]')!).getByText('Brahmajala')).toBeTruthy();
+  });
+
+  // Which pane the Library opens on when the address already names a sutta. The entry a tab opens
+  // on is one no navigation in the app made — a shared link, a bookmark, a typed URL — and only
+  // the list pane shows the row it names.
+  it('opens the list pane for a shared link naming a sutta', async () => {
+    localStorage.setItem(LIBRARY_VIEW_KEY, 'tree');
+    const { container } = renderRoutes(routes, '/browse/dn/dn1');
+    await screen.findByText('sutamaya');
+
+    // The list pane, over the tree the reader was last left on.
+    expect(isPaneVisible(container, 'ListPane')).toBe(true);
+    expect(isPaneVisible(container, 'TreePane')).toBe(false);
+    expect(within(container.querySelector('[data-component="ListPane"]')!).getByText('Brahmajala')).toBeTruthy();
+  });
+
+  // The same address reached from inside the app instead, where the pane the reader is on is a
+  // choice they made and the arrival doesn't overrule it.
+  it('keeps the pane in use when a sutta address is reached from inside the app', async () => {
+    localStorage.setItem(LIBRARY_VIEW_KEY, 'tree');
+    // Mounted on the reader, so the Library's own mount is the arrival under test.
+    const { container, router } = renderRoutes(routes, '/read/dn1');
+    await waitFor(() => expect(container.querySelector('[data-component="ReaderPage"]')).toBeTruthy());
+
+    await act(() => router.navigate('/browse/dn/dn1'));
+    await screen.findByText('sutamaya');
+    expect(isPaneVisible(container, 'TreePane')).toBe(true);
+    expect(isPaneVisible(container, 'ListPane')).toBe(false);
   });
 });

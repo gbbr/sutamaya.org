@@ -1,6 +1,6 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent, within } from '@testing-library/react';
-import { Router, navigate } from '@reach/router';
+import { screen, fireEvent, within } from '@testing-library/react';
+import { renderRoutes } from '../testRouter';
 
 // Covers the one thing this feature changes about search results that already worked: when a
 // query matches a list, the suttas that got there *only* through that list's name stop being
@@ -91,12 +91,7 @@ const userDataDefaults = {
 // both.
 function searchFor(query: string, lists: ListDef[]) {
   vi.mocked(useUserData).mockReturnValue({ ...userDataDefaults, lists });
-  navigate('/browse/dn');
-  const { container } = render(
-    <Router style={{ height: '100%' }}>
-      <LibraryPage path="/browse/:nodeId/*suttaId" />
-    </Router>
-  );
+  const { container } = renderRoutes([{ path: '/browse/:nodeId/*', element: <LibraryPage /> }], '/browse/dn');
   const tree = within(container.querySelector('[data-component="TreePane"]')!);
   fireEvent.click(tree.getByRole('button', { name: 'Search' }));
   fireEvent.change(tree.getByPlaceholderText(SEARCH_PLACEHOLDER), { target: { value: query } });

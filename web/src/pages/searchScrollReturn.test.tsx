@@ -1,6 +1,6 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent, waitFor, within } from '@testing-library/react';
-import { Router, navigate } from '@reach/router';
+import { screen, fireEvent, waitFor, within } from '@testing-library/react';
+import { renderRoutes } from '../testRouter';
 
 // The scroll position of a search's results across a reader round trip: scrolled, a hit opened,
 // the reader closed. The sutta text's hits arrive after the metadata ones, so the pane's restore
@@ -32,6 +32,12 @@ import { LibraryPage } from './LibraryPage';
 import { ReaderPage } from './ReaderPage';
 import { SEARCH_PLACEHOLDER } from '../lib/search/metadata';
 import type { Corpus } from '../lib/types';
+
+// The two pages a reader round trip crosses, routed as App.tsx routes them.
+const routes = [
+  { path: '/browse/:nodeId/*', element: <LibraryPage /> },
+  { path: '/read/:suttaId', element: <ReaderPage /> },
+];
 
 function buildCorpus(): Corpus {
   const suttas: Corpus['suttas'] = {};
@@ -151,13 +157,7 @@ describe('a search result opened and closed', () => {
   });
 
   it('reopens the results at the offset they were left at', async () => {
-    navigate('/browse/dn');
-    const { container } = render(
-      <Router style={{ height: '100%' }}>
-        <LibraryPage path="/browse/:nodeId/*suttaId" />
-        <ReaderPage path="/read/:suttaId" />
-      </Router>
-    );
+    const { container } = renderRoutes(routes, '/browse/dn');
     const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
     const list = () => within(container.querySelector('[data-component="ListPane"]')!);
     const listScroller = () => container.querySelector('[data-component="ListPane"] .sc') as HTMLElement;
@@ -193,13 +193,7 @@ describe('a search result opened and closed', () => {
   });
 
   it('opens a new query at the top, and leaves it there once the text hits land', async () => {
-    navigate('/browse/dn');
-    const { container } = render(
-      <Router style={{ height: '100%' }}>
-        <LibraryPage path="/browse/:nodeId/*suttaId" />
-        <ReaderPage path="/read/:suttaId" />
-      </Router>
-    );
+    const { container } = renderRoutes(routes, '/browse/dn');
     const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
     const list = () => within(container.querySelector('[data-component="ListPane"]')!);
     const listScroller = () => container.querySelector('[data-component="ListPane"] .sc') as HTMLElement;
@@ -221,13 +215,7 @@ describe('a search result opened and closed', () => {
   });
 
   it('follows the arrow-key cursor once the reader moves it', async () => {
-    navigate('/browse/dn');
-    const { container } = render(
-      <Router style={{ height: '100%' }}>
-        <LibraryPage path="/browse/:nodeId/*suttaId" />
-        <ReaderPage path="/read/:suttaId" />
-      </Router>
-    );
+    const { container } = renderRoutes(routes, '/browse/dn');
     const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
     const list = () => within(container.querySelector('[data-component="ListPane"]')!);
     await screen.findByText('sutamaya');
@@ -250,13 +238,7 @@ describe('a search result opened and closed', () => {
       resetTree: vi.fn(),
       dragTree: vi.fn(),
     });
-    navigate('/browse/dn');
-    const { container } = render(
-      <Router style={{ height: '100%' }}>
-        <LibraryPage path="/browse/:nodeId/*suttaId" />
-        <ReaderPage path="/read/:suttaId" />
-      </Router>
-    );
+    const { container } = renderRoutes(routes, '/browse/dn');
     const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
     const treeScroller = () => container.querySelector('[data-component="TreePane"] .sc') as HTMLElement;
     await screen.findByText('sutamaya');

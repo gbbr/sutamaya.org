@@ -30,7 +30,11 @@ vi.mock('../lib/api', () => ({
   dataApi: { all: () => dataApiAll(), push: (...args: unknown[]) => dataApiPush(...args) },
 }));
 
-vi.mock('@reach/router', () => ({ navigate: vi.fn() }));
+const navigate = vi.hoisted(() => vi.fn());
+vi.mock('react-router', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('react-router')>()),
+  useNavigate: () => navigate,
+}));
 
 const ACCOUNT: User = { id: 'account-1', email: 'a@b.com', name: 'A', picture: null };
 

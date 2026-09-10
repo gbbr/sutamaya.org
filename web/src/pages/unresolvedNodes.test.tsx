@@ -1,6 +1,6 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { render, screen, waitFor, within } from '@testing-library/react';
-import { Router, navigate } from '@reach/router';
+import { screen, waitFor, within } from '@testing-library/react';
+import { renderRoutes } from '../testRouter';
 
 // The states an id can leave a page in when it stops resolving to anything: a /read/ link naming a
 // sutta this corpus doesn't have, and a /browse/ node naming a list that is gone. Each one used to
@@ -87,14 +87,14 @@ function mockUserData(overrides: Partial<ReturnType<typeof useUserData>> = {}): 
 
 // The routes App.tsx gives these pages, including bare /browse — where a cleared selection lands.
 function renderApp(path: string) {
-  navigate(path);
-  const utils = render(
-    <Router style={{ height: '100%' }}>
-      <LibraryPage path="/browse/:nodeId/*suttaId" />
-      <LibraryPage path="/browse" />
-      <ReaderPage path="/read/:suttaId" />
-      <NotFoundPage default />
-    </Router>
+  const utils = renderRoutes(
+    [
+      { path: '/browse/:nodeId/*', element: <LibraryPage key="node" /> },
+      { path: '/browse', element: <LibraryPage key="none" /> },
+      { path: '/read/:suttaId', element: <ReaderPage /> },
+      { path: '*', element: <NotFoundPage /> },
+    ],
+    path
   );
   const pane = (name: 'TreePane' | 'ListPane' | 'ReaderPage') => utils.container.querySelector(`[data-component="${name}"]`);
   // Scoped queries: both panes are mounted at once, so the same label can match twice.

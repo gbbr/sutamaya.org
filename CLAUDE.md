@@ -6,8 +6,8 @@ highlighting, notes, lists, typography controls).
 
 ## Stack
 
-- **`web/`** — React + TypeScript + Tailwind + Vite, routed with `@reach/router`, packaged as a PWA
-  via `vite-plugin-pwa`.
+- **`web/`** — React + TypeScript + Tailwind + Vite, routed with **React Router** (a data router, no
+  loaders — see the routing section below), packaged as a PWA via `vite-plugin-pwa`.
 - **`worker/`** — a Cloudflare Worker (Hono) using **D1** for storage. Serves `/api/*` and, via
   Cloudflare's assets binding, the built SPA and static corpus from the same origin.
 - **`scripts/`** — the corpus build and the `update-data` pipeline that refreshes `data/` from a
@@ -91,6 +91,35 @@ scripts/
   lib/collections.js  the hardcoded, canonical collection metadata (see the depth table below)
   lib/paliWords.js    the build's copy of the reader's word tokenizer and shard search
 ```
+
+## Routing
+
+Every route is one entry in the single table in `web/src/App.tsx` (`createBrowserRouter`), and both
+the app and every test that mounts a page render it through **`components/RouterView.tsx`** — tests
+via `web/src/testRouter.tsx`'s `renderRoutes(routes, entry)`, which puts the same provider around a
+memory router. A page under test therefore behaves as it does in the app.
+
+- **It is a data router with no loaders.** Routes are plain elements; the pages fetch what they
+  need themselves. What the data router is there for is `errorElement`, mounted twice — around the
+  shell, and inside it around the pages, so a throw in a page leaves the providers and the Android
+  back button running. `ErrorBoundary` (the class) still wraps the router itself, for a throw the
+  router can't catch.
+- **Every route matches its static segments exactly** (`caseSensitive`), which is what lets
+  `/:suttaId` stand at the bottom as the bare-uid deep link (`/dn9` → `/read/dn9`) without
+  swallowing `/Settings`.
+- **Import the provider and the hooks from the same specifier** — `react-router`, never
+  `react-router/dom`. Outside a bundler the two resolve to different builds of the package, each
+  with its own router context, and a hook then finds no provider. `RouterView` passes react-dom's
+  `flushSync` in, which is the whole of what `react-router/dom` adds.
+- **A page change moves keyboard focus** to the wrapper the page renders into
+  (`components/RouteFocus.tsx`), where the focus would otherwise be left on the page that went.
+  Selecting a sutta within a library node is not a page change.
+- **The address is where the reader is** — the selected node and sutta, and the library's `?q=`,
+  which is why closing a search result returns to the results. `location.state` carries what an
+  arrival means rather than where it lands: the pane it came from, the hits behind it, the segment
+  to jump to. It survives a same-tab refresh, so each of those is stamped and consumed exactly once
+  (`lib/routeIntent.ts`), and `location.key === 'default'` is how a page tells the entry a tab
+  opened on from one the app navigated to.
 
 ## Data pipeline (`scripts/build-corpus.mjs`)
 
@@ -317,9 +346,9 @@ started with.
 - **Every D1 query is scoped `AND user_id = ?`.** These are flat tables with no structural per-user
   isolation; that predicate is the only thing separating one user's data from another's, and it
   belongs on reads, writes and existence checks alike.
-- **`<StrictMode>` is deliberately off** (`web/src/main.tsx`). `@reach/router`'s `<Redirect>` relies
-  on class-lifecycle timing that React 18's dev-mode double-invoke breaks, so `/` → `/browse/dn`
-  silently never fires under it. Re-enabling it means re-testing every `navigate()`-on-mount path.
+- **`<StrictMode>` is deliberately off** (`web/src/main.tsx`). Turning it on means checking every
+  effect in the app against its dev-only double run first — the redirects that navigate on mount
+  (`RestoreLastLocation`, `RedirectToReader`) above all.
 - **Some logic exists twice on purpose.** `web/src/lib/listTree.ts` and `web/src/lib/mirrorView.ts`
   are ports of `worker/src/lib/listTree.js` and `userData.js`; the auto-list ids and caps are
   duplicated in `web/src/lib/autoLists.ts`. No module is shared between the two npm workspaces, and

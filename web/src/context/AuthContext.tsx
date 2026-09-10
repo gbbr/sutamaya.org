@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import { navigate } from '@reach/router';
+import { useNavigate } from 'react-router';
 import { App } from '@capacitor/app';
 import { authApi } from '../lib/api';
 import { isRetryable, retryWithBackoff, statusOf } from '../lib/retry';
@@ -61,6 +61,7 @@ function authErrorMessage(marker: string | null): string | null {
 }
 
 export function AuthProvider({ children }: { children: ReactNode }) {
+  const navigate = useNavigate();
   // The signed-in user, seeded from the last confirmed session (lib/lastUser.ts) so a relaunch with
   // no network opens their own mirror. The server's answer replaces it in either direction.
   const [user, setUser] = useState<User | null>(readLastUser);
@@ -142,7 +143,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const promptGoogleSignIn = useCallback(() => {
     const returnTo = window.location.pathname + window.location.search;
     navigate('/settings', { state: { scrollTo: 'auth', returnTo } });
-  }, []);
+  }, [navigate]);
 
   // Turns a `sutamaya://auth` return into a session. The token it carries is valid whenever it
   // lands, so this is not scoped to the sign-in that started the flow: a return that arrives after
@@ -187,7 +188,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       completing.current = false;
       setSigningIn(false);
     }
-  }, []);
+  }, [navigate]);
 
   // Listens for the OAuth return for the app's whole life, rather than for the length of one
   // sign-in — see completeNativeSignIn. Inert on web, which has no deep links.

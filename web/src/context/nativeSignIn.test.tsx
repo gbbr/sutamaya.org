@@ -69,7 +69,11 @@ const me = vi.hoisted(() => ({
 }));
 vi.mock('../lib/api', () => ({ authApi: { me: () => me.fn() } }));
 vi.mock('../lib/mirrorDb', () => ({ deleteMirror: async () => {} }));
-vi.mock('@reach/router', () => ({ navigate: vi.fn(async () => {}) }));
+const navigate = vi.hoisted(() => vi.fn(async () => {}));
+vi.mock('react-router', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('react-router')>()),
+  useNavigate: () => navigate,
+}));
 
 import { AuthProvider, useAuth } from './AuthContext';
 

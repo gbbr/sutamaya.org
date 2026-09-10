@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { navigate } from '@reach/router';
+import { useNavigate } from 'react-router';
 import { UserRound } from 'lucide-react';
 import { isIosBrowserTab } from '../lib/localAccount';
 import type { User } from '../lib/types';
@@ -9,6 +9,7 @@ import type { User } from '../lib/types';
 // signed-out badge — the standing state of data only this device holds, so unlike the banner it
 // can't be dismissed and stays until a sign-in resolves it.
 export function SignedInBadge({ user, size, atRisk = false }: { user: User | null; size: number; atRisk?: boolean }) {
+  const navigate = useNavigate();
   const dim = { width: size, height: size };
   // Whether the avatar has loaded; until it has, and if it never does — the URL is unreachable
   // offline — the initials show rather than the browser's broken-image glyph.

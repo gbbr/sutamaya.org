@@ -1,6 +1,6 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest';
-import { act, render, screen, waitFor } from '@testing-library/react';
-import { Router, navigate } from '@reach/router';
+import { act, screen, waitFor } from '@testing-library/react';
+import { renderRoutes } from '../testRouter';
 
 // The wash on the passage a search hit's snippet was drawn from: on while the reader arrives, off a
 // moment later. It is an orientation cue, not an annotation — a passage that stayed washed would
@@ -72,6 +72,8 @@ const userDataDefaults: ReturnType<typeof useUserData> = {
   anchorHighlights: () => {},
   markVisited: () => {},
 };
+
+const routes = [{ path: '/read/:suttaId', element: <ReaderPage /> }];
 
 // The wrapper div a segment's lines sit in, which carries the wash.
 function segmentWrapper(container: HTMLElement, i: number): HTMLElement {
@@ -156,14 +158,10 @@ describe('the passage a search hit was drawn from', () => {
   });
 
   it('is washed on arrival, and only until the flash ends', async () => {
-    navigate('/read/dn1', {
+    const { container } = renderRoutes(routes, {
+      pathname: '/read/dn1',
       state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
     });
-    const { container } = render(
-      <Router style={{ height: '100%' }}>
-        <ReaderPage path="/read/:suttaId" />
-      </Router>
-    );
     await screen.findByText('They spoke in dispraise of the Buddha');
 
     await waitFor(() => expect(segmentWrapper(container, 2).style.background).not.toBe(''));
@@ -183,20 +181,14 @@ describe('the passage a search hit was drawn from', () => {
   // has nothing to do with the query — and, past its end, wash nothing and leave the scroll where
   // it was.
   it('does not follow a Prev/Next step into the next sutta', async () => {
-    navigate('/read/dn1', {
+    const { container, router } = renderRoutes(routes, {
+      pathname: '/read/dn1',
       state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
     });
-    const { container } = render(
-      <Router style={{ height: '100%' }}>
-        <ReaderPage path="/read/:suttaId" />
-      </Router>
-    );
     await screen.findByText('They spoke in dispraise of the Buddha');
 
     // What step() sends: the origin it always carried, and no passage of its own.
-    await act(async () => {
-      navigate('/read/dn2', { state: { from: '/browse/dn/dn1?q=dispraise', fromView: 'list' } });
-    });
+    await act(() => router.navigate('/read/dn2', { state: { from: '/browse/dn/dn1?q=dispraise', fromView: 'list' } }));
     await screen.findByText('Then the king spoke');
 
     for (const i of [0, 1, 2]) expect(segmentWrapper(container, i).style.background).toBe('');
@@ -205,19 +197,13 @@ describe('the passage a search hit was drawn from', () => {
   // The reader's own search overlay jumps to a passage too, so a second intent has to replace the
   // one the reader arrived on rather than being held off behind it.
   it('is replaced by a later jump rather than held behind it', async () => {
-    navigate('/read/dn1', {
+    const { container, router } = renderRoutes(routes, {
+      pathname: '/read/dn1',
       state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
     });
-    const { container } = render(
-      <Router style={{ height: '100%' }}>
-        <ReaderPage path="/read/:suttaId" />
-      </Router>
-    );
     await screen.findByText('They spoke in dispraise of the Buddha');
 
-    await act(async () => {
-      navigate('/read/dn2', { state: tagIntent({ segments: [0, 0] }) });
-    });
+    await act(() => router.navigate('/read/dn2', { state: tagIntent({ segments: [0, 0] }) }));
     await screen.findByText('Then the king spoke');
 
     await waitFor(() => expect(segmentWrapper(container, 0).style.background).not.toBe(''));
@@ -226,12 +212,7 @@ describe('the passage a search hit was drawn from', () => {
   });
 
   it('is not washed when the reader was not sent to a segment', async () => {
-    navigate('/read/dn1', { state: { from: '/browse/dn/dn1', fromView: 'list' } });
-    const { container } = render(
-      <Router style={{ height: '100%' }}>
-        <ReaderPage path="/read/:suttaId" />
-      </Router>
-    );
+    const { container } = renderRoutes(routes, { pathname: '/read/dn1', state: { from: '/browse/dn/dn1', fromView: 'list' } });
     await screen.findByText('They spoke in dispraise of the Buddha');
 
     for (const i of [0, 1, 2]) expect(segmentWrapper(container, i).style.background).toBe('');

@@ -6,7 +6,10 @@ import { useAuth } from '../context/AuthContext';
 
 vi.mock('../context/AuthContext', () => ({ useAuth: vi.fn() }));
 const navigate = vi.hoisted(() => vi.fn());
-vi.mock('@reach/router', () => ({ navigate }));
+vi.mock('react-router', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('react-router')>()),
+  useNavigate: () => navigate,
+}));
 
 let requestEmailCode: ReturnType<typeof vi.fn>;
 let signInWithEmailCode: ReturnType<typeof vi.fn>;

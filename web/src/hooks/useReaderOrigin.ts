@@ -1,4 +1,4 @@
-import { navigate } from '@reach/router';
+import { useNavigate } from 'react-router';
 import { tagIntent } from '../lib/routeIntent';
 import { READER_ORIGIN_KEY } from '../lib/storageKeys';
 
@@ -45,6 +45,7 @@ function persistReaderOrigin(
 export function useReaderOrigin(
   locationState: { from?: string; fromView?: 'tree' | 'list'; searchIds?: string[] } | undefined
 ) {
+  const navigate = useNavigate();
   const from = locationState?.from;
   const fromView = locationState?.fromView;
   const searchIds = locationState?.searchIds;

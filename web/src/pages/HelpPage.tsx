@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { navigate, type RouteComponentProps } from '@reach/router';
+import { useNavigate } from 'react-router';
 import { ArrowLeft, ArrowUp, ExternalLink, Lightbulb, Mail } from 'lucide-react';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { isTypingTarget } from '../lib/shortcuts';
@@ -489,7 +489,8 @@ function BackToTop({ onClick }: { onClick: () => void }) {
   );
 }
 
-export function HelpPage(_props: RouteComponentProps) {
+export function HelpPage() {
+  const navigate = useNavigate();
   // Its own description rather than the app-wide default: this is the one app page in the sitemap.
   useDocumentMeta(
     'How to use sutamaya',
@@ -506,7 +507,7 @@ export function HelpPage(_props: RouteComponentProps) {
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, []);
+  }, [navigate]);
 
   return (
     <div
@@ -527,7 +528,7 @@ export function HelpPage(_props: RouteComponentProps) {
         </p>
         {/* The contents list: a micro-label over an indented column of links per group, the shape
             the lists pane uses for MY LISTS and AUTOMATIC. Scrolled with scrollIntoView rather than
-            an href, which would put a hash URL into @reach/router's history. */}
+            an href, which would put a hash URL into the router's history. */}
         <nav className="flex flex-col gap-4 mb-8">
           {CONTENTS.map((group) => (
             <div key={group.label}>

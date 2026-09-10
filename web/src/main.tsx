@@ -55,8 +55,7 @@ document.addEventListener('visibilitychange', () => {
 // on web, which authenticates by cookie.
 if (isNativeApp()) void hydrateNativeToken();
 
-// No <StrictMode>: @reach/router's Redirect relies on class-lifecycle timing that React 18's
-// dev-mode double-invoke breaks, and a redirect from "/" then silently never fires.
+// No <StrictMode>. Turning it on means checking every effect against its dev-only double run first.
 createRoot(document.getElementById('root')!).render(<App />);
 
 // Hands the native launch splash over to the app's own loading screen once React has painted.

@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react';
-import { navigate } from '@reach/router';
+import { useNavigate } from 'react-router';
 import { AlertTriangle, Download, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
@@ -99,6 +99,7 @@ function Banner({
 }
 
 export function HeaderBanner() {
+  const navigate = useNavigate();
   const { corpus } = useCorpus();
   const { needsReauth, lists, notes, highlights } = useUserData();
   const { promptGoogleSignIn, isSignedIn, localUserId } = useAuth();

@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
-import { Router, navigate, type RouteComponentProps } from '@reach/router';
+import { createBrowserRouter, useLocation, useNavigate, useParams, type RouteObject } from 'react-router';
 import { AppProviders } from './context/AppProviders';
-import { ErrorBoundary } from './components/ErrorBoundary';
+import { ErrorBoundary, ErrorFallback } from './components/ErrorBoundary';
+import { RouteFocus } from './components/RouteFocus';
+import { RouterView } from './components/RouterView';
 import { useAndroidBackButton } from './hooks/useAndroidBackButton';
 import { useCorpus } from './context/CorpusContext';
-import { getLastLocation } from './lib/lastLocation';
+import { getLastLocation, rememberLocation } from './lib/lastLocation';
 import { normalizeRouteId, resolveCanonicalSuttaId } from './lib/corpus';
-import { markReturnNavigation } from './lib/entryKind';
+import { RETURN_STATE } from './lib/entryKind';
 import { HelpPage } from './pages/HelpPage';
 import { LibraryPage } from './pages/LibraryPage';
 import { NotFoundPage } from './pages/NotFoundPage';
@@ -34,10 +36,10 @@ function LoadFailed({ onRetry }: { onRetry: () => void }) {
 
 // What "/" resolves to — the path a fresh tab and a home-screen relaunch both land on (the
 // manifest's `start_url`): the reader's last location, or bare /browse with nothing selected on a
-// first visit. Navigates on mount, as @reach/router's own <Redirect> does, which works under this
-// app's no-StrictMode setup (main.tsx).
-function RestoreLastLocation(_props: RouteComponentProps) {
+// first visit. Navigates on mount, in place of the "/" entry.
+function RestoreLastLocation() {
   const { corpus } = useCorpus();
+  const navigate = useNavigate();
   useEffect(() => {
     // A stored reader location is restorable only while this corpus still has the uid; a refresh
     // may have renamed or dropped it. Checked here rather than at the write, since
@@ -49,62 +51,87 @@ function RestoreLastLocation(_props: RouteComponentProps) {
     const restorable = uid && corpus ? !!corpus.suttas[resolveCanonicalSuttaId(corpus, decodeURIComponent(uid))] : !!stored;
     // A return rather than a fresh destination (lib/entryKind.ts), so the reader restores its
     // scroll.
-    markReturnNavigation();
-    navigate(restorable ? stored! : '/browse', { replace: true });
+    navigate(restorable ? stored! : '/browse', { replace: true, state: RETURN_STATE });
   }, []);
   return null;
 }
 
 // Sends a bare-uid deep link — a shared "/dn9" rather than "/read/dn9" — to the reader, and
-// renders NotFoundPage for anything else. @reach/router ranks the static routes above this one, so
+// renders NotFoundPage for anything else. The router ranks the static routes above this one, so
 // it sees only a single segment none of them claim.
-function RedirectToReader({ suttaId }: RouteComponentProps<{ suttaId: string }>) {
+function RedirectToReader() {
+  const { suttaId } = useParams();
   const { corpus } = useCorpus();
+  const navigate = useNavigate();
   // Case-folded, since such a link is usually copied from a reference the app displays in caps.
   const id = suttaId ? normalizeRouteId(suttaId) : suttaId;
   const known = Boolean(id && corpus?.suttas[id]);
   useEffect(() => {
     // The redirect finishes the arrival it came in on, so it inherits that entry kind rather than
     // counting as a fresh in-app navigation.
-    if (known) {
-      markReturnNavigation();
-      navigate(`/read/${id}`, { replace: true });
-    }
-  }, [known, id]);
+    if (known) navigate(`/read/${id}`, { replace: true, state: RETURN_STATE });
+  }, [known, id, navigate]);
   if (!known) return <NotFoundPage />;
   return null;
 }
 
-function Routes() {
+// The page the address names, once the corpus it is drawn from is in.
+function Pages() {
   const { loading, error, retry } = useCorpus();
   if (error) return <LoadFailed onRetry={retry} />;
   if (loading) return <Splash />;
+  return <RouteFocus />;
+}
+
+// What surrounds every page: the providers, Android's back button, and the record of where the
+// reader is that "/" restores.
+function AppShell() {
+  useAndroidBackButton();
+  const { pathname } = useLocation();
+  useEffect(() => rememberLocation(pathname), [pathname]);
   return (
-    <Router style={{ height: '100%' }}>
-      <RestoreLastLocation path="/" />
-      {/* One route element, so selecting and deselecting a sutta keeps the same LibraryPage
-          instance and every pane's scroll position. `*suttaId` is a splat, giving '' rather than
-          undefined when the segment is absent. */}
-      <LibraryPage path="/browse/:nodeId/*suttaId" />
-      {/* The library with nothing selected. A second route element, so picking the first node
-          remounts the page — before there is any pane scroll to lose. */}
-      <LibraryPage path="/browse" />
-      <ReaderPage path="/read/:suttaId" />
-      <SettingsPage path="/settings" />
-      <HelpPage path="/help" />
-      <RedirectToReader path="/:suttaId" />
-      <NotFoundPage default />
-    </Router>
+    <AppProviders>
+      <Pages />
+    </AppProviders>
   );
 }
 
+// Every route matches its static segments exactly as written: "/Settings" is a bare-uid link that
+// RedirectToReader turns away, and "/READ/dn1" is no route at all.
+const exact = (route: RouteObject): RouteObject => ({ ...route, caseSensitive: true });
+
+const router = createBrowserRouter([
+  {
+    element: <AppShell />,
+    // A throw in the shell or its providers, which the whole app gives way to.
+    errorElement: <ErrorFallback />,
+    children: [
+      {
+        // A throw in a page, caught inside the shell so its providers and the back button carry on.
+        errorElement: <ErrorFallback />,
+        children: [
+          { path: '/', element: <RestoreLastLocation /> },
+          // One route element, so selecting and deselecting a sutta keeps the same LibraryPage
+          // instance and every pane's scroll position. The splat is the sutta, '' when absent.
+          { path: '/browse/:nodeId/*', element: <LibraryPage key="node" /> },
+          // The library with nothing selected. Keyed apart from the route above, so picking the
+          // first node remounts the page — before there is any pane scroll to lose.
+          { path: '/browse', element: <LibraryPage key="none" /> },
+          { path: '/read/:suttaId', element: <ReaderPage /> },
+          { path: '/settings', element: <SettingsPage /> },
+          { path: '/help', element: <HelpPage /> },
+          { path: '/:suttaId', element: <RedirectToReader /> },
+          { path: '*', element: <NotFoundPage /> },
+        ].map(exact),
+      },
+    ],
+  },
+]);
+
 export default function App() {
-  useAndroidBackButton();
   return (
     <ErrorBoundary>
-      <AppProviders>
-        <Routes />
-      </AppProviders>
+      <RouterView router={router} />
     </ErrorBoundary>
   );
 }
