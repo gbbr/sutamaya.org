@@ -12,6 +12,7 @@
 // bundle; this passes `--no-sync` to `cap run` and never rebuilds it.
 
 import { spawn, spawnSync } from 'node:child_process';
+import { existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -23,6 +24,18 @@ if (platform !== 'ios' && platform !== 'android') {
 
 const webDir = resolve(dirname(fileURLToPath(import.meta.url)), '../web');
 const adbBin = process.env.ANDROID_HOME ? resolve(process.env.ANDROID_HOME, 'platform-tools/adb') : 'adb';
+
+// `cap run` builds the native project, which needs its synced web assets in place — produced only
+// by `npm run build:native` and git-ignored, so absent on a fresh checkout. Without them the build
+// fails deep in the native toolchain with nothing pointing back here.
+const syncedAssets = {
+  ios: resolve(webDir, 'ios/App/App/public'),
+  android: resolve(webDir, 'android/app/src/main/assets/public'),
+}[platform];
+if (!existsSync(syncedAssets)) {
+  console.error(`\nthe ${platform} project has no synced bundle yet — run \`npm run build:native\` once first.`);
+  process.exit(1);
+}
 
 // The device to deploy to, resolved here rather than left to `cap run`'s interactive picker — its
 // arrow-key prompt doesn't get a usable TTY through `concurrently`.
