@@ -88,8 +88,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // True while a return is being turned into a session, so the browser sheet closing underneath it
   // doesn't clear the pending state early.
   const completing = useRef(false);
-  // The last return acted on. A cold-started return arrives twice — once as the launch URL, once
-  // on the listener — and signing in twice would fetch and navigate twice.
+  // The last successful return acted on. A cold-started return arrives twice — once as the launch
+  // URL, once on the listener — and signing in twice would fetch and navigate twice.
   const handledAuthUrl = useRef<string | null>(null);
 
   useEffect(() => {
@@ -149,20 +149,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // the browser sheet has closed, or that cold-starts the app the OS killed while the sheet was
   // open, still signs the reader in.
   const completeNativeSignIn = useCallback(async (url: string) => {
-    if (handledAuthUrl.current === url) return;
-    handledAuthUrl.current = url;
+    const token = new URL(url).searchParams.get('token');
+    // A success return is delivered twice on a cold start — as the launch URL, then on the
+    // listener — and acting on its token twice would fetch and navigate twice. A failure return
+    // (`?error=1`) carries no token, is byte-identical on every attempt, and is never deduped: a
+    // second failed try must still surface the error and release the button.
+    if (token && handledAuthUrl.current === url) return;
 
     void browserRef.current?.close().catch(() => {});
     browserRef.current = null;
     const returnTo = pendingReturnTo.current;
     pendingReturnTo.current = undefined;
 
-    const token = new URL(url).searchParams.get('token');
     if (!token) {
       setSigningIn(false);
       setAuthError(authErrorMessage('1'));
       return;
     }
+    handledAuthUrl.current = url;
 
     completing.current = true;
     // Set again rather than assumed: a cold-started return has no sign-in behind it to have set it.
