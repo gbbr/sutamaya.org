@@ -4,6 +4,7 @@ import App from './App';
 import { isNativeApp } from './lib/platform';
 import { hydrateNativeToken } from './lib/nativeAuth';
 import { hideNativeSplash } from './lib/splash';
+import { notifyBundleReady } from './lib/otaUpdate';
 import { loadUiPrefs, applyUiScale, applyTheme } from './lib/uiPrefs';
 import { loadAnalytics } from './lib/analytics';
 // Side-effect import: binds window.__dangerWipeLocal, the console-only reset to a cold, signed-out
@@ -60,3 +61,7 @@ createRoot(document.getElementById('root')!).render(<App />);
 
 // Hands the native launch splash over to the app's own loading screen once React has painted.
 hideNativeSplash();
+
+// Tells the updater plugin the running bundle booted, so an over-the-air update isn't rolled back
+// as broken. Inert on web.
+notifyBundleReady();

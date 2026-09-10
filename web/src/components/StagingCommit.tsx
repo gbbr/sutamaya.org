@@ -1,9 +1,10 @@
-import { BUILD_COMMIT_ID, BUILD_COMMIT_SUBJECT, IS_STAGING } from '../lib/buildInfo';
+import { BUILD_COMMIT_ID, BUILD_COMMIT_SUBJECT, SHOW_BUILD_INFO } from '../lib/buildInfo';
 
-// The commit the staging deployment is running, at the foot of the tree pane, linking to it on
-// GitHub. Renders nothing anywhere else — production ships this component and never shows it.
+// The commit the running bundle was built from, at the foot of the tree pane, linking to it on
+// GitHub. Shows on staging and in a native build pointed at a non-production API; renders nothing
+// in production or a store build. See buildInfo.ts.
 export function StagingCommit() {
-  if (!IS_STAGING || !BUILD_COMMIT_ID) return null;
+  if (!SHOW_BUILD_INFO || !BUILD_COMMIT_ID) return null;
   // A build made over uncommitted edits carries a trailing "*"; the link still points at the
   // commit underneath it.
   const sha = BUILD_COMMIT_ID.replace(/\*$/, '');
