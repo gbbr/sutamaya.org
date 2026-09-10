@@ -3,7 +3,11 @@ import { act, render, screen } from '@testing-library/react';
 import { LAST_USER_KEY } from '../lib/storageKeys';
 import type { User } from '../lib/types';
 
-vi.mock('@reach/router', () => ({ navigate: vi.fn() }));
+const navigate = vi.hoisted(() => vi.fn());
+vi.mock('react-router', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('react-router')>()),
+  useNavigate: () => navigate,
+}));
 vi.mock('../lib/api', () => ({
   authApi: { me: vi.fn(), logout: vi.fn(), deleteAccount: vi.fn() },
 }));

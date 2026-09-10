@@ -1,8 +1,9 @@
-import { navigate, type RouteComponentProps } from '@reach/router';
+import { useNavigate } from 'react-router';
 
-// The page for an unrecognized path: the Router's `default`, and what App.tsx's RedirectToReader
-// falls back to for a single-segment path that isn't a known sutta uid.
-export function NotFoundPage(_props: RouteComponentProps) {
+// The page for an unrecognized path: the route table's catch-all, and what App.tsx's
+// RedirectToReader falls back to for a single-segment path that isn't a known sutta uid.
+export function NotFoundPage() {
+  const navigate = useNavigate();
   return (
     <div data-component="NotFoundPage" className="flex flex-col items-center justify-center gap-4 h-full bg-paper px-6 text-center">
       <div className="text-ui-2xl text-ink-2" style={{ fontFamily: 'Newsreader, Georgia, serif' }}>sutamaya</div>

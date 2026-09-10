@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { navigate } from '@reach/router';
+import { useNavigate } from 'react-router';
 import { Highlighter, StickyNote, History, Library, List, Search, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
@@ -147,6 +147,7 @@ export function TreePane({
   breadcrumbArrival = false,
   shortcutsOpen = false,
 }: TreePaneProps) {
+  const navigate = useNavigate();
   const { corpus } = useCorpus();
   const {
     ready,
@@ -483,8 +484,8 @@ export function TreePane({
   // Android's back button closes an open search before it leaves the library. A no-op on web and iOS.
   useBackHandler(searchOpen, closeSearch);
 
-  // Opens a hit in the reader, leaving the search as it is: navigate() lands a frame later, so
-  // clearing it here would paint a frame of the bare tree, and the route change unmounts this pane.
+  // Opens a hit in the reader, leaving the search as it is: the route change unmounts this pane,
+  // and the reader closes back to the results.
   function openHit(id: string, segments?: [number, number]) {
     onOpenSutta(id, segments);
   }

@@ -37,3 +37,17 @@ class ResizeObserverStub {
   disconnect() {}
 }
 globalThis.ResizeObserver = globalThis.ResizeObserver || (ResizeObserverStub as unknown as typeof ResizeObserver);
+
+// jsdom brings its own AbortController while `Request` stays Node's, and Node's only accepts a
+// signal its own implementation made — so the Request the router builds for every navigation
+// throws on a signal nothing in this environment can produce. The signal rides on the instance
+// instead of through the constructor, which is where anything reading it looks.
+const NativeRequest = globalThis.Request;
+class RequestWithForeignSignal extends NativeRequest {
+  constructor(input: RequestInfo | URL, init?: RequestInit) {
+    const { signal, ...rest } = init ?? {};
+    super(input, rest);
+    if (signal) Object.defineProperty(this, 'signal', { value: signal, configurable: true });
+  }
+}
+globalThis.Request = RequestWithForeignSignal;

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { navigate } from '@reach/router';
+import { useNavigate } from 'react-router';
 import { App } from '@capacitor/app';
 import { platformName } from '../lib/platform';
 import { runTopBackHandler } from '../lib/backButton';
@@ -13,6 +13,7 @@ const ESCAPE_TO_HOME = new Set(['/settings', '/help']);
 // rather than exiting. iOS has no such button and web ignores the event, so this only ever fires
 // inside the Android shell.
 export function useAndroidBackButton(): void {
+  const navigate = useNavigate();
   useEffect(() => {
     if (platformName() !== 'android') return;
     let handle: { remove: () => void } | undefined;
@@ -32,5 +33,5 @@ export function useAndroidBackButton(): void {
       removed = true;
       handle?.remove();
     };
-  }, []);
+  }, [navigate]);
 }

@@ -1,6 +1,6 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent, waitFor, within } from '@testing-library/react';
-import { Router, navigate } from '@reach/router';
+import { screen, fireEvent, waitFor, within } from '@testing-library/react';
+import { renderRoutes } from '../testRouter';
 
 // Covers the Reader sutta header's list-membership chips + highlight-count badge — consolidated
 // onto the same <SuttaRowChips> component ListPane/TreePane/ReaderSearchOverlay use (see that
@@ -132,12 +132,12 @@ describe('ReaderPage sutta header chips', () => {
   });
 
   function renderReader() {
-    navigate('/read/dn1');
-    return render(
-      <Router style={{ height: '100%' }}>
-        <ReaderPage path="/read/:suttaId" />
-        <LibraryPage path="/browse/:nodeId/*suttaId" />
-      </Router>
+    return renderRoutes(
+      [
+        { path: '/read/:suttaId', element: <ReaderPage /> },
+        { path: '/browse/:nodeId/*', element: <LibraryPage /> },
+      ],
+      '/read/dn1'
     );
   }
 

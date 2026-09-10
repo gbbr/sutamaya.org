@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { navigate } from '@reach/router';
+import { useNavigate } from 'react-router';
 import { useAuth } from '../context/AuthContext';
 
 // Signing in with an emailed code: two steps on one card, the address and then the six digits.
@@ -19,6 +19,7 @@ const RESEND_COOLDOWN_SECONDS = 30;
 
 export function EmailCodeSignIn({ returnTo }: { returnTo?: string }) {
   const { requestEmailCode, signInWithEmailCode } = useAuth();
+  const navigate = useNavigate();
   const [step, setStep] = useState<'email' | 'code'>('email');
   const [email, setEmail] = useState('');
   const [code, setCode] = useState('');

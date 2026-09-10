@@ -1,6 +1,6 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { render, screen, waitFor } from '@testing-library/react';
-import { Router, navigate, globalHistory } from '@reach/router';
+import { screen, waitFor } from '@testing-library/react';
+import { renderRoutes } from '../testRouter';
 
 // Two things a deep link straight into the reader has to get right, both exercised through the
 // real ReaderPage wiring rather than the helpers underneath it.
@@ -143,12 +143,7 @@ describe('reader deep links into a batched document', () => {
   });
 
   function renderReaderAt(path: string) {
-    navigate(path);
-    const utils = render(
-      <Router style={{ height: '100%' }}>
-        <ReaderPage path="/read/:suttaId" />
-      </Router>
-    );
+    const utils = renderRoutes([{ path: '/read/:suttaId', element: <ReaderPage /> }], path);
     const scrollBox = utils.container.querySelector('[data-component="ReaderPage"] .sc') as HTMLDivElement;
     return { ...utils, scrollBox };
   }
@@ -175,8 +170,8 @@ describe('reader deep links into a batched document', () => {
   // in the corpus has. It has to open the same document — here, still resolving the inner verse to
   // its enclosing batch — and settle the address bar on the canonical lowercase path.
   it('opens a capitalized deep link, and rewrites the URL to the canonical id', async () => {
-    renderReaderAt('/read/DHP14');
+    const { router } = renderReaderAt('/read/DHP14');
     await screen.findByText('As a well-roofed house');
-    await waitFor(() => expect(globalHistory.location.pathname).toBe('/read/dhp14'));
+    await waitFor(() => expect(router.state.location.pathname).toBe('/read/dhp14'));
   });
 });

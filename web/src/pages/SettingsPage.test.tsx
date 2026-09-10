@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Router, navigate } from '@reach/router';
+import { renderRoutes, type RouteEntry } from '../testRouter';
 
 // Covers the two behaviors added on top of the plain "renders the three sections" page: (1)
 // Account is always the last section, regardless of sign-in state, and never collapses to
@@ -131,13 +131,8 @@ beforeEach(() => {
   vi.mocked(recordCachedCorpusVersion).mockClear();
 });
 
-function renderSettings(path = '/settings') {
-  navigate(path);
-  return render(
-    <Router>
-      <SettingsPage path="/settings" />
-    </Router>
-  );
+function renderSettings(entry: RouteEntry = '/settings') {
+  return renderRoutes([{ path: '/settings', element: <SettingsPage /> }], entry);
 }
 
 describe('section order', () => {
@@ -166,12 +161,7 @@ describe('section order', () => {
 describe('scrollTo deep link', () => {
   it('scrolls to the Offline section when navigated here with scrollTo: "offline"', async () => {
     const scrollSpy = vi.spyOn(Element.prototype, 'scrollIntoView').mockImplementation(() => {});
-    navigate('/settings', { state: { scrollTo: 'offline' } });
-    render(
-      <Router>
-        <SettingsPage path="/settings" />
-      </Router>
-    );
+    renderSettings({ pathname: '/settings', state: { scrollTo: 'offline' } });
     const offlineSection = screen.getByText('Offline').parentElement!;
     expect(scrollSpy).toHaveBeenCalled();
     expect(scrollSpy.mock.instances).toContain(offlineSection);
@@ -184,12 +174,7 @@ describe('scrollTo deep link', () => {
 
   it('scrolls to the Account section when navigated here with scrollTo: "auth"', async () => {
     const scrollSpy = vi.spyOn(Element.prototype, 'scrollIntoView').mockImplementation(() => {});
-    navigate('/settings', { state: { scrollTo: 'auth' } });
-    render(
-      <Router>
-        <SettingsPage path="/settings" />
-      </Router>
-    );
+    renderSettings({ pathname: '/settings', state: { scrollTo: 'auth' } });
     const authSection = screen.getByText('Account').parentElement!;
     expect(scrollSpy).toHaveBeenCalled();
     expect(scrollSpy.mock.instances).toContain(authSection);

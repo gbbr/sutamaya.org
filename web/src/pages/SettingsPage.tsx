@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { navigate, type RouteComponentProps } from '@reach/router';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router';
 import { AlertTriangle, ArrowLeft, Check, CloudOff, Download, Info, Loader2, LogOut, Minus, Plus, RefreshCw, Trash2 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
@@ -192,11 +192,6 @@ function SignInDivider() {
 // The sections this page can be deep-linked into and highlighted on arrival.
 type ScrollTarget = 'offline' | 'auth';
 
-// Leaves Settings for wherever the reader was, via App.tsx's RestoreLastLocation.
-function backToLastLocation() {
-  navigate('/');
-}
-
 // Returns a coarse "just now" / "5 minutes ago" reading of a timestamp.
 function formatSyncedAt(iso: string): string {
   const seconds = Math.max(0, Math.round((Date.now() - new Date(iso).getTime()) / 1000));
@@ -229,10 +224,14 @@ function syncStatusLine(
   };
 }
 
-export function SettingsPage({ location }: RouteComponentProps) {
+export function SettingsPage() {
   // Title only: this page describes nothing a search result would want, so it keeps the app-wide
   // description.
   useDocumentMeta('Settings');
+  const location = useLocation();
+  const navigate = useNavigate();
+  // Leaves Settings for wherever the reader was, via App.tsx's RestoreLastLocation.
+  const backToLastLocation = useCallback(() => navigate('/'), [navigate]);
 
   const { user, logout, deleteAccount, forgetAccount, loading, authError } = useAuth();
   const { uiScale, theme, setUiScale, setTheme } = useUiPrefs();
@@ -446,7 +445,7 @@ export function SettingsPage({ location }: RouteComponentProps) {
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, []);
+  }, [backToLastLocation]);
 
   // Block layout with margin-auto centring rather than flex, which has scrollHeight bugs under
   // overflow:auto on some WebView builds.
