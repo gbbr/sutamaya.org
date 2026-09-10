@@ -26,6 +26,7 @@ import { LibraryPage } from './LibraryPage';
 import { ReaderPage } from './ReaderPage';
 import { SEARCH_PLACEHOLDER } from '../lib/search/metadata';
 import { LIBRARY_VIEW_KEY } from '../lib/storageKeys';
+import { tagIntent } from '../lib/routeIntent';
 import type { Corpus } from '../lib/types';
 
 // The pages a reader round trip crosses, routed as App.tsx routes them — the library with nothing
@@ -381,5 +382,17 @@ describe('mobile search -> reader -> close flow', () => {
     await screen.findByText('sutamaya');
     expect(isPaneVisible(container, 'TreePane')).toBe(true);
     expect(isPaneVisible(container, 'ListPane')).toBe(false);
+  });
+
+  // The pane an arrival opens on is remembered like one picked by hand, so a relaunch into the
+  // same place — "/" restoring it, which names no pane — opens on it again.
+  it('remembers the pane an arrival opened on', async () => {
+    localStorage.setItem(LIBRARY_VIEW_KEY, 'tree');
+    // What a list chip in the reader sends.
+    const { container } = renderRoutes(routes, { pathname: '/browse/dn/dn1', state: tagIntent({ fromView: 'list' }) });
+    await screen.findByText('sutamaya');
+
+    expect(isPaneVisible(container, 'ListPane')).toBe(true);
+    expect(localStorage.getItem(LIBRARY_VIEW_KEY)).toBe('list');
   });
 });

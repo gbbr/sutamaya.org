@@ -23,6 +23,15 @@ const TREE_LIST_HIT_AFTER = 14;
 // How long typing pauses before the query is written to the address bar.
 const QUERY_URL_DELAY = 400;
 
+// Remembers the pane in use, which a page arriving without naming one opens on.
+function storeView(view: 'tree' | 'list') {
+  try {
+    localStorage.setItem(LIBRARY_VIEW_KEY, view);
+  } catch {
+    // storage unavailable — ignore
+  }
+}
+
 export function LibraryPage() {
   // The URL's node segment, and its sutta segment — the splat, '' where the address names none.
   // Both are absent on bare /browse.
@@ -93,12 +102,10 @@ export function LibraryPage() {
   // in its place reads it back above.
   const setView = useCallback((next: 'tree' | 'list') => {
     setViewState(next);
-    try {
-      localStorage.setItem(LIBRARY_VIEW_KEY, next);
-    } catch {
-      // storage unavailable — ignore
-    }
+    storeView(next);
   }, []);
+  // The pane the page opened on is stored too, so a relaunch into this place opens on it again.
+  useEffect(() => storeView(view), [view]);
   // The search this page arrived on, taken from the address bar's `?q=`.
   const [arrivedQuery] = useState(() => new URLSearchParams(location?.search ?? '').get('q') ?? '');
   const [query, setQuery] = useState(arrivedQuery);
