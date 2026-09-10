@@ -58,8 +58,10 @@ function packageOta() {
   rmSync(outDir, { recursive: true, force: true });
   mkdirSync(outDir, { recursive: true });
 
-  // `-X` drops extra file attributes, `-x '.*'` keeps dotfiles out — the updater plugin rejects a
-  // bundle carrying hidden entries. Run from web/dist so paths in the zip are bundle-relative.
+  // `-X` drops the extra file attributes that would make the zip differ between machines for the
+  // same bundle. Top-level dotfiles are left out of the entry list rather than zipped: the plugin
+  // skips them when it flattens the archive, so they are weight the device downloads and discards.
+  // Run from web/dist so paths in the zip are bundle-relative.
   const entries = readdirSync(dist).filter((name) => !name.startsWith('.'));
   const zip = spawnSync('zip', ['-r', '-X', '-q', join('..', 'ota', `sutamaya-${version}.zip`), ...entries], {
     cwd: dist,

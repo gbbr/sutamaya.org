@@ -12,6 +12,11 @@ import { loadAnalytics } from './lib/analytics';
 import './lib/localWipe';
 import './index.css';
 
+// Tells the updater plugin the running bundle booted, so an over-the-air update isn't rolled back
+// as broken. First, before anything that could throw: what it certifies is that this bundle's code
+// loaded and ran, which is the failure a rollback exists for. Inert on web.
+notifyBundleReady();
+
 // The stored scale and theme, applied before React mounts so the page never flashes at the
 // defaults. UiPrefsProvider keeps them in step from there.
 const uiPrefs = loadUiPrefs();
@@ -60,7 +65,3 @@ createRoot(document.getElementById('root')!).render(<App />);
 
 // Hands the native launch splash over to the app's own loading screen once React has painted.
 hideNativeSplash();
-
-// Tells the updater plugin the running bundle booted, so an over-the-air update isn't rolled back
-// as broken. Inert on web.
-notifyBundleReady();

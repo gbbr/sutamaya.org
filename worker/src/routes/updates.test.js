@@ -17,11 +17,19 @@ function check(overrideEnv = env, body = { platform: 'ios' }) {
   );
 }
 
+// The plugin classifies a check by `error` and `kind`, and treats a response carrying neither as a
+// malformed one — an error on the device on every launch. Every no-update answer must name a kind.
+const UP_TO_DATE = {
+  error: 'no_new_version_available',
+  message: 'No new version available',
+  kind: 'up_to_date',
+};
+
 describe('POST /api/updates/check', () => {
   it('reports no update when nothing is published', async () => {
     const res = await check();
     expect(res.status).toBe(200);
-    expect(await res.json()).toEqual({});
+    expect(await res.json()).toEqual(UP_TO_DATE);
   });
 
   it('names the published bundle, checksum and a same-origin download URL', async () => {
@@ -36,7 +44,7 @@ describe('POST /api/updates/check', () => {
 
   it('reports no update when only one of version/checksum is set', async () => {
     const res = await check({ ...env, OTA_VERSION: '2026.09.10-1' });
-    expect(await res.json()).toEqual({});
+    expect(await res.json()).toEqual(UP_TO_DATE);
   });
 
   describe('native-version floor', () => {
@@ -49,12 +57,26 @@ describe('POST /api/updates/check', () => {
 
     it('withholds from a device below the floor', async () => {
       const res = await check(floored, { platform: 'android', version_code: '6' });
-      expect(await res.json()).toEqual({});
+      const body = await res.json();
+      expect(body.kind).toBe('blocked');
+      expect(body.url).toBeUndefined();
     });
 
     it('withholds when the request carries no readable native version', async () => {
       const res = await check(floored, { platform: 'android' });
-      expect(await res.json()).toEqual({});
+      expect((await res.json()).kind).toBe('blocked');
+    });
+
+    it('withholds when the version is not a whole number, rather than truncating it', async () => {
+      const res = await check(floored, { platform: 'ios', version_code: '7.1.2' });
+      expect((await res.json()).kind).toBe('blocked');
+    });
+
+    it('withholds from everyone when the floor itself is not a number', async () => {
+      const res = await check({ ...published, OTA_MIN_NATIVE: '7x' }, { platform: 'android', version_code: '9' });
+      const body = await res.json();
+      expect(body.kind).toBe('blocked');
+      expect(body.url).toBeUndefined();
     });
 
     it('ignores the floor when OTA_MIN_NATIVE is unset', async () => {

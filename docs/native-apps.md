@@ -101,7 +101,7 @@ binaries without the native half stop pulling bundles they can't run and wait fo
 An OTA-only release never touches it; empty means no floor. It assumes iOS and Android build
 numbers move in lockstep — Phase 6's version-bump script is what keeps them there.
 
-Publishing is `npm run release:ota --env production|staging`: it builds the bundle
+Publishing is `npm run release:ota -- --env production|staging`: it builds the bundle
 (`build-native.mjs --ota` → `web/ota/`), uploads the zip to R2 **first**, rewrites the two vars,
 then runs the environment's deploy — so a device is never pointed at a bundle that isn't there
 yet. It is a superset of `deploy:prod`; a plain `deploy:prod` ships the web app and leaves native
