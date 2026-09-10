@@ -212,6 +212,12 @@ export function ReaderPage() {
     window.getSelection()?.removeAllRanges();
   }, [suttaId]);
 
+  // The reading takes focus as each sutta arrives, so Space, Page Down and the arrow keys scroll it
+  // without a click first, as they do on any page a browser loads.
+  useEffect(() => {
+    scrollRef.current?.focus({ preventScroll: true });
+  }, [suttaId, scrollRef]);
+
   const { dict, activeWord, closeDict, onWordClick, goToAdjacentWord, retryLookup } = useDictionaryLookup({
     suttaId,
     segments,
@@ -583,9 +589,15 @@ export function ReaderPage() {
         </div>
       </header>
 
-      {/* The scrolling pane. `overflowX: hidden` keeps the step animation's translateX from making
-          it horizontally scrollable, which `.sc` alone doesn't cover. */}
-      <div ref={scrollRef} className="sc flex-1" style={{ padding: '32px 22px 120px', overflowX: 'hidden' }}>
+      {/* The scrolling pane, focusable so the keyboard scrolls it. `overflowX: hidden` keeps the
+          step animation's translateX from making it horizontally scrollable, which `.sc` alone
+          doesn't cover. */}
+      <div
+        ref={scrollRef}
+        tabIndex={-1}
+        className="sc flex-1"
+        style={{ padding: '32px 22px 120px', overflowX: 'hidden', outline: 'none' }}
+      >
         {/* The measure column. A Prev/Next step animates it out and the next sutta in, driven
             imperatively from `step` above, since this element never unmounts. */}
         <div ref={articleRef} style={{ maxWidth: measureWidth, margin: '0 auto' }}>

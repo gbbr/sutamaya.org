@@ -174,4 +174,11 @@ describe('ReaderPage sutta header chips', () => {
     expect(await screen.findByText('Sutta note')).toBeTruthy();
     expect(screen.getByText('Highlighted text')).toBeTruthy();
   });
+
+  // So Space, Page Down and the arrow keys scroll the reading without a click first.
+  it('puts focus on the reading as the sutta opens', async () => {
+    const { container } = renderReader();
+    await screen.findByText('Brahmajala');
+    expect(document.activeElement).toBe(container.querySelector('[data-component="ReaderPage"] .sc'));
+  });
 });

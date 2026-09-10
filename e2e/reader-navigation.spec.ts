@@ -41,6 +41,18 @@ test('the foot of the sutta goes back to the collection it belongs to', async ({
   await expect(page.locator('[data-component="ListPane"]')).toContainText('The Divine Net');
 });
 
+// Reading by keyboard: the text has focus from the moment a sutta opens, so Page Down scrolls it
+// without a click first, as it does on any page a browser loads.
+test('the keyboard scrolls a sutta as soon as it opens', async ({ page }) => {
+  const listPane = await openSuttaList(page, 'dn-silakkhandhavagga');
+  await listPane.getByRole('button', { name: /The Divine Net/ }).click();
+  await expect(page.locator('[data-seg="1"]')).toBeVisible();
+
+  const scroller = page.locator('[data-component="ReaderPage"] .sc').first();
+  await page.keyboard.press('PageDown');
+  await expect.poll(() => scroller.evaluate((el) => el.scrollTop)).toBeGreaterThan(0);
+});
+
 // Where a sutta opens is a deliberate distinction (lib/entryKind.ts): a refresh, a back, or the app
 // relaunching is a *return* and resumes; tapping a row or Prev/Next is a *fresh* entry and starts at
 // the top. `entryKind.test.ts` covers the classification; what only a browser can answer is whether
