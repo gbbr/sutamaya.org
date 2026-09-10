@@ -3,9 +3,10 @@
 // the Worker. The zip lands in R2 before the version pointer moves, so no device is ever told
 // about a bundle that is not there yet.
 //
-// Usage: node scripts/release-ota.mjs --env production|staging [--force]
-//   --force  skip the clean-working-tree guard (the version embeds the commit id; a dirty tree
-//            publishes a "-dirty" version that can't be reproduced)
+// Usage: node scripts/release-ota.mjs --env production|staging [--force] [--skip-tests]
+//   --force       skip the clean-working-tree guard (the version embeds the commit id; a dirty
+//                 tree publishes a "-dirty" version that can't be reproduced)
+//   --skip-tests  staging only — forward --skip-tests to the deploy so it skips `npm test`
 
 import { spawnSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -13,9 +14,14 @@ import { createInterface } from 'node:readline';
 
 const args = process.argv.slice(2);
 const force = args.includes('--force');
+const skipTests = args.includes('--skip-tests');
 const env = args[args.indexOf('--env') + 1];
 if (env !== 'production' && env !== 'staging') {
   console.error('error: name an environment — --env production or --env staging');
+  process.exit(1);
+}
+if (skipTests && env !== 'staging') {
+  console.error('error: --skip-tests is staging only');
   process.exit(1);
 }
 
@@ -116,6 +122,6 @@ sh('npx', [
 patchWranglerConfig(version, checksum);
 console.log(`\n${WRANGLER_CONFIG} now points ${env} at ${version}.`);
 
-sh('npm', ['run', deployScript]);
+sh('npm', skipTests ? ['run', deployScript, '--', '--skip-tests'] : ['run', deployScript]);
 
 console.log(`\nPublished ${version} to ${env}. Commit the ${WRANGLER_CONFIG} change to record what is live.`);
