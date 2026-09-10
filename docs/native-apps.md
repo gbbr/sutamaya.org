@@ -22,6 +22,7 @@ new module is `web/src/lib/platform.ts`.
 | `isNativeApp()` / `platformName()` | true / `'ios'`\|`'android'` | `lib/platform.ts`, off the injected `Capacitor` global |
 | Offline download UI | hidden | `HeaderBanner` drops both nudges; `SettingsPage`'s Offline card is a one-line placeholder |
 | Data export | OS share sheet | `lib/exportData.ts` fetches the payload with the token, writes it to the cache directory and shares the file; the browser downloads `dataApi.exportUrl` as a link |
+| Reader's Share button | shown | `lib/share.ts` opens `@capacitor/share` with the sutta's `https://app.sutamaya.org/read/…` link; an installed PWA shows it too, through `navigator.share`; a browser tab hides it, its address bar already shares |
 | Status bar / safe area | edge-to-edge | see below |
 | Android back button | handled | see below |
 | Reader text selection (Android) | `selectionchange`-driven | see below |

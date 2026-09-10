@@ -1,4 +1,5 @@
 import { dataApi } from './api';
+import { isShareCancellation } from './share';
 
 // The account export on native, where the browser's download is unavailable twice over: a WebView
 // navigation to the API leaves the app for the system browser, which carries neither the cookie nor
@@ -12,12 +13,6 @@ import { dataApi } from './api';
 
 // Matches the filename the Worker's Content-Disposition gives the web download.
 const FILE_NAME = 'sutamaya-export.json';
-
-// True for the rejection iOS and Android raise when the share sheet is dismissed without a
-// destination, which is not a failure to report.
-function isShareCancellation(err: unknown): boolean {
-  return /cancel/i.test(err instanceof Error ? err.message : String(err));
-}
 
 /**
  * Fetches the account export and offers it to the OS share sheet. Resolves once the sheet has been

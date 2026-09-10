@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { navigate, type RouteComponentProps } from '@reach/router';
-import { X, Menu as MenuIcon, ChevronLeft, ChevronRight, Library, List as ListIcon, Search } from 'lucide-react';
+import { X, Menu as MenuIcon, ChevronLeft, ChevronRight, Library, List as ListIcon, Search, Share, Share2 } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
@@ -26,6 +26,8 @@ import type { Highlight } from '../lib/types';
 import { animateStep, cancelStepAnimations } from '../lib/motion';
 import { markSuttaOpened } from '../lib/pwaNudge';
 import { getReaderPanelTab, setReaderPanelTab, type ReaderPanelTab } from '../lib/readerPanelTab';
+import { platformName } from '../lib/platform';
+import { canShareLink, shareLink, shareUrl } from '../lib/share';
 import { SegmentedText } from '../components/SegmentedText';
 import { HighlightPopup } from '../components/HighlightPopup';
 import { HighlightGutter } from '../components/HighlightGutter';
@@ -47,6 +49,12 @@ const SEARCH_FLASH_MS = 1600;
 const FOOT_NAV_LABEL: CSSProperties = { fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' };
 // Returns the size of those captions, capped so they stay under the titles they caption.
 const footNavLabelSize = (fs: number) => Math.min(11, fs - 6);
+
+// Whether the header carries a Share button: only without browser chrome, whose address bar shares.
+const SHAREABLE = canShareLink();
+
+// The share glyph each platform's own apps use: Android's connected nodes, the boxed arrow elsewhere.
+const ShareIcon = platformName() === 'android' ? Share2 : Share;
 
 // How a library search is named where the reader shows the run it was opened from — above the
 // breadcrumb and at the foot of the sutta.
@@ -512,7 +520,7 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
         {/* Tapping the title scrolls back to the top of the sutta, the iOS status-bar convention.
             Done by hand, since the reader scrolls in a nested div rather than the document. */}
         <button
-          className="absolute left-1/2 -translate-x-1/2 max-w-[calc(100%-14rem)] truncate opacity-75 font-serif cursor-pointer"
+          className={`absolute left-1/2 -translate-x-1/2 ${SHAREABLE ? 'max-w-[calc(100%-16rem)]' : 'max-w-[calc(100%-14rem)]'} truncate opacity-75 font-serif cursor-pointer`}
           aria-label="Scroll to top"
           title="Scroll to top"
           onClick={() => scrollRef.current && animateScrollTop(scrollRef.current, 0)}
@@ -521,9 +529,22 @@ export function ReaderPage({ suttaId: routeSuttaId, location }: RouteComponentPr
               English title. */}
           {mobile ? sutta.ref : `${sutta.ref} · ${sutta.en}`}
         </button>
-        {/* Search and Menu, on a smaller 43px touch area (`p-3 -m-3`) so they can sit closer;
-            `gap-6` puts the two hit areas edge to edge. */}
+        {/* Share, Search and Menu, on a smaller 43px touch area (`p-3 -m-3`) so they can sit closer;
+            `gap-6` puts the hit areas edge to edge. */}
         <div className="flex items-center gap-6">
+          {SHAREABLE && (
+            <button
+              className="flex items-center p-3 -m-3"
+              aria-label="Share"
+              title="Share"
+              onClick={(e) => {
+                e.stopPropagation();
+                shareLink(shareUrl(`/read/${requestedSubUid ?? suttaId}`)).catch(() => {});
+              }}
+            >
+              <ShareIcon size={19} strokeWidth={1.75} />
+            </button>
+          )}
           <button
             className="flex items-center p-3 -m-3"
             aria-label="Search"
