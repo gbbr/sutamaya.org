@@ -68,9 +68,10 @@ if (!force && gitOut('status', '--porcelain')) {
   console.error('error: working tree is dirty. Commit first, or pass --force to publish a -dirty version.');
   process.exit(1);
 }
-if (
-  spawnSync('npx', ['wrangler', 'whoami'], { encoding: 'utf8' }).stdout?.includes('You are not authenticated')
-) {
+// wrangler writes the auth notice to stderr, so both streams are read — checking stdout alone lets
+// an unauthenticated run through the whole build and the confirmation prompt before failing.
+const whoami = spawnSync('npx', ['wrangler', 'whoami'], { encoding: 'utf8' });
+if (`${whoami.stdout ?? ''}${whoami.stderr ?? ''}`.includes('You are not authenticated')) {
   console.error('error: not logged in to Cloudflare. Run: npx wrangler login');
   process.exit(1);
 }

@@ -14,26 +14,40 @@ export const updatesRouter = new Hono();
 const bundleKey = (version) => `sutamaya-${version}.zip`;
 const BUNDLE_FILE = /^sutamaya-[A-Za-z0-9._-]+\.zip$/;
 
+// The two ways of answering "no update" without the plugin treating the response as a failure. It
+// classifies a check by `error` and `kind` and takes a body carrying neither as malformed — it
+// logs "Error no url or wrong format" and fires `downloadFailed` on every launch — so a no-op
+// answer has to say so explicitly. `up_to_date` is "nothing newer exists", `blocked` "one exists
+// but not for this device"; neither counts as a failure or rolls a bundle back.
+const upToDate = (c) =>
+  c.json({ error: 'no_new_version_available', message: 'No new version available', kind: 'up_to_date' });
+const withheld = (c, message) => c.json({ error: 'update_withheld', message, kind: 'blocked' });
+
 // The updater's check. The plugin POSTs a JSON body describing the running bundle; the response
-// names the currently published bundle, or is empty when none is published. The plugin compares
-// `version` to what it runs by string equality, so an empty body — or the same version — is a
-// no-op on the device.
+// names the currently published bundle, or reports no update when none is published. The plugin
+// compares `version` to what it runs by string equality, so naming the running version is a no-op
+// on the device.
 updatesRouter.post('/check', async (c) => {
   const version = c.env.OTA_VERSION;
   const checksum = c.env.OTA_CHECKSUM;
-  if (!version || !checksum) return c.json({});
+  if (!version || !checksum) return upToDate(c);
 
   // Withhold the bundle from a native binary older than the last one this line of web code is
   // safe to run in — a change that needs a new plugin, permission or deep-link path bumps the
   // native build number and OTA_MIN_NATIVE together, and old binaries then wait for a store
-  // update instead of pulling a bundle they can't run. Empty OTA_MIN_NATIVE means no floor. The
-  // plugin sends `version_code` as the native build number on both platforms; a request that
-  // doesn't carry a readable one is treated as below the floor.
-  const floor = Number(c.env.OTA_MIN_NATIVE);
+  // update instead of pulling a bundle they can't run. Empty OTA_MIN_NATIVE means no floor; a
+  // value that isn't a number withholds from everyone, since the alternative is shipping a bundle
+  // past the one safeguard against a native mismatch. The plugin sends `version_code` as the
+  // native build number on both platforms; a request that doesn't carry a readable one is treated
+  // as below the floor.
+  const floor = Number(c.env.OTA_MIN_NATIVE || 0);
+  if (Number.isNaN(floor)) return withheld(c, 'The native-version floor is not a number.');
   if (floor > 0) {
     const body = await c.req.json().catch(() => ({}));
-    const native = Number.parseInt(body.version_code, 10);
-    if (!Number.isFinite(native) || native < floor) return c.json({});
+    const native = Number(body.version_code);
+    if (!Number.isFinite(native) || native < floor) {
+      return withheld(c, 'This app version is below the floor for the published bundle.');
+    }
   }
 
   // Built on WEB_ORIGIN — the environment's canonical app origin — not on the request URL, which a

@@ -1,198 +1,198 @@
 {
-	"name": "sutamaya",
-	"main": "./worker/src/index.js",
-	"compatibility_date": "2025-10-11",
-	// Two hostnames, one Worker. `sutamaya.org` is the marketing site and serves exactly one page,
-	// the static landing page; `app.sutamaya.org` is the app and the API. The split is what keeps
-	// the two apart in the browser as well as on the server: a web app manifest's scope cannot
-	// exclude a path, so while the landing page shared an origin with the app it sat inside the
-	// installed app's scope, and Chrome offered "Open in app" on it and then opened that page in
-	// the app window — a dead end. On its own hostname it is simply outside the app.
-	//
-	// Cloudflare creates and manages both DNS records and their certificates. Takes effect on the
-	// next `wrangler deploy`, not before.
-	"routes": [
-		{
-			"pattern": "sutamaya.org",
-			"custom_domain": true
-		},
-		{
-			"pattern": "app.sutamaya.org",
-			"custom_domain": true
-		}
-	],
-	"assets": {
-		"directory": "./web/dist",
-		"binding": "ASSETS",
-		"not_found_handling": "single-page-application",
-		// Asset paths are matched exactly. The default ("auto-trailing-slash") instead redirects
-		// /index.html to /, and the service worker precaches the app shell *by that path* — so the
-		// shell would be stored under whatever "/" happens to resolve to on the hostname it was
-		// fetched from. Keeping the path direct removes the question.
-		"html_handling": "none",
-		// "/" is here so the Worker sees the bare origin on both hostnames and can answer with the
-		// landing page or the app shell depending on which one it is. The rest are the app's own
-		// paths, which the Worker redirects to the app when they are asked for on the marketing
-		// hostname — see MARKETING_HOSTS and APP_PATHS in worker/src/index.js, which this list has to
-		// stay in step with. Everything else (the corpus, the hashed assets, the landing page's own
-		// files) still goes straight to the asset router without invoking the Worker.
-		"run_worker_first": [
-			"/api/*",
-			"/.well-known/*",
-			"/",
-			"/index.html",
-			"/sw.js",
-			"/manifest.webmanifest",
-			"/browse/*",
-			"/read/*",
-			"/settings",
-			"/help"
-		]
-	},
-	"d1_databases": [
-		{
-			"binding": "DB",
-			"database_name": "sutamaya",
-			"database_id": "fd146fd9-2f62-4774-8110-35f453bbf178",
-			"migrations_dir": "worker/migrations"
-		}
-	],
-	// The over-the-air update bundles for the native apps. `npm run release:ota` uploads a versioned
-	// zip here; the Worker streams it from `/api/updates/bundle/*` and names the current one in
-	// `OTA_VERSION` / `OTA_CHECKSUM` below. Create with `wrangler r2 bucket create sutamaya-ota`.
-	"r2_buckets": [
-		{
-			"binding": "OTA_BUCKET",
-			"bucket_name": "sutamaya-ota"
-		}
-	],
-	// Per-IP budgets for /api/*, applied in worker/src/index.js. `simple.period` only accepts 10 or
-	// 60 seconds, so these are the per-minute conversions of the Express app's 15-minute windows —
-	// see deploy.md. There's no equivalent of the old /data/* limiter: those requests are answered
-	// by the assets binding above and never invoke the Worker.
-	"ratelimits": [
-		{
-			"name": "RATE_LIMIT_API",
-			"namespace_id": "1001",
-			"simple": {
-				"limit": 60,
-				"period": 60
-			}
-		},
-		// Covers /api/auth/* other than /me. A Google sign-in costs two requests (start, callback) and
-		// an emailed-code sign-in costs at least two more (request, verify) — plus a typo or a resend —
-		// so this can't be as tight as a "one sign-in per attempt" budget would suggest. Guessing a
-		// code is bounded by login_codes.attempts rather than by this.
-		{
-			"name": "RATE_LIMIT_AUTH",
-			"namespace_id": "1002",
-			"simple": {
-				"limit": 15,
-				"period": 60
-			}
-		},
-		{
-			"name": "RATE_LIMIT_ME",
-			"namespace_id": "1003",
-			"simple": {
-				"limit": 20,
-				"period": 60
-			}
-		}
-	],
-	// Sign-in codes go out through Resend (`RESEND_API_KEY`, a Worker secret) rather than
-	// Cloudflare's own Email Sending, which needs a Workers Paid plan — see docs/deploy.md.
-	"vars": {
-		// The app's own origin, not the marketing site's: this is what the OAuth flow builds its
-		// redirect URI and return URL from, and the app never runs on the apex.
-		"WEB_ORIGIN": "https://app.sutamaya.org",
-		"GOOGLE_CLIENT_ID": "45956701911-0a93js1du42ia6vtno0n4bh36crkn5f6.apps.googleusercontent.com",
-		"MAIL_FROM": "no-reply@sutamaya.org",
-		// The over-the-air bundle the native apps should be running, and the SHA-256 (hex) of its zip.
-		// `npm run release:ota` rewrites both and redeploys; empty means nothing is published and the
-		// check endpoint tells devices there is no update.
-		"OTA_VERSION": "",
-		"OTA_CHECKSUM": "",
-		// The native build number below which the current OTA bundle is withheld — raised by hand in
-		// a store release that adds a native piece the bundle needs (a plugin, a permission, a
-		// deep-link path), never by `release:ota`. Empty means no floor. See docs/native-apps.md.
-		"OTA_MIN_NATIVE": ""
-		// The enrolled Apple Team ID, added here once it exists: it is what turns on
-		// /.well-known/apple-app-site-association (worker/src/wellKnown.js), which 404s without it.
-		// "APPLE_TEAM_ID": "..."
-	},
-	"observability": {
-		"enabled": true
-	},
-	// A second copy of the same Worker, on its own hostnames and its own D1 database, for exercising
-	// a change end to end — sign-in included — before it reaches readers. `npm run deploy:staging`
-	// deploys it and `npm run seed:staging` fills its database from the local one. See docs/deploy.md.
-	//
-	// Only the keys that differ are here: wrangler inherits `main`, `compatibility_date`, `assets`
-	// and `observability` from above, so the asset routing staging exercises is production's, not a
-	// copy that can drift from it. Bindings and `vars` are not inherited and are repeated in full.
-	"env": {
-		"staging": {
-			"name": "sutamaya-staging",
-			"routes": [
-				{
-					"pattern": "staging.sutamaya.org",
-					"custom_domain": true
-				},
-				{
-					"pattern": "app.staging.sutamaya.org",
-					"custom_domain": true
-				}
-			],
-			"d1_databases": [
-				{
-					"binding": "DB",
-					"database_name": "sutamaya-staging",
-					"database_id": "7018ade7-a84e-443d-bc0e-baeb72f24f06",
-					"migrations_dir": "worker/migrations"
-				}
-			],
-			"r2_buckets": [
-				{
-					"binding": "OTA_BUCKET",
-					"bucket_name": "sutamaya-ota-staging"
-				}
-			],
-			// Their own namespaces, so a burst of staging traffic can't spend production's budget.
-			"ratelimits": [
-				{
-					"name": "RATE_LIMIT_API",
-					"namespace_id": "2001",
-					"simple": {
-						"limit": 60,
-						"period": 60
-					}
-				},
-				{
-					"name": "RATE_LIMIT_AUTH",
-					"namespace_id": "2002",
-					"simple": {
-						"limit": 15,
-						"period": 60
-					}
-				},
-				{
-					"name": "RATE_LIMIT_ME",
-					"namespace_id": "2003",
-					"simple": {
-						"limit": 20,
-						"period": 60
-					}
-				}
-			],
-			"vars": {
-				"WEB_ORIGIN": "https://app.staging.sutamaya.org",
-				"GOOGLE_CLIENT_ID": "45956701911-0a93js1du42ia6vtno0n4bh36crkn5f6.apps.googleusercontent.com",
-				"MAIL_FROM": "no-reply@sutamaya.org",
-				"OTA_VERSION": "0.1.0-058d32bf",
-				"OTA_CHECKSUM": "de0ead09f0e650e05a1b2f6d1c29046517f798c81fe5a684f60b9b0537605450",
-				"OTA_MIN_NATIVE": ""
-			}
-		}
-	}
+  "name": "sutamaya",
+  "main": "./worker/src/index.js",
+  "compatibility_date": "2025-10-11",
+  // Two hostnames, one Worker. `sutamaya.org` is the marketing site and serves exactly one page,
+  // the static landing page; `app.sutamaya.org` is the app and the API. The split is what keeps
+  // the two apart in the browser as well as on the server: a web app manifest's scope cannot
+  // exclude a path, so while the landing page shared an origin with the app it sat inside the
+  // installed app's scope, and Chrome offered "Open in app" on it and then opened that page in
+  // the app window — a dead end. On its own hostname it is simply outside the app.
+  //
+  // Cloudflare creates and manages both DNS records and their certificates. Takes effect on the
+  // next `wrangler deploy`, not before.
+  "routes": [
+    {
+      "pattern": "sutamaya.org",
+      "custom_domain": true
+    },
+    {
+      "pattern": "app.sutamaya.org",
+      "custom_domain": true
+    }
+  ],
+  "assets": {
+    "directory": "./web/dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    // Asset paths are matched exactly. The default ("auto-trailing-slash") instead redirects
+    // /index.html to /, and the service worker precaches the app shell *by that path* — so the
+    // shell would be stored under whatever "/" happens to resolve to on the hostname it was
+    // fetched from. Keeping the path direct removes the question.
+    "html_handling": "none",
+    // "/" is here so the Worker sees the bare origin on both hostnames and can answer with the
+    // landing page or the app shell depending on which one it is. The rest are the app's own
+    // paths, which the Worker redirects to the app when they are asked for on the marketing
+    // hostname — see MARKETING_HOSTS and APP_PATHS in worker/src/index.js, which this list has to
+    // stay in step with. Everything else (the corpus, the hashed assets, the landing page's own
+    // files) still goes straight to the asset router without invoking the Worker.
+    "run_worker_first": [
+      "/api/*",
+      "/.well-known/*",
+      "/",
+      "/index.html",
+      "/sw.js",
+      "/manifest.webmanifest",
+      "/browse/*",
+      "/read/*",
+      "/settings",
+      "/help"
+    ]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sutamaya",
+      "database_id": "fd146fd9-2f62-4774-8110-35f453bbf178",
+      "migrations_dir": "worker/migrations"
+    }
+  ],
+  // The over-the-air update bundles for the native apps. `npm run release:ota` uploads a versioned
+  // zip here; the Worker streams it from `/api/updates/bundle/*` and names the current one in
+  // `OTA_VERSION` / `OTA_CHECKSUM` below. Create with `wrangler r2 bucket create sutamaya-ota`.
+  "r2_buckets": [
+    {
+      "binding": "OTA_BUCKET",
+      "bucket_name": "sutamaya-ota"
+    }
+  ],
+  // Per-IP budgets for /api/*, applied in worker/src/index.js. `simple.period` only accepts 10 or
+  // 60 seconds, so these are the per-minute conversions of the Express app's 15-minute windows —
+  // see deploy.md. There's no equivalent of the old /data/* limiter: those requests are answered
+  // by the assets binding above and never invoke the Worker.
+  "ratelimits": [
+    {
+      "name": "RATE_LIMIT_API",
+      "namespace_id": "1001",
+      "simple": {
+        "limit": 60,
+        "period": 60
+      }
+    },
+    // Covers /api/auth/* other than /me. A Google sign-in costs two requests (start, callback) and
+    // an emailed-code sign-in costs at least two more (request, verify) — plus a typo or a resend —
+    // so this can't be as tight as a "one sign-in per attempt" budget would suggest. Guessing a
+    // code is bounded by login_codes.attempts rather than by this.
+    {
+      "name": "RATE_LIMIT_AUTH",
+      "namespace_id": "1002",
+      "simple": {
+        "limit": 15,
+        "period": 60
+      }
+    },
+    {
+      "name": "RATE_LIMIT_ME",
+      "namespace_id": "1003",
+      "simple": {
+        "limit": 20,
+        "period": 60
+      }
+    }
+  ],
+  // Sign-in codes go out through Resend (`RESEND_API_KEY`, a Worker secret) rather than
+  // Cloudflare's own Email Sending, which needs a Workers Paid plan — see docs/deploy.md.
+  "vars": {
+    // The app's own origin, not the marketing site's: this is what the OAuth flow builds its
+    // redirect URI and return URL from, and the app never runs on the apex.
+    "WEB_ORIGIN": "https://app.sutamaya.org",
+    "GOOGLE_CLIENT_ID": "45956701911-0a93js1du42ia6vtno0n4bh36crkn5f6.apps.googleusercontent.com",
+    "MAIL_FROM": "no-reply@sutamaya.org",
+    // The over-the-air bundle the native apps should be running, and the SHA-256 (hex) of its zip.
+    // `npm run release:ota` rewrites both and redeploys; empty means nothing is published and the
+    // check endpoint tells devices there is no update.
+    "OTA_VERSION": "",
+    "OTA_CHECKSUM": "",
+    // The native build number below which the current OTA bundle is withheld — raised by hand in
+    // a store release that adds a native piece the bundle needs (a plugin, a permission, a
+    // deep-link path), never by `release:ota`. Empty means no floor. See docs/native-apps.md.
+    "OTA_MIN_NATIVE": ""
+    // The enrolled Apple Team ID, added here once it exists: it is what turns on
+    // /.well-known/apple-app-site-association (worker/src/wellKnown.js), which 404s without it.
+    // "APPLE_TEAM_ID": "..."
+  },
+  "observability": {
+    "enabled": true
+  },
+  // A second copy of the same Worker, on its own hostnames and its own D1 database, for exercising
+  // a change end to end — sign-in included — before it reaches readers. `npm run deploy:staging`
+  // deploys it and `npm run seed:staging` fills its database from the local one. See docs/deploy.md.
+  //
+  // Only the keys that differ are here: wrangler inherits `main`, `compatibility_date`, `assets`
+  // and `observability` from above, so the asset routing staging exercises is production's, not a
+  // copy that can drift from it. Bindings and `vars` are not inherited and are repeated in full.
+  "env": {
+    "staging": {
+      "name": "sutamaya-staging",
+      "routes": [
+        {
+          "pattern": "staging.sutamaya.org",
+          "custom_domain": true
+        },
+        {
+          "pattern": "app.staging.sutamaya.org",
+          "custom_domain": true
+        }
+      ],
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "sutamaya-staging",
+          "database_id": "7018ade7-a84e-443d-bc0e-baeb72f24f06",
+          "migrations_dir": "worker/migrations"
+        }
+      ],
+      "r2_buckets": [
+        {
+          "binding": "OTA_BUCKET",
+          "bucket_name": "sutamaya-ota-staging"
+        }
+      ],
+      // Their own namespaces, so a burst of staging traffic can't spend production's budget.
+      "ratelimits": [
+        {
+          "name": "RATE_LIMIT_API",
+          "namespace_id": "2001",
+          "simple": {
+            "limit": 60,
+            "period": 60
+          }
+        },
+        {
+          "name": "RATE_LIMIT_AUTH",
+          "namespace_id": "2002",
+          "simple": {
+            "limit": 15,
+            "period": 60
+          }
+        },
+        {
+          "name": "RATE_LIMIT_ME",
+          "namespace_id": "2003",
+          "simple": {
+            "limit": 20,
+            "period": 60
+          }
+        }
+      ],
+      "vars": {
+        "WEB_ORIGIN": "https://app.staging.sutamaya.org",
+        "GOOGLE_CLIENT_ID": "45956701911-0a93js1du42ia6vtno0n4bh36crkn5f6.apps.googleusercontent.com",
+        "MAIL_FROM": "no-reply@sutamaya.org",
+        "OTA_VERSION": "0.1.0-058d32bf",
+        "OTA_CHECKSUM": "de0ead09f0e650e05a1b2f6d1c29046517f798c81fe5a684f60b9b0537605450",
+        "OTA_MIN_NATIVE": ""
+      }
+    }
+  }
 }
