@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { ArrowUpDown, ChevronDown, ChevronLeft, GripVertical, Info, List, ListPlus } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
@@ -238,13 +238,16 @@ export function ListPane({
     setPicker(null);
   }, [nodeId, searching, reorderMode, visible]);
 
-  useEffect(() => {
+  // Collapses the blurb on a new node. A layout effect, so a node is never drawn with its blurb
+  // still expanded from the one before.
+  useLayoutEffect(() => {
     setBlurbOpen(false);
   }, [nodeId]);
 
   // Measures whether the blurb overflows its clamp, after every render that could change the wrap:
-  // a new blurb, the clamp coming off, the pane being resized or revealed.
-  useEffect(() => {
+  // a new blurb, the clamp coming off, the pane being resized or revealed. A layout effect, so the
+  // "More" row is drawn with the paragraph rather than a frame after it, pushing every row down.
+  useLayoutEffect(() => {
     const el = blurbRef.current;
     if (!el) {
       setBlurbOverflows(false);
