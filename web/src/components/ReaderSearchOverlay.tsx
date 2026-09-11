@@ -8,6 +8,7 @@ import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
 import { READER_SEARCH_PLACEHOLDER, SEARCH_RESULTS_CAP } from '../lib/search/metadata';
 import { searchNoMatches } from '../lib/search/text';
 import { beginTextSearchLoad } from '../lib/search/textClient';
+import { prefetchSuttaText } from '../lib/suttaPrefetch';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { MatchedText } from './MatchedText';
 import { SuttaRowChips } from './SuttaRowChips';
@@ -247,6 +248,8 @@ export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: 
                   setActiveIndex(i);
                 }}
                 onClick={() => onOpenSutta(h.matchedId ?? h.id, h.snippet?.segments)}
+                // The press starts the text load, so the reader has it in hand when the hit opens.
+                onPointerDown={() => prefetchSuttaText(corpus, h.matchedId ?? h.id)}
               >
                 <span>
                   <span className="font-sans text-ui-xs font-bold mr-2.5" style={{ color: theme.dim }}>

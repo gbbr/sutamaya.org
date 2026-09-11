@@ -13,6 +13,7 @@ import { useListTreeDrag } from '../hooks/useListTreeDrag';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
 import { useBackHandler } from '../hooks/useBackHandler';
 import { ancestorsOf, descendantIdsOf, findNode, flatSuttaOrder } from '../lib/corpus';
+import { prefetchSuttaText } from '../lib/suttaPrefetch';
 import {
   SEARCH_CAP_NOTE,
   SEARCH_PLACEHOLDER,
@@ -775,7 +776,7 @@ export function TreePane({
                 this pane finds it where it was left. */}
             {mobile && visible && (
               <>
-                {displayHits.map(({ id, sutta, snippet, explains }, i) => {
+                {displayHits.map(({ id, matchedId, sutta, snippet, explains }, i) => {
                   const note = notes[id];
                   // The line that carried the query leads the quote — see ListPane. This pane draws
                   // no description at rest, the column being half the width, but it draws one that
@@ -793,6 +794,8 @@ export function TreePane({
                       ref={setHitRowRef(navIndex)}
                       className={`row flex flex-col w-full text-left gap-[2px] px-[22px] py-[14px] border-b border-ink/[.07] ${navIndex === searchActiveIndex ? 'bg-ink/[.06]' : ''}`}
                       onClick={() => openRow(navIndex)}
+                      // The press starts the text load, so the reader mounts with it already in hand.
+                      onPointerDown={() => prefetchSuttaText(corpus, matchedId ?? id)}
                     >
                       <span>
                         <span className="font-sans text-ui-xs font-bold text-ink-3 mr-2.5">

@@ -6,6 +6,7 @@ import { useLayout } from '../context/LayoutContext';
 import { forgetScrollPosition, useScrollMemory } from '../hooks/useScrollMemory';
 import { usePointerDragSession } from '../hooks/usePointerDragSession';
 import { findNode, isExpandable, listItemsFor, nodeBlurb, nodeLabel } from '../lib/corpus';
+import { prefetchSuttaText } from '../lib/suttaPrefetch';
 import { SEARCH_CAP_NOTE, SEARCH_RESULTS_CAP, type ListHit, type SearchHit } from '../lib/search/metadata';
 import { searchScopeNote, type TextSearchStatus } from '../lib/search/text';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
@@ -515,6 +516,8 @@ export function ListPane({
                 }`}
                 style={on ? { boxShadow: 'inset 2px 0 0 rgb(var(--accent2))' } : undefined}
                 onClick={() => onOpen(openTargets.get(id) ?? id, snippet?.segments)}
+                // The press starts the text load, so the reader mounts with it already in hand.
+                onPointerDown={() => prefetchSuttaText(corpus, openTargets.get(id) ?? id)}
               >
                 <span className={`block ${reordering ? '' : 'pr-14'}`}>
                   <span className="font-sans text-ui-md font-bold tracking-[.02em] mr-2.5 text-ink-3">
