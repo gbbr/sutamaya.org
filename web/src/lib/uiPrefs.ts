@@ -17,6 +17,13 @@ export const UI_PREFS_DEFAULTS: UiPrefs = { uiScale: 1, theme: 'system' };
 // `zoom` only magnifies rendering, leaving `dvh` resolving against the unzoomed screen, which
 // index.css corrects for using `--ui-scale`; `initial-scale` redefines the layout viewport itself,
 // so `--ui-scale` stays 1 on that path.
+//
+// The viewport path pins `minimum-scale` and `maximum-scale` to the same value, making the chosen
+// scale the only zoom the page can have. iOS otherwise zooms the page itself — into a focused field
+// whose text renders under 16px, or on a double-tap — and from then on keeps that zoom through a
+// rotation or a new `initial-scale`, leaving the page zoomed in. The native shell has no pinch
+// gesture to undo it. A Safari tab still allows pinch-zoom over the lock, as Safari does on every
+// page for accessibility.
 
 // The stored scale and theme, or the defaults.
 export function loadUiPrefs(): UiPrefs {
@@ -60,13 +67,9 @@ export function applyUiScale(scale: number) {
   } else {
     // `--ui-scale` stays 1 on this path, or index.css's <html> height rule divides by it twice.
     root.setProperty('--ui-scale', '1');
+    const locked = `initial-scale=${scale}, minimum-scale=${scale}, maximum-scale=${scale}, viewport-fit=cover`;
     const viewport = document.querySelector('meta[name="viewport"]');
-    viewport?.setAttribute(
-      'content',
-      scale === 1
-        ? 'width=device-width, initial-scale=1, viewport-fit=cover'
-        : `initial-scale=${scale}, viewport-fit=cover`
-    );
+    viewport?.setAttribute('content', scale === 1 ? `width=device-width, ${locked}` : locked);
   }
 }
 
