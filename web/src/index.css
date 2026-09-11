@@ -524,9 +524,10 @@ body {
      pays off. */
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  /* Without this, iOS Safari holds every tap for ~300-350ms to check for a second one, since this
-     app's viewport allows pinch-zoom. `manipulation` opts out of double-tap-to-zoom alone —
-     pinch-zoom and ordinary panning still work — and removes the wait for every UI control. */
+  /* Without this, iOS Safari holds every tap for ~300-350ms to check for a second one, since a
+     Safari tab allows pinch-zoom even over lib/uiPrefs.ts's zoom lock. `manipulation` opts out of
+     double-tap-to-zoom alone — pinch-zoom and ordinary panning still work — and removes the wait
+     for every UI control. */
   touch-action: manipulation;
 }
 

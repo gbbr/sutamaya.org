@@ -209,9 +209,6 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
           to stay on screen either way, focus living here while the arrows walk the rows, so hosts
           lay this out as a flex column and leave the scrolling to it. */}
       <div className="flex-none pb-1.5">
-        {/* The rows' own 14.5px, so the input doesn't outweigh the list it filters — but 16px on a
-            touch pointer, below which iOS Safari zooms the page on focus, and this app leaves
-            pinch-zoom enabled rather than taking the `maximum-scale` escape. */}
         <input
           ref={inputRef}
           value={draft}
