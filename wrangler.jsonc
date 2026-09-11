@@ -113,9 +113,10 @@
     // check endpoint tells devices there is no update.
     "OTA_VERSION": "",
     "OTA_CHECKSUM": "",
-    // The native build number below which the current OTA bundle is withheld — raised by hand in
-    // a store release that adds a native piece the bundle needs (a plugin, a permission, a
-    // deep-link path), never by `release:ota`. Empty means no floor. See docs/native-apps.md.
+    // The native build number below which the current OTA bundle is withheld. Written by
+    // `release:ota` from native-release.json's "floor", which a store release raises when it adds
+    // a native piece the bundle needs — a plugin, a permission, a deep-link path. Empty means no
+    // floor. See docs/native-apps.md.
     "OTA_MIN_NATIVE": ""
     // The enrolled Apple Team ID, added here once it exists: it is what turns on
     // /.well-known/apple-app-site-association (worker/src/wellKnown.js), which 404s without it.

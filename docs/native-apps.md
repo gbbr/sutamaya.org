@@ -99,13 +99,27 @@ the current bundle is withheld — the check reads `version_code` from the reque
 it as the build number on both platforms) and returns nothing when the device is under the floor
 or sends no readable version. It exists for the one case OTA can't safely cover on its own: a web
 change that needs a matching native piece — a new Capacitor plugin, a permission, a new
-deep-link path. That release bumps the native build number *and* `OTA_MIN_NATIVE` together, so
-binaries without the native half stop pulling bundles they can't run and wait for a store update.
-An OTA-only release never touches it; empty means no floor. It assumes iOS and Android build
-numbers move in lockstep — Phase 6's version-bump script is what keeps them there.
+deep-link path. That release bumps the native build number *and* the floor together, so binaries
+without the native half stop pulling bundles they can't run and wait for a store update. Empty
+means no floor. It assumes iOS and Android build numbers move in lockstep — Phase 6's version-bump
+script is what keeps them there.
+
+**`native-release.json` is what the floor is set from, and the guard that it gets set.** It records
+the binary in the stores — its `build` number, the `commit` its native projects were built from, and
+the `floor`, the lowest build able to run bundles built from that commit. A store release updates
+all three; `floor` moves only when that release adds a native piece. `release:ota` writes
+`OTA_MIN_NATIVE` from `floor`, so the floor is never typed by hand, and **refuses to publish when
+the native contract has moved since `commit`** — `web/capacitor.config.ts`, the two manifests, the
+Xcode project, `build.gradle`, and the `@capacitor/*` / `@capgo/*` entries in `web/package.json`.
+Those are what decide which plugins, permissions and link claims a bundle may rely on. Everything
+else is left out so the guard stays worth reading: the rest of `web/ios` and `web/android`, since an
+icon is not a contract change; `capacitor.build.gradle`, which only restates the plugin list; plugin
+*versions*, only their names; and the build-number and version-name fields, which move on every
+store release. The escape is `--allow-native-drift`, for a change that genuinely can't reach the
+bundle.
 
 Publishing is `npm run release:ota -- --env production|staging`: it builds the bundle
-(`build-native.mjs --ota` → `web/ota/`), uploads the zip to R2 **first**, rewrites the two vars,
+(`build-native.mjs --ota` → `web/ota/`), uploads the zip to R2 **first**, rewrites the three vars,
 then runs the environment's deploy — so a device is never pointed at a bundle that isn't there
 yet. It is a superset of `deploy:prod`; a plain `deploy:prod` ships the web app and leaves native
 readers on the current bundle until a `release:ota` follows.
@@ -201,8 +215,11 @@ talks to production and native sign-in returns to the website instead of the app
   that can stall — and `@capgo/capacitor-updater` rolls every update back after `appReadyTimeout`,
   not just broken ones.
 - **`OTA_VERSION` and `OTA_CHECKSUM` are set together or not at all.** The check treats either one
-  missing as "nothing published"; `release:ota` always writes both. `OTA_MIN_NATIVE` is separate —
-  it moves only with a store release that adds a native piece, and `release:ota` leaves it alone.
+  missing as "nothing published"; `release:ota` always writes both. `OTA_MIN_NATIVE` is written from
+  `native-release.json`'s `floor`, so it is edited there rather than in `wrangler.jsonc`.
+- **A store release updates `native-release.json`** — always `build` and `commit`, and `floor` too
+  when the release adds a native piece the bundle needs. Leave it stale and `release:ota` refuses to
+  publish, since it can no longer tell a safe bundle from one that needs a binary nobody has.
 
 ## Status
 
@@ -261,11 +278,13 @@ the OTA channel (another `wrangler.jsonc` var plus bucketing on a stable device 
   draining document-by-document the way the browser's revalidating cache does.
 - **A web change that needs a matching native change must not go out as OTA alone.** A new
   Capacitor plugin, a permission, a deep-link path — push the web half to an old binary and the
-  app breaks. Those go through a store release first, then OTA. `release:ota` ships whatever the
-  working tree holds and can't detect this; the `OTA_MIN_NATIVE` floor (above) is the guard, but
-  it's opt-in — you have to remember to raise it in the same release, and until you do a bad
-  bundle reaches every device. A store update always resets a device to its built-in bundle, so a
-  bad OTA stays recoverable.
+  app breaks. Those go through a store release first, then OTA. `native-release.json` and the
+  `release:ota` guard over it (above) are what enforce that, and they enforce it from the native
+  files rather than from the web change itself: a bundle that needs a native piece can't be
+  published until the store release recording it is. What stays manual is `floor` — the guard makes
+  you look at the file, but whether a given store release raises the floor is a judgement. Getting
+  that wrong is survivable in one direction only: too high and devices merely wait for the store.
+  A store update always resets a device to its built-in bundle, so a bad OTA stays recoverable.
 - **The session token rides a device backup.** It is kept in `@capacitor/preferences` —
   UserDefaults on iOS, SharedPreferences on Android under `allowBackup="true"` — so an iCloud or
   Auto Backup restore carries it. The Keychain is not the answer: the mirror it authenticates sits
