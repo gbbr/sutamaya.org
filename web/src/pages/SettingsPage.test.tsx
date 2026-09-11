@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { renderRoutes, type RouteEntry } from '../testRouter';
+import { LayoutProvider } from '../context/LayoutContext';
 
 // Covers the two behaviors added on top of the plain "renders the three sections" page: (1)
 // Account is always the last section, regardless of sign-in state, and never collapses to
@@ -132,7 +133,19 @@ beforeEach(() => {
 });
 
 function renderSettings(entry: RouteEntry = '/settings') {
-  return renderRoutes([{ path: '/settings', element: <SettingsPage /> }], entry);
+  return renderRoutes(
+    [
+      {
+        path: '/settings',
+        element: (
+          <LayoutProvider>
+            <SettingsPage />
+          </LayoutProvider>
+        ),
+      },
+    ],
+    entry
+  );
 }
 
 describe('section order', () => {

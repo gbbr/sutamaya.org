@@ -597,10 +597,12 @@ export function TreePane({
     >
       {/* No bottom padding while the tabs are up, their underline having to land on this border
           for the two to read as one edge; without them the padding comes back, or the search box
-          sits on the rule. */}
+          sits on the rule. On a phone the header starts 10px below the safe-area line, a little
+          lower than a native top bar, which starts on it: the wordmark is sized as a large title
+          rather than a bar's, and wants the air. */}
       <header
         className={`flex-none px-[22px] pt-5 border-b border-ink/10 ${searching ? 'pb-4' : ''}`}
-        style={{ paddingTop: 'calc(1.25rem + var(--safe-top))' }}
+        style={{ paddingTop: mobile ? 'calc(10px + var(--safe-top))' : 'calc(1.25rem + var(--safe-top))' }}
       >
         {/* The wordmark and the destinations away from the two trees: help, search, the account.
             The Library/My lists switch gets its own row below rather than joining them, being the
