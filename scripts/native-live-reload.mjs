@@ -29,7 +29,8 @@ if (!target || !host) {
   process.exit(1);
 }
 
-const PORT = '5173';
+const PORT = process.env.WEB_PORT || '5173';
+const WORKER_PORT = process.env.WORKER_PORT || '8787';
 const webDir = resolve(dirname(fileURLToPath(import.meta.url)), '../web');
 const iosAppDir = resolve(webDir, 'ios/App');
 const iosNativeConfig = resolve(iosAppDir, 'App/capacitor.config.json');
@@ -102,7 +103,7 @@ async function reachable(url) {
 const deadline = Date.now() + 90_000;
 process.stdout.write('waiting for the web dev server and the Worker');
 while (Date.now() < deadline) {
-  if ((await reachable(`http://localhost:${PORT}`)) && (await reachable('http://localhost:8787/api/health'))) {
+  if ((await reachable(`http://localhost:${PORT}`)) && (await reachable(`http://localhost:${WORKER_PORT}/api/health`))) {
     process.stdout.write('\n');
     break;
   }

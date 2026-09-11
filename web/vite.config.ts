@@ -67,6 +67,12 @@ const devHosts: Record<string, string> = {
 // production build references none of them.
 const LOCAL_ICON_BASE = '/icons/local/';
 
+// The dev server's port and the Worker it proxies to, overridable so a second checkout can run
+// alongside the first. The port is strict: a taken one fails rather than drifting onto a port the
+// Worker's WEB_ORIGIN and the native launcher don't address.
+const WEB_PORT = Number(process.env.WEB_PORT) || 5173;
+const API_ORIGIN = process.env.API_ORIGIN || `http://localhost:${process.env.WORKER_PORT || 8787}`;
+
 // Production icon URL -> its local counterpart, read off the icon list so the two can't drift.
 const localIcons = new Map(
   BRAND_ICONS.map((icon) => [icon.source.replace('web/public', ''), `${LOCAL_ICON_BASE}${icon.out}`])
@@ -298,7 +304,8 @@ export default defineConfig({
     chunkSizeWarningLimit: 600,
   },
   server: {
-    port: 5173,
+    port: WEB_PORT,
+    strictPort: true,
     // Listen on all interfaces (not just localhost) so the dev server is reachable from a
     // phone on the same LAN — Vite prints the LAN URL itself (as "Network:") once host is
     // enabled, no extra logging needed. /api/* is still proxied to the Express server on this
@@ -315,7 +322,7 @@ export default defineConfig({
     allowedHosts: Object.keys(devHosts),
     proxy: {
       '/api': {
-        target: process.env.API_ORIGIN || 'http://localhost:8787',
+        target: API_ORIGIN,
         changeOrigin: true,
       },
     },
@@ -328,7 +335,7 @@ export default defineConfig({
   preview: {
     proxy: {
       '/api': {
-        target: process.env.API_ORIGIN || 'http://localhost:8787',
+        target: API_ORIGIN,
         changeOrigin: true,
       },
     },
