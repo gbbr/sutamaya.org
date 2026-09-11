@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router';
 import { ArrowLeft, ArrowUp, ExternalLink, Lightbulb, Mail } from 'lucide-react';
+import { useLayout } from '../context/LayoutContext';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { isTypingTarget } from '../lib/shortcuts';
 import dictionaryShot from '../assets/help/dictionary-mobile.webp';
@@ -491,6 +492,7 @@ function BackToTop({ onClick }: { onClick: () => void }) {
 
 export function HelpPage() {
   const navigate = useNavigate();
+  const { mobile } = useLayout();
   // Its own description rather than the app-wide default: this is the one app page in the sitemap.
   useDocumentMeta(
     'How to use sutamaya',
@@ -509,12 +511,13 @@ export function HelpPage() {
     return () => window.removeEventListener('keydown', onKey);
   }, [navigate]);
 
+  // On a phone the page starts 10px below the safe-area line, level with the library's header.
   return (
     <div
       ref={scrollRef}
       data-component="HelpPage"
       className="sc h-full bg-paper px-5 pt-10"
-      style={{ paddingTop: 'calc(2.5rem + var(--safe-top))' }}
+      style={{ paddingTop: mobile ? 'calc(10px + var(--safe-top))' : 'calc(2.5rem + var(--safe-top))' }}
     >
       <div className="w-full max-w-[640px] pb-10 mx-auto">
         <button className="flex items-center gap-1.5 font-sans text-ui-base text-ink-4 mb-5" onClick={() => navigate('/')}>

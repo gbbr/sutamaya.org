@@ -51,7 +51,10 @@ inert on web.
 Both platforms run edge-to-edge. iOS populates `env(safe-area-inset-*)` under `viewport-fit=cover`;
 Capacitor's built-in `SystemBars` injects `--safe-area-inset-*` on `<html>` for older Android
 WebViews. `index.css` folds the two into `--safe-top/right/bottom/left`, and every top bar and
-full-screen surface reads those. `@capacitor/status-bar` sets the bar's text colour from the app
+full-screen surface reads those. On a phone the reader's header is a native top bar — 44px tall,
+starting on the `--safe-top` line, its controls centred in it — and the library, Settings and Help
+start 10px below that line, their headings being sized as large titles rather than a bar's.
+`@capacitor/status-bar` sets the bar's text colour from the app
 theme (`lib/statusBar.ts`, driven from `lib/themeColor.ts`) — the app's theme is its own setting,
 not the OS's.
 

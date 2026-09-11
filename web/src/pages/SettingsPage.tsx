@@ -5,6 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData, type SyncStatus } from '../context/UserDataContext';
+import { useLayout } from '../context/LayoutContext';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { GoogleSignInButton } from '../components/GoogleSignInButton';
 import { EmailCodeSignIn } from '../components/EmailCodeSignIn';
@@ -230,6 +231,7 @@ export function SettingsPage() {
   useDocumentMeta('Settings');
   const location = useLocation();
   const navigate = useNavigate();
+  const { mobile } = useLayout();
   // Leaves Settings for wherever the reader was, via App.tsx's RestoreLastLocation.
   const backToLastLocation = useCallback(() => navigate('/'), [navigate]);
 
@@ -452,12 +454,13 @@ export function SettingsPage() {
   }, [backToLastLocation]);
 
   // Block layout with margin-auto centring rather than flex, which has scrollHeight bugs under
-  // overflow:auto on some WebView builds.
+  // overflow:auto on some WebView builds. On a phone the page starts 10px below the safe-area
+  // line, level with the library's header.
   return (
     <div
       data-component="SettingsPage"
       className="sc h-full bg-paper px-5 pt-10"
-      style={{ paddingTop: 'calc(2.5rem + var(--safe-top))' }}
+      style={{ paddingTop: mobile ? 'calc(10px + var(--safe-top))' : 'calc(2.5rem + var(--safe-top))' }}
     >
       <div className="w-full max-w-[540px] pb-10 mx-auto">
         {/* Back to wherever the reader was, via '/' rather than browser history, which a relaunch

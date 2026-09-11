@@ -521,10 +521,11 @@ export function ReaderPage() {
     >
       {/* The header: close on the left, search and menu on the right, and the title absolutely
           centred on the page rather than between them, since the two sides carry different
-          numbers of buttons. */}
+          numbers of buttons. A 44px bar starting on the safe-area line, the platform's own top-bar
+          geometry, with its controls centred in it. */}
       <header
-        className="font-sans flex-none relative flex items-center justify-between px-5 py-3.5 text-ui-base"
-        style={{ borderBottom: `1px solid ${theme.rule}`, paddingTop: 'calc(0.875rem + var(--safe-top))' }}
+        className="font-sans flex-none relative flex items-center justify-between box-content h-11 px-5 text-ui-base"
+        style={{ borderBottom: `1px solid ${theme.rule}`, paddingTop: 'var(--safe-top)' }}
       >
         {/* `p-3.5 -m-3.5`: a 47px touch area around the 19px icon, with the negative margin
             collapsing the button's layout box back to the icon. */}
