@@ -251,6 +251,10 @@ export function SettingsPage() {
 
   // Whether the sign-out button is armed, which a first click does when there is unsynced work.
   const [confirmSignOut, setConfirmSignOut] = useState(false);
+  // The account being signed out of, which keeps the Account card on screen until the page is left:
+  // `user` blanks before the sign-out finishes, and the signed-out card would show in the meantime.
+  const [signingOutAs, setSigningOutAs] = useState<typeof user>(null);
+  const shownUser = user ?? signingOutAs;
 
   // The Delete account card's second step: what it is being asked, what the reader has typed into
   // it, and whether the request is out. Reset together by `cancelDelete`.
@@ -472,7 +476,7 @@ export function SettingsPage() {
           <div className={`${cardClass('auth')} mb-5`}>
             {loading ? (
               <div className="font-sans text-ui-base text-ink-4 py-4">Checking sign-in status…</div>
-            ) : user ? (
+            ) : shownUser ? (
               <>
                 {/* A lapsed session, which shows sign-in in place of the sync line: `user` is
                     still populated (lib/lastUser.ts), so nothing else here would say the account
@@ -507,13 +511,13 @@ export function SettingsPage() {
                   {/* Name over address, the address wrapping within itself rather than
                       truncating. */}
                   <div className="mb-3">
-                    {user.name && <div className="text-ui-base">{user.name}</div>}
+                    {shownUser.name && <div className="text-ui-base">{shownUser.name}</div>}
                     <div
                       className={`font-sans break-all ${
-                        user.name ? 'text-ui-sm text-ink-4 mt-0.5' : 'text-ui-base'
+                        shownUser.name ? 'text-ui-sm text-ink-4 mt-0.5' : 'text-ui-base'
                       }`}
                     >
-                      {user.email}
+                      {shownUser.email}
                     </div>
                   </div>
                   {/* The warning that arms Sign out, shown only when unsynced changes would go
@@ -530,19 +534,26 @@ export function SettingsPage() {
                   {/* Sign out on the left, Export on the right. */}
                   <div className="flex items-center justify-between">
                     <button
-                      className={confirmSignOut ? LINK_DANGER : LINK_ACTION}
+                      className={`${confirmSignOut ? LINK_DANGER : LINK_ACTION} disabled:opacity-60`}
+                      disabled={!!signingOutAs}
                       onClick={async () => {
                         if (pendingCount > 0 && !confirmSignOut) {
                           setConfirmSignOut(true);
                           return;
                         }
-                        await logout();
+                        setSigningOutAs(user);
+                        try {
+                          await logout();
+                        } catch (err) {
+                          setSigningOutAs(null);
+                          throw err;
+                        }
                         navigate('/');
                       }}
                     >
                       {/* Nudged down a pixel, to the label's optical centre. */}
                       <LogOut size={16} strokeWidth={1.75} className="translate-y-[1px]" />
-                      {confirmSignOut ? 'Sign out anyway' : 'Sign out'}
+                      {signingOutAs ? 'Signing out…' : confirmSignOut ? 'Sign out anyway' : 'Sign out'}
                     </button>
                     {/* Export, hidden on a lapsed session: the request would answer 401, which in
                         the browser downloads the error body. */}
@@ -756,7 +767,7 @@ export function SettingsPage() {
             otherwise, a local reader's data being theirs alone. Hidden on a lapsed session, which
             has nothing left to delete with: the export would answer 401 and the deletion itself
             would be refused. The Account card above is already asking for a fresh sign-in. */}
-        {!loading && user && !needsReauth && (
+        {!loading && shownUser && !needsReauth && (
           <div ref={dangerSectionRef}>
             <div className={SECTION_LABEL}>
               Danger zone
