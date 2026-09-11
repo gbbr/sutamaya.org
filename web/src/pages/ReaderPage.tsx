@@ -64,6 +64,11 @@ const searchRunLabel = (query: string) => `Results for: “${query}”`;
 // segments don't re-render.
 const NO_HIGHLIGHTS: Highlight[] = [];
 
+// How long the text may take before the reader says it is loading. A shorter wait than this reads
+// as a stutter rather than as progress, and a sutta prefetched on the press that opened it
+// (lib/suttaPrefetch.ts) is on screen well inside it.
+const TEXT_LOADING_DELAY_MS = 150;
+
 export function ReaderPage() {
   const { suttaId: routeSuttaId } = useParams();
   const location = useLocation();
@@ -310,6 +315,17 @@ export function ReaderPage() {
     },
     [run, siblingIds]
   );
+
+  // Whether the wait for the text has run long enough to be worth showing.
+  const [textSlow, setTextSlow] = useState(false);
+  useEffect(() => {
+    if (segments || textError) {
+      setTextSlow(false);
+      return;
+    }
+    const timer = window.setTimeout(() => setTextSlow(true), TEXT_LOADING_DELAY_MS);
+    return () => window.clearTimeout(timer);
+  }, [segments, textError, suttaId]);
 
   // Prefetches both neighbours into loadSuttaText's cache, once this sutta's own text has arrived.
   useEffect(() => {
@@ -795,9 +811,9 @@ export function ReaderPage() {
                 Retry
               </button>
             </div>
-          ) : (
+          ) : textSlow ? (
             <div className="font-sans text-sm opacity-50">Loading…</div>
-          )}
+          ) : null}
 
           {/* Prev/Next at the foot of the text, shown once the text itself is on screen. */}
           {segments && (footNeighbours.prev || footNeighbours.next) && (
