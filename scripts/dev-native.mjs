@@ -16,7 +16,7 @@ import { networkInterfaces, tmpdir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const PORT = 5173;
+const PORT = Number(process.env.WEB_PORT) || 5173;
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
 const args = process.argv.slice(2);

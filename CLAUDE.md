@@ -40,8 +40,13 @@ DPD_DB_PATH=/path/to/dpd.db npm run update-data dictionary   # rebuild data/pli2
 
 Run the two halves individually with `npm run dev:worker` / `npm run dev:web`. `dev:worker` is
 `wrangler dev --port 8787` against a local D1 instance wrangler creates on demand, so there's no
-separate database to start. The web dev server proxies `/api/*` to `http://localhost:8787`
-(override with `API_ORIGIN`).
+separate database to start. The web dev server listens on 5173 and proxies `/api/*` to
+`http://localhost:8787` (override with `API_ORIGIN`).
+
+To run a second copy alongside one already up, move both ports:
+`WEB_PORT=5180 WORKER_PORT=8790 npm run dev` (the native scripts honour them too). Both ports are
+strict, so a taken one fails instead of drifting. Google sign-in only works on 5173, the one port
+registered with the OAuth client and named by `WEB_ORIGIN`; sign in on another with an emailed code.
 
 `npm run dev:ios` / `npm run dev:android` (or `dev:native` for both, heavy) run the Worker and the
 web dev server, then launch the native app in live-reload mode against them — web edits reload with
