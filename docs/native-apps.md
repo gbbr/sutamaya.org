@@ -138,11 +138,46 @@ npm run dev:android        # same, Android
 npm run dev:native         # both at once (heavy)
 ```
 
-`dev:ios` / `dev:android` load the WebView from `localhost:5173`, so `/api/*` is same-origin and
-rides Vite's proxy to the Worker — no CORS, and Google sign-in works because the round trip stays on
-`localhost` (Android maps it with `adb reverse` via `--forwardPorts`). They pass `--no-sync` to
-`cap run` and never rebuild the bundle, so `build:native` has to have run once. They auto-pick the
-booted simulator/emulator; with none booted they print the available names.
+All three run through `scripts/dev-native.mjs`, which picks the target **before** starting anything,
+then runs the Worker, the web dev server and one launcher per platform under `concurrently`. The order
+matters: `SUTAMAYA_API_BASE` is a build-time define fixed when Vite boots, and which address the app
+has to call depends on the target. Picking first also means an ambiguous or unreachable target fails
+with a picklist rather than after two servers have come up. They pass `--no-sync` to `cap run` and
+never rebuild the bundle, so `build:native` has to have run once.
+
+**A booted simulator/emulator is the default**, so the everyday run needs no arguments. Anything else
+is named with `IOS_DEVICE` — an index, or enough of the name to be unambiguous — which also wins over
+a booted simulator, so a simulator stays one variable away on a day of device testing:
+
+```
+npm run devices                       # every target, indexed, both platforms — starts nothing
+IOS_DEVICE=0 npm run dev:ios          # by index, as listed
+IOS_DEVICE="Gabriel's iPhone" npm run dev:ios    # by name; a fragment matching one target is enough
+```
+
+A fragment matching several targets (`IOS_DEVICE=iPad`, or a name shared by a phone and a tablet)
+prints the ones it matched and stops, rather than guessing. With nothing booted and no variable set,
+the whole list is printed and nothing starts.
+
+**A simulator or emulator loads `localhost:5173`** — both reach this machine's loopback (Android
+through `adb reverse`, via `--forwardPorts`) — and Google sign-in works there, `localhost` being the
+one host Google accepts as an OAuth redirect. One dev server serves the whole session, so a
+`dev:native` run that includes a physical device puts *both* platforms on the LAN address below.
+
+**A physical iPhone or iPad loads this machine's current LAN IP**, read on every run, so no address is
+ever hardcoded and moving between networks costs nothing; it needs the device on the same network as
+the Mac, as Xcode does. Google sign-in does *not* work there — Google rejects a bare IP as a redirect
+host, and a `.local` name too — so sign in with an emailed code instead (`RESEND_API_KEY` in
+`.dev.vars`). A real hostname is the only fix, and that is the Caddy setup in `docs/deploy.md`'s
+"Testing on mobile".
+
+**A device is built and installed by the launcher itself** — `xcodebuild`, then `xcrun devicectl` to
+install and launch — not by `cap run`. Capacitor hands device installs to `native-run`, whose path is
+the legacy usbmux one (DeveloperDiskImage mount, AFC upload, `installation_proxy`) that modern iOS has
+moved off: it cannot see a device paired only over the network, and is several times slower when it
+can. `devicectl` is the CoreDevice path Xcode itself uses. It builds into the same derived-data
+directory `cap run` uses, so both paths share one incremental build. Simulators still go through
+`cap run`, which handles them well.
 
 A bundled build under test (not live-reload) points `SUTAMAYA_API_BASE` at a Worker that has the
 current auth code — `http://localhost:8787` for local, or a staging/prod deploy. Without it the app

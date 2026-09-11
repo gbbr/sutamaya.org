@@ -1,19 +1,19 @@
-// Waits for the web dev server and the Worker to come up, then launches the native app in
-// live-reload mode pointed at the dev server — web edits reload in the simulator with no rebuild.
-// Run by `npm run dev:ios` / `npm run dev:android`, which start the two servers alongside it.
+// Waits for the web dev server and the Worker to come up, then launches the native app against
+// them in live-reload mode — web edits reload with no rebuild. Started by scripts/dev-native.mjs,
+// which picks the target and hands it over in the environment (see there for why it is chosen first).
 //
-// The WebView loads from `localhost:5173`, so `/api/*` is same-origin and rides Vite's proxy to the
-// Worker — no CORS, unlike a bundled build pointed straight at the Worker. The iOS simulator shares
-// the host's loopback; for Android, `--forwardPorts` runs `adb reverse` so the emulator's
-// `localhost:5173` reaches the host too (which also keeps Google happy — it only allows
-// `http://localhost` as an OAuth redirect host, not `10.0.2.2`).
+// The WebView loads the dev server itself, so `/api/*` is same-origin and rides Vite's proxy to the
+// Worker — no CORS, unlike a bundled build pointed straight at the Worker.
 //
-// A one-time `npm run build:native` must have run first, so the native projects have the current
-// bundle; this passes `--no-sync` to `cap run` and never rebuilds it.
+// A simulator or emulator goes through `cap run`, which handles them well. A physical device is
+// built and installed here instead: Capacitor hands device installs to `native-run`, whose path is
+// the legacy usbmux one (DeveloperDiskImage mount, AFC upload, `installation_proxy`) that modern iOS
+// has moved off — it cannot see a device paired only over the network, and is several times slower
+// when it can. `xcodebuild` plus `xcrun devicectl` is the CoreDevice path Xcode itself uses.
 
 import { spawn, spawnSync } from 'node:child_process';
-import { existsSync } from 'node:fs';
-import { dirname, resolve } from 'node:path';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const platform = process.argv[2];
@@ -22,35 +22,72 @@ if (platform !== 'ios' && platform !== 'android') {
   process.exit(1);
 }
 
-const webDir = resolve(dirname(fileURLToPath(import.meta.url)), '../web');
-const adbBin = process.env.ANDROID_HOME ? resolve(process.env.ANDROID_HOME, 'platform-tools/adb') : 'adb';
-
-// `cap run` builds the native project, which needs its synced web assets in place — produced only
-// by `npm run build:native` and git-ignored, so absent on a fresh checkout. Without them the build
-// fails deep in the native toolchain with nothing pointing back here.
-const syncedAssets = {
-  ios: resolve(webDir, 'ios/App/App/public'),
-  android: resolve(webDir, 'android/app/src/main/assets/public'),
-}[platform];
-if (!existsSync(syncedAssets)) {
-  console.error(`\nthe ${platform} project has no synced bundle yet — run \`npm run build:native\` once first.`);
+const target = JSON.parse(process.env[`SUTAMAYA_TARGET_${platform.toUpperCase()}`] ?? 'null');
+const host = process.env.SUTAMAYA_DEV_HOST;
+if (!target || !host) {
+  console.error(`\nno resolved ${platform} target — run \`npm run dev:${platform}\`, which picks one first.`);
   process.exit(1);
 }
 
-// The device to deploy to, resolved here rather than left to `cap run`'s interactive picker — its
-// arrow-key prompt doesn't get a usable TTY through `concurrently`.
-function bootedTarget() {
-  if (platform === 'ios') {
-    const out = spawnSync('xcrun', ['simctl', 'list', 'devices', 'booted', '-j'], { encoding: 'utf8' });
-    const runtimes = JSON.parse(out.stdout || '{}').devices ?? {};
-    for (const list of Object.values(runtimes)) {
-      if (list[0]) return list[0].udid;
+const PORT = '5173';
+const webDir = resolve(dirname(fileURLToPath(import.meta.url)), '../web');
+const iosAppDir = resolve(webDir, 'ios/App');
+const iosNativeConfig = resolve(iosAppDir, 'App/capacitor.config.json');
+
+function run(command, args, opts = {}) {
+  const res = spawnSync(command, args, { encoding: 'utf8', ...opts });
+  const output = `${res.stdout ?? ''}${res.stderr ?? ''}`;
+  if (res.status !== 0) {
+    // A locked phone refuses the launch with a page of CoreDevice error detail that says one thing.
+    if (/could not be, unlocked|BSErrorCodeDescription = Locked/.test(output)) {
+      console.error(`\nunlock ${target.name} and run again — iOS won't launch an app onto a locked device.`);
+    } else {
+      console.error(`\n${command} ${args[0]} failed:\n${output}`);
     }
-    return null;
+    process.exit(1);
   }
-  const out = spawnSync(adbBin, ['devices'], { encoding: 'utf8' });
-  const line = (out.stdout || '').split('\n').find((l) => /\tdevice$/.test(l));
-  return line ? line.split('\t')[0] : null;
+  return res.stdout ?? '';
+}
+
+// Builds, installs and launches on a physical device, the dev server's address compiled in:
+// `server.url` in the native config is how Capacitor points a WebView at a dev server, and the build
+// reads it from there. It is put back as soon as the build has read it, so an interrupted run can't
+// leave the file naming a dev server that a later bundled build would try to load.
+function launchOnDevice() {
+  const original = readFileSync(iosNativeConfig, 'utf8');
+  const config = JSON.parse(original);
+  const derivedData = resolve(webDir, 'ios/DerivedData', target.id);
+  const url = `http://${host}:${PORT}`;
+
+  console.log(`\nbuilding for ${target.name}`);
+  writeFileSync(iosNativeConfig, `${JSON.stringify({ ...config, server: { ...config.server, url } }, null, '\t')}\n`);
+  const startedAt = Date.now();
+  try {
+    // The same invocation `cap run` makes, including the derived-data location, so the two paths
+    // share one incremental build rather than each keeping a cold cache of its own.
+    run(
+      'xcrun',
+      ['xcodebuild', '-project', 'App.xcodeproj', '-scheme', 'App', '-configuration', 'Debug', '-destination', `id=${target.id}`, '-derivedDataPath', derivedData],
+      { cwd: iosAppDir }
+    );
+  } finally {
+    writeFileSync(iosNativeConfig, original);
+  }
+
+  console.log(`built in ${Math.round((Date.now() - startedAt) / 1000)}s — installing`);
+  run('xcrun', ['devicectl', 'device', 'install', 'app', '--device', target.deviceId, join(derivedData, 'Build/Products/Debug-iphoneos/App.app')]);
+  run('xcrun', ['devicectl', 'device', 'process', 'launch', '--device', target.deviceId, config.appId]);
+  console.log(`launched on ${target.name} against ${url}. Press Ctrl+C to quit.`);
+}
+
+// A simulator or emulator, through `cap run`: it writes the same `server.url`, builds, installs, and
+// stays in the foreground until interrupted. `--forwardPorts` is `adb reverse`, which is what lets an
+// emulator reach this machine's `localhost`.
+function launchWithCapRun() {
+  const args = ['cap', 'run', platform, '--live-reload', '--host', host, '--port', PORT, '--no-sync', '--target', target.id];
+  if (platform === 'android') args.push('--forwardPorts', `${PORT}:${PORT}`);
+  const child = spawn('npx', args, { cwd: webDir, stdio: 'inherit' });
+  child.on('exit', (code) => process.exit(code ?? 0));
 }
 
 async function reachable(url) {
@@ -65,7 +102,7 @@ async function reachable(url) {
 const deadline = Date.now() + 90_000;
 process.stdout.write('waiting for the web dev server and the Worker');
 while (Date.now() < deadline) {
-  if ((await reachable('http://localhost:5173')) && (await reachable('http://localhost:8787/api/health'))) {
+  if ((await reachable(`http://localhost:${PORT}`)) && (await reachable('http://localhost:8787/api/health'))) {
     process.stdout.write('\n');
     break;
   }
@@ -77,28 +114,11 @@ if (Date.now() >= deadline) {
   process.exit(1);
 }
 
-const target = bootedTarget();
-if (!target) {
-  if (platform === 'ios') {
-    console.error('\nno booted simulator. Boot one with `xcrun simctl boot "<name>"` — available:');
-    const list = spawnSync('xcrun', ['simctl', 'list', 'devices', 'available'], { encoding: 'utf8' });
-    console.error(
-      (list.stdout || '')
-        .split('\n')
-        .filter((l) => /\([0-9A-F-]{36}\)/.test(l))
-        .map((l) => '  ' + l.replace(/\s*\([0-9A-F-]{36}\).*$/, '').trim())
-        .join('\n')
-    );
-  } else {
-    console.error('\nno running emulator. Start one with `emulator -avd <name>` — available:');
-    const emu = process.env.ANDROID_HOME ? resolve(process.env.ANDROID_HOME, 'emulator/emulator') : 'emulator';
-    console.error((spawnSync(emu, ['-list-avds'], { encoding: 'utf8' }).stdout || '').trim());
-  }
-  process.exit(1);
+if (target.kind === 'device') {
+  launchOnDevice();
+  // Held open so `concurrently -k` keeps the dev server and the Worker up behind the running app,
+  // the way `cap run --live-reload` does on the simulator path.
+  await new Promise((r) => setTimeout(r, 2 ** 31 - 1));
+} else {
+  launchWithCapRun();
 }
-
-const args = ['cap', 'run', platform, '--live-reload', '--host', 'localhost', '--port', '5173', '--no-sync', '--target', target];
-if (platform === 'android') args.push('--forwardPorts', '5173:5173');
-
-const child = spawn('npx', args, { cwd: webDir, stdio: 'inherit' });
-child.on('exit', (code) => process.exit(code ?? 0));

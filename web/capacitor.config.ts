@@ -2,7 +2,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 
 // The Worker origin the over-the-air update check is made against — the same origin
 // web/src/lib/platform.ts's API_BASE resolves to. SUTAMAYA_API_BASE points a test build at a local
-// or staging Worker (it is also what dev:ios / dev:android set); a normal build checks production.
+// or staging Worker; a normal build checks production.
 const apiBase = process.env.SUTAMAYA_API_BASE || 'https://app.sutamaya.org';
 
 // Wraps the built web app (web/dist) in the iOS and Android shells under ios/ and android/.
