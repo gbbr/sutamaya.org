@@ -2,7 +2,8 @@ import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { TreeRow } from './TreeRow';
-import { LayoutProvider, MOBILE_BREAKPOINT } from '../context/LayoutContext';
+import { LayoutProvider } from '../context/LayoutContext';
+import { MOBILE_BREAKPOINT } from '../lib/layout';
 import type { ChapterRow } from '../lib/types';
 import type { ReactElement } from 'react';
 

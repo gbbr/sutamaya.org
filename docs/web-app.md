@@ -63,6 +63,23 @@ behaviour components share, and `components/` the pieces the pages are built fro
 Tests render pages through the same router setup as the app, so a page under test behaves as it
 does in use.
 
+## Screen transitions
+
+A screen that takes the whole window animates as it arrives: the Reader, Help and Settings. On a
+phone they are a stack and slide in from the right, Back sliding them away again, the way a pushed
+screen moves in a native app; opening a collection slides its sutta list in over the tree the same
+way. Nothing else animates between screens: tree rows open in place, and the Library/Lists tabs only
+slide their underline.
+
+- **A transition starts from the app's own control** — a row, Back, the Reader's close — never from
+  the browser's Back and Forward, which Safari's swipe back already animates.
+- **They are the browser's view transitions**, so a browser without them changes screens instantly
+  (iOS before 18).
+- **Only a phone slides.** A wider layout has no stack, both panes being on screen at once, so a
+  screen arriving there crossfades instead — and a collection, which changes only the pane beside
+  the tree, is instant.
+- **Reduced motion turns the slides into crossfades.**
+
 ## Library search
 
 A search is a place, not a mode: the query is in the address, so the reader can open a result and
@@ -120,4 +137,5 @@ told when a newer corpus is out.
 | `web/src/context/` | the six providers |
 | `web/src/hooks/` | keyboard, scroll memory, dictionary lookup, pointer drags |
 | `web/src/lib/` | everything without React |
+| `web/src/lib/motion.ts`, `web/src/index.css` | screen transitions, and the Reader's step between suttas |
 | `web/vite.config.ts` | the build, the service worker's caching, the dev server |

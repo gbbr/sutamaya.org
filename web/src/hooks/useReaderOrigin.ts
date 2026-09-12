@@ -1,4 +1,5 @@
-import { useNavigate } from 'react-router';
+import { useNavigate, type NavigateOptions } from 'react-router';
+import { transitionPage } from '../lib/motion';
 import { tagIntent } from '../lib/routeIntent';
 import { READER_ORIGIN_KEY } from '../lib/storageKeys';
 
@@ -65,22 +66,27 @@ export function useReaderOrigin(
     navigate(`/read/${encodeURIComponent(nextSuttaId)}`, { state });
   }
 
+  // Leaves the Reader for a place in the Library, fading one into the other.
+  function leaveReader(to: string, options?: NavigateOptions) {
+    transitionPage('fade', () => navigate(to, { ...options, flushSync: true }));
+  }
+
   // Closes the reader, to the router state, else the persisted origin, else `fallbackPath` for a
   // link that never had an origin.
   function closeToOrigin(suttaId: string | undefined, fallbackPath: string) {
     // `restoreOrigin` marks a return rather than a fresh deep link, which TreePane's Library/My
     // lists toggle tells apart. Tagged (lib/routeIntent.ts) so LibraryPage consumes it once.
     if (from) {
-      navigate(from, { state: tagIntent({ fromView, restoreOrigin: true }) });
+      leaveReader(from, { state: tagIntent({ fromView, restoreOrigin: true }) });
       return;
     }
     const persisted = readPersistedReaderOrigin(suttaId);
     if (persisted) {
-      navigate(persisted.from, { state: tagIntent({ fromView: persisted.fromView, restoreOrigin: true }) });
+      leaveReader(persisted.from, { state: tagIntent({ fromView: persisted.fromView, restoreOrigin: true }) });
       return;
     }
-    navigate(fallbackPath);
+    leaveReader(fallbackPath);
   }
 
-  return { from, fromView, searchIds, navigateToSutta, closeToOrigin };
+  return { from, fromView, searchIds, navigateToSutta, closeToOrigin, leaveReader };
 }

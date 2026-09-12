@@ -735,7 +735,7 @@ describe('offline download nudge', () => {
     renderHarness();
     await screen.findByText(nudgeText);
     await userEvent.click(screen.getByRole('button', { name: 'Download' }));
-    expect(navigate).toHaveBeenCalledWith('/settings', { state: { scrollTo: 'offline' } });
+    expect(navigate).toHaveBeenCalledWith('/settings', expect.objectContaining({ state: { scrollTo: 'offline' } }));
   });
 
   it('dismissing hides it and persists the dismissal', async () => {
@@ -817,7 +817,7 @@ describe('offline text update nudge', () => {
     renderHarness();
     await screen.findByText(updateText);
     await userEvent.click(screen.getByRole('button', { name: 'Update' }));
-    expect(navigate).toHaveBeenCalledWith('/settings', { state: { scrollTo: 'offline' } });
+    expect(navigate).toHaveBeenCalledWith('/settings', expect.objectContaining({ state: { scrollTo: 'offline' } }));
   });
 
   // Dismissal records the version rather than a boolean, so the next corpus change nudges again.

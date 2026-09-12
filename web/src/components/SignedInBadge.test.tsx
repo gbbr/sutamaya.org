@@ -19,7 +19,8 @@ describe('SignedInBadge', () => {
     const badge = screen.getByLabelText('Signed in as reader@example.com');
     expect(badge).toHaveTextContent('R');
     await userEvent.click(badge);
-    expect(navigate).toHaveBeenCalledWith('/settings');
+    // The options carry the transition's own flush — the destination is what this asserts.
+    expect(navigate).toHaveBeenCalledWith('/settings', expect.anything());
   });
 
   it('signed in with a picture: renders the image instead of the initial', () => {
@@ -34,7 +35,7 @@ describe('SignedInBadge', () => {
     vi.mocked(navigate).mockClear();
     render(<SignedInBadge user={null} size={26} />);
     await userEvent.click(screen.getByLabelText('Settings'));
-    expect(navigate).toHaveBeenCalledWith('/settings');
+    expect(navigate).toHaveBeenCalledWith('/settings', expect.anything());
     expect(screen.queryByLabelText(/Signed in as/)).not.toBeInTheDocument();
   });
 

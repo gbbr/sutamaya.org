@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router';
+import { flushSync } from 'react-dom';
 import { useLayout } from '../context/LayoutContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
@@ -12,6 +13,7 @@ import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP } from '../lib/search/metadata';
 import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, tagIntent, type RouteIntent } from '../lib/routeIntent';
+import { transitionPage } from '../lib/motion';
 import { TreePane, type ActiveSearchRow } from '../components/TreePane';
 import { ListPane } from '../components/ListPane';
 import { ShortcutsModal } from '../components/ShortcutsModal';
@@ -185,14 +187,30 @@ export function LibraryPage() {
   }, [corpus, nodeId, lists, query]);
   useDocumentMeta(title, description);
 
-  // Selects a browse node or user list. Stable, since TreePane's keydown effect depends on it.
-  const onSelectNode = useCallback((id: string) => {
-    setQuery('');
-    setView('list');
-    setNodeId(id);
-    setSuttaId(undefined);
-    navigate(`/browse/${encodeURIComponent(id)}`);
-  }, [navigate, setView]);
+  // Selects a browse node or user list. Stable, since TreePane's keydown effect depends on it. On a
+  // phone the list takes the tree's place, sliding in over it.
+  const onSelectNode = useCallback(
+    (id: string) => {
+      const path = `/browse/${encodeURIComponent(id)}`;
+      const select = () => {
+        setQuery('');
+        setView('list');
+        setNodeId(id);
+        setSuttaId(undefined);
+      };
+      // Nothing animates on a wider layout: the tree stays put and only the pane beside it changes.
+      if (!mobile) {
+        select();
+        navigate(path);
+        return;
+      }
+      transitionPage('push', () => {
+        flushSync(select);
+        return navigate(path, { flushSync: true });
+      });
+    },
+    [navigate, setView, mobile]
+  );
 
   // `segments` are set only where the query was answered by the sutta's text, and are where the
   // reader opens: a title or description match has nothing to jump to and opens at the top, as
@@ -223,7 +241,7 @@ export function LibraryPage() {
         segments === undefined
           ? { from, fromView: view, searchIds }
           : tagIntent({ from, fromView: view, searchIds, segments });
-      navigate(`/read/${encodeURIComponent(id)}`, { state });
+      transitionPage('fade', () => navigate(`/read/${encodeURIComponent(id)}`, { state, flushSync: true }));
     },
     [nodeId, view, query, corpus, hits, navigate]
   );
@@ -231,9 +249,12 @@ export function LibraryPage() {
   const showTreePane = !mobile || view === 'tree';
   const showListPane = !mobile || view === 'list';
 
+  // Takes a phone from the sutta list back to the tree, sliding the list away.
+  const backToTree = useCallback(() => transitionPage('pop', () => flushSync(() => setView('tree'))), [setView]);
+
   // Android's back button: close the shortcuts modal, else step the mobile sutta list back to the
   // collection tree. A no-op on web and iOS. (TreePane registers its own for an open search.)
-  useBackHandler(mobile && view === 'list', () => setView('tree'));
+  useBackHandler(mobile && view === 'list', backToTree);
   useBackHandler(shortcutsOpen, () => setShortcutsOpen(false));
 
   // Page-level shortcuts: the help modal and the theme toggle. Arrow-key nav over search hits
@@ -329,7 +350,7 @@ export function LibraryPage() {
           activeId={activeRow?.kind === 'sutta' ? activeRow.id : undefined}
           restoreHitId={restoreHitId}
           activeListId={activeRow?.kind === 'list' ? activeRow.id : undefined}
-          onBack={() => setView('tree')}
+          onBack={backToTree}
           onOpen={onOpen}
           visible={showListPane}
         />

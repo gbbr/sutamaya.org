@@ -17,6 +17,7 @@ import { statusOf } from '../lib/retry';
 import { isIosBrowserTab } from '../lib/localAccount';
 import { isNativeApp } from '../lib/platform';
 import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
+import { transitionPage } from '../lib/motion';
 import {
   cachedCorpusVersions,
   estimateOfflineStatus,
@@ -234,8 +235,12 @@ export function SettingsPage() {
   const location = useLocation();
   const navigate = useNavigate();
   const { mobile } = useLayout();
-  // Leaves Settings for wherever the reader was, via App.tsx's RestoreLastLocation.
-  const backToLastLocation = useCallback(() => navigate('/'), [navigate]);
+  // Leaves Settings for wherever the reader was, via App.tsx's RestoreLastLocation, sliding the
+  // page off the way it came in.
+  const backToLastLocation = useCallback(
+    () => transitionPage('pop', () => navigate('/', { flushSync: true })),
+    [navigate]
+  );
 
   const { user, logout, deleteAccount, forgetAccount, loading, authError } = useAuth();
   const { uiScale, theme, setUiScale, setTheme } = useUiPrefs();
@@ -557,7 +562,7 @@ export function SettingsPage() {
                           setSigningOutAs(null);
                           throw err;
                         }
-                        navigate('/');
+                        backToLastLocation();
                       }}
                     >
                       {/* Nudged down a pixel, to the label's optical centre. */}
@@ -857,7 +862,10 @@ export function SettingsPage() {
 
         {/* The footer's two occasional links, Help and Report an issue. */}
         <div className="flex items-center justify-center gap-2.5 font-sans text-ui-sm text-ink-4 mt-6">
-          <button className="underline decoration-ink/25 underline-offset-2" onClick={() => navigate('/help')}>
+          <button
+            className="underline decoration-ink/25 underline-offset-2"
+            onClick={() => transitionPage('push', () => navigate('/help', { flushSync: true }))}
+          >
             Help
           </button>
           <span aria-hidden className="text-ink-5">

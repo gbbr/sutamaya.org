@@ -8,6 +8,7 @@ import { localUserId, resetLocalUserId } from '../lib/localAccount';
 import { deleteMirror } from '../lib/mirrorDb';
 import { API_BASE, isNativeApp } from '../lib/platform';
 import { clearNativeToken, hydrateNativeToken, setNativeToken } from '../lib/nativeAuth';
+import { transitionPage } from '../lib/motion';
 import type { User } from '../lib/types';
 
 // Delay before retrying a transient session check, held above the Worker's 60s rate-limit period.
@@ -142,7 +143,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // for the OAuth round trip to come back to. Captured here, before the URL becomes /settings.
   const promptGoogleSignIn = useCallback(() => {
     const returnTo = window.location.pathname + window.location.search;
-    navigate('/settings', { state: { scrollTo: 'auth', returnTo } });
+    transitionPage('push', () => navigate('/settings', { state: { scrollTo: 'auth', returnTo }, flushSync: true }));
   }, [navigate]);
 
   // Turns a `sutamaya://auth` return into a session. The token it carries is valid whenever it
