@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { ArrowUpDown, ChevronDown, ChevronLeft, GripVertical, Info, List, ListPlus } from 'lucide-react';
+import { ArrowUpDown, ChevronDown, GripVertical, Info, List, ListPlus } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -11,6 +11,7 @@ import { SEARCH_CAP_NOTE, SEARCH_RESULTS_CAP, type ListHit, type SearchHit } fro
 import { searchScopeNote, type TextSearchStatus } from '../lib/search/text';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
+import { BackButton } from './BackButton';
 import { MatchedText } from './MatchedText';
 import { SearchListHits } from './SearchListHits';
 import { TextSearchProgress } from './TextSearchProgress';
@@ -350,23 +351,15 @@ export function ListPane({
 
   return (
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
-      {/* On a phone the header starts 10px below the safe-area line, the same line as TreePane's,
-          which it takes the place of when a collection opens. */}
+      {/* On a phone the header starts a little above the app's top line (lib/layout.ts), which the
+          other screens start on: this one opens on a round button rather than a large title, and
+          the circle's own height already reads as air. The same floor, so a device with a notch
+          lands on TreePane's line, which this header takes the place of. */}
       <header
         className="flex-none flex items-center gap-3.5 px-6 pt-5 pb-4 border-b border-ink/10"
-        style={{ paddingTop: mobile ? 'calc(10px + var(--safe-top))' : 'calc(1.25rem + var(--safe-top))' }}
+        style={{ paddingTop: mobile ? 'max(12px, calc(10px + var(--safe-top)))' : 'calc(1.25rem + var(--safe-top))' }}
       >
-        {mobile && (
-          // The same round icon button as the reorder toggle on the right. Its `after`
-          // pseudo-element pads the tap target to ~44px without growing the circle.
-          <button
-            className="relative flex-none w-[34px] h-[34px] rounded-full flex items-center justify-center border border-ink/[.12] bg-chip/40 text-ink-3 hover:text-ink active:bg-ink/[.08] after:content-[''] after:absolute after:-inset-[5px]"
-            aria-label="Back"
-            onClick={onBack}
-          >
-            <ChevronLeft size={23} strokeWidth={2} />
-          </button>
-        )}
+        {mobile && <BackButton onClick={onBack} />}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2.5 min-w-0">
             {currentList && <List size={17} strokeWidth={2} className="flex-none text-ink" />}

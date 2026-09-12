@@ -25,6 +25,7 @@ import { searchNoMatches, type TextSearchStatus } from '../lib/search/text';
 import { beginTextSearchLoad } from '../lib/search/textClient';
 import { ancestorsOfList, flattenListTree, suttaRowMeta } from '../lib/lists';
 import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
+import { MOBILE_TOP_INSET } from '../lib/layout';
 import { derivePaneViewSync } from '../lib/paneView';
 import { transitionPage } from '../lib/motion';
 import { TREE_VIEW_KEY, TREE_EXPANDED_KEY } from '../lib/storageKeys';
@@ -599,12 +600,12 @@ export function TreePane({
     >
       {/* No bottom padding while the tabs are up, their underline having to land on this border
           for the two to read as one edge; without them the padding comes back, or the search box
-          sits on the rule. On a phone the header starts 10px below the safe-area line, a little
-          lower than a native top bar, which starts on it: the wordmark is sized as a large title
+          sits on the rule. On a phone the header starts on the app's own top line
+          (lib/layout.ts), lower than a native top bar: the wordmark is sized as a large title
           rather than a bar's, and wants the air. */}
       <header
         className={`flex-none px-[22px] pt-5 border-b border-ink/10 ${searching ? 'pb-4' : ''}`}
-        style={{ paddingTop: mobile ? 'calc(10px + var(--safe-top))' : 'calc(1.25rem + var(--safe-top))' }}
+        style={{ paddingTop: mobile ? MOBILE_TOP_INSET : 'calc(1.25rem + var(--safe-top))' }}
       >
         {/* The wordmark and the destinations away from the two trees: help, search, the account.
             The Library/My lists switch gets its own row below rather than joining them, being the

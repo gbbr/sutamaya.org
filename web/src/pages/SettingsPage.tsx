@@ -1,18 +1,20 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
-import { AlertTriangle, ArrowLeft, Check, CloudOff, Download, Info, Loader2, LogOut, Minus, Plus, RefreshCw, Trash2 } from 'lucide-react';
+import { AlertTriangle, Check, CloudOff, Download, Info, Loader2, LogOut, Minus, Plus, RefreshCw, Trash2 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData, type SyncStatus } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
+import { BackButton } from '../components/BackButton';
 import { GoogleSignInButton } from '../components/GoogleSignInButton';
 import { EmailCodeSignIn } from '../components/EmailCodeSignIn';
 import { dataApi } from '../lib/api';
 import { shareUserDataExport } from '../lib/exportData';
 import { flatSuttaOrder } from '../lib/corpus';
 import { isTypingTarget } from '../lib/shortcuts';
+import { MOBILE_TOP_INSET } from '../lib/layout';
 import { statusOf } from '../lib/retry';
 import { isIosBrowserTab } from '../lib/localAccount';
 import { isNativeApp } from '../lib/platform';
@@ -463,22 +465,21 @@ export function SettingsPage() {
   }, [backToLastLocation]);
 
   // Block layout with margin-auto centring rather than flex, which has scrollHeight bugs under
-  // overflow:auto on some WebView builds. On a phone the page starts 10px below the safe-area
-  // line, level with the library's header.
+  // overflow:auto on some WebView builds. On a phone the page starts on the app's own top line
+  // (lib/layout.ts), level with the library's header.
   return (
     <div
       data-component="SettingsPage"
       className="sc h-full bg-paper px-5 pt-10"
-      style={{ paddingTop: mobile ? 'calc(10px + var(--safe-top))' : 'calc(2.5rem + var(--safe-top))' }}
+      style={{ paddingTop: mobile ? MOBILE_TOP_INSET : 'calc(2.5rem + var(--safe-top))' }}
     >
       <div className="w-full max-w-[540px] pb-10 mx-auto">
         {/* Back to wherever the reader was, via '/' rather than browser history, which a relaunch
             or a hard refresh onto /settings would leave empty. */}
-        <button className="flex items-center gap-1.5 font-sans text-ui-base text-ink-4 mb-5" onClick={backToLastLocation}>
-          <ArrowLeft size={17} strokeWidth={1.75} />
-          Back
-        </button>
-        <div className="text-ui-3xl font-semibold tracking-[-.01em] mb-5">Settings</div>
+        <div className="flex items-center gap-3.5 mb-5">
+          <BackButton onClick={backToLastLocation} />
+          <div className="min-w-0 text-ui-3xl font-semibold tracking-[-.01em]">Settings</div>
+        </div>
 
         {/* The Account section: sign-in when signed out, sync state with Export and Sign out when
             signed in. A remembered account (lib/lastUser.ts) is shown at once, the session check
