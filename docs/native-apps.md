@@ -99,6 +99,16 @@ npm run devices                          # every simulator, emulator and device,
   names another Worker, such as a local one. Whichever it calls needs the current auth code, or
   native sign-in returns to the website.
 
+## Icons
+
+Each app's icon is the artwork the web app already shows on that platform's home screen: iOS takes
+the diagonal leaf of the web app's `apple-touch-icon`, Android the upright leaf of its manifest
+icons, with the maskable one as the adaptive icon's foreground. Both are generated from
+`web/public/icons/`, never drawn by hand; `scripts/make-native-assets.mjs` says how.
+
+The diagonal leaf exists only at home-screen size, so the large master iOS asks for is an upscale:
+sharp on the device, soft on an App Store listing.
+
 ## Rules that bite
 
 - **A Capacitor plugin used at startup is imported statically**, never with `await import()`, which
@@ -114,9 +124,9 @@ npm run devices                          # every simulator, emulator and device,
 ## Not done yet
 
 - **Store submission:** developer accounts, signing, listings, privacy questionnaires, screenshots,
-  a reviewer account. Budget for one Apple rejection under guideline 4.2; the app already reads
-  offline from launch and signs in through the system browser. Sign in with Apple only if a reviewer
-  asks — the emailed code already meets guideline 4.8.
+  a reviewer account, the iOS icon at full resolution. Budget for one Apple rejection under
+  guideline 4.2; the app already reads offline from launch and signs in through the system browser.
+  Sign in with Apple only if a reviewer asks — the emailed code already meets guideline 4.8.
 - **Verified links in production:** add the Play signing certificate to `worker/src/wellKnown.js`
   and check App Links on a device; set `APPLE_TEAM_ID` and add the Associated Domains entitlement
   for iOS. The Google return can then use a verified link instead of `sutamaya://auth`.

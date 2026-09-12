@@ -27,8 +27,14 @@ const GROUND = '#171513';
 const src = (name) => resolve(icons, name);
 const dst = (name) => resolve(out, name);
 
-// Full-bleed icon (iOS, Android legacy) — the production mark upscaled, opaque.
+// Full-bleed icon (Android legacy) — the production mark upscaled, opaque.
 await sharp(src('icon-512-v2.png')).resize(1024, 1024, { fit: 'cover' }).png().toFile(dst('icon-only.png'));
+
+// iOS icon — the diagonal leaf an iOS home screen already shows for the web app (apple-touch-icon),
+// which @capacitor/assets uses in place of icon-only on iOS. The artwork exists only at the home
+// screen's 180px, so this master is an upscale: sharp on the device, soft on an App Store listing.
+mkdirSync(dst('ios'), { recursive: true });
+await sharp(src('apple-touch-icon.png')).resize(1024, 1024, { fit: 'cover' }).png().toFile(dst('ios/icon.png'));
 
 // Android adaptive foreground — the maskable variant, which already carries the safe-zone padding —
 // and a flat background in the shell's dark ground.
@@ -43,4 +49,4 @@ const splash = await sharp({ create: { width: 2732, height: 2732, channels: 3, b
 await sharp(splash).toFile(dst('splash.png'));
 await sharp(splash).toFile(dst('splash-dark.png'));
 
-console.log('wrote web/assets/{icon-only,icon-foreground,icon-background,splash,splash-dark}.png');
+console.log('wrote web/assets/{icon-only,icon-foreground,icon-background,splash,splash-dark,ios/icon}.png');
