@@ -90,8 +90,11 @@ the app, in the Reader and the Library alike. In a sutta that already has a tab,
 place and puts the reading back down into it — Close leaves for the same place under an icon that
 promises the tab goes with it. The bar behaves like browser tabs:
 
-- A tab remembers where its sutta was left, and opening it goes back there. Every other way into a
-  sutta opens where it always did.
+- A tab remembers where its sutta was left, and that line is where the sutta opens however the
+  reader reaches it — the bar, a Library row, a link, a Prev/Next step. What outranks it is a line
+  the route names itself, a search hit's passage, and coming back to a reading rather than opening
+  one: a refresh, a relaunch or Back keeps the place this device left, the tab's line only moving
+  as a reading is left.
 - Only the reader changes the set: setting a sutta aside adds a tab, and the tab's ✕ removes it.
   Closing the Reader, stepping to the next sutta and switching tabs leave it as it is, and reading a
   sutta never gives it a tab — that would make it the Visited list.

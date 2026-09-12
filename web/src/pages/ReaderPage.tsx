@@ -128,25 +128,14 @@ export function ReaderPage() {
   // would fire again on every later one and leave a new jump no way in. consumeIntent hands a
   // navId back a single time, which is what keeps a same-tab refresh from jumping twice; a
   // Prev/Next step carries no intent at all and so clears this.
-  const arrivalState = location?.state as
-    | ({ segments?: [number, number]; putAsideKey?: string } & RouteIntent)
-    | null
-    | undefined;
-  const arrivalRef = useRef<{ navId?: string; segments?: [number, number]; putAsideKey?: string }>({});
+  const arrivalState = location?.state as ({ segments?: [number, number] } & RouteIntent) | null | undefined;
+  const arrivalRef = useRef<{ navId?: string; segments?: [number, number] }>({});
   if (arrivalRef.current.navId !== arrivalState?.navId) {
-    // One consumption for both, the two riding on the same navigation: an arrival is either a
-    // search hit's snippet or a put-aside sutta resuming, never both.
     const consumed = consumeIntent(arrivalState, READER_INTENT_KEY);
-    arrivalRef.current = {
-      navId: arrivalState?.navId,
-      segments: consumed?.segments,
-      putAsideKey: consumed?.putAsideKey,
-    };
+    arrivalRef.current = { navId: arrivalState?.navId, segments: consumed?.segments };
   }
   const searchSegments = arrivalRef.current.segments;
-  // The segment key this sutta was put aside at, where the bar is what opened it.
-  const putAsideKey = arrivalRef.current.putAsideKey;
-  const { from, fromView, searchIds, navigateToSutta, closeToOrigin, leaveReader } =
+  const { from, searchIds, navigateToSutta, closeToOrigin, leaveReader } =
     useReaderOrigin(readerLocationState);
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
   const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
@@ -165,29 +154,40 @@ export function ReaderPage() {
   const tapRef = useRef<{ x: number; y: number } | null>(null);
 
   const sutta = corpus && suttaId ? corpus.suttas[suttaId] : undefined;
+  // The line this sutta's tab remembers, where the set holds one for it.
+  const tabLine = putAside.find((e) => e.suttaId === suttaId)?.key;
   // Where this sutta opens, sampled once per sutta id: 'stored' on a return — back or forward, a
   // refresh, a relaunch (lib/entryKind.ts) — 'top' otherwise, and no restore at all when the route
   // names an inner sutta to scroll to.
-  const restoreRef = useRef<{ id?: string; restore: ScrollRestore; skipRestore: boolean; resumeKey?: string }>({
+  const restoreRef = useRef<{ id?: string; restore: ScrollRestore; skipRestore: boolean; resumes: boolean }>({
     restore: 'stored',
     skipRestore: false,
+    resumes: false,
   });
   if (restoreRef.current.id !== suttaId) {
-    // The line a set-aside sutta resumes at, named by the bar that opened it and by nothing else.
-    // A sutta reached any other way — a Library row, a link, a search hit — opens where that way in
-    // has always opened it, even while the set holds a tab for it: a route that lands somewhere
-    // part way down, at a line that moves each time the reader leaves, reads as a lost place.
-    const resumeKey = putAsideKey;
+    const restore = enteredByReturn(navigationType, location.state) ? 'stored' : 'top';
+    // Whether this sutta opens at its tab's line. A set-aside sutta is a reading the reader means
+    // to carry on, so every way into one resumes it — the bar, a Library row, a link, a Prev/Next
+    // step. What outranks the tab is a route naming a line of its own, and a return, which is the
+    // reader asking for the place this device left them rather than for the tab's line: that one
+    // moves only as they leave a reading, so a refresh would hand back an older place than the one
+    // on screen. The cost is a cold-opened link to a set-aside sutta this device has never held a
+    // place for, which opens at the top.
+    const resumes = restore === 'top' && !requestedSubUid && searchSegments === undefined;
     restoreRef.current = {
       id: suttaId,
-      restore: enteredByReturn(navigationType, location.state) ? 'stored' : 'top',
-      // A resumed sutta has its own line to land on, which is the position the reader was shown in
-      // the bar — the local scroll memory may be older, or from another device's reading.
-      skipRestore: !!requestedSubUid || searchSegments !== undefined || resumeKey !== undefined,
-      resumeKey,
+      restore,
+      // An arrival with a line of its own to land on leaves the pane's restore out of it.
+      skipRestore: !!requestedSubUid || searchSegments !== undefined || (resumes && tabLine !== undefined),
+      resumes,
     };
   }
-  const resumeKey = restoreRef.current.resumeKey;
+  const resumeKey = restoreRef.current.resumes ? tabLine : undefined;
+  // The resume target as the arrival left it, read by the effect below rather than depended on: a
+  // set that moves under an open reading — the reader's own minimise, or a sync pulling in another
+  // device's — leaves what is on screen where it is.
+  const resumeKeyRef = useRef(resumeKey);
+  resumeKeyRef.current = resumeKey;
   const {
     segments,
     error: textError,
@@ -319,17 +319,18 @@ export function ReaderPage() {
   // scroll memory makes: the breadcrumb above the reading grows a row once the lists land, and a
   // line measured to the top edge before that ends up a row's worth off.
   useEffect(() => {
-    if (resumeKey === undefined || !segments || !userDataReady) return;
-    if (resumeKey === READING_TOP) {
+    const key = resumeKeyRef.current;
+    if (key === undefined || !segments || !userDataReady) return;
+    if (key === READING_TOP) {
       requestAnimationFrame(() => {
         if (scrollRef.current) scrollRef.current.scrollTop = 0;
       });
       return;
     }
-    const at = segmentIndex(segments).get(resumeKey);
+    const at = segmentIndex(segments).get(key);
     if (at === undefined) return;
     requestAnimationFrame(() => scrollToSegment(at, 'start', { animate: false }));
-  }, [resumeKey, segments, userDataReady, scrollToSegment, scrollRef]);
+  }, [suttaId, segments, userDataReady, scrollToSegment, scrollRef]);
 
   // The reading as the set would remember it, sampled at the moment it is asked for rather than
   // tracked — the scroll position is only ever wanted at the instant of a minimise or a swap.
@@ -355,13 +356,12 @@ export function ReaderPage() {
     if (entry) trackPutAside(entry);
   }, [currentEntry, trackPutAside]);
 
-  // Opens one of the set in place, at the line it was left on. The origin travels with it, so
-  // closing still returns wherever this run of reading began.
+  // Opens one of the set in place. It lands on the tab's own line, as every way into a set-aside
+  // sutta does (restoreRef above). The origin travels with it, so closing still returns wherever
+  // this run of reading began.
   function resumePutAside(entry: PutAsideEntry) {
     keepPlace();
-    navigate(`/read/${encodeURIComponent(entry.suttaId)}`, {
-      state: tagIntent({ from, fromView, searchIds, putAsideKey: entry.key }),
-    });
+    navigateToSutta(entry.suttaId);
   }
 
   // Sets the sutta aside and leaves, playing the reading down into the bar on the way out — what

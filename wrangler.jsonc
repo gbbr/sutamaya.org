@@ -189,8 +189,8 @@
         "WEB_ORIGIN": "https://app.staging.sutamaya.org",
         "GOOGLE_CLIENT_ID": "45956701911-0a93js1du42ia6vtno0n4bh36crkn5f6.apps.googleusercontent.com",
         "MAIL_FROM": "no-reply@sutamaya.org",
-        "OTA_VERSION": "0.1.0-13114671",
-        "OTA_CHECKSUM": "d1ea1cd415769f6b1d220938fbbc4c5856439bb8164343838861b4a5ece6a629",
+        "OTA_VERSION": "0.1.0-c0c60520",
+        "OTA_CHECKSUM": "0413c8b2f45b2b59a03b6c0abe22306da336d08c0f005b7e4003ee6ec20d770d",
         "OTA_MIN_NATIVE": "1"
       }
     }

@@ -220,9 +220,8 @@ export function LibraryPage() {
   // `segments` are set only where the query was answered by the sutta's text, and are where the
   // reader opens: a title or description match has nothing to jump to and opens at the top, as
   // always.
-  // `putAsideKey` is the line a set-aside sutta resumes at, for an open from the put-aside bar.
   const onOpen = useCallback(
-    (id: string, segments?: [number, number], putAsideKey?: string) => {
+    (id: string, segments?: [number, number]) => {
       // The node the reader returns to on close: the one being browsed, which a search leaves
       // untouched, so clearing the search hands the tree and the list back the place they were
       // left. A hit's own node stands in only where nothing was selected to return to.
@@ -242,12 +241,11 @@ export function LibraryPage() {
         // storage unavailable — ignore
       }
       // Tagged as a one-shot intent only when there is somewhere to jump to — a search hit's
-      // passage, or a set-aside sutta's own line — so an ordinary open carries the plain origin it
-      // always did.
+      // passage — so an ordinary open carries the plain origin it always did.
       const state =
-        segments === undefined && putAsideKey === undefined
+        segments === undefined
           ? { from, fromView: view, searchIds }
-          : tagIntent({ from, fromView: view, searchIds, segments, putAsideKey });
+          : tagIntent({ from, fromView: view, searchIds, segments });
       transitionPage('fade', () => navigate(`/read/${encodeURIComponent(id)}`, { state, flushSync: true }));
     },
     [nodeId, view, query, corpus, hits, navigate]
@@ -269,7 +267,7 @@ export function LibraryPage() {
   const openPutAsideSlot = useCallback(
     (slot: number) => {
       const entry = putAside[slot - 1];
-      if (entry) onOpen(entry.suttaId, undefined, entry.key);
+      if (entry) onOpen(entry.suttaId);
     },
     [putAside, onOpen]
   );
@@ -392,7 +390,7 @@ export function LibraryPage() {
           Library too. */}
       <PutAsideBar
         theme={SHELL_THEME}
-        onOpen={(entry) => onOpen(entry.suttaId, undefined, entry.key)}
+        onOpen={(entry) => onOpen(entry.suttaId)}
         sheet={putAsideSheet}
         onSheet={setPutAsideSheet}
       />
