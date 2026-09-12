@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router';
-import { ArrowLeft, ArrowUp, ExternalLink, Lightbulb, Mail } from 'lucide-react';
+import { ArrowUp, ExternalLink, Lightbulb, Mail } from 'lucide-react';
 import { useLayout } from '../context/LayoutContext';
+import { BackButton } from '../components/BackButton';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { isTypingTarget } from '../lib/shortcuts';
+import { MOBILE_TOP_INSET } from '../lib/layout';
 import { transitionPage } from '../lib/motion';
 import dictionaryShot from '../assets/help/dictionary-mobile.webp';
 import libraryShot from '../assets/help/library-mobile.webp';
@@ -517,20 +519,22 @@ export function HelpPage() {
     return () => window.removeEventListener('keydown', onKey);
   }, [back]);
 
-  // On a phone the page starts 10px below the safe-area line, level with the library's header.
+  // On a phone the page starts on the app's own top line (lib/layout.ts), level with the
+  // library's header.
   return (
     <div
       ref={scrollRef}
       data-component="HelpPage"
       className="sc h-full bg-paper px-5 pt-10"
-      style={{ paddingTop: mobile ? 'calc(10px + var(--safe-top))' : 'calc(2.5rem + var(--safe-top))' }}
+      style={{ paddingTop: mobile ? MOBILE_TOP_INSET : 'calc(2.5rem + var(--safe-top))' }}
     >
       <div className="w-full max-w-[640px] pb-10 mx-auto">
-        <button className="flex items-center gap-1.5 font-sans text-ui-base text-ink-4 mb-5" onClick={back}>
-          <ArrowLeft size={17} strokeWidth={1.75} />
-          Back
-        </button>
-        <div className="text-ui-3xl font-semibold tracking-[-.01em] mb-2">How to use this app</div>
+        {/* The back chip and the page's title on one line, the header shape every other screen
+            has: the same control in the same place, level with the library's own header. */}
+        <div className="flex items-center gap-3.5 mb-2">
+          <BackButton onClick={back} />
+          <div className="min-w-0 text-ui-3xl font-semibold tracking-[-.01em]">How to use this app</div>
+        </div>
         <p className="font-serif text-ui-lg leading-[1.55] text-ink-2 mb-4">
           A tour of the app in pictures. Nothing here needs an account, and nothing you've already visited needs a connection.
           For complete offline access, download all content from the Settings page.
