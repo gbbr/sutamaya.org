@@ -71,6 +71,11 @@ const userDataDefaults: ReturnType<typeof useUserData> = {
   setHighlightSpan: async () => {},
   anchorHighlights: () => {},
   markVisited: () => {},
+  putAside: [],
+  putSuttaAside: () => {},
+  trackPutAside: () => {},
+  dropPutAside: () => {},
+  clearPutAside: () => {},
 };
 
 const routes = [{ path: '/read/:suttaId', element: <ReaderPage /> }];

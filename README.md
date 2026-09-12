@@ -59,7 +59,8 @@ CLAUDE.md        working rules for Claude Code
 
 Two screens. The **Library** browses the five collections, holds the reader's own lists, and
 searches. The **Reader** shows a sutta in English with each line's Pali a tap away, a dictionary
-on every Pali word, and the reader's highlights, notes and lists.
+on every Pali word, and the reader's highlights, notes and lists. Suttas set aside wait as tabs in
+a bar along the foot of both.
 
 It is a single-page React app, routed with React Router. A service worker caches the app and
 whatever the reader opens, so both work offline; Settings can download the whole canon.
@@ -76,9 +77,9 @@ More: [docs/search.md](docs/search.md).
 
 ## Offline sync
 
-Lists, notes, highlights and reading history are saved on the device first and synced afterwards,
-so nothing needs a network or an account. The last edit wins, per item. Signing in moves whatever
-was made signed out onto the account.
+Lists, notes, highlights, reading history and the suttas set aside are saved on the device first
+and synced afterwards, so nothing needs a network or an account. The last edit wins, per item.
+Signing in moves whatever was made signed out onto the account.
 
 More: [docs/offline-sync.md](docs/offline-sync.md).
 

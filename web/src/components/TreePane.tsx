@@ -499,8 +499,8 @@ export function TreePane({
       if (shortcutsOpen) return;
       const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
       // The arrows and Enter work while the search input has focus, the normal state while results
-      // are showing, but not while any other field does. '/' and 'x' below stand down for all of
-      // them, being characters that can be typed.
+      // are showing, but not while any other field does — which is the narrowing this adds on top
+      // of their `whileTyping`.
       const isSearchInput = e.target === searchInput.current;
       if (searching && navRows.length > 0 && !(tag === 'textarea' || (tag === 'input' && !isSearchInput))) {
         if (isShortcut(e, SHORTCUTS.librarySelectMove)) {
@@ -514,7 +514,7 @@ export function TreePane({
           return;
         }
       }
-      if (tag === 'input' || tag === 'textarea') return;
+      // '/' and 'x' stand down in every field, which isShortcut() sees to.
       if (isShortcut(e, SHORTCUTS.librarySearch)) {
         e.preventDefault();
         if (searchOpen) {

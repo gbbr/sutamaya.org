@@ -66,6 +66,11 @@ const userDataDefaults: ReturnType<typeof useUserData> = {
   setHighlightSpan: async () => {},
   anchorHighlights: () => {},
   markVisited: () => {},
+  putAside: [],
+  putSuttaAside: () => {},
+  trackPutAside: () => {},
+  dropPutAside: () => {},
+  clearPutAside: () => {},
 };
 
 describe('ReaderPage sutta header chips', () => {

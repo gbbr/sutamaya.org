@@ -81,6 +81,11 @@ function mockUserData(overrides: Partial<ReturnType<typeof useUserData>> = {}): 
     setHighlightSpan: async () => {},
     anchorHighlights: () => {},
     markVisited: () => {},
+    putAside: [],
+    putSuttaAside: () => {},
+    trackPutAside: () => {},
+    dropPutAside: () => {},
+    clearPutAside: () => {},
     ...overrides,
   };
 }

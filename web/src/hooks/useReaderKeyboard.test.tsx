@@ -9,6 +9,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
   const closeDict = vi.fn();
   const setPanel = vi.fn();
   const closeReader = vi.fn();
+  const closePutAside = vi.fn();
   const step = vi.fn();
   const goToAdjacentWord = vi.fn();
   const setTab = vi.fn();
@@ -16,6 +17,8 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
   const toggleShowNotes = vi.fn();
   const toggleShowHighlights = vi.fn();
   const cycleTheme = vi.fn();
+  const setAside = vi.fn();
+  const openPutAsideSlot = vi.fn();
 
   const opts: Parameters<typeof useReaderKeyboard>[0] = {
     shortcutsOpen: false,
@@ -27,6 +30,10 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     dict: null,
     closeDict,
     panel: false,
+    putAsideOpen: false,
+    closePutAside,
+    setAside,
+    openPutAsideSlot,
     setPanel,
     closeReader,
     step,
@@ -56,6 +63,9 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     toggleShowNotes,
     toggleShowHighlights,
     cycleTheme,
+    closePutAside,
+    setAside,
+    openPutAsideSlot,
   };
 }
 
@@ -113,7 +123,22 @@ describe('useReaderKeyboard', () => {
       expect(closeReader).not.toHaveBeenCalled();
     });
 
-    it('closes the dictionary dock next, when no popup is open', () => {
+    it('closes the put-aside sheet before anything else, the reader included', () => {
+      const { closePutAside, closePop, closeDict, setPanel, closeReader } = setup({
+        putAsideOpen: true,
+        pop: { on: true },
+        dict: { word: 'x' },
+        panel: true,
+      });
+      press('Escape');
+      expect(closePutAside).toHaveBeenCalled();
+      expect(closePop).not.toHaveBeenCalled();
+      expect(closeDict).not.toHaveBeenCalled();
+      expect(setPanel).not.toHaveBeenCalled();
+      expect(closeReader).not.toHaveBeenCalled();
+    });
+
+    it('closes the dictionary dock before the panel', () => {
       const { closeDict, setPanel, closeReader } = setup({ pop: null, dict: { word: 'x' }, panel: true });
       press('Escape');
       expect(closeDict).toHaveBeenCalled();
@@ -163,6 +188,27 @@ describe('useReaderKeyboard', () => {
       const { setPanel } = setup();
       press('h', {}, textarea);
       expect(setPanel).not.toHaveBeenCalled();
+    });
+
+    it('does not set aside or switch tabs while a field has focus', () => {
+      const input = document.createElement('input');
+      document.body.appendChild(input);
+      const { setAside, openPutAsideSlot } = setup();
+      press('a', { shiftKey: true }, input);
+      press('2', {}, input);
+      expect(setAside).not.toHaveBeenCalled();
+      expect(openPutAsideSlot).not.toHaveBeenCalled();
+    });
+
+    it('does not fire in a contenteditable either', () => {
+      const box = document.createElement('div');
+      // The attribute rather than the property: jsdom implements neither `isContentEditable` nor
+      // the `contentEditable` setter, and markup is what a real one carries anyway.
+      box.setAttribute('contenteditable', 'true');
+      document.body.appendChild(box);
+      const { openPutAsideSlot } = setup();
+      press('3', {}, box);
+      expect(openPutAsideSlot).not.toHaveBeenCalled();
     });
   });
 
@@ -260,6 +306,42 @@ describe('useReaderKeyboard', () => {
       const { cycleTheme } = setup();
       press('d');
       expect(cycleTheme).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('the set-aside shortcuts', () => {
+    it('Shift+A sets the sutta aside', () => {
+      const { setAside } = setup();
+      press('A', { shiftKey: true });
+      expect(setAside).toHaveBeenCalledTimes(1);
+    });
+
+    it('plain A does nothing — this one leaves the reading, so it asks for the Shift', () => {
+      const { setAside } = setup();
+      press('a');
+      expect(setAside).not.toHaveBeenCalled();
+    });
+
+    it('1–5 open that slot of the bar, by its number', () => {
+      const { openPutAsideSlot } = setup();
+      press('1');
+      press('5');
+      expect(openPutAsideSlot).toHaveBeenNthCalledWith(1, 1);
+      expect(openPutAsideSlot).toHaveBeenNthCalledWith(2, 5);
+    });
+
+    it('leaves 6 and 0 alone — the set holds five', () => {
+      const { openPutAsideSlot } = setup();
+      press('6');
+      press('0');
+      expect(openPutAsideSlot).not.toHaveBeenCalled();
+    });
+
+    it('leaves Cmd+1 to the browser, whose own tab it is', () => {
+      const { openPutAsideSlot } = setup();
+      press('1', { metaKey: true });
+      press('1', { ctrlKey: true });
+      expect(openPutAsideSlot).not.toHaveBeenCalled();
     });
   });
 

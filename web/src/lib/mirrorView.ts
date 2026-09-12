@@ -17,8 +17,10 @@ import type { Highlight, HighlightsMap, ListDef, Membership, NotesMap, VisitedMa
 // highlighted offline appears under "Highlights" at once.
 
 // What the UI renders: the wire's `UserData`, with each note reduced to its text, the mtime having
-// been used here to order the Notes auto-list.
-export interface DerivedUserData extends Omit<UserData, 'notes'> {
+// been used here to order the Notes auto-list. The put-aside set is not part of it — that record
+// is stored in the order the reader sees and needs no derivation, so UserDataContext reads it
+// straight off the mirror.
+export interface DerivedUserData extends Omit<UserData, 'notes' | 'putAside'> {
   notes: NotesMap;
 }
 

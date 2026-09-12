@@ -60,9 +60,13 @@ its version. How the data endpoints are used is [offline-sync.md](offline-sync.m
 | `notes` | one note per sutta |
 | `highlights` | one row per highlight: a span between two points in the text |
 | `visited` | when each sutta was last opened |
+| `put_aside` | the suttas set aside: one row per account, holding the whole set |
 
 Every query on the reader's data is scoped with `AND user_id = ?`. The tables are flat, and that
 clause is the only thing keeping one account's rows from another's.
+
+Deletes mark rows deleted rather than removing them — except in `put_aside`, where a sutta leaves
+the set by being absent from a newer one ([offline-sync.md](offline-sync.md#the-put-aside-set)).
 
 List membership and the automatic lists (Visited, Highlights, Notes) are derived when the data is
 read, never stored. The app keeps its own copy of that logic, so it can derive the same view

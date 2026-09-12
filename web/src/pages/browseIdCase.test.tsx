@@ -58,6 +58,11 @@ function mockUserData() {
     listMembers: () => [],
     reorderListItems: async () => {},
     markVisited: () => {},
+    putAside: [],
+    putSuttaAside: () => {},
+    trackPutAside: () => {},
+    dropPutAside: () => {},
+    clearPutAside: () => {},
   } as unknown as ReturnType<typeof useUserData>;
 }
 

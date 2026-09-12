@@ -84,6 +84,11 @@ const userDataDefaults = {
   setHighlightSpan: async () => {},
   anchorHighlights: () => {},
   markVisited: () => {},
+  putAside: [],
+  putSuttaAside: () => {},
+  trackPutAside: () => {},
+  dropPutAside: () => {},
+  clearPutAside: () => {},
 } as unknown as ReturnType<typeof useUserData>;
 
 // Everything is read out of TreePane: on mobile it draws the lists block and the sutta hits

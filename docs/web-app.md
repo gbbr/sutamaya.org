@@ -15,6 +15,9 @@ a setting), and a dictionary on every Pali word. The reader can highlight text i
 write a note, and file the sutta into lists. A side panel holds the sutta's highlights, its lists,
 and the display settings: theme, typeface, size and spacing. `?` lists the keyboard shortcuts.
 
+**The put-aside bar** runs along the foot of both screens whenever the reader has set suttas aside,
+like tabs ([below](#put-aside)).
+
 **Settings** holds the account — sign-in, sync status, export and deletion — the offline download
 and the app's own display settings. **Help** is a page of annotated screenshots.
 
@@ -80,6 +83,25 @@ slide their underline.
   the tree, is instant.
 - **Reduced motion turns the slides into crossfades.**
 
+## Put aside
+
+The ⤓ beside Close in the Reader sets the sutta aside: it becomes a tab in a bar along the foot of
+the app, in the Reader and the Library alike. In a sutta that already has a tab, ⤓ stands in Close's
+place and puts the reading back down into it — Close leaves for the same place under an icon that
+promises the tab goes with it. The bar behaves like browser tabs:
+
+- A tab remembers where its sutta was left, and opening it goes back there. Every other way into a
+  sutta opens where it always did.
+- Only the reader changes the set: setting a sutta aside adds a tab, and the tab's ✕ removes it.
+  Closing the Reader, stepping to the next sutta and switching tabs leave it as it is, and reading a
+  sutta never gives it a tab — that would make it the Visited list.
+- It holds five, and nothing is dropped to make room: at the cap, setting another aside opens a
+  sheet asking which tab should go.
+- On a phone the bar shows the last tab left plus a count that opens the sheet; on a desktop it lays
+  the tabs out, folding what doesn't fit into "+N". Keys `1` to `5` open them.
+
+The set syncs as one record ([offline-sync.md](offline-sync.md#the-put-aside-set)).
+
 ## Library search
 
 A search is a place, not a mode: the query is in the address, so the reader can open a result and
@@ -133,7 +155,7 @@ told when a newer corpus is out.
 |---|---|
 | `web/src/App.tsx` | the route table and the app shell |
 | `web/src/pages/` | Library, Reader, Settings, Help |
-| `web/src/components/` | `TreePane` and `ListPane` for the Library; `SegmentedText`, `DictionaryDock` and `HighlightPopup` for the Reader |
+| `web/src/components/` | `TreePane` and `ListPane` for the Library; `SegmentedText`, `DictionaryDock` and `HighlightPopup` for the Reader; `PutAsideBar` |
 | `web/src/context/` | the six providers |
 | `web/src/hooks/` | keyboard, scroll memory, dictionary lookup, pointer drags |
 | `web/src/lib/` | everything without React |

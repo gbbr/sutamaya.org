@@ -1,6 +1,7 @@
 import { API_BASE, isNativeApp } from './platform';
 import { getNativeToken, setNativeToken } from './nativeAuth';
 import type { HlSpan } from './highlights';
+import type { PutAsideEntry } from './putAside';
 import type { Highlight, ListDef, ListKind, Membership, HighlightsMap, VisitedMap, User } from './types';
 
 // How long a request may take. A backstop for a dead connection rather than a latency budget:
@@ -87,6 +88,9 @@ export interface UserData {
   notes: Record<string, { text: string; m: string }>;
   highlights: HighlightsMap;
   visited: VisitedMap;
+  // The put-aside set, one record for the whole account: its entries in the reader's own order and
+  // `m`, the mtime the next local write has to beat.
+  putAside: { entries: PutAsideEntry[]; m: string };
 }
 
 // One item of a push: a record's desired state, or an operation. Each carries the `mtime` stamped
@@ -114,7 +118,10 @@ export type PushItem =
   | { type: 'highlight'; suttaId: string; span: HlSpan; color: string | null; g: string; erase: string[]; mtime: string }
   // `visited` has no separate mtime column: visitedAt is both the value stored and the guard the
   // write is conditional on.
-  | { type: 'visited'; suttaId: string; visitedAt: string };
+  | { type: 'visited'; suttaId: string; visitedAt: string }
+  // The whole put-aside set as one record, which is what lets it drop a member without a
+  // tombstone: the newer set simply doesn't list it. Last-writer-wins over the set as a whole.
+  | { type: 'putAside'; entries: PutAsideEntry[]; mtime: string };
 
 // What the server says about one pushed item. A refusal is permanent, so `status` is there to be
 // logged and to tell a row that has simply gone (404) apart, never to be retried on.

@@ -72,6 +72,11 @@ function mockUserData(overrides: Partial<ReturnType<typeof useUserData>> = {}): 
     setHighlightSpan: vi.fn(async () => {}),
     anchorHighlights: vi.fn(),
     markVisited: vi.fn(),
+    putAside: [],
+    putSuttaAside: vi.fn(),
+    trackPutAside: vi.fn(),
+    dropPutAside: vi.fn(),
+    clearPutAside: vi.fn(),
     ...overrides,
   };
 }

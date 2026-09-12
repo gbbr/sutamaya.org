@@ -8,8 +8,8 @@ export const READER_THEMES: Record<ResolvedReaderTheme, ThemeColors> = {
   // Light's `dim` is a solid warm gray rather than an alpha of `fg`, which would composite to
   // 3.3:1 on this ground, and its `focusTint` is built from `pali` so the wash reads warm. Every
   // `paliTint` is that theme's own `pali` at 15%.
-  light: { bg: '#FAF8F3', fg: '#1B1917', dim: '#6B6259', rule: 'rgba(27,25,23,.18)', panel: '#FFFEFB', pali: '#7A5B2E', tint: 'rgba(27,25,23,.1)', paliTint: 'rgba(122,91,46,.15)', focusTint: 'rgba(122,91,46,.09)', highlightPalette: null, selection: '#EADFC6' },
-  sepia: { bg: '#F3E7D3', fg: '#3A2E1E', dim: 'rgba(58,46,30,.55)', rule: 'rgba(58,46,30,.2)', panel: '#F8EEDD', pali: '#8C6222', tint: 'rgba(58,46,30,.1)', paliTint: 'rgba(140,98,34,.15)', focusTint: 'rgba(58,46,30,.05)', highlightPalette: null, selection: 'rgba(140,98,34,.32)' },
+  light: { bg: '#FAF8F3', fg: '#1B1917', dim: '#6B6259', rule: 'rgba(27,25,23,.18)', panel: '#FFFEFB', pali: '#7A5B2E', tint: 'rgba(27,25,23,.1)', paliTint: 'rgba(122,91,46,.15)', focusTint: 'rgba(122,91,46,.09)', warning: '#DC2626', highlightPalette: null, selection: '#EADFC6' },
+  sepia: { bg: '#F3E7D3', fg: '#3A2E1E', dim: 'rgba(58,46,30,.55)', rule: 'rgba(58,46,30,.2)', panel: '#F8EEDD', pali: '#8C6222', tint: 'rgba(58,46,30,.1)', paliTint: 'rgba(140,98,34,.15)', focusTint: 'rgba(58,46,30,.05)', warning: '#B91C1C', highlightPalette: null, selection: 'rgba(140,98,34,.32)' },
   // A warm dark brown rather than a near-black, with `fg` held short of a bright cream: at 10.3:1
   // it clears WCAG AAA while keeping 18px type from blooming, which light-on-dark does.
   dark: {
@@ -22,6 +22,7 @@ export const READER_THEMES: Record<ResolvedReaderTheme, ThemeColors> = {
     tint: 'rgba(237,230,217,.09)',
     paliTint: 'rgba(201,168,111,.15)',
     focusTint: 'rgba(237,230,217,.05)',
+    warning: '#F87171',
     highlightPalette: DARK_HIGHLIGHTS,
     selection: '#4A3E28',
   },
@@ -45,6 +46,7 @@ export const SHELL_THEME: ThemeColors = {
   // Built from `--accent-text`, as `pali` is, so the wash lightens in dark mode.
   paliTint: 'rgb(var(--accent-text) / .15)',
   focusTint: 'rgb(var(--ink) / .05)',
+  warning: 'rgb(var(--danger-text))',
   highlightPalette: ['rgb(var(--hl-1))', 'rgb(var(--hl-2))', 'rgb(var(--hl-3))'],
   selection: 'rgb(var(--selection))',
 };

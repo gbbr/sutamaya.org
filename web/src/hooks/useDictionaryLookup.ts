@@ -4,6 +4,7 @@ import { lookupHeadword, peekHeadword, prefetchHeadwordShard } from '../lib/dict
 import { animateScrollBy, computeSegmentScrollOffset } from '../lib/segmentScroll';
 import { getUiScale } from '../lib/uiPrefs';
 import type { SegmentFile } from '../lib/corpus';
+import type { ScrollToSegmentOptions } from './useSuttaReading';
 
 interface DictState {
   word: string;
@@ -30,7 +31,7 @@ interface UseDictionaryLookupOptions {
   suttaId: string | undefined;
   segments: SegmentFile[] | null;
   scrollRef: RefObject<HTMLElement | null>;
-  scrollToSegment: (segIndex: number, block?: ScrollLogicalPosition, highlightId?: string) => void;
+  scrollToSegment: (segIndex: number, block?: ScrollLogicalPosition, opts?: ScrollToSegmentOptions) => void;
   setOpenSegs: (updater: (s: Record<number, boolean>) => Record<number, boolean>) => void;
 }
 

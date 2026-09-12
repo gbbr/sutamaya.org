@@ -8,7 +8,7 @@ import { emptyMirror, type MirrorState } from './mirror';
 const DB_NAME = 'sutamaya';
 // Bumped whenever MirrorState's shape changes; the upgrade wipes rather than migrates, which costs
 // a re-pull plus whatever local edits hadn't synced.
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 const STORE = 'mirrors';
 
 const memory = new Map<string, MirrorState>();

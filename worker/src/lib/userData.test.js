@@ -12,7 +12,16 @@ const empty = { listDocs: [], noteDocs: [], highlightDocs: [], visitedDocs: [] }
 
 describe('assembleUserData', () => {
   it('returns empty shapes and no auto-lists when the user has nothing', () => {
-    expect(assembleUserData(empty)).toEqual({ lists: [], membership: {}, notes: {}, highlights: {}, visited: {} });
+    expect(assembleUserData(empty)).toEqual({
+      lists: [],
+      membership: {},
+      notes: {},
+      highlights: {},
+      visited: {},
+      // An account with no put_aside row is an empty set, not an absent field: '' loses to every
+      // real mtime, so a device's own set always wins the merge against it.
+      putAside: { entries: [], m: '' },
+    });
   });
 
   it('builds lists and derives membership from each list’s items', () => {

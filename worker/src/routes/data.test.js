@@ -43,7 +43,14 @@ describe('routes/data.js (D1)', () => {
     const { cookie } = await signIn();
     const res = await api('/api/data', { cookie });
     expect(res.status).toBe(200);
-    expect(await res.json()).toEqual({ lists: [], membership: {}, notes: {}, highlights: {}, visited: {} });
+    expect(await res.json()).toEqual({
+      lists: [],
+      membership: {},
+      notes: {},
+      highlights: {},
+      visited: {},
+      putAside: { entries: [], m: '' },
+    });
   });
 
   it('synthesizes a non-persisted "Visited" auto-list from visited rows, most-recent first', async () => {

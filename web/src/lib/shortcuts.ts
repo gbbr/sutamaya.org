@@ -12,6 +12,10 @@ export interface Shortcut {
   // Requires Shift to be held. Opt-in, since isShortcut() otherwise ignores Shift entirely — set it
   // on a shortcut whose action shouldn't be one stray keypress away.
   shift?: true;
+  // Fires even while a text field has focus. Opt-in, and only for a key that means the same thing
+  // mid-edit as it does anywhere else — Escape, which is how you leave whatever you are in. Every
+  // other shortcut is a character somebody may be typing.
+  whileTyping?: true;
 }
 
 export const SHORTCUTS = {
@@ -20,13 +24,43 @@ export const SHORTCUTS = {
   // to move and Enter to open.
   librarySearch: { match: ['/'], keys: ['/'], label: 'Search the library (Esc to close)', scope: 'library' },
   libraryToggleLists: { match: ['x'], keys: ['X'], label: 'Switch Library / My Lists', scope: 'library' },
-  librarySelectMove: { match: ['ArrowUp', 'ArrowDown'], keys: ['↑', '↓'], label: 'Move through the search results', scope: 'library' },
-  librarySelectOpen: { match: ['Enter'], keys: ['Enter'], label: 'Open the highlighted search result', scope: 'library' },
+  // These two run with the search input focused, that being the normal state while results are up,
+  // and they are movement keys rather than characters anyone is typing. TreePane narrows them
+  // further to that one field.
+  librarySelectMove: {
+    match: ['ArrowUp', 'ArrowDown'],
+    keys: ['↑', '↓'],
+    label: 'Move through the search results',
+    scope: 'library',
+    whileTyping: true,
+  },
+  librarySelectOpen: {
+    match: ['Enter'],
+    keys: ['Enter'],
+    label: 'Open the highlighted search result',
+    scope: 'library',
+    whileTyping: true,
+  },
   libraryTheme: { match: ['d'], keys: ['⇧D'], label: 'Switch light / dark', scope: 'library', shift: true },
+  // The set-aside bar is on screen here as well as in the reader, so its slots answer to the same
+  // keys in both. Bare digits, since the modifier a browser puts on these is exactly the one
+  // isShortcut() refuses so that Cmd+1 stays the browser's own.
+  librarySetAsideSlot: {
+    match: ['1', '2', '3', '4', '5'],
+    keys: ['1–5'],
+    label: 'Open the 1st–5th sutta set aside',
+    scope: 'library',
+  },
   libraryHelp: { match: ['?'], keys: ['?'], label: 'Show keyboard shortcuts', scope: 'library' },
 
   // Reader (ReaderPage.tsx)
-  readerClose: { match: ['Escape'], keys: ['Esc'], label: 'Close the dictionary, panel, or the reader', scope: 'reader' },
+  readerClose: {
+    match: ['Escape'],
+    keys: ['Esc'],
+    label: 'Close the dictionary, panel, or the reader',
+    scope: 'reader',
+    whileTyping: true,
+  },
   readerSearch: { match: ['/'], keys: ['/'], label: 'Search suttas (Esc to close)', scope: 'reader' },
   // Sutta-to-sutta nav is on J/K rather than the arrows, which belong to the dictionary dock's word
   // stepping below; Shift+Arrow is the browser's own extend-selection gesture. They follow the
@@ -50,6 +84,15 @@ export const SHORTCUTS = {
   readerTheme: { match: ['t'], keys: ['T'], label: 'Open the appearance panel', scope: 'reader' },
   readerThemeCycle: { match: ['d'], keys: ['⇧D'], label: 'Light / sepia / dark', scope: 'reader', shift: true },
   readerNotesToggle: { match: ['c'], keys: ['C'], label: 'Toggle translator notes', scope: 'reader' },
+  // Shift for the same reason ⇧J/⇧K carry it: this leaves the reading, which shouldn't be one
+  // stray keypress away.
+  readerSetAside: { match: ['a'], keys: ['⇧A'], label: 'Set this sutta aside', scope: 'reader', shift: true },
+  readerSetAsideSlot: {
+    match: ['1', '2', '3', '4', '5'],
+    keys: ['1–5'],
+    label: 'Open the 1st–5th sutta set aside',
+    scope: 'reader',
+  },
   readerHelp: { match: ['?'], keys: ['?'], label: 'Show keyboard shortcuts', scope: 'reader' },
 } satisfies Record<string, Shortcut>;
 
@@ -80,20 +123,32 @@ export function pointerHintsForScope(scope: ShortcutScope): PointerHint[] {
 }
 
 // True if `e` triggers `shortcut`, matching `e.key` as-is and lowercased so a call site needn't
-// know whether the shortcut is a letter or an exact key name. A Ctrl/Cmd/Alt combo never matches,
-// so no single-key shortcut can hijack a browser chord; Shift is consulted only where a shortcut
-// asks for it, '?' being reachable only as Shift+/.
+// know whether the shortcut is a letter or an exact key name.
+//
+// Three things are refused here rather than at the call sites, so a new shortcut is safe by being
+// declared rather than by its handler remembering: a Ctrl/Cmd/Alt combo, so no single-key shortcut
+// can hijack a browser chord; a missing Shift, where the shortcut asks for one ('?' being reachable
+// only as Shift+/); and **anything typed into a text field**, since every shortcut here is a
+// character somebody may be writing into the library's search, the reader's, a note or a list's
+// name. `whileTyping` is the opt-out, and Escape is the only thing that takes it.
 export function isShortcut(
-  e: Pick<KeyboardEvent, 'key' | 'ctrlKey' | 'metaKey' | 'altKey' | 'shiftKey'>,
+  e: Pick<KeyboardEvent, 'key' | 'ctrlKey' | 'metaKey' | 'altKey' | 'shiftKey' | 'target'>,
   shortcut: Shortcut
 ): boolean {
   if (e.ctrlKey || e.metaKey || e.altKey) return false;
   if (shortcut.shift && !e.shiftKey) return false;
+  if (!shortcut.whileTyping && isTypingTarget(e)) return false;
   return shortcut.match.includes(e.key) || shortcut.match.includes(e.key.toLowerCase());
 }
 
-// True if `e` targets a text input or textarea, which is where a single-key shortcut stands down.
+// True if `e` targets somewhere text is being written, which is where a single-key shortcut stands
+// down. `contenteditable` alongside the real fields, so a rich editor added later is covered by
+// being one; read from the attribute as well as the property, jsdom implementing only the former.
 export function isTypingTarget(e: Pick<KeyboardEvent, 'target'>): boolean {
-  const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
-  return tag === 'input' || tag === 'textarea';
+  const el = e.target as HTMLElement | null;
+  const tag = el?.tagName?.toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || tag === 'select') return true;
+  if (el?.isContentEditable) return true;
+  const editable = el?.closest?.('[contenteditable]');
+  return !!editable && editable.getAttribute('contenteditable') !== 'false';
 }

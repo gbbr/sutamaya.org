@@ -24,12 +24,16 @@ dataRouter.use(async (c, next) => {
 async function buildUserData(db, userId) {
   // Tombstones never reach the client. `lists` is the exception and fetches its own, which
   // lib/listTree.js needs to cascade a deleted group's descendants out.
-  const [lists, notes, highlights, visited] = await db.batch([
+  const [lists, notes, highlights, visited, putAside] = await db.batch([
     db.prepare('SELECT * FROM lists WHERE user_id = ? ORDER BY position').bind(userId),
     db.prepare('SELECT * FROM notes WHERE user_id = ? AND deleted = 0').bind(userId),
     db.prepare('SELECT * FROM highlights WHERE user_id = ? AND deleted = 0').bind(userId),
     db.prepare('SELECT * FROM visited WHERE user_id = ?').bind(userId),
+    // No tombstone filter: the put-aside set is one row holding the whole set, so a dropped member
+    // is simply absent from `entries`.
+    db.prepare('SELECT entries, mtime FROM put_aside WHERE user_id = ?').bind(userId),
   ]);
+  const putAsideRow = putAside.results[0];
   return assembleUserData({
     // `position`, `mtime` and `deleted` feed lib/listTree.js's read-time repair and stop there.
     listDocs: lists.results.map((row) => ({
@@ -63,7 +67,21 @@ async function buildUserData(db, userId) {
       },
     })),
     visitedDocs: visited.results.map((row) => ({ id: row.sutta_id, data: { visitedAt: row.visited_at } })),
+    // Undefined for an account that has never put a sutta aside, which assembleUserData reads as
+    // the empty set. A row whose JSON won't parse is treated the same way rather than failing the
+    // whole snapshot.
+    putAsideDoc: putAsideRow ? { entries: parseEntries(putAsideRow.entries), mtime: putAsideRow.mtime } : undefined,
   });
+}
+
+// The put-aside set's stored JSON, or an empty set where it can't be read.
+function parseEntries(raw) {
+  try {
+    const parsed = JSON.parse(raw || '[]');
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
 }
 
 dataRouter.get('/', async (c) => c.json(await buildUserData(c.env.DB, c.get('userId'))));

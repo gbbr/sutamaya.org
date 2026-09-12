@@ -136,6 +136,10 @@ export interface ThemeColors {
   paliTint: string;
   // A wash for a whole block rather than a badge, more washed than `tint`.
   focusTint: string;
+  // This theme's attention colour, for a line saying something is blocked until the reader acts.
+  // Red rather than amber in every theme: sepia's own ink is amber-brown, so a warning written in
+  // it reads as ordinary text.
+  warning: string;
   // This theme's own highlight fills, index-aligned with HIGHLIGHT_COLORS, or null to paint the
   // stored colour itself. Only dark carries a palette.
   highlightPalette: readonly string[] | null;

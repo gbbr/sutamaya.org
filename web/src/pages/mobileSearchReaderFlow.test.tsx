@@ -80,6 +80,11 @@ const userDataDefaults: ReturnType<typeof useUserData> = {
   setHighlightSpan: async () => {},
   anchorHighlights: () => {},
   markVisited: () => {},
+  putAside: [],
+  putSuttaAside: () => {},
+  trackPutAside: () => {},
+  dropPutAside: () => {},
+  clearPutAside: () => {},
 };
 
 describe('mobile search -> reader -> close flow', () => {

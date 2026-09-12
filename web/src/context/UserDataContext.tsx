@@ -14,11 +14,14 @@ import {
   removeListRecord,
   renameListRecord,
   queueSiblingOrder,
+  putAsideEntries,
   setNoteRecord,
+  setPutAsideRecord,
   syncCounts,
   writeHighlightRecord,
   type MirrorState,
 } from '../lib/mirror';
+import { addPutAside, removePutAside, trackPutAside as trackInSet, type PutAsideEntry } from '../lib/putAside';
 import { deriveUserData } from '../lib/mirrorView';
 import type { SegmentFile } from '../lib/corpus';
 import type { HlSpan } from '../lib/highlights';
@@ -54,6 +57,8 @@ interface UserDataState {
   notes: NotesMap;
   highlights: HighlightsMap;
   visited: VisitedMap;
+  // The suttas set aside for later, most recently put aside first (lib/putAside.ts).
+  putAside: PutAsideEntry[];
   // Sync state for the persistent-chrome indicator — see SyncStatus above.
   syncStatus: SyncStatus;
   pendingCount: number;
@@ -73,6 +78,14 @@ interface UserDataState {
   setHighlightSpan: (suttaId: string, span: HlSpan, color: string | null) => Promise<void>;
   anchorHighlights: (suttaId: string, segments: SegmentFile[]) => void;
   markVisited: (suttaId: string) => void;
+  // Sets a sutta aside at the line given — the reader's minimise control.
+  putSuttaAside: (entry: PutAsideEntry) => void;
+  // Moves a tab to the line its sutta is now left on. Does nothing for a sutta the set doesn't
+  // hold, reading alone earning no tab.
+  trackPutAside: (entry: PutAsideEntry) => void;
+  // Drops one sutta from the set, and drops the whole set.
+  dropPutAside: (suttaId: string) => void;
+  clearPutAside: () => void;
 }
 
 const UserDataContext = createContext<UserDataState | null>(null);
@@ -84,6 +97,7 @@ const EMPTY: UserDataState = {
   notes: {},
   highlights: {},
   visited: {},
+  putAside: [],
   syncStatus: 'synced',
   pendingCount: 0,
   lastSyncedAt: null,
@@ -102,6 +116,10 @@ const EMPTY: UserDataState = {
   setHighlightSpan: async () => {},
   anchorHighlights: () => {},
   markVisited: () => {},
+  putSuttaAside: () => {},
+  trackPutAside: () => {},
+  dropPutAside: () => {},
+  clearPutAside: () => {},
 };
 
 export function UserDataProvider({ children }: { children: ReactNode }) {
@@ -272,6 +290,8 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   }, [ready, isSignedIn, userId, paused, flush]);
 
   const { lists, membership, notes, highlights, visited } = useMemo(() => deriveUserData(state), [state]);
+  // Straight off the record: the set is stored in the order the reader sees, so nothing is derived.
+  const putAside = useMemo(() => putAsideEntries(state), [state]);
 
   const { pending: pendingCount } = useMemo(() => syncCounts(state), [state]);
   // Returns what the sync indicator says. Each case explains away the ones below it, so the first
@@ -405,6 +425,44 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     [mutate]
   );
 
+  // The put-aside gestures. Each rewrites the whole set as one record (lib/putAside.ts), so
+  // dropping a member needs no tombstone and a sync costs one item however many suttas moved.
+  const putSuttaAside = useCallback(
+    (entry: PutAsideEntry) => {
+      mutate((s) => setPutAsideRecord(s, addPutAside(putAsideEntries(s), entry)));
+    },
+    [mutate]
+  );
+
+  const trackPutAside = useCallback(
+    (entry: PutAsideEntry) => {
+      mutate((s) => {
+        const entries = putAsideEntries(s);
+        const next = trackInSet(entries, entry);
+        return next === entries ? s : setPutAsideRecord(s, next);
+      });
+    },
+    [mutate]
+  );
+
+  // These guard on the set actually changing, so a caller that asks redundantly — the reader
+  // leaving a sutta the set doesn't hold, above all — neither dirties the record nor re-renders.
+  // Callers still check first where they would otherwise ask on every render: `mutate` schedules a
+  // flush whatever the change turns out to be.
+  const dropPutAside = useCallback(
+    (suttaId: string) => {
+      mutate((s) => {
+        const entries = putAsideEntries(s);
+        return entries.some((e) => e.suttaId === suttaId) ? setPutAsideRecord(s, removePutAside(entries, suttaId)) : s;
+      });
+    },
+    [mutate]
+  );
+
+  const clearPutAside = useCallback(() => {
+    mutate((s) => (putAsideEntries(s).length ? setPutAsideRecord(s, []) : s));
+  }, [mutate]);
+
   const value = useMemo<UserDataState>(
     () => ({
       ready,
@@ -413,6 +471,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       notes,
       highlights,
       visited,
+      putAside,
       syncStatus,
       pendingCount,
       lastSyncedAt,
@@ -429,6 +488,10 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       setHighlightSpan,
       anchorHighlights,
       markVisited,
+      putSuttaAside,
+      trackPutAside,
+      dropPutAside,
+      clearPutAside,
     }),
     [
       ready,
@@ -437,6 +500,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       notes,
       highlights,
       visited,
+      putAside,
       syncStatus,
       pendingCount,
       lastSyncedAt,
@@ -453,6 +517,10 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       setHighlightSpan,
       anchorHighlights,
       markVisited,
+      putSuttaAside,
+      trackPutAside,
+      dropPutAside,
+      clearPutAside,
     ]
   );
 

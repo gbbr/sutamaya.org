@@ -6,8 +6,21 @@ import { useScrollMemory, type ScrollRestore } from './useScrollMemory';
 import { highlightColors, highlightStart } from '../lib/highlights';
 import { segmentIndex } from '../lib/segmentKeys';
 import type { Highlight } from '../lib/types';
+
+/**
+ * Options for scrolling to a segment.
+ *
+ * `animate: false` is for a scroll the reader is not travelling — landing in a sutta already part
+ * way down it, where the journey from the top is not one they took.
+ */
+export interface ScrollToSegmentOptions {
+  /** A highlight inside that segment to bring into view, rather than the segment itself. */
+  highlightId?: string;
+  /** Whether to ease there. Defaults to true. */
+  animate?: boolean;
+}
 import { getUiScale } from '../lib/uiPrefs';
-import { animateScrollBy, computeSegmentScrollOffset } from '../lib/segmentScroll';
+import { animateScrollBy, computeSegmentScrollOffset, jumpScrollBy } from '../lib/segmentScroll';
 
 const EMPTY_HIGHLIGHTS: Highlight[] = [];
 
@@ -49,7 +62,8 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
   const hlColors = useMemo(() => highlightColors(hlForSutta), [hlForSutta]);
 
   /** Scrolls one segment into view, or a named highlight within it. Stable across renders. */
-  const scrollToSegment = useCallback((segIndex: number, block: ScrollLogicalPosition = 'start', highlightId?: string) => {
+  const scrollToSegment = useCallback((segIndex: number, block: ScrollLogicalPosition = 'start', opts: ScrollToSegmentOptions = {}) => {
+    const { highlightId, animate = true } = opts;
     const container = scrollRef.current;
     const segEl = container?.querySelector<HTMLElement>(`[data-seg="${segIndex}"]`);
     if (!container || !segEl) return;
@@ -62,7 +76,8 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
     const elRect = el.getBoundingClientRect();
     const offset = computeSegmentScrollOffset(containerRect, elRect, block, getUiScale());
 
-    animateScrollBy(container, offset);
+    if (animate) animateScrollBy(container, offset);
+    else jumpScrollBy(container, offset);
   }, [scrollRef]);
 
   return { segments, error, retry, hlForSutta, hlCount: hlForSutta.length, hlColors, scrollRef, scrollToSegment, ...popup };

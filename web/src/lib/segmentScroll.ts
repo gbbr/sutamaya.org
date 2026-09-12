@@ -8,6 +8,13 @@ import { prefersReducedMotion } from './motion';
 // again to an animated `scrollBy`, so the animation is driven by hand through `scrollTop` rather
 // than through the browser's own smooth scrolling.
 
+// The air a segment scrolled to `'start'` is left above it, so it doesn't sit flush against the
+// top edge. Exported because anything reading back which segment a pane is showing has to use the
+// same figure: a reading measured against the bare top edge would name the segment whose last
+// 14px are still on screen, one earlier than the one just scrolled to — and a capture that
+// disagrees with the restore walks the position backwards a segment on every round trip.
+export const SEGMENT_START_MARGIN = 14;
+
 // How far to scroll to bring `elRect` to `block` within `containerRect`, both raw rect readings.
 export function computeSegmentScrollOffset(
   containerRect: { top: number; height: number },
@@ -15,10 +22,9 @@ export function computeSegmentScrollOffset(
   block: ScrollLogicalPosition,
   scale: number
 ): number {
-  const START_MARGIN = 14;
   return block === 'center'
     ? (elRect.top + elRect.height / 2 - (containerRect.top + containerRect.height / 2)) / scale
-    : (elRect.top - containerRect.top) / scale - START_MARGIN;
+    : (elRect.top - containerRect.top) / scale - SEGMENT_START_MARGIN;
 }
 
 // Each container's running scroll animation, so a new one cancels it.
@@ -69,4 +75,12 @@ export function animateScrollTop(container: HTMLElement, targetScrollTop: number
 // Animates a container by a relative offset, in scroll units.
 export function animateScrollBy(container: HTMLElement, offset: number) {
   animateScrollTop(container, container.scrollTop + offset);
+}
+
+// Moves a container by a relative offset at once, cancelling any animation under way. For a scroll
+// that is part of arriving somewhere rather than travelling within it: animating from the top of a
+// sutta down to the line it was left on plays the reader a journey they never took.
+export function jumpScrollBy(container: HTMLElement, offset: number) {
+  activeScrollAnimations.get(container)?.();
+  container.scrollTop += offset;
 }

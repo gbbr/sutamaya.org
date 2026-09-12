@@ -42,6 +42,7 @@ async function write(cookie, item) {
 const note = (cookie, suttaId, text, mtime) => write(cookie, { type: 'note', suttaId, text, mtime });
 const highlight = (cookie, item) => write(cookie, { type: 'highlight', ...item });
 const visited = (cookie, suttaId, visitedAt) => write(cookie, { type: 'visited', suttaId, visitedAt });
+const putAside = (cookie, entries, mtime) => write(cookie, { type: 'putAside', entries, mtime });
 
 // Live rows only — a retired highlight stays in the table as a tombstone, so counting raw rows
 // would count highlights the user can no longer see. allHighlightsOf is for the tests that are
@@ -496,18 +497,31 @@ describe('lib/writes.js — notes, highlights, visits (D1)', () => {
       span: span(0, 0, 0, 10),
     });
     await visited(owner.cookie, 'sn1.1');
+    await putAside(owner.cookie, [{ suttaId: 'sn1.1', key: 'sn1.1:2.1', pct: 40 }], '2026-01-01T00:00:03.000Z|owner');
 
     const otherData = await (await api('/api/data', { cookie: other.cookie })).json();
-    expect(otherData).toEqual({ lists: [], membership: {}, notes: {}, highlights: {}, visited: {} });
+    expect(otherData).toEqual({
+      lists: [],
+      membership: {},
+      notes: {},
+      highlights: {},
+      visited: {},
+      putAside: { entries: [], m: '' },
+    });
 
     // Same-sutta writes by the other user must not touch the owner's rows — including an erase
     // naming the owner's own group id, which every statement's `AND user_id = ?` is what stops.
+    // The put-aside set is one row per account, keyed on user_id alone, so the same predicate is
+    // the whole of what keeps the other user's set from replacing it.
     await note(other.cookie, 'sn1.1', '');
     await highlight(other.cookie, { suttaId: 'sn1.1', color: null, erase: ['owner-group'], span: span(0, 0, 0, 10) });
+    // Later than the owner's, so only the user_id scope can be what stops it landing on that row.
+    await putAside(other.cookie, [], '2026-01-01T00:00:09.000Z|other');
 
     const ownerData = await (await api('/api/data', { cookie: owner.cookie })).json();
     expect(ownerData.notes['sn1.1'].text).toBe('private');
     expect(ownerData.highlights['sn1.1']).toHaveLength(1);
     expect(ownerData.visited['sn1.1']).toBeTruthy();
+    expect(ownerData.putAside.entries).toEqual([{ suttaId: 'sn1.1', key: 'sn1.1:2.1', pct: 40 }]);
   });
 });

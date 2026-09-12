@@ -19,7 +19,7 @@ read before changing something, the rules that span files, and how documentation
 | local setup, ports, secrets | [docs/development.md](docs/development.md) |
 | end-to-end specs | [docs/e2e.md](docs/e2e.md) |
 
-Offline sync covers `web/src/lib/{mirror,sync,mirrorView,mirrorDb,listTree}.ts`,
+Offline sync covers `web/src/lib/{mirror,sync,mirrorView,mirrorDb,listTree,putAside}.ts`,
 `web/src/context/UserDataContext.tsx`, `worker/src/routes/data.js` and
 `worker/src/lib/{writes,listTree,userData}.js`.
 
@@ -45,6 +45,9 @@ Offline sync covers `web/src/lib/{mirror,sync,mirrorView,mirrorDb,listTree}.ts`,
 - **User data is local-first.** Rows carry an `mtime` stamped when the reader acts, the last write
   wins per row, and deletes are tombstones every read skips ([docs/offline-sync.md](docs/offline-sync.md)).
 - **Changing what the mirror stores bumps its IndexedDB version**, in the same change.
+- **The put-aside set changes only by the reader's hand.** Setting a sutta aside adds a tab and the
+  tab's ✕ removes it; nothing else moves the set, and nothing is dropped to make room
+  ([docs/web-app.md](docs/web-app.md#put-aside)).
 - **Migrations only add**; a destructive schema change takes two deploys ([docs/deploy.md](docs/deploy.md)).
 - **Some logic exists twice, on purpose**, since the workspaces share no modules. Change one, change
   the other:
@@ -52,9 +55,10 @@ Offline sync covers `web/src/lib/{mirror,sync,mirrorView,mirrorDb,listTree}.ts`,
     `web/src/lib/{listTree,mirrorView}.ts`;
   - the automatic lists' ids and caps — `web/src/lib/autoLists.ts`;
   - the segment-key comparator and the Pali word splitter — `scripts/lib/` and `web/src/lib/`;
+  - the put-aside cap — `web/src/lib/putAside.ts` and `worker/src/lib/writes.js`;
   - the corpus lookups behind link previews — `worker/src/shareMeta.js` and `web/src/lib/corpus.ts`.
 
-  Parity tests catch drift in the first three.
+  Tests catch drift in all but the last.
 - **`APP_PATHS` (`worker/src/index.js`) and `assets.run_worker_first` (`wrangler.jsonc`) change
   together**, or an app path skips the Worker ([docs/backend.md](docs/backend.md)).
 - **`WEB_ORIGIN` is always the app's origin**, never the landing page's: sign-in builds its redirects
@@ -84,6 +88,9 @@ never restate it as prose.
 
 - **Explain the system, not the code**: what the pieces are, how they fit, the flows, the rules that
   must hold and why. Never walk through functions, constants and branches.
+- **Write only what someone would otherwise get wrong.** A doc carries what surprises, what other
+  code must respect, and what was deliberately decided against. Behaviour a reader would expect
+  anyway is not worth a line — if nobody needs telling, leave it out.
 - **Name files and symbols only as signposts** to where something lives, and end a doc with a short
   "Where to look" table.
 - **Keep sections short** — a few sentences, a table or a list. A number goes in only when it is the
@@ -92,8 +99,8 @@ never restate it as prose.
 - **Put things where they belong.** README.md is the developer's map, a short paragraph per part
   linking to its doc. `docs/` holds one doc per subsystem. This file holds only rules and pointers.
   `docs/translation-changes.md` is written for readers, not developers.
-- **Change the doc with the code.** A change to how something works updates its doc in the same
-  change.
+- **A change touches its doc only when it changes what the doc says.** Most changes don't. Never
+  append a note per change.
 - **Keep headings stable.** Code comments cite them by name; renaming one means updating what cites
   it.
 

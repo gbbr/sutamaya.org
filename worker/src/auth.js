@@ -103,6 +103,7 @@ export async function deleteAccount(db, id) {
     db.prepare('DELETE FROM highlights WHERE user_id = ?').bind(id),
     db.prepare('DELETE FROM notes WHERE user_id = ?').bind(id),
     db.prepare('DELETE FROM visited WHERE user_id = ?').bind(id),
+    db.prepare('DELETE FROM put_aside WHERE user_id = ?').bind(id),
     db.prepare('DELETE FROM lists WHERE user_id = ?').bind(id),
     db.prepare('DELETE FROM identities WHERE user_id = ?').bind(id),
     db.prepare('DELETE FROM users WHERE id = ?').bind(id),

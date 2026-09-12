@@ -1,4 +1,5 @@
 import { displacedIds, type HlSpan } from './highlights';
+import { normalizePutAside, type PutAsideEntry } from './putAside';
 import { AUTO_LIST_IDS } from './autoLists';
 import { highlightsFor } from './mirrorView';
 import type { SegmentFile } from './corpus';
@@ -70,7 +71,15 @@ export interface VisitedRecord {
   visitedAt: string;
 }
 
-export type RecordKind = 'list' | 'note' | 'highlight' | 'visited';
+// The put-aside set, as one record holding the whole ordered set rather than a row per sutta —
+// which is what keeps it tombstone-free, a removal being "the newer set doesn't list it". See
+// lib/putAside.ts.
+export interface PutAsideRecord {
+  entries: PutAsideEntry[];
+  mtime: string;
+}
+
+export type RecordKind = 'list' | 'note' | 'highlight' | 'visited' | 'putAside';
 
 export interface Stored<T> {
   // Set by a local write, cleared once the server acknowledges that exact version. Everything
@@ -95,12 +104,40 @@ export interface MirrorState {
   notes: Record<string, Stored<NoteRecord>>;
   highlights: Record<string, Stored<HighlightRecord>>;
   visited: Record<string, Stored<VisitedRecord>>;
+  // One record rather than a map: the whole set is the unit of the write.
+  putAside: Stored<PutAsideRecord>;
   ops: QueuedOp[];
   nextSeq: number;
 }
 
+// The id every put-aside ack and push item is filed under. The set is one row per account, so it
+// needs a constant where the other records carry a list, sutta or highlight id.
+export const PUT_ASIDE_RECORD_ID = 'putAside';
+
 export function emptyMirror(userId: string | null = null): MirrorState {
-  return { userId, lists: {}, notes: {}, highlights: {}, visited: {}, ops: [], nextSeq: 1 };
+  return {
+    userId,
+    lists: {},
+    notes: {},
+    highlights: {},
+    visited: {},
+    putAside: { dirty: false, data: { entries: [], mtime: '' } },
+    ops: [],
+    nextSeq: 1,
+  };
+}
+
+// The set as it stands, tolerating a mirror persisted before it existed — `loadMirror` returns
+// stored records untouched, and a DB_VERSION bump wipes rather than migrates, so only a mirror
+// written by this build is guaranteed to carry the field.
+export function putAsideEntries(state: MirrorState): PutAsideEntry[] {
+  return state.putAside?.data.entries ?? [];
+}
+
+// Replaces the whole set, stamped with the instant the user acted. Every gesture — minimise, open,
+// close one, dismiss all — is this one write, the set being a single record.
+export function setPutAsideRecord(state: MirrorState, entries: PutAsideEntry[]): MirrorState {
+  return { ...state, putAside: { dirty: true, data: { entries, mtime: nextMtime() } } };
 }
 
 // The two shapes that address a segment by its position in the document rather than by its key:
@@ -522,7 +559,14 @@ export function applySnapshot(state: MirrorState, snapshot: UserData): MirrorSta
   }
   for (const [id, record] of Object.entries(state.highlights)) if (record.dirty) highlights[id] = record;
 
-  return { ...state, lists: replayOps(lists, state.ops), notes, highlights, visited };
+  // The set is one record, so the merge is the whole of it: a local set still owed to the server
+  // stands, and otherwise the account's own is taken. Normalised on the way in, the wire being the
+  // one place a malformed entry could arrive from.
+  const putAside = state.putAside?.dirty
+    ? state.putAside
+    : { dirty: false, data: { entries: normalizePutAside(snapshot.putAside?.entries), mtime: snapshot.putAside?.m ?? '' } };
+
+  return { ...state, lists: replayOps(lists, state.ops), notes, highlights, visited, putAside };
 }
 
 // Re-ids a list the server refused as a collision, along with every reference to it — its
@@ -615,6 +659,14 @@ export function adoptMirror(account: MirrorState, local: MirrorState): MirrorSta
     visited[suttaId] = { dirty: true, data: { ...record.data } };
   }
 
+  // The set the reader was actually holding when they signed in is the one they keep: it is a
+  // working set, so a stale one on the account has nothing to contribute and merging the two would
+  // only overflow the cap. Taken only where the local device has one at all.
+  const localEntries = putAsideEntries(local);
+  const putAside = localEntries.length
+    ? { dirty: true, data: { entries: localEntries, mtime: local.putAside.data.mtime } }
+    : account.putAside;
+
   // Re-sequenced onto the end of the account's queue: `seq` is per-mirror, so the local ops would
   // otherwise interleave by a counter that meant something else.
   const ops = [...local.ops]
@@ -627,6 +679,7 @@ export function adoptMirror(account: MirrorState, local: MirrorState): MirrorSta
     notes,
     highlights,
     visited,
+    putAside,
     ops: [...account.ops, ...ops],
     nextSeq: account.nextSeq + ops.length,
   };
@@ -638,7 +691,8 @@ export function hasContent(state: MirrorState): boolean {
     Object.keys(state.lists).length > 0 ||
     Object.values(state.notes).some((n) => !!n.data.text) ||
     Object.keys(state.highlights).length > 0 ||
-    Object.keys(state.visited).length > 0
+    Object.keys(state.visited).length > 0 ||
+    putAsideEntries(state).length > 0
   );
 }
 
@@ -664,6 +718,7 @@ export function syncCounts(state: MirrorState): { pending: number } {
   for (const group of [state.lists, state.notes, state.highlights, state.visited]) {
     for (const record of Object.values(group)) if (record.dirty) pending += 1;
   }
+  if (state.putAside?.dirty) pending += 1;
   return { pending };
 }
 
@@ -724,7 +779,11 @@ export function applyFlushOutcome(state: MirrorState, outcome: FlushOutcome): Mi
   for (const ack of outcome.acks) {
     if (ack.kind === 'list') next = { ...next, lists: clearDirty(next.lists, ack.id, ack.mtime, { pendingCreate: false }) };
     else if (ack.kind === 'note') next = { ...next, notes: clearDirty(next.notes, ack.id, ack.mtime) };
-    else if (ack.kind === 'visited') {
+    else if (ack.kind === 'putAside') {
+      // Cleared only against the exact set that was pushed, so one the reader changed mid-flush
+      // stays owed.
+      if (next.putAside.data.mtime === ack.mtime) next = { ...next, putAside: { dirty: false, data: next.putAside.data } };
+    } else if (ack.kind === 'visited') {
       const record = next.visited[ack.id];
       if (record && record.data.visitedAt === ack.mtime) {
         next = { ...next, visited: { ...next.visited, [ack.id]: { dirty: false, data: record.data } } };

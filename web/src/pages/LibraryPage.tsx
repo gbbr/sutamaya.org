@@ -10,12 +10,14 @@ import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { useBackHandler } from '../hooks/useBackHandler';
 import { nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId } from '../lib/corpus';
 import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP } from '../lib/search/metadata';
-import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
+import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, tagIntent, type RouteIntent } from '../lib/routeIntent';
 import { transitionPage } from '../lib/motion';
 import { TreePane, type ActiveSearchRow } from '../components/TreePane';
 import { ListPane } from '../components/ListPane';
+import { PutAsideBar, type PutAsideSheetMode } from '../components/PutAsideBar';
+import { SHELL_THEME } from '../lib/theme';
 import { ShortcutsModal } from '../components/ShortcutsModal';
 
 // Width of the tree/list divider's undrawn drag strip, left of the boundary.
@@ -46,7 +48,7 @@ export function LibraryPage() {
   const rawSuttaId = urlSuttaId ? normalizeRouteId(urlSuttaId) : urlSuttaId;
   const { mobile, dragTree, resetTree, paneW } = useLayout();
   const { corpus } = useCorpus();
-  const { lists, notes, highlights } = useUserData();
+  const { lists, notes, highlights, putAside } = useUserData();
   const { toggleTheme } = useUiPrefs();
   const routeNodeId = urlNodeId ? normalizeBrowseNodeId(corpus, urlNodeId) : urlNodeId;
   useEffect(() => {
@@ -79,6 +81,9 @@ export function LibraryPage() {
   // highlights for 1600ms.
   const locationFlashNodeId = consumedIntent?.flashNodeId as string | undefined;
   const [flashNodeId, setFlashNodeId] = useState<string | undefined>(undefined);
+  // The put-aside sheet's state. Owned here rather than by the bar, the reader's copy of it being
+  // opened from the header above it.
+  const [putAsideSheet, setPutAsideSheet] = useState<PutAsideSheetMode>('closed');
   useEffect(() => {
     if (!locationFlashNodeId) return;
     setFlashNodeId(locationFlashNodeId);
@@ -215,8 +220,9 @@ export function LibraryPage() {
   // `segments` are set only where the query was answered by the sutta's text, and are where the
   // reader opens: a title or description match has nothing to jump to and opens at the top, as
   // always.
+  // `putAsideKey` is the line a set-aside sutta resumes at, for an open from the put-aside bar.
   const onOpen = useCallback(
-    (id: string, segments?: [number, number]) => {
+    (id: string, segments?: [number, number], putAsideKey?: string) => {
       // The node the reader returns to on close: the one being browsed, which a search leaves
       // untouched, so clearing the search hands the tree and the list back the place they were
       // left. A hit's own node stands in only where nothing was selected to return to.
@@ -235,12 +241,13 @@ export function LibraryPage() {
       } catch {
         // storage unavailable — ignore
       }
-      // Tagged as a one-shot intent only when there is a passage to jump to, so an ordinary open
-      // carries the plain origin it always did.
+      // Tagged as a one-shot intent only when there is somewhere to jump to — a search hit's
+      // passage, or a set-aside sutta's own line — so an ordinary open carries the plain origin it
+      // always did.
       const state =
-        segments === undefined
+        segments === undefined && putAsideKey === undefined
           ? { from, fromView: view, searchIds }
-          : tagIntent({ from, fromView: view, searchIds, segments });
+          : tagIntent({ from, fromView: view, searchIds, segments, putAsideKey });
       transitionPage('fade', () => navigate(`/read/${encodeURIComponent(id)}`, { state, flushSync: true }));
     },
     [nodeId, view, query, corpus, hits, navigate]
@@ -257,8 +264,18 @@ export function LibraryPage() {
   useBackHandler(mobile && view === 'list', backToTree);
   useBackHandler(shortcutsOpen, () => setShortcutsOpen(false));
 
-  // Page-level shortcuts: the help modal and the theme toggle. Arrow-key nav over search hits
-  // belongs to TreePane.
+  // Opens the nth sutta of the set-aside bar, counting the slots as they read left to right. A
+  // slot the set doesn't fill does nothing.
+  const openPutAsideSlot = useCallback(
+    (slot: number) => {
+      const entry = putAside[slot - 1];
+      if (entry) onOpen(entry.suttaId, undefined, entry.key);
+    },
+    [putAside, onOpen]
+  );
+
+  // Page-level shortcuts: the help modal, the theme toggle and the set-aside slots. Arrow-key nav
+  // over search hits belongs to TreePane.
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       // While the help modal is open it owns every key; Esc and '?' both close it.
@@ -269,7 +286,6 @@ export function LibraryPage() {
         }
         return;
       }
-      if (isTypingTarget(e)) return;
       if (isShortcut(e, SHORTCUTS.libraryHelp)) {
         e.preventDefault();
         setShortcutsOpen(true);
@@ -280,14 +296,22 @@ export function LibraryPage() {
         toggleTheme();
         return;
       }
+      if (isShortcut(e, SHORTCUTS.librarySetAsideSlot)) {
+        e.preventDefault();
+        openPutAsideSlot(Number(e.key));
+        return;
+      }
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [shortcutsOpen]);
+  }, [shortcutsOpen, openPutAsideSlot]);
 
   return (
-    <div data-component="LibraryPage" className="relative flex overflow-hidden bg-paper h-full">
+    // A column, so the put-aside bar takes height from the layout and the panes shorten by it
+    // rather than scrolling behind it.
+    <div data-component="LibraryPage" className="flex flex-col overflow-hidden bg-paper h-full">
+      <div className="relative flex flex-1 min-h-0">
       {/* Both panes stay mounted on mobile and hide, keeping each one's scroll offset and
           expansion state across a tree/list toggle. `display:contents` leaves this wrapper
           transparent to the flex layout, and `visible` tells the pane when it has a scroll extent
@@ -362,6 +386,16 @@ export function LibraryPage() {
           onClose={() => setShortcutsOpen(false)}
         />
       )}
+      </div>
+
+      {/* The set-aside bar follows the reader out here, so the way back is in reach from the
+          Library too. */}
+      <PutAsideBar
+        theme={SHELL_THEME}
+        onOpen={(entry) => onOpen(entry.suttaId, undefined, entry.key)}
+        sheet={putAsideSheet}
+        onSheet={setPutAsideSheet}
+      />
     </div>
   );
 }

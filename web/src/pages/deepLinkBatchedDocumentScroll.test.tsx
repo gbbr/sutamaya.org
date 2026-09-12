@@ -68,6 +68,11 @@ const userDataDefaults: ReturnType<typeof useUserData> = {
   setHighlightSpan: async () => {},
   anchorHighlights: () => {},
   markVisited: () => {},
+  putAside: [],
+  putSuttaAside: () => {},
+  trackPutAside: () => {},
+  dropPutAside: () => {},
+  clearPutAside: () => {},
 };
 
 describe('reader deep links into a batched document', () => {

@@ -322,6 +322,55 @@ async function markVisited(db, userId, item) {
   return OK;
 }
 
+// Most suttas the put-aside set may hold. Duplicated in web/src/lib/putAside.ts, no module being
+// shared between the two workspaces.
+export const PUT_ASIDE_CAP = 5;
+
+// Longest a sutta id or segment key in the set may be, so a malformed push can't grow the row
+// without bound. Comfortably past the longest either actually runs to.
+const PUT_ASIDE_FIELD_MAX_LENGTH = 120;
+
+// One entry as the client sends it, or null where it is malformed — a set is stored only if every
+// entry in it is well-formed, this being one row the client replaces whole.
+function putAsideEntry(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const { suttaId, key, pct } = raw;
+  if (typeof suttaId !== 'string' || !suttaId || suttaId.length > PUT_ASIDE_FIELD_MAX_LENGTH) return null;
+  if (typeof key !== 'string' || key.length > PUT_ASIDE_FIELD_MAX_LENGTH) return null;
+  if (typeof pct !== 'number' || !Number.isFinite(pct)) return null;
+  return { suttaId, key, pct: Math.min(100, Math.max(0, Math.round(pct))) };
+}
+
+// Replaces the whole put-aside set, conditional on mtime.
+//
+// The set is one row per account rather than a row per sutta, which is what makes it tombstone-
+// free: dropping a member is a newer `entries` that omits it, and a stale device's set loses the
+// conditional write outright. Last-writer-wins over the set as a whole — see docs/offline-sync.md.
+const UPSERT_PUT_ASIDE_SQL = `
+  INSERT INTO put_aside (user_id, entries, mtime) VALUES (?1, ?2, ?3)
+    ON CONFLICT(user_id) DO UPDATE SET entries = ?2, mtime = ?3
+    WHERE ?3 > put_aside.mtime
+`;
+
+async function setPutAside(db, userId, item) {
+  if (!Array.isArray(item?.entries)) return { error: 'entries_required', status: 400 };
+  const entries = [];
+  const seen = new Set();
+  for (const raw of item.entries) {
+    const entry = putAsideEntry(raw);
+    if (!entry) return { error: 'invalid_entry', status: 400 };
+    // A duplicate is dropped rather than refused: the set means the same thing without it, and the
+    // client's own normalisation already rules it out.
+    if (seen.has(entry.suttaId)) continue;
+    seen.add(entry.suttaId);
+    entries.push(entry);
+  }
+  const mtime = resolveMtime(item?.mtime);
+  // Trimmed from the front, matching the client: the oldest tab is the one that falls off.
+  await db.prepare(UPSERT_PUT_ASIDE_SQL).bind(userId, JSON.stringify(entries.slice(-PUT_ASIDE_CAP)), mtime).run();
+  return OK;
+}
+
 // The wire names a push may carry. `list.*` and the annotations are records — a desired state;
 // `item.*` and `sibling.order` are operations (docs/offline-sync.md's "Records and operations").
 const HANDLERS = {
@@ -335,6 +384,7 @@ const HANDLERS = {
   note: setNote,
   highlight: setHighlight,
   visited: markVisited,
+  putAside: setPutAside,
 };
 
 // Applies one pushed item, returning `{ok: true}` or `{error, status}`.

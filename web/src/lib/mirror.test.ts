@@ -29,7 +29,7 @@ import type { SegmentFile } from './corpus';
 const segKey = (i: number) => `dn1:1.${i + 1}`;
 const span = (i0: number, o0: number, i1: number, o1: number) => ({ k0: segKey(i0), o0, k1: segKey(i1), o1 });
 
-const emptySnapshot: UserData = { lists: [], membership: {}, notes: {}, highlights: {}, visited: {} };
+const emptySnapshot: UserData = { lists: [], membership: {}, notes: {}, highlights: {}, visited: {}, putAside: { entries: [], m: '' } };
 
 function snapshot(overrides: Partial<UserData>): UserData {
   return { ...emptySnapshot, ...overrides };

@@ -7,7 +7,7 @@ import type { Highlight, ThemeColors } from '../lib/types';
 vi.mock('../lib/uiPrefs', () => ({ getUiScale: vi.fn(() => 1) }));
 import { getUiScale } from '../lib/uiPrefs';
 
-const theme: ThemeColors = { bg: '#fff', fg: '#000', dim: '#888', rule: '#ccc', panel: '#fff', pali: '#333', tint: '#eee', paliTint: '#e8dcc8', focusTint: '#f5f5f5', highlightPalette: null, selection: '#ddd' };
+const theme: ThemeColors = { bg: '#fff', fg: '#000', dim: '#888', rule: '#ccc', panel: '#fff', pali: '#333', tint: '#eee', paliTint: '#e8dcc8', focusTint: '#f5f5f5', warning: '#dc2626', highlightPalette: null, selection: '#ddd' };
 
 // The loaded text a mark's position is resolved against, and the key of the segment at position `i`.
 const key = (i: number) => `dn1:1.${i + 1}`;

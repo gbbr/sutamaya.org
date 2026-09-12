@@ -38,7 +38,7 @@ vi.mock('react-router', async (importOriginal) => ({
 
 const ACCOUNT: User = { id: 'account-1', email: 'a@b.com', name: 'A', picture: null };
 
-const emptyData: UserData = { lists: [], membership: {}, notes: {}, highlights: {}, visited: {} };
+const emptyData: UserData = { lists: [], membership: {}, notes: {}, highlights: {}, visited: {}, putAside: { entries: [], m: '' } };
 
 // The fake server keeps what was pushed to it, because the flush pulls a full snapshot straight
 // after pushing and `applySnapshot` keeps only what is still dirty (lib/mirror.ts). A snapshot that

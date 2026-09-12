@@ -77,6 +77,7 @@ const baseData: UserData = {
   notes: {},
   highlights: {},
   visited: {},
+  putAside: { entries: [], m: '' },
 };
 
 // A failure with no HTTP status — what an unreachable network looks like to api.ts, and what the

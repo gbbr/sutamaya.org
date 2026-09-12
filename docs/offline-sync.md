@@ -1,8 +1,8 @@
 # Offline sync
 
-Lists, notes, highlights and visits are written to a mirror on the device first and synced to the
-server afterwards. **The local write is the durable one**: work done with no network, or with no
-account, is kept rather than held for the server's approval.
+Lists, notes, highlights, visits and the put-aside set are written to a mirror on the device first
+and synced to the server afterwards. **The local write is the durable one**: work done with no
+network, or with no account, is kept rather than held for the server's approval.
 
 This is the design, and the reference for any change to the mirror, the flush or the Worker's data
 routes.
@@ -49,7 +49,8 @@ time would push its copy back and resurrect it. So every read has to skip tombst
 ### Records and operations
 
 Most changes travel as **records**: the state something should be in — a list's name and parent, a
-note, a highlight, a visit. A record means the same thing however late it arrives.
+note, a highlight, a visit, the put-aside set. A record means the same thing however late it
+arrives.
 
 Three changes travel as **operations** instead, because they combine rather than overwrite: adding
 or removing a sutta, reordering a list, and reordering the lists in a group. Two devices filing
@@ -79,6 +80,21 @@ overlaps with no text loaded; the corpus build refuses a document whose keys are
 - A mirror from an older build, holding highlights by position, is converted to keys as each
   sutta's text loads. That stays for good: a reader who never signed in has no server copy to fall
   back on.
+
+## The put-aside set
+
+The suttas a reader has set aside travel as **one record holding the whole ordered set**, one per
+account, rather than a row per sutta. A sutta leaves the set by being absent from a newer one, so
+the set needs no tombstones: an older device pushing a stale set loses on `mtime` and resurrects
+nothing. The trade is that the last edit wins over the whole set rather than per sutta.
+
+Each entry remembers where its sutta was left as a segment key rather than a scroll offset, which
+would mean nothing on another screen or under other typography, plus a percentage, so the bar can
+say how far in it was on a device that has never loaded the text.
+
+The set holds at most five, a cap written on both sides. Neither side ever drops a member to make
+room: at the cap the app asks which tab should go, and the server's trim only catches a set that
+arrived over-full.
 
 ## Lists repair themselves on read
 
@@ -112,9 +128,9 @@ It runs on launch, two seconds after an edit, on reconnecting, on returning to t
 five minutes. Only one tab flushes at a time.
 
 Everything owed goes out as one ordered queue: list records (oldest first, parents before
-children), then notes, highlights and visits, then operations in the order they were made. It is
-sent ten items per request until empty, then one full snapshot comes back. **A sync costs a couple
-of requests, however much is queued.**
+children), then notes, highlights, visits and the put-aside set, then operations in the order they
+were made. It is sent ten items per request until empty, then one full snapshot comes back. **A
+sync costs a couple of requests, however much is queued.**
 
 Each item gets its own answer, and the push is deliberately **not atomic**: a refused item neither
 undoes the ones before it nor holds up the ones after.
@@ -164,6 +180,8 @@ the reader to decide.
     `autoLists.test.ts` catch drift.
 13. **Changing what the mirror stores bumps its IndexedDB version**, in the same change. The
     upgrade wipes the store and re-pulls rather than migrating.
+14. **The put-aside set stays one record.** Needing no tombstones rests on a removal being "the
+    newer set doesn't list it"; a row per sutta would need a `deleted` column that every read skips.
 
 ## Accepted losses
 
@@ -173,6 +191,8 @@ the reader to decide.
 - **Order is last-edit-wins per list or group.** Two devices reordering the same thing offline
   means one order wins, and the reader drags again.
 - **Adding and removing the same sutta resolves by arrival order**, not by timestamp.
+- **The put-aside set collides as a whole.** Two devices each setting a sutta aside offline means
+  one set wins and the other tab is gone; reopening that sutta is one tap.
 - **A write to a row deleted elsewhere is dropped.**
 - **The automatic lists show the newest 100 visits and 300 notes or highlights**, and say so at the
   foot. Nothing past the cap is lost.
@@ -190,6 +210,7 @@ the reader to decide.
 | `web/src/lib/sync.ts` | the flush |
 | `web/src/lib/mirrorView.ts`, `listTree.ts` | what the UI sees; tree repair |
 | `web/src/lib/mirrorDb.ts` | storage in IndexedDB |
+| `web/src/lib/putAside.ts` | the put-aside set and its cap |
 | `web/src/lib/highlights.ts`, `segmentKeys.ts` | overlaps and painting; key order |
 | `web/src/context/UserDataContext.tsx` | when the flush runs; the sync state |
 | `worker/src/routes/data.js` | the snapshot and the push |

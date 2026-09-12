@@ -20,7 +20,7 @@ export const VISITED_AUTO_LIST_CAP = 100;
 //
 // Tombstoned notes, highlights and visits are filtered out in SQL before they arrive; `listDocs`
 // keeps its tombstones, which repairListTree needs to cascade a deleted group's descendants out.
-export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDocs }) {
+export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDocs, putAsideDoc }) {
   // Which lists hold each sutta, keyed by list id — two lists can share a label.
   const membership = {};
   // The lists, in tree order. repairListTree (lib/listTree.js) decides which survive, their order,
@@ -106,5 +106,10 @@ export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDoc
     notedIds.forEach((id) => (membership[id] = [...(membership[id] || []), NOTES_AUTO_LIST_ID]));
   }
 
-  return { lists, membership, notes, highlights, visited };
+  // The put-aside set, one record for the whole account. An account that has never put anything
+  // aside holds no row, which is an empty set rather than an absent field — the client merges on
+  // `m`, and '' loses to every real mtime.
+  const putAside = { entries: putAsideDoc?.entries ?? [], m: putAsideDoc?.mtime ?? '' };
+
+  return { lists, membership, notes, highlights, visited, putAside };
 }

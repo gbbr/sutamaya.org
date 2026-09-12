@@ -1,6 +1,7 @@
 import { dataApi, type PushItem, type PushResult } from './api';
 import { isRetryable, statusOf } from './retry';
 import { randomId } from './ids';
+import { PUT_ASIDE_RECORD_ID } from './mirror';
 import type { FlushAck, FlushOutcome, ListRecord, MirrorState, QueuedOp, Stored } from './mirror';
 import type { UserData } from './api';
 
@@ -120,6 +121,15 @@ function buildQueue(state: MirrorState): Push[] {
     queue.push({
       ack: { kind: 'visited', id: data.suttaId, mtime: data.visitedAt },
       item: { type: 'visited', suttaId: data.suttaId, visitedAt: data.visitedAt },
+    });
+  }
+
+  // The put-aside set: one record for the whole account, so one item however many suttas moved.
+  if (state.putAside?.dirty) {
+    const { entries, mtime } = state.putAside.data;
+    queue.push({
+      ack: { kind: 'putAside', id: PUT_ASIDE_RECORD_ID, mtime },
+      item: { type: 'putAside', entries, mtime },
     });
   }
 

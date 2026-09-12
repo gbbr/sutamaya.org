@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { useLocation, useNavigate, useNavigationType, useParams } from 'react-router';
-import { X, Menu as MenuIcon, ChevronLeft, ChevronRight, Library, List as ListIcon, Search, Share, Share2 } from 'lucide-react';
+import { X, Menu as MenuIcon, ChevronLeft, ChevronRight, Library, List as ListIcon, Search, Share, Share2, ArrowDownToLine } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
@@ -28,6 +28,11 @@ import { markSuttaOpened } from '../lib/pwaNudge';
 import { getReaderPanelTab, setReaderPanelTab, type ReaderPanelTab } from '../lib/readerPanelTab';
 import { platformName } from '../lib/platform';
 import { canShareLink, shareLink, shareUrl } from '../lib/share';
+import { READING_TOP, readingPositionOf } from '../lib/readingPosition';
+import { tuckIntoBar } from '../lib/putAsideTuck';
+import { segmentIndex } from '../lib/segmentKeys';
+import { PUT_ASIDE_CAP, type PutAsideEntry } from '../lib/putAside';
+import { PutAsideBar, type PutAsideSheetMode } from '../components/PutAsideBar';
 import { SegmentedText } from '../components/SegmentedText';
 import { HighlightPopup } from '../components/HighlightPopup';
 import { HighlightGutter } from '../components/HighlightGutter';
@@ -55,6 +60,13 @@ const SHAREABLE = canShareLink();
 
 // The share glyph each platform's own apps use: Android's connected nodes, the boxed arrow elsewhere.
 const ShareIcon = platformName() === 'android' ? Share2 : Share;
+
+// A header icon's footprint: the 19px glyph plus the 24px gap to its neighbour.
+const TOOL_W = 43;
+
+// The width the centred title gives up to `count` right-hand icons, mirrored on both sides: the
+// header's 20px padding, the icons, and 8px between them and the title.
+const titleClearance = (count: number) => 2 * (TOOL_W * count + 4);
 
 // How a library search is named where the reader shows the run it was opened from — above the
 // breadcrumb and at the foot of the sutta.
@@ -90,7 +102,7 @@ export function ReaderPage() {
       navigate(`/read/${encodeURIComponent(requestedId)}`, { replace: true });
     }
   }, [routeSuttaId, requestedId, navigate]);
-  const { notes, membership, lists, markVisited } = useUserData();
+  const { notes, membership, lists, markVisited, putAside, putSuttaAside, trackPutAside, ready: userDataReady } = useUserData();
   const {
     resolvedTheme,
     fs,
@@ -116,16 +128,26 @@ export function ReaderPage() {
   // would fire again on every later one and leave a new jump no way in. consumeIntent hands a
   // navId back a single time, which is what keeps a same-tab refresh from jumping twice; a
   // Prev/Next step carries no intent at all and so clears this.
-  const arrivalState = location?.state as ({ segments?: [number, number] } & RouteIntent) | null | undefined;
-  const arrivalRef = useRef<{ navId?: string; segments?: [number, number] }>({});
+  const arrivalState = location?.state as
+    | ({ segments?: [number, number]; putAsideKey?: string } & RouteIntent)
+    | null
+    | undefined;
+  const arrivalRef = useRef<{ navId?: string; segments?: [number, number]; putAsideKey?: string }>({});
   if (arrivalRef.current.navId !== arrivalState?.navId) {
+    // One consumption for both, the two riding on the same navigation: an arrival is either a
+    // search hit's snippet or a put-aside sutta resuming, never both.
+    const consumed = consumeIntent(arrivalState, READER_INTENT_KEY);
     arrivalRef.current = {
       navId: arrivalState?.navId,
-      segments: consumeIntent(arrivalState, READER_INTENT_KEY)?.segments,
+      segments: consumed?.segments,
+      putAsideKey: consumed?.putAsideKey,
     };
   }
   const searchSegments = arrivalRef.current.segments;
-  const { from, fromView, searchIds, navigateToSutta, closeToOrigin, leaveReader } = useReaderOrigin(readerLocationState);
+  // The segment key this sutta was put aside at, where the bar is what opened it.
+  const putAsideKey = arrivalRef.current.putAsideKey;
+  const { from, fromView, searchIds, navigateToSutta, closeToOrigin, leaveReader } =
+    useReaderOrigin(readerLocationState);
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
   const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
   const [panel, setPanel] = useState(false);
@@ -146,17 +168,26 @@ export function ReaderPage() {
   // Where this sutta opens, sampled once per sutta id: 'stored' on a return — back or forward, a
   // refresh, a relaunch (lib/entryKind.ts) — 'top' otherwise, and no restore at all when the route
   // names an inner sutta to scroll to.
-  const restoreRef = useRef<{ id?: string; restore: ScrollRestore; skipRestore: boolean }>({
+  const restoreRef = useRef<{ id?: string; restore: ScrollRestore; skipRestore: boolean; resumeKey?: string }>({
     restore: 'stored',
     skipRestore: false,
   });
   if (restoreRef.current.id !== suttaId) {
+    // The line a set-aside sutta resumes at, named by the bar that opened it and by nothing else.
+    // A sutta reached any other way — a Library row, a link, a search hit — opens where that way in
+    // has always opened it, even while the set holds a tab for it: a route that lands somewhere
+    // part way down, at a line that moves each time the reader leaves, reads as a lost place.
+    const resumeKey = putAsideKey;
     restoreRef.current = {
       id: suttaId,
       restore: enteredByReturn(navigationType, location.state) ? 'stored' : 'top',
-      skipRestore: !!requestedSubUid || searchSegments !== undefined,
+      // A resumed sutta has its own line to land on, which is the position the reader was shown in
+      // the bar — the local scroll memory may be older, or from another device's reading.
+      skipRestore: !!requestedSubUid || searchSegments !== undefined || resumeKey !== undefined,
+      resumeKey,
     };
   }
+  const resumeKey = restoreRef.current.resumeKey;
   const {
     segments,
     error: textError,
@@ -273,6 +304,87 @@ export function ReaderPage() {
     return () => window.clearTimeout(timer);
   }, [searchSegments, requestedSubUid, segments, scrollToSegment]);
 
+  // Resumes a set-aside sutta at the line it was left on. At the top of the pane rather than
+  // centred, and without the ease: this is the reader picking up where they were, not being shown a
+  // passage, and one that opens by scrolling down to itself plays a journey they never took. A key
+  // this copy of the text doesn't carry — an older cached copy, or one the corpus has since dropped
+  // the line from — scrolls nowhere and opens at the top.
+  //
+  // `READING_TOP` is the head of the document, above the first segment, so it is the pane itself
+  // that is put back to nothing rather than a segment that is scrolled to. Written out rather than
+  // left to the pane's own zero: this page's reading column survives the change of sutta, so it
+  // arrives holding whatever the last one was scrolled to.
+  //
+  // Held until the user data is in as well as the text, which is the same wait the pane's own
+  // scroll memory makes: the breadcrumb above the reading grows a row once the lists land, and a
+  // line measured to the top edge before that ends up a row's worth off.
+  useEffect(() => {
+    if (resumeKey === undefined || !segments || !userDataReady) return;
+    if (resumeKey === READING_TOP) {
+      requestAnimationFrame(() => {
+        if (scrollRef.current) scrollRef.current.scrollTop = 0;
+      });
+      return;
+    }
+    const at = segmentIndex(segments).get(resumeKey);
+    if (at === undefined) return;
+    requestAnimationFrame(() => scrollToSegment(at, 'start', { animate: false }));
+  }, [resumeKey, segments, userDataReady, scrollToSegment, scrollRef]);
+
+  // The reading as the set would remember it, sampled at the moment it is asked for rather than
+  // tracked — the scroll position is only ever wanted at the instant of a minimise or a swap.
+  const currentEntry = useCallback((): PutAsideEntry | null => {
+    if (!suttaId) return null;
+    const position = readingPositionOf(scrollRef.current, segments);
+    return position ? { suttaId, ...position } : null;
+  }, [suttaId, segments, scrollRef]);
+
+  // Whether the sutta on screen already has a tab, which is what the header's left side answers to:
+  // a reading with a tab is left by going back down into it, and Close stands down.
+  const held = !!suttaId && putAside.some((e) => e.suttaId === suttaId);
+  // A full set has no slot for this sutta, and nothing in it is dropped to mint one: the minimise
+  // control opens the sheet instead, where closing a tab hands its place straight to this reading.
+  const full = !held && putAside.length >= PUT_ASIDE_CAP;
+  const [putAsideSheet, setPutAsideSheet] = useState<PutAsideSheetMode>('closed');
+
+  // Hands the set the line this sutta is being left on, where it holds a tab for it — a tab tracks
+  // its sutta the way a browser tab holds its scroll. Every way out of a reading calls it; a sutta
+  // the set doesn't hold gains nothing, reading alone earning no tab.
+  const keepPlace = useCallback(() => {
+    const entry = currentEntry();
+    if (entry) trackPutAside(entry);
+  }, [currentEntry, trackPutAside]);
+
+  // Opens one of the set in place, at the line it was left on. The origin travels with it, so
+  // closing still returns wherever this run of reading began.
+  function resumePutAside(entry: PutAsideEntry) {
+    keepPlace();
+    navigate(`/read/${encodeURIComponent(entry.suttaId)}`, {
+      state: tagIntent({ from, fromView, searchIds, putAsideKey: entry.key }),
+    });
+  }
+
+  // Sets the sutta aside and leaves, playing the reading down into the bar on the way out — what
+  // tells this apart from closing, which leaves for the same place and takes nothing with it. The
+  // card is raised before the navigation and comes down over the Library, so the shrink happens
+  // against the page the reader has arrived on rather than against nothing (lib/putAsideTuck.ts).
+  //
+  // A sutta that already has a tab keeps its slot and has only its line refreshed, the card coming
+  // down onto that tab: this is the whole of how such a reading is left.
+  function minimiseReader() {
+    const entry = currentEntry();
+    if (entry) putSuttaAside(entry);
+    if (entry && sutta) {
+      tuckIntoBar({
+        suttaId: entry.suttaId,
+        label: `${sutta.ref} · ${sutta.en}`,
+        theme,
+        face: READER_FACES[face],
+      });
+    }
+    leaveToOrigin();
+  }
+
   // The whole corpus in canonical browse order, which Prev/Next steps through across category
   // boundaries.
   const siblingIds = useMemo(() => (corpus ? flatSuttaOrder(corpus) : []), [corpus]);
@@ -370,6 +482,7 @@ export function ReaderPage() {
   function step(dir: 1 | -1) {
     const next = neighbourOf(suttaId, dir);
     if (!next) return;
+    keepPlace();
     enterOnArrival.current = { id: next, dir };
     navigateToSutta(next);
   }
@@ -403,15 +516,25 @@ export function ReaderPage() {
   function jumpToHighlight(segIndex: number, highlightId?: string) {
     setPanel(false);
     revealHighlights();
-    requestAnimationFrame(() => scrollToSegment(segIndex, 'center', highlightId));
+    requestAnimationFrame(() => scrollToSegment(segIndex, 'center', { highlightId }));
   }
 
-  function closeReader() {
+  // Leaves the reader for wherever this run of reading began, without touching the put-aside set.
+  function leaveToOrigin() {
     closeToOrigin(suttaId, sutta ? `/browse/${sutta.node}/${suttaId}` : '/');
+  }
+
+  // Closing leaves the reading, and leaves the set as it stands: a tab is closed by its own ✕ on
+  // the bar, never from up here. All this owes the set is the line it is walking away from. Escape
+  // and Android's Back come here too, including from a reading whose header offers only ⤓.
+  function closeReader() {
+    keepPlace();
+    leaveToOrigin();
   }
 
   function onSearchOpenSutta(id: string, segments?: [number, number]) {
     setSearchOpen(false);
+    keepPlace();
     // Leaves the library search's run behind: this jump is the reader's own search, not that one.
     navigateToSutta(id, segments, true);
   }
@@ -471,6 +594,12 @@ export function ReaderPage() {
     if (moved < 10 && !String(window.getSelection()) && pop) closePop();
   }
 
+  // The icon count each side of the header actually draws, so the centred title gives up clearance
+  // for whichever side is denser.
+  const leftIconCount = held ? 1 : 2; // Set aside, + Close where the sutta has no tab
+  const rightIconCount = SHAREABLE ? 3 : 2; // Search + Menu, + Share
+  const headerIconCount = Math.max(leftIconCount, rightIconCount);
+
   useReaderKeyboard({
     shortcutsOpen,
     setShortcutsOpen,
@@ -482,6 +611,16 @@ export function ReaderPage() {
     closeDict,
     panel,
     setPanel,
+    putAsideOpen: putAsideSheet !== 'closed',
+    closePutAside: () => setPutAsideSheet('closed'),
+    // The same two things the header's control and the bar's slots do, and refusing on the same
+    // terms: the sheet rather than a silent drop at the cap. A sutta that already has a tab is put
+    // back in it, as the header's ⤓ does.
+    setAside: () => (full ? setPutAsideSheet('full') : minimiseReader()),
+    openPutAsideSlot: (slot: number) => {
+      const entry = putAside[slot - 1];
+      if (entry) resumePutAside(entry);
+    },
     closeReader,
     step,
     goToAdjacentWord,
@@ -535,23 +674,51 @@ export function ReaderPage() {
       onMouseUp={onTextUp}
       onTouchEnd={onTextUp}
     >
-      {/* The header: close on the left, search and menu on the right, and the title absolutely
-          centred on the page rather than between them, since the two sides carry different
-          numbers of buttons. A 44px bar starting on the safe-area line, the platform's own top-bar
-          geometry, with its controls centred in it. */}
+      {/* The header: close and set-aside on the left, the other tools on the right, and the title
+          absolutely centred on the page rather than between them, since the two sides carry
+          different numbers of buttons. A 44px bar starting on the safe-area line, the platform's
+          own top-bar geometry, with its controls centred in it. */}
       <header
         className="font-sans flex-none relative flex items-center justify-between box-content h-11 px-5 text-ui-base"
         style={{ borderBottom: `1px solid ${theme.rule}`, paddingTop: 'var(--safe-top)' }}
       >
-        {/* `p-3.5 -m-3.5`: a 47px touch area around the 19px icon, with the negative margin
-            collapsing the button's layout box back to the icon. */}
-        <button className="flex items-center p-3.5 -m-3.5" title="Close" onClick={closeReader}>
-          <X size={19} strokeWidth={1.75} />
-        </button>
+        {/* `gap-6` puts the hit areas edge to edge. Setting aside belongs beside Close: the left of
+            the header is how to leave a reading, and setting aside is the other thing to do with
+            one. A sutta that already has a tab shows only ⤓, which puts the reading back in it:
+            Close is the same walk away from the same reading under an icon that promises the tab
+            goes with it, and the only ✕ that closes a tab is the tab's own. */}
+        <div className="flex items-center gap-6">
+          {/* `p-3.5 -m-3.5`: a 47px touch area around the 19px icon, with the negative margin
+              collapsing the button's layout box back to the icon. */}
+          {!held && (
+            <button className="flex items-center p-3.5 -m-3.5" title="Close" onClick={closeReader}>
+              <X size={19} strokeWidth={1.75} />
+            </button>
+          )}
+          <button
+            className="flex items-center p-3.5 -m-3.5"
+            aria-label={held ? 'Back to the bar' : 'Set aside'}
+            title={
+              held
+                ? 'Back to the bar'
+                : full
+                  ? `You can set aside ${PUT_ASIDE_CAP} suttas at a time — make room first`
+                  : 'Set aside for later'
+            }
+            onClick={(e) => {
+              e.stopPropagation();
+              if (full) setPutAsideSheet('full');
+              else minimiseReader();
+            }}
+          >
+            <ArrowDownToLine size={19} strokeWidth={1.75} />
+          </button>
+        </div>
         {/* Tapping the title scrolls back to the top of the sutta, the iOS status-bar convention.
             Done by hand, since the reader scrolls in a nested div rather than the document. */}
         <button
-          className={`absolute left-1/2 -translate-x-1/2 ${SHAREABLE ? 'max-w-[calc(100%-16rem)]' : 'max-w-[calc(100%-14rem)]'} truncate opacity-75 font-serif cursor-pointer`}
+          className="absolute left-1/2 -translate-x-1/2 truncate opacity-75 font-serif cursor-pointer"
+          style={{ maxWidth: `calc(100% - ${titleClearance(headerIconCount)}px)` }}
           aria-label="Scroll to top"
           title="Scroll to top"
           onClick={() => scrollRef.current && animateScrollTop(scrollRef.current, 0)}
@@ -560,8 +727,7 @@ export function ReaderPage() {
               English title. */}
           {mobile ? sutta.ref : `${sutta.ref} · ${sutta.en}`}
         </button>
-        {/* Share, Search and Menu, on a smaller 43px touch area (`p-3 -m-3`) so they can sit closer;
-            `gap-6` puts the hit areas edge to edge. */}
+        {/* `p-3 -m-3` gives these a smaller 43px touch area so they can sit closer. */}
         <div className="flex items-center gap-6">
           {SHAREABLE && (
             <button
@@ -570,7 +736,7 @@ export function ReaderPage() {
               title="Share"
               onClick={(e) => {
                 e.stopPropagation();
-                shareLink(shareUrl(`/read/${requestedSubUid ?? suttaId}`)).catch(() => {});
+                void shareLink(shareUrl(`/read/${requestedSubUid ?? suttaId}`)).catch(() => {});
               }}
             >
               <ShareIcon size={19} strokeWidth={1.75} />
@@ -893,6 +1059,24 @@ export function ReaderPage() {
           )}
         </div>
       </div>
+
+      {/* The put-aside bar, below the reading and above everything overlaid on it. It takes its
+          height from this column rather than floating, so the text is never behind it.
+
+          The dictionary takes the foot of the screen for itself: one word up is one piece of
+          furniture down there, not two rows of it, and the reading keeps the bar's height while
+          the dock has the rest. The bar returns as it stood the moment the word closes — it slides
+          up only when the set first appears, never on a mount like this one. */}
+      {!dict && (
+        <PutAsideBar
+          theme={theme}
+          currentSuttaId={suttaId}
+          onOpen={resumePutAside}
+          sheet={putAsideSheet}
+          onSheet={setPutAsideSheet}
+          onMakeRoom={minimiseReader}
+        />
+      )}
 
       {dict && (
         <DictionaryDock
