@@ -3,10 +3,10 @@ import { DEVICE_ID_KEY } from './storageKeys';
 
 // `${ISO}|${deviceId}` — the timestamp every mutable write carries, and the whole of this app's
 // conflict resolution: the server stores a write only when its mtime is strictly newer than the
-// row's (docs/offline-sync.md's A2). ISO 8601 is fixed-width, so lexicographic comparison is
-// chronological comparison in both SQLite TEXT and JavaScript `<`. It is stamped when the user
-// acts, not when the write reaches the network, so a note edited offline on Monday and flushed on
-// Friday still loses to a Wednesday edit made elsewhere.
+// row's (docs/offline-sync.md's "A timestamp on every row"). ISO 8601 is fixed-width, so
+// lexicographic comparison is chronological comparison in both SQLite TEXT and JavaScript `<`. It
+// is stamped when the user acts, not when the write reaches the network, so a note edited offline
+// on Monday and flushed on Friday still loses to a Wednesday edit made elsewhere.
 
 // This device's id, cached for the session.
 let cachedDeviceId: string | null = null;

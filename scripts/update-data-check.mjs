@@ -165,7 +165,7 @@ function checkStaleTriage(rules, sujatoUpstreamByRelPath, rulesDir) {
 // blurb opener whose `from` no longer anchors — all resolved against upstream, before anything is
 // copied. Each override's file comes from the *local* index; a relocated file is upstreamIssues'
 // business. An override's `from` is post-processed text, so the term rules are applied to the
-// upstream segment before comparing (see docs/retranslation.md's "Segment override").
+// upstream segment before comparing (see docs/retranslation.md's "Segment overrides").
 function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, localBlurbIndex, rulesDir) {
   const issues = [];
   const sidecars = new Map(rules.filter(isTermRule).map((rule) => [rule.id, loadSidecar(rule.id, rulesDir)]));

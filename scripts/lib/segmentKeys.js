@@ -1,9 +1,9 @@
 // The build's copy of the reader's segment-key comparator (web/src/lib/segmentKeys.ts), nothing
 // being shared across the two npm workspaces. build-corpus.mjs asserts every document it emits is
 // in this order, so the reader can decide what a highlight overlaps from the keys alone — see
-// docs/offline-sync.md's "Highlights anchor on segment keys".
+// docs/offline-sync.md's "Anchored on segment keys".
 //
-// Change one, change the other; segmentKeys.test.js is the tripwire.
+// Change one, change the other; web/src/lib/segmentKeys.test.ts is the tripwire.
 
 const SEGMENT_RUN_RE = /\d+|\D+/g;
 const DIGITS_RE = /^\d+$/;

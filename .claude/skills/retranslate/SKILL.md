@@ -110,7 +110,7 @@ upstream) and writes `data/sujato.post/` (generated).
     cluster together (*samudaya* / *atthaṅgama* / *vaya* / *udayabbaya*) even where the counts alone
     would separate them. Slot a new row in rather than appending it.
 
-11. **Add the reader's side to `web/src/lib/searchExpansion.ts`** — the query-expansion table, so
+11. **Add the reader's side to `web/src/lib/search/expansion.ts`** — the query-expansion table, so
     someone typing the word this rule replaced still reaches the sutta. One entry per replaced word,
     singular and plural separately (`{ from: 'mendicants', to: ['bhikkhus'] }`), keys written folded
     — lowercase, no diacritics. Add the renderings other translators use where they differ from both
@@ -139,7 +139,7 @@ rewrite shape, and read all the distinct shapes (~700 rewrites collapse to ~200 
 before reporting the change as done, and **report the per-slot form split explicitly** — that split
 is the substantive editorial decision, not an implementation detail.
 
-The `searchExpansion.ts` entries change with it, and the rendering being retired earns a `from` of
+The `search/expansion.ts` entries change with it, and the rendering being retired earns a `from` of
 its own — readers have been reading that word in this app.
 
 ## Segment overrides
@@ -194,6 +194,6 @@ cases is reported as a count and a shape breakdown, never as a listing.
 Say which rules changed, each one's match count, and what's left in any queue. Point at the diff
 files rather than pasting them.
 
-Mention when relevant: a shipped retranslation doesn't reach a reader who already has that sutta
-cached (one-year `CacheFirst` TTL, no cache-busting), so the user's own browser isn't a test of
-whether it worked.
+Mention when relevant: a shipped retranslation reaches a reader who already has that sutta cached
+one visit late — the text is refreshed in the background and shows at the next launch — so the
+user's own browser isn't a first-visit test of whether it worked.

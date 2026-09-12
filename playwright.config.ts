@@ -113,7 +113,7 @@ export default defineConfig({
           // would pull it out from under any other dev server already serving it.
           command: '[ -f web/public/data/corpus.json ] || npm run build:corpus; npm run dev:web',
           url: baseURL,
-          // Minutes from cold, almost all of it the corpus build.
+          // Generous: a clean checkout builds the corpus before the server can start.
           timeout: 5 * 60 * 1000,
           reuseExistingServer: !process.env.CI,
           stdout: process.env.CI ? 'ignore' : 'pipe',

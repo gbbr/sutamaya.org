@@ -64,8 +64,7 @@ export function useCorpusSearch(
   // about: `deferredQuery` lags it by a render, so nothing has been scanned yet.
   const starting = !searching && query.trim() !== '';
   // A field the reader has focused has usually already started this; a query typed into one that
-  // hasn't (the reader's overlay opened straight onto a pasted query) starts it here, as does a
-  // search still on screen when the idle release drops the text.
+  // hasn't (the reader's overlay opened straight onto a pasted query) starts it here.
   const status = useSyncExternalStore(subscribeTextSearch, textSearchStatus, textSearchStatus);
   useEffect(() => {
     if (searching && status === 'idle') beginTextSearchLoad(corpus);

@@ -5,11 +5,10 @@
 // Nothing here scans anything. The blobs are the worker's, and the only thing this module holds of
 // them is whether they are loaded.
 //
-// Once loaded they stay loaded, for as long as the page lives. They used to be released a minute
-// after the app went out of sight, on the theory that an idle tab holding ~34 MB is a likelier
-// candidate for iOS to discard outright — but that charged a re-read to every ordinary return (an
-// app switch, a call, a notification) to hedge against a discard that is both rarer and cheaper: the
-// app relaunches from the precache and restores its location and its scroll.
+// Once loaded they stay loaded, for as long as the page lives. Releasing them while the app is out
+// of sight would charge a re-read to every ordinary return — an app switch, a call, a notification
+// — to hedge against iOS discarding the tab outright, which is rarer and cheaper: the app
+// relaunches from the precache and restores its location and its scroll.
 import type { Corpus } from '../types';
 import type { RankedHit, TextSearchStatus } from './text';
 import type { SearchRequest, SearchResponse } from './worker';
@@ -78,7 +77,7 @@ function send(msg: SearchRequest): void {
 }
 
 // Starts the one fetch of the search text, if it hasn't been started. Called when a search field is
-// focused, and again on the first keystroke — never on app start, since this is ~2.4 MB served
+// focused, and again on the first keystroke — never on app start, since this is ~2.7 MB served
 // that a reader who doesn't search should not pay for.
 export function beginTextSearchLoad(corpus: Corpus | null): void {
   if (!corpus || status === 'loading' || status === 'ready') return;

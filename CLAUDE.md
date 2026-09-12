@@ -1,461 +1,106 @@
 # Sutamaya
 
-An offline-first reader for the Early Buddhist Texts. Two surfaces: a **Library** (corpus tree +
-user lists + search) and an **Immersive reader** (inline Pali, docked dictionary, text-range
-highlighting, notes, lists, typography controls).
+An offline-first reader for the Early Buddhist Texts. @README.md is the map: what each part of the
+repo does, where it lives, and every npm command. This file holds what the map doesn't: where to
+read before changing something, the rules that span files, and how documentation is written here.
 
-## Stack
+## Read before you change
 
-- **`web/`** — React + TypeScript + Tailwind + Vite, routed with **React Router** (a data router, no
-  loaders — see the routing section below), packaged as a PWA via `vite-plugin-pwa`.
-- **`worker/`** — a Cloudflare Worker (Hono) using **D1** for storage. Serves `/api/*` and, via
-  Cloudflare's assets binding, the built SPA and static corpus from the same origin.
-- **`scripts/`** — the corpus build and the `update-data` pipeline that refreshes `data/` from a
-  local `sc-data` checkout.
+| Before changing | Read |
+|---|---|
+| the offline mirror, the sync, or the Worker's data routes | [docs/offline-sync.md](docs/offline-sync.md), the design and its invariants |
+| a retranslation rule, or anything under `data/sujato*` | [docs/retranslation.md](docs/retranslation.md), then the `retranslate` skill |
+| search | [docs/search.md](docs/search.md) |
+| the corpus build, the browse tree, the dictionary | [docs/corpus.md](docs/corpus.md) |
+| the Worker: routes, schema, sign-in, hostnames | [docs/backend.md](docs/backend.md) |
+| routing, providers, caching, the service worker | [docs/web-app.md](docs/web-app.md) |
+| the native apps and their updates | [docs/native-apps.md](docs/native-apps.md) |
+| deploys, staging, migrations | [docs/deploy.md](docs/deploy.md) |
+| local setup, ports, secrets | [docs/development.md](docs/development.md) |
+| end-to-end specs | [docs/e2e.md](docs/e2e.md) |
 
-## Commands
+Offline sync covers `web/src/lib/{mirror,sync,mirrorView,mirrorDb,listTree}.ts`,
+`web/src/context/UserDataContext.tsx`, `worker/src/routes/data.js` and
+`worker/src/lib/{writes,listTree,userData}.js`.
 
-```
-npm install              # installs all workspaces (root, web, worker)
-npm run dev               # builds the corpus bundle, then runs the Worker + web concurrently
-npm run build:corpus      # regenerate web/public/data/ from data/ (run after editing data/)
-npm run build              # production build (corpus + web/dist)
-npm test                   # the (deliberately small) Vitest suite
-npm run test:e2e           # Playwright journeys in a real browser — see docs/e2e.md. Starts
-                            # whichever dev server isn't already up. Not part of npm test; CI runs
-                            # it as its own job, on PRs and pushes to main.
-npm run typecheck          # tsc over web/src — the only place types are enforced, since the build
-                            # transpiles with `tsc -b --noCheck`. CI runs it.
-npm run deploy:prod        # deploy to Cloudflare — see docs/deploy.md; runs npm test first
-npm run deploy:staging     # the same, to the staging environment — see docs/deploy.md
-                            # (bare `npm run deploy` names no environment and refuses to run)
-npm run seed:staging       # replace staging's database with a copy of the local one
-SC_DATA_PATH=/path/to/sc-data npm run update-data     # plan a refresh of data/ — see data/README.md
-                              npm run update-data apply    # copy it in, re-run the rules
-                              npm run update-data accept   # re-baseline, after reviewing the diffs
-                              npm run update-data help     # every subcommand, incl. the rule-authoring ones
-DPD_DB_PATH=/path/to/dpd.db npm run update-data dictionary   # rebuild data/pli2en_dpd.json from a
-                              # DPD release; skipped, with a row saying so, whenever it's unset
-```
+## Working here
 
-Run the two halves individually with `npm run dev:worker` / `npm run dev:web`. `dev:worker` is
-`wrangler dev --port 8787` against a local D1 instance wrangler creates on demand, so there's no
-separate database to start. The web dev server listens on 5173 and proxies `/api/*` to
-`http://localhost:8787` (override with `API_ORIGIN`).
+- **`npm run typecheck` is the only type check.** The build transpiles without checking; CI runs it.
+- **`npm test` is the unit suite. `npm run test:e2e` is separate** and starts the dev servers itself.
+- **`npm run dev:worker` applies local migrations first.** A migration added while the Worker runs
+  needs a restart. The unit tests migrate a fresh database of their own, so they stay green when the
+  local one is behind.
+- **Deploys name their environment** (`deploy:prod`, `deploy:staging`); a bare `npm run deploy`
+  refuses to run.
+- **Never hand-edit `data/sujato/`**: every change to the English is a rule. Don't run
+  `update-data apply` or `accept` unless asked.
+- **`web/public/data/` is generated and git-ignored.** `data/diff/` is generated too, but checked in.
 
-To run a second copy alongside one already up, move both ports:
-`WEB_PORT=5180 WORKER_PORT=8790 npm run dev` (the native scripts honour them too). Both ports are
-strict, so a taken one fails instead of drifting. Google sign-in only works on 5173, the one port
-registered with the OAuth client and named by `WEB_ORIGIN`; sign in on another with an emailed code.
+## Rules that span files
 
-`npm run dev:ios` / `npm run dev:android` (or `dev:native` for both, heavy) run the Worker and the
-web dev server, then launch the native app in live-reload mode against them — web edits reload with
-no rebuild. A booted simulator / emulator is the default target; `IOS_DEVICE=<index or name>` names
-another, a physical iPhone or iPad included, and `npm run devices` lists every target it accepts. Run
-`npm run build:native` once so the `web/ios` and `web/android` projects have the current bundle
-(`-- --no-sync` stops at the bundle, no native toolchain needed). A device loads the dev server at
-this machine's LAN IP, which Google won't accept as an OAuth redirect, so sign in there with an
-emailed code. See `docs/native-apps.md`.
+- **Signing in is never required.** A reader who hasn't signed in gets a local account and a mirror
+  of their own, which signing in adopts. Nothing in the UI is gated on a session except the sync.
+- **Every D1 query on user data is scoped `AND user_id = ?`** — reads, writes and existence checks
+  alike. It is the only thing separating one account's rows from another's.
+- **User data is local-first.** Rows carry an `mtime` stamped when the reader acts, the last write
+  wins per row, and deletes are tombstones every read skips ([docs/offline-sync.md](docs/offline-sync.md)).
+- **Changing what the mirror stores bumps its IndexedDB version**, in the same change.
+- **Migrations only add**; a destructive schema change takes two deploys ([docs/deploy.md](docs/deploy.md)).
+- **Some logic exists twice, on purpose**, since the workspaces share no modules. Change one, change
+  the other:
+  - list-tree repair and snapshot shaping — `worker/src/lib/{listTree,userData}.js` and
+    `web/src/lib/{listTree,mirrorView}.ts`;
+  - the automatic lists' ids and caps — `web/src/lib/autoLists.ts`;
+  - the segment-key comparator and the Pali word splitter — `scripts/lib/` and `web/src/lib/`;
+  - the corpus lookups behind link previews — `worker/src/shareMeta.js` and `web/src/lib/corpus.ts`.
 
-No Cloudflare account is needed for local dev, but `.dev.vars` needs `GOOGLE_CLIENT_SECRET`,
-`SESSION_SECRET` (any long random string — it signs both the session cookie and the OAuth state) and
-`WEB_ORIGIN=http://localhost:5173` — Google sign-in needs a real OAuth client even in dev. Leave a
-secret blank to develop signed out; the sign-in link then bounces back with `?auth_error=1`, and the
-emailed-code form says it couldn't send one.
+  Parity tests catch drift in the first three.
+- **`APP_PATHS` (`worker/src/index.js`) and `assets.run_worker_first` (`wrangler.jsonc`) change
+  together**, or an app path skips the Worker ([docs/backend.md](docs/backend.md)).
+- **`WEB_ORIGIN` is always the app's origin**, never the landing page's: sign-in builds its redirects
+  from it.
+- **Staging runs production's build.** Whatever differs is decided from the hostname at runtime,
+  never compiled in.
+- **Dictionary shards are ordered with plain `<` and `>`**, never `localeCompare`, in the build and
+  the app alike.
+- **Import the router and its hooks from `react-router`**, never `react-router/dom`.
+- **`<StrictMode>` is off.** Turning it on means checking every effect against a double run first.
+- **Drag and drop uses Pointer Events**, never HTML5 drag-and-drop.
+- **A Capacitor plugin on the startup path is imported statically**, never behind `await import()`.
+- **The app ships as one main chunk, on purpose.** Raise `build.chunkSizeWarningLimit` only after
+  checking what grew.
+- **`docs/translation-changes.md` is linked from the app and the landing page.** Never rename or
+  move it.
 
-**`dev:worker` applies pending migrations to your local D1 before starting.** Wrangler itself only
-migrates that database when it first creates it, not when `worker/migrations/` gains a file, so
-`npm run migrate:local` (`wrangler d1 migrations apply DB --local`) runs first — a no-op once
-everything is applied. Without it every affected route 500s with `D1_ERROR: no such table: …` while
-`npm test` stays green, since `worker/vitest.config.ts` applies the full set to a fresh database on
-every run.
+## Writing documentation
 
-It is `--local` and takes no `--env`, so it can only ever touch the on-disk database under
-`.wrangler/`. Remote databases are migrated by the deploy (`scripts/deploy.sh`), never from here.
-Adding a migration while the worker is already running still means restarting it — or running
-`npm run migrate:local` by hand once it's stopped.
+Everything written in this repo — the docs and the comments in the code — explains **how things
+work and why**, at a level the code can't show at a glance. The code already says *what* it does;
+never restate it as prose.
 
-## Where things live
+### Docs
 
-```
-web/src/
-  context/      one provider per concern — Auth, Corpus, UserData, ReaderPrefs, UiPrefs, Layout
-  pages/        LibraryPage (tree + list panes), ReaderPage (full-screen), SettingsPage, HelpPage
-  components/   SegmentedText is the reader's renderer; TreePane/ListPane/ListRow the library
-  hooks/        reader keyboard, dictionary lookup, scroll memory, the two pointer-drag sessions
-  lib/          pure helpers, no React — corpus, dictionary shards, the mirror and its flush
-  lib/search/   metadata search, full-text search and its worker, query expansion, hit marking
+- **Explain the system, not the code**: what the pieces are, how they fit, the flows, the rules that
+  must hold and why. Never walk through functions, constants and branches.
+- **Name files and symbols only as signposts** to where something lives, and end a doc with a short
+  "Where to look" table.
+- **Keep sections short** — a few sentences, a table or a list. A number goes in only when it is the
+  design: a cap the reader sees, a limit a deploy must respect.
+- **Present tense, no history.** Say what is, never how it came to be or what it replaced.
+- **Put things where they belong.** README.md is the developer's map, a short paragraph per part
+  linking to its doc. `docs/` holds one doc per subsystem. This file holds only rules and pointers.
+  `docs/translation-changes.md` is written for readers, not developers.
+- **Change the doc with the code.** A change to how something works updates its doc in the same
+  change.
+- **Keep headings stable.** Code comments cite them by name; renaming one means updating what cites
+  it.
 
-worker/src/
-  index.js      rate limiting, CORS, route mounting
-  routes/       auth, lists (one read), data (the snapshot, the export and the one write endpoint)
-  lib/          writes.js is every write; the rest is pure, unit-testable pieces — tree repair,
-                order reconciliation, mtime, user data
+### Comments
 
-scripts/
-  build-corpus.mjs    data/ -> web/public/data/ (git-ignored, regenerated by the build)
-  update-data.mjs     the one entry point — plan / apply / accept, and the frame around them
-  update-data-*.mjs   the steps it drives as libraries; `post` applies this app's editorial layer
-  lib/collections.js  the hardcoded, canonical collection metadata (see the depth table below)
-  lib/paliWords.js    the build's copy of the reader's word tokenizer and shard search
-```
+- **JSDoc or GoDoc style, giving purpose and reason**: what something is for, and why a non-obvious
+  choice was made — never what the next lines do.
+- **Present tense, no history**: no "used to", "was changed to", "we tried".
+- **Point to a doc by file and heading** — `docs/offline-sync.md's "Sync state"` — rather than
+  repeating it.
 
-## Routing
-
-Every route is one entry in the single table in `web/src/App.tsx` (`createBrowserRouter`), and both
-the app and every test that mounts a page render it through **`components/RouterView.tsx`** — tests
-via `web/src/testRouter.tsx`'s `renderRoutes(routes, entry)`, which puts the same provider around a
-memory router. A page under test therefore behaves as it does in the app.
-
-- **It is a data router with no loaders.** Routes are plain elements; the pages fetch what they
-  need themselves. What the data router is there for is `errorElement`, mounted twice — around the
-  shell, and inside it around the pages, so a throw in a page leaves the providers and the Android
-  back button running. `ErrorBoundary` (the class) still wraps the router itself, for a throw the
-  router can't catch.
-- **Every route matches its static segments exactly** (`caseSensitive`), which is what lets
-  `/:suttaId` stand at the bottom as the bare-uid deep link (`/dn9` → `/read/dn9`) without
-  swallowing `/Settings`.
-- **Import the provider and the hooks from the same specifier** — `react-router`, never
-  `react-router/dom`. Outside a bundler the two resolve to different builds of the package, each
-  with its own router context, and a hook then finds no provider. `RouterView` passes react-dom's
-  `flushSync` in, which is the whole of what `react-router/dom` adds.
-- **A page change moves keyboard focus** to the wrapper the page renders into
-  (`components/RouteFocus.tsx`), where the focus would otherwise be left on the page that went.
-  Selecting a sutta within a library node is not a page change.
-- **The address is where the reader is** — the selected node and sutta, and the library's `?q=`,
-  which is why closing a search result returns to the results. `location.state` carries what an
-  arrival means rather than where it lands: the pane it came from, the hits behind it, the segment
-  to jump to. It survives a same-tab refresh, so each of those is stamped and consumed exactly once
-  (`lib/routeIntent.ts`), and `location.key === 'default'` is how a page tells the entry a tab
-  opened on from one the app navigated to.
-
-## Data pipeline (`scripts/build-corpus.mjs`)
-
-Reads `data/tree/*.json`, `data/pali/`, `data/sujato.post/`, `data/html/`, `data/pli2en_dpd.json`
-and writes into `web/public/data/`:
-
-- **`corpus.json`** — the browse tree (`nikayas[]`, each optionally with recursively-nested
-  `chapters[]`, a group row carrying `blurb` where the source data describes that group) plus a flat
-  `suttas` map (`uid -> {ref, node, en, pali, blurb, min}`). Also carries `sujatoCommit`,
-  `dataVersion`, `searchVersion`, `dictionaryVersion` and `dpdVersion`. `searchVersion` is a hash of
-  the search blobs' own bytes, not of `text/`, so a change to how they are written moves their URL
-  on its own.
-- **`text/{uid}.json`** — one file per leaf document: an ordered array of
-  `{key, pali, en, role?, headingLevel?, note?}` segments. `role` is
-  `'verse' | 'heading' | 'end' | 'speaker' | 'list-item'`, derived from SuttaCentral's own markup in
-  `data/html/`; `note` is Bhikkhu Sujato's translator footnote, which may contain inline HTML.
-- **`dict-shards/*.json` + `manifest.json`** — the dictionary split into ~256KB range shards, so a
-  word tap fetches one shard instead of the whole map. `web/src/lib/dictionaryShards.ts`
-  binary-searches the manifest; its comparison must match the builder's (plain `<`/`>`, never
-  `localeCompare`). The build trims the dictionary to the words it actually emitted — see the
-  dictionary section below.
-- **`text-shards/*.json` + `manifest.json`** — the same per-sutta text repacked into ~1MB bundles
-  for Settings' bulk offline download.
-
-`data/html/` is a **static, checked-in dataset with no regeneration path** — it mirrors upstream
-bilara-data's per-segment HTML templates, and new files under `data/pali/sutta/` would need a fetch
-script written to match. `data/diff/` is also checked in deliberately, so a refresh or a rule edit
-leaves a reviewable record of what changed in the shipped text: `00-all.diff` is `data/sujato/`
-against `data/sujato.post/` — the plain before/after — and one `<id>.diff` per retranslation rule
-attributes it. Rules run in sequence, so a rule file's `-` side is the text that rule saw, not
-upstream; read `00-all.diff` for the shipped result.
-
-**The dictionary is corpus-scoped, in two stages.** `update-data dictionary` reads a DPD release
-database (`DPD_DB_PATH`, optional — the step reports either way, and a clone without the database
-builds from the checked-in file) and writes `data/pli2en_dpd.json`: only the headwords a word in
-`data/pali/` can reach, and per headword only the gloss lines the dock renders — no examples,
-citations, frequencies or inflection tables. Sandhi compounds are resolved during the import, since
-DPD answers `jhāyathānanda` with the bare split `jhāyatha + ānanda` and nothing else; the split
-stays as the first line and each part's glosses follow it. Then `build-corpus.mjs` trims again, to
-exactly the words it emitted, and **replays every one of them through the same `lookupWord` and
-manifest binary search the client runs, failing the build if any word resolves differently than the
-file says it should**. That catches a tokenizer drifting from `web/src/lib/dictionary.ts`, which
-would otherwise silently drop entries the reader can still tap.
-
-It proves the shards agree with `data/pli2en_dpd.json`, not that the file is any good — a
-diminished file verifies perfectly. The import guards that end instead: it refuses to overwrite
-when the headword count falls more than 10% below the file it replaces, unless run as
-`update-data dictionary force`.
-
-**SuttaCentral and DPD spell the niggahita differently** — `ṁ` here, `ṃ` there, plus assimilated
-`ṅ`/`ñ` on this side — so the import tries a word's DPD spellings and converts what it gets back.
-Only orthographic equivalences: no vowel-length flipping or enclitic stripping, which do find
-matches and do find wrong ones. Roughly 80 forms across the canon (~120 occurrences) have no gloss
-anywhere and show as a bare headword.
-
-**Before touching a retranslation rule, read `docs/retranslation.md`** — it is the spec, and the
-rules themselves live in `scripts/update-data/retranslation.mjs` so they survive every refresh.
-
-**Browse-tree depth rules** — a product decision, not derived from the raw data:
-
-| Collection | Top level shows | One level in | Two levels in |
-|---|---|---|---|
-| DN | its 3 vaggas | that vagga's suttas | — |
-| MN | its 15 vaggas (the 3 pannasa wrappers flattened) | that vagga's suttas | — |
-| SN | 5 super-vagga groups (`SN1–11 · Verses` … `SN45–56 · The Great Chapter`) | that group's chapters `SN1`…`SN56` | that saṁyutta's vaggas (pannasaka wrappers flattened) |
-| AN | nipātas `AN 1 · Book of Ones` … `AN 11` | that nipāta's vaggas (pannasaka wrappers flattened) | — |
-| KN | its 6 curated books (`dhp`, `ud`, `iti`, `snp`, `thag`, `thig`) | for `snp` and `ud`, that book's vaggas; for the rest, its leaf documents directly | that vagga's leaf documents |
-
-Vaggas are kept rather than flattened away wherever the source data writes a description at that
-level, because the description is what makes the grouping worth navigating: `KN_BOOKS` marks `snp`
-and `ud` with `vaggas: true` for exactly that reason, and it's why DN keeps its 3.
-
-"Fifty" wrapper nodes (pannasaka/pannasa) never appear as rows: `findLeafGroups()` only collects
-*terminal* named groups, so the walk passes straight through them. AN's nipāta names, the KN book
-list and SN's 5 super-vagga labels are hardcoded in `scripts/lib/collections.js`; everything else is
-looked up from the data files.
-
-**Only leaf groups are navigable.** A row with `chapters` expands in place and never opens a page,
-so a nikaya id like `dn` or a saṁyutta id like `sn12` addresses no sutta list. Nothing in the UI
-produces such a URL — the reader's breadcrumb navigates to `sutta.node` (always a leaf) and passes
-the clicked ancestor as `flashNodeId` — and anything needing a default destination must name a leaf
-group or select nothing at all.
-
-**Bare `/browse` is the library with nothing selected**, which is where `/` lands on a first
-visit (`getLastLocation()` restores the real location on every later one) and where
-`ErrorBoundary`'s escape hatch goes. Nothing selected means `ancestorsOf` forces nothing open, so the tree shows the
-five nikāyas collapsed; the list pane says "Choose a collection to begin." It's a second
-`<LibraryPage>` route element, so picking the first node remounts the page — a one-off cost, paid
-before there's any pane scroll to lose. `lastLocation`'s `VALID_PATH` deliberately rejects it.
-
-**Group descriptions** (`ChapterRow.blurb`) come from `data/sujato.post/blurb/` and render above the
-sutta rows in `ListPane`. The source writes them at inconsistent depths — SN's sit on the saṁyutta,
-a level above the vaggas that display them — so `nodeBlurb()` (`web/src/lib/corpus.ts`) falls back to
-the nearest ancestor and labels a borrowed one "About SN12 · Causation" instead of a bare "About". AN has
-none at any level, nor do the four KN books that hold their documents directly. Upstream opens 61 of
-them by naming the group and counting its suttas — both already on screen above the paragraph — so
-the `blurb-openers` rule in `scripts/update-data/retranslation.mjs` trims that frame and re-leads on
-the substance; see `docs/retranslation.md`'s "Blurb rule".
-
-## Backend (`worker/`)
-
-D1 holds user data — `worker/migrations/0001_init.sql` plus `0002_offline_sync.sql` and
-`0003_email_auth.sql`:
-
-```
-users       { id, email, google_id, name, picture, created_at }   -- email is UNIQUE
-identities  { provider, subject, user_id, created_at }            -- PK (provider, subject)
-login_codes { email, code_hash, expires_at, attempts, created_at } -- PK email
-lists       { id, user_id, label, parent_id, kind, position, items, created_at, mtime, deleted }
-notes       { user_id, sutta_id, text, updated_at, mtime, deleted }   -- PK (user_id, sutta_id)
-highlights  { id, user_id, sutta_id, k0, o0, k1, o1, color, created_at, mtime, deleted } -- PK (user_id, id)
-visited     { user_id, sutta_id, visited_at }                 -- PK (user_id, sutta_id)
-```
-
-`lists.kind` is `'list'` (holds suttas) or `'group'` (holds other lists, `items` always `'[]'`).
-`items` is a JSON array of sutta uids in user order, stored as `TEXT` and edited with SQLite's JSON1
-functions. A highlight is one row holding the half-open span from `(k0, o0)` to `(k1, o1)` — segment
-key and character offset — with the client-minted id as its own row id; everything between the two
-ends is covered, so a segment reworded upstream can't leave a gap mid-highlight. A key is
-SuttaCentral's own segment id (`mn10:2.7`), so a line added to or dropped from the corpus moves no
-highlight but its own, and document order is read from the keys alone (`compareSegmentKeys`) — which
-is what lets the offline mirror decide what a selection overlaps with no text loaded. `membership` is
-not stored — `assembleUserData()`
-(`worker/src/lib/userData.js`) derives it at read time, along with the three synthesized auto-lists
-(`auto-recent`, `auto-highlights`, `auto-notes`).
-
-**Two endpoints carry all user data.** `GET /api/data` returns everything a signed-in user needs in
-one shot (`/api/data/export` is the same payload as a download), and `POST /api/data/push` is the
-only write: it takes the records and operations the client's flush assembles, in order, up to 100 an
-request, and answers with one result per item. It is deliberately **not atomic** — a refused item
-neither rolls back the ones before it nor blocks the ones after it — so a sync costs two requests
-however many edits are queued. Every write's actual logic lives in `worker/src/lib/writes.js`, which
-that route dispatches over. `worker/src/index.js` mounts rate limiting and CORS on `/api/*`, then
-routes to `auth` and `data`, with a JSON `not_found` for any unmatched `/api` path.
-
-**`DELETE /api/auth/account` is the one thing that removes user data wholesale**, and it lives in
-`auth` rather than `data` because it destroys the account itself: one batch clearing `lists`,
-`notes`, `highlights`, `visited`, `identities`, `login_codes` and `users`, then a cleared session
-cookie. Immediate, with no grace period and no deactivated state. Settings puts an export and a
-typed `DELETE` in front of it (`SettingsPage`'s Danger zone) and wipes the local mirror after it.
-Because `requireAuth` reads no D1, every other device keeps a valid session cookie: `dataRouter`
-checks the account still exists and answers `410 account_deleted`, which the flush turns into a
-device reset rather than a re-auth prompt — see `docs/offline-sync.md`.
-
-**Auth.** Two ways in, both in `worker/src/routes/auth.js`: a server-side Google **OAuth
-authorization-code redirect** (`oauth.js` — the browser loads no Google JavaScript, which is what
-makes it survive Safari ITP and iOS PWAs) and an **emailed six-digit code** (`emailAuth.js`, sent via
-Resend). A code rather than a magic link because a link opens in Safari, not the installed PWA.
-`identities` — not `users.google_id` — is the authoritative record of how an account can be signed
-into; accounts are linked on a verified email. Sessions are a signed cookie (`session.js`), read by
-`requireAuth` with no D1 round trip. Setup, secrets and rate-limit numbers are in `docs/deploy.md`.
-
-## Offline sync
-
-**`docs/offline-sync.md` is the design and the source of truth.** Read it before changing any of:
-`web/src/lib/{mirror,sync,mirrorView,mirrorDb,listTree}.ts`, `web/src/context/UserDataContext.tsx`,
-`worker/src/routes/data.js`, or `worker/src/lib/{writes,listTree,userData}.js`.
-
-The shape in one paragraph: user data is **written to a local mirror first and synced afterwards**,
-so the local write is the durable one. Every row carries an `mtime` (`${ISO}|${deviceId}`, stamped
-when the user acts) and every mutable write is conditional on it — last writer wins, per row. Deletes
-are tombstones (`deleted`), never row removals, so an offline device can't resurrect them; **every
-read path must therefore exclude tombstones**. A list, note, visit and highlight travel as
-**records** (desired state); anything editing a list's `items`, and sibling order, travel as queued
-**operations**, because those commute. Highlights are immutable: a recolour is a tombstone plus a new
-highlight. The list tree is repaired at read time rather than at delete time, so two devices
-converge without communicating.
-
-A mirror holding highlights addressed by segment position is re-anchored onto segment keys as each
-sutta's text loads (`anchorHighlights`), that text being what the conversion needs and neither
-IndexedDB nor the server having it. It is permanent: a reader who never signs in has no server copy
-to re-pull from.
-
-**Signing in is never required.** A reader who hasn't signed in gets a `local-…` id
-(`lib/localAccount.ts`) and their own mirror; signing in adopts it onto the account. Nothing in the
-UI is gated on a session except the flush itself.
-
-## Offline strategy
-
-`corpus.json`, the app shell, the self-hosted latin font subsets and `dict-shards/manifest.json` are
-precached. Dictionary shards and per-sutta text are **not** — `vite.config.ts`'s `runtimeCaching`
-caches them on first request, so a device holds whatever it has actually read. Both are
-`StaleWhileRevalidate` rather than `CacheFirst`, since their URLs carry no version: a read is served
-from the cache at once and the background fetch refreshes the entry for the next app start. Help
-screenshots and fonts stay `CacheFirst` — those filenames are content-hashed or renamed by hand.
-`/api/*` is `NetworkOnly`.
-
-Settings has a "Download all suttas for offline" action (`web/src/lib/offline.ts`) that fetches the
-canon as ~1MB shard bundles and writes each sutta into the same `sutta-text` cache the reactive rule
-uses, so both paths produce identical entries. It never deletes: when the device can't vouch for
-what's cached, it refetches and overwrites in place, so a cancelled run can't leave less than it
-started with.
-
-**The app is one JS chunk, deliberately** — ~510 KB, ~163 KB gzipped, of which two thirds is
-React and React Router. Route-level splitting buys a precaching PWA nothing: the service worker
-fetches every chunk at install either way, and the native build has no service worker at all, so
-the bundle is the offline store. `build.chunkSizeWarningLimit` in `web/vite.config.ts` sits just
-above the current weight so the warning still catches a dependency arriving heavier than expected.
-
-## Rules that aren't obvious from reading one file
-
-- **The marketing site and the app are separate origins.** `sutamaya.org` serves one page,
-  `web/public/landing.html` — plain HTML with no JavaScript, the one page a search engine can read
-  without rendering the SPA. `app.sutamaya.org` is the app and the API, and `/` there is the app's
-  entry point as it always was. One Worker answers both (two `routes` in `wrangler.jsonc`) and
-  tells them apart by hostname: `MARKETING_HOSTS` in `worker/src/index.js` decides whether `/`
-  returns `landing.html` or the app shell, which is why `assets.run_worker_first` lists `/` as well
-  as `/api/*`. `web/vite.config.ts`'s `serve-landing-at-root` plugin makes the dev server do the
-  same, so `local.sutamaya.org` and `app.local.sutamaya.org` mirror the split locally.
-
-  The split exists because a web app manifest's scope cannot exclude a path: sharing an origin put
-  the landing page inside the installed app's scope, so Chrome offered "Open in app" on it and then
-  opened that JavaScript-free page in the app window. Narrowing the scope was impossible with
-  `/browse`, `/read`, `/settings` and `/help` as siblings of `/`. `APP_PATHS` keeps the app off the
-  marketing hostname by answering `301` for those paths there — `sw.js`, `registerSW.js` and
-  `manifest.webmanifest` above all, since without them no service worker can register and undo the
-  split. It has to stay in step with `assets.run_worker_first`, which is what makes the Worker see
-  those paths at all.
-
-  The landing page's screenshots are hand-copied from `web/src/assets/help/` into
-  `web/public/landing/`, since a static file can't reference Vite's content-hashed asset names.
-  Its links into the app are absolute for the same reason a relative one would fail: they leave
-  the hostname.
-- **Staging runs production's build.** `env.staging` in `wrangler.jsonc` is a second Worker on
-  `staging.sutamaya.org` / `app.staging.sutamaya.org` with its own D1 database and secrets, and
-  nothing is compiled differently for it. What tells the two apart is written by the Worker on the
-  way out — the icon set, the installed name, the landing page's links and a `noindex` header, all
-  in `worker/src/stagingBrand.js` and all decided from the hostname, which is how
-  `web/src/lib/buildInfo.ts` decides it on the client too. See `docs/deploy.md`.
-- **Every D1 query is scoped `AND user_id = ?`.** These are flat tables with no structural per-user
-  isolation; that predicate is the only thing separating one user's data from another's, and it
-  belongs on reads, writes and existence checks alike.
-- **`<StrictMode>` is deliberately off** (`web/src/main.tsx`). Turning it on means checking every
-  effect in the app against its dev-only double run first — the redirects that navigate on mount
-  (`RestoreLastLocation`, `RedirectToReader`) above all.
-- **Some logic exists twice on purpose.** `web/src/lib/listTree.ts` and `web/src/lib/mirrorView.ts`
-  are ports of `worker/src/lib/listTree.js` and `userData.js`; the auto-list ids and caps are
-  duplicated in `web/src/lib/autoLists.ts`. No module is shared between the two npm workspaces, and
-  the client needs its own copies to derive the same view offline. Change one, change the other —
-  `autoLists.test.ts` is the tripwire that fails when one side moves alone.
-- **`WEB_ORIGIN` is load-bearing beyond CORS** — the OAuth flow builds its redirect URI and return
-  URL from it, so in local dev it must be the *web* dev server, not wrangler's port, and it is
-  always the app's hostname, never the marketing site's. It accepts a comma-separated list (one
-  origin in production): the flow picks whichever entry the sign-in started on, which is what lets
-  one dev server serve both localhost and the phone-facing hostname.
-- **Reordering and drag-and-drop use Pointer Events, never HTML5 drag-and-drop**, which doesn't fire
-  reliably on touch. The shared plumbing is `hooks/usePointerDragSession.ts`.
-- **Search covers the sutta text as well as everything about it** — `searchCorpus` scans ref, title,
-  Pali, blurb, note and list names, and `lib/search/text.ts` scans the text of the whole canon in a
-  worker; `docs/search.md` is the design. The copy sits in `lib/search/metadata.ts`: the two
-  placeholders (`SEARCH_PLACEHOLDER` for the library, `READER_SEARCH_PLACEHOLDER` for the reader's
-  overlay, which shows suttas only) name what is found, and `SEARCH_SCOPE_NOTE` names what a search
-  without the text misses. That note shows only where it is true — `searchScopeNote(status)` returns
-  null once the text is loading or ready, and `searchNoMatches(status)` folds it into the empty state
-  for ListPane, TreePane and the overlay.
-- **A library search returns two kinds of row.** `searchLists` matches the user's own lists by name
-  (or an ancestor group's) and `SearchListHits` draws them as a capped block above the sutta hits —
-  in ListPane on desktop, TreePane on mobile. `LibraryPage` owns the expansion state because
-  TreePane's arrow-key nav walks both kinds as one column, and the reader's own search overlay
-  deliberately shows suttas only. A list-name query still also surfaces the list's *members*, via
-  `searchCorpus`'s list-path haystack — the two are independent.
-- **A library search is a place, not a mode.** The query lives in the address bar as `?q=`, written
-  on a typing pause and always in place of the current entry, and `LibraryPage.onOpen` puts it in
-  the `from` the reader closes back to — so closing a result returns to the results rather than to
-  the sutta's own collection. `lastLocation` stores pathnames only, so a relaunch never reopens a
-  search.
-- **The results' scroll position is the search's, not the pane's.** Each pane keeps results under
-  their own `useScrollMemory` key (`list:search`, `tree:search`), so a search can't take over where
-  the tree or the browsed list was left; a new query forgets that key and opens at the top. Both
-  panes hold the restore until the text hits have landed (`hitsSettled`) — a position restored
-  against a half-filled list is no position at all — and nothing scrolls the cursor's *opening* row
-  into view, on arrival or on the first row, since that would drag the pane off the position just
-  restored. Only a cursor the reader has moved is revealed; `restoreHitId` is the row an arrival
-  put it on.
-- **A note carries one piece of markup, `*bold*`, and the box it's written in never renders it.**
-  `lib/noteFormat.ts` turns the markers into runs and `MatchedText`'s `notation` prop paints them,
-  which covers all four places a note is displayed — the reader's inline note, the Library row, the
-  mobile search hits and the reader's search overlay. `NoteEditor` is deliberately not one of them:
-  the asterisks are the whole of the notation, so there is nothing to reveal while typing. One
-  asterisk rather than Markdown's two, since notes have no italic to distinguish. `MatchedText`
-  splits on the markers before marking query words, so a search hit inside a bold run survives; the
-  search *haystack* is the raw text, markers included, so a marker mid-word (`*word*s`) hides that
-  word from search while the display shows it joined. Stored text is always exactly what was typed.
-- **`web/public/data/` is git-ignored** and regenerated by the build; `data/diff/` is not.
-
-## Known gaps / deliberate simplifications
-
-- Last-writer-wins discards the losing edit silently, by design — see `docs/offline-sync.md`'s
-  "Accepted losses", which also rules out the conflict UI that would surface it.
-- A highlight's endpoints name a segment exactly but a character offset only approximately: `o0` and
-  `o1` index into segment text, so a corpus refresh (or a stale cached copy of a sutta) can move a
-  highlight's first and last few characters. Only the ends drift — everything between them is
-  covered by definition, and both offsets are clamped to the segment's current length. Fixing the
-  remaining drift needs anchoring on a quoted prefix/suffix, which is not planned.
-- A highlight naming a segment the loaded text has no key for paints nothing, and is left out of the
-  reader's panel and gutter so it offers no jump that goes nowhere. It stays in the account and is
-  deleted by nothing, so it paints again on a copy of the text that has the segment. The Library
-  row's badge counts from the account rather than the text, so it can name a highlight the reading
-  doesn't show.
-- The reader has no translation-source picker — this dataset has one English translation per
-  collection. It shows a "Source: SuttaCentral (modified)" line instead, linking to the `sc-data`
-  commit and to `docs/translation-changes.md`, which is the plain-language summary written for a
-  reader rather than a maintainer.
-- **A corpus fix reaches a cached device one document at a time.** `data/dict-shards/*.json` and
-  `data/text/{uid}.json` are unversioned URLs on `StaleWhileRevalidate`, so a device catches up per
-  document, on that document's second online visit — the first serves the stale copy and refreshes
-  it in the background, and `loadSuttaText`'s per-session memo means the refreshed text appears at
-  the next app start. A device therefore holds a mix of versions for as long as it takes the reader
-  to revisit, which is accepted: the mix drains as they read. Versioning the URLs is the real fix,
-  and it needs per-sutta hashes — `dataVersion` is one hash over the whole corpus, so using it would
-  change all ~1,400 URLs on any change and cost every device its entire offline library.
-
-  `/fonts/*.woff2` is still `CacheFirst` with no revalidation path; a font fix means renaming the
-  file, as the PWA icons already do. `/assets/*` is safe because Vite content-hashes those names.
-
-  Bulk downloaders get a stronger guarantee on top: `corpus.json` carries `dataVersion` and
-  `dictionaryVersion`, `lib/offline.ts` records what a device last completed a full download at, and
-  a mismatch surfaces an "Updated sutta text is available" banner plus a re-download action in
-  Settings. Revalidation makes that marker approximate rather than exact — individual suttas refresh
-  as they are read, so a downloaded library drifts off its recorded version between re-downloads.
-- Deleting a list or group is a single inline confirmation with no undo, and nothing stops a
-  non-empty one — a list's suttas and a group's whole nested subtree go with it. The prompt names
-  only the row itself; the row's own count badge is the sole indication of what's inside. Once
-  confirmed, the only recovery is a device that hasn't synced yet.
-- **Some group descriptions quote a title upstream has since revised**, so the paragraph contradicts
-  the heading above it — SN 13 is titled "Comprehension" and described as "the Linked Discourses on
-  the Breakthrough". Blurbs and names live in separately maintained bilara trees (`root/en/blurb` vs
-  `translation/en/sujato/name/sutta`, see `dataSync.js`), nothing upstream checks they agree, and
-  `update-data check` doesn't either — it only cross-checks sutta text, which alone has a Pali
-  counterpart. 12 of the 92 group blurbs disagree; 7 are on pages that display. Refreshing won't fix
-  it; substituting the current name at build time would.
+Older text written before these rules is not a model. Follow the rules, not what's nearby.

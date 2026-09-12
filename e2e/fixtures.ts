@@ -70,7 +70,7 @@ export const test = base.extend<{ errors: PageErrors }>({
         },
       };
 
-      // Cloudflare's RUM beacon (web/index.html) is in the page on every origin, and its CORS
+      // Cloudflare's RUM beacon (web/src/lib/analytics.ts) loads on every origin, and its CORS
       // preflight can't succeed from a test origin. Stubbed out rather than ignored: real traffic
       // analytics shouldn't be counting test runs either. Fulfilled empty rather than aborted,
       // since an aborted request is itself a console error.

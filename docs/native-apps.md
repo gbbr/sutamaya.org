@@ -1,303 +1,135 @@
-# Sutamaya on iOS and Android
+# Native apps
 
-The native apps are the web build wrapped in a [Capacitor](https://capacitorjs.com) shell. One
-codebase serves web, iOS and Android; the whole corpus is bundled, so the app reads offline from
-first launch with no service worker. The recurring cost is release mechanics — two native projects,
-two store listings, Apple's fee — not divergent app code.
+The iOS and Android apps are the web build wrapped in [Capacitor](https://capacitorjs.com). There is
+one codebase: every difference from the web app is a runtime branch on `isNativeApp()`
+(`web/src/lib/platform.ts`), never a parallel implementation. The whole corpus is in the bundle, so
+the app reads offline from its first launch, with no service worker.
 
-`web/ios/` and `web/android/` are committed. `web/capacitor.config.ts` (`appId org.sutamaya.app`,
-`webDir dist`) configures both; `npx cap sync` copies the latest `web/dist` into them.
+`web/ios/` and `web/android/` are committed Capacitor projects, configured by
+`web/capacitor.config.ts` (app id `org.sutamaya.app`).
 
-## Where the native build differs from web
+## How it differs from the web app
 
-Every difference is a runtime branch inside a shared file, never a parallel implementation. The one
-new module is `web/src/lib/platform.ts`.
-
-| Concern | Native | How |
+| | Web | Native |
 |---|---|---|
-| Content (`/data/*`, fonts, shell) | identical | Capacitor serves the bundle at the same relative paths |
-| Service worker | off | `SUTAMAYA_NATIVE=1` build flag disables `vite-plugin-pwa`; `registerSW()` is a no-op |
-| API base URL | `https://app.sutamaya.org` | `API_BASE` in `lib/platform.ts` — `''` on web, consumed by the one `request()` in `lib/api.ts` |
-| Session credential | bearer token | server reads `Authorization: Bearer` or the cookie via `readSession`; client keeps the token in `@capacitor/preferences` (`lib/nativeAuth.ts`) |
-| `isNativeApp()` / `platformName()` | true / `'ios'`\|`'android'` | `lib/platform.ts`, off the injected `Capacitor` global |
-| Offline download UI | hidden | `HeaderBanner` drops both nudges; `SettingsPage`'s Offline card is a one-line placeholder |
-| Data export | OS share sheet | `lib/exportData.ts` fetches the payload with the token, writes it to the cache directory and shares the file; the browser downloads `dataApi.exportUrl` as a link |
-| Reader's Share button | shown | `lib/share.ts` opens `@capacitor/share` with the sutta's `https://app.sutamaya.org/read/…` link; an installed PWA shows it too, through `navigator.share`; a browser tab hides it, its address bar already shares |
-| Status bar / safe area | edge-to-edge | see below |
-| Android back button | handled | see below |
-| Reader text selection (Android) | `selectionchange`-driven | see below |
-| App updates | over-the-air bundle | `@capgo/capacitor-updater` pulls new web + corpus bundles from the Worker; the browser updates through the service worker. See below |
+| Offline store | the service worker's caches | the bundle itself; no service worker |
+| API | the same origin | `https://app.sutamaya.org`, or staging's |
+| Session | an HttpOnly cookie | a signed token, kept in the app's preferences and sent as a bearer header |
+| Google sign-in | a page redirect | the system browser, returning through a `sutamaya://auth` link |
+| Offline download | offered | hidden — the corpus is already bundled |
+| Data export | a download | the OS share sheet |
+| Reader's Share button | the installed app only | always |
+| Updates | the service worker | over-the-air bundles (below) |
+| Android back button | — | closes what's open, then leaves Settings and Help, then backgrounds the app |
 
-### Session token
+The app runs edge to edge on both platforms, keeping its bars inside the safe-area insets, and sets
+the status bar's text colour from its own theme. On Android the highlight popup opens from the
+selection itself, since the WebView reports no usable end to the touch.
 
-`signSessionToken` (`worker/src/session.js`) mints an HMAC-signed `{ uid, t }` on the same primitive
-as the OAuth state, checked against a 90-day max age with **sliding re-issue** — a token past
-halfway comes back re-minted on the `X-Session-Token` response header. `?app=1` is what marks a flow native, on both
-routes: `/email/verify?app=1` returns the token in its JSON body, and `/google/start?app=1` has its
-callback return `sutamaya://auth?token=…` instead of setting a cookie. No database, no revocation
-table; an expired token falls into the existing `needsReauth` path. Without that signal no token is
-issued, so web is untouched — still the browser-enforced cookie.
+## Signing in
 
-`AuthContext.signInWithGoogleNative` only opens `@capacitor/browser`. The return is owned by an
-`appUrlOpen` listener registered for the app's whole life, plus an `App.getLaunchUrl()` check —
-the token is valid whenever it lands, so a return that arrives after the sheet has closed, or that
-cold-starts an app the OS killed mid-flow, still signs the reader in. The sheet closing decides
-nothing; it only drops the button out of its pending state. `forgetAccount` clears the stored token,
-covering sign-out, deletion and the 410 reset. Every native branch is gated on `isNativeApp()` and
-inert on web.
+The token lasts 90 days and is re-issued by the server once it's past halfway, so an app in use
+stays signed in. A sign-in flow asks for one with `?app=1`; without it, nothing changes for the web.
+The Google return is handled whenever it lands — even after the browser sheet was closed, or after
+the OS killed the app mid-flow — so a sign-in can't be lost to timing.
 
-### Status bar and safe area
+## Over-the-air updates
 
-Both platforms run edge-to-edge. iOS populates `env(safe-area-inset-*)` under `viewport-fit=cover`;
-Capacitor's built-in `SystemBars` injects `--safe-area-inset-*` on `<html>` for older Android
-WebViews. `index.css` folds the two into `--safe-top/right/bottom/left`, and every top bar and
-full-screen surface reads those. On a phone the reader's header is a native top bar — 44px tall,
-starting on the `--safe-top` line, its controls centred in it — and the library, Settings and Help
-start 10px below that line, their headings being sized as large titles rather than a bar's.
-`@capacitor/status-bar` sets the bar's text colour from the app
-theme (`lib/statusBar.ts`, driven from `lib/themeColor.ts`) — the app's theme is its own setting,
-not the OS's.
+The bundle, web code and corpus alike, can be replaced without a store release:
 
-### Android back button
+1. `npm run release:ota -- --env staging|production` builds the bundle, uploads its zip to that
+   environment's R2 bucket, points `OTA_VERSION` and `OTA_CHECKSUM` in `wrangler.jsonc` at it, and
+   deploys. The zip goes up first, so no device is ever told about a bundle that isn't there.
+2. Each time the app comes to the foreground, it asks the Worker for the current version. When that
+   differs, it downloads the zip in the background, checks its hash, and swaps it in the next time
+   the app is backgrounded — the reader meets it on the next launch.
+3. On every launch the app confirms the bundle started: `notifyBundleReady()` is the first thing
+   `main.tsx` does. A bundle that hasn't confirmed within 10 seconds is rolled back.
 
-`web/src/lib/backButton.ts` is a stack of dismiss actions; overlays and sub-views push onto it
-while open via `useBackHandler(active, onBack)` — the reader's layered close, the shortcuts modal
-and mobile list→tree step, the library search, the list-membership popover. `useAndroidBackButton`
-(mounted once in `App`) runs the top action, then routes Settings/Help to `/`, then
-`App.minimizeApp()`. Never `exitApp()`. The stack is inert on web and iOS.
+A plain web deploy leaves the native apps on their bundle, and says so; they move when
+`release:ota` runs. Staging and production are separate channels, and what is live is a committed
+line in `wrangler.jsonc`.
 
-### Android reader text selection
+### The native floor
 
-Android's WebView commits a selection through its own `ActionMode` bar and fires no usable
-`touchend`, so `useHighlightPopup` opens the colour popup from `selectionchange` once the pointer is
-up. The native Copy/Share bar shows alongside it.
+Some web changes need a matching native change — a new plugin, a permission, a new link path — and
+would break an older binary. So:
 
-### Over-the-air updates
+- `native-release.json` records the build in the stores: its number, the commit it was built from,
+  and the **floor**, the oldest build able to run bundles from that commit.
+- `release:ota` copies the floor into `OTA_MIN_NATIVE`, and the Worker withholds the bundle from any
+  binary below it.
+- `release:ota` refuses to publish when the native projects have changed since that commit — the
+  Capacitor config, the manifests, the Xcode project, the Gradle build, the plugin list — unless run
+  with `--allow-native-drift` for a change that can't reach the bundle.
 
-The native binary carries the whole app — web bundle and corpus — but that bundle is replaceable
-without a store release. `@capgo/capacitor-updater`, configured in `capacitor.config.ts`, POSTs to
-`/api/updates/check` on the Worker each time the app foregrounds; when the returned `version`
-differs from the running bundle it downloads the zip in the background and swaps it in the next
-time the app is backgrounded (`autoUpdate: 'atBackground'`), so the reader meets it on the next
-cold start with no visible reload. The download is verified against the SHA-256 the check returned.
-`statsUrl` is emptied so nothing is sent to Capgo's hosted backend — only `updateUrl`, which is
-ours, is used.
+A store release updates `native-release.json`: always the build and the commit, and the floor too
+when it adds a native piece.
 
-`main.tsx` calls `notifyBundleReady()` (`lib/otaUpdate.ts`) at first paint. This is load-bearing:
-until it runs the plugin treats the running bundle as provisional, and if `appReadyTimeout`
-(10 s) elapses first it rolls the device back to the previous bundle. It guards the built-in
-bundle too, so it runs on every native launch.
+## Links into the app
 
-Worker side: `worker/src/routes/updates.js` serves the check and streams the bundle from an R2
-bucket (`OTA_BUCKET`) at `/api/updates/bundle/*`, `immutable`-cached since the filename carries
-the version. The live bundle is named by the `OTA_VERSION` / `OTA_CHECKSUM` vars in
-`wrangler.jsonc`, one pair per environment — so staging and production are separate channels, and
-"what is live" is a line in a committed diff. Empty vars mean the check reports no update.
+- `sutamaya://auth` carries a Google sign-in back to the app.
+- Links to `/`, `/browse/*`, `/read/*`, `/settings` and `/help` on `https://app.sutamaya.org` are
+  verified to open the app; `/api/*` isn't, so sign-in finishes in the browser that started it. The
+  path list is written twice, in the Android manifest and in `worker/src/wellKnown.js`, which serves
+  the verification files. iOS's is served only once `APPLE_TEAM_ID` is set.
 
-**Native-version floor.** A third var, `OTA_MIN_NATIVE`, is the native build number below which
-the current bundle is withheld — the check reads `version_code` from the request (the plugin sends
-it as the build number on both platforms) and returns nothing when the device is under the floor
-or sends no readable version. It exists for the one case OTA can't safely cover on its own: a web
-change that needs a matching native piece — a new Capacitor plugin, a permission, a new
-deep-link path. That release bumps the native build number *and* the floor together, so binaries
-without the native half stop pulling bundles they can't run and wait for a store update. Empty
-means no floor. It assumes iOS and Android build numbers move in lockstep — Phase 6's version-bump
-script is what keeps them there.
-
-**`native-release.json` is what the floor is set from, and the guard that it gets set.** It records
-the binary in the stores — its `build` number, the `commit` its native projects were built from, and
-the `floor`, the lowest build able to run bundles built from that commit. A store release updates
-all three; `floor` moves only when that release adds a native piece. `release:ota` writes
-`OTA_MIN_NATIVE` from `floor`, so the floor is never typed by hand, and **refuses to publish when
-the native contract has moved since `commit`** — `web/capacitor.config.ts`, the two manifests, the
-Xcode project, `build.gradle`, and the `@capacitor/*` / `@capgo/*` entries in `web/package.json`.
-Those are what decide which plugins, permissions and link claims a bundle may rely on. Everything
-else is left out so the guard stays worth reading: the rest of `web/ios` and `web/android`, since an
-icon is not a contract change; `capacitor.build.gradle`, which only restates the plugin list; plugin
-*versions*, only their names; and the build-number and version-name fields, which move on every
-store release. The escape is `--allow-native-drift`, for a change that genuinely can't reach the
-bundle.
-
-Publishing is `npm run release:ota -- --env production|staging`: it builds the bundle
-(`build-native.mjs --ota` → `web/ota/`), uploads the zip to R2 **first**, rewrites the three vars,
-then runs the environment's deploy — so a device is never pointed at a bundle that isn't there
-yet. It is a superset of `deploy:prod`; a plain `deploy:prod` ships the web app and leaves native
-readers on the current bundle until a `release:ota` follows.
-
-## The shell
-
-- **Plugins:** `@capacitor/{app,browser,preferences,status-bar,splash-screen,filesystem,share}`,
-  `@capgo/capacitor-updater`.
-- **Deep link:** custom scheme `sutamaya://auth`, registered in `web/ios` (`CFBundleURLTypes`) and
-  `web/android` (an `intent-filter` on the singleTask activity).
-- **Verified links:** `/`, `/browse/*`, `/read/*`, `/settings` and `/help` on
-  `https://app.sutamaya.org` open in the app; `/api/*` is outside the set, so the OAuth round trip
-  finishes in the browser that started it. The set is written twice — as the `autoVerify`
-  `intent-filter`'s path list in `web/android/app/src/main/AndroidManifest.xml`, and as
-  `DEEP_LINK_PATHS` in `worker/src/wellKnown.js`, which serves both
-  `/.well-known/assetlinks.json` (Android, live) and `/.well-known/apple-app-site-association`
-  (iOS, answered only once `APPLE_TEAM_ID` is set). Both are listed in `run_worker_first`.
-- **Icons and splash:** `scripts/make-native-assets.mjs` derives `web/assets/` (git-ignored) from
-  the production PWA icons; `npx @capacitor/assets generate --ios --android` crops them into the
-  committed native resources. The splash is a flat `#171513` screen — `main.tsx` calls
-  `SplashScreen.hide()` on first paint, handing over to the app's own `<Splash>`.
-
-## Build and run
+## Building and running
 
 ```
-npm run build:native       # corpus + web bundle (service worker off), then cap sync into ios/android
-npm run build:native -- --env staging   # the same, calling the staging Worker instead of production
-npm run build:native -- --no-sync   # stop at the bundle — no Xcode / Android SDK needed (CI, OTA)
-npm run build:native -- --ota       # also zip the bundle to web/ota/ for an OTA release (implies --no-sync)
-npm run release:ota -- --env staging      # build, upload to R2, point wrangler.jsonc at it, deploy
-npm run release:ota -- --env production   # the same, to production
-npm run dev:ios            # Worker + web dev server, then the app in live-reload against them
-npm run dev:android        # same, Android
-npm run dev:native         # both at once (heavy)
+npm run build:native                     # corpus and bundle, synced into web/ios and web/android
+npm run build:native -- --env staging    # the same, calling staging's Worker
+npm run build:native -- --no-sync        # the bundle only; no Xcode or Android SDK needed
+npm run dev:ios                          # the app with live reload, against local servers
+npm run dev:android                      # the same on Android; dev:native runs both
+npm run devices                          # every simulator, emulator and device, numbered
 ```
 
-All three run through `scripts/dev-native.mjs`, which picks the target **before** starting anything,
-then runs the Worker, the web dev server and one launcher per platform under `concurrently`. The order
-matters: `SUTAMAYA_API_BASE` is a build-time define fixed when Vite boots, and which address the app
-has to call depends on the target. Picking first also means an ambiguous or unreachable target fails
-with a picklist rather than after two servers have come up. They pass `--no-sync` to `cap run` and
-never rebuild the bundle, so `build:native` has to have run once.
+`build:native` has to have run once before the dev commands, which reuse its projects.
 
-**A booted simulator/emulator is the default**, so the everyday run needs no arguments. Anything else
-is named with `IOS_DEVICE` — an index, or enough of the name to be unambiguous — which also wins over
-a booted simulator, so a simulator stays one variable away on a day of device testing:
+- **Which device:** a booted simulator or running emulator, by default. `IOS_DEVICE` and
+  `ANDROID_DEVICE` name another, by its number in `npm run devices` or part of its name; an Android
+  emulator that isn't running gets booted.
+- **Signing in during development:** simulators and emulators load `localhost:5173`, where Google
+  sign-in works. A physical iPhone or iPad loads this machine's LAN address, which Google refuses —
+  sign in there with an emailed code.
+- **A physical iPhone** is built and installed with `xcodebuild` and `devicectl` rather than
+  `cap run`, which can't see a phone paired over the network.
+- **A bundled build calls production** unless built with `--env staging`, or `SUTAMAYA_API_BASE`
+  names another Worker, such as a local one. Whichever it calls needs the current auth code, or
+  native sign-in returns to the website.
 
-```
-npm run devices                       # every target, indexed, both platforms — starts nothing
-IOS_DEVICE=0 npm run dev:ios          # by index, as listed
-IOS_DEVICE="Gabriel's iPhone" npm run dev:ios    # by name; a fragment matching one target is enough
-```
+## Rules that bite
 
-A fragment matching several targets (`IOS_DEVICE=iPad`, or a name shared by a phone and a tablet)
-prints the ones it matched and stops, rather than guessing. With nothing booted and no variable set,
-the whole list is printed and nothing starts.
+- **A Capacitor plugin used at startup is imported statically**, never with `await import()`, which
+  can deadlock the WebView. Only plugins reached from a tap — the browser sheet, sharing, files —
+  load dynamically.
+- **The WebView's origins** (`capacitor://localhost` on iOS, `https://localhost` on Android) must be
+  allowed by the Worker's CORS, or every signed-in request fails.
+- **`/.well-known/*` stays in `assets.run_worker_first`**, or the verification files come back as
+  the app shell.
+- **`notifyBundleReady()` runs first on every launch.** Put it behind anything that can stall, and
+  every update rolls back.
 
-**A simulator or emulator loads `localhost:5173`** — both reach this machine's loopback (Android
-through `adb reverse`, via `--forwardPorts`) — and Google sign-in works there, `localhost` being the
-one host Google accepts as an OAuth redirect. One dev server serves the whole session, so a
-`dev:native` run that includes a physical device puts *both* platforms on the LAN address below.
+## Not done yet
 
-**A physical iPhone or iPad loads this machine's current LAN IP**, read on every run, so no address is
-ever hardcoded and moving between networks costs nothing; it needs the device on the same network as
-the Mac, as Xcode does. Google sign-in does *not* work there — Google rejects a bare IP as a redirect
-host, and a `.local` name too — so sign in with an emailed code instead (`RESEND_API_KEY` in
-`.dev.vars`). A real hostname is the only fix, and that is the Caddy setup in `docs/deploy.md`'s
-"Testing on mobile".
+- **Store submission:** developer accounts, signing, listings, privacy questionnaires, screenshots,
+  a reviewer account. Budget for one Apple rejection under guideline 4.2; the app already reads
+  offline from launch and signs in through the system browser. Sign in with Apple only if a reviewer
+  asks — the emailed code already meets guideline 4.8.
+- **Verified links in production:** add the Play signing certificate to `worker/src/wellKnown.js`
+  and check App Links on a device; set `APPLE_TEAM_ID` and add the Associated Domains entitlement
+  for iOS. The Google return can then use a verified link instead of `sutamaya://auth`.
+- **Release plumbing:** native builds in CI, one script bumping the version across web, iOS and
+  Android (the floor assumes their build numbers move together), and a staged rollout for updates.
+- **macOS:** the iOS app can run on Apple-silicon Macs as "Designed for iPad" at no extra cost; a
+  real Mac app is a later decision.
 
-**A device is built and installed by the launcher itself** — `xcodebuild`, then `xcrun devicectl` to
-install and launch — not by `cap run`. Capacitor hands device installs to `native-run`, whose path is
-the legacy usbmux one (DeveloperDiskImage mount, AFC upload, `installation_proxy`) that modern iOS has
-moved off: it cannot see a device paired only over the network, and is several times slower when it
-can. `devicectl` is the CoreDevice path Xcode itself uses. It builds into the same derived-data
-directory `cap run` uses, so both paths share one incremental build. Simulators still go through
-`cap run`, which handles them well.
+## Known gaps
 
-**A bundled build (not live-reload) calls production unless told otherwise.** `--env staging` points
-it at staging, by name, from the table in `scripts/lib/apiOrigins.js` that `release:ota` uses too.
-Any other Worker — `http://localhost:8787`, say — is `SUTAMAYA_API_BASE`, which `--env` refuses to
-run alongside. Whichever it calls needs the current auth code, or native sign-in returns to the
-website instead of the app.
-
-## Constraints that bite
-
-- **A Capacitor plugin reached on the startup path is imported statically, never behind
-  `await import()`** — such a chunk deadlocks in the WebView. `nativeAuth.ts`, `statusBar.ts`,
-  `splash.ts` and `AuthContext` (`@capacitor/app`) import at the top; only `@capacitor/browser`,
-  reached from a user gesture, stays dynamic.
-- **The Android WebView's origin is `https://localhost`, iOS's `capacitor://localhost`.** Both,
-  plus `http://localhost`, are in the Worker's `NATIVE_ORIGINS`; a missing one fails every
-  authenticated request as an opaque CORS error.
-- **`.well-known` paths must be in `assets.run_worker_first`** or the asset router answers them with
-  the SPA shell. `/api/*` already is, so the OTA check and bundle routes need nothing added.
-- **`notifyBundleReady()` must run on every native launch.** Skip it — or move it behind async work
-  that can stall — and `@capgo/capacitor-updater` rolls every update back after `appReadyTimeout`,
-  not just broken ones.
-- **`OTA_VERSION` and `OTA_CHECKSUM` are set together or not at all.** The check treats either one
-  missing as "nothing published"; `release:ota` always writes both. `OTA_MIN_NATIVE` is written from
-  `native-release.json`'s `floor`, so it is edited there rather than in `wrangler.jsonc`.
-- **A store release updates `native-release.json`** — always `build` and `commit`, and `floor` too
-  when the release adds a native piece the bundle needs. Leave it stale and `release:ota` refuses to
-  publish, since it can no longer tell a safe bundle from one that needs a binary nobody has.
-
-## Status
-
-Phases 0–4 are done: the platform seam, the bearer-token auth path, the two native projects, the
-shell (back button, safe area, splash, icons, offline UI, text selection), and the over-the-air
-update channel (self-hosted on R2, silent, rollback on a bundle that never signals ready). Both
-projects build; all of it was checked on the simulator and emulator. `assetlinks.json` is live and
-valid on staging; the prod deploy, the Play-signing fingerprint and the on-device App Links check
-are Phase 5 (below). Still worth doing: one pass of the whole app offline against a bundled build,
-and the on-device OTA update + rollback check (needs the R2 buckets created and a staging deploy).
-
-## Remaining work
-
-### Phase 5 — Store submission
-
-Developer accounts, signing, listings, privacy and data-safety questionnaires, screenshots, a
-reviewer demo account (an emailed code). Budget one Apple rejection under guideline 4.2 and a
-written reply; the mitigations are already in place (whole canon at first launch, works in airplane
-mode, sign-in in a native browser sheet, no browser chrome).
-
-The **deep-link tail** lands here:
-
-- Android: deploy the Worker to prod so `/.well-known/assetlinks.json` is reachable at the host the
-  manifest claims, append the Play-managed signing cert's SHA-256 to `ANDROID_CERT_FINGERPRINTS`
-  (`wellKnown.js`), then on a device `adb shell pm verify-app-links --re-verify org.sutamaya.app` /
-  `pm get-app-links` should report `verified`, and a `https://app.sutamaya.org/read/…` link should
-  open the app.
-- iOS: set `APPLE_TEAM_ID` in `wrangler.jsonc` once the account is enrolled, which is all that
-  `/.well-known/apple-app-site-association` waits on, and add the Associated Domains entitlement
-  (`applinks:app.sutamaya.org`) to the Xcode project.
-- Switch the OAuth return from `sutamaya://auth` to a verified Universal/App Link on both platforms.
-- Real-device checks: `/read/…` links opening the installed iOS app; whether the mirror survives
-  OS-level eviction (iOS offload, Android archive) + reinstall.
-
-Sign in with Apple only if a reviewer requires it — the emailed-code sign-in already meets
-guideline 4.8 (name + email only, email can be kept private, no ad tracking).
-
-**macOS** rides along free: "Designed for iPad" is Apple's name for running the unmodified iOS
-binary on Apple-Silicon Macs in a resizable iPad-style window — left enabled at submission, the app
-appears on the Mac App Store with no extra work. A proper Mac Catalyst app — menu bar, window
-management, pointer and keyboard — is a separate post-launch decision. `lib/platform.ts`'s
-`Platform` type is left open for `'macos'`.
-
-### Phase 6 — Release plumbing
-
-CI native build jobs; a version-bump script across web + iOS + Android; staged-rollout control for
-the OTA channel (another `wrangler.jsonc` var plus bucketing on a stable device id in
-`updates.js` — still no KV).
-
-## Known gaps / deliberate simplifications
-
-- **An OTA bundle is the whole app — web build and corpus, ~15 MB compressed — never a delta.**
-  The plugin supports partial downloads via a `manifest`; the check endpoint doesn't emit one.
-  A corpus typo fix therefore re-ships everything. Accepted: it is one background download per
-  update, on Wi-Fi or cell at the OS's discretion, and the bundle swaps atomically rather than
-  draining document-by-document the way the browser's revalidating cache does.
-- **A web change that needs a matching native change must not go out as OTA alone.** A new
-  Capacitor plugin, a permission, a deep-link path — push the web half to an old binary and the
-  app breaks. Those go through a store release first, then OTA. `native-release.json` and the
-  `release:ota` guard over it (above) are what enforce that, and they enforce it from the native
-  files rather than from the web change itself: a bundle that needs a native piece can't be
-  published until the store release recording it is. What stays manual is `floor` — the guard makes
-  you look at the file, but whether a given store release raises the floor is a judgement. Getting
-  that wrong is survivable in one direction only: too high and devices merely wait for the store.
-  A store update always resets a device to its built-in bundle, so a bad OTA stays recoverable.
-- **The session token rides a device backup.** It is kept in `@capacitor/preferences` —
-  UserDefaults on iOS, SharedPreferences on Android under `allowBackup="true"` — so an iCloud or
-  Auto Backup restore carries it. The Keychain is not the answer: the mirror it authenticates sits
-  unencrypted in that same container, so a credential held apart from it protects nothing the data
-  does not already expose. What a backup adds is reach rather than exposure — a restored token
-  reaches the live account, not just a snapshot — bounded by the token's 90-day expiry and by the
-  backup being the reader's own. Excluding the store from backup is the fix if that stops holding.
-
-## Left open
-
-- Whether `text-shards/` (the bulk-download shard bundles) stays excluded from the native bundle.
-- CI runner for native builds — GitHub-hosted macOS, self-hosted, or a cloud build service.
-- Splash and icon art beyond the current derived set.
+- **An update is the whole bundle — about 23 MB — never a delta.** A one-line fix re-ships
+  everything, as one background download.
+- **The bundle carries the offline-download shards**, over a quarter of its unpacked size, which
+  only the web app uses.
+- **The session token goes into device backups.** It sits in the app's preferences beside the mirror
+  it protects, so a restore carries both; the token's 90-day life bounds it.

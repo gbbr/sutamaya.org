@@ -1,8 +1,9 @@
-// The client half of the read-time list-tree repair (docs/offline-sync.md's A3), a port of
-// worker/src/lib/listTree.js — same algorithm and order, so both halves build the same tree from
-// the same rows. It exists twice because the mirror is what the UI renders from, and a group
-// deleted offline has to take its contents with it at once, with no network. Tombstoned rows are
-// passed in rather than filtered out first: the cascade needs to know which ancestors are dead.
+// The client half of the read-time list-tree repair (docs/offline-sync.md's "Lists repair
+// themselves on read"), a port of worker/src/lib/listTree.js — same algorithm and order, so both
+// halves build the same tree from the same rows. It exists twice because the mirror is what the
+// UI renders from, and a group deleted offline has to take its contents with it at once, with no
+// network. Tombstoned rows are passed in rather than filtered out first: the cascade needs to know
+// which ancestors are dead.
 
 export interface TreeRow {
   id: string;

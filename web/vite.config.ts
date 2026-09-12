@@ -52,7 +52,7 @@ if (NATIVE_BUILD || API_BASE_OVERRIDE) {
 //
 // They are the two production hostnames' local stand-ins, so a dev session reproduces the split
 // the deployed site has: the marketing site and the app on separate origins. Both need
-// `caddy run` in a separate terminal — see docs/deploy.md "Testing on mobile".
+// `caddy run` in a separate terminal — see docs/development.md's "Testing on a phone".
 const LANDING_HOST = 'local.sutamaya.org';
 const APP_HOST = 'app.local.sutamaya.org';
 
@@ -103,8 +103,8 @@ export default defineConfig({
       includeAssets: ['favicon-32-v3.png', 'favicon-16-v3.png'],
       // Off by default (the plugin's own default) since a dev-mode service worker can serve
       // stale responses and fight Vite's HMR. Opt in with PWA_DEV=1 when specifically testing
-      // install/standalone behavior (e.g. via local.sutamaya.org — see docs/deploy.md "Testing on
-      // mobile"); unregister the SW in DevTools → Application afterward so it doesn't linger
+      // install/standalone behavior (e.g. via local.sutamaya.org — see docs/development.md's
+      // "Testing on a phone"); unregister the SW in DevTools → Application afterward so it doesn't linger
       // and cause unrelated stale-content confusion in later dev sessions.
       devOptions: { enabled: !!process.env.PWA_DEV },
       manifest: {
@@ -135,11 +135,10 @@ export default defineConfig({
         ],
       },
       workbox: {
-        // Corpus navigation (small: a few MB) is precached with the app shell so browsing
-        // works offline from the first load. The dictionary (~20MB) and per-sutta text
-        // (~58MB across the whole canon) are cached on first use instead of forced into
-        // every install — CorpusProvider fetches the dictionary on boot, so in practice it's
-        // cached within seconds of the first visit anyway. See CLAUDE.md "Offline strategy".
+        // The corpus index (corpus.json, under 1 MB) is precached with the app shell so browsing
+        // works offline from the first load. The dictionary shards and per-sutta text are cached
+        // on first use instead of forced into every install — see docs/web-app.md's "Offline
+        // reading".
         // Self-hosted fonts (index.css) follow the same split: only the latin/latin-ext subsets
         // (what Pali/English text actually uses) are precached; the cyrillic/greek/vietnamese
         // subsets — vendored only for parity with what Google Fonts was already serving — are
@@ -152,8 +151,8 @@ export default defineConfig({
           // Small (tens of KB) shard index for Settings' bulk offline download — see
           // web/src/lib/offline.ts. Precached alongside corpus.json so "X% available offline" can
           // be computed on first load without a network round trip, same reasoning as corpus.json
-          // itself. The shard bundle files it points to are NOT precached — CacheFirst on first
-          // request, same as everything else in data/text/.
+          // itself. The shard bundles it points to are fetched only by that download, which unpacks
+          // them into the per-sutta text cache rather than caching them under their own names.
           'data/text-shards/manifest.json',
           // Which shard covers a given headword (~6KB). Precached because it is on the path of
           // every single word tap, and because without it an offline device can't even work out
@@ -206,9 +205,9 @@ export default defineConfig({
           {
             // The two search blobs and their map (see docs/search.md), fetched when a search field
             // is first focused. CacheFirst, unlike the /data/ paths above, because their filenames
-            // carry the corpus's dataVersion: a corrected sutta arrives as a new URL, so there is
-            // nothing to revalidate. Three entries, one corpus: only the current version's URLs are
-            // ever requested, so a previous version's copies would sit unread until eviction.
+            // carry searchVersion, a hash of their own contents: a corrected sutta arrives as a new
+            // URL, so there is nothing to revalidate. Three entries, one corpus: only the current
+            // version's URLs are ever requested, so an older version's copies would sit unread.
             urlPattern: /\/data\/search\/.*\.(txt|json)$/,
             handler: 'CacheFirst',
             options: { cacheName: 'search-text', expiration: { maxEntries: 3, maxAgeSeconds: 60 * 60 * 24 * 365 } },
@@ -246,7 +245,7 @@ export default defineConfig({
       // worker/src/index.js). Only LANDING_HOST is the marketing site, so "/" there is the
       // landing page; on `localhost` and APP_HOST "/" is the app, exactly as it is on
       // app.sutamaya.org. The landing page is also reachable on any host at /landing.html, which
-      // is how to work on it without the Caddy setup in docs/deploy.md.
+      // is how to work on it without the Caddy setup in docs/development.md.
       //
       // It is served here rather than by Vite's static middleware because its links into the app
       // are absolute (they have to cross to the app's hostname, so a relative href would stay on
@@ -308,16 +307,16 @@ export default defineConfig({
     strictPort: true,
     // Listen on all interfaces (not just localhost) so the dev server is reachable from a
     // phone on the same LAN — Vite prints the LAN URL itself (as "Network:") once host is
-    // enabled, no extra logging needed. /api/* is still proxied to the Express server on this
-    // same machine (see below), so a phone's API calls work exactly the same way.
+    // enabled, no extra logging needed. /api/* is still proxied to the Worker on this same
+    // machine (see below), so a phone's API calls work exactly the same way.
     host: true,
     // `host: true` only controls which interfaces Vite listens on — separately, Vite 5.4+
     // rejects requests by their Host header (a DNS-rebinding guard) unless it's localhost, a
     // raw IP, or explicitly allowed here. A phone on the LAN reaches this machine by its mDNS
     // name (e.g. "gbbr.local"), not an IP, so that name needs to be listed explicitly.
     // "local.sutamaya.org" is a real public-DNS name (Cloudflare A record pointed at this
-    // machine's LAN IP) fronted locally by Caddy on :443 — see docs/deploy.md "Testing on mobile" —
-    // used only when a feature needs Google sign-in to work on a phone, which a bare LAN
+    // machine's LAN IP) fronted locally by Caddy on :443 — see docs/development.md's "Testing on a
+    // phone" — used only when a feature needs Google sign-in to work on a phone, which a bare LAN
     // IP/mDNS name can't do (Google rejects both as OAuth origins).
     allowedHosts: Object.keys(devHosts),
     proxy: {

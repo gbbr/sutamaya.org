@@ -1,158 +1,106 @@
 # End-to-end tests
 
-Playwright drives a real browser against the real app: real rendering, real service worker, real
-IndexedDB mirror, a real Worker on a local D1. It covers what unit tests can't reach — pointer
-drags, the highlight popup, offline behaviour, two devices converging — and it is the only place
-those paths are exercised end to end.
+Playwright drives real browsers against the real app: real rendering, the service worker, the
+IndexedDB mirror, and a real Worker on a local D1. It covers what unit tests can't — pointer drags,
+the highlight popup, offline behaviour, two devices converging.
 
 ```
-npm run test:e2e                        # everything
-npm run test:e2e -- --project=chromium  # one browser
-npm run test:e2e -- --ui                # pick a test, watch it run, re-run on save
-npx playwright show-report              # the last run's HTML report
+npm run test:e2e                          # everything
+npm run test:e2e -- --project=chromium    # one project
+npm run test:e2e -- --ui                  # pick a test, watch it run
+npx playwright show-report                # the last run's report
 ```
 
-Deliberately not part of `npm test`, which stays the fast unit suite.
+It isn't part of `npm test`, which stays the fast unit suite.
 
-**The suite stays small on purpose.** A browser test costs seconds, and a top-level spec pays that
-three times over — Chromium, WebKit and phone width. So a test earns its place only by covering
-something no unit test can: real layout and scroll positions, pointer gestures, the service worker,
-two devices converging. Anything a jsdom test could answer belongs in `npm test` instead. The check
-that a new spec is worth keeping is whether it fails when the behaviour it describes is broken —
-worth actually running once against the broken version.
+**The suite stays small on purpose.** A browser test costs seconds, times every project it runs in,
+so a test earns its place only by covering something no unit test can. Before keeping one, check
+that it fails when the behaviour it describes is broken.
 
-## In CI
+## Projects
 
-`.github/workflows/ci.yml` runs the whole suite as its own job on pull requests and pushes to main,
-separate from the unit job so that one still answers in a minute or two. Two things a clean
-checkout needs that a dev machine already has: a `.dev.vars` with a throwaway `SESSION_SECRET` (the
-signed-in specs read it from there to mint their cookie) and `wrangler d1 migrations apply
-sutamaya --local`, because the global setup seeds accounts before any server starts and an
-unmigrated database answers with `no such table: users`. A failed run uploads `playwright-report/`
-as an artifact.
+| Project | Browser | Runs |
+|---|---|---|
+| `chromium` | desktop Chrome | the signed-out journeys in `e2e/`, and the signed-in ones in `e2e/sync/` |
+| `webkit` | desktop Safari's engine | the signed-out journeys |
+| `mobile` | a 393px Chromium with touch | the signed-out journeys, and the phone-only ones in `e2e/mobile/` |
+| `offline` | Chromium, on a production build | `e2e/offline/`, which need the real service worker |
 
-`e2e/` is in three parts. The files at the top level are the signed-out journeys, run on Chromium,
-WebKit and at phone width. `e2e/sync/` holds the ones that need an account: syncing between two
-devices, and edits made with the network cut. `e2e/offline/` holds the few that need the real
-service worker. The last two are Chromium desktop only — they are about data and caching rather
-than rendering, and each sync spec drives two browser contexts, so a second engine would double the
-slowest specs in the suite for no new information.
+Below 860px the Library shows one pane at a time, so a few shared helpers (`openSuttaList`,
+`openListsTab`, `searchResults`) let one spec read the same at either width.
 
-## Phone width
-
-The `mobile` project runs the same signed-out journeys in a 393px Chromium with touch. Below
-`LayoutContext`'s 860px breakpoint the library is a different app: one pane at a time rather than
-two, so a sutta list has to be opened from the tree, the Library/Lists toggle is out of reach while
-that list is showing, and search results land in the tree pane instead of the list pane. Three
-fixtures absorb that — `openSuttaList`, `openListsTab` and `searchResults` — so one spec reads the
-same either way rather than branching on the viewport.
-
-Chromium rather than mobile WebKit: what the project is for is layout and touch, and Playwright
-can't give iOS fidelity in either engine (see below), so the steadier touch emulation wins.
-
-A test profile starts with no `localStorage`, which is what makes a deep link to a group land on
-the tree: the pane is restored from the last one used, and there isn't one yet.
-
-`e2e/mobile/` holds the journeys that exist only at this width — leaving the tree for a list and
-coming back — and the desktop projects ignore that directory.
+The sync specs stay on Chromium: they're about data rather than rendering, and each drives two
+browsers, so a second engine would double the slowest tests for nothing new.
 
 ## The servers
 
-`playwright.config.ts` lists the Worker and the web dev server separately and reuses whichever is
-already up, so a `npm run dev` you already have running is used as-is and nothing is started twice.
-From nothing, both are started and the corpus bundle is built first if `web/public/data/` is
-missing — only if missing, since rebuilding it in place would pull the corpus out from under a dev
-server already serving it.
+The config starts the Worker and the web dev server if they aren't running and reuses them if they
+are, so an `npm run dev` already up is used as it is. A clean checkout builds the corpus first.
 
-A third server serves the offline project: `vite preview` over a production build, on port 5273 so
-it never contends with `npm run dev`, proxying `/api` to the same Worker on 8787. It exists because
-a **dev-mode service worker cannot serve a reload offline** — Vite serves an unbundled module graph
-in dev, so there is no app shell to precache, and `page.reload()` with the network cut fails
-outright. Only the built app has the real precache manifest.
-
-It rebuilds `web/dist` on every run and never reuses a running server, so a stale build can't stand
-in for the current code. That costs a few seconds.
+The `offline` project needs a third server: `vite preview` over a fresh production build, on port
+5273. A dev-mode service worker has no app shell to precache, so a reload with the network cut
+would simply fail. `npm run test:e2e` turns this project on; a bare `npx playwright test` leaves it
+out.
 
 ## Signing in
 
-There is no scripted route through Google OAuth or the emailed code, so the signed-in specs mint
-the session cookie directly with the Worker's own `createSessionCookie` (`worker/src/session.js`),
-signed with `SESSION_SECRET` read from `.dev.vars`. `requireAuth` verifies that cookie without a
-database round trip, so that is the whole of what "signed in" means to the API.
+Neither Google nor the emailed code can be scripted, so the signed-in specs mint the session cookie
+directly, with the Worker's own code and the `SESSION_SECRET` in `.dev.vars`. A pool of accounts is
+written to the local database before the run and removed after it; each test takes its own, and a
+two-device spec signs its second browser into the same one.
 
-A pool of accounts, `e2e-user-00…`, is written into the local D1 by the global setup and removed by
-the global teardown. Each test takes one of its own; a two-device spec signs its second context
-into the account the first call returned.
-
-**Those two are the only writes to that database, and both sit outside the run.** `wrangler d1
-execute --local` opens the same SQLite file the Worker holds, and the two contend: a write that
-lands while the Worker is starting kills it — `SQLITE_BUSY … The Workers runtime failed to start` —
-and every test after that fails against an API that is no longer there. A global setup runs before
-Playwright starts any server, which is the one moment nothing holds the file. Nothing may write to
-D1 while tests are running.
-
-An account needs a real `users` row even though `requireAuth` never looks: `AuthContext` asks
-`GET /api/auth/me` for a profile, and a session naming an account that isn't there reads as signed
-out in the UI. Each row carries a placeholder `google_id`, which that column requires.
-
-## Reading a failure
-
-The terminal names the failing assertion. Everything else is in the report:
-
-- **trace** — a scrubbable timeline with the DOM, console and network at every step. This is the
-  thing that actually explains a failure; open it with `npx playwright show-trace <path>`.
-- **video** and **screenshot** — kept for failures only.
+**Nothing may write to the local database during a run.** A write landing while the Worker starts
+kills it (`SQLITE_BUSY`), and every later test fails against an API that's gone. That's why the
+accounts are written in the global setup, before any server starts.
 
 ## Isolation
 
-Each test gets a fresh browser context, so the IndexedDB mirror, localStorage preferences and the
-`local-…` account all start empty. Nothing carries between tests, and no test needs an account.
+Each test gets a fresh browser: empty IndexedDB and localStorage, and a new local account. Nothing
+carries over between tests.
 
-A spec that reloads to prove an edit stuck must call `waitForLocalWrites()` first. User data
-reaches IndexedDB a little after the UI has moved, and a test reloads within a millisecond of
-clicking — without the wait it is asserting how fast IndexedDB happens to be, and it fails
-intermittently.
-
-Each test also gets its own `cf-connecting-ip`, because the Worker's rate limiter buckets by that
-header and `GET /api/auth/me` — fired on every page load and reload — is metered at 20 a minute.
-Without it the whole suite shares one budget and everything after the first dozen tests fails on a
-429 that says nothing about the app. The suite runs on a single worker for the same reason.
-
-Against a deployment this has no effect: Cloudflare sets that header at the edge, so a real burst
-is rate-limited for real.
+- **Wait for the mirror before a reload.** A spec that reloads to prove an edit stuck calls
+  `waitForLocalWrites()` first; otherwise it tests how fast IndexedDB happens to be.
+- **Each test gets its own client IP** (`cf-connecting-ip`), because the Worker rate-limits by it
+  and `/api/auth/me` fires on every load. The suite runs on a single worker for the same reason.
+- **Cut the network with `setOffline()`** from `e2e/fixtures.ts`, never directly, so the error
+  fixture knows.
 
 ## The error fixture
 
-`e2e/fixtures.ts` fails any test whose page logged a `console.error`, threw, or got a 4xx/5xx. It
-is the one genuinely exploratory part of the suite: it catches problems nobody thought to assert.
-Two allowances are made, and each one is a class of problem the suite can no longer see, so keep
-the list short:
+Every test fails if its page logs a `console.error`, throws, or gets a 4xx or 5xx response. It is
+the one exploratory part of the suite, catching what nobody thought to assert. The allowances stay
+few, since each is a class of problem the suite stops seeing:
 
-- `401` on `/api/*`, which is the normal answer for the signed-out reader most specs run as.
-- Cloudflare's RUM beacon, stubbed out entirely — its CORS preflight can't succeed from a test
-  origin, and real analytics shouldn't count test runs.
-- Failed requests, but only in a test that has cut its network — see `setOffline()` in
-  `fixtures.ts`, which is what every offline spec must use instead of `context.setOffline`
-  directly. Going offline makes requests fail by definition; uncaught exceptions and the app's own
-  `console.error` still fail those tests.
+- a `401` from `/api/*`, the normal answer to the signed-out reader most specs are;
+- console noise from Vite's dev server and the service worker;
+- Cloudflare's analytics beacon, which is stubbed out entirely;
+- failed requests, but only in a test that has cut its network with `setOffline()`.
 
-## Running against a deployment
+## Reading a failure
+
+The terminal names the failing assertion. The report keeps a trace for each failure — a timeline of
+the DOM, console and network at every step, opened with `npx playwright show-trace <path>` — along
+with a video and a screenshot.
+
+## In CI
+
+`.github/workflows/ci.yml` runs the suite as its own job on pull requests and pushes to `main`. A
+clean checkout needs three things a dev machine already has: a `.dev.vars` with a throwaway
+`SESSION_SECRET`, a built `web/dist` (which `wrangler dev` requires), and a migrated local database.
+A failed run uploads the report.
+
+## Against a deployment
 
 ```
-E2E_BASE_URL=https://sutamaya.org npm run test:e2e -- --grep @smoke
+E2E_BASE_URL=https://app.sutamaya.org npm run test:e2e -- --grep @smoke
 ```
 
-`E2E_BASE_URL` drops the local servers from the config. **Only `@smoke` specs are safe there.**
-They run signed out, so every write they make goes to that browser profile's own local mirror and
-the flush is refused with a 401 — nothing reaches an account. The rest of the suite writes user
-data and belongs against local dev.
+`E2E_BASE_URL` drops the local servers. Only the `@smoke` specs are safe there: they run signed
+out, so their writes stay in the browser and the sync is refused. The signed-in specs can't run
+against a deployment, whose secret and database they don't have.
 
-Signed-in journeys can't run there: the session cookie is minted against the local `SESSION_SECRET`
-and the account is seeded into the local database, neither of which exists for a deployment.
+## What it can't cover
 
-## What it doesn't cover
-
-Playwright's WebKit is not Safari: it catches WebKit-only rendering and JS differences, but not
-ITP's cookie policies, PWA install and standalone mode, or iOS input and scrolling. Touch is
-synthesized events, good enough for the pointer-drag code and no evidence about how a gesture
-feels. Those stay manual, on a real device.
+Playwright's WebKit is not Safari. It catches WebKit's rendering and JavaScript differences, but not
+Safari's tracking prevention, installing the app, or iOS input and scrolling, and its touch is
+synthesized. Those stay manual, on a real device.
