@@ -1,5 +1,6 @@
 // Repairs the stored lists into a renderable tree at read time — cascading a deleted group's
-// descendants out, breaking cycles and re-homing danglers (docs/offline-sync.md, mechanism 4).
+// descendants out, breaking cycles and re-homing danglers (docs/offline-sync.md's "Lists repair
+// themselves on read").
 // Every step is deterministic given identical input, so two devices converge without
 // communicating; tombstones are passed in rather than filtered in SQL, the cascade needing them.
 

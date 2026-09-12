@@ -323,7 +323,7 @@ async function markVisited(db, userId, item) {
 }
 
 // The wire names a push may carry. `list.*` and the annotations are records — a desired state;
-// `item.*` and `sibling.order` are operations (docs/offline-sync.md, mechanism 4).
+// `item.*` and `sibling.order` are operations (docs/offline-sync.md's "Records and operations").
 const HANDLERS = {
   'list.create': createList,
   'list.update': updateList,

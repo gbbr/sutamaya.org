@@ -1,5 +1,6 @@
-// An mtime is `${ISO}|${deviceId}` (docs/offline-sync.md, mechanism 2). ISO 8601 is fixed-width,
-// so every conditional write compares stored against incoming with a plain string `>`.
+// An mtime is `${ISO}|${deviceId}` — see docs/offline-sync.md's "A timestamp on every row". ISO
+// 8601 is fixed-width, so every conditional write compares stored against incoming with a plain
+// string `>`.
 
 // The device id on an mtime this Worker mints.
 const SERVER_DEVICE_ID = 'server';

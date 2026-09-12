@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Reads data/ (SuttaCentral-style Bilara JSON) and emits web/public/data/: corpus.json, text/,
 // text-shards/, dict-shards/ and search/.
-// See data/README.md for the raw data model, and CLAUDE.md for the browse-tree rules this encodes.
+// See data/README.md for the raw data model, and docs/corpus.md for the browse-tree rules this
+// encodes.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -112,7 +113,7 @@ const sujatoManifest = readJSON(path.join(DATA, 'manifest.json'));
 step('Indexing source files…');
 const paliFiles = buildFileIndex(path.join(DATA, 'pali', 'sutta'));
 const sujatoFiles = buildFileIndex(path.join(SUJATO, 'sutta'), 'run `npm run update-data post` first');
-const htmlFiles = buildFileIndex(path.join(DATA, 'html', 'pli', 'ms', 'sutta'), 'run `node scripts/fetch-html-structure.mjs` first');
+const htmlFiles = buildFileIndex(path.join(DATA, 'html', 'pli', 'ms', 'sutta'), 'it is checked in; restore it with `git checkout -- data/html`');
 const notesFiles = buildFileIndex(path.join(SUJATO, 'notes'));
 detail(
   `${paliFiles.size} pali files, ${sujatoFiles.size} sujato files, ${htmlFiles.size} html structure files, ${notesFiles.size} note files`

@@ -1,6 +1,6 @@
 // A wrapper over Cloudflare's Rate Limiting bindings, which index.js mounts as three per-IP
 // budgets. They are declared in wrangler.jsonc, per minute, the binding's period accepting only 10
-// or 60 seconds; the numbers themselves are in docs/deploy.md.
+// or 60 seconds; docs/backend.md lists the numbers.
 
 // Reports whether a request is allowed through, `key` being what the budget is counted against.
 export async function checkRateLimit(binding, key) {

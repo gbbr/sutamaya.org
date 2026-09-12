@@ -1,527 +1,197 @@
 # Offline sync
 
-Sutamaya is offline-first for reading *and* writing. The corpus, app shell and (optionally) every
-sutta's text are cached locally; user data — lists, notes, highlights, visits — is written to a local
-mirror first and synced afterwards. **The local write is the durable write.** Nothing is held as an
-optimistic edit awaiting a server blessing, so a list made, a note typed or a highlight painted with
-no network is kept rather than logged and lost.
+Lists, notes, highlights and visits are written to a mirror on the device first and synced to the
+server afterwards. **The local write is the durable one**: work done with no network, or with no
+account, is kept rather than held for the server's approval.
 
-This document specifies how that works: the mechanisms, the invariants a change must not break, and
-the losses accepted on purpose.
+This is the design, and the reference for any change to the mirror, the flush or the Worker's data
+routes.
 
-## Scale
+## How it flows
 
-One user, a handful of their own devices, usually one. That decides the design.
+```
+the reader acts ──▶ mirror (IndexedDB) ──push──▶ POST /api/data/push ──▶ D1
+                         ▲                                              │
+                         └───────pull─── GET /api/data (snapshot) ◀─────┘
+```
 
-The failure that matters is **silent data loss** — something written offline that never arrives, or
-newer work destroyed by an older device reconnecting. The failure that does not matter is
-**contention**: two devices racing to edit the same object in the same instant, which needs sequence
-cursors, logical clocks and merge algebra to resolve properly. So the design buys four mechanisms
-that prevent real loss and declines the apparatus that would guard against contention. Where a
-conflict does happen, one side wins and the other is gone — see "Accepted losses".
+Every edit changes the mirror at once and marks what it touched. A **flush** pushes whatever the
+server hasn't seen, then pulls a fresh snapshot and folds it back in. The UI only ever reads the
+mirror.
+
+## Built for one reader
+
+One person, a handful of their own devices, usually one. The failure that matters is **silent
+loss** — offline work that never arrives, or an old device overwriting newer work — not two devices
+editing the same thing in the same instant. So the design has four mechanisms against loss, and
+none of the machinery true concurrent editing needs: no merging, no conflict screens, no delta sync.
 
 ## The four mechanisms
 
-### 1. Client-generated ids
+### Ids made on the device
 
-A `list.create` and a `highlight` write carry an id minted by the client. That is what makes offline
-creation possible at all: the client names the thing, so every later reference to it — rename, move,
-file a sutta into it, delete it — is valid before the server has ever heard of it. It also makes a
-create idempotent, since a re-sent create carries the same primary key.
+A new list or highlight gets its id where it's made, so it can be renamed, filled or deleted before
+the server has heard of it, and sending its create twice changes nothing. If the id already belongs
+to another account, the server refuses it and the device picks a new one.
 
-`lists.id` is a global primary key rather than `(user_id, id)`, so `CREATE_LIST_SQL`'s
-`ON CONFLICT(id) DO NOTHING` can absorb a row belonging to *another account*. `createList` inspects
-`meta.changes` and, on a skipped insert, does a user-scoped read to tell a retry (row is mine → `ok`)
-from a genuine collision (row is someone else's → `409 id_collision`, and the client mints a fresh id
-and re-pushes every reference to it). Reporting success for the second case would hand the client an
-id it does not own, and every later write against it would be refused under the `AND user_id = ?`
-scope.
+### A timestamp on every row
 
-### 2. Tombstones
+Each row carries an `mtime`: when the reader acted, plus a device id to break ties. It is stamped
+**when the reader acts, never when the flush sends it**, so a note written offline on Monday still
+loses to an edit made elsewhere on Wednesday. The server keeps a write only if it is newer than what
+it holds. That is the whole of conflict resolution: **the last edit wins, per row.**
 
-A delete sets `deleted = 1`; the row stays. Without this, a device that was offline when a delete
-happened elsewhere pushes its still-live copy on reconnect, which against a missing row is
-indistinguishable from a fresh creation — and silently resurrects it. Applies to `lists`, `notes` and
-`highlights`. `visited` needs none: it is monotonic and never deleted.
+### Tombstones
 
-**Every read path therefore filters tombstones.** `notes`/`highlights` filter `deleted = 0` in SQL,
-and `buildUserData`'s `lists` read deliberately *fetches* them so `repairListTree` can cascade,
-dropping them itself. Miss one and deleted notes reappear in the Notes
-auto-list, deleted highlights render, deleted lists show as membership chips. The note case is the
-sharpest: "a row exists" *is* "this sutta has a note".
+A delete marks a row deleted instead of removing it. Otherwise a device that was offline at the
+time would push its copy back and resurrect it. So every read has to skip tombstones.
 
-Two write paths deliberately don't filter. `suttaListRow` accepts a tombstoned list, because a
-membership add queued offline may arrive after the list's own delete and must land on the dead row
-rather than be refused and discarded. `invalidParentReason` likewise accepts a deleted parent, which the
-read-time cascade then removes anyway. The cycle check in `invalidReparentReason` *does* filter, so a
-dead row can't manufacture a cycle out of a chain nothing renders.
+### Records and operations
 
-### 3. An mtime, and a conditional write
+Most changes travel as **records**: the state something should be in — a list's name and parent, a
+note, a highlight, a visit. A record means the same thing however late it arrives.
 
-Every mutable row carries `mtime`: `${ISO}|${deviceId}` (see A1). ISO 8601 is fixed-width, so
-lexicographic comparison is chronological comparison in both SQLite `TEXT` and JavaScript `<`, with
-no parsing anywhere. Every mutable write is conditional on it — an upsert whose `DO UPDATE` carries
-`WHERE excluded.mtime > <table>.mtime`, or an `UPDATE ... AND mtime < ?`.
+Three changes travel as **operations** instead, because they combine rather than overwrite: adding
+or removing a sutta, reordering a list, and reordering the lists in a group. Two devices filing
+different suttas into one list both stick. A posted order is reconciled against what exists: ids
+that are gone are dropped, and members it didn't mention stay, at the end.
 
-That clause is the whole of conflict resolution: **last writer wins, per row, no merge algebra.**
+## Highlights
 
-**The client stamps it when the user acts, never when the flush reaches the network.** A note edited
-offline on Monday and flushed on Friday has to lose to a Wednesday edit made elsewhere, which it only
-does if it still carries Monday's timestamp. Stamping in the flush loop would look correct, pass
-every obvious test, and reinstate the exact bug the timestamp exists to prevent.
+A highlight is **immutable**. Recolouring one is a delete plus a new highlight; erasing is a delete.
+The device works out which highlights a new selection displaces — always whole ones — and names them
+in the write, so replaying it later means the same thing.
 
-`resolveMtime` (`worker/src/lib/mtime.js`) generates one with a `server` deviceId when a write
-arrives without, monotonically clamped so two writes in the same millisecond can't tie — and a tie
-loses a conditional write. `web/src/lib/mtime.ts`'s `nextMtime()` clamps the same way on the client,
-which also guards against a backwards clock adjustment sorting below the device's own last write.
+### Anchored on segment keys
 
-The pre-existing timestamp columns (`notes.updated_at`, `highlights.created_at`,
-`visited.visited_at`) take the client's value too, so the auto-lists order by when the user acted
-rather than by when the write arrived. `visited` has no `mtime` of its own — `visited_at` already is
-its clock.
+A highlight is one span between two points, each a segment key (SuttaCentral's own line id, such as
+`mn10:2.7`) and a character offset. Everything between the two ends is covered, so a middle line
+reworded upstream can't open a gap.
 
-### 4. Records for most things, operations for order and membership
+Keys rather than positions, because a position points at a different line as soon as the corpus
+gains or loses one. Document order is read from the keys alone, which lets the mirror work out
+overlaps with no text loaded; the corpus build refuses a document whose keys are out of order.
 
-The mirror holds two kinds of pending work.
+- Only the two ends can drift, by a few characters, when upstream rewords those lines.
+- A highlight on a line that no longer exists paints nothing, but stays in the account and paints
+  again if the line comes back.
+- Overlapping highlights made on two devices are both kept; the newer one paints on top.
+- A mirror from an older build, holding highlights by position, is converted to keys as each
+  sutta's text loads. That stays for good: a reader who never signed in has no server copy to fall
+  back on.
 
-**Records** are desired state — a list row, a note, a visit, a highlight. The flush pushes what
-should be true, so replaying one means the same thing an hour later as when the user acted.
+## Lists repair themselves on read
 
-**Operations** are the exception, for everything that edits a list's `items` and for sibling order:
+Deleting a group marks only that one row. The tree is repaired every time it's read, on the server
+and on the device alike:
 
-| Operation | Push item | Why an op |
+1. a list whose parent doesn't exist moves to the top level;
+2. a cycle, which two devices' moves can form together, is broken by moving its least recently
+   changed list to the top;
+3. everything under a deleted group goes with it;
+4. siblings are put in order.
+
+Every step is deterministic, so devices converge without talking to each other.
+
+## On the device
+
+- **The mirror** is one IndexedDB record per user id. Everything the UI shows is derived from it,
+  the three automatic lists (Visited, Highlights, Notes) included, so those work offline too.
+- **Signed out**, a reader gets a local id and a mirror of their own, and nothing syncs. Signing in
+  moves the whole local mirror onto the account, each record keeping its timestamp. Where this
+  device also holds the account's note on the same sutta, the two are joined rather than one
+  replacing the other.
+- **Signing out** deletes this device's copy and starts a fresh local id. The account's data is on
+  the server; only unsynced work would be lost, which the button warns about.
+- **Identity** — the last confirmed account is remembered, so an offline relaunch opens the right
+  mirror. It's a cached identity, not a credential.
+
+## The flush
+
+It runs on launch, two seconds after an edit, on reconnecting, on returning to the app, and every
+five minutes. Only one tab flushes at a time.
+
+Everything owed goes out as one ordered queue: list records (oldest first, parents before
+children), then notes, highlights and visits, then operations in the order they were made. It is
+sent ten items per request until empty, then one full snapshot comes back. **A sync costs a couple
+of requests, however much is queued.**
+
+Each item gets its own answer, and the push is deliberately **not atomic**: a refused item neither
+undoes the ones before it nor holds up the ones after.
+
+| Answer | To | What happens |
 |---|---|---|
-| add / remove a sutta | `item.add`, `item.remove` | Already idempotent and commuting (`ADD_ITEM_SQL` is `EXISTS`-guarded, `REMOVE_ITEM_SQL` is a set subtraction), so two devices each filing a different sutta into one list both stick |
-| a list's item order | `item.order` | Edits the same `items` column, and the server reconciles a posted order against what is stored |
-| sibling order | `sibling.order` | As per-row records a single drag cost one write per sibling — dragging the 50th list of a group to the top produced 50 of them |
+| ok | an item | done |
+| not found | an item | the row is gone, so the write is moot and dropped |
+| id collision | an item | the device picks a new id and sends again |
+| any other refusal | an item | dropped and logged; the pull restores the server's version |
+| 401 | the request | syncing pauses, queue intact, until the reader signs in again |
+| 410 | the request | the account was deleted elsewhere; the device drops its copy and starts signed out |
+| no network, 429, 5xx | the request | stop; the rest goes next time |
 
-The test is whether an operation can be made to mean the same thing on replay. Both order endpoints
-**reconcile** rather than overwrite (`reconcileItemOrder`, `reconcileSiblingOrder`): a posted id that
-is no longer a live row is dropped, and a live member the posted order never mentioned is appended
-rather than silently lost. For sibling order, an id belonging to a *different* parent is deliberately
-kept — that is a cross-parent drop, and moving it in is the point.
+Folding the result back never loses a newer edit: a record turns clean only if it hasn't changed
+since it was sent. Operations still waiting are replayed over the pulled data, so offline changes
+don't flicker. Work that never left the device cancels out before it's sent — a list created then
+deleted, a sutta added then removed, an order replaced by a newer one.
 
-Two consequences the hybrid forces:
+## Sync state
 
-- **A flush pushes records before operations.** A list created offline and then filled with suttas
-  produces one record and several ops, and an op naming a list the server has never seen is refused
-  and discarded. Records first, then ops, is the whole dependency graph — ops only ever reference
-  lists. A push applies its items strictly in the order they arrive, which is what lets both this
-  and the ops' own order survive being batched into one request.
-- **Order ops are guarded against the row's own `mtime`**, the same column a rename or reparent
-  writes. There is one clock on the row, and records flush ahead of ops, so a reorder queued before a
-  rename would arrive behind it and match nothing — while the write still answers `{ok: true}`, so
-  the flush would retire the op as landed and the pull would restore the order the user had just
-  dragged away from. `editList` therefore re-stamps any queued order op naming the row it stamps
-  (`restampOrderOps`). This only moves an op ahead of *this* device's later edits; against another
-  device's it still carries the time the user acted.
+Settings spells it out: synced, waiting or offline, and when the last sync finished. Nothing else
+in the app shows it, since waiting work is already safe on the device.
 
-## Highlights are immutable spans
+The exception is a lapsed session, when the app looks normal while nothing reaches the server. The
+Library then shows a "Changes not syncing" banner until the reader signs in again. A write the
+server refuses outright is never shown to the reader: it's a bug for a developer, with nothing for
+the reader to decide.
 
-The one place the mechanism is shaped differently, because "delete whatever currently overlaps" is
-unsafe to replay: an hour later it means something else, and it took whole highlights another device
-had created in between.
+## Rules a change must keep
 
-A highlight is keyed by a client-minted id and never updated. A recolour is a tombstone plus a brand
-new highlight; an erase is a tombstone alone. The **client** works out which existing highlights a
-new selection displaces (`displacedIds` in `web/src/lib/highlights.ts`) and names them in the write's
-`erase` list. A highlight is atomic there — a selection touching any part of one displaces the whole
-thing, rather than stranding the part it missed.
-
-`g` and `erase` are both **required**. The server never infers what a selection displaces, so a write
-that doesn't say is a bug rather than a silent half-write, and a create without its own `g` would
-lose the idempotence the scheme rests on.
-
-### Endpoints, not one row per segment
-
-One row holds the whole highlight: the half-open span from `(k0, o0)` to `(k1, o1)`, where `k` is a
-segment key and `o` a character offset into that segment's English text. Everything between the two
-ends is covered by definition, and `highlightRanges` resolves that into per-segment ranges at render
-time, against the text the device currently holds.
-
-This is what an earlier per-segment layout got wrong. An interior row stored `e` = that segment's
-length *at the time of highlighting*, so when SuttaCentral reworded the segment longer, the tail of
-that line went unhighlighted — a gap in the middle of a highlight. Upstream rewords on the order of
-20,000 segments every couple of years, touching most suttas, so it recurs.
-
-### Keys, not positions
-
-`k` is SuttaCentral's own segment id (`mn10:2.7`), not the segment's position in the document. A
-position addresses a different line the moment the corpus gains or loses one, and the corpus does:
-dropping the untranslated Pali moved 38% of the canon's segments and took every highlight past the
-first dropped line in 1,032 suttas with it, silently. A key addresses the line itself.
-
-Upstream keys are effectively immutable — across three years of bilara-data, one key was removed
-from the whole Pali canon and none from Sujato's English, against thousands added. What does remove
-one is this app's own editorial layer dropping a line from the build.
-
-**Document order is read from the keys alone**, by `compareSegmentKeys`
-(`web/src/lib/segmentKeys.ts`), comparing digit runs as numbers so `1.10` follows `1.2`. That is
-what lets the mirror decide what a new selection overlaps while holding no sutta text — the whole
-of `displacedIds` and the panel's ordering rest on it. `build-corpus.mjs` asserts every document it
-emits is in that order, against `scripts/lib/segmentKeys.js`, its own copy of the comparator.
-
-What still drifts: the two endpoint segments carry offsets a rewording moves, so a highlight's first
-and last few characters can shift. That is accepted — there is no text anchoring and no fuzzy
-re-anchoring. Offsets are **clamped** to the segment's current length. A span naming a segment the
-loaded text has no key for resolves to nothing and **paints nothing** — it is kept in the account,
-deleted by nothing, and paints again on a copy of the text that has the segment. `useSuttaReading`
-filters those out of the panel and the gutter too, so a row can't offer a jump that goes nowhere.
-
-A `highlight` write inserts with `ON CONFLICT (user_id, id) DO NOTHING` — so re-sending one (a flush
-retried after a lost response) lands on the same row rather than duplicating the highlight — and
-tombstones the displaced ones in the same `db.batch()`, tombstones first. The key leads with
-`user_id`, so one account's ids can never reach another's rows. `DO NOTHING` names that one conflict
-rather than `OR IGNORE`, which would also swallow a constraint failure and report a write that never
-landed as a success.
-
-A mirror holding either older shape — per-segment ranges, or endpoints as positions — is re-anchored
-onto keys by `anchorHighlights` (`lib/mirror.ts`) as each sutta's text loads, that text being what
-the conversion needs. It has no removal date: a reader who has never signed in has no server copy to
-re-pull, so that mirror is their only one.
-
-### Overlaps
-
-Two devices can both highlight overlapping spans offline and both survive, so **stored spans may
-overlap**. The reader settles which one paints the contested characters, by `(mtime, id)`
-(`paintSegmentRanges`), which is why `GET /api/data` sends each highlight's `mtime` as `m`. One
-overlapped in the middle renders as two spans, both carrying its own id, so clicking either half acts
-on the whole highlight.
-
-## Tree repair at read time
-
-Deleting a list or group tombstones that one row and nothing else. The tree is then repaired on
-**read** — `repairListTree`, in `worker/src/lib/listTree.js` and ported to `web/src/lib/listTree.ts`
-— which is where the delete actually takes effect. The algorithm is A3.
-
-Repairing on read rather than at delete time is what lets two devices converge without
-communicating: whichever delete or move lands second never saw the other, and every step is
-deterministic given identical input, never dependent on row order. A child added on one device while
-another was deleting its parent group is hidden by the cascade, where a delete-time subtree walk
-would have missed it and stranded it at the top level.
-
-## The client mirror
-
-`UserDataContext` is a view over the mirror, not over the server. Nothing in `lib/mirror.ts` talks to
-the network; every mutator is a pure state transition that marks what it touched dirty and stamps
-`mtime`.
-
-| Module | Role |
-|---|---|
-| `lib/mirror.ts` | The `MirrorState` — `lists`/`notes`/`highlights`/`visited` records plus an `ops` queue — namespaced by `userId`, and every mutator over it |
-| `lib/mirrorView.ts` | Derives what the UI renders, including the three auto-lists. A port of the worker's `assembleUserData` |
-| `lib/listTree.ts` | Read-time tree repair. A port of the worker's `repairListTree` |
-| `lib/mirrorDb.ts` | Persists the whole mirror as one IndexedDB value per user id, versioned by `DB_VERSION` |
-| `lib/sync.ts` | The flush |
-| `lib/mtime.ts` | `nextMtime()` |
-| `lib/lastUser.ts` | Who was signed in, in `localStorage` |
-| `lib/localAccount.ts` | This device's id for a reader who hasn't signed in, and the iOS-storage-policy test |
-
-### Deferred sign-in
-
-A reader who has never signed in gets a `local-…` id (`lib/localAccount.ts`) and a mirror of their
-own, so making a highlight makes a highlight rather than raising a sign-in wall. That works because
-the mirror is already namespaced by user id and the local write is already the durable one — the
-only thing signing out of the model was an id to file under.
-
-Two things differ from a real account, and only two. The flush stands down (`isLocalUserId` guards
-it: there is no session, so every request would 401). And on sign-in, `adoptMirror` moves the whole
-local mirror onto the account — every record marked dirty, lists and highlights reset to
-`pendingCreate`/`sent: false` since that account's server has genuinely never seen them — after
-which the ordinary flush carries it up. Adoption keeps each record's own `mtime` rather than
-re-stamping: that timestamp is when the user acted, and a fresh one would let a week-old local note
-beat yesterday's edit from their phone.
-
-Notes are the only thing that can collide, being keyed by sutta rather than by a minted id. Where
-the device can see both texts, they are concatenated (`ADOPTED_NOTE_SEPARATOR`) rather than one
-replacing the other — a note is prose, and appending is lossless where last-writer-wins is not.
-Where it can't (a first sign-in on a device with no prior copy of the account's data), the ordinary
-`mtime` merge decides, exactly as between any two devices.
-
-Signing out retires this device's copy of the account's data and mints a fresh local id. Leaving it
-in place would keep a departed account's notes readable and writable by whoever signs in next, and
-would push them back to the server the moment they did. Nothing is lost — the account's data is on
-the server — except anything still queued, which is what the sign-out button warns about.
-
-`mirrorView.ts` and `listTree.ts` exist twice on purpose — no module is shared between the two npm
-workspaces — and the server's copies still shape the pull.
-
-**Deriving the auto-lists client-side is why every pulled row carries the timestamp they order by.** A
-sutta noted or highlighted offline has to appear under Notes/Highlights with no round trip, so the
-wire sends each note as `{text, m}` (not a bare string) and each highlight's `m`; `visited` is its
-own clock. Without it the entries compare equal and the list falls back to whatever order the
-server's `SELECT` returned. The server still synthesizes its own copies, and `applySnapshot` drops
-them.
-
-**Identity is the one thing the mirror can't answer for itself.** It stores everything under a user
-id, but only `GET /api/auth/me` ever said what that id is. `lib/lastUser.ts` remembers the last
-confirmed user and `AuthContext` seeds `user` from it, because relaunching with no network otherwise
-left that fetch failing, `user` null, and `UserDataProvider` mounting an empty mirror over a full
-one: every list, note and highlight on the device invisible, and unwritable too. It caches an
-identity, not a credential — the signed session cookie still authorizes everything, so a stale entry
-costs at most a 401 on the next flush, which is already the re-auth path.
-
-### The flush
-
-Order, and what each outcome means, is A4. In summary: everything owed goes to `POST /api/data/push`
-as one ordered array — list records in `mtime` order, then notes, highlights and visits, then the ops
-in the order the user made them — chunked at 10 items a request and looped until the queue drains,
-then `GET /api/data`, a full snapshot with no delta protocol. **One sync is a couple of requests
-however much is queued.** Per-edit requests were the earlier shape, and they scaled sync cost with
-the number of edits rather than the number of syncs: a first sign-in after using the app signed out
-fired hundreds of them in a couple of seconds, tripping the 60/min per-IP rate limit and converging
-slowly with most of its requests refused.
-
-Nothing in the flush mutates state directly. It reports what landed, and `applyFlushOutcome` folds
-that into whatever the mirror looks like *by then*, matched on the exact `mtime` pushed — so a record
-edited mid-flush stays dirty. One flusher at a time across tabs, via a Web Lock (`ifAvailable`, so a
-losing tab skips the round rather than queueing).
-
-### Local collapses
-
-All in `lib/mirror.ts`. A highlight created and erased before either left the device is dropped
-rather than pushed as a create-then-tombstone pair (whose order can't be guaranteed); a list deleted
-before its create ever left goes outright along with its queued ops; an add and a remove of the same
-sutta in the same list cancel; only the latest order per list (and per parent) is kept.
-
-**"Before it left" is `createSent`/`sent`, not `dirty`/`pendingCreate`.** The latter stay set for the
-whole round trip and past a response lost on the way home, so collapsing on them drops a delete the
-server never receives — and the pull at the end of that same flush hands the row straight back.
-`markDispatched` marks the records a flush is about to send, *before* its first request, and the
-collapses key off that.
-
-### Sync state
-
-`syncCounts()` reports how many records/ops are dirty; `UserDataContext` combines that with the
-browser's `online`/`offline` events into `'synced' | 'pending' | 'offline'`. `'offline'` wins over
-everything, then a plain `'pending'` count. `SettingsPage` spells it out in words along with
-`lastSyncedAt` (set only when a flush fully drains and pulls), and that is the only place any of it
-is shown.
-
-The app's chrome deliberately carries none of it. `'pending'` drains in a couple of seconds and
-implying doubt about a write that is already durable locally works against the whole local-first
-model; `'offline'` is something the device already says, and changes nothing about whether the work
-is safe. `needsReauth` is the exception and gets a banner of its own — see below.
-
-**A write the server permanently refuses is given up on, not surfaced.** A refused item is permanent
-by definition, so no later attempt would answer differently: the flush drops the write with a
-`console.error` and the pull hands back the account's own version of that row — the same rebase a
-write losing last-writer-wins already gets. That the two sides disagreed about validity at all is a
-bug in one of them, which is a developer's problem; the reader has nothing to decide, and there is
-no sync state, warning or discard action anywhere in the UI for them to decide it with. There is no
-`rejected` state and no `'stuck'` status: a per-item refusal retires the item, it never re-queues it.
-
-This is also why the push is **not atomic** — per-item results, like CouchDB's `_bulk_docs`. One item
-the server won't take must not hold up everything queued behind it, and the items before it in the
-same request are not rolled back.
-
-A 401 sets `needsReauth` and pauses the flush with the queue intact. It deliberately does *not* call
-`promptGoogleSignIn()` itself: that navigates to Settings, and firing it from a background flush
-would yank the reader away mid-sutta for a lapse they haven't noticed. It fires from a real click
-instead — on the banner `TreePane` shows below its header, sharing the slot the two offline nudges
-use and taking priority over both.
-
-**A 410 means the account itself is gone**, and is the one outcome that resets the device instead of
-retrying or pausing. The session cookie is signed and self-contained, so a device whose account was
-deleted elsewhere still holds a perfectly valid one and would otherwise push its whole mirror back
-onto an account that no longer exists; `dataRouter`'s account check is what turns that into a `410`,
-and a `401` is deliberately not reused for it — that means "sign in again", which is the opposite of
-what should happen here. The client's answer is `forgetAccount()`: this device's mirror is deleted,
-`lastUser` cleared, and the reader lands on a fresh local account, exactly as the device the deletion
-was made on does. Nothing is announced; there is nothing for the reader to decide, and the account
-was deleted by them.
-
-That banner is the only sync state the app's chrome shows, because a lapsed session is the only one
-the UI otherwise misrepresents: `AuthContext` seeds `user` from `lib/lastUser.ts`, so the account
-badge still shows a signed-in user, and every list, note and highlight still reads and writes
-against the local mirror. Nothing looks wrong while nothing reaches the server, and it stays that
-way indefinitely — the pause stands every automatic trigger down, and only a fresh sign-in (the
-`[user]` effect in `UserDataContext`, keyed on object identity so re-authing the same account still
-counts) clears it.
-
-## Invariants
-
-Things a change here must not break:
-
-1. **Stamp `mtime` when the user acts.** Not at flush time. See mechanism 3.
-2. **Every read path filters tombstones.** The one exception is `buildUserData`'s `lists` read, which
-   hands them to `repairListTree`.
-3. **Every query is scoped `AND user_id = ?`.** These are flat tables with no structural per-user
-   isolation; that predicate is the only thing separating one account's data from another's, on
-   reads, writes and existence checks alike.
-4. **Records flush before operations.**
-5. **A dirty flag clears only against the exact `mtime` that was pushed.**
-6. **A highlight is never updated.** Recolour = tombstone + new highlight.
-7. **`g` and `erase` are required on a highlight write.**
-8. **A local collapse keys off `createSent`/`sent`, never `dirty`/`pendingCreate`.**
-9. **Both order ops stay ahead of local edits to the rows they name** (`restampOrderOps`).
-10. **Tree repair is deterministic given identical input** — never dependent on row order — because
-    that is what makes two devices converge without communicating.
-11. **The mirror is keyed by user id**, so an account switch cannot cross-write.
-12. **`mirrorView.ts`/`listTree.ts` and their worker originals must agree.** They are ports; a fix to
-    one belongs in both.
-13. **Bump `DB_VERSION` (`lib/mirrorDb.ts`) in the same change as any alteration to `MirrorState`'s
-    persisted shape — including the shape of anything `GET /api/data` writes into it.** A record
-    saved under the old shape is not valid input for code written against the new one, and IndexedDB
-    has no reason to touch it on its own. `onupgradeneeded` wipes and recreates the store rather than
-    migrating, which is safe because the mirror is a cache of the server plus whatever is still
-    dirty; the cost is a re-pull. Skip the bump and a device carrying a stale record crashes on read
-    — which is exactly what changing the notes payload to `{text, m}` did to a mirror that had
-    already persisted the bare-string form.
+1. **Stamp `mtime` when the reader acts**, never at flush time.
+2. **Every read skips tombstones** — except the list read, which needs them to repair the tree.
+3. **Every query is scoped `AND user_id = ?`**, reads, writes and existence checks alike. Nothing
+   else separates one account's rows from another's.
+4. **Records flush before operations**, since an operation can name a list a record creates.
+5. **A record turns clean only against the exact `mtime` that was pushed.**
+6. **A highlight is never updated.**
+7. **A highlight write always names its own id and the ids it erases.**
+8. **Cancelling unsent work checks whether it was sent, not whether it's dirty.** A write stays
+   dirty through its round trip, so cancelling on "dirty" drops a delete the server never gets.
+9. **Queued reorders stay ahead of later local edits to the same rows**, which share one timestamp.
+10. **Tree repair is deterministic**, whatever order the rows arrive in.
+11. **The mirror is keyed by user id**, so switching accounts can't cross-write.
+12. **The device's copies of the server's tree repair and automatic lists agree with the
+    originals.** No module is shared between the two workspaces; `portParity.test.ts` and
+    `autoLists.test.ts` catch drift.
+13. **Changing what the mirror stores bumps its IndexedDB version**, in the same change. The
+    upgrade wipes the store and re-pulls rather than migrating.
 
 ## Accepted losses
 
-- **A colliding edit loses silently.** No three-way merge, no conflict copies, no conflict UI. The
-  later `mtime` takes the row. The realistic collision is one person editing the same note on two of
-  their own devices, where the losing side is nearly always the stale one they had forgotten about,
-  and a conflict dialog is a cost paid on every edit to serve a case that approximately never arises.
-  There is deliberately **no notification** that a merge discarded something — surfacing it means
-  building the UI the design rules out. The sync indicator is what makes this tolerable: the user can
-  at least see that everything they wrote arrived.
-- **Order is last-writer-wins per container.** Merging user-controlled order properly needs
-  fractional ranks per row, which forces `items` out of its JSON column into a table. Two devices
-  reordering the same thing offline means one ordering wins and the user re-drags — visible, and one
-  drag to repair.
-- **Membership resolves add-versus-remove by arrival order**, not by timestamp, since it stays
-  operation-based. Giving `items` per-entry metadata to fix that would be a merge algorithm for a
-  case worth less than it costs.
-- **A `not_found` result retires a write.** The row is gone (deleted elsewhere, or cascaded out with
-  an ancestor), so the write is moot rather than failed.
-- **Cross-parent order and reparent share the row's one clock.** `restampOrderOps` widens local
-  precedence slightly: an order op re-stamped after a local rename can beat another device's edit
-  made in between. One clock per row is the deliberate simplification (per-field clocks cost three
-  columns and three conditional updates to serve two devices being offline simultaneously).
-- **Auto-list caps evict.** `Visited` keeps 100, `Highlights`/`Notes` 300 each, so a large flush can
-  push genuinely recent entries out. Nothing is lost — the rows are all still there, and a note or
-  highlight past the cap still renders in its sutta — but the list stops naming them, and says so
-  at its foot.
-- **Deleting the account discards whatever the other devices had not synced.** Their queues are
-  dropped along with their mirrors when the `410` lands, which is the point: there is no account
-  left to push them to. A device that is offline when the deletion happens keeps its copy readable
-  until it next reaches the network.
-- **A long-offline device meets a lapsed cookie.** The session cookie's 90-day max age means the
-  queue must survive re-auth, which is what `needsReauth` and the pause are for.
-- **Work made signed out lives only on that device.** There is no server copy until the user signs
-  in, so clearing site data loses it — and on iOS in a browser tab, so does not visiting for about
-  a week (WebKit evicts script-writable storage; a home-screen install is exempt). This is stated
-  to the user rather than engineered around: the header banner prompts once there is something
-  worth keeping, and Settings says it permanently where the eviction policy actually applies.
-- **Highlight offsets are content coordinates, not anchors.** `(i, s, e)` index into segment text, so
-  an `update-data` corpus refresh — or a device still holding the pre-refresh copy of a sutta — can
-  leave a stored range denoting different text. Out of scope here; fixing it needs anchoring on a
-  quoted prefix/suffix.
-- **No hybrid logical clocks, no delta pull, no batch sync endpoint.** Device clocks all NTP-sync and
-  the skew is milliseconds; the dataset is tens of kilobytes, so `GET /api/data` is already cheap;
-  the existing endpoints work and their failure modes are handled by retry plus the conditional
-  write.
+- **A conflicting edit loses silently.** The later timestamp wins, with no merge and no conflict
+  screen. The realistic case is one person editing the same note on two devices, where the losing
+  side is almost always the stale one.
+- **Order is last-edit-wins per list or group.** Two devices reordering the same thing offline
+  means one order wins, and the reader drags again.
+- **Adding and removing the same sutta resolves by arrival order**, not by timestamp.
+- **A write to a row deleted elsewhere is dropped.**
+- **The automatic lists show the newest 100 visits and 300 notes or highlights**, and say so at the
+  foot. Nothing past the cap is lost.
+- **Deleting the account discards what other devices hadn't synced yet.**
+- **A device offline for months has to sign in again** (sessions last 90 days); its queue waits.
+- **Signed-out work lives only on that device.** Clearing site data loses it, and so does leaving
+  an iOS browser tab unopened for about a week — installed apps are exempt. The app says so.
+- **A highlight's two ends can move a few characters** when upstream rewords those lines.
 
----
+## Where to look
 
-## Reference
-
-### A1 — Schema
-
-`worker/migrations/0002_offline_sync.sql`, on top of `0001_init.sql`:
-
-```sql
-ALTER TABLE lists      ADD COLUMN mtime   TEXT    NOT NULL DEFAULT '';
-ALTER TABLE lists      ADD COLUMN deleted INTEGER NOT NULL DEFAULT 0;
-ALTER TABLE notes      ADD COLUMN mtime   TEXT    NOT NULL DEFAULT '';
-ALTER TABLE notes      ADD COLUMN deleted INTEGER NOT NULL DEFAULT 0;
-ALTER TABLE highlights ADD COLUMN mtime   TEXT    NOT NULL DEFAULT '';
-ALTER TABLE highlights ADD COLUMN deleted INTEGER NOT NULL DEFAULT 0;
-```
-
-`worker/migrations/0004_highlight_endpoints.sql` then rebuilds `highlights` as one row per highlight
-— `(i0, o0, i1, o1)` in place of `(i, s, e)`, the client-minted id as the row id, and
-`PRIMARY KEY (user_id, id)` doing the job the old `(user_id, g, i)` unique index did.
-`0005_highlight_segment_keys.sql` rebuilds it once more, `(k0, o0, k1, o1)` replacing the positions
-— see "Keys, not positions".
-
-`''` sorts below every real timestamp, so an un-backfilled row always loses a merge rather than
-winning by accident; the migration backfills from each table's existing timestamp column anyway. The
-unique index is **load-bearing, not an optimisation**: it is what makes re-pushing a group an
-`INSERT OR IGNORE` no-op.
-
-Adding a migration means applying it to your local D1 by hand — see CLAUDE.md. `npm test` applies the
-full set to a fresh database every run, so the suite never catches a stale local schema.
-
-### A2 — mtime format
-
-```
-`${new Date(ms).toISOString()}|${deviceId}`
-```
-
-`deviceId` is a random id minted once per device and persisted (`sutamaya.deviceId`). It only breaks
-ties between two devices writing in the same millisecond, so the outcome is deterministic rather than
-dependent on arrival order. `ms` is `Math.max(Date.now(), lastMs + 1)`, which both guards a backwards
-clock adjustment and keeps two writes in the same millisecond from tying.
-
-Nothing parses these as dates — `visited` values are used for truthiness and ordering only, and no
-mtime is formatted for display — so the suffix is safe.
-
-### A3 — Tree repair
-
-Run over the whole list set on read, **tombstones included**, on both server and client:
-
-1. Collect every row into a map by id, tombstoned ones too.
-2. **Re-home danglers** — a `parentId` pointing at no row *at all* gets `parentId = null`. A dangling
-   reference is not a delete (`parent_id` has no foreign key, so a client that pushes a child before
-   its parent produces one), and dropping it would lose a list with no tombstone to explain why.
-3. **Break cycles** — walk each list's ancestor chain; on revisiting a node, re-home the member with
-   the **lowest** `mtime`, so the most recent move survives. Must run before the cascade, whose
-   ancestor walk would otherwise never terminate. (`wouldCreateCycle` in `lib/listParent.js` carries
-   its own visited set for the same reason: cycles are repaired on read and never written back, so
-   storage can hold one indefinitely.)
-4. **Cascade deletes** — drop every tombstoned list, and every list with a tombstoned ancestor.
-   Deleting a group deletes what is inside it, the way deleting a folder does; children are *not*
-   re-homed. So one `UPDATE` retires a whole subtree, it all comes back if the group is un-deleted,
-   and survivors form a closed forest — a live list can never point at a dropped parent.
-5. **Order siblings** by `position`, tie-breaking on `id`, since the negative-prepend scheme can
-   produce equal positions.
-
-`position`/`mtime`/`deleted` feed the repair only; `shapeList` drops all three, so none reach the
-client.
-
-### A4 — Flush
-
-Triggers: app load once the mirror is read, ~2s debounced after any mutation, the `online` event,
-`visibilitychange` to visible, and a 5-minute poll as a backstop. Never per keystroke — note editing
-commits on Enter/blur.
-
-`buildQueue` (`lib/sync.ts`) assembles one ordered array, which goes to `POST /api/data/push` in
-chunks of `CHUNK_SIZE` (10, matching the Worker's `PUSH_MAX_ITEMS`, which is sized against the
-Workers subrequest budget — every D1 query the handler makes counts against it) until it drains:
-
-1. **List records, in `mtime` order** — so a parent reaches the server before the child naming it
-   (a create naming an unknown parent is refused), and so the server's own prepend reproduces the
-   order the user created them in. Each record is a `list.delete`, a `list.create` or a
-   `list.update` depending on `deleted`/`pendingCreate`.
-2. Notes, highlights, visits.
-3. **Ops, by `seq`** — the order the user made them, so an add and a later remove of the same sutta
-   mean what they should. The server applies a push's items strictly in order, so batching preserves
-   this.
-4. `GET /api/data`, once, after the last chunk — applied by `applySnapshot`.
-
-Per-item results (`results[i]` answers `items[i]`):
-
-| Result | Handling |
+| Where | What |
 |---|---|
-| `{ok: true}` | Acked; the dirty flag clears if the record's `mtime` still matches what was pushed |
-| `not_found` (404) | Write retired — the row is gone, so it is moot rather than failed |
-| `id_collision` (409) on `list.create` | Re-mint the id, rewrite every reference still queued behind it (children, ops, the ack), and re-send from that item. `MAX_ID_ATTEMPTS` fresh ids, then it is given up on |
-| any other refusal | Write given up on and logged; the pull rebases the row onto the server's version |
-
-Whole-request outcomes, which say nothing about any individual item and so retire nothing:
-
-| Result | Handling |
-|---|---|
-| `401` | Flush pauses, queue intact, `needsReauth` set |
-| `410` | The account has been deleted; this device drops its mirror and returns to a local account |
-| retryable (429/5xx/network/timeout) | Flush stops partway; the unsent remainder goes next time |
-| any other failure | A malformed push — a bug in this client. Logged; the queue is kept |
-
-Applying a pull is **replace clean, keep dirty**, plus two rules the record model alone doesn't give:
-still-queued ops are replayed over the pulled rows (or a change made offline blinks out of the UI on
-every pull until it lands), and a group named by a still-pending `erase` is dropped from the snapshot
-(or an erase made offline visibly undoes itself on every pull).
+| `web/src/lib/mirror.ts` | the mirror, and every change to it |
+| `web/src/lib/sync.ts` | the flush |
+| `web/src/lib/mirrorView.ts`, `listTree.ts` | what the UI sees; tree repair |
+| `web/src/lib/mirrorDb.ts` | storage in IndexedDB |
+| `web/src/lib/highlights.ts`, `segmentKeys.ts` | overlaps and painting; key order |
+| `web/src/context/UserDataContext.tsx` | when the flush runs; the sync state |
+| `worker/src/routes/data.js` | the snapshot and the push |
+| `worker/src/lib/writes.js` | every write |
+| `worker/src/lib/userData.js`, `listTree.js` | shaping the snapshot; tree repair |

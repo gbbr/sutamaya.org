@@ -1,7 +1,7 @@
 # Translation changes
 
 The English here is Bhikkhu Sujato's translation, published by SuttaCentral under CC0. It is not
-reproduced verbatim: a small number of recurring terms are rendered differently, and a few dozen
+reproduced verbatim: a small number of recurring terms are rendered differently, and several dozen
 individual lines are reworded. Everything else is his, word for word — and the Pali sits beside
 every line, so you can always check.
 
@@ -28,6 +28,7 @@ gloss a term in his wording while the line above it uses ours.
 | vitakka / vicāra | placing the mind / keeping it connected | **thought / examination** |
 | yoniso manasikāra | rational application of mind | **proper attention** |
 | vipariṇāma + aññathābhāva | decays and perishes | **changes and becomes otherwise** |
+| vipariṇāmānuparivatti | the perishing of form | **the changing of form** |
 | paritassati | anxious, anxiety | **agitated, agitation** |
 | paṭisambhidā | textual analysis | **analytical knowledge** |
 | dhamma (six lines only) | text | **the Dhamma** |

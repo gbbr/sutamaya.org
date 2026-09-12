@@ -66,10 +66,9 @@
       "bucket_name": "sutamaya-ota"
     }
   ],
-  // Per-IP budgets for /api/*, applied in worker/src/index.js. `simple.period` only accepts 10 or
-  // 60 seconds, so these are the per-minute conversions of the Express app's 15-minute windows —
-  // see deploy.md. There's no equivalent of the old /data/* limiter: those requests are answered
-  // by the assets binding above and never invoke the Worker.
+  // Per-IP budgets for /api/*, applied in worker/src/index.js — see docs/backend.md.
+  // `simple.period` only accepts 10 or 60 seconds. Static files need no limit: the assets binding
+  // above answers them without invoking the Worker.
   "ratelimits": [
     {
       "name": "RATE_LIMIT_API",
