@@ -20,6 +20,7 @@ vi.mock('../lib/api', () => ({
 }));
 vi.mock('../lib/offline', () => ({
   estimateOfflineStatus: vi.fn(async () => ({ cached: 0, total: 10 })),
+  lastOfflineStatus: vi.fn(() => null),
   prefetchAllSuttas: vi.fn(async () => ({ failed: [], circuitTripped: false })),
   prefetchDictionary: vi.fn(async () => true),
   prefetchHelpImages: vi.fn(async () => true),
@@ -35,7 +36,9 @@ import { useUserData } from '../context/UserDataContext';
 import { dataApi } from '../lib/api';
 import {
   cachedCorpusVersions,
+  estimateOfflineStatus,
   isOfflineTextStale,
+  lastOfflineStatus,
   prefetchAllSuttas,
   prefetchDictionary,
   recordCachedCorpusVersion,
@@ -126,6 +129,8 @@ beforeEach(() => {
   // counts survive from one test to the next unless reset here. Default to the ordinary state:
   // nothing downloaded before, nothing stale, every download succeeding.
   vi.mocked(isOfflineTextStale).mockReturnValue(false);
+  vi.mocked(lastOfflineStatus).mockReturnValue(null);
+  vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 0, total: 10 });
   vi.mocked(cachedCorpusVersions).mockReturnValue({ data: null, dictionary: null });
   vi.mocked(prefetchAllSuttas).mockClear().mockResolvedValue({ failed: [], circuitTripped: false });
   vi.mocked(prefetchDictionary).mockClear().mockResolvedValue(true);
@@ -168,6 +173,41 @@ describe('section order', () => {
     renderSettings();
     expect(screen.getByText('Account')).toBeInTheDocument();
     expect(screen.getByText('Checking sign-in status…')).toBeInTheDocument();
+  });
+});
+
+// Both cards state what they know before their slow checks answer, so the page lands at the height
+// it keeps: a placeholder that grows into a full card shoves everything below it down while the
+// reader is already reading.
+describe('opening without reflow', () => {
+  it('shows a remembered account at once, without waiting on the session check', () => {
+    vi.mocked(useAuth).mockReturnValue(mockAuth({ user: buildUser(), loading: true }));
+    renderSettings();
+    expect(screen.queryByText('Checking sign-in status…')).not.toBeInTheDocument();
+    expect(screen.getByText(/Signed in as/)).toBeInTheDocument();
+  });
+
+  it('states what a download costs before the availability count arrives', async () => {
+    const { container } = renderSettings();
+    expect(container.textContent).toContain('It downloads about 10 MB and uses about 60 MB on this device.');
+    // Only the line above it is still unknown, and it is one line either way.
+    expect(container.textContent).toContain('Checking how much is available offline…');
+    expect(await screen.findByText('Currently 0% is available offline.')).toBeInTheDocument();
+    expect(container.textContent).toContain('It downloads about 10 MB and uses about 60 MB on this device.');
+  });
+
+  it('opens on the count it last measured, rather than measuring before it can say anything', () => {
+    vi.mocked(lastOfflineStatus).mockReturnValue({ cached: 5, total: 10 });
+    vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 5, total: 10 });
+    renderSettings();
+    expect(screen.getByText('Currently 50% is available offline.')).toBeInTheDocument();
+  });
+
+  it('says so outright when the remembered count is everything', () => {
+    vi.mocked(lastOfflineStatus).mockReturnValue({ cached: 10, total: 10 });
+    vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 10, total: 10 });
+    renderSettings();
+    expect(screen.getByText('All content available offline.')).toBeInTheDocument();
   });
 });
 

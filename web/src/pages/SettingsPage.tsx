@@ -21,10 +21,12 @@ import {
   cachedCorpusVersions,
   estimateOfflineStatus,
   isOfflineTextStale,
+  lastOfflineStatus,
   prefetchAllSuttas,
   prefetchDictionary,
   prefetchHelpImages,
   recordCachedCorpusVersion,
+  type OfflineStatus,
 } from '../lib/offline';
 import type { AppTheme } from '../lib/types';
 
@@ -322,7 +324,9 @@ export function SettingsPage() {
   const [offlineStatus, setOfflineStatus] = useState<'idle' | 'downloading'>('idle');
   // Progress of the offline download, shown as a percentage (see lib/offline.ts).
   const [progress, setProgress] = useState({ done: 0, total: 0 });
-  const [cachedStatus, setCachedStatus] = useState<{ cached: number; total: number } | null>(null);
+  // Seeded from the last measured count, so the card states what is available immediately and the
+  // fresh estimate below only corrects the number (see lastOfflineStatus).
+  const [cachedStatus, setCachedStatus] = useState<OfflineStatus | null>(lastOfflineStatus);
   // Whether a completed bulk download predates the corpus now being served
   // (cachedCorpusVersions). A synchronous localStorage compare, so read during render.
   const textStale = !!corpus && isOfflineTextStale(corpus.dataVersion);
@@ -472,12 +476,14 @@ export function SettingsPage() {
         <div className="text-ui-3xl font-semibold tracking-[-.01em] mb-5">Settings</div>
 
         {/* The Account section: sign-in when signed out, sync state with Export and Sign out when
-            signed in. Keeps a placeholder while `loading`, so it always has height for the scroll
-            target above to land on. */}
+            signed in. A remembered account (lib/lastUser.ts) is shown at once, the session check
+            only settling the sync line in place, so the card doesn't grow from one line to its full
+            height under the reader. Only a device with no account to remember waits, on a
+            placeholder, so the section always has height for the scroll target above to land on. */}
         <div ref={authSectionRef}>
           <div className={SECTION_LABEL}>Account</div>
           <div className={`${cardClass('auth')} mb-5`}>
-            {loading ? (
+            {loading && !shownUser ? (
               <div className="font-sans text-ui-base text-ink-4 py-4">Checking sign-in status…</div>
             ) : shownUser ? (
               <>
@@ -632,22 +638,26 @@ export function SettingsPage() {
             ) : (
               <>
                 {/* The content's offline state:
-                      unknown  – a "checking" line while the estimate resolves
                       stale    – an icon and the accent colour, the one state asking to be acted on
                       complete – a plain line saying so
-                      partial  – how much is here, and what a download would add */}
-                {!cachedStatus ? (
-                  <div className="font-sans text-ui-base text-ink-2 mb-3">Checking content status…</div>
-                ) : textStale ? (
+                      partial  – how much is here, and what a download would add
+
+                    What a download costs is stated in every partial state, measured or not, so the
+                    card keeps one height while the count resolves: only its first line changes. */}
+                {textStale ? (
                   <div className="flex items-start gap-1.5 font-sans text-ui-base text-accent-text mb-3">
                     <Info size={18} strokeWidth={1.75} className="flex-none mt-[2px]" />
                     <span>Updated content is available ({TOTAL_DOWNLOAD_MB_ESTIMATE} MB).</span>
                   </div>
-                ) : cachedStatus.cached >= cachedStatus.total ? (
+                ) : cachedStatus && cachedStatus.cached >= cachedStatus.total ? (
                   <div className="font-sans text-ui-base text-ink-2 mb-3">All content available offline.</div>
                 ) : (
                   <div className="font-sans text-ui-base text-ink-2 mb-3">
-                    <p>Currently {Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% is available offline.</p>
+                    <p>
+                      {cachedStatus
+                        ? `Currently ${Math.round((cachedStatus.cached / cachedStatus.total) * 100)}% is available offline.`
+                        : 'Checking how much is available offline…'}
+                    </p>
                     <p className="mt-2">
                       Downloading all content enables the app to work fully offline. It downloads about{' '}
                       {TOTAL_DOWNLOAD_MB_ESTIMATE} MB and uses about {TOTAL_STORED_MB_ESTIMATE} MB on this
