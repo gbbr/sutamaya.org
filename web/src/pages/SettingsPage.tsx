@@ -476,7 +476,7 @@ export function SettingsPage() {
       <div className="w-full max-w-[540px] pb-10 mx-auto">
         {/* Back to wherever the reader was, via '/' rather than browser history, which a relaunch
             or a hard refresh onto /settings would leave empty. */}
-        <div className="flex items-center gap-3.5 mb-5">
+        <div className="flex items-center gap-3.5 mb-8">
           <BackButton onClick={backToLastLocation} />
           <div className="min-w-0 text-ui-3xl font-semibold tracking-[-.01em]">Settings</div>
         </div>
