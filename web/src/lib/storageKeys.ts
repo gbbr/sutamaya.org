@@ -24,6 +24,9 @@ export const OFFLINE_DICTIONARY_VERSION_KEY = 'sutamaya.offlineDictionaryVersion
 // The dataVersion whose "updated text available" nudge was dismissed. Stores the version rather
 // than a boolean, so dismissing one update doesn't silence every later one.
 export const OFFLINE_UPDATE_DISMISSED_KEY = 'sutamaya.offlineUpdateDismissed';
+// How much of the canon this device last measured as cached (see lib/offline.ts), so Settings can
+// say what it holds on its first paint.
+export const OFFLINE_STATUS_KEY = 'sutamaya.offlineStatus';
 // This device's own id — the tiebreak half of every mtime this client stamps (see lib/mtime.ts).
 export const DEVICE_ID_KEY = 'sutamaya.deviceId';
 // The last signed-in user, so a cold start with no network still knows whose mirror to open

@@ -1,6 +1,6 @@
 import { loadDictShardManifest } from './dictionaryShards';
 import { searchTextUrls } from './search/text';
-import { OFFLINE_DATA_VERSION_KEY, OFFLINE_DICTIONARY_VERSION_KEY } from './storageKeys';
+import { OFFLINE_DATA_VERSION_KEY, OFFLINE_DICTIONARY_VERSION_KEY, OFFLINE_STATUS_KEY } from './storageKeys';
 
 // Settings' bulk offline download: the whole canon fetched as ~1MB shard bundles and unpacked into
 // the same caches an ordinary read writes, so both paths produce identical entries.
@@ -323,10 +323,39 @@ export function isOfflineTextStale(dataVersion: string): boolean {
   return cached !== null && cached !== dataVersion;
 }
 
-// How many of `uids` are cached, for Settings' offline-availability line.
-export async function estimateOfflineStatus(uids: string[]): Promise<{ cached: number; total: number }> {
+export interface OfflineStatus {
+  cached: number;
+  total: number;
+}
+
+// How many of `uids` are cached, for Settings' offline-availability line. Remembers its answer for
+// `lastOfflineStatus`.
+export async function estimateOfflineStatus(uids: string[]): Promise<OfflineStatus> {
   if (!('caches' in window)) return { cached: 0, total: uids.length };
   const cache = await caches.open(SUTTA_TEXT_CACHE);
   const cached = await cachedUidSet(cache, uids);
-  return { cached: cached.size, total: uids.length };
+  const status = { cached: cached.size, total: uids.length };
+  try {
+    localStorage.setItem(OFFLINE_STATUS_KEY, JSON.stringify(status));
+  } catch {
+    // storage unavailable — the next visit simply measures before it can say anything
+  }
+  return status;
+}
+
+// The count as this device last measured it, so Settings' Offline card can state what is available
+// at its full height on the first paint: counting the cache is asynchronous, and a placeholder
+// standing in until it answers resizes the card under the reader. Null before the first measurement
+// ever taken. Always a seed for a fresh `estimateOfflineStatus`, never the answer itself.
+export function lastOfflineStatus(): OfflineStatus | null {
+  try {
+    const raw = localStorage.getItem(OFFLINE_STATUS_KEY);
+    if (!raw) return null;
+    const v = JSON.parse(raw) as Partial<OfflineStatus> | null;
+    if (typeof v?.cached !== 'number' || typeof v?.total !== 'number' || v.total <= 0) return null;
+    return { cached: v.cached, total: v.total };
+  } catch {
+    // Unavailable or unparseable storage is simply nothing measured yet.
+    return null;
+  }
 }
