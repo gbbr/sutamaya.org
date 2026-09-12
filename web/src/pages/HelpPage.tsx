@@ -531,9 +531,9 @@ export function HelpPage() {
       <div className="w-full max-w-[640px] pb-10 mx-auto">
         {/* The back chip and the page's title on one line, the header shape every other screen
             has: the same control in the same place, level with the library's own header. */}
-        <div className="flex items-center gap-3.5 mb-2">
+        <div className="flex items-center gap-3.5 mb-7">
           <BackButton onClick={back} />
-          <div className="min-w-0 text-ui-3xl font-semibold tracking-[-.01em]">How to use this app</div>
+          <div className="min-w-0 text-ui-3xl font-semibold tracking-[-.01em]">Help</div>
         </div>
         <p className="font-serif text-ui-lg leading-[1.55] text-ink-2 mb-4">
           A tour of the app in pictures. Nothing here needs an account, and nothing you've already visited needs a connection.
