@@ -26,6 +26,7 @@ import { beginTextSearchLoad } from '../lib/search/textClient';
 import { ancestorsOfList, flattenListTree, suttaRowMeta } from '../lib/lists';
 import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
 import { derivePaneViewSync } from '../lib/paneView';
+import { transitionPage } from '../lib/motion';
 import { TREE_VIEW_KEY, TREE_EXPANDED_KEY } from '../lib/storageKeys';
 import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
 import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
@@ -619,7 +620,7 @@ export function TreePane({
             style={mobile ? { width: 44, height: 44 } : { width: 38, height: 38 }}
             aria-label="Help"
             title="Help"
-            onClick={() => navigate('/help')}
+            onClick={() => transitionPage('push', () => navigate('/help', { flushSync: true }))}
           >
             {/* A typeset question mark in a drawn ring, in the shell's own face. `currentColor`
                 puts both on the button's own hover. */}
@@ -710,12 +711,23 @@ export function TreePane({
             difference between the header's own edge and the inset of the rows below, whose own
             edge is a round hover target with air around its glyph. */}
         {!searching && (
-          <div className="flex mt-4 -mx-2 font-sans text-ui-sm font-semibold">
+          <div className="relative flex mt-4 -mx-2 font-sans text-ui-sm font-semibold">
+            {/* The underline is one bar sliding between the tabs rather than a border lit on each,
+                which is how tabs move on both phone platforms. It spans half the row, the two tabs
+                being equal, so its travel is one step of its own width and needs no measuring. The
+                buttons keep a transparent border of the bar's weight, which holds the row's height
+                whichever tab is active. */}
+            <span
+              aria-hidden
+              className={`absolute bottom-0 left-0 w-1/2 h-[2px] bg-accent-text motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out ${
+                paneView === 'lists' ? 'translate-x-full' : ''
+              }`}
+            />
             {(['library', 'lists'] as const).map((view) => (
               <button
                 key={view}
-                className={`flex-1 min-w-0 flex items-center justify-center gap-[9px] h-[42px] border-b-2 transition-colors ${
-                  paneView === view ? 'border-accent-text text-ink' : 'border-transparent text-ink-4 hover:text-ink-2'
+                className={`flex-1 min-w-0 flex items-center justify-center gap-[9px] h-[42px] border-b-2 border-transparent transition-colors ${
+                  paneView === view ? 'text-ink' : 'text-ink-4 hover:text-ink-2'
                 }`}
                 aria-pressed={paneView === view}
                 title={view === 'library' ? 'Library (x)' : 'My Lists (x)'}

@@ -611,3 +611,61 @@ textarea {
     background: var(--pw-hover, #eadfc6);
   }
 }
+
+/* Screen changes, started by lib/motion.ts's transitionPage — see docs/web-app.md's "Screen
+   transitions". The Reader crossfades in and out. On a phone a sutta list slides in over the tree
+   from the right, as a pushed screen does, and Back slides it off again; the screen underneath
+   drifts a third of the way, which is what reads as one screen stacked on another. Reduced motion
+   keeps the crossfade and drops the slides. */
+::view-transition-group(root) {
+  animation-duration: 180ms;
+}
+@media (prefers-reduced-motion: no-preference) {
+  :root[data-page-transition='push']::view-transition-group(root),
+  :root[data-page-transition='pop']::view-transition-group(root) {
+    animation-duration: 250ms;
+  }
+  :root[data-page-transition='push']::view-transition-old(root),
+  :root[data-page-transition='push']::view-transition-new(root),
+  :root[data-page-transition='pop']::view-transition-old(root),
+  :root[data-page-transition='pop']::view-transition-new(root) {
+    animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+    /* Two opaque screens, one over the other, rather than the crossfade's blend of the two. */
+    mix-blend-mode: normal;
+  }
+  :root[data-page-transition='push']::view-transition-old(root) {
+    animation-name: page-under;
+  }
+  :root[data-page-transition='push']::view-transition-new(root) {
+    animation-name: page-in;
+    box-shadow: 0 0 24px rgba(27, 25, 23, 0.15);
+  }
+  :root[data-page-transition='pop']::view-transition-old(root) {
+    animation-name: page-out;
+    z-index: 1;
+    box-shadow: 0 0 24px rgba(27, 25, 23, 0.15);
+  }
+  :root[data-page-transition='pop']::view-transition-new(root) {
+    animation-name: page-back;
+  }
+}
+@keyframes page-in {
+  from {
+    transform: translateX(100%);
+  }
+}
+@keyframes page-out {
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes page-under {
+  to {
+    transform: translateX(-30%);
+  }
+}
+@keyframes page-back {
+  from {
+    transform: translateX(-30%);
+  }
+}

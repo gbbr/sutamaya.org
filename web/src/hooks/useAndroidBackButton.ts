@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import { App } from '@capacitor/app';
 import { platformName } from '../lib/platform';
 import { runTopBackHandler } from '../lib/backButton';
+import { transitionPage } from '../lib/motion';
 
 // Routes to '/' rather than being a screen with its own back target.
 const ESCAPE_TO_HOME = new Set(['/settings', '/help']);
@@ -21,7 +22,7 @@ export function useAndroidBackButton(): void {
     void App.addListener('backButton', () => {
       if (runTopBackHandler()) return;
       if (ESCAPE_TO_HOME.has(window.location.pathname)) {
-        void navigate('/');
+        transitionPage('pop', () => navigate('/', { flushSync: true }));
         return;
       }
       void App.minimizeApp();

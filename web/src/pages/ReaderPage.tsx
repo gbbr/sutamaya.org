@@ -125,7 +125,7 @@ export function ReaderPage() {
     };
   }
   const searchSegments = arrivalRef.current.segments;
-  const { from, fromView, searchIds, navigateToSutta, closeToOrigin } = useReaderOrigin(readerLocationState);
+  const { from, fromView, searchIds, navigateToSutta, closeToOrigin, leaveReader } = useReaderOrigin(readerLocationState);
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
   const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
   const [panel, setPanel] = useState(false);
@@ -384,7 +384,7 @@ export function ReaderPage() {
     }
     const node = listOrigin?.id ?? sutta?.node;
     if (!node) return;
-    navigate(`/browse/${encodeURIComponent(node)}/${encodeURIComponent(suttaId)}`, {
+    leaveReader(`/browse/${encodeURIComponent(node)}/${encodeURIComponent(suttaId)}`, {
       state: tagIntent({ fromView: 'list' }),
     });
   }
@@ -514,7 +514,7 @@ export function ReaderPage() {
   return (
     <div
       data-component="ReaderPage"
-      className="fixed inset-0 z-40 flex flex-col animate-fadeIn"
+      className="fixed inset-0 z-40 flex flex-col"
       style={
         {
           background: theme.bg,
@@ -632,7 +632,7 @@ export function ReaderPage() {
                 <button
                   className="flex items-center gap-1 hover:underline"
                   onClick={() =>
-                    navigate(`/browse/${encodeURIComponent(listOrigin.id)}/${encodeURIComponent(suttaId)}`, {
+                    leaveReader(`/browse/${encodeURIComponent(listOrigin.id)}/${encodeURIComponent(suttaId)}`, {
                       state: tagIntent({ fromView: 'list' }),
                     })
                   }
@@ -658,7 +658,7 @@ export function ReaderPage() {
                       // Every segment navigates to the sutta's own leaf group, and names the
                       // clicked one as `flashNodeId` for the tree pane to scroll to and highlight.
                       // The pane opened is the one that flash will land in.
-                      navigate(`/browse/${encodeURIComponent(sutta.node)}/${encodeURIComponent(suttaId)}`, {
+                      leaveReader(`/browse/${encodeURIComponent(sutta.node)}/${encodeURIComponent(suttaId)}`, {
                         state: tagIntent({ fromView: b.id === sutta.node ? 'list' : 'tree', flashNodeId: b.id }),
                       })
                     }
@@ -730,7 +730,7 @@ export function ReaderPage() {
                 const { list } = resolveListById(chipId, flatLists);
                 // `fromView` is tagged explicitly: an arrival from inside the app otherwise opens
                 // LibraryPage on whichever pane it was last left on, and this chip names a list.
-                if (list) navigate(`/browse/${list.id}/${suttaId}`, { state: tagIntent({ fromView: 'list' }) });
+                if (list) leaveReader(`/browse/${list.id}/${suttaId}`, { state: tagIntent({ fromView: 'list' }) });
               }}
               onHighlightClick={(e) => {
                 e.stopPropagation();

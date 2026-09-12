@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { UserRound } from 'lucide-react';
 import { isIosBrowserTab } from '../lib/localAccount';
+import { transitionPage } from '../lib/motion';
 import type { User } from '../lib/types';
 
 // The account entry point in TreePane's header, signed in or out; both open Settings. Sized by the
@@ -10,6 +11,7 @@ import type { User } from '../lib/types';
 // can't be dismissed and stays until a sign-in resolves it.
 export function SignedInBadge({ user, size, atRisk = false }: { user: User | null; size: number; atRisk?: boolean }) {
   const navigate = useNavigate();
+  const openSettings = () => transitionPage('push', () => navigate('/settings', { flushSync: true }));
   const dim = { width: size, height: size };
   // Whether the avatar has loaded; until it has, and if it never does — the URL is unreachable
   // offline — the initials show rather than the browser's broken-image glyph.
@@ -21,7 +23,7 @@ export function SignedInBadge({ user, size, atRisk = false }: { user: User | nul
       style={{ ...dim, fontSize: Math.round(size * 0.42) }}
       aria-label={`Signed in as ${user.email}`}
       title={`Signed in as ${user.email}`}
-      onClick={() => navigate('/settings')}
+      onClick={openSettings}
     >
       {user.picture && (
         <img
@@ -45,7 +47,7 @@ export function SignedInBadge({ user, size, atRisk = false }: { user: User | nul
       style={dim}
       aria-label={atRisk ? 'Settings — your notes are saved only on this device' : 'Settings'}
       title={atRisk ? 'Settings — your notes are saved only on this device' : 'Settings'}
-      onClick={() => navigate('/settings')}
+      onClick={openSettings}
     >
       <UserRound size={Math.round(size * 0.55)} strokeWidth={1.75} />
       {atRisk && (

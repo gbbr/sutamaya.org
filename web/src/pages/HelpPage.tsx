@@ -1,9 +1,10 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router';
 import { ArrowLeft, ArrowUp, ExternalLink, Lightbulb, Mail } from 'lucide-react';
 import { useLayout } from '../context/LayoutContext';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { isTypingTarget } from '../lib/shortcuts';
+import { transitionPage } from '../lib/motion';
 import dictionaryShot from '../assets/help/dictionary-mobile.webp';
 import libraryShot from '../assets/help/library-mobile.webp';
 import libraryItemsShot from '../assets/help/library-items-mobile.webp';
@@ -502,14 +503,19 @@ export function HelpPage() {
   // The page's scroll container, which "Back to top" returns to; the document itself never scrolls.
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Escape leaves the page, as it does in Settings, via '/' rather than browser history.
+  // Leaves the page for wherever the reader was, via '/' rather than browser history, sliding it
+  // off the way it came in. Back lands in the library rather than in Settings, even when Settings
+  // is where Help was opened from: '/' is the last place the reader was reading.
+  const back = useCallback(() => transitionPage('pop', () => navigate('/', { flushSync: true })), [navigate]);
+
+  // Escape leaves the page, as it does in Settings.
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape' && !isTypingTarget(e)) navigate('/');
+      if (e.key === 'Escape' && !isTypingTarget(e)) back();
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [navigate]);
+  }, [back]);
 
   // On a phone the page starts 10px below the safe-area line, level with the library's header.
   return (
@@ -520,7 +526,7 @@ export function HelpPage() {
       style={{ paddingTop: mobile ? 'calc(10px + var(--safe-top))' : 'calc(2.5rem + var(--safe-top))' }}
     >
       <div className="w-full max-w-[640px] pb-10 mx-auto">
-        <button className="flex items-center gap-1.5 font-sans text-ui-base text-ink-4 mb-5" onClick={() => navigate('/')}>
+        <button className="flex items-center gap-1.5 font-sans text-ui-base text-ink-4 mb-5" onClick={back}>
           <ArrowLeft size={17} strokeWidth={1.75} />
           Back
         </button>

@@ -9,6 +9,7 @@ import { estimateOfflineStatus, isOfflineTextStale } from '../lib/offline';
 import { dismissKeepSafe, isIosBrowserTab, isKeepSafeDismissed } from '../lib/localAccount';
 import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
 import { isNativeApp, isStandaloneDisplay } from '../lib/platform';
+import { transitionPage } from '../lib/motion';
 import {
   hasOpenedSutta,
   isOfflineNudgeDismissed,
@@ -182,7 +183,9 @@ export function HeaderBanner() {
       icon={<Download size={18} strokeWidth={1.75} />}
       text={showUpdateNudge ? OFFLINE_UPDATE_TEXT : OFFLINE_DOWNLOAD_TEXT}
       action={showUpdateNudge ? 'Update' : 'Download'}
-      onAction={() => navigate('/settings', { state: { scrollTo: 'offline' } })}
+      onAction={() =>
+        transitionPage('push', () => navigate('/settings', { state: { scrollTo: 'offline' }, flushSync: true }))
+      }
       onDismiss={
         showUpdateNudge
           ? () => {

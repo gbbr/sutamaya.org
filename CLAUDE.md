@@ -64,6 +64,8 @@ Offline sync covers `web/src/lib/{mirror,sync,mirrorView,mirrorDb,listTree}.ts`,
 - **Dictionary shards are ordered with plain `<` and `>`**, never `localeCompare`, in the build and
   the app alike.
 - **Import the router and its hooks from `react-router`**, never `react-router/dom`.
+- **Screen transitions go through `transitionPage`** (`web/src/lib/motion.ts`), never React Router's
+  `viewTransition`, which also animates the browser's Back — over Safari's own swipe animation.
 - **`<StrictMode>` is off.** Turning it on means checking every effect against a double run first.
 - **Drag and drop uses Pointer Events**, never HTML5 drag-and-drop.
 - **A Capacitor plugin on the startup path is imported statically**, never behind `await import()`.

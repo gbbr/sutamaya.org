@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react';
 import { usePersistedState } from '../hooks/usePersistedState';
+import { MOBILE_BREAKPOINT } from '../lib/layout';
 import { LAYOUT_PREFS_KEY } from '../lib/storageKeys';
 
 interface LayoutPrefs {
@@ -23,9 +24,6 @@ interface LayoutState extends LayoutPrefs {
 export const DEFAULT_TREE_W = 360;
 
 const DEFAULTS: LayoutPrefs = { treeW: DEFAULT_TREE_W };
-
-// Viewport width below which the app is in its mobile layout. Also read by lib/uiPrefs.ts.
-export const MOBILE_BREAKPOINT = 860;
 
 const LayoutContext = createContext<LayoutState | null>(null);
 
