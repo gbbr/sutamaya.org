@@ -2,14 +2,35 @@
 // web/android. Pass `-- --no-sync` to stop after the bundle — no Xcode or Android SDK needed, for
 // CI and the OTA channel. Pass `-- --ota` to also package that bundle as a versioned zip under
 // web/ota/ for `npm run release:ota` (implies --no-sync).
+//
+// Pass `-- --env staging` (or `production`) to name the Worker the app calls; with no --env it calls
+// production. SUTAMAYA_API_BASE stays the escape hatch for any other origin — a local Worker — and
+// is refused alongside --env, so the two can't disagree about where a bundle points.
 
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { API_ORIGINS } from './lib/apiOrigins.js';
 
 const ota = process.argv.includes('--ota');
 const noSync = ota || process.argv.includes('--no-sync');
+
+const envAt = process.argv.indexOf('--env');
+if (envAt !== -1) {
+  const env = process.argv[envAt + 1];
+  if (!Object.hasOwn(API_ORIGINS, env)) {
+    console.error(`error: --env takes one of ${Object.keys(API_ORIGINS).join(', ')}`);
+    process.exit(1);
+  }
+  if (process.env.SUTAMAYA_API_BASE) {
+    console.error(`error: SUTAMAYA_API_BASE is set (${process.env.SUTAMAYA_API_BASE}) — pass --env or it, not both`);
+    process.exit(1);
+  }
+  // Inherited by the Vite build, which bakes it into the bundle, and by cap sync, which writes it
+  // into the native projects' update-check URL.
+  process.env.SUTAMAYA_API_BASE = API_ORIGINS[env];
+}
 
 function run(args, opts = {}) {
   const r = spawnSync('npm', args, { stdio: 'inherit', ...opts });

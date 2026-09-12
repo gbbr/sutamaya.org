@@ -14,6 +14,7 @@
 import { spawnSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { createInterface } from 'node:readline';
+import { API_ORIGINS } from './lib/apiOrigins.js';
 
 const args = process.argv.slice(2);
 const force = args.includes('--force');
@@ -148,11 +149,9 @@ if (drifted.length && !allowNativeDrift) {
 
 // --- build -----------------------------------------------------------------
 
-// A staging bundle talks to the staging API (and so shows the tree-pane build stamp); a
-// production bundle uses the default origin baked into lib/platform.ts.
-const apiBase = env === 'staging' ? 'https://app.staging.sutamaya.org' : 'https://app.sutamaya.org';
-const buildEnv = env === 'staging' ? { ...process.env, SUTAMAYA_API_BASE: apiBase } : process.env;
-sh('node', ['scripts/build-native.mjs', '--ota'], { env: buildEnv });
+// The bundle talks to its own environment's API — a staging one showing the tree-pane build stamp.
+const apiBase = API_ORIGINS[env];
+sh('node', ['scripts/build-native.mjs', '--ota', '--env', env]);
 const manifest = JSON.parse(readFileSync('web/ota/manifest.json', 'utf8'));
 const { version, checksum, zip } = manifest;
 

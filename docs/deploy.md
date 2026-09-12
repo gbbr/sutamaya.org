@@ -117,6 +117,7 @@ included, before it reaches readers.
 ```bash
 npm run deploy:staging    # the same script, with --env staging
 npm run seed:staging      # replace staging's database with a copy of the local one
+npm run build:native -- --env staging   # a native app that calls staging — see docs/native-apps.md
 ```
 
 It is declared as `env.staging` in `wrangler.jsonc`, which repeats only what differs: the name, the

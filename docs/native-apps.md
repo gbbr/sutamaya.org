@@ -146,6 +146,7 @@ readers on the current bundle until a `release:ota` follows.
 
 ```
 npm run build:native       # corpus + web bundle (service worker off), then cap sync into ios/android
+npm run build:native -- --env staging   # the same, calling the staging Worker instead of production
 npm run build:native -- --no-sync   # stop at the bundle — no Xcode / Android SDK needed (CI, OTA)
 npm run build:native -- --ota       # also zip the bundle to web/ota/ for an OTA release (implies --no-sync)
 npm run release:ota -- --env staging      # build, upload to R2, point wrangler.jsonc at it, deploy
@@ -196,9 +197,11 @@ can. `devicectl` is the CoreDevice path Xcode itself uses. It builds into the sa
 directory `cap run` uses, so both paths share one incremental build. Simulators still go through
 `cap run`, which handles them well.
 
-A bundled build under test (not live-reload) points `SUTAMAYA_API_BASE` at a Worker that has the
-current auth code — `http://localhost:8787` for local, or a staging/prod deploy. Without it the app
-talks to production and native sign-in returns to the website instead of the app.
+**A bundled build (not live-reload) calls production unless told otherwise.** `--env staging` points
+it at staging, by name, from the table in `scripts/lib/apiOrigins.js` that `release:ota` uses too.
+Any other Worker — `http://localhost:8787`, say — is `SUTAMAYA_API_BASE`, which `--env` refuses to
+run alongside. Whichever it calls needs the current auth code, or native sign-in returns to the
+website instead of the app.
 
 ## Constraints that bite
 
