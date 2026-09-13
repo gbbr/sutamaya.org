@@ -44,9 +44,9 @@ import { type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, 
 import { CorpusTreeView } from './CorpusTreeView';
 import { ListsTreeView } from './ListsTreeView';
 
-// How long a phone's tree keeps the row it comes back to marked before letting it fade: twice the
-// slide back (index.css), so the mark is still there to be seen once the tree has landed.
-const RETURN_MARK_MS = 500;
+// How long a phone's tree keeps the row it comes back to marked before letting it fade: a little
+// past the slide back (index.css), so the fade starts once the tree has settled.
+const RETURN_MARK_MS = 350;
 
 interface PersistedExpansion {
   corpus: string[];
