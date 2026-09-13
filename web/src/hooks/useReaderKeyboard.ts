@@ -13,7 +13,7 @@ interface UseReaderKeyboardOptions {
   closeDict: () => void;
   panel: boolean;
   setPanel: (open: boolean) => void;
-  closeReader: () => void;
+  backOrClose: () => void;
   step: (dir: 1 | -1) => void;
   goToAdjacentWord: (dir: 1 | -1) => void;
   setTab: (tab: 'highlights' | 'lists' | 'text') => void;
@@ -29,8 +29,8 @@ interface UseReaderKeyboardOptions {
 // The branch order below is load-bearing, and useReaderKeyboard.test.tsx covers it per shortcut.
 // An open help modal or search overlay owns every key. Escape is read before the typing-target
 // bail, since it is the "leave this" key even mid-edit, and backs out of one thing at a time:
-// selection popup, dictionary dock, panel, then the reader itself. Everything else is ignored
-// while a field has focus.
+// selection popup, dictionary dock, panel, then a search jump or the reader itself. Everything
+// else is ignored while a field has focus.
 export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
   const {
     shortcutsOpen,
@@ -43,7 +43,7 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
     closeDict,
     panel,
     setPanel,
-    closeReader,
+    backOrClose,
     setTab,
     setNoteFocusSignal,
     toggleShowNotes,
@@ -73,7 +73,7 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
         if (pop) closePop();
         else if (dict) closeDict();
         else if (panel) setPanel(false);
-        else closeReader();
+        else backOrClose();
         return;
       }
       if (isTypingTarget(e)) return;

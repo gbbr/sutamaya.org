@@ -94,6 +94,8 @@ never restate it as prose.
   `docs/translation-changes.md` is written for readers, not developers.
 - **Change the doc with the code.** A change to how something works updates its doc in the same
   change.
+- **A bug fix adds nothing to the docs.** They describe the design; a fix that brings the code in
+  line with it, or with what a reader would expect anyway, leaves them as they are.
 - **Keep headings stable.** Code comments cite them by name; renaming one means updating what cites
   it.
 

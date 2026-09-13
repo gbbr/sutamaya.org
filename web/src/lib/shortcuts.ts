@@ -26,7 +26,7 @@ export const SHORTCUTS = {
   libraryHelp: { match: ['?'], keys: ['?'], label: 'Show keyboard shortcuts', scope: 'library' },
 
   // Reader (ReaderPage.tsx)
-  readerClose: { match: ['Escape'], keys: ['Esc'], label: 'Close the dictionary, panel, or the reader', scope: 'reader' },
+  readerClose: { match: ['Escape'], keys: ['Esc'], label: 'Close the dictionary or panel, go back, or close the reader', scope: 'reader' },
   readerSearch: { match: ['/'], keys: ['/'], label: 'Search suttas (Esc to close)', scope: 'reader' },
   // Sutta-to-sutta nav is on J/K rather than the arrows, which belong to the dictionary dock's word
   // stepping below; Shift+Arrow is the browser's own extend-selection gesture. They follow the

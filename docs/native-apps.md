@@ -20,7 +20,7 @@ the app reads offline from its first launch, with no service worker.
 | Data export | a download | the OS share sheet |
 | Reader's Share button | the installed app only | always |
 | Updates | the service worker | over-the-air bundles (below) |
-| Android back button | — | closes what's open, then leaves Settings and Help, then backgrounds the app |
+| Android back button | — | closes what's open or returns from a search jump, then leaves Settings and Help, then backgrounds the app |
 
 The app runs edge to edge on both platforms, keeping its bars inside the safe-area insets, and sets
 the status bar's text colour from its own theme. On Android the highlight popup opens from the
