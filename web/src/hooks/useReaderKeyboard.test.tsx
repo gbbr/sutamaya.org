@@ -8,7 +8,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
   const closePop = vi.fn();
   const closeDict = vi.fn();
   const setPanel = vi.fn();
-  const closeReader = vi.fn();
+  const backOrClose = vi.fn();
   const step = vi.fn();
   const goToAdjacentWord = vi.fn();
   const setTab = vi.fn();
@@ -28,7 +28,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     closeDict,
     panel: false,
     setPanel,
-    closeReader,
+    backOrClose,
     step,
     goToAdjacentWord,
     setTab,
@@ -48,7 +48,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     closePop,
     closeDict,
     setPanel,
-    closeReader,
+    backOrClose,
     step,
     goToAdjacentWord,
     setTab,
@@ -95,51 +95,51 @@ describe('useReaderKeyboard', () => {
 
   describe('search overlay open', () => {
     it('every reader shortcut is ignored, including Escape', () => {
-      const { closeReader, setShortcutsOpen } = setup({ searchOpen: true });
+      const { backOrClose, setShortcutsOpen } = setup({ searchOpen: true });
       press('Escape');
       press('?');
-      expect(closeReader).not.toHaveBeenCalled();
+      expect(backOrClose).not.toHaveBeenCalled();
       expect(setShortcutsOpen).not.toHaveBeenCalled();
     });
   });
 
   describe('Escape priority chain (readerClose)', () => {
     it('closes a highlight popup first, even with dict/panel also open', () => {
-      const { closePop, closeDict, setPanel, closeReader } = setup({ pop: { on: true }, dict: { word: 'x' }, panel: true });
+      const { closePop, closeDict, setPanel, backOrClose } = setup({ pop: { on: true }, dict: { word: 'x' }, panel: true });
       press('Escape');
       expect(closePop).toHaveBeenCalled();
       expect(closeDict).not.toHaveBeenCalled();
       expect(setPanel).not.toHaveBeenCalled();
-      expect(closeReader).not.toHaveBeenCalled();
+      expect(backOrClose).not.toHaveBeenCalled();
     });
 
     it('closes the dictionary dock next, when no popup is open', () => {
-      const { closeDict, setPanel, closeReader } = setup({ pop: null, dict: { word: 'x' }, panel: true });
+      const { closeDict, setPanel, backOrClose } = setup({ pop: null, dict: { word: 'x' }, panel: true });
       press('Escape');
       expect(closeDict).toHaveBeenCalled();
       expect(setPanel).not.toHaveBeenCalled();
-      expect(closeReader).not.toHaveBeenCalled();
+      expect(backOrClose).not.toHaveBeenCalled();
     });
 
     it('closes the side panel next, when neither popup nor dict is open', () => {
-      const { setPanel, closeReader } = setup({ pop: null, dict: null, panel: true });
+      const { setPanel, backOrClose } = setup({ pop: null, dict: null, panel: true });
       press('Escape');
       expect(setPanel).toHaveBeenCalledWith(false);
-      expect(closeReader).not.toHaveBeenCalled();
+      expect(backOrClose).not.toHaveBeenCalled();
     });
 
-    it('closes the whole reader last, when nothing else is open', () => {
-      const { closeReader } = setup({ pop: null, dict: null, panel: false });
+    it('backs out of a search jump or the whole reader last, when nothing else is open', () => {
+      const { backOrClose } = setup({ pop: null, dict: null, panel: false });
       press('Escape');
-      expect(closeReader).toHaveBeenCalled();
+      expect(backOrClose).toHaveBeenCalled();
     });
 
     it('fires even while an input/textarea has focus, unlike every other shortcut', () => {
       const input = document.createElement('input');
       document.body.appendChild(input);
-      const { closeReader } = setup({ pop: null, dict: null, panel: false });
+      const { backOrClose } = setup({ pop: null, dict: null, panel: false });
       press('Escape', {}, input);
-      expect(closeReader).toHaveBeenCalled();
+      expect(backOrClose).toHaveBeenCalled();
     });
   });
 

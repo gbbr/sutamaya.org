@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { useLocation, useNavigate, useNavigationType, useParams } from 'react-router';
-import { X, Menu as MenuIcon, ChevronLeft, ChevronRight, Library, List as ListIcon, Search, Share, Share2 } from 'lucide-react';
+import { X, Menu as MenuIcon, ChevronLeft, ChevronRight, Library, List as ListIcon, Search, Share, Share2, Undo2 } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
@@ -109,7 +109,7 @@ export function ReaderPage() {
   // Where the reader was opened from (LibraryPage's onOpen): `from` is the pane and node to close
   // back to, `fromView` which pane to show there. Absent for a direct link to /read/:suttaId.
   const readerLocationState = location?.state as
-    | { from?: string; fromView?: 'tree' | 'list'; searchIds?: string[] }
+    | { from?: string; fromView?: 'tree' | 'list'; searchIds?: string[]; backTo?: string }
     | undefined;
   // The segments a search hit's snippet was drawn from, sampled once per navigation rather than
   // once per mount: this page never unmounts between suttas, so a value held for its lifetime
@@ -125,7 +125,8 @@ export function ReaderPage() {
     };
   }
   const searchSegments = arrivalRef.current.segments;
-  const { from, fromView, searchIds, navigateToSutta, closeToOrigin, leaveReader } = useReaderOrigin(readerLocationState);
+  const { from, fromView, searchIds, backTo, turnTo, jumpTo, goBack, closeToOrigin, leaveReader } =
+    useReaderOrigin(readerLocationState);
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
   const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
   const [panel, setPanel] = useState(false);
@@ -366,12 +367,12 @@ export function ReaderPage() {
   // render that lands on it.
   const enterOnArrival = useRef<{ id: string; dir: 1 | -1 } | null>(null);
 
-  // Steps one sutta forward or back, carrying the reader's origin along (navigateToSutta).
+  // Steps one sutta forward or back, carrying the reader's origin along (turnTo).
   function step(dir: 1 | -1) {
     const next = neighbourOf(suttaId, dir);
     if (!next) return;
     enterOnArrival.current = { id: next, dir };
-    navigateToSutta(next);
+    turnTo(next);
   }
 
   // Opens the run the foot of the sutta names: the search results, the list the reader was opened
@@ -410,10 +411,25 @@ export function ReaderPage() {
     closeToOrigin(suttaId, sutta ? `/browse/${sutta.node}/${suttaId}` : '/');
   }
 
+  // The header's first button, and where Escape and Android's back end up: back to the sutta the
+  // reader first searched from while there is one, arriving from the left as Prev does; otherwise
+  // out of the reader.
+  function backOrClose() {
+    if (!backTo) {
+      closeReader();
+      return;
+    }
+    enterOnArrival.current = { id: backTo, dir: -1 };
+    goBack();
+  }
+
   function onSearchOpenSutta(id: string, segments?: [number, number]) {
     setSearchOpen(false);
-    // Leaves the library search's run behind: this jump is the reader's own search, not that one.
-    navigateToSutta(id, segments, true);
+    // Another sutta arrives from the right as Next does; a hit in the one open only scrolls it.
+    const target = corpus ? resolveCanonicalSuttaId(corpus, id) : id;
+    const elsewhere = target !== suttaId;
+    if (elsewhere) enterOnArrival.current = { id: target, dir: 1 };
+    jumpTo(id, segments, elsewhere ? suttaId : undefined);
   }
 
   // Scrolls a just-opened Pali line or footnote into view, by the least it takes and only when it
@@ -482,7 +498,7 @@ export function ReaderPage() {
     closeDict,
     panel,
     setPanel,
-    closeReader,
+    backOrClose,
     step,
     goToAdjacentWord,
     setTab,
@@ -493,15 +509,15 @@ export function ReaderPage() {
   });
 
   // Android's back button, one step at a time, in the same order Escape backs out (useReaderKeyboard):
-  // the help and search overlays, then the selection popup, the dictionary and the panel, then the
-  // reader itself. A no-op on web and iOS.
+  // the help and search overlays, then the selection popup, the dictionary and the panel, then back
+  // a sutta or out of the reader. A no-op on web and iOS.
   useBackHandler(true, () => {
     if (shortcutsOpen) setShortcutsOpen(false);
     else if (searchOpen) setSearchOpen(false);
     else if (pop) closePop();
     else if (dict) closeDict();
     else if (panel) setPanel(false);
-    else closeReader();
+    else backOrClose();
   });
 
   // A uid this corpus doesn't have — never a pending load, since App.tsx renders no route until
@@ -535,18 +551,22 @@ export function ReaderPage() {
       onMouseUp={onTextUp}
       onTouchEnd={onTextUp}
     >
-      {/* The header: close on the left, search and menu on the right, and the title absolutely
-          centred on the page rather than between them, since the two sides carry different
-          numbers of buttons. A 44px bar starting on the safe-area line, the platform's own top-bar
-          geometry, with its controls centred in it. */}
+      {/* The header: close on the left — back, after a search jump — search and menu on the right,
+          and the title absolutely centred on the page rather than between them, since the two
+          sides carry different numbers of buttons. A 44px bar starting on the safe-area line, the
+          platform's own top-bar geometry, with its controls centred in it. */}
       <header
         className="font-sans flex-none relative flex items-center justify-between box-content h-11 px-5 text-ui-base"
         style={{ borderBottom: `1px solid ${theme.rule}`, paddingTop: 'var(--safe-top)' }}
       >
         {/* `p-3.5 -m-3.5`: a 47px touch area around the 19px icon, with the negative margin
             collapsing the button's layout box back to the icon. */}
-        <button className="flex items-center p-3.5 -m-3.5" title="Close" onClick={closeReader}>
-          <X size={19} strokeWidth={1.75} />
+        <button
+          className="flex items-center p-3.5 -m-3.5"
+          title={backTo ? `Back to ${corpus.suttas[backTo]?.ref ?? backTo}` : 'Close'}
+          onClick={backOrClose}
+        >
+          {backTo ? <Undo2 size={19} strokeWidth={1.75} /> : <X size={19} strokeWidth={1.75} />}
         </button>
         {/* Tapping the title scrolls back to the top of the sutta, the iOS status-bar convention.
             Done by hand, since the reader scrolls in a nested div rather than the document. */}
