@@ -633,6 +633,24 @@ describe('tree expansion persistence', () => {
     expect(screen.queryByText('Vagga One')).not.toBeInTheDocument();
     expect(screen.queryByText('Book of Ones')).not.toBeInTheDocument();
   });
+
+  it('scrolls to the node it arrives on, never to the one a return opens on — even once its collection is opened again', async () => {
+    const scrolledTo: (string | null)[] = [];
+    const spy = vi.spyOn(Element.prototype, 'scrollIntoView').mockImplementation(function (this: Element) {
+      scrolledTo.push(this.getAttribute('data-node-id'));
+    });
+    const { unmount } = renderHarness('an1-v1');
+    expect(scrolledTo).toEqual(['an1-v1']);
+    await userEvent.click(screen.getByText('Numbered Discourses'));
+    unmount();
+
+    scrolledTo.length = 0;
+    renderHarness('an1-v1');
+    await userEvent.click(screen.getByText('Numbered Discourses'));
+    expect(screen.getByText('Vagga One')).toBeInTheDocument();
+    expect(scrolledTo).toEqual([]);
+    spy.mockRestore();
+  });
 });
 
 describe('keyboard: x toggles Library / My Lists', () => {

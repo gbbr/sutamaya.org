@@ -44,6 +44,10 @@ import { type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, 
 import { CorpusTreeView } from './CorpusTreeView';
 import { ListsTreeView } from './ListsTreeView';
 
+// How long a phone's tree keeps the row it comes back to marked before letting it fade: twice the
+// slide back (index.css), so the mark is still there to be seen once the tree has landed.
+const RETURN_MARK_MS = 500;
+
 interface PersistedExpansion {
   corpus: string[];
   lists: string[];
@@ -187,8 +191,8 @@ export function TreePane({
   // Read synchronously at mount rather than in an effect: useScrollMemory restores in a layout
   // effect, and a tree still collapsed then clamps the restored offset to 0.
   const [persistedExpansion] = useState(loadPersistedExpansion);
-  // Whether this mount should reveal `nodeId` — open its ancestors and point the toggle at its
-  // tree. True for a navigation: a deep link, a membership chip, a breadcrumb click. A mount on
+  // Whether this mount should reveal `nodeId` — open its ancestors, scroll to it and point the
+  // toggle at its tree. True for a navigation: a deep link, a membership chip, a breadcrumb click. A mount on
   // the node last persisted is a return to the pane instead, restored exactly as it was left.
   const revealNow = nodeId !== persistedExpansion.node || breadcrumbArrival;
   const [expanded, setExpanded] = useState<Record<string, boolean>>(() => ({
@@ -532,9 +536,29 @@ export function TreePane({
     return () => window.removeEventListener('keydown', onKey);
   }, [searching, navRows, displayHits, listHits, searchOpen, onOpenSutta, onSelect, shortcutsOpen]);
 
+  // The row marked as the browsed node. A phone marks none, the list the mark points at being off
+  // screen, bar the row it comes back to from that list: marked as the tree slides back in, then let
+  // go, which the row's colour transition turns into a fade — the way a native list deselects the
+  // row it was left from.
+  const [returnedFromId, setReturnedFromId] = useState<string | undefined>(undefined);
+  // Set while rendering rather than in an effect, so the tree comes back with the mark already on:
+  // added a moment later, it would be faded in by the row's colour transition.
+  const [wasVisible, setWasVisible] = useState(visible);
+  if (visible !== wasVisible) {
+    setWasVisible(visible);
+    if (visible && mobile) setReturnedFromId(nodeId);
+  }
+  useEffect(() => {
+    if (!returnedFromId) return;
+    const t = window.setTimeout(() => setReturnedFromId(undefined), RETURN_MARK_MS);
+    return () => window.clearTimeout(t);
+  }, [returnedFromId]);
+  const markedId = mobile ? returnedFromId : nodeId;
+
   // Scrolls to the browsed node, retrying on each state change the expand effects above make: its
-  // row usually isn't in the DOM yet on the render `nodeId` changed on.
-  useScrollToNode(scrollRef, nodeId, [paneView, expanded, listExpanded, corpus, lists]);
+  // row usually isn't in the DOM yet on the render `nodeId` changed on. Never to the node a return
+  // opens on, which the remembered scroll position places.
+  useScrollToNode(scrollRef, nodeId, [paneView, expanded, listExpanded, corpus, lists], revealNow ? undefined : nodeId);
   // Second, so a breadcrumb's own segment — which may sit above `nodeId` — wins the final position.
   useScrollToNode(scrollRef, flashNodeId, [paneView, expanded, listExpanded, corpus, lists]);
 
@@ -875,11 +899,11 @@ export function TreePane({
             )}
           </div>
         ) : paneView === 'library' ? (
-          <CorpusTreeView corpus={corpus} expanded={expanded} onToggle={toggleExpanded} onSelect={onSelect} nodeId={nodeId} flashNodeId={flashNodeId} />
+          <CorpusTreeView corpus={corpus} expanded={expanded} onToggle={toggleExpanded} onSelect={onSelect} nodeId={markedId} flashNodeId={flashNodeId} />
         ) : (
           <ListsTreeView
             ready={ready}
-            nodeId={nodeId}
+            nodeId={markedId}
             onSelect={onSelect}
             reorderMode={reorderMode}
             setReorderMode={setReorderMode}

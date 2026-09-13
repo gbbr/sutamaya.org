@@ -200,7 +200,7 @@ export function ListsTreeView({
             <button
               key={list.id}
               data-node-id={list.id}
-              className={`row flex items-center gap-[13px] w-full text-left px-[22px] py-[11px] border-b border-ink/[.07] ${
+              className={`row flex items-center gap-[13px] w-full text-left px-[22px] py-[11px] border-b border-ink/[.07] transition-colors duration-500 ${
                 nodeId === String(list.id) ? 'bg-ink/[.06]' : ''
               }`}
               onClick={() => onSelect(String(list.id))}
