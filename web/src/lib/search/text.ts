@@ -57,9 +57,21 @@ const UNFOLD: Record<string, string> = {
 const RE_ESCAPE = /[.*+?^${}()|[\]\\]/g;
 
 // `\b` is ASCII-only in JavaScript — it reads "ā" as a non-word character, so "nibbāna" would match
-// inside "mahānibbāna". These are the boundaries instead, and they need the `u` flag.
-const BEFORE = '(?<!\\p{L})';
+// inside "mahānibbāna". AFTER is a pattern's end boundary instead, and needs the `u` flag.
+//
+// The start boundary is startsWord, tested on each match, rather than a lookbehind in the pattern:
+// JavaScriptCore, the engine of every iOS web view, evaluates a leading lookbehind at every
+// character of the blob rather than only where a word could begin, which makes a scan on iOS more
+// than ten times slower.
 const AFTER = '(?!\\p{L})';
+
+const LETTER_LAST = /\p{L}$/u;
+
+// Whether a match at `at` opens a word: no letter directly before it. Two code units are read, so a
+// letter outside the Basic Multilingual Plane is read whole.
+function startsWord(text: string, at: number): boolean {
+  return !LETTER_LAST.test(text.slice(Math.max(0, at - 2), at));
+}
 
 function charPattern(ch: string): string {
   return UNFOLD[ch] ?? ch.replace(RE_ESCAPE, '\\$&');
@@ -83,11 +95,11 @@ function englishBody(word: string): string {
 }
 
 function englishWordRe(word: string): RegExp {
-  return new RegExp(`${BEFORE}${englishBody(word)}${AFTER}`, 'giu');
+  return new RegExp(`${englishBody(word)}${AFTER}`, 'giu');
 }
 
 function englishPhraseRe(words: string[]): RegExp {
-  return new RegExp(`${BEFORE}${words.map(englishBody).join('\\s+')}${AFTER}`, 'giu');
+  return new RegExp(`${words.map(englishBody).join('\\s+')}${AFTER}`, 'giu');
 }
 
 // Shortest prefix that may match Pali as a prefix. Below it a query is too broad to be useful —
@@ -108,13 +120,13 @@ function paliTail(stem: string): string {
 
 function paliWordRe(word: string): RegExp {
   const stem = paliStem(word);
-  return new RegExp(`${BEFORE}${bodyPattern(stem)}${paliTail(stem)}`, 'giu');
+  return new RegExp(`${bodyPattern(stem)}${paliTail(stem)}`, 'giu');
 }
 
 function paliPhraseRe(words: string[]): RegExp {
   const stems = words.map(paliStem);
   const tail = paliTail(stems[stems.length - 1]);
-  return new RegExp(`${BEFORE}${stems.map(bodyPattern).join('\\s+')}${tail}`, 'giu');
+  return new RegExp(`${stems.map(bodyPattern).join('\\s+')}${tail}`, 'giu');
 }
 
 // ── The blobs ───────────────────────────────────────────────────────────────
@@ -212,11 +224,19 @@ function offsetsCached(text: string, re: RegExp, lang: string, cache: ScanCache 
   return offsets;
 }
 
+// Where `re` matches in `text` at the start of a word. Every search pattern is run through here,
+// since the patterns leave the start boundary to startsWord.
 function offsetsOf(text: string, re: RegExp): number[] {
   re.lastIndex = 0;
   const out: number[] = [];
   let m: RegExpExecArray | null;
   while ((m = re.exec(text)) !== null) {
+    // A match inside a word resumes one character on rather than past its end, so a word opening
+    // within it is still found.
+    if (!startsWord(text, m.index)) {
+      re.lastIndex = m.index + 1;
+      continue;
+    }
     out.push(m.index);
     if (m[0].length === 0) re.lastIndex += 1;
   }
@@ -442,8 +462,8 @@ function firstMatch(text: string, query: string, lang: 'en' | 'pa'): number {
   const wordRe = (w: string) => (lang === 'en' ? englishWordRe(w) : paliWordRe(w));
 
   if (words.length > 1) {
-    const phrase = (lang === 'en' ? englishPhraseRe(words) : paliPhraseRe(words)).exec(text);
-    if (phrase) return phrase.index;
+    const [phrase] = offsetsOf(text, lang === 'en' ? englishPhraseRe(words) : paliPhraseRe(words));
+    if (phrase !== undefined) return phrase;
   }
 
   let at = -1;

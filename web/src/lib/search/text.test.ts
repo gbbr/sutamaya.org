@@ -73,6 +73,13 @@ describe('searchSuttaText — matching', () => {
     expect(searchSuttaText(X, 'nibbana').has('a')).toBe(false);
   });
 
+  it('finds a phrase opening inside a match that began mid-word', () => {
+    // "sādhu sādhu" first matches from inside "asādhu", which opens no word, and runs over the
+    // phrase that does.
+    const X = index([{ uid: 'a', paras: one([['', 'asādhu sādhu sādhu']]) }]);
+    expect(searchSuttaText(X, 'sadhu sadhu').get('a')?.bucket).toBe(RANK_TEXT_PHRASE);
+  });
+
   it('strips an English plural a reader typed onto a Pali word', () => {
     const X = index([{ uid: 'a', paras: one([['', 'arahanto vuccanti']]) }]);
     expect(searchSuttaText(X, 'arahants').has('a')).toBe(true);
