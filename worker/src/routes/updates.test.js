@@ -2,14 +2,17 @@ import { env } from 'cloudflare:test';
 import { describe, expect, it } from 'vitest';
 import app from '../index.js';
 
+/** The test env with nothing published, independent of what wrangler.jsonc currently points at. */
+const unpublished = { ...env, OTA_VERSION: '', OTA_CHECKSUM: '', OTA_MIN_NATIVE: '' };
+
 const published = {
-  ...env,
+  ...unpublished,
   WEB_ORIGIN: 'https://app.sutamaya.org',
   OTA_VERSION: '2026.09.10-1',
   OTA_CHECKSUM: 'a'.repeat(64),
 };
 
-function check(overrideEnv = env, body = { platform: 'ios' }) {
+function check(overrideEnv = unpublished, body = { platform: 'ios' }) {
   return app.request(
     '/api/updates/check',
     { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) },
@@ -43,7 +46,7 @@ describe('POST /api/updates/check', () => {
   });
 
   it('reports no update when only one of version/checksum is set', async () => {
-    const res = await check({ ...env, OTA_VERSION: '2026.09.10-1' });
+    const res = await check({ ...unpublished, OTA_VERSION: '2026.09.10-1' });
     expect(await res.json()).toEqual(UP_TO_DATE);
   });
 
