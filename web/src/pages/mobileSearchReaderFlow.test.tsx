@@ -149,7 +149,7 @@ describe('mobile search -> reader -> close flow', () => {
   });
 
   it('returns to the collection that was being browsed, not the opened hit\'s own', async () => {
-    const { container } = renderRoutes(routes, '/browse/dn');
+    const { container, router } = renderRoutes(routes, '/browse/dn');
     // TreePane and ListPane are both always mounted on mobile (one hidden via display:none — see
     // LibraryPage), so plain `screen` queries can match the same label in both; scope to
     // TreePane specifically wherever a query would otherwise be ambiguous.
@@ -180,16 +180,24 @@ describe('mobile search -> reader -> close flow', () => {
     // Close the reader.
     fireEvent.click(screen.getByTitle('Close'));
 
-    // Should land back on the tree pane, still on DN — the collection being browsed when the
-    // search started, which the search itself never moved. Opening MN 1 from the results doesn't
-    // re-scope the tree to MN. The results come back with the close, so the tree is behind them
-    // until the search is cleared.
+    // Should land back on DN — the collection being browsed when the search started, which the
+    // search itself never moved. Opening MN 1 from the results doesn't re-scope the tree to MN.
     await screen.findByText('sutamaya');
-    fireEvent.click(tree().getByRole('button', { name: 'Clear search' }));
-    const dnRow = tree().getByRole('button', { name: /Long Discourses/ });
-    expect(dnRow.className).toContain('bg-ink/[.06]');
-    const mnRow = tree().getByRole('button', { name: /Middle Discourses/ });
-    expect(mnRow.className).not.toContain('bg-ink/[.06]');
+    expect(router.state.location.pathname).toMatch(/^\/browse\/dn(\/|$)/);
+  });
+
+  it('marks no tree row but the one it comes back to from the list, and lets that one fade', async () => {
+    const { container } = renderRoutes(routes, '/browse/dn');
+    const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
+    const dnRow = () => tree().getByRole('button', { name: /Long Discourses/ });
+    await screen.findByText('sutamaya');
+    // DN is browsed, but its list isn't on screen for a mark to point at.
+    expect(dnRow().className).not.toContain('bg-ink/[.06]');
+
+    fireEvent.click(dnRow());
+    fireEvent.click(await screen.findByRole('button', { name: 'Back' }));
+    expect(dnRow().className).toContain('bg-ink/[.06]');
+    await waitFor(() => expect(dnRow().className).not.toContain('bg-ink/[.06]'));
   });
 
   it("keeps TreePane on 'My lists' after a search result is opened and the reader is closed", async () => {

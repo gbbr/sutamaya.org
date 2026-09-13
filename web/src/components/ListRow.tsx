@@ -153,7 +153,7 @@ export const ListRow = memo(function ListRow({
         // The whole row carries the click, indentation and gaps included, so a <div> rather than a
         // <button>, which can't nest the interactive children. The controls with behaviour of
         // their own stopPropagation below.
-        className={`row flex items-center gap-[9px] w-full text-left pr-[10px] py-[10px] border-b border-ink/[.07] cursor-pointer ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
+        className={`row flex items-center gap-[9px] w-full text-left pr-[10px] py-[10px] border-b border-ink/[.07] cursor-pointer transition-colors duration-500 ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
         onClick={(e) => {
           if (editing) return;
           if (isGroup) onToggle(list.id, e.altKey);

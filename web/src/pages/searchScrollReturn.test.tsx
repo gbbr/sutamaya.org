@@ -262,8 +262,7 @@ describe('a search result opened and closed', () => {
     // The same budget the reader mount above takes, this test opening and closing a whole reader.
     await waitFor(() => expect(treeScroller().scrollTop).toBe(900), { timeout: 5000 });
 
-    // The tree's own place, which the search never took over. In a real browser TreePane's node
-    // reveal can move it on from here — this is where the column opens, not where it settles.
+    // The tree's own place, which the search never took over.
     fireEvent.click(tree().getByRole('button', { name: 'Clear search' }));
     await waitFor(() => expect(treeScroller().scrollTop).toBe(300), { timeout: 5000 });
   });
