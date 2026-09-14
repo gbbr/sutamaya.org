@@ -6,6 +6,8 @@ export const SCROLL_POSITIONS_KEY = 'sutamaya.scrollPositions';
 export const LAST_LOCATION_KEY = 'sutamaya.lastLocation';
 export const READER_ORIGIN_KEY = 'sutamaya.readerOrigin';
 export const ROUTE_INTENT_KEY = 'sutamaya.routeIntent';
+// The Library pane each history entry showed, in sessionStorage (see LibraryPage's readEntryPane).
+export const LIBRARY_ENTRY_PANES_KEY = 'sutamaya.libraryEntryPanes';
 // The reader's own one-shot intents, kept apart from the library's so an arrival at each consumes
 // its own.
 export const READER_INTENT_KEY = 'sutamaya.readerIntent';

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router';
+import { NavigationType, useLocation, useNavigate, useNavigationType, useParams } from 'react-router';
 import { flushSync } from 'react-dom';
 import { useLayout } from '../context/LayoutContext';
 import { useCorpus } from '../context/CorpusContext';
@@ -11,7 +11,7 @@ import { useBackHandler } from '../hooks/useBackHandler';
 import { nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId } from '../lib/corpus';
 import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP } from '../lib/search/metadata';
 import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
-import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
+import { LIBRARY_ENTRY_PANES_KEY, LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, tagIntent, type RouteIntent } from '../lib/routeIntent';
 import { transitionPage } from '../lib/motion';
 import { TreePane, type ActiveSearchRow } from '../components/TreePane';
@@ -34,12 +34,33 @@ function storeView(view: 'tree' | 'list') {
   }
 }
 
+// readEntryPane returns the pane the history entry with this key showed, if it is on record.
+function readEntryPane(key: string): 'tree' | 'list' | undefined {
+  try {
+    const pane = JSON.parse(sessionStorage.getItem(LIBRARY_ENTRY_PANES_KEY) ?? '{}')[key];
+    return pane === 'tree' || pane === 'list' ? pane : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+// storeEntryPane records the pane the history entry with this key shows, for Back and Forward.
+function storeEntryPane(key: string, pane: 'tree' | 'list') {
+  try {
+    const panes = JSON.parse(sessionStorage.getItem(LIBRARY_ENTRY_PANES_KEY) ?? '{}');
+    sessionStorage.setItem(LIBRARY_ENTRY_PANES_KEY, JSON.stringify({ ...panes, [key]: pane }));
+  } catch {
+    // storage unavailable — ignore
+  }
+}
+
 export function LibraryPage() {
   // The URL's node segment, and its sutta segment — the splat, '' where the address names none.
   // Both are absent on bare /browse.
   const { nodeId: urlNodeId, '*': urlSuttaId } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
+  const navigationType = useNavigationType();
   // The URL's sutta segment, case-folded — it always names a corpus document. The node segment
   // may name a user list, so only its corpus ids are folded (normalizeBrowseNodeId). The effect
   // below rewrites the address bar to whatever either fold changed.
@@ -91,6 +112,9 @@ export function LibraryPage() {
     // A bookmark or typed URL naming a sutta — the entry the tab opened on, which no navigation in
     // the app made — and only the list pane shows the row.
     if (suttaId && location.key === 'default') return 'list';
+    // Back or Forward onto an entry: the pane it showed.
+    const entryPane = mobile && navigationType === NavigationType.Pop ? readEntryPane(location.key) : undefined;
+    if (entryPane) return entryPane;
     try {
       const stored = localStorage.getItem(LIBRARY_VIEW_KEY);
       if (stored === 'list' || stored === 'tree') return stored;
@@ -108,6 +132,24 @@ export function LibraryPage() {
   }, []);
   // The pane the page opened on is stored too, so a relaunch into this place opens on it again.
   useEffect(() => storeView(view), [view]);
+  // Back or Forward between two entries this page shows without remounting: the arriving entry's
+  // pane, set while rendering so the other pane never paints.
+  const [entryKey, setEntryKey] = useState(location.key);
+  // Whether this page's latest move between entries was Back or Forward on a phone.
+  const [returning, setReturning] = useState(false);
+  if (entryKey !== location.key) {
+    setEntryKey(location.key);
+    const isReturn = mobile && navigationType === NavigationType.Pop;
+    setReturning(isReturn);
+    const entryPane = isReturn ? readEntryPane(location.key) : undefined;
+    if (entryPane) setViewState(entryPane);
+  }
+  // Records the pane an entry arrives on — not every change, as a collection's list shows while
+  // the entry it leaves is still current.
+  useEffect(() => {
+    storeEntryPane(location.key, view);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.key]);
   // The search this page arrived on, taken from the address bar's `?q=`.
   const [arrivedQuery] = useState(() => new URLSearchParams(location?.search ?? '').get('q') ?? '');
   const [query, setQuery] = useState(arrivedQuery);
@@ -250,7 +292,10 @@ export function LibraryPage() {
   const showListPane = !mobile || view === 'list';
 
   // Takes a phone from the sutta list back to the tree, sliding the list away.
-  const backToTree = useCallback(() => transitionPage('pop', () => flushSync(() => setView('tree'))), [setView]);
+  const backToTree = useCallback(() => {
+    storeEntryPane(location.key, 'tree');
+    transitionPage('pop', () => flushSync(() => setView('tree')));
+  }, [setView, location.key]);
 
   // Android's back button: close the shortcuts modal, else step the mobile sutta list back to the
   // collection tree. A no-op on web and iOS. (TreePane registers its own for an open search.)
@@ -315,6 +360,7 @@ export function LibraryPage() {
           flashNodeId={flashNodeId}
           breadcrumbArrival={!!locationFlashNodeId}
           shortcutsOpen={shortcutsOpen}
+          returning={returning}
         />
       </div>
 

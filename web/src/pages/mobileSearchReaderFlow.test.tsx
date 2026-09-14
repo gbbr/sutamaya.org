@@ -98,6 +98,7 @@ describe('mobile search -> reader -> close flow', () => {
       clear: () => store.clear(),
     });
     vi.stubGlobal('fetch', vi.fn(() => new Promise(() => {})));
+    sessionStorage.clear();
 
     vi.mocked(useCorpus).mockReturnValue({ corpus: buildCorpus(), loading: false, error: false, retry: vi.fn() });
     vi.mocked(useUserData).mockReturnValue(userDataDefaults);
@@ -186,18 +187,16 @@ describe('mobile search -> reader -> close flow', () => {
     expect(router.state.location.pathname).toMatch(/^\/browse\/dn(\/|$)/);
   });
 
-  it('marks no tree row but the one it comes back to from the list, and lets that one fade', async () => {
+  it('marks no tree row, including the one it comes back to from the list', async () => {
     const { container } = renderRoutes(routes, '/browse/dn');
     const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
     const dnRow = () => tree().getByRole('button', { name: /Long Discourses/ });
     await screen.findByText('sutamaya');
-    // DN is browsed, but its list isn't on screen for a mark to point at.
     expect(dnRow().className).not.toContain('bg-ink/[.06]');
 
     fireEvent.click(dnRow());
     fireEvent.click(await screen.findByRole('button', { name: 'Back' }));
-    expect(dnRow().className).toContain('bg-ink/[.06]');
-    await waitFor(() => expect(dnRow().className).not.toContain('bg-ink/[.06]'));
+    expect(dnRow().className).not.toContain('bg-ink/[.06]');
   });
 
   it("keeps TreePane on 'My lists' after a search result is opened and the reader is closed", async () => {
@@ -402,5 +401,54 @@ describe('mobile search -> reader -> close flow', () => {
 
     expect(isPaneVisible(container, 'ListPane')).toBe(true);
     expect(localStorage.getItem(LIBRARY_VIEW_KEY)).toBe('list');
+  });
+
+  // Back and Forward — an iOS edge swipe — step through the panes as the reader went: a list over
+  // the tree it was opened from, both when the page stays and when it is remounted.
+  it.each(['/browse', '/browse/dn'])('Back and Forward from %s step between the tree and a list', async (start) => {
+    const { container, router } = renderRoutes(routes, start);
+    const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
+
+    fireEvent.click(await tree().findByRole('button', { name: /Middle Discourses/ }));
+    await waitFor(() => expect(isPaneVisible(container, 'ListPane')).toBe(true));
+
+    await act(() => router.navigate(-1));
+    await waitFor(() => expect(isPaneVisible(container, 'TreePane')).toBe(true));
+    expect(isPaneVisible(container, 'ListPane')).toBe(false);
+
+    await act(() => router.navigate(1));
+    await waitFor(() => expect(isPaneVisible(container, 'ListPane')).toBe(true));
+    expect(isPaneVisible(container, 'TreePane')).toBe(false);
+  });
+
+  it('Back to the tree leaves it where it was, without scrolling to the collection it returns to', async () => {
+    const { container, router } = renderRoutes(routes, '/browse/dn');
+    const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
+
+    fireEvent.click(await tree().findByRole('button', { name: /Middle Discourses/ }));
+    await waitFor(() => expect(isPaneVisible(container, 'ListPane')).toBe(true));
+
+    const scrolled = vi.spyOn(Element.prototype, 'scrollIntoView');
+    await act(() => router.navigate(-1));
+    await waitFor(() => expect(document.title).toContain('Long Discourses'));
+    expect(isPaneVisible(container, 'TreePane')).toBe(true);
+    expect(scrolled).not.toHaveBeenCalled();
+    scrolled.mockRestore();
+  });
+
+  it('Back from a sutta returns to its list, and Back again to the tree', async () => {
+    const { container, router } = renderRoutes(routes, '/browse');
+    const tree = () => within(container.querySelector('[data-component="TreePane"]')!);
+
+    fireEvent.click(await tree().findByRole('button', { name: /Long Discourses/ }));
+    fireEvent.click(await screen.findByText('Brahmajala'));
+    await waitFor(() => expect(container.querySelector('[data-component="ReaderPage"]')).toBeTruthy());
+
+    await act(() => router.navigate(-1));
+    await waitFor(() => expect(isPaneVisible(container, 'ListPane')).toBe(true));
+
+    await act(() => router.navigate(-1));
+    await waitFor(() => expect(isPaneVisible(container, 'TreePane')).toBe(true));
+    expect(isPaneVisible(container, 'ListPane')).toBe(false);
   });
 });
