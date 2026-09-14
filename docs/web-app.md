@@ -77,7 +77,7 @@ way. Nothing else animates between screens: tree rows open in place, and the Lib
 slide their underline.
 
 - **A transition starts from the app's own control** — a row, Back, the Reader's close — never from
-  the browser's Back and Forward, which the iOS edge swipe already animates, in Safari and the app.
+  the browser's Back and Forward, which Safari's swipe back already animates.
 - **They are the browser's view transitions**, so a browser without them changes screens instantly
   (iOS before 18).
 - **Only a phone slides.** A wider layout has no stack, both panes being on screen at once, so a
