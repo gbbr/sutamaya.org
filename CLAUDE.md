@@ -101,10 +101,55 @@ never restate it as prose.
 
 ### Comments
 
-- **JSDoc or GoDoc style, giving purpose and reason**: what something is for, and why a non-obvious
-  choice was made — never what the next lines do.
+Follow the standard doc-comment convention — this is well-trodden ground, don't invent a house
+style.
+
+- **Begin with the subject** (Go's doc comment rule, and Javadoc/JSDoc's first-sentence summary):
+  the comment opens by naming the thing and saying what it does — `// roleStyle returns the type
+  treatment for a segment's role`. A comment that never names its subject has failed, however
+  short it is.
+- **Give purpose and reason, never what the next lines do**: what something is for, and why a
+  non-obvious choice was made. Say only what the code cannot (Ousterhout) — if reading the line
+  beside it tells me the same thing, delete the comment.
 - **Present tense, no history**: no "used to", "was changed to", "we tried".
-- **Point to a doc by file and heading** — `docs/offline-sync.md's "Sync state"` — rather than
-  repeating it.
+- **Reference, not explanation.** Code comments are reference documentation. Rationale — why this
+  value, what was rejected, what would break otherwise — is a different kind of writing and belongs
+  in the commit message or `docs/`, never beside the code. Point to a doc by file and heading —
+  `docs/offline-sync.md's "Sync state"` — rather than repeating it.
+- **Constants, fields, variables** — one line, naming the value.
+
+  ```
+  Bad:
+  // Above a leading Pali line: comfortably more than the 2px holding a pair together, comfortably
+  // less than the paragraph break, so the pairs read as pairs without breaking the paragraph up.
+
+  Good:
+  // Margin between Pali and English when Pali is on top.
+  ```
+
+- **Functions** — one sentence, what it does and what it returns. Add a second only for something
+  the signature cannot show. Document a parameter directly above that parameter, never in a block
+  above the signature, and only where its name isn't already the answer.
+- **Inline comments inside a function** — name what the block does, in a phrase. Delete rather than
+  explain the obvious.
+- **Shortening never means dropping a subject.** If a comment covers several cases — roles,
+  options, variants, branches — every one of them keeps a line. Cut each line down to what it is;
+  do not collapse the set into a summary sentence. Losing the enumeration loses the only part a
+  reader needed.
+
+  ```
+  Bad (the whole set replaced by a summary):
+  /** Returns the type treatment for a segment's structural role. */
+
+  Good (one line each, justification gone):
+  /**
+   * Returns the type treatment for a segment's structural role, over the base English style.
+   *   verse     – no type change; the left rule and indent come from the wrapping div
+   *   heading   – bold, a size up, with its own top and bottom margins
+   *   end       – closing colophon: centered, muted, a size down
+   *   speaker   – inline dialogue attribution: muted, a size down, not italic
+   *   list-item – plain text, hanging indent, a literal "N." in the gutter
+   */
+  ```
 
 Older text written before these rules is not a model. Follow the rules, not what's nearby.
