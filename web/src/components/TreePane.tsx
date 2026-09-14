@@ -125,9 +125,6 @@ interface TreePaneProps {
   breadcrumbArrival?: boolean;
   // True while the library's "?" modal is open, which stands this pane's own shortcuts down.
   shortcutsOpen?: boolean;
-  // True when Back or Forward brought a phone to this `nodeId`, which is then neither opened nor
-  // scrolled to, the tree staying as it was left.
-  returning?: boolean;
 }
 
 export function TreePane({
@@ -152,7 +149,6 @@ export function TreePane({
   flashNodeId,
   breadcrumbArrival = false,
   shortcutsOpen = false,
-  returning = false,
 }: TreePaneProps) {
   const navigate = useNavigate();
   const { corpus } = useCorpus();
@@ -259,7 +255,7 @@ export function TreePane({
   const revealedListNodeRef = useRef<string | undefined>(revealNow ? undefined : nodeId);
 
   useEffect(() => {
-    if (returning || revealedNodeRef.current === nodeId) return;
+    if (revealedNodeRef.current === nodeId) return;
     const toOpen = ancestorsOf(corpus, nodeId);
     if (!Object.keys(toOpen).length) return;
     revealedNodeRef.current = nodeId;
@@ -267,7 +263,7 @@ export function TreePane({
   }, [corpus, nodeId]);
 
   useEffect(() => {
-    if (returning || revealedListNodeRef.current === nodeId) return;
+    if (revealedListNodeRef.current === nodeId) return;
     const toOpen = ancestorsOfList(lists, nodeId);
     if (!Object.keys(toOpen).length) return;
     revealedListNodeRef.current = nodeId;
@@ -542,7 +538,7 @@ export function TreePane({
   // Scrolls to the browsed node, retrying on each state change the expand effects above make: its
   // row usually isn't in the DOM yet on the render `nodeId` changed on. Never to the node a return
   // opens on, which the remembered scroll position places.
-  useScrollToNode(scrollRef, returning ? undefined : nodeId, [paneView, expanded, listExpanded, corpus, lists], revealNow ? undefined : nodeId);
+  useScrollToNode(scrollRef, nodeId, [paneView, expanded, listExpanded, corpus, lists], revealNow ? undefined : nodeId);
   // Second, so a breadcrumb's own segment — which may sit above `nodeId` — wins the final position.
   useScrollToNode(scrollRef, flashNodeId, [paneView, expanded, listExpanded, corpus, lists]);
 
