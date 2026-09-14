@@ -110,8 +110,8 @@
     // The over-the-air bundle the native apps should be running, and the SHA-256 (hex) of its zip.
     // `npm run release:ota` rewrites both and redeploys; empty means nothing is published and the
     // check endpoint tells devices there is no update.
-    "OTA_VERSION": "0.1.0-95af2dbf-dirty",
-    "OTA_CHECKSUM": "c1c8c0f39067b06154326b59ae463f0a35f87f9324e6d924b48aa07ca2a55067",
+    "OTA_VERSION": "0.1.0-484f1939-dirty",
+    "OTA_CHECKSUM": "2bd18900d163bf711b4e01793bdeb59fc6f0b888ca1c13c4710111be6ef398df",
     // The native build number below which the current OTA bundle is withheld. Written by
     // `release:ota` from native-release.json's "floor", which a store release raises when it adds
     // a native piece the bundle needs — a plugin, a permission, a deep-link path. Empty means no
