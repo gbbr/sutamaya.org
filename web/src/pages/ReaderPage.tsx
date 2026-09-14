@@ -13,7 +13,7 @@ import { useBackHandler } from '../hooks/useBackHandler';
 import { useDictionaryLookup } from '../hooks/useDictionaryLookup';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { animateScrollBy, animateScrollTop } from '../lib/segmentScroll';
-import { flatSuttaOrder, breadcrumbFor, normalizeRouteId, resolveCanonicalSuttaId, loadSuttaText } from '../lib/corpus';
+import { flatSuttaOrder, breadcrumbFor, normalizeRouteId, resolveCanonicalSuttaId, loadSuttaText, uidHolds } from '../lib/corpus';
 import { flattenListTree, resolveListById, suttaRowMeta } from '../lib/lists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { setReaderThemeColor } from '../lib/themeColor';
@@ -243,7 +243,7 @@ export function ReaderPage() {
   // Scrolls to the requested inner sutta's first segment, a frame after the batch's text loads.
   useEffect(() => {
     if (!requestedSubUid || !segments) return;
-    const idx = segments.findIndex((s) => s.key.startsWith(`${requestedSubUid}:`));
+    const idx = segments.findIndex((s) => uidHolds(s.key.split(':')[0], requestedSubUid));
     if (idx === -1) return;
     requestAnimationFrame(() => scrollToSegment(idx, 'start'));
   }, [requestedSubUid, segments, scrollToSegment]);

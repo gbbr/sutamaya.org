@@ -7,6 +7,7 @@ import {
   nodeBlurb,
   peekSuttaText,
   resolveCanonicalSuttaId,
+  uidHolds,
   sortByIdAsc,
 } from './corpus';
 import { searchCorpus, searchLists } from './search/metadata';
@@ -561,6 +562,25 @@ describe('resolveCanonicalSuttaId', () => {
     expect(resolveCanonicalSuttaId(corpus, 'Dhp320-333')).toBe('dhp320-333');
     expect(resolveCanonicalSuttaId(corpus, 'DHP321')).toBe('dhp320-333');
     expect(resolveCanonicalSuttaId(corpus, 'DHP999')).toBe('dhp999');
+  });
+});
+
+describe('uidHolds', () => {
+  it('matches the uid itself', () => {
+    expect(uidHolds('an1.585', 'an1.585')).toBe(true);
+  });
+
+  it('matches a sutta inside a range, ends included', () => {
+    expect(uidHolds('an1.586-590', 'an1.586')).toBe(true);
+    expect(uidHolds('an1.586-590', 'an1.588')).toBe(true);
+    expect(uidHolds('an1.586-590', 'an1.590')).toBe(true);
+  });
+
+  it('rejects a number outside the range, or another collection’s', () => {
+    expect(uidHolds('an1.586-590', 'an1.591')).toBe(false);
+    expect(uidHolds('an1.586-590', 'an1.58')).toBe(false);
+    expect(uidHolds('an1.586-590', 'an2.586')).toBe(false);
+    expect(uidHolds('an1.585', 'an1.58')).toBe(false);
   });
 });
 
