@@ -1,5 +1,5 @@
 import { memo, useMemo, type CSSProperties } from 'react';
-import type { SegmentFile, SegmentRole } from '../lib/corpus';
+import { uidHolds, type SegmentFile, type SegmentRole } from '../lib/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
 import { highlightPaint } from '../lib/theme';
 import { expandHighlights, paintSegmentRanges, type SegmentRange } from '../lib/highlights';
@@ -428,7 +428,7 @@ function SegmentedTextInner({
             afterHeading={segments[i - 1]?.role === 'heading'}
             above={allPali && paliAbove}
             listIndex={seg.role === 'list-item' ? runningListIndex : undefined}
-            focused={!!focusUid && seg.key.startsWith(`${focusUid}:`)}
+            focused={!!focusUid && uidHolds(seg.key.split(':')[0], focusUid)}
             flash={!!flashRange && i >= flashRange[0] && i <= flashRange[1]}
             theme={theme}
             fontSize={fontSize}

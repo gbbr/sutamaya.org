@@ -280,6 +280,17 @@ export function resolveCanonicalSuttaId(corpus: Corpus, id: string): string {
   return lower;
 }
 
+// uidHolds reports whether a uid names the sutta `id`: the uid itself, or a range ("an1.586-590")
+// whose numbers take it in.
+export function uidHolds(uid: string, id: string): boolean {
+  if (uid === id) return true;
+  const range = parseRangeUid(uid);
+  const m = id.match(RANGE_QUERY);
+  if (!range || !m) return false;
+  const num = Number(m[2]);
+  return range.prefix === m[1] && num >= range.start && num <= range.end;
+}
+
 // The rows ListPane renders while browsing a node or a user list.
 export function listItemsFor(corpus: Corpus, nodeId: string | undefined, lists: ListDef[]): Array<[string, Sutta]> {
   if (!nodeId) return [];
