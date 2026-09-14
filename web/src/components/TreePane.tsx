@@ -44,10 +44,6 @@ import { type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, 
 import { CorpusTreeView } from './CorpusTreeView';
 import { ListsTreeView } from './ListsTreeView';
 
-// How long a phone's tree keeps the row it comes back to marked before letting it fade: a little
-// past the slide back (index.css), so the fade starts once the tree has settled.
-const RETURN_MARK_MS = 350;
-
 interface PersistedExpansion {
   corpus: string[];
   lists: string[];
@@ -129,6 +125,9 @@ interface TreePaneProps {
   breadcrumbArrival?: boolean;
   // True while the library's "?" modal is open, which stands this pane's own shortcuts down.
   shortcutsOpen?: boolean;
+  // True when Back or Forward brought a phone to this `nodeId`, which is then neither opened nor
+  // scrolled to, the tree staying as it was left.
+  returning?: boolean;
 }
 
 export function TreePane({
@@ -153,6 +152,7 @@ export function TreePane({
   flashNodeId,
   breadcrumbArrival = false,
   shortcutsOpen = false,
+  returning = false,
 }: TreePaneProps) {
   const navigate = useNavigate();
   const { corpus } = useCorpus();
@@ -259,7 +259,7 @@ export function TreePane({
   const revealedListNodeRef = useRef<string | undefined>(revealNow ? undefined : nodeId);
 
   useEffect(() => {
-    if (revealedNodeRef.current === nodeId) return;
+    if (returning || revealedNodeRef.current === nodeId) return;
     const toOpen = ancestorsOf(corpus, nodeId);
     if (!Object.keys(toOpen).length) return;
     revealedNodeRef.current = nodeId;
@@ -267,7 +267,7 @@ export function TreePane({
   }, [corpus, nodeId]);
 
   useEffect(() => {
-    if (revealedListNodeRef.current === nodeId) return;
+    if (returning || revealedListNodeRef.current === nodeId) return;
     const toOpen = ancestorsOfList(lists, nodeId);
     if (!Object.keys(toOpen).length) return;
     revealedListNodeRef.current = nodeId;
@@ -536,29 +536,13 @@ export function TreePane({
     return () => window.removeEventListener('keydown', onKey);
   }, [searching, navRows, displayHits, listHits, searchOpen, onOpenSutta, onSelect, shortcutsOpen]);
 
-  // The row marked as the browsed node. A phone marks none, the list the mark points at being off
-  // screen, bar the row it comes back to from that list: marked as the tree slides back in, then let
-  // go, which the row's colour transition turns into a fade — the way a native list deselects the
-  // row it was left from.
-  const [returnedFromId, setReturnedFromId] = useState<string | undefined>(undefined);
-  // Set while rendering rather than in an effect, so the tree comes back with the mark already on:
-  // added a moment later, it would be faded in by the row's colour transition.
-  const [wasVisible, setWasVisible] = useState(visible);
-  if (visible !== wasVisible) {
-    setWasVisible(visible);
-    if (visible && mobile) setReturnedFromId(nodeId);
-  }
-  useEffect(() => {
-    if (!returnedFromId) return;
-    const t = window.setTimeout(() => setReturnedFromId(undefined), RETURN_MARK_MS);
-    return () => window.clearTimeout(t);
-  }, [returnedFromId]);
-  const markedId = mobile ? returnedFromId : nodeId;
+  // The row marked as the browsed node; none on a phone, where the list it points at is off screen.
+  const markedId = mobile ? undefined : nodeId;
 
   // Scrolls to the browsed node, retrying on each state change the expand effects above make: its
   // row usually isn't in the DOM yet on the render `nodeId` changed on. Never to the node a return
   // opens on, which the remembered scroll position places.
-  useScrollToNode(scrollRef, nodeId, [paneView, expanded, listExpanded, corpus, lists], revealNow ? undefined : nodeId);
+  useScrollToNode(scrollRef, returning ? undefined : nodeId, [paneView, expanded, listExpanded, corpus, lists], revealNow ? undefined : nodeId);
   // Second, so a breadcrumb's own segment — which may sit above `nodeId` — wins the final position.
   useScrollToNode(scrollRef, flashNodeId, [paneView, expanded, listExpanded, corpus, lists]);
 
