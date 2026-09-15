@@ -119,6 +119,10 @@ master's background back out to the edges.
 - **A Capacitor plugin used at startup is imported statically**, never with `await import()`, which
   can deadlock the WebView. Only plugins reached from a tap — the browser sheet, sharing, files —
   load dynamically.
+- **Every API Apple asks a reason for is declared in `web/ios/App/App/PrivacyInfo.xcprivacy`** —
+  user defaults, file dates, free space, time since boot — or App Store Connect refuses the upload.
+  The plugins ship no declaration of their own, so a new plugin, or a new version of one, is checked
+  against it.
 - **The WebView's origins** (`capacitor://localhost` on iOS, `https://localhost` on Android) must be
   allowed by the Worker's CORS, or every signed-in request fails.
 - **`/.well-known/*` stays in `assets.run_worker_first`**, or the verification files come back as
