@@ -70,10 +70,11 @@ when it adds a native piece.
 ## Links into the app
 
 - `sutamaya://auth` carries a Google sign-in back to the app.
-- Links to `/`, `/browse/*`, `/read/*`, `/settings` and `/help` on `https://app.sutamaya.org` are
-  verified to open the app; `/api/*` isn't, so sign-in finishes in the browser that started it. The
-  path list is written twice, in the Android manifest and in `worker/src/wellKnown.js`, which serves
-  the verification files. The iOS app claims the domain through its Associated Domains entitlement.
+- Links to `/`, `/browse`, `/browse/*`, `/read/*`, `/settings` and `/help` on
+  `https://app.sutamaya.org` are verified to open the app; `/api/*` isn't, so sign-in finishes in
+  the browser that started it. The path list is written twice, in the Android manifest and in
+  `worker/src/wellKnown.js`, which serves the verification files. The iOS app claims the domain
+  through its Associated Domains entitlement.
 - Android's verification file names each certificate a build can be signed with: the debug
   keystore, the upload key, and all three of Google Play's signing keys, classical and
   post-quantum. A new signing key has to be added there, or links open in the browser instead.

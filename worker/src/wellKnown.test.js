@@ -41,7 +41,7 @@ describe('/.well-known/apple-app-site-association', () => {
     const [detail] = (await res.json()).applinks.details;
     expect(detail.appIDs).toEqual(['ABCDE12345.org.sutamaya.app']);
     const paths = detail.components.map((component) => component['/']);
-    expect(paths).toEqual(['/', '/browse/*', '/read/*', '/settings', '/help']);
+    expect(paths).toEqual(['/', '/browse', '/browse/*', '/read/*', '/settings', '/help']);
     // The OAuth round trip has to finish in the browser that started it, so no filter may pull it
     // into the app — the same reason the Android manifest lists paths instead of the bare host.
     expect(paths.some((path) => path.startsWith('/api'))).toBe(false);

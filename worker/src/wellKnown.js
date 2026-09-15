@@ -8,7 +8,7 @@ import { Hono } from 'hono';
 // is outside the set, so the OAuth round trip stays in the browser that started it rather than
 // being pulled into the app mid-flow. The same set is written in Android's own syntax in
 // web/android/app/src/main/AndroidManifest.xml, which this has to stay in step with.
-const DEEP_LINK_PATHS = ['/', '/browse/*', '/read/*', '/settings', '/help'];
+const DEEP_LINK_PATHS = ['/', '/browse', '/browse/*', '/read/*', '/settings', '/help'];
 
 // Android App Links: authorises `org.sutamaya.app`, signed by one of these certificates, to open
 // the links its manifest claims on this host. The path scoping lives in the manifest — this file
