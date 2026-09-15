@@ -1,5 +1,5 @@
 // Regenerates web/assets/ — the source images @capacitor/assets crops into the iOS and Android
-// icon and splash sets — from the production PWA icons under web/public/icons/. Run this, then
+// icon and splash sets — from the icon masters in design/. Run this, then
 //   cd web && npx @capacitor/assets generate --ios --android
 // whenever the mark changes. The `--ios --android` flags keep it off the PWA assets, which
 // vite-plugin-pwa owns (web/vite.config.ts).
@@ -18,27 +18,28 @@ const require = createRequire(import.meta.url);
 const sharp = require('sharp');
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const icons = resolve(root, 'web/public/icons');
+const masters = resolve(root, 'design');
 const out = resolve(root, 'web/assets');
 mkdirSync(out, { recursive: true });
 
 // The shell's dark ground (lib/themeColor.ts SHELL_DARK), used behind the icon and as the splash.
 const GROUND = '#171513';
-const src = (name) => resolve(icons, name);
 const dst = (name) => resolve(out, name);
 
-// Full-bleed icon (Android legacy) — the production mark upscaled, opaque.
-await sharp(src('icon-512-v2.png')).resize(1024, 1024, { fit: 'cover' }).png().toFile(dst('icon-only.png'));
+// Android legacy icon: the upright leaf, full bleed.
+await sharp(resolve(masters, 'icon-android.jpg')).resize(1024, 1024, { fit: 'cover' }).png().toFile(dst('icon-only.png'));
 
-// iOS icon — the diagonal leaf an iOS home screen already shows for the web app (apple-touch-icon),
-// which @capacitor/assets uses in place of icon-only on iOS. The artwork exists only at the home
-// screen's 180px, so this master is an upscale: sharp on the device, soft on an App Store listing.
+// iOS icon: the diagonal leaf, which @capacitor/assets uses in place of icon-only on iOS.
 mkdirSync(dst('ios'), { recursive: true });
-await sharp(src('apple-touch-icon.png')).resize(1024, 1024, { fit: 'cover' }).png().toFile(dst('ios/icon.png'));
+await sharp(resolve(masters, 'icon-ios.jpg')).resize(1024, 1024, { fit: 'cover' }).png().toFile(dst('ios/icon.png'));
 
-// Android adaptive foreground — the maskable variant, which already carries the safe-zone padding —
-// and a flat background in the shell's dark ground.
-await sharp(src('icon-512-maskable-v2.png')).resize(1024, 1024, { fit: 'cover' }).png().toFile(dst('icon-foreground.png'));
+// Android adaptive icon: the upright leaf at 90%, its background stretched back to the edges, over a
+// flat background in the shell's dark ground (docs/native-apps.md's "Icons").
+await sharp(resolve(masters, 'icon-android.jpg'))
+  .resize(920, 920)
+  .extend({ top: 52, bottom: 52, left: 52, right: 52, extendWith: 'copy' })
+  .png()
+  .toFile(dst('icon-foreground.png'));
 await sharp({ create: { width: 1024, height: 1024, channels: 3, background: GROUND } }).png().toFile(dst('icon-background.png'));
 
 // Splash — a flat dark ground, nothing else: Android 12+ draws the launcher icon over its own

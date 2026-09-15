@@ -49,6 +49,7 @@ web/             the app — React, TypeScript, Tailwind, Vite
 worker/          the backend — a Cloudflare Worker and its database migrations
 scripts/         corpus build, update-data, deploy and native tooling
 data/            source texts and dictionary, checked in
+design/          the app icons at full resolution, and the Play feature graphic
 e2e/             end-to-end tests
 docs/            how each part works
 wrangler.jsonc   the Worker's config, production and staging
