@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-24T14:21:26.942Z",
-  "note": "Baseline snapshot of data/{sujato,pali,html}, used by update-data-check.mjs to verify a prospective sc-data checkout has not renamed files or changed segment ids before copying. Regenerated only manually (npm run update-data:accept), after reviewing a check failure by hand — never automatically.",
+  "generatedAt": "2026-09-15T16:15:05.250Z",
+  "note": "Baseline snapshot of data/{sujato,pali,html}, used by update-data-check.mjs to verify a prospective sc-data checkout has not renamed files or changed segment ids before copying. Regenerated only manually (npm run update-data accept), after reviewing a check failure by hand — never automatically.",
   "fileCount": 13488,
   "files": {
     "html/pli/ms/sutta/an/an1/an1.1-10_html.json": {

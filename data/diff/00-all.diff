@@ -1927,8 +1927,8 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +Those bhikkhus brim with much wickedness and make the true teaching disappear.” 
 @@ -1,2 +1,2 @@ an1.152-159:1.1
  PLI: “Ye te, bhikkhave, bhikkhū lahukaṁ āpattiṁ garukā āpattīti dīpenti …pe… garukaṁ āpattiṁ lahukā āpattīti dīpenti …pe… duṭṭhullaṁ āpattiṁ aduṭṭhullā āpattīti dīpenti …pe… aduṭṭhullaṁ āpattiṁ duṭṭhullā āpattīti dīpenti …pe… sāvasesaṁ āpattiṁ anavasesā āpattīti dīpenti …pe… anavasesaṁ āpattiṁ sāvasesā āpattīti dīpenti …pe… sappaṭikammaṁ āpattiṁ appaṭikammā āpattīti dīpenti …pe… appaṭikammaṁ āpattiṁ sappaṭikammā āpattīti dīpenti te, bhikkhave, bhikkhū bahujanaahitāya paṭipannā bahujanaasukhāya, bahuno janassa anatthāya ahitāya dukkhāya devamanussānaṁ. 
--“Those mendicants who explain a light offense as a heavy offense … a heavy offense as a light offense … a grave offense as a minor offense … a minor offense as a grave offense … a curable offense as an incurable offense … an incurable offense as a curable offense … an offense requiring amends as an offense not requiring amends … an offense not requiring amends as an offense with redress are acting for the detriment and unhappiness of the people, against the people, for the harm, detriment, and suffering of gods and humans. 
-+“Those bhikkhus who explain a light offense as a heavy offense … a heavy offense as a light offense … a grave offense as a minor offense … a minor offense as a grave offense … a curable offense as an incurable offense … an incurable offense as a curable offense … an offense requiring amends as an offense not requiring amends … an offense not requiring amends as an offense with redress are acting for the detriment and unhappiness of the people, against the people, for the harm, detriment, and suffering of gods and humans. 
+-“Those mendicants who explain a light offense as a heavy offense … a heavy offense as a light offense … a grave offense as a minor offense … a minor offense as a grave offense … a curable offense as an incurable offense … an incurable offense as a curable offense … an offense requiring amends as an offense not requiring amends … an offense not requiring amends as an offense requiring amends are acting for the detriment and unhappiness of the people, against the people, for the harm, detriment, and suffering of gods and humans. 
++“Those bhikkhus who explain a light offense as a heavy offense … a heavy offense as a light offense … a grave offense as a minor offense … a minor offense as a grave offense … a curable offense as an incurable offense … an incurable offense as a curable offense … an offense requiring amends as an offense not requiring amends … an offense not requiring amends as an offense requiring amends are acting for the detriment and unhappiness of the people, against the people, for the harm, detriment, and suffering of gods and humans. 
 @@ -1,2 +1,2 @@ an1.152-159:1.2
  PLI: Bahuñca te, bhikkhave, bhikkhū apuññaṁ pasavanti, te cimaṁ saddhammaṁ antaradhāpentī”ti. 
 -Those mendicants brim with much wickedness and make the true teaching disappear.” 
@@ -2003,14 +2003,14 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +++ sujato/sutta/an/an1/an1.198-208_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an1.204:1.1
  PLI: … Jhāyīnaṁ yadidaṁ kaṅkhārevato. 
--… who practice absorption is Revata the Doubter. 
-+… who practice jhāna is Revata the Doubter. 
+-“… who practice absorption is Revata the Doubter.” 
++“… who practice jhāna is Revata the Doubter.” 
 --- sujato/sutta/an/an1/an1.209-218_translation-en-sujato.json
 +++ sujato/sutta/an/an1/an1.209-218_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an1.218:1.1
  PLI: … Paṭisambhidāpattānaṁ yadidaṁ mahākoṭṭhito”ti. 
--… who have attained the methods of textual analysis is Mahākoṭṭhita.” 
-+… who have attained the methods of analytical knowledge is Mahākoṭṭhita.” 
+-“… who have attained the methods of textual analysis is Mahākoṭṭhita.” 
++“… who have attained the methods of analytical knowledge is Mahākoṭṭhita.” 
 --- sujato/sutta/an/an1/an1.21-30_translation-en-sujato.json
 +++ sujato/sutta/an/an1/an1.21-30_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an1.21:1.1
@@ -2057,14 +2057,14 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +++ sujato/sutta/an/an1/an1.235-247_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an1.240:1.1
  PLI: … Jhāyīnaṁ yadidaṁ nandā. 
--… who practice absorption is Nandā. 
-+… who practice jhāna is Nandā. 
+-“… who practice absorption is Nandā.” 
++“… who practice jhāna is Nandā.” 
 --- sujato/sutta/an/an1/an1.258-267_translation-en-sujato.json
 +++ sujato/sutta/an/an1/an1.258-267_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an1.262:1.1
  PLI: … Jhāyīnaṁ yadidaṁ uttarānandamātā. 
--… who practice absorption is Uttarā, Nanda’s mother. 
-+… who practice jhāna is Uttarā, Nanda’s mother. 
+-“… who practice absorption is Uttarā, Nanda’s mother.” 
++“… who practice jhāna is Uttarā, Nanda’s mother.” 
 --- sujato/sutta/an/an1/an1.268-277_translation-en-sujato.json
 +++ sujato/sutta/an/an1/an1.268-277_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an1.268:1.1
@@ -2331,12 +2331,12 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +“Just as, bhikkhus, in the Black Plum Tree Land the delightful parks, woods, meadows, and lotus ponds are few, 
 @@ -1,2 +1,2 @@ an1.345:1.1
  PLI: … Evamevaṁ kho, bhikkhave, appakā te sattā ye vavassaggārammaṇaṁ karitvā labhanti samādhiṁ labhanti cittassekaggataṁ; 
--… so too the sentient beings who, relying on letting go, gain immersion, gain unification of mind are few, 
-+… so too the sentient beings who, relying on letting go, gain composure, gain unification of mind are few, 
+-“… so too the sentient beings who, relying on letting go, gain immersion, gain unification of mind are few, 
++“… so too the sentient beings who, relying on letting go, gain composure, gain unification of mind are few, 
 @@ -1,2 +1,2 @@ an1.345:1.2
  PLI: atha kho eteva sattā bahutarā ye vavassaggārammaṇaṁ karitvā na labhanti samādhiṁ na labhanti cittassekaggataṁ. 
--while those who don’t gain immersion, don’t gain unification of mind relying on letting go are many. 
-+while those who don’t gain composure, don’t gain unification of mind relying on letting go are many. 
+-while those who don’t gain immersion, don’t gain unification of mind relying on letting go are many.” 
++while those who don’t gain composure, don’t gain unification of mind relying on letting go are many.” 
 @@ -1,2 +1,2 @@ an1.348-350:1.1
  PLI: “Seyyathāpi, bhikkhave, appamattakaṁ imasmiṁ jambudīpe ārāmarāmaṇeyyakaṁ vanarāmaṇeyyakaṁ bhūmirāmaṇeyyakaṁ pokkharaṇirāmaṇeyyakaṁ; 
 -“Just as, mendicants, in the Black Plum Tree Land the delightful parks, woods, meadows, and lotus ponds are few, 
@@ -2367,16 +2367,16 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +or fourth jhāna … 
 @@ -1,2 +1,2 @@ an1.402:1.1
  PLI: Kāye kāyānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ …pe… 
--If a mendicant meditates by observing an aspect of the body … 
-+If a bhikkhu meditates by observing an aspect of the body … 
+-“If a mendicant meditates by observing an aspect of the body … 
++“If a bhikkhu meditates by observing an aspect of the body … 
 @@ -1,2 +1,2 @@ an1.405:1.1
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
--principles—keen, aware, and mindful, rid of covetousness and displeasure for the world, even for the time of a finger-snap … 
-+principles—ardent, attentive, and mindful, rid of covetousness and displeasure for the world, even for the time of a finger-snap … 
+-principles—keen, aware, and mindful, rid of covetousness and displeasure for the world, even for the time of a finger-snap …” 
++principles—ardent, attentive, and mindful, rid of covetousness and displeasure for the world, even for the time of a finger-snap …” 
 @@ -1,2 +1,2 @@ an1.410:1.1
  PLI: Chandasamādhipadhānasaṅkhārasamannāgataṁ iddhipādaṁ bhāveti … 
--If they develop the basis of psychic power that has immersion due to enthusiasm, and active effort … 
-+If they develop the basis of psychic power that has composure due to enthusiasm, and active effort … 
+-“If they develop the basis of psychic power that has immersion due to enthusiasm, and active effort … 
++“If they develop the basis of psychic power that has composure due to enthusiasm, and active effort … 
 @@ -1,2 +1,2 @@ an1.411:1.1
  PLI: vīriyasamādhipadhānasaṅkhārasamannāgataṁ iddhipādaṁ bhāveti … 
 -the basis of psychic power that has immersion due to energy, and active effort … 
@@ -2387,8 +2387,8 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +the basis of psychic power that has composure due to mental development, and active effort … 
 @@ -1,2 +1,2 @@ an1.413:1.1
  PLI: vīmaṁsāsamādhipadhānasaṅkhārasamannāgataṁ iddhipādaṁ bhāveti …. 
--the basis of psychic power that has immersion due to inquiry, and active effort, even for the time of a finger-snap … 
-+the basis of psychic power that has composure due to inquiry, and active effort, even for the time of a finger-snap … 
+-the basis of psychic power that has immersion due to inquiry, and active effort, even for the time of a finger-snap …” 
++the basis of psychic power that has composure due to inquiry, and active effort, even for the time of a finger-snap …” 
 @@ -1,2 +1,2 @@ an1.417:1.1
  PLI: samādhindriyaṁ bhāveti … 
 -the faculty of immersion … 
@@ -2403,16 +2403,16 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +the awakening factor of composure … 
 @@ -1,2 +1,2 @@ an1.438:1.1
  PLI: sammāsamādhiṁ bhāveti …. 
--right immersion, even for the time of a finger-snap … 
-+right composure, even for the time of a finger-snap … 
+-right immersion, even for the time of a finger-snap …” 
++right composure, even for the time of a finger-snap …” 
 @@ -1,2 +1,2 @@ an1.450:1.1
  PLI: sabbaso rūpasaññānaṁ samatikkamā paṭighasaññānaṁ atthaṅgamā nānattasaññānaṁ amanasikārā ananto ākāsoti ākāsānañcāyatanaṁ upasampajja viharati … 
 -going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, they enter and remain in the dimension of infinite space … 
 +going totally beyond perceptions of form, with the disappearing of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, they enter and remain in the dimension of infinite space … 
 @@ -1,2 +1,2 @@ an1.495:1.1
  PLI: Paṭhamajjhānasahagataṁ saddhindriyaṁ bhāveti … 
--They develop the faculty of faith together with the first absorption … 
-+They develop the faculty of faith together with the first jhāna … 
+-“They develop the faculty of faith together with the first absorption … 
++“They develop the faculty of faith together with the first jhāna … 
 @@ -1,2 +1,2 @@ an1.498:1.1
  PLI: samādhindriyaṁ bhāveti … 
 -the faculty of immersion … 
@@ -2427,8 +2427,8 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +the power of wisdom together with the first jhāna … 
 @@ -1,2 +1,2 @@ an1.505-514:1.1
  PLI: Dutiyajjhānasahagataṁ …pe… 
--Together with the second absorption … 
-+Together with the second jhāna … 
+-the second absorption … 
++the second jhāna … 
 @@ -1,2 +1,2 @@ an1.515-524:1.1
  PLI: tatiyajjhānasahagataṁ …pe… 
 -the third absorption … 
@@ -6075,8 +6075,8 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +“Firstly, a bhikkhu raises disciplinary issues and doesn’t praise the settling of disciplinary issues. 
 @@ -1,2 +1,2 @@ an10.87:3.1
  PLI: Puna caparaṁ, bhikkhave, bhikkhu na sikkhākāmo hoti, sikkhāsamādānassa na vaṇṇavādī. 
--Furthermore, a mendicant doesn’t want to train, and doesn’t praise taking up the training. … 
-+Furthermore, a bhikkhu doesn’t want to train, and doesn’t praise taking up the training. … 
+-Furthermore, a mendicant is not eager to train, and doesn’t praise taking up the training. … 
++Furthermore, a bhikkhu is not eager to train, and doesn’t praise taking up the training. … 
 @@ -1,2 +1,2 @@ an10.87:4.1
  PLI: Puna caparaṁ, bhikkhave, bhikkhu pāpiccho hoti, icchāvinayassa na vaṇṇavādī. 
 -Furthermore, a mendicant has corrupt wishes, and doesn’t praise getting rid of wishes. … 
@@ -6123,8 +6123,8 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +Next, a bhikkhu doesn’t raise disciplinary issues and praises the settling of disciplinary issues. 
 @@ -1,2 +1,2 @@ an10.87:15.1
  PLI: Puna caparaṁ, bhikkhave, bhikkhu sikkhākāmo hoti, sikkhāsamādānassa vaṇṇavādī. 
--Furthermore, a mendicant wants to train, and praises taking up the training. … 
-+Furthermore, a bhikkhu wants to train, and praises taking up the training. … 
+-Furthermore, a mendicant is eager to train, and praises taking up the training. … 
++Furthermore, a bhikkhu is eager to train, and praises taking up the training. … 
 @@ -1,2 +1,2 @@ an10.87:16.1
  PLI: Puna caparaṁ, bhikkhave, bhikkhu appiccho hoti, icchāvinayassa vaṇṇavādī. 
 -Furthermore, a mendicant has few desires, and praises getting rid of desires. … 
@@ -10259,8 +10259,8 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +“I made a mistake, sir. It was foolish, stupid, and unskillful of me to become impatient and bitter when the Buddha was educating, encouraging, firing up, and inspiring the bhikkhus with a Dhamma talk about the training rules, and to think, 
 @@ -1,2 +1,2 @@ an3.91:5.1
  PLI: Thero cepi, kassapa, bhikkhu hoti na sikkhākāmo na sikkhāsamādānassa vaṇṇavādī, ye caññe bhikkhū na sikkhākāmā te ca na sikkhāya samādapeti, ye caññe bhikkhū sikkhākāmā tesañca na vaṇṇaṁ bhaṇati bhūtaṁ tacchaṁ kālena, evarūpassāhaṁ, kassapa, therassa bhikkhuno na vaṇṇaṁ bhaṇāmi. 
--Kassapa, take the case of a senior mendicant who doesn’t want to train and doesn’t praise taking up the training. They don’t encourage other mendicants who don’t want to train to take up the training. And they don’t truthfully and correctly praise at the right time those mendicants who do want to train. I don’t praise that kind of senior mendicant. 
-+Kassapa, take the case of a senior bhikkhu who doesn’t want to train and doesn’t praise taking up the training. They don’t encourage other bhikkhus who don’t want to train to take up the training. And they don’t truthfully and correctly praise at the right time those bhikkhus who do want to train. I don’t praise that kind of senior bhikkhu. 
+-Kassapa, take the case of a senior mendicant who is not eager to train and doesn’t praise taking up the training. They don’t encourage other mendicants who are not eager to train to take up the training. And they don’t truthfully and correctly praise at the right time those mendicants not eager to train. I don’t praise that kind of senior mendicant. 
++Kassapa, take the case of a senior bhikkhu who is not eager to train and doesn’t praise taking up the training. They don’t encourage other bhikkhus who are not eager to train to take up the training. And they don’t truthfully and correctly praise at the right time those bhikkhus not eager to train. I don’t praise that kind of senior bhikkhu. 
 @@ -1,2 +1,2 @@ an3.91:5.3
  PLI: Satthā hissa vaṇṇaṁ bhaṇatīti aññe naṁ bhikkhū bhajeyyuṁ, ye naṁ bhajeyyuṁ tyāssa diṭṭhānugatiṁ āpajjeyyuṁ, yyāssa diṭṭhānugatiṁ āpajjeyyuṁ tesaṁ taṁ assa dīgharattaṁ ahitāya dukkhāyāti. 
 -Because, hearing that I praised that mendicant, other mendicants might want to keep company with them. Then they might follow their example, which would be for their lasting harm and suffering. 
@@ -10275,16 +10275,16 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +Take the case of a middle bhikkhu who doesn’t want to train … 
 @@ -1,2 +1,2 @@ an3.91:6.2
  PLI: navo cepi, kassapa, bhikkhu hoti na sikkhākāmo na sikkhāsamādānassa vaṇṇavādī, ye caññe bhikkhū na sikkhākāmā te ca na sikkhāya samādapeti, ye caññe bhikkhū sikkhākāmā tesañca na vaṇṇaṁ bhaṇati bhūtaṁ tacchaṁ kālena, evarūpassāhaṁ, kassapa, navassa bhikkhuno na vaṇṇaṁ bhaṇāmi. 
--Take the case of a junior mendicant who doesn’t want to train … 
-+Take the case of a junior bhikkhu who doesn’t want to train … 
+-Take the case of a junior mendicant who is not eager to train … 
++Take the case of a junior bhikkhu who is not eager to train … 
 @@ -1,2 +1,2 @@ an3.91:6.5
  PLI: Tasmāhaṁ, kassapa, evarūpassa navassa bhikkhuno na vaṇṇaṁ bhaṇāmi. 
 -That’s why I don’t praise that kind of junior mendicant. 
 +That’s why I don’t praise that kind of junior bhikkhu. 
 @@ -1,2 +1,2 @@ an3.91:7.1
  PLI: Thero cepi, kassapa, bhikkhu hoti sikkhākāmo sikkhāsamādānassa vaṇṇavādī, ye caññe bhikkhū na sikkhākāmā te ca sikkhāya samādapeti, ye caññe bhikkhū sikkhākāmā tesañca vaṇṇaṁ bhaṇati bhūtaṁ tacchaṁ kālena, evarūpassāhaṁ, kassapa, therassa bhikkhuno vaṇṇaṁ bhaṇāmi. 
--Kassapa, take the case of a senior mendicant who does want to train and praises taking up the training. They encourage other mendicants who don’t want to train to take up the training. And they truthfully and correctly praise at the right time those mendicants who do want to train. I praise that kind of senior mendicant. 
-+Kassapa, take the case of a senior bhikkhu who does want to train and praises taking up the training. They encourage other bhikkhus who don’t want to train to take up the training. And they truthfully and correctly praise at the right time those bhikkhus who do want to train. I praise that kind of senior bhikkhu. 
+-Kassapa, take the case of a senior mendicant who is eager to train and praises taking up the training. They encourage other mendicants who are not eager to train to take up the training. And they truthfully and correctly praise at the right time those mendicants who are eager to train. I praise that kind of senior mendicant. 
++Kassapa, take the case of a senior bhikkhu who is eager to train and praises taking up the training. They encourage other bhikkhus who are not eager to train to take up the training. And they truthfully and correctly praise at the right time those bhikkhus who are eager to train. I praise that kind of senior bhikkhu. 
 @@ -1,2 +1,2 @@ an3.91:7.3
  PLI: Satthā hissa vaṇṇaṁ bhaṇatīti aññe naṁ bhikkhū bhajeyyuṁ, ye naṁ bhajeyyuṁ tyāssa diṭṭhānugatiṁ āpajjeyyuṁ, yyāssa diṭṭhānugatiṁ āpajjeyyuṁ tesaṁ taṁ assa dīgharattaṁ hitāya sukhāyāti. 
 -Because, hearing that I praised that mendicant, other mendicants might want to keep company with them. Then they might follow their example, which would be for their lasting welfare and happiness. 
@@ -10295,12 +10295,12 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +That’s why I praise that kind of senior bhikkhu. 
 @@ -1,2 +1,2 @@ an3.91:8.1
  PLI: Majjhimo cepi, kassapa, bhikkhu hoti sikkhākāmo …pe… 
--Take the case of a middle mendicant who wants to train … 
-+Take the case of a middle bhikkhu who wants to train … 
+-Take the case of a middle mendicant who is eager to train … 
++Take the case of a middle bhikkhu who is eager to train … 
 @@ -1,2 +1,2 @@ an3.91:8.2
  PLI: navo cepi, kassapa, bhikkhu hoti sikkhākāmo sikkhāsamādānassa vaṇṇavādī, ye caññe bhikkhū na sikkhākāmā te ca sikkhāya samādapeti, ye caññe bhikkhū sikkhākāmā tesañca vaṇṇaṁ bhaṇati bhūtaṁ tacchaṁ kālena, evarūpassāhaṁ, kassapa, navassa bhikkhuno vaṇṇaṁ bhaṇāmi. 
--Take the case of a junior mendicant who wants to train … 
-+Take the case of a junior bhikkhu who wants to train … 
+-Take the case of a junior mendicant who is eager to train … 
++Take the case of a junior bhikkhu who is eager to train … 
 @@ -1,2 +1,2 @@ an3.91:8.5
  PLI: Tasmāhaṁ, kassapa, evarūpassa navassa bhikkhuno vaṇṇaṁ bhaṇāmī”ti. 
 -That’s why I praise that kind of junior mendicant.” 
@@ -23425,8 +23425,8 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +++ sujato/sutta/an/an8/an8.42_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an8.42:1.1
  PLI: “Aṭṭhaṅgasamannāgato, bhikkhave, uposatho upavuttho mahapphalo hoti mahānisaṁso mahājutiko mahāvipphāro. 
--“Mendicants, the observance of the sabbath with its eight factors is very fruitful and beneficial and brilliant and bountiful. 
-+“Bhikkhus, the observance of the sabbath with its eight factors is very fruitful and beneficial and brilliant and bountiful. 
+-“Mendicants, the observance of the sabbath with its eight factors is very fruitful and beneficial and brilliant and bountiful. 
++“Bhikkhus, the observance of the sabbath with its eight factors is very fruitful and beneficial and brilliant and bountiful. 
 --- sujato/sutta/an/an8/an8.4_translation-en-sujato.json
 +++ sujato/sutta/an/an8/an8.4_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an8.4:1.1
@@ -27663,8 +27663,8 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +That’s how a bhikkhu lives with themselves as island and refuge, without other refuge; with the teachings as island and refuge, without other refuge. 
 @@ -1,2 +1,2 @@ dn16:2.26.8
  PLI: Ye hi keci, ānanda, etarahi vā mama vā accayena attadīpā viharissanti attasaraṇā anaññasaraṇā, dhammadīpā dhammasaraṇā anaññasaraṇā, tamatagge me te, ānanda, bhikkhū bhavissanti ye keci sikkhākāmā”ti. 
--Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those mendicants of mine who want to train shall be among the best of the best.” 
-+Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those bhikkhus of mine who want to train shall be among the best of the best.” 
+-Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those mendicants of mine eager to train shall be among the best of the best.” 
++Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those bhikkhus of mine eager to train shall be among the best of the best.” 
 @@ -1,2 +1,2 @@ dn16:3.10.1
  PLI: Atha kho bhagavā cāpāle cetiye sato sampajāno āyusaṅkhāraṁ ossaji. 
 -So at the Cāpāla Shrine the Buddha, mindful and aware, surrendered the life force. 
@@ -28991,20 +28991,20 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +I go for refuge to the worthy Gotama, to the teaching, and to the bhikkhu Saṅgha. 
 @@ -1,2 +1,2 @@ dn23:31.1
  PLI: “Yathārūpe kho, rājañña, yaññe gāvo vā haññanti ajeḷakā vā haññanti, kukkuṭasūkarā vā haññanti, vividhā vā pāṇā saṅghātaṁ āpajjanti, paṭiggāhakā ca honti micchādiṭṭhī micchāsaṅkappā micchāvācā micchākammantā micchāājīvā micchāvāyāmā micchāsatī micchāsamādhī, evarūpo kho, rājañña, yañño na mahapphalo hoti na mahānisaṁso na mahājutiko na mahāvipphāro. 
--“Chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. And the recipients have wrong view, wrong thought, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. That kind of sacrifice is not very fruitful or beneficial or brilliant or bountiful. 
-+“Chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. And the recipients have wrong view, wrong thought, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong composure. That kind of sacrifice is not very fruitful or beneficial or brilliant or bountiful. 
+-“Chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. And the recipients have wrong view, wrong thought, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. That kind of sacrifice is not very fruitful or beneficial or brilliant or bountiful. 
++“Chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. And the recipients have wrong view, wrong thought, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong composure. That kind of sacrifice is not very fruitful or beneficial or brilliant or bountiful. 
 @@ -1,2 +1,2 @@ dn23:31.7
  PLI: “Evameva kho, rājañña, yathārūpe yaññe gāvo vā haññanti, ajeḷakā vā haññanti, kukkuṭasūkarā vā haññanti, vividhā vā pāṇā saṅghātaṁ āpajjanti, paṭiggāhakā ca honti micchādiṭṭhī micchāsaṅkappā micchāvācā micchākammantā micchāājīvā micchāvāyāmā micchāsatī micchāsamādhī, evarūpo kho, rājañña, yañño na mahapphalo hoti na mahānisaṁso na mahājutiko na mahāvipphāro. 
--“In the same way, chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. And the recipients have wrong view, wrong thought, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. That kind of sacrifice is not very fruitful or beneficial or brilliant or bountiful. 
-+“In the same way, chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. And the recipients have wrong view, wrong thought, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong composure. That kind of sacrifice is not very fruitful or beneficial or brilliant or bountiful. 
+-“In the same way, chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. And the recipients have wrong view, wrong thought, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. That kind of sacrifice is not very fruitful or beneficial or brilliant or bountiful. 
++“In the same way, chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. And the recipients have wrong view, wrong thought, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong composure. That kind of sacrifice is not very fruitful or beneficial or brilliant or bountiful. 
 @@ -1,2 +1,2 @@ dn23:31.8
  PLI: Yathārūpe ca kho, rājañña, yaññe neva gāvo haññanti, na ajeḷakā haññanti, na kukkuṭasūkarā haññanti, na vividhā vā pāṇā saṅghātaṁ āpajjanti, paṭiggāhakā ca honti sammādiṭṭhī sammāsaṅkappā sammāvācā sammākammantā sammāājīvā sammāvāyāmā sammāsatī sammāsamādhī, evarūpo kho, rājañña, yañño mahapphalo hoti mahānisaṁso mahājutiko mahāvipphāro. 
--But take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. And the recipients have right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. That kind of sacrifice is very fruitful and beneficial and brilliant and bountiful. 
-+But take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. And the recipients have right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right composure. That kind of sacrifice is very fruitful and beneficial and brilliant and bountiful. 
+-But take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. And the recipients have right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. That kind of sacrifice is very fruitful and beneficial and brilliant and bountiful. 
++But take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. And the recipients have right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right composure. That kind of sacrifice is very fruitful and beneficial and brilliant and bountiful. 
 @@ -1,2 +1,2 @@ dn23:31.14
  PLI: “Evameva kho, rājañña, yathārūpe yaññe neva gāvo haññanti, na ajeḷakā haññanti, na kukkuṭasūkarā haññanti, na vividhā vā pāṇā saṅghātaṁ āpajjanti, paṭiggāhakā ca honti sammādiṭṭhī sammāsaṅkappā sammāvācā sammākammantā sammāājīvā sammāvāyāmā sammāsatī sammāsamādhī, evarūpo kho, rājañña, yañño mahapphalo hoti mahānisaṁso mahājutiko mahāvipphāro”ti. 
--“In the same way, chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. And the recipients have right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. That kind of sacrifice is very fruitful and beneficial and brilliant and bountiful.” 
-+“In the same way, chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. And the recipients have right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right composure. That kind of sacrifice is very fruitful and beneficial and brilliant and bountiful.” 
+-“In the same way, chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. And the recipients have right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. That kind of sacrifice is very fruitful and beneficial and brilliant and bountiful.” 
++“In the same way, chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. And the recipients have right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right composure. That kind of sacrifice is very fruitful and beneficial and brilliant and bountiful.” 
 --- sujato/sutta/dn/dn24_translation-en-sujato.json
 +++ sujato/sutta/dn/dn24_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn24:2.16.1
@@ -42585,8 +42585,8 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +Now, bhikkhus, you might think, 
 @@ -1,2 +1,2 @@ mn39:11.2
  PLI: ‘Satisampajaññena samannāgatā bhavissāma, abhikkante paṭikkante sampajānakārī, ālokite vilokite sampajānakārī, samiñjite pasārite sampajānakārī, saṅghāṭipattacīvaradhāraṇe sampajānakārī, asite pīte khāyite sāyite sampajānakārī, uccārapassāvakamme sampajānakārī, gate ṭhite nisinne sutte jāgarite bhāsite tuṇhībhāve sampajānakārī’ti, evañhi vo, bhikkhave, sikkhitabbaṁ. 
--You should train yourselves like this: ‘We will have mindfulness and situational awareness. We will act with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent.’ 
-+You should train yourselves like this: ‘We will have mindfulness and attentiveness. We will act attentively when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent.’ 
+-You should train yourselves like this: ‘We will have mindfulness and situational awareness. We will act with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent.’ 
++You should train yourselves like this: ‘We will have mindfulness and attentiveness. We will act attentively when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent.’ 
 @@ -1,2 +1,2 @@ mn39:11.3
  PLI: Siyā kho pana, bhikkhave, tumhākaṁ evamassa: 
 -Now, mendicants, you might think, 
@@ -44459,36 +44459,36 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +‘Die, bhikkhu’s father! Die, bhikkhu’s mother! 
 @@ -1,2 +1,2 @@ mn66:7.4
  PLI: Ye ca bhikkhū sikkhākāmā tesaṁ taṁ, udāyi, hoti balavaṁ bandhanaṁ, daḷhaṁ bandhanaṁ, thiraṁ bandhanaṁ, apūtikaṁ bandhanaṁ, thūlo, kaliṅgaro—
--and for the mendicants who want to train, that becomes a strong, firm, stout bond, a tie that has not rotted, and a heavy yoke. 
-+and for the bhikkhus who want to train, that becomes a strong, firm, stout bond, a tie that has not rotted, and a heavy yoke. 
+-and for the mendicants eager to train, that becomes a strong, firm, stout bond, a tie that has not rotted, and a heavy yoke. 
++and for the bhikkhus eager to train, that becomes a strong, firm, stout bond, a tie that has not rotted, and a heavy yoke. 
 @@ -1,2 +1,2 @@ mn66:8.10
  PLI: Ye ca bhikkhū sikkhākāmā tesaṁ taṁ, udāyi, hoti balavaṁ bandhanaṁ, daḷhaṁ bandhanaṁ, thiraṁ bandhanaṁ, apūtikaṁ bandhanaṁ, thūlo, kaliṅgaro. 
--and for the mendicants who want to train, that becomes a strong, firm, stout bond, a tie that has not rotted, and a heavy yoke. 
-+and for the bhikkhus who want to train, that becomes a strong, firm, stout bond, a tie that has not rotted, and a heavy yoke. 
+-and for the mendicants eager to train, that becomes a strong, firm, stout bond, a tie that has not rotted, and a heavy yoke. 
++and for the bhikkhus eager to train, that becomes a strong, firm, stout bond, a tie that has not rotted, and a heavy yoke. 
 @@ -1,2 +1,2 @@ mn66:9.4
  PLI: Ye ca bhikkhū sikkhākāmā te taṁ pahāya appossukkā pannalomā paradattavuttā migabhūtena cetasā viharanti. 
--and when the mendicants who want to train have given that up, they live relaxed, unruffled, surviving on charity, their hearts free as a wild deer. 
-+and when the bhikkhus who want to train have given that up, they live relaxed, unruffled, surviving on charity, their hearts free as a wild deer. 
+-and when the mendicants eager to train have given that up, they live relaxed, unruffled, surviving on charity, their hearts free as a wild deer. 
++and when the bhikkhus eager to train have given that up, they live relaxed, unruffled, surviving on charity, their hearts free as a wild deer. 
 @@ -1,2 +1,2 @@ mn66:10.10
  PLI: Ye ca bhikkhū sikkhākāmā te taṁ pahāya appossukkā pannalomā paradattavuttā migabhūtena cetasā viharanti. 
--and when the mendicants who want to train have given that up, they live relaxed, unruffled, surviving on charity, their hearts free as a wild deer. 
-+and when the bhikkhus who want to train have given that up, they live relaxed, unruffled, surviving on charity, their hearts free as a wild deer. 
+-and when the mendicants eager to train have given that up, they live relaxed, unruffled, surviving on charity, their hearts free as a wild deer. 
++and when the bhikkhus eager to train have given that up, they live relaxed, unruffled, surviving on charity, their hearts free as a wild deer. 
 @@ -1,2 +1,2 @@ mn66:11.3
  PLI: So ārāmagataṁ bhikkhuṁ passeyya sudhotahatthapādaṁ manuññaṁ bhojanaṁ bhuttāviṁ sītāya chāyāya nisinnaṁ adhicitte yuttaṁ. 
 -He’d see a mendicant sitting in meditation in the cool shade, their hands and feet well washed after eating a satisfying meal. 
 +He’d see a bhikkhu sitting in meditation in the cool shade, their hands and feet well washed after eating a satisfying meal. 
 @@ -1,2 +1,2 @@ mn66:11.18
  PLI: Ye ca bhikkhū sikkhākāmā tesaṁ taṁ, udāyi, hoti balavaṁ bandhanaṁ, daḷhaṁ bandhanaṁ, thiraṁ bandhanaṁ, apūtikaṁ bandhanaṁ, thūlo, kaliṅgaro. 
--and for the mendicants who want to train, that becomes a strong, firm, stout bond, a tie that has not rotted, and a heavy yoke. 
-+and for the bhikkhus who want to train, that becomes a strong, firm, stout bond, a tie that has not rotted, and a heavy yoke. 
+-and for the mendicants eager to train, that becomes a strong, firm, stout bond, a tie that has not rotted, and a heavy yoke. 
++and for the bhikkhus eager to train, that becomes a strong, firm, stout bond, a tie that has not rotted, and a heavy yoke. 
 @@ -1,2 +1,2 @@ mn66:12.2
  PLI: so ārāmagataṁ bhikkhuṁ passeyya sudhotahatthapādaṁ manuññaṁ bhojanaṁ bhuttāviṁ sītāya chāyāya nisinnaṁ adhicitte yuttaṁ. 
 -He’d see a mendicant sitting in meditation in the cool shade, their hands and feet well washed after eating a satisfying meal. 
 +He’d see a bhikkhu sitting in meditation in the cool shade, their hands and feet well washed after eating a satisfying meal. 
 @@ -1,2 +1,2 @@ mn66:12.16
  PLI: Ye ca bhikkhū sikkhākāmā te taṁ pahāya appossukkā pannalomā paradattavuttā migabhūtena cetasā viharanti. 
--and when the mendicants who want to train have given that up, they live relaxed, unruffled, surviving on charity, their hearts free as a wild deer. 
-+and when the bhikkhus who want to train have given that up, they live relaxed, unruffled, surviving on charity, their hearts free as a wild deer. 
+-and when the mendicants eager to train have given that up, they live relaxed, unruffled, surviving on charity, their hearts free as a wild deer. 
++and when the bhikkhus eager to train have given that up, they live relaxed, unruffled, surviving on charity, their hearts free as a wild deer. 
 @@ -1,2 +1,2 @@ mn66:20.1
  PLI: Idhudāyi, bhikkhu vivicceva kāmehi …pe… paṭhamaṁ jhānaṁ upasampajja viharati 
 -Take a mendicant who, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption … 
@@ -49973,8 +49973,8 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +The senior bhikkhus invite such a bhikkhu to a seat, saying: 
 @@ -1,2 +1,2 @@ sn16.8:3.2
  PLI: ‘ehi, bhikkhu, ko nāmāyaṁ bhikkhu, bhaddako vatāyaṁ bhikkhu, sikkhākāmo vatāyaṁ bhikkhu; ehi, bhikkhu, idaṁ āsanaṁ nisīdāhī’ti. 
--‘Welcome, mendicant! What is this mendicant’s name? This mendicant is good-natured; he really wants to train. Please, mendicant, here, take a seat.’ 
-+‘Welcome, bhikkhu! What is this bhikkhu’s name? This bhikkhu is good-natured; he really wants to train. Please, bhikkhu, here, take a seat.’ 
+-‘Welcome, mendicant! What is this mendicant’s name? This mendicant is good-natured; he’s really eager to train. Please, mendicant, here, take a seat.’ 
++‘Welcome, bhikkhu! What is this bhikkhu’s name? This bhikkhu is good-natured; he’s really eager to train. Please, bhikkhu, here, take a seat.’ 
 @@ -1,2 +1,2 @@ sn16.8:4.1
  PLI: Tatra, kassapa, navānaṁ bhikkhūnaṁ evaṁ hoti: 
 -Then the junior mendicants think: 
@@ -64801,8 +64801,8 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +That’s how a bhikkhu lives with themselves as island and refuge, without other refuge; with the teachings as island and refuge, without other refuge. 
 @@ -1,2 +1,2 @@ sn47.13:7.7
  PLI: Ye hi keci, ānanda, etarahi vā mamaccaye vā attadīpā viharissanti attasaraṇā anaññasaraṇā, dhammadīpā dhammasaraṇā anaññasaraṇā; tamatagge mete, ānanda, bhikkhū bhavissanti ye keci sikkhākāmā”ti. 
--Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those mendicants of mine who want to train shall be among the best of the best.” 
-+Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those bhikkhus of mine who want to train shall be among the best of the best.” 
+-Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those mendicants of mine eager to train shall be among the best of the best.” 
++Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those bhikkhus of mine eager to train shall be among the best of the best.” 
 --- sujato/sutta/sn/sn47/sn47.14_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.14_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.14:1.1
@@ -64843,8 +64843,8 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +That’s how a bhikkhu lives with themselves as island and refuge, without other refuge; with the teachings as island and refuge, without other refuge. 
 @@ -1,2 +1,2 @@ sn47.14:3.7
  PLI: Ye hi keci, bhikkhave, etarahi vā mamaccaye vā attadīpā viharissanti attasaraṇā anaññasaraṇā, dhammadīpā dhammasaraṇā anaññasaraṇā; tamatagge mete, bhikkhave, bhikkhū bhavissanti ye keci sikkhākāmā”ti. 
--Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those mendicants of mine who want to train shall be among the best of the best.” 
-+Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those bhikkhus of mine who want to train shall be among the best of the best.” 
+-Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those mendicants of mine eager to train shall be among the best of the best.” 
++Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those bhikkhus of mine eager to train shall be among the best of the best.” 
 --- sujato/sutta/sn/sn47/sn47.15_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.15_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.15:1.3
@@ -66207,8 +66207,8 @@ All rules — data/sujato/ → data/sujato.post/ — 16521 change(s), 3096 file(
 +That’s how a bhikkhu lives with themselves as island and refuge, without other refuge; with the teachings as island and refuge, without other refuge. 
 @@ -1,2 +1,2 @@ sn47.9:6.7
  PLI: Ye hi keci, ānanda, etarahi vā mamaccaye vā attadīpā viharissanti attasaraṇā anaññasaraṇā, dhammadīpā dhammasaraṇā anaññasaraṇā; tamatagge mete, ānanda, bhikkhū bhavissanti ye keci sikkhākāmā”ti. 
--Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those mendicants of mine who want to train shall be among the best of the best.” 
-+Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those bhikkhus of mine who want to train shall be among the best of the best.” 
+-Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those mendicants of mine eager to train shall be among the best of the best.” 
++Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those bhikkhus of mine eager to train shall be among the best of the best.” 
 --- sujato/sutta/sn/sn48/sn48.10_translation-en-sujato.json
 +++ sujato/sutta/sn/sn48/sn48.10_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn48.10:1.1
