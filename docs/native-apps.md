@@ -74,6 +74,9 @@ when it adds a native piece.
   verified to open the app; `/api/*` isn't, so sign-in finishes in the browser that started it. The
   path list is written twice, in the Android manifest and in `worker/src/wellKnown.js`, which serves
   the verification files. iOS's is served only once `APPLE_TEAM_ID` is set.
+- Android's verification file names each certificate a build can be signed with: the debug
+  keystore, the upload key, and all three of Google Play's signing keys, classical and
+  post-quantum. A new signing key has to be added there, or links open in the browser instead.
 
 ## Building and running
 
@@ -133,9 +136,8 @@ master's background back out to the edges.
   a reviewer account. Budget for one Apple rejection under guideline 4.2; the app already reads
   offline from launch and signs in through the system browser.
   Sign in with Apple only if a reviewer asks — the emailed code already meets guideline 4.8.
-- **Verified links in production:** add the Play signing certificate to `worker/src/wellKnown.js`
-  and check App Links on a device; set `APPLE_TEAM_ID` and add the Associated Domains entitlement
-  for iOS. The Google return can then use a verified link instead of `sutamaya://auth`.
+- **Verified links in production:** check Android's App Links on a phone that installed the app
+  from Play; set `APPLE_TEAM_ID` and add the Associated Domains entitlement for iOS. The Google return can then use a verified link instead of `sutamaya://auth`.
 - **Release plumbing:** native builds in CI, one script bumping the version across web, iOS and
   Android (the floor assumes their build numbers move together), and a staged rollout for updates.
 - **macOS:** the iOS app can run on Apple-silicon Macs as "Designed for iPad" at no extra cost; a
