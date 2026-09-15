@@ -116,10 +116,9 @@
     // `release:ota` from native-release.json's "floor", which a store release raises when it adds
     // a native piece the bundle needs — a plugin, a permission, a deep-link path. Empty means no
     // floor. See docs/native-apps.md.
-    "OTA_MIN_NATIVE": "1"
-    // The enrolled Apple Team ID, added here once it exists: it is what turns on
-    // /.well-known/apple-app-site-association (worker/src/wellKnown.js), which 404s without it.
-    // "APPLE_TEAM_ID": "..."
+    "OTA_MIN_NATIVE": "1",
+    // The Apple Team ID, which turns on /.well-known/apple-app-site-association (worker/src/wellKnown.js).
+    "APPLE_TEAM_ID": "459GT7W5YV"
   },
   "observability": {
     "enabled": true
