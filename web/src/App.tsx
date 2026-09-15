@@ -5,6 +5,7 @@ import { ErrorBoundary, ErrorFallback } from './components/ErrorBoundary';
 import { RouteFocus } from './components/RouteFocus';
 import { RouterView } from './components/RouterView';
 import { useNativeBack } from './hooks/useNativeBack';
+import { useNativeLinks } from './hooks/useNativeLinks';
 import { useCorpus } from './context/CorpusContext';
 import { getLastLocation, rememberLocation } from './lib/lastLocation';
 import { normalizeRouteId, resolveCanonicalSuttaId } from './lib/corpus';
@@ -83,10 +84,11 @@ function Pages() {
   return <RouteFocus />;
 }
 
-// What surrounds every page: the providers, the native apps' Back, and the record of where the
-// reader is that "/" restores.
+// What surrounds every page: the providers, the native apps' Back and links, and the record of
+// where the reader is that "/" restores.
 function AppShell() {
   useNativeBack();
+  useNativeLinks();
   const { pathname } = useLocation();
   useEffect(() => rememberLocation(pathname), [pathname]);
   return (
