@@ -102,13 +102,13 @@ npm run devices                          # every simulator, emulator and device,
 
 ## Icons
 
-Each app's icon is the artwork the web app already shows on that platform's home screen: iOS takes
-the diagonal leaf of the web app's `apple-touch-icon`, Android the upright leaf of its manifest
-icons, with the maskable one as the adaptive icon's foreground. Both are generated from
-`web/public/icons/`, never drawn by hand; `scripts/make-native-assets.mjs` says how.
+Each app's icon is a leaf: diagonal on iOS, upright on Android. Their full-resolution masters are in
+`design/`, beside the Play Store's feature graphic. The native icon sets and the store icons are
+derived from the masters, never drawn by hand; `scripts/make-native-assets.mjs` says how.
 
-The diagonal leaf exists only at home-screen size, so the large master iOS asks for is an upscale:
-sharp on the device, soft on an App Store listing.
+An Android launcher masks the icon to a circle, a squircle or a rounded square, and the master's
+tip and stem would touch that edge. The home-screen icon shrinks the leaf to 90% and stretches the
+master's background back out to the edges.
 
 ## Rules that bite
 
@@ -129,8 +129,8 @@ sharp on the device, soft on an App Store listing.
 ## Not done yet
 
 - **Store submission:** developer accounts, signing, listings, privacy questionnaires, screenshots,
-  a reviewer account, the iOS icon at full resolution. Budget for one Apple rejection under
-  guideline 4.2; the app already reads offline from launch and signs in through the system browser.
+  a reviewer account. Budget for one Apple rejection under guideline 4.2; the app already reads
+  offline from launch and signs in through the system browser.
   Sign in with Apple only if a reviewer asks — the emailed code already meets guideline 4.8.
 - **Verified links in production:** add the Play signing certificate to `worker/src/wellKnown.js`
   and check App Links on a device; set `APPLE_TEAM_ID` and add the Associated Domains entitlement
