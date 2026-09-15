@@ -110,9 +110,9 @@ Each app's icon is a leaf: diagonal on iOS, upright on Android. Their full-resol
 `design/`, beside the Play Store's feature graphic. The native icon sets and the store icons are
 derived from the masters, never drawn by hand; `scripts/make-native-assets.mjs` says how.
 
-An Android launcher masks the icon to a circle, a squircle or a rounded square, and the master's
-tip and stem would touch that edge. The home-screen icon shrinks the leaf to 90% and stretches the
-master's background back out to the edges.
+iOS masks the icon to a rounded square, and an Android launcher to a circle, a squircle or a rounded
+square; the master's tip and stem would touch that edge. So the iOS icon and Android's home-screen
+icon shrink the leaf to 90% and stretch the master's background back out to the edges.
 
 ## Rules that bite
 
