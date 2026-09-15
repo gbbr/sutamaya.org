@@ -18,8 +18,17 @@ describe('/.well-known/assetlinks.json', () => {
 });
 
 describe('/.well-known/apple-app-site-association', () => {
-  it('is not served until an Apple Team ID is configured', async () => {
+  it('authorises the iOS app to open app.sutamaya.org links', async () => {
     const res = await SELF.fetch('https://app.sutamaya.org/.well-known/apple-app-site-association');
+    expect(res.status).toBe(200);
+
+    const [detail] = (await res.json()).applinks.details;
+    expect(detail.appIDs).toEqual([expect.stringMatching(/^[A-Z0-9]{10}\.org\.sutamaya\.app$/)]);
+  });
+
+  it('is not served without an Apple Team ID', async () => {
+    const { wellKnownRouter } = await import('./wellKnown.js');
+    const res = await wellKnownRouter.request('/apple-app-site-association', {}, {});
     expect(res.status).toBe(404);
   });
 
