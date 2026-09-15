@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router';
+import { NavigationType, useLocation, useNavigate, useNavigationType, useParams } from 'react-router';
 import { flushSync } from 'react-dom';
 import { useLayout } from '../context/LayoutContext';
 import { useCorpus } from '../context/CorpusContext';
@@ -8,7 +8,7 @@ import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { useBackHandler } from '../hooks/useBackHandler';
-import { nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId } from '../lib/corpus';
+import { findNode, isExpandable, nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId } from '../lib/corpus';
 import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP } from '../lib/search/metadata';
 import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
@@ -17,6 +17,7 @@ import { transitionPage } from '../lib/motion';
 import { TreePane, type ActiveSearchRow } from '../components/TreePane';
 import { ListPane } from '../components/ListPane';
 import { ShortcutsModal } from '../components/ShortcutsModal';
+import type { Corpus, ListDef } from '../lib/types';
 
 // Width of the tree/list divider's undrawn drag strip, left of the boundary.
 const TREE_LIST_HIT_BEFORE = 8;
@@ -32,6 +33,15 @@ function storeView(view: 'tree' | 'list') {
   } catch {
     // storage unavailable — ignore
   }
+}
+
+// Returns the pane a link opened from outside the app shows `nodeId` in: the tree for the Library
+// itself and for a node that expands there, else the node's contents.
+function linkPane(corpus: Corpus | null, lists: ListDef[], nodeId: string | undefined): 'tree' | 'list' {
+  if (!nodeId) return 'tree';
+  const found = corpus ? findNode(corpus, nodeId) : null;
+  const expands = found ? isExpandable(found.node) : lists.some((l) => l.id === nodeId && l.kind === 'group');
+  return expands ? 'tree' : 'list';
 }
 
 export function LibraryPage() {
@@ -71,7 +81,10 @@ export function LibraryPage() {
   // refresh, and consumeIntent reads a resurrected one as no intent at all.
   const [consumedIntent] = useState(() =>
     consumeIntent(
-      location?.state as ({ fromView?: 'tree' | 'list'; flashNodeId?: string } & RouteIntent) | null | undefined,
+      location?.state as
+        | ({ fromView?: 'tree' | 'list'; flashNodeId?: string; link?: boolean } & RouteIntent)
+        | null
+        | undefined,
       ROUTE_INTENT_KEY
     )
   );
@@ -86,6 +99,7 @@ export function LibraryPage() {
     return () => window.clearTimeout(t);
   }, [locationFlashNodeId]);
   const [view, setViewState] = useState<'tree' | 'list'>(() => {
+    if (consumedIntent?.link) return linkPane(corpus, lists, routeNodeId);
     const fromView = consumedIntent?.fromView;
     if (fromView === 'tree' || fromView === 'list') return fromView;
     // A bookmark or typed URL naming a sutta — the entry the tab opened on, which no navigation in
@@ -111,6 +125,16 @@ export function LibraryPage() {
   // The search this page arrived on, taken from the address bar's `?q=`.
   const [arrivedQuery] = useState(() => new URLSearchParams(location?.search ?? '').get('q') ?? '');
   const [query, setQuery] = useState(arrivedQuery);
+  const navigationType = useNavigationType();
+  // Opens the pane a link from outside the app lands on, and the search in its address, when the link
+  // arrives on this page already open. Back and Forward change neither.
+  useEffect(() => {
+    if (navigationType === NavigationType.Pop) return;
+    const intent = consumeIntent(location?.state as ({ link?: boolean } & RouteIntent) | null | undefined, ROUTE_INTENT_KEY);
+    if (!intent?.link) return;
+    setView(linkPane(corpus, lists, routeNodeId));
+    setQuery(new URLSearchParams(location?.search ?? '').get('q') ?? '');
+  }, [location?.state, location?.search, navigationType, setView, corpus, lists, routeNodeId]);
   // The hit the search cursor starts on: the one the reader opened, on the way back from it. Read
   // from the arriving URL, so typing a query while a sutta is selected still starts at the top hit.
   const [restoreHitId] = useState(() => (arrivedQuery.trim() && rawSuttaId ? rawSuttaId : undefined));
