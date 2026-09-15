@@ -99,7 +99,7 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
     return () => window.removeEventListener('keydown', onKey);
   }, [onClose]);
 
-  // Android's back button closes the popover rather than leaving the library. A no-op on web and iOS.
+  // The native apps' Back closes the popover rather than leaving the library. A no-op on the web.
   useBackHandler(true, onClose);
 
   // The touch presentation: full-screen rather than a sheet, which the keyboard would leave a few

@@ -53,14 +53,14 @@ behaviour components share, and `components/` the pieces the pages are built fro
   top when the reader chooses somewhere new. The Library's panes always restore theirs.
 - **A sutta opened from the Reader's own search is a detour.** The Reader's close becomes a return
   arrow, back to the sutta the reader first searched from, however many suttas they open or turn to
-  after it; Escape and Android's back do the same. The jump slides the text in from the right and
+  after it; Escape and Back in the native apps do the same. The jump slides the text in from the right and
   the return from the left, as Next and Prev do. Only the first jump adds a step to the history, so
   the browser's Back returns there too.
 - Only a bottom-level group opens a list of suttas. A row with children expands in place, so an id
   like `dn` or `sn12` is never a destination ([corpus.md](corpus.md)).
 - Static segments match exactly, which is what lets `/<sutta>` sit last without catching
   `/Settings`.
-- A crash inside a page shows a fallback within the app, so the providers and Android's back button
+- A crash inside a page shows a fallback within the app, so the providers and Back in the native apps
   keep working.
 - Import everything from `react-router`, never `react-router/dom`: outside a bundler the two resolve
   to separate copies, and the hooks then find no router.

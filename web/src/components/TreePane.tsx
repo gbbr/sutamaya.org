@@ -484,7 +484,7 @@ export function TreePane({
     onSearch('');
   }
 
-  // Android's back button closes an open search before it leaves the library. A no-op on web and iOS.
+  // The native apps' Back closes an open search before it leaves the library. A no-op on the web.
   useBackHandler(searchOpen, closeSearch);
 
   // Opens a hit in the reader, leaving the search as it is: the route change unmounts this pane,

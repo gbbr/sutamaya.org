@@ -4,7 +4,7 @@ import { AppProviders } from './context/AppProviders';
 import { ErrorBoundary, ErrorFallback } from './components/ErrorBoundary';
 import { RouteFocus } from './components/RouteFocus';
 import { RouterView } from './components/RouterView';
-import { useAndroidBackButton } from './hooks/useAndroidBackButton';
+import { useNativeBack } from './hooks/useNativeBack';
 import { useCorpus } from './context/CorpusContext';
 import { getLastLocation, rememberLocation } from './lib/lastLocation';
 import { normalizeRouteId, resolveCanonicalSuttaId } from './lib/corpus';
@@ -83,10 +83,10 @@ function Pages() {
   return <RouteFocus />;
 }
 
-// What surrounds every page: the providers, Android's back button, and the record of where the
+// What surrounds every page: the providers, the native apps' Back, and the record of where the
 // reader is that "/" restores.
 function AppShell() {
-  useAndroidBackButton();
+  useNativeBack();
   const { pathname } = useLocation();
   useEffect(() => rememberLocation(pathname), [pathname]);
   return (

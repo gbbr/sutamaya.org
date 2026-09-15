@@ -411,9 +411,9 @@ export function ReaderPage() {
     closeToOrigin(suttaId, sutta ? `/browse/${sutta.node}/${suttaId}` : '/');
   }
 
-  // The header's first button, and where Escape and Android's back end up: back to the sutta the
-  // reader first searched from while there is one, arriving from the left as Prev does; otherwise
-  // out of the reader.
+  // The header's first button, and where Escape and the native apps' Back end up: back to the sutta
+  // the reader first searched from while there is one, arriving from the left as Prev does;
+  // otherwise out of the reader.
   function backOrClose() {
     if (!backTo) {
       closeReader();
@@ -508,9 +508,9 @@ export function ReaderPage() {
     cycleTheme,
   });
 
-  // Android's back button, one step at a time, in the same order Escape backs out (useReaderKeyboard):
+  // The native apps' Back, one step at a time, in the same order Escape backs out (useReaderKeyboard):
   // the help and search overlays, then the selection popup, the dictionary and the panel, then back
-  // a sutta or out of the reader. A no-op on web and iOS.
+  // a sutta or out of the reader. A no-op on the web.
   useBackHandler(true, () => {
     if (shortcutsOpen) setShortcutsOpen(false);
     else if (searchOpen) setSearchOpen(false);

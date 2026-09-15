@@ -1,10 +1,10 @@
-// The stack of dismiss actions the Android hardware / gesture back button runs before it falls
-// through to navigation. A component with something open — an overlay, a drawer, a mobile sub-view —
-// pushes its close action while that thing is up; the back button pops the most recent one. Empty
-// stack means the current screen has nothing to dismiss, and the back button navigates or
-// backgrounds the app instead (see useAndroidBackButton).
+// The stack of dismiss actions the native apps' Back — Android's back button, the iOS app's edge
+// swipe — runs before it falls through to navigation. A component with something open — an overlay, a
+// drawer, a mobile sub-view — pushes its close action while that thing is up; Back pops the most
+// recent one. Empty stack means the current screen has nothing to dismiss, and Back navigates
+// instead, or backgrounds the Android app (see useNativeBack).
 //
-// Inert on web and iOS: nothing calls runTopBackHandler there.
+// Inert on the web: nothing calls runTopBackHandler there.
 
 type BackHandler = () => void;
 
