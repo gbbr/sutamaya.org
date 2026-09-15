@@ -566,6 +566,9 @@ input,
 textarea {
   font: inherit;
   color: inherit;
+  /* A text field stays selectable inside a screen whose own text isn't, such as the Library. */
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 ::selection {

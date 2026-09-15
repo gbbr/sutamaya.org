@@ -287,7 +287,7 @@ export function LibraryPage() {
   }, [shortcutsOpen]);
 
   return (
-    <div data-component="LibraryPage" className="relative flex overflow-hidden bg-paper h-full">
+    <div data-component="LibraryPage" className="relative flex overflow-hidden bg-paper h-full select-none">
       {/* Both panes stay mounted on mobile and hide, keeping each one's scroll offset and
           expansion state across a tree/list toggle. `display:contents` leaves this wrapper
           transparent to the flex layout, and `visible` tells the pane when it has a scroll extent
