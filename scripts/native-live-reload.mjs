@@ -59,6 +59,8 @@ function launchOnDevice() {
   const config = JSON.parse(original);
   const derivedData = resolve(webDir, 'ios/DerivedData', target.id);
   const url = `http://${host}:${PORT}`;
+  // Bundle id of the development app, installed beside the real one rather than over it.
+  const devAppId = `${config.appId}.dev`;
 
   console.log(`\nbuilding for ${target.name}`);
   writeFileSync(iosNativeConfig, `${JSON.stringify({ ...config, server: { ...config.server, url } }, null, '\t')}\n`);
@@ -66,9 +68,13 @@ function launchOnDevice() {
   try {
     // The same invocation `cap run` makes, including the derived-data location, so the two paths
     // share one incremental build rather than each keeping a cold cache of its own.
+    // `-allowProvisioningUpdates` lets automatic signing register the development bundle id.
     run(
       'xcrun',
-      ['xcodebuild', '-project', 'App.xcodeproj', '-scheme', 'App', '-configuration', 'Debug', '-destination', `id=${target.id}`, '-derivedDataPath', derivedData],
+      [
+        'xcodebuild', '-project', 'App.xcodeproj', '-scheme', 'App', '-configuration', 'Debug', '-destination', `id=${target.id}`,
+        '-derivedDataPath', derivedData, '-allowProvisioningUpdates', `PRODUCT_BUNDLE_IDENTIFIER=${devAppId}`,
+      ],
       { cwd: iosAppDir }
     );
   } finally {
@@ -77,7 +83,7 @@ function launchOnDevice() {
 
   console.log(`built in ${Math.round((Date.now() - startedAt) / 1000)}s — installing`);
   run('xcrun', ['devicectl', 'device', 'install', 'app', '--device', target.deviceId, join(derivedData, 'Build/Products/Debug-iphoneos/App.app')]);
-  run('xcrun', ['devicectl', 'device', 'process', 'launch', '--device', target.deviceId, config.appId]);
+  run('xcrun', ['devicectl', 'device', 'process', 'launch', '--device', target.deviceId, devAppId]);
   console.log(`launched on ${target.name} against ${url}. Press Ctrl+C to quit.`);
 }
 

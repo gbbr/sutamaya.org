@@ -95,7 +95,8 @@ npm run devices                          # every simulator, emulator and device,
   sign-in works. A physical iPhone or iPad loads this machine's LAN address, which Google refuses —
   sign in there with an emailed code.
 - **A physical iPhone** is built and installed with `xcodebuild` and `devicectl` rather than
-  `cap run`, which can't see a phone paired over the network.
+  `cap run`, which can't see a phone paired over the network. It installs as `org.sutamaya.app.dev`,
+  a second app beside the real one, with its own data and sign-in.
 - **A bundled build calls production** unless built with `--env staging`, or `SUTAMAYA_API_BASE`
   names another Worker, such as a local one. Whichever it calls needs the current auth code, or
   native sign-in returns to the website.
