@@ -85,18 +85,18 @@ Rule: immersion-concentration — 2006 change(s), 823 file(s)
 +++ sujato/sutta/an/an1/an1.333-377_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an1.345:1.1
  PLI: … Evamevaṁ kho, bhikkhave, appakā te sattā ye vavassaggārammaṇaṁ karitvā labhanti samādhiṁ labhanti cittassekaggataṁ; 
--… so too the sentient beings who, relying on letting go, gain immersion, gain unification of mind are few, 
-+… so too the sentient beings who, relying on letting go, gain composure, gain unification of mind are few, 
+-“… so too the sentient beings who, relying on letting go, gain immersion, gain unification of mind are few, 
++“… so too the sentient beings who, relying on letting go, gain composure, gain unification of mind are few, 
 @@ -1,2 +1,2 @@ an1.345:1.2
  PLI: atha kho eteva sattā bahutarā ye vavassaggārammaṇaṁ karitvā na labhanti samādhiṁ na labhanti cittassekaggataṁ. 
--while those who don’t gain immersion, don’t gain unification of mind relying on letting go are many. 
-+while those who don’t gain composure, don’t gain unification of mind relying on letting go are many. 
+-while those who don’t gain immersion, don’t gain unification of mind relying on letting go are many.” 
++while those who don’t gain composure, don’t gain unification of mind relying on letting go are many.” 
 --- sujato/sutta/an/an1/an1.394-574_translation-en-sujato.json
 +++ sujato/sutta/an/an1/an1.394-574_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an1.410:1.1
  PLI: Chandasamādhipadhānasaṅkhārasamannāgataṁ iddhipādaṁ bhāveti … 
--If they develop the basis of psychic power that has immersion due to enthusiasm, and active effort … 
-+If they develop the basis of psychic power that has composure due to enthusiasm, and active effort … 
+-“If they develop the basis of psychic power that has immersion due to enthusiasm, and active effort … 
++“If they develop the basis of psychic power that has composure due to enthusiasm, and active effort … 
 @@ -1,2 +1,2 @@ an1.411:1.1
  PLI: vīriyasamādhipadhānasaṅkhārasamannāgataṁ iddhipādaṁ bhāveti … 
 -the basis of psychic power that has immersion due to energy, and active effort … 
@@ -107,8 +107,8 @@ Rule: immersion-concentration — 2006 change(s), 823 file(s)
 +the basis of psychic power that has composure due to mental development, and active effort … 
 @@ -1,2 +1,2 @@ an1.413:1.1
  PLI: vīmaṁsāsamādhipadhānasaṅkhārasamannāgataṁ iddhipādaṁ bhāveti …. 
--the basis of psychic power that has immersion due to inquiry, and active effort, even for the time of a finger-snap … 
-+the basis of psychic power that has composure due to inquiry, and active effort, even for the time of a finger-snap … 
+-the basis of psychic power that has immersion due to inquiry, and active effort, even for the time of a finger-snap …” 
++the basis of psychic power that has composure due to inquiry, and active effort, even for the time of a finger-snap …” 
 @@ -1,2 +1,2 @@ an1.417:1.1
  PLI: samādhindriyaṁ bhāveti … 
 -the faculty of immersion … 
@@ -123,8 +123,8 @@ Rule: immersion-concentration — 2006 change(s), 823 file(s)
 +the awakening factor of composure … 
 @@ -1,2 +1,2 @@ an1.438:1.1
  PLI: sammāsamādhiṁ bhāveti …. 
--right immersion, even for the time of a finger-snap … 
-+right composure, even for the time of a finger-snap … 
+-right immersion, even for the time of a finger-snap …” 
++right composure, even for the time of a finger-snap …” 
 @@ -1,2 +1,2 @@ an1.498:1.1
  PLI: samādhindriyaṁ bhāveti … 
 -the faculty of immersion … 
@@ -3841,20 +3841,20 @@ Rule: immersion-concentration — 2006 change(s), 823 file(s)
 +++ sujato/sutta/dn/dn23_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn23:31.1
  PLI: “Yathārūpe kho, rājañña, yaññe gāvo vā haññanti ajeḷakā vā haññanti, kukkuṭasūkarā vā haññanti, vividhā vā pāṇā saṅghātaṁ āpajjanti, paṭiggāhakā ca honti micchādiṭṭhī micchāsaṅkappā micchāvācā micchākammantā micchāājīvā micchāvāyāmā micchāsatī micchāsamādhī, evarūpo kho, rājañña, yañño na mahapphalo hoti na mahānisaṁso na mahājutiko na mahāvipphāro. 
--“Chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. And the recipients have wrong view, wrong thought, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. That kind of sacrifice is not very fruitful or beneficial or brilliant or bountiful. 
-+“Chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. And the recipients have wrong view, wrong thought, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong composure. That kind of sacrifice is not very fruitful or beneficial or brilliant or bountiful. 
+-“Chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. And the recipients have wrong view, wrong thought, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. That kind of sacrifice is not very fruitful or beneficial or brilliant or bountiful. 
++“Chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. And the recipients have wrong view, wrong thought, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong composure. That kind of sacrifice is not very fruitful or beneficial or brilliant or bountiful. 
 @@ -1,2 +1,2 @@ dn23:31.7
  PLI: “Evameva kho, rājañña, yathārūpe yaññe gāvo vā haññanti, ajeḷakā vā haññanti, kukkuṭasūkarā vā haññanti, vividhā vā pāṇā saṅghātaṁ āpajjanti, paṭiggāhakā ca honti micchādiṭṭhī micchāsaṅkappā micchāvācā micchākammantā micchāājīvā micchāvāyāmā micchāsatī micchāsamādhī, evarūpo kho, rājañña, yañño na mahapphalo hoti na mahānisaṁso na mahājutiko na mahāvipphāro. 
--“In the same way, chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. And the recipients have wrong view, wrong thought, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. That kind of sacrifice is not very fruitful or beneficial or brilliant or bountiful. 
-+“In the same way, chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. And the recipients have wrong view, wrong thought, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong composure. That kind of sacrifice is not very fruitful or beneficial or brilliant or bountiful. 
+-“In the same way, chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. And the recipients have wrong view, wrong thought, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. That kind of sacrifice is not very fruitful or beneficial or brilliant or bountiful. 
++“In the same way, chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. And the recipients have wrong view, wrong thought, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong composure. That kind of sacrifice is not very fruitful or beneficial or brilliant or bountiful. 
 @@ -1,2 +1,2 @@ dn23:31.8
  PLI: Yathārūpe ca kho, rājañña, yaññe neva gāvo haññanti, na ajeḷakā haññanti, na kukkuṭasūkarā haññanti, na vividhā vā pāṇā saṅghātaṁ āpajjanti, paṭiggāhakā ca honti sammādiṭṭhī sammāsaṅkappā sammāvācā sammākammantā sammāājīvā sammāvāyāmā sammāsatī sammāsamādhī, evarūpo kho, rājañña, yañño mahapphalo hoti mahānisaṁso mahājutiko mahāvipphāro. 
--But take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. And the recipients have right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. That kind of sacrifice is very fruitful and beneficial and brilliant and bountiful. 
-+But take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. And the recipients have right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right composure. That kind of sacrifice is very fruitful and beneficial and brilliant and bountiful. 
+-But take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. And the recipients have right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. That kind of sacrifice is very fruitful and beneficial and brilliant and bountiful. 
++But take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. And the recipients have right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right composure. That kind of sacrifice is very fruitful and beneficial and brilliant and bountiful. 
 @@ -1,2 +1,2 @@ dn23:31.14
  PLI: “Evameva kho, rājañña, yathārūpe yaññe neva gāvo haññanti, na ajeḷakā haññanti, na kukkuṭasūkarā haññanti, na vividhā vā pāṇā saṅghātaṁ āpajjanti, paṭiggāhakā ca honti sammādiṭṭhī sammāsaṅkappā sammāvācā sammākammantā sammāājīvā sammāvāyāmā sammāsatī sammāsamādhī, evarūpo kho, rājañña, yañño mahapphalo hoti mahānisaṁso mahājutiko mahāvipphāro”ti. 
--“In the same way, chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. And the recipients have right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. That kind of sacrifice is very fruitful and beneficial and brilliant and bountiful.” 
-+“In the same way, chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. And the recipients have right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right composure. That kind of sacrifice is very fruitful and beneficial and brilliant and bountiful.” 
+-“In the same way, chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. And the recipients have right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. That kind of sacrifice is very fruitful and beneficial and brilliant and bountiful.” 
++“In the same way, chieftain, take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. And the recipients have right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right composure. That kind of sacrifice is very fruitful and beneficial and brilliant and bountiful.” 
 --- sujato/sutta/dn/dn24_translation-en-sujato.json
 +++ sujato/sutta/dn/dn24_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn24:2.17.16
