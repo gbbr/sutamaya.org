@@ -21,6 +21,7 @@ the app reads offline from its first launch, with no service worker.
 | Reader's Share button | the installed app only | always |
 | Updates | the service worker | over-the-air bundles (below) |
 | Android back button | — | closes what's open or returns from a search jump, then leaves Settings and Help, then backgrounds the app |
+| iOS swipe in from the left edge | Safari's own Back and Forward | the Android back button's steps, short of backgrounding the app |
 
 The app runs edge to edge on both platforms, keeping its bars inside the safe-area insets, and sets
 the status bar's text colour from its own theme. On Android the highlight popup opens from the
@@ -120,6 +121,10 @@ sharp on the device, soft on an App Store listing.
   the app shell.
 - **`notifyBundleReady()` runs first on every launch.** Put it behind anything that can stall, and
   every update rolls back.
+- **The iOS swipe runs the app's own Back, never WebKit's back-forward gesture.** That gesture walks
+  the browser's history, which here isn't a stack of screens — closing the Reader adds a step
+  rather than going back one — and it swaps its picture of the earlier screen for a page still
+  being rebuilt, which flashes.
 
 ## Not done yet
 

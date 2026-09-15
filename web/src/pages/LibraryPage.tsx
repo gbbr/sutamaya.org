@@ -252,8 +252,8 @@ export function LibraryPage() {
   // Takes a phone from the sutta list back to the tree, sliding the list away.
   const backToTree = useCallback(() => transitionPage('pop', () => flushSync(() => setView('tree'))), [setView]);
 
-  // Android's back button: close the shortcuts modal, else step the mobile sutta list back to the
-  // collection tree. A no-op on web and iOS. (TreePane registers its own for an open search.)
+  // The native apps' Back: close the shortcuts modal, else step the mobile sutta list back to the
+  // collection tree. A no-op on the web. (TreePane registers its own for an open search.)
   useBackHandler(mobile && view === 'list', backToTree);
   useBackHandler(shortcutsOpen, () => setShortcutsOpen(false));
 

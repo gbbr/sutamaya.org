@@ -221,7 +221,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setAuthError(null);
     setSigningIn(true);
     pendingReturnTo.current = returnTo;
-    // App is imported statically (useAndroidBackButton needs it on the startup path); only Browser
+    // App is imported statically (useNativeBack needs it on the startup path); only Browser
     // stays dynamic, being reached from this gesture alone.
     const { Browser } = await import('@capacitor/browser');
     browserRef.current = Browser;
