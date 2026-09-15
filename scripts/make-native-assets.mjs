@@ -29,9 +29,14 @@ const dst = (name) => resolve(out, name);
 // Android legacy icon: the upright leaf, full bleed.
 await sharp(resolve(masters, 'icon-android.jpg')).resize(1024, 1024, { fit: 'cover' }).png().toFile(dst('icon-only.png'));
 
-// iOS icon: the diagonal leaf, which @capacitor/assets uses in place of icon-only on iOS.
+// iOS icon: the diagonal leaf at 90%, its background stretched back to the edges
+// (docs/native-apps.md's "Icons"), which @capacitor/assets uses in place of icon-only on iOS.
 mkdirSync(dst('ios'), { recursive: true });
-await sharp(resolve(masters, 'icon-ios.jpg')).resize(1024, 1024, { fit: 'cover' }).png().toFile(dst('ios/icon.png'));
+await sharp(resolve(masters, 'icon-ios.jpg'))
+  .resize(920, 920)
+  .extend({ top: 52, bottom: 52, left: 52, right: 52, extendWith: 'copy' })
+  .png()
+  .toFile(dst('ios/icon.png'));
 
 // Android adaptive icon: the upright leaf at 90%, its background stretched back to the edges, over a
 // flat background in the shell's dark ground (docs/native-apps.md's "Icons").
