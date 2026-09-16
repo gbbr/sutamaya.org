@@ -27,8 +27,6 @@ const createList = vi.fn();
 const addToList = vi.fn();
 const toggleMembership = vi.fn();
 
-// `ready` is part of what the picker reads: the pinned section is snapshotted from membership the
-// first time the mirror reports itself loaded, so a mock without it never pins anything.
 function mockUserData(state: { lists: unknown[]; membership: Record<string, string[]> }) {
   vi.mocked(useUserData).mockReturnValue({
     ready: true,
@@ -159,9 +157,8 @@ describe('ListMembershipPicker', () => {
     expect(toggleMembership).not.toHaveBeenCalled();
   });
 
-  // The lists a sutta is already in are repeated flat at the top of browse mode, so a checked list
-  // buried in a deep group is never below the fold.
-  it('pins the lists the sutta is already in above the tree, with their parent path', () => {
+  // Every list is one row, whether the sutta is in it or not; the checkmark is what says so.
+  it('lists each list once while browsing, in tree order', () => {
     mockUserData({
       lists: [
         { id: 'g1', label: 'Study', parentId: null, kind: 'group', items: [] },
@@ -175,40 +172,7 @@ describe('ListMembershipPicker', () => {
 
     render(<ListMembershipPicker suttaId="dn1" theme={theme} />);
 
-    // Pinned rows come first, in tree order, each naming its ancestors — then the tree itself, in
-    // plain depth-first order with nothing floated.
     const rows = screen.getAllByRole('button').map((b) => b.textContent);
-    expect(rows[0]).toContain('Core texts');
-    expect(rows[0]).toContain('Study / Dependent origination');
-    expect(rows[1]).toContain('Favorites');
-    expect(rows.slice(2)).toEqual(['Study', 'Dependent origination', 'Core texts', 'Favorites', 'To re-read']);
-  });
-
-  it('keeps a pinned row in place after it is unchecked', () => {
-    const lists = [
-      { id: 'l1', label: 'Favorites', parentId: null, kind: 'list', items: ['dn1'] },
-      { id: 'l2', label: 'To re-read', parentId: null, kind: 'list', items: [] },
-    ];
-    mockUserData({ lists, membership: { dn1: ['l1'] } });
-
-    const { rerender } = render(<ListMembershipPicker suttaId="dn1" theme={theme} />);
-    expect(screen.getAllByText('Favorites')).toHaveLength(2);
-
-    // Unchecking it. The section is filled from membership as it stood when the picker opened, so
-    // the row stays put (unchecked) rather than vanishing from under the pointer — otherwise a
-    // mistaken tap would leave nothing to tap again.
-    mockUserData({ lists, membership: {} });
-    rerender(<ListMembershipPicker suttaId="dn1" theme={theme} />);
-    expect(screen.getAllByText('Favorites')).toHaveLength(2);
-  });
-
-  it('shows no pinned section when the sutta is in no list', () => {
-    mockUserData({
-      lists: [{ id: 'l1', label: 'Favorites', parentId: null, kind: 'list', items: [] }],
-      membership: {},
-    });
-
-    render(<ListMembershipPicker suttaId="dn1" theme={theme} />);
-    expect(screen.getAllByText('Favorites')).toHaveLength(1);
+    expect(rows).toEqual(['Study', 'Dependent origination', 'Core texts', 'Favorites', 'To re-read']);
   });
 });
