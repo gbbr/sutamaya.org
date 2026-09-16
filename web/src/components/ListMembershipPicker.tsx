@@ -22,14 +22,12 @@ interface ListMembershipPickerProps {
 type Row =
   // Browse mode only, and never selectable: activating a group expands or collapses its subtree.
   | { type: 'group'; option: ListPathOption }
-  // `pinned` marks the copy in the checked-only section at the top; the list also appears in its
-  // place in the tree below, and both rows toggle the one membership.
-  | { type: 'list'; option: ListPathOption; pinned?: boolean }
+  | { type: 'list'; option: ListPathOption }
   | { type: 'create'; name: string };
 
 // The "add to lists" picker, with two modes in one popover as a label picker conventionally has:
-//   empty input – browse: the lists this sutta is already in, flat at the top, then the whole tree
-//                 indented by depth, its group rows expanding and collapsing
+//   empty input – browse: the whole tree, indented by depth, its group rows expanding and
+//                 collapsing; a checkmark marks each list the sutta is already in
 //   any input   – search: a flat ranked list of lists only, each naming its parent path, and a
 //                 "Create list" row at the end
 //
@@ -38,7 +36,7 @@ type Row =
 // unselectable, and only a top-level list can be created here — a group, or a list inside one, is
 // the Library tree's job.
 export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose }: ListMembershipPickerProps) {
-  const { ready, lists, membership, toggleMembership, addToList, createList } = useUserData();
+  const { lists, membership, toggleMembership, addToList, createList } = useUserData();
   const [draft, setDraft] = useState('');
   const [activeIndex, setActiveIndex] = useState(0);
   // Which groups are collapsed. Empty on every open, since a collapsed group could hide a list
@@ -55,13 +53,6 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
 
   // The real lists this sutta is in; an auto-list has nothing to add or remove against.
   const suttaListIds = (membership[suttaId] || []).filter((id) => !AUTO_LIST_IDS.has(id));
-  // Membership as it stood when the picker opened, which is what the pinned section shows —
-  // following live membership would make a row vanish from under the pointer as it was unchecked,
-  // with no way back to it. Only the checkmarks follow. Snapshotted during render, so the first
-  // paint carries the section, and keyed so a picker opened before the mirror loads doesn't freeze
-  // an empty set.
-  const [openMembership, setOpenMembership] = useState<{ key: string | null; ids: Set<string> }>({ key: null, ids: new Set() });
-  if (ready && openMembership.key !== suttaId) setOpenMembership({ key: suttaId, ids: new Set(suttaListIds) });
   const flatAll = useMemo(() => flattenListTree(lists), [lists]);
   const query = draft.trim();
 
@@ -84,9 +75,6 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
 
   const rows: Row[] = useMemo(() => {
     if (!query) {
-      // The checked lists, repeated flat at the top in tree order, so they are among the first
-      // rows rather than wherever their group falls.
-      const pinned = flatAll.filter((f) => f.list.kind !== 'group' && openMembership.ids.has(f.list.id));
       // Everything under a collapsed group. `flatAll` is parent-then-children, so one forward pass
       // carries a collapse all the way down a subtree.
       const hidden = new Set<string>();
@@ -94,12 +82,9 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
         const parentId = f.list.parentId;
         if (parentId && (collapsed.has(parentId) || hidden.has(parentId))) hidden.add(f.list.id);
       }
-      return [
-        ...pinned.map((option) => ({ type: 'list' as const, option, pinned: true })),
-        ...flatAll
-          .filter((option) => !hidden.has(option.list.id))
-          .map((option) => ({ type: option.list.kind === 'group' ? ('group' as const) : ('list' as const), option })),
-      ];
+      return flatAll
+        .filter((option) => !hidden.has(option.list.id))
+        .map((option) => ({ type: option.list.kind === 'group' ? ('group' as const) : ('list' as const), option }));
     }
     // Matched against the whole breadcrumb, so a group's name still finds the lists inside it, and
     // folded with the same searchKey the library's search uses, so "a" finds "ā" here too.
@@ -119,7 +104,7 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       ...matches.map((option) => ({ type: 'list' as const, option })),
       { type: 'create' as const, name: query.slice(0, LIST_NAME_MAX_LENGTH) },
     ];
-  }, [query, flatAll, openMembership.ids, collapsed]);
+  }, [query, flatAll, collapsed]);
 
   useEffect(() => {
     setActiveIndex(0);
@@ -128,11 +113,6 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
   // The cursor's row, clamped rather than stored back, so collapsing a group out from under it
   // lands on the last row rather than on nothing.
   const activeIdx = rows.length ? Math.min(activeIndex, rows.length - 1) : -1;
-
-  // The row the section rule is drawn above, so the cursor can't land on it. -1 with nothing
-  // pinned, and in search mode, which has no sections.
-  const firstTreeRow = rows.findIndex((r) => r.type !== 'list' || !r.pinned);
-  const dividerAt = firstTreeRow > 0 ? firstTreeRow : -1;
 
   function step(delta: number) {
     setActiveIndex(Math.min(rows.length - 1, Math.max(0, activeIdx + delta)));
@@ -161,9 +141,6 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
     try {
       const list = await createList(row.name, null, 'list');
       await addToList(suttaId, list);
-      // Rebuilds the pinned section, so the new list joins it. The one action that does, and safe
-      // here, the view going back from search to browse with no row under the pointer.
-      setOpenMembership({ key: null, ids: new Set() });
     } catch (e) {
       // Both write to the local mirror and can't fail on the network, so only something
       // unexpected lands here; the guard still has to be released.
@@ -228,7 +205,6 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
       <div className="sc min-h-0 flex-1 touch-pan-y">
         {rows.map((row, idx) => {
           const active = idx === activeIdx;
-          const sep = idx === dividerAt ? <div className="mx-2 mb-1.5 mt-1" style={{ borderTop: `1px solid ${theme.rule}` }} /> : null;
           if (row.type === 'create') {
             return (
               <button
@@ -247,75 +223,71 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
           if (row.type === 'group') {
             const isCollapsed = collapsed.has(list.id);
             return (
-              <Fragment key={list.id}>
-                {sep}
-                <button
-                  className="flex w-full items-center gap-2 py-[8px] pr-2 text-left text-ui-md"
-                  style={{ ...rowStyle(active), paddingLeft: 8 + Math.min(depth, MAX_INDENT_DEPTH) * 14 }}
-                  aria-expanded={!isCollapsed}
-                  onMouseEnter={() => setActiveIndex(idx)}
-                  onClick={() => activateRow(row)}
-                >
-                  {/* Down while the group's lists show, right while they are hidden, as the tree
-                      pane's own groups do. */}
-                  <ChevronDown
-                    size={17}
-                    strokeWidth={2}
-                    className="flex-none opacity-50 transition-transform"
-                    style={{ color: theme.fg, transform: isCollapsed ? 'rotate(-90deg)' : undefined }}
-                  />
-                  <span className="min-w-0 truncate" style={{ opacity: 0.65 }}>
-                    {list.label}
-                  </span>
-                </button>
-              </Fragment>
+              <button
+                key={list.id}
+                className="flex w-full items-center gap-2 py-[8px] pr-2 text-left text-ui-md"
+                style={{ ...rowStyle(active), paddingLeft: 8 + Math.min(depth, MAX_INDENT_DEPTH) * 14 }}
+                aria-expanded={!isCollapsed}
+                onMouseEnter={() => setActiveIndex(idx)}
+                onClick={() => activateRow(row)}
+              >
+                {/* Down while the group's lists show, right while they are hidden, as the tree
+                    pane's own groups do. */}
+                <ChevronDown
+                  size={17}
+                  strokeWidth={2}
+                  className="flex-none opacity-50 transition-transform"
+                  style={{ color: theme.fg, transform: isCollapsed ? 'rotate(-90deg)' : undefined }}
+                />
+                <span className="min-w-0 truncate" style={{ opacity: 0.65 }}>
+                  {list.label}
+                </span>
+              </button>
             );
           }
           const checked = suttaListIds.includes(list.id);
           const parentPath = parentPathById.get(list.id) ?? '';
-          // True for a row lifted out of its subtree — a search result, or a pinned copy — which
-          // is drawn flat and labelled with its path instead.
-          const flat = Boolean(query) || Boolean(row.pinned);
+          // True in search mode, where a result is lifted out of its subtree: it is drawn flat and
+          // labelled with its path instead.
+          const flat = Boolean(query);
           return (
-            <Fragment key={row.pinned ? `pin:${list.id}` : list.id}>
-              {sep}
-              <div
-                className="flex items-center"
-                style={{ ...rowStyle(active), paddingLeft: flat ? 8 : 8 + Math.min(depth, MAX_INDENT_DEPTH) * 14 }}
-                onMouseEnter={() => setActiveIndex(idx)}
-              >
-                <button className="flex flex-1 min-w-0 items-center gap-2 py-[8px] pr-2 text-left" onClick={() => activateRow(row)}>
-                  {/* The checkbox: filled in the accent when checked, as every other selected
-                      state in the panel is, and outlined in `dim` when not. */}
+            <div
+              key={list.id}
+              className="flex items-center"
+              style={{ ...rowStyle(active), paddingLeft: flat ? 8 : 8 + Math.min(depth, MAX_INDENT_DEPTH) * 14 }}
+              onMouseEnter={() => setActiveIndex(idx)}
+            >
+              <button className="flex flex-1 min-w-0 items-center gap-2 py-[8px] pr-2 text-left" onClick={() => activateRow(row)}>
+                {/* The checkbox: filled in the accent when checked, as every other selected
+                    state in the panel is, and outlined in `dim` when not. */}
+                <span
+                  className="flex-none w-[16px] h-[16px] rounded-[5px] flex items-center justify-center"
+                  style={{
+                    border: `1px solid ${checked ? theme.pali : theme.dim}`,
+                    background: checked ? theme.pali : 'transparent',
+                  }}
+                >
+                  {checked && <Check size={14} strokeWidth={3} color={theme.bg} />}
+                </span>
+                <MatchedLabel label={list.label} query={query} />
+                {/* A flat row names its ancestors here instead of being indented under them.
+                    `direction: rtl` puts the ellipsis at the *start*, so a long path loses its
+                    root rather than the parent nearest this list; the leading LRM keeps a path
+                    starting with a digit or punctuation from being reordered by that.
+                    `max-w-[45%]`, with the label taking the rest (see MatchedLabel's `flex-1`),
+                    is what keeps the two apart when both are long: the name truncates against a
+                    path that can never claim more than its share, rather than the pair shrinking
+                    each other into a few characters apiece. */}
+                {flat && parentPath && (
                   <span
-                    className="flex-none w-[16px] h-[16px] rounded-[5px] flex items-center justify-center"
-                    style={{
-                      border: `1px solid ${checked ? theme.pali : theme.dim}`,
-                      background: checked ? theme.pali : 'transparent',
-                    }}
+                    className="flex-none max-w-[45%] truncate font-sans text-ui-xs opacity-50"
+                    style={{ direction: 'rtl', textAlign: 'right' }}
                   >
-                    {checked && <Check size={14} strokeWidth={3} color={theme.bg} />}
+                    {'‎' + parentPath}
                   </span>
-                  <MatchedLabel label={list.label} query={query} />
-                  {/* A flat row names its ancestors here instead of being indented under them.
-                      `direction: rtl` puts the ellipsis at the *start*, so a long path loses its
-                      root rather than the parent nearest this list; the leading LRM keeps a path
-                      starting with a digit or punctuation from being reordered by that.
-                      `max-w-[45%]`, with the label taking the rest (see MatchedLabel's `flex-1`),
-                      is what keeps the two apart when both are long: the name truncates against a
-                      path that can never claim more than its share, rather than the pair shrinking
-                      each other into a few characters apiece. */}
-                  {flat && parentPath && (
-                    <span
-                      className="flex-none max-w-[45%] truncate font-sans text-ui-xs opacity-50"
-                      style={{ direction: 'rtl', textAlign: 'right' }}
-                    >
-                      {'‎' + parentPath}
-                    </span>
-                  )}
-                </button>
-              </div>
-            </Fragment>
+                )}
+              </button>
+            </div>
           );
         })}
       </div>
