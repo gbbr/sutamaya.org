@@ -246,6 +246,7 @@ export function ReaderMenuPanel({
         color: theme.fg,
         padding: '18px 20px 22px',
         paddingTop: 'calc(18px + var(--safe-top))',
+        paddingBottom: 'calc(22px + var(--safe-bottom))',
       };
     }
     // Desktop, every tab: a fixed-width drawer down the right edge, separated from the reading
