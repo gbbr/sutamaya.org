@@ -473,7 +473,10 @@ export function SettingsPage() {
       className="sc h-full bg-paper px-5 pt-10"
       style={{ paddingTop: mobile ? MOBILE_TOP_INSET : 'calc(2.5rem + var(--safe-top))' }}
     >
-      <div className="w-full max-w-[540px] pb-10 mx-auto">
+      <div
+        className="w-full max-w-[540px] mx-auto"
+        style={{ paddingBottom: 'calc(2.5rem + var(--safe-bottom))' }}
+      >
         {/* Back to wherever the reader was, via '/' rather than browser history, which a relaunch
             or a hard refresh onto /settings would leave empty. */}
         <div className="flex items-center gap-3.5 mb-8">

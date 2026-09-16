@@ -528,7 +528,10 @@ export function HelpPage() {
       className="sc h-full bg-paper px-5 pt-10"
       style={{ paddingTop: mobile ? MOBILE_TOP_INSET : 'calc(2.5rem + var(--safe-top))' }}
     >
-      <div className="w-full max-w-[640px] pb-10 mx-auto">
+      <div
+        className="w-full max-w-[640px] mx-auto"
+        style={{ paddingBottom: 'calc(2.5rem + var(--safe-bottom))' }}
+      >
         {/* The back chip and the page's title on one line, the header shape every other screen
             has: the same control in the same place, level with the library's own header. */}
         <div className="flex items-center gap-3.5 mb-7">

@@ -397,11 +397,14 @@ export function ListPane({
         ref={scrollRef}
         className="sc flex-1"
         aria-busy={updating}
-        style={
-          dragOrder
+        style={{
+          // The rows run to the pane's own edge, so the safe-area inset is the whole bottom
+          // padding: nothing on desktop, the home indicator or navigation bar on a phone.
+          paddingBottom: 'var(--safe-bottom)',
+          ...(dragOrder
             ? { userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none' }
-            : undefined
-        }
+            : null),
+        }}
       >
         {/* Matching lists, above the results. This pane draws the block on desktop; TreePane
             draws it on mobile. */}
