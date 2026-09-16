@@ -590,16 +590,12 @@ export function SettingsPage() {
                   Your lists, notes and highlights are saved on this device. Sign in to keep them and sync across
                   devices.
                 </div>
-                {/* The general warning, shown everywhere but an iOS browser tab, which gets the
-                    concrete one below instead. */}
-                {!isIosBrowserTab() && hasLocalWork && (
+                {/* The browser warning, except on an iOS browser tab, which gets the one below
+                    instead. */}
+                {!isNativeApp() && !isIosBrowserTab() && hasLocalWork && (
                   <div className="flex items-start gap-1.5 font-sans text-ui-base text-warning-text mb-3">
                     <AlertTriangle size={16} strokeWidth={1.75} className="flex-none mt-[3px]" />
-                    <span>
-                      {isNativeApp()
-                        ? 'Without signing in, you risk losing your changes if you delete the app or lose this device.'
-                        : "Without signing in, you risk losing your changes when the browser clears this website's data."}
-                    </span>
+                    <span>Without signing in, you risk losing your changes when the browser clears this website's data.</span>
                   </div>
                 )}
                 {/* The iOS browser-tab warning, which states WebKit's own eviction policy and so

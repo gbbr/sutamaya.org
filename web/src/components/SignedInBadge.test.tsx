@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -8,12 +8,22 @@ vi.mock('react-router', async (importOriginal) => ({
   useNavigate: () => navigate,
 }));
 
+vi.mock('../lib/platform', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('../lib/platform')>()),
+  isNativeApp: vi.fn(() => false),
+}));
+
 import { SignedInBadge } from './SignedInBadge';
+import { isNativeApp } from '../lib/platform';
 import type { User } from '../lib/types';
 
 const user: User = { id: 'u1', email: 'reader@example.com', picture: null };
 
 describe('SignedInBadge', () => {
+  beforeEach(() => {
+    vi.mocked(isNativeApp).mockReturnValue(false);
+  });
+
   it('signed in: shows the initial, navigates to /settings on click', async () => {
     render(<SignedInBadge user={user} size={26} />);
     const badge = screen.getByLabelText('Signed in as reader@example.com');
@@ -47,6 +57,13 @@ describe('SignedInBadge', () => {
   it('signed out and at risk: marks the badge with a dot', () => {
     const { container } = render(<SignedInBadge user={null} size={26} atRisk />);
     expect(container.querySelector('[data-component="SignedInBadgeDot"]')).toBeInTheDocument();
+  });
+
+  it('signed out and at risk in the native app: carries no mark', () => {
+    vi.mocked(isNativeApp).mockReturnValue(true);
+    const { container } = render(<SignedInBadge user={null} size={26} atRisk />);
+    expect(container.querySelector('[data-component="SignedInBadgeDot"]')).not.toBeInTheDocument();
+    expect(container.querySelector('[data-component="SignedInBadge"]')).toHaveAttribute('aria-label', 'Settings');
   });
 
   // The dot is about local work with no account behind it, so a signed-in badge never carries one
