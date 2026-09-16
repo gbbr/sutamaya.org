@@ -1,19 +1,25 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render, waitFor } from '@testing-library/react';
 import { useCorpusSearch } from './useCorpusSearch';
-import type { Corpus } from '../lib/types';
+import type { Corpus, ListDef } from '../lib/types';
 
 // The text search's state, so a test can put the load mid-flight.
 const state = vi.hoisted(() => ({ status: 'ready' as const as string }));
 
 // A loaded text search that answers with the metadata hits plus one sutta only the text reaches,
-// so a complete answer is visibly different from the metadata half on its own.
+// so a complete answer is visibly different from the metadata half on its own. Every hit comes back
+// with a passage, as the worker cuts one for every row it can.
 vi.mock('../lib/search/textClient', () => ({
   beginTextSearchLoad: vi.fn(),
   subscribeTextSearch: () => () => {},
   textSearchStatus: () => state.status,
   searchText: (_query: string, meta: Array<{ id: string; rank: number }>) =>
-    Promise.resolve([...meta.map(({ id, rank }) => ({ id, rank })), { id: 'dn9', rank: 1 }]),
+    Promise.resolve(
+      [...meta.map(({ id, rank }) => ({ id, rank })), { id: 'dn9', rank: 4 }].map((hit) => ({
+        ...hit,
+        snippet: { text: 'a paragraph of this sutta', query: 'prime', segments: [7, 9] as [number, number] },
+      }))
+    ),
 }));
 
 const corpus: Corpus = {
@@ -36,9 +42,23 @@ type Result = ReturnType<typeof useCorpusSearch>;
 const noNotes = {};
 const noLists: never[] = [];
 const noHighlights = {};
+// A list whose own name answers the query, holding a sutta nothing else about it matches.
+const listNamedPrime: ListDef[] = [
+  { id: 'l1', label: 'Prime', parentId: null, kind: 'list', items: ['dn2'] },
+];
 
-function Probe({ query, onRender }: { query: string; onRender: (result: Result) => void }) {
-  onRender(useCorpusSearch(corpus, query, noNotes, noLists, noHighlights));
+function Probe({
+  query,
+  readingId,
+  lists = noLists,
+  onRender,
+}: {
+  query: string;
+  readingId?: string;
+  lists?: ListDef[];
+  onRender: (result: Result) => void;
+}) {
+  onRender(useCorpusSearch(corpus, query, noNotes, lists, noHighlights, readingId));
   return null;
 }
 
@@ -138,6 +158,42 @@ describe('a search that has already been answered', () => {
     render(<Probe query="perception" onRender={(r) => other.push(r)} />);
     expect(other[0].hitsSettled).toBe(false);
     await waitFor(() => expect(other.at(-1)!.hitsSettled).toBe(true));
+  });
+});
+
+describe('where a result opens', () => {
+  it('drops the passage from a row its own title answered, which opens the sutta at the top', async () => {
+    state.status = 'ready';
+    const seen: Result[] = [];
+    const view = render(<Probe query="prime" onRender={(r) => seen.push(r)} />);
+    await waitFor(() => expect(seen.at(-1)!.hitsSettled).toBe(true));
+
+    const hits = seen.at(-1)!.hits;
+    expect(hits.find((hit) => hit.id === 'dn1')!.snippet).toBeUndefined();
+    // The sutta the text alone reached has nothing else to show for itself.
+    expect(hits.find((hit) => hit.id === 'dn9')!.snippet).toBeDefined();
+    view.unmount();
+  });
+
+  it('keeps it on a sutta reached through a list’s name, which the row says nothing about', async () => {
+    state.status = 'ready';
+    const seen: Result[] = [];
+    const view = render(<Probe query="prime" lists={listNamedPrime} onRender={(r) => seen.push(r)} />);
+    await waitFor(() => expect(seen.at(-1)!.hitsSettled).toBe(true));
+
+    // Without the passage the library drops this row altogether, the matched list standing for it.
+    expect(seen.at(-1)!.hits.find((hit) => hit.id === 'dn2')!.snippet).toBeDefined();
+    view.unmount();
+  });
+
+  it('keeps it on the sutta being read, whose row is the reader’s find on the page', async () => {
+    state.status = 'ready';
+    const seen: Result[] = [];
+    const view = render(<Probe query="prime" readingId="dn1" onRender={(r) => seen.push(r)} />);
+    await waitFor(() => expect(seen.at(-1)!.hitsSettled).toBe(true));
+
+    expect(seen.at(-1)!.hits.find((hit) => hit.id === 'dn1')!.snippet).toBeDefined();
+    view.unmount();
   });
 });
 

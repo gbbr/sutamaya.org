@@ -109,11 +109,16 @@ Settings' offline download fetches the search text too, so a device that ran it 
 
 ## Snippets
 
-A hit found in the text shows the paragraph it was found in, windowed around the match and marked
-with the words that matched — including, where an expansion found it, the expansion's words. A Pali
-hit shows the Pali with that paragraph's English beneath. Where the reader's note or the group
-description also matched, that line leads the row and the paragraph follows. Opening a row with a
-snippet takes the Reader straight to that passage.
+A hit the query reached through the text shows the paragraph it was found in, windowed around the
+match and marked with the words that matched — including, where an expansion found it, the
+expansion's words. A Pali hit shows the Pali with that paragraph's English beneath. Opening such a
+row takes the Reader straight to that passage.
+
+A row shows what it opens. Where the query reached a sutta through the row's own lines — its number,
+title, Pali title, description or the reader's note — that line is the answer: the row shows no
+paragraph and opens the sutta at the top. A sutta reached only through the name of a list holding it
+says nothing about itself, so it keeps its paragraph. So does the sutta being read, in the Reader's
+own search, whose row is a find on the page in hand.
 
 ## Golden queries
 

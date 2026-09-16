@@ -28,16 +28,15 @@ export interface SearchHit {
   // Whether the reader has filed, noted or highlighted it — the tie-break within a bucket.
   saved: boolean;
   // Which line of the row carries the query, where something written *about* the sutta does: the
-  // reader's own note, or the group description. That line leads the row and the snippet follows
-  // it, so a hit ranked on a note doesn't explain itself with a paragraph holding one of its words.
-  // Unset where nothing the row writes matched — a title or list-name hit, or a text-only one.
+  // reader's own note, or the group description. That line leads the row and is what answers for
+  // it. Unset where nothing the row writes matched — a title or list-name hit, or a text-only one.
   //
   // `query` is what the line is marked with, which is not always what was typed: where the
   // expansion table is what matched, it carries both, as `snippet.query` does.
   explains?: { line: 'note' | 'blurb'; query: string };
   // The paragraph of sutta text the query was found in, its English where that paragraph was Pali,
   // and the first and last segment it was drawn from. Filled in by lib/search/text.ts for the hits
-  // that render; absent on a metadata-only hit.
+  // that render, and kept only on the rows that open at it (opensAtPassage).
   snippet?: { text: string; under?: string; query: string; segments: [number, number] };
 }
 
@@ -139,6 +138,15 @@ const RANK_PHRASE_IN_TITLE = 0;
 const RANK_WORDS_IN_TITLE = 1;
 const RANK_PHRASE = 2;
 const RANK_WORDS = 3;
+
+// Whether a row shows the passage the query was found in and opens the sutta there. A hit reached
+// through the row's own lines — its number, title, Pali title, summary, the reader's note — answers
+// with the sutta itself and opens at the top instead; one reached through the name of a list, or
+// through the text alone, says nothing about itself and the passage is its answer.
+// See docs/search.md's "Snippets".
+export function opensAtPassage(hit: SearchHit): boolean {
+  return hit.rank > RANK_WORDS || !!hit.listOnly;
+}
 
 // Returns every sutta matching `query`, best first.
 export function searchCorpus(
