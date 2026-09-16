@@ -758,7 +758,11 @@ export function TreePane({
         ref={scrollRef}
         className="sc flex-1 pt-3"
         aria-busy={updating}
-        style={{ paddingBottom: 'calc(1.5rem + var(--safe-bottom))' }}
+        style={{
+          paddingBottom: 'calc(1.5rem + var(--safe-bottom))',
+          // Keeps a row scrolled into view clear of the bottom safe-area inset.
+          scrollPaddingBottom: 'var(--safe-bottom)',
+        }}
       >
         {searching ? (
           <div>
