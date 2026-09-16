@@ -536,7 +536,12 @@ export function HelpPage() {
       ref={scrollRef}
       data-component="HelpPage"
       className="sc h-full bg-paper px-5 pt-10"
-      style={{ paddingTop: mobile ? MOBILE_TOP_INSET : 'calc(2.5rem + var(--safe-top))' }}
+      style={{
+        paddingTop: mobile ? MOBILE_TOP_INSET : 'calc(2.5rem + var(--safe-top))',
+        // Keeps a section scrolled into view clear of the safe-area insets.
+        scrollPaddingTop: 'var(--safe-top)',
+        scrollPaddingBottom: 'var(--safe-bottom)',
+      }}
     >
       <div
         className="w-full max-w-[640px] mx-auto"

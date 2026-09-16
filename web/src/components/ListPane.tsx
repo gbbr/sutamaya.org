@@ -401,6 +401,8 @@ export function ListPane({
           // The rows run to the pane's own edge, so the safe-area inset is the whole bottom
           // padding: nothing on desktop, the home indicator or navigation bar on a phone.
           paddingBottom: 'var(--safe-bottom)',
+          // Keeps a row scrolled into view clear of the bottom safe-area inset.
+          scrollPaddingBottom: 'var(--safe-bottom)',
           ...(dragOrder
             ? { userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none' }
             : null),
