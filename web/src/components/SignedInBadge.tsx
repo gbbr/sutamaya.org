@@ -3,16 +3,19 @@ import { useNavigate } from 'react-router';
 import { UserRound } from 'lucide-react';
 import { isIosBrowserTab } from '../lib/localAccount';
 import { transitionPage } from '../lib/motion';
+import { isNativeApp } from '../lib/platform';
 import type { User } from '../lib/types';
 
 // The account entry point in TreePane's header, signed in or out; both open Settings. Sized by the
 // caller, so mobile and desktop each match their surrounding chrome. `atRisk` adds a dot to the
-// signed-out badge — the standing state of data only this device holds, so unlike the banner it
-// can't be dismissed and stays until a sign-in resolves it.
+// signed-out badge outside the native app — the standing state of data only this device holds, so
+// unlike the banner it can't be dismissed and stays until a sign-in resolves it.
 export function SignedInBadge({ user, size, atRisk = false }: { user: User | null; size: number; atRisk?: boolean }) {
   const navigate = useNavigate();
   const openSettings = () => transitionPage('push', () => navigate('/settings', { flushSync: true }));
   const dim = { width: size, height: size };
+  // Whether the signed-out badge shows the at-risk dot and label.
+  const showAtRisk = atRisk && !isNativeApp();
   // Whether the avatar has loaded; until it has, and if it never does — the URL is unreachable
   // offline — the initials show rather than the browser's broken-image glyph.
   const [loaded, setLoaded] = useState(false);
@@ -45,12 +48,12 @@ export function SignedInBadge({ user, size, atRisk = false }: { user: User | nul
       data-component="SignedInBadge"
       className="relative flex-none rounded-full border border-ink/25 flex items-center justify-center text-ink-4 hover:bg-ink/[.06] hover:text-ink-2"
       style={dim}
-      aria-label={atRisk ? 'Settings — your notes are saved only on this device' : 'Settings'}
-      title={atRisk ? 'Settings — your notes are saved only on this device' : 'Settings'}
+      aria-label={showAtRisk ? 'Settings — your notes are saved only on this device' : 'Settings'}
+      title={showAtRisk ? 'Settings — your notes are saved only on this device' : 'Settings'}
       onClick={openSettings}
     >
       <UserRound size={Math.round(size * 0.55)} strokeWidth={1.75} />
-      {atRisk && (
+      {showAtRisk && (
         // The at-risk dot, bordered rather than ringed in a background colour, since this badge
         // sits on two different grounds. Amber, and red on an iOS browser tab, where the data is
         // on a deletion timer rather than merely unsynced — the pair the banner also uses.

@@ -23,7 +23,7 @@ import {
 //
 // Exactly one shows, in this order:
 //   re-auth       – the session lapsed; nothing else says so and nothing syncs until it is fixed
-//   keep safe     – signed out, with local work now worth losing
+//   keep safe     – in a browser, signed out, with local work now worth losing
 //   updated text  – a bulk-downloaded corpus has fallen behind this build
 //   download      – the corpus isn't cached for offline reading yet
 //
@@ -137,8 +137,10 @@ export function HeaderBanner() {
   const showOfflineNudge = downloadNudgeEligible && !nudgeDismissed && !!offlineCachedStatus && !fullyCached;
   const showUpdateNudge = textStale && fullyCached && !!corpus && updateDismissedVersion !== corpus.dataVersion;
 
-  // Counted off the derived view rather than the mirror, so it means what the reader sees.
-  const showKeepSafe = !isSignedIn && hasLocalWorkWorthKeeping(lists, notes, highlights) && !keepSafeDismissed;
+  // Counted off the derived view rather than the mirror, so it means what the reader sees. Never in
+  // the native app, which leaves sign-in to Settings.
+  const showKeepSafe =
+    !isNativeApp() && !isSignedIn && hasLocalWorkWorthKeeping(lists, notes, highlights) && !keepSafeDismissed;
 
   if (needsReauth) {
     // The one sync state worth interrupting for: the account badge still shows a signed-in user
@@ -156,8 +158,9 @@ export function HeaderBanner() {
   }
 
   if (showKeepSafe) {
-    // Signed out, with something to lose. On an iOS browser tab that is literal — WebKit evicts a
-    // site's storage after about a week away — so that case takes the red tone.
+    // Signed out, with something to lose, as one of two warnings:
+    //   iOS browser tab – red: WebKit evicts a site's storage after about a week away
+    //   other browsers  – amber
     const ios = isIosBrowserTab();
     return (
       <Banner

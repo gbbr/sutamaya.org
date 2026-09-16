@@ -63,7 +63,7 @@ import {
   dismissedOfflineUpdateVersion,
   dismissOfflineUpdate,
 } from '../lib/pwaNudge';
-import { isStandaloneDisplay } from '../lib/platform';
+import { isNativeApp, isStandaloneDisplay } from '../lib/platform';
 import { estimateOfflineStatus, isOfflineTextStale } from '../lib/offline';
 import { dismissKeepSafe, isIosBrowserTab, isKeepSafeDismissed } from '../lib/localAccount';
 import { TreePane } from './TreePane';
@@ -268,6 +268,7 @@ beforeEach(() => {
   // Same idea for the deferred-sign-in banner: signed in by default (see the useAuth stub above),
   // so it can't show unless a test signs the user out.
   vi.mocked(isIosBrowserTab).mockReturnValue(false);
+  vi.mocked(isNativeApp).mockReturnValue(false);
   vi.mocked(isKeepSafeDismissed).mockReturnValue(false);
 });
 
@@ -999,6 +1000,13 @@ describe('deferred sign-in', () => {
     renderHarness();
     const banner = screen.getByText(iosText).closest('[data-component="HeaderBanner"]');
     expect(banner).toHaveClass('bg-danger-text/[.09]');
+  });
+
+  it('never shows in the native app', () => {
+    vi.mocked(isNativeApp).mockReturnValue(true);
+    signedOut({ notes: { dn1: 'a thought' } });
+    renderHarness();
+    expect(document.querySelector('[data-component="HeaderBanner"]')).not.toBeInTheDocument();
   });
 
   it('dismissing hides it and records the local id it was dismissed for', async () => {
