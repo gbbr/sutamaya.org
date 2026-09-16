@@ -7,6 +7,7 @@ import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { isTypingTarget } from '../lib/shortcuts';
 import { MOBILE_TOP_INSET } from '../lib/layout';
 import { transitionPage } from '../lib/motion';
+import { isNativeApp } from '../lib/platform';
 import dictionaryShot from '../assets/help/dictionary-mobile.webp';
 import libraryShot from '../assets/help/library-mobile.webp';
 import libraryItemsShot from '../assets/help/library-items-mobile.webp';
@@ -277,9 +278,13 @@ const SECTIONS: HelpSection[] = [
   },
   {
     title: 'Settings & Offline',
-    lead: 'Everything you read is kept on this device first, so the app works with no connection. ' +
-      'For total offline access beyond what you\'ve already visited, download all the suttas.',
-    shots: [
+    lead: isNativeApp()
+      ? 'All suttas, the dictionary and search are built into the app, so it works with no connection. ' +
+        'Sign in with Google or an emailed code to keep your lists, notes and highlights and sync them across devices.'
+      : 'Everything you read is kept on this device first, so the app works with no connection. ' +
+        'For total offline access beyond what you\'ve already visited, download all the suttas.',
+    // Web only, since both shots show the download card the native app doesn't have.
+    shots: isNativeApp() ? [] : [
       {
         src: offlineShot,
         name: 'offline-mobile.webp',
@@ -309,8 +314,10 @@ const SECTIONS: HelpSection[] = [
     ],
     tips: [
       'Signing in is never required — everything works signed out.',
-      '"Download all content" fetches the whole canon, so even a sutta you have never opened is ' +
-        'there with no connection.',
+      ...(isNativeApp() ? [] : [
+        '"Download all content" fetches the whole canon, so even a sutta you have never opened is ' +
+          'there with no connection.',
+      ]),
     ],
   },
 ];
@@ -387,7 +394,10 @@ const CONTACT_URL = 'https://github.com/gbbr/sutamaya.org/issues/new';
 
 // The contents list, in page order: each group's label over the titles it links to.
 const CONTENTS: Array<{ label: string; titles: string[] }> = [
-  { label: 'Using the app', titles: [...SECTIONS.map((section) => section.title), INSTALL_TITLE] },
+  {
+    label: 'Using the app',
+    titles: [...SECTIONS.map((section) => section.title), ...(isNativeApp() ? [] : [INSTALL_TITLE])],
+  },
   { label: 'About', titles: [TRANSLATION_TITLE, DICTIONARY_TITLE, CONTACT_TITLE] },
 ];
 
@@ -539,8 +549,10 @@ export function HelpPage() {
           <div className="min-w-0 text-ui-3xl font-semibold tracking-[-.01em]">Help</div>
         </div>
         <p className="font-serif text-ui-lg leading-[1.55] text-ink-2 mb-4">
-          A tour of the app in pictures. Nothing here needs an account, and nothing you've already visited needs a connection.
-          For complete offline access, download all content from the Settings page.
+          {isNativeApp()
+            ? 'A tour of the app in pictures. Nothing here needs an account, and all suttas, the dictionary and search work offline.'
+            : "A tour of the app in pictures. Nothing here needs an account, and nothing you've already visited needs a connection. " +
+              'For complete offline access, download all content from the Settings page.'}
         </p>
         {/* The contents list: a micro-label over an indented column of links per group, the shape
             the lists pane uses for MY LISTS and AUTOMATIC. Scrolled with scrollIntoView rather than
@@ -581,11 +593,13 @@ export function HelpPage() {
                 {section.title}
               </div>
               <p className="font-serif text-ui-lg leading-[1.55] text-ink-2 mb-4">{section.lead}</p>
-              <div className="flex flex-wrap gap-x-5 gap-y-7">
-                {columns.map(({ shot, startIndex }) => (
-                  <ShotColumn key={shot.name} shot={shot} startIndex={startIndex} showTitle={columns.length > 1} />
-                ))}
-              </div>
+              {columns.length > 0 && (
+                <div className="flex flex-wrap gap-x-5 gap-y-7">
+                  {columns.map(({ shot, startIndex }) => (
+                    <ShotColumn key={shot.name} shot={shot} startIndex={startIndex} showTitle={columns.length > 1} />
+                  ))}
+                </div>
+              )}
               {section.tips && <TipCard tips={section.tips} />}
               <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />
             </section>
@@ -594,28 +608,30 @@ export function HelpPage() {
 
         {/* The install section: the same section furniture as the rest, around one plain numbered
             list per platform rather than a picture and its legend. */}
-        <section id={anchorId(INSTALL_TITLE)} className="mb-10 scroll-mt-6">
-          <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">
-            {INSTALL_TITLE}
-          </div>
-          <p className="font-serif text-ui-lg leading-[1.55] text-ink-2 mb-4">{INSTALL_LEAD}</p>
-          <div className="flex flex-wrap gap-x-5 gap-y-7">
-            {INSTALL_PLATFORMS.map((platform) => (
-              <div key={platform.title} className="flex-1 min-w-[190px]">
-                <div className="font-sans text-ui-sm font-semibold text-ink-2">{platform.title}</div>
-                <ol className="list-decimal mt-2 pl-[18px] flex flex-col gap-2 marker:font-sans marker:text-ui-sm marker:text-ink-4 marker:tabular-nums">
-                  {platform.steps.map((step) => (
-                    <li key={step} className="font-sans text-ui-base leading-[1.45] text-ink-2 pl-1">
-                      {step}
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            ))}
-          </div>
-          <TipCard tips={INSTALL_TIPS} />
-          <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />
-        </section>
+        {!isNativeApp() && (
+          <section id={anchorId(INSTALL_TITLE)} className="mb-10 scroll-mt-6">
+            <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">
+              {INSTALL_TITLE}
+            </div>
+            <p className="font-serif text-ui-lg leading-[1.55] text-ink-2 mb-4">{INSTALL_LEAD}</p>
+            <div className="flex flex-wrap gap-x-5 gap-y-7">
+              {INSTALL_PLATFORMS.map((platform) => (
+                <div key={platform.title} className="flex-1 min-w-[190px]">
+                  <div className="font-sans text-ui-sm font-semibold text-ink-2">{platform.title}</div>
+                  <ol className="list-decimal mt-2 pl-[18px] flex flex-col gap-2 marker:font-sans marker:text-ui-sm marker:text-ink-4 marker:tabular-nums">
+                    {platform.steps.map((step) => (
+                      <li key={step} className="font-sans text-ui-base leading-[1.45] text-ink-2 pl-1">
+                        {step}
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              ))}
+            </div>
+            <TipCard tips={INSTALL_TIPS} />
+            <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />
+          </section>
+        )}
 
         {/* The translation credit: prose and one link, with the section furniture that puts it in
             "On this page". */}
