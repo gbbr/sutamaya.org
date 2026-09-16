@@ -51,11 +51,18 @@ export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: 
   }, [corpus]);
 
   // Suttas only: a list hit's only destination is the library, which is where lists surface.
-  const { hits, textStatus, textPending, updating } = useCorpusSearch(corpus, query, notes, lists, highlights);
+  const { hits, textStatus, textPending, updating } = useCorpusSearch(
+    corpus,
+    query,
+    notes,
+    lists,
+    highlights,
+    currentId
+  );
   // The rows drawn and walked by the arrow keys: the first SEARCH_RESULTS_CAP hits, the panel
   // being unvirtualized. The sutta being read leads them when the query is somewhere in its own
   // text — a find on the page in hand, before the rest of the canon. Its snippet is what makes it
-  // one: a hit on the title or a note opens the sutta already on screen and names no passage.
+  // one: with no passage to land on, the row only reopens the sutta already on screen.
   const displayHits = useMemo(() => {
     const at = hits.findIndex((h) => h.id === currentId && h.snippet);
     const ordered = at > 0 ? [hits[at], ...hits.slice(0, at), ...hits.slice(at + 1)] : hits;

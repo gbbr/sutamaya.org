@@ -1,5 +1,5 @@
 import { useDeferredValue, useEffect, useMemo, useState, useSyncExternalStore } from 'react';
-import { searchLists, type ListHit, type SearchHit } from '../lib/search/metadata';
+import { opensAtPassage, searchLists, type ListHit, type SearchHit } from '../lib/search/metadata';
 import { searchCorpusVariants, type RankedHit, type TextSearchStatus } from '../lib/search/text';
 import {
   beginTextSearchLoad,
@@ -49,7 +49,10 @@ export function useCorpusSearch(
   query: string,
   notes: NotesMap,
   lists: ListDef[],
-  highlights: HighlightsMap
+  highlights: HighlightsMap,
+  // The sutta on screen, in the Reader's own search: its row is a find on the page in hand, so it
+  // keeps its passage whichever way the query reached it.
+  readingId?: string
 ): {
   hits: SearchHit[];
   listHits: ListHit[];
@@ -113,7 +116,17 @@ export function useCorpusSearch(
   // than this keystroke's metadata half. The rows keep their text hits and their snippets, and
   // only the marked words move, until the new answer replaces them. Held only where an answer is
   // coming — with the text gone for good, the metadata half is the answer.
-  const hits = textPending ? [] : merged && (answered || (searching && status === 'ready')) ? merged.hits : meta;
+  const answer = textPending ? [] : merged && (answered || (searching && status === 'ready')) ? merged.hits : meta;
+  // The rows as they are shown: a hit the row's own lines already answer for drops the passage the
+  // text cut for it, so opening it starts the sutta at the top rather than mid-text. Here rather
+  // than in the merge, so the held answer above is the complete one whatever surface reads it next.
+  const hits = useMemo(
+    () =>
+      answer.map((hit) =>
+        hit.snippet && hit.id !== readingId && !opensAtPassage(hit) ? { ...hit, snippet: undefined } : hit
+      ),
+    [answer, readingId]
+  );
   // Whether `hits` is the complete answer to this query, which a scroll restore waits for.
   const hitsSettled = !textPending && (!searching || status !== 'ready' || answered);
   // Whether the rows on screen are the held previous answer, with the newest keystroke's still
