@@ -7,6 +7,7 @@ import { useCorpus } from '../context/CorpusContext';
 import { useUserData, type SyncStatus } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
+import { AppVersion } from '../components/AppVersion';
 import { BackButton } from '../components/BackButton';
 import { GoogleSignInButton } from '../components/GoogleSignInButton';
 import { EmailCodeSignIn } from '../components/EmailCodeSignIn';
@@ -342,8 +343,9 @@ export function SettingsPage() {
   const [dictionaryFailed, setDictionaryFailed] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
 
-  // The two deep-linkable sections. Both refs are attached unconditionally, and the Authentication
-  // section keeps a placeholder while `loading`, so the scroll effect below waits on nothing.
+  // The two deep-linkable sections, both rendered from the first paint so the scroll effect below
+  // waits on nothing: the Authentication section as a placeholder while `loading`, the Offline
+  // section on the web, the only place anything links to it.
   const offlineSectionRef = useRef<HTMLDivElement>(null);
   const authSectionRef = useRef<HTMLDivElement>(null);
   const [flashTarget, setFlashTarget] = useState<ScrollTarget | null>(null);
@@ -615,19 +617,13 @@ export function SettingsPage() {
           </div>
         </div>
 
-        {/* The Offline section. Renders whatever the corpus and cache state, so its position and
-            height stay fixed for the scroll target above. In the native app the whole corpus ships
-            in the bundle, so there is nothing to download — a plain line stands in its place. */}
+        {/* The Offline section, on the web only: the native apps carry the whole corpus, so there is
+            nothing to download. Renders whatever the corpus and cache state, so its position and
+            height stay fixed for the scroll target above. */}
+        {!isNativeApp() && (
         <div ref={offlineSectionRef}>
           <div className={SECTION_LABEL}>Offline</div>
 
-          {isNativeApp() ? (
-            <div className={`${cardClass('offline')} py-4 mb-5`}>
-              <div className="font-sans text-ui-base text-ink-2">
-                All suttas, the dictionary and search are built into the app and work offline.
-              </div>
-            </div>
-          ) : (
           <div className={`${cardClass('offline')} py-4 mb-5`}>
             {offlineStatus === 'downloading' ? (
               <>
@@ -700,8 +696,8 @@ export function SettingsPage() {
               </>
             )}
           </div>
-          )}
         </div>
+        )}
 
         {/* The Display section: theme tiles and the UI scale. */}
         <div className={SECTION_LABEL}>Display</div>
@@ -889,6 +885,9 @@ export function SettingsPage() {
             Report an issue
           </a>
         </div>
+
+        {/* The native apps' version and update status, under the footer's links. */}
+        {isNativeApp() && <AppVersion />}
       </div>
     </div>
   );

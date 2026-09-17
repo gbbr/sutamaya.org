@@ -4,7 +4,7 @@ import App from './App';
 import { isNativeApp } from './lib/platform';
 import { hydrateNativeToken } from './lib/nativeAuth';
 import { hideNativeSplash } from './lib/splash';
-import { notifyBundleReady } from './lib/otaUpdate';
+import { notifyBundleReady, watchUpdates } from './lib/otaUpdate';
 import { loadUiPrefs, applyUiScale, applyTheme } from './lib/uiPrefs';
 import { loadAnalytics } from './lib/analytics';
 // Side-effect import: binds window.__dangerWipeLocal, the console-only reset to a cold, signed-out
@@ -16,6 +16,10 @@ import './index.css';
 // as broken. First, before anything that could throw: what it certifies is that this bundle's code
 // loaded and ran, which is the failure a rollback exists for. Inert on web.
 notifyBundleReady();
+
+// Records what the over-the-air updater does from launch on, for the version line in Settings.
+// Inert on web.
+watchUpdates();
 
 // The stored scale and theme, applied before React mounts so the page never flashes at the
 // defaults. UiPrefsProvider keeps them in step from there.

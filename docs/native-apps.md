@@ -47,6 +47,12 @@ The bundle, web code and corpus alike, can be replaced without a store release:
 3. On every launch the app confirms the bundle started: `notifyBundleReady()` is the first thing
    `main.tsx` does. A bundle that hasn't confirmed within 10 seconds is rolled back.
 
+Settings ends with the app's store version, the commit its bundle was built from, and what an update
+is doing: up to date, downloading, ready, or failed and retrying the next time the app opens.
+Opening Settings checks for a new bundle, as coming to the foreground does, and a ready one offers
+Restart, which switches to it at once rather than when the app next goes to the background. So a
+reader can say which bundle they run, and whether a new one has reached them.
+
 A plain web deploy leaves the native apps on their bundle, and says so; they move when
 `release:ota` runs. Staging and production are separate channels, and what is live is a committed
 line in `wrangler.jsonc`.
