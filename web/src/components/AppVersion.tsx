@@ -15,7 +15,7 @@ const STATUS_TEXT: Record<UpdateStatus, string> = {
   current: 'Up to date',
   downloading: 'Downloading update…',
   ready: 'Update ready',
-  failed: 'Update failed, will try again',
+  failed: 'Update failed, will retry',
 };
 
 /**
