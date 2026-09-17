@@ -593,6 +593,25 @@ textarea {
   scrollbar-color: rgb(var(--ink) / 0.2) transparent;
 }
 
+/* `.reader-scroll-bar` draws the reader's scroll bar in the Android app, whose web view draws none
+   for a pane scrolling inside the page. Chromium ignores `::-webkit-scrollbar` while
+   `scrollbar-width` or `scrollbar-color` is set, so both go back to `auto`. */
+.reader-scroll-bar {
+  scrollbar-width: auto;
+  scrollbar-color: auto;
+}
+.reader-scroll-bar::-webkit-scrollbar {
+  width: 4px;
+}
+.reader-scroll-bar::-webkit-scrollbar-track {
+  margin-bottom: var(--safe-bottom);
+}
+.reader-scroll-bar::-webkit-scrollbar-thumb {
+  min-height: 40px;
+  border-radius: 2px;
+  background: var(--reader-rule);
+}
+
 .pw {
   cursor: pointer;
   border-radius: 2px;

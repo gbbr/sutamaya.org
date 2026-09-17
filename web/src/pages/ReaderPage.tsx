@@ -56,6 +56,9 @@ const SHAREABLE = canShareLink();
 // The share glyph each platform's own apps use: Android's connected nodes, the boxed arrow elsewhere.
 const ShareIcon = platformName() === 'android' ? Share2 : Share;
 
+// Whether the scroll pane draws its own scroll bar: only in the Android app, whose web view draws none.
+const DRAWN_SCROLL_BAR = platformName() === 'android';
+
 // How a library search is named where the reader shows the run it was opened from — above the
 // breadcrumb and at the foot of the sutta.
 const searchRunLabel = (query: string) => `Results for: “${query}”`;
@@ -542,6 +545,7 @@ export function ReaderPage() {
           // Vertical scrolling only: no pinch or double-tap zoom, and no Safari click delay.
           touchAction: 'pan-y',
           '--reader-selection': theme.selection,
+          '--reader-rule': theme.rule,
         } as CSSProperties
       }
       onPointerDown={onReaderPointerDown}
@@ -632,7 +636,7 @@ export function ReaderPage() {
       <div
         ref={scrollRef}
         tabIndex={-1}
-        className="sc flex-1"
+        className={DRAWN_SCROLL_BAR ? 'sc reader-scroll-bar flex-1' : 'sc flex-1'}
         style={{ padding: '32px 22px 120px', overflowX: 'hidden', outline: 'none' }}
       >
         {/* The measure column. A Prev/Next step animates it out and the next sutta in, driven
