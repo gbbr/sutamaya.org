@@ -1,10 +1,10 @@
-import type { ReaderFace, ResolvedReaderTheme, ThemeColors } from './types';
+import type { ReaderFace, ResolvedTheme, ThemeColors } from './types';
 
 // Dark's own highlight fills, index-aligned with HIGHLIGHT_COLORS below; the stored pastels would
 // not hold cream body text at 5.2:1 on a brown ground.
 const DARK_HIGHLIGHTS = ['#6B4E22', '#4A4A26', '#463A5C'];
 
-export const READER_THEMES: Record<ResolvedReaderTheme, ThemeColors> = {
+export const READER_THEMES: Record<ResolvedTheme, ThemeColors> = {
   // Light's `dim` is a solid warm gray rather than an alpha of `fg`, which would composite to
   // 3.3:1 on this ground, and its `focusTint` is built from `pali` so the wash reads warm. Every
   // `paliTint` is that theme's own `pali` at 15%.

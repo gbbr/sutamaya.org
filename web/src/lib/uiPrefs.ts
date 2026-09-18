@@ -1,10 +1,10 @@
-import type { AppTheme } from './types';
-import { UI_PREFS_KEY } from './storageKeys';
+import type { Theme } from './types';
+import { READER_PREFS_KEY, UI_PREFS_KEY } from './storageKeys';
 import { setShellThemeColor } from './themeColor';
 
 export interface UiPrefs {
   uiScale: number;
-  theme: AppTheme;
+  theme: Theme;
 }
 
 export { UI_PREFS_KEY };
@@ -24,6 +24,20 @@ export const UI_PREFS_DEFAULTS: UiPrefs = { uiScale: 1, theme: 'system' };
 // rotation or a new `initial-scale`, leaving the page zoomed in. The native shell has no pinch
 // gesture to undo it. A Safari tab still allows pinch-zoom over the lock, as Safari does on every
 // page for accessibility.
+
+// moveReaderTheme folds a theme stored with the reader's prefs into the app's one theme. A pinned
+// reader theme wins over the app's, since it is the one on screen while reading; 'system' defers.
+export function moveReaderTheme() {
+  try {
+    const reader = JSON.parse(localStorage.getItem(READER_PREFS_KEY) ?? 'null');
+    if (!reader || !('theme' in reader)) return;
+    const { theme, ...rest } = reader;
+    if (theme !== 'system') localStorage.setItem(UI_PREFS_KEY, JSON.stringify({ ...loadUiPrefs(), theme }));
+    localStorage.setItem(READER_PREFS_KEY, JSON.stringify(rest));
+  } catch {
+    // storage unavailable — ignore
+  }
+}
 
 // The stored scale and theme, or the defaults.
 export function loadUiPrefs(): UiPrefs {
@@ -78,10 +92,10 @@ export function systemPrefersDark(): boolean {
   return typeof window !== 'undefined' && window.matchMedia?.('(prefers-color-scheme: dark)').matches;
 }
 
-// Applies the shell theme, toggling the `dark` class Tailwind and index.css key off. 'system' is
-// accepted because main.tsx applies the raw stored preference before React mounts; UiPrefsContext
-// resolves it from then on.
-export function applyTheme(theme: AppTheme) {
+// Applies the theme to the shell, toggling the `dark` class Tailwind and index.css key off; sepia
+// shows as light. 'system' is accepted because main.tsx applies the raw stored preference before
+// React mounts; UiPrefsContext resolves it from then on.
+export function applyTheme(theme: Theme) {
   const dark = theme === 'dark' || (theme === 'system' && systemPrefersDark());
   document.documentElement.classList.toggle('dark', dark);
   // The OS chrome follows the shell, until the reader takes over the same meta tag.

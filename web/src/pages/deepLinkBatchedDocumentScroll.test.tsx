@@ -120,7 +120,6 @@ describe('reader deep links into a batched document', () => {
       dragTree: vi.fn(),
     });
     vi.mocked(useReaderPrefs).mockReturnValue({
-      theme: 'light',
       resolvedTheme: 'light',
       fs: 18,
       lh: 165,

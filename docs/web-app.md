@@ -16,7 +16,8 @@ write a note, and file the sutta into lists. A side panel holds the sutta's high
 and the display settings: theme, typeface, size and spacing. `?` lists the keyboard shortcuts.
 
 **Settings** holds the account — sign-in, sync status, export and deletion — the offline download
-and the app's own display settings. **Help** is a page of annotated screenshots.
+and the app's own display settings. The theme is one setting, changed from either place; sepia
+tints only the Reader, and the rest of the app shows it as light. **Help** is a page of annotated screenshots.
 
 ## How it's put together
 
@@ -27,8 +28,8 @@ One provider per concern wraps every page:
 | Auth | who is signed in; signing in and out |
 | Corpus | the browse tree and the sutta index (`corpus.json`) |
 | UserData | lists, notes, highlights and visits — a view over the offline mirror ([offline-sync.md](offline-sync.md)) |
-| ReaderPrefs | the Reader's theme, typeface, size, spacing and Pali display |
-| UiPrefs | the app's own theme and scale |
+| UiPrefs | the theme, one for the whole app, and the UI scale |
+| ReaderPrefs | the Reader's typeface, size, spacing and Pali display |
 | Layout | the window width, phone or not, the pane widths |
 
 Pages fetch what they need themselves. `lib/` holds the logic with no React in it, `hooks/` the

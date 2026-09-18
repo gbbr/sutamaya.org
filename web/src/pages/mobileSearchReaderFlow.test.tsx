@@ -126,7 +126,6 @@ describe('mobile search -> reader -> close flow', () => {
       dragTree: vi.fn(),
     });
     vi.mocked(useReaderPrefs).mockReturnValue({
-      theme: 'light',
       resolvedTheme: 'light',
       fs: 18,
       lh: 165,

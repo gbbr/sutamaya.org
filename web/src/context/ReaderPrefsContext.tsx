@@ -1,12 +1,11 @@
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { createContext, useContext, useMemo, type ReactNode } from 'react';
 import { usePersistedState } from '../hooks/usePersistedState';
-import type { ReaderFace, ReaderTheme, ResolvedReaderTheme } from '../lib/types';
+import type { ReaderFace, ResolvedTheme, Theme } from '../lib/types';
 import { READER_PREFS_KEY } from '../lib/storageKeys';
 import { READER_FACES } from '../lib/theme';
-import { systemPrefersDark } from '../lib/uiPrefs';
+import { useUiPrefs } from './UiPrefsContext';
 
 export interface ReaderPrefs {
-  theme: ReaderTheme;
   // Body text size, in px.
   fs: number;
   // Line height, as a percentage.
@@ -23,10 +22,9 @@ export interface ReaderPrefs {
 }
 
 interface ReaderPrefsState extends ReaderPrefs {
-  // The theme on screen, with 'system' resolved against the OS preference.
-  resolvedTheme: ResolvedReaderTheme;
-  setTheme: (t: ReaderTheme) => void;
-  // Steps the theme light -> sepia -> dark -> light, from whichever is on screen.
+  // The app's theme, passed through from UiPrefs so the Reader takes all its appearance from here.
+  resolvedTheme: ResolvedTheme;
+  setTheme: (t: Theme) => void;
   cycleTheme: () => void;
   setFs: (n: number) => void;
   setLh: (n: number) => void;
@@ -50,7 +48,6 @@ export const FS_MAX = 28;
 export const FS_STEP = 1;
 
 const DEFAULTS: ReaderPrefs = {
-  theme: 'system',
   fs: 18,
   lh: 175,
   face: 'georgia',
@@ -60,26 +57,11 @@ const DEFAULTS: ReaderPrefs = {
   showHighlights: true,
 };
 
-// The order cycleTheme walks.
-const THEME_CYCLE: Record<ResolvedReaderTheme, ResolvedReaderTheme> = { light: 'sepia', sepia: 'dark', dark: 'light' };
-
 const ReaderPrefsContext = createContext<ReaderPrefsState | null>(null);
 
 export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
   const [prefs, setPrefs] = usePersistedState<ReaderPrefs>(READER_PREFS_KEY, DEFAULTS);
-
-  // The OS dark-mode preference, tracked live while the theme is 'system'.
-  const [systemDark, setSystemDark] = useState(() => systemPrefersDark());
-  useEffect(() => {
-    if (prefs.theme !== 'system') return;
-    const mql = window.matchMedia('(prefers-color-scheme: dark)');
-    const onChange = () => setSystemDark(mql.matches);
-    onChange();
-    mql.addEventListener('change', onChange);
-    return () => mql.removeEventListener('change', onChange);
-  }, [prefs.theme]);
-
-  const resolvedTheme: ResolvedReaderTheme = prefs.theme === 'system' ? (systemDark ? 'dark' : 'light') : prefs.theme;
+  const { resolvedTheme, setTheme, cycleTheme } = useUiPrefs();
 
   const value = useMemo<ReaderPrefsState>(
     () => ({
@@ -89,12 +71,8 @@ export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
       lh: Math.min(LH_MAX, Math.max(LH_MIN, prefs.lh)),
       face: prefs.face in READER_FACES ? prefs.face : DEFAULTS.face,
       resolvedTheme,
-      setTheme: (theme) => setPrefs((p) => ({ ...p, theme })),
-      cycleTheme: () =>
-        setPrefs((p) => ({
-          ...p,
-          theme: THEME_CYCLE[p.theme === 'system' ? (systemPrefersDark() ? 'dark' : 'light') : p.theme],
-        })),
+      setTheme,
+      cycleTheme,
       setFs: (fs) => setPrefs((p) => ({ ...p, fs })),
       setLh: (lh) => setPrefs((p) => ({ ...p, lh })),
       setFace: (face) => setPrefs((p) => ({ ...p, face })),
@@ -104,7 +82,7 @@ export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
       toggleShowHighlights: () => setPrefs((p) => ({ ...p, showHighlights: !p.showHighlights })),
       revealHighlights: () => setPrefs((p) => (p.showHighlights ? p : { ...p, showHighlights: true })),
     }),
-    [prefs, resolvedTheme, setPrefs]
+    [prefs, resolvedTheme, setTheme, cycleTheme, setPrefs]
   );
 
   return <ReaderPrefsContext.Provider value={value}>{children}</ReaderPrefsContext.Provider>;

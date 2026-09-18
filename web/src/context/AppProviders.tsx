@@ -11,11 +11,11 @@ export function AppProviders({ children }: { children: ReactNode }) {
     <AuthProvider>
       <CorpusProvider>
         <UserDataProvider>
-          <ReaderPrefsProvider>
-            <UiPrefsProvider>
+          <UiPrefsProvider>
+            <ReaderPrefsProvider>
               <LayoutProvider>{children}</LayoutProvider>
-            </UiPrefsProvider>
-          </ReaderPrefsProvider>
+            </ReaderPrefsProvider>
+          </UiPrefsProvider>
         </UserDataProvider>
       </CorpusProvider>
     </AuthProvider>

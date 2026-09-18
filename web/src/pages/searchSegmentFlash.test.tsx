@@ -131,7 +131,6 @@ describe('the passage a search hit was drawn from', () => {
       dragTree: vi.fn(),
     });
     vi.mocked(useReaderPrefs).mockReturnValue({
-      theme: 'light',
       resolvedTheme: 'light',
       fs: 18,
       lh: 165,

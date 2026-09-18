@@ -5,7 +5,7 @@ import { isNativeApp } from './lib/platform';
 import { hydrateNativeToken } from './lib/nativeAuth';
 import { hideNativeSplash } from './lib/splash';
 import { notifyBundleReady, watchUpdates } from './lib/otaUpdate';
-import { loadUiPrefs, applyUiScale, applyTheme } from './lib/uiPrefs';
+import { loadUiPrefs, applyUiScale, applyTheme, moveReaderTheme } from './lib/uiPrefs';
 import { loadAnalytics } from './lib/analytics';
 // Side-effect import: binds window.__dangerWipeLocal, the console-only reset to a cold, signed-out
 // first run. See lib/localWipe.ts.
@@ -23,6 +23,7 @@ watchUpdates();
 
 // The stored scale and theme, applied before React mounts so the page never flashes at the
 // defaults. UiPrefsProvider keeps them in step from there.
+moveReaderTheme();
 const uiPrefs = loadUiPrefs();
 applyUiScale(uiPrefs.uiScale);
 applyTheme(uiPrefs.theme);

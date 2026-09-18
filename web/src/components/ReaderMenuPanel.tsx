@@ -10,7 +10,7 @@ import { segmentIndex } from '../lib/segmentKeys';
 import { KeyCap } from './ShortcutsModal';
 import { SHORTCUTS, SHOWS_KEY_HINTS } from '../lib/shortcuts';
 import { highlightPaint, READER_FACES } from '../lib/theme';
-import type { Highlight, ReaderFace, ResolvedReaderTheme, ThemeColors } from '../lib/types';
+import type { Highlight, ReaderFace, ResolvedTheme, ThemeColors } from '../lib/types';
 
 type Tab = 'highlights' | 'lists' | 'text';
 
@@ -33,7 +33,7 @@ interface ReaderMenuPanelProps {
 // The reading themes, each previewed as a miniature of the page. Literals rather than
 // READER_THEMES lookups, since all three tiles render in their own palette while the panel is in
 // one. There is no 'system' tile: the picker matches against the resolved theme.
-const THEME_TILES: Array<{ id: ResolvedReaderTheme; label: string; bg: string; fg: string; pali: string }> = [
+const THEME_TILES: Array<{ id: ResolvedTheme; label: string; bg: string; fg: string; pali: string }> = [
   { id: 'light', label: 'Light', bg: '#FAF8F3', fg: '#1B1917', pali: '#7A5B2E' },
   { id: 'dark', label: 'Dark', bg: '#2A241E', fg: '#EDE6D9', pali: '#C9A86F' },
   { id: 'sepia', label: 'Sepia', bg: '#F3E7D3', fg: '#3A2E1E', pali: '#8C6222' },

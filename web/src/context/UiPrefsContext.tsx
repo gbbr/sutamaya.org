@@ -8,16 +8,27 @@ import {
   systemPrefersDark,
   type UiPrefs,
 } from '../lib/uiPrefs';
-import type { AppTheme, ResolvedAppTheme } from '../lib/types';
+import type { Theme, ResolvedTheme } from '../lib/types';
 
 interface UiPrefsState extends UiPrefs {
   // The theme on screen, with 'system' resolved live against the OS preference. Settings' picker
-  // shows the stored `theme` instead, since System is one of its three tiles.
-  resolvedTheme: ResolvedAppTheme;
+  // shows the stored `theme` instead, since System is one of its tiles.
+  resolvedTheme: ResolvedTheme;
   setUiScale: (n: number) => void;
-  setTheme: (t: AppTheme) => void;
-  // Pins the theme to the opposite of what is on screen, so it also works from 'system'.
+  setTheme: (t: Theme) => void;
+  // Pins the theme to light or dark, the opposite of what is on screen, so it also works from
+  // 'system'. Sepia counts as light.
   toggleTheme: () => void;
+  // Steps the theme light -> sepia -> dark -> light, from whichever is on screen.
+  cycleTheme: () => void;
+}
+
+// The order cycleTheme walks.
+const THEME_CYCLE: Record<ResolvedTheme, ResolvedTheme> = { light: 'sepia', sepia: 'dark', dark: 'light' };
+
+// resolveTheme returns the theme on screen for a stored one.
+function resolveTheme(theme: Theme, systemDark: boolean): ResolvedTheme {
+  return theme === 'system' ? (systemDark ? 'dark' : 'light') : theme;
 }
 
 const UiPrefsContext = createContext<UiPrefsState | null>(null);
@@ -41,7 +52,7 @@ export function UiPrefsProvider({ children }: { children: ReactNode }) {
     return () => mql.removeEventListener('change', onChange);
   }, [prefs.theme]);
 
-  const resolvedTheme: ResolvedAppTheme = prefs.theme === 'system' ? (systemDark ? 'dark' : 'light') : prefs.theme;
+  const resolvedTheme = resolveTheme(prefs.theme, systemDark);
 
   useEffect(() => {
     applyTheme(resolvedTheme);
@@ -53,10 +64,11 @@ export function UiPrefsProvider({ children }: { children: ReactNode }) {
       resolvedTheme,
       setUiScale: (uiScale) => setPrefs((p) => ({ ...p, uiScale })),
       setTheme: (theme) => setPrefs((p) => ({ ...p, theme })),
-      // Resolves inside the updater rather than closing over `resolvedTheme`, since LibraryPage's
-      // keydown listener can hold an older copy of this function than the current theme.
+      // Both resolve inside the updater rather than closing over `resolvedTheme`, since a keydown
+      // listener can hold an older copy of these functions than the current theme.
       toggleTheme: () =>
-        setPrefs((p) => ({ ...p, theme: p.theme === 'dark' || (p.theme === 'system' && systemPrefersDark()) ? 'light' : 'dark' })),
+        setPrefs((p) => ({ ...p, theme: resolveTheme(p.theme, systemPrefersDark()) === 'dark' ? 'light' : 'dark' })),
+      cycleTheme: () => setPrefs((p) => ({ ...p, theme: THEME_CYCLE[resolveTheme(p.theme, systemPrefersDark())] })),
     }),
     [prefs, resolvedTheme, setPrefs]
   );
