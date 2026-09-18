@@ -89,16 +89,19 @@ export function LibraryPage() {
       ROUTE_INTENT_KEY
     )
   );
-  // The ancestor row a reader breadcrumb click named, which the tree pane scrolls to and
-  // highlights for 1600ms.
+  // The ancestor row a reader breadcrumb click named.
   const locationFlashNodeId = consumedIntent?.flashNodeId as string | undefined;
+  // The row the tree pane scrolls to and highlights for 1600ms: that ancestor, or a collection
+  // opened from search into the tree.
   const [flashNodeId, setFlashNodeId] = useState<string | undefined>(undefined);
   useEffect(() => {
-    if (!locationFlashNodeId) return;
-    setFlashNodeId(locationFlashNodeId);
+    if (locationFlashNodeId) setFlashNodeId(locationFlashNodeId);
+  }, [locationFlashNodeId]);
+  useEffect(() => {
+    if (!flashNodeId) return;
     const t = window.setTimeout(() => setFlashNodeId(undefined), 1600);
     return () => window.clearTimeout(t);
-  }, [locationFlashNodeId]);
+  }, [flashNodeId]);
   const [view, setViewState] = useState<'tree' | 'list'>(() => {
     if (consumedIntent?.link) return linkPane(corpus, lists, routeNodeId);
     const fromView = consumedIntent?.fromView;
@@ -232,6 +235,7 @@ export function LibraryPage() {
         setNodeId(id);
         setSuttaId(undefined);
         setPickCount((n) => n + 1);
+        if (inTree) setFlashNodeId(id);
       };
       // Nothing animates on a wider layout: the tree stays put and only the pane beside it changes.
       if (!mobile || inTree) {

@@ -286,5 +286,15 @@ describe('a collection found by search', () => {
       expect(showing('ListPane')).toBe(false);
       expect(inPane('TreePane').queryByDisplayValue('satipatthana')).toBeNull();
     });
+
+    it('briefly highlights the collection it opens in the tree, where no row is otherwise marked', async () => {
+      const { inPane, pane } = searchFrom('/browse/dn', 'satipatthana');
+
+      fireEvent.click(await inPane('TreePane').findByRole('button', { name: /SN47\s*Establishment/ }));
+
+      const row = () => pane('TreePane').querySelector('[data-node-id="sn47"]')!;
+      await waitFor(() => expect(row().className).toContain('bg-ink/[.06]'));
+      await waitFor(() => expect(row().className).not.toContain('bg-ink/[.06]'), { timeout: 3000 });
+    });
   });
 });

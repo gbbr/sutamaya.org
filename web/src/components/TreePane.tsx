@@ -122,8 +122,9 @@ interface TreePaneProps {
   // True when this mount is a reader-close round trip, which suppresses the Library/My lists sync
   // below once — such a `nodeId` is often a corpus node even though My lists was open.
   restoreOrigin?: boolean;
-  // The breadcrumb segment last clicked in the reader, briefly scrolled to and highlighted; it may
-  // sit above `nodeId`, and doesn't affect what is browsed.
+  // The row briefly scrolled to and highlighted: the breadcrumb segment last clicked in the reader,
+  // which may sit above `nodeId`, or a collection opened from search. It doesn't affect what is
+  // browsed.
   flashNodeId?: string;
   // True when this mount came from a breadcrumb click. Set at mount, unlike `flashNodeId`, which
   // arrives a tick later so it can be timed out.
