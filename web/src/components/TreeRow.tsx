@@ -19,8 +19,8 @@ export const TreeRow = memo(function TreeRow({
   node: ChapterRow;
   depth: number;
   nodeId?: string;
-  // The row a reader breadcrumb click named, briefly highlighted; it may be an ancestor of
-  // `nodeId`.
+  // The row briefly highlighted — a reader breadcrumb's, or a collection's opened from search; it
+  // may be an ancestor of `nodeId`.
   flashNodeId?: string;
   expanded: Record<string, boolean>;
   // `deep` is ⌥-click, which collapses everything under this row too.
