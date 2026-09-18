@@ -59,8 +59,8 @@ rather than taken from the source:
   opening: that's why DN keeps its three vaggas, and Snp and Ud keep theirs.
 - The collection names, AN's book names, the KN book list and SN's five group labels are fixed in
   the build; every other title comes from the data.
-- **Only a bottom-level group opens a list of suttas.** A row with children expands in place, so an
-  id such as `dn` or `sn12` never names a page.
+- **Only a bottom-level group opens a list of suttas.** A row with children expands in place, and a
+  search result naming one opens it expanded in the tree.
 
 ## Group descriptions
 

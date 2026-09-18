@@ -220,7 +220,8 @@ describe('a search result opened and closed', () => {
     await screen.findByText('sutamaya');
 
     fireEvent.click(tree().getByRole('button', { name: 'Search' }));
-    fireEvent.change(tree().getByPlaceholderText(SEARCH_PLACEHOLDER), { target: { value: 'long' } });
+    // Not "long", which also names the collection and puts its row first.
+    fireEvent.change(tree().getByPlaceholderText(SEARCH_PLACEHOLDER), { target: { value: 'sutta' } });
     await list().findByText('Discourse 2');
 
     revealed = [];

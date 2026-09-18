@@ -10,7 +10,7 @@ import {
   uidHolds,
   sortByIdAsc,
 } from './corpus';
-import { searchCorpus, searchLists } from './search/metadata';
+import { listBlockCount, searchCorpus, searchGroups, searchLists, type ListBlockHit } from './search/metadata';
 import type { Corpus, Highlight, ListDef, Sutta } from './types';
 
 // Only the fields compareIds/sortByIdAsc actually touch (the id key) matter here; the rest
@@ -496,6 +496,95 @@ describe('searchCorpus', () => {
 
     it('returns nothing for a blank query', () => {
       expect(searchLists([list({ id: 'l1', label: 'Morning' })], '   ')).toEqual([]);
+    });
+  });
+
+  describe('searchGroups', () => {
+    // SN47 nests a vagga, as a saṁyutta does, and shares its English name with an AN vagga.
+    const corpus: Corpus = {
+      ...meta,
+      nikayas: [
+        {
+          id: 'sn',
+          label: 'Saṁyutta Nikāya',
+          sub: 'Linked Discourses',
+          count: 1,
+          chapters: [
+            {
+              id: 'sn47',
+              ref: 'SN47',
+              label: 'Establishment of Mindfulness',
+              sub: 'Satipaṭṭhānasaṁyutta',
+              count: 10,
+              chapters: [{ id: 'sn47-ambapalivagga', ref: 'SN47.1–10', label: 'In Ambapālī’s Mango Grove', sub: 'Ambapālivagga', count: 10 }],
+            },
+          ],
+        },
+        {
+          id: 'an',
+          label: 'Aṅguttara Nikāya',
+          sub: 'Numbered Discourses',
+          count: 1,
+          chapters: [{ id: 'an9-satipatthanavagga', ref: 'AN9.63–72', label: 'Establishment of Mindfulness', sub: 'Satipaṭṭhānavagga', count: 10 }],
+        },
+        {
+          id: 'kn',
+          label: 'Khuddaka Nikāya',
+          sub: 'Minor Collection',
+          count: 1,
+          chapters: [{ id: 'snp', ref: 'Snp', label: 'Anthology of Discourses', sub: 'Suttanipāta', count: 5 }],
+        },
+      ],
+      suttas: {},
+    };
+    const ids = (query: string) => searchGroups(corpus, query).map((h) => h.group.id);
+
+    it('matches the start of a word in the English or the Pali name, in tree order', () => {
+      expect(ids('mindful')).toEqual(['sn47', 'an9-satipatthanavagga']);
+      expect(ids('satipatthana')).toEqual(['sn47', 'an9-satipatthanavagga']);
+    });
+
+    it('reaches a group at any depth', () => {
+      expect(ids('ambapali')).toEqual(['sn47-ambapalivagga']);
+    });
+
+    it('never matches inside a word, where every Pali group name ends in -vagga', () => {
+      expect(ids('vagga')).toEqual([]);
+      expect(ids('patthana')).toEqual([]);
+    });
+
+    it('needs every word, across both names', () => {
+      expect(ids('mango ambapalivagga')).toEqual(['sn47-ambapalivagga']);
+      expect(ids('mango mindfulness')).toEqual([]);
+    });
+
+    it('matches Pali typed as separate words that the name writes as one', () => {
+      expect(ids('sutta nipata')).toEqual(['snp']);
+    });
+
+    it('finds nothing for a query under three letters, or of function words alone', () => {
+      expect(ids('sa')).toEqual([]);
+      expect(ids('the')).toEqual([]);
+      expect(ids('of mindfulness')).toEqual(['sn47', 'an9-satipatthanavagga']);
+    });
+
+    it('is case- and diacritic-insensitive', () => {
+      expect(ids('SATIPAṬṬHĀNA')).toEqual(['sn47', 'an9-satipatthanavagga']);
+    });
+
+    it('finds nothing before the corpus loads', () => {
+      expect(searchGroups(null, 'mindfulness')).toEqual([]);
+    });
+  });
+
+  describe('listBlockCount', () => {
+    const listHit: ListBlockHit = { list: { id: 'l1', label: 'Morning', parentId: null, kind: 'list', items: [] }, parents: '' };
+    const groupHit: ListBlockHit = { group: { id: 'dn', label: 'Dīgha Nikāya', sub: 'Long Discourses', count: 3 } };
+
+    it('counts lists and collections apart, naming only the kinds present', () => {
+      expect(listBlockCount([listHit, listHit, groupHit])).toBe('2 lists · 1 collection');
+      expect(listBlockCount([groupHit, groupHit])).toBe('2 collections');
+      expect(listBlockCount([listHit])).toBe('1 list');
     });
   });
 
