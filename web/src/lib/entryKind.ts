@@ -6,7 +6,8 @@ import { NavigationType } from 'react-router';
 // A return is the reader coming back somewhere they already were: back or forward, a refresh, a
 // bookmarked load, the app relaunching into its last location. A fresh entry is them choosing this
 // destination now — a library row, a search hit, Prev/Next — which opens at the top, the way
-// following a link does. The library panes restore unconditionally and never ask.
+// following a link does. The library panes never ask: a group or list opens at the top when picked
+// there, and restores otherwise.
 
 /**
  * The router state a redirect carries when it finishes a load the reader already started — "/"
