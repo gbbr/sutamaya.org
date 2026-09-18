@@ -199,10 +199,19 @@ describe('a collection found by search', () => {
     const { inPane } = searchFrom('/browse/dn', 'satipatthana');
     const results = inPane('ListPane');
 
-    expect(await results.findByText('Collections')).toBeTruthy();
+    expect(await results.findByText('Collections (2)')).toBeTruthy();
     expect(results.getByRole('button', { name: /SN47\s*Establishment of Mindfulness/ })).toBeTruthy();
     expect(results.getByRole('button', { name: /AN9\.63\s*Establishment of Mindfulness/ })).toBeTruthy();
-    expect(await results.findByText('1 sutta · 2 collections')).toBeTruthy();
+    expect(await results.findByText('2 collections · 1 sutta')).toBeTruthy();
+    expect(results.getByText('Suttas (1)')).toBeTruthy();
+  });
+
+  it('is counted beside the search box a kind to a line, in the order the results rank them', async () => {
+    const { inPane } = searchFrom('/browse/dn', 'satipatthana');
+
+    const collections = await inPane('TreePane').findByText('2 collections');
+    const suttas = inPane('TreePane').getByText('1 sutta');
+    expect(collections.compareDocumentPosition(suttas) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   });
 
   it("puts the reader's own lists first", async () => {
@@ -211,7 +220,7 @@ describe('a collection found by search', () => {
     );
     const { inPane } = searchFrom('/browse/dn', 'satipatthana');
 
-    const heading = await inPane('ListPane').findByText('Lists & collections');
+    const heading = await inPane('ListPane').findByText('Lists & collections (3)');
     const rows = within(heading.parentElement!).getAllByRole('button');
     expect(rows.map((row) => row.textContent)).toEqual([
       expect.stringContaining('Satipaṭṭhāna practice'),
@@ -265,6 +274,14 @@ describe('a collection found by search', () => {
 
   describe('on a phone', () => {
     beforeEach(() => mockLayout(true));
+
+    it('heads the collections and the suttas beneath them, each with its count', async () => {
+      const { inPane } = searchFrom('/browse/dn', 'satipatthana');
+
+      const collections = await inPane('TreePane').findByText('Collections (2)');
+      const suttas = inPane('TreePane').getByText('Suttas (1)');
+      expect(collections.compareDocumentPosition(suttas) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    });
 
     it('opens a collection of suttas on the list pane', async () => {
       const { inPane, showing } = searchFrom('/browse/dn', 'satipatthana');

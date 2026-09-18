@@ -10,7 +10,7 @@ import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { useBackHandler } from '../hooks/useBackHandler';
 import { forgetScrollPosition } from '../hooks/useScrollMemory';
 import { findNode, isExpandable, nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId } from '../lib/corpus';
-import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP, listBlockCount } from '../lib/search/metadata';
+import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP, listBlockCounts, listBlockHeading } from '../lib/search/metadata';
 import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, tagIntent, type RouteIntent } from '../lib/routeIntent';
@@ -195,7 +195,8 @@ export function LibraryPage() {
     () => (listsExpanded ? listHits : listHits.slice(0, LIST_RESULTS_CAP)),
     [listHits, listsExpanded]
   );
-  const listHitCount = useMemo(() => listBlockCount(listHits), [listHits]);
+  const listHitCounts = useMemo(() => listBlockCounts(listHits), [listHits]);
+  const listHitHeading = useMemo(() => listBlockHeading(listHits), [listHits]);
   const toggleListsExpanded = useCallback(() => setListsExpanded((v) => !v), []);
 
   const [nodeId, setNodeId] = useState(routeNodeId);
@@ -342,7 +343,8 @@ export function LibraryPage() {
           hits={hits}
           listHits={shownListHits}
           listHitTotal={listHits.length}
-          listHitCount={listHitCount}
+          listHitCounts={listHitCounts}
+          listHitHeading={listHitHeading}
           textStatus={textStatus}
           textPending={textPending}
           hitsSettled={hitsSettled}
@@ -381,7 +383,8 @@ export function LibraryPage() {
           hits={hits}
           listHits={shownListHits}
           listHitTotal={listHits.length}
-          listHitCount={listHitCount}
+          listHitCounts={listHitCounts}
+          listHitHeading={listHitHeading}
           textStatus={textStatus}
           textPending={textPending}
           hitsSettled={hitsSettled}

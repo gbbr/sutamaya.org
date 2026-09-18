@@ -11,6 +11,8 @@ interface SearchListHitsProps {
   hits: ListBlockHit[];
   // How many matched in all, so the toggle can name what is hidden.
   total: number;
+  // Names and counts every match, the hidden ones included: "Collections (4)".
+  heading: string;
   expanded: boolean;
   onToggleExpanded: () => void;
   query: string;
@@ -23,9 +25,9 @@ interface SearchListHitsProps {
 
 // The reader's lists and the browse groups matching the query, as a labelled block above the sutta
 // hits — a reader who types a list's or a collection's name is looking for it, not the suttas
-// inside. One line each, so a row never outweighs a sutta hit. Drawn by whichever pane is showing
-// results: ListPane on desktop, TreePane on mobile.
-export function SearchListHits({ hits, total, expanded, onToggleExpanded, query, activeId, onSelect, padX }: SearchListHitsProps) {
+// inside. A line or two each, so a row never outweighs a sutta hit. Drawn by whichever pane is
+// showing results: ListPane on desktop, TreePane on mobile.
+export function SearchListHits({ hits, total, heading, expanded, onToggleExpanded, query, activeId, onSelect, padX }: SearchListHitsProps) {
   const { lists } = useUserData();
   const { countFor } = useListTreeIndex(lists);
   // The active row, scrolled into view as the cursor walks up into this block. Kept here rather
@@ -43,12 +45,10 @@ export function SearchListHits({ hits, total, expanded, onToggleExpanded, query,
     activeRef.current?.scrollIntoView({ block: 'nearest' });
   }, [activeId]);
   if (total === 0) return null;
-  const hasList = hits.some((h) => 'list' in h);
-  const hasGroup = hits.some((h) => 'group' in h);
   return (
     <div className="border-b border-ink/[.12] pb-1.5">
       <div className={`${padX} pt-3 pb-1.5 font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3`}>
-        {hasList && hasGroup ? 'Lists & collections' : hasGroup ? 'Collections' : 'Lists'}
+        {heading}
       </div>
       {hits.map((hit) => {
         const id = listBlockHitId(hit);

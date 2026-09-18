@@ -254,13 +254,26 @@ export function listBlockHitId(hit: ListBlockHit): string {
   return 'group' in hit ? hit.group.id : hit.list.id;
 }
 
-// Returns the lists block's rows counted by kind, as the results heading names them: "2 lists",
-// "1 collection", "1 list · 3 collections".
-export function listBlockCount(hits: ListBlockHit[]): string {
+// Returns the lists block's heading, naming the kinds it holds and counting every row, the hidden
+// ones included: "Lists (2)", "Collections (4)", "Lists & collections (5)".
+export function listBlockHeading(hits: ListBlockHit[]): string {
+  const hasList = hits.some((h) => 'list' in h);
+  const hasGroup = hits.some((h) => 'group' in h);
+  return `${hasList && hasGroup ? 'Lists & collections' : hasGroup ? 'Collections' : 'Lists'} (${hits.length})`;
+}
+
+// Returns the heading over the sutta hits, counting them; past the cap it reads "80+".
+export function suttaHitsHeading(total: number): string {
+  return `Suttas (${total > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+` : total})`;
+}
+
+// Returns the lists block's rows counted by kind, one entry per kind present, in the order the
+// block ranks them: ["2 lists", "1 collection"].
+export function listBlockCounts(hits: ListBlockHit[]): string[] {
   const lists = hits.filter((h) => 'list' in h).length;
   const groups = hits.length - lists;
   const plural = (n: number, noun: string) => (n ? `${n} ${noun}${n === 1 ? '' : 's'}` : '');
-  return [plural(lists, 'list'), plural(groups, 'collection')].filter(Boolean).join(' · ');
+  return [plural(lists, 'list'), plural(groups, 'collection')].filter(Boolean);
 }
 
 // Returns the browse groups, in tree order, whose English or Pali name has a word starting with

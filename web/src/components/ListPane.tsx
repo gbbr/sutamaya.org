@@ -7,7 +7,7 @@ import { forgetScrollPosition, useScrollMemory } from '../hooks/useScrollMemory'
 import { usePointerDragSession } from '../hooks/usePointerDragSession';
 import { findNode, isExpandable, listItemsFor, nodeBlurb, nodeLabel } from '../lib/corpus';
 import { prefetchSuttaText } from '../lib/suttaPrefetch';
-import { SEARCH_CAP_NOTE, SEARCH_RESULTS_CAP, type ListBlockHit, type SearchHit } from '../lib/search/metadata';
+import { SEARCH_CAP_NOTE, SEARCH_RESULTS_CAP, suttaHitsHeading, type ListBlockHit, type SearchHit } from '../lib/search/metadata';
 import { searchScopeNote, type TextSearchStatus } from '../lib/search/text';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
@@ -30,8 +30,10 @@ interface ListPaneProps {
   // The list hits, drawn as their own block above the results, already trimmed to what renders.
   listHits: ListBlockHit[];
   listHitTotal: number;
-  // Every list hit counted by kind, for the results heading.
-  listHitCount: string;
+  // Every list hit counted, one entry per kind, for the results heading.
+  listHitCounts: string[];
+  // The lists block's own heading, counting every list hit.
+  listHitHeading: string;
   // Whether the sutta text is searchable yet, which is what the line under an empty result says.
   textStatus: TextSearchStatus;
   // Whether the results are waiting on that text, said in place of the rows.
@@ -66,7 +68,8 @@ export function ListPane({
   hits,
   listHits,
   listHitTotal,
-  listHitCount,
+  listHitCounts,
+  listHitHeading,
   textStatus,
   textPending,
   hitsSettled = true,
@@ -311,7 +314,7 @@ export function ListPane({
   //   expandable node   – empty, its suttas being a level down
   //   a node or list    – its sutta count, an auto-list's being what the reader has, uncapped
   //   a running search  – empty, nothing having been counted yet
-  //   a search          – the sutta count, "80+" past the cap, and the matched lists and collections beside it
+  //   a search          – the matched lists, collections and suttas counted in the order they rank, "80+" past the cap
   function metaLine(): string {
     if (!searching) {
       if (!nodeId) return `${collectionCount} collections`;
@@ -323,7 +326,7 @@ export function ListPane({
     const noun = listHitTotal > 0 ? 'sutta' : 'result';
     const suttas = hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ ${noun}s` : plural(hits.length, noun);
     if (listHitTotal === 0) return suttas;
-    return hits.length === 0 ? listHitCount : `${suttas} · ${listHitCount}`;
+    return (hits.length === 0 ? listHitCounts : [...listHitCounts, suttas]).join(' · ');
   }
   const meta = metaLine();
 
@@ -417,6 +420,7 @@ export function ListPane({
           <SearchListHits
             hits={listHits}
             total={listHitTotal}
+            heading={listHitHeading}
             expanded={listsExpanded}
             onToggleExpanded={onToggleListsExpanded}
             query={query}
@@ -424,6 +428,12 @@ export function ListPane({
             onSelect={onSelectList}
             padX="px-6"
           />
+        )}
+        {/* The sutta hits' heading, needed only to set them apart from a lists block above. */}
+        {searching && listHitTotal > 0 && hits.length > 0 && !textPending && (
+          <div className="px-6 pt-3 pb-1.5 font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3">
+            {suttaHitsHeading(hits.length)}
+          </div>
         )}
         {/* The node's description, above its suttas and inside the scroller, so a long one
             scrolls away. A wash and the rules above and below set it off from the rows.
