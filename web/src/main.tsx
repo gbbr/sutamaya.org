@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import { registerSW } from 'virtual:pwa-register';
 import App from './App';
-import { isNativeApp } from './lib/platform';
+import { isNativeApp, platformName } from './lib/platform';
 import { hydrateNativeToken } from './lib/nativeAuth';
 import { hideNativeSplash } from './lib/splash';
 import { notifyBundleReady, watchUpdates } from './lib/otaUpdate';
@@ -27,6 +27,9 @@ moveReaderTheme();
 const uiPrefs = loadUiPrefs();
 applyUiScale(uiPrefs.uiScale);
 applyTheme(uiPrefs.theme);
+
+// The platform, on the root element for the styles only one platform gets (index.css).
+document.documentElement.dataset.platform = platformName();
 
 // Registers the service worker that serves the whole app — shell, bundles, fonts, corpus tree —
 // from the device. The plugin's helper supplies the acting half of `registerType: 'autoUpdate'`:

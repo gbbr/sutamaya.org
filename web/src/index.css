@@ -593,23 +593,30 @@ textarea {
   scrollbar-color: rgb(var(--ink) / 0.2) transparent;
 }
 
-/* `.reader-scroll-bar` draws the reader's scroll bar in the Android app, whose web view draws none
-   for a pane scrolling inside the page. Chromium ignores `::-webkit-scrollbar` while
-   `scrollbar-width` or `scrollbar-color` is set, so both go back to `auto`. */
-.reader-scroll-bar {
+/* The Android app's scroll bars, drawn by the page itself: Android's web view draws none for
+   anything scrolling inside the page. Chromium ignores `::-webkit-scrollbar` while
+   `scrollbar-width` or `scrollbar-color` is set, so `.sc` puts both back to `auto`. */
+[data-platform='android'] .sc {
   scrollbar-width: auto;
   scrollbar-color: auto;
 }
-.reader-scroll-bar::-webkit-scrollbar {
+[data-platform='android'] body ::-webkit-scrollbar {
   width: 4px;
 }
-.reader-scroll-bar::-webkit-scrollbar-track {
-  margin-bottom: var(--safe-bottom);
-}
-.reader-scroll-bar::-webkit-scrollbar-thumb {
+[data-platform='android'] body ::-webkit-scrollbar-thumb {
   min-height: 40px;
   border-radius: 2px;
-  background: var(--reader-rule);
+  /* The reader theme's rule inside the reader, the shell's ink elsewhere. */
+  background: var(--reader-rule, rgb(var(--ink) / 0.2));
+}
+
+/* `.under-status-bar` and `.under-nav-bar` mark a pane that runs under that system bar, and stop
+   its scroll bar short of it. */
+[data-platform='android'] .under-status-bar::-webkit-scrollbar-track {
+  margin-top: var(--safe-top);
+}
+[data-platform='android'] .under-nav-bar::-webkit-scrollbar-track {
+  margin-bottom: var(--safe-bottom);
 }
 
 .pw {

@@ -472,7 +472,7 @@ export function SettingsPage() {
   return (
     <div
       data-component="SettingsPage"
-      className="sc h-full bg-paper px-5 pt-10"
+      className="sc under-status-bar under-nav-bar h-full bg-paper px-5 pt-10"
       style={{
         paddingTop: mobile ? MOBILE_TOP_INSET : 'calc(2.5rem + var(--safe-top))',
         // Keeps a section scrolled into view clear of the safe-area insets.

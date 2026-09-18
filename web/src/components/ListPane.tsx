@@ -395,7 +395,7 @@ export function ListPane({
       </header>
       <div
         ref={scrollRef}
-        className="sc flex-1"
+        className="sc under-nav-bar flex-1"
         aria-busy={updating}
         style={{
           // The rows run to the pane's own edge, so the safe-area inset is the whole bottom

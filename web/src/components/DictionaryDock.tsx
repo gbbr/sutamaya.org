@@ -86,7 +86,7 @@ export function DictionaryDock({
         </button>
       </div>
       <div
-        className="flex-1 min-h-0 overflow-y-auto flex flex-col gap-[9px] mt-[7px] opacity-[.82]"
+        className="under-nav-bar flex-1 min-h-0 overflow-y-auto flex flex-col gap-[9px] mt-[7px] opacity-[.82]"
         style={{
           fontSize: defSize,
           // Space under the last meaning: the gap between meanings above a phone's bottom bar, 18px in
