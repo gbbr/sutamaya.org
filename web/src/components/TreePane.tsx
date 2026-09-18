@@ -332,13 +332,13 @@ export function TreePane({
   // Whether the search input is showing. Seeded from whether a query is already present, so a
   // pre-populated one can't leave results on screen with no way to see what is being searched.
   const [searchOpen, setSearchOpen] = useState(() => query.trim().length > 0);
-  // Closes the input once a list from the results is opened, a destination rather than a
-  // refinement. Keyed on the browsed node, since the row can be clicked in either pane and only
-  // the node reaches this one.
+  // Closes the input once a list or collection from the results is opened, a destination rather
+  // than a refinement. Keyed on the browsed node and on the pick, since the row can be clicked in
+  // either pane, and picking the node already open changes nothing else that reaches this one.
   useEffect(() => {
     if (!query.trim()) setSearchOpen(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [nodeId]);
+  }, [nodeId, pickCount]);
   const searchInput = useRef<HTMLInputElement>(null);
   // The search cursor. It starts at 0, so Enter opens the first result with no arrow press first.
   const {
