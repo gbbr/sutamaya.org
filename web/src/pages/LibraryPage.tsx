@@ -8,6 +8,7 @@ import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { useBackHandler } from '../hooks/useBackHandler';
+import { forgetScrollPosition } from '../hooks/useScrollMemory';
 import { findNode, isExpandable, nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId } from '../lib/corpus';
 import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP } from '../lib/search/metadata';
 import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
@@ -216,6 +217,8 @@ export function LibraryPage() {
   const onSelectNode = useCallback(
     (id: string) => {
       const path = `/browse/${encodeURIComponent(id)}`;
+      // Opens it at the top: ListPane's remembered offset is for a return, not for a pick.
+      forgetScrollPosition(`list:${id}`);
       const select = () => {
         setQuery('');
         setView('list');

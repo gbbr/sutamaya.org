@@ -51,7 +51,7 @@ behaviour components share, and `components/` the pieces the pages are built fro
 - Router state carries what an arrival *means* — the pane it came from, the search behind it, a line
   to jump to. It survives a refresh, so each is used exactly once.
 - The Reader restores its scroll position on a return (Back, a refresh, a relaunch) and opens at the
-  top when the reader chooses somewhere new. The Library's panes always restore theirs.
+  top when the reader chooses somewhere new.
 - **A sutta opened from the Reader's own search is a detour.** The Reader's close becomes a return
   arrow, back to the sutta the reader first searched from, however many suttas they open or turn to
   after it; Escape and Back in the native apps do the same. The jump slides the text in from the right and
