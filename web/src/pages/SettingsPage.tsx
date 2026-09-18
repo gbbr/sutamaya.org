@@ -467,14 +467,14 @@ export function SettingsPage() {
   }, [backToLastLocation]);
 
   // Block layout with margin-auto centring rather than flex, which has scrollHeight bugs under
-  // overflow:auto on some WebView builds. On a phone the page starts on the app's own top line
-  // (lib/layout.ts), level with the library's header.
+  // overflow:auto on some WebView builds. On a phone the page starts a bit below the app's own
+  // top line (lib/layout.ts), which the library's header sits on.
   return (
     <div
       data-component="SettingsPage"
-      className="sc under-status-bar under-nav-bar h-full bg-paper px-5 pt-10"
+      className="sc under-status-bar under-nav-bar h-full bg-paper px-5 pt-12"
       style={{
-        paddingTop: mobile ? MOBILE_TOP_INSET : 'calc(2.5rem + var(--safe-top))',
+        paddingTop: mobile ? `calc(${MOBILE_TOP_INSET} + 8px)` : 'calc(3rem + var(--safe-top))',
         // Keeps a section scrolled into view clear of the safe-area insets.
         scrollPaddingTop: 'var(--safe-top)',
         scrollPaddingBottom: 'var(--safe-bottom)',
