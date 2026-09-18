@@ -36,7 +36,7 @@ export function DictionaryDock({
   return (
     <section
       data-component="DictionaryDock"
-      className="flex-none flex flex-col animate-sheetUp"
+      className="min-h-0 flex flex-col animate-sheetUp"
       style={{
         borderTop: `2px solid ${theme.fg}`,
         background: theme.panel,
@@ -44,6 +44,7 @@ export function DictionaryDock({
         // gesture pill / iOS's home indicator, and the scroll area below carries the inset so the
         // list ends clear of them rather than behind a dead band.
         padding: '14px 22px 0',
+        // At most 45% of the screen, shrinking (min-h-0) where the reader's text leaves less room.
         maxHeight: '45dvh',
       }}
     >
@@ -86,7 +87,12 @@ export function DictionaryDock({
       </div>
       <div
         className="flex-1 min-h-0 overflow-y-auto flex flex-col gap-[9px] mt-[7px] opacity-[.82]"
-        style={{ fontSize: defSize, paddingBottom: 'max(18px, var(--safe-bottom))' }}
+        style={{
+          fontSize: defSize,
+          // Space under the last meaning: the gap between meanings above a phone's bottom bar, 18px in
+          // a browser.
+          paddingBottom: 'max(18px, calc(var(--safe-bottom) + 9px))',
+        }}
       >
         {loading && dictionaryFailed ? (
           <div className="leading-[1.55] flex items-baseline gap-[10px]">
