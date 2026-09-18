@@ -32,7 +32,7 @@ import {
   recordCachedCorpusVersion,
   type OfflineStatus,
 } from '../lib/offline';
-import type { AppTheme } from '../lib/types';
+import type { Theme } from '../lib/types';
 
 const UI_SCALE_MIN = 0.85;
 const UI_SCALE_MAX = 1.4;
@@ -81,7 +81,7 @@ const DARK_SHELL: ShellPalette = { paper: '#171513', pane: '#1E1B17', ink: '#E4D
 
 // The app-theme choices. `palettes` holds one entry for a pinned theme, and two for System, whose
 // tile shows light on the left and dark on the right.
-const THEME_OPTIONS: Array<{ id: AppTheme; label: string; palettes: ShellPalette[] }> = [
+const THEME_OPTIONS: Array<{ id: Theme; label: string; palettes: ShellPalette[] }> = [
   { id: 'light', label: 'Light', palettes: [LIGHT_SHELL] },
   { id: 'dark', label: 'Dark', palettes: [DARK_SHELL] },
   { id: 'system', label: 'System', palettes: [LIGHT_SHELL, DARK_SHELL] },
@@ -707,9 +707,15 @@ export function SettingsPage() {
             <div className="font-sans text-ui-sm text-ink-4 mb-2">Theme</div>
             <div className="flex gap-3">
               {THEME_OPTIONS.map((t) => {
-                const selected = theme === t.id;
+                // Sepia shows here as Light, and picking the selected tile keeps it.
+                const selected = (theme === 'sepia' ? 'light' : theme) === t.id;
                 return (
-                  <button key={t.id} className="flex-1" aria-pressed={selected} onClick={() => setTheme(t.id)}>
+                  <button
+                    key={t.id}
+                    className="flex-1"
+                    aria-pressed={selected}
+                    onClick={() => !selected && setTheme(t.id)}
+                  >
                     {/* A real border rather than `ring-inset`, which would paint under the tile's
                         own opaque panels, and 2px in both states so selecting doesn't nudge it. */}
                     <span

@@ -110,18 +110,13 @@ export interface User {
   picture?: string | null;
 }
 
-// The reader's own theme. 'system' is the starting value and the reader's picker doesn't list it,
-// showing whichever theme it resolves to as the selected one; Settings' shell picker does offer it.
-export type ReaderTheme = 'light' | 'dark' | 'sepia' | 'system';
+// The app's one theme, shared by the Reader and the shell. Sepia tints only the Reader; the shell
+// shows it as light. The Reader's picker has no 'system' tile and Settings' has no sepia one.
+export type Theme = 'light' | 'dark' | 'sepia' | 'system';
 // What 'system' resolves to at render time.
-export type ResolvedReaderTheme = Exclude<ReaderTheme, 'system'>;
+export type ResolvedTheme = Exclude<Theme, 'system'>;
 // The reading faces, drawn as specimen tiles in the reader's picker.
 export type ReaderFace = 'georgia' | 'serif' | 'literata' | 'charter' | 'palatino' | 'sans';
-
-// The app shell's light/dark mode (Settings > Theme), separate from the reader's own.
-export type AppTheme = 'light' | 'dark' | 'system';
-// What that 'system' resolves to at render time.
-export type ResolvedAppTheme = Exclude<AppTheme, 'system'>;
 
 export interface ThemeColors {
   bg: string;

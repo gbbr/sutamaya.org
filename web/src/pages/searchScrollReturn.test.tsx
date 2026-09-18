@@ -134,7 +134,6 @@ describe('a search result opened and closed', () => {
       dragTree: vi.fn(),
     });
     vi.mocked(useReaderPrefs).mockReturnValue({
-      theme: 'light',
       resolvedTheme: 'light',
       fs: 18,
       lh: 165,
