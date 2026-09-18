@@ -75,6 +75,8 @@ export function getUiScale(): number {
 // Applies the UI scale to the document, by whichever of the two paths this browser supports.
 export function applyUiScale(scale: number) {
   const root = document.documentElement.style;
+  // Keeps index.css's safe-area insets at the screen's own size, on either path.
+  root.setProperty('--inset-scale', String(scale));
   if (supportsZoom()) {
     root.setProperty('zoom', String(scale));
     root.setProperty('--ui-scale', String(scale));

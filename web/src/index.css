@@ -423,12 +423,13 @@
    `viewport-fit=cover`) together with the `--safe-area-inset-*` custom properties Capacitor's
    Android shell injects on <html> — older Android WebViews expose only the latter. Zero in a plain
    browser tab. Every top/bottom-bar and full-screen surface reads these rather than `env()`
-   directly. */
+   directly. Divided by `--inset-scale` (lib/uiPrefs.ts), so the UI scale leaves the system bars'
+   room at its real size. */
 :root {
-  --safe-top: max(env(safe-area-inset-top, 0px), var(--safe-area-inset-top, 0px));
-  --safe-right: max(env(safe-area-inset-right, 0px), var(--safe-area-inset-right, 0px));
-  --safe-bottom: max(env(safe-area-inset-bottom, 0px), var(--safe-area-inset-bottom, 0px));
-  --safe-left: max(env(safe-area-inset-left, 0px), var(--safe-area-inset-left, 0px));
+  --safe-top: calc(max(env(safe-area-inset-top, 0px), var(--safe-area-inset-top, 0px)) / var(--inset-scale, 1));
+  --safe-right: calc(max(env(safe-area-inset-right, 0px), var(--safe-area-inset-right, 0px)) / var(--inset-scale, 1));
+  --safe-bottom: calc(max(env(safe-area-inset-bottom, 0px), var(--safe-area-inset-bottom, 0px)) / var(--inset-scale, 1));
+  --safe-left: calc(max(env(safe-area-inset-left, 0px), var(--safe-area-inset-left, 0px)) / var(--inset-scale, 1));
 }
 
 :root.dark {
