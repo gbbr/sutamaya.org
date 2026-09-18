@@ -261,6 +261,15 @@ describe('a collection found by search', () => {
     await waitFor(() => expect(vaggaRow()).toBeTruthy());
   });
 
+  it('closes the search box when the collection picked is the one already open', async () => {
+    const { inPane, search } = renderLibrary('/browse/sn47');
+    search('satipatthana');
+
+    fireEvent.click(await inPane('ListPane').findByRole('button', { name: /SN47\s*Establishment/ }));
+
+    await waitFor(() => expect(inPane('TreePane').queryByPlaceholderText(SEARCH_PLACEHOLDER)).toBeNull());
+  });
+
   it('is reached by the arrow keys and opened with Enter', async () => {
     const { inPane } = searchFrom('/browse/dn', 'satipatthana');
     await inPane('ListPane').findByRole('button', { name: /AN9\.63\s*Establishment/ });
