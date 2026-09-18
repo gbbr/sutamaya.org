@@ -10,7 +10,16 @@ import {
   uidHolds,
   sortByIdAsc,
 } from './corpus';
-import { listBlockCount, searchCorpus, searchGroups, searchLists, type ListBlockHit } from './search/metadata';
+import {
+  SEARCH_RESULTS_CAP,
+  listBlockCounts,
+  listBlockHeading,
+  searchCorpus,
+  searchGroups,
+  searchLists,
+  suttaHitsHeading,
+  type ListBlockHit,
+} from './search/metadata';
 import type { Corpus, Highlight, ListDef, Sutta } from './types';
 
 // Only the fields compareIds/sortByIdAsc actually touch (the id key) matter here; the rest
@@ -577,14 +586,25 @@ describe('searchCorpus', () => {
     });
   });
 
-  describe('listBlockCount', () => {
+  describe('listBlockCounts', () => {
     const listHit: ListBlockHit = { list: { id: 'l1', label: 'Morning', parentId: null, kind: 'list', items: [] }, parents: '' };
     const groupHit: ListBlockHit = { group: { id: 'dn', label: 'Dīgha Nikāya', sub: 'Long Discourses', count: 3 } };
 
     it('counts lists and collections apart, naming only the kinds present', () => {
-      expect(listBlockCount([listHit, listHit, groupHit])).toBe('2 lists · 1 collection');
-      expect(listBlockCount([groupHit, groupHit])).toBe('2 collections');
-      expect(listBlockCount([listHit])).toBe('1 list');
+      expect(listBlockCounts([listHit, listHit, groupHit])).toEqual(['2 lists', '1 collection']);
+      expect(listBlockCounts([groupHit, groupHit])).toEqual(['2 collections']);
+      expect(listBlockCounts([listHit])).toEqual(['1 list']);
+    });
+
+    it('heads the block with the kinds present and every row counted', () => {
+      expect(listBlockHeading([listHit, listHit, groupHit])).toBe('Lists & collections (3)');
+      expect(listBlockHeading([groupHit, groupHit])).toBe('Collections (2)');
+      expect(listBlockHeading([listHit])).toBe('Lists (1)');
+    });
+
+    it('heads the sutta hits with their count, capped', () => {
+      expect(suttaHitsHeading(12)).toBe('Suttas (12)');
+      expect(suttaHitsHeading(SEARCH_RESULTS_CAP + 1)).toBe(`Suttas (${SEARCH_RESULTS_CAP}+)`);
     });
   });
 
