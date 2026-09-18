@@ -210,8 +210,8 @@ describe('an id that no longer resolves to anything', () => {
   });
 
   it('tells a corpus row that only expands what to do instead of calling it empty', async () => {
-    // /browse/mn is a real node with real suttas under it, just not directly — nothing in the UI
-    // links there, but a typed or shared URL does. "Nothing here yet." reads as "MN is empty".
+    // /browse/mn is a real node with real suttas under it, just not directly — a search result, or a
+    // typed or shared URL, lands there. "Nothing here yet." reads as "MN is empty".
     const { inPane } = renderApp('/browse/mn');
 
     expect(await inPane('ListPane').findByText('Middle Discourses')).toBeTruthy();

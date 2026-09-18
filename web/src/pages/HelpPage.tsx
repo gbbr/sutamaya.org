@@ -86,7 +86,7 @@ const SECTIONS: HelpSection[] = [
           'Tap any node to see its contents.',
           'Switch between the Canon and your own Lists.',
           'Display this help page',
-          'Search by number, title, summary, your own notes or list names.',
+          'Search by number, title, summary, your own notes, or the name of a list or collection.',
           'Your account, and every setting.',
         ],
       },

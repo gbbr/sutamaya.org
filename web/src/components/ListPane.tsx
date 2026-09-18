@@ -7,7 +7,7 @@ import { forgetScrollPosition, useScrollMemory } from '../hooks/useScrollMemory'
 import { usePointerDragSession } from '../hooks/usePointerDragSession';
 import { findNode, isExpandable, listItemsFor, nodeBlurb, nodeLabel } from '../lib/corpus';
 import { prefetchSuttaText } from '../lib/suttaPrefetch';
-import { SEARCH_CAP_NOTE, SEARCH_RESULTS_CAP, type ListHit, type SearchHit } from '../lib/search/metadata';
+import { SEARCH_CAP_NOTE, SEARCH_RESULTS_CAP, type ListBlockHit, type SearchHit } from '../lib/search/metadata';
 import { searchScopeNote, type TextSearchStatus } from '../lib/search/text';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
@@ -28,8 +28,10 @@ interface ListPaneProps {
   // result set.
   hits: SearchHit[];
   // The list hits, drawn as their own block above the results, already trimmed to what renders.
-  listHits: ListHit[];
+  listHits: ListBlockHit[];
   listHitTotal: number;
+  // Every list hit counted by kind, for the results heading.
+  listHitCount: string;
   // Whether the sutta text is searchable yet, which is what the line under an empty result says.
   textStatus: TextSearchStatus;
   // Whether the results are waiting on that text, said in place of the rows.
@@ -64,6 +66,7 @@ export function ListPane({
   hits,
   listHits,
   listHitTotal,
+  listHitCount,
   textStatus,
   textPending,
   hitsSettled = true,
@@ -305,13 +308,14 @@ export function ListPane({
   // metaLine returns the counted line under the pane's title, naming what the pane is showing.
   //   nothing selected  – the number of collections
   //   a deleted list    – empty, since it holds nothing rather than zero things
+  //   expandable node   – empty, its suttas being a level down
   //   a node or list    – its sutta count, an auto-list's being what the reader has, uncapped
   //   a running search  – empty, nothing having been counted yet
-  //   a search          – the sutta count, "80+" past the cap, and the matched lists beside it
+  //   a search          – the sutta count, "80+" past the cap, and the matched lists and collections beside it
   function metaLine(): string {
     if (!searching) {
       if (!nodeId) return `${collectionCount} collections`;
-      if (goneList) return '';
+      if (goneList || expandableNode) return '';
       return plural(currentList?.total ?? items.length, 'sutta');
     }
     if (textPending) return '';
@@ -319,8 +323,7 @@ export function ListPane({
     const noun = listHitTotal > 0 ? 'sutta' : 'result';
     const suttas = hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ ${noun}s` : plural(hits.length, noun);
     if (listHitTotal === 0) return suttas;
-    const matchedLists = plural(listHitTotal, 'list');
-    return hits.length === 0 ? matchedLists : `${suttas} · ${matchedLists}`;
+    return hits.length === 0 ? listHitCount : `${suttas} · ${listHitCount}`;
   }
   const meta = metaLine();
 
@@ -337,7 +340,7 @@ export function ListPane({
 
   // emptyMessage returns the empty state under the rows.
   //   searching       – a query that matched nothing, quoted back
-  //   expandable node – a corpus row whose suttas are a level down, reached by URL only
+  //   expandable node – a corpus row whose suttas are a level down, reached by URL or from search
   //   gone list       – a list deleted here, on another device, or an outlived link
   //   node or list    – one the reader picked that holds nothing
   //   nothing chosen  – bare /browse, which only the two-pane layout shows

@@ -2,7 +2,7 @@
 
 One search box finds suttas by what's written *about* them — number, title, description, the
 reader's notes, the names of their lists — and by the text itself, in English or Pali, across the
-whole canon, offline.
+whole canon, offline. It also finds the collections and lists a query names.
 
 ## Two halves
 
@@ -120,6 +120,12 @@ paragraph and opens the sutta at the top. A sutta reached only through the name 
 says nothing about itself, so it keeps its paragraph. So does the sutta being read, in the Reader's
 own search, whose row is a find on the page in hand.
 
+## Collections and lists
+
+A collection matches where every query word starts a word of its English or Pali name, or the whole
+query run together does, as `sutta nipata` does *Suttanipāta* — matching anywhere in a word would let
+`vagga` name most of the tree. One that only expands opens expanded in the tree, not on an empty list.
+
 ## Golden queries
 
 `scripts/search-golden.json` lists queries and the suttas each should put near the top — famous
@@ -148,7 +154,8 @@ the repo.
 
 | Where | What |
 |---|---|
-| `web/src/lib/search/metadata.ts` | metadata search, the shared wording, the function words |
+| `web/src/lib/search/metadata.ts` | metadata search, list and collection matching, the shared wording, the function words |
+| `web/src/components/SearchListHits.tsx` | the collections and lists block |
 | `web/src/lib/search/text.ts` | matching, ranking and snippets over the text |
 | `web/src/lib/search/worker.ts`, `textClient.ts` | the worker, and the main thread's side of it |
 | `web/src/lib/search/expansion.ts` | the expansion table |

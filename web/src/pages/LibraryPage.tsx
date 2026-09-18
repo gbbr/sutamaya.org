@@ -10,7 +10,7 @@ import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { useBackHandler } from '../hooks/useBackHandler';
 import { forgetScrollPosition } from '../hooks/useScrollMemory';
 import { findNode, isExpandable, nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId } from '../lib/corpus';
-import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP } from '../lib/search/metadata';
+import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP, listBlockCount } from '../lib/search/metadata';
 import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, tagIntent, type RouteIntent } from '../lib/routeIntent';
@@ -169,7 +169,7 @@ export function LibraryPage() {
   // `listOnly` is decided before the text is scanned, so that claim is checked here.
   const hits = useMemo(() => {
     if (!listHits.length) return allHits;
-    const members = new Set(listHits.flatMap((h) => h.list.items));
+    const members = new Set(listHits.flatMap((h) => ('list' in h ? h.list.items : [])));
     return allHits.filter((h) => !(h.listOnly && !h.snippet && members.has(h.id)));
   }, [allHits, listHits]);
   // The search row TreePane's arrow-key cursor is on — a sutta hit or a list hit — mirrored here
@@ -192,12 +192,16 @@ export function LibraryPage() {
     () => (listsExpanded ? listHits : listHits.slice(0, LIST_RESULTS_CAP)),
     [listHits, listsExpanded]
   );
+  const listHitCount = useMemo(() => listBlockCount(listHits), [listHits]);
   const toggleListsExpanded = useCallback(() => setListsExpanded((v) => !v), []);
 
   const [nodeId, setNodeId] = useState(routeNodeId);
   useEffect(() => {
     setNodeId(routeNodeId);
   }, [routeNodeId]);
+  // How many nodes have been picked, which TreePane reveals each time — a pick of the node already
+  // selected included.
+  const [pickCount, setPickCount] = useState(0);
 
   // The document title and meta description, from the same `nodeLabel` and `nodeBlurb` lookups
   // ListPane's header uses. A search, and a user list, describe nothing and fall back to the
@@ -213,20 +217,24 @@ export function LibraryPage() {
   useDocumentMeta(title, description);
 
   // Selects a browse node or user list. Stable, since TreePane's keydown effect depends on it. On a
-  // phone the list takes the tree's place, sliding in over it.
+  // phone the list takes the tree's place, sliding in over it — except for a group that only
+  // expands, which a search can name, and which opens in the tree instead.
   const onSelectNode = useCallback(
     (id: string) => {
       const path = `/browse/${encodeURIComponent(id)}`;
       // Opens it at the top: ListPane's remembered offset is for a return, not for a pick.
       forgetScrollPosition(`list:${id}`);
+      const found = corpus ? findNode(corpus, id) : null;
+      const inTree = !!found && isExpandable(found.node);
       const select = () => {
         setQuery('');
-        setView('list');
+        setView(inTree ? 'tree' : 'list');
         setNodeId(id);
         setSuttaId(undefined);
+        setPickCount((n) => n + 1);
       };
       // Nothing animates on a wider layout: the tree stays put and only the pane beside it changes.
-      if (!mobile) {
+      if (!mobile || inTree) {
         select();
         navigate(path);
         return;
@@ -236,7 +244,7 @@ export function LibraryPage() {
         return navigate(path, { flushSync: true });
       });
     },
-    [navigate, setView, mobile]
+    [navigate, setView, mobile, corpus]
   );
 
   // `segments` are set only where the query was answered by the sutta's text, and are where the
@@ -322,6 +330,7 @@ export function LibraryPage() {
       <div style={{ display: showTreePane ? 'contents' : 'none' }}>
         <TreePane
           nodeId={nodeId}
+          pickCount={pickCount}
           onSelect={onSelectNode}
           onOpenSutta={onOpen}
           onSearch={setQuery}
@@ -329,6 +338,7 @@ export function LibraryPage() {
           hits={hits}
           listHits={shownListHits}
           listHitTotal={listHits.length}
+          listHitCount={listHitCount}
           textStatus={textStatus}
           textPending={textPending}
           hitsSettled={hitsSettled}
@@ -367,6 +377,7 @@ export function LibraryPage() {
           hits={hits}
           listHits={shownListHits}
           listHitTotal={listHits.length}
+          listHitCount={listHitCount}
           textStatus={textStatus}
           textPending={textPending}
           hitsSettled={hitsSettled}

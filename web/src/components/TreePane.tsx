@@ -12,13 +12,14 @@ import { useListCrud } from '../hooks/useListCrud';
 import { useListTreeDrag } from '../hooks/useListTreeDrag';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
 import { useBackHandler } from '../hooks/useBackHandler';
-import { ancestorsOf, descendantIdsOf, findNode, flatSuttaOrder } from '../lib/corpus';
+import { ancestorsOf, descendantIdsOf, findNode, flatSuttaOrder, isExpandable } from '../lib/corpus';
 import { prefetchSuttaText } from '../lib/suttaPrefetch';
 import {
   SEARCH_CAP_NOTE,
   SEARCH_PLACEHOLDER,
   SEARCH_RESULTS_CAP,
-  type ListHit,
+  listBlockHitId,
+  type ListBlockHit,
   type SearchHit,
 } from '../lib/search/metadata';
 import { searchNoMatches, type TextSearchStatus } from '../lib/search/text';
@@ -85,6 +86,8 @@ export interface ActiveSearchRow {
 
 interface TreePaneProps {
   nodeId?: string;
+  // Counts the nodes picked, so a pick is revealed even when it is the node already selected.
+  pickCount?: number;
   onSelect: (nodeId: string) => void;
   // `segment` is where a text hit was found, and where the reader opens; absent for every other row.
   onOpenSutta: (suttaId: string, segments?: [number, number]) => void;
@@ -94,8 +97,10 @@ interface TreePaneProps {
   // desktop; this pane keeps the input and the keyboard nav.
   hits: SearchHit[];
   // The list hits, already trimmed to what renders, so both panes agree on which rows exist.
-  listHits: ListHit[];
+  listHits: ListBlockHit[];
   listHitTotal: number;
+  // Every list hit counted by kind, for the results heading.
+  listHitCount: string;
   // Whether the sutta text is searchable yet, which is all the empty state says about it.
   textStatus: TextSearchStatus;
   // Whether the results are waiting on that text, said in place of the rows.
@@ -129,6 +134,7 @@ interface TreePaneProps {
 
 export function TreePane({
   nodeId,
+  pickCount = 0,
   onSelect,
   onOpenSutta,
   onSearch,
@@ -136,6 +142,7 @@ export function TreePane({
   hits,
   listHits,
   listHitTotal,
+  listHitCount,
   textStatus,
   textPending,
   hitsSettled = true,
@@ -212,9 +219,9 @@ export function TreePane({
     }
   }, [paneView]);
 
-  // Points the toggle at whichever tree `nodeId` lives in. Keyed on whether it is a list id rather
-  // than on `lists`, which a reorder hands back anew with the same ids — re-running on that would
-  // snap the pane to the library after every drag.
+  // Points the toggle at whichever tree `nodeId` lives in, again on each pick. Keyed on whether it
+  // is a list id rather than on `lists`, which a reorder hands back anew with the same ids —
+  // re-running on that would snap the pane to the library after every drag.
   const nodeIsListId = lists.some((l) => l.id === nodeId);
   const mountedRef = useRef(false);
   useEffect(() => {
@@ -230,7 +237,7 @@ export function TreePane({
     });
     if (next) setPaneView(next);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [nodeId, nodeIsListId, corpus]);
+  }, [nodeId, nodeIsListId, corpus, pickCount]);
 
   // Opens `toOpen` in one of the two trees' expansion maps, collapsing nothing already open.
   function expandIds(setter: (updater: (x: Record<string, boolean>) => Record<string, boolean>) => void, toOpen: Record<string, boolean>) {
@@ -253,14 +260,25 @@ export function TreePane({
   // to open, the corpus and the lists both being able to arrive after this first renders.
   const revealedNodeRef = useRef<string | undefined>(revealNow ? undefined : nodeId);
   const revealedListNodeRef = useRef<string | undefined>(revealNow ? undefined : nodeId);
+  // Forgets both on a pick, which reveals its node again even unchanged, its ancestors perhaps
+  // collapsed by hand since.
+  const pickRef = useRef(pickCount);
+  useEffect(() => {
+    if (pickRef.current === pickCount) return;
+    pickRef.current = pickCount;
+    revealedNodeRef.current = undefined;
+    revealedListNodeRef.current = undefined;
+  }, [pickCount]);
 
   useEffect(() => {
     if (revealedNodeRef.current === nodeId) return;
-    const toOpen = ancestorsOf(corpus, nodeId);
+    // A group that only expands is opened too, its chapters being what it offers.
+    const found = corpus && nodeId ? findNode(corpus, nodeId) : null;
+    const toOpen = { ...ancestorsOf(corpus, nodeId), ...(found && isExpandable(found.node) ? { [found.node.id]: true } : {}) };
     if (!Object.keys(toOpen).length) return;
     revealedNodeRef.current = nodeId;
     expandIds(setExpanded, toOpen);
-  }, [corpus, nodeId]);
+  }, [corpus, nodeId, pickCount]);
 
   useEffect(() => {
     if (revealedListNodeRef.current === nodeId) return;
@@ -268,7 +286,7 @@ export function TreePane({
     if (!Object.keys(toOpen).length) return;
     revealedListNodeRef.current = nodeId;
     expandIds(setListExpanded, toOpen);
-  }, [lists, nodeId]);
+  }, [lists, nodeId, pickCount]);
 
   // Expands or collapses a corpus row. `deep` — ⌥-click — closes its whole subtree rather than
   // hiding it with the descendants still flagged open, and only ever collapses: ⌥-clicking a
@@ -427,7 +445,7 @@ export function TreePane({
         ? `${SEARCH_RESULTS_CAP}+ ${noun}s`
         : `${hits.length} ${noun}${hits.length === 1 ? '' : 's'}`;
     if (listHitTotal === 0) return suttas;
-    return `${suttas} · ${listHitTotal} list${listHitTotal === 1 ? '' : 's'}`;
+    return `${suttas} · ${listHitCount}`;
   }
   // The hits actually rendered and keyboard-navigable; `hits` stays uncapped, so the count in the
   // heading is honest.
@@ -444,7 +462,7 @@ export function TreePane({
   // draw them. Built here, this pane owning the nav even where ListPane renders the rows.
   const navRows: ActiveSearchRow[] = useMemo(
     () => [
-      ...listHits.map((h) => ({ kind: 'list' as const, id: h.list.id })),
+      ...listHits.map((h) => ({ kind: 'list' as const, id: listBlockHitId(h) })),
       ...displayHits.map((h) => ({ kind: 'sutta' as const, id: h.id })),
     ],
     [listHits, displayHits]
@@ -466,7 +484,7 @@ export function TreePane({
   function openRow(i: number) {
     const listHit = listHits[i];
     if (listHit) {
-      onSelect(String(listHit.list.id));
+      onSelect(listBlockHitId(listHit));
       return;
     }
     const hit = displayHits[i - listHits.length];
@@ -538,7 +556,7 @@ export function TreePane({
   // Scrolls to the browsed node, retrying on each state change the expand effects above make: its
   // row usually isn't in the DOM yet on the render `nodeId` changed on. Never to the node a return
   // opens on, which the remembered scroll position places.
-  useScrollToNode(scrollRef, nodeId, [paneView, expanded, listExpanded, corpus, lists], revealNow ? undefined : nodeId);
+  useScrollToNode(scrollRef, nodeId, [paneView, expanded, listExpanded, corpus, lists], revealNow ? undefined : nodeId, pickCount);
   // Second, so a breadcrumb's own segment — which may sit above `nodeId` — wins the final position.
   useScrollToNode(scrollRef, flashNodeId, [paneView, expanded, listExpanded, corpus, lists]);
 

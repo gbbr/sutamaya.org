@@ -70,8 +70,9 @@ More: [docs/web-app.md](docs/web-app.md).
 ## Search
 
 One box finds suttas by number, title, description, the reader's notes and list names — and by
-their text, in English or Pali, across the whole canon. The text is scanned without an index, in a
-background worker, and stays searchable offline after the first search.
+their text, in English or Pali, across the whole canon. A collection or list whose name matches
+shows above the suttas. The text is scanned without an index, in a background worker, and stays
+searchable offline after the first search.
 
 More: [docs/search.md](docs/search.md).
 

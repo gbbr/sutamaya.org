@@ -1,5 +1,5 @@
 import { useDeferredValue, useEffect, useMemo, useState, useSyncExternalStore } from 'react';
-import { opensAtPassage, searchLists, type ListHit, type SearchHit } from '../lib/search/metadata';
+import { opensAtPassage, searchGroups, searchLists, type ListBlockHit, type SearchHit } from '../lib/search/metadata';
 import { searchCorpusVariants, type RankedHit, type TextSearchStatus } from '../lib/search/text';
 import {
   beginTextSearchLoad,
@@ -55,7 +55,7 @@ export function useCorpusSearch(
   readingId?: string
 ): {
   hits: SearchHit[];
-  listHits: ListHit[];
+  listHits: ListBlockHit[];
   textStatus: TextSearchStatus;
   textPending: boolean;
   hitsSettled: boolean;
@@ -132,7 +132,11 @@ export function useCorpusSearch(
   // Whether the rows on screen are the held previous answer, with the newest keystroke's still
   // being scanned: rows, but not this query's, which the caller marks as updating.
   const updating = !hitsSettled && !textPending;
-  // Off the same deferred query, so both halves of the results describe one keystroke.
-  const listHits = useMemo(() => searchLists(lists, deferredQuery), [lists, deferredQuery]);
+  // Off the same deferred query, so both halves of the results describe one keystroke. The reader's
+  // lists first, then the browse groups.
+  const listHits = useMemo(
+    () => [...searchLists(lists, deferredQuery), ...searchGroups(corpus, deferredQuery)],
+    [lists, corpus, deferredQuery]
+  );
   return { hits, listHits, textStatus: status, textPending, hitsSettled, updating };
 }

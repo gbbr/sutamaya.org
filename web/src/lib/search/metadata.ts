@@ -13,7 +13,7 @@
 // and carries the inner uid as `matchedId`, since the corpus has no entry of its own for it.
 import { rangesFor, RANGE_QUERY, suttaEntries } from '../corpus';
 import { flattenListTree } from '../lists';
-import type { Corpus, HighlightsMap, ListDef, Sutta } from '../types';
+import type { ChapterRow, Corpus, HighlightsMap, ListDef, Nikaya, Sutta } from '../types';
 
 export interface SearchHit {
   id: string;
@@ -239,4 +239,47 @@ export function searchLists(lists: ListDef[], query: string): ListHit[] {
     else if (words.every((w) => searchKey(breadcrumb).includes(w))) viaGroup.push({ list, parents });
   }
   return [...own, ...viaGroup];
+}
+
+// A browse group whose name matches the query, drawn in the lists block after the lists.
+export interface GroupHit {
+  group: Nikaya | ChapterRow;
+}
+
+// A row of the lists block.
+export type ListBlockHit = ListHit | GroupHit;
+
+// Returns the node id a lists-block row selects.
+export function listBlockHitId(hit: ListBlockHit): string {
+  return 'group' in hit ? hit.group.id : hit.list.id;
+}
+
+// Returns the lists block's rows counted by kind, as the results heading names them: "2 lists",
+// "1 collection", "1 list · 3 collections".
+export function listBlockCount(hits: ListBlockHit[]): string {
+  const lists = hits.filter((h) => 'list' in h).length;
+  const groups = hits.length - lists;
+  const plural = (n: number, noun: string) => (n ? `${n} ${noun}${n === 1 ? '' : 's'}` : '');
+  return [plural(lists, 'list'), plural(groups, 'collection')].filter(Boolean).join(' · ');
+}
+
+// Returns the browse groups, in tree order, whose English or Pali name has a word starting with
+// each of the query's words, or with all of them run together, as Pali writes "sutta nipāta".
+// Nothing for a query under three letters or of function words alone, which would name half the
+// tree.
+export function searchGroups(corpus: Corpus | null, query: string): GroupHit[] {
+  const words = searchKey(query.trim())
+    .split(/\s+/)
+    .filter((w) => w && !STOPWORDS.has(w));
+  const joined = words.join('');
+  if (!corpus || joined.length < 3) return [];
+  const hits: GroupHit[] = [];
+  const visit = (group: Nikaya | ChapterRow) => {
+    const name = searchKey(`${group.label} ${group.sub ?? ''}`).split(/[^a-z0-9']+/);
+    const starts = (w: string) => name.some((n) => n.startsWith(w));
+    if (words.every(starts) || starts(joined)) hits.push({ group });
+    group.chapters?.forEach(visit);
+  };
+  corpus.nikayas.forEach(visit);
+  return hits;
 }
