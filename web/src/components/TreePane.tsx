@@ -756,7 +756,7 @@ export function TreePane({
           replacing it, the last row wanting room on every device. */}
       <div
         ref={scrollRef}
-        className="sc flex-1 pt-3"
+        className="sc under-nav-bar flex-1 pt-3"
         aria-busy={updating}
         style={{
           paddingBottom: 'calc(1.5rem + var(--safe-bottom))',
