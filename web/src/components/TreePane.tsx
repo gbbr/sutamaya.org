@@ -87,7 +87,8 @@ export interface ActiveSearchRow {
 
 interface TreePaneProps {
   nodeId?: string;
-  // Counts the nodes picked, so a pick is revealed even when it is the node already selected.
+  // Counts the nodes picked or opened by a link, so each is revealed even when it is the node
+  // already selected.
   pickCount?: number;
   onSelect: (nodeId: string) => void;
   // `segment` is where a text hit was found, and where the reader opens; absent for every other row.
@@ -124,12 +125,13 @@ interface TreePaneProps {
   // below once — such a `nodeId` is often a corpus node even though My lists was open.
   restoreOrigin?: boolean;
   // The row briefly scrolled to and highlighted: the breadcrumb segment last clicked in the reader,
-  // which may sit above `nodeId`, or a collection opened from search. It doesn't affect what is
-  // browsed.
+  // which may sit above `nodeId`, or a collection opened from search, a link or an address. It
+  // doesn't affect what is browsed.
   flashNodeId?: string;
-  // True when this mount came from a breadcrumb click. Set at mount, unlike `flashNodeId`, which
-  // arrives a tick later so it can be timed out.
-  breadcrumbArrival?: boolean;
+  // True when this mount came from a link naming `nodeId`: a breadcrumb click, a link from another
+  // app, or an address typed or pasted. Set at mount, unlike `flashNodeId`, which arrives a tick
+  // later so it can be timed out.
+  linkArrival?: boolean;
   // True while the library's "?" modal is open, which stands this pane's own shortcuts down.
   shortcutsOpen?: boolean;
 }
@@ -156,7 +158,7 @@ export function TreePane({
   visible = true,
   restoreOrigin = false,
   flashNodeId,
-  breadcrumbArrival = false,
+  linkArrival = false,
   shortcutsOpen = false,
 }: TreePaneProps) {
   const navigate = useNavigate();
@@ -180,7 +182,9 @@ export function TreePane({
   // moving the rows under a restored position. Results are remembered apart from the tree, the two
   // sharing this one column but not each other's places in it.
   const scrollKey = query.trim() ? 'tree:search' : 'tree';
-  const scrollRef = useScrollMemory<HTMLDivElement>(scrollKey, visible, { readyToRestore: ready && hitsSettled });
+  // Whether the mirror and the results have landed, so the remembered offset can be put back.
+  const restoreReady = ready && hitsSettled;
+  const scrollRef = useScrollMemory<HTMLDivElement>(scrollKey, visible, { readyToRestore: restoreReady });
   // A new query opens at the top, and forgets where the query before it was left. Not the query
   // this mount arrived on, whose offset is what the restore above is putting back, and not a
   // cleared one, which hands the column back to the tree and its own offset.
@@ -197,9 +201,10 @@ export function TreePane({
   // effect, and a tree still collapsed then clamps the restored offset to 0.
   const [persistedExpansion] = useState(loadPersistedExpansion);
   // Whether this mount should reveal `nodeId` — open its ancestors, scroll to it and point the
-  // toggle at its tree. True for a navigation: a deep link, a membership chip, a breadcrumb click. A mount on
-  // the node last persisted is a return to the pane instead, restored exactly as it was left.
-  const revealNow = nodeId !== persistedExpansion.node || breadcrumbArrival;
+  // toggle at its tree. True for a navigation: a link or an address, a membership chip, a breadcrumb
+  // click. Any other mount on the node last persisted is a return to the pane, restored exactly as
+  // it was left.
+  const revealNow = nodeId !== persistedExpansion.node || linkArrival;
   const [expanded, setExpanded] = useState<Record<string, boolean>>(() => ({
     ...toRecord(persistedExpansion.corpus),
     ...(revealNow ? ancestorsOf(corpus, nodeId) : {}),
@@ -553,13 +558,27 @@ export function TreePane({
   const markedId = mobile ? undefined : nodeId;
 
   // Scrolls to the browsed node, retrying on each state change the expand effects above make: its
-  // row usually isn't in the DOM yet on the render `nodeId` changed on. Never to the node a return
+  // row usually isn't in the DOM yet on the render `nodeId` changed on. Held until the remembered
+  // offset is back, which would otherwise scroll the node away again. Never to the node a return
   // opens on, which the remembered scroll position places.
-  useScrollToNode(scrollRef, nodeId, [paneView, expanded, listExpanded, corpus, lists], revealNow ? undefined : nodeId, pickCount);
-  // Centres the flashed row, which is always an arrival — from search or a breadcrumb — and never a
-  // row tapped in the tree, so nothing moves under the finger. Second, so a breadcrumb's own
-  // segment — which may sit above `nodeId` — wins the final position.
-  useScrollToNode(scrollRef, flashNodeId, [paneView, expanded, listExpanded, corpus, lists], undefined, pickCount, 'center');
+  useScrollToNode(
+    scrollRef,
+    restoreReady ? nodeId : undefined,
+    [paneView, expanded, listExpanded, corpus, lists],
+    revealNow ? undefined : nodeId,
+    pickCount
+  );
+  // Centres the flashed row, which is always an arrival — from search, a breadcrumb, a link or an
+  // address — and never a row tapped in the tree, so nothing moves under the finger. Second, so a
+  // breadcrumb's own segment — which may sit above `nodeId` — wins the final position.
+  useScrollToNode(
+    scrollRef,
+    restoreReady ? flashNodeId : undefined,
+    [paneView, expanded, listExpanded, corpus, lists],
+    undefined,
+    pickCount,
+    'center'
+  );
 
   // ListRow's props, bundled by concern and memoized, so ListRow's own memoization holds. Built
   // above the `if (!corpus)` bail, hooks not being able to run conditionally.
