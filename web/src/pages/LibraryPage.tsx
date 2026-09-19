@@ -344,7 +344,6 @@ export function LibraryPage() {
           hits={hits}
           listHits={shownListHits}
           listHitTotal={listHits.length}
-          listHitCounts={listHitCounts}
           listHitHeading={listHitHeading}
           textStatus={textStatus}
           textPending={textPending}

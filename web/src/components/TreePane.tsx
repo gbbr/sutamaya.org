@@ -100,8 +100,6 @@ interface TreePaneProps {
   // The list hits, already trimmed to what renders, so both panes agree on which rows exist.
   listHits: ListBlockHit[];
   listHitTotal: number;
-  // Every list hit counted, one entry per kind, for the results heading.
-  listHitCounts: string[];
   // The lists block's own heading, counting every list hit.
   listHitHeading: string;
   // Whether the sutta text is searchable yet, which is all the empty state says about it.
@@ -146,7 +144,6 @@ export function TreePane({
   hits,
   listHits,
   listHitTotal,
-  listHitCounts,
   listHitHeading,
   textStatus,
   textPending,
@@ -438,23 +435,17 @@ export function TreePane({
   }, [canReorderLists, setReorderMode]);
 
   const searching = query.trim().length > 0;
-  // resultsHeading returns the counted lines over the results, one per row, "80+" past the cap:
-  //   no list hits – the sutta hits, as results: "12 results"
-  //   mobile       – the sutta hits' section heading under the lists block, "Suttas (12)", and
+  // resultsHeading returns the heading over the hit rows on a phone, "80+" past the cap:
+  //   no list hits – the hits counted as results: "12 results"
+  //   list hits    – the sutta hits' section heading under the lists block, "Suttas (12)", and
   //                  nothing where that block is the whole answer, a zero reading as a failed search
-  //   desktop      – a line per kind that matched, in the order the results rank them: "2 lists",
-  //                  "1 collection", "12 suttas"
-  function resultsHeading(): string[] {
-    const noun = listHitTotal > 0 ? 'sutta' : 'result';
-    const suttas =
-      hits.length > SEARCH_RESULTS_CAP
-        ? `${SEARCH_RESULTS_CAP}+ ${noun}s`
-        : `${hits.length} ${noun}${hits.length === 1 ? '' : 's'}`;
-    if (listHitTotal === 0) return [suttas];
-    if (hits.length === 0) return mobile ? [] : listHitCounts;
-    return mobile ? [suttaHitsHeading(hits.length)] : [...listHitCounts, suttas];
+  function resultsHeading(): string {
+    if (listHitTotal > 0) return hits.length > 0 ? suttaHitsHeading(hits.length) : '';
+    return hits.length > SEARCH_RESULTS_CAP
+      ? `${SEARCH_RESULTS_CAP}+ results`
+      : `${hits.length} result${hits.length === 1 ? '' : 's'}`;
   }
-  const resultLines = resultsHeading();
+  const hitsHeading = resultsHeading();
   // The hits actually rendered and keyboard-navigable; `hits` stays uncapped, so the count in the
   // heading is honest.
   const displayHits = useMemo(() => hits.slice(0, SEARCH_RESULTS_CAP), [hits]);
@@ -808,18 +799,15 @@ export function TreePane({
                 padX="px-[22px]"
               />
             )}
-            {/* Skipped while the scan is still running, where the count would be a zero nothing
-                has counted yet. */}
-            {!textPending && resultLines.length > 0 && (
-              <div className="px-[22px] pt-3 pb-1.5 space-y-1 font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3">
-                {resultLines.map((line, i) => (
-                  <div key={line} className="flex items-center gap-2">
-                    {line}
-                    {/* The count still stands for the answer before this keystroke's, so it
-                        spins beside the last line until the new one replaces it. */}
-                    {i === resultLines.length - 1 && updating && <SearchUpdating />}
-                  </div>
-                ))}
+            {/* The heading over the hit rows, mobile only as they are: ListPane's title counts the
+                results on desktop. Skipped while the scan is still running, where the count would
+                be a zero nothing has counted yet. */}
+            {mobile && !textPending && hitsHeading && (
+              <div className="flex items-center gap-2 px-[22px] pt-3 pb-1.5 font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3">
+                {hitsHeading}
+                {/* The count still stands for the answer before this keystroke's, so it spins
+                    beside it until the new one replaces it. */}
+                {updating && <SearchUpdating />}
               </div>
             )}
             {/* The hit rows, mobile only — on desktop ListPane draws them beside this pane, with

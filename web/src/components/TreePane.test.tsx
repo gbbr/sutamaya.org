@@ -67,7 +67,7 @@ import { isNativeApp, isStandaloneDisplay } from '../lib/platform';
 import { estimateOfflineStatus, isOfflineTextStale } from '../lib/offline';
 import { dismissKeepSafe, isIosBrowserTab, isKeepSafeDismissed } from '../lib/localAccount';
 import { TreePane } from './TreePane';
-import { searchCorpus, searchLists, listBlockCounts, listBlockHeading, LIST_RESULTS_CAP, SEARCH_NO_MATCHES, SEARCH_PLACEHOLDER } from '../lib/search/metadata';
+import { searchCorpus, searchLists, listBlockHeading, LIST_RESULTS_CAP, SEARCH_NO_MATCHES, SEARCH_PLACEHOLDER } from '../lib/search/metadata';
 import type { Corpus, ListDef, User } from '../lib/types';
 
 function buildCorpus(): Corpus {
@@ -199,7 +199,6 @@ function Harness({
       hits={hits}
       listHits={shownListHits}
       listHitTotal={listHits.length}
-      listHitCounts={listBlockCounts(listHits)}
       listHitHeading={listBlockHeading(listHits)}
       // Nothing here fetches the search text, so this pane draws the metadata-only empty state.
       textStatus="idle"
@@ -622,13 +621,13 @@ describe('search', () => {
     expect(screen.queryByPlaceholderText(SEARCH_PLACEHOLDER)).not.toBeInTheDocument();
   });
 
-  it('on desktop, shows only the result count — not the row list (ListPane renders results there)', async () => {
+  it('on desktop, shows neither the result count nor the rows (ListPane shows both there)', async () => {
     vi.mocked(useLayout).mockReturnValue(mockLayout({ mobile: false }));
     renderHarness();
     await userEvent.click(screen.getByLabelText('Search'));
     const input = screen.getByPlaceholderText(SEARCH_PLACEHOLDER);
     await userEvent.type(input, 'hindrance');
-    expect(screen.getByText('1 result')).toBeInTheDocument();
+    expect(screen.queryByText('1 result')).not.toBeInTheDocument();
     expect(screen.queryByText('Overcoming the Hindrances')).not.toBeInTheDocument();
   });
 });
