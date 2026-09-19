@@ -71,13 +71,11 @@ export function AppVersion() {
             ·
           </span>
           <span className="inline-flex items-center gap-1">
-            {/* A pixel down onto the text's visual centre — by position, since the spin's transform
-                would override a translate. */}
             <line.Icon
               size={13}
               strokeWidth={2}
               aria-hidden
-              className={`relative top-px flex-none ${line.spin ? 'animate-[spin_2s_linear_infinite]' : ''}`}
+              className={`flex-none ${line.spin ? 'animate-[spin_2s_linear_infinite]' : ''}`}
             />
             {line.text}
           </span>
