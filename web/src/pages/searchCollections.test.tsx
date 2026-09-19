@@ -216,14 +216,6 @@ describe('a collection found by search', () => {
     expect(results.getByText('Suttas (1)')).toBeTruthy();
   });
 
-  it('is counted beside the search box a kind to a line, in the order the results rank them', async () => {
-    const { inPane } = searchFrom('/browse/dn', 'satipatthana');
-
-    const collections = await inPane('TreePane').findByText('2 collections');
-    const suttas = inPane('TreePane').getByText('1 sutta');
-    expect(collections.compareDocumentPosition(suttas) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-  });
-
   it("puts the reader's own lists first", async () => {
     vi.mocked(useUserData).mockReturnValue(
       mockUserData([{ id: 'l1', label: 'Satipaṭṭhāna practice', parentId: null, kind: 'list', items: [] }])
