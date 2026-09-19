@@ -534,7 +534,10 @@ describe('searchCorpus', () => {
           label: 'Aṅguttara Nikāya',
           sub: 'Numbered Discourses',
           count: 1,
-          chapters: [{ id: 'an9-satipatthanavagga', ref: 'AN9.63–72', label: 'Establishment of Mindfulness', sub: 'Satipaṭṭhānavagga', count: 10 }],
+          chapters: [
+            { id: 'an9-satipatthanavagga', ref: 'AN9.63–72', label: 'Establishment of Mindfulness', sub: 'Satipaṭṭhānavagga', count: 10 },
+            { id: 'an11', ref: 'AN11', label: 'Book of Elevens', sub: 'Ekādasakanipāta', count: 10 },
+          ],
         },
         {
           id: 'kn',
@@ -569,6 +572,19 @@ describe('searchCorpus', () => {
 
     it('matches Pali typed as separate words that the name writes as one', () => {
       expect(ids('sutta nipata')).toEqual(['snp']);
+    });
+
+    it('matches a reference typed whole, however spaced or cased', () => {
+      expect(ids('SN47')).toEqual(['sn47']);
+      expect(ids('sn 47')).toEqual(['sn47']);
+      expect(ids('an 11')).toEqual(['an11']);
+      expect(ids('Snp')).toEqual(['snp']);
+    });
+
+    it('never matches part of a reference, or a reference that spans a range', () => {
+      expect(ids('sn4')).toEqual([]);
+      expect(ids('sn47.1')).toEqual([]);
+      expect(ids('SN47.1–10')).toEqual([]);
     });
 
     it('finds nothing for a query under three letters, or of function words alone', () => {
