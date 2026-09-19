@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { ArrowUpDown, ChevronDown, GripVertical, List, ListPlus } from 'lucide-react';
+import { ArrowUpDown, ChevronDown, GripVertical, List, ListPlus, MoveLeft } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -354,6 +354,9 @@ export function ListPane({
     if (nodeId) return 'Nothing here yet.';
     return 'Choose a collection to begin.';
   }
+  // Whether the empty state asks for a pick in the tree beside this pane, which a phone shows as a
+  // screen of its own instead.
+  const pickInTree = !mobile && !searching && (expandableNode || !nodeId);
 
   return (
     <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
@@ -629,7 +632,14 @@ export function ListPane({
         {/* A query that matched only lists isn't a failed search, so it keeps its empty state. */}
         {items.length === 0 && !textPending && !(searching && listHitTotal > 0) && (
           <div className="font-sans text-center text-ui-base text-ink-4 py-10 px-6">
-            {emptyMessage()}
+            {pickInTree ? (
+              <span className="inline-flex items-center gap-2">
+                <MoveLeft size={16} strokeWidth={2} className="flex-none translate-y-px" aria-hidden />
+                {emptyMessage()}
+              </span>
+            ) : (
+              emptyMessage()
+            )}
             {/* What search covers, said only where a reader has just failed to find something —
                 and nothing at all once the sutta text is in and there is nothing left to admit. */}
             {searching && searchScopeNote(textStatus) && (
