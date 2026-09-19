@@ -23,8 +23,7 @@ export const TreeRow = memo(function TreeRow({
   // may be an ancestor of `nodeId`.
   flashNodeId?: string;
   expanded: Record<string, boolean>;
-  // `deep` is ⌥-click, which collapses everything under this row too.
-  onToggle: (id: string, deep?: boolean) => void;
+  onToggle: (id: string) => void;
   onSelect: (id: string) => void;
 }) {
   const expandable = isExpandable(node);
@@ -37,7 +36,7 @@ export const TreeRow = memo(function TreeRow({
           nodeId === node.id || flashNodeId === node.id ? 'bg-ink/[.06]' : ''
         }`}
         style={{ paddingLeft: 24 + depth * 14 }}
-        onClick={(e) => (expandable ? onToggle(node.id, e.altKey) : onSelect(node.id))}
+        onClick={() => (expandable ? onToggle(node.id) : onSelect(node.id))}
       >
         <span className="w-[15px] flex-none flex items-center justify-center text-ink-4">
           {expandable && (open ? <ChevronDown size={15} strokeWidth={2} /> : <ChevronRight size={15} strokeWidth={2} />)}

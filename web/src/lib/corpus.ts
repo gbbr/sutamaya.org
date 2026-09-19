@@ -203,8 +203,7 @@ export function ancestorsOf(corpus: Corpus | null, nodeId: string | undefined): 
   return init;
 }
 
-// Every id below `nodeId` at any depth, excluding itself — what TreePane's ⌥-click deep collapse
-// closes.
+// Every id below `nodeId` at any depth, excluding itself — the rows TreePane closes along with it.
 export function descendantIdsOf(corpus: Corpus | null, nodeId: string): string[] {
   const found = corpus ? findNode(corpus, nodeId) : null;
   if (!found) return [];

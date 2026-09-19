@@ -63,22 +63,6 @@ export function shortcutsForScope(scope: ShortcutScope): Shortcut[] {
   return Object.values(SHORTCUTS).filter((s) => s.scope === scope);
 }
 
-// A modifier-click gesture, listed in the same "?" modal as the key shortcuts. Separate from
-// SHORTCUTS, since a pointer handler reads `e.altKey` itself and needs no `match`.
-export interface PointerHint {
-  keys: string[];
-  label: string;
-  scope: ShortcutScope;
-}
-
-export const POINTER_HINTS: PointerHint[] = [
-  { keys: ['⌥', 'Click'], label: 'Collapse a tree row and everything inside it', scope: 'library' },
-];
-
-export function pointerHintsForScope(scope: ShortcutScope): PointerHint[] {
-  return POINTER_HINTS.filter((h) => h.scope === scope);
-}
-
 // True if `e` triggers `shortcut`, matching `e.key` as-is and lowercased so a call site needn't
 // know whether the shortcut is a letter or an exact key name. A Ctrl/Cmd/Alt combo never matches,
 // so no single-key shortcut can hijack a browser chord; Shift is consulted only where a shortcut

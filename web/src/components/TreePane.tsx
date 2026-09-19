@@ -293,13 +293,11 @@ export function TreePane({
     expandIds(setListExpanded, toOpen);
   }, [lists, nodeId, pickCount]);
 
-  // Expands or collapses a corpus row. `deep` — ⌥-click — closes its whole subtree rather than
-  // hiding it with the descendants still flagged open, and only ever collapses: ⌥-clicking a
-  // closed row opens just that row, a nikaya's whole subtree being enough to bury the pane.
+  // Expands a corpus row, or collapses it along with everything under it.
   const toggleExpanded = useCallback(
-    (id: string, deep = false) => {
+    (id: string) => {
       setExpanded((x) => {
-        if (!deep || !x[id]) return { ...x, [id]: !x[id] };
+        if (!x[id]) return { ...x, [id]: true };
         const next = { ...x, [id]: false };
         for (const d of descendantIdsOf(corpus, id)) next[d] = false;
         return next;
@@ -363,11 +361,11 @@ export function TreePane({
     [lists]
   );
 
-  // Expands or collapses a list row, `deep` closing everything under it too.
+  // Expands a list group, or collapses it along with every group inside it.
   const toggleListExpanded = useCallback(
-    (id: string, deep = false) => {
+    (id: string) => {
       setListExpanded((x) => {
-        if (!deep || !x[id]) return { ...x, [id]: !x[id] };
+        if (!x[id]) return { ...x, [id]: true };
         const next = { ...x, [id]: false };
         const queue = listChildrenOf(id).map((l) => l.id);
         while (queue.length) {

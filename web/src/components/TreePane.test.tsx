@@ -298,6 +298,17 @@ describe('corpus browse tree', () => {
     await userEvent.click(screen.getByText('Vagga One'));
     expect(onSelect).toHaveBeenCalledWith('an1-v1');
   });
+
+  it('collapsing a row closes everything inside it, so it reopens one level deep', async () => {
+    renderHarness();
+    await userEvent.click(screen.getByText('Numbered Discourses'));
+    await userEvent.click(screen.getByText('Book of Ones'));
+    expect(screen.getByText('Vagga One')).toBeInTheDocument();
+    await userEvent.click(screen.getByText('Numbered Discourses'));
+    await userEvent.click(screen.getByText('Numbered Discourses'));
+    expect(screen.getByText('Book of Ones')).toBeInTheDocument();
+    expect(screen.queryByText('Vagga One')).not.toBeInTheDocument();
+  });
 });
 
 function switchToMyLists() {
@@ -339,6 +350,25 @@ describe('My Lists tree', () => {
     expect(screen.getByText('Favorites')).toBeInTheDocument();
     const listRow = screen.getByText('Favorites').closest('[data-node-id]') as HTMLElement;
     expect(within(listRow).getByText('1')).toBeInTheDocument(); // listTotalMembers: 1 distinct sutta
+  });
+
+  it('collapsing a group closes every group inside it, so it reopens one level deep', async () => {
+    userData = mockUserData({
+      lists: [
+        { id: 'g1', label: 'Suttas to study', parentId: null, kind: 'group', items: [] },
+        { id: 'g2', label: 'This year', parentId: 'g1', kind: 'group', items: [] },
+        { id: 'l1', label: 'Favorites', parentId: 'g2', kind: 'list', items: ['an1.1-10'] },
+      ],
+    });
+    renderHarness();
+    await switchToMyLists();
+    await userEvent.click(screen.getByText('Suttas to study'));
+    await userEvent.click(screen.getByText('This year'));
+    expect(screen.getByText('Favorites')).toBeInTheDocument();
+    await userEvent.click(screen.getByText('Suttas to study'));
+    await userEvent.click(screen.getByText('Suttas to study'));
+    expect(screen.getByText('This year')).toBeInTheDocument();
+    expect(screen.queryByText('Favorites')).not.toBeInTheDocument();
   });
 
   it('opens and closes the list-options menu', async () => {
@@ -650,6 +680,7 @@ describe('tree expansion persistence', () => {
     scrolledTo.length = 0;
     renderHarness('an1-v1');
     await userEvent.click(screen.getByText('Numbered Discourses'));
+    await userEvent.click(screen.getByText('Book of Ones'));
     expect(screen.getByText('Vagga One')).toBeInTheDocument();
     expect(scrolledTo).toEqual([]);
     spy.mockRestore();
