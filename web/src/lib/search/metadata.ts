@@ -276,21 +276,26 @@ export function listBlockCounts(hits: ListBlockHit[]): string[] {
   return [plural(lists, 'list'), plural(groups, 'collection')].filter(Boolean);
 }
 
-// Returns the browse groups, in tree order, whose English or Pali name has a word starting with
-// each of the query's words, or with all of them run together, as Pali writes "sutta nipāta".
-// Nothing for a query under three letters or of function words alone, which would name half the
-// tree.
+// Returns the browse groups, in tree order, that the query names:
+//   by name      – each query word, or all of them run together as Pali writes "sutta nipāta",
+//                  starts a word of the English or Pali name; never for under three letters or
+//                  function words alone, which would name half the tree
+//   by reference – the whole query is the group's reference, as "sn 35" is SN35; never a range
+//                  like SN35.1–10
 export function searchGroups(corpus: Corpus | null, query: string): GroupHit[] {
-  const words = searchKey(query.trim())
-    .split(/\s+/)
-    .filter((w) => w && !STOPWORDS.has(w));
+  const q = searchKey(query.trim());
+  const words = q.split(/\s+/).filter((w) => w && !STOPWORDS.has(w));
   const joined = words.join('');
-  if (!corpus || joined.length < 3) return [];
+  // The query as a reference, function words kept, as "an 11" is AN11.
+  const ref = q.replace(/\s+/g, '');
+  if (!corpus || !ref) return [];
+  const byName = joined.length >= 3;
   const hits: GroupHit[] = [];
   const visit = (group: Nikaya | ChapterRow) => {
     const name = searchKey(`${group.label} ${group.sub ?? ''}`).split(/[^a-z0-9']+/);
     const starts = (w: string) => name.some((n) => n.startsWith(w));
-    if (words.every(starts) || starts(joined)) hits.push({ group });
+    const refMatch = 'ref' in group && !group.ref.includes('–') && searchKey(group.ref) === ref;
+    if (refMatch || (byName && (words.every(starts) || starts(joined)))) hits.push({ group });
     group.chapters?.forEach(visit);
   };
   corpus.nikayas.forEach(visit);

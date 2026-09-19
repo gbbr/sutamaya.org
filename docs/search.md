@@ -124,7 +124,9 @@ own search, whose row is a find on the page in hand.
 
 A collection matches where every query word starts a word of its English or Pali name, or the whole
 query run together does, as `sutta nipata` does *Suttanipāta* — matching anywhere in a word would let
-`vagga` name most of the tree. One that only expands opens expanded in the tree, not on an empty list.
+`vagga` name most of the tree. Its reference matches too, typed whole, as `sn 35` finds SN35 — but
+not a range like SN35.1–10, since a number inside one names a sutta. One that only expands opens
+expanded in the tree, not on an empty list.
 
 ## Golden queries
 
