@@ -14,6 +14,7 @@ import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP, listBlockCounts, listBlockHeading
 import { SHORTCUTS, shortcutsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, tagIntent, type RouteIntent } from '../lib/routeIntent';
+import { takeAddressArrival } from '../lib/entryKind';
 import { transitionPage } from '../lib/motion';
 import { TreePane, type ActiveSearchRow } from '../components/TreePane';
 import { ListPane } from '../components/ListPane';
@@ -57,7 +58,7 @@ export function LibraryPage() {
   const rawSuttaId = urlSuttaId ? normalizeRouteId(urlSuttaId) : urlSuttaId;
   const { mobile, dragTree, resetTree, paneW } = useLayout();
   const { corpus } = useCorpus();
-  const { lists, notes, highlights } = useUserData();
+  const { lists, notes, highlights, ready } = useUserData();
   const { toggleTheme } = useUiPrefs();
   const routeNodeId = urlNodeId ? normalizeBrowseNodeId(corpus, urlNodeId) : urlNodeId;
   useEffect(() => {
@@ -91,12 +92,25 @@ export function LibraryPage() {
   );
   // The ancestor row a reader breadcrumb click named.
   const locationFlashNodeId = consumedIntent?.flashNodeId as string | undefined;
-  // The row the tree pane scrolls to and highlights for 1600ms: that ancestor, or a collection
-  // opened from search into the tree.
+  // Whether the page loaded on this address, typed, pasted or followed from another site.
+  const [addressArrival] = useState(() => takeAddressArrival(location.key));
+  // The collection a link or an address opened into the tree, until it has been flashed.
+  const [arrivalNodeId, setArrivalNodeId] = useState(() =>
+    (consumedIntent?.link || addressArrival) && linkPane(corpus, lists, routeNodeId) === 'tree' ? routeNodeId : undefined
+  );
+  // The row the tree pane scrolls to and highlights for 1600ms: that ancestor, that collection, or a
+  // collection opened from search into the tree.
   const [flashNodeId, setFlashNodeId] = useState<string | undefined>(undefined);
   useEffect(() => {
     if (locationFlashNodeId) setFlashNodeId(locationFlashNodeId);
   }, [locationFlashNodeId]);
+  // Flashes the collection a link or an address opened once the saved data has loaded, which the
+  // tree's scroll waits for.
+  useEffect(() => {
+    if (!ready || !arrivalNodeId) return;
+    setFlashNodeId(arrivalNodeId);
+    setArrivalNodeId(undefined);
+  }, [ready, arrivalNodeId]);
   useEffect(() => {
     if (!flashNodeId) return;
     const t = window.setTimeout(() => setFlashNodeId(undefined), 1600);
@@ -130,14 +144,18 @@ export function LibraryPage() {
   const [arrivedQuery] = useState(() => new URLSearchParams(location?.search ?? '').get('q') ?? '');
   const [query, setQuery] = useState(arrivedQuery);
   const navigationType = useNavigationType();
-  // Opens the pane a link from outside the app lands on, and the search in its address, when the link
-  // arrives on this page already open. Back and Forward change neither.
+  // Opens the pane a link from outside the app lands on, reveals its node in the tree — flashed where
+  // it opens there — and opens the search in its address, when the link arrives on this page already
+  // open. Back and Forward change none of them.
   useEffect(() => {
     if (navigationType === NavigationType.Pop) return;
     const intent = consumeIntent(location?.state as ({ link?: boolean } & RouteIntent) | null | undefined, ROUTE_INTENT_KEY);
     if (!intent?.link) return;
-    setView(linkPane(corpus, lists, routeNodeId));
+    const pane = linkPane(corpus, lists, routeNodeId);
+    setView(pane);
     setQuery(new URLSearchParams(location?.search ?? '').get('q') ?? '');
+    setPickCount((n) => n + 1);
+    setFlashNodeId(pane === 'tree' ? routeNodeId : undefined);
   }, [location?.state, location?.search, navigationType, setView, corpus, lists, routeNodeId]);
   // The hit the search cursor starts on: the one the reader opened, on the way back from it. Read
   // from the arriving URL, so typing a query while a sutta is selected still starts at the top hit.
@@ -203,8 +221,8 @@ export function LibraryPage() {
   useEffect(() => {
     setNodeId(routeNodeId);
   }, [routeNodeId]);
-  // How many nodes have been picked, which TreePane reveals each time — a pick of the node already
-  // selected included.
+  // How many nodes have been picked or opened by a link, which TreePane reveals each time — the node
+  // already selected included.
   const [pickCount, setPickCount] = useState(0);
 
   // The document title and meta description, from the same `nodeLabel` and `nodeBlurb` lookups
@@ -356,7 +374,7 @@ export function LibraryPage() {
           visible={showTreePane}
           restoreOrigin={restoreOrigin}
           flashNodeId={flashNodeId}
-          breadcrumbArrival={!!locationFlashNodeId}
+          linkArrival={!!locationFlashNodeId || !!consumedIntent?.link || addressArrival}
           shortcutsOpen={shortcutsOpen}
         />
       </div>

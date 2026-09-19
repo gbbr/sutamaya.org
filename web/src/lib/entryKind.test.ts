@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { afterEach, describe, it, expect, vi } from 'vitest';
 import { NavigationType } from 'react-router';
 import { RETURN_STATE, enteredByReturn } from './entryKind';
 
@@ -21,5 +21,35 @@ describe('enteredByReturn', () => {
   it('reads a redirect that finishes the load as a return', () => {
     // "/" restoring the last location, a bare-uid link resolving to /read/:id.
     expect(enteredByReturn(NavigationType.Replace, RETURN_STATE)).toBe(true);
+  });
+});
+
+describe('takeAddressArrival', () => {
+  // A fresh copy of the module, as a page load has, with the load made the way `type` says.
+  async function pageLoadedBy(type: NavigationTimingType) {
+    vi.spyOn(performance, 'getEntriesByType').mockReturnValue([{ type } as PerformanceNavigationTiming]);
+    vi.resetModules();
+    return (await import('./entryKind')).takeAddressArrival;
+  }
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('reads an address typed, pasted or followed from another site as an arrival, once', async () => {
+    const take = await pageLoadedBy('navigate');
+    expect(take('default')).toBe(true);
+    // Back to that location later in the visit, from Settings or a sutta.
+    expect(take('default')).toBe(false);
+  });
+
+  it('reads a refresh, and Back or Forward into the page, as a return', async () => {
+    expect((await pageLoadedBy('reload'))('default')).toBe(false);
+    expect((await pageLoadedBy('back_forward'))('default')).toBe(false);
+  });
+
+  it('reads a location the app navigated to as no arrival', async () => {
+    // "/" restoring the last location replaces the entry the page loaded on with one of its own.
+    expect((await pageLoadedBy('navigate'))('x7k2q')).toBe(false);
   });
 });

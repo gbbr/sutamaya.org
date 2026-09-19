@@ -33,7 +33,7 @@ import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { useNativeLinks } from '../hooks/useNativeLinks';
 import { LibraryPage } from './LibraryPage';
 import { ReaderPage } from './ReaderPage';
-import { LIBRARY_VIEW_KEY } from '../lib/storageKeys';
+import { LIBRARY_VIEW_KEY, TREE_EXPANDED_KEY } from '../lib/storageKeys';
 import type { Corpus } from '../lib/types';
 
 function Shell() {
@@ -241,6 +241,36 @@ describe('a link opened in the phone app', () => {
 
     await tapLink('/browse');
     await waitFor(() => expect(paneShown(container, 'TreePane')).toBe(true));
+  });
+
+  it('opens the collection last browsed in the tree, after it was closed there', async () => {
+    // DN, left closed on the tree, with nothing else browsed since.
+    localStorage.setItem(TREE_EXPANDED_KEY, JSON.stringify({ corpus: [], lists: [], node: 'dn' }));
+    const { container } = openApp('/browse/dn');
+    await screen.findByText('sutamaya');
+    const tree = within(container.querySelector<HTMLElement>('[data-component="TreePane"]')!);
+    expect(tree.queryByText('The Chapter on Ethics')).toBeNull();
+
+    const scrollIntoView = vi.spyOn(Element.prototype, 'scrollIntoView');
+    await tapLink('/browse/dn');
+    expect(await tree.findByText('The Chapter on Ethics')).toBeTruthy();
+    // Centred, as a collection found by search is.
+    expect(scrollIntoView.mock.contexts.at(-1)).toBe(
+      container.querySelector('[data-component="TreePane"] [data-node-id="dn"]')
+    );
+    expect(scrollIntoView.mock.lastCall).toEqual([{ block: 'center' }]);
+    scrollIntoView.mockRestore();
+  });
+
+  it('opens the collection last browsed in the tree from the Reader, after it was closed there', async () => {
+    localStorage.setItem(TREE_EXPANDED_KEY, JSON.stringify({ corpus: [], lists: [], node: 'dn' }));
+    const { container } = openApp('/read/mn1');
+    await screen.findByTitle('Close');
+
+    await tapLink('/browse/dn');
+    await waitFor(() => expect(paneShown(container, 'TreePane')).toBe(true));
+    const tree = within(container.querySelector<HTMLElement>('[data-component="TreePane"]')!);
+    expect(await tree.findByText('The Chapter on Ethics')).toBeTruthy();
   });
 
   it('opens a shared sutta while the Reader shows another', async () => {
