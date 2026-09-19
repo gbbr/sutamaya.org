@@ -236,7 +236,8 @@ export function LibraryPage() {
         setNodeId(id);
         setSuttaId(undefined);
         setPickCount((n) => n + 1);
-        if (inTree) setFlashNodeId(id);
+        // Ends a flash still running on another row, which this pick would otherwise scroll back to.
+        setFlashNodeId(inTree ? id : undefined);
       };
       // Nothing animates on a wider layout: the tree stays put and only the pane beside it changes.
       if (!mobile || inTree) {

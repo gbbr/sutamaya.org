@@ -33,7 +33,7 @@ export const TreeRow = memo(function TreeRow({
       <button
         data-node-id={node.id}
         className={`row flex items-center gap-[11px] w-full text-left pr-[22px] py-[13px] border-b border-ink/[.07] transition-colors duration-500 ${
-          nodeId === node.id || flashNodeId === node.id ? 'bg-ink/[.06]' : ''
+          flashNodeId === node.id ? 'bg-accent/[.15]' : nodeId === node.id ? 'bg-ink/[.06]' : ''
         }`}
         style={{ paddingLeft: 24 + depth * 14 }}
         onClick={() => (expandable ? onToggle(node.id) : onSelect(node.id))}
