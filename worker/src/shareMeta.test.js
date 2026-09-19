@@ -45,7 +45,7 @@ const corpus = {
       id: 'kn',
       label: 'Khuddaka Nikāya',
       chapters: [
-        { id: 'dhp', ref: 'Dhp', label: 'Sayings of Dhamma' },
+        { id: 'dhp', ref: 'Dhp', label: 'The Dhammapada' },
         { id: 'ud', ref: 'Ud', label: 'Heartfelt Sayings', chapters: [{ id: 'ud-bodhivagga', ref: 'Ud1.1–10', label: 'Awakening', blurb: 'Ten sayings from the weeks after the awakening.' }] },
       ],
     },
@@ -82,7 +82,7 @@ describe('shareMetaFor', () => {
   // Most of the canon has no description written for it, and where the title is a name — a monk,
   // a place — the collection it comes from is the one useful thing left to say.
   it('falls back to where an undescribed sutta sits in the canon', () => {
-    expect(shareMetaFor(corpus, '/read/dhp321')?.description).toBe('Khuddaka Nikāya · Sayings of Dhamma');
+    expect(shareMetaFor(corpus, '/read/dhp321')?.description).toBe('Khuddaka Nikāya · The Dhammapada');
   });
 
   it('falls back to the collection above an undescribed group', () => {
@@ -116,7 +116,7 @@ describe('shareMetaFor', () => {
 
   // A KN book that holds its documents directly is the only level between them and the collection.
   it('names the book a KN document sits in', () => {
-    expect(shareMetaFor(corpus, '/read/dhp320-333')?.description).toBe('Khuddaka Nikāya · Sayings of Dhamma');
+    expect(shareMetaFor(corpus, '/read/dhp320-333')?.description).toBe('Khuddaka Nikāya · The Dhammapada');
   });
 
   // The other kind of KN book splits its documents across vaggas, and those are described, so the

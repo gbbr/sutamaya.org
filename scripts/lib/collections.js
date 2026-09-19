@@ -40,7 +40,7 @@ export const RESTATED_CHAPTERS = {
 // written at.
 export const KN_BOOKS = [
   { id: 'snp', label: 'Anthology of Discourses', pali: 'Suttanipāta', vaggas: true },
-  { id: 'dhp', label: 'Sayings of Dhamma', pali: 'Dhammapada' },
+  { id: 'dhp', label: 'The Dhammapada', pali: 'Dhammapada' },
   { id: 'ud', label: 'Heartfelt Sayings', pali: 'Udāna', vaggas: true },
   { id: 'iti', label: 'So It Was Said', pali: 'Itivuttaka' },
   { id: 'thag', label: 'Verses of Senior Monks', pali: 'Theragāthā' },
