@@ -86,8 +86,7 @@ export const ListRow = memo(function ListRow({
   childrenOf: (parentId: string) => ListDef[];
   countFor: (l: ListDef) => number;
   listExpanded: Record<string, boolean>;
-  // `deep` is ⌥-click, which collapses every group inside this one too.
-  onToggle: (id: string, deep?: boolean) => void;
+  onToggle: (id: string) => void;
   onSelect: (id: string) => void;
   menu: ListRowMenuProps;
   edit: ListRowEditProps;
@@ -154,9 +153,9 @@ export const ListRow = memo(function ListRow({
         // <button>, which can't nest the interactive children. The controls with behaviour of
         // their own stopPropagation below.
         className={`row flex items-center gap-[9px] w-full text-left pr-[10px] py-[10px] border-b border-ink/[.07] cursor-pointer transition-colors duration-500 ${nodeId === String(list.id) ? 'bg-ink/[.06]' : ''}`}
-        onClick={(e) => {
+        onClick={() => {
           if (editing) return;
-          if (isGroup) onToggle(list.id, e.altKey);
+          if (isGroup) onToggle(list.id);
           else onSelect(String(list.id));
         }}
         style={{
@@ -206,7 +205,7 @@ export const ListRow = memo(function ListRow({
             // chevron is an empty placeholder, it passes through.
             if (isGroup) {
               e.stopPropagation();
-              onToggle(list.id, e.altKey);
+              onToggle(list.id);
             }
           }}
         >
@@ -247,7 +246,7 @@ export const ListRow = memo(function ListRow({
               // keyboard user tabbed here can activate it with Enter or Space.
               e.stopPropagation();
               // A group holds no suttas, so it expands in place as a corpus chapter row does.
-              if (isGroup) onToggle(list.id, e.altKey);
+              if (isGroup) onToggle(list.id);
               else onSelect(String(list.id));
             }}
             // Undefined on mobile rather than gated inside the handler: the mere presence of a

@@ -11,7 +11,7 @@ import { useBackHandler } from '../hooks/useBackHandler';
 import { forgetScrollPosition } from '../hooks/useScrollMemory';
 import { findNode, isExpandable, nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId } from '../lib/corpus';
 import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP, listBlockCounts, listBlockHeading } from '../lib/search/metadata';
-import { SHORTCUTS, shortcutsForScope, pointerHintsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
+import { SHORTCUTS, shortcutsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, tagIntent, type RouteIntent } from '../lib/routeIntent';
 import { transitionPage } from '../lib/motion';
@@ -403,7 +403,7 @@ export function LibraryPage() {
 
       {shortcutsOpen && (
         <ShortcutsModal
-          shortcuts={[...shortcutsForScope('library'), ...pointerHintsForScope('library')]}
+          shortcuts={shortcutsForScope('library')}
           onClose={() => setShortcutsOpen(false)}
         />
       )}

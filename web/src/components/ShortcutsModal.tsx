@@ -1,9 +1,8 @@
+import type { Shortcut } from '../lib/shortcuts';
 import type { ThemeColors } from '../lib/types';
 
 interface ShortcutsModalProps {
-  // Structural rather than `Shortcut[]`, so the pointer gestures can be appended to the same list;
-  // this only ever draws caps and a label.
-  shortcuts: Array<{ keys: string[]; label: string }>;
+  shortcuts: Shortcut[];
   onClose: () => void;
   // The reader's own theme. The library passes none and takes the shell's ink classes.
   theme?: ThemeColors;
