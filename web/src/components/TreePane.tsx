@@ -557,27 +557,41 @@ export function TreePane({
   // The row marked as the browsed node; none on a phone, where the list it points at is off screen.
   const markedId = mobile ? undefined : nodeId;
 
-  // Scrolls to the browsed node, retrying on each state change the expand effects above make: its
-  // row usually isn't in the DOM yet on the render `nodeId` changed on. Held until the remembered
-  // offset is back, which would otherwise scroll the node away again. Never to the node a return
-  // opens on, which the remembered scroll position places.
+  // The row last picked by a click in the tree, which is under the pointer already.
+  const clickedIdRef = useRef<string | undefined>(undefined);
+  // Picks a row clicked in the tree, which no scroll follows.
+  const selectClicked = useCallback(
+    (id: string) => {
+      clickedIdRef.current = id;
+      onSelect(id);
+    },
+    [onSelect]
+  );
+  // Forgets the click once the browsed node moves on, so Back or Forward to it still scrolls.
+  useEffect(() => {
+    if (nodeId !== clickedIdRef.current) clickedIdRef.current = undefined;
+  }, [nodeId]);
+
+  // Centres the browsed node, retrying on each state change the expand effects above make and on the
+  // search closing: its row isn't in the DOM on the render `nodeId` changed on, nor while search
+  // results fill the column. Held until the remembered offset is back, which would otherwise scroll
+  // the node away again. Never for a row clicked in the tree, nor for the node a return opens on,
+  // which the remembered scroll position places.
   useScrollToNode(
     scrollRef,
-    restoreReady ? nodeId : undefined,
-    [paneView, expanded, listExpanded, corpus, lists],
+    restoreReady && clickedIdRef.current !== nodeId ? nodeId : undefined,
+    [paneView, expanded, listExpanded, corpus, lists, searching],
     revealNow ? undefined : nodeId,
     pickCount
   );
-  // Centres the flashed row, which is always an arrival — from search, a breadcrumb, a link or an
-  // address — and never a row tapped in the tree, so nothing moves under the finger. Second, so a
-  // breadcrumb's own segment — which may sit above `nodeId` — wins the final position.
+  // Centres the flashed row, second, so a breadcrumb's own segment — which may sit above `nodeId` —
+  // wins the final position.
   useScrollToNode(
     scrollRef,
     restoreReady ? flashNodeId : undefined,
-    [paneView, expanded, listExpanded, corpus, lists],
+    [paneView, expanded, listExpanded, corpus, lists, searching],
     undefined,
-    pickCount,
-    'center'
+    pickCount
   );
 
   // ListRow's props, bundled by concern and memoized, so ListRow's own memoization holds. Built
@@ -922,12 +936,12 @@ export function TreePane({
             )}
           </div>
         ) : paneView === 'library' ? (
-          <CorpusTreeView corpus={corpus} expanded={expanded} onToggle={toggleExpanded} onSelect={onSelect} nodeId={markedId} flashNodeId={flashNodeId} />
+          <CorpusTreeView corpus={corpus} expanded={expanded} onToggle={toggleExpanded} onSelect={selectClicked} nodeId={markedId} flashNodeId={flashNodeId} />
         ) : (
           <ListsTreeView
             ready={ready}
             nodeId={markedId}
-            onSelect={onSelect}
+            onSelect={selectClicked}
             reorderMode={reorderMode}
             setReorderMode={setReorderMode}
             canReorder={canReorderLists}

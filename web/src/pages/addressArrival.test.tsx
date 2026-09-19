@@ -1,5 +1,5 @@
 import { beforeEach, afterEach, describe, expect, it, vi } from 'vitest';
-import { screen, within } from '@testing-library/react';
+import { fireEvent, screen, within } from '@testing-library/react';
 import { renderRoutes } from '../testRouter';
 import { RouterView } from '../components/RouterView';
 
@@ -23,6 +23,7 @@ import { useLayout } from '../context/LayoutContext';
 import { takeAddressArrival } from '../lib/entryKind';
 import { LibraryPage } from './LibraryPage';
 import { TREE_EXPANDED_KEY } from '../lib/storageKeys';
+import { SEARCH_PLACEHOLDER } from '../lib/search/metadata';
 import type { Corpus } from '../lib/types';
 
 const routes = [
@@ -154,6 +155,27 @@ describe('an address naming the collection last browsed', () => {
     expect(scrolls.at(-1)).toBe('dn center');
     const row = container.querySelector('[data-component="TreePane"] [data-node-id="dn"]')!;
     expect(row.className).toContain('bg-accent/[.15]');
+  });
+
+  it('centres that collection once a search shown over it closes, and not on some later change', async () => {
+    const scrolls: string[] = [];
+    vi.spyOn(Element.prototype, 'scrollIntoView').mockImplementation(function (
+      this: Element,
+      arg?: boolean | ScrollIntoViewOptions
+    ) {
+      scrolls.push(`${this.getAttribute('data-node-id')} ${typeof arg === 'object' ? arg.block : arg}`);
+    });
+    const { router, rerender } = renderRoutes(routes, '/browse/dn-silakkhandhavagga?q=Brahmajala');
+    const input = await screen.findByPlaceholderText(SEARCH_PLACEHOLDER);
+    expect(scrolls).toEqual([]);
+
+    fireEvent.change(input, { target: { value: '' } });
+    expect(scrolls).toEqual(['dn-silakkhandhavagga center']);
+
+    // The saved data changing afterwards, as a sync does.
+    mockUserData(true);
+    rerender(<RouterView router={router} />);
+    expect(scrolls).toEqual(['dn-silakkhandhavagga center']);
   });
 
   it('keeps that collection in view once the saved data has loaded', async () => {
