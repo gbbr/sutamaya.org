@@ -296,16 +296,17 @@ describe('a collection found by search', () => {
     await waitFor(() => expect(scrolls.at(-1)).toBe('sn47 center'));
   });
 
-  it('never centres a row tapped in the tree, nor pulls the tree back to a collection still lit', async () => {
+  it('never scrolls to a row tapped in the tree, nor pulls the tree back to a collection still lit', async () => {
     const scrolls = recordScrolls();
     const { inPane, pane } = searchFrom('/browse/dn', 'satipatthana');
     fireEvent.click(await inPane('ListPane').findByRole('button', { name: /SN47\s*Establishment/ }));
     await waitFor(() => expect(scrolls.at(-1)).toBe('sn47 center'));
 
     scrolls.length = 0;
-    fireEvent.click(pane('TreePane').querySelector('[data-node-id="sn47-ambapalivagga"]')!);
-    await waitFor(() => expect(scrolls).toContain('sn47-ambapalivagga nearest'));
-    expect(scrolls.filter((s) => s.endsWith('center'))).toEqual([]);
+    const row = pane('TreePane').querySelector('[data-node-id="sn47-ambapalivagga"]')!;
+    fireEvent.click(row);
+    await waitFor(() => expect(row.className).toContain('bg-ink/[.06]'));
+    expect(scrolls).toEqual([]);
   });
 
   describe('on a phone', () => {
