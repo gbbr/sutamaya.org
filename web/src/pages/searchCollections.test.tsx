@@ -142,6 +142,16 @@ function searchFrom(path: string, query: string) {
   return library;
 }
 
+// recordScrolls returns each scroll into view from here on, as the row's node id and the position
+// asked for, e.g. "sn47 center".
+function recordScrolls(): string[] {
+  const scrolls: string[] = [];
+  Element.prototype.scrollIntoView = function (this: Element, arg?: boolean | ScrollIntoViewOptions) {
+    scrolls.push(`${this.getAttribute('data-node-id')} ${typeof arg === 'object' ? arg.block : arg}`);
+  };
+  return scrolls;
+}
+
 describe('a collection found by search', () => {
   beforeEach(() => {
     const store = new Map<string, string>();
@@ -281,6 +291,31 @@ describe('a collection found by search', () => {
     expect(await inPane('ListPane').findByText('Weakness in Training')).toBeTruthy();
   });
 
+  it('brings the collection it opens to the middle of the tree, each time it is picked', async () => {
+    const scrolls = recordScrolls();
+    const { inPane, search } = searchFrom('/browse/dn', 'satipatthana');
+
+    fireEvent.click(await inPane('ListPane').findByRole('button', { name: /SN47\s*Establishment/ }));
+    await waitFor(() => expect(scrolls.at(-1)).toBe('sn47 center'));
+
+    scrolls.length = 0;
+    search('satipatthana');
+    fireEvent.click(await inPane('ListPane').findByRole('button', { name: /SN47\s*Establishment/ }));
+    await waitFor(() => expect(scrolls.at(-1)).toBe('sn47 center'));
+  });
+
+  it('never centres a row tapped in the tree, nor pulls the tree back to a collection still lit', async () => {
+    const scrolls = recordScrolls();
+    const { inPane, pane } = searchFrom('/browse/dn', 'satipatthana');
+    fireEvent.click(await inPane('ListPane').findByRole('button', { name: /SN47\s*Establishment/ }));
+    await waitFor(() => expect(scrolls.at(-1)).toBe('sn47 center'));
+
+    scrolls.length = 0;
+    fireEvent.click(pane('TreePane').querySelector('[data-node-id="sn47-ambapalivagga"]')!);
+    await waitFor(() => expect(scrolls).toContain('sn47-ambapalivagga nearest'));
+    expect(scrolls.filter((s) => s.endsWith('center'))).toEqual([]);
+  });
+
   describe('on a phone', () => {
     beforeEach(() => mockLayout(true));
 
@@ -319,8 +354,8 @@ describe('a collection found by search', () => {
       fireEvent.click(await inPane('TreePane').findByRole('button', { name: /SN47\s*Establishment/ }));
 
       const row = () => pane('TreePane').querySelector('[data-node-id="sn47"]')!;
-      await waitFor(() => expect(row().className).toContain('bg-ink/[.06]'));
-      await waitFor(() => expect(row().className).not.toContain('bg-ink/[.06]'), { timeout: 3000 });
+      await waitFor(() => expect(row().className).toContain('bg-accent/[.15]'));
+      await waitFor(() => expect(row().className).not.toContain('bg-accent/[.15]'), { timeout: 3000 });
     });
   });
 });

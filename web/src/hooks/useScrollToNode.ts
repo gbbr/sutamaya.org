@@ -11,7 +11,8 @@ export function useScrollToNode(
   nodeId: string | undefined,
   retryOn: DependencyList,
   settledId?: string,
-  pick?: number
+  pick?: number,
+  block: ScrollLogicalPosition = 'nearest'
 ) {
   const doneForRef = useRef<string | undefined>(settledId);
   const pickRef = useRef(pick);
@@ -23,7 +24,7 @@ export function useScrollToNode(
     if (!nodeId || doneForRef.current === nodeId) return;
     const el = containerRef.current?.querySelector(`[data-node-id="${CSS.escape(nodeId)}"]`);
     if (!el) return;
-    el.scrollIntoView({ block: 'nearest' });
+    el.scrollIntoView({ block });
     doneForRef.current = nodeId;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nodeId, pick, ...retryOn]);

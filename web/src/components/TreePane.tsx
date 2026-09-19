@@ -565,8 +565,10 @@ export function TreePane({
   // row usually isn't in the DOM yet on the render `nodeId` changed on. Never to the node a return
   // opens on, which the remembered scroll position places.
   useScrollToNode(scrollRef, nodeId, [paneView, expanded, listExpanded, corpus, lists], revealNow ? undefined : nodeId, pickCount);
-  // Second, so a breadcrumb's own segment — which may sit above `nodeId` — wins the final position.
-  useScrollToNode(scrollRef, flashNodeId, [paneView, expanded, listExpanded, corpus, lists]);
+  // Centres the flashed row, which is always an arrival — from search or a breadcrumb — and never a
+  // row tapped in the tree, so nothing moves under the finger. Second, so a breadcrumb's own
+  // segment — which may sit above `nodeId` — wins the final position.
+  useScrollToNode(scrollRef, flashNodeId, [paneView, expanded, listExpanded, corpus, lists], undefined, pickCount, 'center');
 
   // ListRow's props, bundled by concern and memoized, so ListRow's own memoization holds. Built
   // above the `if (!corpus)` bail, hooks not being able to run conditionally.
