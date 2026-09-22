@@ -38,6 +38,8 @@ export interface SearchHit {
   // and the first and last segment it was drawn from. Filled in by lib/search/text.ts for the hits
   // that render, and kept only on the rows that open at it (opensAtPassage).
   snippet?: { text: string; under?: string; query: string; segments: [number, number] };
+  // Every passage holding the query, on the sutta being read, in reading order.
+  passages?: Array<NonNullable<SearchHit['snippet']>>;
 }
 
 // How many hits a caller renders; searchCorpus still returns every match, so a total can be shown.

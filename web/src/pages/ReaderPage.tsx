@@ -33,7 +33,7 @@ import { HighlightPopup } from '../components/HighlightPopup';
 import { HighlightGutter } from '../components/HighlightGutter';
 import { DictionaryDock } from '../components/DictionaryDock';
 import { ReaderMenuPanel } from '../components/ReaderMenuPanel';
-import { ReaderSearchOverlay } from '../components/ReaderSearchOverlay';
+import { ReaderSearchOverlay, type ReaderSearchView } from '../components/ReaderSearchOverlay';
 import { ShortcutsModal } from '../components/ShortcutsModal';
 import { SuttaRowChips } from '../components/SuttaRowChips';
 import { MatchedText } from '../components/MatchedText';
@@ -139,6 +139,11 @@ export function ReaderPage() {
   }, []);
   const [noteFocusSignal, setNoteFocusSignal] = useState(0);
   const [searchOpen, setSearchOpen] = useState(false);
+  // How the search was left, which it reopens as while the same sutta is on screen.
+  const searchView = useRef<ReaderSearchView | null>(null);
+  useEffect(() => {
+    searchView.current = null;
+  }, [suttaId]);
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
   const { mobile } = useLayout();
   const tapRef = useRef<{ x: number; y: number } | null>(null);
@@ -982,6 +987,7 @@ export function ReaderPage() {
         <ReaderSearchOverlay
           theme={theme}
           currentId={suttaId}
+          saved={searchView}
           onOpenSutta={onSearchOpenSutta}
           onClose={() => setSearchOpen(false)}
         />

@@ -117,8 +117,19 @@ row takes the Reader straight to that passage.
 A row shows what it opens. Where the query reached a sutta through the row's own lines — its number,
 title, Pali title, description or the reader's note — that line is the answer: the row shows no
 paragraph and opens the sutta at the top. A sutta reached only through the name of a list holding it
-says nothing about itself, so it keeps its paragraph. So does the sutta being read, in the Reader's
-own search, whose row is a find on the page in hand.
+says nothing about itself, so it keeps its paragraph.
+
+## The sutta being read
+
+The Reader's search gives the sutta on screen a section of its own, *In this sutta*, above the
+other suttas: a row for each line of it holding the query, in reading order, windowed on its
+paragraph. The first shows, and *more* adds ten at a time, up to 80. A row takes the Reader straight
+to its line. Finding in the page in hand isn't a search of the canon, so it isn't saved to recent
+searches.
+
+Reopened on the same sutta, the search comes back as it was left — the query, the lines shown, the
+scroll and the selected row — so the next result is a tap away. The query is selected, so typing
+starts a new search. Moving to another sutta starts it afresh.
 
 ## Collections and lists
 
@@ -173,6 +184,7 @@ the repo.
 | `web/src/lib/search/metadata.ts` | metadata search, list and collection matching, the shared wording, the function words |
 | `web/src/components/SearchListHits.tsx` | the collections and lists block |
 | `web/src/lib/search/text.ts` | matching, ranking and snippets over the text |
+| `web/src/components/ReaderSearchOverlay.tsx` | the Reader's search |
 | `web/src/lib/search/worker.ts`, `textClient.ts` | the worker, and the main thread's side of it |
 | `web/src/lib/search/expansion.ts` | the expansion table |
 | `web/src/hooks/useCorpusSearch.ts` | the two halves combined for a page |
