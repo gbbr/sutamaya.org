@@ -176,6 +176,11 @@ export function TreePane({
   } = useUserData();
   const { user } = useAuth();
   const { mobile, paneW } = useLayout();
+  const searching = query.trim().length > 0;
+  // Whether the tree stays as the reader left it: on a phone, while it's off screen behind the list
+  // or under the search results. A node reached meanwhile opens nothing, switches no tab and isn't
+  // scrolled to.
+  const keepTree = mobile && (!visible || searching);
 
   // The pane's scroll, held until the mirror lands and the results are complete: the My lists block
   // sits above the tree, and the sutta text's hits arrive under the metadata ones, either of them
@@ -202,9 +207,9 @@ export function TreePane({
   const [persistedExpansion] = useState(loadPersistedExpansion);
   // Whether this mount should reveal `nodeId` — open its ancestors, scroll to it and point the
   // toggle at its tree. True for a navigation: a link or an address, a membership chip, a breadcrumb
-  // click. Any other mount on the node last persisted is a return to the pane, restored exactly as
-  // it was left.
-  const revealNow = nodeId !== persistedExpansion.node || linkArrival;
+  // click — unless the tree is kept as it was. Any other mount on the node last persisted is a
+  // return to the pane, restored exactly as it was left.
+  const revealNow = (nodeId !== persistedExpansion.node || linkArrival) && !keepTree;
   const [expanded, setExpanded] = useState<Record<string, boolean>>(() => ({
     ...toRecord(persistedExpansion.corpus),
     ...(revealNow ? ancestorsOf(corpus, nodeId) : {}),
@@ -242,7 +247,7 @@ export function TreePane({
       nodeIsListId,
       nodeIsCorpusNode: !!(corpus && nodeId && findNode(corpus, nodeId)),
     });
-    if (next) setPaneView(next);
+    if (next && !keepTree) setPaneView(next);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nodeId, nodeIsListId, corpus, pickCount]);
 
@@ -276,6 +281,17 @@ export function TreePane({
     revealedNodeRef.current = undefined;
     revealedListNodeRef.current = undefined;
   }, [pickCount]);
+  // The node reached while the tree was kept as it was, which the scroll below leaves alone too.
+  const keptIdRef = useRef<string | undefined>(undefined);
+  // Takes a node reached while the tree is kept as already revealed, so the effects below open
+  // nothing for it.
+  useEffect(() => {
+    if (!keepTree) return;
+    keptIdRef.current = nodeId;
+    revealedNodeRef.current = nodeId;
+    revealedListNodeRef.current = nodeId;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [nodeId, pickCount]);
 
   useEffect(() => {
     if (revealedNodeRef.current === nodeId) return;
@@ -333,8 +349,9 @@ export function TreePane({
   // pre-populated one can't leave results on screen with no way to see what is being searched.
   const [searchOpen, setSearchOpen] = useState(() => query.trim().length > 0);
   // Closes the input once a list or collection from the results is opened, a destination rather
-  // than a refinement. Keyed on the browsed node and on the pick, since the row can be clicked in
-  // either pane, and picking the node already open changes nothing else that reaches this one.
+  // than a refinement — except under a phone's list, which leaves the search open beneath it. Keyed
+  // on the browsed node and on the pick, since the row can be clicked in either pane, and picking
+  // the node already open changes nothing else that reaches this one.
   useEffect(() => {
     if (!query.trim()) setSearchOpen(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -439,7 +456,6 @@ export function TreePane({
     if (!canReorderLists) setReorderMode(false);
   }, [canReorderLists, setReorderMode]);
 
-  const searching = query.trim().length > 0;
   // resultsHeading returns the heading over the hit rows on a phone, "80+" past the cap:
   //   no list hits – the hits counted as results: "12 results"
   //   list hits    – the sutta hits' section heading under the lists block, "Suttas (12)", and
@@ -521,10 +537,10 @@ export function TreePane({
       if (shortcutsOpen) return;
       const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
       // The arrows and Enter work while the search input has focus, the normal state while results
-      // are showing, but not while any other field does. '/' and 'x' below stand down for all of
-      // them, being characters that can be typed.
+      // are showing, but not while any other field does, nor while a phone's list covers the
+      // results. '/' and 'x' below stand down for all of them, being characters that can be typed.
       const isSearchInput = e.target === searchInput.current;
-      if (searching && navRows.length > 0 && !(tag === 'textarea' || (tag === 'input' && !isSearchInput))) {
+      if (searching && visible && navRows.length > 0 && !(tag === 'textarea' || (tag === 'input' && !isSearchInput))) {
         if (isShortcut(e, SHORTCUTS.librarySelectMove)) {
           e.preventDefault();
           moveSearchActiveIndexBy(e.key === 'ArrowDown' ? 1 : -1, navRows.length);
@@ -552,7 +568,7 @@ export function TreePane({
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [searching, navRows, displayHits, listHits, searchOpen, onOpenSutta, onSelect, shortcutsOpen]);
+  }, [searching, visible, navRows, displayHits, listHits, searchOpen, onOpenSutta, onSelect, shortcutsOpen]);
 
   // The row marked as the browsed node; none on a phone, where the list it points at is off screen.
   const markedId = mobile ? undefined : nodeId;
@@ -567,19 +583,21 @@ export function TreePane({
     },
     [onSelect]
   );
-  // Forgets the click once the browsed node moves on, so Back or Forward to it still scrolls.
+  // Forgets the click, and a node kept, once the browsed node moves on, so Back or Forward to it
+  // still scrolls.
   useEffect(() => {
     if (nodeId !== clickedIdRef.current) clickedIdRef.current = undefined;
+    if (nodeId !== keptIdRef.current) keptIdRef.current = undefined;
   }, [nodeId]);
 
   // Centres the browsed node, retrying on each state change the expand effects above make and on the
   // search closing: its row isn't in the DOM on the render `nodeId` changed on, nor while search
   // results fill the column. Held until the remembered offset is back, which would otherwise scroll
-  // the node away again. Never for a row clicked in the tree, nor for the node a return opens on,
-  // which the remembered scroll position places.
+  // the node away again. Never for a row clicked in the tree, nor for a node reached while the tree
+  // was kept, nor for the node a return opens on, which the remembered scroll position places.
   useScrollToNode(
     scrollRef,
-    restoreReady && clickedIdRef.current !== nodeId ? nodeId : undefined,
+    restoreReady && clickedIdRef.current !== nodeId && keptIdRef.current !== nodeId ? nodeId : undefined,
     [paneView, expanded, listExpanded, corpus, lists, searching],
     revealNow ? undefined : nodeId,
     pickCount

@@ -1,6 +1,6 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { fireEvent, waitFor, within } from '@testing-library/react';
-import { renderRoutes } from '../testRouter';
+import { fireEvent, screen, waitFor, within } from '@testing-library/react';
+import { renderRoutes, type RouteEntry } from '../testRouter';
 
 // A collection found by the Library's search: its row among the results, and where opening it
 // lands — a group of suttas on its list, a group that only expands open in the tree.
@@ -28,7 +28,9 @@ import { useAuth } from '../context/AuthContext';
 import { useLayout } from '../context/LayoutContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { LibraryPage } from './LibraryPage';
+import { ReaderPage } from './ReaderPage';
 import { SEARCH_PLACEHOLDER } from '../lib/search/metadata';
+import { tagIntent } from '../lib/routeIntent';
 import type { Corpus, ListDef } from '../lib/types';
 
 // SN47 only expands, into its vagga; AN's vagga holds its suttas and shares SN47's English name.
@@ -115,11 +117,12 @@ function mockLayout(mobile: boolean) {
 }
 
 // Renders the Library on `path`, with a way to search from it.
-function renderLibrary(path: string) {
+function renderLibrary(path: RouteEntry) {
   const utils = renderRoutes(
     [
       { path: '/browse/:nodeId/*', element: <LibraryPage key="node" /> },
       { path: '/browse', element: <LibraryPage key="none" /> },
+      { path: '/read/:suttaId', element: <ReaderPage /> },
     ],
     path
   );
@@ -350,6 +353,68 @@ describe('a collection found by search', () => {
       const row = () => pane('TreePane').querySelector('[data-node-id="sn47"]')!;
       await waitFor(() => expect(row().className).toContain('bg-accent/[.15]'));
       await waitFor(() => expect(row().className).not.toContain('bg-accent/[.15]'), { timeout: 3000 });
+    });
+
+    it('returns to the results from a collection of suttas opened over them, where they were left', async () => {
+      const { inPane, pane, showing } = searchFrom('/browse/dn', 'satipatthana');
+      const column = () => pane('TreePane').querySelector('.sc') as HTMLElement;
+      await inPane('TreePane').findByText('Suttas (1)');
+      column().scrollTop = 120;
+      column().dispatchEvent(new Event('scroll'));
+
+      fireEvent.click(inPane('TreePane').getByRole('button', { name: /AN9\.63\s*Establishment/ }));
+      fireEvent.click(await inPane('ListPane').findByRole('button', { name: 'Back' }));
+
+      await waitFor(() => expect(showing('TreePane')).toBe(true));
+      expect((inPane('TreePane').getByPlaceholderText(SEARCH_PLACEHOLDER) as HTMLInputElement).value).toBe('satipatthana');
+      expect(inPane('TreePane').getByText('Collections (2)')).toBeTruthy();
+      await waitFor(() => expect(column().scrollTop).toBe(120));
+    });
+
+    it('steps a sutta read from that collection through the collection, not the results', async () => {
+      // A query naming both the vagga and its one sutta, so the sutta is a hit too.
+      const { inPane } = searchFrom('/browse/dn', 'ambapali');
+      fireEvent.click(await inPane('TreePane').findByRole('button', { name: /SN47\.1\s*In Ambap/ }));
+
+      fireEvent.click(await inPane('ListPane').findByText('Ambapālī'));
+
+      await screen.findByTitle('Close');
+      expect(screen.queryByText(/Results for/)).toBeNull();
+    });
+
+    it('puts the tree back as it was once that search is cleared, after a sutta read from the collection', async () => {
+      const scrolls = recordScrolls();
+      const { inPane, pane, search } = renderLibrary('/browse/dn');
+      const column = () => pane('TreePane').querySelector('.sc') as HTMLElement;
+      await inPane('TreePane').findByRole('button', { name: /Linked Discourses/ });
+      column().scrollTop = 300;
+      column().dispatchEvent(new Event('scroll'));
+
+      search('ambapali');
+      fireEvent.click(await inPane('TreePane').findByRole('button', { name: /SN47\.1\s*In Ambap/ }));
+      fireEvent.click(await inPane('ListPane').findByText('Ambapālī'));
+      fireEvent.click(await screen.findByTitle('Close'));
+      fireEvent.click(await inPane('ListPane').findByRole('button', { name: 'Back' }));
+      scrolls.length = 0;
+      fireEvent.click(await inPane('TreePane').findByRole('button', { name: 'Clear search' }));
+
+      await waitFor(() => expect(column().scrollTop).toBe(300));
+      expect(pane('TreePane').querySelector('[data-node-id="sn47"]')).toBeNull();
+      expect(scrolls).toEqual([]);
+    });
+
+    it('leaves the tree as it was behind a collection opened straight onto its list', async () => {
+      // What the Reader's breadcrumb sends for the sutta's own collection.
+      const { inPane, pane, showing } = renderLibrary({
+        pathname: '/browse/an9-satipatthanavagga/an9.63',
+        state: tagIntent({ fromView: 'list', flashNodeId: 'an9-satipatthanavagga' }),
+      });
+      await waitFor(() => expect(showing('ListPane')).toBe(true));
+
+      fireEvent.click(inPane('ListPane').getByRole('button', { name: 'Back' }));
+
+      expect(showing('TreePane')).toBe(true);
+      expect(pane('TreePane').querySelector('[data-node-id="an9-satipatthanavagga"]')).toBeNull();
     });
   });
 });
