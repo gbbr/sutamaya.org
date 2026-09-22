@@ -26,10 +26,12 @@ be left out: the app then runs signed out, which is a complete mode.
 | `GOOGLE_CLIENT_SECRET` | Google sign-in; the client id is already in `wrangler.jsonc` |
 | `WEB_ORIGIN` | `http://localhost:5173`, or a comma-separated list of origins to sign in from |
 | `RESEND_API_KEY` | emailing sign-in codes; a working key sends real mail |
+| `APPLE_PRIVATE_KEY` | Apple sign-in: the `.p8` key on one line, its line breaks written as `\n`; the ids are already in `wrangler.jsonc` |
 
 Set `WEB_ORIGIN`, or a Google sign-in ends on production, whose origin is the default. Google only
 accepts the origins registered on the OAuth client — `localhost:5173` and `app.local.sutamaya.org` —
-so anywhere else, sign in with an emailed code.
+so anywhere else, sign in with an emailed code. Apple accepts no local origin at all, so locally
+Apple sign-in works only from the iOS app's sheet; the website's flow runs on staging.
 
 ## Ports and a second copy
 

@@ -127,8 +127,8 @@ One Cloudflare Worker (Hono) with a D1 database for user data. It serves the API
 same origin, the built app and corpus. Two hostnames share it: `sutamaya.org` is the landing page,
 `app.sutamaya.org` the app.
 
-Sign-in is by Google or by an emailed code. Sessions are signed cookies, or tokens in the native
-apps.
+Sign-in is by Apple, Google or an emailed code. Sessions are signed cookies, or tokens in the
+native apps.
 
 More: [docs/backend.md](docs/backend.md).
 

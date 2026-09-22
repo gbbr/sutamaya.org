@@ -117,8 +117,13 @@
     // a native piece the bundle needs — a plugin, a permission, a deep-link path. Empty means no
     // floor. See docs/native-apps.md.
     "OTA_MIN_NATIVE": "1",
-    // The Apple Team ID, which turns on /.well-known/apple-app-site-association (worker/src/wellKnown.js).
-    "APPLE_TEAM_ID": "459GT7W5YV"
+    // The Apple Team ID, which turns on /.well-known/apple-app-site-association (worker/src/wellKnown.js)
+    // and signs Sign in with Apple's client secrets.
+    "APPLE_TEAM_ID": "459GT7W5YV",
+    // The Sign in with Apple key, whose private half is the `APPLE_PRIVATE_KEY` secret.
+    "APPLE_KEY_ID": "K7YSKF69K6",
+    // The Services ID the website signs in with Apple as.
+    "APPLE_SERVICES_ID": "org.sutamaya.web"
   },
   "observability": {
     "enabled": true
@@ -191,8 +196,10 @@
         "OTA_VERSION": "0.1.0-db8f5d26",
         "OTA_CHECKSUM": "cf791f1897331ae4190de2135fe0bbb30b0609886de00c45931202cc3b21ca62",
         "OTA_MIN_NATIVE": "1",
-        // Empty, so staging serves no apple-app-site-association: the iOS app claims only production's links.
-        "APPLE_TEAM_ID": ""
+        // Its apple-app-site-association is inert: the iOS app claims only production's links.
+        "APPLE_TEAM_ID": "459GT7W5YV",
+        "APPLE_KEY_ID": "K7YSKF69K6",
+        "APPLE_SERVICES_ID": "org.sutamaya.web"
       }
     }
   }

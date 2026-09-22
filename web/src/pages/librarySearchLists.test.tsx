@@ -121,6 +121,7 @@ describe('a library search that matches the user\'s lists', () => {
       requestEmailCode: vi.fn(async () => {}),
       signInWithEmailCode: vi.fn(async () => {}),
       signInWithGoogleNative: vi.fn(async () => {}),
+      signInWithAppleNative: vi.fn(async () => false),
       promptGoogleSignIn: vi.fn(),
       logout: vi.fn(async () => {}),
       deleteAccount: vi.fn(async () => {}),

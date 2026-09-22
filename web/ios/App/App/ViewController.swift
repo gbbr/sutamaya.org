@@ -2,9 +2,11 @@ import UIKit
 import Capacitor
 
 // ViewController is the app's root screen: Capacitor's bridge, with a swipe in from the left edge
-// that runs the app's own Back.
+// that runs the app's own Back, and the app's own plugins.
 class ViewController: CAPBridgeViewController {
     override func capacitorDidLoad() {
+        bridge?.registerPluginInstance(AppleSignInPlugin())
+
         let swipe = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(swipedBack(_:)))
         swipe.edges = .left
         webView?.addGestureRecognizer(swipe)

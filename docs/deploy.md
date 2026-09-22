@@ -66,10 +66,18 @@ npx wrangler r2 bucket create <name>     # the native apps' update bundles
 npx wrangler secret put SESSION_SECRET   # any long random string
 npx wrangler secret put GOOGLE_CLIENT_SECRET
 npx wrangler secret put RESEND_API_KEY
+npx wrangler secret put APPLE_PRIVATE_KEY  # the Sign in with Apple key's .p8 file
 ```
 
-Add `--env staging` for staging. `WEB_ORIGIN`, `GOOGLE_CLIENT_ID` and `MAIL_FROM` are plain
-variables in `wrangler.jsonc`, not secrets.
+Add `--env staging` for staging. `WEB_ORIGIN`, `GOOGLE_CLIENT_ID`, `MAIL_FROM` and the `APPLE_*`
+ids are plain variables in `wrangler.jsonc`, not secrets.
+
+**Apple sign-in** needs, in the Apple Developer portal: Sign in with Apple turned on for the App ID
+`org.sutamaya.app`; a Services ID (`APPLE_SERVICES_ID`) whose domains and return URLs name
+`/api/auth/apple/callback` on production's and staging's app hostnames; a Sign in with Apple key
+(`APPLE_KEY_ID`, its `.p8` as `APPLE_PRIVATE_KEY`); and, under Sign in with Apple for Email
+Communication, `sutamaya.org`, `send.sutamaya.org` and `no-reply@sutamaya.org`, so codes reach Hide
+My Email addresses. Apple accepts no `localhost` return URL, so the website flow only runs deployed.
 
 **Google sign-in** needs an OAuth "Web application" client in Google Cloud Console, and a consent
 screen listing `sutamaya.org`. Its authorized redirect URIs are `/api/auth/google/callback` on every

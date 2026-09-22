@@ -73,6 +73,12 @@ export const authApi = {
       method: 'POST',
       body: JSON.stringify({ email, code }),
     }),
+  // Redeems the iOS sheet's authorization code for the account and a bearer token.
+  signInWithAppleCode: (code: string, clientId?: string, givenName?: string, familyName?: string) =>
+    request<{ user: User; token: string }>('/auth/apple/native', {
+      method: 'POST',
+      body: JSON.stringify({ code, clientId, givenName, familyName }),
+    }),
   logout: () => request<{ ok: true }>('/auth/logout', { method: 'POST' }),
   // Erases the account and everything filed under it, and ends the session. There is no undo, and
   // no grace period in which it could be reclaimed.

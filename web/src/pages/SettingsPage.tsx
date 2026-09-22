@@ -9,6 +9,7 @@ import { useLayout } from '../context/LayoutContext';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { AppVersion } from '../components/AppVersion';
 import { BackButton } from '../components/BackButton';
+import { AppleSignInButton } from '../components/AppleSignInButton';
 import { GoogleSignInButton } from '../components/GoogleSignInButton';
 import { EmailCodeSignIn } from '../components/EmailCodeSignIn';
 import { dataApi } from '../lib/api';
@@ -516,7 +517,10 @@ export function SettingsPage() {
                         once you sign in again.
                       </span>
                     </div>
-                    <GoogleSignInButton returnTo={signInReturnTo} />
+                    <div className="flex flex-col gap-2.5">
+                      <AppleSignInButton returnTo={signInReturnTo} />
+                      <GoogleSignInButton returnTo={signInReturnTo} />
+                    </div>
                     {authError && <div className="font-sans text-ui-base text-danger-text mt-2">{authError}</div>}
                     <SignInDivider />
                     <EmailCodeSignIn returnTo={signInReturnTo} />
@@ -609,7 +613,10 @@ export function SettingsPage() {
                     <span>Without signing in, you risk losing your changes when the browser clears this website's data.</span>
                   </div>
                 )}
-                <GoogleSignInButton returnTo={signInReturnTo} />
+                <div className="flex flex-col gap-2.5">
+                  <AppleSignInButton returnTo={signInReturnTo} />
+                  <GoogleSignInButton returnTo={signInReturnTo} />
+                </div>
                 {authError && <div className="font-sans text-ui-base text-danger-text mt-2">{authError}</div>}
                 <SignInDivider />
                 <EmailCodeSignIn returnTo={signInReturnTo} />
