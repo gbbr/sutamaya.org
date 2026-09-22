@@ -68,6 +68,8 @@ import { isNativeApp, isStandaloneDisplay } from '../lib/platform';
 import { estimateOfflineStatus, isOfflineTextStale } from '../lib/offline';
 import { dismissKeepSafe, isIosBrowserTab, isKeepSafeDismissed } from '../lib/localAccount';
 import { TreePane } from './TreePane';
+import { getRecentSearches, saveRecentSearch } from '../lib/recentSearches';
+import { RECENT_SEARCHES_KEY } from '../lib/storageKeys';
 import { searchCorpus, searchLists, listBlockHeading, LIST_RESULTS_CAP, SEARCH_NO_MATCHES, SEARCH_PLACEHOLDER } from '../lib/search/metadata';
 import type { Corpus, ListDef, User } from '../lib/types';
 
@@ -631,6 +633,85 @@ describe('search', () => {
     await userEvent.type(input, 'hindrance');
     expect(screen.queryByText('1 result')).not.toBeInTheDocument();
     expect(screen.queryByText('Overcoming the Hindrances')).not.toBeInTheDocument();
+  });
+});
+
+describe('recent searches', () => {
+  beforeEach(() => {
+    saveRecentSearch('sati');
+    saveRecentSearch('hindrance');
+  });
+
+  it('stand in for the tree while the box is empty, and a tap runs one', async () => {
+    vi.mocked(useLayout).mockReturnValue(mockLayout({ mobile: true }));
+    renderHarness();
+    await userEvent.click(screen.getByLabelText('Search'));
+    expect(screen.getByText('Recent searches')).toBeInTheDocument();
+    expect(screen.queryByTitle('Library (x)')).not.toBeInTheDocument();
+    await userEvent.click(screen.getByText('hindrance'));
+    expect(screen.getByPlaceholderText(SEARCH_PLACEHOLDER)).toHaveValue('hindrance');
+    // Not a touch screen, so the cursor stays in the box.
+    expect(screen.getByPlaceholderText(SEARCH_PLACEHOLDER)).toHaveFocus();
+    // A phone's one column goes to the results.
+    expect(screen.queryByText('Recent searches')).not.toBeInTheDocument();
+  });
+
+  it('lose one to its remove button, and all to Clear, which hands the column back to the tree', async () => {
+    renderHarness();
+    await userEvent.click(screen.getByLabelText('Search'));
+    await userEvent.click(screen.getByLabelText('Remove “sati” from recent searches'));
+    expect(screen.queryByText('sati')).not.toBeInTheDocument();
+    await userEvent.click(screen.getByText('Clear'));
+    expect(screen.queryByText('Recent searches')).not.toBeInTheDocument();
+    expect(screen.getByTitle('Library (x)')).toBeInTheDocument();
+    expect(JSON.parse(localStorage.getItem(RECENT_SEARCHES_KEY) ?? 'null')).toEqual([]);
+  });
+
+  it('stay beside the results on desktop, marking the search on screen', async () => {
+    renderHarness();
+    await userEvent.click(screen.getByLabelText('Search'));
+    await userEvent.click(screen.getByText('sati'));
+    expect(screen.getByPlaceholderText(SEARCH_PLACEHOLDER)).toHaveValue('sati');
+    expect(screen.getByText('sati').closest('button')).toHaveAttribute('aria-current', 'true');
+    // Running one leaves the order as it was.
+    expect(getRecentSearches()).toEqual(['hindrance', 'sati']);
+  });
+
+  it('are walked by the arrows, Enter running the one highlighted', async () => {
+    renderHarness();
+    await userEvent.click(screen.getByLabelText('Search'));
+    await userEvent.keyboard('{ArrowDown}{ArrowDown}{Enter}');
+    expect(screen.getByPlaceholderText(SEARCH_PLACEHOLDER)).toHaveValue('sati');
+  });
+
+  it('open at the top each time, wherever they were left', async () => {
+    renderHarness();
+    await userEvent.click(screen.getByLabelText('Search'));
+    const column = screen.getByText('Recent searches').closest('.sc') as HTMLElement;
+    column.scrollTop = 120;
+    column.dispatchEvent(new Event('scroll'));
+    await userEvent.click(screen.getByLabelText('Close search'));
+    await userEvent.click(screen.getByLabelText('Search'));
+    expect(column.scrollTop).toBe(0);
+  });
+
+  it('leave the arrows to a row that has focus', async () => {
+    renderHarness();
+    await userEvent.click(screen.getByLabelText('Search'));
+    const row = screen.getByText('sati').closest('button')!;
+    row.focus();
+    fireEvent.keyDown(row, { key: 'ArrowDown' });
+    fireEvent.keyDown(row, { key: 'ArrowDown' });
+    // Nothing was highlighted, so Enter in the box still closes the search.
+    fireEvent.keyDown(screen.getByPlaceholderText(SEARCH_PLACEHOLDER), { key: 'Enter' });
+    expect(screen.queryByPlaceholderText(SEARCH_PLACEHOLDER)).not.toBeInTheDocument();
+  });
+
+  it('leave Enter closing the search while none is highlighted', async () => {
+    renderHarness();
+    await userEvent.click(screen.getByLabelText('Search'));
+    await userEvent.keyboard('{ArrowDown}{ArrowUp}{Enter}');
+    expect(screen.queryByPlaceholderText(SEARCH_PLACEHOLDER)).not.toBeInTheDocument();
   });
 });
 

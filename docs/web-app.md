@@ -7,8 +7,8 @@ with React Router. It installs as a PWA, and the native apps wrap the same build
 ## The screens
 
 **The Library** has two panes: a tree — the five collections, or the reader's own lists — and the
-suttas in whatever is selected. Search results take the list's place. Narrower than 860px, it shows
-one pane at a time.
+suttas in whatever is selected. Search results take the list's place, and recent searches the
+tree's. Narrower than 860px, it shows one pane at a time.
 
 **The Reader** shows one sutta: the English, with each line's Pali a tap away (or every line's, as
 a setting), and a dictionary on every Pali word. The reader can highlight text in three colours,

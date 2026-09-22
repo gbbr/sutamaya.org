@@ -16,6 +16,8 @@ export const READER_PREFS_KEY = 'sutamaya.readerPrefs';
 export const READER_PANEL_TAB_KEY = 'sutamaya.readerPanelTab';
 export const LAYOUT_PREFS_KEY = 'sutamaya.layout';
 export const HAS_OPENED_SUTTA_KEY = 'sutamaya.hasOpenedSutta';
+// The reader's recent searches, newest first (see lib/recentSearches.ts).
+export const RECENT_SEARCHES_KEY = 'sutamaya.recentSearches';
 export const OFFLINE_NUDGE_DISMISSED_KEY = 'sutamaya.offlineNudgeDismissed';
 // The corpus dataVersion/dictionaryVersion this device last completed a full offline download at
 // (see lib/offline.ts) — compared against the live corpus to spot a stale offline copy.

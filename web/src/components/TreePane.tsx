@@ -12,6 +12,8 @@ import { useListCrud } from '../hooks/useListCrud';
 import { useListTreeDrag } from '../hooks/useListTreeDrag';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
 import { useBackHandler } from '../hooks/useBackHandler';
+import { useRecentSearches } from '../hooks/useRecentSearches';
+import { clearRecentSearches, isSameSearch, removeRecentSearch } from '../lib/recentSearches';
 import { ancestorsOf, descendantIdsOf, findNode, flatSuttaOrder, isExpandable } from '../lib/corpus';
 import { prefetchSuttaText } from '../lib/suttaPrefetch';
 import {
@@ -40,6 +42,7 @@ import { MatchedText } from './MatchedText';
 import { TextSearchProgress } from './TextSearchProgress';
 import { SearchUpdating } from './SearchUpdating';
 import { SearchListHits } from './SearchListHits';
+import { RecentSearches } from './RecentSearches';
 import { SuttaRowChips } from './SuttaRowChips';
 import { StagingCommit } from './StagingCommit';
 import { type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
@@ -181,15 +184,24 @@ export function TreePane({
   // or under the search results. A node reached meanwhile opens nothing, switches no tab and isn't
   // scrolled to.
   const keepTree = mobile && (!visible || searching);
+  // Whether the search input is showing. Seeded from whether a query is already present, so a
+  // pre-populated one can't leave results on screen with no way to see what is being searched.
+  const [searchOpen, setSearchOpen] = useState(() => query.trim().length > 0);
+  const searches = useRecentSearches();
+  // Whether recent searches fill the column: with the box empty, and beside the results on desktop.
+  const showRecent = searchOpen && searches.length > 0 && (!mobile || !searching);
 
   // The pane's scroll, held until the mirror lands and the results are complete: the My lists block
   // sits above the tree, and the sutta text's hits arrive under the metadata ones, either of them
   // moving the rows under a restored position. Results are remembered apart from the tree, the two
-  // sharing this one column but not each other's places in it.
-  const scrollKey = query.trim() ? 'tree:search' : 'tree';
+  // sharing this one column but not each other's places in it; the recent searches open at the top.
+  const scrollKey = showRecent ? 'tree:recent' : searching ? 'tree:search' : 'tree';
   // Whether the mirror and the results have landed, so the remembered offset can be put back.
   const restoreReady = ready && hitsSettled;
-  const scrollRef = useScrollMemory<HTMLDivElement>(scrollKey, visible, { readyToRestore: restoreReady });
+  const scrollRef = useScrollMemory<HTMLDivElement>(scrollKey, visible, {
+    readyToRestore: restoreReady,
+    restore: scrollKey === 'tree:recent' ? 'top' : 'stored',
+  });
   // A new query opens at the top, and forgets where the query before it was left. Not the query
   // this mount arrived on, whose offset is what the restore above is putting back, and not a
   // cleared one, which hands the column back to the tree and its own offset.
@@ -345,9 +357,6 @@ export function TreePane({
       // storage unavailable — ignore
     }
   }, [expanded, listExpanded, nodeId]);
-  // Whether the search input is showing. Seeded from whether a query is already present, so a
-  // pre-populated one can't leave results on screen with no way to see what is being searched.
-  const [searchOpen, setSearchOpen] = useState(() => query.trim().length > 0);
   // Closes the input once a list or collection from the results is opened, a destination rather
   // than a refinement — except under a phone's list, which leaves the search open beneath it. Keyed
   // on the browsed node and on the pick, since the row can be clicked in either pane, and picking
@@ -365,6 +374,13 @@ export function TreePane({
     moveBy: moveSearchActiveIndexBy,
     setRowRef: setHitRowRef,
   } = useActiveHitIndex(query);
+  // The recent searches' cursor. It starts on no row, so Enter in an empty box still closes it.
+  const {
+    activeIndex: recentIndex,
+    activeIndexRef: recentIndexRef,
+    moveBy: moveRecentBy,
+    setRowRef: setRecentRowRef,
+  } = useActiveHitIndex(searchOpen ? query : null, -1);
 
   const { listChildrenOf, countFor, deleteScopeFor, topLevelLists } = useListTreeIndex(lists);
 
@@ -525,6 +541,13 @@ export function TreePane({
   // The native apps' Back closes an open search before it leaves the library. A no-op on the web.
   useBackHandler(searchOpen, closeSearch);
 
+  // pickRecent runs a recent search again, closing a touch screen's keyboard.
+  function pickRecent(q: string) {
+    onSearch(q);
+    if (window.matchMedia?.('(pointer: coarse)').matches) searchInput.current?.blur();
+    else searchInput.current?.focus();
+  }
+
   // Opens a hit in the reader, leaving the search as it is: the route change unmounts this pane,
   // and the reader closes back to the results.
   function openHit(id: string, segments?: [number, number]) {
@@ -552,6 +575,21 @@ export function TreePane({
           return;
         }
       }
+      // The same keys walk the recent searches while the box is empty — from the box, or with nothing
+      // focused, so a focused row or list keeps its own keys.
+      if (!searching && showRecent && visible && (isSearchInput || e.target === document.body)) {
+        if (isShortcut(e, SHORTCUTS.librarySelectMove)) {
+          e.preventDefault();
+          moveRecentBy(e.key === 'ArrowDown' ? 1 : -1, searches.length);
+          return;
+        }
+        const recent = searches[recentIndexRef.current];
+        if (isShortcut(e, SHORTCUTS.librarySelectOpen) && recent) {
+          e.preventDefault();
+          pickRecent(recent);
+          return;
+        }
+      }
       if (tag === 'input' || tag === 'textarea') return;
       if (isShortcut(e, SHORTCUTS.librarySearch)) {
         e.preventDefault();
@@ -568,7 +606,7 @@ export function TreePane({
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [searching, visible, navRows, displayHits, listHits, searchOpen, onOpenSutta, onSelect, shortcutsOpen]);
+  }, [searching, visible, navRows, displayHits, listHits, searchOpen, onOpenSutta, onSelect, shortcutsOpen, showRecent, searches]);
 
   // The row marked as the browsed node; none on a phone, where the list it points at is off screen.
   const markedId = mobile ? undefined : nodeId;
@@ -592,13 +630,14 @@ export function TreePane({
 
   // Centres the browsed node, retrying on each state change the expand effects above make and on the
   // search closing: its row isn't in the DOM on the render `nodeId` changed on, nor while search
-  // results fill the column. Held until the remembered offset is back, which would otherwise scroll
-  // the node away again. Never for a row clicked in the tree, nor for a node reached while the tree
-  // was kept, nor for the node a return opens on, which the remembered scroll position places.
+  // results or recent searches fill the column. Held until the remembered offset is back, which
+  // would otherwise scroll the node away again. Never for a row clicked in the tree, nor for a node
+  // reached while the tree was kept, nor for the node a return opens on, which the remembered scroll
+  // position places.
   useScrollToNode(
     scrollRef,
     restoreReady && clickedIdRef.current !== nodeId && keptIdRef.current !== nodeId ? nodeId : undefined,
-    [paneView, expanded, listExpanded, corpus, lists, searching],
+    [paneView, expanded, listExpanded, corpus, lists, searching, showRecent],
     revealNow ? undefined : nodeId,
     pickCount
   );
@@ -607,7 +646,7 @@ export function TreePane({
   useScrollToNode(
     scrollRef,
     restoreReady ? flashNodeId : undefined,
-    [paneView, expanded, listExpanded, corpus, lists, searching],
+    [paneView, expanded, listExpanded, corpus, lists, searching, showRecent],
     undefined,
     pickCount
   );
@@ -678,7 +717,7 @@ export function TreePane({
           (lib/layout.ts), lower than a native top bar: the wordmark is sized as a large title
           rather than a bar's, and wants the air. */}
       <header
-        className={`flex-none px-[22px] pt-5 border-b border-ink/10 ${searching ? 'pb-4' : ''}`}
+        className={`flex-none px-[22px] pt-5 border-b border-ink/10 ${searching || showRecent ? 'pb-4' : ''}`}
         style={{ paddingTop: mobile ? MOBILE_TOP_INSET : 'calc(1.25rem + var(--safe-top))' }}
       >
         {/* The wordmark and the destinations away from the two trees: help, search, the account.
@@ -744,8 +783,9 @@ export function TreePane({
                   e.preventDefault();
                   e.stopPropagation();
                   closeSearch();
-                } else if (e.key === 'Enter' && !query.trim()) {
-                  // An empty query has nothing to submit, so Enter closes as Escape does.
+                } else if (e.key === 'Enter' && !query.trim() && !(showRecent && searches[recentIndex])) {
+                  // An empty query has nothing to submit, so Enter closes as Escape does — unless the
+                  // arrows are on a recent search, which the pane's own keydown runs.
                   e.preventDefault();
                   closeSearch();
                 }
@@ -780,12 +820,13 @@ export function TreePane({
             still flips.
 
             Gone while a query has results, which are drawn from the whole corpus whichever tab is
-            active, and a highlighted tab above them would claim otherwise.
+            active, and a highlighted tab above them would claim otherwise; and while the recent
+            searches stand in for both trees.
 
             The negative margin cancels 8px of the header's padding at both ends, splitting the
             difference between the header's own edge and the inset of the rows below, whose own
             edge is a round hover target with air around its glyph. */}
-        {!searching && (
+        {!searching && !showRecent && (
           <div className="relative flex mt-4 -mx-2 font-sans text-ui-sm font-semibold">
             {/* The underline is one bar sliding between the tabs rather than a border lit on each,
                 which is how tabs move on both phone platforms. It spans half the row, the two tabs
@@ -834,7 +875,19 @@ export function TreePane({
           scrollPaddingBottom: 'var(--safe-bottom)',
         }}
       >
-        {searching ? (
+        {showRecent ? (
+          <RecentSearches
+            searches={searches}
+            activeIndex={recentIndex}
+            // The search whose results fill the pane beside this one.
+            currentIndex={searching ? searches.findIndex((s) => isSameSearch(s, query)) : -1}
+            onPick={pickRecent}
+            onRemove={removeRecentSearch}
+            onClear={clearRecentSearches}
+            setRowRef={setRecentRowRef}
+            inset={22}
+          />
+        ) : searching ? (
           <div>
             {/* Mobile only, as the hit rows below are: ListPane draws this block on desktop. */}
             {mobile && (
