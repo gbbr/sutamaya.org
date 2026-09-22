@@ -8,6 +8,7 @@ import { useUiPrefs } from '../context/UiPrefsContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { useBackHandler } from '../hooks/useBackHandler';
+import { useLatest } from '../hooks/useLatest';
 import { forgetScrollPosition } from '../hooks/useScrollMemory';
 import { findNode, isExpandable, nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId } from '../lib/corpus';
 import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP, listBlockCounts, listBlockHeading } from '../lib/search/metadata';
@@ -224,32 +225,41 @@ export function LibraryPage() {
   // How many nodes have been picked or opened by a link, which TreePane reveals each time — the node
   // already selected included.
   const [pickCount, setPickCount] = useState(0);
+  // Whether the search results are on screen. On a phone, a group or list opened from them shows
+  // over the search, which stays open beneath it for Back to return to.
+  const resultsShown = query.trim().length > 0 && !(mobile && view === 'list');
+  // The query as typed, which onSelectNode reads without changing on every keystroke.
+  const latestQuery = useLatest(query);
 
   // The document title and meta description, from the same `nodeLabel` and `nodeBlurb` lookups
   // ListPane's header uses. A search, and a user list, describe nothing and fall back to the
   // app-wide description.
   const { title, description } = useMemo(() => {
-    if (query.trim().length > 0) return { title: 'Search', description: null };
+    if (resultsShown) return { title: 'Search', description: null };
     const { ref, label } = nodeLabel(corpus, nodeId || '', lists);
     return {
       title: label ? (ref ? `${ref} · ${label}` : label) : '',
       description: nodeBlurb(corpus, nodeId || undefined).blurb ?? null,
     };
-  }, [corpus, nodeId, lists, query]);
+  }, [corpus, nodeId, lists, resultsShown]);
   useDocumentMeta(title, description);
 
   // Selects a browse node or user list. Stable, since TreePane's keydown effect depends on it. On a
   // phone the list takes the tree's place, sliding in over it — except for a group that only
-  // expands, which a search can name, and which opens in the tree instead.
+  // expands, which a search can name, and which opens in the tree instead. A pick from the search
+  // results closes the search, except where a phone's list slides in over them: the search stays
+  // open beneath it, for Back to return to.
   const onSelectNode = useCallback(
     (id: string) => {
-      const path = `/browse/${encodeURIComponent(id)}`;
       // Opens it at the top: ListPane's remembered offset is for a return, not for a pick.
       forgetScrollPosition(`list:${id}`);
       const found = corpus ? findNode(corpus, id) : null;
       const inTree = !!found && isExpandable(found.node);
+      const keepSearch = mobile && !inTree && latestQuery.current.trim().length > 0;
+      const search = keepSearch ? `?q=${encodeURIComponent(latestQuery.current)}` : '';
+      const path = `/browse/${encodeURIComponent(id)}${search}`;
       const select = () => {
-        setQuery('');
+        if (!keepSearch) setQuery('');
         setView(inTree ? 'tree' : 'list');
         setNodeId(id);
         setSuttaId(undefined);
@@ -268,7 +278,7 @@ export function LibraryPage() {
         return navigate(path, { flushSync: true });
       });
     },
-    [navigate, setView, mobile, corpus]
+    [navigate, setView, mobile, corpus, latestQuery]
   );
 
   // `segments` are set only where the query was answered by the sutta's text, and are where the
@@ -281,12 +291,13 @@ export function LibraryPage() {
       // left. A hit's own node stands in only where nothing was selected to return to.
       const returnNodeId = nodeId || (query.trim() ? corpus?.suttas[id]?.node : undefined);
       // The search travels with it, so closing the reader puts the results back rather than the
-      // hit's own collection.
+      // hit's own collection — or, on a phone, the list and the search beneath it.
       const search = query.trim() ? `?q=${encodeURIComponent(query)}` : '';
       const from = `/browse/${encodeURIComponent(returnNodeId || '')}/${encodeURIComponent(id)}${search}`;
       // The hits the panes draw, in order, which is the run the reader's Prev/Next steps — capped
-      // with them, so a step can't leave the results the reader can see.
-      const searchIds = query.trim() ? hits.slice(0, SEARCH_RESULTS_CAP).map((h) => h.id) : undefined;
+      // with them, so a step can't leave the results the reader can see. None for a sutta opened
+      // from a phone's list over the search, which steps through that list.
+      const searchIds = resultsShown ? hits.slice(0, SEARCH_RESULTS_CAP).map((h) => h.id) : undefined;
       // Persisted as well as carried in router state, which a hard refresh drops — see
       // ReaderPage's closeReader.
       try {
@@ -302,7 +313,7 @@ export function LibraryPage() {
           : tagIntent({ from, fromView: view, searchIds, segments });
       transitionPage('fade', () => navigate(`/read/${encodeURIComponent(id)}`, { state, flushSync: true }));
     },
-    [nodeId, view, query, corpus, hits, navigate]
+    [nodeId, view, query, resultsShown, corpus, hits, navigate]
   );
 
   const showTreePane = !mobile || view === 'tree';
@@ -393,11 +404,13 @@ export function LibraryPage() {
         />
       )}
 
+      {/* ListPane gets no query on a phone, where TreePane draws the results and this pane only
+          ever shows a group or list — over the search, when one was opened from it. */}
       <div style={{ display: showListPane ? 'contents' : 'none' }}>
         <ListPane
           nodeId={nodeId}
           selectedId={suttaId}
-          query={query}
+          query={mobile ? '' : query}
           hits={hits}
           listHits={shownListHits}
           listHitTotal={listHits.length}

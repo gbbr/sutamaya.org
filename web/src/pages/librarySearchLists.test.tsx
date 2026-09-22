@@ -147,14 +147,14 @@ describe('a library search that matches the user\'s lists', () => {
     expect(tree.queryByText('Mulapariyaya')).toBeNull();
   });
 
-  it('puts the search input away when a list is opened from the results', async () => {
+  it('opens a list over the results, and Back returns to them', async () => {
     const tree = searchFor('divine', [list({ id: 'l1', label: 'Divine', items: ['mn1'] })]);
 
     fireEvent.click(await tree.findByText('Divine'));
+    fireEvent.click(await screen.findByRole('button', { name: 'Back' }));
 
-    // The list is the destination the search was for, so the input goes with the results rather
-    // than staying open over the list that just opened.
-    expect(tree.queryByPlaceholderText(SEARCH_PLACEHOLDER)).toBeNull();
+    expect((tree.getByPlaceholderText(SEARCH_PLACEHOLDER) as HTMLInputElement).value).toBe('divine');
+    expect(tree.getByText('Brahmajala')).toBeTruthy();
   });
 
   it('drops the members of every matched list, not just of a single one', async () => {
