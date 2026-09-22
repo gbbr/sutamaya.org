@@ -232,7 +232,7 @@ export const ListRow = memo(function ListRow({
             // so if it ever does, this is the number to move: 38 minus twice it. The negative left
             // margin borrows back most of the row's gap, landing the characters where the label's
             // were.
-            className="font-serif flex-1 min-w-0 h-[38px] -my-[5px] -ml-[6px] border border-accent rounded px-[7px] bg-field text-ui-md outline-none"
+            className="font-serif flex-1 min-w-0 h-[38px] -my-[5px] -ml-[6px] border border-accent rounded px-[7px] bg-white/50 dark:bg-field text-ui-md outline-none"
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
