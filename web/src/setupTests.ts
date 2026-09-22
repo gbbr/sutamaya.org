@@ -5,7 +5,11 @@ import { cleanup } from '@testing-library/react';
 // Without vitest's `globals: true` (not enabled here — this repo's tests import
 // describe/it/expect explicitly), @testing-library/react can't auto-detect a global `afterEach`
 // to register its own unmount-between-tests cleanup, so it has to be wired up explicitly here.
-afterEach(() => cleanup());
+afterEach(async () => {
+  cleanup();
+  // Empties the recent searches, whose store outlives a test; imported late so a file's mocks apply.
+  (await import('./lib/recentSearches')).clearRecentSearches();
+});
 
 // jsdom doesn't implement scrollIntoView (or layout at all) — components across this app call it
 // routinely (search-hit nav, deep-link scroll-to-node, etc.), so stub it globally rather than in

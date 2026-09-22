@@ -6,6 +6,7 @@ import { isRetryable, retryWithBackoff, statusOf } from '../lib/retry';
 import { readLastUser, writeLastUser } from '../lib/lastUser';
 import { localUserId, resetLocalUserId } from '../lib/localAccount';
 import { deleteMirror } from '../lib/mirrorDb';
+import { clearRecentSearches } from '../lib/recentSearches';
 import { API_BASE, isNativeApp } from '../lib/platform';
 import { AppleSignIn } from '../lib/appleSignIn';
 import { clearNativeToken, hydrateNativeToken, setNativeToken } from '../lib/nativeAuth';
@@ -307,6 +308,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(null);
     // A fresh local id, so whatever the reader does next starts empty.
     setLocalId(resetLocalUserId());
+    clearRecentSearches();
     if (previousId) await deleteMirror(previousId);
   }, [user]);
 

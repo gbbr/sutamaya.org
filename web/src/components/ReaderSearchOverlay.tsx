@@ -5,12 +5,15 @@ import { useLayout } from '../context/LayoutContext';
 import { useUserData } from '../context/UserDataContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
-import { READER_SEARCH_PLACEHOLDER, SEARCH_RESULTS_CAP } from '../lib/search/metadata';
+import { useRecentSearches } from '../hooks/useRecentSearches';
+import { READER_SEARCH_PLACEHOLDER, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/search/metadata';
+import { clearRecentSearches, removeRecentSearch, saveRecentSearch } from '../lib/recentSearches';
 import { searchNoMatches } from '../lib/search/text';
 import { beginTextSearchLoad } from '../lib/search/textClient';
 import { prefetchSuttaText } from '../lib/suttaPrefetch';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { MatchedText } from './MatchedText';
+import { RecentSearches } from './RecentSearches';
 import { SuttaRowChips } from './SuttaRowChips';
 import { TextSearchProgress } from './TextSearchProgress';
 import { SearchUpdating } from './SearchUpdating';
@@ -69,6 +72,36 @@ export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: 
     return ordered.slice(0, SEARCH_RESULTS_CAP);
   }, [hits, currentId]);
   const { activeIndex, setActiveIndex, moveBy, setRowRef } = useActiveHitIndex(query);
+  const searches = useRecentSearches();
+  // The recent searches, in place of the prompt while the box is empty.
+  const showRecent = !query.trim() && searches.length > 0;
+  // Their cursor, which starts on no row.
+  const {
+    activeIndex: recentIndex,
+    setActiveIndex: setRecentIndex,
+    moveBy: moveRecentBy,
+    setRowRef: setRecentRowRef,
+  } = useActiveHitIndex(query, -1);
+
+  // pointerMoved reports whether the pointer moved, rather than a row sliding under a still one.
+  function pointerMoved(e: React.MouseEvent): boolean {
+    const prev = lastPointer.current;
+    if (prev && prev.x === e.clientX && prev.y === e.clientY) return false;
+    lastPointer.current = { x: e.clientX, y: e.clientY };
+    return true;
+  }
+
+  function openHit(hit: SearchHit) {
+    saveRecentSearch(query);
+    onOpenSutta(hit.matchedId ?? hit.id, hit.snippet?.segments);
+  }
+
+  // pickRecent runs a recent search again, closing a touch screen's keyboard.
+  function pickRecent(q: string) {
+    setQuery(q);
+    if (window.matchMedia?.('(pointer: coarse)').matches) inputRef.current?.blur();
+    else inputRef.current?.focus();
+  }
 
   // The same chips and highlight badge each row carries in ListPane and TreePane.
   const flatLists = useMemo(() => flattenListTree(lists), [lists]);
@@ -103,16 +136,20 @@ export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: 
     if (e.key === 'Escape') {
       e.preventDefault();
       onClose();
-    } else if (e.key === 'ArrowDown') {
+    } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
       e.preventDefault();
-      moveBy(1, displayHits.length);
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      moveBy(-1, displayHits.length);
-    } else if (e.key === 'Enter' && displayHits[activeIndex]) {
-      e.preventDefault();
-      const hit = displayHits[activeIndex];
-      onOpenSutta(hit.matchedId ?? hit.id, hit.snippet?.segments);
+      const delta = e.key === 'ArrowDown' ? 1 : -1;
+      if (showRecent) moveRecentBy(delta, searches.length);
+      else moveBy(delta, displayHits.length);
+    } else if (e.key === 'Enter') {
+      const recent = showRecent ? searches[recentIndex] : undefined;
+      if (recent) {
+        e.preventDefault();
+        pickRecent(recent);
+      } else if (displayHits[activeIndex]) {
+        e.preventDefault();
+        openHit(displayHits[activeIndex]);
+      }
     }
   }
 
@@ -249,12 +286,9 @@ export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: 
                   borderBottom: `1px solid ${theme.rule}`,
                 }}
                 onMouseMove={(e) => {
-                  const prev = lastPointer.current;
-                  if (prev && prev.x === e.clientX && prev.y === e.clientY) return;
-                  lastPointer.current = { x: e.clientX, y: e.clientY };
-                  setActiveIndex(i);
+                  if (pointerMoved(e)) setActiveIndex(i);
                 }}
-                onClick={() => onOpenSutta(h.matchedId ?? h.id, h.snippet?.segments)}
+                onClick={() => openHit(h)}
                 // The press starts the text load, so the reader has it in hand when the hit opens.
                 onPointerDown={() => prefetchSuttaText(corpus, h.matchedId ?? h.id)}
               >
@@ -325,10 +359,26 @@ export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: 
               {searchNoMatches(textStatus)}
             </div>
           )}
-          {!query.trim() && (
-            <div className="font-sans text-center text-ui-base py-8 px-5" style={{ color: theme.dim }}>
-              Type to search the whole corpus.
-            </div>
+          {showRecent ? (
+            <RecentSearches
+              searches={searches}
+              activeIndex={recentIndex}
+              onPick={pickRecent}
+              onRemove={removeRecentSearch}
+              onClear={clearRecentSearches}
+              setRowRef={setRecentRowRef}
+              onHover={(i, e) => {
+                if (pointerMoved(e)) setRecentIndex(i);
+              }}
+              inset={20}
+              theme={theme}
+            />
+          ) : (
+            !query.trim() && (
+              <div className="font-sans text-center text-ui-base py-8 px-5" style={{ color: theme.dim }}>
+                Type to search the whole corpus.
+              </div>
+            )
           )}
         </div>
       </div>

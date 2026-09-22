@@ -30,6 +30,7 @@ import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { LibraryPage } from './LibraryPage';
 import { ReaderPage } from './ReaderPage';
 import { SEARCH_PLACEHOLDER } from '../lib/search/metadata';
+import { getRecentSearches } from '../lib/recentSearches';
 import { tagIntent } from '../lib/routeIntent';
 import type { Corpus, ListDef } from '../lib/types';
 
@@ -274,6 +275,18 @@ describe('a collection found by search', () => {
     fireEvent.click(await inPane('ListPane').findByRole('button', { name: /SN47\s*Establishment/ }));
 
     await waitFor(() => expect(inPane('TreePane').queryByPlaceholderText(SEARCH_PLACEHOLDER)).toBeNull());
+  });
+
+  it('saves the search as a recent one once a result of it is opened, and not before', async () => {
+    const { inPane } = searchFrom('/browse/dn', 'satipatthana');
+    fireEvent.click(await inPane('ListPane').findByRole('button', { name: /AN9\.63\s*Establishment/ }));
+    expect(getRecentSearches()).toEqual(['satipatthana']);
+
+    fireEvent.click(inPane('TreePane').getByRole('button', { name: 'Search' }));
+    fireEvent.change(inPane('TreePane').getByPlaceholderText(SEARCH_PLACEHOLDER), { target: { value: 'ambapali' } });
+    expect(getRecentSearches()).toEqual(['satipatthana']);
+    fireEvent.click(await inPane('ListPane').findByRole('button', { name: /SN 47\.1\s*Ambapālī/ }));
+    expect(getRecentSearches()).toEqual(['ambapali', 'satipatthana']);
   });
 
   it('is reached by the arrow keys and opened with Enter', async () => {

@@ -128,6 +128,20 @@ query run together does, as `sutta nipata` does *Suttanipāta* — matching anyw
 not a range like SN35.1–10, since a number inside one names a sutta. One that only expands opens
 expanded in the tree, not on an empty list.
 
+## Recent searches
+
+With the box empty, search lists the reader's last eight searches, in the Library and the Reader
+alike, and a tap runs one again. On a wide Library they take the tree's column, and stay there
+beside the results, the search on screen marked.
+
+A search is saved, at the top, when one of its results is opened — a sutta, a list or a collection,
+by tap, click or Enter. Typing alone saves nothing, so a half-typed word or a typo never lands
+there, and running one again from the history leaves the order alone, so its rows hold still under
+the pointer. Case, diacritics and spacing don't make a different search.
+
+The history stays on the device, unsynced: one copy that every screen and tab reads, so a change
+made in one shows in all. Signing out clears it.
+
 ## Golden queries
 
 `scripts/search-golden.json` lists queries and the suttas each should put near the top — famous
@@ -162,4 +176,6 @@ the repo.
 | `web/src/lib/search/worker.ts`, `textClient.ts` | the worker, and the main thread's side of it |
 | `web/src/lib/search/expansion.ts` | the expansion table |
 | `web/src/hooks/useCorpusSearch.ts` | the two halves combined for a page |
+| `web/src/lib/recentSearches.ts`, `web/src/hooks/useRecentSearches.ts` | the history, and the hook that reads it |
+| `web/src/components/RecentSearches.tsx` | the list both searches draw |
 | `scripts/search-golden.json`, `web/src/lib/search/golden.test.ts` | the golden queries |

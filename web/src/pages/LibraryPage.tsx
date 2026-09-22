@@ -12,6 +12,7 @@ import { useLatest } from '../hooks/useLatest';
 import { forgetScrollPosition } from '../hooks/useScrollMemory';
 import { findNode, isExpandable, nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId } from '../lib/corpus';
 import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP, listBlockCounts, listBlockHeading } from '../lib/search/metadata';
+import { saveRecentSearch } from '../lib/recentSearches';
 import { SHORTCUTS, shortcutsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, tagIntent, type RouteIntent } from '../lib/routeIntent';
@@ -251,6 +252,8 @@ export function LibraryPage() {
   // open beneath it, for Back to return to.
   const onSelectNode = useCallback(
     (id: string) => {
+      // A list or collection opened from the results is a result opened.
+      saveRecentSearch(latestQuery.current);
       // Opens it at the top: ListPane's remembered offset is for a return, not for a pick.
       forgetScrollPosition(`list:${id}`);
       const found = corpus ? findNode(corpus, id) : null;
@@ -311,7 +314,11 @@ export function LibraryPage() {
         segments === undefined
           ? { from, fromView: view, searchIds }
           : tagIntent({ from, fromView: view, searchIds, segments });
-      transitionPage('fade', () => navigate(`/read/${encodeURIComponent(id)}`, { state, flushSync: true }));
+      transitionPage('fade', () => {
+        // Saved inside the swap, once the fade has captured this page.
+        saveRecentSearch(query);
+        return navigate(`/read/${encodeURIComponent(id)}`, { state, flushSync: true });
+      });
     },
     [nodeId, view, query, resultsShown, corpus, hits, navigate]
   );
