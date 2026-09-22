@@ -17,7 +17,7 @@ the app reads offline from its first launch, with no service worker.
 | Session | an HttpOnly cookie | a signed token, kept in the app's preferences and sent as a bearer header |
 | Google sign-in | a page redirect | the system browser, returning through a `sutamaya://auth` link |
 | Offline download | offered | hidden — the corpus is already bundled |
-| Data export | a download | the OS share sheet |
+| Data export | a download | the system "Save as" picker on Android, the share sheet on iOS |
 | Reader's Share button | the installed app only | always |
 | Updates | the service worker | over-the-air bundles (below) |
 | Android back button | — | closes what's open or returns from a search jump, then leaves Settings and Help, then backgrounds the app |
