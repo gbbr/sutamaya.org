@@ -126,8 +126,9 @@ const LINK_DANGER =
 
 // Downloads the account export. In the browser it is what it looks like — a link to the export
 // route, which the browser saves. The native build has no such download (lib/exportData.ts), so
-// there it is a button that fetches the file and passes it to the OS share sheet, saying so while
-// it works. Appears twice: beside Sign out, and beside the account deletion it is the way out of.
+// there it is a button that fetches the file and passes it to the system's "Save as" picker or
+// share sheet, saying so while it works. Appears twice: beside Sign out, and beside the account
+// deletion it is the way out of.
 function ExportAction() {
   const [state, setState] = useState<'idle' | 'working' | 'failed'>('idle');
 
