@@ -3,14 +3,18 @@
 // The golden query set (golden.test.ts) runs the same code against the real corpus and says
 // whether the results are good; these say which rule broke when they stop being good.
 import { describe, expect, it } from 'vitest';
+import { SEARCH_RESULTS_CAP } from './metadata';
 import {
   buildTextIndex,
+  mergeSearchHits,
   searchCorpusVariants,
   searchSuttaText,
+  searchTextVariants,
   snippetOf,
   RANK_TEXT_PHRASE,
   RANK_TEXT_PARAGRAPH,
   RANK_TEXT_ANYWHERE,
+  type RankedHit,
   type SearchMap,
   type TextScore,
 } from './text';
@@ -327,5 +331,25 @@ describe('searchCorpusVariants', () => {
     // would otherwise show a description with nothing marked in it. "of" is left out — it is in
     // every line, and the matching didn't require it either.
     expect(hit.explains?.query).toBe('satipatthana establishment mindfulness');
+  });
+});
+
+describe('mergeSearchHits', () => {
+  // One sutta more than the rows drawn, the last saying the query least often, so it ranks last.
+  const last = `s${SEARCH_RESULTS_CAP}`;
+  const X = index(
+    Array.from({ length: SEARCH_RESULTS_CAP + 1 }, (_, i) => ({
+      uid: `s${i}`,
+      paras: one([[i === SEARCH_RESULTS_CAP ? 'Greed.' : 'Greed and greed.', 'lobho']]),
+    }))
+  );
+  const merge = (readingId?: string) =>
+    mergeSearchHits<RankedHit>([], searchTextVariants(X, 'greed'), X, 'greed', (id, rank) => ({ id, rank, saved: false }), readingId);
+
+  it('cuts a snippet for the sutta being read wherever it ranks', () => {
+    const unread = merge().at(-1);
+    expect(unread?.id).toBe(last);
+    expect(unread?.snippet).toBeUndefined();
+    expect(merge(last).at(-1)?.snippet).toBeDefined();
   });
 });

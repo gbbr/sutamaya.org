@@ -20,7 +20,12 @@ const listeners = new Set<() => void>();
 // The search the worker is answering, and the one waiting for it to finish.
 let lastId = 0;
 let awaiting: { id: number; resolve: (hits: RankedHit[] | null) => void } | null = null;
-let queued: { query: string; meta: RankedHit[]; resolve: (hits: RankedHit[] | null) => void } | null = null;
+let queued: {
+  query: string;
+  meta: RankedHit[];
+  readingId?: string;
+  resolve: (hits: RankedHit[] | null) => void;
+} | null = null;
 
 function publish(next: TextSearchStatus): void {
   if (status === next) return;
@@ -69,7 +74,7 @@ function pump(): void {
   const job = queued;
   queued = null;
   awaiting = { id: ++lastId, resolve: job.resolve };
-  send({ type: 'search', id: awaiting.id, query: job.query, meta: job.meta });
+  send({ type: 'search', id: awaiting.id, query: job.query, meta: job.meta, readingId: job.readingId });
 }
 
 function send(msg: SearchRequest): void {
@@ -102,12 +107,17 @@ export function beginTextSearchLoad(corpus: Corpus | null): void {
 
 // The suttas whose text answers `query`, merged into `meta` and ordered — null where the worker has
 // no text to scan, which leaves `meta` the whole result.
-export function searchText(query: string, meta: RankedHit[]): Promise<RankedHit[] | null> {
+export function searchText(
+  query: string,
+  meta: RankedHit[],
+  // The sutta on screen, in the Reader's own search.
+  readingId?: string
+): Promise<RankedHit[] | null> {
   if (!worker || status !== 'ready') return Promise.resolve(null);
   return new Promise((resolve) => {
     // Only the newest waiting search is worth running; an older one has been typed over already.
     queued?.resolve(null);
-    queued = { query, meta, resolve };
+    queued = { query, meta, readingId, resolve };
     pump();
   });
 }
