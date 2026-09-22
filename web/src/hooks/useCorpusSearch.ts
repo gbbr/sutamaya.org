@@ -86,7 +86,7 @@ export function useCorpusSearch(
     if (!corpus || !searching || status !== 'ready') return;
     let live = true;
     const ask = meta.map(({ id, rank, saved }) => ({ id, rank, saved }));
-    void searchText(deferredQuery, ask).then((ranked) => {
+    void searchText(deferredQuery, ask, readingId).then((ranked) => {
       if (!live) return;
       // The worker died mid-search: the metadata half is the whole answer from here, so nothing
       // is held over it.
@@ -101,7 +101,7 @@ export function useCorpusSearch(
     return () => {
       live = false;
     };
-  }, [corpus, searching, status, deferredQuery, meta]);
+  }, [corpus, searching, status, deferredQuery, meta, readingId]);
 
   const answered = merged?.meta === meta;
   // Whether the results are waiting: on the opening keystroke, on the text still on its way, or on

@@ -604,7 +604,9 @@ export function mergeSearchHits<T extends RankedHit>(
   text: Map<string, TextScore>,
   index: TextIndex | null,
   typed: string,
-  make: (uid: string, bucket: number) => T | null
+  make: (uid: string, bucket: number) => T | null,
+  // The sutta on screen, which the Reader's search leads with wherever it ranks.
+  readingId?: string
 ): T[] {
   const best = new Map<string, T>();
   for (const hit of meta) best.set(hit.id, hit);
@@ -624,9 +626,12 @@ export function mergeSearchHits<T extends RankedHit>(
   );
 
   // Snippets for the rows that render, rather than for every hit: a broad query matches thousands
-  // of suttas and only the capped head of them is ever drawn.
+  // of suttas and only the capped head of them is ever drawn, with the sutta being read.
   if (index) {
-    for (const hit of hits.slice(0, SEARCH_RESULTS_CAP)) {
+    const drawn = hits.slice(0, SEARCH_RESULTS_CAP);
+    const reading = hits.find((hit) => hit.id === readingId);
+    if (reading && !drawn.includes(reading)) drawn.push(reading);
+    for (const hit of drawn) {
       const score = text.get(hit.id);
       const snippet = score && snippetOf(index, score, typed);
       if (snippet) hit.snippet = snippet;

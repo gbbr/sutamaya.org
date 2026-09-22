@@ -20,7 +20,7 @@ import {
 // Sent to load the text, and to run one search once it is loaded.
 export type SearchRequest =
   | { type: 'load'; searchVersion: string }
-  | { type: 'search'; id: number; query: string; meta: RankedHit[] };
+  | { type: 'search'; id: number; query: string; meta: RankedHit[]; readingId?: string };
 
 // The load's outcome, and one answer per search. `hits` is null where the text isn't loaded, which
 // leaves the metadata hits the main thread already has as the whole result.
@@ -49,19 +49,22 @@ function load(searchVersion: string): void {
     });
 }
 
-function search(query: string, meta: RankedHit[]): RankedHit[] | null {
+function search(query: string, meta: RankedHit[], readingId?: string): RankedHit[] | null {
   if (!index) return null;
   const q = searchKey(query.trim());
   if (!q) return null;
-  return mergeSearchHits(meta, searchTextVariants(index, query), index, q, (uid, bucket) => ({
-    id: uid,
-    rank: bucket,
-    saved: false,
-  }));
+  return mergeSearchHits(
+    meta,
+    searchTextVariants(index, query),
+    index,
+    q,
+    (uid, bucket) => ({ id: uid, rank: bucket, saved: false }),
+    readingId
+  );
 }
 
 self.addEventListener('message', (event: MessageEvent<SearchRequest>) => {
   const msg = event.data;
   if (msg.type === 'load') load(msg.searchVersion);
-  else post({ type: 'result', id: msg.id, hits: search(msg.query, msg.meta) });
+  else post({ type: 'result', id: msg.id, hits: search(msg.query, msg.meta, msg.readingId) });
 });
