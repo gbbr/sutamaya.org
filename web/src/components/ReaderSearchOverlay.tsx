@@ -92,7 +92,8 @@ export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: 
   }
 
   function openHit(hit: SearchHit) {
-    saveRecentSearch(query);
+    // A find on the sutta being read isn't kept as a search.
+    if (hit.id !== currentId) saveRecentSearch(query);
     onOpenSutta(hit.matchedId ?? hit.id, hit.snippet?.segments);
   }
 
