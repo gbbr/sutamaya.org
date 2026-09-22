@@ -91,8 +91,10 @@ const THEME_OPTIONS: Array<{ id: Theme; label: string; palettes: ShellPalette[] 
 // One section's card: a panel of rows split by hairlines. Border and background are left to the
 // caller (cardClass), which swaps both for the flashed-on-arrival state.
 const CARD = 'rounded-field border px-5 transition-colors duration-[1200ms] ease-out';
-// A card's fill, in both themes.
-const CARD_FILL = 'bg-field dark:bg-ink/[.02]';
+// A card's fill on a phone, in both themes.
+const CARD_FILL_MOBILE = 'bg-white/50 dark:bg-ink/[.02]';
+// A card's fill on desktop, a shade lighter than the tinted page, in both themes.
+const CARD_FILL_DESKTOP = 'bg-white/20 dark:bg-ink/[.02]';
 // The heading naming the card below it.
 const SECTION_LABEL = 'font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2';
 
@@ -107,7 +109,7 @@ const UI_SCALE_STEP_BTN =
 // The last card on the page, outlined in the danger tint: everything it holds is destructive. Only
 // the border carries that, over the same fill every other card has, so the section reads as serious
 // without the page ending on a block of colour.
-const DANGER_CARD = `${CARD} ${CARD_FILL} border-danger-text/25 py-4 mb-5`;
+const DANGER_CARD = `${CARD} border-danger-text/25 py-4 mb-5`;
 // The deed itself, filled — in `danger-fill` rather than `danger-text`, which is lifted to a salmon
 // in the dark theme to stay legible as text and glares at button size.
 const DANGER_BUTTON =
@@ -240,6 +242,7 @@ export function SettingsPage() {
   const location = useLocation();
   const navigate = useNavigate();
   const { mobile } = useLayout();
+  const cardFill = mobile ? CARD_FILL_MOBILE : CARD_FILL_DESKTOP;
   // Leaves Settings for wherever the reader was, via App.tsx's RestoreLastLocation, sliding the
   // page off the way it came in.
   const backToLastLocation = useCallback(
@@ -387,7 +390,7 @@ export function SettingsPage() {
 
   // Returns a section card's classes, accent-tinted and outlined while it is the arrival highlight.
   function cardClass(id: ScrollTarget): string {
-    return `${CARD} ${flashTarget === id ? 'border-accent bg-accent/[.09]' : `border-ink/[.09] ${CARD_FILL}`}`;
+    return `${CARD} ${flashTarget === id ? 'border-accent bg-accent/[.09]' : `border-ink/[.09] ${cardFill}`}`;
   }
 
   // Aborts an in-flight download when the reader leaves Settings, which pauses it: the ref doesn't
@@ -474,7 +477,7 @@ export function SettingsPage() {
   return (
     <div
       data-component="SettingsPage"
-      className="sc under-status-bar under-nav-bar h-full bg-paper px-5 pt-12"
+      className={`sc under-status-bar under-nav-bar h-full ${mobile ? 'bg-paper' : 'bg-treepane'} px-5 pt-12`}
       style={{
         paddingTop: mobile ? `calc(${MOBILE_TOP_INSET} + 8px)` : 'calc(3rem + var(--safe-top))',
         // Keeps a section scrolled into view clear of the safe-area insets.
@@ -710,7 +713,7 @@ export function SettingsPage() {
         {/* The Display section: theme tiles and the UI scale. */}
         <div className={SECTION_LABEL}>Display</div>
 
-        <div className={`${CARD} border-ink/[.09] ${CARD_FILL} mb-5`}>
+        <div className={`${CARD} border-ink/[.09] ${cardFill} mb-5`}>
           <div className="py-3.5">
             <div className="font-sans text-ui-sm text-ink-4 mb-2">Theme</div>
             <div className="flex gap-3">
@@ -809,7 +812,7 @@ export function SettingsPage() {
             <div className={SECTION_LABEL}>
               Danger zone
             </div>
-            <div className={DANGER_CARD}>
+            <div className={`${DANGER_CARD} ${cardFill}`}>
               {!confirmDelete ? (
                 <>
                   <div className="font-sans text-ui-base text-ink-2 mb-3">
