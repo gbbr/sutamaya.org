@@ -28,6 +28,11 @@ export function platformName(): Platform {
   return name === 'ios' || name === 'android' ? name : 'web';
 }
 
+// True on an Android device, in the native shell or any browser.
+export function isAndroid(): boolean {
+  return /Android/.test(navigator.userAgent);
+}
+
 // True when the app fills the screen with no browser chrome — an installed PWA, or any native
 // shell. `display-mode: standalone` covers Android and desktop installs; `navigator.standalone`
 // covers iOS/iPadOS Safari, which has neither an install event nor a media query of its own.
