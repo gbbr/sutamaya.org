@@ -8,7 +8,9 @@
    first paint, and (this being an offline-first app) means the fonts are covered by the same
    same-origin Service Worker precache as everything else, instead of silently falling back to
    the system font on an offline reload. Mirrors exactly what Google's own CSS2 API serves for
-   the same family/weight/subset request. All four are genuine variable fonts — IBM Plex Sans has a
+   the same family/weight/subset request, except that Newsreader's two latin-ext files also carry
+   the dotted Pali letters Newsreader lacks — ḍ ḥ ḷ ṁ ṃ ṅ ṇ ṛ ṣ ṭ and their capitals — built from
+   its own letters and dot marks. All four are genuine variable fonts — IBM Plex Sans has a
    `wght` axis 100–700, Newsreader `wght` 200–800 plus `opsz` 6–72, Inter `wght` 100–900 plus `opsz`
    14–32 — so one file per (style, subset) covers every weight the app uses, 400–600. Each subset's
    `unicode-range` is Google's own, so a browser downloads only the subsets a page's text needs;
