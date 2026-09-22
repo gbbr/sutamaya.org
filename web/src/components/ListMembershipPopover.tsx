@@ -16,7 +16,9 @@ const MAX_POPOVER_HEIGHT = 420;
 
 const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(v, hi));
 
-const SAFE_AREA_BOTTOM = 'var(--safe-bottom)';
+// The space below the mobile modal's last row, which the rows scroll through to end clear of the
+// home indicator.
+const LIST_END_PADDING = 'calc(16px + var(--safe-bottom))';
 
 // Whether opening the popover should focus its input. Not on a touch pointer: a wide touch device
 // gets the anchored popover, positioned against a layout viewport the keyboard doesn't shrink, so
@@ -81,9 +83,9 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
     if (!el || !mobile || !vv) return;
     const apply = () => {
       const keyboard = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
-      // The safe-area inset comes back only once the keyboard is gone, the keyboard itself
-      // covering the home indicator.
-      el.style.paddingBottom = keyboard ? `${keyboard / getUiScale()}px` : SAFE_AREA_BOTTOM;
+      // No padding once the keyboard is gone: the rows then run to the bottom edge, under the home
+      // indicator.
+      el.style.paddingBottom = keyboard ? `${keyboard / getUiScale()}px` : '';
     };
     apply();
     vv.addEventListener('resize', apply);
@@ -117,9 +119,8 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
         // iOS otherwise does with a gesture on an unscrollable part, making the modal's own top
         // edge lag. The rows opt back into vertical panning below.
         className="fixed left-0 right-0 top-0 z-50 flex flex-col bg-field animate-sheetUp touch-none"
-        // The full layout viewport. `paddingBottom` is the resting value the effect above swaps
-        // out while the keyboard is up, and all a browser without `visualViewport` ever sees.
-        style={{ height: '100%', paddingTop: 'var(--safe-top)', paddingBottom: SAFE_AREA_BOTTOM }}
+        // The full layout viewport, its bottom padded by the effect above while the keyboard is up.
+        style={{ height: '100%', paddingTop: 'var(--safe-top)' }}
       >
         <div className="flex-none flex items-center gap-2 px-4 pt-3.5 pb-2.5 border-b border-ink/10">
           {/* The heading, at ListPane's own header size — this is a whole screen — with the sutta
@@ -143,12 +144,12 @@ export function ListMembershipPopover({ suttaId, anchor, mobile, onClose }: List
             <X size={22} strokeWidth={1.75} />
           </button>
         </div>
-        <div className="flex flex-col flex-1 min-h-0 px-4 pt-2.5 pb-4">
+        <div className="flex flex-col flex-1 min-h-0 px-4 pt-2.5">
           {/* No autoFocus on touch: focusing while the modal is still sliding up has iOS scroll
               the layout viewport to reveal an input that is briefly off-screen, dragging modal and
               page with it. A tap on the field raises the keyboard instead, by which time the modal
               is at rest and the rows have been seen. */}
-          <ListMembershipPicker suttaId={suttaId} theme={SHELL_THEME} onRequestClose={onClose} />
+          <ListMembershipPicker suttaId={suttaId} theme={SHELL_THEME} endPadding={LIST_END_PADDING} onRequestClose={onClose} />
         </div>
       </div>
     );

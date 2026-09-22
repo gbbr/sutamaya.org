@@ -726,7 +726,9 @@ export function ReaderPage() {
               onClick={() => {
                 setTab('highlights');
                 setPanel(true);
-                setNoteFocusSignal((s) => s + 1);
+                // The cursor goes in the note only on desktop: on mobile the panel slides up, and
+                // iOS scrolls the page to reach a field focused mid-slide.
+                if (!mobile) setNoteFocusSignal((s) => s + 1);
               }}
             >
               {/* The em dash marking this as the reader's own note, as a Library list row does. */}
