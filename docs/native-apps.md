@@ -16,6 +16,7 @@ the app reads offline from its first launch, with no service worker.
 | API | the same origin | `https://app.sutamaya.org`, or staging's |
 | Session | an HttpOnly cookie | a signed token, kept in the app's preferences and sent as a bearer header |
 | Google sign-in | a page redirect | the system browser, returning through a `sutamaya://auth` link |
+| Apple sign-in | a page redirect | the system sheet on iOS, through the app's own plugin; not offered on Android |
 | Offline download | offered | hidden — the corpus is already bundled |
 | Data export | a download | the system "Save as" picker on Android, the share sheet on iOS |
 | Reader's Share button | the installed app only | always |
@@ -71,7 +72,9 @@ would break an older binary. So:
   with `--allow-native-drift` for a change that can't reach the bundle.
 
 A store release updates `native-release.json`: always the build and the commit, and the floor too
-when it adds a native piece.
+when it adds a native piece. A piece the web code checks for before using needs no floor: the Apple
+sign-in button shows only where its plugin is present, so Android and older iOS builds keep taking
+updates without it.
 
 ## Links into the app
 
@@ -146,7 +149,6 @@ icon shrink the leaf to 90% and stretch the master's background back out to the 
 - **Store submission:** developer accounts, signing, listings, privacy questionnaires, screenshots,
   a reviewer account. Budget for one Apple rejection under guideline 4.2; the app already reads
   offline from launch and signs in through the system browser.
-  Sign in with Apple only if a reviewer asks — the emailed code already meets guideline 4.8.
 - **Verified links in production:** check them on a phone that installed the app from its store —
   Play for Android, TestFlight or the App Store for iOS. The Google return can then use a verified
   link instead of `sutamaya://auth`.

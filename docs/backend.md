@@ -54,7 +54,7 @@ its version. How the data endpoints are used is [offline-sync.md](offline-sync.m
 | Table | Holds |
 |---|---|
 | `users` | one row per account |
-| `identities` | the ways into an account: a Google account, an email address |
+| `identities` | the ways into an account: an Apple ID, a Google account, an email address |
 | `login_codes` | emailed codes not yet used, stored hashed |
 | `lists` | lists and groups; a list's suttas are a JSON array in its row |
 | `notes` | one note per sutta |
@@ -74,27 +74,37 @@ applies them locally.
 
 ## Sign-in
 
-Two ways in, both ending in the same kind of session:
+Three ways in, all ending in the same kind of session:
 
+- **Apple**, on the website and in the iOS app, not in the Android app. The website runs Apple's
+  OAuth flow, which posts back to the Worker cross-site, so its nonce cookie is `SameSite=None`.
+  The iOS app shows the system sheet and hands its one-time code to the Worker. Either way the
+  Worker redeems the code itself and keeps the refresh token Apple issues, which account deletion
+  revokes. Apple shares the reader's name only on their first sign-in. It is the one way in that
+  lets a reader hide their address from us, which App Store guideline 4.8 requires beside Google.
 - **Google.** The Worker runs the OAuth exchange itself, so the browser never loads Google's
   scripts. That is what keeps sign-in working under Safari's tracking prevention and in installed
   iOS apps.
 - **An emailed code** — six digits, sent through Resend, good for ten minutes and five tries. A code
   rather than a link, because a link opens in the browser, not in the installed app.
 
-Accounts are linked by verified email address, so both ways lead to the same account.
+Accounts are linked by verified email address, so every way in leads to the same account. An
+Apple ID with Hide My Email has a relay address of its own, and so an account of its own.
+Sign-in codes can reach a relay address only because `sutamaya.org` is registered with Apple's
+private email relay.
 
 The session is a signed cookie that lasts 90 days. The native apps can't carry the Worker's cookie,
 so they get a signed token instead, renewed as it's used, and CORS lets them call the API from
 their own origins. Checking either kind of session reads nothing from the database.
 
 `WEB_ORIGIN` names the app's origin, or a comma-separated list of them in development. The Google
-flow builds its redirects from it, so a wrong value breaks sign-in outright.
+and Apple flows build their redirects from it, so a wrong value breaks sign-in outright.
 
 ## Deleting an account
 
 `DELETE /api/auth/account` removes the account and everything under it in one go, with no grace
-period. Other devices still hold sessions that verify, since checking a session reads no database,
+period. It first revokes any Apple refresh token the account holds, as Apple requires; a refusal
+is logged and the deletion goes ahead. Other devices still hold sessions that verify, since checking a session reads no database,
 so the data endpoints confirm the account exists and answer **410** when it doesn't. That tells a
 device to wipe its copy rather than ask the reader to sign in again.
 
@@ -136,7 +146,7 @@ applied, as part of `npm test`.
 | `worker/src/routes/` | the auth, data and updates endpoints |
 | `worker/src/lib/writes.js` | every write a push can make |
 | `worker/src/lib/userData.js`, `listTree.js` | shaping the snapshot; repairing the list tree |
-| `worker/src/auth.js`, `session.js`, `oauth.js`, `emailAuth.js` | accounts, sessions, the two sign-in flows |
+| `worker/src/auth.js`, `session.js`, `oauth.js`, `apple.js`, `emailAuth.js` | accounts, sessions, the sign-in flows |
 | `worker/src/shareMeta.js` | link previews |
 | `worker/src/stagingBrand.js`, `wellKnown.js` | staging's branding; native link verification |
 | `worker/migrations/` | the schema |

@@ -100,6 +100,7 @@ describe('capitalization in a /browse id', () => {
       requestEmailCode: vi.fn(async () => {}),
       signInWithEmailCode: vi.fn(async () => {}),
       signInWithGoogleNative: vi.fn(async () => {}),
+      signInWithAppleNative: vi.fn(async () => false),
       promptGoogleSignIn: vi.fn(),
       logout: vi.fn(async () => {}),
       deleteAccount: vi.fn(async () => {}),

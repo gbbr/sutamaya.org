@@ -7,6 +7,7 @@ import { readLastUser, writeLastUser } from '../lib/lastUser';
 import { localUserId, resetLocalUserId } from '../lib/localAccount';
 import { deleteMirror } from '../lib/mirrorDb';
 import { API_BASE, isNativeApp } from '../lib/platform';
+import { AppleSignIn } from '../lib/appleSignIn';
 import { clearNativeToken, hydrateNativeToken, setNativeToken } from '../lib/nativeAuth';
 import { transitionPage } from '../lib/motion';
 import type { User } from '../lib/types';
@@ -44,6 +45,10 @@ interface AuthState {
   // listener below owns the outcome. A no-op on web, which uses the plain redirect link in
   // GoogleSignInButton.
   signInWithGoogleNative: (returnTo?: string) => Promise<void>;
+  // iOS only: signs in through the system Sign in with Apple sheet. Resolves true once the session
+  // is in place, false when the sheet was closed or the attempt failed (authError). The website
+  // uses the redirect link in AppleSignInButton.
+  signInWithAppleNative: () => Promise<boolean>;
   requestEmailCode: (email: string) => Promise<void>;
   signInWithEmailCode: (email: string, code: string) => Promise<void>;
   logout: () => Promise<void>;
@@ -243,6 +248,37 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  const signInWithAppleNative = useCallback(async () => {
+    setAuthError(null);
+    let credential: Awaited<ReturnType<typeof AppleSignIn.authorize>>;
+    try {
+      credential = await AppleSignIn.authorize();
+    } catch (err) {
+      // Closing the sheet is the reader's choice, not a failure.
+      if ((err as { code?: string }).code !== 'canceled') {
+        console.error('Sign in with Apple failed:', err);
+        setAuthError(authErrorMessage('1'));
+      }
+      return false;
+    }
+    try {
+      const { user, token } = await authApi.signInWithAppleCode(
+        credential.code,
+        credential.clientId,
+        credential.givenName,
+        credential.familyName
+      );
+      await setNativeToken(token);
+      writeLastUser(user);
+      setUser(user);
+      return true;
+    } catch (err) {
+      console.error('Sign in with Apple could not be completed:', err);
+      setAuthError(authErrorMessage('1'));
+      return false;
+    }
+  }, []);
+
   const requestEmailCode = useCallback(async (email: string) => {
     setAuthError(null);
     await authApi.requestEmailCode(email);
@@ -301,6 +337,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       signingIn,
       promptGoogleSignIn,
       signInWithGoogleNative,
+      signInWithAppleNative,
       requestEmailCode,
       signInWithEmailCode,
       logout,
@@ -316,6 +353,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       signingIn,
       promptGoogleSignIn,
       signInWithGoogleNative,
+      signInWithAppleNative,
       requestEmailCode,
       signInWithEmailCode,
       logout,

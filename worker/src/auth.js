@@ -94,6 +94,56 @@ export async function findUserById(db, id) {
   return row ? rowToUser(row) : null;
 }
 
+// Returns the account for a verified Apple ID, creating it if it is new, and keeps the refresh
+// token its sign-in was issued. The name comes only on an Apple ID's first sign-in, so it fills a
+// blank and never overwrites. Throws for a new Apple ID with no address, which has nothing to key
+// an account on.
+export async function findOrCreateAppleUser(db, { appleId, email, name, clientId, refreshToken }) {
+  const address = email ? normalizeEmailForLookup(email) : null;
+  let row = await db
+    .prepare("SELECT users.* FROM identities JOIN users ON users.id = identities.user_id WHERE identities.provider = 'apple' AND identities.subject = ?")
+    .bind(appleId)
+    .first();
+  // Both flows verify the address, so an account already holding it is joined rather than forked.
+  if (!row && address) row = await db.prepare('SELECT * FROM users WHERE email = ?').bind(address).first();
+
+  let user;
+  if (row) {
+    if (name && !row.name) await db.prepare('UPDATE users SET name = ? WHERE id = ?').bind(name, row.id).run();
+    user = { ...rowToUser(row), name: row.name || name };
+  } else {
+    if (!address) throw new Error('A new Apple ID came without an email address.');
+    const id = crypto.randomUUID();
+    await db
+      .prepare('INSERT INTO users (id, email, google_id, name, picture, created_at) VALUES (?, ?, ?, ?, ?, ?)')
+      .bind(id, address, placeholderGoogleId(), name, null, new Date().toISOString())
+      .run();
+    user = { id, email: address, googleId: null, name, picture: null };
+  }
+
+  await db
+    .prepare(
+      `INSERT INTO identities (provider, subject, user_id, created_at, client_id, refresh_token)
+       VALUES ('apple', ?, ?, ?, ?, ?)
+       ON CONFLICT(provider, subject) DO UPDATE SET client_id = excluded.client_id,
+         refresh_token = COALESCE(excluded.refresh_token, identities.refresh_token)`
+    )
+    .bind(appleId, user.id, new Date().toISOString(), clientId, refreshToken)
+    .run();
+  return user;
+}
+
+// Returns the Apple refresh tokens held for an account, each with the client it was issued to.
+export async function appleTokensFor(db, userId) {
+  const { results } = await db
+    .prepare(
+      "SELECT client_id, refresh_token FROM identities WHERE user_id = ? AND provider = 'apple' AND refresh_token IS NOT NULL"
+    )
+    .bind(userId)
+    .all();
+  return results.map((r) => ({ clientId: r.client_id, refreshToken: r.refresh_token }));
+}
+
 // Erases an account and everything filed under it — lists, notes, highlights, visits, and the
 // identities it can be signed into with. One batch, so nothing can be left orphaned under an id
 // that no longer names an account.

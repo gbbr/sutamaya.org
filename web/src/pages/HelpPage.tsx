@@ -8,6 +8,7 @@ import { isTypingTarget } from '../lib/shortcuts';
 import { MOBILE_TOP_INSET } from '../lib/layout';
 import { transitionPage } from '../lib/motion';
 import { isNativeApp } from '../lib/platform';
+import { hasNativeAppleSignIn } from '../lib/appleSignIn';
 import dictionaryShot from '../assets/help/dictionary-mobile.webp';
 import libraryShot from '../assets/help/library-mobile.webp';
 import libraryItemsShot from '../assets/help/library-items-mobile.webp';
@@ -280,7 +281,7 @@ const SECTIONS: HelpSection[] = [
     title: 'Settings & Offline',
     lead: isNativeApp()
       ? 'All suttas, the dictionary and search are built into the app, so it works with no connection. ' +
-        'Sign in with Google or an emailed code to keep your lists, notes and highlights and sync them across devices.'
+        `Sign in with ${hasNativeAppleSignIn() ? 'Apple, Google' : 'Google'} or an emailed code to keep your lists, notes and highlights and sync them across devices.`
       : 'Everything you read is kept on this device first, so the app works with no connection. ' +
         'For total offline access beyond what you\'ve already visited, download all the suttas.',
     // Web only, since both shots show the download card the native app doesn't have.
@@ -294,7 +295,7 @@ const SECTIONS: HelpSection[] = [
           [79.3, 82.3],
         ],
         steps: [
-          'Sign in with Google or using an email verification code to save your data and sync across devices.',
+          'Sign in with Apple, Google or an email verification code to save your data and sync across devices.',
           'Download all content to enable full offline reading.',
         ],
       },

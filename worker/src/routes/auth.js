@@ -1,7 +1,19 @@
 import { Hono } from 'hono';
 import { getCookie } from 'hono/cookie';
 import {
+  APPLE_APP_CLIENT_IDS,
+  appleAuthUrl,
+  appleConfigured,
+  appleDisplayName,
+  appleRedirectUri,
+  exchangeAppleCode,
+  revokeAppleToken,
+  verifyAppleIdToken,
+} from '../apple.js';
+import {
+  appleTokensFor,
   deleteAccount,
+  findOrCreateAppleUser,
   findOrCreateEmailUser,
   findOrCreateGoogleUser,
   findUserById,
@@ -149,6 +161,121 @@ authRouter.get('/google/callback', async (c) => {
   return c.redirect(appUrl(webOrigin, returnTo), 302);
 });
 
+// --- Sign in with Apple -----------------------------------------------------------------------
+
+// Sends the browser off to Apple, as /google/start does. The website's flow only: the iOS app signs
+// in through the system sheet and /apple/native.
+authRouter.get('/apple/start', async (c) => {
+  const webOrigin = resolveWebOrigin(c.env.WEB_ORIGIN, c.req.query('return'));
+  if (!appleConfigured(c.env)) {
+    console.error(
+      'Apple sign-in is not configured: APPLE_TEAM_ID, APPLE_KEY_ID, APPLE_PRIVATE_KEY, APPLE_SERVICES_ID and SESSION_SECRET are all required.'
+    );
+    return c.redirect(appUrl(webOrigin, withAuthError('/settings')), 302);
+  }
+
+  const nonce = crypto.randomUUID();
+  const state = await signState(
+    { n: nonce, r: safeReturnPath(c.req.query('return'), webOrigin), o: webOrigin, t: Date.now() },
+    c.env.SESSION_SECRET
+  );
+  // Taken from the app's origin rather than the request, which a local https proxy forwards as http.
+  const secure = webOrigin.startsWith('https:');
+  c.header('Set-Cookie', nonceCookie(nonce, { secure, crossSite: true }), { append: true });
+  return c.redirect(
+    appleAuthUrl({ clientId: c.env.APPLE_SERVICES_ID, redirectUri: appleRedirectUri(webOrigin), state }),
+    302
+  );
+});
+
+// Where Apple posts the browser back, cross-site. Every outcome answers 303, turning the POST into
+// the app's GET; a failure lands with ?auth_error=1, and backing out at Apple lands without it.
+authRouter.post('/apple/callback', async (c) => {
+  const secure = new URL(c.req.url).protocol === 'https:';
+  let webOrigin = resolveWebOrigin(c.env.WEB_ORIGIN);
+  const leave = (path) => {
+    c.header('Set-Cookie', clearNonceCookie(), { append: true });
+    return c.redirect(appUrl(webOrigin, path), 303);
+  };
+  const fail = (reason, returnTo = '/settings') => {
+    console.error(`Apple sign-in callback failed: ${reason}`);
+    return leave(withAuthError(returnTo));
+  };
+
+  const form = await c.req.parseBody();
+  const state = await verifyState(form.state, c.env.SESSION_SECRET);
+  if (!state) return fail('state was missing, malformed, expired or not issued by us');
+  if (!state.n || state.n !== getCookie(c, OAUTH_NONCE_COOKIE)) {
+    return fail('state nonce did not match this browser’s cookie');
+  }
+  webOrigin = resolveWebOrigin(c.env.WEB_ORIGIN, state.o);
+
+  const returnTo = safeReturnPath(state.r, webOrigin);
+  if (form.error === 'user_cancelled_authorize') return leave(returnTo);
+  if (form.error) return fail(`Apple returned ${form.error}`, returnTo);
+  if (typeof form.code !== 'string' || !form.code) return fail('no authorization code in the callback', returnTo);
+
+  let user;
+  try {
+    const { idToken, refreshToken } = await exchangeAppleCode(c.env, {
+      code: form.code,
+      clientId: c.env.APPLE_SERVICES_ID,
+      redirectUri: appleRedirectUri(webOrigin),
+    });
+    const { appleId, email } = await verifyAppleIdToken(idToken, c.env.APPLE_SERVICES_ID);
+    // The name arrives on an Apple ID's first sign-in only, as JSON beside the code.
+    let name = null;
+    try {
+      const shared = JSON.parse(typeof form.user === 'string' ? form.user : 'null');
+      name = appleDisplayName(shared?.name?.firstName, shared?.name?.lastName);
+    } catch {
+      // Unreadable: the account is made without a name.
+    }
+    user = await findOrCreateAppleUser(c.env.DB, {
+      appleId,
+      email,
+      name,
+      clientId: c.env.APPLE_SERVICES_ID,
+      refreshToken,
+    });
+  } catch (err) {
+    return fail(String(err), returnTo);
+  }
+
+  c.header('Set-Cookie', await createSessionCookie(user.id, c.env.SESSION_SECRET, { secure }), { append: true });
+  return leave(returnTo);
+});
+
+// Signs in the iOS app with the authorization code the system sheet returns, and answers with the
+// account and a bearer token. The name comes from the sheet, which shares it on the first sign-in only.
+authRouter.post('/apple/native', async (c) => {
+  if (!appleConfigured(c.env)) {
+    console.error('Apple sign-in is not configured.');
+    return c.json({ error: 'not_configured' }, 503);
+  }
+  const body = (await jsonBody(c)) || {};
+  if (typeof body.code !== 'string' || !body.code) return c.json({ error: 'missing_code' }, 400);
+  // The app's bundle id, named by the app itself and honoured only if it is one of ours.
+  const clientId = APPLE_APP_CLIENT_IDS.includes(body.clientId) ? body.clientId : APPLE_APP_CLIENT_IDS[0];
+
+  let user;
+  try {
+    const { idToken, refreshToken } = await exchangeAppleCode(c.env, { code: body.code, clientId });
+    const { appleId, email } = await verifyAppleIdToken(idToken, clientId);
+    user = await findOrCreateAppleUser(c.env.DB, {
+      appleId,
+      email,
+      name: appleDisplayName(body.givenName, body.familyName),
+      clientId,
+      refreshToken,
+    });
+  } catch (err) {
+    console.error(`Apple native sign-in failed: ${err}`);
+    return c.json({ error: 'sign_in_failed' }, 401);
+  }
+  return c.json({ user: publicUser(user), token: await signSessionToken(user.id, c.env.SESSION_SECRET) });
+});
+
 // --- Sign in by emailed code ------------------------------------------------------------------
 
 // Sends a fresh six-digit code, replacing whatever was outstanding for that address. Answers
@@ -248,6 +375,17 @@ authRouter.post('/logout', (c) => {
 // the typed confirmation that stand in front of it are the client's (SettingsPage). Idempotent: a
 // session whose account is already gone still clears the cookie and answers ok.
 authRouter.delete('/account', requireAuth, async (c) => {
+  // Apple's access is revoked first, the tokens going with the account. A refusal is logged and
+  // doesn't hold up the deletion.
+  if (appleConfigured(c.env)) {
+    for (const token of await appleTokensFor(c.env.DB, c.get('userId'))) {
+      try {
+        await revokeAppleToken(c.env, token);
+      } catch (err) {
+        console.error(`Could not revoke an Apple token on account deletion: ${err}`);
+      }
+    }
+  }
   await deleteAccount(c.env.DB, c.get('userId'));
   c.header('Set-Cookie', clearSessionCookie(), { append: true });
   return c.json({ ok: true });

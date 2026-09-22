@@ -1,7 +1,7 @@
 // The OAuth 2.0 authorization-code flow: the browser leaves for the provider and comes back to
 // /api/auth/{provider}/callback with a code, which the Worker exchanges for an id_token
-// server-side. Everything here is provider-agnostic except the Google constants at the bottom, so
-// a second provider is a start/callback pair plus its own URLs and profile mapping.
+// server-side. Everything here is provider-agnostic except the Google constants at the bottom;
+// Apple's live in apple.js.
 //
 // Two things guard the round trip:
 //   state – signed with SESSION_SECRET, so a callback can only carry a state this Worker issued
@@ -135,8 +135,11 @@ export function appUrl(webOrigin, path) {
 
 // Returns the Set-Cookie for the state's nonce: short-lived, HttpOnly, and SameSite=Lax, which the
 // provider's top-level redirect back here still carries.
-export function nonceCookie(nonce, { secure = true } = {}) {
-  return `${OAUTH_NONCE_COOKIE}=${nonce}; Max-Age=600; Path=/api/auth; HttpOnly; SameSite=Lax${secure ? '; Secure' : ''}`;
+// `crossSite` – for a provider that posts back rather than redirecting, which a Lax cookie doesn't
+//               survive: SameSite=None, over https only.
+export function nonceCookie(nonce, { secure = true, crossSite = false } = {}) {
+  const sameSite = crossSite && secure ? 'None' : 'Lax';
+  return `${OAUTH_NONCE_COOKIE}=${nonce}; Max-Age=600; Path=/api/auth; HttpOnly; SameSite=${sameSite}${secure ? '; Secure' : ''}`;
 }
 
 // Returns the Set-Cookie that expires the nonce cookie.
