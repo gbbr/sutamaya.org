@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { computeGutterLayout } from './highlightGutterLayout';
+import { computeGutterLayout, markHitAreas } from './highlightGutterLayout';
 import type { SegmentFile } from './corpus';
 import type { Highlight } from './types';
 
@@ -82,5 +82,27 @@ describe('computeGutterLayout', () => {
     const orphan = group({ id: 'x', k0: 'dn1:9.9', k1: 'dn1:9.9' });
     const { marks } = computeGutterLayout([orphan, group({ at: 0 })], segments, { top: 0, height: 500 }, 1000, 0, 1, () => 0);
     expect(marks.map((m) => m.key)).toEqual(['g1']);
+  });
+});
+
+describe('markHitAreas', () => {
+  const mark = (key: string, top: number) => ({ key, i: 0, c: 'yellow', top });
+
+  it('reaches the full distance above and below a mark with room around it', () => {
+    expect(markHitAreas([mark('a', 100)], 500, 22)).toEqual([{ top: 78, height: 44 }]);
+  });
+
+  it('splits the space between close marks halfway, whatever order they come in', () => {
+    expect(markHitAreas([mark('b', 120), mark('a', 100)], 500, 22)).toEqual([
+      { top: 110, height: 32 },
+      { top: 78, height: 32 },
+    ]);
+  });
+
+  it('keeps each touch area inside the track', () => {
+    expect(markHitAreas([mark('a', 5), mark('b', 495)], 500, 22)).toEqual([
+      { top: 0, height: 27 },
+      { top: 473, height: 27 },
+    ]);
   });
 });

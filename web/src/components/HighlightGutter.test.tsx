@@ -103,7 +103,7 @@ describe('HighlightGutter', () => {
       <HighlightGutter scrollRef={{ current: container }} highlights={[group({ at: 3 })]} segments={segments} theme={theme} onJump={vi.fn()} />
     );
     const mark = screen.getByTitle('Jump to highlight') as HTMLElement;
-    expect(mark.style.top).toBe('-4px'); // ratio 0 * height - 4
+    expect(mark.style.top).toBe('0px'); // ratio 0, its touch area cut off at the track's top
   });
 
   it('calls onJump with the segment index and highlight id when a mark is clicked', async () => {

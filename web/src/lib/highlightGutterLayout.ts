@@ -15,6 +15,11 @@ export interface GutterMark {
   top: number;
 }
 
+export interface GutterHitArea {
+  top: number;
+  height: number;
+}
+
 // Where HighlightGutter draws its track and marks. Kept out of the component so the conversion is
 // testable without a DOM: `containerRect` and `segTop` are raw getBoundingClientRect() readings,
 // which report post-`zoom` screen coordinates, so they are divided by `scale` before being mixed
@@ -47,4 +52,19 @@ export function computeGutterLayout(
     marks.push({ key: h.id, i, c: h.c, top: ratio * height });
   }
   return { track, marks };
+}
+
+// markHitAreas returns each mark's touch area, in the order of `marks`: `reach` above and below the
+// mark, ending halfway to a closer neighbour and inside the track, so a tap goes to the nearest mark.
+export function markHitAreas(marks: GutterMark[], trackHeight: number, reach: number): GutterHitArea[] {
+  const byTop = marks.map((_, n) => n).sort((a, b) => marks[a].top - marks[b].top);
+  const areas = new Array<GutterHitArea>(marks.length);
+  byTop.forEach((m, n) => {
+    const top = marks[m].top;
+    const above = n > 0 ? (marks[byTop[n - 1]].top + top) / 2 : 0;
+    const below = n < byTop.length - 1 ? (top + marks[byTop[n + 1]].top) / 2 : trackHeight;
+    const from = Math.max(above, top - reach);
+    areas[m] = { top: from, height: Math.min(below, top + reach) - from };
+  });
+  return areas;
 }

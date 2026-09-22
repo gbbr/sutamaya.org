@@ -3,7 +3,14 @@ import { getUiScale } from '../lib/uiPrefs';
 import { highlightPaint } from '../lib/theme';
 import type { SegmentFile } from '../lib/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
-import { computeGutterLayout, type GutterMark, type GutterTrack } from '../lib/highlightGutterLayout';
+import { computeGutterLayout, markHitAreas, type GutterMark, type GutterTrack } from '../lib/highlightGutterLayout';
+
+// Width of a mark's touch area, the reader's side margin.
+const HIT_WIDTH = 22;
+// How far a mark's touch area reaches above and below it, with a finger.
+const TOUCH_REACH = 22;
+// How far a mark's touch area reaches above and below it with a mouse: the mark itself.
+const MOUSE_REACH = 4;
 
 interface HighlightGutterProps {
   scrollRef: RefObject<HTMLElement>;
@@ -61,21 +68,28 @@ export function HighlightGutter({ scrollRef, highlights, segments, theme, onJump
   }, [scrollRef, highlights, segments, layoutKey]);
 
   if (!track || marks.length === 0) return null;
+  const reach = window.matchMedia?.('(pointer: coarse)').matches ? TOUCH_REACH : MOUSE_REACH;
+  const hits = markHitAreas(marks, track.height, reach);
 
   return (
     <div
       data-component="HighlightGutter"
       className="fixed z-40"
-      style={{ top: track.top, height: track.height, right: 4, width: 28, pointerEvents: 'none' }}
+      style={{ top: track.top, height: track.height, right: 0, width: HIT_WIDTH, pointerEvents: 'none' }}
     >
-      {marks.map((m) => (
+      {marks.map((m, n) => (
         <button
           key={m.key}
-          className="absolute w-[13px] hover:w-[23px] rounded-[2px] shadow-sm transition-[width] duration-150 ease-out"
-          style={{ background: highlightPaint(m.c, theme), height: 8, top: m.top - 4, right: 0, pointerEvents: 'auto' }}
+          className="group absolute inset-x-0"
+          style={{ top: hits[n].top, height: hits[n].height, pointerEvents: 'auto' }}
           title="Jump to highlight"
           onClick={() => onJump(m.i, m.key)}
-        />
+        >
+          <span
+            className="absolute w-[13px] group-hover:w-[23px] rounded-[2px] shadow-sm transition-[width] duration-150 ease-out"
+            style={{ background: highlightPaint(m.c, theme), height: 8, top: m.top - hits[n].top - 4, right: 4 }}
+          />
+        </button>
       ))}
     </div>
   );
