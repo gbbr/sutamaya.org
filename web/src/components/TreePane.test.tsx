@@ -35,6 +35,7 @@ vi.mock('../lib/pwaNudge', () => ({
 vi.mock('../lib/platform', () => ({
   isNativeApp: vi.fn(() => false),
   platformName: vi.fn(() => 'web'),
+  isAndroid: vi.fn(() => false),
   isStandaloneDisplay: vi.fn(),
   API_BASE: '',
 }));

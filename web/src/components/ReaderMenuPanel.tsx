@@ -9,6 +9,7 @@ import { highlightStart, highlightText } from '../lib/highlights';
 import { segmentIndex } from '../lib/segmentKeys';
 import { KeyCap } from './ShortcutsModal';
 import { SHORTCUTS, SHOWS_KEY_HINTS } from '../lib/shortcuts';
+import { isAndroid } from '../lib/platform';
 import { highlightPaint, READER_FACES } from '../lib/theme';
 import type { Highlight, ReaderFace, ResolvedTheme, ThemeColors } from '../lib/types';
 
@@ -41,11 +42,11 @@ const THEME_TILES: Array<{ id: ResolvedTheme; label: string; bg: string; fg: str
 
 // The reading faces, in reading order down the 3×2 grid of specimens below.
 const FACE_OPTIONS: Array<{ id: ReaderFace; label: string }> = [
-  { id: 'georgia', label: 'Georgia' },
+  { id: 'georgia', label: isAndroid() ? 'Gelasio' : 'Georgia' },
   { id: 'serif', label: 'Newsreader' },
   { id: 'literata', label: 'Literata' },
   { id: 'charter', label: 'Charter' },
-  { id: 'palatino', label: 'Palatino' },
+  { id: 'palatino', label: isAndroid() ? 'Gentium' : 'Palatino' },
   { id: 'sans', label: 'Sans' },
 ];
 

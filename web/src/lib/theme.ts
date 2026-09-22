@@ -1,3 +1,4 @@
+import { isAndroid } from './platform';
 import type { ReaderFace, ResolvedTheme, ThemeColors } from './types';
 
 // Dark's own highlight fills, index-aligned with HIGHLIGHT_COLORS below; the stored pastels would
@@ -52,13 +53,16 @@ export const SHELL_THEME: ThemeColors = {
 // The reading faces. Three name a font the OS may not ship, each backed by a self-hosted clone —
 // Georgia by Gelasio, Charter by XCharter, Palatino by Gentium Book Plus — so the picker never
 // offers a tile that renders as something else. Ordinary font-family fallback does the work, so a
-// device with the genuine font downloads none of them.
+// device with the genuine font downloads none of them. Android answers to the names Georgia and
+// Palatino with its own serif, so there those two start at their stand-in.
 export const READER_FACES: Record<ReaderFace, string> = {
-  georgia: 'Georgia,Gelasio,serif',
+  georgia: isAndroid() ? 'Gelasio,serif' : 'Georgia,Gelasio,serif',
   serif: "'Newsreader',Georgia,Gelasio,serif",
   literata: "'Literata',Georgia,Gelasio,serif",
   charter: 'Charter,XCharter,Georgia,Gelasio,serif',
-  palatino: "Palatino,'Palatino Linotype','Book Antiqua','Gentium Book Plus',Gelasio,serif",
+  palatino: isAndroid()
+    ? "'Gentium Book Plus',Gelasio,serif"
+    : "Palatino,'Palatino Linotype','Book Antiqua','Gentium Book Plus',Gelasio,serif",
   sans: "'IBM Plex Sans',system-ui,sans-serif",
 };
 
