@@ -56,6 +56,20 @@ const TABS: Array<{ id: Tab; label: string }> = [
   { id: 'text', label: 'Style' },
 ];
 
+// Whether opening the Lists tab puts the cursor in its field. Not on a touch pointer: the keyboard
+// would cover the lists, and on a phone iOS scrolls the page to reach a field focused mid-slide.
+const wantsAutoFocus = () => !window.matchMedia?.('(pointer: coarse)').matches;
+
+// The mobile panel's change of shape between the Style sheet and the full-height tabs, timed as
+// the sheetUp entrance.
+const SHEET_RESIZE = 'height .2s ease, padding .2s ease, border-radius .2s ease';
+
+// The end of a tab's scrolling area, which runs to the panel's bottom edge, under the home
+// indicator: the space below the last row sits inside the scroll, so the rows pass under the
+// indicator yet end clear of it, as does a row scrolled into view.
+const SCROLL_END = 'calc(22px + var(--safe-bottom))';
+const TAB_SCROLL_END: CSSProperties = { paddingBottom: SCROLL_END, scrollPaddingBottom: SCROLL_END };
+
 // A segmented control: a recessed track with a raised thumb under the active option. Drawn at two
 // sizes, for the panel's tab bar and for the Style tab's two-state settings.
 function Segmented<T extends string>({
@@ -202,52 +216,51 @@ export function ReaderMenuPanel({
   }, [allPali]);
 
   // True where the panel is a short bottom sheet: the Style tab on mobile, which has no text
-  // inputs and leaves the reader visible above it while a change is judged. The other two stay
-  // full-screen and top-anchored, their inputs having to clear the on-screen keyboard, which this
-  // container's own bottom edge does not.
+  // inputs and leaves the reader visible above it while a change is judged. The other two fill
+  // the height, so their inputs sit at the top, clear of the on-screen keyboard, which this
+  // container doesn't shrink for.
   const isThemeSheet = mobile && tab === 'text';
-  // Whether the entrance animation has played, so switching tabs reshapes the panel live rather
-  // than replaying a slide-up on every tap.
-  const hasEnteredRef = useRef(false);
-  useEffect(() => {
-    hasEnteredRef.current = true;
-  }, []);
 
   // Where the panel sits and how it is dressed — one of three shapes. All three are
   // `position: absolute` inside ReaderPage's `fixed inset-0` root and share the panel's surface
   // colours; what differs is which edges they are pinned to. Rebuilt every render, so it tracks
   // `theme`.
   function panelStyle(): CSSProperties {
-    // The Style tab on mobile: a short bottom sheet, capped well under the viewport so the
-    // reader stays visible above it and type changes can be judged live.
+    // The Style tab on mobile: a short bottom sheet, a fixed share of the screen, so the reader
+    // stays visible above it and type changes can be judged live. Fixed rather than fitted to its
+    // settings, so that a switch to or from the other tabs can transition the height. A share of
+    // ReaderPage's full-screen root rather than of `dvh`, which the UI scale's zoom would magnify.
     if (isThemeSheet) {
       return {
         position: 'absolute',
         left: 0,
         right: 0,
         bottom: 0,
-        maxHeight: '62dvh',
+        height: '62%',
         display: 'flex',
         flexDirection: 'column',
         background: theme.panel,
         color: theme.fg,
-        padding: '14px 20px 18px',
-        paddingBottom: 'calc(18px + var(--safe-bottom))',
+        padding: '14px 20px 0',
+        transition: SHEET_RESIZE,
       };
     }
-    // Highlights and Lists on mobile: full-screen and top-anchored, so their inputs clear the
-    // keyboard.
+    // Highlights and Lists on mobile: the full height, pinned to the bottom edge like the Style
+    // sheet, so a switch between them changes only the height.
     if (mobile) {
       return {
         position: 'absolute',
-        inset: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        height: '100%',
         display: 'flex',
         flexDirection: 'column',
         background: theme.panel,
         color: theme.fg,
-        padding: '18px 20px 22px',
+        padding: '18px 20px 0',
         paddingTop: 'calc(18px + var(--safe-top))',
-        paddingBottom: 'calc(22px + var(--safe-bottom))',
+        transition: SHEET_RESIZE,
       };
     }
     // Desktop, every tab: a fixed-width drawer down the right edge, separated from the reading
@@ -264,21 +277,15 @@ export function ReaderMenuPanel({
       color: theme.fg,
       borderLeft: `1px solid ${theme.rule}`,
       boxShadow: '-10px 0 30px rgba(0,0,0,.12)',
-      padding: '18px 20px 22px',
+      padding: '18px 20px 0',
     };
   }
 
-  // Which entrance the panel plays, if any.
-  function entranceAnimationClass(): string {
-    // Already mounted: switching tabs reshapes the panel live and should snap, not replay.
-    if (hasEnteredRef.current) return '';
-    // The mobile Style sheet rises from the bottom edge it's pinned to.
-    if (isThemeSheet) return 'animate-sheetUp';
-    // Everything else appears in place, so it fades.
-    return 'animate-fadeIn';
-  }
-  const entranceClass = entranceAnimationClass();
-  const panelClassName = `${isThemeSheet ? 'rounded-t-sheet shadow-sheet' : ''} ${entranceClass}`.trim();
+  // The panel's entrance and edges, its animation the same on every tab so a switch never replays it:
+  //   mobile  – rises from the bottom edge, casting its shadow up over the reader; only the Style
+  //             sheet rounds its top corners, the full-height panel meeting the top of the screen
+  //   desktop – the drawer fades in
+  const panelClassName = mobile ? `animate-sheetUp shadow-sheet${isThemeSheet ? ' rounded-t-sheet' : ''}` : 'animate-fadeIn';
 
   // One setting row: label left, control right, split from the row above by a hairline, wrapping
   // to two lines when the halves stop fitting.
@@ -300,9 +307,9 @@ export function ReaderMenuPanel({
 
   return (
     <>
-      {/* The backdrop, which closes on a tap. A full-screen panel has no room for one and gets
-          the explicit close button below instead. */}
-      {(!mobile || isThemeSheet) && <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,.12)' }} onClick={onClose} />}
+      {/* The backdrop, which closes on a tap. The full-height panel covers it once risen and has
+          the close button below instead. */}
+      <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,.12)' }} onClick={onClose} />
       <div data-component="ReaderMenuPanel" style={panelStyle()} className={panelClassName}>
         <div className="flex items-center gap-1.5 mb-5">
           <div className="flex-1 min-w-0">
@@ -332,7 +339,7 @@ export function ReaderMenuPanel({
         </div>
 
         {tab === 'highlights' && (
-          <div className="sc flex-1 min-h-0">
+          <div className="sc under-nav-bar flex-1 min-h-0" style={TAB_SCROLL_END}>
             {/* The note box, recessed against the panel so it reads as somewhere to write. */}
             <div className="rounded-field mb-5 px-3.5 py-3" style={{ border: `1px solid ${theme.rule}`, background: theme.bg }}>
               <div className={`${rowLabel} flex items-center gap-1.5 mb-1`} style={{ color: theme.dim }}>
@@ -422,12 +429,18 @@ export function ReaderMenuPanel({
 
         {tab === 'lists' && (
           <div className="flex flex-col flex-1 min-h-0">
-            <ListMembershipPicker suttaId={suttaId} theme={theme} autoFocus onRequestClose={onClose} />
+            <ListMembershipPicker
+              suttaId={suttaId}
+              theme={theme}
+              autoFocus={wantsAutoFocus()}
+              endPadding={SCROLL_END}
+              onRequestClose={onClose}
+            />
           </div>
         )}
 
         {tab === 'text' && (
-          <div className="sc flex-1 min-h-0">
+          <div className="sc under-nav-bar flex-1 min-h-0" style={TAB_SCROLL_END}>
             <div className="pb-3.5">
               <div className={`${rowLabel} flex items-center gap-1.5 mb-2.5`} style={{ color: theme.dim }}>
                 Theme

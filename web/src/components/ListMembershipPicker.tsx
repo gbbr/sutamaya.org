@@ -16,6 +16,9 @@ interface ListMembershipPickerProps {
   suttaId: string;
   theme: ThemeColors;
   autoFocus?: boolean;
+  // The space below the last row, inside the scrolling list, for a host that runs the list to the
+  // bottom edge of the screen: the rows pass under the home indicator and end clear of it.
+  endPadding?: string;
   onRequestClose?: () => void;
 }
 
@@ -35,7 +38,7 @@ type Row =
 // it to be read against, so its path is spelled out instead. Groups drop out of the results, being
 // unselectable, and only a top-level list can be created here — a group, or a list inside one, is
 // the Library tree's job.
-export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose }: ListMembershipPickerProps) {
+export function ListMembershipPicker({ suttaId, theme, autoFocus, endPadding, onRequestClose }: ListMembershipPickerProps) {
   const { lists, membership, toggleMembership, addToList, createList } = useUserData();
   const [draft, setDraft] = useState('');
   const [activeIndex, setActiveIndex] = useState(0);
@@ -201,8 +204,12 @@ export function ListMembershipPicker({ suttaId, theme, autoFocus, onRequestClose
         />
       </div>
       {/* `touch-pan-y` opts the rows back into scrolling, the Library's mobile modal setting
-          `touch-none` on itself to keep a drag on its chrome from panning the page behind. */}
-      <div className="sc min-h-0 flex-1 touch-pan-y">
+          `touch-none` on itself to keep a drag on its chrome from panning the page behind. A list
+          given `endPadding` runs under the navigation bar, and is marked as doing so. */}
+      <div
+        className={`sc min-h-0 flex-1 touch-pan-y${endPadding ? ' under-nav-bar' : ''}`}
+        style={{ paddingBottom: endPadding }}
+      >
         {rows.map((row, idx) => {
           const active = idx === activeIdx;
           if (row.type === 'create') {
