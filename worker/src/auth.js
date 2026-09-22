@@ -121,11 +121,13 @@ export async function findOrCreateAppleUser(db, { appleId, email, name, clientId
     user = { id, email: address, googleId: null, name, picture: null };
   }
 
+  // The stored token stays paired with the client it was issued to, which revoking it needs.
   await db
     .prepare(
       `INSERT INTO identities (provider, subject, user_id, created_at, client_id, refresh_token)
        VALUES ('apple', ?, ?, ?, ?, ?)
-       ON CONFLICT(provider, subject) DO UPDATE SET client_id = excluded.client_id,
+       ON CONFLICT(provider, subject) DO UPDATE SET
+         client_id = CASE WHEN excluded.refresh_token IS NULL THEN identities.client_id ELSE excluded.client_id END,
          refresh_token = COALESCE(excluded.refresh_token, identities.refresh_token)`
     )
     .bind(appleId, user.id, new Date().toISOString(), clientId, refreshToken)

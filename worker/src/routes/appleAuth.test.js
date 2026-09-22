@@ -232,4 +232,19 @@ describe('Sign in with Apple', () => {
     expect(body.get('client_id')).toBe(SERVICES_ID);
     expect(await env.DB.prepare('SELECT 1 FROM identities WHERE user_id = ?').bind(id).first()).toBeNull();
   });
+
+  it('keeps a stored token with the client it was issued to when a later sign-in brings none', async () => {
+    await webSignIn({ sub: 'apple-pair', email: 'pair@example.com' });
+    stubApple(async () => ({ id_token: await idToken({ sub: 'apple-pair', email: 'pair@example.com' }, APP_CLIENT_ID) }));
+    const res = await app.request(
+      '/api/auth/apple/native',
+      { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: 'ios-code' }) },
+      APPLE_ENV
+    );
+    expect(res.status).toBe(200);
+    const identity = await env.DB.prepare("SELECT client_id, refresh_token FROM identities WHERE provider = 'apple' AND subject = ?")
+      .bind('apple-pair')
+      .first();
+    expect(identity).toEqual({ client_id: SERVICES_ID, refresh_token: 'rt-apple-pair' });
+  });
 });
