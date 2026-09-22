@@ -526,6 +526,46 @@ export function snippetOf(index: TextIndex, score: TextScore, typed: string): Sn
   return { text, under: under.text, query, segments };
 }
 
+// passagesOf returns a snippet for every segment of the sutta `score` was found in that holds all of
+// the query's words, in reading order: its paragraph windowed on the match, opening at that segment.
+// It stops one past SEARCH_RESULTS_CAP, which is enough to say there are more. Where no one segment
+// holds every word, it returns the one snippet snippetOf cuts.
+export function passagesOf(index: TextIndex, score: TextScore, typed: string): Snippet[] {
+  const pali = score.lang === 'pa';
+  const blob = pali ? index.pa : index.en;
+  const paras = pali ? index.paParas : index.enParas;
+  const starts = pali ? index.paStarts : index.enStarts;
+  const end = score.doc + 1 < starts.length ? starts[score.doc + 1] : blob.length;
+  // The sutta's English, line for line with the Pali, for a Pali hit's line underneath.
+  const enEnd = score.doc + 1 < index.enStarts.length ? index.enStarts[score.doc + 1] : index.en.length;
+  const enLines = pali ? index.en.slice(index.enStarts[score.doc], enEnd).split('\n') : [];
+  const wordRes = contentWords(score.query.split(/\s+/)).map(pali ? paliWordRe : englishWordRe);
+  const query = score.query === typed ? typed : `${typed} ${score.query}`;
+  const out: Snippet[] = [];
+  let para = null as { p: number; text: string; start: number } | null;
+  let seg = 0;
+  for (let at = starts[score.doc], line = 0; at < end && out.length <= SEARCH_RESULTS_CAP; line += 1) {
+    const next = blob.indexOf('\n', at);
+    const lineEnd = next === -1 || next > end ? end : next;
+    const text = blob.slice(at, lineEnd);
+    if (text !== PARA_MARK) {
+      if (wordRes.every((re) => offsetsOf(text, re).length > 0)) {
+        const p = slotOf(paras, at);
+        if (para?.p !== p) para = { p, ...paragraphAt(blob, paras, p) };
+        const window = windowAround(para.text, at - para.start + Math.max(0, firstMatch(text, score.query, score.lang)));
+        const under = enLines[line]?.trim();
+        const segments: [number, number] = [seg, seg];
+        out.push(under ? { text: window.text, under, query, segments } : { text: window.text, query, segments });
+      }
+      seg += 1;
+    }
+    at = lineEnd + 1;
+  }
+  if (out.length) return out;
+  const one = snippetOf(index, score, typed);
+  return one ? [one] : [];
+}
+
 // ── The whole search ────────────────────────────────────────────────────────
 
 // A sutta's best result across the query and its expansions.
@@ -591,6 +631,8 @@ export interface RankedHit {
   rank: number;
   saved: boolean;
   snippet?: Snippet;
+  // Every passage holding the query, on the sutta being read.
+  passages?: Snippet[];
 }
 
 // Metadata hits and text hits merged into one ordered result, best first. A sutta keeps its best
@@ -605,7 +647,7 @@ export function mergeSearchHits<T extends RankedHit>(
   index: TextIndex | null,
   typed: string,
   make: (uid: string, bucket: number) => T | null,
-  // The sutta on screen, which the Reader's search leads with wherever it ranks.
+  // The sutta on screen, in the Reader's search, whose hit gets its passages wherever it ranks.
   readingId?: string
 ): T[] {
   const best = new Map<string, T>();
@@ -626,16 +668,17 @@ export function mergeSearchHits<T extends RankedHit>(
   );
 
   // Snippets for the rows that render, rather than for every hit: a broad query matches thousands
-  // of suttas and only the capped head of them is ever drawn, with the sutta being read.
+  // of suttas and only the capped head of them is ever drawn — one more in the Reader's search,
+  // which draws the sutta being read apart from the rest.
   if (index) {
-    const drawn = hits.slice(0, SEARCH_RESULTS_CAP);
-    const reading = hits.find((hit) => hit.id === readingId);
-    if (reading && !drawn.includes(reading)) drawn.push(reading);
-    for (const hit of drawn) {
+    for (const hit of hits.slice(0, SEARCH_RESULTS_CAP + (readingId ? 1 : 0))) {
       const score = text.get(hit.id);
       const snippet = score && snippetOf(index, score, typed);
       if (snippet) hit.snippet = snippet;
     }
+    const reading = hits.find((hit) => hit.id === readingId);
+    const score = reading && text.get(reading.id);
+    if (reading && score) reading.passages = passagesOf(index, score, typed);
   }
   return hits;
 }

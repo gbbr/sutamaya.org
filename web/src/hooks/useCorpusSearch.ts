@@ -14,14 +14,15 @@ import type { Corpus, HighlightsMap, ListDef, NotesMap } from '../lib/types';
 function hydrate(corpus: Corpus, meta: SearchHit[], ranked: RankedHit[]): SearchHit[] {
   const byId = new Map(meta.map((hit) => [hit.id, hit]));
   const hits: SearchHit[] = [];
-  for (const { id, rank, snippet } of ranked) {
+  for (const { id, rank, snippet, passages } of ranked) {
+    const found = { ...(snippet && { snippet }), ...(passages && { passages }) };
     const hit = byId.get(id);
     if (hit) {
-      hits.push(snippet ? { ...hit, snippet } : hit);
+      hits.push(snippet || passages ? { ...hit, ...found } : hit);
       continue;
     }
     const sutta = corpus.suttas[id];
-    if (sutta) hits.push(snippet ? { id, sutta, rank, saved: false, snippet } : { id, sutta, rank, saved: false });
+    if (sutta) hits.push({ id, sutta, rank, saved: false, ...found });
   }
   return hits;
 }
@@ -30,8 +31,9 @@ function hydrate(corpus: Corpus, meta: SearchHit[], ranked: RankedHit[]): Search
 // rather than on the metadata half alone, so returning to a search — closing the reader on one of
 // its results — has its complete list, and its scroll position, in the first frame. One entry: the
 // only search worth returning to is the one just left. Refreshed by the search this seeds, which
-// runs anyway, so data edited while away corrects itself a moment later.
-let lastCompleted: { query: string; hits: SearchHit[] } | null = null;
+// runs anyway, so data edited while away corrects itself a moment later. The Reader's search opens
+// only on one run for the sutta it is reading, whose passages the hits carry.
+let lastCompleted: { query: string; readingId?: string; hits: SearchHit[] } | null = null;
 
 // Returns the sutta hits and list hits for a query, scanned off a deferred copy of it so typing
 // stays responsive.
@@ -50,8 +52,7 @@ export function useCorpusSearch(
   notes: NotesMap,
   lists: ListDef[],
   highlights: HighlightsMap,
-  // The sutta on screen, in the Reader's own search: its row is a find on the page in hand, so it
-  // keeps its passage whichever way the query reached it.
+  // The sutta on screen, in the Reader's own search, whose hit carries every passage holding the query.
   readingId?: string
 ): {
   hits: SearchHit[];
@@ -80,7 +81,9 @@ export function useCorpusSearch(
   // Keyed on the metadata hits themselves, so an answer to an earlier keystroke — or to the same
   // one before the reader's own data changed — is never shown against a later query.
   const [merged, setMerged] = useState<{ meta: SearchHit[]; hits: SearchHit[] } | null>(() =>
-    lastCompleted?.query === deferredQuery ? { meta, hits: lastCompleted.hits } : null
+    lastCompleted?.query === deferredQuery && (!readingId || lastCompleted.readingId === readingId)
+      ? { meta, hits: lastCompleted.hits }
+      : null
   );
   useEffect(() => {
     if (!corpus || !searching || status !== 'ready') return;
@@ -95,7 +98,7 @@ export function useCorpusSearch(
         return;
       }
       const hits = hydrate(corpus, meta, ranked);
-      lastCompleted = { query: deferredQuery, hits };
+      lastCompleted = { query: deferredQuery, readingId, hits };
       setMerged({ meta, hits });
     });
     return () => {
@@ -122,10 +125,8 @@ export function useCorpusSearch(
   // than in the merge, so the held answer above is the complete one whatever surface reads it next.
   const hits = useMemo(
     () =>
-      answer.map((hit) =>
-        hit.snippet && hit.id !== readingId && !opensAtPassage(hit) ? { ...hit, snippet: undefined } : hit
-      ),
-    [answer, readingId]
+      answer.map((hit) => (hit.snippet && !opensAtPassage(hit) ? { ...hit, snippet: undefined } : hit)),
+    [answer]
   );
   // Whether `hits` is the complete answer to this query, which a scroll restore waits for.
   const hitsSettled = !textPending && (!searching || status !== 'ready' || answered);

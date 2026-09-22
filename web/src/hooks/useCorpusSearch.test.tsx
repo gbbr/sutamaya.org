@@ -159,6 +159,31 @@ describe('a search that has already been answered', () => {
     expect(other[0].hitsSettled).toBe(false);
     await waitFor(() => expect(other.at(-1)!.hitsSettled).toBe(true));
   });
+
+  it('opens the library on the same search run from the reader', async () => {
+    state.status = 'ready';
+    const reader: Result[] = [];
+    const one = render(<Probe query="long" readingId="dn1" onRender={(r) => reader.push(r)} />);
+    await waitFor(() => expect(reader.at(-1)!.hitsSettled).toBe(true));
+    one.unmount();
+
+    const library: Result[] = [];
+    render(<Probe query="long" onRender={(r) => library.push(r)} />);
+    expect(library[0].hitsSettled).toBe(true);
+  });
+
+  it('leaves the reader on another sutta to wait for an answer carrying its own passages', async () => {
+    state.status = 'ready';
+    const first: Result[] = [];
+    const one = render(<Probe query="long" readingId="dn1" onRender={(r) => first.push(r)} />);
+    await waitFor(() => expect(first.at(-1)!.hitsSettled).toBe(true));
+    one.unmount();
+
+    const next: Result[] = [];
+    render(<Probe query="long" readingId="dn2" onRender={(r) => next.push(r)} />);
+    expect(next[0].hitsSettled).toBe(false);
+    await waitFor(() => expect(next.at(-1)!.hitsSettled).toBe(true));
+  });
 });
 
 describe('where a result opens', () => {
@@ -183,16 +208,6 @@ describe('where a result opens', () => {
 
     // Without the passage the library drops this row altogether, the matched list standing for it.
     expect(seen.at(-1)!.hits.find((hit) => hit.id === 'dn2')!.snippet).toBeDefined();
-    view.unmount();
-  });
-
-  it('keeps it on the sutta being read, whose row is the reader’s find on the page', async () => {
-    state.status = 'ready';
-    const seen: Result[] = [];
-    const view = render(<Probe query="prime" readingId="dn1" onRender={(r) => seen.push(r)} />);
-    await waitFor(() => expect(seen.at(-1)!.hitsSettled).toBe(true));
-
-    expect(seen.at(-1)!.hits.find((hit) => hit.id === 'dn1')!.snippet).toBeDefined();
     view.unmount();
   });
 });

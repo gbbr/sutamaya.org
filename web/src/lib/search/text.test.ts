@@ -7,6 +7,7 @@ import { SEARCH_RESULTS_CAP } from './metadata';
 import {
   buildTextIndex,
   mergeSearchHits,
+  passagesOf,
   searchCorpusVariants,
   searchSuttaText,
   searchTextVariants,
@@ -346,10 +347,47 @@ describe('mergeSearchHits', () => {
   const merge = (readingId?: string) =>
     mergeSearchHits<RankedHit>([], searchTextVariants(X, 'greed'), X, 'greed', (id, rank) => ({ id, rank, saved: false }), readingId);
 
-  it('cuts a snippet for the sutta being read wherever it ranks', () => {
-    const unread = merge().at(-1);
-    expect(unread?.id).toBe(last);
-    expect(unread?.snippet).toBeUndefined();
-    expect(merge(last).at(-1)?.snippet).toBeDefined();
+  it('gives the sutta being read its passages wherever it ranks', () => {
+    expect(merge().at(-1)).toMatchObject({ id: last });
+    expect(merge().at(-1)?.passages).toBeUndefined();
+    expect(merge(last).at(-1)?.passages).toHaveLength(1);
+  });
+
+  it('cuts a snippet for the row the sutta being read makes room for among the ones drawn', () => {
+    expect(merge().at(-1)?.snippet).toBeUndefined();
+    expect(merge('s0').at(-1)?.snippet).toBeDefined();
+  });
+});
+
+describe('passagesOf', () => {
+  const passages = (i: ReturnType<typeof index>, query: string) =>
+    passagesOf(i, searchSuttaText(i, query).get('a')!, query);
+
+  it('gives each segment holding the query a passage, in reading order, counted past paragraph marks', () => {
+    const Y = index([
+      {
+        uid: 'a',
+        paras: [
+          [['Greed is a fire.', 'p1'], ['Hatred too.', 'p2']],
+          [['Without greed, peace.', 'p3'], ['Greed again.', 'p4']],
+        ],
+      },
+    ]);
+    expect(passages(Y, 'greed').map((p) => p.segments)).toEqual([[0, 0], [2, 2], [3, 3]]);
+  });
+
+  it('falls back to the one snippet where no segment holds every word', () => {
+    const Y = index([{ uid: 'a', paras: one([['Greed is a fire.', 'p1'], ['Hatred too.', 'p2']]) }]);
+    expect(passages(Y, 'greed hatred').map((p) => p.segments)).toEqual([[0, 1]]);
+  });
+
+  it('gives a Pali passage its English line underneath', () => {
+    const Y = index([{ uid: 'a', paras: one([['Extinguishment.', 'Nibbānaṁ.']]) }]);
+    expect(passages(Y, 'nibbana')).toMatchObject([{ text: 'Nibbānaṁ.', under: 'Extinguishment.' }]);
+  });
+
+  it('stops one past the cap', () => {
+    const lines = Array.from({ length: SEARCH_RESULTS_CAP + 5 }, (): [string, string] => ['Greed.', 'p']);
+    expect(passages(index([{ uid: 'a', paras: one(lines) }]), 'greed')).toHaveLength(SEARCH_RESULTS_CAP + 1);
   });
 });

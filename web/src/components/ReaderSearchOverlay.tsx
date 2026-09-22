@@ -1,12 +1,12 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { Search, X } from 'lucide-react';
+import { ChevronDown, Search, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useLayout } from '../context/LayoutContext';
 import { useUserData } from '../context/UserDataContext';
 import { useCorpusSearch } from '../hooks/useCorpusSearch';
 import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
 import { useRecentSearches } from '../hooks/useRecentSearches';
-import { READER_SEARCH_PLACEHOLDER, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/search/metadata';
+import { READER_SEARCH_PLACEHOLDER, SEARCH_CAP_NOTE, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/search/metadata';
 import { clearRecentSearches, removeRecentSearch, saveRecentSearch } from '../lib/recentSearches';
 import { searchNoMatches } from '../lib/search/text';
 import { beginTextSearchLoad } from '../lib/search/textClient';
@@ -26,10 +26,63 @@ const SAFE_AREA_BOTTOM = 'var(--safe-bottom)';
 // since here it sits on a panel over the reading itself and marks a cursor rather than a choice.
 const ROW_TINT = (tint: string) => `color-mix(in srgb, ${tint} 50%, transparent)`;
 
+// Passages of the sutta being read shown before "more".
+const PASSAGES_SHOWN = 1;
+// Passages each "more" adds.
+const PASSAGES_STEP = 10;
+
+// How the overlay was left, which it reopens as while the same sutta is on screen.
+export interface ReaderSearchView {
+  query: string;
+  // Passages of the sutta being read shown.
+  shown: number;
+  scrollTop: number;
+  activeIndex: number;
+}
+
+// A passage of sutta text holding the query, as a row quotes it.
+type Passage = NonNullable<SearchHit['snippet']>;
+
+// SnippetQuote draws a passage quoted from a sutta, under the left rule that sets the sutta's own
+// words apart from anything written about it.
+function SnippetQuote({ snippet, theme }: { snippet: Passage; theme: ThemeColors }) {
+  return (
+    <span
+      className="block font-serif text-ui-base leading-[1.45] mt-[3px] pl-[8px] border-l-2"
+      style={{ color: theme.dim, borderColor: theme.rule }}
+    >
+      {/* No `block` alongside a clamp: the clamp sets `display:-webkit-box` and
+          Tailwind emits it before `.block`, so `block` would silently win. */}
+      <span className="line-clamp-3" style={snippet.under ? { color: theme.pali } : undefined}>
+        <MatchedText text={snippet.text} query={snippet.query} theme={theme} />
+      </span>
+      {snippet.under && (
+        <span className="line-clamp-2 mt-[2px]">
+          <MatchedText text={snippet.under} query={snippet.query} theme={theme} />
+        </span>
+      )}
+    </span>
+  );
+}
+
+// SectionHeading heads one kind of result, as the Library's search does.
+function SectionHeading({ children, theme }: { children: React.ReactNode; theme: ThemeColors }) {
+  return (
+    <div
+      className="px-5 pt-3 pb-1.5 font-sans text-ui-2xs font-bold tracking-[.12em] uppercase"
+      style={{ color: theme.dim }}
+    >
+      {children}
+    </div>
+  );
+}
+
 interface ReaderSearchOverlayProps {
   theme: ThemeColors;
-  // The sutta on screen, whose own text hit leads the results.
+  // The sutta on screen, whose passages holding the query lead the results.
   currentId?: string;
+  // How the overlay was last left, kept up to date while it is open; null starts it afresh.
+  saved: { current: ReaderSearchView | null };
   // `segment` is where a text hit was found, and where the reader opens; absent for every other row.
   onOpenSutta: (id: string, segments?: [number, number]) => void;
   onClose: () => void;
@@ -37,12 +90,15 @@ interface ReaderSearchOverlayProps {
 
 // The reader's search overlay: a floating input with results directly underneath, opened with "/"
 // from anywhere in the reader. Each row shows the same blurb and note as ListPane's.
-export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: ReaderSearchOverlayProps) {
+export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onClose }: ReaderSearchOverlayProps) {
   const { corpus } = useCorpus();
   const { mobile } = useLayout();
   const { lists, notes, membership, highlights } = useUserData();
-  const [query, setQuery] = useState('');
+  // How the overlay was left, as it opens.
+  const [resumed] = useState(() => saved.current);
+  const [query, setQuery] = useState(resumed?.query ?? '');
   const inputRef = useRef<HTMLInputElement>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
   // Hover takes the selection over only once the pointer has moved: arrow keys and typing slide
   // rows under a stationary pointer, and the browser fires enter/move events for them anyway.
   const lastPointer = useRef<{ x: number; y: number } | null>(null);
@@ -54,7 +110,7 @@ export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: 
   }, [corpus]);
 
   // Suttas only: a list hit's only destination is the library, which is where lists surface.
-  const { hits, textStatus, textPending, updating } = useCorpusSearch(
+  const { hits, textStatus, textPending, hitsSettled, updating } = useCorpusSearch(
     corpus,
     query,
     notes,
@@ -62,16 +118,51 @@ export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: 
     highlights,
     currentId
   );
-  // The rows drawn and walked by the arrow keys: the first SEARCH_RESULTS_CAP hits, the panel
-  // being unvirtualized. The sutta being read leads them when the query is somewhere in its own
-  // text — a find on the page in hand, before the rest of the canon. Its snippet is what makes it
-  // one: with no passage to land on, the row only reopens the sutta already on screen.
-  const displayHits = useMemo(() => {
-    const at = hits.findIndex((h) => h.id === currentId && h.snippet);
-    const ordered = at > 0 ? [hits[at], ...hits.slice(0, at), ...hits.slice(at + 1)] : hits;
-    return ordered.slice(0, SEARCH_RESULTS_CAP);
+  // The passages of the sutta being read that hold the query, and the other suttas' hits: the first
+  // SEARCH_RESULTS_CAP of them, the panel being unvirtualized.
+  const { passages, displayHits, othersTotal } = useMemo(() => {
+    const reading = hits.find((h) => h.id === currentId && h.passages?.length);
+    const others = reading ? hits.filter((h) => h !== reading) : hits;
+    return {
+      passages: reading?.passages ?? [],
+      displayHits: others.slice(0, SEARCH_RESULTS_CAP),
+      othersTotal: others.length,
+    };
   }, [hits, currentId]);
+  // How many passages are shown, and the query they were counted on.
+  const [shown, setShown] = useState({ query, count: resumed?.shown ?? PASSAGES_SHOWN });
+  const shownCount = shown.query === query ? shown.count : PASSAGES_SHOWN;
+  const shownPassages = passages.slice(0, Math.min(shownCount, SEARCH_RESULTS_CAP));
+  // Passages "more" can still show, up to the cap.
+  const hiddenPassages = Math.min(passages.length, SEARCH_RESULTS_CAP) - shownPassages.length;
+  // The rows walked by the arrow keys: the passages shown, then the other suttas.
+  const rowCount = shownPassages.length + displayHits.length;
   const { activeIndex, setActiveIndex, moveBy, setRowRef } = useActiveHitIndex(query);
+
+  // The row the overlay was left on, over the cursor's reset to the first.
+  useEffect(() => {
+    if (resumed) setActiveIndex(resumed.activeIndex);
+  }, [resumed, setActiveIndex]);
+  // The scroll it was left at, once the rows it was measured over are back.
+  const scrollPending = useRef(!!resumed);
+  useLayoutEffect(() => {
+    if (!scrollPending.current || !hitsSettled) return;
+    scrollPending.current = false;
+    if (resumed && resultsRef.current) resultsRef.current.scrollTop = resumed.scrollTop;
+  }, [resumed, hitsSettled]);
+  // A new query opens at the top, as ListPane's does; not the query the overlay reopened on.
+  const scrolledQuery = useRef(query.trim());
+  useEffect(() => {
+    const q = query.trim();
+    if (q === scrolledQuery.current) return;
+    scrolledQuery.current = q;
+    scrollPending.current = false;
+    if (resultsRef.current) resultsRef.current.scrollTop = 0;
+  }, [query]);
+  // The overlay as it stands, for the next time it opens.
+  useEffect(() => {
+    saved.current = { query, shown: shownCount, activeIndex, scrollTop: saved.current?.scrollTop ?? 0 };
+  }, [saved, query, shownCount, activeIndex]);
   const searches = useRecentSearches();
   // The recent searches, in place of the prompt while the box is empty.
   const showRecent = !query.trim() && searches.length > 0;
@@ -92,9 +183,20 @@ export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: 
   }
 
   function openHit(hit: SearchHit) {
-    // A find on the sutta being read isn't kept as a search.
+    // Reopening the sutta already open isn't kept as a search.
     if (hit.id !== currentId) saveRecentSearch(query);
     onOpenSutta(hit.matchedId ?? hit.id, hit.snippet?.segments);
+  }
+
+  // openPassage scrolls the sutta being read to one of its passages.
+  function openPassage(passage: Passage) {
+    if (currentId) onOpenSutta(currentId, passage.segments);
+  }
+
+  // openRow opens the row at `i` of the ones the arrow keys walk.
+  function openRow(i: number) {
+    if (i < shownPassages.length) openPassage(shownPassages[i]);
+    else if (displayHits[i - shownPassages.length]) openHit(displayHits[i - shownPassages.length]);
   }
 
   // pickRecent runs a recent search again, closing a touch screen's keyboard.
@@ -111,8 +213,10 @@ export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: 
     [displayHits, membership, highlights, flatLists]
   );
 
+  // Focused with the last query selected, so typing replaces it.
   useEffect(() => {
     inputRef.current?.focus();
+    inputRef.current?.select();
   }, []);
 
   // The height of the software keyboard, which the panel pads itself by on touch: it fills the
@@ -141,15 +245,15 @@ export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: 
       e.preventDefault();
       const delta = e.key === 'ArrowDown' ? 1 : -1;
       if (showRecent) moveRecentBy(delta, searches.length);
-      else moveBy(delta, displayHits.length);
+      else moveBy(delta, rowCount);
     } else if (e.key === 'Enter') {
       const recent = showRecent ? searches[recentIndex] : undefined;
       if (recent) {
         e.preventDefault();
         pickRecent(recent);
-      } else if (displayHits[activeIndex]) {
+      } else if (activeIndex >= 0 && activeIndex < rowCount) {
         e.preventDefault();
-        openHit(displayHits[activeIndex]);
+        openRow(activeIndex);
       }
     }
   }
@@ -268,8 +372,71 @@ export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: 
             )}
           </div>
         )}
-        <div className="sc flex-1 overflow-y-auto touch-pan-y" aria-busy={updating}>
-          {displayHits.map((h, i) => {
+        <div
+          ref={resultsRef}
+          className="sc flex-1 overflow-y-auto touch-pan-y"
+          aria-busy={updating}
+          onScroll={(e) => {
+            if (saved.current) saved.current.scrollTop = e.currentTarget.scrollTop;
+          }}
+        >
+          {passages.length > 0 && (
+            <>
+              <SectionHeading theme={theme}>
+                In this sutta ({passages.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+` : passages.length})
+              </SectionHeading>
+              {shownPassages.map((p, i) => (
+                <button
+                  key={p.segments.join('-')}
+                  ref={setRowRef(i)}
+                  className="row flex flex-col w-full text-left px-5 pt-2 pb-3"
+                  style={{
+                    background: i === activeIndex ? ROW_TINT(theme.tint) : 'transparent',
+                    // The last row runs straight into the toggle beneath it.
+                    borderBottom:
+                      i === shownPassages.length - 1 && passages.length > PASSAGES_SHOWN
+                        ? undefined
+                        : `1px solid ${theme.rule}`,
+                  }}
+                  onMouseMove={(e) => {
+                    if (pointerMoved(e)) setActiveIndex(i);
+                  }}
+                  onClick={() => openPassage(p)}
+                >
+                  <SnippetQuote snippet={p} theme={theme} />
+                </button>
+              ))}
+              {hiddenPassages === 0 && passages.length > SEARCH_RESULTS_CAP && (
+                <div className="font-sans text-center text-ui-sm py-6 px-5 text-balance" style={{ color: theme.dim }}>
+                  {SEARCH_CAP_NOTE}
+                </div>
+              )}
+              {passages.length > PASSAGES_SHOWN && (
+                <button
+                  className="flex items-center gap-1 w-full px-5 pt-2 pb-2.5 font-sans text-ui-xs font-semibold"
+                  style={{ color: theme.dim, borderBottom: `1px solid ${theme.rule}` }}
+                  onMouseDown={(e) => e.preventDefault()}
+                  onClick={() =>
+                    setShown({ query, count: hiddenPassages > 0 ? shownPassages.length + PASSAGES_STEP : PASSAGES_SHOWN })
+                  }
+                >
+                  {hiddenPassages > 0 ? `${Math.min(PASSAGES_STEP, hiddenPassages)} more` : 'Fewer'}
+                  <ChevronDown
+                    size={14}
+                    strokeWidth={2.25}
+                    className={`flex-none transition-transform ${hiddenPassages > 0 ? '' : 'rotate-180'}`}
+                  />
+                </button>
+              )}
+              {displayHits.length > 0 && (
+                <SectionHeading theme={theme}>
+                  Other suttas ({othersTotal > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+` : othersTotal})
+                </SectionHeading>
+              )}
+            </>
+          )}
+          {displayHits.map((h, j) => {
+            const i = shownPassages.length + j;
             const { chips, hlCount, hlColors } = rowMeta.get(h.id) ?? { chips: [], hlCount: 0, hlColors: [] };
             const note = notes[h.id];
             // The line that carried the query leads the quote from the sutta — see ListPane.
@@ -298,7 +465,7 @@ export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: 
                     <MatchedText text={h.sutta.ref} query={query} theme={theme} />
                   </span>
                   {h.id === currentId && (
-                    // Marks the sutta already open, whose row leads the results.
+                    // Marks the sutta already open.
                     <span
                       className="inline-block w-[6px] h-[6px] rounded-full mr-2 align-[0.15em]"
                       style={{ background: theme.pali }}
@@ -330,25 +497,7 @@ export function ReaderSearchOverlay({ theme, currentId, onOpenSutta, onClose }: 
                     <MatchedText text={h.sutta.blurb} query={lineQuery('blurb')} theme={theme} />
                   </span>
                 )}
-                {h.snippet && (
-                  // Quoted from the sutta: a left rule, which is what marks the sutta's own words
-                  // apart from anything written about it.
-                  <span
-                    className="block font-serif text-ui-base leading-[1.45] mt-[3px] pl-[8px] border-l-2"
-                    style={{ color: theme.dim, borderColor: theme.rule }}
-                  >
-                    {/* No `block` alongside a clamp: the clamp sets `display:-webkit-box` and
-                        Tailwind emits it before `.block`, so `block` would silently win. */}
-                    <span className="line-clamp-3" style={h.snippet.under ? { color: theme.pali } : undefined}>
-                      <MatchedText text={h.snippet.text} query={h.snippet.query} theme={theme} />
-                    </span>
-                    {h.snippet.under && (
-                      <span className="line-clamp-2 mt-[2px]">
-                        <MatchedText text={h.snippet.under} query={h.snippet.query} theme={theme} />
-                      </span>
-                    )}
-                  </span>
-                )}
+                {h.snippet && <SnippetQuote snippet={h.snippet} theme={theme} />}
                 <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} theme={theme} query={query} />
               </button>
             );
