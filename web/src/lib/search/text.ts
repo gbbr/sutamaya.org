@@ -480,6 +480,9 @@ export interface Snippet {
   // The first and last segment this line was drawn from, indexing the array in text/{uid}.json —
   // what the reader opens at, and washes, when the row is clicked.
   segments: [number, number];
+  // The segments whose Pali holds what `text` marks, which the reader opens with their Pali
+  // showing. Set only where `text` is Pali.
+  paliSegments?: number[];
 }
 
 // How much of a paragraph a snippet shows, and how much of it precedes the matched word. A
@@ -604,11 +607,15 @@ export function snippetOf(index: TextIndex, score: TextScore, typed: string): Sn
   const marks = marksOf(text, queries, score.lang, false);
   if (!pali) return { text, marks, segments };
 
+  // The segments holding a mark, marked afresh in the paragraph's own text, since offsets into the
+  // tidied window don't map back to a segment.
+  const paliMarks = marksOf(para.text.slice(window.start, window.end), queries, 'pa', false);
+  const paliSegments = [...new Set(paliMarks.map(([start]) => segmentOf(window.start + start)))].sort((a, b) => a - b);
   const english = paragraphAt(index.en, index.enParas, score.para);
-  if (!english.text.trim()) return { text, marks, segments };
+  if (!english.text.trim()) return { text, marks, segments, paliSegments };
   const enAt = firstMatch(english.text, typed, 'en');
   const under = windowAround(english.text, Math.max(0, enAt >= 0 ? enAt : firstMatch(english.text, score.query, 'en'))).text;
-  return { text, marks, under, underMarks: marksOf(under, queries, 'en', false), segments };
+  return { text, marks, under, underMarks: marksOf(under, queries, 'en', false), segments, paliSegments };
 }
 
 // suttaLines returns the lines of sutta `doc` in one blob, each with its offset there, the paragraph
@@ -670,6 +677,7 @@ export function passagesOf(index: TextIndex, doc: number, typed: string, score?:
         marks: marksOf(window.text, queriesMarked, lang, true),
         segments: [seg, seg],
       };
+      if (lang === 'pa') passage.paliSegments = [seg];
       const under = lang === 'pa' ? english[line].text.trim() : '';
       out.push(under ? { ...passage, under, underMarks: marksOf(under, queriesMarked, 'en', true) } : passage);
       break;

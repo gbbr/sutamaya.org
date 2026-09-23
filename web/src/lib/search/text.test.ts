@@ -232,7 +232,27 @@ describe('snippetOf', () => {
       under: 'The mind is radiant. So it is said.',
       underMarks: [],
       segments: [1, 2],
+      paliSegments: [1],
     });
+  });
+
+  it('names the segments whose Pali holds a mark, and only for a Pali hit', () => {
+    const Y = index([
+      {
+        uid: 'a',
+        paras: [
+          [['One.', 'eka']],
+          [
+            ['The mind is radiant.', 'pabhassaraṁ cittaṁ'],
+            ['So it is said.', 'iti vuccati'],
+            ['Radiant again.', 'puna pabhassaraṁ'],
+          ],
+        ],
+      },
+    ]);
+    // Not segment 2, which the snippet spans but marks nothing in.
+    expect(snip(Y, searchSuttaText(Y, 'pabhassara').get('a')!)?.paliSegments).toEqual([1, 3]);
+    expect(snip(Y, searchSuttaText(Y, 'radiant').get('a')!)?.paliSegments).toBeUndefined();
   });
 
   it('marks only what the search matched: whole English words, and a function word in the phrase alone', () => {
@@ -466,6 +486,8 @@ describe('passagesOf', () => {
       ['The Buddha spoke.', undefined],
       ['Buddhena vuttaṁ.', 'So it was said.'],
     ]);
+    // The line shown in Pali is the one whose Pali opens.
+    expect(passages(Y, 'buddh').map((p) => p.paliSegments)).toEqual([undefined, [1]]);
   });
 
   it('stops one past the cap', () => {

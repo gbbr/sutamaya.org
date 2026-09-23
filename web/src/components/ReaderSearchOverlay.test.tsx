@@ -61,7 +61,7 @@ function Harness({
   onOpenSutta,
 }: {
   saved: { current: ReaderSearchView | null };
-  onOpenSutta: (id: string, segments?: [number, number]) => void;
+  onOpenSutta: (id: string, passage?: { segments: [number, number] }) => void;
 }) {
   const [open, setOpen] = useState(true);
   if (!open) return <button onClick={() => setOpen(true)}>Search</button>;
@@ -70,9 +70,9 @@ function Harness({
       theme={READER_THEMES.light}
       currentId="dn1"
       saved={saved}
-      onOpenSutta={(id, segments) => {
+      onOpenSutta={(id, passage) => {
         setOpen(false);
-        onOpenSutta(id, segments);
+        onOpenSutta(id, passage);
       }}
       onClose={() => setOpen(false)}
     />
@@ -130,12 +130,12 @@ describe('ReaderSearchOverlay reopening after a row is opened', () => {
 
     await waitFor(() => expect(rows()).toHaveLength(3));
     fireEvent.click(rows()[1]);
-    expect(onOpenSutta).toHaveBeenLastCalledWith('dn1', [2, 2]);
+    expect(onOpenSutta).toHaveBeenLastCalledWith('dn1', expect.objectContaining({ segments: [2, 2] }));
 
     // Enter opens the row the cursor is on.
     fireEvent.click(screen.getByText('Search'));
     await waitFor(() => expect(rows()).toHaveLength(3));
     fireEvent.keyDown(screen.getByPlaceholderText(READER_SEARCH_PLACEHOLDER), { key: 'Enter' });
-    expect(onOpenSutta).toHaveBeenLastCalledWith('dn1', [2, 2]);
+    expect(onOpenSutta).toHaveBeenLastCalledWith('dn1', expect.objectContaining({ segments: [2, 2] }));
   });
 });

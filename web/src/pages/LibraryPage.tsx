@@ -11,7 +11,7 @@ import { useBackHandler } from '../hooks/useBackHandler';
 import { useLatest } from '../hooks/useLatest';
 import { forgetScrollPosition } from '../hooks/useScrollMemory';
 import { findNode, isExpandable, nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId } from '../lib/corpus';
-import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP, listBlockCounts, listBlockHeading } from '../lib/search/metadata';
+import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP, listBlockCounts, listBlockHeading, type SearchHit } from '../lib/search/metadata';
 import { saveRecentSearch } from '../lib/recentSearches';
 import { SHORTCUTS, shortcutsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
@@ -284,11 +284,11 @@ export function LibraryPage() {
     [navigate, setView, mobile, corpus, latestQuery]
   );
 
-  // `segments` are set only where the query was answered by the sutta's text, and are where the
+  // `snippet` is set only where the query was answered by the sutta's text, and is where the
   // reader opens: a title or description match has nothing to jump to and opens at the top, as
   // always.
   const onOpen = useCallback(
-    (id: string, segments?: [number, number]) => {
+    (id: string, snippet?: SearchHit['snippet']) => {
       // The node the reader returns to on close: the one being browsed, which a search leaves
       // untouched, so clearing the search hands the tree and the list back the place they were
       // left. A hit's own node stands in only where nothing was selected to return to.
@@ -311,9 +311,9 @@ export function LibraryPage() {
       // Tagged as a one-shot intent only when there is a passage to jump to, so an ordinary open
       // carries the plain origin it always did.
       const state =
-        segments === undefined
+        snippet === undefined
           ? { from, fromView: view, searchIds }
-          : tagIntent({ from, fromView: view, searchIds, segments });
+          : tagIntent({ from, fromView: view, searchIds, segments: snippet.segments, paliSegments: snippet.paliSegments });
       transitionPage('fade', () => {
         // Saved inside the swap, once the fade has captured this page.
         saveRecentSearch(query);

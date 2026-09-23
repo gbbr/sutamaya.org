@@ -49,7 +49,8 @@ behaviour components share, and `components/` the pieces the pages are built fro
 - **The address is where the reader is**: the group, the sutta, and the Library's search as `?q=`.
   So closing a search result returns to the results, and a relaunch returns to the last place.
 - Router state carries what an arrival *means* — the pane it came from, the search behind it, a line
-  to jump to. It survives a refresh, so each is used exactly once.
+  to jump to and the lines whose Pali opens there. It survives a refresh, so each is used exactly
+  once.
 - The Reader restores its scroll position on a return (Back, a refresh, a relaunch) and opens at the
   top when the reader chooses somewhere new.
 - **A sutta opened from the Reader's own search is a detour.** The Reader's close becomes a return
