@@ -16,7 +16,7 @@ import { MatchedText } from './MatchedText';
 import { RecentSearches } from './RecentSearches';
 import { SuttaRowChips } from './SuttaRowChips';
 import { TextSearchProgress } from './TextSearchProgress';
-import { SearchUpdating } from './SearchUpdating';
+import { SearchUpdating, SPINNER_DELAY } from './SearchUpdating';
 import { getUiScale } from '../lib/uiPrefs';
 import type { ThemeColors } from '../lib/types';
 
@@ -281,13 +281,9 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
       // `search` puts a Search key on the iOS keyboard, which dismisses it and leaves the
       // results filling the screen.
       enterKeyHint="search"
-      className={
-        mobile
-          ? // Suppresses WebKit's own clear button, the row drawing a themed one beside the field.
-            'font-sans flex-1 min-w-0 py-2 text-ui-lg outline-none bg-transparent [&::-webkit-search-cancel-button]:hidden'
-          : 'font-sans flex-none w-full px-5 py-4 text-ui-lg outline-none bg-transparent'
-      }
-      style={mobile ? { color: theme.fg } : { color: theme.fg, borderBottom: `1px solid ${theme.rule}` }}
+      // Suppresses WebKit's own clear button, the row drawing a themed one beside the field.
+      className={`font-sans flex-1 min-w-0 ${mobile ? 'py-2' : 'py-4'} text-ui-lg outline-none bg-transparent [&::-webkit-search-cancel-button]:hidden`}
+      style={{ color: theme.fg }}
     />
   );
 
@@ -327,38 +323,48 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
         }
         onClick={(e) => e.stopPropagation()}
       >
-        {mobile ? (
-          <div
-            className="flex-none flex items-center gap-3 px-4 py-2"
-            style={{ borderBottom: `1px solid ${theme.rule}` }}
-          >
-            {/* The field's own glyph, which becomes the spinner while the rows below are the
-                previous answer and a newer one is being scanned. Boxed to the glyph's width, so
-                the field doesn't shift when the two swap. */}
-            <span className="flex-none w-[18px] flex items-center justify-center">
-              {updating ? (
+        <div
+          className={`flex-none flex items-center gap-3 ${mobile ? 'px-4 py-2' : 'px-5'}`}
+          style={{ borderBottom: `1px solid ${theme.rule}` }}
+        >
+          {/* The field's own glyph, which becomes the spinner while the rows below are the
+              previous answer and a newer one is being scanned, giving way only as the spinner
+              fades in. Boxed to the glyph's width, so the field doesn't shift when the two swap. */}
+          <span className="relative flex-none w-[18px] flex items-center justify-center">
+            <Search
+              size={18}
+              strokeWidth={2}
+              style={{
+                color: theme.dim,
+                opacity: updating ? 0 : 1,
+                transition: updating ? `opacity 0s ${SPINNER_DELAY}` : undefined,
+              }}
+            />
+            {updating && (
+              <span className="absolute inset-0 flex items-center justify-center">
                 <SearchUpdating theme={theme} />
-              ) : (
-                <Search size={18} strokeWidth={2} style={{ color: theme.dim }} />
-              )}
-            </span>
-            {input}
-            {query && (
-              <button
-                className="flex-none flex items-center justify-center w-9 h-9 -mr-1 rounded-full"
-                aria-label="Clear search"
-                style={{ color: theme.dim }}
-                // Keeps focus on the field, so clearing doesn't drop the keyboard the reader is
-                // mid-typing on.
-                onMouseDown={(e) => e.preventDefault()}
-                onClick={() => {
-                  setQuery('');
-                  inputRef.current?.focus();
-                }}
-              >
-                <X size={18} strokeWidth={2} />
-              </button>
+              </span>
             )}
+          </span>
+          {input}
+          {query && (
+            <button
+              className="flex-none flex items-center justify-center w-9 h-9 -mr-1 rounded-full"
+              aria-label="Clear search"
+              style={{ color: theme.dim }}
+              // Keeps focus on the field, so clearing doesn't drop the keyboard the reader is
+              // mid-typing on.
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={() => {
+                setQuery('');
+                inputRef.current?.focus();
+              }}
+            >
+              <X size={18} strokeWidth={2} />
+            </button>
+          )}
+          {/* The full-screen panel's way out; the card closes from its backdrop. */}
+          {mobile && (
             <button
               className="flex-none font-sans text-ui-base px-1 py-2"
               style={{ color: theme.dim }}
@@ -366,19 +372,8 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
             >
               Cancel
             </button>
-          </div>
-        ) : (
-          // Relative for the spinner, which sits in the field's trailing edge while the rows below
-          // are the previous answer and a newer one is being scanned.
-          <div className="relative flex-none">
-            {input}
-            {updating && (
-              <span className="absolute right-5 top-1/2 -translate-y-1/2">
-                <SearchUpdating theme={theme} />
-              </span>
-            )}
-          </div>
-        )}
+          )}
+        </div>
         <div
           ref={resultsRef}
           className="sc flex-1 overflow-y-auto touch-pan-y"

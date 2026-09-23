@@ -1,6 +1,9 @@
 import { Loader2 } from 'lucide-react';
 import type { ThemeColors } from '../lib/types';
 
+// How late the spinner fades in.
+export const SPINNER_DELAY = '150ms';
+
 // The spinner shown while the results on screen are the previous answer and the newest keystroke
 // is still being scanned. Sized to sit inside a line of text — the results count, or the search
 // field — and faded in a moment late, so a scan that answers in a blink shows no spinner at all.
@@ -17,7 +20,7 @@ export function SearchUpdating({
     // wrapper, the spin on the icon.
     <span
       className={`inline-flex flex-none items-center animate-fadeIn${theme ? '' : ' text-ink-4'}`}
-      style={{ animationDelay: '150ms', ...(theme ? { color: theme.dim } : null) }}
+      style={{ animationDelay: SPINNER_DELAY, ...(theme ? { color: theme.dim } : null) }}
       aria-hidden
     >
       <Loader2 size={13} strokeWidth={2.5} className="animate-spin" />
