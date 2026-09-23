@@ -110,6 +110,20 @@ describe('ReaderSearchOverlay focus on opening', () => {
     expect(openOverlay('divine')).not.toHaveFocus();
   });
 
+  it('takes a hardware keyboard on a touch screen that reopens on a query', async () => {
+    stubPointer(true);
+    vi.mocked(searchText).mockResolvedValue([
+      { id: 'dn1', rank: 0, saved: false, passages: [passage(1), passage(2), passage(3)] },
+    ]);
+    const onOpenSutta = vi.fn();
+    const { container } = render(<Harness saved={leftAt('divine', 3)} onOpenSutta={onOpenSutta} />);
+
+    await waitFor(() => expect(container.querySelectorAll('button.row')).toHaveLength(3));
+    fireEvent.keyDown(document.activeElement!, { key: 'ArrowDown' });
+    fireEvent.keyDown(document.activeElement!, { key: 'Enter' });
+    expect(onOpenSutta).toHaveBeenLastCalledWith('dn1', expect.objectContaining({ segments: [2, 2] }));
+  });
+
   it('focuses the field on a touch screen when there is no query', () => {
     stubPointer(true);
     expect(openOverlay('')).toHaveFocus();

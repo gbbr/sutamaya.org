@@ -40,6 +40,32 @@ test('@smoke a search finds a phrase that is only in the sutta text', async ({ p
   );
 });
 
+test('a text hit opens the reader on its passage, the words it was found by marked', async ({ page }) => {
+  await page.goto('/browse');
+
+  await page.getByRole('button', { name: 'Search', exact: true }).click();
+  // Only in the text of DN 16, far down it, so the reader has to land there to show it.
+  await page.getByPlaceholder('Search suttas, text and lists').fill('the Realized One became fully extinguished');
+
+  const hits = searchResults(page);
+  await expect(hits.getByText('Searching sutta text…')).toBeHidden({ timeout: 15000 });
+  await hits.getByRole('button', { name: /^DN16/ }).click();
+  await expect(page).toHaveURL(/\/read\/dn16/);
+
+  // The marked words in view, and the wash over them.
+  const mark = page
+    .locator('[data-component="SegmentedText"] mark', { hasText: /the Realized One became fully extinguished/i })
+    .first();
+  await expect(mark).toBeInViewport();
+  await expect
+    .poll(async () => {
+      const m = await mark.boundingBox();
+      const w = await page.locator('[data-wash]').boundingBox();
+      return !!m && !!w && m.y >= w.y && m.y + m.height <= w.y + w.height;
+    })
+    .toBe(true);
+});
+
 test('@smoke without the sutta text, search says so and still answers', async ({ page, errors }) => {
   // The reader who is offline, or whose fetch failed: metadata results, honestly labelled. The
   // blocked fetch is a console error by definition, which is what this test is arranging.

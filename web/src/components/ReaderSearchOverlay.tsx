@@ -218,17 +218,22 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
     [displayHits, membership, highlights, flatLists]
   );
 
+  const panelRef = useRef<HTMLDivElement>(null);
+
   // Focused with the last query selected, so typing replaces it. A touch screen reopening on a
-  // query leaves the field alone, keeping the keyboard off the results being returned to.
+  // query focuses the panel instead, keeping the keyboard off the results being returned to while
+  // a hardware keyboard still works them.
   useEffect(() => {
-    if (resumed?.query.trim() && window.matchMedia?.('(pointer: coarse)').matches) return;
+    if (resumed?.query.trim() && window.matchMedia?.('(pointer: coarse)').matches) {
+      panelRef.current?.focus();
+      return;
+    }
     inputRef.current?.focus();
     inputRef.current?.select();
   }, [resumed]);
 
   // The height of the software keyboard, which the panel pads itself by on touch: it fills the
   // layout viewport, which the keyboard doesn't shrink, so the last rows would sit underneath it.
-  const panelRef = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {
     const el = panelRef.current;
     const vv = window.visualViewport;
@@ -305,12 +310,14 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
       <div
         ref={panelRef}
         data-component="ReaderSearchOverlay"
+        // Focusable, to hold the focus in the field's place (see the focus effect above).
+        tabIndex={-1}
         className={
           mobile
             ? // `touch-none` keeps a drag on the panel's own chrome — the field's row — from
               // scrolling the reading pane it covers; the results opt back in to vertical panning.
-              'flex-1 min-h-0 flex flex-col overflow-hidden touch-none'
-            : 'w-full mx-4 flex flex-col overflow-hidden rounded-2xl shadow-popup'
+              'flex-1 min-h-0 flex flex-col overflow-hidden touch-none outline-none'
+            : 'w-full mx-4 flex flex-col overflow-hidden rounded-2xl shadow-popup outline-none'
         }
         style={
           mobile
@@ -322,6 +329,11 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
             : { background: theme.overlay ?? theme.panel, maxWidth: 560, maxHeight: '70dvh' }
         }
         onClick={(e) => e.stopPropagation()}
+        // The field's keys, only while the panel itself holds the focus: a focused button keeps its
+        // own Enter.
+        onKeyDown={(e) => {
+          if (e.target === e.currentTarget) onKeyDown(e);
+        }}
       >
         <div
           className={`flex-none flex items-center gap-3 ${mobile ? 'px-4 py-2' : 'px-5'}`}
