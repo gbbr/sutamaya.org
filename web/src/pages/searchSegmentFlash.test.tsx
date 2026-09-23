@@ -45,6 +45,7 @@ import { ReaderPage } from './ReaderPage';
 import { LibraryPage } from './LibraryPage';
 import { SEARCH_PLACEHOLDER } from '../lib/search/metadata';
 import { tagIntent } from '../lib/routeIntent';
+import { OPEN_LINES_KEY } from '../lib/storageKeys';
 import type { Corpus } from '../lib/types';
 
 const corpus: Corpus = {
@@ -320,6 +321,65 @@ describe('the passage a search hit was drawn from', () => {
 
     await waitFor(() => expect(measured).not.toHaveLength(0));
     expect(measured.every(Boolean)).toBe(true);
+  });
+
+  // A return restores the scroll offset the reader left, which was measured with these lines open.
+  it('has its Pali open again when the reader comes back, before the reading returns to its place', async () => {
+    const { container, router } = renderRoutes(routes, {
+      pathname: '/read/dn1',
+      state: tagIntent({ segments: [2, 2], paliSegments: [2] }),
+    });
+    await waitFor(() => expect(paliLine(container, 2)).not.toBeNull());
+    // And a line whose Pali the reader opened with a tap.
+    fireEvent.click(container.querySelector('[data-seg="0"]')!);
+    await act(() => router.navigate('/read/dn2'));
+    await screen.findByText('Then the king spoke');
+
+    // Whether both lines were open each time the reading's offset was set.
+    const openWhenScrolled: boolean[] = [];
+    Object.defineProperty(container.querySelector('[data-component="ReaderPage"] .sc')!, 'scrollTop', {
+      configurable: true,
+      get: () => 0,
+      set: () => void openWhenScrolled.push(!!paliLine(container, 0) && !!paliLine(container, 2)),
+    });
+    await act(() => router.navigate(-1));
+    await screen.findByText('They spoke in dispraise of the Buddha');
+
+    expect(openWhenScrolled).not.toHaveLength(0);
+    expect(openWhenScrolled.every(Boolean)).toBe(true);
+  });
+
+  it('has its Pali closed when the reader chooses the sutta anew', async () => {
+    const { container, router } = renderRoutes(routes, {
+      pathname: '/read/dn1',
+      state: tagIntent({ segments: [2, 2], paliSegments: [2] }),
+    });
+    await waitFor(() => expect(paliLine(container, 2)).not.toBeNull());
+    await act(() => router.navigate('/read/dn2'));
+    await screen.findByText('Then the king spoke');
+
+    await act(() => router.navigate('/read/dn1'));
+    await screen.findByText('They spoke in dispraise of the Buddha');
+    expect(paliLine(container, 2)).toBeNull();
+  });
+
+  it('keeps only the lines left open', async () => {
+    const { container } = renderRoutes(routes, '/read/dn1');
+    await screen.findByText('They spoke in dispraise of the Buddha');
+    fireEvent.click(container.querySelector('[data-seg="0"]')!);
+    fireEvent.click(container.querySelector('[data-seg="2"]')!);
+    fireEvent.click(container.querySelector('[data-seg="2"]')!);
+
+    expect(JSON.parse(localStorage.getItem(OPEN_LINES_KEY)!)).toEqual({ dn1: { pali: { 0: true }, notes: {} } });
+  });
+
+  it('keeps none of its Pali while all of it shows', async () => {
+    vi.mocked(useReaderPrefs).mockReturnValue({ ...vi.mocked(useReaderPrefs)(), allPali: true });
+    const { container } = renderRoutes(routes, '/read/dn1');
+    await screen.findByText('They spoke in dispraise of the Buddha');
+    fireEvent.click(container.querySelector('[data-seg="0"]')!);
+
+    expect(localStorage.getItem(OPEN_LINES_KEY)).toBeNull();
   });
 
   it('is not washed when the reader was not sent to a segment', async () => {

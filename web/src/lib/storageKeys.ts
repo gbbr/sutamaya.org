@@ -14,6 +14,8 @@ export const READER_PREFS_KEY = 'sutamaya.readerPrefs';
 // The reader menu panel's last-used tab, so it reopens where the reader left off (see
 // lib/readerPanelTab.ts).
 export const READER_PANEL_TAB_KEY = 'sutamaya.readerPanelTab';
+// The Pali lines and notes left open in each sutta (see lib/openLines.ts).
+export const OPEN_LINES_KEY = 'sutamaya.openLines';
 export const LAYOUT_PREFS_KEY = 'sutamaya.layout';
 export const HAS_OPENED_SUTTA_KEY = 'sutamaya.hasOpenedSutta';
 // The reader's recent searches, newest first (see lib/recentSearches.ts).
