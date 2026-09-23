@@ -15,6 +15,7 @@ import { spawnSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { createInterface } from 'node:readline';
 import { API_ORIGINS } from './lib/apiOrigins.js';
+import { staleBundles } from './lib/otaBundles.js';
 
 const args = process.argv.slice(2);
 const force = args.includes('--force');
@@ -33,6 +34,9 @@ if (skipTests && env !== 'staging') {
 const bucket = env === 'production' ? 'sutamaya-ota' : 'sutamaya-ota-staging';
 const deployScript = env === 'production' ? 'deploy:prod' : 'deploy:staging';
 const WRANGLER_CONFIG = 'wrangler.jsonc';
+
+// Bundles left in the bucket after a release, the one just published included.
+const KEEP_BUNDLES = 3;
 
 // The binary in the stores: its build number, the commit its native projects were built from, and
 // the lowest build number able to run bundles built from that commit.
@@ -92,6 +96,29 @@ function patchWranglerConfig(values) {
     slice = slice.replace(re, `$1"${value}"`);
   }
   writeFileSync(WRANGLER_CONFIG, text.slice(0, region[0]) + slice + text.slice(region[1]));
+}
+
+// pruneBundles deletes the bundles staleBundles picks, through Cloudflare's API with wrangler's
+// login. A failure only warns: the release is already live, and a leftover zip costs nothing.
+async function pruneBundles(live) {
+  try {
+    const { accounts } = JSON.parse(spawnSync('npx', ['wrangler', 'whoami', '--json'], { encoding: 'utf8' }).stdout);
+    if (accounts?.length !== 1) throw new Error(`expected one Cloudflare account, found ${accounts?.length ?? 0}`);
+    const token = spawnSync('npx', ['wrangler', 'auth', 'token'], { encoding: 'utf8' }).stdout.trim().split('\n').pop().trim();
+    const api = `https://api.cloudflare.com/client/v4/accounts/${accounts[0].id}/r2/buckets/${bucket}/objects`;
+    const headers = { Authorization: `Bearer ${token}` };
+
+    const listing = await (await fetch(`${api}?per_page=1000`, { headers })).json();
+    if (!listing.success) throw new Error(`listing ${bucket} failed: ${JSON.stringify(listing.errors)}`);
+    const stale = staleBundles(listing.result, live, KEEP_BUNDLES);
+    for (const key of stale) {
+      const res = await fetch(`${api}/${encodeURIComponent(key)}`, { method: 'DELETE', headers });
+      if (!res.ok) throw new Error(`deleting ${key} failed with HTTP ${res.status}`);
+    }
+    console.log(`Deleted ${stale.length} older bundle(s) from ${bucket}.`);
+  } catch (err) {
+    console.warn(`warning: older bundles were left in ${bucket}: ${err.message}`);
+  }
 }
 
 // --- guards -------------------------------------------------------------------
@@ -160,7 +187,7 @@ console.log(`  bundle   web/ota/${zip}`);
 console.log(`  version  ${version}`);
 console.log(`  sha256   ${checksum}`);
 console.log(`  api base ${apiBase}`);
-console.log(`  bucket   ${bucket}`);
+console.log(`  bucket   ${bucket}, keeping the newest ${KEEP_BUNDLES} bundles, this one included`);
 console.log(`  floor    build ${store.floor} and up${drifted.length ? '  (native drift allowed)' : ''}`);
 console.log(`  deploy   npm run ${deployScript}\n`);
 if (!(await confirm('Upload, point wrangler.jsonc at it, and deploy? [y/N] '))) {
@@ -188,5 +215,9 @@ patchWranglerConfig({ OTA_VERSION: version, OTA_CHECKSUM: checksum, OTA_MIN_NATI
 console.log(`\n${WRANGLER_CONFIG} now points ${env} at ${version}, floor build ${store.floor}.`);
 
 sh('npm', skipTests ? ['run', deployScript, '--', '--skip-tests'] : ['run', deployScript]);
+
+// After the deploy, which exits on failure, so nothing is pruned while the Worker may still serve an
+// older bundle.
+await pruneBundles(zip);
 
 console.log(`\nPublished ${version} to ${env}. Commit the ${WRANGLER_CONFIG} change to record what is live.`);
