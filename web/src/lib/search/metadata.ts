@@ -14,6 +14,7 @@
 import { rangesFor, RANGE_QUERY, suttaEntries } from '../corpus';
 import { flattenListTree } from '../lists';
 import type { ChapterRow, Corpus, HighlightsMap, ListDef, Nikaya, Sutta } from '../types';
+import type { Mark } from './match';
 
 export interface SearchHit {
   id: string;
@@ -32,12 +33,13 @@ export interface SearchHit {
   // it. Unset where nothing the row writes matched — a title or list-name hit, or a text-only one.
   //
   // `query` is what the line is marked with, which is not always what was typed: where the
-  // expansion table is what matched, it carries both, as `snippet.query` does.
+  // expansion table is what matched, it carries both.
   explains?: { line: 'note' | 'blurb'; query: string };
   // The paragraph of sutta text the query was found in, its English where that paragraph was Pali,
-  // and the first and last segment it was drawn from. Filled in by lib/search/text.ts for the hits
-  // that render, and kept only on the rows that open at it (opensAtPassage).
-  snippet?: { text: string; under?: string; query: string; segments: [number, number] };
+  // what the search matched in each, and the first and last segment it was drawn from. Filled in by
+  // lib/search/text.ts for the hits that render, and kept only on the rows that open at it
+  // (opensAtPassage).
+  snippet?: { text: string; marks: Mark[]; under?: string; underMarks?: Mark[]; segments: [number, number] };
   // Every passage holding the query, on the sutta being read, in reading order.
   passages?: Array<NonNullable<SearchHit['snippet']>>;
 }

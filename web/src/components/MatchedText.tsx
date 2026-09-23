@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { matchRuns } from '../lib/search/match';
+import { matchRuns, runsOf, type Mark } from '../lib/search/match';
 import { boldRuns } from '../lib/noteFormat';
 import type { ThemeColors } from '../lib/types';
 
@@ -7,18 +7,21 @@ interface MatchedTextProps {
   text: string;
   // The live search query. Empty renders `text` untouched, so a caller that draws both kinds of
   // row can pass it unconditionally.
-  query: string;
+  query?: string;
+  // What to mark in place of the query's words: what the search matched in a passage of sutta text.
+  marks?: Mark[];
   // The reader's own theme, for its search overlay. The library omits it and takes the shell's.
   theme?: ThemeColors;
   // Renders `*word*` bold. Notes only, no other field being the reader's to mark up.
   notation?: boolean;
 }
 
-// Marks the query's words wherever they appear in one field, which is what makes a search result
-// account for itself. Filled in the theme's own selection colour, which already means "found
-// words", with `color: inherit` to keep the browser's black-on-yellow out of a row with its own ink.
-function Marked({ text, query, theme }: MatchedTextProps) {
-  const runs = matchRuns(text, query);
+// Marks the query's words wherever they appear in one field, or the `marks` given for it, which is
+// what makes a search result account for itself. Filled in the theme's own selection colour, which
+// already means "found words", with `color: inherit` to keep the browser's black-on-yellow out of a
+// row with its own ink.
+function Marked({ text, query = '', marks, theme }: MatchedTextProps) {
+  const runs = marks ? runsOf(text, marks) : matchRuns(text, query);
   // Tested on the run rather than the count, since a single run can be a hit — a field the query
   // matches end to end, which a bold run inside a note often is.
   if (runs.length === 1 && !runs[0].hit) return <>{text}</>;
@@ -44,8 +47,8 @@ function Marked({ text, query, theme }: MatchedTextProps) {
 // A field of a search result, with the query's words marked and, for a note, its `*bold*`
 // rendered. Emphasis is split first, so each piece is marked on its own text and a query word
 // inside a bold run is still found. Semibold, the heaviest weight all three reading faces ship.
-export function MatchedText({ text, query, theme, notation }: MatchedTextProps) {
-  if (!notation) return <Marked text={text} query={query} theme={theme} />;
+export function MatchedText({ text, query, marks, theme, notation }: MatchedTextProps) {
+  if (!notation) return <Marked text={text} query={query} marks={marks} theme={theme} />;
   return (
     <>
       {boldRuns(text).map((run, i) => {

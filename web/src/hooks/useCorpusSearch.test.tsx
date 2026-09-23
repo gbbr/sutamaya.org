@@ -17,7 +17,7 @@ vi.mock('../lib/search/textClient', () => ({
     Promise.resolve(
       [...meta.map(({ id, rank }) => ({ id, rank })), { id: 'dn9', rank: 4 }].map((hit) => ({
         ...hit,
-        snippet: { text: 'a paragraph of this sutta', query: 'prime', segments: [7, 9] as [number, number] },
+        snippet: { text: 'a paragraph of this sutta', marks: [], segments: [7, 9] as [number, number] },
       }))
     ),
 }));

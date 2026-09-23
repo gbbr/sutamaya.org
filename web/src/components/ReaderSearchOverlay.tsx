@@ -57,11 +57,11 @@ function SnippetQuote({ snippet, theme }: { snippet: Passage; theme: ThemeColors
       {/* No `block` alongside a clamp: the clamp sets `display:-webkit-box` and
           Tailwind emits it before `.block`, so `block` would silently win. */}
       <span className="line-clamp-3" style={snippet.under ? { color: theme.pali } : undefined}>
-        <MatchedText text={snippet.text} query={snippet.query} theme={theme} />
+        <MatchedText text={snippet.text} marks={snippet.marks} theme={theme} />
       </span>
       {snippet.under && (
         <span className="line-clamp-2 mt-[2px]">
-          <MatchedText text={snippet.under} query={snippet.query} theme={theme} />
+          <MatchedText text={snippet.under} marks={snippet.underMarks} theme={theme} />
         </span>
       )}
     </span>

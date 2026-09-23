@@ -8,6 +8,9 @@ export interface TextRun {
   hit: boolean;
 }
 
+// A stretch of a string to mark: the offset of its first character, and of the one after its last.
+export type Mark = [number, number];
+
 // fold returns `s` folded by searchKey, and `map`, where `map[i]` is the index in `s` at which
 // folded character `i` starts and the last entry is the end of `s`. Folded one character at a
 // time, since the fold changes length and a match found in the key is sliced out of `s` as
@@ -53,31 +56,37 @@ export function matchRuns(text: string, query: string): TextRun[] {
   const words = searchKey(query.trim()).split(/\s+/).filter(Boolean);
   if (!text || !words.length) return [{ text, hit: false }];
   const { key, map } = fold(text);
-  const found: Array<[number, number]> = [];
+  const found: Mark[] = [];
   for (const w of words.flatMap(forms)) {
     for (let i = key.indexOf(w); i !== -1; i = key.indexOf(w, i + w.length)) {
-      found.push([i, throughPlural(key, i + w.length)]);
+      found.push([map[i], map[throughPlural(key, i + w.length)]]);
     }
   }
+  return runsOf(text, found);
+}
+
+// runsOf splits `text` into runs, marking the stretches `found` names, in any order and overlapping
+// or not.
+export function runsOf(text: string, found: Mark[]): TextRun[] {
   if (!found.length) return [{ text, hit: false }];
   // Overlapping matches, abutting ones, and ones separated only by the space between two words all
   // merge into a single mark: a phrase the text carries whole is marked whole, rather than as one
   // mark per word with unmarked gaps punched through it.
-  found.sort((a, b) => a[0] - b[0]);
-  const merged: Array<[number, number]> = [];
-  for (const [start, end] of found) {
+  const sorted = [...found].sort((a, b) => a[0] - b[0]);
+  const merged: Mark[] = [];
+  for (const [start, end] of sorted) {
     const last = merged[merged.length - 1];
-    const onlySpaceBetween = last && start > last[1] && !key.slice(last[1], start).trim();
+    const onlySpaceBetween = last && start > last[1] && !text.slice(last[1], start).trim();
     if (last && (start <= last[1] || onlySpaceBetween)) last[1] = Math.max(last[1], end);
     else merged.push([start, end]);
   }
   const runs: TextRun[] = [];
   let at = 0;
   for (const [start, end] of merged) {
-    if (start > at) runs.push({ text: text.slice(map[at], map[start]), hit: false });
-    runs.push({ text: text.slice(map[start], map[end]), hit: true });
+    if (start > at) runs.push({ text: text.slice(at, start), hit: false });
+    runs.push({ text: text.slice(start, end), hit: true });
     at = end;
   }
-  if (at < key.length) runs.push({ text: text.slice(map[at]), hit: false });
+  if (at < text.length) runs.push({ text: text.slice(at), hit: false });
   return runs;
 }

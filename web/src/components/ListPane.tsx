@@ -569,11 +569,11 @@ export function ListPane({
                     {/* No `block` alongside a clamp: the clamp sets `display:-webkit-box` and
                         Tailwind emits it before `.block`, so `block` would silently win. */}
                     <span className={`line-clamp-3 ${snippet.under ? 'italic text-accent-text' : ''}`}>
-                      <MatchedText text={snippet.text} query={snippet.query} />
+                      <MatchedText text={snippet.text} marks={snippet.marks} />
                     </span>
                     {snippet.under && (
                       <span className="line-clamp-2 mt-[3px]">
-                        <MatchedText text={snippet.under} query={snippet.query} />
+                        <MatchedText text={snippet.under} marks={snippet.underMarks} />
                       </span>
                     )}
                   </span>
