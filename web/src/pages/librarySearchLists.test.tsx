@@ -19,7 +19,7 @@ vi.mock('../lib/search/textClient', () => ({
   searchText: async (_query: string, meta: Array<{ id: string }>) =>
     meta.map((hit) =>
       textMatched.has(hit.id)
-        ? { ...hit, snippet: { text: 'a paragraph of the sutta', query: 'divine', segments: [0, 0] } }
+        ? { ...hit, snippet: { text: 'a paragraph of the sutta', marks: [], segments: [0, 0] } }
         : hit
     ),
 }));

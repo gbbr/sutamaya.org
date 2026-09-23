@@ -43,6 +43,8 @@ their contents, so a cached copy is never stale.
   toward ranking, but stay in the phrase. `not` and `no` count: they are the whole of "not-self".
 - **Both languages** are scanned separately, and a sutta keeps its better result; on a tie the
   English shows.
+- **The sutta being read** matches a word anywhere, inside a longer one too — see
+  [The sutta being read](#the-sutta-being-read).
 
 Searching the Pali matters because the editorial layer moved the English away from words readers
 type: the text says "extinguishment" and "deeds", never "nibbana" or "karma".
@@ -126,6 +128,12 @@ other suttas: a row for each line of it holding the query, in reading order, win
 paragraph. The first shows, and *more* adds ten at a time, up to 80. A row takes the Reader straight
 to its line. Finding in the page in hand isn't a search of the canon, so it isn't saved to recent
 searches.
+
+It matches as find-in-page does: a word anywhere, inside a longer word too, so `sampajann` finds
+*satisampajañña* and *asampajañña*, where the search of the canon, matching the start of a word,
+finds neither. The price is the same as find-in-page's — `sati` also stops on *bhavissati* — which
+matters little in reading order and would bury a ranking. A line shows in English where its English
+holds the query, else in Pali with its English beneath.
 
 Reopened on the same sutta, the search comes back as it was left — the query, the lines shown, the
 scroll and the selected row — so the next result is a tap away. The query is selected, so typing

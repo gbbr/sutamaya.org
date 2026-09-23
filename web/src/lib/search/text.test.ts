@@ -20,9 +20,13 @@ import {
   type SearchMap,
   type TextScore,
 } from './text';
+import { runsOf, type Mark } from './match';
 import type { Corpus } from '../types';
 
 const MARK = '\x1e';
+
+// The stretches of `text` that `marks` mark, in order — what a reader sees highlighted.
+const marked = (text: string, marks: Mark[] = []) => runsOf(text, marks).filter((r) => r.hit).map((r) => r.text);
 
 // Builds the two blobs the way scripts/build-corpus.mjs does: a marker line opening each sutta and
 // each paragraph, one line per segment, the two languages line-aligned.
@@ -215,7 +219,7 @@ describe('snippetOf', () => {
     // Segments 1 and 2: the sutta's second and third, the first paragraph holding only segment 0.
     expect(snip(X, score)).toEqual({
       text: 'The mind is radiant. So it is said.',
-      query: 'radiant',
+      marks: [[12, 19]],
       segments: [1, 2],
     });
   });
@@ -224,10 +228,29 @@ describe('snippetOf', () => {
     const score = searchSuttaText(X, 'pabhassara').get('a')!;
     expect(snip(X, score)).toEqual({
       text: 'pabhassaraṁ cittaṁ iti vuccati',
+      marks: [[0, 10]],
       under: 'The mind is radiant. So it is said.',
-      query: 'pabhassara',
+      underMarks: [],
       segments: [1, 2],
     });
+  });
+
+  it('marks only what the search matched: whole English words, and a function word in the phrase alone', () => {
+    const Y = index([{ uid: 'a', paras: one([['The fires of greed burn the formless and the other forms.', '']]) }]);
+    const snippet = snip(Y, searchSuttaText(Y, 'the fires of greed').get('a')!)!;
+    // Not "the" on its own, nor inside "other".
+    expect(marked(snippet.text, snippet.marks)).toEqual(['The fires of greed']);
+    const forms = snip(Y, searchSuttaText(Y, 'form').get('a')!)!;
+    // Not inside "formless": the search matched the word whole, with its plural.
+    expect(marked(forms.text, forms.marks)).toEqual(['forms']);
+  });
+
+  it('marks Pali where the search matched it: a word opening, and the words run together', () => {
+    const Y = index([{ uid: 'a', paras: one([['', 'sampajāno asampajāno mahākassapassa']]) }]);
+    const snippet = snip(Y, searchSuttaText(Y, 'sampajan').get('a')!)!;
+    expect(marked(snippet.text, snippet.marks)).toEqual(['sampajān']);
+    const compound = snip(Y, searchSuttaText(Y, 'maha kassapa').get('a')!)!;
+    expect(marked(compound.text, compound.marks)).toEqual(['mahākassapa']);
   });
 
   it('names the segments its text spans, counted from the sutta rather than the paragraph', () => {
@@ -301,7 +324,8 @@ describe('snippetOf', () => {
     const snippet = snippetOf(Y, searchSuttaText(Y, 'ariyasacca').get('a')!, 'noble truths')!;
     expect(snippet.under).toContain('noble truths');
     // Both queries mark: the Pali line carries the one that found the row, the English the typed one.
-    expect(snippet.query).toBe('noble truths ariyasacca');
+    expect(marked(snippet.text, snippet.marks)).toEqual(['ariyasaccā']);
+    expect(marked(snippet.under!, snippet.underMarks)).toEqual(['noble truths']);
   });
 });
 
@@ -358,11 +382,19 @@ describe('mergeSearchHits', () => {
     expect(merge().at(-1)?.snippet).toBeUndefined();
     expect(merge('s0').at(-1)?.snippet).toBeDefined();
   });
+
+  it('gives the sutta being read its passages where only a match inside a word finds it', () => {
+    const Y = index([{ uid: 'r', paras: one([['Unaware.', 'Asampajāno.']]) }]);
+    const text = searchTextVariants(Y, 'sampajan');
+    expect(text.size).toBe(0);
+    const hits = mergeSearchHits<RankedHit>([], text, Y, 'sampajan', (id, rank) => ({ id, rank, saved: false }), 'r');
+    expect(hits).toMatchObject([{ id: 'r', passages: [{ text: 'Asampajāno.', under: 'Unaware.' }] }]);
+  });
 });
 
 describe('passagesOf', () => {
   const passages = (i: ReturnType<typeof index>, query: string) =>
-    passagesOf(i, searchSuttaText(i, query).get('a')!, query);
+    passagesOf(i, 0, query, searchSuttaText(i, query).get('a'));
 
   it('gives each segment holding the query a passage, in reading order, counted past paragraph marks', () => {
     const Y = index([
@@ -383,8 +415,57 @@ describe('passagesOf', () => {
   });
 
   it('gives a Pali passage its English line underneath', () => {
-    const Y = index([{ uid: 'a', paras: one([['Extinguishment.', 'Nibbānaṁ.']]) }]);
-    expect(passages(Y, 'nibbana')).toMatchObject([{ text: 'Nibbānaṁ.', under: 'Extinguishment.' }]);
+    const Y = index([{ uid: 'a', paras: one([['The mind is radiant.', 'Pabhassaraṁ cittaṁ.']]) }]);
+    expect(passages(Y, 'pabhassara')).toMatchObject([{ text: 'Pabhassaraṁ cittaṁ.', under: 'The mind is radiant.' }]);
+  });
+
+  it('finds what the expansion table adds, in the English the reader reads', () => {
+    const Y = index([{ uid: 'a', paras: [[['Extinguishment.', 'Nibbānaṁ.']], [['Peace.', 'Nibbānaṁ santaṁ.']]] }]);
+    expect(passages(Y, 'nibbana').map((p) => [p.text, p.under])).toEqual([
+      ['Extinguishment.', undefined],
+      ['Nibbānaṁ santaṁ.', 'Peace.'],
+    ]);
+  });
+
+  it('finds the query inside a longer word, as find-in-page does, and marks it there', () => {
+    const Y = index([
+      {
+        uid: 'a',
+        paras: [
+          [['Aware.', 'Sampajāno.']],
+          [['Unaware.', 'Asampajāno.']],
+          [['With awareness.', 'Satisampajaññena.']],
+        ],
+      },
+    ]);
+    const found = passages(Y, 'sampajan');
+    expect(found.map((p) => p.segments)).toEqual([[0, 0], [1, 1], [2, 2]]);
+    expect(found.map((p) => marked(p.text, p.marks))).toEqual([['Sampajān'], ['sampajān'], ['sampajañ']]);
+    // Where nothing opens a word with it, the search of the whole text finds nothing to fall back on.
+    const inside = index([{ uid: 'a', paras: one([['With awareness.', 'Satisampajaññena.']]) }]);
+    expect(searchSuttaText(inside, 'sampajan').has('a')).toBe(false);
+    expect(passages(inside, 'sampajan')).toHaveLength(1);
+  });
+
+  it('marks a plural ending only where it finishes the word', () => {
+    const Y = index([{ uid: 'a', paras: one([['Sadness, the noble truths, and classes.', 'p']]) }]);
+    const marks = (query: string) => passages(Y, query).flatMap((p) => marked(p.text, p.marks));
+    expect(marks('dn')).toEqual(['dn']);
+    expect(marks('truth')).toEqual(['truths']);
+    expect(marks('class')).toEqual(['classes']);
+  });
+
+  it('shows a segment in English where its English holds the query, else in Pali', () => {
+    const Y = index([
+      {
+        uid: 'a',
+        paras: [[['The Buddha spoke.', 'Buddho avoca.']], [['So it was said.', 'Buddhena vuttaṁ.']]],
+      },
+    ]);
+    expect(passages(Y, 'buddh').map((p) => [p.text, p.under])).toEqual([
+      ['The Buddha spoke.', undefined],
+      ['Buddhena vuttaṁ.', 'So it was said.'],
+    ]);
   });
 
   it('stops one past the cap', () => {

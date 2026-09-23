@@ -9,7 +9,7 @@
 // The query is folded by searchKey and the folding is inverted per character when the expression
 // is built, so a typed ASCII letter matches its Pali forms against the **unfolded** text — one copy
 // in memory, and exact offsets. English matches whole words with an optional plural; Pali matches
-// a prefix, because it inflects at the end.
+// a prefix, because it inflects at the end. The sutta being read matches either anywhere.
 //
 // Text hits extend searchCorpus's bucket ladder rather than replacing it: buckets 0–3 stay the
 // metadata behaviour, 4–6 are the text. Nothing here is required for search to work — until the
@@ -27,7 +27,7 @@ import {
   type SearchHit,
 } from './metadata';
 import { expandQuery } from './expansion';
-import { matchRuns } from './match';
+import { matchRuns, type Mark } from './match';
 import { boldRuns } from '../noteFormat';
 import type { Corpus, HighlightsMap, ListDef } from '../types';
 
@@ -131,6 +131,45 @@ function paliPhraseRe(words: string[]): RegExp {
   return new RegExp(`${stems.map(bodyPattern).join('\\s+')}${tail}`, 'giu');
 }
 
+// englishAnywhere returns the pattern for an English word found anywhere: the word as typed, or the
+// singular of a typed plural, with a plural ending only where it finishes the word.
+function englishAnywhere(word: string): string {
+  const forms = [...new Set([word, englishStem(word)])];
+  return `(?:${forms.map((form) => `${bodyPattern(form)}(?:(?:s|es)${AFTER})?`).join('|')})`;
+}
+
+// anywhereRe returns a pattern finding `words` anywhere, even inside a longer word, as the sutta
+// being read is searched — see docs/search.md's "The sutta being read". Several words are a phrase.
+function anywhereRe(words: string[], lang: 'en' | 'pa'): RegExp {
+  const body = (word: string) => (lang === 'en' ? englishAnywhere(word) : bodyPattern(paliStem(word)));
+  return new RegExp(words.map(body).join('\\s+'), 'giu');
+}
+
+// patternsOf returns the patterns that find `query` in one language's text, by word or `anywhere`:
+//   each content word, alone
+//   the phrase as typed, function words and all, for more than one word
+//   the content words run together as one compound, in Pali searched by word
+function patternsOf(query: string, lang: 'en' | 'pa', anywhere: boolean): RegExp[] {
+  const words = query.split(/\s+/);
+  const content = contentWords(words);
+  const phrase = words.length > 1 ? [words] : [];
+  if (anywhere) return [...content.map((word) => [word]), ...phrase].map((ws) => anywhereRe(ws, lang));
+  if (lang === 'en') return [...content.map(englishWordRe), ...phrase.map(englishPhraseRe)];
+  const compound = content.length > 1 ? [paliWordRe(content.join(''))] : [];
+  return [...content.map(paliWordRe), ...phrase.map(paliPhraseRe), ...compound];
+}
+
+// marksOf returns every stretch of `text` that one of `queries` matches, by word or `anywhere`.
+function marksOf(text: string, queries: string[], lang: 'en' | 'pa', anywhere: boolean): Mark[] {
+  const marks: Mark[] = [];
+  for (const query of queries) {
+    for (const re of patternsOf(query, lang, anywhere)) {
+      eachMatch(text, re, anywhere, (start, end) => marks.push([start, end]));
+    }
+  }
+  return marks;
+}
+
 // ── The blobs ───────────────────────────────────────────────────────────────
 
 export interface TextIndex {
@@ -226,23 +265,34 @@ function offsetsCached(text: string, re: RegExp, lang: string, cache: ScanCache 
   return offsets;
 }
 
-// Where `re` matches in `text` at the start of a word. Every search pattern is run through here,
-// since the patterns leave the start boundary to startsWord.
+// offsetsOf returns where `re` matches in `text` at the start of a word.
 function offsetsOf(text: string, re: RegExp): number[] {
-  re.lastIndex = 0;
   const out: number[] = [];
+  eachMatch(text, re, false, (start) => out.push(start));
+  return out;
+}
+
+// eachMatch calls `found` with the start and end of every match of `re` in `text` that opens a word,
+// or of every match where `anywhere`. Every search pattern is run through here, since the patterns
+// leave the start boundary to startsWord.
+function eachMatch(
+  text: string,
+  re: RegExp,
+  anywhere: boolean,
+  found: (start: number, end: number) => void
+): void {
+  re.lastIndex = 0;
   let m: RegExpExecArray | null;
   while ((m = re.exec(text)) !== null) {
     // A match inside a word resumes one character on rather than past its end, so a word opening
     // within it is still found.
-    if (!startsWord(text, m.index)) {
+    if (!anywhere && !startsWord(text, m.index)) {
       re.lastIndex = m.index + 1;
       continue;
     }
-    out.push(m.index);
+    found(m.index, m.index + m[0].length);
     if (m[0].length === 0) re.lastIndex += 1;
   }
-  return out;
 }
 
 interface LangScore {
@@ -421,10 +471,12 @@ function better(next: TextScore, prev: TextScore | undefined): boolean {
 // answered by the Pali.
 export interface Snippet {
   text: string;
-  under?: string;
-  // The words to mark in the two lines: what the reader typed, and the query that found the row
+  // What the search matched in `text`: what the reader typed, and the query that found the row
   // where the expansion table is what found it.
-  query: string;
+  marks: Mark[];
+  under?: string;
+  // The same, in `under`.
+  underMarks?: Mark[];
   // The first and last segment this line was drawn from, indexing the array in text/{uid}.json —
   // what the reader opens at, and washes, when the row is clicked.
   segments: [number, number];
@@ -532,15 +584,15 @@ function noteStart(text: string, at: number): number {
 // Pali with that paragraph's English beneath it.
 //
 // `typed` is the reader's own query, which is not `score.query` where an expansion is what found
-// the row: the Pali line is windowed and marked on the query that found it, the English line on
-// what was typed.
+// the row: the Pali line is windowed on the query that found it, the English line on what was
+// typed, and both are marked with the two.
 export function snippetOf(index: TextIndex, score: TextScore, typed: string): Snippet | null {
   const pali = score.lang === 'pa';
   const blob = pali ? index.pa : index.en;
   const paras = pali ? index.paParas : index.enParas;
   const para = paragraphAt(blob, paras, score.para);
   if (!para.text.trim()) return null;
-  const query = score.query === typed ? typed : `${typed} ${score.query}`;
+  const queries = score.query === typed ? [typed] : [typed, score.query];
 
   const at = Math.max(0, firstMatch(para.text, score.query, score.lang));
   const window = windowAround(para.text, at);
@@ -549,52 +601,83 @@ export function snippetOf(index: TextIndex, score: TextScore, typed: string): Sn
   // `end` is exclusive, so the last segment is the one holding the character before it.
   const segments: [number, number] = [segmentOf(window.start), segmentOf(Math.max(window.start, window.end - 1))];
   const text = window.text;
-  if (!pali) return { text, query, segments };
+  const marks = marksOf(text, queries, score.lang, false);
+  if (!pali) return { text, marks, segments };
 
   const english = paragraphAt(index.en, index.enParas, score.para);
-  if (!english.text.trim()) return { text, query, segments };
+  if (!english.text.trim()) return { text, marks, segments };
   const enAt = firstMatch(english.text, typed, 'en');
-  const under = windowAround(english.text, Math.max(0, enAt >= 0 ? enAt : firstMatch(english.text, score.query, 'en')));
-  return { text, under: under.text, query, segments };
+  const under = windowAround(english.text, Math.max(0, enAt >= 0 ? enAt : firstMatch(english.text, score.query, 'en'))).text;
+  return { text, marks, under, underMarks: marksOf(under, queries, 'en', false), segments };
 }
 
-// passagesOf returns a snippet for every segment of the sutta `score` was found in that holds all of
-// the query's words, in reading order: its paragraph windowed on the match, opening at that segment.
-// It stops one past SEARCH_RESULTS_CAP, which is enough to say there are more. Where no one segment
-// holds every word, it returns the one snippet snippetOf cuts.
-export function passagesOf(index: TextIndex, score: TextScore, typed: string): Snippet[] {
-  const pali = score.lang === 'pa';
-  const blob = pali ? index.pa : index.en;
-  const paras = pali ? index.paParas : index.enParas;
-  const starts = pali ? index.paStarts : index.enStarts;
-  const end = score.doc + 1 < starts.length ? starts[score.doc + 1] : blob.length;
-  // The sutta's English, line for line with the Pali, for a Pali hit's line underneath.
-  const enEnd = score.doc + 1 < index.enStarts.length ? index.enStarts[score.doc + 1] : index.en.length;
-  const enLines = pali ? index.en.slice(index.enStarts[score.doc], enEnd).split('\n') : [];
-  const wordRes = contentWords(score.query.split(/\s+/)).map(pali ? paliWordRe : englishWordRe);
-  const query = score.query === typed ? typed : `${typed} ${score.query}`;
-  const out: Snippet[] = [];
-  let para = null as { p: number; text: string; start: number } | null;
-  let seg = 0;
-  for (let at = starts[score.doc], line = 0; at < end && out.length <= SEARCH_RESULTS_CAP; line += 1) {
+// suttaLines returns the lines of sutta `doc` in one blob, each with its offset there, the paragraph
+// marks included, which fall on the same lines in both blobs.
+function suttaLines(blob: string, starts: number[], doc: number): Array<{ text: string; at: number }> {
+  const end = doc + 1 < starts.length ? starts[doc + 1] : blob.length;
+  const out: Array<{ text: string; at: number }> = [];
+  for (let at = starts[doc]; at < end; ) {
     const next = blob.indexOf('\n', at);
     const lineEnd = next === -1 || next > end ? end : next;
-    const text = blob.slice(at, lineEnd);
-    if (text !== PARA_MARK) {
-      if (wordRes.every((re) => offsetsOf(text, re).length > 0)) {
-        const p = slotOf(paras, at);
-        if (para?.p !== p) para = { p, ...paragraphAt(blob, paras, p) };
-        const window = windowAround(para.text, at - para.start + Math.max(0, firstMatch(text, score.query, score.lang)));
-        const under = enLines[line]?.trim();
-        const segments: [number, number] = [seg, seg];
-        out.push(under ? { text: window.text, under, query, segments } : { text: window.text, query, segments });
-      }
-      seg += 1;
-    }
+    out.push({ text: blob.slice(at, lineEnd), at });
     at = lineEnd + 1;
   }
+  return out;
+}
+
+// passagesOf returns a snippet for every segment of sutta `doc` holding each content word of
+// `typed`, or of a query the expansion table adds for it, anywhere (anywhereRe), in reading order:
+// its paragraph windowed on the match, in English where the English holds them, else in Pali over
+// its English. It stops one past SEARCH_RESULTS_CAP, which is enough to say there are more. Where no
+// one segment holds every word, it returns the snippet snippetOf cuts for `score`, if there is one.
+export function passagesOf(index: TextIndex, doc: number, typed: string, score?: TextScore): Snippet[] {
+  const queries = [typed, ...expandQuery(typed)].map((q) => searchKey(q.trim()));
+  // Each language's lines, English first, and each query's content words as patterns in it.
+  const sides = [
+    { lang: 'en' as const, blob: index.en, starts: index.enStarts, paras: index.enParas },
+    { lang: 'pa' as const, blob: index.pa, starts: index.paStarts, paras: index.paParas },
+  ].map((side) => ({
+    ...side,
+    lines: suttaLines(side.blob, side.starts, doc),
+    wanted: queries.map((query) => ({
+      query,
+      res: contentWords(query.split(/\s+/)).map((word) => anywhereRe([word], side.lang)),
+    })),
+  }));
+  const english = sides[0].lines;
+  const holds = (text: string, re: RegExp) => {
+    re.lastIndex = 0;
+    return re.test(text);
+  };
+  // Paragraphs run together so far, by language and number.
+  const paragraphs = new Map<string, { text: string; start: number }>();
+  const out: Snippet[] = [];
+  let seg = 0;
+  for (let line = 0; line < english.length && out.length <= SEARCH_RESULTS_CAP; line += 1) {
+    if (english[line].text === PARA_MARK) continue;
+    for (const { lang, blob, paras, lines, wanted } of sides) {
+      const { text, at } = lines[line];
+      const found = wanted.find(({ res }) => res.every((re) => holds(text, re)));
+      if (!found) continue;
+      const p = slotOf(paras, at);
+      let para = paragraphs.get(`${lang}${p}`);
+      if (!para) paragraphs.set(`${lang}${p}`, (para = paragraphAt(blob, paras, p)));
+      const first = Math.min(...marksOf(text, [found.query], lang, true).map(([start]) => start));
+      const window = windowAround(para.text, at - para.start + first);
+      const queriesMarked = found.query === typed ? [typed] : [typed, found.query];
+      const passage: Snippet = {
+        text: window.text,
+        marks: marksOf(window.text, queriesMarked, lang, true),
+        segments: [seg, seg],
+      };
+      const under = lang === 'pa' ? english[line].text.trim() : '';
+      out.push(under ? { ...passage, under, underMarks: marksOf(under, queriesMarked, 'en', true) } : passage);
+      break;
+    }
+    seg += 1;
+  }
   if (out.length) return out;
-  const one = snippetOf(index, score, typed);
+  const one = score && snippetOf(index, score, typed);
   return one ? [one] : [];
 }
 
@@ -708,9 +791,18 @@ export function mergeSearchHits<T extends RankedHit>(
       const snippet = score && snippetOf(index, score, typed);
       if (snippet) hit.snippet = snippet;
     }
-    const reading = hits.find((hit) => hit.id === readingId);
-    const score = reading && text.get(reading.id);
-    if (reading && score) reading.passages = passagesOf(index, score, typed);
+  }
+  if (index && readingId) {
+    const doc = index.uids.indexOf(readingId);
+    const passages = doc < 0 ? [] : passagesOf(index, doc, typed, text.get(readingId));
+    // The sutta being read, searched on its own: a hit only that search found joins the end.
+    const reading = passages.length
+      ? (hits.find((hit) => hit.id === readingId) ?? make(readingId, RANK_TEXT_ANYWHERE))
+      : null;
+    if (reading) {
+      reading.passages = passages;
+      if (!hits.includes(reading)) hits.push(reading);
+    }
   }
   return hits;
 }
