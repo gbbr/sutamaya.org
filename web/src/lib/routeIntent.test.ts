@@ -50,6 +50,16 @@ describe('routeIntent', () => {
     expect(consumeIntent(second, KEY)).toBeNull();
   });
 
+  it('keeps an earlier intent consumed after a later one, so Back to its entry replays nothing', () => {
+    const first = tagIntent({ fromView: 'tree' as const });
+    const second = tagIntent({ fromView: 'list' as const });
+    expect(consumeIntent(first, KEY)).toEqual(first);
+    expect(consumeIntent(second, KEY)).toEqual(second);
+    // Back to the first entry, then Forward to the second.
+    expect(consumeIntent(first, KEY)).toBeNull();
+    expect(consumeIntent(second, KEY)).toBeNull();
+  });
+
   it('keeps separate storage keys independent', () => {
     const state = tagIntent({ fromView: 'tree' as const });
     expect(consumeIntent(state, 'test.routeIntent.a')).toEqual(state);

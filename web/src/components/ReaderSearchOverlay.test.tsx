@@ -82,7 +82,12 @@ function Harness({
 // passage returns a passage of dn1 holding "divine", at segment `n`.
 function passage(n: number) {
   const marks: Array<[number, number]> = [[4, 10]];
-  return { text: `the divine net, passage ${n}`, marks, segments: [n, n] as [number, number] };
+  return {
+    text: `the divine net, passage ${n}`,
+    marks,
+    segments: [n, n] as [number, number],
+    markedBy: { queries: ['divine'], anywhere: true },
+  };
 }
 
 beforeEach(() => {

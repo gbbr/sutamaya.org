@@ -1,15 +1,31 @@
-import { memo, useMemo, type CSSProperties } from 'react';
+import { Fragment, memo, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { uidHolds, type SegmentFile, type SegmentRole } from '../lib/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
 import { highlightPaint } from '../lib/theme';
 import { expandHighlights, paintSegmentRanges, type SegmentRange } from '../lib/highlights';
 import { WORD_BOUNDARY, isWordBoundary } from '../lib/dictionary';
+import { runsOf, type Mark } from '../lib/search/match';
+import { getUiScale } from '../lib/uiPrefs';
 
 interface Part {
   text: string;
+  // Where the part begins in the segment's English.
+  start: number;
   c?: string;
   id?: string;
 }
+
+// The stretches of a segment's lines an arriving search hit marks, as offsets into its English and
+// its Pali.
+export interface SegmentMarks {
+  en: Mark[];
+  pa: Mark[];
+}
+
+const NO_MARKS: Mark[] = [];
+
+// The wash's strength, as a share of the theme's paliTint.
+const WASH_OPACITY = 0.4;
 
 /** Returns the paragraph a segment key belongs to — its uid plus the digits before the first dot. */
 function paragraphOf(key: string): string {
@@ -56,12 +72,55 @@ function buildParts(text: string, rangesForSeg: SegmentRange[]): Part[] {
   const parts: Part[] = [];
   let cur = 0;
   for (const { s, e, src } of paintSegmentRanges(rangesForSeg)) {
-    if (s > cur) parts.push({ text: text.slice(cur, s) });
-    parts.push({ text: text.slice(s, e), c: src.c, id: src.id });
+    if (s > cur) parts.push({ text: text.slice(cur, s), start: cur });
+    parts.push({ text: text.slice(s, e), start: s, c: src.c, id: src.id });
     cur = e;
   }
-  if (cur < text.length) parts.push({ text: text.slice(cur) });
+  if (cur < text.length) parts.push({ text: text.slice(cur), start: cur });
   return parts;
+}
+
+/** Returns `marks` merged as a search result row merges them (runsOf), as offsets into `line`. */
+function mergedMarks(line: string, marks: Mark[]): Mark[] {
+  if (!marks.length) return NO_MARKS;
+  const merged: Mark[] = [];
+  let at = 0;
+  for (const run of runsOf(line, marks)) {
+    if (run.hit) merged.push([at, at + run.text.length]);
+    at += run.text.length;
+  }
+  return merged;
+}
+
+/**
+ * Returns `text`, the slice of a line from offset `from`, with the stretches of `marks` inside it
+ * filled with `fill`, as search results mark the words they were found by.
+ */
+function marked(text: string, from: number, marks: Mark[], fill: string): ReactNode {
+  const inside = marks
+    .map(([start, end]): Mark => [Math.max(start, from) - from, Math.min(end, from + text.length) - from])
+    .filter(([start, end]) => start < end);
+  if (!inside.length) return text;
+  return runsOf(text, inside).map((run, k) =>
+    run.hit ? (
+      <mark key={k} style={{ color: 'inherit', background: fill }}>
+        {run.text}
+      </mark>
+    ) : (
+      <Fragment key={k}>{run.text}</Fragment>
+    )
+  );
+}
+
+// Black mixed into a stored pastel highlight under a search mark, in percent.
+const MARK_SHADE_PASTEL = 15;
+// Black mixed into a theme's own highlight fill under a search mark, in percent.
+const MARK_SHADE_FILL = 30;
+
+/** Returns the fill of a search mark inside a highlight painted `paint`: that paint a shade darker. */
+function markOnHighlight(paint: string, theme: ThemeColors): string {
+  const shade = theme.highlightPalette ? MARK_SHADE_FILL : MARK_SHADE_PASTEL;
+  return `color-mix(in srgb, ${paint}, black ${shade}%)`;
 }
 
 // Makes a whole Pali line unselectable, as `.pw` (index.css) does for its words.
@@ -76,13 +135,19 @@ function paliWordSpans(
   pali: string,
   segIndex: number,
   activeWordIndex: number | null,
+  // What an arriving search hit marks in the line, as offsets into `pali`.
+  marks: Mark[],
   theme: ThemeColors,
   onWordClick: (word: string, segIndex: number, wordIndex: number) => void
 ) {
   let wordIndex = -1;
+  // Where the next token starts in `pali`.
+  let at = 0;
   // Words and the whitespace or dashes between them; boundaries render as inert spans.
   return pali.split(WORD_BOUNDARY).map((t, j) => {
-    if (isWordBoundary(t)) return <span key={j}>{t}</span>;
+    const from = at;
+    at += t.length;
+    if (isWordBoundary(t)) return <span key={j}>{marked(t, from, marks, theme.selection)}</span>;
     const w = ++wordIndex;
     const isActive = w === activeWordIndex;
     return (
@@ -98,7 +163,7 @@ function paliWordSpans(
           onWordClick(t, segIndex, w);
         }}
       >
-        {t}
+        {marked(t, from, marks, theme.selection)}
       </span>
     );
   });
@@ -120,9 +185,8 @@ interface SegmentRowProps {
   afterHeading: boolean;
   // Whether this segment belongs to the inner sutta a link pointed at within a batched document.
   focused: boolean;
-  // Whether this segment is part of the passage an arriving search hit was drawn from, washed
-  // until it fades.
-  flash: boolean;
+  // What an arriving search hit marks in this segment's lines.
+  marks?: SegmentMarks;
   theme: ThemeColors;
   fontSize: number;
   lineHeight: number;
@@ -157,7 +221,7 @@ const SegmentRow = memo(function SegmentRow({
   above,
   listIndex,
   focused,
-  flash,
+  marks,
   theme,
   fontSize,
   lineHeight,
@@ -175,6 +239,8 @@ const SegmentRow = memo(function SegmentRow({
   activeWordIndex,
 }: SegmentRowProps) {
   const parts = buildParts(seg.en, rangesForSeg);
+  const enMarks = marks ? mergedMarks(seg.en, marks.en) : NO_MARKS;
+  const paMarks = marks ? mergedMarks(seg.pali, marks.pa) : NO_MARKS;
   // The element a segment renders as: <h2>–<h5> for a sub-heading, <p> for everything else.
   const HeadingTag: 'h2' | 'h3' | 'h4' | 'h5' | 'p' =
     seg.role === 'heading' ? (`h${seg.headingLevel ?? 2}` as 'h2' | 'h3' | 'h4' | 'h5') : 'p';
@@ -218,7 +284,7 @@ const SegmentRow = memo(function SegmentRow({
       }
     >
       {above && listMarker}
-      {paliWordSpans(seg.pali, i, activeWordIndex, theme, onWordClick)}
+      {paliWordSpans(seg.pali, i, activeWordIndex, paMarks, theme, onWordClick)}
     </p>
   );
   // True when a Pali line is actually rendered above the English, not merely requested.
@@ -229,10 +295,7 @@ const SegmentRow = memo(function SegmentRow({
       id={seg.key}
       style={{
         marginBottom: lastInParagraph ? paragraphGap : 0,
-        // The wash fades out when the flash ends; a segment that never flashes never animates.
-        transition: 'background-color 600ms ease-out',
         ...(focused ? { background: theme.focusTint } : null),
-        ...(flash ? { background: theme.paliTint } : null),
         ...(seg.role === 'verse' ? { paddingLeft: 14, borderLeft: `2px solid ${theme.rule}` } : null),
         // A speaker attribution following a verse keeps the verse's indent and rule.
         ...(seg.role === 'speaker' && afterVerse ? { paddingLeft: 28, borderLeft: `2px solid ${theme.rule}` } : null),
@@ -281,13 +344,14 @@ const SegmentRow = memo(function SegmentRow({
               }}
               onClick={(e) => {
                 e.stopPropagation();
-                onSpanClick(p.id!, (e.target as HTMLElement).getBoundingClientRect(), p.c!);
+                // The span's own box, not that of a search mark inside it that took the click.
+                onSpanClick(p.id!, e.currentTarget.getBoundingClientRect(), p.c!);
               }}
             >
-              {p.text}
+              {marked(p.text, p.start, enMarks, markOnHighlight(highlightPaint(p.c, theme), theme))}
             </span>
           ) : (
-            <span key={j}>{p.text}</span>
+            <span key={j}>{marked(p.text, p.start, enMarks, theme.selection)}</span>
           )
         )}
         {seg.note && showNotes && (
@@ -367,6 +431,8 @@ interface SegmentedTextProps {
   // The first and last segment an arriving search hit's snippet was drawn from, washed while the
   // reader lands on them.
   flashRange?: [number, number];
+  // What an arriving search hit marks, by segment index.
+  marks?: Map<number, SegmentMarks>;
 }
 
 const EMPTY_RANGES: SegmentRange[] = [];
@@ -392,6 +458,7 @@ function SegmentedTextInner({
   activeWord,
   focusUid,
   flashRange,
+  marks,
 }: SegmentedTextProps) {
   // One line box at the current size and leading; every gap below is a fraction of it.
   const line = (fontSize * lineHeight) / 100;
@@ -406,11 +473,63 @@ function SegmentedTextInner({
   // Every highlight's stored span resolved into the ranges falling in each segment, by segment
   // index — see lib/highlights.ts's highlightRanges.
   const rangesBySeg = useMemo(() => expandHighlights(highlights, segments), [highlights, segments]);
+  const rootRef = useRef<HTMLDivElement>(null);
+  // Where the wash sits, from the top of the passage's first segment to the bottom of its last, in
+  // the root's pre-zoom units. Kept once the flash ends, so the wash fades out where it was.
+  const [wash, setWash] = useState<{ top: number; height: number }>();
+  useLayoutEffect(() => {
+    const root = rootRef.current;
+    if (!flashRange || !root) return;
+    // Measured by the segments' wrappers, the Pali and English lines together, as scrollToSegment
+    // measures them.
+    const measure = () => {
+      const first = root.querySelector(`[data-seg="${flashRange[0]}"]`)?.parentElement;
+      const last = root.querySelector(`[data-seg="${flashRange[1]}"]`)?.parentElement;
+      if (!first || !last) {
+        setWash(undefined);
+        return;
+      }
+      const scale = getUiScale();
+      const firstTop = first.getBoundingClientRect().top;
+      const top = (firstTop - root.getBoundingClientRect().top) / scale;
+      const height = (last.getBoundingClientRect().bottom - firstTop) / scale;
+      setWash((w) => (w && w.top === top && w.height === height ? w : { top, height }));
+    };
+    measure();
+    // Measured again as the text reflows, as it does when the Pali an arrival opens appears.
+    const observer = new ResizeObserver(measure);
+    observer.observe(root);
+    return () => observer.disconnect();
+  }, [flashRange]);
   // A list item's ordinal within its run of consecutive list-item segments, reset to 0 by any
   // other segment so a later list restarts at 1.
   let runningListIndex = 0;
   return (
-    <div data-component="SegmentedText" data-segroot>
+    // Positioned and isolated for the wash, which sits under the text within it.
+    <div ref={rootRef} data-component="SegmentedText" data-segroot style={{ position: 'relative', isolation: 'isolate' }}>
+      {wash && (
+        <div
+          aria-hidden
+          data-wash
+          style={{
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            top: wash.top,
+            height: wash.height,
+            zIndex: -1,
+            pointerEvents: 'none',
+            background: theme.paliTint,
+            // Full width: a spread shadow out to the reading pane's edges, which clip it, cut back to
+            // the band's own height so it covers the gaps between segments and nothing beyond.
+            boxShadow: `0 0 0 100vmax ${theme.paliTint}`,
+            clipPath: 'inset(0 -100vmax)',
+            opacity: flashRange ? WASH_OPACITY : 0,
+            // Fades out when the flash ends; appears at once when one starts.
+            transition: flashRange ? undefined : 'opacity 600ms ease-out',
+          }}
+        />
+      )}
       {segments.map((seg, i) => {
         // A paragraph break: the next segment's paragraph number differs, or there is none.
         const next = segments[i + 1];
@@ -429,7 +548,7 @@ function SegmentedTextInner({
             above={allPali && paliAbove}
             listIndex={seg.role === 'list-item' ? runningListIndex : undefined}
             focused={!!focusUid && uidHolds(seg.key.split(':')[0], focusUid)}
-            flash={!!flashRange && i >= flashRange[0] && i <= flashRange[1]}
+            marks={marks?.get(i)}
             theme={theme}
             fontSize={fontSize}
             lineHeight={lineHeight}

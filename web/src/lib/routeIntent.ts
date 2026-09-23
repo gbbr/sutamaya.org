@@ -1,8 +1,11 @@
 // One-shot "do this on arrival" values carried in router `location.state`, which survives a
-// same-tab refresh and would otherwise resurrect a stale value over whatever the reader has done
-// since. Each is stamped with a fresh id and handed back exactly once, the last-consumed id living
-// in sessionStorage — which survives a refresh but starts empty in a new tab.
+// same-tab refresh, Back and Forward, and would otherwise resurrect a stale value over whatever the
+// reader has done since. Each is stamped with a fresh id and handed back exactly once, the consumed
+// ids living in sessionStorage — which survives a refresh but starts empty in a new tab.
 import { randomId } from './ids';
+
+// How many consumed ids each storage key keeps, the oldest dropped first.
+const CONSUMED_KEPT = 100;
 
 export interface RouteIntent {
   navId: string;
@@ -19,8 +22,10 @@ export function tagIntent<T extends object>(state: T): T & RouteIntent {
 export function consumeIntent<T extends RouteIntent>(state: T | null | undefined, storageKey: string): T | null {
   if (!state?.navId) return null;
   try {
-    if (sessionStorage.getItem(storageKey) === state.navId) return null;
-    sessionStorage.setItem(storageKey, state.navId);
+    // Space-separated, oldest first.
+    const consumed = sessionStorage.getItem(storageKey)?.split(' ') ?? [];
+    if (consumed.includes(state.navId)) return null;
+    sessionStorage.setItem(storageKey, [...consumed, state.navId].slice(-CONSUMED_KEPT).join(' '));
   } catch {
     // sessionStorage unavailable: treat the intent as fresh rather than losing it.
   }

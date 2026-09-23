@@ -29,7 +29,8 @@ import { getReaderPanelTab, setReaderPanelTab, type ReaderPanelTab } from '../li
 import { platformName } from '../lib/platform';
 import { canShareLink, shareLink, shareUrl } from '../lib/share';
 import type { SearchHit } from '../lib/search/metadata';
-import { SegmentedText } from '../components/SegmentedText';
+import { marksOf, type MarkedBy } from '../lib/search/text';
+import { SegmentedText, type SegmentMarks } from '../components/SegmentedText';
 import { HighlightPopup } from '../components/HighlightPopup';
 import { HighlightGutter } from '../components/HighlightGutter';
 import { DictionaryDock } from '../components/DictionaryDock';
@@ -65,9 +66,9 @@ const searchRunLabel = (query: string) => `Results for: “${query}”`;
 // segments don't re-render.
 const NO_HIGHLIGHTS: Highlight[] = [];
 
-// Where a search hit lands the reader: the segments its snippet was drawn from, and those whose Pali
-// it matched.
-type SearchArrival = { segments?: [number, number]; paliSegments?: number[] };
+// Where a search hit lands the reader: the segments its snippet was drawn from, those whose Pali it
+// matched, and what its words were marked by.
+type SearchArrival = { segments?: [number, number]; paliSegments?: number[]; markedBy?: MarkedBy };
 
 // How long the text may take before the reader says it is loading. A shorter wait than this reads
 // as a stutter rather than as progress, and a sutta prefetched on the press that opened it
@@ -116,19 +117,26 @@ export function ReaderPage() {
   const readerLocationState = location?.state as
     | { from?: string; fromView?: 'tree' | 'list'; searchIds?: string[]; backTo?: string }
     | undefined;
-  // The segments a search hit's snippet was drawn from, and those whose Pali it matched, sampled
-  // once per navigation rather than once per mount: this page never unmounts between suttas, so a
-  // value held for its lifetime would fire again on every later one and leave a new jump no way
-  // in. consumeIntent hands a navId back a single time, which is what keeps a same-tab refresh
-  // from jumping twice; a Prev/Next step carries no intent at all and so clears this.
+  // The segments a search hit's snippet was drawn from, those whose Pali it matched and what its
+  // words were marked by, sampled once per navigation rather than once per mount: this page never
+  // unmounts between suttas, so a value held for its lifetime would fire again on every later one
+  // and leave a new jump no way in. consumeIntent hands a navId back a single time, which is what
+  // keeps a same-tab refresh from jumping twice; a Prev/Next step carries no intent at all and so
+  // clears this.
   const arrivalState = location?.state as (SearchArrival & RouteIntent) | null | undefined;
   const arrivalRef = useRef<SearchArrival & { navId?: string }>({});
   if (arrivalRef.current.navId !== arrivalState?.navId) {
     const intent = consumeIntent(arrivalState, READER_INTENT_KEY);
-    arrivalRef.current = { navId: arrivalState?.navId, segments: intent?.segments, paliSegments: intent?.paliSegments };
+    arrivalRef.current = {
+      navId: arrivalState?.navId,
+      segments: intent?.segments,
+      paliSegments: intent?.paliSegments,
+      markedBy: intent?.markedBy,
+    };
   }
   const searchSegments = arrivalRef.current.segments;
   const searchPali = arrivalRef.current.paliSegments;
+  const searchMarkedBy = arrivalRef.current.markedBy;
   const { from, fromView, searchIds, backTo, turnTo, jumpTo, goBack, closeToOrigin, leaveReader } =
     useReaderOrigin(readerLocationState);
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
@@ -249,18 +257,26 @@ export function ReaderPage() {
     return () => window.clearTimeout(timer);
   }, [suttaId, sutta, markVisited]);
 
-  // Scrolls to the requested inner sutta's first segment, a frame after the batch's text loads.
+  // The text on screen as of the last commit, which tells a sutta just arrived from one already open.
+  const shownSegmentsRef = useRef<typeof segments>(null);
+
+  // Scrolls to the requested inner sutta's first segment, a frame after the batch's text loads: at
+  // once on a batch just arrived, gliding within one already open.
   useEffect(() => {
     if (!requestedSubUid || !segments) return;
     const idx = segments.findIndex((s) => uidHolds(s.key.split(':')[0], requestedSubUid));
     if (idx === -1) return;
-    requestAnimationFrame(() => scrollToSegment(idx, 'start'));
+    const behavior = segments === shownSegmentsRef.current ? 'smooth' : 'instant';
+    requestAnimationFrame(() => scrollToSegment(idx, 'start', undefined, behavior));
   }, [requestedSubUid, segments, scrollToSegment]);
 
   // Whether the passage the reader arrived on is still washed.
   const [flashing, setFlashing] = useState(false);
-  // The segment a search hit lands the reader on, scrolled to once the Pali it opens is showing.
-  const [landing, setLanding] = useState<{ seg: number }>();
+  // Whether the words a search hit was found by are still marked.
+  const [marking, setMarking] = useState(false);
+  // The segment a search hit lands the reader on, scrolled to once the Pali it opens is showing: at
+  // once on a sutta just arrived, gliding within one already open.
+  const [landing, setLanding] = useState<{ seg: number; behavior: 'smooth' | 'instant' }>();
 
   // The segments the wash covers, clamped to the text that has loaded. Derived rather than held, so
   // it leaves with the arrival it belongs to in that same render: a Prev/Next step lands on text
@@ -271,25 +287,67 @@ export function ReaderPage() {
     return first >= segments.length ? undefined : [first, Math.min(last, segments.length - 1)];
   }, [flashing, searchSegments, requestedSubUid, segments]);
 
+  // The words a search hit was found by, marked in the passage it lands on as its row marked them:
+  // in each line's English, and in the Pali of the lines whose Pali it matched. Found in the lines
+  // as displayed, by segment index. Derived like flashRange, for the same reason.
+  const searchMarks = useMemo(() => {
+    if (!marking || !searchMarkedBy || !searchSegments || requestedSubUid || !segments) return undefined;
+    const { queries, anywhere } = searchMarkedBy;
+    const [first, last] = searchSegments;
+    const marks = new Map<number, SegmentMarks>();
+    for (let i = first; i <= Math.min(last, segments.length - 1); i += 1) {
+      const en = marksOf(segments[i].en, queries, 'en', anywhere);
+      const pa = searchPali?.includes(i) ? marksOf(segments[i].pali, queries, 'pa', anywhere) : [];
+      if (en.length || pa.length) marks.set(i, { en, pa });
+    }
+    return marks;
+  }, [marking, searchMarkedBy, searchSegments, searchPali, requestedSubUid, segments]);
+
   // Lands on the passage a search hit's snippet was drawn from, so the line the reader picked out of
   // the results is what they see: washes the whole of it for SEARCH_FLASH_MS so the eye finds it,
-  // and opens the Pali of the lines a hit in the Pali matched.
+  // marks the words it was found by, and opens the Pali of the lines a hit in the Pali matched.
   useEffect(() => {
     if (searchSegments === undefined || requestedSubUid || !segments) return;
     const [first] = searchSegments;
     if (first >= segments.length) return;
     if (searchPali) setOpenSegs((s) => ({ ...s, ...Object.fromEntries(searchPali.map((i) => [i, true])) }));
-    setLanding({ seg: first });
+    setLanding({ seg: first, behavior: segments === shownSegmentsRef.current ? 'smooth' : 'instant' });
     setFlashing(true);
+    setMarking(true);
     const timer = window.setTimeout(() => setFlashing(false), SEARCH_FLASH_MS);
     return () => window.clearTimeout(timer);
   }, [searchSegments, searchPali, requestedSubUid, segments]);
 
+  // Ends the marks on the reader's next click or tap, anywhere, as a found word stays marked in an
+  // e-reader until the page is touched: once that click has been handled, since ending them
+  // replaces the word it landed on, and not if the click lands the reader on new marks or finishes
+  // a selection, whose text ending them would replace too. Capture phase, so a control that stops
+  // the click still ends them, and the click that opened the hit, dispatched before this listens,
+  // never does.
+  useEffect(() => {
+    if (!searchMarks) return;
+    let timer: number | undefined;
+    const stop = () => {
+      if (String(window.getSelection())) return;
+      timer = window.setTimeout(() => setMarking(false));
+    };
+    window.addEventListener('click', stop, { capture: true });
+    return () => {
+      window.removeEventListener('click', stop, { capture: true });
+      window.clearTimeout(timer);
+    };
+  }, [searchMarks]);
+
   // Scrolls to the passage a search hit lands on. Centred rather than at the top: a snippet is a
   // fragment, and the passage around it is what makes it read as an answer.
   useEffect(() => {
-    if (landing) requestAnimationFrame(() => scrollToSegment(landing.seg, 'center'));
+    if (landing) requestAnimationFrame(() => scrollToSegment(landing.seg, 'center', undefined, landing.behavior));
   }, [landing, scrollToSegment]);
+
+  // Records the text on screen, after the effects above have compared it with the last commit's.
+  useEffect(() => {
+    shownSegmentsRef.current = segments;
+  }, [segments]);
 
   // The whole corpus in canonical browse order, which Prev/Next steps through across category
   // boundaries.
@@ -839,6 +897,7 @@ export function ReaderPage() {
               activeWord={activeWord}
               focusUid={requestedSubUid}
               flashRange={flashRange}
+              marks={searchMarks}
             />
           ) : textError ? (
             <div className="flex flex-col items-center gap-3 font-sans text-sm text-center" style={{ padding: '24px 0' }}>

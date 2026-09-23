@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render } from '@testing-library/react';
-import { SegmentedText } from './SegmentedText';
+import { SegmentedText, type SegmentMarks } from './SegmentedText';
 import type { SegmentFile } from '../lib/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
 
@@ -324,5 +324,42 @@ describe('SegmentedText — Pali above, for headings and list items', () => {
     expect(pali.style.paddingLeft).toBe('24px');
     expect(pali.querySelector('[data-seg-ignore]')?.textContent).toBe('1.');
     expect(container.querySelector('[data-seg] [data-seg-ignore]')).toBeNull();
+  });
+});
+
+describe('SegmentedText — the words an arriving search hit marks', () => {
+  const segments: SegmentFile[] = [{ key: 'dn1:1.1', pali: 'Tena kho pana samayena', en: 'At that time the wanderer spoke' }];
+
+  function markTexts(container: HTMLElement) {
+    return [...container.querySelectorAll('mark')].map((el) => el.textContent);
+  }
+
+  it('marks exactly the stretches it is given, in the English and the Pali', () => {
+    const marks = new Map<number, SegmentMarks>([[0, { en: [[8, 12]], pa: [[9, 13]] }]]);
+    const { container } = render(<SegmentedText {...baseProps(segments, { marks })} />);
+    expect(markTexts(container)).toEqual(['time', 'pana']);
+  });
+
+  it('keeps a Pali word marked in part one word for the dictionary', () => {
+    const onWordClick = vi.fn();
+    const marks = new Map<number, SegmentMarks>([[0, { en: [], pa: [[9, 11]] }]]);
+    const { container } = render(<SegmentedText {...baseProps(segments, { marks, onWordClick })} />);
+    expect(markTexts(container)).toEqual(['pa']);
+    container.querySelector('mark')!.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    expect(onWordClick).toHaveBeenCalledWith('pana', 0, 2);
+  });
+
+  it('marks inside a highlight in a shade of its colour, and a click still opens the highlight', () => {
+    const onSpanClick = vi.fn();
+    const highlight: Highlight = { id: 'h1', k0: 'dn1:1.1', o0: 13, k1: 'dn1:1.1', o1: 31, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' };
+    const marks = new Map<number, SegmentMarks>([[0, { en: [[8, 12], [17, 25]], pa: [] }]]);
+    const { container } = render(<SegmentedText {...baseProps(segments, { highlights: [highlight], marks, onSpanClick })} />);
+    const [plain, inHighlight] = container.querySelectorAll('mark');
+    expect([plain.textContent, inHighlight.textContent]).toEqual(['time', 'wanderer']);
+    expect(plain.closest('[data-hl-id]')).toBeNull();
+    expect(inHighlight.closest('[data-hl-id]')?.getAttribute('data-hl-id')).toBe('h1');
+    expect(inHighlight.style.background).toContain('color-mix');
+    inHighlight.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    expect(onSpanClick).toHaveBeenCalledWith('h1', expect.anything(), highlight.c);
   });
 });
