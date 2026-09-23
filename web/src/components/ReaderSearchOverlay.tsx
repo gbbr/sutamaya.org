@@ -26,6 +26,9 @@ const SAFE_AREA_BOTTOM = 'var(--safe-bottom)';
 // since here it sits on a panel over the reading itself and marks a cursor rather than a choice.
 const ROW_TINT = (tint: string) => `color-mix(in srgb, ${tint} 50%, transparent)`;
 
+// The colour of a description or a quoted passage: halfway between the body text and `dim`.
+const PROSE_COLOR = (theme: ThemeColors) => `color-mix(in srgb, ${theme.fg}, ${theme.dim})`;
+
 // Passages of the sutta being read shown before "more".
 const PASSAGES_SHOWN = 1;
 // Passages each "more" adds.
@@ -49,7 +52,7 @@ function SnippetQuote({ snippet, theme }: { snippet: Passage; theme: ThemeColors
   return (
     <span
       className="block font-serif text-ui-base leading-[1.45] mt-[3px] pl-[8px] border-l-2"
-      style={{ color: theme.dim, borderColor: theme.rule }}
+      style={{ color: PROSE_COLOR(theme), borderColor: theme.rule }}
     >
       {/* No `block` alongside a clamp: the clamp sets `display:-webkit-box` and
           Tailwind emits it before `.block`, so `block` would silently win. */}
@@ -295,7 +298,7 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
           ? 'fixed inset-0 z-50 flex flex-col animate-fadeIn'
           : 'fixed inset-0 z-50 flex justify-center animate-fadeIn'
       }
-      style={mobile ? { background: theme.panel } : { background: 'rgba(0,0,0,.35)', paddingTop: '12dvh' }}
+      style={mobile ? { background: theme.overlay ?? theme.panel } : { background: 'rgba(0,0,0,.35)', paddingTop: '12dvh' }}
       // No backdrop to tap on touch: the panel is the whole screen, and Cancel is the way out.
       onClick={mobile ? undefined : onClose}
     >
@@ -316,11 +319,11 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
         style={
           mobile
             ? {
-                background: theme.panel,
+                background: theme.overlay ?? theme.panel,
                 paddingTop: 'var(--safe-top)',
                 paddingBottom: SAFE_AREA_BOTTOM,
               }
-            : { background: theme.panel, maxWidth: 560, maxHeight: '70dvh' }
+            : { background: theme.overlay ?? theme.panel, maxWidth: 560, maxHeight: '70dvh' }
         }
         onClick={(e) => e.stopPropagation()}
       >
@@ -497,7 +500,7 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
                   </span>
                 )}
                 {showBlurb && (
-                  <span className="text-ui-base leading-[1.45] mt-[3px] italic" style={{ color: theme.dim }}>
+                  <span className="text-ui-base leading-[1.45] mt-[3px]" style={{ color: PROSE_COLOR(theme) }}>
                     <MatchedText text={h.sutta.blurb} query={lineQuery('blurb')} theme={theme} />
                   </span>
                 )}

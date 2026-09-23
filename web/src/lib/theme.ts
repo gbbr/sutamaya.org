@@ -19,6 +19,8 @@ export const READER_THEMES: Record<ResolvedTheme, ThemeColors> = {
     dim: 'rgba(237,230,217,.5)',
     rule: 'rgba(237,230,217,.18)',
     panel: '#332C24',
+    // As far below the page as `panel` sits above it.
+    overlay: '#211C18',
     pali: '#C9A86F',
     tint: 'rgba(237,230,217,.09)',
     paliTint: 'rgba(201,168,111,.15)',
