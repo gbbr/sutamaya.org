@@ -26,6 +26,7 @@ import type { Highlight } from '../lib/types';
 import { animateStep, cancelStepAnimations } from '../lib/motion';
 import { markSuttaOpened } from '../lib/pwaNudge';
 import { getReaderPanelTab, setReaderPanelTab, type ReaderPanelTab } from '../lib/readerPanelTab';
+import { keepOpenLines, keptOpenLines } from '../lib/openLines';
 import { platformName } from '../lib/platform';
 import { canShareLink, shareLink, shareUrl } from '../lib/share';
 import type { SearchHit } from '../lib/search/metadata';
@@ -175,6 +176,17 @@ export function ReaderPage() {
       skipRestore: !!requestedSubUid || searchSegments !== undefined,
     };
   }
+  // The sutta openSegs and openNotes belong to.
+  const [openLinesOf, setOpenLinesOf] = useState<string>();
+  // Swaps in a sutta's lines as it arrives: those left open on a return, none otherwise. In render,
+  // so a return's scroll offset is restored with them already open.
+  if (openLinesOf !== suttaId) {
+    setOpenLinesOf(suttaId);
+    const { restore, skipRestore } = restoreRef.current;
+    const kept = suttaId && restore === 'stored' && !skipRestore ? keptOpenLines(suttaId) : undefined;
+    setOpenSegs(kept?.pali ?? {});
+    setOpenNotes(kept?.notes ?? {});
+  }
   const {
     segments,
     error: textError,
@@ -228,12 +240,16 @@ export function ReaderPage() {
   }, []);
 
   useEffect(() => {
-    setOpenSegs({});
-    setOpenNotes({});
     // Clears a selection outliving the tap that opened this sutta, which would otherwise block the
     // first touch-scroll.
     window.getSelection()?.removeAllRanges();
   }, [suttaId]);
+
+  // Keeps the lines this sutta shows open, for a return to it: none of the Pali while all of it
+  // shows, and none of the notes while they are hidden.
+  useEffect(() => {
+    if (suttaId) keepOpenLines(suttaId, { pali: allPali ? {} : openSegs, notes: showNotes ? openNotes : {} });
+  }, [suttaId, openSegs, openNotes, allPali, showNotes]);
 
   // The reading takes focus as each sutta arrives, so Space, Page Down and the arrow keys scroll it
   // without a click first, as they do on any page a browser loads.
