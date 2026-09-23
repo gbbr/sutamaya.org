@@ -12,6 +12,7 @@ import {
   searchSuttaText,
   searchTextVariants,
   snippetOf,
+  windowOnMatch,
   RANK_TEXT_PHRASE,
   RANK_TEXT_PARAGRAPH,
   RANK_TEXT_ANYWHERE,
@@ -389,5 +390,23 @@ describe('passagesOf', () => {
   it('stops one past the cap', () => {
     const lines = Array.from({ length: SEARCH_RESULTS_CAP + 5 }, (): [string, string] => ['Greed.', 'p']);
     expect(passages(index([{ uid: 'a', paras: one(lines) }]), 'greed')).toHaveLength(SEARCH_RESULTS_CAP + 1);
+  });
+});
+
+describe('windowOnMatch', () => {
+  const long = `${'The Buddha teaches the monks at length. '.repeat(6)}At last he speaks of the raft.`;
+
+  it('opens a little before a match deep in the text', () => {
+    const cut = windowOnMatch(long, 'raft');
+    expect(cut.startsWith('…')).toBe(true);
+    expect(cut.indexOf('raft')).toBeLessThan(80);
+  });
+
+  it('leaves a short text with an early match whole', () => {
+    expect(windowOnMatch('The simile of the raft.', 'raft')).toBe('The simile of the raft.');
+  });
+
+  it('leaves the text whole when the query marks nothing in it', () => {
+    expect(windowOnMatch(long, 'elephant')).toBe(long);
   });
 });

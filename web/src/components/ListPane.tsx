@@ -8,7 +8,7 @@ import { usePointerDragSession } from '../hooks/usePointerDragSession';
 import { findNode, isExpandable, listItemsFor, nodeBlurb, nodeLabel } from '../lib/corpus';
 import { prefetchSuttaText } from '../lib/suttaPrefetch';
 import { SEARCH_CAP_NOTE, SEARCH_RESULTS_CAP, suttaHitsHeading, type ListBlockHit, type SearchHit } from '../lib/search/metadata';
-import { searchScopeNote, type TextSearchStatus } from '../lib/search/text';
+import { searchScopeNote, windowOnMatch, type TextSearchStatus } from '../lib/search/text';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
 import { resolveDragReorder, type ItemMidpoint } from '../lib/listPaneDrag';
 import { BackButton } from './BackButton';
@@ -502,6 +502,8 @@ export function ListPane({
           // The line that matched is marked with the query that found it, which the expansion table
           // may have written; a line standing here on nothing but its usual turn takes the typed one.
           const lineQuery = (line: 'note' | 'blurb') => (explains?.line === line ? explains.query : rowQuery);
+          // The description, opened at the words that found it where it is the line that matched.
+          const blurb = explains?.line === 'blurb' ? windowOnMatch(s.blurb, explains.query) : s.blurb;
           const { chips, hlCount, hlColors } = rowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
           const dragging = dragIdRef.current === id;
           const reordering = canReorder && reorderMode;
@@ -555,7 +557,7 @@ export function ListPane({
                 )}
                 {showBlurb && (
                   <span className="text-ui-md leading-[1.5] mt-1.5 text-ink-2 line-clamp-3">
-                    <MatchedText text={s.blurb} query={lineQuery('blurb')} />
+                    <MatchedText text={blurb} query={lineQuery('blurb')} />
                   </span>
                 )}
                 {snippet && (

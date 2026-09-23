@@ -8,7 +8,7 @@ import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
 import { useRecentSearches } from '../hooks/useRecentSearches';
 import { READER_SEARCH_PLACEHOLDER, SEARCH_CAP_NOTE, SEARCH_RESULTS_CAP, type SearchHit } from '../lib/search/metadata';
 import { clearRecentSearches, removeRecentSearch, saveRecentSearch } from '../lib/recentSearches';
-import { searchNoMatches } from '../lib/search/text';
+import { searchNoMatches, windowOnMatch } from '../lib/search/text';
 import { beginTextSearchLoad } from '../lib/search/textClient';
 import { prefetchSuttaText } from '../lib/suttaPrefetch';
 import { flattenListTree, suttaRowMeta } from '../lib/lists';
@@ -451,6 +451,8 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
             const showNote = !!note && (explains?.line === 'note' || (!h.snippet && explains?.line !== 'blurb'));
             const showBlurb = !showNote && !!h.sutta.blurb && (explains?.line === 'blurb' || !h.snippet);
             const lineQuery = (line: 'note' | 'blurb') => (explains?.line === line ? explains.query : query);
+            // The description, opened at the words that found it where it is the line that matched.
+            const blurb = explains?.line === 'blurb' ? windowOnMatch(h.sutta.blurb, explains.query) : h.sutta.blurb;
             return (
               <button
                 key={h.id}
@@ -500,8 +502,8 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
                   </span>
                 )}
                 {showBlurb && (
-                  <span className="text-ui-base leading-[1.45] mt-[3px]" style={{ color: PROSE_COLOR(theme) }}>
-                    <MatchedText text={h.sutta.blurb} query={lineQuery('blurb')} theme={theme} />
+                  <span className="text-ui-base leading-[1.45] mt-[3px] line-clamp-3" style={{ color: PROSE_COLOR(theme) }}>
+                    <MatchedText text={blurb} query={lineQuery('blurb')} theme={theme} />
                   </span>
                 )}
                 {h.snippet && <SnippetQuote snippet={h.snippet} theme={theme} />}
