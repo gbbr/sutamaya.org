@@ -161,9 +161,7 @@ icon shrink the leaf to 90% and stretch the master's background back out to the 
 
 ## Known gaps
 
-- **An update is the whole bundle — about 23 MB — never a delta.** A one-line fix re-ships
+- **An update is the whole bundle — about 17 MB — never a delta.** A one-line fix re-ships
   everything, as one background download.
-- **The bundle carries the offline-download shards**, over a quarter of its unpacked size, which
-  only the web app uses.
 - **The session token goes into device backups.** It sits in the app's preferences beside the mirror
   it protects, so a restore carries both; the token's 90-day life bounds it.

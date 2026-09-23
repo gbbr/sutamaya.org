@@ -45,6 +45,9 @@ function git(...args) {
 run(['run', 'build:corpus']);
 run(['run', 'build:native', '--workspace', 'web']);
 
+// The shard bundles behind Settings' offline download, which the native app hides.
+rmSync(join('web', 'dist', 'data', 'text-shards'), { recursive: true, force: true });
+
 if (ota) packageOta();
 
 if (noSync) process.exit(0);

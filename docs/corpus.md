@@ -19,7 +19,7 @@ The first step applies the editorial rules ([retranslation.md](retranslation.md)
 |---|---|
 | `corpus.json` | the browse tree, an index of every sutta (reference, titles, description, reading time) and version stamps |
 | `text/<uid>.json` | one document's segments: each line's Pali and English, its translator's note, and its role |
-| `text-shards/` | the same text in ~1 MB bundles, for Settings' offline download |
+| `text-shards/` | the same text in ~1 MB bundles, for Settings' offline download; left out of the native bundle |
 | `dict-shards/` | the dictionary in ~256 KB alphabetical ranges, so a tap fetches one |
 | `search/` | the whole canon as two plain-text files, English and Pali ([search.md](search.md)) |
 
