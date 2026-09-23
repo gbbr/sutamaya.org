@@ -253,6 +253,26 @@ describe('the passage a search hit was drawn from', () => {
     expect(washed(container)).toEqual([]);
   });
 
+  // The faded wash stays in place, invisible, within the sutta it washed. Carried into the next one,
+  // it stretches a shorter sutta's page down to where the passage sat.
+  it('leaves nothing behind in the next sutta', async () => {
+    layOutSegments();
+    const { container, router } = renderRoutes(routes, {
+      pathname: '/read/dn1',
+      state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
+    });
+    await screen.findByText('They spoke in dispraise of the Buddha');
+    await waitFor(() => expect(washed(container)).toEqual([1, 2]));
+    await act(async () => {
+      vi.advanceTimersByTime(2000);
+    });
+
+    await act(() => router.navigate('/read/dn2', { state: { from: '/browse/dn/dn1?q=dispraise', fromView: 'list' } }));
+    await screen.findByText('Then the king spoke');
+
+    expect(container.querySelector('[data-wash]')).toBeNull();
+  });
+
   // The reader's own search overlay jumps to a passage too, so a second intent has to replace the
   // one the reader arrived on rather than being held off behind it.
   it('is replaced by a later jump rather than held behind it', async () => {
