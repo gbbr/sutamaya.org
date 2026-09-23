@@ -41,7 +41,9 @@ The bundle, web code and corpus alike, can be replaced without a store release:
 
 1. `npm run release:ota -- --env staging|production` builds the bundle, uploads its zip to that
    environment's R2 bucket, points `OTA_VERSION` and `OTA_CHECKSUM` in `wrangler.jsonc` at it, and
-   deploys. The zip goes up first, so no device is ever told about a bundle that isn't there.
+   deploys. The zip goes up first, so no device is ever told about a bundle that isn't there. Once
+   the deploy succeeds, it deletes all but the newest three zips from the bucket, never the one it
+   just published; the two before it stay for downloads already under way and for a rollback.
 2. Each time the app comes to the foreground, it asks the Worker for the current version. When that
    differs, it downloads the zip in the background, checks its hash, and swaps it in the next time
    the app is backgrounded — the reader meets it on the next launch.
