@@ -193,8 +193,10 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
     if (currentId) onOpenSutta(currentId, passage.segments);
   }
 
-  // openRow opens the row at `i` of the ones the arrow keys walk.
+  // openRow opens the row at `i` of the ones the arrow keys walk, and keeps it as the row the
+  // overlay reopens on.
   function openRow(i: number) {
+    if (saved.current) saved.current.activeIndex = i;
     if (i < shownPassages.length) openPassage(shownPassages[i]);
     else if (displayHits[i - shownPassages.length]) openHit(displayHits[i - shownPassages.length]);
   }
@@ -403,7 +405,7 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
                   onMouseMove={(e) => {
                     if (pointerMoved(e)) setActiveIndex(i);
                   }}
-                  onClick={() => openPassage(p)}
+                  onClick={() => openRow(i)}
                 >
                   <SnippetQuote snippet={p} theme={theme} />
                 </button>
@@ -458,7 +460,7 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
                 onMouseMove={(e) => {
                   if (pointerMoved(e)) setActiveIndex(i);
                 }}
-                onClick={() => openHit(h)}
+                onClick={() => openRow(i)}
                 // The press starts the text load, so the reader has it in hand when the hit opens.
                 onPointerDown={() => prefetchSuttaText(corpus, h.matchedId ?? h.id)}
               >
