@@ -313,7 +313,14 @@ export function LibraryPage() {
       const state =
         snippet === undefined
           ? { from, fromView: view, searchIds }
-          : tagIntent({ from, fromView: view, searchIds, segments: snippet.segments, paliSegments: snippet.paliSegments });
+          : tagIntent({
+              from,
+              fromView: view,
+              searchIds,
+              segments: snippet.segments,
+              paliSegments: snippet.paliSegments,
+              markedBy: snippet.markedBy,
+            });
       transitionPage('fade', () => {
         // Saved inside the swap, once the fade has captured this page.
         saveRecentSearch(query);

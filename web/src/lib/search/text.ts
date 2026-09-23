@@ -160,7 +160,7 @@ function patternsOf(query: string, lang: 'en' | 'pa', anywhere: boolean): RegExp
 }
 
 // marksOf returns every stretch of `text` that one of `queries` matches, by word or `anywhere`.
-function marksOf(text: string, queries: string[], lang: 'en' | 'pa', anywhere: boolean): Mark[] {
+export function marksOf(text: string, queries: string[], lang: 'en' | 'pa', anywhere: boolean): Mark[] {
   const marks: Mark[] = [];
   for (const query of queries) {
     for (const re of patternsOf(query, lang, anywhere)) {
@@ -483,6 +483,14 @@ export interface Snippet {
   // The segments whose Pali holds what `text` marks, which the reader opens with their Pali
   // showing. Set only where `text` is Pali.
   paliSegments?: number[];
+  // What `marks` were made with, which the reader marks the same words by in the lines it opens at.
+  markedBy: MarkedBy;
+}
+
+// The queries a snippet's marks were made from, and whether they matched anywhere or by word.
+export interface MarkedBy {
+  queries: string[];
+  anywhere: boolean;
 }
 
 // How much of a paragraph a snippet shows, and how much of it precedes the matched word. A
@@ -605,17 +613,18 @@ export function snippetOf(index: TextIndex, score: TextScore, typed: string): Sn
   const segments: [number, number] = [segmentOf(window.start), segmentOf(Math.max(window.start, window.end - 1))];
   const text = window.text;
   const marks = marksOf(text, queries, score.lang, false);
-  if (!pali) return { text, marks, segments };
+  const markedBy = { queries, anywhere: false };
+  if (!pali) return { text, marks, segments, markedBy };
 
   // The segments holding a mark, marked afresh in the paragraph's own text, since offsets into the
   // tidied window don't map back to a segment.
   const paliMarks = marksOf(para.text.slice(window.start, window.end), queries, 'pa', false);
   const paliSegments = [...new Set(paliMarks.map(([start]) => segmentOf(window.start + start)))].sort((a, b) => a - b);
   const english = paragraphAt(index.en, index.enParas, score.para);
-  if (!english.text.trim()) return { text, marks, segments, paliSegments };
+  if (!english.text.trim()) return { text, marks, segments, paliSegments, markedBy };
   const enAt = firstMatch(english.text, typed, 'en');
   const under = windowAround(english.text, Math.max(0, enAt >= 0 ? enAt : firstMatch(english.text, score.query, 'en'))).text;
-  return { text, marks, under, underMarks: marksOf(under, queries, 'en', false), segments, paliSegments };
+  return { text, marks, under, underMarks: marksOf(under, queries, 'en', false), segments, paliSegments, markedBy };
 }
 
 // suttaLines returns the lines of sutta `doc` in one blob, each with its offset there, the paragraph
@@ -676,6 +685,7 @@ export function passagesOf(index: TextIndex, doc: number, typed: string, score?:
         text: window.text,
         marks: marksOf(window.text, queriesMarked, lang, true),
         segments: [seg, seg],
+        markedBy: { queries: queriesMarked, anywhere: true },
       };
       if (lang === 'pa') passage.paliSegments = [seg];
       const under = lang === 'pa' ? english[line].text.trim() : '';

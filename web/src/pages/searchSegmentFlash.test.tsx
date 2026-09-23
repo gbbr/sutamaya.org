@@ -4,7 +4,8 @@ import { renderRoutes } from '../testRouter';
 
 // The wash on the passage a search hit's snippet was drawn from: on while the reader arrives, off a
 // moment later. It is an orientation cue, not an annotation — a passage that stayed washed would
-// read as one of the reader's own highlights.
+// read as one of the reader's own highlights. The words the hit was found by stay marked there
+// until the reader's next tap.
 
 vi.mock('../context/CorpusContext', () => ({ useCorpus: vi.fn() }));
 vi.mock('../context/UserDataContext', () => ({ useUserData: vi.fn() }));
@@ -23,7 +24,14 @@ vi.mock('../lib/search/textClient', () => ({
       id: 'dn1',
       rank: 6,
       saved: false,
-      snippet: { text: 'Atha kho Tena kho pana', marks: [[18, 22]], under: 'A wanderer, in dispraise', segments: [1, 2], paliSegments: [2] },
+      snippet: {
+        text: 'Atha kho Tena kho pana',
+        marks: [[18, 22]],
+        under: 'A wanderer, in dispraise',
+        segments: [1, 2],
+        paliSegments: [2],
+        markedBy: { queries: ['pana'], anywhere: false },
+      },
     },
   ],
 }));
@@ -93,9 +101,32 @@ const userDataDefaults: ReturnType<typeof useUserData> = {
 
 const routes = [{ path: '/read/:suttaId', element: <ReaderPage /> }];
 
-// The wrapper div a segment's lines sit in, which carries the wash.
-function segmentWrapper(container: HTMLElement, i: number): HTMLElement {
-  return container.querySelector(`[data-seg="${i}"]`)!.parentElement as HTMLElement;
+// Lays each segment out 100px below the last and 80px tall, under a text root at the top, so where
+// the wash sits says which segments it covers.
+function layOutSegments() {
+  const measure = Element.prototype.getBoundingClientRect;
+  const rect = (top: number, height: number) =>
+    ({ top, bottom: top + height, left: 0, right: 600, width: 600, height, x: 0, y: top }) as DOMRect;
+  vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(function (this: Element) {
+    const line = [...this.children].find((child) => child.hasAttribute('data-seg'));
+    if (line) return rect(Number(line.getAttribute('data-seg')) * 100, 80);
+    if (this.hasAttribute('data-segroot')) return rect(0, 300);
+    return measure.call(this);
+  });
+}
+
+// The segments the wash covers while it shows, as layOutSegments places them.
+function washed(container: HTMLElement): number[] {
+  const wash = container.querySelector<HTMLElement>('[data-wash]');
+  if (!wash || wash.style.opacity === '0') return [];
+  const top = parseFloat(wash.style.top);
+  const bottom = top + parseFloat(wash.style.height);
+  return [0, 1, 2].filter((i) => i * 100 >= top && i * 100 + 80 <= bottom);
+}
+
+// The words marked on the page, in reading order.
+function markTexts(container: HTMLElement): Array<string | null> {
+  return [...container.querySelectorAll('mark')].map((el) => el.textContent);
 }
 
 // A segment's Pali line, present only while it is open.
@@ -183,24 +214,23 @@ describe('the passage a search hit was drawn from', () => {
   });
 
   it('is washed on arrival, and only until the flash ends', async () => {
+    layOutSegments();
     const { container } = renderRoutes(routes, {
       pathname: '/read/dn1',
       state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
     });
     await screen.findByText('They spoke in dispraise of the Buddha');
 
-    await waitFor(() => expect(segmentWrapper(container, 2).style.background).not.toBe(''));
-    // Every segment the snippet was cut from, so the wash matches the line the reader picked.
-    expect(segmentWrapper(container, 1).style.background).not.toBe('');
-    // The rest of the sutta is untouched, so the wash says which passage answered the search.
-    expect(segmentWrapper(container, 0).style.background).toBe('');
+    // Every segment the snippet was cut from, as one wash, so it matches the line the reader picked;
+    // the rest of the sutta is untouched, so the wash says which passage answered the search.
+    await waitFor(() => expect(washed(container)).toEqual([1, 2]));
     // A hit in the English opens no Pali.
     expect(container.querySelector('[data-reveal="pali"]')).toBeNull();
 
     await act(async () => {
       vi.advanceTimersByTime(2000);
     });
-    for (const i of [1, 2]) expect(segmentWrapper(container, i).style.background).toBe('');
+    expect(washed(container)).toEqual([]);
   });
 
   // This page never unmounts between suttas, so the arrival's paragraph numbers have to go with
@@ -208,6 +238,7 @@ describe('the passage a search hit was drawn from', () => {
   // has nothing to do with the query — and, past its end, wash nothing and leave the scroll where
   // it was.
   it('does not follow a Prev/Next step into the next sutta', async () => {
+    layOutSegments();
     const { container, router } = renderRoutes(routes, {
       pathname: '/read/dn1',
       state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
@@ -218,12 +249,13 @@ describe('the passage a search hit was drawn from', () => {
     await act(() => router.navigate('/read/dn2', { state: { from: '/browse/dn/dn1?q=dispraise', fromView: 'list' } }));
     await screen.findByText('Then the king spoke');
 
-    for (const i of [0, 1, 2]) expect(segmentWrapper(container, i).style.background).toBe('');
+    expect(washed(container)).toEqual([]);
   });
 
   // The reader's own search overlay jumps to a passage too, so a second intent has to replace the
   // one the reader arrived on rather than being held off behind it.
   it('is replaced by a later jump rather than held behind it', async () => {
+    layOutSegments();
     const { container, router } = renderRoutes(routes, {
       pathname: '/read/dn1',
       state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
@@ -233,9 +265,8 @@ describe('the passage a search hit was drawn from', () => {
     await act(() => router.navigate('/read/dn2', { state: tagIntent({ segments: [0, 0] }) }));
     await screen.findByText('Then the king spoke');
 
-    await waitFor(() => expect(segmentWrapper(container, 0).style.background).not.toBe(''));
     // Not the passage the reader arrived on, which names nothing in this sutta.
-    for (const i of [1, 2]) expect(segmentWrapper(container, i).style.background).toBe('');
+    await waitFor(() => expect(washed(container)).toEqual([0]));
   });
 
   it('opens the Pali of the lines a hit in the Pali matched, and keeps it open past the wash', async () => {
@@ -265,6 +296,8 @@ describe('the passage a search hit was drawn from', () => {
 
     await waitFor(() => expect(paliLine(container, 2)).not.toBeNull());
     expect(paliLine(container, 1)).toBeNull();
+    // Marked with the words it was found by, as its row marked them.
+    expect(paliLine(container, 2)!.querySelector('mark')?.textContent).toBe('pana');
   });
 
   // The scroll centres the passage by measuring it, so a Pali line that opened after the measure
@@ -290,9 +323,82 @@ describe('the passage a search hit was drawn from', () => {
   });
 
   it('is not washed when the reader was not sent to a segment', async () => {
+    layOutSegments();
     const { container } = renderRoutes(routes, { pathname: '/read/dn1', state: { from: '/browse/dn/dn1', fromView: 'list' } });
     await screen.findByText('They spoke in dispraise of the Buddha');
 
-    for (const i of [0, 1, 2]) expect(segmentWrapper(container, i).style.background).toBe('');
+    expect(washed(container)).toEqual([]);
+    expect(markTexts(container)).toEqual([]);
+  });
+
+  it('marks the words it was found by, in the passage it lands on, until the next tap', async () => {
+    const { container } = renderRoutes(routes, {
+      pathname: '/read/dn1',
+      state: tagIntent({ segments: [1, 2], markedBy: { queries: ['dispraise'], anywhere: false } }),
+    });
+    await waitFor(() => expect(markTexts(container)).toEqual(['dispraise']));
+
+    fireEvent.click(document.body);
+    await act(async () => {
+      vi.advanceTimersByTime(10);
+    });
+    expect(markTexts(container)).toEqual([]);
+  });
+
+  it('marks the Pali words of the lines it opened', async () => {
+    const { container } = renderRoutes(routes, {
+      pathname: '/read/dn1',
+      state: tagIntent({ segments: [1, 2], paliSegments: [2], markedBy: { queries: ['pana'], anywhere: false } }),
+    });
+    await waitFor(() => expect(markTexts(container)).toEqual(['pana']));
+    expect(paliLine(container, 2)!.querySelector('mark')?.textContent).toBe('pana');
+  });
+
+  // Ending the marks replaces the word under the tap, which would otherwise swallow what the tap
+  // was for.
+  it('does what a tap on a marked word always does, as it ends the marks', async () => {
+    const { container } = renderRoutes(routes, {
+      pathname: '/read/dn1',
+      state: tagIntent({ segments: [2, 2], markedBy: { queries: ['dispraise'], anywhere: false } }),
+    });
+    await waitFor(() => expect(markTexts(container)).toEqual(['dispraise']));
+
+    fireEvent.click(container.querySelector('mark')!);
+    await act(async () => {
+      vi.advanceTimersByTime(10);
+    });
+    expect(paliLine(container, 2)).not.toBeNull();
+    expect(markTexts(container)).toEqual([]);
+  });
+
+  it('keeps the marks through a click that finishes selecting text', async () => {
+    const { container } = renderRoutes(routes, {
+      pathname: '/read/dn1',
+      state: tagIntent({ segments: [2, 2], markedBy: { queries: ['dispraise'], anywhere: false } }),
+    });
+    await waitFor(() => expect(markTexts(container)).toEqual(['dispraise']));
+
+    vi.spyOn(window, 'getSelection').mockReturnValue({ toString: () => 'in dispraise' } as Selection);
+    fireEvent.click(document.body);
+    await act(async () => {
+      vi.advanceTimersByTime(10);
+    });
+    expect(markTexts(container)).toEqual(['dispraise']);
+  });
+
+  // A tap on a row of the reader's search is both a tap and a jump to new marks.
+  it('keeps the marks of the jump a tap makes', async () => {
+    const { container, router } = renderRoutes(routes, {
+      pathname: '/read/dn1',
+      state: tagIntent({ segments: [2, 2], markedBy: { queries: ['dispraise'], anywhere: false } }),
+    });
+    await waitFor(() => expect(markTexts(container)).toEqual(['dispraise']));
+
+    fireEvent.click(document.body);
+    await act(() => router.navigate('/read/dn2', { state: tagIntent({ segments: [2, 2], markedBy: { queries: ['king'], anywhere: false } }) }));
+    await act(async () => {
+      vi.advanceTimersByTime(10);
+    });
+    await waitFor(() => expect(markTexts(container)).toEqual(['king']));
   });
 });

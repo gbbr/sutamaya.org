@@ -70,3 +70,9 @@ export function animateScrollTop(container: HTMLElement, targetScrollTop: number
 export function animateScrollBy(container: HTMLElement, offset: number) {
   animateScrollTop(container, container.scrollTop + offset);
 }
+
+// Moves a container by a relative offset at once, in scroll units, ending any animation running on it.
+export function jumpScrollBy(container: HTMLElement, offset: number) {
+  activeScrollAnimations.get(container)?.();
+  container.scrollTop += offset;
+}

@@ -1,6 +1,7 @@
 import { useNavigate, type NavigateOptions } from 'react-router';
 import { transitionPage } from '../lib/motion';
 import { tagIntent } from '../lib/routeIntent';
+import type { MarkedBy } from '../lib/search/text';
 import { READER_ORIGIN_KEY } from '../lib/storageKeys';
 
 interface PersistedReaderOrigin {
@@ -70,14 +71,14 @@ export function useReaderOrigin(
   }
 
   // Opens a hit from the reader's own search, leaving the library search's run behind. `passage`
-  // is where its snippet was drawn from, where the reader opens: its segments, and those whose Pali
-  // shows open. `leaving` is the sutta a jump to another one leaves, which becomes the way back
-  // unless there is one already: a single step, however far the reader goes from there. Landing
-  // back on that sutta ends the detour, returning to it where the reader left it — unless the hit
-  // names a passage there to open instead.
+  // is where its snippet was drawn from, where the reader opens: its segments, those whose Pali
+  // shows open, and what its words were marked by. `leaving` is the sutta a jump to another one
+  // leaves, which becomes the way back unless there is one already: a single step, however far the
+  // reader goes from there. Landing back on that sutta ends the detour, returning to it where the
+  // reader left it — unless the hit names a passage there to open instead.
   function jumpTo(
     nextSuttaId: string,
-    passage?: { segments: [number, number]; paliSegments?: number[] },
+    passage?: { segments: [number, number]; paliSegments?: number[]; markedBy?: MarkedBy },
     leaving?: string
   ) {
     if (nextSuttaId === backTo && !passage) {
@@ -88,7 +89,12 @@ export function useReaderOrigin(
     const state = { from, fromView, backTo: nextSuttaId === backTo ? undefined : backTo ?? leaving };
     navigate(`/read/${encodeURIComponent(nextSuttaId)}`, {
       state: passage
-        ? tagIntent({ ...state, segments: passage.segments, paliSegments: passage.paliSegments })
+        ? tagIntent({
+            ...state,
+            segments: passage.segments,
+            paliSegments: passage.paliSegments,
+            markedBy: passage.markedBy,
+          })
         : state,
       replace: backTo !== undefined || !leaving,
     });

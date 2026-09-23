@@ -221,6 +221,7 @@ describe('snippetOf', () => {
       text: 'The mind is radiant. So it is said.',
       marks: [[12, 19]],
       segments: [1, 2],
+      markedBy: { queries: ['radiant'], anywhere: false },
     });
   });
 
@@ -233,6 +234,7 @@ describe('snippetOf', () => {
       underMarks: [],
       segments: [1, 2],
       paliSegments: [1],
+      markedBy: { queries: ['pabhassara'], anywhere: false },
     });
   });
 
@@ -488,6 +490,11 @@ describe('passagesOf', () => {
     ]);
     // The line shown in Pali is the one whose Pali opens.
     expect(passages(Y, 'buddh').map((p) => p.paliSegments)).toEqual([undefined, [1]]);
+    // Both are marked as they were matched, anywhere, so the reader marks the same.
+    expect(passages(Y, 'buddh').map((p) => p.markedBy)).toEqual([
+      { queries: ['buddh'], anywhere: true },
+      { queries: ['buddh'], anywhere: true },
+    ]);
   });
 
   it('stops one past the cap', () => {
