@@ -797,14 +797,16 @@ export function TreePane({
               // A half-strength white over whichever ground the pane has, so the field sits one
               // step lighter than it without reaching the pure white that glares on the sidebar.
               // Dark keeps --field, which is that same one step up from its panel.
-              className="w-full h-[38px] border border-ink/[.22] rounded-field pl-3 pr-8 bg-white/50 dark:bg-field text-ui-md outline-none placeholder:text-ink/[.42]"
+              className="w-full h-[38px] border border-ink/[.22] rounded-field pl-3 pr-10 bg-white/50 dark:bg-field text-ui-md outline-none placeholder:text-ink/[.42]"
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="off"
               spellCheck={false}
             />
+            {/* The clear button's `after` pseudo-element pads its tap target to 44px without growing
+                the circle; the field's right padding keeps the text out from under it. */}
             <button
-              className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-full text-ink-4 hover:bg-ink/[.08] hover:text-ink"
+              className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-full text-ink-4 hover:bg-ink/[.08] hover:text-ink after:content-[''] after:absolute after:-inset-3"
               aria-label="Clear search"
               title="Clear search"
               onClick={closeSearch}
