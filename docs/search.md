@@ -114,7 +114,8 @@ Settings' offline download fetches the search text too, so a device that ran it 
 A hit the query reached through the text shows the paragraph it was found in, windowed around the
 match and marked with the words that matched — including, where an expansion found it, the
 expansion's words. A Pali hit shows the Pali with that paragraph's English beneath. Opening such a
-row takes the Reader straight to that passage.
+row takes the Reader straight to that passage, and a Pali hit arrives with the Pali of each line
+holding a marked word open, as find-in-page opens a collapsed section it finds a match in.
 
 A row shows what it opens. Where the query reached a sutta through the row's own lines — its number,
 title, Pali title, description or the reader's note — that line is the answer: the row shows no
@@ -133,7 +134,8 @@ It matches as find-in-page does: a word anywhere, inside a longer word too, so `
 *satisampajañña* and *asampajañña*, where the search of the canon, matching the start of a word,
 finds neither. The price is the same as find-in-page's — `sati` also stops on *bhavissati* — which
 matters little in reading order and would bury a ranking. A line shows in English where its English
-holds the query, else in Pali with its English beneath.
+holds the query, else in Pali with its English beneath, and a line shown in Pali opens with its Pali
+showing.
 
 Reopened on the same sutta, the search comes back as it was left — the query, the lines shown, the
 scroll and the selected row — so the next result is a tap away. The query is selected, so typing

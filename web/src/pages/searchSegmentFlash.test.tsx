@@ -1,5 +1,5 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest';
-import { act, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, screen, waitFor, within } from '@testing-library/react';
 import { renderRoutes } from '../testRouter';
 
 // The wash on the passage a search hit's snippet was drawn from: on while the reader arrives, off a
@@ -11,6 +11,22 @@ vi.mock('../context/UserDataContext', () => ({ useUserData: vi.fn() }));
 vi.mock('../context/AuthContext', () => ({ useAuth: vi.fn() }));
 vi.mock('../context/LayoutContext', () => ({ useLayout: vi.fn() }));
 vi.mock('../context/ReaderPrefsContext', () => ({ useReaderPrefs: vi.fn() }));
+// LibraryPage reads it only for the Shift+D theme toggle; the real provider isn't mounted here.
+vi.mock('../context/UiPrefsContext', () => ({ useUiPrefs: () => ({ toggleTheme: vi.fn() }) }));
+// The text search's answer to any query: dn1's second paragraph, found in its third line's Pali.
+vi.mock('../lib/search/textClient', () => ({
+  subscribeTextSearch: () => () => {},
+  textSearchStatus: () => 'ready',
+  beginTextSearchLoad: () => {},
+  searchText: async () => [
+    {
+      id: 'dn1',
+      rank: 6,
+      saved: false,
+      snippet: { text: 'Atha kho Tena kho pana', marks: [[18, 22]], under: 'A wanderer, in dispraise', segments: [1, 2], paliSegments: [2] },
+    },
+  ],
+}));
 
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
@@ -18,6 +34,8 @@ import { useAuth } from '../context/AuthContext';
 import { useLayout } from '../context/LayoutContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
 import { ReaderPage } from './ReaderPage';
+import { LibraryPage } from './LibraryPage';
+import { SEARCH_PLACEHOLDER } from '../lib/search/metadata';
 import { tagIntent } from '../lib/routeIntent';
 import type { Corpus } from '../lib/types';
 
@@ -78,6 +96,11 @@ const routes = [{ path: '/read/:suttaId', element: <ReaderPage /> }];
 // The wrapper div a segment's lines sit in, which carries the wash.
 function segmentWrapper(container: HTMLElement, i: number): HTMLElement {
   return container.querySelector(`[data-seg="${i}"]`)!.parentElement as HTMLElement;
+}
+
+// A segment's Pali line, present only while it is open.
+function paliLine(container: HTMLElement, i: number): Element | null {
+  return container.querySelector(`[data-reveal="pali"][data-reveal-seg="${i}"]`);
 }
 
 describe('the passage a search hit was drawn from', () => {
@@ -155,6 +178,8 @@ describe('the passage a search hit was drawn from', () => {
 
   afterEach(() => {
     vi.useRealTimers();
+    vi.unstubAllGlobals();
+    vi.restoreAllMocks();
   });
 
   it('is washed on arrival, and only until the flash ends', async () => {
@@ -169,6 +194,8 @@ describe('the passage a search hit was drawn from', () => {
     expect(segmentWrapper(container, 1).style.background).not.toBe('');
     // The rest of the sutta is untouched, so the wash says which passage answered the search.
     expect(segmentWrapper(container, 0).style.background).toBe('');
+    // A hit in the English opens no Pali.
+    expect(container.querySelector('[data-reveal="pali"]')).toBeNull();
 
     await act(async () => {
       vi.advanceTimersByTime(2000);
@@ -209,6 +236,57 @@ describe('the passage a search hit was drawn from', () => {
     await waitFor(() => expect(segmentWrapper(container, 0).style.background).not.toBe(''));
     // Not the passage the reader arrived on, which names nothing in this sutta.
     for (const i of [1, 2]) expect(segmentWrapper(container, i).style.background).toBe('');
+  });
+
+  it('opens the Pali of the lines a hit in the Pali matched, and keeps it open past the wash', async () => {
+    const { container } = renderRoutes(routes, {
+      pathname: '/read/dn1',
+      state: tagIntent({ from: '/browse/dn/dn1?q=pana', fromView: 'list', segments: [1, 2], paliSegments: [2] }),
+    });
+    await screen.findByText('They spoke in dispraise of the Buddha');
+
+    await waitFor(() => expect(paliLine(container, 2)).not.toBeNull());
+    // Not a line of the passage the hit marked nothing in.
+    expect(paliLine(container, 1)).toBeNull();
+
+    await act(async () => {
+      vi.advanceTimersByTime(2000);
+    });
+    expect(paliLine(container, 2)).not.toBeNull();
+  });
+
+  it('opens with the Pali a hit in the Library search matched', async () => {
+    const { container } = renderRoutes([{ path: '/browse/:nodeId/*', element: <LibraryPage /> }, ...routes], '/browse/dn');
+    const tree = within(container.querySelector('[data-component="TreePane"]')!);
+    fireEvent.click(tree.getByRole('button', { name: 'Search' }));
+    fireEvent.change(tree.getByPlaceholderText(SEARCH_PLACEHOLDER), { target: { value: 'pana' } });
+    fireEvent.click((await screen.findByText('A wanderer, in dispraise')).closest('button')!);
+    await screen.findByText('They spoke in dispraise of the Buddha');
+
+    await waitFor(() => expect(paliLine(container, 2)).not.toBeNull());
+    expect(paliLine(container, 1)).toBeNull();
+  });
+
+  // The scroll centres the passage by measuring it, so a Pali line that opened after the measure
+  // would push the passage off the place it was centred on.
+  it('is scrolled to with its Pali already open', async () => {
+    // Every frame runs at once, so the scroll measures whatever is on screen when it asks for one.
+    vi.stubGlobal('requestAnimationFrame', (cb: FrameRequestCallback) => {
+      cb(0);
+      return 0;
+    });
+    const measured: boolean[] = [];
+    const measure = Element.prototype.getBoundingClientRect;
+    vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(function (this: Element) {
+      if (this === document.querySelector('[data-seg="2"]')?.parentElement) measured.push(!!this.querySelector('[data-reveal="pali"]'));
+      return measure.call(this);
+    });
+
+    renderRoutes(routes, { pathname: '/read/dn1', state: tagIntent({ segments: [2, 2], paliSegments: [2] }) });
+    await screen.findByText('They spoke in dispraise of the Buddha');
+
+    await waitFor(() => expect(measured).not.toHaveLength(0));
+    expect(measured.every(Boolean)).toBe(true);
   });
 
   it('is not washed when the reader was not sent to a segment', async () => {

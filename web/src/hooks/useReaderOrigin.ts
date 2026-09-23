@@ -69,20 +69,27 @@ export function useReaderOrigin(
     });
   }
 
-  // Opens a hit from the reader's own search, leaving the library search's run behind. `segments`
-  // are the ones its snippet was drawn from, where the reader opens. `leaving` is the sutta a jump
-  // to another one leaves, which becomes the way back unless there is one already: a single step,
-  // however far the reader goes from there. Landing back on that sutta ends the detour, returning
-  // to it where the reader left it — unless the hit names a passage there to open instead.
-  function jumpTo(nextSuttaId: string, segments?: [number, number], leaving?: string) {
-    if (nextSuttaId === backTo && !segments) {
+  // Opens a hit from the reader's own search, leaving the library search's run behind. `passage`
+  // is where its snippet was drawn from, where the reader opens: its segments, and those whose Pali
+  // shows open. `leaving` is the sutta a jump to another one leaves, which becomes the way back
+  // unless there is one already: a single step, however far the reader goes from there. Landing
+  // back on that sutta ends the detour, returning to it where the reader left it — unless the hit
+  // names a passage there to open instead.
+  function jumpTo(
+    nextSuttaId: string,
+    passage?: { segments: [number, number]; paliSegments?: number[] },
+    leaving?: string
+  ) {
+    if (nextSuttaId === backTo && !passage) {
       goBack();
       return;
     }
     persistReaderOrigin(nextSuttaId, from, fromView, undefined);
     const state = { from, fromView, backTo: nextSuttaId === backTo ? undefined : backTo ?? leaving };
     navigate(`/read/${encodeURIComponent(nextSuttaId)}`, {
-      state: segments ? tagIntent({ ...state, segments }) : state,
+      state: passage
+        ? tagIntent({ ...state, segments: passage.segments, paliSegments: passage.paliSegments })
+        : state,
       replace: backTo !== undefined || !leaving,
     });
   }

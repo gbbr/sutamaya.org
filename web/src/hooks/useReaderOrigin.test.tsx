@@ -76,9 +76,9 @@ describe('useReaderOrigin', () => {
     });
 
     // A hit naming a passage in the first sutta opens it there, leaving no way back.
-    result.current.jumpTo('sn1.1', [3, 4], 'an4.10');
+    result.current.jumpTo('sn1.1', { segments: [3, 4], paliSegments: [4] }, 'an4.10');
     expect(navigate).toHaveBeenLastCalledWith('/read/sn1.1', {
-      state: expect.objectContaining({ segments: [3, 4], backTo: undefined }),
+      state: expect.objectContaining({ segments: [3, 4], paliSegments: [4], backTo: undefined }),
       replace: true,
     });
 

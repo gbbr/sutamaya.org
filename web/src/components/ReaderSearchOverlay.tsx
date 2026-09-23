@@ -86,8 +86,8 @@ interface ReaderSearchOverlayProps {
   currentId?: string;
   // How the overlay was last left, kept up to date while it is open; null starts it afresh.
   saved: { current: ReaderSearchView | null };
-  // `segment` is where a text hit was found, and where the reader opens; absent for every other row.
-  onOpenSutta: (id: string, segments?: [number, number]) => void;
+  // `passage` is where a text hit was found, which the reader opens at; absent for every other row.
+  onOpenSutta: (id: string, passage?: Passage) => void;
   onClose: () => void;
 }
 
@@ -188,12 +188,12 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
   function openHit(hit: SearchHit) {
     // Reopening the sutta already open isn't kept as a search.
     if (hit.id !== currentId) saveRecentSearch(query);
-    onOpenSutta(hit.matchedId ?? hit.id, hit.snippet?.segments);
+    onOpenSutta(hit.matchedId ?? hit.id, hit.snippet);
   }
 
   // openPassage scrolls the sutta being read to one of its passages.
   function openPassage(passage: Passage) {
-    if (currentId) onOpenSutta(currentId, passage.segments);
+    if (currentId) onOpenSutta(currentId, passage);
   }
 
   // openRow opens the row at `i` of the ones the arrow keys walk, and keeps it as the row the

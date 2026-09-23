@@ -53,8 +53,9 @@ interface ListPaneProps {
   // The same, while that cursor is up in the lists block instead.
   activeListId?: string;
   onBack: () => void;
-  // `segment` is where a text hit was found, and where the reader opens; absent for every other row.
-  onOpen: (id: string, segments?: [number, number]) => void;
+  // `snippet` is the passage a text hit was found in, which the reader opens at; absent for every
+  // other row.
+  onOpen: (id: string, snippet?: SearchHit['snippet']) => void;
   // False while this pane is mounted but hidden on mobile, which scroll restoration has to know.
   visible?: boolean;
 }
@@ -528,7 +529,7 @@ export function ListPane({
                   on ? 'bg-ink/[.05]' : ''
                 }`}
                 style={on ? { boxShadow: 'inset 2px 0 0 rgb(var(--accent2))' } : undefined}
-                onClick={() => onOpen(openTargets.get(id) ?? id, snippet?.segments)}
+                onClick={() => onOpen(openTargets.get(id) ?? id, snippet)}
                 // The press starts the text load, so the reader mounts with it already in hand.
                 onPointerDown={() => prefetchSuttaText(corpus, openTargets.get(id) ?? id)}
               >

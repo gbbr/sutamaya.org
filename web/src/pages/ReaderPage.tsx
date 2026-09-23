@@ -28,6 +28,7 @@ import { markSuttaOpened } from '../lib/pwaNudge';
 import { getReaderPanelTab, setReaderPanelTab, type ReaderPanelTab } from '../lib/readerPanelTab';
 import { platformName } from '../lib/platform';
 import { canShareLink, shareLink, shareUrl } from '../lib/share';
+import type { SearchHit } from '../lib/search/metadata';
 import { SegmentedText } from '../components/SegmentedText';
 import { HighlightPopup } from '../components/HighlightPopup';
 import { HighlightGutter } from '../components/HighlightGutter';
@@ -63,6 +64,10 @@ const searchRunLabel = (query: string) => `Results for: “${query}”`;
 // The highlights SegmentedText gets while they are hidden: none, and a stable identity so the
 // segments don't re-render.
 const NO_HIGHLIGHTS: Highlight[] = [];
+
+// Where a search hit lands the reader: the segments its snippet was drawn from, and those whose Pali
+// it matched.
+type SearchArrival = { segments?: [number, number]; paliSegments?: number[] };
 
 // How long the text may take before the reader says it is loading. A shorter wait than this reads
 // as a stutter rather than as progress, and a sutta prefetched on the press that opened it
@@ -111,20 +116,19 @@ export function ReaderPage() {
   const readerLocationState = location?.state as
     | { from?: string; fromView?: 'tree' | 'list'; searchIds?: string[]; backTo?: string }
     | undefined;
-  // The segments a search hit's snippet was drawn from, sampled once per navigation rather than
-  // once per mount: this page never unmounts between suttas, so a value held for its lifetime
-  // would fire again on every later one and leave a new jump no way in. consumeIntent hands a
-  // navId back a single time, which is what keeps a same-tab refresh from jumping twice; a
-  // Prev/Next step carries no intent at all and so clears this.
-  const arrivalState = location?.state as ({ segments?: [number, number] } & RouteIntent) | null | undefined;
-  const arrivalRef = useRef<{ navId?: string; segments?: [number, number] }>({});
+  // The segments a search hit's snippet was drawn from, and those whose Pali it matched, sampled
+  // once per navigation rather than once per mount: this page never unmounts between suttas, so a
+  // value held for its lifetime would fire again on every later one and leave a new jump no way
+  // in. consumeIntent hands a navId back a single time, which is what keeps a same-tab refresh
+  // from jumping twice; a Prev/Next step carries no intent at all and so clears this.
+  const arrivalState = location?.state as (SearchArrival & RouteIntent) | null | undefined;
+  const arrivalRef = useRef<SearchArrival & { navId?: string }>({});
   if (arrivalRef.current.navId !== arrivalState?.navId) {
-    arrivalRef.current = {
-      navId: arrivalState?.navId,
-      segments: consumeIntent(arrivalState, READER_INTENT_KEY)?.segments,
-    };
+    const intent = consumeIntent(arrivalState, READER_INTENT_KEY);
+    arrivalRef.current = { navId: arrivalState?.navId, segments: intent?.segments, paliSegments: intent?.paliSegments };
   }
   const searchSegments = arrivalRef.current.segments;
+  const searchPali = arrivalRef.current.paliSegments;
   const { from, fromView, searchIds, backTo, turnTo, jumpTo, goBack, closeToOrigin, leaveReader } =
     useReaderOrigin(readerLocationState);
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
@@ -255,6 +259,8 @@ export function ReaderPage() {
 
   // Whether the passage the reader arrived on is still washed.
   const [flashing, setFlashing] = useState(false);
+  // The segment a search hit lands the reader on, scrolled to once the Pali it opens is showing.
+  const [landing, setLanding] = useState<{ seg: number }>();
 
   // The segments the wash covers, clamped to the text that has loaded. Derived rather than held, so
   // it leaves with the arrival it belongs to in that same render: a Prev/Next step lands on text
@@ -265,19 +271,25 @@ export function ReaderPage() {
     return first >= segments.length ? undefined : [first, Math.min(last, segments.length - 1)];
   }, [flashing, searchSegments, requestedSubUid, segments]);
 
-  // Scrolls to the passage a search hit's snippet was drawn from, so the line the reader picked out
-  // of the results is what they land on, and washes the whole of it for SEARCH_FLASH_MS so the eye
-  // finds it. Centred rather than at the top: a snippet is a fragment, and the passage around it is
-  // what makes it read as an answer.
+  // Lands on the passage a search hit's snippet was drawn from, so the line the reader picked out of
+  // the results is what they see: washes the whole of it for SEARCH_FLASH_MS so the eye finds it,
+  // and opens the Pali of the lines a hit in the Pali matched.
   useEffect(() => {
     if (searchSegments === undefined || requestedSubUid || !segments) return;
     const [first] = searchSegments;
     if (first >= segments.length) return;
-    requestAnimationFrame(() => scrollToSegment(first, 'center'));
+    if (searchPali) setOpenSegs((s) => ({ ...s, ...Object.fromEntries(searchPali.map((i) => [i, true])) }));
+    setLanding({ seg: first });
     setFlashing(true);
     const timer = window.setTimeout(() => setFlashing(false), SEARCH_FLASH_MS);
     return () => window.clearTimeout(timer);
-  }, [searchSegments, requestedSubUid, segments, scrollToSegment]);
+  }, [searchSegments, searchPali, requestedSubUid, segments]);
+
+  // Scrolls to the passage a search hit lands on. Centred rather than at the top: a snippet is a
+  // fragment, and the passage around it is what makes it read as an answer.
+  useEffect(() => {
+    if (landing) requestAnimationFrame(() => scrollToSegment(landing.seg, 'center'));
+  }, [landing, scrollToSegment]);
 
   // The whole corpus in canonical browse order, which Prev/Next steps through across category
   // boundaries.
@@ -428,13 +440,13 @@ export function ReaderPage() {
     goBack();
   }
 
-  function onSearchOpenSutta(id: string, segments?: [number, number]) {
+  function onSearchOpenSutta(id: string, snippet?: SearchHit['snippet']) {
     setSearchOpen(false);
     // Another sutta arrives from the right as Next does; a hit in the one open only scrolls it.
     const target = corpus ? resolveCanonicalSuttaId(corpus, id) : id;
     const elsewhere = target !== suttaId;
     if (elsewhere) enterOnArrival.current = { id: target, dir: 1 };
-    jumpTo(id, segments, elsewhere ? suttaId : undefined);
+    jumpTo(id, snippet, elsewhere ? suttaId : undefined);
   }
 
   // Scrolls a just-opened Pali line or footnote into view, by the least it takes and only when it

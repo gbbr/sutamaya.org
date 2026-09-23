@@ -94,8 +94,9 @@ interface TreePaneProps {
   // already selected.
   pickCount?: number;
   onSelect: (nodeId: string) => void;
-  // `segment` is where a text hit was found, and where the reader opens; absent for every other row.
-  onOpenSutta: (suttaId: string, segments?: [number, number]) => void;
+  // `snippet` is the passage a text hit was found in, which the reader opens at; absent for every
+  // other row.
+  onOpenSutta: (suttaId: string, snippet?: SearchHit['snippet']) => void;
   onSearch: (query: string) => void;
   query: string;
   // The sutta hits, scanned once by LibraryPage and shared with ListPane, which draws the rows on
@@ -524,7 +525,7 @@ export function TreePane({
       return;
     }
     const hit = displayHits[i - listHits.length];
-    if (hit) openHit(hit.matchedId ?? hit.id, hit.snippet?.segments);
+    if (hit) openHit(hit.matchedId ?? hit.id, hit.snippet);
   }
 
   // Reports the cursor's row up to LibraryPage, so ListPane can draw the same highlight.
@@ -550,8 +551,8 @@ export function TreePane({
 
   // Opens a hit in the reader, leaving the search as it is: the route change unmounts this pane,
   // and the reader closes back to the results.
-  function openHit(id: string, segments?: [number, number]) {
-    onOpenSutta(id, segments);
+  function openHit(id: string, snippet?: SearchHit['snippet']) {
+    onOpenSutta(id, snippet);
   }
 
   useEffect(() => {
