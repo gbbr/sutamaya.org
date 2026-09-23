@@ -124,6 +124,8 @@ export interface ThemeColors {
   dim: string;
   rule: string;
   panel: string;
+  // The reader search's background, where it isn't `panel`.
+  overlay?: string;
   pali: string;
   // A pill or badge fill in this theme's ink, lighter than `rule`.
   tint: string;
