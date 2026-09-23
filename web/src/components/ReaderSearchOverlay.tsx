@@ -213,11 +213,13 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
     [displayHits, membership, highlights, flatLists]
   );
 
-  // Focused with the last query selected, so typing replaces it.
+  // Focused with the last query selected, so typing replaces it. A touch screen reopening on a
+  // query leaves the field alone, keeping the keyboard off the results being returned to.
   useEffect(() => {
+    if (resumed?.query.trim() && window.matchMedia?.('(pointer: coarse)').matches) return;
     inputRef.current?.focus();
     inputRef.current?.select();
-  }, []);
+  }, [resumed]);
 
   // The height of the software keyboard, which the panel pads itself by on touch: it fills the
   // layout viewport, which the keyboard doesn't shrink, so the last rows would sit underneath it.
