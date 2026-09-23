@@ -409,4 +409,19 @@ describe('windowOnMatch', () => {
   it('leaves the text whole when the query marks nothing in it', () => {
     expect(windowOnMatch(long, 'elephant')).toBe(long);
   });
+
+  it('drops the bold of a note it cuts, wherever the cut falls', () => {
+    const note = `Some opening words here. *${'word '.repeat(15).trim()}* and the raft.`;
+    expect(windowOnMatch(note, 'raft', true)).toBe(`…${'word '.repeat(10)}and the raft.`);
+  });
+
+  it('opens a note no further back than the line above the match, keeping its line breaks', () => {
+    const note = 'First line.\nSecond line.\nThird line mentions the raft.\nFourth line.';
+    expect(windowOnMatch(note, 'raft', true)).toBe('…Second line.\nThird line mentions the raft.\nFourth line.');
+  });
+
+  it('leaves a note whole, bold and all, where the match is on its first two lines, near its start', () => {
+    const note = 'A *bold* title\nThe raft is here.\nMore after it.';
+    expect(windowOnMatch(note, 'raft', true)).toBe(note);
+  });
 });

@@ -28,6 +28,7 @@ import {
 } from './metadata';
 import { expandQuery } from './expansion';
 import { matchRuns } from './match';
+import { boldRuns } from '../noteFormat';
 import type { Corpus, HighlightsMap, ListDef } from '../types';
 
 // Opens each paragraph, and each sutta, on a line of its own — see build-corpus.mjs. Being neither
@@ -497,12 +498,32 @@ function windowAround(text: string, at: number): { text: string; start: number; 
 
 // windowOnMatch returns `text` cut as a snippet is, around the first word `query` marks in it, or
 // `text` whole where it marks none.
-export function windowOnMatch(text: string, query: string): string {
-  const runs = matchRuns(text, query);
+export function windowOnMatch(
+  text: string,
+  query: string,
+  // Cuts `text` as a note: its line breaks kept, and its `*bold*` dropped to plain text once cut.
+  notation = false
+): string {
+  const body = notation ? boldRuns(text).map((run) => run.text).join('') : text;
+  const runs = matchRuns(body, query);
   const first = runs.findIndex((run) => run.hit);
   if (first < 0) return text;
   const at = runs.slice(0, first).reduce((n, run) => n + run.text.length, 0);
-  return windowAround(text, at).text;
+  if (!notation) return windowAround(text, at).text;
+  const start = noteStart(body, at);
+  return start > 0 ? `…${body.slice(start)}` : text;
+}
+
+// noteStart returns where a note opens to show `at`: one lead before it at the start of a word, but
+// no further back than the line above the one `at` is on.
+function noteStart(text: string, at: number): number {
+  const lineStart = text.lastIndexOf('\n', at - 1) + 1;
+  const floor = lineStart > 1 ? text.lastIndexOf('\n', lineStart - 2) + 1 : 0;
+  if (at - SNIPPET_LEAD <= floor) return floor;
+  let start = at - SNIPPET_LEAD;
+  if (!/\s/.test(text[start - 1])) start += Math.max(0, text.slice(start, at).search(/\s/));
+  while (/\s/.test(text[start])) start += 1;
+  return start;
 }
 
 // The paragraph a text hit was found in, windowed around the match, with the segments the window

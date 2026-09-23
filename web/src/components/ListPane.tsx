@@ -504,6 +504,8 @@ export function ListPane({
           const lineQuery = (line: 'note' | 'blurb') => (explains?.line === line ? explains.query : rowQuery);
           // The description, opened at the words that found it where it is the line that matched.
           const blurb = explains?.line === 'blurb' ? windowOnMatch(s.blurb, explains.query) : s.blurb;
+          // The note, likewise.
+          const noteText = note && explains?.line === 'note' ? windowOnMatch(note, explains.query, true) : note;
           const { chips, hlCount, hlColors } = rowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
           const dragging = dragIdRef.current === id;
           const reordering = canReorder && reorderMode;
@@ -551,7 +553,7 @@ export function ListPane({
                     </span>
                     {/* Clamped, like the blurb it stands in for. */}
                     <span className="line-clamp-3 whitespace-pre-wrap">
-                      <MatchedText text={note} query={lineQuery('note')} notation />
+                      <MatchedText text={noteText} query={lineQuery('note')} notation />
                     </span>
                   </span>
                 )}
