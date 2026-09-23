@@ -475,8 +475,9 @@ function SegmentedTextInner({
   const rangesBySeg = useMemo(() => expandHighlights(highlights, segments), [highlights, segments]);
   const rootRef = useRef<HTMLDivElement>(null);
   // Where the wash sits, from the top of the passage's first segment to the bottom of its last, in
-  // the root's pre-zoom units. Kept once the flash ends, so the wash fades out where it was.
-  const [wash, setWash] = useState<{ top: number; height: number }>();
+  // the root's pre-zoom units, and the text it was measured on. Kept once the flash ends, so the
+  // wash fades out where it was, but drawn over that text only.
+  const [wash, setWash] = useState<{ top: number; height: number; segments: SegmentFile[] }>();
   useLayoutEffect(() => {
     const root = rootRef.current;
     if (!flashRange || !root) return;
@@ -493,21 +494,21 @@ function SegmentedTextInner({
       const firstTop = first.getBoundingClientRect().top;
       const top = (firstTop - root.getBoundingClientRect().top) / scale;
       const height = (last.getBoundingClientRect().bottom - firstTop) / scale;
-      setWash((w) => (w && w.top === top && w.height === height ? w : { top, height }));
+      setWash((w) => (w && w.top === top && w.height === height && w.segments === segments ? w : { top, height, segments }));
     };
     measure();
     // Measured again as the text reflows, as it does when the Pali an arrival opens appears.
     const observer = new ResizeObserver(measure);
     observer.observe(root);
     return () => observer.disconnect();
-  }, [flashRange]);
+  }, [flashRange, segments]);
   // A list item's ordinal within its run of consecutive list-item segments, reset to 0 by any
   // other segment so a later list restarts at 1.
   let runningListIndex = 0;
   return (
     // Positioned and isolated for the wash, which sits under the text within it.
     <div ref={rootRef} data-component="SegmentedText" data-segroot style={{ position: 'relative', isolation: 'isolate' }}>
-      {wash && (
+      {wash?.segments === segments && (
         <div
           aria-hidden
           data-wash
