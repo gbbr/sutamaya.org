@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { render, screen, within, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -174,13 +174,15 @@ function Harness({
   onSelect,
   onOpenSutta,
   shortcutsOpen,
+  initialQuery = '',
 }: {
   initialNodeId?: string;
   onSelect: (id: string) => void;
   onOpenSutta: (id: string) => void;
   shortcutsOpen?: boolean;
+  initialQuery?: string;
 }) {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(initialQuery);
   const [nodeId, setNodeId] = useState(initialNodeId);
   const [listsExpanded, setListsExpanded] = useState(false);
   const { corpus } = useCorpus();
@@ -548,10 +550,28 @@ describe('search', () => {
   beforeEach(() => {
     vi.mocked(useLayout).mockReturnValue(mockLayout({ mobile: true }));
   });
+  // Drops a touch-screen matchMedia stub, along with the localStorage one the outer beforeEach renews.
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
 
   it('is hidden until the search icon is clicked, then autofocuses', async () => {
     renderHarness();
     expect(screen.queryByPlaceholderText(SEARCH_PLACEHOLDER)).not.toBeInTheDocument();
+    await userEvent.click(screen.getByLabelText('Search'));
+    expect(screen.getByPlaceholderText(SEARCH_PLACEHOLDER)).toHaveFocus();
+  });
+
+  it('leaves the box unfocused on a touch screen returning to a query, keeping the keyboard down', () => {
+    vi.stubGlobal('matchMedia', (q: string) => ({ matches: q.includes('coarse'), media: q }));
+    render(<Harness onSelect={vi.fn()} onOpenSutta={vi.fn()} initialQuery="dn16" />);
+    expect(screen.getByPlaceholderText(SEARCH_PLACEHOLDER)).toHaveValue('dn16');
+    expect(screen.getByPlaceholderText(SEARCH_PLACEHOLDER)).not.toHaveFocus();
+  });
+
+  it('focuses the box on a touch screen when search is opened fresh', async () => {
+    vi.stubGlobal('matchMedia', (q: string) => ({ matches: q.includes('coarse'), media: q }));
+    renderHarness();
     await userEvent.click(screen.getByLabelText('Search'));
     expect(screen.getByPlaceholderText(SEARCH_PLACEHOLDER)).toHaveFocus();
   });

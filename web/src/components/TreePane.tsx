@@ -774,7 +774,9 @@ export function TreePane({
           <div className="mt-4 relative">
             <input
               ref={searchInput}
-              autoFocus
+              // Focused on opening, except on a touch screen returning to a query, where the
+              // keyboard would cover the results being returned to.
+              autoFocus={!(query.trim() && window.matchMedia?.('(pointer: coarse)').matches)}
               value={query}
               onChange={(e) => onSearch(e.target.value)}
               onKeyDown={(e) => {
