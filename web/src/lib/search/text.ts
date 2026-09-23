@@ -27,6 +27,7 @@ import {
   type SearchHit,
 } from './metadata';
 import { expandQuery } from './expansion';
+import { matchRuns } from './match';
 import type { Corpus, HighlightsMap, ListDef } from '../types';
 
 // Opens each paragraph, and each sutta, on a line of its own — see build-corpus.mjs. Being neither
@@ -492,6 +493,16 @@ function windowAround(text: string, at: number): { text: string; start: number; 
   if (end < text.length) end = text.lastIndexOf(' ', end) + 1 || end;
   const cut = `${start > 0 ? '…' : ''}${tidy(text.slice(start, end))}${end < text.length ? '…' : ''}`;
   return { text: cut, start, end };
+}
+
+// windowOnMatch returns `text` cut as a snippet is, around the first word `query` marks in it, or
+// `text` whole where it marks none.
+export function windowOnMatch(text: string, query: string): string {
+  const runs = matchRuns(text, query);
+  const first = runs.findIndex((run) => run.hit);
+  if (first < 0) return text;
+  const at = runs.slice(0, first).reduce((n, run) => n + run.text.length, 0);
+  return windowAround(text, at).text;
 }
 
 // The paragraph a text hit was found in, windowed around the match, with the segments the window

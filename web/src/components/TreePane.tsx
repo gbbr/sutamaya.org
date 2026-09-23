@@ -25,7 +25,7 @@ import {
   type ListBlockHit,
   type SearchHit,
 } from '../lib/search/metadata';
-import { searchNoMatches, type TextSearchStatus } from '../lib/search/text';
+import { searchNoMatches, windowOnMatch, type TextSearchStatus } from '../lib/search/text';
 import { beginTextSearchLoad } from '../lib/search/textClient';
 import { ancestorsOfList, flattenListTree, suttaRowMeta } from '../lib/lists';
 import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
@@ -932,6 +932,8 @@ export function TreePane({
                   const showNote = !!note && (explains?.line === 'note' || (!snippet && explains?.line !== 'blurb'));
                   const showBlurb = !showNote && explains?.line === 'blurb';
                   const lineQuery = (line: 'note' | 'blurb') => (explains?.line === line ? explains.query : query);
+                  // The description, opened at the words that found it where it is the line that matched.
+                  const blurb = explains?.line === 'blurb' ? windowOnMatch(sutta.blurb, explains.query) : sutta.blurb;
                   const { chips, hlCount, hlColors } = searchRowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
                   // This row's place in the shared column, past the lists block above it.
                   const navIndex = i + listHits.length;
@@ -968,7 +970,7 @@ export function TreePane({
                       )}
                       {showBlurb && (
                         <span className="text-ui-md leading-[1.4] mt-[6px] text-ink-2 line-clamp-3">
-                          <MatchedText text={sutta.blurb} query={lineQuery('blurb')} />
+                          <MatchedText text={blurb} query={lineQuery('blurb')} />
                         </span>
                       )}
                       {snippet && (
