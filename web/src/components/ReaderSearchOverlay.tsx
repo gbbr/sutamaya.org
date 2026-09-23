@@ -26,7 +26,7 @@ const SAFE_AREA_BOTTOM = 'var(--safe-bottom)';
 // since here it sits on a panel over the reading itself and marks a cursor rather than a choice.
 const ROW_TINT = (tint: string) => `color-mix(in srgb, ${tint} 50%, transparent)`;
 
-// The colour of a description or a quoted passage: halfway between the body text and `dim`.
+// The colour of a note, a description or a quoted passage: halfway between the body text and `dim`.
 const PROSE_COLOR = (theme: ThemeColors) => `color-mix(in srgb, ${theme.fg}, ${theme.dim})`;
 
 // Passages of the sutta being read shown before "more".
@@ -453,6 +453,8 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
             const lineQuery = (line: 'note' | 'blurb') => (explains?.line === line ? explains.query : query);
             // The description, opened at the words that found it where it is the line that matched.
             const blurb = explains?.line === 'blurb' ? windowOnMatch(h.sutta.blurb, explains.query) : h.sutta.blurb;
+            // The note, likewise.
+            const noteText = note && explains?.line === 'note' ? windowOnMatch(note, explains.query, true) : note;
             return (
               <button
                 key={h.id}
@@ -492,12 +494,12 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
                 </span>
                 {showNote && (
                   // An em dash rather than a quote rule marks this as the reader's own note.
-                  <span className="flex gap-[7px] text-ui-base leading-[1.45] mt-[3px]" style={{ color: theme.dim }}>
-                    <span aria-hidden className="flex-none">
+                  <span className="flex gap-[7px] text-ui-base leading-[1.45] mt-[3px]" style={{ color: PROSE_COLOR(theme) }}>
+                    <span aria-hidden className="flex-none" style={{ color: theme.dim }}>
                       —
                     </span>
-                    <span className="whitespace-pre-wrap">
-                      <MatchedText text={note} query={lineQuery('note')} theme={theme} notation />
+                    <span className="line-clamp-3 whitespace-pre-wrap">
+                      <MatchedText text={noteText} query={lineQuery('note')} theme={theme} notation />
                     </span>
                   </span>
                 )}

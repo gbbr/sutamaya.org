@@ -934,6 +934,8 @@ export function TreePane({
                   const lineQuery = (line: 'note' | 'blurb') => (explains?.line === line ? explains.query : query);
                   // The description, opened at the words that found it where it is the line that matched.
                   const blurb = explains?.line === 'blurb' ? windowOnMatch(sutta.blurb, explains.query) : sutta.blurb;
+                  // The note, likewise.
+                  const noteText = note && explains?.line === 'note' ? windowOnMatch(note, explains.query, true) : note;
                   const { chips, hlCount, hlColors } = searchRowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
                   // This row's place in the shared column, past the lists block above it.
                   const navIndex = i + listHits.length;
@@ -963,8 +965,8 @@ export function TreePane({
                           <span aria-hidden className="flex-none text-ink-3">
                             —
                           </span>
-                          <span className="whitespace-pre-wrap">
-                            <MatchedText text={note} query={lineQuery('note')} notation />
+                          <span className="line-clamp-3 whitespace-pre-wrap">
+                            <MatchedText text={noteText} query={lineQuery('note')} notation />
                           </span>
                         </span>
                       )}
