@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { Highlighter, StickyNote, History, Library, List, Search, X } from 'lucide-react';
+import { Eye, Highlighter, StickyNote, Library, List, Search, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useAuth } from '../context/AuthContext';
@@ -390,7 +390,7 @@ export function TreePane({
       [
         // "Recently", where the other two say "Suttas you've …": this is the one that holds a
         // window rather than the whole of what the reader has done.
-        { list: lists.find((l) => l.id === RECENT_AUTO_LIST_ID), sub: 'Recently opened suttas', Icon: History },
+        { list: lists.find((l) => l.id === RECENT_AUTO_LIST_ID), sub: 'Recently opened suttas', Icon: Eye },
         { list: lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID), sub: "Suttas you've highlighted", Icon: Highlighter },
         { list: lists.find((l) => l.id === NOTES_AUTO_LIST_ID), sub: "Suttas you've written notes in", Icon: StickyNote },
       ].filter((x): x is { list: ListDef; sub: string; Icon: typeof Highlighter } => !!x.list),
