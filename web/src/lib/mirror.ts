@@ -80,10 +80,10 @@ export interface Stored<T> {
 }
 
 // A queued edit to one list's `items`, or to one parent's sibling order. `seq` is a per-mirror
-// counter, so ops replay in the order the user made them.
+// counter, so ops replay in the order the user made them. `sent` is as ListRecord.createSent.
 export type QueuedOp =
-  | { id: string; seq: number; type: 'add'; listId: string; suttaId: string }
-  | { id: string; seq: number; type: 'remove'; listId: string; suttaId: string }
+  | { id: string; seq: number; type: 'add'; listId: string; suttaId: string; sent?: boolean }
+  | { id: string; seq: number; type: 'remove'; listId: string; suttaId: string; sent?: boolean }
   | { id: string; seq: number; type: 'order'; listId: string; order: string[]; mtime: string }
   | { id: string; seq: number; type: 'siblingOrder'; parentId: string | null; order: string[]; mtime: string };
 
@@ -392,12 +392,13 @@ function nextMembership(items: string[], suttaId: string, add: boolean): string[
   return [...items, suttaId];
 }
 
-// Adds or removes one sutta in one list, locally and as a queued op. Two pending ops for the same
-// pair that undo each other cancel: the local items array is then back to what the server already
-// has, so there is nothing left to push.
+// Adds or removes one sutta in one list, locally and as a queued op. A removal cancels an add that
+// was never sent.
 export function queueMembership(state: MirrorState, listId: string, suttaId: string, add: boolean): MirrorState {
   const current = state.lists[listId];
   if (!current) return state;
+  // Already a member, or already not one: nothing to queue.
+  if (current.data.items.includes(suttaId) === add) return state;
   const items = nextMembership(current.data.items, suttaId, add);
   // Item membership isn't part of the record's conditional write, so this touches neither mtime nor
   // the dirty flag — the queued op carries it.
@@ -405,10 +406,10 @@ export function queueMembership(state: MirrorState, listId: string, suttaId: str
   const pending = withItems.ops.filter(
     (op) => (op.type === 'add' || op.type === 'remove') && op.listId === listId && op.suttaId === suttaId
   );
-  const inverse = pending[pending.length - 1];
-  const rest = { ...withItems, ops: withItems.ops.filter((op) => !pending.includes(op)) };
-  if (inverse && inverse.type === (add ? 'remove' : 'add')) return rest;
-  return nextOp(rest, { type: add ? 'add' : 'remove', listId, suttaId });
+  const last = pending[pending.length - 1];
+  // An add still on the device, undone by this removal.
+  if (!add && last?.type === 'add' && !last.sent) return { ...withItems, ops: withItems.ops.filter((op) => op !== last) };
+  return nextOp(withItems, { type: add ? 'add' : 'remove', listId, suttaId });
 }
 
 // A list's own item order. Queued rather than folded into the record because it edits the same
@@ -704,10 +705,11 @@ export interface FlushOutcome {
   pulled: PulledTag | null;
 }
 
-// Marks the rows a flush is about to put on the wire, before its first request goes out, since
-// `createSent` and `sent` have to be right during the round trip itself. They mark the row rather
-// than the version, answering "might the server hold this already", which a later local edit
-// doesn't change. Marking a write the flush never sends costs at most a tombstone matching no row.
+// Marks the rows and membership ops a flush is about to put on the wire, before its first request
+// goes out, since `createSent` and `sent` have to be right during the round trip itself. They mark
+// the row rather than the version, answering "might the server hold this already", which a later
+// local edit doesn't change. Marking a write the flush never sends costs at most a tombstone
+// matching no row.
 export function markDispatched(state: MirrorState, dispatched: MirrorState): MirrorState {
   let lists = state.lists;
   for (const [id, record] of Object.entries(dispatched.lists)) {
@@ -725,9 +727,13 @@ export function markDispatched(state: MirrorState, dispatched: MirrorState): Mir
     if (highlights === state.highlights) highlights = { ...state.highlights };
     highlights[g] = { ...live, data: { ...live.data, sent: true } };
   }
+  const sending = new Set(dispatched.ops.filter((op) => (op.type === 'add' || op.type === 'remove') && !op.sent).map((op) => op.id));
+  const ops = sending.size
+    ? state.ops.map((op) => ((op.type === 'add' || op.type === 'remove') && sending.has(op.id) ? { ...op, sent: true } : op))
+    : state.ops;
   // The same reference back when there was nothing to mark, so the common case costs no render.
-  if (lists === state.lists && highlights === state.highlights) return state;
-  return { ...state, lists, highlights };
+  if (lists === state.lists && highlights === state.highlights && ops === state.ops) return state;
+  return { ...state, lists, highlights, ops };
 }
 
 // Folds a finished flush into whatever the mirror looks like now, which may not be what the flush
@@ -759,8 +765,7 @@ export function applyFlushOutcome(state: MirrorState, outcome: FlushOutcome): Mi
     next = { ...next, ops: next.ops.filter((op) => !done.has(op.id)) };
   }
   if (outcome.snapshot) return applySnapshot(next, outcome.snapshot, outcome.pulled);
-  // Writes retired with no snapshot to fold back leave clean records the tag doesn't name — a
-  // refused or outvoted one wrong — so the tag goes and the next pull is in full.
+  // Writes retired with no snapshot to fold back: the tag goes.
   if (outcome.acks.length || outcome.doneOps.length || outcome.remaps.length) return { ...next, pulled: undefined };
   return next;
 }

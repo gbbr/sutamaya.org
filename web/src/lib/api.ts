@@ -146,8 +146,6 @@ export const dataApi = {
   // account's data, which the server answers with a 304 before building anything. Only a flush that
   // pushed nothing sends one (lib/sync.ts).
   pull: (tag: string | null) =>
-    // `no-store` keeps any HTTP cache out of it, so a 304 reaches this code rather than being
-    // answered from a stored copy.
     exchange<Pulled>('/data', { cache: 'no-store', ...(tag ? { headers: { 'If-None-Match': tag } } : {}) }, async (res) =>
       res.status === 304
         ? { changed: false }

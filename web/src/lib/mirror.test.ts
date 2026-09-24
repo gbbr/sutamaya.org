@@ -165,6 +165,33 @@ describe('local collapses', () => {
     expect(state.lists.l1.data.items).toEqual([]);
   });
 
+  it('sends a removal and a re-add, which moves the sutta last', () => {
+    let state = pulled(emptyMirror('u1'), 'l1', ['dn1', 'dn2', 'dn3']);
+    state = queueMembership(state, 'l1', 'dn2', false);
+    state = queueMembership(state, 'l1', 'dn2', true);
+
+    expect(state.ops.map((op) => op.type)).toEqual(['remove', 'add']);
+    expect(state.lists.l1.data.items).toEqual(['dn1', 'dn3', 'dn2']);
+  });
+
+  it('never cancels an add a flush has already sent', () => {
+    let state = pulled(emptyMirror('u1'), 'l1');
+    state = queueMembership(state, 'l1', 'dn1', true);
+    state = markDispatched(state, state);
+    state = queueMembership(state, 'l1', 'dn1', false);
+
+    expect(state.ops.map((op) => op.type)).toEqual(['add', 'remove']);
+    expect(state.lists.l1.data.items).toEqual([]);
+  });
+
+  it('queues nothing for a sutta already in the state asked for', () => {
+    let state = pulled(emptyMirror('u1'), 'l1', ['dn1']);
+    state = queueMembership(state, 'l1', 'dn1', true);
+    state = queueMembership(state, 'l1', 'dn2', false);
+
+    expect(state.ops).toEqual([]);
+  });
+
   it('drops a list deleted before its create ever reached the server, along with its ops', () => {
     let state = list(emptyMirror('u1'), 'l1');
     state = queueMembership(state, 'l1', 'dn1', true);
