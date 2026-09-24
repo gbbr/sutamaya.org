@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { ArrowUpDown, ChevronDown, GripVertical, List, ListPlus, MoveLeft } from 'lucide-react';
+import { ArrowUpDown, ChevronDown, GripVertical, History, List, ListPlus, MoveLeft } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -86,7 +86,7 @@ export function ListPane({
   visible = true,
 }: ListPaneProps) {
   const { corpus } = useCorpus();
-  const { ready, lists, membership, notes, highlights, reorderListItems } = useUserData();
+  const { ready, lists, membership, notes, highlights, visited, reorderListItems } = useUserData();
   const { mobile, paneW } = useLayout();
   // The pane's scroll, held until the mirror lands and the results are complete: a row's note text
   // and highlight count arrive after the row, and the sutta text's hits after the metadata ones,
@@ -132,6 +132,8 @@ export function ListPane({
   // Whether these rows can be reordered: only a user list's, an auto-list's membership being
   // derived, and only once two of them have somewhere to move.
   const canReorder = !!currentList && !currentList.auto && items.length >= 2;
+  // Whether the rows and the count line mark visited suttas: everywhere but an auto-list.
+  const showVisited = !currentList?.auto;
 
   // Where a row opens to, when that isn't the row's own id — a hit inside a batched document is
   // keyed by the batch and opens on the inner sutta it matched.
@@ -314,13 +316,17 @@ export function ListPane({
   //   a deleted list    – empty, since it holds nothing rather than zero things
   //   expandable node   – empty, its suttas being a level down
   //   a node or list    – its sutta count, an auto-list's being what the reader has, uncapped
+  //   visited suttas    – how many of those the reader has visited, when any, except on an auto-list
   //   a running search  – empty, nothing having been counted yet
   //   a search          – the matched lists, collections and suttas counted in the order they rank, "80+" past the cap
   function metaLine(): string {
     if (!searching) {
       if (!nodeId) return `${collectionCount} collections`;
       if (goneList || expandableNode) return '';
-      return plural(currentList?.total ?? items.length, 'sutta');
+      const count = plural(currentList?.total ?? items.length, 'sutta');
+      if (!showVisited) return count;
+      const visitedCount = items.filter(([id]) => visited[id]).length;
+      return visitedCount ? `${count} · ${visitedCount} visited` : count;
     }
     if (textPending) return '';
     // "suttas" rather than "results" whenever lists matched too, so the number names what it counts.
@@ -540,6 +546,11 @@ export function ListPane({
                   <span className="text-ui-lg leading-[1.3] font-serif">
                     <MatchedText text={s.en} query={rowQuery} />
                   </span>
+                  {showVisited && visited[id] && (
+                    <span role="img" aria-label="Visited" className="relative -top-0.5 inline-flex align-middle ml-2.5 text-ink-4">
+                      <History size={16} strokeWidth={2} />
+                    </span>
+                  )}
                 </span>
                 <span
                   className={`block font-serif text-ui-base italic mt-[3px] text-accent-text ${reordering ? '' : 'pr-14'}`}
