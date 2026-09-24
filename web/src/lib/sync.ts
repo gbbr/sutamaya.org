@@ -33,8 +33,7 @@ const CHUNK_SIZE = 10;
 // How many fresh ids to try before giving up on a colliding create.
 const MAX_ID_ATTEMPTS = 4;
 
-// The running bundle: its own URL, whose file name a production build content-hashes. A mirror's
-// tag is sent only by the bundle that folded it in.
+// The running bundle's URL, content-hashed in a production build.
 const BUNDLE = import.meta.url;
 
 // Returns the push item for one queued op.

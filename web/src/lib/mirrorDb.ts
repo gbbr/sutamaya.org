@@ -6,9 +6,7 @@ import { emptyMirror, type MirrorState } from './mirror';
 // IndexedDB isn't available at all, the store falls back to memory and writes last the session.
 
 const DB_NAME = 'sutamaya';
-// Bumped whenever MirrorState's shape changes, except for a new optional field an older mirror
-// can go without. The upgrade wipes rather than migrates, which costs a re-pull plus whatever local
-// edits hadn't synced — everything, for a reader who never signed in.
+// The mirror's IndexedDB version; an upgrade wipes the mirror (CLAUDE.md's "Rules that span files").
 const DB_VERSION = 2;
 const STORE = 'mirrors';
 

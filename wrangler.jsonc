@@ -128,8 +128,7 @@
   "observability": {
     "enabled": true
   },
-  // Which deploy is running. Part of the tag GET /api/data serves a snapshot under, so every device
-  // pulls in full once after a deploy (docs/offline-sync.md's "The flush").
+  // The running deploy's id, part of GET /api/data's tag (docs/offline-sync.md's "The flush").
   "version_metadata": {
     "binding": "CF_VERSION_METADATA"
   },

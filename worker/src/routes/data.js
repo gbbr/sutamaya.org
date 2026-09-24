@@ -10,7 +10,7 @@ dataRouter.use(requireAuth);
 // A deleted account leaves valid session cookies behind on its other devices, requireAuth reading
 // nothing from D1. `410` rather than `401` tells that apart from a lapsed session: the client wipes
 // its copy and returns to a local account instead of pausing its queue to ask for a fresh sign-in.
-// The row is kept on the context, so the pull and the export don't ask for it a second time.
+// The row is kept on the context, for the pull's "not modified" check and the export's email.
 dataRouter.use(async (c, next) => {
   const account = await c.env.DB.prepare('SELECT email, data_version FROM users WHERE id = ?')
     .bind(c.get('userId'))
