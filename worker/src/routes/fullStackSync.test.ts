@@ -236,3 +236,71 @@ describe('client mirror against the real Worker', () => {
     expect(deriveUserData(synced).highlights.mn10 ?? []).toEqual([]);
   });
 });
+
+// The tag a full pull leaves on the mirror, and the "not modified" a flush that pushes nothing is
+// answered with while the tag still names the account's data (docs/offline-sync.md's "The flush").
+describe('client mirror against the real Worker, tagged', () => {
+  // Installs the device and records the status of every pull it makes; `failNextPull` has the next
+  // one fail as a dropped connection would.
+  function device(cookie: string) {
+    asDevice(cookie);
+    const send = globalThis.fetch;
+    const pulls: number[] = [];
+    let failNext = false;
+    vi.stubGlobal('fetch', async (path: string, init?: RequestInit) => {
+      if (path === '/api/data' && failNext) {
+        failNext = false;
+        throw new TypeError('Failed to fetch');
+      }
+      const res = await send(path, init);
+      if (path === '/api/data') pulls.push(res.status);
+      return res;
+    });
+    return { pulls, failNextPull: () => (failNext = true) };
+  }
+
+  it('is answered "not modified" until another device writes, and then pulls in full', async () => {
+    const { cookie } = await signIn();
+    const { pulls } = device(cookie);
+
+    const { state: first } = await flush(setNoteRecord(emptyMirror('u'), 'dn1', 'from the first device'));
+    let { state: second } = await flush(emptyMirror('u'));
+    ({ state: second } = await flush(second));
+    expect(pulls).toEqual([200, 200, 304]);
+    expect(deriveUserData(second).notes.dn1).toBe('from the first device');
+
+    await new Promise((resolve) => setTimeout(resolve, 2));
+    await flush(setNoteRecord(first, 'dn1', 'edited on the first device'));
+    ({ state: second } = await flush(second));
+
+    expect(pulls.slice(3)).toEqual([200, 200]);
+    expect(deriveUserData(second).notes.dn1).toBe('edited on the first device');
+  });
+
+  // A write that loses last-writer-wins changes no row, so the data version stays where the
+  // device's tag has it; the pull after the push is what hands it the winner. When that pull fails,
+  // the next one has to come in full, though nothing more goes up.
+  it('pulls in full after an outvoted write whose pull failed, and takes the winner', async () => {
+    const { cookie } = await signIn();
+    const { pulls, failNextPull } = device(cookie);
+
+    // The reader edits while a flush with nothing to push is out, just before another device's
+    // newer edit lands: the flush brings back the winner's tag with the stale edit still unsent.
+    const edited = setNoteRecord(emptyMirror('u'), 'dn1', 'written first');
+    await new Promise((resolve) => setTimeout(resolve, 2));
+    await flush(setNoteRecord(emptyMirror('u'), 'dn1', 'written second'));
+    const { outcome: out } = await flush(emptyMirror('u'));
+    let stale = applyFlushOutcome(edited, out);
+    expect(stale.pulled).toBeTruthy();
+
+    failNextPull();
+    let outcome;
+    ({ state: stale, outcome } = await flush(stale));
+    expect(outcome.status).toBe('offline');
+    expect(deriveUserData(stale).notes.dn1).toBe('written first');
+
+    ({ state: stale } = await flush(stale));
+    expect(pulls.at(-1)).toBe(200);
+    expect(deriveUserData(stale).notes.dn1).toBe('written second');
+  });
+});

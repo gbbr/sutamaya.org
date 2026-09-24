@@ -39,7 +39,7 @@ Development mirrors the split on `local.sutamaya.org` and `app.local.sutamaya.or
 | `POST /api/auth/email/request`, `…/verify` | sign-in by emailed code |
 | `POST /api/auth/logout` | end the session |
 | `DELETE /api/auth/account` | delete the account and everything in it |
-| `GET /api/data` | all of the reader's data, as one snapshot |
+| `GET /api/data` | all of the reader's data, as one snapshot; 304 to a device already holding it |
 | `POST /api/data/push` | the only write: up to 10 queued changes, each answered on its own |
 | `GET /api/data/export` | the snapshot, as a file |
 | `POST /api/updates/check`, `GET /api/updates/bundle/…` | over-the-air updates ([native-apps.md](native-apps.md)) |
@@ -53,7 +53,7 @@ its version. How the data endpoints are used is [offline-sync.md](offline-sync.m
 
 | Table | Holds |
 |---|---|
-| `users` | one row per account |
+| `users` | one row per account, with its data version, which triggers on `lists`, `notes`, `highlights` and `visited` raise |
 | `identities` | the ways into an account: an Apple ID, a Google account, an email address |
 | `login_codes` | emailed codes not yet used, stored hashed |
 | `lists` | lists and groups; a list's suttas are a JSON array in its row |

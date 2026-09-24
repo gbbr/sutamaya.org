@@ -19,26 +19,32 @@ export class ApiError extends Error {
   }
 }
 
-async function request<T>(path: string, init?: RequestInit): Promise<T> {
+// A request's options, its headers a plain record so they can be merged with the session's.
+type ApiInit = Omit<RequestInit, 'headers' | 'signal'> & { headers?: Record<string, string> };
+
+// Sends one request to the API and returns what `read` makes of the response. A failed response
+// throws an ApiError carrying its status — except 304, which only a conditional request draws, and
+// which `read` is handed.
+async function exchange<T>(path: string, init: ApiInit, read: (res: Response) => Promise<T>): Promise<T> {
   try {
     // The cookie authenticates the web app; a Capacitor build has no cookie cross-origin and
     // sends a bearer token instead (lib/nativeAuth.ts). Both are inert on the other platform.
     const token = getNativeToken();
     const res = await fetch(`${API_BASE}/api${path}`, {
       credentials: 'include',
-      headers: {
-        ...(init?.body ? { 'Content-Type': 'application/json' } : undefined),
-        ...(token ? { Authorization: `Bearer ${token}` } : undefined),
-      },
       ...init,
-      // After the spread, so the timeout always applies rather than being replaced by init's signal.
+      headers: {
+        ...(init.body ? { 'Content-Type': 'application/json' } : undefined),
+        ...(token ? { Authorization: `Bearer ${token}` } : undefined),
+        ...init.headers,
+      },
       signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
     });
     // The server re-mints a bearer token once it is past halfway to expiry; storing it here is
     // what slides the native session forward so an active app is never signed out. No-op on web.
     const refreshed = res.headers.get('X-Session-Token');
     if (refreshed) void setNativeToken(refreshed);
-    if (!res.ok) {
+    if (!res.ok && res.status !== 304) {
       let error = `Request failed (${res.status})`;
       try {
         const body = await res.json();
@@ -48,9 +54,8 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
       }
       throw new ApiError(error, res.status);
     }
-    if (res.status === 204) return undefined as T;
     // Awaited inside the try so a body read that aborts is caught below.
-    return (await res.json()) as T;
+    return await read(res);
   } catch (err) {
     // The signal aborts the response stream too, not just the connection attempt, so a large
     // payload arriving at the deadline rejects on the body read rather than at fetch().
@@ -59,6 +64,11 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
     }
     throw err;
   }
+}
+
+// Sends one request to the API and returns its JSON body, or nothing for a 204.
+function request<T>(path: string, init: ApiInit = {}): Promise<T> {
+  return exchange(path, init, async (res) => (res.status === 204 ? (undefined as T) : ((await res.json()) as T)));
 }
 
 export const authApi = {
@@ -95,6 +105,10 @@ export interface UserData {
   visited: VisitedMap;
 }
 
+// What a pull returns: the snapshot and the tag it is served under, or `changed: false` when the
+// tag sent with it still names the account's data.
+export type Pulled = { changed: true; snapshot: UserData; tag: string | null } | { changed: false };
+
 // One item of a push: a record's desired state, or an operation. Each carries the `mtime` stamped
 // when the user acted, and the server stores the write only if that beats what it holds.
 export type PushItem =
@@ -128,6 +142,17 @@ export type PushResult = { ok: true } | { error: string; status: number };
 
 export const dataApi = {
   all: () => request<UserData>('/data'),
+  // The snapshot, unless `tag` — the one the mirror's last full pull came with — still names the
+  // account's data, which the server answers with a 304 before building anything. Only a flush that
+  // pushed nothing sends one (lib/sync.ts).
+  pull: (tag: string | null) =>
+    // `no-store` keeps any HTTP cache out of it, so a 304 reaches this code rather than being
+    // answered from a stored copy.
+    exchange<Pulled>('/data', { cache: 'no-store', ...(tag ? { headers: { 'If-None-Match': tag } } : {}) }, async (res) =>
+      res.status === 304
+        ? { changed: false }
+        : { changed: true, snapshot: (await res.json()) as UserData, tag: res.headers.get('ETag') }
+    ),
   // The app's only write. Results come back positionally — `results[i]` answers `items[i]` — and a
   // refused item neither rolls back nor blocks the rest, which is what lets one sync be a couple of
   // requests instead of one per edit. Anything that fails the request as a whole (401, 429, 5xx,

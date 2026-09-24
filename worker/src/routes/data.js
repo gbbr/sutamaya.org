@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import { requireAuth, findUserById } from '../auth.js';
+import { requireAuth } from '../auth.js';
 import { jsonBody } from '../jsonBody.js';
 import { assembleUserData } from '../lib/userData.js';
 import { applyWrite } from '../lib/writes.js';
@@ -10,27 +10,42 @@ dataRouter.use(requireAuth);
 // A deleted account leaves valid session cookies behind on its other devices, requireAuth reading
 // nothing from D1. `410` rather than `401` tells that apart from a lapsed session: the client wipes
 // its copy and returns to a local account instead of pausing its queue to ask for a fresh sign-in.
-// The row is kept on the context, so the export doesn't ask for it a second time.
+// The row is kept on the context, so the pull and the export don't ask for it a second time.
 dataRouter.use(async (c, next) => {
-  const user = await findUserById(c.env.DB, c.get('userId'));
-  if (!user) return c.json({ error: 'account_deleted' }, 410);
-  c.set('user', user);
+  const account = await c.env.DB.prepare('SELECT email, data_version FROM users WHERE id = ?')
+    .bind(c.get('userId'))
+    .first();
+  if (!account) return c.json({ error: 'account_deleted' }, 410);
+  c.set('account', account);
   await next();
 });
 
-// Returns everything one user's client needs — lists, membership, notes, highlights, visited — by
-// running the four queries as one batched snapshot and handing the rows to assembleUserData, which
+// Returns the tag a snapshot is served under: whose it is, the account's data version, and the
+// deploy serving it.
+function snapshotTag(userId, dataVersion, env) {
+  return `"${userId}.${dataVersion}.${env.CF_VERSION_METADATA?.id ?? ''}"`;
+}
+
+// Returns whether an If-None-Match header names `tag`, compared weakly as the header requires.
+function namesTag(header, tag) {
+  return !!header && header.split(',').some((candidate) => candidate.trim().replace(/^W\//, '') === tag);
+}
+
+// Returns everything one user's client needs — lists, membership, notes, highlights, visited — as
+// `data`, and the account's data version it was read at as `version`. The rows and the version are
+// read as one batch, a single transaction, so the version names exactly these rows; assembleUserData
 // does the shaping. Columns are mapped from snake_case to the camelCase the client uses.
 async function buildUserData(db, userId) {
   // Tombstones never reach the client. `lists` is the exception and fetches its own, which
   // lib/listTree.js needs to cascade a deleted group's descendants out.
-  const [lists, notes, highlights, visited] = await db.batch([
+  const [account, lists, notes, highlights, visited] = await db.batch([
+    db.prepare('SELECT data_version FROM users WHERE id = ?').bind(userId),
     db.prepare('SELECT * FROM lists WHERE user_id = ? ORDER BY position').bind(userId),
     db.prepare('SELECT * FROM notes WHERE user_id = ? AND deleted = 0').bind(userId),
     db.prepare('SELECT * FROM highlights WHERE user_id = ? AND deleted = 0').bind(userId),
     db.prepare('SELECT * FROM visited WHERE user_id = ?').bind(userId),
   ]);
-  return assembleUserData({
+  const data = assembleUserData({
     // `position`, `mtime` and `deleted` feed lib/listTree.js's read-time repair and stop there.
     listDocs: lists.results.map((row) => ({
       id: row.id,
@@ -64,9 +79,22 @@ async function buildUserData(db, userId) {
     })),
     visitedDocs: visited.results.map((row) => ({ id: row.sutta_id, data: { visitedAt: row.visited_at } })),
   });
+  return { version: account.results[0]?.data_version ?? 0, data };
 }
 
-dataRouter.get('/', async (c) => c.json(await buildUserData(c.env.DB, c.get('userId'))));
+// The snapshot, with its tag as the ETag; or 304 when If-None-Match names the tag it would carry,
+// before a row is read or anything built.
+dataRouter.get('/', async (c) => {
+  const userId = c.get('userId');
+  const current = snapshotTag(userId, c.get('account').data_version, c.env);
+  if (namesTag(c.req.header('If-None-Match'), current)) {
+    c.header('ETag', current);
+    return c.body(null, 304);
+  }
+  const { version, data } = await buildUserData(c.env.DB, userId);
+  c.header('ETag', snapshotTag(userId, version, c.env));
+  return c.json(data);
+});
 
 // Most items one push may carry, set by the Worker's 50-subrequest budget. The dearest item — a
 // `list.update` that reparents — costs four D1 queries, and the account check above spends one more
@@ -96,11 +124,11 @@ dataRouter.post('/push', async (c) => {
 // The same payload as GET /, plus the account's email, as a download.
 dataRouter.get('/export', async (c) => {
   // The account row the check above already read; requireAuth itself never touches the database.
-  const user = c.get('user');
+  const account = c.get('account');
   const payload = {
-    email: user.email,
+    email: account.email,
     exportedAt: new Date().toISOString(),
-    ...(await buildUserData(c.env.DB, c.get('userId'))),
+    ...(await buildUserData(c.env.DB, c.get('userId'))).data,
   };
   c.header('Content-Disposition', 'attachment; filename="sutamaya-export.json"');
   return c.json(payload);

@@ -87,6 +87,12 @@ export type QueuedOp =
   | { id: string; seq: number; type: 'order'; listId: string; order: string[]; mtime: string }
   | { id: string; seq: number; type: 'siblingOrder'; parentId: string | null; order: string[]; mtime: string };
 
+// The tag a full snapshot was served under, and the bundle that folded it in.
+export interface PulledTag {
+  tag: string;
+  bundle: string;
+}
+
 export interface MirrorState {
   // Whose mirror this is, checked on every save so one account's records can't be written under
   // another's key.
@@ -97,6 +103,9 @@ export interface MirrorState {
   visited: Record<string, Stored<VisitedRecord>>;
   ops: QueuedOp[];
   nextSeq: number;
+  // The last full snapshot's tag, while the clean records are exactly what it folded in
+  // (docs/offline-sync.md's "The flush").
+  pulled?: PulledTag;
 }
 
 export function emptyMirror(userId: string | null = null): MirrorState {
@@ -455,8 +464,9 @@ function replayOps(lists: Record<string, Stored<ListRecord>>, ops: QueuedOp[]): 
 
 // Folds a `GET /api/data` snapshot into the mirror: the server's version replaces every clean
 // record, a clean record the snapshot doesn't mention is gone, and everything dirty survives — it
-// is work the snapshot was taken before seeing.
-export function applySnapshot(state: MirrorState, snapshot: UserData): MirrorState {
+// is work the snapshot was taken before seeing. The mirror keeps `pulled`, the snapshot's tag, or
+// none when it came without one.
+export function applySnapshot(state: MirrorState, snapshot: UserData, pulled: PulledTag | null = null): MirrorState {
   const lists: Record<string, Stored<ListRecord>> = {};
   // The snapshot arrives repaired and in sibling order but with no positions of its own, so each
   // row takes its index among its siblings — the dense indices the server itself assigns.
@@ -522,7 +532,7 @@ export function applySnapshot(state: MirrorState, snapshot: UserData): MirrorSta
   }
   for (const [id, record] of Object.entries(state.highlights)) if (record.dirty) highlights[id] = record;
 
-  return { ...state, lists: replayOps(lists, state.ops), notes, highlights, visited };
+  return { ...state, lists: replayOps(lists, state.ops), notes, highlights, visited, pulled: pulled ?? undefined };
 }
 
 // Re-ids a list the server refused as a collision, along with every reference to it — its
@@ -687,7 +697,11 @@ export interface FlushOutcome {
   acks: FlushAck[];
   doneOps: string[];
   remaps: { from: string; to: string }[];
+  // The pull's snapshot: null when the flush stopped first, or when the server answered that the
+  // mirror's tag still names the account's data.
   snapshot: UserData | null;
+  // The tag that snapshot came with, and the bundle that asked for it; null with no snapshot.
+  pulled: PulledTag | null;
 }
 
 // Marks the rows a flush is about to put on the wire, before its first request goes out, since
@@ -744,5 +758,9 @@ export function applyFlushOutcome(state: MirrorState, outcome: FlushOutcome): Mi
     const done = new Set(outcome.doneOps);
     next = { ...next, ops: next.ops.filter((op) => !done.has(op.id)) };
   }
-  return outcome.snapshot ? applySnapshot(next, outcome.snapshot) : next;
+  if (outcome.snapshot) return applySnapshot(next, outcome.snapshot, outcome.pulled);
+  // Writes retired with no snapshot to fold back leave clean records the tag doesn't name — a
+  // refused or outvoted one wrong — so the tag goes and the next pull is in full.
+  if (outcome.acks.length || outcome.doneOps.length || outcome.remaps.length) return { ...next, pulled: undefined };
+  return next;
 }

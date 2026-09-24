@@ -15,12 +15,12 @@ async function signIn(email) {
   return { userId, cookie: setCookie.split(';')[0] };
 }
 
-function api(path, { method = 'GET', body, cookie } = {}) {
+function api(path, { method = 'GET', body, cookie, headers } = {}) {
   return app.request(
     path,
     {
       method,
-      headers: { 'Content-Type': 'application/json', ...(cookie ? { Cookie: cookie } : {}) },
+      headers: { 'Content-Type': 'application/json', ...(cookie ? { Cookie: cookie } : {}), ...headers },
       body: body === undefined ? undefined : JSON.stringify(body),
     },
     env
@@ -140,6 +140,140 @@ describe('routes/data.js (D1)', () => {
   it('rejects an unauthenticated export', async () => {
     const res = await api('/api/data/export');
     expect(res.status).toBe(401);
+  });
+});
+
+// The tag GET /api/data serves its snapshot under, and the 304 a device already holding that
+// snapshot is answered with (docs/offline-sync.md's "The flush").
+describe('GET /api/data, tagged', () => {
+  const tagOf = async (cookie, headers) => (await api('/api/data', { cookie, headers })).headers.get('ETag');
+
+  // Wraps env.DB so every statement prepared through it is recorded.
+  function recordingDb() {
+    const prepared = [];
+    const db = new Proxy(env.DB, {
+      get(target, prop) {
+        if (prop === 'prepare') {
+          return (sql) => {
+            prepared.push(sql);
+            return target.prepare(sql);
+          };
+        }
+        const value = Reflect.get(target, prop);
+        return typeof value === 'function' ? value.bind(target) : value;
+      },
+    });
+    return { db, prepared };
+  }
+
+  it('answers 304 to the tag it served, weakened or not, reading nothing past the account', async () => {
+    const { cookie } = await signIn();
+    await write(cookie, { type: 'note', suttaId: 'sn1.1', text: 'kept' });
+    const tag = await tagOf(cookie);
+    expect(tag).toMatch(/^".+"$/);
+
+    for (const sent of [tag, `W/${tag}`, `"stale", ${tag}`]) {
+      const { db, prepared } = recordingDb();
+      const res = await app.request('/api/data', { headers: { Cookie: cookie, 'If-None-Match': sent } }, { ...env, DB: db });
+      expect(res.status).toBe(304);
+      expect(res.headers.get('ETag')).toBe(tag);
+      expect(await res.text()).toBe('');
+      expect(prepared).toEqual(['SELECT email, data_version FROM users WHERE id = ?']);
+    }
+  });
+
+  it('serves the snapshot in full, under a new tag, after every kind of write', async () => {
+    const { cookie } = await signIn();
+    const span = { k0: 'mn10:1.4', o0: 0, k1: 'mn10:1.5', o1: 12 };
+    const writes = [
+      { type: 'list.create', id: 'l1', label: 'One', parentId: null, kind: 'list' },
+      { type: 'list.create', id: 'l2', label: 'Two', parentId: null, kind: 'list' },
+      { type: 'list.update', id: 'l1', label: 'Renamed', parentId: null },
+      { type: 'item.add', listId: 'l1', suttaId: 'dn1' },
+      { type: 'item.add', listId: 'l1', suttaId: 'dn2' },
+      { type: 'item.order', listId: 'l1', order: ['dn2', 'dn1'] },
+      { type: 'item.remove', listId: 'l1', suttaId: 'dn1' },
+      { type: 'sibling.order', parentId: null, order: ['l1', 'l2'] },
+      { type: 'note', suttaId: 'dn1', text: 'a note' },
+      { type: 'note', suttaId: 'dn1', text: '' },
+      { type: 'highlight', suttaId: 'mn10', span, color: 'yellow', g: 'h1', erase: [] },
+      { type: 'highlight', suttaId: 'mn10', span, color: null, g: 'h2', erase: ['h1'] },
+      { type: 'visited', suttaId: 'dn1', visitedAt: new Date().toISOString() },
+      { type: 'list.delete', id: 'l2' },
+    ];
+
+    let tag = await tagOf(cookie);
+    for (const item of writes) {
+      // Distinct mtimes, so no write loses last-writer-wins to the one before it.
+      await new Promise((r) => setTimeout(r, 2));
+      expect(await write(cookie, { mtime: new Date().toISOString(), ...item }), item.type).toEqual({ ok: true });
+      const res = await api('/api/data', { cookie, headers: { 'If-None-Match': tag } });
+      expect(res.status, item.type).toBe(200);
+      const next = res.headers.get('ETag');
+      expect(next, item.type).not.toBe(tag);
+      tag = next;
+    }
+  });
+
+  // The native apps call the API cross-origin, so the tag only makes the round trip if CORS lets
+  // them send If-None-Match and read the ETag.
+  it('lets the native apps send the tag and read it', async () => {
+    const { cookie } = await signIn();
+    const Origin = 'capacitor://localhost';
+    const preflight = await app.request(
+      '/api/data',
+      {
+        method: 'OPTIONS',
+        headers: { Origin, 'Access-Control-Request-Method': 'GET', 'Access-Control-Request-Headers': 'authorization,if-none-match' },
+      },
+      env
+    );
+    expect(preflight.headers.get('Access-Control-Allow-Headers').toLowerCase().split(',')).toContain('if-none-match');
+
+    const res = await app.request('/api/data', { headers: { Origin, Cookie: cookie } }, env);
+    expect(res.headers.get('Access-Control-Expose-Headers').toLowerCase().split(',')).toContain('etag');
+    expect(res.headers.get('ETag')).toBeTruthy();
+  });
+
+  it('never answers 304 to another account’s tag, or to one another deploy served', async () => {
+    const a = await signIn();
+    const b = await signIn();
+    const tagA = await tagOf(a.cookie);
+    expect((await api('/api/data', { cookie: b.cookie, headers: { 'If-None-Match': tagA } })).status).toBe(200);
+
+    const deployed = (id) => ({ ...env, CF_VERSION_METADATA: { id } });
+    const request = (headers, deploy) => app.request('/api/data', { headers: { Cookie: a.cookie, ...headers } }, deployed(deploy));
+    const tag = (await request({}, 'deploy-1')).headers.get('ETag');
+    expect((await request({ 'If-None-Match': tag }, 'deploy-1')).status).toBe(304);
+    expect((await request({ 'If-None-Match': tag }, 'deploy-2')).status).toBe(200);
+  });
+
+  // A table the snapshot reads without all three triggers would leave a device answered "not
+  // modified" over a change it never saw. The tables come from the snapshot's own queries rather
+  // than a list here, so one added to it without its triggers fails this.
+  it('reads only tables that raise the data version on every insert, update and delete', async () => {
+    const { cookie } = await signIn();
+    const { db, prepared } = recordingDb();
+    const res = await app.request('/api/data', { headers: { Cookie: cookie } }, { ...env, DB: db });
+    expect(res.status).toBe(200);
+
+    const tables = new Set(prepared.flatMap((sql) => [...sql.matchAll(/\b(?:FROM|JOIN)\s+(\w+)/gi)].map((m) => m[1])));
+    // `users` holds the data version itself.
+    tables.delete('users');
+    expect([...tables]).toEqual(expect.arrayContaining(['lists', 'notes', 'highlights', 'visited']));
+
+    const { results: triggers } = await env.DB.prepare("SELECT tbl_name, sql FROM sqlite_master WHERE type = 'trigger'").all();
+    for (const table of tables) {
+      for (const event of ['INSERT', 'UPDATE', 'DELETE']) {
+        const raises = triggers.some(
+          (t) =>
+            t.tbl_name === table &&
+            new RegExp(`\\bAFTER ${event} ON ${table}\\b`, 'i').test(t.sql) &&
+            /SET data_version = data_version \+ 1 WHERE id = (NEW|OLD)\.user_id/.test(t.sql)
+        );
+        expect(raises, `${table} raises the data version after ${event}`).toBe(true);
+      }
+    }
   });
 });
 

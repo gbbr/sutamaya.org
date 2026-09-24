@@ -384,6 +384,7 @@ const outcome = (over: Partial<FlushOutcome>): FlushOutcome => ({
   doneOps: [],
   remaps: [],
   snapshot: null,
+  pulled: null,
   ...over,
 });
 
@@ -443,6 +444,39 @@ describe('applyFlushOutcome', () => {
     expect(state.notes.dn1.dirty).toBe(false);
     state = applySnapshot(state, emptySnapshot);
     expect(state.notes.dn1).toBeUndefined();
+  });
+
+  describe('the tag', () => {
+    const pulled = { tag: '"t1"', bundle: 'bundle-a' };
+
+    it('keeps the tag a snapshot came with, and drops a held one for a snapshot that came without', () => {
+      let state = applyFlushOutcome(emptyMirror('u1'), outcome({ snapshot: emptySnapshot, pulled }));
+      expect(state.pulled).toEqual(pulled);
+
+      state = applyFlushOutcome(state, outcome({ snapshot: emptySnapshot }));
+      expect(state.pulled).toBeUndefined();
+    });
+
+    it('leaves the mirror as it was when the server answered "not modified"', () => {
+      const state = applySnapshot(setNoteRecord(emptyMirror('u1'), 'dn1', 'unsent'), emptySnapshot, pulled);
+
+      expect(applyFlushOutcome(state, outcome({}))).toBe(state);
+    });
+
+    // The pull that would have rebased a refused or outvoted write never came, and the server's
+    // data version didn't move for it, so sending the tag would get "not modified" over it.
+    it('drops the tag when writes were retired with no snapshot to fold back', () => {
+      let state = applySnapshot(emptyMirror('u1'), emptySnapshot, pulled);
+      state = setNoteRecord(state, 'dn1', 'refused');
+      state = applyFlushOutcome(state, outcome({ status: 'offline', acks: [{ kind: 'note', id: 'dn1', mtime: state.notes.dn1.data.mtime }] }));
+      expect(state.pulled).toBeUndefined();
+
+      state = applyFlushOutcome(applySnapshot(state, emptySnapshot, pulled), outcome({ status: 'offline', doneOps: ['op1'] }));
+      expect(state.pulled).toBeUndefined();
+
+      state = applyFlushOutcome(applySnapshot(state, emptySnapshot, pulled), outcome({ remaps: [{ from: 'x', to: 'y' }] }));
+      expect(state.pulled).toBeUndefined();
+    });
   });
 });
 

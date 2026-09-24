@@ -128,6 +128,11 @@
   "observability": {
     "enabled": true
   },
+  // Which deploy is running. Part of the tag GET /api/data serves a snapshot under, so every device
+  // pulls in full once after a deploy (docs/offline-sync.md's "The flush").
+  "version_metadata": {
+    "binding": "CF_VERSION_METADATA"
+  },
   // A second copy of the same Worker, on its own hostnames and its own D1 database, for exercising
   // a change end to end — sign-in included — before it reaches readers. `npm run deploy:staging`
   // deploys it and `npm run seed:staging` fills its database from the local one. See docs/deploy.md.
@@ -189,6 +194,9 @@
           }
         }
       ],
+      "version_metadata": {
+        "binding": "CF_VERSION_METADATA"
+      },
       "vars": {
         "WEB_ORIGIN": "https://app.staging.sutamaya.org",
         "GOOGLE_CLIENT_ID": "45956701911-0a93js1du42ia6vtno0n4bh36crkn5f6.apps.googleusercontent.com",

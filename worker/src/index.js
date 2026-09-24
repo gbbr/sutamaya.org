@@ -42,13 +42,13 @@ const NATIVE_ORIGINS = ['capacitor://localhost', 'https://localhost', 'http://lo
 
 // CORS, built per request since the web origins come from WEB_ORIGIN. A no-op for the browser app,
 // which shares this origin; it lets a Capacitor build reach the API cross-origin, sending the
-// bearer token and reading a re-minted one back.
+// bearer token and reading a re-minted one back, and reading a snapshot's tag and sending it back.
 app.use('/api/*', (c, next) =>
   cors({
     origin: [...webOrigins(c.env.WEB_ORIGIN), ...NATIVE_ORIGINS],
     credentials: true,
-    allowHeaders: ['Content-Type', 'Authorization'],
-    exposeHeaders: ['X-Session-Token'],
+    allowHeaders: ['Content-Type', 'Authorization', 'If-None-Match'],
+    exposeHeaders: ['X-Session-Token', 'ETag'],
   })(c, next)
 );
 

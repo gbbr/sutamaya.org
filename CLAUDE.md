@@ -44,7 +44,11 @@ Offline sync covers `web/src/lib/{mirror,sync,mirrorView,mirrorDb,listTree}.ts`,
   alike. It is the only thing separating one account's rows from another's.
 - **User data is local-first.** Rows carry an `mtime` stamped when the reader acts, the last write
   wins per row, and deletes are tombstones every read skips ([docs/offline-sync.md](docs/offline-sync.md)).
-- **Changing what the mirror stores bumps its IndexedDB version**, in the same change.
+- **Changing what the mirror stores bumps its IndexedDB version**, in the same change — unless it
+  only adds an optional field an older mirror can go without, since the bump wipes a signed-out
+  reader's only copy.
+- **Every table the sync snapshot reads carries the triggers that raise the account's data
+  version** ([docs/offline-sync.md](docs/offline-sync.md)'s "The flush"); a test enforces it.
 - **Migrations only add**; a destructive schema change takes two deploys ([docs/deploy.md](docs/deploy.md)).
 - **Some logic exists twice, on purpose**, since the workspaces share no modules. Change one, change
   the other:

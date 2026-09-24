@@ -11,15 +11,17 @@ import {
 import { flushMirror } from './sync';
 import type { PushItem, PushResult } from './api';
 
-const dataApiAll = vi.fn();
+const dataApiPull = vi.fn();
 const dataApiPush = vi.fn();
 
 vi.mock('./api', () => ({
   dataApi: {
-    all: (...args: unknown[]) => dataApiAll(...args),
+    pull: (...args: unknown[]) => dataApiPull(...args),
     push: (...args: unknown[]) => dataApiPush(...args),
   },
 }));
+
+const EMPTY_SNAPSHOT = { lists: [], membership: {}, notes: {}, highlights: {}, visited: {} };
 
 function httpError(status: number) {
   return Promise.reject(Object.assign(new Error(`Request failed (${status})`), { status }));
@@ -44,7 +46,7 @@ function withQueuedAdd(): MirrorState {
 
 beforeEach(() => {
   vi.clearAllMocks();
-  dataApiAll.mockResolvedValue({ lists: [], membership: {}, notes: {}, highlights: {}, visited: {} });
+  dataApiPull.mockResolvedValue({ changed: true, snapshot: EMPTY_SNAPSHOT, tag: '"t2"' });
   dataApiPush.mockImplementation(respond());
 });
 
@@ -138,7 +140,7 @@ describe('flushMirror', () => {
   });
 
   it('reports a 410 on the pull as a deleted account, after a push that landed', async () => {
-    dataApiAll.mockImplementation(() => httpError(410));
+    dataApiPull.mockImplementation(() => httpError(410));
 
     const outcome = await flushMirror(setNoteRecord(emptyMirror('u1'), 'dn1', 'a note'));
 
@@ -212,7 +214,7 @@ describe('flushMirror', () => {
     // The Worker refuses more than PUSH_MAX_ITEMS at once, so the client loops until the queue
     // drains — and the pull happens once, at the end, not per chunk.
     expect(dataApiPush.mock.calls.map((call) => (call[0] as PushItem[]).length)).toEqual([10, 10, 5]);
-    expect(dataApiAll).toHaveBeenCalledTimes(1);
+    expect(dataApiPull).toHaveBeenCalledTimes(1);
     expect(outcome.acks).toHaveLength(25);
   });
 
@@ -256,5 +258,54 @@ describe('flushMirror', () => {
     // The ack has to name the id the create actually landed under, or applyFlushOutcome clears
     // nothing and the record stays dirty forever.
     expect(outcome.acks).toContainEqual({ kind: 'list', id: to, mtime: state.lists.l1.data.mtime });
+  });
+});
+
+// Which pulls carry the mirror's tag (docs/offline-sync.md's "The flush").
+describe('flushMirror, tagged', () => {
+  // A mirror holding a tag this bundle folded in, as a full pull leaves it.
+  async function tagged(): Promise<MirrorState> {
+    const outcome = await flushMirror(emptyMirror('u1'));
+    expect(outcome.pulled).toEqual({ tag: '"t2"', bundle: expect.any(String) });
+    vi.clearAllMocks();
+    return { ...emptyMirror('u1'), pulled: outcome.pulled! };
+  }
+
+  it('sends the tag when nothing goes up, and reports "not modified" as no snapshot', async () => {
+    const state = await tagged();
+    dataApiPull.mockResolvedValue({ changed: false });
+
+    const outcome = await flushMirror(state);
+
+    expect(dataApiPull).toHaveBeenCalledWith('"t2"');
+    expect(outcome).toMatchObject({ status: 'ok', snapshot: null, pulled: null, acks: [] });
+  });
+
+  it('sends no tag after a push, whether it landed or was refused', async () => {
+    const state = await tagged();
+    dataApiPush.mockImplementation(respond((item) => (item.type === 'note' ? { error: 'bad_note', status: 400 } : null)));
+
+    await flushMirror(setNoteRecord(state, 'dn1', 'refused'));
+    await flushMirror(renameListRecord(createListRecord(state, { id: 'l9', label: 'A', parentId: null, kind: 'list' }), 'l9', 'B'));
+
+    expect(dataApiPull.mock.calls).toEqual([[null], [null]]);
+  });
+
+  it('sends no tag it holds from another bundle, or when it holds none', async () => {
+    const state = await tagged();
+
+    await flushMirror({ ...state, pulled: { tag: '"t2"', bundle: 'https://app.example/assets/index-other.js' } });
+    await flushMirror(emptyMirror('u1'));
+
+    expect(dataApiPull.mock.calls).toEqual([[null], [null]]);
+  });
+
+  it('keeps no tag from a snapshot served without one', async () => {
+    dataApiPull.mockResolvedValue({ changed: true, snapshot: EMPTY_SNAPSHOT, tag: null });
+
+    const outcome = await flushMirror(emptyMirror('u1'));
+
+    expect(outcome.snapshot).toEqual(EMPTY_SNAPSHOT);
+    expect(outcome.pulled).toBeNull();
   });
 });
