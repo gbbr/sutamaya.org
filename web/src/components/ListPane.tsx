@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { ArrowUpDown, ChevronDown, GripVertical, History, List, ListPlus, MoveLeft } from 'lucide-react';
+import { ArrowUpDown, ChevronDown, Eye, GripVertical, List, ListPlus, MoveLeft } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useLayout } from '../context/LayoutContext';
@@ -547,8 +547,8 @@ export function ListPane({
                     <MatchedText text={s.en} query={rowQuery} />
                   </span>
                   {showVisited && visited[id] && (
-                    <span role="img" aria-label="Visited" className="relative -top-0.5 inline-flex align-middle ml-2.5 text-ink-4">
-                      <History size={16} strokeWidth={2} />
+                    <span role="img" aria-label="Visited" className="relative -top-0.5 inline-flex align-middle ml-2.5 text-ink-4 opacity-60 dark:opacity-80">
+                      <Eye size={14} strokeWidth={2} />
                     </span>
                   )}
                 </span>
