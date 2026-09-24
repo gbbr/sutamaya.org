@@ -21,7 +21,15 @@ const BUNDLE_FILE = /^sutamaya-[A-Za-z0-9._-]+\.zip$/;
 // but not for this device"; neither counts as a failure or rolls a bundle back.
 const upToDate = (c) =>
   c.json({ error: 'no_new_version_available', message: 'No new version available', kind: 'up_to_date' });
-const withheld = (c, message) => c.json({ error: 'update_withheld', message, kind: 'blocked' });
+// A withheld answer's `error` is `below_min_native` when a store update would bring the bundle in,
+// which the app's Settings turns into a link to the store; `update_withheld` otherwise.
+const withheld = (c, error, message) => c.json({ error, message, kind: 'blocked' });
+
+// The var holding each platform's minimum native build, by the platform the plugin names.
+const MIN_NATIVE_VARS = new Map([
+  ['ios', 'OTA_MIN_NATIVE_IOS'],
+  ['android', 'OTA_MIN_NATIVE_ANDROID'],
+]);
 
 // The updater's check. The plugin POSTs a JSON body describing the running bundle; the response
 // names the currently published bundle, or reports no update when none is published. The plugin
@@ -32,21 +40,22 @@ updatesRouter.post('/check', async (c) => {
   const checksum = c.env.OTA_CHECKSUM;
   if (!version || !checksum) return upToDate(c);
 
-  // Withhold the bundle from a native binary older than the last one this line of web code is
-  // safe to run in — a change that needs a new plugin, permission or deep-link path bumps the
-  // native build number and OTA_MIN_NATIVE together, and old binaries then wait for a store
-  // update instead of pulling a bundle they can't run. Empty OTA_MIN_NATIVE means no floor; a
-  // value that isn't a number withholds from everyone, since the alternative is shipping a bundle
-  // past the one safeguard against a native mismatch. The plugin sends `version_code` as the
-  // native build number on both platforms; a request that doesn't carry a readable one is treated
-  // as below the floor.
-  const floor = Number(c.env.OTA_MIN_NATIVE || 0);
-  if (Number.isNaN(floor)) return withheld(c, 'The native-version floor is not a number.');
-  if (floor > 0) {
-    const body = await c.req.json().catch(() => ({}));
+  // Withholds the bundle from a native binary below its platform's minimum native build, the oldest
+  // build able to run it (docs/native-apps.md's "The minimum native build"). The plugin sends
+  // `version_code` as the native build number on both platforms.
+  //   an empty minimum              – no minimum
+  //   a minimum that isn't a number – withheld from the whole platform
+  //   an unreadable build number    – below the minimum
+  //   an unknown platform           – withheld, having no minimum to be measured against
+  const body = await c.req.json().catch(() => ({}));
+  const minVar = MIN_NATIVE_VARS.get(body.platform);
+  if (!minVar) return withheld(c, 'update_withheld', 'The request names no known platform.');
+  const minNative = Number(c.env[minVar] || 0);
+  if (Number.isNaN(minNative)) return withheld(c, 'update_withheld', 'The minimum native build is not a number.');
+  if (minNative > 0) {
     const native = Number(body.version_code);
-    if (!Number.isFinite(native) || native < floor) {
-      return withheld(c, 'This app version is below the floor for the published bundle.');
+    if (!Number.isFinite(native) || native < minNative) {
+      return withheld(c, 'below_min_native', 'This app version is below the minimum native build for the published bundle.');
     }
   }
 

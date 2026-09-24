@@ -8,8 +8,8 @@
 //   --force               skip the clean-working-tree guard (the version embeds the commit id; a
 //                         dirty tree publishes a "-dirty" version that can't be reproduced)
 //   --skip-tests          staging only — forward --skip-tests to the deploy so it skips `npm test`
-//   --allow-native-drift  publish even though the native contract has moved since the build in the
-//                         stores — for a change that cannot affect the bundle, an icon say
+//   --allow-native-drift  publish even though the native contract has moved since a platform's build
+//                         in the stores — for a change that cannot affect the bundle, an icon say
 
 import { spawnSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -38,22 +38,23 @@ const WRANGLER_CONFIG = 'wrangler.jsonc';
 // Bundles left in the bucket after a release, the one just published included.
 const KEEP_BUNDLES = 3;
 
-// The binary in the stores: its build number, the commit its native projects were built from, and
-// the lowest build number able to run bundles built from that commit.
+// Each platform's binary in its store: its build number, the commit its native project was built
+// from, and `minNative`, the lowest build number able to run bundles built from that commit.
 const NATIVE_RELEASE = 'native-release.json';
 
+// The platforms native-release.json records, by their names in it and in messages.
+const PLATFORMS = { ios: 'iOS', android: 'Android' };
+
 // The files that decide what a bundle may call — plugins, permissions, deep-link claims — and so
-// what an older binary cannot run. Everything else under web/ios and web/android is left out, to
-// keep an icon or a rebuilt asset from reading as a contract change. The Capacitor plugin list is
-// checked separately: it shares web/package.json with every web dependency, and it is also what
-// capacitor.build.gradle restates, so that generated file is left out too.
-const NATIVE_CONTRACT = [
-  'web/capacitor.config.ts',
-  'web/ios/App/App/Info.plist',
-  'web/ios/App/App.xcodeproj/project.pbxproj',
-  'web/android/app/src/main/AndroidManifest.xml',
-  'web/android/app/build.gradle',
-];
+// what an older binary cannot run, by the platform whose binary they shape. Everything else under
+// web/ios and web/android is left out, to keep an icon or a rebuilt asset from reading as a
+// contract change. The Capacitor plugin list is checked separately: it shares web/package.json with
+// every web dependency, and it is also what capacitor.build.gradle restates, so that generated file
+// is left out too.
+const NATIVE_CONTRACT = {
+  ios: ['web/capacitor.config.ts', 'web/ios/App/App/Info.plist', 'web/ios/App/App.xcodeproj/project.pbxproj'],
+  android: ['web/capacitor.config.ts', 'web/android/app/src/main/AndroidManifest.xml', 'web/android/app/build.gradle'],
+};
 
 // The version fields, dropped before comparing: they move on every store release and say nothing
 // about what a bundle may call, so left in they would fire the guard as a matter of routine.
@@ -149,9 +150,16 @@ function capacitorPlugins(rev) {
 }
 
 const store = JSON.parse(readFileSync(NATIVE_RELEASE, 'utf8'));
-if (!gitOut('rev-parse', '--verify', `${store.commit}^{commit}`)) {
-  console.error(`error: ${NATIVE_RELEASE} names commit ${store.commit}, which is not in this clone.`);
-  process.exit(1);
+for (const [platform, name] of Object.entries(PLATFORMS)) {
+  const { commit, minNative } = store[platform] ?? {};
+  if (!commit || !gitOut('rev-parse', '--verify', `${commit}^{commit}`)) {
+    console.error(`error: ${NATIVE_RELEASE} names ${name} commit ${commit}, which is not in this clone.`);
+    process.exit(1);
+  }
+  if (!Number.isInteger(minNative) || minNative < 1) {
+    console.error(`error: ${NATIVE_RELEASE} gives ${name} no "minNative" build number (found ${minNative}).`);
+    process.exit(1);
+  }
 }
 
 // One contract file as of one revision, versions stripped. A path absent at that revision reads as
@@ -160,16 +168,21 @@ function contractText(rev, path) {
   return VERSION_FIELDS.reduce((text, [re, to]) => text.replace(re, to), gitOut('show', `${rev}:${path}`));
 }
 
-const drifted = NATIVE_CONTRACT.filter((path) => contractText(store.commit, path) !== contractText('HEAD', path));
-if (capacitorPlugins(store.commit) !== capacitorPlugins('HEAD')) drifted.push('web/package.json (Capacitor plugins)');
+// The contract files that have moved since each platform's build in the stores, one line each.
+const drifted = Object.entries(PLATFORMS).flatMap(([platform, name]) => {
+  const { build, commit } = store[platform];
+  const files = NATIVE_CONTRACT[platform].filter((path) => contractText(commit, path) !== contractText('HEAD', path));
+  if (capacitorPlugins(commit) !== capacitorPlugins('HEAD')) files.push('web/package.json (Capacitor plugins)');
+  return files.map((file) => `${name} build ${build}: ${file}`);
+});
 if (drifted.length && !allowNativeDrift) {
   console.error(
-    `error: the native projects have moved since build ${store.build}, the build in the stores:\n\n` +
-      drifted.map((file) => `  ${file}`).join('\n') +
+    `error: the native projects have moved since the builds in the stores:\n\n` +
+      drifted.map((line) => `  ${line}`).join('\n') +
       `\n\nThis bundle may call a plugin, permission or link claim those binaries do not have, and\n` +
       `every installed app would run it. Ship a store release and record it in ${NATIVE_RELEASE} —\n` +
-      `raising "floor" to the new build number if the bundle cannot run on the old one — or pass\n` +
-      `--allow-native-drift if the change cannot affect the bundle.\n`,
+      `raising that platform's "minNative" to the new build number if the bundle cannot run on the\n` +
+      `old one — or pass --allow-native-drift if the change cannot affect the bundle.\n`,
   );
   process.exit(1);
 }
@@ -188,7 +201,10 @@ console.log(`  version  ${version}`);
 console.log(`  sha256   ${checksum}`);
 console.log(`  api base ${apiBase}`);
 console.log(`  bucket   ${bucket}, keeping the newest ${KEEP_BUNDLES} bundles, this one included`);
-console.log(`  floor    build ${store.floor} and up${drifted.length ? '  (native drift allowed)' : ''}`);
+console.log(
+  `  native   iOS build ${store.ios.minNative} and up, Android build ${store.android.minNative} and up` +
+    (drifted.length ? '  (native drift allowed)' : ''),
+);
 console.log(`  deploy   npm run ${deployScript}\n`);
 if (!(await confirm('Upload, point wrangler.jsonc at it, and deploy? [y/N] '))) {
   console.log('Aborted. Nothing was uploaded.');
@@ -211,8 +227,16 @@ sh('npx', [
   '--remote',
 ]);
 
-patchWranglerConfig({ OTA_VERSION: version, OTA_CHECKSUM: checksum, OTA_MIN_NATIVE: String(store.floor) });
-console.log(`\n${WRANGLER_CONFIG} now points ${env} at ${version}, floor build ${store.floor}.`);
+patchWranglerConfig({
+  OTA_VERSION: version,
+  OTA_CHECKSUM: checksum,
+  OTA_MIN_NATIVE_IOS: String(store.ios.minNative),
+  OTA_MIN_NATIVE_ANDROID: String(store.android.minNative),
+});
+console.log(
+  `\n${WRANGLER_CONFIG} now points ${env} at ${version}, ` +
+    `for iOS build ${store.ios.minNative} and up, Android build ${store.android.minNative} and up.`,
+);
 
 sh('npm', skipTests ? ['run', deployScript, '--', '--skip-tests'] : ['run', deployScript]);
 

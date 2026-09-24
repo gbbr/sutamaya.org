@@ -3,7 +3,13 @@ import { describe, expect, it } from 'vitest';
 import app from '../index.js';
 
 /** The test env with nothing published, independent of what wrangler.jsonc currently points at. */
-const unpublished = { ...env, OTA_VERSION: '', OTA_CHECKSUM: '', OTA_MIN_NATIVE: '' };
+const unpublished = {
+  ...env,
+  OTA_VERSION: '',
+  OTA_CHECKSUM: '',
+  OTA_MIN_NATIVE_IOS: '',
+  OTA_MIN_NATIVE_ANDROID: '',
+};
 
 const published = {
   ...unpublished,
@@ -50,41 +56,59 @@ describe('POST /api/updates/check', () => {
     expect(await res.json()).toEqual(UP_TO_DATE);
   });
 
-  describe('native-version floor', () => {
-    const floored = { ...published, OTA_MIN_NATIVE: '7' };
+  describe('minimum native build', () => {
+    const withMinimums = { ...published, OTA_MIN_NATIVE_IOS: '7', OTA_MIN_NATIVE_ANDROID: '3' };
 
-    it('serves a device at or above the floor', async () => {
-      const res = await check(floored, { platform: 'android', version_code: '7' });
-      expect((await res.json()).version).toBe('2026.09.10-1');
+    it('serves a device at or above its platform minimum', async () => {
+      const ios = await check(withMinimums, { platform: 'ios', version_code: '7' });
+      expect((await ios.json()).version).toBe('2026.09.10-1');
+      const android = await check(withMinimums, { platform: 'android', version_code: '3' });
+      expect((await android.json()).version).toBe('2026.09.10-1');
     });
 
-    it('withholds from a device below the floor', async () => {
-      const res = await check(floored, { platform: 'android', version_code: '6' });
+    it('withholds from a device below its platform minimum, as one a store update would bring in', async () => {
+      const res = await check(withMinimums, { platform: 'ios', version_code: '6' });
       const body = await res.json();
       expect(body.kind).toBe('blocked');
+      expect(body.error).toBe('below_min_native');
       expect(body.url).toBeUndefined();
     });
 
+    it('measures each platform against its own minimum', async () => {
+      const ios = await check(withMinimums, { platform: 'ios', version_code: '5' });
+      expect((await ios.json()).kind).toBe('blocked');
+      const android = await check(withMinimums, { platform: 'android', version_code: '5' });
+      expect((await android.json()).version).toBe('2026.09.10-1');
+    });
+
     it('withholds when the request carries no readable native version', async () => {
-      const res = await check(floored, { platform: 'android' });
+      const res = await check(withMinimums, { platform: 'android' });
       expect((await res.json()).kind).toBe('blocked');
     });
 
     it('withholds when the version is not a whole number, rather than truncating it', async () => {
-      const res = await check(floored, { platform: 'ios', version_code: '7.1.2' });
+      const res = await check(withMinimums, { platform: 'ios', version_code: '7.1.2' });
       expect((await res.json()).kind).toBe('blocked');
     });
 
-    it('withholds from everyone when the floor itself is not a number', async () => {
-      const res = await check({ ...published, OTA_MIN_NATIVE: '7x' }, { platform: 'android', version_code: '9' });
+    it('withholds from the whole platform when its minimum is not a number', async () => {
+      const res = await check({ ...published, OTA_MIN_NATIVE_ANDROID: '7x' }, { platform: 'android', version_code: '9' });
       const body = await res.json();
       expect(body.kind).toBe('blocked');
+      expect(body.error).toBe('update_withheld');
       expect(body.url).toBeUndefined();
     });
 
-    it('ignores the floor when OTA_MIN_NATIVE is unset', async () => {
-      const res = await check(published, { platform: 'android' });
+    it('ignores the minimum when the platform has none', async () => {
+      const res = await check({ ...published, OTA_MIN_NATIVE_IOS: '7' }, { platform: 'android' });
       expect((await res.json()).version).toBe('2026.09.10-1');
+    });
+
+    it('withholds from a request that names no known platform', async () => {
+      const res = await check(published, { version_code: '9' });
+      const body = await res.json();
+      expect(body.kind).toBe('blocked');
+      expect(body.error).toBe('update_withheld');
     });
   });
 });

@@ -1,6 +1,6 @@
 import { useEffect, useState, useSyncExternalStore } from 'react';
 import { App } from '@capacitor/app';
-import { AlertTriangle, ArrowDown, Check, RefreshCw } from 'lucide-react';
+import { AlertTriangle, ArrowDown, ArrowUpCircle, Check, RefreshCw } from 'lucide-react';
 import { BUILD_COMMIT_ID } from '../lib/buildInfo';
 import {
   applyUpdate,
@@ -10,6 +10,13 @@ import {
   updateReport,
   type UpdateStatus,
 } from '../lib/otaUpdate';
+import { platformName } from '../lib/platform';
+
+// This app's page in its platform's store, and the words of the link to it.
+const STORE =
+  platformName() === 'android'
+    ? { url: 'https://play.google.com/store/apps/details?id=org.sutamaya.app', text: 'Update on Google Play' }
+    : { url: 'https://apps.apple.com/app/id6812033523', text: 'Update in the App Store' };
 
 // The icon and words for each state of an update, the icon turning while a download is under way.
 const STATUS_LINE: Record<UpdateStatus, { Icon: typeof RefreshCw; spin: boolean; text: string }> = {
@@ -17,11 +24,13 @@ const STATUS_LINE: Record<UpdateStatus, { Icon: typeof RefreshCw; spin: boolean;
   downloading: { Icon: RefreshCw, spin: true, text: 'Downloading…' },
   ready: { Icon: ArrowDown, spin: false, text: 'Update ready' },
   failed: { Icon: AlertTriangle, spin: false, text: 'Update will retry' },
+  store: { Icon: ArrowUpCircle, spin: false, text: STORE.text },
 };
 
 /**
  * Renders the app's store version, the commit its running bundle was built from, and what an
- * over-the-air update is doing, with a Restart once one is ready. Mounting it checks for an update.
+ * over-the-air update is doing, with a Restart once one is ready, or a link to the store when this
+ * build is too old for it. Mounting it checks for an update.
  * For the foot of Settings in the native apps; renders nothing until the version is known.
  */
 export function AppVersion() {
@@ -56,6 +65,14 @@ export function AppVersion() {
 
   if (!version) return null;
   const line = status && STATUS_LINE[status];
+  const icon = line && (
+    <line.Icon
+      size={13}
+      strokeWidth={2}
+      aria-hidden
+      className={`flex-none ${line.spin ? 'animate-[spin_2s_linear_infinite]' : ''}`}
+    />
+  );
   return (
     <div
       data-component="AppVersion"
@@ -70,15 +87,17 @@ export function AppVersion() {
           <span aria-hidden className="text-ink-5">
             ·
           </span>
-          <span className="inline-flex items-center gap-1">
-            <line.Icon
-              size={13}
-              strokeWidth={2}
-              aria-hidden
-              className={`flex-none ${line.spin ? 'animate-[spin_2s_linear_infinite]' : ''}`}
-            />
-            {line.text}
-          </span>
+          {status === 'store' ? (
+            <a href={STORE.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-accent-text">
+              {icon}
+              <span className="underline decoration-accent-text/40 underline-offset-2">{line.text}</span>
+            </a>
+          ) : (
+            <span className="inline-flex items-center gap-1">
+              {icon}
+              {line.text}
+            </span>
+          )}
         </>
       )}
       {status === 'ready' && (

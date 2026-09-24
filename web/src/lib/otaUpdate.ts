@@ -24,11 +24,12 @@ export function notifyBundleReady(): void {
  *   downloading – a newer bundle is downloading in the background
  *   ready       – a downloaded bundle is waiting to be switched to
  *   failed      – a download failed; the updater tries again the next time the app opens
+ *   store       – this build is below the minimum native build; the update comes from the store
  */
-export type UpdateStatus = 'current' | 'downloading' | 'ready' | 'failed';
+export type UpdateStatus = 'current' | 'downloading' | 'ready' | 'failed' | 'store';
 
-// What the updater reports as it works, which is everything but `current`.
-export type UpdateReport = Exclude<UpdateStatus, 'current'>;
+// What the updater reports as it works, which is everything but `current` and `store`.
+export type UpdateReport = Exclude<UpdateStatus, 'current' | 'store'>;
 
 // The updater's latest report since launch, null before its first.
 let latestReport: UpdateReport | null = null;
@@ -87,9 +88,10 @@ export function subscribeUpdateReports(listener: () => void): () => void {
 /**
  * Returns what an update is doing, once checkForUpdate has run: `ready` while a downloaded bundle
  * waits, else the updater's latest report, else what the Worker publishes — `current` when it names
- * the running bundle, `downloading` when it names another, which the check has the updater fetch.
- * Null when that can't be told: no answer from the Worker, a binary below the native floor, or an
- * updater that doesn't run.
+ * the running bundle, `downloading` when it names another, which the check has the updater fetch,
+ * `store` when it withholds the bundle from a build below the minimum native build. Null when that
+ * can't be told: no answer from the Worker, a bundle withheld for another reason, or an updater
+ * that doesn't run.
  */
 export async function readUpdateStatus(
   report: UpdateReport | null,
@@ -101,7 +103,7 @@ export async function readUpdateStatus(
   if (next?.id && next.id !== bundle.id && next.status !== 'error') return 'ready';
   if (report) return report;
   const latest = await CapacitorUpdater.getLatest();
-  if (latest.kind === 'blocked') return null;
+  if (latest.kind === 'blocked') return latest.error === 'below_min_native' ? 'store' : null;
   if (latest.version === bundle.version) return 'current';
   return updaterRuns ? 'downloading' : null;
 }

@@ -51,7 +51,8 @@ The bundle, web code and corpus alike, can be replaced without a store release:
    `main.tsx` does. A bundle that hasn't confirmed within 10 seconds is rolled back.
 
 Settings ends with the app's store version, the commit its bundle was built from, and what an update
-is doing: up to date, downloading, ready, or failed and retrying the next time the app opens.
+is doing: up to date, downloading, ready, or failed and retrying the next time the app opens — or,
+on a build too old for the published bundle, a link to its store.
 Opening Settings checks for a new bundle, as coming to the foreground does, and a ready one offers
 Restart, which switches to it at once rather than when the app next goes to the background. So a
 reader can say which bundle they run, and whether a new one has reached them.
@@ -60,23 +61,25 @@ A plain web deploy leaves the native apps on their bundle, and says so; they mov
 `release:ota` runs. Staging and production are separate channels, and what is live is a committed
 line in `wrangler.jsonc`.
 
-### The native floor
+### The minimum native build
 
 Some web changes need a matching native change — a new plugin, a permission, a new link path — and
 would break an older binary. So:
 
-- `native-release.json` records the build in the stores: its number, the commit it was built from,
-  and the **floor**, the oldest build able to run bundles from that commit.
-- `release:ota` copies the floor into `OTA_MIN_NATIVE`, and the Worker withholds the bundle from any
-  binary below it.
-- `release:ota` refuses to publish when the native projects have changed since that commit — the
-  Capacitor config, the manifests, the Xcode project, the Gradle build, the plugin list — unless run
-  with `--allow-native-drift` for a change that can't reach the bundle.
+- `native-release.json` records each platform's build in its store: its number, the commit it was
+  built from, and `minNative`, the oldest build of that platform able to run bundles from that
+  commit. The two stores' build numbers move independently.
+- `release:ota` copies each platform's `minNative` into `OTA_MIN_NATIVE_IOS` or
+  `OTA_MIN_NATIVE_ANDROID`, and the Worker withholds the bundle from a binary below its platform's
+  minimum. That binary keeps running the bundle it has, and Settings links to the store.
+- `release:ota` refuses to publish when a platform's native project has changed since its commit —
+  the Capacitor config, the manifests, the Xcode project, the Gradle build, the plugin list — unless
+  run with `--allow-native-drift` for a change that can't reach the bundle.
 
-A store release updates `native-release.json`: always the build and the commit, and the floor too
-when it adds a native piece. A piece the web code checks for before using needs no floor: the Apple
-sign-in button shows only where its plugin is present, so Android and older iOS builds keep taking
-updates without it.
+A store release updates its platform's record in `native-release.json`: always the build and the
+commit, and `minNative` too when it adds a native piece. A piece the web code checks for before
+using needs no minimum: the Apple sign-in button shows only where its plugin is present, so Android
+and older iOS builds keep taking updates without it.
 
 ## Links into the app
 
@@ -155,7 +158,7 @@ icon shrink the leaf to 90% and stretch the master's background back out to the 
   Play for Android, TestFlight or the App Store for iOS. The Google return can then use a verified
   link instead of `sutamaya://auth`.
 - **Release plumbing:** native builds in CI, one script bumping the version across web, iOS and
-  Android (the floor assumes their build numbers move together), and a staged rollout for updates.
+  Android, and a staged rollout for updates.
 - **macOS:** the iOS app can run on Apple-silicon Macs as "Designed for iPad" at no extra cost; a
   real Mac app is a later decision.
 
