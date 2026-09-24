@@ -1,5 +1,12 @@
 {
-  "build": 3,
-  "commit": "cc17f5db0a88e660aef7a0c4fa631fbf209d8603",
-  "floor": 1
+  "ios": {
+    "build": 3,
+    "commit": "cc17f5db0a88e660aef7a0c4fa631fbf209d8603",
+    "minNative": 1
+  },
+  "android": {
+    "build": 2,
+    "commit": "f3089dcd57c0c28147b43fcac387fc0c65ee9440",
+    "minNative": 1
+  }
 }

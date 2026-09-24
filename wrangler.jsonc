@@ -112,11 +112,11 @@
     // check endpoint tells devices there is no update.
     "OTA_VERSION": "0.1.0-5e8c4f2e",
     "OTA_CHECKSUM": "13cae56948d7c9a5df93190f18d942fe745aff793abb1d1226c59594c1f2a9cd",
-    // The native build number below which the current OTA bundle is withheld. Written by
-    // `release:ota` from native-release.json's "floor", which a store release raises when it adds
-    // a native piece the bundle needs — a plugin, a permission, a deep-link path. Empty means no
-    // floor. See docs/native-apps.md.
-    "OTA_MIN_NATIVE": "1",
+    // Each platform's native build number below which the current OTA bundle is withheld. Written
+    // by `release:ota` from that platform's "minNative" in native-release.json. Empty means no
+    // minimum. See docs/native-apps.md's "The minimum native build".
+    "OTA_MIN_NATIVE_IOS": "1",
+    "OTA_MIN_NATIVE_ANDROID": "1",
     // The Apple Team ID, which turns on /.well-known/apple-app-site-association (worker/src/wellKnown.js)
     // and signs Sign in with Apple's client secrets.
     "APPLE_TEAM_ID": "459GT7W5YV",
@@ -195,7 +195,8 @@
         "MAIL_FROM": "no-reply@sutamaya.org",
         "OTA_VERSION": "0.1.0-07883323",
         "OTA_CHECKSUM": "e60a1b9ca0c8045a548ed108d89b7a02029dd485519ce78bd61e65659bb8238b",
-        "OTA_MIN_NATIVE": "1",
+        "OTA_MIN_NATIVE_IOS": "1",
+        "OTA_MIN_NATIVE_ANDROID": "1",
         // Its apple-app-site-association is inert: the iOS app claims only production's links.
         "APPLE_TEAM_ID": "459GT7W5YV",
         "APPLE_KEY_ID": "K7YSKF69K6",

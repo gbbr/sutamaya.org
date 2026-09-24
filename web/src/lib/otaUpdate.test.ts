@@ -8,7 +8,7 @@ const updater = vi.hoisted(() => ({
   checks: 0,
   running: { id: 'b1', version: '0.1.0-aaaa' },
   waiting: null as unknown,
-  latest: { version: '0.1.0-aaaa' } as { version: string; kind?: string },
+  latest: { version: '0.1.0-aaaa' } as { version: string; kind?: string; error?: string },
 }));
 
 vi.mock('@capgo/capacitor-updater', () => ({
@@ -112,9 +112,15 @@ describe('readUpdateStatus', () => {
     expect(await ota.readUpdateStatus(null, true)).toBe('downloading');
     // Nothing downloads where the updater doesn't run.
     expect(await ota.readUpdateStatus(null, false)).toBeNull();
+  });
 
-    // Below the native floor the plugin echoes the running version back.
-    updater.latest = { version: updater.running.version, kind: 'blocked' };
+  it('sends a build below the minimum native build to the store, and tells nothing else withheld', async () => {
+    const ota = await freshModule();
+    // A withheld bundle comes back with the running version echoed.
+    updater.latest = { version: updater.running.version, kind: 'blocked', error: 'below_min_native' };
+    expect(await ota.readUpdateStatus(null, true)).toBe('store');
+
+    updater.latest = { version: updater.running.version, kind: 'blocked', error: 'update_withheld' };
     expect(await ota.readUpdateStatus(null, true)).toBeNull();
   });
 });
