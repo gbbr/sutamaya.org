@@ -144,12 +144,10 @@
       .btn {
         display: inline-block; text-decoration: none;
         background: rgb(var(--accent)); color: #fff;
-        padding: 10px 20px; border-radius: 9px;
-        font-size: 15px; font-weight: 500;
+        padding: 7px 15px; border-radius: 9px;
+        font-size: 14px; font-weight: 500;
       }
       .btn:hover { background: #6B5230; }
-      /* Smaller than the hero's, so that one still reads as the page's primary action. */
-      .btn-sm { padding: 7px 15px; font-size: 14px; }
 
       /* ---- hero ---- */
       .hero { padding: 64px 0 72px; max-width: 640px; }
@@ -160,9 +158,22 @@
       }
       .lede { font-size: clamp(17px, 2.4vw, 20px); color: rgb(var(--ink-2)); margin: 0 0 32px; }
       .cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+      .cta img { display: block; }
+      /* The web app's badge, shaped like the two store badges beside it. */
+      .web-badge {
+        display: flex; align-items: center; gap: 7px;
+        width: 148px; height: 44px; padding: 0 10px;
+        background: #000; color: #fff; text-decoration: none; text-align: left;
+        border: 1px solid #a6a6a6; border-radius: 7px;
+      }
+      .web-badge:hover { background: #222; }
+      .web-badge svg { fill: none; stroke: currentColor; stroke-width: 1.75; }
+      .web-badge span {
+        display: flex; flex-direction: column;
+        font-size: 18px; font-weight: 500; line-height: 1; letter-spacing: -.01em;
+      }
+      .web-badge small { font-size: 10px; letter-spacing: 0; text-transform: uppercase; margin-bottom: 1px; }
       .fineprint { font-size: 14px; color: rgb(var(--ink-3)); margin: 18px 0 0; }
-      .watch { font-size: 15px; margin: 18px 0 0; }
-      .watch a { color: rgb(var(--accent-text)); }
 
       /* ---- features ---- */
       .feature {
@@ -270,7 +281,8 @@
         border-top: 1px solid rgb(var(--line) / .09);
       }
       .closing h2 { margin-bottom: 10px; }
-      .closing p { color: rgb(var(--ink-2)); margin: 0 0 26px; font-size: 17px; }
+      .closing h2 + p { color: rgb(var(--ink-2)); margin: 0 0 26px; font-size: 17px; }
+      .closing .cta { justify-content: center; }
 
       footer {
         border-top: 1px solid rgb(var(--line) / .09);
@@ -296,7 +308,7 @@
            the app gets past this page, which is the only reason they'd be on it. -->
       <header>
         <div class="mark"><img src="/landing/leaf.png" width="30" height="30" alt="" />sutamaya</div>
-        <a class="btn btn-sm" href="https://app.sutamaya.org/">Open the app</a>
+        <a class="btn" href="https://app.sutamaya.org/">Open the app</a>
       </header>
 
       <section class="hero">
@@ -307,16 +319,16 @@
           word to see what it means.
         </p>
         <div class="cta">
-          <a class="btn" href="https://app.sutamaya.org/">Open the app</a>
+          <a href="https://apps.apple.com/app/id6812033523"><img src="/landing/app-store.png" width="131" height="44" alt="Download on the App Store" /></a>
+          <a href="https://play.google.com/store/apps/details?id=org.sutamaya.app"><img src="/landing/google-play.png" width="148" height="44" alt="Get it on Google Play" /></a>
+          <a class="web-badge" href="https://app.sutamaya.org/">
+            <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2c2.7 2.7 4 6 4 10s-1.3 7.3-4 10c-2.7-2.7-4-6-4-10s1.3-7.3 4-10z" /></svg>
+            <span><small>Use it in the</small>Browser</span>
+          </a>
         </div>
-        <!-- The walkthrough is on YouTube and stays there: a link costs the page nothing, where
-             an embedded player would put YouTube's own chrome in the middle of the layout. -->
-        <p class="watch">
-          <a href="https://www.youtube.com/watch?v=teNMmoVf5Y0">Watch a 4-minute walkthrough</a>
-        </p>
         <!-- Every screenshot below is a phone, so the breadth is stated here in words. -->
         <p class="fineprint">
-          Works in any browser — phone, tablet or desktop.
+          Works on iPhone, iPad and Android, and in any browser.
         </p>
       </section>
 
@@ -400,40 +412,12 @@
         </div>
         <div class="shot">
           <div class="frame">
-            <img src="/landing/offline-mobile.webp" width="780" height="1688" loading="lazy" alt="Sutamaya's offline download settings" />
+            <img src="/landing/offline-mobile.webp" width="780" height="1688" loading="lazy" alt="The sign-in section of sutamaya's settings" />
             <span class="spot" style="left: 2.3%; top: 18.1%; right: 2.3%; bottom: 36.5%"></span>
           </div>
         </div>
       </section>
 
-      <section class="feature">
-        <div>
-          <h2>Built for reading offline</h2>
-          <p>
-            Every sutta you open is kept on your device, so anything you've read stays available
-            with no connection. One tap in Settings downloads the entire canon and dictionary in
-            advance — on a plane, on retreat, or in airplane mode, the app opens and behaves
-            exactly the same.
-          </p>
-        </div>
-        <div class="shot">
-          <div class="frame">
-            <img src="/landing/offline-signed-in-mobile.webp" width="780" height="1688" loading="lazy" alt="Sutamaya signed in and synced across devices" />
-            <span class="spot" style="left: 2.1%; top: 41.8%; right: 1.8%; bottom: 31.1%"></span>
-          </div>
-        </div>
-      </section>
-
-      <section class="closing">
-        <h2>Open it and start reading.</h2>
-        <p>Nothing to sign up for. Sign in later if you want your notes on more than one device.</p>
-        <a class="btn" href="https://app.sutamaya.org/">Open the app</a>
-      </section>
-
-      <!-- Below the call to action, as a colophon: the name is worth explaining but it is not an
-           argument for using the app, so it sits where a curious reader finds it without it
-           interrupting the run from the features to "open it". Its citation is also the one link
-           on the page that lands someone inside a sutta with a reason to be there. -->
       <section class="entry">
         <div class="entry-card">
           <div class="entry-head">
@@ -461,6 +445,22 @@
             </p>
           </div>
         </div>
+      </section>
+
+      <section class="closing">
+        <h2>Open it and start reading.</h2>
+        <p>Nothing to sign up for. Sign in later if you want your notes on more than one device.</p>
+        <div class="cta">
+          <a href="https://apps.apple.com/app/id6812033523"><img src="/landing/app-store.png" width="131" height="44" alt="Download on the App Store" /></a>
+          <a href="https://play.google.com/store/apps/details?id=org.sutamaya.app"><img src="/landing/google-play.png" width="148" height="44" alt="Get it on Google Play" /></a>
+          <a class="web-badge" href="https://app.sutamaya.org/">
+            <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2c2.7 2.7 4 6 4 10s-1.3 7.3-4 10c-2.7-2.7-4-6-4-10s1.3-7.3 4-10z" /></svg>
+            <span><small>Use it in the</small>Browser</span>
+          </a>
+        </div>
+        <p class="fineprint">
+          Works on iPhone, iPad and Android, and in any browser.
+        </p>
       </section>
 
       <footer>
