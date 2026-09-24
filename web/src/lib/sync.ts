@@ -1,7 +1,7 @@
 import { dataApi, type PushItem, type PushResult } from './api';
 import { isRetryable, statusOf } from './retry';
 import { randomId } from './ids';
-import type { FlushAck, FlushOutcome, ListRecord, MirrorState, QueuedOp, Stored } from './mirror';
+import type { FlushAck, FlushOutcome, ListRecord, MirrorState, PulledTag, QueuedOp, Stored } from './mirror';
 import type { UserData } from './api';
 
 // The flush: everything the mirror holds that the server hasn't seen, pushed to POST /api/data/push
@@ -32,6 +32,10 @@ const CHUNK_SIZE = 10;
 
 // How many fresh ids to try before giving up on a colliding create.
 const MAX_ID_ATTEMPTS = 4;
+
+// The running bundle: its own URL, whose file name a production build content-hashes. A mirror's
+// tag is sent only by the bundle that folded it in.
+const BUNDLE = import.meta.url;
 
 // Returns the push item for one queued op.
 function opItem(op: QueuedOp): PushItem {
@@ -164,6 +168,7 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
   let halted: 'offline' | 'unauthorized' | 'deleted' | null = null;
 
   let queue = buildQueue(state);
+  const pushesNothing = queue.length === 0;
   let cursor = 0;
   // Where a create is colliding and how many fresh ids it has been given, counted per position so
   // a second collision later in the flush has its own budget.
@@ -226,18 +231,25 @@ export async function flushMirror(state: MirrorState): Promise<FlushOutcome> {
     if (!collided) cursor += chunk.length;
   }
 
-  // A full snapshot rather than a delta, the payload being small at this scale. Skipped when the
-  // push already stopped, since the pull would fail the same way.
+  // The pull: the whole snapshot, or "not modified" while the mirror's tag still names the account's
+  // data. The tag goes only after an empty push (docs/offline-sync.md's "The flush"). Skipped when
+  // the push already stopped, since the pull would fail the same way.
   let snapshot: UserData | null = null;
+  let pulled: PulledTag | null = null;
   if (!halted) {
+    const held = pushesNothing && state.pulled?.bundle === BUNDLE ? state.pulled.tag : null;
     try {
-      snapshot = await dataApi.all();
+      const result = await dataApi.pull(held);
+      if (result.changed) {
+        snapshot = result.snapshot;
+        pulled = result.tag ? { tag: result.tag, bundle: BUNDLE } : null;
+      }
     } catch (err) {
       halted = haltFor(statusOf(err));
     }
   }
 
-  return { status: halted ?? 'ok', acks, doneOps, remaps, snapshot };
+  return { status: halted ?? 'ok', acks, doneOps, remaps, snapshot, pulled };
 }
 
 const BLOCKED: FlushOutcome = {
@@ -246,6 +258,7 @@ const BLOCKED: FlushOutcome = {
   doneOps: [],
   remaps: [],
   snapshot: null,
+  pulled: null,
 };
 
 // The lock holding one flusher at a time across every tab on the device; they share one mirror,

@@ -49,6 +49,9 @@ const dataApiPush = vi.fn();
 vi.mock('../lib/api', () => ({
   dataApi: {
     all: (...args: unknown[]) => dataApiAll(...args),
+    // The flush's pull, answered in full from `dataApiAll` and untagged, so every flush here pulls
+    // the whole snapshot. lib/sync.test.ts covers the tagged pull.
+    pull: async () => ({ changed: true, snapshot: await dataApiAll(), tag: null }),
     push: (...args: unknown[]) => dataApiPush(...args),
   },
 }));

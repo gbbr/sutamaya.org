@@ -16,8 +16,8 @@ the reader acts ──▶ mirror (IndexedDB) ──push──▶ POST /api/data/
 ```
 
 Every edit changes the mirror at once and marks what it touched. A **flush** pushes whatever the
-server hasn't seen, then pulls a fresh snapshot and folds it back in. The UI only ever reads the
-mirror.
+server hasn't seen, then pulls a fresh snapshot and folds it back in — or learns that nothing has
+changed. The UI only ever reads the mirror.
 
 ## Built for one reader
 
@@ -116,6 +116,18 @@ children), then notes, highlights and visits, then operations in the order they 
 sent ten items per request until empty, then one full snapshot comes back. **A sync costs a couple
 of requests, however much is queued.**
 
+A flush that pushed nothing asks for the snapshot only if it changed. The account carries a data
+version, which the database raises on every change to a row the snapshot reads, and each snapshot
+comes tagged with it. The device keeps the tag and sends it back; while it still matches, the Worker
+answers "not modified" before reading or building anything, and the mirror stays as it is.
+
+- **After a push the snapshot always comes back in full.** A refused or outvoted write changes no
+  row and so no version, and only the full snapshot hands the device the account's own version.
+- **Writes retired without that snapshot drop the tag**, the pull after them having failed, so the
+  next pull is in full too.
+- **A tag holds for one deploy and one bundle.** The deploy is part of it, and a device sends only
+  a tag its running bundle folded in, so new code on either side starts from a full snapshot.
+
 Each item gets its own answer, and the push is deliberately **not atomic**: a refused item neither
 undoes the ones before it nor holds up the ones after.
 
@@ -162,8 +174,12 @@ the reader to decide.
 12. **The device's copies of the server's tree repair and automatic lists agree with the
     originals.** No module is shared between the two workspaces; `portParity.test.ts` and
     `autoLists.test.ts` catch drift.
-13. **Changing what the mirror stores bumps its IndexedDB version**, in the same change. The
-    upgrade wipes the store and re-pulls rather than migrating.
+13. **Changing what the mirror stores bumps its IndexedDB version**, in the same change — unless
+    it only adds an optional field an older mirror can go without. The upgrade wipes the store and
+    re-pulls rather than migrating, which loses everything a signed-out reader has.
+14. **Every table the snapshot reads raises the account's data version** on insert, update and
+    delete, with a trigger for each. Without them a device is told "not modified" over a change it
+    never saw; `routes/data.test.js` fails for a table missing one.
 
 ## Accepted losses
 
@@ -192,6 +208,7 @@ the reader to decide.
 | `web/src/lib/mirrorDb.ts` | storage in IndexedDB |
 | `web/src/lib/highlights.ts`, `segmentKeys.ts` | overlaps and painting; key order |
 | `web/src/context/UserDataContext.tsx` | when the flush runs; the sync state |
-| `worker/src/routes/data.js` | the snapshot and the push |
+| `worker/src/routes/data.js` | the snapshot, its tag, and the push |
+| `worker/migrations/0007_data_version.sql` | the account's data version and the triggers raising it |
 | `worker/src/lib/writes.js` | every write |
 | `worker/src/lib/userData.js`, `listTree.js` | shaping the snapshot; tree repair |

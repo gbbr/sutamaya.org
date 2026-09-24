@@ -27,7 +27,12 @@ vi.mock('../lib/api', () => ({
     requestEmailCode: vi.fn(),
     verifyEmailCode: vi.fn(),
   },
-  dataApi: { all: () => dataApiAll(), push: (...args: unknown[]) => dataApiPush(...args) },
+  // The flush's pull answers in full from `dataApiAll`, untagged; lib/sync.test.ts covers the tag.
+  dataApi: {
+    all: () => dataApiAll(),
+    pull: async () => ({ changed: true, snapshot: await dataApiAll(), tag: null }),
+    push: (...args: unknown[]) => dataApiPush(...args),
+  },
 }));
 
 const navigate = vi.hoisted(() => vi.fn());
