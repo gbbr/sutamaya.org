@@ -158,3 +158,39 @@ describe('ReaderSearchOverlay reopening after a row is opened', () => {
     expect(onOpenSutta).toHaveBeenLastCalledWith('dn1', expect.objectContaining({ segments: [2, 2] }));
   });
 });
+
+describe('ReaderSearchOverlay "more" under the passages', () => {
+  beforeEach(() => {
+    vi.mocked(searchText).mockResolvedValue([
+      { id: 'dn1', rank: 0, saved: false, passages: [passage(1), passage(2), passage(3)] },
+    ]);
+  });
+
+  it('stops the arrow keys, and Enter shows the passages with the cursor on the first revealed', async () => {
+    const onOpenSutta = vi.fn();
+    render(<Harness saved={leftAt('divine')} onOpenSutta={onOpenSutta} />);
+    const input = screen.getByPlaceholderText(READER_SEARCH_PLACEHOLDER);
+    await screen.findByRole('button', { name: /2 more/ });
+
+    // One step down from the passage shown is the toggle.
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+    fireEvent.keyDown(input, { key: 'Enter' });
+    await screen.findByRole('button', { name: /Fewer/ });
+
+    fireEvent.keyDown(input, { key: 'Enter' });
+    expect(onOpenSutta).toHaveBeenLastCalledWith('dn1', expect.objectContaining({ segments: [2, 2] }));
+  });
+
+  it('collapses on Enter at "Fewer", the cursor staying on the toggle', async () => {
+    render(<Harness saved={leftAt('divine', 3)} onOpenSutta={vi.fn()} />);
+    const input = screen.getByPlaceholderText(READER_SEARCH_PLACEHOLDER);
+    await screen.findByRole('button', { name: /Fewer/ });
+
+    for (let i = 0; i < 3; i++) fireEvent.keyDown(input, { key: 'ArrowDown' });
+    fireEvent.keyDown(input, { key: 'Enter' });
+    await screen.findByRole('button', { name: /2 more/ });
+
+    fireEvent.keyDown(input, { key: 'Enter' });
+    expect(await screen.findByRole('button', { name: /Fewer/ })).toBeTruthy();
+  });
+});

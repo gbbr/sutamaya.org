@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Eye, Highlighter, StickyNote, Library, List, Search, X } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
@@ -17,6 +17,7 @@ import { clearRecentSearches, isSameSearch, removeRecentSearch } from '../lib/re
 import { ancestorsOf, descendantIdsOf, findNode, flatSuttaOrder, isExpandable } from '../lib/corpus';
 import { prefetchSuttaText } from '../lib/suttaPrefetch';
 import {
+  LIST_RESULTS_CAP,
   SEARCH_CAP_NOTE,
   SEARCH_PLACEHOLDER,
   SEARCH_RESULTS_CAP,
@@ -81,12 +82,9 @@ function toRecord(ids: string[]): Record<string, boolean> {
   return record;
 }
 
-// Which row the search cursor is on. The arrows walk the lists block and the sutta hits as one
-// column, so it isn't necessarily a sutta.
-export interface ActiveSearchRow {
-  kind: 'list' | 'sutta';
-  id: string;
-}
+// Which row the search cursor is on. The arrows walk the lists block, its toggle and the sutta hits
+// as one column, so it isn't necessarily a sutta.
+export type ActiveSearchRow = { kind: 'list' | 'sutta'; id: string } | { kind: 'toggle'; id?: undefined };
 
 interface TreePaneProps {
   nodeId?: string;
@@ -495,15 +493,22 @@ export function TreePane({
     [displayHits, membership, highlights, flatLists]
   );
 
-  // The one column the arrows walk: the lists block, then the sutta hits, in the order both panes
-  // draw them. Built here, this pane owning the nav even where ListPane renders the rows.
+  // Whether the lists block draws its "more" toggle beneath its rows.
+  const hasListToggle = listHitTotal > LIST_RESULTS_CAP;
+  // The one column the arrows walk: the lists block and its toggle, then the sutta hits, in the
+  // order both panes draw them. Built here, this pane owning the nav even where ListPane renders
+  // the rows.
   const navRows: ActiveSearchRow[] = useMemo(
     () => [
       ...listHits.map((h) => ({ kind: 'list' as const, id: listBlockHitId(h) })),
+      ...(hasListToggle ? [{ kind: 'toggle' as const }] : []),
       ...displayHits.map((h) => ({ kind: 'sutta' as const, id: h.id })),
     ],
-    [listHits, displayHits]
+    [listHits, hasListToggle, displayHits]
   );
+  // The first sutta hit's place in that column.
+  const firstHitIndex = navRows.length - displayHits.length;
+  const activeNavRow = navRows[searchActiveIndex];
 
   // Puts the cursor on the result the reader opened, so a closed reader lands back on the row it
   // was opened from. Set once, when that row appears: a hit the sutta text alone found arrives
@@ -517,19 +522,29 @@ export function TreePane({
     setCursorSeeded(true);
   }, [cursorSeeded, navRows, restoreHitId, setSearchActiveIndex]);
 
-  // Opens row `i`: a list selects it in the pane beside this one, a sutta opens the reader.
+  // Opens row `i`: a list selects it in the pane beside this one, the toggle expands or collapses
+  // the lists block, a sutta opens the reader.
   function openRow(i: number) {
     const listHit = listHits[i];
     if (listHit) {
       onSelect(listBlockHitId(listHit));
       return;
     }
-    const hit = displayHits[i - listHits.length];
+    if (navRows[i]?.kind === 'toggle') {
+      // Collapsing takes the cursor up with the toggle; expanding leaves it on the first row
+      // revealed, ListPane's highlight hidden until that row is drawn.
+      if (listsExpanded) setSearchActiveIndex(LIST_RESULTS_CAP);
+      else onActiveHitChange?.(undefined);
+      onToggleListsExpanded();
+      return;
+    }
+    const hit = displayHits[i - firstHitIndex];
     if (hit) openHit(hit.matchedId ?? hit.id, hit.snippet);
   }
 
-  // Reports the cursor's row up to LibraryPage, so ListPane can draw the same highlight.
-  useEffect(() => {
+  // Reports the cursor's row up to LibraryPage before the screen paints, so ListPane draws the same
+  // highlight in the same frame.
+  useLayoutEffect(() => {
     onActiveHitChange?.(searching ? navRows[searchActiveIndex] : undefined);
   }, [searching, searchActiveIndex, navRows, onActiveHitChange]);
 
@@ -607,7 +622,7 @@ export function TreePane({
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [searching, visible, navRows, displayHits, listHits, searchOpen, onOpenSutta, onSelect, shortcutsOpen, showRecent, searches]);
+  }, [searching, visible, navRows, displayHits, listHits, listsExpanded, onToggleListsExpanded, searchOpen, onOpenSutta, onSelect, shortcutsOpen, showRecent, searches]);
 
   // The row marked as the browsed node; none on a phone, where the list it points at is off screen.
   const markedId = mobile ? undefined : nodeId;
@@ -903,7 +918,8 @@ export function TreePane({
                 expanded={listsExpanded}
                 onToggleExpanded={onToggleListsExpanded}
                 query={query}
-                activeId={navRows[searchActiveIndex]?.kind === 'list' ? navRows[searchActiveIndex].id : undefined}
+                activeId={activeNavRow?.kind === 'list' ? activeNavRow.id : undefined}
+                toggleActive={activeNavRow?.kind === 'toggle'}
                 onSelect={onSelect}
                 padX="px-[22px]"
               />
@@ -941,7 +957,7 @@ export function TreePane({
                   const noteText = note && explains?.line === 'note' ? windowOnMatch(note, explains.query, true) : note;
                   const { chips, hlCount, hlColors } = searchRowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
                   // This row's place in the shared column, past the lists block above it.
-                  const navIndex = i + listHits.length;
+                  const navIndex = i + firstHitIndex;
                   return (
                     <button
                       key={id}

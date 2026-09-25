@@ -18,6 +18,8 @@ interface SearchListHitsProps {
   query: string;
   // The row the arrow-key cursor is on, while it is in this block rather than among the sutta hits.
   activeId?: string;
+  // Whether that cursor is on the toggle beneath the rows.
+  toggleActive?: boolean;
   onSelect: (nodeId: string) => void;
   // The surrounding pane's own row padding, so these line up with the results beneath them.
   padX: string;
@@ -27,23 +29,36 @@ interface SearchListHitsProps {
 // hits — a reader who types a list's or a collection's name is looking for it, not the suttas
 // inside. A line or two each, so a row never outweighs a sutta hit. Drawn by whichever pane is
 // showing results: ListPane on desktop, TreePane on mobile.
-export function SearchListHits({ hits, total, heading, expanded, onToggleExpanded, query, activeId, onSelect, padX }: SearchListHitsProps) {
+export function SearchListHits({
+  hits,
+  total,
+  heading,
+  expanded,
+  onToggleExpanded,
+  query,
+  activeId,
+  toggleActive = false,
+  onSelect,
+  padX,
+}: SearchListHitsProps) {
   const { lists } = useUserData();
   const { countFor } = useListTreeIndex(lists);
-  // The active row, scrolled into view as the cursor walks up into this block. Kept here rather
-  // than in the panes' own index-keyed refs, the two tracking their result rows differently.
+  // The active row or toggle, scrolled into view as the cursor walks up into this block. Kept here
+  // rather than in the panes' own index-keyed refs, the two tracking their result rows differently.
   const activeRef = useRef<HTMLButtonElement | null>(null);
   // Whether the cursor has been on a row here before, which is what separates a cursor the reader
   // moved from the one an arrival places on the first row — revealing that one would scroll the
   // restored results back to the top.
   const cursorSeenRef = useRef(false);
+  // Whether the cursor is on the toggle as "Fewer", which collapsing the block moves up.
+  const onFewer = toggleActive && expanded;
   useEffect(() => {
-    if (!activeId) return;
+    if (!activeId && !toggleActive) return;
     const placing = !cursorSeenRef.current;
     cursorSeenRef.current = true;
     if (placing) return;
     activeRef.current?.scrollIntoView({ block: 'nearest' });
-  }, [activeId]);
+  }, [activeId, toggleActive, onFewer]);
   if (total === 0) return null;
   return (
     <div className="border-b border-ink/[.12] pb-1.5">
@@ -104,7 +119,12 @@ export function SearchListHits({ hits, total, heading, expanded, onToggleExpande
       })}
       {total > LIST_RESULTS_CAP && (
         // The expand toggle, as the description block above the results draws its own "More".
-        <button className={`flex items-center gap-1 pt-1 pb-2 ${padX} font-sans text-ui-xs font-semibold text-ink-4`} onClick={onToggleExpanded}>
+        <button
+          ref={toggleActive ? activeRef : undefined}
+          className={`flex items-center gap-1 w-full py-1.5 ${padX} font-sans text-ui-xs font-semibold text-ink-4 ${toggleActive ? 'bg-ink/[.05]' : ''}`}
+          style={toggleActive ? { boxShadow: 'inset 2px 0 0 rgb(var(--accent2))' } : undefined}
+          onClick={onToggleExpanded}
+        >
           {expanded ? 'Fewer' : `${total - LIST_RESULTS_CAP} more`}
           <ChevronDown size={14} strokeWidth={2.25} className={`flex-none transition-transform ${expanded ? 'rotate-180' : ''}`} />
         </button>

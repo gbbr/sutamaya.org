@@ -6,7 +6,9 @@ export function useActiveHitIndex(
   // Returns the cursor to `initial` when it changes: the query, so rows updating in place keep it.
   resetKey: unknown,
   // Where the cursor starts: 0, the first row, or -1, no row until an arrow places it.
-  initial: 0 | -1 = 0
+  initial: 0 | -1 = 0,
+  // Reveals the cursor's row again when it changes, for a row drawn under a cursor that stays put.
+  revealKey?: unknown
 ) {
   const [activeIndex, setActiveIndex] = useState<number>(initial);
   // Mirrors `activeIndex` for a window-level keydown listener, whose closure would otherwise hold
@@ -24,7 +26,7 @@ export function useActiveHitIndex(
 
   useEffect(() => {
     if (revealRef.current) rowRefs.current[activeIndex]?.scrollIntoView({ block: 'nearest' });
-  }, [activeIndex]);
+  }, [activeIndex, revealKey]);
 
   function moveBy(delta: number, length: number) {
     revealRef.current = true;
