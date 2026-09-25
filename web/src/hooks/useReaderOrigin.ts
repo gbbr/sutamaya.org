@@ -88,14 +88,12 @@ export function useReaderOrigin(
     persistReaderOrigin(nextSuttaId, from, fromView, undefined);
     const state = { from, fromView, backTo: nextSuttaId === backTo ? undefined : backTo ?? leaving };
     navigate(`/read/${encodeURIComponent(nextSuttaId)}`, {
-      state: passage
-        ? tagIntent({
-            ...state,
-            segments: passage.segments,
-            paliSegments: passage.paliSegments,
-            markedBy: passage.markedBy,
-          })
-        : state,
+      // A fresh arrival every time, so a jump to where the reader already is scrolls and washes again.
+      state: tagIntent(
+        passage
+          ? { ...state, segments: passage.segments, paliSegments: passage.paliSegments, markedBy: passage.markedBy }
+          : state
+      ),
       replace: backTo !== undefined || !leaving,
     });
   }

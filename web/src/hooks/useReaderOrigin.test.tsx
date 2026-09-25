@@ -57,7 +57,7 @@ describe('useReaderOrigin', () => {
     const { result, rerender } = renderHook((state) => useReaderOrigin(state), { initialProps });
     result.current.jumpTo('mn10', undefined, 'sn1.1');
     expect(navigate).toHaveBeenLastCalledWith('/read/mn10', {
-      state: { from: '/browse/sn1', backTo: 'sn1.1' },
+      state: { from: '/browse/sn1', backTo: 'sn1.1', navId: expect.any(String) },
       replace: false,
     });
 
@@ -71,7 +71,7 @@ describe('useReaderOrigin', () => {
     // A later jump takes the current sutta's place too, still returning to the first.
     result.current.jumpTo('an4.10', undefined, 'mn11');
     expect(navigate).toHaveBeenLastCalledWith('/read/an4.10', {
-      state: { from: '/browse/sn1', backTo: 'sn1.1' },
+      state: { from: '/browse/sn1', backTo: 'sn1.1', navId: expect.any(String) },
       replace: true,
     });
 

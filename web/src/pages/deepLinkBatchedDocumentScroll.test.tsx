@@ -1,6 +1,7 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { screen, waitFor } from '@testing-library/react';
+import { act, screen, waitFor } from '@testing-library/react';
 import { renderRoutes } from '../testRouter';
+import { tagIntent } from '../lib/routeIntent';
 
 // Two things a deep link straight into the reader has to get right, both exercised through the
 // real ReaderPage wiring rather than the helpers underneath it.
@@ -171,6 +172,21 @@ describe('reader deep links into a batched document', () => {
   // A link copied from a reference as the app displays it ("Dhp 14") carries capitals that no uid
   // in the corpus has. It has to open the same document — here, still resolving the inner verse to
   // its enclosing batch — and settle the address bar on the canonical lowercase path.
+  // What the reader's search does when it opens the inner sutta the reader is already at: the
+  // address stays the same, and the arrival is still a new one.
+  it('scrolls back to and washes an inner sutta again when the reader jumps to it again', async () => {
+    const { router, container, scrollBox } = renderReaderAt('/read/dhp14');
+    await screen.findByText('As a well-roofed house');
+    await waitFor(() => expect(container.querySelector('[data-wash-block]')).not.toBeNull());
+    const first = container.querySelector('[data-wash-block]');
+    scrollBox.scrollTop = 900;
+
+    await act(() => router.navigate('/read/dhp14', { state: tagIntent({}) }));
+
+    await waitFor(() => expect(container.querySelector('[data-wash-block]')).not.toBe(first));
+    await waitFor(() => expect(scrollBox.scrollTop).not.toBe(900));
+  });
+
   it('opens a capitalized deep link, and rewrites the URL to the canonical id', async () => {
     const { router } = renderReaderAt('/read/DHP14');
     await screen.findByText('As a well-roofed house');
