@@ -1,6 +1,7 @@
 import { useCallback, useLayoutEffect, useMemo } from 'react';
 import { useUserData } from '../context/UserDataContext';
 import { useSuttaText } from './useSuttaText';
+import { useFontsLoaded } from './useFontsLoaded';
 import { useHighlightPopup } from './useHighlightPopup';
 import { useScrollMemory, type ScrollRestore } from './useScrollMemory';
 import { highlightColors, highlightStart } from '../lib/highlights';
@@ -20,6 +21,12 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
 ) {
   const { highlights, ready: userDataReady, anchorHighlights } = useUserData();
   const { segments, error, retry } = useSuttaText(suttaId);
+  // Whether this opening returns to a remembered place, whose offset is right only on the text's
+  // final layout, so it also waits for the text's fonts.
+  const returning = restore === 'stored' && !skipRestore;
+  const fontsLoaded = useFontsLoaded(returning ? segments : null);
+  // Whether the page is held back until then, so the first thing seen is that place.
+  const holdingPlace = returning && !fontsLoaded;
   // Re-anchors any highlight addressed by segment position, this being the moment the device holds
   // both those positions and the text they name. A no-op for a sutta whose highlights are keyed,
   // which is every sutta once read. Before paint rather than after, so a converted highlight is
@@ -40,11 +47,12 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
     return resolvable.length === all.length ? all : resolvable;
   }, [suttaId, highlights, segments, segIndex]);
   const popup = useHighlightPopup(suttaId, hlForSutta, segments);
-  // The reading pane's scroll container, restored once the text and user data are both in.
+  // The reading pane's scroll container, restored once the text and user data are both in, and on a
+  // return the text's fonts too.
   const scrollRef = useScrollMemory<T>(suttaId ? `${scrollKeyPrefix}:${suttaId}` : null, true, {
     restore,
     skipRestore,
-    readyToRestore: !!segments && userDataReady,
+    readyToRestore: !!segments && !holdingPlace && userDataReady,
   });
   const hlColors = useMemo(() => highlightColors(hlForSutta), [hlForSutta]);
 
@@ -72,5 +80,5 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
     else animateScrollBy(container, offset);
   }, [scrollRef]);
 
-  return { segments, error, retry, hlForSutta, hlCount: hlForSutta.length, hlColors, scrollRef, scrollToSegment, ...popup };
+  return { segments, error, retry, holdingPlace, hlForSutta, hlCount: hlForSutta.length, hlColors, scrollRef, scrollToSegment, ...popup };
 }
