@@ -440,6 +440,7 @@ export function LibraryPage() {
           activeId={activeRow?.kind === 'sutta' ? activeRow.id : undefined}
           restoreHitId={restoreHitId}
           activeListId={activeRow?.kind === 'list' ? activeRow.id : undefined}
+          listToggleActive={activeRow?.kind === 'toggle'}
           onBack={backToTree}
           onOpen={onOpen}
           visible={showListPane}

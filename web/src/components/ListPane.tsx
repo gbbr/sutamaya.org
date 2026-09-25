@@ -52,6 +52,8 @@ interface ListPaneProps {
   restoreHitId?: string;
   // The same, while that cursor is up in the lists block instead.
   activeListId?: string;
+  // Whether that cursor is on the lists block's toggle.
+  listToggleActive?: boolean;
   onBack: () => void;
   // `snippet` is the passage a text hit was found in, which the reader opens at; absent for every
   // other row.
@@ -81,6 +83,7 @@ export function ListPane({
   activeId,
   restoreHitId,
   activeListId,
+  listToggleActive,
   onBack,
   onOpen,
   visible = true,
@@ -435,6 +438,7 @@ export function ListPane({
             onToggleExpanded={onToggleListsExpanded}
             query={query}
             activeId={activeListId}
+            toggleActive={listToggleActive}
             onSelect={onSelectList}
             padX="px-6"
           />

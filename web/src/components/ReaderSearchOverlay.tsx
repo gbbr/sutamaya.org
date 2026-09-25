@@ -138,9 +138,15 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
   const shownPassages = passages.slice(0, Math.min(shownCount, SEARCH_RESULTS_CAP));
   // Passages "more" can still show, up to the cap.
   const hiddenPassages = Math.min(passages.length, SEARCH_RESULTS_CAP) - shownPassages.length;
-  // The rows walked by the arrow keys: the passages shown, then the other suttas.
-  const rowCount = shownPassages.length + displayHits.length;
-  const { activeIndex, setActiveIndex, moveBy, setRowRef } = useActiveHitIndex(query);
+  // Whether the passages draw their "more" toggle beneath them.
+  const hasPassageToggle = passages.length > PASSAGES_SHOWN;
+  // The toggle's place among the rows the arrow keys walk, right after the passages shown.
+  const toggleIndex = shownPassages.length;
+  // The first other sutta's place among them.
+  const firstHitIndex = toggleIndex + (hasPassageToggle ? 1 : 0);
+  // The rows walked by the arrow keys: the passages shown and their toggle, then the other suttas.
+  const rowCount = firstHitIndex + displayHits.length;
+  const { activeIndex, setActiveIndex, moveBy, setRowRef } = useActiveHitIndex(query, 0, shownCount);
 
   // The row the overlay was left on, over the cursor's reset to the first.
   useEffect(() => {
@@ -196,12 +202,28 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
     if (currentId) onOpenSutta(currentId, passage);
   }
 
+  // togglePassages shows the next passages, with the cursor on the first of them, or collapses them
+  // back to the first once all are shown, taking the cursor up with the toggle.
+  function togglePassages() {
+    if (hiddenPassages > 0) {
+      setShown({ query, count: shownPassages.length + PASSAGES_STEP });
+      setActiveIndex(toggleIndex);
+    } else {
+      setShown({ query, count: PASSAGES_SHOWN });
+      setActiveIndex(PASSAGES_SHOWN);
+    }
+  }
+
   // openRow opens the row at `i` of the ones the arrow keys walk, and keeps it as the row the
-  // overlay reopens on.
+  // overlay reopens on. The toggle expands or collapses the passages instead.
   function openRow(i: number) {
+    if (hasPassageToggle && i === toggleIndex) {
+      togglePassages();
+      return;
+    }
     if (saved.current) saved.current.activeIndex = i;
     if (i < shownPassages.length) openPassage(shownPassages[i]);
-    else if (displayHits[i - shownPassages.length]) openHit(displayHits[i - shownPassages.length]);
+    else if (displayHits[i - firstHitIndex]) openHit(displayHits[i - firstHitIndex]);
   }
 
   // pickRecent runs a recent search again, closing a touch screen's keyboard.
@@ -425,14 +447,20 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
                   {SEARCH_CAP_NOTE}
                 </div>
               )}
-              {passages.length > PASSAGES_SHOWN && (
+              {hasPassageToggle && (
                 <button
+                  ref={setRowRef(toggleIndex)}
                   className="flex items-center gap-1 w-full px-5 pt-2 pb-2.5 font-sans text-ui-xs font-semibold"
-                  style={{ color: theme.dim, borderBottom: `1px solid ${theme.rule}` }}
+                  style={{
+                    color: theme.dim,
+                    background: toggleIndex === activeIndex ? ROW_TINT(theme.tint) : 'transparent',
+                    borderBottom: `1px solid ${theme.rule}`,
+                  }}
                   onMouseDown={(e) => e.preventDefault()}
-                  onClick={() =>
-                    setShown({ query, count: hiddenPassages > 0 ? shownPassages.length + PASSAGES_STEP : PASSAGES_SHOWN })
-                  }
+                  onMouseMove={(e) => {
+                    if (pointerMoved(e)) setActiveIndex(toggleIndex);
+                  }}
+                  onClick={togglePassages}
                 >
                   {hiddenPassages > 0 ? `${Math.min(PASSAGES_STEP, hiddenPassages)} more` : 'Fewer'}
                   <ChevronDown
@@ -450,7 +478,7 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
             </>
           )}
           {displayHits.map((h, j) => {
-            const i = shownPassages.length + j;
+            const i = firstHitIndex + j;
             const { chips, hlCount, hlColors } = rowMeta.get(h.id) ?? { chips: [], hlCount: 0, hlColors: [] };
             const note = notes[h.id];
             // The line that carried the query leads the quote from the sutta — see ListPane.

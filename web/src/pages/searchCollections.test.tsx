@@ -300,6 +300,46 @@ describe('a collection found by search', () => {
     expect(await inPane('ListPane').findByText('Weakness in Training')).toBeTruthy();
   });
 
+  describe('past the first three rows', () => {
+    beforeEach(() => {
+      vi.mocked(useUserData).mockReturnValue(
+        mockUserData([
+          { id: 'l1', label: 'Satipaṭṭhāna practice', parentId: null, kind: 'list', items: [] },
+          { id: 'l2', label: 'Satipaṭṭhāna notes', parentId: null, kind: 'list', items: [] },
+        ])
+      );
+    });
+
+    it('stops the arrow keys on "more", which Enter expands with the cursor on the first row revealed', async () => {
+      const { inPane } = searchFrom('/browse/dn', 'satipatthana');
+      await inPane('ListPane').findByRole('button', { name: /1 more/ });
+
+      // The two lists and SN47 show; three steps down from the first is the toggle.
+      for (let i = 0; i < 3; i++) fireEvent.keyDown(window, { key: 'ArrowDown' });
+      fireEvent.keyDown(window, { key: 'Enter' });
+      await inPane('ListPane').findByRole('button', { name: /Fewer/ });
+
+      // The row revealed where the toggle was: AN9's vagga.
+      fireEvent.keyDown(window, { key: 'Enter' });
+      expect(await inPane('ListPane').findByText('Weakness in Training')).toBeTruthy();
+    });
+
+    it('collapses on Enter at "Fewer", the cursor staying on the toggle', async () => {
+      const { inPane } = searchFrom('/browse/dn', 'satipatthana');
+      await inPane('ListPane').findByRole('button', { name: /1 more/ });
+
+      for (let i = 0; i < 3; i++) fireEvent.keyDown(window, { key: 'ArrowDown' });
+      fireEvent.keyDown(window, { key: 'Enter' });
+      await inPane('ListPane').findByRole('button', { name: /Fewer/ });
+      fireEvent.keyDown(window, { key: 'ArrowDown' });
+      fireEvent.keyDown(window, { key: 'Enter' });
+      await inPane('ListPane').findByRole('button', { name: /1 more/ });
+
+      fireEvent.keyDown(window, { key: 'Enter' });
+      expect(await inPane('ListPane').findByRole('button', { name: /Fewer/ })).toBeTruthy();
+    });
+  });
+
   it('brings the collection it opens to the middle of the tree, each time it is picked', async () => {
     const scrolls = recordScrolls();
     const { inPane, search } = searchFrom('/browse/dn', 'satipatthana');
