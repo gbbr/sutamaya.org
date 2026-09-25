@@ -21,6 +21,9 @@ Element.prototype.scrollIntoView = function scrollIntoView() {};
 Element.prototype.scrollBy = function scrollBy() {};
 Element.prototype.scrollTo = function scrollTo() {};
 
+// jsdom has no CSS Font Loading API, so every font counts as loaded, as a system font's would be.
+Object.defineProperty(document, 'fonts', { configurable: true, value: { status: 'loaded', ready: Promise.resolve() } });
+
 // jsdom implements no real layout, so Range.prototype has neither getClientRects nor
 // getBoundingClientRect at all — useHighlightPopup calls both while building a highlight-popup
 // position from a selection, so any selection-driven test throws without these stubs.

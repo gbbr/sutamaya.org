@@ -185,6 +185,7 @@ export function ReaderPage() {
     segments,
     error: textError,
     retry: retryText,
+    holdingPlace,
     hlForSutta,
     hlCount,
     hlColors,
@@ -719,7 +720,7 @@ export function ReaderPage() {
       >
         {/* The measure column. A Prev/Next step animates it out and the next sutta in, driven
             imperatively from `step` above, since this element never unmounts. */}
-        <div ref={articleRef} style={{ maxWidth: measureWidth, margin: '0 auto' }}>
+        <div ref={articleRef} style={{ maxWidth: measureWidth, margin: '0 auto', visibility: holdingPlace ? 'hidden' : undefined }}>
           {searchOrigin ? (
             <nav className="font-sans flex items-center gap-1" style={{ fontSize: fs - 6, marginBottom: 7, color: theme.dim }}>
               {/* Back to the results, the same place closing the reader lands. */}
@@ -884,6 +885,12 @@ export function ReaderPage() {
             </div>
           )}
 
+          {/* Visible through a page held back for its place, as is the error below. */}
+          {(!segments || holdingPlace) && !textError && (
+            <div className="delayed-appear font-sans text-sm opacity-50" style={{ visibility: 'visible' }}>
+              Loading…
+            </div>
+          )}
           {segments ? (
             <SegmentedText
               segments={segments}
@@ -906,19 +913,19 @@ export function ReaderPage() {
               washId={arrivalId}
               marks={searchMarks}
             />
-          ) : textError ? (
-            <div className="flex flex-col items-center gap-3 font-sans text-sm text-center" style={{ padding: '24px 0' }}>
-              <div style={{ color: theme.fg, opacity: 0.7 }}>Couldn't load this sutta. Check your connection and try again.</div>
-              <button
-                className="text-ui-base px-3 py-1.5 rounded-md hover:opacity-70"
-                style={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
-                onClick={retryText}
-              >
-                Retry
-              </button>
-            </div>
           ) : (
-            <div className="delayed-appear font-sans text-sm opacity-50">Loading…</div>
+            textError && (
+              <div className="flex flex-col items-center gap-3 font-sans text-sm text-center" style={{ padding: '24px 0', visibility: 'visible' }}>
+                <div style={{ color: theme.fg, opacity: 0.7 }}>Couldn't load this sutta. Check your connection and try again.</div>
+                <button
+                  className="text-ui-base px-3 py-1.5 rounded-md hover:opacity-70"
+                  style={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
+                  onClick={retryText}
+                >
+                  Retry
+                </button>
+              </div>
+            )
           )}
 
           {/* Prev/Next at the foot of the text, shown once the text itself is on screen. */}
@@ -1050,7 +1057,7 @@ export function ReaderPage() {
         />
       )}
 
-      {!panel && segments && (
+      {!panel && segments && !holdingPlace && (
         <HighlightGutter
           scrollRef={scrollRef}
           highlights={hlForSutta}
