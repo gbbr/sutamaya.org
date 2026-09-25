@@ -45,9 +45,6 @@ import { NotFoundPage } from './NotFoundPage';
 // How long a sutta has to stay open before it counts as visited.
 const VISIT_DEBOUNCE_MS = 5000;
 
-// How long the segment a search hit was found in stays washed on arrival.
-const SEARCH_FLASH_MS = 1600;
-
 // Type treatment of the PREVIOUS/NEXT captions in the end-of-sutta nav.
 const FOOT_NAV_LABEL: CSSProperties = { fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' };
 // Returns the size of those captions, capped so they stay under the titles they caption.
@@ -295,26 +292,26 @@ export function ReaderPage() {
     requestAnimationFrame(() => scrollToSegment(subRange[0], 'start', undefined, behavior));
   }, [subRange, segments, scrollToSegment]);
 
-  // Whether the passage the reader arrived on is still washed.
-  const [flashing, setFlashing] = useState(false);
   // Whether the words a search hit was found by are still marked.
   const [marking, setMarking] = useState(false);
   // The segment a search hit lands the reader on, scrolled to once the Pali it opens is showing: at
   // once on a sutta just arrived, gliding within one already open.
   const [landing, setLanding] = useState<{ seg: number; behavior: 'smooth' | 'instant' }>();
 
-  // The segments the wash covers, clamped to the text that has loaded. Derived rather than held, so
-  // it leaves with the arrival it belongs to in that same render: a Prev/Next step lands on text
-  // that is often already fetched, and a range held a commit longer paints over it.
-  const flashRange = useMemo<[number, number] | undefined>(() => {
-    if (!flashing || !searchSegments || requestedSubUid || !segments) return undefined;
+  // The segments the arrival wash covers: the requested inner sutta, or the passage a search hit
+  // was drawn from, clamped to the text that has loaded. Derived rather than held, so it leaves
+  // with the arrival it belongs to in that same render: a Prev/Next step lands on text that is
+  // often already fetched, and a range held a commit longer paints over it.
+  const washRange = useMemo<[number, number] | undefined>(() => {
+    if (requestedSubUid) return subRange;
+    if (!searchSegments || !segments) return undefined;
     const [first, last] = searchSegments;
     return first >= segments.length ? undefined : [first, Math.min(last, segments.length - 1)];
-  }, [flashing, searchSegments, requestedSubUid, segments]);
+  }, [requestedSubUid, subRange, searchSegments, segments]);
 
   // The words a search hit was found by, marked in the passage it lands on as its row marked them:
   // in each line's English, and in the Pali of the lines whose Pali it matched. Found in the lines
-  // as displayed, by segment index. Derived like flashRange, for the same reason.
+  // as displayed, by segment index. Derived like washRange, for the same reason.
   const searchMarks = useMemo(() => {
     if (!marking || !searchMarkedBy || !searchSegments || requestedSubUid || !segments) return undefined;
     const { queries, anywhere } = searchMarkedBy;
@@ -329,18 +326,15 @@ export function ReaderPage() {
   }, [marking, searchMarkedBy, searchSegments, searchPali, requestedSubUid, segments]);
 
   // Lands on the passage a search hit's snippet was drawn from, so the line the reader picked out of
-  // the results is what they see: washes the whole of it for SEARCH_FLASH_MS so the eye finds it,
-  // marks the words it was found by, and opens the Pali of the lines a hit in the Pali matched.
+  // the results is what they see: marks the words it was found by, and opens the Pali of the lines
+  // a hit in the Pali matched.
   useEffect(() => {
     if (searchSegments === undefined || requestedSubUid || !segments) return;
     const [first] = searchSegments;
     if (first >= segments.length) return;
     if (searchPali) setOpenSegs((s) => ({ ...s, ...Object.fromEntries(searchPali.map((i) => [i, true])) }));
     setLanding({ seg: first, behavior: segments === shownSegmentsRef.current ? 'smooth' : 'instant' });
-    setFlashing(true);
     setMarking(true);
-    const timer = window.setTimeout(() => setFlashing(false), SEARCH_FLASH_MS);
-    return () => window.clearTimeout(timer);
   }, [searchSegments, searchPali, requestedSubUid, segments]);
 
   // Ends the marks on the reader's next click or tap, anywhere, as a found word stays marked in an
@@ -920,8 +914,8 @@ export function ReaderPage() {
               openNotes={openNotes}
               onToggleNote={onToggleNote}
               activeWord={activeWord}
-              washRange={subRange}
-              flashRange={flashRange}
+              washRange={washRange}
+              washId={arrivalRef.current.navId}
               marks={searchMarks}
             />
           ) : textError ? (
