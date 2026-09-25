@@ -850,7 +850,8 @@ export function ReaderPage() {
           </div>
           <div style={{ height: 1, background: theme.rule, margin: '20px 0 22px' }} />
 
-          {headings.length > 0 && (
+          {/* The Contents list, for suttas whose headings have words, not only sutta numbers. */}
+          {headings.some((h) => /\p{L}/u.test(h.text)) && (
             <div>
               <nav className="font-sans" style={{ marginBottom: 22 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: theme.dim, marginBottom: 8 }}>
