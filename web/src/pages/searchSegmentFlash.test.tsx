@@ -102,27 +102,10 @@ const userDataDefaults: ReturnType<typeof useUserData> = {
 
 const routes = [{ path: '/read/:suttaId', element: <ReaderPage /> }];
 
-// Lays each segment out 100px below the last and 80px tall, under a text root at the top, so where
-// the wash sits says which segments it covers.
-function layOutSegments() {
-  const measure = Element.prototype.getBoundingClientRect;
-  const rect = (top: number, height: number) =>
-    ({ top, bottom: top + height, left: 0, right: 600, width: 600, height, x: 0, y: top }) as DOMRect;
-  vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(function (this: Element) {
-    const line = [...this.children].find((child) => child.hasAttribute('data-seg'));
-    if (line) return rect(Number(line.getAttribute('data-seg')) * 100, 80);
-    if (this.hasAttribute('data-segroot')) return rect(0, 300);
-    return measure.call(this);
-  });
-}
-
-// The segments the wash covers while it shows, as layOutSegments places them.
+// The segments inside the wash, by index.
 function washed(container: HTMLElement): number[] {
-  const wash = container.querySelector<HTMLElement>('[data-wash]');
-  if (!wash || wash.style.opacity === '0') return [];
-  const top = parseFloat(wash.style.top);
-  const bottom = top + parseFloat(wash.style.height);
-  return [0, 1, 2].filter((i) => i * 100 >= top && i * 100 + 80 <= bottom);
+  const wash = container.querySelector('[data-wash-block]');
+  return wash ? [...wash.querySelectorAll('[data-seg]')].map((el) => Number(el.getAttribute('data-seg'))) : [];
 }
 
 // The words marked on the page, in reading order.
@@ -137,8 +120,8 @@ function paliLine(container: HTMLElement, i: number): Element | null {
 
 describe('the passage a search hit was drawn from', () => {
   beforeEach(() => {
-    // Real time still runs, so the render's own awaits resolve; the flash's timer is what this
-    // test advances by hand.
+    // Real time still runs, so the render's own awaits resolve; the marks' timers are what these
+    // tests advance by hand.
     vi.useFakeTimers({ shouldAdvanceTime: true });
     const store = new Map<string, string>();
     for (const name of ['localStorage', 'sessionStorage']) {
@@ -214,8 +197,7 @@ describe('the passage a search hit was drawn from', () => {
     vi.restoreAllMocks();
   });
 
-  it('is washed on arrival, and only until the flash ends', async () => {
-    layOutSegments();
+  it('is washed on arrival', async () => {
     const { container } = renderRoutes(routes, {
       pathname: '/read/dn1',
       state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
@@ -227,11 +209,6 @@ describe('the passage a search hit was drawn from', () => {
     await waitFor(() => expect(washed(container)).toEqual([1, 2]));
     // A hit in the English opens no Pali.
     expect(container.querySelector('[data-reveal="pali"]')).toBeNull();
-
-    await act(async () => {
-      vi.advanceTimersByTime(2000);
-    });
-    expect(washed(container)).toEqual([]);
   });
 
   // This page never unmounts between suttas, so the arrival's paragraph numbers have to go with
@@ -239,7 +216,6 @@ describe('the passage a search hit was drawn from', () => {
   // has nothing to do with the query — and, past its end, wash nothing and leave the scroll where
   // it was.
   it('does not follow a Prev/Next step into the next sutta', async () => {
-    layOutSegments();
     const { container, router } = renderRoutes(routes, {
       pathname: '/read/dn1',
       state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
@@ -253,30 +229,9 @@ describe('the passage a search hit was drawn from', () => {
     expect(washed(container)).toEqual([]);
   });
 
-  // The faded wash stays in place, invisible, within the sutta it washed. Carried into the next one,
-  // it stretches a shorter sutta's page down to where the passage sat.
-  it('leaves nothing behind in the next sutta', async () => {
-    layOutSegments();
-    const { container, router } = renderRoutes(routes, {
-      pathname: '/read/dn1',
-      state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
-    });
-    await screen.findByText('They spoke in dispraise of the Buddha');
-    await waitFor(() => expect(washed(container)).toEqual([1, 2]));
-    await act(async () => {
-      vi.advanceTimersByTime(2000);
-    });
-
-    await act(() => router.navigate('/read/dn2', { state: { from: '/browse/dn/dn1?q=dispraise', fromView: 'list' } }));
-    await screen.findByText('Then the king spoke');
-
-    expect(container.querySelector('[data-wash]')).toBeNull();
-  });
-
   // The reader's own search overlay jumps to a passage too, so a second intent has to replace the
   // one the reader arrived on rather than being held off behind it.
   it('is replaced by a later jump rather than held behind it', async () => {
-    layOutSegments();
     const { container, router } = renderRoutes(routes, {
       pathname: '/read/dn1',
       state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
@@ -288,6 +243,22 @@ describe('the passage a search hit was drawn from', () => {
 
     // Not the passage the reader arrived on, which names nothing in this sutta.
     await waitFor(() => expect(washed(container)).toEqual([0]));
+  });
+
+  // A wash that has faded is still in place; a new one there starts over.
+  it('is washed again when the reader jumps to the same passage again', async () => {
+    const { container, router } = renderRoutes(routes, {
+      pathname: '/read/dn1',
+      state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
+    });
+    await screen.findByText('They spoke in dispraise of the Buddha');
+    await waitFor(() => expect(washed(container)).toEqual([1, 2]));
+    const first = container.querySelector('[data-wash-block]');
+
+    await act(() => router.navigate('/read/dn1', { state: tagIntent({ segments: [1, 2] }) }));
+
+    await waitFor(() => expect(container.querySelector('[data-wash-block]')).not.toBe(first));
+    expect(washed(container)).toEqual([1, 2]);
   });
 
   it('opens the Pali of the lines a hit in the Pali matched, and keeps it open past the wash', async () => {
@@ -403,7 +374,6 @@ describe('the passage a search hit was drawn from', () => {
   });
 
   it('is not washed when the reader was not sent to a segment', async () => {
-    layOutSegments();
     const { container } = renderRoutes(routes, { pathname: '/read/dn1', state: { from: '/browse/dn/dn1', fromView: 'list' } });
     await screen.findByText('They spoke in dispraise of the Buddha');
 

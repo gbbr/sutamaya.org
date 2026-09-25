@@ -52,18 +52,9 @@ test('a text hit opens the reader on its passage, the words it was found by mark
   await hits.getByRole('button', { name: /^DN16/ }).click();
   await expect(page).toHaveURL(/\/read\/dn16/);
 
-  // The marked words in view, and the wash over them.
-  const mark = page
-    .locator('[data-component="SegmentedText"] mark', { hasText: /the Realized One became fully extinguished/i })
-    .first();
+  // The marked words in view, inside the wash.
+  const mark = page.locator('[data-wash-block] mark', { hasText: /the Realized One became fully extinguished/i }).first();
   await expect(mark).toBeInViewport();
-  await expect
-    .poll(async () => {
-      const m = await mark.boundingBox();
-      const w = await page.locator('[data-wash]').boundingBox();
-      return !!m && !!w && m.y >= w.y && m.y + m.height <= w.y + w.height;
-    })
-    .toBe(true);
 });
 
 test('@smoke without the sutta text, search says so and still answers', async ({ page, errors }) => {

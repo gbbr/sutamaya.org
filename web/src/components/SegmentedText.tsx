@@ -1,11 +1,10 @@
-import { Fragment, memo, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
+import { Fragment, memo, useMemo, type CSSProperties, type ReactNode } from 'react';
 import type { SegmentFile, SegmentRole } from '../lib/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
 import { highlightPaint } from '../lib/theme';
 import { expandHighlights, paintSegmentRanges, type SegmentRange } from '../lib/highlights';
 import { WORD_BOUNDARY, isWordBoundary } from '../lib/dictionary';
 import { runsOf, type Mark } from '../lib/search/match';
-import { getUiScale } from '../lib/uiPrefs';
 
 interface Part {
   text: string;
@@ -23,9 +22,6 @@ export interface SegmentMarks {
 }
 
 const NO_MARKS: Mark[] = [];
-
-// The wash's strength, as a share of the theme's paliTint.
-const WASH_OPACITY = 0.4;
 
 /** Returns the paragraph a segment key belongs to — its uid plus the digits before the first dot. */
 function paragraphOf(key: string): string {
@@ -423,9 +419,8 @@ interface SegmentedTextProps {
   activeWord: { segIndex: number; wordIndex: number } | null;
   // The first and last segment of the passage the reader arrived at, washed and then faded out.
   washRange?: [number, number];
-  // The first and last segment an arriving search hit's snippet was drawn from, washed while the
-  // reader lands on them.
-  flashRange?: [number, number];
+  // The arrival the wash belongs to, so arriving again at the same passage washes it again.
+  washId?: string;
   // What an arriving search hit marks, by segment index.
   marks?: Map<number, SegmentMarks>;
 }
@@ -452,7 +447,7 @@ function SegmentedTextInner({
   onToggleNote,
   activeWord,
   washRange,
-  flashRange,
+  washId,
   marks,
 }: SegmentedTextProps) {
   // One line box at the current size and leading; every gap below is a fraction of it.
@@ -468,35 +463,6 @@ function SegmentedTextInner({
   // Every highlight's stored span resolved into the ranges falling in each segment, by segment
   // index — see lib/highlights.ts's highlightRanges.
   const rangesBySeg = useMemo(() => expandHighlights(highlights, segments), [highlights, segments]);
-  const rootRef = useRef<HTMLDivElement>(null);
-  // Where the wash sits, from the top of the passage's first segment to the bottom of its last, in
-  // the root's pre-zoom units, and the text it was measured on. Kept once the flash ends, so the
-  // wash fades out where it was, but drawn over that text only.
-  const [wash, setWash] = useState<{ top: number; height: number; segments: SegmentFile[] }>();
-  useLayoutEffect(() => {
-    const root = rootRef.current;
-    if (!flashRange || !root) return;
-    // Measured by the segments' wrappers, the Pali and English lines together, as scrollToSegment
-    // measures them.
-    const measure = () => {
-      const first = root.querySelector(`[data-seg="${flashRange[0]}"]`)?.parentElement;
-      const last = root.querySelector(`[data-seg="${flashRange[1]}"]`)?.parentElement;
-      if (!first || !last) {
-        setWash(undefined);
-        return;
-      }
-      const scale = getUiScale();
-      const firstTop = first.getBoundingClientRect().top;
-      const top = (firstTop - root.getBoundingClientRect().top) / scale;
-      const height = (last.getBoundingClientRect().bottom - firstTop) / scale;
-      setWash((w) => (w && w.top === top && w.height === height && w.segments === segments ? w : { top, height, segments }));
-    };
-    measure();
-    // Measured again as the text reflows, as it does when the Pali an arrival opens appears.
-    const observer = new ResizeObserver(measure);
-    observer.observe(root);
-    return () => observer.disconnect();
-  }, [flashRange, segments]);
   // A list item's ordinal within its run of consecutive list-item segments, reset to 0 by any
   // other segment so a later list restarts at 1.
   let runningListIndex = 0;
@@ -537,38 +503,14 @@ function SegmentedTextInner({
     );
   });
   return (
-    // Positioned and isolated for the wash, which sits under the text within it.
-    <div ref={rootRef} data-component="SegmentedText" data-segroot style={{ position: 'relative', isolation: 'isolate' }}>
-      {wash?.segments === segments && (
-        <div
-          aria-hidden
-          data-wash
-          style={{
-            position: 'absolute',
-            left: 0,
-            right: 0,
-            top: wash.top,
-            height: wash.height,
-            zIndex: -1,
-            pointerEvents: 'none',
-            background: theme.paliTint,
-            // Full width: a spread shadow out to the reading pane's edges, which clip it, cut back to
-            // the band's own height so it covers the gaps between segments and nothing beyond.
-            boxShadow: `0 0 0 100vmax ${theme.paliTint}`,
-            clipPath: 'inset(0 -100vmax)',
-            opacity: flashRange ? WASH_OPACITY : 0,
-            // Fades out when the flash ends; appears at once when one starts.
-            transition: flashRange ? undefined : 'opacity 600ms ease-out',
-          }}
-        />
-      )}
+    <div data-component="SegmentedText" data-segroot>
       {washRange ? (
         <>
           {rows.slice(0, washRange[0])}
           {/* The arrival wash, tinted out to the reading pane's edges, which clip the shadow; keyed
-              by its range, so each new arrival starts its fade over. */}
+              by its arrival and range, so each new arrival starts its fade over. */}
           <div
-            key={washRange.join('-')}
+            key={`${washId}:${washRange.join('-')}`}
             className="arrival-wash"
             data-wash-block
             style={{
