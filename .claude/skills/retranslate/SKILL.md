@@ -146,7 +146,9 @@ its own — readers have been reading that word in this app.
 
 For "change this specific line": `kind: 'segment'`, with `from` copied **verbatim** from
 `data/sujato.post/` — term rules have already run on it, and segment rules apply last, to their
-output. A whitespace difference fails the anchor, so copy, don't retype.
+output. A whitespace difference fails the anchor, so copy, don't retype. A group description can be
+overridden too, by its blurb id; if a blurb opener trims it, quote it with the trimmed opening
+restored, since the opener runs after.
 
 Add it to the trailing `// ── Segment overrides ──` group at the end of the array, never inline next
 to the term rule it patches, and within that group under the `// ·· cause ··` sub-banner for whatever

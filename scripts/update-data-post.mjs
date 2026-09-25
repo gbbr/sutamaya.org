@@ -94,9 +94,11 @@ export async function runPost({
   const brokenOverrides = [];
   if (segmentRules.length > 0) {
     const segmentIndex = buildSegmentIndex(sujatoDir);
+    const blurbIndex = buildBlurbIndex(sujatoDir);
     for (const rule of segmentRules) {
       for (const segment of segmentsOf(rule)) {
-        const relPath = segmentIndex.get(segment);
+        // A collection description is one line too, so an override can name a blurb id.
+        const relPath = segmentIndex.get(segment) ?? blurbIndex.get(segment);
         if (!relPath) {
           brokenOverrides.push({ id: rule.id, segment, reason: 'segment id not found in data/sujato' });
           continue;

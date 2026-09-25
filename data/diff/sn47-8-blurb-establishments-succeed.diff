@@ -1,0 +1,7 @@
+Rule: sn47-8-blurb-establishments-succeed — 1 change(s), 1 file(s)
+
+--- sujato/blurb/sn-blurbs_root-en.json
++++ sujato/blurb/sn-blurbs_root-en.json
+@@ -1 +1 @@ sn-blurbs:sn47.8
+-The parable of the cook. They present different kinds of dishes to the king, and observe which the king likes. In the same way, a bhikkhu observes why their meditation succeeds or fails. When the four establishments of awareness succeeds it leads to giving up hindrances and entering composure.
++The parable of the cook. They present different kinds of dishes to the king, and observe which the king likes. In the same way, a bhikkhu observes why their meditation succeeds or fails. When the four establishments of awareness succeed, they lead to giving up hindrances and entering composure.

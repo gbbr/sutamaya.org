@@ -14,10 +14,11 @@ gloss a term in his wording while the line above it uses ours.
 | Pali | Bhikkhu Sujato | Here |
 |---|---|---|
 | bhikkhu | mendicant | **bhikkhu** |
+| sati | mindfulness, mindful | **awareness, aware** |
+| satipaṭṭhāna | mindfulness meditation | **the establishment of awareness** |
+| sampajañña | situational awareness, aware | **clear comprehension, clearly comprehending** |
 | samādhi | immersion, immersed | **composure, composed** (and "collect" as a verb) |
 | jhāna | absorption | **jhāna** (and "practice jhāna" for jhāyati) |
-| satipaṭṭhāna | mindfulness meditation | **the establishment of mindfulness** |
-| sampajañña | situational awareness, aware | **attentiveness, attentive** |
 | ātāpī | keen | **ardent** |
 | saṅkhāra | choices | **saṅkhāras** |
 | abhisaṅkharoti | make (choices) | **generate (saṅkhāras)** |
@@ -32,6 +33,7 @@ gloss a term in his wording while the line above it uses ours.
 | paritassati | anxious, anxiety | **agitated, agitation** |
 | paṭisambhidā | textual analysis | **analytical knowledge** |
 | dhamma (six lines only) | text | **the Dhamma** |
+| vippasanna (14 lines only) | clear | **calm** |
 
 A term is changed everywhere it appears, but only where it really is that Pali word — Bhikkhu Sujato's
 "keen" also translates ordinary things that have nothing to do with *ātāpī*, and those are
