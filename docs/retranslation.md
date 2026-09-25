@@ -45,7 +45,8 @@ lowercase stays lowercase, a capitalized word stays capitalized, a title stays i
 
 A segment override replaces one line outright, where the term rules got it wrong — usually because
 a swap changed a word's part of speech. It quotes the line exactly as the term rules leave it, and
-that quote is also its anchor.
+that quote is also its anchor. A group description counts as a line too, quoted with the opening a
+blurb rule trims later still on.
 
 ### Blurb rules
 

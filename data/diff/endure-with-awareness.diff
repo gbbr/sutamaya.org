@@ -1,0 +1,20 @@
+Rule: endure-with-awareness — 3 change(s), 3 file(s)
+
+--- sujato/sutta/kn/thag/thag1.31_translation-en-sujato.json
++++ sujato/sutta/kn/thag/thag1.31_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thag1.31:1.3
+ PLI: Nāgo saṅgāmasīseva, 
+-one should with awareness endure, 
++one should endure with awareness, 
+--- sujato/sutta/kn/thag/thag15.1_translation-en-sujato.json
++++ sujato/sutta/kn/thag/thag15.1_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thag15.1:12.3
+ PLI: Nāgo saṅgāmasīseva, 
+-one should with awareness endure, 
++one should endure with awareness, 
+--- sujato/sutta/kn/thag/thag3.9_translation-en-sujato.json
++++ sujato/sutta/kn/thag/thag3.9_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thag3.9:2.3
+ PLI: Nāgo saṅgāmasīseva, 
+-one should with awareness endure, 
++one should endure with awareness, 

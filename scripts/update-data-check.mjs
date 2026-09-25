@@ -190,7 +190,7 @@ function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, loc
     // Checked one segment at a time, so an override covering a repeated line reports the repeat
     // that drifted rather than the whole rule.
     for (const segment of segmentsOf(rule)) {
-      const relPath = localSegmentIndex.get(segment);
+      const relPath = localSegmentIndex.get(segment) ?? localBlurbIndex.get(segment);
       if (!relPath) {
         issues.push(yellow(`${bold(rule.id)} · ${segment}: segment not found in local data/sujato — can't verify against upstream.`));
         continue;
@@ -198,9 +198,10 @@ function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, loc
       const upstreamObj = sujatoUpstreamByRelPath.get(relPath);
       if (!upstreamObj) continue; // relPath wasn't read this run (not in snapshot.files) — nothing to compare
       const upstreamNow = upstreamObj[segment];
+      const treeName = relPath.split('/').slice(0, 2).join('/');
       const rewritten =
         typeof upstreamNow === 'string'
-          ? applyTermRules(upstreamNow, { treeName: 'sujato/sutta', segmentId: segment, rules, sidecars })
+          ? applyTermRules(upstreamNow, { treeName, segmentId: segment, rules, sidecars })
           : null;
       const anchorNow = rewritten ? rewritten.result : upstreamNow;
       if (anchorNow !== rule.from) {
