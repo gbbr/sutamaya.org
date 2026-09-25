@@ -132,6 +132,8 @@ export function ReaderPage() {
       markedBy: intent?.markedBy,
     };
   }
+  // This navigation's arrival id, when it carries one.
+  const arrivalId = arrivalRef.current.navId;
   const searchSegments = arrivalRef.current.segments;
   const searchPali = arrivalRef.current.paliSegments;
   const searchMarkedBy = arrivalRef.current.markedBy;
@@ -284,13 +286,14 @@ export function ReaderPage() {
     return [first, last];
   }, [requestedSubUid, segments]);
 
-  // Scrolls to the requested inner sutta's first segment, a frame after the batch's text loads: at
-  // once on a batch just arrived, gliding within one already open.
+  // Scrolls to the requested inner sutta's first segment, a frame after the batch's text loads and
+  // again on each new arrival there: at once on a batch just arrived, gliding within one already
+  // open.
   useEffect(() => {
     if (!subRange) return;
     const behavior = segments === shownSegmentsRef.current ? 'smooth' : 'instant';
     requestAnimationFrame(() => scrollToSegment(subRange[0], 'start', undefined, behavior));
-  }, [subRange, segments, scrollToSegment]);
+  }, [subRange, segments, scrollToSegment, arrivalId]);
 
   // Whether the words a search hit was found by are still marked.
   const [marking, setMarking] = useState(false);
@@ -915,7 +918,7 @@ export function ReaderPage() {
               onToggleNote={onToggleNote}
               activeWord={activeWord}
               washRange={washRange}
-              washId={arrivalRef.current.navId}
+              washId={arrivalId}
               marks={searchMarks}
             />
           ) : textError ? (
