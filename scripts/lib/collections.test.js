@@ -179,6 +179,10 @@ describe('roleFor', () => {
     expect(roleFor('<h5>{}</h5>')).toEqual({ role: 'heading', headingLevel: 5 });
   });
 
+  it('detects an inner sutta\'s title opening its article in a batched document', () => {
+    expect(roleFor("<article id='an2.33'><h2 class='sutta-title'>{}</h2>")).toEqual({ role: 'heading', headingLevel: 2 });
+  });
+
   it('does not treat <h1> as an in-body heading (it is the document title, stripped elsewhere)', () => {
     expect(roleFor('<h1>{}</h1>')).toBeUndefined();
   });

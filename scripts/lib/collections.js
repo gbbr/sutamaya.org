@@ -202,15 +202,16 @@ export function headerTitle(map, uid) {
 // The patterns roleFor matches a segment's HTML template against, in the order it tries them.
 // SuttaCentral's markup is language-independent, so one html/ file covers a segment in both
 // languages.
-//   heading   – an <h2>–<h5> sub-heading inside a document. <h1> is excluded: it is always the
-//               document's own title line, which headerTitle takes.
+//   heading   – an <h2>–<h5> sub-heading inside a document, including an inner sutta's title
+//               opening its <article>. <h1> is excluded: it is always the document's own title
+//               line, which headerTitle takes.
 //   verse     – a <span class='verse-line'>, inside a gatha or a chapter-end mnemonic alike
 //   end       – a closing colophon (endsutta, endvagga, endbook, …, and uddana-intro)
 //   speaker   – an inline dialogue attribution mid-verse ("said the Buddha,")
 //   list-item – an <li>, a numbered list embedded in body prose
 // The gatha open/close pair serves buildBodySegments' stateful fallback for verse: one file
 // (an7.63 §§5–13) tags only each stanza's opening line, leaving the continuations unmarked.
-const HEADING_RE = /^<h([2345])>/;
+const HEADING_RE = /^(?:<article\b[^>]*>)?<h([2345])\b[^>]*>/;
 const VERSE_LINE_RE = /class=['"]verse-line['"]/;
 const END_RE = /class=['"](?:end\w*|uddana-intro)['"]/;
 const SPEAKER_RE = /class=['"]speaker['"]/;
