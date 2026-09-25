@@ -89,8 +89,8 @@ const THEME_OPTIONS: Array<{ id: Theme; label: string; palettes: ShellPalette[] 
 ];
 
 // One section's card: a panel of rows split by hairlines. Border and background are left to the
-// caller (cardClass), which swaps both for the flashed-on-arrival state.
-const CARD = 'rounded-field border px-5 transition-colors duration-[1200ms] ease-out';
+// caller.
+const CARD = 'rounded-field border px-5';
 // A card's fill on a phone, in both themes.
 const CARD_FILL_MOBILE = 'bg-white/50 dark:bg-ink/[.02]';
 // A card's fill on desktop, a shade lighter than the tinted page, in both themes.
@@ -353,7 +353,8 @@ export function SettingsPage() {
   // section on the web, the only place anything links to it.
   const offlineSectionRef = useRef<HTMLDivElement>(null);
   const authSectionRef = useRef<HTMLDivElement>(null);
-  const [flashTarget, setFlashTarget] = useState<ScrollTarget | null>(null);
+  // The section this page was navigated here for, read once at mount.
+  const [scrollTo] = useState(() => (location?.state as { scrollTo?: ScrollTarget } | undefined)?.scrollTo);
 
   useEffect(() => {
     if (!corpus) return;
@@ -377,20 +378,16 @@ export function SettingsPage() {
   // round trip returns them to. Read once, at mount, as the scroll cue below is.
   const [signInReturnTo] = useState(() => (location?.state as { returnTo?: string } | undefined)?.returnTo);
 
-  // Scrolls to, and briefly highlights, whichever section this page was navigated here for.
+  // Scrolls to whichever section this page was navigated here for.
   useEffect(() => {
-    const scrollTo = (location?.state as { scrollTo?: ScrollTarget } | undefined)?.scrollTo;
     if (!scrollTo) return;
     const ref = scrollTo === 'offline' ? offlineSectionRef : authSectionRef;
     ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setFlashTarget(scrollTo);
-    const timer = window.setTimeout(() => setFlashTarget(null), 1600);
-    return () => window.clearTimeout(timer);
-  }, []);
+  }, [scrollTo]);
 
-  // Returns a section card's classes, accent-tinted and outlined while it is the arrival highlight.
+  // Returns a section card's classes, flashed on arrival when it is the section scrolled to.
   function cardClass(id: ScrollTarget): string {
-    return `${CARD} ${flashTarget === id ? 'border-accent bg-accent/[.09]' : `border-ink/[.09] ${cardFill}`}`;
+    return `${CARD} border-ink/[.09] ${cardFill}${scrollTo === id ? ' arrival-flash-card' : ''}`;
   }
 
   // Aborts an in-flight download when the reader leaves Settings, which pauses it: the ref doesn't

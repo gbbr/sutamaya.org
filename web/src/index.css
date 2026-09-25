@@ -713,3 +713,16 @@ textarea {
     box-shadow: 0 0 0 100vmax transparent;
   }
 }
+
+/* Settings' arrival flash on the section it was opened at: outlined and tinted in the accent for as
+   long as the reader's wash holds, then faded back to the card's own border and fill. */
+.arrival-flash-card {
+  animation: arrival-flash-card 2800ms ease-out;
+}
+@keyframes arrival-flash-card {
+  0%,
+  57% {
+    border-color: rgb(var(--accent));
+    background-color: rgb(var(--accent) / 0.09);
+  }
+}
