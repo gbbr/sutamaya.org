@@ -702,3 +702,14 @@ textarea {
     transform: translateX(-30%);
   }
 }
+
+/* The reader's arrival wash: held long enough for the eye to find the passage, then faded out. */
+.arrival-wash {
+  animation: arrival-wash-fade 600ms ease-out 1600ms forwards;
+}
+@keyframes arrival-wash-fade {
+  to {
+    background-color: transparent;
+    box-shadow: 0 0 0 100vmax transparent;
+  }
+}

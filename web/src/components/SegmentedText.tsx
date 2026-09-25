@@ -1,5 +1,5 @@
 import { Fragment, memo, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
-import { uidHolds, type SegmentFile, type SegmentRole } from '../lib/corpus';
+import type { SegmentFile, SegmentRole } from '../lib/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
 import { highlightPaint } from '../lib/theme';
 import { expandHighlights, paintSegmentRanges, type SegmentRange } from '../lib/highlights';
@@ -183,8 +183,6 @@ interface SegmentRowProps {
   // Whether the Pali line leads the segment rather than following the English.
   above: boolean;
   afterHeading: boolean;
-  // Whether this segment belongs to the inner sutta a link pointed at within a batched document.
-  focused: boolean;
   // What an arriving search hit marks in this segment's lines.
   marks?: SegmentMarks;
   theme: ThemeColors;
@@ -220,7 +218,6 @@ const SegmentRow = memo(function SegmentRow({
   afterHeading,
   above,
   listIndex,
-  focused,
   marks,
   theme,
   fontSize,
@@ -295,7 +292,6 @@ const SegmentRow = memo(function SegmentRow({
       id={seg.key}
       style={{
         marginBottom: lastInParagraph ? paragraphGap : 0,
-        ...(focused ? { background: theme.focusTint } : null),
         ...(seg.role === 'verse' ? { paddingLeft: 14, borderLeft: `2px solid ${theme.rule}` } : null),
         // A speaker attribution following a verse keeps the verse's indent and rule.
         ...(seg.role === 'speaker' && afterVerse ? { paddingLeft: 28, borderLeft: `2px solid ${theme.rule}` } : null),
@@ -425,9 +421,8 @@ interface SegmentedTextProps {
   onToggleNote: (i: number) => void;
   // The word currently shown in the DictionaryDock, or null.
   activeWord: { segIndex: number; wordIndex: number } | null;
-  // The inner sutta a deep link or search hit pointed at within a batched document (e.g. "dhp321"
-  // within "dhp320-333"); its segments get a background wash. Undefined for a normal sutta.
-  focusUid?: string;
+  // The first and last segment of the passage the reader arrived at, washed and then faded out.
+  washRange?: [number, number];
   // The first and last segment an arriving search hit's snippet was drawn from, washed while the
   // reader lands on them.
   flashRange?: [number, number];
@@ -456,7 +451,7 @@ function SegmentedTextInner({
   openNotes,
   onToggleNote,
   activeWord,
-  focusUid,
+  washRange,
   flashRange,
   marks,
 }: SegmentedTextProps) {
@@ -505,6 +500,42 @@ function SegmentedTextInner({
   // A list item's ordinal within its run of consecutive list-item segments, reset to 0 by any
   // other segment so a later list restarts at 1.
   let runningListIndex = 0;
+  const rows = segments.map((seg, i) => {
+    // A paragraph break: the next segment's paragraph number differs, or there is none.
+    const next = segments[i + 1];
+    const lastInParagraph = !next || paragraphOf(next.key) !== paragraphOf(seg.key);
+    runningListIndex = seg.role === 'list-item' ? runningListIndex + 1 : 0;
+    return (
+      <SegmentRow
+        key={seg.key}
+        seg={seg}
+        i={i}
+        rangesForSeg={rangesBySeg.get(i) ?? EMPTY_RANGES}
+        open={allPali || !!openSegs[i]}
+        lastInParagraph={lastInParagraph}
+        afterVerse={segments[i - 1]?.role === 'verse'}
+        afterHeading={segments[i - 1]?.role === 'heading'}
+        above={allPali && paliAbove}
+        listIndex={seg.role === 'list-item' ? runningListIndex : undefined}
+        marks={marks?.get(i)}
+        theme={theme}
+        fontSize={fontSize}
+        lineHeight={lineHeight}
+        face={face}
+        paragraphGap={paragraphGap}
+        pairGap={pairGap}
+        headingGapTop={headingGapTop}
+        headingGapBottom={headingGapBottom}
+        onToggleSeg={onToggleSeg}
+        onWordClick={onWordClick}
+        onSpanClick={onSpanClick}
+        showNotes={showNotes}
+        noteOpen={!!openNotes[i]}
+        onToggleNote={onToggleNote}
+        activeWordIndex={activeWord && activeWord.segIndex === i ? activeWord.wordIndex : null}
+      />
+    );
+  });
   return (
     // Positioned and isolated for the wash, which sits under the text within it.
     <div ref={rootRef} data-component="SegmentedText" data-segroot style={{ position: 'relative', isolation: 'isolate' }}>
@@ -531,43 +562,28 @@ function SegmentedTextInner({
           }}
         />
       )}
-      {segments.map((seg, i) => {
-        // A paragraph break: the next segment's paragraph number differs, or there is none.
-        const next = segments[i + 1];
-        const lastInParagraph = !next || paragraphOf(next.key) !== paragraphOf(seg.key);
-        runningListIndex = seg.role === 'list-item' ? runningListIndex + 1 : 0;
-        return (
-          <SegmentRow
-            key={seg.key}
-            seg={seg}
-            i={i}
-            rangesForSeg={rangesBySeg.get(i) ?? EMPTY_RANGES}
-            open={allPali || !!openSegs[i]}
-            lastInParagraph={lastInParagraph}
-            afterVerse={segments[i - 1]?.role === 'verse'}
-            afterHeading={segments[i - 1]?.role === 'heading'}
-            above={allPali && paliAbove}
-            listIndex={seg.role === 'list-item' ? runningListIndex : undefined}
-            focused={!!focusUid && uidHolds(seg.key.split(':')[0], focusUid)}
-            marks={marks?.get(i)}
-            theme={theme}
-            fontSize={fontSize}
-            lineHeight={lineHeight}
-            face={face}
-            paragraphGap={paragraphGap}
-            pairGap={pairGap}
-            headingGapTop={headingGapTop}
-            headingGapBottom={headingGapBottom}
-            onToggleSeg={onToggleSeg}
-            onWordClick={onWordClick}
-            onSpanClick={onSpanClick}
-            showNotes={showNotes}
-            noteOpen={!!openNotes[i]}
-            onToggleNote={onToggleNote}
-            activeWordIndex={activeWord && activeWord.segIndex === i ? activeWord.wordIndex : null}
-          />
-        );
-      })}
+      {washRange ? (
+        <>
+          {rows.slice(0, washRange[0])}
+          {/* The arrival wash, tinted out to the reading pane's edges, which clip the shadow; keyed
+              by its range, so each new arrival starts its fade over. */}
+          <div
+            key={washRange.join('-')}
+            className="arrival-wash"
+            data-wash-block
+            style={{
+              background: theme.focusTint,
+              boxShadow: `0 0 0 100vmax ${theme.focusTint}`,
+              clipPath: 'inset(0 -100vmax)',
+            }}
+          >
+            {rows.slice(washRange[0], washRange[1] + 1)}
+          </div>
+          {rows.slice(washRange[1] + 1)}
+        </>
+      ) : (
+        rows
+      )}
     </div>
   );
 }

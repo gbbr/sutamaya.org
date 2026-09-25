@@ -122,31 +122,29 @@ describe('SegmentedText — verse-group breaks in a batched document', () => {
 // Regression coverage for a related bug: a direct link or search hit for one specific inner sutta
 // of a batched document (e.g. "dhp321" within the loaded "dhp320-333" document) had no way to tell
 // the reader which of the batch's many identical-looking verses it actually pointed at — see
-// ReaderPage's requestedSubUid/focusUid plumbing. Every segment belonging to that inner sutta
-// should pick up a background wash; segments belonging to a different inner sutta in the same
-// batch should not.
-describe('SegmentedText — focusUid marks one inner sutta within a batched document', () => {
+// ReaderPage's requestedSubUid/subRange plumbing. Every segment in the wash range should sit in one
+// tinted block; the segments around it should not.
+describe('SegmentedText — washRange marks one inner sutta within a batched document', () => {
   const segments: SegmentFile[] = [
     { key: 'dhp321:1', pali: 'a', en: 'a', role: 'verse' },
-    { key: 'dhp322:1', pali: 'b', en: 'b', role: 'verse' },
+    { key: 'dhp321:2', pali: 'b', en: 'b', role: 'verse' },
+    { key: 'dhp322:1', pali: 'c', en: 'c', role: 'verse' },
   ];
 
-  it('gives the focused inner sutta\'s segment a background wash', () => {
-    const { container } = render(<SegmentedText {...baseProps(segments, { focusUid: 'dhp321' })} />);
-    const row = container.querySelector('#dhp321\\:1') as HTMLElement;
-    expect(row.style.background).not.toBe('');
+  // The segments inside the tinted block.
+  function tinted(container: HTMLElement): string[] {
+    const block = container.querySelector('[data-wash-block]');
+    return block ? [...block.children].map((row) => row.id) : [];
+  }
+
+  it('tints the segments in the range, and only those', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { washRange: [0, 1] })} />);
+    expect(tinted(container)).toEqual(['dhp321:1', 'dhp321:2']);
   });
 
-  it('leaves a different inner sutta in the same batch unmarked', () => {
-    const { container } = render(<SegmentedText {...baseProps(segments, { focusUid: 'dhp321' })} />);
-    const row = container.querySelector('#dhp322\\:1') as HTMLElement;
-    expect(row.style.background).toBe('');
-  });
-
-  it('marks nothing when focusUid is unset', () => {
+  it('marks nothing when washRange is unset', () => {
     const { container } = render(<SegmentedText {...baseProps(segments)} />);
-    const row = container.querySelector('#dhp321\\:1') as HTMLElement;
-    expect(row.style.background).toBe('');
+    expect(tinted(container)).toEqual([]);
   });
 });
 

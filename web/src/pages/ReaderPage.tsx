@@ -13,7 +13,7 @@ import { useBackHandler } from '../hooks/useBackHandler';
 import { useDictionaryLookup } from '../hooks/useDictionaryLookup';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { animateScrollBy, animateScrollTop } from '../lib/segmentScroll';
-import { flatSuttaOrder, breadcrumbFor, normalizeRouteId, resolveCanonicalSuttaId, loadSuttaText, uidHolds } from '../lib/corpus';
+import { flatSuttaOrder, breadcrumbFor, normalizeRouteId, resolveCanonicalSuttaId, loadSuttaText, uidHolds, type SegmentFile } from '../lib/corpus';
 import { flattenListTree, resolveListById, suttaRowMeta } from '../lib/lists';
 import { READER_FACES, READER_THEMES } from '../lib/theme';
 import { setReaderThemeColor } from '../lib/themeColor';
@@ -276,15 +276,24 @@ export function ReaderPage() {
   // The text on screen as of the last commit, which tells a sutta just arrived from one already open.
   const shownSegmentsRef = useRef<typeof segments>(null);
 
+  // The first and last segment of the requested inner sutta, whose segments run consecutively.
+  const subRange = useMemo<[number, number] | undefined>(() => {
+    if (!requestedSubUid || !segments) return undefined;
+    const held = (s: SegmentFile) => uidHolds(s.key.split(':')[0], requestedSubUid);
+    const first = segments.findIndex(held);
+    if (first === -1) return undefined;
+    let last = first;
+    while (last + 1 < segments.length && held(segments[last + 1])) last++;
+    return [first, last];
+  }, [requestedSubUid, segments]);
+
   // Scrolls to the requested inner sutta's first segment, a frame after the batch's text loads: at
   // once on a batch just arrived, gliding within one already open.
   useEffect(() => {
-    if (!requestedSubUid || !segments) return;
-    const idx = segments.findIndex((s) => uidHolds(s.key.split(':')[0], requestedSubUid));
-    if (idx === -1) return;
+    if (!subRange) return;
     const behavior = segments === shownSegmentsRef.current ? 'smooth' : 'instant';
-    requestAnimationFrame(() => scrollToSegment(idx, 'start', undefined, behavior));
-  }, [requestedSubUid, segments, scrollToSegment]);
+    requestAnimationFrame(() => scrollToSegment(subRange[0], 'start', undefined, behavior));
+  }, [subRange, segments, scrollToSegment]);
 
   // Whether the passage the reader arrived on is still washed.
   const [flashing, setFlashing] = useState(false);
@@ -911,7 +920,7 @@ export function ReaderPage() {
               openNotes={openNotes}
               onToggleNote={onToggleNote}
               activeWord={activeWord}
-              focusUid={requestedSubUid}
+              washRange={subRange}
               flashRange={flashRange}
               marks={searchMarks}
             />
