@@ -15,6 +15,7 @@ import { spawnSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { createInterface } from 'node:readline';
 import { API_ORIGINS } from './lib/apiOrigins.js';
+import { comparableContract } from './lib/nativeContract.js';
 import { staleBundles } from './lib/otaBundles.js';
 
 const args = process.argv.slice(2);
@@ -55,13 +56,6 @@ const NATIVE_CONTRACT = {
   ios: ['web/capacitor.config.ts', 'web/ios/App/App/Info.plist', 'web/ios/App/App.xcodeproj/project.pbxproj'],
   android: ['web/capacitor.config.ts', 'web/android/app/src/main/AndroidManifest.xml', 'web/android/app/build.gradle'],
 };
-
-// The version fields, dropped before comparing: they move on every store release and say nothing
-// about what a bundle may call, so left in they would fire the guard as a matter of routine.
-const VERSION_FIELDS = [
-  [/\b(versionCode|CURRENT_PROJECT_VERSION)\b\s*=?\s*\d+/g, '$1'],
-  [/\b(versionName|MARKETING_VERSION)\b\s*=?\s*("[^"]*"|[\d.]+)/g, '$1'],
-];
 
 function sh(cmd, cmdArgs, opts = {}) {
   const r = spawnSync(cmd, cmdArgs, { stdio: 'inherit', ...opts });
@@ -162,10 +156,10 @@ for (const [platform, name] of Object.entries(PLATFORMS)) {
   }
 }
 
-// One contract file as of one revision, versions stripped. A path absent at that revision reads as
-// empty, so adding one counts as a change.
+// One contract file as of one revision, as comparableContract reads it. A path absent at that
+// revision reads as empty, so adding one counts as a change.
 function contractText(rev, path) {
-  return VERSION_FIELDS.reduce((text, [re, to]) => text.replace(re, to), gitOut('show', `${rev}:${path}`));
+  return comparableContract(gitOut('show', `${rev}:${path}`));
 }
 
 // The contract files that have moved since each platform's build in the stores, one line each.
