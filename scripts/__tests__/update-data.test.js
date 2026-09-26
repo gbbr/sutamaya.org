@@ -282,7 +282,7 @@ describe('the shipped rules, one example each', () => {
     // first word; the abstract noun ātappa is Bhikkhu Sujato's "keenness"; the adverb is his
     // "keenly"; and the article travels with the adjective, or SN 1.23 reads "a ardent bhikkhu".
     // ātāpī and sampajāna stand side by side in the satipaṭṭhāna formula, each taking its own rule.
-    ['atapi-ardent', 'sn36.7:5.1', 'sujato/sutta', 'keen, aware, and mindful', 'ardent, clearly comprehending, and aware'],
+    ['atapi-ardent', 'sn36.7:5.1', 'sujato/sutta', 'keen, aware, and mindful', 'ardent, comprehending, and aware'],
     ['atapi-ardent', 'an10.14:2.3', 'sujato/sutta', 'incline toward keenness, commitment', 'incline toward ardor, commitment'],
     ['atapi-ardent', 'mn125:2.5', 'sujato/sutta', 'a mendicant who meditates diligently, keenly', 'a bhikkhu who meditates diligently, ardently'],
     ['atapi-ardent', 'sn1.23:2.3', 'sujato/sutta', 'a keen and alert mendicant—', 'an ardent and alert bhikkhu—'],
@@ -319,23 +319,21 @@ describe('the shipped rules, one example each', () => {
     ['sati-aware', 'dn25:6.2', 'sujato/sutta', 'he walked mindfully in the open air', 'he walked mindfully in the open air'],
     // The adjective sampajāna, which Bhikkhu Sujato leaves as bare "aware", beside sati: sati-aware
     // produces the very word this rule consumes, and locking keeps them apart.
-    ['sampajanna-clear-comprehension', 'sn47.2:2.1', 'sujato/sutta', 'a mendicant should live mindful and aware', 'a bhikkhu should live aware and clearly comprehending'],
+    ['sampajanna-comprehension', 'sn47.2:2.1', 'sujato/sutta', 'a mendicant should live mindful and aware', 'a bhikkhu should live aware and comprehending'],
     // Its negation beside sati's (muṭṭhassatissa asampajānassa), which without its own form reads
     // "unaware and unaware".
-    ['sampajanna-clear-comprehension', 'an5.210:1.1', 'sujato/sutta', 'falling asleep unmindful and unaware', 'falling asleep unaware and without clear comprehension'],
+    ['sampajanna-comprehension', 'an5.210:1.1', 'sujato/sutta', 'falling asleep unmindful and unaware', 'falling asleep unaware and without comprehension'],
     // The noun sampajañña.
-    ['sampajanna-clear-comprehension', 'an10.61:2.12', 'sujato/sutta', 'Lack of mindfulness and situational awareness.', 'Lack of awareness and clear comprehension.'],
+    ['sampajanna-comprehension', 'an10.61:2.12', 'sujato/sutta', 'Lack of mindfulness and situational awareness.', 'Lack of awareness and comprehension.'],
     // The same noun where he drops "situational".
-    ['sampajanna-clear-comprehension', 'an4.41:1.5', 'sujato/sutta', 'leads to mindfulness and awareness', 'leads to awareness and clear comprehension'],
+    ['sampajanna-comprehension', 'an4.41:1.5', 'sujato/sutta', 'leads to mindfulness and awareness', 'leads to awareness and comprehension'],
     // sampajānakārī, the -kārī compound.
-    ['sampajanna-clear-comprehension', 'sn47.2:3.2', 'sujato/sutta', 'a mendicant acts with situational awareness when going out', 'a bhikkhu acts with clear comprehension when going out'],
+    ['sampajanna-comprehension', 'sn47.2:3.2', 'sujato/sutta', 'a mendicant acts with situational awareness when going out', 'a bhikkhu acts with comprehension when going out'],
     // Denied: iti before a quoted perception, the formless attainments' "aware that …".
-    ['sampajanna-clear-comprehension', 'an1.450:1.1', 'sujato/sutta', 'aware that ‘space is infinite’', 'aware that ‘space is infinite’'],
-    // vippasanna beside sampajañña: both of the rule's forms, prose and verse.
-    ['vippasanna-calm', 'sn47.4:2.4', 'sujato/sutta', 'keen, aware, at one, with minds that are clear', 'ardent, clearly comprehending, at one, with minds that are calm'],
-    ['vippasanna-calm', 'iti47:4.2', 'sujato/sutta', 'immersed in samādhi, joyful and clear', 'composed in samādhi, joyful and calm'],
-    // Not listed: the same word for the same term, where nothing collides with it.
-    ['vippasanna-calm', 'dn20:5.8', 'sujato/sutta', 'clear and unclouded.”', 'clear and unclouded.”'],
+    ['sampajanna-comprehension', 'an1.450:1.1', 'sujato/sutta', 'aware that ‘space is infinite’', 'aware that ‘space is infinite’'],
+    // The list line and the question that takes it up.
+    ['duppativijjha-hard-to-penetrate', 'dn34:1.3.1', 'sujato/sutta', 'two things lead to distinction, two things are hard to comprehend,', 'two things lead to distinction, two things are hard to penetrate,'],
+    ['duppativijjha-hard-to-penetrate', 'dn34:1.3.20', 'sujato/sutta', 'What two things are hard to comprehend?', 'What two things are hard to penetrate?'],
     ['samudaya-arising', 'sn56.11:4.3', 'sujato/sutta', 'the noble truth of the origin of suffering', 'the noble truth of the arising of suffering'],
     // Denied: aggañña, how the world began.
     ['samudaya-arising', 'dn24:2.14.1', 'sujato/sutta', 'I understand the origin of the world.', 'I understand the origin of the world.'],
