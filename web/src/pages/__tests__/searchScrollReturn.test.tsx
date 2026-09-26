@@ -187,7 +187,7 @@ describe('a search result opened and closed', () => {
 
     // The cursor lands on the hit that was opened, but nothing scrolls to it — the row would be
     // dragged to the edge of the pane, which is not where it was left.
-    expect(list().getByText('Discourse 30').closest('button')!.className).toContain('bg-ink/[.05]');
+    expect(list().getByText('Discourse 30').closest('a')!.className).toContain('bg-ink/[.05]');
     expect(revealed.some((el) => el.textContent?.includes('Discourse 30'))).toBe(false);
     expect(listScroller().scrollTop).toBe(900);
   });

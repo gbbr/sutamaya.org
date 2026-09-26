@@ -182,5 +182,5 @@ test('a sutta can be added to a list from the library and taken out again', asyn
   await picker.getByRole('button', { name: /Favourites/ }).first().click();
   await page.keyboard.press('Escape');
 
-  await expect(listPane.getByRole('button', { name: /The Divine Net/ })).toHaveCount(0);
+  await expect(listPane.getByRole('link', { name: /The Divine Net/ })).toHaveCount(0);
 });

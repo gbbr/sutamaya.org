@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { Eye, Highlighter, StickyNote, Library, List, Search, X } from 'lucide-react';
 import { useCorpus } from '../../context/CorpusContext';
 import { useUserData } from '../../context/UserDataContext';
@@ -33,6 +33,7 @@ import { hasLocalWorkWorthKeeping } from '../../lib/keepSafe';
 import { MOBILE_TOP_INSET } from '../../lib/ui/layout';
 import { derivePaneViewSync } from '../../lib/paneView';
 import { transitionPage } from '../../lib/ui/motion';
+import { opensHere } from '../../lib/navigation/linkClick';
 import { TREE_VIEW_KEY, TREE_EXPANDED_KEY } from '../../lib/storageKeys';
 import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../../lib/lists/autoLists';
 import { SHORTCUTS, isShortcut } from '../../lib/shortcuts';
@@ -958,12 +959,18 @@ export function TreePane({
                   const { chips, hlCount, hlColors } = searchRowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
                   // This row's place in the shared column, past the lists block above it.
                   const navIndex = i + firstHitIndex;
+                  // A link, so the browser can open the sutta in a new tab.
                   return (
-                    <button
+                    <Link
                       key={id}
                       ref={setHitRowRef(navIndex)}
-                      className={`row flex flex-col w-full text-left gap-[2px] px-[22px] py-[14px] border-b border-ink/[.07] ${navIndex === searchActiveIndex ? 'bg-ink/[.06]' : ''}`}
-                      onClick={() => openRow(navIndex)}
+                      to={`/read/${encodeURIComponent(matchedId ?? id)}`}
+                      className={`row sutta-row flex flex-col w-full text-left gap-[2px] px-[22px] py-[14px] border-b border-ink/[.07] ${navIndex === searchActiveIndex ? 'bg-ink/[.06]' : ''}`}
+                      onClick={(e) => {
+                        if (!opensHere(e)) return;
+                        e.preventDefault();
+                        openRow(navIndex);
+                      }}
                       // The press starts the text load, so the reader mounts with it already in hand.
                       onPointerDown={() => prefetchSuttaText(corpus, matchedId ?? id)}
                     >
@@ -1011,7 +1018,7 @@ export function TreePane({
                         </span>
                       )}
                       <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} query={query} />
-                    </button>
+                    </Link>
                   );
                 })}
                 {/* Where the results stopped, said in the same place an auto-list says it. */}

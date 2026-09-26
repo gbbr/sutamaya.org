@@ -33,7 +33,7 @@ test.describe('browse and read', () => {
     const listPane = page.locator('[data-component="ListPane"]');
     await expect(listPane).toContainText('The Divine Net');
 
-    await listPane.getByRole('button', { name: /The Divine Net/ }).click();
+    await listPane.getByRole('link', { name: /The Divine Net/ }).click();
     await expect(page).toHaveURL(/\/read\/dn1/);
 
     // The reader has actually rendered the text, not just the shell.

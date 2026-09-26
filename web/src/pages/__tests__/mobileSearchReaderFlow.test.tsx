@@ -269,8 +269,8 @@ describe('mobile search -> reader -> close flow', () => {
     expect(router.state.location.search).toBe('?q=sutta');
     expect((tree().getByPlaceholderText(SEARCH_PLACEHOLDER) as HTMLInputElement).value).toBe('sutta');
     // The opened hit is the marked row, not the first one.
-    expect(tree().getByText('Mulapariyaya').closest('button')!.className).toContain('bg-ink/[.06]');
-    expect(tree().getByText('Brahmajala').closest('button')!.className).not.toContain('bg-ink/[.06]');
+    expect(tree().getByText('Mulapariyaya').closest('a')!.className).toContain('bg-ink/[.06]');
+    expect(tree().getByText('Brahmajala').closest('a')!.className).not.toContain('bg-ink/[.06]');
   });
 
   // TreePane and ListPane are both *always* mounted on mobile (LibraryPage toggles `display:none`

@@ -546,6 +546,12 @@ a {
   }
 }
 
+/* `.sutta-row`, a sutta in a list: a link that keeps the row's own colours. */
+.sutta-row,
+.sutta-row:hover {
+  color: inherit;
+}
+
 button {
   font: inherit;
   color: inherit;
@@ -621,6 +627,16 @@ textarea {
 }
 [data-platform='android'] .under-nav-bar::-webkit-scrollbar-track {
   margin-bottom: var(--safe-bottom);
+}
+
+/* `.sutta-row` in the native apps: a long press neither selects the row nor offers or lifts its
+   link, there being no tabs to open it in. */
+[data-platform='ios'] .sutta-row,
+[data-platform='android'] .sutta-row {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
 }
 
 .pw {

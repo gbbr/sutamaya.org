@@ -285,7 +285,7 @@ describe('a collection found by search', () => {
     fireEvent.click(inPane('TreePane').getByRole('button', { name: 'Search' }));
     fireEvent.change(inPane('TreePane').getByPlaceholderText(SEARCH_PLACEHOLDER), { target: { value: 'ambapali' } });
     expect(getRecentSearches()).toEqual(['satipatthana']);
-    fireEvent.click(await inPane('ListPane').findByRole('button', { name: /SN 47\.1\s*Ambapālī/ }));
+    fireEvent.click(await inPane('ListPane').findByRole('link', { name: /SN 47\.1\s*Ambapālī/ }));
     expect(getRecentSearches()).toEqual(['ambapali', 'satipatthana']);
   });
 

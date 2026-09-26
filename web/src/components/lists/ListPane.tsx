@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { Link } from 'react-router';
 import { ArrowUpDown, ChevronDown, Eye, GripVertical, List, ListPlus, MoveLeft } from 'lucide-react';
 import { useCorpus } from '../../context/CorpusContext';
 import { useUserData } from '../../context/UserDataContext';
@@ -19,6 +20,7 @@ import { SearchUpdating } from '../search/SearchUpdating';
 import { SuttaRowChips } from '../SuttaRowChips';
 import { ListMembershipPopover } from './ListMembershipPopover';
 import type { Sutta } from '../../lib/types';
+import { opensHere } from '../../lib/navigation/linkClick';
 
 interface ListPaneProps {
   nodeId?: string;
@@ -520,6 +522,7 @@ export function ListPane({
           const { chips, hlCount, hlColors } = rowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
           const dragging = dragIdRef.current === id;
           const reordering = canReorder && reorderMode;
+          const target = openTargets.get(id) ?? id;
           return (
             <div
               key={id}
@@ -533,15 +536,22 @@ export function ListPane({
               {/* The right gutter is kept clear only where a control sits: at rest the add-to-list
                   button holds the top of the row, so the title and Pali line give up the width
                   while the blurb and chips run its full measure; while reordering the grip is
-                  centred and the whole row clears it. The rows carry no hover state. */}
-              <button
-                className={`block w-full text-left px-6 py-[16px] ${reordering ? 'pr-14' : ''} ${
+                  centred and the whole row clears it. The rows carry no hover state.
+
+                  A link, so the browser can open the sutta in a new tab. */}
+              <Link
+                to={`/read/${encodeURIComponent(target)}`}
+                className={`sutta-row block w-full text-left px-6 py-[16px] ${reordering ? 'pr-14' : ''} ${
                   on ? 'bg-ink/[.05]' : ''
                 }`}
                 style={on ? { boxShadow: 'inset 2px 0 0 rgb(var(--accent2))' } : undefined}
-                onClick={() => onOpen(openTargets.get(id) ?? id, snippet)}
+                onClick={(e) => {
+                  if (!opensHere(e)) return;
+                  e.preventDefault();
+                  onOpen(target, snippet);
+                }}
                 // The press starts the text load, so the reader mounts with it already in hand.
-                onPointerDown={() => prefetchSuttaText(corpus, openTargets.get(id) ?? id)}
+                onPointerDown={() => prefetchSuttaText(corpus, target)}
               >
                 <span className={`block ${reordering ? '' : 'pr-14'}`}>
                   <span className="font-sans text-ui-md font-bold tracking-[.02em] mr-2.5 text-ink-3">
@@ -595,7 +605,7 @@ export function ListPane({
                   </span>
                 )}
                 <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} query={rowQuery} />
-              </button>
+              </Link>
               {/* Opens the list-membership picker for this sutta. Hidden while reordering, so the
                   grip has the gutter to itself, and held at the top corner of the row, its `top`
                   inset matching its `right` one.

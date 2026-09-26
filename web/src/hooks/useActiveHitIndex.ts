@@ -15,7 +15,7 @@ export function useActiveHitIndex(
   // the index it was registered with.
   const activeIndexRef = useRef<number>(initial);
   activeIndexRef.current = activeIndex;
-  const rowRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const rowRefs = useRef<Array<HTMLElement | null>>([]);
   // Whether an index change scrolls its row into view. Only a cursor the reader has moved does: one
   // placed — on arrival, or under the pointer — leaves the scroll where it is.
   const revealRef = useRef(false);
@@ -34,7 +34,7 @@ export function useActiveHitIndex(
   }
 
   function setRowRef(i: number) {
-    return (el: HTMLButtonElement | null) => {
+    return (el: HTMLElement | null) => {
       rowRefs.current[i] = el;
     };
   }

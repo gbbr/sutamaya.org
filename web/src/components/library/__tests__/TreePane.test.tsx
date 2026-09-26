@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { render, screen, within, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { MemoryRouter } from 'react-router';
 
 // Characterization tests written against TreePane as it stands today, before it's split into
 // TreeRow/ListRow/SignedInBadge + useListTreeIndex/useListCrud/useListTreeDrag — the goal is a
@@ -218,8 +219,11 @@ function Harness({
 function renderHarness(initialNodeId?: string, shortcutsOpen?: boolean) {
   const onSelect = vi.fn();
   const onOpenSutta = vi.fn();
+  // A router for the result rows, which are links; navigation itself is the mocked `navigate`.
   const utils = render(
-    <Harness initialNodeId={initialNodeId} onSelect={onSelect} onOpenSutta={onOpenSutta} shortcutsOpen={shortcutsOpen} />
+    <MemoryRouter>
+      <Harness initialNodeId={initialNodeId} onSelect={onSelect} onOpenSutta={onOpenSutta} shortcutsOpen={shortcutsOpen} />
+    </MemoryRouter>
   );
   return { ...utils, onSelect, onOpenSutta };
 }
@@ -565,7 +569,11 @@ describe('search', () => {
 
   it('leaves the box unfocused on a touch screen returning to a query, keeping the keyboard down', () => {
     vi.stubGlobal('matchMedia', (q: string) => ({ matches: q.includes('coarse'), media: q }));
-    render(<Harness onSelect={vi.fn()} onOpenSutta={vi.fn()} initialQuery="dn16" />);
+    render(
+      <MemoryRouter>
+        <Harness onSelect={vi.fn()} onOpenSutta={vi.fn()} initialQuery="dn16" />
+      </MemoryRouter>
+    );
     expect(screen.getByPlaceholderText(SEARCH_PLACEHOLDER)).toHaveValue('dn16');
     expect(screen.getByPlaceholderText(SEARCH_PLACEHOLDER)).not.toHaveFocus();
   });

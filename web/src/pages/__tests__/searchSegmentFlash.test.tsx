@@ -283,7 +283,7 @@ describe('the passage a search hit was drawn from', () => {
     const tree = within(container.querySelector('[data-component="TreePane"]')!);
     fireEvent.click(tree.getByRole('button', { name: 'Search' }));
     fireEvent.change(tree.getByPlaceholderText(SEARCH_PLACEHOLDER), { target: { value: 'pana' } });
-    fireEvent.click((await screen.findByText('A wanderer, in dispraise')).closest('button')!);
+    fireEvent.click((await screen.findByText('A wanderer, in dispraise')).closest('a')!);
     await screen.findByText('They spoke in dispraise of the Buddha');
 
     await waitFor(() => expect(paliLine(container, 2)).not.toBeNull());

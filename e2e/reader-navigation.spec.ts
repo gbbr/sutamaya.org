@@ -5,7 +5,7 @@ import { test, expect, openSuttaList, selectWithinSegment, waitForLocalWrites, w
 
 test('@smoke Prev/Next step through the collection', async ({ page }) => {
   const listPane = await openSuttaList(page, 'dn-silakkhandhavagga');
-  await listPane.getByRole('button', { name: /The Divine Net/ }).click();
+  await listPane.getByRole('link', { name: /The Divine Net/ }).click();
   await expect(page).toHaveURL(/\/read\/dn1/);
 
   await page.getByRole('button', { name: 'Next' }).click();
@@ -45,7 +45,7 @@ test('the foot of the sutta goes back to the collection it belongs to', async ({
 // without a click first, as it does on any page a browser loads.
 test('the keyboard scrolls a sutta as soon as it opens', async ({ page }) => {
   const listPane = await openSuttaList(page, 'dn-silakkhandhavagga');
-  await listPane.getByRole('button', { name: /The Divine Net/ }).click();
+  await listPane.getByRole('link', { name: /The Divine Net/ }).click();
   await expect(page.locator('[data-seg="1"]')).toBeVisible();
 
   const scroller = page.locator('[data-component="ReaderPage"] .sc').first();
@@ -207,7 +207,7 @@ test('a sutta left by a search jump resumes where it was when the return arrow g
 // an expansion plus a scroll, and the collapse it has to beat is read back from localStorage.
 test('a breadcrumb click reveals its row even when the tree was left collapsed over it', async ({ page }) => {
   const listPane = await openSuttaList(page, 'dn-silakkhandhavagga');
-  await listPane.getByRole('button', { name: /The Divine Net/ }).click();
+  await listPane.getByRole('link', { name: /The Divine Net/ }).click();
   await expect(page.locator('[data-seg="1"]')).toBeVisible();
 
   // An ancestor above the sutta's own group, which is the click that lands in the tree pane —
@@ -246,7 +246,7 @@ test('closing the reader returns to where it was opened from, not the sutta’s 
 
   const listPane = page.locator('[data-component="ListPane"]');
   await expect(listPane).toContainText('The Divine Net');
-  await listPane.getByRole('button', { name: /The Divine Net/ }).click();
+  await listPane.getByRole('link', { name: /The Divine Net/ }).click();
   await expect(page).toHaveURL(/\/read\/dn1/);
   // The reader binds its key handling on mount, so wait for the text before pressing anything.
   await expect(page.locator('[data-seg="1"]')).toBeVisible();
