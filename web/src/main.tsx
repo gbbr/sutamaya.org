@@ -31,6 +31,11 @@ applyTheme(uiPrefs.theme);
 // The platform, on the root element for the styles only one platform gets (index.css).
 document.documentElement.dataset.platform = platformName();
 
+// Whether the page is hidden, on the root element for the animations that wait for it (index.css).
+const markHidden = () => document.documentElement.toggleAttribute('data-hidden', document.visibilityState === 'hidden');
+markHidden();
+document.addEventListener('visibilitychange', markHidden);
+
 // Registers the service worker that serves the whole app — shell, bundles, fonts, corpus tree —
 // from the device. The plugin's helper supplies the acting half of `registerType: 'autoUpdate'`:
 // once a new build has installed in full, it reloads the page once. Updates are looked for only at

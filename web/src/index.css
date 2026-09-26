@@ -729,6 +729,11 @@ textarea {
     box-shadow: 0 0 0 100vmax transparent;
   }
 }
+/* Paused while the page is hidden (main.tsx), so a sutta opened in a background tab keeps its wash
+   for when the reader turns to it. */
+[data-hidden] .arrival-wash {
+  animation-play-state: paused;
+}
 
 /* A loading message hidden for the first 150ms of a wait: a shorter one reads as a stutter rather
    than as progress, and a sutta prefetched on the press that opened it is on screen well inside it. */
