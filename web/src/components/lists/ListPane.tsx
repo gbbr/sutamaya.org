@@ -21,6 +21,7 @@ import { SuttaRowChips } from '../SuttaRowChips';
 import { ListMembershipPopover } from './ListMembershipPopover';
 import type { Sutta } from '../../lib/types';
 import { opensHere } from '../../lib/navigation/linkClick';
+import { passageSearch } from '../../lib/navigation/passageLink';
 
 interface ListPaneProps {
   nodeId?: string;
@@ -538,9 +539,10 @@ export function ListPane({
                   while the blurb and chips run its full measure; while reordering the grip is
                   centred and the whole row clears it. The rows carry no hover state.
 
-                  A link, so the browser can open the sutta in a new tab. */}
+                  A link, so the browser can open the sutta in a new tab, on the passage a text hit
+                  was found in. */}
               <Link
-                to={`/read/${encodeURIComponent(target)}`}
+                to={`/read/${encodeURIComponent(target)}${passageSearch(snippet)}`}
                 className={`sutta-row block w-full text-left px-6 py-[16px] ${reordering ? 'pr-14' : ''} ${
                   on ? 'bg-ink/[.05]' : ''
                 }`}
