@@ -13,7 +13,7 @@
 //   standalone terms   mendicant-bhikkhu, immersion-concentration, jhana-pali,
 //                      patisambhida-analytical-knowledge, dhamma-the-dhamma, atapi-ardent
 //   awareness          satipatthana-establishment-of-awareness, sati-aware,
-//                      sampajanna-clear-comprehension, vippasanna-calm
+//                      sampajanna-comprehension, duppativijjha-hard-to-penetrate
 //   breakthrough       abhisamaya-breakthrough
 //   arising / passing  samudaya-arising, vaya-passing-away, atthangama-disappearing,
 //                      udayabbaya-arising-passing-away
@@ -160,7 +160,8 @@ export const RULES = [
   // satipatthana-establishment-of-awareness runs first because it claims the "mindfulness" of
   // "mindfulness meditation", which sati-aware would otherwise take on its own. sati-aware writes
   // the "aware" the sampajañña rule reads, and locking keeps the two apart — docs/retranslation.md's
-  // "One pass, order-safe". vippasanna-calm exists only because sampajañña is "clear comprehension".
+  // "One pass, order-safe". duppativijjha-hard-to-penetrate exists only because sampajañña is
+  // "comprehension".
   {
     id: 'satipatthana-establishment-of-awareness',
     why: 'Bhikkhu Sujato renders satipaṭṭhāna as "mindfulness meditation"; this app prefers ' +
@@ -205,52 +206,50 @@ export const RULES = [
     ],
   },
   {
-    id: 'sampajanna-clear-comprehension',
+    id: 'sampajanna-comprehension',
     why: 'Bhikkhu Sujato renders sampajañña as "situational awareness"/"awareness" and the adjective ' +
-      'sampajāna as "aware"; this app uses "clear comprehension", Bhikkhu Bodhi\'s rendering in the ' +
-      'Connected and Numerical Discourses, and Nyanaponika\'s. The DPD glosses the noun ' +
-      '"attentiveness; clear awareness; full comprehension" and the adjective "clearly aware; fully ' +
-      'knowing; completely comprehending". SN 47.2 defines it as acting with it when going out and ' +
-      'coming back, eating, walking and speaking, and SN 47.35 as knowing feelings, thoughts and ' +
-      'perceptions as they arise, remain and go away. Ñāṇamoli has "full awareness", Thanissaro ' +
-      '"alertness", Anālayo "clearly knowing", the Goenka tradition "thorough understanding". The ' +
-      'adjective takes the participle "clearly comprehending", since a noun phrase cannot stand in ' +
-      'the satipaṭṭhāna formula\'s adjective slot ("keen, aware, and mindful"); where the adjective ' +
-      'is a whole predicate, segment overrides rebuild the clause. Closed, because plain-English ' +
-      '"aware" is common and unrelated — the formless attainments alone account for ~150 segments ' +
-      'of "aware that ‘space is infinite’", which translates iti.',
+      'sampajāna as "aware"; this app uses "comprehension", the "clear comprehension" of Bhikkhu ' +
+      'Bodhi and Nyanaponika without the "clear": the com- of comprehension already renders the saṁ- ' +
+      'of sampajañña. The DPD glosses the noun "attentiveness; clear awareness; full comprehension" ' +
+      'and the adjective "clearly aware; fully knowing; completely comprehending". SN 47.2 defines ' +
+      'it as acting with it when going out and coming back, eating, walking and speaking, and SN ' +
+      '47.35 as knowing feelings, thoughts and perceptions as they arise, remain and go away. ' +
+      'Ñāṇamoli has "full awareness", Thanissaro "alertness", Anālayo "clearly knowing", the Goenka ' +
+      'tradition "thorough understanding". The word is this term\'s alone: abhisamaya is ' +
+      '"breakthrough" and DN 34\'s "hard to comprehend" is "hard to penetrate". The adjective takes ' +
+      'the participle "comprehending", since a noun cannot stand in the satipaṭṭhāna formula\'s ' +
+      'adjective slot ("keen, aware, and mindful"); where the adjective is a whole predicate, ' +
+      'segment overrides rebuild the clause. Closed, because plain-English "aware" is common and ' +
+      'unrelated — the formless attainments alone account for ~150 segments of "aware that ‘space ' +
+      'is infinite’", which translates iti.',
     mode: 'allow',
     predicate: /sampajañ|sampajān/i,
     forms: [
-      ['situational awareness', 'clear comprehension'],
+      ['situational awareness', 'comprehension'],
       // The negated term, asampajañña and asampajāna.
-      ['unawareness', 'lack of clear comprehension'],
-      ['awareness', 'clear comprehension'],
-      ['unaware', 'without clear comprehension'],
-      ['aware', 'clearly comprehending'],
+      ['unawareness', 'lack of comprehension'],
+      ['awareness', 'comprehension'],
+      ['unaware', 'without comprehension'],
+      ['aware', 'comprehending'],
     ],
   },
   {
-    id: 'vippasanna-calm',
-    why: 'Bhikkhu Sujato renders vippasanna as "clear", which is right nearly everywhere it occurs, ' +
-      'so this is not a rule about the term. It covers only the 14 lines where his "clear" for ' +
-      'vippasanna sits beside this app’s "clear comprehension" for sampajañña: SN 47.4’s ' +
-      'satipaṭṭhāna formula and Iti 47’s wakefulness verse. "Calm" is the DPD’s gloss for the ' +
-      'compound and the one candidate not already spoken for — "tranquil" is his word for passaddhi ' +
-      'and "serene" his for samatha. Closed, so a line that gains one of these phrases for some ' +
-      'other term stops for review rather than being rewritten silently.',
-    mode: 'allow',
-    predicate: /vippasann/i,
-    // Both forms carry the neighbouring words rather than claiming "clear" on its own, which would
-    // take the gems and lakes with it.
+    id: 'duppativijjha-hard-to-penetrate',
+    why: 'Bhikkhu Sujato renders duppaṭivijjha as "hard to comprehend" in DN 34, where "awareness ' +
+      'and comprehension" are listed two lines from the things "hard to comprehend", so the one ' +
+      'sutta would use "comprehension" for two terms. "Hard to penetrate" is the DPD\'s gloss ("hard ' +
+      'to penetrate; difficult to break through") and his own verb for paṭivijjhati elsewhere, ' +
+      'including duppaṭivijjhataraṁ in SN 56.45. Open with an empty deny list: DN 34\'s 13 lines are ' +
+      'every "hard to comprehend" in the corpus.',
+    mode: 'deny',
+    predicate: /duppaṭivijjh/i,
     forms: [
-      ['minds that are clear', 'minds that are calm'],
-      ['joyful and clear', 'joyful and calm'],
+      ['hard to comprehend', 'hard to penetrate'],
     ],
   },
   // ── Breakthrough ────────────────────────────────────────────────────────────
-  // Runs after sampajanna-clear-comprehension, so the "clear comprehension" it writes is locked
-  // before this rule's "comprehension" form can reach it.
+  // Runs after sampajanna-comprehension, so the "comprehension" it writes is locked before this
+  // rule's own "comprehension" form can reach it.
   {
     id: 'abhisamaya-breakthrough',
     why: 'Bhikkhu Sujato renders abhisamaya as "comprehension"; this app uses "breakthrough", Bhikkhu ' +
@@ -990,18 +989,18 @@ export const RULES = [
   },
 
   // ·· sampajañña as a whole predicate ··
-  // sampajanna-clear-comprehension's participle stands in a list of adjectives but not as a whole
+  // sampajanna-comprehension's participle stands in a list of adjectives but not as a whole
   // predicate, so where Bhikkhu Sujato's "aware" is predicative these lines rebuild the clause
   // around the noun or the verb.
   {
     id: 'sampajano-hoti-question',
     kind: 'segment',
     why: 'Kathañca bhikkhu sampajāno hoti, opening the sampajañña section — "how is a bhikkhu ' +
-      'clearly comprehending?" reads as a progressive tense, where the noun carries the standing ' +
-      'quality. Paired with sampajano-hoti-answer, which closes the same section.',
+      'comprehending?" reads as a progressive tense, where the noun carries the standing quality. ' +
+      'Paired with sampajano-hoti-answer, which closes the same section.',
     segments: ['dn16:2.13.1', 'sn36.7:4.1', 'sn36.8:4.1', 'sn47.2:3.1', 'sn47.35:3.1'],
-    from: 'And how is a bhikkhu clearly comprehending? ',
-    to: 'And how does a bhikkhu have clear comprehension? ',
+    from: 'And how is a bhikkhu comprehending? ',
+    to: 'And how does a bhikkhu have comprehension? ',
   },
   {
     id: 'sampajano-hoti-answer',
@@ -1009,57 +1008,57 @@ export const RULES = [
     why: 'Evaṁ kho bhikkhu sampajāno hoti — sampajano-hoti-question’s line as the section’s ' +
       'closing answer, and worded to match it.',
     segments: ['sn47.35:3.5', 'sn36.8:4.3', 'dn16:2.13.3'],
-    from: 'That’s how a bhikkhu is clearly comprehending. ',
-    to: 'That’s how a bhikkhu has clear comprehension. ',
+    from: 'That’s how a bhikkhu is comprehending. ',
+    to: 'That’s how a bhikkhu has comprehension. ',
   },
   {
     id: 'sampajano-situation-they',
     kind: 'segment',
     why: 'Itiha tattha sampajāno hoti, closing each step of the sequence in MN 122 and AN 7.49. ' +
-      '"They are clearly comprehending of the situation" is not a construction English takes — the ' +
+      '"They are comprehending of the situation" is not a construction English takes — the ' +
       'participle can\'t govern "of" — so the verb says it plainly.',
     segments: ['mn122:9.5', 'mn122:9.12', 'mn122:10.6', 'mn122:10.13', 'mn122:11.3', 'mn122:11.6',
       'mn122:11.9', 'mn122:11.12', 'mn122:12.3', 'mn122:12.5', 'mn122:13.3', 'mn122:13.5',
       'mn122:15.7', 'mn122:15.12', 'mn122:17.4', 'an7.49:3.3', 'an7.49:3.6', 'an7.49:15.3',
       'an7.49:16.3'],
-    from: 'In this way they are clearly comprehending of the situation. ',
-    to: 'In this way they clearly comprehend the situation. ',
+    from: 'In this way they are comprehending of the situation. ',
+    to: 'In this way they comprehend the situation. ',
   },
   {
     id: 'sampajano-situation-he',
     kind: 'segment',
     why: 'sampajano-situation-they’s line, as AN 8.9 has it of Nanda: singular.',
     segments: ['an8.9:1.9', 'an8.9:2.8'],
-    from: 'In this way he’s clearly comprehending of the situation. ',
-    to: 'In this way he clearly comprehends the situation. ',
+    from: 'In this way he’s comprehending of the situation. ',
+    to: 'In this way he comprehends the situation. ',
   },
   {
     id: 'sampajano-conception-second',
     kind: 'segment',
     why: 'The four kinds of conception (gabbhāvakkanti), whose Pali alternates sampajāna and ' +
-      'asampajāna across all three moments. "Has clear comprehension" pairs with the "without clear ' +
+      'asampajāna across all three moments. "Has comprehension" pairs with the "without ' +
       'comprehension" the negative already produces. The first kind needs no override — it is ' +
       'negative throughout.',
     segments: ['dn28:5.4', 'dn33:1.11.177'],
-    from: 'Furthermore, someone is clearly comprehending when conceived in their mother’s womb, but without clear comprehension as they remain there, and without clear comprehension as they emerge. This is the second kind of conception. ',
-    to: 'Furthermore, someone has clear comprehension when conceived in their mother’s womb, but without clear comprehension as they remain there, and without clear comprehension as they emerge. This is the second kind of conception. ',
+    from: 'Furthermore, someone is comprehending when conceived in their mother’s womb, but without comprehension as they remain there, and without comprehension as they emerge. This is the second kind of conception. ',
+    to: 'Furthermore, someone has comprehension when conceived in their mother’s womb, but without comprehension as they remain there, and without comprehension as they emerge. This is the second kind of conception. ',
   },
   {
     id: 'sampajano-conception-third',
     kind: 'segment',
-    why: 'sampajano-conception-second’s line, for the third kind: clear comprehension through ' +
-      'conception and gestation, not through birth.',
+    why: 'sampajano-conception-second’s line, for the third kind: comprehension through conception ' +
+      'and gestation, not through birth.',
     segments: ['dn28:5.5', 'dn33:1.11.178'],
-    from: 'Furthermore, someone is clearly comprehending when conceived in their mother’s womb, clearly comprehending as they remain there, but without clear comprehension as they emerge. This is the third kind of conception. ',
-    to: 'Furthermore, someone has clear comprehension when conceived in their mother’s womb, with clear comprehension as they remain there, but without clear comprehension as they emerge. This is the third kind of conception. ',
+    from: 'Furthermore, someone is comprehending when conceived in their mother’s womb, comprehending as they remain there, but without comprehension as they emerge. This is the third kind of conception. ',
+    to: 'Furthermore, someone has comprehension when conceived in their mother’s womb, with comprehension as they remain there, but without comprehension as they emerge. This is the third kind of conception. ',
   },
   {
     id: 'sampajano-conception-fourth',
     kind: 'segment',
-    why: 'sampajano-conception-second’s line, for the fourth kind: clear comprehension throughout.',
+    why: 'sampajano-conception-second’s line, for the fourth kind: comprehension throughout.',
     segments: ['dn28:5.6', 'dn33:1.11.179'],
-    from: 'Furthermore, someone is clearly comprehending when conceived in their mother’s womb, clearly comprehending as they remain there, and clearly comprehending as they emerge. This is the fourth kind of conception. ',
-    to: 'Furthermore, someone has clear comprehension when conceived in their mother’s womb, with clear comprehension as they remain there, and with clear comprehension as they emerge. This is the fourth kind of conception. ',
+    from: 'Furthermore, someone is comprehending when conceived in their mother’s womb, comprehending as they remain there, and comprehending as they emerge. This is the fourth kind of conception. ',
+    to: 'Furthermore, someone has comprehension when conceived in their mother’s womb, with comprehension as they remain there, and with comprehension as they emerge. This is the fourth kind of conception. ',
   },
 
   // ·· abhisamaya-breakthrough in a construction its parallel line words differently ··
@@ -1067,12 +1066,12 @@ export const RULES = [
     id: 'sn56-34-abhisamaya-in-order-to',
     kind: 'segment',
     why: 'yathābhūtaṁ abhisamayāya, which Bhikkhu Sujato renders "apply … to truly comprehending". ' +
-      'abhisamaya-breakthrough’s rendering, written here whole because the line’s "clear ' +
-      'comprehension" is also a form of that rule; "in order to" makes it parallel to 1.2, the same ' +
+      'abhisamaya-breakthrough’s rendering, written here whole because the line’s "comprehension" ' +
+      'for sampajañña is also a form of that rule; "in order to" makes it parallel to 1.2, the same ' +
       'karaṇīyaṁ construction in the Pali.',
     segment: 'sn56.34:2.1',
-    from: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and clear comprehension to truly comprehending the four noble truths. ',
-    to: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and clear comprehension in order to truly break through to the four noble truths. ',
+    from: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and comprehension to truly comprehending the four noble truths. ',
+    to: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and comprehension in order to truly break through to the four noble truths. ',
   },
 
   // ·· awareness word order ··
@@ -1143,14 +1142,12 @@ export const RULES = [
     kind: 'segment',
     why: 'The blurb’s "otherwise known as the “foundations of mindfulness” or “establishments of ' +
       'mindfulness”" names the renderings readers know from elsewhere, which sati-aware would turn ' +
-      'into this app’s own. Its "“situational awareness” (sampajañña, sometimes rendered as “clear ' +
-      'comprehension”)" would name the same rendering twice, so the alternative becomes Bhikkhu ' +
-      'Sujato’s own. And its gloss of sampajañña as "a broad awareness and understanding" is plain ' +
-      'English, which sampajanna-clear-comprehension would turn into "a broad clear comprehension ' +
-      'and understanding".',
+      'into this app’s own. And its gloss of sampajañña as "a broad awareness and understanding" is ' +
+      'plain English, which sampajanna-comprehension would turn into "a broad comprehension and ' +
+      'understanding".',
     segment: 'sn-blurbs:sn47',
-    from: 'The “Linked Discourses on the Establishment of Awareness” contains 104 discourses on the four establishments of awareness (<i lang=\'pi\' translate=\'no\'>satipaṭṭhāna</i>, otherwise known as the “foundations of awareness” or “establishments of awareness”). These are the body, feelings, mind, and principles. The last of these is translated in various ways, but a close reading of the texts in this chapter shows that it originally referred to the “principles” of causality underlying the process of meditation itself. These discourses on this fundamental topic are much less known than the longer “Discourse on the Establishment of Awareness” found in versions in MN 10 and DN 22; however, they are historically earlier than that late compilation. Where MN 10 emphasizes insight meditation, in this collection we frequently find awareness closely connected to jhāna, as it is the factor of the path that leads directly to “right composure”. Insight is mentioned only rarely. The root meaning of the term awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is “memory”, and when used in meditation it refers to not “forgetting” one’s meditation, but keeping focus on the breath or other theme of meditation. This collection presents a range of perspectives on the establishment of awareness; one of its most memorable features is a series of similes or parables illustrating the practice. The partner of awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is “clear comprehension” (<i lang=\'pi\' translate=\'no\'>sampajañña</i>, sometimes rendered as “clear comprehension”), which refers to keeping a broad clear comprehension and understanding especially in daily activities.',
-    to: 'The “Linked Discourses on the Establishment of Awareness” contains 104 discourses on the four establishments of awareness (<i lang=\'pi\' translate=\'no\'>satipaṭṭhāna</i>, otherwise known as the “foundations of mindfulness” or “establishments of mindfulness”). These are the body, feelings, mind, and principles. The last of these is translated in various ways, but a close reading of the texts in this chapter shows that it originally referred to the “principles” of causality underlying the process of meditation itself. These discourses on this fundamental topic are much less known than the longer “Discourse on the Establishment of Awareness” found in versions in MN 10 and DN 22; however, they are historically earlier than that late compilation. Where MN 10 emphasizes insight meditation, in this collection we frequently find awareness closely connected to jhāna, as it is the factor of the path that leads directly to “right composure”. Insight is mentioned only rarely. The root meaning of the term awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is “memory”, and when used in meditation it refers to not “forgetting” one’s meditation, but keeping focus on the breath or other theme of meditation. This collection presents a range of perspectives on the establishment of awareness; one of its most memorable features is a series of similes or parables illustrating the practice. The partner of awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is “clear comprehension” (<i lang=\'pi\' translate=\'no\'>sampajañña</i>, sometimes rendered as “situational awareness”), which refers to keeping a broad awareness and understanding especially in daily activities.',
+    from: 'The “Linked Discourses on the Establishment of Awareness” contains 104 discourses on the four establishments of awareness (<i lang=\'pi\' translate=\'no\'>satipaṭṭhāna</i>, otherwise known as the “foundations of awareness” or “establishments of awareness”). These are the body, feelings, mind, and principles. The last of these is translated in various ways, but a close reading of the texts in this chapter shows that it originally referred to the “principles” of causality underlying the process of meditation itself. These discourses on this fundamental topic are much less known than the longer “Discourse on the Establishment of Awareness” found in versions in MN 10 and DN 22; however, they are historically earlier than that late compilation. Where MN 10 emphasizes insight meditation, in this collection we frequently find awareness closely connected to jhāna, as it is the factor of the path that leads directly to “right composure”. Insight is mentioned only rarely. The root meaning of the term awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is “memory”, and when used in meditation it refers to not “forgetting” one’s meditation, but keeping focus on the breath or other theme of meditation. This collection presents a range of perspectives on the establishment of awareness; one of its most memorable features is a series of similes or parables illustrating the practice. The partner of awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is “comprehension” (<i lang=\'pi\' translate=\'no\'>sampajañña</i>, sometimes rendered as “clear comprehension”), which refers to keeping a broad comprehension and understanding especially in daily activities.',
+    to: 'The “Linked Discourses on the Establishment of Awareness” contains 104 discourses on the four establishments of awareness (<i lang=\'pi\' translate=\'no\'>satipaṭṭhāna</i>, otherwise known as the “foundations of mindfulness” or “establishments of mindfulness”). These are the body, feelings, mind, and principles. The last of these is translated in various ways, but a close reading of the texts in this chapter shows that it originally referred to the “principles” of causality underlying the process of meditation itself. These discourses on this fundamental topic are much less known than the longer “Discourse on the Establishment of Awareness” found in versions in MN 10 and DN 22; however, they are historically earlier than that late compilation. Where MN 10 emphasizes insight meditation, in this collection we frequently find awareness closely connected to jhāna, as it is the factor of the path that leads directly to “right composure”. Insight is mentioned only rarely. The root meaning of the term awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is “memory”, and when used in meditation it refers to not “forgetting” one’s meditation, but keeping focus on the breath or other theme of meditation. This collection presents a range of perspectives on the establishment of awareness; one of its most memorable features is a series of similes or parables illustrating the practice. The partner of awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is “comprehension” (<i lang=\'pi\' translate=\'no\'>sampajañña</i>, sometimes rendered as “clear comprehension”), which refers to keeping a broad awareness and understanding especially in daily activities.',
   },
 
   // ── Blurb openers ───────────────────────────────────────────────────────────
