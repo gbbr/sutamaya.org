@@ -28,6 +28,7 @@ gloss a term in his wording while the line above it uses ours.
 | udayabbaya | rise and fall | **arising and passing away** |
 | vitakka / vicāra | placing the mind / keeping it connected | **thought / examination** |
 | yoniso manasikāra | rational application of mind | **proper attention** |
+| abhisamaya | comprehension, comprehend | **breakthrough, break through** |
 | vipariṇāma + aññathābhāva | decays and perishes | **changes and becomes otherwise** |
 | vipariṇāmānuparivatti | the perishing of form | **the changing of form** |
 | paritassati | anxious, anxiety | **agitated, agitation** |

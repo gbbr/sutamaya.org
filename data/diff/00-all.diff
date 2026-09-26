@@ -1,4 +1,4 @@
-All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(s)
+All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(s)
 
 --- sujato/blurb/an-blurbs_root-en.json
 +++ sujato/blurb/an-blurbs_root-en.json
@@ -1851,6 +1851,12 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +The Chapter on Bhikkhus 
 --- sujato/name/sn-name_translation-en-sujato.json
 +++ sujato/name/sn-name_translation-en-sujato.json
+@@ -1 +1 @@ sn-name:400.sn13
+-Linked Discourses on Comprehension 
++Linked Discourses on the Breakthrough 
+@@ -1 +1 @@ sn-name:401.sn13-abhisamayavagga
+-The Chapter on Comprehension 
++The Chapter on the Breakthrough 
 @@ -1 +1 @@ sn-name:694.sn22-theravagga
 -The Chapter on Senior Mendicants 
 +The Chapter on Senior Bhikkhus 
@@ -1872,6 +1878,9 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1 +1 @@ sn-name:2000.sn56-samadhivagga
 -The Chapter on Immersion 
 +The Chapter on Composure 
+@@ -1 +1 @@ sn-name:2055.sn56-abhisamayavagga
+-The Chapter on Comprehension 
++The Chapter on the Breakthrough 
 --- sujato/sutta/an/an1/an1.1-10_translation-en-sujato.json
 +++ sujato/sutta/an/an1/an1.1-10_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an1.1:1.3
@@ -9214,6 +9223,18 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: “Uppādā vā, bhikkhave, tathāgatānaṁ anuppādā vā tathāgatānaṁ, ṭhitāva sā dhātu dhammaṭṭhitatā dhammaniyāmatā. 
 -“Mendicants, whether Realized Ones arise or not, this law of nature persists, this regularity of natural principles, this surety of natural principles: 
 +“Bhikkhus, whether Realized Ones arise or not, this law of nature persists, this regularity of natural principles, this surety of natural principles: 
+@@ -1,2 +1,2 @@ an3.136:1.3
+ PLI: Taṁ tathāgato abhisambujjhati abhisameti. 
+-A Realized One awakens to this and comprehends it, 
++A Realized One awakens to this and breaks through to it, 
+@@ -1,2 +1,2 @@ an3.136:1.8
+ PLI: Taṁ tathāgato abhisambujjhati abhisameti. 
+-A Realized One awakens to this and comprehends it, 
++A Realized One awakens to this and breaks through to it, 
+@@ -1,2 +1,2 @@ an3.136:1.13
+ PLI: Taṁ tathāgato abhisambujjhati abhisameti. 
+-A Realized One awakens to this and comprehends it, 
++A Realized One awakens to this and breaks through to it, 
 --- sujato/sutta/an/an3/an3.137_translation-en-sujato.json
 +++ sujato/sutta/an/an3/an3.137_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an3.137:1.1
@@ -9835,7 +9856,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ an3.33:3.3
  PLI: ‘bhikkhu acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassa’. 
 -a mendicant who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering. 
-+a bhikkhu who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering. 
++a bhikkhu who has cut off craving, cast off the fetters, and by rightly breaking through conceit has made an end of suffering. 
 @@ -1,2 +1,2 @@ an3.33:5.1
  PLI: Upekkhāsatisaṁsuddhaṁ, 
 -pure equanimity and mindfulness, 
@@ -12201,7 +12222,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ an4.177:6.1
  PLI: Yato kho, rāhula, bhikkhu imāsu catūsu dhātūsu nevattānaṁ na attaniyaṁ samanupassati, ayaṁ vuccati, rāhula, bhikkhu acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassā”ti. 
 -When a mendicant sees these four elements as neither self nor belonging to self, they’re called a mendicant who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
-+When a bhikkhu sees these four elements as neither self nor belonging to self, they’re called a bhikkhu who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
++When a bhikkhu sees these four elements as neither self nor belonging to self, they’re called a bhikkhu who has cut off craving, cast off the fetters, and by rightly breaking through conceit has made an end of suffering.” 
 --- sujato/sutta/an/an4/an4.178_translation-en-sujato.json
 +++ sujato/sutta/an/an4/an4.178_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.178:1.1
@@ -13545,7 +13566,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ an4.257:3.8
  PLI: Yato kho, mālukyaputta, bhikkhuno taṇhā pahīnā hoti ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā, ayaṁ vuccati, mālukyaputta, ‘bhikkhu acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassā’”ti. 
 -That craving is given up by a mendicant, cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. Then they’re called a mendicant who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
-+That craving is given up by a bhikkhu, cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. Then they’re called a bhikkhu who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
++That craving is given up by a bhikkhu, cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. Then they’re called a bhikkhu who has cut off craving, cast off the fetters, and by rightly breaking through conceit has made an end of suffering.” 
 @@ -1,2 +1,2 @@ an4.257:4.2
  PLI: Atha kho āyasmā mālukyaputto eko vūpakaṭṭho appamatto ātāpī pahitatto viharanto nacirasseva—yassatthāya kulaputtā sammadeva agārasmā anagāriyaṁ pabbajanti, tadanuttaraṁ—brahmacariyapariyosānaṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja vihāsi. 
 -Then Māluṅkyaputta, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. 
@@ -14068,6 +14089,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Sa ve santo sato bhikkhu, 
 -That mendicant is peaceful and mindful, 
 +That bhikkhu is peaceful and aware, 
+@@ -1,2 +1,2 @@ an4.38:7.3
+ PLI: Mānābhisamayā buddho, 
+-And when they’re awakened <j>by comprehending conceit, 
++And when they’re awakened <j>by breaking through conceit, 
 --- sujato/sutta/an/an4/an4.41_translation-en-sujato.json
 +++ sujato/sutta/an/an4/an4.41_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.41:0.3
@@ -16589,7 +16614,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ an5.200:6.2
  PLI: Ayaṁ vuccati, bhikkhave, bhikkhu niranusayo, acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassa. 
 -That’s why they’re called a mendicant who is without underlying tendencies, who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering. 
-+That’s why they’re called a bhikkhu who is without underlying tendencies, who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering. 
++That’s why they’re called a bhikkhu who is without underlying tendencies, who has cut off craving, cast off the fetters, and by rightly breaking through conceit has made an end of suffering. 
 --- sujato/sutta/an/an5/an5.202_translation-en-sujato.json
 +++ sujato/sutta/an/an5/an5.202_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an5.202:1.1
@@ -19085,7 +19110,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ an6.105:1.9
  PLI: ayaṁ vuccati, bhikkhave, bhikkhu acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassā”ti. 
 -they’re called a mendicant who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
-+they’re called a bhikkhu who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
++they’re called a bhikkhu who has cut off craving, cast off the fetters, and by rightly breaking through conceit has made an end of suffering.” 
 --- sujato/sutta/an/an6/an6.106_translation-en-sujato.json
 +++ sujato/sutta/an/an6/an6.106_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an6.106:1.1
@@ -19099,7 +19124,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ an6.106:1.9
  PLI: ayaṁ vuccati, bhikkhave, bhikkhu acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassā”ti. 
 -they’re called a mendicant who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
-+they’re called a bhikkhu who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
++they’re called a bhikkhu who has cut off craving, cast off the fetters, and by rightly breaking through conceit has made an end of suffering.” 
 --- sujato/sutta/an/an6/an6.107_translation-en-sujato.json
 +++ sujato/sutta/an/an6/an6.107_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an6.107:1.1
@@ -21545,7 +21570,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ an7.12:2.8
  PLI: Ayaṁ vuccati, bhikkhave, bhikkhu acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassā”ti. 
 -they’re called a mendicant who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
-+they’re called a bhikkhu who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
++they’re called a bhikkhu who has cut off craving, cast off the fetters, and by rightly breaking through conceit has made an end of suffering.” 
 --- sujato/sutta/an/an7/an7.13_translation-en-sujato.json
 +++ sujato/sutta/an/an7/an7.13_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an7.13:1.1
@@ -23317,7 +23342,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ an7.9:1.17
  PLI: Ayaṁ vuccati, bhikkhave, bhikkhu acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassā”ti. 
 -they’re called a mendicant who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
-+they’re called a bhikkhu who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
++they’re called a bhikkhu who has cut off craving, cast off the fetters, and by rightly breaking through conceit has made an end of suffering.” 
 --- sujato/sutta/an/an8/an8.10_translation-en-sujato.json
 +++ sujato/sutta/an/an8/an8.10_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an8.10:1.2
@@ -34075,7 +34100,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ iti53:2.8
  PLI: ayaṁ vuccati, bhikkhave, ‘bhikkhu ariyo, sammaddaso, acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassā’”ti. 
 -they’re called a noble mendicant who sees rightly, has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
-+they’re called a noble bhikkhu who sees rightly, has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
++they’re called a noble bhikkhu who sees rightly, has cut off craving, cast off the fetters, and by rightly breaking through conceit has made an end of suffering.” 
 @@ -1,2 +1,2 @@ iti53:3.1
  PLI: “Yo sukhaṁ dukkhato adda, 
 -“A mendicant who sees pleasure as pain, 
@@ -34566,6 +34591,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Sati kāyagatā tyatthu, 
 -With mindfulness immersed in the body, 
 +With awareness immersed in the body, 
+@@ -1,2 +1,2 @@ snp2.11:8.3
+ PLI: Tato mānābhisamayā, 
+-and when you comprehend conceit, 
++and when you break through conceit, 
 --- sujato/sutta/kn/snp/vagga2/snp2.13_translation-en-sujato.json
 +++ sujato/sutta/kn/snp/vagga2/snp2.13_translation-en-sujato.json
 @@ -1,2 +1,2 @@ snp2.13:1.3
@@ -34760,6 +34789,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Evaṁ sammā …pe… 
 -When a mendicant meditates in this way they can expect enlightenment or non-return.” 
 +When a bhikkhu meditates in this way they can expect enlightenment or non-return.” 
+@@ -1,2 +1,2 @@ snp3.12:23.3
+ PLI: Te ve phassābhisamayā, 
+-by comprehending contact 
++by breaking through contact 
 @@ -1,2 +1,2 @@ snp3.12:24.5
  PLI: Evaṁ sammā …pe… 
 -When a mendicant meditates in this way they can expect enlightenment or non-return.” 
@@ -34824,6 +34857,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Evaṁ sammā …pe… 
 -When a mendicant meditates in this way they can expect enlightenment or non-return.” 
 +When a bhikkhu meditates in this way they can expect enlightenment or non-return.” 
+@@ -1,2 +1,2 @@ snp3.12:53.3
+ PLI: Te ve saccābhisamayā, 
+-Having comprehended the truth, 
++Having made the breakthrough to the truth, 
 @@ -1,2 +1,2 @@ snp3.12:54.6
  PLI: Evaṁ sammā dvayatānupassino kho, bhikkhave, bhikkhuno appamattassa ātāpino pahitattassa viharato dvinnaṁ phalānaṁ aññataraṁ phalaṁ pāṭikaṅkhaṁ—
 -When a mendicant meditates rightly contemplating a pair of teachings in this way—diligent, keen, and resolute—they can expect one of two results: 
@@ -35440,6 +35477,12 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Evaṁ viharamānassa, 
 -For a mendicant who meditates in this way, 
 +For a bhikkhu who meditates in this way, 
+--- sujato/sutta/kn/thag/thag10.7_translation-en-sujato.json
++++ sujato/sutta/kn/thag/thag10.7_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thag10.7:7.3
+ PLI: Saccānaṁ abhisamayo, 
+-and penetration of the truths—
++and breakthrough to the truths—
 --- sujato/sutta/kn/thag/thag11.1_translation-en-sujato.json
 +++ sujato/sutta/kn/thag/thag11.1_translation-en-sujato.json
 @@ -1,2 +1,2 @@ thag11.1:3.3
@@ -36060,6 +36103,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Sati kāyagatā tyatthu, 
 -With mindfulness immersed in the body, 
 +With awareness immersed in the body, 
+@@ -1,2 +1,2 @@ thag21.1:18.3
+ PLI: Tato mānābhisamayā, 
+-and when you comprehend conceit, 
++and when you break through conceit, 
 @@ -1,2 +1,2 @@ thag21.1:23.4
  PLI: dhammaṁ deseti bhikkhunaṁ. 
 -teaches Dhamma to the mendicants. 
@@ -36272,6 +36319,12 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Dukkhaṁ dukkhasamuppādaṁ, 
 -suffering, suffering’s origin, 
 +suffering, suffering’s arising, 
+--- sujato/sutta/kn/thig/thig13.5_translation-en-sujato.json
++++ sujato/sutta/kn/thig/thig13.5_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thig13.5:1.4
+ PLI: saccābhisamayo ahu. 
+-I comprehended the truth; 
++I made the breakthrough to the truth; 
 --- sujato/sutta/kn/thig/thig14.1_translation-en-sujato.json
 +++ sujato/sutta/kn/thig/thig14.1_translation-en-sujato.json
 @@ -1,2 +1,2 @@ thig14.1:23.2
@@ -36296,6 +36349,12 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Yo yoniso payuñjati, 
 -by those who rationally apply themselves; 
 +by those who properly apply themselves; 
+--- sujato/sutta/kn/thig/thig2.1_translation-en-sujato.json
++++ sujato/sutta/kn/thig/thig2.1_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thig2.1:2.3
+ PLI: Tato mānābhisamayā, 
+-and when you comprehend conceit, 
++and when you break through conceit, 
 --- sujato/sutta/kn/thig/thig2.9_translation-en-sujato.json
 +++ sujato/sutta/kn/thig/thig2.9_translation-en-sujato.json
 @@ -1,2 +1,2 @@ thig2.9:1.4
@@ -42464,6 +42523,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Ayaṁ vuccati, bhikkhave, bhikkhu vasī vitakkapariyāyapathesu. 
 -This is called a mendicant who is a master of the ways of thought. 
 +This is called a bhikkhu who is a master of the ways of thought. 
+@@ -1,2 +1,2 @@ mn20:8.13
+ PLI: Acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassā”ti. 
+-They’ve cut off craving, cast off the fetters, and by rightly comprehending conceit have made an end of suffering.” 
++They’ve cut off craving, cast off the fetters, and by rightly breaking through conceit have made an end of suffering.” 
 @@ -1,2 +1,2 @@ mn20:8.15
  PLI: Attamanā te bhikkhū bhagavato bhāsitaṁ abhinandunti. 
 -Satisfied, the mendicants approved what the Buddha said. 
@@ -43551,7 +43614,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ mn2:22.2
  PLI: ayaṁ vuccati, bhikkhave: ‘bhikkhu sabbāsavasaṁvarasaṁvuto viharati, acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassā’”ti. 
 -They’re called a mendicant who lives having restrained all defilements, who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
-+They’re called a bhikkhu who lives having restrained all defilements, who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering.” 
++They’re called a bhikkhu who lives having restrained all defilements, who has cut off craving, cast off the fetters, and by rightly breaking through conceit has made an end of suffering.” 
 @@ -1,2 +1,2 @@ mn2:22.4
  PLI: Attamanā te bhikkhū bhagavato bhāsitaṁ abhinandunti. 
 -Satisfied, the mendicants approved what the Buddha said. 
@@ -49614,6 +49677,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: “Paṭiccasamuppādañca vo, bhikkhave, desessāmi paṭiccasamuppanne ca dhamme. 
 -“Mendicants, I will teach you dependent origination and dependently originated phenomena. 
 +“Bhikkhus, I will teach you dependent origination and dependently originated phenomena. 
+@@ -1,2 +1,2 @@ sn12.20:2.4
+ PLI: Taṁ tathāgato abhisambujjhati abhisameti. 
+-A Realized One awakens to this and comprehends it, 
++A Realized One awakens to this and breaks through to it, 
 @@ -1,2 +1,2 @@ sn12.20:3.9
  PLI: saṅkhārapaccayā, bhikkhave, viññāṇaṁ … 
 -Choices are a requirement for consciousness … 
@@ -49622,6 +49689,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: avijjāpaccayā, bhikkhave, saṅkhārā 
 -Ignorance is a requirement for choices. 
 +Ignorance is a requirement for saṅkhāras. 
+@@ -1,2 +1,2 @@ sn12.20:3.12
+ PLI: Taṁ tathāgato abhisambujjhati abhisameti. 
+-A Realized One awakens to this and comprehends it, 
++A Realized One awakens to this and breaks through to it, 
 @@ -1,2 +1,2 @@ sn12.20:3.15
  PLI: ‘avijjāpaccayā, bhikkhave, saṅkhārā’. 
 -‘Ignorance is a requirement for choices.’ 
@@ -51368,6 +51439,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +“… use clear comprehension …” 
 --- sujato/sutta/sn/sn13/sn13.10_translation-en-sujato.json
 +++ sujato/sutta/sn/sn13/sn13.10_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn13.10:0.2
+ PLI: 1. Abhisamayavagga 
+-1. Comprehension 
++1. Breakthrough 
 @@ -1,2 +1,2 @@ sn13.10:1.2
  PLI: “Seyyathāpi, bhikkhave, himavā pabbatarājā parikkhayaṁ pariyādānaṁ gaccheyya, ṭhapetvā satta sāsapamattiyo pāsāṇasakkharā. 
 -“Mendicants, suppose the Himalayas, the king of mountains, was worn away and eroded except seven pebbles the size of mustard seeds. 
@@ -51376,8 +51451,20 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Taṁ kiṁ maññatha, bhikkhave, 
 -What do you think, mendicants? 
 +What do you think, bhikkhus? 
+@@ -1,2 +1,2 @@ sn13.10:3.1
+ PLI: “Evameva kho, bhikkhave, ariyasāvakassa diṭṭhisampannassa puggalassa abhisametāvino etadeva bahutaraṁ dukkhaṁ yadidaṁ parikkhīṇaṁ pariyādiṇṇaṁ; 
+-“In the same way, for a noble disciple accomplished in view, an individual with comprehension, the suffering that’s over and done with is more, 
++“In the same way, for a noble disciple accomplished in view, an individual who has made the breakthrough, the suffering that’s over and done with is more, 
+@@ -1,2 +1,2 @@ sn13.10:3.4
+ PLI: Evaṁ mahatthiyo kho, bhikkhave, dhammābhisamayo, evaṁ mahatthiyo dhammacakkhupaṭilābho”ti. 
+-That’s how very beneficial it is to comprehend the teaching and gain the vision of the teaching.” 
++That’s how very beneficial it is to break through to the teaching and gain the vision of the teaching.” 
 --- sujato/sutta/sn/sn13/sn13.11_translation-en-sujato.json
 +++ sujato/sutta/sn/sn13/sn13.11_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn13.11:0.2
+ PLI: 1. Abhisamayavagga 
+-1. Comprehension 
++1. Breakthrough 
 @@ -1,2 +1,2 @@ sn13.11:1.2
  PLI: “Seyyathāpi, bhikkhave, puriso sinerussa pabbatarājassa satta muggamattiyo pāsāṇasakkharā upanikkhipeyya. 
 -“Mendicants, suppose a person was to place on Sineru, the king of mountains, seven pebbles the size of mung beans. 
@@ -51386,8 +51473,16 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Taṁ kiṁ maññatha, bhikkhave, 
 -What do you think, mendicants? 
 +What do you think, bhikkhus? 
+@@ -1,2 +1,2 @@ sn13.11:3.4
+ PLI: Abhisamayasaṁyuttaṁ samattaṁ. 
+-The Linked Discourses on comprehension are complete. 
++The Linked Discourses on the breakthrough are complete. 
 --- sujato/sutta/sn/sn13/sn13.1_translation-en-sujato.json
 +++ sujato/sutta/sn/sn13/sn13.1_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn13.1:0.2
+ PLI: 1. Abhisamayavagga 
+-1. Comprehension 
++1. Breakthrough 
 @@ -1,2 +1,2 @@ sn13.1:1.3
  PLI: Atha kho bhagavā parittaṁ nakhasikhāyaṁ paṁsuṁ āropetvā bhikkhū āmantesi: 
 -Then the Buddha, picking up a little bit of dirt on his fingernail, addressed the mendicants: 
@@ -51396,8 +51491,20 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: “Taṁ kiṁ maññatha, bhikkhave, 
 -“What do you think, mendicants? 
 +“What do you think, bhikkhus? 
+@@ -1,2 +1,2 @@ sn13.1:2.4
+ PLI: “Evameva kho, bhikkhave, ariyasāvakassa diṭṭhisampannassa puggalassa abhisametāvino etadeva bahutaraṁ dukkhaṁ yadidaṁ parikkhīṇaṁ pariyādiṇṇaṁ; 
+-“In the same way, for a noble disciple accomplished in view, an individual with comprehension, the suffering that’s over and done with is more, 
++“In the same way, for a noble disciple accomplished in view, an individual who has made the breakthrough, the suffering that’s over and done with is more, 
+@@ -1,2 +1,2 @@ sn13.1:2.7
+ PLI: Evaṁ mahatthiyo kho, bhikkhave, dhammābhisamayo; 
+-That’s how very beneficial it is to comprehend the teaching 
++That’s how very beneficial it is to break through to the teaching 
 --- sujato/sutta/sn/sn13/sn13.2_translation-en-sujato.json
 +++ sujato/sutta/sn/sn13/sn13.2_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn13.2:0.2
+ PLI: 1. Abhisamayavagga 
+-1. Comprehension 
++1. Breakthrough 
 @@ -1,2 +1,2 @@ sn13.2:1.2
  PLI: “Seyyathāpi, bhikkhave, pokkharaṇī paññāsayojanāni āyāmena paññāsayojanāni vitthārena paññāsayojanāni ubbedhena, puṇṇā udakassa samatittikā kākapeyyā. 
 -“Mendicants, suppose there was a lotus pond that was fifty leagues long, fifty leagues wide, and fifty leagues deep, full to the brim so a crow could drink from it. 
@@ -51406,8 +51513,20 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Taṁ kiṁ maññatha, bhikkhave, 
 -What do you think, mendicants? 
 +What do you think, bhikkhus? 
+@@ -1,2 +1,2 @@ sn13.2:3.1
+ PLI: “Evameva kho, bhikkhave, ariyasāvakassa diṭṭhisampannassa puggalassa abhisametāvino etadeva bahutaraṁ dukkhaṁ yadidaṁ parikkhīṇaṁ pariyādiṇṇaṁ; appamattakaṁ avasiṭṭhaṁ. 
+-“In the same way, for an individual with comprehension, a noble disciple accomplished in view, the suffering that’s over and done with is more, what’s left is tiny. 
++“In the same way, for an individual who has made the breakthrough, a noble disciple accomplished in view, the suffering that’s over and done with is more, what’s left is tiny. 
+@@ -1,2 +1,2 @@ sn13.2:3.3
+ PLI: Evaṁ mahatthiyo kho, bhikkhave, dhammābhisamayo; evaṁ mahatthiyo dhammacakkhupaṭilābho”ti. 
+-That’s how very beneficial it is to comprehend the teaching and gain the vision of the teaching.” 
++That’s how very beneficial it is to break through to the teaching and gain the vision of the teaching.” 
 --- sujato/sutta/sn/sn13/sn13.3_translation-en-sujato.json
 +++ sujato/sutta/sn/sn13/sn13.3_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn13.3:0.2
+ PLI: 1. Abhisamayavagga 
+-1. Comprehension 
++1. Breakthrough 
 @@ -1,2 +1,2 @@ sn13.3:1.2
  PLI: “Seyyathāpi, bhikkhave, yatthimā mahānadiyo saṁsandanti samenti, seyyathidaṁ—
 -“Mendicants, there are places where the great rivers—the Ganges, Yamunā, Aciravatī, Sarabhū, and Mahī—join together and converge. 
@@ -51418,6 +51537,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +What do you think, bhikkhus? 
 --- sujato/sutta/sn/sn13/sn13.4_translation-en-sujato.json
 +++ sujato/sutta/sn/sn13/sn13.4_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn13.4:0.2
+ PLI: 1. Abhisamayavagga 
+-1. Comprehension 
++1. Breakthrough 
 @@ -1,2 +1,2 @@ sn13.4:1.2
  PLI: “Seyyathāpi, bhikkhave, yatthimā mahānadiyo saṁsandanti samenti, seyyathidaṁ—
 -“Mendicants, there are places where the great rivers—the Ganges, Yamunā, Aciravatī, Sarabhū, and Mahī—join together and converge. 
@@ -51428,6 +51551,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +What do you think, bhikkhus? 
 --- sujato/sutta/sn/sn13/sn13.5_translation-en-sujato.json
 +++ sujato/sutta/sn/sn13/sn13.5_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn13.5:0.2
+ PLI: 1. Abhisamayavagga 
+-1. Comprehension 
++1. Breakthrough 
 @@ -1,2 +1,2 @@ sn13.5:1.2
  PLI: “Seyyathāpi, bhikkhave, puriso mahāpathaviyā satta kolaṭṭhimattiyo guḷikā upanikkhipeyya. 
 -“Mendicants, suppose a person was to place seven clay balls the size of jujube seeds on the great earth. 
@@ -51438,6 +51565,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +What do you think, bhikkhus? 
 --- sujato/sutta/sn/sn13/sn13.6_translation-en-sujato.json
 +++ sujato/sutta/sn/sn13/sn13.6_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn13.6:0.2
+ PLI: 1. Abhisamayavagga 
+-1. Comprehension 
++1. Breakthrough 
 @@ -1,2 +1,2 @@ sn13.6:1.2
  PLI: “Seyyathāpi, bhikkhave, mahāpathavī parikkhayaṁ pariyādānaṁ gaccheyya, ṭhapetvā satta kolaṭṭhimattiyo guḷikā. 
 -“Mendicants, suppose the great earth was worn away and eroded except seven clay balls the size of jujube seeds. 
@@ -51448,6 +51579,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +What do you think, bhikkhus? 
 --- sujato/sutta/sn/sn13/sn13.7_translation-en-sujato.json
 +++ sujato/sutta/sn/sn13/sn13.7_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn13.7:0.2
+ PLI: 1. Abhisamayavagga 
+-1. Comprehension 
++1. Breakthrough 
 @@ -1,2 +1,2 @@ sn13.7:1.2
  PLI: “Seyyathāpi, bhikkhave, puriso mahāsamuddato dve vā tīṇi vā udakaphusitāni uddhareyya. 
 -“Mendicants, suppose a man was to draw up two or three drops of water from the ocean. 
@@ -51458,6 +51593,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +What do you think, bhikkhus? 
 --- sujato/sutta/sn/sn13/sn13.8_translation-en-sujato.json
 +++ sujato/sutta/sn/sn13/sn13.8_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn13.8:0.2
+ PLI: 1. Abhisamayavagga 
+-1. Comprehension 
++1. Breakthrough 
 @@ -1,2 +1,2 @@ sn13.8:1.2
  PLI: “Seyyathāpi, bhikkhave, mahāsamuddo parikkhayaṁ pariyādānaṁ gaccheyya, ṭhapetvā dve vā tīṇi vā udakaphusitāni. 
 -“Mendicants, suppose the water in the ocean dried up and evaporated except two or three drops. 
@@ -51468,6 +51607,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +What do you think, bhikkhus? 
 --- sujato/sutta/sn/sn13/sn13.9_translation-en-sujato.json
 +++ sujato/sutta/sn/sn13/sn13.9_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn13.9:0.2
+ PLI: 1. Abhisamayavagga 
+-1. Comprehension 
++1. Breakthrough 
 @@ -1,2 +1,2 @@ sn13.9:1.2
  PLI: “Seyyathāpi, bhikkhave, puriso himavato pabbatarājassa satta sāsapamattiyo pāsāṇasakkharā upanikkhipeyya. 
 -“Mendicants, suppose a person was to place seven pebbles the size of mustard seeds on the Himalayas, the king of mountains. 
@@ -56564,6 +56707,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: saṅkhārā … 
 -choices … 
 +saṅkhāras … 
+@@ -1,2 +1,2 @@ sn22.83:4.14
+ PLI: Idañca pana me āyasmato puṇṇassa mantāṇiputtassa dhammadesanaṁ sutvā dhammo abhisamito”ti. 
+-And when I heard this teaching from Venerable Puṇṇa son of Mantāṇī, I comprehended the teaching.” 
++And when I heard this teaching from Venerable Puṇṇa son of Mantāṇī, I made the breakthrough to the teaching.” 
 --- sujato/sutta/sn/sn22/sn22.84_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.84_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.84:0.2
@@ -56684,6 +56831,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: ‘tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi, yathā khīṇāsavo bhikkhu kāyassa bhedā ucchijjati vinassati, na hoti paraṁ maraṇā’”ti? 
 -‘As I understand the Buddha’s teaching, a mendicant who has ended the defilements is annihilated and destroyed when their body breaks up, and doesn’t exist after death’?” 
 +‘As I understand the Buddha’s teaching, a bhikkhu who has ended the defilements is annihilated and destroyed when their body breaks up, and doesn’t exist after death’?” 
+@@ -1,2 +1,2 @@ sn22.85:12.2
+ PLI: idañca panāyasmato sāriputtassa dhammadesanaṁ sutvā tañceva pāpakaṁ diṭṭhigataṁ pahīnaṁ, dhammo ca me abhisamito”ti. 
+-But now that I’ve heard the teaching from Venerable Sāriputta, I’ve given up that misconception, and I’ve comprehended the teaching.” 
++But now that I’ve heard the teaching from Venerable Sāriputta, I’ve given up that misconception, and I’ve made the breakthrough to the teaching.” 
 @@ -1,2 +1,2 @@ sn22.85:13.12
  PLI: saṅkhārā … 
 -choices … 
@@ -57116,6 +57267,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Avijjāya tveva asesavirāganirodhā saṅkhāranirodho …pe… 
 -When ignorance fades away and ceases with no residue left behind, choices cease. … 
 +When ignorance fades away and ceases with no residue left behind, saṅkhāras cease. … 
+@@ -1,2 +1,2 @@ sn22.90:10.2
+ PLI: Idañca pana me āyasmato ānandassa dhammadesanaṁ sutvā dhammo abhisamito”ti. 
+-And now that I’ve heard this teaching from Venerable Ānanda, I’ve comprehended the teaching.” 
++And now that I’ve heard this teaching from Venerable Ānanda, I’ve made the breakthrough to the teaching.” 
 --- sujato/sutta/sn/sn22/sn22.91_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.91_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.91:0.2
@@ -57168,10 +57323,22 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Vedanā aniccā …pe… 
 -Feeling … Perception … Choices … 
 +Feeling … Perception … Saṅkhāras … 
+@@ -1,2 +1,2 @@ sn22.94:4.1
+ PLI: Atthi, bhikkhave, loke lokadhammo, taṁ tathāgato abhisambujjhati abhisameti; 
+-There is a worldly phenomenon in the world that the Realized One understands and comprehends. 
++There is a worldly phenomenon in the world that the Realized One understands and breaks through to. 
+@@ -1,2 +1,2 @@ sn22.94:5.2
+ PLI: Rūpaṁ, bhikkhave, loke lokadhammo taṁ tathāgato abhisambujjhati abhisameti. 
+-Form is a worldly phenomenon in the world that the Realized One understands and comprehends. 
++Form is a worldly phenomenon in the world that the Realized One understands and breaks through to. 
 @@ -1,2 +1,2 @@ sn22.94:6.4
  PLI: saṅkhārā, bhikkhave … 
 -Choices … 
 +Saṅkhāras … 
+@@ -1,2 +1,2 @@ sn22.94:6.5
+ PLI: viññāṇaṁ, bhikkhave, loke lokadhammo taṁ tathāgato abhisambujjhati abhisameti. 
+-Consciousness is a worldly phenomenon in the world that the Realized One understands and comprehends. 
++Consciousness is a worldly phenomenon in the world that the Realized One understands and breaks through to. 
 --- sujato/sutta/sn/sn22/sn22.95_translation-en-sujato.json
 +++ sujato/sutta/sn/sn22/sn22.95_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn22.95:1.2
@@ -58704,6 +58871,14 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +“Bhikkhu, there are what are called gods of the rainy thunderclouds. 
 --- sujato/sutta/sn/sn33/sn33.11-15_translation-en-sujato.json
 +++ sujato/sutta/sn/sn33/sn33.11-15_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn33.11:0.3
+ PLI: Rūpaanabhisamayādisuttapañcaka 
+-Five Discourses on Not Comprehending Form, Etc. 
++Five Discourses on Not Breaking Through to Form, Etc. 
+@@ -1,2 +1,2 @@ sn33.11:1.2
+ PLI: “Rūpe kho, vaccha, anabhisamayā …pe… rūpanirodhagāminiyā paṭipadāya anabhisamayā …pe…. 
+-“Vaccha, it is because of not comprehending form … 
++“Vaccha, it is because of not breaking through to form … 
 @@ -1,2 +1,2 @@ sn33.14:1.2
  PLI: “Saṅkhāresu kho, vaccha, anabhisamayā …pe…. 
 -choices … 
@@ -62701,7 +62876,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ sn36.3:1.5
  PLI: Yato kho, bhikkhave, bhikkhuno sukhāya vedanāya rāgānusayo pahīno hoti, dukkhāya vedanāya paṭighānusayo pahīno hoti, adukkhamasukhāya vedanāya avijjānusayo pahīno hoti, ayaṁ vuccati, bhikkhave, ‘bhikkhu niranusayo sammaddaso acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassā’ti. 
 -When a mendicant has given up these underlying tendencies, they’re called a mendicant without underlying tendencies, who sees rightly, has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering. 
-+When a bhikkhu has given up these underlying tendencies, they’re called a bhikkhu without underlying tendencies, who sees rightly, has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering. 
++When a bhikkhu has given up these underlying tendencies, they’re called a bhikkhu without underlying tendencies, who sees rightly, has cut off craving, cast off the fetters, and by rightly breaking through conceit has made an end of suffering. 
 @@ -1,2 +1,2 @@ sn36.3:5.1
  PLI: Yato ca bhikkhu ātāpī, 
 -But when a mendicant is keen, 
@@ -62729,7 +62904,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ sn36.5:1.6
  PLI: ayaṁ vuccati, bhikkhave, ‘bhikkhu sammaddaso acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassā’ti. 
 -they’re called a mendicant who sees rightly, has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering. 
-+they’re called a bhikkhu who sees rightly, has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering. 
++they’re called a bhikkhu who sees rightly, has cut off craving, cast off the fetters, and by rightly breaking through conceit has made an end of suffering. 
 @@ -1,2 +1,2 @@ sn36.5:2.1
  PLI: Yo sukhaṁ dukkhato adda, 
 -A mendicant who sees pleasure as pain, 
@@ -64352,6 +64527,12 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: na saṅkhāre …pe… 
 -choices … 
 +saṅkhāras … 
+--- sujato/sutta/sn/sn44/sn44.9_translation-en-sujato.json
++++ sujato/sutta/sn/sn44/sn44.9_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn44.9:4.7
+ PLI: “acchecchi taṇhaṁ, vivattayi saṁyojanaṁ, sammā mānābhisamayā antamakāsi dukkhassā”’ti. 
+-cut off craving, cast off the fetters, and by rightly comprehending conceit have made an end of suffering.’ 
++cut off craving, cast off the fetters, and by rightly breaking through conceit have made an end of suffering.’ 
 --- sujato/sutta/sn/sn45/sn45.103_translation-en-sujato.json
 +++ sujato/sutta/sn/sn45/sn45.103_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn45.103:1.1
@@ -66542,6 +66723,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: So khvāhaṁ, bhante, suññāgāragato imesaṁ pañcupādānakkhandhānaṁ ukkujjāvakujjaṁ samparivattento ‘idaṁ dukkhan’ti yathābhūtaṁ abbhaññāsiṁ, ‘ayaṁ dukkhasamudayo’ti yathābhūtaṁ abbhaññāsiṁ, ‘ayaṁ dukkhanirodho’ti yathābhūtaṁ abbhaññāsiṁ, ‘ayaṁ dukkhanirodhagāminī paṭipadā’ti yathābhūtaṁ abbhaññāsiṁ. 
 -Then, while staying in an empty hut, I followed the churning of the five grasping aggregates. I truly understood: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. 
 +Then, while staying in an empty hut, I followed the churning of the five grasping aggregates. I truly understood: ‘This is suffering’ … ‘This is the arising of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. 
+@@ -1,2 +1,2 @@ sn46.30:3.2
+ PLI: Dhammo ca me, bhante, abhisamito, maggo ca me paṭiladdho; 
+-I comprehended the teaching, sir, I acquired the path. 
++I made the breakthrough to the teaching, sir, I acquired the path. 
 @@ -1,2 +1,2 @@ sn46.30:4.1
  PLI: Satisambojjhaṅgo me, bhante, paṭiladdho, yo me bhāvito bahulīkato tathā tathā viharantaṁ tathattāya upanessati yathāhaṁ: 
 -I acquired the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. 
@@ -67134,6 +67319,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Puna caparaṁ, rājakumāra, bhikkhu …pe… 
 -Furthermore, a mendicant develops the awakening factor of investigation of principles … energy … rapture … tranquility … immersion … 
 +Furthermore, a bhikkhu develops the awakening factor of investigation of principles … energy … rapture … tranquility … composure … 
+@@ -1,2 +1,2 @@ sn46.56:7.6
+ PLI: Yopi me, bhante, gijjhakūṭaṁ pabbataṁ ārohantassa kāyakilamatho cittakilamatho, sopi me paṭippassaddho, dhammo ca me abhisamito”ti. 
+-When climbing Mount Vulture’s Peak I became fatigued in body and mind. But this has now faded away. And I’ve comprehended the teaching.” 
++When climbing Mount Vulture’s Peak I became fatigued in body and mind. But this has now faded away. And I’ve made the breakthrough to the teaching.” 
 --- sujato/sutta/sn/sn46/sn46.57_translation-en-sujato.json
 +++ sujato/sutta/sn/sn46/sn46.57_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn46.57:1.2
@@ -73507,11 +73696,15 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ sn56.26:1.1
  PLI: “Ye hi keci, bhikkhave, anukampeyyātha, ye ca sotabbaṁ maññeyyuṁ—mittā vā amaccā vā ñātī vā sālohitā vā—te vo, bhikkhave, catunnaṁ ariyasaccānaṁ yathābhūtaṁ abhisamayāya samādapetabbā nivesetabbā patiṭṭhāpetabbā. 
 -“Mendicants, those who you have sympathy for, and those worth listening to—friends and colleagues, relatives and family—should be encouraged, supported, and established by you in the true comprehension of the four noble truths. 
-+“Bhikkhus, those who you have sympathy for, and those worth listening to—friends and colleagues, relatives and family—should be encouraged, supported, and established by you in the true comprehension of the four noble truths. 
++“Bhikkhus, those who you have sympathy for, and those worth listening to—friends and colleagues, relatives and family—should be encouraged, supported, and established by you in the true breakthrough to the four noble truths. 
 @@ -1,2 +1,2 @@ sn56.26:2.2
  PLI: Dukkhassa ariyasaccassa, dukkhasamudayassa ariyasaccassa, dukkhanirodhassa ariyasaccassa, dukkhanirodhagāminiyā paṭipadāya ariyasaccassa. 
 -The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. 
 +The noble truths of suffering, the arising of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. 
+@@ -1,2 +1,2 @@ sn56.26:2.3
+ PLI: Ye hi keci, bhikkhave, anukampeyyātha, ye ca sotabbaṁ maññeyyuṁ—mittā vā amaccā vā ñātī vā sālohitā vā—te vo, bhikkhave, imesaṁ catunnaṁ ariyasaccānaṁ yathābhūtaṁ abhisamayāya samādapetabbā nivesetabbā patiṭṭhāpetabbā. 
+-Those who you have sympathy for, and those worth listening to—friends and colleagues, relatives and family—should be encouraged, supported, and established by you in the true comprehension of these four noble truths. 
++Those who you have sympathy for, and those worth listening to—friends and colleagues, relatives and family—should be encouraged, supported, and established by you in the true breakthrough to these four noble truths. 
 --- sujato/sutta/sn/sn56/sn56.27_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.27_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn56.27:1.1
@@ -73629,19 +73822,19 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ sn56.32:1.2
  PLI: ‘ahaṁ dukkhaṁ ariyasaccaṁ yathābhūtaṁ anabhisamecca, dukkhasamudayaṁ ariyasaccaṁ yathābhūtaṁ anabhisamecca, dukkhanirodhaṁ ariyasaccaṁ yathābhūtaṁ anabhisamecca, dukkhanirodhagāminiṁ paṭipadaṁ ariyasaccaṁ yathābhūtaṁ anabhisamecca sammā dukkhassantaṁ karissāmī’ti—
 -‘Without truly comprehending the noble truths of suffering, its origin, its cessation, and the path, I will completely make an end of suffering.’ 
-+‘Without truly comprehending the noble truths of suffering, its arising, its cessation, and the path, I will completely make an end of suffering.’ 
++‘Without truly breaking through to the noble truths of suffering, its arising, its cessation, and the path, I will completely make an end of suffering.’ 
 @@ -1,2 +1,2 @@ sn56.32:2.5
  PLI: ‘ahaṁ dukkhaṁ ariyasaccaṁ yathābhūtaṁ anabhisamecca …pe… dukkhanirodhagāminiṁ paṭipadaṁ ariyasaccaṁ yathābhūtaṁ anabhisamecca sammā dukkhassantaṁ karissāmī’ti—
 -‘Without truly comprehending the noble truths of suffering, its origin, its cessation, and the path, I will completely make an end of suffering.’ 
-+‘Without truly comprehending the noble truths of suffering, its arising, its cessation, and the path, I will completely make an end of suffering.’ 
++‘Without truly breaking through to the noble truths of suffering, its arising, its cessation, and the path, I will completely make an end of suffering.’ 
 @@ -1,2 +1,2 @@ sn56.32:3.2
  PLI: ‘ahaṁ dukkhaṁ ariyasaccaṁ yathābhūtaṁ abhisamecca, dukkhasamudayaṁ ariyasaccaṁ yathābhūtaṁ abhisamecca, dukkhanirodhaṁ ariyasaccaṁ yathābhūtaṁ abhisamecca, dukkhanirodhagāminiṁ paṭipadaṁ ariyasaccaṁ yathābhūtaṁ abhisamecca sammā dukkhassantaṁ karissāmī’ti—
 -‘After truly comprehending the noble truths of suffering, its origin, its cessation, and the path, I will completely make an end of suffering.’ 
-+‘After truly comprehending the noble truths of suffering, its arising, its cessation, and the path, I will completely make an end of suffering.’ 
++‘After truly breaking through to the noble truths of suffering, its arising, its cessation, and the path, I will completely make an end of suffering.’ 
 @@ -1,2 +1,2 @@ sn56.32:4.5
  PLI: ‘ahaṁ dukkhaṁ ariyasaccaṁ yathābhūtaṁ abhisamecca …pe… dukkhanirodhagāminiṁ paṭipadaṁ ariyasaccaṁ yathābhūtaṁ abhisamecca sammā dukkhassantaṁ karissāmī’ti—
 -‘After truly comprehending the noble truths of suffering, its origin, its cessation, and the path, I will completely make an end of suffering.’ 
-+‘After truly comprehending the noble truths of suffering, its arising, its cessation, and the path, I will completely make an end of suffering.’ 
++‘After truly breaking through to the noble truths of suffering, its arising, its cessation, and the path, I will completely make an end of suffering.’ 
 --- sujato/sutta/sn/sn56/sn56.33_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.33_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn56.33:1.1
@@ -73665,7 +73858,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ sn56.34:2.1
  PLI: “Ādittaṁ, bhikkhave, celaṁ vā sīsaṁ vā ajjhupekkhitvā amanasikaritvā anabhisametānaṁ catunnaṁ ariyasaccānaṁ yathābhūtaṁ abhisamayāya adhimatto chando ca vāyāmo ca ussāho ca ussoḷhī ca appaṭivānī ca sati ca sampajaññañca karaṇīyaṁ. 
 -“Mendicants, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, mindfulness, and situational awareness to truly comprehending the four noble truths. 
-+“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and clear comprehension in order to truly understand the four noble truths. 
++“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and clear comprehension in order to truly break through to the four noble truths. 
 @@ -1,2 +1,2 @@ sn56.34:2.3
  PLI: Dukkhassa ariyasaccassa …pe… dukkhanirodhagāminiyā paṭipadāya ariyasaccassa. 
 -The noble truths of suffering, its origin, its cessation, and the path. 
@@ -73676,6 +73869,18 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: “Seyyathāpi, bhikkhave, puriso vassasatāyuko vassasatajīvī. 
 -“Mendicants, suppose there was a man with a lifespan of a hundred years. 
 +“Bhikkhus, suppose there was a man with a lifespan of a hundred years. 
+@@ -1,2 +1,2 @@ sn56.35:1.4
+ PLI: So kho tvaṁ, ambho purisa, divase divase tīhi tīhi sattisatehi haññamāno vassasatāyuko vassasatajīvī vassasatassa accayena anabhisametāni cattāri ariyasaccāni abhisamessasī’ti. 
+-And you’ll live for a hundred years being struck with three hundred spears every day. But when a hundred years have passed, you will comprehend the four noble truths for the first time.’ 
++And you’ll live for a hundred years being struck with three hundred spears every day. But when a hundred years have passed, you will break through to the four noble truths for the first time.’ 
+@@ -1,2 +1,2 @@ sn56.35:2.6
+ PLI: Na kho panāhaṁ, bhikkhave, saha dukkhena, saha domanassena catunnaṁ ariyasaccānaṁ abhisamayaṁ vadāmi; 
+-But the comprehension of the four noble truths doesn’t come with pain or sadness, I say. 
++But the breakthrough to the four noble truths doesn’t come with pain or sadness, I say. 
+@@ -1,2 +1,2 @@ sn56.35:2.7
+ PLI: api cāhaṁ, bhikkhave, sahāva sukhena, sahāva somanassena catunnaṁ ariyasaccānaṁ abhisamayaṁ vadāmi. 
+-Rather, the comprehension of the four noble truths comes only with pleasure and happiness, I say. 
++Rather, the breakthrough to the four noble truths comes only with pleasure and happiness, I say. 
 @@ -1,2 +1,2 @@ sn56.35:2.9
  PLI: Dukkhassa ariyasaccassa …pe… dukkhanirodhagāminiyā paṭipadāya ariyasaccassa. 
 -The noble truths of suffering, its origin, its cessation, and the path. 
@@ -73695,7 +73900,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ sn56.37:1.2
  PLI: Evameva kho, bhikkhave, bhikkhuno catunnaṁ ariyasaccānaṁ yathābhūtaṁ abhisamayāya etaṁ pubbaṅgamaṁ etaṁ pubbanimittaṁ, yadidaṁ—sammādiṭṭhi. 
 -In the same way, for a mendicant right view is the forerunner and harbinger of truly comprehending the four noble truths. 
-+In the same way, for a bhikkhu right view is the forerunner and harbinger of truly comprehending the four noble truths. 
++In the same way, for a bhikkhu right view is the forerunner and harbinger of truly breaking through to the four noble truths. 
 @@ -1,2 +1,2 @@ sn56.37:1.3
  PLI: Tassetaṁ, bhikkhave, bhikkhuno pāṭikaṅkhaṁ: 
 -That mendicant can expect to truly understand: 
@@ -73746,10 +73951,18 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: “Ye hi keci, bhikkhave, atītamaddhānaṁ kulaputtā sammā agārasmā anagāriyaṁ pabbajiṁsu, sabbe te catunnaṁ ariyasaccānaṁ yathābhūtaṁ abhisamayāya. 
 -“Mendicants, whatever gentlemen—past, 
 +“Bhikkhus, whatever gentlemen—past, 
+@@ -1,2 +1,2 @@ sn56.3:1.3
+ PLI: Ye hi keci, bhikkhave, etarahi kulaputtā sammā agārasmā anagāriyaṁ pabbajanti, sabbe te catunnaṁ ariyasaccānaṁ yathābhūtaṁ abhisamayāya. 
+-or present—rightly go forth from the lay life to homelessness, all of them do so in order to truly comprehend the four noble truths. 
++or present—rightly go forth from the lay life to homelessness, all of them do so in order to truly break through to the four noble truths. 
 @@ -1,2 +1,2 @@ sn56.3:2.2
  PLI: Dukkhassa ariyasaccassa dukkhasamudayassa ariyasaccassa dukkhanirodhassa ariyasaccassa dukkhanirodhagāminiyā paṭipadāya ariyasaccassa. 
 -The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. 
 +The noble truths of suffering, the arising of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. 
+@@ -1,2 +1,2 @@ sn56.3:2.5
+ PLI: pabbajanti, sabbe te imesaṁyeva catunnaṁ ariyasaccānaṁ yathābhūtaṁ abhisamayāya. 
+-or present—rightly go forth from the lay life to homelessness, all of them do so in order to truly comprehend the four noble truths. 
++or present—rightly go forth from the lay life to homelessness, all of them do so in order to truly break through to the four noble truths. 
 @@ -1,2 +1,2 @@ sn56.3:3.1
  PLI: Tasmātiha, bhikkhave, ‘idaṁ dukkhan’ti yogo karaṇīyo, ‘ayaṁ dukkhasamudayo’ti yogo karaṇīyo, ‘ayaṁ dukkhanirodho’ti yogo karaṇīyo, ‘ayaṁ dukkhanirodhagāminī paṭipadā’ti yogo karaṇīyo”ti. 
 -That’s why you should practice meditation to understand: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’.” 
@@ -73903,19 +74116,19 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 @@ -1,2 +1,2 @@ sn56.44:1.2
  PLI: ‘ahaṁ dukkhaṁ ariyasaccaṁ yathābhūtaṁ anabhisamecca …pe… dukkhanirodhagāminiṁ paṭipadaṁ ariyasaccaṁ yathābhūtaṁ anabhisamecca sammā dukkhassantaṁ karissāmī’ti—
 -‘Without truly comprehending the noble truths of suffering, its origin, its cessation, and the path, I will completely make an end of suffering.’ 
-+‘Without truly comprehending the noble truths of suffering, its arising, its cessation, and the path, I will completely make an end of suffering.’ 
++‘Without truly breaking through to the noble truths of suffering, its arising, its cessation, and the path, I will completely make an end of suffering.’ 
 @@ -1,2 +1,2 @@ sn56.44:2.5
  PLI: ‘ahaṁ dukkhaṁ ariyasaccaṁ yathābhūtaṁ anabhisamecca …pe… dukkhanirodhagāminiṁ paṭipadaṁ ariyasaccaṁ yathābhūtaṁ anabhisamecca sammā dukkhassantaṁ karissāmī’ti—
 -‘Without truly comprehending the noble truths of suffering, its origin, its cessation, and the path, I will completely make an end of suffering.’ 
-+‘Without truly comprehending the noble truths of suffering, its arising, its cessation, and the path, I will completely make an end of suffering.’ 
++‘Without truly breaking through to the noble truths of suffering, its arising, its cessation, and the path, I will completely make an end of suffering.’ 
 @@ -1,2 +1,2 @@ sn56.44:3.2
  PLI: ‘ahaṁ dukkhaṁ ariyasaccaṁ yathābhūtaṁ abhisamecca …pe… dukkhanirodhagāminiṁ paṭipadaṁ ariyasaccaṁ yathābhūtaṁ abhisamecca sammā dukkhassantaṁ karissāmī’ti—
 -‘After truly comprehending the noble truths of suffering, its origin, its cessation, and the path, I will completely make an end of suffering.’ 
-+‘After truly comprehending the noble truths of suffering, its arising, its cessation, and the path, I will completely make an end of suffering.’ 
++‘After truly breaking through to the noble truths of suffering, its arising, its cessation, and the path, I will completely make an end of suffering.’ 
 @@ -1,2 +1,2 @@ sn56.44:4.5
  PLI: ‘ahaṁ dukkhaṁ ariyasaccaṁ yathābhūtaṁ abhisamecca …pe… dukkhanirodhagāminiṁ paṭipadaṁ ariyasaccaṁ yathābhūtaṁ abhisamecca sammā dukkhassantaṁ karissāmī’ti—
 -‘After truly comprehending the noble truths of suffering, its origin, its cessation, and the path, I will completely make an end of suffering.’ 
-+‘After truly comprehending the noble truths of suffering, its arising, its cessation, and the path, I will completely make an end of suffering.’ 
++‘After truly breaking through to the noble truths of suffering, its arising, its cessation, and the path, I will completely make an end of suffering.’ 
 --- sujato/sutta/sn/sn56/sn56.45_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.45_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn56.45:3.5
@@ -74006,6 +74219,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Taṁ kiṁ maññatha, bhikkhave, 
 -What do you think, mendicants? 
 +What do you think, bhikkhus? 
+@@ -1,2 +1,2 @@ sn56.49:1.7
+ PLI: “Evameva kho, bhikkhave, ariyasāvakassa diṭṭhisampannassa puggalassa abhisametāvino etadeva bahutaraṁ dukkhaṁ yadidaṁ parikkhīṇaṁ pariyādinnaṁ; appamattakaṁ avasiṭṭhaṁ. 
+-“In the same way, for an individual with comprehension, a noble disciple accomplished in view, the suffering that’s over and done with is more, what’s left is tiny. 
++“In the same way, for an individual who has made the breakthrough, a noble disciple accomplished in view, the suffering that’s over and done with is more, what’s left is tiny. 
 @@ -1,2 +1,2 @@ sn56.49:1.9
  PLI: yo ‘idaṁ dukkhan’ti yathābhūtaṁ pajānāti …pe… ‘ayaṁ dukkhanirodhagāminī paṭipadā’ti yathābhūtaṁ pajānāti. 
 -Such an individual truly understands about suffering, its origin, its cessation, and the path. 
@@ -74020,6 +74237,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: “Ye hi keci, bhikkhave, atītamaddhānaṁ kulaputtā sammā agārasmā anagāriyaṁ pabbajitā yathābhūtaṁ abhisamesuṁ, sabbe te cattāri ariyasaccāni yathābhūtaṁ abhisamesuṁ. 
 -“Mendicants, whatever gentlemen—past, 
 +“Bhikkhus, whatever gentlemen—past, 
+@@ -1,2 +1,2 @@ sn56.4:1.3
+ PLI: Ye hi keci, bhikkhave, etarahi kulaputtā sammā agārasmā anagāriyaṁ pabbajitā yathābhūtaṁ abhisamenti, sabbe te cattāri ariyasaccāni yathābhūtaṁ abhisamenti. 
+-or present—truly comprehend after rightly going forth from the lay life to homelessness, all of them truly comprehend the four noble truths. 
++or present—truly break through after rightly going forth from the lay life to homelessness, all of them truly break through to the four noble truths. 
 @@ -1,2 +1,2 @@ sn56.4:2.2
  PLI: Dukkhaṁ ariyasaccaṁ, dukkhasamudayaṁ ariyasaccaṁ, dukkhanirodhaṁ ariyasaccaṁ, dukkhanirodhagāminī paṭipadā ariyasaccaṁ. 
 -The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. … 
@@ -74034,12 +74255,20 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Taṁ kiṁ maññatha, bhikkhave, 
 -What do you think, mendicants? 
 +What do you think, bhikkhus? 
+@@ -1,2 +1,2 @@ sn56.50:1.7
+ PLI: “Evameva kho, bhikkhave, ariyasāvakassa diṭṭhisampannassa puggalassa abhisametāvino etadeva bahutaraṁ dukkhaṁ yadidaṁ parikkhīṇaṁ pariyādinnaṁ; appamattakaṁ avasiṭṭhaṁ. 
+-“In the same way, for an individual with comprehension, a noble disciple accomplished in view, the suffering that’s over and done with is more, what’s left is tiny. 
++“In the same way, for an individual who has made the breakthrough, a noble disciple accomplished in view, the suffering that’s over and done with is more, what’s left is tiny. 
 @@ -1,2 +1,2 @@ sn56.50:1.9
  PLI: yo ‘idaṁ dukkhan’ti yathābhūtaṁ pajānāti …pe… ‘ayaṁ dukkhanirodhagāminī paṭipadā’ti yathābhūtaṁ pajānāti. 
 -Such an individual truly understands about suffering, its origin, its cessation, and the path. 
 +Such an individual truly understands about suffering, its arising, its cessation, and the path. 
 --- sujato/sutta/sn/sn56/sn56.51_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.51_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn56.51:0.2
+ PLI: 6. Abhisamayavagga 
+-6. Comprehension 
++6. Breakthrough 
 @@ -1,2 +1,2 @@ sn56.51:1.1
  PLI: Atha kho bhagavā parittaṁ nakhasikhāyaṁ paṁsuṁ āropetvā bhikkhū āmantesi: 
 -Then the Buddha, picking up a little bit of dirt on his fingernail, addressed the mendicants: 
@@ -74048,12 +74277,20 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: “Taṁ kiṁ maññatha, bhikkhave, 
 -“What do you think, mendicants? 
 +“What do you think, bhikkhus? 
+@@ -1,2 +1,2 @@ sn56.51:1.6
+ PLI: “Evameva kho, bhikkhave, ariyasāvakassa diṭṭhisampannassa puggalassa abhisametāvino etadeva bahutaraṁ dukkhaṁ yadidaṁ parikkhīṇaṁ pariyādinnaṁ; appamattakaṁ avasiṭṭhaṁ. 
+-“In the same way, for an individual with comprehension, a noble disciple accomplished in view, the suffering that’s over and done with is more, what’s left is tiny. 
++“In the same way, for an individual who has made the breakthrough, a noble disciple accomplished in view, the suffering that’s over and done with is more, what’s left is tiny. 
 @@ -1,2 +1,2 @@ sn56.51:1.8
  PLI: yo ‘idaṁ dukkhan’ti yathābhūtaṁ pajānāti …pe… ‘ayaṁ dukkhanirodhagāminī paṭipadā’ti yathābhūtaṁ pajānāti. 
 -Such an individual truly understands about suffering, its origin, its cessation, and the path. 
 +Such an individual truly understands about suffering, its arising, its cessation, and the path. 
 --- sujato/sutta/sn/sn56/sn56.52_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.52_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn56.52:0.2
+ PLI: 6. Abhisamayavagga 
+-6. Comprehension 
++6. Breakthrough 
 @@ -1,2 +1,2 @@ sn56.52:1.1
  PLI: “Seyyathāpi, bhikkhave, pokkharaṇī paññāsayojanāni āyāmena, paññāsayojanāni vitthārena, paññāsayojanāni ubbedhena, puṇṇā udakassa samatittikā kākapeyyā. 
 -“Mendicants, suppose there was a lotus pond that was fifty leagues long, fifty leagues wide, and fifty leagues deep, full to the brim so a crow could drink from it. 
@@ -74064,6 +74301,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +What do you think, bhikkhus? 
 --- sujato/sutta/sn/sn56/sn56.53_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.53_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn56.53:0.2
+ PLI: 6. Abhisamayavagga 
+-6. Comprehension 
++6. Breakthrough 
 @@ -1,2 +1,2 @@ sn56.53:1.1
  PLI: “Seyyathāpi, bhikkhave, yatthimā mahānadiyo saṁsandanti samenti, seyyathidaṁ—
 -“Mendicants, there are places where the great rivers—the Ganges, Yamunā, Aciravatī, Sarabhū, and Mahī—join together and converge. 
@@ -74074,6 +74315,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +What do you think, bhikkhus? 
 --- sujato/sutta/sn/sn56/sn56.54_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.54_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn56.54:0.2
+ PLI: 6. Abhisamayavagga 
+-6. Comprehension 
++6. Breakthrough 
 @@ -1,2 +1,2 @@ sn56.54:1.1
  PLI: “Seyyathāpi, bhikkhave, yatthimā mahānadiyo saṁsandanti samenti, seyyathidaṁ—
 -“Mendicants, there are places where the great rivers—the Ganges, Yamunā, Aciravatī, Sarabhū, and Mahī—join together and converge. 
@@ -74084,6 +74329,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +What do you think, bhikkhus? 
 --- sujato/sutta/sn/sn56/sn56.55_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.55_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn56.55:0.2
+ PLI: 6. Abhisamayavagga 
+-6. Comprehension 
++6. Breakthrough 
 @@ -1,2 +1,2 @@ sn56.55:1.1
  PLI: “Seyyathāpi, bhikkhave, puriso mahāpathaviyā satta kolaṭṭhimattiyo guḷikā upanikkhipeyya. 
 -“Mendicants, suppose a person was to place seven clay balls the size of jujube seeds on the great earth. 
@@ -74094,6 +74343,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +What do you think, bhikkhus? 
 --- sujato/sutta/sn/sn56/sn56.56_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.56_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn56.56:0.2
+ PLI: 6. Abhisamayavagga 
+-6. Comprehension 
++6. Breakthrough 
 @@ -1,2 +1,2 @@ sn56.56:1.1
  PLI: “Seyyathāpi, bhikkhave, mahāpathavī parikkhayaṁ pariyādānaṁ gaccheyya ṭhapetvā satta kolaṭṭhimattiyo guḷikā. 
 -“Mendicants, suppose the great earth was worn away and eroded except seven clay balls the size of jujube seeds. 
@@ -74104,6 +74357,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +What do you think, bhikkhus? 
 --- sujato/sutta/sn/sn56/sn56.57_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.57_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn56.57:0.2
+ PLI: 6. Abhisamayavagga 
+-6. Comprehension 
++6. Breakthrough 
 @@ -1,2 +1,2 @@ sn56.57:1.1
  PLI: “Seyyathāpi, bhikkhave, puriso mahāsamuddato dve vā tīṇi vā udakaphusitāni uddharitāni. 
 -“Mendicants, suppose a man was to draw up two or three drops of water from the ocean. 
@@ -74114,6 +74371,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +What do you think, bhikkhus? 
 --- sujato/sutta/sn/sn56/sn56.58_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.58_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn56.58:0.2
+ PLI: 6. Abhisamayavagga 
+-6. Comprehension 
++6. Breakthrough 
 @@ -1,2 +1,2 @@ sn56.58:1.1
  PLI: “Seyyathāpi, bhikkhave, mahāsamudde udakaṁ parikkhayaṁ pariyādānaṁ gaccheyya ṭhapetvā dve vā tīṇi vā udakaphusitāni. 
 -“Mendicants, suppose the water in the ocean dried up and evaporated except two or three drops. 
@@ -74124,6 +74385,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +What do you think, bhikkhus? 
 --- sujato/sutta/sn/sn56/sn56.59_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.59_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn56.59:0.2
+ PLI: 6. Abhisamayavagga 
+-6. Comprehension 
++6. Breakthrough 
 @@ -1,2 +1,2 @@ sn56.59:1.1
  PLI: “Seyyathāpi, bhikkhave, puriso himavato pabbatarājassa satta sāsapamattiyo pāsāṇasakkharā upanikkhipeyya. 
 -“Mendicants, suppose a person was to place seven pebbles the size of mustard seeds on the Himalayas, the king of mountains. 
@@ -74148,6 +74413,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
 +The noble truths of suffering, the arising of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. … 
 --- sujato/sutta/sn/sn56/sn56.60_translation-en-sujato.json
 +++ sujato/sutta/sn/sn56/sn56.60_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn56.60:0.2
+ PLI: 6. Abhisamayavagga 
+-6. Comprehension 
++6. Breakthrough 
 @@ -1,2 +1,2 @@ sn56.60:1.1
  PLI: “Seyyathāpi, bhikkhave, himavā pabbatarājā parikkhayaṁ pariyādānaṁ gaccheyya, ṭhapetvā satta sāsapamattiyo pāsāṇasakkharā. 
 -“Mendicants, suppose the Himalayas, the king of mountains, was worn away and eroded except seven pebbles the size of mustard seeds. 
@@ -74156,6 +74425,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Taṁ kiṁ maññatha, bhikkhave, 
 -What do you think, mendicants? 
 +What do you think, bhikkhus? 
+@@ -1,2 +1,2 @@ sn56.60:1.6
+ PLI: “Evameva kho, bhikkhave, ariyasāvakassa diṭṭhisampannassa puggalassa abhisametāvino etadeva bahutaraṁ dukkhaṁ yadidaṁ parikkhīṇaṁ pariyādinnaṁ; appamattakaṁ avasiṭṭhaṁ. 
+-“In the same way, for an individual with comprehension, a noble disciple accomplished in view, the suffering that’s over and done with is more, what’s left is tiny. 
++“In the same way, for an individual who has made the breakthrough, a noble disciple accomplished in view, the suffering that’s over and done with is more, what’s left is tiny. 
 @@ -1,2 +1,2 @@ sn56.60:1.8
  PLI: yo ‘idaṁ dukkhan’ti yathābhūtaṁ pajānāti …pe… ‘ayaṁ dukkhanirodhagāminī paṭipadā’ti yathābhūtaṁ pajānāti. 
 -Such an individual truly understands about suffering, its origin, its cessation, and the path. 
@@ -74552,6 +74825,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17284 change(s), 3149 file(
  PLI: Sati kāyagatā tyatthu, 
 -With mindfulness immersed in the body, 
 +With awareness immersed in the body, 
+@@ -1,2 +1,2 @@ sn8.4:6.3
+ PLI: Tato mānābhisamayā, 
+-and when you comprehend conceit, 
++and when you break through conceit, 
 --- sujato/sutta/sn/sn8/sn8.5_translation-en-sujato.json
 +++ sujato/sutta/sn/sn8/sn8.5_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn8.5:1.2
