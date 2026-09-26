@@ -1237,33 +1237,46 @@ describe('update-data pipeline (fixture)', () => {
       expect(result.ruleIssues[0]).toMatch(/found\s+The bhikkhu practiced immersion\./);
     });
 
-    it('reports a deny entry upstream has invalidated, before the copy and without failing the run', async () => {
-      // dn1:1.1 is the only sutta segment carrying "immersion", and it's excluded from the rule.
+    it('reports a line upstream reworded away from a rule, with what replaced the term, without failing the run', async () => {
+      await runAccept({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir });
+      const sourcePath = path.join(fx.bilaraRoot, FIXTURE_FILES['sujato/sutta/dn/dn1_translation-en-sujato.json'].sourceRel);
+      writeJson(sourcePath, { ...readJson(sourcePath), 'dn1:1.1': 'The monk practiced immersion.' });
+
+      const result = await runCheck({ retranslationPath: fx.retranslationPath, bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, rulesDir: fx.rulesDir });
+
+      expect(result.rewordedAway).toHaveLength(1);
+      expect(result.rewordedAway[0]).toMatch(/mendicant-bhikkhu: 1 line\(s\) upstream reworded away/);
+      expect(result.rewordedAway[0]).toMatch(/1 {2}"mendicant" → "monk" {2}.*dn1:1\.1/);
+      expect(result.issues).toEqual([]);
+      expect(result.ok).toBe(true);
+    });
+
+    it('skips a reworded line whose Pali lacks the rule\'s term', async () => {
+      const retranslationPath = writeRulesFixture(fx.root, `[{ id: 'immersion-concentration', why: 'fixture', mode: 'deny', predicate: /samādh/i, forms: [['immersion', 'concentration']] }]`);
+      // dn1:1.2's Pali is literal immersion in water, not samādhi.
+      for (const file of [path.join(fx.dataDirs.sujato, 'sutta/dn/dn1_translation-en-sujato.json'), path.join(fx.bilaraRoot, FIXTURE_FILES['sujato/sutta/dn/dn1_translation-en-sujato.json'].sourceRel)]) {
+        writeJson(file, { ...readJson(file), 'dn1:1.2': 'A water immersion is different.' });
+      }
+      await runAccept({ countsPath: fx.countsPath, retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir });
+      const sourcePath = path.join(fx.bilaraRoot, FIXTURE_FILES['sujato/sutta/dn/dn1_translation-en-sujato.json'].sourceRel);
+      writeJson(sourcePath, { ...readJson(sourcePath), 'dn1:1.1': 'The mendicant practiced concentration.', 'dn1:1.2': 'A water plunge is different.' });
+
+      const result = await runCheck({ retranslationPath, bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, rulesDir: fx.rulesDir });
+
+      expect(result.rewordedAway).toHaveLength(1);
+      expect(result.rewordedAway[0]).toMatch(/"immersion" → "concentration" {2}.*dn1:1\.1/);
+      expect(result.rewordedAway[0]).not.toMatch(/dn1:1\.2/);
+    });
+
+    it('says nothing about a reworded line the rule was denied', async () => {
       writeJson(path.join(fx.rulesDir, 'immersion-concentration.json'), { reviewedAt: '2026-01-01', allow: [], deny: { 'dn1:1.1': 'fixture exclusion' } });
       await runAccept({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir });
-      // Upstream rewords it so the term is gone — the exclusion now excludes nothing. Only the
-      // value changed, so nothing structural fails and the run stays green.
       const sourcePath = path.join(fx.bilaraRoot, FIXTURE_FILES['sujato/sutta/dn/dn1_translation-en-sujato.json'].sourceRel);
       writeJson(sourcePath, { ...readJson(sourcePath), 'dn1:1.1': 'The mendicant practiced something else.' });
 
       const result = await runCheck({ retranslationPath: fx.retranslationPath, bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, rulesDir: fx.rulesDir });
 
-      expect(result.staleTriage).toHaveLength(1);
-      expect(result.staleTriage[0]).toMatch(/immersion-concentration: 1 of 1 deny entries no longer contain the term upstream/);
-      expect(result.staleTriage[0]).toMatch(/update-data triage immersion-concentration/);
-      // Reported, not failed on: a dead entry can only be worked after the copy, and doesn't make
-      // copying unsafe.
-      expect(result.issues).toEqual([]);
-      expect(result.ok).toBe(true);
-    });
-
-    it('says nothing about a deny entry whose segment still carries the term', async () => {
-      writeJson(path.join(fx.rulesDir, 'immersion-concentration.json'), { reviewedAt: '2026-01-01', allow: [], deny: { 'dn1:1.1': 'fixture exclusion' } });
-      await runAccept({ countsPath: fx.countsPath, retranslationPath: fx.retranslationPath, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, manifestPath: fx.manifestPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir });
-
-      const result = await runCheck({ retranslationPath: fx.retranslationPath, bilaraRoot: fx.bilaraRoot, dataDirs: fx.dataDirs, snapshotPath: fx.snapshotPath, rulesDir: fx.rulesDir });
-
-      expect(result.staleTriage).toEqual([]);
+      expect(result.rewordedAway).toEqual([]);
       expect(result.ok).toBe(true);
     });
 

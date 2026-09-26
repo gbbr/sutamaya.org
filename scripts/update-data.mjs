@@ -81,12 +81,16 @@ async function plan() {
     console.log();
   }
 
-  // Neither of the next two is a failure: both need knowing about, neither needs a decision.
-  if (result.staleTriage.length) {
-    row('warn', 'Triage', `${result.staleTriage.length} rule(s) have entries upstream has invalidated`);
-    for (const note of result.staleTriage) block(note);
+  // Not a failure: upstream's new wording is safe to copy, and whether a rule should follow it is
+  // decided after the copy.
+  if (result.rewordedAway.length) {
+    row('warn', 'Coverage', `${result.rewordedAway.length} rule(s) lose lines upstream reworded`);
+    for (const note of result.rewordedAway) block(note);
+    block(dim('→ docs/retranslation.md, "Reconciling an upstream change"'));
     console.log();
   }
+
+  // Not a failure either, and needs no decision.
 
   const padding = Object.values(result.padding).reduce((a, p) => ({ files: a.files + p.files, segments: a.segments + p.segments }), { files: 0, segments: 0 });
   if (padding.files) {
