@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
-import { useLocation, useNavigate, useNavigationType, useParams } from 'react-router';
+import { useLocation, useNavigate, useNavigationType, useParams, type Location } from 'react-router';
 import { X, Menu as MenuIcon, ChevronLeft, ChevronRight, Library, List as ListIcon, Search, Share, Share2, Undo2 } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
@@ -19,6 +19,7 @@ import { READER_FACES, READER_THEMES } from '../lib/ui/theme';
 import { setReaderThemeColor } from '../lib/ui/themeColor';
 import { shortcutsForScope } from '../lib/shortcuts';
 import { consumeIntent, tagIntent, type RouteIntent } from '../lib/navigation/routeIntent';
+import { passageFromSearch } from '../lib/navigation/passageLink';
 import { READER_INTENT_KEY } from '../lib/storageKeys';
 import { enteredByReturn } from '../lib/navigation/entryKind';
 import { getUiScale } from '../lib/ui/uiPrefs';
@@ -68,6 +69,16 @@ const NO_HIGHLIGHTS: Highlight[] = [];
 // matched, and what its words were marked by.
 type SearchArrival = { segments?: [number, number]; paliSegments?: number[]; markedBy?: MarkedBy };
 
+// arrivalOf returns the arrival a navigation carries: in router state, from a click within the app,
+// else in the address, from a link opened in a new tab or anywhere else (lib/navigation/passageLink.ts)
+// — keyed then by its history entry, so a reload doesn't land on it again.
+function arrivalOf(location: Location | undefined): (SearchArrival & RouteIntent) | null | undefined {
+  const state = location?.state as (SearchArrival & RouteIntent) | null | undefined;
+  if (state?.navId || !location) return state;
+  const passage = passageFromSearch(location.search);
+  return passage ? { ...passage, navId: `${location.key}${location.search}` } : state;
+}
+
 export function ReaderPage() {
   const { suttaId: routeSuttaId } = useParams();
   const location = useLocation();
@@ -83,12 +94,13 @@ export function ReaderPage() {
   // The inner sutta asked for, when the resolution above changed the id; its segments are scrolled
   // to and washed once the batch loads.
   const requestedSubUid = requestedId && requestedId !== suttaId ? requestedId : undefined;
-  // Rewrite the address bar to the case-folded uid, replacing the history entry.
+  // Rewrite the address bar to the case-folded uid, replacing the history entry and keeping the
+  // passage it may carry.
   useEffect(() => {
     if (requestedId && requestedId !== routeSuttaId) {
-      navigate(`/read/${encodeURIComponent(requestedId)}`, { replace: true });
+      navigate(`/read/${encodeURIComponent(requestedId)}${location.search}${location.hash}`, { replace: true });
     }
-  }, [routeSuttaId, requestedId, navigate]);
+  }, [routeSuttaId, requestedId, navigate, location.search, location.hash]);
   const { notes, membership, lists, markVisited } = useUserData();
   const {
     resolvedTheme,
@@ -116,7 +128,7 @@ export function ReaderPage() {
   // and leave a new jump no way in. consumeIntent hands a navId back a single time, which is what
   // keeps a same-tab refresh from jumping twice; a Prev/Next step carries no intent at all and so
   // clears this.
-  const arrivalState = location?.state as (SearchArrival & RouteIntent) | null | undefined;
+  const arrivalState = arrivalOf(location);
   const arrivalRef = useRef<SearchArrival & { navId?: string }>({});
   if (arrivalRef.current.navId !== arrivalState?.navId) {
     const intent = consumeIntent(arrivalState, READER_INTENT_KEY);

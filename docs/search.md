@@ -117,6 +117,11 @@ expansion's words. A Pali hit shows the Pali with that paragraph's English benea
 row takes the Reader straight to that passage, and a Pali hit arrives with the Pali of each line
 holding a marked word open, as find-in-page opens a collapsed section it finds a match in.
 
+The row is a link, and the link carries the passage — its lines, the Pali to open and the words to
+mark — so opened in a new tab it lands the same way. Its lines are positions in the sutta's text,
+which is what search knows, so a link kept past a text update can land a few lines off. The Reader
+lands on such a link once: a reload keeps the reader's place.
+
 A row shows what it opens. Where the query reached a sutta through the row's own lines — its number,
 title, Pali title, description or the reader's note — that line is the answer: the row shows no
 paragraph and opens the sutta at the top. A sutta reached only through the name of a list holding it
@@ -195,6 +200,7 @@ the repo.
 | `web/src/components/search/SearchListHits.tsx` | the collections and lists block |
 | `web/src/lib/search/text.ts` | matching, ranking and snippets over the text |
 | `web/src/components/search/ReaderSearchOverlay.tsx` | the Reader's search |
+| `web/src/lib/navigation/passageLink.ts` | the passage a result's link carries |
 | `web/src/lib/search/worker.ts`, `textClient.ts` | the worker, and the main thread's side of it |
 | `web/src/lib/search/expansion.ts` | the expansion table |
 | `web/src/hooks/useCorpusSearch.ts` | the two halves combined for a page |

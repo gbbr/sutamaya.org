@@ -404,6 +404,31 @@ describe('the passage a search hit was drawn from', () => {
     expect(paliLine(container, 2)!.querySelector('mark')?.textContent).toBe('pana');
   });
 
+  // A link opened in a new tab carries the passage in its address (lib/navigation/passageLink.ts)
+  // rather than in the app's own navigation.
+  it('lands the same way from a link carrying the passage', async () => {
+    const { container } = renderRoutes(routes, '/read/dn1?at=1-2&pali=2&q=pana');
+    await waitFor(() => expect(washed(container)).toEqual([1, 2]));
+    expect(markTexts(container)).toEqual(['pana']);
+    expect(paliLine(container, 2)!.querySelector('mark')?.textContent).toBe('pana');
+  });
+
+  it('washes the lines a link names, with no words to mark', async () => {
+    const { container } = renderRoutes(routes, '/read/dn1?at=2');
+    await waitFor(() => expect(washed(container)).toEqual([2]));
+    expect(markTexts(container)).toEqual([]);
+  });
+
+  it('lands on a link’s passage once, not again on a reload', async () => {
+    const first = renderRoutes(routes, '/read/dn1?at=1-2');
+    await waitFor(() => expect(washed(first.container)).toEqual([1, 2]));
+    first.unmount();
+
+    const { container } = renderRoutes(routes, '/read/dn1?at=1-2');
+    await screen.findByText('They spoke in dispraise of the Buddha');
+    expect(washed(container)).toEqual([]);
+  });
+
   // Ending the marks replaces the word under the tap, which would otherwise swallow what the tap
   // was for.
   it('does what a tap on a marked word always does, as it ends the marks', async () => {

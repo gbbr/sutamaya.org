@@ -57,6 +57,23 @@ test('a text hit opens the reader on its passage, the words it was found by mark
   await expect(mark).toBeInViewport();
 });
 
+test('a text hit opened in a new tab lands on its passage the same way', async ({ page, context }) => {
+  await page.goto('/browse');
+
+  await page.getByRole('button', { name: 'Search', exact: true }).click();
+  await page.getByPlaceholder('Search suttas, text and lists').fill('the Realized One became fully extinguished');
+
+  const hits = searchResults(page);
+  await expect(hits.getByText('Searching sutta text…')).toBeHidden({ timeout: 15000 });
+  // What the browser opens for a ⌘-click or "Open Link in New Tab": the row's own link.
+  const href = await hits.getByRole('link', { name: /^DN16/ }).getAttribute('href');
+
+  const tab = await context.newPage();
+  await tab.goto(href!);
+  const mark = tab.locator('[data-wash-block] mark', { hasText: /the Realized One became fully extinguished/i }).first();
+  await expect(mark).toBeInViewport();
+});
+
 test('@smoke without the sutta text, search says so and still answers', async ({ page, errors }) => {
   // The reader who is offline, or whose fetch failed: metadata results, honestly labelled. The
   // blocked fetch is a console error by definition, which is what this test is arranging.
