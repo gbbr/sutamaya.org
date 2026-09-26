@@ -5,7 +5,7 @@ import { test, expect, openListsTab, openSuttaList, waitForLocalWrites } from '.
 
 test('a note written in the reader shows on the sutta row and in the Notes list', async ({ page }) => {
   const listPane = await openSuttaList(page, 'dn-silakkhandhavagga');
-  await listPane.getByRole('button', { name: /The Divine Net/ }).click();
+  await listPane.getByRole('link', { name: /The Divine Net/ }).click();
   await expect(page).toHaveURL(/\/read\/dn1/);
   // The reader binds its key handling on mount, so wait for the text before pressing anything.
   await expect(page.locator('[data-seg="1"]')).toBeVisible();

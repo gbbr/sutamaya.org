@@ -14,7 +14,7 @@ test('@smoke a search finds a sutta by its English title and opens it', async ({
   // Matched on the ref and title together: other suttas mention the Brahmajāla in their text and
   // now match the words too, so neither half alone picks out one row.
   const hits = searchResults(page);
-  const dn1 = hits.getByRole('button', { name: /^DN1The Divine Net/ });
+  const dn1 = hits.getByRole('link', { name: /^DN1The Divine Net/ });
   await expect(dn1).toBeVisible();
 
   await dn1.click();
@@ -35,7 +35,7 @@ test('@smoke a search finds a phrase that is only in the sutta text', async ({ p
   await expect(hits.getByText('Searching sutta text…')).toBeHidden({ timeout: 15000 });
 
   // The snippet is the row's own evidence: the passage the phrase was found in, centred on it.
-  await expect(hits.getByRole('button', { name: /^SN35\.28/ })).toContainText(
+  await expect(hits.getByRole('link', { name: /^SN35\.28/ })).toContainText(
     /burning with the fires of greed/i
   );
 });
@@ -49,7 +49,7 @@ test('a text hit opens the reader on its passage, the words it was found by mark
 
   const hits = searchResults(page);
   await expect(hits.getByText('Searching sutta text…')).toBeHidden({ timeout: 15000 });
-  await hits.getByRole('button', { name: /^DN16/ }).click();
+  await hits.getByRole('link', { name: /^DN16/ }).click();
   await expect(page).toHaveURL(/\/read\/dn16/);
 
   // The marked words in view, inside the wash.
@@ -70,5 +70,5 @@ test('@smoke without the sutta text, search says so and still answers', async ({
 
   // Degraded, not broken — a title still finds its sutta.
   await page.getByPlaceholder('Search suttas, text and lists').fill('Divine Net');
-  await expect(searchResults(page).getByRole('button', { name: /^DN1The Divine Net/ })).toBeVisible();
+  await expect(searchResults(page).getByRole('link', { name: /^DN1The Divine Net/ })).toBeVisible();
 });
