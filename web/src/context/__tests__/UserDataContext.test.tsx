@@ -553,3 +553,85 @@ describe('UserDataProvider', () => {
     await waitFor(() => expect(pushed('note')).not.toHaveLength(0));
   });
 });
+
+// Two providers on one id stand for two browser tabs: a copy in memory each, one mirror in
+// IndexedDB between them. Signed out, so nothing reaches a server to put a lost write back.
+describe('two tabs on one mirror', () => {
+  const span = { k0: 'dn1:1.1', o0: 0, k1: 'dn1:1.1', o1: 4 };
+
+  beforeEach(() => {
+    mockUser = null;
+  });
+
+  async function openTab() {
+    const tab = setup();
+    await waitFor(() => expect(tab.result.current.ready).toBe(true));
+    return tab;
+  }
+
+  it('keeps what one tab saved when the other saves after it', async () => {
+    const first = await openTab();
+    const second = await openTab();
+    await act(async () => {
+      await second.result.current.submitNote('dn1', 'from the second tab');
+    });
+    await settle();
+    act(() => {
+      first.result.current.markVisited('mn1');
+    });
+    await settle();
+
+    const reopened = await openTab();
+    expect(reopened.result.current.notes.dn1).toBe('from the second tab');
+    expect(reopened.result.current.visited.mn1).toBeDefined();
+  });
+
+  it('keeps changes two tabs make at the same moment, each once', async () => {
+    const first = await openTab();
+    const second = await openTab();
+    await act(async () => {
+      await first.result.current.setHighlightSpan('dn1', span, 'yellow');
+      await second.result.current.submitNote('dn2', 'from the second tab');
+    });
+    await settle();
+
+    const reopened = await openTab();
+    expect(reopened.result.current.highlights.dn1).toHaveLength(1);
+    expect(reopened.result.current.notes.dn2).toBe('from the second tab');
+  });
+
+  it('keeps a highlight one tab erased from coming back when the other tab saves', async () => {
+    const earlier = await openTab();
+    await act(async () => {
+      await earlier.result.current.setHighlightSpan('dn1', span, 'yellow');
+    });
+    await settle();
+    earlier.unmount();
+
+    const first = await openTab();
+    const second = await openTab();
+    expect(second.result.current.highlights.dn1).toHaveLength(1);
+    await act(async () => {
+      await first.result.current.setHighlightSpan('dn1', span, null);
+    });
+    await settle();
+    act(() => {
+      second.result.current.markVisited('mn1');
+    });
+    await settle();
+
+    const reopened = await openTab();
+    expect(reopened.result.current.highlights.dn1 ?? []).toHaveLength(0);
+    expect(reopened.result.current.visited.mn1).toBeDefined();
+  });
+
+  it('shows one tab what another has saved', async () => {
+    const first = await openTab();
+    const second = await openTab();
+    await act(async () => {
+      await first.result.current.submitNote('dn1', 'from the first tab');
+    });
+
+    await waitFor(() => expect(second.result.current.notes.dn1).toBe('from the first tab'));
+  });
+});

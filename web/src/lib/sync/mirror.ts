@@ -596,8 +596,8 @@ export function adoptMirror(account: MirrorState, local: MirrorState): MirrorSta
       notes[suttaId] = { dirty: true, data: { ...record.data } };
       continue;
     }
-    // A retried adoption — a crash between saveMirror and deleteMirror — would otherwise append
-    // the local half a second time.
+    // A signed-out mirror adopted a second time — written back by a tab still signed out — would
+    // otherwise append the local half again.
     if (existing.data.text.endsWith(`${ADOPTED_NOTE_SEPARATOR}${record.data.text}`)) {
       notes[suttaId] = { dirty: true, data: { ...existing.data } };
       continue;

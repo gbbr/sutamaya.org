@@ -106,6 +106,14 @@ Every step is deterministic, so devices converge without talking to each other.
 - **Identity** — the last confirmed account is remembered, so an offline relaunch opens the right
   mirror. It's a cached identity, not a credential.
 
+## Tabs
+
+Every tab of the app in one browser shares the one mirror. Each tab shows its own copy and writes
+every change behind it. The mirror carries a revision, new with every write: a write that finds it
+changed since the tab read it replays the tab's changes over the other tab's save rather than
+writing over it. A tab that writes tells the others, which read the mirror again, as does a tab
+coming back into view — so each tab shows what the others did.
+
 ## The flush
 
 It runs on launch, two seconds after an edit, on reconnecting, on returning to the app, and every
@@ -180,6 +188,9 @@ the reader to decide.
 14. **Every table the snapshot reads raises the account's data version** on insert, update and
     delete, with a trigger for each. Without them a device is told "not modified" over a change it
     never saw; `routes/__tests__/data.test.js` fails for a table missing one.
+15. **Every change to the mirror is a function of the state it applies to**, made through the tab's
+    store, never a whole mirror written over the stored one — so a write can replay it over
+    another tab's save.
 
 ## Accepted losses
 
@@ -205,7 +216,8 @@ the reader to decide.
 | `web/src/lib/sync/mirror.ts` | the mirror, and every change to it |
 | `web/src/lib/sync/sync.ts` | the flush |
 | `web/src/lib/sync/mirrorView.ts`, `web/src/lib/lists/listTree.ts` | what the UI sees; tree repair |
-| `web/src/lib/sync/mirrorDb.ts` | storage in IndexedDB |
+| `web/src/lib/sync/mirrorStore.ts` | this tab's copy of the mirror, in step with the other tabs |
+| `web/src/lib/sync/mirrorDb.ts` | storage in IndexedDB, and its revision |
 | `web/src/lib/highlights.ts`, `segmentKeys.ts` | overlaps and painting; key order |
 | `web/src/context/UserDataContext.tsx` | when the flush runs; the sync state |
 | `worker/src/routes/data.js` | the snapshot, its tag, and the push |

@@ -1,12 +1,20 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  type ReactNode,
+} from 'react';
 import type { Highlight, HighlightsMap, ListDef, ListKind, Membership, NotesMap, VisitedMap } from '../lib/types';
 import {
-  adoptMirror,
   anchorHighlights as anchorHighlightRecords,
   applyFlushOutcome,
   createListRecord,
   emptyMirror,
-  hasContent,
   markDispatched,
   markVisitedRecord,
   queueItemOrder,
@@ -23,7 +31,8 @@ import { deriveUserData } from '../lib/sync/mirrorView';
 import type { SegmentFile } from '../lib/corpus/corpus';
 import type { HlSpan } from '../lib/highlights';
 import { isLocalUserId } from '../lib/sync/localAccount';
-import { deleteMirror, loadMirror, saveMirror } from '../lib/sync/mirrorDb';
+import { loadAccountMirror, loadMirror } from '../lib/sync/mirrorDb';
+import { MirrorStore } from '../lib/sync/mirrorStore';
 import { hydrateNativeToken } from '../lib/native/nativeAuth';
 import { flushWithLock } from '../lib/sync/sync';
 import { randomId } from '../lib/ids';
@@ -31,11 +40,11 @@ import { LIST_NAME_MAX_LENGTH, NOTE_MAX_LENGTH } from '../lib/textLimits';
 import { useAuth } from './AuthContext';
 
 // The user's lists, notes, highlights and visits, as a view over the offline mirror
-// (lib/sync/mirror.ts). Every mutator writes to the mirror and returns; a flush (lib/sync/sync.ts)
-// pushes what the server hasn't seen and folds the merged result back in, on the triggers below. A
-// reader who hasn't signed in has a mirror of their own under a local id
-// (lib/sync/localAccount.ts), which sign-in adopts onto the account (adoptMirror); everything else
-// is identical either way.
+// (lib/sync/mirror.ts), through this tab's copy of it (lib/sync/mirrorStore.ts). Every mutator
+// writes to the mirror and returns; a flush (lib/sync/sync.ts) pushes what the server hasn't seen
+// and folds the merged result back in, on the triggers below. A reader who hasn't signed in has a
+// mirror of their own under a local id (lib/sync/localAccount.ts), which sign-in adopts onto the
+// account (adoptMirror); everything else is identical either way.
 
 // How long after a mutation the flush runs, so a burst of edits becomes one flush.
 const FLUSH_DEBOUNCE_MS = 2000;
@@ -107,8 +116,13 @@ const EMPTY: UserDataState = {
 
 export function UserDataProvider({ children }: { children: ReactNode }) {
   const { user, isSignedIn, dataUserId, localUserId, forgetAccount } = useAuth();
-  const [state, setState] = useState<MirrorState>(emptyMirror);
-  const [ready, setReady] = useState(false);
+  // This tab's copy of the mirror, a new one for each identity loaded.
+  const [store, setStore] = useState(() => new MirrorStore(null, emptyMirror()));
+  // The same, for callbacks that keep a stable identity.
+  const storeRef = useRef(store);
+  const state = useSyncExternalStore(store.subscribe, store.getSnapshot);
+  // `ready` means the local dataset is known, which needs no network.
+  const ready = useSyncExternalStore(store.subscribe, store.isReady);
   // Whether the flush triggers have stood down after a 401. Exposed as `needsReauth`.
   const [paused, setPaused] = useState(false);
   // When the last flush reached the network, for display. Not persisted.
@@ -128,8 +142,6 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  // The mirror as the flush reads it when it runs, rather than as its trigger's closure saw it.
-  const stateRef = useRef(state);
   const pausedRef = useRef(paused);
   const flushing = useRef(false);
   const flushTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -137,9 +149,6 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   // driving it doesn't re-run — and re-flush — every time AuthContext hands out a new `user`.
   const forgetAccountRef = useRef(forgetAccount);
 
-  useEffect(() => {
-    stateRef.current = state;
-  }, [state]);
   useEffect(() => {
     pausedRef.current = paused;
   }, [paused]);
@@ -158,51 +167,45 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     let cancelled = false;
-    setReady(false);
+    const outgoing = storeRef.current;
+    const shown = outgoing.getSnapshot();
     // Blanks a departing account's data on this render rather than when the read lands. Not a
     // departing local mirror, which is about to be adopted onto the account below.
-    setState((s) => (s.userId === userId || isLocalUserId(s.userId) ? s : emptyMirror(userId)));
-    (async () => {
-      let loaded = await loadMirror(userId);
-      // Adopts whatever this device made signed out. Runs on every load of an account mirror
-      // rather than on a sign-in transition, since a reload mid-adoption has to finish the job;
-      // `hasContent` makes it a no-op for a device never used signed out.
-      if (!isLocalUserId(userId)) {
-        const local = await loadMirror(localUserId);
-        if (hasContent(local)) {
-          loaded = adoptMirror(loaded, local);
-          // Saved before the local copy is dropped, so a crash between the two leaves a duplicate
-          // rather than a hole.
-          await saveMirror(loaded);
-          await deleteMirror(localUserId);
-        }
-      }
-      if (cancelled) return;
-      setState(loaded);
-      // `ready` means the local dataset is known, which needs no network.
-      setReady(true);
-    })().catch((e) => {
-      console.error('mirror load failed', e);
-      if (cancelled) return;
-      setState(emptyMirror(userId));
-      setReady(true);
-    });
+    const placeholder = shown.userId === userId || isLocalUserId(shown.userId) ? shown : emptyMirror(userId);
+    const next = new MirrorStore(userId, placeholder);
+    storeRef.current = next;
+    setStore(next);
+    // Adopts whatever this device made signed out, once the outgoing store's writes have landed so
+    // that it takes the last of them. Runs on every load of an account mirror rather than on a
+    // sign-in transition, since a reload mid-adoption has to finish the job.
+    outgoing
+      .close()
+      .then(() => (isLocalUserId(userId) ? loadMirror(userId) : loadAccountMirror(userId, localUserId)))
+      .then((loaded) => {
+        if (cancelled) return;
+        next.loaded(loaded);
+        if ('adopted' in loaded && loaded.adopted) next.announce();
+      })
+      .catch((e) => {
+        console.error('mirror load failed', e);
+        if (cancelled) return;
+        next.loaded({ state: emptyMirror(userId), rev: null });
+      });
     return () => {
       cancelled = true;
     };
   }, [userId, localUserId]);
 
-  // Persists every change, including what a flush folds back in. Both guards keep an identity
-  // change's window from writing under the wrong key: `userId` catches records from the outgoing
-  // identity, and `ready` catches the empty placeholder above, which carries the incoming one and
-  // would otherwise overwrite the mirror the load is still reading.
-  useEffect(() => {
-    if (!ready || state.userId !== userId) return;
-    saveMirror(state).catch((e) => console.error('mirror save failed', e));
-  }, [ready, state, userId]);
+  // Closes the last store with the provider.
+  useEffect(
+    () => () => {
+      storeRef.current.close();
+    },
+    []
+  );
 
   const flush = useCallback(async () => {
-    const current = stateRef.current;
+    const current = storeRef.current.getSnapshot();
     // A local mirror has no account behind it, so nothing to push to until sign-in adopts it.
     if (!current.userId || isLocalUserId(current.userId) || flushing.current) return;
     flushing.current = true;
@@ -213,7 +216,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       await hydrateNativeToken();
       // Marked before the first request goes out: from here on the server may hold these rows, so a
       // delete made while the flush is out has to travel as a tombstone (markDispatched).
-      setState((s) => (s.userId === current.userId ? markDispatched(s, current) : s));
+      storeRef.current.apply((s) => (s.userId === current.userId ? markDispatched(s, current) : s));
       const outcome = await flushWithLock(current);
       // Another tab is flushing this same mirror — it will apply the result for both of us.
       if (outcome.status === 'blocked') return;
@@ -228,7 +231,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       }
       // Applied to the mirror as it is now, not as the flush found it: editing continues while a
       // flush is out, and applyFlushOutcome only clears what was acknowledged.
-      setState((s) => (s.userId === current.userId ? applyFlushOutcome(s, outcome) : s));
+      storeRef.current.apply((s) => (s.userId === current.userId ? applyFlushOutcome(s, outcome) : s));
       // A 401 pause surfaces through `needsReauth` (DataLocationRow, HeaderBanner); nothing here
       // navigates, which would pull the reader out of a sutta for a lapse they haven't noticed.
       setPaused(outcome.status === 'unauthorized');
@@ -291,7 +294,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   // The guard drops a write landing after sign-out rather than filing it under nobody.
   const mutate = useCallback(
     (change: (s: MirrorState) => MirrorState) => {
-      setState((s) => (s.userId ? change(s) : s));
+      storeRef.current.apply((s) => (s.userId ? change(s) : s));
       scheduleFlush();
     },
     [scheduleFlush]
@@ -396,7 +399,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   // already — so a flush would be scheduled for no reason, and a mirror with nothing to convert
   // returns the state object it was given, which React renders through untouched.
   const anchorHighlights = useCallback((suttaId: string, segments: SegmentFile[]) => {
-    setState((s) => (s.userId ? anchorHighlightRecords(s, suttaId, segments) : s));
+    storeRef.current.apply((s) => (s.userId ? anchorHighlightRecords(s, suttaId, segments) : s));
   }, []);
 
   const markVisited = useCallback(

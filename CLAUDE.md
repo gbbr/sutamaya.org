@@ -19,7 +19,7 @@ read before changing something, the rules that span files, and how documentation
 | local setup, ports, secrets | [docs/development.md](docs/development.md) |
 | end-to-end specs | [docs/e2e.md](docs/e2e.md) |
 
-Offline sync covers `web/src/lib/sync/{mirror,sync,mirrorView,mirrorDb}.ts`,
+Offline sync covers `web/src/lib/sync/{mirror,mirrorStore,sync,mirrorView,mirrorDb}.ts`,
 `web/src/lib/lists/listTree.ts`, `web/src/context/UserDataContext.tsx`, `worker/src/routes/data.js`
 and `worker/src/lib/{writes,listTree,userData}.js`.
 
