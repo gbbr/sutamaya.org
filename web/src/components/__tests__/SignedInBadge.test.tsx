@@ -1,0 +1,75 @@
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+const navigate = vi.hoisted(() => vi.fn());
+vi.mock('react-router', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('react-router')>()),
+  useNavigate: () => navigate,
+}));
+
+vi.mock('../../lib/platform', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('../../lib/platform')>()),
+  isNativeApp: vi.fn(() => false),
+}));
+
+import { SignedInBadge } from '../SignedInBadge';
+import { isNativeApp } from '../../lib/platform';
+import type { User } from '../../lib/types';
+
+const user: User = { id: 'u1', email: 'reader@example.com', picture: null };
+
+describe('SignedInBadge', () => {
+  beforeEach(() => {
+    vi.mocked(isNativeApp).mockReturnValue(false);
+  });
+
+  it('signed in: shows the initial, navigates to /settings on click', async () => {
+    render(<SignedInBadge user={user} size={26} />);
+    const badge = screen.getByLabelText('Signed in as reader@example.com');
+    expect(badge).toHaveTextContent('R');
+    await userEvent.click(badge);
+    // The options carry the transition's own flush — the destination is what this asserts.
+    expect(navigate).toHaveBeenCalledWith('/settings', expect.anything());
+  });
+
+  it('signed in with a picture: renders the image instead of the initial', () => {
+    render(<SignedInBadge user={{ ...user, picture: 'https://example.com/p.jpg' }} size={26} />);
+    expect(screen.getByLabelText('Signed in as reader@example.com').querySelector('img')).toHaveAttribute(
+      'src',
+      'https://example.com/p.jpg'
+    );
+  });
+
+  it('signed out: shows a neutral badge that also navigates to /settings', async () => {
+    vi.mocked(navigate).mockClear();
+    render(<SignedInBadge user={null} size={26} />);
+    await userEvent.click(screen.getByLabelText('Settings'));
+    expect(navigate).toHaveBeenCalledWith('/settings', expect.anything());
+    expect(screen.queryByLabelText(/Signed in as/)).not.toBeInTheDocument();
+  });
+
+  it('signed out: carries no at-risk mark until there is work to lose', () => {
+    const { container } = render(<SignedInBadge user={null} size={26} />);
+    expect(container.querySelector('[data-component="SignedInBadgeDot"]')).not.toBeInTheDocument();
+  });
+
+  it('signed out and at risk: marks the badge with a dot', () => {
+    const { container } = render(<SignedInBadge user={null} size={26} atRisk />);
+    expect(container.querySelector('[data-component="SignedInBadgeDot"]')).toBeInTheDocument();
+  });
+
+  it('signed out and at risk in the native app: carries no mark', () => {
+    vi.mocked(isNativeApp).mockReturnValue(true);
+    const { container } = render(<SignedInBadge user={null} size={26} atRisk />);
+    expect(container.querySelector('[data-component="SignedInBadgeDot"]')).not.toBeInTheDocument();
+    expect(container.querySelector('[data-component="SignedInBadge"]')).toHaveAttribute('aria-label', 'Settings');
+  });
+
+  // The dot is about local work with no account behind it, so a signed-in badge never carries one
+  // however the caller is asked.
+  it('signed in: never marks the badge, even when asked', () => {
+    const { container } = render(<SignedInBadge user={user} size={26} atRisk />);
+    expect(container.querySelector('[data-component="SignedInBadgeDot"]')).not.toBeInTheDocument();
+  });
+});

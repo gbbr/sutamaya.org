@@ -200,4 +200,4 @@ the repo.
 | `web/src/hooks/useCorpusSearch.ts` | the two halves combined for a page |
 | `web/src/lib/recentSearches.ts`, `web/src/hooks/useRecentSearches.ts` | the history, and the hook that reads it |
 | `web/src/components/RecentSearches.tsx` | the list both searches draw |
-| `scripts/search-golden.json`, `web/src/lib/search/golden.test.ts` | the golden queries |
+| `scripts/search-golden.json`, `web/src/lib/search/__tests__/golden.test.ts` | the golden queries |

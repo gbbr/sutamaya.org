@@ -9,7 +9,7 @@ export default defineWorkersProject(async () => {
   // The pool reads the real wrangler.jsonc below, which errors out if its `assets.directory`
   // doesn't exist — and `web/dist` is a git-ignored build output, absent on a fresh checkout and in
   // CI, where `npm test` runs without a web build. Create it, and seed the two files
-  // src/assetRouting.test.js needs to tell "the assets binding answered" from "the Worker
+  // src/__tests__/assetRouting.test.js needs to tell "the assets binding answered" from "the Worker
   // answered": one page for the SPA fallback to return, one plain file to serve directly. Only
   // written where a real build hasn't put the file there already, so a build is never clobbered —
   // the test asserts on how the request was *routed*, not on what these contain, so placeholders
@@ -29,8 +29,8 @@ export default defineWorkersProject(async () => {
     fs.writeFileSync(file, contents);
   };
   // Both pages carry the icon links, the iOS name and (on the landing page) a link into the app
-  // that src/stagingBrand.test.js asserts are rewritten on staging — the real build has all of
-  // them, so the placeholders have to as well or that suite passes vacuously in CI.
+  // that src/__tests__/stagingBrand.test.js asserts are rewritten on staging — the real build has
+  // all of them, so the placeholders have to as well or that suite passes vacuously in CI.
   seed(
     'index.html',
     '<!doctype html><head><title>app shell placeholder</title><meta name="description" content="placeholder" />' +
