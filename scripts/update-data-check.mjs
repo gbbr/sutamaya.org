@@ -7,7 +7,8 @@
 //   integrity  – a sutta's Pali, Sujato and HTML stay aligned (see INTEGRITY_GROUPS)
 //   local      – the same two checks over data/{sujato,pali,html}, catching a snapshot taken from
 //                an already-misaligned tree
-//   rules      – every term rule still matches, every override and blurb opener still anchors
+//   rules      – every term rule still matches, every override and blurb opener still anchors,
+//                and no line a term rule rewrites has been reworded away from its term
 // See data/README.md.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -29,11 +30,9 @@ import {
   green,
   yellow,
   bold,
-  blue,
   dim,
 } from './lib/dataSync.js';
-import { RULES_DIR, RETRANSLATION_PATH, loadRules, loadSidecar, isTermRule, isSegmentRule, isBlurbRule, segmentsOf, scopeOf, formsMatch, applyTermRules, buildSegmentIndex, buildBlurbIndex } from './lib/retranslation.js';
-import { triageRule } from './update-data-triage.mjs';
+import { RULES_DIR, RETRANSLATION_PATH, loadRules, loadSidecar, isTermRule, isSegmentRule, isBlurbRule, isPermitted, segmentsOf, scopeOf, formsMatch, paliTextFor, applyTermRules, buildSegmentIndex, buildBlurbIndex } from './lib/retranslation.js';
 
 function diffKeys(oldKeys, newKeys) {
   const oldSet = new Set(oldKeys);
@@ -124,39 +123,59 @@ function describeAnchorBreak({ rule, segment, upstreamNow, anchorNow, chunks }) 
   return lines.join('\n');
 }
 
-// Returns one note per term rule whose reviewed allow/deny entries upstream has invalidated — a
-// listed segment that no longer contains the term. The same computation update-data triage does,
-// resolved against the upstream checkout, which triage cannot see until after the copy.
-// Informational, never a failure: a dead entry doesn't make the copy unsafe, and it can only be
-// worked afterwards. Newly-active segments are triage's queue, not an invalidated decision.
-function checkStaleTriage(rules, sujatoUpstreamByRelPath, rulesDir) {
-  // treeName -> [{ segmentId, value, relPath }], built once from content the caller already parsed.
-  const cache = new Map();
-  const segmentsFor = (treeName) => {
-    if (!cache.has(treeName)) {
-      const out = [];
-      for (const [relPath, obj] of sujatoUpstreamByRelPath) {
-        if (relPath.split('/').slice(0, 2).join('/') !== treeName) continue;
-        for (const [segmentId, value] of Object.entries(obj)) {
-          if (typeof value === 'string') out.push({ segmentId, value, relPath });
-        }
-      }
-      cache.set(treeName, out);
+// Returns the words `now` has in place of `was`'s, as '"was" → "now"' lowercased, or null when the
+// line was reworded beyond a few words.
+function wordSwap(was, now) {
+  const words = (text) => text.match(/[\p{L}’']+/gu) ?? [];
+  const a = words(was);
+  const b = words(now);
+  let head = 0;
+  while (head < a.length && head < b.length && a[head] === b[head]) head += 1;
+  let tail = 0;
+  while (tail < a.length - head && tail < b.length - head && a[a.length - 1 - tail] === b[b.length - 1 - tail]) tail += 1;
+  const gone = a.slice(head, a.length - tail);
+  const added = b.slice(head, b.length - tail);
+  if (!gone.length || gone.length > 4 || added.length > 4) return null;
+  return `"${gone.join(' ')}" → "${added.join(' ')}"`.toLowerCase();
+}
+
+// Returns one note per term rule that upstream reworded away from lines it rewrites here: lines whose
+// English no longer has any of the rule's forms while their Pali still matches its predicate, so the
+// app would show upstream's new word there. Grouped by what replaced the term. Titles and
+// descriptions have no Pali to check, so all of theirs are kept. Informational, never a failure.
+function checkRewordedAway(rules, sujatoUpstreamByRelPath, dataDirs, rulesDir) {
+  // Every line whose text differs between data/sujato and upstream.
+  const changed = [];
+  for (const [relPath, upstream] of sujatoUpstreamByRelPath) {
+    const localPath = localPathFor(relPath, dataDirs);
+    if (!fs.existsSync(localPath)) continue;
+    for (const [segmentId, was] of Object.entries(JSON.parse(fs.readFileSync(localPath, 'utf8')))) {
+      const now = upstream[segmentId];
+      if (typeof was === 'string' && typeof now === 'string' && was !== now) changed.push({ segmentId, relPath, was, now });
     }
-    return cache.get(treeName);
-  };
+  }
 
   const notes = [];
   for (const rule of rules.filter(isTermRule)) {
+    const scope = new Set(scopeOf(rule));
     const sidecar = loadSidecar(rule.id, rulesDir);
-    const t = triageRule(rule, sidecar, segmentsFor);
-    const [stale, listed, kind] =
-      t.mode === 'allow' ? [t.stale, sidecar.allow.length, 'allow'] : [t.staleDenials, Object.keys(sidecar.deny).length, 'deny'];
-    if (!stale.length) continue;
-    notes.push(
-      `${bold(rule.id)}: ${stale.length} of ${listed} ${kind} entries no longer contain the term upstream.\n` +
-        `    ${dim(`dead after the copy — drop them with`)} ${blue(`update-data triage ${rule.id} prune`)}`,
-    );
+    // swap -> segment ids
+    const groups = new Map();
+    for (const { segmentId, relPath, was, now } of changed) {
+      if (!scope.has(relPath.split('/').slice(0, 2).join('/'))) continue;
+      if (!isPermitted(rule, sidecar, segmentId) || !formsMatch(rule, was) || formsMatch(rule, now)) continue;
+      const pali = paliTextFor(segmentId, relPath, dataDirs.pali);
+      if (pali !== null && rule.predicate && !rule.predicate.test(pali)) continue;
+      const swap = wordSwap(was, now) ?? 'reworded';
+      groups.set(swap, [...(groups.get(swap) ?? []), segmentId]);
+    }
+    if (!groups.size) continue;
+
+    const total = [...groups.values()].reduce((sum, ids) => sum + ids.length, 0);
+    const rows = [...groups]
+      .sort((a, b) => b[1].length - a[1].length)
+      .map(([swap, ids]) => `  ${String(ids.length).padStart(5)}  ${swap}  ${dim(ids.slice(0, 5).join(', ') + (ids.length > 5 ? ', …' : ''))}`);
+    notes.push([`${bold(rule.id)}: ${total} line(s) upstream reworded away from this rule, though their Pali still has the term`, ...rows].join('\n'));
   }
   return notes;
 }
@@ -324,9 +343,9 @@ export async function runCheck({ bilaraRoot, dataDirs = DATA_DIRS, snapshotPath 
   const localSegmentIndex = buildSegmentIndex(dataDirs.sujato);
   const localBlurbIndex = buildBlurbIndex(dataDirs.sujato);
   const ruleIssues = checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, localBlurbIndex, rulesDir);
-  const staleTriage = checkStaleTriage(rules, sujatoUpstreamByRelPath, rulesDir);
+  const rewordedAway = checkRewordedAway(rules, sujatoUpstreamByRelPath, dataDirs, rulesDir);
 
-  // staleTriage is not folded in: it is reported, never failed on.
+  // rewordedAway is not folded in: it is reported, never failed on.
   const issues = [...localIssues, ...upstreamIssues, ...integrityIssues, ...localIntegrityIssues, ...ruleIssues];
   return {
     ok: issues.length === 0,
@@ -336,7 +355,7 @@ export async function runCheck({ bilaraRoot, dataDirs = DATA_DIRS, snapshotPath 
     integrityIssues,
     localIntegrityIssues,
     ruleIssues,
-    staleTriage,
+    rewordedAway,
     padding: Object.fromEntries(padding),
     checked,
     totalTracked: Object.keys(snapshot.files).length,

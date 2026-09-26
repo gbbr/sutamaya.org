@@ -1,6 +1,6 @@
 ---
 name: retranslate
-description: Add, change, or remove an editorial rule over Bhikkhu Sujato's English translation — rendering a Pali term differently throughout (e.g. "replace all forms of sati with aware/awareness", "sampajañña should be clear comprehension", "origin → arising"), or overriding one specific segment's wording. Also use when an update-data run reports a broken rule or a non-empty triage queue.
+description: Add, change, or remove an editorial rule over Bhikkhu Sujato's English translation — rendering a Pali term differently throughout (e.g. "replace all forms of sati with aware/awareness", "sampajañña should be clear comprehension", "origin → arising"), or overriding one specific segment's wording. Also use when an update-data run reports a broken rule, lines reworded away from a rule, or a non-empty triage queue.
 ---
 
 # Retranslation rules
@@ -169,6 +169,12 @@ doubles as documentation of why rules sit where they do.
   say so if you reorganize, since the term-family rule is the opposite.
 
 ## Working a triage queue after a refresh
+
+**Work `plan`'s Coverage list before `apply`** — once the text is copied, `plan` no longer shows
+it. Each group is lines upstream reworded away from a rule while their Pali still has the term
+(`"mendicants" → "monks"`). **Present each group to the user as a choice and wait**: let upstream's
+new word stand, or add it to the rule's `forms` and triage it like any new form. Never extend a rule
+on your own.
 
 **Prune the stale half first — it needs no decision.** A stale entry names a segment that no longer
 contains any of the rule's forms. `npm run update-data triage <rule-id> prune` deletes exactly those

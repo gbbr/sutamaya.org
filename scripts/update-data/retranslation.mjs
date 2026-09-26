@@ -34,6 +34,7 @@ export const RULES = [
     why: 'Bhikkhu Sujato renders bhikkhu as "mendicant"; this app keeps the Pali. Open with an empty ' +
       'deny list — nothing else in the corpus renders as "mendicant".',
     mode: 'deny',
+    predicate: /bhikkh/i,
     forms: [
       ['mendicant', 'bhikkhu'],
       ['mendicants', 'bhikkhus'],

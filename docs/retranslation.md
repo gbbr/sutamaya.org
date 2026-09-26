@@ -85,8 +85,9 @@ This works because segment ids are effectively fixed upstream while the text in 
 also handles what nothing else can: verse, where English and Pali lines don't align, and titles and
 descriptions, which have no Pali at all.
 
-A rule also records a `predicate`, a pattern over the Pali that proposes candidates during review.
-The build never consults it: the predicate proposes, review decides, the list executes.
+A rule also records a `predicate`, a pattern over the Pali that proposes candidates during review
+and tells `plan` which reworded lines still carry the term. The build never consults it: the
+predicate proposes, review decides, the list executes.
 
 ## One pass, order-safe
 
@@ -111,6 +112,7 @@ the only signal is the one built here:
 | its quoted opening still starts the description | blurb rule | **hard fail** |
 | it still matches somewhere | term rule | **hard fail** — the term is gone and the rule is dead |
 | its segment lists still fit the text | term rule | **review**, through `update-data triage` |
+| the lines it rewrites still have its term | term rule | **review**, in `plan` — upstream reworded a line whose Pali still has the term |
 | its match count | open rule with no denials | recorded in `retranslation.counts.json`; a sharp drop shows in its diff |
 
 `update-data plan` reports the hard fails before anything is copied. A broken override prints its
@@ -143,6 +145,12 @@ those, then `apply`, which is idempotent and so doubles as the edit-and-check lo
 npm run update-data apply  →  git diff data/diff/00-all.diff  →  fix  →  apply again
                            →  npm run update-data triage      →  prune  →  accept
 ```
+
+`plan` also lists, per term rule, the lines upstream reworded away from it while their Pali still
+has the term, grouped by what replaced it (`"mendicants" → "monks"`). There the app would show
+upstream's new word. Each group is one decision: add the new word to the rule's `forms`, or let it
+stand where it translates something else. `plan` compares against the baseline, so it shows these
+only until `apply`.
 
 ## Working the queue
 
