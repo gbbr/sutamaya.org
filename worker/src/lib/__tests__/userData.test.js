@@ -81,9 +81,9 @@ describe('assembleUserData', () => {
   });
 
   it('maps notes by doc id, carrying each one’s mtime', () => {
-    // `m` is what the client orders its own Notes auto-list by (web/src/lib/mirrorView.ts derives
-    // it over the mirror so an offline note appears there with no round trip); dropping it here
-    // leaves every pulled note comparing equal and the list in SELECT order.
+    // `m` is what the client orders its own Notes auto-list by (web/src/lib/sync/mirrorView.ts
+    // derives it over the mirror so an offline note appears there with no round trip); dropping it
+    // here leaves every pulled note comparing equal and the list in SELECT order.
     const result = assembleUserData({
       ...empty,
       noteDocs: [{ id: 'dn1', data: { text: 'hello', updatedAt: '2026-08-01T00:00:00.000Z|a' } }],

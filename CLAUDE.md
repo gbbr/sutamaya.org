@@ -19,9 +19,9 @@ read before changing something, the rules that span files, and how documentation
 | local setup, ports, secrets | [docs/development.md](docs/development.md) |
 | end-to-end specs | [docs/e2e.md](docs/e2e.md) |
 
-Offline sync covers `web/src/lib/{mirror,sync,mirrorView,mirrorDb,listTree}.ts`,
-`web/src/context/UserDataContext.tsx`, `worker/src/routes/data.js` and
-`worker/src/lib/{writes,listTree,userData}.js`.
+Offline sync covers `web/src/lib/sync/{mirror,sync,mirrorView,mirrorDb}.ts`,
+`web/src/lib/lists/listTree.ts`, `web/src/context/UserDataContext.tsx`, `worker/src/routes/data.js`
+and `worker/src/lib/{writes,listTree,userData}.js`.
 
 ## Working here
 
@@ -53,10 +53,12 @@ Offline sync covers `web/src/lib/{mirror,sync,mirrorView,mirrorDb,listTree}.ts`,
 - **Some logic exists twice, on purpose**, since the workspaces share no modules. Change one, change
   the other:
   - list-tree repair and snapshot shaping — `worker/src/lib/{listTree,userData}.js` and
-    `web/src/lib/{listTree,mirrorView}.ts`;
-  - the automatic lists' ids and caps — `web/src/lib/autoLists.ts`;
-  - the segment-key comparator and the Pali word splitter — `scripts/lib/` and `web/src/lib/`;
-  - the corpus lookups behind link previews — `worker/src/shareMeta.js` and `web/src/lib/corpus.ts`.
+    `web/src/lib/{lists/listTree,sync/mirrorView}.ts`;
+  - the automatic lists' ids and caps — `web/src/lib/lists/autoLists.ts`;
+  - the segment-key comparator and the Pali word splitter — `scripts/lib/` and
+    `web/src/lib/corpus/`;
+  - the corpus lookups behind link previews — `worker/src/shareMeta.js` and
+    `web/src/lib/corpus/corpus.ts`.
 
   Parity tests catch drift in the first three.
 - **`APP_PATHS` (`worker/src/index.js`) and `assets.run_worker_first` (`wrangler.jsonc`) change

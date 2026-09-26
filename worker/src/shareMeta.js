@@ -5,7 +5,7 @@
 // Only /read/* and /browse/* are rewritten; /index.html is left as the build produced it, since the
 // service worker precaches that path and serves it for every in-app navigation.
 //
-// The lookups port web/src/lib/corpus.ts (findNode, resolveCanonicalSuttaId) and the trim in
+// The lookups port web/src/lib/corpus/corpus.ts (findNode, resolveCanonicalSuttaId) and the trim in
 // web/src/lib/documentMeta.ts, and the titles match what ReaderPage and LibraryPage pass to
 // useDocumentMeta. No module is shared between the two workspaces — change one, change the other.
 

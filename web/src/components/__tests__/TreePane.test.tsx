@@ -39,8 +39,8 @@ vi.mock('../../lib/platform', () => ({
   isStandaloneDisplay: vi.fn(),
   API_BASE: '',
 }));
-vi.mock('../../lib/offline', () => ({ estimateOfflineStatus: vi.fn(), isOfflineTextStale: vi.fn() }));
-vi.mock('../../lib/localAccount', () => ({
+vi.mock('../../lib/corpus/offline', () => ({ estimateOfflineStatus: vi.fn(), isOfflineTextStale: vi.fn() }));
+vi.mock('../../lib/sync/localAccount', () => ({
   isIosBrowserTab: vi.fn(),
   isKeepSafeDismissed: vi.fn(),
   dismissKeepSafe: vi.fn(),
@@ -65,8 +65,8 @@ import {
   dismissOfflineUpdate,
 } from '../../lib/pwaNudge';
 import { isNativeApp, isStandaloneDisplay } from '../../lib/platform';
-import { estimateOfflineStatus, isOfflineTextStale } from '../../lib/offline';
-import { dismissKeepSafe, isIosBrowserTab, isKeepSafeDismissed } from '../../lib/localAccount';
+import { estimateOfflineStatus, isOfflineTextStale } from '../../lib/corpus/offline';
+import { dismissKeepSafe, isIosBrowserTab, isKeepSafeDismissed } from '../../lib/sync/localAccount';
 import { TreePane } from '../TreePane';
 import { getRecentSearches, saveRecentSearch } from '../../lib/recentSearches';
 import { RECENT_SEARCHES_KEY } from '../../lib/storageKeys';

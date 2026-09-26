@@ -11,8 +11,8 @@
 //
 // A query naming one sutta of a batched document ("dhp325" inside "dhp320-333") matches the batch
 // and carries the inner uid as `matchedId`, since the corpus has no entry of its own for it.
-import { rangesFor, RANGE_QUERY, suttaEntries } from '../corpus';
-import { flattenListTree } from '../lists';
+import { rangesFor, RANGE_QUERY, suttaEntries } from '../corpus/corpus';
+import { flattenListTree } from '../lists/lists';
 import type { ChapterRow, Corpus, HighlightsMap, ListDef, Nikaya, Sutta } from '../types';
 import type { Mark } from './match';
 

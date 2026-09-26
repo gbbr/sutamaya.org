@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { App } from '@capacitor/app';
 import { platformName } from '../lib/platform';
-import { runTopBackHandler } from '../lib/backButton';
+import { runTopBackHandler } from '../lib/native/backButton';
 import { transitionPage } from '../lib/motion';
 
 // Routes to '/' rather than being a screen with its own back target.

@@ -11,7 +11,7 @@ import {
   type HlSpan,
 } from '../highlights';
 import { HIGHLIGHT_COLORS } from '../theme';
-import type { SegmentFile } from '../corpus';
+import type { SegmentFile } from '../corpus/corpus';
 import type { Highlight } from '../types';
 
 // The key `segs` gives the segment at position `i`, so these tests go on being written in the

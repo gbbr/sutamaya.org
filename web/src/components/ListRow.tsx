@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { ChevronDown, ChevronRight, ChevronUp, GripVertical, MoreHorizontal, Pencil, Plus, Trash2 } from 'lucide-react';
 import type { KeyboardEvent } from 'react';
-import type { DropIndicator } from '../lib/listTreeDrop';
+import type { DropIndicator } from '../lib/lists/listTreeDrop';
 import type { ListDef } from '../lib/types';
 import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits';
 import { useLayout } from '../context/LayoutContext';

@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from 'react';
-import { splitPaliWords, stripPunct, findAdjacentWord } from '../lib/dictionary';
-import { lookupHeadword, peekHeadword, prefetchHeadwordShard } from '../lib/dictionaryShards';
+import { splitPaliWords, stripPunct, findAdjacentWord } from '../lib/corpus/dictionary';
+import { lookupHeadword, peekHeadword, prefetchHeadwordShard } from '../lib/corpus/dictionaryShards';
 import { animateScrollBy, computeSegmentScrollOffset } from '../lib/segmentScroll';
 import { getUiScale } from '../lib/uiPrefs';
-import type { SegmentFile } from '../lib/corpus';
+import type { SegmentFile } from '../lib/corpus/corpus';
 
 interface DictState {
   word: string;
@@ -37,12 +37,12 @@ interface UseDictionaryLookupOptions {
 // The reader's word-tap dictionary: the open dock's state, opening and closing it, and stepping to
 // the adjacent Pali word.
 //
-// A tapped word is looked up in its range shard (lib/dictionaryShards.ts). A shard already in
-// memory answers in the same commit, so the dock opens straight to its definitions; otherwise the
-// dock waits LOADING_DELAY_MS before it says so, and both of the word's neighbours are prefetched,
-// since consecutive words in a sutta almost never share a shard. Because the dock is a flex
-// sibling of the reading pane, every change in its height can hide the word it is about, so the
-// word is scrolled back into view whenever the dock's content settles, within SCROLL_WINDOW_MS.
+// A tapped word is looked up in its range shard (lib/corpus/dictionaryShards.ts). A shard already
+// in memory answers in the same commit, so the dock opens straight to its definitions; otherwise
+// the dock waits LOADING_DELAY_MS before it says so, and both of the word's neighbours are
+// prefetched, since consecutive words in a sutta almost never share a shard. Because the dock is a
+// flex sibling of the reading pane, every change in its height can hide the word it is about, so
+// the word is scrolled back into view whenever the dock's content settles, within SCROLL_WINDOW_MS.
 export function useDictionaryLookup({ suttaId, segments, scrollRef, scrollToSegment, setOpenSegs }: UseDictionaryLookupOptions) {
   const [dict, setDict] = useState<DictState | null>(null);
 

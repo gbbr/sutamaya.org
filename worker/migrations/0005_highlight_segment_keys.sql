@@ -8,8 +8,8 @@
 -- SQL has none of it: nothing here can turn position 42 into `mn10:2.7`. Those rows are keyed from
 -- outside the database, from the positions read before this ran, and a client holding a mirror
 -- written against the positions re-anchors it as the sutta's text loads
--- (web/src/lib/mirror.ts's anchorHighlights). A highlight with no key yet paints nothing and is
--- deleted by nothing.
+-- (web/src/lib/sync/mirror.ts's anchorHighlights). A highlight with no key yet paints nothing and
+-- is deleted by nothing.
 --
 -- A table rebuild rather than ADD COLUMN, so `i0`/`i1` — NOT NULL with no default, and meaningless
 -- once a row is keyed — leave with the same statement that brings the keys in.

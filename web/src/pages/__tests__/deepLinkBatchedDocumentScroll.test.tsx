@@ -34,7 +34,7 @@ function buildCorpus(): Corpus {
     nikayas: [{ id: 'kn', label: 'Minor Collection', sub: 'Khuddaka Nikāya', count: 1 }],
     suttas: {
       // A batched/range document — no corpus entry for "dhp1"/"dhp14" themselves (see
-      // resolveCanonicalSuttaId in lib/corpus.ts), only for the batch as a whole.
+      // resolveCanonicalSuttaId in lib/corpus/corpus.ts), only for the batch as a whole.
       'dhp1-20': { ref: 'Dhp 1–20', node: 'kn', en: 'Twin Verses', pali: 'Yamakavaggo', blurb: '', min: 5 },
     },
     sujatoCommit: 'abc1234',

@@ -1,6 +1,6 @@
-import type { SegmentFile } from './corpus';
+import type { SegmentFile } from './corpus/corpus';
 import { highlightStart } from './highlights';
-import { segmentIndex } from './segmentKeys';
+import { segmentIndex } from './corpus/segmentKeys';
 import type { Highlight } from './types';
 
 export interface GutterTrack {

@@ -1,9 +1,9 @@
 import { Fragment, memo, useMemo, type CSSProperties, type ReactNode } from 'react';
-import type { SegmentFile, SegmentRole } from '../lib/corpus';
+import type { SegmentFile, SegmentRole } from '../lib/corpus/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
 import { highlightPaint } from '../lib/theme';
 import { expandHighlights, paintSegmentRanges, type SegmentRange } from '../lib/highlights';
-import { WORD_BOUNDARY, isWordBoundary } from '../lib/dictionary';
+import { WORD_BOUNDARY, isWordBoundary } from '../lib/corpus/dictionary';
 import { runsOf, type Mark } from '../lib/search/match';
 
 interface Part {
@@ -407,7 +407,7 @@ interface SegmentedTextProps {
   paliAbove: boolean;
   onToggleSeg: (i: number) => void;
   // Called with the tapped word and its position among this segment's Pali tokens
-  // (lib/dictionary.ts's splitPaliWords).
+  // (lib/corpus/dictionary.ts's splitPaliWords).
   onWordClick: (word: string, segIndex: number, wordIndex: number) => void;
   onSpanClick: (highlightId: string, rect: DOMRect, color: string) => void;
   // Whether the translator-note asterisks show at all.

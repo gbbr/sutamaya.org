@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import { useLayout } from '../context/LayoutContext';
-import { isExpandable } from '../lib/corpus';
+import { isExpandable } from '../lib/corpus/corpus';
 import type { ChapterRow } from '../lib/types';
 
 // One row of the tree under a nikaya, recursing as deep as the collection nests. Memoized, so a

@@ -1,9 +1,9 @@
-import { setNativeStatusBarDark } from './statusBar';
+import { setNativeStatusBarDark } from './native/statusBar';
 
 // `<meta name="theme-color">`, which drives the OS chrome CSS can't reach: a desktop PWA's title
 // bar and a mobile browser's status bar. Two things set it, the shell's light/dark theme and the
 // reader's own background, and the reader's wins while it is open. In a native shell the same
-// precedence drives the status bar's text colour (lib/statusBar.ts).
+// precedence drives the status bar's text colour (lib/native/statusBar.ts).
 
 // Hex twins of index.css's --paper, duplicated because a meta attribute can't read a CSS property.
 const SHELL_LIGHT = '#FBF9F5';

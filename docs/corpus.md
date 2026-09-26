@@ -102,4 +102,4 @@ anywhere and show as a bare headword.
 | `scripts/lib/collections.js` | how the library is grouped, and how a segment is assembled |
 | `scripts/lib/paliWords.js` | the build's copy of the app's word splitting and shard lookup |
 | `scripts/update-data-dictionary.mjs` | the DPD import |
-| `web/src/lib/corpus.ts`, `dictionaryShards.ts` | the app's side: loading text, finding groups, looking words up |
+| `web/src/lib/corpus/corpus.ts`, `dictionaryShards.ts` | the app's side: loading text, finding groups, looking words up |

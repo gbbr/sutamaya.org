@@ -2,9 +2,9 @@ import { createRoot } from 'react-dom/client';
 import { registerSW } from 'virtual:pwa-register';
 import App from './App';
 import { isNativeApp, platformName } from './lib/platform';
-import { hydrateNativeToken } from './lib/nativeAuth';
-import { hideNativeSplash } from './lib/splash';
-import { notifyBundleReady, watchUpdates } from './lib/otaUpdate';
+import { hydrateNativeToken } from './lib/native/nativeAuth';
+import { hideNativeSplash } from './lib/native/splash';
+import { notifyBundleReady, watchUpdates } from './lib/native/otaUpdate';
 import { loadUiPrefs, applyUiScale, applyTheme, moveReaderTheme } from './lib/uiPrefs';
 import { loadAnalytics } from './lib/analytics';
 // Side-effect import: binds window.__dangerWipeLocal, the console-only reset to a cold, signed-out

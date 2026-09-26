@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Loader2 } from 'lucide-react';
 import { isNativeApp } from '../lib/platform';
-import { hasNativeAppleSignIn } from '../lib/appleSignIn';
+import { hasNativeAppleSignIn } from '../lib/native/appleSignIn';
 import { useAuth } from '../context/AuthContext';
 
 // AppleSignInButton starts Sign in with Apple, beside Google's button and with the same face. On

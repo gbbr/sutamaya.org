@@ -152,7 +152,7 @@ const tappableWords = new Set();
 const textDigests = new Map();
 
 // Target size of one text shard: the bundles Settings' bulk offline download fetches instead of
-// one request per sutta — see web/src/lib/offline.ts.
+// one request per sutta — see web/src/lib/corpus/offline.ts.
 const SHARD_TARGET_BYTES = 1_000_000;
 let shardBuf = [];
 let shardBufBytes = 0;
@@ -238,7 +238,7 @@ function buildLeaf(uid, nodeId, collection) {
     if (compareSegmentKeys(segs[i - 1].key, segs[i].key) >= 0) {
       throw new Error(
         `${uid}: segment keys are out of document order — ${segs[i - 1].key} is not before ${segs[i].key}.\n` +
-          'Highlights compare keys to decide what a selection overlaps (web/src/lib/segmentKeys.ts).'
+          'Highlights compare keys to decide what a selection overlaps (web/src/lib/corpus/segmentKeys.ts).'
       );
     }
   }
@@ -412,7 +412,7 @@ const nikayas = [];
 
 // --- Dictionary: flatten [{entry, definition:[...]}] into a headword-keyed object, trim it to the
 // words this build emitted, then split it into the range shards a word tap fetches one of — see
-// lib/dictionaryShards.ts ---
+// lib/corpus/dictionaryShards.ts ---
 step('Building dictionary shards…');
 const dictPath = path.join(DATA, 'pli2en_dpd.json');
 const { dpdVersion, entries: dpdList } = readJSON(dictPath);
@@ -446,7 +446,8 @@ detail(`${Object.keys(shipped).length} of ${dpdList.length} headwords reachable 
 // Target size of one dictionary shard.
 const DICT_SHARD_TARGET_BYTES = 256 * 1024;
 // The key a shard range is addressed by. Ordered with plain code-unit comparison, never
-// localeCompare: lib/dictionaryShards.ts's binary search has to reproduce this ordering exactly.
+// localeCompare: lib/corpus/dictionaryShards.ts's binary search has to reproduce this ordering
+// exactly.
 const dictSortKey = (k) => k.toLowerCase();
 const headwords = Object.keys(shipped).sort((a, b) => {
   const ka = dictSortKey(a);

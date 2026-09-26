@@ -5,7 +5,7 @@ import { useFontsLoaded } from './useFontsLoaded';
 import { useHighlightPopup } from './useHighlightPopup';
 import { useScrollMemory, type ScrollRestore } from './useScrollMemory';
 import { highlightColors, highlightStart } from '../lib/highlights';
-import { segmentIndex } from '../lib/segmentKeys';
+import { segmentIndex } from '../lib/corpus/segmentKeys';
 import type { Highlight } from '../lib/types';
 import { getUiScale } from '../lib/uiPrefs';
 import { animateScrollBy, computeSegmentScrollOffset, jumpScrollBy } from '../lib/segmentScroll';

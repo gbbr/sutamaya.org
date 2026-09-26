@@ -2,7 +2,7 @@ import type { RefObject } from 'react';
 import type { Highlighter } from 'lucide-react';
 import { ArrowUpDown, List, Folder } from 'lucide-react';
 import type { ListDef, ListKind } from '../lib/types';
-import type { DropIndicator } from '../lib/listTreeDrop';
+import type { DropIndicator } from '../lib/lists/listTreeDrop';
 import { ListRow, type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from './ListRow';
 import { SlidingPillToggle } from './SlidingPillToggle';
 import { LIST_NAME_MAX_LENGTH } from '../lib/textLimits';

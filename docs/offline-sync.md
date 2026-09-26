@@ -202,10 +202,10 @@ the reader to decide.
 
 | Where | What |
 |---|---|
-| `web/src/lib/mirror.ts` | the mirror, and every change to it |
-| `web/src/lib/sync.ts` | the flush |
-| `web/src/lib/mirrorView.ts`, `listTree.ts` | what the UI sees; tree repair |
-| `web/src/lib/mirrorDb.ts` | storage in IndexedDB |
+| `web/src/lib/sync/mirror.ts` | the mirror, and every change to it |
+| `web/src/lib/sync/sync.ts` | the flush |
+| `web/src/lib/sync/mirrorView.ts`, `web/src/lib/lists/listTree.ts` | what the UI sees; tree repair |
+| `web/src/lib/sync/mirrorDb.ts` | storage in IndexedDB |
 | `web/src/lib/highlights.ts`, `segmentKeys.ts` | overlaps and painting; key order |
 | `web/src/context/UserDataContext.tsx` | when the flush runs; the sync state |
 | `worker/src/routes/data.js` | the snapshot, its tag, and the push |

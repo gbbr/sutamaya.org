@@ -15,9 +15,9 @@ import {
   syncCounts,
   writeHighlightRecord,
   type MirrorState,
-} from '../../../../web/src/lib/mirror';
-import { flushMirror } from '../../../../web/src/lib/sync';
-import { deriveUserData } from '../../../../web/src/lib/mirrorView';
+} from '../../../../web/src/lib/sync/mirror';
+import { flushMirror } from '../../../../web/src/lib/sync/sync';
+import { deriveUserData } from '../../../../web/src/lib/sync/mirrorView';
 import { PUSH_MAX_ITEMS } from '../data.js';
 
 // The one test that crosses the client/server seam. Everywhere else the two halves are verified
@@ -26,9 +26,9 @@ import { PUSH_MAX_ITEMS } from '../data.js';
 // or a drifted response shape — which is exactly what changing the notes payload to `{text, m}`
 // did once already.
 //
-// So this runs the *real* client stack — lib/mirror.ts, lib/sync.ts and lib/api.ts, unmocked —
-// against the real Worker and real D1, by routing `fetch` into `app.request`. A "device" is a
-// MirrorState plus the flush cycle UserDataContext performs around it (markDispatched, flush,
+// So this runs the *real* client stack — lib/sync/mirror.ts, lib/sync/sync.ts and lib/api.ts,
+// unmocked — against the real Worker and real D1, by routing `fetch` into `app.request`. A "device"
+// is a MirrorState plus the flush cycle UserDataContext performs around it (markDispatched, flush,
 // applyFlushOutcome); two devices sharing one account are two MirrorStates and one cookie.
 
 async function signIn() {

@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, onTestFinished, vi } from 'vitest';
 import { act, waitFor } from '@testing-library/react';
 import { renderRoutes } from '../../testRouter';
-import { registerBackHandler } from '../../lib/backButton';
+import { registerBackHandler } from '../../lib/native/backButton';
 import { useNativeBack } from '../useNativeBack';
 
 // Android's back button as the hook subscribes to it, and how often the app went to the background.

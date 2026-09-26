@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { computeGutterLayout, markHitAreas } from '../highlightGutterLayout';
-import type { SegmentFile } from '../corpus';
+import type { SegmentFile } from '../corpus/corpus';
 import type { Highlight } from '../types';
 
 // The loaded text a mark's position is resolved against, and the key of the segment at position `i`.

@@ -1,5 +1,5 @@
 import { ChevronDown, ChevronRight } from 'lucide-react';
-import { isExpandable } from '../lib/corpus';
+import { isExpandable } from '../lib/corpus/corpus';
 import type { Corpus } from '../lib/types';
 import { TreeRow } from './TreeRow';
 

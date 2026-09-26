@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { act, renderHook } from '@testing-library/react';
 import { useHighlightPopup } from '../useHighlightPopup';
-import type { SegmentFile } from '../../lib/corpus';
+import type { SegmentFile } from '../../lib/corpus/corpus';
 import type { Highlight } from '../../lib/types';
 
 vi.mock('../../context/UserDataContext', () => ({ useUserData: vi.fn() }));

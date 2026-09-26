@@ -53,7 +53,7 @@ vi.mock('@capacitor/browser', () => ({
 }));
 
 const stored = vi.hoisted(() => ({ token: null as string | null }));
-vi.mock('../../lib/nativeAuth', () => ({
+vi.mock('../../lib/native/nativeAuth', () => ({
   hydrateNativeToken: async () => {},
   getNativeToken: () => stored.token,
   setNativeToken: async (t: string) => {
@@ -68,8 +68,8 @@ const me = vi.hoisted(() => ({
   fn: vi.fn(async () => ({ user: null as { id: string; email: string; name: null; picture: null } | null })),
 }));
 vi.mock('../../lib/api', () => ({ authApi: { me: () => me.fn() } }));
-vi.mock('../../lib/mirrorDb', () => ({ deleteMirror: async () => {} }));
-vi.mock('../../lib/appleSignIn', () => ({ AppleSignIn: { authorize: vi.fn() } }));
+vi.mock('../../lib/sync/mirrorDb', () => ({ deleteMirror: async () => {} }));
+vi.mock('../../lib/native/appleSignIn', () => ({ AppleSignIn: { authorize: vi.fn() } }));
 const navigate = vi.hoisted(() => vi.fn(async () => {}));
 vi.mock('react-router', async (importOriginal) => ({
   ...(await importOriginal<typeof import('react-router')>()),

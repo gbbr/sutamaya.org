@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { registerBackHandler } from '../lib/backButton';
+import { registerBackHandler } from '../lib/native/backButton';
 import { useLatest } from './useLatest';
 
 // Registers `onBack` as a dismiss action for the native apps' Back (useNativeBack) while `active` is

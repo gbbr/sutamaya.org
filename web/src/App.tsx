@@ -8,7 +8,7 @@ import { useNativeBack } from './hooks/useNativeBack';
 import { useNativeLinks } from './hooks/useNativeLinks';
 import { useCorpus } from './context/CorpusContext';
 import { getLastLocation, rememberLocation } from './lib/lastLocation';
-import { normalizeRouteId, resolveCanonicalSuttaId } from './lib/corpus';
+import { normalizeRouteId, resolveCanonicalSuttaId } from './lib/corpus/corpus';
 import { RETURN_STATE } from './lib/entryKind';
 import { HelpPage } from './pages/HelpPage';
 import { LibraryPage } from './pages/LibraryPage';

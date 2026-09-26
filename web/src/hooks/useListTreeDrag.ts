@@ -7,7 +7,7 @@ import {
   planListDrop,
   type DropRow,
   type DropIndicator,
-} from '../lib/listTreeDrop';
+} from '../lib/lists/listTreeDrop';
 import type { DropZone, ListDef } from '../lib/types';
 
 interface UseListTreeDragParams {
@@ -56,8 +56,8 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
   }, []);
 
   // Resolves which row the pointer is over and what dropping there would do, from each visible
-  // row's current rect (resolveTreeDropTarget, lib/listTreeDrop.ts). Rows are sorted by screen
-  // position, since a prior drag can reorder them without remounting any.
+  // row's current rect (resolveTreeDropTarget, lib/lists/listTreeDrop.ts). Rows are sorted by
+  // screen position, since a prior drag can reorder them without remounting any.
   const updateDropTarget = useCallback(
     (y: number) => {
       const draggedId = dragIdRef.current;
@@ -86,7 +86,8 @@ export function useListTreeDrag({ lists, listChildrenOf, topLevelLists, scrollRe
     [lists]
   );
 
-  // Applies a drop, through the plan planListDrop (lib/listTreeDrop.ts) works out for its zone.
+  // Applies a drop, through the plan planListDrop (lib/lists/listTreeDrop.ts) works out for its
+  // zone.
   const commitDrop = useCallback(
     async (draggedId: string, target: ListDef, zone: DropZone) => {
       const plan = planListDrop(lists, draggedId, target, zone, listChildrenOf, topLevelLists);

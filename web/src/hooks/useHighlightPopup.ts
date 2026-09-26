@@ -3,7 +3,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useLatest } from './useLatest';
 import { spansOverlap, type HlSpan } from '../lib/highlights';
 import { platformName } from '../lib/platform';
-import type { SegmentFile } from '../lib/corpus';
+import type { SegmentFile } from '../lib/corpus/corpus';
 import type { Highlight } from '../lib/types';
 
 // Android's WebView commits a selection through its own `ActionMode` bar and fires no usable

@@ -7,7 +7,7 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { UserDataProvider, useUserData } from '../UserDataContext';
 import type { PushItem, PushResult, UserData } from '../../lib/api';
 import type { ListDef } from '../../lib/types';
-import { RECENT_AUTO_LIST_ID } from '../../lib/autoLists';
+import { RECENT_AUTO_LIST_ID } from '../../lib/lists/autoLists';
 
 // UserDataProvider reads `useAuth()` straight from AuthContext (not injected), so a signed-in
 // user is stubbed here rather than wrapping every test in a real AuthProvider (which would need
@@ -16,9 +16,9 @@ import { RECENT_AUTO_LIST_ID } from '../../lib/autoLists';
 // mock-factory time); given a fresh id per test in beforeEach, since the mirror is keyed by user
 // id and fake-indexeddb keeps its contents for the whole file.
 let mockUser: { id: string; email: string; name: string; picture: string } | null = null;
-// The id the provider files data under while signed out (see lib/localAccount.ts). Given a fresh
-// value per test alongside `mockUser`, for the same reason: fake-indexeddb keeps its contents for
-// the whole file, and a shared local id would leak one test's signed-out mirror into the next.
+// The id the provider files data under while signed out (see lib/sync/localAccount.ts). Given a
+// fresh value per test alongside `mockUser`, for the same reason: fake-indexeddb keeps its contents
+// for the whole file, and a shared local id would leak one test's signed-out mirror into the next.
 let mockLocalId = 'local-test';
 const promptGoogleSignIn = vi.fn();
 // The teardown a deleted account triggers. Stubbed to do what the real one does from this
@@ -50,7 +50,7 @@ vi.mock('../../lib/api', () => ({
   dataApi: {
     all: (...args: unknown[]) => dataApiAll(...args),
     // The flush's pull, answered in full from `dataApiAll` and untagged, so every flush here pulls
-    // the whole snapshot. lib/__tests__/sync.test.ts covers the tagged pull.
+    // the whole snapshot. lib/sync/__tests__/sync.test.ts covers the tagged pull.
     pull: async () => ({ changed: true, snapshot: await dataApiAll(), tag: null }),
     push: (...args: unknown[]) => dataApiPush(...args),
   },

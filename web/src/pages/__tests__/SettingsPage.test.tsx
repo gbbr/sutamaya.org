@@ -18,7 +18,7 @@ vi.mock('../../context/UserDataContext', () => ({ useUserData: vi.fn() }));
 vi.mock('../../lib/api', () => ({
   dataApi: { all: vi.fn(), exportUrl: '/api/data/export' },
 }));
-vi.mock('../../lib/offline', () => ({
+vi.mock('../../lib/corpus/offline', () => ({
   estimateOfflineStatus: vi.fn(async () => ({ cached: 0, total: 10 })),
   lastOfflineStatus: vi.fn(() => null),
   prefetchAllSuttas: vi.fn(async () => ({ failed: [], circuitTripped: false })),
@@ -42,7 +42,7 @@ import {
   prefetchAllSuttas,
   prefetchDictionary,
   recordCachedCorpusVersion,
-} from '../../lib/offline';
+} from '../../lib/corpus/offline';
 import { SettingsPage } from '../SettingsPage';
 import type { Corpus, User } from '../../lib/types';
 

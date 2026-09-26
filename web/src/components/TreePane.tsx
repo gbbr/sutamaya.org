@@ -14,8 +14,8 @@ import { useActiveHitIndex } from '../hooks/useActiveHitIndex';
 import { useBackHandler } from '../hooks/useBackHandler';
 import { useRecentSearches } from '../hooks/useRecentSearches';
 import { clearRecentSearches, isSameSearch, removeRecentSearch } from '../lib/recentSearches';
-import { ancestorsOf, descendantIdsOf, findNode, flatSuttaOrder, isExpandable } from '../lib/corpus';
-import { prefetchSuttaText } from '../lib/suttaPrefetch';
+import { ancestorsOf, descendantIdsOf, findNode, flatSuttaOrder, isExpandable } from '../lib/corpus/corpus';
+import { prefetchSuttaText } from '../lib/corpus/suttaPrefetch';
 import {
   LIST_RESULTS_CAP,
   SEARCH_CAP_NOTE,
@@ -28,13 +28,13 @@ import {
 } from '../lib/search/metadata';
 import { searchNoMatches, windowOnMatch, type TextSearchStatus } from '../lib/search/text';
 import { beginTextSearchLoad } from '../lib/search/textClient';
-import { ancestorsOfList, flattenListTree, suttaRowMeta } from '../lib/lists';
+import { ancestorsOfList, flattenListTree, suttaRowMeta } from '../lib/lists/lists';
 import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
 import { MOBILE_TOP_INSET } from '../lib/layout';
 import { derivePaneViewSync } from '../lib/paneView';
 import { transitionPage } from '../lib/motion';
 import { TREE_VIEW_KEY, TREE_EXPANDED_KEY } from '../lib/storageKeys';
-import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/autoLists';
+import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../lib/lists/autoLists';
 import { SHORTCUTS, isShortcut } from '../lib/shortcuts';
 import type { ListDef } from '../lib/types';
 import { SignedInBadge } from './SignedInBadge';
