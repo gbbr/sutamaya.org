@@ -14,6 +14,7 @@
 //                      patisambhida-analytical-knowledge, dhamma-the-dhamma, atapi-ardent
 //   awareness          satipatthana-establishment-of-awareness, sati-aware,
 //                      sampajanna-clear-comprehension, vippasanna-calm
+//   breakthrough       abhisamaya-breakthrough
 //   arising / passing  samudaya-arising, vaya-passing-away, atthangama-disappearing,
 //                      udayabbaya-arising-passing-away
 //   change             viparinama-annathatta-change-unstable, viparinama-anuparivatti-changing
@@ -245,6 +246,45 @@ export const RULES = [
     forms: [
       ['minds that are clear', 'minds that are calm'],
       ['joyful and clear', 'joyful and calm'],
+    ],
+  },
+  // ── Breakthrough ────────────────────────────────────────────────────────────
+  // Runs after sampajanna-clear-comprehension, so the "clear comprehension" it writes is locked
+  // before this rule's "comprehension" form can reach it.
+  {
+    id: 'abhisamaya-breakthrough',
+    why: 'Bhikkhu Sujato renders abhisamaya as "comprehension"; this app uses "breakthrough", Bhikkhu ' +
+      'Bodhi’s rendering in SN ("Connected Discourses on the Breakthrough") and Thanissaro’s. The DPD ' +
+      'glosses the verb "completely realizes; fully grasps; makes a breakthrough (to)", and SN 13.1 ' +
+      'pairs dhammābhisamaya with gaining the vision of the Dhamma — stream-entry, a single event. ' +
+      'The forms follow Bodhi slot by slot: the noun is "breakthrough (to)", the present and gerund ' +
+      '"break through to", the past "made the breakthrough to", abhisametāvī "who has made the ' +
+      'breakthrough", and conceit and contact take no "to" ("breaking through conceit", SN 36.3). ' +
+      'Closed, and limited to the breakthrough itself — the Dhamma, the noble truths, conceit, the ' +
+      'Buddha’s awakening. The denials are his "comprehend" for other terms (pajānāti, paṭivedha, ' +
+      'pariññā) and the abhisamaya lines about understanding a meaning (AN 10.27–28, atthābhisamayā, ' +
+      'MN 37) or in AN 9.13’s list of negatives, where "breakthrough" reads badly. His other ' +
+      'renderings of the term stay too: Vipassī’s "penetrated with wisdom" (DN 14, SN 12) and the ' +
+      'Metta Sutta’s "to realize the state of peace".',
+    mode: 'allow',
+    predicate: /bhisam(?:ay|e|i)/i,
+    forms: [
+      ['comprehension', 'breakthrough'],
+      ['comprehension of', 'breakthrough to'],
+      ['on comprehension', 'on the breakthrough'],
+      ['with comprehension', 'who has made the breakthrough'],
+      ['penetration of the truths', 'breakthrough to the truths'],
+      ['comprehend', 'break through to'],
+      ['comprehends', 'breaks through to'],
+      // SN 56.4's comprehend without an object.
+      ['comprehend after', 'break through after'],
+      ['comprehend conceit', 'break through conceit'],
+      ['comprehending', 'breaking through to'],
+      // Two words, so SN 33's title reads "Not Breaking Through to Form".
+      ['not comprehending', 'not breaking through to'],
+      ['comprehending conceit', 'breaking through conceit'],
+      ['comprehending contact', 'breaking through contact'],
+      ['comprehended', 'made the breakthrough to'],
     ],
   },
   // ── Arising and passing away ────────────────────────────────────────────────
@@ -1022,20 +1062,17 @@ export const RULES = [
     to: 'Furthermore, someone has clear comprehension when conceived in their mother’s womb, with clear comprehension as they remain there, and with clear comprehension as they emerge. This is the fourth kind of conception. ',
   },
 
-  // ·· sampajañña meeting Bhikkhu Sujato's own "comprehend" ··
-  // "Clear comprehension" lands beside Bhikkhu Sujato's "comprehend", which is his word for
-  // abhisamaya — a different term. Only this one segment has both in the same sentence.
+  // ·· abhisamaya-breakthrough in a construction its parallel line words differently ··
   {
-    id: 'sn56-34-abhisamaya-understand',
+    id: 'sn56-34-abhisamaya-in-order-to',
     kind: 'segment',
-    why: 'yathābhūtaṁ abhisamayāya, which Bhikkhu Sujato renders "truly comprehending" — his word for ' +
-      'abhisamaya, unrelated to sampajañña. Once sampajañña is "clear comprehension" the two say ' +
-      'different things with the same root in one sentence, so abhisamaya moves rather than the ' +
-      'app’s own term. "In order to" makes the line parallel to 1.2, the same karaṇīyaṁ ' +
-      'construction in the Pali.',
+    why: 'yathābhūtaṁ abhisamayāya, which Bhikkhu Sujato renders "apply … to truly comprehending". ' +
+      'abhisamaya-breakthrough’s rendering, written here whole because the line’s "clear ' +
+      'comprehension" is also a form of that rule; "in order to" makes it parallel to 1.2, the same ' +
+      'karaṇīyaṁ construction in the Pali.',
     segment: 'sn56.34:2.1',
     from: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and clear comprehension to truly comprehending the four noble truths. ',
-    to: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and clear comprehension in order to truly understand the four noble truths. ',
+    to: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and clear comprehension in order to truly break through to the four noble truths. ',
   },
 
   // ·· awareness word order ··

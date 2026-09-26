@@ -288,6 +288,19 @@ describe('the shipped rules, one example each', () => {
     ['atapi-ardent', 'sn1.23:2.3', 'sujato/sutta', 'a keen and alert mendicant—', 'an ardent and alert bhikkhu—'],
     // Denied: tibbagārava, "keen respect" for the Saṅgha — an intensity word, nothing of ātāpī.
     ['atapi-ardent', 'sn1.49:7.2', 'sujato/sutta', 'with keen respect for the Saṅgha?', 'with keen respect for the Saṅgha?'],
+    // One per slot abhisamaya occupies: the noun, the noun in a title, abhisametāvī, the present,
+    // the present without an object, the gerund, the gerund in a title, conceit, and the past.
+    ['abhisamaya-breakthrough', 'sn56.35:2.6', 'sujato/sutta', 'But the comprehension of the four noble truths doesn’t come with pain', 'But the breakthrough to the four noble truths doesn’t come with pain'],
+    ['abhisamaya-breakthrough', 'sn-name:400.sn13', 'sujato/name', 'Linked Discourses on Comprehension', 'Linked Discourses on the Breakthrough'],
+    ['abhisamaya-breakthrough', 'sn13.2:3.1', 'sujato/sutta', 'for an individual with comprehension, a noble disciple accomplished in view', 'for an individual who has made the breakthrough, a noble disciple accomplished in view'],
+    ['abhisamaya-breakthrough', 'sn12.20:2.4', 'sujato/sutta', 'A Realized One awakens to this and comprehends it,', 'A Realized One awakens to this and breaks through to it,'],
+    ['abhisamaya-breakthrough', 'sn56.4:1.3', 'sujato/sutta', 'truly comprehend after rightly going forth from the lay life to homelessness, all of them truly comprehend the four noble truths.', 'truly break through after rightly going forth from the lay life to homelessness, all of them truly break through to the four noble truths.'],
+    ['abhisamaya-breakthrough', 'sn56.32:1.2', 'sujato/sutta', '‘Without truly comprehending the noble truths of suffering', '‘Without truly breaking through to the noble truths of suffering'],
+    ['abhisamaya-breakthrough', 'sn33.11:0.3', 'sujato/sutta', 'Five Discourses on Not Comprehending Form, Etc.', 'Five Discourses on Not Breaking Through to Form, Etc.'],
+    ['abhisamaya-breakthrough', 'sn36.3:1.5', 'sujato/sutta', 'and by rightly comprehending conceit has made an end of suffering.', 'and by rightly breaking through conceit has made an end of suffering.'],
+    ['abhisamaya-breakthrough', 'sn22.83:4.14', 'sujato/sutta', 'I comprehended the teaching.”', 'I made the breakthrough to the teaching.”'],
+    // Denied: understanding a meaning, not the breakthrough.
+    ['abhisamaya-breakthrough', 'an10.27:10.3', 'sujato/sutta', 'seeing its limits and fully comprehending its meaning', 'seeing its limits and fully comprehending its meaning'],
     // Runs ahead of sati-aware, which would otherwise take the "mindfulness" of this phrase on its
     // own and leave "awareness meditation" behind. The plural form absorbs "kinds of".
     ['satipatthana-establishment-of-awareness', 'sn52.1:1.4', 'sujato/sutta', 'missed out on these four kinds of mindfulness meditation', 'missed out on these four establishments of awareness'],
