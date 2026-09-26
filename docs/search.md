@@ -192,12 +192,12 @@ the repo.
 | Where | What |
 |---|---|
 | `web/src/lib/search/metadata.ts` | metadata search, list and collection matching, the shared wording, the function words |
-| `web/src/components/SearchListHits.tsx` | the collections and lists block |
+| `web/src/components/search/SearchListHits.tsx` | the collections and lists block |
 | `web/src/lib/search/text.ts` | matching, ranking and snippets over the text |
-| `web/src/components/ReaderSearchOverlay.tsx` | the Reader's search |
+| `web/src/components/search/ReaderSearchOverlay.tsx` | the Reader's search |
 | `web/src/lib/search/worker.ts`, `textClient.ts` | the worker, and the main thread's side of it |
 | `web/src/lib/search/expansion.ts` | the expansion table |
 | `web/src/hooks/useCorpusSearch.ts` | the two halves combined for a page |
-| `web/src/lib/recentSearches.ts`, `web/src/hooks/useRecentSearches.ts` | the history, and the hook that reads it |
-| `web/src/components/RecentSearches.tsx` | the list both searches draw |
+| `web/src/lib/search/recentSearches.ts`, `web/src/hooks/useRecentSearches.ts` | the history, and the hook that reads it |
+| `web/src/components/search/RecentSearches.tsx` | the list both searches draw |
 | `scripts/search-golden.json`, `web/src/lib/search/__tests__/golden.test.ts` | the golden queries |

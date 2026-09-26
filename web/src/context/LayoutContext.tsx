@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react';
 import { usePersistedState } from '../hooks/usePersistedState';
-import { MOBILE_BREAKPOINT } from '../lib/layout';
+import { MOBILE_BREAKPOINT } from '../lib/ui/layout';
 import { LAYOUT_PREFS_KEY } from '../lib/storageKeys';
 
 interface LayoutPrefs {

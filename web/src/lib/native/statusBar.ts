@@ -2,9 +2,9 @@ import { StatusBar, Style } from '@capacitor/status-bar';
 import { isNativeApp } from '../platform';
 
 // Keeps the native status bar's text and icons legible against whatever currently sits behind them —
-// the shell's light/dark theme, or the reader's own background (lib/themeColor.ts drives both). The
-// app's theme is its own setting, independent of the OS's, so the bar can't be left to follow the
-// system. Inert on web, where `<meta name="theme-color">` governs the OS chrome instead.
+// the shell's light/dark theme, or the reader's own background (lib/ui/themeColor.ts drives both).
+// The app's theme is its own setting, independent of the OS's, so the bar can't be left to follow
+// the system. Inert on web, where `<meta name="theme-color">` governs the OS chrome instead.
 //
 // The plugin is imported statically: a Capacitor plugin behind a dynamic import can deadlock in the
 // WebView when it is reached on the startup path, which this is (main.tsx applies the theme before

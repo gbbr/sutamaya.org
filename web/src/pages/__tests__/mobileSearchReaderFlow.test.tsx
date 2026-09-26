@@ -26,7 +26,7 @@ import { LibraryPage } from '../LibraryPage';
 import { ReaderPage } from '../ReaderPage';
 import { SEARCH_PLACEHOLDER } from '../../lib/search/metadata';
 import { LIBRARY_VIEW_KEY } from '../../lib/storageKeys';
-import { tagIntent } from '../../lib/routeIntent';
+import { tagIntent } from '../../lib/navigation/routeIntent';
 import type { Corpus } from '../../lib/types';
 
 // The pages a reader round trip crosses, routed as App.tsx routes them — the library with nothing

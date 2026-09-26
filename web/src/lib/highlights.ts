@@ -1,6 +1,6 @@
 import type { SegmentFile } from './corpus/corpus';
 import { compareSegmentKeys, segmentIndex } from './corpus/segmentKeys';
-import { HIGHLIGHT_COLORS } from './theme';
+import { HIGHLIGHT_COLORS } from './ui/theme';
 import type { Highlight } from './types';
 
 // Highlight geometry: which highlights a new selection displaces, and how overlapping ones resolve

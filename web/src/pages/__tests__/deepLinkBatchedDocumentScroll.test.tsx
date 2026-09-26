@@ -1,7 +1,7 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { act, screen, waitFor } from '@testing-library/react';
 import { renderRoutes } from '../../testRouter';
-import { tagIntent } from '../../lib/routeIntent';
+import { tagIntent } from '../../lib/navigation/routeIntent';
 
 // Two things a deep link straight into the reader has to get right, both exercised through the
 // real ReaderPage wiring rather than the helpers underneath it.

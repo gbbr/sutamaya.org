@@ -1,0 +1,681 @@
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { ArrowUpDown, ChevronDown, Eye, GripVertical, List, ListPlus, MoveLeft } from 'lucide-react';
+import { useCorpus } from '../../context/CorpusContext';
+import { useUserData } from '../../context/UserDataContext';
+import { useLayout } from '../../context/LayoutContext';
+import { forgetScrollPosition, useScrollMemory } from '../../hooks/useScrollMemory';
+import { usePointerDragSession } from '../../hooks/usePointerDragSession';
+import { findNode, isExpandable, listItemsFor, nodeBlurb, nodeLabel } from '../../lib/corpus/corpus';
+import { prefetchSuttaText } from '../../lib/corpus/suttaPrefetch';
+import { SEARCH_CAP_NOTE, SEARCH_RESULTS_CAP, suttaHitsHeading, type ListBlockHit, type SearchHit } from '../../lib/search/metadata';
+import { searchScopeNote, windowOnMatch, type TextSearchStatus } from '../../lib/search/text';
+import { flattenListTree, suttaRowMeta } from '../../lib/lists/lists';
+import { resolveDragReorder, type ItemMidpoint } from '../../lib/lists/listPaneDrag';
+import { BackButton } from '../BackButton';
+import { MatchedText } from '../MatchedText';
+import { SearchListHits } from '../search/SearchListHits';
+import { TextSearchProgress } from '../search/TextSearchProgress';
+import { SearchUpdating } from '../search/SearchUpdating';
+import { SuttaRowChips } from '../SuttaRowChips';
+import { ListMembershipPopover } from './ListMembershipPopover';
+import type { Sutta } from '../../lib/types';
+
+interface ListPaneProps {
+  nodeId?: string;
+  selectedId?: string;
+  query: string;
+  // The sutta hits, scanned once by LibraryPage and shared with TreePane, so both panes show one
+  // result set.
+  hits: SearchHit[];
+  // The list hits, drawn as their own block above the results, already trimmed to what renders.
+  listHits: ListBlockHit[];
+  listHitTotal: number;
+  // Every list hit counted, one entry per kind, for the results heading.
+  listHitCounts: string[];
+  // The lists block's own heading, counting every list hit.
+  listHitHeading: string;
+  // Whether the sutta text is searchable yet, which is what the line under an empty result says.
+  textStatus: TextSearchStatus;
+  // Whether the results are waiting on that text, said in place of the rows.
+  textPending: boolean;
+  // Whether `hits` is the complete answer to the query, which the scroll restore waits for.
+  hitsSettled?: boolean;
+  // Whether the rows on screen are the previous answer, held while a newer one is scanned.
+  updating?: boolean;
+  listsExpanded: boolean;
+  onToggleListsExpanded: () => void;
+  onSelectList: (nodeId: string) => void;
+  // The sutta hit TreePane's arrow-key cursor is on, mirrored onto that row here.
+  activeId?: string;
+  // The hit the cursor was placed on for this mount, rather than moved to: the result this mount is
+  // a return from.
+  restoreHitId?: string;
+  // The same, while that cursor is up in the lists block instead.
+  activeListId?: string;
+  // Whether that cursor is on the lists block's toggle.
+  listToggleActive?: boolean;
+  onBack: () => void;
+  // `snippet` is the passage a text hit was found in, which the reader opens at; absent for every
+  // other row.
+  onOpen: (id: string, snippet?: SearchHit['snippet']) => void;
+  // False while this pane is mounted but hidden on mobile, which scroll restoration has to know.
+  visible?: boolean;
+}
+
+const plural = (n: number, noun: string) => `${n} ${noun}${n === 1 ? '' : 's'}`;
+
+export function ListPane({
+  nodeId,
+  selectedId,
+  query,
+  hits,
+  listHits,
+  listHitTotal,
+  listHitCounts,
+  listHitHeading,
+  textStatus,
+  textPending,
+  hitsSettled = true,
+  updating = false,
+  listsExpanded,
+  onToggleListsExpanded,
+  onSelectList,
+  activeId,
+  restoreHitId,
+  activeListId,
+  listToggleActive,
+  onBack,
+  onOpen,
+  visible = true,
+}: ListPaneProps) {
+  const { corpus } = useCorpus();
+  const { ready, lists, membership, notes, highlights, visited, reorderListItems } = useUserData();
+  const { mobile, paneW } = useLayout();
+  // The pane's scroll, held until the mirror lands and the results are complete: a row's note text
+  // and highlight count arrive after the row, and the sutta text's hits after the metadata ones,
+  // either of them shifting or shortening the list under a restored position.
+  const scrollKey = `list:${query.trim() ? 'search' : nodeId || 'none'}`;
+  const scrollRef = useScrollMemory<HTMLDivElement>(scrollKey, visible, { readyToRestore: ready && hitsSettled });
+  const itemRowRefs = useRef<Map<string, HTMLDivElement>>(new Map());
+  // A new query opens at the top, and forgets where the query before it was left: its rows are a
+  // different set, and an offset against them means nothing. Not the query this mount arrived on,
+  // whose offset is what the restore above is putting back, and not a cleared one, which hands the
+  // pane back to the browsed node and its own offset.
+  const lastQueryRef = useRef(query.trim());
+  useEffect(() => {
+    const q = query.trim();
+    if (q === lastQueryRef.current) return;
+    lastQueryRef.current = q;
+    if (!q) return;
+    forgetScrollPosition(scrollKey);
+    if (scrollRef.current) scrollRef.current.scrollTop = 0;
+  }, [query, scrollKey, scrollRef]);
+
+  const searching = query.trim().length > 0;
+  // What the rows mark up: nothing while browsing, this pane drawing browse rows and results
+  // through the same map.
+  const rowQuery = searching ? query : '';
+  const currentList = !searching ? lists.find((l) => String(l.id) === nodeId) : undefined;
+  const flatLists = useMemo(() => flattenListTree(lists), [lists]);
+
+  // The rows to draw: the capped hits while searching, else whatever the selected node or list
+  // holds, in its own order. `hits` stays uncapped, so the count below is honest. A pane hidden
+  // behind the other one draws no results — on mobile both stay mounted, and the hidden one would
+  // otherwise rebuild every row on each keystroke for a screen nobody is looking at.
+  const items = useMemo<Array<[string, Sutta]>>(() => {
+    // A placeholder for the window before the corpus lands, in which the pane renders nothing.
+    if (!corpus) return [];
+    if (searching) {
+      if (!visible) return [];
+      return hits.slice(0, SEARCH_RESULTS_CAP).map(({ id, sutta }) => [id, sutta] as [string, Sutta]);
+    }
+    return listItemsFor(corpus, nodeId, lists);
+  }, [corpus, nodeId, lists, searching, hits, visible]);
+
+  // Whether these rows can be reordered: only a user list's, an auto-list's membership being
+  // derived, and only once two of them have somewhere to move.
+  const canReorder = !!currentList && !currentList.auto && items.length >= 2;
+  // Whether the rows and the count line mark visited suttas: everywhere but an auto-list.
+  const showVisited = !currentList?.auto;
+
+  // Where a row opens to, when that isn't the row's own id — a hit inside a batched document is
+  // keyed by the batch and opens on the inner sutta it matched.
+  const openTargets = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const h of hits) if (h.matchedId) map.set(h.id, h.matchedId);
+    return map;
+  }, [hits]);
+
+  // What each hit found, and where: the paragraph of the sutta's own text the query was answered in,
+  // and which of the row's own lines — the reader's note, the group description — carried it too.
+  const found = useMemo(() => {
+    const map = new Map<string, Pick<SearchHit, 'snippet' | 'explains'>>();
+    for (const h of hits) if (h.snippet || h.explains) map.set(h.id, { snippet: h.snippet, explains: h.explains });
+    return map;
+  }, [hits]);
+
+  // Each row's chips and highlight count, keyed off `items` rather than the drag's own order, so
+  // the map survives a whole gesture rather than being rebuilt on every frame.
+  const rowMeta = useMemo(
+    () => suttaRowMeta(items.map(([id]) => id), membership, highlights, flatLists, currentList?.id),
+    [items, membership, flatLists, highlights, currentList?.id]
+  );
+
+  // The live order while a row is being dragged, rendered in place of `items` and reshuffled as
+  // the pointer crosses row midpoints.
+  const [dragOrder, setDragOrder] = useState<string[] | null>(null);
+  // Whether the drag handles are showing, which takes space from every row, so they wait for the
+  // header's toggle — itself shown only when `canReorder`.
+  const [reorderMode, setReorderMode] = useState(false);
+  // The row whose membership popover is open, and the rect of the control that opened it. Held
+  // here so it outlives the row: unchecking the list being viewed drops that sutta out of `items`.
+  const [picker, setPicker] = useState<{ suttaId: string; anchor: DOMRect } | null>(null);
+  // Whether the blurb is expanded past its clamp, and whether it has anything to expand to —
+  // measured after layout, where the text wraps depending on the pane's width and the type scale.
+  const [blurbOpen, setBlurbOpen] = useState(false);
+  const [blurbOverflows, setBlurbOverflows] = useState(false);
+  const blurbRef = useRef<HTMLDivElement | null>(null);
+  const dragIdRef = useRef<string | null>(null);
+  // Mirrors `dragOrder` for endDrag, whose window listener is registered once at drag-start and
+  // would otherwise read the order as it was then — null.
+  const dragOrderRef = useRef<string[] | null>(null);
+
+  const displayItems: Array<[string, Sutta]> =
+    dragOrder && corpus
+      ? dragOrder.flatMap((id) => (corpus.suttas[id] ? [[id, corpus.suttas[id]] as [string, Sutta]] : []))
+      : items;
+
+  function updateDragTarget(y: number) {
+    const id = dragIdRef.current;
+    if (!id) return;
+    setDragOrder((order) => {
+      if (!order) return order;
+      const mids = order
+        .map((itemId) => {
+          const el = itemRowRefs.current.get(itemId);
+          if (!el) return null;
+          const rect = el.getBoundingClientRect();
+          return { itemId, mid: rect.top + rect.height / 2 };
+        })
+        .filter((x): x is ItemMidpoint => !!x);
+      const next = resolveDragReorder(order, id, mids, y);
+      if (next === order) return order;
+      dragOrderRef.current = next;
+      return next;
+    });
+  }
+
+  const dragSession = usePointerDragSession({ scrollRef, onFrame: updateDragTarget });
+
+  function endDrag() {
+    // Idempotent: a no-op once the session tore itself down on pointerup, and the only teardown
+    // path when this is called from a bail-out.
+    dragSession.cancel();
+    dragIdRef.current = null;
+    // Read through the ref rather than committed inside setDragOrder's updater, which has to be
+    // pure — reorderListItems sets state, which React flags as a render-phase update.
+    const order = dragOrderRef.current;
+    dragOrderRef.current = null;
+    setDragOrder(null);
+    if (order && currentList) reorderListItems(currentList.id, order);
+  }
+
+  function onHandlePointerDown(e: React.PointerEvent, id: string) {
+    if (!currentList) return;
+    e.preventDefault();
+    e.stopPropagation();
+    dragIdRef.current = id;
+    const initialOrder = currentList.items.slice();
+    dragOrderRef.current = initialOrder;
+    setDragOrder(initialOrder);
+    dragSession.start(e, { onEngage: () => {}, onEnd: endDrag });
+  }
+
+  // Ends an in-flight drag when the list changes under it, rather than leaving stale refs and a
+  // running rAF loop.
+  useEffect(() => {
+    if (dragIdRef.current) endDrag();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [nodeId]);
+
+  // The same on unmount, which the effect above, keyed on `nodeId`, doesn't cover.
+  useEffect(() => {
+    return () => {
+      if (dragIdRef.current) endDrag();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Dismisses the membership popover, which is anchored to a rect captured at open, whenever
+  // anything moves the rows under it: the pane's contents, reorder mode, or the pane being hidden.
+  useEffect(() => {
+    setPicker(null);
+  }, [nodeId, searching, reorderMode, visible]);
+
+  // Collapses the blurb on a new node. A layout effect, so a node is never drawn with its blurb
+  // still expanded from the one before.
+  useLayoutEffect(() => {
+    setBlurbOpen(false);
+  }, [nodeId]);
+
+  // Measures whether the blurb overflows its clamp, after every render that could change the wrap:
+  // a new blurb, the clamp coming off, the pane being resized or revealed. A layout effect, so the
+  // "More" row is drawn with the paragraph rather than a frame after it, pushing every row down.
+  useLayoutEffect(() => {
+    const el = blurbRef.current;
+    if (!el) {
+      setBlurbOverflows(false);
+      return;
+    }
+    setBlurbOverflows(blurbOpen || el.scrollHeight > el.clientHeight + 1);
+  }, [nodeId, blurbOpen, paneW, visible, mobile]);
+
+  // Leaves reorder mode when the toggle that turns it off stops being shown.
+  useEffect(() => {
+    if (!canReorder) setReorderMode(false);
+  }, [canReorder]);
+
+  // Reveals the sutta the reader came from, a list-membership chip in the Reader opening this pane
+  // with `selectedId` set. `block: 'nearest'` keeps it a no-op when the row is already in view.
+  // Stands down while searching, where the restored scroll position owns where the pane opens.
+  useEffect(() => {
+    if (!selectedId || searching) return;
+    itemRowRefs.current.get(selectedId)?.scrollIntoView({ block: 'nearest' });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedId, nodeId]);
+
+  // Mirrors TreePane's keyboard-highlighted hit onto its row here. `block: 'nearest'` keeps it a
+  // no-op once the row is in view, matching the `selectedId` effect above. Only a cursor the reader
+  // has moved is scrolled to: where the pane opens is the restored scroll position's to say,
+  // whether the cursor lands on the first row or on the hit being returned to.
+  const cursorSeenRef = useRef(false);
+  useEffect(() => {
+    if (!searching || !activeId) return;
+    const placing = !cursorSeenRef.current || activeId === restoreHitId;
+    cursorSeenRef.current = true;
+    if (placing) return;
+    itemRowRefs.current.get(activeId)?.scrollIntoView({ block: 'nearest' });
+  }, [searching, activeId, restoreHitId]);
+
+  if (!corpus) return null;
+
+  const title = searching
+    ? { label: 'Search' }
+    : nodeId
+      ? nodeLabel(corpus, nodeId, lists)
+      : { label: 'Library' };
+  // What `nodeId` names, for the header and empty state below: a corpus row (and whether it
+  // expands rather than holding suttas), a user list, or — once a list is deleted — neither.
+  // `ready` is what separates "no such list" from "the mirror hasn't loaded yet".
+  const corpusNode = nodeId ? findNode(corpus, nodeId) : null;
+  const expandableNode = !!corpusNode && isExpandable(corpusNode.node);
+  const goneList = !!nodeId && !searching && ready && !currentList && !corpusNode;
+  // The corpus node's description, skipped for a user list and while searching.
+  const { blurb, from: blurbFrom } = searching || currentList ? { blurb: undefined, from: undefined } : nodeBlurb(corpus, nodeId);
+  // Read off `corpus` here because `if (!corpus) return null` doesn't narrow inside metaLine.
+  const collectionCount = corpus.nikayas.length;
+  // metaLine returns the counted line under the pane's title, naming what the pane is showing.
+  //   nothing selected  – the number of collections
+  //   a deleted list    – empty, since it holds nothing rather than zero things
+  //   expandable node   – empty, its suttas being a level down
+  //   a node or list    – its sutta count, an auto-list's being what the reader has, uncapped
+  //   visited suttas    – how many of those the reader has visited, when any, except on an auto-list
+  //   a running search  – empty, nothing having been counted yet
+  //   a search          – the matched lists, collections and suttas counted in the order they rank, "80+" past the cap
+  function metaLine(): string {
+    if (!searching) {
+      if (!nodeId) return `${collectionCount} collections`;
+      if (goneList || expandableNode) return '';
+      const count = plural(currentList?.total ?? items.length, 'sutta');
+      if (!showVisited) return count;
+      const visitedCount = items.filter(([id]) => visited[id]).length;
+      return visitedCount ? `${count} · ${visitedCount} visited` : count;
+    }
+    if (textPending) return '';
+    // "suttas" rather than "results" whenever lists matched too, so the number names what it counts.
+    const noun = listHitTotal > 0 ? 'sutta' : 'result';
+    const suttas = hits.length > SEARCH_RESULTS_CAP ? `${SEARCH_RESULTS_CAP}+ ${noun}s` : plural(hits.length, noun);
+    if (listHitTotal === 0) return suttas;
+    return (hits.length === 0 ? listHitCounts : [...listHitCounts, suttas]).join(' · ');
+  }
+  const meta = metaLine();
+
+  // reorderToggleClass returns the reorder toggle's colour treatment; size and margins are on the
+  // button itself.
+  //   reorder mode on – filled accent
+  //   at rest, mobile – bordered chip, matching the back button beside it
+  //   at rest, desktop – a bare round icon button, matching TreePane's header controls
+  function reorderToggleClass(): string {
+    if (reorderMode) return 'bg-accent2 text-[#FBFAF7]';
+    if (mobile) return 'border border-ink/[.12] bg-chip/40 text-ink-3 hover:text-ink active:bg-ink/[.08]';
+    return 'text-ink-3 hover:bg-ink/[.06]';
+  }
+
+  // emptyMessage returns the empty state under the rows.
+  //   searching       – a query that matched nothing, quoted back
+  //   expandable node – a corpus row whose suttas are a level down, reached by URL or from search
+  //   gone list       – a list deleted here, on another device, or an outlived link
+  //   node or list    – one the reader picked that holds nothing
+  //   nothing chosen  – bare /browse, which only the two-pane layout shows
+  function emptyMessage(): string {
+    if (searching) return `Nothing matches "${query}".`;
+    if (expandableNode) return 'Choose a chapter to see its suttas.';
+    if (goneList) return 'This list is no longer here.';
+    if (nodeId) return 'Nothing here yet.';
+    return 'Choose a collection to begin.';
+  }
+  // Whether the empty state asks for a pick in the tree beside this pane, which a phone shows as a
+  // screen of its own instead.
+  const pickInTree = !mobile && !searching && (expandableNode || !nodeId);
+
+  return (
+    <section data-component="ListPane" className={`flex flex-col h-full min-w-0 ${mobile ? '' : 'bg-listpane'}`} style={{ flex: 1 }}>
+      {/* On a phone the header starts a little above the app's top line (lib/ui/layout.ts), which
+          the other screens start on: this one opens on a round button rather than a large title,
+          and the circle's own height already reads as air. The same floor, so a device with a notch
+          lands on TreePane's line, which this header takes the place of. */}
+      <header
+        className="flex-none flex items-center gap-3.5 px-6 pt-5 pb-4 border-b border-ink/10"
+        style={{ paddingTop: mobile ? 'max(12px, calc(10px + var(--safe-top)))' : 'calc(1.25rem + var(--safe-top))' }}
+      >
+        {mobile && <BackButton onClick={onBack} />}
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2.5 min-w-0">
+            {currentList && <List size={17} strokeWidth={2} className="flex-none text-ink" />}
+            <div className="min-w-0 truncate">
+              <span className="font-sans text-ui-2xl font-semibold tracking-[-.01em]">{title.label}</span>
+            </div>
+          </div>
+          {/* An empty line box where there is nothing to count, so the header keeps its height
+              while a search runs rather than growing one when the count lands. */}
+          <div className="flex items-center gap-1.5 font-sans text-ui-xs text-ink-4 mt-[2px]">
+            <span className="min-w-0 truncate">
+              {title.ref && <span className="font-sans text-ink-4">{title.ref} · </span>}
+              {meta || <>&nbsp;</>}
+            </span>
+            {/* The count still stands for the answer before this keystroke's, so it spins beside
+                it until the new one replaces it. */}
+            {updating && <SearchUpdating />}
+          </div>
+        </div>
+        {canReorder && (
+          <button
+            // The negative right margin lands its centre on the axis the row controls sit on.
+            className={`flex-none rounded-full flex items-center justify-center ${mobile ? 'w-[34px] h-[34px] -mr-[7px]' : 'w-[38px] h-[38px] -mr-[9px]'} ${reorderToggleClass()}`}
+            aria-label={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
+            title={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
+            onClick={() => setReorderMode((m) => !m)}
+          >
+            {/* 16 on both platforms, where the other header glyphs step up to 18–20 on desktop:
+                two stacked arrows fill their box where a chevron leaves air. */}
+            <ArrowUpDown size={16} strokeWidth={2} />
+          </button>
+        )}
+      </header>
+      <div
+        ref={scrollRef}
+        className="sc under-nav-bar flex-1"
+        aria-busy={updating}
+        style={{
+          // The rows run to the pane's own edge, so the safe-area inset is the whole bottom
+          // padding: nothing on desktop, the home indicator or navigation bar on a phone.
+          paddingBottom: 'var(--safe-bottom)',
+          // Keeps a row scrolled into view clear of the bottom safe-area inset.
+          scrollPaddingBottom: 'var(--safe-bottom)',
+          ...(dragOrder
+            ? { userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none' }
+            : null),
+        }}
+      >
+        {/* Matching lists, above the results. This pane draws the block on desktop; TreePane
+            draws it on mobile. */}
+        {searching && (
+          <SearchListHits
+            hits={listHits}
+            total={listHitTotal}
+            heading={listHitHeading}
+            expanded={listsExpanded}
+            onToggleExpanded={onToggleListsExpanded}
+            query={query}
+            activeId={activeListId}
+            toggleActive={listToggleActive}
+            onSelect={onSelectList}
+            padX="px-6"
+          />
+        )}
+        {/* The sutta hits' heading, needed only to set them apart from a lists block above. */}
+        {searching && listHitTotal > 0 && hits.length > 0 && !textPending && (
+          <div className="px-6 pt-3 pb-1.5 font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3">
+            {suttaHitsHeading(hits.length)}
+          </div>
+        )}
+        {/* The node's description, above its suttas and inside the scroller, so a long one
+            scrolls away. A wash and the rules above and below set it off from the rows.
+
+            The eyebrow names what the description is about: a bare "About" for this page, or
+            "About SN12 · Causation" for one borrowed from an ancestor, which every SN vagga's is.
+
+            Clamped to three lines, the whole block toggling, with the "More" affordance shown
+            only once the text is measured to overflow. The expanded state restores `display:
+            block`, which `line-clamp-3`'s `-webkit-box` would otherwise hold.
+
+            `blurb` carries the same inline HTML a translator note does — see SegmentedText. */}
+        {blurb && (
+          <div className="bg-ink/[.015] border-b border-ink/[.08] px-6 pt-4 pb-[18px]">
+            <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">
+              {blurbFrom ? `About ${blurbFrom}` : 'About'}
+            </div>
+            {(() => {
+              const text = (
+                <span
+                  ref={blurbRef}
+                  className={`text-ui-base leading-[1.6] text-ink-2 ${blurbOpen ? 'block' : 'line-clamp-3'}`}
+                  dangerouslySetInnerHTML={{ __html: blurb }}
+                />
+              );
+              if (!blurbOverflows) return text;
+              return (
+                <button
+                  className="block w-full text-left"
+                  aria-expanded={blurbOpen}
+                  onClick={() => setBlurbOpen((o) => !o)}
+                >
+                  {text}
+                  {/* Chrome, not content: neutral rather than the accent inline text actions
+                      carry elsewhere, since the paragraph is the target and this only reports
+                      its state. */}
+                  <span className="flex items-center gap-1 font-sans text-ui-xs font-semibold text-ink-4 mt-1">
+                    {blurbOpen ? 'Less' : 'More'}
+                    <ChevronDown
+                      size={14}
+                      strokeWidth={2.25}
+                      className={`flex-none transition-transform ${blurbOpen ? 'rotate-180' : ''}`}
+                    />
+                  </span>
+                </button>
+              );
+            })()}
+          </div>
+        )}
+
+        {displayItems.map(([id, s]) => {
+          // Highlighted — a tint plus a left accent stripe — only while searching, for the hit
+          // TreePane's arrow-key nav has active. Nothing marks the URL's `selectedId`.
+          const on = searching && id === activeId;
+          const note = notes[id];
+          const { snippet, explains } = found.get(id) ?? {};
+          // The line that carried the query leads, and the quote from the sutta follows it: a hit
+          // ranked on a note or a description is explained by that line, not by a paragraph that
+          // holds one word of the query. Where neither matched, the row's usual line stands —
+          // unless the quote takes its place, as it did before.
+          const showNote = !!note && (explains?.line === 'note' || (!snippet && explains?.line !== 'blurb'));
+          const showBlurb = !showNote && (explains?.line === 'blurb' || !snippet);
+          // The line that matched is marked with the query that found it, which the expansion table
+          // may have written; a line standing here on nothing but its usual turn takes the typed one.
+          const lineQuery = (line: 'note' | 'blurb') => (explains?.line === line ? explains.query : rowQuery);
+          // The description, opened at the words that found it where it is the line that matched.
+          const blurb = explains?.line === 'blurb' ? windowOnMatch(s.blurb, explains.query) : s.blurb;
+          // The note, likewise.
+          const noteText = note && explains?.line === 'note' ? windowOnMatch(note, explains.query, true) : note;
+          const { chips, hlCount, hlColors } = rowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
+          const dragging = dragIdRef.current === id;
+          const reordering = canReorder && reorderMode;
+          return (
+            <div
+              key={id}
+              ref={(el) => {
+                if (el) itemRowRefs.current.set(id, el);
+                else itemRowRefs.current.delete(id);
+              }}
+              className="group relative border-b border-ink/[.08]"
+              style={dragging ? { opacity: 0.5 } : undefined}
+            >
+              {/* The right gutter is kept clear only where a control sits: at rest the add-to-list
+                  button holds the top of the row, so the title and Pali line give up the width
+                  while the blurb and chips run its full measure; while reordering the grip is
+                  centred and the whole row clears it. The rows carry no hover state. */}
+              <button
+                className={`block w-full text-left px-6 py-[16px] ${reordering ? 'pr-14' : ''} ${
+                  on ? 'bg-ink/[.05]' : ''
+                }`}
+                style={on ? { boxShadow: 'inset 2px 0 0 rgb(var(--accent2))' } : undefined}
+                onClick={() => onOpen(openTargets.get(id) ?? id, snippet)}
+                // The press starts the text load, so the reader mounts with it already in hand.
+                onPointerDown={() => prefetchSuttaText(corpus, openTargets.get(id) ?? id)}
+              >
+                <span className={`block ${reordering ? '' : 'pr-14'}`}>
+                  <span className="font-sans text-ui-md font-bold tracking-[.02em] mr-2.5 text-ink-3">
+                    <MatchedText text={s.ref} query={rowQuery} />
+                  </span>
+                  <span className="text-ui-lg leading-[1.3] font-serif">
+                    <MatchedText text={s.en} query={rowQuery} />
+                  </span>
+                  {showVisited && visited[id] && (
+                    <span role="img" aria-label="Visited" className="relative -top-0.5 inline-flex align-middle ml-2.5 text-ink-4 opacity-60 dark:opacity-80">
+                      <Eye size={14} strokeWidth={2} />
+                    </span>
+                  )}
+                </span>
+                <span
+                  className={`block font-serif text-ui-base italic mt-[3px] text-accent-text ${reordering ? '' : 'pr-14'}`}
+                >
+                  <MatchedText text={s.pali} query={rowQuery} />
+                </span>
+                {showNote && (
+                  // An em dash rather than a quote rule marks this as the reader's own note.
+                  <span className="flex gap-[7px] font-serif text-ui-md leading-[1.45] mt-[7px] text-ink-2">
+                    <span aria-hidden className="flex-none text-ink-3">
+                      —
+                    </span>
+                    {/* Clamped, like the blurb it stands in for. */}
+                    <span className="line-clamp-3 whitespace-pre-wrap">
+                      <MatchedText text={noteText} query={lineQuery('note')} notation />
+                    </span>
+                  </span>
+                )}
+                {showBlurb && (
+                  <span className="text-ui-md leading-[1.5] mt-1.5 text-ink-2 line-clamp-3">
+                    <MatchedText text={blurb} query={lineQuery('blurb')} />
+                  </span>
+                )}
+                {snippet && (
+                  // Quoted from the sutta: a left rule, against the em dash that marks the reader's
+                  // own note. A Pali paragraph carries its English underneath, inside the one rule.
+                  <span className="block font-serif text-ui-md leading-[1.5] mt-[7px] pl-[10px] border-l-2 border-ink/25 text-ink-2">
+                    {/* No `block` alongside a clamp: the clamp sets `display:-webkit-box` and
+                        Tailwind emits it before `.block`, so `block` would silently win. */}
+                    <span className={`line-clamp-3 ${snippet.under ? 'italic text-accent-text' : ''}`}>
+                      <MatchedText text={snippet.text} marks={snippet.marks} />
+                    </span>
+                    {snippet.under && (
+                      <span className="line-clamp-2 mt-[3px]">
+                        <MatchedText text={snippet.under} marks={snippet.underMarks} />
+                      </span>
+                    )}
+                  </span>
+                )}
+                <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} query={rowQuery} />
+              </button>
+              {/* Opens the list-membership picker for this sutta. Hidden while reordering, so the
+                  grip has the gutter to itself, and held at the top corner of the row, its `top`
+                  inset matching its `right` one.
+
+                  Dimmed at rest and brought to full strength on row hover or keyboard focus. The
+                  dim sits inside `@media (hover: hover)`, so a touch device that gets the desktop
+                  layout shows it at full strength rather than needing a pointer to reveal it.
+
+                  Its centre is on the same axis as the header's reorder toggle and the grip, which
+                  is the width the rows reserve with `pr-14`. */}
+              {!reordering && (
+                <button
+                  className={`absolute ${mobile ? 'right-3 top-3 w-11 h-11' : 'right-[15px] top-[15px] w-[38px] h-[38px]'} flex items-center justify-center rounded-full text-ink-3 hover:bg-ink/[.06] active:bg-ink/[.10] transition-opacity [@media(hover:hover)]:opacity-45 group-hover:opacity-100 focus-visible:opacity-100`}
+                  aria-label={`Add ${s.ref} to a list`}
+                  onClick={(e) => setPicker({ suttaId: id, anchor: e.currentTarget.getBoundingClientRect() })}
+                >
+                  <ListPlus size={mobile ? 20 : 18} strokeWidth={2} />
+                </button>
+              )}
+              {reordering && (
+                <span
+                  // `right-3` puts the drag target's centre on the same axis as the add-to-list
+                  // button it replaces, so nothing shifts sideways when reorder mode comes on, and
+                  // `inset-y-1` makes the whole right gutter of the row grabbable.
+                  className="absolute right-3 inset-y-1 w-11 flex items-center justify-center rounded text-ink-3"
+                  style={{
+                    touchAction: 'none',
+                    cursor: 'grab',
+                    userSelect: 'none',
+                    WebkitUserSelect: 'none',
+                    WebkitTouchCallout: 'none',
+                  }}
+                  onPointerDown={(e) => onHandlePointerDown(e, id)}
+                >
+                  <GripVertical size={19} strokeWidth={2} />
+                </span>
+              )}
+            </div>
+          );
+        })}
+        {/* Where an auto-list stopped, said at the foot of the rows, where the reader meets the
+            boundary. */}
+        {currentList?.total !== undefined && currentList.total > items.length && (
+          <div className="font-sans text-center text-ui-sm text-ink-4 py-6 px-6">
+            Showing {items.length} of {currentList.total}
+          </div>
+        )}
+        {/* Where the results stopped, said in the same place an auto-list says it. */}
+        {searching && hits.length > SEARCH_RESULTS_CAP && (
+          <div className="font-sans text-center text-ui-sm text-ink-4 py-6 px-6 text-balance">{SEARCH_CAP_NOTE}</div>
+        )}
+        {/* Where the results are, until the sutta text lands and the ranking they wait on with it. */}
+        {textPending && <TextSearchProgress />}
+        {/* A query that matched only lists isn't a failed search, so it keeps its empty state. */}
+        {items.length === 0 && !textPending && !(searching && listHitTotal > 0) && (
+          <div className="font-sans text-center text-ui-base text-ink-4 py-10 px-6">
+            {pickInTree ? (
+              <span className="inline-flex items-center gap-2">
+                <MoveLeft size={16} strokeWidth={2} className="flex-none translate-y-px" aria-hidden />
+                {emptyMessage()}
+              </span>
+            ) : (
+              emptyMessage()
+            )}
+            {/* What search covers, said only where a reader has just failed to find something —
+                and nothing at all once the sutta text is in and there is nothing left to admit. */}
+            {searching && searchScopeNote(textStatus) && (
+              <div className="mt-2 text-ui-sm text-balance">{searchScopeNote(textStatus)}</div>
+            )}
+          </div>
+        )}
+      </div>
+      {picker && (
+        <ListMembershipPopover
+          suttaId={picker.suttaId}
+          anchor={picker.anchor}
+          mobile={mobile}
+          onClose={() => setPicker(null)}
+        />
+      )}
+    </section>
+  );
+}

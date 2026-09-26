@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from 'react';
 import { splitPaliWords, stripPunct, findAdjacentWord } from '../lib/corpus/dictionary';
 import { lookupHeadword, peekHeadword, prefetchHeadwordShard } from '../lib/corpus/dictionaryShards';
-import { animateScrollBy, computeSegmentScrollOffset } from '../lib/segmentScroll';
-import { getUiScale } from '../lib/uiPrefs';
+import { animateScrollBy, computeSegmentScrollOffset } from '../lib/reader/segmentScroll';
+import { getUiScale } from '../lib/ui/uiPrefs';
 import type { SegmentFile } from '../lib/corpus/corpus';
 
 interface DictState {

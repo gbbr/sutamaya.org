@@ -7,9 +7,9 @@ import { RouterView } from './components/RouterView';
 import { useNativeBack } from './hooks/useNativeBack';
 import { useNativeLinks } from './hooks/useNativeLinks';
 import { useCorpus } from './context/CorpusContext';
-import { getLastLocation, rememberLocation } from './lib/lastLocation';
+import { getLastLocation, rememberLocation } from './lib/navigation/lastLocation';
 import { normalizeRouteId, resolveCanonicalSuttaId } from './lib/corpus/corpus';
-import { RETURN_STATE } from './lib/entryKind';
+import { RETURN_STATE } from './lib/navigation/entryKind';
 import { HelpPage } from './pages/HelpPage';
 import { LibraryPage } from './pages/LibraryPage';
 import { NotFoundPage } from './pages/NotFoundPage';
@@ -44,14 +44,14 @@ function RestoreLastLocation() {
   useEffect(() => {
     // A stored reader location is restorable only while this corpus still has the uid; a refresh
     // may have renamed or dropped it. Checked here rather than at the write, since
-    // lib/lastLocation.ts knows nothing about the corpus.
+    // lib/navigation/lastLocation.ts knows nothing about the corpus.
     const stored = getLastLocation();
     const uid = stored?.match(/^\/read\/([^/]+)$/)?.[1];
     // Through resolveCanonicalSuttaId, so a uid naming one sutta of a batched document is judged
     // as the reader judges it.
     const restorable = uid && corpus ? !!corpus.suttas[resolveCanonicalSuttaId(corpus, decodeURIComponent(uid))] : !!stored;
-    // A return rather than a fresh destination (lib/entryKind.ts), so the reader restores its
-    // scroll.
+    // A return rather than a fresh destination (lib/navigation/entryKind.ts), so the reader
+    // restores its scroll.
     navigate(restorable ? stored! : '/browse', { replace: true, state: RETURN_STATE });
   }, []);
   return null;

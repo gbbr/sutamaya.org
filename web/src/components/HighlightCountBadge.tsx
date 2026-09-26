@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { highlightPaint, SHELL_THEME } from '../lib/theme';
+import { highlightPaint, SHELL_THEME } from '../lib/ui/theme';
 import type { ThemeColors } from '../lib/types';
 
 interface HighlightCountBadgeProps {

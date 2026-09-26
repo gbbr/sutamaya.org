@@ -113,7 +113,8 @@ describe('useReaderOrigin', () => {
     const { result } = renderHook(() => useReaderOrigin(undefined));
     result.current.closeToOrigin('sn2.1', '/fallback');
 
-    // Flushed, so the fade out of the Reader captures the Library already in place (lib/motion.ts).
+    // Flushed, so the fade out of the Reader captures the Library already in place
+    // (lib/ui/motion.ts).
     expect(navigate).toHaveBeenCalledWith('/fallback', { flushSync: true });
   });
 

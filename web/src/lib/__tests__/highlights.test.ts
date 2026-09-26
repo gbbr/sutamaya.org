@@ -10,7 +10,7 @@ import {
   spansOverlap,
   type HlSpan,
 } from '../highlights';
-import { HIGHLIGHT_COLORS } from '../theme';
+import { HIGHLIGHT_COLORS } from '../ui/theme';
 import type { SegmentFile } from '../corpus/corpus';
 import type { Highlight } from '../types';
 

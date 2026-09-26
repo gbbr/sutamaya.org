@@ -30,8 +30,8 @@ import { useReaderPrefs } from '../../context/ReaderPrefsContext';
 import { LibraryPage } from '../LibraryPage';
 import { ReaderPage } from '../ReaderPage';
 import { SEARCH_PLACEHOLDER } from '../../lib/search/metadata';
-import { getRecentSearches } from '../../lib/recentSearches';
-import { tagIntent } from '../../lib/routeIntent';
+import { getRecentSearches } from '../../lib/search/recentSearches';
+import { tagIntent } from '../../lib/navigation/routeIntent';
 import type { Corpus, ListDef } from '../../lib/types';
 
 // SN47 only expands, into its vagga; AN's vagga holds its suttas and shares SN47's English name.

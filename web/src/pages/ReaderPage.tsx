@@ -12,31 +12,31 @@ import { useReaderKeyboard } from '../hooks/useReaderKeyboard';
 import { useBackHandler } from '../hooks/useBackHandler';
 import { useDictionaryLookup } from '../hooks/useDictionaryLookup';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
-import { animateScrollBy, animateScrollTop } from '../lib/segmentScroll';
+import { animateScrollBy, animateScrollTop } from '../lib/reader/segmentScroll';
 import { flatSuttaOrder, breadcrumbFor, normalizeRouteId, resolveCanonicalSuttaId, loadSuttaText, uidHolds, type SegmentFile } from '../lib/corpus/corpus';
 import { flattenListTree, resolveListById, suttaRowMeta } from '../lib/lists/lists';
-import { READER_FACES, READER_THEMES } from '../lib/theme';
-import { setReaderThemeColor } from '../lib/themeColor';
+import { READER_FACES, READER_THEMES } from '../lib/ui/theme';
+import { setReaderThemeColor } from '../lib/ui/themeColor';
 import { shortcutsForScope } from '../lib/shortcuts';
-import { consumeIntent, tagIntent, type RouteIntent } from '../lib/routeIntent';
+import { consumeIntent, tagIntent, type RouteIntent } from '../lib/navigation/routeIntent';
 import { READER_INTENT_KEY } from '../lib/storageKeys';
-import { enteredByReturn } from '../lib/entryKind';
-import { getUiScale } from '../lib/uiPrefs';
+import { enteredByReturn } from '../lib/navigation/entryKind';
+import { getUiScale } from '../lib/ui/uiPrefs';
 import type { Highlight } from '../lib/types';
-import { animateStep, cancelStepAnimations } from '../lib/motion';
+import { animateStep, cancelStepAnimations } from '../lib/ui/motion';
 import { markSuttaOpened } from '../lib/pwaNudge';
-import { getReaderPanelTab, setReaderPanelTab, type ReaderPanelTab } from '../lib/readerPanelTab';
-import { keepOpenLines, keptOpenLines } from '../lib/openLines';
+import { getReaderPanelTab, setReaderPanelTab, type ReaderPanelTab } from '../lib/reader/readerPanelTab';
+import { keepOpenLines, keptOpenLines } from '../lib/reader/openLines';
 import { platformName } from '../lib/platform';
 import { canShareLink, shareLink, shareUrl } from '../lib/native/share';
 import type { SearchHit } from '../lib/search/metadata';
 import { marksOf, type MarkedBy } from '../lib/search/text';
-import { SegmentedText, type SegmentMarks } from '../components/SegmentedText';
-import { HighlightPopup } from '../components/HighlightPopup';
-import { HighlightGutter } from '../components/HighlightGutter';
-import { DictionaryDock } from '../components/DictionaryDock';
-import { ReaderMenuPanel } from '../components/ReaderMenuPanel';
-import { ReaderSearchOverlay, type ReaderSearchView } from '../components/ReaderSearchOverlay';
+import { SegmentedText, type SegmentMarks } from '../components/reader/SegmentedText';
+import { HighlightPopup } from '../components/reader/HighlightPopup';
+import { HighlightGutter } from '../components/reader/HighlightGutter';
+import { DictionaryDock } from '../components/reader/DictionaryDock';
+import { ReaderMenuPanel } from '../components/reader/ReaderMenuPanel';
+import { ReaderSearchOverlay, type ReaderSearchView } from '../components/search/ReaderSearchOverlay';
 import { ShortcutsModal } from '../components/ShortcutsModal';
 import { SuttaRowChips } from '../components/SuttaRowChips';
 import { MatchedText } from '../components/MatchedText';
@@ -137,8 +137,8 @@ export function ReaderPage() {
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
   const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
   const [panel, setPanel] = useState(false);
-  // The menu panel's tab, persisted across suttas and sessions (lib/readerPanelTab.ts) by every
-  // path that lands on one.
+  // The menu panel's tab, persisted across suttas and sessions (lib/reader/readerPanelTab.ts) by
+  // every path that lands on one.
   const [tab, setTabState] = useState<ReaderPanelTab>(getReaderPanelTab);
   const setTab = useCallback((t: ReaderPanelTab) => {
     setTabState(t);
@@ -157,8 +157,8 @@ export function ReaderPage() {
 
   const sutta = corpus && suttaId ? corpus.suttas[suttaId] : undefined;
   // Where this sutta opens, sampled once per sutta id: 'stored' on a return — back or forward, a
-  // refresh, a relaunch (lib/entryKind.ts) — 'top' otherwise, and no restore at all when the route
-  // names an inner sutta to scroll to.
+  // refresh, a relaunch (lib/navigation/entryKind.ts) — 'top' otherwise, and no restore at all when
+  // the route names an inner sutta to scroll to.
   const restoreRef = useRef<{ id?: string; restore: ScrollRestore; skipRestore: boolean }>({
     restore: 'stored',
     skipRestore: false,
@@ -220,7 +220,7 @@ export function ReaderPage() {
   const theme = READER_THEMES[resolvedTheme];
 
   // Paints the OS chrome — mobile status bar, desktop PWA title bar — with the reader's own
-  // background while it is open (lib/themeColor.ts), and hands it back to the shell on unmount.
+  // background while it is open (lib/ui/themeColor.ts), and hands it back to the shell on unmount.
   useEffect(() => {
     setReaderThemeColor(theme.bg, resolvedTheme === 'dark');
     return () => setReaderThemeColor(null);

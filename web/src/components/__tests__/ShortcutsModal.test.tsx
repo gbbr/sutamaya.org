@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { ShortcutsModal } from '../ShortcutsModal';
-import { READER_THEMES } from '../../lib/theme';
+import { READER_THEMES } from '../../lib/ui/theme';
 import type { Shortcut } from '../../lib/shortcuts';
 
 const shortcuts: Shortcut[] = [

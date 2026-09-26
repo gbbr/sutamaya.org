@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { DEFAULT_TITLE, setMetaDescription } from '../lib/documentMeta';
+import { DEFAULT_TITLE, setMetaDescription } from '../lib/navigation/documentMeta';
 
 // Sets the tab title and meta description while a page is mounted, restoring index.html's defaults
 // on the way out. Omit `description` where a page has no subject of its own to describe.

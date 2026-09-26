@@ -7,8 +7,8 @@ import { useScrollMemory, type ScrollRestore } from './useScrollMemory';
 import { highlightColors, highlightStart } from '../lib/highlights';
 import { segmentIndex } from '../lib/corpus/segmentKeys';
 import type { Highlight } from '../lib/types';
-import { getUiScale } from '../lib/uiPrefs';
-import { animateScrollBy, computeSegmentScrollOffset, jumpScrollBy } from '../lib/segmentScroll';
+import { getUiScale } from '../lib/ui/uiPrefs';
+import { animateScrollBy, computeSegmentScrollOffset, jumpScrollBy } from '../lib/reader/segmentScroll';
 
 const EMPTY_HIGHLIGHTS: Highlight[] = [];
 

@@ -1,0 +1,363 @@
+import { describe, expect, it, vi } from 'vitest';
+import { render } from '@testing-library/react';
+import { SegmentedText, type SegmentMarks } from '../SegmentedText';
+import type { SegmentFile } from '../../../lib/corpus/corpus';
+import type { Highlight, ThemeColors } from '../../../lib/types';
+
+const theme: ThemeColors = { bg: '#fff', fg: '#000', dim: '#888', rule: '#ccc', panel: '#fff', pali: '#333', tint: '#eee', paliTint: '#e8dcc8', focusTint: '#f5f5f5', highlightPalette: null, selection: '#ddd' };
+
+function baseProps(segments: SegmentFile[], overrides: Partial<Parameters<typeof SegmentedText>[0]> = {}) {
+  return {
+    segments,
+    highlights: [],
+    theme,
+    fontSize: 18,
+    lineHeight: 150,
+    face: 'serif',
+    openSegs: { 0: true },
+    allPali: false,
+    paliAbove: false,
+    onToggleSeg: vi.fn(),
+    onWordClick: vi.fn(),
+    onTextUp: vi.fn(),
+    onSpanClick: vi.fn(),
+    showNotes: false,
+    openNotes: {},
+    onToggleNote: vi.fn(),
+    activeWord: null,
+    ...overrides,
+  };
+}
+
+// Regression coverage for a real bug: SuttaCentral joins some Pali words with a bare "—" (em
+// dash), no surrounding space (e.g. MN17's "samudānetabbā—cīvara...parikkhārā—te", three separate
+// dictionary words). Clicking that run used to look up the whole thing as one mangled word.
+describe('SegmentedText — em-dash-joined Pali words', () => {
+  const dashJoined = 'samudānetabbā—cīvarapiṇḍapātasenāsanagilānappaccayabhesajjaparikkhārā—te';
+  const segments: SegmentFile[] = [{ key: 'mn17:26.6', pali: dashJoined, en: 'placeholder' }];
+
+  it('renders each dash-separated piece as its own clickable word, not one run-on token', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments)} />);
+    const words = [...container.querySelectorAll('.pw')].map((el) => el.textContent);
+    expect(words).toEqual(['samudānetabbā', 'cīvarapiṇḍapātasenāsanagilānappaccayabhesajjaparikkhārā', 'te']);
+  });
+
+  it('clicking the first piece reports only that word, with word index 0', () => {
+    const onWordClick = vi.fn();
+    const { container } = render(<SegmentedText {...baseProps(segments, { onWordClick })} />);
+    const [first] = container.querySelectorAll('.pw');
+    first.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    expect(onWordClick).toHaveBeenCalledWith('samudānetabbā', 0, 0);
+  });
+
+  it('clicking the middle piece reports only that word, not the concatenation of all three', () => {
+    const onWordClick = vi.fn();
+    const { container } = render(<SegmentedText {...baseProps(segments, { onWordClick })} />);
+    const [, middle] = container.querySelectorAll('.pw');
+    middle.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    expect(onWordClick).toHaveBeenCalledWith('cīvarapiṇḍapātasenāsanagilānappaccayabhesajjaparikkhārā', 0, 1);
+  });
+
+  it('clicking the last piece reports only that word, with word index 2', () => {
+    const onWordClick = vi.fn();
+    const { container } = render(<SegmentedText {...baseProps(segments, { onWordClick })} />);
+    const [, , last] = container.querySelectorAll('.pw');
+    last.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    expect(onWordClick).toHaveBeenCalledWith('te', 0, 2);
+  });
+
+  it('the "—" itself is rendered as visible text but is not a clickable .pw word', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments)} />);
+    expect(container.querySelector('[data-seg="0"]')?.parentElement?.textContent).toContain('—');
+    expect([...container.querySelectorAll('.pw')].some((el) => el.textContent === '—')).toBe(false);
+  });
+});
+
+// Same bug class as the em-dash case above, found by scanning the corpus for other problematic
+// separators: a handful of suttas join two words with a bare regular hyphen instead.
+describe('SegmentedText — hyphen-joined Pali words', () => {
+  const hyphenJoined = 'Todeyya-kappā';
+  const segments: SegmentFile[] = [{ key: 'dn23:1.1', pali: hyphenJoined, en: 'placeholder' }];
+
+  it('renders each hyphen-separated piece as its own clickable word', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments)} />);
+    const words = [...container.querySelectorAll('.pw')].map((el) => el.textContent);
+    expect(words).toEqual(['Todeyya', 'kappā']);
+  });
+
+  it('the "-" itself is rendered as visible text but is not a clickable .pw word', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments)} />);
+    expect(container.querySelector('[data-seg="0"]')?.parentElement?.textContent).toContain('-');
+    expect([...container.querySelectorAll('.pw')].some((el) => el.textContent === '-')).toBe(false);
+  });
+});
+
+// Regression coverage for a real bug: a batched leaf document (several inner suttas in one file,
+// e.g. "dhp320-333") numbers each inner sutta's lines flatly with no dot ("dhp320:1" … "dhp320:4",
+// then resetting to "dhp321:1" …) — paragraphOf() used to key only off that trailing digit, so
+// consecutive lines within one verse (different digits) looked like separate paragraphs while the
+// boundary between two different verses (digits that happen to coincide) could collapse into one,
+// making a whole batch of verses render as one undifferentiated block instead of distinct stanzas.
+describe('SegmentedText — verse-group breaks in a batched document', () => {
+  const segments: SegmentFile[] = [
+    { key: 'dhp320:1', pali: 'a', en: 'a', role: 'verse' },
+    { key: 'dhp320:2', pali: 'b', en: 'b', role: 'verse' },
+    { key: 'dhp321:1', pali: 'c', en: 'c', role: 'verse' },
+  ];
+
+  it('keeps lines of the same inner verse together, with no gap between them', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments)} />);
+    const row = container.querySelector('#dhp320\\:1') as HTMLElement;
+    expect(row.style.marginBottom).toBe('0px');
+  });
+
+  it('inserts a real gap at the boundary into the next inner verse', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments)} />);
+    const row = container.querySelector('#dhp320\\:2') as HTMLElement;
+    expect(row.style.marginBottom).not.toBe('0px');
+    expect(row.style.marginBottom).not.toBe('');
+  });
+});
+
+// Regression coverage for a related bug: a direct link or search hit for one specific inner sutta
+// of a batched document (e.g. "dhp321" within the loaded "dhp320-333" document) had no way to tell
+// the reader which of the batch's many identical-looking verses it actually pointed at — see
+// ReaderPage's requestedSubUid/subRange plumbing. Every segment in the wash range should sit in one
+// tinted block; the segments around it should not.
+describe('SegmentedText — washRange marks one inner sutta within a batched document', () => {
+  const segments: SegmentFile[] = [
+    { key: 'dhp321:1', pali: 'a', en: 'a', role: 'verse' },
+    { key: 'dhp321:2', pali: 'b', en: 'b', role: 'verse' },
+    { key: 'dhp322:1', pali: 'c', en: 'c', role: 'verse' },
+  ];
+
+  // The segments inside the tinted block.
+  function tinted(container: HTMLElement): string[] {
+    const block = container.querySelector('[data-wash-block]');
+    return block ? [...block.children].map((row) => row.id) : [];
+  }
+
+  it('tints the segments in the range, and only those', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { washRange: [0, 1] })} />);
+    expect(tinted(container)).toEqual(['dhp321:1', 'dhp321:2']);
+  });
+
+  it('marks nothing when washRange is unset', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments)} />);
+    expect(tinted(container)).toEqual([]);
+  });
+});
+
+// Highlights are immutable, so two devices highlighting overlapping spans offline both survive and
+// arrive together — the reader is where the contest is settled, deterministically by (mtime, id).
+describe('SegmentedText — overlapping highlights', () => {
+  const segments: SegmentFile[] = [{ key: 'dn1:1.1', pali: 'p', en: '0123456789abcde' }];
+  const older: Highlight = { id: 'h1', k0: 'dn1:1.1', o0: 0, k1: 'dn1:1.1', o1: 10, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' };
+  const newer: Highlight = { id: 'h2', k0: 'dn1:1.1', o0: 5, k1: 'dn1:1.1', o1: 15, c: '#a8d8f0', m: '2026-01-02T00:00:00.000Z|dev' };
+
+  function highlightSpans(container: HTMLElement) {
+    return [...container.querySelectorAll<HTMLElement>('[data-hl-id]')].map((el) => [el.dataset.hlId, el.textContent]);
+  }
+
+  it('gives the contested characters to the later highlight', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { highlights: [older, newer] })} />);
+    expect(highlightSpans(container)).toEqual([
+      ['h1', '01234'],
+      ['h2', '56789abcde'],
+    ]);
+  });
+
+  it('renders the same regardless of the order the two arrive in', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { highlights: [newer, older] })} />);
+    expect(highlightSpans(container)).toEqual([
+      ['h1', '01234'],
+      ['h2', '56789abcde'],
+    ]);
+  });
+
+  // A click reports the highlight it was painted from, not the visible fragment — openPop resolves
+  // the whole of it by id, so clicking the surviving sliver of a partly-covered highlight still
+  // acts on all of it.
+  it('reports the loser\'s own id when its surviving fragment is clicked', () => {
+    const onSpanClick = vi.fn();
+    const { container } = render(<SegmentedText {...baseProps(segments, { highlights: [older, newer], onSpanClick })} />);
+    const [fragment] = container.querySelectorAll('[data-hl-id]');
+    fragment.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    expect(onSpanClick).toHaveBeenCalledWith('h1', expect.anything(), older.c);
+  });
+
+  // The bug endpoints exist to prevent: an interior segment used to store the length it had when
+  // the highlight was made, so a rewording left its tail unpainted.
+  it('paints a middle segment in full, however long it has since become', () => {
+    const threeSegments: SegmentFile[] = [
+      { key: 'dn1:1.1', pali: 'p', en: 'one two' },
+      { key: 'dn1:1.2', pali: 'p', en: 'a much longer middle line than before' },
+      { key: 'dn1:1.3', pali: 'p', en: 'three four' },
+    ];
+    const across: Highlight = { id: 'h9', k0: 'dn1:1.1', o0: 4, k1: 'dn1:1.3', o1: 5, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' };
+    const { container } = render(<SegmentedText {...baseProps(threeSegments, { highlights: [across] })} />);
+    expect(highlightSpans(container)).toEqual([
+      ['h9', 'two'],
+      ['h9', 'a much longer middle line than before'],
+      ['h9', 'three'],
+    ]);
+  });
+
+  // A device holding a copy of the sutta without the segment an end names paints nothing for that
+  // highlight, rather than a guess at where it belongs. Nothing deletes it, so it paints again on
+  // the copy that has the segment.
+  it('paints nothing when an end names a segment the loaded text lacks', () => {
+    const shorter: SegmentFile[] = [
+      { key: 'dn1:1.1', pali: 'p', en: 'one two' },
+      { key: 'dn1:1.2', pali: 'p', en: 'three four' },
+    ];
+    const overrun: Highlight = { id: 'h9', k0: 'dn1:1.1', o0: 4, k1: 'dn1:1.6', o1: 2, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' };
+    const { container } = render(<SegmentedText {...baseProps(shorter, { highlights: [overrun] })} />);
+    expect(highlightSpans(container)).toEqual([]);
+  });
+
+  // An offset past the end of a segment reworded shorter still clamps: the segment is there, only
+  // the text inside it moved.
+  it('clamps an offset to the length the segment now has', () => {
+    const segment: SegmentFile[] = [{ key: 'dn1:1.1', pali: 'p', en: 'one two' }];
+    const overrun: Highlight = { id: 'h9', k0: 'dn1:1.1', o0: 4, k1: 'dn1:1.1', o1: 99, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' };
+    const { container } = render(<SegmentedText {...baseProps(segment, { highlights: [overrun] })} />);
+    expect(highlightSpans(container)).toEqual([['h9', 'two']]);
+  });
+});
+
+// A translated closing line ("The Middle Discourses are complete.", MN152's last segment) is
+// centred; its Pali reveal has to follow, or the same line reads half centred and half flush left.
+describe('SegmentedText — the reveal under a closing line', () => {
+  const segments: SegmentFile[] = [
+    { key: 'mn152:20.7', pali: 'majjhimanikāyo samatto.', en: 'The Middle Discourses are complete.', role: 'end' },
+  ];
+
+  it('is centred, as the English above it is', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments)} />);
+    const reveal = container.querySelector('[data-reveal="pali"]') as HTMLElement;
+    expect(reveal.style.textAlign).toBe('center');
+  });
+
+  it('leaves an ordinary segment flush left', () => {
+    const plain: SegmentFile[] = [{ key: 'mn152:18.3', pali: 'Idamavoca bhagavā.', en: 'That is what the Buddha said.' }];
+    const { container } = render(<SegmentedText {...baseProps(plain)} />);
+    const reveal = container.querySelector('[data-reveal="pali"]') as HTMLElement;
+    expect(reveal.style.textAlign).toBe('');
+  });
+});
+
+// The Pali-first layout (ReaderPrefs' paliAbove). It is a property of "show all Pali" only: a tap
+// reveal belongs under the line it explains, and inserting one above the tapped line would push
+// that line down under the reader's eye.
+describe('SegmentedText — Pali above the English', () => {
+  const segments: SegmentFile[] = [
+    { key: 'mn1:1.1', pali: 'Evaṁ me sutaṁ—', en: 'So I have heard.' },
+  ];
+
+  // Which of the two lines comes first in the DOM is the whole feature, so it is asserted on
+  // document order rather than on any style the ordering happens to carry.
+  function order(container: HTMLElement) {
+    return [...container.querySelectorAll('[data-seg], [data-reveal="pali"]')].map((el) =>
+      el.hasAttribute('data-reveal') ? 'pali' : 'en'
+    );
+  }
+
+  it('puts the Pali first when every segment shows it', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {}, allPali: true, paliAbove: true })} />);
+    expect(order(container)).toEqual(['pali', 'en']);
+  });
+
+  it('keeps the English first without the setting', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {}, allPali: true })} />);
+    expect(order(container)).toEqual(['en', 'pali']);
+  });
+
+  it('leaves a tap reveal below the line it opens, whatever the setting says', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: { 0: true }, allPali: false, paliAbove: true })} />);
+    expect(order(container)).toEqual(['en', 'pali']);
+  });
+
+  it('steps the English down a size, so the Pali leads the hierarchy', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {}, allPali: true, paliAbove: true })} />);
+    const en = container.querySelector('[data-seg]') as HTMLElement;
+    const pali = container.querySelector('[data-reveal="pali"]') as HTMLElement;
+    expect(pali.style.fontSize).toBe('18px');
+    expect(en.style.fontSize).toBe('16px');
+  });
+
+  // Not the mirror image: a Pali line under the English is the one the reader taps words in, so it
+  // keeps the reading size and is set apart by its colour alone.
+  it('leaves both lines at the reading size when the English leads', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {}, allPali: true })} />);
+    const en = container.querySelector('[data-seg]') as HTMLElement;
+    const pali = container.querySelector('[data-reveal="pali"]') as HTMLElement;
+    expect(en.style.fontSize).toBe('18px');
+    expect(pali.style.fontSize).toBe('18px');
+  });
+});
+
+// A heading and a list item each carry spacing that belongs to the segment as a whole, not to the
+// English line — the gap that binds a heading to the section it opens, and a list item's "N.".
+// Both have to move to whichever line leads, or the heading drifts toward the paragraph above it
+// and the number ends up beside the item's second line.
+describe('SegmentedText — Pali above, for headings and list items', () => {
+  it('gives the heading gap to the Pali and takes it off the English', () => {
+    const segments: SegmentFile[] = [
+      { key: 'dn1:1.1', pali: 'Paṭhamabhāṇavāro.', en: 'The first recitation section.', role: 'heading', headingLevel: 3 },
+    ];
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {}, allPali: true, paliAbove: true })} />);
+    const pali = container.querySelector('[data-reveal="pali"]') as HTMLElement;
+    const heading = container.querySelector('[data-seg]') as HTMLElement;
+    expect(parseInt(pali.style.marginTop, 10)).toBeGreaterThan(0);
+    expect(heading.style.marginTop).toBe('0px');
+  });
+
+  it('renders the list marker in the Pali line, indented to match', () => {
+    const segments: SegmentFile[] = [
+      { key: 'an10.1:2.1', pali: 'Katame dasa?', en: 'What ten?', role: 'list-item' },
+    ];
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {}, allPali: true, paliAbove: true })} />);
+    const pali = container.querySelector('[data-reveal="pali"]') as HTMLElement;
+    expect(pali.style.paddingLeft).toBe('24px');
+    expect(pali.querySelector('[data-seg-ignore]')?.textContent).toBe('1.');
+    expect(container.querySelector('[data-seg] [data-seg-ignore]')).toBeNull();
+  });
+});
+
+describe('SegmentedText — the words an arriving search hit marks', () => {
+  const segments: SegmentFile[] = [{ key: 'dn1:1.1', pali: 'Tena kho pana samayena', en: 'At that time the wanderer spoke' }];
+
+  function markTexts(container: HTMLElement) {
+    return [...container.querySelectorAll('mark')].map((el) => el.textContent);
+  }
+
+  it('marks exactly the stretches it is given, in the English and the Pali', () => {
+    const marks = new Map<number, SegmentMarks>([[0, { en: [[8, 12]], pa: [[9, 13]] }]]);
+    const { container } = render(<SegmentedText {...baseProps(segments, { marks })} />);
+    expect(markTexts(container)).toEqual(['time', 'pana']);
+  });
+
+  it('keeps a Pali word marked in part one word for the dictionary', () => {
+    const onWordClick = vi.fn();
+    const marks = new Map<number, SegmentMarks>([[0, { en: [], pa: [[9, 11]] }]]);
+    const { container } = render(<SegmentedText {...baseProps(segments, { marks, onWordClick })} />);
+    expect(markTexts(container)).toEqual(['pa']);
+    container.querySelector('mark')!.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    expect(onWordClick).toHaveBeenCalledWith('pana', 0, 2);
+  });
+
+  it('marks inside a highlight in a shade of its colour, and a click still opens the highlight', () => {
+    const onSpanClick = vi.fn();
+    const highlight: Highlight = { id: 'h1', k0: 'dn1:1.1', o0: 13, k1: 'dn1:1.1', o1: 31, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev' };
+    const marks = new Map<number, SegmentMarks>([[0, { en: [[8, 12], [17, 25]], pa: [] }]]);
+    const { container } = render(<SegmentedText {...baseProps(segments, { highlights: [highlight], marks, onSpanClick })} />);
+    const [plain, inHighlight] = container.querySelectorAll('mark');
+    expect([plain.textContent, inHighlight.textContent]).toEqual(['time', 'wanderer']);
+    expect(plain.closest('[data-hl-id]')).toBeNull();
+    expect(inHighlight.closest('[data-hl-id]')?.getAttribute('data-hl-id')).toBe('h1');
+    expect(inHighlight.style.background).toContain('color-mix');
+    inHighlight.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    expect(onSpanClick).toHaveBeenCalledWith('h1', expect.anything(), highlight.c);
+  });
+});

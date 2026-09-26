@@ -2,7 +2,7 @@ import { createContext, useContext, useMemo, type ReactNode } from 'react';
 import { usePersistedState } from '../hooks/usePersistedState';
 import type { ReaderFace, ResolvedTheme, Theme } from '../lib/types';
 import { READER_PREFS_KEY } from '../lib/storageKeys';
-import { READER_FACES } from '../lib/theme';
+import { READER_FACES } from '../lib/ui/theme';
 import { useUiPrefs } from './UiPrefsContext';
 
 export interface ReaderPrefs {
