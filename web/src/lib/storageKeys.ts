@@ -12,13 +12,13 @@ export const READER_INTENT_KEY = 'sutamaya.readerIntent';
 export const UI_PREFS_KEY = 'sutamaya.uiPrefs';
 export const READER_PREFS_KEY = 'sutamaya.readerPrefs';
 // The reader menu panel's last-used tab, so it reopens where the reader left off (see
-// lib/readerPanelTab.ts).
+// lib/reader/readerPanelTab.ts).
 export const READER_PANEL_TAB_KEY = 'sutamaya.readerPanelTab';
-// The Pali lines and notes left open in each sutta (see lib/openLines.ts).
+// The Pali lines and notes left open in each sutta (see lib/reader/openLines.ts).
 export const OPEN_LINES_KEY = 'sutamaya.openLines';
 export const LAYOUT_PREFS_KEY = 'sutamaya.layout';
 export const HAS_OPENED_SUTTA_KEY = 'sutamaya.hasOpenedSutta';
-// The reader's recent searches, newest first (see lib/recentSearches.ts).
+// The reader's recent searches, newest first (see lib/search/recentSearches.ts).
 export const RECENT_SEARCHES_KEY = 'sutamaya.recentSearches';
 export const OFFLINE_NUDGE_DISMISSED_KEY = 'sutamaya.offlineNudgeDismissed';
 // The corpus dataVersion/dictionaryVersion this device last completed a full offline download at

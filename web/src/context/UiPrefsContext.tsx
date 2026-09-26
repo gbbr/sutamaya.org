@@ -7,7 +7,7 @@ import {
   applyTheme,
   systemPrefersDark,
   type UiPrefs,
-} from '../lib/uiPrefs';
+} from '../lib/ui/uiPrefs';
 import type { Theme, ResolvedTheme } from '../lib/types';
 
 interface UiPrefsState extends UiPrefs {

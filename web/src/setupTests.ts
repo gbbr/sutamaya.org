@@ -8,7 +8,7 @@ import { cleanup } from '@testing-library/react';
 afterEach(async () => {
   cleanup();
   // Empties the recent searches, whose store outlives a test; imported late so a file's mocks apply.
-  (await import('./lib/recentSearches')).clearRecentSearches();
+  (await import('./lib/search/recentSearches')).clearRecentSearches();
 });
 
 // jsdom doesn't implement scrollIntoView (or layout at all) — components across this app call it

@@ -44,7 +44,7 @@ import { useReaderPrefs } from '../../context/ReaderPrefsContext';
 import { ReaderPage } from '../ReaderPage';
 import { LibraryPage } from '../LibraryPage';
 import { SEARCH_PLACEHOLDER } from '../../lib/search/metadata';
-import { tagIntent } from '../../lib/routeIntent';
+import { tagIntent } from '../../lib/navigation/routeIntent';
 import { OPEN_LINES_KEY } from '../../lib/storageKeys';
 import type { Corpus } from '../../lib/types';
 

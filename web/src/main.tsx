@@ -5,7 +5,7 @@ import { isNativeApp, platformName } from './lib/platform';
 import { hydrateNativeToken } from './lib/native/nativeAuth';
 import { hideNativeSplash } from './lib/native/splash';
 import { notifyBundleReady, watchUpdates } from './lib/native/otaUpdate';
-import { loadUiPrefs, applyUiScale, applyTheme, moveReaderTheme } from './lib/uiPrefs';
+import { loadUiPrefs, applyUiScale, applyTheme, moveReaderTheme } from './lib/ui/uiPrefs';
 import { loadAnalytics } from './lib/analytics';
 // Side-effect import: binds window.__dangerWipeLocal, the console-only reset to a cold, signed-out
 // first run. See lib/localWipe.ts.

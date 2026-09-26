@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { SuttaRowChips } from '../SuttaRowChips';
-import { HIGHLIGHT_COLORS, highlightPaint, READER_THEMES } from '../../lib/theme';
+import { HIGHLIGHT_COLORS, highlightPaint, READER_THEMES } from '../../lib/ui/theme';
 import type { SuttaRowChip } from '../../lib/lists/lists';
 
 const chips: SuttaRowChip[] = [

@@ -11,8 +11,8 @@ vi.mock('../../context/UserDataContext', () => ({ useUserData: vi.fn() }));
 vi.mock('../../context/AuthContext', () => ({ useAuth: vi.fn() }));
 vi.mock('../../context/LayoutContext', () => ({ useLayout: vi.fn() }));
 vi.mock('../../context/UiPrefsContext', () => ({ useUiPrefs: () => ({ toggleTheme: vi.fn() }) }));
-vi.mock('../../lib/entryKind', async (importOriginal) => ({
-  ...(await importOriginal<typeof import('../../lib/entryKind')>()),
+vi.mock('../../lib/navigation/entryKind', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('../../lib/navigation/entryKind')>()),
   takeAddressArrival: vi.fn(() => true),
 }));
 
@@ -20,7 +20,7 @@ import { useCorpus } from '../../context/CorpusContext';
 import { useUserData } from '../../context/UserDataContext';
 import { useAuth } from '../../context/AuthContext';
 import { useLayout } from '../../context/LayoutContext';
-import { takeAddressArrival } from '../../lib/entryKind';
+import { takeAddressArrival } from '../../lib/navigation/entryKind';
 import { LibraryPage } from '../LibraryPage';
 import { TREE_EXPANDED_KEY } from '../../lib/storageKeys';
 import { SEARCH_PLACEHOLDER } from '../../lib/search/metadata';

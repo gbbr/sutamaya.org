@@ -144,5 +144,5 @@ told when a newer corpus is out.
 | `web/src/context/` | the six providers |
 | `web/src/hooks/` | keyboard, scroll memory, dictionary lookup, pointer drags |
 | `web/src/lib/` | everything without React |
-| `web/src/lib/motion.ts`, `web/src/index.css` | screen transitions, and the Reader's step between suttas |
+| `web/src/lib/ui/motion.ts`, `web/src/index.css` | screen transitions, and the Reader's step between suttas |
 | `web/vite.config.ts` | the build, the service worker's caching, the dev server |

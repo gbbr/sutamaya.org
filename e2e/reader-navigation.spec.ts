@@ -53,10 +53,11 @@ test('the keyboard scrolls a sutta as soon as it opens', async ({ page }) => {
   await expect.poll(() => scroller.evaluate((el) => el.scrollTop)).toBeGreaterThan(0);
 });
 
-// Where a sutta opens is a deliberate distinction (lib/entryKind.ts): a refresh, a back, or the app
-// relaunching is a *return* and resumes; tapping a row or Prev/Next is a *fresh* entry and starts at
-// the top. `entryKind.test.ts` covers the classification; what only a browser can answer is whether
-// the position is actually reached, in a layout that keeps changing height under the restore.
+// Where a sutta opens is a deliberate distinction (lib/navigation/entryKind.ts): a refresh, a back,
+// or the app relaunching is a *return* and resumes; tapping a row or Prev/Next is a *fresh* entry
+// and starts at the top. `entryKind.test.ts` covers the classification; what only a browser can
+// answer is whether the position is actually reached, in a layout that keeps changing height under
+// the restore.
 test('a refresh resumes the reading, even as notes and highlights land after the text', async ({ page }) => {
   await page.goto('/read/dn1');
   await expect(page.locator('[data-seg="1"]')).toBeVisible();
@@ -288,7 +289,7 @@ test('a Pali reveal that opens below the fold is scrolled into view', async ({ p
 
   const pali = long.locator('[data-reveal="pali"]');
   await expect(pali).toBeVisible();
-  // Polled rather than asserted once: the scroll is animated (lib/segmentScroll.ts). What is
+  // Polled rather than asserted once: the scroll is animated (lib/reader/segmentScroll.ts). What is
   // demanded is the reveal's own first line inside the pane with a real amount of it showing —
   // both halves matter, since the bug this guards left the whole reveal below the bottom edge.
   await expect

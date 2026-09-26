@@ -9,19 +9,19 @@ import { useLayout } from '../context/LayoutContext';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { AppVersion } from '../components/AppVersion';
 import { BackButton } from '../components/BackButton';
-import { AppleSignInButton } from '../components/AppleSignInButton';
-import { GoogleSignInButton } from '../components/GoogleSignInButton';
-import { EmailCodeSignIn } from '../components/EmailCodeSignIn';
+import { AppleSignInButton } from '../components/auth/AppleSignInButton';
+import { GoogleSignInButton } from '../components/auth/GoogleSignInButton';
+import { EmailCodeSignIn } from '../components/auth/EmailCodeSignIn';
 import { dataApi } from '../lib/api';
 import { shareUserDataExport } from '../lib/native/exportData';
 import { flatSuttaOrder } from '../lib/corpus/corpus';
 import { isTypingTarget } from '../lib/shortcuts';
-import { MOBILE_TOP_INSET } from '../lib/layout';
+import { MOBILE_TOP_INSET } from '../lib/ui/layout';
 import { statusOf } from '../lib/retry';
 import { isIosBrowserTab } from '../lib/sync/localAccount';
 import { isNativeApp } from '../lib/platform';
 import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
-import { transitionPage } from '../lib/motion';
+import { transitionPage } from '../lib/ui/motion';
 import {
   cachedCorpusVersions,
   estimateOfflineStatus,
@@ -470,7 +470,7 @@ export function SettingsPage() {
 
   // Block layout with margin-auto centring rather than flex, which has scrollHeight bugs under
   // overflow:auto on some WebView builds. On a phone the page starts a bit below the app's own
-  // top line (lib/layout.ts), which the library's header sits on.
+  // top line (lib/ui/layout.ts), which the library's header sits on.
   return (
     <div
       data-component="SettingsPage"

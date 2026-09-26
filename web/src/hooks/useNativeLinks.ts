@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { matchPath, useLocation, useNavigate } from 'react-router';
 import { App } from '@capacitor/app';
 import { isNativeApp } from '../lib/platform';
-import { tagIntent } from '../lib/routeIntent';
+import { tagIntent } from '../lib/navigation/routeIntent';
 
 // The origin the native apps are verified to open links for (docs/native-apps.md's "Links into the app").
 const APP_LINK_ORIGIN = 'https://app.sutamaya.org';

@@ -5,8 +5,8 @@ import { useLayout } from '../context/LayoutContext';
 import { BackButton } from '../components/BackButton';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { isTypingTarget } from '../lib/shortcuts';
-import { MOBILE_TOP_INSET } from '../lib/layout';
-import { transitionPage } from '../lib/motion';
+import { MOBILE_TOP_INSET } from '../lib/ui/layout';
+import { transitionPage } from '../lib/ui/motion';
 import { isNativeApp } from '../lib/platform';
 import { hasNativeAppleSignIn } from '../lib/native/appleSignIn';
 import dictionaryShot from '../assets/help/dictionary-mobile.webp';
@@ -530,7 +530,7 @@ export function HelpPage() {
     return () => window.removeEventListener('keydown', onKey);
   }, [back]);
 
-  // On a phone the page starts a bit below the app's own top line (lib/layout.ts), which the
+  // On a phone the page starts a bit below the app's own top line (lib/ui/layout.ts), which the
   // library's header sits on.
   return (
     <div

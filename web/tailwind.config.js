@@ -7,7 +7,7 @@ export default {
   // index.css does the same thing by hand for `.pw`, which this doesn't cover (a raw CSS rule,
   // not a Tailwind utility).
   future: { hoverOnlyWhenSupported: true },
-  // Toggled by adding/removing a `dark` class on <html> — see lib/uiPrefs.ts's applyTheme().
+  // Toggled by adding/removing a `dark` class on <html> — see lib/ui/uiPrefs.ts's applyTheme().
   // Not 'media': the app has its own explicit Settings > Theme control (light/dark/system), and
   // 'system' resolves to the OS preference itself rather than relying on Tailwind's built-in
   // media-query variant, so the toggle needs to be class-driven either way.

@@ -22,7 +22,8 @@ const masters = resolve(root, 'design');
 const out = resolve(root, 'web/assets');
 mkdirSync(out, { recursive: true });
 
-// The shell's dark ground (lib/themeColor.ts SHELL_DARK), used behind the icon and as the splash.
+// The shell's dark ground (lib/ui/themeColor.ts SHELL_DARK), used behind the icon and as the
+// splash.
 const GROUND = '#171513';
 const dst = (name) => resolve(out, name);
 

@@ -6,8 +6,9 @@
 // service worker precaches that path and serves it for every in-app navigation.
 //
 // The lookups port web/src/lib/corpus/corpus.ts (findNode, resolveCanonicalSuttaId) and the trim in
-// web/src/lib/documentMeta.ts, and the titles match what ReaderPage and LibraryPage pass to
-// useDocumentMeta. No module is shared between the two workspaces — change one, change the other.
+// web/src/lib/navigation/documentMeta.ts, and the titles match what ReaderPage and LibraryPage pass
+// to useDocumentMeta. No module is shared between the two workspaces — change one, change the
+// other.
 
 // The paths that carry a subject of their own. A user list also lives under /browse, but its
 // opaque id names nothing in the corpus, so findNode drops it and the shell is left alone.

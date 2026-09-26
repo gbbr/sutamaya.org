@@ -6,11 +6,11 @@ import { isRetryable, retryWithBackoff, statusOf } from '../lib/retry';
 import { readLastUser, writeLastUser } from '../lib/lastUser';
 import { localUserId, resetLocalUserId } from '../lib/sync/localAccount';
 import { deleteMirror } from '../lib/sync/mirrorDb';
-import { clearRecentSearches } from '../lib/recentSearches';
+import { clearRecentSearches } from '../lib/search/recentSearches';
 import { API_BASE, isNativeApp } from '../lib/platform';
 import { AppleSignIn } from '../lib/native/appleSignIn';
 import { clearNativeToken, hydrateNativeToken, setNativeToken } from '../lib/native/nativeAuth';
-import { transitionPage } from '../lib/motion';
+import { transitionPage } from '../lib/ui/motion';
 import type { User } from '../lib/types';
 
 // Delay before retrying a transient session check, held above the Worker's 60s rate-limit period.

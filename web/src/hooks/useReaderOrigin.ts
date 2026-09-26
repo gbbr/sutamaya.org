@@ -1,6 +1,6 @@
 import { useNavigate, type NavigateOptions } from 'react-router';
-import { transitionPage } from '../lib/motion';
-import { tagIntent } from '../lib/routeIntent';
+import { transitionPage } from '../lib/ui/motion';
+import { tagIntent } from '../lib/navigation/routeIntent';
 import type { MarkedBy } from '../lib/search/text';
 import { READER_ORIGIN_KEY } from '../lib/storageKeys';
 
@@ -112,7 +112,8 @@ export function useReaderOrigin(
   // link that never had an origin.
   function closeToOrigin(suttaId: string | undefined, fallbackPath: string) {
     // `restoreOrigin` marks a return rather than a fresh deep link, which TreePane's Library/My
-    // lists toggle tells apart. Tagged (lib/routeIntent.ts) so LibraryPage consumes it once.
+    // lists toggle tells apart. Tagged (lib/navigation/routeIntent.ts) so LibraryPage consumes it
+    // once.
     if (from) {
       leaveReader(from, { state: tagIntent({ fromView, restoreOrigin: true }) });
       return;

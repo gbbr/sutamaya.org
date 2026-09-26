@@ -1,11 +1,11 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { act, renderHook } from '@testing-library/react';
 import { useRecentSearches } from '../useRecentSearches';
-import { clearRecentSearches, saveRecentSearch } from '../../lib/recentSearches';
+import { clearRecentSearches, saveRecentSearch } from '../../lib/search/recentSearches';
 import { RECENT_SEARCHES_KEY } from '../../lib/storageKeys';
 
 beforeEach(() => {
-  // An in-memory localStorage, fresh per test, as in lib/__tests__/uiPrefs.test.ts.
+  // An in-memory localStorage, fresh per test, as in lib/ui/__tests__/uiPrefs.test.ts.
   const store = new Map<string, string>();
   vi.stubGlobal('localStorage', {
     getItem: (k: string) => store.get(k) ?? null,
